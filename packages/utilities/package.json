@@ -1,0 +1,26 @@
+{
+  "name": "@ulld/utilities",
+  "version": "0.0.0",
+  "private": true,
+  "module": "./src/index.mjs",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "dev": "echo 'Add dev script here'",
+    "build": "echo 'Add build script here'",
+    "test": "echo 'Add test script here'",
+    "lint": "echo 'Add lint script here'"
+  },
+  "dependencies": {
+    "@ulld/database": "workspace:*",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@tanstack/react-table": "^8.13.2",
+    "@ulld/config": "workspace:*",
+    "rehype-mathjax": "^4.0.3"
+  },
+  "packageManager": "pnpm@8.15.4"
+}

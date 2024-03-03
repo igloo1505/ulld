@@ -1,0 +1,60 @@
+import { AutoSettingWithRegex, AutoSettingType } from "#/trpc/routers/sync"
+import { autoSetting } from "@prisma/client"
+import { ParsedAppConfig, getInternalConfig } from "@ulld/config"
+import { autoSettingEquality } from "./autoSettingEqualityTest"
+import { getDbAutoSettings } from "./getDbAutosetting"
+import globToRegExp from "glob-to-regexp"
+
+
+export const getConfigAutoSettings = (_config?: ParsedAppConfig) => {
+    const config = _config || getInternalConfig()
+    let d: { glob: string, value: string, type: autoSetting, id?: number }[] = []
+    if (!config) return d
+    if (config.autoTag) {
+        d = d.concat(config.autoTag.map((t) => ({
+            glob: t.path,
+            value: t.tag,
+            type: autoSetting.tag,
+            id: undefined
+        })))
+    }
+
+    if (config.autoSubject) {
+        d = d.concat(config.autoSubject.map((t) => ({
+            glob: t.path,
+            value: t.subject,
+            type: autoSetting.subject,
+            id: undefined
+        })))
+    }
+    if (config.autoTopic) {
+        d = d.concat(config.autoTopic.map((t) => ({
+            glob: t.path,
+            value: t.topic,
+            type: autoSetting.topic,
+            id: undefined
+        })))
+    }
+    return d
+}
+
+export const getAutoSettingsWithRegex = async (type?: autoSetting): Promise<AutoSettingWithRegex[]> => {
+    let c = getConfigAutoSettings()
+    const pushIfNotIncluded = (a: AutoSettingType) => {
+        if (!c.some((l) => autoSettingEquality(l, a))) {
+            c.push(a)
+        }
+    }
+
+    let db = await getDbAutoSettings(type)
+
+    db.forEach((k) => pushIfNotIncluded(k))
+
+    let data = c.map((s) => ({
+        ...s,
+        globString: s.glob,
+        glob: globToRegExp(s.glob, { extended: true, globstar: true })
+    }))
+
+    return type ? data.filter((s) => s.type === type) : data
+}

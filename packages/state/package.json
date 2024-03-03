@@ -1,0 +1,27 @@
+{
+  "name": "@ulld/state",
+  "version": "0.0.0",
+  "private": true,
+  "module": "./src/index.mjs",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "dev": "echo 'Add dev script here'",
+    "build": "echo 'Add build script here'",
+    "test": "echo 'Add test script here'",
+    "lint": "echo 'Add lint script here'"
+  },
+  "dependencies": {
+    "@ulld/config": "workspace:*",
+    "@ulld/utilities": "workspace:*",
+    "axios": "^1.6.7",
+    "pixi.js": "^7.4.0"
+  },
+  "devDependencies": {
+    "@ulld/baseConfigs": "workspace:*",
+    "next": "^14.1.1"
+  },
+  "packageManager": "pnpm@8.15.4"
+}

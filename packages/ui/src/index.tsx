@@ -1,2 +1,2 @@
-export { Link } from "./Link";
-export { CounterButton } from "./CounterButton";
+export { brandUIConfig as brandUI } from "./brandUIConfig"
+export { DynamicIcon } from "./dynamicIcon/index"

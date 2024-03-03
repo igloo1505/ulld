@@ -1,9 +1,13 @@
 {
-  "extends": "@repo/typescript-config/react-library.json",
-  "compilerOptions": {
-    "lib": ["dom", "ES2015"],
-    "types": ["jest", "node"]
-  },
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+    "extends": "@repo/typescript-config/nextjs.json",
+    "compilerOptions": {
+        "lib": [
+            "dom",
+            "ES2015"
+        ],
+        "types": [
+            "jest",
+            "node"
+        ]
+    }
 }

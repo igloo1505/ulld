@@ -1,0 +1,7 @@
+import { z } from 'zod'
+
+
+
+export const credentialsConfigSchema = z.object({
+    googleServiceAccountJsonPath: z.string().optional().describe("Path to the service account credentials file to enable calendar integration.")
+}).default({})

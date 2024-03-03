@@ -1,0 +1,15 @@
+{
+    "extends": "@repo/typescript-config/nextjs.json",
+    "compilerOptions": {
+        "lib": [
+            "dom",
+            "ES2015"
+        ],
+        // "outDir": "./dist",
+        "paths": {
+            "#/*": [
+                "./src/*"
+            ]
+        }
+    }
+}
