@@ -1,7 +1,7 @@
 {
     "extends": "@repo/typescript-config/react-library.json",
     "include": [
-        "."
+        "./*/**.ts", "./*/**.tsx"
     ],
     "exclude": [
         "dist",

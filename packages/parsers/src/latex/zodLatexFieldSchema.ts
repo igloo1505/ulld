@@ -1,6 +1,6 @@
 import { z } from "zod"
 import { serializeMdxContent } from ".."
-import { defaultSerializeConfig } from "@ulld/utilities"
+import { defaultSerializeConfig } from "../mdx/schemas"
 
 
 export const serializeMdxConfigSchema = z.object({

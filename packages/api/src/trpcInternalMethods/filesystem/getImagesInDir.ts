@@ -1,4 +1,4 @@
-import { ParsedAppConfig, getInternalConfig } from "@ulld/state"
+import { ParsedAppConfig, getInternalConfig } from "@ulld/config"
 import { walkFsRoot } from "./walkFsRoot"
 import path from 'path'
 

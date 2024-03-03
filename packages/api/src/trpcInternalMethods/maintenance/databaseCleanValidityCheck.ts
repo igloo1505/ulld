@@ -1,3 +1,4 @@
+import {SubjectResponseType, TagResponseType, TopicResponseType, ValidityResponse} from "."
 
 export const databaseCleanValidityCheck = {
     tagsShouldBeDeleted: (t: TagResponseType[number]): ValidityResponse => {

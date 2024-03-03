@@ -1,7 +1,6 @@
+import { ParsedAppConfig, getInternalConfig } from '@ulld/config'
 import fs from 'fs'
 import path from 'path'
-import { ParsedAppConfig } from '../../../../state/src/config/configUtilityTypes'
-import { getInternalConfig } from '../../../../state/src/config/zod/getInternalConfig'
 
 
 export const checkExistsOfAllParsableTypes = async (rootRelativePath: string, _config?: ParsedAppConfig) => {

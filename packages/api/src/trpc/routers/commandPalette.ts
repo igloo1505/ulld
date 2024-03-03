@@ -74,5 +74,34 @@ export const commandPaletteRouter = router({
             }
         }
         return data
-    })
+    }),
+    getCommandPaletteData: publicProcedure.query(async () => {
+        // WARNING: Handle authentication check for protected notes here. They should only return at all if authenticated and should return with a partially blocked title
+        let mdxNotes = await prisma.mdxNote.findMany({
+            select: {
+                title: true,
+                latexTitle: true,
+                href: true,
+                isProtected: true
+            },
+            distinct: "rootRelativePath"
+        })
+        mdxNotes = mdxNotes.map((n) => n.isProtected ? ({ ...n, title: n.title.split("").map((c, i) => i % 2 === 0 ? c : "#").join(""), latexTitle: null }) : n)
+        let ipynbNotes = await prisma.ipynb.findMany({
+            select: {
+                title: true,
+                latexTitle: true,
+                href: true,
+                isProtected: true
+            },
+            distinct: "rootRelativePath"
+        })
+        let _uniqueTags = await prisma.tag.findMany({
+            distinct: "value"
+        })
+        return {
+            notes: mdxNotes.concat(ipynbNotes),
+            tags: _uniqueTags
+        }
+    }),
 })

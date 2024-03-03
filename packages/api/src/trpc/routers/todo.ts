@@ -1,13 +1,14 @@
-import { addTodoListSchema, todoListAddTaskSchemaTrpc } from "#/components/plugins/native/todo/zod/general";
-import { prisma } from "#/db/db";
-import { stringArrayToTagSubjectOrTopicConnectOrCreate } from "#/utils/plotting/arrayUtils";
-import { getParsedToDoSearchParams, getToDoSearchParams, todoListNameSchema, todoPriorityChangeSchema, todoStatusChangeSchema, todoStatusDueAtSchema, zodArrayUnion } from "#/zod/local/todo";
+import { addTodoListSchema, adidTodoListSchema, todoListAddTaskSchemaTrpc } from "#/plugins/native/todo/zod/general";
+import { prisma } from "#/db";
+// import { stringArrayToTagSubjectOrTopicConnectOrCreate } from "#/utils/plotting/arrayUtils";
+// import { getParsedToDoSearchParams, getToDoSearchParams, todoListNameSchema, todoPriorityChangeSchema, todoStatusChangeSchema, todoStatusDueAtSchema, zodArrayUnion } from "#/zod/local/todo";
 import { Subject, Tag, Topic, Prisma } from "@prisma/client";
 import { publicProcedure, router } from "../trpc";
 import { z } from 'zod'
-import { TaskListIds } from "#/components/plugins/native/todo/todoListDataTable";
-import { parseTodoLists } from "#/lib/plugins/native/todo/utils";
+// import { TaskListIds } from "#/components/plugins/native/todo/todoListDataTable";
+// import { parseTodoLists } from "#/lib/plugins/native/todo/utils";
 import { taskIdItemSchema } from "#/classes/prismaMdxRelations/zod/todo";
+import { ArrayUtilities } from "@ulld/utilities";
 
 
 
@@ -172,14 +173,14 @@ export const toDoRouter = router({
         return await prisma.toDoList.create({
             data: {
                 label: input.label,
-                topic: {
-                    connectOrCreate: stringArrayToTagSubjectOrTopicConnectOrCreate<Topic>(input.topics, "name")
+                topics: {
+                    connectOrCreate: ArrayUtilities.stringArrayToTagSubjectOrTopicConnectOrCreate<Topic>(input.topics)
                 },
                 tags: {
-                    connectOrCreate: stringArrayToTagSubjectOrTopicConnectOrCreate<Tag>(input.tags, "value") as Prisma.TagCreateOrConnectWithoutToDoInput[]
+                    connectOrCreate:ArrayUtilities.stringArrayToTagSubjectOrTopicConnectOrCreate<Tag>(input.tags) as Prisma.TagCreateOrConnectWithoutToDoInput[]
                 },
-                subject: {
-                    connectOrCreate: stringArrayToTagSubjectOrTopicConnectOrCreate<Subject>(input.subjects, "value")
+                subjects: {
+                    connectOrCreate: ArrayUtilities.stringArrayToTagSubjectOrTopicConnectOrCreate<Subject>(input.subjects)
                 },
             }
         })

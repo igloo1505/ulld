@@ -7,25 +7,30 @@ import rehypePrettyCode from "rehype-pretty-code"
 import emoji from "remark-emoji"
 import rehypeSlug from "rehype-slug"
 import rehypeVideo from 'rehype-video';
-import { mathOptions } from "./markdownUniversalOptions"
 import { MDXRemoteSerializeResult } from "next-mdx-remote"
-import { SerializeOptions } from "next-mdx-remote/dist/types"
 import { SerializeMdxConfig } from "./types"
-import {ParsedAppConfig } from "@ulld/config"
+import {ParsedAppConfig, getInternalConfig } from "@ulld/config"
+import { mathOptions } from "@ulld/utilities"
 
 export type MDXSerializeReturnType = MDXRemoteSerializeResult<Record<string, unknown>, Record<string, unknown>>
 
 
 export type MdxSerializeAvoidablePluginName = SerializeMdxConfig["dontLoadPlugins"]
 
+type SerializeOptions = Parameters<typeof serialize>[1]
+
 
 // WARN: Current mermaid isn't working in this method for some reason despite working ont he server in RSC's.
 
  
-export const serializeMdxContent = async (s: string, rsc: boolean = true, serializeMdxConfig?: SerializeMdxConfig, config?: ParsedAppConfig): Promise<MDXSerializeReturnType> => {
+export const serializeMdxContent = async (s: string, rsc: boolean = true, serializeMdxConfig?: SerializeMdxConfig, _config?: ParsedAppConfig): Promise<MDXSerializeReturnType> => {
     console.log(`Serializing: 
 ${s}`)
-    const _rehypePlugins: NonNullable<SerializeOptions["mdxOptions"]>["rehypePlugins"] = [
+    const config = _config || getInternalConfig()
+    if(!config){
+        throw new Error("No config was provided to the serializeMdxContent function")
+    }
+    const _rehypePlugins: NonNullable<NonNullable<SerializeOptions>["mdxOptions"]>["rehypePlugins"] = [
         /* TODO: Add an embeded video component for this rehypeVideo that then utilizes the existing video element. */
         [rehypeVideo as any, {
             test: /\/(.*)(.mp4|.mov|.webm)$/,
@@ -64,7 +69,7 @@ ${s}`)
         ],
         rehypeSlug,
     ]
-    const _remarkPlugins: NonNullable<SerializeOptions["mdxOptions"]>["remarkPlugins"] = [
+    const _remarkPlugins: NonNullable<NonNullable<SerializeOptions>["mdxOptions"]>["remarkPlugins"] = [
         remarkMath,
         remarkGfm,
         [emoji as any, {}],

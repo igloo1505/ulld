@@ -90,7 +90,7 @@ export const cleanDatabase = async () => {
     })
     let topics = await prisma.topic.findMany({
         select: {
-            name: true,
+            value: true,
             toDo: {
                 select: {
                     id: true
@@ -130,7 +130,7 @@ export const cleanDatabase = async () => {
     if (toDeleteById.topics.length !== 0) {
         await prisma.topic.deleteMany({
             where: {
-                name: {
+                value: {
                     in: toDeleteById.topics as string[]
                 }
             }

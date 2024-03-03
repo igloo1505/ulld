@@ -1,4 +1,4 @@
-import { ParsableExtensions, getInternalConfig } from "@ulld/state"
+import { ParsableExtensions, getInternalConfig } from "@ulld/config"
 import { walkFsRoot } from "./walkFsRoot"
 
 

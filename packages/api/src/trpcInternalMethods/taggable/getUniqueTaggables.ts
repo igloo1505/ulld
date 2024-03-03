@@ -18,7 +18,7 @@ export const getUniqueSubjects = async (): Promise<string[]> => {
 
 export const getUniqueTopics = async (): Promise<string[]> => {
     let data = await prisma.topic.findMany({
-        distinct: "name"
+        distinct: "value"
     })
-    return data.map((d) => d.name)
+    return data.map((d) => d.value)
 }

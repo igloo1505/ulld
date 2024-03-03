@@ -11,6 +11,7 @@
                 "./src/*"
             ]
         },
-    "isolatedModules": true
+    "isolatedModules": true,
+    "esModuleInterop": true
     }
 }

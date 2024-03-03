@@ -3,12 +3,13 @@ import { QAPairOutput } from "#/schemas/qaItem"
 import { Prisma } from "@prisma/client"
 import { getRandomId } from "@ulld/utilities"
 
+
 export const saveQaItem = async (v: QAPairOutput) => {
     let create: Prisma.QAPairCreateInput = {
         id: v.id || getRandomId(20),
-        question: v.question,
-        answer: v.answer,
-        description: v.description === "" ? undefined : v.description,
+        question: v.question.original,
+        answer: v.answer.original,
+        description: v.description.original === "" ? undefined : v.description.original,
         ...(v.tags.length > 0 && {
             tags: {
                 connectOrCreate: v.tags.map((t) => ({

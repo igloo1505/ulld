@@ -1,7 +1,6 @@
+import { getInternalConfig } from '@ulld/config'
 import fs from 'fs'
 import os from 'os'
-import { getInternalConfig } from '@ulld/state'
-
 
 export const clearTempDir = async () => {
     const dir = getInternalConfig().tempDir || os.tmpdir()

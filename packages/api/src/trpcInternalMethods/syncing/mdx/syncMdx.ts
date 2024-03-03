@@ -1,12 +1,12 @@
 import { prisma } from "#/db"
 import { AutoSettingWithRegex } from "#/trpc/routers/sync"
 import { getInternalConfig } from "@ulld/config"
-import { MdxNote } from "@ulld/state"
 import fs from 'fs'
 import { Prisma } from "@ulld/database"
 import { SyncOptions } from "#/schemas/syncing/syncOptions"
 import { saveMdxNote } from "./saveMdxNote"
 import { updateMdxNote } from "./updateMdx"
+import { MdxNote } from "#/classes"
 
 export const syncMdx = async (file: string, dir: string, autoSettings: AutoSettingWithRegex[], opts?: SyncOptions) => {
     const config = getInternalConfig()

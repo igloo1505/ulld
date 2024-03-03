@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const AddEquationSchema = z.object({
+export const addEquationSchema = z.object({
     id: z.number().optional(),
     title: z.string(),
     desc: z.string().optional(),

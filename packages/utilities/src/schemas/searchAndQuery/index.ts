@@ -5,7 +5,6 @@ export const paginationProps = z.object({
     take: z.number().int().default(20),
 })
 
-export type PaginationProps = z.input<typeof paginationProps>
 
 
 export const sortDirProps = z.object({

@@ -1,14 +1,15 @@
 import { serverClient } from "#/trpc/serverClient"
+import { zodMdxBlockStringSchema, zodMdxInlineStringSchema } from "@ulld/parsers"
 import { z } from "zod"
-import { getZodArrayUnionSchema, mdxBlockStringSchema, mdxInlineStringSchema } from "@ulld/utilities"
+
 
 export const qaInputSchema = z.object({
-    question: mdxBlockStringSchema,
-    answer: mdxBlockStringSchema,
-    description: mdxInlineStringSchema,
-    tags: getZodArrayUnionSchema(z.string()),
-    topics: getZodArrayUnionSchema(z.string()),
-    subjects: getZodArrayUnionSchema(z.string()),
+    question: zodMdxBlockStringSchema,
+    answer: zodMdxBlockStringSchema,
+    description: zodMdxInlineStringSchema,
+    tags: z.string().array().default([]),
+    topics: z.string().array().default([]),
+    subjects: z.string().array().default([]),
     id: z.string().optional()
 })
 

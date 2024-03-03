@@ -131,35 +131,15 @@ export class ArrayUtilities {
         T extends Tag | Topic | Subject,
     >(
         items: string[],
-        itemKey: keyof Omit<T, "id">,
-    ): T extends Topic
-        ? Prisma.TopicCreateOrConnectWithoutToDoInput[]
-        : T extends Subject
-        ? Prisma.SubjectCreateOrConnectWithoutTodoListInput[]
-        : T extends Tag
-        ? Prisma.TagCreateOrConnectWithoutToDoInput[]
-        : unknown {
-        if (itemKey === "name") {
-            /* @ts-ignore */
-            return items.map((t) => ({
-                where: {
-                    name: t as string,
-                },
-                create: {
-                    name: t as string,
-                },
-            }));
-        } else {
-            /* @ts-ignore */
-            return items.map((t) => ({
-                where: {
-                    value: t as string,
-                },
-                create: {
-                    value: t as string,
-                },
-            }));
-        }
+    ) {
+        return items.map((t) => ({
+            where: {
+                value: t as string,
+            },
+            create: {
+                value: t as string,
+            },
+        }));
     }
 
     static fieldArrayIsSame<

@@ -1,6 +1,6 @@
-import { zodDocTypeInput } from "@ulld/config/src/config/configUtilityFunctions/docTypes"
 import { getZodArrayUnionSchema, paginationProps } from "@ulld/utilities"
 import {z} from 'zod'
+import { zodDocTypeInput } from "@ulld/config"
 
 export const searchAllParamsSchema = z.object({
     query: z.string().optional(),

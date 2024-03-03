@@ -4,8 +4,9 @@ import { parseBibFile } from 'bibtex'
 import path from 'path'
 import fs from 'fs'
 import { prisma } from '#/db'
-import { getInternalConfig, BibEntry } from '@ulld/state'
 import { getFormattedCslCitation } from './getFormattedCslCitation'
+import { getInternalConfig } from '@ulld/config'
+import { BibEntry } from '#/classes'
 
 
 export const syncBib = async (bibId?: number) => {
