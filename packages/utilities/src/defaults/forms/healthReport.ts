@@ -1,0 +1,33 @@
+export const healthReportFormDefaultValues = {
+    title: undefined,
+    summary: undefined,
+    overall: 5,
+    skin: 5,
+    bloat: 5,
+    weight_feeling: 5,
+    fullness: 5,
+    weight: undefined,
+    cardiacCapacity: 5,
+    jawLine: 5,
+    joints: 5,
+    flexibility: 5,
+    anxiety: 5,
+    anxiety_desc: undefined,
+    mood: 5,
+    mood_desc: undefined,
+    sexDrive: 5,
+    intruisiveThoughts: 5,
+    caffeineIntake: 5,
+    glutenIntake: 5,
+    sugarIntake: 5,
+    artificialSweetenerIntake: 5,
+    artificalDyes: 5,
+    sleepQuality: 5,
+    sleepHours: undefined,
+    // hydration: 5,
+    calorie_est: undefined,
+    times_meals_more_than_gap_apart: undefined,// Times the gap between meals exceeded the diet specific fasting avoidance allowance.
+    estHoursInExcessFast: undefined,
+    created: undefined
+}
+

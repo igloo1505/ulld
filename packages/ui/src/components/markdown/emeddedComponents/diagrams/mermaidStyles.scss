@@ -1,0 +1,24 @@
+.er.attributeBoxEven {
+  fill: rgba(0, 0, 0, 0.1);
+}
+The box containing attributes on even-numbered rows .er.attributeBoxOdd {
+  fill: rgba(0, 0, 0, 0.2);
+}
+
+html.dark {
+  .er.attributeBoxEven {
+    fill: rgba(0, 0, 0, 0.9);
+  }
+  The box containing attributes on even-numbered rows .er.attributeBoxOdd {
+    fill: rgba(0, 0, 0, 0.8);
+  }
+}
+
+g {
+  & > .er.entityLabel {
+    fill: white;
+  }
+  & > .er.entityLabel ~ .er.entityLabel {
+    fill: black;
+  }
+}

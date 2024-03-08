@@ -1,3 +1,5 @@
-import { ParsedAppConfig } from '#/lib/config/zod/secondaryConfigParse/main'
+import { ParsedAppConfig } from "@ulld/configschema";
 
-export const initialConfigState = {} as ParsedAppConfig
+
+
+export const initialConfigState: ParsedAppConfig | undefined | null = {} as ParsedAppConfig

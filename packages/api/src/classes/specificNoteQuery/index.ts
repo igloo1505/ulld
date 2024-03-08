@@ -1,2 +1,2 @@
-export * from "./documentConfigMap"
 export * from "./specificNoteQueryManager"
+export * from "./documentConfigMap"

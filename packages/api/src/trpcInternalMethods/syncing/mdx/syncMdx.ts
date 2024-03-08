@@ -1,12 +1,15 @@
-import { prisma } from "#/db"
-import { AutoSettingWithRegex } from "#/trpc/routers/sync"
-import { getInternalConfig } from "@ulld/config"
 import fs from 'fs'
-import { Prisma } from "@ulld/database"
-import { SyncOptions } from "#/schemas/syncing/syncOptions"
+import { Prisma, prisma } from "@ulld/database"
 import { saveMdxNote } from "./saveMdxNote"
 import { updateMdxNote } from "./updateMdx"
-import { MdxNote } from "#/classes"
+import { MdxNote } from '../../../classes'
+import { SyncOptions } from '../../../schemas'
+import { AutoSettingWithRegex } from '../../../trpc'
+import { getInternalConfig } from '@ulld/configschema'
+
+
+
+
 
 export const syncMdx = async (file: string, dir: string, autoSettings: AutoSettingWithRegex[], opts?: SyncOptions) => {
     const config = getInternalConfig()

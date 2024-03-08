@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import initialState from "../initialState/initialState";
-import { ToastConfigType } from "#/types/ui";
 import { EmbededPanelState, InitialUIStateType } from "../initialState/ui";
+import { ToastConfigType } from "@ulld/utilities";
 
 
 

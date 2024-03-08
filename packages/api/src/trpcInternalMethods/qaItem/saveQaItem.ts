@@ -1,15 +1,16 @@
-import { prisma } from "#/db"
-import { QAPairOutput } from "#/schemas/qaItem"
 import { Prisma } from "@prisma/client"
 import { getRandomId } from "@ulld/utilities"
+import { prisma } from "@ulld/database"
+import type { qaInputSchemaTrpc } from "../../schemas"
+import { output } from 'zod'
 
 
-export const saveQaItem = async (v: QAPairOutput) => {
+export const saveQaItem = async (v: output<typeof qaInputSchemaTrpc>) => {
     let create: Prisma.QAPairCreateInput = {
         id: v.id || getRandomId(20),
-        question: v.question.original,
-        answer: v.answer.original,
-        description: v.description.original === "" ? undefined : v.description.original,
+        question: v.question,
+        answer: v.answer,
+        description: v.description === "" ? undefined : v.description,
         ...(v.tags.length > 0 && {
             tags: {
                 connectOrCreate: v.tags.map((t) => ({
@@ -49,7 +50,7 @@ export const saveQaItem = async (v: QAPairOutput) => {
     }
     let d: Prisma.QAPairUpsertArgs = {
         where: {
-            id: v.id
+            id: v.id || ""
         },
         create: create,
         update: create

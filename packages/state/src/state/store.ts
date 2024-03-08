@@ -63,20 +63,21 @@ export const makeStore = (): ReturnType<typeof makeConfiguredStore> => {
 };
 
 
-const store = makeStore()
+const _store = makeStore()
 
 declare global {
     interface Window {
-        store: typeof store;
+        store: typeof _store;
+        MonacoEnvironment: any
     }
 }
 
 if (process.env.NODE_ENV !== "production" && typeof window !== "undefined") {
-    window.store = store;
+    window.store = _store;
 }
 
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof _store.getState>;
+export type AppDispatch = typeof _store.dispatch;
 
-export default store;
+export const store = _store

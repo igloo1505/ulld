@@ -1,7 +1,6 @@
-import { ParsedAppConfig, getInternalConfig } from "@ulld/config"
+import { ParsedAppConfig, ColorGroup, getInternalConfig } from '@ulld/configschema'
 import fs from 'fs'
 import handlebars from "handlebars"
-import { ColorGroup } from "@ulld/config"
 import path from 'path'
 
 

@@ -1,5 +1,5 @@
+import { setSlashes } from "@ulld/utilities"
 import { z } from "zod"
-import { setSlashes } from "@ulld/parsers"
 
 
 export const getRootRelativePathSchema = (fsRoot: string) => {

@@ -1,13 +1,16 @@
-import { prisma } from "#/db"
-import { getZodArrayUnionSchema } from "@ulld/utilities"
 import { z } from "zod"
 import { publicProcedure, router } from "../trpc"
-import { getRemoteMdx } from "#/trpcInternalMethods/notes/mdx/getRemoteMdx"
-import { getRemoteMdxFromPathname } from "#/trpcInternalMethods/notes/mdx/getRemoteMdxFromPathname"
-import { getFsMdx } from "#/trpcInternalMethods/filesystem/fsnotes"
-import { markdownExtensions } from "@ulld/config"
+import { markdownExtensions } from "@ulld/configschema"
+import { prisma } from "@ulld/database"
+import { getRemoteMdx, getRemoteMdxFromPathname, getFsMdx } from "../../trpcInternalMethods"
+import { makeArrayTransform } from "@ulld/utilities"
 
-const idOrIdArray = getZodArrayUnionSchema(z.number())
+
+
+const idOrIdArray = z.union([
+    z.number().int(),
+    z.number().int().array(),
+]).transform(makeArrayTransform)
 
 export const mdxNoteActionsRouter = router({
     deleteNoteById: publicProcedure.input(idOrIdArray).mutation(async ({ input }) => {
@@ -43,5 +46,4 @@ export const mdxNoteActionsRouter = router({
     getFsMdx: publicProcedure.input(z.object({ rootRelativePath: z.string(), extension: markdownExtensions })).query(async (opts) => {
         return getFsMdx(opts.input.rootRelativePath, opts.input.extension)
     }),
-
 })

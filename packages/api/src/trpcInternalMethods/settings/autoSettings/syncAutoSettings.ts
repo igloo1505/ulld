@@ -1,5 +1,7 @@
-import { prisma } from "#/db"
+import { prisma } from "@ulld/database"
 import { getConfigAutoSettings } from "./getAutosettingWithRegex"
+
+
 
 export const syncAutoSettings = async () => {
     let d = getConfigAutoSettings()

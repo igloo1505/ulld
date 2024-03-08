@@ -1,9 +1,9 @@
-import { prisma } from "#/db";
-import { Tag, Subject, Topic } from "@ulld/state";
 import { z } from "zod";
 import { publicProcedure, router } from "../trpc";
-import { createKanBanFormDataSchema } from "#/schemas/boards";
 import { arrayTruthy } from "@ulld/utilities";
+import { prisma } from "@ulld/database";
+import { Tag, Subject, Topic } from "../../classes";
+import { createKanBanFormDataSchema } from "../../schemas";
 
 
 

@@ -1,5 +1,4 @@
 import * as physics from "#/staticData/physicalConstants.json";
-import { Numpy } from "./Numpy";
 
 export type PhysicalConstant = "c" | "g" | "G" | keyof typeof physics;
 
@@ -13,7 +12,7 @@ type T = {
     [k in keyof typeof physics]: PhysicsItemValue | undefined;
 };
 
-export class PhysicalConstants extends Numpy implements T {
+export class PhysicalConstants implements T {
     [k: string]: PhysicsItemValue | any
     c: number;
     g: number;
@@ -625,7 +624,6 @@ export class PhysicalConstants extends Numpy implements T {
     "vacuum mag. permeability": PhysicsItemValue | undefined = undefined;
     "W to Z mass ratio": PhysicsItemValue | undefined = undefined;
     constructor() {
-        super();
         Object.entries(physics).forEach((e) => {
             this[e[0]] = e[1]
         })

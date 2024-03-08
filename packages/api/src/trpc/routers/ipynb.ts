@@ -1,9 +1,10 @@
-import { getRemoteIpynbFromPathname } from "#/trpcInternalMethods/notes/ipynb"
 import { z } from "zod"
 import { publicProcedure, router } from "../trpc"
 import fs from 'fs'
-import { prisma } from "#/db"
-import { getRootRelativePathsOfFiletype } from "#/trpcInternalMethods/filesystem/getRootRelativePathsOfFiletype"
+import { prisma } from "@ulld/database"
+import { getRemoteIpynbFromPathname, getRootRelativePathsOfFiletype } from "../../trpcInternalMethods"
+
+
 
 
 export const ipynbRouter = router({
@@ -30,4 +31,18 @@ export const ipynbRouter = router({
         let d = await getRootRelativePathsOfFiletype(".ipynb")
         return d
     }),
+    getDatabaseNotebook: publicProcedure.input(z.object({
+        rootRelativePath: z.string()
+    })).query(async ({ input }) => {
+        return prisma.ipynb.findFirst({
+            where: {
+                rootRelativePath: input.rootRelativePath
+            },
+            include: {
+                tags: true,
+                subjects: true,
+                topics: true
+            }
+        })
+    })
 })

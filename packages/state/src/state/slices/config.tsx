@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import initialState from "../initialState/initialState";
-import { ParsedAppConfig } from "#/lib/config/zod/secondaryConfigParse/main";
+import { ParsedAppConfig } from "@ulld/configschema";
 
 
 const slice = createSlice({
@@ -8,7 +8,7 @@ const slice = createSlice({
     initialState: initialState.config,
     reducers: {
         setConfigState(state, action: PayloadAction<ParsedAppConfig>) {
-            state = action.payload
+            state = action.payload ? action.payload : undefined
         }
     }
 })

@@ -1,8 +1,13 @@
-import { MdxNote } from "#/classes"
-import { prisma } from "#/db"
-import { AutoSettingWithRegex } from "#/trpc/routers/sync"
-import { ParsedAppConfig } from "@ulld/config"
+import { ParsedAppConfig } from "@ulld/configschema"
 import { logger } from "@ulld/logger/server"
+import { AutoSettingWithRegex } from "../../../trpc"
+import { MdxNote } from "../../../classes"
+import { prisma } from "@ulld/database"
+
+
+
+
+
 
 export const saveMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRegex[] = [], config: ParsedAppConfig) => {
     logger.info(`Creating note: ${note.title}`)

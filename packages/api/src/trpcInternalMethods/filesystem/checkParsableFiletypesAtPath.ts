@@ -1,6 +1,7 @@
-import { getRootRelativePathSchema } from "#/schemas/filesystem/rootRelativePathSchema"
-import { ParsedAppConfig, getInternalConfig, ParsableExtensions } from "@ulld/config"
+import { ParsedAppConfig, getInternalConfig, ParsableExtensions } from '@ulld/configschema'
 import fs from 'fs'
+import { getRootRelativePathSchema } from '../../schemas'
+
 
 
 

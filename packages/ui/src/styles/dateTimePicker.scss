@@ -1,0 +1,29 @@
+.react-datepicker-popper {
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  * {
+    border-color: hsl(var(--border)) !important;
+  }
+  .react-datepicker {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+  }
+  .react-datepicker__header {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    * {
+      color: hsl(var(--card-foreground));
+    }
+  }
+  .react-datepicker__day {
+    color: hsl(var(--card-foreground));
+    &.react-datepicker__day--selected {
+      background-color: hsl(var(--primary));
+      color: hsl(var(--primary-foreground));
+    }
+    &:hover {
+      background-color: hsl(var(--muted));
+      color: hsl(var(--foreground));
+    }
+  }
+}

@@ -1,7 +1,7 @@
+import { ParsedAppConfig, getInternalConfig } from "@ulld/configschema";
 import { replaceRecursively } from "@ulld/utilities";
 import axios from 'axios'
 import { PageProps } from "react-pdf";
-import { ParsedAppConfig, getInternalConfig } from "@ulld/config"
 
 
 export type TextItemType = {

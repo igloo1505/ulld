@@ -1,8 +1,9 @@
 import "server-only"
 import path from 'path'
 import fs from 'fs'
-import { ParsedAppConfig, getInternalConfig, ParsableExtensions } from "@ulld/config"
 import {checkExistsOfAllParsableTypes} from "../filesystem/fsUtils"
+import { ParsedAppConfig, getInternalConfig, ParsableExtensions } from "@ulld/configschema"
+
 
 
 export const getFsMdx = async (rootRelativePath: string, ext: ".mdx" | ".md" = ".mdx", _config?: ParsedAppConfig) => {

@@ -1,13 +1,12 @@
-import { prisma } from "#/db";
-import { serializeMdxContent, zodMdxFieldSchema } from "@ulld/parsers";
-import { mathjaxParserOptionsSchema } from "../../../../parsers/src/math/mathjaxParserOptionsParsing";
-import { texToChtml } from "../../../../parsers/src/math/texToChtml";
+import { prisma } from "@ulld/database";
+import { zodMdxFieldSchema, mathjaxParserOptionsSchema, texToChtml } from "@ulld/parsers";
+import { serializeMdxContent } from "@ulld/parsers/mdx";
+import { arrayTruthy } from "@ulld/utilities";
+import { addEquationSchema } from "../../schemas";
 import { publicProcedure, router } from "../trpc";
 import { Prisma } from "@prisma/client"
 import * as z from 'zod'
-import { arrayTruthy, getPaginationParams, getZodArrayUnionSchema } from "@ulld/utilities";
-import { equationSearchParamsSchema } from "@ulld/state"
-import { addEquationSchema } from "#/schemas/formTrpcRelationships/addEquation";
+import { equationSearchParamsSchema, getPaginationParams } from "@ulld/state";
 
 
 const getCssCompiler = async () => await import("@ulld/parsers").then((a) => ({
@@ -305,7 +304,10 @@ export const equationsRouter = router({
             }
         })
     }),
-    zodParseLatexString: publicProcedure.input(getZodArrayUnionSchema(z.string())).mutation(async ({ input }) => {
+    zodParseLatexString: publicProcedure.input(z.union([
+        z.string(),
+        z.string().array()
+    ]).transform((a) => Array.isArray(a) ? a : [a])).mutation(async ({ input }) => {
         return await zodMdxFieldSchema.array().parseAsync(input)
     })
 })

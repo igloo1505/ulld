@@ -1,9 +1,9 @@
-import { AutoSettingWithRegex, AutoSettingType } from "#/trpc/routers/sync"
 import { autoSetting } from "@prisma/client"
-import { ParsedAppConfig, getInternalConfig } from "@ulld/config"
 import { autoSettingEquality } from "./autoSettingEqualityTest"
 import { getDbAutoSettings } from "./getDbAutosetting"
 import globToRegExp from "glob-to-regexp"
+import { ParsedAppConfig, getInternalConfig } from "@ulld/configschema"
+import { AutoSettingWithRegex, AutoSettingType } from "../../../trpc"
 
 
 export const getConfigAutoSettings = (_config?: ParsedAppConfig) => {

@@ -1,11 +1,10 @@
-import { prisma } from "#/db";
-import { bibItemTagParser } from "#/schemas/bib/bibItemTagParser";
-import { getBibWithEntries, getBibFilename } from "#/trpcInternalMethods/bib";
-import { syncBib } from "#/trpcInternalMethods/bib/syncBib";
 import { z } from "zod";
 import fs from 'fs'
 import { publicProcedure, router } from "../trpc";
-import { getInternalConfig } from "@ulld/config";
+import { getInternalConfig } from "@ulld/configschema";
+import { prisma } from "@ulld/database";
+import { bibItemTagParser } from "../../schemas";
+import { getBibWithEntries, syncBib, getBibFilename } from "../../trpcInternalMethods";
 
 
 export const bibliographyRouter = router({

@@ -3,10 +3,12 @@ import '@citation-js/plugin-bibtex'
 import { parseBibFile } from 'bibtex'
 import path from 'path'
 import fs from 'fs'
-import { prisma } from '#/db'
-import { getFormattedCslCitation } from './getFormattedCslCitation'
-import { getInternalConfig } from '@ulld/config'
-import { BibEntry } from '#/classes'
+import { getInternalConfig } from '@ulld/configschema'
+import { BibEntry } from '../../classes'
+import { getFormattedCslCitation } from '@ulld/parsers'
+import { prisma } from '@ulld/database'
+
+
 
 
 export const syncBib = async (bibId?: number) => {
@@ -18,7 +20,7 @@ export const syncBib = async (bibId?: number) => {
     const parsed = parseBibFile(content)
     const entries = BibEntry.fromFsList(parsed.entries_raw)
     const entriesCC = entries.map((e) => e.connectArgs())
-    const { citations, userDefined } = getFormattedCslCitation(content, Boolean(internalConfig.cslPath))
+    const { citations, userDefined } = getFormattedCslCitation(content)
     const ids = citations.getIds()
     const lower = ids.map((l: string) => l.toLowerCase())
     for (const entry of entries) {

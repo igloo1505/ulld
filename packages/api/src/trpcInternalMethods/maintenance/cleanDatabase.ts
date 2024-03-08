@@ -1,6 +1,7 @@
-import { prisma } from "#/db"
-import { Prisma } from "@ulld/database"
+import { Prisma, prisma } from "@ulld/database"
 import { databaseCleanValidityCheck } from "./databaseCleanValidityCheck"
+
+
 
 type TBase = {
     id?: string | number

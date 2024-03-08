@@ -1,0 +1,27 @@
+import React from "react";
+import type { z } from 'zod'
+
+
+export type WithRequired<T, K extends keyof T> = T & { [P in K]-?: T[P] }
+
+
+export type ExpandRecursively<T> = T extends object
+    ? T extends infer O ? { [K in keyof O]: ExpandRecursively<O[K]> } : never
+    : T;
+
+export interface ArrayLike<T> {
+    length: number
+    [n: number]: T
+}
+
+export interface WithChildren {
+    children: React.ReactNode
+}
+
+export type RemoveValuesOfType<T, U> = { [P in keyof T as T[P] extends U ? never : P]: T[P] }
+
+export type WithoutFunctions<T> = RemoveValuesOfType<{
+    [key in keyof T]: T[key] extends Function ? never : T[key];
+}, never>
+
+export type ZodFriendly<T extends object> = { [key in keyof T]: T[key] extends never ? never : z.ZodType }

@@ -1,16 +1,18 @@
-import { TertiaryToggleSchema } from "#/types/general/util"
-import { HealthReport } from "@prisma/client"
+import { HealthReport, Prisma } from "@prisma/client"
+import { prisma } from "@ulld/database"
+import { zodTertiaryToggleSchema } from "@ulld/utilities"
 import { ZodDate, ZodOptional, ZodRawShape, ZodString, ZodUnion, z } from "zod"
+import { HealthDashboardSearchParams, DateInput } from "."
 
 
 export const dietFormFieldValues = {
     name: z.string(),
     summary: z.string().optional(),
     activelyFollowing: z.boolean().default(false),
-    gf: TertiaryToggleSchema,
-    fasting: TertiaryToggleSchema,
-    cardioTraining: TertiaryToggleSchema,
-    weightTraining: TertiaryToggleSchema,
+    gf: zodTertiaryToggleSchema,
+    fasting: zodTertiaryToggleSchema,
+    cardioTraining: zodTertiaryToggleSchema,
+    weightTraining: zodTertiaryToggleSchema,
     vegan: z.boolean().default(false),
     pescatarian: z.boolean().default(false),
     vegetarian: z.boolean().default(false),
@@ -185,4 +187,56 @@ export const healthReportFormDefaultValues: TempHalfAssedType = {
     times_meals_more_than_gap_apart: undefined,// Times the gap between meals exceeded the diet specific fasting avoidance allowance.
     estHoursInExcessFast: undefined,
     created: undefined
+}
+
+export const getSearchParamDateString = (day: number, month: number, year: number) => {
+    return `${month}-${day}-${year}`
+}
+
+export const parseSearchParamDateString = (s: string) => {
+    let d = s.split("-")
+    if (d.length !== 3) return
+    return new Date(`${d[0]}-${d[1]}-${d[2]}`)
+}
+
+export const getDashboardSearchParams = (sp: Omit<Partial<HealthDashboardSearchParams>, "start" | "stop"> & { start?: DateInput, stop?: DateInput }): string => {
+    let p = new URLSearchParams()
+    if (sp.start) {
+        p.set("start", getSearchParamDateString(sp.start.day, sp.start.month, sp.start.year))
+    }
+    if (sp.stop) {
+        p.set("stop", getSearchParamDateString(sp.stop.day, sp.stop.month, sp.stop.year))
+    }
+    return p.toString()
+}
+
+const healthDashboardQueryMap: { [k in keyof HealthDashboardSearchParams]: (sp: HealthDashboardSearchParams) => Prisma.HealthReportWhereInput } = {
+    start: (sp) => ({
+        created: {
+            gte: new Date(sp.start as string)
+        }
+    }),
+    end: (sp) => ({
+        created: {
+            lte: new Date(sp.end as string)
+        }
+    })
+}
+
+export const getHealthDashboardData = async (sp: HealthDashboardSearchParams) => {
+    let queries: Prisma.HealthReportWhereInput[] = []
+    Object.keys(sp).forEach((k) => {
+        let f = healthDashboardQueryMap[k as keyof typeof sp]
+        if (f) {
+            queries.push(f(sp))
+        }
+
+    })
+    let data = await prisma.healthReport.findMany({
+        where: {
+            AND: queries
+        }
+    })
+
+    return data
 }

@@ -1,20 +1,8 @@
 import { z } from "zod"
-import { serializeMdxContent } from ".."
-import { defaultSerializeConfig } from "../mdx/schemas"
+import { defaultSerializeConfig, zodSerializedMdxSchema } from "../mdx/schemas"
+import { serializeMdxContent } from "#/mdx/compiler"
 
 
-export const serializeMdxConfigSchema = z.object({
-    dontLoadPlugins: z.enum(["mermaid"]).array(),
-    parseFrontMatter: z.boolean().default(false)
-})
-
-
-export const zodSerializedMdxSchema = z.object({
-    compiledSource: z.string(),
-    scope: z.record(z.string(), z.any()),
-    frontmatter: z.record(z.string(), z.string()).default({}),
-    original: z.string()
-})
 
 // TODO: Add sort function here to properly sort labels with latex. Append an 'alphebitzed' property to the return object.
 const zodMdxTransform = async (data: string) => {
@@ -24,6 +12,8 @@ const zodMdxTransform = async (data: string) => {
 
 export const zodMdxFieldSchema = z.string().transform(zodMdxTransform)
 
-export const zodMdxFieldSchemaOptional = z.string().nullable().transform(async (s) => s ? await zodMdxTransform(s) : s)
+export const zodMdxFieldSchemaOptional = z.string().nullable().transform(async (s) => s ? await zodMdxTransform(s) : undefined)
 
 
+export type ParseLatexInput = z.input<typeof zodMdxFieldSchema>
+export type ParsedLatexOutput = z.output<typeof zodMdxFieldSchema>

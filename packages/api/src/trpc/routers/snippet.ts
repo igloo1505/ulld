@@ -1,9 +1,8 @@
-import { prisma } from "#/db"
-import { SnippetCreateInputObjectSchema } from "#/schemas/snippets"
-import { saveSnippet } from "#/trpcInternalMethods/snippets"
-import { snippetFilterParamSchema } from "@ulld/state"
 import { z } from "zod"
 import { publicProcedure, router } from "../trpc"
+import { prisma } from "@ulld/database"
+import { SnippetCreateInputObjectSchema, snippetFilterSchema } from "../../schemas"
+import { saveSnippet } from "../../trpcInternalMethods"
 
 export const snippetRouter = router({
     saveSnippet: publicProcedure.input(SnippetCreateInputObjectSchema).mutation(async (opts) => {
@@ -16,7 +15,7 @@ export const snippetRouter = router({
             }
         })
     }),
-    getSnippets: publicProcedure.input(snippetFilterParamSchema).query(async (opts) => {
+    getSnippets: publicProcedure.input(snippetFilterSchema).query(async (opts) => {
         return await prisma.snippet.findMany({
             where: {
                 language: opts.input.language || undefined,

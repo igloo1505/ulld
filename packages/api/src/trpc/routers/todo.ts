@@ -1,14 +1,10 @@
-import { addTodoListSchema, adidTodoListSchema, todoListAddTaskSchemaTrpc } from "#/plugins/native/todo/zod/general";
-import { prisma } from "#/db";
-// import { stringArrayToTagSubjectOrTopicConnectOrCreate } from "#/utils/plotting/arrayUtils";
-// import { getParsedToDoSearchParams, getToDoSearchParams, todoListNameSchema, todoPriorityChangeSchema, todoStatusChangeSchema, todoStatusDueAtSchema, zodArrayUnion } from "#/zod/local/todo";
 import { Subject, Tag, Topic, Prisma } from "@prisma/client";
 import { publicProcedure, router } from "../trpc";
 import { z } from 'zod'
-// import { TaskListIds } from "#/components/plugins/native/todo/todoListDataTable";
-// import { parseTodoLists } from "#/lib/plugins/native/todo/utils";
-import { taskIdItemSchema } from "#/classes/prismaMdxRelations/zod/todo";
-import { ArrayUtilities } from "@ulld/utilities";
+import { ArrayUtilities, TaskListIds } from "@ulld/utilities";
+import { addTodoListSchema, todoListAddTaskSchemaTrpc } from "../../plugins";
+import { prisma } from "@ulld/database";
+import { getToDoSearchParams, getParsedToDoSearchParams, todoStatusChangeSchema, todoStatusDueAtSchema, todoListNameSchema, zodArrayUnion, todoPriorityChangeSchema, parseTodoLists, taskIdItemSchema } from "@ulld/parsers";
 
 
 
@@ -177,7 +173,7 @@ export const toDoRouter = router({
                     connectOrCreate: ArrayUtilities.stringArrayToTagSubjectOrTopicConnectOrCreate<Topic>(input.topics)
                 },
                 tags: {
-                    connectOrCreate:ArrayUtilities.stringArrayToTagSubjectOrTopicConnectOrCreate<Tag>(input.tags) as Prisma.TagCreateOrConnectWithoutToDoInput[]
+                    connectOrCreate: ArrayUtilities.stringArrayToTagSubjectOrTopicConnectOrCreate<Tag>(input.tags) as Prisma.TagCreateOrConnectWithoutToDoInput[]
                 },
                 subjects: {
                     connectOrCreate: ArrayUtilities.stringArrayToTagSubjectOrTopicConnectOrCreate<Subject>(input.subjects)
@@ -186,7 +182,8 @@ export const toDoRouter = router({
         })
     }),
     createNewToDo: publicProcedure.input(todoListAddTaskSchemaTrpc).mutation(async ({ input }) => {
-        const { listId, ...inputData } = input
+        const { listId } = input
+        const data = todoListAddTaskSchemaTrpc.parse(input)
         return await prisma.toDoList.update({
             where: {
                 id: listId
@@ -194,8 +191,8 @@ export const toDoRouter = router({
             data: {
                 tasks: {
                     create: {
-                        ...inputData,
-                        dueAt: inputData.dueAt ? new Date(inputData.dueAt) : undefined
+                        ...data,
+                        dueAt: data.dueAt ? new Date(data.dueAt) : undefined
                     }
                 }
             }

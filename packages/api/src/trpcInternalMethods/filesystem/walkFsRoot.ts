@@ -1,7 +1,8 @@
 import path from 'path'
 import fs from 'fs'
 import { shouldIgnorePath } from "./shouldIgnoreFilepath";
-import { ParsedAppConfig } from '@ulld/config';
+import { ParsedAppConfig } from '@ulld/configschema';
+
 
 
 export async function* walkFsRoot(dir: string, recursive: boolean = true, ignoreFilePaths: ParsedAppConfig["ignoreFilepaths"] = [] as ParsedAppConfig["ignoreFilepaths"]): AsyncGenerator<string> {

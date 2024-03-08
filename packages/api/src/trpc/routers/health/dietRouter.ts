@@ -1,8 +1,8 @@
-import { prisma } from "#/db";
-import { publicProcedure, router } from "#/trpc/trpc";
 import { z } from 'zod'
 import { Prisma } from '@prisma/client'
-import { dietOnlySchema } from "#/schemas/health/diet";
+import { prisma } from '@ulld/database'
+import { publicProcedure, router } from '../..'
+import { dietOnlySchema } from '../../../plugins'
 
 const dietFilterObject = z.object({
     name: z.string()

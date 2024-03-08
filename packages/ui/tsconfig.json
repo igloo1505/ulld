@@ -1,5 +1,15 @@
 {
     "extends": "@repo/typescript-config/nextjs.json",
+    "include": [
+        "./src/*/**.ts", 
+        "./src/*/**.tsx",
+        "./modules.d.ts"
+    ],
+    "exclude": [
+        "dist",
+        "build",
+        "node_modules"
+    ],
     "compilerOptions": {
         "lib": [
             "dom",
@@ -8,6 +18,8 @@
         "types": [
             "jest",
             "node"
-        ]
+        ],
+        "esModuleInterop": true,
+        "resolveJsonModule": true
     }
 }

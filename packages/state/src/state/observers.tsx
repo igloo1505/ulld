@@ -1,14 +1,15 @@
 "use client"
-import { keyDown, resize } from '#/actions/listeners'
-import { useEffect } from 'react'
-import store, { RootState } from '#/state/store';
-import { connect } from 'react-redux';
-import { setLocalSettings } from './slices/settings';
-import { StatePassedToClient } from '#/types/settings';
-import { setDarkmode, showNoteSheet } from './slices/ui';
-import { usePathname } from 'next/navigation';
-import { setInitialBrowserProps } from '#/actions/dom';
-import { setConfigState } from './slices/config';
+import { useEffect } from "react"
+import { usePathname } from "next/navigation"
+import { RootState, store, setConfigState, setLocalSettings, setDarkmode, showNoteSheet } from "."
+import { connect } from "react-redux"
+import { StatePassedToClient } from "./types/general"
+import { resize } from "../listeners/resize"
+import { keyDown } from "../listeners/keydown"
+import { setInitialBrowserProps } from "../actions/clientOnly/dom"
+
+
+
 const connector = connect((state: RootState, props: any) => ({
     sidebarOpen: state.UI.sidebar.open,
     noteSheetOpen: state.UI.panels.noteSheet,

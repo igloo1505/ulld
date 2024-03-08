@@ -1,4 +1,6 @@
 export * from "./mdx"
-export * from "./sass"
 export * from "./math"
 export * from "./latex"
+export * from "./sass"
+export * from "./citations"
+export * from "./plugins"

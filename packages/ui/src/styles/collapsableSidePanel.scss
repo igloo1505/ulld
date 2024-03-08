@@ -1,0 +1,17 @@
+.collapsableSidePanel {
+  &.right {
+    float: right;
+    transform-origin: right;
+  }
+  &.left {
+    float: left;
+    transform-origin: left;
+  }
+  &:not(.open) {
+    &.left {
+      .collapsableSidePanel-content {
+        transform: translateX(-100%);
+      }
+    }
+  }
+}

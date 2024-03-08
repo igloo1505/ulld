@@ -1,0 +1,30 @@
+.pdfview {
+  position: relative;
+}
+
+.pdf-highlight {
+  cursor: pointer;
+  &.highlight-hover {
+    background-color: #a3e635;
+  }
+}
+
+section.popupAnnotation[data-annotation-id] {
+  color: black;
+  div.popup {
+    width: max-content;
+  }
+}
+
+section.textAnnotation.popupTriggerArea[data-annotation-id][aria-haspopup="dialog"] {
+  img {
+    display: none;
+  }
+}
+
+// TODO: Come back here and apply the same filter or another similar filter to highlighting.
+.hideAnnotationNotes {
+  section.textAnnotation.popupTriggerArea[data-annotation-id][aria-haspopup="dialog"] {
+    display: none;
+  }
+}

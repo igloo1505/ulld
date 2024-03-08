@@ -1,6 +1,6 @@
-import { BibEntry } from "#/classes/prismaMdxRelations/BibEntry"
-import { ToastConfigType } from "#/types/ui"
-import { ConfirmationModalConfig } from "#/types/ui/confirmationModalTypes"
+import { ConfirmationModalConfig, ToastConfigType } from "@ulld/utilities"
+import { BibEntry } from "@ulld/database"
+
 
 export const darkTheme = "night"
 export const lightTheme = "corporate"

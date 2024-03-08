@@ -1,7 +1,7 @@
-import { tagTopicSubjectList } from '#/schemas/taggable/tagTopicSubjectList'
 import { ToDoListStatus, TaskCategory } from '@prisma/client'
-import { dateZodProperty } from '@ulld/utilities'
 import { z } from 'zod'
+import { tagTopicSubjectList } from '../../../../schemas'
+import { dateZodProperty } from '@ulld/utilities'
 const label = z.string().min(3).max(50)
 const priority = z.coerce.number().int().min(0).max(10).default(5)
 const dueAt = dateZodProperty.optional().nullable()
@@ -22,7 +22,7 @@ export const todoFilterFormSchema = z.object({
         z.coerce.number(),
         z.coerce.number().array(),
     ]
-    ).optional().transform((a) => !a ? undefined : Array.isArray(a)  ? a : [a]),
+    ).optional().transform((a) => !a ? undefined : Array.isArray(a) ? a : [a]),
     status,
     listNames
 })
@@ -45,7 +45,7 @@ export const todoListAddTaskSchema = z.object({
 
 
 export const todoListAddTaskSchemaTrpc = z.object({
-    listId: z.number()
+    listId: z.number(),
 }).merge(baseAddTaskSchema)
 
 

@@ -2,7 +2,7 @@ import { Route } from "next"
 
 
 
-export const appConfig = {
+export const physicsMathConfig = {
     fsRoot: "/Users/bigsexy/Desktop/notes/content",
     terminal: {
         logLevel: "debug",

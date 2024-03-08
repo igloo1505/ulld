@@ -1,11 +1,11 @@
-import { checkParsableFiletypesAtPath } from "#/trpcInternalMethods/filesystem/checkParsableFiletypesAtPath"
 import { z } from "zod"
 import { publicProcedure, router } from "../trpc"
-import { currentParsableExtensions, getInternalConfig, ParsableExtensions } from "@ulld/config"
-import { getRootRelativePathsOfFiletype } from "#/trpcInternalMethods/filesystem/getRootRelativePathsOfFiletype"
-import { clearTempDir } from "#/trpcInternalMethods/filesystem/clearTempDir"
-import { getRootRelativePathSchema } from "#/schemas/filesystem/rootRelativePathSchema"
 import fs from 'fs'
+import { getInternalConfig, ParsableExtensions, currentParsableExtensions } from "@ulld/configschema"
+import { getRootRelativePathSchema } from "../../schemas"
+import { checkParsableFiletypesAtPath, getRootRelativePathsOfFiletype, clearTempDir } from "../../trpcInternalMethods"
+
+
 
 
 export const fsUtilRouter = router({

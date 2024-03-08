@@ -1,0 +1,31 @@
+{
+  "name": "@ulld/configschema",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.js",
+  "module": "./src/index.mjs",
+  "types": "./src/index.d.ts",
+  "files": [
+    "src/**"
+  ],
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "dev": "echo 'Add dev script here'",
+    "build": "echo 'Add build script here'",
+    "test": "echo 'Add test script here'",
+    "lint": "echo 'Add lint script here'"
+  },
+  "dependencies": {
+    "@ulld/baseConfigs": "workspace:*",
+    "@ulld/utilities": "workspace:*",
+    "dayjs": "^1.11.10",
+    "glob-to-regexp": "^0.4.1",
+    "next": "^14.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "shiki": "^1.1.7",
+    "zo": "^0.0.2"
+  }
+}

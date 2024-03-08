@@ -1,4 +1,4 @@
-import { ParsedAppConfig, getInternalConfig } from '@ulld/config'
+import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema'
 import fs from 'fs'
 import path from 'path'
 

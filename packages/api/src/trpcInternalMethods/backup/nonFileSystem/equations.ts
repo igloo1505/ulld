@@ -1,4 +1,4 @@
-import { prisma } from "#/db"
+import { prisma } from '@ulld/database'
 import fs from 'fs'
 import path from 'path'
 

@@ -1,7 +1,7 @@
 import { z } from "zod"
 import { publicProcedure, router } from "../trpc"
-import { prisma } from "#/db"
-import { readingListContentTypeSchema } from "#/schemas/readingList"
+import { prisma } from "@ulld/database"
+import { readingListContentTypeSchema } from "../../schemas"
 
 
 

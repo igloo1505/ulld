@@ -1,5 +1,5 @@
-import * as sass from 'sass'
-
+import * as sass from "sass"
+// import "server-only"
 
 export const compileSassString = async (content: string) => {
     return await sass.compileStringAsync(content, { style: "compressed" })

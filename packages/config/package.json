@@ -16,7 +16,8 @@
   "devDependencies": {
     "@ulld/database": "workspace:*",
     "@ulld/utilities": "workspace:*",
-    "@ulld/baseConfigs": "workspace:*"
+    "@ulld/baseConfigs": "workspace:*",
+    "@ulld/configschema": "workspace:*"
   },
   "dependencies": {
     "zod": "^3.22.4"

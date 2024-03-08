@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@tanstack/react-table": "^8.13.2",
-    "@ulld/config": "workspace:*",
+    "mermaid": "^10.6.0",
     "rehype-mathjax": "^4.0.3"
   },
   "packageManager": "pnpm@8.15.4"

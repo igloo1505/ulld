@@ -1,12 +1,13 @@
-import { prisma } from "#/db"
-import { saveQaItem } from "#/trpcInternalMethods/qaItem/saveQaItem"
 import { Prisma } from "@prisma/client"
 import { z } from "zod"
 import { publicProcedure, router } from "../trpc"
-import { qaInputSchema } from "#/schemas/qaItem"
+import { prisma } from "@ulld/database"
+import { saveQaItem } from "../../trpcInternalMethods"
+import { qaInputSchemaTrpc } from "../../schemas"
+
 
 export const qaRouter = router({
-    saveQA: publicProcedure.input(qaInputSchema).mutation(async (opts) => {
+    saveQA: publicProcedure.input(qaInputSchemaTrpc).mutation(async (opts) => {
         return await saveQaItem(opts.input)
     }),
     getSpecificQA: publicProcedure.input(z.string()).query(async (opts) => {

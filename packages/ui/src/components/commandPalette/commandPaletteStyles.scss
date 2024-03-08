@@ -1,0 +1,222 @@
+[cmdk-dialog] {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  [cmdk-root] {
+    max-width: 640px;
+    width: 100%;
+    padding: 8px;
+    background: hsl(var(--background));
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--cmdk-shadow);
+  }
+
+  @media (max-width: 640px) {
+    .framer {
+      // [cmdk-icon-wrapper] {
+      // }
+
+      [cmdk-item-subtitle] {
+        display: none;
+      }
+    }
+  }
+
+  [cmdk-root] {
+    max-width: 640px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 0;
+    // font-family: var(--font-sans);
+    box-shadow: var(--cmdk-shadow);
+
+    .dark & {
+      background: linear-gradient(
+        136.61deg,
+        rgb(39, 40, 43) 13.72%,
+        rgb(45, 46, 49) 74.3%
+      );
+    }
+  }
+
+  [cmdk-header] {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 58px;
+    padding: 0 8px;
+    border-bottom: 1px solid hsl(var(--border));
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+
+  [cmdk-badge] {
+    height: 24px;
+    padding: 0 8px;
+    font-size: 12px;
+    color: var(--gray11);
+    background: var(--gray3);
+    border-radius: 4px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    margin: 16px 16px 0;
+  }
+
+  [cmdk-shortcuts] {
+    display: flex;
+    margin-left: auto;
+    gap: 8px;
+
+    kbd {
+      // font-family: var(--font-sans);
+      font-size: 13px;
+      // color: hsl(var(--muted-foreground));
+    }
+  }
+
+  [cmdk-input] {
+    font-family: var(--font-sans);
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    padding: 20px;
+    outline: none;
+    background-color: transparent;
+    color: var(--gray12);
+    border-bottom: 1px solid hsl(var(--border));
+    border-radius: 0;
+    caret-color: hsl(var(--primary));
+    margin: 0;
+
+    &::placeholder {
+      color: var(--gray9);
+    }
+  }
+
+  [cmdk-item],
+  [cmdk-loading] {
+    content-visibility: auto;
+
+    cursor: pointer;
+    height: 48px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px;
+    // color: hsl(var(--muted-foreground));
+    color: hsl(var(--foreground));
+    user-select: none;
+    will-change: background, color;
+    transition: all 150ms ease;
+    transition-property: none;
+    position: relative;
+
+    &[data-selected="true"] {
+      background: hsl(var(--muted));
+      color: hsl(var(--foreground));
+
+      svg {
+        color: hsl(var(--foreground));
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        z-index: 123;
+        width: 3px;
+        height: 100%;
+        background: hsl(var(--primary));
+      }
+    }
+
+    &[data-disabled="true"] {
+      color: hsl(var(--muted-foreground));
+      cursor: not-allowed;
+    }
+
+    &:active {
+      transition-property: background;
+      background: var(--gray4);
+    }
+
+    & + [cmdk-item],
+    [cmdk-loading] {
+      margin-top: 4px;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      color: var(--gray10);
+    }
+  }
+
+  [cmdk-list] {
+    height: min(300px, var(--cmdk-list-height));
+    max-height: 400px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    transition: 100ms ease;
+    transition-property: height;
+  }
+
+  [cmdk-group-heading] {
+    user-select: none;
+    font-size: 12px;
+    color: var(--gray11);
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  [cmdk-empty] {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    white-space: pre-wrap;
+    color: var(--gray11);
+  }
+
+  .side-by-side {
+    .cmdListLeft {
+      width: 40%;
+    }
+    .cmdItemsPanel {
+      min-height: 308px;
+      display: flex;
+    }
+    [cmdk-framer-right] {
+      position: absolute;
+      top: 68px;
+      right: 0;
+      height: calc(100% - 68px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      margin-left: 8px;
+      width: 60%;
+    }
+  }
+
+  // DISABLED: Consider adding this back in if you want the labels. Disabling them here to avoid changing 4 different files for something that might bcome back.
+  [cmdk-group-heading] {
+    display: none;
+  }
+}

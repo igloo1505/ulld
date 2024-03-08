@@ -1,8 +1,3 @@
-export const darkTheme = "night"
-export const lightTheme = "corporate"
-
-
-
 export interface InitialFunctionalityStateType {
     hasInitialState: boolean
     currentNoteId: number | undefined

@@ -1,0 +1,50 @@
+// @tailwind components;
+
+:root {
+  --fc-page-bg-color: hsl(var(--card));
+  --fc-border-color: hsl(var(--muted-foreground));
+  --fc-button-bg-color: hsl(var(--primary));
+  --fc-button-text-color: hsl(var(--primary-foreground));
+  // --fc-button-active-bg-color: hsl(var(--primary) / 0.8);
+  --fc-button-active-bg-color: transparent;
+  --fc-button-active-border-color: hsl(var(--primary));
+  --fc-button-hover-bg-color: hsl(var(--primary) / 0.8);
+  --fc-button-hover-border-color: hsl(var(--border));
+  --fc-button-border-color: hsl(var(--border));
+  --fc-today-bg-color: hsl(var(--secondary));
+  --fc-list-event-hover-bg-color: hsl(var(--muted));
+  --fc-neutral-bg-color: hsl(var(--secondary));
+  --fc-now-indicator-color: #4d7c0f;
+}
+
+.dark {
+  --fc-now-indicator-color: #84cc16;
+}
+
+.fc-header-toolbar {
+  gap: 0.5rem;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+  color: hsl(var(--foreground));
+}
+
+.fc .fc-button-primary:focus {
+  box-shadow: none;
+}
+
+.fc .fc-list-event.fc-event-forced-url:hover a {
+  text-decoration: none;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active:focus,
+.fc .fc-button-primary:not(:disabled):active:focus {
+  box-shadow: none;
+}
+// .fc-view {
+//   width: min(768px, 83vw);
+// }
+// .fc-view:not(.fc-multiMonthYear-view) {
+//   max-width: 768px;
+// }

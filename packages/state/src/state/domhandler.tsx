@@ -1,11 +1,9 @@
 "use client"
-import { indicateBookmarked, setQuickLinkHtmlId } from '#/actions/dom'
 import { useEffect } from 'react'
-import store from './store'
 import { setCurrentNoteData, setCurrentNoteId } from './slices/functionality'
-import { usePathname } from 'next/navigation'
-import { client } from '#/trpc/client'
-import { getHeadingHierarchy } from '#/lib/formatting/getHeadingHierarchy'
+import { store } from '.'
+import { getHeadingHierarchy } from '..'
+import { setQuickLinkHtmlId, indicateBookmarked } from '../actions/clientOnly/dom'
 
 
 export interface ClientsideDomEventsProps {
@@ -16,24 +14,18 @@ export interface ClientsideDomEventsProps {
 }
 
 
-const ClientsideNoteEvents = ({ bookmarked, fs, noteId, noteQuickLinkId }: ClientsideDomEventsProps) => {
-
-    let pathname = usePathname()
-
+export const ClientsideNoteEvents = ({ bookmarked, fs, noteId, noteQuickLinkId }: ClientsideDomEventsProps) => {
     useEffect(() => {
         setQuickLinkHtmlId(noteQuickLinkId)
     }, [noteQuickLinkId])
 
 
-    const checkFsNoteId = async () => {
-        let id = await client.getNoteIdByHref.query(pathname)
-        if (id !== null) {
-            store.dispatch(setCurrentNoteData({
-                id,
-                currentToc: getHeadingHierarchy()
-            }))
-            store.dispatch(setCurrentNoteId(id))
-        }
+    const checkFsNoteId = async (_id: number) => {
+        store.dispatch(setCurrentNoteData({
+            id: _id,
+            currentToc: getHeadingHierarchy()
+        }))
+        store.dispatch(setCurrentNoteId(_id))
     }
 
 
@@ -44,8 +36,8 @@ const ClientsideNoteEvents = ({ bookmarked, fs, noteId, noteQuickLinkId }: Clien
                 id: noteId,
                 currentToc: getHeadingHierarchy()
             }))
-        } else if (fs) {
-            checkFsNoteId()
+        } else if (fs && noteId) {
+            checkFsNoteId(noteId)
         }
     }, [bookmarked, noteId])
 
@@ -56,4 +48,3 @@ const ClientsideNoteEvents = ({ bookmarked, fs, noteId, noteQuickLinkId }: Clien
 ClientsideNoteEvents.displayName = "ClientsideDomEvents"
 
 
-export default ClientsideNoteEvents;

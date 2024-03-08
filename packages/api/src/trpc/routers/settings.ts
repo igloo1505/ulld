@@ -1,7 +1,8 @@
-import { prisma } from "#/db";
+import { prisma } from "@ulld/database";
+import { settingsChangeSchema } from "../../schemas";
 import { publicProcedure, router } from "../trpc";
 import { z } from 'zod'
-import { settingsChangeSchema } from "#/schemas/settings/settingsChangeSchema";
+
 
 
 const settingBoolKeyArr = [
@@ -20,9 +21,6 @@ export const settingsRouter = router({
                 id: 1
             }
         })
-    }),
-    getLastBibSyncDate: publicProcedure.query(async ({ input }) => {
-        let d = await prisma.bib.findFirst({})
     }),
     toggleBooleanSetting: publicProcedure.input(settingBooleanKeySchema).mutation(async ({ input }) => {
         let currentVal = await prisma.settings.findFirst({

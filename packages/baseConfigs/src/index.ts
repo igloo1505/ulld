@@ -1,1 +1,1 @@
-export { appConfig as physicsMathConfig } from "./validConfig"
+export * from "./validConfig"

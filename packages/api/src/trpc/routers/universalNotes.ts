@@ -1,7 +1,7 @@
 import { publicProcedure, router } from "../trpc"
-import { prisma } from "#/db"
 import { z } from "zod"
-import { getFsNote } from "#/trpcInternalMethods/filesystem/fsnotes"
+import { prisma } from "@ulld/database"
+import { getFsNote } from "../../trpcInternalMethods"
 
 
 

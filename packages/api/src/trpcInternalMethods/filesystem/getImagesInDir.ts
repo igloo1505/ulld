@@ -1,6 +1,7 @@
-import { ParsedAppConfig, getInternalConfig } from "@ulld/config"
+import { ParsedAppConfig, getInternalConfig } from "@ulld/configschema"
 import { walkFsRoot } from "./walkFsRoot"
 import path from 'path'
+
 
 
 export const getImagesInDir = async ({ path: _path, recursive }: { path: string, recursive?: boolean }, _config?: ParsedAppConfig) => {

@@ -1,5 +1,6 @@
-import { prisma } from "#/db"
-import { autoSetting } from "@prisma/client"
+import { prisma, autoSetting } from "@ulld/database"
+
+
 
 export const getDbAutoSettings = async (type?: autoSetting) => {
     return await prisma.autoSetting.findMany({

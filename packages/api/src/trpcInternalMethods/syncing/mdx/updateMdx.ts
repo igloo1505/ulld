@@ -1,8 +1,10 @@
-import { MdxNote } from "#/classes"
-import { prisma } from "#/db"
-import { AutoSettingWithRegex } from "#/trpc/routers/sync"
-import { ParsedAppConfig } from "@ulld/config"
 import { logger } from "@ulld/logger/server"
+import { MdxNote } from "../../../classes"
+import { prisma } from "@ulld/database"
+import { ParsedAppConfig } from "@ulld/configschema"
+import { AutoSettingWithRegex } from "../../../trpc"
+
+
 
 
 export const updateMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRegex[] = [], config: ParsedAppConfig) => {

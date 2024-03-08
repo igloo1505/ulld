@@ -1,11 +1,13 @@
-import { prisma } from "#/db";
-import { AutoSettingWithRegex } from "#/trpc/routers/sync";
-import { getInternalConfig } from "@ulld/config";
 import fs from 'fs'
 import path from 'path'
-import { SyncOptions } from "#/schemas/syncing/syncOptions";
 import { syncMdx } from "./syncMdx";
-import { shouldIgnorePath } from "#/trpcInternalMethods/filesystem/shouldIgnoreFilepath";
+import { getInternalConfig } from '@ulld/configschema';
+import { shouldIgnorePath } from '../..';
+import { SyncOptions } from '../../../schemas';
+import { AutoSettingWithRegex } from '../../../trpc';
+import { prisma } from '@ulld/database';
+
+
 
 export const syncDirRecursively = async (dir: string, removeIfNotPresentInFs: boolean, autoSettings: AutoSettingWithRegex[], options?: SyncOptions) => {
     var walk = function(dir: string, done: (err?: NodeJS.ErrnoException, results?: string[]) => void) {
