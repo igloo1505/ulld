@@ -1,5 +1,5 @@
 "use client"
-import { Button } from '#/components/shad/ui/button'
+import { Button } from '@ulld/tailwind/base'
 import React from 'react'
 
 

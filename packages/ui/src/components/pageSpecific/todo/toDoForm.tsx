@@ -1,15 +1,14 @@
 /* TEMPORARY: Not currently in use. Delete if not needed. */
 "use client"
-import type { serverClient } from '#/trpc/serverClient'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { ToDoZodSchema, todoZodFormSchema } from '#/zod/local/todo'
 import React, { MouseEvent, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import SideFormContainer from '#/components/layout/uniqueLayouts/sideMenu/sideFormContainer';
 import ToDoListFormStepOne from './steps/one'
 import ToDoListFormStepTwo from './steps/two'
 import ToDoListFormStepThree from './steps/three'
-import { TaskCategory } from '@prisma/client'
+import type { serverClient } from '@ulld/api'
+import { ToDoZodSchema, todoZodFormSchema } from '@ulld/parsers'
+import SideFormContainer from '../../layouts/sideMenu/sideFormContainer'
 
 
 
@@ -45,7 +44,7 @@ const ToDoForm = ({ editing }: ToDoFormProps) => {
             details: editing?.details || "",
             dueAt: editing?.dueAt || getNextDefaultTime(),
             tags: editing?.tags ? editing.tags.map((e) => e.value) : [],
-            topics: editing?.topics ? editing.topics.map((e) => e.name) : [],
+            topics: editing?.topics ? editing.topics.map((e) => e.value) : [],
             category: editing?.category ? [editing.category] : [],
             topicInput: "",
             tagInput: ""

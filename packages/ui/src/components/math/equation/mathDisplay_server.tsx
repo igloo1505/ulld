@@ -1,12 +1,12 @@
-import { conditionallyParseMath } from '#/actions/server/trpcAccessible/parsing'
-import { MathjaxParserParams } from '#/types/noteContentAndQuery/mathjaxParserParams'
-import { getRandomId } from '#/utils/ui'
+import { parseLatexString, serverClient } from '@ulld/api'
+import { MathjaxParserParams } from '@ulld/parsers'
+import { getRandomId } from '@ulld/utilities'
 import clsx from 'clsx'
 import React from 'react'
 
 
 
-interface MathDisplayServerProps {
+interface MathDisplaySERVERProps {
     math?: string
     children?: string
     display?: boolean
@@ -20,7 +20,7 @@ interface MathDisplayServerProps {
 }
 
 
-const MathDisplayServer = async ({ math, children, stylesContainerId, autoWrap, className, display, element = "div", isMathOnly = false, elementProps = {}, mathjaxOptions = {} }: MathDisplayServerProps) => {
+export const MathDisplaySERVER = async ({ math, children, stylesContainerId, autoWrap, className, display, element = "div", isMathOnly = false, elementProps = {}, mathjaxOptions = {} }: MathDisplaySERVERProps) => {
 
     if (!math && !children) return null
     const id = stylesContainerId ? stylesContainerId : getRandomId()
@@ -30,8 +30,16 @@ const MathDisplayServer = async ({ math, children, stylesContainerId, autoWrap, 
         ...elementProps
     }
 
-    const content = await conditionallyParseMath({ math, children, display, autoWrap, mathjaxOptions, isMathOnly, stylesContainerId: id })
-
+    /* const content = await conditionallyParseMath({ math, children, display, autoWrap, mathjaxOptions, isMathOnly, stylesContainerId: id }) */
+    if (!math) return null
+    let content = await parseLatexString({
+        content: math,
+        appendStylesToId: id,
+        autoWrap,
+        options: {
+            inline: !display
+        }
+    })
 
     if (!content) return null
 
@@ -127,7 +135,5 @@ const MathDisplayServer = async ({ math, children, stylesContainerId, autoWrap, 
 }
 
 
-MathDisplayServer.displayName = "MathDisplayServer"
+MathDisplaySERVER.displayName = "MathDisplaySERVER"
 
-
-export default MathDisplayServer;

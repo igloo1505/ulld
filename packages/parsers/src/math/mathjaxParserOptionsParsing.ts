@@ -9,7 +9,7 @@ export const mathjaxParserOptionsSchema = z.object({
     styles: z.boolean().optional(),
     container: z.boolean().optional(),
     fontCache: z.boolean().optional(),
-    assistiveMml: z.boolean().optional(),
+    assistiveMml: z.boolean().default(false),
     autoWrap: z.boolean().optional(),
     matchFontHeight: z.boolean().optional()
 }).partial()

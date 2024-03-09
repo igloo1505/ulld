@@ -1,7 +1,6 @@
 "use client"
-import { Button } from '#/components/shad/ui/button';
-import { SnippetListItemProps } from '#/lib/validators/snippets';
-import { copyStringToClipboard } from '#/utils/interaction/copyString';
+import { Button } from '@ulld/tailwind/base';
+import { SnippetListItemProps, copyStringToClipboard } from '@ulld/utilities';
 import Link from 'next/link';
 import React from 'react'
 

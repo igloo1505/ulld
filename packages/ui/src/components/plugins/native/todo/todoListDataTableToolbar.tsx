@@ -1,7 +1,3 @@
-import FullFormProvider from '#/components/layout/uniqueLayouts/fullForm/FullFormProvider'
-import { Button } from '#/components/shad/ui/button'
-import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from '#/components/shad/ui/dropdown-menu'
-import { Input } from '#/components/shad/ui/input'
 import {
     ColumnFiltersState,
     CoreColumn,
@@ -13,17 +9,17 @@ import { ChevronDown, DiffIcon, ListTodoIcon } from 'lucide-react'
 import React from 'react'
 import ToDoListPrioritySelect from './ToDoListPrioritySelect'
 import ToDoListStatusSelect from './ToDoListStatusSelect'
-import { TaskListIds, ToDoTableOutput } from './todoListDataTable'
-import { useViewport } from '#/hooks/useViewport'
 import clsx from 'clsx'
-import DataTableDropdownCheckboxListInput, { DropdownOptionType } from '#/components/layout/uniqueLayouts/datatable/datatableFilterButton'
 import { useRouter } from 'next/navigation'
 import { FieldValues, Path, PathValue, useForm } from 'react-hook-form'
-import { formatSearchAllParams } from '#/lib/formatting/formatSearchAllParams'
-import { toggleItemInArray } from '#/utils/plotting/arrayUtils'
-import { ToDoSearchParamInput, ToDoSearchParams } from '#/zod/local/todo'
-import { TodoTaskOutput } from '#/classes/prismaMdxRelations/zod/todo'
-
+import { TodoTaskOutput } from '@ulld/parsers'
+import { useViewport, formatSearchAllParams } from '@ulld/state'
+import { Input, Button, DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuCheckboxItem } from '@ulld/tailwind'
+import { ArrayUtilities, TaskListIds } from '@ulld/utilities'
+import { ToDoTableOutput, ToDoSearchParams, ToDoSearchParamInput } from '.'
+import { DropdownOptionType } from '../../..'
+import FullFormProvider from '../../../menus/fullForm/FullFormProvider'
+import DataTableDropdownCheckboxListInput from '../../../tables/datatable/datatableFilterButton'
 
 dayjs.extend(advancedFormat)
 
@@ -76,7 +72,7 @@ const ToDoListTableToolBar = <T extends FieldValues>({ table, listNames, selecte
     const togglePriorityFilter = (item: DropdownOptionType) => {
         console.log("item in togglePriorityFilter ", item)
         if (item.id) {
-            let newArr = toggleItemInArray<number>(form.getValues("priority" as Path<T>) || [], item.id)
+            let newArr = ArrayUtilities.toggleItemInArray<number>(form.getValues("priority" as Path<T>) || [], item.id)
             form.setValue("priority" as Path<T>, newArr as PathValue<T, Path<T>>)
         }
     }
@@ -163,7 +159,7 @@ const ToDoListTableToolBar = <T extends FieldValues>({ table, listNames, selecte
                     toggle={(item: DropdownOptionType) => {
                         const itemId = item.id as number
                         if (!itemId) return console.log(`No item.id was found for `, item)
-                        const _newListIds = toggleItemInArray(currentListIds, itemId)
+                        const _newListIds = ArrayUtilities.toggleItemInArray(currentListIds, itemId)
                         console.log("_newListIds: ", _newListIds)
                         if (!itemId) return console.error("No listName id was found in the todoListDataTableToolbar component")
                         if (!_newListIds.length) return

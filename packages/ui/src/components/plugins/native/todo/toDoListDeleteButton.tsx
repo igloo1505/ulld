@@ -1,7 +1,7 @@
 "use client"
-import { Button } from '#/components/shad/ui/button'
-import { client } from '#/trpc/client'
+import { client } from '@ulld/api'
 import React from 'react'
+import { Button } from '@ulld/tailwind/base'
 import { createPortal } from 'react-dom'
 
 

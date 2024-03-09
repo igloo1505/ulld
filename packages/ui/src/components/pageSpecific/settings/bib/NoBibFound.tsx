@@ -1,6 +1,7 @@
-import { initializeBib } from '#/actions/client/async'
-import Checkbox from '#/components/inputs/checkbox'
+import { Checkbox } from '@ulld/tailwind/base'
 import React, { useState } from 'react'
+import { initializeBib } from '..'
+import { LabeledCheckbox } from '../../..'
 
 
 
@@ -37,7 +38,8 @@ const NoBibFoundPrompt = (props: NoBibFoundPromptProps) => {
                         <p className="py-2.5 px-3 text-gray-500 bg-gray-100 dark:bg-gray-800 dark:border-gray-700 border border-l-0 rtl:rounded-l-lg rtl:rounded-r-none rtl:border-r-0 rtl:border-l rounded-r-lg">.bib</p>
                     </div>
                     <div className={"flex flex-row justify-between items-center gap-4 w-full"}>
-                        <Checkbox label={databaseOnly ? "Initializing Database" : "Initializing file & database"}
+                        <LabeledCheckbox
+                            label={databaseOnly ? "Initializing Database" : "Initializing file & database"}
                             checked={!databaseOnly}
                             onChange={() => setDatabaseOnly(!databaseOnly)}
                         />

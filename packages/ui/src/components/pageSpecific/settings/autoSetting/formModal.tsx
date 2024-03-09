@@ -1,16 +1,12 @@
 "use client"
-import { Button } from '#/components/shad/ui/button'
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '#/components/shad/ui/dialog'
-import { AutoSettingType } from '#/trpc/routers/sync'
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, Button, useToast } from '@ulld/tailwind/base'
 import React from 'react'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
-import { AutoPropertyFormSchema } from '#/zod/local/autoProperty'
 import { zodResolver } from '@hookform/resolvers/zod'
 import AutoSettingForm from './autoSettingForm'
-import { client } from '#/trpc/client'
-import { useToast } from '#/components/shad/ui/use-toast'
-import { useRouter } from 'next/navigation'
+import { AutoSettingType, AutoPropertyFormSchema, client } from '@ulld/api'
+import { useRouter } from 'next/router'
 
 
 

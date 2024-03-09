@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
-import MdxProvider from '#/components/wrappers/mdxProvider';
 import ClientFlipCard from './card/clientFlipCard';
+import MdxProvider from '../../mdxContent/mdxProvider';
 
 
 

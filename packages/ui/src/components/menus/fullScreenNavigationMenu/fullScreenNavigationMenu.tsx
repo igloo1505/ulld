@@ -5,7 +5,6 @@ import FullScreenNavigationGroup from './fullScreenNavigationGroup'
 import { formatLocationData, NoteTypeOverview } from '@ulld/state'
 
 
-
 interface FullScreenNavigationMenuProps {
     backOnClick?: boolean
     isPopupState?: boolean

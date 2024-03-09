@@ -1,10 +1,6 @@
 "use client"
-import React, { useEffect, useId, useState } from 'react'
+import React, { useId, useState } from 'react'
 import FlipCardFront from './flipCardFront'
-import { run } from '@mdx-js/mdx'
-import { client } from '#/trpc/client'
-import * as prodRuntime from 'react/jsx-runtime'
-import * as devRuntime from 'react/jsx-dev-runtime'
 import FlipCardBack from './flipCardBack'
 import "#/styles/flipcard.scss"
 import "#/styles/mdx.scss"

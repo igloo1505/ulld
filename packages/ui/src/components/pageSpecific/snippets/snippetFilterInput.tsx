@@ -1,8 +1,8 @@
 "use client"
-import { Input } from '#/components/shad/ui/input'
+import { Input } from '@ulld/tailwind/base'
 import React from 'react'
-import { SnippetFilterParams } from './snippetFilterParams'
 import { useRouter } from 'next/navigation'
+import { SnippetFilterParams } from '@ulld/utilities'
 
 
 const SnippetFilterInput = ({ params }: { params: SnippetFilterParams }) => {

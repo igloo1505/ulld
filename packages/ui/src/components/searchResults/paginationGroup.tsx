@@ -1,10 +1,10 @@
 "use client"
 import { Route } from 'next'
 import React from 'react'
-import ReactPaginate, { ReactPaginateProps } from 'react-paginate'
+import ReactPaginate from 'react-paginate'
 import "#/styles/paginationStyles.scss"
-import { SearchAllParams, formatSearchAllParams } from '#/lib/formatting/formatSearchAllParams'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { SearchAllParams, formatSearchAllParams } from '@ulld/state'
 
 
 type NumStr = number | string

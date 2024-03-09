@@ -1,11 +1,10 @@
+/* BUG: This is completely broken after the migration to a monorepo. Rebuild the entire settings page with space for much of the appConfig. Use a layout similar to the nested lawyerVid profile pages. */
 "use client"
-import { setSettingValue } from '#/actions/settings'
-import TextInput from '#/components/inputs/text'
-import { Switch } from '#/components/shad/ui/switch'
-import { client } from '#/trpc/client'
-import { SettingBoolean } from '#/types/settings'
+import { Switch, Input } from '@ulld/tailwind/base'
+import { client } from '@ulld/api'
 import clsx from 'clsx'
 import React, { ChangeEvent, useId, useState } from 'react'
+import { SettingBoolean } from '../../../../../state/src/state/types/general'
 
 
 
@@ -40,17 +39,17 @@ const SettingItem = ({ type, containerClassName, inputClassName, value, label, s
     }
     if (type === "text") {
         const handleUpdate = async () => {
-            const { success, settings } = await setSettingValue(setting, textValue)
+            /* const { success, settings } = await setSettingValue(setting, textValue) */
         }
         const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
             const target = e.target as HTMLInputElement
             setValue(target.value)
         }
         return (
-            <TextInput value={textValue} label={label} onChange={handleChange} onUpdate={handleUpdate} classes={{
-                container: containerClassName,
-                input: inputClassName
-            }}
+            <Input value={textValue}
+                onChange={handleChange}
+                placeholder="This is broken. Rebuild the entire settings page."
+            /* className={} */
             />
         )
     }

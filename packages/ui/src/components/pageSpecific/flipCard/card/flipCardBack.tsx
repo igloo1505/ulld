@@ -1,5 +1,5 @@
-import { getComponentMap } from '#/components/markdown/componentMap'
 import React from 'react'
+import { getComponentMap } from '../../..'
 
 
 

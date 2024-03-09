@@ -1,14 +1,13 @@
 "use client"
 import React from 'react'
-import { SnippetFilterParams } from './snippetFilterParams'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '#/components/shad/ui/select'
-import { TechnologiesNameMap } from '#/utils/prisma/technologiesMap'
 import { useRouter } from 'next/navigation'
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@ulld/tailwind/base'
+import { SnippetFilterParams, technologiesNameMap } from '@ulld/utilities'
 
 
 const techArr = {
     all: "All",
-    ...TechnologiesNameMap
+    ...technologiesNameMap
 }
 
 interface SnippetLanguageSelectProps {
@@ -40,7 +39,7 @@ const SnippetLanguageSelect = ({ params }: SnippetLanguageSelectProps) => {
             </SelectTrigger>
             <SelectContent>
                 {keys.map((k) => {
-                    return <SelectItem key={k} value={k}>{k === "all" ? "All" : TechnologiesNameMap[k as keyof typeof TechnologiesNameMap]}</SelectItem>
+                    return <SelectItem key={k} value={k}>{k === "all" ? "All" : technologiesNameMap[k as keyof typeof technologiesNameMap]}</SelectItem>
                 })}
             </SelectContent>
         </Select>

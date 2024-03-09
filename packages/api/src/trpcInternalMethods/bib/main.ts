@@ -1,4 +1,4 @@
-import { prisma } from "@ulld/database"
+import { prisma, Prisma } from "@ulld/database"
 
 export const getBibWithEntries = async (bibId?: number) => {
     let res1 = await prisma.bib.findFirst({
@@ -59,3 +59,7 @@ export const getBibFilename = async (input?: number) => {
     })
     return bib?.filename
 }
+
+
+
+export type BibWithEntries = Prisma.PromiseReturnType<typeof getBibWithEntries>

@@ -101,21 +101,6 @@ model AutoSetting {
     value String
 }
 
-enum CitationSourceType {
-    article
-    book
-    booklet
-    conference
-    inbook
-    incollection
-    inproceedings
-    manual
-    phdthesis
-    misc
-    proceedings
-    techreport
-    unpublished
-}
 
 model ReadingList {
     name        String     @id @unique

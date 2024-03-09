@@ -1,11 +1,12 @@
 "use client"
-import { DataTableDropdownCheckboxListInputProps } from '#/components/layout/uniqueLayouts/datatable/datatableFilterButton';
-import FullDataTableDropdownCheckboxListInput from '#/components/layout/uniqueLayouts/datatable/fullDataTable/FullDataTableFilterButton';
-import FullFormTagSubjectTopicComboBox, { FullFormTagSubjectTopicComboBoxProps } from '#/components/layout/uniqueLayouts/fullForm/fullFormTagTopicSubjectComboBox';
 import { ToDoListStatus } from '@prisma/client';
 import { Column, ColumnFiltersState } from '@tanstack/react-table';
 import React from 'react'
 import { FieldValues, Path } from 'react-hook-form';
+import { FullFormTagSubjectTopicComboBoxProps, DataTableDropdownCheckboxListInputProps } from '../../..';
+import FullFormTagSubjectTopicComboBox from '../../../menus/fullForm/fullFormTagTopicSubjectComboBox';
+import FullDataTableDropdownCheckboxListInput from '../../../tables/datatable/fullDataTable/FullDataTableFilterButton';
+import { replaceRecursively } from '@ulld/utilities';
 
 
 
@@ -28,7 +29,7 @@ const ToDoListStatusSelect = <T extends FieldValues>(props: ToDoListStatusSelect
                 options={Object.keys(ToDoListStatus)}
                 placeholder={"Status"}
                 groupClasses={"max-h-[30vh] overflow-y-auto no-scrollbar"}
-                displayTransform={(s) => s.replaceAll("_", " ")}
+                displayTransform={(s) => replaceRecursively(s, "_", " ")}
             />
         )
     }
@@ -37,7 +38,7 @@ const ToDoListStatusSelect = <T extends FieldValues>(props: ToDoListStatusSelect
         <FullDataTableDropdownCheckboxListInput
             {...props as any}
             options={Object.keys(ToDoListStatus).map((k) => ({
-                label: k.replaceAll("_", " "),
+                label: replaceRecursively(k, "_", " "),
                 name: k as NonNullable<Path<T>>
             }))}
             toggle={(name: string) => {

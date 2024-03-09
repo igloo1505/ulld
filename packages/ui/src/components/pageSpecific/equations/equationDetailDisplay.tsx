@@ -1,14 +1,12 @@
 import React from 'react'
 import { EditEquationItem } from './addEquationFormWrapper'
-import { H3 } from '#/components/markdown/text/heading'
-import MathDisplay from '#/components/specificTypeDisplay/equation/mathDisplay'
 import { formatEquationSearchParams } from './utils'
-import CopyTextButton from '#/components/functionality/copyButton'
 import { HashIcon } from 'lucide-react'
 import EquationDisplayBadge from './equationDisplayBadge'
 import EquationDetailLinkButton from './equationDisplayButton'
-import CodeHighlightContainer from '#/components/functionality/codeHighlightContainer'
-import SerializedMdxStringDisplayServer from '#/components/specificTypeDisplay/markdown/mdx/serializeMdxStringDisplayServer'
+import { H3, MathDisplaySERVER, MdxContentSERVER } from '../..'
+import CopyTextButton from '../../buttons/utility/copyButton'
+import CodeHighlightContainer from '../../code/syntaxHighlighting/codeHighlightContainer'
 
 
 interface EquationDetailDisplayProps {
@@ -26,22 +24,20 @@ const EquationDetailDisplay = ({ equation: item, isModal = false }: EquationDeta
         >
             <div className={"w-fit h-fit"}>
                 <H3>
-                    <SerializedMdxStringDisplayServer
-                        data={item.title}
+                    <MdxContentSERVER
+                        content={item.title}
                     /* stylesId={`${id}-title`} */
                     />
                 </H3>
-                {item.desc && item.desc !== "" && <MathDisplay
-                    element="p"
-                    math={item.desc}
+                {item.desc && item.desc !== "" && <MdxContentSERVER
+                    content={item.desc}
                     className={"text-sm text-muted-foreground"}
-                    stylesId={`${id}-desc`}
                 />}
-                <MathDisplay
+                <MathDisplaySERVER
                     isMathOnly
                     display
                     math={item.content}
-                    stylesId={`${id}-content`}
+                    stylesContainerId={`${id}-content`}
                     className={"text-xl my-4"}
                 />
                 {item.asPython && (

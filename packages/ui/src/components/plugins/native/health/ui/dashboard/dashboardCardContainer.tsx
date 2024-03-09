@@ -1,7 +1,7 @@
-import { Card } from '#/components/shad/ui/card'
-import { BaseDashboardCardProps } from '#/types/plugins/native/health/dashboard'
+import { Card } from '@ulld/tailwind'
 import clsx from 'clsx'
 import React from 'react'
+import { BaseDashboardCardProps } from '.'
 
 
 

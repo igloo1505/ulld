@@ -1,22 +1,16 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import CheckboxGroup from '../../layout/uniqueLayouts/fullForm/checkboxGroup';
-import LabeledCheckbox from '../../layout/uniqueLayouts/fullForm/labeledCheckbox';
-import store from '#/state/store';
-import { toggleSetting } from '#/state/slices/settings';
-import { RetrievedSettings } from '#/state/initialState/settings';
-import BibSettingsSection, { BibSettingsSectionProps } from './bib/BibSettingsSection';
-import { Button } from '#/components/shad/ui/button';
-import { BibWithEntries } from '#/types/prisma/includeTypes';
-import { FormItem, Form, FormLabel, FormControl, FormDescription, FormMessage, FormField } from '#/components/shad/ui/form';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '#/components/shad/ui/select';
+import { FormItem, Form, FormLabel, FormControl, FormDescription, FormMessage, FormField, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Button, useToast } from '@ulld/tailwind/base';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { client } from '#/trpc/client';
-import { settingsChangeSchema } from '#/zod/local/settingsChange';
-import { useToast } from '#/components/shad/ui/use-toast';
 import deepEql from 'deep-eql'
+import { settingsChangeSchema, client, BibWithEntries } from '@ulld/api';
+import { RetrievedSettings, store, toggleSetting } from '@ulld/state';
+import { BibSettingsSectionProps } from '.';
+import CheckboxGroup from '../../menus/fullForm/checkboxGroup';
+import LabeledCheckbox from '../../menus/fullForm/labeledCheckbox';
+import BibSettingsSection from './bib/BibSettingsSection';
 
 
 
@@ -47,14 +41,14 @@ const SettingsPageContent = ({ settings, fileExists, bib, ...props }: SettingsPa
     })
 
     const lockCurrentImage = async () => {
-        await client.lockCurrentLandingImage.mutate("current")
+        await client.settings.lockCurrentLandingImage.mutate("current")
         toast({
             description: "The home page image will not change until this setting is changed."
         })
     }
 
     const clearLockedImage = async () => {
-        await client.lockCurrentLandingImage.mutate("clear")
+        await client.settings.lockCurrentLandingImage.mutate("clear")
         toast({
             description: "The landing page image will now change automatically once per day."
         })
@@ -63,7 +57,7 @@ const SettingsPageContent = ({ settings, fileExists, bib, ...props }: SettingsPa
 
     const saveSettings = async (settingData: SettingSchemaType) => {
         console.count(`saveSettings`)
-        await client.updateSettings.mutate(settingData)
+        await client.settings.updateSettings.mutate(settingData)
         toast({
             title: "Success",
             description: "Settings have been saved successfully."

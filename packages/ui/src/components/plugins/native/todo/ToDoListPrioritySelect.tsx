@@ -1,11 +1,11 @@
-import { DropdownOptionType } from '#/components/layout/uniqueLayouts/datatable/datatableFilterButton';
-import FullDataTableDropdownCheckboxListInput from '#/components/layout/uniqueLayouts/datatable/fullDataTable/FullDataTableFilterButton';
-import { FullFormSelectInputProps } from '#/components/layout/uniqueLayouts/fullForm/fullFormSelect';
-import FullFormTagSubjectTopicComboBox from '#/components/layout/uniqueLayouts/fullForm/fullFormTagTopicSubjectComboBox';
-import { ToDoSearchParams } from '#/zod/local/todo';
 import { Column, ColumnFiltersState } from '@tanstack/react-table';
+import { ToDoSearchParams } from '@ulld/parsers';
 import React from 'react'
 import { FieldValues, Path } from 'react-hook-form';
+import { FullFormSelectInputProps, DropdownOptionType } from '../../..';
+import FullFormTagSubjectTopicComboBox from '../../../menus/fullForm/fullFormTagTopicSubjectComboBox';
+import FullDataTableDropdownCheckboxListInput from '../../../tables/datatable/fullDataTable/FullDataTableFilterButton';
+import { replaceRecursively } from '@ulld/utilities';
 
 
 interface ToDoListPrioritySelectProps<T extends FieldValues, H extends HTMLElement, L extends string> extends Partial<Omit<FullFormSelectInputProps<T, H, L>, "name">> {
@@ -48,7 +48,7 @@ const ToDoListPrioritySelect = <T extends FieldValues, L extends string>({ name,
                 options={priorityStrings}
                 placeholder={"Priority"}
                 groupClasses={"max-h-[30vh] overflow-y-auto no-scrollbar"}
-                displayTransform={(s) => s.replaceAll("_", " ")}
+                displayTransform={(s) => replaceRecursively(s, "_", " ")}
             />
         )
     }

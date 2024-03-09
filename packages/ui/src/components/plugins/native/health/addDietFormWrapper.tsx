@@ -3,19 +3,17 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { z } from 'zod'
-import { dietFormDefaultValues, dietFormSchema } from './formUtils';
-import FullFormContainer from '#/components/layout/uniqueLayouts/fullForm/fullFormContainer';
-import { DietEditing } from '#/types/plugins/native/health/dietTypes';
-import FullFormFormPage from '#/components/layout/uniqueLayouts/fullForm/fullScreenFormPage';
-import FullFormInput from '#/components/layout/uniqueLayouts/fullForm/fullFormInput';
+import { DietEditing, dietFormDefaultValues, dietFormSchema } from './formUtils';
 import { DevTool } from '@hookform/devtools';
-import FullFormTextArea from '#/components/layout/uniqueLayouts/fullForm/fullFormTextArea';
-import FullFormLabeledCheckbox from '#/components/layout/uniqueLayouts/fullForm/fullFormLabeledCheckbox';
-import FullFormSubHeading from '#/components/layout/uniqueLayouts/fullForm/subHeading';
-import FullFormTriPositionSlider from '#/components/layout/uniqueLayouts/fullForm/fullFormTriPosSlider';
-import { Button } from '#/components/shad/ui/button';
-import { client } from '#/trpc/client';
-import { useToast } from '#/components/shad/ui/use-toast';
+import { Button, useToast } from '@ulld/tailwind/base';
+import { client } from '@ulld/api';
+import FullFormContainer from '../../../menus/fullForm/fullFormContainer';
+import FullFormInput from '../../../menus/fullForm/fullFormInput';
+import FullFormLabeledCheckbox from '../../../menus/fullForm/fullFormLabeledCheckbox';
+import FullFormTextArea from '../../../menus/fullForm/fullFormTextArea';
+import FullFormTriPositionSlider from '../../../menus/fullForm/fullFormTriPosSlider';
+import FullFormFormPage from '../../../menus/fullForm/fullScreenFormPage';
+import FullFormSubHeading from '../../../menus/fullForm/subHeading';
 
 
 interface AddDietFormWrapperProps {

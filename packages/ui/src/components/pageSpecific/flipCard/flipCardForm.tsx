@@ -2,17 +2,11 @@
 import React from 'react'
 import { UseFormReturn } from 'react-hook-form';
 import { QAPairInput } from './flipcardTypes';
-import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage, Form } from '#/components/shad/ui/form'
-import { Textarea } from '#/components/shad/ui/textarea';
-import { Input } from '#/components/shad/ui/input';
-import { onEnter } from '#/actions/listeners';
-import { Badge } from '#/components/shad/ui/badge';
-import { Button } from '#/components/shad/ui/button';
-import { Prisma } from "@prisma/client"
-import { client } from '#/trpc/client';
-import { useToast } from '#/components/shad/ui/use-toast';
-import { BadgeContainer } from '#/components/inputs/formFieldWithBadgeList';
-import { getRandomId } from '#/utils/ui';
+import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage, Form, Textarea, Input, Button, useToast } from '@ulld/tailwind/base'
+import { client } from '@ulld/api';
+import { onEnter } from '@ulld/state';
+import { getRandomId } from '@ulld/utilities';
+import { BadgeContainer } from '../..';
 
 
 interface FlipCardFormProps {
@@ -28,14 +22,14 @@ const FlipCardForm = ({ form }: FlipCardFormProps) => {
     const { toast } = useToast()
     const saveFlipcard = async () => {
         let v = form.getValues()
-        let res = await client.saveQA.mutate({
+        let res = await client.qa.saveQA.mutate({
             id: v.id as string || getRandomId(20) as string,
             answer: v.answer,
             question: v.question,
             description: v.description,
             tags: v.tags || [],
-            topic: v.topic || [],
-            subject: v.subject || []
+            topics: v.topic || [],
+            subjects: v.subject || []
         })
         toast({
             title: "Success!",

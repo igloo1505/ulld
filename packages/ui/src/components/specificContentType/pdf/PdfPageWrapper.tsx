@@ -1,13 +1,12 @@
 "use client"
-import { pdfStateClasses } from '#/types/ui'
 import clsx from 'clsx'
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import PdfSuspended, { PdfClassKey } from './Pdf'
-import { htmlEm } from '#/actions/dom'
 import PdfAnnotationContainer from './Annotator'
-import { PdfManager } from '#/classes/pdfManager'
+import { htmlEm, PdfManager } from '@ulld/state'
+import { Button } from '@ulld/tailwind/base'
+import { pdfStateClasses } from '../../../types'
 import TocContainer from './TocContainer'
-import { Button } from '#/components/shad/ui/button'
 
 
 type WithoutLoading = Omit<typeof pdfStateClasses, "loading">

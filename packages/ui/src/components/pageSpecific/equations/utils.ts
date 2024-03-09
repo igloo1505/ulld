@@ -1,5 +1,5 @@
-import { beArray } from '#/utils/plotting/arrayUtils'
-import { paginationProps, sortDirProps } from '#/zod/local/zodUtils'
+import { paginationProps, sortDirProps } from '@ulld/state'
+import { ArrayUtilities } from '@ulld/utilities'
 import { z } from 'zod'
 
 export enum EquationOrderBy {
@@ -8,8 +8,8 @@ export enum EquationOrderBy {
 }
 
 export const EquationSearchParamsSchema = z.object({
-    tags: z.union([z.string(), z.string().array()]).transform(beArray).default([]),
-    variables: z.union([z.string(), z.string().array()]).transform(beArray).default([]),
+    tags: z.union([z.string(), z.string().array()]).transform(ArrayUtilities.beArray).default([]),
+    variables: z.union([z.string(), z.string().array()]).transform(ArrayUtilities.beArray).default([]),
     query: z.string().optional(),
     value: z.string().optional(),
     orderBy: z.nativeEnum(EquationOrderBy).default(EquationOrderBy.title).optional()

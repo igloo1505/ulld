@@ -1,20 +1,18 @@
 "use client"
-import FullFormContainer from '#/components/layout/uniqueLayouts/fullForm/fullFormContainer';
 import { zodResolver } from '@hookform/resolvers/zod';
 import React, { useContext } from 'react'
 import { Path, useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { healthReportOnlySchema, healthReportFormDefaultValues, HealthReportFormSchema } from './formUtils';
-import { HealthReportEditing } from '#/types/plugins/native/health/dietTypes';
-import FullFormFormPage from '#/components/layout/uniqueLayouts/fullForm/fullScreenFormPage';
-import FullFormInput from '#/components/layout/uniqueLayouts/fullForm/fullFormInput';
-import FullFormTextArea from '#/components/layout/uniqueLayouts/fullForm/fullFormTextArea';
-import FullFormNumberInput from '#/components/layout/uniqueLayouts/fullForm/FullFormNumberInput';
-import FullFormRatingSlider from '#/components/layout/uniqueLayouts/fullForm/fullFormRatingSlider';
-import { FullFormContext, FullFormDispatchContext } from '#/components/layout/uniqueLayouts/fullForm/fullFormContext';
-import { Button } from '#/components/shad/ui/button';
-import { client } from '#/trpc/client';
-import { useToast } from '#/components/shad/ui/use-toast';
+import { healthReportOnlySchema, healthReportFormDefaultValues, HealthReportFormSchema, HealthReportEditing } from './formUtils';
+import { client } from '@ulld/api';
+import { Button, useToast } from '@ulld/tailwind/base';
+import { FullFormContext, FullFormDispatchContext } from '../../..';
+import FullFormNumberInput from '../../../menus/fullForm/FullFormNumberInput';
+import FullFormContainer from '../../../menus/fullForm/fullFormContainer';
+import FullFormInput from '../../../menus/fullForm/fullFormInput';
+import FullFormRatingSlider from '../../../menus/fullForm/fullFormRatingSlider';
+import FullFormTextArea from '../../../menus/fullForm/fullFormTextArea';
+import FullFormFormPage from '../../../menus/fullForm/fullScreenFormPage';
 
 
 

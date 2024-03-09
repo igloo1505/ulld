@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import SettingsPhotoInput from '../photoInput'
 import { DropEvent, DropzoneOptions } from 'react-dropzone'
-import FileInputList from '#/components/inputs/fileList'
 import clsx from 'clsx'
-import { Button } from '#/components/shad/ui/button'
-import { BibWithEntries } from '#/types/prisma/includeTypes'
-import { CalendarAndDateManager } from '#/classes/data/calendarAndDate'
-import { BibCore } from '#/classes/prismaMdxRelations/Bib'
-import { prisma } from '#/db/db'
+import { Button } from '@ulld/tailwind/base'
+import { BibWithEntries, BibCore, CalendarAndDateManager } from '@ulld/api'
+import { prisma } from '../../../../../../database/src/db'
+import FileInputList from '../../../inputs/fileList'
 
 
 export interface BibStatusProps {

@@ -1,9 +1,8 @@
 import React from 'react'
-import { SnippetFilterParams } from './snippetFilterParams'
-import { serverClient } from '#/trpc/serverClient'
 import SnippetListItem from './snippetListItem'
 import clsx from 'clsx'
-import { snippetValidator } from '#/lib/validators/snippets'
+import { serverClient } from '@ulld/api'
+import { SnippetFilterParams, snippetValidator } from '@ulld/utilities'
 
 
 
@@ -12,7 +11,7 @@ interface SnippetListProps {
 }
 
 const SnippetList = async ({ params }: SnippetListProps) => {
-    const snippets = snippetValidator.array().parse((await serverClient.getSnippets(params)))
+    const snippets = snippetValidator.array().parse((await serverClient.snippets.getSnippets(params)))
 
     return (
         <div className={"w-full h-fit flex flex-col justify-center items-center gap-4 mt-3"}>

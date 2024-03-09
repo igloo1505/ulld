@@ -1,18 +1,17 @@
 "use client"
-import { serverClient } from '#/trpc/serverClient'
 import { zodResolver } from '@hookform/resolvers/zod'
 import React, { Suspense } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import AddSnippetDisplay from './addSnippetDisplay'
 import AddSnippetForm from './form'
-import { SnippetCreatekeywordsInputObjectSchema, TechnologiesSchema } from '#/zod/local/SnippetCreateInputObjectSchema'
 import { Prisma } from '@prisma/client'
+import { serverClient, SnippetCreatekeywordsInputObjectSchema, TechnologiesSchema } from '@ulld/api'
 
 
 
 interface AddSnippetFormProps {
-    item: Awaited<ReturnType<typeof serverClient.getSpecificSnippet>> | null
+    item: Awaited<ReturnType<typeof serverClient.snippets.getSpecificSnippet>> | null
 }
 
 

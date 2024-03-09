@@ -1,13 +1,17 @@
+import { PrismaMdxNoteSummaryOutput } from '@ulld/api'
+import { serverLogger } from "@ulld/logger/server"
 import React from 'react'
-import ContentListPageObserver from '../functionality/ContentListPageObserver'
-import NoneFound from '../pageSpecific/search/noneFound'
-import ThemedSummaryCard from '../ui/cards/themedSummaryCard'
-import { PrismaMdxNoteSummaryOutput } from '#/classes/prismaMdxRelations/protocols/mdxNote'
+import ThemedSummaryCard from '../../cards/themedSummaryCard'
+import ContentListPageObserver from '../../observers/ContentListPageObserver'
+import NoneFound from '../../pageSpecific/search/noneFound'
+
 
 
 const CategoryList = ({ items, bySequentialKey }: { items: PrismaMdxNoteSummaryOutput[], bySequentialKey?: boolean }) => {
     if (items.length === 0) return <NoneFound />
-    console.log("items: ", items)
+    serverLogger.debug(items, {
+        label: "Category List Items"
+    })
     return (
         <div className={"w-full h-full flex flex-col justify-start items-center gap-4"}>
             <ContentListPageObserver />

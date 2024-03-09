@@ -2,7 +2,7 @@ import React from 'react'
 import SettingsSection from '../SettingsSection'
 import BibStatus, { BibStatusProps } from './BibStatus'
 import NoBibFoundPrompt from './NoBibFound'
-import { BibWithEntries } from '#/types/prisma/includeTypes'
+import { BibWithEntries } from '@ulld/api'
 
 
 

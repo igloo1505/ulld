@@ -1,5 +1,6 @@
-import { TertiaryToggleSchema } from "#/types/general/util"
 import { HealthReport } from "@prisma/client"
+import type { serverClient } from "@ulld/api"
+import { zodTertiaryToggleSchema } from "@ulld/utilities"
 import { ZodDate, ZodOptional, ZodRawShape, ZodString, ZodUnion, z } from "zod"
 
 
@@ -7,10 +8,10 @@ export const dietFormFieldValues = {
     name: z.string(),
     summary: z.string().optional(),
     activelyFollowing: z.boolean().default(false),
-    gf: TertiaryToggleSchema,
-    fasting: TertiaryToggleSchema,
-    cardioTraining: TertiaryToggleSchema,
-    weightTraining: TertiaryToggleSchema,
+    gf: zodTertiaryToggleSchema,
+    fasting: zodTertiaryToggleSchema,
+    cardioTraining: zodTertiaryToggleSchema,
+    weightTraining: zodTertiaryToggleSchema,
     vegan: z.boolean().default(false),
     pescatarian: z.boolean().default(false),
     vegetarian: z.boolean().default(false),
@@ -186,3 +187,9 @@ export const healthReportFormDefaultValues: TempHalfAssedType = {
     estHoursInExcessFast: undefined,
     created: undefined
 }
+
+
+export type HealthReportEditing = Awaited<ReturnType<typeof serverClient.health.reports.getReportForEditing>>
+
+
+export type DietEditing = Awaited<ReturnType<typeof serverClient.health.diet.getDietForEditing>>

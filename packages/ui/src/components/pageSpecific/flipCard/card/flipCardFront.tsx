@@ -1,5 +1,5 @@
-import { getComponentMap } from '#/components/markdown/componentMap'
 import React, { Fragment } from 'react'
+import { getComponentMap } from '../../..'
 
 
 

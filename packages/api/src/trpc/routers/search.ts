@@ -4,6 +4,8 @@ import { z } from 'zod'
 import { prisma } from "@ulld/database";
 import { DictionaryDefinitionReturnType, TagTopicSubjectList, dictionaryDefinitionReturnType } from "../../schemas";
 import { getUniqueTags, getUniqueSubjects, getUniqueTopics } from "../../trpcInternalMethods";
+import { NoteFilter } from "../../classes";
+import { getInternalConfig } from "@ulld/configschema";
 
 
 
@@ -115,4 +117,10 @@ export const advancedSearchRouter = router({
             notebook: nb
         }
     }),
+    searchAllByText: publicProcedure.input(z.string()).query(async ({input}) => {
+        const qm = new NoteFilter("all", {query: input })
+            const config = getInternalConfig()
+            await qm.getResults(config)
+        return qm.flattenForClient()
+    })
 })

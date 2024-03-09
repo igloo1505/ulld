@@ -1,12 +1,6 @@
-import { DateTime } from '#/classes/data/dateTime';
-import { todoTaskSchema } from '#/classes/prismaMdxRelations/zod/todo';
-import CodeEditorModalClientWrapper from '#/components/inputs/codeEditor/codeEditorClientWrapper';
-import { Button } from '#/components/shad/ui/button';
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '#/components/shad/ui/card';
-import SerializedMdxStringDisplay from '#/components/specificTypeDisplay/markdown/mdx/serializedMdxStringDisplay';
-import TextWithLabel from '#/components/ui/textWithLabel';
-import RouteModalBackButton from '#/components/util/routeModalBackButton';
-import { serverClient } from '#/trpc/serverClient'
+import { serverClient, DateTime } from '@ulld/api';
+import { todoTaskSchema } from '@ulld/parsers';
+import { Card, CardHeader, CardTitle, CardDescription, CardFooter, Button } from '@ulld/tailwind';
 import clsx from 'clsx';
 import dayjs from 'dayjs'
 import advancedFormat from 'dayjs/plugin/advancedFormat';
@@ -14,6 +8,11 @@ import { CheckIcon } from 'lucide-react';
 dayjs.extend(advancedFormat)
 import { redirect } from 'next/navigation'
 import React from 'react'
+import CodeEditorModalClientWrapper from '../../../inputs/codeEditor/codeEditorClientWrapper';
+import RouteModalBackButton from '../../../landing/hero/util/routeModalBackButton';
+import TextWithLabel from '../../../text/textWithLabel';
+import { replaceRecursively } from '@ulld/utilities';
+import { MdxContentSERVER } from '../../..';
 
 
 
@@ -29,7 +28,7 @@ interface CardDescItemProps {
 
 
 const CardDescriptionItem = ({ itemKey, children }: CardDescItemProps) => {
-    const id = `item-${itemKey.replaceAll(" ", "")}`
+    const id = `item-${replaceRecursively(itemKey, " ", "")}`
     return (
         <TextWithLabel
             label={itemKey}
@@ -60,8 +59,8 @@ const ToDoListTaskDetailModal = async ({ taskId, isModal }: ToDoListTaskDetailMo
             <Card className={"max-w-[min(768px,90vw)]"}>
                 <CardHeader>
                     <CardTitle id={ids.title}>
-                        <SerializedMdxStringDisplay
-                            data={task.task}
+                        <MdxContentSERVER
+                            content={task.task}
                         />
                     </CardTitle>
                     <CardDescription>
@@ -73,8 +72,8 @@ const ToDoListTaskDetailModal = async ({ taskId, isModal }: ToDoListTaskDetailMo
                     </CardDescription>
                 </CardHeader>
                 <div id={ids.content} className={clsx("min-h-[100px] p-4", hasNote ? "" : "flex flex-col justify-center items-center")}>
-                    {task.details ? <SerializedMdxStringDisplay
-                        data={task.details}
+                    {task.details ? <MdxContentSERVER
+                        content={task.details}
                     /> : <Button id={ids.addNoteBtn} variant="secondary">Add Note</Button>}
                 </div>
                 <CardFooter className={"flex flex-row justify-end items-center gap-6"}>

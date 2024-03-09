@@ -1,10 +1,9 @@
 import React from 'react'
 import { EquationListItem as EquationListItemType } from './types'
-import { H4 } from '#/components/markdown/text/heading'
-import MathDisplay from '#/components/specificTypeDisplay/equation/mathDisplay'
-import { buttonVariants } from '#/components/shad/ui/button'
 import Link from 'next/link'
-import DeleteModalTriggerButton from '#/components/inputs/deleteModalTriggerButton'
+import { buttonVariants } from '@ulld/tailwind'
+import { H4, MathDisplaySERVER } from '../..'
+import DeleteModalTriggerButton from '../../inputs/deleteModalTriggerButton'
 
 
 
@@ -18,9 +17,9 @@ const EquationListItem = ({ equation }: EquationListItemProps) => {
     return (
         <li className={"w-full h-full min-w-[min(400px,90vw)] rounded-lg border px-4 py-3 grid grid-cols-1 grid-rows-[auto_1fr_auto] shadow-md hover:shadow-sm transition-shadow duration-300 relative"}>
             <H4 className={"pr-4"}>
-                <MathDisplay
+                <MathDisplaySERVER
                     math={equation.title}
-                    stylesId={`${id}-title`}
+                    stylesContainerId={`${id}-title`}
                 />
                 <DeleteModalTriggerButton config={{
                     title: "Delete Equation?",
@@ -34,11 +33,11 @@ const EquationListItem = ({ equation }: EquationListItemProps) => {
                 />
             </H4>
             <div className={"w-full h-full flex flex-col justify-center items-center"}>
-                <MathDisplay
+                <MathDisplaySERVER
                     isMathOnly
                     display
                     math={equation.content}
-                    stylesId={`${id}-content`}
+                    stylesContainerId={`${id}-content`}
                     className={"mx-6"}
                 />
             </div>

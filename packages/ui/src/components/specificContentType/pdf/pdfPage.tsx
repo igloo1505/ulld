@@ -1,8 +1,8 @@
 "use client"
+import { TextRendererType } from '@ulld/state'
 import clsx from 'clsx'
 import React, { useState } from 'react'
 import { Page } from 'react-pdf'
-import { TextRendererType } from '#/classes/pdfManager'
 
 
 

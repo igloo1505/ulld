@@ -1,22 +1,17 @@
 "use client"
 import { SortingState, ColumnFiltersState, useReactTable, getCoreRowModel, getPaginationRowModel, getSortedRowModel, getFilteredRowModel, ColumnDef, flexRender } from '@tanstack/react-table'
 import React, { MouseEventHandler, useState } from 'react'
-import { Checkbox } from '#/components/shad/ui/checkbox'
-import { Button } from '#/components/shad/ui/button'
+import { Checkbox, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, Table, TableBody, TableCell, TableHead, TableHeader, TableRow, Input, Button } from '@ulld/tailwind/base'
 import { ArrowUpDown, MoreHorizontal } from 'lucide-react'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '#/components/shad/ui/dropdown-menu'
-import { showToast } from '#/state/slices/ui'
-import store from '#/state/store'
-import { Input } from '#/components/shad/ui/input'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '#/components/shad/ui/table'
 import clsx from 'clsx'
-import { client } from '#/trpc/client'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { Route } from 'next'
 import Link from 'next/link'
-import { ParsedAppConfig } from '#/lib/config/zod/secondaryConfigParse/main'
-import { getInternalConfig } from '#/lib/config/zod/getInternalConfig'
+import { client } from '@ulld/api'
+import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema'
+import { store, showToast } from '@ulld/state'
+
 
 
 
@@ -160,7 +155,7 @@ const NotebooksTable = ({ notebooks, hrefMap }: NotebooksTableProps) => {
 
     const clearTempDir: MouseEventHandler<HTMLButtonElement> = async (e) => {
         e.stopPropagation()
-        await client.clearTempDir.mutate()
+        await client.fsUtils.clearTempDir.mutate()
     }
 
     return (

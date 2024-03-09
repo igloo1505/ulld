@@ -1,9 +1,10 @@
 "use client"
 import React from 'react'
-import PaginationButtonGroup, { PaginationButtonGroupProps } from '../paginationButtonGroup';
-import { formatSearchAllParams } from '#/lib/formatting/formatSearchAllParams';
 import { Route } from 'next';
-import { DocTypes } from "#/classes/prismaMdxRelations/zod/general"
+import { DocTypes } from '@ulld/configschema';
+import { formatSearchAllParams } from '@ulld/state';
+import { PaginationButtonGroupProps } from '..';
+import PaginationButtonGroup from '../paginationGroup';
 
 
 

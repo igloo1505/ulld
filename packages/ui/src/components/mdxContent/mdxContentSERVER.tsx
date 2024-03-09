@@ -14,6 +14,7 @@ export interface MdxContentSERVERProps {
     content: string | ParsedMdxContent | MDXSerializeReturnType
     inline?: boolean
     parentId?: string
+    className?: string
 }
 
 export const MdxContentSERVER = (props: MdxContentSERVERProps) => {

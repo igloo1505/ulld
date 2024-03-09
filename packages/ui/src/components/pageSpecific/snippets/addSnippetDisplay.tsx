@@ -3,7 +3,8 @@ import React from 'react'
 import { Prisma } from '@prisma/client'
 import { UseFormReturn } from 'react-hook-form'
 import clsx from 'clsx'
-import CodeHighlightContainer from '#/components/functionality/codeHighlightContainer'
+import CodeHighlightContainer from '../../code/syntaxHighlighting/codeHighlightContainer'
+
 interface AddSnippetDisplayProps {
     form: UseFormReturn<Required<Prisma.SnippetCreateInput> & {
         keywordInput?: string;

@@ -1,12 +1,11 @@
-import CodeHighlightContainer from '#/components/functionality/codeHighlightContainer'
-import { Card } from '#/components/shad/ui/card'
 import React from 'react'
 import SnippetListItemButtons from './snippetListItemButtons'
-import { Badge } from '#/components/shad/ui/badge'
 import Link from 'next/link'
-import DeleteModalTriggerButton from '#/components/inputs/deleteModalTriggerButton'
-import SerializedMdxStringDisplayServer from '#/components/specificTypeDisplay/markdown/mdx/serializeMdxStringDisplayServer'
-import { SnippetListItemProps } from '#/lib/validators/snippets'
+import { Card, Badge } from '@ulld/tailwind'
+import { SnippetListItemProps } from '@ulld/utilities'
+import CodeHighlightContainer from '../../code/syntaxHighlighting/codeHighlightContainer'
+import DeleteModalTriggerButton from '../../inputs/deleteModalTriggerButton'
+import MdxContentCLIENT from '../../mdxContent/mdxContentCLIENT'
 
 
 interface SnippetListItemPropsInternal {
@@ -19,8 +18,8 @@ const SnippetListItem = ({ item }: SnippetListItemPropsInternal) => {
         <Card className={"w-full h-fit flex flex-col p-4 gap-3"}>
             <div className={"w-full h-fit grid grid-cols-[1fr_2rem]"}>
                 <div className={"w-full text-lg font-semibold"}>
-                    <SerializedMdxStringDisplayServer
-                        data={item.description}
+                    <MdxContentCLIENT
+                        content={item.description}
                     />
                 </div>
                 <div className={"w-full h-full grid place-items-center"}>

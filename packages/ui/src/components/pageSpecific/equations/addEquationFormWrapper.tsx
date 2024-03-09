@@ -1,5 +1,4 @@
 "use client"
-import type { serverClient } from '#/trpc/serverClient'
 import { zodResolver } from '@hookform/resolvers/zod'
 import React from 'react'
 import { useForm } from 'react-hook-form'
@@ -7,7 +6,8 @@ import { z } from 'zod'
 import AddEquationForm from './addEquationForm'
 import AddEquationDisplay from './addEquationDisplay'
 import { AddEquationSchema } from './types'
-import SideMenuParent from '#/components/layout/uniqueLayouts/sideMenu/sideMenuParent'
+import { serverClient } from '@ulld/api'
+import SideMenuParent from '../../layouts/sideMenu/sideMenuParent'
 
 
 export type EditEquationItem = Awaited<ReturnType<typeof serverClient.equations.getEquationById>>

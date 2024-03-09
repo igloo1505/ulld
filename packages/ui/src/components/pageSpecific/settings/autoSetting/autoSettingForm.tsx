@@ -1,6 +1,4 @@
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '#/components/shad/ui/form'
-import { Input } from '#/components/shad/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '#/components/shad/ui/select';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Input, Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@ulld/tailwind/base';
 import { autoSetting } from '@prisma/client';
 import React from 'react'
 import { UseFormReturn } from 'react-hook-form';

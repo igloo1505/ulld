@@ -12,26 +12,25 @@ import {
     useReactTable,
 } from "@tanstack/react-table"
 import { ChevronDown } from "lucide-react"
-import { Button } from "#/components/shad/ui/button"
 import {
+    Button,
     DropdownMenu,
     DropdownMenuCheckboxItem,
     DropdownMenuContent,
     DropdownMenuTrigger,
-} from "#/components/shad/ui/dropdown-menu"
-import { Input } from "#/components/shad/ui/input"
-import {
+    Input,
     Table,
     TableBody,
     TableCell,
     TableHead,
     TableHeader,
     TableRow,
-} from "#/components/shad/ui/table"
+
+} from "@ulld/tailwind/base"
 import { getValueSearchTableColumns } from "./columns"
-import { numberInputOnly } from "#/actions/listeners"
-import { useDebounce } from "#/lib/hooks/useDebounce"
-import { DocTypes } from "#/classes/prismaMdxRelations/zod/general"
+import { DocTypes } from "@ulld/configschema"
+import { numberInputOnly } from "@ulld/state"
+import { useDebounce } from "../../../../hooks"
 
 
 export interface ValueSearchTableItem {

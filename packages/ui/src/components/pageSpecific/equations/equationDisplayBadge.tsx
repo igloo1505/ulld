@@ -1,6 +1,6 @@
 "use client"
-import { Badge, BadgeProps } from '#/components/shad/ui/badge';
-import { makeHref, withForwardSlash } from '#/lib/formatting/fsUtils';
+import { BadgeProps, Badge } from '@ulld/tailwind';
+import { makeHref, withForwardSlash } from '@ulld/utilities';
 import clsx from 'clsx';
 import { Route } from 'next';
 import React from 'react'

@@ -1,8 +1,8 @@
 "use client"
-import { AutoSettingType, AutoSettingWithRegex } from '#/trpc/routers/sync'
 import React, { useState } from 'react'
 import AutoSettingDataTable from './autoSettingDataTable'
 import AutoSettingFormModal from './formModal'
+import { AutoSettingType } from '@ulld/api'
 
 
 

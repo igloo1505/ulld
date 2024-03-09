@@ -179,4 +179,7 @@ export class ArrayUtilities {
     ) {
         return arr.map((a) => (equalityCheck(a) === comparison ? replacer(a) : a));
     }
+    static beArray<T extends unknown>(val: T | T[]): T[] {
+        return Array.isArray(val) ? val : [val]
+    }
 }

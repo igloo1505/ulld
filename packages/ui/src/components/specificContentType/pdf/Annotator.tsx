@@ -1,5 +1,5 @@
-import { PdfManager, TextItemType, selectionObserver } from '#/classes/pdfManager'
-import TextInput from '#/components/inputs/text'
+import { Textarea } from '@ulld/tailwind/base'
+import { PdfManager, TextItemType, selectionObserver } from '@ulld/state'
 import clsx from 'clsx'
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { useDocumentContext, usePageContext } from 'react-pdf'
@@ -48,7 +48,7 @@ const PdfAnnotationContainer = ({ show, pdfGroupRef, manager, setSearchText, sea
         setSearchResults(manager.selectedText)
     }, [manager.selectedText])
 
-    const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleSearchChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setSearchText(e.target.value)
     }
 
@@ -58,11 +58,10 @@ const PdfAnnotationContainer = ({ show, pdfGroupRef, manager, setSearchText, sea
 
     return (
         <div className={clsx("h-full bg-gray-100 overflow-hidden rounded-lg dark:bg-gray-800 transition-[width] duration-200", show ? "w-[40vw] py-2 px-5" : "w-0 p-0")}>
-            <TextInput
-                onUpdate={handlePdfSearch}
+            <Textarea
                 onChange={handleSearchChange}
                 value={searchText}
-                classes={{ container: "mb-2" }}
+                className={"mb-2"}
             />
             <div className={"w-full flex flex-col justify-center items-center"}>
                 {searchResults.map((r, i) => <PdfSearchResult item={r} key={`pdf-result-${i}`} />)}

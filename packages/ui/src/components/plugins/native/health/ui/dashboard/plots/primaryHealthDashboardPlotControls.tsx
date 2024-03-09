@@ -1,7 +1,6 @@
 import React from 'react'
 import HealthDashboardCardContainer from '../dashboardCardContainer';
-import { BaseDashboardCardProps } from '#/types/plugins/native/health/dashboard';
-
+import { BaseDashboardCardProps } from '.';
 
 
 interface HealthDashboardPlotControlsProps extends BaseDashboardCardProps {

@@ -1,9 +1,9 @@
 "use client"
-import type { serverClient } from '#/trpc/serverClient'
+import type { serverClient } from '@ulld/api'
 import React, { useState } from 'react'
 
 
-export type QAReturnItems = Awaited<ReturnType<typeof serverClient.getQaExam>>
+export type QAReturnItems = Awaited<ReturnType<typeof serverClient.qa.getQaExam>>
 
 
 interface ExamProgressState {

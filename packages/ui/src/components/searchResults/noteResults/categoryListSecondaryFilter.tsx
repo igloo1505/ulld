@@ -1,14 +1,13 @@
 import type { Subject, Topic } from '@prisma/client'
 import React from 'react'
-import { SubjectTag, TopicTag } from '../navigation/secondaryFilterButtons'
 import clsx from 'clsx'
-import { WithFSSearchParams } from '#/types/query'
 import Link from 'next/link'
-import { formatSearchAllParams } from '#/lib/formatting/formatSearchAllParams'
-import { Button, buttonVariants } from '../shad/ui/button'
 import { XIcon } from 'lucide-react'
-import { DocumentTypeConfig } from '#/lib/config/zod/documentConfigSchema'
 import { Route } from 'next'
+import { DocumentTypeConfig } from '@ulld/configschema'
+import { WithFSSearchParams, formatSearchAllParams } from '@ulld/state'
+import { buttonVariants, Button } from '@ulld/tailwind'
+import { SubjectTag, TopicTag } from '../..'
 
 
 
@@ -70,7 +69,7 @@ const CategoryListSecondaryFilter = async ({ data, sp, category }: CategoryListS
                             data.topics.map((s, i) => {
                                 return <TopicTag
                                     basePath={category.url as Route}
-                                    key={`topic-${i}`} topic={s.name} category={category.docType} />
+                                    key={`topic-${i}`} topic={s.value} category={category.docType} />
                             })
                         }</div>
                 </div>

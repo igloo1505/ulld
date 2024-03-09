@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { Button } from '#/components/shad/ui/button';
-import { Popover, PopoverContent, PopoverTrigger } from '#/components/shad/ui/popover';
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '#/components/shad/ui/command';
 import { ToDoListStatus } from '@prisma/client';
 import { statuses } from './dataTableRowActions';
+import { Popover, PopoverTrigger, PopoverContent, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, Button, Command } from '@ulld/tailwind/base';
+import { replaceRecursively } from '@ulld/utilities';
 
 
 
@@ -28,7 +27,7 @@ const ToDoListDataTableStatusCell = (props: ToDoListDataTableStatusCellProps) =>
                 >
 
                     {props.icon && <div className={"w-3 h-3 grid place-items-center"}><props.icon className={"w-3 h-3"} /></div>}
-                    {props.label?.replaceAll("_", " ") || props.value}
+                    {props.label ? replaceRecursively(props.label, "_", " ") : props.value}
                 </Button>
             </PopoverTrigger>
             <PopoverContent className="w-[200px] p-0" align="start">

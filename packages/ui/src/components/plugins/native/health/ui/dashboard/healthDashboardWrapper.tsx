@@ -1,9 +1,9 @@
-import { HealthDashboardReportData } from '#/types/plugins/native/health/reportTypes'
 import React from 'react'
 import PrimaryHealthDashboardLinePlot from './plots/primaryHealthDashboardLinePlot'
 import HealthDashboardGridColGroup from '../gridColGroup'
 import HealthDashboardPlotControls from './plots/primaryHealthDashboardPlotControls'
 import HealthDashboardToolPanel from './plots/healthDashboardToolPanel'
+import { HealthDashboardReportData } from '@ulld/api'
 
 
 interface HealthDashboardWrapperProps {

@@ -1,5 +1,4 @@
 "use client"
-import { ToDoSearchParams } from '#/zod/local/todo'
 import React, { useEffect, useMemo, useState } from 'react'
 import {
     Column,
@@ -21,25 +20,19 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "#/components/shad/ui/table"
-import { Checkbox } from '#/components/shad/ui/checkbox'
+    Checkbox,
+    Form,
+    toast
+} from "@ulld/tailwind/base"
 import dayjs from 'dayjs'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Path, useForm } from 'react-hook-form'
-import { TodoFilterFormSchema, todoFilterFormSchema } from './zod/general'
-import { Form } from '#/components/shad/ui/form'
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 import { DataTableColumnHeader } from './dataTableColumnHeader'
 import { DataTableRowActions, statuses } from './dataTableRowActions'
-import { fieldArrayIsSame, replaceSelfInArray } from '#/utils/plotting/arrayUtils'
-import { DataTablePagination } from '#/components/util/tables/datatable/dataTablePagination'
 import ToDoListDeleteButton from './toDoListDeleteButton'
 import ToDoListTableToolBar from './todoListDataTableToolbar'
-import { Record } from '@prisma/client/runtime/library'
-import { DropdownOptionType } from '#/components/layout/uniqueLayouts/datatable/datatableFilterButton'
 import ToDoListDataTableStatusCell from './todoListDataTableStatusCell'
-import { ToDoListStatus } from '@prisma/client'
-import { client } from '#/trpc/client'
 import EditableDataTableDateCell from './editableDataTableDateCell'
 import { useRouter } from 'next/navigation'
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime'
@@ -47,11 +40,16 @@ import ToDoListDataTablePriorityCell from './todolistDataTablePriorityCell'
 import { StarIcon } from 'lucide-react'
 import { StarFilledIcon } from '@radix-ui/react-icons'
 import ToDoListDataTableListNameCell from './toDoListListNameCell'
-import { toast } from '#/components/shad/ui/use-toast'
-import { TodoTaskOutput } from '#/classes/prismaMdxRelations/zod/todo'
-import SerializedMdxStringDisplay from '#/components/specificTypeDisplay/markdown/mdx/serializedMdxStringDisplay'
 import Link from 'next/link'
 import SubComponentHandler from './subComponentHandler'
+import MdxContentCLIENT from '../../../mdxContent/mdxContentCLIENT'
+import { ToDoListStatus } from '@prisma/client'
+import { client, TodoFilterFormSchema, todoFilterFormSchema } from '@ulld/api'
+import { TodoTaskOutput } from '@ulld/parsers'
+import { useViewport } from '@ulld/state'
+import { ArrayUtilities, TaskListIds } from '@ulld/utilities'
+import { ToDoSearchParams } from '.'
+import { DropdownOptionType, DataTablePagination } from '../../..'
 dayjs.extend(advancedFormat)
 
 interface ToDoListDataTableProps {
@@ -241,8 +239,9 @@ const getColumnDef = (items: ToDoListDataTableProps["items"], setItems: (newItem
                         href={`/todo/details/${itemId}`}
                         className={"truncate [&_p]:truncate font-medium [&_p]:block max-w-full [&_p]:max-w-full [&_p]:overflow-hidden block"}
                     >
-                        <SerializedMdxStringDisplay
-                            data={itemMap[String(itemId)]?.task}
+                        <MdxContentCLIENT
+                            inline
+                            content={itemMap[String(itemId)]?.task}
                         />
                     </Link>
 
@@ -346,7 +345,7 @@ const getColumnDef = (items: ToDoListDataTableProps["items"], setItems: (newItem
                         listId: newList.id
                     })
                     if (res) {
-                        replaceSelfInArray<(typeof items)[number], number>(items, favoriteId, (a) => a.id, (old) => ({
+                        ArrayUtilities.replaceSelfInArray<(typeof items)[number], number>(items, favoriteId, (a) => a.id, (old) => ({
                             ...old,
                             toDoListId: newList?.id,
                             ...(newList?.label && {
@@ -364,7 +363,7 @@ const getColumnDef = (items: ToDoListDataTableProps["items"], setItems: (newItem
                         shouldBookmark
                     })
                     if (res) {
-                        replaceSelfInArray<(typeof items)[number], number>(items, favoriteId, (a) => a.id, (old) => ({
+                        ArrayUtilities.replaceSelfInArray<(typeof items)[number], number>(items, favoriteId, (a) => a.id, (old) => ({
                             ...old,
                             bookmarked: Boolean(shouldBookmark)
                         }))
@@ -418,7 +417,7 @@ const ToDoListDataTable = ({ items: _items = [], searchParams, lists, activeList
 
 
     const setNavStateFromSelected = () => {
-        const status = fieldArrayIsSame<ToDoTableOutput, "status">(table.getFilteredSelectedRowModel().rows, "status")
+        const status = ArrayUtilities.fieldArrayIsSame<ToDoTableOutput, "status">(table.getFilteredSelectedRowModel().rows, "status")
         if (status) {
             form.setValue("status", status)
         }

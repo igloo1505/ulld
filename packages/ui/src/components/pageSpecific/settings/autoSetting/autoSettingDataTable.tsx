@@ -1,19 +1,36 @@
 "use client"
-import { AutoSettingType, AutoSettingWithRegex } from '#/trpc/routers/sync'
 import { SortingState, ColumnFiltersState, useReactTable, getCoreRowModel, getPaginationRowModel, getSortedRowModel, getFilteredRowModel, flexRender } from '@tanstack/react-table'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useMemo, useState } from 'react'
 import { getAutoSettingColumnDef } from './autoSettingTableColumns'
-import { Popover, PopoverContent, PopoverTrigger } from "#/components/shad/ui/popover"
-import { Command, CommandInput, CommandEmpty, CommandGroup, CommandItem } from "#/components/shad/ui/command"
-import { Button } from '#/components/shad/ui/button'
-import { TableHeader, TableRow, TableHead, TableBody, TableCell, Table } from '#/components/shad/ui/table'
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+    Command,
+    CommandInput,
+    CommandEmpty,
+    CommandGroup,
+    CommandItem,
+    Button,
+    TableHeader,
+    TableRow,
+    TableHead,
+    TableBody,
+    TableCell,
+    Table,
+    DropdownMenu,
+    DropdownMenuCheckboxItem,
+    DropdownMenuContent,
+    DropdownMenuTrigger,
+    Label
+} from "@ulld/tailwind/base"
 import clsx from 'clsx'
-import { CheckIcon, ChevronDown, ChevronsUpDown } from 'lucide-react'
-import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from '#/components/shad/ui/dropdown-menu'
-import { autoSetting } from '@prisma/client'
-import { Label } from '#/components/shad/ui/label'
-import { cn } from '#/utils'
+import {
+    CheckIcon, ChevronDown, ChevronsUpDown
+} from 'lucide-react'
+import { AutoSettingType, autoSetting } from '@ulld/api'
+import { cn } from '../../../../utilityFunctions'
 
 
 

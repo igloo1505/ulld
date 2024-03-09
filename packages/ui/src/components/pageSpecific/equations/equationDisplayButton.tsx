@@ -1,6 +1,6 @@
 "use client"
-import { buttonVariants } from '#/components/shad/ui/button'
-import { makeHref, withForwardSlash } from '#/lib/formatting/fsUtils'
+import { buttonVariants } from '@ulld/tailwind'
+import { withForwardSlash, makeHref } from '@ulld/utilities'
 import clsx from 'clsx'
 import { Route } from 'next'
 import { RedirectType, redirect, useRouter } from 'next/navigation'

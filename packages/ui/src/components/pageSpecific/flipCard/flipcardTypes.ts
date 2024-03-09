@@ -1,4 +1,4 @@
-import type { serverClient } from "#/trpc/serverClient"
+import { serverClient } from "@ulld/api"
 
 export interface FlipCardParams {
     tags?: string[] | string
@@ -15,4 +15,4 @@ export interface QAPairInput {
     id?: string
 }
 
-export type FlipCardReturnItem = Awaited<ReturnType<typeof serverClient.getSpecificQA>>
+export type FlipCardReturnItem = Awaited<ReturnType<typeof serverClient.qa.getSpecificQA>>

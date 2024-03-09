@@ -1,4 +1,4 @@
-import { serverClient } from '#/trpc/serverClient';
+import type { serverClient } from '@ulld/api';
 import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod'
 

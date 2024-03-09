@@ -1,9 +1,8 @@
 "use client"
-import { ReturnedHealthReportSummary } from '#/app/health/reporting/view/zodParams'
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
 import React, { useMemo } from 'react'
-import { getHealthReportFieldHintMap, healthReportFieldNameDisplayMap, healthReportRatingFieldHints, healthReportRatingFieldKeys } from '#/types/plugins/native/health/reportTypes'
 import { HealthReport } from '@prisma/client'
+import { ReturnedHealthReportSummary, getHealthReportFieldHintMap, healthReportRatingFieldKeys, healthReportFieldNameDisplayMap, healthReportRatingFieldHints } from "@ulld/api"
 
 
 

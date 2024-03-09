@@ -1,10 +1,10 @@
-import { ReturnedHealthReportSummary } from '#/app/health/reporting/view/zodParams'
 import React from 'react'
 import HealthReportSummaryBarPlot from './healthReportSummaryBarPlot'
 import dayjs from 'dayjs'
 import advancedFormat from 'dayjs/plugin/advancedFormat';
-import DeleteModalTriggerButton from '#/components/inputs/deleteModalTriggerButton';
-import { H4 } from '#/components/markdown/text/heading';
+import { ReturnedHealthReportSummary } from '@ulld/api';
+import { H4 } from '../../../../..';
+import DeleteModalTriggerButton from '../../../../../inputs/deleteModalTriggerButton';
 dayjs.extend(advancedFormat)
 
 

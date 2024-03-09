@@ -219,5 +219,16 @@ export const toDoRouter = router({
                 details: input.note
             }
         })
+    }),
+getMostRecentToDoListId: publicProcedure.query(async () => {
+    return await prisma.toDoList.findMany({
+        select: {
+            id: true
+        },
+        orderBy: {
+            lastUpdate: "desc"
+        },
+        take: 1
+    })
     })
 })

@@ -1,19 +1,23 @@
+import { autoSetting } from "@prisma/client"
 import { ColumnDef } from "@tanstack/react-table"
-import { Checkbox } from "#/components/shad/ui/checkbox"
-import { Button } from "#/components/shad/ui/button"
-import { ArrowUpDown, MoreHorizontal } from "lucide-react"
+import { AutoSettingType, client } from "@ulld/api"
+import { autoSettingSearchAllParamMap } from "@ulld/state"
 import {
+    Button,
+    Checkbox,
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuLabel,
     DropdownMenuTrigger,
-} from "#/components/shad/ui/dropdown-menu"
+} from "@ulld/tailwind/base"
+import {
+    ArrowUpDown,
+    MoreHorizontal,
+} from "lucide-react"
 import type { useRouter } from "next/navigation"
-import { AutoSettingType } from "#/trpc/routers/sync"
-import { autoSettingSearchAllParamMap } from "#/lib/formatting/formatSearchAllParams"
-import { autoSetting } from "@prisma/client"
-import { client } from "#/trpc/client"
+
+
 
 
 export const getAutoSettingColumnDef = (router: ReturnType<typeof useRouter>, removeById: (id: number) => void) => {

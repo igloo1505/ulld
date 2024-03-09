@@ -1,19 +1,19 @@
 "use client"
-import "#/utils/fileTypeStuff/initPDF"
+import "./initPDF"
 import 'react-pdf/dist/Page/TextLayer.css';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
-import '#/styles/pdfStuff.scss'
+import './pdfStuff.scss'
 import { Suspense, useEffect, useState } from 'react';
 import { Document, DocumentProps } from 'react-pdf';
-import { PdfManager, TextRendererType } from "#/classes/pdfManager";
 import PdfPage from "./pdfPage";
 import { ChevronRightIcon } from "@radix-ui/react-icons";
-import DynamicIcon from "#/components/icons/DynamicIcon";
 import Link from "next/link";
-import { pdfStateClasses } from "#/types/ui";
 import PdfViewAllPages from "./PdfViewAll";
 import PdfToc from "./Toc";
-import { Button } from "#/components/shad/ui/button";
+import { TextRendererType, PdfManager } from "@ulld/state";
+import { Button } from "@ulld/tailwind/base";
+import { pdfStateClasses } from "../../../types";
+import DynamicIcon from "../../icons/DynamicIcon";
 export const options = {
     standardFontDataUrl: '/standard_fonts/',
 };

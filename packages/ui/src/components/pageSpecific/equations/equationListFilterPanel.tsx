@@ -3,16 +3,14 @@ import React, { useEffect, useState } from 'react'
 import { EquationSearchParams, formatEquationSearchParams } from './utils'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '#/components/shad/ui/form'
-import { Input } from '#/components/shad/ui/input'
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, Input, Button, buttonVariants } from '@ulld/tailwind/base'
 import { useForm } from 'react-hook-form'
 import EquationTagComboBox from './equationTagComboBox'
-import { beArray } from '#/utils/plotting/arrayUtils'
-import StringBadgeList from '#/components/inputs/stringBadgeList'
-import { Button, buttonVariants } from '#/components/shad/ui/button'
 import EquationVariableComboBox from './equationVariableComboBox'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import StringBadgeList from '../../inputs/stringBadgeList'
+import { ArrayUtilities } from '@ulld/utilities'
 
 
 
@@ -51,10 +49,10 @@ const EquationFilterPanel = ({ tags, searchParams, variables }: EquationFilterPa
             form.setValue("query", searchParams.query)
         }
         if (searchParams.tags) {
-            form.setValue("tags", beArray(searchParams.tags))
+            form.setValue("tags", ArrayUtilities.beArray(searchParams.tags))
         }
         if (searchParams.variables) {
-            form.setValue("variables", beArray(searchParams.variables))
+            form.setValue("variables", ArrayUtilities.beArray(searchParams.variables))
         }
     }, [searchParams])
 
