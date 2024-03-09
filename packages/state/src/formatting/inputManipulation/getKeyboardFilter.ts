@@ -1,5 +1,5 @@
+import { replaceRecursively } from '@ulld/utilities'
 import React, { ChangeEvent } from 'react'
-
 export type KeyboardFilterType = "noSpaces" | "numberOnly" | "integerOnly"
 type KeyboardFilterElement = HTMLInputElement | HTMLTextAreaElement
 type KeyboardFilterReturnType<T> = React.DetailedHTMLProps<React.InputHTMLAttributes<T>, T>
@@ -9,22 +9,22 @@ type ExistingListenerType<T> = KeyboardFilterReturnType<T>
 const keyboardFilterMap: { [k in KeyboardFilterType]: KeyboardFilterReturnType<KeyboardFilterElement> } = {
     noSpaces: {
         onChange: (e: ChangeEvent<KeyboardFilterElement>) => {
-            e.target.value = e.target.value ? e.target.value.replaceAll(" ", "") : ""
+            e.target.value = e.target.value ? replaceRecursively(e.target.value, " ", "") : ""
         }
     },
     numberOnly: {
         onChange: (e: ChangeEvent<KeyboardFilterElement>) => {
-            let nv = e.target.value ? e.target.value.replaceAll(/[^\d.]/gmi, "") : ""
+            let nv = e.target.value ? replaceRecursively(e.target.value, /[^\d.]/gmi, "") : ""
             let pi = nv.indexOf(".")
             if (pi !== -1) {
-                nv = `${nv.slice(0, pi + 1)}${nv.slice(pi, nv.length).replaceAll(".", "")}`
+                nv = `${nv.slice(0, pi + 1)}${replaceRecursively(nv.slice(pi, nv.length), ".", "")}`
             }
             e.target.value = nv
         }
     },
     integerOnly: {
         onChange: (e: ChangeEvent<KeyboardFilterElement>) => {
-            e.target.value = e.target.value ? e.target.value.replaceAll(/[^\d]/gm, "") : ""
+            e.target.value = e.target.value ? replaceRecursively(e.target.value, /[^\d]/gm, "") : ""
         }
     }
 }

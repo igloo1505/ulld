@@ -1,9 +1,6 @@
-import type { serverClient } from '#/trpc/serverClient'
-import { Settings } from '@prisma/client'
-
+import { Settings } from '@ulld/database'
 export type LocalSettingsType = Omit<Settings, "id" | "lastSync" | "firstSync"> & { id?: number }
 
-export type RetrievedSettings = Awaited<ReturnType<typeof serverClient.settings.getSettings>>
 
 export const defaultSettingsState: LocalSettingsType = {
     id: 1,
@@ -17,7 +14,7 @@ export const defaultSettingsState: LocalSettingsType = {
 }
 
 
-export const getCompletedSettings = (s: RetrievedSettings): LocalSettingsType => {
+export const getCompletedSettings = (s: Partial<Settings>): LocalSettingsType => {
     return {
         ...defaultSettingsState,
         ...s

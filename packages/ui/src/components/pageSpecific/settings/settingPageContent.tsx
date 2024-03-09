@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import deepEql from 'deep-eql'
 import { settingsChangeSchema, client, BibWithEntries } from '@ulld/api';
-import { RetrievedSettings, store, toggleSetting } from '@ulld/state';
+import { store, toggleSetting } from '@ulld/state';
 import { BibSettingsSectionProps } from '.';
 import BibSettingsSection from './bib/BibSettingsSection';
 import { LabeledCheckbox } from '../..';

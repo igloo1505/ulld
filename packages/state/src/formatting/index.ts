@@ -1,4 +1,3 @@
-export * from "./getUniversalClient"
 export * from "./general"
 export * from "./getHeadingHierarchy"
 export * from "./formatLocationData"

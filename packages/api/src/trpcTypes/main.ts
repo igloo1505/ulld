@@ -7,3 +7,5 @@ export type BibEntryReturned = Awaited<ReturnType<typeof serverClient.bibliograp
 export type BibReturnType = Awaited<ReturnType<typeof serverClient.bibliography.getBib>>
 export type FsMdxReturnType = Awaited<ReturnType<typeof serverClient.mdx.getFsMdx>>
 export type MdxNoteSummary = Awaited<ReturnType<typeof serverClient.universalNotes.getSummaryOfAllNotes>>[number]
+
+export type RetrievedSettings = Awaited<ReturnType<typeof serverClient.settings.getSettings>>
