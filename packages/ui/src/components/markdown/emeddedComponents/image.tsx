@@ -1,8 +1,9 @@
 import React from 'react'
 import fs from 'fs'
 import clsx from 'clsx'
-import ImageMapImage, { EmbeddedImageProps } from './imageMapImage'
-import { getInternalConfig } from '#/lib/config/zod/getInternalConfig'
+import { getInternalConfig } from '@ulld/configschema'
+import { EmbeddedImageProps } from '@ulld/utilities'
+import ImageMapImage from './imageMapImage'
 
 
 
@@ -13,7 +14,7 @@ const isFullWidth = (props: EmbeddedImageProps) => {
 
 
 
-const EmbeddedImage = async (props: EmbeddedImageProps) => {
+export const EmbeddedImage = async (props: EmbeddedImageProps) => {
     const config = getInternalConfig()
     const { alt, block, image, file, url, left, right, inline, width, height, full, fullWidth: fw } = props
     if (image && image in config.UI.media.imageMap) {
@@ -45,6 +46,3 @@ const EmbeddedImage = async (props: EmbeddedImageProps) => {
 
 
 EmbeddedImage.displayName = "EmbeddedImage"
-
-
-export default EmbeddedImage;

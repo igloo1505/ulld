@@ -1,4 +1,4 @@
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '#/components/shad/ui/tooltip'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@ulld/tailwind/base'
 import React from 'react'
 
 
@@ -9,7 +9,7 @@ interface TTProps {
 }
 
 
-const TT = ({ children, content }: TTProps) => {
+export const TT = ({ children, content }: TTProps) => {
     return (
         <TooltipProvider>
             <Tooltip>
@@ -26,6 +26,3 @@ const TT = ({ children, content }: TTProps) => {
 
 
 TT.displayName = "TT"
-
-
-export default TT;

@@ -1,7 +1,6 @@
 "use client"
-import { ButtonProps as ShadButtonProps, Button as ShadButton } from '#/components/shad/ui/button'
-import { MarkdownButtonActions } from '#/lib/actions/markdownActions/markdownActionsEnum'
-import { markdownActionsMap } from '#/lib/actions/markdownActions/markdownActionsMap'
+import { MarkdownButtonActions, markdownActionsMap } from '@ulld/state'
+import { ButtonProps as ShadButtonProps, Button as ShadButton } from '@ulld/tailwind/base'
 import React from 'react'
 
 
@@ -15,7 +14,7 @@ interface ButtonProps {
 
 
 
-const Button = ({ children, btnProps = {}, action, target }: ButtonProps) => {
+export const Button = ({ children, btnProps = {}, action, target }: ButtonProps) => {
     const handleClick = () => {
         markdownActionsMap[action](target)
     }
@@ -30,6 +29,3 @@ const Button = ({ children, btnProps = {}, action, target }: ButtonProps) => {
 
 
 Button.displayName = "Button"
-
-
-export default Button;

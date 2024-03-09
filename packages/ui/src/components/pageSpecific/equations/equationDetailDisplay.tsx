@@ -2,11 +2,11 @@ import React from 'react'
 import { EditEquationItem } from './addEquationFormWrapper'
 import { formatEquationSearchParams } from './utils'
 import { HashIcon } from 'lucide-react'
-import EquationDisplayBadge from './equationDisplayBadge'
-import EquationDetailLinkButton from './equationDisplayButton'
+import { EquationDisplayBadge } from './equationDisplayBadge'
+import { EquationDetailLinkButton } from './equationDisplayButton'
 import { H3, MathDisplaySERVER, MdxContentSERVER } from '../..'
-import CopyTextButton from '../../buttons/utility/copyButton'
-import CodeHighlightContainer from '../../code/syntaxHighlighting/codeHighlightContainer'
+import { CopyTextButton } from '../../buttons/utility/copyButton'
+import { CodeHighlightContainer } from '../../code/syntaxHighlighting/codeHighlightContainer'
 
 
 interface EquationDetailDisplayProps {
@@ -36,7 +36,7 @@ const EquationDetailDisplay = ({ equation: item, isModal = false }: EquationDeta
                 <MathDisplaySERVER
                     isMathOnly
                     display
-                    math={item.content}
+                    content={item.content}
                     stylesContainerId={`${id}-content`}
                     className={"text-xl my-4"}
                 />

@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { Button } from '#/components/shad/ui/button';
-import { Popover, PopoverContent, PopoverTrigger } from '#/components/shad/ui/popover';
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '#/components/shad/ui/command';
+import { Button, Popover, PopoverContent, PopoverTrigger, Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@ulld/tailwind/base';
 import clsx from 'clsx';
 
 

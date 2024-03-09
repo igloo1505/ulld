@@ -1,5 +1,5 @@
 "use client"
-import { toggleEquationSelectMode } from '#/actions/ui'
+import { toggleEquationSelectMode } from '@ulld/state'
 import { useEffect } from 'react'
 
 

@@ -13,7 +13,7 @@ interface MdxPdfViewerProps {
     width?: number
 }
 
-const MdxPdfViewer = ({ file, width, page, hideToc }: MdxPdfViewerProps) => {
+export const MdxPdfViewer = ({ file, width, page, hideToc }: MdxPdfViewerProps) => {
     const allowToc = !page && !hideToc
     const [showToc, setShowToc] = useState(typeof window === "undefined" ? allowToc : Boolean(allowToc && window.innerWidth >= 768 + 152 + 32 + 54))
     const tocRef = useRef<HTMLDivElement>(null!)
@@ -87,5 +87,3 @@ const MdxPdfViewer = ({ file, width, page, hideToc }: MdxPdfViewerProps) => {
 
 MdxPdfViewer.displayName = "MdxPdfViewer"
 
-
-export default MdxPdfViewer;

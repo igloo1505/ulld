@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react'
-import TextAreaCodeEditor, { TextAreaCodeEditorProps } from './textAreaCodeEditor';
+import { TextAreaCodeEditorProps, TextAreaCodeEditor } from './textAreaCodeEditor';
 import { FullCodeEditorTextAreaProps } from './codeEditor/monacoEditor';
 import CodeEditorModal, { getLaunchCodeEditorOnKeydownListener } from './codeEditor/monacoEditorModal';
 import { useViewport } from '@ulld/state';

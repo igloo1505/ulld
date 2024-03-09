@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
-import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from '#/components/shad/ui/context-menu'
-import { copyStringToClipboard } from '#/utils/interaction/copyString'
+import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from '@ulld/tailwind/base'
+import { copyStringToClipboard } from '@ulld/utilities'
 
 
 interface EquationContextMenuProps {

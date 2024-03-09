@@ -1,17 +1,17 @@
-import A from "./A";
-import Li from "./Li";
-import Hr from "./hr";
-import Ol from "./ol";
-import TableWrapper from "./tables/wrapper";
-import { H1, H2, H3, H4, H5, H6 } from "./text/heading";
+import { A } from "./A";
+import { Li } from "./Li";
+import { Hr } from "./hr";
+import { Ol } from "./ol";
+import { TableWrapper } from "./tables/wrapper";
 import Ul from "./ul";
 import type { MDXComponents } from 'mdx/types'
-import MdxInput from "./input";
+import { MdxInput } from "./input";
 import { ConditionalComponentProps, getConditionalComponents } from "./conditionalComponents";
 import BlockQuote from "./text/blockQuote";
-import Highlight from "./emeddedComponents/Hl";
-import ImgComponent from "./img";
-import InternalMermaid from "./emeddedComponents/diagrams/mermaid";
+import { Highlight } from "./emeddedComponents/Hl";
+import { ImgComponent } from "./img";
+import { InternalMermaid } from "./emeddedComponents/diagrams/mermaid";
+import { H1, H2, H3, H4, H5, H6 } from "..";
 
 
 export const components: MDXComponents = {

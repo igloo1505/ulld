@@ -16,7 +16,7 @@ interface CopyTextButtonProps {
 }
 
 
-const CopyTextButton = ({ children, withIcon, buttonProps = {}, copyText, toast: _toast }: CopyTextButtonProps) => {
+export const CopyTextButton = ({ children, withIcon, buttonProps = {}, copyText, toast: _toast }: CopyTextButtonProps) => {
     const { toast } = useToast()
     return (
         <Button
@@ -39,4 +39,3 @@ const CopyTextButton = ({ children, withIcon, buttonProps = {}, copyText, toast:
 CopyTextButton.displayName = "CopyTextButton"
 
 
-export default CopyTextButton;

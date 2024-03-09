@@ -7,7 +7,7 @@ import React from 'react'
 
 
 interface MathDisplaySERVERProps {
-    math?: string
+    content?: string
     children?: string
     display?: boolean
     className?: string
@@ -20,7 +20,7 @@ interface MathDisplaySERVERProps {
 }
 
 
-export const MathDisplaySERVER = async ({ math, children, stylesContainerId, autoWrap, className, display, element = "div", isMathOnly = false, elementProps = {}, mathjaxOptions = {} }: MathDisplaySERVERProps) => {
+export const MathDisplaySERVER = async ({ content: math, children, stylesContainerId, autoWrap, className, display, element = "div", isMathOnly = false, elementProps = {}, mathjaxOptions = {} }: MathDisplaySERVERProps) => {
 
     if (!math && !children) return null
     const id = stylesContainerId ? stylesContainerId : getRandomId()

@@ -1,11 +1,11 @@
 "use client"
-import DynamicIcon from '#/components/icons/DynamicIcon'
 import clsx from 'clsx'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import gsap from 'gsap'
-import store from '#/state/store'
-import { addEmbededPanelState, toggleEmbeddedPanelState } from '#/state/slices/ui'
 import { usePathname } from 'next/navigation'
+import { initialState, RootState, store, toggleEmbeddedPanelState, addEmbededPanelState } from '@ulld/state'
+import { connect } from 'react-redux'
+import { DynamicIcon } from '../../../../..'
 
 
 
@@ -17,9 +17,6 @@ interface CollapsableSidePanelBtnProps {
     panels: typeof initialState.UI.panels.embededPanels
 }
 
-import { RootState } from '#/state/store';
-import { connect } from 'react-redux';
-import initialState from '#/state/initialState/initialState'
 
 const connector = connect((state: RootState, props: any) => ({
     panels: state.UI.panels.embededPanels,

@@ -11,7 +11,7 @@ export interface TabProps {
     index: number
 }
 
-const Tab = ({ children, index }: TabProps) => {
+export const Tab = ({ children, index }: TabProps) => {
     return (
         <div className={clsx("w-full h-full flex flex-col justify-center items-center p-4 tabContent", `tab-content-${index}`)}>
             <div className={""}>
@@ -23,6 +23,3 @@ const Tab = ({ children, index }: TabProps) => {
 
 
 Tab.displayName = "Tab"
-
-
-export default Tab;

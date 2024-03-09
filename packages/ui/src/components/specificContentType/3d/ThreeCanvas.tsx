@@ -13,7 +13,7 @@ interface ThreeJsCanvasProps extends CanvasProps {
     className?: string
 }
 
-const ThreeJsCanvas = forwardRef<HTMLElement, ThreeJsCanvasProps>(({ children, className, orbitControls, cameraControls, color, ...props }: ThreeJsCanvasProps, ref) => {
+export const ThreeJsCanvas = forwardRef<HTMLElement, ThreeJsCanvasProps>(({ children, className, orbitControls, cameraControls, color, ...props }: ThreeJsCanvasProps, ref) => {
     const internal = useRef(null!)
     useImperativeHandle(ref, () => internal.current)
 
@@ -40,5 +40,3 @@ const ThreeJsCanvas = forwardRef<HTMLElement, ThreeJsCanvasProps>(({ children, c
 
 ThreeJsCanvas.displayName = "ThreeJsCanvas"
 
-
-export default ThreeJsCanvas;

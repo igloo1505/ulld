@@ -1,9 +1,8 @@
 "use client";
 import { useRef } from "react";
-import { MeshProps, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { Mesh } from "three";
-import ThreeJsCanvas from "#/components/functionality/three/ThreeCanvas";
-import { Backdrop, CameraControls, Center, OrthographicCamera, PerspectiveCamera, Stage, useGLTF } from "@react-three/drei";
+import { Backdrop, Stage, useGLTF } from "@react-three/drei";
+import { ThreeJsCanvas } from "../../specificContentType/3d/ThreeCanvas";
 
 
 interface GltfProps {

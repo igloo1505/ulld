@@ -154,6 +154,7 @@
     "react-query-kit": "^1.4.8",
     "react-redux": "^8.1.2",
     "react-resizable-panels": "^2.0.12",
+    "react-spinners": "^0.13.8",
     "recharts": "^2.12.2",
     "sass": "^1.71.1",
     "server-only": "^0.0.1",

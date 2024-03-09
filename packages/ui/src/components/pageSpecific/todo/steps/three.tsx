@@ -1,6 +1,6 @@
 import React from 'react'
 import { ToDoListFormStepOneProps } from './one';
-import DateTimeInput from '../../../inputs/dateTimeInput';
+import { DateTimeInput } from '../../..';
 
 
 

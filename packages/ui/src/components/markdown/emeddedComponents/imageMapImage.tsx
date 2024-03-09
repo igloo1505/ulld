@@ -1,8 +1,8 @@
 import clsx from "clsx"
 import dynamic from "next/dynamic"
 import { EmbeddedImageProps, WithRequired } from "@ulld/utilities"
-import { getInternalConfig } from "@ulld/config"
 import { isFullWidth } from "@ulld/state"
+import { getInternalConfig } from "@ulld/configschema"
 
 
 
@@ -12,7 +12,7 @@ const ImageMapImage = (props: WithRequired<EmbeddedImageProps, "image">) => {
     const fullWidth = isFullWidth(props)
     const { image } = props
     let im = getInternalConfig()?.UI?.media?.imageMap?.imageMap
-    if(!im) return
+    if (!im) return
     const _s = im[image as keyof typeof im]
     if (!_s) return null
 

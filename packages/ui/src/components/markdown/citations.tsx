@@ -1,4 +1,4 @@
-import { BibEntry } from '#/classes/prismaMdxRelations/BibEntry'
+import { BibEntry } from '@ulld/api'
 import React from 'react'
 
 

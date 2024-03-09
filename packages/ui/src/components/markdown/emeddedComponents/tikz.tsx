@@ -1,10 +1,10 @@
 import React from 'react'
-import TikzLoader from '#/components/wrappers/TikzLoader'
 import clsx from 'clsx'
-import { getRandomId } from '#/utils/ui'
 import TikzColorHandler from './tikzColorHandler'
-import TikzPlaceholder from './tikzPlaceholder'
-import { getOnlineStatusServerSide } from '#/utils/server/getOnlineStatus'
+import { getRandomId } from '@ulld/utilities'
+import { TikzPlaceholder } from '.'
+import TikzLoader from '../../installerScripts/TikzLoader'
+import { getOnlineStatusServerSide } from '@ulld/api'
 
 
 interface TikzDiagramProps {
@@ -15,7 +15,7 @@ interface TikzDiagramProps {
 }
 
 
-const TikzDiagram = async ({ content, foreground, primary, noMargin }: TikzDiagramProps) => {
+export const TikzDiagram = async ({ content, foreground, primary, noMargin }: TikzDiagramProps) => {
     const id = `tikz-${getRandomId(8)}`
     const online = await getOnlineStatusServerSide()
 
@@ -47,9 +47,3 @@ const TikzDiagram = async ({ content, foreground, primary, noMargin }: TikzDiagr
 
 
 TikzDiagram.displayName = "TikzDiagram"
-
-
-export default TikzDiagram;
-
-
-

@@ -28,7 +28,7 @@ export const GridItem = ({ children, background, center }: { children: React.Rea
 
 
 /* TODO: Consider adding an auto class based on number of children. It might not be reliably stylable (probably not a word) but could be useful for a default case instead of just blowing up entirely. */
-const Grid = ({ cols: _cols, columns, minMax, children, autoFit }: GridProps) => {
+export const Grid = ({ cols: _cols, columns, minMax, children, autoFit }: GridProps) => {
     let cols = _cols || columns
     return (
         <div
@@ -46,6 +46,3 @@ const Grid = ({ cols: _cols, columns, minMax, children, autoFit }: GridProps) =>
 
 
 Grid.displayName = "Grid"
-
-
-export default Grid;

@@ -1,7 +1,7 @@
 "use client"
 import clsx from 'clsx';
 import React from 'react'
-import { MutatingDots } from 'react-loader-spinner'
+import { RingLoader } from 'react-spinners'
 
 
 interface LoadingIndicatorProps {
@@ -19,18 +19,11 @@ export const LoadingIndicatorScreen = (props: LoadingIndicatorProps) => {
 }
 
 
-export const LoadingIndicator = () => {
+export const LoadingIndicator = ({ loading = true }: { loading?: boolean }) => {
     return (
-        <MutatingDots
-            height="100"
-            width="100"
+        <RingLoader
             color="hsl(var(--primary))"
-            secondaryColor='hsl(var(--brand))'
-            radius='12.5'
-            ariaLabel="mutating-dots-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
+            loading={loading}
         />
     )
 }

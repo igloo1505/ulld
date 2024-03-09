@@ -1,4 +1,4 @@
-import { searchByTagUrl } from '#/actions/client/async'
+import { searchByTagUrl } from '@ulld/state'
 import clsx from 'clsx'
 import Link from 'next/link'
 import React from 'react'
@@ -21,7 +21,7 @@ const TagbarTag = ({ tag }: { tag: string }) => {
     )
 }
 
-const TagBar = (props: TagBarProps) => {
+export const TagBar = (props: TagBarProps) => {
     let children = typeof props.children === "string" ? props.children : props.children.props.children
     const getTags = (c: string) => {
         return c.split(/\s/gmi).filter((t) => t !== "").map((s) => s.split(" ")).flat().map((s) => s.trim())
@@ -35,6 +35,3 @@ const TagBar = (props: TagBarProps) => {
 
 
 TagBar.displayName = "TagBar"
-
-
-export default TagBar;

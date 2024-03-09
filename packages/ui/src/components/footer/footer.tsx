@@ -5,8 +5,8 @@ import { Route } from 'next';
 import clsx from 'clsx';
 import { BrandTitle } from '..';
 import { QuickLinkType } from '@ulld/utilities';
-import { GithubIcon } from 'lucide-react';
-import VercelIcon from '../icons/logoIcons/vercel';
+import { VercelIcon } from '../icons/logoIcons/vercel';
+import { GithubIcon } from '../icons/logoIcons/github';
 
 
 const quickLinks: QuickLinkType[] = [

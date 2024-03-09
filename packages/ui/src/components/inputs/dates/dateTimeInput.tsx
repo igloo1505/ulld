@@ -1,8 +1,8 @@
-import React, { ChangeEvent, ChangeEventHandler, useState } from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import DatePicker from 'react-datepicker'
-import { Input } from '../shad/ui/input'
+import { Input } from '@ulld/tailwind/base'
 import "react-datepicker/dist/react-datepicker.css";
-import "#/styles/dateTimePicker.scss"
+import "./dateTimePicker.scss"
 
 interface DateTimeInputProps {
     value?: Date | null
@@ -10,8 +10,9 @@ interface DateTimeInputProps {
 }
 
 /* WARNING: Actual text input not working for time. Appears to be a state issue not being shared properly between react-datepicker and Shadcn, but will figure it out later. For right now the scrolling select menu is working fine. */
-const DateTimeInput = ({ value, handleChange }: DateTimeInputProps) => {
+export const DateTimeInput = ({ value, handleChange }: DateTimeInputProps) => {
     const [time, setTime] = useState("")
+
     const setTimeInput = (e: ChangeEvent<HTMLInputElement>) => {
         console.log("e: ", e)
         let target = e?.target as HTMLInputElement
@@ -43,6 +44,3 @@ const DateTimeInput = ({ value, handleChange }: DateTimeInputProps) => {
 
 
 DateTimeInput.displayName = "DateTimeInput"
-
-
-export default DateTimeInput;

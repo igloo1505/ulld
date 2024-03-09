@@ -19,7 +19,7 @@ interface FlexRowProps extends BaseEmbeddableComponentProps {
     grow?: boolean
 }
 
-const FlexRow = ({ children, wrap, gap = "md", center, start, end, fit, full, between, around, even, grow, ..._props }: FlexRowProps) => {
+export const FlexRow = ({ children, wrap, gap = "md", center, start, end, fit, full, between, around, even, grow, ..._props }: FlexRowProps) => {
     const props = getBaseEmbeddableProps(_props)
     return (
         <div {...props} className={clsx("flex flex-row items-center",
@@ -44,6 +44,3 @@ const FlexRow = ({ children, wrap, gap = "md", center, start, end, fit, full, be
 
 
 FlexRow.displayName = "FlexRow"
-
-
-export default FlexRow;

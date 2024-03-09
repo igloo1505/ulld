@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import initialState from "../initialState/initialState";
 import { ParsedAppConfig } from "@ulld/configschema";
+import { initialState } from "..";
 
 
 const slice = createSlice({
@@ -15,5 +15,5 @@ const slice = createSlice({
 
 
 export const { setConfigState } = slice.actions
-export default slice.reducer
+export const ConfigReducer = slice.reducer
 

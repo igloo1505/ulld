@@ -2,13 +2,13 @@
 import { Route } from 'next';
 import Link from 'next/link';
 import React, { useId } from 'react'
-import Tooltip from '../ui/tooltip';
 import clsx from 'clsx';
+import { ComposedTooltip } from '..';
 
 
 
 
-const A = (props: React.HTMLAttributes<HTMLAnchorElement> & { href?: Route | string, children?: any }) => {
+export const A = (props: React.HTMLAttributes<HTMLAnchorElement> & { href?: Route | string, children?: any }) => {
     const id = useId()
     if (!props.href) {
         return <a {...props} />
@@ -31,14 +31,11 @@ const A = (props: React.HTMLAttributes<HTMLAnchorElement> & { href?: Route | str
         return <Link className={clsx("cursor-pointer rounded-sm px-1 text-blue-500 dark:text-blue-400", isTagLink && "tag-link")} id={id} {..._props} />
     }
     return (
-        <Tooltip content={props.href} disable={isTagLink}>
+        <ComposedTooltip content={props.href} disable={isTagLink}>
             <Link className={clsx("embeddedLink cursor-pointer rounded-sm px-1 text-blue-500 dark:text-blue-400", isTagLink && "tag-link")} {..._props} id={id} />
-        </Tooltip>
+        </ComposedTooltip>
     )
 }
 
 
 A.displayName = "A"
-
-
-export default A;

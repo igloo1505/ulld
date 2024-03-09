@@ -1,5 +1,5 @@
 import React, { useId } from 'react'
-import ResizePanel from './resizePanel';
+import { ResizePanel } from './resizePanel';
 import ResizeGroupListener from './panelListener';
 
 
@@ -16,7 +16,7 @@ const getColumns = (n: number) => {
     return a.join(" 16px ")
 }
 
-const ResizeContainer = (props: ResizeContainerProps) => {
+export const ResizeContainer = (props: ResizeContainerProps) => {
     const id = useId()
     const cols = getColumns(2)
 
@@ -43,6 +43,3 @@ const ResizeContainer = (props: ResizeContainerProps) => {
 
 
 ResizeContainer.displayName = "ResizeContainer"
-
-
-export default ResizeContainer;

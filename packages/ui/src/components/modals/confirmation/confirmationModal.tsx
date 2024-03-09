@@ -2,7 +2,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import clsx from 'clsx';
-import { RootState, initialState, store, showConfirmationModal } from '@ulld/state';
+import { RootState, store, showConfirmationModal, ConfirmationModalConfig } from '@ulld/state';
 import { confirmationFunctions } from './confirmationModalConfig';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, Button, useToast } from '@ulld/tailwind/base'
 
@@ -16,7 +16,7 @@ const connector = connect((state: RootState, props: any) => ({
 
 
 interface ConfirmationModalProps {
-    config: typeof initialState['UI']['modals']['confirmationModal']
+    config: ConfirmationModalConfig | false
 }
 
 

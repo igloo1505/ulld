@@ -1,9 +1,9 @@
+import { Separator } from '@ulld/tailwind/base';
 import React from 'react'
-import { Separator } from '../shad/ui/separator';
 
 
 
-const Hr = () => {
+export const Hr = () => {
     return (
         <Separator />
     )
@@ -11,6 +11,3 @@ const Hr = () => {
 
 
 Hr.displayName = "Hr"
-
-
-export default Hr;

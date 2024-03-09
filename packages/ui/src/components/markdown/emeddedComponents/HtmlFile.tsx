@@ -1,4 +1,4 @@
-import { serverClient } from '#/trpc/serverClient'
+import { serverClient } from '@ulld/api'
 import React from 'react'
 
 
@@ -7,8 +7,8 @@ interface HtmlFileProps {
 }
 
 
-const HtmlFile = async ({ file }: HtmlFileProps) => {
-    const fileContent = await serverClient.getUtf8File(file)
+export const HtmlFile = async ({ file }: HtmlFileProps) => {
+    const fileContent = await serverClient.fsUtils.getUtf8File(file)
     return (
         <div dangerouslySetInnerHTML={{ __html: fileContent }} />
     )
@@ -16,6 +16,3 @@ const HtmlFile = async ({ file }: HtmlFileProps) => {
 
 
 HtmlFile.displayName = "HtmlFile"
-
-
-export default HtmlFile;

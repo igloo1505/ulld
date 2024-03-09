@@ -41,7 +41,7 @@ const EquationSearchCommandGroup = ({ activePage, equationSearchCommands, close,
                 >
                     <MathDisplayCLIENT
                         stylesId={`equation-${eq.id}`}
-                        math={eq.title}
+                        content={eq.title}
                     />
                 </CommandPaletteItem>
             })}

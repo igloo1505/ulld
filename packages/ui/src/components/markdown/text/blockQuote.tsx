@@ -1,4 +1,4 @@
-import { getInternalConfig } from '#/lib/config/zod/getInternalConfig'
+import { getInternalConfig } from '@ulld/configschema'
 import clsx from 'clsx'
 import React from 'react'
 

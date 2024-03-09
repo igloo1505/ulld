@@ -8,7 +8,7 @@ interface HideProps extends BaseEmbeddableComponentProps {
     children: React.ReactNode
 }
 
-const Hide = ({ children, ...props }: HideProps) => {
+export const Hide = ({ children, ...props }: HideProps) => {
     const _props = getBaseEmbeddableProps(props)
 
     return (
@@ -21,6 +21,3 @@ const Hide = ({ children, ...props }: HideProps) => {
 
 
 Hide.displayName = "Hide"
-
-
-export default Hide;

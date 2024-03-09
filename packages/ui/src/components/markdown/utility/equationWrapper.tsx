@@ -1,11 +1,10 @@
 import React from 'react'
 import { BaseEmbeddableComponentProps, getBaseEmbeddableProps } from '../emeddedComponents/baseEmbeddableComponentTypes'
 import EquationContextMenu from './equationContextMenu'
-import { getRandomId } from '#/utils/ui'
 import Link from 'next/link'
-import { serverClient } from '#/trpc/serverClient'
-import AppendStyleSheet from '#/components/util/appendStyleSheet'
 import HandleEquationClick from './handleEquationClick'
+import { serverClient, AppendStyleSheet } from '@ulld/api'
+import { getRandomId } from '@ulld/utilities'
 
 
 
@@ -16,7 +15,7 @@ interface EquationWrapperProps extends BaseEmbeddableComponentProps {
 }
 
 /* TODO: Come back here and allow for supplying ***only*** an id, and populate the children from the DB. Switch this back to a RSC by swapping the router for a Link and then populate directly from the DB if no children exist. */
-const EquationWrapper = async ({ children, id, python, ..._props }: EquationWrapperProps) => {
+export const EquationWrapper = async ({ children, id, python, ..._props }: EquationWrapperProps) => {
     const props = getBaseEmbeddableProps(_props, "w-full h-fit flex flex-col justify-center items-center")
     if (!children && !id) return null
 
@@ -69,6 +68,3 @@ const EquationWrapper = async ({ children, id, python, ..._props }: EquationWrap
 
 
 EquationWrapper.displayName = "EquationWrapper"
-
-
-export default EquationWrapper;

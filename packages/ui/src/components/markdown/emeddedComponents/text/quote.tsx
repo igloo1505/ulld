@@ -9,7 +9,7 @@ interface QuoteProps {
 }
 
 
-const Quote = ({ children, author, by, from }: QuoteProps) => {
+export const Quote = ({ children, author, by, from }: QuoteProps) => {
     const _author = author || by || from
     return (
         <div className={"w-full flex flex-col justify-center items-center !my-6"}>
@@ -23,6 +23,3 @@ const Quote = ({ children, author, by, from }: QuoteProps) => {
 
 
 Quote.displayName = "Quote"
-
-
-export default Quote;

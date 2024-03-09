@@ -33,7 +33,7 @@ interface LazyMdxProps {
 }
 
 
-const LazyMdx = async ({ markdown, fs, returnedNote, slug, docType, _config }: LazyMdxProps) => {
+export const LazyMdx = async ({ markdown, fs, returnedNote, slug, docType, _config }: LazyMdxProps) => {
     if (!markdown && !returnedNote) {
         return null
     }
@@ -129,6 +129,3 @@ const LazyMdx = async ({ markdown, fs, returnedNote, slug, docType, _config }: L
 
 
 LazyMdx.displayName = "LazyMdx"
-
-
-export default LazyMdx;

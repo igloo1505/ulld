@@ -3,7 +3,7 @@ import { EquationListItem as EquationListItemType } from './types'
 import Link from 'next/link'
 import { buttonVariants } from '@ulld/tailwind'
 import { H4, MathDisplaySERVER } from '../..'
-import DeleteModalTriggerButton from '../../inputs/deleteModalTriggerButton'
+import { DeleteModalTriggerButton } from '../../inputs/deleteModalTriggerButton'
 
 
 
@@ -18,7 +18,7 @@ const EquationListItem = ({ equation }: EquationListItemProps) => {
         <li className={"w-full h-full min-w-[min(400px,90vw)] rounded-lg border px-4 py-3 grid grid-cols-1 grid-rows-[auto_1fr_auto] shadow-md hover:shadow-sm transition-shadow duration-300 relative"}>
             <H4 className={"pr-4"}>
                 <MathDisplaySERVER
-                    math={equation.title}
+                    content={equation.title}
                     stylesContainerId={`${id}-title`}
                 />
                 <DeleteModalTriggerButton config={{
@@ -36,7 +36,7 @@ const EquationListItem = ({ equation }: EquationListItemProps) => {
                 <MathDisplaySERVER
                     isMathOnly
                     display
-                    math={equation.content}
+                    content={equation.content}
                     stylesContainerId={`${id}-content`}
                     className={"mx-6"}
                 />

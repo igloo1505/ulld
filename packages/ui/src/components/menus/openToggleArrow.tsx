@@ -9,7 +9,7 @@ interface OpenToggleArrowProps {
     openClass?: string
 }
 
-const OpenToggleArrow = (props: OpenToggleArrowProps) => {
+export const OpenToggleArrow = (props: OpenToggleArrowProps) => {
     const toggleOpen = () => {
         if (!props.groupId) return
         document.getElementById(props.groupId)?.classList.toggle(props.openClass || "open")
@@ -21,6 +21,3 @@ const OpenToggleArrow = (props: OpenToggleArrowProps) => {
 
 
 OpenToggleArrow.displayName = "OpenToggleArrow"
-
-
-export default OpenToggleArrow;

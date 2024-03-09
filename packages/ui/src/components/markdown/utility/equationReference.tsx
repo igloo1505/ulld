@@ -1,13 +1,15 @@
 "use client"
-import { getRandomId } from '#/utils/ui'
+import { getRandomId, replaceRecursively } from '@ulld/utilities'
 import { useEffect, useState } from 'react'
+
 
 interface EquationReferenceProps {
     id: string
     defaultContent?: string | number
 }
 
-const EquationReference = ({ id: _id, defaultContent }: EquationReferenceProps) => {
+
+export const EquationReference = ({ id: _id, defaultContent }: EquationReferenceProps) => {
     const [labelNumber, setLabelNumber] = useState<string | null>(null)
     const id = _id ? _id : getRandomId(16)
     const getLabel = () => {
@@ -21,7 +23,7 @@ const EquationReference = ({ id: _id, defaultContent }: EquationReferenceProps) 
         labelItems.forEach((l) => {
             let styles = window.getComputedStyle(l, ':before')
             let content = styles['content'];
-            let label = parseInt(content.replaceAll(/\"|\'/gm, ""))
+            let label = parseInt(replaceRecursively(content, /\"|\'/gm, ""))
             if (!Number.isNaN(label)) {
                 parsedItems.push(`${label}`)
             }
@@ -54,4 +56,3 @@ const EquationReference = ({ id: _id, defaultContent }: EquationReferenceProps) 
 EquationReference.displayName = "EquationReference"
 
 
-export default EquationReference;

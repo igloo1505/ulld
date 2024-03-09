@@ -10,7 +10,7 @@ interface CenteredTextProps {
     noMargin?: boolean
 }
 
-const CenteredText = ({ width, children, muted, noMargin }: CenteredTextProps) => {
+export const CenteredText = ({ width, children, muted, noMargin }: CenteredTextProps) => {
     return (
         <div className={clsx("w-full h-fit flex flex-col justify-center items-center gap-3", !noMargin && "my-5")}>
             <div
@@ -27,6 +27,3 @@ const CenteredText = ({ width, children, muted, noMargin }: CenteredTextProps) =
 
 
 CenteredText.displayName = "CenteredText"
-
-
-export default CenteredText;

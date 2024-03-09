@@ -1,5 +1,5 @@
-import { getUniversalQuery } from '#/lib/FsRemoteLocations/getUniversalClient'
-import type { serverClient } from '#/trpc/serverClient'
+import { serverClient } from '@ulld/api'
+import { getUniversalQuery } from '@ulld/state'
 import { Variable } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
@@ -10,7 +10,7 @@ interface EquationTagProps {
     equationId: string
 }
 
-const EquationTag = async ({ equationId }: EquationTagProps) => {
+export const EquationTag = async ({ equationId }: EquationTagProps) => {
     const query = await getUniversalQuery("getIdFromEquationId", "equations") as typeof serverClient.equations.getIdFromEquationId
     let eqId = await query(equationId)
     if (!eqId) {
@@ -31,6 +31,3 @@ const EquationTag = async ({ equationId }: EquationTagProps) => {
 
 
 EquationTag.displayName = "EquationTag"
-
-
-export default EquationTag;

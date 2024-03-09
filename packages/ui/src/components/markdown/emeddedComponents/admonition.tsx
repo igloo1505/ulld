@@ -1,26 +1,23 @@
-import OpenToggleArrow from '#/components/functionality/openToggleArrow'
-import DynamicIcon from '#/components/icons/DynamicIcon'
 import clsx from 'clsx'
 import React from 'react'
-import type { AdmonitionProps, AdmonitionType } from '#/types/ui';
-import { stringToConsistentId } from '#/lib/formatting/general';
 import FoldingAdmonition from './FoldingAdmonition';
-import { serverClient } from '#/trpc/serverClient';
-import AppendStyleSheet from '#/components/util/appendStyleSheet';
+import { serverClient } from '@ulld/api';
+import { stringToConsistentId } from '@ulld/state';
+import { DynamicIcon, OpenToggleArrow } from '../..';
+import { AdmonitionProps, AdmonitionType } from '../../../types';
 
 
 
-const Admonition = async (_props: AdmonitionProps) => {
+export const Admonition = async (_props: AdmonitionProps) => {
     const id = _props.id ? _props.id : _props.title ? stringToConsistentId(_props.title, "admon") : `${new Date().valueOf()}`
-    let props = {
+    let props: any = {
         ..._props,
     }
-    let _title = _props.title ? await serverClient.equations.stringWithMathToLatex({ content: _props.title, options: { inline: true } }) : { content: "", styles: undefined }
-    props.title = _title.content
+    let _title = _props.title ? await serverClient.mdx.parseMdxString({ content: _props.title, display: "inline" }) : undefined
+    props.title = _title?.compiledSource
 
     if (props.dropdown) {
         return <>
-            <AppendStyleSheet content={_title.styles} />
             <FoldingAdmonition
                 {...props}
                 id={id}
@@ -48,6 +45,3 @@ const Admonition = async (_props: AdmonitionProps) => {
 
 
 Admonition.displayName = "Admonition"
-
-
-export default Admonition;

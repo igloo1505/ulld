@@ -3,7 +3,7 @@ import { buttonVariants } from '@ulld/tailwind'
 import { withForwardSlash, makeHref } from '@ulld/utilities'
 import clsx from 'clsx'
 import { Route } from 'next'
-import { RedirectType, redirect, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 
@@ -16,7 +16,7 @@ interface EquationDetailLinkButtonProps {
     className?: string
 }
 
-const EquationDetailLinkButton = ({ children, className, isModal, href, variant }: EquationDetailLinkButtonProps) => {
+export const EquationDetailLinkButton = ({ children, className, isModal, href, variant }: EquationDetailLinkButtonProps) => {
     const router = useRouter()
     const handleClick = () => {
         let newHref = `${window.location.host}${withForwardSlash(href)}`
@@ -36,6 +36,3 @@ const EquationDetailLinkButton = ({ children, className, isModal, href, variant 
 
 
 EquationDetailLinkButton.displayName = "EquationDetailLinkButton"
-
-
-export default EquationDetailLinkButton;

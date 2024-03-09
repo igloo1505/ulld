@@ -11,7 +11,7 @@ export interface DefinitionTagProps {
     label?: string
 }
 
-const DefinitionTag = (props: DefinitionTagProps) => {
+export const DefinitionTag = (props: DefinitionTagProps) => {
     const { isDefinition } = props
 
     if (isDefinition) {
@@ -27,6 +27,3 @@ const DefinitionTag = (props: DefinitionTagProps) => {
 
 
 DefinitionTag.displayName = "DefinitionTag"
-
-
-export default DefinitionTag;

@@ -1,5 +1,5 @@
-import { PropColor, getPropColor } from '#/lib/ui/getPropColor'
 import { Record } from '@prisma/client/runtime/library'
+import { PropColor, getPropColor } from '@ulld/state'
 import clsx from 'clsx'
 import React from 'react'
 
@@ -9,7 +9,7 @@ type BoxedProps = {
 } & Record<keyof PropColor, boolean>
 
 
-const Boxed = ({ children, ...props }: BoxedProps) => {
+export const Boxed = ({ children, ...props }: BoxedProps) => {
     const { color, props: _props } = getPropColor(props, "border")
     return (
         <div className={"w-full h-fit flex flex-col justify-center items-center"}>
@@ -22,6 +22,3 @@ const Boxed = ({ children, ...props }: BoxedProps) => {
 
 
 Boxed.displayName = "Boxed"
-
-
-export default Boxed;

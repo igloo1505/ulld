@@ -1,9 +1,8 @@
 import React from 'react'
 import path from 'path'
 import fs from 'fs'
-import { TabularDataHandler, getFilepath } from '#/classes/data/tabularParser'
-import { getInternalConfig } from '#/lib/config/zod/getInternalConfig'
-import { ParsedAppConfig } from '#/lib/config/zod/secondaryConfigParse/main'
+import { getFilepath, TabularDataHandler } from '@ulld/api'
+import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema'
 
 
 interface DataTableProps {

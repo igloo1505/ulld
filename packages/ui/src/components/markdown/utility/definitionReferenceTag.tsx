@@ -1,6 +1,5 @@
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '#/components/shad/ui/hover-card'
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@ulld/tailwind/base'
 import { BookA } from 'lucide-react'
-import { Route } from 'next'
 import React from 'react'
 
 

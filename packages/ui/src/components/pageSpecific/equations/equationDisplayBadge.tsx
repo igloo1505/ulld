@@ -13,7 +13,7 @@ interface EquationDisplayBadgeProps extends BadgeProps {
     isModal: boolean
 }
 
-const EquationDisplayBadge = ({ children, href, isModal, ...props }: EquationDisplayBadgeProps) => {
+export const EquationDisplayBadge = ({ children, href, isModal, ...props }: EquationDisplayBadgeProps) => {
 
     const handleClick = () => {
         window.location.href = makeHref(`${window.location.host}${withForwardSlash(href)}`)
@@ -28,6 +28,3 @@ const EquationDisplayBadge = ({ children, href, isModal, ...props }: EquationDis
 
 
 EquationDisplayBadge.displayName = "EquationDisplayBadge"
-
-
-export default EquationDisplayBadge;

@@ -1,14 +1,11 @@
 "use client"
 import { MinusIcon, PlusIcon } from 'lucide-react'
 import React, { ChangeEvent, useId, useRef, useState } from 'react'
-import { Button } from '../shad/ui/button'
-import { Popover, PopoverContent } from '../shad/ui/popover'
 import { FieldValues } from 'react-hook-form'
-import { BaseFullFormInputProps } from '../layout/uniqueLayouts/fullForm/types'
-import { Input } from '../shad/ui/input'
-import { onEnter } from '#/actions/listeners'
 import * as PopoverPrimitive from "@radix-ui/react-popover"
-import { Label } from '../shad/ui/label'
+import { onEnter } from '@ulld/state'
+import { Input, Button, Label } from '@ulld/tailwind'
+import { BaseFullFormInputProps } from '..'
 
 
 
@@ -82,7 +79,7 @@ const NumberInput = <T extends FieldValues>(props: NumberInputProps<T, HTMLInput
 
     return (
         <>
-            <Popover
+            <PopoverPrimitive.Popover
                 open={modalOpen}
                 onOpenChange={setModalOpen}
             >
@@ -93,7 +90,7 @@ const NumberInput = <T extends FieldValues>(props: NumberInputProps<T, HTMLInput
                     <PopoverPrimitive.PopoverAnchor asChild>
                         <a onClick={() => setModalOpen(true)} ref={ref} role="button" className={"w-[3ch] min-w-fit text-center"}>{value ? value : "--"}</a>
                     </PopoverPrimitive.PopoverAnchor>
-                    <PopoverContent>
+                    <PopoverPrimitive.PopoverContent>
                         <div className="grid grid-cols-1 items-center gap-4">
                             {label && <Label htmlFor={id}>{label}</Label>}
                             <Input
@@ -107,12 +104,12 @@ const NumberInput = <T extends FieldValues>(props: NumberInputProps<T, HTMLInput
                             <div>
                             </div>
                         </div>
-                    </PopoverContent>
+                    </PopoverPrimitive.PopoverContent>
                     <Button disabled={Boolean(typeof max === "number" && parseFloat(value) > max - step)} onClick={handlePlus} className={"bg-green-400 hover:bg-green-500 transition-colors duration-200"}>
                         <PlusIcon />
                     </Button>
                 </div>
-            </Popover>
+            </PopoverPrimitive.Popover>
         </>
     )
 }

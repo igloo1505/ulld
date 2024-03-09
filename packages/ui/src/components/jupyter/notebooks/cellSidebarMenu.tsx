@@ -1,7 +1,7 @@
 import { CellSidebarProps, notebookActions, selectActiveCell } from '@datalayer/jupyter-react';
 import React, { MouseEvent, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { Button } from '../../shad/ui/button';
+import { Button } from '@ulld/tailwind/base';
 import { ChevronDownIcon, ChevronRightIcon, ChevronUpIcon, SquareIcon, XIcon } from 'lucide-react';
 import clsx from 'clsx';
 

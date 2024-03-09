@@ -1,10 +1,8 @@
 "use client"
 import React, { DetailedHTMLProps, HTMLInputTypeAttribute, InputHTMLAttributes, useRef, useState } from 'react'
-import { Checkbox } from '../shad/ui/checkbox';
 import { usePathname } from 'next/navigation';
-import { toggleCheckbox } from '#/actions/client/async';
-import { useToast } from '../shad/ui/use-toast';
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
+import { useToast } from '@ulld/tailwind';
 
 
 
@@ -29,14 +27,13 @@ const MdxCheckbox = (props: MdxInputProps) => {
             })
         }
         if (content) {
-            const { success, checkedState } = await toggleCheckbox(content, path)
-            if (success && checkedState !== undefined) {
-                setChecked(checkedState)
-            }
+            console.log(`Toggle checkbox functionality not yet implemented.`)
+            /* const { success, checkedState } = await toggleCheckbox(content, path) */
+
         }
     }
     return (
-        <Checkbox
+        <CheckboxPrimitive.Checkbox
             {...props as React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>}
             ref={ref}
             disabled={false}

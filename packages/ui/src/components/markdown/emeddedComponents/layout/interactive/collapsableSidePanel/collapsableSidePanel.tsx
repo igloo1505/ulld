@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import React, { useId } from 'react'
 import "#/styles/collapsableSidePanel.scss"
 import CollapsableSidePanelBtn from './collapsableSidePanelButton'
-import ReduxProvider from '#/state/ReduxProvider'
+import { ReduxProvider } from '@ulld/state'
 
 
 interface CollapsableSidePanelProps {
@@ -13,7 +13,7 @@ interface CollapsableSidePanelProps {
     id?: string
 }
 
-const CollapsableSidePanel = ({ children, id, open, width, left }: CollapsableSidePanelProps) => {
+export const CollapsableSidePanel = ({ children, id, open, width, left }: CollapsableSidePanelProps) => {
     const _id = useId()
     const ID = id || _id
     let w = width || 350
@@ -49,6 +49,3 @@ const CollapsableSidePanel = ({ children, id, open, width, left }: CollapsableSi
 
 
 CollapsableSidePanel.displayName = "CollapsableSidePanel"
-
-
-export default CollapsableSidePanel;

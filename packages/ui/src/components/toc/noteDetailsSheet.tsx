@@ -23,7 +23,7 @@ interface NoteDetailsSheetProps {
 }
 
 
-const NoteDetailsSheet = connector(({ noteId, firstSync, lastSync, open, }: NoteDetailsSheetProps) => {
+export const NoteDetailsSheet = connector(({ noteId, firstSync, lastSync, open, }: NoteDetailsSheetProps) => {
     const setOpen = (o: boolean) => {
         store.dispatch(showNoteSheet(o))
     }
@@ -68,6 +68,3 @@ const NoteDetailsSheet = connector(({ noteId, firstSync, lastSync, open, }: Note
 
 
 NoteDetailsSheet.displayName = "NoteDetailsSheet"
-
-
-export default NoteDetailsSheet;

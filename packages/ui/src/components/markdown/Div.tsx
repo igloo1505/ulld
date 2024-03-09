@@ -16,7 +16,7 @@ interface DivElementProps {
     classOnly?: boolean
 }
 
-const DivElement = ({ children, block, classOnly, tight, error, danger, wFull, hFull, muted, class: _class }: DivElementProps) => {
+export const DivElement = ({ children, block, classOnly, tight, error, danger, wFull, hFull, muted, class: _class }: DivElementProps) => {
     return (
         <div
             className={classOnly ? _class : clsx(
@@ -35,6 +35,3 @@ const DivElement = ({ children, block, classOnly, tight, error, danger, wFull, h
 
 
 DivElement.displayName = "DivElement"
-
-
-export default DivElement;

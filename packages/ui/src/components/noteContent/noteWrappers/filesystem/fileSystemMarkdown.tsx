@@ -2,9 +2,9 @@ import { serverClient } from '@ulld/api'
 import { MarkdownFileExtensions } from '@ulld/configschema'
 import React from 'react'
 import { NotePageProps } from '../../../../utilityFunctions/formatting'
-import NoteDetailsSheet from '../../../layout/toc/noteDetailsSheet'
 import { ReduxProvider } from '@ulld/state'
-import LazyMdx from '../../lazyMdx'
+import { LazyMdx } from '../../lazyMdx'
+import { NoteDetailsSheet } from '../../../toc/noteDetailsSheet'
 
 
 

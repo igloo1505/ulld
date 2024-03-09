@@ -1,12 +1,11 @@
 "use client"
 import React, { useId } from 'react'
-import JupyterContextWrapper from '../../wrappers/jupyter'
 import { INotebookProps, Notebook as JupyterNotebook } from "@datalayer/jupyter-react"
 import NotebookToolbar from './notebookToolbar'
 import NotebookCellSidebarMenu from './cellSidebarMenu'
-import { ParsedAppConfig } from '#/lib/config/zod/secondaryConfigParse/main'
-import { getInternalConfig } from '#/lib/config/zod/getInternalConfig'
-import { makeValidId } from '#/utils/ui'
+import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema'
+import { makeValidId } from '@ulld/utilities'
+import { JupyterContextWrapper } from '..'
 
 
 type NotebookProps = ({

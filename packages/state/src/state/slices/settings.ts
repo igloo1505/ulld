@@ -1,7 +1,6 @@
-
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import initialState from "../initialState/initialState";
 import { LocalSettingsType } from "../initialState/settings";
+import { initialState } from "..";
 
 
 
@@ -26,5 +25,5 @@ const slice = createSlice({
 
 
 export const { setAllowTooltips, toggleSetting, setLocalSettings } = slice.actions
-export default slice.reducer
+export const SettingsReducer = slice.reducer
 

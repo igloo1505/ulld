@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import initialState from "../initialState/initialState";
+import { initialState } from "..";
 
 
 
@@ -30,5 +30,5 @@ const slice = createSlice({
 
 
 export const { hasInitialState, setCurrentNoteData, setTocContent, setCurrentNoteId } = slice.actions
-export default slice.reducer
+export const FunctionalityReducer = slice.reducer
 

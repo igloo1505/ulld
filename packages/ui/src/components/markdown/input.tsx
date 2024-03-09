@@ -1,11 +1,11 @@
 import React from 'react'
-import { Input, InputProps } from '../shad/ui/input'
+import { Input, InputProps } from '@ulld/tailwind/base'
 import MdxCheckbox, { MdxInputProps } from './Checkbox'
 
 
 /* export type MdxInputProps = React.HTMLAttributes<HTMLInputElement> & { type: string }) => { */
 
-const MdxInput = (
+export const MdxInput = (
     props
         : MdxInputProps
 ) => {
@@ -20,6 +20,3 @@ const MdxInput = (
 
 
 MdxInput.displayName = "MdxInput"
-
-
-export default MdxInput;

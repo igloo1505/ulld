@@ -1,13 +1,12 @@
+import { getInternalConfig, isRemote } from '@ulld/configschema';
+import { imageToBase64Url } from '@ulld/state';
+import { fileExtension } from '@ulld/utilities';
 import Image from 'next/image';
 import React, { ImgHTMLAttributes } from 'react'
-import { isRemote } from '#/lib/formatting/pathUtilsClientSide';
-import { imageToBase64Url } from '#/lib/formatting/getLocalImageAsString';
-import { fileExtension } from '#/lib/formatting/fsUtils';
-import { getInternalConfig } from '#/lib/config/zod/getInternalConfig';
 
 
 
-const ImgComponent = async (props: ImgHTMLAttributes<HTMLImageElement>) => {
+export const ImgComponent = async (props: ImgHTMLAttributes<HTMLImageElement>) => {
     const config = getInternalConfig()
     let internalProps: ImgHTMLAttributes<HTMLImageElement> = {
         className: "h-auto w-full max-h-screen max-w-full md:w-fit md:max-w-[768px] sm:max-h-[60vh] max-h-[90vh] object-contain m-4 group-[.floatImages]/mdxNote:float-right"
@@ -61,6 +60,3 @@ const ImgComponent = async (props: ImgHTMLAttributes<HTMLImageElement>) => {
 
 
 ImgComponent.displayName = "ImgComponent"
-
-
-export default ImgComponent;

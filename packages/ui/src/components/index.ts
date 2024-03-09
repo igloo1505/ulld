@@ -1,4 +1,3 @@
-export * from "./definitionList"
 export * from "./noteContent"
 export * from "./specificContentType"
 export * from "./tables"

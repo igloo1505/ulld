@@ -1,9 +1,9 @@
 import React, { Suspense } from 'react'
 import Table, { TableComponentType } from './basic';
-import LoadingIndicator from '#/components/ui/loadingIndicator';
+import { LoadingIndicator } from '../..';
 
 
-const TableWrapper: TableComponentType = (props) => {
+export const TableWrapper: TableComponentType = (props) => {
     return (
         <Suspense fallback={<LoadingIndicator />}>
             <Table {...props} />
@@ -13,6 +13,3 @@ const TableWrapper: TableComponentType = (props) => {
 
 
 TableWrapper.displayName = "TableWrapper"
-
-
-export default TableWrapper;

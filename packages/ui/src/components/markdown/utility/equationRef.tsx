@@ -1,5 +1,5 @@
 import React from 'react'
-import EquationReference from './equationReference'
+import { EquationReference } from '.'
 
 export interface EquationRefProps {
     id: string
@@ -9,7 +9,7 @@ export interface EquationRefProps {
 }
 
 
-const EquationRef = (props: EquationRefProps & {}) => {
+export const EquationRef = (props: EquationRefProps & {}) => {
     const { id, children, anchor } = props
     if (anchor) {
         return (
@@ -27,6 +27,3 @@ const EquationRef = (props: EquationRefProps & {}) => {
 
 
 EquationRef.displayName = "EquationRef"
-
-
-export default EquationRef;

@@ -6,7 +6,7 @@ import CommandPaletteItem from '../commandItem'
 import { Route } from 'next'
 import { pages } from '../commandPaletteUtilities'
 import { serverClient } from '@ulld/api'
-import MdxContentCLIENT from '../../mdxContent/mdxContentCLIENT'
+import { MdxContentCLIENT } from '../../mdxContent/mdxContentCLIENT'
 
 
 

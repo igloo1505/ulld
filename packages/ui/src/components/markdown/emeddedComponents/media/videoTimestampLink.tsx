@@ -1,5 +1,5 @@
 "use client"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '#/components/shad/ui/tooltip'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@ulld/tailwind/base'
 import React from 'react'
 
 
@@ -21,7 +21,7 @@ const getTimestampInSeconds = (t: string) => {
     return n
 }
 
-const VideoTimestampLink = ({ timeStamp, videoId, children }: VideoTimestampLinkProps) => {
+export const VideoTimestampLink = ({ timeStamp, videoId, children }: VideoTimestampLinkProps) => {
     const handleTimestampClick = () => {
         if (!timeStamp || !videoId) return
         let em = document.getElementById(`video-${videoId}`) as HTMLVideoElement
@@ -49,6 +49,3 @@ const VideoTimestampLink = ({ timeStamp, videoId, children }: VideoTimestampLink
 
 
 VideoTimestampLink.displayName = "VideoTimestampLink"
-
-
-export default VideoTimestampLink;

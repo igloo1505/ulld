@@ -1,9 +1,8 @@
 "use client"
-import { store, showConfirmationModal } from '@ulld/state'
+import { store, showConfirmationModal, ConfirmationModalConfig } from '@ulld/state'
 import clsx from 'clsx'
 import { XIcon } from 'lucide-react'
 import React from 'react'
-import { ConfirmationModalConfig } from '..'
 
 
 

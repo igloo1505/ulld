@@ -1,4 +1,4 @@
-import { withRootUrl } from '#/utils/navigation/getRootUrl'
+import { withRootUrl } from '@ulld/state'
 import React from 'react'
 
 
@@ -21,7 +21,7 @@ const getVideoUrl = (filePath: string) => {
 
 /* TODO: Implement a remote component for sources like youtube using the react-player package. A standard video element is likely the best approach for file-system videos */
 /* TODO: Implement that react-player or use the video.js package to allow for pip, especially for note taking. */
-const Video = ({ file, url, id }: VideoProps) => {
+export const Video = ({ file, url, id }: VideoProps) => {
     if (!file || url) return null
     let videoUrl = getVideoUrl(file)
     const props: React.DetailedHTMLProps<React.VideoHTMLAttributes<HTMLVideoElement>, HTMLVideoElement> = {
@@ -40,6 +40,3 @@ const Video = ({ file, url, id }: VideoProps) => {
 }
 
 Video.displayName = "Video"
-
-
-export default Video;

@@ -5,9 +5,8 @@ import React, { useId, useMemo, useRef } from 'react'
 import '@google/model-viewer/dist/model-viewer.js'
 import { ModelViewerElement } from '@google/model-viewer';
 import clsx from 'clsx';
-import { Progress } from '#/components/shad/ui/progress';
-import { Button } from '#/components/shad/ui/button';
-import { getInternalConfig } from '#/lib/config/zod/getInternalConfig';
+import { Progress, Button } from '@ulld/tailwind/base';
+import { getInternalConfig } from '@ulld/configschema';
 
 interface ModelViewProps extends JSX.IntrinsicAttributes {
     file: string
@@ -16,7 +15,7 @@ interface ModelViewProps extends JSX.IntrinsicAttributes {
 
 
 
-const ModelView = ({ file, class: className, ...props }: ModelViewProps) => {
+export const ModelView = ({ file, class: className, ...props }: ModelViewProps) => {
     const value = useRef<number>(0)
     const id = useId()
     let params = useMemo(() => {
@@ -59,11 +58,3 @@ const ModelView = ({ file, class: className, ...props }: ModelViewProps) => {
 
 
 ModelView.displayName = "ModelView"
-
-
-export default ModelView;
-
-
-
-
-

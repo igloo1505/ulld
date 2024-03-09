@@ -8,7 +8,7 @@ interface LeadTextProps {
     center?: boolean
 }
 
-const LeadText = ({ children, center }: LeadTextProps) => {
+export const LeadText = ({ children, center }: LeadTextProps) => {
     return (
         <p className={clsx("text-xl text-muted-foreground", center && "w-full text-center")}>{children}</p>
     )
@@ -16,6 +16,3 @@ const LeadText = ({ children, center }: LeadTextProps) => {
 
 
 LeadText.displayName = "LeadText"
-
-
-export default LeadText;

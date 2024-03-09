@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-const Ol = (props: React.HTMLAttributes<HTMLOListElement>) => {
+export const Ol = (props: React.HTMLAttributes<HTMLOListElement>) => {
     return (
         <ol {...props} className={"ol my-2"} />
     )
@@ -10,6 +10,3 @@ const Ol = (props: React.HTMLAttributes<HTMLOListElement>) => {
 
 
 Ol.displayName = "Ol"
-
-
-export default Ol;

@@ -8,7 +8,7 @@ interface LargeProps {
     center?: boolean
 }
 
-const Large = ({ children, center }: LargeProps) => {
+export const Large = ({ children, center }: LargeProps) => {
     return (
         <div className={clsx("text-lg font-semibold", center && "w-full text-center")}>{children}</div>
     )
@@ -17,5 +17,3 @@ const Large = ({ children, center }: LargeProps) => {
 
 Large.displayName = "Large"
 
-
-export default Large;

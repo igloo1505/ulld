@@ -1,13 +1,13 @@
-import JupyterContextWrapper from '#/components/wrappers/jupyter';
 import { Console } from '@datalayer/jupyter-react';
 import React from 'react'
+import { JupyterContextWrapper } from '..';
 
 
 interface JupyterConsoleProps {
 
 }
 
-const JupyterConsole = (props: JupyterConsoleProps) => {
+export const JupyterConsole = (props: JupyterConsoleProps) => {
     return (
         <JupyterContextWrapper>
             <Console />
@@ -17,6 +17,3 @@ const JupyterConsole = (props: JupyterConsoleProps) => {
 
 
 JupyterConsole.displayName = "JupyterConsole"
-
-
-export default JupyterConsole;

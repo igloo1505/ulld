@@ -1,4 +1,4 @@
-import { Separator } from '#/components/shad/ui/separator'
+import { Separator } from '@ulld/tailwind/base'
 import clsx from 'clsx'
 import React, { useId } from 'react'
 import "#/styles/modal.scss"
@@ -13,7 +13,7 @@ interface MarkdownModalProps {
 }
 
 
-const MarkdownModal = ({ defaultOpen, id, title, children }: MarkdownModalProps) => {
+export const MarkdownModal = ({ defaultOpen, id, title, children }: MarkdownModalProps) => {
     const _id = useId()
     const emId = id || _id
     return (
@@ -41,10 +41,4 @@ const MarkdownModal = ({ defaultOpen, id, title, children }: MarkdownModalProps)
 
 
 MarkdownModal.displayName = "MarkdownModal"
-
-
-
-
-export default MarkdownModal;
-
 

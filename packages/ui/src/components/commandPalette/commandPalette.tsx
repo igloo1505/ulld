@@ -432,7 +432,7 @@ const CommandPalette = ({ search, page: _page, loading, setLoading, pages, setOp
                         autoWrap
                         isMathOnly
                         display
-                        math={eq.content}
+                        content={eq.content}
                         className={clsx(value === eq.value ? "inline-block" : "hidden")}
                     />
                 })}

@@ -1,10 +1,9 @@
-import { serverClient } from '#/trpc/serverClient'
 import { Route } from 'next'
 import Link from 'next/link'
 import React from 'react'
-import { buttonVariants } from '../shad/ui/button'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../shad/ui/tooltip'
-import MathDisplayServer from '../specificTypeDisplay/equation/mathDisplay_server'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, buttonVariants } from '@ulld/tailwind/base'
+import { serverClient } from '@ulld/api'
+import { MathDisplaySERVER } from '..'
 
 
 
@@ -36,9 +35,9 @@ const SequentialNoteBottomBar = async ({ sequentialId, sequentialIndex }: Sequen
                             >Back</Link>
                         </TooltipTrigger>
                         <TooltipContent>
-                            <MathDisplayServer
-                                math={noteList[thisIndex - 1].title}
-                                element="p"
+                            <MathDisplaySERVER
+                                content={noteList[thisIndex - 1].title}
+                                element="div"
                             />
                         </TooltipContent>
                     </Tooltip>}
@@ -56,9 +55,9 @@ const SequentialNoteBottomBar = async ({ sequentialId, sequentialIndex }: Sequen
                             >Next</Link>
                         </TooltipTrigger>
                         <TooltipContent>
-                            <MathDisplayServer
-                                math={noteList[thisIndex + 1].title}
-                                element="p"
+                            <MathDisplaySERVER
+                                content={noteList[thisIndex + 1].title}
+                                element="div"
                             />
                         </TooltipContent>
                     </Tooltip>}

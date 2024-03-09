@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-const Li = (props: React.HTMLAttributes<HTMLLIElement>) => {
+export const Li = (props: React.HTMLAttributes<HTMLLIElement>) => {
     return (
         <li {...props} />
     )
@@ -10,6 +10,3 @@ const Li = (props: React.HTMLAttributes<HTMLLIElement>) => {
 
 
 Li.displayName = "Li"
-
-
-export default Li;

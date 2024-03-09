@@ -1,5 +1,5 @@
 "use client"
-import { ResizePanelManager } from '#/classes/ui/resizePanelHandler'
+import { ResizePanelManager } from '@ulld/state'
 import React, { useEffect } from 'react'
 
 

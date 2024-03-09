@@ -1,7 +1,7 @@
-import { getClassesFromFrontMatter } from '#/actions/getClassesFromFrontMatter'
-import { FrontMatterType } from '#/classes/frontMatter/zodFrontMatterObject'
+import { FrontMatterType } from '@ulld/state'
 import clsx from 'clsx'
 import React from 'react'
+import { getClassesFromFrontMatter } from '../../../actions'
 
 
 
@@ -13,7 +13,7 @@ interface NoTableHeightLimitProps {
     styles?: FrontMatterType["tableStyles"]
 }
 
-const NoTableHeightLimit = ({ children, height, h, maxHeight, styles }: NoTableHeightLimitProps) => {
+export const NoTableHeightLimit = ({ children, height, h, maxHeight, styles }: NoTableHeightLimitProps) => {
     let _h = height || h || maxHeight
     return (
         <div
@@ -28,5 +28,3 @@ const NoTableHeightLimit = ({ children, height, h, maxHeight, styles }: NoTableH
 
 NoTableHeightLimit.displayName = "NoTableHeightLimit"
 
-
-export default NoTableHeightLimit;

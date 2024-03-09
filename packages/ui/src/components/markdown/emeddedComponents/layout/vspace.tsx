@@ -6,7 +6,7 @@ interface VSpaceProps {
     height: number | string
 }
 
-const VSpace = ({ height }: VSpaceProps) => {
+export const VSpace = ({ height }: VSpaceProps) => {
     let h = height || 16
     return (
         <div
@@ -19,6 +19,3 @@ const VSpace = ({ height }: VSpaceProps) => {
 
 
 VSpace.displayName = "VSpace"
-
-
-export default VSpace;

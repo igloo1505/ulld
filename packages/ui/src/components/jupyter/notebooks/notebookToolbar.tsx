@@ -1,10 +1,9 @@
 "use client"
 import { useDispatch } from 'react-redux';
 import { notebookActions, selectActiveCell, selectKernelStatus, selectNotebookModel } from "@datalayer/jupyter-react";
-import DynamicIcon, { ValidIconName } from '../../icons/DynamicIcon';
-import { Button } from '../../shad/ui/button';
 import { useMemo } from 'react';
-/* import { toast } from '../../shad/ui/use-toast'; */
+import { ValidIconName, DynamicIcon } from '../..';
+import { Button } from "@ulld/tailwind/base"
 
 
 interface IconItem {

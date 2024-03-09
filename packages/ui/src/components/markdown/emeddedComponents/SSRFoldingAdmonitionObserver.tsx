@@ -1,9 +1,9 @@
 "use client"
-import OpenToggleArrow from "#/components/functionality/openToggleArrow"
-import DynamicIcon from "#/components/icons/DynamicIcon"
-import { AdmonitionProps, AdmonitionType } from "#/types/ui"
 import clsx from "clsx"
 import { MouseEventHandler } from "react"
+import { DynamicIcon } from "../.."
+import { OpenToggleArrow } from "../../menus/openToggleArrow"
+import { AdmonitionProps, AdmonitionType } from "../../../types"
 
 
 
@@ -12,7 +12,7 @@ interface SSRFoldingAdmonitionObserverProps extends Omit<AdmonitionProps, "child
     dropdown?: boolean
 }
 
-const SSRFoldingAdmonitionTitle = ({ id, dropdown, title, type }: SSRFoldingAdmonitionObserverProps) => {
+export const SSRFoldingAdmonitionTitle = ({ id, dropdown, title, type }: SSRFoldingAdmonitionObserverProps) => {
     const admonitionOnClick: MouseEventHandler<HTMLDivElement> = (e) => {
         if (!dropdown) return
         let em = document.getElementById(id)
@@ -35,6 +35,3 @@ const SSRFoldingAdmonitionTitle = ({ id, dropdown, title, type }: SSRFoldingAdmo
 
 
 SSRFoldingAdmonitionTitle.displayName = "SSRFoldingAdmonitionObserver"
-
-
-export default SSRFoldingAdmonitionTitle;

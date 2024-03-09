@@ -9,7 +9,7 @@ interface TooltipProps {
     disable?: boolean
 }
 
-const Tooltip = ({ children, content, disable }: TooltipProps) => {
+export const ComposedTooltip = ({ children, content, disable }: TooltipProps) => {
     if (disable) {
         return children
     }
@@ -28,8 +28,4 @@ const Tooltip = ({ children, content, disable }: TooltipProps) => {
 }
 
 
-Tooltip.displayName = "Tooltip"
-
-
-export default Tooltip;
-
+ComposedTooltip.displayName = "Tooltip"

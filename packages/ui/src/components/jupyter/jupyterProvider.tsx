@@ -16,7 +16,7 @@ interface JupyterContextWrapperProps {
 }
 
 
-const JupyterContextWrapper = ({ children, darkMode, terminals, collaborative, startKernel = false, _config }: JupyterContextWrapperProps) => {
+export const JupyterContextWrapper = ({ children, darkMode, terminals, collaborative, startKernel = false, _config }: JupyterContextWrapperProps) => {
     const sp = useSearchParams()
     const config = _config || getInternalConfig(sp)
     const jupyterBaseUrl = `http://127.0.0.1:${config.jupyter.jupyterPort}`
@@ -45,6 +45,3 @@ const JupyterContextWrapper = ({ children, darkMode, terminals, collaborative, s
 
 
 JupyterContextWrapper.displayName = "JupyterContextWrapper"
-
-
-export default JupyterContextWrapper;

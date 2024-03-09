@@ -1,7 +1,7 @@
-import Tooltip from '#/components/ui/tooltip'
-import { PropColor, getPropColor } from '#/lib/ui/getPropColor'
+import { PropColor, getPropColor } from '@ulld/state'
 import clsx from 'clsx'
 import React from 'react'
+import { ComposedTooltip } from '../..'
 
 export interface WithTooltipWrapper {
     toolTip?: string
@@ -37,19 +37,19 @@ export interface HighlightProps extends Record<keyof PropColor, boolean> {
 }
 
 
-const Highlight = (props: HighlightProps & any & WithTooltipWrapper & { light?: boolean, faint?: boolean, muted?: boolean }) => {
+export const Highlight = (props: HighlightProps & any & WithTooltipWrapper & { light?: boolean, faint?: boolean, muted?: boolean }) => {
     let { color, props: _props } = getPropColor(props, "bg", "yellow")
     let tt = getToolTipWrapperContent(props)
     if (tt) {
         return (
-            <Tooltip
+            <ComposedTooltip
                 content={tt.isLink ? <a href={tt.content}>{tt.content}</a> : <p>{tt.content}</p>}
             >
                 <span className={clsx("px-1 rounded-md",
                     color && color,
                     Boolean(props.light || props.faint || props.muted) && "bg-opacity-60 hl-faint"
                 )} {..._props} />
-            </Tooltip>
+            </ComposedTooltip>
         )
     }
     return (
@@ -61,6 +61,3 @@ const Highlight = (props: HighlightProps & any & WithTooltipWrapper & { light?: 
 
 
 Highlight.displayName = "Highlight"
-
-
-export default Highlight;

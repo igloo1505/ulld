@@ -1,8 +1,8 @@
 "use client"
 import React from 'react'
-import { Badge, BadgeProps } from '../shad/ui/badge'
-import { H4 } from '../markdown/text/heading'
 import clsx from 'clsx'
+import { BadgeProps, Badge } from '@ulld/tailwind'
+import { H4 } from '..'
 
 
 

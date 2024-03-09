@@ -6,7 +6,7 @@ interface WithSidebarProps {
     children: React.ReactNode
 }
 
-const WithSidebar = ({ children }: WithSidebarProps) => {
+export const WithSidebar = ({ children }: WithSidebarProps) => {
     return (
         <div className={"h-fit w-full my-2 grid grid-cols-[2fr_1fr] gap-2 md:gap-4"}>{children}</div>
     )
@@ -14,6 +14,3 @@ const WithSidebar = ({ children }: WithSidebarProps) => {
 
 
 WithSidebar.displayName = "WithSidebar"
-
-
-export default WithSidebar;

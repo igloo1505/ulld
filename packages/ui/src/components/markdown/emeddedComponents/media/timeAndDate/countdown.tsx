@@ -1,9 +1,8 @@
 import React from 'react'
 import RelativeTimeDisplay from './relativeTimeDisplay'
 import clsx from 'clsx'
-import { H3 } from '#/components/markdown/text/heading'
-import { getInternalConfig } from '#/lib/config/zod/getInternalConfig'
-import { TimeDisplayType } from '#/lib/config/zod/dateParseConfig'
+import { TimeDisplayType, getInternalConfig } from '@ulld/configschema'
+import { H3 } from '../../../..'
 
 
 

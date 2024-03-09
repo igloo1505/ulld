@@ -1,11 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import UIReducer from "./slices/ui";
-import SettingsReducer from "./slices/settings";
-import FunctionalityReducer from "./slices/functionality";
-import ConfigReducer from "./slices/config";
+import { UIReducer } from "./slices/ui";
+import { SettingsReducer } from "./slices/settings";
+import { FunctionalityReducer } from "./slices/functionality";
+import { ConfigReducer } from "./slices/config";
 import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistReducer, persistStore } from "redux-persist"
-import initialState from "./initialState/initialState";
 import storage from 'redux-persist-indexeddb-storage';
+import { initialState } from ".";
 
 
 const rootReducer = {
@@ -77,7 +77,7 @@ if (process.env.NODE_ENV !== "production" && typeof window !== "undefined") {
 }
 
 
-export type RootState = ReturnType<typeof _store.getState>;
-export type AppDispatch = typeof _store.dispatch;
-
 export const store = _store
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+

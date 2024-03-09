@@ -1,11 +1,10 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
-import JupyterContextWrapper from '../../wrappers/jupyter';
 import { Cell } from '@datalayer/jupyter-react';
-import { client } from '#/trpc/client';
 import clsx from 'clsx';
-import { ParsedAppConfig } from '#/lib/config/zod/secondaryConfigParse/main';
-import { getInternalConfig } from '#/lib/config/zod/getInternalConfig';
+import { client } from '@ulld/api';
+import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema';
+import { JupyterContextWrapper } from '../jupyterProvider';
 
 
 interface NotebookCellProps {
@@ -47,7 +46,7 @@ ${src}`
 }
 
 
-const NotebookCell = ({ children, file, content, hide, hideInput, noInput, common, _config }: NotebookCellProps) => {
+export const NotebookCell = ({ children, file, content, hide, hideInput, noInput, common, _config }: NotebookCellProps) => {
     const config = _config || getInternalConfig()
     const shouldHideInput = Boolean(config.jupyter.initiallyFoldCells || hide || hideInput || noInput)
     const [source, _setSource] = useState<null | string>(typeof content === "string" ? wrapSource(content, common) : null)
@@ -70,7 +69,7 @@ const NotebookCell = ({ children, file, content, hide, hideInput, noInput, commo
 
     const setFile = async () => {
         if (!file) return
-        let content = await client.getUtf8File.query(file)
+        let content = await client.fsUtils.getUtf8File.query(file)
         setSource(content)
     }
 
@@ -153,6 +152,3 @@ const NotebookCell = ({ children, file, content, hide, hideInput, noInput, commo
 
 
 NotebookCell.displayName = "NotebookCell"
-
-
-export default NotebookCell;

@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import initialState from "../initialState/initialState";
 import { EmbededPanelState, InitialUIStateType } from "../initialState/ui";
 import { ToastConfigType } from "@ulld/utilities";
+import { initialState } from "..";
 
 
 
@@ -61,5 +61,4 @@ const slice = createSlice({
 
 
 export const { toggleDrawer, showNoteSheet, clearEmbededPanelStateByPath, addEmbededPanelState, toggleEmbeddedPanelState, setBibItemDetailPanelState, showConfirmationModal, showToast, setNavtype, setDarkmode, setDrawerOpen, sidebarToggle } = slice.actions
-export default slice.reducer
-
+export const UIReducer = slice.reducer

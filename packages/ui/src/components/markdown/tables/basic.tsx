@@ -8,10 +8,11 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "#/components/shad/ui/table"
+} from "@ulld/tailwind/base"
 import clsx from 'clsx'
 import "#/styles/tableStyles.scss"
-import { getInternalConfig } from '#/lib/config/zod/getInternalConfig'
+import { getInternalConfig } from '@ulld/configschema'
+
 
 interface TheadProps {
     head: TableProps['children']['0']

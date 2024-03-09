@@ -1,4 +1,4 @@
-import { serverClient } from '#/trpc/serverClient'
+import { serverClient } from '@ulld/api'
 import Script from 'next/script'
 import React from 'react'
 
@@ -19,8 +19,8 @@ declare global {
 }
 
 
-const Latex = async ({ latex, file }: LatexProps) => {
-    const content = file ? await serverClient.getUtf8File(file) : latex
+export const Latex = async ({ latex, file }: LatexProps) => {
+    const content = file ? await serverClient.fsUtils.getUtf8File(file) : latex
     return (
         <>
             <Script type="module" id="123">
@@ -36,6 +36,3 @@ const Latex = async ({ latex, file }: LatexProps) => {
 
 
 Latex.displayName = "Latex"
-
-
-export default Latex;
