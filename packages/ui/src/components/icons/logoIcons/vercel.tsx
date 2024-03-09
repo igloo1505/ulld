@@ -4,7 +4,7 @@ import { IconProps } from '../../../types';
 
 
 
-const VercelIcon = (props: IconProps) => {
+export const VercelIcon = (props: IconProps) => {
     return (
         <IoLogoVercel {...props} />
     )
@@ -12,6 +12,3 @@ const VercelIcon = (props: IconProps) => {
 
 
 VercelIcon.displayName = "VercelIcon"
-
-
-export default VercelIcon;

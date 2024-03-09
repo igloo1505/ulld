@@ -2,7 +2,8 @@
 import React, { useState } from 'react'
 import { FieldValues, useFormContext } from 'react-hook-form';
 import { BaseFullFormInputProps } from './types';
-import FormFieldWithBadgeList, { FormFieldWithBadgeListProps } from '#/components/inputs/formFieldWithBadgeList';
+import { FormFieldWithBadgeListProps } from '../..';
+import { FormFieldWithBadgeList } from '../../inputs/formFieldWithBadgeList';
 
 
 
@@ -11,7 +12,7 @@ interface FullFormTagInputProps<T extends FieldValues, H extends HTMLElement> ex
 }
 
 
-const FullFormTagInput = <T extends FieldValues>({ label, desc, name, ...props }: FullFormTagInputProps<T, HTMLTextAreaElement> & FormFieldWithBadgeListProps<T>) => {
+export const FullFormTagInput = <T extends FieldValues>({ label, desc, name, ...props }: FullFormTagInputProps<T, HTMLTextAreaElement> & FormFieldWithBadgeListProps<T>) => {
     const [inputValue, setInputValue] = useState("")
     const form = useFormContext<T>()
     return (
@@ -29,6 +30,3 @@ const FullFormTagInput = <T extends FieldValues>({ label, desc, name, ...props }
 
 
 FullFormTagInput.displayName = "FullFormTagInput"
-
-
-export default FullFormTagInput;

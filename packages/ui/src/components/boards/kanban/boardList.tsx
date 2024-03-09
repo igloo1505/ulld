@@ -1,12 +1,12 @@
-import { VanCunBoardDetails } from '#/types/contentTypeSpecific/vancun'
 import React from 'react'
 import KanBanBoardCard from './boardCard'
 import BoardListContainer from './boardListContainer'
+import { KanBanBoardDetails } from './types'
 
 
 
 export interface BoardListProps {
-    list: NonNullable<VanCunBoardDetails>["lists"][number]
+    list: NonNullable<KanBanBoardDetails>["lists"][number]
     boardId: number
     showNewBoardCardModal: () => void
 }

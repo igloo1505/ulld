@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import { LucideProps } from 'lucide-react';
 import dynamicIconImports from 'lucide-react/dynamicIconImports';
-import { AdmonitionType } from '../types/general';
+import { AdmonitionType } from '../../types';
 
 
 
@@ -178,7 +178,7 @@ interface IconProps extends LucideProps {
     name: ValidIconName
 }
 
-const DynamicIcon = ({ name, ...props }: IconProps) => {
+export const DynamicIcon = ({ name, ...props }: IconProps) => {
     if (logoIconNames.includes(name)) {
         let Icon = dynamic(() => import(`../../components/icons/logos/${name}`))
         return <Icon {...props} />
@@ -187,5 +187,3 @@ const DynamicIcon = ({ name, ...props }: IconProps) => {
     const LucideIcon = dynamic(dynamicIconImports[_name as keyof typeof dynamicIconImports])
     return <LucideIcon {...props} />;
 };
-
-export default DynamicIcon;

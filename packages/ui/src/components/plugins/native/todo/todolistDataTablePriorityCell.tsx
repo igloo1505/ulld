@@ -12,7 +12,7 @@ interface ToDoListDataTablePriorityCellProps<T extends number | string> {
     onValueChange: (val: number) => void
 }
 
-const ToDoListDataTablePriorityCell = <T extends number | string>({ value: _value, label, onValueChange }: ToDoListDataTablePriorityCellProps<T>) => {
+export const ToDoListDataTablePriorityCell = <T extends number | string>({ value: _value, label, onValueChange }: ToDoListDataTablePriorityCellProps<T>) => {
     const value: number = typeof _value === "string" ? parseInt(_value) : _value as number
     const [open, setOpen] = useState(false)
     return (
@@ -72,6 +72,3 @@ const ToDoListDataTablePriorityCell = <T extends number | string>({ value: _valu
 
 
 ToDoListDataTablePriorityCell.displayName = "ToDoListDataTablePriorityCell"
-
-
-export default ToDoListDataTablePriorityCell;

@@ -5,9 +5,11 @@ import { MdxContentSERVERProps } from '.';
 
 interface MdxContentClientSideProps extends MdxContentSERVERProps {
     stylesId?: string
+    applyUserStyles?: boolean
+    small?: boolean
 }
 
-const MdxContentCLIENT = (props: MdxContentClientSideProps) => {
+export const MdxContentCLIENT = (props: MdxContentClientSideProps) => {
     return (
         <div></div>
     )
@@ -15,6 +17,3 @@ const MdxContentCLIENT = (props: MdxContentClientSideProps) => {
 
 
 MdxContentCLIENT.displayName = "MdxContentClientSide"
-
-
-export default MdxContentCLIENT;

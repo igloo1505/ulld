@@ -1,8 +1,7 @@
 "use client";
-import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "#/components/shad/ui/form";
-import { Input, InputProps } from "#/components/shad/ui/input";
-import { KeyboardFilterType, getKeyboardFilter } from "#/lib/formatting/inputManipulation/getKeyboardFilter";
-import React, { useId } from "react";
+import { KeyboardFilterType, getKeyboardFilter } from "@ulld/state";
+import { Input, InputProps, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@ulld/tailwind/base";
+import React from "react";
 import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
 
 interface FullFormInputProps<T extends FieldValues>
@@ -16,7 +15,7 @@ interface FullFormInputProps<T extends FieldValues>
 }
 
 
-const FullFormInput = <T extends FieldValues>({
+export const FullFormInput = <T extends FieldValues>({
     label,
     id: __id,
     desc,
@@ -59,5 +58,3 @@ const FullFormInput = <T extends FieldValues>({
 };
 
 FullFormInput.displayName = "FullFormInput";
-
-export default FullFormInput;

@@ -1,4 +1,3 @@
-import { Checkbox } from '@ulld/tailwind/base'
 import React, { useState } from 'react'
 import { initializeBib } from '..'
 import { LabeledCheckbox } from '../../..'
@@ -41,6 +40,7 @@ const NoBibFoundPrompt = (props: NoBibFoundPromptProps) => {
                         <LabeledCheckbox
                             label={databaseOnly ? "Initializing Database" : "Initializing file & database"}
                             checked={!databaseOnly}
+                            name="databaseOnly"
                             onChange={() => setDatabaseOnly(!databaseOnly)}
                         />
                         <button

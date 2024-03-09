@@ -4,8 +4,8 @@ import { Column, ColumnFiltersState } from '@tanstack/react-table';
 import React from 'react'
 import { FieldValues, Path } from 'react-hook-form';
 import { FullFormTagSubjectTopicComboBoxProps, DataTableDropdownCheckboxListInputProps } from '../../..';
-import FullFormTagSubjectTopicComboBox from '../../../menus/fullForm/fullFormTagTopicSubjectComboBox';
-import FullDataTableDropdownCheckboxListInput from '../../../tables/datatable/fullDataTable/FullDataTableFilterButton';
+import { FullFormTagSubjectTopicComboBox } from '../../../menus/fullForm/fullFormTagTopicSubjectComboBox';
+import { FullDataTableDropdownCheckboxListInput } from '../../../tables/datatable/fullDataTable/FullDataTableFilterButton';
 import { replaceRecursively } from '@ulld/utilities';
 
 

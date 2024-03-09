@@ -1,12 +1,10 @@
-import { CalendarAndDateManager } from '#/classes/data/calendarAndDate'
-import { Button } from '#/components/shad/ui/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '#/components/shad/ui/card'
-import { useToast } from '#/components/shad/ui/use-toast'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, Button, useToast } from '@ulld/tailwind/base'
 import { EventInput } from '@fullcalendar/core/index.js'
 import axios from 'axios'
 import clsx from 'clsx'
 import Link from 'next/link'
 import React from 'react'
+import { CalendarAndDateManager } from '@ulld/api'
 
 
 

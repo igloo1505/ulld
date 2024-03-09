@@ -25,7 +25,7 @@ const DeleteButton = ({ selectedIds, onRemove }: ToDoListDeleteButtonProps) => {
 }
 
 
-const ToDoListDeleteButton = (props: ToDoListDeleteButtonProps) => {
+export const ToDoListDeleteButton = (props: ToDoListDeleteButtonProps) => {
     let em = typeof document === "undefined" ? null : document?.getElementById("todo-list-delete-slot")
     if (em && props.selectedIds.length > 0) {
         return createPortal(<DeleteButton  {...props} />, em)
@@ -35,6 +35,3 @@ const ToDoListDeleteButton = (props: ToDoListDeleteButtonProps) => {
 
 
 ToDoListDeleteButton.displayName = "ToDoListDeleteButton"
-
-
-export default ToDoListDeleteButton;

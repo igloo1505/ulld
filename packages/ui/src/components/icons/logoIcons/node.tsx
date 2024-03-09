@@ -4,7 +4,7 @@ import { IconProps } from '../../../types';
 
 
 
-const NodeIcon = (props: IconProps) => {
+export const NodeIcon = (props: IconProps) => {
     return (
         <IoLogoNodejs {...props} />
     )
@@ -12,6 +12,3 @@ const NodeIcon = (props: IconProps) => {
 
 
 NodeIcon.displayName = "NodeIcon"
-
-
-export default NodeIcon;

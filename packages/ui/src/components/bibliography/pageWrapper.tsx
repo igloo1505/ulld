@@ -2,15 +2,11 @@
 import React, { useState, useEffect } from 'react'
 import BibTable from './bibTable'
 import BibliographySheet from './bibPageSheet'
-import { Button } from '#/components/shad/ui/button'
-import DynamicIcon from '#/components/icons/DynamicIcon'
-import { BibWithEntries } from '#/types/prisma/includeTypes'
-import LoadingIndicator from '#/components/ui/loadingIndicator'
-import { BibEntry, BibEntryDataTableOutput } from '#/classes/prismaMdxRelations/BibEntry'
-import { BibCore } from '#/classes/prismaMdxRelations/Bib'
-import { client } from '#/trpc/client'
-import { useToast } from '#/components/shad/ui/use-toast'
-import ReduxProvider from '#/state/ReduxProvider'
+import { BibWithEntries, BibEntryDataTableOutput, BibCore, client, BibEntry } from '@ulld/api'
+import { ReduxProvider } from '@ulld/state'
+import { useToast, Button } from '@ulld/tailwind'
+import { LoadingIndicator } from '../..'
+import DynamicIcon from '../../icons/DynamicIcon'
 
 
 interface BibliographyPageWrapperProps {
@@ -38,7 +34,7 @@ const BibliographyPageWrapper = ({ prismaBib }: BibliographyPageWrapperProps) =>
     const syncBib = async () => {
         if (!bib) return
         await bib.readFile()
-        let newBib = await client.syncBibServerSide.mutate(bib?.id || undefined)
+        let newBib = await client.bibliography.syncBibServerSide.mutate(bib?.id || undefined)
         const newEntries = newBib.entries.map((e) => BibEntry.fromPrisma(e).toDataTable())
         setTableItems(newEntries)
         toast({

@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react'
 import { AddEquationFormType } from './types'
-import SideFormContainer from '#/components/layout/uniqueLayouts/sideMenu/sideFormContainer';
-import FormFieldWithBadgeList from '#/components/inputs/formFieldWithBadgeList';
+import { FormFieldWithBadgeList } from '../../inputs/formFieldWithBadgeList'
+import { SideFormContainer } from '../../layouts/sideMenu/sideFormContainer'
 
 
 interface AddEquationFormThreeProps {

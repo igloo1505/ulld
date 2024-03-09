@@ -4,7 +4,7 @@ import React, { useMemo, useState } from 'react'
 import CurrentFilterValuesDisplay from './currentFilterValuesDisplay'
 import { Button, Label, Separator, Slider } from '@ulld/tailwind/base'
 import { PracticeExamSearchParams } from '@ulld/state'
-import DynamicIcon from '../../icons/DynamicIcon'
+import { DynamicIcon } from '../../icons/DynamicIcon'
 import AutocompleteInput from '../../inputs/autocomplete/autocompleteInput'
 
 

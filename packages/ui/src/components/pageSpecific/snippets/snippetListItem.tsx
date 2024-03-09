@@ -1,11 +1,11 @@
 import React from 'react'
-import SnippetListItemButtons from './snippetListItemButtons'
+import { SnippetListItemButtons } from './snippetListItemButtons'
 import Link from 'next/link'
 import { Card, Badge } from '@ulld/tailwind'
 import { SnippetListItemProps } from '@ulld/utilities'
-import CodeHighlightContainer from '../../code/syntaxHighlighting/codeHighlightContainer'
-import DeleteModalTriggerButton from '../../inputs/deleteModalTriggerButton'
-import MdxContentCLIENT from '../../mdxContent/mdxContentCLIENT'
+import { CodeHighlightContainer } from '../../code/syntaxHighlighting/codeHighlightContainer'
+import { DeleteModalTriggerButton } from '../../inputs/deleteModalTriggerButton'
+import { MdxContentCLIENT } from '../../mdxContent/mdxContentCLIENT'
 
 
 interface SnippetListItemPropsInternal {
@@ -13,7 +13,7 @@ interface SnippetListItemPropsInternal {
 }
 
 
-const SnippetListItem = ({ item }: SnippetListItemPropsInternal) => {
+export const SnippetListItem = ({ item }: SnippetListItemPropsInternal) => {
     return (
         <Card className={"w-full h-fit flex flex-col p-4 gap-3"}>
             <div className={"w-full h-fit grid grid-cols-[1fr_2rem]"}>
@@ -56,5 +56,3 @@ const SnippetListItem = ({ item }: SnippetListItemPropsInternal) => {
 
 SnippetListItem.displayName = "SnippetListItem"
 
-
-export default SnippetListItem;

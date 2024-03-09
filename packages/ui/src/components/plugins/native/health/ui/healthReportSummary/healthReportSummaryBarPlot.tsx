@@ -58,7 +58,7 @@ const CustomToolTip = ({ active, payload, label }: {
     }
 }
 
-const HealthReportSummaryBarPlot = ({ report }: HealthReportSummaryBarPlotProps) => {
+export const HealthReportSummaryBarPlot = ({ report }: HealthReportSummaryBarPlotProps) => {
     const data = useMemo(() => getFormattedReportData(report), [report])
     return (
         <ResponsiveContainer
@@ -103,6 +103,3 @@ const HealthReportSummaryBarPlot = ({ report }: HealthReportSummaryBarPlotProps)
 
 
 HealthReportSummaryBarPlot.displayName = "HealthReportSummaryBarPlot"
-
-
-export default HealthReportSummaryBarPlot;

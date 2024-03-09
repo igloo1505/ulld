@@ -6,7 +6,7 @@ interface FullFormSidePanelProps {
     items: string[];
 }
 
-const FullFormSidePanel = ({ items }: FullFormSidePanelProps) => {
+export const FullFormSidePanel = ({ items }: FullFormSidePanelProps) => {
     const ctx = useContext(FullFormContext)
     const dispatch = useContext(FullFormDispatchContext)
 
@@ -38,5 +38,3 @@ const FullFormSidePanel = ({ items }: FullFormSidePanelProps) => {
 };
 
 FullFormSidePanel.displayName = "FullFormSidePanel";
-
-export default FullFormSidePanel;

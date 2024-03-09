@@ -7,13 +7,13 @@ import { DietEditing, dietFormDefaultValues, dietFormSchema } from './formUtils'
 import { DevTool } from '@hookform/devtools';
 import { Button, useToast } from '@ulld/tailwind/base';
 import { client } from '@ulld/api';
-import FullFormContainer from '../../../menus/fullForm/fullFormContainer';
-import FullFormInput from '../../../menus/fullForm/fullFormInput';
-import FullFormLabeledCheckbox from '../../../menus/fullForm/fullFormLabeledCheckbox';
-import FullFormTextArea from '../../../menus/fullForm/fullFormTextArea';
-import FullFormTriPositionSlider from '../../../menus/fullForm/fullFormTriPosSlider';
-import FullFormFormPage from '../../../menus/fullForm/fullScreenFormPage';
-import FullFormSubHeading from '../../../menus/fullForm/subHeading';
+import { FullFormContainer } from '../../../menus/fullForm/fullFormContainer';
+import { FullFormInput } from '../../../menus/fullForm/fullFormInput';
+import { FullFormLabeledCheckbox } from '../../../menus/fullForm/fullFormLabeledCheckbox';
+import { FullFormTextArea } from '../../../menus/fullForm/fullFormTextArea';
+import { FullFormTriPositionSlider } from '../../../menus/fullForm/fullFormTriPosSlider';
+import { FullFormFormPage } from '../../../menus/fullForm/fullScreenFormPage';
+import { FullFormSubHeading } from '../../../menus/fullForm/subHeading';
 
 
 interface AddDietFormWrapperProps {

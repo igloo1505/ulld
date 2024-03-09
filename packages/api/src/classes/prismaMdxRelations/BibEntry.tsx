@@ -6,10 +6,9 @@ import { PartialReadingListEntry, ReadingList } from "./readingList";
 import { Tag } from "./tag";
 import { BibCore } from "./Bib";
 import type { BibFilePresenter } from "bibtex";
-import { getUniversalQuery } from "#/lib/FsRemoteLocations/getUniversalClient";
-import type { BibEntryReturned } from "#/types/prisma/bib/returnTypes";
 import Link from "next/link";
-import { formatSearchAllParams } from "#/lib/formatting/formatSearchAllParams";
+import { formatSearchAllParams, getUniversalQuery } from "@ulld/state";
+import { BibEntryReturned } from "../../trpcTypes";
 
 export type BibEntryPrismaAcceptedTypes = BibEntry | PrismaBibEntry | Partial<PrismaBibEntry> & { id: string } | PartialReadingListEntry['bibEntries'][number]
 

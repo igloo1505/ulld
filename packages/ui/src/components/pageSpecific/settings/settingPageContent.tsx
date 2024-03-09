@@ -8,9 +8,8 @@ import deepEql from 'deep-eql'
 import { settingsChangeSchema, client, BibWithEntries } from '@ulld/api';
 import { RetrievedSettings, store, toggleSetting } from '@ulld/state';
 import { BibSettingsSectionProps } from '.';
-import CheckboxGroup from '../../menus/fullForm/checkboxGroup';
-import LabeledCheckbox from '../../menus/fullForm/labeledCheckbox';
 import BibSettingsSection from './bib/BibSettingsSection';
+import { LabeledCheckbox } from '../..';
 
 
 
@@ -111,24 +110,26 @@ const SettingsPageContent = ({ settings, fileExists, bib, ...props }: SettingsPa
                 <div className="border-b border-gray-900/10 dark:border-gray-600/10 pb-12">
                     <h2 className="text-base font-semibold leading-7 text-gray-900 dark:text-gray-100">Settings</h2>
                 </div>
-                <CheckboxGroup label={"UI Settings"}>
+                <div className={"flex flex-col justify-center items-start gap-4"}>
+                    <legend className={"text-sm font-semibold leading-6 text-gray-900 dark:text-gray-200"}>UI Settings</legend>
                     <LabeledCheckbox
                         label={"Tooltips"}
-                        value={formData.tooltips || false}
+                        checked={formData.tooltips || false}
                         onChange={toggleTooltips}
-                        subtitle={"Show tooltips for things like link URL's on hover."}
+                        desc={"Show tooltips for things like link URL's on hover."}
                         name="tooltips"
                     />
-                </CheckboxGroup>
-                <CheckboxGroup label={"Sync Settings"}>
+                </div>
+                <div className={"flex flex-col justify-center items-start gap-4"}>
+                    <legend className={"text-sm font-semibold leading-6 text-gray-900 dark:text-gray-200"}>Sync Settings</legend>
                     <LabeledCheckbox
                         label={"Clean on Sync"}
-                        value={formData.cleanOnSync || false}
+                        checked={formData.cleanOnSync || false}
                         onChange={() => form.setValue("cleanOnSync", !form.getValues("cleanOnSync"))}
-                        subtitle={"Should we remove data from the database that is no longer in use?"}
+                        desc={"Should we remove data from the database that is no longer in use?"}
                         name="cleanOnSync"
                     />
-                </CheckboxGroup>
+                </div>
                 <div className={"w-fit flex flex-col gap-3 justify-center items-start"}>
                     <FormField
                         control={form.control}

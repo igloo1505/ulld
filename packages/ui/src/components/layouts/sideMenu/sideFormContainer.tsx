@@ -1,5 +1,4 @@
-import { Button } from '#/components/shad/ui/button'
-import { Form } from '#/components/shad/ui/form'
+import { Button, Form } from '@ulld/tailwind/base'
 import React, { MouseEvent } from 'react'
 import { UseFormReturn } from 'react-hook-form'
 
@@ -13,7 +12,7 @@ interface SideFormContainerProps<T> {
     onBackClick?: (e: MouseEvent<HTMLButtonElement>) => void
 }
 
-const SideFormContainer = <T extends UseFormReturn<any>>({ children, onBackClick, submitBtnText, form, onSubmit }: SideFormContainerProps<T>) => {
+export const SideFormContainer = <T extends UseFormReturn<any>>({ children, onBackClick, submitBtnText, form, onSubmit }: SideFormContainerProps<T>) => {
     return (
         <div className={"bg-card text-card-foreground px-5 py-6 flex flex-col w-full h-fit rounded-lg border shadow-md hover:shadow-sm transition-shadow duration-200"}>
             <Form {...form}>
@@ -42,6 +41,3 @@ const SideFormContainer = <T extends UseFormReturn<any>>({ children, onBackClick
 
 
 SideFormContainer.displayName = "SideFormContainer"
-
-
-export default SideFormContainer;

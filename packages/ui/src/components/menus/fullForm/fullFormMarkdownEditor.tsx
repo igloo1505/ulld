@@ -1,13 +1,14 @@
 import React from 'react'
 import { FieldValues, Path, PathValue, useFormContext } from 'react-hook-form';
 import { BaseFullFormInputProps } from './types';
-import { FormField, FormItem, FormLabel, FormDescription, FormControl, FormMessage } from '#/components/shad/ui/form'
+import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from '@ulld/tailwind';
 import MarkdownEditor from '@uiw/react-markdown-editor';
+
 
 interface FullFormMarkdownEditorInputProps<T extends FieldValues, H extends HTMLElement> extends BaseFullFormInputProps<T, H> {
 }
 
-const FullFormMarkdownEditorInput = <T extends FieldValues>({ label, desc, name, ...props }: FullFormMarkdownEditorInputProps<T, HTMLInputElement>) => {
+export const FullFormMarkdownEditorInput = <T extends FieldValues>({ label, desc, name, ...props }: FullFormMarkdownEditorInputProps<T, HTMLInputElement>) => {
     const form = useFormContext<T>()
     return (
         <FormField
@@ -36,6 +37,3 @@ const FullFormMarkdownEditorInput = <T extends FieldValues>({ label, desc, name,
 
 
 FullFormMarkdownEditorInput.displayName = "FullFormMarkdownEditorInput"
-
-
-export default FullFormMarkdownEditorInput;

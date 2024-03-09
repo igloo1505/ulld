@@ -4,7 +4,7 @@ import { IconProps } from '../../../types';
 
 
 
-const SwiftIcon = (props: IconProps) => {
+export const SwiftIcon = (props: IconProps) => {
     return (
         <IoLogoAppleAppstore {...props} />
     )
@@ -12,6 +12,3 @@ const SwiftIcon = (props: IconProps) => {
 
 
 SwiftIcon.displayName = "SwiftIcon"
-
-
-export default SwiftIcon;

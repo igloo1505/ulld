@@ -1,7 +1,7 @@
 "use client"
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { handleMathjaxClassesRetroactively } from '..'
+import { handleMathjaxClassesRetroactively } from '../../actions'
 
 
 

@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
 import { ControllerRenderProps, FieldValues, Path, PathValue, useFormContext } from 'react-hook-form';
 import { BaseFullFormInputProps } from './types';
-import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '#/components/shad/ui/form';
-import { Popover, PopoverContent, PopoverTrigger } from '#/components/shad/ui/popover';
-import { Button } from '#/components/shad/ui/button';
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from '#/components/shad/ui/command';
+import { Button, Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, Popover, PopoverContent, PopoverTrigger, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@ulld/tailwind/base';
 import { ChevronsUpDown, Check } from 'lucide-react';
 import clsx from 'clsx';
-import { Column, ColumnFiltersState } from '@tanstack/react-table';
-import { ToDoListStatus } from '@prisma/client';
+import { replaceRecursively } from '@ulld/utilities';
 
 
 export interface FullFormTagSubjectTopicComboBoxProps<T extends FieldValues, H extends HTMLElement> extends BaseFullFormInputProps<T, H> {
@@ -24,7 +20,7 @@ export interface FullFormTagSubjectTopicComboBoxProps<T extends FieldValues, H e
 }
 
 
-const FullFormTagSubjectTopicComboBox = <T extends FieldValues>({ label, replaceUnderscores, desc, name, options, emptyText, displayTransform, placeholder, multiple, groupClasses, buttonClasses, formItemClasses }: FullFormTagSubjectTopicComboBoxProps<T, HTMLTextAreaElement>) => {
+export const FullFormTagSubjectTopicComboBox = <T extends FieldValues>({ label, replaceUnderscores, desc, name, options, emptyText, displayTransform, placeholder, multiple, groupClasses, buttonClasses, formItemClasses }: FullFormTagSubjectTopicComboBoxProps<T, HTMLTextAreaElement>) => {
     const form = useFormContext<T>()
     const [open, setOpen] = useState(false)
 
@@ -63,7 +59,7 @@ const FullFormTagSubjectTopicComboBox = <T extends FieldValues>({ label, replace
                                         buttonClasses
                                     )}
                                 >
-                                    {replaceUnderscores ? getDisplay(field).replaceAll("_", " ") : getDisplay(field)}
+                                    {replaceUnderscores ? replaceRecursively(getDisplay(field), "_", " ") : getDisplay(field)}
                                     <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                 </Button>
                             </PopoverTrigger>
@@ -116,6 +112,3 @@ const FullFormTagSubjectTopicComboBox = <T extends FieldValues>({ label, replace
 
 
 FullFormTagSubjectTopicComboBox.displayName = "FullFormTagSubjectTopicComboBox"
-
-
-export default FullFormTagSubjectTopicComboBox;

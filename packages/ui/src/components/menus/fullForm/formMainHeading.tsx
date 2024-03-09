@@ -1,4 +1,4 @@
-import { Separator } from "#/components/shad/ui/separator";
+import { Separator } from "@ulld/tailwind/base";
 import React from "react";
 
 interface FullFormMainHeadingProps {
@@ -7,7 +7,7 @@ interface FullFormMainHeadingProps {
 }
 
 
-const FullFormMainHeading = ({ children, subtitle }: FullFormMainHeadingProps) => {
+export const FullFormMainHeading = ({ children, subtitle }: FullFormMainHeadingProps) => {
     return (
         <>
             <div className="space-y-0.5">
@@ -23,4 +23,3 @@ const FullFormMainHeading = ({ children, subtitle }: FullFormMainHeadingProps) =
 
 FullFormMainHeading.displayName = "FullFormMainHeading";
 
-export default FullFormMainHeading;

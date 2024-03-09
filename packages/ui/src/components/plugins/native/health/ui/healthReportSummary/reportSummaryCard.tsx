@@ -1,10 +1,10 @@
 import React from 'react'
-import HealthReportSummaryBarPlot from './healthReportSummaryBarPlot'
+import { HealthReportSummaryBarPlot } from './healthReportSummaryBarPlot'
 import dayjs from 'dayjs'
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 import { ReturnedHealthReportSummary } from '@ulld/api';
 import { H4 } from '../../../../..';
-import DeleteModalTriggerButton from '../../../../../inputs/deleteModalTriggerButton';
+import { DeleteModalTriggerButton } from '../../../../../inputs/deleteModalTriggerButton';
 dayjs.extend(advancedFormat)
 
 

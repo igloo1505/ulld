@@ -1,9 +1,8 @@
-import { Checkbox } from '#/components/shad/ui/checkbox'
-import { FormField, FormItem, FormLabel, FormDescription, FormControl } from '#/components/shad/ui/form'
+import { Checkbox, FormField, FormItem, FormLabel, FormDescription, FormControl } from '@ulld/tailwind/base'
 import React from 'react'
 import { FieldValues, Path, useFormContext } from 'react-hook-form'
 import { BaseFullFormInputProps } from './types'
-import TertiaryToggle from '#/components/inputs/tertiaryToggle'
+import TertiaryToggle from '../../inputs/tertiaryToggle'
 
 
 
@@ -12,7 +11,7 @@ interface FullFormLabeledCheckboxProps<T extends FieldValues, H extends HTMLElem
 }
 
 
-const FullFormLabeledCheckbox = <T extends FieldValues>({ label, tertiary, desc, name, ...props }: FullFormLabeledCheckboxProps<T, HTMLInputElement>) => {
+export const FullFormLabeledCheckbox = <T extends FieldValues>({ label, tertiary, desc, name, ...props }: FullFormLabeledCheckboxProps<T, HTMLInputElement>) => {
     const form = useFormContext<T>()
     return (
         <FormField
@@ -48,6 +47,3 @@ const FullFormLabeledCheckbox = <T extends FieldValues>({ label, tertiary, desc,
 
 
 FullFormLabeledCheckbox.displayName = "FullFormLabeledCheckbox"
-
-
-export default FullFormLabeledCheckbox;

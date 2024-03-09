@@ -1,11 +1,11 @@
-import { Card, CardHeader, CardTitle } from '#/components/shad/ui/card'
-import { VanCunBoardDetails } from '#/types/contentTypeSpecific/vancun'
+import { Card, CardHeader, CardTitle } from '@ulld/tailwind/base'
 import React from 'react'
+import { KanBanBoardDetails } from './types'
 
 
 
 interface KanBanBoardCardProps {
-    card: NonNullable<VanCunBoardDetails>["lists"][number]["cards"][number]
+    card: NonNullable<KanBanBoardDetails>["lists"][number]["cards"][number]
 }
 
 

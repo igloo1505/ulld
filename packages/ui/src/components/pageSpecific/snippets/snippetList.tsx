@@ -1,5 +1,5 @@
 import React from 'react'
-import SnippetListItem from './snippetListItem'
+import { SnippetListItem } from './snippetListItem'
 import clsx from 'clsx'
 import { serverClient } from '@ulld/api'
 import { SnippetFilterParams, snippetValidator } from '@ulld/utilities'

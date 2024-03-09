@@ -1,8 +1,8 @@
 "use client"
-import EquationDisplay from '#/components/specificTypeDisplay/equation/equationDisplay';
 import React, { useEffect, useState } from 'react'
 import { AddEquationFormType } from './types';
-import SideMenuDisplayContainer from '#/components/layout/uniqueLayouts/sideMenu/sideMenuDisplayContainer';
+import SideMenuDisplayContainer from '../../layouts/sideMenu/sideMenuDisplayContainer';
+import EquationDisplay from '../../math/equation/equationDisplay';
 
 
 

@@ -4,7 +4,7 @@ import { IconProps } from '../../../types';
 
 
 
-const KotlinIcon = (props: IconProps) => {
+export const KotlinIcon = (props: IconProps) => {
     return (
         <IoLogoAndroid {...props} />
     )
@@ -14,4 +14,3 @@ const KotlinIcon = (props: IconProps) => {
 KotlinIcon.displayName = "KotlinIcon"
 
 
-export default KotlinIcon;

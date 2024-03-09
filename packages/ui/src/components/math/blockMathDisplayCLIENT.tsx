@@ -12,7 +12,7 @@ import MathContextMenu from './equation/mathContextMenu'
 
 
 interface MathDisplayProps {
-    math: string
+    content: string
     display?: boolean
     className?: string
     autoWrap?: boolean
@@ -26,7 +26,7 @@ interface MathDisplayProps {
 
 export const MathDisplayCLIENT = (_props: MathDisplayProps) => {
     const internalConfig = getInternalConfig()
-    const { math, stylesId, autoWrap, className, display, element = "div", isMathOnly = false, elementProps = {}, mathjaxOptions = {} } = _props
+    const { content: math, stylesId, autoWrap, className, display, element = "div", isMathOnly = false, elementProps = {}, mathjaxOptions = {} } = _props
     const content = useDelayedRemoteParse(math, internalConfig.performance.latexParsingDebounceTimeout, async (newMath, previousValue): Promise<string> => {
         const hasLatex = stringHasLatex(newMath)
         if (hasLatex || Boolean(isMathOnly && newMath.trim().length >= 3)) {

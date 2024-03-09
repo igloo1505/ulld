@@ -1,9 +1,9 @@
 "use client"
 import { store, showConfirmationModal } from '@ulld/state'
-import { ConfirmationModalConfig } from '@ulld/utilities'
 import clsx from 'clsx'
 import { XIcon } from 'lucide-react'
 import React from 'react'
+import { ConfirmationModalConfig } from '..'
 
 
 
@@ -12,7 +12,7 @@ interface DeleteModalTriggerButtonProps {
     className?: string
 }
 
-const DeleteModalTriggerButton = ({ className, config }: DeleteModalTriggerButtonProps) => {
+export const DeleteModalTriggerButton = ({ className, config }: DeleteModalTriggerButtonProps) => {
 
     const showDeleteModal = () => {
         store.dispatch(showConfirmationModal(config))
@@ -28,6 +28,3 @@ const DeleteModalTriggerButton = ({ className, config }: DeleteModalTriggerButto
 
 
 DeleteModalTriggerButton.displayName = "DeleteModalTriggerButton"
-
-
-export default DeleteModalTriggerButton;

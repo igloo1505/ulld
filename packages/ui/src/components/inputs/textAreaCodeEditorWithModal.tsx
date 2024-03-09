@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import TextAreaCodeEditor, { TextAreaCodeEditorProps } from './textAreaCodeEditor';
 import { FullCodeEditorTextAreaProps } from './codeEditor/monacoEditor';
 import CodeEditorModal, { getLaunchCodeEditorOnKeydownListener } from './codeEditor/monacoEditorModal';
-import { useViewport } from '#/hooks/useViewport';
+import { useViewport } from '@ulld/state';
 
 
 interface TextAreaCodeEditorWithMonacoModalProps extends Omit<TextAreaCodeEditorProps<NonNullable<FullCodeEditorTextAreaProps["language"]>>, "width" | "height"> {
@@ -12,7 +12,7 @@ interface TextAreaCodeEditorWithMonacoModalProps extends Omit<TextAreaCodeEditor
     maxHeight?: number
 }
 
-const TextAreaCodeEditorWithMonacoModal = ({ monaco, maxWidth, maxHeight, ...props }: TextAreaCodeEditorWithMonacoModalProps) => {
+export const TextAreaCodeEditorWithMonacoModal = ({ monaco, maxWidth, maxHeight, ...props }: TextAreaCodeEditorWithMonacoModalProps) => {
     const [modalOpen, setModalOpen] = useState(false)
     const vp = useViewport()
     const wdims: number[] = []
@@ -59,6 +59,3 @@ const TextAreaCodeEditorWithMonacoModal = ({ monaco, maxWidth, maxHeight, ...pro
 
 
 TextAreaCodeEditorWithMonacoModal.displayName = "TextAreaCodeEditorWithMonacoModal"
-
-
-export default TextAreaCodeEditorWithMonacoModal;

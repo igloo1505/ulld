@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem,  DropdownMenuTrigger } from '@ulld/tailwind/base';
-import { DropdownOptionType } from '../layout/uniqueLayouts/datatable/datatableFilterButton';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@ulld/tailwind/base';
+import { DropdownOptionType } from '..';
 
 
 

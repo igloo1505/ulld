@@ -1,5 +1,4 @@
-import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from '#/components/shad/ui/form';
-import { Textarea } from '#/components/shad/ui/textarea';
+import { Textarea, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from '@ulld/tailwind/base';
 import React from 'react'
 import { FieldValues, useFormContext } from 'react-hook-form';
 import { BaseFullFormInputProps } from './types';
@@ -11,7 +10,7 @@ interface FullFormTextAreaProps<T extends FieldValues, H extends HTMLElement> ex
     resizable?: boolean
 }
 
-const FullFormTextArea = <T extends FieldValues>({ label, desc, resizable = true, name, ...props }: FullFormTextAreaProps<T, HTMLTextAreaElement>) => {
+export const FullFormTextArea = <T extends FieldValues>({ label, desc, resizable = true, name, ...props }: FullFormTextAreaProps<T, HTMLTextAreaElement>) => {
 
     const form = useFormContext<T>()
     return (
@@ -40,6 +39,3 @@ const FullFormTextArea = <T extends FieldValues>({ label, desc, resizable = true
 
 
 FullFormTextArea.displayName = "FullFormTextArea"
-
-
-export default FullFormTextArea;

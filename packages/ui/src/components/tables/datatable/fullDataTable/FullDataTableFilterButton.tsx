@@ -1,7 +1,7 @@
 import React from 'react'
 import { ColumnFiltersState } from '@tanstack/react-table';
 import { DataTableBaseProps } from '../dataTableBaseProps';
-import DataTableDropdownCheckboxListInput, { DropdownOptionType } from '../datatableFilterButton';
+import { DropdownOptionType, DataTableDropdownCheckboxListInput } from '../datatableFilterButton';
 import { ToDoSearchParams } from '@ulld/parsers';
 
 
@@ -15,8 +15,7 @@ export interface Props<T extends unknown> extends DataTableBaseProps<T> {
 }
 
 
-const FullDataTableDropdownCheckboxListInput = <T extends unknown>(props: Props<T>) => {
-
+export const FullDataTableDropdownCheckboxListInput = <T extends unknown>(props: Props<T>) => {
     return (
         <DataTableDropdownCheckboxListInput
             {...props}
@@ -27,6 +26,3 @@ const FullDataTableDropdownCheckboxListInput = <T extends unknown>(props: Props<
 
 
 FullDataTableDropdownCheckboxListInput.displayName = "DataTableDropdownCheckboxListInput"
-
-
-export default FullDataTableDropdownCheckboxListInput;

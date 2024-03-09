@@ -4,7 +4,7 @@ import { IconProps } from '../../../types';
 
 
 
-const CssIcon = (props: IconProps) => {
+export const CssIcon = (props: IconProps) => {
     return (
         <IoLogoCss3 {...props} />
     )
@@ -14,4 +14,3 @@ const CssIcon = (props: IconProps) => {
 CssIcon.displayName = "CssIcon"
 
 
-export default CssIcon;

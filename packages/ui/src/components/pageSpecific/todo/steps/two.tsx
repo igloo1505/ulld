@@ -5,7 +5,7 @@ import { ToDoListFormStepOneProps } from './one'
 import { TaskCategory } from '@prisma/client';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@ulld/tailwind/base';
 import { ToDoCategoryDisplayMap } from '@ulld/parsers';
-import FormFieldWithBadgeList from '../../../inputs/formFieldWithBadgeList';
+import { FormFieldWithBadgeList } from '../../../inputs/formFieldWithBadgeList';
 
 
 const ToDoListFormStepTwo = ({ currentStep, form, resetCategories }: ToDoListFormStepOneProps) => {

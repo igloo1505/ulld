@@ -3,8 +3,8 @@ import { ToDoSearchParams } from '@ulld/parsers';
 import React from 'react'
 import { FieldValues, Path } from 'react-hook-form';
 import { FullFormSelectInputProps, DropdownOptionType } from '../../..';
-import FullFormTagSubjectTopicComboBox from '../../../menus/fullForm/fullFormTagTopicSubjectComboBox';
-import FullDataTableDropdownCheckboxListInput from '../../../tables/datatable/fullDataTable/FullDataTableFilterButton';
+import { FullFormTagSubjectTopicComboBox } from '../../../menus/fullForm/fullFormTagTopicSubjectComboBox';
+import { FullDataTableDropdownCheckboxListInput } from '../../../tables/datatable/fullDataTable/FullDataTableFilterButton';
 import { replaceRecursively } from '@ulld/utilities';
 
 

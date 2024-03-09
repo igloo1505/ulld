@@ -4,7 +4,7 @@ import { Button, Badge, Separator, Popover, PopoverContent, PopoverTrigger, Comm
 import { CheckIcon, PlusCircleIcon } from 'lucide-react';
 import clsx from 'clsx';
 import { DataTableBaseProps } from './dataTableBaseProps';
-import AddItemDropdownButton from './addItemDropdownButton';
+import { AddItemDropdownButton } from './addItemDropdownButton';
 import { ToDoSearchParams } from '@ulld/parsers';
 
 
@@ -58,7 +58,7 @@ const DropdownCheckboxItem = ({ item, toggle, isSelected }: DropdownCheckboxItem
 }
 
 
-const DataTableDropdownCheckboxListInput = <T extends unknown>({ label, selectedIds, options, toggle, placeholder, searchParams, clear, icon: Icon }: DataTableDropdownCheckboxListInputProps<T>) => {
+export const DataTableDropdownCheckboxListInput = <T extends unknown>({ label, selectedIds, options, toggle, placeholder, searchParams, clear, icon: Icon }: DataTableDropdownCheckboxListInputProps<T>) => {
     return (
         <Popover>
             <PopoverTrigger asChild>
@@ -142,6 +142,3 @@ const DataTableDropdownCheckboxListInput = <T extends unknown>({ label, selected
 
 
 DataTableDropdownCheckboxListInput.displayName = "DataTableDropdownCheckboxListInput"
-
-
-export default DataTableDropdownCheckboxListInput;

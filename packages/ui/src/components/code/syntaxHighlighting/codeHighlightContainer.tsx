@@ -33,7 +33,7 @@ const connector = connect((state: RootState, props: any) => ({
 const tertiaryTheme = "material-theme-ocean"
 
 // TODO: Add a context menu that allows the switchin of themes dynamically.
-const CodeHighlightContainer = connector(({ children, language, className, minimal, theme: _theme, configTheme, darkMode }: CodeHighlightContainerProps & {
+export const CodeHighlightContainer = connector(({ children, language, className, minimal, theme: _theme, configTheme, darkMode }: CodeHighlightContainerProps & {
     configTheme: ParsedAppConfig["code"]["theme"],
     darkMode: boolean
 }) => {
@@ -102,5 +102,3 @@ const CodeHighlightContainer = connector(({ children, language, className, minim
 
 CodeHighlightContainer.displayName = "CodeHighlightContainer"
 
-
-export default CodeHighlightContainer;

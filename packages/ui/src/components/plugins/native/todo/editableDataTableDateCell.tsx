@@ -6,7 +6,7 @@ import { PlusIcon } from 'lucide-react'
 import React, { MouseEvent, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import FullFormDateInput from '../../../menus/fullForm/fullFormDateInput'
+import { FullFormDateInput } from '../../../menus/fullForm/fullFormDateInput'
 
 
 
@@ -24,7 +24,7 @@ const laziestSchemaEver = z.object({
 
 
 /* TODO: Figure out why the DialogHeader and DialogFooter components are rendering outside of the closed Dialog component when back on wifi. Check out the syntax in Shadcn's docs about a controlled dialog component. */
-const EditableDataTableDateCell = ({ label, value, onValueChange, formatString }: EditableDataTableDateCellProps) => {
+export const EditableDataTableDateCell = ({ label, value, onValueChange, formatString }: EditableDataTableDateCellProps) => {
     const formatDate = (d: string | number | Date | dayjs.Dayjs | null | undefined) => {
         return dayjs(d).format(formatString || "MMM Do, YYYY")
     }
@@ -126,6 +126,3 @@ const EditableDataTableDateCell = ({ label, value, onValueChange, formatString }
 
 
 EditableDataTableDateCell.displayName = "EditableDataTableDateCell"
-
-
-export default EditableDataTableDateCell;

@@ -13,7 +13,7 @@ import PdfToc from "./Toc";
 import { TextRendererType, PdfManager } from "@ulld/state";
 import { Button } from "@ulld/tailwind/base";
 import { pdfStateClasses } from "../../../types";
-import DynamicIcon from "../../icons/DynamicIcon";
+import { DynamicIcon } from "../../icons/DynamicIcon";
 export const options = {
     standardFontDataUrl: '/standard_fonts/',
 };

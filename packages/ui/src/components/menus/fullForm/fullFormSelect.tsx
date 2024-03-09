@@ -1,8 +1,7 @@
 import React from 'react'
 import { FieldValues, useFormContext } from 'react-hook-form'
 import { BaseFullFormInputProps } from './types'
-import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from '#/components/shad/ui/form';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '#/components/shad/ui/select';
+import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage, Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@ulld/tailwind/base';
 
 
 
@@ -20,7 +19,7 @@ export interface FullFormSelectInputProps<T extends FieldValues, H extends HTMLE
 }
 
 
-const FullFormSelectInput = <T extends FieldValues, L extends string>({ label, className, placeholder, desc, name, options, contentClasses, itemClasses, asFloat, asInt, ...props }: FullFormSelectInputProps<T, HTMLTextAreaElement, L>) => {
+export const FullFormSelectInput = <T extends FieldValues, L extends string>({ label, className, placeholder, desc, name, options, contentClasses, itemClasses, asFloat, asInt, ...props }: FullFormSelectInputProps<T, HTMLTextAreaElement, L>) => {
     const form = useFormContext<T>()
     return (
         <FormField
@@ -59,6 +58,3 @@ const FullFormSelectInput = <T extends FieldValues, L extends string>({ label, c
 
 
 FullFormSelectInput.displayName = "FullFormSelectInput"
-
-
-export default FullFormSelectInput;

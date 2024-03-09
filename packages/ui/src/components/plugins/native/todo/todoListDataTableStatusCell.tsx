@@ -14,7 +14,7 @@ interface ToDoListDataTableStatusCellProps {
 }
 
 
-const ToDoListDataTableStatusCell = (props: ToDoListDataTableStatusCellProps) => {
+export const ToDoListDataTableStatusCell = (props: ToDoListDataTableStatusCellProps) => {
     const [open, setOpen] = useState(false)
     return (
         <Popover open={open} onOpenChange={setOpen}>
@@ -62,6 +62,3 @@ const ToDoListDataTableStatusCell = (props: ToDoListDataTableStatusCellProps) =>
 
 
 ToDoListDataTableStatusCell.displayName = "ToDoListDataTableStatusCell"
-
-
-export default ToDoListDataTableStatusCell;

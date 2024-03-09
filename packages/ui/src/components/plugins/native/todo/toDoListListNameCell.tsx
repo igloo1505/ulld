@@ -13,7 +13,7 @@ interface ToDoListDataTableListNameCellProps extends Omit<GeneralComboBoxProps<s
     onChange: (newListId: number) => void
 }
 
-const ToDoListDataTableListNameCell = ({ row, lists, onChange, ...props }: ToDoListDataTableListNameCellProps) => {
+export const ToDoListDataTableListNameCell = ({ row, lists, onChange, ...props }: ToDoListDataTableListNameCellProps) => {
     return (
         <GeneralComboBox
             onChange={(listName: string) => {
@@ -36,6 +36,3 @@ const ToDoListDataTableListNameCell = ({ row, lists, onChange, ...props }: ToDoL
 
 
 ToDoListDataTableListNameCell.displayName = "ToDoListDataTableListNameCell"
-
-
-export default ToDoListDataTableListNameCell;

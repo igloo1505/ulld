@@ -7,7 +7,7 @@ interface SubComponentHandlerProps<T> {
     row: T
 }
 
-const SubComponentHandler = <T extends Row<any>>({ row }: SubComponentHandlerProps<T>) => {
+export const SubComponentHandler = <T extends Row<any>>({ row }: SubComponentHandlerProps<T>) => {
     return (
         <div></div>
     )
@@ -15,6 +15,3 @@ const SubComponentHandler = <T extends Row<any>>({ row }: SubComponentHandlerPro
 
 
 SubComponentHandler.displayName = "SubComponentHandler"
-
-
-export default SubComponentHandler;

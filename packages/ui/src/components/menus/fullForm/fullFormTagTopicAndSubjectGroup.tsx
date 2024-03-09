@@ -1,9 +1,9 @@
 import React from 'react'
 import { FieldValues } from 'react-hook-form';
 import { BaseFullFormInputProps } from './types';
-import { TagTopicSubjectList } from '#/zod/local/zodGeneralSchemas';
-import FullFormTagSubjectTopicComboBox from './fullFormTagTopicSubjectComboBox';
+import { FullFormTagSubjectTopicComboBox } from './fullFormTagTopicSubjectComboBox';
 import clsx from 'clsx';
+import { TagTopicSubjectList } from '@ulld/api';
 
 
 interface FullFormTagSubjectTopicGroupProps<T extends FieldValues, H extends HTMLElement> extends Omit<BaseFullFormInputProps<T, H>, "name" | "label"> {
@@ -28,7 +28,7 @@ interface FullFormTagSubjectTopicGroupProps<T extends FieldValues, H extends HTM
     className?: string
 }
 
-const FullFormTagSubjectTopicGroup = <T extends FieldValues>({ labels, desc, names, taggableData, className, placeholders, children }: FullFormTagSubjectTopicGroupProps<T, HTMLTextAreaElement>) => {
+export const FullFormTagSubjectTopicGroup = <T extends FieldValues>({ labels, desc, names, taggableData, className, placeholders, children }: FullFormTagSubjectTopicGroupProps<T, HTMLTextAreaElement>) => {
     return (
         <div className={clsx("w-full grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6 @container/ttsGroup", className)}>
             {children}
@@ -64,6 +64,3 @@ const FullFormTagSubjectTopicGroup = <T extends FieldValues>({ labels, desc, nam
 
 
 FullFormTagSubjectTopicGroup.displayName = "FullFormTagSubjectTopicGroup"
-
-
-export default FullFormTagSubjectTopicGroup;

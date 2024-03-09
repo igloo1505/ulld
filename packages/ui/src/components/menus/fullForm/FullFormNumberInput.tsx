@@ -1,8 +1,8 @@
-import { FormField, FormItem, FormControl, FormLabel, FormDescription } from '#/components/shad/ui/form'
+import { FormField, FormItem, FormControl, FormLabel, FormDescription } from '@ulld/tailwind/base'
 import React from 'react'
 import { FieldValues, Path, PathValue, useFormContext } from 'react-hook-form'
 import { BaseFullFormInputProps } from './types'
-import NumberInput from '#/components/inputs/numberInput'
+import NumberInput from '../../inputs/numberInput'
 
 
 interface FullFormNumberInputProps<T extends FieldValues, H extends HTMLElement> extends BaseFullFormInputProps<T, H> {
@@ -15,7 +15,7 @@ interface FullFormNumberInputProps<T extends FieldValues, H extends HTMLElement>
 }
 
 
-const FullFormNumberInput = <T extends FieldValues>({ label, desc, name, integerOnly, min, max, step, initial, defaultValue, ...props }: FullFormNumberInputProps<T, HTMLInputElement>) => {
+export const FullFormNumberInput = <T extends FieldValues>({ label, desc, name, integerOnly, min, max, step, initial, defaultValue, ...props }: FullFormNumberInputProps<T, HTMLInputElement>) => {
     const form = useFormContext<T>()
     const _val = form.watch(name)
     return (
@@ -52,6 +52,3 @@ const FullFormNumberInput = <T extends FieldValues>({ label, desc, name, integer
 
 
 FullFormNumberInput.displayName = "FullFormNumberInput"
-
-
-export default FullFormNumberInput;

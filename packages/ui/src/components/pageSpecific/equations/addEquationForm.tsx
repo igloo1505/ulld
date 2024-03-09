@@ -3,8 +3,8 @@ import { AddEquationFormType } from './types';
 import AddEquationFormOne from './addEquationPanel1';
 import AddEquationFormTwo from './addEquationPanel2';
 import AddEquationFormThree from './addEquationPanel3';
-import { client } from '#/trpc/client';
-import { useToast } from '#/components/shad/ui/use-toast';
+import { client } from '@ulld/api';
+import { useToast } from '@ulld/tailwind';
 
 
 

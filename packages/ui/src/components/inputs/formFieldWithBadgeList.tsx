@@ -1,9 +1,7 @@
 import React from 'react'
 import { FieldValues } from 'react-hook-form'
-import { FormField, FormItem, FormLabel, FormControl, FormMessage, FormDescription } from '#/components/shad/ui/form'
-import { Input } from '#/components/shad/ui/input';
-import { onEnter } from '#/actions/listeners';
-import { Badge } from '../shad/ui/badge';
+import { Badge, Input, FormField, FormItem, FormLabel, FormControl, FormMessage, FormDescription } from '@ulld/tailwind/base';
+import { onEnter } from '@ulld/state';
 
 
 export type FormFieldWithBadgeListProps<T extends FieldValues> = {
@@ -29,7 +27,7 @@ export const BadgeContainer = ({ badges, onClick }: { badges: string[], onClick:
 
 
 
-const FormFieldWithBadgeList = <T extends FieldValues>({ inputLabel, badgeFormKey, inputFormKey, form, desc, inputPlaceHolder, onInputChange, inputValue }: FormFieldWithBadgeListProps<T>) => {
+export const FormFieldWithBadgeList = <T extends FieldValues>({ inputLabel, badgeFormKey, inputFormKey, form, desc, inputPlaceHolder, onInputChange, inputValue }: FormFieldWithBadgeListProps<T>) => {
     const externalControl = onInputChange && inputValue
     if (!externalControl && !inputFormKey) {
         console.error("No external control props and no necessary form keys supplied to TagInput")
@@ -96,6 +94,3 @@ const FormFieldWithBadgeList = <T extends FieldValues>({ inputLabel, badgeFormKe
 
 
 FormFieldWithBadgeList.displayName = "FormFieldWithBadgeList"
-
-
-export default FormFieldWithBadgeList;

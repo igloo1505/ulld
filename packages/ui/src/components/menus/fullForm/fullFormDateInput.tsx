@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "#/components/shad/ui/form";
 import { FieldValues, useFormContext } from "react-hook-form";
-import { Popover, PopoverContent, PopoverTrigger } from '#/components/shad/ui/popover';
-import { Button } from '#/components/shad/ui/button';
-import { Calendar } from '#/components/shad/ui/calendar';
+import { Popover, PopoverContent, PopoverTrigger, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage, Button, Calendar } from '@ulld/tailwind/base';
 import { CalendarIcon } from 'lucide-react';
 import clsx from 'clsx';
 import { BaseFullFormInputProps } from './types';
@@ -21,7 +18,7 @@ interface FullFormDateInputProps<T extends FieldValues, H extends HTMLElement> e
     buttonClasses?: string
 }
 
-const FullFormDateInput = <T extends FieldValues>({ name, dateFilter, buttonClasses, label, placeholder, mode, desc, onChangeValueConverter, withTime = true }: FullFormDateInputProps<T, HTMLInputElement>) => {
+export const FullFormDateInput = <T extends FieldValues>({ name, dateFilter, buttonClasses, label, placeholder, mode, desc, onChangeValueConverter, withTime = true }: FullFormDateInputProps<T, HTMLInputElement>) => {
     const form = useFormContext<T>()
     const [open, setOpen] = useState(false)
     const _mode = mode || "single"
@@ -104,6 +101,3 @@ const FullFormDateInput = <T extends FieldValues>({ name, dateFilter, buttonClas
 
 
 FullFormDateInput.displayName = "FullFormDateInput"
-
-
-export default FullFormDateInput;

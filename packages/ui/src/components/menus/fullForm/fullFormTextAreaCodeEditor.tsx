@@ -1,10 +1,10 @@
 import React from 'react'
 import { FieldValues, Path, PathValue, useFormContext } from 'react-hook-form'
 import { BaseFullFormInputProps } from './types'
-import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from '#/components/shad/ui/form';
-import TextAreaCodeEditor from '#/components/inputs/textAreaCodeEditor';
-import { Technologies } from '@prisma/client';
+import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from '@ulld/tailwind/base';
+import { Technologies } from '@ulld/api';
 import { TextareaCodeEditorProps } from '@uiw/react-textarea-code-editor';
+import { TextAreaCodeEditor } from '../../inputs/textAreaCodeEditor';
 
 
 
@@ -13,8 +13,7 @@ interface FullFormTextAreaProps<T extends FieldValues, H extends HTMLElement> ex
     language: Technologies
 }
 
-const FullFormTextAreaCodeEditor = <T extends FieldValues>({ label, desc, name, language, ...props }: FullFormTextAreaProps<T, HTMLTextAreaElement> & Omit<TextareaCodeEditorProps, "width" | "height">) => {
-
+export const FullFormTextAreaCodeEditor = <T extends FieldValues>({ label, desc, name, language, ...props }: FullFormTextAreaProps<T, HTMLTextAreaElement> & Omit<TextareaCodeEditorProps, "width" | "height">) => {
     const form = useFormContext<T>()
     return (
         <FormField
@@ -44,6 +43,3 @@ const FullFormTextAreaCodeEditor = <T extends FieldValues>({ label, desc, name, 
 
 
 FullFormTextAreaCodeEditor.displayName = "FullFormTextAreaCodeEditor"
-
-
-export default FullFormTextAreaCodeEditor;

@@ -4,7 +4,7 @@ import { IconProps } from '../../../types';
 
 
 
-const MarkdownLogo = (props: IconProps) => {
+export const MarkdownLogo = (props: IconProps) => {
     return (
         <IoLogoMarkdown {...props} />
     )
@@ -12,6 +12,3 @@ const MarkdownLogo = (props: IconProps) => {
 
 
 MarkdownLogo.displayName = "MarkdownLogo"
-
-
-export default MarkdownLogo;

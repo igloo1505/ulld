@@ -3,6 +3,7 @@ import type { Route } from 'next'
 import { NavItem } from './fullScreenNavigationItem'
 import FullScreenNavigationGroup from './fullScreenNavigationGroup'
 import { formatLocationData, NoteTypeOverview } from '@ulld/state'
+import { ClientSideXIcon } from '../..'
 
 
 interface FullScreenNavigationMenuProps {

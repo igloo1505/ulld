@@ -1,8 +1,8 @@
 import React from 'react'
 import { AddEquationFormType } from './types'
-import SideFormContainer from '#/components/layout/uniqueLayouts/sideMenu/sideFormContainer';
-import FullFormTextAreaCodeEditor from '#/components/layout/uniqueLayouts/fullForm/fullFormTextAreaCodeEditor';
-import FullFormTextAreaInput from '../../layout/uniqueLayouts/fullForm/fullFormTextAreaInput';
+import { SideFormContainer } from '../../layouts/sideMenu/sideFormContainer'
+import { FullFormTextAreaCodeEditor } from '../../menus/fullForm/fullFormTextAreaCodeEditor'
+import { FullFormTextArea } from '../..'
 
 
 interface AddEquationFormTwoProps {
@@ -19,7 +19,7 @@ const AddEquationFormTwo = ({ form, next, back }: AddEquationFormTwoProps) => {
             submitBtnText="Next"
             onBackClick={back}
         >
-            <FullFormTextAreaInput
+            <FullFormTextArea
                 label="Description (optional)"
                 desc="Can contain latex"
                 name="desc"

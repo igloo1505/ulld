@@ -4,7 +4,7 @@ import { IconProps } from '../../../types';
 
 
 
-const PythonIcon = (props: IconProps) => {
+export const PythonIcon = (props: IconProps) => {
     return (
         <IoLogoPython {...props} />
     )
@@ -12,6 +12,3 @@ const PythonIcon = (props: IconProps) => {
 
 
 PythonIcon.displayName = "PythonIcon"
-
-
-export default PythonIcon;

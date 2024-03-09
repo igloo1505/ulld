@@ -19,7 +19,7 @@ export interface TextAreaCodeEditorProps<T extends string> {
     editor?: TextareaCodeEditorProps
 }
 
-const TextAreaCodeEditor = <T extends string>({ value, onChange, language = "zsh", editor, placeholder = "" }: TextAreaCodeEditorProps<T>) => {
+export const TextAreaCodeEditor = <T extends string>({ value, onChange, language = "zsh", editor, placeholder = "" }: TextAreaCodeEditorProps<T>) => {
     const [focused, setFocused] = useState(false)
     const props: TextareaCodeEditorProps = {
         ...editor,
@@ -55,6 +55,3 @@ const TextAreaCodeEditor = <T extends string>({ value, onChange, language = "zsh
 
 
 TextAreaCodeEditor.displayName = "TextAreaCodeEditor"
-
-
-export default TextAreaCodeEditor;

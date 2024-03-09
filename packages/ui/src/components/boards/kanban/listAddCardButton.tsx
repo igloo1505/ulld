@@ -1,4 +1,4 @@
-import { Button } from '#/components/shad/ui/button'
+import { Button } from '@ulld/tailwind/base'
 import { PlusIcon } from 'lucide-react'
 import React from 'react'
 

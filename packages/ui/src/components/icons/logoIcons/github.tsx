@@ -4,7 +4,7 @@ import { IconProps } from '../../../types';
 
 
 
-const GithubIcon = (props: IconProps) => {
+export const GithubIcon = (props: IconProps) => {
     return (
         <IoLogoGithub {...props} />
     )
@@ -14,4 +14,3 @@ const GithubIcon = (props: IconProps) => {
 GithubIcon.displayName = "GithubIcon"
 
 
-export default GithubIcon;

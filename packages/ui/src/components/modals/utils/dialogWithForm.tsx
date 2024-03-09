@@ -21,7 +21,7 @@ interface DialogWithFormProps<T extends FieldValues> {
     withButtons?: boolean
 }
 
-const DialogWithForm = <T extends FieldValues>({ children, grow, onOpenChange, form, open, title, desc, isModal, onSubmit, btnLabel, className, withButtons }: DialogWithFormProps<T>) => {
+export const DialogWithForm = <T extends FieldValues>({ children, grow, onOpenChange, form, open, title, desc, isModal, onSubmit, btnLabel, className, withButtons }: DialogWithFormProps<T>) => {
     const router = useRouter()
     console.log("isModal: ", isModal)
     return (
@@ -64,6 +64,3 @@ const DialogWithForm = <T extends FieldValues>({ children, grow, onOpenChange, f
 
 
 DialogWithForm.displayName = "DialogWithForm"
-
-
-export default DialogWithForm;

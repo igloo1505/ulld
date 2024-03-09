@@ -1,8 +1,8 @@
 import React from 'react'
 import { AddEquationFormType } from './types'
-import SideFormContainer from '#/components/layout/uniqueLayouts/sideMenu/sideFormContainer';
-import FullFormMathStringInput from '#/components/layout/uniqueLayouts/fullForm/fullFormMathStringInput';
-import FullFormInput from '#/components/layout/uniqueLayouts/fullForm/fullFormInput';
+import { SideFormContainer } from '../../layouts/sideMenu/sideFormContainer'
+import { FullFormInput } from '../../menus/fullForm/fullFormInput'
+import { FullFormMathStringInput } from '../../menus/fullForm/fullFormMathStringInput'
 
 
 interface AddEquationFormOneProps {

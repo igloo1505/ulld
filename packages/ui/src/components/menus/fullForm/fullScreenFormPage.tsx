@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import FullFormPageHeading from './fullFormPageHeading'
+import { FullFormPageHeading } from './fullFormPageHeading'
 import { FullFormContext } from './fullFormContext'
 import clsx from 'clsx'
 
@@ -15,7 +15,7 @@ interface FullFormFormPageProps {
     className?: string
 }
 
-const FullFormFormPage = ({ asideParent = null, noMaxWidth, title, subtitle, children, className, noSpace }: FullFormFormPageProps) => {
+export const FullFormFormPage = ({ asideParent = null, noMaxWidth, title, subtitle, children, className, noSpace }: FullFormFormPageProps) => {
     const ctx = useContext(FullFormContext)
     const show = !asideParent || asideParent === ctx.activeAside
     return (
@@ -30,6 +30,3 @@ const FullFormFormPage = ({ asideParent = null, noMaxWidth, title, subtitle, chi
 
 
 FullFormFormPage.displayName = "FullFormFormPage"
-
-
-export default FullFormFormPage;

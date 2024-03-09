@@ -6,7 +6,7 @@ import { UseFormReturn } from 'react-hook-form'
 import { DevTool } from "@hookform/devtools"
 import { client } from '@ulld/api'
 import { onEnter } from '@ulld/state'
-import FullFormCodeEditorWithModal from '../../menus/fullForm/fullFormCodeEditor'
+import { FullFormCodeEditorWithModal } from '../../menus/fullForm/fullFormCodeEditor'
 import { technologiesNameMap } from '@ulld/utilities'
 
 

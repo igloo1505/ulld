@@ -1,10 +1,9 @@
 "use client"
-import { Form } from '#/components/shad/ui/form'
+import { Form } from '@ulld/tailwind/base'
 import React from 'react'
 import { FieldValues, UseFormReturn } from 'react-hook-form'
-import FullFormMainHeading from './formMainHeading'
-import FullFormSidePanel from './fullFormSidePanel'
 import clsx from 'clsx'
+import { FullFormMainHeading, FullFormSidePanel } from '.'
 
 
 
@@ -18,7 +17,7 @@ interface FullFormContainerProps<T extends FieldValues> {
 }
 
 
-const FullFormContainer = <T extends FieldValues>({ form, asideItems, title, children, subtitle, noMaxWidth }: FullFormContainerProps<T>) => {
+export const FullFormContainer = <T extends FieldValues>({ form, asideItems, title, children, subtitle, noMaxWidth }: FullFormContainerProps<T>) => {
     return (
         <Form {...form}>
             <div className={clsx("ulld-fullForm space-y-6 p-10 pb-16", (!asideItems || asideItems?.length === 0) ? clsx(" w-full px-16 md:px-8", !noMaxWidth && "max-w-screen-md") : clsx("w-full px-8 md:px-16", !noMaxWidth && "max-w-screen-lg"))}>
@@ -34,6 +33,3 @@ const FullFormContainer = <T extends FieldValues>({ form, asideItems, title, chi
 
 
 FullFormContainer.displayName = "FullFormContainer"
-
-
-export default FullFormContainer;

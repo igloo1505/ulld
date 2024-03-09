@@ -1,16 +1,16 @@
 import React from 'react'
-import { FormField, FormItem, FormLabel, FormDescription, FormControl, FormMessage } from '#/components/shad/ui/form'
-import MathStringInput from '#/components/inputs/mathStringInput'
 import { FieldValues, Path, PathValue, useFormContext } from 'react-hook-form'
 import { BaseFullFormInputProps } from './types'
 import type { EditableMathFieldProps } from 'react-mathquill'
+import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from '@ulld/tailwind'
+import MathStringInput from '../../inputs/mathStringInput'
 
 
 interface FullFormMathStringInputProps<T extends FieldValues, H extends HTMLElement> extends BaseFullFormInputProps<T, H> {
 }
 
 
-const FullFormMathStringInput = <T extends FieldValues>({ label, desc, name, ...props }: FullFormMathStringInputProps<T, HTMLInputElement> & EditableMathFieldProps) => {
+export const FullFormMathStringInput = <T extends FieldValues>({ label, desc, name, ...props }: FullFormMathStringInputProps<T, HTMLInputElement> & EditableMathFieldProps) => {
     const form = useFormContext<T>()
     return (
         <FormField
@@ -39,6 +39,3 @@ const FullFormMathStringInput = <T extends FieldValues>({ label, desc, name, ...
 
 
 FullFormMathStringInput.displayName = "FullFormMathStringInput"
-
-
-export default FullFormMathStringInput;

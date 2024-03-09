@@ -1,4 +1,4 @@
-import { Separator } from "#/components/shad/ui/separator";
+import { Separator } from "@ulld/tailwind/base";
 import React from "react";
 
 interface FullFormPageHeadingProps {
@@ -6,7 +6,7 @@ interface FullFormPageHeadingProps {
     subtitle?: string;
 }
 
-const FullFormPageHeading = ({ title, subtitle }: FullFormPageHeadingProps) => {
+export const FullFormPageHeading = ({ title, subtitle }: FullFormPageHeadingProps) => {
     return (
         <>
             <div>
@@ -21,5 +21,3 @@ const FullFormPageHeading = ({ title, subtitle }: FullFormPageHeadingProps) => {
 };
 
 FullFormPageHeading.displayName = "FullFormPageHeading";
-
-export default FullFormPageHeading;

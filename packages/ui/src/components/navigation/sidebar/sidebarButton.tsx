@@ -2,7 +2,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { SidebarLink } from "./types"
 import clsx from "clsx"
-import DynamicIcon from "../../icons/DynamicIcon"
+import { DynamicIcon } from "../../icons/DynamicIcon"
 
 
 interface SidebarButtonProps {

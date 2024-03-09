@@ -1,8 +1,7 @@
-import { FormControl, FormDescription, FormField, FormItem, FormLabel } from '#/components/shad/ui/form';
+import { FormControl, FormDescription, FormField, FormItem, FormLabel, Switch } from '@ulld/tailwind/base';
 import React from 'react'
 import { FieldValues, useFormContext } from 'react-hook-form';
 import { BaseFullFormInputProps } from './types';
-import { Switch } from '#/components/shad/ui/switch';
 
 
 
@@ -14,7 +13,7 @@ interface FullFormSwitchInputProps<T extends FieldValues, H extends HTMLElement,
     placeholder?: string
 }
 
-const FullFormSwitchInput = <T extends FieldValues, L extends string>({ label, placeholder, desc, name, options, ...props }: FullFormSwitchInputProps<T, HTMLTextAreaElement, L>) => {
+export const FullFormSwitchInput = <T extends FieldValues, L extends string>({ label, placeholder, desc, name, options, ...props }: FullFormSwitchInputProps<T, HTMLTextAreaElement, L>) => {
     const form = useFormContext<T>()
     return (
         <FormField
@@ -44,6 +43,3 @@ const FullFormSwitchInput = <T extends FieldValues, L extends string>({ label, p
 
 
 FullFormSwitchInput.displayName = "FullFormSwitchInput"
-
-
-export default FullFormSwitchInput;

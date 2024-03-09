@@ -1,13 +1,13 @@
 "use client"
-import { VanCunBoardDetails } from '#/types/contentTypeSpecific/vancun'
 import React, { useState } from 'react'
 import BoardList from './boardList'
 import DefaultEmptyBoardList from './defaultEmptyList'
-import { client } from '#/trpc/client'
+import { client } from '@ulld/api'
+import { KanBanBoardDetails } from './types'
 
 
 interface VanCunBoardContainerProps {
-    board: NonNullable<VanCunBoardDetails>
+    board: NonNullable<KanBanBoardDetails>
 }
 
 const columnWidth = `250px`

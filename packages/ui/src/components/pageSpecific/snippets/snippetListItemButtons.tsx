@@ -10,7 +10,7 @@ interface SnippetListItemButtonsProps {
     item: SnippetListItemProps
 }
 
-const SnippetListItemButtons = ({ item }: SnippetListItemButtonsProps) => {
+export const SnippetListItemButtons = ({ item }: SnippetListItemButtonsProps) => {
     return (
         <div className={"flex flex-row justify-end items-center gap-4"}>
             <Link href={`/snippets/add?edit=${item.id}`}>
@@ -23,6 +23,3 @@ const SnippetListItemButtons = ({ item }: SnippetListItemButtonsProps) => {
 
 
 SnippetListItemButtons.displayName = "SnippetListItemButtons"
-
-
-export default SnippetListItemButtons;

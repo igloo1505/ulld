@@ -1,21 +1,21 @@
 "use client"
 import { ColumnDef } from "@tanstack/react-table"
-import { Checkbox } from "#/components/shad/ui/checkbox"
 import dayjs from 'dayjs'
-import { Button } from "#/components/shad/ui/button"
 import { ArrowUpDown, MoreHorizontal } from "lucide-react"
 import {
+    Button,
+    Checkbox,
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from "#/components/shad/ui/dropdown-menu"
-import store from "#/state/store"
-import { showToast } from "#/state/slices/ui"
-import { BibEntryDataTableOutput } from "#/classes/prismaMdxRelations/BibEntry"
+} from "@ulld/tailwind/base"
 import type { useRouter } from "next/navigation"
+import { BibEntryDataTableOutput } from "@ulld/api"
+import { store, showToast } from "@ulld/state"
+import React from "react"
 
 
 

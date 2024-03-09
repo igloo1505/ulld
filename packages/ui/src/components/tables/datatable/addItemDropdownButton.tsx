@@ -10,7 +10,7 @@ interface AddItemDropdownButtonProps {
     label: string
 }
 
-const AddItemDropdownButton = ({ href, label }: AddItemDropdownButtonProps) => {
+export const AddItemDropdownButton = ({ href, label }: AddItemDropdownButtonProps) => {
     const router = useRouter()
     return (
         <CommandItem
@@ -24,6 +24,3 @@ const AddItemDropdownButton = ({ href, label }: AddItemDropdownButtonProps) => {
 
 
 AddItemDropdownButton.displayName = "AddItemDropdownButton"
-
-
-export default AddItemDropdownButton;

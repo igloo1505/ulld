@@ -9,7 +9,7 @@ interface FullFormProviderProps {
     initialValues: FullFormContextSchema
 }
 
-const FullFormProvider = ({ children, initialValues }: FullFormProviderProps) => {
+export const FullFormProvider = ({ children, initialValues }: FullFormProviderProps) => {
 
     const [state, dispatch] = useReducer(fullFormReducer, initialValues)
 
@@ -24,6 +24,3 @@ const FullFormProvider = ({ children, initialValues }: FullFormProviderProps) =>
 
 
 FullFormProvider.displayName = "FullFormProvider"
-
-
-export default FullFormProvider;

@@ -15,7 +15,7 @@ interface FullFormTriPositionSliderProps<T extends FieldValues> {
     disabled?: boolean
 }
 
-const FullFormTriPositionSlider = <T extends FieldValues>({
+export const FullFormTriPositionSlider = <T extends FieldValues>({
     items,
     label,
     disabled
@@ -74,5 +74,3 @@ const FullFormTriPositionSlider = <T extends FieldValues>({
 };
 
 FullFormTriPositionSlider.displayName = "FullFormTriPositionSlider";
-
-export default FullFormTriPositionSlider;

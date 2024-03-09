@@ -4,7 +4,7 @@ import { IconProps } from '../../../types';
 
 
 
-const ReactIcon = (props: IconProps) => {
+export const ReactIcon = (props: IconProps) => {
     return (
         <IoLogoReact {...props} />
     )
@@ -12,6 +12,3 @@ const ReactIcon = (props: IconProps) => {
 
 
 ReactIcon.displayName = "ReactIcon"
-
-
-export default ReactIcon;

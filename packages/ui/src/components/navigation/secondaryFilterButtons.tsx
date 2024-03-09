@@ -1,9 +1,9 @@
 "use client"
-import { formatSearchAllParams } from "#/lib/formatting/formatSearchAllParams"
 import Link from 'next/link'
 import { Route } from "next"
-import { Button } from "../shad/ui/button"
-import { DocTypes } from "#/classes/prismaMdxRelations/zod/general"
+import { Button } from "@ulld/tailwind/base"
+import { DocTypes } from '@ulld/configschema'
+import { formatSearchAllParams } from '@ulld/state'
 
 
 export const SubjectTag = ({ subject, category, basePath }: { subject: string, basePath: Route, category: DocTypes }) => {

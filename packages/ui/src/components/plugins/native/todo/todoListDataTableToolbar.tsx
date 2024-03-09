@@ -18,8 +18,8 @@ import { Input, Button, DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, 
 import { ArrayUtilities, TaskListIds } from '@ulld/utilities'
 import { ToDoTableOutput, ToDoSearchParams, ToDoSearchParamInput } from '.'
 import { DropdownOptionType } from '../../..'
-import FullFormProvider from '../../../menus/fullForm/FullFormProvider'
-import DataTableDropdownCheckboxListInput from '../../../tables/datatable/datatableFilterButton'
+import { FullFormProvider } from '../../../menus/fullForm/FullFormProvider'
+import { DataTableDropdownCheckboxListInput } from '../../../tables/datatable/datatableFilterButton'
 
 dayjs.extend(advancedFormat)
 
@@ -43,7 +43,7 @@ const replaceMap: Record<CoreColumn<TodoTaskOutput, unknown>["id"], string> = {
 
 
 
-const ToDoListTableToolBar = <T extends FieldValues>({ table, listNames, selectedIds, columnFilters, setColumnFilters, selectedValues, activeLists, searchParams, currentListIds, ...props }: ToDoListTableToolBarProps) => {
+export const ToDoListTableToolBar = <T extends FieldValues>({ table, listNames, selectedIds, columnFilters, setColumnFilters, selectedValues, activeLists, searchParams, currentListIds, ...props }: ToDoListTableToolBarProps) => {
 
 
     const activeIds = activeLists.map((a) => a.id)
@@ -177,6 +177,3 @@ const ToDoListTableToolBar = <T extends FieldValues>({ table, listNames, selecte
 
 
 ToDoListTableToolBar.displayName = "ToDoListTableToolBar"
-
-
-export default ToDoListTableToolBar;

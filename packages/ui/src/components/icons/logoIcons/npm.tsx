@@ -4,7 +4,7 @@ import { IconProps } from '../../../types';
 
 
 
-const NPMIcon = (props: IconProps) => {
+export const NPMIcon = (props: IconProps) => {
     return (
         <IoLogoNpm {...props} />
     )
@@ -12,6 +12,3 @@ const NPMIcon = (props: IconProps) => {
 
 
 NPMIcon.displayName = "NPMIcon"
-
-
-export default NPMIcon;

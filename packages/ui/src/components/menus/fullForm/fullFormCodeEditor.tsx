@@ -1,10 +1,9 @@
 import React from 'react'
-import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from '#/components/shad/ui/form';
+import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from '@ulld/tailwind/base';
 import { FieldValues, Path, PathValue, useFormContext } from 'react-hook-form'
 import { BaseFullFormInputProps } from './types'
 import { TextareaCodeEditorProps } from '@uiw/react-textarea-code-editor';
-import { FullCodeEditorTextAreaProps, MonacoEditorSupportedLanguage } from '#/components/inputs/codeEditor/monacoEditor';
-import TextAreaCodeEditorWithMonacoModal from '#/components/inputs/textAreaCodeEditorWithModal';
+import { FullCodeEditorTextAreaProps, MonacoEditorSupportedLanguage, TextAreaCodeEditorWithMonacoModal } from '../..';
 
 
 interface FullFormCodeEditorWithModalProps<T extends FieldValues, H extends HTMLElement> extends BaseFullFormInputProps<T, H> {
@@ -12,7 +11,7 @@ interface FullFormCodeEditorWithModalProps<T extends FieldValues, H extends HTML
     monaco?: FullCodeEditorTextAreaProps
 }
 
-const FullFormCodeEditorWithModal = <T extends FieldValues>({ label, desc, name, language, ...props }: FullFormCodeEditorWithModalProps<T, HTMLTextAreaElement> & TextareaCodeEditorProps) => {
+export const FullFormCodeEditorWithModal = <T extends FieldValues>({ label, desc, name, language, ...props }: FullFormCodeEditorWithModalProps<T, HTMLTextAreaElement> & TextareaCodeEditorProps) => {
     const form = useFormContext<T>()
     return (
         <FormField
@@ -43,6 +42,3 @@ const FullFormCodeEditorWithModal = <T extends FieldValues>({ label, desc, name,
 
 
 FullFormCodeEditorWithModal.displayName = "FullFormCodeEditorWithModal"
-
-
-export default FullFormCodeEditorWithModal;

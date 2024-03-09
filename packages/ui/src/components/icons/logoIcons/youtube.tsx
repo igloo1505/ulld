@@ -4,7 +4,7 @@ import { IconProps } from '../../../types';
 
 
 
-const YoutubeIcon = (props: IconProps) => {
+export const YoutubeIcon = (props: IconProps) => {
     return (
         <IoLogoYoutube {...props} />
     )
@@ -12,6 +12,3 @@ const YoutubeIcon = (props: IconProps) => {
 
 
 YoutubeIcon.displayName = "YoutubeIcon"
-
-
-export default YoutubeIcon;

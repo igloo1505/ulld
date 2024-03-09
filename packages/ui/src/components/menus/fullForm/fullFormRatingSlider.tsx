@@ -14,7 +14,7 @@ export interface FullFormRatingSliderProps<T extends FieldValues> {
 }
 
 
-const FullFormRatingSlider = <T extends FieldValues>({ label, item, disabled, className }: FullFormRatingSliderProps<T>) => {
+export const FullFormRatingSlider = <T extends FieldValues>({ label, item, disabled, className }: FullFormRatingSliderProps<T>) => {
     const id = useId()
     const form = useFormContext<T>()
 
@@ -62,6 +62,3 @@ const FullFormRatingSlider = <T extends FieldValues>({ label, item, disabled, cl
 
 
 FullFormRatingSlider.displayName = "FullFormRatingSlider"
-
-
-export default FullFormRatingSlider;
