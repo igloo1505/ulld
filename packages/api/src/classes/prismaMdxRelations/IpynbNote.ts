@@ -8,7 +8,6 @@ import { ReadingList } from "./readingList";
 import { Tag } from "./tag";
 import { Topic } from "./topic";
 import { Prisma } from '@ulld/database'
-import jsdom from 'jsdom'
 
 
 export interface IpynbNoteParams {
@@ -121,13 +120,13 @@ export class IpynbNote extends IpynbProtocol {
         this.htmlOutput = res.content
         this.outgoingQuickLinks = this.outgoingQuickLinks.concat(res.links)
     }
-    getPseudoDom() {
-        return new jsdom.JSDOM(this.htmlOutput)
-    }
-    applySyntaxHighlighting() {
-        let dom = this.getPseudoDom()
-        dom.window.document.querySelectorAll(".")
-    }
+    // getPseudoDom() {
+        // return new jsdom.JSDOM(this.htmlOutput)
+    // }
+    // applySyntaxHighlighting() {
+    //     let dom = this.getPseudoDom()
+    //     dom.window.document.querySelectorAll(".")
+    // }
     async parse() {
         // FIX: In order for this to work, only markdown cells need to be selected from htmlOutput. Handle that at some point, but not a priority for now.
         // this._parseTags()

@@ -9,9 +9,9 @@ import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import rehypeVideo from 'rehype-video';
 import { MermaidConfigType, mathOptions, mermaidTheme } from "@ulld/utilities"
-import config from "mermaid/dist/defaultConfig.js"
 // @ts-ignore
 import mdxMermaid from "mdx-mermaid"
+import { appConfigSchema } from "@ulld/configschema"
 
 
 export const mermaidConfig: MermaidConfigType = {
@@ -26,12 +26,13 @@ export const mermaidConfig: MermaidConfigType = {
 
 const parseMdxProps = z.object({
     content: z.string(),
-    rsc: z.boolean().default(false)
+    rsc: z.boolean().default(false),
+    config: appConfigSchema
 })
 
 
 
-export const parseMdxTestParser = async ({ content, rsc }: z.input<typeof parseMdxProps>) => {
+export const parseMdxTestParser = async ({ content, rsc, config }: z.input<typeof parseMdxProps>) => {
     return String(await compile(content, {
         outputFormat: 'function-body',
         remarkPlugins: [
@@ -52,8 +53,8 @@ export const parseMdxTestParser = async ({ content, rsc }: z.input<typeof parseM
                 {
                     keepBackground: false,
                     theme: {
-                        light: config.code.theme.light,
-                        dark: config.code.theme.dark
+                        light: config.code?.theme?.light,
+                        dark: config.code?.theme?.dark
                     },
                     onVisitLine(node: any) {
                         if (node.children.length === 0) {

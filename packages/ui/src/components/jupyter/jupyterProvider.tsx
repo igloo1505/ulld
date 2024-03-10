@@ -2,7 +2,7 @@
 import React from 'react'
 import { Jupyter, JupyterProps } from "@datalayer/jupyter-react"
 import { useSearchParams } from 'next/navigation'
-import "#/styles/notebook.scss"
+import "./notebook.scss"
 import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema'
 
 

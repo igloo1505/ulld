@@ -5,7 +5,7 @@ import gsap from 'gsap'
 import { usePathname } from 'next/navigation'
 import { initialState, RootState, store, toggleEmbeddedPanelState, addEmbededPanelState } from '@ulld/state'
 import { connect } from 'react-redux'
-import { DynamicIcon } from '../../../../..'
+import { DynamicIcon } from '../../../../../icons/DynamicIcon'
 
 
 

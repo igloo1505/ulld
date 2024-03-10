@@ -1,5 +1,5 @@
 "use client"
-import "./initPDF"
+import "./initPdf"
 import 'react-pdf/dist/Page/TextLayer.css';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import './pdfStuff.scss'

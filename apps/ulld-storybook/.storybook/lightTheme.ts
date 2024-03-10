@@ -1,7 +1,6 @@
 import { create } from '@storybook/theming/create';
-import { brandUI } from "@ulld/ui"
 
-export const lightModeTheme = {
+export const lightModeTheme = create({
     base: 'light',
     // Typography
     fontBase: '"Open Sans", sans-serif',
@@ -37,5 +36,4 @@ export const lightModeTheme = {
     inputBorder: '#10162F',
     inputTextColor: '#10162F',
     inputBorderRadius: 2,
-}
-
+})

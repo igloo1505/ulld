@@ -1,5 +1,5 @@
 import React from 'react'
-import '#/styles/mdx.scss'
+import '../../styles/mdx.scss'
 import { MDXRemoteProps, compileMDX } from 'next-mdx-remote/rsc'
 import remarkMath from 'remark-math'
 import remarkGfm from "remark-gfm"
@@ -9,17 +9,17 @@ import rehypePrettyCode from "rehype-pretty-code"
 import emoji from "remark-emoji"
 import rehypeSlug from "rehype-slug"
 import rehypeVideo from 'rehype-video';
-// @ts-ignore
-import mdxMermaid from 'mdx-mermaid'
+/* // @ts-ignore */
+/* import mdxMermaid from 'mdx-mermaid' */
 import clsx from 'clsx'
-import ImmediateNoteContentContainer from './immediateNoteContainer'
+import { ImmediateNoteContentContainer } from './immediateNoteContainer'
 import { MdxNote, CalendarAndDateManager, MdxNoteWithAll } from '@ulld/api'
 import { DocTypes, ParsedAppConfig, getInternalConfig } from '@ulld/configschema'
 import { FrontMatterType, ClientsideNoteEvents } from '@ulld/state'
 import { mermaidConfig, mathOptions } from '@ulld/utilities'
-import { getComponentMap } from '..'
-import MdxCitations from '../markdown/citations'
-import SequentialNoteBottomBar from '../markdown/sequentialBottomBar'
+import { getComponentMap } from '../markdown/componentMap'
+import { MdxCitations } from '../markdown/citations'
+import { SequentialNoteBottomBar } from '../markdown/sequentialBottomBar'
 import { getClassesFromFrontMatter } from '../../actions'
 
 
@@ -48,7 +48,7 @@ export const LazyMdx = async ({ markdown, fs, returnedNote, slug, docType, _conf
                     remarkMath,
                     remarkGfm,
                     [emoji as any, {}],
-                    [mdxMermaid, mermaidConfig],
+                    /* [mdxMermaid, mermaidConfig], */
                 ],
                 rehypePlugins: [
                     /* TODO: Add an embeded video component for this rehypeVideo that then utilizes the existing video element. */
@@ -128,4 +128,4 @@ export const LazyMdx = async ({ markdown, fs, returnedNote, slug, docType, _conf
 }
 
 
-LazyMdx.displayName = "LazyMdx"
+/* LazyMdx.displayName = "LazyMdx" */

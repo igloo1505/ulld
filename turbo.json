@@ -15,12 +15,17 @@
     },
     "build": {
       "dependsOn": ["^db:generate"],
-      "dotEnv": [".env.production.local", ".env.local", ".env.production", ".env"]
+      "dotEnv": [
+        ".env.production.local",
+        ".env.local",
+        ".env.production",
+        ".env"
+      ]
     },
     "test": {
-        "outputs": ["coverage/**"],
-        "dotEnv": [".env.test.local", ".env.test", ".env"],
-        "dependsOn": []
+      "outputs": ["coverage/**"],
+      "dotEnv": [".env.test.local", ".env.test", ".env"],
+      "dependsOn": []
     },
     "lint": {
       "dependsOn": ["^build"]
@@ -30,7 +35,7 @@
     },
     "dev": {
       "dependsOn": ["^db:generate"],
-     "dotEnv": [".env.development.local", ".env.local", ".env"],
+      "dotEnv": [".env.development.local", ".env.local", ".env"],
       "cache": false,
       "persistent": true
     },

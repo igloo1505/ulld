@@ -1,6 +1,6 @@
 "use client"
 import React, { useMemo } from 'react'
-import "#/styles/mathInputStyles.scss"
+import "./mathInputStyles.scss"
 import { addStyles, EditableMathField, EditableMathFieldProps, MathFieldConfig } from 'react-mathquill'
 
 

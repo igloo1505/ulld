@@ -8,8 +8,7 @@ import emoji from "remark-emoji"
 // import toc from "@jsdevtools/rehype-toc"
 import rehypeSlug from "rehype-slug"
 import rehypeVideo from 'rehype-video';
-// @ts-ignore
-import { mathOptions } from "./markdownUniversalOptions"
+import { mathOptions } from "@ulld/utilities"
 import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema'
 import { SerializeMdxConfig } from '..'
 import { MDXRemoteSerializeResult } from "next-mdx-remote"

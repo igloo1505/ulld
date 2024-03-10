@@ -2,9 +2,9 @@
 import React, { useId, useState } from 'react'
 import FlipCardFront from './flipCardFront'
 import FlipCardBack from './flipCardBack'
-import "#/styles/flipcard.scss"
-import "#/styles/mdx.scss"
-import "#/styles/compactMdx.scss"
+import "./flipcard.scss"
+import "../../../../styles/mdx.scss"
+import "../../../../styles/compactMdx.scss"
 import FlipcardButtons from './flipCardButtons'
 
 interface ClientFlipCardProps {

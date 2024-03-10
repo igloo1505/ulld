@@ -1,7 +1,7 @@
 import { Separator } from '@ulld/tailwind/base'
 import clsx from 'clsx'
 import React, { useId } from 'react'
-import "#/styles/modal.scss"
+import "../../../../styles/modal.scss"
 import CloseModalListener from './closeModalListener'
 
 

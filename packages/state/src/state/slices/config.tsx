@@ -4,7 +4,7 @@ import { initialState } from "..";
 
 
 const slice = createSlice({
-    name: "functionality",
+    name: "config",
     initialState: initialState.config,
     reducers: {
         setConfigState(state, action: PayloadAction<ParsedAppConfig>) {

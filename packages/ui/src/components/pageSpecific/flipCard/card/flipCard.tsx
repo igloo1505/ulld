@@ -1,10 +1,8 @@
 import React from 'react'
-import "#/styles/flipcard.scss"
+import "./flipcard.scss"
 import { QAPairInput } from '../flipcardTypes'
-import FlipCardFront from './flipCardFront'
-import FlipCardBack from './flipCardBack'
-import "#/styles/mdx.scss"
-import "#/styles/compactMdx.scss"
+import "../../../../styles/mdx.scss"
+import "../../../../styles/compactMdx.scss"
 
 interface FlipCardProps {
     item: QAPairInput

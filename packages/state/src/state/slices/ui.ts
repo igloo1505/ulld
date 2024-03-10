@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { EmbededPanelState, InitialUIStateType } from "../initialState/ui";
 import { ToastConfigType } from "@ulld/utilities";
-import { initialState } from "..";
+import { initialState } from "../initialState/initialState";
 
 
 
@@ -60,5 +60,17 @@ const slice = createSlice({
 })
 
 
-export const { toggleDrawer, showNoteSheet, clearEmbededPanelStateByPath, addEmbededPanelState, toggleEmbeddedPanelState, setBibItemDetailPanelState, showConfirmationModal, showToast, setNavtype, setDarkmode, setDrawerOpen, sidebarToggle } = slice.actions
+
+export const toggleDrawer =slice.actions.toggleDrawer
+export const showNoteSheet =slice.actions.showNoteSheet
+export const clearEmbededPanelStateByPath =slice.actions.clearEmbededPanelStateByPath
+export const addEmbededPanelState =slice.actions.addEmbededPanelState
+export const toggleEmbeddedPanelState =slice.actions.toggleEmbeddedPanelState
+export const setBibItemDetailPanelState =slice.actions.setBibItemDetailPanelState
+export const showConfirmationModal =slice.actions.showConfirmationModal
+export const showToast =slice.actions.showToast
+export const setNavtype =slice.actions.setNavtype
+export const setDarkmode =slice.actions.setDarkmode
+export const setDrawerOpen =slice.actions.setDrawerOpen
+export const sidebarToggle =slice.actions.sidebarToggle
 export const UIReducer = slice.reducer

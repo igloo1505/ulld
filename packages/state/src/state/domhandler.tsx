@@ -1,8 +1,8 @@
 "use client"
 import { useEffect } from 'react'
 import { setCurrentNoteData, setCurrentNoteId } from './slices/functionality'
-import { store } from '.'
-import { getHeadingHierarchy } from '..'
+import { store } from './store'
+import { getHeadingHierarchy } from '../formatting/getHeadingHierarchy'
 import { setQuickLinkHtmlId, indicateBookmarked } from '../actions/clientOnly/dom'
 
 

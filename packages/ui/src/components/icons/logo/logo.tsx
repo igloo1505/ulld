@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-/// @ts-ignore
 import logo from './defaultLogo.png';
 
 

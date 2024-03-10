@@ -3,7 +3,8 @@
     "include": [
         "./src/*/**.ts", 
         "./src/*/**.tsx",
-        "./modules.d.ts"
+        "./modules.d.ts",
+        "./src/react-app-env-d.ts"
     ],
     "exclude": [
         "dist",

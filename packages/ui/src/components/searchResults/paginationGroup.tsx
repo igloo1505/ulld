@@ -2,7 +2,7 @@
 import { Route } from 'next'
 import React from 'react'
 import ReactPaginate from 'react-paginate'
-import "#/styles/paginationStyles.scss"
+import "./paginationStyles.scss"
 import { useRouter, useSearchParams } from 'next/navigation'
 import { SearchAllParams, formatSearchAllParams } from '@ulld/state'
 

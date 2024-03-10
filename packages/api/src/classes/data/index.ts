@@ -1,5 +1,4 @@
 export * from "./calendarAndDate"
-export * from "./googleApiManager"
 export * from "./googleCalendarTypes"
 export * from "./dateTime"
 export * from "./CalendarEvent"

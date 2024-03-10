@@ -1,6 +1,6 @@
 import { create } from '@storybook/theming/create';
 
-export const darkModeTheme = {
+export const darkModeTheme = create({
     base: 'dark',
     // Typography
     fontBase: '"Open Sans", sans-serif',
@@ -36,5 +36,5 @@ export const darkModeTheme = {
     inputBorder: '#10162F',
     inputTextColor: '#10162F',
     inputBorderRadius: 2,
-}
+})
 

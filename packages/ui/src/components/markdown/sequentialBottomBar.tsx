@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, buttonVariants } from '@ulld/tailwind/base'
 import { serverClient } from '@ulld/api'
-import { MathDisplaySERVER } from '..'
+import { MathDisplaySERVER } from '../math/equation/mathDisplay_server'
 
 
 
@@ -13,7 +13,7 @@ interface SequentialNoteBottomBarProps {
 }
 
 
-const SequentialNoteBottomBar = async ({ sequentialId, sequentialIndex }: SequentialNoteBottomBarProps) => {
+export const SequentialNoteBottomBar = async ({ sequentialId, sequentialIndex }: SequentialNoteBottomBarProps) => {
     if (!sequentialId || typeof sequentialIndex !== "number") return null
     let noteList = await serverClient.search.getSequentialIdListByKey(sequentialId)
     console.log("noteList: ", noteList)
@@ -69,6 +69,3 @@ const SequentialNoteBottomBar = async ({ sequentialId, sequentialIndex }: Sequen
 
 
 SequentialNoteBottomBar.displayName = "SequentialNoteBottomBar"
-
-
-export default SequentialNoteBottomBar;

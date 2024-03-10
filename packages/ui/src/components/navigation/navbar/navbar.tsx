@@ -64,7 +64,7 @@ const getNavbarLinks = (config: ParsedAppConfig) => {
     return links
 }
 
-const Navbar = connector(({ noteId, config }: NavbarProps) => {
+export const Navbar = connector(({ noteId, config }: NavbarProps) => {
     const pathname = usePathname()
     const [show, setShow] = useState(pathname !== "/")
     const [isAbsolute, setIsAbsolute] = useState(false)
@@ -133,6 +133,3 @@ const Navbar = connector(({ noteId, config }: NavbarProps) => {
 
 
 Navbar.displayName = "Navbar"
-
-
-export default Navbar;

@@ -7,7 +7,7 @@ interface MdxCitationsProps {
     citations: BibEntry[]
 }
 
-const MdxCitations = ({ citations }: MdxCitationsProps) => {
+export const MdxCitations = ({ citations }: MdxCitationsProps) => {
     if (citations.length === 0) return null
     return (
         <div className={"w-full"}>
@@ -19,6 +19,3 @@ const MdxCitations = ({ citations }: MdxCitationsProps) => {
 
 
 MdxCitations.displayName = "MdxCitations"
-
-
-export default MdxCitations;

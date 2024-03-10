@@ -11,7 +11,7 @@ export const noteContainerPrefix = "note-container-"
 
 /* PRIORITY: Need to handle this mathjax issue much more thoroughly... this is half assed as shit. */
 /* RESUME: Need to handle this mathjax issue much more thoroughly... this is half assed as shit. */
-const ImmediateNoteContentContainer = ({ children }: ImmediateNoteContentContainerProps) => {
+export const ImmediateNoteContentContainer = ({ children }: ImmediateNoteContentContainerProps) => {
     const id = `${noteContainerPrefix}${getRandomId(8)}`
     return (
         <>
@@ -29,5 +29,3 @@ const ImmediateNoteContentContainer = ({ children }: ImmediateNoteContentContain
 
 ImmediateNoteContentContainer.displayName = "ImmediateNoteContentContainer"
 
-
-export default ImmediateNoteContentContainer;

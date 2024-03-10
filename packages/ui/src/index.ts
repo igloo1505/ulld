@@ -1,7 +1,5 @@
 export * from "./brandUIConfig"
-export * from "./sideNavigation"
 export * from "./types"
 export * from "./utilityFunctions"
 export * from "./components"
-export * from "./icons"
 export * from "./hooks"
