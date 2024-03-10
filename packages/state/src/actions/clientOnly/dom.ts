@@ -37,7 +37,9 @@ export const getQuickLinkHtmlId = (): string | null => htmlEm()?.getAttribute("d
 
 export const setInitialMonacoProps = () => {
     if (typeof window === "undefined") return
+    // @ts-ignore
     if (!window.MonacoEnvironment) {
+        // @ts-ignore
         window.MonacoEnvironment = {
             getWorkerUrl: function(moduleId: any, label: string) {
                 if (label === 'json') {
