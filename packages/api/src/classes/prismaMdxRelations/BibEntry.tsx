@@ -1,4 +1,4 @@
-import type { Prisma, BibEntry as PrismaBibEntry } from "@prisma/client";
+import type { Prisma, BibEntry as PrismaBibEntry } from "@ulld/database";
 import { CitationGroup } from "./CitationGroup";
 import { MdxNote } from "./MdxNote";
 import { BibEntryProps, BibEntryProtocol } from "./protocols/bibEntry";
@@ -7,8 +7,10 @@ import { Tag } from "./tag";
 import { BibCore } from "./Bib";
 import type { BibFilePresenter } from "bibtex";
 import Link from "next/link";
-import { formatSearchAllParams, getUniversalQuery } from "@ulld/state";
+import { formatSearchAllParams } from "@ulld/state";
 import { BibEntryReturned } from "../../trpcTypes";
+import { getUniversalQuery } from "../../actions";
+import { replaceRecursively } from "@ulld/utilities";
 
 export type BibEntryPrismaAcceptedTypes = BibEntry | PrismaBibEntry | Partial<PrismaBibEntry> & { id: string } | PartialReadingListEntry['bibEntries'][number]
 
@@ -245,7 +247,7 @@ export class BibEntry extends BibEntryProtocol {
 
     formatCitationForPageSpecificOutput(html: string, pageIndex: number) {
         let r = /<sup>[\d|\s]*<\/sup>/gm
-        return html.replaceAll(r, `<sup>${pageIndex + 1}</sup>`)
+        return replaceRecursively(html, r, `<sup>${pageIndex + 1}</sup>`)
     }
     toHtml(): React.ReactNode {
         if (this.htmlCitation && typeof this.tempPageIndex === "number") {

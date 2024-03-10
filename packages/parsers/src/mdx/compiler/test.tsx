@@ -1,5 +1,4 @@
 import { compile } from "@mdx-js/mdx"
-import mdxMermaid from "mdx-mermaid"
 import remarkGfm from "remark-gfm"
 import remarkMath from "remark-math"
 import emoji from "remark-emoji"
@@ -11,6 +10,8 @@ import rehypeSlug from "rehype-slug"
 import rehypeVideo from 'rehype-video';
 import { MermaidConfigType, mathOptions, mermaidTheme } from "@ulld/utilities"
 import config from "mermaid/dist/defaultConfig.js"
+// @ts-ignore
+import mdxMermaid from "mdx-mermaid"
 
 
 export const mermaidConfig: MermaidConfigType = {

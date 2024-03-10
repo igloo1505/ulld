@@ -1,5 +1,5 @@
 import { serverClient } from '@ulld/api'
-import { getUniversalQuery } from '@ulld/state'
+import { getUniversalQuery } from '@ulld/api'
 import { Variable } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'

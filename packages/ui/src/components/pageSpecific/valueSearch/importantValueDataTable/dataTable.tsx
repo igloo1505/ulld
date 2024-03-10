@@ -25,23 +25,13 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-
 } from "@ulld/tailwind/base"
 import { getValueSearchTableColumns } from "./columns"
-import { DocTypes } from "@ulld/configschema"
 import { numberInputOnly } from "@ulld/state"
 import { useDebounce } from "../../../../hooks"
+import { ValueSearchTableItem } from "@ulld/api"
 
 
-export interface ValueSearchTableItem {
-    href: string
-    title: string
-    rootRelativePath: string
-    noteType: DocTypes | "none"
-    importantValues: number[]
-    firstSync: Date | null
-    lastSync: Date | null
-}
 
 interface Props {
     items: ValueSearchTableItem[]

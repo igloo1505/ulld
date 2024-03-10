@@ -1,6 +1,6 @@
 import { Definition } from "../definition";
 import type { PrismaMdxRelationshipProtocol } from "../type";
-import type { Prisma, Definition as PrismaDefinition } from "@prisma/client"
+import type { Prisma, Definition as PrismaDefinition } from "@ulld/database"
 
 
 export abstract class DefinitionProtocol implements PrismaMdxRelationshipProtocol<Prisma.DefinitionDelegate> {

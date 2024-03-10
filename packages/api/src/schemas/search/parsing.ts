@@ -101,7 +101,7 @@ const mdxNoteFields = {
     floatImages: zodOptBool(false),
     citations: bibEntryZodObject.array().optional().default([]),
     topics: topicZodObject.array().optional(),
-    subject: subjectZodObject.array().optional(),
+    subjects: subjectZodObject.array().optional(),
     definitions: definitionZodObject.array(),
     tags: tagZodObject.array().optional().default([]),
     quickLinkId: zodOptStr,

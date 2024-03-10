@@ -1,4 +1,4 @@
-import { logger } from "@ulld/logger/server"
+import { serverLogger } from "@ulld/logger/server"
 import { MdxNote } from "../../../classes"
 import { prisma } from "@ulld/database"
 import { ParsedAppConfig } from "@ulld/configschema"
@@ -8,7 +8,7 @@ import { AutoSettingWithRegex } from "../../../trpc"
 
 
 export const updateMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRegex[] = [], config: ParsedAppConfig) => {
-    logger.info(`Updating ${note.title}`)
+    serverLogger.info(`Updating ${note.title}`)
     let upsertArgs = note.upsertArgs(autoSettings, config)
     if (!upsertArgs) return
     let updated = await prisma.mdxNote.upsert(upsertArgs)

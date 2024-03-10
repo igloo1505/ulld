@@ -1,6 +1,7 @@
-import { getNoteTypeFromPath } from "#/appConfig/appConfig";
-import { getUniversalQuery } from "#/lib/FsRemoteLocations/getUniversalClient";
+import { getNoteTypeFromPath } from "@ulld/configschema";
 import type { Route } from "next";
+import { getUniversalQuery } from "../../actions";
+import { replaceRecursively } from "@ulld/utilities";
 
 
 export class NoteBase {
@@ -114,7 +115,7 @@ position: "relative"
             if (m && m.groups?.value && m.groups?.value.trim() !== "" && m.groups.value !== "\n") {
                 let _link = this.formatTag(m.groups.value)
                 // c = `${c.slice(0, m.index)}${_link}${c.slice(m.index + m[0].length, c.length)}`
-                c = c.replaceAll(new RegExp(`\\[#${m.groups.value}\\]`, "gm"), _link)
+                c = replaceRecursively(c, new RegExp(`\\[#${m.groups.value}\\]`, "gm"), _link)
                 results.push(m.groups.value)
             }
         } while (m);
@@ -148,7 +149,7 @@ position: "relative"
             if (m && m.groups?.equationId && m.groups?.equationId.trim() !== "" && m.groups.equationId !== "\n") {
                 let _link = `<EquationTag equationId="${m.groups.equationId}" />`
                 // c = `${c.slice(0, m.index)}${_link}${c.slice(m.index + m[0].length, c.length)}`
-                c = c.replaceAll(new RegExp(`\\[eq:${m.groups.equationId}\\]`, "gm"), _link)
+                c = replaceRecursively(c, new RegExp(`\\[eq:${m.groups.equationId}\\]`, "gm"), _link)
                 results.push(m.groups.value)
             }
         } while (m);
@@ -196,7 +197,7 @@ ${m.groups.content}
                 const labelString = m.groups?.label ? `label={\`${m.groups.label}\`}` : ""
                 // let _link = `<DefinitionTag isDefinition definitionId="${m.groups.definitionId}" ${labelString} ${contentString} />`
                 let _link = this.getDefinitionAnchorHtml(m)
-                c = c.replaceAll(m[0], _link)
+                c = replaceRecursively(c, m[0], _link)
                 results.push({ id: m.groups.definitionId.trim(), content: m.groups?.content, label: m.groups?.label?.trim() })
             }
         } while (m);
@@ -206,7 +207,7 @@ ${m.groups.content}
             l = regexTwo.exec(c);
             if (l && l.groups?.definitionId && l.groups?.definitionId.trim() !== "" && l.groups.definitionId !== "\n") {
                 let _link = `<DefinitionTag definitionId="${l.groups.definitionId}" />`
-                c = c.replaceAll(new RegExp(`\\[def:${l.groups.definitionId}\\]`, "gm"), _link)
+                c = replaceRecursively(c, new RegExp(`\\[def:${l.groups.definitionId}\\]`, "gm"), _link)
             }
         } while (m);
         return {

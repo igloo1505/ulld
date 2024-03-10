@@ -1,18 +1,18 @@
-import { ParsedAppConfig } from "#/lib/config/zod/secondaryConfigParse/main";
-import { mdxNoteWithParsedLatex, mdxNoteZodObject } from "#/lib/parsing/serverOnly/mdxNoteWithLatexServerSideZodObject";
-import { AutoSettingWithRegex } from "#/trpc/routers/sync";
-import { MdxNoteWithAll } from "#/types/prisma/bib/returnTypes";
-import { zodLatexFieldSchema } from "#/utils/mdx/zodMdxParser";
+import { ParsedAppConfig } from "@ulld/configschema";
+import { mdxNoteWithParsedLatex, mdxNoteZodObject } from "../../../schemas";
+import { AutoSettingWithRegex } from "../../../trpc";
+import { MdxNoteWithAll } from "../../../trpcTypes";
 import type { MdxNote } from "../MdxNote";
 import { NoteBase } from "../NoteBase";
 import type { PrismaMdxRelationshipProtocol } from "../type";
-import type { Prisma, MdxNote as PrismaMdxNote } from "@prisma/client"
+import type { Prisma, MdxNote as PrismaMdxNote } from "@ulld/database"
 import { z } from 'zod'
+
 
 export type PrismaMdxNoteWithKeys = PrismaMdxNote & { subject: undefined, definitions?: undefined, topics: undefined, citations: undefined, tags: undefined, isProtected?: string }
 
 const pickFields = {
-    subject: true as true,
+    subjects: true as true,
     noteType: true as true,
     id: true as true,
     title: true as true,

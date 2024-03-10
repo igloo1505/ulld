@@ -1,6 +1,6 @@
+import { replaceRecursively } from "@ulld/utilities"
 import dayjs from "dayjs"
 
-const disallowIdChars = "!@#$%^&*()[]{}\\|'\";,><`="
 
 
 export const stringToConsistentId = (s: string, prefix?: string) => {
@@ -24,5 +24,5 @@ export const dateOrDefault = <T extends unknown>(d: string | Date | number | nul
 
 
 export const convertGithubUrlToRawContentUrl = (s: string): string => {
-    return s.replace('github.com', "raw.githubusercontent.com").replaceAll("/blob", "")
+    return replaceRecursively(s.replace('github.com', "raw.githubusercontent.com"), "/blob", "")
 }

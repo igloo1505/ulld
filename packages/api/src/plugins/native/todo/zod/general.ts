@@ -1,4 +1,4 @@
-import { ToDoListStatus, TaskCategory } from '@prisma/client'
+import { ToDoListStatus, TaskCategory } from '@ulld/database'
 import { z } from 'zod'
 import { tagTopicSubjectList } from '../../../../schemas'
 import { dateZodProperty } from '@ulld/utilities'

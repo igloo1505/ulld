@@ -1,6 +1,8 @@
-import type { serverClient } from "#/trpc/serverClient"
-import { TERTIARY_TOGGLE } from "@prisma/client"
-import { TimePeriod } from "../general/timePeriod"
+import { TERTIARY_TOGGLE } from "@ulld/database"
+import { TimePeriod } from "@ulld/state"
+import { serverClient } from "../../trpc"
+
+
 
 type AcceptableDietInputs = NonNullable<Awaited<ReturnType<typeof serverClient.health.diet.getDietDetails>>>
 

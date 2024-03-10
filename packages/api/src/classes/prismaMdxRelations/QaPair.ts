@@ -1,6 +1,7 @@
-import { prisma } from "#/db/db"
-import { logger } from "#/lib/logger"
 import { Prisma } from '@prisma/client'
+import { prisma } from '@ulld/database'
+import { serverLogger } from '@ulld/logger/server'
+
 
 interface QAFlashCardProps {
     question: string
@@ -81,7 +82,7 @@ export class QuestionAnswerFlashCard implements QAFlashCardProps {
     async upsert() {
         let create = this.createInput()
         if (!create) {
-            logger.error(`${this.referenceId || this.question} does not meet the neccessary requirements to seed into the database.`)
+            serverLogger.error(`${this.referenceId || this.question} does not meet the neccessary requirements to seed into the database.`)
             return
         }
         await prisma.qAPair.upsert({

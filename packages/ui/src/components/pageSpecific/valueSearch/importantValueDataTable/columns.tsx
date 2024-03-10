@@ -3,9 +3,8 @@ import {
 } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
 import { Button, Checkbox } from "@ulld/tailwind/base"
-import { ValueSearchTableItem } from "./dataTable"
 import Link from "next/link"
-import { DateTime } from "@ulld/api"
+import { DateTime, ValueSearchTableItem } from "@ulld/api"
 
 
 

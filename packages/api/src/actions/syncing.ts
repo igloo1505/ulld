@@ -1,6 +1,5 @@
-import { client } from "#/trpc/client"
-import { showToast } from "@ulld/state"
-import store from "@ulld/state"
+import { showToast, store } from "@ulld/state"
+import { client } from "../trpc"
 
 
 export const syncRootDirectory = async () => {

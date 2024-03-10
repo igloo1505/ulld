@@ -1,14 +1,13 @@
-import { getUniversalQuery } from "#/lib/FsRemoteLocations/getUniversalClient";
-import { getInternalConfig } from "#/lib/config/zod/getInternalConfig";
-import { ParsedAppConfig } from "#/lib/config/zod/secondaryConfigParse/main";
-import { getParentDirAndFilename } from "#/lib/formatting/fsUtils";
-import { universalStringToMathjax } from "#/lib/formatting/universalStringToMathjax";
+import { ParsedAppConfig, getInternalConfig } from "@ulld/configschema";
+import { universalStringToMathjax } from "@ulld/parsers";
+import { getParentDirAndFilename } from "@ulld/utilities";
+import { getUniversalQuery } from "../../actions";
 import { BibEntry, BibEntryPrismaAcceptedTypes } from "./BibEntry";
 import { IpynbPrismaReturnType, IpynbProtocol } from "./protocols/ipynbProtocol";
 import { ReadingList } from "./readingList";
 import { Tag } from "./tag";
 import { Topic } from "./topic";
-import { Prisma } from '@prisma/client'
+import { Prisma } from '@ulld/database'
 import jsdom from 'jsdom'
 
 
@@ -233,7 +232,7 @@ export class IpynbNote extends IpynbProtocol {
             htmlOutput: item.htmlOutput.toString("utf-8"),
             raw: item.raw ? item.raw.toString("utf-8") : undefined,
             tags: item.tags.map((t) => t.value),
-            topics: item.topics.map((t) => t.name),
+            topics: item.topics.map((t) => t.value),
             citations: item.citations.length > 0 ? BibEntry.fromList(item.citations) : [],
             readingList: item.readingList.length > 0 ? ReadingList.fromList(item.readingList) : []
 

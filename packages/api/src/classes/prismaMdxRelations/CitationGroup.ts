@@ -1,8 +1,8 @@
-import { zodCitationGroupSchema } from "#/lib/parsing/serverOnly/mdxNoteWithLatexServerSideZodObject";
-import type { BibEntryReturned, CitationGroupReturned } from "#/types/prisma/bib/returnTypes";
+import { zodCitationGroupSchema } from "../../schemas";
+import { CitationGroupReturned, BibEntryReturned } from "../../trpcTypes";
 import { BibEntry, type BibEntryPrismaAcceptedTypes } from "./BibEntry";
 import { CitationGroupProtocol } from "./protocols/citationGroup";
-import type { Prisma, CitationsGroup as PrismaCitationGroup } from "@prisma/client"
+import type { Prisma, CitationsGroup as PrismaCitationGroup } from "@ulld/database"
 
 
 

@@ -3,11 +3,11 @@ import process from 'process'
 import { google } from "googleapis"
 import type { calendar_v3 } from "googleapis"
 import { CalendarAndDateManager } from "./calendarAndDate";
-import { AddCalendarEventFormType, CalendarOptions, CalendarOptionsZod, CalendarSortOptions } from '#/types/organization/calendar'
 import { CalendarEvent } from './CalendarEvent'
 import { EventInput } from '@fullcalendar/core/index.js';
-import { ParsedAppConfig } from '#/lib/config/zod/secondaryConfigParse/main';
-import { getInternalConfig } from '#/lib/config/zod/getInternalConfig';
+import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema';
+import { CalendarOptions, AddCalendarEventFormType, CalendarOptionsZod, CalendarSortOptions } from '.';
+
 
 
 

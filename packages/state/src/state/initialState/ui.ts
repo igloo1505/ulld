@@ -1,6 +1,6 @@
 import { ToastConfigType } from "@ulld/utilities"
 import { BibEntry } from "@ulld/database"
-import { ConfirmationModalConfig } from "#/actions"
+import { ConfirmationModalConfig } from "../../actions"
 
 export interface EmbededPanelState {
     open: boolean

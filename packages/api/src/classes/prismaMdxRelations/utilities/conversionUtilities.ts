@@ -1,4 +1,4 @@
-import { ParsedAppConfig, getInternalConfig } from "@ulld/config";
+import { ParsedAppConfig, getInternalConfig } from "@ulld/configschema";
 import { MdxNote } from "../MdxNote";
 import type { Prisma } from '@prisma/client'
 

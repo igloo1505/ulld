@@ -1,6 +1,6 @@
 import type { Tag } from "../tag";
 import type { PrismaMdxRelationshipProtocol } from "../type";
-import type { Prisma, Tag as PrismaTag } from "@prisma/client"
+import type { Prisma, Tag as PrismaTag } from "@ulld/database"
 
 
 export abstract class TagProtocol implements PrismaMdxRelationshipProtocol<Prisma.TagDelegate> {

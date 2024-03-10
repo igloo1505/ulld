@@ -1,7 +1,7 @@
 import type { Prisma, ReadingList as PrismaReadingList, BibEntry as PrismaBibEntry } from "@prisma/client"
 import { ReadingListProtocol } from "./protocols/readingList"
 import { BibEntry, BibEntryPrismaAcceptedTypes } from "./BibEntry";
-import { readingListZodObject } from "#/lib/parsing/serverOnly/mdxNoteWithLatexServerSideZodObject";
+import { readingListZodObject } from "../../schemas";
 
 
 export interface PartialReadingListEntry {

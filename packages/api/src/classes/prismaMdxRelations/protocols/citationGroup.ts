@@ -1,7 +1,7 @@
-import type { CitationGroupReturned } from "#/types/prisma/bib/returnTypes";
+import { CitationGroupReturned } from "../../../trpcTypes";
 import type { CitationGroup } from "../CitationGroup";
 import type { PrismaMdxRelationshipProtocol } from "../type";
-import type { Prisma } from "@prisma/client"
+import type { Prisma } from "@ulld/database"
 
 
 

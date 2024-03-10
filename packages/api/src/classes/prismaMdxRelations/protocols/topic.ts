@@ -1,4 +1,4 @@
-import { ParsedAppConfig } from "#/lib/config/zod/secondaryConfigParse/main";
+import { ParsedAppConfig } from "@ulld/configschema";
 import type { MdxNote } from "../MdxNote";
 import type { Topic } from "../topic";
 import type { PrismaMdxRelationshipProtocol } from "../type";

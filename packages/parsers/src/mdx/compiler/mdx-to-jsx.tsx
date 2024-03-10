@@ -13,7 +13,23 @@ import { mathOptions } from "./markdownUniversalOptions"
 import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema'
 import { SerializeMdxConfig } from '..'
 import { MDXRemoteSerializeResult } from "next-mdx-remote"
-import { SerializeOptions } from "next-mdx-remote/dist/types"
+import { CompileOptions } from "@mdx-js/mdx"
+
+export interface SerializeOptions {
+    /**
+     * Pass-through variables for use in the MDX content
+     */
+    scope?: Record<string, unknown>;
+    /**
+     * These options are passed to the MDX compiler.
+     * See [the MDX docs.](https://github.com/mdx-js/mdx/blob/master/packages/mdx/index.js).
+     */
+    mdxOptions?: Omit<CompileOptions, 'outputFormat' | 'providerImportSource'>;
+    /**
+     * Indicate whether or not frontmatter should be parsed out of the MDX. Defaults to false
+     */
+    parseFrontmatter?: boolean;
+}
 
 
 export type MDXSerializeReturnType = MDXRemoteSerializeResult<Record<string, unknown>, Record<string, unknown>>
@@ -32,7 +48,7 @@ ${s}`)
             test: /\/(.*)(.mp4|.mov|.webm)$/,
             details: false
         }],
-        [rehypeMathjax, mathOptions],
+        [rehypeMathjax as any, mathOptions],
         [
             rehypePrettyCode as any,
             {
@@ -76,8 +92,8 @@ ${s}`)
     return await serialize(s, {
         mdxOptions: {
             useDynamicImport: true,
-            remarkPlugins: _remarkPlugins,
-            rehypePlugins: _rehypePlugins
+            remarkPlugins: _remarkPlugins as any,
+            rehypePlugins: _rehypePlugins as any
         },
         parseFrontmatter: serializeMdxConfig?.parseFrontMatter,
     })

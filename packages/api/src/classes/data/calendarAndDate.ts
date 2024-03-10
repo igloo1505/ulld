@@ -5,8 +5,7 @@ import utc from 'dayjs/plugin/utc';
 import relativeTime from 'dayjs/plugin/relativeTime'
 import duration from 'dayjs/plugin/duration'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
-import { ParsedAppConfig } from '#/lib/config/zod/secondaryConfigParse/main';
-import { getInternalConfig } from '#/lib/config/zod/getInternalConfig';
+import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema';
 dayjs.extend(customParseFormat)
 dayjs.extend(duration)
 dayjs.extend(relativeTime)

@@ -1,6 +1,6 @@
 import type { Subject } from "../subject";
 import type { PrismaMdxRelationshipProtocol } from "../type";
-import type { Prisma, Subject as PrismaSubject } from "@prisma/client"
+import type { Prisma, Subject as PrismaSubject } from "@ulld/database"
 
 
 export abstract class SubjectProtocol implements PrismaMdxRelationshipProtocol<Prisma.SubjectDelegate> {

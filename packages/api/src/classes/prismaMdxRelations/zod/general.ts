@@ -1,4 +1,4 @@
-import { currentParsableExtensions } from '@ulld/config'
+import { currentParsableExtensions } from '@ulld/configschema'
 import { z } from 'zod'
 
 

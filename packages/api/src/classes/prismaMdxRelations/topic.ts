@@ -1,9 +1,9 @@
-import type { Prisma, Topic as PrismaTopic, MdxNote as PrismaMdxNote } from "@prisma/client"
+import type { Prisma, Topic as PrismaTopic, MdxNote as PrismaMdxNote } from "@ulld/database"
 import { TopicProtocol } from "./protocols/topic";
 import { MdxNote } from "./MdxNote";
 import { mdxNoteArrayToConnectOrCreate } from "./utilities/conversionUtilities";
-import { ParsedAppConfig, getInternalConfig } from "@ulld/config";
-import { MdxNoteWithAll } from "#/trpc/trpcTypeUtilities";
+import { ParsedAppConfig, getInternalConfig } from "@ulld/configschema";
+import { MdxNoteWithAll } from "../../trpcTypes";
 
 
 export class Topic extends TopicProtocol {

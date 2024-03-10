@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import deepEql from 'deep-eql'
-import { settingsChangeSchema, client, BibWithEntries } from '@ulld/api';
+import { settingsChangeSchema, client, BibWithEntries, RetrievedSettings } from '@ulld/api';
 import { store, toggleSetting } from '@ulld/state';
 import { BibSettingsSectionProps } from '.';
 import BibSettingsSection from './bib/BibSettingsSection';

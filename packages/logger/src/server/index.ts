@@ -20,4 +20,7 @@ export class serverLogger {
     static debug(value: any, opts?: z.input<typeof optionsSchema>){
         console.log("value: ", value)
     }
+    static error(value: any, opts?: z.input<typeof optionsSchema>){
+        console.log("value: ", value)
+    }
 }

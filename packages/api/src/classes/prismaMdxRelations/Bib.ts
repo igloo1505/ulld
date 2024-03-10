@@ -1,13 +1,11 @@
-import { axios } from "#/actions/handleAxios";
-import type { BibReturnType } from "#/types/prisma/bib/returnTypes";
 import { type BibFilePresenter, parseBibFile } from "bibtex";
 import { BibEntry, type BibEntryDataTableOutput, type BibEntryPrismaAcceptedTypes } from "./BibEntry";
 import { BibProtocol } from "./protocols/bib";
-import type { Prisma } from '@prisma/client'
-import type { BibWithEntries } from "#/types/prisma/includeTypes";
-import { getInternalConfig } from "#/lib/config/zod/getInternalConfig";
-import { ParsedAppConfig } from "#/lib/config/zod/secondaryConfigParse/main";
-import { getUniversalQuery } from "#/lib/FsRemoteLocations/getUniversalClient";
+import type { Prisma } from '@ulld/database'
+import { ParsedAppConfig, getInternalConfig } from "@ulld/configschema";
+import { getUniversalQuery } from "../../actions";
+import { BibWithEntries } from "../../trpcInternalMethods";
+import { BibReturnType } from "../../trpcTypes";
 
 
 interface IsbnQueryParams {

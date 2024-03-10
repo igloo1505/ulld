@@ -1,33 +1,23 @@
-import type { Prisma, MdxNote as PrismaMdxNote, Tag as PrismaTag, Topic as PrismaTopic, Subject as PrismaSubject } from "@prisma/client"
+import type { Prisma, MdxNote as PrismaMdxNote, Tag as PrismaTag, Topic as PrismaTopic, Subject as PrismaSubject, Definition as PrismaDefinition } from "@ulld/database"
 import { Subject } from "./subject"
 import { Topic } from "./topic"
-import type { MdxNoteWithAll } from "#/types/prisma/bib/returnTypes"
 import { MdxNoteProtocol, prismaMdxNoteSummaryZodSchema, type PrismaMdxNoteSummary, type PrismaMdxNoteWithKeys, prismaMdxNoteSummaryZodSchemaPreOutput } from "./protocols/mdxNote"
-import { getNoteTypeFromPath, getRootRelativePath } from "#/appConfig/appConfig"
-import { DocTypes } from "#/classes/prismaMdxRelations/zod/general"
 import { Tag } from "./tag"
 import { BibEntry, BibEntryPrismaAcceptedTypes } from "./BibEntry"
 import matter from "gray-matter"
-import { getUniversalQuery } from "#/lib/FsRemoteLocations/getUniversalClient"
-import { serverClient } from "#/trpc/serverClient"
-import { universalStringToMathjax } from "#/lib/formatting/universalStringToMathjax"
-import { SequentialList } from "./SequentialList"
-import { IntriguingValueSummary } from "#/utils/server/filterNotes"
-import { ValueSearchTableItem } from "#/components/pageSpecific/valueSearch/importantValueDataTable/dataTable"
-import { ensureDate } from "../data/calendarAndDate"
-import { AutoSettingWithRegex } from "#/trpc/routers/sync"
-import { getFlatAutoSettings, globDoesMatch } from "#/lib/parsing/globUtils"
-import { Definition } from "./definition"
-import { withForwardSlash } from "#/lib/formatting/fsUtils"
-import { convertGithubUrlToRawContentUrl, dateOrDefault } from "#/lib/formatting/general"
-import axios from "axios"
-import { FrontMatterType, ZodFrontMatterOutput, zodFrontMatterObject } from "../frontMatter/zodFrontMatterObject"
-import { ParsableExtension, zodDocTypeInput } from "./zod/general"
-import { MdxNotePlainObject, mdxNoteWithParsedLatex, mdxNoteZodObject } from "#/lib/parsing/serverOnly/mdxNoteWithLatexServerSideZodObject"
+import { DocTypes, getInternalConfig, ParsedAppConfig, getNoteTypeFromPath, zodDocTypeInput, getRootRelativePath } from "@ulld/configschema"
+import { ZodFrontMatterOutput, zodFrontMatterObject, FrontMatterType, dateOrDefault, convertGithubUrlToRawContentUrl } from "@ulld/state"
+import { replaceRecursively, withForwardSlash } from "@ulld/utilities"
 import { Route } from "next"
-import { ParsedAppConfig } from "#/lib/config/zod/secondaryConfigParse/main"
-import { getInternalConfig } from "#/lib/config/zod/getInternalConfig"
-
+import { ParsableExtension, SequentialList, Definition } from "."
+import { ensureDate, IntriguingValueSummary } from ".."
+import { getUniversalQuery } from "../../actions"
+import { MdxNotePlainObject, mdxNoteZodObject, mdxNoteWithParsedLatex } from "../../schemas"
+import { serverClient, AutoSettingWithRegex } from "../../trpc"
+import { MdxNoteWithAll, ValueSearchTableItem } from "../../trpcTypes"
+import { universalStringToMathjax } from "@ulld/parsers"
+import { getFlatAutoSettings, globDoesMatch } from "../../trpcInternalMethods"
+import axios from "axios"
 
 
 /* TODO: Create a field saving the components to include for each note based on a regex test ahead of time so this query doesn't need to be ran on each load. Make this optional in the appConfig */
@@ -91,7 +81,7 @@ export class MdxNote extends MdxNoteProtocol {
     formatted?: string
     citations: BibEntry[] = []
     topics: Topic[] = []
-    subject: Subject[] = []
+    subjects: Subject[] = []
     definitions: Definition[] = []
     tags: Tag[]
     importantValues: number[] = []
@@ -156,7 +146,7 @@ export class MdxNote extends MdxNoteProtocol {
         }
         if (_matter?.subjects) {
             let t = Array.isArray(_matter.subjects) ? _matter.subjects : [_matter.subjects]
-            this.subject = this.subject.concat(t.map((t) => new Subject(typeof t === "string" ? t : `${t}`)))
+            this.subjects = this.subjects.concat(t.map((t) => new Subject(typeof t === "string" ? t : `${t}`)))
         }
         if (_matter) {
             this.frontMatter = _matter
@@ -164,7 +154,7 @@ export class MdxNote extends MdxNoteProtocol {
         this.raw = raw
         this.citations = BibEntry.fromList(citations)
         this.topics = Topic.fromList(topics)
-        this.subject = Subject.fromList(subject)
+        this.subjects = Subject.fromList(subject)
         this.tags = Tag.fromList(tags).filter((t) => t.value !== "")
     }
     toPlainObject(partial?: boolean | Partial<Record<keyof MdxNotePlainObject, true>>) {
@@ -179,7 +169,7 @@ export class MdxNote extends MdxNoteProtocol {
     async getDatabaseCitation(id: string[]) {
         const query = await getUniversalQuery("getBibCitation")
         const citations = await query(id)
-        return citations as Awaited<ReturnType<typeof serverClient["getBibCitation"]>>
+        return citations as Awaited<ReturnType<typeof serverClient["bibliography"]["getBibCitation"]>>
     }
     async parseCitations() {
         const regex = /\[@(?<value>[\w|\d|\.|\-|_|\+|\=|\$|\!|\%|\*|\&]*)\]/gm
@@ -200,7 +190,7 @@ export class MdxNote extends MdxNoteProtocol {
             const result = results.at(rIndex)
             if (result) {
                 let _link = this.formatCitation(k.id, rIndex)
-                c = c.replaceAll(new RegExp(`\\[@${result.value}\\]`, "gmi"), _link)
+                c = replaceRecursively(c, new RegExp(`\\[@${result.value}\\]`, "gmi"), _link)
                 if (k.htmlCitation) {
                     fr.push({
                         htmlCitation: k.htmlCitation,
@@ -270,8 +260,8 @@ export class MdxNote extends MdxNoteProtocol {
                 floatImages: this.floatImages,
                 ...(this.latexTitle && { latexTitle: this.latexTitle }),
                 ...(this.isProtected && { isProtected: this.isProtected }),
-                subject: {
-                    connectOrCreate: this.subject.map((s) => s.connectOrCreateArgs())
+                subjects: {
+                    connectOrCreate: this.subjects.map((s) => s.connectOrCreateArgs())
                 },
                 topics: {
                     connectOrCreate: this.topics.map((t) => t.connectOrCreateArgs())
@@ -376,7 +366,7 @@ export class MdxNote extends MdxNoteProtocol {
         /* for (const t of asArray(internalConfig.autoSubject).concat(autoSettings.filter((s) => s.type === "subject"))) { */
         for (const t of autoSets.autoSubjects) {
             if (globDoesMatch(t.glob, this.rootRelativePath, config)) {
-                this.subject.push(new Subject(t.value))
+                this.subjects.push(new Subject(t.value))
             }
         }
         for (const t of autoSets.autoTopics) {
@@ -509,7 +499,7 @@ ${m.groups.content}
     }
 
     static fromPrisma(item: NonNullable<MdxNoteWithAll> | PrismaMdxNoteWithKeys) {
-        let newNote = new MdxNote(item.id, item.rootRelativePath, item.noteType as DocTypes, item.content, item.formatted, item.subject, item.title, item.summary, item.topics, item.citations, item.tags, item.imageSrc, item.bookmarked, item.firstSync, item.lastSync, item.isProtected, item.citationsListOrder)
+        let newNote = new MdxNote(item.id, item.rootRelativePath, item.noteType as DocTypes, item.content, item.formatted, item.subjects, item.title, item.summary, item.topics, item.citations, item.tags, item.imageSrc, item.bookmarked, item.firstSync, item.lastSync, item.isProtected, item.citationsListOrder)
         newNote.href = item.href
         if (item.definitions) {
             newNote.definitions = item.definitions.map((d) => new Definition({
@@ -541,7 +531,7 @@ ${m.groups.content}
             item.noteType,
             "",
             "",
-            item.subject ? item.subject.map((s) => new Subject(s.value)) : undefined,
+            item.subjects ? item.subjects.map((s) => new Subject(s.value)) : undefined,
         )
         n.summary = item.summary
         n.title = item.title

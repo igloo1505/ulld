@@ -1,4 +1,4 @@
-import * as physics from "#/staticData/physicalConstants.json";
+import physics from "../staticData/physicalConstants.json";
 
 export type PhysicalConstant = "c" | "g" | "G" | keyof typeof physics;
 

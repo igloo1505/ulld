@@ -5,9 +5,8 @@ import utc from 'dayjs/plugin/utc';
 import relativeTime from 'dayjs/plugin/relativeTime'
 import duration from 'dayjs/plugin/duration'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
-import { ParsedAppConfig } from '#/lib/config/zod/secondaryConfigParse/main';
-import { getInternalConfig } from '#/lib/config/zod/getInternalConfig';
-import { TimeDisplayType } from '#/lib/config/zod/dateParseConfig';
+import { ParsedAppConfig, getInternalConfig, TimeDisplayType } from '@ulld/configschema';
+import { replaceRecursively } from '@ulld/utilities';
 dayjs.extend(customParseFormat)
 dayjs.extend(duration)
 dayjs.extend(relativeTime)
@@ -115,7 +114,7 @@ export class DateTime {
         if (f1 < 0 || f1 === f2) {
             return t
         }
-        return `${t.slice(0, f1 + 1)}${t.slice(f1, t.length).replaceAll("-", "")}`
+        return replaceRecursively(`${t.slice(0, f1 + 1)}${t.slice(f1, t.length)}`, "-", "")
     }
 
     relativeTime(type: "descriptive" | "analog" | "summarized") {

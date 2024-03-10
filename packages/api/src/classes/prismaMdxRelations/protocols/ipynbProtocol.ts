@@ -1,13 +1,13 @@
-import { serverClient } from "#/trpc/serverClient";
+import { serverClient } from "../../../trpc";
 import { IpynbNote } from "../IpynbNote";
 import { NoteBase } from "../NoteBase";
 import { PrismaMdxRelationshipProtocol } from "../type";
-import { Prisma } from "@prisma/client"
+import { Prisma } from "@ulld/database"
 
 
-export type IpynbPrismaReturnType = Awaited<ReturnType<typeof serverClient["getPrismaIpynb"]>>
+export type IpynbPrismaReturnType = Awaited<ReturnType<typeof serverClient["ipynb"]["getPrismaIpynb"]>>
 
-export type IypnbFsReturnType = Awaited<ReturnType<typeof serverClient["getFsIpynb"]>>
+export type IypnbFsReturnType = Awaited<ReturnType<typeof serverClient["ipynb"]["getFsIpynb"]>>
 
 export abstract class IpynbProtocol extends NoteBase implements PrismaMdxRelationshipProtocol<Prisma.IpynbDelegate> {
     constructor(rootRelativePath: string, extension: string) {

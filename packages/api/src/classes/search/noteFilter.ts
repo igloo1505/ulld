@@ -320,7 +320,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
         } satisfies Prisma.MdxNoteFindManyArgs
         let notes = await prisma.mdxNote.findMany(fields)
         let count = await this.getCountFromWhereInput(fields.where)
-        this.preParseNotes = notes ? notes.map((n) => MdxNote.asSummary(n as WithDocType<typeof n>)) : []
+        this.preParseNotes = notes ? notes.map((n) => MdxNote.asSummary(n)) : [] 
         this.totalFound = count || 0
         return { notes, totalFound: count }
     }

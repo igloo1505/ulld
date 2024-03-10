@@ -1,7 +1,7 @@
-import type { ReadingListReturned } from "#/types/prisma/bib/returnTypes";
+import { ReadingListReturned } from "../../../trpcTypes";
 import type { ReadingList } from "../readingList";
 import type { PrismaMdxRelationshipProtocol } from "../type";
-import type { Prisma } from "@prisma/client"
+import type { Prisma } from "@ulld/database"
 
 
 export abstract class ReadingListProtocol implements PrismaMdxRelationshipProtocol<Prisma.ReadingListDelegate> {

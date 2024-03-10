@@ -1,7 +1,7 @@
-import type { BibReturnType } from "#/types/prisma/bib/returnTypes";
+import { BibReturnType } from "../../../trpcTypes";
 import type { BibCore } from "../Bib";
 import type { PrismaMdxRelationshipProtocol } from "../type";
-import type { Prisma, BibEntry as PrismaBibEntries } from "@prisma/client"
+import type { Prisma, BibEntry as PrismaBibEntries } from "@ulld/database"
 
 
 

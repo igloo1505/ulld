@@ -4,8 +4,9 @@ import { SettingsReducer } from "./slices/settings";
 import { FunctionalityReducer } from "./slices/functionality";
 import { ConfigReducer } from "./slices/config";
 import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistReducer, persistStore } from "redux-persist"
-import storage from 'redux-persist-indexeddb-storage';
 import { initialState } from ".";
+// @ts-ignore
+import storage from 'redux-persist-indexeddb-storage';
 
 
 const rootReducer = {
@@ -68,7 +69,6 @@ const _store = makeStore()
 declare global {
     interface Window {
         store: typeof _store;
-        MonacoEnvironment: any
     }
 }
 

@@ -1,5 +1,5 @@
 import { ParsedAppConfig } from "@ulld/configschema"
-import { logger } from "@ulld/logger/server"
+import { serverLogger } from "@ulld/logger/server"
 import { AutoSettingWithRegex } from "../../../trpc"
 import { MdxNote } from "../../../classes"
 import { prisma } from "@ulld/database"
@@ -10,9 +10,9 @@ import { prisma } from "@ulld/database"
 
 
 export const saveMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRegex[] = [], config: ParsedAppConfig) => {
-    logger.info(`Creating note: ${note.title}`)
+    serverLogger.info(`Creating note: ${note.title}`)
     if (!note.title) {
-        logger.info(`No Note Title Found: ${JSON.stringify(note, null, 4)}`)
+        serverLogger.info(`No Note Title Found: ${JSON.stringify(note, null, 4)}`)
     }
     const createArgs = note.createArgs(autoSettings, config)
     if (!createArgs) return

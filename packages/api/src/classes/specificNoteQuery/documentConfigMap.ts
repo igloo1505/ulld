@@ -1,5 +1,5 @@
-import { DocumentTypeConfig, ParsedAppConfig } from "@ulld/config"
-import { DocTypes } from "../prismaMdxRelations/zod/general"
+import { DocTypes, DocumentTypeConfig, ParsedAppConfig } from "@ulld/configschema"
+
 
 type ConfigMap = { [k in DocTypes]: DocumentTypeConfig }
 
