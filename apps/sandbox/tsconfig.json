@@ -1,0 +1,17 @@
+{
+  "extends": "@repo/typescript-config/nextjs.json",
+  "include": [
+      "./*/**.ts",
+      "./*/**.tsx",
+      ".next/types/**/*.ts",
+      "tailwind.config.ts"
+  ],
+  "moduleResolution": "bundler",
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "paths": {
+      "#/*": ["./*"]
+    },
+    "incremental": true
+  }
+}

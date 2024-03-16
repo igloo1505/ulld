@@ -1,2 +1,2 @@
-export * from "./prisma"
-export * from "./db"
+export * from "./db/main"
+export * from "@prisma/client"

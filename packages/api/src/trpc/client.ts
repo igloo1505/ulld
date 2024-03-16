@@ -5,8 +5,8 @@ import { HttpBatchLink } from './batchLink';
 import { AppRouterType } from './types';
 
 
-export const trpcReactClient = createTRPCReact<AppRouterType>({})
+export const trpcReactClient: any = createTRPCReact<AppRouterType>({})
 
-export const client = createTRPCProxyClient<AppRouterType>({
+export const client: ReturnType<typeof createTRPCProxyClient<AppRouterType>> = createTRPCProxyClient<AppRouterType>({
     links: HttpBatchLink(),
 });

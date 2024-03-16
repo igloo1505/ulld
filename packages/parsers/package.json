@@ -3,9 +3,22 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    ".": "./src/index.ts",
-    "./mdx": "./src/mdx/compiler/index.ts"
+    ".": "./src/index.ts"
   },
+  "typesVersions": {
+    "*": {
+      "settings": [
+        "src/settings/index.ts"
+      ],
+      "mdx": [
+        "src/mdx/compiler/index.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "dev": "echo 'Add dev script here'",
     "build": "echo 'Add build script here'",

@@ -1,4 +1,4 @@
-import { serializeMdxContent } from "../mdx/compiler";
+import { serializeMdxContent } from "../mdx/compiler/main";
 import { z } from "zod";
 
 // TODO: Add alphabetized key-value here as well to allow aphabetizing latex outputs in places like dictionaries and sort lists.

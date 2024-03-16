@@ -1,5 +1,5 @@
 import { Route } from "next"
-import { ValidIconName } from "../.."
+import type { ValidIconName } from "../../icons/DynamicIcon"
 
 
 export interface SidebarLink {

@@ -1,6 +1,6 @@
 import { KeyboardEventHandler, KeyboardEvent } from "react"
-import { copyStringToClipboard } from "@ulld/utilities"
-import { toggleSidebar } from ".."
+import { copyStringToClipboard } from "@ulld/utilities/actions"
+import { toggleSidebar } from "../actions"
 
 export const keyDown: KeyboardEventHandler = (e) => {
     if (e.code === "KeyB" && e.ctrlKey) {

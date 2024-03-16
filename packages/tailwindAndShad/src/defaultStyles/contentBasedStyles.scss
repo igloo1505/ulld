@@ -1,0 +1,222 @@
+.Cheatsheet-ui {
+  background-color: #bef264;
+  color: #030712;
+}
+
+.Doc-ui {
+  background-color: #facc15;
+  color: #000;
+}
+.Guide-ui {
+  background-color: #ec4899;
+  color: #fff;
+}
+.JournalEntrie-ui {
+  background-color: #f43f5e;
+  color: #fff;
+}
+.MathNote-ui {
+  background-color: #2dd4bf;
+  color: #fff;
+}
+.HealthNote-ui {
+  background-color: #00bfff;
+  color: #000;
+}
+.PhysicsNote-ui {
+  background-color: #6366f1;
+  color: #000;
+}
+.QuickNote-ui {
+  background-color: #6366f1;
+  color: #fff;
+}
+.QuickThought-ui {
+  background-color: #8b5cf6;
+  color: #fff;
+}
+.Recipe-ui {
+  background-color: #d946ef;
+  color: #fff;
+}
+.Reference-ui {
+  background-color: #0ea5e9;
+  color: #fff;
+}
+.TechNote-ui {
+  background-color: #8b5cf6;
+  color: #fff;
+}
+
+// Admonitions
+.admonition.open {
+  .fold-icon {
+    transform: rotateZ(180deg);
+  }
+}
+
+.admonition.info {
+  .title {
+    background-color: #0ea5e9;
+    color: #fff;
+  }
+}
+
+.admonition.bug {
+  .title {
+    background-color: #ef4444;
+    color: #fff;
+  }
+}
+
+.admonition.note {
+  .title {
+    background-color: #3f51b5;
+    color: #fff;
+  }
+}
+
+.admonition.tip {
+  .title {
+    background-color: #03a9f4;
+    color: #fff;
+  }
+}
+
+.admonition.faq {
+  .title {
+    background-color: #ffeb3b;
+    color: #000;
+  }
+}
+
+.admonition.practice {
+  .title {
+    background-color: #2096f3;
+    color: #fff;
+  }
+}
+
+.admonition.abstract {
+  .title {
+    background-color: #ff9800;
+    color: #fff;
+  }
+}
+
+.admonition.todo {
+  .title {
+    background-color: #ff5722;
+    color: #fff;
+  }
+}
+
+.admonition.success {
+  .title {
+    background-color: #76ff03;
+    color: #000;
+  }
+}
+
+.admonition.warn {
+  .title {
+    background-color: #ffff00;
+    color: #000;
+  }
+}
+
+.admonition.fail {
+  .title {
+    background-color: #f44336;
+    color: #fff;
+  }
+}
+
+.admonition.example {
+  .title {
+    background-color: #9c27b0;
+    color: #fff;
+  }
+}
+
+.admonition.quote {
+  .title {
+    background-color: #e91e63;
+    color: #fff;
+  }
+}
+
+.admonition.cite {
+  .title {
+    background-color: #0ea5e9;
+    color: #fff;
+  }
+}
+
+.admonition.equation {
+  .title {
+    background-color: #ff5722;
+    color: #fff;
+  }
+}
+
+.admonition.definition {
+  .title {
+    background-color: #3f51b5;
+    color: #fff;
+  }
+}
+
+.admonition.important {
+  .title {
+    background-color: #ffff00;
+    color: #000;
+  }
+}
+
+html.dark {
+  .Cheatsheet-ui {
+    background-color: #a3e635;
+    color: #030712;
+  }
+  .Doc-ui {
+    background-color: #facc15;
+    color: #fff;
+  }
+  .Guide-ui {
+    background-color: #ec4899;
+    color: #fff;
+  }
+  .JournalEntrie-ui {
+    background-color: #e11d48;
+    color: #fff;
+  }
+  .MathNote-ui {
+    background-color: #2dd4bf;
+    color: #fff;
+  }
+  .PhysicsNote-ui {
+    background-color: #6366f1;
+    color: #fff;
+  }
+  .QuickNote-ui {
+    background-color: #6366f1;
+    color: #fff;
+  }
+  .QuickThought-ui {
+    background-color: #8b5cf6;
+    color: #fff;
+  }
+  .Recipe-ui {
+    background-color: #d946ef;
+    color: #fff;
+  }
+  .Reference-ui {
+    background-color: #0ea5e9;
+    color: #fff;
+  }
+  .TechNote-ui {
+    background-color: #8b5cf6;
+    color: #fff;
+  }
+}

@@ -2,7 +2,7 @@ import { z } from 'zod'
 import { Prisma, TaskCategory, ToDoListStatus, prisma } from "@ulld/database"
 import dayjs from 'dayjs'
 import { topicZodObject, subjectZodObject, tagZodObject } from '@ulld/configschema'
-import { zodCoerceToDate, zodOptBool, zodOptNum } from '@ulld/utilities'
+import { zodCoerceToDate, zodOptBool, zodOptNum } from '@ulld/utilities/schemas/utility'
 
 
 

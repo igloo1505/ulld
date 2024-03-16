@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.test {
+  border: 1px solid red;
+}
+
+body {
+  min-height: 100vh;
+  height: fit-content;
+  // font-family: var(--font-sans);
+}
+
+:root {
+  --nav-height: 78px;
+  --code-background: #111827;
+  --sidebar-width: 64px;
+  // TODO: Make sure this is being implemented on next build or dev server. This might be overridden by the later imported jupyter-ui css
+  --jp-ui-font-size: 16px !important;
+  --jp-brand-color1: #6d27d9 !important;
+}
+
+code,
+code span {
+  color: var(--shiki) !important;
+  background-color: var(--shiki-bg) !important;
+  /* Optional, if you also want font styles */
+  font-style: var(--shiki-font-style) !important;
+  font-weight: var(--shiki-font-weight) !important;
+  text-decoration: var(--shiki-text-decoration) !important;
+}
+
+html.dark code,
+html.dark code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  /* Optional, if you also want font styles */
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+.jupyterUI {
+  --jp-ui-font-size: 13px !important;
+  font-size: 13px;
+}
+
+.sidebarAdjust {
+  transition:
+    padding-left 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+}
+
+div.cm-editor {
+  font-size: 13px;
+}
+
+.absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#sidebar-panel {
+  transition: all 0.2s ease-in-out;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  font-size: 1rem;
+  span[role="slider"] {
+    &:focus-visible {
+      border: none;
+    }
+  }
+  &.sidebarOpen {
+    #sidebar-panel {
+      transform: translateX(0);
+    }
+    // NOTE: Removed to remove cummulative layout shift inside of notes. Might consider adding back in in certain locations. .sidebarAdjust class still exists on appropritate elements
+    // .sidebarAdjust {
+    //   padding-left: var(--sidebar-width);
+    // }
+  }
+  &.sidebarOpenPermanent {
+    #sidebar-panel {
+      transform: translateX(0);
+    }
+    .sidebarAdjust {
+      padding-left: var(--sidebar-width);
+    }
+  }
+  &.tooltips-hidden {
+    .conditionalTooltip {
+      display: none;
+    }
+  }
+  .bookmark-indicator {
+    display: none;
+  }
+  &.canBookmark {
+    .bookmark-indicator {
+      display: flex;
+    }
+  }
+}
+
+.vhnav {
+  min-height: calc(100vh - var(--nav-height));
+}
+
+.admonitionBody {
+  max-height: 0px;
+  transition: max-height 1s ease-in;
+  padding: 0rem 1rem;
+}
+
+.admonition[data-state="open"] {
+  .admonitionBody {
+    max-height: 2000px;
+    padding: 1rem;
+  }
+}
+
+@layer components {
+  .navbtn {
+    @apply text-gray-700 dark:hover:bg-gray-800 transition-colors duration-300 rounded-lg  dark:text-gray-200 hover:bg-gray-100;
+  }
+  .pixi-canvas {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+  .inputBase {
+    @apply dark:bg-gray-900 text-gray-900 dark:text-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6;
+  }
+  .linkColor {
+    @apply text-blue-500 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200;
+  }
+}
+
+@layer components {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar,
+  mjx-container::-webkit-scrollbar,
+  .math::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar,
+  mjx-container,
+  .math {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+.no-scrollbar-all {
+  * {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+div[cmdk-list]::-webkit-scrollbar,
+div.jp-WindowedPanel-outer::-webkit-scrollbar {
+  display: none;
+}
+
+div[cmdk-list],
+div.jp-WindowedPanel-outer {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  border-width: 1px;
+  border-top-width: 0px;
+}
+
+.onlyHoverNavbar {
+  transform: translateY(-100%);
+}
+
+.noScroll {
+  overflow: hidden;
+}
+
+.scroll-snap-container {
+  scroll-snap-type: y mandatory;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  top: 0;
+  left: 0;
+  section {
+    scroll-snap-align: start;
+    min-height: 100vh;
+  }
+  .scrollSnapSection {
+    width: 100vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .scroll-snap-container {
+    section {
+      min-height: unset;
+    }
+    .scrollSnapSection {
+      height: 100vh;
+    }
+  }
+}
+
+.math-display {
+  .MathJax {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.admonition-title {
+  mjx-container[jax="CHTML"] {
+    line-height: inherit;
+    display: inline-grid;
+    place-content: center;
+  }
+  mjx-math {
+    font-size: 18px;
+  }
+}
+
+.math-inline {
+  display: inline;
+}
+
+.math.math-display {
+  mjx-container.MathJax {
+    &:not(div.jupyterUI *) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.boldItalic {
+  font-style: italic;
+  font-weight: 600;
+}
+
+div[role="dialog"][cmdk-dialog] {
+  z-index: 9999;
+}

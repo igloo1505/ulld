@@ -1,13 +1,13 @@
-import { getRandomId } from '@ulld/utilities'
 import React from 'react'
 import NoteContentObserver from '../observers/noteContentObserver'
+import {getRandomId} from "@ulld/utilities/src/utils/identity"
+import {noteContainerPrefix } from "@ulld/utilities/src/staticAppProperties/main"
 
 
 interface ImmediateNoteContentContainerProps {
     children: React.ReactNode
 }
 
-export const noteContainerPrefix = "note-container-"
 
 /* PRIORITY: Need to handle this mathjax issue much more thoroughly... this is half assed as shit. */
 /* RESUME: Need to handle this mathjax issue much more thoroughly... this is half assed as shit. */

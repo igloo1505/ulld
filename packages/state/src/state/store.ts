@@ -4,7 +4,7 @@ import { SettingsReducer } from "./slices/settings";
 import { FunctionalityReducer } from "./slices/functionality";
 import { ConfigReducer } from "./slices/config";
 import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistReducer, persistStore } from "redux-persist"
-import { initialState } from ".";
+import { initialState } from "./initialState/initialState";
 // @ts-ignore
 import storage from 'redux-persist-indexeddb-storage';
 

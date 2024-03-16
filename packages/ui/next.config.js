@@ -18,8 +18,6 @@ export default {
         'react-resizable-panels',
         'three-stdlib',
         'three',
-        '../../../../node_modules/three-stdlib',
-        '../../../../node_modules/@trpc',
     ],
     experimental: {
         typedRoutes: true,

@@ -87,17 +87,17 @@ export const appConfigSchema = z.object({
         subject: z.string().max(50, "Subjects must be no more than 15 characters long.")
     }).array().default([]),
     linkAliases: z.record(z.string(), z.string().url()).describe("A map of key value pairs of commonly referenced urls.").default({}),
-    features: featuresConfigSchema,
-    code: codeConfigSchema,
-    math: mathConfigSchema,
-    plotting: plotConfigSchema,
-    navigation: navigationConfigSchema,
-    UI: mainUIConfigSchema,
-    database: databaseConfigSchema,
-    jupyter: jupyterConfigSchema,
-    credentials: credentialsConfigSchema,
-    performance: performanceConfigSchema,
-    terminal: terminalConfigSchema,
+    // features: featuresConfigSchema,
+    // code: codeConfigSchema,
+    // math: mathConfigSchema,
+    // plotting: plotConfigSchema,
+    // navigation: navigationConfigSchema,
+    // UI: mainUIConfigSchema,
+    // database: databaseConfigSchema,
+    // jupyter: jupyterConfigSchema,
+    // credentials: credentialsConfigSchema,
+    // performance: performanceConfigSchema,
+    // terminal: terminalConfigSchema,
 })
 
 

@@ -1,5 +1,6 @@
 import { ToastConfigType } from "../types/toastConfig";
 
+
 export const copyStringToClipboard = async (
   s: string,
   showToast?: (toastConfig: ToastConfigType) => void,

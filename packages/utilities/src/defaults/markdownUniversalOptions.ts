@@ -1,5 +1,5 @@
 import type { Options } from 'rehype-mathjax/lib/create-plugin'
-import { MermaidConfigType, mermaidTheme } from '..'
+import { MermaidConfigType, mermaidTheme } from '../types/defaultMermaidConfig'
 
 
 

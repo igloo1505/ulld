@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import React from 'react'
+/* import { usePathname } from "next/navigation" */
 import { SidebarLink } from "./types"
 import clsx from "clsx"
 import { DynamicIcon } from "../../icons/DynamicIcon"
@@ -11,7 +12,8 @@ interface SidebarButtonProps {
 
 
 export const SidebarButton = ({ item }: SidebarButtonProps) => {
-    const pathname = usePathname()
+    /* const pathname = usePathname() */
+    const pathname = "/"
     const active = pathname === item.href
     const { Icon } = item
 
@@ -34,6 +36,3 @@ export const SidebarButton = ({ item }: SidebarButtonProps) => {
 
 
 SidebarButton.displayName = "SidebarButton"
-
-
-export default SidebarButton;

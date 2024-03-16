@@ -8,9 +8,9 @@ import emoji from "remark-emoji"
 // import toc from "@jsdevtools/rehype-toc"
 import rehypeSlug from "rehype-slug"
 import rehypeVideo from 'rehype-video';
-import { mathOptions } from "@ulld/utilities"
+import { mathOptions } from "@ulld/utilities/defaults"
 import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema'
-import { SerializeMdxConfig } from '..'
+import { SerializeMdxConfig } from '../types'
 import { MDXRemoteSerializeResult } from "next-mdx-remote"
 import { CompileOptions } from "@mdx-js/mdx"
 
@@ -53,8 +53,8 @@ ${s}`)
             {
                 keepBackground: false,
                 theme: {
-                    light: config.code.theme.light,
-                    dark: config.code.theme.dark
+                    light: config?.code?.theme.light,
+                    dark: config?.code?.theme.dark
                 },
                 onVisitLine(node: any) {
                     if (node.children.length === 0) {

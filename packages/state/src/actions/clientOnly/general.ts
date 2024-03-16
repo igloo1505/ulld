@@ -1,9 +1,13 @@
 "use client"
-import { copyStringToClipboard, noteContainerPrefix, ToastConfigType } from "@ulld/utilities"
-import { getHeadingHierarchy } from "../../formatting"
-import { store, setDarkmode, setTocContent, clearEmbededPanelStateByPath, showToast } from "../../state"
+import { noteContainerPrefix } from "@ulld/utilities/staticProperties"
+import { getHeadingHierarchy } from "../../formatting/getHeadingHierarchy"
 import { getQuickLinkHtmlId, htmlEm } from "./dom"
 import axios from 'axios'
+import { setDarkmode, showToast, clearEmbededPanelStateByPath } from "../../state/slices/ui"
+import { store } from "../../state/store"
+import { setTocContent } from "../../state/slices/functionality"
+import { copyStringToClipboard } from "@ulld/utilities/actions"
+import { ToastConfigType } from "@ulld/utilities/src/types/toastConfig"
 
 export const toggleSidebar = () => document.body.classList.toggle("sidebarOpenPermanent")
 

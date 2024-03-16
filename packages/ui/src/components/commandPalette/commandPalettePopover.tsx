@@ -1,5 +1,6 @@
 "use client"
 import React, { KeyboardEvent, useEffect, useState } from 'react'
+// @ts-ignore
 import { tinykeys } from "tinykeys"
 import CommandPalette from './commandPalette'
 import { Command } from 'cmdk'

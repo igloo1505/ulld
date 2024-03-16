@@ -1,4 +1,4 @@
-import { setSlashes } from "@ulld/utilities"
+import { setSlashes } from "@ulld/utilities/fsUtils"
 
 export const slashesTransform = (leadingSlash: boolean, trailingSlash: boolean = false) => {
     return (val: string) => setSlashes({

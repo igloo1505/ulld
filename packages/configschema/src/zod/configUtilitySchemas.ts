@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import globToRegExp from 'glob-to-regexp'
-import { withForwardSlash } from '@ulld/utilities'
+import { withForwardSlash } from '@ulld/utilities/fsUtils'
 
 
 export const logLevelSchema = z.union([

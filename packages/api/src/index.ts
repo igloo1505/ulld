@@ -1,10 +1,3 @@
-export * from "./classes";
-export * from "./plugins";
-export * from "./trpc";
-export * from "./actions";
-export * from "./trpcInternalMethods";
-export * from "./trpcTypes";
-export * from "./schemas";
 export type {
     Prisma,
     Subject as PrismaSubject,
@@ -39,7 +32,7 @@ export type {
     Serving,
     DietaryItem,
     HealthReport,
-} from "@ulld/database";
+} from "@ulld/database/src/internalDatabaseTypes";
 export {
 Technologies,
 autoSetting,
@@ -49,4 +42,4 @@ TaskCategory,
 QUANTITY_GUESS,
 TERTIARY_TOGGLE,
 DIETARY_GOAL,
-} from "@ulld/database"
+} from "@ulld/database/src/internalDatabaseTypes"

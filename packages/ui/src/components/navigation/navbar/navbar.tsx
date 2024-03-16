@@ -10,7 +10,7 @@ import { SearchIcon, BookmarkIcon } from 'lucide-react';
 import { ParsedAppConfig } from '@ulld/configschema';
 import { Route } from "next"
 import { toggleBookmark } from '@ulld/api';
-import { internalLinks } from '..';
+import { internalLinks } from '../sidebar/internalSidebarButtons';
 import Logo from '../../icons/logo/logo';
 
 
@@ -45,13 +45,13 @@ const getNavbarLinks = (config: ParsedAppConfig) => {
     for (const k of config.navigation.navbarLinkIds) {
         let idx = ntIds.indexOf(k)
         if (idx >= 0) {
-            let item = config.noteTypes[idx]
+            let item = config.noteTypes[idx]!
             links.push({
                 href: item.url,
                 label: item.label
             })
         } else if (k in internalLinks) {
-            let item = internalLinks[k]
+            let item = internalLinks[k]!
             links.push(item.onClick ? {
                 onClick: item.onClick,
                 label: item.label

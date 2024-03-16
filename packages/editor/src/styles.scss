@@ -1,0 +1,19 @@
+// .ulldMonacoEditor {
+//   // .react-monaco-editor-container {
+//   //   margin-left: 1rem;
+//   //   margin-right: 1rem;
+//   //   margin-bottom: 1rem;
+//   // }
+// }
+
+.monacoModal {
+  div.react-monaco-editor-container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+  div.ulldMonacoEditor,
+  div.overflow-guard {
+    border-radius: var(--radius);
+  }
+}

@@ -1,6 +1,6 @@
 import { z } from "zod"
 import { defaultSerializeConfig, zodSerializedMdxSchema } from "../mdx/schemas"
-import { serializeMdxContent } from "../mdx/compiler"
+import { serializeMdxContent } from "../mdx/compiler/main"
 
 
 

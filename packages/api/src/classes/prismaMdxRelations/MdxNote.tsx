@@ -97,6 +97,7 @@ export class MdxNote extends MdxNoteProtocol {
     frontMatter?: ZodFrontMatterOutput
     remoteUrl?: string | null
     trackRemote: boolean = true
+    noLog: boolean = true
     saveFormatted: boolean = getInternalConfig().database.storeFormatted
     constructor(id: number | undefined = undefined, public rootRelativePath: string, public noteType: DocTypes | undefined, raw: string, formatted: string | null = null, subject: (Subject | PrismaSubject)[] | undefined | null = [], title: string | undefined = undefined, summary: string | null = null, topics: (Topic | PrismaTopic)[] | undefined = [], citations: BibEntryPrismaAcceptedTypes[] | undefined | null = [], tags: (Tag | PrismaTag)[] | undefined | null = [], public imageSrc: string | null | undefined = null, public bookmarked: boolean | undefined = undefined, public firstSync: Date | string | null = null, public lastSync: Date | string | null = null, isProtected?: boolean | null, citationsListOrder?: string[]) {
         super(rootRelativePath, ".mdx")
@@ -207,7 +208,9 @@ export class MdxNote extends MdxNoteProtocol {
         this.formatted = c
     }
     log(val: string | object) {
-        return
+       if(this.noLog) {
+            return
+        } 
         console.log(typeof val === "string" ? val : JSON.stringify(val, null, 4))
     }
     whereUniqueInput() {

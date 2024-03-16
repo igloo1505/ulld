@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { ParsedAppConfig } from "@ulld/configschema";
-import { initialState } from "..";
+import { initialState } from "../initialState/initialState";
 
 
 const slice = createSlice({

@@ -1,4 +1,4 @@
-import { replaceRecursively } from "@ulld/utilities";
+import { replaceRecursively } from "@ulld/utilities/generalUtils";
 import { AppConfigSchemaOutput } from "../main";
 import { z } from 'zod'
 

@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
-import { LucideProps } from 'lucide-react';
+import React from 'react'
+import type { LucideProps } from 'lucide-react';
 import dynamicIconImports from 'lucide-react/dynamicIconImports';
 import { AdmonitionType } from '../../types';
 

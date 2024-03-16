@@ -9,6 +9,7 @@ export const internalDocTypes = z.union([
     z.literal("snippets")
 ])
 
+
 export const internalDocumentTypeConfigSchema = documentTypeConfigSchemaBase.partial({
     fs: true
 })

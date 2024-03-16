@@ -1,12 +1,22 @@
 "use client"
 import React, { useId, useMemo, useRef } from 'react'
 /// deep import from model-view package causing a *ton* of typescript errors without any noticeable issues.
-/// @ts-ignore
 import '@google/model-viewer/dist/model-viewer.js'
 import { ModelViewerElement } from '@google/model-viewer';
 import clsx from 'clsx';
 import { Progress, Button } from '@ulld/tailwind/base';
 import { getInternalConfig } from '@ulld/configschema';
+
+
+declare global {
+    namespace JSX {
+        interface IntrinsicElements {
+            // Admittedly a lazy way to handle this. I'll come back and clean this up along with the 32 other typescript errors.
+            ['model-viewer']: any
+        }
+    }
+}
+
 
 interface ModelViewProps extends JSX.IntrinsicAttributes {
     file: string

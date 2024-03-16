@@ -27,7 +27,7 @@ export const getInternalConfig = <T extends object>(searchParams: T = {} as T): 
         ...config,
         parsableExtensions: pe,
         filetypeSpecificAppendices: getFileTypeAppendices(pe),
-        internalDocumentTypes: internalDocumentTypeConfigSchema.array().parse(internalDocumentTypes),
+        // internalDocumentTypes: internalDocumentTypeConfigSchema.array().parse(internalDocumentTypes),
         fileTypes: {
             image: [
                 "jpeg", "jpg", "webp", "png", "heif", "gif"

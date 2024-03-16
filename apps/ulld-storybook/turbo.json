@@ -1,9 +1,0 @@
-{
-  "extends": ["//"],
-  "pipeline": {
-    "build": {
-      "outputs": ["dist/**", "storybook-static/**"],
-      "dependsOn": ["^build"]
-    }
-  }
-}

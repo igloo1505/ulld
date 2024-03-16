@@ -1,10 +1,8 @@
 "use client"
 import React, { useEffect } from 'react'
-import SidebarButton from './sidebarButton';
-import { SettingsIcon } from 'lucide-react';
+import { SidebarButton } from './sidebarButton';
 import { SidebarLink } from './types';
 import { internalLinks } from './internalSidebarButtons';
-
 
 const sidebarOnHover = true
 const sidebarBreakpoint = 20
@@ -15,6 +13,7 @@ interface PermanentSidebarProps {
     bottomButtons?: SidebarLink[]
 }
 
+
 const defaultBottomButtons: PermanentSidebarProps["bottomButtons"] = [
     internalLinks.darkMode,
     internalLinks.sync,
@@ -23,7 +22,7 @@ const defaultBottomButtons: PermanentSidebarProps["bottomButtons"] = [
 
 
 
-const PermanentSidebar = ({ sidebarLinks, bottomButtons = defaultBottomButtons }: PermanentSidebarProps) => {
+export const PermanentSidebar = ({ sidebarLinks, bottomButtons = defaultBottomButtons }: PermanentSidebarProps) => {
 
     const hoverListener = (e: MouseEvent): void => {
         if (e.pageX <= sidebarBreakpoint) {
@@ -57,6 +56,3 @@ const PermanentSidebar = ({ sidebarLinks, bottomButtons = defaultBottomButtons }
 
 
 PermanentSidebar.displayName = "PermanentSidebar"
-
-
-export default PermanentSidebar;

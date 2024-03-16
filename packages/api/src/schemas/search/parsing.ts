@@ -13,7 +13,7 @@ import { zodMdxFieldSchema } from '@ulld/parsers'
 export type MdxNoteWithoutFunctions = WithoutFunctions<InstanceType<typeof MdxNote>>
 
 
-type ZodMdxNoteFieldsType = ZodFriendly<MdxNoteWithoutFunctions>
+type ZodMdxNoteFieldsType = ZodFriendly<Omit<MdxNoteWithoutFunctions, "noLog">>
 export const readingListZodObject = z.object({
     name: z.string(),
     description: z.string().nullable(),

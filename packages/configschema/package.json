@@ -9,7 +9,8 @@
     "src/**"
   ],
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./writeConfig": "./src/zod/writeConfigJson.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",
@@ -18,15 +19,20 @@
     "lint": "echo 'Add lint script here'"
   },
   "dependencies": {
+    "@repo/typescript-config": "workspace:*",
     "@ulld/baseConfigs": "workspace:*",
     "@ulld/utilities": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
     "dayjs": "^1.11.10",
     "glob-to-regexp": "^0.4.1",
     "next": "^14.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "shiki": "^1.1.7",
-    "zo": "^0.0.2"
+    "shiki": "^1.1.7"
+  },
+  "devDependencies": {
+    "zod": "^3.22.4"
+  },
+  "peerDependencies": {
+    "zod": "^3.22.4"
   }
 }

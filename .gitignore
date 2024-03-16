@@ -11,3 +11,6 @@ dist-ssr
 server/dist
 public/dist
 apps/ulld-storybook/storybook-static
+
+*storybook.log
+/apps/storybook/storybook-static
