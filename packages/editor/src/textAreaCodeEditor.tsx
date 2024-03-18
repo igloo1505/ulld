@@ -1,17 +1,17 @@
 "use client"
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { useLocalStorage } from '@ulld/hooks/useLocalStorage';
-import {useRouter, useSearchParams} from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import dynamic from 'next/dynamic'
 import "@uiw/react-textarea-code-editor/dist.css";
 import { getEditorUrl } from './utilityFunctions';
 
 const CodeEditor = dynamic(
-  () => import("@uiw/react-textarea-code-editor").then((mod) => mod.default),
-  { ssr: false }
+    () => import("@uiw/react-textarea-code-editor").then((mod) => mod.default),
+    { ssr: false }
 );
 
-interface TextAreaCodeEditorProps extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, "onChange"> {
+export interface TextAreaCodeEditorProps extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, "onChange"> {
     value?: string
     onChange?: (v: string) => void
     language?: string
@@ -24,55 +24,55 @@ interface TextAreaCodeEditorProps extends Omit<React.TextareaHTMLAttributes<HTML
 }
 
 
-export const TextAreaCodeEditor = ({value="", onChange, initializeLocalStorage=true, localStorageKey, language, themes={
+export const TextAreaCodeEditor = ({ value = "", onChange, initializeLocalStorage = true, localStorageKey, language, themes = {
     dark: "dracula",
     light: "material-theme-lighter"
-}, ...props}: TextAreaCodeEditorProps) => {
+}, className, ...props }: TextAreaCodeEditorProps) => {
     const router = useRouter()
     const searchParams = useSearchParams()
     const [internalLanguage, setInternalLanguage] = useState(language || "python")
     const [internalValue, setInternalValue] = useLocalStorage(localStorageKey, value, {
-        initializeWithValue: initializeLocalStorage 
+        initializeWithValue: initializeLocalStorage
     })
     useEffect(() => {
         let l = searchParams.get("language")
-        if(l){
+        if (l) {
             setInternalLanguage(l)
         }
-        
+
     }, [searchParams])
 
     const handleChange = (val: string) => {
-         setInternalValue(val)
-        }
+        setInternalValue(val)
+    }
 
     const toEditor = () => {
-                                router.push(getEditorUrl(localStorageKey, internalLanguage))
+        router.push(getEditorUrl(localStorageKey, internalLanguage))
+    }
 
-        }
-
-return (
-    <CodeEditor
-      {...props}
-      value={internalValue}
-      language={internalLanguage || "python"}
-      onChange={(e) => handleChange(e.target.value)}
-      padding={15}
-      onDoubleClick={toEditor}
-      onKeyDown={(e) => {
-                if(e.key === "Enter" && e.shiftKey && e.metaKey){
+    return (
+        <CodeEditor
+            {...props}
+            value={internalValue}
+            language={internalLanguage || "python"}
+            onChange={(e) => handleChange(e.target.value)}
+            padding={15}
+            onDoubleClick={toEditor}
+            className={className}
+            onKeyDown={(e) => {
+                if (e.key === "Enter" && e.shiftKey && e.metaKey) {
                     e.preventDefault()
                     e.stopPropagation()
                     toEditor()
                     return false
-                }  
+                }
             }}
-      style={{
-        ...props.style,
-        fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
-      }}
-    />
-)
+            style={{
+                ...props.style,
+                fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
+            }}
+        />
+    )
 }
 
 

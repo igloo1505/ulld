@@ -12,7 +12,10 @@
     "src"
   ],
   "exports": {
-    "./modalPage": "./src/components/modals/modalPage/index.ts"
+    "./modalPage": "./src/components/modals/modalPage/index.ts",
+    "./inputs/number": "./src/components/inputs/number/numberInput.tsx",
+    "./inputs/number/types": "./src/components/inputs/number/types.ts",
+    "./mdx/livePreviewPanel": "./src/components/mdxContent/mdxPreviewPanel.tsx"
   },
   "scripts": {
     "build": "rollup --config",

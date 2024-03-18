@@ -37,6 +37,7 @@ const config = withPWA({
         'monaco-editor',
         '@ulld/editor',
         '@ulld/tailwind',
+        '@ulld/full-form',
     ],
     experimental: {
         // typedRoutes: true,

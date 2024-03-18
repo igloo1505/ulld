@@ -23,6 +23,15 @@
       ],
       "modal": [
         "src/monacoModal.tsx"
+      ],
+      "textAreaEditor": [
+        "src/textAreaCodeEditor.tsx"
+      ],
+      "editorTypes": [
+        "src/types.ts"
+      ],
+      "utilityFunctions": [
+        "src/utilityFunctions.ts"
       ]
     }
   },

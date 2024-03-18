@@ -1,33 +1,3 @@
 {
-    "compilerOptions": {
-    "module": "esnext",
-    "target": "es5",
-    "lib": [ "es6", "dom" ],
-    "sourceMap": true,
-    "jsx": "react",
-    "moduleResolution": "bundler",
-    "rootDir": "src",
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "esModuleInterop": true,
-    "baseUrl": "src/",
-    "paths": {
-      "common": ["src/common/*"],
-      "components": ["src/components/*"],
-      "hooks": ["src/hooks/*"],
-      "utils": ["src/utils/*"]
-    }
-  },
-  "exclude": [
-    "node_modules",
-    "build",
-    "dist",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest"
-  ],
-  "types": ["typePatches"]
+    "extends": "@repo/typescript-config/nextjs.json"
 }

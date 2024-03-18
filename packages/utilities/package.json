@@ -22,7 +22,8 @@
     "./generalUtils": "./src/utils/general.ts",
     "./schemas/snippets": "./src/schemas/snippets.ts",
     "./schemas/utility": "./src/schemas/utility.ts",
-    "./schemas/transforms": "./src/schemas/transforms.ts"
+    "./schemas/transforms": "./src/schemas/transforms.ts",
+    "./utilityTypes": "./src/types/utilityTypes.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",
