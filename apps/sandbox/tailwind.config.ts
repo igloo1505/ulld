@@ -6,7 +6,8 @@ const tailwindCfg: Config = {
         "./app/**/*.{js,ts,jsx,tsx,mdx}",
         "./pages/**/*.{js,ts,jsx,tsx,mdx}",
         "./components/**/*.{js,ts,jsx,tsx,mdx}",
-
+        "./node_modules/@ulld/tailwind/src/**/*.{js,ts,jsx,tsx,mdx}",
+        "./node_modules/@ulld/editor/src/**/*.{js,ts,jsx,tsx,mdx}",
         // Or if using `src` directory:
         "./src/**/*.{js,ts,jsx,tsx,mdx}",
     ],

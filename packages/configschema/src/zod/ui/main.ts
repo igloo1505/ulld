@@ -9,5 +9,5 @@ export const mainUIConfigSchema = z.object({
     table: tableUIConfigSchema,
     text: textConfigSchema,
     media: mediaConfigSchema,
-    colors: colorsConfigSchema
+    colors: colorsConfigSchema.optional()
 }).default({})

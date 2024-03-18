@@ -2,6 +2,34 @@
   "name": "@ulld/editor",
   "version": "0.0.0",
   "private": true,
+  "main": "./src/monaco.tsx",
+  "types": "./src/types.ts",
+  "exports": {
+    ".": "./src/monaco.tsx",
+    "./ide": "./src/monaco.tsx",
+    "./languageSelect": "./src/languageSelect.tsx",
+    "./modal": "./src/monacoModal.tsx",
+    "./textAreaEditor": "./src/textAreaCodeEditor.tsx",
+    "./editorTypes": "./src/types.ts",
+    "./utilityFunctions": "./src/utilityFunctions.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "ide": [
+        "src/monaco.tsx"
+      ],
+      "languageSelect": [
+        "src/languageSelect.tsx"
+      ],
+      "modal": [
+        "src/monacoModal.tsx"
+      ]
+    }
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
     "dev": "echo 'Add dev script here'",
     "build": "echo 'Add build script here'",
@@ -9,11 +37,34 @@
     "lint": "echo 'Add lint script here'"
   },
   "peerDependencies": {
+    "@monaco-editor/react": "^4.6.0",
     "@repo/typescript-config": "workspace:*",
+    "@shikijs/rehype": "^1.2.0",
+    "@uiw/react-textarea-code-editor": "^3.0.2",
+    "@ulld/hooks": "workspace:*",
+    "@ulld/parsers": "workspace:*",
     "@ulld/state": "workspace:*",
     "@ulld/tailwind": "workspace:*",
     "@ulld/ui": "workspace:*",
     "@ulld/utilities": "workspace:*",
-    "@ulld/parsers": "workspace:*"
+    "file-loader": "^6.2.0",
+    "monaco-editor-webpack-plugin": "^7.1.0",
+    "monaco-vim": "^0.4.1",
+    "next-remove-imports": "^1.0.12",
+    "raw-loader": "^4.0.2",
+    "rehype-pretty-code": "^0.13.0"
+  },
+  "packageManager": "pnpm@8.15.4",
+  "devDependencies": {
+    "@shikijs/rehype": "^1.2.0",
+    "@uiw/react-textarea-code-editor": "^3.0.2",
+    "file-loader": "^6.2.0",
+    "monaco-editor-webpack-plugin": "^7.1.0",
+    "monaco-vim": "^0.4.1",
+    "next-remove-imports": "^1.0.12",
+    "rehype-pretty-code": "^0.13.0"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.44.0"
   }
 }

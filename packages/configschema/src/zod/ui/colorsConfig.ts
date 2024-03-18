@@ -2,22 +2,23 @@ import { z } from "zod";
 
 
 const colorScaleKeys = [
-    50,
-    100,
-    200,
-    300,
-    400,
-    500,
-    600,
-    700,
-    800,
-    900,
-    950
-]
+    '50',
+    '100',
+    '200',
+    '300',
+    '400',
+    '500',
+    '600',
+    '700',
+    '800',
+    '900',
+    '950'
+] as const
 
 
+type T = { [k in typeof colorScaleKeys[number]]: string }
 const getObj = (c: string[]) => {
-    let ob: { [k in keyof typeof colorScaleKeys]: string } = {} as { [k in keyof typeof colorScaleKeys]: string }
+    let ob: T = {} as T
     colorScaleKeys.forEach((k, i) => {
         ob[k] = c[i]
     })
@@ -27,15 +28,15 @@ const getObj = (c: string[]) => {
 
 // TODO: Populate these color values with a default list and override them as they're populated in the appConfig to make sure they are available to developers throughout the app. Make sure these are mapped to css variables with a reliable naming convention to make them available without direct access to the config.
 const colorGroupItem = z.object({
-    main: z.string().describe("Main color"),
-    contrast: z.string().optional().describe("Color to use to contrast with the primary color. Will default to the current text color."),
+    main: z.string().nullish().describe("Main color"),
+    contrast: z.string().nullish().describe("Color to use to contrast with the primary color. Will default to the current text color."),
     muted: z.union([
         z.object({
-            main: z.string().describe("Color variant to be used in a 'muted' component. Should more subtly contrast with the background color than the primary foreground color."),
-            contrast: z.string().optional().describe("Color variant to be used in a 'muted' component. Should more subtly contrast with the background color than the primary foreground color."),
-        }).partial(),
-        z.string().optional().describe("Color variant to be used in a 'muted' component. Should more subtly contrast with the background color than the primary foreground color.")
-    ]),
+            main: z.string().nullish().describe("Color variant to be used in a 'muted' component. Should more subtly contrast with the background color than the primary foreground color."),
+            contrast: z.string().nullish().describe("Color variant to be used in a 'muted' component. Should more subtly contrast with the background color than the primary foreground color."),
+        }).deepPartial(),
+        z.string().nullish().describe("Color variant to be used in a 'muted' component. Should more subtly contrast with the background color than the primary foreground color.")
+    ]).nullish(),
     gradient: z.union([
         z.object({
             50: z.string(),
@@ -49,28 +50,34 @@ const colorGroupItem = z.object({
             800: z.string(),
             900: z.string(),
             950: z.string(),
-        }).describe("An object of a single color, in which 50 represents the lightest variation and 950 represents the darkest."),
-        z.string().array().length(11).describe("An array of css color values arranged from the lightest to the darkest."),
-    ])
-}).partial().transform((a) => {
+        }).nullish().describe("An object of a single color, in which 50 represents the lightest variation and 950 represents the darkest."),
+        z.string().array().length(colorScaleKeys.length).nullish().describe("An array of css color values arranged from the lightest to the darkest."),
+    ]).nullish()
+}).deepPartial().transform((a) => {
+    if(!a) return undefined
     return {
         main: a.main,
         contrast: a.contrast,
         muted: typeof a.muted === "string" ? { foreground: a.muted } : a.muted,
         gradient: Array.isArray(a.gradient) ? getObj(a.gradient) : a.gradient
-    }
-})
+    } satisfies {
+            main: typeof a.main,
+            contrast: typeof a.contrast,
+            muted: {foreground: string} | typeof a.muted,
+            gradient: ReturnType<typeof getObj> | null | undefined
+        }
+}).nullish()
 
 
 const colorGroup = z.object({
-    dark: colorGroupItem.optional(),
-    light: colorGroupItem.optional()
-}).partial().transform((a) => {
+    dark: colorGroupItem.nullish(),
+    light: colorGroupItem.nullish()
+}).deepPartial().transform((a) => {
     return {
         light: a.light || a.dark,
         dark: a.dark || a.light
     }
-})
+}).nullish()
 
 
 export type ColorGroup = z.output<typeof colorGroup>
@@ -79,12 +86,16 @@ export type ColorGroup = z.output<typeof colorGroup>
 const colorValue = z.union([
     colorGroup,
     colorGroupItem
-]).transform((a) => {
+]).nullish().transform((a) => {
+    if(!a) return undefined
     if (!("dark" in a)) {
         return {
             dark: a,
             light: a
-        }
+        } as {
+                dark: typeof a,
+                light: typeof a
+            }
     }
     return a
 })
@@ -118,6 +129,7 @@ const configColors = z.union([
     z.literal("success"),
     z.literal("primary"),
     z.literal("secondary"),
+    z.string()
 ])
 
 export const colorsConfigSchema = z.record(configColors, colorValue).default({})

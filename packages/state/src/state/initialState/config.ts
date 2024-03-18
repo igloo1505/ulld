@@ -1,5 +1,5 @@
-import { ParsedAppConfig } from "@ulld/configschema";
+import { AppConfigSchemaOutput } from "@ulld/configschema";
 
 
 
-export const initialConfigState: ParsedAppConfig | undefined | null = {} as ParsedAppConfig
+export const initialConfigState: AppConfigSchemaOutput | undefined | null = {} as AppConfigSchemaOutput

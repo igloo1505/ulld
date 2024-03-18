@@ -49,7 +49,7 @@ const Observers = connector(({ settings, darkMode, noteSheetOpen, config }: Stat
     const pathname = usePathname()
 
     useEffect(() => {
-        setInitialBrowserProps()
+        setInitialBrowserProps(darkMode)
     }, [])
 
     useEffect(() => {

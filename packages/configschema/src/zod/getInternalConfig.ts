@@ -1,8 +1,7 @@
-import { appConfig } from "../temporaryDevelopmentConfig"
-import { ParsedAppConfig } from "../types"
+// import { ParsedAppConfig } from "../types"
 import { applySearchParamConfigOverride } from "./applySearchParamOverride"
-import { InternalDocumentConfigType, internalDocumentTypeConfigSchema, internalDocumentTypes } from "./internalDocumentTypes"
-import { appConfigSchema } from "./main"
+import { InternalDocumentConfigType } from "./internalDocumentTypes"
+import { AppConfigSchemaOutput } from "./main"
 import { ParsableExtensions, getFileTypeAppendices, getParsableExtensions } from "./secondaryConfigParse/getParsableExtensions"
 
 
@@ -19,9 +18,8 @@ interface ExtraConfig {
 
 
 // TODO: To handle the unsurity during development while not requiring this thing to be parsed 184 times on each load, write the parsed config **once** to a json file, and convert this function to just returning a json object after reading from that file here. All calls to this function should still return exactly the same thing, and since the build itself will be parsed by zod, all type saftey should remain.
-export const getInternalConfig = <T extends object>(searchParams: T = {} as T): ExtraConfig & ParsedAppConfig => {
-    let tConfig = applySearchParamConfigOverride<T>(appConfigSchema.parse(appConfig), searchParams)
-    let config = JSON.parse(JSON.stringify(tConfig)) as typeof tConfig
+export const getInternalConfig = <T extends object>(appConfig: AppConfigSchemaOutput, searchParams: T = {} as T): ExtraConfig & AppConfigSchemaOutput => {
+    let config = applySearchParamConfigOverride<T>(appConfig, searchParams)
     let pe = getParsableExtensions(config)
     return {
         ...config,
@@ -33,5 +31,5 @@ export const getInternalConfig = <T extends object>(searchParams: T = {} as T): 
                 "jpeg", "jpg", "webp", "png", "heif", "gif"
             ]
         }
-    } as ExtraConfig & ParsedAppConfig
+    } as ExtraConfig & AppConfigSchemaOutput
 }

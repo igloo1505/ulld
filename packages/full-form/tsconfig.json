@@ -1,0 +1,29 @@
+{
+    "extends": "@repo/typescript-config/nextjs.json",
+    "include": [
+        "./src/*/**.ts",
+        "./src/*/**.tsx",
+        "./src/react-app-env-d.ts"
+    ],
+    "exclude": [
+        "dist",
+        "build",
+        "node_modules"
+    ],
+    "compilerOptions": {
+        "noEmit": true,
+        "outDir": "dist",
+        "declarationMap": true,
+        "lib": [
+            "dom",
+            "ES2015"
+        ],
+        "types": [
+            "jest",
+            "node"
+        ],
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "noUncheckedIndexedAccess": true
+    }
+}

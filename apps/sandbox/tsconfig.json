@@ -6,9 +6,11 @@
       ".next/types/**/*.ts",
       "tailwind.config.ts"
   ],
-  "moduleResolution": "bundler",
   "compilerOptions": {
+    "baseUrl": ".",
+    "isolatedModules": true,
     "moduleResolution": "bundler",
+    "esModuleInterop": true,
     "paths": {
       "#/*": ["./*"]
     },

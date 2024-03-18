@@ -60,8 +60,9 @@ export const setInitialMonacoProps = () => {
     };
 }
 
-export const setInitialBrowserProps = () => {
+export const setInitialBrowserProps = (darkMode?: boolean) => {
     setInitialMonacoProps()
+    // document.documentElement.setAttribute()
 }
 
 

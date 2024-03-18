@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { ParsedAppConfig } from "@ulld/configschema";
+import { AppConfigSchemaOutput } from "@ulld/configschema";
 import { initialState } from "../initialState/initialState";
 
 
@@ -7,7 +7,7 @@ const slice = createSlice({
     name: "config",
     initialState: initialState.config,
     reducers: {
-        setConfigState(state, action: PayloadAction<ParsedAppConfig>) {
+        setConfigState(state, action: PayloadAction<AppConfigSchemaOutput>) {
             state = action.payload ? action.payload : undefined
         }
     }

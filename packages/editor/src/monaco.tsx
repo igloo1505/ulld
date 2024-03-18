@@ -1,15 +1,18 @@
 "use client"
 import React, { useState } from 'react'
-import dynamic from 'next/dynamic'
-const MonacoEditor = dynamic(() => import('@monaco-editor/react'), { ssr: false })
+import MonacoEditor from '@monaco-editor/react'
 import type { EditorLanguage } from 'monaco-editor/esm/metadata';
 import "./styles.scss"
 import type { Monaco } from '@monaco-editor/react';
 import clsx from 'clsx';
 import { z } from 'zod'
-import { MonacoProps, IEditor, EditorOptions } from './types';
+import { MonacoProps, IEditor, EditorOptions, EditorLayout } from './types';
 import MonacoVimStatusBar from './statusBar';
 import CodeEditorLanguageSelect from './languageSelect';
+import { useLocalStorage } from '@ulld/hooks/useLocalStorage';
+
+
+const scriptPath = "/scripts/monaco-vim.js"
 
 export enum MonacoEditorSupportedLanguage {
     typescript = "typescript",
@@ -18,21 +21,7 @@ export enum MonacoEditorSupportedLanguage {
     json = "json",
 }
 
-type Accept<T extends string> = {
-    onAccept: (val: T) => void
-    onChange?: never
-}
 
-type Change<T extends string> = {
-    onChange: (val: T) => void
-    onAccept?: never
-}
-
-export enum EditorLayout {
-    modal = "modal",
-    fullSizeModal = "full-size-modal",
-    sideBySide = "side-by-side"
-}
 export type CodeEditorProps<T extends string, J extends EditorLayout> = {
     value?: T
     darkMode?: boolean
@@ -40,7 +29,12 @@ export type CodeEditorProps<T extends string, J extends EditorLayout> = {
     asModalChild?: boolean
     layout?: J
     uniqueContentId: J extends "modal" ? string : never
-} & Omit<MonacoProps, "onChange" | "initialValue"> & (Accept<T> | Change<T>)
+    useExisting?: boolean
+    onAccept?: (val: T) => void
+    onChange?: (val: T) => void
+    className?: string
+    forceLanguage?: boolean
+} & Omit<MonacoProps, "onChange" | "initialValue">
 
 
 
@@ -87,34 +81,54 @@ const setupMonacoVim = <T extends string, J extends EditorLayout>(_editor: IEdit
         }
     })
 
+    
     _editor.addAction({
-        id: "to-normal-mode",
-        label: "Normal Mode",
+        id: "cmd-palette",
+        label: "Open Editor Command Palette",
         keybindings: [
-            monaco.KeyMod.chord(
-                monaco.KeyCode.KeyJ,
-                monaco.KeyCode.KeyJ
-            )
+            monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KeyP
         ],
         run: (editorState) => {
-            /* window?.vimMode?.enterVimMode("visual") */
+            const action = editorState.getAction("editor.action.quickCommand")
+            action?.run()
         }
     })
 
+    _editor.addAction({
+        id: "show-hover-info",
+        label: "Show hover info",
+        keybindings: [
+             monaco.KeyMod.Alt | monaco.KeyCode.KeyK
+        ],
+        run: (editorState) => {
+            console.log(editorState)
+            const action = editorState.getAction("editor.action.showHover")
+            action?.run()
+        }
+    })
+
+
+
     window.require.config({
         paths: {
-            "monaco-vim": "/editor/monaco-vim.js"
+            "monaco-vim": scriptPath
         }
     });
-
     let vm: { dispose: () => void } | null = null
+
+    /* TODO: Review docs here and rework this to import directly from node_modules or at least from the public directory. Should be pretty easy and add offline functionality. */
+    /*     https://github.com/brijeshb42/monaco-vim */
+
     /// @ts-ignore
     window.require(["monaco-vim"], function(MonacoVim) {
+       /* ADD_CONFIG_OPTION: Add ability to set vim mode both from the appConfig and from a search param. Add a config field for key maps if they choose to use vim. */
+        MonacoVim.VimMode.Vim.map('jj', '<Esc>', 'insert')
         const statusNode = document.getElementById(opts.statusBarId);
         const vimMode = MonacoVim.initVimMode(_editor, statusNode);
         vm = vimMode
         window.vimMode = vimMode
-        /* window.editor = _editor */
+        window.editor = _editor
+        _editor.focus()
     });
     return () => vm?.dispose()
 }
@@ -138,10 +152,11 @@ const universalOpts: EditorOptions = {
 }
 
 
-
-
-const CodeEditor = <T extends string, J extends EditorLayout>({ value, onChange, onAccept, options, darkMode, language = "select", width, height, asModalChild, layout, ...props }: CodeEditorProps<T, J>) => {
-
+export const CodeEditor = <T extends string, J extends EditorLayout>({ value:_value, onChange, onAccept, options, darkMode, language = "select", width, height, className, asModalChild, layout, ...props }: CodeEditorProps<T, J>) => {
+const [value, setValue] = useLocalStorage(props.uniqueContentId, _value || "", {
+        initializeWithValue: !props.useExisting,
+    })
+    const editorId = "ulld-monaco-editor"
     const baseOptions: Record<EditorLayout, EditorOptions> = {
         modal: {
             ...universalOpts,
@@ -159,37 +174,48 @@ const CodeEditor = <T extends string, J extends EditorLayout>({ value, onChange,
         }
     }
     const statusBarId = "ulld-monaco-vim-status"
-    const [internalValue, setInternalValue] = useState(value || "")
     const [internalLanguage, setInternalLanguage] = useState(language === "select" ? "python" : language)
     const handleChange = (val: string | undefined) => {
-        onChange ? onChange(val as T || "" as T) : setInternalValue(val || "")
+        onChange ? onChange(val as T || "" as T) : setValue(val || "")
     }
+
     const opts = baseOptions[layout ? layout : EditorLayout.modal]
 
     return (
         <div className={"w-fit h-fit flex flex-col justify-center items-end gap-4"}>
-            <CodeEditorLanguageSelect
+            {Boolean(!props.forceLanguage && language !== "select") && <CodeEditorLanguageSelect
                 value={internalLanguage}
                 onChange={setInternalLanguage}
-            />
+            />}
             <div className={clsx(
                 "w-fit h-fit flex flex-col justify-center items-center p-0",
                 layout === "modal" && "[&>section]:w-[min(768px,85vw)] [&>section]:h-[min(640px,70vh)]"
             )}>
                 <MonacoEditor
                     {...props}
+                    wrapperProps={{ id: editorId, className, autoFocus: false }}
                     className={"ulldMonacoEditor"}
-                    width={width || "800"}
-                    height={height || "600"}
+                    width={width || "800px"}
+                    height={height || "600px"}
                     language={internalLanguage}
                     theme={darkMode !== false ? "vs-dark" : "light"}
-                    value={Boolean(value && onChange) ? value : internalValue}
+                    value={Boolean(_value && onChange) ? _value : value}
                     options={{
                         ...opts,
                         ...options
                     }}
                     onChange={handleChange}
-                    onMount={(...args) => setupMonacoVim(...args, { onAccept: onAccept || handleChange, statusBarId, isModal: Boolean(layout === "modal" || onAccept) })}
+                    onMount={(...args) => {
+                    setupMonacoVim(...args, { onAccept: onAccept || handleChange, statusBarId, isModal: Boolean(layout === "modal" || onAccept)})
+                        if(window?.editor){
+                                const em = window.editor.getDomNode()
+                                if(em){
+                                    em.autofocus = false
+                                    em.focus() 
+                                }
+                            window.editor?.focus()
+                        }
+                    }}
                 />
                 <MonacoVimStatusBar
                     id={statusBarId}

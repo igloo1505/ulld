@@ -1,8 +1,8 @@
 "use client"
-import React, { useEffect, useState } from 'react'
-import CodeEditor, { CodeEditorProps, EditorLayout } from './monaco'
-import { useIsomorphicLayoutEffect } from '#/hooks/useIsomorphicLayoutEffect'
-
+import React, { useState } from 'react'
+import  { CodeEditorProps, CodeEditor, } from './monaco'
+import {useIsomorphicLayoutEffect} from "@ulld/hooks/useIsomorphicEffect"
+import { EditorLayout } from './types'
 type P<T extends string, J extends EditorLayout> = Omit<React.HTMLProps<HTMLDivElement>, "onChange" | "value"> & Omit<CodeEditorProps<T, J>, "value" | "onChange" | "onAccept">
 
 
@@ -13,23 +13,27 @@ interface MonacoEditorModalProps {
 
 export const formatEditorContentStorageKey = (baseKey: string | number) => `ulld-editor-${baseKey}`
 
+
 export const clearStorageFromKey = (baseKey: string | number) => {
     window?.localStorage.removeItem(formatEditorContentStorageKey(baseKey))
 }
+
 
 export const storeEditorModalContentForKey = (baseKey: string | number, content: string) => {
     window?.localStorage.setItem(formatEditorContentStorageKey(baseKey), content)
 }
 
+
 export const getEditorContentFromKey = (baseKey: string) => window?.localStorage.getItem(formatEditorContentStorageKey(baseKey))
 
-const MonacoEditorModal = <T extends string, J extends (EditorLayout.modal | EditorLayout.fullSizeModal)>({ className, useExisting, ...props }: MonacoEditorModalProps & P<T, J>) => {
-    if (!open) return null
+
+export const MonacoEditorModal = <T extends string, J extends (EditorLayout.modal | EditorLayout.fullSizeModal)>({ className, useExisting, ...props }: MonacoEditorModalProps & P<T, J>) => {
     const [value, setValue] = useState("")
+
+    if (!props.open) return null
     const handleBackdropClick = () => {
         close()
     }
-    console.log("props.uniqueContentId: ", props.uniqueContentId)
 
     const handleChange = (newValue: string) => {
         console.log("newValue: ", newValue)
@@ -63,6 +67,3 @@ const MonacoEditorModal = <T extends string, J extends (EditorLayout.modal | Edi
 
 
 MonacoEditorModal.displayName = "MonacoEditorModal"
-
-
-export default MonacoEditorModal;

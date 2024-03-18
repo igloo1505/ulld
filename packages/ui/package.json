@@ -8,8 +8,12 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
+  "exports": {
+    "./modalPage": "./src/components/modals/modalPage/index.ts"
+  },
   "scripts": {
     "build": "rollup --config",
     "clean": "rm -rf dist",
@@ -95,6 +99,7 @@
     "@uiw/react-monacoeditor": "^3.6.0",
     "@uiw/react-textarea-code-editor": "^3.0.2",
     "@ulld/api": "workspace:*",
+    "@ulld/hooks": "workspace:*",
     "@ulld/config": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/logger": "workspace:*",

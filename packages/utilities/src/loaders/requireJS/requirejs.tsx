@@ -10,8 +10,9 @@ export const RequireJsLoader = (props: RequireJsLoaderProps) => {
 return (
         <Script
             id="load-requireJs"
-            src="./require.js"
+            src="/scripts/require.js"
             async
+            strategy="lazyOnload"
             {...props}
         />
 )
