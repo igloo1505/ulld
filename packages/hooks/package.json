@@ -8,7 +8,12 @@
   ],
   "exports": {
     "./useCounter": "./src/useCounter.ts",
+    "./useEditorModalSyncedValue": "./src/useEditorModalSyncedValue.ts",
     "./useEventCallback": "./src/useEventCallback.ts",
+    "./useEditorSaveListener": "./src/useEditorSaveListener.ts",
+    "./useDebounceParse": "./src/useDebounceParse.ts",
+    "./useDebounceMdxParse": "./src/useDebounceMdxParse.ts",
+    "./useDebounceCallback": "./src/useDebounceCallback.ts",
     "./useStep": "./src/useStep.ts",
     "./useToggle": "./src/useToggle.ts",
     "./useResizeObserver": "./src/useResizeObserver.ts",
@@ -40,15 +45,21 @@
     "lint": "echo 'Add lint script here'"
   },
   "devDependencies": {
+    "@mdx-js/mdx": "^3.0.1",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "lodash": "^4.17.21",
     "next": "^14.1.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "@repo/typescript-config": "workspace:*"
   },
   "peerDependencies": {
+    "@mdx-js/mdx": "^3.0.1",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "@ulld/api": "workspace:*",
+    "lodash": "^4.17.21",
     "next": "^14.1.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

@@ -1,4 +1,4 @@
-import { autoSetting } from "@ulld/database";
+import { autoSetting } from "@ulld/database/internalDatabaseTypes";
 import { z } from "zod";
 
 export const AutoPropertyFormSchema = z.object({

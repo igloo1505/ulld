@@ -1,6 +1,6 @@
-import {store} from "@ulld/state/src/state/store"
-import {showToast} from "@ulld/state/src/state/slices/ui"
-import { client } from "../trpc"
+import {store} from "@ulld/state/store"
+import {showToast} from "@ulld/state/slice/ui"
+import { client } from "../trpc/client"
 
 
 export const syncRootDirectory = async () => {

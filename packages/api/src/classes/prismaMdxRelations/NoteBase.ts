@@ -1,7 +1,7 @@
 import { getNoteTypeFromPath } from "@ulld/configschema";
 import type { Route } from "next";
-import { getUniversalQuery } from "../../actions";
-import { replaceRecursively } from "@ulld/utilities";
+import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
+import { replaceRecursively } from "@ulld/utilities/generalUtils";
 
 
 export class NoteBase {

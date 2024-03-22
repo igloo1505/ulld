@@ -14,6 +14,7 @@ const CodeEditorModalPage = ({ params: {
 } }: MonacoPageParams) => {
     return (
         <ModalPageContainer
+            closeEvent="ulld-editor-close"
         >
             <Editor
                 uniqueContentId={uniqueContentId}

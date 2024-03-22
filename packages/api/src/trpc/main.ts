@@ -18,6 +18,7 @@ import { readingListRouter } from "./routers/readingList";
 import { universalNoteRouter } from "./routers/universalNotes";
 import { mediaRouter } from "./routers/media/mediaRouter";
 import { qaRouter } from "./routers/qa";
+import { betaRouter } from "./routers/beta";
 
 
 
@@ -40,7 +41,8 @@ export const appRouter = router({
     readingList: readingListRouter,
     universalNotes: universalNoteRouter,
     media: mediaRouter,
-    qa: qaRouter
+    qa: qaRouter,
+    beta: betaRouter
 })
 
 

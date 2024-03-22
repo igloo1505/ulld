@@ -1,11 +1,11 @@
 import { z } from "zod";
 import fs from 'fs'
 import { publicProcedure, router } from "../trpc";
-import { getInternalConfig } from "@ulld/configschema";
-import { prisma } from "@ulld/database";
-import { bibItemTagParser } from "../../schemas";
-import { getBibWithEntries, syncBib, getBibFilename } from "../../trpcInternalMethods";
-
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
+import { prisma } from "@ulld/database/db";
+import { bibItemTagParser } from "../../schemas/bib/bibItemTagParser";
+import {getBibWithEntries, getBibFilename} from "../../trpcInternalMethods/bib/main"
+import {syncBib} from "../../trpcInternalMethods/bib/syncBib"
 
 export const bibliographyRouter = router({
     getPrismaBib: publicProcedure.query(async () => {

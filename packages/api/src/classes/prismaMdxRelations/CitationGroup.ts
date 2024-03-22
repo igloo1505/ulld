@@ -1,8 +1,8 @@
-import { zodCitationGroupSchema } from "../../schemas";
-import { CitationGroupReturned, BibEntryReturned } from "../../trpcTypes";
+import { zodCitationGroupSchema } from "../../schemas/search/parsing";
+import { CitationGroupReturned, BibEntryReturned } from "../../trpcTypes/main";
 import { BibEntry, type BibEntryPrismaAcceptedTypes } from "./BibEntry";
 import { CitationGroupProtocol } from "./protocols/citationGroup";
-import type { Prisma, CitationsGroup as PrismaCitationGroup } from "@ulld/database"
+import type { Prisma, CitationsGroup as PrismaCitationGroup } from "@ulld/database/internalDatabaseTypes"
 
 
 

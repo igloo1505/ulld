@@ -2,10 +2,11 @@ import { publicProcedure, router } from "../trpc";
 import * as z from 'zod'
 import { autoSetting } from "@prisma/client";
 import { AutoSettingType } from "./sync";
-import { prisma } from "@ulld/database";
-import { AutoPropertyFormSchema } from "../../schemas";
-import { syncAutoSettings, getAutoSettingsWithRegex, getConfigAutoSettings, getDbAutoSettings } from "../../trpcInternalMethods";
-
+import { prisma } from "@ulld/database/db";
+import { AutoPropertyFormSchema } from "../../schemas/formTrpcRelationships/autoPropertyFormSchema";
+import {syncAutoSettings} from "../../trpcInternalMethods/settings/autoSettings/syncAutoSettings"
+import {getAutoSettingsWithRegex, getConfigAutoSettings} from "../../trpcInternalMethods/settings/autoSettings/getAutosettingWithRegex"
+import {getDbAutoSettings } from "../../trpcInternalMethods/settings/autoSettings/getDbAutosetting"
 
 
 

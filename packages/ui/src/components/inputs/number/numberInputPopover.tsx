@@ -1,9 +1,10 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import {
     Popover,
     PopoverContent,
+    PopoverTrigger,
 } from "@ulld/tailwind/popover";
-import { Button } from "@ulld/tailwind/button";
 import { Label } from "@ulld/tailwind/label";
 import { Input } from "@ulld/tailwind/input";
 import { NumberInputProps } from "./types";
@@ -11,40 +12,78 @@ import { handleNumberInput } from "./numberValidator";
 import { onEnter } from "@ulld/state/listeners/keyDown";
 
 export interface NumberInputPopoverProps extends NumberInputProps {
-    open: boolean;
-    close: () => void;
     modalTitle?: string;
     modalDesc?: string;
+    maxLength?: number
 }
 
+const defaultMaxLength = 6
+
+const removeTrailingZeros = (_val: string | number): string => {
+    let val = typeof _val === "string" ? _val : `${_val}`
+    console.log("val: ", val)
+       if(val.indexOf(".") === -1){
+        return val
+        } 
+    if([".", "0"].includes(val[val.length - 1])){
+        return removeTrailingZeros(val.slice(0, val.length - 1))
+    }
+    return val
+    }
+
+const formatValue = (
+    val: string | number,
+    decimals?: number,
+    maxLength?: number,
+) => {
+    console.log("val, typeof val: ", val, typeof val)
+    if (typeof decimals !== "number") {
+        return typeof val === "string"
+            ? val.slice(0, Math.min(maxLength || defaultMaxLength, val.length))
+            : removeTrailingZeros(val.toFixed(maxLength || defaultMaxLength))
+    }
+    let i = typeof val === "string" ? val.indexOf(".") : -1;
+    console.log("i: ", i)
+    return typeof val === "string"
+        ? i === -1 ? val.slice(0, Math.min(maxLength || defaultMaxLength, val.length)) :
+            val.slice(0, Math.min(i + decimals + 1, maxLength || defaultMaxLength, val.length))
+        : removeTrailingZeros(val.toFixed(maxLength || defaultMaxLength))
+};
+
 export const NumberInputPopover = (props: NumberInputPopoverProps) => {
-    const { open, close, onChange, value, label, modalTitle, modalDesc } = props;
+    const [internalOpen, setInternalOpen] = useState(false);
     return (
-        <Popover open={open} onOpenChange={(o) => o === false && close()}>
+        <Popover open={internalOpen} onOpenChange={setInternalOpen}>
+            <PopoverTrigger className={"w-[3ch] min-w-fit text-center"}>
+                {props.value ? formatValue(props.value, props.decimals, props.maxLength) : "--"}
+            </PopoverTrigger>
             <PopoverContent className="w-80">
                 <div className="grid gap-4">
                     <div className="space-y-2">
                         <h4 className="font-medium leading-none">
-                            {modalTitle || "Numbers Only"}
+                            {props.modalTitle || "Numbers Only"}
                         </h4>
-                        {modalDesc && (
-                            <p className="text-sm text-muted-foreground">{modalDesc}</p>
+                        {props.modalDesc && (
+                            <p className="text-sm text-muted-foreground">{props.modalDesc}</p>
                         )}
                     </div>
                     <div className="grid gap-2">
                         <div className="grid grid-cols-3 items-center gap-4">
-                            <Label htmlFor="width">{label}</Label>
+                            <Label htmlFor="number-input-modal-input">{props.label}</Label>
                             <Input
                                 autoFocus
-                                value={value}
+                                id="number-input-modal-input"
+                                value={props.value || ""}
                                 onChange={(e) => {
                                     let res = handleNumberInput(e, props);
                                     if (res.success) {
-                                        onChange(res.value as number);
+                                        props.onChange(
+                                            typeof res.value === "undefined" ? "" : res.value,
+                                        );
                                     }
                                 }}
                                 className="col-span-2 h-8"
-                                onKeyDown={(e) => onEnter(e, close)}
+                                onKeyDown={(e) => onEnter(e, () => setInternalOpen(false))}
                             />
                         </div>
                     </div>

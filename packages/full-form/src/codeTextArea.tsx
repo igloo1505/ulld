@@ -7,12 +7,23 @@ import {
   FormDescription,
   FormMessage,
 } from "@ulld/tailwind/form";
+import {makeValidId} from "@ulld/utilities/identity"
 import { BaseFullFormInputProps } from "./types";
 import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
 import {
   TextAreaCodeEditorProps,
   TextAreaCodeEditor,
 } from "@ulld/editor/textAreaEditor";
+import { useEventListener } from "@ulld/hooks/useEventListener";
+import { DevTool } from "@hookform/devtools";
+
+
+declare global {
+  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+  interface WindowEventMap {
+    'ulld-editor-close': CustomEvent
+  }
+}
 
 
 interface CodeTextAreaProps<T extends FieldValues, H extends HTMLElement>
@@ -25,8 +36,13 @@ interface CodeTextAreaProps<T extends FieldValues, H extends HTMLElement>
 export const CodeInput = <T extends FieldValues>(
   props: CodeTextAreaProps<T, HTMLTextAreaElement>,
 ) => {
-  const form = useFormContext<T>();
+    const textAreaId = makeValidId(props.localStorageKey.slice(0, 12))
+    const form = useFormContext<T>();
+        useEventListener("ulld-editor-close", () => {
+        document?.getElementById(textAreaId)?.focus()
+    })
   return (
+        <>
     <FormField
       control={form.control}
       name={props.name}
@@ -36,7 +52,8 @@ export const CodeInput = <T extends FieldValues>(
           <FormControl>
             <TextAreaCodeEditor
               {...props.editorProps}
-            localStorageKey={props.localStorageKey}
+              id={textAreaId}
+              localStorageKey={props.localStorageKey}
               value={form.watch(field.name) || ""}
               onChange={(s) =>
                 form.setValue(field.name, s as PathValue<T, Path<T>>)
@@ -48,7 +65,9 @@ export const CodeInput = <T extends FieldValues>(
           <FormMessage />
         </FormItem>
       )}
-    />
+     />
+        <DevTool control={form.control}/>
+    </>
   );
 };
 

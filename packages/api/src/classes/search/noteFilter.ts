@@ -1,11 +1,12 @@
 import {  Topic, Subject, Prisma } from "@prisma/client";
 import { DocTypes, ParsedAppConfig, getDocumentTypeConfig } from "@ulld/configschema";
 import { prisma } from "@ulld/database";
-import { SerializeMdxConfig } from "@ulld/parsers";
-import { SearchAllParams } from "@ulld/state";
-import { serverClient } from "../../trpc";
-import { PrismaMdxNoteSummaryOutput, MdxNote } from "../prismaMdxRelations";
-import { ArrayUtilities } from "@ulld/utilities";
+import type { SerializeMdxConfig } from "@ulld/parsers/mdx/types";
+import type { SearchAllParams } from "@ulld/state/searchParamSchemas/utilities/formatSearchAllParams";
+import { serverClient } from "../../trpc/serverClient";
+import { MdxNote } from "../prismaMdxRelations/MdxNote";
+import { PrismaMdxNoteSummaryOutput } from "../prismaMdxRelations/protocols/mdxNote";
+import { ArrayUtilities } from "@ulld/utilities/arrayUtils";
 import { ParsedMdxOutput, mdxNoteWithParsedLatex } from "../../schemas";
 
 

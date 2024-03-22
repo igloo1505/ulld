@@ -1,15 +1,5 @@
 {
     "extends": "@repo/typescript-config/nextjs.json",
-    "include": [
-        "./*/**.ts",
-        "./*/**.tsx",
-        "./modules.d.ts"
-    ],
-    "exclude": [
-        "dist",
-        "build",
-        "node_modules"
-    ],
     "compilerOptions": {
         "outDir": "dist",
         "jsx": "react-jsx",

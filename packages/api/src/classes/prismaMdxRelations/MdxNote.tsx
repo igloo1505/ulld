@@ -1,24 +1,31 @@
-import type { Prisma, MdxNote as PrismaMdxNote, Tag as PrismaTag, Topic as PrismaTopic, Subject as PrismaSubject, Definition as PrismaDefinition } from "@ulld/database"
-import { Subject } from "./subject"
-import { Topic } from "./topic"
-import { MdxNoteProtocol, prismaMdxNoteSummaryZodSchema, type PrismaMdxNoteSummary, type PrismaMdxNoteWithKeys, prismaMdxNoteSummaryZodSchemaPreOutput } from "./protocols/mdxNote"
-import { Tag } from "./tag"
-import { BibEntry, BibEntryPrismaAcceptedTypes } from "./BibEntry"
 import matter from "gray-matter"
-import { DocTypes, getInternalConfig, ParsedAppConfig, getNoteTypeFromPath, zodDocTypeInput, getRootRelativePath } from "@ulld/configschema"
-import { ZodFrontMatterOutput, zodFrontMatterObject, FrontMatterType, dateOrDefault, convertGithubUrlToRawContentUrl } from "@ulld/state"
-import { replaceRecursively, withForwardSlash } from "@ulld/utilities"
-import { Route } from "next"
-import { ParsableExtension, SequentialList, Definition } from "."
-import { ensureDate, IntriguingValueSummary } from ".."
-import { getUniversalQuery } from "../../actions"
-import { MdxNotePlainObject, mdxNoteZodObject, mdxNoteWithParsedLatex } from "../../schemas"
-import { serverClient, AutoSettingWithRegex } from "../../trpc"
-import { MdxNoteWithAll, ValueSearchTableItem } from "../../trpcTypes"
-import { universalStringToMathjax } from "@ulld/parsers"
-import { getFlatAutoSettings, globDoesMatch } from "../../trpcInternalMethods"
 import axios from "axios"
-
+import { Subject } from "./subject";
+import { Topic } from "./topic";
+import { MdxNoteProtocol, prismaMdxNoteSummaryZodSchema, PrismaMdxNoteSummary, PrismaMdxNoteWithKeys, prismaMdxNoteSummaryZodSchemaPreOutput } from "./protocols/mdxNote";
+import { Tag } from "./tag";
+import { BibEntry, BibEntryPrismaAcceptedTypes } from "./BibEntry";
+import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes";
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
+import { ParsedAppConfig } from "@ulld/configschema/types";
+import { getNoteTypeFromPath, getRootRelativePath } from "@ulld/configschema/configUtilityTypes/general";
+import { zodDocTypeInput } from "@ulld/configschema/zod/documentConfigSchema";
+import { ParsableExtension } from "./zod/general";
+import { SequentialList } from "./SequentialList";
+import { Definition } from "./definition";
+import { ensureDate } from "../data/calendarAndDate";
+import { IntriguingValueSummary } from "../search/noteFilter";
+import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
+import { MdxNotePlainObject, mdxNoteZodObject, mdxNoteWithParsedLatex } from "../../schemas/search/parsing";
+import { serverClient } from "../../trpc/serverClient";
+import { AutoSettingWithRegex } from "../../trpc/types.d";
+import { MdxNoteWithAll } from "../../trpcTypes/main";
+import { ValueSearchTableItem } from "../../trpcTypes/valueTableSearch";
+import { universalStringToMathjax } from "@ulld/parsers/universalStringToMdx";
+import { getFlatAutoSettings } from "../../trpcInternalMethods/settings/autoSettings/getFlattenedAutoSettings";
+import { globDoesMatch } from "../../trpcInternalMethods/settings/autoSettings/globDoesMatch";
+import { withForwardSlash } from "@ulld/utilities/utils/fsUtils";
+import { replaceRecursively } from "@ulld/utilities/utils/general";
 
 /* TODO: Create a field saving the components to include for each note based on a regex test ahead of time so this query doesn't need to be ran on each load. Make this optional in the appConfig */
 
@@ -540,7 +547,7 @@ ${m.groups.content}
         n.title = item.title
         n.firstSync = item.firstSync
         n.lastSync = item.lastSync
-        n.href = item.href as Route | undefined || undefined
+        n.href = item.href as string | undefined || undefined
         n.tags = item.tags ? item.tags.map((t) => new Tag(t.value)) : []
         n.citations = item.citations ? item.citations.map((t) => BibEntry.fromPrisma({ id: t.id as unknown as string })) : []
         n.sequentialIndex = item.sequentialIndex || undefined

@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import type { EditorLanguage } from 'monaco-editor/esm/metadata';
+import type { EditorLanguage } from './types';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@ulld/tailwind/select';
 import { supportedLanguages } from './staticData';
 

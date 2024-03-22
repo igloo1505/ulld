@@ -1,4 +1,4 @@
-import { FormField, FormItem, FormControl, FormLabel, FormDescription } from '@ulld/tailwind/form'
+import { FormField, FormItem, FormControl, FormLabel, FormDescription, FormMessage } from '@ulld/tailwind/form'
 import React from 'react'
 import { FieldValues, Path, PathValue, useFormContext } from 'react-hook-form'
 import { BaseFullFormInputProps } from './types'
@@ -24,7 +24,7 @@ export const NumberInput = <T extends FieldValues>({ label, desc, name, step, de
         <FormField
             control={form.control}
             name={name}
-            render={({ field }) => (
+            render={(fieldProps) => (
                 <FormItem>
                     {label && <FormLabel>
                         {label}
@@ -41,6 +41,7 @@ export const NumberInput = <T extends FieldValues>({ label, desc, name, step, de
                     {desc && <FormDescription>
                         {desc}
                     </FormDescription>}
+                      <FormMessage />
                 </FormItem>
             )}
         />

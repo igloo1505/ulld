@@ -1,4 +1,4 @@
-import type { Prisma, BibEntry as PrismaBibEntry } from "@ulld/database";
+import type { Prisma, BibEntry as PrismaBibEntry } from "@ulld/database/internalDatabaseTypes";
 import { CitationGroup } from "./CitationGroup";
 import { MdxNote } from "./MdxNote";
 import { BibEntryProps, BibEntryProtocol } from "./protocols/bibEntry";
@@ -7,10 +7,10 @@ import { Tag } from "./tag";
 import { BibCore } from "./Bib";
 import type { BibFilePresenter } from "bibtex";
 import Link from "next/link";
-import { formatSearchAllParams } from "@ulld/state";
-import { BibEntryReturned } from "../../trpcTypes";
-import { getUniversalQuery } from "../../actions";
-import { replaceRecursively } from "@ulld/utilities";
+import { formatSearchAllParams } from "@ulld/state/searchParamSchemas/utilities/formatSearchAllParams";
+import { BibEntryReturned } from "../../trpcTypes/main";
+import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
+import { replaceRecursively } from "@ulld/utilities/utils/general";
 
 export type BibEntryPrismaAcceptedTypes = BibEntry | PrismaBibEntry | Partial<PrismaBibEntry> & { id: string } | PartialReadingListEntry['bibEntries'][number]
 

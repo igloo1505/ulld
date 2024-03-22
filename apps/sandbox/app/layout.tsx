@@ -1,12 +1,13 @@
 import clsx from 'clsx'
 import "@ulld/tailwind/defaultStyles.scss"
-import "./styles.scss"
+import "./styles.css"
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
-import { AppConfigSchemaOutput, getInternalConfig } from '@ulld/configschema'
+import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
+import {AppConfigSchemaOutput } from "@ulld/configschema/zod/main"
 import React from 'react'
 /* import { RequireJsLoader } from "@ulld/utilities/loaders" */
-import { StateWrappedUI } from "@ulld/state/wrappers"
+import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI"
 import { Toaster } from "@ulld/tailwind/toaster"
 import { fontSans } from "@ulld/tailwind/defaultFont"
 import appConfig from "#/appConfig.ulld.json"

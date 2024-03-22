@@ -12,13 +12,6 @@ export interface AutoSettingType {
     value: string
 }
 
-export interface AutoSettingWithRegex {
-    id?: number
-    glob: RegExp
-    globString: string
-    type: autoSetting,
-    value: string
-}
 
 export const syncRouter = router({
     syncDir: publicProcedure.input(syncOptionsSchema.optional()).mutation(async ({ input }) => {

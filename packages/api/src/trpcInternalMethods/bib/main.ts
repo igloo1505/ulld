@@ -1,4 +1,5 @@
-import { prisma, Prisma } from "@ulld/database"
+import { prisma } from "@ulld/database/db"
+import { Prisma } from "@ulld/database/internalDatabaseTypes"
 
 export const getBibWithEntries = async (bibId?: number) => {
     let res1 = await prisma.bib.findFirst({

@@ -1,6 +1,0 @@
-export * from "./getDbAutosetting"
-export * from "./syncAutoSettings"
-export * from "./autoSettingEqualityTest"
-export * from "./getAutosettingWithRegex"
-export * from "./getFlattenedAutoSettings"
-export * from "./globDoesMatch"

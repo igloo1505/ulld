@@ -2,7 +2,7 @@
 import { store } from "../../state/store"
 import { setAllowTooltips } from "../../state/slices/settings"
 import {  showToast as _showToast } from "../../state/slices/ui"
-import {  copyStringToClipboard } from "@ulld/utilities/actions"
+import { copyStringToClipboard } from "@ulld/utilities/actions/copyStringToClipboard"
 
 
 export const panelEm = () => document.getElementById("sidebar-panel")

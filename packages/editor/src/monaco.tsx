@@ -1,7 +1,6 @@
 "use client"
 import React, { useState } from 'react'
 import MonacoEditor from '@monaco-editor/react'
-import type { EditorLanguage } from 'monaco-editor/esm/metadata';
 import "./styles.scss"
 import type { Monaco } from '@monaco-editor/react';
 import clsx from 'clsx';
@@ -10,6 +9,8 @@ import { MonacoProps, IEditor, EditorOptions, EditorLayout } from './types';
 import MonacoVimStatusBar from './statusBar';
 import CodeEditorLanguageSelect from './languageSelect';
 import { useLocalStorage } from '@ulld/hooks/useLocalStorage';
+import { applyLatexLsp } from './languages/latex';
+import {EditorLanguage} from "./types"
 
 
 const scriptPath = "/scripts/monaco-vim.js"
@@ -28,7 +29,7 @@ export type CodeEditorProps<T extends string, J extends EditorLayout> = {
     language?: EditorLanguage | "select"
     asModalChild?: boolean
     layout?: J
-    uniqueContentId: J extends "modal" ? string : never
+    uniqueContentId: J extends "modal" ? string : J extends "modalPageFailedIntercept" ? string : never
     useExisting?: boolean
     onAccept?: (val: T) => void
     onChange?: (val: T) => void
@@ -67,6 +68,7 @@ interface MonacoSetupProps<T extends string, J extends EditorLayout> {
 }
 
 const setupMonacoVim = <T extends string, J extends EditorLayout>(_editor: IEditor, monaco: Monaco, opts: MonacoSetupProps<T, J>) => {
+    applyLatexLsp(monaco)
     _editor.addAction({
         // an unique identifier of the contributed action
         id: "submit-monaco-modal",
@@ -106,7 +108,6 @@ const setupMonacoVim = <T extends string, J extends EditorLayout>(_editor: IEdit
             action?.run()
         }
     })
-
 
 
     window.require.config({
@@ -171,7 +172,17 @@ const [value, setValue] = useLocalStorage(props.uniqueContentId, _value || "", {
         "full-size-modal": {
         },
         "side-by-side": {
-        }
+        },
+        "modalPageFailedIntercept": {
+            ...universalOpts,
+            minimap: {
+                enabled: false
+            },
+            padding: {
+                top: 24,
+                bottom: 24,
+            }
+        },
     }
     const statusBarId = "ulld-monaco-vim-status"
     const [internalLanguage, setInternalLanguage] = useState(language === "select" ? "python" : language)

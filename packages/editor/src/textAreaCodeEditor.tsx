@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation"
 import dynamic from 'next/dynamic'
 import "@uiw/react-textarea-code-editor/dist.css";
 import { getEditorUrl } from './utilityFunctions';
+import {EditorModalSyncValueOpts} from "@ulld/hooks/useEditorModalSyncedValue"
 
 const CodeEditor = dynamic(
     () => import("@uiw/react-textarea-code-editor").then((mod) => mod.default),
@@ -20,26 +21,43 @@ export interface TextAreaCodeEditorProps extends Omit<React.TextareaHTMLAttribut
         light: string
         dark: string
     },
-    initializeLocalStorage?: boolean
 }
 
 
-export const TextAreaCodeEditor = ({ value = "", onChange, initializeLocalStorage = true, localStorageKey, language, themes = {
+export const TextAreaCodeEditor = ({ value = "", onChange, initialValueSource = "value", localStorageKey, language, themes = {
     dark: "dracula",
     light: "material-theme-lighter"
-}, className, ...props }: TextAreaCodeEditorProps) => {
+}, className, ...props }: TextAreaCodeEditorProps & EditorModalSyncValueOpts) => {
     const router = useRouter()
     const searchParams = useSearchParams()
+    const [isInitial, setIsInitial] = useState(true)
     const [internalLanguage, setInternalLanguage] = useState(language || "python")
     const [internalValue, setInternalValue] = useLocalStorage(localStorageKey, value, {
-        initializeWithValue: initializeLocalStorage
+        initializeWithValue:  initialValueSource === "storage"
     })
+
+    useEffect(() => {
+        if(!isInitial) return
+        if(initialValueSource === "storage"){
+            console.log(`useInitialLocalStorage`, internalValue)
+            onChange && onChange(internalValue)
+        } else {
+            console.log(`dont useInitialLocalStorage`)
+            setInternalValue(value)
+        }
+        setIsInitial(false)
+    }, [])
+
+    useEffect(() => {
+        console.log("internalValue: ", internalValue)
+       onChange && onChange(internalValue) 
+    }, [internalValue])
+
     useEffect(() => {
         let l = searchParams.get("language")
         if (l) {
             setInternalLanguage(l)
         }
-
     }, [searchParams])
 
     const handleChange = (val: string) => {

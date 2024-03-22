@@ -1,6 +1,6 @@
 import { ParsedAppConfig } from "@ulld/configschema";
 import { mdxNoteWithParsedLatex, mdxNoteZodObject } from "../../../schemas";
-import { AutoSettingWithRegex } from "../../../trpc";
+import { AutoSettingWithRegex } from "../../../trpc/types";
 import { MdxNoteWithAll } from "../../../trpcTypes";
 import type { MdxNote } from "../MdxNote";
 import { NoteBase } from "../NoteBase";

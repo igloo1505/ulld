@@ -1,5 +1,0 @@
-export * from "./flipCardFront"
-export * from "./flipCardBack"
-export * from "./clientFlipCard"
-export * from "./flipCardButtons"
-export * from "./flipCard"

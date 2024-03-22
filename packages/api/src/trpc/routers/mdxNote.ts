@@ -7,8 +7,8 @@ import {
     getRemoteMdxFromPathname,
     getFsMdx,
 } from "../../trpcInternalMethods";
-import { makeArrayTransform } from "@ulld/utilities";
-import { serializeMdxContent } from "@ulld/parsers";
+import { makeArrayTransform } from "@ulld/utilities/schemas/transforms";
+import { serializeMdxContent } from "@ulld/parsers/serializeMdxContent";
 
 const idOrIdArray = z
     .union([z.number().int(), z.number().int().array()])

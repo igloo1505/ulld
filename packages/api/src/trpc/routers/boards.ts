@@ -1,9 +1,11 @@
 import { z } from "zod";
 import { publicProcedure, router } from "../trpc";
-import { arrayTruthy } from "@ulld/utilities";
-import { prisma } from "@ulld/database";
-import { Tag, Subject, Topic } from "../../classes";
-import { createKanBanFormDataSchema } from "../../schemas";
+import { arrayTruthy } from "@ulld/utilities/booleanAndEqualities/arrayTruthy";
+import { prisma } from "@ulld/database/db";
+import {Tag} from "../../classes/prismaMdxRelations/tag"
+import {Topic} from "../../classes/prismaMdxRelations/topic"
+import {Subject} from "../../classes/prismaMdxRelations/subject"
+import { createKanBanFormDataSchema } from "../../schemas/boards/main";
 
 
 

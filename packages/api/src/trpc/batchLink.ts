@@ -1,9 +1,9 @@
-import { httpBatchLink } from "@trpc/client";
+import { httpBatchLink as hlink } from "@trpc/client";
 
-export const HttpBatchLink = (ctx?: any) => {
+export const httpBatchLink = (ctx?: any) => {
     if (ctx) {
         return [
-            httpBatchLink({
+            hlink({
                 url: "/api/trpc",
                 headers() {
                     if (!ctx?.req?.headers) {
@@ -19,7 +19,7 @@ export const HttpBatchLink = (ctx?: any) => {
         ]
     }
     return [
-        httpBatchLink({
+        hlink({
             url: "/api/trpc",
         })
     ]

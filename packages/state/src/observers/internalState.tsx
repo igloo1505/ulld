@@ -1,7 +1,7 @@
 "use client"
 import { usePathname } from "next/navigation"
 import { connect } from "react-redux"
-import { setInitialBrowserProps } from "../actions"
+import { setInitialBrowserProps } from "../actions/clientOnly/dom"
 import { setConfigState } from "../state/slices/config"
 import { setLocalSettings } from "../state/slices/settings"
 import { setDarkmode, showNoteSheet } from "../state/slices/ui"

@@ -3,17 +3,26 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    ".": "./src/index.ts"
-  },
-  "typesVersions": {
-    "*": {
-      "settings": [
-        "src/settings/index.ts"
-      ],
-      "mdx": [
-        "src/mdx/compiler/index.ts"
-      ]
-    }
+    ".": "./src/index.ts",
+    "./serializeMdxContent": "./src/mdx/compiler/main.ts",
+    "./mdxBeta": "./src/mdx/compiler/test.tsx",
+    "./universalStringToMdx": "./src/mdx/compiler/universalStringToMdx.tsx",
+    "./modules": "./src/modules.d.ts",
+    "./mdx/types": "./src/mdx/types.d.ts",
+    "./mdx/schemas": "./src/mdx/schemas.ts",
+    "./mdx/compiler/main": "./src/mdx/compiler/main.ts",
+    "./settings/settingsParser": "./src/settings/settingsParser.ts",
+    "./plugins/todos/main": "./src/plugins/todos/main.ts",
+    "./latex/latexToPdf": "./src/latex/latexToPdf.ts",
+    "./latex/zodLatexFieldSchema": "./src/latex/zodLatexFieldSchema.ts",
+    "./math/mathjaxNode": "./src/math/mathjaxNode.ts",
+    "./math/mathStringToLatex": "./src/math/mathStringToLatex.ts",
+    "./math/mathjaxParserOptionsParsing": "./src/math/mathjaxParserOptionsParsing.ts",
+    "./math/zodMathSchemas": "./src/math/zodMathSchemas.ts",
+    "./math/texToChtml": "./src/math/texToChtml.ts",
+    "./math/latex/parseLatex": "./src/math/latex/parseLatex.ts",
+    "./math/latex/genTikzImage": "./src/math/latex/genTikzImage.ts",
+    "./citations/formatCsl": "./src/citations/formatCsl.ts"
   },
   "files": [
     "dist",

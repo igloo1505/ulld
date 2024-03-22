@@ -1,12 +1,11 @@
 import type { editor } from 'monaco-editor';
 import type MonacoEditor from '@monaco-editor/react';
-import { EditorLanguage } from 'monaco-editor/esm/metadata';
+import { EditorLanguage as MonacoEditorLanguage } from 'monaco-editor/esm/metadata';
 
-
-
+export type EditorLanguage = MonacoEditorLanguage | "latex"
 export type IEditor = editor.IStandaloneCodeEditor
 export type EditorOptions = editor.IStandaloneEditorConstructionOptions
-
+export * from "@prisma/client"
 
 export type MonacoProps = React.ComponentProps<typeof MonacoEditor>
 
@@ -24,7 +23,8 @@ export type MonacoPageParams = {
 export enum EditorLayout {
     modal = "modal",
     fullSizeModal = "full-size-modal",
-    sideBySide = "side-by-side"
+    sideBySide = "side-by-side",
+    modalPageFailedIntercept = "modalPageFailedIntercept"
 }
 
 

@@ -9,16 +9,19 @@ import React, {
     useState,
 } from "react";
 import ConfirmModalPageClose from "./confirmModalPageClose";
+import { editorSaveKeydown } from "@ulld/state/listeners/keyDown";
 
 interface ModalPageContainerProps {
     children: React.ReactNode;
     confirmClose?: boolean;
+    closeEvent?: string
 }
 
 /* DOCUMENT: document the keyboard shortcut to close the modal page from the confirmation menu. */
 export const ModalPageContainer = ({
     children,
     confirmClose,
+    closeEvent
 }: ModalPageContainerProps) => {
     const router = useRouter();
     const overlay = useRef<HTMLDivElement>(null);
@@ -39,6 +42,10 @@ export const ModalPageContainer = ({
     const [locked, setLocked] = useLockBodyScroll(true);
 
     const onDismiss = useCallback(() => {
+        if(closeEvent){
+            let evt = new Event(closeEvent)
+            window?.dispatchEvent(evt)
+        }
         setLocked(false);
         router.back();
     }, [router, setLocked]);
@@ -59,17 +66,18 @@ export const ModalPageContainer = ({
             onDismiss();
         }
     };
+   const onKeyDown = editorSaveKeydown(handleDismiss, [onDismiss])
 
-    const onKeyDown = useCallback(
-        (e: KeyboardEvent) => {
-            if (e.code === "KeyS" && e.altKey) {
-                e.stopPropagation();
-                e.preventDefault();
-                handleDismiss();
-            }
-        },
-        [onDismiss],
-    );
+    /* const onKeyDown = useCallback( */
+    /*     (e: KeyboardEvent) => { */
+    /*         if (e.code === "KeyS" && e.altKey) { */
+    /*             e.stopPropagation(); */
+    /*             e.preventDefault(); */
+    /*             handleDismiss(); */
+    /*         } */
+    /*     }, */
+    /*     [onDismiss], */
+    /* ); */
 
     useEffect(() => {
         document.addEventListener("keydown", onKeyDown);

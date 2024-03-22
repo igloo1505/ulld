@@ -1,5 +1,0 @@
-export * from "./textConfig"
-export * from "./main"
-export * from "./tableConfig"
-export * from "./mediaConfig"
-export * from "./colorsConfig"

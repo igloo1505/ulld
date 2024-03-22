@@ -18,7 +18,7 @@ body {
   --sidebar-width: 64px;
   // TODO: Make sure this is being implemented on next build or dev server. This might be overridden by the later imported jupyter-ui css
   --jp-ui-font-size: 16px !important;
-  --jp-brand-color1: #6d27d9 !important;
+  --jp-brand-color1: hsl(var(--primary)) !important;
 }
 
 .shiki {

@@ -1,22 +1,14 @@
 {
-    "extends": "@repo/typescript-config/react-library.json",
-    "include": [
-        "./*/**.ts", "./*/**.tsx"
-    ],
-    "exclude": [
-        "dist",
-        "build",
-        "node_modules"
-    ],
-    "compilerOptions": {
+  "extends": "@repo/typescript-config/nextjs.json",
+  "include": ["./*/**.ts", "./*/**.tsx"],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
     "moduleResolution": "bundler",
-         "jsx": "react-jsx",
-        "paths": {
-            "#/*": [
-                "./src/*"
-            ]
-        },
-        "esModuleInterop": true,
-        "resolveJsonModule": true
-    }
+    "jsx": "react-jsx",
+    "paths": {
+      "#/*": ["./src/*"]
+    },
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  }
 }

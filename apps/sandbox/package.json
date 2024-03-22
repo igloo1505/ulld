@@ -38,6 +38,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.1",
     "react-mathquill": "^1.0.3",
+    "react-query-kit": "^1.4.8",
     "rehype-pretty-code": "^0.13.0",
     "sass": "^1.72.0",
     "shiki": "^1.1.7",

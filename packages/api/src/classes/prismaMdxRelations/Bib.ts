@@ -1,11 +1,11 @@
 import { type BibFilePresenter, parseBibFile } from "bibtex";
 import { BibEntry, type BibEntryDataTableOutput, type BibEntryPrismaAcceptedTypes } from "./BibEntry";
 import { BibProtocol } from "./protocols/bib";
-import type { Prisma } from '@ulld/database'
-import { ParsedAppConfig, getInternalConfig } from "@ulld/configschema";
-import { getUniversalQuery } from "../../actions";
-import { BibWithEntries } from "../../trpcInternalMethods";
-import { BibReturnType } from "../../trpcTypes";
+import type { Prisma } from '@ulld/database/internalDatabaseTypes'
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
+import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
+import { BibWithEntries } from "../../trpcInternalMethods/bib/main";
+import { BibReturnType } from "../../trpcTypes/main";
 
 
 interface IsbnQueryParams {

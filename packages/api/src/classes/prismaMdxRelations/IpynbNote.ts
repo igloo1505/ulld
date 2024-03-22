@@ -1,7 +1,7 @@
 import { ParsedAppConfig, getInternalConfig } from "@ulld/configschema";
-import { universalStringToMathjax } from "@ulld/parsers";
-import { getParentDirAndFilename } from "@ulld/utilities";
-import { getUniversalQuery } from "../../actions";
+import { universalStringToMathjax } from "@ulld/parsers/universalStringToMdx";
+import { getParentDirAndFilename } from "@ulld/utilities/fsUtils";
+import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
 import { BibEntry, BibEntryPrismaAcceptedTypes } from "./BibEntry";
 import { IpynbPrismaReturnType, IpynbProtocol } from "./protocols/ipynbProtocol";
 import { ReadingList } from "./readingList";

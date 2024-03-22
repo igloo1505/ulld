@@ -10,6 +10,9 @@
   },
   "exports": {
     "./numberInput": "./src/numberInput.tsx",
+    "./textInput": "./src/fullFormTextInput.tsx",
+    "./textArea": "./src/fullFormTextArea.tsx",
+    "./mathInput": "./src/fullFormMathInput.tsx",
     "./codeTextArea": "./src/codeTextArea.tsx",
     "./types": "./src/types.ts",
     "./provider": "./src/fullFormProvider.tsx",
@@ -63,5 +66,8 @@
     "tailwindcss-debug-screens": "^2.2.1",
     "zod": "^3.22.4"
   },
-  "packageManager": "pnpm@8.15.4"
+  "packageManager": "pnpm@8.15.4",
+  "devDependencies": {
+    "@hookform/devtools": "^4.3.1"
+  }
 }

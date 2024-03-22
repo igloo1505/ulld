@@ -1,4 +1,4 @@
-import { zodOptBool, zodOptStr, zodOptNum } from '@ulld/utilities'
+import { zodOptBool, zodOptStr, zodOptNum } from '@ulld/utilities/schemas/utility'
 import { z } from 'zod'
 
 

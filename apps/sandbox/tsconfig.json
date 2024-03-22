@@ -1,19 +1,17 @@
 {
   "extends": "@repo/typescript-config/nextjs.json",
-  "include": [
-      "./*/**.ts",
-      "./*/**.tsx",
-      ".next/types/**/*.ts",
-      "tailwind.config.ts"
-  ],
   "compilerOptions": {
-    "baseUrl": ".",
-    "isolatedModules": true,
-    "moduleResolution": "bundler",
-    "esModuleInterop": true,
     "paths": {
-      "#/*": ["./*"]
+      "#/*": [
+        "./*"
+      ]
     },
     "incremental": true
-  }
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }
