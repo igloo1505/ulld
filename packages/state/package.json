@@ -58,6 +58,7 @@
     "./actions/confirmation/confirmationModalConfig": "./src/actions/confirmation/confirmationModalConfig.ts",
     "./listeners/resize": "./src/listeners/resize.ts",
     "./listeners/keydown": "./src/listeners/keydown.ts",
+    "./listeners/keyDown": "./src/listeners/keydown.ts",
     "./wrappers/stateWrappedUI": "./src/wrappers/stateWrappedUI.tsx",
     "./wrappers/ReduxProvider": "./src/wrappers/ReduxProvider.tsx",
     "./classes/ui/resizePanelHandler": "./src/classes/ui/resizePanelHandler.tsx",

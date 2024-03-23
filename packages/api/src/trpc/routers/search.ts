@@ -5,8 +5,7 @@ import { prisma } from "@ulld/database/db";
 import { DictionaryDefinitionReturnType,  dictionaryDefinitionReturnType } from "../../schemas/dictionary/main";
 import { TagTopicSubjectList } from "../../schemas/taggable/tagTopicSubjectList";
 import { getUniqueTags, getUniqueSubjects, getUniqueTopics } from "../../trpcInternalMethods/taggable/getUniqueTaggables";
-import { NoteFilter } from "../../classes/search/noteFilter";
-import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
+// import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 
 
 
@@ -118,10 +117,11 @@ export const advancedSearchRouter = router({
             notebook: nb
         }
     }),
-    searchAllByText: publicProcedure.input(z.string()).query(async ({input}) => {
-        const qm = new NoteFilter("all", {query: input })
-            const config = getInternalConfig()
-            await qm.getResults(config)
-        return qm.flattenForClient()
-    })
+    // FIX: Move most of this NoteFilter class to the searchParam zod model with functions to apply each searchParam to various Prisma FindMany objects
+    // searchAllByText: publicProcedure.input(z.string()).query(async ({input}) => {
+        // const qm = new NoteFilter("all", {query: input })
+            // const config = getInternalConfig()
+            // await qm.getResults(config)
+        // return qm.flattenForClient()
+    // })
 })

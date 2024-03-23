@@ -1,7 +1,7 @@
 import { prisma } from "@ulld/database/db";
 import { texToChtml } from "@ulld/parsers/math/texToChtml";
 import { zodMdxFieldSchema } from "@ulld/parsers/latex/zodLatexFieldSchema";
-import {  mathjaxParserOptionsSchema } from "@ulld/parsers/math/mathjaxParserOptionsParsing";
+import { mathjaxParserOptionsSchema } from "@ulld/parsers/math/mathjaxParserOptionsParsing";
 import { serializeMdxContent } from "@ulld/parsers/mdx/compiler/main";
 import { arrayTruthy } from "@ulld/utilities/booleanAndEqualities/arrayTruthy";
 import { addEquationSchema } from "../../schemas/formTrpcRelationships/addEquation";

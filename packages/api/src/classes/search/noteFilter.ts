@@ -1,6 +1,6 @@
-import {  Topic, Subject, Prisma } from "@prisma/client";
+import { Topic, Subject, Prisma } from "@ulld/database/internalDatabaseTypes";
 import { getDocumentTypeConfig } from "@ulld/configschema/configUtilityTypes/general";
-import {  ParsedAppConfig } from "@ulld/configschema/types"
+import { ParsedAppConfig } from "@ulld/configschema/types"
 import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes"
 import { prisma } from "@ulld/database/db";
 import type { SerializeMdxConfig } from "@ulld/parsers/mdx/types";

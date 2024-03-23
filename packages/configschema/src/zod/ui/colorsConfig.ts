@@ -132,4 +132,6 @@ const configColors = z.union([
     z.string()
 ])
 
+export type ConfigColorKey = z.input<typeof configColors>
+
 export const colorsConfigSchema = z.record(configColors, colorValue).default({})

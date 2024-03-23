@@ -1,7 +1,6 @@
 "use client";
 import React, {useEffect} from "react";
 import { useDebounceMdxParse } from "@ulld/hooks/useDebounceMdxParse";
-import { client } from "@ulld/api/client";
 import clsx from "clsx";
 
 interface MdxLivePreviewPanelProps {

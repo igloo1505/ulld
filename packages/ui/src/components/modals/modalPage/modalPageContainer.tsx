@@ -9,7 +9,7 @@ import React, {
     useState,
 } from "react";
 import ConfirmModalPageClose from "./confirmModalPageClose";
-import { editorSaveKeydown } from "@ulld/state/listeners/keyDown";
+import { editorSaveKeydown } from "@ulld/hooks/useEditorSaveListener";
 
 interface ModalPageContainerProps {
     children: React.ReactNode;
