@@ -1,7 +1,7 @@
 import { Prisma } from "@prisma/client"
-import { getRandomId } from "@ulld/utilities"
-import { prisma } from "@ulld/database"
-import type { qaInputSchemaTrpc } from "../../schemas"
+import {getRandomId} from "@ulld/utilities/utils/identity"
+import { prisma } from "@ulld/database/db"
+import type { qaInputSchemaTrpc } from "../../schemas/qaItem/main"
 import { output } from 'zod'
 
 

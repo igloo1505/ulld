@@ -1,5 +1,5 @@
 import {z} from 'zod'
-import {makeArrayTransform} from "@ulld/utilities"
+import {makeArrayTransform} from "@ulld/utilities/schemas/transforms"
 import { paginationProps, sortDirProps } from '../pagination/main'
 
 const equationOrderBy = z.union([

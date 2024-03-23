@@ -1,6 +1,8 @@
-import { ParsedAppConfig, getInternalConfig, ParsableExtensions } from '@ulld/configschema'
+import { ParsedAppConfig } from "@ulld/configschema/types"
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig"
+import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions"
 import fs from 'fs'
-import { getRootRelativePathSchema } from '../../schemas'
+import { getRootRelativePathSchema } from '../../schemas/filesystem/rootRelativePathSchema'
 
 
 

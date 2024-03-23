@@ -1,5 +1,5 @@
-import type { Prisma } from '@prisma/client'
-import { prisma } from '@ulld/database'
+import type { Prisma } from '@ulld/database/internalDatabaseTypes'
+import { prisma } from '@ulld/database/db'
 
 
 

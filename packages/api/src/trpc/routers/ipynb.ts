@@ -1,8 +1,9 @@
 import { z } from "zod"
 import { publicProcedure, router } from "../trpc"
 import fs from 'fs'
-import { prisma } from "@ulld/database"
-import { getRemoteIpynbFromPathname, getRootRelativePathsOfFiletype } from "../../trpcInternalMethods"
+import { prisma } from "@ulld/database/db"
+import { getRemoteIpynbFromPathname } from "../../trpcInternalMethods/notes/ipynb/main"
+import {getRootRelativePathsOfFiletype} from "../../trpcInternalMethods/filesystem/getRootRelativePathsOfFiletype"
 
 
 

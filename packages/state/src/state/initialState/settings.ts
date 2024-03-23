@@ -1,4 +1,5 @@
-import { Settings } from '@ulld/database/prisma'
+import { Settings } from '@ulld/database/internalDatabaseTypes'
+
 export type LocalSettingsType = Omit<Settings, "id" | "lastSync" | "firstSync"> & { id?: number }
 
 

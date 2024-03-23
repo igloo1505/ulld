@@ -1,7 +1,7 @@
-import { BibReturnType } from "../../../trpcTypes";
+import { BibReturnType } from "../../../trpcTypes/main";
 import type { BibCore } from "../Bib";
 import type { PrismaMdxRelationshipProtocol } from "../type";
-import type { Prisma, BibEntry as PrismaBibEntries } from "@ulld/database"
+import type { Prisma, BibEntry as PrismaBibEntries } from "@ulld/database/internalDatabaseTypes"
 
 
 

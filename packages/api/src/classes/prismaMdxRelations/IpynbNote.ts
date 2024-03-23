@@ -1,13 +1,14 @@
-import { ParsedAppConfig, getInternalConfig } from "@ulld/configschema";
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
+import { ParsedAppConfig } from "@ulld/configschema/types";
 import { universalStringToMathjax } from "@ulld/parsers/universalStringToMdx";
-import { getParentDirAndFilename } from "@ulld/utilities/fsUtils";
+import { getParentDirAndFilename } from "@ulld/utilities/utils/fsUtils";
 import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
 import { BibEntry, BibEntryPrismaAcceptedTypes } from "./BibEntry";
 import { IpynbPrismaReturnType, IpynbProtocol } from "./protocols/ipynbProtocol";
 import { ReadingList } from "./readingList";
 import { Tag } from "./tag";
 import { Topic } from "./topic";
-import { Prisma } from '@ulld/database'
+import { Prisma } from '@ulld/database/internalDatabaseTypes'
 
 
 export interface IpynbNoteParams {

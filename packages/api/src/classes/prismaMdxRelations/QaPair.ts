@@ -1,5 +1,5 @@
 import { Prisma } from '@prisma/client'
-import { prisma } from '@ulld/database'
+import { prisma } from '@ulld/database/db'
 import { serverLogger } from '@ulld/logger/server'
 
 

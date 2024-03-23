@@ -1,5 +1,5 @@
-import { prisma } from "@ulld/database";
-import { settingsChangeSchema } from "../../schemas";
+import { prisma } from "@ulld/database/db";
+import { settingsChangeSchema } from "../../schemas/settings/settingsChangeSchema";
 import { publicProcedure, router } from "../trpc";
 import { z } from 'zod'
 

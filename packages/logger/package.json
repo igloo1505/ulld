@@ -2,11 +2,10 @@
   "name": "@ulld/logger",
   "version": "0.0.0",
   "private": true,
-  "module": "./src/index.mjs",
-  "types": "./src/index.d.ts",
+  "types": "./src/index.ts",
   "exports": {
-    "./server": "./src/server/index.ts",
-    "./client": "./src/client/index.ts"
+    "./server": "./src/server/logger.ts",
+    "./client": "./src/client/logger.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",

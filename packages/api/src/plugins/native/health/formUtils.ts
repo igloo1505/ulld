@@ -1,8 +1,8 @@
 import { HealthReport, Prisma } from "@prisma/client"
-import { prisma } from "@ulld/database"
-import { zodTertiaryToggleSchema } from "@ulld/utilities"
+import { prisma } from "@ulld/database/db"
+import { zodTertiaryToggleSchema } from "@ulld/utilities/defaults/prisma/commonZodFields"
 import { ZodDate, ZodOptional, ZodRawShape, ZodString, ZodUnion, z } from "zod"
-import { HealthDashboardSearchParams, DateInput } from "."
+import { HealthDashboardSearchParams, DateInput } from "./reportUtilities"
 
 
 export const dietFormFieldValues = {

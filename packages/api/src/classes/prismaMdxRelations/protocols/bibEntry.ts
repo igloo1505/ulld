@@ -1,4 +1,4 @@
-import { BibEntryReturned, BibReturnType } from "../../../trpcTypes";
+import { BibEntryReturned, BibReturnType } from "../../../trpcTypes/main";
 import { BibCore } from "../Bib";
 import { BibEntry, BibEntryDataTableOutput, BibEntryPrismaAcceptedTypes } from "../BibEntry";
 import { CitationGroup } from "../CitationGroup";
@@ -6,7 +6,7 @@ import { MdxNote } from "../MdxNote";
 import { ReadingList } from "../readingList";
 import { Tag } from "../tag";
 import { PrismaMdxRelationshipProtocol } from "../type";
-import { Prisma } from "@ulld/database"
+import { Prisma } from "@ulld/database/internalDatabaseTypes"
 
 
 

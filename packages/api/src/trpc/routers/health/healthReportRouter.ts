@@ -1,9 +1,10 @@
 import { z } from "zod";
 import { Prisma } from "@prisma/client"
-import { prisma } from "@ulld/database";
-import { publicProcedure, router } from "../..";
-import { getHealthDashboardData, healthDashboardSchema, healthReportFormFieldBackend } from "../../../plugins";
-import { healthReportViewSearchParams, getReportSummaryQueryProps } from "../../../trpcInternalMethods";
+import { prisma } from "@ulld/database/db";
+import { publicProcedure, router } from "../../trpc";
+import { getHealthDashboardData, healthReportFormFieldBackend } from "../../../plugins/native/health/formUtils";
+import {  healthDashboardSchema } from "../../../plugins/native/health/reportUtilities";
+import { healthReportViewSearchParams, getReportSummaryQueryProps } from "../../../trpcInternalMethods/plugins/native/health/main";
 
 
 

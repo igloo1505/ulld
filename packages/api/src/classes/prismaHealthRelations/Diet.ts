@@ -1,4 +1,4 @@
-import { TERTIARY_TOGGLE } from "@ulld/database"
+import { TERTIARY_TOGGLE } from "@ulld/database/internalDatabaseTypes"
 import { TimePeriod } from "@ulld/state/classes/general/timePeriod"
 import { serverClient } from "../../trpc/serverClient"
 

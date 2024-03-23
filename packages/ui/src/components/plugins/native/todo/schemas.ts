@@ -1,22 +1,12 @@
 import { z } from 'zod'
 import dayjs from 'dayjs'
-import { Prisma, TaskCategory, ToDoListStatus } from '@ulld/api'
-import { serverClient } from '@ulld/api'
+import { Prisma, TaskCategory, ToDoListStatus } from '@ulld/database/internalDatabaseTypes'
+import { serverClient } from '@ulld/api/serverClient'
 
 
 export type ToDoPageData = Awaited<ReturnType<typeof serverClient.toDo.getToDos>>
 
 export const zodArrayUnion = <T extends string | number>(t: ReturnType<typeof z.string> | ReturnType<typeof z.number>) => z.union([t, t.array()]).transform((a): T[] => Array.isArray(a) ? a as T[] : [a] as T[]).default([])
-
-export const getToDoSearchParams = z.object({
-    // editing: z.string().optional(),
-    listNames: zodArrayUnion<string>(z.string()).optional(),
-    listIds: zodArrayUnion<number>(z.coerce.number()).optional(),
-    showCompleted: z.union([z.string(), z.boolean()]).optional().transform((s) => typeof s === "boolean" ? s : s === "true")
-})
-
-export type ToDoSearchParamInput = z.input<typeof getToDoSearchParams>
-export type ToDoSearchParams = z.output<typeof getToDoSearchParams>
 
 export const defaultToDoListName = "ToDo's"
 

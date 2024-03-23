@@ -1,8 +1,9 @@
 import { z } from "zod"
 import { publicProcedure, router } from "../trpc"
-import { prisma } from "@ulld/database"
-import { SnippetCreateInputObjectSchema, snippetFilterSchema } from "../../schemas"
-import { saveSnippet } from "../../trpcInternalMethods"
+import { prisma } from "@ulld/database/db"
+import { SnippetCreateInputObjectSchema } from "../../schemas/snippets/main"
+import {  snippetFilterSchema } from "../../schemas/snippets/filterSchema"
+import { saveSnippet } from "../../trpcInternalMethods/snippets/main"
 
 export const snippetRouter = router({
     saveSnippet: publicProcedure.input(SnippetCreateInputObjectSchema).mutation(async (opts) => {

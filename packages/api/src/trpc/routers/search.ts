@@ -1,11 +1,12 @@
-import { defaultFindRemoteMdxArgs } from "@ulld/utilities";
+import { defaultFindRemoteMdxArgs } from "@ulld/utilities/defaults/prisma/notes"
 import { publicProcedure, router } from "../trpc";
 import { z } from 'zod'
-import { prisma } from "@ulld/database";
-import { DictionaryDefinitionReturnType, TagTopicSubjectList, dictionaryDefinitionReturnType } from "../../schemas";
-import { getUniqueTags, getUniqueSubjects, getUniqueTopics } from "../../trpcInternalMethods";
-import { NoteFilter } from "../../classes";
-import { getInternalConfig } from "@ulld/configschema";
+import { prisma } from "@ulld/database/db";
+import { DictionaryDefinitionReturnType,  dictionaryDefinitionReturnType } from "../../schemas/dictionary/main";
+import { TagTopicSubjectList } from "../../schemas/taggable/tagTopicSubjectList";
+import { getUniqueTags, getUniqueSubjects, getUniqueTopics } from "../../trpcInternalMethods/taggable/getUniqueTaggables";
+import { NoteFilter } from "../../classes/search/noteFilter";
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 
 
 

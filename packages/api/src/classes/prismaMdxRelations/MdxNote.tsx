@@ -2,6 +2,7 @@ import matter from "gray-matter"
 import axios from "axios"
 import { Subject } from "./subject";
 import { Topic } from "./topic";
+import {MdxNote as PrismaMdxNote, Subject as PrismaSubject, Tag as PrismaTag, Topic as PrismaTopic} from "@ulld/database/internalDatabaseTypes"
 import { MdxNoteProtocol, prismaMdxNoteSummaryZodSchema, PrismaMdxNoteSummary, PrismaMdxNoteWithKeys, prismaMdxNoteSummaryZodSchemaPreOutput } from "./protocols/mdxNote";
 import { Tag } from "./tag";
 import { BibEntry, BibEntryPrismaAcceptedTypes } from "./BibEntry";
@@ -26,6 +27,11 @@ import { getFlatAutoSettings } from "../../trpcInternalMethods/settings/autoSett
 import { globDoesMatch } from "../../trpcInternalMethods/settings/autoSettings/globDoesMatch";
 import { withForwardSlash } from "@ulld/utilities/utils/fsUtils";
 import { replaceRecursively } from "@ulld/utilities/utils/general";
+import { Prisma } from "@prisma/client";
+import { ZodFrontMatterOutput, zodFrontMatterObject, FrontMatterType } from "@ulld/state/classes/frontMatter/zodFrontMatterObject";
+import {dateOrDefault, convertGithubUrlToRawContentUrl} from "@ulld/state/formatting/general"
+
+
 
 /* TODO: Create a field saving the components to include for each note based on a regex test ahead of time so this query doesn't need to be ran on each load. Make this optional in the appConfig */
 

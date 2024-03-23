@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { Prisma, Technologies } from "@prisma/client"
+import { Prisma, Technologies } from "@ulld/database/internalDatabaseTypes"
 
 
 export const SnippetCreatekeywordsInputObjectSchema: z.ZodType<Prisma.SnippetCreatekeywordsInput> = z

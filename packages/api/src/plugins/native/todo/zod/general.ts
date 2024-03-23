@@ -1,7 +1,7 @@
-import { ToDoListStatus, TaskCategory } from '@ulld/database'
+import { ToDoListStatus, TaskCategory } from '@ulld/database/internalDatabaseTypes'
 import { z } from 'zod'
-import { tagTopicSubjectList } from '../../../../schemas'
-import { dateZodProperty } from '@ulld/utilities'
+import { tagTopicSubjectList } from '../../../../schemas/taggable/tagTopicSubjectList'
+import { dateZodProperty } from '@ulld/utilities/utils/dates'
 const label = z.string().min(3).max(50)
 const priority = z.coerce.number().int().min(0).max(10).default(5)
 const dueAt = dateZodProperty.optional().nullable()

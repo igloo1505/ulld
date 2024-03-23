@@ -1,6 +1,6 @@
-import { HealthReport } from '@ulld/database'
+import { HealthReport } from '@ulld/database/internalDatabaseTypes'
 import { z } from 'zod'
-import { serverClient } from '../../../trpc'
+import { serverClient } from '../../../trpc/serverClient'
 
 export interface DateInput {
     month: number

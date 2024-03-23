@@ -1,4 +1,4 @@
-import { serverClient } from "../trpc"
+import { serverClient } from "../trpc/serverClient"
 
 export type MdxNoteWithAll = Awaited<ReturnType<typeof serverClient.mdx.getRemoteMdx | typeof serverClient.mdx.getRemoteMdxFromPathname>>
 export type ReadingListReturned = Awaited<ReturnType<typeof serverClient.readingList.getReadingListContent>>

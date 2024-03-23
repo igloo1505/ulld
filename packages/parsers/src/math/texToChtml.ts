@@ -1,4 +1,4 @@
-import {stringHasLatex} from "@ulld/utilities"
+import {stringHasLatex} from "@ulld/utilities/utils/latexUtils"
 import { JSDOM } from 'jsdom';
 import { jsdomAdaptor } from 'mathjax-full/js/adaptors/jsdomAdaptor.js'
 import { AllPackages } from 'mathjax-full/js/input/tex/AllPackages.js';

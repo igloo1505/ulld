@@ -1,8 +1,8 @@
-import { ParsedAppConfig } from "@ulld/configschema";
+import { ParsedAppConfig } from "@ulld/configschema/types";
 import type { MdxNote } from "../MdxNote";
 import type { Topic } from "../topic";
 import type { PrismaMdxRelationshipProtocol } from "../type";
-import type { Prisma, Topic as PrismaTopic } from "@prisma/client"
+import type { Prisma, Topic as PrismaTopic } from "@ulld/database/internalDatabaseTypes"
 
 
 export interface TopicWithNoteIds extends PrismaTopic {

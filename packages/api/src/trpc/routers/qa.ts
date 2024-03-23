@@ -1,9 +1,9 @@
 import { Prisma } from "@prisma/client"
 import { z } from "zod"
 import { publicProcedure, router } from "../trpc"
-import { prisma } from "@ulld/database"
-import { saveQaItem } from "../../trpcInternalMethods"
-import { qaInputSchemaTrpc } from "../../schemas"
+import { prisma } from "@ulld/database/db"
+import { saveQaItem } from "../../trpcInternalMethods/qaItem/saveQaItem"
+import { qaInputSchemaTrpc } from "../../schemas/qaItem/main"
 
 
 export const qaRouter = router({

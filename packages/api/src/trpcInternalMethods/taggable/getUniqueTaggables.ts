@@ -1,4 +1,4 @@
-import { prisma } from "@ulld/database"
+import { prisma } from "@ulld/database/db"
 
 
 export const getUniqueTags = async (): Promise<string[]> => {

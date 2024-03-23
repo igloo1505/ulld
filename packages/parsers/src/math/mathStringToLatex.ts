@@ -1,6 +1,5 @@
-import { compileSassString, wrapCssWithSpecifier } from ".."
+import { compileSassString, wrapCssWithSpecifier } from "../sass/compiler/main"
 import { MathjaxParserParams } from "./mathjaxParserOptionsParsing"
-// import { texToChtml } from "./texToChtml"
 
 
 export const mathStringToLatex = async (content: string, parserOptions: MathjaxParserParams, appendStylesToId?: string, appendStylesToClass?: string) => {

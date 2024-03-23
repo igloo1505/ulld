@@ -1,6 +1,6 @@
 import { SequentialList } from "../SequentialList";
 import { PrismaMdxRelationshipProtocol } from "../type";
-import type { Prisma, SequentialNoteList } from "@ulld/database"
+import type { Prisma, SequentialNoteList } from "@ulld/database/internalDatabaseTypes"
 
 export abstract class SequentialListProtocol implements PrismaMdxRelationshipProtocol<Prisma.SequentialNoteListDelegate> {
     abstract createArgs(): Prisma.SequentialNoteListCreateArgs

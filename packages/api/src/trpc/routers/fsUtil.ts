@@ -1,10 +1,12 @@
 import { z } from "zod"
 import { publicProcedure, router } from "../trpc"
 import fs from 'fs'
-import { getInternalConfig, ParsableExtensions, currentParsableExtensions } from "@ulld/configschema"
-import { getRootRelativePathSchema } from "../../schemas"
-import { checkParsableFiletypesAtPath, getRootRelativePathsOfFiletype, clearTempDir } from "../../trpcInternalMethods"
-
+import { currentParsableExtensions, ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions"
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig"
+import { getRootRelativePathSchema } from "../../schemas/filesystem/rootRelativePathSchema"
+import { getRootRelativePathsOfFiletype } from "../../trpcInternalMethods/filesystem/getRootRelativePathsOfFiletype"
+import { checkParsableFiletypesAtPath } from "../../trpcInternalMethods/filesystem/checkParsableFiletypesAtPath"
+import { clearTempDir } from "../../trpcInternalMethods/filesystem/clearTempDir"
 
 
 

@@ -1,4 +1,4 @@
-import { prisma } from "@ulld/database"
+import { prisma } from "@ulld/database/db"
 import { getConfigAutoSettings } from "./getAutosettingWithRegex"
 
 

@@ -6,6 +6,7 @@ import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
 import { BibWithEntries } from "../../trpcInternalMethods/bib/main";
 import { BibReturnType } from "../../trpcTypes/main";
+import { ParsedAppConfig } from "@ulld/configschema/types";
 
 
 interface IsbnQueryParams {

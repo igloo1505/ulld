@@ -1,6 +1,7 @@
 {
     "extends": "@repo/typescript-config/nextjs.json",
     "compilerOptions": {
+        "moduleResolution": "bundler",
         "outDir": "dist",
         "jsx": "react-jsx",
         "paths": {
@@ -10,7 +11,7 @@
         },
         "esModuleInterop": true,
         "resolveJsonModule": true,
-        "declarationMap": true,
-        "noEmit": false
+        // "declarationMap": true,
+        "noEmit": true
     }
 }

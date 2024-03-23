@@ -1,8 +1,8 @@
-import { ParsedAppConfig } from "@ulld/configschema"
+import { ParsedAppConfig } from "@ulld/configschema/types"
 import { serverLogger } from "@ulld/logger/server"
-import { AutoSettingWithRegex } from "../../../trpc"
-import { MdxNote } from "../../../classes"
-import { prisma } from "@ulld/database"
+import { AutoSettingWithRegex } from "../../../trpc/types"
+import { MdxNote } from "../../../classes/prismaMdxRelations/MdxNote"
+import { prisma } from "@ulld/database/db"
 
 
 

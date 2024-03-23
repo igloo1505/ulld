@@ -1,4 +1,4 @@
-import { TagResponseType, ValidityResponse, SubjectResponseType, TopicResponseType } from "."
+import { TagResponseType, ValidityResponse, SubjectResponseType, TopicResponseType } from "./types"
 
 
 export const databaseCleanValidityCheck = {

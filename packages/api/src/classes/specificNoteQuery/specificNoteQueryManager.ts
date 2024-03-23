@@ -1,9 +1,13 @@
 import { cookies } from "next/headers";
 import { documentConfigMap } from "./documentConfigMap";
-import { ParsableExtensions, DocTypes, DocumentTypeConfig, getInternalConfig, ParsedAppConfig } from "@ulld/configschema";
-import { SearchAllParams } from "@ulld/state";
-import { ensureAbsolute } from "@ulld/utilities";
-import { serverClient } from "../../trpc";
+import { serverClient } from "../../trpc/serverClient";
+import { ParsedAppConfig } from "@ulld/configschema/types";
+import { DocumentTypeConfig } from "@ulld/configschema/zod/documentConfigSchema";
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
+import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
+import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes"
+import {SearchAllParams} from "@ulld/state/searchParamSchemas/utilities/formatSearchAllParams"
+import {ensureAbsolute} from "@ulld/utilities/utils/fsUtils"
 
 
 type NotePropertiesOutput = ({

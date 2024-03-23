@@ -1,7 +1,7 @@
-import type { Prisma, ReadingList as PrismaReadingList, BibEntry as PrismaBibEntry } from "@prisma/client"
+import type { Prisma, ReadingList as PrismaReadingList, BibEntry as PrismaBibEntry } from "@ulld/database/internalDatabaseTypes"
 import { ReadingListProtocol } from "./protocols/readingList"
 import { BibEntry, BibEntryPrismaAcceptedTypes } from "./BibEntry";
-import { readingListZodObject } from "../../schemas";
+import { readingListZodObject } from "../../schemas/search/parsing";
 
 
 export interface PartialReadingListEntry {

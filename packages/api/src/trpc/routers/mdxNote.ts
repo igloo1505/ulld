@@ -1,12 +1,16 @@
 import { z } from "zod";
 import { publicProcedure, router } from "../trpc";
-import { markdownExtensions } from "@ulld/configschema";
-import { prisma } from "@ulld/database";
+import { markdownExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
+import { prisma } from "@ulld/database/db";
 import {
     getRemoteMdx,
+} from "../../trpcInternalMethods/notes/mdx/getRemoteMdx";
+import {
     getRemoteMdxFromPathname,
+} from "../../trpcInternalMethods/notes/mdx/getRemoteMdxFromPathname";
+import {
     getFsMdx,
-} from "../../trpcInternalMethods";
+} from "../../trpcInternalMethods/filesystem/fsnotes";
 import { makeArrayTransform } from "@ulld/utilities/schemas/transforms";
 import { serializeMdxContent } from "@ulld/parsers/serializeMdxContent";
 

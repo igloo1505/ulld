@@ -1,11 +1,12 @@
 import fs from 'fs'
-import { Prisma, prisma } from "@ulld/database"
+import {  prisma } from "@ulld/database/db"
+import { Prisma } from "@ulld/database/internalDatabaseTypes"
 import { saveMdxNote } from "./saveMdxNote"
 import { updateMdxNote } from "./updateMdx"
-import { MdxNote } from '../../../classes'
-import { SyncOptions } from '../../../schemas'
-import { AutoSettingWithRegex } from '../../../trpc'
-import { getInternalConfig } from '@ulld/configschema'
+import { MdxNote } from '../../../classes/prismaMdxRelations/MdxNote'
+import { SyncOptions } from '../../../schemas/syncing/syncOptions'
+import { AutoSettingWithRegex } from '../../../trpc/types'
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 
 
 

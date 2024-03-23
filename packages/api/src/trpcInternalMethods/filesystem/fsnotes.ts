@@ -2,7 +2,9 @@ import "server-only"
 import path from 'path'
 import fs from 'fs'
 import {checkExistsOfAllParsableTypes} from "../filesystem/fsUtils"
-import { ParsedAppConfig, getInternalConfig, ParsableExtensions } from "@ulld/configschema"
+import { ParsedAppConfig } from "@ulld/configschema/types"
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig"
+import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions"
 
 
 

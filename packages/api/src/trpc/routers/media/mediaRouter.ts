@@ -1,8 +1,8 @@
 
 import { z } from "zod"
 import { publicProcedure, router } from "../../trpc"
-import { getImagesInDir } from "../../../trpcInternalMethods"
-import { prisma } from "@ulld/database"
+import { getImagesInDir } from "../../../trpcInternalMethods/filesystem/getImagesInDir"
+import { prisma } from "@ulld/database/db"
 
 
 export const mediaRouter = router({

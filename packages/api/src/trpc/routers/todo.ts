@@ -1,10 +1,11 @@
 import { Subject, Tag, Topic, Prisma } from "@prisma/client";
 import { publicProcedure, router } from "../trpc";
 import { z } from 'zod'
-import { ArrayUtilities, TaskListIds } from "@ulld/utilities";
-import { addTodoListSchema, todoListAddTaskSchemaTrpc } from "../../plugins";
-import { prisma } from "@ulld/database";
-import { getToDoSearchParams, getParsedToDoSearchParams, todoStatusChangeSchema, todoStatusDueAtSchema, todoListNameSchema, zodArrayUnion, todoPriorityChangeSchema, parseTodoLists, taskIdItemSchema } from "@ulld/parsers";
+import {  TaskListIds } from "@ulld/utilities/types/todos";
+import { ArrayUtilities } from "@ulld/utilities/utils/arrayUtilities";
+import { addTodoListSchema, todoListAddTaskSchemaTrpc } from "../../plugins/native/todo/zod/general";
+import { prisma } from "@ulld/database/db";
+import { getToDoSearchParams, getParsedToDoSearchParams, todoStatusChangeSchema, todoStatusDueAtSchema, todoListNameSchema, zodArrayUnion, todoPriorityChangeSchema, parseTodoLists, taskIdItemSchema } from "@ulld/parsers/plugins/todos";
 
 
 

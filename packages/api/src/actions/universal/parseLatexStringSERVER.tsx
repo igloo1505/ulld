@@ -1,8 +1,8 @@
-import { mathjaxParserOptionsSchema } from "@ulld/parsers"
+import { mathjaxParserOptionsSchema } from "@ulld/parsers/math/mathjaxParserOptionsParsing"
 import { z } from "zod"
-import { serverClient } from "../../trpc"
+import { serverClient } from "../../trpc/serverClient"
 import { AppendStyleSheet } from "./appendStyleSheet"
-import { getRandomId } from "@ulld/utilities"
+import { getRandomId } from "@ulld/utilities/utils/identity"
 import React from "react"
 
 interface ParseLatexStringProps {

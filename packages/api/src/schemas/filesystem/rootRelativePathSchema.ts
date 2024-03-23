@@ -1,4 +1,4 @@
-import { setSlashes } from "@ulld/utilities"
+import { setSlashes } from "@ulld/utilities/utils/fsUtils"
 import { z } from "zod"
 
 

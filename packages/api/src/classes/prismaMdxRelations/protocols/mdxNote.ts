@@ -1,11 +1,11 @@
-import { ParsedAppConfig } from "@ulld/configschema";
-import { mdxNoteWithParsedLatex, mdxNoteZodObject } from "../../../schemas";
+import { ParsedAppConfig } from "@ulld/configschema/types";
+import { mdxNoteWithParsedLatex, mdxNoteZodObject } from "../../../schemas/search/parsing";
 import { AutoSettingWithRegex } from "../../../trpc/types";
-import { MdxNoteWithAll } from "../../../trpcTypes";
+import { MdxNoteWithAll } from "../../../trpcTypes/main";
 import type { MdxNote } from "../MdxNote";
 import { NoteBase } from "../NoteBase";
 import type { PrismaMdxRelationshipProtocol } from "../type";
-import type { Prisma, MdxNote as PrismaMdxNote } from "@ulld/database"
+import type { Prisma, MdxNote as PrismaMdxNote } from "@ulld/database/internalDatabaseTypes"
 import { z } from 'zod'
 
 

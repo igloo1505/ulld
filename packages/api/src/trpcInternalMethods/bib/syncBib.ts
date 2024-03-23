@@ -3,10 +3,10 @@ import '@citation-js/plugin-bibtex'
 import { parseBibFile } from 'bibtex'
 import path from 'path'
 import fs from 'fs'
-import { getInternalConfig } from '@ulld/configschema'
-import { BibEntry } from '../../classes'
-import { getFormattedCslCitation } from '@ulld/parsers'
-import { prisma } from '@ulld/database'
+import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
+import { BibEntry } from '../../classes/prismaMdxRelations/BibEntry'
+import { getFormattedCslCitation } from '@ulld/parsers/citations/formatCsl'
+import { prisma } from '@ulld/database/db'
 
 
 

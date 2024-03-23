@@ -2,8 +2,10 @@ import { autoSetting } from "@prisma/client"
 import { autoSettingEquality } from "./autoSettingEqualityTest"
 import { getDbAutoSettings } from "./getDbAutosetting"
 import globToRegExp from "glob-to-regexp"
-import { ParsedAppConfig, getInternalConfig } from "@ulld/configschema"
-import { AutoSettingWithRegex, AutoSettingType } from "../../../trpc"
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
+import { ParsedAppConfig } from "@ulld/configschema/types"
+import { AutoSettingType } from "../../../trpc/routers/sync";
+import { AutoSettingWithRegex } from "../../../trpc/types";
 
 
 export const getConfigAutoSettings = (_config?: ParsedAppConfig) => {

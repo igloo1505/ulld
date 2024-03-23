@@ -1,5 +1,5 @@
-import { prisma } from "@ulld/database";
-import { MDXSerializeReturnType, serializeMdxContent } from "@ulld/parsers/mdx";
+import { prisma } from "@ulld/database/db";
+import { MDXSerializeReturnType, serializeMdxContent } from "@ulld/parsers/mdx/compiler/main";
 import { publicProcedure, router } from "../trpc";
 import { z } from 'zod'
 

@@ -5,8 +5,10 @@ import type { calendar_v3 } from "googleapis"
 import { CalendarAndDateManager } from "./calendarAndDate";
 import { CalendarEvent } from './CalendarEvent'
 import { EventInput } from '@fullcalendar/core/index.js';
-import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema';
-import { CalendarOptions, AddCalendarEventFormType, CalendarOptionsZod, CalendarSortOptions } from '.';
+import { ParsedAppConfig } from '@ulld/configschema/types';
+import {  getInternalConfig } from '@ulld/configschema/zod/getInternalConfig';
+// import { CalendarOptions, AddCalendarEventFormType, CalendarOptionsZod, CalendarSortOptions } from './calendarAndDate';
+import { CalendarOptions, AddCalendarEventFormType, CalendarOptionsZod, CalendarSortOptions } from './googleCalendarTypes';
 
 
 

@@ -1,6 +1,7 @@
-import { ParsedAppConfig, getInternalConfig } from "@ulld/configschema";
+import { ParsedAppConfig } from "@ulld/configschema/types";
+import {  getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { MdxNote } from "../MdxNote";
-import type { Prisma } from '@prisma/client'
+import type { Prisma } from '@ulld/database/internalDatabaseTypes'
 
 
 export const mdxNoteArrayToConnectOrCreate = (notes: MdxNote[], config?: ParsedAppConfig) => {

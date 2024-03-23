@@ -1,7 +1,7 @@
-import { CitationGroupReturned } from "../../../trpcTypes";
+import { CitationGroupReturned } from "../../../trpcTypes/main";
 import type { CitationGroup } from "../CitationGroup";
 import type { PrismaMdxRelationshipProtocol } from "../type";
-import type { Prisma } from "@ulld/database"
+import type { Prisma } from "@ulld/database/internalDatabaseTypes"
 
 
 

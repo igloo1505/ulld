@@ -1,21 +1,24 @@
-import { prisma } from "@ulld/database";
-import { zodMdxFieldSchema, mathjaxParserOptionsSchema, texToChtml } from "@ulld/parsers";
-import { serializeMdxContent } from "@ulld/parsers/mdx";
-import { arrayTruthy } from "@ulld/utilities";
-import { addEquationSchema } from "../../schemas";
+import { prisma } from "@ulld/database/db";
+import { texToChtml } from "@ulld/parsers/math/texToChtml";
+import { zodMdxFieldSchema } from "@ulld/parsers/latex/zodLatexFieldSchema";
+import {  mathjaxParserOptionsSchema } from "@ulld/parsers/math/mathjaxParserOptionsParsing";
+import { serializeMdxContent } from "@ulld/parsers/mdx/compiler/main";
+import { arrayTruthy } from "@ulld/utilities/booleanAndEqualities/arrayTruthy";
+import { addEquationSchema } from "../../schemas/formTrpcRelationships/addEquation";
 import { publicProcedure, router } from "../trpc";
 import { Prisma } from "@prisma/client"
 import * as z from 'zod'
-import { equationSearchParamsSchema, getPaginationParams } from "@ulld/state";
+import { getPaginationParams } from "@ulld/state/searchParamSchemas/pagination/main";
+import { equationSearchParamsSchema } from "@ulld/state/searchParamSchemas/equations/main";
 
 
-const getCssCompiler = async () => await import("@ulld/parsers").then((a) => ({
+const getCssCompiler = async () => await import("@ulld/parsers/sassCompiler").then((a) => ({
     compileSassString: a.compileSassString,
     wrapCssWithSpecifier: a.wrapCssWithSpecifier
 }))
 
 
-const getMathStringToLatex = async () => await import("@ulld/parsers").then((a) => a.mathStringToLatex)
+const getMathStringToLatex = async () => await import("@ulld/parsers/math/mathStringToLatex").then((a) => a.mathStringToLatex)
 
 
 export const equationsRouter = router({

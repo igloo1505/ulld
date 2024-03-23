@@ -1,4 +1,5 @@
-import { prisma, autoSetting } from "@ulld/database"
+import { prisma } from "@ulld/database/db"
+import { autoSetting } from "@ulld/database/internalDatabaseTypes"
 
 
 

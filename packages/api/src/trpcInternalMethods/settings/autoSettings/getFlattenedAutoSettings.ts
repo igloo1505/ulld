@@ -1,5 +1,6 @@
-import { ParsedAppConfig, getInternalConfig } from "@ulld/configschema"
-import { AutoSettingWithRegex } from "../../../trpc/routers"
+import { ParsedAppConfig } from "@ulld/configschema/types"
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
+import { AutoSettingWithRegex } from "../../../trpc/types";
 
 
 export const getFlatAutoSettings = (autoSettings: AutoSettingWithRegex[], _config?: ParsedAppConfig) => {

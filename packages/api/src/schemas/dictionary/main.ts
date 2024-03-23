@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { zodMdxFieldSchemaOptional } from "@ulld/parsers"
+import { zodMdxFieldSchemaOptional } from "@ulld/parsers/latex/zodLatexFieldSchema"
 
 
 export const dictionaryDefinitionReturnType = z.object({

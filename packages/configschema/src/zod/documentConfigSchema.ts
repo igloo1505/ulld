@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import {  zodPathWithGlobField, zodWithForwardSlashTransform } from './configUtilitySchemas'
-import {  withForwardSlash } from '@ulld/utilities/fsUtils'
-import {  makeValidId } from '@ulld/utilities/identity'
+import { withForwardSlash } from '@ulld/utilities/utils/fsUtils'
+import { makeValidId } from '@ulld/utilities/utils/identity'
 
 
 const parsableSearchParam = z.union([

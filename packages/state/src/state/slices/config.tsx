@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { AppConfigSchemaOutput } from "@ulld/configschema";
+import {AppConfigSchemaOutput } from "@ulld/configschema/zod/main"
 import { initialState } from "../initialState/initialState";
 
 

@@ -1,5 +1,6 @@
 import{z} from 'zod'
-import { zodDocTypeInput, internalDocTypes } from "../zod"
+import { zodDocTypeInput } from '../zod/documentConfigSchema'
+import { internalDocTypes } from '../zod/internalDocumentTypes'
 
 
 

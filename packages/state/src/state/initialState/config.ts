@@ -1,4 +1,5 @@
-import { AppConfigSchemaOutput } from "@ulld/configschema";
+import {AppConfigSchemaOutput } from "@ulld/configschema/zod/main"
+
 
 
 

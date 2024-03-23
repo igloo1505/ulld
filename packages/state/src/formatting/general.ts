@@ -1,4 +1,4 @@
-import { replaceRecursively } from "@ulld/utilities"
+import { replaceRecursively } from "@ulld/utilities/utils/general";
 import dayjs from "dayjs"
 
 

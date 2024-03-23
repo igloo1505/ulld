@@ -1,4 +1,5 @@
-import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema'
+import {  getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
+import { ParsedAppConfig } from '@ulld/configschema/types'
 import fs from 'fs'
 import path from 'path'
 

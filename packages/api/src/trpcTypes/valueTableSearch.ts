@@ -1,4 +1,4 @@
-import { DocTypes } from "@ulld/configschema"
+import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes"
 
 export interface ValueSearchTableItem {
     href: string

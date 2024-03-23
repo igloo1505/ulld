@@ -1,7 +1,7 @@
-import { latexStringToPdf, latexStringToPdfPropSchema } from "@ulld/parsers";
+import { latexStringToPdf, latexStringToPdfPropSchema } from "@ulld/parsers/latex/latexToPdf";
 import { publicProcedure, router } from "../trpc";
-import { zodSerializeMdxInputSchema } from "../../schemas";
-import { serializeMdxContent } from "@ulld/parsers/mdx";
+import { zodSerializeMdxInputSchema } from "../../schemas/contentParsing/mdx";
+import { serializeMdxContent } from "@ulld/parsers/mdx/compiler/main";
 
 
 export const parsingProcedure = router({

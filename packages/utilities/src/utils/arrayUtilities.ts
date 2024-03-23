@@ -1,4 +1,4 @@
-import { Tag, Topic, Subject, Prisma } from "@ulld/database";
+import { Tag, Topic, Subject, Prisma } from "@ulld/database/internalDatabaseTypes";
 import { Row } from "@tanstack/react-table";
 
 // TEST:  Test this properly asap.

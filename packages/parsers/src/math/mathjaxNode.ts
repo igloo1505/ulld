@@ -7,7 +7,7 @@ import { AssistiveMmlHandler } from 'mathjax-full/js/a11y/assistive-mml.js'
 import { AllPackages } from 'mathjax-full/js/input/tex/AllPackages.js'
 import { JSDOM } from 'jsdom';
 import { MathjaxParserParams, texToChtml } from '.'
-import { stringHasLatex } from '@ulld/utilities'
+// import { stringHasLatex } from '@ulld/utilities'
 
 
 const adaptor = jsdomAdaptor(JSDOM);

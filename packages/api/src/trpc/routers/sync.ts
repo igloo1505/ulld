@@ -1,9 +1,23 @@
 import { autoSetting } from "@prisma/client";
 import { publicProcedure, router } from "../trpc";
-import { getInternalConfig } from "@ulld/configschema";
-import { syncOptionsSchema } from "../../schemas";
-import { cleanDatabase, getAutoSettingsWithRegex, syncAutoSettings, syncBib, syncDirRecursively, syncConfig, backupSettings, backupEquations, backupSnippets, backupQAPairAndExams, backupAutoSettings, backupReadingLists, backupBib, backupGoogleAuth, backupQuotes, dailyFocus } from "../../trpcInternalMethods";
-
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
+import { syncOptionsSchema } from "../../schemas/syncing/syncOptions";
+import { syncBib } from "../../trpcInternalMethods/bib/syncBib";
+import { getAutoSettingsWithRegex } from "../../trpcInternalMethods/settings/autoSettings/getAutosettingWithRegex";
+import { syncAutoSettings } from "../../trpcInternalMethods/settings/autoSettings/syncAutoSettings";
+import { syncDirRecursively } from "../../trpcInternalMethods/syncing/mdx/syncDirRecursively";
+import { cleanDatabase } from "../../trpcInternalMethods/maintenance/cleanDatabase";
+import { syncConfig } from "../../trpcInternalMethods/syncing/config/syncConfig";
+import { backupEquations } from "../../trpcInternalMethods/backup/nonFileSystem/equations"
+import { backupSnippets } from "../../trpcInternalMethods/backup/nonFileSystem/snippets"
+import { backupQAPairAndExams } from "../../trpcInternalMethods/backup/nonFileSystem/qa"
+import { backupSettings } from "../../trpcInternalMethods/backup/nonFileSystem/settings"
+import { backupAutoSettings } from "../../trpcInternalMethods/backup/nonFileSystem/autoSettings"
+import { backupReadingLists } from "../../trpcInternalMethods/backup/nonFileSystem/readingLists"
+import { backupBib } from "../../trpcInternalMethods/backup/nonFileSystem/bib"
+import { backupGoogleAuth } from "../../trpcInternalMethods/backup/nonFileSystem/googleAuth"
+import { backupQuotes } from "../../trpcInternalMethods/backup/nonFileSystem/quotes"
+import { dailyFocus } from "../../trpcInternalMethods/backup/nonFileSystem/dailyFocus"
 
 export interface AutoSettingType {
     id?: number

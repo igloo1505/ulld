@@ -1,6 +1,6 @@
-import { zodMdxBlockStringSchema, zodMdxInlineStringSchema } from "@ulld/parsers"
+import { zodMdxBlockStringSchema, zodMdxInlineStringSchema } from "@ulld/parsers/math/zodMathSchemas"
 import { z } from "zod"
-import { serverClient } from "../../trpc"
+import { serverClient } from "../../trpc/serverClient"
 
 
 

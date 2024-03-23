@@ -1,4 +1,6 @@
-import { ParsedAppConfig, ColorGroup, getInternalConfig } from '@ulld/configschema'
+import { ParsedAppConfig } from '@ulld/configschema/types'
+import {  ColorGroup } from '@ulld/configschema/zod/ui/colorsConfig'
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import fs from 'fs'
 import handlebars from "handlebars"
 import path from 'path'
@@ -23,7 +25,7 @@ const cssTemplate = `
 type UIConfig = NonNullable<ParsedAppConfig["UI"]>
 
 
-const getColorCss = (k: keyof UIConfig["colors"], color: ColorGroup["dark"], template: HandlebarsTemplateDelegate<any>) => {
+const getColorCss = (k: keyof UIConfig["colors"], color: NonNullable<ColorGroup>["dark"], template: HandlebarsTemplateDelegate<any>) => {
     return template({
         KEY: k,
         MAIN: color?.main,

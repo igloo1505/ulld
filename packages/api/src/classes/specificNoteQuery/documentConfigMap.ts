@@ -1,4 +1,7 @@
-import { DocTypes, DocumentTypeConfig, ParsedAppConfig } from "@ulld/configschema"
+import {  ParsedAppConfig } from "@ulld/configschema/types"
+import { DocumentTypeConfig } from "@ulld/configschema/zod/documentConfigSchema"
+import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes"
+
 
 
 type ConfigMap = { [k in DocTypes]: DocumentTypeConfig }

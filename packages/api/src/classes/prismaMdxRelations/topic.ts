@@ -1,9 +1,10 @@
-import type { Prisma, Topic as PrismaTopic, MdxNote as PrismaMdxNote } from "@ulld/database"
+import type { Prisma, Topic as PrismaTopic, MdxNote as PrismaMdxNote } from "@ulld/database/internalDatabaseTypes"
 import { TopicProtocol } from "./protocols/topic";
 import { MdxNote } from "./MdxNote";
 import { mdxNoteArrayToConnectOrCreate } from "./utilities/conversionUtilities";
-import { ParsedAppConfig, getInternalConfig } from "@ulld/configschema";
-import { MdxNoteWithAll } from "../../trpcTypes";
+import { ParsedAppConfig } from "@ulld/configschema/types";
+import {  getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
+import { MdxNoteWithAll } from "../../trpcTypes/main";
 
 
 export class Topic extends TopicProtocol {

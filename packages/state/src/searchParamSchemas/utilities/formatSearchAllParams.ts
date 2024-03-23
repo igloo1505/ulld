@@ -1,5 +1,5 @@
 import { autoSetting } from "@prisma/client"
-import { DocTypes } from "@ulld/configschema"
+import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes"
 import {Route} from "next"
 
 

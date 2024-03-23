@@ -1,12 +1,16 @@
-import { ReadingList } from '@prisma/client'
-import { tagZodObject, topicZodObject, subjectZodObject, zodDocTypeInput } from '@ulld/configschema'
-import { zodFrontMatterObject } from '@ulld/state'
-import { WithoutFunctions, ZodFriendly, zodCoerceToDate, zodOptStr, zodOptNum, zodOptBool } from '@ulld/utilities'
+import { ReadingList } from '@ulld/database/internalDatabaseTypes'
 import dayjs from 'dayjs'
 import { Route } from 'next'
 import { z } from 'zod'
-import { MdxNote, BibEntry, zodFileExtensionInput } from '../../classes'
-import { zodMdxFieldSchema } from '@ulld/parsers'
+import { MdxNote } from '../../classes/prismaMdxRelations/MdxNote'
+import { BibEntry } from '../../classes/prismaMdxRelations/BibEntry'
+import { zodFileExtensionInput } from '../../classes/prismaMdxRelations/zod/general'
+import { tagZodObject, topicZodObject, subjectZodObject } from '@ulld/configschema/configUtilityTypes/docTypes'
+import { zodDocTypeInput } from '@ulld/configschema/zod/documentConfigSchema'
+import { zodMdxFieldSchema } from '@ulld/parsers/latex/zodLatexFieldSchema'
+import { zodCoerceToDate, zodOptStr, zodOptNum, zodOptBool } from '@ulld/utilities/schemas/utility'
+import {zodFrontMatterObject} from "@ulld/state/classes/frontMatter/zodFrontMatterObject"
+import {WithoutFunctions, ZodFriendly} from "@ulld/utilities/types/utilityTypes"
 
 
 

@@ -5,8 +5,12 @@ import utc from 'dayjs/plugin/utc';
 import relativeTime from 'dayjs/plugin/relativeTime'
 import duration from 'dayjs/plugin/duration'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
-import { ParsedAppConfig, getInternalConfig, TimeDisplayType } from '@ulld/configschema';
-import { replaceRecursively } from '@ulld/utilities';
+import { ParsedAppConfig } from '@ulld/configschema/types';
+import {  getInternalConfig } from '@ulld/configschema/zod/getInternalConfig';
+import { TimeDisplayType } from '@ulld/configschema/zod/dateParseConfig';
+import { replaceRecursively } from "@ulld/utilities/utils/general";
+
+
 dayjs.extend(customParseFormat)
 dayjs.extend(duration)
 dayjs.extend(relativeTime)

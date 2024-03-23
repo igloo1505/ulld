@@ -1,5 +1,5 @@
 import { z } from "zod"
-import {Prisma} from "@ulld/database"
+import {Prisma} from "@ulld/database/internalDatabaseTypes"
 
 
 

@@ -1,5 +1,5 @@
+import { Prisma } from "@ulld/database/internalDatabaseTypes"
 
-import { Prisma } from "@ulld/database"
 
 
 export const defaultFindRemoteMdxArgs: { include: Prisma.MdxNoteInclude } = {

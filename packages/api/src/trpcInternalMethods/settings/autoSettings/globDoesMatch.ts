@@ -1,4 +1,4 @@
-import { ParsedAppConfig } from "@ulld/configschema"
+import { ParsedAppConfig } from "@ulld/configschema/types"
 import globToRegExp from "glob-to-regexp"
 
 export const globDoesMatch = (glob: string, path: string, _config: ParsedAppConfig) => {

@@ -1,7 +1,8 @@
 import { z } from 'zod'
-import { Prisma, TaskCategory, ToDoListStatus, prisma } from "@ulld/database"
+import { Prisma, TaskCategory, ToDoListStatus } from "@ulld/database/internalDatabaseTypes"
+import { prisma } from "@ulld/database/db"
 import dayjs from 'dayjs'
-import { topicZodObject, subjectZodObject, tagZodObject } from '@ulld/configschema'
+import { topicZodObject, subjectZodObject, tagZodObject } from '@ulld/configschema/configUtilityTypes/docTypes'
 import { zodCoerceToDate, zodOptBool, zodOptNum } from '@ulld/utilities/schemas/utility'
 
 

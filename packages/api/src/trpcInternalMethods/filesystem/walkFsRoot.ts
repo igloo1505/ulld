@@ -1,7 +1,8 @@
 import path from 'path'
 import fs from 'fs'
 import { shouldIgnorePath } from "./shouldIgnoreFilepath";
-import { ParsedAppConfig } from '@ulld/configschema';
+import { ParsedAppConfig } from '@ulld/configschema/types';
+
 
 
 

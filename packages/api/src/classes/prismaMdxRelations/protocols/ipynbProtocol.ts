@@ -1,8 +1,8 @@
-import { serverClient } from "../../../trpc";
+import { serverClient } from "../../../trpc/serverClient";
 import { IpynbNote } from "../IpynbNote";
 import { NoteBase } from "../NoteBase";
 import { PrismaMdxRelationshipProtocol } from "../type";
-import { Prisma } from "@ulld/database"
+import { Prisma } from "@ulld/database/internalDatabaseTypes"
 
 
 export type IpynbPrismaReturnType = Awaited<ReturnType<typeof serverClient["ipynb"]["getPrismaIpynb"]>>

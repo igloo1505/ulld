@@ -1,4 +1,5 @@
-import { ParsableExtensions, getInternalConfig } from "@ulld/configschema"
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
+import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions"
 import { walkFsRoot } from "./walkFsRoot"
 
 

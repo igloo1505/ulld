@@ -1,11 +1,11 @@
 import fs from 'fs'
 import path from 'path'
 import { syncMdx } from "./syncMdx";
-import { getInternalConfig } from '@ulld/configschema';
-import { shouldIgnorePath } from '../..';
-import { SyncOptions } from '../../../schemas';
-import { AutoSettingWithRegex } from '../../../trpc';
-import { prisma } from '@ulld/database';
+import { shouldIgnorePath } from '../../../trpcInternalMethods/filesystem/shouldIgnoreFilepath'
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
+import { SyncOptions } from '../../../schemas/syncing/syncOptions';
+import { AutoSettingWithRegex } from '../../../trpc/types';
+import { prisma } from '@ulld/database/db';
 
 
 

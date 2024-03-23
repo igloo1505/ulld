@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { zodPathStringField } from "../configUtilitySchemas";
-import { defaultImageMap } from "../../staticData";
+import { defaultImageMap } from "../../staticData/defaultImageMap";
 
 
 export const mediaConfigSchema = z.object({

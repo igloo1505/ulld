@@ -3,7 +3,7 @@ import '@citation-js/plugin-csl'
 import '@citation-js/plugin-bibtex'
 import fs from 'fs'
 import path from 'path'
-import { getInternalConfig } from '@ulld/configschema'
+import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
 
 
 let useUserDefined = false
