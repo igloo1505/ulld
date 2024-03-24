@@ -1,5 +1,5 @@
-import { paginationProps, sortDirProps } from '@ulld/state'
-import { ArrayUtilities } from '@ulld/utilities'
+import { paginationProps, sortDirProps } from '@ulld/state/searchParamSchemas/pagination/main'
+import { ArrayUtilities } from '@ulld/utilities/arrayUtilities'
 import { z } from 'zod'
 
 export enum EquationOrderBy {

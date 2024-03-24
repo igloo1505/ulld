@@ -2,10 +2,13 @@
 import clsx from 'clsx'
 import React, { useMemo, useState } from 'react'
 import CurrentFilterValuesDisplay from './currentFilterValuesDisplay'
-import { Button, Label, Separator, Slider } from '@ulld/tailwind/base'
-import { PracticeExamSearchParams } from '@ulld/state'
+import { Button } from '@ulld/tailwind/button'
+import { Label } from '@ulld/tailwind/label'
+import { Separator } from '@ulld/tailwind/separator'
+import { Slider } from '@ulld/tailwind/slider'
 import { DynamicIcon } from '../../icons/DynamicIcon'
 import AutocompleteInput from '../../inputs/autocomplete/autocompleteInput'
+import { PracticeExamSearchParams } from "@ulld/state/formatting/getPracticeExamSearchParams"
 
 
 

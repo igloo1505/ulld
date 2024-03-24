@@ -1,10 +1,9 @@
-import { CalendarAndDateManager } from '@ulld/api'
-import { NoteTypeOverviewList } from '@ulld/state'
-import { Card, CardHeader, CardTitle, CardDescription } from '@ulld/tailwind/base'
+import { CalendarAndDateManager } from '@ulld/api/classes/data/calendarAndDate'
+import { Card, CardHeader, CardTitle, CardDescription } from '@ulld/tailwind/card'
 import { Route } from 'next'
 import Link from 'next/link'
 import React from 'react'
-
+import {NoteTypeOverviewList} from "@ulld/state/formatting/formatLocationData"
 
 interface LocationCardProps {
     item: NoteTypeOverviewList[number]

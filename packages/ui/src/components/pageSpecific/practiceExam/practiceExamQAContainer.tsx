@@ -1,5 +1,5 @@
 "use client"
-import type { serverClient } from '@ulld/api'
+import type { serverClient } from '@ulld/api/serverClient'
 import React, { useState } from 'react'
 
 

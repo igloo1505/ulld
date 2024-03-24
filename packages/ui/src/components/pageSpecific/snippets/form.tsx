@@ -1,61 +1,88 @@
-"use client"
-import React from 'react'
-import { Prisma } from '@prisma/client'
-import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage, Form, Button, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Textarea, Input, Badge, useToast } from '@ulld/tailwind/base'
-import { UseFormReturn } from 'react-hook-form'
-import { DevTool } from "@hookform/devtools"
-import { client } from '@ulld/api'
-import { onEnter } from '@ulld/state'
-import { FullFormCodeEditorWithModal } from '../../menus/fullForm/fullFormCodeEditor'
-import { technologiesNameMap } from '@ulld/utilities'
+"use client";
+import React from "react";
+import { Prisma } from "@ulld/database/internalDatabaseTypes";
+import {
+    FormField,
+    FormItem,
+    FormLabel,
+    FormControl,
+    FormDescription,
+    FormMessage,
+    Form,
+} from "@ulld/tailwind/form";
+import { Button } from "@ulld/tailwind/button";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@ulld/tailwind/select";
+import { Textarea } from "@ulld/tailwind/textarea";
+import { Input } from "@ulld/tailwind/input";
+import { Badge } from "@ulld/tailwind/badge";
+import { useToast } from "@ulld/tailwind/use-toast";
+import { UseFormReturn } from "react-hook-form";
+import { DevTool } from "@hookform/devtools";
+import { client } from "@ulld/api/client";
+import { onEnter } from "@ulld/state/listeners/keydown";
+import { FullFormCodeEditorWithModal } from "../../menus/fullForm/fullFormCodeEditor";
+import {technologiesNameMap}  from "@ulld/utilities/schemas/code/technologiesNameMap"
 
 
 
-
-type FormType = UseFormReturn<Required<Prisma.SnippetCreateInput> & {
-    keywordInput?: string | undefined
-    id?: number
-}, any, undefined>
+type FormType = UseFormReturn<
+    Required<Prisma.SnippetCreateInput> & {
+        keywordInput?: string | undefined;
+        id?: number;
+    },
+    any,
+    undefined
+>;
 
 interface AddSnippetFormProps {
-    form: FormType
+    form: FormType;
 }
 
-
-
 const AddSnippetForm = ({ form }: AddSnippetFormProps) => {
-    const { toast } = useToast()
+    const { toast } = useToast();
     const handleSubmit = async () => {
-        let data = form.getValues()
-        delete data.keywordInput
-        let success = await client.snippets.saveSnippet.mutate(data)
+        let data = form.getValues();
+        delete data.keywordInput;
+        let success = await client.snippets.saveSnippet.mutate(data);
         if (success) {
             if (data.id) {
                 /* router. */
             } else {
-                form.reset()
+                form.reset();
                 toast({
                     title: "Success",
                     description: "Snippet was added successfully",
-                })
+                });
             }
         }
-    }
+    };
 
     const getKeywords = (): string[] => {
-        return form.getValues("keywords") as string[]
-    }
+        return form.getValues("keywords") as string[];
+    };
 
     const appendKeyword = () => {
-        const currentValue = getKeywords() || [] as string[]
-        form.setValue("keywords", [...currentValue, form.getValues("keywordInput") || ""])
-        form.setValue("keywordInput", "")
-    }
+        const currentValue = getKeywords() || ([] as string[]);
+        form.setValue("keywords", [
+            ...currentValue,
+            form.getValues("keywordInput") || "",
+        ]);
+        form.setValue("keywordInput", "");
+    };
 
     const removeKeyword = (content: string) => {
-        const currentValue = getKeywords() || []
-        form.setValue("keywords", currentValue.filter((f: string) => f !== content))
-    }
+        const currentValue = getKeywords() || [];
+        form.setValue(
+            "keywords",
+            currentValue.filter((f: string) => f !== content),
+        );
+    };
 
     return (
         <Form {...form}>
@@ -68,13 +95,24 @@ const AddSnippetForm = ({ form }: AddSnippetFormProps) => {
                             <FormItem>
                                 <FormLabel>Language</FormLabel>
                                 <FormControl>
-                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <Select
+                                        onValueChange={field.onChange}
+                                        defaultValue={field.value}
+                                    >
                                         <SelectTrigger>
                                             <SelectValue placeholder="Language" />
                                         </SelectTrigger>
                                         <SelectContent>
                                             {Object.keys(technologiesNameMap).map((k) => {
-                                                return <SelectItem key={k} value={k}>{technologiesNameMap[k as keyof typeof technologiesNameMap]}</SelectItem>
+                                                return (
+                                                    <SelectItem key={k} value={k}>
+                                                        {
+                                                            technologiesNameMap[
+                                                            k as keyof typeof technologiesNameMap
+                                                            ]
+                                                        }
+                                                    </SelectItem>
+                                                );
                                             })}
                                         </SelectContent>
                                     </Select>
@@ -112,35 +150,53 @@ const AddSnippetForm = ({ form }: AddSnippetFormProps) => {
                             </FormDescription>
                             <FormMessage />
                         </FormItem>
-                    )
-                    }
+                    )}
                 />
                 <FormField
                     control={form.control}
                     name="keywordInput"
                     render={(props) => {
-                        let _keywords = form.watch("keywords") as string[]
+                        let _keywords = form.watch("keywords") as string[];
                         return (
                             <>
-                                {_keywords?.length > 0 && (<div className={"w-full h-fit flex flex-row justify-start items-center gap-2 flex-wrap"}>
-                                    {_keywords?.map((w: string, i: number) => {
-                                        return <Badge onClick={() => removeKeyword(w)} variant="secondary" className={"cursor-pointer"} key={`kw-${i}`}>{w}</Badge>
-                                    })}
-                                </div>)}
-                                <Input placeholder="Tags" {...props.field} onKeyDown={(e) => onEnter(e, () => appendKeyword(), "onEnter")} />
+                                {_keywords?.length > 0 && (
+                                    <div
+                                        className={
+                                            "w-full h-fit flex flex-row justify-start items-center gap-2 flex-wrap"
+                                        }
+                                    >
+                                        {_keywords?.map((w: string, i: number) => {
+                                            return (
+                                                <Badge
+                                                    onClick={() => removeKeyword(w)}
+                                                    variant="secondary"
+                                                    className={"cursor-pointer"}
+                                                    key={`kw-${i}`}
+                                                >
+                                                    {w}
+                                                </Badge>
+                                            );
+                                        })}
+                                    </div>
+                                )}
+                                <Input
+                                    placeholder="Tags"
+                                    {...props.field}
+                                    onKeyDown={(e) =>
+                                        onEnter(e, () => appendKeyword(), "onEnter")
+                                    }
+                                />
                             </>
-                        )
+                        );
                     }}
                 />
                 <Button onClick={handleSubmit}>Submit</Button>
                 <DevTool control={form.control} />
             </form>
         </Form>
-    )
-}
+    );
+};
 
-
-AddSnippetForm.displayName = "AddSnippetForm"
-
+AddSnippetForm.displayName = "AddSnippetForm";
 
 export default AddSnippetForm;

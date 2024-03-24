@@ -1,8 +1,10 @@
 "use client"
 import React, { useEffect, useMemo, useState } from 'react'
-import { ContextMenuItem, useToast } from '@ulld/tailwind/base';
-import { PrismaMdxNoteSummaryOutput, client } from '@ulld/api';
-import { MdxContentSERVER } from '..';
+import {  useToast } from '@ulld/tailwind/use-toast';
+import { ContextMenuItem } from '@ulld/tailwind/context-menu';
+import { PrismaMdxNoteSummaryOutput } from '@ulld/api/classes/prismaMdxRelations/protocols/mdxNote';
+import { client } from '@ulld/api/client';
+import { MdxContentSERVER } from '../mdxContent/mdxContentSERVER';
 
 
 interface ThemedSummaryCardContextMenuProps {

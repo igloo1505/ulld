@@ -1,6 +1,6 @@
 "use client"
-import { CalendarAndDateManager } from '@ulld/api'
-import { Badge } from '@ulld/tailwind/base'
+import { CalendarAndDateManager } from '@ulld/api/classes/data/calendarAndDate'
+import { Badge } from '@ulld/tailwind/badge'
 import React, { useEffect, useState } from 'react'
 
 

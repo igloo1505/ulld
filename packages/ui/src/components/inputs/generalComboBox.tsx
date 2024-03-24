@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import { Button, Popover, PopoverContent, PopoverTrigger, Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@ulld/tailwind/base';
+import { Button} from '@ulld/tailwind/button';
+import {Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList} from '@ulld/tailwind/command';
+import {  Popover, PopoverContent, PopoverTrigger } from '@ulld/tailwind/popover';
 import clsx from 'clsx';
 
 

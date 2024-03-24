@@ -1,6 +1,5 @@
-import { withRootUrl } from '@ulld/state'
 import React from 'react'
-
+import {withRootUrl} from "@ulld/state/formatting/withRootUrl"
 
 type VideoProps = ({
     file: string

@@ -4,15 +4,16 @@ import React, { useContext } from 'react'
 import { Path, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { healthReportOnlySchema, healthReportFormDefaultValues, HealthReportFormSchema, HealthReportEditing } from './formUtils';
-import { client } from '@ulld/api';
-import { Button, useToast } from '@ulld/tailwind/base';
-import { FullFormContext, FullFormDispatchContext } from '../../..';
-import { FullFormNumberInput } from '../../../menus/fullForm/FullFormNumberInput';
-import { FullFormContainer } from '../../../menus/fullForm/fullFormContainer';
-import { FullFormInput } from '../../../menus/fullForm/fullFormInput';
-import { FullFormRatingSlider } from '../../../menus/fullForm/fullFormRatingSlider';
-import { FullFormTextArea } from '../../../menus/fullForm/fullFormTextArea';
-import { FullFormFormPage } from '../../../menus/fullForm/fullScreenFormPage';
+import { client } from '@ulld/api/client';
+import { Button } from '@ulld/tailwind/button';
+import {  useToast } from '@ulld/tailwind/use-toast';
+import { NumberInput } from '@ulld/full-form/numberInput';
+import { TextInput } from '@ulld/full-form/textInput';
+import { RatingSlider } from '@ulld/full-form/ratingSlider';
+import { TextAreaInput } from '@ulld/full-form/textArea';
+import { FullPageFormContainer } from '@ulld/full-form/layout/fullPage/container';
+import { FullPageFormWrapper } from '@ulld/full-form/layout/fullPage/wrapper';
+import { FullFormContext, FullFormDispatchContext } from '@ulld/full-form/context';
 
 
 
@@ -207,43 +208,45 @@ const AddHealthReportFormWrapper = ({ editing }: AddHealthReportFormWrapperProps
     }
 
     return (
-        <FullFormContainer
+        <FullPageFormWrapper
             form={form}
             title={editing ? "Edit your health report" : "Health Report"}
             subtitle={editing ? undefined : "Add a health report here to track your health over time."}
             asideItems={asideItems}
             noMaxWidth={noMaxWidth}
         >
-            <FullFormFormPage
+            <FullPageFormContainer
                 asideParent="General"
                 title="Health Report"
                 noMaxWidth={noMaxWidth}
             >
-                <FullFormInput
+                <TextInput
                     label="Title"
                     name="title"
                 />
-                <FullFormTextArea
+                <TextAreaInput
                     label="Summary"
                     name="summary"
                 />
                 <div className={"w-full flex flex-row justify-around items-center gap-8 flex-wrap"}>
-                    <FullFormNumberInput
+                    <NumberInput
                         min={0}
                         label="Weight"
                         name="weight"
+                        step={1}
                         defaultValue={200}
                     />
-                    <FullFormNumberInput
+                    <NumberInput
                         max={12}
                         min={0}
+                        step={0.25}
                         label="Hours of sleep"
                         name="sleepHours"
                         defaultValue={8}
                     />
                 </div>
-            </FullFormFormPage>
-            <FullFormFormPage
+            </Container>
+            <Container
                 asideParent="Health"
                 title="Health"
                 subtitle="A general description of your overall sense of wellbeing. Rank each from 1 (dying) to 10 (perfect)."
@@ -253,7 +256,7 @@ const AddHealthReportFormWrapper = ({ editing }: AddHealthReportFormWrapperProps
             >
                 {ratingFields.map((r) => {
                     return (
-                        <FullFormRatingSlider
+                        <RatingSlider
                             key={r.item.id}
                             label={r.label}
                             item={{
@@ -265,8 +268,8 @@ const AddHealthReportFormWrapper = ({ editing }: AddHealthReportFormWrapperProps
                         />
                     )
                 })}
-            </FullFormFormPage>
-            <FullFormFormPage
+            </Container>
+            <Container
                 asideParent="Routine"
                 title="Routine"
                 subtitle="This should apply to the previous day alone."
@@ -276,7 +279,7 @@ const AddHealthReportFormWrapper = ({ editing }: AddHealthReportFormWrapperProps
             >
                 {routineRatingItems.map((r) => {
                     return (
-                        <FullFormRatingSlider
+                        <RatingSlider
                             key={r.item.id}
                             label={r.label}
                             item={{
@@ -288,23 +291,23 @@ const AddHealthReportFormWrapper = ({ editing }: AddHealthReportFormWrapperProps
                         />
                     )
                 })}
-            </FullFormFormPage>
-            <FullFormFormPage
+            </Container>
+            <Container
                 asideParent="Details"
                 title="Details"
                 noMaxWidth={noMaxWidth}
             >
-                <FullFormTextArea
+                <TextAreaInput
                     label="Mood"
                     desc="Describe your overall psychiatric health at the moment."
                     name="mood_desc"
                 />
-                <FullFormTextArea
+                <TextAreaInput
                     label="Concentration"
                     desc="Describe how your ADHD and racing thoughts have been for the past 24 hours."
                     name="anxiety_desc"
                 />
-                <FullFormNumberInput
+                <NumberInput
                     max={20000}
                     min={0}
                     label="Estimated Calorie Intake"
@@ -312,7 +315,7 @@ const AddHealthReportFormWrapper = ({ editing }: AddHealthReportFormWrapperProps
                     name="calorie_est"
                     defaultValue={2000}
                 />
-                <FullFormNumberInput
+                <NumberInput
                     integerOnly
                     max={20}
                     min={0}
@@ -321,7 +324,7 @@ const AddHealthReportFormWrapper = ({ editing }: AddHealthReportFormWrapperProps
                     name="times_meals_more_than_gap_apart"
                     defaultValue={0}
                 />
-                <FullFormNumberInput
+                <NumberInput
                     max={24}
                     min={0}
                     label="Estimated hours in a fasting state as defined above."
@@ -332,8 +335,8 @@ const AddHealthReportFormWrapper = ({ editing }: AddHealthReportFormWrapperProps
                 <div className={"w-full flex flex-row justify-end items-center"}>
                     <Button onClick={saveHealthReport}>Save</Button>
                 </div>
-            </FullFormFormPage>
-        </FullFormContainer>
+            </FullPageFormContainer>
+        </FullPageFormWrapper>
     )
 }
 

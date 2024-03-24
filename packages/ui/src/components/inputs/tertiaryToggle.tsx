@@ -1,7 +1,7 @@
 "use client"
-import { TERTIARY_TOGGLE } from '@prisma/client'
+import { TERTIARY_TOGGLE } from '@ulld/database/internalDatabaseTypes'
 import React from 'react'
-import { Button } from '@ulld/tailwind/base'
+import { Button } from '@ulld/tailwind/button'
 import { AsteriskIcon, MinusIcon, PlusIcon } from 'lucide-react'
 import clsx from 'clsx'
 

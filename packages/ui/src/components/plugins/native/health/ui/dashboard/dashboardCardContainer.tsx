@@ -1,7 +1,7 @@
-import { Card } from '@ulld/tailwind'
+import { Card } from '@ulld/tailwind/card'
 import clsx from 'clsx'
 import React from 'react'
-import { BaseDashboardCardProps } from '.'
+import { BaseDashboardCardProps } from './plots/types'
 
 
 

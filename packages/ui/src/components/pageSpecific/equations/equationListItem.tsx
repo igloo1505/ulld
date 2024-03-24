@@ -1,8 +1,9 @@
 import React from 'react'
 import { EquationListItem as EquationListItemType } from './types'
 import Link from 'next/link'
-import { buttonVariants } from '@ulld/tailwind'
-import { H4, MathDisplaySERVER } from '../..'
+import { buttonVariants } from '@ulld/tailwind/button'
+import { H4 } from '../../text/heading'
+import { MathDisplaySERVER } from '../../math/equation/mathDisplay_server'
 import { DeleteModalTriggerButton } from '../../inputs/deleteModalTriggerButton'
 
 

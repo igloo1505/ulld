@@ -1,9 +1,8 @@
 import { Row } from '@tanstack/react-table'
-import { TodoTaskOutput } from '@ulld/parsers'
-import { TaskListIds } from '@ulld/utilities'
 import React from 'react'
-import { GeneralComboBoxProps } from '../../..'
-import GeneralComboBox from '../../../inputs/generalComboBox'
+import GeneralComboBox, { GeneralComboBoxProps } from '../../../inputs/generalComboBox'
+import { TodoTaskOutput } from '@ulld/parsers/plugins/todos'
+import { TaskListIds } from '@ulld/utilities/types/todos'
 
 
 

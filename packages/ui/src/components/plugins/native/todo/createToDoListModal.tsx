@@ -3,13 +3,16 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
-import { Button, useToast } from '@ulld/tailwind/base'
-import { client, addTodoListSchema, AddToDoListSchema, TagTopicSubjectList } from '@ulld/api'
-import { formatSearchAllParams } from '@ulld/state'
-import { ToDoSearchParams } from '.'
-import { FullFormInput } from '../../../menus/fullForm/fullFormInput'
-import { FullFormTagSubjectTopicGroup } from '../../../menus/fullForm/fullFormTagTopicAndSubjectGroup'
+import { Button } from '@ulld/tailwind/button'
+import {  useToast } from '@ulld/tailwind/use-toast'
+import { client } from '@ulld/api/client'
+import { TextInput } from '@ulld/full-form/textInput'
+import { TaggableSelectGroup } from '@ulld/full-form/taggableSelectGroup'
 import { DialogWithForm } from '../../../modals/utils/dialogWithForm'
+import { addTodoListSchema, AddToDoListSchema } from '@ulld/api/plugins/native/todo/zod/general'
+import { TagTopicSubjectList } from '@ulld/api/schemas/taggable/tagTopicSubjectList'
+import { ToDoSearchParams } from '@ulld/parsers/plugins/todos'
+import { formatSearchAllParams } from '@ulld/state/searchParamSchemas/utilities/formatSearchAllParams'
 
 
 interface CreateToDoListModalProps {
@@ -78,13 +81,13 @@ const CreateToDoListModal = ({ isModal, defaultTaggableData }: CreateToDoListMod
             onSubmit={handleSubmit}
             withButtons={false}
         >
-            <FullFormTagSubjectTopicGroup taggableData={taggableData}>
-                <FullFormInput
+            <TaggableSelectGroup taggableData={taggableData}>
+                <TextInput
                     name="label"
                     label="Label"
                     className={"col-span-3"}
                 />
-            </FullFormTagSubjectTopicGroup>
+            </TaggableSelectGroup>
             <div className={"w-full flex flex-row justify-end items-center px-4"}>
                 <Button
                     onClick={(e) => {

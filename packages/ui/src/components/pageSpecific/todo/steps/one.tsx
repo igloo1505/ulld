@@ -1,8 +1,10 @@
 "use client"
 import React from 'react'
-import { Textarea, Input, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@ulld/tailwind/base';
+import { Textarea} from '@ulld/tailwind/textarea';
+import { Input} from '@ulld/tailwind/input';
+import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@ulld/tailwind/form';
 import { UseFormReturn } from 'react-hook-form';
-import { ToDoZodSchema } from '@ulld/parsers';
+import { ToDoZodSchema } from '@ulld/parsers/plugins/todos';
 
 
 

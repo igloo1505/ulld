@@ -1,5 +1,7 @@
-import { makeAbsolute } from '@ulld/utilities';
 import fs from 'fs'
+import {makeAbsolute} from "@ulld/utilities/pathUtilsClientSide"
+
+
 
 
 export const imageToBase64Url = async (p: string, fsRoot: string) => {

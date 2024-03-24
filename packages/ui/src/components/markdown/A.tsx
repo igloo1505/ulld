@@ -3,7 +3,7 @@ import { Route } from 'next';
 import Link from 'next/link';
 import React, { useId } from 'react'
 import clsx from 'clsx';
-import { ComposedTooltip } from '..';
+import { ComposedTooltip } from '../notifications/tooltip/tooltip';
 
 
 

@@ -4,8 +4,9 @@ import React, { useId, useMemo, useRef } from 'react'
 import '@google/model-viewer/dist/model-viewer.js'
 import { ModelViewerElement } from '@google/model-viewer';
 import clsx from 'clsx';
-import { Progress, Button } from '@ulld/tailwind/base';
-import { getInternalConfig } from '@ulld/configschema';
+import { Progress } from '@ulld/tailwind/progress';
+import {  Button } from '@ulld/tailwind/button';
+import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig';
 
 
 declare global {

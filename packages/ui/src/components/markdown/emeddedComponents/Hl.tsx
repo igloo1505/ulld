@@ -1,7 +1,8 @@
-import { PropColor, getPropColor } from '@ulld/state'
 import clsx from 'clsx'
 import React from 'react'
-import { ComposedTooltip } from '../..'
+import { ComposedTooltip } from '../../notifications/tooltip/tooltip'
+import { PropColor } from '@ulld/utilities/shadColorMap'
+import { getPropColor } from "@ulld/state/actions/ui/getPropColor"
 
 export interface WithTooltipWrapper {
     toolTip?: string

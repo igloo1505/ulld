@@ -1,9 +1,10 @@
 import { z } from "zod"
 
 const optionsSchema = z.object({
-     showDate: z.boolean().default(true),
-     label: z.string().optional(),
-    color: z.string().optional()
+    showDate: z.boolean().default(true),
+    label: z.string().optional(),
+    color: z.string().optional(),
+    component: z.string().optional(),
 }).optional()
 
 

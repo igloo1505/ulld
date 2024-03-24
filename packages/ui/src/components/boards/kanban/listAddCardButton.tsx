@@ -1,4 +1,4 @@
-import { Button } from '@ulld/tailwind/base'
+import { Button } from '@ulld/tailwind/button'
 import { PlusIcon } from 'lucide-react'
 import React from 'react'
 

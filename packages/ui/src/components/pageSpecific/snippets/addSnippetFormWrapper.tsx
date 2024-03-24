@@ -5,8 +5,9 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import AddSnippetDisplay from './addSnippetDisplay'
 import AddSnippetForm from './form'
-import { Prisma } from '@prisma/client'
-import { serverClient, SnippetCreatekeywordsInputObjectSchema, TechnologiesSchema } from '@ulld/api'
+import { Prisma } from '@ulld/database/internalDatabaseTypes'
+import { SnippetCreatekeywordsInputObjectSchema, TechnologiesSchema } from '@ulld/api/schemas/snippets/main'
+import type { serverClient } from '@ulld/api/serverClient'
 
 
 

@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
-import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from '@ulld/tailwind/base'
-import { copyStringToClipboard } from '@ulld/utilities'
+import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from '@ulld/tailwind/context-menu'
+import { copyStringToClipboard } from '@ulld/utilities/copyStringToClipboard'
 
 
 interface EquationContextMenuProps {

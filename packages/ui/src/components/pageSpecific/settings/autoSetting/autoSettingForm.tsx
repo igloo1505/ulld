@@ -1,5 +1,7 @@
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Input, Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@ulld/tailwind/base';
-import { autoSetting } from '@prisma/client';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from '@ulld/tailwind/select';
+import {  Input} from '@ulld/tailwind/input';
+import {   Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@ulld/tailwind/form';
+import { autoSetting } from '@ulld/database/internalDatabaseTypes';
 import React from 'react'
 import { UseFormReturn } from 'react-hook-form';
 

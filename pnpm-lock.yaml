@@ -603,9 +603,6 @@ importers:
       '@ulld/tailwind':
         specifier: workspace:*
         version: link:../tailwindAndShad
-      '@ulld/ui':
-        specifier: workspace:*
-        version: link:../ui
       '@ulld/utilities':
         specifier: workspace:*
         version: link:../utilities
@@ -1284,6 +1281,9 @@ importers:
       '@ulld/editor':
         specifier: workspace:*
         version: link:../editor
+      '@ulld/full-form':
+        specifier: workspace:*
+        version: link:../full-form
       '@ulld/hooks':
         specifier: workspace:*
         version: link:../hooks

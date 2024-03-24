@@ -5,13 +5,13 @@ import Link from 'next/link';
 import NavbarSearchInput from './navbarSearchInput';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
-import { RootState } from '@ulld/state';
+import { RootState } from '@ulld/state/store';
 import { SearchIcon, BookmarkIcon } from 'lucide-react';
-import { ParsedAppConfig } from '@ulld/configschema';
+import { ParsedAppConfig } from '@ulld/configschema/types';
 import { Route } from "next"
-import { toggleBookmark } from '@ulld/api';
 import { internalLinks } from '../sidebar/internalSidebarButtons';
 import Logo from '../../icons/logo/logo';
+import { toggleBookmark } from "@ulld/api/actions/clientOnly/bookmarking"
 
 
 const NavShowBreakpoint = 20

@@ -1,5 +1,5 @@
-import { Button } from "@ulld/tailwind"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@ulld/tailwind/base"
+import { Button } from "@ulld/tailwind/button"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@ulld/tailwind/select"
 import {
     ChevronLeftIcon,
     ChevronRightIcon,

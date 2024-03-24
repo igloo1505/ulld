@@ -6,8 +6,7 @@
     "src",
     "dist"
   ],
-  "main": "src/index.ts",
-  "types": "./src/index.ts",
+  "types": "./src/types.ts",
   "exports": {
     "./booleanAndEqualities/arrayTruthy": "./src/booleanAndEqualities/arrayTruthy.ts",
     "./shadColorMap": "./src/utils/shadColorMap.ts",
@@ -43,6 +42,7 @@
     "./defaults/prisma/commonZodFields": "./src/defaults/prisma/commonZodFields.ts",
     "./defaults/prisma/notes": "./src/defaults/prisma/notes.ts",
     "./actions/copyStringToClipboard": "./src/actions/copyStringToClipboard.ts",
+    "./copyStringToClipboard": "./src/actions/copyStringToClipboard.ts",
     "./loaders/requireJS/requirejs": "./src/loaders/requireJS/requirejs.tsx"
   },
   "scripts": {

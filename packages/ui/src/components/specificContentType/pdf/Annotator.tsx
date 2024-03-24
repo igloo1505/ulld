@@ -1,5 +1,5 @@
-import { Textarea } from '@ulld/tailwind/base'
-import { PdfManager, TextItemType, selectionObserver } from '@ulld/state'
+import { PdfManager, TextItemType, selectionObserver } from '@ulld/state/classes/pdfManager'
+import { Textarea } from '@ulld/tailwind/textarea'
 import clsx from 'clsx'
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { useDocumentContext, usePageContext } from 'react-pdf'

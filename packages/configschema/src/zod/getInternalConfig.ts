@@ -1,7 +1,7 @@
 // import { ParsedAppConfig } from "../types"
 import { applySearchParamConfigOverride } from "./applySearchParamOverride"
-import { InternalDocumentConfigType } from "./internalDocumentTypes"
-import { AppConfigSchemaOutput } from "./main"
+import type { InternalDocumentConfigType } from "./internalDocumentTypes"
+import type { AppConfigSchemaOutput } from "./main"
 import { ParsableExtensions, getFileTypeAppendices, getParsableExtensions } from "./secondaryConfigParse/getParsableExtensions"
 
 

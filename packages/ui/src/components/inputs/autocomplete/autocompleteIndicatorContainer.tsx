@@ -1,5 +1,5 @@
 "use client"
-import { Badge } from '@ulld/tailwind/base'
+import { Badge } from '@ulld/tailwind/badge'
 import clsx from 'clsx'
 import React from 'react'
 

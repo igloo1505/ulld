@@ -1,6 +1,9 @@
-import { SpecificNoteQueryManager, getPathnameFromHeaders } from "@ulld/api"
-import { DocTypes } from "@ulld/configschema"
-import { WithFSSearchParams } from "@ulld/state"
+import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes"
+import { WithFSSearchParams } from "@ulld/state/searchParamSchemas/utilities/formatSearchAllParams"
+import {getPathnameFromHeaders} from "@ulld/api/trpcInternalMethods/filesystem/getPathnameFromHeaders"
+import {SpecificNoteQueryManager} from "@ulld/api/classes/specificNoteQuery/specificNoteQueryManager"
+
+
 
 
 export const formatNoteProps = async <T extends WithFSSearchParams>(docType: DocTypes, params: T["params"], searchParams: WithFSSearchParams["searchParams"]) => {

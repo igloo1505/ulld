@@ -1,6 +1,5 @@
 {
   "extends": "@repo/typescript-config/nextjs.json",
-  "include": ["./*/**.ts", "./*/**.tsx"],
   "compilerOptions": {
     "module": "ESNext",
     "lib": ["dom", "ES2015"],

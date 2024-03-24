@@ -1,6 +1,6 @@
-import { serverClient, DateTime } from '@ulld/api';
-import { todoTaskSchema } from '@ulld/parsers';
-import { Card, CardHeader, CardTitle, CardDescription, CardFooter, Button } from '@ulld/tailwind';
+import { serverClient } from '@ulld/api/serverClient';
+import { Button } from '@ulld/tailwind/button';
+import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from '@ulld/tailwind/card';
 import clsx from 'clsx';
 import dayjs from 'dayjs'
 import advancedFormat from 'dayjs/plugin/advancedFormat';
@@ -8,11 +8,13 @@ import { CheckIcon } from 'lucide-react';
 dayjs.extend(advancedFormat)
 import { redirect } from 'next/navigation'
 import React from 'react'
-import CodeEditorModalClientWrapper from '../../../inputs/codeEditor/codeEditorClientWrapper';
+/* import CodeEditorModalClientWrapper from '../../../inputs/codeEditor/codeEditorClientWrapper'; */
 import RouteModalBackButton from '../../../landing/hero/util/routeModalBackButton';
 import TextWithLabel from '../../../text/textWithLabel';
-import { replaceRecursively } from '@ulld/utilities';
-import { MdxContentSERVER } from '../../..';
+import { replaceRecursively } from "@ulld/utilities/utils/general";
+import { MdxContentSERVER } from '../../../mdxContent/mdxContentSERVER';
+import { todoTaskSchema } from '@ulld/parsers/plugins/todos';
+import { DateTime } from '@ulld/api/classes/data/dateTime';
 
 
 
@@ -83,12 +85,12 @@ const ToDoListTaskDetailModal = async ({ taskId, isModal }: ToDoListTaskDetailMo
                     {isModal && <RouteModalBackButton />}
                 </CardFooter>
             </Card >
-            <CodeEditorModalClientWrapper
-                appendClickListenerId={ids.addNoteBtn}
-                itemId={task.id}
-                action="editNoteById"
-                isModalChild
-            />
+            {/* <CodeEditorModalClientWrapper */}
+            {/*     appendClickListenerId={ids.addNoteBtn} */}
+            {/*     itemId={task.id} */}
+            {/*     action="editNoteById" */}
+            {/*     isModalChild */}
+            {/* /> */}
         </>
     )
 }

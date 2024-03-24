@@ -1,5 +1,5 @@
 "use client"
-import { htmlEm, setCanBookmarkState } from '@ulld/state'
+import { htmlEm, setCanBookmarkState } from '@ulld/state/actions/clientOnly/dom'
 import { useEffect } from 'react'
 
 

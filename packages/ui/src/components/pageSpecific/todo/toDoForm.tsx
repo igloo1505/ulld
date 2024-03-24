@@ -6,9 +6,9 @@ import { useForm } from 'react-hook-form'
 import ToDoListFormStepOne from './steps/one'
 import ToDoListFormStepTwo from './steps/two'
 import ToDoListFormStepThree from './steps/three'
-import type { serverClient } from '@ulld/api'
-import { ToDoZodSchema, todoZodFormSchema } from '@ulld/parsers'
+import type { serverClient } from '@ulld/api/serverClient'
 import { SideFormContainer } from '../../layouts/sideMenu/sideFormContainer'
+import { ToDoZodSchema, todoZodFormSchema } from '@ulld/parsers/plugins/todos'
 
 
 

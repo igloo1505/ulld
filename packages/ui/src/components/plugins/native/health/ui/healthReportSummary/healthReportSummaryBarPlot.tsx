@@ -1,8 +1,9 @@
 "use client"
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
 import React, { useMemo } from 'react'
-import { HealthReport } from '@prisma/client'
-import { ReturnedHealthReportSummary, getHealthReportFieldHintMap, healthReportRatingFieldKeys, healthReportFieldNameDisplayMap, healthReportRatingFieldHints } from "@ulld/api"
+import { HealthReport } from '@ulld/database/internalDatabaseTypes'
+import { getHealthReportFieldHintMap, healthReportRatingFieldKeys, healthReportFieldNameDisplayMap, healthReportRatingFieldHints } from "@ulld/api/plugins/native/health/reportUtilities"
+import { ReturnedHealthReportSummary } from "@ulld/api/trpcInternalMethods/plugins/native/health/main"
 
 
 

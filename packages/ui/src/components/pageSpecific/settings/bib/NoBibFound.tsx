@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { initializeBib } from '..'
-import { LabeledCheckbox } from '../../..'
+import { LabeledCheckbox } from '../../../menus/labeledInputs/checkbox'
+import { initializeBib } from '../initializeBib'
 
 
 

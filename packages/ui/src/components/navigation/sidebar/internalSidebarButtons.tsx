@@ -1,11 +1,11 @@
 import { Route } from "next";
 import { SidebarLink } from "./types";
-import { syncRootDirectory } from "@ulld/api";
-import { toggleDarkMode } from "@ulld/state/src/actions/clientOnly/general";
+import { toggleDarkMode } from "@ulld/state/actions/clientOnly/general";
 import React from "react";
-import { cn } from "../../../utilityFunctions/cn";
+import { cn } from "@ulld/utilities/cn";
 import { DynamicIcon } from "../../icons/DynamicIcon";
 import { JupyterIcon } from "../../icons/logoIcons/jupyter";
+import {syncRootDirectory} from "@ulld/api/actions/syncing"
 
 
 /* TODO: Add more useful icons here. Consider making this dynamic in the settings object to make this variable without the need to rebuild. */

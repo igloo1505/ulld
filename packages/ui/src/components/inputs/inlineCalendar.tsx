@@ -1,5 +1,5 @@
 "use client"
-import { Calendar } from "@ulld/tailwind"
+import { Calendar } from "@ulld/tailwind/calendar"
 import { useState } from "react"
 
 

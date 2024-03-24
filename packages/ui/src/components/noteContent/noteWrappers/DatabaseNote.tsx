@@ -2,10 +2,10 @@ import React from 'react'
 import { notFound } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import DatabaseMarkdown from './database/remoteMarkdown'
-import { serverClient } from '@ulld/api'
-import { ParsableExtensions } from '@ulld/configschema'
-import { NotePageProps } from '../../../utilityFunctions/formatting'
+import { serverClient } from '@ulld/api/serverClient'
 import PageContentContainer from '../../layouts/contentContainer'
+import { ParsableExtensions } from '@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions'
+import { NotePageProps } from '../../../utilityFunctions/formatting/formatNoteProps'
 
 
 

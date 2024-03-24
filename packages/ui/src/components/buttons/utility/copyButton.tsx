@@ -1,9 +1,10 @@
 "use client"
 import React from 'react'
-import { Button, ButtonProps, useToast } from '@ulld/tailwind/base'
+import { Button, ButtonProps } from '@ulld/tailwind/button'
+import {  useToast } from '@ulld/tailwind/use-toast'
 import { CopyIcon } from 'lucide-react'
-import { createCopyListener } from '@ulld/state'
-import { ToastConfigType } from '@ulld/utilities'
+import { createCopyListener } from '@ulld/state/listeners/keydown'
+import { ToastConfigType } from '@ulld/utilities/types/toastConfig'
 
 
 

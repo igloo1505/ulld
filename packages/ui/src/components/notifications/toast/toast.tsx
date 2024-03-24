@@ -1,7 +1,9 @@
 "use client"
-import { ToastAction, useToast } from '@ulld/tailwind'
-import { WithChildren, ToastConfigType } from '@ulld/utilities'
+import {  useToast } from '@ulld/tailwind/use-toast'
+import { ToastAction } from '@ulld/tailwind/toast'
 import React, { useEffect } from 'react'
+import { ToastConfigType } from '@ulld/utilities/types/toastConfig'
+import { WithChildren } from '@ulld/utilities/types/utilityTypes'
 
 
 

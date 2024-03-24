@@ -98,6 +98,7 @@
     "@uiw/react-monacoeditor": "^3.6.0",
     "@uiw/react-textarea-code-editor": "^3.0.2",
     "@ulld/api": "workspace:*",
+    "@ulld/full-form": "workspace:*",
     "@ulld/config": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/editor": "workspace:*",

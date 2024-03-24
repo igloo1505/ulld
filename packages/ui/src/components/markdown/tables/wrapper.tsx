@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
 import Table, { TableComponentType } from './basic';
-import { LoadingIndicator } from '../..';
+import { LoadingIndicator } from '../../loading/loadingIndicator';
 
 
 export const TableWrapper: TableComponentType = (props) => {

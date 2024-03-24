@@ -1,5 +1,5 @@
 import React from 'react'
-import { getComponentMap } from '../../..'
+import { getComponentMap } from '../../../markdown/componentMap'
 
 
 

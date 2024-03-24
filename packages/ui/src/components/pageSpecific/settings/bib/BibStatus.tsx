@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import SettingsPhotoInput from '../photoInput'
 import { DropEvent, DropzoneOptions } from 'react-dropzone'
 import clsx from 'clsx'
-import { Button } from '@ulld/tailwind/base'
-import { BibWithEntries, BibCore, CalendarAndDateManager } from '@ulld/api'
-import { prisma } from '../../../../../../database/src/db'
+import { Button } from '@ulld/tailwind/button'
+import { prisma } from '@ulld/database/db'
 import FileInputList from '../../../inputs/fileList'
+import { CalendarAndDateManager } from '@ulld/api/classes/data/calendarAndDate'
+import { BibCore } from '@ulld/api/classes/prismaMdxRelations/Bib'
+import { BibWithEntries } from '@ulld/api/trpcInternalMethods/bib/main'
 
 
 export interface BibStatusProps {

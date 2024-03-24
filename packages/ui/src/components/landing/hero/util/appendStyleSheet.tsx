@@ -1,6 +1,6 @@
 "use client"
-import { appendStyleSheet } from '@ulld/state'
 import { useEffect, useId } from 'react'
+import {appendStyleSheet} from "@ulld/state/actions/clientOnly/appendStyleSheet"
 
 
 interface AppendStyleSheetProps {

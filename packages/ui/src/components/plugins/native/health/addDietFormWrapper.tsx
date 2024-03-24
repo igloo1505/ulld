@@ -5,8 +5,9 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod'
 import { DietEditing, dietFormDefaultValues, dietFormSchema } from './formUtils';
 import { DevTool } from '@hookform/devtools';
-import { Button, useToast } from '@ulld/tailwind/base';
-import { client } from '@ulld/api';
+import { Button } from '@ulld/tailwind/button';
+import { useToast } from '@ulld/tailwind/use-toast';
+import { client } from '@ulld/api/client';
 import { FullFormContainer } from '../../../menus/fullForm/fullFormContainer';
 import { FullFormInput } from '../../../menus/fullForm/fullFormInput';
 import { FullFormLabeledCheckbox } from '../../../menus/fullForm/fullFormLabeledCheckbox';

@@ -1,7 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@ulld/tailwind/base'
-import { ButtonProps } from 'react-day-picker'
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@ulld/tailwind/dialog'
+import type { ButtonProps } from '@ulld/tailwind/button'
 
 
 interface WithDialogContainerProps {

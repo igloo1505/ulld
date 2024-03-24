@@ -1,10 +1,10 @@
 "use client"
 import React from 'react'
 import { Route } from 'next';
-import { DocTypes } from '@ulld/configschema';
-import { formatSearchAllParams } from '@ulld/state';
-import { PaginationButtonGroupProps } from '..';
+import { PaginationButtonGroupProps } from '../paginationGroup';
 import PaginationButtonGroup from '../paginationGroup';
+import { DocTypes } from '@ulld/configschema/configUtilityTypes/docTypes';
+import { formatSearchAllParams } from '@ulld/state/searchParamSchemas/utilities/formatSearchAllParams';
 
 
 

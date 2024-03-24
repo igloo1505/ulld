@@ -1,5 +1,6 @@
 "use client"
-import { getRandomId, replaceRecursively } from '@ulld/utilities'
+import { getRandomId } from "@ulld/utilities/identity";
+import { replaceRecursively } from "@ulld/utilities/utils/general";
 import { useEffect, useState } from 'react'
 
 

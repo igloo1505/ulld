@@ -1,6 +1,6 @@
 import { compile } from "@mdx-js/mdx"
 import { z } from 'zod'
-import {MermaidConfigType, mermaidTheme} from "@ulld/utilities/defaults/defaultMermaidConfig"
+import { MermaidConfigType, mermaidTheme } from "@ulld/utilities/defaults/defaultMermaidConfig"
 
 
 export const mermaidConfig: MermaidConfigType = {

@@ -1,12 +1,16 @@
 "use client"
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, Button, useToast } from '@ulld/tailwind/base'
+import {  Button } from '@ulld/tailwind/button'
+import {   useToast } from '@ulld/tailwind/use-toast'
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@ulld/tailwind/dialog'
 import React from 'react'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import AutoSettingForm from './autoSettingForm'
-import { AutoSettingType, AutoPropertyFormSchema, client } from '@ulld/api'
 import { useRouter } from 'next/router'
+import { client } from '@ulld/api/client'
+import { AutoSettingType } from '@ulld/api/routers/sync'
+import { AutoPropertyFormSchema } from '@ulld/api/schemas/formTrpcRelationships/autoPropertyFormSchema'
 
 
 

@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import React from 'react'
 import { SSRFoldingAdmonitionTitle } from './SSRFoldingAdmonitionObserver'
-import { AdmonitionProps } from '../../../types'
+import { AdmonitionProps } from '../../../types/general'
 
 
 

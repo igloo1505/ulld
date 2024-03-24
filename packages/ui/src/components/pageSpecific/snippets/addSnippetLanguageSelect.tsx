@@ -1,8 +1,9 @@
 "use client"
 import React from 'react'
 import { useRouter } from 'next/navigation'
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@ulld/tailwind/base'
-import { SnippetFilterParams, technologiesNameMap } from '@ulld/utilities'
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@ulld/tailwind/select'
+import { technologiesNameMap } from '@ulld/utilities/schemas/code/technologiesNameMap'
+import { SnippetFilterParams } from '@ulld/utilities/schemas/snippets'
 
 
 const techArr = {

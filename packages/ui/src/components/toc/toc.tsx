@@ -2,7 +2,10 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux';
 import clsx from 'clsx';
-import { RootState, store, showNoteSheet, setTocPanelContent, initialState } from '@ulld/state';
+import { initialState } from '@ulld/state/initialState';
+import { setTocPanelContent } from '@ulld/state/actions/clientOnly/general';
+import { showNoteSheet } from '@ulld/state/slices/ui';
+import { store, RootState } from '@ulld/state/store';
 
 
 

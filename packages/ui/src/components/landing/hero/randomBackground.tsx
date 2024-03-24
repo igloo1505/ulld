@@ -3,7 +3,7 @@ import path from 'path'
 import fs from 'fs'
 import DarknessDetect from './backgroundDarknessDetection'
 import clsx from 'clsx'
-import { serverClient } from '@ulld/api'
+import { serverClient } from '@ulld/api/serverClient'
 
 
 

@@ -1,6 +1,6 @@
 import { serverLogger } from '@ulld/logger/server'
 import React from 'react'
-import { NotePageProps } from '../../utilityFunctions/formatting'
+import { NotePageProps } from '../../utilityFunctions/formatting/formatNoteProps'
 import ResetPathDependentComponents from '../landing/hero/util/resetPathDependentComponents'
 import DatabaseNote from './noteWrappers/DatabaseNote'
 import FsNote from './noteWrappers/FsNote'

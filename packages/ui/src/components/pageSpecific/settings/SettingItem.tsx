@@ -1,10 +1,11 @@
 /* BUG: This is completely broken after the migration to a monorepo. Rebuild the entire settings page with space for much of the appConfig. Use a layout similar to the nested lawyerVid profile pages. */
 "use client"
-import { Switch, Input } from '@ulld/tailwind/base'
-import { client } from '@ulld/api'
+import { Switch } from '@ulld/tailwind/switch'
+import { Input } from '@ulld/tailwind/input'
+import { client } from '@ulld/api/client'
 import clsx from 'clsx'
 import React, { ChangeEvent, useId, useState } from 'react'
-import { SettingBoolean } from '../../../../../state/src/state/types/general'
+import { SettingBoolean } from '@ulld/state/types/general'
 
 
 

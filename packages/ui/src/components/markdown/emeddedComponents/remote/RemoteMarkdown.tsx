@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
-import { convertGithubUrlToRawContentUrl } from '@ulld/state'
-import { MdxContentSERVER } from '../../..'
+import {convertGithubUrlToRawContentUrl} from "@ulld/state/formatting/general"
+import { MdxContentSERVER } from '../../../mdxContent/mdxContentSERVER'
 
 
 

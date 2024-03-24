@@ -3,7 +3,7 @@ import PrimaryHealthDashboardLinePlot from './plots/primaryHealthDashboardLinePl
 import HealthDashboardGridColGroup from '../gridColGroup'
 import HealthDashboardPlotControls from './plots/primaryHealthDashboardPlotControls'
 import HealthDashboardToolPanel from './plots/healthDashboardToolPanel'
-import { HealthDashboardReportData } from '@ulld/api'
+import { HealthDashboardReportData } from '@ulld/api/plugins/native/health/reportUtilities'
 
 
 interface HealthDashboardWrapperProps {

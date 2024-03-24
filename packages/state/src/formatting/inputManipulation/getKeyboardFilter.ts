@@ -1,4 +1,4 @@
-import { replaceRecursively } from '@ulld/utilities'
+import { replaceRecursively } from "@ulld/utilities/utils/general";
 import React, { ChangeEvent } from 'react'
 export type KeyboardFilterType = "noSpaces" | "numberOnly" | "integerOnly"
 type KeyboardFilterElement = HTMLInputElement | HTMLTextAreaElement

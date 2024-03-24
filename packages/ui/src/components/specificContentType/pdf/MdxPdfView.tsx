@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { PdfViewer } from './Pdf'
 import clsx from 'clsx'
 import TocContainer from './TocContainer'
-import { pdfStateClasses } from '../../../types'
+import { pdfStateClasses } from '../../../types/general'
 
 
 interface MdxPdfViewerProps {

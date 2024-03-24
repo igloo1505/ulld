@@ -1,6 +1,6 @@
 "use client"
-import { buttonVariants } from '@ulld/tailwind'
-import { withForwardSlash, makeHref } from '@ulld/utilities'
+import { buttonVariants } from '@ulld/tailwind/button'
+import { withForwardSlash, makeHref } from '@ulld/utilities/fsUtils'
 import clsx from 'clsx'
 import { Route } from 'next'
 import { useRouter } from 'next/navigation'

@@ -1,7 +1,6 @@
 import React from 'react'
 import { BaseEmbeddableComponentProps, getBaseEmbeddableProps } from './baseEmbeddableComponentTypes'
-import { stringToConsistentId } from '@ulld/state'
-import { Card } from '@ulld/tailwind'
+import { Card } from '@ulld/tailwind/card'
 
 
 type C = string | React.ReactNode | undefined | null

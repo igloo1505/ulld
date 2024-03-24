@@ -1,5 +1,5 @@
-import { client } from "@ulld/api"
-import { onConfirmFuncKey, ConfirmationModalConfig } from "@ulld/state"
+import { client } from "@ulld/api/client"
+import { onConfirmFuncKey, ConfirmationModalConfig } from "@ulld/state/actions/confirmation/confirmationModalConfig"
 
 export const confirmationFunctions: Record<onConfirmFuncKey, (cfg: ConfirmationModalConfig) => void> = {
     deleteSnippet: async (config: ConfirmationModalConfig) => typeof config.primaryId === "number" ? await client.snippets.deleteSnippet.mutate(config.primaryId) : () => { },

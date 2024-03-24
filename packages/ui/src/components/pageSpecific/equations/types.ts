@@ -1,4 +1,4 @@
-import type { serverClient } from '@ulld/api';
+import type { serverClient } from '@ulld/api/serverClient';
 import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod'
 

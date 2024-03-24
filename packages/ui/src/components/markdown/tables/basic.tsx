@@ -8,10 +8,10 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@ulld/tailwind/base"
+} from "@ulld/tailwind/table"
 import clsx from 'clsx'
 import "../../../styles/tableStyles.scss"
-import { getInternalConfig } from '@ulld/configschema'
+import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
 
 
 interface TheadProps {

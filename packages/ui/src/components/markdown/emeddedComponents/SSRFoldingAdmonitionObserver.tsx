@@ -1,9 +1,9 @@
 "use client"
 import clsx from "clsx"
 import { MouseEventHandler } from "react"
-import { DynamicIcon } from "../.."
+import { DynamicIcon } from "../../icons/DynamicIcon"
 import { OpenToggleArrow } from "../../menus/openToggleArrow"
-import { AdmonitionProps, AdmonitionType } from "../../../types"
+import { AdmonitionProps, AdmonitionType } from "../../../types/general"
 
 
 

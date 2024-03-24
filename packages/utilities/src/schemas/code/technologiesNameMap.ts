@@ -1,4 +1,4 @@
-import { Technologies } from "@ulld/database";
+import { Technologies } from "@ulld/database/internalDatabaseTypes";
 
 export const technologiesNameMap: { [k in Technologies]: string } = {
     python: "Python",

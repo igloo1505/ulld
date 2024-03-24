@@ -1,9 +1,9 @@
 "use client"
-import { Button } from '@ulld/tailwind/base';
-import { SnippetListItemProps, copyStringToClipboard } from '@ulld/utilities';
+import { Button } from '@ulld/tailwind/button';
+import { copyStringToClipboard } from '@ulld/utilities/actions/copyStringToClipboard';
 import Link from 'next/link';
 import React from 'react'
-
+import {SnippetListItemProps} from "@ulld/utilities/schemas/snippets"
 
 
 interface SnippetListItemButtonsProps {

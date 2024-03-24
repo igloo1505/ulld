@@ -1,4 +1,4 @@
-import "server-only"
+// import "server-only"
 import { z } from "zod"
 import fs from 'fs'
 import latex from "node-latex"

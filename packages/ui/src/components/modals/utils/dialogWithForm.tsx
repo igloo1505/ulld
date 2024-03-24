@@ -3,7 +3,8 @@ import React from 'react'
 import { FieldValues, Form, SubmitHandler, UseFormReturn } from 'react-hook-form'
 import clsx from 'clsx'
 import { useRouter } from 'next/navigation'
-import { Dialog, DialogContent, DialogTitle, DialogDescription, DialogHeader, DialogFooter, buttonVariants } from '@ulld/tailwind/base'
+import { Dialog, DialogContent, DialogTitle, DialogDescription, DialogHeader, DialogFooter } from '@ulld/tailwind/dialog'
+import {  buttonVariants } from '@ulld/tailwind/button'
 
 
 interface DialogWithFormProps<T extends FieldValues> {

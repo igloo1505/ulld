@@ -2,8 +2,8 @@ import { FormField, FormItem, FormControl, FormLabel, FormDescription, FormMessa
 import React from 'react'
 import { FieldValues, Path, PathValue, useFormContext } from 'react-hook-form'
 import { BaseFullFormInputProps } from './types'
-import { NumberInput as NumberInputComponent } from '@ulld/ui/inputs/number'
-import { NumberInputProps } from '@ulld/ui/inputs/number/types'
+import { NumberInput as NumberInputComponent } from './inputs/number/numberInput'
+import { NumberInputProps } from './inputs/number/types'
 
 
 interface FullFormNumberInputProps<T extends FieldValues, H extends Omit<HTMLElement, "onChange">> extends Omit<BaseFullFormInputProps<T, H>, "onChange"> {

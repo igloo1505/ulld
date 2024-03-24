@@ -1,5 +1,5 @@
 import React from 'react'
-import { MdxContentSERVERProps } from '.';
+import { MdxContentSERVERProps } from './mdxContentSERVER'
 
 
 

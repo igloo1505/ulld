@@ -1,9 +1,22 @@
-import { getInternalConfig, isRemote } from '@ulld/configschema';
-import { imageToBase64Url } from '@ulld/state';
-import { fileExtension } from '@ulld/utilities';
+import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig';
+import { fileExtension } from '@ulld/utilities/fsUtils';
 import Image from 'next/image';
 import React, { ImgHTMLAttributes } from 'react'
+import { imageToBase64Url } from "@ulld/state/formatting/getLocalImageAsString"
 
+
+
+
+export const isRemote = (p: string, imageRemoteTest?: RegExp[]) => {
+    let remoteTest: RegExp[] = [
+        /^(http(s?)\:\/\/|www\.)/gm,
+        /\.(com|gov|edu|app|io|dev|net|org|us|ai|gg|education|info|xyz|ly|site|me)/gm,
+    ]
+    if (imageRemoteTest) {
+        remoteTest = remoteTest.concat(imageRemoteTest)
+    }
+    return remoteTest.some((t) => t.test(p))
+}
 
 
 export const ImgComponent = async (props: ImgHTMLAttributes<HTMLImageElement>) => {

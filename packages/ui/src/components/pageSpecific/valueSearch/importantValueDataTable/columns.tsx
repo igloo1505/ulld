@@ -2,10 +2,11 @@ import {
     ColumnDef, Row,
 } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
-import { Button, Checkbox } from "@ulld/tailwind/base"
+import { Button } from "@ulld/tailwind/button"
+import {  Checkbox } from "@ulld/tailwind/checkbox"
 import Link from "next/link"
-import { DateTime, ValueSearchTableItem } from "@ulld/api"
-
+import { DateTime } from "@ulld/api/classes/data/dateTime"
+import { ValueSearchTableItem } from "@ulld/api/trpcTypes/valueTableSearch"
 
 
 

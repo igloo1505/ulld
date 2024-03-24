@@ -9,7 +9,7 @@ import {
 } from "@ulld/tailwind/form";
 import { FieldValues, useFormContext, Path, PathValue } from "react-hook-form";
 import { BaseFullFormInputProps } from "./types";
-import { MathInput as MathInputComponent } from "@ulld/ui/inputs/math";
+import { MathInput as MathInputComponent } from "./inputs/math/mathInput";
 
 
 interface MathInputProps<T extends FieldValues, H extends HTMLElement>

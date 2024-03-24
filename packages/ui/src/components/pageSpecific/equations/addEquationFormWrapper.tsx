@@ -6,7 +6,7 @@ import { z } from 'zod'
 import AddEquationForm from './addEquationForm'
 import AddEquationDisplay from './addEquationDisplay'
 import { AddEquationSchema } from './types'
-import { serverClient } from '@ulld/api'
+import type { serverClient } from '@ulld/api/serverClient'
 import SideMenuParent from '../../layouts/sideMenu/sideMenuParent'
 
 

@@ -1,10 +1,5 @@
 {
     "extends": "@repo/typescript-config/nextjs.json",
-    "include": [
-        "./src/*/**.ts",
-        "./src/*/**.tsx",
-        "./src/react-app-env-d.ts"
-    ],
     "compilerOptions": {
         "moduleResolution": "bundler"
     }

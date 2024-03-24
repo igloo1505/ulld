@@ -1,7 +1,7 @@
 import React from 'react'
 import NoteContentObserver from '../observers/noteContentObserver'
-import {getRandomId} from "@ulld/utilities/src/utils/identity"
-import {noteContainerPrefix } from "@ulld/utilities/src/staticAppProperties/main"
+import {getRandomId} from "@ulld/utilities/utils/identity"
+import {noteContainerPrefix } from "@ulld/utilities/staticAppProperties/main"
 
 
 interface ImmediateNoteContentContainerProps {

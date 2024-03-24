@@ -3,8 +3,8 @@ import { AddEquationFormType } from './types';
 import AddEquationFormOne from './addEquationPanel1';
 import AddEquationFormTwo from './addEquationPanel2';
 import AddEquationFormThree from './addEquationPanel3';
-import { client } from '@ulld/api';
-import { useToast } from '@ulld/tailwind';
+import { client } from '@ulld/api/client';
+import { useToast } from '@ulld/tailwind/use-toast';
 
 
 

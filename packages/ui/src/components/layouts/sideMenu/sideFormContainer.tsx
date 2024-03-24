@@ -1,4 +1,5 @@
-import { Button, Form } from '@ulld/tailwind/base'
+import { Button } from '@ulld/tailwind/button'
+import {  Form } from '@ulld/tailwind/form'
 import React, { MouseEvent } from 'react'
 import { UseFormReturn } from 'react-hook-form'
 

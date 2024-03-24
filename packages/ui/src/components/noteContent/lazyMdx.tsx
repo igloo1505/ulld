@@ -13,14 +13,19 @@ import rehypeVideo from 'rehype-video';
 /* import mdxMermaid from 'mdx-mermaid' */
 import clsx from 'clsx'
 import { ImmediateNoteContentContainer } from './immediateNoteContainer'
-import { MdxNote, CalendarAndDateManager, MdxNoteWithAll } from '@ulld/api'
-import { DocTypes, ParsedAppConfig, getInternalConfig } from '@ulld/configschema'
-import { FrontMatterType, ClientsideNoteEvents } from '@ulld/state'
-import { mermaidConfig, mathOptions } from '@ulld/utilities'
+import {ClientsideDomEventsProps, ClientsideNoteEvents} from "@ulld/state/state/domhandler"
 import { getComponentMap } from '../markdown/componentMap'
-import { MdxCitations } from '../markdown/citations'
+import { MdxCitations, zodCitationObject } from '../markdown/citations'
 import { SequentialNoteBottomBar } from '../markdown/sequentialBottomBar'
-import { getClassesFromFrontMatter } from '../../actions'
+import { CalendarAndDateManager } from '@ulld/api/classes/data/calendarAndDate'
+import { MdxNoteWithAll } from '@ulld/api/trpcTypes/main'
+import { DocTypes } from '@ulld/configschema/configUtilityTypes/docTypes'
+import { ParsedAppConfig } from '@ulld/configschema/types'
+import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
+import { FrontMatterType } from '@ulld/state/classes/frontMatter/zodFrontMatterObject'
+import { mathOptions } from '@ulld/utilities/defaults/markdownUniversalOptions'
+import { MdxNote } from '@ulld/api/classes/prismaMdxRelations/mdxNote'
+import { getClassesFromFrontMatter } from '../../actions/universal/getClassesFromFrontMatter'
 
 
 interface LazyMdxProps {
@@ -118,7 +123,7 @@ export const LazyMdx = async ({ markdown, fs, returnedNote, slug, docType, _conf
                 noteQuickLinkId={note.quickLinkId}
                 fs={fs}
             />
-            <MdxCitations citations={note.citations || []} />
+            <MdxCitations citations={note.citations ? zodCitationObject.array().parse(note.citations) : []} />
             <SequentialNoteBottomBar
                 sequentialIndex={note.sequentialIndex}
                 sequentialId={note.sequentialKey}

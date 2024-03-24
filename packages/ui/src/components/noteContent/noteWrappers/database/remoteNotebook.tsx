@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic'
 import React from 'react'
 import { cookies } from 'next/headers'
-import { NotePageProps } from '../../../../utilityFunctions/formatting'
-import { serverClient } from '@ulld/api'
+import { NotePageProps } from '../../../../utilityFunctions/formatting/formatNoteProps.ts'
+import { serverClient } from '@ulld/api/serverClient'
 
 
 

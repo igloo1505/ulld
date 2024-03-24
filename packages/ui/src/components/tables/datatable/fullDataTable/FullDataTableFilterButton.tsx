@@ -2,7 +2,7 @@ import React from 'react'
 import { ColumnFiltersState } from '@tanstack/react-table';
 import { DataTableBaseProps } from '../dataTableBaseProps';
 import { DropdownOptionType, DataTableDropdownCheckboxListInput } from '../datatableFilterButton';
-import { ToDoSearchParams } from '@ulld/parsers';
+import { ToDoSearchParams } from '@ulld/parsers/plugins/todos';
 
 
 export interface Props<T extends unknown> extends DataTableBaseProps<T> {

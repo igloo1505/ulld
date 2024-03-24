@@ -1,15 +1,21 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import { FormItem, Form, FormLabel, FormControl, FormDescription, FormMessage, FormField, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Button, useToast } from '@ulld/tailwind/base';
+import { FormItem, Form, FormLabel, FormControl, FormDescription, FormMessage, FormField} from '@ulld/tailwind/form';
+import {  Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@ulld/tailwind/select';
+import {  useToast } from '@ulld/tailwind/use-toast';
+import {  Button } from '@ulld/tailwind/button';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import deepEql from 'deep-eql'
-import { settingsChangeSchema, client, BibWithEntries, RetrievedSettings } from '@ulld/api';
-import { store, toggleSetting } from '@ulld/state';
-import { BibSettingsSectionProps } from '.';
-import BibSettingsSection from './bib/BibSettingsSection';
-import { LabeledCheckbox } from '../..';
+import BibSettingsSection, { BibSettingsSectionProps } from './bib/BibSettingsSection';
+import { client } from '@ulld/api/client';
+import { settingsChangeSchema } from '@ulld/api/schemas/settings/settingsChangeSchema';
+import { BibWithEntries } from '@ulld/api/trpcInternalMethods/bib/main';
+import { RetrievedSettings } from '@ulld/api/trpcTypes/main';
+import { toggleSetting } from '@ulld/state/slices/settings';
+import { store } from '@ulld/state/store';
+import { LabeledCheckbox } from '../../menus/labeledInputs/checkbox';
 
 
 

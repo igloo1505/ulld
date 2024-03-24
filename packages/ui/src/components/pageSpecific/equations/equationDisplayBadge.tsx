@@ -1,6 +1,6 @@
 "use client"
-import { BadgeProps, Badge } from '@ulld/tailwind';
-import { makeHref, withForwardSlash } from '@ulld/utilities';
+import { BadgeProps, Badge } from '@ulld/tailwind/badge';
+import { makeHref, withForwardSlash } from '@ulld/utilities/fsUtils';
 import clsx from 'clsx';
 import { Route } from 'next';
 import React from 'react'

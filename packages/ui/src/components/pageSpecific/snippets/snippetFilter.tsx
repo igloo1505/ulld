@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import { Button } from '@ulld/tailwind/base'
+import { Button } from '@ulld/tailwind/button'
 import SnippetFilterInput from './snippetFilterInput'
 import SnippetLanguageSelect from './addSnippetLanguageSelect'
-import { SnippetFilterParams } from '@ulld/utilities'
+import { SnippetFilterParams } from '@ulld/utilities/schemas/snippets'
 
 
 

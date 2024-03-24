@@ -1,4 +1,4 @@
-import { Separator } from '@ulld/tailwind/base';
+import { Separator } from '@ulld/tailwind/separator';
 import React from 'react'
 
 

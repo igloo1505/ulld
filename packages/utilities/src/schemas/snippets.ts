@@ -1,4 +1,4 @@
-import { Technologies } from "@ulld/database"
+import { Technologies } from "@ulld/database/internalDatabaseTypes"
 import { z } from "zod"
 
 export const snippetValidator = z.object({

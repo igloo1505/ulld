@@ -1,7 +1,8 @@
 "use client"
-import { RootState } from '@ulld/state';
-import { useToast } from '@ulld/tailwind';
-import { WithChildren, ToastConfigType } from '@ulld/utilities';
+import { RootState } from '@ulld/state/store';
+import { useToast } from '@ulld/tailwind/use-toast';
+import { ToastConfigType } from '@ulld/utilities/types/toastConfig';
+import { WithChildren } from '@ulld/utilities/types/utilityTypes';
 import { useEffect } from 'react'
 import { connect } from 'react-redux';
 

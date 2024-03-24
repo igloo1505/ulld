@@ -1,11 +1,12 @@
 import React from 'react'
 import { SnippetListItemButtons } from './snippetListItemButtons'
 import Link from 'next/link'
-import { Card, Badge } from '@ulld/tailwind'
-import { SnippetListItemProps } from '@ulld/utilities'
+import { Card } from '@ulld/tailwind/card'
+import {  Badge } from '@ulld/tailwind/badge'
 import { CodeHighlightContainer } from '../../code/syntaxHighlighting/codeHighlightContainer'
 import { DeleteModalTriggerButton } from '../../inputs/deleteModalTriggerButton'
 import { MdxContentCLIENT } from '../../mdxContent/mdxContentCLIENT'
+import { SnippetListItemProps } from '@ulld/utilities/schemas/snippets'
 
 
 interface SnippetListItemPropsInternal {

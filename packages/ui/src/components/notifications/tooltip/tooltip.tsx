@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { TooltipProvider, TooltipContent, TooltipTrigger, Tooltip as ShadTooltip } from '@ulld/tailwind/base';
+import { TooltipProvider, TooltipContent, TooltipTrigger, Tooltip as ShadTooltip } from '@ulld/tailwind/tooltip';
 
 
 interface TooltipProps {

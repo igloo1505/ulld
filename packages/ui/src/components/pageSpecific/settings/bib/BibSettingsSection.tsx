@@ -2,7 +2,7 @@ import React from 'react'
 import SettingsSection from '../SettingsSection'
 import BibStatus, { BibStatusProps } from './BibStatus'
 import NoBibFoundPrompt from './NoBibFound'
-import { BibWithEntries } from '@ulld/api'
+import { BibWithEntries } from '@ulld/api/trpcInternalMethods/bib/main'
 
 
 

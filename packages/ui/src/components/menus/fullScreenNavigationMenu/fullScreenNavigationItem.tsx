@@ -2,8 +2,10 @@
 import React from 'react'
 import { Route } from 'next'
 import Link from 'next/link'
-import { makeHref, withForwardSlash } from '@ulld/utilities'
-import { Badge } from '@ulld/tailwind/base'
+import { Badge } from '@ulld/tailwind/badge'
+import { makeHref, withForwardSlash } from '@ulld/utilities/fsUtils'
+
+
 
 export interface NavItem {
     label: string

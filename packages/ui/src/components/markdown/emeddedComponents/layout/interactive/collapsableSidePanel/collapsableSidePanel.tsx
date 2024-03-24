@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import React, { useId } from 'react'
 import "./collapsableSidePanel.scss"
 import CollapsableSidePanelBtn from './collapsableSidePanelButton'
-import { ReduxProvider } from '@ulld/state'
+import { ReduxProvider } from '@ulld/state/reduxProvider'
 
 
 interface CollapsableSidePanelProps {

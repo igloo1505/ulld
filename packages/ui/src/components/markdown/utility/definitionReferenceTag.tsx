@@ -1,4 +1,4 @@
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '@ulld/tailwind/base'
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@ulld/tailwind/hover-card'
 import { BookA } from 'lucide-react'
 import React from 'react'
 
@@ -8,6 +8,7 @@ interface DefinitionReferenceTagProps {
     content?: string
     label?: string
 }
+
 
 const DefinitionReferenceTag = ({ definitionId, content, label }: DefinitionReferenceTagProps) => {
     /* TODO: Move this to a distinct route and redirect to the appropriate URL instead of requiring this to be a client component so the href can be retrieved before even transitioning */

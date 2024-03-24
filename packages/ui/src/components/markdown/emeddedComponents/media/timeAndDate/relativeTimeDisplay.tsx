@@ -1,8 +1,8 @@
 "use client"
-import { DateTime } from '@ulld/api'
-import { TimeDisplayType } from '@ulld/configschema'
+import { TimeDisplayType } from '@ulld/configschema/zod/dateParseConfig'
 import clsx from 'clsx'
 import React, { useEffect, useState } from 'react'
+import {DateTime} from "@ulld/api/classes/data/dateTime"
 
 
 

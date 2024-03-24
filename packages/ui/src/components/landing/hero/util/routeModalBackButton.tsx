@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { Button, ButtonProps } from '@ulld/tailwind/base'
+import { Button, ButtonProps } from '@ulld/tailwind/button'
 import { useRouter } from 'next/navigation'
 
 

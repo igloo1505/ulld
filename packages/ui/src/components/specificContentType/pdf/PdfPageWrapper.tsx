@@ -3,10 +3,11 @@ import clsx from 'clsx'
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import PdfSuspended, { PdfClassKey } from './Pdf'
 import PdfAnnotationContainer from './Annotator'
-import { htmlEm, PdfManager } from '@ulld/state'
-import { Button } from '@ulld/tailwind/base'
-import { pdfStateClasses } from '../../../types'
+import { Button } from '@ulld/tailwind/button'
+import { pdfStateClasses } from '../../../types/general'
 import TocContainer from './TocContainer'
+import {PdfManager} from "@ulld/state/classes/pdfManager"
+import { htmlEm } from '@ulld/state/actions/clientOnly/dom'
 
 
 type WithoutLoading = Omit<typeof pdfStateClasses, "loading">

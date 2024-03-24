@@ -10,6 +10,7 @@
     "./useCounter": "./src/useCounter.ts",
     "./useEditorModalSyncedValue": "./src/useEditorModalSyncedValue.ts",
     "./useEventCallback": "./src/useEventCallback.ts",
+    "./useDebounce": "./src/useDebounce.ts",
     "./useEditorSaveListener": "./src/useEditorSaveListener.ts",
     "./useDebounceParse": "./src/useDebounceParse.ts",
     "./useDebounceMdxParse": "./src/useDebounceMdxParse.ts",

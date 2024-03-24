@@ -2,7 +2,7 @@
 import React, { DetailedHTMLProps, HTMLInputTypeAttribute, InputHTMLAttributes, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation';
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
-import { useToast } from '@ulld/tailwind';
+import { useToast } from '@ulld/tailwind/use-toast';
 
 
 

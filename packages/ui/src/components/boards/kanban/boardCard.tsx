@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle } from '@ulld/tailwind/base'
+import { Card, CardHeader, CardTitle } from '@ulld/tailwind/card'
 import React from 'react'
 import { KanBanBoardDetails } from './types'
 

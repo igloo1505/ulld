@@ -2,9 +2,13 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import clsx from 'clsx';
-import { RootState, store, showConfirmationModal, ConfirmationModalConfig } from '@ulld/state';
+import { RootState, store } from '@ulld/state/store';
 import { confirmationFunctions } from './confirmationModalConfig';
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, Button, useToast } from '@ulld/tailwind/base'
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@ulld/tailwind/dialog'
+import { Button } from '@ulld/tailwind/button'
+import { useToast } from '@ulld/tailwind/use-toast'
+import { ConfirmationModalConfig } from '@ulld/state/actions/confirmation/confirmationModalConfig';
+import { showConfirmationModal } from '@ulld/state/slices/ui';
 
 
 

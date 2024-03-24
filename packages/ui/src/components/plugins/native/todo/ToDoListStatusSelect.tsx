@@ -3,12 +3,11 @@ import { ToDoListStatus } from '@prisma/client';
 import { Column, ColumnFiltersState } from '@tanstack/react-table';
 import React from 'react'
 import { FieldValues, Path } from 'react-hook-form';
-import { FullFormTagSubjectTopicComboBoxProps, DataTableDropdownCheckboxListInputProps } from '../../..';
-import { FullFormTagSubjectTopicComboBox } from '../../../menus/fullForm/fullFormTagTopicSubjectComboBox';
 import { FullDataTableDropdownCheckboxListInput } from '../../../tables/datatable/fullDataTable/FullDataTableFilterButton';
-import { replaceRecursively } from '@ulld/utilities';
+import { replaceRecursively } from "@ulld/utilities/utils/general";
+import { DataTableDropdownCheckboxListInputProps } from '../../../tables/datatable/datatableFilterButton';
 
-
+type FullFormTagSubjectTopicComboBoxProps<T extends FieldValues, H extends HTMLElement> =  any
 
 interface ToDoListStatusSelectProps<T extends FieldValues, H extends HTMLElement> extends Partial<FullFormTagSubjectTopicComboBoxProps<T, H>>, Omit<DataTableDropdownCheckboxListInputProps<T>, "options" | "label" | "toggle" | "selectedIds"> {
     column: Column<T>
@@ -18,21 +17,22 @@ interface ToDoListStatusSelectProps<T extends FieldValues, H extends HTMLElement
 }
 
 
+/* FIX: Missing FullFormTagSubjectTopicComboBox after moving to  mono-repo and before moving all full-form components. Adjust this when the new full-form is completely handled. */
 const ToDoListStatusSelect = <T extends FieldValues>(props: ToDoListStatusSelectProps<T, HTMLTextAreaElement>) => {
-    if (props.selectedIds && props.selectedIds.length) {
-        return (
-            <FullFormTagSubjectTopicComboBox
-                {...props}
-                label={undefined}
-                replaceUnderscores
-                name={props.name as string || "status"}
-                options={Object.keys(ToDoListStatus)}
-                placeholder={"Status"}
-                groupClasses={"max-h-[30vh] overflow-y-auto no-scrollbar"}
-                displayTransform={(s) => replaceRecursively(s, "_", " ")}
-            />
-        )
-    }
+    /* if (props.selectedIds && props.selectedIds.length) { */
+    /*     return ( */
+    /*         <FullFormTagSubjectTopicComboBox */
+    /*             {...props} */
+    /*             label={undefined} */
+    /*             replaceUnderscores */
+    /*             name={props.name as string || "status"} */
+    /*             options={Object.keys(ToDoListStatus)} */
+    /*             placeholder={"Status"} */
+    /*             groupClasses={"max-h-[30vh] overflow-y-auto no-scrollbar"} */
+    /*             displayTransform={(s) => replaceRecursively(s, "_", " ")} */
+    /*         /> */
+    /*     ) */
+    /* } */
 
     return (
         <FullDataTableDropdownCheckboxListInput

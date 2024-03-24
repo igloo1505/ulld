@@ -10,10 +10,10 @@ import { ChevronRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import PdfViewAllPages from "./PdfViewAll";
 import PdfToc from "./Toc";
-import { TextRendererType, PdfManager } from "@ulld/state";
-import { Button } from "@ulld/tailwind/base";
-import { pdfStateClasses } from "../../../types";
+import { Button } from "@ulld/tailwind/button";
+import { pdfStateClasses } from "../../../types/general";
 import { DynamicIcon } from "../../icons/DynamicIcon";
+import { PdfManager, TextRendererType } from "@ulld/state/classes/pdfManager";
 export const options = {
     standardFontDataUrl: '/standard_fonts/',
 };

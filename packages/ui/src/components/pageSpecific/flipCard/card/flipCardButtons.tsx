@@ -1,5 +1,5 @@
 "use client"
-import { Button } from '@ulld/tailwind/base'
+import { Button } from '@ulld/tailwind/button'
 import React from 'react'
 
 

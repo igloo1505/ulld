@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import "@ulld/tailwind/defaultStyles.scss"
 import "./styles.css"
+import "#/styles/mdx.scss"
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
 import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'

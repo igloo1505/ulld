@@ -1,11 +1,10 @@
 import type { editor } from 'monaco-editor';
 import type MonacoEditor from '@monaco-editor/react';
 import { EditorLanguage as MonacoEditorLanguage } from 'monaco-editor/esm/metadata';
-
 export type EditorLanguage = MonacoEditorLanguage | "latex"
 export type IEditor = editor.IStandaloneCodeEditor
 export type EditorOptions = editor.IStandaloneEditorConstructionOptions
-export * from "@prisma/client"
+export type * from "@prisma/client"
 
 export type MonacoProps = React.ComponentProps<typeof MonacoEditor>
 

@@ -1,5 +1,5 @@
-import { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem } from '@ulld/tailwind'
-import { copyStringToClipboard } from '@ulld/utilities'
+import { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem } from '@ulld/tailwind/context-menu'
+import { copyStringToClipboard } from '@ulld/utilities/copyStringToClipboard'
 import React from 'react'
 
 

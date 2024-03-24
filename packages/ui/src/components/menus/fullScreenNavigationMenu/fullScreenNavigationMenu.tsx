@@ -2,8 +2,9 @@ import React from 'react'
 import type { Route } from 'next'
 import { NavItem } from './fullScreenNavigationItem'
 import FullScreenNavigationGroup from './fullScreenNavigationGroup'
-import { formatLocationData, NoteTypeOverview } from '@ulld/state'
-import { ClientSideXIcon } from '../..'
+import { formatLocationData } from '@ulld/state/formatting/formatLocationData'
+import { NoteTypeOverview } from '@ulld/state/formatting/formatLocationDataZodSchema'
+import { ClientSideXIcon } from '../../icons/clientSideUtilityComponents/xIcon'
 
 
 interface FullScreenNavigationMenuProps {
@@ -122,6 +123,8 @@ const FullScreenNavigationMenu = async ({ backOnClick, isPopupState }: FullScree
         label: string
     }[] = [
             {
+                /* BUG: Come back and fix this. Added label property as a required prop and never passed added it to existing items. */
+                /* @ts-ignore */ 
                 items: data as (Omit<NoteTypeOverview, "url"> & { url: Route })[],
                 label: "Notes"
             }, {

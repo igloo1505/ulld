@@ -1,10 +1,10 @@
-import { serverClient } from '@ulld/api'
-import { withForwardSlash } from '@ulld/utilities'
+import { serverClient } from '@ulld/api/serverClient'
 import React from 'react'
-import { ReduxProvider } from '@ulld/state'
-import { NotePageProps } from '../../../../utilityFunctions/formatting'
+import { ReduxProvider } from '@ulld/state/reduxProvider'
+import { NotePageProps } from '../../../../utilityFunctions/formatting/formatNoteProps'
 import { LazyMdx } from '../../lazyMdx'
-import { NoteDetailsSheet } from '../../..'
+import { withForwardSlash } from '@ulld/utilities/fsUtils'
+import { NoteDetailsSheet } from '../../../toc/noteDetailsSheet'
 
 
 interface RemoteMarkdownProps extends NotePageProps {

@@ -2,7 +2,7 @@ import React from 'react'
 import { AddEquationFormType } from './types'
 import { SideFormContainer } from '../../layouts/sideMenu/sideFormContainer'
 import { FullFormTextAreaCodeEditor } from '../../menus/fullForm/fullFormTextAreaCodeEditor'
-import { FullFormTextArea } from '../..'
+import { FullFormTextArea } from '../../menus/fullForm/fullFormTextArea'
 
 
 interface AddEquationFormTwoProps {

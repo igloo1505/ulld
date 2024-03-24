@@ -1,0 +1,39 @@
+:root {
+  --cursor-color: hsl(var(--muted-foreground));
+  --cursor-block-color: hsl(var(--muted-foreground));
+}
+
+.mq-cursor {
+  min-height: 13px !important;
+  background-color: var(--cursor-block-color);
+  border-color: var(--cursor-color);
+}
+
+.ulld-fullForm {
+  .mq-editable-field {
+    .mq-cursor {
+      min-width: unset;
+      border-left: 1px solid var(--cursor-color);
+      border-color: var(--cursor-color);
+    }
+  }
+  .mq-cursor {
+    border-color: var(--cursor-color);
+  }
+}
+
+.latex-math-input {
+  color: var(--foreground);
+  border-color: var(--cursor-color);
+  background: hsl(var(--background));
+}
+
+.latex-math-input .mq-matrixed {
+  background: hsl(var(--background));
+}
+
+html.dark {
+  .latex-math-input .mq-matrixed-container {
+    filter: progid:DXImageTransform.Microsoft.Chroma(color='black');
+  }
+}

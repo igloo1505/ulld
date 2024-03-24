@@ -1,8 +1,9 @@
 import { Route } from 'next'
 import Link from 'next/link'
 import React from 'react'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, buttonVariants } from '@ulld/tailwind/base'
-import { serverClient } from '@ulld/api'
+import { buttonVariants } from '@ulld/tailwind/button'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@ulld/tailwind/tooltip'
+import { serverClient } from '@ulld/api/serverClient'
 import { MathDisplaySERVER } from '../math/equation/mathDisplay_server'
 
 

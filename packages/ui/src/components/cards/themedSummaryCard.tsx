@@ -1,13 +1,12 @@
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, Badge } from '@ulld/tailwind/base';
+import {  Badge } from '@ulld/tailwind/badge';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@ulld/tailwind/card';
 import React from 'react'
 import { ItemSummaryCardProps } from './itemSummary';
 import Link from 'next/link';
 import { Route } from 'next';
 import ThemedSummaryCardContextMenu from './themedSummaryCardContextMenu';
-import { CalendarAndDateManager } from '@ulld/api';
-import { searchByCitationUrl, searchByTagUrl } from '@ulld/state';
-import { getRandomId } from '@ulld/utilities';
-import { MdxContentSERVER } from '..';
+import { getRandomId } from '@ulld/utilities/identity';
+import { MdxContentSERVER } from '../mdxContent/mdxContentSERVER';
 
 
 

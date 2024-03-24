@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from 'react'
 import DatePicker from 'react-datepicker'
-import { Input } from '@ulld/tailwind/base'
+import { Input } from '@ulld/tailwind/input'
 import "react-datepicker/dist/react-datepicker.css";
 import "./dateTimePicker.scss"
 

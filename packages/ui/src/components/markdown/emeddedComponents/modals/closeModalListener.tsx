@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect } from 'react'
-import { DynamicIcon } from '../../..'
+import { DynamicIcon } from '../../../icons/DynamicIcon'
 
 
 

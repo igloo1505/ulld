@@ -1,5 +1,5 @@
-import { documentTypeConfigSchemaBase } from '@ulld/configschema'
-import { zodCoerceToDate } from '@ulld/utilities'
+import { documentTypeConfigSchemaBase } from '@ulld/configschema/src/zod/documentConfigSchema'
+import { zodCoerceToDate } from '@ulld/utilities/schemas/utility'
 import { z } from 'zod'
 
 

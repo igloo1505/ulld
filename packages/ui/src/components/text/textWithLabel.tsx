@@ -1,5 +1,5 @@
 import React from 'react'
-import { Label } from '@ulld/tailwind/base'
+import { Label } from '@ulld/tailwind/label'
 import clsx from 'clsx'
 
 

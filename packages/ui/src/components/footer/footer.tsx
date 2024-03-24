@@ -3,10 +3,10 @@ import Link from 'next/link';
 import FooterCategory from './footerCategory';
 import { Route } from 'next';
 import clsx from 'clsx';
-import { BrandTitle } from '..';
-import { QuickLinkType } from '@ulld/utilities';
 import { VercelIcon } from '../icons/logoIcons/vercel';
 import { GithubIcon } from '../icons/logoIcons/github';
+import BrandTitle from '../text/title';
+import {QuickLinkType} from "@ulld/utilities/types/navigation"
 
 
 const quickLinks: QuickLinkType[] = [

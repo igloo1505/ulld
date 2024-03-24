@@ -1,10 +1,11 @@
 import clsx from 'clsx'
 import React from 'react'
 import FoldingAdmonition from './FoldingAdmonition';
-import { serverClient } from '@ulld/api';
-import { stringToConsistentId } from '@ulld/state';
-import { DynamicIcon, OpenToggleArrow } from '../..';
-import { AdmonitionProps, AdmonitionType } from '../../../types';
+import { serverClient } from '@ulld/api/serverClient';
+import { DynamicIcon } from '../../icons/DynamicIcon';
+import {  OpenToggleArrow } from '../../menus/openToggleArrow';
+import { AdmonitionProps, AdmonitionType } from '../../../types/general';
+import { stringToConsistentId } from '@ulld/state/formatting/general';
 
 
 

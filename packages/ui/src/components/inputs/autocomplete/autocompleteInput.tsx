@@ -1,8 +1,8 @@
 "use client"
 import React, { KeyboardEvent, useEffect, useState } from 'react'
 import AutocompleteIndicatorContainer from './autocompleteIndicatorContainer'
-import { Input } from '@ulld/tailwind/base'
-import { onIndexChange } from '@ulld/state'
+import { Input } from '@ulld/tailwind/input'
+import { onIndexChange } from '@ulld/state/listeners/keydown'
 
 
 

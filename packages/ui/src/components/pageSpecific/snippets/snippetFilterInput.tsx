@@ -1,8 +1,8 @@
 "use client"
-import { Input } from '@ulld/tailwind/base'
+import { Input } from '@ulld/tailwind/input'
 import React from 'react'
 import { useRouter } from 'next/navigation'
-import { SnippetFilterParams } from '@ulld/utilities'
+import { SnippetFilterParams } from '@ulld/utilities/schemas/snippets'
 
 
 const SnippetFilterInput = ({ params }: { params: SnippetFilterParams }) => {

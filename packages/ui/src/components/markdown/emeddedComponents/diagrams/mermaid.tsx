@@ -6,9 +6,8 @@ import "./mermaidStyles.scss"
 const Mermaid = dynamic(() => import("mdx-mermaid/lib/Mermaid"), {
     ssr: false,
 });
-
 import { connect } from 'react-redux';
-import { RootState } from '@ulld/state';
+import { RootState } from '@ulld/state/store';
 
 
 const connector = connect((state: RootState, props: any) => ({

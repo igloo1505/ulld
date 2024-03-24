@@ -1,9 +1,9 @@
-import { PrismaMdxNoteSummaryOutput } from '@ulld/api'
 import { serverLogger } from "@ulld/logger/server"
 import React from 'react'
 import ThemedSummaryCard from '../../cards/themedSummaryCard'
 import ContentListPageObserver from '../../observers/ContentListPageObserver'
 import NoneFound from '../../pageSpecific/search/noneFound'
+import { PrismaMdxNoteSummaryOutput } from "@ulld/api/classes/prismaMdxRelations/protocols/mdxNote"
 
 
 

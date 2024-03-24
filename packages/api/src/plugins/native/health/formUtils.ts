@@ -1,4 +1,4 @@
-import { HealthReport, Prisma } from "@prisma/client"
+import { HealthReport, Prisma } from "@ulld/database/internalDatabaseTypes"
 import { prisma } from "@ulld/database/db"
 import { zodTertiaryToggleSchema } from "@ulld/utilities/defaults/prisma/commonZodFields"
 import { ZodDate, ZodOptional, ZodRawShape, ZodString, ZodUnion, z } from "zod"

@@ -1,5 +1,5 @@
 "use client"
-import { resetCollapsablePanels } from '@ulld/state'
+import { resetCollapsablePanels } from '@ulld/state/actions/clientOnly/general'
 import { usePathname } from 'next/navigation'
 import React, { useEffect } from 'react'
 

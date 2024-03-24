@@ -7,30 +7,42 @@ import {
     Popover,
     PopoverContent,
     PopoverTrigger,
+} from "@ulld/tailwind/popover"
+import {
     Command,
     CommandInput,
     CommandEmpty,
     CommandGroup,
     CommandItem,
+} from "@ulld/tailwind/command"
+
+import {
     Button,
+} from "@ulld/tailwind/button"
+import {
     TableHeader,
     TableRow,
     TableHead,
     TableBody,
     TableCell,
     Table,
+} from "@ulld/tailwind/table"
+import {
+    Label
+} from "@ulld/tailwind/label"
+import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
     DropdownMenuContent,
     DropdownMenuTrigger,
-    Label
-} from "@ulld/tailwind/base"
+} from "@ulld/tailwind/dropdown-menu"
 import clsx from 'clsx'
 import {
     CheckIcon, ChevronDown, ChevronsUpDown
 } from 'lucide-react'
-import { AutoSettingType, autoSetting } from '@ulld/api'
-import { cn } from '../../../../utilityFunctions'
+import { cn } from '@ulld/utilities/cn'
+import { autoSetting } from '@ulld/database/internalDatabaseTypes'
+import { AutoSettingType } from '@ulld/api/routers/sync'
 
 
 

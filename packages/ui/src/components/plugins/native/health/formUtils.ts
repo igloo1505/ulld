@@ -1,7 +1,7 @@
-import { HealthReport } from "@prisma/client"
-import type { serverClient } from "@ulld/api"
-import { zodTertiaryToggleSchema } from "@ulld/utilities"
+import { HealthReport } from "@ulld/database/internalDatabaseTypes"
+import type { serverClient } from "@ulld/api/serverClient"
 import { ZodDate, ZodOptional, ZodRawShape, ZodString, ZodUnion, z } from "zod"
+import { zodTertiaryToggleSchema } from "@ulld/utilities/defaults/prisma/commonZodFields"
 
 
 export const dietFormFieldValues = {

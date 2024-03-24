@@ -1,7 +1,7 @@
 "use client"
-import { client } from '@ulld/api'
+import { client } from '@ulld/api/client'
 import React from 'react'
-import { Button } from '@ulld/tailwind/base'
+import { Button } from '@ulld/tailwind/button'
 import { createPortal } from 'react-dom'
 
 

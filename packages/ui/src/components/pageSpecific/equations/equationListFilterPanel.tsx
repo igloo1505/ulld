@@ -3,14 +3,16 @@ import React, { useEffect, useState } from 'react'
 import { EquationSearchParams, formatEquationSearchParams } from './utils'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, Input, Button, buttonVariants } from '@ulld/tailwind/base'
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage} from '@ulld/tailwind/form'
+import {  Input } from '@ulld/tailwind/input'
+import {   Button, buttonVariants } from '@ulld/tailwind/button'
 import { useForm } from 'react-hook-form'
 import EquationTagComboBox from './equationTagComboBox'
 import EquationVariableComboBox from './equationVariableComboBox'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import StringBadgeList from '../../inputs/stringBadgeList'
-import { ArrayUtilities } from '@ulld/utilities'
+import { ArrayUtilities } from '@ulld/utilities/arrayUtilities'
 
 
 

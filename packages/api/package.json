@@ -4,7 +4,7 @@
   "private": true,
   "module": "./dist/index.mjs",
   "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "types": "./src/index.d.ts",
   "files": [
     "src",
     "dist"
@@ -25,6 +25,7 @@
     "./classes/prismaMdxRelations/subject": "./src/classes/prismaMdxRelations/subject.ts",
     "./classes/prismaMdxRelations/QaPair": "./src/classes/prismaMdxRelations/QaPair.ts",
     "./classes/prismaMdxRelations/IpynbNote": "./src/classes/prismaMdxRelations/IpynbNote.ts",
+    "./classes/prismaMdxRelations/mdxNote": "./src/classes/prismaMdxRelations/MdxNote.tsx",
     "./classes/prismaMdxRelations/CitationGroup": "./src/classes/prismaMdxRelations/CitationGroup.ts",
     "./classes/prismaMdxRelations/zod/general": "./src/classes/prismaMdxRelations/zod/general.ts",
     "./classes/prismaMdxRelations/utilities/conversionUtilities": "./src/classes/prismaMdxRelations/utilities/conversionUtilities.ts",

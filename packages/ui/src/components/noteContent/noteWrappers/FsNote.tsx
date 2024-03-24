@@ -1,9 +1,9 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import FileSystemMarkdown from './filesystem/fileSystemMarkdown';
-import { ParsableExtensions } from '@ulld/configschema';
-import { NotePageProps } from "../../../utilityFunctions/formatting"
 import PageContentContainer from '../../layouts/contentContainer';
+import { ParsableExtensions } from '@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions';
+import { NotePageProps } from '../../../utilityFunctions/formatting/formatNoteProps';
 
 
 interface FileSystemNoteProps extends NotePageProps {

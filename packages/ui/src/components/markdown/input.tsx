@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, InputProps } from '@ulld/tailwind/base'
+import { Input, InputProps } from '@ulld/tailwind/input'
 import MdxCheckbox, { MdxInputProps } from './Checkbox'
 
 

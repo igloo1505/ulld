@@ -6,12 +6,12 @@ import { TableWrapper } from "./tables/wrapper";
 import Ul from "./ul";
 import type { MDXComponents } from 'mdx/types'
 import { MdxInput } from "./input";
-import { ConditionalComponentProps } from "./conditionalComponents";
+import { ConditionalComponentProps, getConditionalComponents } from "./conditionalComponents";
 import BlockQuote from "./text/blockQuote";
 import { Highlight } from "./emeddedComponents/Hl";
 import { ImgComponent } from "./img";
 import { InternalMermaid } from "./emeddedComponents/diagrams/mermaid";
-import { H1, H2, H3, H4, H5, H6 } from "..";
+import { H1, H2, H3, H4, H5, H6 } from "../text/heading";
 
 
 export const components: MDXComponents = {
@@ -36,15 +36,15 @@ export const components: MDXComponents = {
 
 
 export const getComponentMap = (content: string, opts?: ConditionalComponentProps) => {
-    // if (opts?.requiredOnly) {
+     if (opts?.requiredOnly) {
         return components
-    // }
-    // return {
-    //     ...components,
-    //     ...getConditionalComponents(content, {
-    //         all: false,
-    //         ...opts
-    //     })
-    // }
+     }
+     return {
+         ...components,
+         ...getConditionalComponents(content, {
+             all: false,
+             ...opts
+         })
+     }
 }
 

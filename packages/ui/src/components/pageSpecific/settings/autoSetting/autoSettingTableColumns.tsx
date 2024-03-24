@@ -1,21 +1,26 @@
-import { autoSetting } from "@prisma/client"
+import { autoSetting } from "@ulld/database/internalDatabaseTypes"
 import { ColumnDef } from "@tanstack/react-table"
-import { AutoSettingType, client } from "@ulld/api"
-import { autoSettingSearchAllParamMap } from "@ulld/state"
 import {
     Button,
+} from "@ulld/tailwind/button"
+import {
     Checkbox,
+} from "@ulld/tailwind/checkbox"
+import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuLabel,
     DropdownMenuTrigger,
-} from "@ulld/tailwind/base"
+} from "@ulld/tailwind/dropdown-menu"
 import {
     ArrowUpDown,
     MoreHorizontal,
 } from "lucide-react"
 import type { useRouter } from "next/navigation"
+import { client } from "@ulld/api/client"
+import { AutoSettingType } from "@ulld/api/routers/sync"
+import { autoSettingSearchAllParamMap } from "@ulld/state/searchParamSchemas/utilities/formatSearchAllParams"
 
 
 

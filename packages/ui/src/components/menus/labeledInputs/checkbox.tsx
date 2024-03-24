@@ -1,5 +1,5 @@
 import React from 'react'
-import { Checkbox } from "@ulld/tailwind/base"
+import { Checkbox } from "@ulld/tailwind/checkbox"
 
 
 interface LabeledCheckboxProps extends React.ComponentPropsWithRef<typeof Checkbox> {

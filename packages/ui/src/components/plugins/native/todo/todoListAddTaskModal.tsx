@@ -4,14 +4,17 @@ import { useRouter } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { priorityStrings } from './ToDoListPrioritySelect'
-import { ToDoListAddTaskSchema, ToDoListStatus, todoListAddTaskSchema, client } from '@ulld/api'
-import { useToast, Button } from '@ulld/tailwind'
-import { FullFormDateInput } from '../../../menus/fullForm/fullFormDateInput'
-import { FullFormInput } from '../../../menus/fullForm/fullFormInput'
-import { FullFormSelectInput } from '../../../menus/fullForm/fullFormSelect'
-import { FullFormTagSubjectTopicComboBox } from '../../../menus/fullForm/fullFormTagTopicSubjectComboBox'
+import { useToast } from '@ulld/tailwind/use-toast'
+import { Button } from '@ulld/tailwind/button'
+import { DateInput } from '@ulld/full-form/dateInput'
+import { TextInput } from '@ulld/full-form/textInput'
+import { SelectInput } from '@ulld/full-form/select'
+import { TaggableComboBox } from '@ulld/full-form/taggableCombobox'
 import { DialogWithForm } from '../../../modals/utils/dialogWithForm'
-import { AddTaskSearchParams } from '.'
+import { ToDoListStatus } from '@ulld/database/internalDatabaseTypes'
+import { client } from '@ulld/api/client'
+import { ToDoListAddTaskSchema, todoListAddTaskSchema } from '@ulld/api/plugins/native/todo/zod/general'
+import { AddTaskSearchParams } from './schemas'
 
 
 
@@ -88,7 +91,7 @@ const ToDoListAddTaskModal = ({ isModal, lists, sp }: ToDoListAddTaskModalProps)
             withButtons={false}
         >
             <div className={"grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-x-4 gap-y-6"}>
-                <FullFormTagSubjectTopicComboBox
+                <TaggableComboBox
                     formItemClasses="justify-around"
                     options={lists.map((l) => l.label)}
                     name="listName"
@@ -96,13 +99,13 @@ const ToDoListAddTaskModal = ({ isModal, lists, sp }: ToDoListAddTaskModalProps)
                     placeholder="Which to-do list?"
                     buttonClasses="w-full"
                 />
-                <FullFormInput
+                <TextInput
                     name="task"
                     label="Task"
                 />
             </div>
             <div className={"grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-x-4 gap-y-6"}>
-                <FullFormSelectInput
+                <SelectInput
                     label="Priority"
                     name={"priority"}
                     options={priorityStrings.map((n) => {
@@ -113,7 +116,7 @@ const ToDoListAddTaskModal = ({ isModal, lists, sp }: ToDoListAddTaskModalProps)
                     })}
                     placeholder={"Priority"}
                 />
-                <FullFormTagSubjectTopicComboBox
+                <TaggableComboBox
                     label="Status"
                     name="status"
                     buttonClasses={"w-full"}
@@ -124,7 +127,7 @@ const ToDoListAddTaskModal = ({ isModal, lists, sp }: ToDoListAddTaskModalProps)
                 />
             </div>
             <div className={"w-full grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-x-4 gap-y-6"}>
-                <FullFormDateInput
+                <DateInput
                     name="dueAt"
                     label="Due"
                     buttonClasses="!w-full"

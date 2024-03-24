@@ -4,13 +4,14 @@ import {
     TabsContent,
     TabsList,
     TabsTrigger,
+} from '@ulld/tailwind/tabs'
+import {
     Card,
     CardContent,
     CardDescription,
     CardHeader,
     CardTitle,
-
-} from '@ulld/tailwind/base'
+} from '@ulld/tailwind/card'
 
 
 

@@ -1,5 +1,5 @@
 "use client"
-import { CalendarAndDateManager } from '@ulld/api'
+import { CalendarAndDateManager } from '@ulld/api/classes/data/calendarAndDate'
 import React, { useEffect, useState } from 'react'
 
 

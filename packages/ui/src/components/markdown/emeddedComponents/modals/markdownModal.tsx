@@ -1,4 +1,4 @@
-import { Separator } from '@ulld/tailwind/base'
+import { Separator } from '@ulld/tailwind/separator'
 import clsx from 'clsx'
 import React, { useId } from 'react'
 import "../../../../styles/modal.scss"

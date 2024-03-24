@@ -1,7 +1,7 @@
 import React from 'react'
 import TodoListSelector from './todoListSelector';
 import ToDoListPanelContainer from './toDoListPanelContainer';
-import { ToDoPageData } from '.';
+import { ToDoPageData } from './schemas';
 
 
 

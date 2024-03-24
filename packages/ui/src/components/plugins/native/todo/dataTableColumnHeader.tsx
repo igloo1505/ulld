@@ -5,7 +5,8 @@ import {
     EyeNoneIcon,
 } from "@radix-ui/react-icons"
 import { Column } from "@tanstack/react-table"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger, Button } from '@ulld/tailwind/base'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@ulld/tailwind/dropdown-menu'
+import {  Button } from '@ulld/tailwind/button'
 import clsx from "clsx"
 interface DataTableColumnHeaderProps<TData, TValue>
     extends React.HTMLAttributes<HTMLDivElement> {

@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import AutoSettingDataTable from './autoSettingDataTable'
 import AutoSettingFormModal from './formModal'
-import { AutoSettingType } from '@ulld/api'
+import { AutoSettingType } from '@ulld/api/routers/sync'
 
 
 

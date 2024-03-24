@@ -1,9 +1,9 @@
 "use client"
 import Link from 'next/link'
 import { Route } from "next"
-import { Button } from "@ulld/tailwind/base"
-import { DocTypes } from '@ulld/configschema'
-import { formatSearchAllParams } from '@ulld/state'
+import { Button } from "@ulld/tailwind/button"
+import { DocTypes } from '@ulld/configschema/configUtilityTypes/docTypes'
+import { formatSearchAllParams } from '@ulld/state/searchParamSchemas/utilities/formatSearchAllParams'
 
 
 export const SubjectTag = ({ subject, category, basePath }: { subject: string, basePath: Route, category: DocTypes }) => {

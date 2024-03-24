@@ -1,14 +1,15 @@
 import { Column, ColumnFiltersState } from '@tanstack/react-table';
-import { ToDoSearchParams } from '@ulld/parsers';
 import React from 'react'
 import { FieldValues, Path } from 'react-hook-form';
-import { FullFormSelectInputProps, DropdownOptionType } from '../../..';
-import { FullFormTagSubjectTopicComboBox } from '../../../menus/fullForm/fullFormTagTopicSubjectComboBox';
+import { TaggableComboBox } from '@ulld/full-form/taggableCombobox';
 import { FullDataTableDropdownCheckboxListInput } from '../../../tables/datatable/fullDataTable/FullDataTableFilterButton';
-import { replaceRecursively } from '@ulld/utilities';
+import { replaceRecursively } from "@ulld/utilities/utils/general";
+import { ToDoSearchParams } from '@ulld/parsers/plugins/todos';
+import {  SelectInputProps } from '@ulld/full-form/select';
+import { DropdownOptionType } from '../../../tables/datatable/datatableFilterButton';
 
 
-interface ToDoListPrioritySelectProps<T extends FieldValues, H extends HTMLElement, L extends string> extends Partial<Omit<FullFormSelectInputProps<T, H, L>, "name">> {
+interface ToDoListPrioritySelectProps<T extends FieldValues, H extends HTMLElement, L extends string> extends Partial<Omit<SelectInputProps<T, H, L>, "name">> {
     name?: string
     column: Column<T>
     columnFilters: ColumnFiltersState
@@ -40,7 +41,7 @@ const ToDoListPrioritySelect = <T extends FieldValues, L extends string>({ name,
 
     if (props.selectedIds && props.selectedIds.length) {
         return (
-            <FullFormTagSubjectTopicComboBox
+            <TaggableComboBox
                 {...props}
                 label={undefined}
                 replaceUnderscores

@@ -2,9 +2,9 @@ import React from 'react'
 import { HealthReportSummaryBarPlot } from './healthReportSummaryBarPlot'
 import dayjs from 'dayjs'
 import advancedFormat from 'dayjs/plugin/advancedFormat';
-import { ReturnedHealthReportSummary } from '@ulld/api';
-import { H4 } from '../../../../..';
+import { H4 } from '../../../../../text/heading';
 import { DeleteModalTriggerButton } from '../../../../../inputs/deleteModalTriggerButton';
+import { ReturnedHealthReportSummary } from '@ulld/api/trpcInternalMethods/plugins/native/health/main';
 dayjs.extend(advancedFormat)
 
 

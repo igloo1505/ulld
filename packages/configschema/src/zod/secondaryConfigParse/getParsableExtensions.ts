@@ -1,5 +1,5 @@
 import { replaceRecursively } from "@ulld/utilities/utils/general";
-import { AppConfigSchemaOutput } from "../main";
+import type { AppConfigSchemaOutput } from "../main";
 import { z } from 'zod'
 
 export const markdownExtensions = z.union([

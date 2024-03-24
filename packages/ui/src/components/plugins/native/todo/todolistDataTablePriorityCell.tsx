@@ -2,7 +2,9 @@
 import React, { useState } from 'react'
 import { ArrowUpIcon, Command } from 'lucide-react';
 import { priorityStrings } from './ToDoListPrioritySelect';
-import { CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, Popover, PopoverTrigger, PopoverContent, Button } from '@ulld/tailwind/base';
+import { CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem } from '@ulld/tailwind/command';
+import { Popover, PopoverTrigger, PopoverContent } from '@ulld/tailwind/popover';
+import { Button} from '@ulld/tailwind/button';
 
 
 

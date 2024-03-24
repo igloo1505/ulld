@@ -1,4 +1,5 @@
-import { ParsedAppConfig, getInternalConfig } from "@ulld/configschema"
+import { ParsedAppConfig } from "@ulld/configschema/types"
+import {  getInternalConfig } from "@ulld/configschema/zod/getInternalConfig"
 
 export interface PropColor {
     [k: string]: string
