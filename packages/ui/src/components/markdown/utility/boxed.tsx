@@ -1,5 +1,5 @@
-import { Record } from '@prisma/client/runtime/library'
-import { PropColor, getPropColor } from '@ulld/state'
+import { getPropColor } from '@ulld/state/actions/ui/getPropColor'
+import { PropColor } from '@ulld/utilities/shadColorMap'
 import clsx from 'clsx'
 import React from 'react'
 

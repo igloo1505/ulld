@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from 'react'
 import BoardListContainer from './boardListContainer';
-import { Input } from '#/components/shad/ui/input';
-import { Button } from '#/components/shad/ui/button';
+import { Input } from '@ulld/tailwind/input';
+import { Button } from '@ulld/tailwind/button';
 import { BoardListProps } from './boardList';
 import { PlusIcon } from 'lucide-react';
 

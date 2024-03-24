@@ -4,6 +4,12 @@ import { client } from "@ulld/api/client";
 import * as runtime from "react/jsx-runtime";
 import { MDXModule } from "mdx/types";
 
+const TempContent = ({components}: {components: any}) => {
+       return (
+       <div>FIX THIS</div>
+     )
+}
+
 export const useDebounceMdxParse = (
     initialValue: string = "",
     debounceTimeout: number = 300,
@@ -13,25 +19,10 @@ export const useDebounceMdxParse = (
     const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
     const Content = mdxModule ? mdxModule.default : Fragment;
 
-    const parseContent = async () => {
-        if(!value) return 
-        const vf = await client.beta.parseMdxString.mutate({
-            content: value,
-        });
-        let ran = await run(vf, {
-            ...runtime,
-            baseUrl: import.meta.url,
-        });
-        setMdxModule(ran);
-    };
-
-    useEffect(() => {
-        setTimer(setTimeout(parseContent, debounceTimeout));
-    }, [value]);
 
     return {
         value,
         setValue,
-        Content
+        Content: TempContent
     };
 };

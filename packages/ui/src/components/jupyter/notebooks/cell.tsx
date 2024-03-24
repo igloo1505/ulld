@@ -2,8 +2,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Cell } from '@datalayer/jupyter-react';
 import clsx from 'clsx';
-import { client } from '@ulld/api';
-import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema';
+import { client } from '@ulld/api/client';
+import { ParsedAppConfig } from '@ulld/configschema/types';
+import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig';
 import { JupyterContextWrapper } from '../jupyterProvider';
 
 

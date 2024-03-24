@@ -3,9 +3,10 @@ import React, { useId } from 'react'
 import { INotebookProps, Notebook as JupyterNotebook } from "@datalayer/jupyter-react"
 import NotebookToolbar from './notebookToolbar'
 import NotebookCellSidebarMenu from './cellSidebarMenu'
-import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema'
-import { makeValidId } from '@ulld/utilities'
-import { JupyterContextWrapper } from '..'
+import { ParsedAppConfig } from '@ulld/configschema/types'
+import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
+import { makeValidId } from '@ulld/utilities/identity'
+import { JupyterContextWrapper } from '../jupyterProvider'
 
 
 type NotebookProps = ({

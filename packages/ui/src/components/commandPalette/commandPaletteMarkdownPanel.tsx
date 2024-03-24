@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import CommandPalettePanelListeners from './commandPaletteMarkdownPanelListeners'
-import { MDXSerializeReturnType } from '@ulld/parsers'
 import { MdxContentCLIENT } from '../mdxContent/mdxContentCLIENT'
+import { MDXSerializeReturnType } from '@ulld/parsers/serializeMdxContent'
 
 
 

@@ -3,7 +3,8 @@ import React from 'react'
 import { Jupyter, JupyterProps } from "@datalayer/jupyter-react"
 import { useSearchParams } from 'next/navigation'
 import "./notebook.scss"
-import { ParsedAppConfig, getInternalConfig } from '@ulld/configschema'
+import { ParsedAppConfig } from '@ulld/configschema/types'
+import {  getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
 
 
 interface JupyterContextWrapperProps {
@@ -18,7 +19,7 @@ interface JupyterContextWrapperProps {
 
 export const JupyterContextWrapper = ({ children, darkMode, terminals, collaborative, startKernel = false, _config }: JupyterContextWrapperProps) => {
     const sp = useSearchParams()
-    const config = _config || getInternalConfig(sp)
+    const config = _config || getInternalConfig(_config, sp)
     const jupyterBaseUrl = `http://127.0.0.1:${config.jupyter.jupyterPort}`
     const jupyterSocketUrl = `ws://127.0.0.1:${config.jupyter.jupyterPort}`
     const jupyterProps: Omit<JupyterProps, "children"> = {

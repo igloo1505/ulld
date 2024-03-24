@@ -1,5 +1,5 @@
 "use client"
-import { toggleEquationSelectMode } from '@ulld/state'
+import { toggleEquationSelectMode } from '@ulld/state/actions/clientOnly/general'
 import { useEffect } from 'react'
 
 

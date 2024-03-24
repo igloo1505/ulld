@@ -1,9 +1,9 @@
 import clsx from "clsx"
 import dynamic from "next/dynamic"
-import { EmbeddedImageProps, WithRequired } from "@ulld/utilities"
-import { isFullWidth } from "@ulld/state"
-import { getInternalConfig } from "@ulld/configschema"
-
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig"
+import { WithRequired } from "@tanstack/react-query"
+import {EmbeddedImageProps} from "@ulld/utilities/types/embeddedImageProps"
+import {isFullWidth} from "@ulld/state/formatting/styleUtilities"
 
 
 

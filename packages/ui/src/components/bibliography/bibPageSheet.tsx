@@ -1,15 +1,15 @@
 "use client"
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '#/components/shad/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@ulld/tailwind/sheet';
 import React, { useEffect, useId, useRef, useState } from 'react'
-import { Badge } from '#/components/shad/ui/badge';
-import { Input } from '#/components/shad/ui/input';
-import { onEnter } from '#/actions/listeners';
-import { client } from '#/trpc/client';
-import { BibEntry, BibEntrySummarySheetOutput } from '#/classes/prismaMdxRelations/BibEntry';
-import { Tag } from '#/classes/prismaMdxRelations/tag';
-import DynamicIcon from '#/components/icons/DynamicIcon';
+import { Badge } from '@ulld/tailwind/badge';
+import { Input } from '@ulld/tailwind/input';
+import { onEnter } from '@ulld/state/listeners/keydown';
+import { client } from '@ulld/api/client';
+import { BibEntry, BibEntrySummarySheetOutput } from '@ulld/api/classes/prismaMdxRelations/bibEntry';
+import { Tag } from '@ulld/api/classes/prismaMdxRelations/tag';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { DynamicIcon } from '../icons/DynamicIcon';
 
 
 interface BibliographySheetProps {
@@ -48,7 +48,7 @@ const BibliographySheet = ({ item, close }: BibliographySheetProps) => {
 
     const handleSubmitTag = async () => {
         if (!item?.id) return
-        let res = await client.addBibItemTag.mutate({
+        let res = await client.bibliography.addBibItemTag.mutate({
             bibItemId: item.id,
             tag: tagInputValue
         })
@@ -60,13 +60,13 @@ const BibliographySheet = ({ item, close }: BibliographySheetProps) => {
     const submitPdfPath = async () => {
         if (!item) return
         item.PdfPath = setPdfPath
-        await client.bibEntryUpsert.mutate(item.upsertArgs())
+        await client.bibliography.bibEntryUpsert.mutate(item.upsertArgs())
         setSetPdfPath(undefined)
     }
 
     const removeTag = async (t: string) => {
         if (!item) return
-        await client.removeBibEntryTag.mutate({ bibEntryId: item?.id as string, tag: t })
+        await client.bibliography.removeBibEntryTag.mutate({ bibEntryId: item?.id as string, tag: t })
         setTags(tags?.filter((_t) => _t.value !== t) || [])
     }
 

@@ -1,5 +1,5 @@
 import { ParsedAppConfig } from "@ulld/configschema/types"
-import {  getInternalConfig } from "@ulld/configschema/zod/getInternalConfig"
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig"
 
 export interface PropColor {
     [k: string]: string
@@ -29,7 +29,7 @@ export const getPropColor = (d: PropColorAsProp, prefix?: string, _default?: str
         }
     })
     let _props: { [k: string]: any } = {}
-    let k = Object.keys(_config.UI.colors)
+    let k = Object.keys(_config.UI.colors || {})
     for (const l in d) {
         if (!k.includes(l)) {
             _props[l] = d[l]

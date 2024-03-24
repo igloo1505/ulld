@@ -5,7 +5,7 @@ import { tinykeys } from "tinykeys"
 import CommandPalette from './commandPalette'
 import { Command } from 'cmdk'
 import { pages as pageList, textSearchPages } from './commandPaletteUtilities'
-import { enterIdSelectMode } from '@ulld/state'
+import { enterIdSelectMode } from '@ulld/state/actions/clientOnly/general'
 
 
 interface CommandPalettePopoverProps {

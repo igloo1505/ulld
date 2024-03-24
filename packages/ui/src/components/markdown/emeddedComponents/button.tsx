@@ -1,7 +1,7 @@
 "use client"
 import { ButtonProps as ShadButtonProps, Button as ShadButton } from '@ulld/tailwind/button'
 import React from 'react'
-import {MarkdownButtonActions} from "@ulld/state/actions/clientOnly/markdownActions"
+import {MarkdownButtonActions, markdownActionsMap} from "@ulld/state/actions/clientOnly/markdownActions"
 
 
 interface ButtonProps {

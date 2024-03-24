@@ -245,8 +245,8 @@ const AddHealthReportFormWrapper = ({ editing }: AddHealthReportFormWrapperProps
                         defaultValue={8}
                     />
                 </div>
-            </Container>
-            <Container
+            </FullPageFormContainer>
+            <FullPageFormContainer
                 asideParent="Health"
                 title="Health"
                 subtitle="A general description of your overall sense of wellbeing. Rank each from 1 (dying) to 10 (perfect)."
@@ -268,8 +268,8 @@ const AddHealthReportFormWrapper = ({ editing }: AddHealthReportFormWrapperProps
                         />
                     )
                 })}
-            </Container>
-            <Container
+            </FullPageFormContainer>
+            <FullPageFormContainer
                 asideParent="Routine"
                 title="Routine"
                 subtitle="This should apply to the previous day alone."
@@ -291,8 +291,8 @@ const AddHealthReportFormWrapper = ({ editing }: AddHealthReportFormWrapperProps
                         />
                     )
                 })}
-            </Container>
-            <Container
+            </FullPageFormContainer>
+            <FullPageFormContainer
                 asideParent="Details"
                 title="Details"
                 noMaxWidth={noMaxWidth}
@@ -310,6 +310,7 @@ const AddHealthReportFormWrapper = ({ editing }: AddHealthReportFormWrapperProps
                 <NumberInput
                     max={20000}
                     min={0}
+                    step={50}
                     label="Estimated Calorie Intake"
                     desc="Leave alone if not accurately tracking calories."
                     name="calorie_est"
@@ -319,6 +320,7 @@ const AddHealthReportFormWrapper = ({ editing }: AddHealthReportFormWrapperProps
                     integerOnly
                     max={20}
                     min={0}
+                    step={1}
                     label="Times meals more than target meal gap"
                     desc="Leave alone if fasting avoidance is not part of current diet."
                     name="times_meals_more_than_gap_apart"
@@ -327,6 +329,7 @@ const AddHealthReportFormWrapper = ({ editing }: AddHealthReportFormWrapperProps
                 <NumberInput
                     max={24}
                     min={0}
+                    step={0.25}
                     label="Estimated hours in a fasting state as defined above."
                     desc="Leave alone if fasting avoidance is not part of current diet."
                     name="estHoursInExcessFast"

@@ -3,9 +3,11 @@ import clsx from 'clsx'
 import React, { useEffect, useMemo } from 'react'
 import gsap from 'gsap'
 import { usePathname } from 'next/navigation'
-import { initialState, RootState, store, toggleEmbeddedPanelState, addEmbededPanelState } from '@ulld/state'
 import { connect } from 'react-redux'
 import { DynamicIcon } from '../../../../../icons/DynamicIcon'
+import { toggleEmbeddedPanelState, addEmbededPanelState } from '@ulld/state/slices/ui'
+import { store, RootState } from '@ulld/state/store'
+import { initialState } from '@ulld/state/initialState'
 
 
 

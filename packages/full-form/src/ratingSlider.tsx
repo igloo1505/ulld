@@ -2,7 +2,7 @@ import * as Slider from '@radix-ui/react-slider';
 import clsx from 'clsx';
 import React, { useId } from 'react'
 import { FieldValues, Path, PathValue, useFormContext } from 'react-hook-form';
-import { TriPos } from './inputs/slider/triPosSlider';
+import { TriPos } from './triPosSlider';
 
 
 

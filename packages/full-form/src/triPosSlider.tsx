@@ -9,17 +9,17 @@ export interface TriPos<T extends FieldValues> {
     label: string
 }
 
-interface FullFormTriPositionSliderProps<T extends FieldValues> {
+interface TriPosSliderProps<T extends FieldValues> {
     items: [TriPos<T>, TriPos<T>, TriPos<T>];
     label?: string
     disabled?: boolean
 }
 
-const FullFormTriPositionSlider = <T extends FieldValues>({
+export const TriPosSlider = <T extends FieldValues>({
     items,
     label,
     disabled
-}: FullFormTriPositionSliderProps<T>) => {
+}: TriPosSliderProps<T>) => {
     const form = useFormContext<T>()
     const id = useId()
     const val1 = form.watch(items[0].id)
@@ -73,6 +73,4 @@ const FullFormTriPositionSlider = <T extends FieldValues>({
     );
 };
 
-FullFormTriPositionSlider.displayName = "FullFormTriPositionSlider";
-
-export default FullFormTriPositionSlider;
+TriPosSlider.displayName = "TriPosSlider";

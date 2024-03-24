@@ -1,7 +1,7 @@
-import { searchByTagUrl } from '@ulld/state'
 import clsx from 'clsx'
 import Link from 'next/link'
 import React from 'react'
+import {searchByTagUrl} from "@ulld/state/searchParamSchemas/utilities/searchParamFormatters"
 
 
 

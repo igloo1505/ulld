@@ -19,15 +19,15 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "#/components/shad/ui/table"
-import { type BibEntry, Prisma } from '@prisma/client'
+} from "@ulld/tailwind/table"
+import { type BibEntry, Prisma } from '@ulld/database/internalDatabaseTypes'
 import { useRouter } from 'next/navigation'
-import { Input } from '#/components/shad/ui/input'
-import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from '#/components/shad/ui/dropdown-menu'
+import { Input } from '@ulld/tailwind/input'
+import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from '@ulld/tailwind/dropdown-menu'
 import { ChevronDown } from 'lucide-react'
-import { Button } from '#/components/shad/ui/button'
+import { Button } from '@ulld/tailwind/button'
 import clsx from 'clsx'
-import { BibEntryDataTableOutput } from '#/classes/prismaMdxRelations/BibEntry'
+import { BibEntryDataTableOutput } from '@ulld/api/classes/prismaMdxRelations/bibEntry'
 
 interface BibTableProps {
     bibEntries: BibEntryDataTableOutput[]

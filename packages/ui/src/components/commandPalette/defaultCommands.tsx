@@ -5,7 +5,7 @@ import { Command } from "cmdk"
 import { useRouter } from 'next/navigation'
 import { pages, textSearchPages } from './commandPaletteUtilities'
 import { defaultCommandList } from './commandLists/default'
-import { getSearchAllUrl } from '@ulld/state'
+import { getSearchAllUrl } from '@ulld/state/searchParamSchemas/utilities/formatSearchAllParams'
 
 
 

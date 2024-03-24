@@ -1,8 +1,8 @@
 import React from 'react'
 import { AddEquationFormType } from './types'
 import { SideFormContainer } from '../../layouts/sideMenu/sideFormContainer'
-import { FullFormInput } from '../../menus/fullForm/fullFormInput'
-import { FullFormMathStringInput } from '../../menus/fullForm/fullFormMathStringInput'
+import { TextInput } from '@ulld/full-form/textInput'
+import { MathInput } from '@ulld/full-form/mathInput'
 
 
 interface AddEquationFormOneProps {
@@ -17,17 +17,17 @@ const AddEquationFormOne = ({ form, next }: AddEquationFormOneProps) => {
             onSubmit={next}
             submitBtnText="Next"
         >
-            <FullFormInput
+            <TextInput
                 label="Title"
                 name="title"
                 desc="Can contain latex"
             />
-            <FullFormMathStringInput
+            <MathInput
                 label="Content"
                 desc="Can contain latex"
                 name="content"
             />
-            <FullFormInput
+            <TextInput
                 label="Equation Id"
                 name="equationId"
                 keyboardFilter="noSpaces"

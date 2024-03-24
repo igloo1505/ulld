@@ -3,8 +3,8 @@ import React, { useEffect } from 'react'
 import CommandPaletteItem from '../commandItem'
 import { Command } from 'cmdk'
 import { pages } from '../commandPaletteUtilities'
-import { serverClient } from '@ulld/api'
-import { MathDisplayCLIENT } from '../..'
+import { serverClient } from '@ulld/api/serverClient'
+import { MathDisplayCLIENT } from '../../math/blockMathDisplayCLIENT'
 
 type E = Awaited<ReturnType<typeof serverClient.commandPalette.equationSearch>>
 

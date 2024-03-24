@@ -1,5 +1,5 @@
-import { Settings } from '@prisma/client'
-import { ParsedAppConfig } from '@ulld/configschema'
+import { Settings } from '@ulld/database/internalDatabaseTypes'
+import { ParsedAppConfig } from '@ulld/configschema/types'
 
 export type SettingBoolean = "tooltips" | "summary_showCitations" | "summary_showTags" | "cleanOnSync"
 

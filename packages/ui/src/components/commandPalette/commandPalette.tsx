@@ -12,10 +12,10 @@ import DefinitionSearchCommandGroup, { DefCmdItem } from './groups/definitionSea
 import { sideBySidePages, pageMap, pages as pageList, pages } from './commandPaletteUtilities'
 import CommandPaletteMarkdownPanel from './commandPaletteMarkdownPanel'
 import SubjectSearchCommandGroup from './groups/subjectSearch'
-import { client } from '@ulld/api'
-import { makeValidId } from '@ulld/utilities'
-import { defaultCommandList } from '.'
-import { MathDisplayCLIENT } from '..'
+import { client } from '@ulld/api/client'
+import { makeValidId } from '@ulld/utilities/identity'
+import { MathDisplayCLIENT } from '../math/blockMathDisplayCLIENT'
+import { defaultCommandList } from './commandLists/default'
 
 
 interface CommandPaletteProps {

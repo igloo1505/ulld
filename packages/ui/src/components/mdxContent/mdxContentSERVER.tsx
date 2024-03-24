@@ -1,4 +1,4 @@
-import { MDXSerializeReturnType } from '@ulld/parsers';
+import { MDXSerializeReturnType } from '@ulld/parsers/serializeMdxContent';
 import React from 'react'
 
 

@@ -2,7 +2,7 @@
 import { MDXRemote } from 'next-mdx-remote'
 import React from 'react'
 import { getComponentMap } from '../markdown/componentMap'
-import { MDXSerializeReturnType } from '@ulld/parsers'
+import { MDXSerializeReturnType } from '@ulld/parsers/serializeMdxContent'
 
 
 

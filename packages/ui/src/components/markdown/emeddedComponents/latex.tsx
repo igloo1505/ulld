@@ -1,4 +1,4 @@
-import { serverClient } from '@ulld/api'
+import { serverClient } from '@ulld/api/serverClient'
 import Script from 'next/script'
 import React from 'react'
 

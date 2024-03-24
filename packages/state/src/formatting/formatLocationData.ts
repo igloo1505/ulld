@@ -1,6 +1,9 @@
-import { DocTypes, DocumentTypeConfig, ParsedAppConfig, getInternalConfig } from "@ulld/configschema";
-import { prisma } from "@ulld/database";
+import { prisma } from "@ulld/database/db";
 import { NoteTypeOverview, locationDataItem } from "./formatLocationDataZodSchema"
+import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes"
+import { DocumentTypeConfig } from "@ulld/configschema/zod/documentConfigSchema";
+import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
+import { ParsedAppConfig } from '@ulld/configschema/types'
 
 export type NoteTypeOverviewList = { [k in keyof DocTypes | "Dream"]: NoteTypeOverview }
 
@@ -15,7 +18,7 @@ export type NoteTypeOverviewTemp = ({
 }) & DocumentTypeConfig
 
 export const formatLocationData = async (_config?: ParsedAppConfig): Promise<NoteTypeOverview[]> => {
-    const config = _config || getInternalConfig()
+    const config = _config || getInternalConfig(_config)
     let bookmarks = 0
 
     const notes = await prisma.mdxNote.findMany({

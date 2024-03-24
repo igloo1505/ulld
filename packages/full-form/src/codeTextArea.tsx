@@ -30,6 +30,7 @@ interface CodeTextAreaProps<T extends FieldValues, H extends HTMLElement>
   resizable?: boolean;
   localStorageKey: string
   editorProps?: Omit<TextAreaCodeEditorProps, "localStorageKey">;
+  language?: TextAreaCodeEditorProps["language"]
 }
 
 export const CodeInput = <T extends FieldValues>(

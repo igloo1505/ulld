@@ -1,4 +1,4 @@
-import { FrontMatterType } from "@ulld/state"
+import { FrontMatterType } from "@ulld/state/classes/frontMatter/zodFrontMatterObject"
 
 
 export const getClassesFromFrontMatter = (d?: Partial<FrontMatterType>): string => {

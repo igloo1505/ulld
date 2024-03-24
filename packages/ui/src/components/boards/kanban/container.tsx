@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import BoardList from './boardList'
 import DefaultEmptyBoardList from './defaultEmptyList'
-import { client } from '@ulld/api'
+import { client } from '@ulld/api/client'
 import { KanBanBoardDetails } from './types'
 
 

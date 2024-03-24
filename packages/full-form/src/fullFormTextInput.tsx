@@ -16,6 +16,7 @@ interface TextInputProps<
     T extends FieldValues,
     H extends Omit<HTMLElement, "onChange">,
 > extends Omit<BaseFullFormInputProps<T, H>, "onChange"> {
+    keyboardFilter?: string // TODO: This keyboardFilter needs to be enabled again. Reference original app.
 }
 
 export const TextInput = <T extends FieldValues>({

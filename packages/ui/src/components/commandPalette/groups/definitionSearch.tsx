@@ -5,7 +5,7 @@ import { Command } from 'cmdk'
 import CommandPaletteItem from '../commandItem'
 import { Route } from 'next'
 import { pages } from '../commandPaletteUtilities'
-import { serverClient } from '@ulld/api'
+import type { serverClient } from '@ulld/api/serverClient'
 import { MdxContentCLIENT } from '../../mdxContent/mdxContentCLIENT'
 
 

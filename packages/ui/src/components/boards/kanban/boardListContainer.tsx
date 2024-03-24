@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import React from 'react'
 import ListAddCardButton from './listAddCardButton'
+import { H4 } from '../../text/heading'
 
 interface BoardListContainerProps {
     children: React.ReactNode

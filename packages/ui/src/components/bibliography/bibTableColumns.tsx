@@ -20,6 +20,7 @@ import type { useRouter } from "next/navigation"
 import { store } from "@ulld/state/store"
 import { showToast } from "@ulld/state/slices/ui"
 import React from "react"
+import { BibEntryDataTableOutput } from "@ulld/api/classes/prismaMdxRelations/bibEntry"
 
 
 

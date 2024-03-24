@@ -3,8 +3,9 @@ import { BaseEmbeddableComponentProps, getBaseEmbeddableProps } from '../emedded
 import EquationContextMenu from './equationContextMenu'
 import Link from 'next/link'
 import HandleEquationClick from './handleEquationClick'
-import { serverClient, AppendStyleSheet } from '@ulld/api'
-import { getRandomId } from '@ulld/utilities'
+import { serverClient } from '@ulld/api/serverClient'
+import { getRandomId } from '@ulld/utilities/identity'
+import AppendStyleSheet from '../../landing/hero/util/appendStyleSheet'
 
 
 

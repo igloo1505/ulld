@@ -7,7 +7,8 @@ import { setDarkmode, showToast, clearEmbededPanelStateByPath } from "../../stat
 import { store } from "../../state/store"
 import { setTocContent } from "../../state/slices/functionality"
 import { copyStringToClipboard } from "@ulld/utilities/actions/copyStringToClipboard"
-import { ToastConfigType } from "@ulld/utilities/src/types/toastConfig"
+import { ToastConfigType } from "@ulld/utilities/types/toastConfig"
+
 
 export const toggleSidebar = () => document.body.classList.toggle("sidebarOpenPermanent")
 

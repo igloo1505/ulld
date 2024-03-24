@@ -1,16 +1,10 @@
 import React from 'react'
 import fs from 'fs'
 import clsx from 'clsx'
-import { getInternalConfig } from '@ulld/configschema'
-import { EmbeddedImageProps } from '@ulld/utilities'
+import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
 import ImageMapImage from './imageMapImage'
-
-
-
-
-const isFullWidth = (props: EmbeddedImageProps) => {
-    return props.full || props.fullWidth || props.width === "full"
-}
+import {isFullWidth} from "@ulld/state/formatting/styleUtilities"
+import {EmbeddedImageProps} from "@ulld/utilities/types/embeddedImageProps"
 
 
 

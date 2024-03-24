@@ -1,6 +1,6 @@
 import React from 'react'
 import { IoLogoCss3 } from 'react-icons/io5';
-import { IconProps } from '../../../types';
+import { IconProps } from '../../../types/general';
 
 
 

@@ -1,4 +1,4 @@
-import { withForwardSlash } from '@ulld/utilities'
+import { withForwardSlash } from '@ulld/utilities/fsUtils'
 
 
 export const getRootUrl = (): string => {

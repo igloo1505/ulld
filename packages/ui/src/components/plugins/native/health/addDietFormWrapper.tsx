@@ -8,13 +8,16 @@ import { DevTool } from '@hookform/devtools';
 import { Button } from '@ulld/tailwind/button';
 import { useToast } from '@ulld/tailwind/use-toast';
 import { client } from '@ulld/api/client';
-import { FullFormContainer } from '../../../menus/fullForm/fullFormContainer';
-import { FullFormInput } from '../../../menus/fullForm/fullFormInput';
-import { FullFormLabeledCheckbox } from '../../../menus/fullForm/fullFormLabeledCheckbox';
-import { FullFormTextArea } from '../../../menus/fullForm/fullFormTextArea';
-import { FullFormTriPositionSlider } from '../../../menus/fullForm/fullFormTriPosSlider';
-import { FullFormFormPage } from '../../../menus/fullForm/fullScreenFormPage';
-import { FullFormSubHeading } from '../../../menus/fullForm/subHeading';
+import { NumberInput } from '@ulld/full-form/numberInput';
+import { TextInput } from '@ulld/full-form/textInput';
+import { RatingSlider } from '@ulld/full-form/ratingSlider';
+import { TriPosSlider } from '@ulld/full-form/triPosSlider';
+import { TextAreaInput } from '@ulld/full-form/textArea';
+import { Checkbox } from '@ulld/full-form/checkbox';
+import { FullPageFormContainer } from '@ulld/full-form/layout/fullPage/container';
+import { FullPageFormWrapper } from '@ulld/full-form/layout/fullPage/wrapper';
+import { SubHeading } from '@ulld/full-form/ui/subheading';
+import { FullFormContext, FullFormDispatchContext } from '@ulld/full-form/context';
 
 
 interface AddDietFormWrapperProps {
@@ -51,55 +54,55 @@ const AddDietFormWrapper = ({ editing }: AddDietFormWrapperProps) => {
 
 
     return (
-        <FullFormContainer
+        <FullPageFormWrapper
             form={form}
             title={`${editing ? "Edit" : "Add a"} Diet`}
             subtitle={editing ? undefined : "Add a diet here to being tracking your health in relation to your diet."}
         >
-            <FullFormFormPage
+            <FullPageFormContainer
                 title="General"
             >
-                <FullFormInput
+                <TextInput
                     label="Name"
                     name="name"
                 />
-                <FullFormTextArea
+                <TextAreaInput
                     label="Summary"
                     name="summary"
                 />
-                <FullFormLabeledCheckbox
+                <Checkbox
                     tertiary
                     name="gf"
                     label="Gluten Free"
                 />
-                <FullFormLabeledCheckbox
+                <Checkbox
                     tertiary
                     name="fasting"
                     label="Fasting"
                     desc="Should fasting be avoided or encouraged?"
                 />
-                <FullFormLabeledCheckbox
+                <Checkbox
                     tertiary
                     name="cardioTraining"
                     label="Cardio Training"
                     desc="Should cardio training be emphasized or avoided?"
                 />
-                <FullFormLabeledCheckbox
+                <Checkbox
                     tertiary
                     name="weightTraining"
                     label="Weight Training"
                     desc="Should weight training be emphasized or avoided?"
                 />
 
-                <FullFormSubHeading>
+                <SubHeading>
                     Macro&apos;s
-                </FullFormSubHeading>
-                <FullFormLabeledCheckbox
+                </SubHeading>
+                <Checkbox
                     name="macrosMatter"
                     label="Macros Significance"
                     desc="Do macro's matter on this diet?"
                 />
-                <FullFormTriPositionSlider
+                <TriPosSlider
                     label="Target"
                     disabled={!form.watch("macrosMatter")}
                     items={[
@@ -120,23 +123,23 @@ const AddDietFormWrapper = ({ editing }: AddDietFormWrapperProps) => {
                         },
                     ]}
                 />
-                <FullFormSubHeading>Categorization</FullFormSubHeading>
+                <SubHeading>Categorization</SubHeading>
                 <div className={"grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-3"}>
-                    <FullFormLabeledCheckbox
+                    <Checkbox
                         name="vegan"
                         label="Vegan"
                     />
-                    <FullFormLabeledCheckbox
+                    <Checkbox
                         name="vegetarian"
                         label="Vegetarian"
                     />
                 </div>
-                <FullFormLabeledCheckbox
+                <Checkbox
                     name="pescatarian"
                     label="Pescatarian"
                 />
 
-                <FullFormLabeledCheckbox
+                <Checkbox
                     name="activelyFollowing"
                     label="Actively Following"
                     desc="Should this diet be marked as if it's being adhered to?"
@@ -147,9 +150,9 @@ const AddDietFormWrapper = ({ editing }: AddDietFormWrapperProps) => {
                         onClick={handleSave}
                     >Save</Button>
                 </div>
-            </FullFormFormPage>
+            </FullPageFormContainer>
             <DevTool control={form.control} />
-        </FullFormContainer>
+        </FullPageFormWrapper>
 
     )
 }

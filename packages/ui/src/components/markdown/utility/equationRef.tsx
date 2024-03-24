@@ -1,5 +1,5 @@
 import React from 'react'
-import { EquationReference } from '.'
+import { EquationReference } from './equationReference'
 
 export interface EquationRefProps {
     id: string

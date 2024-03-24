@@ -8,10 +8,9 @@ import timezone from 'dayjs/plugin/timezone'
 import "react-big-calendar/lib/sass/styles.scss"
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css"
 import "../calendar.scss"
-import { CalendarSearchParams } from '@ulld/state'
+import {calendarSearchParamSchema, CalendarSearchParams} from "@ulld/state/searchParamSchemas/calendar/main"
 
 dayjs.extend(timezone)
-
 const djLocalizer = dayjsLocalizer(dayjs)
 
 

@@ -1,13 +1,13 @@
 "client"
-import { client } from '@ulld/api'
-import { appendStyleSheet } from '@ulld/state'
+import { client } from '@ulld/api/client'
 import clsx from 'clsx'
 import React from 'react'
-import { getInternalConfig } from '@ulld/configschema'
-import { MathjaxParserParams } from '@ulld/parsers'
-import { stringHasLatex } from '@ulld/utilities'
-import { useDelayedRemoteParse } from '../../hooks'
+import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
+import { useDebounceParse } from '@ulld/hooks/useDebounceParse'
 import MathContextMenu from './equation/mathContextMenu'
+import { MathjaxParserParams } from '@ulld/parsers/math/mathjaxParserOptionsParsing'
+import { appendStyleSheet } from '@ulld/state/actions/clientOnly/appendStyleSheet'
+import { stringHasLatex } from '@ulld/utilities/latexUtils'
 
 
 
@@ -27,27 +27,29 @@ interface MathDisplayProps {
 export const MathDisplayCLIENT = (_props: MathDisplayProps) => {
     const internalConfig = getInternalConfig()
     const { content: math, stylesId, autoWrap, className, display, element = "div", isMathOnly = false, elementProps = {}, mathjaxOptions = {} } = _props
-    const content = useDelayedRemoteParse(math, internalConfig.performance.latexParsingDebounceTimeout, async (newMath, previousValue): Promise<string> => {
-        const hasLatex = stringHasLatex(newMath)
-        if (hasLatex || Boolean(isMathOnly && newMath.trim().length >= 3)) {
-            const res = await client.equations.mathStringToLatex.mutate({
-                content: newMath,
-                options: {
-                    inline: !display,
-                    autoWrap: typeof autoWrap === "boolean" ? autoWrap : display,
-                    ...mathjaxOptions
-                },
-                appendStylesToId: `${stylesId}-container`,
-            })
-            if (res.styles) {
-                appendStyleSheet(res.styles, `${stylesId}-styles`)
-            }
-            return res.content
-        } else {
-            return newMath
-        }
-        return previousValue
-    })
+    const content = ""
+    /* TEMPORARY: This useDebounceParse won't work. I'm half assing it for now to get these ts errors handled.  */
+    /* const { value: content } = useDebounceParse(math, internalConfig.performance.latexParsingDebounceTimeout, async (newMath, previousValue): Promise<string> => { */
+    /*     const hasLatex = stringHasLatex(newMath) */
+    /*     if (hasLatex || Boolean(isMathOnly && newMath.trim().length >= 3)) { */
+    /*         const res = await client.equations.mathStringToLatex.mutate({ */
+    /*             content: newMath, */
+    /*             options: { */
+    /*                 inline: !display, */
+    /*                 autoWrap: typeof autoWrap === "boolean" ? autoWrap : display, */
+    /*                 ...mathjaxOptions */
+    /*             }, */
+    /*             appendStylesToId: `${stylesId}-container`, */
+    /*         }) */
+    /*         if (res.styles) { */
+    /*             appendStyleSheet(res.styles, `${stylesId}-styles`) */
+    /*         } */
+    /*         return res.content */
+    /*     } else { */
+    /*         return newMath */
+    /*     } */
+    /*     return previousValue */
+    /* }) */
 
     let props = {
         className: clsx("max-w-full max-h-full", className && className),

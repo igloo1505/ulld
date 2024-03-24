@@ -2,11 +2,16 @@
 import React, { useState, useEffect } from 'react'
 import BibTable from './bibTable'
 import BibliographySheet from './bibPageSheet'
-import { BibWithEntries, BibEntryDataTableOutput, BibCore, client, BibEntry } from '@ulld/api'
-import { ReduxProvider } from '@ulld/state'
-import { useToast, Button } from '@ulld/tailwind'
-import { LoadingIndicator } from '../..'
-import DynamicIcon from '../../icons/DynamicIcon'
+import { ReduxProvider } from '@ulld/state/reduxProvider'
+import { useToast } from '@ulld/tailwind/use-toast'
+import {  Button } from '@ulld/tailwind/button'
+/* import { BibEntry } from '@ulld/database/internalDatabaseTypes' */
+import { BibCore } from '@ulld/api/classes/prismaMdxRelations/Bib'
+import { client } from '@ulld/api/client'
+import { BibWithEntries } from '@ulld/api/trpcInternalMethods/bib/main'
+import { BibEntryDataTableOutput, BibEntry } from '@ulld/api/classes/prismaMdxRelations/bibEntry'
+import { DynamicIcon } from '../icons/DynamicIcon'
+import LoadingIndicator from '../loading/loadingIndicator'
 
 
 interface BibliographyPageWrapperProps {

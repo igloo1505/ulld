@@ -1,7 +1,7 @@
-import { FrontMatterType } from '@ulld/state'
+import { FrontMatterType } from '@ulld/state/classes/frontMatter/zodFrontMatterObject'
 import clsx from 'clsx'
 import React from 'react'
-import { getClassesFromFrontMatter } from '../../../actions'
+import { getClassesFromFrontMatter } from '../../../actions/universal/getClassesFromFrontMatter'
 
 
 

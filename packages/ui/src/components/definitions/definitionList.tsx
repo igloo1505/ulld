@@ -1,4 +1,4 @@
-import { serverClient } from '@ulld/api'
+import { serverClient } from '@ulld/api/serverClient'
 import clsx from 'clsx'
 import React from 'react'
 import { MdxContentSERVER } from '../mdxContent/mdxContentSERVER'

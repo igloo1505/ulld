@@ -1,11 +1,12 @@
-import { PrismaMdxNoteSummaryOutput, CalendarAndDateManager } from '@ulld/api'
-import { getDocumentTypeConfig } from '@ulld/configschema'
+import { CalendarAndDateManager } from '@ulld/api/classes/data/calendarAndDate'
+import { PrismaMdxNoteSummaryOutput } from '@ulld/api/classes/prismaMdxRelations/protocols/mdxNote'
+import { getDocumentTypeConfig } from '@ulld/configschema/configUtilityTypes/general'
+import { searchByTagUrl } from '@ulld/state/searchParamSchemas/utilities/searchParamFormatters'
 import clsx from 'clsx'
 import { Route } from 'next'
 import Link from 'next/link'
 import React from 'react'
-import { MdxContentSERVER } from '..'
-import { searchByTagUrl } from '@ulld/state'
+import { MdxContentSERVER } from '../mdxContent/mdxContentSERVER'
 
 
 

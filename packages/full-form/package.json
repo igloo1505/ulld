@@ -10,6 +10,7 @@
   },
   "exports": {
     "./numberInput": "./src/numberInput.tsx",
+    "./checkbox": "./src/checkbox.tsx",
     "./textInput": "./src/fullFormTextInput.tsx",
     "./textArea": "./src/fullFormTextArea.tsx",
     "./select": "./src/fullFormSelect.tsx",
@@ -21,10 +22,12 @@
     "./types": "./src/types.ts",
     "./provider": "./src/fullFormProvider.tsx",
     "./ratingSlider": "./src/ratingSlider.tsx",
+    "./triPosSlider": "./src/triPosSlider.tsx",
     "./heading": "./src/fullFormMainHeading.tsx",
     "./sidePanel": "./src/fullFormSidePanel.tsx",
     "./subheading": "./src/fullFormSubHeading.tsx",
     "./context": "./src/fullFormContext.tsx",
+    "./ui/subheading": "./src/ui/subHeading.tsx",
     "./layout/sidePanel": "./src/layouts/sidePanelWithDisplay/fullFormSidePanelLayout.tsx",
     "./layout/fullPage/container": "./src/layouts/fullPage/container.tsx",
     "./layout/fullPage/wrapper": "./src/layouts/fullPage/wrapper.tsx"
@@ -42,6 +45,7 @@
     "@ulld/state": "workspace:*",
     "@ulld/tailwind": "workspace:*",
     "@ulld/utilities": "workspace:*",
+    "@ulld/database": "workspace:*",
     "clsx": "^2.1.0",
     "dayjs": "^1.11.10",
     "glob-to-regexp": "^0.4.1",

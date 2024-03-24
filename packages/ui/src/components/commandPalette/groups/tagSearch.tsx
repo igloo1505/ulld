@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import CommandPaletteItem from '../commandItem'
 import { Command } from 'cmdk'
 import { pages } from '../commandPaletteUtilities'
-import { formatSearchAllParams } from '@ulld/state'
+import { formatSearchAllParams } from '@ulld/state/searchParamSchemas/utilities/formatSearchAllParams'
 
 
 interface TagSearchCommandGroupProps {

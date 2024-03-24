@@ -1,9 +1,14 @@
-import { getInternalConfig, DocumentTypeConfig } from "@ulld/configschema";
-import { CommandPaletteItemProps, pages, textSearchPages } from "..";
-import { syncRootDirectory, client } from "@ulld/api";
-import { setPreferFs, toggleToolTips, toggleDarkMode, toggleAllJupyterFolds, enterIdSelectMode, toggleEquationSelectMode, showToast } from "@ulld/state";
+import { syncRootDirectory } from "@ulld/api/actions/syncing";
+import { client } from "@ulld/api/client";
+import { DocumentTypeConfig } from "@ulld/configschema/zod/documentConfigSchema";
+import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
+import { toggleToolTips } from "@ulld/state/actions/clientOnly/dom";
+import { setPreferFs, toggleDarkMode, toggleAllJupyterFolds, enterIdSelectMode, toggleEquationSelectMode } from "@ulld/state/actions/clientOnly/general";
+import { showToast } from "@ulld/state/slices/ui";
 import { Route } from "next";
-import { utilityNavLinks } from "../..";
+import { utilityNavLinks } from "../../menus/fullScreenNavigationMenu/fullScreenNavigationMenu";
+import { CommandPaletteItemProps } from "../commandItem";
+import { pages, textSearchPages } from "../commandPaletteUtilities";
 
 export const filterItems: string[] = [
     "snippets",

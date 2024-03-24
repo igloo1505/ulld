@@ -26,8 +26,8 @@ import { UseFormReturn } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import { client } from "@ulld/api/client";
 import { onEnter } from "@ulld/state/listeners/keydown";
-import { FullFormCodeEditorWithModal } from "../../menus/fullForm/fullFormCodeEditor";
-import {technologiesNameMap}  from "@ulld/utilities/schemas/code/technologiesNameMap"
+import { CodeInput } from "@ulld/full-form/codeTextArea";
+import { technologiesNameMap}  from "@ulld/utilities/schemas/code/technologiesNameMap"
 
 
 
@@ -125,7 +125,8 @@ const AddSnippetForm = ({ form }: AddSnippetFormProps) => {
                         </>
                     )}
                 />
-                <FullFormCodeEditorWithModal
+                <CodeInput
+                    localStorageKey="add-snippet-form"
                     label="Content"
                     desc="Snippet Content"
                     name="content"

@@ -1,4 +1,4 @@
-import { QuickLinkType } from '@ulld/utilities'
+import { QuickLinkType } from '@ulld/utilities/types/navigation'
 import Link from 'next/link'
 import React from 'react'
 

@@ -6,11 +6,12 @@ import clsx from 'clsx'
 import { CopyIcon } from 'lucide-react'
 import { connect } from 'react-redux';
 import CodeThemeContextMenu from './codeThemeContextMenu'
-import { RootState, languageNameMap } from '@ulld/state'
-import { useToast } from '@ulld/tailwind'
-import { copyStringToClipboard } from '@ulld/utilities'
-import { ParsedAppConfig } from '@ulld/configschema'
-import { LoadingIndicator } from '../..'
+import { RootState } from '@ulld/state/store'
+import { useToast } from '@ulld/tailwind/use-toast'
+import { copyStringToClipboard } from '@ulld/utilities/copyStringToClipboard'
+import { ParsedAppConfig } from '@ulld/configschema/types'
+import { LoadingIndicator } from '../../loading/loadingIndicator.tsx'
+import { languageNameMap } from "@ulld/state/formatting/getCodeHighlighter"
 
 
 type ShikiTheme = BundledLanguage

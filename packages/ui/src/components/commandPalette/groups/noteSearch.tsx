@@ -5,8 +5,9 @@ import { useRouter } from 'next/navigation'
 import { Route } from 'next'
 import { Command } from 'cmdk'
 import { pages } from '../commandPaletteUtilities'
-import { serverClient, client } from '@ulld/api'
-import { MdxContentCLIENT } from '../..'
+import type { serverClient } from '@ulld/api/serverClient'
+import { client } from '@ulld/api/client'
+import { MdxContentCLIENT } from '../../mdxContent/mdxContentCLIENT'
 
 
 export type NoteCmdItems = Awaited<ReturnType<typeof serverClient.commandPalette.noteSearch>>

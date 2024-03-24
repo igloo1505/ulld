@@ -3,6 +3,7 @@ import { ConfigColorKey, colorsConfigSchema } from '@ulld/configschema/zod/ui/co
 import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import {shadColorMap} from "@ulld/utilities/shadColorMap"
 import fs from 'fs'
+import type {z} from 'zod'
 import path from 'path'
 
 type UIConfig = NonNullable<ParsedAppConfig["UI"]>

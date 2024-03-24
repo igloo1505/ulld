@@ -1,10 +1,10 @@
 import React from 'react'
 import clsx from 'clsx'
 import TikzColorHandler from './tikzColorHandler'
-import { getRandomId } from '@ulld/utilities'
-import { TikzPlaceholder } from '.'
+import { getRandomId } from '@ulld/utilities/identity'
 import TikzLoader from '../../installerScripts/TikzLoader'
-import { getOnlineStatusServerSide } from '@ulld/api'
+import { TikzPlaceholder } from './tikzPlaceholder'
+import {getOnlineStatusServerSide} from "@ulld/api/actions/server/getOnlineStatus"
 
 
 interface TikzDiagramProps {

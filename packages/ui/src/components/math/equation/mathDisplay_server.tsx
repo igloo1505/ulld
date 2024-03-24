@@ -1,6 +1,6 @@
-import { parseLatexString, serverClient } from '@ulld/api'
-import { MathjaxParserParams } from '@ulld/parsers'
-import { getRandomId } from '@ulld/utilities'
+import { MathjaxParserParams } from '@ulld/parsers/math/mathjaxParserOptionsParsing'
+import { getRandomId } from '@ulld/utilities/identity'
+import {parseLatexString} from "@ulld/api/actions/parseLatexString"
 import clsx from 'clsx'
 import React from 'react'
 

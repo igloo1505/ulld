@@ -1,6 +1,6 @@
 import { Console } from '@datalayer/jupyter-react';
 import React from 'react'
-import { JupyterContextWrapper } from '..';
+import { JupyterContextWrapper } from '../jupyterProvider';
 
 
 interface JupyterConsoleProps {

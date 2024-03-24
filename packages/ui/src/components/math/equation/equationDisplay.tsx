@@ -1,9 +1,13 @@
-import { useToast, Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, Button } from '@ulld/tailwind'
-import { copyStringToClipboard } from '@ulld/utilities'
+import { useToast} from '@ulld/tailwind/use-toast'
+import {  Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@ulld/tailwind/card'
+import { Button } from '@ulld/tailwind/button'
+import { copyStringToClipboard } from '@ulld/utilities/copyStringToClipboard'
 import clsx from 'clsx'
 import React from 'react'
-import { EditEquationItem, AddEquationInterface, MathDisplayCLIENT } from '../..'
 import { MdxContentCLIENT } from '../../mdxContent/mdxContentCLIENT'
+import { EditEquationItem } from '../../pageSpecific/equations/addEquationFormWrapper'
+import { AddEquationInterface } from '../../pageSpecific/equations/types'
+import { MathDisplayCLIENT } from '../blockMathDisplayCLIENT'
 
 
 
