@@ -32,12 +32,10 @@ export interface BibEntryDataTableOutput {
 }
 
 
-
-
 export class BibEntry extends BibEntryProtocol {
     Bib: BibCore | undefined = undefined
     id: string
-    htmlCitation?: string
+    htmlCitation?: string | null
     tempPageIndex?: number
     constructor(id: string, props: BibEntryProps, tempPageIndex?: number) {
         super()

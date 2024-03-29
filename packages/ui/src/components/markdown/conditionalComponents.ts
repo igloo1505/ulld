@@ -1,6 +1,7 @@
 import { serverLogger } from "@ulld/logger/server";
 import dynamic from "next/dynamic";
 import { ComponentType } from "react";
+const Admonition = dynamic(() => import("./emeddedComponents/admonition").then((a) => a.Admonition))
 // const NotebookCell = dynamic(() => import("../jupyter/notebooks/cell"))
 // // const JupyterConsole = dynamic(() => import("../jupyter/console/index"))
 // const Pdf = dynamic(() => import("../functionality/pdf/MdxPdfView"))
@@ -8,7 +9,6 @@ import { ComponentType } from "react";
 // const TabGroup = dynamic(() => import("./emeddedComponents/tabs/tabGroup"))
 // const Tab = dynamic(() => import("./emeddedComponents/tabs/tab"))
 // const TagBar = dynamic(() => import("./emeddedComponents/tagbar"))
-// const Admonition = dynamic(() => import("./emeddedComponents/admonition"))
 // const WithSidebar = dynamic(() => import("./emeddedComponents/withSidebar"))
 // const Diagram = dynamic(() => import("./emeddedComponents/diagrams/pixi"))
 // const Grid = dynamic(() => import("./emeddedComponents/grid"))
@@ -68,6 +68,7 @@ export interface ConditionalComponentProps {
 
 export const getConditionalComponents = (content: string, opts: ConditionalComponentProps, isServer: boolean = false) => {
     const conditionalComponents: ConditionalComponentQuery[] = [
+        { regex: new RegExp(`<Admonition`), component: Admonition, label: "Admonition" },
     ]
     let components: { [k: string]: ConditionalComponentQuery['component'] } = {}
     for (const k of conditionalComponents) {

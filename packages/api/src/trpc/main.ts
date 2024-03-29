@@ -21,6 +21,7 @@ import { qaRouter } from "./routers/qa";
 import { betaRouter } from "./routers/beta";
 
 
+
 console.log(`/Users/bigsexy/Desktop/currentProjects/ulld/packages/api/src/trpc/main.ts`)
 export const appRouter = router({
     autoSettings: autoSettingRouter,

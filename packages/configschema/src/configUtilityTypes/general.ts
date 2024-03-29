@@ -13,7 +13,8 @@ export const getDocumentTypeConfig = (docType: DocTypes | DocumentTypeConfig, co
 
 
 // TODO: Move this to a glob pattern using the fs or path module when used on the backend to avoid multiple matches returning the first. Globs would allow much more fine tuning of paths.
-export const getNoteTypeFromPath = (rootRelativePath: string, config?: ParsedAppConfig) => {
+export const getNoteTypeFromPath = (rootRelativePath?: string | null, config?: ParsedAppConfig) => {
+    if(!rootRelativePath) return "RemoteNote" as "RemoteNote"
     const _config = config || getInternalConfig()
     let nts = _config.noteTypes?.filter((n) => Boolean(n.fs && rootRelativePath.includes(n.fs))) as WithFs[]
     let nt = nts.filter((f) => typeof f.fs !== "undefined").sort((a: WithFs, b: WithFs) => b.fs?.length - a.fs?.length)?.[0]

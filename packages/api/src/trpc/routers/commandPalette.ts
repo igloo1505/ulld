@@ -1,7 +1,7 @@
 import { prisma } from "@ulld/database/db";
-import { MDXSerializeReturnType, serializeMdxContent } from "@ulld/parsers/mdx/compiler/main";
 import { publicProcedure, router } from "../trpc";
 import { z } from 'zod'
+import { definitionSchema } from "../../classes/prismaMdxRelations/beta/schemas/definitionSchema";
 
 
 export const commandPaletteRouter = router({
@@ -63,17 +63,9 @@ export const commandPaletteRouter = router({
                 }
             }
         })
-        let data: (Omit<NonNullable<typeof definitions>[number], "content"> & { content: MDXSerializeReturnType })[] = []
-        for await (const d of definitions) {
-            if (d.content) {
-                let newContent = await serializeMdxContent(d.content, typeof input?.rsc === "boolean" ? input.rsc : true)
-                data.push({
-                    ...d,
-                    content: newContent
-                })
-            }
-        }
-        return data
+        let parsed = definitionSchema.array().parse(definitions)
+        // TODO: Compile mdx here with a server-side only method to speed up client side rendering.
+        return parsed
     }),
     getCommandPaletteData: publicProcedure.query(async () => {
         // WARNING: Handle authentication check for protected notes here. They should only return at all if authenticated and should return with a partially blocked title

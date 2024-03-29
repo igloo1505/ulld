@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { zodDocTypeInput } from "@ulld/configschema/zod/documentConfigSchema";
 
 
 const taggableZod = z.union([z.string(), z.object({ value: z.string() })]);

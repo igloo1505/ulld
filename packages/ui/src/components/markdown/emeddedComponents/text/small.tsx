@@ -11,7 +11,7 @@ interface SmallProps extends BaseEmbeddableComponentProps {
     noMargin?: boolean
 }
 
-const Small = ({ children, close, noMargin, muted, center, ..._props }: SmallProps) => {
+export const Small = ({ children, close, noMargin, muted, center, ..._props }: SmallProps) => {
     const props = getBaseEmbeddableProps(_props)
     return (
         <div {...props} className={clsx("text-sm", (close !== false && !noMargin) && "!mt-2", center && "w-full text-center", noMargin && "!my-0", muted && "text-muted-foreground", props.className)}>{children}</div>
@@ -20,6 +20,3 @@ const Small = ({ children, close, noMargin, muted, center, ..._props }: SmallPro
 
 
 Small.displayName = "Small"
-
-
-export default Small;

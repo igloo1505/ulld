@@ -1,15 +1,16 @@
 import React from 'react'
 import { BaseEmbeddableComponentProps, getBaseEmbeddableProps } from './baseEmbeddableComponentTypes'
-import { Card } from '@ulld/tailwind/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@ulld/tailwind/card'
 import {stringToConsistentId} from "@ulld/state/formatting/general"
+import MdxStringDisplayClient from '../utility/mdxStringDisplayClient'
 
 
-type C = string | React.ReactNode | undefined | null
+type C = string | undefined | null
 
 interface EmbeddableCardProps extends BaseEmbeddableComponentProps {
     title?: C
     body?: C
-    children?: C
+    children?: C | React.ReactNode
     description?: C
     desc?: C
 }
@@ -18,13 +19,31 @@ export const EmbeddableCard = async ({ title, body, children, description, desc,
     let c = body || children
     const id = _props.id ? _props.id : typeof title === "string" ? stringToConsistentId(title) : `card-${new Date().valueOf() * Math.random()}`
 
-
     return (
         <Card
             {...getBaseEmbeddableProps(_props)}
             id={id}
         >
-            This was completely mutilated while converting to a monorepo. Revisit this with a single, unified, RELIABLE remote mdx parser.
+            {(title || desc || description) && <CardHeader>
+                {title && <CardTitle>
+                    <MdxStringDisplayClient
+                    content={title as string}
+                    display="inline"
+                /></CardTitle>
+                }
+                {(desc || description) && (<CardDescription>
+<MdxStringDisplayClient 
+ content={desc || description as string}
+                        display="display"
+                    />
+                </CardDescription>)}
+            </CardHeader>}
+            <CardContent>
+                {typeof c === "string" ? <MdxStringDisplayClient 
+                    content={c || ""}
+                    display={"display"}
+                /> : c}
+            </CardContent>
         </Card>
     )
 }

@@ -2,7 +2,7 @@ import matter from "gray-matter"
 import axios from "axios"
 import { Subject } from "./subject";
 import { Topic } from "./topic";
-import {MdxNote as PrismaMdxNote, Subject as PrismaSubject, Tag as PrismaTag, Topic as PrismaTopic} from "@ulld/database/internalDatabaseTypes"
+import type {Prisma, MdxNote as PrismaMdxNote, Subject as PrismaSubject, Tag as PrismaTag, Topic as PrismaTopic} from "@ulld/database/internalDatabaseTypes"
 import { MdxNoteProtocol, prismaMdxNoteSummaryZodSchema, PrismaMdxNoteSummary, PrismaMdxNoteWithKeys, prismaMdxNoteSummaryZodSchemaPreOutput } from "./protocols/mdxNote";
 import { Tag } from "./tag";
 import { BibEntry, BibEntryPrismaAcceptedTypes } from "./BibEntry";
@@ -18,7 +18,7 @@ import { ensureDate } from "../data/calendarAndDate";
 import { IntriguingValueSummary } from "../search/noteFilter";
 import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
 import { MdxNotePlainObject, mdxNoteZodObject, mdxNoteWithParsedLatex } from "../../schemas/search/parsing";
-import { serverClient } from "../../trpc/serverClient";
+import type { serverClient } from "../../trpc/serverClient";
 import { AutoSettingWithRegex } from "../../trpc/types.d";
 import { MdxNoteWithAll } from "../../trpcTypes/main";
 import { ValueSearchTableItem } from "../../trpcTypes/valueTableSearch";
@@ -27,7 +27,6 @@ import { getFlatAutoSettings } from "../../trpcInternalMethods/settings/autoSett
 import { globDoesMatch } from "../../trpcInternalMethods/settings/autoSettings/globDoesMatch";
 import { withForwardSlash } from "@ulld/utilities/utils/fsUtils";
 import { replaceRecursively } from "@ulld/utilities/utils/general";
-import { Prisma } from "@prisma/client";
 import { ZodFrontMatterOutput, zodFrontMatterObject, FrontMatterType } from "@ulld/state/classes/frontMatter/zodFrontMatterObject";
 import {dateOrDefault, convertGithubUrlToRawContentUrl} from "@ulld/state/formatting/general"
 
@@ -82,6 +81,11 @@ export interface InternalMdxNote extends Omit<PrismaMdxNote, "id"> {
 }
 
 
+const boolOrTrue = (a: boolean | undefined) => {
+       return typeof a === "boolean" ? a : true 
+    }
+
+
 
 /* RESUME: Come back and parse ```mermaid syntax and replace with the appropriate params. */
 export class MdxNote extends MdxNoteProtocol {
@@ -111,13 +115,14 @@ export class MdxNote extends MdxNoteProtocol {
     remoteUrl?: string | null
     trackRemote: boolean = true
     noLog: boolean = true
-    saveFormatted: boolean = getInternalConfig().database.storeFormatted
+    saveFormatted: boolean = boolOrTrue(getInternalConfig()?.database?.storeFormatted)
     constructor(id: number | undefined = undefined, public rootRelativePath: string, public noteType: DocTypes | undefined, raw: string, formatted: string | null = null, subject: (Subject | PrismaSubject)[] | undefined | null = [], title: string | undefined = undefined, summary: string | null = null, topics: (Topic | PrismaTopic)[] | undefined = [], citations: BibEntryPrismaAcceptedTypes[] | undefined | null = [], tags: (Tag | PrismaTag)[] | undefined | null = [], public imageSrc: string | null | undefined = null, public bookmarked: boolean | undefined = undefined, public firstSync: Date | string | null = null, public lastSync: Date | string | null = null, isProtected?: boolean | null, citationsListOrder?: string[]) {
         super(rootRelativePath, ".mdx")
         if (id) {
             this.id = id
         }
         let fm = raw ? matter(raw) : undefined
+        console.log("fm: ", fm)
         const _matter = fm?.data ? zodFrontMatterObject.parse(fm.data as FrontMatterType) : undefined
         this.citationsListOrder = citationsListOrder || []
         this.formatted = formatted || fm?.content
@@ -181,14 +186,14 @@ export class MdxNote extends MdxNoteProtocol {
         return await mdxNoteWithParsedLatex.parseAsync(this)
     }
     async getDatabaseCitation(id: string[]) {
-        const query = await getUniversalQuery("getBibCitation")
+        const query = await getUniversalQuery("getBibCitation", "bibliography")
         const citations = await query(id)
         return citations as Awaited<ReturnType<typeof serverClient["bibliography"]["getBibCitation"]>>
     }
-    async parseCitations() {
+    async parseCitations(content?: string) {
         const regex = /\[@(?<value>[\w|\d|\.|\-|_|\+|\=|\$|\!|\%|\*|\&]*)\]/gm
         let results: { value: string, length: number, index: number }[] = []
-        let c = this.formatted || this.raw
+        let c = content || this.formatted || this.raw
         let m;
         do {
             m = regex.exec(c);
@@ -219,6 +224,7 @@ export class MdxNote extends MdxNoteProtocol {
         this.citations = this.citations.concat(fr.map((c) => new BibEntry(c?.id, { htmlCitation: c?.htmlCitation }, c.pageIndex)))
         this.citationsListOrder = this.citations.sort((a: any, b: any) => a.tempPageIndex - b.tempPageIndex).map((c) => c.id)
         this.formatted = c
+        return c
     }
     log(val: string | object) {
        if(this.noLog) {
@@ -413,24 +419,43 @@ ${m.groups.content}
             }
         } while (m);
     }
-
-    private _parseTags() {
+    _parseTags(content?: string) {
         this.log(`_parseTags: ${this.title}`)
-        if (this.isProtected) return
-        let res = this.parseTags(this.formatted || this.raw)
+        if (this.isProtected) return content || this.formatted as string
+        let res = this.parseTags(content || this.formatted || this.raw)
         this.formatted = res.content
         this.tags = this.tags.concat(res.results.map((t) => new Tag(t)))
+        return res.content || content as string
     }
-    private _parseVideoTimeLinks() {
+    _parseVideoTimeLinks(content?: string) {
         this.log(`_parseVideoTimelinks: ${this.title}`)
-        let res = this.parseVideoTimeLinks(this.formatted || this.raw)
+        let res = this.parseVideoTimeLinks(content || this.formatted || this.raw)
         this.formatted = res.content
+        return res.content || content as string
     }
-    private async _parseQuickLinks() {
+    async _parseQuickLinks(content?: string) {
         this.log(`_parseQuickLinks: ${this.title}`)
         let res = await this.parseQuickLinks(this.formatted || this.raw)
         this.formatted = res.content
         this.outgoingQuickLinks = this.outgoingQuickLinks.concat(res.links)
+        return res.content || content as string
+    }
+    static async parseMdxString(content: string, opts: {parseDefinitions?: boolean, id?: number, rootRelativePath?: string, docType?: DocTypes} = {}){
+        let nt = new MdxNote(undefined, opts?.rootRelativePath || "", undefined, content, undefined, undefined, "--")
+        let c = content
+        c = nt.parseLinkShortcuts(c)
+        c = nt.parseEquationTags(c)
+        let { content: _content, definitions } = nt.parseDefinitionTags(c)
+        c = content
+        if (opts.parseDefinitions && definitions && definitions.length > 0) {
+            nt.definitions = definitions.map((d) => new Definition({ id: d.id, content: d.content, label: d.label, mdxNoteId: nt.id }))
+        }
+        c = nt._parseTags(c)
+        c = nt._parseVideoTimeLinks(c)
+        nt.equationIds = nt.getEquationIds(c)
+        c = await nt.parseCitations(c)
+        c = await nt._parseQuickLinks(c)
+        return c
     }
     async parse() {
         this.formatted = this.parseLinkShortcuts(this.formatted || this.raw)

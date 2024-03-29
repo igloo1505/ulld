@@ -2,7 +2,7 @@
 import React, {useEffect} from "react";
 import { useDebounceMdxParse } from "@ulld/hooks/useDebounceMdxParse";
 import clsx from "clsx";
-import { getComponentMap } from "../markdown/componentMap";
+import { getClientComponentMap } from "../markdown/componentMapClient";
 
 interface MdxLivePreviewPanelProps {
     content: string;
@@ -15,17 +15,17 @@ export const MdxLivePreviewPanel = ({
     debounceTimeout = 300,
     center=false
 }: MdxLivePreviewPanelProps) => {
-    const { value, setValue, Content } = useDebounceMdxParse(_content, debounceTimeout);
+    const { value, setValue, Component } = useDebounceMdxParse(_content, debounceTimeout);
 
     useEffect(() => {
        setValue(_content) 
     }, [_content])
 
     return <div
-        className={clsx("w-full h-full mdx", center ? " flex flex-col justify-center items-center" : "relative inline-block")}
+        className={clsx("w-full h-full mdx p-4", center ? " flex flex-col justify-center items-center" : "relative inline-block")}
     >
-        <Content
-            components={getComponentMap(value)}
+        <Component
+            components={getClientComponentMap(value)}
         />
     </div>;
 };

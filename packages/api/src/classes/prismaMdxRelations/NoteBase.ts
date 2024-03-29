@@ -2,12 +2,13 @@ import { getNoteTypeFromPath } from "@ulld/configschema/configUtilityTypes/gener
 import type { Route } from "next";
 import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
 import { replaceRecursively } from "@ulld/utilities/utils/general";
+import { ParsableExtension } from "./zod/general";
 
 
 export class NoteBase {
-    rootRelativePath: string
+    rootRelativePath?: string | null
     ftExtension: string
-    constructor(rootRelativePath: string, extension: string) {
+    constructor(rootRelativePath?: string | null, extension: ParsableExtension = ".mdx") {
         this.rootRelativePath = rootRelativePath
         this.ftExtension = extension
     }
@@ -19,12 +20,19 @@ export class NoteBase {
             console.log(`No note href could be found for a note at path ${this.rootRelativePath}`)
             return
         }
-        let subPath = this.rootRelativePath.startsWith(t.fs as string) ? this.rootRelativePath.slice(t.fs.length, this.rootRelativePath.length) : this.rootRelativePath.split(t.fs)[1]
+        if (t === "RemoteNote"){
+            console.log(`No noteType found. Interpreting note as remote.`)
+            return
+        }
+        let rootRelativePath = this.rootRelativePath as string
+        const _fs = t.fs as string
+        const _url = t.url as string
+        let subPath = rootRelativePath.startsWith(_fs) ? rootRelativePath.slice(_fs.length, rootRelativePath.length) : rootRelativePath.split(_fs)[1]
         if (subPath.endsWith(this.ftExtension)) {
             subPath = subPath.slice(0, subPath.length - this.ftExtension.length)
         }
-        let urlSplit = t.url.split("?")[0]
-        return `${urlSplit || t.url}${subPath}` as Route
+        let urlSplit = _url.split("?")[0]
+        return `${urlSplit || _url}${subPath}` as Route
     }
 
     async parseQuickLinks(content: string) {

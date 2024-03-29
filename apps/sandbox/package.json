@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'"
+    "start": "next start"
   },
   "dependencies": {
     "@ducanh2912/next-pwa": "^10.2.5",

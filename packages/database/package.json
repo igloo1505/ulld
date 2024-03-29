@@ -2,12 +2,10 @@
   "name": "@ulld/database",
   "version": "0.0.0",
   "private": true,
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./prisma": "./src/internalDatabaseTypes.ts",
-    "./internalDatabaseTypes": "./src/internalDatabaseTypes.ts",
+    ".": "./src/internalDatabaseTypes.d.ts",
+    "./prisma": "./src/internalDatabaseTypes.d.ts",
+    "./internalDatabaseTypes": "./src/internalDatabaseTypes.d.ts",
     "./db": "./src/db/main.ts"
   },
   "files": [
@@ -21,7 +19,7 @@
     "db:migrate": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma migrate dev --schema ./src/prisma/schema.prisma",
     "migrate:reset": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma migrate reset --schema ./src/prisma/schema.prisma",
     "db:seed": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma db seed",
-    "db:generate": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma generate --schema ./src/prisma/schema.prisma",
+    "db:generate": "node ../../node_modules/dotenv-cli/cli.js -e ../../.env.local -- prisma generate --schema ./src/prisma/schema.prisma",
     "db:push": "prisma db push --skip-generate",
     "prisma:studio": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma studio --schema ./src/prisma/schema.prisma",
     "postinstall": "echo 'add script back in: prisma generate --schema ./src/prisma/schema.prisma'"
@@ -29,7 +27,7 @@
   "dependencies": {
     "@prisma/client": "latest"
   },
-  "devDependencies": {
+  "peerDependencies": {
     "@repo/typescript-config": "workspace:*",
     "prisma": "latest"
   },

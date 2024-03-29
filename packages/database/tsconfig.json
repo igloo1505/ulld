@@ -1,9 +1,7 @@
 {
   "extends": "@repo/typescript-config/nextjs.json",
-  "include": ["./src/*/**.ts", "./src/*/**.tsx", "./modules.d.ts"],
-  "exclude": ["dist", "build", "node_modules"],
-  "moduleResolution": "bundler",
   "compilerOptions": {
+    "moduleResolution": "bundler",
     "lib": ["dom", "ES2015"],
     "types": ["jest", "node"],
     "esModuleInterop": true,

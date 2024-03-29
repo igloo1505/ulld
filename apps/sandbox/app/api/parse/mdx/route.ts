@@ -2,10 +2,10 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { createEdgeRouter } from "next-connect";
-import { compile } from "@mdx-js/mdx";
-import { prisma } from "#/db/db";
 import { getCorsHeaders, optionsMethodResponse } from "@ulld/utilities/cors";
-import { z } from "zod";
+import {parseMdxProps} from "@ulld/utilities/schemas/mdx/parseMdxStringProps"
+import { serverClient } from "@ulld/api/serverClient";
+
 
 interface RequestContext {
     // params: {
@@ -15,22 +15,15 @@ interface RequestContext {
 
 const router = createEdgeRouter<NextRequest, RequestContext>();
 
-const parseMdxProps = z.object({
-    content: z.string(),
-});
-
-
 
 router.post(async (req, ctx) => {
     try {
-        const { content } = await req.json();
-
-        let parsed = await compile(content, {
-            outputFormat: "function-body",
-         });
+        const params = await req.json();
+        const parsedParams = parseMdxProps.parse(params)
+        let compiled = await serverClient.beta.parseMdxString(parsedParams)
 
         let res = new NextResponse(
-            JSON.stringify({ success: true }),
+            JSON.stringify({ success: true, compiled }),
             getCorsHeaders(req, 200),
         );
 

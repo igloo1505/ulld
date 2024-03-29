@@ -3,13 +3,11 @@ generator client {
     previewFeatures = ["fullTextSearch", "postgresqlExtensions"]
 }
 
-
 datasource db {
     provider   = "postgresql"
     url        = env("DATABASE_URL")
     extensions = [citext]
 }
-
 
 model Subject {
     value        String         @id @unique @db.Citext
@@ -22,11 +20,11 @@ model Subject {
     todoList     ToDoList[]
     toDo         ToDo[]
     bibEntries   BibEntry[]
-    equations   Equation[]
+    equations    Equation[]
 }
 
 model Topic {
-    value         String         @id @unique @db.Citext
+    value        String         @id @unique @db.Citext
     MdxNotes     MdxNote[]
     ipynbNotes   Ipynb[]
     QAPair       QAPair[]
@@ -36,7 +34,7 @@ model Topic {
     kanbanId     Int?
     todoList     ToDoList[]
     bibEntries   BibEntry[]
-    equations   Equation[]
+    equations    Equation[]
 }
 
 model Tag {
@@ -52,8 +50,6 @@ model Tag {
     kanbanId     Int?
     todoList     ToDoList[]
 }
-
-
 
 enum Technologies {
     python
@@ -76,11 +72,11 @@ enum Technologies {
 }
 
 model Quote {
-    body      String          @id @unique
+    body      String   @id @unique
     author    String
     source    String?
-    pinned    Boolean         @default(false)
-    createdAt DateTime        @default(now())
+    pinned    Boolean  @default(false)
+    createdAt DateTime @default(now())
 }
 
 model DailyFocus {
@@ -100,7 +96,6 @@ model AutoSetting {
     glob  String
     value String
 }
-
 
 model ReadingList {
     name        String     @id @unique
@@ -160,8 +155,8 @@ model BibEntry {
     added          DateTime         @default(now())
     citationGroups CitationsGroup[]
     tags           Tag[]
-    topics          Topic[]
-    subjects        Subject[]
+    topics         Topic[]
+    subjects       Subject[]
     MdxNotes       MdxNote[]
     ipynbNotes     Ipynb[]
     readingList    ReadingList[]
@@ -214,8 +209,8 @@ model Equation {
     variables      String[]
     keywords       String[]
     tags           Tag[]
-    topics          Topic[]
-    subjects        Subject[]
+    topics         Topic[]
+    subjects       Subject[]
     createdAt      DateTime        @default(now())
     mdxNotes       MdxNote[]
 }
@@ -255,11 +250,9 @@ model RandomImage {
     createdAt DateTime @default(now())
 }
 
-
 model NoteType {
     name String @id @unique
 }
-
 
 model QAPair {
     id             String         @id @unique
@@ -268,8 +261,8 @@ model QAPair {
     description    String?
     secondaryLabel String?
     tags           Tag[]
-    topics          Topic[]
-    subjects        Subject[]
+    topics         Topic[]
+    subjects       Subject[]
     practiceExam   PracticeExam[]
     correctCount   Int            @default(0)
     inCorrectCount Int            @default(0)
@@ -306,7 +299,7 @@ model MdxNote {
     formatted          String?
     summary            String?
     topics             Topic[]
-    subjects            Subject[]
+    subjects           Subject[]
     tags               Tag[]
     citations          BibEntry[]
     citationsListOrder String[]
@@ -338,7 +331,7 @@ model Ipynb {
     latexTitle          String?
     tags                Tag[]
     topics              Topic[]
-    subjects             Subject[]
+    subjects            Subject[]
     citations           BibEntry[]
     citationsListOrder  String[]
     importantValues     Float[]
@@ -361,9 +354,9 @@ model ToDoList {
     id         Int       @id @default(autoincrement())
     label      String
     tasks      ToDo[]
-    tags           Tag[]
-    topics          Topic[]
-    subjects        Subject[]
+    tags       Tag[]
+    topics     Topic[]
+    subjects   Subject[]
     createdAt  DateTime  @default(now())
     lastUpdate DateTime  @updatedAt
 }

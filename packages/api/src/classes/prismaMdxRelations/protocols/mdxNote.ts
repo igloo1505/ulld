@@ -7,6 +7,7 @@ import { NoteBase } from "../NoteBase";
 import type { PrismaMdxRelationshipProtocol } from "../type";
 import type { Prisma, MdxNote as PrismaMdxNote } from "@ulld/database/internalDatabaseTypes"
 import { z } from 'zod'
+import { ParsableExtension } from "../zod/general";
 
 
 export type PrismaMdxNoteWithKeys = PrismaMdxNote & { subject: undefined, definitions?: undefined, topics: undefined, citations: undefined, tags: undefined, isProtected?: string }
@@ -45,7 +46,7 @@ export type PrismaMdxNoteSummaryOutput = z.output<typeof prismaMdxNoteSummaryZod
 
 
 export abstract class MdxNoteProtocol extends NoteBase implements PrismaMdxRelationshipProtocol<Prisma.MdxNoteDelegate>  {
-    constructor(rootRelativePath: string, extension: string) {
+    constructor(rootRelativePath: string | undefined | null, extension: ParsableExtension = ".mdx") {
         super(rootRelativePath, extension)
     }
     abstract createArgs(autoSettings: AutoSettingWithRegex[], config: ParsedAppConfig): Prisma.MdxNoteCreateArgs | undefined

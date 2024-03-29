@@ -12,16 +12,14 @@ import {
     getFsMdx,
 } from "../../trpcInternalMethods/filesystem/fsnotes";
 import { makeArrayTransform } from "@ulld/utilities/schemas/transforms";
-import { serializeMdxContent } from "@ulld/parsers/serializeMdxContent";
+import { parseMdxString } from "@ulld/parsers/mdx";
+import { parseMdxStringSchema } from "@ulld/utilities/schemas/mdx/parseMdxStringSchema";
+import { parseMdxProps } from "@ulld/utilities/schemas/mdx/parseMdxStringProps";
 
 const idOrIdArray = z
     .union([z.number().int(), z.number().int().array()])
     .transform(makeArrayTransform);
 
-const parseMdxStringSchema = z.object({
-    content: z.string(),
-    display: z.union([z.literal("display"), z.literal("inline")]),
-});
 
 export const mdxNoteActionsRouter = router({
     deleteNoteById: publicProcedure
@@ -68,8 +66,8 @@ export const mdxNoteActionsRouter = router({
             return getFsMdx(opts.input.rootRelativePath, opts.input.extension);
         }),
     parseMdxString: publicProcedure
-        .input(parseMdxStringSchema)
+        .input(parseMdxProps)
         .mutation(async ({ input }) => {
-            return await serializeMdxContent(input.content);
+            return await parseMdxString(input);
         }),
 });

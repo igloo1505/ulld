@@ -2,7 +2,7 @@ import { prisma } from "@ulld/database/db";
 import { texToChtml } from "@ulld/parsers/math/texToChtml";
 import { zodMdxFieldSchema } from "@ulld/parsers/latex/zodLatexFieldSchema";
 import { mathjaxParserOptionsSchema } from "@ulld/parsers/math/mathjaxParserOptionsParsing";
-import { serializeMdxContent } from "@ulld/parsers/mdx/compiler/main";
+import { parseMdxString } from "@ulld/parsers/mdx";
 import { arrayTruthy } from "@ulld/utilities/booleanAndEqualities/arrayTruthy";
 import { addEquationSchema } from "../../schemas/formTrpcRelationships/addEquation";
 import { publicProcedure, router } from "../trpc";
@@ -105,8 +105,8 @@ export const equationsRouter = router({
                 }
             },
         })
-        let desc = eq?.desc ? await serializeMdxContent(eq.desc) : undefined
-        let title = eq?.title ? await serializeMdxContent(eq.title) : undefined
+        let desc = eq?.desc ? await zodMdxFieldSchema.parseAsync(eq.desc) : undefined
+        let title = eq?.title ? await zodMdxFieldSchema.parseAsync(eq.title) : undefined
         let content = eq?.content ? await mathStringToLatex(eq.content, input.content.options, input.content.appendStylesToId, input.content.appendStylesToClass) : undefined
         return {
             eq,

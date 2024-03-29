@@ -2,6 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Next.js",
   "extends": "./base.json",
+  "exclude": ["node_modules", "dist", ".turbo", "src/**/*.test.ts"],
   "compilerOptions": {
     "plugins": [{ "name": "next" }],
     "allowJs": true,
@@ -12,6 +13,7 @@
     "module": "esnext",
     "noEmit": true,
     "resolveJsonModule": true,
-    "target": "es5"
+    "target": "es5",
+    "types": ["jest", "node"]
   }
 }

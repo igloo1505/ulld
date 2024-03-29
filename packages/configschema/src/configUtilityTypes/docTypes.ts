@@ -1,19 +1,24 @@
-import{z} from 'zod'
-import { zodDocTypeInput } from '../zod/documentConfigSchema'
-import { internalDocTypes } from '../zod/internalDocumentTypes'
+import { z } from "zod";
+import { zodDocTypeInput } from "../zod/documentConfigSchema";
+import { internalDocTypes } from "../zod/internalDocumentTypes";
 
-
-
-export type DocTypes = z.output<typeof zodDocTypeInput> | z.output<typeof internalDocTypes>
-
+export type DocTypes =
+    | z.output<typeof zodDocTypeInput>
+    | z.output<typeof internalDocTypes>;
 
 export const topicZodObject = z.object({
-    name: z.string()
-})
+    value: z.string(),
+});
 export const subjectZodObject = z.object({
-    value: z.string()
-})
+    value: z.string(),
+});
 export const tagZodObject = z.object({
-    value: z.string()
-})
+    value: z.string(),
+    kanbanId: z.union([z.number().int(), z.null()]).default(null),
+});
 
+
+
+export type TopicZodOutput = z.output<typeof topicZodObject>
+export type SubjectZodOutput = z.output<typeof subjectZodObject>
+export type TagZodOutput = z.output<typeof tagZodObject>
