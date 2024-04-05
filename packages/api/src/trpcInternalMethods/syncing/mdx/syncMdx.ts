@@ -27,8 +27,8 @@ export const syncMdx = async (file: string, dir: string, autoSettings: AutoSetti
     let checkExistsArgs: Prisma.MdxNoteFindFirstArgs = {
         where: {
             OR: [
-                { content: note.raw },
-                { rootRelativePath: note.rootRelativePath }
+                { content: note.raw as string },
+                { rootRelativePath: note.rootRelativePath as string }
             ]
         }
     }

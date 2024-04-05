@@ -1,14 +1,15 @@
 import { MdxNote as PrismaMdxNote, Prisma, Subject as PrismaSubject } from "@prisma/client"
-import { SubjectProtocol } from "./protocols/subject"
 import { MdxNote } from "./MdxNote"
+import { SubjectZodOutput, subjectZodObject } from "@ulld/configschema/configUtilityTypes/docTypes"
 
 
 
-export class Subject extends SubjectProtocol {
+export class Subject {
     MdxNotes: MdxNote[] = []
-    constructor(public value: string, MdxNotes: (PrismaMdxNote | MdxNote)[] = []) {
-        super()
-        this.MdxNotes = MdxNote.fromList(MdxNotes)
+    value: string
+// public value: string, MdxNotes: (PrismaMdxNote | MdxNote)[] = []
+    constructor(props: SubjectZodOutput) {
+        this.value = props.value
     }
 
     toPlainObject() {
@@ -51,7 +52,7 @@ export class Subject extends SubjectProtocol {
         }
     }
     static fromPrisma(item: PrismaSubject & { MdxNotes?: PrismaMdxNote[] }) {
-        let newSubject = new Subject(item.value, item.MdxNotes || [])
+        let newSubject = new Subject(subjectZodObject.parse(item))
         return newSubject
     }
     static fromList(items: (Subject | PrismaSubject & { MdxNotes?: PrismaMdxNote[] })[] | undefined | null) {

@@ -6,6 +6,7 @@ import {Tag} from "../../classes/prismaMdxRelations/tag"
 import {Topic} from "../../classes/prismaMdxRelations/topic"
 import {Subject} from "../../classes/prismaMdxRelations/subject"
 import { createKanBanFormDataSchema } from "../../schemas/boards/main";
+import { tagZodObject } from "@ulld/configschema/configUtilityTypes/docTypes";
 
 
 
@@ -30,7 +31,7 @@ export const kanBanBoardsRouter = router({
                 ...(arrayTruthy(input.tags) && {
                     tags: {
                         connectOrCreate: input.tags.map((t) => {
-                            let _tag = new Tag(t)
+                            let _tag = new Tag(tagZodObject.parse(t))
                             return _tag.connectOrCreateArgs()
                         })
                     }
@@ -38,7 +39,7 @@ export const kanBanBoardsRouter = router({
                 ...(arrayTruthy(input.subjects) && {
                     subjects: {
                         connectOrCreate: input.subjects.map((t) => {
-                            let _subject = new Subject(t)
+                            let _subject = new Subject({value: t})
                             return _subject.connectOrCreateArgs()
                         })
                     }
@@ -46,7 +47,7 @@ export const kanBanBoardsRouter = router({
                 ...(arrayTruthy(input.topics) && {
                     topics: {
                         connectOrCreate: input.topics.map((t) => {
-                            let _topic = new Topic(t)
+                            let _topic = new Topic({value: t})
                             return _topic.connectOrCreateArgs()
                         })
                     }

@@ -1,16 +1,8 @@
-import { MdxNote as PrismaMdxNote } from "@prisma/client";
 import { DefinitionProtocol } from "./protocols/definition";
 import type { Prisma, Definition as PrismaDefinition } from "@prisma/client"
 import { MdxNote } from "./MdxNote";
-import { PrismaMdxNoteWithKeys } from "./protocols/mdxNote";
+import { DefinitionZodObjectOutput, definitionZodObject } from "./schemas/definitionSchema";
 
-interface DefinitionProps {
-    id: string
-    label?: string | null
-    content?: string | null
-    mdxNote?: (PrismaMdxNote | MdxNote)
-    mdxNoteId?: number | null
-}
 
 // TODO: Get alphabetical label here for sorting later. Don't try to alphabetize in real time.
 export class Definition extends DefinitionProtocol {
@@ -19,9 +11,9 @@ export class Definition extends DefinitionProtocol {
     id: string
     label?: string | null
     content?: string | null
-    constructor(data: DefinitionProps) {
+    constructor(data: DefinitionZodObjectOutput) {
         super()
-        this.mdxNote = data.mdxNote ? data.mdxNote instanceof MdxNote ? data.mdxNote : MdxNote.fromPrisma(data.mdxNote as PrismaMdxNoteWithKeys) : undefined
+        this.mdxNote = data.mdxNote
         this.mdxNoteId = data.mdxNoteId
         this.id = data.id
         this.content = data.content
@@ -70,11 +62,8 @@ export class Definition extends DefinitionProtocol {
         } satisfies Prisma.DefinitionCreateOrConnectWithoutMdxNoteInput
     }
     fromPrisma(item: PrismaDefinition): Definition {
-        return new Definition({
-            id: item.id,
-            label: item.label,
-            content: item.content
-        })
+        const props = definitionZodObject.parse(item)
+        return new Definition(props)
     }
     async getAlphabeticalLabel(): Promise<string> {
         return this.label || this.id

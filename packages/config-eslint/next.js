@@ -27,7 +27,10 @@ module.exports = {
     React: true,
     JSX: true,
   },
-  plugins: ["only-warn"],
+  plugins: [
+        "only-warn",
+        "eslint-plugin-tsdoc"
+    ],
   settings: {
     "import/resolver": {
       typescript: {

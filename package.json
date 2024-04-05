@@ -1,15 +1,15 @@
 {
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "clean": "turbo run clean",
-    "dev": "turbo run dev",
+    "build": "turbo build",
+    "clean": "turbo clean",
+    "dev": "turbo dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "turbo run lint",
-    "typecheck": "turbo run typecheck",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
     "publish-packages": "turbo run build lint test && changeset version && changeset publish",
-    "test": "turbo run test",
-    "test:watch": "turbo run test:watch"
+    "test": "turbo test",
+    "test:watch": "turbo test:watch"
   },
   "devDependencies": {
     "@microsoft/api-extractor": "^7.42.3",
@@ -35,7 +35,7 @@
     "typescript": "^5.4.2",
     "typescript-plugin-css-modules": "^5.1.0"
   },
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@9.0.0-beta.1+sha256.fba2e63d591308988fa66645c4f77d67aea9490c2a6c05f14b2b1154d207761e",
   "engines": {
     "node": ">=18"
   },

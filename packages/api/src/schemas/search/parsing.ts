@@ -3,14 +3,13 @@ import dayjs from 'dayjs'
 import { Route } from 'next'
 import { z } from 'zod'
 import { MdxNote } from '../../classes/prismaMdxRelations/MdxNote'
-import { BibEntry } from '../../classes/prismaMdxRelations/BibEntry'
-import { zodFileExtensionInput } from '../../classes/prismaMdxRelations/zod/general'
 import { tagZodObject, topicZodObject, subjectZodObject } from '@ulld/configschema/configUtilityTypes/docTypes'
 import { zodDocTypeInput } from '@ulld/configschema/zod/documentConfigSchema'
 import { zodMdxFieldSchema } from '@ulld/parsers/latex/zodLatexFieldSchema'
 import { zodCoerceToDate, zodOptStr, zodOptNum, zodOptBool } from '@ulld/utilities/schemas/utility'
 import {zodFrontMatterObject} from "@ulld/state/classes/frontMatter/zodFrontMatterObject"
 import {WithoutFunctions, ZodFriendly} from "@ulld/utilities/types/utilityTypes"
+import { currentParsableExtensions } from '@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions'
 
 
 
@@ -80,9 +79,8 @@ const bibEntryFields = {
     copyright: zodOptStr,
     citationGroups: zodCitationGroupSchema.array().optional().default([]),
     tags: tagZodObject.array(),
-    MdxNote: z.any().array().default([]),
     tempPageIndex: zodOptNum,
-} satisfies Omit<ZodFriendly<WithoutFunctions<InstanceType<typeof BibEntry>>>, "Bib" | "MdxNote">
+} 
 
 
 
@@ -113,7 +111,7 @@ const mdxNoteFields = {
     citationsListOrder: z.string().array().optional(),
     outgoingQuickLinks: z.string().array().optional(),
     equationIds: z.string().array().optional(),
-    ftExtension: zodFileExtensionInput,
+    ftExtension: currentParsableExtensions,
     isProtected: zodOptBool(false),
     sequentialKey: zodOptStr,
     sequentialIndex: z.coerce.number().optional().nullable(),

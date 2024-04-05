@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "db:generate": "prisma generate --schema ./node_modules/@ulld/database/src/prisma/schema.prisma"
   },
   "dependencies": {
     "@ducanh2912/next-pwa": "^10.2.5",
@@ -43,7 +44,7 @@
     "shiki": "^1.1.7",
     "zod": "^3.22.4"
   },
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@9.0.0-beta.1",
   "devDependencies": {
     "autoprefixer": "^10.4.18",
     "postcss": "^8.4.35",

@@ -1,7 +1,7 @@
 import { prisma } from "@ulld/database/db";
 import { publicProcedure, router } from "../trpc";
 import { z } from 'zod'
-import { definitionSchema } from "../../classes/prismaMdxRelations/beta/schemas/definitionSchema";
+import { definitionZodObject } from "../../classes/prismaMdxRelations/schemas/definitionSchema";
 
 
 export const commandPaletteRouter = router({
@@ -63,7 +63,7 @@ export const commandPaletteRouter = router({
                 }
             }
         })
-        let parsed = definitionSchema.array().parse(definitions)
+        let parsed = definitionZodObject.array().parse(definitions)
         // TODO: Compile mdx here with a server-side only method to speed up client side rendering.
         return parsed
     }),

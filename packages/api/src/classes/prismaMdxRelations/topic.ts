@@ -1,16 +1,17 @@
 import type { Prisma, Topic as PrismaTopic, MdxNote as PrismaMdxNote } from "@ulld/database/internalDatabaseTypes"
-import { TopicProtocol } from "./protocols/topic";
 import { MdxNote } from "./MdxNote";
 import { mdxNoteArrayToConnectOrCreate } from "./utilities/conversionUtilities";
 import { ParsedAppConfig } from "@ulld/configschema/types";
 import {  getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
-import { MdxNoteWithAll } from "../../trpcTypes/main";
+import { TopicZodOutput, topicZodObject } from "@ulld/configschema/configUtilityTypes/docTypes";
 
 
-export class Topic extends TopicProtocol {
+export class Topic {
     MdxNotes: MdxNote[] = []
-    constructor(public value: string) {
-        super()
+    value: string
+    kanbanId?: number | null | undefined = null
+    constructor(props: TopicZodOutput) {
+        this.value = props.value
     }
 
     toPlainObject() {
@@ -89,10 +90,8 @@ export class Topic extends TopicProtocol {
     }
 
     static fromPrisma(item: PrismaTopic & { MdxNotes?: PrismaMdxNote[] }): Topic {
-        let newTopic = new Topic(item.value)
-        if (item.MdxNotes) {
-            newTopic.MdxNotes = item.MdxNotes.map((n) => n instanceof MdxNote ? n : MdxNote.fromPrisma(n as NonNullable<MdxNoteWithAll>))
-        }
+        let parsed = topicZodObject.parse(item)
+        let newTopic = new Topic(parsed)
         return newTopic
     }
     static fromList(items: (PrismaTopic | Topic)[]): Topic[] {

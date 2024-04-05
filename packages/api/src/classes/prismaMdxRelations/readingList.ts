@@ -1,7 +1,8 @@
 import type { Prisma, ReadingList as PrismaReadingList, BibEntry as PrismaBibEntry } from "@ulld/database/internalDatabaseTypes"
-import { ReadingListProtocol } from "./protocols/readingList"
-import { BibEntry, BibEntryPrismaAcceptedTypes } from "./BibEntry";
-import { readingListZodObject } from "../../schemas/search/parsing";
+import { BibEntry } from "./BibEntry";
+import {MdxNote} from "./MdxNote"
+import { ReadingListPropsOutput, bibEntryPropsSchema, readingListZodObject } from "./schemas/general";
+import { IpynbNote } from "./IpynbNote";
 
 
 export interface PartialReadingListEntry {
@@ -19,11 +20,22 @@ export type AcceptedReadingListProps = PartialReadingListEntry | ReadingList | P
 
 
 
-export class ReadingList extends ReadingListProtocol {
+export class ReadingList {
     bibEntries: BibEntry[] = []
-    constructor(public name: string, public description: string | null = null, bibEntries: BibEntryPrismaAcceptedTypes[] | null | undefined = [], public createdAt: Date = new Date()) {
-        super()
-        this.bibEntries = bibEntries ? BibEntry.fromList(bibEntries) : []
+    name: string
+    description?: string | null
+    mdxNotes: MdxNote[] = []
+    createdAt: Date
+    lastUpdate: Date | undefined | null
+    ipynbNotes: IpynbNote[]
+    constructor(props: ReadingListPropsOutput) {
+    this.name = props.name
+    this.description = props.description
+    this.bibEntries = bibEntryPropsSchema.array().parse(props.bibEntries).map((a) => new BibEntry(a))
+    this.mdxNotes = props.mdxNotes
+    this.ipynbNotes = props.ipynbNotes
+    this.createdAt = props.createdAt
+    this.lastUpdate = props.lastUpdate
     }
 
     toPlainObject() {
@@ -41,7 +53,7 @@ export class ReadingList extends ReadingListProtocol {
             name: this.name,
             description: this.description || null,
             bibEntries: {
-                connectOrCreate: this.bibEntries.map((b) => b.connectOrCreate())
+                connectOrCreate: this.bibEntries.map((b) => b.connectOrCreateArgs())
             }
         }
         return d
@@ -75,7 +87,7 @@ export class ReadingList extends ReadingListProtocol {
         return d
     }
     static fromPrisma(item: AcceptedReadingListProps) {
-        let newReadingList = new ReadingList(item.name, item.description, item.bibEntries, item.createdAt)
+        let newReadingList = new ReadingList(readingListZodObject.parse(item))
         return newReadingList
     }
     static fromList(items: AcceptedReadingListProps[] | undefined | null) {

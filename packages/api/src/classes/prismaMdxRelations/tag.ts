@@ -1,11 +1,14 @@
 import type { Prisma, Tag as PrismaTag } from "@prisma/client"
-import { TagProtocol } from "./protocols/tag";
+import { TagZodOutput, tagZodObject } from "@ulld/configschema/configUtilityTypes/docTypes";
 
 
 
-export class Tag extends TagProtocol {
-    constructor(public value: string) {
-        super()
+export class Tag {
+    kanbanId: number | null = null
+    value: string
+    constructor(props: TagZodOutput) {
+        this.value = props.value
+        this.kanbanId = props.kanbanId
     }
     toPlainObject() {
         return {
@@ -66,9 +69,10 @@ export class Tag extends TagProtocol {
     }
 
     static fromPrisma(item: PrismaTag) {
-        let newItem = new Tag(item.value)
+        let newItem = new Tag(tagZodObject.parse(item))
         return newItem
     }
+
     static fromList(items: (Tag | PrismaTag)[] | undefined | null): Tag[] {
         if (!items || items.length === 0) return []
         return items.map((item) => item instanceof Tag ? item : Tag.fromPrisma(item))

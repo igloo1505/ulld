@@ -2,13 +2,13 @@ import { getNoteTypeFromPath } from "@ulld/configschema/configUtilityTypes/gener
 import type { Route } from "next";
 import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
 import { replaceRecursively } from "@ulld/utilities/utils/general";
-import { ParsableExtension } from "./zod/general";
+import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
 
 
 export class NoteBase {
     rootRelativePath?: string | null
     ftExtension: string
-    constructor(rootRelativePath?: string | null, extension: ParsableExtension = ".mdx") {
+    constructor(rootRelativePath?: string | null, extension: ParsableExtensions = ".mdx") {
         this.rootRelativePath = rootRelativePath
         this.ftExtension = extension
     }
@@ -163,7 +163,8 @@ position: "relative"
         } while (m);
         return c
     }
-    getEquationIds(content: string) {
+    getEquationIds(content?: string | null) {
+        if(!content) return [] as string[]
         const regex = /<Equation\s+.*id={?"(?<equationId>\S*)"}?.*>/gm
         let results: string[] = []
         let m;

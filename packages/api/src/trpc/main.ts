@@ -2,6 +2,7 @@ import { router } from "./trpc";
 import { autoSettingRouter } from "./routers/autoSettings";
 import { syncRouter } from "./routers/sync";
 import { equationsRouter } from "./routers/equations";
+import { whiteboardRouter } from "./routers/whiteboard";
 import { commandPaletteRouter } from "./routers/commandPalette";
 import { advancedSearchRouter } from "./routers/search";
 import { toDoRouter } from "./routers/todo";
@@ -43,6 +44,7 @@ export const appRouter = router({
     universalNotes: universalNoteRouter,
     media: mediaRouter,
     qa: qaRouter,
+    whiteboard: whiteboardRouter,
     beta: betaRouter
 })
 

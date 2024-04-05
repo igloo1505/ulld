@@ -12,10 +12,15 @@ export const topicZodObject = z.object({
 export const subjectZodObject = z.object({
     value: z.string(),
 });
-export const tagZodObject = z.object({
-    value: z.string(),
-    kanbanId: z.union([z.number().int(), z.null()]).default(null),
-});
+
+const _tagZodObject = z.object({
+        value: z.string(),
+        kanbanId: z.union([z.number().int(), z.null(), z.undefined()]).default(null),
+    })
+export const tagZodObject = z.union([
+    _tagZodObject,
+    z.string().transform((a) => _tagZodObject.parse({value: a}))
+])
 
 
 

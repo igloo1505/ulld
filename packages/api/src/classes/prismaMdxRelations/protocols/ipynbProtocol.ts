@@ -1,9 +1,9 @@
+import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
 import { serverClient } from "../../../trpc/serverClient";
 import { IpynbNote } from "../IpynbNote";
 import { NoteBase } from "../NoteBase";
 import { PrismaMdxRelationshipProtocol } from "../type";
 import { Prisma } from "@ulld/database/internalDatabaseTypes"
-import { ParsableExtension } from "../zod/general";
 
 
 export type IpynbPrismaReturnType = Awaited<ReturnType<typeof serverClient["ipynb"]["getPrismaIpynb"]>>
@@ -11,7 +11,7 @@ export type IpynbPrismaReturnType = Awaited<ReturnType<typeof serverClient["ipyn
 export type IypnbFsReturnType = Awaited<ReturnType<typeof serverClient["ipynb"]["getFsIpynb"]>>
 
 export abstract class IpynbProtocol extends NoteBase implements PrismaMdxRelationshipProtocol<Prisma.IpynbDelegate> {
-    constructor(rootRelativePath: string, extension: ParsableExtension = ".ipynb") {
+    constructor(rootRelativePath: string, extension: ParsableExtensions = ".ipynb") {
         super(rootRelativePath, extension)
     }
     abstract createArgs(): Prisma.IpynbCreateArgs | null

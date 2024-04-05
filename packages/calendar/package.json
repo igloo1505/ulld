@@ -1,0 +1,22 @@
+{
+  "name": "@ulld/calendar",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Add dev script here'",
+    "build": "echo 'Add build script here'",
+    "test": "echo 'Add test script here'",
+    "lint": "echo 'Add lint script here'"
+  },
+  "dependencies": {
+    "ical.js": "^2.0.0"
+  },
+  "devDependencies": {
+    "dayjs": "^1.11.10",
+    "use-lilius": "^2.0.5"
+  },
+  "peerDependencies": {
+    "dayjs": "^1.11.10",
+    "use-lilius": "^2.0.5"
+  }
+}

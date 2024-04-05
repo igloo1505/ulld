@@ -337,10 +337,7 @@ model Ipynb {
     importantValues     Float[]
     href                String
     outgoingQuickLinks  String[]
-    outputPath          String
-    htmlOutput          Bytes
     raw                 Bytes
-    notebook_preExecute String?
     sequentialList      SequentialNoteList? @relation(fields: [sequentialKey], references: [sequentialKey])
     sequentialKey       String?
     sequentialIndex     Int?
@@ -558,4 +555,10 @@ model HealthReport {
     estHoursInExcessFast            Float?
     dietId                          String?
     created                         DateTime @default(now())
+}
+
+
+model Whiteboard {
+        id String @id @unique
+        data Bytes
 }

@@ -278,7 +278,7 @@
     "unist-util-is": "^6.0.0",
     "unist-util-visit": "^5.0.0"
   },
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@9.0.0-beta.1",
   "peerDependencies": {
     "@tanstack/query-async-storage-persister": "^4.33.0",
     "@tanstack/query-sync-storage-persister": "^4.33.0",

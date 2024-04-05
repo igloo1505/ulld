@@ -1,0 +1,43 @@
+{
+  "name": "@ulld/website",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.99.7",
+    "@react-three/fiber": "^8.15.19",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/jest-presets": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@shikijs/rehype": "^1.2.0",
+    "@ulld/api": "workspace:*",
+    "@ulld/baseConfigs": "workspace:*",
+    "@ulld/calendar": "workspace:*",
+    "@ulld/config": "workspace:*",
+    "@ulld/configschema": "workspace:*",
+    "@ulld/diagram": "workspace:*",
+    "@ulld/editor": "workspace:*",
+    "@ulld/full-form": "workspace:*",
+    "@ulld/hooks": "workspace:*",
+    "@ulld/kanban": "workspace:*",
+    "@ulld/logger": "workspace:*",
+    "@ulld/note-network": "workspace:*",
+    "@ulld/parsers": "workspace:*",
+    "@ulld/state": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
+    "@ulld/ui": "workspace:*",
+    "@ulld/utilities": "workspace:*",
+    "@ulld/whiteboard": "workspace:*",
+    "dayjs": "^1.11.10",
+    "next": "^14.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "simplex-noise": "^4.0.1",
+    "three": "^0.163.0",
+    "three-noise": "^1.1.2"
+  }
+}
