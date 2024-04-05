@@ -39,7 +39,7 @@ export class CitationGroup {
             name: this.name,
             description: this.description,
             entries: {
-                connectOrCreate: this.entries.map((t) => t.connectOrCreate())
+                connectOrCreate: this.entries.map((t) => t.connectOrCreateArgs())
             }
         }
         return d
@@ -73,7 +73,11 @@ export class CitationGroup {
         return d
     }
     static fromPrisma(entry: NonNullable<CitationGroupReturned> | PrismaCitationGroup & { entries: undefined } | Partial<NonNullable<BibEntryReturned>['citationGroups'][number]>) {
-        let newGroup = new CitationGroup(entry.name || "", entry.description || undefined, entry.entries || [])
+        let newGroup = new CitationGroup({
+            name: entry.name || "",
+            description: entry.description || undefined,
+            entries: entry.entries || []
+        })
         return newGroup
     }
     static fromList(items: (PrismaCitationGroup & { entries?: undefined } | CitationGroup | Partial<NonNullable<BibEntryReturned>['citationGroups'][number]>)[] | null | undefined): CitationGroup[] {

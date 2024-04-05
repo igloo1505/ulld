@@ -1,4 +1,4 @@
-import { Subject, Tag, Topic, Prisma } from "@prisma/client";
+import { Subject, Tag, Topic, Prisma } from "@ulld/database/internalDatabaseTypes";
 import { publicProcedure, router } from "../trpc";
 import { z } from 'zod'
 import {  TaskListIds } from "@ulld/utilities/types/todos";

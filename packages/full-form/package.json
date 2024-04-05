@@ -18,6 +18,7 @@
     "./taggableCombobox": "./src/taggableComboBox.tsx",
     "./taggableSelectGroup": "./src/taggableSelectGroup.tsx",
     "./mathInput": "./src/fullFormMathInput.tsx",
+    "./textInputWithBadgeList": "./src/fullFormTextInputWithBadgeList.tsx",
     "./codeTextArea": "./src/codeTextArea.tsx",
     "./types": "./src/types.ts",
     "./provider": "./src/fullFormProvider.tsx",
@@ -29,6 +30,7 @@
     "./context": "./src/fullFormContext.tsx",
     "./ui/subheading": "./src/ui/subHeading.tsx",
     "./layout/sidePanel": "./src/layouts/sidePanelWithDisplay/fullFormSidePanelLayout.tsx",
+    "./layout/sidePanel/multiStepContainer": "./src/layouts/sidePanelWithDisplay/fullFormMultiStepSidePanel.tsx",
     "./layout/fullPage/container": "./src/layouts/fullPage/container.tsx",
     "./layout/fullPage/wrapper": "./src/layouts/fullPage/wrapper.tsx"
   },

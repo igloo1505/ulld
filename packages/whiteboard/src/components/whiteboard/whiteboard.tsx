@@ -7,7 +7,7 @@ import { useState, useEffect, type CSSProperties } from "react";
 import { AppState, BinaryFiles, ExcalidrawImperativeAPI, ExcalidrawProps, LibraryItems } from "@excalidraw/excalidraw/types/types";
 import { ExcalidrawElement } from "@excalidraw/excalidraw/types/element/types";
 import { client } from "@ulld/api/client";
-import { jsonStringifyWhiteboard } from "#/lib/formatReturnedState";
+import { jsonStringifyWhiteboard } from "../../lib/formatReturnedState";
 const WhiteboardInternal = dynamic(
     async () => (await import("./wrapper")).WhiteboardInternal,
     {

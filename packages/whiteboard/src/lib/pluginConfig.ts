@@ -1,8 +1,27 @@
+import { Whiteboard } from "../components/whiteboard/main";
+import React from "react";
+
 declare global {
     interface Window { EXCALIDRAW_ASSET_PATH: string; }
 }
 
+
+interface EmbeddableComponent {
+    component: React.FC<any>
+    regex: string[]
+}
+
+
 class ULLDPluginConfig {
+    embeddables: EmbeddableComponent[] = [
+        {
+            component: Whiteboard,
+            regex: [
+                '<Whiteboard',
+                '<Sketch',
+            ]
+        }
+    ]
     constructor(){}
     /**
        * Will run only on the client.

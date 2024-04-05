@@ -2,9 +2,16 @@ import {z} from 'zod'
 import { mdxNotePropsSchema } from './general'
 
 
+const getIpynbHref = (a: any): string => {
+      console.error(`Get IpynbHref here`) 
+      return "--"
+    }
+
+
 export const ipynbPropsSchema = z.object({
     filepath: z.string(),
     content: z.string().describe("Stringified json content"),
+    remoteUrl: z.string().nullish(),
 }).merge(mdxNotePropsSchema.innerType().pick({
     rootRelativePath: true,
     isProtected: true,
@@ -28,7 +35,8 @@ export const ipynbPropsSchema = z.object({
 })).transform((a) => {
     return {
         ...a,
-        raw: a.raw || a.content
+        raw: a.raw || a.content,
+        href: a.href ? a.href : getIpynbHref(a)
     }
 })
 

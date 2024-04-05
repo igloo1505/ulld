@@ -1,7 +1,8 @@
 import React, { MouseEvent } from 'react'
 import { AddEquationFormType } from './types'
-import { FormFieldWithBadgeList } from '../../inputs/formFieldWithBadgeList'
-import { SideFormContainer } from '../../layouts/sideMenu/sideFormContainer'
+import { TaggableComboBox } from '@ulld/full-form/taggableCombobox'
+import { SideFormContainer } from '@ulld/full-form/layout/sidePanel/multiStepContainer'
+import { TextInputWithBadgeList, TextInputWithBadgeListProps } from '@ulld/full-form/textInputWithBadgeList'
 
 
 interface AddEquationFormThreeProps {
@@ -18,23 +19,19 @@ const AddEquationFormThree = ({ form, next, back }: AddEquationFormThreeProps) =
             submitBtnText="Submit"
             onBackClick={back}
         >
-            <FormFieldWithBadgeList
-                form={form}
-                badgeFormKey="tags"
-                inputFormKey="tagInput"
-                inputLabel="Tags"
+            <TaggableComboBox
+                name="tags"
+                label="Tags"
+                type="tag"
+                multiple
             />
-            <FormFieldWithBadgeList
-                form={form}
-                badgeFormKey="variables"
-                inputFormKey="variableInput"
-                inputLabel="Variables"
+            <TextInputWithBadgeList
+                name="variables"
+                label="Variables"
             />
-            <FormFieldWithBadgeList
-                form={form}
-                badgeFormKey="keywords"
-                inputFormKey="keywordInput"
-                inputLabel="Keywords"
+            <TextInputWithBadgeList
+                name="keywords"
+                label="Keywords"
             />
         </SideFormContainer>
     )

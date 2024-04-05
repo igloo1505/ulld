@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client"
+import { Prisma } from "@ulld/database/internalDatabaseTypes"
 import {getRandomId} from "@ulld/utilities/utils/identity"
 import { prisma } from "@ulld/database/db"
 import type { qaInputSchemaTrpc } from "../../schemas/qaItem/main"

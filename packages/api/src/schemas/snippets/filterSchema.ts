@@ -1,4 +1,4 @@
-import { Technologies } from "@prisma/client";
+import { Technologies } from "@ulld/database/internalDatabaseTypes";
 import { z } from "zod";
 
 

@@ -19,7 +19,8 @@ interface EquationDisplayProps {
     bareAss?: boolean
 
 }
-const EquationDisplay = ({ equation, className, noDefaultClasses, latexAlreadyParsed, bareAss }: EquationDisplayProps) => {
+
+export const EquationDisplay = ({ equation, className, noDefaultClasses, latexAlreadyParsed, bareAss }: EquationDisplayProps) => {
     const { toast } = useToast()
     const id = equation.id && equation.id >= 0 ? `equation-${equation.id}` : "addEquation_Equation"
 
@@ -64,6 +65,3 @@ const EquationDisplay = ({ equation, className, noDefaultClasses, latexAlreadyPa
 
 
 EquationDisplay.displayName = "EquationDisplay"
-
-
-export default EquationDisplay;

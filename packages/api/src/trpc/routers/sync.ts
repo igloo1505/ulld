@@ -1,4 +1,4 @@
-import { autoSetting } from "@prisma/client";
+import { autoSetting } from "@ulld/database/internalDatabaseTypes";
 import { publicProcedure, router } from "../trpc";
 import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { syncOptionsSchema } from "../../schemas/syncing/syncOptions";

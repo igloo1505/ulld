@@ -1,6 +1,6 @@
 import React from 'react'
 import { AddEquationFormType } from './types'
-import { SideFormContainer } from '../../layouts/sideMenu/sideFormContainer'
+import { SideFormContainer } from '@ulld/full-form/layout/sidePanel/multiStepContainer'
 import { CodeInput } from '@ulld/full-form/codeTextArea'
 import { TextAreaInput } from '@ulld/full-form/textArea'
 
@@ -11,7 +11,7 @@ interface AddEquationFormTwoProps {
     back: () => void
 }
 
-const AddEquationFormTwo = ({ form, next, back }: AddEquationFormTwoProps) => {
+export const AddEquationFormTwo = ({ form, next, back }: AddEquationFormTwoProps) => {
     return (
         <SideFormContainer
             form={form}
@@ -36,6 +36,3 @@ const AddEquationFormTwo = ({ form, next, back }: AddEquationFormTwoProps) => {
 
 
 AddEquationFormTwo.displayName = "AddEquationFormTwo"
-
-
-export default AddEquationFormTwo;

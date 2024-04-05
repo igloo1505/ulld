@@ -2,11 +2,10 @@ import { prisma } from "@ulld/database/db";
 import { texToChtml } from "@ulld/parsers/math/texToChtml";
 import { zodMdxFieldSchema } from "@ulld/parsers/latex/zodLatexFieldSchema";
 import { mathjaxParserOptionsSchema } from "@ulld/parsers/math/mathjaxParserOptionsParsing";
-import { parseMdxString } from "@ulld/parsers/mdx";
 import { arrayTruthy } from "@ulld/utilities/booleanAndEqualities/arrayTruthy";
 import { addEquationSchema } from "../../schemas/formTrpcRelationships/addEquation";
 import { publicProcedure, router } from "../trpc";
-import { Prisma } from "@prisma/client"
+import { Prisma } from "@ulld/database/internalDatabaseTypes"
 import * as z from 'zod'
 import { getPaginationParams } from "@ulld/state/searchParamSchemas/pagination/main";
 import { equationSearchParamsSchema } from "@ulld/state/searchParamSchemas/equations/main";

@@ -1,6 +1,6 @@
 import { publicProcedure, router } from "../trpc";
 import * as z from 'zod'
-import { autoSetting } from "@prisma/client";
+import { autoSetting } from "@ulld/database/internalDatabaseTypes";
 import { AutoSettingType } from "./sync";
 import { prisma } from "@ulld/database/db";
 import { AutoPropertyFormSchema } from "../../schemas/formTrpcRelationships/autoPropertyFormSchema";

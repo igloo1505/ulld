@@ -1,4 +1,3 @@
-import { defaultFindRemoteMdxArgs } from "@ulld/utilities/defaults/prisma/notes";
 import { publicProcedure, router } from "../trpc";
 import { z } from "zod";
 import { prisma } from "@ulld/database/db";
@@ -82,7 +81,20 @@ export const advancedSearchRouter = router({
     getUniqueTags: publicProcedure.query(async () => {
         return await getUniqueTags();
     }),
-    getUniqueTagTopicAndSubjects: publicProcedure.query(async () => {
+    getUniqueTagTopicAndSubjects: publicProcedure.input(z.union([
+        z.literal("tag"),
+        z.literal("topic"),
+        z.literal("subject"),
+    ]).nullish()).query(async ({input}) => {
+        if(input === "tag"){
+            return await getUniqueTags()
+        }
+        if(input === "topic"){
+            return await getUniqueTopics()
+        }
+        if(input === "subject"){
+            return await getUniqueSubjects()
+        }
         let d: TagTopicSubjectList = {
             tags: [],
             topics: [],

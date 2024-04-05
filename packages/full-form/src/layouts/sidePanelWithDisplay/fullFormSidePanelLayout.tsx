@@ -12,10 +12,11 @@ interface FullFormContainerProps<T extends FieldValues, H extends UseFormReturn<
     children?: React.ReactNode
     panel: React.ReactNode
     formContainerClasses?: string
+    centerPanel?: boolean
 }
 
 
-export const FullFormSidePanelLayout = <T extends FieldValues>({ form, title, children, subtitle, panel, formContainerClasses }: FullFormContainerProps<T, any>) => {
+export const FullFormSidePanelLayout = <T extends FieldValues>({ form, title, children, subtitle, panel, formContainerClasses, centerPanel }: FullFormContainerProps<T, any>) => {
     return (
         <Form {...form}>
             <div className={clsx("ulld-fullForm space-y-6 p-10 pb-16")}>
@@ -27,7 +28,7 @@ export const FullFormSidePanelLayout = <T extends FieldValues>({ form, title, ch
                     >
                     {children}
                     </FullFormSidePanel>
-                    <div>
+                    <div className={centerPanel ? "w-full h-full flex flex-col justify-center items-center gap-6 p-6" : undefined}>
                         {panel}
                     </div>
                 </div>

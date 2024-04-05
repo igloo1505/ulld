@@ -1,4 +1,4 @@
-import { MdxNote as PrismaMdxNote, Prisma, Subject as PrismaSubject } from "@prisma/client"
+import { MdxNote as PrismaMdxNote, Prisma, Subject as PrismaSubject } from "@ulld/database/internalDatabaseTypes"
 import { MdxNote } from "./MdxNote"
 import { SubjectZodOutput, subjectZodObject } from "@ulld/configschema/configUtilityTypes/docTypes"
 

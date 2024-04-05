@@ -522,9 +522,7 @@ ${m.groups.content}
             nt.definitions = definitions.map(
                 (d) =>
                     new Definition({
-                        id: d.id,
-                        content: d.content,
-                        label: d.label,
+                        ...d,
                         mdxNoteId: nt.id,
                     }),
             );

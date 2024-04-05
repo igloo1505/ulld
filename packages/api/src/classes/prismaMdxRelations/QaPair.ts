@@ -1,4 +1,4 @@
-import { Prisma } from '@prisma/client'
+import { Prisma } from '@ulld/database/internalDatabaseTypes'
 import { prisma } from '@ulld/database/db'
 import { serverLogger } from '@ulld/logger/server'
 

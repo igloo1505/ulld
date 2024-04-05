@@ -14,7 +14,7 @@ import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
 import { replaceRecursively } from "@ulld/utilities/utils/general";
 import { ParsedBibEntryProps, bibEntryPropsSchema } from "./schemas/general";
 import Link from "next/link";
-import { BibEntryReturned } from "#/trpcTypes/main";
+import { BibEntryReturned } from "../../trpcTypes/main";
 import { Topic } from "./topic";
 import { Subject } from "./subject";
 

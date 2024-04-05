@@ -1,4 +1,4 @@
-import type { Prisma } from "@prisma/client"
+import type { Prisma } from "@ulld/database/internalDatabaseTypes"
 
 
 type DelegateTypes = Prisma.TagDelegate | Prisma.BibEntryDelegate | Prisma.CitationsGroupDelegate | Prisma.ReadingListDelegate | Prisma.MdxNoteDelegate | Prisma.TopicDelegate | Prisma.SubjectDelegate | Prisma.BibDelegate | Prisma.IpynbDelegate | Prisma.SequentialNoteListDelegate | Prisma.DefinitionDelegate

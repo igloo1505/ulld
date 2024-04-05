@@ -1,5 +1,5 @@
 import { Button } from '@ulld/tailwind/button'
-import {  Form } from '@ulld/tailwind/form'
+import { Form } from '@ulld/tailwind/form'
 import React, { MouseEvent } from 'react'
 import { UseFormReturn } from 'react-hook-form'
 
@@ -42,3 +42,6 @@ export const SideFormContainer = <T extends UseFormReturn<any>>({ children, onBa
 
 
 SideFormContainer.displayName = "SideFormContainer"
+
+
+export default SideFormContainer;

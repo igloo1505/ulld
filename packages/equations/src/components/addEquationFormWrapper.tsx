@@ -7,7 +7,7 @@ import AddEquationForm from './addEquationForm'
 import AddEquationDisplay from './addEquationDisplay'
 import { AddEquationSchema } from './types'
 import type { serverClient } from '@ulld/api/serverClient'
-import SideMenuParent from '../../layouts/sideMenu/sideMenuParent'
+import { FullFormSidePanelLayout } from '@ulld/full-form/layout/sidePanel';
 
 
 export type EditEquationItem = Awaited<ReturnType<typeof serverClient.equations.getEquationById>>
@@ -54,10 +54,14 @@ const AddEquationFormWrapper = ({ edit }: AddEquationFormWrapperProps) => {
     })
 
     return (
-        <SideMenuParent className={"ulld-fullForm"}>
+        <FullFormSidePanelLayout
+            panel={<AddEquationDisplay form={form} />}
+            centerPanel
+            form={form}
+            title="Add Equation"
+        >
             <AddEquationForm form={form} />
-            <AddEquationDisplay form={form} />
-        </SideMenuParent>
+        </FullFormSidePanelLayout>
     )
 }
 

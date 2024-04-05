@@ -4,11 +4,11 @@ import { formatEquationSearchParams } from './utils'
 import { HashIcon } from 'lucide-react'
 import { EquationDisplayBadge } from './equationDisplayBadge'
 import { EquationDetailLinkButton } from './equationDisplayButton'
-import { H3} from '../../text/heading'
-import { MathDisplaySERVER } from '../../math/equation/mathDisplay_server'
-import { MdxContentSERVER } from '../../mdxContent/mdxContentSERVER'
-import { CopyTextButton } from '../../buttons/utility/copyButton'
-import { CodeHighlightContainer } from '../../code/syntaxHighlighting/codeHighlightContainer'
+import { H3} from '@ulld/ui/heading'
+import { MathDisplaySERVER } from '@ulld/ui/mathDisplaySERVER'
+import { MdxContentSERVER } from '@ulld/ui/mdxDisplaySERVER'
+import { CopyTextButton } from '@ulld/ui/copyTextButton'
+import { CodeHighlightContainer } from '@ulld/ui/codeHighlightContainer'
 
 
 interface EquationDetailDisplayProps {
@@ -16,7 +16,7 @@ interface EquationDetailDisplayProps {
     isModal?: boolean
 }
 
-const EquationDetailDisplay = ({ equation: item, isModal = false }: EquationDetailDisplayProps) => {
+export const EquationDetailDisplay = ({ equation: item, isModal = false }: EquationDetailDisplayProps) => {
     if (!item) return null
     const id = item.equationId || item.id
     const params = new URLSearchParams()

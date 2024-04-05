@@ -1,6 +1,6 @@
 import React from 'react'
 import { AddEquationFormType } from './types'
-import { SideFormContainer } from '../../layouts/sideMenu/sideFormContainer'
+import { SideFormContainer } from '@ulld/full-form/layout/sidePanel/multiStepContainer'
 import { TextInput } from '@ulld/full-form/textInput'
 import { MathInput } from '@ulld/full-form/mathInput'
 
@@ -10,7 +10,7 @@ interface AddEquationFormOneProps {
     next: () => void
 }
 
-const AddEquationFormOne = ({ form, next }: AddEquationFormOneProps) => {
+export const AddEquationFormOne = ({ form, next }: AddEquationFormOneProps) => {
     return (
         <SideFormContainer
             form={form}
@@ -38,6 +38,3 @@ const AddEquationFormOne = ({ form, next }: AddEquationFormOneProps) => {
 
 
 AddEquationFormOne.displayName = "AddEquationFormOne"
-
-
-export default AddEquationFormOne;

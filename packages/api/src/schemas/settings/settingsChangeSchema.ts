@@ -1,4 +1,4 @@
-import { Prisma, ImageAlignment } from "@prisma/client";
+import { Prisma, ImageAlignment } from "@ulld/database/internalDatabaseTypes";
 import { z } from "zod";
 
 

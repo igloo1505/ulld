@@ -1,8 +1,8 @@
 import React, { MouseEvent, useState } from 'react'
 import { AddEquationFormType } from './types';
-import AddEquationFormOne from './addEquationPanel1';
-import AddEquationFormTwo from './addEquationPanel2';
-import AddEquationFormThree from './addEquationPanel3';
+import { AddEquationFormOne } from './addEquationPanel1';
+import { AddEquationFormTwo } from './addEquationPanel2';
+import { AddEquationFormThree } from './addEquationPanel3';
 import { client } from '@ulld/api/client';
 import { useToast } from '@ulld/tailwind/use-toast';
 

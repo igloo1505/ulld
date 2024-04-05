@@ -1,4 +1,4 @@
-import type { Prisma, Tag as PrismaTag } from "@prisma/client"
+import type { Prisma, Tag as PrismaTag } from "@ulld/database/internalDatabaseTypes"
 import { TagZodOutput, tagZodObject } from "@ulld/configschema/configUtilityTypes/docTypes";
 
 

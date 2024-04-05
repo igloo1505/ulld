@@ -8,7 +8,7 @@ export const definitionZodObject = z.object({
     label: z.string().nullish(),
     content: z.string().nullish(),
     alphabeticalLabel: z.string().nullish(),
-    mdxNote: mdxNotePropsSchema.transform((a) => new MdxNote(a)),
+    mdxNote: mdxNotePropsSchema.nullish().transform((a) => a ? new MdxNote(a) : undefined),
     mdxNoteId: z.number().int().nullish()
 })
 
