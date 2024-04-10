@@ -1,20 +1,13 @@
 import clsx from 'clsx'
 import "@ulld/tailwind/defaultStyles.scss"
-import "#/styles/globals.scss"
-import "#/styles/mdx.scss"
+import "../styles/globals.scss"
+import "../styles/mdx.scss"
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
-/* import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig' */
-/* import {AppConfigSchemaOutput } from "@ulld/configschema/zod/main" */
 import React from 'react'
-/* import { RequireJsLoader } from "@ulld/utilities/loaders" */
 import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI"
 import { Toaster } from "@ulld/tailwind/toaster"
 import { fontSans } from "@ulld/tailwind/defaultFont"
-import config from "#/appConfig.ulld.json"
-/* import "shiki/themes/dracula.mjs" */
-
-
 
 
 export const metadata: Metadata = {
@@ -35,14 +28,8 @@ const RootLayout = async (props: {
     const cookieJar = cookies()
     /* const darkMode = cookieJar.has("darkMode") */
     const darkMode = true
-    /* const s = await prisma.settings.findFirst({ */
-    /*     where: { */
-    /*         id: 1 */
-    /*     } */
-    /* }) */
 
     /* let settings = settingSchema.parse(s) */
-    const settings = { tooltips: true }
 
     const preferFs = cookieJar.has("preferFs")
     let colorMode = darkMode ? "dark" : "light"
@@ -60,7 +47,7 @@ const RootLayout = async (props: {
     return (
         <html
             lang="en"
-            className={clsx("group/html js-focus-visible", darkMode && "dark", Boolean(settings && settings.tooltips === false) && "noTooltips", process.env.NODE_ENV === "development" && "debug-screens")}
+            className={clsx("group/html js-focus-visible", darkMode && "dark", process.env.NODE_ENV === "development" && "debug-screens")}
             data-js-focus-visible=""
             {...p}
         >
@@ -75,9 +62,6 @@ const RootLayout = async (props: {
                 id={`Ulld-body-root`}
             >
                 <StateWrappedUI
-                    settings={settings}
-                    darkMode={darkMode}
-                    config={config}
                 />
                 {props.children}
                 <Toaster />

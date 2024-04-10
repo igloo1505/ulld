@@ -6,11 +6,6 @@
         "*/**.d.ts"
     ],
     "compilerOptions": {
-         "moduleResolution": "bundler",
-        "paths": {
-            "#/*": [
-                "./src/*"
-            ]
-        }
+         "moduleResolution": "bundler"
     }
 }

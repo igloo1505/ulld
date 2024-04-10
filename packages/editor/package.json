@@ -40,7 +40,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "echo 'Add dev script here'",
+    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
     "build": "echo 'Add build script here'",
     "test": "echo 'Add test script here'",
     "lint": "echo 'Add lint script here'"
@@ -56,6 +56,7 @@
     "@ulld/tailwind": "workspace:*",
     "@ulld/ui": "workspace:*",
     "@ulld/utilities": "workspace:*",
+    "@ulld/developer": "workspace:*",
     "file-loader": "^6.2.0",
     "monaco-editor-webpack-plugin": "^7.1.0",
     "monaco-vim": "^0.4.1",

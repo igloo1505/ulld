@@ -3,11 +3,13 @@ generator client {
     previewFeatures = ["fullTextSearch", "postgresqlExtensions"]
 }
 
+
 datasource db {
     provider   = "postgresql"
     url        = env("DATABASE_URL")
     extensions = [citext]
 }
+
 
 model Subject {
     value        String         @id @unique @db.Citext
@@ -23,6 +25,7 @@ model Subject {
     equations    Equation[]
 }
 
+
 model Topic {
     value        String         @id @unique @db.Citext
     MdxNotes     MdxNote[]
@@ -36,6 +39,7 @@ model Topic {
     bibEntries   BibEntry[]
     equations    Equation[]
 }
+
 
 model Tag {
     value        String         @id @unique @db.Citext
@@ -215,6 +219,7 @@ model Equation {
     mdxNotes       MdxNote[]
 }
 
+
 model Definition {
     id                String   @id @unique
     label             String?
@@ -224,6 +229,7 @@ model Definition {
     mdxNoteId         Int?
 }
 
+
 enum ImageAlignment {
     bottom
     center
@@ -231,6 +237,7 @@ enum ImageAlignment {
     left
     right
 }
+
 
 model Settings {
     id                    Int            @id @default(1)
@@ -245,14 +252,25 @@ model Settings {
     lastSync              DateTime       @default(now()) @updatedAt
 }
 
+
+model SettingsAppendix {
+    id String @id @unique
+    data Bytes
+    createdAt      DateTime        @default(now())
+    updatedAt      DateTime     @updatedAt
+}
+
+
 model RandomImage {
     path      String   @id @unique
     createdAt DateTime @default(now())
 }
 
+
 model NoteType {
     name String @id @unique
 }
+
 
 model QAPair {
     id             String         @id @unique
@@ -267,6 +285,7 @@ model QAPair {
     correctCount   Int            @default(0)
     inCorrectCount Int            @default(0)
 }
+
 
 model PracticeExam {
     id                     Int       @id @default(autoincrement())
@@ -497,6 +516,7 @@ model Diet {
     lastUpdate        DateTime        @updatedAt
 }
 
+
 model Serving {
     id            Int             @id @default(autoincrement())
     item          DietaryItem     @relation(fields: [dietaryItemId], references: [id])
@@ -504,6 +524,7 @@ model Serving {
     quant_oz      Float?
     quant_guess   QUANTITY_GUESS?
 }
+
 
 model DietaryItem {
     id              Int       @id @default(autoincrement())
@@ -560,5 +581,12 @@ model HealthReport {
 
 model Whiteboard {
         id String @id @unique
+        data Bytes
+}
+
+
+model DJT {
+        id Int @id @default(autoincrement())
+        type String
         data Bytes
 }

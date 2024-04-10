@@ -70,7 +70,7 @@ export const TextInputWithBadgeList = <T extends FieldValues>({
                                             name,
                                             values.filter((a: string) => a !== v),
                                         );
-                                        if (badgeProps.onClick) {
+                                        if (badgeProps?.onClick) {
                                             badgeProps.onClick(e);
                                         }
                                     }}

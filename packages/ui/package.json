@@ -22,11 +22,15 @@
     "./math/editorWithPreview": "./src/components/inputs/math/editor/latexEditorWithPreview.tsx",
     "./pageContentContainer": "./src/components/layouts/contentContainer.tsx",
     "./heading": "./src/components/text/heading.tsx",
-    "./mathDisplaySERVER": "./src/components/math/equation/mathDisplay_server.tsx",
     "./mdxDisplaySERVER": "./src/components/mdxContent/mdxContentSERVER.tsx",
     "./mdxDisplayCLIENT": "./src/components/mdxContent/mdxContentCLIENT.tsx",
+    "./mdxContentSERVER": "./src/components/mdxContent/mdxContentSERVER.tsx",
+    "./mdxContentCLIENT": "./src/components/mdxContent/mdxContentCLIENT.tsx",
     "./copyTextButton": "./src/components/buttons/utility/copyButton.tsx",
-    "./codeHighlightContainer": "./src/components/code/syntaxHighlighting/codeHighlightContainer.tsx"
+    "./codeHighlightContainer": "./src/components/code/syntaxHighlighting/codeHighlightContainer.tsx",
+    "./copyContextMenu": "./src/components/landing/hero/util/copyContextMenu.tsx",
+    "./stringBadgeList": "./src/components/inputs/stringBadgeList.tsx",
+    "./deleteModalTriggerButton": "./src/components/inputs/deleteModalTriggerButton.tsx"
   },
   "scripts": {
     "build": "echo 'add build:internal script here'",

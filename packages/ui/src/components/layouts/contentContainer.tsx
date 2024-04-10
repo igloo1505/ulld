@@ -18,7 +18,7 @@ interface MDXContentContainerProps {
 }
 
 
-const PageContentContainer = ({ children, containerId, notebook, className_inner, className_lastChild, className, centerX, center, canBookmark, minimal }: MDXContentContainerProps) => {
+export const PageContentContainer = ({ children, containerId, notebook, className_inner, className_lastChild, className, centerX, center, canBookmark, minimal }: MDXContentContainerProps) => {
     const id = useId()
 
     if (minimal && !notebook) {
@@ -73,6 +73,3 @@ const PageContentContainer = ({ children, containerId, notebook, className_inner
 
 
 PageContentContainer.displayName = "MDXContentContainer"
-
-
-export default PageContentContainer;

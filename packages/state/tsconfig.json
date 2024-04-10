@@ -5,9 +5,6 @@
   "compilerOptions": {
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
-    "paths": {
-      "#/*": ["./src/*"]
-    },
     "esModuleInterop": true,
     "resolveJsonModule": true
   }

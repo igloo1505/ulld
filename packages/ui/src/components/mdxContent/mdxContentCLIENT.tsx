@@ -6,7 +6,6 @@ import { MdxContentSERVERProps } from './mdxContentSERVER'
 interface MdxContentClientSideProps extends MdxContentSERVERProps {
     stylesId?: string
     applyUserStyles?: boolean
-    small?: boolean
 }
 
 export const MdxContentCLIENT = (props: MdxContentClientSideProps) => {

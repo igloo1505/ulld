@@ -1,23 +1,23 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import { EquationSearchParams, formatEquationSearchParams } from './utils'
+import { EquationSearchParamsInput, equationSearchParamsToString } from './utils'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage} from '@ulld/tailwind/form'
 import {  Input } from '@ulld/tailwind/input'
-import {   Button, buttonVariants } from '@ulld/tailwind/button'
+import { Button, buttonVariants } from '@ulld/tailwind/button'
 import { useForm } from 'react-hook-form'
 import EquationTagComboBox from './equationTagComboBox'
 import EquationVariableComboBox from './equationVariableComboBox'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import StringBadgeList from '../../inputs/stringBadgeList'
+import StringBadgeList from '@ulld/ui/stringBadgeList'
 import { ArrayUtilities } from '@ulld/utilities/arrayUtilities'
 
 
 
 interface EquationFilterPanelProps {
-    searchParams: EquationSearchParams
+    searchParams: EquationSearchParamsInput
     tags: { value: string }[]
     variables: string[]
 }
@@ -68,7 +68,7 @@ const EquationFilterPanel = ({ tags, searchParams, variables }: EquationFilterPa
     const onSubmit = () => {
         /* TODO: Come back and implement a 'by value' search and sort method here, as well as in the UI once `relatedValues` key is being populated in the `/equations/add...` page. */
         const vals = form.getValues()
-        let params = formatEquationSearchParams({
+        let params = equationSearchParamsToString.parse({
             tags: vals.tags,
             variables: vals.variables,
             query: vals.query === "" ? undefined : vals.query
@@ -124,7 +124,7 @@ const EquationFilterPanel = ({ tags, searchParams, variables }: EquationFilterPa
                     label="Tags"
                     hideIfNone
                     uniqueKeyPrefix='tag'
-                    onClick={(s, i) => {
+                    onClick={(s: string, i: number) => {
                         form.setValue("tags", form.getValues("tags")?.filter((_s, idx) => idx !== i) || [])
                     }}
                 />
@@ -133,7 +133,7 @@ const EquationFilterPanel = ({ tags, searchParams, variables }: EquationFilterPa
                     label="Variables"
                     hideIfNone
                     uniqueKeyPrefix='var'
-                    onClick={(s, i) => {
+                    onClick={(s: string, i: number) => {
                         form.setValue("variables", form.getValues("variables")?.filter((_v, idx) => idx !== i) || [])
                     }}
                 />

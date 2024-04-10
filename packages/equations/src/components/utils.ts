@@ -3,24 +3,23 @@ import { ArrayUtilities } from '@ulld/utilities/arrayUtilities'
 import { z } from 'zod'
 
 export enum EquationOrderBy {
-    title,
-    createdAt
+    title = "title",
+    createdAt = "createdAt"
 }
 
-export const EquationSearchParamsSchema = z.object({
+export const equationSearchParamsSchema = z.object({
     tags: z.union([z.string(), z.string().array()]).transform(ArrayUtilities.beArray).default([]),
     variables: z.union([z.string(), z.string().array()]).transform(ArrayUtilities.beArray).default([]),
     query: z.string().optional(),
     value: z.string().optional(),
-    orderBy: z.nativeEnum(EquationOrderBy).default(EquationOrderBy.title).optional()
+    orderBy: z.union([
+        z.literal("title"),
+        z.literal("createdAt"),
+    ]).default("title")
 }).merge(paginationProps).merge(sortDirProps)
 
 
-export type EquationSearchParams = z.infer<typeof EquationSearchParamsSchema>
-
-
-export const formatEquationSearchParams = (_query: Partial<EquationSearchParams>): string => {
-    let query = EquationSearchParamsSchema.parse(_query)
+export const equationSearchParamsToString = equationSearchParamsSchema.transform((query) => {
     let params = new URLSearchParams()
     if (query.tags) {
         query.tags.forEach((t) => params.append("tags", t))
@@ -30,4 +29,9 @@ export const formatEquationSearchParams = (_query: Partial<EquationSearchParams>
     }
     typeof query.value !== "undefined" && params.set("value", query.value)
     return params.toString()
-}
+})
+
+
+
+export type EquationSearchParamsInput = z.input<typeof equationSearchParamsSchema>
+export type EquationSearchParamsOutput = z.output<typeof equationSearchParamsSchema>

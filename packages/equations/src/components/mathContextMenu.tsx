@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import CopyContextMenu from '../../landing/hero/util/copyContextMenu'
+import { CopyContextMenu } from '@ulld/ui/copyContextMenu'
 
 
 interface MathContextMenuProps {

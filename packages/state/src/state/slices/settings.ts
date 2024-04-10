@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { LocalSettingsType } from "../initialState/settings";
 import { initialState } from "../initialState/initialState";
+import { ParsedSettings } from "@ulld/parsers/settings/settingsParser";
 
 
 
@@ -11,8 +12,7 @@ const slice = createSlice({
         setAllowTooltips(state, action: PayloadAction<boolean>) {
             state.tooltips = action.payload
         },
-        setLocalSettings(state, action: PayloadAction<LocalSettingsType>) {
-            console.log("action.payload: ", action.payload)
+        setLocalSettings(state, action: PayloadAction<ParsedSettings>) {
             // state = action.payload
             state = { ...action.payload }
         },

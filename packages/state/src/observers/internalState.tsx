@@ -1,15 +1,16 @@
 "use client"
 import { usePathname } from "next/navigation"
 import { connect } from "react-redux"
-import { setInitialBrowserProps } from "../actions/clientOnly/dom"
+import { htmlEm, setInitialBrowserProps } from "../actions/clientOnly/dom"
 import { setConfigState } from "../state/slices/config"
 import { setLocalSettings } from "../state/slices/settings"
 import { setDarkmode, showNoteSheet } from "../state/slices/ui"
 import { RootState, store } from "../state/store"
 import {keyDown} from "../listeners/keydown"
 import {resize} from "../listeners/resize"
-import {useEffect, useState} from 'react'
-import {StatePassedToClient} from "../types/statePassedToClient"
+import {useEffect} from 'react'
+import { ParsedAppConfig } from '@ulld/configschema/types'
+import { ParsedSettings } from "@ulld/parsers/settings/settingsParser"
 
 
 const connector = connect((state: RootState, props: any) => ({
@@ -41,12 +42,26 @@ const listenerMap: ListenerType[] = [
     }
 ]
 
+interface P {
+    settings: ParsedSettings,
+    darkMode: boolean,
+    config: ParsedAppConfig,
+    showPlotlyModebar: boolean,
+    noteSheetOpen: boolean
+}
 
 
+const applyHtmlClass = (cls: string, type: "add" | "remove" | "toggle") => {
+       htmlEm()?.classList[type](cls) 
+    }
 
 
-const Observers = connector(({ settings, darkMode, noteSheetOpen, config }: StatePassedToClient & { noteSheetOpen: boolean }) => {
+const Observers = connector(({ settings, showPlotlyModebar, darkMode, noteSheetOpen, config }: P) => {
     const pathname = usePathname()
+
+    useEffect(() => {
+        applyHtmlClass("noPlotlyModebar", showPlotlyModebar ? "remove" : "add")
+    }, [showPlotlyModebar])
 
     useEffect(() => {
         setInitialBrowserProps(darkMode)
@@ -58,15 +73,19 @@ const Observers = connector(({ settings, darkMode, noteSheetOpen, config }: Stat
         }
     }, [config])
 
+    useEffect(() => { 
+        store.dispatch(setDarkmode(darkMode))
+        applyHtmlClass("dark", darkMode ? "add" : "remove")
+    }, [darkMode])
+
     useEffect(() => {
         if (!settings) {
             return console.log("No settings object returned from postgres")
         }
         if (settings) {
             store.dispatch(setLocalSettings(settings))
+            applyHtmlClass("noTooltips", settings.tooltips === false ? "add" : "remove")
         }
-        /* TODO: Find that bulk dispatch function and use it throught the app in places like this to hopefully slightly increase this dreadful performance. */
-        store.dispatch(setDarkmode(darkMode))
     }, [settings, darkMode])
 
 

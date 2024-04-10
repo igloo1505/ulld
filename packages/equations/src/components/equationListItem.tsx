@@ -2,9 +2,9 @@ import React from 'react'
 import { EquationListItem as EquationListItemType } from './types'
 import Link from 'next/link'
 import { buttonVariants } from '@ulld/tailwind/button'
-import { H4 } from '../../text/heading'
-import { MathDisplaySERVER } from '../../math/equation/mathDisplay_server'
-import { DeleteModalTriggerButton } from '../../inputs/deleteModalTriggerButton'
+import { H4 } from '@ulld/ui/heading'
+import { MdxContentSERVER } from '@ulld/ui/mdxDisplaySERVER'
+import { DeleteModalTriggerButton } from '@ulld/ui/deleteModalTriggerButton'
 
 
 
@@ -18,9 +18,10 @@ const EquationListItem = ({ equation }: EquationListItemProps) => {
     return (
         <li className={"w-full h-full min-w-[min(400px,90vw)] rounded-lg border px-4 py-3 grid grid-cols-1 grid-rows-[auto_1fr_auto] shadow-md hover:shadow-sm transition-shadow duration-300 relative"}>
             <H4 className={"pr-4"}>
-                <MathDisplaySERVER
+                <MdxContentSERVER
                     content={equation.title}
-                    stylesContainerId={`${id}-title`}
+                    /* stylesContainerId={`${id}-title`} */
+                    inline
                 />
                 <DeleteModalTriggerButton config={{
                     title: "Delete Equation?",
@@ -34,11 +35,10 @@ const EquationListItem = ({ equation }: EquationListItemProps) => {
                 />
             </H4>
             <div className={"w-full h-full flex flex-col justify-center items-center"}>
-                <MathDisplaySERVER
+                <MdxContentSERVER
                     isMathOnly
-                    display
                     content={equation.content}
-                    stylesContainerId={`${id}-content`}
+                    /* stylesContainerId={`${id}-content`} */
                     className={"mx-6"}
                 />
             </div>

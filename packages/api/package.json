@@ -7,7 +7,10 @@
     "dist"
   ],
   "exports": {
+    ".": "./src/trpc/trpc.ts",
     "./types": "./src/types.d.ts",
+    "./toBytes": "./src/bytes/toBytes.ts",
+    "./fromBytes": "./src/bytes/fromBytes.ts",
     "./classes/prismaHealthRelations/Diet": "./src/classes/prismaHealthRelations/Diet.ts",
     "./classes/specificNoteQuery/specificNoteQueryManager": "./src/classes/specificNoteQuery/specificNoteQueryManager.ts",
     "./classes/specificNoteQuery/documentConfigMap": "./src/classes/specificNoteQuery/documentConfigMap.ts",
@@ -17,6 +20,7 @@
     "./classes/prismaMdxRelations/readingList": "./src/classes/prismaMdxRelations/readingList.ts",
     "./classes/prismaMdxRelations/topic": "./src/classes/prismaMdxRelations/topic.ts",
     "./classes/prismaMdxRelations/definition": "./src/classes/prismaMdxRelations/definition.ts",
+    "./classes/definitionSchema": "./src/classes/prismaMdxRelations/schemas/definitionSchema.ts",
     "./classes/prismaMdxRelations/SequentialList": "./src/classes/prismaMdxRelations/SequentialList.ts",
     "./classes/prismaMdxRelations/NoteBase": "./src/classes/prismaMdxRelations/NoteBase.ts",
     "./classes/prismaMdxRelations/type": "./src/classes/prismaMdxRelations/type.ts",

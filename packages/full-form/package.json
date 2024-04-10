@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "echo 'Add dev script here'",
+    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
     "build": "echo 'Add build script here'",
     "test": "echo 'Add test script here'",
     "lint": "echo 'Add lint script here'"
@@ -98,5 +98,10 @@
     "supertest": "^6.3.4",
     "supertest-session": "^5.0.1",
     "ts-jest": "^29.1.2"
+  },
+  "dependencies": {
+    "rc-tree": "^5.8.5",
+    "react-color": "^2.19.3",
+    "react-time-picker": "^6.6.0"
   }
 }

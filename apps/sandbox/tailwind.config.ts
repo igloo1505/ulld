@@ -1,5 +1,6 @@
 import { tailwindConfig } from "@ulld/tailwind/tailwindConfig"
 import { Config } from "tailwindcss/types/config"
+import tw from "tailwindcss"
 
 const tailwindCfg: Config = {
     content: [
@@ -15,6 +16,7 @@ const tailwindCfg: Config = {
     ],
     presets: [tailwindConfig]
 }
+
 
 
 export default tailwindCfg

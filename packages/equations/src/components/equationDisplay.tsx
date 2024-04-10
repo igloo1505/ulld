@@ -4,10 +4,9 @@ import { Button } from '@ulld/tailwind/button'
 import { copyStringToClipboard } from '@ulld/utilities/copyStringToClipboard'
 import clsx from 'clsx'
 import React from 'react'
-import { MdxContentCLIENT } from '../../mdxContent/mdxContentCLIENT'
-import { EditEquationItem } from '../../pageSpecific/equations/addEquationFormWrapper'
-import { AddEquationInterface } from '../../pageSpecific/equations/types'
-import { MathDisplayCLIENT } from '../blockMathDisplayCLIENT'
+import { MdxContentCLIENT } from '@ulld/ui/mdxDisplayCLIENT'
+import { EditEquationItem } from './addEquationFormWrapper'
+import { AddEquationInterface } from './types'
 
 
 
@@ -39,14 +38,14 @@ export const EquationDisplay = ({ equation, className, noDefaultClasses, latexAl
         >
             <CardHeader>
                 <CardTitle>
-                    {latexAlreadyParsed ? <div dangerouslySetInnerHTML={{ __html: equation.title }} /> : <MathDisplayCLIENT content={equation.title} stylesId={`${id}-title`} />}
+                    {latexAlreadyParsed ? <div dangerouslySetInnerHTML={{ __html: equation.title }} /> : <MdxContentCLIENT content={equation.title} inline stylesId={`${id}-title`} />}
                 </CardTitle>
                 {equation.desc && <CardDescription>
                     {latexAlreadyParsed ? <div dangerouslySetInnerHTML={{ __html: equation.desc }} /> : <MdxContentCLIENT applyUserStyles small content={equation.desc} />}
                 </CardDescription>}
             </CardHeader>
             <CardContent>
-                {latexAlreadyParsed ? <div dangerouslySetInnerHTML={{ __html: equation.content }} /> : <MathDisplayCLIENT isMathOnly display content={equation.content} stylesId={`${id}-content`} />}
+                {latexAlreadyParsed ? <div dangerouslySetInnerHTML={{ __html: equation.content }} /> : <MdxContentCLIENT isMathOnly  content={equation.content} stylesId={`${id}-content`} />}
             </CardContent>
             {!bareAss && <CardFooter className="flex justify-end gap-4">
                 <Button

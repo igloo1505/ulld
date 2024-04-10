@@ -110,6 +110,8 @@
     "@ulld/database": "workspace:*",
     "@ulld/parsers": "workspace:*",
     "@ulld/utilities": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
+    "@ulld/hooks": "workspace:*",
     "chai": "^5.1.0",
     "cypress": "^13.7.1",
     "eslint-plugin-jest-dom": "^5.2.0",

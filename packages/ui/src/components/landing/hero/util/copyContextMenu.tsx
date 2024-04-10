@@ -1,3 +1,4 @@
+"use client"
 import { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem } from '@ulld/tailwind/context-menu'
 import { copyStringToClipboard } from '@ulld/utilities/copyStringToClipboard'
 import React from 'react'
@@ -11,7 +12,7 @@ interface CopyContextMenuProps {
     extraMenuItems?: React.FC<{}>
 }
 
-const CopyContextMenu = ({ children, content, btnLabel, extraMenuItems }: CopyContextMenuProps) => {
+export const CopyContextMenu = ({ children, content, btnLabel, extraMenuItems }: CopyContextMenuProps) => {
     const ExtraMenuItems = extraMenuItems
     return (
         <ContextMenu>
@@ -36,6 +37,3 @@ const CopyContextMenu = ({ children, content, btnLabel, extraMenuItems }: CopyCo
 
 
 CopyContextMenu.displayName = "CopyContextMenu"
-
-
-export default CopyContextMenu;

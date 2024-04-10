@@ -17,6 +17,7 @@
     "@shikijs/rehype": "^1.2.0",
     "@ulld/api": "workspace:*",
     "@ulld/config": "workspace:*",
+    "@ulld/baseConfigs": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/database": "workspace:*",
     "@ulld/editor": "workspace:*",

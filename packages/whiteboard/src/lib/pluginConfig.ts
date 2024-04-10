@@ -1,19 +1,14 @@
 import { Whiteboard } from "../components/whiteboard/main";
-import React from "react";
+import {ULLDPluginConfig} from "@ulld/developer/pluginConfig"
 
 declare global {
     interface Window { EXCALIDRAW_ASSET_PATH: string; }
 }
 
 
-interface EmbeddableComponent {
-    component: React.FC<any>
-    regex: string[]
-}
-
-
-class ULLDPluginConfig {
-    embeddables: EmbeddableComponent[] = [
+class Config extends ULLDPluginConfig {
+    routerPath = "whiteboard"
+    embeddables = [
         {
             component: Whiteboard,
             regex: [
@@ -22,24 +17,9 @@ class ULLDPluginConfig {
             ]
         }
     ]
-    constructor(){}
-    /**
-       * Will run only on the client.
-       *
-       * @remarks
-       * Will run only on the client to allow window and client-only properties to be set. This might run multiple times in some circumstances, so appropriate measures should be taken to ensure properties are not overwritten.
-       *
-       * @returns void
-       * @example
-       * ```ts
-       * setInitialClientState(){
-       *   window.EXCALIDRAW_ASSET_PATH = "/whiteboard/excalidraw-assets"
-       * }
-       * ```
-       *
-       * @beta
-       * {@label SETINITIALCLIENTSTATE}
-       */
+    constructor(){
+        super()
+    }
     setInitialClientState(){
        window.EXCALIDRAW_ASSET_PATH = "/whiteboard/excalidraw-assets"
     }
@@ -47,4 +27,4 @@ class ULLDPluginConfig {
 
 
 
-export default ULLDPluginConfig
+export default Config

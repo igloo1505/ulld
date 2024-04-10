@@ -23,11 +23,12 @@ export const stringHasMdx = (s?: string) => {
 
 
 
-export const autoWrapMath = (math: string) => {
-    if (math.indexOf("$$") === -1) {
-        return `$$
+export const autoWrapMath = (math: string, display: boolean = true) => {
+    const s = display ? "$$" : "$"
+    if (math.indexOf(s) === -1) {
+        return `${s}
 ${math}
-$$`
+${s}`
     }
     return math
 }
