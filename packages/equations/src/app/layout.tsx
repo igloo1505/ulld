@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import "@ulld/tailwind/defaultStyles.scss"
-import "../styles/globals.scss"
 import "../styles/mdx.scss"
+import "../styles/globals.scss"
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
 import React from 'react'

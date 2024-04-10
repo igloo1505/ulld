@@ -1,5 +1,5 @@
 {
-  "name": "developer-template",
+  "name": "@ulld/developer-template",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,21 +9,29 @@
     "lint": "echo 'Add lint script here'"
   },
   "peerDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/jest-presets": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@ulld/api": "workspace:*",
     "@ulld/baseConfigs": "workspace:*",
     "@ulld/config": "workspace:*",
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/database": "workspace:*",
     "@ulld/developer": "workspace:*",
     "@ulld/hooks": "workspace:*",
-    "@repo/jest-presets": "workspace:*",
     "@ulld/logger": "workspace:*",
     "@ulld/parsers": "workspace:*",
     "@ulld/state": "workspace:*",
     "@ulld/tailwind": "workspace:*",
     "@ulld/ui": "workspace:*",
     "@ulld/utilities": "workspace:*"
+  },
+  "devDependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.7",
+    "sass": "^1.74.1",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7"
   }
 }

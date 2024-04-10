@@ -1174,6 +1174,25 @@ importers:
       '@ulld/utilities':
         specifier: workspace:*
         version: link:../utilities
+    devDependencies:
+      '@tailwindcss/container-queries':
+        specifier: ^0.1.1
+        version: 0.1.1(tailwindcss@3.4.1(ts-node@10.9.2(@swc/core@1.4.6(@swc/helpers@0.5.6))(@types/node@20.12.7)(typescript@5.4.4)))
+      '@tailwindcss/forms':
+        specifier: ^0.5.7
+        version: 0.5.7(tailwindcss@3.4.1(ts-node@10.9.2(@swc/core@1.4.6(@swc/helpers@0.5.6))(@types/node@20.12.7)(typescript@5.4.4)))
+      sass:
+        specifier: ^1.74.1
+        version: 1.74.1
+      tailwind-merge:
+        specifier: ^1.14.0
+        version: 1.14.0
+      tailwindcss:
+        specifier: ^3.4.1
+        version: 3.4.1(ts-node@10.9.2(@swc/core@1.4.6(@swc/helpers@0.5.6))(@types/node@20.12.7)(typescript@5.4.4))
+      tailwindcss-animate:
+        specifier: ^1.0.7
+        version: 1.0.7(tailwindcss@3.4.1(ts-node@10.9.2(@swc/core@1.4.6(@swc/helpers@0.5.6))(@types/node@20.12.7)(typescript@5.4.4)))
 
   packages/diagram:
     dependencies:
@@ -1387,6 +1406,12 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../config-typescript
+      '@tailwindcss/container-queries':
+        specifier: ^0.1.1
+        version: 0.1.1(tailwindcss@3.4.1(ts-node@10.9.2(@swc/core@1.4.6(@swc/helpers@0.5.6))(@types/node@20.12.7)(typescript@5.4.4)))
+      '@tailwindcss/forms':
+        specifier: ^0.5.7
+        version: 0.5.7(tailwindcss@3.4.1(ts-node@10.9.2(@swc/core@1.4.6(@swc/helpers@0.5.6))(@types/node@20.12.7)(typescript@5.4.4)))
       '@types/react':
         specifier: ^18.2.74
         version: 18.2.74
@@ -1396,6 +1421,18 @@ importers:
       '@ulld/developer-cli':
         specifier: workspace:*
         version: link:../developer-cli
+      sass:
+        specifier: ^1.74.1
+        version: 1.74.1
+      tailwind-merge:
+        specifier: ^1.14.0
+        version: 1.14.0
+      tailwindcss:
+        specifier: ^3.4.1
+        version: 3.4.1(ts-node@10.9.2(@swc/core@1.4.6(@swc/helpers@0.5.6))(@types/node@20.12.7)(typescript@5.4.4))
+      tailwindcss-animate:
+        specifier: ^1.0.7
+        version: 1.0.7(tailwindcss@3.4.1(ts-node@10.9.2(@swc/core@1.4.6(@swc/helpers@0.5.6))(@types/node@20.12.7)(typescript@5.4.4)))
 
   packages/full-form:
     dependencies:
@@ -30379,6 +30416,11 @@ snapshots:
       mini-svg-data-uri: 1.4.4
       tailwindcss: 3.4.1(ts-node@10.9.2(@swc/core@1.4.6(@swc/helpers@0.5.6))(@types/node@20.11.25)(typescript@5.4.2))
 
+  '@tailwindcss/forms@0.5.7(tailwindcss@3.4.1(ts-node@10.9.2(@swc/core@1.4.6(@swc/helpers@0.5.6))(@types/node@20.12.7)(typescript@5.4.4)))':
+    dependencies:
+      mini-svg-data-uri: 1.4.4
+      tailwindcss: 3.4.1(ts-node@10.9.2(@swc/core@1.4.6(@swc/helpers@0.5.6))(@types/node@20.12.7)(typescript@5.4.4))
+
   '@tanstack/eslint-plugin-query@4.38.0(eslint@9.0.0)':
     dependencies:
       eslint: 9.0.0
@@ -34477,7 +34519,7 @@ snapshots:
     dependencies:
       esbuild: 0.19.12
       resolve: 1.22.8
-      sass: 1.72.0
+      sass: 1.74.1
       sass-embedded: 1.74.1
 
   esbuild@0.19.12:
@@ -44738,7 +44780,7 @@ snapshots:
       postcss-modules-local-by-default: 4.0.4(postcss@8.4.35)
       postcss-modules-scope: 3.1.1(postcss@8.4.35)
       reserved-words: 0.1.2
-      sass: 1.72.0
+      sass: 1.74.1
       source-map-js: 1.0.2
       stylus: 0.62.0
       tsconfig-paths: 4.2.0
