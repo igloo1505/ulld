@@ -353,7 +353,7 @@ export const fromMdxStringOptSchema = z
 export const mdxNoteFromStringPropsSchema = mdxNotePropsSchema
     .innerType()
     .pick({
-        content: true,
+        raw: true,
         rootRelativePath: true
     });
 

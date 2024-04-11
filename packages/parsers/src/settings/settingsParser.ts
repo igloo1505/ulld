@@ -4,10 +4,10 @@ import { z } from "zod"
 const dateToString = z.union([
     z.string(),
     z.date()
-]).transform((a) => a instanceof Date ? a.toISOString() : a)
+]).optional().transform((a) => a instanceof Date ? a.toISOString() : a)
 
 export const settingSchema = z.object({
-    id: z.number().int().optional(),
+    id: z.number().int().default(1),
     tooltips: z.boolean().default(true),
     title: z.string().default("Uh Little Less Dum"),
     summary_showCitations: z.boolean().default(true),

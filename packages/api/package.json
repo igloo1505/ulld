@@ -174,6 +174,7 @@
     "@ulld/parsers": "workspace:*",
     "@ulld/state": "workspace:*",
     "@ulld/utilities": "workspace:*",
+    "@ulld/developer": "workspace:*",
     "bibtex": "^0.9.0",
     "citation-js": "^0.7.8",
     "deepmerge": "^4.3.1",

@@ -1,0 +1,7 @@
+{
+  "extends": "@repo/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "jsx": "preserve"
+  }
+}

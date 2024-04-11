@@ -5,17 +5,18 @@ import type {
     Prisma,
     MdxNote as PrismaMdxNote,
 } from "@ulld/database/internalDatabaseTypes";
-import {
-    MdxNoteProtocol,
-} from "./protocols/mdxNote";
+import { MdxNoteProtocol } from "./protocols/mdxNote";
 import { Tag } from "./tag";
 import { BibEntry } from "./BibEntry";
-import { DocTypes, subjectZodObject, tagZodObject, topicZodObject } from "@ulld/configschema/configUtilityTypes/docTypes";
+import {
+    DocTypes,
+    subjectZodObject,
+    tagZodObject,
+    topicZodObject,
+} from "@ulld/configschema/configUtilityTypes/docTypes";
 import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { ParsedAppConfig } from "@ulld/configschema/types";
-import {
-    getNoteTypeFromPath,
-} from "@ulld/configschema/configUtilityTypes/general";
+import { getNoteTypeFromPath } from "@ulld/configschema/configUtilityTypes/general";
 import { SequentialList } from "./SequentialList";
 import { Definition } from "./definition";
 import { ensureDate } from "../data/calendarAndDate";
@@ -32,12 +33,8 @@ import { universalStringToMathjax } from "@ulld/parsers/universalStringToMdx";
 import { getFlatAutoSettings } from "../../trpcInternalMethods/settings/autoSettings/getFlattenedAutoSettings";
 import { globDoesMatch } from "../../trpcInternalMethods/settings/autoSettings/globDoesMatch";
 import { replaceRecursively } from "@ulld/utilities/utils/general";
-import {
-    ZodFrontMatterOutput,
-} from "@ulld/state/classes/frontMatter/zodFrontMatterObject";
-import {
-    convertGithubUrlToRawContentUrl,
-} from "@ulld/state/formatting/general";
+import { ZodFrontMatterOutput } from "@ulld/state/classes/frontMatter/zodFrontMatterObject";
+import { convertGithubUrlToRawContentUrl } from "@ulld/state/formatting/general";
 import {
     FromMdxStringOpts,
     MdxNoteFromStringInput,
@@ -62,6 +59,14 @@ import { mdxNoteSummaryWithMdxTransforms } from "./schemas/withMdxTransforms";
 
 // TODO: Implement this to pass class data to client components without functions causing an issue
 export interface MdxNoteFlattened { }
+
+export interface ParseMdxStringProps {
+    bareAss?: boolean; // Will not parse quickLinks, citations, equationTags and definitions
+    parseDefinitions?: boolean;
+    id?: number;
+    rootRelativePath?: string;
+    docType?: DocTypes;
+}
 
 export type FromMdxStringParams =
     | {
@@ -105,13 +110,13 @@ const boolOrTrue = (a: boolean | undefined) => {
 
 /* RESUME: Come back and parse ```mermaid syntax and replace with the appropriate params. */
 export class MdxNote extends MdxNoteProtocol {
-    id: number | undefined | null
-    title?: string | undefined | null
+    id: number | undefined | null;
+    title?: string | undefined | null;
     latexTitle?: string | null;
     summary?: string | null;
     raw?: string | null;
-    floatImages: boolean  = false;
-    formatted?: string | null
+    floatImages: boolean = false;
+    formatted?: string | null;
     citations: BibEntry[] = [];
     topics: Topic[] = [];
     subjects: Subject[] = [];
@@ -132,17 +137,26 @@ export class MdxNote extends MdxNoteProtocol {
     remoteUrl?: string | null;
     trackRemote: boolean = true;
     noLog: boolean = true;
-    noteType?: DocTypes
-    imageSrc?: string | undefined | null
-    bookmarked: boolean = false 
-    lastSync: Date | undefined | null
+    noteType?: DocTypes;
+    imageSrc?: string | undefined | null;
+    bookmarked: boolean = false;
+    lastSync: Date | undefined | null;
     saveFormatted: boolean = boolOrTrue(
         getInternalConfig()?.database?.storeFormatted,
     );
     firstSync?: Date | null;
 
-    constructor(props: MdxNotePropsOutput | MdxNoteSummaryOutput | MdxNoteFromStringOutput | MdxNoteIntriguingValSummaryOutput) {
-        super("rootRelativePath" in props ? props.rootRelativePath : undefined, ".mdx");
+    constructor(
+        props:
+            | MdxNotePropsOutput
+            | MdxNoteSummaryOutput
+            | MdxNoteFromStringOutput
+            | MdxNoteIntriguingValSummaryOutput,
+    ) {
+        super(
+            "rootRelativePath" in props ? props.rootRelativePath : undefined,
+            ".mdx",
+        );
         "id" in props && (this.id = props.id);
         "title" in props && (this.title = props.title);
         "latexTitle" in props && (this.latexTitle = props.latexTitle);
@@ -154,22 +168,28 @@ export class MdxNote extends MdxNoteProtocol {
         "topics" in props && (this.topics = props.topics);
         "subjects" in props && this.subjects && (this.subjects = props.subjects);
         "tags" in props && (this.tags = props.tags);
-        "importantValues" in props && (this.importantValues = props.importantValues);
+        "importantValues" in props &&
+            (this.importantValues = props.importantValues);
         "quickLinkId" in props && (this.quickLinkId = props.quickLinkId);
         "href" in props && (this.href = props.href);
-        "citationsListOrder" in props && (this.citationsListOrder = props.citationsListOrder);
-        "outgoingQuickLinks" in props && (this.outgoingQuickLinks = props.outgoingQuickLinks);
-        "rootRelativePath" in props && (this.rootRelativePath = props.rootRelativePath);
+        "citationsListOrder" in props &&
+            (this.citationsListOrder = props.citationsListOrder);
+        "outgoingQuickLinks" in props &&
+            (this.outgoingQuickLinks = props.outgoingQuickLinks);
+        "rootRelativePath" in props &&
+            (this.rootRelativePath = props.rootRelativePath);
         "equationIds" in props && (this.equationIds = props.equationIds);
         "isProtected" in props && (this.isProtected = props.isProtected);
         "sequentialKey" in props && (this.sequentialKey = props.sequentialKey);
-        "sequentialIndex" in props && (this.sequentialIndex = props.sequentialIndex);
+        "sequentialIndex" in props &&
+            (this.sequentialIndex = props.sequentialIndex);
         "remoteUrl" in props && (this.remoteUrl = props.remoteUrl);
         "noLog" in props && (this.noLog = props.noLog);
         "saveFormatted" in props && (this.saveFormatted = props.saveFormatted);
         "firstSync" in props && (this.firstSync = props.firstSync);
         "lastSync" in props && (this.lastSync = props.lastSync);
-        "importantValues" in props && (this.importantValues = props.importantValues);
+        "importantValues" in props &&
+            (this.importantValues = props.importantValues);
         "trackRemote" in props && (this.trackRemote = props.trackRemote);
     }
     toPlainObject(
@@ -194,11 +214,16 @@ export class MdxNote extends MdxNoteProtocol {
             ReturnType<(typeof serverClient)["bibliography"]["getBibCitation"]>
         >;
     }
-    async parseCitations<T extends string | undefined>(content?: T): Promise<T extends string ? string : (string | undefined)> {
+    async parseCitations<T extends string | undefined>(
+        content?: T,
+    ): Promise<T extends string ? string : string | undefined> {
         const regex = /\[@(?<value>[\w|\d|\.|\-|_|\+|\=|\$|\!|\%|\*|\&]*)\]/gm;
         let results: { value: string; length: number; index: number }[] = [];
         let c = content || this.formatted || this.raw;
-        if(!c) return undefined as unknown as T extends string ? string : (string | undefined)
+        if (!c)
+            return undefined as unknown as T extends string
+                ? string
+                : string | undefined;
         let m;
         do {
             m = regex.exec(c);
@@ -237,14 +262,20 @@ export class MdxNote extends MdxNoteProtocol {
         this.citations = this.citations.concat(
             fr.map(
                 (c) =>
-                    new BibEntry(bibEntryPropsSchema.parse({ htmlCitation: c?.htmlCitation, id: c.id }), c.pageIndex),
+                    new BibEntry(
+                        bibEntryPropsSchema.parse({
+                            htmlCitation: c?.htmlCitation,
+                            id: c.id,
+                        }),
+                        c.pageIndex,
+                    ),
             ),
         );
         this.citationsListOrder = this.citations
             .sort((a: any, b: any) => a.tempPageIndex - b.tempPageIndex)
             .map((c) => c.id);
         this.formatted = c;
-        return c as string
+        return c as string;
     }
     log(val: string | object) {
         if (this.noLog) {
@@ -265,15 +296,15 @@ export class MdxNote extends MdxNoteProtocol {
         return d;
     }
     checkIfExistsWithoutId(): Prisma.MdxNoteWhereInput | false {
-        if(!this.raw && !this.title) return false
+        if (!this.raw && !this.title) return false;
         return {
-            ...(this.title && {title: this.title}),
-            ...(this.raw && {content: this.raw}),
+            ...(this.title && { title: this.title }),
+            ...(this.raw && { content: this.raw }),
         };
     }
 
     async parseLatexTitle() {
-        if(!this.title) return
+        if (!this.title) return;
         const di = this.title.indexOf("$");
         if (di === -1 || di === this.title.lastIndexOf("$")) return;
         /* BUG: This will need to be changed to use only svg output unless styles are appended. Check where this is used to make sure styles aren't being appended for no reason. */
@@ -281,11 +312,11 @@ export class MdxNote extends MdxNoteProtocol {
         this.latexTitle = typeof _title === "string" ? _title : _title.content;
     }
 
-    canSave(){
-        if(!this.title) return false
-        if(!this.rootRelativePath) return false
-        if(!this.raw) return false
-        return true
+    canSave() {
+        if (!this.title) return false;
+        if (!this.rootRelativePath) return false;
+        if (!this.raw) return false;
+        return true;
     }
 
     createInput(
@@ -293,7 +324,7 @@ export class MdxNote extends MdxNoteProtocol {
         config: ParsedAppConfig,
     ): Prisma.MdxNoteCreateInput | undefined {
         this.checkAutoProperties(autoSettings, config);
-        if(!this.canSave()) return undefined
+        if (!this.canSave()) return undefined;
         let href = this.getHref();
         if (!this.noteType) {
             throw new Error(
@@ -475,73 +506,71 @@ ${m.groups.content}
             }
         } while (m);
     }
-    _parseTags<T extends string | undefined>(content?: T): T extends string ? string : (string | undefined) {
+    _parseTags<T extends string | undefined>(
+        content?: T,
+    ): string {
         this.log(`_parseTags: ${this.title}`);
-        if (this.isProtected) return content || (this.formatted as string);
-        let l = content || this.formatted || this.raw
-        if(!l) return undefined as T extends string ? string : (string | undefined)
+        let l = content || this.formatted || this.raw;
+        if (!l) return ""
         let res = this.parseTags(l);
         this.formatted = res.content;
-        this.tags = this.tags.concat(res.results.map((t) => new Tag(tagZodObject.parse(t))));
-        return res.content || (content as string);
+        this.tags = this.tags.concat(
+            res.results.map((t) => new Tag(tagZodObject.parse(t))),
+        );
+        let newContent = res.content || l
+        this.formatted = newContent
+        return newContent
     }
-    _parseVideoTimeLinks<T extends string | undefined>(content?: T): T extends string ? string : (string | undefined) {
+    _parseVideoTimeLinks<T extends string | undefined>(
+        content?: T,
+    ): T extends string ? string : string | undefined {
         this.log(`_parseVideoTimelinks: ${this.title}`);
-        let l = content || this.formatted || this.raw
-        if(!l) return undefined as T extends string ? string : (string | undefined)
+        let l = content || this.formatted || this.raw;
+        if (!l) return undefined as T extends string ? string : string | undefined;
         let res = this.parseVideoTimeLinks(l);
         this.formatted = res.content;
         return res.content || (content as string);
     }
-    async _parseQuickLinks<T extends string | undefined>(content?: T): Promise<T extends string ? string : (string | undefined)> {
+    async _parseQuickLinks<T extends string | undefined>(
+        content?: T,
+    ): Promise<T extends string ? string : string | undefined> {
         this.log(`_parseQuickLinks: ${this.title}`);
-        let l = this.formatted || this.raw
-        if(!l) return undefined as unknown as Promise<T extends string ? string : (string | undefined)>
+        let l = content || this.formatted || this.raw;
+        if (!l)
+            return undefined as unknown as Promise<
+                T extends string ? string : string | undefined
+            >;
         let res = await this.parseQuickLinks(l);
         this.formatted = res.content;
         this.outgoingQuickLinks = this.outgoingQuickLinks.concat(res.links);
-        return res.content || (content as string);
+        return res.content || l 
     }
-    static async parseMdxString(
-        content: string,
-        opts: {
-            parseDefinitions?: boolean;
-            id?: number;
-            rootRelativePath?: string;
-            docType?: DocTypes;
-        } = {},
-    ) {
-        let parsed = mdxNoteFromStringPropsSchema.parse({raw: content})
-        let nt = new MdxNote(parsed);
-        let c = content;
-        c = nt.parseLinkShortcuts(c);
-        c = nt.parseEquationTags(c);
-        let { content: _content, definitions } = nt.parseDefinitionTags(c);
-        c = content;
-        if (opts.parseDefinitions && definitions && definitions.length > 0) {
-            nt.definitions = definitions.map(
-                (d) =>
-                    new Definition({
-                        ...d,
-                        mdxNoteId: nt.id,
-                    }),
-            );
+    static async parseMdxString(content: string, opts: ParseMdxStringProps = {}) {
+        let parsedNoteProps = mdxNoteFromStringPropsSchema.parse({ raw: content });
+        console.log("parsedNoteProps: ", parsedNoteProps)
+        let nt = new MdxNote(parsedNoteProps);
+        console.log("opts: ", opts)
+        if(opts?.bareAss){
+           return nt.parseBareAss()
         }
-        c = nt._parseTags(c);
-        c = nt._parseVideoTimeLinks(c);
-        nt.equationIds = nt.getEquationIds(c);
-        c = await nt.parseCitations(c);
-        c = await nt._parseQuickLinks(c);
-        return c;
+        return await nt.parse()
     }
-    async parse() {
-        let c = this.formatted || this.raw
-        if(!c) return
+    parseBareAss(){
+        let c = this.formatted || this.raw;
+        if (!c) return ""
         let formatted = this.parseLinkShortcuts(c);
         this.formatted = this.parseEquationTags(formatted);
-        let { content, definitions } = this.parseDefinitionTags(
-            this.formatted
-        );
+        let { content, definitions } = this.parseDefinitionTags(this.formatted);
+        this.formatted = content;
+        this.formatted = this._parseTags();
+        return this.formatted as string
+    }
+    async parse() {
+        let c = this.formatted || this.raw;
+        if (!c) return ""
+        let formatted = this.parseLinkShortcuts(c);
+        this.formatted = this.parseEquationTags(formatted);
+        let { content, definitions } = this.parseDefinitionTags(this.formatted);
         this.formatted = content;
         if (definitions && definitions.length > 0) {
             this.definitions = definitions.map(
@@ -562,6 +591,7 @@ ${m.groups.content}
         if (!this.isProtected) {
             await this.parseLatexTitle();
         }
+        return this.formatted
     }
 
     citationIdList() {
@@ -610,16 +640,19 @@ ${m.groups.content}
 
     setNoteType(config?: ParsedAppConfig) {
         if (!this.rootRelativePath) return;
-        let nt = getNoteTypeFromPath(this.rootRelativePath as string, config)
-        if(typeof nt === "object" && "docType" in nt){
-            this.noteType = nt.docType
+        let nt = getNoteTypeFromPath(this.rootRelativePath as string, config);
+        if (typeof nt === "object" && "docType" in nt) {
+            this.noteType = nt.docType;
         }
     }
 
     /* PERFORMANCE: Come back and handle this with a modified zod class instead of this half assed conditional config. Figure out ***exactly*** what will be passed in and make that shit required. */
-    static async fromMdxString(props: MdxNoteFromStringInput, _opts: FromMdxStringOpts = {}): Promise<MdxNote> {
-        const parsed = mdxNoteFromStringPropsSchema.parse(props)
-        const opts = fromMdxStringOptSchema.parse(_opts)
+    static async fromMdxString(
+        props: MdxNoteFromStringInput,
+        _opts: FromMdxStringOpts = {},
+    ): Promise<MdxNote> {
+        const parsed = mdxNoteFromStringPropsSchema.parse(props);
+        const opts = fromMdxStringOptSchema.parse(_opts);
         let note = new MdxNote(parsed);
         if (opts.getBookmarkState && parsed.rootRelativePath) {
             const bookmarkQuery = await getUniversalQuery(
@@ -628,7 +661,11 @@ ${m.groups.content}
                 "query",
             );
             /* HACK: This .mdx hardcoded file extension needs to be replaced with a returned value from trpc. This will work for now, but as this app grows to support general markdown files and other filetypes that might need similar functionality *assuming* the file to be a .mdx filetype will lead to issues later on. */
-            const isBookmarked = await bookmarkQuery(parsed.rootRelativePath.endsWith(".mdx") ? parsed.rootRelativePath : `${parsed.rootRelativePath}.mdx`)
+            const isBookmarked = await bookmarkQuery(
+                parsed.rootRelativePath.endsWith(".mdx")
+                    ? parsed.rootRelativePath
+                    : `${parsed.rootRelativePath}.mdx`,
+            );
             note.bookmarked = isBookmarked;
         }
         await note.parse();
@@ -636,13 +673,15 @@ ${m.groups.content}
     }
 
     static fromPrisma(item: Partial<MdxNotePropsInput>) {
-        const parsed = mdxNotePropsSchema.parse(item)
+        const parsed = mdxNotePropsSchema.parse(item);
         let newNote = new MdxNote(parsed);
         return newNote;
     }
 
-    static asIntriguingValueSummary(item: MdxNoteIntriguingValSummaryInput): MdxNote {
-        const parsed = mdxNoteIntriguingValSummaryPropsSchema.parse(item)
+    static asIntriguingValueSummary(
+        item: MdxNoteIntriguingValSummaryInput,
+    ): MdxNote {
+        const parsed = mdxNoteIntriguingValSummaryPropsSchema.parse(item);
         let n = new MdxNote(parsed);
         return n;
     }
@@ -657,9 +696,7 @@ ${m.groups.content}
         n: (MdxNote | PrismaMdxNote)[] | undefined | null,
     ): MdxNote[] {
         if (!n || n.length === 0) return [] as MdxNote[];
-        return n.map((b) =>
-            b instanceof MdxNote ? b : MdxNote.fromPrisma(b),
-        );
+        return n.map((b) => (b instanceof MdxNote ? b : MdxNote.fromPrisma(b)));
     }
 }
 

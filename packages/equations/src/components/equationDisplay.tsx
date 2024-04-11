@@ -4,7 +4,7 @@ import { Button } from '@ulld/tailwind/button'
 import { copyStringToClipboard } from '@ulld/utilities/copyStringToClipboard'
 import clsx from 'clsx'
 import React from 'react'
-import { MdxContentCLIENT } from '@ulld/ui/mdxDisplayCLIENT'
+import { MdxContentCLIENT } from '@ulld/render/mdx/client'
 import { EditEquationItem } from './addEquationFormWrapper'
 import { AddEquationInterface } from './types'
 
@@ -45,7 +45,7 @@ export const EquationDisplay = ({ equation, className, noDefaultClasses, latexAl
                 </CardDescription>}
             </CardHeader>
             <CardContent>
-                {latexAlreadyParsed ? <div dangerouslySetInnerHTML={{ __html: equation.content }} /> : <MdxContentCLIENT isMathOnly  content={equation.content} stylesId={`${id}-content`} />}
+                {latexAlreadyParsed ? <div dangerouslySetInnerHTML={{ __html: equation.content }} /> : <MdxContentCLIENT autoWrap isMathOnly  content={equation.content} stylesId={`${id}-content`} />}
             </CardContent>
             {!bareAss && <CardFooter className="flex justify-end gap-4">
                 <Button

@@ -12,15 +12,12 @@ const router = createEdgeRouter<NextRequest, RequestContext>();
 
 
 router
-
     .post(async (req, ctx) => {
         try {
             let { online }: { online: boolean } = await req.json()
             let cookieJar = cookies()
             cookieJar.set("onlineStatus", online ? "online" : "offline")
-
             let res = new NextResponse(JSON.stringify({ success: true }), getCorsHeaders(req, 200));
-
             return res
         } catch (err) {
             console.error(err)

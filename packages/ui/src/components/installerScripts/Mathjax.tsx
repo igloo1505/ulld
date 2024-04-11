@@ -11,7 +11,7 @@ export const MathjaxSvgLoader = () => <Script id="mathjax-script" src="/utils/te
 /* - /Users/bigsexy/Desktop/notes/App/node_modules/next-mdx-remote/dist/rsc.js */
 
 
-const MathjaxLoader = (props: ScriptProps) => {
+export const MathjaxLoader = (props: ScriptProps) => {
     return (
         <>
             <Script id="mathjax-settings">

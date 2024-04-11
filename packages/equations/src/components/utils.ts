@@ -35,3 +35,7 @@ export const equationSearchParamsToString = equationSearchParamsSchema.transform
 
 export type EquationSearchParamsInput = z.input<typeof equationSearchParamsSchema>
 export type EquationSearchParamsOutput = z.output<typeof equationSearchParamsSchema>
+
+
+
+export const formatEquationSearchParams = (data: z.input<typeof equationSearchParamsSchema>) => equationSearchParamsSchema.parse(data)

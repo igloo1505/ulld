@@ -4,9 +4,8 @@ import { formatEquationSearchParams } from './utils'
 import { HashIcon } from 'lucide-react'
 import { EquationDisplayBadge } from './equationDisplayBadge'
 import { EquationDetailLinkButton } from './equationDisplayButton'
-import { H3} from '@ulld/ui/heading'
-import { MathDisplaySERVER } from '@ulld/ui/mathDisplaySERVER'
-import { MdxContentSERVER } from '@ulld/ui/mdxDisplaySERVER'
+import { H3} from '@ulld/embeddable-components/heading'
+import { MdxContentSERVER } from '@ulld/render/mdx/server'
 import { CopyTextButton } from '@ulld/ui/copyTextButton'
 import { CodeHighlightContainer } from '@ulld/ui/codeHighlightContainer'
 
@@ -35,11 +34,11 @@ export const EquationDetailDisplay = ({ equation: item, isModal = false }: Equat
                     content={item.desc}
                     className={"text-sm text-muted-foreground"}
                 />}
-                <MathDisplaySERVER
+                <MdxContentSERVER
                     isMathOnly
+                    autoWrap
                     display
                     content={item.content}
-                    stylesContainerId={`${id}-content`}
                     className={"text-xl my-4"}
                 />
                 {item.asPython && (

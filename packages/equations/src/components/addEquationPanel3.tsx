@@ -11,7 +11,7 @@ interface AddEquationFormThreeProps {
     back: (e: MouseEvent<HTMLButtonElement>) => (void | Promise<void>)
 }
 
-const AddEquationFormThree = ({ form, next, back }: AddEquationFormThreeProps) => {
+export const AddEquationFormThree = ({ form, next, back }: AddEquationFormThreeProps) => {
     return (
         <SideFormContainer
             form={form}
@@ -39,6 +39,3 @@ const AddEquationFormThree = ({ form, next, back }: AddEquationFormThreeProps) =
 
 
 AddEquationFormThree.displayName = "AddEquationFormThree"
-
-
-export default AddEquationFormThree;

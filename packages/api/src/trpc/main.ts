@@ -12,32 +12,37 @@ import { universalNoteRouter } from "./routers/universalNotes";
 import { mediaRouter } from "./routers/media/mediaRouter";
 import { qaRouter } from "./routers/qa";
 import { betaRouter } from "./routers/beta";
-import fs from "fs";
-import path from "path";
-import type { AnyProcedure, AnyRouter, ProcedureRouterRecord } from "@trpc/server";
+import { toDoRouter } from "./routers/taskManager/taskManagerRouter";
+import equationsRouter from "./routers/equations/equationsRouter";
+import { kanBanBoardsRouter } from "./routers/kanban/kanbanRouter";
+import { commandPaletteRouter } from "./routers/commandPalette/commandPaletteRouter";
+import { snippetRouter } from "./routers/snippets/snippetRouter";
+import { whiteboardRouter } from "./routers/whiteboard/whiteboardRouter";
+import bibliographyRouter from "./routers/bibliography/bibliographyRouter";
 
 
 
-let _appRouter: ProcedureRouterRecord = {
+let _appRouter = {
     autoSettings: autoSettingRouter,
     sync: syncRouter,
-    // toDo: toDoRouter,
-    // equations: equationsRouter,
-    // commandPalette: commandPaletteRouter,
+    toDo: toDoRouter,
+    equations: equationsRouter,
+    commandPalette: commandPaletteRouter,
     search: advancedSearchRouter,
-    // boards: kanBanBoardsRouter,
+    boards: kanBanBoardsRouter,
     health: healthRouter,
     parse: parsingProcedure,
     settings: settingsRouter,
     mdx: mdxNoteActionsRouter,
     // ipynb: ipynbRouter,
-    // snippets: snippetRouter,
+    snippets: snippetRouter,
     fsUtils: fsUtilRouter,
     readingList: readingListRouter,
     universalNotes: universalNoteRouter,
     media: mediaRouter,
     qa: qaRouter,
-    // whiteboard: whiteboardRouter,
+    whiteboard: whiteboardRouter,
+    bibliography: bibliographyRouter,
     beta: betaRouter,
 };
 

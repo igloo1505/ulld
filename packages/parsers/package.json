@@ -42,6 +42,7 @@
     "@ulld/configschema": "workspace:*",
     "@ulld/database": "workspace:*",
     "@ulld/utilities": "workspace:*",
+    "@ulld/developer": "workspace:*",
     "citation-js": "^0.7.8",
     "jsdom": "^24.0.0",
     "mathjax-full": "^3.2.2",

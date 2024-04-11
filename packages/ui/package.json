@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "types": "src/types/general.ts",
   "files": [
     "dist",
     "src"
@@ -21,7 +21,6 @@
     "./mdx/editorWithPreview": "./src/components/inputs/mdxEditor/monacoEditor/mdxEditorWithPreview.tsx",
     "./math/editorWithPreview": "./src/components/inputs/math/editor/latexEditorWithPreview.tsx",
     "./pageContentContainer": "./src/components/layouts/contentContainer.tsx",
-    "./heading": "./src/components/text/heading.tsx",
     "./mdxDisplaySERVER": "./src/components/mdxContent/mdxContentSERVER.tsx",
     "./mdxDisplayCLIENT": "./src/components/mdxContent/mdxContentCLIENT.tsx",
     "./mdxContentSERVER": "./src/components/mdxContent/mdxContentSERVER.tsx",
@@ -30,7 +29,9 @@
     "./codeHighlightContainer": "./src/components/code/syntaxHighlighting/codeHighlightContainer.tsx",
     "./copyContextMenu": "./src/components/landing/hero/util/copyContextMenu.tsx",
     "./stringBadgeList": "./src/components/inputs/stringBadgeList.tsx",
-    "./deleteModalTriggerButton": "./src/components/inputs/deleteModalTriggerButton.tsx"
+    "./deleteModalTriggerButton": "./src/components/inputs/deleteModalTriggerButton.tsx",
+    "./getConditionalComponents/client": "./src/components/markdown/getConditionalClientComponents.ts",
+    "./loader": "./src/components/installerScripts/initialLoader.tsx"
   },
   "scripts": {
     "build": "echo 'add build:internal script here'",
@@ -106,6 +107,9 @@
     "@uiw/react-monacoeditor": "^3.6.0",
     "@uiw/react-textarea-code-editor": "^3.0.2",
     "@ulld/api": "workspace:*",
+    "@ulld/render": "workspace:*",
+    "@ulld/icons": "workspace:*",
+    "@ulld/embeddable-components": "workspace:*",
     "@ulld/config": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/editor": "workspace:*",
@@ -200,6 +204,7 @@
     "zod-config": "^0.0.2"
   },
   "devDependencies": {
+    "@ulld/render": "workspace:*",
     "@babel/core": "^7.24.0",
     "@babel/plugin-transform-runtime": "^7.24.0",
     "@babel/preset-env": "^7.24.0",
@@ -234,10 +239,10 @@
     "@types/mdx": "^2.0.11",
     "@types/node": "^20.11.24",
     "@types/range-parser": "^1.2.7",
-    "@types/react": "^18.2.62",
+    "@types/react": "^18.2.75",
     "@types/react-big-calendar": "^1.8.9",
     "@types/react-datepicker": "^6.0.3",
-    "@types/react-dom": "^18.2.19",
+    "@types/react-dom": "^18.2.24",
     "@types/react-image-gallery": "^1.2.4",
     "@types/react-plotly.js": "^2.6.3",
     "@types/svgdom": "^0.1.2",
@@ -259,7 +264,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "lucide-react": "^0.344.0",
     "mocha": "^10.3.0",
-    "next": "^14.1.1",
+    "next": "^14.1.4",
     "postcss": "^8.4.35",
     "postcss-import": "^16.0.1",
     "postcss-modules": "^6.0.0",
@@ -291,6 +296,7 @@
   },
   "packageManager": "pnpm@9.0.0-beta.1",
   "peerDependencies": {
+    "@ulld/render": "workspace:*",
     "@tanstack/query-async-storage-persister": "^4.33.0",
     "@tanstack/query-sync-storage-persister": "^4.33.0",
     "@tanstack/react-query": "^4.33.0",
@@ -299,6 +305,10 @@
     "@tanstack/react-table": "^8.9.3",
     "@trpc/client": "^10.38.0",
     "@trpc/react-query": "^10.38.0",
-    "@trpc/server": "^10.38.0"
+    "@trpc/server": "^10.38.0",
+    "next": "^14.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@ulld/component-map": "workspace:*"
   }
 }

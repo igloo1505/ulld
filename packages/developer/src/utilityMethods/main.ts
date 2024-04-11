@@ -1,1 +1,1 @@
-// export * from "./extendTrpcRouterDevelopment"
+export * from "./getConfig"

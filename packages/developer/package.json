@@ -8,7 +8,8 @@
   "exports": {
     "./pluginConfig": "./src/baseClasses/pluginConfig.ts",
     "./embeddableConfig": "./src/baseClasses/embeddableComponentConfig.ts",
-    "./utils": "./src/utilityMethods/main.ts"
+    "./utils": "./src/utilityMethods/main.ts",
+    "./getConfig": "./src/utilityMethods/getConfig.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",

@@ -18,7 +18,7 @@ export const FullFormSidePanel = ({
     return (
         <aside
             className={cn(
-                "w-full max-w-[calc(100vw-4rem)] lg:max-w-[300px] border border-border px-4 py-4 rounded",
+                "w-full max-w-[calc(100vw-4rem)] lg:max-w-[300px] border border-border px-4 py-4 rounded bg-card shadow-md hover:shadow-sm transition-shadow duration-200",
                 className,
             )}
         >
@@ -26,7 +26,9 @@ export const FullFormSidePanel = ({
                 {title && (
                     <FullFormMainHeading subtitle={subtitle}>{title}</FullFormMainHeading>
                 )}
-                <div className={"space-y-8"}>{children}</div>
+                <div className={"text-card !mt-0"}>
+                {children}
+                </div>
             </div>
         </aside>
     );

@@ -4,7 +4,6 @@ import React, { MouseEvent } from 'react'
 import { UseFormReturn } from 'react-hook-form'
 
 
-
 interface SideFormContainerProps<T> {
     children: React.ReactNode
     form: T
@@ -15,11 +14,11 @@ interface SideFormContainerProps<T> {
 
 export const SideFormContainer = <T extends UseFormReturn<any>>({ children, onBackClick, submitBtnText, form, onSubmit }: SideFormContainerProps<T>) => {
     return (
-        <div className={"bg-card text-card-foreground px-5 py-6 flex flex-col w-full h-fit rounded-lg border shadow-md hover:shadow-sm transition-shadow duration-200"}>
+        <div className={"text-card-foreground px-5 py-6 flex flex-col w-full h-fit"}>
             <Form {...form}>
                 <form className={"space-y-8"}>
                     {children}
-                    <div className={"flex flex-row justify-between items-center gap-3"}>
+                    <div className={"flex flex-row justify-between items-center gap-3 !mt-10"}>
                         <Button variant="destructive" onClick={() => {
                             form.reset()
                         }}>

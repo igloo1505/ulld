@@ -2,8 +2,8 @@ import React from 'react'
 import { EquationListItem as EquationListItemType } from './types'
 import Link from 'next/link'
 import { buttonVariants } from '@ulld/tailwind/button'
-import { H4 } from '@ulld/ui/heading'
-import { MdxContentSERVER } from '@ulld/ui/mdxDisplaySERVER'
+import { H4 } from '@ulld/embeddable-components/heading'
+import { MdxContentSERVER } from '@ulld/render/mdx/server'
 import { DeleteModalTriggerButton } from '@ulld/ui/deleteModalTriggerButton'
 
 

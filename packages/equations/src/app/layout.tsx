@@ -8,6 +8,8 @@ import React from 'react'
 import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI"
 import { Toaster } from "@ulld/tailwind/toaster"
 import { fontSans } from "@ulld/tailwind/defaultFont"
+import { InitialLoader } from "@ulld/ui/loader"
+
 
 
 export const metadata: Metadata = {
@@ -40,8 +42,6 @@ const RootLayout = async (props: {
     }
 
 
-
-
     /* TODO: Add .noTooltips class to html element according to settings. Create function to toggle class when toggling setting. */
 
     return (
@@ -61,6 +61,7 @@ const RootLayout = async (props: {
                     preferFs && "preferFs")}
                 id={`Ulld-body-root`}
             >
+                <InitialLoader />
                 <StateWrappedUI
                 />
                 {props.children}

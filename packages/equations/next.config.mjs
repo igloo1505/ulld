@@ -38,6 +38,8 @@ const config = withPWA({
         "@ulld/tailwind",
         "@ulld/full-form",
         "@ulld/api",
+        "@ulld/ui",
+        "@ulld/component-map",
     ],
     experimental: {
         // typedRoutes: true,

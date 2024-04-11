@@ -6,7 +6,7 @@ export interface ConfirmationModalConfig {
     domId?: string
     onConfirmCallback?: (c: ConfirmationModalConfig) => void
     buttonVariant?: "outline" | "destructive" | "secondary" | "ghost" | "link"
-    onConfirm: keyof typeof confirmationFunctions
+    onConfirm: string
     toast?: {
         title: string
         description?: string
