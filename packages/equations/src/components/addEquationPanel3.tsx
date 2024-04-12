@@ -23,6 +23,7 @@ export const AddEquationFormThree = ({ form, next, back }: AddEquationFormThreeP
                 name="tags"
                 label="Tags"
                 type="tag"
+                fullWidth
                 multiple
             />
             <TextInputWithBadgeList

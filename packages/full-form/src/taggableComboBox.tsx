@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
-    ControllerRenderProps,
     FieldValues,
     Path,
     PathValue,
@@ -30,8 +29,10 @@ import {
     CommandItem,
 } from "@ulld/tailwind/command";
 import { ChevronsUpDown, Check } from "lucide-react";
-import clsx from "clsx";
+import { cn } from "@ulld/utilities/cn"
 import { onEnter } from "@ulld/state/listeners/keydown";
+
+
 
 export interface TaggableComboBoxProps<
     T extends FieldValues,
@@ -47,6 +48,8 @@ export interface TaggableComboBoxProps<
     displayTransform?: (v: string) => string;
     replaceUnderscores?: boolean;
     type?: "tag" | "topic" | "subject";
+    fullWidth?: boolean
+    popoverClasses?: string
 }
 
 const combineIfUnique = (base: string[], other: string[]) => {
@@ -71,8 +74,10 @@ export const TaggableComboBox = <T extends FieldValues>({
     multiple,
     groupClasses,
     buttonClasses,
+    popoverClasses,
     formItemClasses,
     type,
+    fullWidth
 }: TaggableComboBoxProps<T, HTMLTextAreaElement>) => {
     const form = useFormContext<T>();
     const [open, setOpen] = useState(false);
@@ -122,7 +127,7 @@ export const TaggableComboBox = <T extends FieldValues>({
             control={form.control}
             name={name}
             render={({ field }) => (
-                <FormItem className={clsx("flex flex-col", formItemClasses)}>
+                <FormItem className={cn("flex flex-col", formItemClasses)}>
                     {label && <FormLabel>{label}</FormLabel>}
                     <Popover open={open} onOpenChange={setOpen}>
                         <FormControl>
@@ -131,8 +136,9 @@ export const TaggableComboBox = <T extends FieldValues>({
                                     variant="outline"
                                     role="combobox"
                                     aria-expanded={open}
-                                    className={clsx(
+                                    className={cn(
                                         "w-[200px] justify-between",
+                                        fullWidth && "w-full",
                                         !field.value && "text-muted-foreground",
                                         buttonClasses,
                                     )}
@@ -144,7 +150,7 @@ export const TaggableComboBox = <T extends FieldValues>({
                         </FormControl>
                         <PopoverContent
                             ref={cmdRef} 
-                            className="w-[200px] p-0"
+                            className={cn("w-[var(--radix-popper-anchor-width)] p-0", popoverClasses)}
                         >
                             <Command>
                                 <CommandInput
@@ -192,7 +198,7 @@ export const TaggableComboBox = <T extends FieldValues>({
                                             }}
                                         >
                                             <Check
-                                                className={clsx(
+                                                className={cn(
                                                     "mr-2 h-4 w-4",
                                                     Boolean(
                                                         multiple

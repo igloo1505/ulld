@@ -1,12 +1,6 @@
 "use client";
-import React from "react";
-import {
-    ControllerRenderProps,
-    FieldValues,
-    Path,
-    PathValue,
-    useFormContext,
-} from "react-hook-form";
+import React, { useState } from "react";
+import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
 import { Input } from "@ulld/tailwind/input";
 import { BaseFullFormInputProps } from "./types";
 import {
@@ -19,6 +13,7 @@ import {
 } from "@ulld/tailwind/form";
 import { Badge, BadgeProps } from "@ulld/tailwind/badge";
 import { cn } from "@ulld/utilities/cn";
+import { onEnter } from "@ulld/state/listeners/keydown";
 
 export interface TextInputWithBadgeListProps<
     T extends FieldValues,
@@ -44,6 +39,7 @@ export const TextInputWithBadgeList = <T extends FieldValues>({
 }: TextInputWithBadgeListProps<T, HTMLInputElement>) => {
     const form = useFormContext<T>();
     const values = form.watch(name);
+    const [inputValue, setInputValue] = useState("");
     return (
         <FormField
             control={form.control}
@@ -52,7 +48,27 @@ export const TextInputWithBadgeList = <T extends FieldValues>({
                 <FormItem className={formItemClasses}>
                     <FormLabel>{label}</FormLabel>
                     <FormControl>
-                        <Input placeholder={placeholder || ""} {...field} />
+                        <Input
+                            placeholder={placeholder || ""}
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            onKeyDown={(e) =>
+                                onEnter(
+                                    e,
+                                    () => {
+                                        const target = e.target as HTMLInputElement;
+                                        if (!values.includes(target.value)) {
+                                            form.setValue(name, [
+                                                ...values,
+                                                target.value,
+                                            ] as PathValue<T, Path<T>>);
+                                        }
+                                        setInputValue("");
+                                    },
+                                    "onEnter",
+                                )
+                            }
+                        />
                     </FormControl>
                     {desc && <FormDescription>{desc}</FormDescription>}
                     <FormMessage />
