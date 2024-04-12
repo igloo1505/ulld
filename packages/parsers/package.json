@@ -11,7 +11,6 @@
     "./mdx/types": "./src/mdx/types.d.ts",
     "./mdx/schemas": "./src/mdx/schemas.ts",
     "./mdx/compiler/main": "./src/mdx/compiler/main.ts",
-    "./sassCompiler": "./src/sass/compiler/main.ts",
     "./settings/settingsParser": "./src/settings/settingsParser.ts",
     "./plugins/todos": "./src/plugins/todos/main.ts",
     "./latex/latexToPdf": "./src/latex/latexToPdf.ts",
@@ -23,7 +22,9 @@
     "./math/texToChtml": "./src/math/texToChtml.ts",
     "./math/latex/parseLatex": "./src/math/latex/parseLatex.ts",
     "./math/latex/genTikzImage": "./src/math/latex/genTikzImage.ts",
-    "./citations/formatCsl": "./src/citations/formatCsl.ts"
+    "./citations/formatCsl": "./src/citations/formatCsl.ts",
+    "./mathjaxBandaid": "./src/mdx/compiler/mdxClassnameBandaid.tsx",
+    "./applyMathjaxBandaid": "./src/mdx/compiler/applyMathjaxBandaid.ts"
   },
   "files": [
     "dist",

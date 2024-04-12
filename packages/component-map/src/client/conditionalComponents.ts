@@ -1,3 +1,4 @@
+import type { MDXComponents } from "mdx/types";
 import dynamic from "next/dynamic";
 import { ComponentType } from "react";
 const Admonition = dynamic(() => import("@ulld/embeddable-components/components/client/admonition").then((a) => a.Admonition))
@@ -111,5 +112,5 @@ export const getConditionalClientComponents = (content: string, opts: Conditiona
             }
         }
     }
-    return components
+    return components satisfies MDXComponents
 }

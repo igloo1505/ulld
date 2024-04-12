@@ -2,7 +2,7 @@ import React from 'react'
 import RelativeTimeDisplay from './relativeTimeDisplay'
 import clsx from 'clsx'
 import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
-import { H3 } from '../../../../text/heading'
+import { H3 } from '@ulld/embeddable-components/heading'
 import { TimeDisplayType } from '@ulld/configschema/zod/dateParseConfig'
 
 

@@ -1,6 +1,6 @@
 import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
 import React from 'react'
-import { isLocal } from '../../../../utilityFunctions/isLocal'
+import { isLocal } from '@ulld/utilities/isLocal'
 
 
 

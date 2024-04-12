@@ -1,7 +1,9 @@
 import React, {useEffect} from 'react'
-import { MdxContentSERVERProps } from './mdxContentSERVER'
+import type { MdxContentSERVERProps } from './mdxContentSERVER'
 import { useDebounceMdxParse } from '@ulld/hooks/useDebounceMdxParse'
 import { autoWrapMath } from "@ulld/utilities/latexUtils"
+import { getMdxClassnames } from './getMdxClassnames';
+
 
 
 interface MdxContentClientSideProps extends MdxContentSERVERProps {
@@ -11,16 +13,20 @@ interface MdxContentClientSideProps extends MdxContentSERVERProps {
 }
 
 
+
 export const MdxContentCLIENT = (props: MdxContentClientSideProps) => {
     const {value, setValue, Component} = useDebounceMdxParse(props.content, props.debounceTimeout || 350, {
         bareAss: props.bareAss === false ? false : true
     })
+
     useEffect(() => {
        setValue(props.content ? props.autoWrap ? autoWrapMath(props.content, Boolean(props.inline === false || props.display)) : props.content : "") 
     }, [props.content])
 
     return (
-        <div className={"mdx"}>
+        <div
+            className={getMdxClassnames(props)}
+        >
             <Component />
         </div>
     )

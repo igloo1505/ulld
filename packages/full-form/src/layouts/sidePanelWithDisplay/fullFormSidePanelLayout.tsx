@@ -19,8 +19,8 @@ interface FullFormContainerProps<T extends FieldValues, H extends UseFormReturn<
 export const FullFormSidePanelLayout = <T extends FieldValues>({ form, title, children, subtitle, panel, formContainerClasses, centerPanel }: FullFormContainerProps<T, any>) => {
     return (
         <Form {...form}>
-            <div className={clsx("ulld-fullForm space-y-6 p-10 pb-16")}>
-                <div className={"flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0"}>
+            <div className={clsx("ulld-fullForm space-y-6 pt-10 pb-16")}>
+                <div className={"space-y-8 lg:space-y-0 grid grid-cols-1 lg:grid-cols-[350px_1fr]"}>
                     <FullFormSidePanel
                         title={title}
                         subtitle={subtitle}

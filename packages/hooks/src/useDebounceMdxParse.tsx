@@ -1,15 +1,17 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment, useRef } from "react";
 import { run } from "@mdx-js/mdx";
 import { client } from "@ulld/api/client";
 import * as runtime from "react/jsx-runtime";
-/* import * as devRuntime from "react/jsx-dev-runtime"; */
-import { MDXContent, MDXModule } from "mdx/types";
+import * as devRuntime from "react/jsx-dev-runtime";
+import { MDXComponents, MDXContent, MDXModule } from "mdx/types";
 import {
     MdxNote,
     ParseMdxStringProps,
 } from "@ulld/api/classes/prismaMdxRelations/mdxNote";
 import { getComponentMap } from "@ulld/component-map/client";
+import { useMathjaxBandaid } from "./useMathjaxBandaid";
+
 
 const Content = ({
     MdxContentComponent,
@@ -20,14 +22,13 @@ const Content = ({
     raw: string;
     className?: string;
 }) => {
-    if (className) {
-        return (
-            <div className={className}>
-                <MdxContentComponent components={getComponentMap(raw)} />
-            </div>
-        );
-    }
-    return <MdxContentComponent components={getComponentMap(raw)} />;
+    const ref = useRef<HTMLDivElement>(null!);
+    useMathjaxBandaid(ref);
+    return (
+        <div ref={ref} className={className}>
+            <MdxContentComponent components={getComponentMap(raw) as MDXComponents} />
+        </div>
+    );
 };
 
 export const useDebounceMdxParse = (
@@ -49,7 +50,10 @@ export const useDebounceMdxParse = (
         });
         console.log("compiled: ", compiled);
         const res = await run(compiled, {
-            ...runtime,
+            Fragment: Fragment,
+            jsx: runtime.jsx as any,
+            jsxs: runtime.jsxs as any,
+            jsxDEV: devRuntime.jsxDEV as any,
             baseUrl: import.meta.url,
         });
         console.log("res: ", res);

@@ -38,14 +38,14 @@ export const EquationDisplay = ({ equation, className, noDefaultClasses, latexAl
         >
             <CardHeader>
                 <CardTitle>
-                    {latexAlreadyParsed ? <div dangerouslySetInnerHTML={{ __html: equation.title }} /> : <MdxContentCLIENT content={equation.title} inline stylesId={`${id}-title`} />}
+                    <MdxContentCLIENT content={equation.title} inline stylesId={`${id}-title`} />
                 </CardTitle>
                 {equation.desc && <CardDescription>
-                    {latexAlreadyParsed ? <div dangerouslySetInnerHTML={{ __html: equation.desc }} /> : <MdxContentCLIENT applyUserStyles small content={equation.desc} />}
+                    <MdxContentCLIENT applyUserStyles small content={equation.desc} />
                 </CardDescription>}
             </CardHeader>
-            <CardContent>
-                {latexAlreadyParsed ? <div dangerouslySetInnerHTML={{ __html: equation.content }} /> : <MdxContentCLIENT autoWrap isMathOnly  content={equation.content} stylesId={`${id}-content`} />}
+            <CardContent className={"flex flex-col justify-center items-center"}>
+                 <MdxContentCLIENT autoWrap isMathOnly large content={equation.content} stylesId={`${id}-content`} />
             </CardContent>
             {!bareAss && <CardFooter className="flex justify-end gap-4">
                 <Button

@@ -10,7 +10,7 @@ import {
     TableRow,
 } from "@ulld/tailwind/table"
 import clsx from 'clsx'
-import "../../../styles/tableStyles.scss"
+import "./tableStyles.scss"
 import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
 
 

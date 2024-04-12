@@ -8,7 +8,7 @@ import React from 'react'
 import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI"
 import { Toaster } from "@ulld/tailwind/toaster"
 import { fontSans } from "@ulld/tailwind/defaultFont"
-import { InitialLoader } from "@ulld/ui/loader"
+import { InitialLoader } from "@ulld/utilities/initialLoader"
 
 
 

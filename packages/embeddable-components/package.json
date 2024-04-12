@@ -73,6 +73,7 @@
     "@ulld/state": "workspace:*",
     "@ulld/tailwind": "workspace:*",
     "@ulld/utilities": "workspace:*",
+    "@ulld/default-image-map": "workspace:*",
     "react-loader-spinner": "^5.5.0",
     "react-spinners": "^0.13.8"
   },
@@ -80,6 +81,7 @@
     "clsx": "^2.1.0"
   },
   "devDependencies": {
+    "@ulld/default-image-map": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@ulld/api": "workspace:*",
     "@ulld/hooks": "workspace:*",

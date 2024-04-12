@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { Mesh } from "three";
 import { Backdrop, Stage, useGLTF } from "@react-three/drei";
-import { ThreeJsCanvas } from "../../specificContentType/3d/ThreeCanvas";
+import { ThreeJsCanvas } from "@ulld/render/3d/threeJsCanvas";
 
 
 interface GltfProps {

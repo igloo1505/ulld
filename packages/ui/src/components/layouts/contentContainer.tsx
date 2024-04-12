@@ -43,7 +43,7 @@ export const PageContentContainer = ({ children, containerId, notebook, classNam
                 id={containerId || id}
             >
                 <ContentItemPageObserver notebook canBookmark={canBookmark} />
-                <div className={clsx("px-4 md:px-8 w-full relative pb-6 vhnav bg-background [&_div[role='alert']]:text-foreground", className_lastChild && className_lastChild)}>{children}</div>
+                <div className={clsx("px-4 md:px-6 w-full relative pb-6 vhnav bg-background [&_div[role='alert']]:text-foreground", className_lastChild && className_lastChild)}>{children}</div>
                 <Footer
                     className={"w-full"}
                     style={{

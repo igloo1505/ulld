@@ -30,8 +30,7 @@
     "./copyContextMenu": "./src/components/landing/hero/util/copyContextMenu.tsx",
     "./stringBadgeList": "./src/components/inputs/stringBadgeList.tsx",
     "./deleteModalTriggerButton": "./src/components/inputs/deleteModalTriggerButton.tsx",
-    "./getConditionalComponents/client": "./src/components/markdown/getConditionalClientComponents.ts",
-    "./loader": "./src/components/installerScripts/initialLoader.tsx"
+    "./getConditionalComponents/client": "./src/components/markdown/getConditionalClientComponents.ts"
   },
   "scripts": {
     "build": "echo 'add build:internal script here'",

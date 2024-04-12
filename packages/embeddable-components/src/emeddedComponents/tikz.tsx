@@ -2,7 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 import TikzColorHandler from './tikzColorHandler'
 import { getRandomId } from '@ulld/utilities/identity'
-import TikzLoader from '../../installerScripts/TikzLoader'
+import TikzLoader from '@ulld/utilities/tikzLoader'
 import { TikzPlaceholder } from './tikzPlaceholder'
 import {getOnlineStatusServerSide} from "@ulld/api/actions/server/getOnlineStatus"
 

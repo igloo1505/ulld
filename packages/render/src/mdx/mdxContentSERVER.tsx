@@ -1,15 +1,8 @@
 import { serverClient } from '@ulld/api/serverClient';
 import { autoWrapMath } from '@ulld/utilities/latexUtils';
 import React from 'react'
-
-
-// Removed on 4-9-24. Add back in as content: string | ParsedMdxContent if needed, depending on new parser output.
-interface ParsedMdxContent {
-    compiledSource: string;
-    scope: Record<string, any>;
-    frontmatter: Record<string, string>;
-    original: string;
-}
+import MdxContentPreCompiled from './mdxContentPreCompiled';
+import { getMdxClassnames } from './getMdxClassnames';
 
 
 export interface MdxContentSERVERProps {
@@ -22,8 +15,11 @@ export interface MdxContentSERVERProps {
     autoWrap?: boolean
     display?: boolean
     small?: boolean
-    live?: boolean
+    large?: boolean
+    xl?: boolean
+    live?: boolean // Might not be using this. Double check later.
 }
+
 
 
 const parseProps = (p: MdxContentSERVERProps) => {
@@ -42,7 +38,11 @@ export const MdxContentSERVER = async (_props: MdxContentSERVERProps) => {
         display: props.displayType
     })  
     return (
-        <div></div>
+        <MdxContentPreCompiled 
+            content={compiled}
+            raw={props.content}
+            className={getMdxClassnames(_props)}
+        />
     )
 }
 

@@ -2,7 +2,7 @@
 import { useDispatch } from 'react-redux';
 import { notebookActions, selectActiveCell, selectKernelStatus, selectNotebookModel } from "@datalayer/jupyter-react";
 import { useMemo } from 'react';
-import { ValidIconName, DynamicIcon } from '../../icons/DynamicIcon';
+import { ValidIconName, DynamicIcon } from '@ulld/icons/dynamic';
 import { Button } from "@ulld/tailwind/button"
 
 

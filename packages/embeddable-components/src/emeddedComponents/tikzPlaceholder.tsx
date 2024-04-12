@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { H4 } from '../../text/heading'
+import { H4 } from '../heading'
 
 
 

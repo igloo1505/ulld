@@ -18,7 +18,7 @@ export const FullFormSidePanel = ({
     return (
         <aside
             className={cn(
-                "w-full max-w-[calc(100vw-4rem)] lg:max-w-[300px] border border-border px-4 py-4 rounded bg-card shadow-md hover:shadow-sm transition-shadow duration-200",
+                "w-full max-w-full border border-border px-4 py-4 rounded bg-card shadow-md hover:shadow-sm transition-shadow duration-200",
                 className,
             )}
         >

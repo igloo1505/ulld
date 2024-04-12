@@ -46,7 +46,11 @@
     "./defaults/prisma/notes": "./src/defaults/prisma/notes.ts",
     "./actions/copyStringToClipboard": "./src/actions/copyStringToClipboard.ts",
     "./copyStringToClipboard": "./src/actions/copyStringToClipboard.ts",
-    "./loaders/requireJS/requirejs": "./src/loaders/requireJS/requirejs.tsx"
+    "./loaders/requireJS/requirejs": "./src/loaders/requireJS/requirejs.tsx",
+    "./isLocal": "./src/utils/isLocal.ts",
+    "./initialLoader": "./src/loaders/installerComponents/initialLoader.tsx",
+    "./tikzLoader": "./src/loaders/installerComponents/TikzLoader.tsx",
+    "./autoWrapMathSchemas": "./src/schemas/autoWrapMathSchema.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",

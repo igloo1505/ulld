@@ -1,7 +1,5 @@
 import { Separator } from '@ulld/tailwind/separator'
-import clsx from 'clsx'
 import React, { useId } from 'react'
-import "../../../../styles/modal.scss"
 import CloseModalListener from './closeModalListener'
 
 
@@ -18,7 +16,8 @@ export const MarkdownModal = ({ defaultOpen, id, title, children }: MarkdownModa
     const emId = id || _id
     return (
         <div
-            className={clsx("modalContainer fixed top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center gap-4 bg-black bg-opacity-70 transition-transform duration-300", defaultOpen && "open")}
+            className={"modalContainer fixed top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center gap-4 bg-black bg-opacity-70 scale-0 data-[state=open]:scale-1 transition-transform duration-300"}
+            data-state={defaultOpen ? "open" : "closed"}
             id={emId}
         >
             <div className={"bg-popover max-w-[calc(100vw-2rem)] md:max-w-screen-sm lg:max-w-screen-md text-popover-foreground relative border border-border rounded-lg"}>

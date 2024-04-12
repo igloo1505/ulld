@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
     ControllerRenderProps,
     FieldValues,
@@ -31,6 +31,7 @@ import {
 } from "@ulld/tailwind/command";
 import { ChevronsUpDown, Check } from "lucide-react";
 import clsx from "clsx";
+import { onEnter } from "@ulld/state/listeners/keydown";
 
 export interface TaggableComboBoxProps<
     T extends FieldValues,
@@ -47,6 +48,16 @@ export interface TaggableComboBoxProps<
     replaceUnderscores?: boolean;
     type?: "tag" | "topic" | "subject";
 }
+
+const combineIfUnique = (base: string[], other: string[]) => {
+    let b = base;
+    other.forEach((o) => {
+        if (!b.includes(o)) {
+            b.push(o);
+        }
+    });
+    return b;
+};
 
 export const TaggableComboBox = <T extends FieldValues>({
     label,
@@ -65,12 +76,22 @@ export const TaggableComboBox = <T extends FieldValues>({
 }: TaggableComboBoxProps<T, HTMLTextAreaElement>) => {
     const form = useFormContext<T>();
     const [open, setOpen] = useState(false);
+    const cmdRef = useRef<HTMLDivElement>(null!);
     const [options, setOptions] = useState<string[]>([]);
+    const [btnDisplay, setBtnDisplay] = useState(Boolean(placeholder) ? placeholder : `${type}s`)
+    console.log("placeholder: ", placeholder)
 
     const gatherOptions = async (_type: "tag" | "topic" | "subject") => {
         let opts = await client.search.getUniqueTagTopicAndSubjects.query(_type);
         setOptions(Array.isArray(opts) ? opts : opts[`${_type}s`]);
     };
+
+    const formValues = form.watch(name)
+
+    useEffect(() => {
+       setOptions(combineIfUnique(options, formValues))
+    }, [formValues])
+
 
     useEffect(() => {
         if ((!_options || _options?.length === 0) && type) {
@@ -78,17 +99,23 @@ export const TaggableComboBox = <T extends FieldValues>({
         }
     }, [_options, type]);
 
-    const getDisplay = (field: ControllerRenderProps<T, Path<T>>) => {
-        if (!field.value) {
-            return placeholder || "";
+    const getDisplay = (_formValues: string[]) => {
+        if (!_formValues) {
+            return placeholder || `${type}s`;
         }
         if (multiple) {
-            return field.value?.length === 0
-                ? placeholder
-                : `${options.filter((l) => field.value?.includes(l)).length} items`;
+            return _formValues?.length === 0
+                ? Boolean(placeholder) ? placeholder : `${type}s`
+                : `${options.filter((l) => _formValues?.includes(l)).length} items`;
         }
-        return replaceUnderscores ?  (field.value || "").replaceAll("_", " ") : (field.value || "")
+        return replaceUnderscores
+            ? (_formValues || "").replaceAll("_", " ")
+            : _formValues || "";
     };
+
+    useEffect(() => {
+       setBtnDisplay(getDisplay(formValues)) 
+    }, [formValues])
 
     return (
         <FormField
@@ -110,14 +137,39 @@ export const TaggableComboBox = <T extends FieldValues>({
                                         buttonClasses,
                                     )}
                                 >
-                                    {getDisplay(field) || ""}
+                                    {btnDisplay}
                                     <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                 </Button>
                             </PopoverTrigger>
                         </FormControl>
-                        <PopoverContent className="w-[200px] p-0">
+                        <PopoverContent
+                            ref={cmdRef} 
+                            className="w-[200px] p-0"
+                        >
                             <Command>
-                                <CommandInput placeholder={"search..."} />
+                                <CommandInput
+                                    placeholder={"search..."}
+                                    onKeyDown={(e) =>
+                                        onEnter(e, () => {
+                                            if (
+                                                !cmdRef.current.querySelectorAll(
+                                                    '[cmdk-item][data-selected="true"]',
+                                                )?.length
+                                            ) {
+                                                const target = e.target as HTMLInputElement;
+                                                const val = target.value;
+                                                form.setValue(
+                                                    name,
+                                                    field.value?.includes(val)
+                                                        ? field.value?.filter((l: string) => l !== val)
+                                                        : [...field.value, val],
+                                                );
+                                                target.value = "";
+                                                setOpen(false)
+                                            }
+                                        })
+                                    }
+                                />
                                 <CommandEmpty>{emptyText || "Nothing was found"}</CommandEmpty>
                                 <CommandGroup className={groupClasses}>
                                     {options.map((o) => (

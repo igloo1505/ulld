@@ -14,7 +14,7 @@ import { InternalMermaid } from "@ulld/embeddable-components/components/internal
 import { H1, H2, H3, H4, H5, H6 } from "@ulld/embeddable-components/components/heading";
 
 
-// FIX: Handle this typescript error when back on wifi. This works with exactly the same setup in the ui package. Try compiling types in the ui package and exporting them appropriately so types are found.
+
 export const components: MDXComponents = {
     h1: H1,
     h2: H2,

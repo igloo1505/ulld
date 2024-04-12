@@ -1,6 +1,4 @@
 import { prisma } from "@ulld/database/db";
-import { texToChtml } from "@ulld/parsers/math/texToChtml";
-import { zodMdxFieldSchema } from "@ulld/parsers/latex/zodLatexFieldSchema";
 import { mathjaxParserOptionsSchema } from "@ulld/parsers/math/mathjaxParserOptionsParsing";
 import { arrayTruthy } from "@ulld/utilities/booleanAndEqualities/arrayTruthy";
 import { addEquationSchema } from "./addEquation";
@@ -9,15 +7,9 @@ import { Prisma } from "@ulld/database/internalDatabaseTypes"
 import * as z from 'zod'
 import { getPaginationParams } from "@ulld/state/searchParamSchemas/pagination/main";
 import { equationSearchParamsSchema } from "@ulld/state/searchParamSchemas/equations/main";
+import { equationItemSchema } from "./equationItemSchema";
+import { autoWrapMathDisplayField, autoWrapMathInlineField } from "@ulld/utilities/autoWrapMathSchemas";
 
-
-const getCssCompiler = async () => await import("@ulld/parsers/sassCompiler").then((a) => ({
-    compileSassString: a.compileSassString,
-    wrapCssWithSpecifier: a.wrapCssWithSpecifier
-}))
-
-
-const getMathStringToLatex = async () => await import("@ulld/parsers/math/mathStringToLatex").then((a) => a.mathStringToLatex)
 
 
 const equationsRouter = router({
@@ -74,7 +66,6 @@ const equationsRouter = router({
             appendStylesToClass: z.string().optional(),
         }),
     })).mutation(async ({ input }) => {
-        const mathStringToLatex = await getMathStringToLatex()
         let eq = await prisma.equation.findFirst({
             where: {
                 OR: [
@@ -104,21 +95,10 @@ const equationsRouter = router({
                 }
             },
         })
-        let desc = eq?.desc ? await zodMdxFieldSchema.parseAsync(eq.desc) : undefined
-        let title = eq?.title ? await zodMdxFieldSchema.parseAsync(eq.title) : undefined
-        let content = eq?.content ? await mathStringToLatex(eq.content, input.content.options, input.content.appendStylesToId, input.content.appendStylesToClass) : undefined
-        return {
-            eq,
-            desc,
-            title,
-            content
-        }
+        return equationItemSchema.parseAsync(eq)
     }),
     getEquationEmbedProps: publicProcedure.input(z.object({
         equationId: z.string(),
-        options: mathjaxParserOptionsSchema,
-        appendStylesToId: z.string().optional(),
-        appendStylesToClass: z.string().optional(),
     })).query(async ({ input }) => {
         let eq = await prisma.equation.findFirst({
             where: {
@@ -131,15 +111,10 @@ const equationsRouter = router({
                 asPython: true
             }
         })
-        const mathStringToLatex = await getMathStringToLatex()
-        let content = eq?.content ? await mathStringToLatex(eq.content, input.options, input.appendStylesToId, input.appendStylesToClass) : {
-            content: undefined,
-            styles: undefined
-        }
+        let data = await equationItemSchema.parseAsync(eq)
         return {
-            ...eq,
-            contentLatex: eq?.content,
-            content
+            ...data,
+            rawLatex: eq?.content
         }
     }),
     deleteEquationById: publicProcedure.input(z.number().int()).mutation(async (opts) => {
@@ -269,32 +244,13 @@ const equationsRouter = router({
             update: _create
         })
     }),
-    mathStringToLatex: publicProcedure.input(z.object({
-        content: z.string(),
-        options: mathjaxParserOptionsSchema,
-        appendStylesToId: z.string().optional(),
-        appendStylesToClass: z.string().optional()
-    })).mutation(async (opts) => {
-        const mathStringToLatex = await getMathStringToLatex()
-        return await mathStringToLatex(opts.input.content, opts.input.options, opts.input.appendStylesToId, opts.input.appendStylesToClass)
-    }),
     mathStringArrayToLatex: publicProcedure.input(z.object({
         content: z.string().array(),
-        options: mathjaxParserOptionsSchema,
-        appendStylesToId: z.string().optional(),
-        appendStylesToClass: z.string().optional()
+        options: mathjaxParserOptionsSchema.pick({inline: true}),
     })).mutation(async (opts) => {
-        const { compileSassString, wrapCssWithSpecifier } = await getCssCompiler()
-        let data: { content: string, styles?: string }[] = []
-        for await (const s of opts.input.content) {
-            let res = await texToChtml(s, opts.input.options)
-            const _styles = res.styles ? Boolean(opts.input.appendStylesToId || opts.input.appendStylesToClass) ? await compileSassString(wrapCssWithSpecifier(res.styles, opts.input.appendStylesToId, opts.input.appendStylesToClass)) : res.styles : undefined
-            data.push({
-                content: res.content,
-                styles: typeof _styles === "string" ? _styles : _styles?.css
-            })
-        }
-        return data
+        let parser = opts.input.options.inline ? autoWrapMathInlineField : autoWrapMathDisplayField
+        let data = await parser.array().parseAsync(opts.input.content)
+        return data.map((a) => ({content: a}))
     }),
     getIdFromEquationId: publicProcedure.input(z.string()).query(async (opts) => {
         return await prisma.equation.findFirst({
@@ -306,12 +262,6 @@ const equationsRouter = router({
             }
         })
     }),
-    zodParseLatexString: publicProcedure.input(z.union([
-        z.string(),
-        z.string().array()
-    ]).transform((a) => Array.isArray(a) ? a : [a])).mutation(async ({ input }) => {
-        return await zodMdxFieldSchema.array().parseAsync(input)
-    })
 })
 
 

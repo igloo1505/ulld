@@ -80,6 +80,7 @@ const remarkPlugins = (
     return [remarkMath, remarkGfm, [emoji as any, {}]];
 };
 
+
 export const parseMdxString = async ({
     content,
 }: z.input<typeof parseMdxProps>) => {
@@ -91,5 +92,7 @@ export const parseMdxString = async ({
         development: process.env.NODE_ENV === "development",
         /* baseUrl: import.meta.url */
     });
-    return String(res);
+    console.log("res: ", res)
+    return String(res)
+    /* return String(res).replaceAll(/classname/g, "className") */
 };
