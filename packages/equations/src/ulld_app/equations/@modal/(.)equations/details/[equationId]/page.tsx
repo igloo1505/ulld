@@ -5,14 +5,15 @@ import EquationDetailDisplay from '../../../../../../components/equationDetailDi
 
 
 
-interface EquationDetailModalProps {
+export interface PageProps {
     params: {
         equationId: string
     }
 }
 
+
 /* TODO: Come back and handle this. It works in the page version well, but this is not rendering properly and requiring a refresh to be visible. Docs: https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes#modals */
-const EquationDetailModal = async ({ params: { equationId } }: EquationDetailModalProps) => {
+const EquationDetailModal = async ({ params: { equationId } }: PageProps) => {
     const equation = await serverClient.equations.getEquationById({
         ...(`${parseInt(equationId)}` === equationId ? { id: parseInt(equationId) } : { equationId })
     })
