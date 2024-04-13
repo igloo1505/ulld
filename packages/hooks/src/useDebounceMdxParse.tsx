@@ -41,14 +41,11 @@ export const useDebounceMdxParse = (
     const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
 
     const handleParse = async (_value: string) => {
-        console.log("_value: ", _value);
         let initiallyParsed = await MdxNote.parseMdxString(_value, opts);
-        console.log("initiallyParsed: ", initiallyParsed);
         let compiled = await client.mdx.parseMdxString.mutate({
             content: initiallyParsed,
             ...opts,
         });
-        console.log("compiled: ", compiled);
         const res = await run(compiled, {
             Fragment: Fragment,
             jsx: runtime.jsx as any,
@@ -56,7 +53,6 @@ export const useDebounceMdxParse = (
             jsxDEV: devRuntime.jsxDEV as any,
             baseUrl: import.meta.url,
         });
-        console.log("res: ", res);
         setMdxModule(res);
     };
 

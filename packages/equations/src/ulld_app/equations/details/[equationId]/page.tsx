@@ -12,6 +12,7 @@ export interface PageProps {
     }
 }
 
+
 const EquationDetailsPage = async ({ params: { equationId } }: PageProps) => {
     const equation = await serverClient.equations.getEquationById({
         ...(`${parseInt(equationId)}` === equationId ? { id: parseInt(equationId) } : { equationId })

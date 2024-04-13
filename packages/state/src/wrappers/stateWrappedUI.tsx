@@ -3,12 +3,12 @@ import { ReduxProvider } from './ReduxProvider';
 import Observers from '../observers/internalState';
 import {OnlineStatusObserver} from '../observers/onlineStatus';
 import {ToastListener} from '../observers/toast';
+import { Toaster } from "@ulld/tailwind/toaster"
 import { cookies } from 'next/headers';
 import {getSettings} from "../actions/getSettings"
 import fs from 'fs'
 import path from 'path'
 import { ParsedAppConfig } from '@ulld/configschema/types';
-/* import ReduxProvider from './ReduxProvider'; */
 /* import Navbar from '#/components/ui/navbar'; */
 /* import Observers from './observers'; */
 /* import PermanentSidebar from '#/components/ui/permanentSidebar'; */
@@ -51,6 +51,7 @@ export const StateWrappedUI = async () => {
             <div id="sidebar-target" />
             <OnlineStatusObserver />
             <ToastListener />
+            <Toaster />
         </ReduxProvider>
     )
 }

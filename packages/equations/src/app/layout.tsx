@@ -6,7 +6,6 @@ import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
 import React from 'react'
 import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI"
-import { Toaster } from "@ulld/tailwind/toaster"
 import { fontSans } from "@ulld/tailwind/defaultFont"
 import { InitialLoader } from "@ulld/utilities/initialLoader"
 
@@ -65,7 +64,6 @@ const RootLayout = async (props: {
                 <StateWrappedUI
                 />
                 {props.children}
-                <Toaster />
                 {props.modal && props.modal}
             </body>
         </html>

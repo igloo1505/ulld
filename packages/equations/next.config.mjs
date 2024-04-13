@@ -43,8 +43,9 @@ const config = withPWA({
     ],
     experimental: {
         // typedRoutes: true,
-        esmExternals: "loose",
+        esmExternals: "loose", // Turned off for developing with turbo. Turn back on in production or if needed.
         optimizePackageImports: ["lucide-react", "katex"],
+        ...(process.env.NODE_ENV === "production" && {esmExternals: "loose"})
         // serverComponentsExternalPackages: ['@ulld/editor'],
         // mdxRs: true,
     },

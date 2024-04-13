@@ -18,7 +18,8 @@ const CodeThemeContextMenu = ({ children, onThemeChange }: CodeThemeContextMenuP
     return (
         <ContextMenu >
             <ContextMenuTrigger>{children}</ContextMenuTrigger>
-            <ContextMenuContent className={"max-h-[300px] overflow-y-auto no-scrollbar"}>
+            <ContextMenuContent
+                className={"max-h-[300px] overflow-y-auto no-scrollbar"}>
                 {availableShikiThemes.map((s) => {
                     return (
                         <ContextMenuItem

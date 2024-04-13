@@ -53,7 +53,7 @@ interface P {
 
 const applyHtmlClass = (cls: string, type: "add" | "remove" | "toggle") => {
        htmlEm()?.classList[type](cls) 
-    }
+}
 
 
 const Observers = connector(({ settings, showPlotlyModebar, darkMode, noteSheetOpen, config }: P) => {

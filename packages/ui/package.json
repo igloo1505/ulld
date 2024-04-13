@@ -26,6 +26,7 @@
     "./mdxContentSERVER": "./src/components/mdxContent/mdxContentSERVER.tsx",
     "./mdxContentCLIENT": "./src/components/mdxContent/mdxContentCLIENT.tsx",
     "./copyTextButton": "./src/components/buttons/utility/copyButton.tsx",
+    "./copyCodeButton": "./src/components/code/copyCodeButton.tsx",
     "./codeHighlightContainer": "./src/components/code/syntaxHighlighting/codeHighlightContainer.tsx",
     "./copyContextMenu": "./src/components/landing/hero/util/copyContextMenu.tsx",
     "./stringBadgeList": "./src/components/inputs/stringBadgeList.tsx",

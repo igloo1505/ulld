@@ -10,7 +10,7 @@ import React from 'react'
 interface EquationDetailLinkButtonProps {
     children: React.ReactNode
     href: Route
-    variant?: "outline" | "ghost" | "link"
+    variant?: "outline" | "ghost" | "link" | "secondary"
     isModal?: boolean
     className?: string
 }

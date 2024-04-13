@@ -8,6 +8,7 @@
   ],
   "exports": {
     "./admonition/types": "./src/types/admonition.ts",
+    "./components/copyContextMenu": "./src/components/copyContextMenu.tsx",
     "./booleanAndEqualities/arrayTruthy": "./src/booleanAndEqualities/arrayTruthy.ts",
     "./shadColorMap": "./src/utils/shadColorMap.ts",
     "./types/navigation": "./src/types/navigation.ts",
@@ -59,6 +60,7 @@
     "build": "echo 'Add lint build here'"
   },
   "devDependencies": {
+    "@ulld/tailwind": "workspace:*",
     "@repo/typescript-config": "workspace:^",
     "@tanstack/react-table": "^8.13.2",
     "@testing-library/cypress": "^10.0.1",
@@ -88,6 +90,7 @@
   },
   "peerDependencies": {
     "@ulld/database": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
     "dayjs": "^1.11.10",
     "next": "^14.1.4",
     "react": "^18.2.0",

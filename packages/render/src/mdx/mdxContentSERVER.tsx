@@ -18,6 +18,7 @@ export interface MdxContentSERVERProps {
     large?: boolean
     xl?: boolean
     live?: boolean // Might not be using this. Double check later.
+    applyMathContextMenu?: boolean
 }
 
 
@@ -33,15 +34,18 @@ const parseProps = (p: MdxContentSERVERProps) => {
 
 export const MdxContentSERVER = async (_props: MdxContentSERVERProps) => {
     const props = parseProps(_props)
+    console.log("props.content: ", props.content)
     const compiled = await serverClient.mdx.parseMdxString({
         content: props.content,
         display: props.displayType
     })  
+    const classNames = getMdxClassnames(_props)
     return (
         <MdxContentPreCompiled 
             content={compiled}
             raw={props.content}
-            className={getMdxClassnames(_props)}
+            className={classNames}
+            applyMathContextMenu={(props.autoWrap && props.isMathOnly) || props.applyMathContextMenu}
         />
     )
 }

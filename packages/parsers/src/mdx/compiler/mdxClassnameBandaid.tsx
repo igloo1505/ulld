@@ -1,8 +1,13 @@
-export const mathjaxMutationObserver = () => new MutationObserver((mutations) => {
-     for (const m of mutations) {
-        if(m.target.parentElement?.hasAttribute("classname")){
-           m.target.parentElement.classList.value = m.target.parentElement.getAttribute("classname") || ""
-          m.target.parentElement.removeAttribute("classname")
+export const mathjaxMutationObserver = () =>
+    new MutationObserver((mutations) => {
+        for (const m of mutations) {
+            if (m.type === "childList") {
+                m.target.parentElement
+                    ?.querySelectorAll("[classname]")
+                    .forEach((el) => {
+                        el.classList.value = el.getAttribute("classname") || "";
+                        el.removeAttribute("classname");
+                    });
+            }
         }
-    } 
-})
+    });

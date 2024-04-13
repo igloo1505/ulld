@@ -9,6 +9,15 @@ interface LoadingIndicatorProps {
     text?: string
 }
 
+export const LoadingIndicator = ({ loading = true }: { loading?: boolean }) => {
+    return (
+        <RingLoader
+            color="hsl(var(--primary))"
+            loading={loading}
+        />
+    )
+}
+
 export const LoadingIndicatorScreen = (props: LoadingIndicatorProps) => {
     return (
         <div className={clsx('w-screen h-screen top-0 left-0 fixed flex flex-col gap-4 justify-center items-center z-[99999] overflow-hidden transition-all duration-300', props.loading ? "scale-1" : "scale-0")}>
@@ -19,14 +28,6 @@ export const LoadingIndicatorScreen = (props: LoadingIndicatorProps) => {
 }
 
 
-export const LoadingIndicator = ({ loading = true }: { loading?: boolean }) => {
-    return (
-        <RingLoader
-            color="hsl(var(--primary))"
-            loading={loading}
-        />
-    )
-}
 
 
 LoadingIndicator.displayName = "LoadingIndicator"

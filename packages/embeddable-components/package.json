@@ -62,7 +62,8 @@
     "./components/server/colorText": "./src/emeddedComponents/colorText.tsx",
     "./components/server/equationRef": "./src/utility/equationRef.tsx",
     "./components/server/equationTag": "./src/utility/equationTag.tsx",
-    "./components/server/admonition": "./src/emeddedComponents/admonition.tsx"
+    "./components/server/admonition": "./src/emeddedComponents/admonition.tsx",
+    "./components/loadingIndicator": "./src/embeddedLoadingIndicator.tsx"
   },
   "peerDependencies": {
     "@ulld/api": "workspace:*",

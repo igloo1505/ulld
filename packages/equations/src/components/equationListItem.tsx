@@ -37,6 +37,8 @@ const EquationListItem = ({ equation }: EquationListItemProps) => {
             <div className={"w-full h-full flex flex-col justify-center items-center"}>
                 <MdxContentSERVER
                     isMathOnly
+                    autoWrap
+                    large
                     content={equation.content}
                     /* stylesContainerId={`${id}-content`} */
                     className={"mx-6"}

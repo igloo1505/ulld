@@ -27,6 +27,7 @@
     --input: 220 13% 91%;
     --ring: 262.1 83.3% 57.8%;
     --radius: 0.5rem;
+    --general-link-color: #2563eb;
   }
 
   .dark {
@@ -52,6 +53,7 @@
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
     --ring: 263.4 70% 50.4%;
+    --general-link-color: #1e90ff;
   }
   * {
     @apply border-border;
