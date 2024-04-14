@@ -1,5 +1,5 @@
-import {store} from "@ulld/state/state/store"
-import {showToast} from "@ulld/state/state/slices/ui"
+import { store } from "@ulld/state/state/store"
+import { showToast } from "@ulld/state/state/slices/ui"
 import { client } from "../trpc/client"
 
 

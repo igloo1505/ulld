@@ -27,7 +27,8 @@ import { ParsedAppConfig } from '@ulld/configschema/types';
 
 const configPath = "appConfig.ulld.json"
 
-export const StateWrappedUI = async () => {
+/* NOTE: Children should only used in development for now. */
+export const StateWrappedUI = async ({children}: {children?: React.ReactNode}) => {
     const cookieJar = cookies()
     const settings = await getSettings()
     const darkMode = cookieJar.has("darkMode")
@@ -41,6 +42,7 @@ export const StateWrappedUI = async () => {
 
     return (
         <ReduxProvider>
+            <div id="global-state-target" />
             <Observers
                 settings={settings}
                 darkMode={darkMode}
@@ -52,6 +54,7 @@ export const StateWrappedUI = async () => {
             <OnlineStatusObserver />
             <ToastListener />
             <Toaster />
+            {children}
         </ReduxProvider>
     )
 }

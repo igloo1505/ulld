@@ -11,3 +11,5 @@ export const JupyterIcon = (props: SVGProps<SVGSVGElement>) => {
 
 
 JupyterIcon.displayName = "JupyterIcon"
+
+export default JupyterIcon

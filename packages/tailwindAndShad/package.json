@@ -55,7 +55,19 @@
     "./form": "./src/shad/components/ui/form.tsx",
     "./carousel": "./src/shad/components/ui/carousel.tsx",
     "./slider": "./src/shad/components/ui/slider.tsx",
-    "./defaultStyles.scss": "./src/defaultStyles/defaultStyles.scss"
+    "./defaultStyles.scss": "./src/defaultStyles/defaultStyles.scss",
+    "./themes/gray.scss": "./src/shad/defaultThemes/gray.scss",
+    "./themes/violet.scss": "./src/shad/defaultThemes/violet.scss",
+    "./themes/slate.scss": "./src/shad/defaultThemes/slate.scss",
+    "./themes/neutral.scss": "./src/shad/defaultThemes/neutral.scss",
+    "./themes/stone.scss": "./src/shad/defaultThemes/stone.scss",
+    "./themes/green.scss": "./src/shad/defaultThemes/green.scss",
+    "./themes/orange.scss": "./src/shad/defaultThemes/orange.scss",
+    "./themes/yellow.scss": "./src/shad/defaultThemes/yellow.scss",
+    "./themes/blue.scss": "./src/shad/defaultThemes/blue.scss",
+    "./themes/zinc.scss": "./src/shad/defaultThemes/zinc.scss",
+    "./themes/rose.scss": "./src/shad/defaultThemes/rose.scss",
+    "./themes/red.scss": "./src/shad/defaultThemes/red.scss"
   },
   "typesVersions": {
     ".": [
@@ -207,9 +219,12 @@
     "@repo/typescript-config": "workspace:*",
     "@types/react": "^18.2.76",
     "@types/react-dom": "^18.2.25",
+    "autoprefixer": "^10.4.18",
     "next": "^14.1.4",
+    "postcss": "^8.4.35",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.1"
   },
   "peerDependencies": {
     "@hookform/resolvers": "^3.3.4",

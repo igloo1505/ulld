@@ -1,19 +1,19 @@
-import React from 'react'
+import React from "react";
 
-
-
-interface SanboxPageProps {
-
-}
+interface SanboxPageProps {}
 
 const SanboxPage = (props: SanboxPageProps) => {
-return (
-    <div></div>
-)
-}
+  return (
+    <div
+      className={
+        "w-full h-full flex flex-col justify-center items-center gap-6"
+      }
+    >
+      <h1 className={"text-5xl font-bold text-foreground"}>Sandbox</h1>
+    </div>
+  );
+};
 
-
-SanboxPage.displayName = "SanboxPage"
-
+SanboxPage.displayName = "SanboxPage";
 
 export default SanboxPage;

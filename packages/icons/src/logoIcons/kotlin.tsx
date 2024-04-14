@@ -13,4 +13,4 @@ export const KotlinIcon = (props: IconProps) => {
 
 KotlinIcon.displayName = "KotlinIcon"
 
-
+export default KotlinIcon

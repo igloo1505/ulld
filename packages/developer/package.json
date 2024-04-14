@@ -9,7 +9,10 @@
     "./pluginConfig": "./src/baseClasses/pluginConfig.ts",
     "./embeddableConfig": "./src/baseClasses/embeddableComponentConfig.ts",
     "./utils": "./src/utilityMethods/main.ts",
-    "./getConfig": "./src/utilityMethods/getConfig.ts"
+    "./getConfig": "./src/utilityMethods/getConfig.ts",
+    "./globalStatePortal": "./src/components/globalStatePortal.tsx",
+    "./navbarPortal": "./src/components/navbarPortal.tsx",
+    "./sidebarPortal": "./src/components/sidebarPortal.tsx"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",

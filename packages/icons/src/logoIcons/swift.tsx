@@ -12,3 +12,6 @@ export const SwiftIcon = (props: IconProps) => {
 
 
 SwiftIcon.displayName = "SwiftIcon"
+
+
+export default SwiftIcon

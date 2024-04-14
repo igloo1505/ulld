@@ -12,3 +12,6 @@ export const ReactIcon = (props: IconProps) => {
 
 
 ReactIcon.displayName = "ReactIcon"
+
+
+export default ReactIcon

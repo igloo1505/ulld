@@ -1,18 +1,58 @@
-import dynamic from 'next/dynamic'
-import React from 'react'
-import type { LucideProps } from 'lucide-react';
-import dynamicIconImports from 'lucide-react/dynamicIconImports';
-import { AdmonitionType } from '@ulld/utilities/admonition/types';
+import dynamic from "next/dynamic";
+import React from "react";
+import type { LucideProps } from "lucide-react";
+import dynamicIconImports from "lucide-react/dynamicIconImports";
+import { AdmonitionType } from "@ulld/utilities/admonition/types";
 
+export type IconNameList =
+    | "bibliography"
+    | "bookmarks"
+    | "bug"
+    | "code"
+    | "data"
+    | "download"
+    | "fitness"
+    | "focus"
+    | "idea"
+    | "important"
+    | "journal"
+    | "latex"
+    | "math"
+    | "paperPdf"
+    | "physics"
+    | "physicsData"
+    | "quicknote"
+    | "readingList"
+    | "recipe"
+    | "researchPapers"
+    | "schedule"
+    | "settings"
+    | "shoppingList"
+    | "snippet"
+    | "tags"
+    | "tech"
+    | "todolist"
+    | "images"
+    | "avatar"
+    | "darktoggle"
+    | AdmonitionType;
 
+const logoIconNames = [
+    "css",
+    "github",
+    "jupyter",
+    "kotlin",
+    "markdown",
+    "node",
+    "npm",
+    "python",
+    "react",
+    "swift",
+    "vercel",
+    "youtube",
+] as const;
 
-export type IconNameList = "bibliography" | "bookmarks" | "bug" | "code" | "data" | "download" | "fitness" | "focus" | "idea" | "important" | "journal" | "latex" | "math" | "paperPdf" | "physics" | "physicsData" | "quicknote" | "readingList" | "recipe" | "researchPapers" | "schedule" | "settings" | "shoppingList" | "snippet" | "tags" | "tech" | "todolist" | "images" | "avatar" | "darktoggle" | AdmonitionType
-
-
-
-export type LogoIconNames = "css" | "github" | "kotlin" | "markdown" | "node" | "npm" | "python" | "react" | "swift" | "vercel" | "youtube"
-
-
+export type LogoIconNames = (typeof logoIconNames)[number];
 
 /// NOTE: AdmonitionType, LocoIconNames & IconNameList
 export enum AllDynamicIconNames {
@@ -46,17 +86,6 @@ export enum AllDynamicIconNames {
     images = "images",
     avatar = "avatar",
     darktoggle = "darktoggle",
-    css = "css",
-    github = "github",
-    kotlin = "kotlin",
-    markdown = "markdown",
-    node = "node",
-    npm = "npm",
-    python = "python",
-    react = "react",
-    swift = "swift",
-    vercel = "vercel",
-    youtube = "youtube",
     info = "info",
     note = "note",
     tip = "tip",
@@ -70,60 +99,24 @@ export enum AllDynamicIconNames {
     quote = "quote",
     cite = "cite",
     plain = "plain",
+    css = "css",
+    github = "github",
+    jupyter = "jupyter",
+    kotlin = "kotlin",
+    markdown = "markdown",
+    node = "node",
+    npm = "npm",
+    python = "python",
+    react = "react",
+    swift = "swift",
+    vercel = "vercel",
+    youtube = "youtube",
+    ulld = "ulld",
 }
 
-
-const logoIconNames = [
-    "css",
-    "github",
-    "kotlin",
-    "markdown",
-    "node",
-    "npm",
-    "python",
-    "react",
-    "swift",
-    "vercel",
-    "youtube",
-]
-
-const iconNames = [
-    "bibliography",
-    "bookmarks",
-    "bug",
-    "code",
-    "data",
-    "download",
-    "fitness",
-    "focus",
-    "idea",
-    "important",
-    "journal",
-    "latex",
-    "math",
-    "paperPdf",
-    "physics",
-    "physicsData",
-    "quicknote",
-    "readingList",
-    "recipe",
-    "researchPapers",
-    "schedule",
-    "settings",
-    "shoppingList",
-    "snippet",
-    "tags",
-    "tech",
-    "todolist",
-    "images",
-    "avatar",
-    "darktoggle",
-]
-
-
-
-
-const iconNameMap: { [k in IconNameList]: keyof typeof dynamicIconImports | false } = {
+const iconNameMap: {
+    [k in IconNameList]: keyof typeof dynamicIconImports | false;
+} = {
     plain: false,
     bibliography: "library",
     bookmarks: "bookmark",
@@ -169,22 +162,44 @@ const iconNameMap: { [k in IconNameList]: keyof typeof dynamicIconImports | fals
     cite: "book-marked",
     equation: "variable",
     definition: "book",
-    practice: "line-chart"
-}
+    practice: "line-chart",
+};
 
-export type ValidIconName = IconNameList | AdmonitionType | keyof typeof dynamicIconImports;
+export type ValidIconName =
+    | IconNameList
+    | AdmonitionType
+    | LogoIconNames
+    | keyof typeof dynamicIconImports;
 
+export const completeValidIconNameList = [
+    ...Object.keys(iconNameMap),
+    ...Object.keys(AllDynamicIconNames),
+    ...Object.keys(dynamicIconImports),
+] as const;
 
 interface IconProps extends LucideProps {
-    name: ValidIconName
+    name: ValidIconName;
 }
 
 export const DynamicIcon = ({ name, ...props }: IconProps) => {
-    if (logoIconNames.includes(name)) {
-        let Icon = dynamic(() => import(`./logoIcons/${name}`))
-        return <Icon {...props} />
+    if (logoIconNames.includes(name as (typeof logoIconNames)[number])) {
+        console.log("name: ", name);
+        let Icon = dynamic(() => import(`./logoIcons/${name}`));
+        console.log("Icon: ", Icon);
+        return <Icon {...props} />;
     }
-    let _name = name in iconNameMap ? iconNameMap[name as keyof typeof iconNameMap] : name
-    const LucideIcon = dynamic(dynamicIconImports[_name as keyof typeof dynamicIconImports])
-    return <LucideIcon {...props} />;
+    let _name =
+        name in iconNameMap ? iconNameMap[name as keyof typeof iconNameMap] : name;
+    console.log("_name: ", _name);
+    if (_name === false) {
+        return null;
+    }
+    if (Object.keys(dynamicIconImports).includes(_name)) {
+        const LucideIcon = dynamic(
+            dynamicIconImports[_name as keyof typeof dynamicIconImports],
+        );
+        return <LucideIcon {...props} />;
+    }
+    console.log(`No icon found for ${name}`);
+    return null;
 };

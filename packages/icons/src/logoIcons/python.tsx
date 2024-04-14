@@ -12,3 +12,6 @@ export const PythonIcon = (props: IconProps) => {
 
 
 PythonIcon.displayName = "PythonIcon"
+
+
+export default PythonIcon

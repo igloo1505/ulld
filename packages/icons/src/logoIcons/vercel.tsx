@@ -12,3 +12,6 @@ export const VercelIcon = (props: IconProps) => {
 
 
 VercelIcon.displayName = "VercelIcon"
+
+
+export default VercelIcon

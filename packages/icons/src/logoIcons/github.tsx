@@ -13,4 +13,4 @@ export const GithubIcon = (props: IconProps) => {
 
 GithubIcon.displayName = "GithubIcon"
 
-
+export default GithubIcon

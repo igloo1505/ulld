@@ -24,14 +24,33 @@
     "@ulld/state": "workspace:*",
     "@ulld/tailwind": "workspace:*",
     "@ulld/ui": "workspace:*",
-    "@ulld/utilities": "workspace:*"
+    "@ulld/utilities": "workspace:*",
+    "@ulld/icons": "workspace:*"
   },
   "devDependencies": {
+    "@ulld/api": "workspace:*",
+    "@ulld/baseConfigs": "workspace:*",
+    "@ulld/config": "workspace:*",
+    "@ulld/configschema": "workspace:*",
+    "@ulld/database": "workspace:*",
+    "@ulld/developer": "workspace:*",
+    "@ulld/hooks": "workspace:*",
+    "@ulld/logger": "workspace:*",
+    "@ulld/parsers": "workspace:*",
+    "@ulld/state": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
+    "@ulld/ui": "workspace:*",
+    "@ulld/utilities": "workspace:*",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "^0.5.7",
     "sass": "^1.74.1",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "^3.4.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "@repo/jest-presets": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "@ulld/developer-cli": "workspace:*"
   }
 }

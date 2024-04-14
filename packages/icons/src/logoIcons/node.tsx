@@ -12,3 +12,5 @@ export const NodeIcon = (props: IconProps) => {
 
 
 NodeIcon.displayName = "NodeIcon"
+
+export default NodeIcon

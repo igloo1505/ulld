@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import "@ulld/tailwind/themes/green.scss"
 import "@ulld/tailwind/defaultStyles.scss"
 import "../styles/mdx.scss"
 import "../styles/globals.scss"
@@ -17,15 +18,10 @@ export const metadata: Metadata = {
 }
 
 
-
 const RootLayout = async (props: {
     children: React.ReactNode
     modal: React.ReactNode
 }) => {
-    /* await writeConfigJson(lazyTestConfig, "/Users/bigsexy/Desktop/currentProjects/ulld/apps/sandbox") */
-    /* const config = getInternalConfig(appConfig as any as AppConfigSchemaOutput) */
-    /* logger.debug(JSON.stringify(config, null, 4), { label: "Config" }) */
-
     const cookieJar = cookies()
     /* const darkMode = cookieJar.has("darkMode") */
     const darkMode = true
