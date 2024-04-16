@@ -1,3 +1,4 @@
+import { PlotData } from "plotly.js";
 import { DataManager2dPropOutput } from "../../schemas/dataManagerBaseProps";
 import {PlotParams} from 'react-plotly.js';
 
@@ -19,11 +20,19 @@ export class DataManager2d {
         }
         return d;
     }
-    get2dScatterData(){
+    getScatter2dData(){
         // RESUME: Come back here and handle the data generation. Make sure to make everything as strictly typed as possible.
-        let data: PlotParams["data"][] = [] 
+        let data: Partial<PlotData>[] = [] 
         for (const k of this.props.f){
-             
+            data.push({
+                x: this.x,
+                y: this.x.map((x) => k.f(x)),
+                ...(k.color && {
+"line.color": k.color,
+"marker.color": k.color,
+                    "marker.line.color": k.color
+                })
+            }) 
         }
         return data
     }

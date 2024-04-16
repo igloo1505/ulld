@@ -27,3 +27,18 @@ export const functionFieldTransform = <T extends unknown, J extends unknown>(
         f: a,
     }) as J;
 };
+
+
+const functionObject2dSchema = functionObjectSchema.extend({
+    f: f2d,
+});
+
+export const functionField2d = z
+    .union([f2d, functionObject2dSchema])
+    .transform((data) => {
+        return functionFieldTransform<
+            typeof data,
+            z.output<typeof functionObject2dSchema>
+        >(data, functionObject2dSchema);
+    });
+
