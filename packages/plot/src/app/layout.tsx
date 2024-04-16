@@ -1,19 +1,15 @@
 import clsx from 'clsx'
+import "@ulld/tailwind/themes/green.scss"
 import "@ulld/tailwind/defaultStyles.scss"
-import "#/styles/globals.scss"
-import "#/styles/mdx.scss"
+import "../styles/mdx.scss"
+import "../styles/globals.scss"
+import "../styles/plot/rechart.scss"
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
-/* import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig' */
-/* import {AppConfigSchemaOutput } from "@ulld/configschema/zod/main" */
 import React from 'react'
-/* import { RequireJsLoader } from "@ulld/utilities/loaders" */
 import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI"
-import { Toaster } from "@ulld/tailwind/toaster"
 import { fontSans } from "@ulld/tailwind/defaultFont"
-import config from "#/appConfig.ulld.json"
-/* import "shiki/themes/dracula.mjs" */
-
+import { InitialLoader } from "@ulld/utilities/initialLoader"
 
 
 
@@ -23,26 +19,15 @@ export const metadata: Metadata = {
 }
 
 
-
 const RootLayout = async (props: {
     children: React.ReactNode
     modal: React.ReactNode
 }) => {
-    /* await writeConfigJson(lazyTestConfig, "/Users/bigsexy/Desktop/currentProjects/ulld/apps/sandbox") */
-    /* const config = getInternalConfig(appConfig as any as AppConfigSchemaOutput) */
-    /* logger.debug(JSON.stringify(config, null, 4), { label: "Config" }) */
-
     const cookieJar = cookies()
     /* const darkMode = cookieJar.has("darkMode") */
     const darkMode = true
-    /* const s = await prisma.settings.findFirst({ */
-    /*     where: { */
-    /*         id: 1 */
-    /*     } */
-    /* }) */
 
     /* let settings = settingSchema.parse(s) */
-    const settings = { tooltips: true }
 
     const preferFs = cookieJar.has("preferFs")
     let colorMode = darkMode ? "dark" : "light"
@@ -53,14 +38,12 @@ const RootLayout = async (props: {
     }
 
 
-
-
     /* TODO: Add .noTooltips class to html element according to settings. Create function to toggle class when toggling setting. */
 
     return (
         <html
             lang="en"
-            className={clsx("group/html js-focus-visible", darkMode && "dark", Boolean(settings && settings.tooltips === false) && "noTooltips", process.env.NODE_ENV === "development" && "debug-screens")}
+            className={clsx("group/html js-focus-visible", darkMode && "dark", process.env.NODE_ENV === "development" && "debug-screens")}
             data-js-focus-visible=""
             {...p}
         >
@@ -74,13 +57,10 @@ const RootLayout = async (props: {
                     preferFs && "preferFs")}
                 id={`Ulld-body-root`}
             >
+                <InitialLoader />
                 <StateWrappedUI
-                    settings={settings}
-                    darkMode={darkMode}
-                    config={config}
                 />
                 {props.children}
-                <Toaster />
                 {props.modal && props.modal}
             </body>
         </html>

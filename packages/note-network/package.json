@@ -15,10 +15,10 @@
     "@types/react-dom": "^18.2.24",
     "@ulld/api": "workspace:*",
     "@ulld/configschema": "workspace:*",
+    "@ulld/developer": "workspace:*",
     "@ulld/logger": "workspace:*",
     "@ulld/tailwind": "workspace:*",
     "@ulld/utilities": "workspace:*",
-    "@ulld/developer": "workspace:*",
     "next": "^14.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -31,5 +31,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "reagraph": "^4.15.26"
+  },
+  "dependencies": {
+    "3d-force-graph": "^1.73.3"
   }
 }

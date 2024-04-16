@@ -1,0 +1,17 @@
+.recharts-default-legend {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 2rem;
+}
+
+.recharts-legend-item {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 70vw;
+}
