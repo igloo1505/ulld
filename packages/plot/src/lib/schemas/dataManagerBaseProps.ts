@@ -7,20 +7,17 @@ const functionObject2dSchema = functionObjectSchema.extend({
 });
 
 const functionField2d = z
-    .union([
-        f2d,
-        f2d.array(),
-        functionObject2dSchema,
-        functionObject2dSchema.array(),
-    ])
-    .default([])
-    .transform((data) =>
-        functionFieldTransform<typeof data, z.output<typeof functionObject2dSchema>>(data, functionObject2dSchema),
-    );
+    .union([f2d, functionObject2dSchema])
+    .transform((data) => {
+        return functionFieldTransform<
+            typeof data,
+            z.output<typeof functionObject2dSchema>
+        >(data, functionObject2dSchema);
+    });
 
 const internalPropState = z
     .object({
-        f: functionField2d,
+        f: z.union([functionField2d, functionField2d.array()]).default([]),
         cube: z.boolean().default(false),
         xTicks: z.number().optional(),
         yTicks: z.number().optional(),
@@ -1195,7 +1192,10 @@ export const dataManagerBaseProps = z
                 },
             },
             xRange: a.xRange || a.range,
-            yRange: a.yRange || twoDimensionalPlotTypes.includes(a.type as any) ? undefined : a.range, // Should be undefined in 2d. Create a list of 2d types and validate against that to change the default.
+            yRange:
+                a.yRange || twoDimensionalPlotTypes.includes(a.type as any)
+                    ? undefined
+                    : a.range, // Should be undefined in 2d. Create a list of 2d types and validate against that to change the default.
             zRange: a.zRange || undefined,
         };
     });

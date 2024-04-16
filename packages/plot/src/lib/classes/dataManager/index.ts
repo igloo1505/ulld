@@ -1,5 +1,5 @@
 import { DataManager2dPropOutput } from "../../schemas/dataManagerBaseProps";
-
+import {PlotParams} from 'react-plotly.js';
 
 export class DataManager2d {
     props: DataManager2dPropOutput
@@ -20,9 +20,11 @@ export class DataManager2d {
         return d;
     }
     get2dScatterData(){
-        let data: number[] = [] 
+        // RESUME: Come back here and handle the data generation. Make sure to make everything as strictly typed as possible.
+        let data: PlotParams["data"][] = [] 
         for (const k of this.props.f){
-
+             
         }
+        return data
     }
 }

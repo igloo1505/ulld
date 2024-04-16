@@ -16,15 +16,14 @@ export const functionField3d = z
     .args(z.number().describe("x"), z.number().describe("y"))
     .returns(z.number().describe("z"));
 
-
-export const functionFieldTransform = <T extends unknown, J extends unknown>(a: T, parser: AnyZodObject) => {
-    let data = Array.isArray(a) ? a : [a]
-    return data.map((item) => {
-        if(typeof item === "object"){
-            return parser.parse(a) as J
-        }
-        return parser.parse({
-            f: a
-        }) as J
-    })
+export const functionFieldTransform = <T extends unknown, J extends unknown>(
+    a: T,
+    parser: AnyZodObject,
+) => {
+    if (typeof a === "object") {
+        return parser.parse(a) as J;
+    }
+    return parser.parse({
+        f: a,
+    }) as J;
 };
