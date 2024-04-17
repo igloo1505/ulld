@@ -24,8 +24,8 @@ export const autoMarginSchema = z.union([
 export const autoRangeSchema = z.union([
     z.boolean(),
     z.literal("reversed"),
-    z.literal("min reversed"),
-    z.literal("max reversed"),
-    z.literal("min"),
-    z.literal("max"),
+    // z.literal("min reversed"),
+    // z.literal("max reversed"),
+    // z.literal("min"),
+    // z.literal("max"),
 ]);

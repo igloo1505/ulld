@@ -51,3 +51,6 @@ export const plotTypeSchema = z.union([
 
 
 export type PlotType = z.input<typeof plotTypeSchema>
+
+
+export type EnabledPlotTypes = "scatter"

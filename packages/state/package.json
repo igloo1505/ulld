@@ -10,6 +10,7 @@
   "main": "./src/config.ts",
   "exports": {
     "./config": "./src/config.ts",
+    "./getUI": "./src/retrievers/getTheme.ts",
     "./types/statePassedToClient": "./src/types/statePassedToClient.ts",
     "./classes/QueryManager": "./src/classes/QueryManager.ts",
     "./classes/pdfManager": "./src/classes/pdfManager.ts",

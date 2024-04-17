@@ -1,7 +1,6 @@
 import {z} from 'zod'
 import { colorScaleSchema } from './colorSchema';
-import { fontSchema } from './fontSchema';
-import { exponentFormatSchema } from './generalPlotlySchemas';
+import { colorbarSchema } from './colorbarSchema';
 
 
 
@@ -10,7 +9,7 @@ export const _markerSchema = z.object({
     angleref: z.union([z.literal("previous"), z.literal("up")]).default("up"),
     autocolorscale: z
         .boolean()
-        .default(true)
+        .optional()
         .describe("Whether or not to use default color palette."),
     cauto: z
         .boolean()
@@ -24,43 +23,13 @@ export const _markerSchema = z.object({
         .string()
         .optional()
         .describe("The subplotid to attach the color axis to."),
-    colorbar: z
-        .object({
-            bgcolor: z.string().default("hsl(var(--card))"),
-            bordercolor: z.string().default("hsl(var(--border))"),
-            borderwidth: z.number().default(0),
-            title: z
-                .object({
-                    text: z.string().optional(),
-                    side: z
-                        .union([z.literal("right"), z.literal("top"), z.literal("bottom")])
-                        .default("top"),
-                    font: fontSchema.default({
-                        color: "hsl(var(--card-foreground))",
-                    }),
-                })
-                .default({}),
-            exponentformat: exponentFormatSchema.default("power"),
-            nticks: z.number().default(0),
-            orientation: z.union([z.literal("v"), z.literal("h")]).default("v"),
-            outlinecolor: z.string().default("hsl(var(--border))"),
-            outlinewidth: z.number().default(1),
-            seperatethousands: z.boolean().default(true),
-            thickness: z.number().default(30),
-            thicknessmode: z
-                .union([z.literal("fraction"), z.literal("pixels")])
-                .default("pixels"),
-            tickfont: fontSchema.default({
-                color: "hsl(var(--card-foreground))",
-            }),
-        })
-        .default({}),
+    colorbar: colorbarSchema.default({}),
     colorscale: colorScaleSchema.default("Rainbow"),
     colorscaleDark: colorScaleSchema.default("Electric"),
     width: z.number().optional(),
     sizemode: z
         .union([z.literal("diameter"), z.literal("area")])
-        .default("diameter"),
+        .optional(),
     sizeref: z.number().default(1),
     symbol: z
         .union([

@@ -1,9 +1,11 @@
-import {z} from 'zod'
-import { functionField2d } from './function';
+import { z } from "zod";
+import {
+    functionField2d,
+    functionObjectLine2dSchema,
+} from "./plotSpecific/line2d";
 
 export const internalPropState = z
     .object({
-        f: z.union([functionField2d, functionField2d.array()]).default([]).transform((a) => Array.isArray(a) ? a : [a] ),
         cube: z.boolean().default(false),
         xTicks: z.number().optional(),
         yTicks: z.number().optional(),
@@ -25,3 +27,4 @@ export const internalPropState = z
     .describe(
         "Data passed to plotly after being handled internally. Not part of Plotly's API directly.",
     );
+

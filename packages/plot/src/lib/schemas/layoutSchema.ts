@@ -2,14 +2,14 @@ import {z} from 'zod'
 import { colorScaleArray, colorScaleSchema } from './colorSchema';
 import { modeBarBtn, modeBarBtnRemove } from './modebarSchemas';
 import { fontSchema } from './fontSchema';
+import { xAxis, yAxis } from './axis';
+
 
 export const layout2dSchema = z.object({
     title: z
         .object({
             automargin: z.boolean().default(true),
-            font: fontSchema.default({
-                color: "hsl(var(--foreground))",
-            }),
+            font: fontSchema.default({}),
             pad: z
                 .object({
                     b: z.number().default(0),
@@ -38,25 +38,21 @@ export const layout2dSchema = z.object({
                 .default("auto"),
         })
         .default({}),
-    showlegend: z.boolean().optional(),
+    showlegend: z.boolean().default(true),
     legend: z
         .object({
-            bgcolor: z.string().default("hsl(var(--card))"),
-            bordercolor: z.string().default("hsl(var(--border))"),
+            bgcolor: z.string().optional(),
+            bordercolor: z.string().optional(),
             borderwidth: z.number().default(0),
             entrywidth: z.number().optional(),
             entrywidthmode: z
                 .union([z.literal("pixels"), z.literal("fraction")])
                 .default("pixels"),
-            font: fontSchema.default({
-                color: "hsl(var(--card-foreground))",
-            }),
+            font: fontSchema.optional(),
             groupclick: z
                 .union([z.literal("toggleitem"), z.literal("togglegroup")])
                 .default("togglegroup"),
-            grouptitlefont: fontSchema.default({
-                color: "hsl(var(--card-foreground))",
-            }),
+            grouptitlefont: fontSchema.optional(),
             itemclick: z
                 .union([
                     z.literal("toggle"),
@@ -155,7 +151,6 @@ export const layout2dSchema = z.object({
                     [1, "rgb(178,10,28)"],
                 ])
                 .describe("autocolorscale must be true for this to work."),
-
             sequential: colorScaleArray
                 .default([
                     [0, "rgb(220,220,220)"],
@@ -196,7 +191,7 @@ export const layout2dSchema = z.object({
         .object({
             activeColor: z.string().optional(),
             add: z.union([modeBarBtn, modeBarBtn.array()]).optional(),
-            bgcolor: z.string().optional(),
+            bgcolor: z.string().default("hsl(var(--popover))"),
             color: z.string().default("hsl(var(--foreground))"),
             orientation: z.union([z.literal("h"), z.literal("v")]).default("h"),
             remove: z.union([modeBarBtnRemove, modeBarBtnRemove.array()]).optional(),
@@ -248,5 +243,7 @@ export const layout2dSchema = z.object({
             }),
         })
         .default({}),
+        xaxis: xAxis.default({}),
+        yaxis: yAxis.default({}),
 });
 
