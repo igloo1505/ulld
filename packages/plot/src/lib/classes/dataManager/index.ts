@@ -8,8 +8,7 @@ import { PlotDataOutput } from "../../schemas/plotDataSchema";
 import { PlotFunctionObjects, PlotParamTypes } from "../../types";
 import { EnabledPlotTypes, PlotType } from "../../schemas/plotTypeSchema";
 import { PartialBy } from "@ulld/utilities/types/utilityTypes";
-import { getUI } from "@ulld/state/getUI";
-import { namedColorMap } from "../../schemas/colorMap";
+import {getColorMap} from "@ulld/tailwind/themeUtils"
 
 export class DataManager2d {
   props: PlotParamTypes;
@@ -29,11 +28,10 @@ export class DataManager2d {
     }
     return d;
   }
-  async applyTheme(data: PlotParamTypes, uiState?: Awaited<ReturnType<typeof getUI>>) {
-    const ui = uiState ? uiState : await getUI();
-    const textMap = namedColorMap[ui.darkMode ? "textDark" : "textLight"];
-    data.layout.font.color =
-      ui.theme in textMap ? textMap[ui.theme] : textMap.default;
+  async applyTheme(data: PlotParamTypes) {
+        const t = await getColorMap(this.props.ulldTheme)
+        let theme = this.props.darkMode ? t.dark : t.light
+        console.log("theme: ", theme)
   }
   applyColor(data: PlotFunctionObjects, color?: string) {
     if (!color) return data;

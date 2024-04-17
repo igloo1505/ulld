@@ -9,6 +9,8 @@
   ],
   "exports": {
     ".": "./src/tailwind.config.ts",
+    "./themeUtils": "./src/shad/lib/themeUtils.ts",
+    "./handleThemeCookies": "./src/shad/lib/handleThemeCookies.ts",
     "./tailwindConfig": "./src/tailwindConfig.ts",
     "./defaultFont": "./src/defaultFont/localDefaultFont.ts",
     "./aspect-ratio": "./src/shad/components/ui/aspect-ratio.tsx",
@@ -67,7 +69,19 @@
     "./themes/blue.scss": "./src/shad/defaultThemes/blue.scss",
     "./themes/zinc.scss": "./src/shad/defaultThemes/zinc.scss",
     "./themes/rose.scss": "./src/shad/defaultThemes/rose.scss",
-    "./themes/red.scss": "./src/shad/defaultThemes/red.scss"
+    "./themes/red.scss": "./src/shad/defaultThemes/red.scss",
+    "./colorMap/gray": "./src/shad/defaultThemes/colorMaps/gray.json",
+    "./colorMap/violet": "./src/shad/defaultThemes/colorMaps/violet.json",
+    "./colorMap/slate": "./src/shad/defaultThemes/colorMaps/slate.json",
+    "./colorMap/neutral": "./src/shad/defaultThemes/colorMaps/neutral.json",
+    "./colorMap/stone": "./src/shad/defaultThemes/colorMaps/stone.json",
+    "./colorMap/green": "./src/shad/defaultThemes/colorMaps/green.json",
+    "./colorMap/orange": "./src/shad/defaultThemes/colorMaps/orange.json",
+    "./colorMap/yellow": "./src/shad/defaultThemes/colorMaps/yellow.json",
+    "./colorMap/blue": "./src/shad/defaultThemes/colorMaps/blue.json",
+    "./colorMap/zinc": "./src/shad/defaultThemes/colorMaps/zinc.json",
+    "./colorMap/rose": "./src/shad/defaultThemes/colorMaps/rose.json",
+    "./colorMap/red": "./src/shad/defaultThemes/colorMaps/red.json"
   },
   "typesVersions": {
     ".": [

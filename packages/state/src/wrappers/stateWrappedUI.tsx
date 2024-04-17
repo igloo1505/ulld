@@ -9,6 +9,7 @@ import {getSettings} from "../actions/getSettings"
 import fs from 'fs'
 import path from 'path'
 import { ParsedAppConfig } from '@ulld/configschema/types';
+import {getThemeCookie} from "@ulld/tailwind/handleThemeCookies"
 /* import Navbar from '#/components/ui/navbar'; */
 /* import Observers from './observers'; */
 /* import PermanentSidebar from '#/components/ui/permanentSidebar'; */
@@ -33,6 +34,7 @@ export const StateWrappedUI = async ({children}: {children?: React.ReactNode}) =
     const settings = await getSettings()
     const darkMode = cookieJar.has("darkMode")
     const showModebar = cookieJar.has("showModebar")
+    const theme = getThemeCookie(cookieJar)
     const _config = path.join(process.cwd(), configPath)
     const configContent = await fs.promises.readFile(_config, {encoding: "utf-8"})
     if (!configContent) {

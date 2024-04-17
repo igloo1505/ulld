@@ -59,6 +59,7 @@
     "@ulld/baseConfigs": "workspace:*",
     "@ulld/utilities": "workspace:*",
     "@ulld/icons": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
     "dayjs": "^1.11.10",
     "glob-to-regexp": "^0.4.1",
     "next": "^14.1.2",

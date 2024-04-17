@@ -1,11 +1,16 @@
 import { z } from "zod";
-import {
-    functionField2d,
-    functionObjectLine2dSchema,
-} from "./plotSpecific/line2d";
+import { getColorMap, themeSchema } from "@ulld/tailwind/themeUtils";
 
 export const internalPropState = z
     .object({
+        ulldTheme: themeSchema.default("violet").transform(async (t) => {
+       let colorMap = await getColorMap(t)
+        return {
+            theme: t,
+            colorMap
+        }
+    }),
+        darkMode: z.boolean().default(true),
         cube: z.boolean().default(false),
         xTicks: z.number().optional(),
         yTicks: z.number().optional(),
@@ -26,5 +31,4 @@ export const internalPropState = z
     })
     .describe(
         "Data passed to plotly after being handled internally. Not part of Plotly's API directly.",
-    );
-
+    )

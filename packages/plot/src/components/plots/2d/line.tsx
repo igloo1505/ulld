@@ -636,8 +636,9 @@ const testParams = {
 }
 
 
-const LinePlot2d = (_props: DataManager2dLinePropInput) => {
-    const manager = new DataManager2d(dataManagerPropsLine2d.parse(_props));
+const LinePlot2d = async (_props: DataManager2dLinePropInput) => {
+    const props = await dataManagerPropsLine2d.parseAsync(_props)
+    const manager = new DataManager2d(props);
     const data = manager.getDataAs("scatter")
     return <div>
         <Plot 
