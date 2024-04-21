@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import "@ulld/tailwind/defaultStyles.scss"
+import "@ulld/tailwind/websiteStyles.scss"
 import "#/styles/globals.scss"
 import "#/styles/mdx.scss"
 import type { Metadata } from 'next'
@@ -74,11 +74,6 @@ const RootLayout = async (props: {
                     preferFs && "preferFs")}
                 id={`Ulld-body-root`}
             >
-                <StateWrappedUI
-                    settings={settings}
-                    darkMode={darkMode}
-                    config={config}
-                />
                 {props.children}
                 <Toaster />
                 {props.modal && props.modal}

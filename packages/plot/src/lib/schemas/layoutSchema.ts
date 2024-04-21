@@ -1,9 +1,20 @@
-import {z} from 'zod'
-import { colorScaleArray, colorScaleSchema } from './colorSchema';
-import { modeBarBtn, modeBarBtnRemove } from './modebarSchemas';
-import { fontSchema } from './fontSchema';
-import { xAxis, yAxis } from './axis';
+import { z } from "zod";
+import { colorScaleArray, colorScaleSchema } from "./colorSchema";
+import { modeBarBtn, modeBarBtnRemove } from "./modebarSchemas";
+import { fontSchema } from "./fontSchema";
+import { xAxis, yAxis } from "./axis";
 
+const dragModeSchema = z
+    .union([
+        z.literal(false),
+        z.literal("lasso"),
+        z.literal("pan"),
+        z.literal("select"),
+        z.literal("zoom"),
+        z.literal("orbit"),
+        z.literal("turntable"),
+    ])
+    .optional();
 
 export const layout2dSchema = z.object({
     title: z
@@ -82,8 +93,8 @@ export const layout2dSchema = z.object({
                             z.literal("top"),
                             z.literal("left"),
                             z.literal("top left"),
-                            z.literal("top center"),
-                            z.literal("top right"),
+                            // z.literal("top center"),
+                            // z.literal("top right"),
                         ])
                         .optional(),
                     text: z.string().optional(),
@@ -207,22 +218,7 @@ export const layout2dSchema = z.object({
             z.literal("y unified"),
         ])
         .default("closest"),
-    dragmode: z
-        .union([
-            z.literal("zoom"),
-            z.literal("pan"),
-            z.literal("select"),
-            z.literal("lasso"),
-            z.literal("drawclosedpath"),
-            z.literal("drawopenpath"),
-            z.literal("drawline"),
-            z.literal("drawrect"),
-            z.literal("drawcircle"),
-            z.literal("orbit"),
-            z.literal("turntable"),
-            z.literal(false),
-        ])
-        .default("zoom"),
+    dragmode: dragModeSchema.default("zoom"),
     activeselection: z
         .object({
             fillcolor: z.string().default("hsl(var(--primary))"),
@@ -234,16 +230,11 @@ export const layout2dSchema = z.object({
             align: z
                 .union([z.literal("left"), z.literal("right"), z.literal("auto")])
                 .default("auto"),
-            bgcolor: z
-                .union([colorScaleSchema, z.string()])
-                .default("hsl(var(--popover))"),
-            bordercolor: z.string().default("hsl(var(--border))"),
-            font: fontSchema.default({
-                color: "hsl(var(--popover-foreground))",
-            }),
+            bgcolor: z.string().optional(),
+            bordercolor: z.string().optional(),
+            font: fontSchema.optional(),
         })
         .default({}),
-        xaxis: xAxis.default({}),
-        yaxis: yAxis.default({}),
+    xaxis: xAxis.default({}),
+    yaxis: yAxis.default({}),
 });
-

@@ -9,8 +9,6 @@ interface ImmediateNoteContentContainerProps {
 }
 
 
-/* PRIORITY: Need to handle this mathjax issue much more thoroughly... this is half assed as shit. */
-/* RESUME: Need to handle this mathjax issue much more thoroughly... this is half assed as shit. */
 export const ImmediateNoteContentContainer = ({ children }: ImmediateNoteContentContainerProps) => {
     const id = `${noteContainerPrefix}${getRandomId(8)}`
     return (

@@ -58,6 +58,7 @@
     "./carousel": "./src/shad/components/ui/carousel.tsx",
     "./slider": "./src/shad/components/ui/slider.tsx",
     "./defaultStyles.scss": "./src/defaultStyles/defaultStyles.scss",
+    "./websiteStyles.scss": "./src/defaultStyles/websiteStyles.scss",
     "./themes/gray.scss": "./src/shad/defaultThemes/gray.scss",
     "./themes/violet.scss": "./src/shad/defaultThemes/violet.scss",
     "./themes/slate.scss": "./src/shad/defaultThemes/slate.scss",

@@ -24,18 +24,20 @@ const RootLayout = async (props: {
     modal: React.ReactNode
 }) => {
     const cookieJar = cookies()
-    /* const darkMode = cookieJar.has("darkMode") */
-    const darkMode = true
+    const darkMode = cookieJar.has("darkMode")
 
     /* let settings = settingSchema.parse(s) */
 
     const preferFs = cookieJar.has("preferFs")
+    const _theme = cookieJar.get("ulld-theme");
     let colorMode = darkMode ? "dark" : "light"
 
     let p = {
         "data-theme": colorMode,
         "data-color-mode": colorMode,
-    }
+        "data-ulld-theme": _theme?.value || "violet",
+        "data-js-focus-visible": "",
+    };
 
 
     /* TODO: Add .noTooltips class to html element according to settings. Create function to toggle class when toggling setting. */
@@ -44,7 +46,6 @@ const RootLayout = async (props: {
         <html
             lang="en"
             className={clsx("group/html js-focus-visible", darkMode && "dark", process.env.NODE_ENV === "development" && "debug-screens")}
-            data-js-focus-visible=""
             {...p}
         >
             <head>

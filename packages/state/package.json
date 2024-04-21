@@ -70,6 +70,7 @@
     "./actions/clientOnly/appendStyleSheet": "./src/actions/clientOnly/appendStyleSheet.ts",
     "./actions/clientOnly/markdownActions": "./src/actions/clientOnly/markdownActions.ts",
     "./actions/confirmation/confirmationModalConfig": "./src/actions/confirmation/confirmationModalConfig.ts",
+    "./actions/client/theming": "./src/actions/clientOnly/theming.ts",
     "./listeners/resize": "./src/listeners/resize.ts",
     "./listeners/keydown": "./src/listeners/keydown.ts",
     "./listeners/keyDown": "./src/listeners/keydown.ts",

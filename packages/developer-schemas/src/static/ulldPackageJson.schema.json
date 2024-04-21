@@ -1,0 +1,2772 @@
+{
+    "$ref": "#/definitions/ULLDPackageJson",
+    "definitions": {
+        "ULLDPackageJson": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "maxLength": 214
+                },
+                "version": {
+                    "type": "string",
+                    "default": "0.0.0"
+                },
+                "exports": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "files": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [
+                        "src"
+                    ]
+                },
+                "dependencies": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "packageManager": {
+                    "type": "string",
+                    "default": "pnpm@9.0.0-beta.1"
+                },
+                "devDependencies": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "peerDependencies": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "peerDependenciesMeta": {},
+                "optionalDependencies": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "bundleDependencies": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "type": {
+                    "type": "string"
+                },
+                "scripts": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "private": {
+                    "type": "boolean"
+                },
+                "os": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "cpu": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "workspaces": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "funding": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "individual",
+                                "patreon"
+                            ]
+                        },
+                        "url": {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "url"
+                    ],
+                    "additionalProperties": false
+                },
+                "main": {
+                    "type": "string"
+                },
+                "bin": {
+                    "type": "string"
+                },
+                "man": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    ]
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [
+                        "ulld-plugin"
+                    ]
+                },
+                "homepage": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "license": {
+                    "anyOf": [
+                        {
+                            "type": "string",
+                            "const": "0BSD"
+                        },
+                        {
+                            "type": "string",
+                            "const": "AAL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Abstyles"
+                        },
+                        {
+                            "type": "string",
+                            "const": "AdaCore-doc"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Adobe-2006"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Adobe-Display-PostScript"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Adobe-Glyph"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Adobe-Utopia"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ADSL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "AFL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "AFL-1.2"
+                        },
+                        {
+                            "type": "string",
+                            "const": "AFL-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "AFL-2.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "AFL-3.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Afmparse"
+                        },
+                        {
+                            "type": "string",
+                            "const": "AGPL-1.0-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "AGPL-1.0-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "AGPL-3.0-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "AGPL-3.0-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Aladdin"
+                        },
+                        {
+                            "type": "string",
+                            "const": "AMDPLPA"
+                        },
+                        {
+                            "type": "string",
+                            "const": "AML"
+                        },
+                        {
+                            "type": "string",
+                            "const": "AML-glslang"
+                        },
+                        {
+                            "type": "string",
+                            "const": "AMPAS"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ANTLR-PD"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ANTLR-PD-fallback"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Apache-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Apache-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Apache-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "APAFML"
+                        },
+                        {
+                            "type": "string",
+                            "const": "APL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "App-s2p"
+                        },
+                        {
+                            "type": "string",
+                            "const": "APSL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "APSL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "APSL-1.2"
+                        },
+                        {
+                            "type": "string",
+                            "const": "APSL-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Arphic-1999"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Artistic-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Artistic-1.0-cl8"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Artistic-1.0-Perl"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Artistic-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ASWF-Digital-Assets-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ASWF-Digital-Assets-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Baekmuk"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Bahyph"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Barr"
+                        },
+                        {
+                            "type": "string",
+                            "const": "bcrypt-Solar-Designer"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Beerware"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Bitstream-Charter"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Bitstream-Vera"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BitTorrent-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BitTorrent-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "blessing"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BlueOak-1.0.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Boehm-GC"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Borceux"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Brian-Gladman-2-Clause"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Brian-Gladman-3-Clause"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-1-Clause"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-2-Clause"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-2-Clause-Darwin"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-2-Clause-Patent"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-2-Clause-Views"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-3-Clause"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-3-Clause-acpica"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-3-Clause-Attribution"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-3-Clause-Clear"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-3-Clause-flex"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-3-Clause-HP"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-3-Clause-LBNL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-3-Clause-Modification"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-3-Clause-No-Military-License"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-3-Clause-No-Nuclear-License"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-3-Clause-No-Nuclear-License-2014"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-3-Clause-No-Nuclear-Warranty"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-3-Clause-Open-MPI"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-3-Clause-Sun"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-4-Clause"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-4-Clause-Shortened"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-4-Clause-UC"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-4.3RENO"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-4.3TAHOE"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-Advertising-Acknowledgement"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-Attribution-HPND-disclaimer"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-Inferno-Nettverk"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-Protection"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-Source-beginning-file"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-Source-Code"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-Systemics"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSD-Systemics-W3Works"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BSL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "BUSL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "bzip2-1.0.6"
+                        },
+                        {
+                            "type": "string",
+                            "const": "C-UDA-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CAL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CAL-1.0-Combined-Work-Exception"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Caldera"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Caldera-no-preamble"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CATOSL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-2.5"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-2.5-AU"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-3.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-3.0-AT"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-3.0-AU"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-3.0-DE"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-3.0-IGO"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-3.0-NL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-3.0-US"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-4.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-2.5"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-3.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-3.0-DE"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-4.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-ND-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-ND-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-ND-2.5"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-ND-3.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-ND-3.0-DE"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-ND-3.0-IGO"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-ND-4.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-SA-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-SA-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-SA-2.0-DE"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-SA-2.0-FR"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-SA-2.0-UK"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-SA-2.5"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-SA-3.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-SA-3.0-DE"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-SA-3.0-IGO"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-NC-SA-4.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-ND-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-ND-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-ND-2.5"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-ND-3.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-ND-3.0-DE"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-ND-4.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-SA-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-SA-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-SA-2.0-UK"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-SA-2.1-JP"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-SA-2.5"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-SA-3.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-SA-3.0-AT"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-SA-3.0-DE"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-SA-3.0-IGO"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-BY-SA-4.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC-PDDC"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CC0-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CDDL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CDDL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CDL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CDLA-Permissive-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CDLA-Permissive-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CDLA-Sharing-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CECILL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CECILL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CECILL-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CECILL-2.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CECILL-B"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CECILL-C"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CERN-OHL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CERN-OHL-1.2"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CERN-OHL-P-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CERN-OHL-S-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CERN-OHL-W-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CFITSIO"
+                        },
+                        {
+                            "type": "string",
+                            "const": "check-cvs"
+                        },
+                        {
+                            "type": "string",
+                            "const": "checkmk"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ClArtistic"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Clips"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CMU-Mach"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CMU-Mach-nodoc"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CNRI-Jython"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CNRI-Python"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CNRI-Python-GPL-Compatible"
+                        },
+                        {
+                            "type": "string",
+                            "const": "COIL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Community-Spec-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Condor-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "copyleft-next-0.3.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "copyleft-next-0.3.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Cornell-Lossless-JPEG"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CPAL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CPOL-1.02"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Cronyx"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Crossword"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CrystalStacker"
+                        },
+                        {
+                            "type": "string",
+                            "const": "CUA-OPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Cube"
+                        },
+                        {
+                            "type": "string",
+                            "const": "curl"
+                        },
+                        {
+                            "type": "string",
+                            "const": "D-FSL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "DEC-3-Clause"
+                        },
+                        {
+                            "type": "string",
+                            "const": "diffmark"
+                        },
+                        {
+                            "type": "string",
+                            "const": "DL-DE-BY-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "DL-DE-ZERO-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "DOC"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Dotseqn"
+                        },
+                        {
+                            "type": "string",
+                            "const": "DRL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "DRL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "DSDP"
+                        },
+                        {
+                            "type": "string",
+                            "const": "dtoa"
+                        },
+                        {
+                            "type": "string",
+                            "const": "dvipdfm"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ECL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ECL-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "EFL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "EFL-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "eGenix"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Elastic-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Entessa"
+                        },
+                        {
+                            "type": "string",
+                            "const": "EPICS"
+                        },
+                        {
+                            "type": "string",
+                            "const": "EPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "EPL-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ErlPL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "etalab-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "EUDatagrid"
+                        },
+                        {
+                            "type": "string",
+                            "const": "EUPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "EUPL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "EUPL-1.2"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Eurosym"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Fair"
+                        },
+                        {
+                            "type": "string",
+                            "const": "FBM"
+                        },
+                        {
+                            "type": "string",
+                            "const": "FDK-AAC"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Ferguson-Twofish"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Frameworx-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "FreeBSD-DOC"
+                        },
+                        {
+                            "type": "string",
+                            "const": "FreeImage"
+                        },
+                        {
+                            "type": "string",
+                            "const": "FSFAP"
+                        },
+                        {
+                            "type": "string",
+                            "const": "FSFAP-no-warranty-disclaimer"
+                        },
+                        {
+                            "type": "string",
+                            "const": "FSFUL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "FSFULLR"
+                        },
+                        {
+                            "type": "string",
+                            "const": "FSFULLRWD"
+                        },
+                        {
+                            "type": "string",
+                            "const": "FTL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Furuseth"
+                        },
+                        {
+                            "type": "string",
+                            "const": "fwlw"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GCR-docs"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GD"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.1-invariants-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.1-invariants-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.1-no-invariants-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.1-no-invariants-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.1-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.1-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.2-invariants-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.2-invariants-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.2-no-invariants-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.2-no-invariants-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.2-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.2-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.3-invariants-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.3-invariants-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.3-no-invariants-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.3-no-invariants-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.3-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GFDL-1.3-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Giftware"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GL2PS"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Glide"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Glulxe"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GLWTPL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "gnuplot"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GPL-1.0-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GPL-1.0-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GPL-2.0-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GPL-2.0-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GPL-3.0-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "GPL-3.0-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Graphics-Gems"
+                        },
+                        {
+                            "type": "string",
+                            "const": "gSOAP-1.3b"
+                        },
+                        {
+                            "type": "string",
+                            "const": "gtkbook"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HaskellReport"
+                        },
+                        {
+                            "type": "string",
+                            "const": "hdparm"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Hippocratic-2.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HP-1986"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HP-1989"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-DEC"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-doc"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-doc-sell"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-export-US"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-export-US-modify"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-Fenneberg-Livingston"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-INRIA-IMAG"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-Kevlin-Henney"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-Markus-Kuhn"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-MIT-disclaimer"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-Pbmplus"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-sell-MIT-disclaimer-xserver"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-sell-regexpr"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-sell-variant"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-sell-variant-MIT-disclaimer"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HPND-UC"
+                        },
+                        {
+                            "type": "string",
+                            "const": "HTMLTIDY"
+                        },
+                        {
+                            "type": "string",
+                            "const": "IBM-pibs"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ICU"
+                        },
+                        {
+                            "type": "string",
+                            "const": "IEC-Code-Components-EULA"
+                        },
+                        {
+                            "type": "string",
+                            "const": "IJG"
+                        },
+                        {
+                            "type": "string",
+                            "const": "IJG-short"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ImageMagick"
+                        },
+                        {
+                            "type": "string",
+                            "const": "iMatix"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Imlib2"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Info-ZIP"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Inner-Net-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Intel"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Intel-ACPI"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Interbase-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "IPA"
+                        },
+                        {
+                            "type": "string",
+                            "const": "IPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ISC"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ISC-Veillard"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Jam"
+                        },
+                        {
+                            "type": "string",
+                            "const": "JasPer-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "JPL-image"
+                        },
+                        {
+                            "type": "string",
+                            "const": "JPNIC"
+                        },
+                        {
+                            "type": "string",
+                            "const": "JSON"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Kastrup"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Kazlib"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Knuth-CTAN"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LAL-1.2"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LAL-1.3"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Latex2e"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Latex2e-translated-notice"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Leptonica"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LGPL-2.0-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LGPL-2.0-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LGPL-2.1-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LGPL-2.1-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LGPL-3.0-only"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LGPL-3.0-or-later"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LGPLLR"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Libpng"
+                        },
+                        {
+                            "type": "string",
+                            "const": "libpng-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "libselinux-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "libtiff"
+                        },
+                        {
+                            "type": "string",
+                            "const": "libutil-David-Nugent"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LiLiQ-P-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LiLiQ-R-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LiLiQ-Rplus-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Linux-man-pages-1-para"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Linux-man-pages-copyleft"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Linux-man-pages-copyleft-2-para"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Linux-man-pages-copyleft-var"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Linux-OpenIB"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LOOP"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LPD-document"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LPL-1.02"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LPPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LPPL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LPPL-1.2"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LPPL-1.3a"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LPPL-1.3c"
+                        },
+                        {
+                            "type": "string",
+                            "const": "lsof"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Lucida-Bitmap-Fonts"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LZMA-SDK-9.11-to-9.20"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LZMA-SDK-9.22"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Mackerras-3-Clause"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Mackerras-3-Clause-acknowledgment"
+                        },
+                        {
+                            "type": "string",
+                            "const": "magaz"
+                        },
+                        {
+                            "type": "string",
+                            "const": "mailprio"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MakeIndex"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Martin-Birgmeier"
+                        },
+                        {
+                            "type": "string",
+                            "const": "McPhee-slideshow"
+                        },
+                        {
+                            "type": "string",
+                            "const": "metamail"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Minpack"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MirOS"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MIT"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MIT-0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MIT-advertising"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MIT-CMU"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MIT-enna"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MIT-feh"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MIT-Festival"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MIT-Modern-Variant"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MIT-open-group"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MIT-testregex"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MIT-Wu"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MITNFA"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MMIXware"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Motosoto"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MPEG-SSG"
+                        },
+                        {
+                            "type": "string",
+                            "const": "mpi-permissive"
+                        },
+                        {
+                            "type": "string",
+                            "const": "mpich2"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MPL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MPL-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MPL-2.0-no-copyleft-exception"
+                        },
+                        {
+                            "type": "string",
+                            "const": "mplus"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MS-LPL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MS-PL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MS-RL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MTLL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MulanPSL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MulanPSL-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Multics"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Mup"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NAIST-2003"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NASA-1.3"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Naumen"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NBPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NCGL-UK-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NCSA"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Net-SNMP"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NetCDF"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Newsletr"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NGPL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NICTA-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NIST-PD"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NIST-PD-fallback"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NIST-Software"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NLOD-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NLOD-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NLPL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Nokia"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NOSL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Noweb"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NPL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NPOSL-3.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NRL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NTP"
+                        },
+                        {
+                            "type": "string",
+                            "const": "NTP-0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "O-UDA-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OCCT-PL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OCLC-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ODbL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ODC-By-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OFFIS"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OFL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OFL-1.0-no-RFN"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OFL-1.0-RFN"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OFL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OFL-1.1-no-RFN"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OFL-1.1-RFN"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OGC-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OGDL-Taiwan-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OGL-Canada-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OGL-UK-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OGL-UK-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OGL-UK-3.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OGTSL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-1.2"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-1.3"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-1.4"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-2.0.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-2.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-2.2"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-2.2.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-2.2.2"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-2.3"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-2.4"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-2.5"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-2.6"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-2.7"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLDAP-2.8"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OLFL-1.3"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OML"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OpenPBS-2.3"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OpenSSL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OpenSSL-standalone"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OpenVision"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OPL-UK-3.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OPUBL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OSET-PL-2.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OSL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OSL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OSL-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OSL-2.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "OSL-3.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "PADL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Parity-6.0.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Parity-7.0.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "PDDL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "PHP-3.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "PHP-3.01"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Pixar"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Plexus"
+                        },
+                        {
+                            "type": "string",
+                            "const": "pnmstitch"
+                        },
+                        {
+                            "type": "string",
+                            "const": "PolyForm-Noncommercial-1.0.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "PolyForm-Small-Business-1.0.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "PostgreSQL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "PSF-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "psfrag"
+                        },
+                        {
+                            "type": "string",
+                            "const": "psutils"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Python-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Python-2.0.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "python-ldap"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Qhull"
+                        },
+                        {
+                            "type": "string",
+                            "const": "QPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "QPL-1.0-INRIA-2004"
+                        },
+                        {
+                            "type": "string",
+                            "const": "radvd"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Rdisc"
+                        },
+                        {
+                            "type": "string",
+                            "const": "RHeCos-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "RPL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "RPL-1.5"
+                        },
+                        {
+                            "type": "string",
+                            "const": "RPSL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "RSA-MD"
+                        },
+                        {
+                            "type": "string",
+                            "const": "RSCPL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Ruby"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SAX-PD"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SAX-PD-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Saxpath"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SCEA"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SchemeReport"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Sendmail"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Sendmail-8.23"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SGI-B-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SGI-B-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SGI-B-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SGI-OpenGL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SGP4"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SHL-0.5"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SHL-0.51"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SimPL-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SISSL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SISSL-1.2"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Sleepycat"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SMLNJ"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SMPPL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SNIA"
+                        },
+                        {
+                            "type": "string",
+                            "const": "snprintf"
+                        },
+                        {
+                            "type": "string",
+                            "const": "softSurfer"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Soundex"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Spencer-86"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Spencer-94"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Spencer-99"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ssh-keyscan"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SSH-OpenSSH"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SSH-short"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SSLeay-standalone"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SSPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SugarCRM-1.1.3"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Sun-PPP"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SunPro"
+                        },
+                        {
+                            "type": "string",
+                            "const": "SWL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "swrule"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Symlinks"
+                        },
+                        {
+                            "type": "string",
+                            "const": "TAPR-OHL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "TCL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "TCP-wrappers"
+                        },
+                        {
+                            "type": "string",
+                            "const": "TermReadKey"
+                        },
+                        {
+                            "type": "string",
+                            "const": "TGPPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "TMate"
+                        },
+                        {
+                            "type": "string",
+                            "const": "TORQUE-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "TOSL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "TPDL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "TPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "TTWL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "TTYP0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "TU-Berlin-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "TU-Berlin-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "UCAR"
+                        },
+                        {
+                            "type": "string",
+                            "const": "UCL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ulem"
+                        },
+                        {
+                            "type": "string",
+                            "const": "UMich-Merit"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Unicode-3.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Unicode-DFS-2015"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Unicode-DFS-2016"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Unicode-TOU"
+                        },
+                        {
+                            "type": "string",
+                            "const": "UnixCrypt"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Unlicense"
+                        },
+                        {
+                            "type": "string",
+                            "const": "UPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "URT-RLE"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Vim"
+                        },
+                        {
+                            "type": "string",
+                            "const": "VOSTROM"
+                        },
+                        {
+                            "type": "string",
+                            "const": "VSL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "W3C"
+                        },
+                        {
+                            "type": "string",
+                            "const": "W3C-19980720"
+                        },
+                        {
+                            "type": "string",
+                            "const": "W3C-20150513"
+                        },
+                        {
+                            "type": "string",
+                            "const": "w3m"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Watcom-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Widget-Workshop"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Wsuipa"
+                        },
+                        {
+                            "type": "string",
+                            "const": "WTFPL"
+                        },
+                        {
+                            "type": "string",
+                            "const": "X11"
+                        },
+                        {
+                            "type": "string",
+                            "const": "X11-distribute-modifications-variant"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Xdebug-1.03"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Xerox"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Xfig"
+                        },
+                        {
+                            "type": "string",
+                            "const": "XFree86-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "xinetd"
+                        },
+                        {
+                            "type": "string",
+                            "const": "xkeyboard-config-Zinoviev"
+                        },
+                        {
+                            "type": "string",
+                            "const": "xlock"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Xnet"
+                        },
+                        {
+                            "type": "string",
+                            "const": "xpp"
+                        },
+                        {
+                            "type": "string",
+                            "const": "XSkat"
+                        },
+                        {
+                            "type": "string",
+                            "const": "YPL-1.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "YPL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Zed"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Zeeff"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Zend-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Zimbra-1.3"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Zimbra-1.4"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Zlib"
+                        },
+                        {
+                            "type": "string",
+                            "const": "zlib-acknowledgement"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ZPL-1.1"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ZPL-2.0"
+                        },
+                        {
+                            "type": "string",
+                            "const": "ZPL-2.1"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "default": "MIT"
+                },
+                "people": {
+                    "anyOf": [
+                        {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "format": "email"
+                                },
+                                "url": {
+                                    "type": "string",
+                                    "format": "uri"
+                                }
+                            },
+                            "required": [
+                                "name"
+                            ],
+                            "additionalProperties": false
+                        },
+                        {
+                            "type": "object",
+                            "properties": {
+                                "author": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "author"
+                            ],
+                            "additionalProperties": false
+                        }
+                    ]
+                },
+                "description": {
+                    "type": "string"
+                },
+                "ulld": {
+                    "type": "object",
+                    "properties": {
+                        "slots": {
+                            "type": "object",
+                            "properties": {
+                                "navigation": {
+                                    "type": "string",
+                                    "default": "@ulld/navigation"
+                                },
+                                "plot": {
+                                    "type": "string",
+                                    "default": "@ulld/plot"
+                                },
+                                "bibliography": {
+                                    "type": "string",
+                                    "default": "@ulld/bib-manager"
+                                },
+                                "calendar": {
+                                    "type": "string",
+                                    "default": "@ulld/calendar"
+                                },
+                                "commandPalette": {
+                                    "type": "string",
+                                    "default": "@ulld/command-palette"
+                                },
+                                "editor": {
+                                    "type": "string",
+                                    "default": "@ulld/editor"
+                                },
+                                "math": {
+                                    "type": "string",
+                                    "default": "@ulld/equations"
+                                },
+                                "form": {
+                                    "type": "string",
+                                    "default": "@ulld/full-form"
+                                },
+                                "icons": {
+                                    "type": "string",
+                                    "default": "@ulld/icons"
+                                },
+                                "notebook": {
+                                    "type": "string",
+                                    "default": "@ulld/notebook"
+                                },
+                                "kanban": {
+                                    "type": "string",
+                                    "default": "@ulld/kanban"
+                                },
+                                "dashboard": {
+                                    "type": "string",
+                                    "default": "@ulld/landing-layouts"
+                                },
+                                "logger": {
+                                    "type": "string",
+                                    "default": "@ulld/logger"
+                                },
+                                "journal": {
+                                    "type": "string",
+                                    "default": "@ulld/journal"
+                                },
+                                "noteNetwork": {
+                                    "type": "string",
+                                    "default": "@ulld/note-network"
+                                },
+                                "pdf": {
+                                    "type": "string",
+                                    "default": "@ulld/pdf"
+                                },
+                                "snippets": {
+                                    "type": "string",
+                                    "default": "@ulld/snippets"
+                                },
+                                "taskManager": {
+                                    "type": "string",
+                                    "default": "@ulld/task-manager"
+                                },
+                                "whiteboard": {
+                                    "type": "string",
+                                    "default": "@ulld/whiteboard"
+                                },
+                                "components": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    },
+                                    "default": {}
+                                },
+                                "parsers": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    },
+                                    "default": {}
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": [
+                        "slots"
+                    ],
+                    "additionalProperties": false
+                },
+                "ulld-plugin": {
+                    "type": "object",
+                    "properties": {
+                        "$schema": {
+                            "type": "string"
+                        },
+                        "paths": {
+                            "type": "object",
+                            "properties": {
+                                "routers": {
+                                    "type": "string"
+                                },
+                                "pluginManager": {
+                                    "type": "string",
+                                    "default": "src/lib/pluginManager.ts"
+                                },
+                                "styles": {
+                                    "type": "string"
+                                },
+                                "app": {
+                                    "type": "string",
+                                    "default": "src/ulld_app"
+                                },
+                                "public": {
+                                    "type": "string",
+                                    "default": "src/ulld_public"
+                                },
+                                "globalStateComponents": {
+                                    "type": "string",
+                                    "default": "src/globalStateComponents.tsx"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "default": {}
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "required": [
+                "name",
+                "dependencies",
+                "ulld-plugin"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+}

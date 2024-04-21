@@ -1,17 +1,34 @@
-import Mars from "#/components/pageSpecific/landing/planets/main";
+import NoiseyBlob from "#/components/three/blob/main";
 import React from "react";
 
-interface HomePageProps { }
+interface HomePageProps {}
 
 const HomePage = (props: HomePageProps) => {
-    return (
-        <div className={"flex flex-col justfiy-center items-center gap-6 m-6"}>
-            <div className={"w-full h-full min-h-[calc(100vh-64px)] grid grid-cols-2 place-items-center"}>
-                <h1 className={"text-4xl"}>ULLD</h1>
-                <Mars />
-            </div>
+  return (
+    <>
+      <div
+        className={"w-full h-full min-h-screen overflow-hidden text-foreground"}
+      >
+        <div
+          className={
+            "lg:w-[40vw] h-full min-h-screen flex flex-col justify-center items-center z-10 pl-8 py-8"
+          }
+        >
+          <h1
+            className={
+              "text-8xl text-sky-50 font-semibold flex flex-col justify-center items-start tracking-wide"
+            }
+          >
+            <span>Uh</span>
+            <span>Little</span>
+            <span>Less</span>
+            <span>Dum</span>
+          </h1>
         </div>
-    );
+        <NoiseyBlob />
+      </div>
+    </>
+  );
 };
 
 HomePage.displayName = "HomePage";

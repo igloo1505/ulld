@@ -10,7 +10,7 @@ export abstract class ULLDPluginConfig {
        * @remarks
        * The path at which to embed your plugin's trpc router, if your plugin does supply one. Review the docs regarding supplying nested trpc routers to make sure that you include the proper exports and pakage.json properties so that your router can be located during the build process.
        */
-    routerPath?: string
+    static routerPath?: string = undefined
     /**
        * Embeddable Components
        *
@@ -18,8 +18,12 @@ export abstract class ULLDPluginConfig {
        * The components your plugin supplies that can be directly embedded into the user's mdx content. These must be classes derived from the ULLDEmbeddableComponentConfig abstract class. See that classes documentation for more details.
        *
        */
-    embeddables: ULLDEmbeddableComponentConfig[] = []
-    constructor(){}
+    static embeddables: ULLDEmbeddableComponentConfig[] = []
+    private getTailwindConfig(): Promise<Config> {
+        // @ts-ignore
+        const content = import("#/tailwind.config.ts").then((a) => a.default as Config)
+        return content
+    }
     /**
        * Will run only on the client.
        *
@@ -36,7 +40,7 @@ export abstract class ULLDPluginConfig {
        *
        * @label SETINITIALCLIENTSTATE
        */
-    abstract setInitialClientState(): void;
+    setInitialClientState?(): void;
 
     /**
        * Apply Modifications to Next.js config
@@ -50,9 +54,7 @@ export abstract class ULLDPluginConfig {
        * {@link https://nextjs.org/docs/app/api-reference/next-config-js}
        *
        */
-    applyNextConfigModifications(cfg: NextConfig): NextConfig {
-        return cfg
-    }
+    applyNextConfigModifications?(cfg: NextConfig): NextConfig
 
     /**
        * Parse mdx content
@@ -78,14 +80,7 @@ export abstract class ULLDPluginConfig {
        * {@label SOME_LABEL_TO_REFERENCE_WITH_LINK}
        */
 
-    parseRaw(content: string): string | Promise<string> {
-        return content
-    }
-    private getTailwindConfig(): Promise<Config> {
-        // @ts-ignore
-        const content = import("#/tailwind.config.ts").then((a) => a.default as Config)
-        return content
-    }
+    parseRaw?(content: string): string | Promise<string>
 
     /**
        * onSync
@@ -100,7 +95,7 @@ export abstract class ULLDPluginConfig {
        *
        */
 
-    abstract onSync(): void;
+    onSync?(): void;
 
     /**
        * onBackup
@@ -128,7 +123,7 @@ export abstract class ULLDPluginConfig {
        * }
        * ```
        */
-    abstract onBackup(): Promise<object>;
+    onBackup?(): Promise<object> | object;
 
     /**
        * fromBackup
@@ -162,6 +157,9 @@ export abstract class ULLDPluginConfig {
        * }
        * ```
        */
-    abstract fromBackup(data: object): void;
-
+    fromBackup?(data: object): void;
 }
+
+
+
+export default ULLDPluginConfig

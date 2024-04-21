@@ -170,11 +170,12 @@
     "@ulld/config": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/database": "workspace:*",
+    "@ulld/developer": "workspace:*",
     "@ulld/logger": "workspace:*",
     "@ulld/parsers": "workspace:*",
     "@ulld/state": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
     "@ulld/utilities": "workspace:*",
-    "@ulld/developer": "workspace:*",
     "bibtex": "^0.9.0",
     "citation-js": "^0.7.8",
     "deepmerge": "^4.3.1",
@@ -248,6 +249,7 @@
   "packageManager": "pnpm@9.0.0-beta.1",
   "dependencies": {
     "@jest/globals": "^29.7.0",
-    "@types/jest": "^29.5.11"
+    "@types/jest": "^29.5.11",
+    "trpc-openapi": "^1.2.0"
   }
 }

@@ -1,0 +1,1580 @@
+{
+    "$ref": "#/definitions/ULLDConfig",
+    "definitions": {
+        "ULLDConfig": {
+            "type": "object",
+            "properties": {
+                "fsRoot": {
+                    "type": "string",
+                    "description": "The path to the root of the folder which holds your notes."
+                },
+                "alwaysPreferFs": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Always read directly from the file system, except in cases where use of a database is required. This will negatively impact performance and portability, but might be necessary for specific use cases."
+                },
+                "ignoreFilepaths": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {},
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "original": {
+                                        "type": "string"
+                                    },
+                                    "regex": {}
+                                },
+                                "required": [
+                                    "original",
+                                    "regex"
+                                ],
+                                "additionalProperties": false
+                            }
+                        ]
+                    },
+                    "description": "File paths within the root directory which should be completely ignored by ULLD.",
+                    "default": []
+                },
+                "tempDir": {
+                    "type": "string",
+                    "default": "__temp__",
+                    "description": "fsRoot relative path to the temporary directory. In almost all use cases this can be left to it's default value."
+                },
+                "generatedDir": {
+                    "type": "string",
+                    "default": "/generated",
+                    "description": "fsRoot relative path to the directory for automatically generated content. In almost all use cases this can be left to it's default value."
+                },
+                "ignorePreferFsExtensions": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {}
+                        ],
+                        "description": "An array of either glob strings or RegExp's with which to test file paths. Those evaluating to true will always be rendered from the database, regardless of other global settings."
+                    },
+                    "description": "An array of either glob strings or RegExp's with which to test file paths. Those evaluating to true will always be rendered from the database, regardless of other global settings.",
+                    "default": []
+                },
+                "fileTypePriority": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "anyOf": [
+                                    {
+                                        "type": "string",
+                                        "enum": [
+                                            ".mdx",
+                                            ".md"
+                                        ]
+                                    },
+                                    {
+                                        "type": "string",
+                                        "const": ".ipynb"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "string",
+                                "enum": [
+                                    ".csv",
+                                    ".tsv",
+                                    ".excel",
+                                    ".numpy",
+                                    ".html",
+                                    ".pickle",
+                                    ".db",
+                                    ".sql",
+                                    ".pdf",
+                                    ".json",
+                                    ".tex",
+                                    ".hdf5"
+                                ]
+                            }
+                        ]
+                    },
+                    "description": "An ordered list of different parsable file types. This is only required when a file name exists with multiple parsable file extensions in the same directory. In most cases the default is adequate.",
+                    "default": [
+                        ".mdx",
+                        ".md",
+                        ".ipynb",
+                        ".json",
+                        ".csv",
+                        ".tsv",
+                        ".excel",
+                        ".tex",
+                        ".db",
+                        ".html",
+                        ".pdf"
+                    ]
+                },
+                "noteTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "A unique key to be used internally to deal with this doctype."
+                            },
+                            "docType": {
+                                "type": "string",
+                                "description": "A unique key which describes the nature of this document type: 'MathNote', 'Journal', 'References', etc..."
+                            },
+                            "filePathPattern": {
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {}
+                                ],
+                                "description": "The glob style string with which to test this document type."
+                            },
+                            "matchWeight": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 100,
+                                "default": 50,
+                                "description": "An extra weight between 0 and 100 to apply to matches. This can be very important when the location of one document type exists as a child of another, in which case an increased weight should be applied to the child document type. Default: 50"
+                            },
+                            "fs": {
+                                "type": "string",
+                                "description": "The path to the root of the directory which holds this document type. This path must be both relative to the appConfig.fsRoot folder and a child of it. For example, a root directory at '/Users/steve/Desktop/notes' might have folders within it of /Users/steve/Desktop/notes/math and /Users/steve/Desktop/notes/physics. These appConfig.noteTypes[0].fs should be '/math' and the latter should be '/physics'."
+                            },
+                            "url": {
+                                "type": "string",
+                                "description": "The url at which this note should be displayed."
+                            },
+                            "urlQuery": {
+                                "type": "object",
+                                "additionalProperties": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        {
+                                            "type": "number"
+                                        },
+                                        {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "number"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "description": "Url search paramters to be appended to generated buttons and links for this doc type in some cases. Useful for things like populating an initial list or opening with certain default override-able settings.",
+                                "default": {}
+                            },
+                            "keywords": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "default": [],
+                                "description": "Keywords to help with search results and command sorting related to this document type."
+                            },
+                            "label": {
+                                "type": "string",
+                                "description": "The label to be used for this document type where automatically generated links, commands and buttons are referencing it."
+                            },
+                            "topicLabel": {
+                                "type": "string",
+                                "description": "Replace references to the 'topic' tag with this label. This is useful for things like managing freelance work, where 'topics' might better be described as 'Jobs' or 'Clients'."
+                            },
+                            "subjectLabel": {
+                                "type": "string",
+                                "description": "Replace references to the 'subject' tag with this label. This is useful for things like managing freelance work, where 'subjects' might better be described as 'Jobs' or 'Clients'."
+                            },
+                            "autoTag": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "default": [],
+                                "description": "Automatically append these tags to all notes of this document type. This can also be done interactively through the app's UI after it is built."
+                            },
+                            "autoTopic": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "default": [],
+                                "description": "Automatically append these topics to all notes of this document type. This can also be done interactively through the app's UI after it is built."
+                            },
+                            "autoSubject": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "default": [],
+                                "description": "Automatically append these subjects to all notes of this document type. This can also be done interactively through the app's UI after it is built."
+                            },
+                            "UI": {
+                                "type": "object",
+                                "properties": {
+                                    "styles": {
+                                        "type": "object",
+                                        "properties": {
+                                            "dark": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "bg": {
+                                                        "type": "string",
+                                                        "description": "Css classes to be appended to UI specific to this doc type. Tailwind classes will work."
+                                                    },
+                                                    "fg": {
+                                                        "type": "string",
+                                                        "description": "Css classes to be appended to UI specific to this doc type. Tailwind classes will work."
+                                                    }
+                                                },
+                                                "additionalProperties": false,
+                                                "default": {}
+                                            },
+                                            "light": {
+                                                "$ref": "#/definitions/ULLDConfig/properties/noteTypes/items/properties/UI/properties/styles/properties/dark",
+                                                "default": {}
+                                            },
+                                            "combined_classes": {
+                                                "type": "string",
+                                                "description": "Css classes to be applied to elements related to this specific document type."
+                                            }
+                                        },
+                                        "additionalProperties": false,
+                                        "default": {}
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "default": {}
+                            },
+                            "icon": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "docType",
+                            "fs",
+                            "label"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "minItems": 1,
+                    "description": "This is the main location to describe the structure of your notes. Break up your note directory into as many categories as you like, but this app is designed to allow for increasingly refined searching and filtering. Categories of 'math', 'physics' and 'chemistry' would likely fit most users better than 'calc1', 'calc2', 'linearAlgebra', etc. For use cases such as those, please look at the 'autoTag', 'autoSubject', and 'autoTopic' feature."
+                },
+                "bibPath": {
+                    "description": "The root relative path to the .bib file to be integrated within your app."
+                },
+                "cslPath": {
+                    "description": "The root relative path to the .csl file to be used for styling citations. An incredibly robust repo of different csl styles can be found at https://github.com/citation-style-language/styles"
+                },
+                "dateHandling": {
+                    "type": "object",
+                    "properties": {
+                        "enableAdvancedFormat": {
+                            "type": "boolean",
+                            "default": true,
+                            "description": "Whether or not to enable format strings that follow the syntax described by dayjs's advancedFormat plugin."
+                        },
+                        "format": {
+                            "anyOf": [
+                                {
+                                    "type": "string",
+                                    "description": "The string to pass to "
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "short": {
+                                            "type": "string",
+                                            "default": "MM/D/YYYY",
+                                            "description": "The format string passed to dayjs to format dates for short or small display fields. Formatting using the advancedFormat plugin is enabled by default. Please see the documentation of dayjs for more information about the date formatting syntax, both with and without the advanced format plugin."
+                                        },
+                                        "long": {
+                                            "type": "string",
+                                            "default": "MMM Do, YYYY",
+                                            "description": "The format string passed to dayjs to format dates for display fields where size is less of a concern. Formatting using the advancedFormat plugin is enabled by default. Please see the documentation of dayjs for more information about the date formatting syntax, both with and without the advanced format plugin."
+                                        },
+                                        "withTime": {
+                                            "type": "string",
+                                            "default": "MM/DD/YY [at] HH:mm a",
+                                            "description": "The format string passed to dayjs to format dates for fields where the time is relevant. Formatting using the advancedFormat plugin is enabled by default. Please see the documentation of dayjs for more information about the date formatting syntax, both with and without the advanced format plugin."
+                                        },
+                                        "timeOnly": {
+                                            "type": "string",
+                                            "default": "HH:mm a",
+                                            "description": "The format string passed to dayjs to format dates for fields where the time is relevant. Formatting using the advancedFormat plugin is enabled by default. Please see the documentation of dayjs for more information about the date formatting syntax, both with and without the advanced format plugin."
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            ],
+                            "default": {
+                                "short": "MM/DD/YYYY",
+                                "long": "MMM Do, YYYY",
+                                "withTime": "MM/DD/YY [at] HH:mm a",
+                                "timeOnly": "HH:mm a"
+                            }
+                        },
+                        "defaultTimeDisplayType": {
+                            "anyOf": [
+                                {
+                                    "type": "string",
+                                    "const": "analog",
+                                    "description": "Similar to a digital clock."
+                                },
+                                {
+                                    "type": "string",
+                                    "const": "summarized",
+                                    "description": "A short but more natural description of time. This requires the dateParseFormat.enableAdvancedFormat option."
+                                },
+                                {
+                                    "type": "string",
+                                    "const": "descriptive",
+                                    "description": "Time with relative times. ie: '2 days ago', 'tomorrow', etc. This requires the dateParseFormat.enableAdvancedFormat option. Default: summarized."
+                                }
+                            ],
+                            "default": "summarized"
+                        },
+                        "defaultTimeZone": {
+                            "type": "string",
+                            "description": "The time to be used to override the value found locally. In most cases this should be left empty to allow the timezone to be derived naturally, but in cases of some mangaged devices this may not be accurate. To see the timezone that your browser would provide, open the developer console and type 'Intl.DateTimeFormat().resolvedOptions().timeZone'. If that property does not match what is expected, set this value accordingly."
+                        }
+                    },
+                    "additionalProperties": false,
+                    "default": {
+                        "enableAdvancedFormat": true,
+                        "format": {
+                            "short": "MM/DD/YYYY",
+                            "long": "MMM Do, YYYY",
+                            "withTime": "MM/DD/YY [at] HH:mm a",
+                            "timeOnly": "HH:mm a"
+                        },
+                        "defaultTimeDisplayType": "analog"
+                    }
+                },
+                "autoTag": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "description": "The glob pattern to test paths against."
+                            },
+                            "tag": {
+                                "type": "string",
+                                "maxLength": 15
+                            }
+                        },
+                        "required": [
+                            "path",
+                            "tag"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "default": []
+                },
+                "autoTopic": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "description": "The glob pattern to test paths against."
+                            },
+                            "topic": {
+                                "type": "string",
+                                "maxLength": 50
+                            }
+                        },
+                        "required": [
+                            "path",
+                            "topic"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "default": []
+                },
+                "autoSubject": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "description": "The glob pattern to test paths against."
+                            },
+                            "subject": {
+                                "type": "string",
+                                "maxLength": 50
+                            }
+                        },
+                        "required": [
+                            "path",
+                            "subject"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "default": []
+                },
+                "linkAliases": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "description": "A map of key value pairs of commonly referenced urls.",
+                    "default": {}
+                },
+                "features": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "type": "object",
+                            "properties": {
+                                "commandPalette": {
+                                    "type": "boolean",
+                                    "default": true,
+                                    "description": "Whether or not app should include the command palette feature. This is only made available for the rare instance of breaking bugs within the command palette."
+                                },
+                                "tikz": {
+                                    "type": "boolean",
+                                    "default": true,
+                                    "description": "Whether or not to build with support for the tikz component. To allow drawing diagrams with the tikz latex package's syntax."
+                                }
+                            },
+                            "additionalProperties": false,
+                            "default": {
+                                "commandPalette": true,
+                                "tikz": true
+                            }
+                        },
+                        "pages": {
+                            "type": "object",
+                            "properties": {
+                                "equations": {
+                                    "type": "boolean",
+                                    "default": true,
+                                    "description": "Whether or not to generate an 'equations' page to input, store, reference and search equations."
+                                },
+                                "snippets": {
+                                    "type": "boolean",
+                                    "default": true,
+                                    "description": "Whether or not to generate a 'snippets' page to input, store, reference and search equations."
+                                },
+                                "calendar": {
+                                    "type": "boolean",
+                                    "default": true,
+                                    "description": "Whether or not to build a calendar page to integrate Google calendar within ULLD."
+                                },
+                                "bibliography": {
+                                    "type": "boolean",
+                                    "default": true,
+                                    "description": "Whether or not to build a bibliography page to allow the searching, sorting and referencing files and citations related to the apps .bib content."
+                                },
+                                "taskManager": {
+                                    "type": "boolean",
+                                    "default": true,
+                                    "description": "Whether or not to build a 'todo' page to integrate a task manager within the app."
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": [
+                        "pages"
+                    ],
+                    "additionalProperties": false
+                },
+                "code": {
+                    "type": "object",
+                    "properties": {
+                        "theme": {
+                            "type": "object",
+                            "properties": {
+                                "dark": {
+                                    "type": "string",
+                                    "enum": [
+                                        "andromeeda",
+                                        "aurora-x",
+                                        "ayu-dark",
+                                        "catppuccin-frappe",
+                                        "catppuccin-latte",
+                                        "catppuccin-macchiato",
+                                        "catppuccin-mocha",
+                                        "dark-plus",
+                                        "dracula",
+                                        "dracula-soft",
+                                        "github-dark",
+                                        "github-dark-dimmed",
+                                        "github-light",
+                                        "light-plus",
+                                        "material-theme",
+                                        "material-theme-darker",
+                                        "material-theme-lighter",
+                                        "material-theme-ocean",
+                                        "material-theme-palenight",
+                                        "min-dark",
+                                        "min-light",
+                                        "monokai",
+                                        "night-owl",
+                                        "nord",
+                                        "one-dark-pro",
+                                        "poimandres",
+                                        "red",
+                                        "rose-pine",
+                                        "rose-pine-dawn",
+                                        "rose-pine-moon",
+                                        "slack-dark",
+                                        "slack-ochin",
+                                        "solarized-dark",
+                                        "solarized-light",
+                                        "synthwave-84",
+                                        "tokyo-night",
+                                        "vesper",
+                                        "vitesse-black",
+                                        "vitesse-dark",
+                                        "vitesse-light"
+                                    ],
+                                    "default": "dracula",
+                                    "description": "Syntax highlighting theme to be used when in dark mode. Can be overriden with the ?shikiHlDark=dracula search param."
+                                },
+                                "light": {
+                                    "$ref": "#/definitions/ULLDConfig/properties/code/properties/theme/properties/dark",
+                                    "default": "material-theme-lighter",
+                                    "description": "Syntax highlighting theme to be used when in light mode. Can be overriden with the ?shikiHlLight=nord search param."
+                                }
+                            },
+                            "additionalProperties": false,
+                            "default": {
+                                "dark": "dracula",
+                                "light": "material-theme-lighter"
+                            }
+                        },
+                        "editor": {
+                            "type": "object",
+                            "properties": {
+                                "defaultLangauge": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "defaultLangauge"
+                            ],
+                            "additionalProperties": false
+                        }
+                    },
+                    "additionalProperties": false,
+                    "default": {}
+                },
+                "math": {
+                    "type": "object",
+                    "properties": {
+                        "latexPackages": {
+                            "anyOf": [
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "description": "Latex packages to be loaded internally. Packages must be supported and available through MathJax."
+                                },
+                                {
+                                    "type": "string",
+                                    "const": "all"
+                                }
+                            ],
+                            "default": "all"
+                        },
+                        "latexFontUrl": {
+                            "type": "string",
+                            "description": "URL of the latex font to be used. This should be left to it's default value unless an additional collection of .woff files are included in the build.additionalPublicResources field."
+                        }
+                    },
+                    "additionalProperties": false,
+                    "default": {}
+                },
+                "plotting": {
+                    "type": "object",
+                    "properties": {
+                        "plotColorList": {
+                            "anyOf": [
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "description": "An array of colors to cycle through for multiple plot paths."
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "dark": {
+                                            "$ref": "#/definitions/ULLDConfig/properties/plotting/properties/plotColorList/anyOf/0"
+                                        },
+                                        "light": {
+                                            "$ref": "#/definitions/ULLDConfig/properties/plotting/properties/plotColorList/anyOf/0"
+                                        }
+                                    },
+                                    "required": [
+                                        "dark",
+                                        "light"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            ],
+                            "default": [
+                                "#e91e62",
+                                "#9c27b0",
+                                "#673ab6",
+                                "#3f50b5",
+                                "#f44336",
+                                "#4caf4f",
+                                "#00a8f4",
+                                "#ff5721",
+                                "#ffeb3a",
+                                "#00bcd4",
+                                "#cddc39"
+                            ]
+                        },
+                        "plotColorCycleMethod": {
+                            "type": "string",
+                            "enum": [
+                                "inOrder",
+                                "random"
+                            ],
+                            "default": "inOrder"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "default": {}
+                },
+                "navigation": {
+                    "type": "object",
+                    "properties": {
+                        "navbarBreakpoint": {
+                            "type": "object",
+                            "properties": {
+                                "full": {
+                                    "type": "number",
+                                    "default": 1024,
+                                    "description": "Pixel width at which the navbar will display all of it's contents."
+                                },
+                                "minimal": {
+                                    "type": "number",
+                                    "default": 640,
+                                    "description": "Pixel width at which the navbar will display a minimal bit of content to render properly on more narrow screens. All pixel widths below this value will render a navbar with only required content. With many layouts, this means that pixel widths below this value will render only a search bar."
+                                }
+                            },
+                            "additionalProperties": false,
+                            "default": {
+                                "full": 1024,
+                                "minimal": 640
+                            }
+                        },
+                        "maxResultLength": {
+                            "type": "object",
+                            "properties": {
+                                "categories": {
+                                    "type": "number",
+                                    "default": 12
+                                },
+                                "equations": {
+                                    "type": "number",
+                                    "default": 10
+                                },
+                                "snippets": {
+                                    "type": "number",
+                                    "default": 10
+                                },
+                                "searchAll": {
+                                    "type": "number",
+                                    "default": 12
+                                }
+                            },
+                            "additionalProperties": false,
+                            "description": "The default length of search results to be retrieved for each search result type. Default values will likely work well for the default layout, but as more layouts become available this setting may be adjusted to fit different search result layouts.",
+                            "default": {
+                                "categories": 12,
+                                "equations": 10,
+                                "snippets": 10,
+                                "searchAll": 12
+                            }
+                        },
+                        "navbarLinks": {
+                            "type": "array",
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "type": "string",
+                                        "description": "A document type id"
+                                    },
+                                    {
+                                        "type": "object",
+                                        "properties": {
+                                            "label": {
+                                                "type": "string"
+                                            },
+                                            "icon": {
+                                                "$ref": "#/definitions/ULLDConfig/properties/noteTypes/items/properties/icon"
+                                            },
+                                            "href": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "label"
+                                        ],
+                                        "additionalProperties": false
+                                    }
+                                ]
+                            },
+                            "default": [],
+                            "description": "Either the document type id or the internalLink id to be to included in the navbar."
+                        },
+                        "sidebarLinks": {
+                            "type": "array",
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "properties": {
+                                            "icon": {
+                                                "$ref": "#/definitions/ULLDConfig/properties/noteTypes/items/properties/icon"
+                                            },
+                                            "href": {
+                                                "type": "string"
+                                            },
+                                            "label": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "icon"
+                                        ],
+                                        "additionalProperties": false
+                                    },
+                                    {
+                                        "type": "string",
+                                        "description": "The id of the document type."
+                                    }
+                                ]
+                            },
+                            "default": [],
+                            "description": "Either the document type id or the internalLink id to be to included in the navbar."
+                        }
+                    },
+                    "additionalProperties": false,
+                    "default": {}
+                },
+                "UI": {
+                    "type": "object",
+                    "properties": {
+                        "table": {
+                            "type": "object",
+                            "properties": {
+                                "maxHeight": {
+                                    "type": [
+                                        "string",
+                                        "number"
+                                    ],
+                                    "default": 300,
+                                    "description": "The default height at which to limit tables. This can be overridden for each not individually in that note's front matter. If the value is a string, it must be able to be interpretted by css-in-tsx syntax. Numbers will automatically be interpreted as pixels."
+                                }
+                            },
+                            "additionalProperties": false,
+                            "default": {}
+                        },
+                        "text": {
+                            "type": "object",
+                            "properties": {
+                                "blockQuoteItalic": {
+                                    "type": "boolean",
+                                    "default": false,
+                                    "description": "Whether or not to italicize block quote text."
+                                },
+                                "fontPaths": {
+                                    "anyOf": [
+                                        {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "path": {
+                                                        "type": "string",
+                                                        "description": "Should be an absolute path. As this is only required at build time, it is not necessary for this path to be a child of the fsRoot directory."
+                                                    },
+                                                    "weight": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "100",
+                                                            "200",
+                                                            "300",
+                                                            "400",
+                                                            "500",
+                                                            "600",
+                                                            "700",
+                                                            "800",
+                                                            "900"
+                                                        ]
+                                                    },
+                                                    "style": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "italic",
+                                                            "bold",
+                                                            "normal"
+                                                        ]
+                                                    }
+                                                },
+                                                "required": [
+                                                    "path",
+                                                    "weight",
+                                                    "style"
+                                                ],
+                                                "additionalProperties": false
+                                            }
+                                        },
+                                        {
+                                            "type": "string",
+                                            "const": "default"
+                                        }
+                                    ],
+                                    "default": "default",
+                                    "description": "An array of font config objects to be bundled during the build."
+                                }
+                            },
+                            "additionalProperties": false,
+                            "default": {}
+                        },
+                        "media": {
+                            "type": "object",
+                            "properties": {
+                                "imageMap": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string",
+                                        "description": "The fsRoot relative path at which this image can be found."
+                                    },
+                                    "default": {}
+                                },
+                                "includeDefaultImageMap": {
+                                    "type": "boolean",
+                                    "default": true,
+                                    "description": "Whether or not to include a default image map of light weight svg images that respond to the theme's colors to be easily embedded by their alias. Can be disabled to minimize the build size if they are unlikely to be used."
+                                },
+                                "imageRemoteTest": {
+                                    "type": "array",
+                                    "items": {},
+                                    "default": []
+                                }
+                            },
+                            "additionalProperties": false,
+                            "default": {}
+                        },
+                        "colors": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "anyOf": [
+                                    {
+                                        "not": {}
+                                    },
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "anyOf": [
+                                                    {
+                                                        "anyOf": [
+                                                            {
+                                                                "not": {}
+                                                            },
+                                                            {
+                                                                "anyOf": [
+                                                                    {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "dark": {
+                                                                                "anyOf": [
+                                                                                    {
+                                                                                        "anyOf": [
+                                                                                            {
+                                                                                                "not": {}
+                                                                                            },
+                                                                                            {
+                                                                                                "anyOf": [
+                                                                                                    {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                            "main": {
+                                                                                                                "type": [
+                                                                                                                    "string",
+                                                                                                                    "null"
+                                                                                                                ]
+                                                                                                            },
+                                                                                                            "contrast": {
+                                                                                                                "type": [
+                                                                                                                    "string",
+                                                                                                                    "null"
+                                                                                                                ]
+                                                                                                            },
+                                                                                                            "muted": {
+                                                                                                                "anyOf": [
+                                                                                                                    {
+                                                                                                                        "anyOf": [
+                                                                                                                            {
+                                                                                                                                "type": "object",
+                                                                                                                                "properties": {
+                                                                                                                                    "main": {
+                                                                                                                                        "type": [
+                                                                                                                                            "string",
+                                                                                                                                            "null"
+                                                                                                                                        ]
+                                                                                                                                    },
+                                                                                                                                    "contrast": {
+                                                                                                                                        "type": [
+                                                                                                                                            "string",
+                                                                                                                                            "null"
+                                                                                                                                        ]
+                                                                                                                                    }
+                                                                                                                                },
+                                                                                                                                "additionalProperties": false
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "anyOf": [
+                                                                                                                                    {
+                                                                                                                                        "not": {}
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "type": [
+                                                                                                                                            "string",
+                                                                                                                                            "null"
+                                                                                                                                        ]
+                                                                                                                                    }
+                                                                                                                                ],
+                                                                                                                                "description": "Color variant to be used in a 'muted' component. Should more subtly contrast with the background color than the primary foreground color."
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "type": "null"
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            },
+                                                                                                            "gradient": {
+                                                                                                                "anyOf": [
+                                                                                                                    {
+                                                                                                                        "anyOf": [
+                                                                                                                            {
+                                                                                                                                "anyOf": [
+                                                                                                                                    {
+                                                                                                                                        "not": {}
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "anyOf": [
+                                                                                                                                            {
+                                                                                                                                                "type": "object",
+                                                                                                                                                "properties": {
+                                                                                                                                                    "50": {
+                                                                                                                                                        "type": "string"
+                                                                                                                                                    },
+                                                                                                                                                    "100": {
+                                                                                                                                                        "type": "string"
+                                                                                                                                                    },
+                                                                                                                                                    "200": {
+                                                                                                                                                        "type": "string"
+                                                                                                                                                    },
+                                                                                                                                                    "300": {
+                                                                                                                                                        "type": "string"
+                                                                                                                                                    },
+                                                                                                                                                    "400": {
+                                                                                                                                                        "type": "string"
+                                                                                                                                                    },
+                                                                                                                                                    "500": {
+                                                                                                                                                        "type": "string"
+                                                                                                                                                    },
+                                                                                                                                                    "600": {
+                                                                                                                                                        "type": "string"
+                                                                                                                                                    },
+                                                                                                                                                    "700": {
+                                                                                                                                                        "type": "string"
+                                                                                                                                                    },
+                                                                                                                                                    "800": {
+                                                                                                                                                        "type": "string"
+                                                                                                                                                    },
+                                                                                                                                                    "900": {
+                                                                                                                                                        "type": "string"
+                                                                                                                                                    },
+                                                                                                                                                    "950": {
+                                                                                                                                                        "type": "string"
+                                                                                                                                                    }
+                                                                                                                                                },
+                                                                                                                                                "required": [
+                                                                                                                                                    "50",
+                                                                                                                                                    "100",
+                                                                                                                                                    "200",
+                                                                                                                                                    "300",
+                                                                                                                                                    "400",
+                                                                                                                                                    "500",
+                                                                                                                                                    "600",
+                                                                                                                                                    "700",
+                                                                                                                                                    "800",
+                                                                                                                                                    "900",
+                                                                                                                                                    "950"
+                                                                                                                                                ],
+                                                                                                                                                "additionalProperties": false
+                                                                                                                                            },
+                                                                                                                                            {
+                                                                                                                                                "type": "null"
+                                                                                                                                            }
+                                                                                                                                        ]
+                                                                                                                                    }
+                                                                                                                                ],
+                                                                                                                                "description": "An object of a single color, in which 50 represents the lightest variation and 950 represents the darkest."
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "anyOf": [
+                                                                                                                                    {
+                                                                                                                                        "not": {}
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "anyOf": [
+                                                                                                                                            {
+                                                                                                                                                "type": "array",
+                                                                                                                                                "items": {
+                                                                                                                                                    "type": "string"
+                                                                                                                                                },
+                                                                                                                                                "minItems": 11,
+                                                                                                                                                "maxItems": 11
+                                                                                                                                            },
+                                                                                                                                            {
+                                                                                                                                                "type": "null"
+                                                                                                                                            }
+                                                                                                                                        ]
+                                                                                                                                    }
+                                                                                                                                ],
+                                                                                                                                "description": "An array of css color values arranged from the lightest to the darkest."
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "type": "null"
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        },
+                                                                                                        "additionalProperties": false
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "type": "null"
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "null"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "light": {
+                                                                                "anyOf": [
+                                                                                    {
+                                                                                        "anyOf": [
+                                                                                            {
+                                                                                                "not": {}
+                                                                                            },
+                                                                                            {
+                                                                                                "anyOf": [
+                                                                                                    {
+                                                                                                        "$ref": "#/definitions/ULLDConfig/properties/UI/properties/colors/additionalProperties/anyOf/1/anyOf/0/anyOf/0/anyOf/1/anyOf/0/properties/dark/anyOf/0/anyOf/1/anyOf/0"
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "type": "null"
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "null"
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        },
+                                                                        "additionalProperties": false
+                                                                    },
+                                                                    {
+                                                                        "type": "null"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "anyOf": [
+                                                            {
+                                                                "not": {}
+                                                            },
+                                                            {
+                                                                "anyOf": [
+                                                                    {
+                                                                        "$ref": "#/definitions/ULLDConfig/properties/UI/properties/colors/additionalProperties/anyOf/1/anyOf/0/anyOf/0/anyOf/1/anyOf/0/properties/dark/anyOf/0/anyOf/1/anyOf/0"
+                                                                    },
+                                                                    {
+                                                                        "type": "null"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "default": {}
+                        },
+                        "theme": {
+                            "type": "string",
+                            "enum": [
+                                "blue",
+                                "gray",
+                                "green",
+                                "neutral",
+                                "orange",
+                                "red",
+                                "rose",
+                                "slate",
+                                "stone",
+                                "violet",
+                                "yellow",
+                                "zinc"
+                            ],
+                            "default": "violet"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "default": {}
+                },
+                "database": {
+                    "type": "object",
+                    "properties": {
+                        "storeFormatted": {
+                            "type": "boolean",
+                            "default": true,
+                            "description": "Whether or not to store the formatted content along with the raw content This will improve performance and load times when rendering content  not in 'preferFs' mode, but will increase the storage size of each note. Recommended: true if running and storing notes locally where network speeds and monthly fees aren't an issue."
+                        },
+                        "removeIfNotPresentInFs": {
+                            "type": "boolean",
+                            "default": true,
+                            "description": "Whether or not to remove notes from the database if they are no longer found in the local file system. This is best set to true if storing all notes in one location, but can be set to false to avoid losing notes that may have been lost elsewhere."
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "jupyter": {
+                    "type": "object",
+                    "properties": {
+                        "execute": {
+                            "type": "boolean",
+                            "default": false,
+                            "description": "Whether or not to execute notebook cells immediately after loading."
+                        },
+                        "environment": {
+                            "type": "string",
+                            "description": "The *absolute* path to the python environment with which to open Jupyter cells and notebooks."
+                        },
+                        "syntaxHighlightTheme": {
+                            "type": "string",
+                            "default": "dracula"
+                        },
+                        "jupyterToken": {
+                            "type": "string",
+                            "description": "A secure token with which to connect to the jupyter server instance. This token must also be present in the jupyter_server_config.py file related to that environment. Any 64 character random string of alpha-numeric characters will work."
+                        },
+                        "jupyterPort": {
+                            "type": "number",
+                            "default": 21521,
+                            "description": "Port on which JupyterServer instance is running. This value must match the value in your local jupyter server config."
+                        },
+                        "initiallyFoldCells": {
+                            "type": "boolean",
+                            "default": true,
+                            "description": "Whether or not to initally fold jupyter input cells that are embedded within mdx notes."
+                        },
+                        "kernel": {
+                            "type": "string",
+                            "default": "python3",
+                            "description": "Kernel name to use. Can be overriden with the search param ?kernel=someKernelName"
+                        },
+                        "jupyterReactProps": {
+                            "type": "object",
+                            "properties": {
+                                "collaborative": {
+                                    "type": "boolean",
+                                    "default": false,
+                                    "description": "Whether the notebook is collaborative or not. This can also be set as needed by using the search param ?colab=true"
+                                },
+                                "lite": {
+                                    "type": "boolean",
+                                    "default": false,
+                                    "description": "Whether or not to use jupyterLite."
+                                },
+                                "serverUrls": {
+                                    "type": "object",
+                                    "properties": {
+                                        "baseUrl": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "description": "The url with which to reach the jupyter server. Under the majority of use cases these values should be left to autopopulate based on the jupyter.serverPort value. Applying your own serverUrl should be reserved for those with experience connecting to a remote jupyter instance."
+                                        },
+                                        "wsUrl": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "description": "The websocket url with which to reach the jupyter server. Under the majority of use cases these values should be left to autopopulate based on the jupyter.serverPort value. Applying your own serverUrl should be reserved for those with experience connecting to a remote jupyter instance."
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "additionalProperties": false,
+                            "default": {
+                                "collaborative": false,
+                                "lite": false
+                            }
+                        },
+                        "nbConvert": {
+                            "type": "object",
+                            "properties": {
+                                "nbconvertPath": {
+                                    "type": "string",
+                                    "description": "The path to nbConvert. This option will likely be deprecated."
+                                },
+                                "conversionTimeout": {
+                                    "type": "number",
+                                    "default": 300,
+                                    "description": "The timeout in seconds with which to allow Jupyter notebooks to be converted to other formats. This option will likely be deprecated as the ability to output notebooks in alternative formats such as a pdf is being pushed back."
+                                },
+                                "customConversionFunction": {
+                                    "type": "object",
+                                    "properties": {},
+                                    "additionalProperties": false
+                                },
+                                "execute": {
+                                    "type": "boolean",
+                                    "default": false,
+                                    "description": "Whether or not to execute notebooks before converting via nbConvert. Can be overriden with the ?nbConvertExec=true of ?nbConvertExec=false search param."
+                                },
+                                "nbConvertTemplate": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string",
+                                            "const": "lab"
+                                        },
+                                        {
+                                            "type": "string",
+                                            "const": "classic"
+                                        },
+                                        {
+                                            "type": "string",
+                                            "const": "reveal"
+                                        },
+                                        {
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "default": "classic",
+                                    "description": "The template option that is passed to nbConvert. Can be overridden by the search param ?nbConvertTemp=lab or ?nbConvertTemp=classic"
+                                },
+                                "notebookOutputDir": {
+                                    "type": "string",
+                                    "default": "/generated",
+                                    "description": "The fsRoot relative file path where converted notebooks should be saved."
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "jupyterNotebookProps": {
+                            "type": "object",
+                            "properties": {
+                                "cellMetadataPanel": {
+                                    "type": "boolean",
+                                    "default": true,
+                                    "description": "Can be set on a per-use basis with the ?cellMeta=true or ?cellMeta=false search param."
+                                },
+                                "cellSidebarMargin": {
+                                    "type": "number",
+                                    "default": 120,
+                                    "description": "The margin of each cell that should be left for the sidebar menu. This is often best left to the default or to be populated by plugins that might alter the default layout."
+                                },
+                                "height": {
+                                    "type": "string",
+                                    "description": "A css-in-tsx compatible string to be used for the notebook's height. This is made accessible to combat possible bugs, but in most use cases this should remain the default value."
+                                },
+                                "maxHeight": {
+                                    "type": "string",
+                                    "description": "A css-in-tsx compatible string to be used for the notebook's maximum height. This is made accessible to combat possible bugs, but in most use cases this should remain the default value."
+                                },
+                                "bundledIPyWidgets": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "module": {
+                                                "anyOf": [
+                                                    {
+                                                        "type": "string"
+                                                    },
+                                                    {
+                                                        "type": "object",
+                                                        "additionalProperties": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "version": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "module",
+                                            "name",
+                                            "version"
+                                        ],
+                                        "additionalProperties": false
+                                    },
+                                    "default": [],
+                                    "description": "iPython widgets which to include in the notebook environment. This is most likely unnecessary, but is made available for those with Jupyter experience and more advanced use cases."
+                                },
+                                "externalIPyWidgets": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "$ref": "#/definitions/ULLDConfig/properties/jupyter/properties/jupyterNotebookProps/properties/bundledIPyWidgets/items/properties/name"
+                                            },
+                                            "version": {
+                                                "$ref": "#/definitions/ULLDConfig/properties/jupyter/properties/jupyterNotebookProps/properties/bundledIPyWidgets/items/properties/version"
+                                            }
+                                        },
+                                        "required": [
+                                            "name",
+                                            "version"
+                                        ],
+                                        "additionalProperties": false
+                                    },
+                                    "default": [],
+                                    "description": "iPython widgets which to include in the notebook environment. This is most likely unnecessary, but is made available for those with Jupyter experience and more advanced use cases."
+                                },
+                                "nbgrader": {
+                                    "type": "boolean",
+                                    "default": false,
+                                    "description": "Whether or not to load the nbgrader tool with the notebook. This can be overridden with the ?nbgrader=true or ?nbgrader=false search param."
+                                },
+                                "readOnly": {
+                                    "type": "boolean",
+                                    "default": false,
+                                    "description": "Open the notebook without the ability to write to it. This can be overridden with the search param ?nbReadOnly=true or ?nbReadOnly=false."
+                                }
+                            },
+                            "additionalProperties": false,
+                            "default": {
+                                "cellMetadataPanel": true,
+                                "cellSidebarMargin": 120,
+                                "nbgrader": false,
+                                "readOnly": false,
+                                "bundledIPyWidgets": [],
+                                "externalIPyWidgets": []
+                            }
+                        }
+                    },
+                    "required": [
+                        "environment",
+                        "nbConvert"
+                    ],
+                    "additionalProperties": false
+                },
+                "credentials": {
+                    "type": "object",
+                    "properties": {
+                        "googleServiceAccountJsonPath": {
+                            "type": "string",
+                            "description": "Path to the service account credentials file to enable calendar integration."
+                        }
+                    },
+                    "additionalProperties": false,
+                    "default": {}
+                },
+                "performance": {
+                    "type": "object",
+                    "properties": {
+                        "latexParsingDebounceTimeout": {
+                            "type": "number",
+                            "minimum": 0,
+                            "default": 500,
+                            "description": "The period to wait in milliseconds between parsing latex content that is expected to change rapidly."
+                        },
+                        "mdxParsingDebounceTimeout": {
+                            "type": "number",
+                            "minimum": 0,
+                            "default": 500,
+                            "description": "The period to wait in milliseconds between parsing markdown and mdx content that is expected to change rapidly."
+                        }
+                    },
+                    "additionalProperties": false,
+                    "default": {}
+                },
+                "terminal": {
+                    "type": "object",
+                    "properties": {
+                        "logLevel": {
+                            "type": "string",
+                            "enum": [
+                                "debug",
+                                "verbose",
+                                "info",
+                                "none"
+                            ],
+                            "default": "info"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "default": {}
+                },
+                "slots": {
+                    "type": "object",
+                    "properties": {
+                        "navigation": {
+                            "type": "string",
+                            "default": "@ulld/navigation"
+                        },
+                        "plot": {
+                            "type": "string",
+                            "default": "@ulld/plot"
+                        },
+                        "bibliography": {
+                            "type": "string",
+                            "default": "@ulld/bib-manager"
+                        },
+                        "calendar": {
+                            "type": "string",
+                            "default": "@ulld/calendar"
+                        },
+                        "commandPalette": {
+                            "type": "string",
+                            "default": "@ulld/command-palette"
+                        },
+                        "editor": {
+                            "type": "string",
+                            "default": "@ulld/editor"
+                        },
+                        "math": {
+                            "type": "string",
+                            "default": "@ulld/equations"
+                        },
+                        "form": {
+                            "type": "string",
+                            "default": "@ulld/full-form"
+                        },
+                        "icons": {
+                            "type": "string",
+                            "default": "@ulld/icons"
+                        },
+                        "notebook": {
+                            "type": "string",
+                            "default": "@ulld/notebook"
+                        },
+                        "kanban": {
+                            "type": "string",
+                            "default": "@ulld/kanban"
+                        },
+                        "dashboard": {
+                            "type": "string",
+                            "default": "@ulld/landing-layouts"
+                        },
+                        "logger": {
+                            "type": "string",
+                            "default": "@ulld/logger"
+                        },
+                        "journal": {
+                            "type": "string",
+                            "default": "@ulld/journal"
+                        },
+                        "noteNetwork": {
+                            "type": "string",
+                            "default": "@ulld/note-network"
+                        },
+                        "pdf": {
+                            "type": "string",
+                            "default": "@ulld/pdf"
+                        },
+                        "snippets": {
+                            "type": "string",
+                            "default": "@ulld/snippets"
+                        },
+                        "taskManager": {
+                            "type": "string",
+                            "default": "@ulld/task-manager"
+                        },
+                        "whiteboard": {
+                            "type": "string",
+                            "default": "@ulld/whiteboard"
+                        },
+                        "components": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "default": {}
+                        },
+                        "parsers": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "default": {}
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "required": [
+                "fsRoot",
+                "noteTypes",
+                "bibPath",
+                "cslPath",
+                "database",
+                "jupyter",
+                "slots"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+}

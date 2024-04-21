@@ -5,6 +5,7 @@ import fs from "fs";
 export default class AppendRouter extends Command {
     targetRouterPath: string;
     additionalRouterPath: string = "";
+    static state: "inactive"
     appendToKey: string = "";
     routerRegex: RegExp =
         /const\s+_appRouter:\s+RouterType\s=\s{(?<content>[^}]*)};?/gm;

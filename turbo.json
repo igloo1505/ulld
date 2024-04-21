@@ -12,6 +12,14 @@
     "db:migrate": {
       "cache": false
     },
+    "updateJsonSchemas": {
+      "dotEnv": [
+        ".env.production.local",
+        ".env.local",
+        ".env.production",
+        ".env"
+      ]
+    },
     "build": {
       "dependsOn": ["^db:generate"],
       "dotEnv": [

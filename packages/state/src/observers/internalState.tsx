@@ -11,6 +11,8 @@ import {resize} from "../listeners/resize"
 import {useEffect} from 'react'
 import { ParsedAppConfig } from '@ulld/configschema/types'
 import { ParsedSettings } from "@ulld/parsers/settings/settingsParser"
+import {ThemeOptions} from "@ulld/tailwind/themeUtils"
+import {changeTheme} from "@ulld/state/actions/client/theming"
 
 
 const connector = connect((state: RootState, props: any) => ({
@@ -48,6 +50,7 @@ interface P {
     config: ParsedAppConfig,
     showPlotlyModebar: boolean,
     noteSheetOpen: boolean
+    themeCookie?: ThemeOptions
 }
 
 
@@ -56,8 +59,16 @@ const applyHtmlClass = (cls: string, type: "add" | "remove" | "toggle") => {
 }
 
 
-const Observers = connector(({ settings, showPlotlyModebar, darkMode, noteSheetOpen, config }: P) => {
+const Observers = connector(({ settings, showPlotlyModebar, darkMode, noteSheetOpen, config, themeCookie }: P) => {
     const pathname = usePathname()
+
+
+    useEffect(() => {
+       if(!themeCookie){
+            let htmlTheme = htmlEm()?.getAttribute("data-ulld-theme") || "violet"
+            changeTheme(htmlTheme)
+        } 
+    }, [themeCookie])
 
     useEffect(() => {
         applyHtmlClass("noPlotlyModebar", showPlotlyModebar ? "remove" : "add")

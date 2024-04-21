@@ -1,6 +1,5 @@
 import { z } from "zod";
 import {
-    AllDynamicIconNames,
     ValidIconName,
     completeValidIconNameList,
 } from "@ulld/icons/dynamic";

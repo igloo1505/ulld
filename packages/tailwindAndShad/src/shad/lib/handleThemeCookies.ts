@@ -1,20 +1,24 @@
 "use server"
 import type {cookies} from "next/headers"
 import {ThemeOptions} from "./themeUtils"
+import { NextResponse } from "next/dist/server/web/spec-extension/response"
 
 
-export const getThemeCookie = (cookieJar: ReturnType<typeof cookies>) => {
-     const theme = cookieJar.get("theme")
+type CookieType = NextResponse<unknown>["cookies"] | ReturnType<typeof cookies>
+
+
+export const getThemeCookie = async (cookieJar: CookieType) => {
+     const theme = cookieJar.get("ulld-theme")
     if(!theme){
-        cookieJar.set("theme", "violet")
+        cookieJar.set("ulld-theme", "violet")
         return "violet"
     }
-    return theme
+    return theme.value
 }
 
 
 
-export const setThemeCookie = (cookieJar: ReturnType<typeof cookies>, newTheme?: ThemeOptions) => {
-     cookieJar.set("theme", newTheme || "violet")
+export const setThemeCookie = async (cookieJar: CookieType, newTheme?: ThemeOptions) => {
+     cookieJar.set("ulld-theme", newTheme || "violet")
     return cookieJar
 }

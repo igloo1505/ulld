@@ -8,6 +8,7 @@ import { store } from "../../state/store"
 import { setTocContent } from "../../state/slices/functionality"
 import { copyStringToClipboard } from "@ulld/utilities/actions/copyStringToClipboard"
 import { ToastConfigType } from "@ulld/utilities/types/toastConfig"
+import {ThemeOptions} from "@ulld/tailwind/themeUtils"
 
 
 export const toggleSidebar = () => document.body.classList.toggle("sidebarOpenPermanent")
@@ -110,4 +111,5 @@ export const setPreferFs = async (preferFs: boolean | "toggle" = "toggle") => {
     }
     return res.data.success
 }
+
 

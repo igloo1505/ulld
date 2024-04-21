@@ -7,7 +7,7 @@ interface PlotProps {
 }
 
 export const Plot = ({ params }: PlotProps) => {
-    console.log("params: ", params)
+    /* console.log("params: ", params) */
     return <PlotlyPlot
         {...params}
     />;

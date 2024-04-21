@@ -17,7 +17,7 @@ import { defaultIgnoreFilePaths } from './defaults/general'
 import { slashesTransform } from './transforms/general'
 import { allParsableFileExtensionSchema } from './secondaryConfigParse/getParsableExtensions'
 import { featuresConfigSchema } from './features/main'
-import { slotsConfigSchema } from './slotsConfigSchema'
+import { pluginSlotSchema } from '@ulld/developer-schemas/slots'
 
 
 export const zodRegexField = z.union([
@@ -99,7 +99,7 @@ export const appConfigSchema = z.object({
     credentials: credentialsConfigSchema,
     performance: performanceConfigSchema,
     terminal: terminalConfigSchema,
-    slots: slotsConfigSchema
+    slots: pluginSlotSchema 
 })
 
 

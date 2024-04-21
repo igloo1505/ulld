@@ -29,7 +29,7 @@
     "@ulld/full-form": "workspace:*",
     "@ulld/health-tracking": "workspace:*",
     "@ulld/journal": "workspace:*",
-    "@ulld/jupyter": "workspace:*",
+    "@ulld/notebook": "workspace:*",
     "@ulld/kanban": "workspace:*",
     "@ulld/navigation": "workspace:*",
     "@ulld/note-network": "workspace:*",
