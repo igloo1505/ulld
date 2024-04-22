@@ -45,5 +45,10 @@
     "simplex-noise": "^4.0.1",
     "three": "^0.163.0",
     "three-noise": "^1.1.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
   }
 }

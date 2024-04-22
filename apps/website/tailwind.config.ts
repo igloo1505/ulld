@@ -13,6 +13,13 @@ const tailwindCfg: Config = {
         // Or if using `src` directory:
         "./src/**/*.{js,ts,jsx,tsx,mdx}",
     ],
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ["var(--ulld-app-font)"]
+            }
+        }
+    },
     presets: [tailwindConfig]
 }
 

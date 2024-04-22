@@ -3,10 +3,13 @@ import React, { useEffect, useRef } from "react";
 import { createNoise3D, createNoise4D } from "simplex-noise";
 import type { IcosahedronGeometry, Texture } from "three";
 import alea from "alea";
+import { BlobLayout } from "./types";
 
 interface BlobNucleusProps {
     texture: Texture;
-    morphScale?: number;
+    morphScalar?: number;
+    timeScalar?: number
+    layout?: BlobLayout
 }
 
 /* RESUME: Come back here and review this: https://codepen.io/aaroniker/pen/YoqNRB for a much better looking blob animation when finally back on power. */
@@ -15,7 +18,6 @@ const noise3d = createNoise4D(alea("seed"));
 const x1 = 0.0003;
 const y1 = 0.0003;
 const z1 = 0.0003;
-const morphScalar = 3
 
 const normalize = (dx: number, dy: number, dz: number) => {
      let mag = Math.sqrt(dx**2 + dy**2 + dz**2) 
@@ -41,7 +43,7 @@ const applyScalar = (
     return dx;
 };
 
-export const BlobNucleus = ({ texture, morphScale = 3 }: BlobNucleusProps) => {
+export const BlobNucleus = ({ texture, layout="full", timeScalar = 1, morphScalar = 3 }: BlobNucleusProps) => {
     const nucRef = useRef<IcosahedronGeometry>(null!);
     useFrame((state, dt) => {
         const pos = nucRef.current?.getAttribute("position");
@@ -57,22 +59,19 @@ export const BlobNucleus = ({ texture, morphScale = 3 }: BlobNucleusProps) => {
                 let z = pos.getZ(idx);
                 const uv = normalize(x, y, z)
                 const noise = r + noise3d(
-                    (uv.x += deltaT * x1),
-                    (uv.y += deltaT * y1),
-                    (uv.z += deltaT * z1),
+                    (uv.x += deltaT * timeScalar * x1),
+                    (uv.y += deltaT * timeScalar * y1),
+                    (uv.z += deltaT * timeScalar * z1),
                     dt,
-                    /* state.clock.getElapsedTime() */
                 ) * morphScalar
                 const scalar = applyScalar(x, y, z, noise);
                 pos.setXYZ(idx, scalar[0], scalar[1], scalar[2]);
             });
         pos.needsUpdate = true;
-        /* nucRef.current?.up */
         nucRef.current?.computeVertexNormals()
-        /* nucRef.current?.computeVertexNormals */
     });
     return (
-        <mesh position={[0, 0, 0]}>
+        <mesh position={[0, 40, 0]}>
             <icosahedronGeometry args={[30, 10]} ref={nucRef} />
             <meshPhongMaterial map={texture} />
         </mesh>
