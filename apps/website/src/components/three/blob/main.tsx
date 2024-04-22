@@ -10,7 +10,7 @@ import _texture2 from "./assets/05.png";
 import _texture3 from "./assets/06.png";
 import Script from "next/script";
 import Image from "next/image";
-import { createNoise4D } from "simplex-noise";
+import { createNoise3D } from "simplex-noise";
 import { OrbitControls } from "@react-three/drei";
 import { BlobNucleus } from "./nucleus";
 import { BlobSphere } from "./sphere";
@@ -18,11 +18,13 @@ import { BlobStars } from "./stars";
 import { useStars } from "./useStars";
 import PointsTest from "./pointTest";
 
+/* TODO: Move the text inside of the canvas. Look up the three, and three-fiber docs. I'm positive I just saw it described there. THis will give you a better mechanism to watch for hover events and such. */
+/* TODO: Find way to darken the background. Right now the backdrop can't be inserted between the background and the blob. */
+
 interface NoiseyBlobProps {}
 
 const NoiseyBlobInternal = (props: NoiseyBlobProps) => {
   const three = useThree();
-  const noise = createNoise4D();
   useEffect(() => {
     console.log("three: ", three);
   }, [three]);
@@ -38,12 +40,10 @@ const NoiseyBlobInternal = (props: NoiseyBlobProps) => {
   return (
     <>
       <OrbitControls
-        /* enableRotate */
-        /* enableDamping */
         autoRotate
         enablePan={false}
-        autoRotateSpeed={1}
-        minDistance={160}
+        autoRotateSpeed={0.8}
+        minDistance={120}
         /* maxDistance={350} */
       />
       <perspectiveCamera
@@ -72,17 +72,9 @@ const NoiseyBlob = (props: NoiseyBlobProps) => {
         "w-full h-screen absolute top-0 left-0 right-0 bottom-0 -z-[10]"
       }
     >
-      <Image
-        fill
-        src={sceneBackground}
-        objectFit="cover"
-        alt=""
-        className={""}
-        priority
-      />
       <div
         className={
-          "absolute top-0 left-0 right-0 bottom-0 w-full h-full min-h-screen bg-black opacity-50"
+          "absolute top-0 left-0 right-0 bottom-0 w-full h-full min-h-screen opacity-90"
         }
       />
       <Canvas
