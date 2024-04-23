@@ -36,9 +36,12 @@
     "@ulld/ui": "workspace:*",
     "@ulld/utilities": "workspace:*",
     "@ulld/whiteboard": "workspace:*",
+    "@use-gesture/react": "^10.3.1",
+    "@use-gesture/vanilla": "^10.3.1",
     "alea": "^1.0.1",
     "dayjs": "^1.11.10",
     "framer-motion": "^11.1.7",
+    "lethargy": "^1.0.9",
     "lucide-react": "^0.344.0",
     "maath": "^0.10.7",
     "next": "^14.1.4",
@@ -50,19 +53,19 @@
     "three-noise": "^1.1.2"
   },
   "devDependencies": {
+    "@repo/eslint-config": "workspace:^",
+    "@repo/jest-presets": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@tailwindcss/forms": "^0.5.7",
+    "@types/jest": "^29.5.11",
+    "@types/jsdom": "^21.1.6",
+    "@types/mathjax": "^0.0.40",
+    "@types/mdx": "^2.0.11",
     "@types/react": "^18.2.75",
     "@types/react-dom": "^18.2.24",
     "autoprefixer": "^10.4.18",
     "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1",
-    "@types/jest": "^29.5.11",
-    "@types/jsdom": "^21.1.6",
-    "@types/mathjax": "^0.0.40",
-    "@repo/eslint-config": "workspace:^",
-    "@repo/jest-presets": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "@types/mdx": "^2.0.11"
+    "tailwindcss": "^3.4.1"
   },
   "packageManager": "pnpm@9.0.0-beta.1"
 }

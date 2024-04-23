@@ -488,6 +488,12 @@ importers:
       '@ulld/whiteboard':
         specifier: workspace:*
         version: link:../../packages/whiteboard
+      '@use-gesture/react':
+        specifier: ^10.3.1
+        version: 10.3.1(react@18.2.0)
+      '@use-gesture/vanilla':
+        specifier: ^10.3.1
+        version: 10.3.1
       alea:
         specifier: ^1.0.1
         version: 1.0.1
@@ -497,6 +503,9 @@ importers:
       framer-motion:
         specifier: ^11.1.7
         version: 11.1.7(@emotion/is-prop-valid@1.2.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      lethargy:
+        specifier: ^1.0.9
+        version: 1.0.9
       lucide-react:
         specifier: ^0.344.0
         version: 0.344.0(react@18.2.0)
@@ -10678,10 +10687,21 @@ packages:
   '@use-gesture/core@10.3.0':
     resolution: {integrity: sha512-rh+6MND31zfHcy9VU3dOZCqGY511lvGcfyJenN4cWZe0u1BH6brBpBddLVXhF2r4BMqWbvxfsbL7D287thJU2A==}
 
+  '@use-gesture/core@10.3.1':
+    resolution: {integrity: sha512-WcINiDt8WjqBdUXye25anHiNxPc0VOrlT8F6LLkU6cycrOGUDyY/yyFmsg3k8i5OLvv25llc0QC45GhR/C8llw==}
+
   '@use-gesture/react@10.3.0':
     resolution: {integrity: sha512-3zc+Ve99z4usVP6l9knYVbVnZgfqhKah7sIG+PS2w+vpig2v2OLct05vs+ZXMzwxdNCMka8B+8WlOo0z6Pn6DA==}
     peerDependencies:
       react: '>= 16.8.0'
+
+  '@use-gesture/react@10.3.1':
+    resolution: {integrity: sha512-Yy19y6O2GJq8f7CHf7L0nxL8bf4PZCPaVOCgJrusOeFHY1LvHgYXnmnXg6N5iwAnbgbZCDjo60SiM6IPJi9C5g==}
+    peerDependencies:
+      react: '>= 16.8.0'
+
+  '@use-gesture/vanilla@10.3.1':
+    resolution: {integrity: sha512-lT4scGLu59ovA3zmtUonukAGcA0AdOOh+iwNDS05Bsu7Lq9aZToDHhI6D8Q2qvsVraovtsLLYwPrWdG/noMAKw==}
 
   '@vercel/style-guide@5.2.0':
     resolution: {integrity: sha512-fNSKEaZvSkiBoF6XEefs8CcgAV9K9e+MbcsDZjUsktHycKdA0jvjAzQi1W/FzLS+Nr5zZ6oejCwq/97dHUKe0g==}
@@ -15801,6 +15821,9 @@ packages:
     resolution: {integrity: sha512-P3b3HJDBtSzsXUl0im2L7gTO5Ubg8mEN6G8qoTS77iXxXX4Hvu4Qj540PZDvQ8V6DmX6iXo98k7Md0Cm1PrLaA==}
     engines: {node: '>=6'}
     hasBin: true
+
+  lethargy@1.0.9:
+    resolution: {integrity: sha512-nFM8blpCF9rqIL5mRAaTGc78W8oQixVtsD86jbEPvcI13+lDUYJf3R7DZQQL7tCiBpbGpGKMX2gwJFO9hiaOkg==}
 
   level-codec@9.0.2:
     resolution: {integrity: sha512-UyIwNb1lJBChJnGfjmO0OR+ezh2iVu1Kas3nvBS/BzGnx79dv6g7unpKIDNPMhfdTEGoc7mC8uAu51XEtX+FHQ==}
@@ -30680,7 +30703,7 @@ snapshots:
       '@mediapipe/tasks-vision': 0.10.8
       '@react-spring/three': 9.6.1(@react-three/fiber@8.15.19(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.158.0))(react@18.2.0)(three@0.158.0)
       '@react-three/fiber': 8.15.19(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.158.0)
-      '@use-gesture/react': 10.3.0(react@18.2.0)
+      '@use-gesture/react': 10.3.1(react@18.2.0)
       camera-controls: 2.8.3(three@0.158.0)
       cross-env: 7.0.3
       detect-gpu: 5.0.38
@@ -30712,7 +30735,7 @@ snapshots:
       '@mediapipe/tasks-vision': 0.10.8
       '@react-spring/three': 9.6.1(@react-three/fiber@8.15.19(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.162.0))(react@18.2.0)(three@0.162.0)
       '@react-three/fiber': 8.15.19(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.162.0)
-      '@use-gesture/react': 10.3.0(react@18.2.0)
+      '@use-gesture/react': 10.3.1(react@18.2.0)
       camera-controls: 2.8.3(three@0.162.0)
       cross-env: 7.0.3
       detect-gpu: 5.0.38
@@ -30744,7 +30767,7 @@ snapshots:
       '@mediapipe/tasks-vision': 0.10.8
       '@react-spring/three': 9.6.1(@react-three/fiber@8.15.19(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.163.0))(react@18.2.0)(three@0.163.0)
       '@react-three/fiber': 8.15.19(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.163.0)
-      '@use-gesture/react': 10.3.0(react@18.2.0)
+      '@use-gesture/react': 10.3.1(react@18.2.0)
       camera-controls: 2.8.3(three@0.163.0)
       cross-env: 7.0.3
       detect-gpu: 5.0.38
@@ -30776,7 +30799,7 @@ snapshots:
       '@mediapipe/tasks-vision': 0.10.8
       '@react-spring/three': 9.6.1(@react-three/fiber@8.15.19(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.163.0))(react@18.2.0)(three@0.163.0)
       '@react-three/fiber': 8.15.19(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.163.0)
-      '@use-gesture/react': 10.3.0(react@18.2.0)
+      '@use-gesture/react': 10.3.1(react@18.2.0)
       camera-controls: 2.8.3(three@0.163.0)
       cross-env: 7.0.3
       detect-gpu: 5.0.38
@@ -33388,10 +33411,21 @@ snapshots:
 
   '@use-gesture/core@10.3.0': {}
 
+  '@use-gesture/core@10.3.1': {}
+
   '@use-gesture/react@10.3.0(react@18.2.0)':
     dependencies:
       '@use-gesture/core': 10.3.0
       react: 18.2.0
+
+  '@use-gesture/react@10.3.1(react@18.2.0)':
+    dependencies:
+      '@use-gesture/core': 10.3.1
+      react: 18.2.0
+
+  '@use-gesture/vanilla@10.3.1':
+    dependencies:
+      '@use-gesture/core': 10.3.1
 
   '@vercel/style-guide@5.2.0(eslint@9.0.0)(jest@29.7.0(@types/node@20.12.7)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.4.6(@swc/helpers@0.5.6))(@types/node@20.12.7)(typescript@5.4.2)))(prettier@3.2.5)(typescript@5.4.5)':
     dependencies:
@@ -40160,6 +40194,8 @@ snapshots:
       mime: 1.6.0
       needle: 3.3.1
       source-map: 0.6.1
+
+  lethargy@1.0.9: {}
 
   level-codec@9.0.2:
     dependencies:

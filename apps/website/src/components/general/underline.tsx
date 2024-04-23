@@ -46,7 +46,7 @@ export const TextUnderline = ({
     return (
         <svg
             height="100%"
-            stroke-miterlimit="10"
+            strokeMiterlimit="10"
             style={style}
             version="1.1"
             viewBox="0 0 1092.1 383.866"
@@ -59,7 +59,7 @@ export const TextUnderline = ({
             <clipPath id="ArtboardFrame">
                 <rect height="383.866" width="1092.1" x="0" y="0" />
             </clipPath>
-            <g clip-path="url(#ArtboardFrame)" id="Layer-1">
+            <g clipPath="url(#ArtboardFrame)" id="Layer-1">
                 <g opacity="1">
                     <g opacity="1">
                         <path
