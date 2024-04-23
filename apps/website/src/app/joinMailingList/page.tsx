@@ -1,19 +1,16 @@
-import React from 'react'
+import { MailingListSignupCard } from "#/components/pageSpecific/mailingList/card";
+import React from "react";
 
-
-
-interface JoinMailingListPageProps {
-
-}
+interface JoinMailingListPageProps {}
 
 const JoinMailingListPage = (props: JoinMailingListPageProps) => {
-return (
-    <div> Join Mailing List</div>
-)
-}
+  return (
+    <div className={"w-full h-screen flex flex-col justify-center items-center px-4"}>
+      <MailingListSignupCard />
+    </div>
+  );
+};
 
-
-JoinMailingListPage.displayName = "JoinMailingListPage"
-
+JoinMailingListPage.displayName = "JoinMailingListPage";
 
 export default JoinMailingListPage;

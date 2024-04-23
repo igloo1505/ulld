@@ -407,6 +407,9 @@ importers:
       '@dimforge/rapier3d':
         specifier: ^0.12.0
         version: 0.12.0
+      '@hookform/resolvers':
+        specifier: ^3.3.4
+        version: 3.3.4(react-hook-form@7.51.3(react@18.2.0))
       '@react-spring/three':
         specifier: ^9.7.3
         version: 9.7.3(@react-three/fiber@8.15.19(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.163.0))(react@18.2.0)(three@0.163.0)
@@ -494,6 +497,9 @@ importers:
       framer-motion:
         specifier: ^11.1.7
         version: 11.1.7(@emotion/is-prop-valid@1.2.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      lucide-react:
+        specifier: ^0.344.0
+        version: 0.344.0(react@18.2.0)
       maath:
         specifier: ^0.10.7
         version: 0.10.7(@types/three@0.162.0)(three@0.163.0)
@@ -506,6 +512,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      react-hook-form:
+        specifier: ^7.51.3
+        version: 7.51.3(react@18.2.0)
       simplex-noise:
         specifier: ^4.0.1
         version: 4.0.1
@@ -516,6 +525,27 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2
     devDependencies:
+      '@tailwindcss/forms':
+        specifier: ^0.5.7
+        version: 0.5.7(tailwindcss@3.4.1(ts-node@10.9.2(@swc/core@1.4.6(@swc/helpers@0.5.6))(@types/node@20.12.7)(typescript@5.4.5)))
+      '@types/jest':
+        specifier: ^29.5.11
+        version: 29.5.12
+      '@types/jsdom':
+        specifier: ^21.1.6
+        version: 21.1.6
+      '@types/mathjax':
+        specifier: ^0.0.40
+        version: 0.0.40
+      '@types/mdx':
+        specifier: ^2.0.11
+        version: 2.0.11
+      '@types/react':
+        specifier: ^18.2.75
+        version: 18.2.79
+      '@types/react-dom':
+        specifier: ^18.2.24
+        version: 18.2.25
       autoprefixer:
         specifier: ^10.4.18
         version: 10.4.18(postcss@8.4.35)
@@ -3464,7 +3494,7 @@ importers:
         version: 1.7.18(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hookform/resolvers':
         specifier: ^3.3.4
-        version: 3.3.4(react-hook-form@7.51.0(react@18.2.0))
+        version: 3.3.4(react-hook-form@7.51.3(react@18.2.0))
       '@jsdevtools/rehype-toc':
         specifier: ^3.0.2
         version: 3.0.2
@@ -3790,8 +3820,8 @@ importers:
         specifier: ^14.2.3
         version: 14.2.3(react@18.2.0)
       react-hook-form:
-        specifier: ^7.51.0
-        version: 7.51.0(react@18.2.0)
+        specifier: ^7.51.3
+        version: 7.51.3(react@18.2.0)
       react-icons:
         specifier: ^5.0.1
         version: 5.0.1(react@18.2.0)
@@ -5062,8 +5092,8 @@ packages:
   '@braintree/sanitize-url@6.0.4':
     resolution: {integrity: sha512-s3jaWicZd0pkP0jf5ysyHUI/RE7MHos6qlToFcGWXVp+ykHOy77OUMrfbgJ9it2C5bow7OIQwYYaHjk9XlBQ2A==}
 
-  '@bufbuild/protobuf@1.8.0':
-    resolution: {integrity: sha512-qR9FwI8QKIveDnUYutvfzbC21UZJJryYrLuZGjeZ/VGz+vXelUkK+xgkOHsvPEdYEdxtgUUq4313N8QtOehJ1Q==}
+  '@bufbuild/protobuf@1.9.0':
+    resolution: {integrity: sha512-W7gp8Q/v1NlCZLsv8pQ3Y0uCu/SHgXOVFK+eUluUKWXmsb6VHkpNx0apdOWWcDbB9sJoKeP8uPrjmehJz6xETQ==}
 
   '@changesets/apply-release-plan@7.0.0':
     resolution: {integrity: sha512-vfi69JR416qC9hWmFGSxj7N6wA5J222XNBmezSVATPWDVPIF7gkd4d8CpbEbXmRWbVrkoli3oerGS6dcL/BGsQ==}
@@ -18640,6 +18670,12 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
 
+  react-hook-form@7.51.3:
+    resolution: {integrity: sha512-cvJ/wbHdhYx8aviSWh28w9ImjmVsb5Y05n1+FW786vEZQJV5STNM0pW6ujS+oiBecb0ARBxJFyAnXj9+GHXACQ==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+
   react-icons@5.0.1:
     resolution: {integrity: sha512-WqLZJ4bLzlhmsvme6iFdgO8gfZP17rfjYEJ2m9RsZjZ+cc4k1hTzknEz63YS1MeT50kVzoa1Nz36f4BEx+Wigw==}
     peerDependencies:
@@ -22951,7 +22987,7 @@ snapshots:
 
   '@braintree/sanitize-url@6.0.4': {}
 
-  '@bufbuild/protobuf@1.8.0': {}
+  '@bufbuild/protobuf@1.9.0': {}
 
   '@changesets/apply-release-plan@7.0.0':
     dependencies:
@@ -24615,6 +24651,10 @@ snapshots:
   '@hookform/resolvers@3.3.4(react-hook-form@7.51.1(react@18.2.0))':
     dependencies:
       react-hook-form: 7.51.1(react@18.2.0)
+
+  '@hookform/resolvers@3.3.4(react-hook-form@7.51.3(react@18.2.0))':
+    dependencies:
+      react-hook-form: 7.51.3(react@18.2.0)
 
   '@humanwhocodes/config-array@0.12.3':
     dependencies:
@@ -27711,7 +27751,7 @@ snapshots:
       micromark-util-symbol: 2.0.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      react-hook-form: 7.51.0(react@18.2.0)
+      react-hook-form: 7.51.3(react@18.2.0)
       unidiff: 1.0.4
     transitivePeerDependencies:
       - '@codemirror/language'
@@ -43952,6 +43992,10 @@ snapshots:
     dependencies:
       react: 18.2.0
 
+  react-hook-form@7.51.3(react@18.2.0):
+    dependencies:
+      react: 18.2.0
+
   react-icons@5.0.1(react@18.2.0):
     dependencies:
       react: 18.2.0
@@ -45382,7 +45426,7 @@ snapshots:
 
   sass-embedded@1.74.1:
     dependencies:
-      '@bufbuild/protobuf': 1.8.0
+      '@bufbuild/protobuf': 1.9.0
       buffer-builder: 0.2.0
       immutable: 4.3.5
       rxjs: 7.8.1

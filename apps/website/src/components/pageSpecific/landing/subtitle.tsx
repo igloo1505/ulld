@@ -2,11 +2,16 @@
 import TypingText from "#/lib/typingText";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import clsx from 'clsx'
 
 
 const targetContent = "Free open source note taking for "
 
-export const LandingSubTitle = () => {
+interface Props {
+className?: string
+    }
+
+export const LandingSubTitle = ({className}: Props) => {
     const [content, setContent] = useState("")
     const animateTitle = (idx: number = 0) => {
            setContent(targetContent.slice(0, idx))
@@ -23,7 +28,7 @@ export const LandingSubTitle = () => {
 
     return (
         <>
-            <h3 className={"h-6"}>
+            <h3 className={clsx("h-6", className)}>
                {content} 
                 {content === targetContent && <TypingText
                     speed={2}
@@ -38,7 +43,6 @@ export const LandingSubTitle = () => {
                     everyone.
                 </TypingText>}
             </h3>
-            <Link href="/joinMailingList">Join our mailing list</Link>
         </>
     );
 };

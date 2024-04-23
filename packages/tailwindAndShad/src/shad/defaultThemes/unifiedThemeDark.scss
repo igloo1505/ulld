@@ -368,7 +368,6 @@
   }
 
   body {
-    @apply bg-background text-foreground;
-    @apply font-sans;
+    @apply bg-background text-foreground border-border font-sans;
   }
 }

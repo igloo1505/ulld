@@ -47,8 +47,7 @@ const TypingText = ({
         {underline && <TextUnderline
             width={40}
             show={isComplete}
-            className={"absolute right-[-2px] top-[1.25rem] origin-right w-[8ch] h-6"}
-            /* scale={0.4} */
+            className={"absolute right-[-2px] top-[3vw] md:top-[1.25rem] origin-right w-[8ch] h-6"}
             color={underline}
         />}
     </div>

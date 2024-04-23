@@ -50,7 +50,6 @@ export const BlobNucleus = ({ texture, layout="full", timeScalar = 1, morphScala
         let mi = pos.count;
         const r = nucRef.current?.parameters.radius
         const deltaT = state.clock.getElapsedTime() * 1000
-        console.log("mi: ", mi);
         Array(mi - 1)
             .fill(0)
             .forEach((_, idx: number) => {
