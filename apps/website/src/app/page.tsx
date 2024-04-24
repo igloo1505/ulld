@@ -24,7 +24,7 @@ const HomePage = ({ searchParams: { section = "hero" } }: HomePageProps) => {
     >
     <ScrollGestureListener />
       <div
-        className={getLandingSectionClass("hero", section)}
+        className={clsx("z-10", getLandingSectionClass("hero", section))}
       >
         <NoiseyBlob  />
         <LandingPageTitleBox />

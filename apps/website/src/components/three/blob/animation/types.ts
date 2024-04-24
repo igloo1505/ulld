@@ -1,4 +1,3 @@
-import { ThreeElements } from "@react-three/fiber";
 import { RefObject } from "react";
 import { IcosahedronGeometry, PerspectiveCamera } from "three";
 

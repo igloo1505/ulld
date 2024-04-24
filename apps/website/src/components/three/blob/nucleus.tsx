@@ -1,4 +1,4 @@
-import { ThreeElements, useFrame } from "@react-three/fiber";
+import { ThreeElements, ThreeEvent, useFrame } from "@react-three/fiber";
 import React, { forwardRef, useRef, useState, ForwardedRef } from "react";
 import { createNoise4D } from "simplex-noise";
 import {
@@ -20,6 +20,7 @@ interface BlobNucleusProps {
     timeScalar?: number;
     layout?: BlobLayout;
     geoData: GeoData;
+    setHovered: (hovered: boolean) => void
 }
 
 /* RESUME: Come back here and review this: https://codepen.io/aaroniker/pen/YoqNRB for a much better looking blob animation when finally back on power. */
@@ -27,10 +28,9 @@ interface BlobNucleusProps {
 const detail = 10;
 const radius = 30;
 
-
 export const BlobNucleus = forwardRef(
     (
-        { texture, geoData }: BlobNucleusProps,
+        { texture, geoData, setHovered }: BlobNucleusProps,
         ref: ForwardedRef<IcosahedronGeometry>,
     ) => {
         const viewport = useViewport();
@@ -59,8 +59,19 @@ export const BlobNucleus = forwardRef(
                 },
             };
         }, [viewport, sp, geoData]);
+
+        /* const handleMouseMove = (e: ThreeEvent<PointerEvent>) => { */
+        /*     const pushVector = [-e.point.x, -e.point.y, -e.point.z]; */
+        /*     setMousePosition(pushVector) */
+        /* }; */
+
         return (
-            <animated.mesh position={springs.position} scale={springs.scale}>
+            <animated.mesh
+                position={springs.position}
+                scale={springs.scale}
+                onPointerEnter={() => setHovered(true)}
+                onPointerLeave={() => setHovered(false)}
+            >
                 <icosahedronGeometry args={[radius, detail]} ref={ref} />
                 <meshPhongMaterial map={texture} />
             </animated.mesh>

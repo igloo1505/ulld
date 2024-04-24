@@ -1,11 +1,22 @@
 import { RootState } from "@react-three/fiber";
 import { UseBlobAnimationProps } from "./types";
 import { wiggleWiggle } from "./wigglewiggle";
-import { geoDataMap } from "../utils";
 
-export const useHeroAnimation = (state: RootState, dt: number, {
-    nucleus, camera
-}: UseBlobAnimationProps) => {
-    wiggleWiggle(nucleus, state, dt, 1, 3)
-    state.scene.rotateY(dt * -0.02)
-}
+export const useHeroAnimation = (
+    state: RootState,
+    dt: number,
+    { nucleus, camera }: UseBlobAnimationProps,
+    timeScalar: number,
+    morphScalar: number
+) => {
+    console.log("timeScalar: ", timeScalar)
+    console.log("morphScalar: ", morphScalar)
+    wiggleWiggle(
+        nucleus,
+        state,
+        dt,
+        timeScalar,
+        morphScalar
+    );
+    state.scene.rotateY(dt * -0.02);
+};

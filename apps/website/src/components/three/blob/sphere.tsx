@@ -34,7 +34,7 @@ export const BlobSphere = ({ texture, section }: BlobSphereProps) => {
     return (
         <mesh>
             <animated.sphereGeometry
-                args={[150, 40, 40]}
+                args={[200, 40, 40]}
                 ref={ref}
             /* parameters={{ */
             /* radius: springs.radius, */
