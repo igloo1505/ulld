@@ -46,7 +46,10 @@ const NoiseyBlobInternal = (props: NoiseyBlobProps) => {
     const nucleusRef = useRef<any>(null!);
     const cameraRef = useRef<Three.PerspectiveCamera>(null!);
 
-    const [nucHoverd, setNucHovered] = useBlobAnimation({ nucleus: nucleusRef, camera: cameraRef });
+    const [nucHoverd, setNucHovered] = useBlobAnimation({
+        nucleus: nucleusRef,
+        camera: cameraRef,
+    });
 
     return (
         <>

@@ -1,5 +1,4 @@
 "use client"
-import { LandingSection, getLandingSectionClass, landingSectionIndex } from "#/types/landingSection";
 import React from "react";
 import clsx from 'clsx'
 import { useSectionClasses } from "./useSection";

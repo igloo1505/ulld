@@ -54,5 +54,5 @@ export const useBlobAnimation = (props: UseBlobAnimationProps) => {
             useDescriptionAnimation(state, dt, props, nucleusHovered);
         }
     });
-    return [nucleusHovered, setNucleusHovered];
+    return [nucleusHovered, setNucleusHovered] as [boolean, (b: boolean) => void]
 };
