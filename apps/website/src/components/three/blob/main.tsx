@@ -2,12 +2,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import * as Three from "three";
 import {
-    Camera,
     Canvas,
-    ThreeElements,
-    Vector2,
     useLoader,
-    useThree,
 } from "@react-three/fiber";
 import sceneBackground from "./assets/01.jpg";
 import _textureNucleus from "./assets/02.jpg";
@@ -15,19 +11,15 @@ import _textureStar from "./assets/03.png";
 import _texture1 from "./assets/04.png";
 import _texture2 from "./assets/05.png";
 import _texture3 from "./assets/06.png";
-import { useViewport } from "@ulld/hooks/useViewport";
-import { animated, useSpring } from "@react-spring/three";
 import { BlobNucleus } from "./nucleus";
 import { BlobSphere } from "./sphere";
 import { BlobStars } from "./stars";
 import { useStars } from "./useStars";
-import PointsTest from "./pointTest";
-import { LandingSection } from "#/types/landingSection";
+import PointsTest from "./astralBodies";
 import { useSection } from "#/components/pageSpecific/landing/useSection";
-import { geoDataMap } from "./utils";
 import { useBlobAnimation } from "./animation/animate";
-import { Html, PerformanceMonitor } from "@react-three/drei";
-import { LandingPageTitleBox } from "#/components/pageSpecific/landing/titleBox";
+import DreiNucleus from "./dreiNucleus";
+
 
 /* TODO: Find way to darken the background. Right now the backdrop can't be inserted between the background and the blob. */
 
@@ -51,6 +43,7 @@ const NoiseyBlobInternal = (props: NoiseyBlobProps) => {
         camera: cameraRef,
     });
 
+
     return (
         <>
             <perspectiveCamera
@@ -58,23 +51,30 @@ const NoiseyBlobInternal = (props: NoiseyBlobProps) => {
                 aspect={vw / vh}
                 near={0.1}
                 far={1000}
-                position={[0, 0, 150]}
+                position={[0, 0, 5]}
                 ref={cameraRef}
             />
-            <ambientLight position={[0, 20, 20]} color={"#fff"} intensity={1} />
-            <directionalLight args={["#fff", 2]} position={[0, 50, -20]} />
-            <BlobNucleus
+            <DreiNucleus
                 ref={nucleusRef}
                 texture={textureNucleus}
                 geoData={section.geoData}
                 setHovered={setNucHovered}
             />
+            <ambientLight position={[0, 20, 20]} color={"#fff"} intensity={1} />
+            <directionalLight args={["#fff", 2]} position={[0, 50, -20]} />
             <BlobStars texture={textureStar} />
             <BlobSphere section={section.active} texture={textureSphere} />
             <PointsTest section={section.active} texture={textureStar1} />
         </>
     );
 };
+
+            /* <BlobNucleus */
+            /*     ref={nucleusRef} */
+            /*     texture={textureNucleus} */
+            /*     geoData={section.geoData} */
+            /*     setHovered={setNucHovered} */
+            /* /> */
 
 const NoiseyBlob = (props: NoiseyBlobProps) => {
     return (
@@ -91,7 +91,7 @@ const NoiseyBlob = (props: NoiseyBlobProps) => {
                     pixelRatio: window?.devicePixelRatio,
                 }}
                 camera={{
-                    position: [0, 0, 100],
+                    position: [0, 0, 8],
                 }}
             >
                 <NoiseyBlobInternal {...props} />

@@ -53,9 +53,8 @@ export const geoDataMap: {
     },
     description: (vp, state) => {
         const theta = getSceneRotation(state);
-            console.log("vp: ", vp?.window)
-            const scalar = 144
-        const rotationMatrix = rotateVector(theta, [scalar, scalar / (vp?.window.aspectRatio || 1), -100]);
+        const scalar = 8.5
+        const rotationMatrix = rotateVector(theta, [scalar, scalar / (vp?.window.aspectRatio || 1), 0]);
         return {
             nucleusPosition: rotationMatrix,
             nucleusMorphScalar: 2,
