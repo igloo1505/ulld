@@ -13,7 +13,7 @@ export const LandingPageTitleBox = (props: LandingPageTitleBoxProps) => {
     return (
         <div
             className={
-                "w-full lg:w-[40vw] absolute bottom-12 flex flex-col gap-0 lg:gap-3 justify-center items-center lg:items-start z-10 p-8 scale-0 group-[.section-hero]/landingContainer:scale-100 transition-transform duration-150"
+                "w-full lg:w-[40vw] absolute bottom-12 flex flex-col gap-0 lg:gap-3 justify-center items-center lg:items-start z-10 p-8 scale-0 group-[.section-hero]/landingContainer:scale-100 transition-transform duration-500"
             }
         >
             <h1

@@ -7,7 +7,7 @@ interface JoinMailingListModalPageProps {}
 const JoinMailingListModalPage = (props: JoinMailingListModalPageProps) => {
   return (
     <ModalPageContainer>
-      <MailingListSignupCard />
+      <MailingListSignupCard isModal />
     </ModalPageContainer>
   );
 };

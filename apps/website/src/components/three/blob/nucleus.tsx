@@ -1,80 +1,71 @@
-import { useFrame } from "@react-three/fiber";
-import React, { useEffect, useRef } from "react";
-import { createNoise3D, createNoise4D } from "simplex-noise";
-import type { IcosahedronGeometry, Texture } from "three";
-import alea from "alea";
+import { ThreeElements, useFrame } from "@react-three/fiber";
+import React, { forwardRef, useRef, useState, ForwardedRef } from "react";
+import { createNoise4D } from "simplex-noise";
+import {
+    Mesh,
+    type IcosahedronGeometry,
+    type Object3D,
+    type Texture,
+} from "three";
 import { BlobLayout } from "./types";
+import { GeoData, geoDataMap } from "./utils";
+import { animated, useSpring } from "@react-spring/three";
+import { useViewport } from "@ulld/hooks/useViewport";
+import { useSearchParams } from "next/navigation";
+import { LandingSection } from "#/types/landingSection";
 
 interface BlobNucleusProps {
     texture: Texture;
     morphScalar?: number;
-    timeScalar?: number
-    layout?: BlobLayout
+    timeScalar?: number;
+    layout?: BlobLayout;
+    geoData: GeoData;
 }
 
 /* RESUME: Come back here and review this: https://codepen.io/aaroniker/pen/YoqNRB for a much better looking blob animation when finally back on power. */
-const noise3d = createNoise4D(alea("seed"));
 
-const x1 = 0.0003;
-const y1 = 0.0003;
-const z1 = 0.0003;
+const detail = 10;
+const radius = 30;
 
-const normalize = (dx: number, dy: number, dz: number) => {
-     let mag = Math.sqrt(dx**2 + dy**2 + dz**2) 
-    let normal = [dx, dy, dz].map((d) => d / mag)
-    return {
-        x: normal[0],
-        y: normal[1],
-        z: normal[2],
-        mag: mag
-    }
-    }
 
-const applyScalar = (
-    x: number,
-    y: number,
-    z: number,
-    ds: number,
-): [number, number, number] => {
-    const vec = [x, y, z];
-    const mag = Math.sqrt(vec[0] ** 2 + vec[1] ** 2 + vec[2] ** 2);
-    const norm = vec.map((n) => n / mag);
-    let dx: [number, number, number] = [norm[0] * ds, norm[1] * ds, norm[2] * ds];
-    return dx;
-};
-
-export const BlobNucleus = ({ texture, layout="full", timeScalar = 1, morphScalar = 3 }: BlobNucleusProps) => {
-    const nucRef = useRef<IcosahedronGeometry>(null!);
-    useFrame((state, dt) => {
-        const pos = nucRef.current?.getAttribute("position");
-        let mi = pos.count;
-        const r = nucRef.current?.parameters.radius
-        const deltaT = state.clock.getElapsedTime() * 1000
-        Array(mi - 1)
-            .fill(0)
-            .forEach((_, idx: number) => {
-                let x = pos.getX(idx);
-                let y = pos.getY(idx);
-                let z = pos.getZ(idx);
-                const uv = normalize(x, y, z)
-                const noise = r + noise3d(
-                    (uv.x += deltaT * timeScalar * x1),
-                    (uv.y += deltaT * timeScalar * y1),
-                    (uv.z += deltaT * timeScalar * z1),
-                    dt,
-                ) * morphScalar
-                const scalar = applyScalar(x, y, z, noise);
-                pos.setXYZ(idx, scalar[0], scalar[1], scalar[2]);
-            });
-        pos.needsUpdate = true;
-        nucRef.current?.computeVertexNormals()
-    });
-    return (
-        <mesh position={[0, 40, 0]}>
-            <icosahedronGeometry args={[30, 10]} ref={nucRef} />
-            <meshPhongMaterial map={texture} />
-        </mesh>
-    );
-};
+export const BlobNucleus = forwardRef(
+    (
+        { texture, geoData }: BlobNucleusProps,
+        ref: ForwardedRef<IcosahedronGeometry>,
+    ) => {
+        const viewport = useViewport();
+        const sp = useSearchParams();
+        const section = (sp.get("section") as LandingSection) || ("hero" as "hero");
+        const [springs, api] = useSpring(() => {
+            return {
+                scale: 1,
+                position: geoData.nucleusPosition,
+                config: (key) => {
+                    switch (key) {
+                        case "scale":
+                            return {
+                                mass: 4,
+                                friction: 10,
+                            };
+                        case "position":
+                            return {
+                                mass: 1,
+                                tension: 170,
+                                friction: 200,
+                            };
+                        default:
+                            return {};
+                    }
+                },
+            };
+        }, [viewport, sp, geoData]);
+        return (
+            <animated.mesh position={springs.position} scale={springs.scale}>
+                <icosahedronGeometry args={[radius, detail]} ref={ref} />
+                <meshPhongMaterial map={texture} />
+            </animated.mesh>
+        );
+    },
+);
 
 BlobNucleus.displayName = "BlobNucleus";
