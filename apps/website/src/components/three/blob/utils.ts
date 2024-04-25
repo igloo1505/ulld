@@ -62,3 +62,11 @@ export const geoDataMap: {
         };
     },
 };
+
+
+
+export const forLoopUtil = (n: number, cb: (i: number) => void) => {
+       for(var i = 0; i < n; i ++){
+              cb(i) 
+           } 
+    }

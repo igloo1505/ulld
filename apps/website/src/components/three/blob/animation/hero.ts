@@ -9,8 +9,6 @@ export const useHeroAnimation = (
     timeScalar: number,
     morphScalar: number
 ) => {
-    console.log("timeScalar: ", timeScalar)
-    console.log("morphScalar: ", morphScalar)
     wiggleWiggle(
         nucleus,
         state,

@@ -9,5 +9,5 @@ export const useDescriptionAnimation = (
   { nucleus, camera }: UseBlobAnimationProps,
     nucleusHovered: boolean
 ) => {
-  wiggleWiggle(nucleus, state, dt, 5, 2);
+    wiggleWiggle(nucleus, state, dt, 5, 2);
 };

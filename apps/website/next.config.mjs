@@ -95,7 +95,7 @@ const config = withPWA({
             };
         }
         config.module.rules.push({
-            test: /canvas\.node|\.csl|\.pdf|\.glb|\.gltf|\.whl/,
+            test: /canvas\.node|\.csl|\.pdf|\.glb|\.gltf|\.whl|\.tif/,
             use: "raw-loader",
         });
         config.module.rules.push({

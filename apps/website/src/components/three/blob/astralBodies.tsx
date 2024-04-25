@@ -1,8 +1,9 @@
 import { Points } from "@react-three/drei";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   AdditiveBlending,
   MathUtils,
+  Points as ThreePoints,
   Quaternion,
   Texture,
   Vector3,
@@ -14,78 +15,111 @@ import * as misc from "maath/misc";
 import { LandingSection } from "#/types/landingSection";
 import { useSpring, animated } from "@react-spring/three";
 
-interface PointsTestProps {
+interface AstralBodiesProps {
   n?: number;
   texture: Texture;
   section: LandingSection;
+  minRadius?: number;
+  maxRadius?: number;
+  size?: number;
 }
 const rotationAxis = new Vector3(0, 1, 0).normalize();
 const q = new Quaternion();
 
 const posA =
-  (n: number, center: boolean = false) =>
+  (n: number, center: boolean = false, minRadius: number = 150) =>
   () =>
     center
       ? makeBuffer({ length: n * 3 }, () => 0)
-      : makeBuffer({ length: n * 3 }, () => MathUtils.randFloatSpread(150));
+      : makeBuffer({ length: n * 3 }, () =>
+          MathUtils.randFloatSpread(minRadius),
+        );
 const posB =
-  (n: number, center: boolean = false) =>
+  (n: number, center: boolean = false, maxRadius: number = 350) =>
   () =>
     center
       ? makeBuffer({ length: n * 3 }, () => 0)
-      : makeBuffer({ length: n * 3 }, () => MathUtils.randFloatSpread(350));
+      : makeBuffer({ length: n * 3 }, () =>
+          MathUtils.randFloatSpread(maxRadius),
+        );
 
-const PointsTest = ({ texture, section, n = 50 }: PointsTestProps) => {
-  const [positionA, setPositionA] = React.useState(posA(n));
-  const [positionB, setPositionB] = React.useState(posB(n));
-  const [positionFinal] = React.useState(() => positionB.slice(0));
-  const [color] = React.useState(() =>
-    makeBuffer({ length: n * 3 }, () => Math.random()),
-  );
-  const [size] = React.useState(() =>
+export const AstralBodies = ({
+  texture,
+  section,
+  minRadius,
+  maxRadius,
+  size: _size = 5,
+  n = 50,
+}: AstralBodiesProps) => {
+  const astralBodies = useRef<ThreePoints>(null!);
+  const [positionA, setPositionA] = useState(posA(n));
+  const [positionB, setPositionB] = useState(posB(n));
+  const [positionFinal] = useState(() => positionB.slice(0));
+  const [size] = useState(() =>
     makeBuffer({ length: n }, () => Math.random() * 0.2),
   );
+  const [rotations, setRotations] = useState(() => {
+    return makeBuffer({ length: n }, () => Math.random() * Math.PI);
+  });
+
+  const [rotationsB, setRotationsB] = useState(() => {
+    return makeBuffer({ length: n }, () => Math.random() * Math.PI * 2);
+  });
+
+  const [rotationsFinal, setRotationsFinal] = useState(() => {
+    return rotationsB.slice(0);
+  });
+
   useEffect(() => {
-    setPositionA(posA(n, section !== "hero"));
-    setPositionB(posB(n, section !== "hero"));
+    setPositionA(posA(n, section !== "hero", minRadius));
+    setPositionB(posB(n, section !== "hero", maxRadius));
   }, [section]);
+
   useFrame(({ clock }) => {
     const et = clock.getElapsedTime();
     const t = misc.remap(Math.sin(et), [-1, 1], [0, 1]);
-    buffer.rotate(color, { q: q.setFromAxisAngle(rotationAxis, t * 0.01) });
     buffer.lerp(positionA, positionB, positionFinal, t);
     buffer.rotate(positionB, {
       q: q.setFromAxisAngle(rotationAxis, t * t * 0.1),
     });
+    astralBodies.current.rotateZ(Math.PI * 0.002 * t)
+    buffer.lerp(rotations, rotationsB, rotationsFinal, t);
   });
 
-        const [springs, api] = useSpring(() => {
-            return {
-                opacity: 0.8,
-            size: 5,
-                config: {
-                                mass: 4,
-                                friction: 10,
-                },
-            };
-        }, [section]);
+  const [springs, api] = useSpring(() => {
+    return {
+      opacity: 0.8,
+      size: _size,
+      config: {
+        mass: 4,
+        friction: 10,
+      },
+    };
+  }, [section]);
 
-    useEffect(() => {
-        if (section === "hero") {
-            api.start({
-                opacity: 0.8,
-                size: 5
-            });
-        } else {
-            api.start({
-                opacity: 0,
-                size: 0
-            });
-        }
-    }, [section]);
+  useEffect(() => {
+    if (section === "hero") {
+      api.start({
+        opacity: 0.8,
+        size: _size,
+      });
+    } else {
+      api.start({
+        opacity: 0,
+        size: 0,
+      });
+    }
+  }, [section]);
 
   return (
-    <Points positions={positionFinal} colors={color} sizes={size}>
+    <Points
+      positions={positionFinal}
+      sizes={size}
+      ref={astralBodies}
+        /* rotation={rotations} */
+      /* rotateZ={rotations} */
+      /* colors={color}  */
+    >
       <animated.pointsMaterial
         size={springs.size}
         color="#fff"
@@ -99,6 +133,4 @@ const PointsTest = ({ texture, section, n = 50 }: PointsTestProps) => {
   );
 };
 
-PointsTest.displayName = "PointsTest";
-
-export default PointsTest;
+AstralBodies.displayName = "AstralBodies";

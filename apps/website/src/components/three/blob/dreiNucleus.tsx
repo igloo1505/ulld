@@ -39,7 +39,6 @@ const DreiNucleus = forwardRef(
     const sp = useSearchParams();
     const isHero = (sp.get("section") || "hero") === "hero";
         /* TODO: Come back here and animate this time scalar somehow without needing to re-render 100 times as the value transitions. Not currently working directly in the speed field of the component  */
-    /* const [timeScalar, setTimeScalar] = useState(isHero ? heroTimeScalar : descTimeScalar) */
     const [springs, api] = useSpring(() => {
       return {
         position: geoData.nucleusPosition,
@@ -106,11 +105,11 @@ const DreiNucleus = forwardRef(
         <AnimatedMeshDistortMaterial
           map={texture}
           time={springs.timeScalar}
-          speed={3}
+          speed={1}
           distort={springs.morphScalar}
-          specularIntensity={2}
-          reflectivity={1}
-          clearcoat={5}
+          specularIntensity={3}
+          reflectivity={0.5}
+          /* clearcoat={5} */
         />
       </animated.mesh>
     );

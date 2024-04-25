@@ -8,6 +8,7 @@ import staticContent from "../../../../staticData/staticContent.json"
 
 interface DescriptionSectionProps {}
 
+/* TODO: Add an animation to animate in the rest of the description after just the title box is rendered. The title box looks great in the center because the nucleus collapses into a flashing star that ends right on top of the logo. Let that happen, and then afterwards move that text up to the top and fade in the description content. */
 export const DescriptionSection = (props: DescriptionSectionProps) => {
   const sectionClasses = useSectionClasses("description");
   const sp = useSearchParams();

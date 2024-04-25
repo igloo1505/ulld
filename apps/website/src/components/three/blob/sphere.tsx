@@ -6,15 +6,16 @@ import { LandingSection } from "#/types/landingSection";
 interface BlobSphereProps {
     texture: Texture;
     section: LandingSection;
+    radius?: number
 }
 
-export const BlobSphere = ({ texture, section }: BlobSphereProps) => {
+export const BlobSphere = ({ texture, section, radius=200 }: BlobSphereProps) => {
     const ref = useRef<SphereGeometry>(null!);
 
     const [springs, api] = useSpring(
         () => ({
             opacity: section === "hero" ? 0.8 : 0,
-            radius: section === "hero" ? 200 : 0,
+            radius: section === "hero" ? radius : 0,
             scale: section === "hero" ? 1 : 0,
             config: {
                 friction: 50,
@@ -27,7 +28,7 @@ export const BlobSphere = ({ texture, section }: BlobSphereProps) => {
     useEffect(() => {
         if (section === "hero") {
             api.start({
-                radius: 200,
+                radius: radius,
                 opacity: 1,
                 scale: 1
             });

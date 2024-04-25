@@ -32,7 +32,7 @@ export const LandingPageTitleBox = (props: LandingPageTitleBoxProps) => {
             <HighlightButton
                 className={"mt-4 lg:mt-0"}
                 href="/joinMailingList">
-                Join our mailing list
+                Join the waitlist
             </HighlightButton>
         </div>
     );
