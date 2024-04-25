@@ -56,7 +56,6 @@ const posB =
         );
 
 export const OrbitingStars = ({
-  texture,
   section,
   radius = 20,
   spread = 3,
@@ -103,12 +102,17 @@ export const OrbitingStars = ({
       api.start({
         opacity: 0.8,
         scale: 1,
+        config: {
+          mass: 4,
+          friction: 200,
+        },
       });
     } else {
       api.start({
         opacity: 0,
         scale: 0,
         config: {
+          mass: 4,
           friction: 20,
         },
       });

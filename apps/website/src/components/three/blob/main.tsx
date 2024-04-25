@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 import * as Three from "three";
 import {
     Canvas,
     useLoader,
+    useThree,
 } from "@react-three/fiber";
 import sceneBackground from "./assets/01.jpg";
 /* import sceneBackground from "./assets/sphere/stars12.jpg"; */
@@ -17,26 +18,32 @@ import { BlobSphere } from "./sphere";
 import { BlobStars } from "./stars";
 import { useStars } from "./useStars";
 import { AstralBodies } from "./astralBodies";
-import { useSection } from "#/components/pageSpecific/landing/useSection";
+import { useLandingSection, useSection } from "#/components/pageSpecific/landing/useSection";
 import { useBlobAnimation } from "./animation/animate";
 import DreiNucleus from "./dreiNucleus";
 import { OrbitingStars } from "./orbitingStars";
 import { OrbitControls } from "@react-three/drei";
+import { LandingSection } from "#/types/landingSection";
+import { geoDataMap } from "./utils";
+import { useViewport } from "@ulld/hooks/useViewport";
 
 
 /* TODO: Find way to darken the background. Right now the backdrop can't be inserted between the background and the blob. */
 
-interface NoiseyBlobProps { }
+interface NoiseyBlobProps {
+    section: LandingSection
+}
 
-const NoiseyBlobInternal = (props: NoiseyBlobProps) => {
-    const section = useSection("hero");
+const NoiseyBlobInternal = ({section}: NoiseyBlobProps) => {
     const textureNucleus = useLoader(Three.TextureLoader, _textureNucleus.src);
     const textureStar = useLoader(Three.TextureLoader, _textureStar.src);
     const textureSphere = useLoader(Three.TextureLoader, sceneBackground.src);
     const textureStar1 = useLoader(Three.TextureLoader, _texture1.src);
+    const viewport = useViewport()
+    const three = useThree()
     textureNucleus.anisotropy = 16;
-    let vw = window?.innerWidth || 1600;
-    let vh = window?.innerHeight || 1200;
+    let vw = viewport?.window.width || 1600;
+    let vh = viewport?.window.height || 1200;
     /* useStars(); */
     const nucleusRef = useRef<any>(null!);
     const cameraRef = useRef<Three.PerspectiveCamera>(null!);
@@ -47,6 +54,9 @@ const NoiseyBlobInternal = (props: NoiseyBlobProps) => {
     });
 
 
+    const _geoData = useMemo(() => {
+        return geoDataMap[section](viewport, three)
+    }, [section, viewport])
     return (
         <>
             <perspectiveCamera
@@ -62,16 +72,16 @@ const NoiseyBlobInternal = (props: NoiseyBlobProps) => {
             <DreiNucleus
                 ref={nucleusRef}
                 texture={textureNucleus}
-                geoData={section.geoData}
+                geoData={_geoData}
                 setHovered={setNucHovered}
             />
             {/* <BlobStars texture={textureStar} /> */}
-            <BlobSphere radius={50} section={section.active} texture={textureSphere} />
-            <AstralBodies minRadius={8} maxRadius={12} size={1} section={section.active} texture={textureStar1} n={2} />
+            <BlobSphere radius={50} section={section} texture={textureSphere} />
+            <AstralBodies minRadius={8} maxRadius={12} size={1} section={section} texture={textureStar1} n={2} />
             <OrbitingStars
                 radius={15}
                 size={0.5}
-                section={section.active}
+                section={section}
                 texture={textureStar1} 
                 n={100}
                 spread={2}
@@ -83,14 +93,17 @@ const NoiseyBlobInternal = (props: NoiseyBlobProps) => {
     );
 };
 
-            /* <BlobNucleus */
-            /*     ref={nucleusRef} */
-            /*     texture={textureNucleus} */
-            /*     geoData={section.geoData} */
-            /*     setHovered={setNucHovered} */
-            /* /> */
 
-const NoiseyBlob = (props: NoiseyBlobProps) => {
+const NoiseyBlob = () => {
+    const [precision, setPrecision] = useState<undefined | "lowp">(undefined)
+    const section = useLandingSection();
+    useEffect(() => {
+       if(section === "hero") {
+            setPrecision(undefined)
+        } else {
+            setPrecision("lowp")
+        }
+    }, [section])
     return (
         <div
             className={
@@ -100,9 +113,10 @@ const NoiseyBlob = (props: NoiseyBlobProps) => {
             <Canvas
                 className={"block w-full h-full"}
                 gl={{
-                    antialias: true,
+                    antialias: precision ? false : true,
                     alpha: true,
                     pixelRatio: window?.devicePixelRatio,
+                    precision: precision
                 }}
                 camera={{
                     position: [0, 6.46, 6.46],
@@ -110,7 +124,7 @@ const NoiseyBlob = (props: NoiseyBlobProps) => {
                     rotation: new Three.Euler(-0.7853, 0, 0)
                 }}
             >
-                <NoiseyBlobInternal {...props} />
+                <NoiseyBlobInternal section={section} />
             </Canvas>
         </div>
     );

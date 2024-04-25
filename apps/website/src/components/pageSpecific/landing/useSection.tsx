@@ -5,11 +5,15 @@ import { useViewport } from "@ulld/hooks/useViewport";
 import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 
+export const useLandingSection = () => {
+    const sp = useSearchParams()
+    const section = useMemo(() => sp.get("section") as LandingSection || "hero" as "hero", [sp])
+    return section
+}
 
 
 export const useSection = (targetSection: LandingSection) => {
-    const sp = useSearchParams()
-    const section = useMemo(() => sp.get("section") as LandingSection || "hero" as "hero", [sp])
+    const section = useLandingSection()
     const viewport = useViewport()
     const three = useThree()
     return {
