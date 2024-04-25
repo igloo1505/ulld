@@ -16,9 +16,6 @@ export const BlobSphere = ({ texture, section }: BlobSphereProps) => {
             opacity: section === "hero" ? 0.8 : 0,
             radius: section === "hero" ? 200 : 0,
             scale: section === "hero" ? 1 : 0,
-            onChange: (p) => {
-   /* ref.current.setAttribute("radius", new BufferAttribute()) */
-            },
             config: {
                 friction: 50,
                 mass: 3,

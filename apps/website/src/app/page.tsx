@@ -1,4 +1,4 @@
-import { DescriptionSection } from "#/components/pageSpecific/landing/descriptionSection";
+import { DescriptionSection } from "#/components/pageSpecific/landing/description/descriptionSection";
 import { LandingPageTitleBox } from "#/components/pageSpecific/landing/titleBox";
 import NoiseyBlob from "#/components/three/blob/main";
 import { LandingSection, getLandingSectionClass, landingSectionIndex } from "#/types/landingSection";

@@ -37,6 +37,7 @@ const config = withPWA({
         "@ulld/editor",
         "@ulld/tailwind",
         "@ulld/full-form",
+        "@ulld/icons",
     ],
     experimental: {
         // typedRoutes: true,

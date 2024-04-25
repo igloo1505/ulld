@@ -464,6 +464,9 @@ importers:
       '@ulld/hooks':
         specifier: workspace:*
         version: link:../../packages/hooks
+      '@ulld/icons':
+        specifier: workspace:*
+        version: link:../../packages/icons
       '@ulld/kanban':
         specifier: workspace:*
         version: link:../../packages/kanban
@@ -2308,6 +2311,9 @@ importers:
       clsx:
         specifier: ^2.1.0
         version: 2.1.0
+      framer-motion:
+        specifier: ^11.1.7
+        version: 11.1.7(@emotion/is-prop-valid@1.2.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       lucide-react:
         specifier: ^0.344.0
         version: 0.344.0(react@18.2.0)

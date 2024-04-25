@@ -27,7 +27,7 @@ const descTimeScalar = 8;
 const hoverTimeScalar = 0.1;
 
 const heroScale = 1;
-const descScale = 0.7;
+const descScale = 0;
 const hoverScale = 0.85;
 
 const DreiNucleus = forwardRef(
@@ -50,8 +50,8 @@ const DreiNucleus = forwardRef(
           switch (key) {
             case "scale":
               return {
-                mass: 20,
-                friction: 250,
+                friction: 50,
+                mass: 3,
               };
             case "position":
               return { mass: 4, friction: 220 };
@@ -78,7 +78,7 @@ const DreiNucleus = forwardRef(
           timeScalar: descTimeScalar,
           morphScalar: descMorphScalar,
           scale: descScale,
-          position: geoData.nucleusPosition,
+          /* position: geoData.nucleusPosition, */
         });
       }
     }, [isHero, geoData]);

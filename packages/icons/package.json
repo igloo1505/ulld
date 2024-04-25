@@ -30,23 +30,26 @@
     "./vercel": "./src/logoIcons/vercel.tsx",
     "./youtube": "./src/logoIcons/youtube.tsx",
     "./ulld": "./src/logo/ulldLogo.tsx",
+    "./ulld-animated": "./src/logo/animatedLogo.tsx",
     "./clientX": "./src/clientSideUtilityComponents/xIcon.tsx"
   },
   "peerDependencies": {
     "@ulld/tailwind": "workspace:*",
     "@ulld/utilities": "workspace:*",
     "clsx": "^2.1.0",
+    "framer-motion": "^11.1.7",
     "lucide-react": "^0.344.0",
     "next": "^14.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@ulld/utilities": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/react": "^18.2.75",
     "@types/react-dom": "^18.2.24",
+    "@ulld/utilities": "workspace:*",
     "clsx": "^2.1.0",
+    "framer-motion": "^11.1.7",
     "lucide-react": "^0.344.0",
     "next": "^14.1.4",
     "react": "^18.2.0",
