@@ -1,16 +1,19 @@
 "use client";
 import React from "react";
 import clsx from "clsx";
-import { useSectionClasses } from "../useSection";
+import { useLandingSection, useSectionClasses } from "../useSection";
 import { useSearchParams } from "next/navigation";
 import { DescriptionLogoTitleBox } from "./descriptionLogoTitleBox";
-import staticContent from "../../../../staticData/staticContent.json"
+import FeatureContainer from "../feature/featureContainer";
+import { allFeatures } from "#/staticData/features/allFeatures";
+import { getLandingSectionClass } from "#/types/landingSection";
 
 interface DescriptionSectionProps {}
 
-/* TODO: Add an animation to animate in the rest of the description after just the title box is rendered. The title box looks great in the center because the nucleus collapses into a flashing star that ends right on top of the logo. Let that happen, and then afterwards move that text up to the top and fade in the description content. */
+
 export const DescriptionSection = (props: DescriptionSectionProps) => {
-  const sectionClasses = useSectionClasses("description");
+  const section = useLandingSection()
+    const sectionClasses = getLandingSectionClass("description-any", section)
   const sp = useSearchParams();
   return (
     <section
@@ -20,11 +23,16 @@ export const DescriptionSection = (props: DescriptionSectionProps) => {
       )}
     >
       <DescriptionLogoTitleBox
-        isDescription={sp.get("section") === "description"}
+        isDescription={sp.get("section")?.startsWith("description") || false}
       />
-      {staticContent.description.map((s, i) => {
-        return <p key={i}>{s}</p>;
-      })}
+     {allFeatures.map((f, i) => {
+     return <FeatureContainer
+                    {...f}
+                    idx={i}
+                    key={i}
+                    orientation={i % 2 === 0 ? "ltr" : "rtl"}
+                />
+            })}
     </section>
   );
 };

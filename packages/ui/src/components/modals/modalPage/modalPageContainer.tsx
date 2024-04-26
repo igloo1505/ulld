@@ -10,7 +10,6 @@ import React, {
 } from "react";
 import ConfirmModalPageClose from "./confirmModalPageClose";
 import { editorSaveKeydown } from "@ulld/hooks/useEditorSaveListener";
-import { XIcon } from "lucide-react";
 
 interface ModalPageContainerProps {
     children: React.ReactNode;
@@ -68,17 +67,6 @@ export const ModalPageContainer = ({
         }
     };
     const onKeyDown = editorSaveKeydown(handleDismiss, [onDismiss]);
-
-    /* const onKeyDown = useCallback( */
-    /*     (e: KeyboardEvent) => { */
-    /*         if (e.code === "KeyS" && e.altKey) { */
-    /*             e.stopPropagation(); */
-    /*             e.preventDefault(); */
-    /*             handleDismiss(); */
-    /*         } */
-    /*     }, */
-    /*     [onDismiss], */
-    /* ); */
 
     useEffect(() => {
         document.addEventListener("keydown", onKeyDown);

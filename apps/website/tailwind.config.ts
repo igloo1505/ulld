@@ -18,6 +18,9 @@ const tailwindCfg: Config = {
         extend: {
             fontFamily: {
                 sans: ["var(--ulld-app-font)"]
+            },
+            colors: {
+                hint: "#39f614"
             }
         }
     },

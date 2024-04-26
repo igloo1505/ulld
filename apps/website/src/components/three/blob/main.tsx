@@ -40,7 +40,6 @@ const NoiseyBlobInternal = ({ section, delay }: NoiseyBlobProps) => {
   const textureStar1 = useLoader(Three.TextureLoader, _texture1.src);
   const [show, setShow] = useState(false);
   const viewport = useViewport();
-  const three = useThree();
   textureNucleus.anisotropy = 16;
   let vw = viewport?.window.width || 1600;
   let vh = viewport?.window.height || 1200;

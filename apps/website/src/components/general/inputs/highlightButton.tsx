@@ -15,6 +15,7 @@ interface HighlightButtonProps {
     className?: string;
     clockwise?: boolean;
     duration?: number;
+    _onClick?: () => void
 }
 
 const movingMap: Record<Direction, string> = {
@@ -32,6 +33,7 @@ const highlight =
 export const HighlightButton = ({
     children,
     href,
+    _onClick: onClick,
     clockwise: _clockwise = true,
     duration = 1,
     ...props
@@ -82,6 +84,7 @@ export const HighlightButton = ({
             href={href}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
+            onClick={onClick}
         >
             <svg
                 className={clsx(

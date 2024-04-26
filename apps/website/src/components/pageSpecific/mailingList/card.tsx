@@ -3,20 +3,19 @@ import React from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { TextInput } from "@ulld/full-form/textInput";
 import { Form } from "@ulld/tailwind/form";
 import { Button } from "@ulld/tailwind/button";
 import { Send } from "lucide-react";
 import HighlightedTextInput from "#/components/general/inputs/highlightedTextInput";
-import {XIcon} from "lucide-react"
-import {useRouter} from "next/navigation"
+import { XIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { resumeLandingTyping } from "#/lib/actions/client";
 
 interface MailingListSignupCardProps {
-    isModal?: boolean
+    isModal?: boolean;
 }
 
 const mailingListSignupSchema = z.object({
-    /* name: z.object({ */
     first: z
         .string({
             errorMap: () => ({
@@ -33,25 +32,36 @@ const mailingListSignupSchema = z.object({
         })
         .min(3)
         .max(20),
-    /* }), */
     email: z.string().email("Enter a valid email"),
 });
 
-export const MailingListSignupCard = ({isModal, ...props}: MailingListSignupCardProps) => {
+export const MailingListSignupCard = ({
+    isModal,
+    ...props
+}: MailingListSignupCardProps) => {
     const form = useForm<z.infer<typeof mailingListSignupSchema>>({
         resolver: zodResolver(mailingListSignupSchema),
     });
-    const router = useRouter()
+    const router = useRouter();
     return (
         <div
             className={
                 "relative w-fit px-4 py-4 flex flex-col justify-center items-start bg-popover text-popover-foreground border border-border"
             }
         >
-            {isModal && <XIcon
-                        onClick={() => isModal ? router.back() : {}}
-                        className={"fill-muted-foreground w-3 h-3 absolute top-4 right-4 cursor-pointer"}
-                    />}
+            {isModal && (
+                <XIcon
+                    onClick={() => {
+                        if (isModal) {
+                            router.back();
+                            resumeLandingTyping()
+                        }
+                    }}
+                    className={
+                        "fill-muted-foreground w-3 h-3 absolute top-4 right-4 cursor-pointer"
+                    }
+                />
+            )}
             <h2 className={"text-2xl font-semibold"}>Welcome to ULLD</h2>
             <p className={"text-muted-foreground"}>
                 Your forever free, perpetually open source second brain

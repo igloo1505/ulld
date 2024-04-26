@@ -4,7 +4,8 @@
   "globalDotEnv": [".env.local"],
   "pipeline": {
     "db:generate": {
-      "cache": false
+      "cache": false,
+      "dotEnv": [".env.local"]
     },
     "db:push": {
       "cache": false

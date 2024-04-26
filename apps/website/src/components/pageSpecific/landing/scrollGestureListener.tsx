@@ -1,34 +1,30 @@
 "use client";
 import { LandingSection, getNewSection } from "#/types/landingSection";
-import { usePathname, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
-/* import { Handler,  } from "@use-gesture/react" */
 import {
   Handler,
-  ScrollGesture,
   createGesture,
   scrollAction,
   wheelAction,
 } from "@use-gesture/vanilla";
 import { Lethargy } from "lethargy";
-import { ReactDOMAttributes } from "@use-gesture/react/dist/declarations/src/types";
 import { useLockBodyScroll } from "@ulld/hooks/useLockScroll";
-import { useSection } from "./useSection";
 
 const lethargy = new Lethargy();
 const Gesture = createGesture([scrollAction, wheelAction]);
 
 const ScrollGestureListener = () => {
-  const router = useRouter();
   const sp = useSearchParams();
-  const section = useRef<LandingSection>("hero");
+  const section = useRef<LandingSection | string>("hero");
   const _section = (sp.get("section") as LandingSection) || ("hero" as "hero");
   section.current = _section;
-  const lockBody = useLockBodyScroll(true);
-  const [scrolling, setScrolling] = useState(false);
+  useLockBodyScroll(true);
+    const scrolling = useRef<boolean>(false)
+    const setScrolling = (val: boolean) => scrolling.current = val
 
-  const setContainerClass = (newSection: LandingSection) => {
+  const setContainerClass = (newSection: LandingSection | string) => {
     let em = document.getElementById("main-landing-container");
     if (!em) return;
     let newClasses: string[] = [`section-${newSection}`];
@@ -41,7 +37,7 @@ const ScrollGestureListener = () => {
   };
   const wheelListener: Handler<"wheel", UIEvent> = (data) => {
     if (!data.last) {
-      if (scrolling) return;
+      if (scrolling.current) return;
       setScrolling(true);
       const dir = lethargy.check(data.event);
       if (!dir) return;
@@ -59,9 +55,8 @@ const ScrollGestureListener = () => {
     }
   };
   const scrollListener: Handler<"scroll", UIEvent> = (data) => {
-    /* console.log("data in wheel", data) */
     if (!data.last) {
-      if (scrolling) return;
+      if (scrolling.current) return;
       setScrolling(true);
       const dir = lethargy.check(data.event);
       if (!dir) return;
@@ -82,7 +77,6 @@ const ScrollGestureListener = () => {
   useEffect(() => {
     let em = document.getElementById("main-landing-container");
     if (em) {
-      console.log(`Appending listener to dom`);
       /* @ts-ignore */
       const gesture = new Gesture(
         window,
@@ -102,7 +96,7 @@ const ScrollGestureListener = () => {
     }
   }, []);
 
-  return <div></div>;
+  return null
 };
 
 ScrollGestureListener.displayName = "ScrollGestureListener";

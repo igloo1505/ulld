@@ -1,0 +1,37 @@
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["fullTextSearch", "postgresqlExtensions"]
+}
+
+// generator zod {
+//     provider          = "prisma-zod-generator"
+//     output            = "../zod/prisma"
+//     isGenerateSelect  = true
+//     isGenerateInclude = true
+// }
+
+generator prismaClassGenerator {
+    provider = "prisma-class-generator"
+    output   = "../classes"
+}
+
+// generator erd {
+//     provider = "prisma-erd-generator"
+//     theme    = "base"
+//     output   = "/Users/bigsexy/Desktop/notes/content/tech/ulld/erd.md"
+// }
+
+datasource db {
+    provider   = "postgresql"
+    url        = env("DATABASE_URL")
+    extensions = [citext]
+}
+
+model WaitlistRequest {
+    id         Int      @id @default(autoincrement())
+    firstName  String
+    lastName   String
+    email      String
+    receivedOn DateTime @default(now())
+    emailsSent Int      @default(0)
+}

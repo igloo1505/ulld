@@ -1,9 +1,7 @@
-import TypingText from "#/lib/typingText";
-import Link from "next/link";
 import React from "react";
 import { LandingSubTitle } from "./subtitle";
 import { HighlightButton } from "#/components/general/inputs/highlightButton";
-import { LandingSection } from "#/types/landingSection";
+import { cancelLandingTyping } from "#/lib/actions/client";
 
 interface LandingPageTitleBoxProps { 
 }
@@ -31,7 +29,9 @@ export const LandingPageTitleBox = (props: LandingPageTitleBoxProps) => {
             />
             <HighlightButton
                 className={"mt-4 lg:mt-0"}
-                href="/joinMailingList">
+                href="/joinMailingList"
+                _onClick={cancelLandingTyping}
+            >
                 Join the waitlist
             </HighlightButton>
         </div>

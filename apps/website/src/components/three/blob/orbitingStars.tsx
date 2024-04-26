@@ -115,6 +115,7 @@ export const OrbitingStars = ({
     });
   }, [positions]);
 
+
   return (
     <animated.instancedMesh
       ref={orbitingStars}
