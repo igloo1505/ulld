@@ -28,6 +28,7 @@
     "@ulld/editor": "workspace:*",
     "@ulld/full-form": "workspace:*",
     "@ulld/hooks": "workspace:*",
+    "@ulld/icons": "workspace:*",
     "@ulld/kanban": "workspace:*",
     "@ulld/logger": "workspace:*",
     "@ulld/note-network": "workspace:*",
@@ -37,7 +38,6 @@
     "@ulld/ui": "workspace:*",
     "@ulld/utilities": "workspace:*",
     "@ulld/whiteboard": "workspace:*",
-    "@ulld/icons": "workspace:*",
     "@use-gesture/react": "^10.3.1",
     "@use-gesture/vanilla": "^10.3.1",
     "alea": "^1.0.1",
@@ -51,6 +51,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.3",
+    "redux-persist-indexeddb-storage": "^1.0.4",
     "simplex-noise": "^4.0.1",
     "three": "^0.163.0",
     "three-noise": "^1.1.2"

@@ -11,11 +11,7 @@ const AnimatedMeshDistortMaterial = animated(MeshDistortMaterial);
 
 interface BlobNucleusProps {
   texture: Texture;
-  morphScalar?: number;
-  timeScalar?: number;
-  layout?: BlobLayout;
-  geoData: GeoData;
-  setHovered: (hovered: boolean) => void;
+    show: boolean
 }
 
 const heroMorphScalar = 0.5;
@@ -30,91 +26,82 @@ const heroScale = 1;
 const descScale = 0;
 const hoverScale = 0.85;
 
-const DreiNucleus = forwardRef(
-  (
-    { texture, geoData, setHovered }: BlobNucleusProps,
-    ref: ForwardedRef<IcosahedronGeometry>,
-  ) => {
-    const viewport = useViewport();
-    const sp = useSearchParams();
-    const isHero = (sp.get("section") || "hero") === "hero";
-        /* TODO: Come back here and animate this time scalar somehow without needing to re-render 100 times as the value transitions. Not currently working directly in the speed field of the component  */
-    const [springs, api] = useSpring(() => {
-      return {
-        position: geoData.nucleusPosition,
+const DreiNucleus = ({ texture, show }: BlobNucleusProps) => {
+  const viewport = useViewport();
+  /* TODO: Come back here and animate this time scalar somehow without needing to re-render 100 times as the value transitions. Not currently working directly in the speed field of the component  */
+  const [springs, api] = useSpring(() => {
+    return {
+      position: [0, 0, 0] as [number, number, number],
+      timeScalar: heroTimeScalar,
+      morphScalar: heroMorphScalar,
+      scale: descScale,
+      config: (key) => {
+        switch (key) {
+          case "scale":
+            return {
+              friction: 50,
+              mass: 3,
+            };
+          case "position":
+            return { mass: 4, friction: 220 };
+          default:
+            return {
+              mass: 4,
+              friction: 220,
+            };
+        }
+      },
+    };
+  }, [viewport]);
+
+  useEffect(() => {
+    if (show) {
+      api.start({
         timeScalar: heroTimeScalar,
         morphScalar: heroMorphScalar,
         scale: heroScale,
-        config: (key) => {
-          switch (key) {
-            case "scale":
-              return {
-                friction: 50,
-                mass: 3,
-              };
-            case "position":
-              return { mass: 4, friction: 220 };
-            default:
-              return {
-                mass: 4,
-                friction: 220,
-              };
-          }
-        },
-      };
-    }, [viewport]);
+        position: [0, 0, 0],
+      });
+    } else {
+      api.start({
+        timeScalar: descTimeScalar,
+        morphScalar: descMorphScalar,
+        scale: descScale,
+      });
+    }
+  }, [show]);
 
-    useEffect(() => {
-      if (isHero) {
+  return (
+    <animated.mesh
+      position={springs.position}
+      scale={springs.scale}
+      onPointerEnter={() => {
         api.start({
-          timeScalar: heroTimeScalar,
-          morphScalar: heroMorphScalar,
-          scale: heroScale,
-          position: geoData.nucleusPosition,
+          timeScalar: hoverTimeScalar,
+          morphScalar: hoverMorphScalar,
+          scale: hoverScale,
         });
-      } else {
+      }}
+      onPointerLeave={() => {
         api.start({
-          timeScalar: descTimeScalar,
-          morphScalar: descMorphScalar,
-          scale: descScale,
-          /* position: geoData.nucleusPosition, */
+          timeScalar: show ? heroTimeScalar : descTimeScalar,
+          morphScalar: show ? heroMorphScalar : descMorphScalar,
+          scale: show ? heroScale : descScale,
         });
-      }
-    }, [isHero, geoData]);
-
-    return (
-      <animated.mesh
-        position={springs.position}
-        scale={springs.scale}
-        onPointerEnter={() => {
-          api.start({
-            timeScalar: hoverTimeScalar,
-            morphScalar: hoverMorphScalar,
-            scale: hoverScale,
-          });
-        }}
-        onPointerLeave={() => {
-          api.start({
-            timeScalar: isHero ? heroTimeScalar : descTimeScalar,
-            morphScalar: isHero ? heroMorphScalar : descMorphScalar,
-            scale: isHero ? heroScale : descScale,
-          });
-        }}
-      >
-        <sphereGeometry args={[1.5, 64, 32]} />
-        <AnimatedMeshDistortMaterial
-          map={texture}
-          time={springs.timeScalar}
-          speed={1}
-          distort={springs.morphScalar}
-          specularIntensity={3}
-          reflectivity={0.5}
-          /* clearcoat={5} */
-        />
-      </animated.mesh>
-    );
-  },
-);
+      }}
+    >
+      <sphereGeometry args={[1.5, 64, 32]} />
+      <AnimatedMeshDistortMaterial
+        map={texture}
+        time={springs.timeScalar}
+        speed={1}
+        distort={springs.morphScalar}
+        specularIntensity={3}
+        reflectivity={0.5}
+      />
+    </animated.mesh>
+  );
+};
 
 DreiNucleus.displayName = "DreiNucleus";
 

@@ -1,30 +1,112 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
 import staticContent from "../../../../staticData/staticContent.json";
+import { motion } from "framer-motion";
+import { useViewport } from "@ulld/hooks/useViewport";
 
 interface DescriptionLogoTitleBoxProps {
   isDescription: boolean;
 }
 
+const duration = 2;
+
 export const DescriptionLogoTitleBox = ({
   isDescription,
 }: DescriptionLogoTitleBoxProps) => {
+  const [shouldShow, setShouldShow] = useState(false);
+  const viewport = useViewport();
+
+  useEffect(() => {
+    if (isDescription) {
+      setTimeout(() => {
+        setShouldShow(true);
+      }, 3000);
+    } else {
+      setShouldShow(false);
+    }
+  }, [isDescription]);
+  if (!viewport) return null;
+
   return (
-    <div
-      className={
-        "w-fit max-w-[min(400px,85vw)] flex flex-col justify-center items-center gap-2"
-      }
-    >
-      <div className={"w-16 h-auto"}>
+    <>
+      <motion.div
+        className={"w-16 h-[53px] absolute top-0 left-0"}
+        initial="initial"
+        animate={shouldShow ? "after" : "initial"}
+        variants={{
+          initial: {
+            translateX: `${viewport?.window?.width! / 2 - 32}px`,
+            translateY: `${viewport?.window.height! / 2 - 53}px`,
+          },
+          after: {
+            translateX: "16px",
+            translateY: "16px",
+            transition: {
+              duration: duration,
+              type: "spring",
+              bounce: 0,
+            },
+          },
+        }}
+      >
         <AnimatedUlldLogo
           width={64}
           height={64}
           show={isDescription}
           delay={1000}
+          speed={2}
         />
-      </div>
-      <h2 className={"text-center text-sm"}>{staticContent.subtitle}</h2>
-    </div>
+      </motion.div>
+      <motion.h2
+        initial="initial"
+        animate={shouldShow ? "after" : "initial"}
+        className={"text-sm w-[350px] absolute top-0 left-0"}
+        variants={{
+          initial: {
+            /* top: "50%", */
+            /* left: "50%", */
+            translateX: `${viewport.window.width / 2 - 175}px`,
+            translateY: `${viewport.window.height / 2}px`,
+          },
+          after: {
+            translateX: "88px",
+            translateY: "24px",
+            transition: {
+              duration: duration,
+              type: "spring",
+              bounce: 0,
+            },
+          },
+        }}
+      >
+        {staticContent.subtitleBroken[0]}
+      </motion.h2>
+      <motion.h2
+        initial="initial"
+        animate={shouldShow ? "after" : "initial"}
+        className={"text-sm w-[230px] absolute top-0 left-0"}
+        variants={{
+          initial: {
+            /* top: "50%", */
+            /* left: "50%", */
+            translateX: `${viewport.window.width / 2 - 115}px`,
+            translateY: `${viewport.window.height / 2 + 20}px`,
+          },
+          after: {
+            translateX: "88px",
+            translateY: "40px",
+            transition: {
+              duration: duration,
+              type: "spring",
+              bounce: 0,
+            },
+          },
+        }}
+      >
+        {staticContent.subtitleBroken[1]}
+      </motion.h2>
+    </>
   );
 };
 

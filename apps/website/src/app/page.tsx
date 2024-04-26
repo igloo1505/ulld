@@ -1,12 +1,11 @@
 import { DescriptionSection } from "#/components/pageSpecific/landing/description/descriptionSection";
-import { LandingPageTitleBox } from "#/components/pageSpecific/landing/titleBox";
-import NoiseyBlob from "#/components/three/blob/main";
-import { LandingSection, getLandingSectionClass, landingSectionIndex } from "#/types/landingSection";
+import {
+  LandingSection,
+} from "#/types/landingSection";
 import React from "react";
-import clsx from 'clsx'
+import clsx from "clsx";
 import ScrollGestureListener from "#/components/pageSpecific/landing/scrollGestureListener";
-
-
+import { BlobSection } from "#/components/pageSpecific/landing/sections/blobSection";
 
 interface HomePageProps {
   searchParams: {
@@ -18,17 +17,13 @@ const HomePage = ({ searchParams: { section = "hero" } }: HomePageProps) => {
   return (
     <div
       id={"main-landing-container"}
-      className={
-        clsx("group/landingContainer main-landing relative overflow-hidden h-screen w-screen max-h-screen", section === "hero" && "section-hero")
-      }
+      className={clsx(
+        "group/landingContainer main-landing relative overflow-hidden h-screen w-screen max-h-screen",
+        section === "hero" && "section-hero",
+      )}
     >
-    <ScrollGestureListener />
-      <div
-        className={clsx("z-10", getLandingSectionClass("hero", section))}
-      >
-        <NoiseyBlob  />
-        <LandingPageTitleBox />
-      </div>
+      <ScrollGestureListener />
+      <BlobSection />
       <DescriptionSection />
     </div>
   );

@@ -1,24 +1,17 @@
 "use client";
-import { Points, Stats } from "@react-three/drei";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import {
-  AdditiveBlending,
   MathUtils,
-  Points as ThreePoints,
   Quaternion,
   Texture,
   Vector3,
   TextureLoader,
   SphereGeometry,
-  InstancedBufferGeometry,
-  MeshPhysicalMaterial,
   InstancedMesh,
   Matrix4,
 } from "three";
-import { forLoopUtil, makeBuffer } from "./utils";
+import { forLoopUtil } from "./utils";
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
-/* import * as buffer from "maath/buffer"; */
-import * as misc from "maath/misc";
 import { LandingSection } from "#/types/landingSection";
 import { useSpring, animated } from "@react-spring/three";
 import colorTexture from "./assets/orbit/ground_0010_color_1k.jpg";
@@ -34,36 +27,17 @@ interface OrbitingStarsProps {
   widthSegments?: number;
   heightSegments?: number;
   sizeSpread?: number;
+  show: boolean;
 }
-const rotationAxis = new Vector3(0, 1, 0).normalize();
-const q = new Quaternion();
-
-const posA =
-  (n: number, center: boolean = false, minRadius: number = 150) =>
-  () =>
-    center
-      ? makeBuffer({ length: n * 3 }, () => 0)
-      : makeBuffer({ length: n * 3 }, () =>
-          MathUtils.randFloatSpread(minRadius),
-        );
-const posB =
-  (n: number, center: boolean = false, maxRadius: number = 350) =>
-  () =>
-    center
-      ? makeBuffer({ length: n * 3 }, () => 0)
-      : makeBuffer({ length: n * 3 }, () =>
-          MathUtils.randFloatSpread(maxRadius),
-        );
 
 export const OrbitingStars = ({
-  section,
   radius = 20,
   spread = 3,
   size: _size = 5,
   timeScalar = 0.05,
   widthSegments = 5,
   heightSegments = 5,
-  sizeSpread = 2,
+  show,
   n = 50,
 }: OrbitingStarsProps) => {
   const orbitingStars = useRef<InstancedMesh>(null!);
@@ -89,7 +63,7 @@ export const OrbitingStars = ({
   const [springs, api] = useSpring(() => {
     return {
       opacity: 0.8,
-      scale: 1,
+      scale: 0,
       config: {
         mass: 4,
         friction: 200,
@@ -98,7 +72,7 @@ export const OrbitingStars = ({
   }, []);
 
   useEffect(() => {
-    if (section === "hero") {
+    if (show) {
       api.start({
         opacity: 0.8,
         scale: 1,
@@ -112,12 +86,13 @@ export const OrbitingStars = ({
         opacity: 0,
         scale: 0,
         config: {
-          mass: 4,
-          friction: 20,
+          mass: 2,
+          friction: 100,
+          duration: 0.6,
         },
       });
     }
-  }, [section]);
+  }, [show]);
   const three = useThree();
 
   useEffect(() => {
@@ -141,21 +116,18 @@ export const OrbitingStars = ({
   }, [positions]);
 
   return (
-    <>
-      <Stats showPanel={1} />
-      <animated.instancedMesh
-        ref={orbitingStars}
-        /* @ts-ignore */
-        args={[null, null, n]}
-        scale={springs.scale}
-      >
-        <sphereGeometry
-          ref={sphereGeo}
-          args={[_size, widthSegments, heightSegments]}
-        />
-        <meshPhysicalMaterial map={colorTextureMap} />
-      </animated.instancedMesh>
-    </>
+    <animated.instancedMesh
+      ref={orbitingStars}
+      /* @ts-ignore */
+      args={[null, null, n]}
+      scale={springs.scale}
+    >
+      <sphereGeometry
+        ref={sphereGeo}
+        args={[_size, widthSegments, heightSegments]}
+      />
+      <meshPhysicalMaterial map={colorTextureMap} />
+    </animated.instancedMesh>
   );
 };
 

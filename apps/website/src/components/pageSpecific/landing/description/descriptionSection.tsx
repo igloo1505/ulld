@@ -15,14 +15,13 @@ export const DescriptionSection = (props: DescriptionSectionProps) => {
   return (
     <section
       className={clsx(
-        "flex flex-col justify-center items-center gap-4",
+        "relative flex flex-col justify-center items-center gap-4 bg-transparent",
         sectionClasses,
       )}
     >
       <DescriptionLogoTitleBox
         isDescription={sp.get("section") === "description"}
       />
-      <div className={"w-16 h-auto"}></div>
       {staticContent.description.map((s, i) => {
         return <p key={i}>{s}</p>;
       })}

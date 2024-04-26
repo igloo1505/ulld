@@ -7,9 +7,10 @@ interface BlobSphereProps {
     texture: Texture;
     section: LandingSection;
     radius?: number
+    show: boolean
 }
 
-export const BlobSphere = ({ texture, section, radius=200 }: BlobSphereProps) => {
+export const BlobSphere = ({ texture, section, show, radius=200 }: BlobSphereProps) => {
     const ref = useRef<SphereGeometry>(null!);
 
     const [springs, api] = useSpring(
@@ -26,7 +27,7 @@ export const BlobSphere = ({ texture, section, radius=200 }: BlobSphereProps) =>
     );
 
     useEffect(() => {
-        if (section === "hero") {
+        if (show) {
             api.start({
                 radius: radius,
                 opacity: 1,
@@ -39,7 +40,7 @@ export const BlobSphere = ({ texture, section, radius=200 }: BlobSphereProps) =>
                 scale: 0
             });
         }
-    }, [section]);
+    }, [show]);
 
     return (
         <animated.mesh

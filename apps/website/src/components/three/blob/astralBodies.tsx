@@ -1,5 +1,5 @@
 import { Points } from "@react-three/drei";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   AdditiveBlending,
   MathUtils,
@@ -22,6 +22,7 @@ interface AstralBodiesProps {
   minRadius?: number;
   maxRadius?: number;
   size?: number;
+    show: boolean
 }
 const rotationAxis = new Vector3(0, 1, 0).normalize();
 const q = new Quaternion();
@@ -48,6 +49,7 @@ export const AstralBodies = ({
   section,
   minRadius,
   maxRadius,
+    show,
   size: _size = 5,
   n = 50,
 }: AstralBodiesProps) => {
@@ -55,20 +57,21 @@ export const AstralBodies = ({
   const [positionA, setPositionA] = useState(posA(n));
   const [positionB, setPositionB] = useState(posB(n));
   const [positionFinal] = useState(() => positionB.slice(0));
-  const [size] = useState(() =>
+  const size = useMemo(() =>
     makeBuffer({ length: n }, () => Math.random() * 0.2),
+        [n]
   );
-  const [rotations, setRotations] = useState(() => {
-    return makeBuffer({ length: n }, () => Math.random() * Math.PI);
-  });
+  const rotations = useMemo(() => {
+    return makeBuffer({ length: n }, () => Math.random() * Math.PI)
+  }, [n]);
 
-  const [rotationsB, setRotationsB] = useState(() => {
+  const rotationsB = useMemo(() => {
     return makeBuffer({ length: n }, () => Math.random() * Math.PI * 2);
-  });
+  }, [n]);
 
-  const [rotationsFinal, setRotationsFinal] = useState(() => {
+  const rotationsFinal = useMemo(() => {
     return rotationsB.slice(0);
-  });
+  }, []);
 
   useEffect(() => {
     setPositionA(posA(n, section !== "hero", minRadius));
@@ -98,7 +101,7 @@ export const AstralBodies = ({
   }, [section]);
 
   useEffect(() => {
-    if (section === "hero") {
+    if (show) {
       api.start({
         opacity: 0.8,
         size: _size,
@@ -106,19 +109,16 @@ export const AstralBodies = ({
     } else {
       api.start({
         opacity: 0,
-        size: 0,
+        size: 10,
       });
     }
-  }, [section]);
+  }, [show]);
 
   return (
     <Points
       positions={positionFinal}
       sizes={size}
       ref={astralBodies}
-        /* rotation={rotations} */
-      /* rotateZ={rotations} */
-      /* colors={color}  */
     >
       <animated.pointsMaterial
         size={springs.size}

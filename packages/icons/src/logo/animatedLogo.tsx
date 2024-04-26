@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import clsx from "clsx";
-import { Variants, motion, useMotionValue, useTransform } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 
 interface AnimatedUlldLogoProps
     extends React.ComponentProps<typeof motion.svg> {
@@ -8,6 +7,7 @@ interface AnimatedUlldLogoProps
     width?: number;
     height?: number;
     delay?: number;
+    speed?: number
 }
 
 const uLineDir = 0.6;
@@ -24,18 +24,18 @@ const delayMap: [number, number, number] = [
 ];
 const totalInitialDuration = durationMap.reduce((a, b) => a + b);
 
-const getDuration = (i: number) => {
+const getDuration = (i: number, speed: number = 1) => {
     if (i <= 3) {
-        return durationMap[i - 1];
+        return durationMap[i - 1] / speed
     }
-    return 1.2;
+    return 1.2 / speed
 };
 
-const getDelay = (i: number) => {
+const getDelay = (i: number, speed: number = 1) => {
     if (i <= 3) {
-        return delayMap[i - 1];
+        return delayMap[i - 1] / speed
     }
-    return totalInitialDuration + (i - 4) * 0.5;
+    return totalInitialDuration / speed + (i - 4) * 0.75 / speed
 };
 
 const pathVariants: Variants = {
@@ -44,8 +44,8 @@ const pathVariants: Variants = {
         strokeWidth: 0,
         pathLength: 0,
     },
-    show: (i) => {
-        const delay = getDelay(i);
+    show: (i: {idx: number, speed: number}) => {
+        const delay = getDelay(i.idx, i.speed);
         return {
             opacity: 1,
             strokeWidth: 16,
@@ -53,9 +53,9 @@ const pathVariants: Variants = {
             transition: {
                 pathLength: {
                     delay,
-                    duration: getDuration(i),
-                    type: i <= 3 ? undefined : "spring",
-                    ease: i <= 3 ? "linear" : undefined,
+                    duration: getDuration(i.idx, i.speed),
+                    type: i.idx <= 3 ? undefined : "spring",
+                    ease: i.idx <= 3 ? "linear" : undefined,
                     bounce: 0,
                 },
                 opacity: { delay, duration: 0.01 },
@@ -71,8 +71,8 @@ const pathVariantsBackwards: Variants = {
         pathLength: 1,
         pathOffset: 1,
     },
-    show: (i) => {
-        const delay = getDelay(i);
+    show: (i: {idx: number, speed: number}) => {
+        const delay = getDelay(i.idx, i.speed);
         return {
             opacity: 1,
             strokeWidth: 16,
@@ -81,9 +81,9 @@ const pathVariantsBackwards: Variants = {
             transition: {
                 pathOffset: {
                     delay,
-                    duration: getDuration(i),
-                    type: i <= 3 ? undefined : "spring",
-                    ease: i <= 3 ? "linear" : undefined,
+                    duration: getDuration(i.idx, i.speed),
+                    type: i.idx <= 3 ? undefined : "spring",
+                    ease: i.idx <= 3 ? "linear" : undefined,
                     bounce: 0,
                 },
                 opacity: { delay, duration: 0.01 },
@@ -97,6 +97,7 @@ export const AnimatedUlldLogo = ({
     width,
     height,
     delay,
+    speed = 1,
     ...props
 }: AnimatedUlldLogoProps) => {
     const [shouldShow, setShouldShow] = useState(show);
@@ -137,7 +138,10 @@ export const AnimatedUlldLogo = ({
                     strokeLinejoin="round"
                     strokeWidth="16"
                     variants={pathVariants}
-                    custom={4}
+                    custom={{
+                        idx: 4,
+                        speed: speed
+                    }}
                 />
                 <motion.path
                     d="M120.908 40.1446L119.692 139.37"
@@ -147,7 +151,10 @@ export const AnimatedUlldLogo = ({
                     strokeLinejoin="round"
                     strokeWidth="16"
                     variants={pathVariants}
-                    custom={5}
+                    custom={{
+                        idx: 5,
+                        speed
+                    }}
                 />
                 <g opacity="1">
                     <motion.path
@@ -158,7 +165,9 @@ export const AnimatedUlldLogo = ({
                         strokeLinejoin="round"
                         strokeWidth="16"
                         variants={pathVariantsBackwards}
-                        custom={3}
+                        custom={{
+                            idx: 3, speed
+                        }}
                     />
                     <motion.path
                         d="M25.7161 15.6927L24.5007 143.268"
@@ -168,7 +177,7 @@ export const AnimatedUlldLogo = ({
                         strokeLinejoin="round"
                         strokeWidth="16"
                         variants={pathVariants}
-                        custom={1}
+                        custom={{idx: 1, speed}}
                     />
                     <motion.path
                         d="M66.0902 143.268C66.0902 154.619 56.7801 163.821 45.2955 163.821C33.8109 163.821 24.5007 154.619 24.5007 143.268"
@@ -178,7 +187,7 @@ export const AnimatedUlldLogo = ({
                         strokeLinejoin="round"
                         strokeWidth="16"
                         variants={pathVariantsBackwards}
-                        custom={2}
+                        custom={{idx: 2, speed}}
                     />
                 </g>
                 <g opacity="1">
@@ -190,7 +199,7 @@ export const AnimatedUlldLogo = ({
                         strokeLinejoin="round"
                         strokeWidth="16"
                         variants={pathVariantsBackwards}
-                        custom={6}
+                        custom={{idx: 6, speed}}
                     />
                     <motion.path
                         d="M151.704 48.0826C179.105 48.0826 201.317 66.7409 201.317 89.7571C201.317 112.773 179.105 131.432 151.704 131.432"
@@ -200,7 +209,7 @@ export const AnimatedUlldLogo = ({
                         strokeLinejoin="round"
                         strokeWidth="16"
                         variants={pathVariants}
-                        custom={7}
+                        custom={{idx: 7, speed}}
                     />
                 </g>
             </g>
