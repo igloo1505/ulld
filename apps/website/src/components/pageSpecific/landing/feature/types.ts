@@ -14,7 +14,7 @@ export type FeatureUIStage = "hidden" | "current" | "past"
 type FeatureFCField = FC<{orientation: Orientation, shouldShow: boolean}>
 
 export interface FeatureContainerProps {
-    title: ReactNode
+    title: NonNullable<ReactNode> | FeatureFCField
     label: string
     desc: FeatureFCField
     badgesLeft?: BadgesGroup

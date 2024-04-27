@@ -410,9 +410,6 @@ importers:
       '@hookform/resolvers':
         specifier: ^3.3.4
         version: 3.3.4(react-hook-form@7.51.3(react@18.2.0))
-      '@prisma/client':
-        specifier: 5.13.0
-        version: 5.13.0(prisma@5.13.0)
       '@react-spring/three':
         specifier: ^9.7.3
         version: 9.7.3(@react-three/fiber@8.15.19(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.163.0))(react@18.2.0)(three@0.163.0)
@@ -461,6 +458,9 @@ importers:
       '@ulld/editor':
         specifier: workspace:*
         version: link:../../packages/editor
+      '@ulld/embeddable-components':
+        specifier: workspace:*
+        version: link:../../packages/embeddable-components
       '@ulld/full-form':
         specifier: workspace:*
         version: link:../../packages/full-form
@@ -1414,8 +1414,8 @@ importers:
   packages/database:
     dependencies:
       '@prisma/client':
-        specifier: latest
-        version: 5.13.0(prisma@5.10.2)
+        specifier: ^5.10.2
+        version: 5.10.2(prisma@5.10.2)
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../config-typescript
@@ -8066,15 +8066,6 @@ packages:
 
   '@prisma/client@5.10.2':
     resolution: {integrity: sha512-ef49hzB2yJZCvM5gFHMxSFL9KYrIP9udpT5rYo0CsHD4P9IKj473MbhU1gjKKftiwWBTIyrt9jukprzZXazyag==}
-    engines: {node: '>=16.13'}
-    peerDependencies:
-      prisma: '*'
-    peerDependenciesMeta:
-      prisma:
-        optional: true
-
-  '@prisma/client@5.13.0':
-    resolution: {integrity: sha512-uYdfpPncbZ/syJyiYBwGZS8Gt1PTNoErNYMuqHDa2r30rNSFtgTA/LXsSk55R7pdRTMi5pHkeP9B14K6nHmwkg==}
     engines: {node: '>=16.13'}
     peerDependencies:
       prisma: '*'
@@ -28573,14 +28564,6 @@ snapshots:
       prisma: 5.10.2
 
   '@prisma/client@5.10.2(prisma@5.13.0)':
-    dependencies:
-      prisma: 5.13.0
-
-  '@prisma/client@5.13.0(prisma@5.10.2)':
-    dependencies:
-      prisma: 5.10.2
-
-  '@prisma/client@5.13.0(prisma@5.13.0)':
     dependencies:
       prisma: 5.13.0
 

@@ -12,7 +12,7 @@
     "db:generate": "node /Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/apps/website/.env.local -- prisma generate --schema ./src/prisma/schema.prisma",
     "db:push": "prisma db push --skip-generate",
     "prisma:studio": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/apps/website/.env.local -- prisma studio --schema ./src/prisma/schema.prisma",
-    "postinstall": "prisma generate --schema ./src/prisma/schema.prisma"
+    "postinstall": "../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/apps/website/.env.local -- prisma generate --schema ./src/prisma/schema.prisma"
   },
   "dependencies": {
     "@dimforge/rapier3d": "^0.12.0",
@@ -45,6 +45,7 @@
     "@ulld/ui": "workspace:*",
     "@ulld/utilities": "workspace:*",
     "@ulld/whiteboard": "workspace:*",
+    "@ulld/embeddable-components": "workspace:*",
     "@use-gesture/react": "^10.3.1",
     "@use-gesture/vanilla": "^10.3.1",
     "alea": "^1.0.1",

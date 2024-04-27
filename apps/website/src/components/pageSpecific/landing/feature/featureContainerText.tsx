@@ -31,6 +31,7 @@ const FeatureContainerText = ({
     const ltr = orientation === "ltr";
     const stage = useShouldShowFeature(scope, _stage, idx, section === "hero")
     const Desc = desc
+    const Title = title
 
     return (
         <motion.div
@@ -97,7 +98,7 @@ const FeatureContainerText = ({
                     },
                 }}
             >
-                {title}
+                {typeof Title === "function" ? <Title orientation={orientation} shouldShow={stage === "current"}/> : Title}
             </motion.h2>
             <motion.p
                 className={clsx(

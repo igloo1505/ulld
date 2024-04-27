@@ -25,7 +25,7 @@
     "postinstall": "prisma generate --schema ./src/prisma/schema.prisma"
   },
   "dependencies": {
-    "@prisma/client": "latest"
+    "@prisma/client": "^5.10.2"
   },
   "peerDependencies": {
     "@repo/typescript-config": "workspace:*",
