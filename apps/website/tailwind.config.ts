@@ -20,7 +20,8 @@ const tailwindCfg: Config = {
                 sans: ["var(--ulld-app-font)"]
             },
             colors: {
-                hint: "#39f614"
+                hint: "#39f614",
+                link: "#00bbf9"
             }
         }
     },

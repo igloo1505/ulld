@@ -7,14 +7,16 @@ import { useViewport } from "@ulld/hooks/useViewport";
 
 interface DescriptionLogoTitleBoxProps {
   isDescription: boolean;
+    shouldAnimate: boolean
 }
 
 const duration = 2;
 
 export const DescriptionLogoTitleBox = ({
-  isDescription,
+    isDescription,
+    shouldAnimate
 }: DescriptionLogoTitleBoxProps) => {
-  const [shouldShow, setShouldShow] = useState(false);
+  const [shouldShow, setShouldShow] = useState(Boolean(isDescription && !shouldAnimate) ? true : false);
   const viewport = useViewport();
 
   useEffect(() => {
@@ -32,7 +34,7 @@ export const DescriptionLogoTitleBox = ({
     <>
       <motion.div
         className={"w-16 h-[53px] absolute top-0 left-0"}
-        initial="initial"
+        initial={shouldAnimate ? "initial" : "after"}
         animate={shouldShow ? "after" : "initial"}
         variants={{
           initial: {
@@ -59,13 +61,11 @@ export const DescriptionLogoTitleBox = ({
         />
       </motion.div>
       <motion.h2
-        initial="initial"
+        initial={shouldAnimate ? "initial" : "after"}
         animate={shouldShow ? "after" : "initial"}
         className={"text-sm w-[350px] absolute top-0 left-0"}
         variants={{
           initial: {
-            /* top: "50%", */
-            /* left: "50%", */
             translateX: `${viewport.window.width / 2 - 175}px`,
             translateY: `${viewport.window.height / 2}px`,
           },
@@ -83,13 +83,11 @@ export const DescriptionLogoTitleBox = ({
         {staticContent.subtitleBroken[0]}
       </motion.h2>
       <motion.h2
-        initial="initial"
+        initial={shouldAnimate ? "initial" : "after"}
         animate={shouldShow ? "after" : "initial"}
         className={"text-sm w-[230px] absolute top-0 left-0"}
         variants={{
           initial: {
-            /* top: "50%", */
-            /* left: "50%", */
             translateX: `${viewport.window.width / 2 - 115}px`,
             translateY: `${viewport.window.height / 2 + 20}px`,
           },
