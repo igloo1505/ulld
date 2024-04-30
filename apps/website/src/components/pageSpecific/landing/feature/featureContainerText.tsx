@@ -1,9 +1,7 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FeatureContainerProps, FeatureUIStage } from "./types";
-import {
-    motion,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import clsx from "clsx";
 import { useShouldShowFeature } from "./useInitialFeatureDelay";
 import { LandingSection } from "#/types/landingSection";
@@ -12,10 +10,10 @@ interface FeatureContainerTextProps
     extends Pick<
         FeatureContainerProps,
         "label" | "desc" | "title" | "orientation"
-    > { 
-    stage: FeatureUIStage
-    idx: number
-    section: LandingSection | string
+    > {
+    stage: FeatureUIStage;
+    idx: number;
+    section: LandingSection | string;
 }
 
 const FeatureContainerText = ({
@@ -25,18 +23,31 @@ const FeatureContainerText = ({
     orientation,
     stage: _stage,
     idx,
-    section
+    section,
 }: FeatureContainerTextProps) => {
-    const scope = useRef<HTMLDivElement>(null!)
+    const scope = useRef<HTMLDivElement>(null!);
     const ltr = orientation === "ltr";
-    const stage = useShouldShowFeature(scope, _stage, idx, section === "hero")
-    const Desc = desc
-    const Title = title
+    const [animFinished, setAnimFinished] = useState(false);
+    const stage = useShouldShowFeature(
+        scope,
+        _stage,
+        idx,
+        section === "hero",
+        section,
+    );
+    const Desc = desc;
+    const Title = title;
+    const Label = label;
+    useEffect(() => {
+        if (stage !== "current") {
+            setAnimFinished(false);
+        }
+    }, [stage]);
 
     return (
         <motion.div
             ref={scope}
-            className={"w-full flex flex-col justify-center items-start"}
+            className={"w-full min-w-[min(400px,calc(100vw-4rem))] flex flex-col justify-center items-start"}
         >
             <motion.h3
                 className={clsx(
@@ -55,18 +66,27 @@ const FeatureContainerText = ({
                         opacity: 1,
                         transition: {
                             duration: 0.5,
-                        }
+                        },
                     },
                     past: {
                         x: ltr ? -100 : 100,
                         opacity: 0,
                         transition: {
                             duration: 0.5,
-                        }
+                        },
                     },
                 }}
             >
-                {label}
+                {typeof Label === "function" ? (
+                    <Label
+                        section={section}
+                        orientation={orientation}
+                        shouldShow={stage === "current"}
+                        animFinished={animFinished}
+                    />
+                ) : (
+                    Label
+                )}
             </motion.h3>
             <motion.h2
                 className={clsx(
@@ -84,7 +104,7 @@ const FeatureContainerText = ({
                         x: 0,
                         opacity: 1,
                         transition: {
-                        duration: 0.5,
+                            duration: 0.5,
                             delay: 0.25,
                         },
                     },
@@ -92,13 +112,22 @@ const FeatureContainerText = ({
                         x: ltr ? -100 : 100,
                         opacity: 0,
                         transition: {
-                        duration: 0.5,
+                            duration: 0.5,
                             delay: 0.25,
                         },
                     },
                 }}
             >
-                {typeof Title === "function" ? <Title orientation={orientation} shouldShow={stage === "current"}/> : Title}
+                {typeof Title === "function" ? (
+                    <Title
+                        section={section}
+                        orientation={orientation}
+                        shouldShow={stage === "current"}
+                        animFinished={animFinished}
+                    />
+                ) : (
+                    Title
+                )}
             </motion.h2>
             <motion.p
                 className={clsx(
@@ -120,8 +149,8 @@ const FeatureContainerText = ({
                             scale: {
                                 duration: 1,
                                 type: "spring",
-                                stiffness: 100
-                            }
+                                stiffness: 100,
+                            },
                         },
                     },
                     past: {
@@ -133,15 +162,18 @@ const FeatureContainerText = ({
                             scale: {
                                 duration: 1,
                                 type: "spring",
-                                stiffness: 100
-                            }
+                                stiffness: 100,
+                            },
                         },
                     },
                 }}
+                onAnimationComplete={() => setAnimFinished(true)}
             >
                 <Desc
+                    section={section}
                     orientation={orientation}
                     shouldShow={stage === "current"}
+                    animFinished={animFinished}
                 />
             </motion.p>
         </motion.div>

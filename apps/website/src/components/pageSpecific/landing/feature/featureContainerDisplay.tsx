@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, Transition, useMotionValueEvent, Variants } from "framer-motion";
 import { FeatureContainerProps, FeatureUIStage } from "./types";
 import { useShouldShowFeature } from "./useInitialFeatureDelay";
 import { LandingSection } from "#/types/landingSection";
@@ -11,6 +11,7 @@ interface FeatureContainerDisplayProps
     section: LandingSection | string
 }
 
+
 const FeatureContainerDisplay = ({
     component,
     orientation,
@@ -19,12 +20,18 @@ const FeatureContainerDisplay = ({
     section
 }: FeatureContainerDisplayProps) => {
     const scope = useRef<HTMLElement>(null!);
-    const stage = useShouldShowFeature(scope, _stage, idx, section === "hero");
+    const [animFinished, setAnimFinished] = useState(false)
+    const stage = useShouldShowFeature(scope, _stage, idx, section === "hero", section);
     const Component = component;
+    useEffect(() => {
+       if(stage !== "current"){
+            setAnimFinished(false)
+        } 
+    }, [stage])
     return (
         <motion.section
             className={
-                "w-full h-screen pt-8 flex flex-col justify-center items-center origin-center"
+                "w-full max-h-[60vh] md:h-full flex flex-col justify-center items-center origin-center p-8"
             }
             ref={scope}
             initial="hidden"
@@ -43,6 +50,7 @@ const FeatureContainerDisplay = ({
                         delay: 0.5,
                         type: "spring",
                         stiffness: 100,
+                        
                     },
                 },
                 past: {
@@ -56,8 +64,9 @@ const FeatureContainerDisplay = ({
                     },
                 },
             }}
+            onAnimationComplete={() => setAnimFinished(true)}
         >
-            <Component shouldShow={stage === "current"} orientation={orientation} />
+            <Component animFinished={animFinished} section={section} shouldShow={stage === "current"} orientation={orientation} />
         </motion.section>
     );
 };

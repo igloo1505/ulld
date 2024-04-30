@@ -1,3 +1,4 @@
+import { LandingSection } from "#/types/landingSection"
 import { FC, ReactNode } from "react"
 
 export const initialFeatureTimeout = 3000
@@ -11,11 +12,11 @@ type Orientation = "rtl" | "ltr"
 
 export type FeatureUIStage = "hidden" | "current" | "past"
 
-type FeatureFCField = FC<{orientation: Orientation, shouldShow: boolean}>
+type FeatureFCField = FC<{orientation: Orientation, shouldShow: boolean, section: LandingSection | string, animFinished: boolean}>
 
 export interface FeatureContainerProps {
     title: NonNullable<ReactNode> | FeatureFCField
-    label: string
+    label: NonNullable<ReactNode> | FeatureFCField
     desc: FeatureFCField
     badgesLeft?: BadgesGroup
     badgesRight?: BadgesGroup

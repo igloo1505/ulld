@@ -7,6 +7,7 @@ export const useShouldShowFeature = (
     stage: FeatureUIStage,
     idx: number,
     isHero: boolean,
+    section: string
 ): FeatureUIStage => {
     const [isInitial, setIsInitial] = useState(true);
     const [hasSet, setHasSet] = useState(false);
@@ -21,7 +22,7 @@ export const useShouldShowFeature = (
         } else {
             setIsInitial(true);
         }
-        setHasSet(true);
+        setHasSet(section !== "hero");
     }, [stage]);
     useEffect(() => {
         if (isHero) {

@@ -1,5 +1,7 @@
+import { LogoAsText } from "#/components/general/logoAsText";
 import { FeaturedContainerPropsRequired } from "#/components/pageSpecific/landing/feature/types";
-
+import Link from "next/link";
+import ConfigStreamIcon from "./featureAssets/communityTechIcons/configStreamIcon";
 
 export const customizableFeature: FeaturedContainerPropsRequired = {
     label: "Customize Endlessly",
@@ -7,16 +9,21 @@ export const customizableFeature: FeaturedContainerPropsRequired = {
     desc: () => {
         return (
             <div>
-                Dignissim tristique turpis, at sed id vestibulum a vulputate blandit
-                amet metus aliquet pellentesque. Felis justo pellentesque lectus ac elit
-                vestibulum vitae feugiat dictumst eu convallis ultricies nam tortor
-                pellentesque viverra. Habitasse cursus nunc ultricies sagittis est sem
-                est dui elementum massa tempor suscipit ut dolor aliquet eget est
-                imperdiet.
+                From the beginning <LogoAsText fontSize={18} /> was built to be extended
+                with one configuration file providing a single source of truth
+                throughout your application. <LogoAsText fontSize={18} /> offers a{" "}
+                <span className={"font-semibold"}>Typescript</span> and{" "}
+                <span className={"font-semibold"}>JSON</span> interface for those that
+                are comfortable writing their own configuration, but a graphical
+                interface for configuring your workspace is{" "}
+                <Link href="/sponsor" className={"text-link"}>
+                    just around the corner
+                </Link>
+                .
             </div>
         );
     },
-    component: () => {
-        return <div>Component here</div>;
+    component: ({ shouldShow, animFinished }) => {
+        return <ConfigStreamIcon animFinished={animFinished} show={shouldShow} />;
     },
 };
