@@ -1,14 +1,16 @@
 "use client";
 import React from "react";
-import { LogoAsText } from "#/components/general/logoAsText";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { useFeatureUIStage } from "../../feature/useFeatureUIStage";
 import { useViewport } from "@ulld/hooks/useViewport";
+import { AnimatedLogoAsText } from "#/components/general/animatedLogoAsText";
 
 interface StoryOfUlldSectionProps { }
 
 const ltr = true;
+
+const heading = "The story of "
 
 export const StoryOfUlldSection = (props: StoryOfUlldSectionProps) => {
     const { stage, section } = useFeatureUIStage("story", -1);
@@ -38,20 +40,35 @@ export const StoryOfUlldSection = (props: StoryOfUlldSectionProps) => {
                         opacity: 1,
                         transition: {
                             duration: 0.5,
-                            delay: 0.25,
-                        },
-                    },
-                    past: {
-                        x: ltr ? -100 : 100,
-                        opacity: 0,
-                        transition: {
-                            duration: 0.5,
-                            delay: 0.25,
+                            delay: 0.5,
                         },
                     },
                 }}
             >
-                The story of <LogoAsText fontSize={36}/>
+                {heading.split("").map((l, i) => {
+                return <motion.span
+                initial="hidden"
+                animate={stage}
+                variants={{
+                    hidden: {
+                        y: -30,
+                        opacity: 0,
+                    },
+                    current: {
+                        y: 0,
+                        opacity: 1,
+                        transition: {
+                            // duration: 0.5,
+                            delay: 0.25 + i * 0.1
+                        },
+                    },
+                }}
+                >{l}</motion.span>
+                })}<AnimatedLogoAsText
+                show={stage === "current"}
+                delay={1.4}
+                fontSize={36}
+                />
             </motion.h2>
         </div>
     );
