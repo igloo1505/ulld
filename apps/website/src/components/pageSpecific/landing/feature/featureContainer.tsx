@@ -10,6 +10,9 @@ import { useViewport } from "@ulld/hooks/useViewport";
 const FeatureContainer = ({
     orientation = "ltr",
     idx,
+    expandDisplay,
+    spaceEven,
+    displayContainerClasses,
     ...props
 }: FeatureContainerProps) => {
     const { stage, section } = useFeatureUIStage(idx);
@@ -17,7 +20,11 @@ const FeatureContainer = ({
     return (
         <div
             className={clsx(
-                "absolute group/feature left-0 top-[76px] h-[calc(100vh-76px)] w-screen flex flex-col md:flex-row justify-center items-center place-items-center gap-4 md:gap-6 lg:gap-8 px-8 lg:px-12 pb-8",
+                "absolute group/feature left-0 top-[76px] h-[calc(100vh-76px)] w-screen gap-4 md:gap-6 lg:gap-8 px-8 lg:px-12 pb-8 flex-col md:flex-row justify-center items-center place-items-center",
+                stage === "current" && "feature-active",
+                spaceEven ? "grid grid-cols-1 md:flex" : "flex",
+                expandDisplay && "display-expand",
+
                 stage === "current" && "z-10",
                 (vp?.window.width && vp.window.width < 768) ? "stack" : "flow"
             )}
@@ -34,6 +41,8 @@ const FeatureContainer = ({
                         idx={idx}
                     />
                     <FeatureContainerDisplay
+                        containerClasses={displayContainerClasses}
+                        displayExpand={expandDisplay || spaceEven}
                         orientation={orientation}
                         component={props.component}
                         stage={stage}
@@ -45,6 +54,8 @@ const FeatureContainer = ({
                 <>
                     <FeatureContainerDisplay
                         orientation={orientation}
+                        containerClasses={displayContainerClasses}
+                        displayExpand={expandDisplay || spaceEven}
                         component={props.component}
                         stage={stage}
                         section={section}

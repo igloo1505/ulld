@@ -10,6 +10,7 @@ import { ImageWithBackground } from "../../components/general/imageWithBackgroun
 export const mdxFeature: FeaturedContainerPropsRequired = {
     label: "Write in MDX",
     title: "Markdown... Xtended",
+    expandDisplay: true,
     desc: () => {
         return (
             <div className={"w-full h-fit flex flex-col gap-4 md:gap-6"}>

@@ -4,5 +4,5 @@ export type InitialCoreState = {
 
 
 export const initialCoreState = {
-    hasRendered: false
+    hasRendered: false,
 }

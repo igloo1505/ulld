@@ -22,7 +22,10 @@ export interface FeatureContainerProps {
     badgesRight?: BadgesGroup
     orientation: Orientation
     component: FeatureFCField
+    expandDisplay?: boolean
+    spaceEven?: boolean
     idx: number
+    displayContainerClasses?: string
 }
 
 

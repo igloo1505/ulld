@@ -1,6 +1,7 @@
 import { initialCoreState } from "./core";
-
+import { initialInteractionsState } from "./interactions";
 
 export const initialState = {
-core: initialCoreState
-}
+    core: initialCoreState,
+    interactions: initialInteractionsState,
+};

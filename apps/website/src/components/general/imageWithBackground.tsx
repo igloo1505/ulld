@@ -90,9 +90,9 @@ export const ImageWithBackground = ({
             )}
             onClick={onClick}
         >
-            <motion.div
+            {(vp?.window.width && vp.window.width > 768) && <motion.div
                 className={
-                    "absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] -z-[1]"
+                    "absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] -z-[10]"
                 }
                 style={{
                     background:
@@ -129,7 +129,7 @@ export const ImageWithBackground = ({
                         y: "-50%",
                     },
                 }}
-            />
+            />}
             <Image
                 src={src}
                 ref={ref}
@@ -159,7 +159,7 @@ export const ImageWithBackground = ({
                 }}
                 {...props}
                 className={cn(
-                    "border border-border rounded-md max-h-full max-w-full group-[.flow]/feature:w-auto group-[.flow]/feature:h-full group-[.stack]/feature:h-auto group-[.stack]/feature:w-full object-contain",
+                    "border border-border rounded-md max-h-full max-w-full group-[.flow]/feature:w-auto group-[.flow]/feature:h-full group-[.stack]/feature:h-auto group-[.stack]/feature:w-fit object-contain",
                     props.className,
                 )}
             />

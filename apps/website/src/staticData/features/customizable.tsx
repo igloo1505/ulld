@@ -6,6 +6,8 @@ import ConfigStreamIcon from "./featureAssets/communityTechIcons/configStreamIco
 export const customizableFeature: FeaturedContainerPropsRequired = {
     label: "Customize Endlessly",
     title: "1 config to rule them all",
+    displayContainerClasses: "!pt-0 min-h-[30vh]",
+    /* spaceEven: true, */
     desc: () => {
         return (
             <div>

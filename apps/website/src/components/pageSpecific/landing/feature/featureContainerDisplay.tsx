@@ -1,14 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion, Transition, useMotionValueEvent, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { FeatureContainerProps, FeatureUIStage } from "./types";
 import { useShouldShowFeature } from "./useInitialFeatureDelay";
 import { LandingSection } from "#/types/landingSection";
+import clsx from 'clsx'
 
 interface FeatureContainerDisplayProps
     extends Pick<FeatureContainerProps, "orientation" | "component"> { 
     stage: FeatureUIStage
     idx: number
     section: LandingSection | string
+    displayExpand?: boolean
+    containerClasses?: string
 }
 
 
@@ -17,9 +20,11 @@ const FeatureContainerDisplay = ({
     orientation,
     stage: _stage,
     idx,
+    displayExpand,
+    containerClasses,
     section
 }: FeatureContainerDisplayProps) => {
-    const scope = useRef<HTMLElement>(null!);
+    const scope = useRef<HTMLDivElement>(null!);
     const [animFinished, setAnimFinished] = useState(false)
     const stage = useShouldShowFeature(scope, _stage, idx, section === "hero", section);
     const Component = component;
@@ -29,9 +34,9 @@ const FeatureContainerDisplay = ({
         } 
     }, [stage])
     return (
-        <motion.section
+        <motion.div
             className={
-                "w-full max-h-[60vh] md:h-full flex flex-col justify-center items-center origin-center p-8"
+                clsx("w-full max-h-[60vh] md:h-full flex flex-col justify-center items-center origin-center p-8", displayExpand && "h-full", containerClasses)
             }
             ref={scope}
             initial="hidden"
@@ -67,7 +72,7 @@ const FeatureContainerDisplay = ({
             onAnimationComplete={() => setAnimFinished(true)}
         >
             <Component animFinished={animFinished} section={section} shouldShow={stage === "current"} orientation={orientation} />
-        </motion.section>
+        </motion.div>
     );
 };
 

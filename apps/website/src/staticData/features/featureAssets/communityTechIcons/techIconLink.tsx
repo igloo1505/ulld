@@ -12,6 +12,7 @@ import googleIcon from "./google.svg";
 import googleCalIcon from "./googleCalendar.svg";
 import latexIcon from "./latex.svg";
 import mdxIcon from "./mdx.svg";
+import shadIcon from "./shadcn.svg";
 import NextImage from "next/image";
 import { motion } from "framer-motion";
 import clsx from "clsx";
@@ -30,6 +31,7 @@ export type TechIconType =
     | "googleCalendar"
     | "google"
     | "latex"
+    | "shad"
     | "mdx";
 
 const icons: { [k in TechIconType]: typeof cssIcon } = {
@@ -46,6 +48,7 @@ const icons: { [k in TechIconType]: typeof cssIcon } = {
     googleCalendar: googleCalIcon,
     latex: latexIcon,
     mdx: mdxIcon,
+    shad: shadIcon
 };
 
 const alt: { [k in TechIconType]: typeof cssIcon } = {
@@ -62,6 +65,7 @@ const alt: { [k in TechIconType]: typeof cssIcon } = {
     mdx: "MDX",
     google: "Google",
     googleCalendar: "Google Calendar",
+    shad: "shadcn"
 };
 
 const docs: { [k in TechIconType]: string } = {
@@ -78,6 +82,7 @@ const docs: { [k in TechIconType]: string } = {
     googleCalendar: "https://developers.google.com/identity/protocols/oauth://developers.google.com/identity/protocols/oauth2/",
     latex: "https://www.latex-project.org/help/documentation://www.latex-project.org/help/documentation/",
     mdx: "https://mdxjs.com/docs://mdxjs.com/docs/",
+    shad: "https://ui.shadcn.com/docs"
 };
 
 interface TechIconLinkProps {

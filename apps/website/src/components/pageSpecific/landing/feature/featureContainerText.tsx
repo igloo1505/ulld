@@ -47,7 +47,7 @@ const FeatureContainerText = ({
     return (
         <motion.div
             ref={scope}
-            className={"w-full min-w-[min(400px,calc(100vw-4rem))] flex flex-col justify-center items-start"}
+            className={"w-full min-w-[min(400px,calc(100vw-4rem))] flex flex-col justify-center items-start group-[.feature-active]/feature:z-10"}
         >
             <motion.h3
                 className={clsx(

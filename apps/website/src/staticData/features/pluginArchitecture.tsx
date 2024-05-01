@@ -54,8 +54,8 @@ export const pluginArchitectureFeature: FeaturedContainerPropsRequired = {
                 <TechIconLink
                     show={shouldShow}
                     index={4}
-                    className={techIconClasses}
-                    icon="css"
+                    className={clsx(techIconClasses, "fill-foreground stroke-foreground")}
+                    icon="shad"
                 />
                 <TechIconLink
                     show={shouldShow}

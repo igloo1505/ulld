@@ -21,7 +21,7 @@ export const LogoAsText = ({ fontSize = 16, className }: LogoAsTextProps) => {
                 U
             </span>
             <span
-                className={"inline-block"}
+                className={"inline-block text-foreground"}
                 style={{
                     fontSize: `${fontSize}px`,
                 }}

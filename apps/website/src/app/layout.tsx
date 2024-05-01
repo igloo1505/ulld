@@ -14,6 +14,7 @@ import { fontSans } from "@ulld/tailwind/defaultFont";
 import appConfig from "#/appConfig.ulld.json";
 import localFont from "next/font/local";
 import SetInitialRender from "#/components/utility/setInitialRender";
+import StateWrappedComponents from "#/components/utility/providers/stateWrappedComponents";
 /* import "shiki/themes/dracula.mjs" */
 
 const appFont = localFont({
@@ -89,7 +90,7 @@ const RootLayout = async (props: {
   let p = {
     "data-theme": colorMode,
     "data-color-mode": colorMode,
-    "data-ulld-theme": "violet",
+    "data-ulld-theme": "brand",
     "data-js-focus-visible": "",
   };
 
@@ -98,7 +99,7 @@ const RootLayout = async (props: {
   return (
     <html
       lang="en"
-      className={clsx("group/html js-focus-visible dark", appFont.variable)}
+      className={clsx("group/html js-focus-visible dark border-border", appFont.variable)}
       {...p}
     >
       <head>
@@ -117,6 +118,7 @@ const RootLayout = async (props: {
         <Toaster />
         {props.modal && props.modal}
         <SetInitialRender />
+        <StateWrappedComponents />
       </body>
     </html>
   );
