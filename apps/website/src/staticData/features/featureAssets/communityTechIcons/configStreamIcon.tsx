@@ -58,7 +58,6 @@ const streamVariantsMuted: Variants = {
 const maxIndex = 5;
 
 const ConfigStream = forwardRef(({ className, streamIndex, show }: P, ref: ForwardedRef<SVGSVGElement>) => {
-    console.log("streamIndex: ", streamIndex);
     return (
         <svg
             /* height="100%" */

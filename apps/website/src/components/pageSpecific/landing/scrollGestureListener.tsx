@@ -1,8 +1,7 @@
 "use client";
 import { LandingSection, getNewSection } from "#/types/landingSection";
 import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useRef, useState } from "react";
+import  { useEffect, useRef } from "react";
 import {
   Handler,
   createGesture,
@@ -46,7 +45,6 @@ const ScrollGestureListener = () => {
         dir < 0 ? "up" : "down",
       );
       if (newSection) {
-        console.log(`New section in wheel: ${newSection}`);
         window.history.replaceState(null, "", `?section=${newSection}`);
         setContainerClass(newSection);
       }
@@ -65,7 +63,6 @@ const ScrollGestureListener = () => {
         dir < 0 ? "up" : "down",
       );
       if (newSection) {
-        console.log(`New section in scroll: ${newSection}`);
         window.history.replaceState(null, "", `?section=${newSection}`);
         setContainerClass(newSection);
       }

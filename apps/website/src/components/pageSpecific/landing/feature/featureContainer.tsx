@@ -15,17 +15,15 @@ const FeatureContainer = ({
     displayContainerClasses,
     ...props
 }: FeatureContainerProps) => {
-    const { stage, section } = useFeatureUIStage(idx);
+    const { stage, section } = useFeatureUIStage(null, idx);
     const vp = useViewport()
     return (
         <div
             className={clsx(
                 "absolute group/feature left-0 top-[76px] h-[calc(100vh-76px)] w-screen gap-4 md:gap-6 lg:gap-8 px-8 lg:px-12 pb-8 flex-col md:flex-row justify-center items-center place-items-center",
-                stage === "current" && "feature-active",
+                stage === "current" && "feature-active z-10",
                 spaceEven ? "grid grid-cols-1 md:flex" : "flex",
                 expandDisplay && "display-expand",
-
-                stage === "current" && "z-10",
                 (vp?.window.width && vp.window.width < 768) ? "stack" : "flow"
             )}
         >
