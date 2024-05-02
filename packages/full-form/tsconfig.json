@@ -1,6 +1,7 @@
 {
     "extends": "@repo/typescript-config/nextjs.json",
     "compilerOptions": {
-        "moduleResolution": "bundler"
+        "moduleResolution": "bundler",
+        "target": "ES2021"
     }
 }

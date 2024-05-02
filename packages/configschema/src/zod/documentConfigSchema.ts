@@ -2,6 +2,7 @@ import { z } from 'zod'
 import { zodPathWithGlobField, zodWithForwardSlashTransform } from './configUtilitySchemas'
 import { withForwardSlash } from '@ulld/utilities/utils/fsUtils'
 import { makeValidId } from '@ulld/utilities/utils/identity'
+import { iconNameField } from './navigationConfig'
 
 
 const parsableSearchParam = z.union([
@@ -54,6 +55,7 @@ export const documentTypeConfigSchemaBase = z.object({
     autoTopic: z.string().array().default([]).describe("Automatically append these topics to all notes of this document type. This can also be done interactively through the app's UI after it is built."),
     autoSubject: z.string().array().default([]).describe("Automatically append these subjects to all notes of this document type. This can also be done interactively through the app's UI after it is built."),
     UI: docTypeUISchema.default({}),
+    icon: iconNameField.optional()
 })
 
 export const documentTypeConfigSchema = documentTypeConfigSchemaBase.partial({

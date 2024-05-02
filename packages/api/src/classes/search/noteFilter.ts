@@ -7,9 +7,10 @@ import type { SerializeMdxConfig } from "@ulld/parsers/mdx/types";
 import type { SearchAllParams } from "@ulld/state/searchParamSchemas/utilities/formatSearchAllParams";
 import { serverClient } from "../../trpc/serverClient";
 import { MdxNote } from "../prismaMdxRelations/MdxNote";
-import { PrismaMdxNoteSummaryOutput } from "../prismaMdxRelations/protocols/mdxNote";
 import { ArrayUtilities } from "@ulld/utilities/utils/arrayUtilities";
 import { mdxNoteWithParsedLatex, ParsedMdxOutput } from "../../schemas/search/parsing";
+import { MdxNoteSummaryOutputWithMdxTransforms } from "../prismaMdxRelations/schemas/withMdxTransforms";
+
 
 
 type SortedResult = MdxNote & { sortRank?: number }
@@ -33,7 +34,7 @@ export interface IntriguingValueSummary {
 
 export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
     preParseNotes: MdxNote[] = []
-    notes: PrismaMdxNoteSummaryOutput[] = []
+    notes: MdxNoteSummaryOutputWithMdxTransforms[] = []
     perPage: number = 10
     page: number = 1
     query?: string
@@ -91,7 +92,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
         return new RegExp(value, "gi")
     }
     async formatSummary() {
-        let items: PrismaMdxNoteSummaryOutput[] = []
+        let items: MdxNoteSummaryOutputWithMdxTransforms[] = []
         for await (const k of this.preParseNotes) {
             let res = await k.zodSummaryParse()
             items.push(res)
@@ -110,7 +111,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
     }
     async getBookmarked(config?: ParsedAppConfig) {
         const bms = await serverClient.search.getBookmarked()
-        this.preParseNotes = bms.map((bm) => MdxNote.fromPrisma(bm))
+        this.preParseNotes = bms.mdxNotes.map((bm) => MdxNote.asSummary({...bm, bookmarked: true}))
         this.sortByLastModified(true)
         return await this.formatSummary()
     }
@@ -381,7 +382,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
             orderBy: this.defaultOrderBy(),
             ...this.paginationInput()
         })
-        this.preParseNotes = notes.map((n) => MdxNote.asIntriguingValueSummary(n as IntriguingValueSummary))
+        this.preParseNotes = notes.map((n) => MdxNote.asIntriguingValueSummary(n))
     }
     sortByLastModified(preparse?: boolean) {
         let _default = new Date("1-1-1970").valueOf()

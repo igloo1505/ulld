@@ -1,0 +1,134 @@
+.table-math-text-base {
+  table {
+    .math {
+      font-size: 16px;
+    }
+  }
+}
+
+.table-math-text-small {
+  table {
+    .math {
+      font-size: 13px;
+    }
+  }
+}
+
+.table-math-text-lg {
+  table {
+    .math {
+      font-size: 1.275rem;
+    }
+  }
+}
+
+.table-math-text-xl {
+  table {
+    .math {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.table-text-base {
+  table {
+    font-size: 16px;
+  }
+}
+
+.table-text-small {
+  table {
+    font-size: 13px;
+  }
+}
+
+.table-text-lg {
+  table {
+    font-size: 1.275rem;
+  }
+}
+
+.table-text-xl {
+  table {
+    font-size: 1.4rem;
+  }
+}
+
+.internalTable {
+  width: fit-content;
+}
+
+.table-fullWidth {
+  .internalTable {
+    width: 100%;
+    & > div {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      table {
+        width: 100% !important;
+        max-width: min(100%, 1024px);
+      }
+    }
+  }
+}
+
+.table-float-right {
+  table {
+    float: right;
+  }
+}
+
+.table-float-left {
+  table {
+    float: left;
+  }
+}
+
+.table-center {
+  .internalTable {
+    & > div {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      table {
+        width: fit-content;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.table-text-center {
+  table {
+    td {
+      text-align: center;
+    }
+  }
+}
+
+.table-heading-center {
+  table {
+    th {
+      text-align: center;
+    }
+  }
+}
+
+.table-expand {
+  .internalTable {
+    max-height: unset !important;
+    height: fit-content;
+  }
+}
+
+.table-no-max-dims {
+  .internalTable {
+    table {
+      max-width: unset;
+      max-height: unset;
+    }
+  }
+}

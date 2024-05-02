@@ -1,0 +1,26 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig.json",
+    "compilerOptions": {
+        "declaration": true,
+        "module": "ESNext",
+        "outDir": "dist",
+        "rootDir": "src",
+        "strict": true,
+        "target": "ESNext",
+        "moduleResolution": "Bundler",
+        "esModuleInterop": true,
+        "jsx": "react"
+    },
+    "include": [
+        "./src/**/*.ts",
+        "./src/**/*.tsx"
+    ],
+    "exclude": [
+        "node_modules",
+        "../**/node_modules/**",
+        "test"
+    ],
+    "ts-node": {
+        "esm": true
+    }
+}

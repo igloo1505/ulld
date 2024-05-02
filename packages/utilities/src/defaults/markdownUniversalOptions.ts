@@ -2,7 +2,6 @@ import type { Options } from 'rehype-mathjax/lib/create-plugin'
 import { MermaidConfigType, mermaidTheme } from './defaultMermaidConfig'
 
 
-
 export const mathOptions: Options = {
     tex: {
         // packages: [],

@@ -1,0 +1,47 @@
+{
+  "name": "@ulld/bib-manager",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
+    "build": "echo 'Add build script here'",
+    "test": "echo 'Add test script here'",
+    "lint": "echo 'Add lint script here'"
+  },
+  "exports": {
+    "./trpcRouter": "./src/lib/trpc/bibliographyRouter.ts"
+  },
+  "peerDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/jest-presets": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "@ulld/api": "workspace:*",
+    "@ulld/configschema": "workspace:*",
+    "@ulld/editor": "workspace:*",
+    "@ulld/full-form": "workspace:*",
+    "@ulld/hooks": "workspace:*",
+    "@ulld/state": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
+    "@ulld/ui": "workspace:*",
+    "@ulld/utilities": "workspace:*",
+    "@ulld/developer": "workspace:*",
+    "@ulld/database": "workspace:*",
+    "next": "^14.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "@citation-js/plugin-bibtex": "^0.7.8",
+    "@citation-js/plugin-csl": "^0.7.6",
+    "citation-js": "^0.7.8"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "next": "^14.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

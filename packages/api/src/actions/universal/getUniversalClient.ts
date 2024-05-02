@@ -1,4 +1,4 @@
-import { client } from "../../trpc/client"
+import type { client } from "../../trpc/client"
 
 // TODO: This needs to be cleaned up dramatically. The typescript is a mess even if it works, and it still needs to be tested.
 export const getUniversalQuery = async (queryKey: keyof typeof client | string, routerParent: undefined | keyof typeof client = undefined, methodType: "query" | "mutate" = "query") => {

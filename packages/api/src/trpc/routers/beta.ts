@@ -1,7 +1,6 @@
 import { publicProcedure, router } from "../trpc";
 import {z} from 'zod'
-import {parseMdxString} from "@ulld/parsers/mdxBeta"
-
+import {parseMdxString} from "@ulld/parsers"
 
 
 export const betaRouter = router({

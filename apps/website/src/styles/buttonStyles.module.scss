@@ -1,0 +1,102 @@
+$primary_color: hsl(var(--primary));
+$border_color--hover: hsl(var(--primary) / 80);
+$stroke: 2px;
+$border: $stroke solid hsl(var(--primary) / 20);
+$transition_duration: 100ms;
+$pipeline_width: $width + $stroke;
+$pipeline_height: $height + $stroke;
+$pipes: 4;
+
+@function border-pipeline($transition_duration, $pipe) {
+  @return $transition_duration * $pipe;
+}
+
+@mixin border-animation($dimension, $easing, $pipe) {
+  transition: $transition_duration $dimension $easing
+    border-pipeline($transition_duration, $pipe);
+  -web-kit-transition: $transition_duration $dimension $easing
+    border-pipeline($transition_duration, $pipe);
+}
+
+.highlightButton {
+  width: $width;
+  height: $height;
+  background: $primary_color;
+  margin: auto;
+  border: $border;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  top: 50px;
+  cursor: pointer;
+  transition: ($transition_duration * $pipes) + $transition_duration ease;
+
+  &:before {
+    position: absolute;
+    width: 0;
+    height: $stroke;
+    content: "";
+    background: #fff;
+    top: -$stroke;
+    left: -$stroke;
+    @include border-animation(width, ease, 3);
+  }
+
+  &:after {
+    position: absolute;
+    width: $stroke;
+    height: 0;
+    content: "";
+    background: #fff;
+    top: -$stroke;
+    right: -$stroke;
+    @include border-animation(height, ease, 2);
+  }
+
+  &-inner:after {
+    position: absolute;
+    width: 0;
+    height: $stroke;
+    content: "";
+    background: #fff;
+    bottom: -$stroke;
+    right: -$stroke;
+    @include border-animation(width, ease, 1);
+  }
+
+  &-inner:before {
+    position: absolute;
+    width: $stroke;
+    height: 0;
+    content: "";
+    background: #fff;
+    bottom: -$stroke;
+    left: -$stroke;
+    @include border-animation(height, ease, 0);
+  }
+
+  &:hover {
+    border-color: transparent;
+    background: darken($primary_color, 30);
+
+    &:before {
+      width: $pipeline_width;
+      @include border-animation(width, ease, 0);
+    }
+
+    &:after {
+      height: $pipeline_height;
+      @include border-animation(height, ease, 1);
+    }
+
+    .highlight-button-inner:after {
+      width: $pipeline_width;
+      @include border-animation(width, ease, 2);
+    }
+
+    .highlight-button-inner:before {
+      height: $pipeline_height;
+      @include border-animation(height, ease, 3);
+    }
+  }
+}

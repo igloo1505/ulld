@@ -1,0 +1,4244 @@
+[
+  {
+    "Full name": "BSD Zero Clause License",
+    "Full name_link0": "https://spdx.org/licenses/0BSD.html",
+    "Identifier": " 0BSD",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Attribution Assurance License",
+    "Full name_link0": "https://spdx.org/licenses/AAL.html",
+    "Identifier": " AAL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Abstyles License",
+    "Full name_link0": "https://spdx.org/licenses/Abstyles.html",
+    "Identifier": " Abstyles",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "AdaCore Doc License",
+    "Full name_link0": "https://spdx.org/licenses/AdaCore-doc.html",
+    "Identifier": " AdaCore-doc",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Adobe Systems Incorporated Source Code License Agreement",
+    "Full name_link0": "https://spdx.org/licenses/Adobe-2006.html",
+    "Identifier": " Adobe-2006",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Adobe Display PostScript License",
+    "Full name_link0": "https://spdx.org/licenses/Adobe-Display-PostScript.html",
+    "Identifier": " Adobe-Display-PostScript",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Adobe Glyph List License",
+    "Full name_link0": "https://spdx.org/licenses/Adobe-Glyph.html",
+    "Identifier": " Adobe-Glyph",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Adobe Utopia Font License",
+    "Full name_link0": "https://spdx.org/licenses/Adobe-Utopia.html",
+    "Identifier": " Adobe-Utopia",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Amazon Digital Services License",
+    "Full name_link0": "https://spdx.org/licenses/ADSL.html",
+    "Identifier": " ADSL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Academic Free License v1.1",
+    "Full name_link0": "https://spdx.org/licenses/AFL-1.1.html",
+    "Identifier": " AFL-1.1",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Academic Free License v1.2",
+    "Full name_link0": "https://spdx.org/licenses/AFL-1.2.html",
+    "Identifier": " AFL-1.2",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Academic Free License v2.0",
+    "Full name_link0": "https://spdx.org/licenses/AFL-2.0.html",
+    "Identifier": " AFL-2.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Academic Free License v2.1",
+    "Full name_link0": "https://spdx.org/licenses/AFL-2.1.html",
+    "Identifier": " AFL-2.1",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Academic Free License v3.0",
+    "Full name_link0": "https://spdx.org/licenses/AFL-3.0.html",
+    "Identifier": " AFL-3.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Afmparse License",
+    "Full name_link0": "https://spdx.org/licenses/Afmparse.html",
+    "Identifier": " Afmparse",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Affero General Public License v1.0 only",
+    "Full name_link0": "https://spdx.org/licenses/AGPL-1.0-only.html",
+    "Identifier": " AGPL-1.0-only",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Affero General Public License v1.0 or later",
+    "Full name_link0": "https://spdx.org/licenses/AGPL-1.0-or-later.html",
+    "Identifier": " AGPL-1.0-or-later",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Affero General Public License v3.0 only",
+    "Full name_link0": "https://spdx.org/licenses/AGPL-3.0-only.html",
+    "Identifier": " AGPL-3.0-only",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "GNU Affero General Public License v3.0 or later",
+    "Full name_link0": "https://spdx.org/licenses/AGPL-3.0-or-later.html",
+    "Identifier": " AGPL-3.0-or-later",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Aladdin Free Public License",
+    "Full name_link0": "https://spdx.org/licenses/Aladdin.html",
+    "Identifier": " Aladdin",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "AMD's plpa_map.c License",
+    "Full name_link0": "https://spdx.org/licenses/AMDPLPA.html",
+    "Identifier": " AMDPLPA",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Apple MIT License",
+    "Full name_link0": "https://spdx.org/licenses/AML.html",
+    "Identifier": " AML",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "AML glslang variant License",
+    "Full name_link0": "https://spdx.org/licenses/AML-glslang.html",
+    "Identifier": " AML-glslang",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Academy of Motion Picture Arts and Sciences BSD",
+    "Full name_link0": "https://spdx.org/licenses/AMPAS.html",
+    "Identifier": " AMPAS",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "ANTLR Software Rights Notice",
+    "Full name_link0": "https://spdx.org/licenses/ANTLR-PD.html",
+    "Identifier": " ANTLR-PD",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "ANTLR Software Rights Notice with license fallback",
+    "Full name_link0": "https://spdx.org/licenses/ANTLR-PD-fallback.html",
+    "Identifier": " ANTLR-PD-fallback",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Apache License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/Apache-1.0.html",
+    "Identifier": " Apache-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Apache License 1.1",
+    "Full name_link0": "https://spdx.org/licenses/Apache-1.1.html",
+    "Identifier": " Apache-1.1",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Apache License 2.0",
+    "Full name_link0": "https://spdx.org/licenses/Apache-2.0.html",
+    "Identifier": " Apache-2.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Adobe Postscript AFM License",
+    "Full name_link0": "https://spdx.org/licenses/APAFML.html",
+    "Identifier": " APAFML",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Adaptive Public License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/APL-1.0.html",
+    "Identifier": " APL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "App::s2p License",
+    "Full name_link0": "https://spdx.org/licenses/App-s2p.html",
+    "Identifier": " App-s2p",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Apple Public Source License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/APSL-1.0.html",
+    "Identifier": " APSL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Apple Public Source License 1.1",
+    "Full name_link0": "https://spdx.org/licenses/APSL-1.1.html",
+    "Identifier": " APSL-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Apple Public Source License 1.2",
+    "Full name_link0": "https://spdx.org/licenses/APSL-1.2.html",
+    "Identifier": " APSL-1.2",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Apple Public Source License 2.0",
+    "Full name_link0": "https://spdx.org/licenses/APSL-2.0.html",
+    "Identifier": " APSL-2.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Arphic Public License",
+    "Full name_link0": "https://spdx.org/licenses/Arphic-1999.html",
+    "Identifier": " Arphic-1999",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Artistic License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/Artistic-1.0.html",
+    "Identifier": " Artistic-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Artistic License 1.0 w/clause 8",
+    "Full name_link0": "https://spdx.org/licenses/Artistic-1.0-cl8.html",
+    "Identifier": " Artistic-1.0-cl8",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Artistic License 1.0 (Perl)",
+    "Full name_link0": "https://spdx.org/licenses/Artistic-1.0-Perl.html",
+    "Identifier": " Artistic-1.0-Perl",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Artistic License 2.0",
+    "Full name_link0": "https://spdx.org/licenses/Artistic-2.0.html",
+    "Identifier": " Artistic-2.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "ASWF Digital Assets License version 1.0",
+    "Full name_link0": "https://spdx.org/licenses/ASWF-Digital-Assets-1.0.html",
+    "Identifier": " ASWF-Digital-Assets-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "ASWF Digital Assets License 1.1",
+    "Full name_link0": "https://spdx.org/licenses/ASWF-Digital-Assets-1.1.html",
+    "Identifier": " ASWF-Digital-Assets-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Baekmuk License",
+    "Full name_link0": "https://spdx.org/licenses/Baekmuk.html",
+    "Identifier": " Baekmuk",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Bahyph License",
+    "Full name_link0": "https://spdx.org/licenses/Bahyph.html",
+    "Identifier": " Bahyph",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Barr License",
+    "Full name_link0": "https://spdx.org/licenses/Barr.html",
+    "Identifier": " Barr",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "bcrypt Solar Designer License",
+    "Full name_link0": "https://spdx.org/licenses/bcrypt-Solar-Designer.html",
+    "Identifier": " bcrypt-Solar-Designer",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Beerware License",
+    "Full name_link0": "https://spdx.org/licenses/Beerware.html",
+    "Identifier": " Beerware",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Bitstream Charter Font License",
+    "Full name_link0": "https://spdx.org/licenses/Bitstream-Charter.html",
+    "Identifier": " Bitstream-Charter",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Bitstream Vera Font License",
+    "Full name_link0": "https://spdx.org/licenses/Bitstream-Vera.html",
+    "Identifier": " Bitstream-Vera",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BitTorrent Open Source License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/BitTorrent-1.0.html",
+    "Identifier": " BitTorrent-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BitTorrent Open Source License v1.1",
+    "Full name_link0": "https://spdx.org/licenses/BitTorrent-1.1.html",
+    "Identifier": " BitTorrent-1.1",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SQLite Blessing",
+    "Full name_link0": "https://spdx.org/licenses/blessing.html",
+    "Identifier": " blessing",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Blue Oak Model License 1.0.0",
+    "Full name_link0": "https://spdx.org/licenses/BlueOak-1.0.0.html",
+    "Identifier": " BlueOak-1.0.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Boehm-Demers-Weiser GC License",
+    "Full name_link0": "https://spdx.org/licenses/Boehm-GC.html",
+    "Identifier": " Boehm-GC",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Borceux license",
+    "Full name_link0": "https://spdx.org/licenses/Borceux.html",
+    "Identifier": " Borceux",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Brian Gladman 2-Clause License",
+    "Full name_link0": "https://spdx.org/licenses/Brian-Gladman-2-Clause.html",
+    "Identifier": " Brian-Gladman-2-Clause",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Brian Gladman 3-Clause License",
+    "Full name_link0": "https://spdx.org/licenses/Brian-Gladman-3-Clause.html",
+    "Identifier": " Brian-Gladman-3-Clause",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD 1-Clause License",
+    "Full name_link0": "https://spdx.org/licenses/BSD-1-Clause.html",
+    "Identifier": " BSD-1-Clause",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "BSD 2-Clause \"Simplified\" License",
+    "Full name_link0": "https://spdx.org/licenses/BSD-2-Clause.html",
+    "Identifier": " BSD-2-Clause",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "BSD 2-Clause - Ian Darwin variant",
+    "Full name_link0": "https://spdx.org/licenses/BSD-2-Clause-Darwin.html",
+    "Identifier": " BSD-2-Clause-Darwin",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD-2-Clause Plus Patent License",
+    "Full name_link0": "https://spdx.org/licenses/BSD-2-Clause-Patent.html",
+    "Identifier": " BSD-2-Clause-Patent",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "BSD 2-Clause with views sentence",
+    "Full name_link0": "https://spdx.org/licenses/BSD-2-Clause-Views.html",
+    "Identifier": " BSD-2-Clause-Views",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD 3-Clause \"New\" or \"Revised\" License",
+    "Full name_link0": "https://spdx.org/licenses/BSD-3-Clause.html",
+    "Identifier": " BSD-3-Clause",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "BSD 3-Clause acpica variant",
+    "Full name_link0": "https://spdx.org/licenses/BSD-3-Clause-acpica.html",
+    "Identifier": " BSD-3-Clause-acpica",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD with attribution",
+    "Full name_link0": "https://spdx.org/licenses/BSD-3-Clause-Attribution.html",
+    "Identifier": " BSD-3-Clause-Attribution",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD 3-Clause Clear License",
+    "Full name_link0": "https://spdx.org/licenses/BSD-3-Clause-Clear.html",
+    "Identifier": " BSD-3-Clause-Clear",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD 3-Clause Flex variant",
+    "Full name_link0": "https://spdx.org/licenses/BSD-3-Clause-flex.html",
+    "Identifier": " BSD-3-Clause-flex",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Hewlett-Packard BSD variant license",
+    "Full name_link0": "https://spdx.org/licenses/BSD-3-Clause-HP.html",
+    "Identifier": " BSD-3-Clause-HP",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Lawrence Berkeley National Labs BSD variant license",
+    "Full name_link0": "https://spdx.org/licenses/BSD-3-Clause-LBNL.html",
+    "Identifier": " BSD-3-Clause-LBNL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "BSD 3-Clause Modification",
+    "Full name_link0": "https://spdx.org/licenses/BSD-3-Clause-Modification.html",
+    "Identifier": " BSD-3-Clause-Modification",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD 3-Clause No Military License",
+    "Full name_link0": "https://spdx.org/licenses/BSD-3-Clause-No-Military-License.html",
+    "Identifier": " BSD-3-Clause-No-Military-License",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD 3-Clause No Nuclear License",
+    "Full name_link0": "https://spdx.org/licenses/BSD-3-Clause-No-Nuclear-License.html",
+    "Identifier": " BSD-3-Clause-No-Nuclear-License",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD 3-Clause No Nuclear License 2014",
+    "Full name_link0": "https://spdx.org/licenses/BSD-3-Clause-No-Nuclear-License-2014.html",
+    "Identifier": " BSD-3-Clause-No-Nuclear-License-2014",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD 3-Clause No Nuclear Warranty",
+    "Full name_link0": "https://spdx.org/licenses/BSD-3-Clause-No-Nuclear-Warranty.html",
+    "Identifier": " BSD-3-Clause-No-Nuclear-Warranty",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD 3-Clause Open MPI variant",
+    "Full name_link0": "https://spdx.org/licenses/BSD-3-Clause-Open-MPI.html",
+    "Identifier": " BSD-3-Clause-Open-MPI",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD 3-Clause Sun Microsystems",
+    "Full name_link0": "https://spdx.org/licenses/BSD-3-Clause-Sun.html",
+    "Identifier": " BSD-3-Clause-Sun",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD 4-Clause \"Original\" or \"Old\" License",
+    "Full name_link0": "https://spdx.org/licenses/BSD-4-Clause.html",
+    "Identifier": " BSD-4-Clause",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD 4 Clause Shortened",
+    "Full name_link0": "https://spdx.org/licenses/BSD-4-Clause-Shortened.html",
+    "Identifier": " BSD-4-Clause-Shortened",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD-4-Clause (University of California-Specific)",
+    "Full name_link0": "https://spdx.org/licenses/BSD-4-Clause-UC.html",
+    "Identifier": " BSD-4-Clause-UC",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD 4.3 RENO License",
+    "Full name_link0": "https://spdx.org/licenses/BSD-4.3RENO.html",
+    "Identifier": " BSD-4.3RENO",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD 4.3 TAHOE License",
+    "Full name_link0": "https://spdx.org/licenses/BSD-4.3TAHOE.html",
+    "Identifier": " BSD-4.3TAHOE",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD Advertising Acknowledgement License",
+    "Full name_link0": "https://spdx.org/licenses/BSD-Advertising-Acknowledgement.html",
+    "Identifier": " BSD-Advertising-Acknowledgement",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD with Attribution and HPND disclaimer",
+    "Full name_link0": "https://spdx.org/licenses/BSD-Attribution-HPND-disclaimer.html",
+    "Identifier": " BSD-Attribution-HPND-disclaimer",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD-Inferno-Nettverk",
+    "Full name_link0": "https://spdx.org/licenses/BSD-Inferno-Nettverk.html",
+    "Identifier": " BSD-Inferno-Nettverk",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD Protection License",
+    "Full name_link0": "https://spdx.org/licenses/BSD-Protection.html",
+    "Identifier": " BSD-Protection",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD Source Code Attribution - beginning of file variant",
+    "Full name_link0": "https://spdx.org/licenses/BSD-Source-beginning-file.html",
+    "Identifier": " BSD-Source-beginning-file",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "BSD Source Code Attribution",
+    "Full name_link0": "https://spdx.org/licenses/BSD-Source-Code.html",
+    "Identifier": " BSD-Source-Code",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Systemics BSD variant license",
+    "Full name_link0": "https://spdx.org/licenses/BSD-Systemics.html",
+    "Identifier": " BSD-Systemics",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Systemics W3Works BSD variant license",
+    "Full name_link0": "https://spdx.org/licenses/BSD-Systemics-W3Works.html",
+    "Identifier": " BSD-Systemics-W3Works",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Boost Software License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/BSL-1.0.html",
+    "Identifier": " BSL-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Business Source License 1.1",
+    "Full name_link0": "https://spdx.org/licenses/BUSL-1.1.html",
+    "Identifier": " BUSL-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "bzip2 and libbzip2 License v1.0.6",
+    "Full name_link0": "https://spdx.org/licenses/bzip2-1.0.6.html",
+    "Identifier": " bzip2-1.0.6",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Computational Use of Data Agreement v1.0",
+    "Full name_link0": "https://spdx.org/licenses/C-UDA-1.0.html",
+    "Identifier": " C-UDA-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Cryptographic Autonomy License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/CAL-1.0.html",
+    "Identifier": " CAL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Cryptographic Autonomy License 1.0 (Combined Work Exception)",
+    "Full name_link0": "https://spdx.org/licenses/CAL-1.0-Combined-Work-Exception.html",
+    "Identifier": " CAL-1.0-Combined-Work-Exception",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Caldera License",
+    "Full name_link0": "https://spdx.org/licenses/Caldera.html",
+    "Identifier": " Caldera",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Caldera License (without preamble)",
+    "Full name_link0": "https://spdx.org/licenses/Caldera-no-preamble.html",
+    "Identifier": " Caldera-no-preamble",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Computer Associates Trusted Open Source License 1.1",
+    "Full name_link0": "https://spdx.org/licenses/CATOSL-1.1.html",
+    "Identifier": " CATOSL-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Creative Commons Attribution 1.0 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-1.0.html",
+    "Identifier": " CC-BY-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution 2.0 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-2.0.html",
+    "Identifier": " CC-BY-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution 2.5 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-2.5.html",
+    "Identifier": " CC-BY-2.5",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution 2.5 Australia",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-2.5-AU.html",
+    "Identifier": " CC-BY-2.5-AU",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution 3.0 Unported",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-3.0.html",
+    "Identifier": " CC-BY-3.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution 3.0 Austria",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-3.0-AT.html",
+    "Identifier": " CC-BY-3.0-AT",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution 3.0 Australia",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-3.0-AU.html",
+    "Identifier": " CC-BY-3.0-AU",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution 3.0 Germany",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-3.0-DE.html",
+    "Identifier": " CC-BY-3.0-DE",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution 3.0 IGO",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-3.0-IGO.html",
+    "Identifier": " CC-BY-3.0-IGO",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution 3.0 Netherlands",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-3.0-NL.html",
+    "Identifier": " CC-BY-3.0-NL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution 3.0 United States",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-3.0-US.html",
+    "Identifier": " CC-BY-3.0-US",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution 4.0 International",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-4.0.html",
+    "Identifier": " CC-BY-4.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial 1.0 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-1.0.html",
+    "Identifier": " CC-BY-NC-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial 2.0 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-2.0.html",
+    "Identifier": " CC-BY-NC-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial 2.5 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-2.5.html",
+    "Identifier": " CC-BY-NC-2.5",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial 3.0 Unported",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-3.0.html",
+    "Identifier": " CC-BY-NC-3.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial 3.0 Germany",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-3.0-DE.html",
+    "Identifier": " CC-BY-NC-3.0-DE",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial 4.0 International",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-4.0.html",
+    "Identifier": " CC-BY-NC-4.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial No Derivatives 1.0 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-ND-1.0.html",
+    "Identifier": " CC-BY-NC-ND-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial No Derivatives 2.0 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-ND-2.0.html",
+    "Identifier": " CC-BY-NC-ND-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial No Derivatives 2.5 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-ND-2.5.html",
+    "Identifier": " CC-BY-NC-ND-2.5",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial No Derivatives 3.0 Unported",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-ND-3.0.html",
+    "Identifier": " CC-BY-NC-ND-3.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial No Derivatives 3.0 Germany",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-ND-3.0-DE.html",
+    "Identifier": " CC-BY-NC-ND-3.0-DE",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial No Derivatives 3.0 IGO",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-ND-3.0-IGO.html",
+    "Identifier": " CC-BY-NC-ND-3.0-IGO",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-ND-4.0.html",
+    "Identifier": " CC-BY-NC-ND-4.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial Share Alike 1.0 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-SA-1.0.html",
+    "Identifier": " CC-BY-NC-SA-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial Share Alike 2.0 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-SA-2.0.html",
+    "Identifier": " CC-BY-NC-SA-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial Share Alike 2.0 Germany",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-SA-2.0-DE.html",
+    "Identifier": " CC-BY-NC-SA-2.0-DE",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution-NonCommercial-ShareAlike 2.0 France",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-SA-2.0-FR.html",
+    "Identifier": " CC-BY-NC-SA-2.0-FR",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial Share Alike 2.0 England and Wales",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-SA-2.0-UK.html",
+    "Identifier": " CC-BY-NC-SA-2.0-UK",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial Share Alike 2.5 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-SA-2.5.html",
+    "Identifier": " CC-BY-NC-SA-2.5",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial Share Alike 3.0 Unported",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-SA-3.0.html",
+    "Identifier": " CC-BY-NC-SA-3.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial Share Alike 3.0 Germany",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-SA-3.0-DE.html",
+    "Identifier": " CC-BY-NC-SA-3.0-DE",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial Share Alike 3.0 IGO",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-SA-3.0-IGO.html",
+    "Identifier": " CC-BY-NC-SA-3.0-IGO",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Non Commercial Share Alike 4.0 International",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html",
+    "Identifier": " CC-BY-NC-SA-4.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution No Derivatives 1.0 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-ND-1.0.html",
+    "Identifier": " CC-BY-ND-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution No Derivatives 2.0 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-ND-2.0.html",
+    "Identifier": " CC-BY-ND-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution No Derivatives 2.5 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-ND-2.5.html",
+    "Identifier": " CC-BY-ND-2.5",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution No Derivatives 3.0 Unported",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-ND-3.0.html",
+    "Identifier": " CC-BY-ND-3.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution No Derivatives 3.0 Germany",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-ND-3.0-DE.html",
+    "Identifier": " CC-BY-ND-3.0-DE",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution No Derivatives 4.0 International",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-ND-4.0.html",
+    "Identifier": " CC-BY-ND-4.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Share Alike 1.0 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-SA-1.0.html",
+    "Identifier": " CC-BY-SA-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Share Alike 2.0 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-SA-2.0.html",
+    "Identifier": " CC-BY-SA-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Share Alike 2.0 England and Wales",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-SA-2.0-UK.html",
+    "Identifier": " CC-BY-SA-2.0-UK",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Share Alike 2.1 Japan",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-SA-2.1-JP.html",
+    "Identifier": " CC-BY-SA-2.1-JP",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Share Alike 2.5 Generic",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-SA-2.5.html",
+    "Identifier": " CC-BY-SA-2.5",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Share Alike 3.0 Unported",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-SA-3.0.html",
+    "Identifier": " CC-BY-SA-3.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Share Alike 3.0 Austria",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-SA-3.0-AT.html",
+    "Identifier": " CC-BY-SA-3.0-AT",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Share Alike 3.0 Germany",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-SA-3.0-DE.html",
+    "Identifier": " CC-BY-SA-3.0-DE",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution-ShareAlike 3.0 IGO",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-SA-3.0-IGO.html",
+    "Identifier": " CC-BY-SA-3.0-IGO",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Attribution Share Alike 4.0 International",
+    "Full name_link0": "https://spdx.org/licenses/CC-BY-SA-4.0.html",
+    "Identifier": " CC-BY-SA-4.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Public Domain Dedication and Certification",
+    "Full name_link0": "https://spdx.org/licenses/CC-PDDC.html",
+    "Identifier": " CC-PDDC",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Creative Commons Zero v1.0 Universal",
+    "Full name_link0": "https://spdx.org/licenses/CC0-1.0.html",
+    "Identifier": " CC0-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Common Development and Distribution License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/CDDL-1.0.html",
+    "Identifier": " CDDL-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Common Development and Distribution License 1.1",
+    "Full name_link0": "https://spdx.org/licenses/CDDL-1.1.html",
+    "Identifier": " CDDL-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Common Documentation License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/CDL-1.0.html",
+    "Identifier": " CDL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Community Data License Agreement Permissive 1.0",
+    "Full name_link0": "https://spdx.org/licenses/CDLA-Permissive-1.0.html",
+    "Identifier": " CDLA-Permissive-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Community Data License Agreement Permissive 2.0",
+    "Full name_link0": "https://spdx.org/licenses/CDLA-Permissive-2.0.html",
+    "Identifier": " CDLA-Permissive-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Community Data License Agreement Sharing 1.0",
+    "Full name_link0": "https://spdx.org/licenses/CDLA-Sharing-1.0.html",
+    "Identifier": " CDLA-Sharing-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "CeCILL Free Software License Agreement v1.0",
+    "Full name_link0": "https://spdx.org/licenses/CECILL-1.0.html",
+    "Identifier": " CECILL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "CeCILL Free Software License Agreement v1.1",
+    "Full name_link0": "https://spdx.org/licenses/CECILL-1.1.html",
+    "Identifier": " CECILL-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "CeCILL Free Software License Agreement v2.0",
+    "Full name_link0": "https://spdx.org/licenses/CECILL-2.0.html",
+    "Identifier": " CECILL-2.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "CeCILL Free Software License Agreement v2.1",
+    "Full name_link0": "https://spdx.org/licenses/CECILL-2.1.html",
+    "Identifier": " CECILL-2.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "CeCILL-B Free Software License Agreement",
+    "Full name_link0": "https://spdx.org/licenses/CECILL-B.html",
+    "Identifier": " CECILL-B",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "CeCILL-C Free Software License Agreement",
+    "Full name_link0": "https://spdx.org/licenses/CECILL-C.html",
+    "Identifier": " CECILL-C",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "CERN Open Hardware Licence v1.1",
+    "Full name_link0": "https://spdx.org/licenses/CERN-OHL-1.1.html",
+    "Identifier": " CERN-OHL-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "CERN Open Hardware Licence v1.2",
+    "Full name_link0": "https://spdx.org/licenses/CERN-OHL-1.2.html",
+    "Identifier": " CERN-OHL-1.2",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "CERN Open Hardware Licence Version 2 - Permissive",
+    "Full name_link0": "https://spdx.org/licenses/CERN-OHL-P-2.0.html",
+    "Identifier": " CERN-OHL-P-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "CERN Open Hardware Licence Version 2 - Strongly Reciprocal",
+    "Full name_link0": "https://spdx.org/licenses/CERN-OHL-S-2.0.html",
+    "Identifier": " CERN-OHL-S-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "CERN Open Hardware Licence Version 2 - Weakly Reciprocal",
+    "Full name_link0": "https://spdx.org/licenses/CERN-OHL-W-2.0.html",
+    "Identifier": " CERN-OHL-W-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "CFITSIO License",
+    "Full name_link0": "https://spdx.org/licenses/CFITSIO.html",
+    "Identifier": " CFITSIO",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "check-cvs License",
+    "Full name_link0": "https://spdx.org/licenses/check-cvs.html",
+    "Identifier": " check-cvs",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Checkmk License",
+    "Full name_link0": "https://spdx.org/licenses/checkmk.html",
+    "Identifier": " checkmk",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Clarified Artistic License",
+    "Full name_link0": "https://spdx.org/licenses/ClArtistic.html",
+    "Identifier": " ClArtistic",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Clips License",
+    "Full name_link0": "https://spdx.org/licenses/Clips.html",
+    "Identifier": " Clips",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "CMU Mach License",
+    "Full name_link0": "https://spdx.org/licenses/CMU-Mach.html",
+    "Identifier": " CMU-Mach",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "CMU    Mach - no notices-in-documentation variant",
+    "Full name_link0": "https://spdx.org/licenses/CMU-Mach-nodoc.html",
+    "Identifier": " CMU-Mach-nodoc",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "CNRI Jython License",
+    "Full name_link0": "https://spdx.org/licenses/CNRI-Jython.html",
+    "Identifier": " CNRI-Jython",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "CNRI Python License",
+    "Full name_link0": "https://spdx.org/licenses/CNRI-Python.html",
+    "Identifier": " CNRI-Python",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "CNRI Python Open Source GPL Compatible License Agreement",
+    "Full name_link0": "https://spdx.org/licenses/CNRI-Python-GPL-Compatible.html",
+    "Identifier": " CNRI-Python-GPL-Compatible",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Copyfree Open Innovation License",
+    "Full name_link0": "https://spdx.org/licenses/COIL-1.0.html",
+    "Identifier": " COIL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Community Specification License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/Community-Spec-1.0.html",
+    "Identifier": " Community-Spec-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Condor Public License v1.1",
+    "Full name_link0": "https://spdx.org/licenses/Condor-1.1.html",
+    "Identifier": " Condor-1.1",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "copyleft-next 0.3.0",
+    "Full name_link0": "https://spdx.org/licenses/copyleft-next-0.3.0.html",
+    "Identifier": " copyleft-next-0.3.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "copyleft-next 0.3.1",
+    "Full name_link0": "https://spdx.org/licenses/copyleft-next-0.3.1.html",
+    "Identifier": " copyleft-next-0.3.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Cornell Lossless JPEG License",
+    "Full name_link0": "https://spdx.org/licenses/Cornell-Lossless-JPEG.html",
+    "Identifier": " Cornell-Lossless-JPEG",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Common Public Attribution License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/CPAL-1.0.html",
+    "Identifier": " CPAL-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Common Public License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/CPL-1.0.html",
+    "Identifier": " CPL-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Code Project Open License 1.02",
+    "Full name_link0": "https://spdx.org/licenses/CPOL-1.02.html",
+    "Identifier": " CPOL-1.02",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Cronyx License",
+    "Full name_link0": "https://spdx.org/licenses/Cronyx.html",
+    "Identifier": " Cronyx",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Crossword License",
+    "Full name_link0": "https://spdx.org/licenses/Crossword.html",
+    "Identifier": " Crossword",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "CrystalStacker License",
+    "Full name_link0": "https://spdx.org/licenses/CrystalStacker.html",
+    "Identifier": " CrystalStacker",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "CUA Office Public License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/CUA-OPL-1.0.html",
+    "Identifier": " CUA-OPL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Cube License",
+    "Full name_link0": "https://spdx.org/licenses/Cube.html",
+    "Identifier": " Cube",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "curl License",
+    "Full name_link0": "https://spdx.org/licenses/curl.html",
+    "Identifier": " curl",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Deutsche Freie Software Lizenz",
+    "Full name_link0": "https://spdx.org/licenses/D-FSL-1.0.html",
+    "Identifier": " D-FSL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "DEC 3-Clause License",
+    "Full name_link0": "https://spdx.org/licenses/DEC-3-Clause.html",
+    "Identifier": " DEC-3-Clause",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "diffmark license",
+    "Full name_link0": "https://spdx.org/licenses/diffmark.html",
+    "Identifier": " diffmark",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Data licence Germany \u2013 attribution \u2013 version 2.0",
+    "Full name_link0": "https://spdx.org/licenses/DL-DE-BY-2.0.html",
+    "Identifier": " DL-DE-BY-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Data licence Germany \u2013 zero \u2013 version 2.0",
+    "Full name_link0": "https://spdx.org/licenses/DL-DE-ZERO-2.0.html",
+    "Identifier": " DL-DE-ZERO-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "DOC License",
+    "Full name_link0": "https://spdx.org/licenses/DOC.html",
+    "Identifier": " DOC",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Dotseqn License",
+    "Full name_link0": "https://spdx.org/licenses/Dotseqn.html",
+    "Identifier": " Dotseqn",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Detection Rule License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/DRL-1.0.html",
+    "Identifier": " DRL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Detection Rule License 1.1",
+    "Full name_link0": "https://spdx.org/licenses/DRL-1.1.html",
+    "Identifier": " DRL-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "DSDP License",
+    "Full name_link0": "https://spdx.org/licenses/DSDP.html",
+    "Identifier": " DSDP",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "David M. Gay dtoa License",
+    "Full name_link0": "https://spdx.org/licenses/dtoa.html",
+    "Identifier": " dtoa",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "dvipdfm License",
+    "Full name_link0": "https://spdx.org/licenses/dvipdfm.html",
+    "Identifier": " dvipdfm",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Educational Community License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/ECL-1.0.html",
+    "Identifier": " ECL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Educational Community License v2.0",
+    "Full name_link0": "https://spdx.org/licenses/ECL-2.0.html",
+    "Identifier": " ECL-2.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Eiffel Forum License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/EFL-1.0.html",
+    "Identifier": " EFL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Eiffel Forum License v2.0",
+    "Full name_link0": "https://spdx.org/licenses/EFL-2.0.html",
+    "Identifier": " EFL-2.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "eGenix.com Public License 1.1.0",
+    "Full name_link0": "https://spdx.org/licenses/eGenix.html",
+    "Identifier": " eGenix",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Elastic License 2.0",
+    "Full name_link0": "https://spdx.org/licenses/Elastic-2.0.html",
+    "Identifier": " Elastic-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Entessa Public License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/Entessa.html",
+    "Identifier": " Entessa",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "EPICS Open License",
+    "Full name_link0": "https://spdx.org/licenses/EPICS.html",
+    "Identifier": " EPICS",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Eclipse Public License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/EPL-1.0.html",
+    "Identifier": " EPL-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Eclipse Public License 2.0",
+    "Full name_link0": "https://spdx.org/licenses/EPL-2.0.html",
+    "Identifier": " EPL-2.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Erlang Public License v1.1",
+    "Full name_link0": "https://spdx.org/licenses/ErlPL-1.1.html",
+    "Identifier": " ErlPL-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Etalab Open License 2.0",
+    "Full name_link0": "https://spdx.org/licenses/etalab-2.0.html",
+    "Identifier": " etalab-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "EU DataGrid Software License",
+    "Full name_link0": "https://spdx.org/licenses/EUDatagrid.html",
+    "Identifier": " EUDatagrid",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "European Union Public License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/EUPL-1.0.html",
+    "Identifier": " EUPL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "European Union Public License 1.1",
+    "Full name_link0": "https://spdx.org/licenses/EUPL-1.1.html",
+    "Identifier": " EUPL-1.1",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "European Union Public License 1.2",
+    "Full name_link0": "https://spdx.org/licenses/EUPL-1.2.html",
+    "Identifier": " EUPL-1.2",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Eurosym License",
+    "Full name_link0": "https://spdx.org/licenses/Eurosym.html",
+    "Identifier": " Eurosym",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Fair License",
+    "Full name_link0": "https://spdx.org/licenses/Fair.html",
+    "Identifier": " Fair",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Fuzzy Bitmap License",
+    "Full name_link0": "https://spdx.org/licenses/FBM.html",
+    "Identifier": " FBM",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Fraunhofer FDK AAC Codec Library",
+    "Full name_link0": "https://spdx.org/licenses/FDK-AAC.html",
+    "Identifier": " FDK-AAC",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Ferguson Twofish License",
+    "Full name_link0": "https://spdx.org/licenses/Ferguson-Twofish.html",
+    "Identifier": " Ferguson-Twofish",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Frameworx Open License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/Frameworx-1.0.html",
+    "Identifier": " Frameworx-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "FreeBSD Documentation License",
+    "Full name_link0": "https://spdx.org/licenses/FreeBSD-DOC.html",
+    "Identifier": " FreeBSD-DOC",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "FreeImage Public License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/FreeImage.html",
+    "Identifier": " FreeImage",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "FSF All Permissive License",
+    "Full name_link0": "https://spdx.org/licenses/FSFAP.html",
+    "Identifier": " FSFAP",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "FSF All Permissive License (without Warranty)",
+    "Full name_link0": "https://spdx.org/licenses/FSFAP-no-warranty-disclaimer.html",
+    "Identifier": " FSFAP-no-warranty-disclaimer",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "FSF Unlimited License",
+    "Full name_link0": "https://spdx.org/licenses/FSFUL.html",
+    "Identifier": " FSFUL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "FSF Unlimited License (with License Retention)",
+    "Full name_link0": "https://spdx.org/licenses/FSFULLR.html",
+    "Identifier": " FSFULLR",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "FSF Unlimited License (With License Retention and Warranty Disclaimer)",
+    "Full name_link0": "https://spdx.org/licenses/FSFULLRWD.html",
+    "Identifier": " FSFULLRWD",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Freetype Project License",
+    "Full name_link0": "https://spdx.org/licenses/FTL.html",
+    "Identifier": " FTL",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Furuseth License",
+    "Full name_link0": "https://spdx.org/licenses/Furuseth.html",
+    "Identifier": " Furuseth",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "fwlw License",
+    "Full name_link0": "https://spdx.org/licenses/fwlw.html",
+    "Identifier": " fwlw",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Gnome GCR Documentation License",
+    "Full name_link0": "https://spdx.org/licenses/GCR-docs.html",
+    "Identifier": " GCR-docs",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GD License",
+    "Full name_link0": "https://spdx.org/licenses/GD.html",
+    "Identifier": " GD",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.1 only - invariants",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.1-invariants-only.html",
+    "Identifier": " GFDL-1.1-invariants-only",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.1 or later - invariants",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.1-invariants-or-later.html",
+    "Identifier": " GFDL-1.1-invariants-or-later",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.1 only - no invariants",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.1-no-invariants-only.html",
+    "Identifier": " GFDL-1.1-no-invariants-only",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.1 or later - no invariants",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.1-no-invariants-or-later.html",
+    "Identifier": " GFDL-1.1-no-invariants-or-later",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.1 only",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.1-only.html",
+    "Identifier": " GFDL-1.1-only",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.1 or later",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.1-or-later.html",
+    "Identifier": " GFDL-1.1-or-later",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.2 only - invariants",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.2-invariants-only.html",
+    "Identifier": " GFDL-1.2-invariants-only",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.2 or later - invariants",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.2-invariants-or-later.html",
+    "Identifier": " GFDL-1.2-invariants-or-later",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.2 only - no invariants",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.2-no-invariants-only.html",
+    "Identifier": " GFDL-1.2-no-invariants-only",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.2 or later - no invariants",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.2-no-invariants-or-later.html",
+    "Identifier": " GFDL-1.2-no-invariants-or-later",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.2 only",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.2-only.html",
+    "Identifier": " GFDL-1.2-only",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.2 or later",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.2-or-later.html",
+    "Identifier": " GFDL-1.2-or-later",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.3 only - invariants",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.3-invariants-only.html",
+    "Identifier": " GFDL-1.3-invariants-only",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.3 or later - invariants",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.3-invariants-or-later.html",
+    "Identifier": " GFDL-1.3-invariants-or-later",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.3 only - no invariants",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.3-no-invariants-only.html",
+    "Identifier": " GFDL-1.3-no-invariants-only",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.3 or later - no invariants",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.3-no-invariants-or-later.html",
+    "Identifier": " GFDL-1.3-no-invariants-or-later",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.3 only",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.3-only.html",
+    "Identifier": " GFDL-1.3-only",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Free Documentation License v1.3 or later",
+    "Full name_link0": "https://spdx.org/licenses/GFDL-1.3-or-later.html",
+    "Identifier": " GFDL-1.3-or-later",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Giftware License",
+    "Full name_link0": "https://spdx.org/licenses/Giftware.html",
+    "Identifier": " Giftware",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GL2PS License",
+    "Full name_link0": "https://spdx.org/licenses/GL2PS.html",
+    "Identifier": " GL2PS",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "3dfx Glide License",
+    "Full name_link0": "https://spdx.org/licenses/Glide.html",
+    "Identifier": " Glide",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Glulxe License",
+    "Full name_link0": "https://spdx.org/licenses/Glulxe.html",
+    "Identifier": " Glulxe",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Good Luck With That Public License",
+    "Full name_link0": "https://spdx.org/licenses/GLWTPL.html",
+    "Identifier": " GLWTPL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "gnuplot License",
+    "Full name_link0": "https://spdx.org/licenses/gnuplot.html",
+    "Identifier": " gnuplot",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU General Public License v1.0 only",
+    "Full name_link0": "https://spdx.org/licenses/GPL-1.0-only.html",
+    "Identifier": " GPL-1.0-only",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU General Public License v1.0 or later",
+    "Full name_link0": "https://spdx.org/licenses/GPL-1.0-or-later.html",
+    "Identifier": " GPL-1.0-or-later",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU General Public License v2.0 only",
+    "Full name_link0": "https://spdx.org/licenses/GPL-2.0-only.html",
+    "Identifier": " GPL-2.0-only",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "GNU General Public License v2.0 or later",
+    "Full name_link0": "https://spdx.org/licenses/GPL-2.0-or-later.html",
+    "Identifier": " GPL-2.0-or-later",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "GNU General Public License v3.0 only",
+    "Full name_link0": "https://spdx.org/licenses/GPL-3.0-only.html",
+    "Identifier": " GPL-3.0-only",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "GNU General Public License v3.0 or later",
+    "Full name_link0": "https://spdx.org/licenses/GPL-3.0-or-later.html",
+    "Identifier": " GPL-3.0-or-later",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Graphics Gems License",
+    "Full name_link0": "https://spdx.org/licenses/Graphics-Gems.html",
+    "Identifier": " Graphics-Gems",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "gSOAP Public License v1.3b",
+    "Full name_link0": "https://spdx.org/licenses/gSOAP-1.3b.html",
+    "Identifier": " gSOAP-1.3b",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "gtkbook License",
+    "Full name_link0": "https://spdx.org/licenses/gtkbook.html",
+    "Identifier": " gtkbook",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Haskell Language Report License",
+    "Full name_link0": "https://spdx.org/licenses/HaskellReport.html",
+    "Identifier": " HaskellReport",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "hdparm License",
+    "Full name_link0": "https://spdx.org/licenses/hdparm.html",
+    "Identifier": " hdparm",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Hippocratic License 2.1",
+    "Full name_link0": "https://spdx.org/licenses/Hippocratic-2.1.html",
+    "Identifier": " Hippocratic-2.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Hewlett-Packard 1986 License",
+    "Full name_link0": "https://spdx.org/licenses/HP-1986.html",
+    "Identifier": " HP-1986",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Hewlett-Packard 1989 License",
+    "Full name_link0": "https://spdx.org/licenses/HP-1989.html",
+    "Identifier": " HP-1989",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Historical Permission Notice and Disclaimer",
+    "Full name_link0": "https://spdx.org/licenses/HPND.html",
+    "Identifier": " HPND",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Historical Permission Notice and Disclaimer - DEC variant",
+    "Full name_link0": "https://spdx.org/licenses/HPND-DEC.html",
+    "Identifier": " HPND-DEC",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Historical Permission Notice and Disclaimer - documentation variant",
+    "Full name_link0": "https://spdx.org/licenses/HPND-doc.html",
+    "Identifier": " HPND-doc",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Historical Permission Notice and Disclaimer - documentation sell variant",
+    "Full name_link0": "https://spdx.org/licenses/HPND-doc-sell.html",
+    "Identifier": " HPND-doc-sell",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "HPND with US Government export control warning",
+    "Full name_link0": "https://spdx.org/licenses/HPND-export-US.html",
+    "Identifier": " HPND-export-US",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "HPND with US Government export control warning and modification rqmt",
+    "Full name_link0": "https://spdx.org/licenses/HPND-export-US-modify.html",
+    "Identifier": " HPND-export-US-modify",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Historical Permission Notice and Disclaimer - Fenneberg-Livingston variant",
+    "Full name_link0": "https://spdx.org/licenses/HPND-Fenneberg-Livingston.html",
+    "Identifier": " HPND-Fenneberg-Livingston",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Historical Permission Notice and Disclaimer    - INRIA-IMAG variant",
+    "Full name_link0": "https://spdx.org/licenses/HPND-INRIA-IMAG.html",
+    "Identifier": " HPND-INRIA-IMAG",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Historical Permission Notice and Disclaimer - Kevlin Henney variant",
+    "Full name_link0": "https://spdx.org/licenses/HPND-Kevlin-Henney.html",
+    "Identifier": " HPND-Kevlin-Henney",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Historical Permission Notice and Disclaimer - Markus Kuhn variant",
+    "Full name_link0": "https://spdx.org/licenses/HPND-Markus-Kuhn.html",
+    "Identifier": " HPND-Markus-Kuhn",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Historical Permission Notice and Disclaimer with MIT disclaimer",
+    "Full name_link0": "https://spdx.org/licenses/HPND-MIT-disclaimer.html",
+    "Identifier": " HPND-MIT-disclaimer",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Historical Permission Notice and Disclaimer - Pbmplus variant",
+    "Full name_link0": "https://spdx.org/licenses/HPND-Pbmplus.html",
+    "Identifier": " HPND-Pbmplus",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Historical Permission Notice and Disclaimer - sell xserver variant with MIT disclaimer",
+    "Full name_link0": "https://spdx.org/licenses/HPND-sell-MIT-disclaimer-xserver.html",
+    "Identifier": " HPND-sell-MIT-disclaimer-xserver",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Historical Permission Notice and Disclaimer - sell regexpr variant",
+    "Full name_link0": "https://spdx.org/licenses/HPND-sell-regexpr.html",
+    "Identifier": " HPND-sell-regexpr",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Historical Permission Notice and Disclaimer - sell variant",
+    "Full name_link0": "https://spdx.org/licenses/HPND-sell-variant.html",
+    "Identifier": " HPND-sell-variant",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "HPND sell variant with MIT disclaimer",
+    "Full name_link0": "https://spdx.org/licenses/HPND-sell-variant-MIT-disclaimer.html",
+    "Identifier": " HPND-sell-variant-MIT-disclaimer",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Historical Permission Notice and Disclaimer - University of California variant",
+    "Full name_link0": "https://spdx.org/licenses/HPND-UC.html",
+    "Identifier": " HPND-UC",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "HTML Tidy License",
+    "Full name_link0": "https://spdx.org/licenses/HTMLTIDY.html",
+    "Identifier": " HTMLTIDY",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "IBM PowerPC Initialization and Boot Software",
+    "Full name_link0": "https://spdx.org/licenses/IBM-pibs.html",
+    "Identifier": " IBM-pibs",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "ICU License",
+    "Full name_link0": "https://spdx.org/licenses/ICU.html",
+    "Identifier": " ICU",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "IEC    Code Components End-user licence agreement",
+    "Full name_link0": "https://spdx.org/licenses/IEC-Code-Components-EULA.html",
+    "Identifier": " IEC-Code-Components-EULA",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Independent JPEG Group License",
+    "Full name_link0": "https://spdx.org/licenses/IJG.html",
+    "Identifier": " IJG",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Independent JPEG Group License - short",
+    "Full name_link0": "https://spdx.org/licenses/IJG-short.html",
+    "Identifier": " IJG-short",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "ImageMagick License",
+    "Full name_link0": "https://spdx.org/licenses/ImageMagick.html",
+    "Identifier": " ImageMagick",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "iMatix Standard Function Library Agreement",
+    "Full name_link0": "https://spdx.org/licenses/iMatix.html",
+    "Identifier": " iMatix",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Imlib2 License",
+    "Full name_link0": "https://spdx.org/licenses/Imlib2.html",
+    "Identifier": " Imlib2",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Info-ZIP License",
+    "Full name_link0": "https://spdx.org/licenses/Info-ZIP.html",
+    "Identifier": " Info-ZIP",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Inner Net License v2.0",
+    "Full name_link0": "https://spdx.org/licenses/Inner-Net-2.0.html",
+    "Identifier": " Inner-Net-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Intel Open Source License",
+    "Full name_link0": "https://spdx.org/licenses/Intel.html",
+    "Identifier": " Intel",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Intel ACPI Software License Agreement",
+    "Full name_link0": "https://spdx.org/licenses/Intel-ACPI.html",
+    "Identifier": " Intel-ACPI",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Interbase Public License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/Interbase-1.0.html",
+    "Identifier": " Interbase-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "IPA Font License",
+    "Full name_link0": "https://spdx.org/licenses/IPA.html",
+    "Identifier": " IPA",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "IBM Public License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/IPL-1.0.html",
+    "Identifier": " IPL-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "ISC License",
+    "Full name_link0": "https://spdx.org/licenses/ISC.html",
+    "Identifier": " ISC",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "ISC Veillard variant",
+    "Full name_link0": "https://spdx.org/licenses/ISC-Veillard.html",
+    "Identifier": " ISC-Veillard",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Jam License",
+    "Full name_link0": "https://spdx.org/licenses/Jam.html",
+    "Identifier": " Jam",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "JasPer License",
+    "Full name_link0": "https://spdx.org/licenses/JasPer-2.0.html",
+    "Identifier": " JasPer-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "JPL Image Use Policy",
+    "Full name_link0": "https://spdx.org/licenses/JPL-image.html",
+    "Identifier": " JPL-image",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Japan Network Information Center License",
+    "Full name_link0": "https://spdx.org/licenses/JPNIC.html",
+    "Identifier": " JPNIC",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "JSON License",
+    "Full name_link0": "https://spdx.org/licenses/JSON.html",
+    "Identifier": " JSON",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Kastrup License",
+    "Full name_link0": "https://spdx.org/licenses/Kastrup.html",
+    "Identifier": " Kastrup",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Kazlib License",
+    "Full name_link0": "https://spdx.org/licenses/Kazlib.html",
+    "Identifier": " Kazlib",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Knuth CTAN License",
+    "Full name_link0": "https://spdx.org/licenses/Knuth-CTAN.html",
+    "Identifier": " Knuth-CTAN",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Licence Art Libre 1.2",
+    "Full name_link0": "https://spdx.org/licenses/LAL-1.2.html",
+    "Identifier": " LAL-1.2",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Licence Art Libre 1.3",
+    "Full name_link0": "https://spdx.org/licenses/LAL-1.3.html",
+    "Identifier": " LAL-1.3",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Latex2e License",
+    "Full name_link0": "https://spdx.org/licenses/Latex2e.html",
+    "Identifier": " Latex2e",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Latex2e with translated notice permission",
+    "Full name_link0": "https://spdx.org/licenses/Latex2e-translated-notice.html",
+    "Identifier": " Latex2e-translated-notice",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Leptonica License",
+    "Full name_link0": "https://spdx.org/licenses/Leptonica.html",
+    "Identifier": " Leptonica",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "GNU Library General Public License v2 only",
+    "Full name_link0": "https://spdx.org/licenses/LGPL-2.0-only.html",
+    "Identifier": " LGPL-2.0-only",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "GNU Library General Public License v2 or later",
+    "Full name_link0": "https://spdx.org/licenses/LGPL-2.0-or-later.html",
+    "Identifier": " LGPL-2.0-or-later",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "GNU Lesser General Public License v2.1 only",
+    "Full name_link0": "https://spdx.org/licenses/LGPL-2.1-only.html",
+    "Identifier": " LGPL-2.1-only",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "GNU Lesser General Public License v2.1 or later",
+    "Full name_link0": "https://spdx.org/licenses/LGPL-2.1-or-later.html",
+    "Identifier": " LGPL-2.1-or-later",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "GNU Lesser General Public License v3.0 only",
+    "Full name_link0": "https://spdx.org/licenses/LGPL-3.0-only.html",
+    "Identifier": " LGPL-3.0-only",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "GNU Lesser General Public License v3.0 or later",
+    "Full name_link0": "https://spdx.org/licenses/LGPL-3.0-or-later.html",
+    "Identifier": " LGPL-3.0-or-later",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Lesser General Public License For Linguistic Resources",
+    "Full name_link0": "https://spdx.org/licenses/LGPLLR.html",
+    "Identifier": " LGPLLR",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "libpng License",
+    "Full name_link0": "https://spdx.org/licenses/Libpng.html",
+    "Identifier": " Libpng",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "PNG Reference Library version 2",
+    "Full name_link0": "https://spdx.org/licenses/libpng-2.0.html",
+    "Identifier": " libpng-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "libselinux public domain notice",
+    "Full name_link0": "https://spdx.org/licenses/libselinux-1.0.html",
+    "Identifier": " libselinux-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "libtiff License",
+    "Full name_link0": "https://spdx.org/licenses/libtiff.html",
+    "Identifier": " libtiff",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "libutil David Nugent License",
+    "Full name_link0": "https://spdx.org/licenses/libutil-David-Nugent.html",
+    "Identifier": " libutil-David-Nugent",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Licence Libre du Qu\u00e9bec \u2013 Permissive version 1.1",
+    "Full name_link0": "https://spdx.org/licenses/LiLiQ-P-1.1.html",
+    "Identifier": " LiLiQ-P-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Licence Libre du Qu\u00e9bec \u2013 R\u00e9ciprocit\u00e9 version 1.1",
+    "Full name_link0": "https://spdx.org/licenses/LiLiQ-R-1.1.html",
+    "Identifier": " LiLiQ-R-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Licence Libre du Qu\u00e9bec \u2013 R\u00e9ciprocit\u00e9 forte version 1.1",
+    "Full name_link0": "https://spdx.org/licenses/LiLiQ-Rplus-1.1.html",
+    "Identifier": " LiLiQ-Rplus-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Linux man-pages - 1 paragraph",
+    "Full name_link0": "https://spdx.org/licenses/Linux-man-pages-1-para.html",
+    "Identifier": " Linux-man-pages-1-para",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Linux man-pages Copyleft",
+    "Full name_link0": "https://spdx.org/licenses/Linux-man-pages-copyleft.html",
+    "Identifier": " Linux-man-pages-copyleft",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Linux man-pages Copyleft - 2 paragraphs",
+    "Full name_link0": "https://spdx.org/licenses/Linux-man-pages-copyleft-2-para.html",
+    "Identifier": " Linux-man-pages-copyleft-2-para",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Linux man-pages Copyleft Variant",
+    "Full name_link0": "https://spdx.org/licenses/Linux-man-pages-copyleft-var.html",
+    "Identifier": " Linux-man-pages-copyleft-var",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Linux Kernel Variant of OpenIB.org license",
+    "Full name_link0": "https://spdx.org/licenses/Linux-OpenIB.html",
+    "Identifier": " Linux-OpenIB",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Common Lisp LOOP License",
+    "Full name_link0": "https://spdx.org/licenses/LOOP.html",
+    "Identifier": " LOOP",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "LPD Documentation License",
+    "Full name_link0": "https://spdx.org/licenses/LPD-document.html",
+    "Identifier": " LPD-document",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Lucent Public License Version 1.0",
+    "Full name_link0": "https://spdx.org/licenses/LPL-1.0.html",
+    "Identifier": " LPL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Lucent Public License v1.02",
+    "Full name_link0": "https://spdx.org/licenses/LPL-1.02.html",
+    "Identifier": " LPL-1.02",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "LaTeX Project Public License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/LPPL-1.0.html",
+    "Identifier": " LPPL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "LaTeX Project Public License v1.1",
+    "Full name_link0": "https://spdx.org/licenses/LPPL-1.1.html",
+    "Identifier": " LPPL-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "LaTeX Project Public License v1.2",
+    "Full name_link0": "https://spdx.org/licenses/LPPL-1.2.html",
+    "Identifier": " LPPL-1.2",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "LaTeX Project Public License v1.3a",
+    "Full name_link0": "https://spdx.org/licenses/LPPL-1.3a.html",
+    "Identifier": " LPPL-1.3a",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "LaTeX Project Public License v1.3c",
+    "Full name_link0": "https://spdx.org/licenses/LPPL-1.3c.html",
+    "Identifier": " LPPL-1.3c",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "lsof License",
+    "Full name_link0": "https://spdx.org/licenses/lsof.html",
+    "Identifier": " lsof",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Lucida Bitmap Fonts License",
+    "Full name_link0": "https://spdx.org/licenses/Lucida-Bitmap-Fonts.html",
+    "Identifier": " Lucida-Bitmap-Fonts",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "LZMA SDK License (versions 9.11 to 9.20)",
+    "Full name_link0": "https://spdx.org/licenses/LZMA-SDK-9.11-to-9.20.html",
+    "Identifier": " LZMA-SDK-9.11-to-9.20",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "LZMA SDK License (versions 9.22 and beyond)",
+    "Full name_link0": "https://spdx.org/licenses/LZMA-SDK-9.22.html",
+    "Identifier": " LZMA-SDK-9.22",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Mackerras 3-Clause License",
+    "Full name_link0": "https://spdx.org/licenses/Mackerras-3-Clause.html",
+    "Identifier": " Mackerras-3-Clause",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Mackerras 3-Clause - acknowledgment variant",
+    "Full name_link0": "https://spdx.org/licenses/Mackerras-3-Clause-acknowledgment.html",
+    "Identifier": " Mackerras-3-Clause-acknowledgment",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "magaz License",
+    "Full name_link0": "https://spdx.org/licenses/magaz.html",
+    "Identifier": " magaz",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "mailprio License",
+    "Full name_link0": "https://spdx.org/licenses/mailprio.html",
+    "Identifier": " mailprio",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "MakeIndex License",
+    "Full name_link0": "https://spdx.org/licenses/MakeIndex.html",
+    "Identifier": " MakeIndex",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Martin Birgmeier License",
+    "Full name_link0": "https://spdx.org/licenses/Martin-Birgmeier.html",
+    "Identifier": " Martin-Birgmeier",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "McPhee Slideshow License",
+    "Full name_link0": "https://spdx.org/licenses/McPhee-slideshow.html",
+    "Identifier": " McPhee-slideshow",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "metamail License",
+    "Full name_link0": "https://spdx.org/licenses/metamail.html",
+    "Identifier": " metamail",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Minpack License",
+    "Full name_link0": "https://spdx.org/licenses/Minpack.html",
+    "Identifier": " Minpack",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "The MirOS Licence",
+    "Full name_link0": "https://spdx.org/licenses/MirOS.html",
+    "Identifier": " MirOS",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "MIT License",
+    "Full name_link0": "https://spdx.org/licenses/MIT.html",
+    "Identifier": " MIT",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "MIT No Attribution",
+    "Full name_link0": "https://spdx.org/licenses/MIT-0.html",
+    "Identifier": " MIT-0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Enlightenment License (e16)",
+    "Full name_link0": "https://spdx.org/licenses/MIT-advertising.html",
+    "Identifier": " MIT-advertising",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "CMU License",
+    "Full name_link0": "https://spdx.org/licenses/MIT-CMU.html",
+    "Identifier": " MIT-CMU",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "enna License",
+    "Full name_link0": "https://spdx.org/licenses/MIT-enna.html",
+    "Identifier": " MIT-enna",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "feh License",
+    "Full name_link0": "https://spdx.org/licenses/MIT-feh.html",
+    "Identifier": " MIT-feh",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "MIT Festival Variant",
+    "Full name_link0": "https://spdx.org/licenses/MIT-Festival.html",
+    "Identifier": " MIT-Festival",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "MIT License Modern Variant",
+    "Full name_link0": "https://spdx.org/licenses/MIT-Modern-Variant.html",
+    "Identifier": " MIT-Modern-Variant",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "MIT Open Group variant",
+    "Full name_link0": "https://spdx.org/licenses/MIT-open-group.html",
+    "Identifier": " MIT-open-group",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "MIT testregex Variant",
+    "Full name_link0": "https://spdx.org/licenses/MIT-testregex.html",
+    "Identifier": " MIT-testregex",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "MIT Tom Wu Variant",
+    "Full name_link0": "https://spdx.org/licenses/MIT-Wu.html",
+    "Identifier": " MIT-Wu",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "MIT +no-false-attribs license",
+    "Full name_link0": "https://spdx.org/licenses/MITNFA.html",
+    "Identifier": " MITNFA",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "MMIXware License",
+    "Full name_link0": "https://spdx.org/licenses/MMIXware.html",
+    "Identifier": " MMIXware",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Motosoto License",
+    "Full name_link0": "https://spdx.org/licenses/Motosoto.html",
+    "Identifier": " Motosoto",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "MPEG Software Simulation",
+    "Full name_link0": "https://spdx.org/licenses/MPEG-SSG.html",
+    "Identifier": " MPEG-SSG",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "mpi Permissive License",
+    "Full name_link0": "https://spdx.org/licenses/mpi-permissive.html",
+    "Identifier": " mpi-permissive",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "mpich2 License",
+    "Full name_link0": "https://spdx.org/licenses/mpich2.html",
+    "Identifier": " mpich2",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Mozilla Public License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/MPL-1.0.html",
+    "Identifier": " MPL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Mozilla Public License 1.1",
+    "Full name_link0": "https://spdx.org/licenses/MPL-1.1.html",
+    "Identifier": " MPL-1.1",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Mozilla Public License 2.0",
+    "Full name_link0": "https://spdx.org/licenses/MPL-2.0.html",
+    "Identifier": " MPL-2.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Mozilla Public License 2.0 (no copyleft exception)",
+    "Full name_link0": "https://spdx.org/licenses/MPL-2.0-no-copyleft-exception.html",
+    "Identifier": " MPL-2.0-no-copyleft-exception",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "mplus Font License",
+    "Full name_link0": "https://spdx.org/licenses/mplus.html",
+    "Identifier": " mplus",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Microsoft Limited Public License",
+    "Full name_link0": "https://spdx.org/licenses/MS-LPL.html",
+    "Identifier": " MS-LPL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Microsoft Public License",
+    "Full name_link0": "https://spdx.org/licenses/MS-PL.html",
+    "Identifier": " MS-PL",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Microsoft Reciprocal License",
+    "Full name_link0": "https://spdx.org/licenses/MS-RL.html",
+    "Identifier": " MS-RL",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Matrix Template Library License",
+    "Full name_link0": "https://spdx.org/licenses/MTLL.html",
+    "Identifier": " MTLL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Mulan Permissive Software License, Version 1",
+    "Full name_link0": "https://spdx.org/licenses/MulanPSL-1.0.html",
+    "Identifier": " MulanPSL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Mulan Permissive Software License, Version 2",
+    "Full name_link0": "https://spdx.org/licenses/MulanPSL-2.0.html",
+    "Identifier": " MulanPSL-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Multics License",
+    "Full name_link0": "https://spdx.org/licenses/Multics.html",
+    "Identifier": " Multics",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Mup License",
+    "Full name_link0": "https://spdx.org/licenses/Mup.html",
+    "Identifier": " Mup",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Nara Institute of Science and Technology License (2003)",
+    "Full name_link0": "https://spdx.org/licenses/NAIST-2003.html",
+    "Identifier": " NAIST-2003",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "NASA Open Source Agreement 1.3",
+    "Full name_link0": "https://spdx.org/licenses/NASA-1.3.html",
+    "Identifier": " NASA-1.3",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Naumen Public License",
+    "Full name_link0": "https://spdx.org/licenses/Naumen.html",
+    "Identifier": " Naumen",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Net Boolean Public License v1",
+    "Full name_link0": "https://spdx.org/licenses/NBPL-1.0.html",
+    "Identifier": " NBPL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Non-Commercial Government Licence",
+    "Full name_link0": "https://spdx.org/licenses/NCGL-UK-2.0.html",
+    "Identifier": " NCGL-UK-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "University of Illinois/NCSA Open Source License",
+    "Full name_link0": "https://spdx.org/licenses/NCSA.html",
+    "Identifier": " NCSA",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Net-SNMP License",
+    "Full name_link0": "https://spdx.org/licenses/Net-SNMP.html",
+    "Identifier": " Net-SNMP",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "NetCDF license",
+    "Full name_link0": "https://spdx.org/licenses/NetCDF.html",
+    "Identifier": " NetCDF",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Newsletr License",
+    "Full name_link0": "https://spdx.org/licenses/Newsletr.html",
+    "Identifier": " Newsletr",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Nethack General Public License",
+    "Full name_link0": "https://spdx.org/licenses/NGPL.html",
+    "Identifier": " NGPL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "NICTA Public Software License, Version 1.0",
+    "Full name_link0": "https://spdx.org/licenses/NICTA-1.0.html",
+    "Identifier": " NICTA-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "NIST Public Domain Notice",
+    "Full name_link0": "https://spdx.org/licenses/NIST-PD.html",
+    "Identifier": " NIST-PD",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "NIST Public Domain Notice with license fallback",
+    "Full name_link0": "https://spdx.org/licenses/NIST-PD-fallback.html",
+    "Identifier": " NIST-PD-fallback",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "NIST Software License",
+    "Full name_link0": "https://spdx.org/licenses/NIST-Software.html",
+    "Identifier": " NIST-Software",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Norwegian Licence for Open Government Data (NLOD) 1.0",
+    "Full name_link0": "https://spdx.org/licenses/NLOD-1.0.html",
+    "Identifier": " NLOD-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Norwegian Licence for Open Government Data (NLOD) 2.0",
+    "Full name_link0": "https://spdx.org/licenses/NLOD-2.0.html",
+    "Identifier": " NLOD-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "No Limit Public License",
+    "Full name_link0": "https://spdx.org/licenses/NLPL.html",
+    "Identifier": " NLPL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Nokia Open Source License",
+    "Full name_link0": "https://spdx.org/licenses/Nokia.html",
+    "Identifier": " Nokia",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Netizen Open Source License",
+    "Full name_link0": "https://spdx.org/licenses/NOSL.html",
+    "Identifier": " NOSL",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Noweb License",
+    "Full name_link0": "https://spdx.org/licenses/Noweb.html",
+    "Identifier": " Noweb",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Netscape Public License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/NPL-1.0.html",
+    "Identifier": " NPL-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Netscape Public License v1.1",
+    "Full name_link0": "https://spdx.org/licenses/NPL-1.1.html",
+    "Identifier": " NPL-1.1",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Non-Profit Open Software License 3.0",
+    "Full name_link0": "https://spdx.org/licenses/NPOSL-3.0.html",
+    "Identifier": " NPOSL-3.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "NRL License",
+    "Full name_link0": "https://spdx.org/licenses/NRL.html",
+    "Identifier": " NRL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "NTP License",
+    "Full name_link0": "https://spdx.org/licenses/NTP.html",
+    "Identifier": " NTP",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "NTP No Attribution",
+    "Full name_link0": "https://spdx.org/licenses/NTP-0.html",
+    "Identifier": " NTP-0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open Use of Data Agreement v1.0",
+    "Full name_link0": "https://spdx.org/licenses/O-UDA-1.0.html",
+    "Identifier": " O-UDA-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open CASCADE Technology Public License",
+    "Full name_link0": "https://spdx.org/licenses/OCCT-PL.html",
+    "Identifier": " OCCT-PL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "OCLC Research Public License 2.0",
+    "Full name_link0": "https://spdx.org/licenses/OCLC-2.0.html",
+    "Identifier": " OCLC-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Open Data Commons Open Database License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/ODbL-1.0.html",
+    "Identifier": " ODbL-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open Data Commons Attribution License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/ODC-By-1.0.html",
+    "Identifier": " ODC-By-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "OFFIS License",
+    "Full name_link0": "https://spdx.org/licenses/OFFIS.html",
+    "Identifier": " OFFIS",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SIL Open Font License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/OFL-1.0.html",
+    "Identifier": " OFL-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SIL Open Font License 1.0 with no Reserved Font Name",
+    "Full name_link0": "https://spdx.org/licenses/OFL-1.0-no-RFN.html",
+    "Identifier": " OFL-1.0-no-RFN",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SIL Open Font License 1.0 with Reserved Font Name",
+    "Full name_link0": "https://spdx.org/licenses/OFL-1.0-RFN.html",
+    "Identifier": " OFL-1.0-RFN",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SIL Open Font License 1.1",
+    "Full name_link0": "https://spdx.org/licenses/OFL-1.1.html",
+    "Identifier": " OFL-1.1",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "SIL Open Font License 1.1 with no Reserved Font Name",
+    "Full name_link0": "https://spdx.org/licenses/OFL-1.1-no-RFN.html",
+    "Identifier": " OFL-1.1-no-RFN",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "SIL Open Font License 1.1 with Reserved Font Name",
+    "Full name_link0": "https://spdx.org/licenses/OFL-1.1-RFN.html",
+    "Identifier": " OFL-1.1-RFN",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "OGC Software License, Version 1.0",
+    "Full name_link0": "https://spdx.org/licenses/OGC-1.0.html",
+    "Identifier": " OGC-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Taiwan Open Government Data License, version 1.0",
+    "Full name_link0": "https://spdx.org/licenses/OGDL-Taiwan-1.0.html",
+    "Identifier": " OGDL-Taiwan-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open Government Licence - Canada",
+    "Full name_link0": "https://spdx.org/licenses/OGL-Canada-2.0.html",
+    "Identifier": " OGL-Canada-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open Government Licence v1.0",
+    "Full name_link0": "https://spdx.org/licenses/OGL-UK-1.0.html",
+    "Identifier": " OGL-UK-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open Government Licence v2.0",
+    "Full name_link0": "https://spdx.org/licenses/OGL-UK-2.0.html",
+    "Identifier": " OGL-UK-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open Government Licence v3.0",
+    "Full name_link0": "https://spdx.org/licenses/OGL-UK-3.0.html",
+    "Identifier": " OGL-UK-3.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open Group Test Suite License",
+    "Full name_link0": "https://spdx.org/licenses/OGTSL.html",
+    "Identifier": " OGTSL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Open LDAP Public License v1.1",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-1.1.html",
+    "Identifier": " OLDAP-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open LDAP Public License v1.2",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-1.2.html",
+    "Identifier": " OLDAP-1.2",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open LDAP Public License v1.3",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-1.3.html",
+    "Identifier": " OLDAP-1.3",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open LDAP Public License v1.4",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-1.4.html",
+    "Identifier": " OLDAP-1.4",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open LDAP Public License v2.0 (or possibly 2.0A and 2.0B)",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-2.0.html",
+    "Identifier": " OLDAP-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open LDAP Public License v2.0.1",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-2.0.1.html",
+    "Identifier": " OLDAP-2.0.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open LDAP Public License v2.1",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-2.1.html",
+    "Identifier": " OLDAP-2.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open LDAP Public License v2.2",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-2.2.html",
+    "Identifier": " OLDAP-2.2",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open LDAP Public License v2.2.1",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-2.2.1.html",
+    "Identifier": " OLDAP-2.2.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open LDAP Public License 2.2.2",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-2.2.2.html",
+    "Identifier": " OLDAP-2.2.2",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open LDAP Public License v2.3",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-2.3.html",
+    "Identifier": " OLDAP-2.3",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open LDAP Public License v2.4",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-2.4.html",
+    "Identifier": " OLDAP-2.4",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open LDAP Public License v2.5",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-2.5.html",
+    "Identifier": " OLDAP-2.5",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open LDAP Public License v2.6",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-2.6.html",
+    "Identifier": " OLDAP-2.6",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open LDAP Public License v2.7",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-2.7.html",
+    "Identifier": " OLDAP-2.7",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open LDAP Public License v2.8",
+    "Full name_link0": "https://spdx.org/licenses/OLDAP-2.8.html",
+    "Identifier": " OLDAP-2.8",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Open Logistics Foundation License Version 1.3",
+    "Full name_link0": "https://spdx.org/licenses/OLFL-1.3.html",
+    "Identifier": " OLFL-1.3",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Open Market License",
+    "Full name_link0": "https://spdx.org/licenses/OML.html",
+    "Identifier": " OML",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "OpenPBS v2.3 Software License",
+    "Full name_link0": "https://spdx.org/licenses/OpenPBS-2.3.html",
+    "Identifier": " OpenPBS-2.3",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "OpenSSL License",
+    "Full name_link0": "https://spdx.org/licenses/OpenSSL.html",
+    "Identifier": " OpenSSL",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "OpenSSL License - standalone",
+    "Full name_link0": "https://spdx.org/licenses/OpenSSL-standalone.html",
+    "Identifier": " OpenSSL-standalone",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "OpenVision License",
+    "Full name_link0": "https://spdx.org/licenses/OpenVision.html",
+    "Identifier": " OpenVision",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open Public License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/OPL-1.0.html",
+    "Identifier": " OPL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "United    Kingdom Open Parliament Licence v3.0",
+    "Full name_link0": "https://spdx.org/licenses/OPL-UK-3.0.html",
+    "Identifier": " OPL-UK-3.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open Publication License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/OPUBL-1.0.html",
+    "Identifier": " OPUBL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "OSET Public License version 2.1",
+    "Full name_link0": "https://spdx.org/licenses/OSET-PL-2.1.html",
+    "Identifier": " OSET-PL-2.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Open Software License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/OSL-1.0.html",
+    "Identifier": " OSL-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Open Software License 1.1",
+    "Full name_link0": "https://spdx.org/licenses/OSL-1.1.html",
+    "Identifier": " OSL-1.1",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open Software License 2.0",
+    "Full name_link0": "https://spdx.org/licenses/OSL-2.0.html",
+    "Identifier": " OSL-2.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Open Software License 2.1",
+    "Full name_link0": "https://spdx.org/licenses/OSL-2.1.html",
+    "Identifier": " OSL-2.1",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Open Software License 3.0",
+    "Full name_link0": "https://spdx.org/licenses/OSL-3.0.html",
+    "Identifier": " OSL-3.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "PADL License",
+    "Full name_link0": "https://spdx.org/licenses/PADL.html",
+    "Identifier": " PADL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "The Parity Public License 6.0.0",
+    "Full name_link0": "https://spdx.org/licenses/Parity-6.0.0.html",
+    "Identifier": " Parity-6.0.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "The Parity Public License 7.0.0",
+    "Full name_link0": "https://spdx.org/licenses/Parity-7.0.0.html",
+    "Identifier": " Parity-7.0.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Open Data Commons Public Domain Dedication & License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/PDDL-1.0.html",
+    "Identifier": " PDDL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "PHP License v3.0",
+    "Full name_link0": "https://spdx.org/licenses/PHP-3.0.html",
+    "Identifier": " PHP-3.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "PHP License v3.01",
+    "Full name_link0": "https://spdx.org/licenses/PHP-3.01.html",
+    "Identifier": " PHP-3.01",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Pixar License",
+    "Full name_link0": "https://spdx.org/licenses/Pixar.html",
+    "Identifier": " Pixar",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Plexus Classworlds License",
+    "Full name_link0": "https://spdx.org/licenses/Plexus.html",
+    "Identifier": " Plexus",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "pnmstitch License",
+    "Full name_link0": "https://spdx.org/licenses/pnmstitch.html",
+    "Identifier": " pnmstitch",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "PolyForm Noncommercial License 1.0.0",
+    "Full name_link0": "https://spdx.org/licenses/PolyForm-Noncommercial-1.0.0.html",
+    "Identifier": " PolyForm-Noncommercial-1.0.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "PolyForm Small Business License 1.0.0",
+    "Full name_link0": "https://spdx.org/licenses/PolyForm-Small-Business-1.0.0.html",
+    "Identifier": " PolyForm-Small-Business-1.0.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "PostgreSQL License",
+    "Full name_link0": "https://spdx.org/licenses/PostgreSQL.html",
+    "Identifier": " PostgreSQL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Python Software Foundation License 2.0",
+    "Full name_link0": "https://spdx.org/licenses/PSF-2.0.html",
+    "Identifier": " PSF-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "psfrag License",
+    "Full name_link0": "https://spdx.org/licenses/psfrag.html",
+    "Identifier": " psfrag",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "psutils License",
+    "Full name_link0": "https://spdx.org/licenses/psutils.html",
+    "Identifier": " psutils",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Python License 2.0",
+    "Full name_link0": "https://spdx.org/licenses/Python-2.0.html",
+    "Identifier": " Python-2.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Python License 2.0.1",
+    "Full name_link0": "https://spdx.org/licenses/Python-2.0.1.html",
+    "Identifier": " Python-2.0.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Python ldap License",
+    "Full name_link0": "https://spdx.org/licenses/python-ldap.html",
+    "Identifier": " python-ldap",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Qhull License",
+    "Full name_link0": "https://spdx.org/licenses/Qhull.html",
+    "Identifier": " Qhull",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Q Public License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/QPL-1.0.html",
+    "Identifier": " QPL-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Q Public License 1.0 - INRIA 2004 variant",
+    "Full name_link0": "https://spdx.org/licenses/QPL-1.0-INRIA-2004.html",
+    "Identifier": " QPL-1.0-INRIA-2004",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "radvd License",
+    "Full name_link0": "https://spdx.org/licenses/radvd.html",
+    "Identifier": " radvd",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Rdisc License",
+    "Full name_link0": "https://spdx.org/licenses/Rdisc.html",
+    "Identifier": " Rdisc",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Red Hat eCos Public License v1.1",
+    "Full name_link0": "https://spdx.org/licenses/RHeCos-1.1.html",
+    "Identifier": " RHeCos-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Reciprocal Public License 1.1",
+    "Full name_link0": "https://spdx.org/licenses/RPL-1.1.html",
+    "Identifier": " RPL-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Reciprocal Public License 1.5",
+    "Full name_link0": "https://spdx.org/licenses/RPL-1.5.html",
+    "Identifier": " RPL-1.5",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "RealNetworks Public Source License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/RPSL-1.0.html",
+    "Identifier": " RPSL-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "RSA Message-Digest License",
+    "Full name_link0": "https://spdx.org/licenses/RSA-MD.html",
+    "Identifier": " RSA-MD",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Ricoh Source Code Public License",
+    "Full name_link0": "https://spdx.org/licenses/RSCPL.html",
+    "Identifier": " RSCPL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Ruby License",
+    "Full name_link0": "https://spdx.org/licenses/Ruby.html",
+    "Identifier": " Ruby",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Sax Public Domain Notice",
+    "Full name_link0": "https://spdx.org/licenses/SAX-PD.html",
+    "Identifier": " SAX-PD",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Sax Public Domain Notice 2.0",
+    "Full name_link0": "https://spdx.org/licenses/SAX-PD-2.0.html",
+    "Identifier": " SAX-PD-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Saxpath License",
+    "Full name_link0": "https://spdx.org/licenses/Saxpath.html",
+    "Identifier": " Saxpath",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SCEA Shared Source License",
+    "Full name_link0": "https://spdx.org/licenses/SCEA.html",
+    "Identifier": " SCEA",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Scheme Language Report License",
+    "Full name_link0": "https://spdx.org/licenses/SchemeReport.html",
+    "Identifier": " SchemeReport",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Sendmail License",
+    "Full name_link0": "https://spdx.org/licenses/Sendmail.html",
+    "Identifier": " Sendmail",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Sendmail License 8.23",
+    "Full name_link0": "https://spdx.org/licenses/Sendmail-8.23.html",
+    "Identifier": " Sendmail-8.23",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SGI Free Software License B v1.0",
+    "Full name_link0": "https://spdx.org/licenses/SGI-B-1.0.html",
+    "Identifier": " SGI-B-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SGI Free Software License B v1.1",
+    "Full name_link0": "https://spdx.org/licenses/SGI-B-1.1.html",
+    "Identifier": " SGI-B-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SGI Free Software License B v2.0",
+    "Full name_link0": "https://spdx.org/licenses/SGI-B-2.0.html",
+    "Identifier": " SGI-B-2.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SGI OpenGL License",
+    "Full name_link0": "https://spdx.org/licenses/SGI-OpenGL.html",
+    "Identifier": " SGI-OpenGL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SGP4 Permission Notice",
+    "Full name_link0": "https://spdx.org/licenses/SGP4.html",
+    "Identifier": " SGP4",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Solderpad Hardware License v0.5",
+    "Full name_link0": "https://spdx.org/licenses/SHL-0.5.html",
+    "Identifier": " SHL-0.5",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Solderpad Hardware License, Version 0.51",
+    "Full name_link0": "https://spdx.org/licenses/SHL-0.51.html",
+    "Identifier": " SHL-0.51",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Simple Public License 2.0",
+    "Full name_link0": "https://spdx.org/licenses/SimPL-2.0.html",
+    "Identifier": " SimPL-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Sun Industry Standards Source License v1.1",
+    "Full name_link0": "https://spdx.org/licenses/SISSL.html",
+    "Identifier": " SISSL",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Sun Industry Standards Source License v1.2",
+    "Full name_link0": "https://spdx.org/licenses/SISSL-1.2.html",
+    "Identifier": " SISSL-1.2",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SL License",
+    "Full name_link0": "https://spdx.org/licenses/SL.html",
+    "Identifier": " SL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Sleepycat License",
+    "Full name_link0": "https://spdx.org/licenses/Sleepycat.html",
+    "Identifier": " Sleepycat",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Standard ML of New Jersey License",
+    "Full name_link0": "https://spdx.org/licenses/SMLNJ.html",
+    "Identifier": " SMLNJ",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Secure Messaging Protocol Public License",
+    "Full name_link0": "https://spdx.org/licenses/SMPPL.html",
+    "Identifier": " SMPPL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SNIA Public License 1.1",
+    "Full name_link0": "https://spdx.org/licenses/SNIA.html",
+    "Identifier": " SNIA",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "snprintf License",
+    "Full name_link0": "https://spdx.org/licenses/snprintf.html",
+    "Identifier": " snprintf",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "softSurfer License",
+    "Full name_link0": "https://spdx.org/licenses/softSurfer.html",
+    "Identifier": " softSurfer",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Soundex License",
+    "Full name_link0": "https://spdx.org/licenses/Soundex.html",
+    "Identifier": " Soundex",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Spencer License 86",
+    "Full name_link0": "https://spdx.org/licenses/Spencer-86.html",
+    "Identifier": " Spencer-86",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Spencer License 94",
+    "Full name_link0": "https://spdx.org/licenses/Spencer-94.html",
+    "Identifier": " Spencer-94",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Spencer License 99",
+    "Full name_link0": "https://spdx.org/licenses/Spencer-99.html",
+    "Identifier": " Spencer-99",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Sun Public License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/SPL-1.0.html",
+    "Identifier": " SPL-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "ssh-keyscan License",
+    "Full name_link0": "https://spdx.org/licenses/ssh-keyscan.html",
+    "Identifier": " ssh-keyscan",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SSH OpenSSH license",
+    "Full name_link0": "https://spdx.org/licenses/SSH-OpenSSH.html",
+    "Identifier": " SSH-OpenSSH",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SSH short notice",
+    "Full name_link0": "https://spdx.org/licenses/SSH-short.html",
+    "Identifier": " SSH-short",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SSLeay License - standalone",
+    "Full name_link0": "https://spdx.org/licenses/SSLeay-standalone.html",
+    "Identifier": " SSLeay-standalone",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Server Side Public License, v 1",
+    "Full name_link0": "https://spdx.org/licenses/SSPL-1.0.html",
+    "Identifier": " SSPL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SugarCRM Public License v1.1.3",
+    "Full name_link0": "https://spdx.org/licenses/SugarCRM-1.1.3.html",
+    "Identifier": " SugarCRM-1.1.3",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Sun PPP License",
+    "Full name_link0": "https://spdx.org/licenses/Sun-PPP.html",
+    "Identifier": " Sun-PPP",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "SunPro License",
+    "Full name_link0": "https://spdx.org/licenses/SunPro.html",
+    "Identifier": " SunPro",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Scheme Widget Library (SWL) Software License Agreement",
+    "Full name_link0": "https://spdx.org/licenses/SWL.html",
+    "Identifier": " SWL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "swrule License",
+    "Full name_link0": "https://spdx.org/licenses/swrule.html",
+    "Identifier": " swrule",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Symlinks License",
+    "Full name_link0": "https://spdx.org/licenses/Symlinks.html",
+    "Identifier": " Symlinks",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "TAPR Open Hardware License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/TAPR-OHL-1.0.html",
+    "Identifier": " TAPR-OHL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "TCL/TK License",
+    "Full name_link0": "https://spdx.org/licenses/TCL.html",
+    "Identifier": " TCL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "TCP Wrappers License",
+    "Full name_link0": "https://spdx.org/licenses/TCP-wrappers.html",
+    "Identifier": " TCP-wrappers",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "TermReadKey License",
+    "Full name_link0": "https://spdx.org/licenses/TermReadKey.html",
+    "Identifier": " TermReadKey",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Transitive Grace Period Public Licence 1.0",
+    "Full name_link0": "https://spdx.org/licenses/TGPPL-1.0.html",
+    "Identifier": " TGPPL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "TMate Open Source License",
+    "Full name_link0": "https://spdx.org/licenses/TMate.html",
+    "Identifier": " TMate",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "TORQUE v2.5+ Software License v1.1",
+    "Full name_link0": "https://spdx.org/licenses/TORQUE-1.1.html",
+    "Identifier": " TORQUE-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Trusster Open Source License",
+    "Full name_link0": "https://spdx.org/licenses/TOSL.html",
+    "Identifier": " TOSL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Time::ParseDate License",
+    "Full name_link0": "https://spdx.org/licenses/TPDL.html",
+    "Identifier": " TPDL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "THOR Public License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/TPL-1.0.html",
+    "Identifier": " TPL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Text-Tabs+Wrap License",
+    "Full name_link0": "https://spdx.org/licenses/TTWL.html",
+    "Identifier": " TTWL",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "TTYP0 License",
+    "Full name_link0": "https://spdx.org/licenses/TTYP0.html",
+    "Identifier": " TTYP0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Technische Universitaet Berlin License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/TU-Berlin-1.0.html",
+    "Identifier": " TU-Berlin-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Technische Universitaet Berlin License 2.0",
+    "Full name_link0": "https://spdx.org/licenses/TU-Berlin-2.0.html",
+    "Identifier": " TU-Berlin-2.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "UCAR License",
+    "Full name_link0": "https://spdx.org/licenses/UCAR.html",
+    "Identifier": " UCAR",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Upstream Compatibility License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/UCL-1.0.html",
+    "Identifier": " UCL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "ulem License",
+    "Full name_link0": "https://spdx.org/licenses/ulem.html",
+    "Identifier": " ulem",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Michigan/Merit Networks License",
+    "Full name_link0": "https://spdx.org/licenses/UMich-Merit.html",
+    "Identifier": " UMich-Merit",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Unicode License v3",
+    "Full name_link0": "https://spdx.org/licenses/Unicode-3.0.html",
+    "Identifier": " Unicode-3.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Unicode License Agreement - Data Files and Software (2015)",
+    "Full name_link0": "https://spdx.org/licenses/Unicode-DFS-2015.html",
+    "Identifier": " Unicode-DFS-2015",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Unicode License Agreement - Data Files and Software (2016)",
+    "Full name_link0": "https://spdx.org/licenses/Unicode-DFS-2016.html",
+    "Identifier": " Unicode-DFS-2016",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Unicode Terms of Use",
+    "Full name_link0": "https://spdx.org/licenses/Unicode-TOU.html",
+    "Identifier": " Unicode-TOU",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "UnixCrypt License",
+    "Full name_link0": "https://spdx.org/licenses/UnixCrypt.html",
+    "Identifier": " UnixCrypt",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "The Unlicense",
+    "Full name_link0": "https://spdx.org/licenses/Unlicense.html",
+    "Identifier": " Unlicense",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Universal Permissive License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/UPL-1.0.html",
+    "Identifier": " UPL-1.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Utah Raster Toolkit Run Length Encoded License",
+    "Full name_link0": "https://spdx.org/licenses/URT-RLE.html",
+    "Identifier": " URT-RLE",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Vim License",
+    "Full name_link0": "https://spdx.org/licenses/Vim.html",
+    "Identifier": " Vim",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "VOSTROM Public License for Open Source",
+    "Full name_link0": "https://spdx.org/licenses/VOSTROM.html",
+    "Identifier": " VOSTROM",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Vovida Software License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/VSL-1.0.html",
+    "Identifier": " VSL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "W3C Software Notice and License (2002-12-31)",
+    "Full name_link0": "https://spdx.org/licenses/W3C.html",
+    "Identifier": " W3C",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "W3C Software Notice and License (1998-07-20)",
+    "Full name_link0": "https://spdx.org/licenses/W3C-19980720.html",
+    "Identifier": " W3C-19980720",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "W3C Software Notice and Document License (2015-05-13)",
+    "Full name_link0": "https://spdx.org/licenses/W3C-20150513.html",
+    "Identifier": " W3C-20150513",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "w3m License",
+    "Full name_link0": "https://spdx.org/licenses/w3m.html",
+    "Identifier": " w3m",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Sybase Open Watcom Public License 1.0",
+    "Full name_link0": "https://spdx.org/licenses/Watcom-1.0.html",
+    "Identifier": " Watcom-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Widget Workshop License",
+    "Full name_link0": "https://spdx.org/licenses/Widget-Workshop.html",
+    "Identifier": " Widget-Workshop",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Wsuipa License",
+    "Full name_link0": "https://spdx.org/licenses/Wsuipa.html",
+    "Identifier": " Wsuipa",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Do What The F*ck You Want To Public License",
+    "Full name_link0": "https://spdx.org/licenses/WTFPL.html",
+    "Identifier": " WTFPL",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "X11 License",
+    "Full name_link0": "https://spdx.org/licenses/X11.html",
+    "Identifier": " X11",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "X11 License Distribution Modification Variant",
+    "Full name_link0": "https://spdx.org/licenses/X11-distribute-modifications-variant.html",
+    "Identifier": " X11-distribute-modifications-variant",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Xdebug License v 1.03",
+    "Full name_link0": "https://spdx.org/licenses/Xdebug-1.03.html",
+    "Identifier": " Xdebug-1.03",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Xerox License",
+    "Full name_link0": "https://spdx.org/licenses/Xerox.html",
+    "Identifier": " Xerox",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Xfig License",
+    "Full name_link0": "https://spdx.org/licenses/Xfig.html",
+    "Identifier": " Xfig",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "XFree86 License 1.1",
+    "Full name_link0": "https://spdx.org/licenses/XFree86-1.1.html",
+    "Identifier": " XFree86-1.1",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "xinetd License",
+    "Full name_link0": "https://spdx.org/licenses/xinetd.html",
+    "Identifier": " xinetd",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "xkeyboard-config Zinoviev License",
+    "Full name_link0": "https://spdx.org/licenses/xkeyboard-config-Zinoviev.html",
+    "Identifier": " xkeyboard-config-Zinoviev",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "xlock License",
+    "Full name_link0": "https://spdx.org/licenses/xlock.html",
+    "Identifier": " xlock",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "X.Net License",
+    "Full name_link0": "https://spdx.org/licenses/Xnet.html",
+    "Identifier": " Xnet",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "XPP License",
+    "Full name_link0": "https://spdx.org/licenses/xpp.html",
+    "Identifier": " xpp",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "XSkat License",
+    "Full name_link0": "https://spdx.org/licenses/XSkat.html",
+    "Identifier": " XSkat",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Yahoo! Public License v1.0",
+    "Full name_link0": "https://spdx.org/licenses/YPL-1.0.html",
+    "Identifier": " YPL-1.0",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Yahoo! Public License v1.1",
+    "Full name_link0": "https://spdx.org/licenses/YPL-1.1.html",
+    "Identifier": " YPL-1.1",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Zed License",
+    "Full name_link0": "https://spdx.org/licenses/Zed.html",
+    "Identifier": " Zed",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Zeeff License",
+    "Full name_link0": "https://spdx.org/licenses/Zeeff.html",
+    "Identifier": " Zeeff",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Zend License v2.0",
+    "Full name_link0": "https://spdx.org/licenses/Zend-2.0.html",
+    "Identifier": " Zend-2.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Zimbra Public License v1.3",
+    "Full name_link0": "https://spdx.org/licenses/Zimbra-1.3.html",
+    "Identifier": " Zimbra-1.3",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Zimbra Public License v1.4",
+    "Full name_link0": "https://spdx.org/licenses/Zimbra-1.4.html",
+    "Identifier": " Zimbra-1.4",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "zlib License",
+    "Full name_link0": "https://spdx.org/licenses/Zlib.html",
+    "Identifier": " Zlib",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "zlib/libpng License with Acknowledgement",
+    "Full name_link0": "https://spdx.org/licenses/zlib-acknowledgement.html",
+    "Identifier": " zlib-acknowledgement",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Zope Public License 1.1",
+    "Full name_link0": "https://spdx.org/licenses/ZPL-1.1.html",
+    "Identifier": " ZPL-1.1",
+    "FSF Free/Libre?": "",
+    "OSI Approved?": ""
+  },
+  {
+    "Full name": "Zope Public License 2.0",
+    "Full name_link0": "https://spdx.org/licenses/ZPL-2.0.html",
+    "Identifier": " ZPL-2.0",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  },
+  {
+    "Full name": "Zope Public License 2.1",
+    "Full name_link0": "https://spdx.org/licenses/ZPL-2.1.html",
+    "Identifier": " ZPL-2.1",
+    "FSF Free/Libre?": "Y",
+    "OSI Approved?": "Y"
+  }
+]

@@ -1,4 +1,4 @@
-import { autoSetting } from "@prisma/client"
+import { autoSetting } from "@ulld/database/internalDatabaseTypes"
 import { autoSettingEquality } from "./autoSettingEqualityTest"
 import { getDbAutoSettings } from "./getDbAutosetting"
 import globToRegExp from "glob-to-regexp"

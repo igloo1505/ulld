@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// @layer base {
+//   * {
+//     @apply border-border;
+//   }
+//   body {
+//     @apply bg-background text-foreground;
+//     @apply font-sans;
+//   }
+// }
+
+@layer base {
+  .landingSection {
+    @apply absolute w-full h-full min-h-screen top-[100vh] right-0 left-0 overflow-hidden transition-transform duration-300;
+  }
+  .landingSection-active {
+    @apply top-0;
+  }
+}

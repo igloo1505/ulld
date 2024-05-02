@@ -14,37 +14,37 @@ import { editorSaveKeydown } from "@ulld/hooks/useEditorSaveListener";
 interface ModalPageContainerProps {
     children: React.ReactNode;
     confirmClose?: boolean;
-    closeEvent?: string
+    closeEvent?: string;
 }
 
 /* DOCUMENT: document the keyboard shortcut to close the modal page from the confirmation menu. */
 export const ModalPageContainer = ({
     children,
     confirmClose,
-    closeEvent
+    closeEvent,
 }: ModalPageContainerProps) => {
     const router = useRouter();
     const overlay = useRef<HTMLDivElement>(null);
     const wrapper = useRef<HTMLDivElement>(null);
     const [confirmCloseOpen, setConfirmCloseOpen] = useState(false);
 
-    /* const animateIn = () => { */
-    /*     if (!wrapper.current) return */
-    /*     wrapper.current.style.scale = `1` */
-    /*     wrapper.current.style.transform = `translateY(0px)` */
-    /*     wrapper.current.style.opacity = `1` */
-    /* } */
+    const animateIn = () => {
+        if (!wrapper.current) return;
+        wrapper.current.style.scale = `1`;
+        wrapper.current.style.transform = `translate(-50%, -50%)`;
+        wrapper.current.style.opacity = `1`;
+    };
 
-    /* useEffect(() => { */
-    /*     animateIn() */
-    /* }, []) */
+    useEffect(() => {
+        animateIn();
+    }, []);
 
     const [locked, setLocked] = useLockBodyScroll(true);
 
     const onDismiss = useCallback(() => {
-        if(closeEvent){
-            let evt = new Event(closeEvent)
-            window?.dispatchEvent(evt)
+        if (closeEvent) {
+            let evt = new Event(closeEvent);
+            window?.dispatchEvent(evt);
         }
         setLocked(false);
         router.back();
@@ -66,18 +66,7 @@ export const ModalPageContainer = ({
             onDismiss();
         }
     };
-   const onKeyDown = editorSaveKeydown(handleDismiss, [onDismiss])
-
-    /* const onKeyDown = useCallback( */
-    /*     (e: KeyboardEvent) => { */
-    /*         if (e.code === "KeyS" && e.altKey) { */
-    /*             e.stopPropagation(); */
-    /*             e.preventDefault(); */
-    /*             handleDismiss(); */
-    /*         } */
-    /*     }, */
-    /*     [onDismiss], */
-    /* ); */
+    const onKeyDown = editorSaveKeydown(handleDismiss, [onDismiss]);
 
     useEffect(() => {
         document.addEventListener("keydown", onKeyDown);
@@ -101,7 +90,7 @@ export const ModalPageContainer = ({
             >
                 <div
                     ref={wrapper}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full p-6 flex flex-col justify-center items-center"
+                    className="absolute relative top-[50%] left-[50%] translate-x-[-50%] translate-y-[-100%] w-full p-6 flex flex-col justify-center items-center scale-0 opacity-0 transition-all duration-300"
                 >
                     {children}
                 </div>

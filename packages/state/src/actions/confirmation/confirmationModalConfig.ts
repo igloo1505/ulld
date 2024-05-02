@@ -1,5 +1,3 @@
-export type onConfirmFuncKey = "deleteSnippet" | "deleteEquation" | "deleteHealthReport"
-
 export interface ConfirmationModalConfig {
     title: string
     body: string
@@ -8,7 +6,7 @@ export interface ConfirmationModalConfig {
     domId?: string
     onConfirmCallback?: (c: ConfirmationModalConfig) => void
     buttonVariant?: "outline" | "destructive" | "secondary" | "ghost" | "link"
-    onConfirm: onConfirmFuncKey
+    onConfirm: string
     toast?: {
         title: string
         description?: string

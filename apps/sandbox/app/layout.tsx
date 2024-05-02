@@ -13,6 +13,8 @@ import { Toaster } from "@ulld/tailwind/toaster"
 import { fontSans } from "@ulld/tailwind/defaultFont"
 import appConfig from "#/appConfig.ulld.json"
 /* import "shiki/themes/dracula.mjs" */
+import {writeConfigJson} from "@ulld/configschema/zod/writeConfigJson"
+import lazyTestConfig from "@ulld/baseConfigs/test"
 
 
 
@@ -28,7 +30,7 @@ const RootLayout = async (props: {
     children: React.ReactNode
     modal: React.ReactNode
 }) => {
-    /* await writeConfigJson(lazyTestConfig, "/Users/bigsexy/Desktop/currentProjects/ulld/apps/sandbox") */
+    await writeConfigJson(lazyTestConfig, "/Users/bigsexy/Desktop/currentProjects/ulld/apps/sandbox")
     const config = getInternalConfig(appConfig as any as AppConfigSchemaOutput)
     /* logger.debug(JSON.stringify(config, null, 4), { label: "Config" }) */
 

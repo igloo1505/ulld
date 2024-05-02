@@ -3,8 +3,8 @@ import Link from 'next/link';
 import FooterCategory from './footerCategory';
 import { Route } from 'next';
 import clsx from 'clsx';
-import { VercelIcon } from '../icons/logoIcons/vercel';
-import { GithubIcon } from '../icons/logoIcons/github';
+import { VercelIcon } from '@ulld/icons/vercel';
+import { GithubIcon } from '@ulld/icons/github';
 import BrandTitle from '../text/title';
 import {QuickLinkType} from "@ulld/utilities/types/navigation"
 

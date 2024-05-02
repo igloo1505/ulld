@@ -1,5 +1,5 @@
 import { RequestContext } from "next/dist/server/base-server"
-import { NextRequest, NextResponse } from "next/server"
+import { type NextRequest, NextResponse } from "next/server"
 
 export const getCorsHeaders = (req: NextRequest, _status: number = 200) => {
     const origin = req.headers.get("origin") || "*"

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Prisma } from "@prisma/client"
+import { Prisma } from "@ulld/database/internalDatabaseTypes"
 import { prisma } from "@ulld/database/db";
 import { publicProcedure, router } from "../../trpc";
 import { getHealthDashboardData, healthReportFormFieldBackend } from "../../../plugins/native/health/formUtils";

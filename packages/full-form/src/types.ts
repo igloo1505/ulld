@@ -4,5 +4,7 @@ export interface BaseFullFormInputProps<T extends FieldValues, H extends HTMLEle
     extends Omit<React.InputHTMLAttributes<H>, "form"> {
     label?: string;
     name: Path<T>;
-    desc?: string
+    desc?: string;
+    formItemClasses?: string;
+    placeholder?: string;
 }

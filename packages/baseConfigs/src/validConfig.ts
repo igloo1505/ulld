@@ -2,7 +2,7 @@ import { Route } from "next"
 
 
 
-export const physicsMathConfig = {
+const physicsMathConfig = {
     fsRoot: "/Users/bigsexy/Desktop/notes/content",
     terminal: {
         logLevel: "debug",
@@ -325,3 +325,6 @@ export const physicsMathConfig = {
         googleServiceAccountJsonPath: "/Users/bigsexy/Desktop/notes/App/PRIVATE_AUTH/ulld-service-account.json"
     },
 }
+
+
+export default physicsMathConfig

@@ -1,0 +1,15 @@
+{
+    "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
+    "extends": "../tsconfig",
+    "compilerOptions": {
+        "noEmit": true,
+        "module": "CommonJS",
+        "moduleResolution": "Bundler",
+        "esModuleInterop": true
+    },
+    "references": [
+        {
+            "path": ".."
+        }
+    ]
+}

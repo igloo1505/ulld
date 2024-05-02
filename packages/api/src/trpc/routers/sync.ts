@@ -1,8 +1,7 @@
-import { autoSetting } from "@prisma/client";
+import { autoSetting } from "@ulld/database/internalDatabaseTypes";
 import { publicProcedure, router } from "../trpc";
 import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { syncOptionsSchema } from "../../schemas/syncing/syncOptions";
-import { syncBib } from "../../trpcInternalMethods/bib/syncBib";
 import { getAutoSettingsWithRegex } from "../../trpcInternalMethods/settings/autoSettings/getAutosettingWithRegex";
 import { syncAutoSettings } from "../../trpcInternalMethods/settings/autoSettings/syncAutoSettings";
 import { syncDirRecursively } from "../../trpcInternalMethods/syncing/mdx/syncDirRecursively";
@@ -27,6 +26,12 @@ export interface AutoSettingType {
 }
 
 
+
+const syncPluginsRecursively = async () => {
+    throw new Error("Ah shit. Forgot this.")
+    }
+
+
 export const syncRouter = router({
     syncDir: publicProcedure.input(syncOptionsSchema.optional()).mutation(async ({ input }) => {
         const config = getInternalConfig()
@@ -35,7 +40,8 @@ export const syncRouter = router({
         }
         const _autoSettings = await getAutoSettingsWithRegex()
         await syncAutoSettings()
-        await syncBib()
+        await syncPluginsRecursively()
+        // await syncBib()
         await syncDirRecursively(config.fsRoot, config.database?.removeIfNotPresentInFs || input?.removeIfNotInFs || false, _autoSettings, input)
         await syncConfig()
     }),

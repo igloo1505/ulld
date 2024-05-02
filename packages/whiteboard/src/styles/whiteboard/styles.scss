@@ -1,0 +1,19 @@
+.excalidraw,
+.excalidraw.theme--dark {
+  --color-primary: hsl(var(--primary));
+  --color-primary-darker: hsl(
+    var(--primary-h),
+    var(--primary-s),
+    calc(var(--primary-l) - 15%)
+  );
+  --color-primary-darkest: hsl(
+    var(--primary-h),
+    var(--primary-s),
+    calc(var(--primary-l) - 25%)
+  );
+  --color-primary-light: hsl(
+    var(--primary-h),
+    var(--primary-s),
+    calc(var(--primary-l) + 15%)
+  );
+}

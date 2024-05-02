@@ -1,6 +1,6 @@
-import {AppConfigSchemaOutput } from "@ulld/configschema/zod/main"
+import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main"
 
 
 
 
-export const initialConfigState: AppConfigSchemaOutput | undefined | null = {} as AppConfigSchemaOutput
+export const initialConfigState: AppConfigSchemaOutput | null = null

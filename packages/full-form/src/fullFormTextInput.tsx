@@ -12,7 +12,7 @@ import { BaseFullFormInputProps } from "./types";
 import { Input } from "@ulld/tailwind/input";
 
 
-interface TextInputProps<
+export interface TextInputProps<
     T extends FieldValues,
     H extends Omit<HTMLElement, "onChange">,
 > extends Omit<BaseFullFormInputProps<T, H>, "onChange"> {

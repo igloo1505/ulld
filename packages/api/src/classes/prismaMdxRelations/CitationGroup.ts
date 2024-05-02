@@ -1,16 +1,20 @@
 import { zodCitationGroupSchema } from "../../schemas/search/parsing";
 import { CitationGroupReturned, BibEntryReturned } from "../../trpcTypes/main";
-import { BibEntry, type BibEntryPrismaAcceptedTypes } from "./BibEntry";
-import { CitationGroupProtocol } from "./protocols/citationGroup";
+import { BibEntry } from "./BibEntry";
 import type { Prisma, CitationsGroup as PrismaCitationGroup } from "@ulld/database/internalDatabaseTypes"
+import { CitationGroupPropsOutput, bibEntryPropsSchema } from "./schemas/general";
 
 
 
-export class CitationGroup extends CitationGroupProtocol {
+export class CitationGroup {
     entries: BibEntry[] = []
-    constructor(public name: string, public description?: string, entries: BibEntryPrismaAcceptedTypes[] = []) {
-        super()
-        entries && (this.entries = BibEntry.fromList(entries))
+    name: string
+    description: string | null | undefined = undefined
+
+    constructor(props: CitationGroupPropsOutput) {
+        this.name = props.name
+        this.description = props.description
+        this.entries = props.entries ? bibEntryPropsSchema.array().parse(props.entries).map((b) => new BibEntry(b)) : []
     }
 
     toPlainObject() {
@@ -35,7 +39,7 @@ export class CitationGroup extends CitationGroupProtocol {
             name: this.name,
             description: this.description,
             entries: {
-                connectOrCreate: this.entries.map((t) => t.connectOrCreate())
+                connectOrCreate: this.entries.map((t) => t.connectOrCreateArgs())
             }
         }
         return d
@@ -69,7 +73,11 @@ export class CitationGroup extends CitationGroupProtocol {
         return d
     }
     static fromPrisma(entry: NonNullable<CitationGroupReturned> | PrismaCitationGroup & { entries: undefined } | Partial<NonNullable<BibEntryReturned>['citationGroups'][number]>) {
-        let newGroup = new CitationGroup(entry.name || "", entry.description || undefined, entry.entries || [])
+        let newGroup = new CitationGroup({
+            name: entry.name || "",
+            description: entry.description || undefined,
+            entries: entry.entries || []
+        })
         return newGroup
     }
     static fromList(items: (PrismaCitationGroup & { entries?: undefined } | CitationGroup | Partial<NonNullable<BibEntryReturned>['citationGroups'][number]>)[] | null | undefined): CitationGroup[] {

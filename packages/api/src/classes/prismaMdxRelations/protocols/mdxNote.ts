@@ -1,51 +1,15 @@
 import { ParsedAppConfig } from "@ulld/configschema/types";
-import { mdxNoteWithParsedLatex, mdxNoteZodObject } from "../../../schemas/search/parsing";
 import { AutoSettingWithRegex } from "../../../trpc/types";
-import { MdxNoteWithAll } from "../../../trpcTypes/main";
 import type { MdxNote } from "../MdxNote";
 import { NoteBase } from "../NoteBase";
 import type { PrismaMdxRelationshipProtocol } from "../type";
 import type { Prisma, MdxNote as PrismaMdxNote } from "@ulld/database/internalDatabaseTypes"
-import { z } from 'zod'
-
-
-export type PrismaMdxNoteWithKeys = PrismaMdxNote & { subject: undefined, definitions?: undefined, topics: undefined, citations: undefined, tags: undefined, isProtected?: string }
-
-const pickFields = {
-    subjects: true as true,
-    noteType: true as true,
-    id: true as true,
-    title: true as true,
-    latexTitle: true as true,
-    lastSync: true as true,
-    tags: true as true,
-    rootRelativePath: true as true,
-    summary: true as true,
-    href: true as true,
-    firstSync: true as true,
-    sequentialIndex: true as true,
-    bookmarked: true as true
-}
-
-const extendsFields = {
-    citations: z.object({ id: z.string() }).array().default([])
-}
-
-const requiredFields: Record<string, true> = {
-    href: true
-}
-
-export const prismaMdxNoteSummaryZodSchema = mdxNoteWithParsedLatex.pick(pickFields).extend(extendsFields).required(requiredFields)
-
-export const prismaMdxNoteSummaryZodSchemaPreOutput = mdxNoteZodObject.pick(pickFields).extend(extendsFields).required(requiredFields)
-
-export type PrismaMdxNoteSummary = z.input<typeof prismaMdxNoteSummaryZodSchema>
-export type PrismaMdxNoteSummaryOutput = z.output<typeof prismaMdxNoteSummaryZodSchema>
+import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
 
 
 
 export abstract class MdxNoteProtocol extends NoteBase implements PrismaMdxRelationshipProtocol<Prisma.MdxNoteDelegate>  {
-    constructor(rootRelativePath: string, extension: string) {
+    constructor(rootRelativePath: string | undefined | null, extension: ParsableExtensions = ".mdx") {
         super(rootRelativePath, extension)
     }
     abstract createArgs(autoSettings: AutoSettingWithRegex[], config: ParsedAppConfig): Prisma.MdxNoteCreateArgs | undefined
@@ -54,5 +18,5 @@ export abstract class MdxNoteProtocol extends NoteBase implements PrismaMdxRelat
     abstract whereUniqueInput(config: ParsedAppConfig): Prisma.MdxNoteWhereUniqueInput
     abstract createInput(autoSettings: AutoSettingWithRegex[], config: ParsedAppConfig): Prisma.MdxNoteCreateInput | undefined
     abstract whereInput(config: ParsedAppConfig): Prisma.MdxNoteWhereInput
-    static fromPrisma: (item: NonNullable<MdxNoteWithAll> | PrismaMdxNoteWithKeys, config: ParsedAppConfig) => MdxNote
+    static fromPrisma: (item: PrismaMdxNote) => MdxNote
 }

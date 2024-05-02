@@ -4,10 +4,10 @@ import { getHeadingHierarchy } from "../../formatting/getHeadingHierarchy"
 import { getQuickLinkHtmlId, htmlEm } from "./dom"
 import axios from 'axios'
 import { setDarkmode, showToast, clearEmbededPanelStateByPath } from "../../state/slices/ui"
-import { store } from "../../state/store"
 import { setTocContent } from "../../state/slices/functionality"
 import { copyStringToClipboard } from "@ulld/utilities/actions/copyStringToClipboard"
 import { ToastConfigType } from "@ulld/utilities/types/toastConfig"
+import {ThemeOptions} from "@ulld/tailwind/themeUtils"
 
 
 export const toggleSidebar = () => document.body.classList.toggle("sidebarOpenPermanent")
@@ -22,7 +22,7 @@ export const toggleDarkMode = async () => {
         html.classList.toggle("dark")
         html.setAttribute("data-color-mode", newDarkMode ? "dark" : "light")
     }
-    store.dispatch(setDarkmode(newDarkMode))
+    window.ulldStore?.dispatch(setDarkmode(newDarkMode))
     await axios.post('/api/settings/toggleDarkmodeCookie', {
         darkmode: newDarkMode ? "darkMode" : "noDarkMode"
     })
@@ -31,7 +31,7 @@ export const toggleDarkMode = async () => {
 
 export const setTocPanelContent = (noteId: string | number) => {
     let hierarchy = getHeadingHierarchy()
-    store.dispatch(setTocContent({ headingContent: hierarchy, noteId }))
+    window.ulldStore?.dispatch(setTocContent({ headingContent: hierarchy, noteId }))
 }
 
 
@@ -84,7 +84,7 @@ export const toggleAllJupyterFolds = (fold?: boolean) => {
 
 
 export const showReduxToast = (t: ToastConfigType) => {
-    store.dispatch(showToast(t))
+    window.ulldStore?.dispatch(showToast(t))
 }
 
 
@@ -95,7 +95,7 @@ export const removeIdFromDom = (id: string) => {
 
 
 export const resetCollapsablePanels = (pathname: string) => {
-    store.dispatch(clearEmbededPanelStateByPath(pathname))
+    window.ulldStore?.dispatch(clearEmbededPanelStateByPath(pathname))
 }
 
 
@@ -110,4 +110,5 @@ export const setPreferFs = async (preferFs: boolean | "toggle" = "toggle") => {
     }
     return res.data.success
 }
+
 

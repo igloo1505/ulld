@@ -12,16 +12,13 @@ import {
     getFsMdx,
 } from "../../trpcInternalMethods/filesystem/fsnotes";
 import { makeArrayTransform } from "@ulld/utilities/schemas/transforms";
-import { serializeMdxContent } from "@ulld/parsers/serializeMdxContent";
+import { parseMdxString } from "@ulld/parsers/mdx";
+import { parseMdxProps } from "@ulld/utilities/schemas/mdx/parseMdxStringProps";
 
 const idOrIdArray = z
     .union([z.number().int(), z.number().int().array()])
     .transform(makeArrayTransform);
 
-const parseMdxStringSchema = z.object({
-    content: z.string(),
-    display: z.union([z.literal("display"), z.literal("inline")]),
-});
 
 export const mdxNoteActionsRouter = router({
     deleteNoteById: publicProcedure
@@ -62,14 +59,14 @@ export const mdxNoteActionsRouter = router({
         }),
     getFsMdx: publicProcedure
         .input(
-            z.object({ rootRelativePath: z.string(), extension: markdownExtensions }),
+            z.object({ rootRelativePath: z.string(), extension: markdownExtensions, useProcessRoot: z.boolean().default(false) }),
         )
         .query(async (opts) => {
-            return getFsMdx(opts.input.rootRelativePath, opts.input.extension);
+            return getFsMdx(opts.input.rootRelativePath, opts.input.extension, null, opts.input.useProcessRoot);
         }),
     parseMdxString: publicProcedure
-        .input(parseMdxStringSchema)
+        .input(parseMdxProps)
         .mutation(async ({ input }) => {
-            return await serializeMdxContent(input.content);
+            return await parseMdxString(input);
         }),
 });

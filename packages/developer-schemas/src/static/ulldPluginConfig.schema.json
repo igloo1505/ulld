@@ -1,0 +1,44 @@
+{
+    "$ref": "#/definitions/ULLDPluginConfig",
+    "definitions": {
+        "ULLDPluginConfig": {
+            "type": "object",
+            "properties": {
+                "$schema": {
+                    "type": "string"
+                },
+                "paths": {
+                    "type": "object",
+                    "properties": {
+                        "routers": {
+                            "type": "string"
+                        },
+                        "pluginManager": {
+                            "type": "string",
+                            "default": "src/lib/pluginManager.ts"
+                        },
+                        "styles": {
+                            "type": "string"
+                        },
+                        "app": {
+                            "type": "string",
+                            "default": "src/ulld_app"
+                        },
+                        "public": {
+                            "type": "string",
+                            "default": "src/ulld_public"
+                        },
+                        "globalStateComponents": {
+                            "type": "string",
+                            "default": "src/globalStateComponents.tsx"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "default": {}
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+}

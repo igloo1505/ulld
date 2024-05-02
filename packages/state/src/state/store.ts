@@ -1,56 +1,82 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { Reducer, combineReducers, configureStore } from "@reduxjs/toolkit";
 import { UIReducer } from "./slices/ui";
 import { SettingsReducer } from "./slices/settings";
 import { FunctionalityReducer } from "./slices/functionality";
 import { ConfigReducer } from "./slices/config";
-import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistReducer, persistStore } from "redux-persist"
+import {
+    FLUSH,
+    PAUSE,
+    PERSIST,
+    PURGE,
+    REGISTER,
+    REHYDRATE,
+    persistReducer,
+    persistStore,
+} from "redux-persist";
 import { initialState } from "./initialState/initialState";
 // @ts-ignore
-import storage from 'redux-persist-indexeddb-storage';
+import storage from "redux-persist-indexeddb-storage";
 
+export type ExtraReducers<T extends string> = Record<T, Reducer>;
+export type ExtraInitialState<T extends string> = Record<T, object>
 
-const rootReducer = {
-    UI: UIReducer,
-    settings: SettingsReducer,
-    functionality: FunctionalityReducer,
-    config: ConfigReducer
+export type AdditionalState<T extends string> = {
+    extraReducers: ExtraReducers<T>,
+    extraInitialState: ExtraInitialState<T>
 }
 
+const rootReducer = <T extends string>(extraReducers?: ExtraReducers<T>) => {
+    return {
+        UI: UIReducer,
+        settings: SettingsReducer,
+        functionality: FunctionalityReducer,
+        config: ConfigReducer,
+        ...extraReducers
+    } satisfies Record<string, Reducer>
+};
 
 const devTools = () => {
-    const defval = process.env.NODE_ENV !== "production"
+    const defval = process.env.NODE_ENV !== "production";
     if (typeof window === "undefined") {
-        return defval
+        return defval;
     }
-    const forceTools = window.localStorage.getItem("devtools")
-    return typeof forceTools === "undefined" ? defval : forceTools === "true"
-}
+    const forceTools = window.localStorage.getItem("devtools");
+    return typeof forceTools === "undefined" ? defval : forceTools === "true";
+};
 
+const makeConfiguredStore = <T extends string>(extraReducers?: ExtraReducers<T>, extraInitialState?: ExtraInitialState<T>) =>
+    configureStore({
+        reducer: rootReducer<T>(extraReducers),
+        preloadedState: {
+            ...initialState,
+            ...extraInitialState
+        },
+        devTools: devTools(),
+    });
 
-const makeConfiguredStore = () => configureStore({
-    reducer: rootReducer,
-    preloadedState: initialState,
-    devTools: devTools()
-});
-
-
-export const makeStore = (): ReturnType<typeof makeConfiguredStore> => {
+export const makeStore = <T extends string>(extraReducers?: ExtraReducers<T>, extraInitialState?: ExtraInitialState<T>): ReturnType<typeof makeConfiguredStore> => {
     const isServer = typeof window === "undefined";
     if (isServer) {
-        return makeConfiguredStore();
+        return makeConfiguredStore<T>(extraReducers, extraInitialState);
     } else {
         // we need it only on client side
         const persistConfig = {
             key: "root",
             whitelist: ["auth"], // make sure it does not clash with server keys
-            storage: storage("Ulld")
+            storage: storage("Ulld"),
         };
-        const persistedReducer = persistReducer(persistConfig, combineReducers(rootReducer));
+        const persistedReducer = persistReducer(
+            persistConfig,
+            combineReducers(rootReducer<T>(extraReducers)),
+        );
         let store: any = configureStore({
             reducer: persistedReducer,
             // devTools: process.env.NODE_ENV !== "production",
             devTools: true,
-            preloadedState: initialState,
+            preloadedState: {
+                ...initialState,
+                ...extraInitialState
+            },
             middleware: (getDefaultMiddleware) =>
                 getDefaultMiddleware({
                     serializableCheck: {
@@ -64,20 +90,15 @@ export const makeStore = (): ReturnType<typeof makeConfiguredStore> => {
 };
 
 
-const _store = makeStore()
-
 declare global {
     interface Window {
-        store: typeof _store;
+        store: ReturnType<typeof makeStore>;
     }
 }
 
-if (process.env.NODE_ENV !== "production" && typeof window !== "undefined") {
-    window.store = _store;
-}
+export type AppStore = ReturnType<typeof makeStore>;
+export type RootState = ReturnType<AppStore["getState"]>;
+export type AppDispatch = AppStore["dispatch"]
 
 
-export const store = _store
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
-
+export type CombinedAppRootState<J extends string, T extends ExtraInitialState<J>> = RootState & T

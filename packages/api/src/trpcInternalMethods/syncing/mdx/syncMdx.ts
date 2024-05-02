@@ -16,7 +16,7 @@ export const syncMdx = async (file: string, dir: string, autoSettings: AutoSetti
     const config = getInternalConfig()
     let s = fs.readFileSync(file, { encoding: "utf-8" })
     console.log(`Syncing note with filepath: ${file.split(dir)[1]}`)
-    let note = await MdxNote.fromMdxString({ content: s, rootRelativePath: file.split(dir)[1] })
+    let note = await MdxNote.fromMdxString({ raw: s, rootRelativePath: file.split(dir)[1] })
     await note.parse()
     if (note.remoteUrl && note.trackRemote && opts?.offline !== false) {
         // There has to be a better way of doing this without parsing this twice, but the downside of parsing front matter separately every single time for the <1% of notes that are likely to be remote might be much worse.
@@ -27,8 +27,8 @@ export const syncMdx = async (file: string, dir: string, autoSettings: AutoSetti
     let checkExistsArgs: Prisma.MdxNoteFindFirstArgs = {
         where: {
             OR: [
-                { content: note.raw },
-                { rootRelativePath: note.rootRelativePath }
+                { content: note.raw as string },
+                { rootRelativePath: note.rootRelativePath as string }
             ]
         }
     }

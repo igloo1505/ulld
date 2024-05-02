@@ -49,7 +49,7 @@ export const EditorWithPreview = ({localStorageKey, editorPadding, displayPanel,
             className={"w-full h-full"}
             ref={parent}
         >
-            <ResizablePanelGroup direction="horizontal" className={"px-8 my-6"}>
+            <ResizablePanelGroup direction="horizontal" className={""}>
                 <ResizablePanel 
                     className={"flex flex-col justify-start items-center"}
                     onResize={(l) => { 

@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react"
 
+export interface ViewportData {
+window: {
+        width: number
+        height: number
+        aspectRatio: number
+    }
+    }
+
 export const useViewport = () => {
-    const [viewport, setViewport] = useState<(DOMRect & { window: { width: number, height: number } }) | null>(null)
+    const [viewport, setViewport] = useState<ViewportData | null>(null)
     const handleViewport = () => {
         let d = document.body?.getBoundingClientRect()
         setViewport({
             ...d,
             window: {
                 width: window.innerWidth,
-                height: window.innerHeight
+                height: window.innerHeight,
+                aspectRatio: window.innerWidth / window.innerHeight
             }
         })
     }

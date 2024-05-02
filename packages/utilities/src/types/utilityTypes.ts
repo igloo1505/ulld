@@ -25,3 +25,6 @@ export type WithoutFunctions<T> = RemoveValuesOfType<{
 }, never>
 
 export type ZodFriendly<T extends object> = { [key in keyof T]: T[key] extends never ? never : z.ZodType }
+
+
+export type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>

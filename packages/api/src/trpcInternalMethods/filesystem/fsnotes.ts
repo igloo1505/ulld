@@ -8,9 +8,9 @@ import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/
 
 
 
-export const getFsMdx = async (rootRelativePath: string, ext: ".mdx" | ".md" = ".mdx", _config?: ParsedAppConfig) => {
-    const config = _config || getInternalConfig()
-    let _path = path.join(config.fsRoot, rootRelativePath.endsWith(ext) ? rootRelativePath : `${rootRelativePath}${ext}`)
+export const getFsMdx = async (rootRelativePath: string, ext: ".mdx" | ".md" = ".mdx", _config: ParsedAppConfig | undefined | null = null, useProcessRoot: boolean = false) => {
+    const fsRoot = useProcessRoot ? process.cwd() : (_config || getInternalConfig()).fsRoot
+    let _path = path.join(fsRoot, rootRelativePath.endsWith(ext) ? rootRelativePath : `${rootRelativePath}${ext}`)
     // if (!fs.existsSync(_path)) {
     // NOTE: Turned off for now. It's working as is. Might be an issue for people on Linux systems though with the ability to create multiple files with only a difference in casing.
     //     let otherFile = checkDirForCaseInsensitiveFile(_path)

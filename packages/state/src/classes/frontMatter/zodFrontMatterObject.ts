@@ -20,23 +20,24 @@ const zodTableStylesObject = z.object({
 
 
 const fields = {
-    title: z.string(),
+    title: z.string().nullish(),
     created: zodOptStr,
     updated: zodOptStr,
     summary: zodOptStr,
     subjects: z.union([z.string(), z.string().array(), z.number(), z.number().array()]).transform((a) => Array.isArray(a) ? a.map((l) => String(l)) : [String(a)]).default([]),
     topics: z.union([z.string(), z.string().array(), z.number(), z.number().array()]).transform((a) => Array.isArray(a) ? a.map((l) => String(l)) : [String(a)]).default([]),
+    tags: z.union([z.string(), z.string().array(), z.number(), z.number().array()]).transform((a) => Array.isArray(a) ? a.map((l) => String(l)) : [String(a)]).default([]),
     importantValues: z.number().array().optional().nullable(),
     id: zodOptStr,
-    protected: zodOptBool(false),
+    protected: z.boolean().default(false),
     sequential: zodOptNum,
     sequentialKey: zodOptStr,
-    float: zodOptBool(false),
+    float: z.boolean().default(false),
     tableStyles: zodTableStylesObject.optional(),
     remote: z.object({
         url: zodOptStr,
         track: zodOptBool(true)
-    }).optional()
+    }).nullish()
 }
 
 export const zodFrontMatterObject = z.object(fields)

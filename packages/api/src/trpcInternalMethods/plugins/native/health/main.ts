@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { Prisma } from "@prisma/client"
+import { Prisma } from "@ulld/database/internalDatabaseTypes"
 import { getPaginationParams, paginationProps } from '@ulld/state/searchParamSchemas/pagination/main'
 import { serverClient } from '../../../../trpc/serverClient'
 

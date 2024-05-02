@@ -22,11 +22,12 @@ model Subject {
     todoList     ToDoList[]
     toDo         ToDo[]
     bibEntries   BibEntry[]
-    equations   Equation[]
+    equations    Equation[]
 }
 
+
 model Topic {
-    value         String         @id @unique @db.Citext
+    value        String         @id @unique @db.Citext
     MdxNotes     MdxNote[]
     ipynbNotes   Ipynb[]
     QAPair       QAPair[]
@@ -36,8 +37,9 @@ model Topic {
     kanbanId     Int?
     todoList     ToDoList[]
     bibEntries   BibEntry[]
-    equations   Equation[]
+    equations    Equation[]
 }
+
 
 model Tag {
     value        String         @id @unique @db.Citext
@@ -52,8 +54,6 @@ model Tag {
     kanbanId     Int?
     todoList     ToDoList[]
 }
-
-
 
 enum Technologies {
     python
@@ -76,11 +76,11 @@ enum Technologies {
 }
 
 model Quote {
-    body      String          @id @unique
+    body      String   @id @unique
     author    String
     source    String?
-    pinned    Boolean         @default(false)
-    createdAt DateTime        @default(now())
+    pinned    Boolean  @default(false)
+    createdAt DateTime @default(now())
 }
 
 model DailyFocus {
@@ -100,7 +100,6 @@ model AutoSetting {
     glob  String
     value String
 }
-
 
 model ReadingList {
     name        String     @id @unique
@@ -160,8 +159,8 @@ model BibEntry {
     added          DateTime         @default(now())
     citationGroups CitationsGroup[]
     tags           Tag[]
-    topics          Topic[]
-    subjects        Subject[]
+    topics         Topic[]
+    subjects       Subject[]
     MdxNotes       MdxNote[]
     ipynbNotes     Ipynb[]
     readingList    ReadingList[]
@@ -214,11 +213,12 @@ model Equation {
     variables      String[]
     keywords       String[]
     tags           Tag[]
-    topics          Topic[]
-    subjects        Subject[]
+    topics         Topic[]
+    subjects       Subject[]
     createdAt      DateTime        @default(now())
     mdxNotes       MdxNote[]
 }
+
 
 model Definition {
     id                String   @id @unique
@@ -229,6 +229,7 @@ model Definition {
     mdxNoteId         Int?
 }
 
+
 enum ImageAlignment {
     bottom
     center
@@ -236,6 +237,7 @@ enum ImageAlignment {
     left
     right
 }
+
 
 model Settings {
     id                    Int            @id @default(1)
@@ -249,6 +251,15 @@ model Settings {
     firstSync             DateTime       @default(now())
     lastSync              DateTime       @default(now()) @updatedAt
 }
+
+
+model SettingsAppendix {
+    id String @id @unique
+    data Bytes
+    createdAt      DateTime        @default(now())
+    updatedAt      DateTime     @updatedAt
+}
+
 
 model RandomImage {
     path      String   @id @unique
@@ -268,12 +279,13 @@ model QAPair {
     description    String?
     secondaryLabel String?
     tags           Tag[]
-    topics          Topic[]
-    subjects        Subject[]
+    topics         Topic[]
+    subjects       Subject[]
     practiceExam   PracticeExam[]
     correctCount   Int            @default(0)
     inCorrectCount Int            @default(0)
 }
+
 
 model PracticeExam {
     id                     Int       @id @default(autoincrement())
@@ -306,7 +318,7 @@ model MdxNote {
     formatted          String?
     summary            String?
     topics             Topic[]
-    subjects            Subject[]
+    subjects           Subject[]
     tags               Tag[]
     citations          BibEntry[]
     citationsListOrder String[]
@@ -338,16 +350,13 @@ model Ipynb {
     latexTitle          String?
     tags                Tag[]
     topics              Topic[]
-    subjects             Subject[]
+    subjects            Subject[]
     citations           BibEntry[]
     citationsListOrder  String[]
     importantValues     Float[]
     href                String
     outgoingQuickLinks  String[]
-    outputPath          String
-    htmlOutput          Bytes
     raw                 Bytes
-    notebook_preExecute String?
     sequentialList      SequentialNoteList? @relation(fields: [sequentialKey], references: [sequentialKey])
     sequentialKey       String?
     sequentialIndex     Int?
@@ -361,9 +370,9 @@ model ToDoList {
     id         Int       @id @default(autoincrement())
     label      String
     tasks      ToDo[]
-    tags           Tag[]
-    topics          Topic[]
-    subjects        Subject[]
+    tags       Tag[]
+    topics     Topic[]
+    subjects   Subject[]
     createdAt  DateTime  @default(now())
     lastUpdate DateTime  @updatedAt
 }
@@ -507,6 +516,7 @@ model Diet {
     lastUpdate        DateTime        @updatedAt
 }
 
+
 model Serving {
     id            Int             @id @default(autoincrement())
     item          DietaryItem     @relation(fields: [dietaryItemId], references: [id])
@@ -514,6 +524,7 @@ model Serving {
     quant_oz      Float?
     quant_guess   QUANTITY_GUESS?
 }
+
 
 model DietaryItem {
     id              Int       @id @default(autoincrement())
@@ -565,4 +576,17 @@ model HealthReport {
     estHoursInExcessFast            Float?
     dietId                          String?
     created                         DateTime @default(now())
+}
+
+
+model Whiteboard {
+        id String @id @unique
+        data Bytes
+}
+
+
+model DJT {
+        id Int @id @default(autoincrement())
+        type String
+        data Bytes
 }

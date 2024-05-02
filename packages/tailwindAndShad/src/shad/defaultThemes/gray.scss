@@ -11,6 +11,9 @@
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 4.1%;
     --primary: 220.9 39.3% 11%;
+    --primary-rgb: #111827 --primary-h: 220.9;
+    --primary-s: 39.3%;
+    --primary-l: 11%;
     --primary-foreground: 210 20% 98%;
     --secondary: 220 14.3% 95.9%;
     --secondary-foreground: 220.9 39.3% 11%;
@@ -24,6 +27,8 @@
     --input: 220 13% 91%;
     --ring: 224 71.4% 4.1%;
     --radius: 0.5rem;
+    --general-link-color: #2563eb;
+    --brand: 198.6 88.7% 48.4%;
   }
 
   .dark {
@@ -34,6 +39,10 @@
     --popover: 224 71.4% 4.1%;
     --popover-foreground: 210 20% 98%;
     --primary: 210 20% 98%;
+    --primary-rgb: #f9fafb;
+    --primary-h: 210;
+    --primary-s: 20%;
+    --primary-l: 98%;
     --primary-foreground: 220.9 39.3% 11%;
     --secondary: 215 27.9% 16.9%;
     --secondary-foreground: 210 20% 98%;
@@ -46,5 +55,14 @@
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
     --ring: 216 12.2% 83.9%;
+    --general-link-color: #1e90ff;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    @apply font-sans;
   }
 }
