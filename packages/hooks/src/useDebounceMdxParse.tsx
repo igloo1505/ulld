@@ -78,5 +78,6 @@ export const useDebounceMdxParse = (
         value,
         setValue,
         Component,
+        isReady: Boolean(mdxModule) 
     };
 };

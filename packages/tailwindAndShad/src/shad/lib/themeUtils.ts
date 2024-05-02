@@ -14,6 +14,7 @@ export const themeSchema = z.union([
     z.literal("violet"),
     z.literal("yellow"),
     z.literal("zinc"),
+    z.literal("ulld"),
 ]);
 
 

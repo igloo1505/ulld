@@ -13,7 +13,6 @@ import {
 } from "../../trpcInternalMethods/filesystem/fsnotes";
 import { makeArrayTransform } from "@ulld/utilities/schemas/transforms";
 import { parseMdxString } from "@ulld/parsers/mdx";
-import { parseMdxStringSchema } from "@ulld/utilities/schemas/mdx/parseMdxStringSchema";
 import { parseMdxProps } from "@ulld/utilities/schemas/mdx/parseMdxStringProps";
 
 const idOrIdArray = z
@@ -60,10 +59,10 @@ export const mdxNoteActionsRouter = router({
         }),
     getFsMdx: publicProcedure
         .input(
-            z.object({ rootRelativePath: z.string(), extension: markdownExtensions }),
+            z.object({ rootRelativePath: z.string(), extension: markdownExtensions, useProcessRoot: z.boolean().default(false) }),
         )
         .query(async (opts) => {
-            return getFsMdx(opts.input.rootRelativePath, opts.input.extension);
+            return getFsMdx(opts.input.rootRelativePath, opts.input.extension, null, opts.input.useProcessRoot);
         }),
     parseMdxString: publicProcedure
         .input(parseMdxProps)

@@ -8,6 +8,9 @@
   ],
   "exports": {
     "./useCounter": "./src/useCounter.ts",
+    "./useMdxFile": "./src/useMdxFile.ts",
+    "./useUtf8File": "./src/useUtf8File.ts",
+    "./useUlldStore": "./src/useUlldStore.ts",
     "./useEditorModalSyncedValue": "./src/useEditorModalSyncedValue.ts",
     "./useEventCallback": "./src/useEventCallback.ts",
     "./useDebounce": "./src/useDebounce.ts",

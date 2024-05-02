@@ -3,7 +3,9 @@ import axios from "axios";
 import { htmlEm } from "../actions/clientOnly/dom";
 import { useEffect } from "react";
 
-interface OnlineStatusObserverProps { }
+interface OnlineStatusObserverProps { 
+
+}
 
 export const OnlineStatusObserver = (props: OnlineStatusObserverProps) => {
 

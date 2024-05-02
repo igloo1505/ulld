@@ -1,6 +1,5 @@
 import React, {  useEffect } from "react";
 import { animated, useSpring } from "@react-spring/three";
-import { useViewport } from "@ulld/hooks/useViewport";
 import {  Texture } from "three";
 import { MeshDistortMaterial } from "@react-three/drei";
 
@@ -24,7 +23,6 @@ const descScale = 0;
 const hoverScale = 0.85;
 
 const DreiNucleus = ({ texture, show }: BlobNucleusProps) => {
-  /* const viewport = useViewport(); */
   /* TODO: Come back here and animate this time scalar somehow without needing to re-render 100 times as the value transitions. Not currently working directly in the speed field of the component  */
   const [springs, api] = useSpring(() => {
     return {

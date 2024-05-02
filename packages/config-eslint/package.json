@@ -8,9 +8,7 @@
     "eslint-config-turbo": "^1.11.3",
     "eslint-plugin-mdx": "^2.3.2",
     "eslint-plugin-only-warn": "^1.1.0",
+    "eslint-plugin-tsdoc": "^0.2.17",
     "eslint-plugin-storybook": "^0.6.15"
-  },
-  "dependencies": {
-    "eslint-plugin-tsdoc": "^0.2.17"
   }
 }

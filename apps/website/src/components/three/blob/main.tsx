@@ -2,7 +2,6 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import * as Three from "three";
 import { Canvas, useLoader, useThree } from "@react-three/fiber";
-import sceneBackground from "./assets/01.jpg";
 /* import sceneBackground from "./assets/sphere/stars12.jpg"; */
 import _textureNucleus from "./assets/02.jpg";
 import _textureStar from "./assets/03.png";
@@ -16,14 +15,11 @@ import { useStars } from "./useStars";
 import { AstralBodies } from "./astralBodies";
 import {
   useLandingSection,
-  useSection,
 } from "#/components/pageSpecific/landing/useSection";
 import { useBlobAnimation } from "./animation/animate";
 import DreiNucleus from "./dreiNucleus";
 import { OrbitingStars } from "./orbitingStars";
-import { OrbitControls } from "@react-three/drei";
 import { LandingSection } from "#/types/landingSection";
-import { geoDataMap } from "./utils";
 import { useViewport } from "@ulld/hooks/useViewport";
 
 /* TODO: Find way to darken the background. Right now the backdrop can't be inserted between the background and the blob. */
@@ -34,16 +30,15 @@ interface NoiseyBlobProps {
 }
 
 const NoiseyBlobInternal = ({ section, delay }: NoiseyBlobProps) => {
+  const viewport = useViewport();
   const textureNucleus = useLoader(Three.TextureLoader, _textureNucleus.src);
   const textureStar = useLoader(Three.TextureLoader, _textureStar.src);
-  const textureSphere = useLoader(Three.TextureLoader, sceneBackground.src);
   const textureStar1 = useLoader(Three.TextureLoader, _texture1.src);
   const [show, setShow] = useState(false);
-  const viewport = useViewport();
+  /* useStars(); */
   textureNucleus.anisotropy = 16;
   let vw = viewport?.window.width || 1600;
   let vh = viewport?.window.height || 1200;
-  useStars();
   const nucleusRef = useRef<any>(null!);
   const cameraRef = useRef<Three.PerspectiveCamera>(null!);
 
@@ -78,7 +73,7 @@ const NoiseyBlobInternal = ({ section, delay }: NoiseyBlobProps) => {
       <directionalLight args={["#fff", 2]} position={[0, 50, -20]} />
       <DreiNucleus texture={textureNucleus} show={show} />
       <BlobStars texture={textureStar} />
-      <BlobSphere show={show} radius={50} section={section} texture={textureSphere} />
+      <BlobSphere show={show} radius={50} section={section} />
       <AstralBodies
         show={show}
         minRadius={8}
@@ -114,6 +109,7 @@ const NoiseyBlob = () => {
       setPrecision("lowp");
     }
   }, [section]);
+
   return (
     <div
       className={
@@ -125,8 +121,9 @@ const NoiseyBlob = () => {
         gl={{
           antialias: precision ? false : true,
           alpha: true,
-          pixelRatio: window?.devicePixelRatio,
           precision: precision,
+          pixelRatio: window?.devicePixelRatio,
+          /* ...(typeof window !== "undefined" && {pixelRatio: window?.devicePixelRatio}), */
         }}
         camera={{
           position: [0, 6.46, 6.46],

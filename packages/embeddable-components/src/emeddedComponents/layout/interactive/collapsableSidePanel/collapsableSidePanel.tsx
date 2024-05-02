@@ -26,14 +26,12 @@ export const CollapsableSidePanel = ({ children, id, open, width, left }: Collap
                 width: `min(${w}px, 100vw)`
             }}
         >
-            <ReduxProvider>
                 <CollapsableSidePanelBtn
                     id={ID}
                     width={w}
                     initialOpen={initialOpen}
                     dir={left ? "left" : "right"}
                 />
-            </ReduxProvider>
             <div
                 className={"collapsableSidePanel-content transition-transform duration-300"}
                 style={{

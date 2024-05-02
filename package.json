@@ -9,7 +9,9 @@
     "typecheck": "turbo typecheck",
     "publish-packages": "turbo run build lint test && changeset version && changeset publish",
     "test": "turbo test",
-    "test:watch": "turbo test:watch"
+    "test:watch": "turbo test:watch",
+    "postinstall": "echo 'manypkg check'",
+    "forcePackgeMatch": "manypkg fix"
   },
   "devDependencies": {
     "@microsoft/api-extractor": "^7.42.3",
@@ -42,6 +44,7 @@
   },
   "dependencies": {
     "@changesets/cli": "^2.27.1",
+    "@manypkg/cli": "^0.21.4",
     "@types/mdx": "^2.0.11",
     "tsup": "^8.0.1"
   }

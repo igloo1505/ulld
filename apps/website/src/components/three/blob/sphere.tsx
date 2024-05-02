@@ -1,16 +1,19 @@
 import React, { useEffect, useRef } from "react";
-import { BackSide, BufferAttribute, SphereGeometry, type Texture } from "three";
+import { BackSide, BufferAttribute, SphereGeometry, TextureLoader, type Texture } from "three";
 import { animated, useSpring } from "@react-spring/three";
 import { LandingSection } from "#/types/landingSection";
+import sceneBackground from "./assets/01.jpg";
+import { useTexture } from "@react-three/drei";
+import { useLoader } from "@react-three/fiber";
 
 interface BlobSphereProps {
-    texture: Texture;
     section: LandingSection;
     radius?: number
     show: boolean
 }
 
-export const BlobSphere = ({ texture, section, show, radius=200 }: BlobSphereProps) => {
+export const BlobSphere = ({ section, show, radius=200 }: BlobSphereProps) => {
+  const texture = useLoader(TextureLoader, sceneBackground.src);
     const ref = useRef<SphereGeometry>(null!);
 
     const [springs, api] = useSpring(

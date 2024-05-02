@@ -14,11 +14,14 @@ const duration = 2;
 export const DescriptionLogoTitleBox = ({
 }: DescriptionLogoTitleBoxProps) => {
     const { idx, section } = useSectionIndex();
-    const isDescription = idx > 0;
+    const isDescription = Boolean(idx && idx > 0);
     const shouldAnimate = section === "description";
     const [shouldShow, setShouldShow] = useState(
-        Boolean(isDescription && !shouldAnimate) ? true : false,
+        !idx ? false : Boolean(isDescription && !shouldAnimate) ? true : false,
     );
+    console.log("isDescription: ", isDescription)
+    console.log("shouldAnimate: ", shouldAnimate)
+    console.log("section: ", section)
     const viewport = useViewport();
 
     useEffect(() => {
@@ -36,14 +39,22 @@ export const DescriptionLogoTitleBox = ({
         <>
             <motion.div
                 className={"w-16 h-[53px] absolute top-0 left-0"}
-                initial={shouldAnimate ? "initial" : "after"}
-                animate={shouldShow ? "after" : "initial"}
+                initial={!isDescription ? "hide" : shouldAnimate ? "initial" : "after"}
+                animate={!isDescription ? "hide" : shouldShow ? "after" : "initial"}
                 variants={{
+                    hide: {
+                        opacity: 0,
+                        transition: {
+                            duration: 0
+                        }
+                    },
                     initial: {
                         translateX: `${viewport?.window?.width! / 2 - 32}px`,
                         translateY: `${viewport?.window.height! / 2 - 53}px`,
+                        opacity: 1
                     },
                     after: {
+                        opacity: 1,
                         translateX: "16px",
                         translateY: "16px",
                         transition: {
@@ -63,15 +74,20 @@ export const DescriptionLogoTitleBox = ({
                 />
             </motion.div>
             <motion.h2
-                initial={shouldAnimate ? "initial" : "after"}
-                animate={shouldShow ? "after" : "initial"}
+                initial={!isDescription ? "hide" : shouldAnimate ? "initial" : "after"}
+                animate={!isDescription ? "hide" : shouldShow ? "after" : "initial"}
                 className={"text-sm w-[350px] absolute top-0 left-0"}
                 variants={{
+                    hide: {
+                        opacity: 0
+                    },
                     initial: {
                         translateX: `${viewport.window.width / 2 - 175}px`,
                         translateY: `${viewport.window.height / 2}px`,
+                        opacity: 1,
                     },
                     after: {
+                        opacity: 1,
                         translateX: "88px",
                         translateY: "24px",
                         transition: {
@@ -85,17 +101,22 @@ export const DescriptionLogoTitleBox = ({
                 {staticContent.subtitleBroken[0]}
             </motion.h2>
             <motion.h2
-                initial={shouldAnimate ? "initial" : "after"}
-                animate={shouldShow ? "after" : "initial"}
+                initial={!isDescription ? "hide" : shouldAnimate ? "initial" : "after"}
+                animate={!isDescription ? "hide" : shouldShow ? "after" : "initial"}
                 className={"text-sm w-[230px] absolute top-0 left-0"}
                 variants={{
+                    hide: {
+                        opacity: 0
+                    },
                     initial: {
+                        opacity: 1,
                         translateX: `${viewport.window.width / 2 - 115}px`,
                         translateY: `${viewport.window.height / 2 + 20}px`,
                     },
                     after: {
                         translateX: "88px",
                         translateY: "40px",
+                        opacity: 1,
                         transition: {
                             duration: duration,
                             type: "spring",

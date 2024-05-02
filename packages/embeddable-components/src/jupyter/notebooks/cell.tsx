@@ -70,7 +70,7 @@ export const NotebookCell = ({ children, file, content, hide, hideInput, noInput
 
     const setFile = async () => {
         if (!file) return
-        let content = await client.fsUtils.getUtf8File.query(file)
+        let content = await client.fsUtils.getUtf8File.query({rootRelativePath: file })
         setSource(content)
     }
 

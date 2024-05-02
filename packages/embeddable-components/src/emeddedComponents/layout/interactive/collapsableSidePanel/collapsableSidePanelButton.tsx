@@ -1,6 +1,6 @@
 "use client"
 import clsx from 'clsx'
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import gsap from 'gsap'
 import { usePathname } from 'next/navigation'
 import { connect } from 'react-redux'
@@ -8,6 +8,7 @@ import { DynamicIcon } from '@ulld/icons/dynamic'
 import { toggleEmbeddedPanelState, addEmbededPanelState } from '@ulld/state/slices/ui'
 import { store, RootState } from '@ulld/state/store'
 import { initialState } from '@ulld/state/initialState'
+import { InitialUIStateType } from '@ulld/state/initialState/ui'
 
 
 
@@ -16,21 +17,27 @@ interface CollapsableSidePanelBtnProps {
     dir: "left" | "right"
     width: number
     initialOpen: boolean
-    panels: typeof initialState.UI.panels.embededPanels
 }
 
-
-const connector = connect((state: RootState, props: any) => ({
-    panels: state.UI.panels.embededPanels,
-    props: props
-}))
-
-const CollapsableSidePanelBtn = connector(({ dir, initialOpen, width, id, panels }: CollapsableSidePanelBtnProps) => {
+const CollapsableSidePanelBtn = ({ dir, initialOpen, width, id }: CollapsableSidePanelBtnProps) => {
+    const [panels, setPanels] = useState<InitialUIStateType["panels"]["embededPanels"]>({} as InitialUIStateType["panels"]["embededPanels"])
     const pathname = usePathname()
     let getEm = () => {
         if (typeof window === "undefined") return;
         return document.getElementById(id)
     }
+
+    const watchState = (s: RootState) => {
+           setPanels(s.UI.panels.embededPanels) 
+        }
+
+    useEffect(() => {
+       let unsub = window.ulldStore.subscribe(watchState) 
+        return () => unsub()
+    }, [])
+
+
+
     const iconName = useMemo(() => dir === "left" ? "arrow-right-from-line" : "arrow-left-from-line", [dir])
 
     const getWindowPadding = () => {
@@ -145,7 +152,7 @@ const CollapsableSidePanelBtn = connector(({ dir, initialOpen, width, id, panels
             />
         </div>
     )
-})
+}
 
 
 CollapsableSidePanelBtn.displayName = "CollapsableSidePanelBtn"

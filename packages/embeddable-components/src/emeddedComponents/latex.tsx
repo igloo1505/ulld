@@ -20,7 +20,7 @@ declare global {
 
 
 export const Latex = async ({ latex, file }: LatexProps) => {
-    const content = file ? await serverClient.fsUtils.getUtf8File(file) : latex
+    const content = file ? await serverClient.fsUtils.getUtf8File({rootRelativePath: file }) : latex
     return (
         <>
             <Script type="module" id="123">

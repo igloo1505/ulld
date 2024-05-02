@@ -61,9 +61,9 @@ Similar to the `applyTailwindConfig` method, this method accepts a `NextConfig` 
 import { serverClient } from "@ulld/api/serverClient";
 import { client } from "@ulld/api/client";
 // ^^ One or the other in any specific file, depending on if it will be implemented on the client or the server.
-serverClient.fsUtils.getUtf8File("somePath/file.txt");
+serverClient.fsUtils.getUtf8File({ rootRelativePath: "somePath/file.txt" });
 // Or
-client.fsUtils.getUtf8File.query("somePath/file.txt");
+client.fsUtils.getUtf8File.query({ rootRelativePath: "somePath/file.txt" });
 ```
 
 The client router will always require either a `query` or `mutate` method at the end of what is the path to the serverClient's equivalent method. Why? I'm busy, literally homeless, and I'm still trying to quantize gravity. I'll fix this in a future version of ULLD, but this is on the far left of my Trello board for now.

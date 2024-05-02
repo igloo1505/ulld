@@ -1,19 +1,11 @@
-import React from 'react'
+import React from "react";
 
-
-
-interface ULLDStoryPageProps {
-
-}
+interface ULLDStoryPageProps {}
 
 const ULLDStoryPage = (props: ULLDStoryPageProps) => {
-return (
-    <div></div>
-)
-}
+  return <div></div>;
+};
 
-
-ULLDStoryPage.displayName = "ULLDStoryPage"
-
+ULLDStoryPage.displayName = "ULLDStoryPage";
 
 export default ULLDStoryPage;

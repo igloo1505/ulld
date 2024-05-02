@@ -8,7 +8,8 @@ interface Props<T extends string> {
     children: ReactNode;
     extraInitialState?: ExtraInitialState<T>;
     extraReducers?: ExtraReducers<T>;
-    store?: ToolkitStore
+    store?: ToolkitStore;
+    findOverride?: boolean;
 }
 
 export const ReduxProvider = <T extends string>({
@@ -16,10 +17,17 @@ export const ReduxProvider = <T extends string>({
     extraReducers,
     extraInitialState,
     store: overrideStore,
+    findOverride,
 }: Props<T>) => {
-    const store = overrideStore ? overrideStore : makeStore(extraReducers, extraInitialState);
-    if (process.env.NODE_ENV !== "production" && typeof window !== "undefined") {
-        window.store = store;
+    let store = overrideStore
+        ? overrideStore
+        : findOverride && typeof window?.ulldStore !== "undefined"
+            ? window.ulldStore
+            : makeStore(extraReducers, extraInitialState);
+    if (typeof window !== "undefined") {
+        if (process.env.NODE_ENV !== "production") {
+            window.store = store;
+        }
     }
     return <Provider store={store}>{children}</Provider>;
 };

@@ -1,8 +1,6 @@
 import nextPwa from "@ducanh2912/next-pwa";
 import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
-// const removeImports = require('next-remove-imports')();
-// import importRemover from "next-remove-imports"
-// const removeImports = importRemover()
+// import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
@@ -38,6 +36,8 @@ const config = withPWA({
         "@ulld/tailwind",
         "@ulld/full-form",
         "@ulld/icons",
+        "@ulld/database",
+        "@ulld/render",
     ],
     experimental: {
         // typedRoutes: true,
@@ -53,6 +53,9 @@ const config = withPWA({
     poweredByHeader: false,
     webpack: (config, ctx) => {
         config.cache = false;
+        // if(ctx.isServer){
+        //     config.plugins.push(new PrismaPlugin())
+        // }
         if (!ctx.isServer) {
             // run only for client side
             config.plugins.push(
