@@ -18,77 +18,102 @@ import { useSection } from "#/components/pageSpecific/landing/useSection";
 import { useSearchParams } from "next/navigation";
 import { animated, useSpring } from "@react-spring/three";
 
-
 interface BlobStarProps {
   texture: Texture;
+  rotationScalar?: number;
   n?: number;
-  center?: Vector3;
+  radius?: number;
+  size?: number;
+  sizeMin?: number;
+  sizeMax?: number;
+  radialScalar?: number;
 }
-
-const radius = 150
 
 export const BlobStars = ({
   texture,
   n = 50,
-  center = new Vector3(0, 0, 0),
+  radius = 150,
+  sizeMin = 2,
+  sizeMax = 5,
+  size = 2,
+  rotationScalar = 0.01,
+  radialScalar: _radialScalar = 2,
 }: BlobStarProps) => {
-    const starRef = useRef<BufferGeometry>(null!)
-    const sp = useSearchParams()
+  const starRef = useRef<BufferGeometry>(null!);
+  const sp = useSearchParams();
 
-    const section = useMemo(()  => sp.get("section"), [sp])
+  const section = useMemo(() => sp.get("section"), [sp]);
+  const sizes = useMemo(() => {
+    let range = sizeMax - sizeMin;
+    return Array(n)
+      .fill(0)
+      .map(() => sizeMin + range / 2 + MathUtils.randFloatSpread(range));
+  }, []);
 
-    const [springs, api] = useSpring(
-        () => ({
-            opacity: section === "hero" ? 0.8 : 0,
-            config: {
-                friction: 200,
-                mass: 3,
-            },
-        }),
-        [],
-    );
+  const radialScalars = useMemo(() => {
+    let range = sizeMax - sizeMin;
+    return Array(n)
+      .fill(0)
+      .map(() => Math.random() * _radialScalar);
+  }, []);
 
-    useEffect(() => {
-        if (section === "hero") {
-            api.start({
-                opacity: 0.8,
-            });
-        } else {
-            api.start({
-                opacity: 0,
-            });
-        }
-    }, [section]);
+  const [springs, api] = useSpring(
+    () => ({
+      opacity: section === "hero" ? 0.8 : 0,
+      config: {
+        friction: 200,
+        mass: 3,
+      },
+    }),
+    [],
+  );
 
+  useEffect(() => {
+    if (section === "hero") {
+      api.start({
+        opacity: 0.8,
+      });
+    } else {
+      api.start({
+        opacity: 0,
+      });
+    }
+  }, [section]);
+
+  useFrame((state, dt) => {
+    if (starRef.current) {
+      starRef.current.rotateY(-dt * rotationScalar);
+    }
+  });
 
   const bufferGeo = useMemo(() => {
-    let vertices: number[] = getPointArray(radius, n)
-    const b = new BufferGeometry()
+    let vertices: number[] = getPointArray(radius, n);
+    /* .map((n, i) => n * radialScalars[Math.floor(i / 3)]) */
+    const b = new BufferGeometry();
     b.setAttribute(
       "position",
       new BufferAttribute(new Float32Array(vertices), 3),
     );
-    starRef.current = b
+    /* b.setAttribute( */
+    /*         "size",  */
+    /*         new BufferAttribute(new Float32Array(sizes), 1) */
+    /*     ) */
+
+    starRef.current = b;
     return b;
   }, [n]);
 
-
-
-
   return (
-    <points 
-        args={[bufferGeo]}
-        >
+    <points args={[bufferGeo]}>
       <animated.pointsMaterial
-        size={5}
+        size={size}
         color="#fff"
         transparent={true}
-        opacity={springs.opacity}
+        opacity={1}
         map={texture}
         blending={AdditiveBlending}
         depthWrite={false}
-        /* attach="material" */
-        /* args={[bufferGeo]} */
+        attach="material"
       />
     </points>
   );

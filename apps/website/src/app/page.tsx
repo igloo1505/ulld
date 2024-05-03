@@ -20,6 +20,7 @@ const HomePage = ({ searchParams: { section = "hero" } }: HomePageProps) => {
             className={clsx(
                 "group/landingContainer main-landing relative overflow-hidden h-screen w-screen max-h-screen",
                 section === "hero" && "section-hero",
+                "landingSection-active"
             )}
         >
             <ScrollGestureListener />

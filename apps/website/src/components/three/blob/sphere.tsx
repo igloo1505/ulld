@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import { BackSide, BufferAttribute, SphereGeometry, TextureLoader, type Texture } from "three";
+import { BackSide, DoubleSide, MeshStandardMaterial, NearestFilter, RGBAFormat, SphereGeometry, TextureLoader } from "three";
 import { animated, useSpring } from "@react-spring/three";
 import { LandingSection } from "#/types/landingSection";
 import sceneBackground from "./assets/01.jpg";
-import { useTexture } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
+
 
 interface BlobSphereProps {
     section: LandingSection;
@@ -12,13 +12,17 @@ interface BlobSphereProps {
     show: boolean
 }
 
+const fullOpacity = 0.1
+
 export const BlobSphere = ({ section, show, radius=200 }: BlobSphereProps) => {
-  const texture = useLoader(TextureLoader, sceneBackground.src);
     const ref = useRef<SphereGeometry>(null!);
+  const texture = useLoader(TextureLoader, sceneBackground.src);
+    texture.magFilter = NearestFilter
+    texture.minFilter = NearestFilter
 
     const [springs, api] = useSpring(
         () => ({
-            opacity: section === "hero" ? 0.8 : 0,
+            opacity: section === "hero" ? fullOpacity : 0,
             radius: section === "hero" ? radius : 0,
             scale: section === "hero" ? 1 : 0,
             config: {
@@ -33,7 +37,7 @@ export const BlobSphere = ({ section, show, radius=200 }: BlobSphereProps) => {
         if (show) {
             api.start({
                 radius: radius,
-                opacity: 1,
+                opacity: fullOpacity,
                 scale: 1
             });
         } else {
@@ -52,11 +56,15 @@ export const BlobSphere = ({ section, show, radius=200 }: BlobSphereProps) => {
             <animated.sphereGeometry
                 args={[200, 40, 40]}
                 ref={ref}
+                attach={"geometry"}
             />
-            <animated.meshBasicMaterial
-                opacity={springs.opacity}
+            <animated.meshStandardMaterial
+                opacity={0.4}
                 side={BackSide}
                 map={texture}
+                depthWrite={false}
+                attach={"material"}
+                transparent
             />
         </animated.mesh>
     );

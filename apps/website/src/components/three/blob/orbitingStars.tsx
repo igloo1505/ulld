@@ -9,6 +9,7 @@ import {
   SphereGeometry,
   InstancedMesh,
   Matrix4,
+  Color,
 } from "three";
 import { forLoopUtil } from "./utils";
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
@@ -16,7 +17,7 @@ import { LandingSection } from "#/types/landingSection";
 import { useSpring, animated } from "@react-spring/three";
 import colorTexture from "./assets/orbit/ground_0010_color_1k.jpg";
 
-interface OrbitingStarsProps {
+interface OrbitingBodiesProps {
   n?: number;
   texture: Texture;
   section: LandingSection;
@@ -30,16 +31,16 @@ interface OrbitingStarsProps {
   show: boolean;
 }
 
-export const OrbitingStars = ({
+export const OrbitingBodies = ({
   radius = 20,
   spread = 3,
   size: _size = 5,
-  timeScalar = 0.05,
+  timeScalar = 1,
   widthSegments = 5,
   heightSegments = 5,
   show,
   n = 50,
-}: OrbitingStarsProps) => {
+}: OrbitingBodiesProps) => {
   const orbitingStars = useRef<InstancedMesh>(null!);
   const sphereGeo = useRef<SphereGeometry>(null!);
   const colorTextureMap = useLoader(TextureLoader, colorTexture.src);
@@ -55,9 +56,10 @@ export const OrbitingStars = ({
         return [dx, dy, dz];
       }) as [number, number, number][];
   }, []);
+  const tscale = 0.05 * timeScalar;
 
   useFrame((state, dt) => {
-    orbitingStars.current.rotateY(Math.PI * dt * timeScalar);
+    orbitingStars.current.rotateY(Math.PI * dt * tscale);
   });
 
   const [springs, api] = useSpring(() => {
@@ -115,7 +117,6 @@ export const OrbitingStars = ({
     });
   }, [positions]);
 
-
   return (
     <animated.instancedMesh
       ref={orbitingStars}
@@ -127,9 +128,21 @@ export const OrbitingStars = ({
         ref={sphereGeo}
         args={[_size, widthSegments, heightSegments]}
       />
-      <meshPhysicalMaterial map={colorTextureMap} />
+      <meshPhysicalMaterial
+                map={colorTextureMap}
+                /* color={new Color("#000")} */
+                /* emissive={new Color("#444444")} */
+                roughness={1}
+                specularIntensity={0}
+                sheen={0}
+                metalness={0}
+                ior={1}
+                reflectivity={0}
+                iridescence={0}
+                clearcoat={0}
+            />
     </animated.instancedMesh>
   );
 };
 
-OrbitingStars.displayName = "OrbitingStars";
+OrbitingBodies.displayName = "OrbitingBodies";

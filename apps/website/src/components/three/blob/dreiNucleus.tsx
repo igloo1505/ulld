@@ -1,13 +1,13 @@
-import React, {  useEffect } from "react";
+import React, { useEffect } from "react";
 import { animated, useSpring } from "@react-spring/three";
-import {  Texture } from "three";
+import { Color, Texture } from "three";
 import { MeshDistortMaterial } from "@react-three/drei";
 
 const AnimatedMeshDistortMaterial = animated(MeshDistortMaterial);
 
 interface BlobNucleusProps {
   texture: Texture;
-    show: boolean
+  show: boolean;
 }
 
 const heroMorphScalar = 0.5;
@@ -89,10 +89,26 @@ const DreiNucleus = ({ texture, show }: BlobNucleusProps) => {
       <AnimatedMeshDistortMaterial
         map={texture}
         time={springs.timeScalar}
+        color={new Color("#0ba5e9")}
         speed={1}
         distort={springs.morphScalar}
-        specularIntensity={3}
-        reflectivity={0.5}
+        specularColor={new Color("#000")}
+        /* TODO: Change this emissive to a dark blue when back on wifi and power. */
+        emissive={new Color("#000")}
+        roughness={0}
+        metalness={0}
+        /* ior={1} */
+        reflectivity={0.45}
+        /* iridescence={1} */
+        /* iridescenceIOR={1.7} */
+        clearcoat={1}
+        clearcoatRoughness={0}
+        sheen={0.6}
+        sheenRoughness={0}
+        sheenColor={new Color("#fff")}
+        specularIntensity={1}
+        attenuationDistance={2}
+        /* vertexColors */
       />
     </animated.mesh>
   );

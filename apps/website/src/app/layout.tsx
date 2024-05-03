@@ -5,7 +5,6 @@ import "#/styles/mdx.scss";
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import React from "react";
-/* import { RequireJsLoader } from "@ulld/utilities/loaders" */
 import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI";
 import { Toaster } from "@ulld/tailwind/toaster";
 import { fontSans } from "@ulld/tailwind/defaultFont";

@@ -18,6 +18,8 @@ interface HighlightButtonProps {
     _onClick?: () => void
 }
 
+const gradient = "linear-gradient(to right, #56ccf2, #2f80ed)"
+
 const movingMap: Record<Direction, string> = {
     top: "radial-gradient(20.7% 50% at 50% 0%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
     left: "radial-gradient(16.6% 43.1% at 0% 50%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
@@ -113,7 +115,7 @@ export const HighlightButton = ({
             />
             {show && <div
                 className={clsx(
-                    "absolute scale-0 origin-center left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-[180px] h-[48px] bg-[radial-gradient(circle,rgba(109,39,217,1)90%,rgba(133,101,182,1)100%)] rounded-[30px] transition-transform duration-300",
+                    "absolute scale-0 origin-center left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-[180px] h-[48px] bg-[radial-gradient(circle,rgba(39,102,217,1)0%,rgba(101,143,182,1)100%)] rounded-[30px] transition-transform duration-300",
                     hovered && "scale-100 delay-1000",
                 )}
             />}
