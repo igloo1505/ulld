@@ -2,10 +2,9 @@
 import React, {
     useEffect,
     useState,
-    useRef,
     useMemo,
+    useRef,
     Suspense,
-    RefObject,
 } from "react";
 import * as Three from "three";
 import { Canvas, useLoader, useThree } from "@react-three/fiber";
@@ -16,16 +15,13 @@ import _texture1 from "./assets/04.png";
 import _texture2 from "./assets/05.png";
 import { BlobSphere } from "./sphere";
 import { BlobStars } from "./stars";
-import { useStars } from "./useStars";
 import { AstralBodies } from "./astralBodies";
 import { useLandingSection } from "#/components/pageSpecific/landing/useSection";
-import { useBlobAnimation } from "./animation/animate";
 import Nucleus from "./nucleus";
 import { OrbitingBodies } from "./orbitingStars";
 import { LandingSection } from "#/types/landingSection";
 import { useViewport } from "@ulld/hooks/useViewport";
-import { EffectComposer, SelectiveBloom } from "@react-three/postprocessing";
-import { useControls } from "leva";
+import { Html } from "@react-three/drei";
 
 
 /* TODO: Find way to darken the background. Right now the backdrop can't be inserted between the background and the blob. */
@@ -33,39 +29,21 @@ import { useControls } from "leva";
 interface NoiseyBlobProps {
     section: LandingSection;
     delay?: number;
+    show: boolean
 }
 
-const NoiseyBlobInternal = ({ section, delay }: NoiseyBlobProps) => {
+const NoiseyBlobInternal = ({ section, show }: NoiseyBlobProps) => {
     const viewport = useViewport();
     const textureNucleus = useLoader(Three.TextureLoader, _textureNucleus.src);
     const textureStar = useLoader(Three.TextureLoader, _textureStar.src);
     const textureStar1 = useLoader(Three.TextureLoader, _texture1.src);
     const textureStar2 = useLoader(Three.TextureLoader, _texture2.src);
     const ambientLight = useRef<Three.AmbientLight>(null!);
-    const directionalLight = useRef<Three.DirectionalLight>(null!);
-    const [show, setShow] = useState(false);
     textureNucleus.anisotropy = 16;
     let vw = viewport?.window.width || 1600;
     let vh = viewport?.window.height || 1200;
     const nucleusRef = useRef<any>(null!);
     const cameraRef = useRef<Three.PerspectiveCamera>(null!);
-
-    const [nucHoverd, setNucHovered] = useBlobAnimation({
-        nucleus: nucleusRef,
-        camera: cameraRef,
-    });
-
-    useEffect(() => {
-        if (section !== "hero") {
-            setShow(false);
-        } else {
-            if (delay) {
-                setTimeout(() => setShow(true), delay);
-            } else {
-                setShow(true);
-            }
-        }
-    }, [section]);
 
 
     return (
@@ -83,7 +61,12 @@ const NoiseyBlobInternal = ({ section, delay }: NoiseyBlobProps) => {
                 intensity={1.4}
                 ref={ambientLight}
             />
-            <Nucleus texture={textureNucleus} show={show} />
+            <Nucleus
+            ambientLight={ambientLight}
+                nucleus={nucleusRef}
+                texture={textureNucleus}
+                show={show}
+            />
             <BlobStars
                 radius={40}
                 size={1}
@@ -107,6 +90,7 @@ const NoiseyBlobInternal = ({ section, delay }: NoiseyBlobProps) => {
             />
             <BlobSphere show={show} radius={50} section={section} />
             <AstralBodies
+                nucleus={nucleusRef}
                 show={show}
                 minRadius={8}
                 maxRadius={12}
@@ -114,8 +98,6 @@ const NoiseyBlobInternal = ({ section, delay }: NoiseyBlobProps) => {
                 section={section}
                 texture={textureStar1}
                 n={2}
-                directionalLight={directionalLight}
-                ambientLight={ambientLight}
             />
             <OrbitingBodies
                 show={show}
@@ -135,13 +117,14 @@ const NoiseyBlobInternal = ({ section, delay }: NoiseyBlobProps) => {
 };
 
 const NoiseyBlob = () => {
-    const [frameLoop, setFrameLoop] = useState<"always" | "never">("never");
+    const [show, setShow] = useState(false)
+    const frameLoop = useMemo(() => show ? "always" : "never", [show])
     const section = useLandingSection();
     useEffect(() => {
         if (section === "hero") {
-            setFrameLoop("always");
+            setShow(true);
         } else {
-            setTimeout(() => setFrameLoop("never"), 2000);
+            setTimeout(() => setShow(false), 2000);
         }
     }, [section]);
 
@@ -173,8 +156,8 @@ const NoiseyBlob = () => {
                     rotation: new Three.Euler(-0.7853, 0, 0),
                 }}
             >
-                <Suspense fallback={null}>
-                    <NoiseyBlobInternal section={section} />
+                <Suspense fallback={<Html>Loading...</Html>}>
+                    <NoiseyBlobInternal show={show} section={section} />
                 </Suspense>
             </Canvas>
         </div>
