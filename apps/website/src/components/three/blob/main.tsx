@@ -30,9 +30,11 @@ interface NoiseyBlobProps {
     section: LandingSection;
     delay?: number;
     show: boolean
+    onHide: () => void
+    isProduction: boolean
 }
 
-const NoiseyBlobInternal = ({ section, show }: NoiseyBlobProps) => {
+const NoiseyBlobInternal = ({ section, show, isProduction, onHide }: NoiseyBlobProps) => {
     const viewport = useViewport();
     const textureNucleus = useLoader(Three.TextureLoader, _textureNucleus.src);
     const textureStar = useLoader(Three.TextureLoader, _textureStar.src);
@@ -62,12 +64,12 @@ const NoiseyBlobInternal = ({ section, show }: NoiseyBlobProps) => {
                 ref={ambientLight}
             />
             <Nucleus
-            ambientLight={ambientLight}
+                ambientLight={ambientLight}
                 nucleus={nucleusRef}
                 texture={textureNucleus}
                 show={show}
             />
-            <BlobStars
+            {isProduction && <><BlobStars
                 radius={40}
                 size={1}
                 rotationScalar={-0.01}
@@ -88,7 +90,13 @@ const NoiseyBlobInternal = ({ section, show }: NoiseyBlobProps) => {
                 texture={textureStar2}
                 show={section === "hero"}
             />
-            <BlobSphere show={show} radius={50} section={section} />
+            </>}
+            <BlobSphere
+                show={show}
+                radius={50}
+                section={section}
+                onHide={onHide}
+            />
             <AstralBodies
                 nucleus={nucleusRef}
                 show={show}
@@ -116,17 +124,19 @@ const NoiseyBlobInternal = ({ section, show }: NoiseyBlobProps) => {
     );
 };
 
-const NoiseyBlob = () => {
+const NoiseyBlob = ({isProduction}: {isProduction: boolean}) => {
+    const [isHidden, setIsHidden] = useState(false)
     const [show, setShow] = useState(false)
-    const frameLoop = useMemo(() => show ? "always" : "never", [show])
+    const frameLoop = useMemo(() => !isHidden ? "always" : "never", [isHidden])
     const section = useLandingSection();
     useEffect(() => {
-        if (section === "hero") {
-            setShow(true);
-        } else {
-            setTimeout(() => setShow(false), 2000);
+            setShow(section === "hero");
+        if(section === "hero"){
+            setIsHidden(false)
         }
     }, [section]);
+
+    const onHide = () => setIsHidden(true)
 
 
     return (
@@ -140,15 +150,14 @@ const NoiseyBlob = () => {
                 dpr={window?.devicePixelRatio}
                 frameloop={frameLoop}
                 gl={{
-                    /* powerPreference: "high-performance", */
+                    powerPreference: isProduction ? "high-performance" : undefined,
                     alpha: true,
                     antialias: true,
                     /* stencil: false, */
                     /* depth: false, */
                     ...(typeof window !== "undefined" && {
                         pixelRatio: window?.devicePixelRatio,
-                    }),
-                    /* shadowMapCullFace: Three.CullFaceNone, */
+                    })
                 }}
                 camera={{
                     position: [0, 6.46, 6.46],
@@ -157,7 +166,12 @@ const NoiseyBlob = () => {
                 }}
             >
                 <Suspense fallback={<Html>Loading...</Html>}>
-                    <NoiseyBlobInternal show={show} section={section} />
+                    <NoiseyBlobInternal
+                isProduction={isProduction}
+                        onHide={onHide}
+                        show={show} 
+                        section={section}
+                    />
                 </Suspense>
             </Canvas>
         </div>

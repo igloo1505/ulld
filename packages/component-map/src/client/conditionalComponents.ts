@@ -1,6 +1,5 @@
 import type { MDXComponents } from "mdx/types";
 import dynamic from "next/dynamic";
-import { ComponentType } from "react";
 const Admonition = dynamic(() => import("@ulld/embeddable-components/components/client/admonition").then((a) => a.Admonition))
 const NotebookCell = dynamic(() => import("@ulld/embeddable-components/components/client/jupyterCell").then((a) => a.NotebookCell))
 // // const JupyterConsole = dynamic(() => import("../jupyter/console/index"))
@@ -15,6 +14,7 @@ const GridItem = dynamic(() => import("@ulld/embeddable-components/components/cl
 const Video = dynamic(() => import("@ulld/embeddable-components/components/client/video").then((a) => a.Video))
 const ModelView = dynamic(() => import("@ulld/embeddable-components/components/client/modelView").then((a) => a.ModelView))
 const Card = dynamic(() => import("@ulld/embeddable-components/components/client/card").then((a) => a.EmbeddableCard))
+const ErrorMargin = dynamic(() => import("@ulld/embeddable-components/academic/error").then((a) => a.ErrorMargin))
 // const LinePlot = dynamic(() => import("./emeddedComponents/plots/linePlot"))
 // const RemoteMarkdown = dynamic(() => import("./emeddedComponents/remote/RemoteMarkdown"))
 // const Carousel = dynamic(() => import("./emeddedComponents/media/carousel"))
@@ -102,6 +102,8 @@ export const getConditionalClientComponents = (content: string, opts: Conditiona
         { regex: new RegExp(`<ModelView`), component: ModelView, label: "ModelView" },
         // Media components
         { regex: new RegExp(`<Video`), component: Video, label: "Video" },
+        // Academic components
+        {regex: new RegExp("<ErrorMargin"), component: ErrorMargin, label: "ErrorMargin"}
     ]
     let components: { [k: string]: ConditionalComponentQuery['component'] } = {}
     for (const k of conditionalComponents) {

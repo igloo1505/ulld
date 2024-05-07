@@ -8,6 +8,7 @@
   ],
   "exports": {
     "./useCounter": "./src/useCounter.ts",
+    "./usePosition": "./src/usePosition.ts",
     "./useMdxFile": "./src/useMdxFile.ts",
     "./useUtf8File": "./src/useUtf8File.ts",
     "./useUlldStore": "./src/useUlldStore.ts",

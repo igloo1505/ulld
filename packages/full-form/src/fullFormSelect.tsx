@@ -1,27 +1,71 @@
-import React from 'react'
-import { FieldValues, useFormContext } from 'react-hook-form'
-import { BaseFullFormInputProps } from './types'
-import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from '@ulld/tailwind/form';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@ulld/tailwind/select';
+import React from "react";
+import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
+import { BaseFullFormInputProps } from "./types";
+import {
+    FormField,
+    FormItem,
+    FormLabel,
+    FormControl,
+    FormDescription,
+    FormMessage,
+} from "@ulld/tailwind/form";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@ulld/tailwind/select";
+import { makeArrayTransform } from "@ulld/utilities/schemas/transforms";
 
-
-
-export interface SelectInputProps<T extends FieldValues, H extends HTMLElement, L extends string> extends BaseFullFormInputProps<T, H> {
+export interface SelectInputProps<
+    T extends FieldValues,
+    H extends HTMLElement,
+    L extends string,
+> extends BaseFullFormInputProps<T, H> {
     options: {
-        value: L
-        content: React.ReactNode
-    }[]
-    placeholder?: string
-    className?: string
-    contentClasses?: string
-    itemClasses?: string
-    asFloat?: boolean
-    asInt?: boolean
+        value: L;
+        content: React.ReactNode;
+    }[];
+    placeholder?: string;
+    className?: string;
+    contentClasses?: string;
+    itemClasses?: string;
+    asFloat?: boolean;
+    asInt?: boolean;
 }
 
+export const SelectInput = <T extends FieldValues, L extends string>({
+    label,
+    className,
+    placeholder,
+    desc,
+    name,
+    options,
+    contentClasses,
+    itemClasses,
+    asFloat,
+    asInt,
+    multiple,
+    ...props
+}: SelectInputProps<T, HTMLTextAreaElement, L>) => {
+    const form = useFormContext<T>();
+    const appendValue = (val: string | number) => {
+        console.log("val: ", val);
+        if (!val || val === "") return;
+        if (multiple) {
+            const currentValues = makeArrayTransform(form.getValues(name));
+            console.log("currentValues: ", currentValues);
+            const newValue = currentValues.includes(val)
+                ? currentValues.filter((a) => a !== val)
+                : [...currentValues, val];
+            console.log("newValue: ", newValue);
+            return form.setValue(name, newValue as PathValue<T, Path<T>>);
+        } else {
+            form.setValue(name, val as PathValue<T, Path<T>>);
+        }
+    };
 
-export const SelectInput = <T extends FieldValues, L extends string>({ label, className, placeholder, desc, name, options, contentClasses, itemClasses, asFloat, asInt, ...props }: SelectInputProps<T, HTMLTextAreaElement, L>) => {
-    const form = useFormContext<T>()
     return (
         <FormField
             control={form.control}
@@ -29,7 +73,21 @@ export const SelectInput = <T extends FieldValues, L extends string>({ label, cl
             render={({ field }) => (
                 <FormItem className={className}>
                     {label && <FormLabel>{label}</FormLabel>}
-                    <Select onValueChange={asFloat ? (newVal) => field.onChange(parseFloat(newVal)) : asInt ? (newVal) => field.onChange(parseInt(newVal)) : field.onChange} defaultValue={field.value}>
+                    <Select
+                        /* value={field.value} */
+                        onValueChange={
+                            asFloat
+                                ? (newVal) => appendValue(parseFloat(newVal))
+                                : asInt
+                                    ? (newVal) => appendValue(parseInt(newVal))
+                                    : appendValue
+                        }
+                        defaultValue={
+                            Array.isArray(field.value)
+                                ? `${field.value.length} items`
+                                : field.value
+                        }
+                    >
                         <FormControl>
                             <SelectTrigger>
                                 <SelectValue placeholder={placeholder || undefined} />
@@ -42,20 +100,29 @@ export const SelectInput = <T extends FieldValues, L extends string>({ label, cl
                                         key={o.value}
                                         value={o.value}
                                         className={itemClasses}
-                                    >{o.content}</SelectItem>
-                                )
+                                        onClick={() => {
+                                            console.log(`Has clicked`);
+                                            appendValue(
+                                                asFloat
+                                                    ? parseFloat(o.value)
+                                                    : asInt
+                                                        ? parseInt(o.value)
+                                                        : o.value,
+                                            );
+                                        }}
+                                    >
+                                        {o.content}
+                                    </SelectItem>
+                                );
                             })}
                         </SelectContent>
                     </Select>
-                    {desc && <FormDescription>
-                        {desc}
-                    </FormDescription>}
+                    {desc && <FormDescription>{desc}</FormDescription>}
                     <FormMessage />
                 </FormItem>
             )}
         />
-    )
-}
+    );
+};
 
-
-SelectInput.displayName = "SelectInput"
+SelectInput.displayName = "SelectInput";

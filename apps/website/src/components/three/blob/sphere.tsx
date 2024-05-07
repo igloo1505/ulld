@@ -10,11 +10,12 @@ interface BlobSphereProps {
     section: LandingSection;
     radius?: number
     show: boolean
+    onHide: () => void
 }
 
 const fullOpacity = 0.1
 
-export const BlobSphere = ({ section, show, radius=200 }: BlobSphereProps) => {
+export const BlobSphere = ({ section, show, onHide, radius=200 }: BlobSphereProps) => {
     const ref = useRef<SphereGeometry>(null!);
   const texture = useLoader(TextureLoader, sceneBackground.src);
     texture.magFilter = NearestFilter
@@ -44,7 +45,8 @@ export const BlobSphere = ({ section, show, radius=200 }: BlobSphereProps) => {
             api.start({
                 radius: 0,
                 opacity: 0,
-                scale: 0
+                scale: 0,
+                onRest: () => onHide()
             });
         }
     }, [show]);

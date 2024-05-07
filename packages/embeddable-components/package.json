@@ -63,7 +63,8 @@
     "./components/server/equationRef": "./src/utility/equationRef.tsx",
     "./components/server/equationTag": "./src/utility/equationTag.tsx",
     "./components/server/admonition": "./src/emeddedComponents/admonition.tsx",
-    "./components/loadingIndicator": "./src/embeddedLoadingIndicator.tsx"
+    "./components/loadingIndicator": "./src/embeddedLoadingIndicator.tsx",
+    "./academic/error": "./src/academic/error.tsx"
   },
   "peerDependencies": {
     "@ulld/api": "workspace:*",

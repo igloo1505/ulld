@@ -19,9 +19,6 @@ export const DescriptionLogoTitleBox = ({
     const [shouldShow, setShouldShow] = useState(
         !idx ? false : Boolean(isDescription && !shouldAnimate) ? true : false,
     );
-    console.log("isDescription: ", isDescription)
-    console.log("shouldAnimate: ", shouldAnimate)
-    console.log("section: ", section)
     const viewport = useViewport();
 
     useEffect(() => {

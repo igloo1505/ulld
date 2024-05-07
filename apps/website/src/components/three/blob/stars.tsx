@@ -83,6 +83,7 @@ export const BlobStars = ({
         if (starRef.current) {
             starRef.current.rotateY(-dt * rotationScalar);
         }
+        state.scene.rotateY(dt * -0.01)
     });
 
     const bufferGeo = useMemo(() => {

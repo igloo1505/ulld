@@ -27,6 +27,15 @@ datasource db {
     extensions = [citext]
 }
 
+model FeatureRequest {
+    id         Int      @id @default(autoincrement())
+    email      String
+    message    String
+    category   String[] @default([])
+    userBase   String[] @default([])
+    receivedOn DateTime @default(now())
+}
+
 model WaitlistRequest {
     id         Int      @id @default(autoincrement())
     firstName  String
@@ -35,8 +44,6 @@ model WaitlistRequest {
     receivedOn DateTime @default(now())
     emailsSent Int      @default(0)
 }
-
-
 
 // Original app stuff
 model Subject {
@@ -53,7 +60,6 @@ model Subject {
     equations    Equation[]
 }
 
-
 model Topic {
     value        String         @id @unique @db.Citext
     MdxNotes     MdxNote[]
@@ -67,7 +73,6 @@ model Topic {
     bibEntries   BibEntry[]
     equations    Equation[]
 }
-
 
 model Tag {
     value        String         @id @unique @db.Citext
@@ -247,7 +252,6 @@ model Equation {
     mdxNotes       MdxNote[]
 }
 
-
 model Definition {
     id                String   @id @unique
     label             String?
@@ -257,7 +261,6 @@ model Definition {
     mdxNoteId         Int?
 }
 
-
 enum ImageAlignment {
     bottom
     center
@@ -265,7 +268,6 @@ enum ImageAlignment {
     left
     right
 }
-
 
 model Settings {
     id                    Int            @id @default(1)
@@ -280,25 +282,21 @@ model Settings {
     lastSync              DateTime       @default(now()) @updatedAt
 }
 
-
 model SettingsAppendix {
-    id String @id @unique
-    data Bytes
-    createdAt      DateTime        @default(now())
-    updatedAt      DateTime     @updatedAt
+    id        String   @id @unique
+    data      Bytes
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
-
 
 model RandomImage {
     path      String   @id @unique
     createdAt DateTime @default(now())
 }
 
-
 model NoteType {
     name String @id @unique
 }
-
 
 model QAPair {
     id             String         @id @unique
@@ -313,7 +311,6 @@ model QAPair {
     correctCount   Int            @default(0)
     inCorrectCount Int            @default(0)
 }
-
 
 model PracticeExam {
     id                     Int       @id @default(autoincrement())
@@ -371,27 +368,27 @@ model MdxNote {
 }
 
 model Ipynb {
-    id                  Int                 @id @default(autoincrement())
-    rootRelativePath    String              @unique @db.Citext
-    isProtected         Boolean?            @default(false)
-    title               String
-    latexTitle          String?
-    tags                Tag[]
-    topics              Topic[]
-    subjects            Subject[]
-    citations           BibEntry[]
-    citationsListOrder  String[]
-    importantValues     Float[]
-    href                String
-    outgoingQuickLinks  String[]
-    raw                 Bytes
-    sequentialList      SequentialNoteList? @relation(fields: [sequentialKey], references: [sequentialKey])
-    sequentialKey       String?
-    sequentialIndex     Int?
-    bookmarked          Boolean             @default(false)
-    firstSync           DateTime            @default(now())
-    lastSync            DateTime            @updatedAt
-    readingList         ReadingList[]
+    id                 Int                 @id @default(autoincrement())
+    rootRelativePath   String              @unique @db.Citext
+    isProtected        Boolean?            @default(false)
+    title              String
+    latexTitle         String?
+    tags               Tag[]
+    topics             Topic[]
+    subjects           Subject[]
+    citations          BibEntry[]
+    citationsListOrder String[]
+    importantValues    Float[]
+    href               String
+    outgoingQuickLinks String[]
+    raw                Bytes
+    sequentialList     SequentialNoteList? @relation(fields: [sequentialKey], references: [sequentialKey])
+    sequentialKey      String?
+    sequentialIndex    Int?
+    bookmarked         Boolean             @default(false)
+    firstSync          DateTime            @default(now())
+    lastSync           DateTime            @updatedAt
+    readingList        ReadingList[]
 }
 
 model ToDoList {
@@ -544,7 +541,6 @@ model Diet {
     lastUpdate        DateTime        @updatedAt
 }
 
-
 model Serving {
     id            Int             @id @default(autoincrement())
     item          DietaryItem     @relation(fields: [dietaryItemId], references: [id])
@@ -552,7 +548,6 @@ model Serving {
     quant_oz      Float?
     quant_guess   QUANTITY_GUESS?
 }
-
 
 model DietaryItem {
     id              Int       @id @default(autoincrement())
@@ -606,15 +601,13 @@ model HealthReport {
     created                         DateTime @default(now())
 }
 
-
 model Whiteboard {
-        id String @id @unique
-        data Bytes
+    id   String @id @unique
+    data Bytes
 }
 
-
 model DJT {
-        id Int @id @default(autoincrement())
-        type String
-        data Bytes
+    id   Int    @id @default(autoincrement())
+    type String
+    data Bytes
 }

@@ -15,6 +15,7 @@
     "./textInput": "./src/fullFormTextInput.tsx",
     "./textArea": "./src/fullFormTextArea.tsx",
     "./select": "./src/fullFormSelect.tsx",
+    "./multiSelect": "./src/fullFormMultiSelect/main.tsx",
     "./dateInput": "./src/fullFormDateInput.tsx",
     "./taggableCombobox": "./src/taggableComboBox.tsx",
     "./taggableSelectGroup": "./src/taggableSelectGroup.tsx",
@@ -36,14 +37,14 @@
     "./layout/fullPage/wrapper": "./src/layouts/fullPage/wrapper.tsx"
   },
   "peerDependencies": {
-    "@types/jsdom": "^21.1.6",
-    "@types/react": "^18.2.75",
-    "@types/react-dom": "^18.2.24",
     "@hookform/resolvers": "^3.3.4",
     "@reduxjs/toolkit": "^1.9.5",
     "@repo/jest-presets": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/glob-to-regexp": "^0.4.4",
+    "@types/jsdom": "^21.1.6",
+    "@types/react": "^18.2.75",
+    "@types/react-dom": "^18.2.24",
     "@ulld/api": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/database": "workspace:*",
@@ -104,6 +105,8 @@
     "ts-jest": "^29.1.2"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.26.13",
+    "framer-motion": "^11.1.7",
     "rc-tree": "^5.8.5",
     "react-color": "^2.19.3",
     "react-time-picker": "^6.6.0"

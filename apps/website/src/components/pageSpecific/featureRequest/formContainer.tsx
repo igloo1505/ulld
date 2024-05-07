@@ -9,7 +9,9 @@ import {
     CardContent,
     CardDescription,
 } from "@ulld/tailwind/card";
-import { SelectInput } from "@ulld/full-form/select";
+import { MultiSelectInput } from "@ulld/full-form/multiSelect";
+import { TextInput } from "@ulld/full-form/textInput";
+import { TextAreaInput } from "@ulld/full-form/textArea";
 import { LogoAsText } from "#/components/general/logoAsText";
 import {
     featureRequestCategories,
@@ -18,6 +20,7 @@ import {
     FeatureRequestFormSchema
 } from "./formSchema";
 import { Form } from "@ulld/tailwind/form"
+import { Button } from "@ulld/tailwind/button";
 
 interface FeatureRequestFormContainerProps {
     isModal?: boolean;
@@ -35,33 +38,54 @@ export const FeatureRequestFormContainer = ({
             message: ""
         }
     });
+
+    const handleSubmit = async () => {
+           let data = form.getValues() 
+        }
+
     return (
         <Card>
             <CardHeader>
                 <CardTitle>Feature Request</CardTitle>
                 <CardDescription>
-                    Help <LogoAsText /> improve and grow.
+                    Help improve <LogoAsText fontSize={13} />.
                 </CardDescription>
             </CardHeader>
             <CardContent>
                 <Form {...form}>
-                    <form>
-                            <SelectInput
+                    <form className={"space-y-6"}>
+                        <TextInput 
+                            name="email"
+                            type="email"
+                            label="Email"
+                        />
+                        <div className={"w-full grid grid-cols-2 gap-6"}>
+                            <MultiSelectInput
                                 label="Category"
                                 name="category"
                                 options={featureRequestCategories.map((v) => ({
                                     value: v,
                                     content: v,
                                 }))}
+                                className={"w-[220px]"}
                             />
-                            <SelectInput
+                            <MultiSelectInput
                                 label="User Base"
                                 name="userBase"
                                 options={featureRequestUserBase.map((v) => ({
                                     value: v,
                                     content: v,
                                 }))}
+                                className={"w-[220px]"}
                             />
+                        </div>
+                        <TextAreaInput 
+                            name="message"
+                            label="Feature Description"
+                        />
+                        <div className={"w-full flex flex-row justify-end items-center"}>
+                            <Button onClick={handleSubmit}>Submit</Button>
+                        </div>
                     </form>
                 </Form>
             </CardContent>

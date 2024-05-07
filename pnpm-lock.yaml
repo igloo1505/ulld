@@ -419,9 +419,18 @@ importers:
       '@hookform/resolvers':
         specifier: ^3.3.4
         version: 3.3.4(react-hook-form@7.51.3(react@18.3.1))
+      '@mdx-js/loader':
+        specifier: ^3.0.1
+        version: 3.0.1(webpack@5.91.0(@swc/core@1.4.17(@swc/helpers@0.5.11))(esbuild@0.19.12))
       '@mdx-js/mdx':
         specifier: ^3.0.1
         version: 3.0.1
+      '@mdx-js/node-loader':
+        specifier: ^3.0.1
+        version: 3.0.1
+      '@mdx-js/react':
+        specifier: ^3.0.1
+        version: 3.0.1(@types/react@18.3.1)(react@18.3.1)
       '@prisma/client':
         specifier: latest
         version: 5.13.0(prisma@5.13.0)
@@ -584,6 +593,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
+      react-use-measure:
+        specifier: ^2.1.1
+        version: 2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       redux-persist-indexeddb-storage:
         specifier: ^1.0.4
         version: 1.0.4
@@ -2118,6 +2130,9 @@ importers:
 
   packages/full-form:
     dependencies:
+      '@floating-ui/react':
+        specifier: ^0.26.13
+        version: 0.26.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@hookform/resolvers':
         specifier: ^3.3.4
         version: 3.3.4(react-hook-form@7.51.3(react@18.3.1))
@@ -2172,6 +2187,9 @@ importers:
       dayjs:
         specifier: ^1.11.10
         version: 1.11.11
+      framer-motion:
+        specifier: ^11.1.7
+        version: 11.1.7(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       glob-to-regexp:
         specifier: ^0.4.1
         version: 0.4.1
@@ -7287,6 +7305,9 @@ packages:
 
   '@mdx-js/mdx@3.0.1':
     resolution: {integrity: sha512-eIQ4QTrOWyL3LWEe/bu6Taqzq2HQvHcyTMaOrI95P2/LmJE7AsfPfgJGuFLPVqBUE1BC1rik3VIhU+s9u72arA==}
+
+  '@mdx-js/node-loader@3.0.1':
+    resolution: {integrity: sha512-1CMpG3fWMfe0ifCuSRS8WjmLJ50aw2HfD04RhuufvhHlhtnL2fx5fOdqou7hNS3hMs+OxyBImZMyu+WE3yr02w==}
 
   '@mdx-js/react@2.3.0':
     resolution: {integrity: sha512-zQH//gdOmuu7nt2oJR29vFhDv88oGPmVw6BggmrHeMI+xgEkp1B2dX9/bMBSYtK0dyLX/aOmesKS09g222K1/g==}
@@ -27066,6 +27087,13 @@ snapshots:
       unist-util-position-from-estree: 2.0.0
       unist-util-stringify-position: 4.0.0
       unist-util-visit: 5.0.0
+      vfile: 6.0.1
+    transitivePeerDependencies:
+      - supports-color
+
+  '@mdx-js/node-loader@3.0.1':
+    dependencies:
+      '@mdx-js/mdx': 3.0.1
       vfile: 6.0.1
     transitivePeerDependencies:
       - supports-color

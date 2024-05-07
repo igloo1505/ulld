@@ -24,7 +24,7 @@ const HomePage = ({ searchParams: { section = "hero" } }: HomePageProps) => {
             )}
         >
             <ScrollGestureListener />
-            <BlobSection />
+            <BlobSection isProduction={process.env.NODE_ENV === "production"} />
             <DescriptionLogoTitleBox
             />
             <DescriptionSection />
