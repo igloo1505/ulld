@@ -75,7 +75,7 @@ const FullFormMultiSelectItems = forwardRef(
                             ref={ref}
                             data-state={open ? "open" : "closed"}
                             className={cn(
-                                "relative z-50 max-h-96 min-w-[8rem] overflow-auto min-scrollbar rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=open]:scale-y-100 data-[state=closed]:scale-y-0",
+                                "relative z-50 max-h-96 min-w-[8rem] overflow-auto min-scrollbar scrollbarMuted rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=open]:scale-y-100 data-[state=closed]:scale-y-0",
                                 contentClasses,
                             )}
                             style={styles}

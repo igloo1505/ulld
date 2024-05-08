@@ -15,15 +15,11 @@ import { cn } from "@ulld/utilities/cn";
 import { ChevronDown } from "lucide-react";
 import FullFormMultiSelectItems from "./items";
 import {
-    FloatingOverlay,
-    FloatingPortal,
     autoUpdate,
     flip,
     offset,
     size,
-    useDismiss,
     useFloating,
-    useTransitionStyles,
 } from "@floating-ui/react";
 
 export interface MultiSelectInputProps<
@@ -72,7 +68,6 @@ export const MultiSelectInput = <T extends FieldValues, L extends string>({
         context,
         refs,
         floatingStyles,
-        ...rest
     } = useFloating({
         placement: "bottom-start",
         transform: false,
@@ -93,7 +88,6 @@ export const MultiSelectInput = <T extends FieldValues, L extends string>({
             })
         ],
     });
-    const { open, refs: {reference, floating} } = context
 
 
     return (
@@ -108,7 +102,7 @@ export const MultiSelectInput = <T extends FieldValues, L extends string>({
                             <button
                                 className={cn(
                                     "grid grid-cols-[1fr_1.5rem] place-items-center h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
-                                    open &&
+                                    context.open &&
                                     "outline-none ring-2 ring-ring ring-offset-2",
                                     className
                                 )}
@@ -134,7 +128,7 @@ export const MultiSelectInput = <T extends FieldValues, L extends string>({
                             <FullFormMultiSelectItems
                                 ref={refs.setFloating}
                                 currentValues={values}
-                                open={open}
+                                open={context.open}
                                 setOpen={setOpen}
                                 appendValue={appendValue}
                                 asInt={asInt}
@@ -142,7 +136,7 @@ export const MultiSelectInput = <T extends FieldValues, L extends string>({
                                 options={options}
                                 contentClasses={contentClasses}
                                 itemClasses={itemClasses}
-                                isMounted={open}
+                                isMounted={context.open}
                                 styles={floatingStyles}
                                 context={context}
                             />

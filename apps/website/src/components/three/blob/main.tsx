@@ -1,13 +1,7 @@
 "use client";
-import React, {
-    useEffect,
-    useState,
-    useMemo,
-    useRef,
-    Suspense,
-} from "react";
+import React, { useEffect, useState, useMemo, useRef, Suspense } from "react";
 import * as Three from "three";
-import { Canvas, useLoader, useThree } from "@react-three/fiber";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 /* import sceneBackground from "./assets/sphere/stars12.jpg"; */
 import _textureNucleus from "./assets/02.jpg";
 import _textureStar from "./assets/03.png";
@@ -18,23 +12,53 @@ import { BlobStars } from "./stars";
 import { AstralBodies } from "./astralBodies";
 import { useLandingSection } from "#/components/pageSpecific/landing/useSection";
 import Nucleus from "./nucleus";
-import { OrbitingBodies } from "./orbitingStars";
+import { OrbitingBodies } from "./orbitingBodies";
 import { LandingSection } from "#/types/landingSection";
 import { useViewport } from "@ulld/hooks/useViewport";
-import { Html } from "@react-three/drei";
-
+import { makeBuffer } from "./utils";
+import * as buffer from "maath/buffer";
+import * as misc from "maath/misc";
 
 /* TODO: Find way to darken the background. Right now the backdrop can't be inserted between the background and the blob. */
 
 interface NoiseyBlobProps {
     section: LandingSection;
     delay?: number;
-    show: boolean
-    onHide: () => void
-    isProduction: boolean
+    show: boolean;
+    onHide: () => void;
+    isProduction?: boolean;
 }
 
-const NoiseyBlobInternal = ({ section, show, isProduction, onHide }: NoiseyBlobProps) => {
+const nAstralBodies = 2
+
+const posA =
+    (n: number, center: boolean = false, minRadius: number = 150) =>
+        () =>
+            center
+                ? makeBuffer({ length: n * 3 }, () => 0)
+                : makeBuffer({ length: n * 3 }, () =>
+                    Three.MathUtils.randFloatSpread(minRadius),
+                );
+const posB =
+    (n: number, center: boolean = false, maxRadius: number = 350) =>
+        () =>
+            center
+                ? makeBuffer({ length: n * 3 }, () => 0)
+                : makeBuffer({ length: n * 3 }, () =>
+                    Three.MathUtils.randFloatSpread(maxRadius),
+                );
+
+const astralRotationAxis = new Three.Vector3(0, 1, 0).normalize();
+
+const q = new Three.Quaternion();
+
+
+const NoiseyBlobInternal = ({
+    section,
+    show,
+    isProduction=true,
+    onHide,
+}: NoiseyBlobProps) => {
     const viewport = useViewport();
     const textureNucleus = useLoader(Three.TextureLoader, _textureNucleus.src);
     const textureStar = useLoader(Three.TextureLoader, _textureStar.src);
@@ -44,9 +68,58 @@ const NoiseyBlobInternal = ({ section, show, isProduction, onHide }: NoiseyBlobP
     textureNucleus.anisotropy = 16;
     let vw = viewport?.window.width || 1600;
     let vh = viewport?.window.height || 1200;
+  const orbitingStars = useRef<Three.InstancedMesh>(null!);
     const nucleusRef = useRef<any>(null!);
     const cameraRef = useRef<Three.PerspectiveCamera>(null!);
+    const starRef1 = useRef<Three.BufferGeometry>(null!)
+    const starRef2 = useRef<Three.BufferGeometry>(null!)
+    const starRef3 = useRef<Three.BufferGeometry>(null!)
+    const astralBodies = useRef<Three.Points<Three.BufferGeometry<Three.NormalBufferAttributes>, Three.Material | Three.Material[], Three.Object3DEventMap>>(null!);
+    const [positionA, setPositionA] = useState(posA(nAstralBodies));
+    const [positionB, setPositionB] = useState(posB(nAstralBodies));
+    const [positionFinal] = useState(() => positionB.slice(0));
+    const rotations = useMemo(() => {
+        return makeBuffer({ length: nAstralBodies }, () => Math.random() * Math.PI);
+    }, [nAstralBodies]);
 
+    const rotationsB = useMemo(() => {
+        return makeBuffer({ length: nAstralBodies }, () => Math.random() * Math.PI * 2);
+    }, [nAstralBodies]);
+
+    const rotationsFinal = useMemo(() => {
+        return rotationsB.slice(0);
+    }, []);
+
+    useEffect(() => {
+        setPositionA(posA(nAstralBodies, section !== "hero", 8));
+        setPositionB(posB(nAstralBodies, section !== "hero", 12));
+    }, [section]);
+
+    useFrame((state, dt) => {
+        if (starRef1.current) {
+            starRef1.current.rotateY(dt * 0.02);
+        }
+        if (starRef2.current) {
+            starRef2.current.rotateY(dt * 0.03);
+        }
+        if (starRef3.current) {
+            starRef3.current.rotateY(dt * 0.035);
+        }
+        orbitingStars.current.rotateY(Math.PI * dt * 0.025);
+        const et = state.clock.getElapsedTime();
+        const t = misc.remap(Math.sin(et), [-1, 1], [0, 1]);
+        buffer.lerp(positionA, positionB, positionFinal, t);
+        buffer.rotate(positionB, {
+            q: q.setFromAxisAngle(astralRotationAxis, t * t * 0.1),
+        });
+        astralBodies.current.rotateZ(Math.PI * 0.002 * t);
+        buffer.lerp(rotations, rotationsB, rotationsFinal, t);
+        let pos: Three.Vector3[] = []
+        astralBodies.current.traverse((item) => {
+            pos.push(item.position) 
+        })
+        state.scene.rotateY(dt * -0.01)
+    })
 
     return (
         <>
@@ -69,45 +142,43 @@ const NoiseyBlobInternal = ({ section, show, isProduction, onHide }: NoiseyBlobP
                 texture={textureNucleus}
                 show={show}
             />
-            {isProduction && <><BlobStars
-                radius={40}
-                size={1}
-                rotationScalar={-0.01}
-                texture={textureStar}
-                show={section === "hero"}
-            />
-            <BlobStars
-                radius={20}
-                size={1.3}
-                rotationScalar={0.03}
-                texture={textureStar1}
-                show={section === "hero"}
-            />
-            <BlobStars
-                radius={20}
-                size={1}
-                rotationScalar={0.035}
-                texture={textureStar2}
-                show={section === "hero"}
-            />
-            </>}
-            <BlobSphere
-                show={show}
-                radius={50}
-                section={section}
-                onHide={onHide}
-            />
+            {isProduction && (
+                <>
+                    <BlobStars
+                        radius={35}
+                        size={0.7}
+                        texture={textureStar}
+                        show={section === "hero"}
+                        starRef={starRef1}
+                    />
+                    <BlobStars
+                        radius={35}
+                        size={1.3}
+                        texture={textureStar1}
+                        show={section === "hero"}
+                        starRef={starRef2}
+                    />
+                    <BlobStars
+                        radius={35}
+                        size={1}
+                        texture={textureStar2}
+                        show={section === "hero"}
+                        starRef={starRef3}
+                    />
+                </>
+            )}
+            <BlobSphere show={show} radius={50} section={section} onHide={onHide} />
             <AstralBodies
-                nucleus={nucleusRef}
+                astralBodies={astralBodies}
                 show={show}
-                minRadius={8}
-                maxRadius={12}
                 size={1}
                 section={section}
                 texture={textureStar1}
                 n={2}
+                positions={positionFinal}
             />
             <OrbitingBodies
+                orbitingStars={orbitingStars}
                 show={show}
                 radius={15}
                 size={0.5}
@@ -118,26 +189,24 @@ const NoiseyBlobInternal = ({ section, show, isProduction, onHide }: NoiseyBlobP
                 sizeSpread={0.05}
                 widthSegments={4}
                 heightSegments={8}
-                timeScalar={0.5}
             />
         </>
     );
 };
 
-const NoiseyBlob = ({isProduction}: {isProduction: boolean}) => {
-    const [isHidden, setIsHidden] = useState(false)
-    const [show, setShow] = useState(false)
-    const frameLoop = useMemo(() => !isHidden ? "always" : "never", [isHidden])
+const NoiseyBlob = ({ isProduction }: { isProduction: boolean }) => {
+    const [isHidden, setIsHidden] = useState(false);
+    const [show, setShow] = useState(false);
+    const frameLoop = useMemo(() => (!isHidden ? "always" : "never"), [isHidden]);
     const section = useLandingSection();
     useEffect(() => {
-            setShow(section === "hero");
-        if(section === "hero"){
-            setIsHidden(false)
+        setShow(section === "hero");
+        if (section === "hero") {
+            setIsHidden(false);
         }
     }, [section]);
 
-    const onHide = () => setIsHidden(true)
-
+    const onHide = () => setIsHidden(true);
 
     return (
         <div
@@ -157,7 +226,7 @@ const NoiseyBlob = ({isProduction}: {isProduction: boolean}) => {
                     /* depth: false, */
                     ...(typeof window !== "undefined" && {
                         pixelRatio: window?.devicePixelRatio,
-                    })
+                    }),
                 }}
                 camera={{
                     position: [0, 6.46, 6.46],
@@ -165,11 +234,11 @@ const NoiseyBlob = ({isProduction}: {isProduction: boolean}) => {
                     rotation: new Three.Euler(-0.7853, 0, 0),
                 }}
             >
-                <Suspense fallback={<Html>Loading...</Html>}>
+                <Suspense>
                     <NoiseyBlobInternal
-                isProduction={isProduction}
+                        isProduction={isProduction}
                         onHide={onHide}
-                        show={show} 
+                        show={show}
                         section={section}
                     />
                 </Suspense>

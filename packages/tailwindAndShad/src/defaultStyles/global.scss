@@ -195,23 +195,38 @@ body {
 
 .min-scrollbar {
   scrollbar-width: 1px;
-}
-
-.min-scrollbar::-webkit-scrollbar,
-mjx-container::-webkit-scrollbar,
-.math::-webkit-scrollbar {
-  width: 1px;
-  background-color: hsl(var(--secondary));
-  color: hsl(var(--secondary));
-  // display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.min-scrollbar,
-mjx-container,
-.math {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  scrollbar-color: hsl(var(--secondary)) hsl(var(--background));
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--secondary));
+    border-radius: 4px;
+  }
+  &.scrollbarMuted {
+    scrollbar-color: hsl(var(--muted)) hsl(var(--background));
+    &::-webkit-scrollbar-thumb {
+      background-color: hsl(var(--muted));
+    }
+  }
+  &.scrollbarMutedForeground {
+    scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--background));
+    &::-webkit-scrollbar-thumb {
+      background-color: hsl(var(--muted-foreground));
+    }
+  }
+  &.scrollbarPrimary {
+    scrollbar-color: hsl(var(--primary)) hsl(var(--background));
+    &::-webkit-scrollbar-thumb {
+      background-color: hsl(var(--primary));
+    }
+  }
+  &.scrollbarForeground {
+    scrollbar-color: hsl(var(--foreground)) hsl(var(--background));
+    &::-webkit-scrollbar-thumb {
+      background-color: hsl(var(--foreground));
+    }
+  }
 }
 
 div[cmdk-list]::-webkit-scrollbar,

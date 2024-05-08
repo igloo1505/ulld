@@ -6,10 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "db:migrate": "node /Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/apps/website/.env.local -- prisma migrate dev --schema ./src/prisma/schema.prisma",
-    "migrate:reset": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/apps/website/.env.local -- prisma migrate reset --schema ./src/prisma/schema.prisma",
+    "db:migrate": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/current/ulld/apps/website/.env.local -- prisma migrate dev --schema ./src/prisma/schema.prisma",
+    "migrate:reset": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/d/ulld/apps/website/.env.local -- prisma migrate reset --schema ./src/prisma/schema.prisma",
     "db:seed": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/apps/website/.env.local -- prisma db seed",
-    "db:generate": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/apps/website/.env.local -- prisma generate --schema=/Users/bigsexy/Desktop/currentProjects/ulld/apps/website/src/prisma/schema.prisma",
+    "db:generate": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/apps/website/.env.local -- prisma generate --schema=./src/prisma/schema.prisma",
     "db:push": "prisma db push --skip-generate",
     "prisma:studio": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/apps/website/.env.local -- prisma studio --schema ./src/prisma/schema.prisma"
   },
