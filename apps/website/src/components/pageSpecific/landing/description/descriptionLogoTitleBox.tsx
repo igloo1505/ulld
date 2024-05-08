@@ -7,13 +7,18 @@ import { useViewport } from "@ulld/hooks/useViewport";
 import { useSectionIndex } from "../feature/useSectionIndex";
 
 interface DescriptionLogoTitleBoxProps {
+    section: string
+    sectionIndex: number
+    setReady: () => void
 }
 
 const duration = 2;
 
 export const DescriptionLogoTitleBox = ({
+    section,
+    sectionIndex: idx,
+    setReady,
 }: DescriptionLogoTitleBoxProps) => {
-    const { idx, section } = useSectionIndex();
     const isDescription = Boolean(idx && idx > 0);
     const shouldAnimate = section === "description";
     const [shouldShow, setShouldShow] = useState(
@@ -30,17 +35,21 @@ export const DescriptionLogoTitleBox = ({
             setShouldShow(false);
         }
     }, [isDescription]);
+
     if (!viewport) return null;
 
     return (
         <>
             <motion.div
                 className={"w-16 h-[53px] absolute top-0 left-0"}
-                initial={!isDescription ? "hide" : shouldAnimate ? "initial" : "after"}
+                /* initial={!isDescription ? "hide" : shouldAnimate ? "initial" : "after"} */
+                initial={"hide"}
                 animate={!isDescription ? "hide" : shouldShow ? "after" : "initial"}
                 variants={{
                     hide: {
                         opacity: 0,
+                        translateX: `${viewport?.window?.width! / 2 - 32}px`,
+                        translateY: `${viewport?.window.height! / 2 - 53}px`,
                         transition: {
                             duration: 0
                         }
@@ -48,7 +57,18 @@ export const DescriptionLogoTitleBox = ({
                     initial: {
                         translateX: `${viewport?.window?.width! / 2 - 32}px`,
                         translateY: `${viewport?.window.height! / 2 - 53}px`,
-                        opacity: 1
+                        opacity: 1,
+                        transition: {
+                            delay: 2,
+                            translateY: {
+                                duration: 0,
+                                bounce: 0
+                            },
+                            translateX: {
+                                duration: 0,
+                                bounce: 0
+                            },
+                        }
                     },
                     after: {
                         opacity: 1,
@@ -61,6 +81,7 @@ export const DescriptionLogoTitleBox = ({
                         },
                     },
                 }}
+                onAnimationStart={() => setTimeout(setReady, 1000)}
             >
                 <AnimatedUlldLogo
                     width={64}
@@ -71,17 +92,30 @@ export const DescriptionLogoTitleBox = ({
                 />
             </motion.div>
             <motion.h2
-                initial={!isDescription ? "hide" : shouldAnimate ? "initial" : "after"}
+                /* initial={!isDescription ? "hide" : shouldAnimate ? "initial" : "after"} */
+                initial={"hide"}
                 animate={!isDescription ? "hide" : shouldShow ? "after" : "initial"}
                 className={"text-sm w-[350px] absolute top-0 left-0"}
                 variants={{
                     hide: {
+                        translateX: `${viewport.window.width / 2 - 175}px`,
+                        translateY: `${viewport.window.height / 2}px`,
                         opacity: 0
                     },
                     initial: {
                         translateX: `${viewport.window.width / 2 - 175}px`,
                         translateY: `${viewport.window.height / 2}px`,
                         opacity: 1,
+                        transition: {
+                            translateY: {
+                                duration: 0,
+                                bounce: 0
+                            },
+                            translateX: {
+                                duration: 0,
+                                bounce: 0
+                            },
+                        }
                     },
                     after: {
                         opacity: 1,
@@ -98,17 +132,30 @@ export const DescriptionLogoTitleBox = ({
                 {staticContent.subtitleBroken[0]}
             </motion.h2>
             <motion.h2
-                initial={!isDescription ? "hide" : shouldAnimate ? "initial" : "after"}
+                /* initial={!isDescription ? "hide" : shouldAnimate ? "initial" : "after"} */
+                initial="hide"
                 animate={!isDescription ? "hide" : shouldShow ? "after" : "initial"}
                 className={"text-sm w-[230px] absolute top-0 left-0"}
                 variants={{
                     hide: {
+                        translateX: `${viewport.window.width / 2 - 115}px`,
+                        translateY: `${viewport.window.height / 2 + 20}px`,
                         opacity: 0
                     },
                     initial: {
                         opacity: 1,
                         translateX: `${viewport.window.width / 2 - 115}px`,
                         translateY: `${viewport.window.height / 2 + 20}px`,
+                        transition: {
+                            translateY: {
+                                duration: 0,
+                                bounce: 0
+                            },
+                            translateX: {
+                                duration: 0,
+                                bounce: 0
+                            },
+                        }
                     },
                     after: {
                         translateX: "88px",

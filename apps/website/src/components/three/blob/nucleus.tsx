@@ -25,14 +25,6 @@ interface BlobNucleusProps {
   ambientLight: RefObject<AmbientLight>;
 }
 
-const heroMorphScalar = 0.5;
-const descMorphScalar = 0.3;
-const hoverMorphScalar = 0.3;
-
-const heroTimeScalar = 5;
-const descTimeScalar = 8;
-const hoverTimeScalar = 0.1;
-
 const heroScale = 1;
 const descScale = 0;
 const hoverScale = 0.85;
@@ -53,7 +45,6 @@ const Nucleus = ({
 }: BlobNucleusProps) => {
   const [hovered, setHovered] = useState(false);
   const [material, setMaterial] = useState();
-
   const [springs, api] = useSpring(() => {
     return {
       ...(!Boolean(show && material)
@@ -62,8 +53,8 @@ const Nucleus = ({
             metalness: _metalness.off,
           }
         : {
-            scale: hovered ? hoverScale : 1,
-            metalness: _metalness[hovered ? "on" : "off"],
+            scale: !show ? descScale : hovered ? hoverScale : 1,
+            metalness: !show ? _metalness.off : _metalness[hovered ? "on" : "off"],
             onRest: () => {
                   api.start({
                     to: async (next) => {
@@ -77,7 +68,7 @@ const Nucleus = ({
                       });
                     },
                     loop: true,
-                    cancel: hovered,
+                    cancel: hovered || !show,
                     config: {
                       duration: pulseDuration,
                     },
@@ -90,6 +81,7 @@ const Nucleus = ({
             return {
               friction: 50,
               mass: 3,
+              bounce: 0
             };
           case "metalness":
             return { mass: 4, friction: 220, bounce: 0 };

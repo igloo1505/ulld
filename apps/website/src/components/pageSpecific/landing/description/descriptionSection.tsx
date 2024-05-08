@@ -1,17 +1,21 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
-import { useLandingSection } from "../useSection";
 import FeatureContainer from "../feature/featureContainer";
 import { allFeatures } from "#/staticData/features/allFeatures";
-import { getLandingSectionClass, orderedSections } from "#/types/landingSection";
+import { getLandingSectionClass } from "#/types/landingSection";
+import { useSectionIndex } from "../feature/useSectionIndex";
 
 
+interface Props {
+ready: boolean
+    section: string
+    }
 
-export const DescriptionSection = () => {
-    const section = useLandingSection();
-    /* const sectionIndex = orderedSections.indexOf(section) || 0 */
+
+export const DescriptionSection = ({ready, section}: Props) => {
     const sectionClasses = getLandingSectionClass("description-any", section);
+
     return (
         <section
             className={clsx(
@@ -25,6 +29,7 @@ export const DescriptionSection = () => {
                         {...f}
                         idx={i}
                         key={i}
+                        ready={ready}
                         orientation={i % 2 === 0 ? "ltr" : "rtl"}
                     />
                 );

@@ -26,6 +26,7 @@ export interface FeatureContainerProps {
     spaceEven?: boolean
     idx: number
     displayContainerClasses?: string
+    ready: boolean
 }
 
 

@@ -6,6 +6,7 @@ import ScrollGestureListener from "#/components/pageSpecific/landing/scrollGestu
 import { BlobSection } from "#/components/pageSpecific/landing/sections/blobSection";
 import { DescriptionLogoTitleBox } from "#/components/pageSpecific/landing/description/descriptionLogoTitleBox";
 import { StoryOfUlldSection } from "#/components/pageSpecific/landing/sections/storyOfULLD/section";
+import DescriptionWrapper from "#/components/pageSpecific/landing/description/descriptionWrapper";
 
 interface HomePageProps {
     searchParams: {
@@ -24,11 +25,8 @@ const HomePage = ({ searchParams: { section = "hero" } }: HomePageProps) => {
             )}
         >
             <ScrollGestureListener />
-            <BlobSection isProduction={process.env.NODE_ENV === "production"} />
-            <DescriptionLogoTitleBox
-            />
-            <DescriptionSection />
-            <StoryOfUlldSection />
+            <BlobSection isProduction={process.env.NODE_ENV === "production" || process.env.OVERRIDE_PRODUCTION === "true"} />
+            <DescriptionWrapper />
         </div>
     );
 };

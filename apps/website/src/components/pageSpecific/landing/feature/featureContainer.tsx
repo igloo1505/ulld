@@ -13,6 +13,7 @@ const FeatureContainer = ({
     expandDisplay,
     spaceEven,
     displayContainerClasses,
+    ready,
     ...props
 }: FeatureContainerProps) => {
     const { stage, section } = useFeatureUIStage(null, idx);
@@ -21,7 +22,7 @@ const FeatureContainer = ({
         <div
             className={clsx(
                 "absolute group/feature left-0 top-[76px] h-[calc(100vh-76px)] w-screen gap-4 md:gap-6 lg:gap-8 px-8 lg:px-12 pb-8 flex-col md:flex-row justify-center items-center place-items-center",
-                stage === "current" && "feature-active z-10",
+                (stage === "current" && ready) && "feature-active z-10",
                 spaceEven ? "grid grid-cols-1 md:flex" : "flex",
                 expandDisplay && "display-expand",
                 (vp?.window.width && vp.window.width < 768) ? "stack" : "flow"
@@ -34,7 +35,7 @@ const FeatureContainer = ({
                         desc={props.desc}
                         label={props.label}
                         orientation={orientation}
-                        stage={stage}
+                        stage={!ready ? "hidden" : stage}
                         section={section}
                         idx={idx}
                     />
@@ -43,7 +44,7 @@ const FeatureContainer = ({
                         displayExpand={expandDisplay || spaceEven}
                         orientation={orientation}
                         component={props.component}
-                        stage={stage}
+                        stage={!ready ? "hidden" : stage}
                         section={section}
                         idx={idx}
                     />
@@ -55,7 +56,7 @@ const FeatureContainer = ({
                         containerClasses={displayContainerClasses}
                         displayExpand={expandDisplay || spaceEven}
                         component={props.component}
-                        stage={stage}
+                        stage={!ready ? "hidden" : stage}
                         section={section}
                         idx={idx}
                     />
@@ -64,7 +65,7 @@ const FeatureContainer = ({
                         desc={props.desc}
                         label={props.label}
                         orientation={orientation}
-                        stage={stage}
+                        stage={!ready ? "hidden" : stage}
                         section={section}
                         idx={idx}
                     />

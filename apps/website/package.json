@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "simulateProduction": "OVERRIDE_PRODUCTION=true next dev",
     "build": "next build",
     "start": "next start",
     "db:migrate": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/current/ulld/apps/website/.env.local -- prisma migrate dev --schema ./src/prisma/schema.prisma",
