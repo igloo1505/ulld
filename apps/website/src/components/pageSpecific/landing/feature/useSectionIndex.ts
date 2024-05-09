@@ -1,7 +1,7 @@
 import { orderedSections } from "#/types/landingSection"
 import { useLandingSection } from "../useSection"
 
-export const useSectionIndex = () => {
+export const useSectionIndex = () => { 
       const section = useLandingSection()
-      return {idx: orderedSections.indexOf(section), section}
+      return {idx: section ? orderedSections.indexOf(section) : -1, section}
 }

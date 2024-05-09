@@ -33,6 +33,7 @@ const FeatureContainerDisplay = ({
             setAnimFinished(false)
         } 
     }, [stage])
+    console.log("stage, animFinished: ", stage, animFinished)
     return (
         <motion.div
             className={
@@ -52,7 +53,7 @@ const FeatureContainerDisplay = ({
                     opacity: 1,
                     x: 0,
                     transition: {
-                        delay: 0.5,
+                        /* delay: 0.5, */
                         type: "spring",
                         stiffness: 100,
                         

@@ -21,11 +21,12 @@ import * as misc from "maath/misc";
 /* TODO: Find way to darken the background. Right now the backdrop can't be inserted between the background and the blob. */
 
 interface NoiseyBlobProps {
-    section: LandingSection;
+    section?: LandingSection;
     delay?: number;
     show: boolean;
     onHide: () => void;
     isProduction?: boolean;
+    frameloop: "always" | "never"
 }
 
 const nAstralBodies = 2
@@ -57,6 +58,7 @@ const NoiseyBlobInternal = ({
     show,
     isProduction=true,
     onHide,
+    frameloop
 }: NoiseyBlobProps) => {
     const viewport = useViewport();
     const textureNucleus = useLoader(Three.TextureLoader, _textureNucleus.src);
@@ -140,6 +142,7 @@ const NoiseyBlobInternal = ({
                 nucleus={nucleusRef}
                 texture={textureNucleus}
                 show={show}
+                frameloop={frameloop}
             />
             {isProduction && (
                 <>
@@ -222,8 +225,6 @@ const NoiseyBlob = ({ isProduction }: { isProduction: boolean }) => {
                     powerPreference: isProduction ? "high-performance" : undefined,
                     alpha: true,
                     antialias: true,
-                    /* stencil: false, */
-                    /* depth: false, */
                     ...(typeof window !== "undefined" && {
                         pixelRatio: window?.devicePixelRatio,
                     }),
@@ -240,6 +241,7 @@ const NoiseyBlob = ({ isProduction }: { isProduction: boolean }) => {
                         onHide={onHide}
                         show={show}
                         section={section}
+                        frameloop={frameLoop}
                     />
                 </Suspense>
             </Canvas>

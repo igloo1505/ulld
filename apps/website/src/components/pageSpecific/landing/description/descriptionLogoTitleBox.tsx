@@ -1,20 +1,18 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
 import staticContent from "../../../../staticData/staticContent.json";
 import { motion } from "framer-motion";
 import { useViewport } from "@ulld/hooks/useViewport";
 
 interface DescriptionLogoTitleBoxProps {
-    section: string
-    sectionIndex: number
-    ready: boolean
-    setReady: (isReady: boolean) => void
+    section?: string;
+    sectionIndex: number;
+    ready: boolean;
+    setReady: (isReady: boolean) => void;
 }
 
 const duration = 2;
-
-const readyDelay = 1000
 
 export const DescriptionLogoTitleBox = ({
     section,
@@ -24,21 +22,26 @@ export const DescriptionLogoTitleBox = ({
 }: DescriptionLogoTitleBoxProps) => {
     const viewport = useViewport();
 
-    const initial = ready ? "after" : (idx === 0 || section === "hero") ? "hide" : idx === 1 ? "initial" : "after"
-    const animate = ready ? "after" : (idx === 0 || section === "hero") ? "hide" :  "after"
-
-
-    /* useEffect(() => { */
-    /*     if (isDescription) { */
-    /*         setTimeout(() => { */
-    /*             setShouldShow(true); */
-    /*         }, 3000); */
-    /*     } else { */
-    /*         setShouldShow(false); */
-    /*     } */
-    /* }, [isDescription]); */
+    const initial = ready
+        ? "after"
+        : idx === 0 || section === "hero"
+            ? "hide"
+            : idx === 1
+                ? "initial"
+                : "after";
+    const animate = ready
+        ? "after"
+        : idx === 0 || section === "hero"
+            ? "hide"
+            : "after";
 
     if (!viewport) return null;
+
+    const handleAnimationStart = () => {
+        if (animate === "after") {
+            setReady(true)
+        }
+    };
 
     return (
         <>
@@ -52,8 +55,8 @@ export const DescriptionLogoTitleBox = ({
                         translateX: `${viewport?.window?.width! / 2 - 32}px`,
                         translateY: `${viewport?.window.height! / 2 - 53}px`,
                         transition: {
-                            duration: 0
-                        }
+                            duration: 0,
+                        },
                     },
                     initial: {
                         translateX: `${viewport?.window?.width! / 2 - 32}px`,
@@ -63,13 +66,13 @@ export const DescriptionLogoTitleBox = ({
                             delay: 2,
                             translateY: {
                                 duration: 0,
-                                bounce: 0
+                                bounce: 0,
                             },
                             translateX: {
                                 duration: 0,
-                                bounce: 0
+                                bounce: 0,
                             },
-                        }
+                        },
                     },
                     after: {
                         opacity: 1,
@@ -82,7 +85,7 @@ export const DescriptionLogoTitleBox = ({
                         },
                     },
                 }}
-                onAnimationStart={() => setTimeout(setReady, readyDelay)}
+                onAnimationStart={handleAnimationStart}
             >
                 <AnimatedUlldLogo
                     width={64}
@@ -100,7 +103,7 @@ export const DescriptionLogoTitleBox = ({
                     hide: {
                         translateX: `${viewport.window.width / 2 - 175}px`,
                         translateY: `${viewport.window.height / 2}px`,
-                        opacity: 0
+                        opacity: 0,
                     },
                     initial: {
                         translateX: `${viewport.window.width / 2 - 175}px`,
@@ -109,13 +112,13 @@ export const DescriptionLogoTitleBox = ({
                         transition: {
                             translateY: {
                                 duration: 0,
-                                bounce: 0
+                                bounce: 0,
                             },
                             translateX: {
                                 duration: 0,
-                                bounce: 0
+                                bounce: 0,
                             },
-                        }
+                        },
                     },
                     after: {
                         opacity: 1,
@@ -139,7 +142,7 @@ export const DescriptionLogoTitleBox = ({
                     hide: {
                         translateX: `${viewport.window.width / 2 - 115}px`,
                         translateY: `${viewport.window.height / 2 + 20}px`,
-                        opacity: 0
+                        opacity: 0,
                     },
                     initial: {
                         opacity: 1,
@@ -148,13 +151,13 @@ export const DescriptionLogoTitleBox = ({
                         transition: {
                             translateY: {
                                 duration: 0,
-                                bounce: 0
+                                bounce: 0,
                             },
                             translateX: {
                                 duration: 0,
-                                bounce: 0
+                                bounce: 0,
                             },
-                        }
+                        },
                     },
                     after: {
                         translateX: "88px",

@@ -1,20 +1,19 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import clsx from "clsx";
 import FeatureContainer from "../feature/featureContainer";
 import { allFeatures } from "#/staticData/features/allFeatures";
 import { getLandingSectionClass } from "#/types/landingSection";
-import { useSectionIndex } from "../feature/useSectionIndex";
-
 
 interface Props {
-ready: boolean
-    section: string
-    }
+    ready: boolean;
+    section?: string;
+}
 
-
-export const DescriptionSection = ({ready, section}: Props) => {
+export const DescriptionSection = ({ ready, section }: Props) => {
     const sectionClasses = getLandingSectionClass("description-any", section);
+
+    console.log("ready, section, sectionClasses: ", ready, section, sectionClasses)
 
     return (
         <section

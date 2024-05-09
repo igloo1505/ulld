@@ -15,7 +15,8 @@ export const orderedSections: string[] = [
 ]
 
 
-export const getLandingSectionClass = (targetSection: LandingSection | "description-any", activeSection: LandingSection | string) => {
+export const getLandingSectionClass = (targetSection: LandingSection | "description-any", activeSection?: LandingSection | string) => {
+    if(!activeSection) return ""
     if(targetSection === "description-any"){
     return `landingSection ${activeSection?.startsWith("description") ? "landingSection-active" : activeSection === "hero" ? "landingSection-up" : "landingSection-down"}`
     }
@@ -27,8 +28,9 @@ export const getLandingSectionClass = (targetSection: LandingSection | "descript
 }
 
 
-export const getNewSection = (currentSection: LandingSection | string, dir: "up" | "down") => {
+export const getNewSection = (currentSection: LandingSection | string = "hero", dir: "up" | "down") => {
     const foundIdx = orderedSections.indexOf(currentSection)
+    console.log("currentSection, foundIdx: ", currentSection, foundIdx)
     if(typeof foundIdx === "number"){
         if(dir === "down"){
             return foundIdx === 0 ? currentSection : orderedSections[foundIdx - 1]

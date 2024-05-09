@@ -1,6 +1,5 @@
 "use client";
 import { LandingSection, getNewSection } from "#/types/landingSection";
-import { useSearchParams } from "next/navigation";
 import  { useEffect, useRef } from "react";
 import {
   Handler,
@@ -10,15 +9,18 @@ import {
 } from "@use-gesture/vanilla";
 import { Lethargy } from "lethargy";
 import { useLockBodyScroll } from "@ulld/hooks/useLockScroll";
+import { useLandingSection } from "./useSection";
 
 const lethargy = new Lethargy();
 const Gesture = createGesture([scrollAction, wheelAction]);
 
 const ScrollGestureListener = () => {
-  const sp = useSearchParams();
-  const section = useRef<LandingSection | string>("hero");
-  const _section = (sp.get("section") as LandingSection) || ("hero" as "hero");
+  const section = useRef<LandingSection | string | undefined>("hero");
+  const _section = useLandingSection()
   section.current = _section;
+    useEffect(() => {
+       section.current = _section 
+    }, [_section])
   useLockBodyScroll(true);
     const scrolling = useRef<boolean>(false)
     const setScrolling = (val: boolean) => scrolling.current = val

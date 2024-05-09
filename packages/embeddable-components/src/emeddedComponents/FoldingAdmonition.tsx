@@ -23,7 +23,7 @@ const FoldingAdmonition = ({ type, id, sidebar, dropdown, children, open, title,
                 type={type}
                 id={id}
             />
-            <div className={clsx("admonitionBody body bg-gray-100 dark:bg-gray-800 origin-top relative overflow-hidden will-change-auto", type === "plain" && "bg-transparent dark:bg-transparent")}>
+            <div className={clsx("admonitionBody body space-y-3 bg-gray-100 dark:bg-gray-800 origin-top relative overflow-hidden will-change-auto", type === "plain" && "bg-transparent dark:bg-transparent")}>
                 {children}
             </div>
             {footer && <div className={clsx("w-full py-3 px-3 text-sm text-muted-foreground bg-muted")}>{footer}</div>}
