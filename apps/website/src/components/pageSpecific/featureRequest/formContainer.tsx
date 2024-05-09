@@ -17,10 +17,13 @@ import {
     featureRequestCategories,
     featureRequestFormSchema,
     featureRequestUserBase,
-    FeatureRequestFormSchema
+    FeatureRequestFormSchema,
 } from "./formSchema";
-import { Form } from "@ulld/tailwind/form"
+import { Form } from "@ulld/tailwind/form";
 import { Button } from "@ulld/tailwind/button";
+import { client } from "#/trpc/main";
+import store from "#/state/store";
+import { showToast } from "@ulld/state/slices/ui";
 
 interface FeatureRequestFormContainerProps {
     isModal?: boolean;
@@ -35,14 +38,28 @@ export const FeatureRequestFormContainer = ({
             email: "",
             category: [],
             userBase: [],
-            message: ""
-        }
+            message: "",
+        },
     });
 
     /* RESUME: Handle this and the extended trpc router next. */
     const handleSubmit = async () => {
-           let data = form.getValues() 
+        let data = form.getValues();
+        let res = await client.contacts.submitFeatureRequest.mutate(data);
+        if (res) {
+            store.dispatch(
+                showToast({
+                    title: "Thank You!",
+                    description: (
+                        <p className={"text-sm"}>
+                            Thank you for helping improve <LogoAsText fontSize={13} />. Your
+                            request was submitted successfully.
+                        </p>
+                    ),
+                }),
+            );
         }
+    };
 
     return (
         <Card>
@@ -55,11 +72,7 @@ export const FeatureRequestFormContainer = ({
             <CardContent>
                 <Form {...form}>
                     <form className={"space-y-6"}>
-                        <TextInput 
-                            name="email"
-                            type="email"
-                            label="Email"
-                        />
+                        <TextInput name="email" type="email" label="Email" />
                         <div className={"w-full grid grid-cols-2 gap-6"}>
                             <MultiSelectInput
                                 label="Category"
@@ -80,10 +93,7 @@ export const FeatureRequestFormContainer = ({
                                 className={"w-[220px]"}
                             />
                         </div>
-                        <TextAreaInput 
-                            name="message"
-                            label="Feature Description"
-                        />
+                        <TextAreaInput name="message" label="Feature Description" />
                         <div className={"w-full flex flex-row justify-end items-center"}>
                             <Button onClick={handleSubmit}>Submit</Button>
                         </div>

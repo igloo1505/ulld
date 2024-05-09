@@ -1,28 +1,22 @@
-import clsx from 'clsx'
-import React, {ReactNode, HTMLProps} from 'react'
+import React from "react";
 
-
-
-interface ErrorMarginProps extends HTMLProps<HTMLDivElement> {
-     children: ReactNode
-     bg: boolean
-     small: boolean
+interface ErrorMarginProps {
+    children: string;
 }
 
-export const ErrorMargin = ({children, bg, small = true, ...props}: ErrorMarginProps) => {
-return (
-    <div {...props} className={clsx(bg ? "bg-error text-error-foreground" : "text-error", small && "text-sm",  props.className)}>
-            <span className={"font-semibold"}>
-                Error:{" "}
+export const ErrorMargin = ({children}: ErrorMarginProps) => {
+    return (
+        <div
+            className={"text-error w-fit h-fit pl-1 mb-2 leading-none text-sm flex flex-row justify-start items-center gap-[1ch] border-l-[3px] border-error"}
+        >
+            <span
+                className={"font-semibold inline text-foreground"}
+            >
+                Error Margin:
             </span>
-            <span>
-            {children}
-            </span>
+            <span>{children}</span>
         </div>
-)
-}
+    );
+};
 
-
-ErrorMargin.displayName = "ErrorMargin"
-
-
+ErrorMargin.displayName = "ErrorMargin";

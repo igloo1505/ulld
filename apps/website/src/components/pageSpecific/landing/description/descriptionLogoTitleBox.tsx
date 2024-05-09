@@ -1,40 +1,42 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
 import staticContent from "../../../../staticData/staticContent.json";
 import { motion } from "framer-motion";
 import { useViewport } from "@ulld/hooks/useViewport";
-import { useSectionIndex } from "../feature/useSectionIndex";
 
 interface DescriptionLogoTitleBoxProps {
     section: string
     sectionIndex: number
-    setReady: () => void
+    ready: boolean
+    setReady: (isReady: boolean) => void
 }
 
 const duration = 2;
 
+const readyDelay = 1000
+
 export const DescriptionLogoTitleBox = ({
     section,
     sectionIndex: idx,
+    ready,
     setReady,
 }: DescriptionLogoTitleBoxProps) => {
-    const isDescription = Boolean(idx && idx > 0);
-    const shouldAnimate = section === "description";
-    const [shouldShow, setShouldShow] = useState(
-        !idx ? false : Boolean(isDescription && !shouldAnimate) ? true : false,
-    );
     const viewport = useViewport();
 
-    useEffect(() => {
-        if (isDescription) {
-            setTimeout(() => {
-                setShouldShow(true);
-            }, 3000);
-        } else {
-            setShouldShow(false);
-        }
-    }, [isDescription]);
+    const initial = ready ? "after" : (idx === 0 || section === "hero") ? "hide" : idx === 1 ? "initial" : "after"
+    const animate = ready ? "after" : (idx === 0 || section === "hero") ? "hide" :  "after"
+
+
+    /* useEffect(() => { */
+    /*     if (isDescription) { */
+    /*         setTimeout(() => { */
+    /*             setShouldShow(true); */
+    /*         }, 3000); */
+    /*     } else { */
+    /*         setShouldShow(false); */
+    /*     } */
+    /* }, [isDescription]); */
 
     if (!viewport) return null;
 
@@ -42,9 +44,8 @@ export const DescriptionLogoTitleBox = ({
         <>
             <motion.div
                 className={"w-16 h-[53px] absolute top-0 left-0"}
-                /* initial={!isDescription ? "hide" : shouldAnimate ? "initial" : "after"} */
-                initial={"hide"}
-                animate={!isDescription ? "hide" : shouldShow ? "after" : "initial"}
+                initial={initial}
+                animate={animate}
                 variants={{
                     hide: {
                         opacity: 0,
@@ -81,20 +82,19 @@ export const DescriptionLogoTitleBox = ({
                         },
                     },
                 }}
-                onAnimationStart={() => setTimeout(setReady, 1000)}
+                onAnimationStart={() => setTimeout(setReady, readyDelay)}
             >
                 <AnimatedUlldLogo
                     width={64}
                     height={64}
-                    show={isDescription}
+                    show={animate === "after"}
                     delay={1000}
                     speed={2}
                 />
             </motion.div>
             <motion.h2
-                /* initial={!isDescription ? "hide" : shouldAnimate ? "initial" : "after"} */
-                initial={"hide"}
-                animate={!isDescription ? "hide" : shouldShow ? "after" : "initial"}
+                initial={initial}
+                animate={animate}
                 className={"text-sm w-[350px] absolute top-0 left-0"}
                 variants={{
                     hide: {
@@ -132,9 +132,8 @@ export const DescriptionLogoTitleBox = ({
                 {staticContent.subtitleBroken[0]}
             </motion.h2>
             <motion.h2
-                /* initial={!isDescription ? "hide" : shouldAnimate ? "initial" : "after"} */
-                initial="hide"
-                animate={!isDescription ? "hide" : shouldShow ? "after" : "initial"}
+                initial={initial}
+                animate={animate}
                 className={"text-sm w-[230px] absolute top-0 left-0"}
                 variants={{
                     hide: {

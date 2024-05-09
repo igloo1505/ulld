@@ -7,7 +7,7 @@ import { useMemo } from "react";
 
 export const useLandingSection = () => {
     const sp = useSearchParams()
-    const section = useMemo(() => sp.get("section") as LandingSection || "hero" as "hero", [sp])
+    const section = useMemo(() => sp.get("section") as LandingSection, [sp])
     return section
 }
 

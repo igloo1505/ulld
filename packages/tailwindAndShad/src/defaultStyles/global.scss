@@ -164,6 +164,9 @@ body {
   .linkColor {
     @apply text-blue-500 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200;
   }
+  .mdx {
+    @apply lining-nums ordinal;
+  }
 }
 
 @layer components {
@@ -325,4 +328,13 @@ div.jp-WindowedPanel-outer {
 
 div[role="dialog"][cmdk-dialog] {
   z-index: 9999;
+}
+
+.mdx {
+  a[data-footnote-ref] {
+    padding: 0;
+  }
+  // sup {
+  //   width: 3px
+  // }
 }

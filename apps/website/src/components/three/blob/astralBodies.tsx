@@ -41,8 +41,8 @@ export const AstralBodies = ({
 
     const [springs, api] = useSpring(() => {
         return {
-            opacity: 0.8,
-            size: _size,
+            opacity: section === "hero" ? 0.8 : 0,
+            size: section === "hero" ? _size : 0,
             config: {
                 mass: 4,
                 friction: 10,
@@ -59,7 +59,7 @@ export const AstralBodies = ({
         } else {
             api.start({
                 opacity: 0,
-                size: 10,
+                size: 0,
             });
         }
     }, [show]);

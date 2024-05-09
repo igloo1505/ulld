@@ -1,7 +1,8 @@
 // import { serverLogger } from "@ulld/logger/server";
 import dynamic from "next/dynamic";
-import { ComponentType } from "react";
 const Admonition = dynamic(() => import("@ulld/embeddable-components/components/server/admonition").then((a) => a.Admonition))
+const ErrorMargin = dynamic(() => import("@ulld/embeddable-components/academic/error").then((a) => a.ErrorMargin))
+const Abstract = dynamic(() => import("@ulld/embeddable-components/academic/abstract").then((a) => a.Abstract))
 // const NotebookCell = dynamic(() => import("../jupyter/notebooks/cell"))
 // // const JupyterConsole = dynamic(() => import("../jupyter/console/index"))
 // const Pdf = dynamic(() => import("../functionality/pdf/MdxPdfView"))
@@ -54,7 +55,7 @@ const Admonition = dynamic(() => import("@ulld/embeddable-components/components/
 // const Color = dynamic(() => import("./emeddedComponents/Color"))
 
 
-type EmbeddableServerComponents = typeof Admonition
+type EmbeddableServerComponents = typeof Admonition | typeof ErrorMargin | typeof Abstract
 
 interface ConditionalComponentQuery {
     regex: RegExp,
@@ -68,9 +69,12 @@ export interface ConditionalComponentProps {
     requiredOnly?: boolean
 }
 
-export const getConditionalComponents = (content: string, opts: ConditionalComponentProps, isServer: boolean = false) => {
+export const getConditionalComponents = (content: string, opts: ConditionalComponentProps, isServer: boolean = true) => {
     const conditionalComponents: ConditionalComponentQuery[] = [
         { regex: new RegExp(`<Admonition`), component: Admonition, label: "Admonition" },
+        // Academic components
+        {regex: new RegExp("<ErrorMargin"), component: ErrorMargin, label: "ErrorMargin"},
+        {regex: new RegExp("<Abstract"), component: Abstract, label: "Abstract"}
     ]
     let components: { [k: string]: ConditionalComponentQuery['component'] } = {}
     for (const k of conditionalComponents) {

@@ -2,7 +2,6 @@
 import React, { useEffect, useState, useMemo, useRef, Suspense } from "react";
 import * as Three from "three";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-/* import sceneBackground from "./assets/sphere/stars12.jpg"; */
 import _textureNucleus from "./assets/02.jpg";
 import _textureStar from "./assets/03.png";
 import _texture1 from "./assets/04.png";
@@ -200,6 +199,7 @@ const NoiseyBlob = ({ isProduction }: { isProduction: boolean }) => {
     const frameLoop = useMemo(() => (!isHidden ? "always" : "never"), [isHidden]);
     const section = useLandingSection();
     useEffect(() => {
+        console.log("section in blob: ", section)
         setShow(section === "hero");
         if (section === "hero") {
             setIsHidden(false);

@@ -46,7 +46,9 @@ export const BlobSphere = ({ section, show, onHide, radius=200 }: BlobSphereProp
                 radius: 0,
                 opacity: 0,
                 scale: 0,
-                onRest: () => onHide()
+                onRest: () => {
+                    onHide()
+                }
             });
         }
     }, [show]);

@@ -7,13 +7,15 @@ import { useSectionIndex } from "../feature/useSectionIndex";
 
 const DescriptionWrapper = () => {
     const { idx, section } = useSectionIndex();
+    console.log("idx there: ", idx)
     const [ready, setReady] = useState(idx >= 2);
     return (
         <>
             <DescriptionLogoTitleBox
                 sectionIndex={idx}
                 section={section}
-                setReady={() => setReady(true)}
+                setReady={setReady}
+                ready={ready}
             />
             <DescriptionSection 
                 section={section}

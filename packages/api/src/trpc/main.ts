@@ -1,4 +1,4 @@
-import { router, trpcRoot } from "./trpc";
+import { router } from "./trpc";
 import { syncRouter } from "./routers/sync";
 import { autoSettingRouter } from "./routers/autoSettings";
 import { advancedSearchRouter } from "./routers/search";
@@ -19,11 +19,10 @@ import { commandPaletteRouter } from "./routers/commandPalette/commandPaletteRou
 import { snippetRouter } from "./routers/snippets/snippetRouter";
 import { whiteboardRouter } from "./routers/whiteboard/whiteboardRouter";
 import bibliographyRouter from "./routers/bibliography/bibliographyRouter";
-import { CreateRouterInner, ProcedureRouterRecord } from "@trpc/server";
 
 
 
-let _appRouter = {
+export const _appRouter = {
     autoSettings: autoSettingRouter,
     sync: syncRouter,
     toDo: toDoRouter,
@@ -49,14 +48,5 @@ let _appRouter = {
 
 
 export const appRouter = router(_appRouter);
-
-type AcceptedRouterTypes = Record<string, ReturnType<typeof router>> | Record<string, CreateRouterInner<typeof trpcRoot._config, any>> | ProcedureRouterRecord
-
-export const extendAppRouter = <T extends AcceptedRouterTypes>(routerExtension: T) => {
-    return router({
-        ...routerExtension,
-        ..._appRouter,
-    })
-}
 
 export type AppRouterType = typeof appRouter;

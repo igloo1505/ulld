@@ -17,7 +17,7 @@ export const orderedSections: string[] = [
 
 export const getLandingSectionClass = (targetSection: LandingSection | "description-any", activeSection: LandingSection | string) => {
     if(targetSection === "description-any"){
-    return `landingSection ${activeSection.startsWith("description") ? "landingSection-active" : activeSection === "hero" ? "landingSection-up" : "landingSection-down"}`
+    return `landingSection ${activeSection?.startsWith("description") ? "landingSection-active" : activeSection === "hero" ? "landingSection-up" : "landingSection-down"}`
     }
     // const idx = landingSectionIndex[activeSection as LandingSection]
     // const targetIdx = landingSectionIndex[targetSection]

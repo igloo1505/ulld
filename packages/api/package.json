@@ -8,6 +8,8 @@
   ],
   "exports": {
     ".": "./src/trpc/trpc.ts",
+    "./extend": "./src/trpc/extend.ts",
+    "./extendServerClient": "./src/trpc/extendServerClient.ts",
     "./types": "./src/types.d.ts",
     "./toBytes": "./src/bytes/toBytes.ts",
     "./fromBytes": "./src/bytes/fromBytes.ts",

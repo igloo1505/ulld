@@ -1,11 +1,8 @@
-import { DescriptionSection } from "#/components/pageSpecific/landing/description/descriptionSection";
 import { LandingSection } from "#/types/landingSection";
 import React from "react";
 import clsx from "clsx";
 import ScrollGestureListener from "#/components/pageSpecific/landing/scrollGestureListener";
 import { BlobSection } from "#/components/pageSpecific/landing/sections/blobSection";
-import { DescriptionLogoTitleBox } from "#/components/pageSpecific/landing/description/descriptionLogoTitleBox";
-import { StoryOfUlldSection } from "#/components/pageSpecific/landing/sections/storyOfULLD/section";
 import DescriptionWrapper from "#/components/pageSpecific/landing/description/descriptionWrapper";
 
 interface HomePageProps {
