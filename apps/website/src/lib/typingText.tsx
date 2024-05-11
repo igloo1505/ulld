@@ -19,13 +19,11 @@ const TypingText = ({
 }: TypingTextProps) => {
     const [content, setContent] = useState("");
     const [isComplete, setIsComplete] = useState(false);
-    /* const [cancelled, setCancelled] = useState(false); */
     const cancelled = useRef<boolean>(false)
     const abortTyping = useRef<boolean>(false);
     const section = useLandingSection();
 
     const cancelTyping = (setCancel: boolean = false) => {
-        console.log(`Cancelling`)
         setContent("");
         setIsComplete(false);
         abortTyping.current = true;
@@ -87,7 +85,6 @@ const TypingText = ({
     }, [children, mistakes, section]);
 
     const resumeTyping = () => {
-        console.log(`Resuming with section: ${section}`)
         if (section === "hero") {
             setContent("");
             setIsComplete(false);

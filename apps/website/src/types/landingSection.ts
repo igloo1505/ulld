@@ -30,7 +30,6 @@ export const getLandingSectionClass = (targetSection: LandingSection | "descript
 
 export const getNewSection = (currentSection: LandingSection | string = "hero", dir: "up" | "down") => {
     const foundIdx = orderedSections.indexOf(currentSection)
-    console.log("currentSection, foundIdx: ", currentSection, foundIdx)
     if(typeof foundIdx === "number"){
         if(dir === "down"){
             return foundIdx === 0 ? currentSection : orderedSections[foundIdx - 1]

@@ -4,5 +4,16 @@
     "Your forever free, perpetually open source note taking",
     "framework built to quantize gravity."
   ],
-  "description": []
+  "description": [],
+  "forceProduction": false,
+  "documentationLinks": {
+    "external": {
+      "jupyter": "jupyter-notebook.readthedocs.io",
+      "python": "docs.python.org"
+    },
+    "internal": {
+      "organization": "/docs",
+      "inputs": "/docs"
+    }
+  }
 }

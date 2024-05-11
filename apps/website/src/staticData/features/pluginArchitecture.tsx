@@ -14,7 +14,7 @@ export const pluginArchitectureFeature: FeaturedContainerPropsRequired = {
             <span>
                 <LogoAsText className={"h-7"} fontSize={18} /> utilizes a plugin
                 focused, slot style architecture with the most popular tech among
-                developers to foster an environment that encourages growth. If a{" "}
+                developers to create an environment that encourages growth. If a{" "}
                 <Link href="/corePlugins" className={"text-link"}>
                     core plugin
                 </Link>{" "}

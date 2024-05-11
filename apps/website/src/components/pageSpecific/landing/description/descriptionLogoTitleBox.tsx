@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
 import staticContent from "../../../../staticData/staticContent.json";
 import { motion } from "framer-motion";
@@ -10,26 +10,38 @@ interface DescriptionLogoTitleBoxProps {
     sectionIndex: number;
     ready: boolean;
     setReady: (isReady: boolean) => void;
+    forceFalse: boolean
 }
 
-const duration = 2;
+const translateDuration = 0.8;
+const logoDelay = 1000;
+const delay = 0;
+const delay2 = 3;
 
 export const DescriptionLogoTitleBox = ({
     section,
     sectionIndex: idx,
     ready,
     setReady,
+    forceFalse
 }: DescriptionLogoTitleBoxProps) => {
     const viewport = useViewport();
+    const [internalReady, setInternalReady] = useState(ready);
 
-    const initial = ready
+    /* useEffect(() => { */
+    /*     if(!ready){ */
+    /*         setInternalReady(false) */
+    /*     }  */
+    /* }, [ready]) */
+
+    const initial = forceFalse ? "hide" : Boolean(ready && internalReady)
         ? "after"
         : idx === 0 || section === "hero"
             ? "hide"
             : idx === 1
                 ? "initial"
                 : "after";
-    const animate = ready
+    const animate = forceFalse ? "hide" : Boolean(ready && internalReady)
         ? "after"
         : idx === 0 || section === "hero"
             ? "hide"
@@ -39,7 +51,7 @@ export const DescriptionLogoTitleBox = ({
 
     const handleAnimationStart = () => {
         if (animate === "after") {
-            setReady(true)
+            setTimeout(() => setReady(true), delay * 1000);
         }
     };
 
@@ -51,7 +63,7 @@ export const DescriptionLogoTitleBox = ({
                 animate={animate}
                 variants={{
                     hide: {
-                        opacity: 0,
+                        opacity: 1,
                         translateX: `${viewport?.window?.width! / 2 - 32}px`,
                         translateY: `${viewport?.window.height! / 2 - 53}px`,
                         transition: {
@@ -63,7 +75,7 @@ export const DescriptionLogoTitleBox = ({
                         translateY: `${viewport?.window.height! / 2 - 53}px`,
                         opacity: 1,
                         transition: {
-                            delay: 2,
+                            /* delay: 2, */
                             translateY: {
                                 duration: 0,
                                 bounce: 0,
@@ -79,9 +91,18 @@ export const DescriptionLogoTitleBox = ({
                         translateX: "16px",
                         translateY: "16px",
                         transition: {
-                            duration: duration,
+                            /* duration: duration, */
                             type: "spring",
                             bounce: 0,
+                            /* delay: delay, */
+                            translateX: {
+                                duration: translateDuration,
+                                delay: delay2,
+                            },
+                            translateY: {
+                                duration: translateDuration,
+                                delay: delay2,
+                            },
                         },
                     },
                 }}
@@ -91,8 +112,9 @@ export const DescriptionLogoTitleBox = ({
                     width={64}
                     height={64}
                     show={animate === "after"}
-                    delay={1000}
+                    delay={logoDelay}
                     speed={2}
+                    onAnimationComplete={() => setInternalReady(true)}
                 />
             </motion.div>
             <motion.h2
@@ -125,9 +147,19 @@ export const DescriptionLogoTitleBox = ({
                         translateX: "88px",
                         translateY: "24px",
                         transition: {
-                            duration: duration,
                             type: "spring",
                             bounce: 0,
+                            opacity: {
+                                delay: 0.5,
+                            },
+                            translateX: {
+                                duration: translateDuration,
+                                delay: delay2,
+                            },
+                            translateY: {
+                                duration: translateDuration,
+                                delay: delay2,
+                            },
                         },
                     },
                 }}
@@ -164,9 +196,19 @@ export const DescriptionLogoTitleBox = ({
                         translateY: "40px",
                         opacity: 1,
                         transition: {
-                            duration: duration,
                             type: "spring",
                             bounce: 0,
+                            opacity: {
+                                delay: 0.5,
+                            },
+                            translateX: {
+                                duration: translateDuration,
+                                delay: delay2,
+                            },
+                            translateY: {
+                                duration: translateDuration,
+                                delay: delay2,
+                            },
                         },
                     },
                 }}

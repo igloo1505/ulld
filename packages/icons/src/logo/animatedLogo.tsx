@@ -127,6 +127,7 @@ export const AnimatedUlldLogo = ({
             xmlns="http://www.w3.org/2000/svg"
             animate={shouldShow ? "show" : "hide"}
             initial={"hide"}
+            {...props}
         >
             <defs />
             <g id="Layer-1">

@@ -52,6 +52,7 @@ export const StoryOfUlldSection = (props: StoryOfUlldSectionProps) => {
                             duration: 1,
                             top: {
                                 delay: 2.5,
+                                type: "spring"
                             },
                         },
                     },

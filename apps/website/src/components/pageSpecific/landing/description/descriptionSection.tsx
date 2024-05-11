@@ -13,8 +13,6 @@ interface Props {
 export const DescriptionSection = ({ ready, section }: Props) => {
     const sectionClasses = getLandingSectionClass("description-any", section);
 
-    console.log("ready, section, sectionClasses: ", ready, section, sectionClasses)
-
     return (
         <section
             className={clsx(

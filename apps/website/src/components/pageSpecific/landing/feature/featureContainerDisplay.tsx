@@ -12,6 +12,7 @@ interface FeatureContainerDisplayProps
     section: LandingSection | string
     displayExpand?: boolean
     containerClasses?: string
+    displayDelay?: number
 }
 
 
@@ -22,7 +23,8 @@ const FeatureContainerDisplay = ({
     idx,
     displayExpand,
     containerClasses,
-    section
+    section,
+    displayDelay = 0.5
 }: FeatureContainerDisplayProps) => {
     const scope = useRef<HTMLDivElement>(null!);
     const [animFinished, setAnimFinished] = useState(false)
@@ -33,7 +35,6 @@ const FeatureContainerDisplay = ({
             setAnimFinished(false)
         } 
     }, [stage])
-    console.log("stage, animFinished: ", stage, animFinished)
     return (
         <motion.div
             className={
@@ -53,7 +54,7 @@ const FeatureContainerDisplay = ({
                     opacity: 1,
                     x: 0,
                     transition: {
-                        /* delay: 0.5, */
+                        delay: displayDelay,
                         type: "spring",
                         stiffness: 100,
                         

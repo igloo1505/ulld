@@ -4,12 +4,14 @@ import clsx from "clsx";
 import ScrollGestureListener from "#/components/pageSpecific/landing/scrollGestureListener";
 import { BlobSection } from "#/components/pageSpecific/landing/sections/blobSection";
 import DescriptionWrapper from "#/components/pageSpecific/landing/description/descriptionWrapper";
+import staticData from "#/staticData/staticContent.json"
 
 interface HomePageProps {
     searchParams: {
         section: LandingSection;
     };
 }
+
 
 const HomePage = ({ searchParams: { section = "hero" } }: HomePageProps) => {
     return (
@@ -22,7 +24,7 @@ const HomePage = ({ searchParams: { section = "hero" } }: HomePageProps) => {
             )}
         >
             <ScrollGestureListener />
-            <BlobSection isProduction={process.env.NODE_ENV === "production" || process.env.OVERRIDE_PRODUCTION === "true"} />
+            <BlobSection isProduction={typeof staticData.forceProduction === "boolean" ? staticData.forceProduction : (process.env.NODE_ENV === "production" || process.env.OVERRIDE_PRODUCTION === "true")} />
             <DescriptionWrapper />
         </div>
     );

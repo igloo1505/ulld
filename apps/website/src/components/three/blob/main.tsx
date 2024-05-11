@@ -202,7 +202,6 @@ const NoiseyBlob = ({ isProduction }: { isProduction: boolean }) => {
     const frameLoop = useMemo(() => (!isHidden ? "always" : "never"), [isHidden]);
     const section = useLandingSection();
     useEffect(() => {
-        console.log("section in blob: ", section)
         setShow(section === "hero");
         if (section === "hero") {
             setIsHidden(false);

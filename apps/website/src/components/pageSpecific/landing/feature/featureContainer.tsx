@@ -8,71 +8,82 @@ import clsx from "clsx";
 import { useViewport } from "@ulld/hooks/useViewport";
 
 const FeatureContainer = ({
-    orientation = "ltr",
-    idx,
-    expandDisplay,
-    spaceEven,
-    displayContainerClasses,
-    ready,
-    ...props
+  orientation = "ltr",
+  idx,
+  expandDisplay,
+  override,
+  spaceEven,
+  displayContainerClasses,
+  ready,
+  ...props
 }: FeatureContainerProps) => {
-    const { stage, section } = useFeatureUIStage(null, idx);
-    const vp = useViewport()
+  const { stage, section } = useFeatureUIStage(null, idx);
+  const vp = useViewport();
+  if (override) {
+    let O = override;
     return (
-        <div
-            className={clsx(
-                "absolute group/feature left-0 top-[76px] h-[calc(100vh-76px)] w-screen gap-4 md:gap-6 lg:gap-8 px-8 lg:px-12 pb-8 flex-col md:flex-row justify-center items-center place-items-center",
-                (stage === "current" && ready) && "feature-active z-10",
-                spaceEven ? "grid grid-cols-1 md:flex" : "flex",
-                expandDisplay && "display-expand",
-                (vp?.window.width && vp.window.width < 768) ? "stack" : "flow"
-            )}
-        >
-            {orientation === "ltr" ? (
-                <>
-                    <FeatureContainerText
-                        title={props.title}
-                        desc={props.desc}
-                        label={props.label}
-                        orientation={orientation}
-                        stage={!ready ? "hidden" : stage}
-                        section={section}
-                        idx={idx}
-                    />
-                    <FeatureContainerDisplay
-                        containerClasses={displayContainerClasses}
-                        displayExpand={expandDisplay || spaceEven}
-                        orientation={orientation}
-                        component={props.component}
-                        stage={!ready ? "hidden" : stage}
-                        section={section}
-                        idx={idx}
-                    />
-                </>
-            ) : (
-                <>
-                    <FeatureContainerDisplay
-                        orientation={orientation}
-                        containerClasses={displayContainerClasses}
-                        displayExpand={expandDisplay || spaceEven}
-                        component={props.component}
-                        stage={!ready ? "hidden" : stage}
-                        section={section}
-                        idx={idx}
-                    />
-                    <FeatureContainerText
-                        title={props.title}
-                        desc={props.desc}
-                        label={props.label}
-                        orientation={orientation}
-                        stage={!ready ? "hidden" : stage}
-                        section={section}
-                        idx={idx}
-                    />
-                </>
-            )}
-        </div>
+      <O
+        section={section}
+        orientation={orientation}
+        shouldShow={stage === "current"}
+      />
     );
+  }
+  return (
+    <div
+      className={clsx(
+        "absolute group/feature left-0 top-[76px] h-[calc(100vh-76px)] w-screen gap-4 md:gap-6 lg:gap-8 px-8 lg:px-12 pb-8 flex-col md:flex-row justify-center items-center place-items-center",
+        stage === "current" && ready && "feature-active z-10",
+        spaceEven ? "grid grid-cols-1 md:flex" : "flex",
+        expandDisplay && "display-expand",
+        vp?.window.width && vp.window.width < 768 ? "stack" : "flow",
+      )}
+    >
+      {orientation === "ltr" ? (
+        <>
+          <FeatureContainerText
+            title={props.title}
+            desc={props.desc}
+            label={props.label}
+            orientation={orientation}
+            stage={!ready ? "hidden" : stage}
+            section={section}
+            idx={idx}
+          />
+          <FeatureContainerDisplay
+            containerClasses={displayContainerClasses}
+            displayExpand={expandDisplay || spaceEven}
+            orientation={orientation}
+            component={props.component}
+            stage={!ready ? "hidden" : stage}
+            section={section}
+            idx={idx}
+          />
+        </>
+      ) : (
+        <>
+          <FeatureContainerDisplay
+            orientation={orientation}
+            containerClasses={displayContainerClasses}
+            displayExpand={expandDisplay || spaceEven}
+            component={props.component}
+            stage={!ready ? "hidden" : stage}
+            section={section}
+            idx={idx}
+          />
+          <FeatureContainerText
+            title={props.title}
+            desc={props.desc}
+            label={props.label}
+            orientation={orientation}
+            stage={!ready ? "hidden" : stage}
+            section={section}
+            idx={idx}
+          />
+        </>
+      )}
+    </div>
+  );
 };
 
 FeatureContainer.displayName = "FeatureContainer";

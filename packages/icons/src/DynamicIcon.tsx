@@ -183,14 +183,11 @@ interface IconProps extends LucideProps {
 
 export const DynamicIcon = ({ name, ...props }: IconProps) => {
     if (logoIconNames.includes(name as (typeof logoIconNames)[number])) {
-        console.log("name: ", name);
         let Icon = dynamic(() => import(`./logoIcons/${name}`));
-        console.log("Icon: ", Icon);
         return <Icon {...props} />;
     }
     let _name =
         name in iconNameMap ? iconNameMap[name as keyof typeof iconNameMap] : name;
-    console.log("_name: ", _name);
     if (_name === false) {
         return null;
     }

@@ -13,6 +13,7 @@ type Orientation = "rtl" | "ltr"
 export type FeatureUIStage = "hidden" | "current" | "past"
 
 type FeatureFCField = FC<{orientation: Orientation, shouldShow: boolean, section: LandingSection | string, animFinished: boolean}>
+type FeatureFCFieldNoAnim = FC<{orientation: Orientation, shouldShow: boolean, section: LandingSection | string}>
 
 export interface FeatureContainerProps {
     title: NonNullable<ReactNode> | FeatureFCField
@@ -22,6 +23,7 @@ export interface FeatureContainerProps {
     badgesRight?: BadgesGroup
     orientation: Orientation
     component: FeatureFCField
+    override?: FeatureFCFieldNoAnim
     expandDisplay?: boolean
     spaceEven?: boolean
     idx: number
@@ -30,4 +32,4 @@ export interface FeatureContainerProps {
 }
 
 
-export type FeaturedContainerPropsRequired = Omit<FeatureContainerProps, "idx" | "orientation">
+export type FeaturedContainerPropsRequired = Omit<FeatureContainerProps, "idx" | "orientation" | "ready">
