@@ -16,6 +16,7 @@ const ModelView = dynamic(() => import("@ulld/embeddable-components/components/c
 const Card = dynamic(() => import("@ulld/embeddable-components/components/client/card").then((a) => a.EmbeddableCard))
 const ErrorMargin = dynamic(() => import("@ulld/embeddable-components/academic/error").then((a) => a.ErrorMargin))
 const Abstract = dynamic(() => import("@ulld/embeddable-components/academic/abstract").then((a) => a.Abstract))
+const TableFit = dynamic(() => import("@ulld/embeddable-components/format/tableFit").then((a) => a.TableFit))
 // const LinePlot = dynamic(() => import("./emeddedComponents/plots/linePlot"))
 // const RemoteMarkdown = dynamic(() => import("./emeddedComponents/remote/RemoteMarkdown"))
 // const Carousel = dynamic(() => import("./emeddedComponents/media/carousel"))
@@ -104,7 +105,9 @@ export const getConditionalClientComponents = (content: string, opts: Conditiona
         { regex: new RegExp(`<Video`), component: Video, label: "Video" },
         // Academic components
         {regex: new RegExp("<ErrorMargin"), component: ErrorMargin, label: "ErrorMargin"},
-        {regex: new RegExp("<Abstract"), component: Abstract, label: "Abstract"}
+        {regex: new RegExp("<Abstract"), component: Abstract, label: "Abstract"},
+        {regex: new RegExp("<TableFit"), component: TableFit, label: "TableFit"},
+
     ]
     let components: { [k: string]: ConditionalComponentQuery['component'] } = {}
     for (const k of conditionalComponents) {

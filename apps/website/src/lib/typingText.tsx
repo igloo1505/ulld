@@ -32,11 +32,6 @@ const TypingText = ({
         }
     };
 
-    useEffect(() => {
-        if (section !== "hero") {
-            cancelTyping();
-        }
-    }, [section]);
 
     useEventListener("cancel-landing-typing", () => {
         cancelTyping(true);
@@ -90,9 +85,19 @@ const TypingText = ({
             setIsComplete(false);
             abortTyping.current = false;
             cancelled.current = false
+            typeText()
         }
     };
+
     useEventListener("resume-landing-typing", resumeTyping);
+
+    useEffect(() => {
+        if (section !== "hero") {
+            cancelTyping();
+        } else {
+            resumeTyping()
+        }
+    }, [section]);
 
     return (
         <div className={"inline-block relative"}>

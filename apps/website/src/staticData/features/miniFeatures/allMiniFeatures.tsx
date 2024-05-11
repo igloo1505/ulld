@@ -14,7 +14,7 @@ export const allMiniFeatures: MiniFeature[] = [
     {
         title: "Interactive Plotting",
         desc: <div>With support for multiple plotting libraries on day 1, you can visualize your data with only <span className={"font-bold"}>MDX</span>. Familiar with <a href={staticData.documentationLinks.external.python} className={"font-bold text-link"}>Python</a>? Embed <a href={staticData.documentationLinks.external.jupyter} className={"font-bold text-link"}>Jupyter</a> cells directly in your notes and create your own visualizations.</div>,
-        icon: "physics",
+        icon: "line-chart",
         featureKey: "plotting"
     },
     {
@@ -32,7 +32,7 @@ export const allMiniFeatures: MiniFeature[] = [
     {
         title: "Not Just Text",
         desc: <div><LogoAsText fontSize={13}/> was built for someone's personal physics research, and as such, there's out of the box support for multiple methods of adding your own mathematical and scientific content.</div>,
-        icon: "math",
+        icon: "drafting-compass",
         featureKey: "inputs"
     },
 ]

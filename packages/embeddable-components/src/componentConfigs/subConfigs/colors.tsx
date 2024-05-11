@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { colorPropSchemaMap } from "./colorMap";
 
 
 
@@ -23,6 +24,7 @@ export const propColorSchema = z.object({
     input: z.boolean().default(false).describe("Color of most text inputs within the app."),
     ring: z.boolean().default(false).describe("Color of the ring around inputs when they are focused."),
     brand: z.boolean().default(false).describe(`<span style={{fontWeight: 700}}>ULLD</span> blue.`),
+    ulld: z.boolean().default(false).describe(`<span style={{fontWeight: 700}}>ULLD</span> blue.`),
     success: z.boolean().default(false).describe("Color commonly used to indicate a success of some kind."),
     info: z.boolean().default(false).describe("Color commonly used to signify that something contains valuable information, but is not necessarily critical."),
     error: z.boolean().default(false).describe("Similar to, and sometimes synonomous with the `destructive` color. Often used to indicate an error or something that needs to be fixed."),
@@ -34,16 +36,21 @@ export const propColorSchema = z.object({
 })
 
 
-type RT<T, U extends string> = Omit<T, U> & {colors: Partial<Record<U, boolean>>}
+
+type RT<T, U extends string> = Omit<T, U> & {colors: Partial<Record<U, boolean>>, color: string}
 
 type J = keyof z.input<typeof propColorSchema>
 
-export const propColorSchemaTransform = <T extends z.input<typeof propColorSchema>>(a: T): RT<T, J> => {
+export const propColorSchemaTransform = <T extends z.input<typeof propColorSchema>>(a: T, defaultColor: keyof typeof colorPropSchemaMap): RT<T, J> => {
     let colors: z.output<typeof propColorSchema> = {} as z.output<typeof propColorSchema>
     let data: RT<T, J> = {} as RT<T, J>
+    let color: string = colorPropSchemaMap[defaultColor]
     for (const k in a){
         if(k in propColorSchema.shape){
             colors[k as keyof typeof colors] = a[k as keyof typeof a] as boolean
+            if( a[k as keyof typeof a]){
+                color = colorPropSchemaMap[k as keyof typeof colorPropSchemaMap]
+            }
         } else {
             data[k as keyof typeof data] = a[k as keyof typeof a] as any
         }
@@ -51,6 +58,11 @@ export const propColorSchemaTransform = <T extends z.input<typeof propColorSchem
 
     return {
         ...data,
-        colors
+        colors,
+        color
     }
 }
+
+
+export type PropColorSchemaOutput = z.output<typeof propColorSchema>
+export type PropColorSchemaInput = z.input<typeof propColorSchema>

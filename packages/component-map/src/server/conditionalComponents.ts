@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 const Admonition = dynamic(() => import("@ulld/embeddable-components/components/server/admonition").then((a) => a.Admonition))
 const ErrorMargin = dynamic(() => import("@ulld/embeddable-components/academic/error").then((a) => a.ErrorMargin))
 const Abstract = dynamic(() => import("@ulld/embeddable-components/academic/abstract").then((a) => a.Abstract))
+const TableFit = dynamic(() => import("@ulld/embeddable-components/format/tableFit").then((a) => a.TableFit))
 // const NotebookCell = dynamic(() => import("../jupyter/notebooks/cell"))
 // // const JupyterConsole = dynamic(() => import("../jupyter/console/index"))
 // const Pdf = dynamic(() => import("../functionality/pdf/MdxPdfView"))
@@ -74,7 +75,8 @@ export const getConditionalComponents = (content: string, opts: ConditionalCompo
         { regex: new RegExp(`<Admonition`), component: Admonition, label: "Admonition" },
         // Academic components
         {regex: new RegExp("<ErrorMargin"), component: ErrorMargin, label: "ErrorMargin"},
-        {regex: new RegExp("<Abstract"), component: Abstract, label: "Abstract"}
+        {regex: new RegExp("<Abstract"), component: Abstract, label: "Abstract"},
+        {regex: new RegExp("<TableFit"), component: TableFit, label: "TableFit"},
     ]
     let components: { [k: string]: ConditionalComponentQuery['component'] } = {}
     for (const k of conditionalComponents) {

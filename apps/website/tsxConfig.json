@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@repo/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "paths": {
+      "#/*": ["./src/*"]
+    },
+    "incremental": true,
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",
+    "module": "ESNext"
+  },
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"]
+}

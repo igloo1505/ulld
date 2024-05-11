@@ -9,8 +9,8 @@ import SvgLatexLoader from "./SvgLatexLoader"
 export const InitialLoader = () => {
     return (
         <>
-        <MathjaxLoader />
         <RequireJsLoader />
+        <MathjaxLoader />
         <SvgLatexLoader />
         </>
     )

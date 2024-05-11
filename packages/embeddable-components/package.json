@@ -65,7 +65,8 @@
     "./components/server/admonition": "./src/emeddedComponents/admonition.tsx",
     "./components/loadingIndicator": "./src/embeddedLoadingIndicator.tsx",
     "./academic/error": "./src/academic/error.tsx",
-    "./academic/abstract": "./src/academic/abstract.tsx"
+    "./academic/abstract": "./src/academic/abstract.tsx",
+    "./format/tableFit": "./src/emeddedComponents/formatting/tableFit.tsx"
   },
   "peerDependencies": {
     "@ulld/api": "workspace:*",
