@@ -4,6 +4,7 @@ import store, { additionalState } from "#/state/store";
 import { ReduxProvider } from "@ulld/state/wrappers/ReduxProvider";
 import React from "react";
 import InitialInteractionObserver from "../observers/initialInteractionObserver";
+import PreBetaAlertDialog from "#/components/pageSpecific/landing/preBetaAlert";
 
 interface StateWrappedComponentsProps { 
 
@@ -13,6 +14,7 @@ interface StateWrappedComponentsProps {
 const StateWrappedComponents = (props: StateWrappedComponentsProps) => {
     return (
         <ReduxProvider store={store}>
+            <PreBetaAlertDialog />
             <InitialInteractionObserver />
             <LaunchSponsorRequestModal />
         </ReduxProvider>

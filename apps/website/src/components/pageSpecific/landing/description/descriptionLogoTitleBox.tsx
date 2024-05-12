@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
 import staticContent from "../../../../staticData/staticContent.json";
 import { motion } from "framer-motion";
@@ -43,7 +43,7 @@ export const DescriptionLogoTitleBox = ({
                 : "after";
     const animate = forceFalse ? "hide" : Boolean(ready && internalReady)
         ? "after"
-        : idx === 0 || section === "hero"
+        : (idx === 0 || section === "hero")
             ? "hide"
             : "after";
 
@@ -66,9 +66,9 @@ export const DescriptionLogoTitleBox = ({
                         opacity: 1,
                         translateX: `${viewport?.window?.width! / 2 - 32}px`,
                         translateY: `${viewport?.window.height! / 2 - 53}px`,
-                        transition: {
-                            duration: 0,
-                        },
+                        /* transition: { */
+                        /*     duration: 0, */
+                        /* }, */
                     },
                     initial: {
                         translateX: `${viewport?.window?.width! / 2 - 32}px`,
@@ -126,6 +126,9 @@ export const DescriptionLogoTitleBox = ({
                         translateX: `${viewport.window.width / 2 - 175}px`,
                         translateY: `${viewport.window.height / 2}px`,
                         opacity: 0,
+                        /* transition: { */
+                        /*     duration: 0 */
+                        /* } */
                     },
                     initial: {
                         translateX: `${viewport.window.width / 2 - 175}px`,
@@ -175,6 +178,9 @@ export const DescriptionLogoTitleBox = ({
                         translateX: `${viewport.window.width / 2 - 115}px`,
                         translateY: `${viewport.window.height / 2 + 20}px`,
                         opacity: 0,
+                        /* transition: { */
+                        /*     duration: 0 */
+                        /* } */
                     },
                     initial: {
                         opacity: 1,
