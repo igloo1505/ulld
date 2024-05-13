@@ -8,13 +8,13 @@
     "build": "next build",
     "start": "next start",
     "generateDocs": "tsx --env-file=./.env.local --tsconfig=./tsxConfig.json ./src/buildScripts/generateDocs.ts ",
-    "db:migrate": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/current/ulld/apps/website/.env.local -- prisma migrate dev --schema ./src/prisma/schema.prisma",
-    "migrate:reset": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/d/ulld/apps/website/.env.local -- prisma migrate reset --schema ./src/prisma/schema.prisma",
-    "db:seed": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/apps/website/.env.local -- prisma db seed",
-    "db:generate": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/apps/website/.env.local -- prisma generate --schema=./src/prisma/schema.prisma",
+    "db:migrate": "node ../../node_modules/dotenv-cli/cli.js -e ./website/.env.local -- prisma migrate dev --schema ./src/prisma/schema.prisma",
+    "migrate:reset": "node ../../node_modules/dotenv-cli/cli.js -e ./website/.env.local -- prisma migrate reset --schema ./src/prisma/schema.prisma",
+    "db:seed": "node ../../node_modules/dotenv-cli/cli.js -e ./website/.env.local -- prisma db seed",
+    "db:generate": "node ../../node_modules/dotenv-cli/cli.js -e ./website/.env.local -- prisma generate --schema=./src/prisma/schema.prisma",
     "db:push": "prisma db push --skip-generate",
     "prisma:studio": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/apps/website/.env.local -- prisma studio --schema ./src/prisma/schema.prisma",
-    "postinstall": "pnpm exec playwright-core install --with-deps chromium"
+    "postinstall": "echo 'run pnpm exec playwright-core install --with-deps chromium if running locally'"
   },
   "dependencies": {
     "@dimforge/rapier3d": "^0.12.0",
