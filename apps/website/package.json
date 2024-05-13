@@ -35,6 +35,8 @@
     "@repo/jest-presets": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@shikijs/rehype": "^1.2.0",
+    "@stripe/react-stripe-js": "^2.7.1",
+    "@stripe/stripe-js": "^3.4.0",
     "@types/three": "^0.162.0",
     "@ulld/api": "workspace:*",
     "@ulld/baseConfigs": "workspace:*",
@@ -95,6 +97,7 @@
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.0",
     "simplex-noise": "^4.0.1",
+    "stripe": "^15.6.0",
     "three": "^0.163.0",
     "three-noise": "^1.1.2",
     "tsx": "^4.7.2"

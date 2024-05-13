@@ -17,6 +17,9 @@ const lethargy = new Lethargy();
 
 const Gesture = createGesture([scrollAction, wheelAction, dragAction]);
 
+const dragRequirement = 50
+
+
 /* RESUME: Come back here and move this over to framer-motion, and then use the onAnimationComplete method to set the last index if the 'right' value is... right? */
 
 interface Props {
@@ -77,24 +80,29 @@ const FeatureMiniCardContainer = ({ show }: Props) => {
     const dragListener: Handler<
         "drag",
         PointerEvent | MouseEvent | TouchEvent | KeyboardEvent
-    > = (data) => {
+    > = ({active, movement: [mx], direction: [xDir], cancel}) => {
         if (scrolling.current) return;
         scrolling.current = true;
-        let dir = lethargy.check(data.event);
-        if (!dir) return;
-        console.log(data.event);
-        if (dir === -1 && "movementX" in data.event) {
-            dir = data.event.movementX <= 0 ? -1 : 1;
-        }
-        console.log("dir: ", dir);
+        /* let dir = lethargy.check(data.event); */
+        /* if (!dir) return; */
+        /* console.log(data.event); */
+        /* if (dir === -1 && "movementX" in data.event) { */
+        /*     dir = data.event.movementX <= 0 ? -1 : 1; */
+        /* } */
+        
+ if (!active || Math.abs(mx) < dragRequirement) {
+            return
+    }
+        console.log("dir: ", xDir);
         console.log("focusedIndex: ", fi.current);
         console.log("maxIndex: ", mi.current);
-        if (dir > 0 && fi.current !== 0) {
+        if (xDir > 0 && fi.current !== 0) {
             setFocusedIndex(fi.current - 1);
-        } else if (dir < 0 && fi.current < mi.current) {
+        } else if (xDir < 0 && fi.current < mi.current) {
             console.log("setFocusedIndex + 1");
             setFocusedIndex(fi.current + 1);
         }
+      cancel()
     };
 
     const scrollListener: Handler<"scroll" | "wheel" | "drag", UIEvent> = (

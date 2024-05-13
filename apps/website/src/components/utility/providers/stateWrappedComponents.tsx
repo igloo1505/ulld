@@ -1,6 +1,6 @@
 "use client"
 import LaunchSponsorRequestModal from "#/components/interaction/modals/sponsorRequest/launchSponsorRequest/main";
-import store, { additionalState } from "#/state/store";
+import store from "#/state/store";
 import { ReduxProvider } from "@ulld/state/wrappers/ReduxProvider";
 import React from "react";
 import InitialInteractionObserver from "../observers/initialInteractionObserver";

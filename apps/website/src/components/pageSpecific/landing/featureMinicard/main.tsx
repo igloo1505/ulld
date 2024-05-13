@@ -27,7 +27,7 @@ const MiniFeatureCard = ({
     return (
         <motion.div
             className={
-                "mini-feature-card w-full h-full py-4 pr-4 pl-6 bg-muted/30 rounded-lg flex flex-col justify-start items-start gap-3 border"
+                "mini-feature-card w-full h-full py-4 pr-4 pl-6 bg-muted/30 rounded-lg flex flex-col justify-start items-start gap-3 border touch-pan-y"
             }
             style={{ maxWidth }}
             id={`mini-feature-card-${idx}`}
