@@ -19,7 +19,7 @@
     "db:migrate": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- prisma migrate dev --schema ./src/prisma/schema.prisma",
     "migrate:reset": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma migrate reset --schema ./src/prisma/schema.prisma",
     "db:seed": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma db seed",
-    "db:generate": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- prisma generate --schema=./src/prisma/schema.prisma",
+    "db:generate": "echo 'run locally: /Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- prisma generate --schema=./src/prisma/schema.prisma'",
     "db:push": "prisma db push --skip-generate",
     "prisma:studio": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma studio --schema ./src/prisma/schema.prisma",
     "postinstall": "echo 'figure out how to run prisma generate --schema=./src/prisma/schema.prisma'"
