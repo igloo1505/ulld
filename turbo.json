@@ -23,12 +23,18 @@
     },
     "build": {
       "dependsOn": ["^db:generate"],
+      "outputs": [".next/**", "!.next/cache/**"],
       "dotEnv": [
         ".env.production.local",
         ".env.local",
         ".env.production",
         ".env"
-      ]
+      ],
+      "@ulld/website#build": {
+        "dependsOn": ["^build"],
+        "env": ["SOME_OTHER_ENV_VAR"],
+        "outputs": [".next/**", "!.next/cache/**"]
+      }
     },
     "test": {
       "dependsOn": ["^build"],
