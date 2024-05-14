@@ -6,6 +6,7 @@ import { useViewport } from "@ulld/hooks/useViewport";
 import { AnimatedLogoAsText } from "#/components/general/animatedLogoAsText";
 import { orderedSections } from "#/types/landingSection";
 import StoryOfULLD from "./storyOfUlld.mdx"
+import useMeasure from "react-use-measure";
 
 interface StoryOfUlldSectionProps {
     sectionIndex: number
@@ -18,6 +19,7 @@ const heading = "The story of ";
 export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
     const shouldShow = useMemo(() => orderedSections.indexOf("story") === sectionIndex, [sectionIndex])
     const vp = useViewport();
+    const [ref, res] = useMeasure()
     if(!shouldShow) {
         return null
     }
@@ -29,17 +31,14 @@ export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
             )}
         >
             <motion.h2
-                className={clsx(
-                    "feature-animate opacity-0 text-foreground text-4xl font-bold absolute",
-                    /* ltr ? "translate-x-[-100px]" : "translate-x-[100px]", */
-                )}
+                className={"feature-animate opacity-0 text-foreground text-4xl font-bold absolute"}
                 initial={{
-                        x: "-50%",
-                        y: "-16px",
+                        x: `calc(50% - ${res.width / 2}px)`,
+                        y: "16px",
                         opacity: 0,
                 }}
                 animate={{
-                        x: "50%",
+                        x: `calc(50% - ${res.width / 2}px)`,
                         y: "calc(50% - 30px)",
                         opacity: 1,
                         transition: {
@@ -50,6 +49,7 @@ export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
                             },
                         },
                 }}
+                ref={ref}
             >
                 {heading.split("").map((l, i) => {
                     return (

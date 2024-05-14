@@ -12,9 +12,6 @@ import rehypeMermaid from "rehype-mermaid"
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 // import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
 
-console.log("process.env.PWD: ", process.env.PWD)
-console.log("process.env.LD_LIBRARY_PATH: ", process.env.LD_LIBRARY_PATH)
-
 // NOTE: For building on vercel: https://github.com/Automattic/node-canvas/issues/1779
 // if (
 //   process.env.LD_LIBRARY_PATH == null ||
@@ -195,6 +192,11 @@ const config = withMDX(withPWA({
         optimizePackageImports: ["lucide-react", "katex"],
         // serverComponentsExternalPackages: ['@ulld/editor'],
         // mdxRs: true,
+        turbo: {
+            resolveAlias: {
+              canvas: './empty-module.ts',
+            }
+        }
     },
     onDemandEntries: {
         maxInactiveAge: 10 * 1000,
@@ -202,6 +204,7 @@ const config = withMDX(withPWA({
     },
     poweredByHeader: false,
     webpack: (config, ctx) => {
+        config.resolve.alias.canvas = false
         config.cache = false;
         // if(ctx.isServer){
         //     config.plugins.push(new PrismaPlugin())
