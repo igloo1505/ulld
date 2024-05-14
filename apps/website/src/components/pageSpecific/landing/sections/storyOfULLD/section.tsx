@@ -31,7 +31,7 @@ export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
             <motion.h2
                 className={clsx(
                     "feature-animate opacity-0 text-foreground text-4xl font-bold absolute",
-                    ltr ? "translate-x-[-100px]" : "translate-x-[100px]",
+                    /* ltr ? "translate-x-[-100px]" : "translate-x-[100px]", */
                 )}
                 initial={{
                         x: "-50%",
