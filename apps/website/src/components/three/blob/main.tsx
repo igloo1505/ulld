@@ -26,10 +26,10 @@ interface NoiseyBlobProps {
     show: boolean;
     onHide: () => void;
     isProduction?: boolean;
-    frameloop: "always" | "never"
+    frameloop: "always" | "never";
 }
 
-const nAstralBodies = 2
+const nAstralBodies = 2;
 
 const posA =
     (n: number, center: boolean = false, minRadius: number = 150) =>
@@ -52,13 +52,12 @@ const astralRotationAxis = new Three.Vector3(0, 1, 0).normalize();
 
 const q = new Three.Quaternion();
 
-
 const NoiseyBlobInternal = ({
     section,
     show,
-    isProduction=true,
+    isProduction = true,
     onHide,
-    frameloop
+    frameloop,
 }: NoiseyBlobProps) => {
     const viewport = useViewport();
     const textureNucleus = useLoader(Three.TextureLoader, _textureNucleus.src);
@@ -69,13 +68,19 @@ const NoiseyBlobInternal = ({
     textureNucleus.anisotropy = 16;
     let vw = viewport?.window.width || 1600;
     let vh = viewport?.window.height || 1200;
-  const orbitingStars = useRef<Three.InstancedMesh>(null!);
+    const orbitingStars = useRef<Three.InstancedMesh>(null!);
     const nucleusRef = useRef<any>(null!);
     const cameraRef = useRef<Three.PerspectiveCamera>(null!);
-    const starRef1 = useRef<Three.BufferGeometry>(null!)
-    const starRef2 = useRef<Three.BufferGeometry>(null!)
-    const starRef3 = useRef<Three.BufferGeometry>(null!)
-    const astralBodies = useRef<Three.Points<Three.BufferGeometry<Three.NormalBufferAttributes>, Three.Material | Three.Material[], Three.Object3DEventMap>>(null!);
+    const starRef1 = useRef<Three.BufferGeometry>(null!);
+    const starRef2 = useRef<Three.BufferGeometry>(null!);
+    const starRef3 = useRef<Three.BufferGeometry>(null!);
+    const astralBodies = useRef<
+        Three.Points<
+            Three.BufferGeometry<Three.NormalBufferAttributes>,
+            Three.Material | Three.Material[],
+            Three.Object3DEventMap
+        >
+    >(null!);
     const [positionA, setPositionA] = useState(posA(nAstralBodies));
     const [positionB, setPositionB] = useState(posB(nAstralBodies));
     const [positionFinal] = useState(() => positionB.slice(0));
@@ -84,7 +89,10 @@ const NoiseyBlobInternal = ({
     }, [nAstralBodies]);
 
     const rotationsB = useMemo(() => {
-        return makeBuffer({ length: nAstralBodies }, () => Math.random() * Math.PI * 2);
+        return makeBuffer(
+            { length: nAstralBodies },
+            () => Math.random() * Math.PI * 2,
+        );
     }, [nAstralBodies]);
 
     const rotationsFinal = useMemo(() => {
@@ -115,12 +123,12 @@ const NoiseyBlobInternal = ({
         });
         astralBodies.current.rotateZ(Math.PI * 0.002 * t);
         buffer.lerp(rotations, rotationsB, rotationsFinal, t);
-        let pos: Three.Vector3[] = []
+        let pos: Three.Vector3[] = [];
         astralBodies.current.traverse((item) => {
-            pos.push(item.position) 
-        })
-        state.scene.rotateY(dt * -0.01)
-    })
+            pos.push(item.position);
+        });
+        state.scene.rotateY(dt * -0.01);
+    });
 
     return (
         <>
@@ -196,24 +204,27 @@ const NoiseyBlobInternal = ({
     );
 };
 
-const NoiseyBlob = ({ isProduction }: { isProduction: boolean }) => {
+const NoiseyBlob = ({ isProduction, show, setShow }: { isProduction: boolean, show: boolean, setShow: (val: boolean) => void }) => {
     const [isHidden, setIsHidden] = useState(false);
-    const [show, setShow] = useState(false);
     const frameLoop = useMemo(() => (!isHidden ? "always" : "never"), [isHidden]);
     const section = useLandingSection();
     useEffect(() => {
         setShow(section === "hero");
         if (section === "hero") {
             setIsHidden(false);
+            document.getElementById("blobSection")?.classList.remove("inactive");
         }
     }, [section]);
 
-    const onHide = () => setIsHidden(true);
+    const onHide = () => {
+        setIsHidden(true);
+        document.getElementById("blobSection")?.classList.add("inactive");
+    };
 
     return (
         <div
             className={
-                "w-full h-screen absolute top-0 left-0 right-0 bottom-0 z-[10]"
+                "w-full h-screen absolute top-0 left-0 right-0 bottom-0 z-[10]  group-[.inactive]/blobSection:hidden"
             }
         >
             <Canvas

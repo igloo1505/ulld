@@ -1,4 +1,4 @@
-import {ImageAlignment} from "@ulld/database/internalDatabaseTypes"
+import { ImageAlignment } from "@ulld/database/internalDatabaseTypes"
 import { z } from "zod"
 
 const dateToString = z.union([

@@ -5,7 +5,7 @@
   "exports": {
     ".": "./src/internalDatabaseTypes.d.ts",
     "./prisma": "./src/internalDatabaseTypes.d.ts",
-    "./internalDatabaseTypes": "./src/internalDatabaseTypes.d.ts",
+    "./internalDatabaseTypes": "./src/internalDatabaseTypes.ts",
     "./db": "./src/db/main.ts"
   },
   "files": [

@@ -17,8 +17,7 @@ const lethargy = new Lethargy();
 
 const Gesture = createGesture([scrollAction, wheelAction, dragAction]);
 
-const dragRequirement = 50
-
+const dragRequirement = 50;
 
 /* RESUME: Come back here and move this over to framer-motion, and then use the onAnimationComplete method to set the last index if the 'right' value is... right? */
 
@@ -56,11 +55,10 @@ const FeatureMiniCardContainer = ({ show }: Props) => {
     };
 
     useEffect(() => {
-       if(!show){
-            setFocusedIndex(0)
-        } 
-    }, [show])
-
+        if (!show) {
+            setFocusedIndex(0);
+        }
+    }, [show]);
 
     const checkLastIndex = () => {
         let em = document.getElementById(
@@ -80,7 +78,7 @@ const FeatureMiniCardContainer = ({ show }: Props) => {
     const dragListener: Handler<
         "drag",
         PointerEvent | MouseEvent | TouchEvent | KeyboardEvent
-    > = ({active, movement: [mx], direction: [xDir], cancel}) => {
+    > = ({ active, movement: [mx], direction: [xDir], cancel }) => {
         if (scrolling.current) return;
         scrolling.current = true;
         /* let dir = lethargy.check(data.event); */
@@ -89,10 +87,10 @@ const FeatureMiniCardContainer = ({ show }: Props) => {
         /* if (dir === -1 && "movementX" in data.event) { */
         /*     dir = data.event.movementX <= 0 ? -1 : 1; */
         /* } */
-        
- if (!active || Math.abs(mx) < dragRequirement) {
-            return
-    }
+
+        if (!active || Math.abs(mx) < dragRequirement) {
+            return;
+        }
         console.log("dir: ", xDir);
         console.log("focusedIndex: ", fi.current);
         console.log("maxIndex: ", mi.current);
@@ -102,7 +100,7 @@ const FeatureMiniCardContainer = ({ show }: Props) => {
             console.log("setFocusedIndex + 1");
             setFocusedIndex(fi.current + 1);
         }
-      cancel()
+        cancel();
     };
 
     const scrollListener: Handler<"scroll" | "wheel" | "drag", UIEvent> = (

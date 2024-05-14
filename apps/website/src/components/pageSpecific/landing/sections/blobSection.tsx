@@ -1,20 +1,18 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
-import { useLandingSection } from "../useSection";
+import React, { useState } from "react";
 import NoiseyBlob from "#/components/three/blob/main";
 import { LandingPageTitleBox } from "../titleBox";
-import clsx from "clsx";
 
 interface BlobSectionProps {
     isProduction: boolean;
 }
 
 export const BlobSection = ({ isProduction }: BlobSectionProps) => {
-
+    const [show, setShow] = useState(false);
     return (
-        <div className={clsx("z-10")}>
-            <NoiseyBlob isProduction={isProduction} />
-            <LandingPageTitleBox />
+        <div id="blobSection" className={"z-10 group/blobSection"}>
+            <NoiseyBlob show={show} setShow={setShow} isProduction={isProduction} />
+            <LandingPageTitleBox show={show}/>
         </div>
     );
 };

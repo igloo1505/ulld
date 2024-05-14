@@ -1,29 +1,34 @@
 "use client";
-import React, {useState} from "react";
+import React, {useMemo, useState} from "react";
 import { motion } from "framer-motion";
 import clsx from "clsx";
-import { useFeatureUIStage } from "../../feature/useFeatureUIStage";
 import { useViewport } from "@ulld/hooks/useViewport";
 import { AnimatedLogoAsText } from "#/components/general/animatedLogoAsText";
 import {useUtf8File} from "@ulld/hooks/useUtf8File"
 import { MdxContentCLIENT } from "@ulld/render/mdx/client";
+import { orderedSections } from "#/types/landingSection";
 
-interface StoryOfUlldSectionProps { }
+interface StoryOfUlldSectionProps {
+    sectionIndex: number
+}
 
 const ltr = true;
 
 const heading = "The story of ";
 
-export const StoryOfUlldSection = (props: StoryOfUlldSectionProps) => {
-    const { stage } = useFeatureUIStage("story", -1);
-    const [contentReady, setContentReady] = useState(false)
+export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
+    const shouldShow = useMemo(() => orderedSections.indexOf("story") === sectionIndex, [sectionIndex])
     const vp = useViewport();
     const content = useUtf8File("src/components/pageSpecific/landing/sections/storyOfULLD/storyOfUlld.mdx", true)
+    if(!shouldShow) {
+        return null
+    }
+    const [contentReady, setContentReady] = useState(false)
     return (
         <div
             className={clsx(
                 "absolute group/feature w-screen top-[76px] left-0 min-h-[calc(100vh-76px)] flex flex-col justify-start items-center gap-6",
-                stage === "current" && "feature-active z-[10]",
+                shouldShow && "feature-active z-[10]",
                 vp?.window.width && vp.window.width < 768 ? "stack" : "flow",
             )}
         >
@@ -32,17 +37,14 @@ export const StoryOfUlldSection = (props: StoryOfUlldSectionProps) => {
                     "feature-animate opacity-0 text-foreground text-4xl font-bold absolute",
                     ltr ? "translate-x-[-100px]" : "translate-x-[100px]",
                 )}
-                initial="hidden"
-                animate={stage}
-                variants={{
-                    hidden: {
+                initial={{
                         top: "50%",
                         left: "50%",
                         x: "-50%",
                         y: "-50%",
                         opacity: 0,
-                    },
-                    current: {
+                }}
+                animate={{
                         top: "16px",
                         left: "50%",
                         x: "-50%",
@@ -55,27 +57,22 @@ export const StoryOfUlldSection = (props: StoryOfUlldSectionProps) => {
                                 type: "spring"
                             },
                         },
-                    },
                 }}
             >
                 {heading.split("").map((l, i) => {
                     return (
                         <motion.span
                             key={i}
-                            initial="hidden"
-                            animate={stage}
-                            variants={{
-                                hidden: {
+                            initial={{
                                     y: -30,
                                     opacity: 0,
-                                },
-                                current: {
+                            }}
+                            animate={{
                                     y: 0,
                                     opacity: 1,
                                     transition: {
                                         delay: 0.25 + i * 0.1,
                                     },
-                                },
                             }}
                         >
                             {l}
@@ -83,31 +80,29 @@ export const StoryOfUlldSection = (props: StoryOfUlldSectionProps) => {
                     );
                 })}
                 <AnimatedLogoAsText
-                    show={stage === "current"}
+                    show={shouldShow}
                     delay={1.4}
                     fontSize={36}
                 />
             </motion.h2>
+            {(content && shouldShow && contentReady) && (
             <motion.div
                 className={"mt-20"}
-                initial="hide"
-                animate={contentReady ? "show" : "hide"}
-                variants={{
-                    hide: {
+                initial={{
                         opacity: 0,
                         x: 300,
-                    },
-                    show: {
+                }}
+                animate={{
                        opacity: 1,
                         x: 0,
                         transition: {
                             delay: 1.5
                         }
-                    }
                 }}
-            >
-            {content && <MdxContentCLIENT content={content as string} onReady={() => setContentReady(true)} bareAss />}
+            > 
+            <MdxContentCLIENT content={content as string} bareAss onReady={() => setContentReady(true)} />
             </motion.div>
+            )}
         </div>
     );
 };

@@ -12,8 +12,13 @@ type Orientation = "rtl" | "ltr"
 
 export type FeatureUIStage = "hidden" | "current" | "past"
 
-type FeatureFCField = FC<{orientation: Orientation, shouldShow: boolean, section: LandingSection | string, animFinished: boolean}>
-type FeatureFCFieldNoAnim = FC<{orientation: Orientation, shouldShow: boolean, section: LandingSection | string}>
+type FCProps = {
+    orientation: Orientation
+    shouldShow: boolean
+}
+
+type FeatureFCField = FC<FCProps>
+type FeatureFCFieldNoAnim = FC<FCProps>
 
 export interface FeatureContainerProps {
     title: NonNullable<ReactNode> | FeatureFCField
@@ -28,8 +33,9 @@ export interface FeatureContainerProps {
     spaceEven?: boolean
     idx: number
     displayContainerClasses?: string
-    ready: boolean
+    sectionIndex: number
+    top: number
 }
 
 
-export type FeaturedContainerPropsRequired = Omit<FeatureContainerProps, "idx" | "orientation" | "ready">
+export type FeaturedContainerPropsRequired = Omit<FeatureContainerProps, "idx" | "orientation" | "sectionIndex" | "top">

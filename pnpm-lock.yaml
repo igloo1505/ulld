@@ -218,7 +218,7 @@ importers:
     dependencies:
       '@ducanh2912/next-pwa':
         specifier: ^10.2.5
-        version: 10.2.6(@swc/core@1.4.17(@swc/helpers@0.5.11))(@types/babel__core@7.20.5)(esbuild@0.19.12)(next@14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.76.0))(webpack@5.91.0(@swc/core@1.4.17(@swc/helpers@0.5.11))(esbuild@0.19.12))
+        version: 10.2.6(@swc/core@1.4.17(@swc/helpers@0.5.11))(@types/babel__core@7.20.5)(esbuild@0.19.12)(next@14.2.3(@babel/core@7.24.5)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.76.0))(webpack@5.91.0(@swc/core@1.4.17(@swc/helpers@0.5.11))(esbuild@0.19.12))
       '@hookform/resolvers':
         specifier: ^3.3.4
         version: 3.3.4(react-hook-form@7.51.3(react@18.3.1))
@@ -416,6 +416,9 @@ importers:
       '@dimforge/rapier3d':
         specifier: ^0.12.0
         version: 0.12.0
+      '@ducanh2912/next-pwa':
+        specifier: ^10.2.5
+        version: 10.2.6(@swc/core@1.4.17(@swc/helpers@0.5.11))(@types/babel__core@7.20.5)(esbuild@0.19.12)(next@14.2.3(@babel/core@7.24.5)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.76.0))(webpack@5.91.0(@swc/core@1.4.17(@swc/helpers@0.5.11))(esbuild@0.19.12))
       '@hookform/resolvers':
         specifier: ^3.3.4
         version: 3.3.4(react-hook-form@7.51.3(react@18.3.1))
@@ -587,6 +590,9 @@ importers:
       mdx-mermaid:
         specifier: ^2.0.0
         version: 2.0.0(bufferutil@4.0.8)(encoding@0.1.13)(mermaid@10.9.0)(react@18.3.1)(unist-util-visit@5.0.0)(utf-8-validate@6.0.3)
+      monaco-editor-webpack-plugin:
+        specifier: ^7.1.0
+        version: 7.1.0(monaco-editor@0.44.0)(webpack@5.91.0(@swc/core@1.4.17(@swc/helpers@0.5.11))(esbuild@0.19.12))
       next:
         specifier: ^14.1.4
         version: 14.2.3(@babel/core@7.24.5)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.76.0)
@@ -621,7 +627,7 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0
       rehype-pretty-code:
-        specifier: ^0.13.0
+        specifier: ^0.13.1
         version: 0.13.1(shiki@1.4.0)
       rehype-sanitize:
         specifier: ^6.0.0
@@ -3676,7 +3682,7 @@ importers:
         version: 0.9.8(@babel/core@7.24.5)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)(@rjsf/utils@5.18.3(react@18.3.1))(@types/react-dom@18.3.0)(@types/react@18.3.1)(immer@9.0.21)(mapbox-gl@1.13.3)(react-is@18.3.1)
       '@ducanh2912/next-pwa':
         specifier: ^10.2.5
-        version: 10.2.6(@swc/core@1.4.17(@swc/helpers@0.5.11))(@types/babel__core@7.20.5)(esbuild@0.19.12)(next@14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.76.0))(webpack@5.91.0(@swc/core@1.4.17(@swc/helpers@0.5.11))(esbuild@0.19.12))
+        version: 10.2.6(@swc/core@1.4.17(@swc/helpers@0.5.11))(@types/babel__core@7.20.5)(esbuild@0.19.12)(next@14.2.3(@babel/core@7.24.5)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.76.0))(webpack@5.91.0(@swc/core@1.4.17(@swc/helpers@0.5.11))(esbuild@0.19.12))
       '@emotion/react':
         specifier: ^11.11.4
         version: 11.11.4(@types/react@18.3.1)(react@18.3.1)
@@ -24170,7 +24176,7 @@ snapshots:
 
   '@discoveryjs/json-ext@0.5.7': {}
 
-  '@ducanh2912/next-pwa@10.2.6(@swc/core@1.4.17(@swc/helpers@0.5.11))(@types/babel__core@7.20.5)(esbuild@0.19.12)(next@14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.76.0))(webpack@5.91.0(@swc/core@1.4.17(@swc/helpers@0.5.11))(esbuild@0.19.12))':
+  '@ducanh2912/next-pwa@10.2.6(@swc/core@1.4.17(@swc/helpers@0.5.11))(@types/babel__core@7.20.5)(esbuild@0.19.12)(next@14.2.3(@babel/core@7.24.5)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.76.0))(webpack@5.91.0(@swc/core@1.4.17(@swc/helpers@0.5.11))(esbuild@0.19.12))':
     dependencies:
       clean-webpack-plugin: 4.0.0(webpack@5.91.0(@swc/core@1.4.17(@swc/helpers@0.5.11))(esbuild@0.19.12))
       fast-glob: 3.3.2

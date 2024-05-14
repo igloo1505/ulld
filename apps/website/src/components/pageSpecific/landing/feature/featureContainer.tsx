@@ -3,7 +3,6 @@ import React from "react";
 import { FeatureContainerProps } from "./types";
 import FeatureContainerText from "./featureContainerText";
 import FeatureContainerDisplay from "./featureContainerDisplay";
-import { useFeatureUIStage } from "./useFeatureUIStage";
 import clsx from "clsx";
 import { useViewport } from "@ulld/hooks/useViewport";
 
@@ -14,30 +13,28 @@ const FeatureContainer = ({
   override,
   spaceEven,
   displayContainerClasses,
-  ready,
+  sectionIndex,
+  top,
   ...props
 }: FeatureContainerProps) => {
-  const { stage, section } = useFeatureUIStage(null, idx);
+  const shouldShow = idx === sectionIndex - 1;
   const vp = useViewport();
   if (override) {
     let O = override;
-    return (
-      <O
-        section={section}
-        orientation={orientation}
-        shouldShow={stage === "current"}
-      />
-    );
+    return <O orientation={orientation} shouldShow={shouldShow} />;
   }
   return (
     <div
       className={clsx(
-        "absolute group/feature left-0 top-[76px] h-[calc(100vh-76px)] w-screen gap-4 md:gap-6 lg:gap-8 px-8 lg:px-12 pb-8 flex-col md:flex-row justify-center items-center place-items-center",
-        stage === "current" && ready && "feature-active z-10",
+        "absolute group/feature left-0 top-0 h-[calc(100vh-76px)] w-screen max-w-[1440px] gap-4 md:gap-6 lg:gap-8 px-8 lg:px-12 pb-8 flex-col md:flex-row justify-center items-center place-items-center",
+        shouldShow && "z-10",
         spaceEven ? "grid grid-cols-1 md:flex" : "flex",
         expandDisplay && "display-expand",
         vp?.window.width && vp.window.width < 768 ? "stack" : "flow",
       )}
+      style={{
+        height: `calc(100vh - ${top}px)`,
+      }}
     >
       {orientation === "ltr" ? (
         <>
@@ -46,29 +43,26 @@ const FeatureContainer = ({
             desc={props.desc}
             label={props.label}
             orientation={orientation}
-            stage={!ready ? "hidden" : stage}
-            section={section}
             idx={idx}
+            shouldShow={shouldShow}
           />
           <FeatureContainerDisplay
             containerClasses={displayContainerClasses}
             displayExpand={expandDisplay || spaceEven}
             orientation={orientation}
             component={props.component}
-            stage={!ready ? "hidden" : stage}
-            section={section}
+            shouldShow={shouldShow}
             idx={idx}
           />
         </>
       ) : (
         <>
           <FeatureContainerDisplay
-            orientation={orientation}
             containerClasses={displayContainerClasses}
             displayExpand={expandDisplay || spaceEven}
+            orientation={orientation}
             component={props.component}
-            stage={!ready ? "hidden" : stage}
-            section={section}
+            shouldShow={shouldShow}
             idx={idx}
           />
           <FeatureContainerText
@@ -76,9 +70,8 @@ const FeatureContainer = ({
             desc={props.desc}
             label={props.label}
             orientation={orientation}
-            stage={!ready ? "hidden" : stage}
-            section={section}
             idx={idx}
+            shouldShow={shouldShow}
           />
         </>
       )}

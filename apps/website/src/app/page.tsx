@@ -24,7 +24,7 @@ const HomePage = ({ searchParams: { section = "hero" } }: HomePageProps) => {
             )}
         >
             <ScrollGestureListener />
-            <BlobSection isProduction={typeof staticData.forceProduction === "boolean" ? staticData.forceProduction : (process.env.NODE_ENV === "production" || process.env.OVERRIDE_PRODUCTION === "true")} />
+            <BlobSection isProduction={staticData.forceProduction || process.env.NODE_ENV === "production" || process.env.OVERRIDE_PRODUCTION === "true"} />
             <DescriptionWrapper />
         </div>
     );

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FeatureUIStage } from "./types";
 import { useLandingSection } from "../useSection";
+import { orderedSections } from "#/types/landingSection";
 
 export const useFeatureUIStage = (sectionName: string | null, idx: number) => {
     const section = useLandingSection() as string;

@@ -1,38 +1,33 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { StoryOfUlldSection } from "../sections/storyOfULLD/section";
 import { DescriptionLogoTitleBox } from "./descriptionLogoTitleBox";
 import { DescriptionSection } from "./descriptionSection";
 import { useSectionIndex } from "../feature/useSectionIndex";
-import { usePathname } from "next/navigation";
+import { AnimatePresence } from "framer-motion";
 
 const DescriptionWrapper = () => {
-    const { idx, section } = useSectionIndex();
-    const pathname = usePathname()
-    const [ready, setReady] = useState(idx >= 2);
-
+  const { idx } = useSectionIndex(); 
+    const [titleReady, setTitleReady] = useState(idx > 0)
     useEffect(() => {
-       if(section === "hero" || pathname !== "/"){
-            setReady(false)
-        } 
-    }, [section, pathname])
+        if(idx <= 0){
+        setTitleReady(false)
+        }
+    }, [idx])
 
-    return (
-        <>
-            <DescriptionLogoTitleBox
+  return (
+    <AnimatePresence initial={false}>
+      <DescriptionLogoTitleBox
+                key="dtb"
                 sectionIndex={idx}
-                section={section}
-                setReady={setReady}
-                ready={ready}
-                forceFalse={pathname !== "/"}
+                setTitleReady={() => setTitleReady(true)}
             />
-            <DescriptionSection 
-                section={section}
-                ready={ready}
+      <DescriptionSection
+                key="dsec"
+                sectionIndex={idx}
+                titleReady={titleReady}
             />
-            <StoryOfUlldSection />
-        </>
-    );
+    </AnimatePresence>
+  )
 };
 
 DescriptionWrapper.displayName = "DescriptionWrapper";
