@@ -45,7 +45,6 @@
     "@ulld/utilities": "workspace:*",
     "@ulld/developer": "workspace:*",
     "citation-js": "^0.7.8",
-    "jsdom": "^24.0.0",
     "mathjax-full": "^3.2.2",
     "mdx-mermaid": "^2.0.0",
     "mermaid": "^10.6.0",

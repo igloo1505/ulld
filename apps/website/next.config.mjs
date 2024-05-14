@@ -12,21 +12,20 @@ import rehypeMermaid from "rehype-mermaid"
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 // import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
 
-
 console.log("process.env.PWD: ", process.env.PWD)
 console.log("process.env.LD_LIBRARY_PATH: ", process.env.LD_LIBRARY_PATH)
 
 // NOTE: For building on vercel: https://github.com/Automattic/node-canvas/issues/1779
-if (
-  process.env.LD_LIBRARY_PATH == null ||
-  !process.env.LD_LIBRARY_PATH.includes(
-    `${process.env.PWD}/node_modules/canvas/build/Release:`,
-  )
-) {
-  process.env.LD_LIBRARY_PATH = `${
-    process.env.PWD
-  }/node_modules/canvas/build/Release:${process.env.LD_LIBRARY_PATH || ''}`;
-}
+// if (
+//   process.env.LD_LIBRARY_PATH == null ||
+//   !process.env.LD_LIBRARY_PATH?.includes(
+//     `${process.env.PWD}/node_modules/canvas/build/Release:`,
+//   )
+// ) {
+//   process.env.LD_LIBRARY_PATH = `${
+//     process.env.PWD
+//   }/node_modules/canvas/build/Release:${process.env.LD_LIBRARY_PATH || ''}`;
+// }
 
 const mermaidTheme = {
     light: {
