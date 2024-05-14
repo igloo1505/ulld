@@ -1,18 +1,12 @@
-import { appRouter, extendAppRouter } from "@ulld/api/appRouter";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
-import { publicProcedure, router } from "@ulld/api";
-import { extendedAppRouter } from "#/trpc/main";
-
-// const handler = () => {
-//
-//     }
+import { internalTrpcRouter } from "#/trpc/internalRouter";
 
 
 const handler = (req: Request) =>
   fetchRequestHandler({
     endpoint: "/api/trpc",
     req,
-    router: extendedAppRouter,
+    router: internalTrpcRouter,
     createContext: () => ({}),
   });
 

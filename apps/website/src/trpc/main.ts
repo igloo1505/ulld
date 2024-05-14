@@ -8,4 +8,6 @@ const globalTrpc = global as unknown as {
 
 const { client } = Boolean(globalTrpc.client) ? {client: globalTrpc.client} : extendAppRouter<InternalTrpcRouter>()
 
+globalTrpc.client = client
+
 export {client}

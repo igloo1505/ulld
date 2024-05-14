@@ -44,5 +44,6 @@
     "@repo/typescript-config": "workspace:*",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24"
-  }
+  },
+  "packageManager": "pnpm@9.1.1"
 }

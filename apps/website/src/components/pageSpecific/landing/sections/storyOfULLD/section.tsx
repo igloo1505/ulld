@@ -7,6 +7,8 @@ import { AnimatedLogoAsText } from "#/components/general/animatedLogoAsText";
 import {useUtf8File} from "@ulld/hooks/useUtf8File"
 import { MdxContentCLIENT } from "@ulld/render/mdx/client";
 import { orderedSections } from "#/types/landingSection";
+import { client } from "#/trpc/main";
+import StoryOfULLD from "./storyOfUlld.mdx"
 
 interface StoryOfUlldSectionProps {
     sectionIndex: number
@@ -19,16 +21,13 @@ const heading = "The story of ";
 export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
     const shouldShow = useMemo(() => orderedSections.indexOf("story") === sectionIndex, [sectionIndex])
     const vp = useViewport();
-    const content = useUtf8File("src/components/pageSpecific/landing/sections/storyOfULLD/storyOfUlld.mdx", true)
     if(!shouldShow) {
         return null
     }
-    const [contentReady, setContentReady] = useState(false)
     return (
         <div
             className={clsx(
-                "absolute group/feature w-screen top-[76px] left-0 min-h-[calc(100vh-76px)] flex flex-col justify-start items-center gap-6",
-                shouldShow && "feature-active z-[10]",
+                "absolute group/feature w-screen top-[76px] left-0 min-h-[calc(100vh-76px)] flex flex-col justify-start items-center gap-6 z-10",
                 vp?.window.width && vp.window.width < 768 ? "stack" : "flow",
             )}
         >
@@ -85,9 +84,8 @@ export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
                     fontSize={36}
                 />
             </motion.h2>
-            {(content && shouldShow && contentReady) && (
             <motion.div
-                className={"mt-20"}
+                className={"mt-20 max-w-[min(83vw,1440px)]"}
                 initial={{
                         opacity: 0,
                         x: 300,
@@ -100,9 +98,8 @@ export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
                         }
                 }}
             > 
-            <MdxContentCLIENT content={content as string} bareAss onReady={() => setContentReady(true)} />
+                <StoryOfULLD />
             </motion.div>
-            )}
         </div>
     );
 };

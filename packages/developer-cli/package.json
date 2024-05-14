@@ -77,5 +77,5 @@
     "terminal-link": "^3.0.0",
     "ts-import": "5.0.0-beta.0"
   },
-  "packageManager": "pnpm@9.0.0-beta.1"
+  "packageManager": "pnpm@9.1.1"
 }

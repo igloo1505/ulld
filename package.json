@@ -38,7 +38,7 @@
     "typescript": "^5.4.2",
     "typescript-plugin-css-modules": "^5.1.0"
   },
-  "packageManager": "pnpm@9.0.0-beta.1+sha256.fba2e63d591308988fa66645c4f77d67aea9490c2a6c05f14b2b1154d207761e",
+  "packageManager": "pnpm@9.1.1+sha256.fba2e63d591308988fa66645c4f77d67aea9490c2a6c05f14b2b1154d207761e",
   "engines": {
     "node": ">=18"
   },

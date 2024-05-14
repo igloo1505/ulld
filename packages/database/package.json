@@ -31,5 +31,5 @@
     "@repo/typescript-config": "workspace:*",
     "prisma": "latest"
   },
-  "packageManager": "pnpm@9.0.0-beta.1"
+  "packageManager": "pnpm@9.1.1"
 }

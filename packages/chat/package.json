@@ -35,5 +35,6 @@
   },
   "devDependencies": {
     "@slack/types": "^2.11.0"
-  }
+  },
+  "packageManager": "pnpm@9.1.1"
 }
