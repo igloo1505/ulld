@@ -14,7 +14,7 @@
     "db:generate": "prisma generate --schema=./src/prisma/schema.prisma",
     "db:push": "prisma db push --skip-generate",
     "prisma:studio": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/apps/website/.env.local -- prisma studio --schema ./src/prisma/schema.prisma",
-    "postinstall": "pnpm exec playwright-core install --with-deps chromium"
+    "postinstall": "echo 'give up on this on remote for now pnpm exec playwright-core install --with-deps chromium'"
   },
   "dependencies": {
     "@dimforge/rapier3d": "^0.12.0",
