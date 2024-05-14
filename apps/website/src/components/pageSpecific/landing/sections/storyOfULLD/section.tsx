@@ -1,13 +1,10 @@
 "use client";
-import React, {useMemo, useState} from "react";
+import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { useViewport } from "@ulld/hooks/useViewport";
 import { AnimatedLogoAsText } from "#/components/general/animatedLogoAsText";
-import {useUtf8File} from "@ulld/hooks/useUtf8File"
-import { MdxContentCLIENT } from "@ulld/render/mdx/client";
 import { orderedSections } from "#/types/landingSection";
-import { client } from "#/trpc/main";
 import StoryOfULLD from "./storyOfUlld.mdx"
 
 interface StoryOfUlldSectionProps {
@@ -37,17 +34,13 @@ export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
                     ltr ? "translate-x-[-100px]" : "translate-x-[100px]",
                 )}
                 initial={{
-                        top: "50%",
-                        left: "50%",
                         x: "-50%",
-                        y: "-50%",
+                        y: "-16px",
                         opacity: 0,
                 }}
                 animate={{
-                        top: "16px",
-                        left: "50%",
-                        x: "-50%",
-                        y: "-50%",
+                        x: "50%",
+                        y: "calc(50% - 30px)",
                         opacity: 1,
                         transition: {
                             duration: 1,
