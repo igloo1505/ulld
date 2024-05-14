@@ -7,6 +7,8 @@ export const useMathjaxBandaid = (
 ) => {
     useEffect(() => {
         const observer = applyMathjaxBandaid(element);
+        console.log("element.current: ", element.current)
+        console.log("observer: ", observer)
         return () => {
             if (observer && "disconnect" in observer) {
                 observer?.disconnect();

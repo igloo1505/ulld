@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo } from "react";
+import React, { useMemo, useRef } from "react";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { useViewport } from "@ulld/hooks/useViewport";
@@ -7,6 +7,7 @@ import { AnimatedLogoAsText } from "#/components/general/animatedLogoAsText";
 import { orderedSections } from "#/types/landingSection";
 import StoryOfULLD from "./storyOfUlld.mdx"
 import useMeasure from "react-use-measure";
+import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
 
 interface StoryOfUlldSectionProps {
     sectionIndex: number
@@ -19,7 +20,9 @@ const heading = "The story of ";
 export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
     const shouldShow = useMemo(() => orderedSections.indexOf("story") === sectionIndex, [sectionIndex])
     const vp = useViewport();
+    const storyRef = useRef<HTMLElement>(null!)
     const [ref, res] = useMeasure()
+    useMathjaxBandaid(storyRef)
     if(!shouldShow) {
         return null
     }
@@ -33,13 +36,11 @@ export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
             <motion.h2
                 className={"feature-animate opacity-0 text-foreground text-4xl font-bold absolute"}
                 initial={{
-                        x: `calc(50% - ${res.width / 2}px)`,
-                        y: "16px",
+                        y: "-100px",
                         opacity: 0,
                 }}
                 animate={{
-                        x: `calc(50% - ${res.width / 2}px)`,
-                        y: "calc(50% - 30px)",
+                        y: "0px",
                         opacity: 1,
                         transition: {
                             duration: 1,
@@ -91,7 +92,9 @@ export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
                         }
                 }}
             > 
-                <StoryOfULLD />
+                <StoryOfULLD
+                    ref={storyRef}
+                />
             </motion.div>
         </div>
     );

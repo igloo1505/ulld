@@ -1,14 +1,14 @@
 import nextPwa from "@ducanh2912/next-pwa";
 import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
-import createMDX from "@next/mdx"
-import remarkMath from "remark-math"
-import remarkGfm from "remark-gfm"
-import rehypeMathjax from "rehype-mathjax/chtml.js"
-import rehypePrettyCode from "rehype-pretty-code"
-import emoji from "remark-emoji"
-import rehypeSlug from "rehype-slug"
-import rehypeVideo from "rehype-video"
-import rehypeMermaid from "rehype-mermaid"
+import createMDX from "@next/mdx";
+import remarkMath from "remark-math";
+import remarkGfm from "remark-gfm";
+import rehypeMathjax from "rehype-mathjax/chtml.js";
+import rehypePrettyCode from "rehype-pretty-code";
+import emoji from "remark-emoji";
+import rehypeSlug from "rehype-slug";
+import rehypeVideo from "rehype-video";
+import rehypeMermaid from "rehype-mermaid";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 // import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
 
@@ -57,34 +57,31 @@ const mermaidTheme = {
         lineColor: "#9ca3af",
         noteBkgColor: "#1b1917",
         noteTextColor: "#000000",
-    }
-}
-
+    },
+};
 
 const mermaidOptions = {
-    output: 'svg',
+    output: "svg",
     /* theme: { light: 'dark', dark: 'dark' }, */
     mermaid: {
         themeVariables: mermaidTheme.dark,
-        theme: "base"
-    }
-}
-
-
+        theme: "base",
+    },
+};
 
 export const mathOptions = {
     tex: {
         // packages: [],
-        tags: 'all', // "all" | "ams" (ams breaks EqRef component, unless can find other way to force label creation.),
+        tags: "all", // "all" | "ams" (ams breaks EqRef component, unless can find other way to force label creation.),
         useLabelIds: true,
         processEscapes: true,
-        processEnvironments: true
+        processEnvironments: true,
     },
     chtml: {
         fontURL: `${process.env.NEXTAUTH_URL}/font/mathjax`,
-        adaptiveCSS: true
-    }
-}
+        adaptiveCSS: true,
+    },
+};
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
@@ -105,172 +102,175 @@ const withPWA = nextPwa({
 });
 
 const withMDX = createMDX({
-  options: {
-    remarkPlugins: [
-            remarkMath,
-            remarkGfm,
+    options: {
+        remarkPlugins: [remarkMath, remarkGfm, [emoji, {}]],
+        rehypePlugins: [
+            [rehypeMermaid, mermaidOptions],
             [
-                emoji,
-                {}
-            ]
-        ],
-    rehypePlugins: [
+                rehypeVideo,
+                {
+                    test: /\/(.*)(.mp4|.mov|.webm)$/,
+                    details: false,
+                },
+            ],
+            [rehypeMathjax, mathOptions],
             [
-            rehypeMermaid,
-            mermaidOptions
+                rehypePrettyCode,
+                {
+                    keepBackground: false,
+                    theme: {
+                        light: "material-theme-lighter",
+                        dark: "dracula",
+                    },
+                    onVisitLine(node) {
+                        if (node.children.length === 0) {
+                            node.children = [{ type: "text", value: " " }];
+                        }
+                    },
+                    onVisitHighlightedLine(node) {
+                        node.properties.className.push("line--highlighted");
+                    },
+                    onVisitHighlightedWord(node) {
+                        node.properties.className = ["word--highlighted"];
+                    },
+                },
             ],
-        [
-            rehypeVideo,
-            {
-                test: /\/(.*)(.mp4|.mov|.webm)$/,
-                details: false,
-            },
-        ],
-        [
-                rehypeMathjax,
-                mathOptions
+            [
+                rehypeAutolinkHeadings,
+                {
+                    properties: {
+                        className: ["subheading-anchor"],
+                        ariaLabel: "Link to section",
+                    },
+                },
             ],
-        [
-            rehypePrettyCode,
-            {
-                keepBackground: false,
-                theme: {
-                    light: "material-theme-lighter",
-                    dark: "dracula",
-                },
-                onVisitLine(node) {
-                    if (node.children.length === 0) {
-                        node.children = [{ type: "text", value: " " }];
-                    }
-                },
-                onVisitHighlightedLine(node) {
-                    node.properties.className.push("line--highlighted");
-                },
-                onVisitHighlightedWord(node) {
-                    node.properties.className = ["word--highlighted"];
-                },
-            },
+            rehypeSlug,
         ],
-        [
-            rehypeAutolinkHeadings,
-            {
-                properties: {
-                    className: ["subheading-anchor"],
-                    ariaLabel: "Link to section",
-                },
-            },
-        ],
-        rehypeSlug,
-        ],
-  },
-})
-
-
+    },
+});
 
 /** @type {import('next').NextConfig} */
-const config = withMDX(withPWA({
-    typescript: {
-        ignoreBuildErrors: true, // FOR DEVELOPMENT ONLY
-    },
-    reactStrictMode: false,
-    transpilePackages: [
-        "three",
-        "react-three-fiber",
-        "drei",
-        "glsify",
-        "monaco-editor",
-        "@ulld/editor",
-        "@ulld/tailwind",
-        "@ulld/full-form",
-        "@ulld/icons",
-        "@ulld/database",
-        "@ulld/render",
-    ],
-    experimental: {
-        // typedRoutes: true,
-        esmExternals: "loose",
-        optimizePackageImports: ["lucide-react", "katex"],
-        // serverComponentsExternalPackages: ['@ulld/editor'],
-        // mdxRs: true,
-        turbo: {
-            resolveAlias: {
-              canvas: './empty-module.ts',
+const config = withMDX(
+    withPWA({
+        typescript: {
+            ignoreBuildErrors: true, // FOR DEVELOPMENT ONLY
+        },
+        reactStrictMode: false,
+        transpilePackages: [
+            "three",
+            "react-three-fiber",
+            "drei",
+            "glsify",
+            "monaco-editor",
+            "@ulld/api",
+            "@ulld/baseConfigs",
+            "@ulld/calendar",
+            "@ulld/config",
+            "@ulld/configschema",
+            "@ulld/database",
+            "@ulld/diagram",
+            "@ulld/editor",
+            "@ulld/embeddable-components",
+            "@ulld/full-form",
+            "@ulld/hooks",
+            "@ulld/icons",
+            "@ulld/kanban",
+            "@ulld/logger",
+            "@ulld/note-network",
+            "@ulld/parsers",
+            "@ulld/render",
+            "@ulld/state",
+            "@ulld/tailwind",
+            "@ulld/ui",
+            "@ulld/utilities",
+            "@ulld/whiteboard",
+        ],
+        experimental: {
+            // typedRoutes: true,
+            esmExternals: "loose",
+            optimizePackageImports: ["lucide-react", "katex"],
+            // serverComponentsExternalPackages: ['@ulld/editor'],
+            mdxRs: true,
+            turbo: {
+                resolveAlias: {
+                    canvas: "./empty-module.ts",
+                },
+            },
+        },
+        onDemandEntries: {
+            maxInactiveAge: 10 * 1000,
+            pagesBufferLength: isDevelopment ? 2 : undefined,
+        },
+        poweredByHeader: false,
+        webpack: (config, ctx) => {
+            config.resolve.alias.canvas = false;
+            config.cache = false;
+            // if(ctx.isServer){
+            //     config.plugins.push(new PrismaPlugin())
+            // }
+            if (!ctx.isServer) {
+                // run only for client side
+                config.plugins.push(
+                    new MonacoEditorWebpackPlugin({
+                        // available options are documented at https://github.com/microsoft/monaco-editor/blob/main/webpack-plugin/README.md#options
+                        // languages: [
+                        //     'json',
+                        //     'typescript',
+                        //     'html',
+                        //     'css',
+                        //     'python',
+                        //     'markdown',
+                        //     'yaml'
+                        // ],
+                        filename: "static/[name].worker.js",
+                    }),
+                );
+                config.module.rules.push(...monacoRules);
             }
-        }
-    },
-    onDemandEntries: {
-        maxInactiveAge: 10 * 1000,
-        pagesBufferLength: isDevelopment ? 2 : undefined,
-    },
-    poweredByHeader: false,
-    webpack: (config, ctx) => {
-        config.resolve.alias.canvas = false
-        config.cache = false;
-        // if(ctx.isServer){
-        //     config.plugins.push(new PrismaPlugin())
-        // }
-        if (!ctx.isServer) {
-            // run only for client side
-            config.plugins.push(
-                new MonacoEditorWebpackPlugin({
-                    // available options are documented at https://github.com/microsoft/monaco-editor/blob/main/webpack-plugin/README.md#options
-                    // languages: [
-                    //     'json',
-                    //     'typescript',
-                    //     'html',
-                    //     'css',
-                    //     'python',
-                    //     'markdown',
-                    //     'yaml'
-                    // ],
-                    filename: "static/[name].worker.js",
-                }),
-            );
-            config.module.rules.push(...monacoRules);
-        }
-        config.externals.push({
-            "utf-8-validate": "commonjs utf-8-validate",
-            bufferutil: "commonjs bufferutil",
-        });
-        if (!ctx.isServer) {
-            // config.resolve.modules.push(path.resolve("node_modules/monaco-editor"));
-            config.resolve = {
-                ...config.resolve,
-                fallback: {
-                    net: false,
-                    dns: false,
-                    tls: false,
-                    fs: false,
-                    request: false,
-                    child_process: false,
-                    perf_hooks: false,
-                },
-                // alias: {
-                //     "styled-components": path.resolve(process.cwd(), "node_modules", "styled-components"),
-                // }
-            };
-        }
-        config.module.rules.push({
-            test: /canvas\.node|\.csl|\.pdf|\.glb|\.gltf|\.whl|\.tif/,
-            use: "raw-loader",
-        });
-        config.module.rules.push({
-            test: /\.ttf$/,
-            use: ["file-loader"],
-        });
-        config.module.rules.push({
-            test: /\.bib/,
-            use: [
-                // {
-                //     loader: 'file-loader'
-                // },
-                {
-                    loader: "raw-loader",
-                },
-            ],
-        });
-        return config;
-    },
-}));
+            config.externals.push({
+                "utf-8-validate": "commonjs utf-8-validate",
+                bufferutil: "commonjs bufferutil",
+            });
+            if (!ctx.isServer) {
+                // config.resolve.modules.push(path.resolve("node_modules/monaco-editor"));
+                config.resolve = {
+                    ...config.resolve,
+                    fallback: {
+                        net: false,
+                        dns: false,
+                        tls: false,
+                        fs: false,
+                        request: false,
+                        child_process: false,
+                        perf_hooks: false,
+                    },
+                    // alias: {
+                    //     "styled-components": path.resolve(process.cwd(), "node_modules", "styled-components"),
+                    // }
+                };
+            }
+            config.module.rules.push({
+                test: /canvas\.node|\.csl|\.pdf|\.glb|\.gltf|\.whl|\.tif/,
+                use: "raw-loader",
+            });
+            config.module.rules.push({
+                test: /\.ttf$/,
+                use: ["file-loader"],
+            });
+            config.module.rules.push({
+                test: /\.bib/,
+                use: [
+                    // {
+                    //     loader: 'file-loader'
+                    // },
+                    {
+                        loader: "raw-loader",
+                    },
+                ],
+            });
+            return config;
+        },
+    }),
+);
 
 export default config;
