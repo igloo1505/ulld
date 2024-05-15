@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "simulateProduction": "OVERRIDE_PRODUCTION=true next dev",
-    "build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && next build",
+    "build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 ../../node_modules/canvas/build/Release/ && next build",
     "start": "next start",
     "generateDocs": "tsx --env-file=./.env.local --tsconfig=./tsxConfig.json ./src/buildScripts/generateDocs.ts ",
     "db:migrate": "node ../../node_modules/dotenv-cli/cli.js -e ./website/.env.local -- prisma migrate dev --schema ./src/prisma/schema.prisma",
