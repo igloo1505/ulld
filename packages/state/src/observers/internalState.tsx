@@ -45,7 +45,7 @@ const listenerMap: ListenerType[] = [
 interface P {
     settings: ParsedSettings;
     darkMode: boolean;
-    config: ParsedAppConfig;
+    config: ParsedAppConfig | null;
     showPlotlyModebar: boolean;
     noteSheetOpen: boolean;
     themeCookie?: ThemeOptions;

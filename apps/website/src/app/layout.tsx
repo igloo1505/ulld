@@ -69,8 +69,6 @@ const RootLayout = async (props: {
   /* const config = getInternalConfig(appConfig as any as AppConfigSchemaOutput); */
 
   const cookieJar = cookies();
-
-  /* let settings = settingSchema.parse(s) */
   const settings = { tooltips: true };
 
   const preferFs = cookieJar.has("preferFs");
