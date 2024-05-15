@@ -5,26 +5,38 @@ import clsx from "clsx";
 import { useViewport } from "@ulld/hooks/useViewport";
 import { AnimatedLogoAsText } from "#/components/general/animatedLogoAsText";
 import { orderedSections } from "#/types/landingSection";
-/* import StoryOfULLD from "./storyOfUlld.mdx" */
+import { allStoryOfULLDs } from "contentlayer/generated";
+import { useMDXComponent } from "next-contentlayer/hooks";
+import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
 import useMeasure from "react-use-measure";
-/* import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid"; */
+
+const storyOfUlld = Array.isArray(allStoryOfULLDs)
+    ? allStoryOfULLDs[0]
+    : allStoryOfULLDs;
 
 interface StoryOfUlldSectionProps {
-    sectionIndex: number
+    sectionIndex: number;
 }
 
 const ltr = true;
 
 const heading = "The story of ";
 
-export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
-    const shouldShow = useMemo(() => orderedSections.indexOf("story") === sectionIndex, [sectionIndex])
+export const StoryOfUlldSection = ({
+    sectionIndex,
+}: StoryOfUlldSectionProps) => {
+    const shouldShow = useMemo(
+        () => orderedSections.indexOf("story") === sectionIndex,
+        [sectionIndex],
+    );
     const vp = useViewport();
-    /* const storyRef = useRef<HTMLElement>(null!) */
-    /* useMathjaxBandaid(storyRef) */
-    const [ref, res] = useMeasure()
-    if(!shouldShow) {
-        return null
+    /* RESUME: Come back here and move this to a single internal hook to populate all of the components as needed. */
+    const StoryOfULLD = useMDXComponent(storyOfUlld.body.code);
+    const storyRef = useRef<HTMLDivElement>(null!)
+    useMathjaxBandaid(storyRef)
+    const [ref, res] = useMeasure();
+    if (!shouldShow) {
+        return null;
     }
     return (
         <div
@@ -34,21 +46,23 @@ export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
             )}
         >
             <motion.h2
-                className={"feature-animate opacity-0 text-foreground text-4xl font-bold absolute"}
+                className={
+                    "feature-animate opacity-0 text-foreground text-4xl font-bold absolute"
+                }
                 initial={{
-                        y: "-100px",
-                        opacity: 0,
+                    y: "-100px",
+                    opacity: 0,
                 }}
                 animate={{
-                        y: "0px",
-                        opacity: 1,
-                        transition: {
-                            duration: 1,
-                            top: {
-                                delay: 2.5,
-                                type: "spring"
-                            },
+                    y: "0px",
+                    opacity: 1,
+                    transition: {
+                        duration: 1,
+                        top: {
+                            delay: 2.5,
+                            type: "spring",
                         },
+                    },
                 }}
                 ref={ref}
             >
@@ -57,41 +71,39 @@ export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
                         <motion.span
                             key={i}
                             initial={{
-                                    y: -30,
-                                    opacity: 0,
+                                y: -30,
+                                opacity: 0,
                             }}
                             animate={{
-                                    y: 0,
-                                    opacity: 1,
-                                    transition: {
-                                        delay: 0.25 + i * 0.1,
-                                    },
+                                y: 0,
+                                opacity: 1,
+                                transition: {
+                                    delay: 0.25 + i * 0.1,
+                                },
                             }}
                         >
                             {l}
                         </motion.span>
                     );
                 })}
-                <AnimatedLogoAsText
-                    show={shouldShow}
-                    delay={1.4}
-                    fontSize={36}
-                />
+                <AnimatedLogoAsText show={shouldShow} delay={1.4} fontSize={36} />
             </motion.h2>
             <motion.div
                 className={"mt-20 max-w-[min(83vw,1440px)]"}
                 initial={{
-                        opacity: 0,
-                        x: 300,
+                    opacity: 0,
+                    x: 300,
                 }}
                 animate={{
-                       opacity: 1,
-                        x: 0,
-                        transition: {
-                            delay: 1.5
-                        }
+                    opacity: 1,
+                    x: 0,
+                    transition: {
+                        delay: 1.5,
+                    },
                 }}
-            > 
+                ref={storyRef}
+            >
+                <StoryOfULLD  />
             </motion.div>
         </div>
     );

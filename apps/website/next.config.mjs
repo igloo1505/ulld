@@ -13,6 +13,12 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { withContentlayer } from "next-contentlayer";
 // import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
 
+// import dotenv from "dotenv";
+// dotenv.config();
+// import webpack from "webpack"
+
+
+
 // NOTE: For building on vercel: https://github.com/Automattic/node-canvas/issues/1779
 if (
     process.env.LD_LIBRARY_PATH == null ||

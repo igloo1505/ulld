@@ -69,6 +69,7 @@
     "alea": "^1.0.1",
     "contentlayer": "^0.3.4",
     "dayjs": "^1.11.10",
+    "dotenv": "^16.4.5",
     "file-loader": "^6.2.0",
     "framer-motion": "^11.1.7",
     "gray-matter": "^4.0.3",

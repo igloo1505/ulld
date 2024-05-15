@@ -8,7 +8,13 @@ import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
 import rehypeMermaid from "rehype-mermaid";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { mathOptions, mermaidConfig } from '@ulld/utilities/defaults/markdownUniversalOptions';
+import fs from 'fs'
+// import markdownOptions from "@ulld/utilities/defaults/markdown.json"
+
+const markdownOptions = fs.readFileSync("../../packages/utilities/src/defaults/markdownOptions.json", {
+    encoding: "utf-8"
+})
+const { math, mermaid } = markdownOptions ? JSON.parse(markdownOptions) : {math: {}, mermaid: {}}
 
 
 const contentRoot = "./src/mdx"
@@ -139,7 +145,7 @@ export default makeSource({
     mdx: {
         remarkPlugins: [remarkMath, remarkGfm, [emoji as any, {}]],
         rehypePlugins: [
-            [rehypeMermaid as any, mermaidConfig],
+            [rehypeMermaid as any, mermaid],
             [
                 rehypeVideo as any,
                 {
@@ -147,7 +153,7 @@ export default makeSource({
                     details: false,
                 },
             ],
-            [rehypeMathjax, mathOptions],
+            [rehypeMathjax, math],
             [
                 /* @ts-ignore */
                 rehypePrettyCode,

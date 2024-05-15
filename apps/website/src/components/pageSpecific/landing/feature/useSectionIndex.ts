@@ -19,8 +19,10 @@ export const useGlobalLandingSectionState = () => {
 
 export const useSectionIndex = () => {
     const section = useGlobalLandingSectionState();
+    console.log("section in useSectionIndex: ", section)
     const sectionData = useMemo(() => {
         return { idx: section ? orderedSections.indexOf(section) : -1, section };
     }, [section]);
+    console.log("sectionData in useSectionIndex: ", sectionData)
     return sectionData;
 };

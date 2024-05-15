@@ -41,6 +41,7 @@
     "./schemas/mdx/parseMdxStringSchema": "./src/schemas/mdx/parseMdxStringSchema.ts",
     "./schemas/mdx/parseMdxStringProps": "./src/schemas/mdx/parseMdxStringProps.ts",
     "./defaults/markdownUniversalOptions": "./src/defaults/markdownUniversalOptions.ts",
+    "./defaults/markdown.json": "./src/defaults/markdownOptions.json",
     "./defaults/defaultMermaidConfig": "./src/defaults/defaultMermaidConfig.ts",
     "./defaults/forms/healthReport": "./src/defaults/forms/healthReport.ts",
     "./defaults/prisma/commonZodFields": "./src/defaults/prisma/commonZodFields.ts",

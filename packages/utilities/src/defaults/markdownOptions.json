@@ -1,0 +1,36 @@
+{
+  "math": {
+    "tex": {
+      "tags": "all",
+      "useLabelIds": true,
+      "processEscapes": true,
+      "processEnvironments": true
+    },
+    "chtml": {
+      "fontURL": "/font/mathjax",
+      "adaptiveCSS": true
+    }
+  },
+  "mermaid": {
+    "output": "svg",
+    "mermaid": {
+      "themeVariables": {
+        "darkMode": true,
+        "background": "#000",
+        "primaryColor": "#6d28d9",
+        "primaryTextColor": "#f9fafb",
+        "secondaryColor": "#1d4ed8",
+        "secondaryTextColor": "#f9fafb",
+        "primaryBorderColor": "#1f2937",
+        "tertiaryBorderColor": "#1f2937",
+        "secondaryBorderColor": "#1f2937",
+        "tertiaryColor": "#a21caf",
+        "tertiaryTextColor": "#9ca3af",
+        "lineColor": "#9ca3af",
+        "noteBkgColor": "#1b1917",
+        "noteTextColor": "#000000"
+      },
+      "theme": "base"
+    }
+  }
+}

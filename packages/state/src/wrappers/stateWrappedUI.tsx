@@ -4,13 +4,16 @@ import Observers from "../observers/internalState";
 import { OnlineStatusObserver } from "../observers/onlineStatus";
 import { ToastListener } from "../observers/toast";
 import { Toaster } from "@ulld/tailwind/toaster";
-import { InitialLoader } from "@ulld/utilities/initialLoader";
+import {
+    InitialLoader,
+    InitialLoaderProps,
+} from "@ulld/utilities/initialLoader";
 import { cookies } from "next/headers";
 import { getSettings } from "../actions/getSettings";
 import fs from "fs";
 import path from "path";
 import { ParsedAppConfig } from "@ulld/configschema/types";
-import {getUlldConfig} from "@ulld/developer/utils"
+import { getUlldConfig } from "@ulld/developer/utils";
 import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
 
 /* FIX: These are missing from the complete app. Add them back once the sandbox is working. */
@@ -23,11 +26,13 @@ import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
 export const StateWrappedUI = async ({
     children,
     ignoreConfig = false,
-    store
+    store,
+    loader,
 }: {
     children?: React.ReactNode;
     ignoreConfig?: boolean;
-    store?: ToolkitStore
+    store?: ToolkitStore;
+    loader?: InitialLoaderProps;
 }) => {
     const cookieJar = cookies();
     const settings = await getSettings();
@@ -38,12 +43,12 @@ export const StateWrappedUI = async ({
     if (!ignoreConfig) {
         /* const _config = path.join(process.cwd(), configPath); */
         /* if(_confi) */
-        config = getUlldConfig()
+        config = getUlldConfig();
     }
 
     return (
         <>
-            <InitialLoader />
+            <InitialLoader {...loader} />
             <ReduxProvider store={store}>
                 <div id="global-state-target" />
                 <Observers
