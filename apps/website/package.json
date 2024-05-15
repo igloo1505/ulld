@@ -79,6 +79,7 @@
     "mdx-mermaid": "^2.0.0",
     "monaco-editor-webpack-plugin": "^7.1.0",
     "next": "^13.0.0",
+    "next-contentlayer": "^0.3.4",
     "postprocessing": "^6.35.4",
     "prisma": "latest",
     "raw-loader": "^4.0.2",

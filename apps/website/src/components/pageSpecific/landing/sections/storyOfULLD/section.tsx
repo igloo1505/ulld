@@ -5,9 +5,9 @@ import clsx from "clsx";
 import { useViewport } from "@ulld/hooks/useViewport";
 import { AnimatedLogoAsText } from "#/components/general/animatedLogoAsText";
 import { orderedSections } from "#/types/landingSection";
-import StoryOfULLD from "./storyOfUlld.mdx"
+/* import StoryOfULLD from "./storyOfUlld.mdx" */
 import useMeasure from "react-use-measure";
-import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
+/* import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid"; */
 
 interface StoryOfUlldSectionProps {
     sectionIndex: number
@@ -20,9 +20,9 @@ const heading = "The story of ";
 export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
     const shouldShow = useMemo(() => orderedSections.indexOf("story") === sectionIndex, [sectionIndex])
     const vp = useViewport();
-    const storyRef = useRef<HTMLElement>(null!)
+    /* const storyRef = useRef<HTMLElement>(null!) */
+    /* useMathjaxBandaid(storyRef) */
     const [ref, res] = useMeasure()
-    useMathjaxBandaid(storyRef)
     if(!shouldShow) {
         return null
     }
@@ -92,9 +92,6 @@ export const StoryOfUlldSection = ({sectionIndex}: StoryOfUlldSectionProps) => {
                         }
                 }}
             > 
-                <StoryOfULLD
-                    ref={storyRef}
-                />
             </motion.div>
         </div>
     );
