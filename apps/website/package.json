@@ -14,7 +14,8 @@
     "db:generate": "prisma generate --schema=./src/prisma/schema.prisma",
     "db:push": "prisma db push --skip-generate",
     "prisma:studio": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/apps/website/.env.local -- prisma studio --schema ./src/prisma/schema.prisma",
-    "postinstall": "echo 'give up on this on remote for now pnpm exec playwright-core install --with-deps chromium'"
+    "postinstall": "echo 'give up on this on remote for now pnpm exec playwright-core install --with-deps chromium'",
+    "vercel-build": "sudo yum install cairo-devel libjpeg-turbo-devel giflib-devel pango-devel -y"
   },
   "dependencies": {
     "@dimforge/rapier3d": "^0.12.0",
@@ -77,7 +78,7 @@
     "mathjax-full": "^3.2.2",
     "mdx-mermaid": "^2.0.0",
     "monaco-editor-webpack-plugin": "^7.1.0",
-    "next": "^13.0.0",
+    "next": "^14.2.3",
     "postprocessing": "^6.35.4",
     "prisma": "latest",
     "raw-loader": "^4.0.2",
