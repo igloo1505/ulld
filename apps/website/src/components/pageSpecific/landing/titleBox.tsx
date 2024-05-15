@@ -4,6 +4,7 @@ import { HighlightButton } from "#/components/general/inputs/highlightButton";
 import { cancelLandingTyping } from "#/lib/actions/client";
 import clsx from 'clsx'
 
+
 interface LandingPageTitleBoxProps { 
     show?: boolean
 }

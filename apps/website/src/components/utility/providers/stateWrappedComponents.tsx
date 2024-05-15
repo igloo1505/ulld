@@ -1,10 +1,9 @@
 "use client"
-import store from "#/state/store";
-import { ReduxProvider } from "@ulld/state/wrappers/ReduxProvider";
 import React, { useEffect } from "react";
 import PreBetaAlertDialog from "#/components/pageSpecific/landing/preBetaAlert";
 import { usePathname } from "next/navigation";
 import { setHeroVisibility } from "#/state/actions/dom";
+import InternalReduxProvider from "#/state/provider";
 
 interface StateWrappedComponentsProps { 
 
@@ -17,9 +16,9 @@ const StateWrappedComponents = (props: StateWrappedComponentsProps) => {
         setHeroVisibility(pn === "/")
     }, [pn])
     return (
-        <ReduxProvider store={store}>
+        <InternalReduxProvider>
             <PreBetaAlertDialog />
-        </ReduxProvider>
+        </InternalReduxProvider>
     );
 };
 

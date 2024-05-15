@@ -1,4 +1,4 @@
-import React, {  MutableRefObject, forwardRef, useEffect, useMemo } from "react";
+import React, {  MutableRefObject, useEffect, useMemo } from "react";
 import {
     AdditiveBlending,
     BufferAttribute,

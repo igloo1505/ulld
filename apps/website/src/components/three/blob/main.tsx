@@ -9,19 +9,25 @@ import _texture2 from "./assets/05.png";
 import { BlobSphere } from "./sphere";
 import { BlobStars } from "./stars";
 import { AstralBodies } from "./astralBodies";
-import { useLandingSection } from "#/components/pageSpecific/landing/useSection";
 import Nucleus from "./nucleus";
 import { OrbitingBodies } from "./orbitingBodies";
-import { LandingSection } from "#/types/landingSection";
 import { useViewport } from "@ulld/hooks/useViewport";
 import { makeBuffer } from "./utils";
 import * as buffer from "maath/buffer";
 import * as misc from "maath/misc";
+import {RootState} from '#/state/store';
+import {connect} from 'react-redux';
+
+const connector = connect((state: RootState, props: any) => ({
+    section: state.core.landingSection,
+    props: props
+}))
+
 
 /* TODO: Find way to darken the background. Right now the backdrop can't be inserted between the background and the blob. */
 
 interface NoiseyBlobProps {
-    section?: LandingSection;
+    section?: string;
     delay?: number;
     show: boolean;
     onHide: () => void;
@@ -52,8 +58,8 @@ const astralRotationAxis = new Three.Vector3(0, 1, 0).normalize();
 
 const q = new Three.Quaternion();
 
-const NoiseyBlobInternal = ({
-    section,
+const NoiseyBlobInternal = connector(({
+    section = "hero",
     show,
     isProduction = true,
     onHide,
@@ -202,12 +208,12 @@ const NoiseyBlobInternal = ({
             />
         </>
     );
-};
+});
 
-const NoiseyBlob = ({ isProduction, show, setShow }: { isProduction: boolean, show: boolean, setShow: (val: boolean) => void }) => {
+
+const NoiseyBlob = connector(({ isProduction, show, setShow, section }: { isProduction: boolean, show: boolean, setShow: (val: boolean) => void, section: string }) => {
     const [isHidden, setIsHidden] = useState(false);
     const frameLoop = useMemo(() => (!isHidden ? "always" : "never"), [isHidden]);
-    const section = useLandingSection();
     useEffect(() => {
         setShow(section === "hero");
         if (section === "hero") {
@@ -215,6 +221,11 @@ const NoiseyBlob = ({ isProduction, show, setShow }: { isProduction: boolean, sh
             document.getElementById("blobSection")?.classList.remove("inactive");
         }
     }, [section]);
+    /*     useNext13NavigationListener((url) => { */
+    /*     const sp = new URLSearchParams(typeof url === "string" ? url : url?.toString()) */
+    /*     console.log("sp: ", sp) */
+    /*     console.log("sp.get(\"section\"): ", sp.get("section")) */
+    /* }) */
 
     const onHide = () => {
         setIsHidden(true);
@@ -257,7 +268,7 @@ const NoiseyBlob = ({ isProduction, show, setShow }: { isProduction: boolean, sh
             </Canvas>
         </div>
     );
-};
+});
 
 NoiseyBlob.displayName = "NoiseyBlob";
 

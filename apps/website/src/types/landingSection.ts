@@ -1,6 +1,6 @@
 import { allFeatures } from "#/staticData/features/allFeatures"
 
-export type LandingSection = "hero" | "description"
+export type LandingSection = string
 
 
 export const landingSectionIndex: {[k in LandingSection]: number} = {

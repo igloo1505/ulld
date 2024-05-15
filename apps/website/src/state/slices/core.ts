@@ -10,10 +10,13 @@ const slice = createSlice({
         setInitialRender(state, action: PayloadAction<boolean>) {
             state.hasRendered = action.payload
         },
+        setLandingSectionState(state, action: PayloadAction<string>) {
+           state.landingSection = action.payload
+        }
     }
 })
 
 
-export const { setInitialRender } = slice.actions
+export const { setInitialRender, setLandingSectionState } = slice.actions
 export default slice.reducer
 

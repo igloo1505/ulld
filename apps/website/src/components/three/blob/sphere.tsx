@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { BackSide, DoubleSide, MeshStandardMaterial, NearestFilter, RGBAFormat, SphereGeometry, TextureLoader } from "three";
+import { BackSide, NearestFilter, SphereGeometry, TextureLoader } from "three";
 import { animated, useSpring } from "@react-spring/three";
 import { LandingSection } from "#/types/landingSection";
 import sceneBackground from "./assets/01.jpg";

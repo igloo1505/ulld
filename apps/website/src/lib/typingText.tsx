@@ -1,18 +1,27 @@
 "use client";
 import { TextUnderline } from "#/components/general/underline";
-import { useLandingSection } from "#/components/pageSpecific/landing/useSection";
 import { useEventListener } from "@ulld/hooks/useEventListener";
 import React, { useEffect, useRef, useState } from "react";
+import {RootState} from '#/state/store';
+import {connect} from 'react-redux';
+
+const connector = connect((state: RootState, props: any) => ({
+    section: state.core.landingSection,
+    props: props
+}))
+
 
 interface TypingTextProps {
     children: string;
+    section: string
     mistakes?: string[];
     speed?: number;
     underline?: string;
 }
 
-const TypingText = ({
+const TypingText = connector(({
     children,
+    section,
     mistakes = [],
     speed = 1,
     underline = "#f7f600",
@@ -21,7 +30,6 @@ const TypingText = ({
     const [isComplete, setIsComplete] = useState(false);
     const cancelled = useRef<boolean>(false)
     const abortTyping = useRef<boolean>(false);
-    const section = useLandingSection();
 
     const cancelTyping = (setCancel: boolean = false) => {
         setContent("");
@@ -114,7 +122,7 @@ const TypingText = ({
             )}
         </div>
     );
-};
+});
 
 TypingText.displayName = "TypingText";
 

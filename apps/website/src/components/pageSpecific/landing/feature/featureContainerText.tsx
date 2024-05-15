@@ -107,7 +107,7 @@ const FeatureContainerText = ({
           Title
         )}
       </motion.h2>
-      <motion.p
+      <motion.div
         className={clsx(
           "feature-animate opacity-0 origin-center text-foreground text-lg mt-4",
         )}
@@ -146,7 +146,7 @@ const FeatureContainerText = ({
           orientation={orientation}
           shouldShow={shouldShow}
         />
-      </motion.p>
+      </motion.div>
     </motion.div>
   );
 };

@@ -1,9 +1,9 @@
 "use client";
-import React, { RefObject, forwardRef, useEffect, useState } from "react";
+import React from "react";
 import FeatureContainer from "../feature/featureContainer";
 import { allFeatures } from "#/staticData/features/allFeatures";
 import { StoryOfUlldSection } from "../sections/storyOfULLD/section";
-import { CompleteAnimRef } from "./descriptionLogoTitleBox";
+
 
 interface Props {
     sectionIndex: number
@@ -11,9 +11,8 @@ interface Props {
     titleReady: boolean
 }
 
-export const DescriptionSection = forwardRef(({ sectionIndex: idx, top = 76, titleReady = false }: Props) => {
 
-
+export const DescriptionSection = ({ sectionIndex: idx, top = 76, titleReady = false }: Props) => {
 
     return (
         <section
@@ -41,6 +40,6 @@ export const DescriptionSection = forwardRef(({ sectionIndex: idx, top = 76, tit
             />
         </section>
     );
-});
+};
 
 DescriptionSection.displayName = "DescriptionSection";

@@ -11,6 +11,7 @@ dist-ssr
 server/dist
 public/dist
 apps/ulld-storybook/storybook-static
+.env.remote
 
 *storybook.log
 /apps/storybook/storybook-static

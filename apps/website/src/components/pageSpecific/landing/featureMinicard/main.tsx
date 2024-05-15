@@ -49,7 +49,7 @@ const MiniFeatureCard = ({
         >
             {Icon}
             <h3 className={"font-bold text-xl select-none cursor-default"}>{title}</h3>
-            <p className={"text-sm flex-grow pr-6 select-none cursor-default"}>{desc}</p>
+            <div className={"text-sm flex-grow pr-6 select-none cursor-default"}>{desc}</div>
             <div className={"w-full flex flex-row justify-end items-center h-[20px]"}>
                 {_href && (
                     <Link
