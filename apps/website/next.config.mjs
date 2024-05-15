@@ -195,7 +195,7 @@ const config = withMDX(
                 resolveAlias: {
                     canvas: "./empty-module.ts",
                 },
-            },
+            }
         },
         onDemandEntries: {
             maxInactiveAge: 10 * 1000,
