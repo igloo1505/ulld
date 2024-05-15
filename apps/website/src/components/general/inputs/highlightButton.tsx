@@ -4,8 +4,6 @@ import { cn } from "@ulld/utilities/cn";
 import Link from "next/link";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { LandingSection } from "#/types/landingSection";
-import { useSearchParams } from "next/navigation";
 
 type Direction = "top" | "left" | "bottom" | "right";
 
@@ -15,6 +13,7 @@ interface HighlightButtonProps {
     className?: string;
     clockwise?: boolean;
     duration?: number;
+    show: boolean
     _onClick?: () => void
 }
 
@@ -29,8 +28,7 @@ const movingMap: Record<Direction, string> = {
         "radial-gradient(16.2% 41.199999999999996% at 100% 50%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
 };
 
-const highlight =
-    "radial-gradient(75% 181.15942028985506% at 50% 50%, #3275F8 0%, rgba(255, 255, 255, 0) 100%)";
+const highlight = "radial-gradient(75% 181.15942028985506% at 50% 50%, #3275F8 0%, rgba(255, 255, 255, 0) 100%)";
 
 export const HighlightButton = ({
     children,
@@ -38,24 +36,13 @@ export const HighlightButton = ({
     _onClick: onClick,
     clockwise: _clockwise = true,
     duration = 1,
+    show,
     ...props
 }: HighlightButtonProps) => {
     const [hovered, setHovered] = useState(false);
     const [direction, setDirection] = useState<Direction>("top");
     const [clockwise, setClockwise] = useState(_clockwise);
-    const sp = useSearchParams();
-    const section = sp.get("section") || "hero";
-    const [show, setShow] = useState(section === "hero");
-
-    useEffect(() => {
-        if (section !== "hero") {
-            setShow(false);
-        } else {
-            setTimeout(() => {
-                setShow(true);
-            }, 500);
-        }
-    }, [section]);
+    console.log("movingMap[direction] : ", movingMap[direction] )
 
     const rotateDirection = (currentDirection: Direction): Direction => {
         const directions: Direction[] = ["top", "left", "bottom", "right"];
@@ -69,7 +56,7 @@ export const HighlightButton = ({
     useEffect(() => {
         if (!hovered) {
             const interval = setInterval(() => {
-                setDirection((prevState) => rotateDirection(prevState));
+                setDirection(rotateDirection);
             }, duration * 1000);
             setClockwise(!clockwise);
             return () => clearInterval(interval);

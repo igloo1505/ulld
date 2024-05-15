@@ -1,7 +1,11 @@
 import Script, { ScriptProps } from "next/script"
 
 
-export const MathjaxSvgLoader = () => <Script id="mathjax-script" src="/utils/tex-mml-svg.js" strategy="lazyOnload" />
+export const MathjaxSvgLoader = () => <Script
+    id="mathjax-script" 
+    src="/utils/tex-mml-svg.js"
+    strategy="lazyOnload"
+/>
 
 export const MathjaxChtmlLoader = () => {
     return <Script

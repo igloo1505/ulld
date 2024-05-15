@@ -10,8 +10,6 @@ import {
 } from "@ulld/utilities/initialLoader";
 import { cookies } from "next/headers";
 import { getSettings } from "../actions/getSettings";
-import fs from "fs";
-import path from "path";
 import { ParsedAppConfig } from "@ulld/configschema/types";
 import { getUlldConfig } from "@ulld/developer/utils";
 import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";

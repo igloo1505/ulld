@@ -14,9 +14,11 @@ export type InitialLoaderProps = {
 export const InitialLoader = ({ requireJs = true, latex = true, mathjax = "both" }: InitialLoaderProps) => {
     return (
         <>
-            <RequireJsLoader />
-            <MathjaxLoader />
-            <SvgLatexLoader />
+            {requireJs && <RequireJsLoader />}
+            {latex && <SvgLatexLoader />}
+            <MathjaxLoader
+                type={mathjax}
+            />
         </>
     )
 }

@@ -32,10 +32,10 @@ export const LandingSubTitle = ({ className }: Props) => {
           <TypingText
             speed={2}
             mistakes={[
-              "students",
-              "cooks",
-              "creators",
-              "entrepreneurs",
+              /* "students", */
+              /* "cooks", */
+              /* "creators", */
+              /* "entrepreneurs", */
               "academics",
             ]}
           >

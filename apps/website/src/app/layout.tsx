@@ -11,8 +11,6 @@ import { fontSans } from "@ulld/tailwind/defaultFont";
 import localFont from "next/font/local";
 import SetInitialRender from "#/components/utility/setInitialRender";
 import StateWrappedComponents from "#/components/utility/providers/stateWrappedComponents";
-import store from "#/state/store";
-/* import "shiki/themes/dracula.mjs" */
 
 const appFont = localFont({
     variable: "--ulld-app-font",

@@ -17,6 +17,9 @@ const tailwindCfg: Config = {
   ],
   theme: {
     extend: {
+      transitionDelay: {
+        "400": "400ms",
+      },
       fontFamily: {
         sans: ["var(--ulld-app-font)"],
       },
