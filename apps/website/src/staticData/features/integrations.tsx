@@ -42,7 +42,7 @@ export const integrationsFeature: FeaturedContainerPropsRequired = {
                     With{" "}
                     <span
                         className={
-                            "underline decoration-2 underline-offset-4 decoration-yellow-500"
+                            "underline decoration-2 underline-offset-4 decoration-yellow-400"
                         }
                     >
                         day 1

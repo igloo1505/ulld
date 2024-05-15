@@ -110,7 +110,7 @@ const TypingText = connector(
                             key="text-underline"
                             width={"40"}
                             className={
-                                "absolute right-[-2px] top-[3vw] md:top-[1.25rem] origin-right w-[8ch] h-6 [&_path]:text-yellow-500 [&_path]:fill-yellow-500"
+                                "absolute right-[-2px] top-[3vw] md:top-[1.25rem] origin-right w-[8ch] h-6 [&_path]:text-yellow-400 [&_path]:fill-yellow-400"
                             }
                             color={underline}
                         />
