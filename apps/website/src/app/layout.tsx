@@ -8,7 +8,6 @@ import React from "react";
 import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI";
 import { Toaster } from "@ulld/tailwind/toaster";
 import { fontSans } from "@ulld/tailwind/defaultFont";
-/* import appConfig from "#/appConfig.ulld.json"; */
 import localFont from "next/font/local";
 import SetInitialRender from "#/components/utility/setInitialRender";
 import StateWrappedComponents from "#/components/utility/providers/stateWrappedComponents";
@@ -133,7 +132,10 @@ const RootLayout = async (props: {
         <Toaster />
         {props.modal && props.modal}
         <SetInitialRender />
-        <StateWrappedUI store={store} />
+        <StateWrappedUI 
+                    store={store}
+                    ignoreConfig
+                />
         <StateWrappedComponents />
       </body>
     </html>

@@ -221,11 +221,6 @@ const NoiseyBlob = connector(({ isProduction, show, setShow, section }: { isProd
             document.getElementById("blobSection")?.classList.remove("inactive");
         }
     }, [section]);
-    /*     useNext13NavigationListener((url) => { */
-    /*     const sp = new URLSearchParams(typeof url === "string" ? url : url?.toString()) */
-    /*     console.log("sp: ", sp) */
-    /*     console.log("sp.get(\"section\"): ", sp.get("section")) */
-    /* }) */
 
     const onHide = () => {
         setIsHidden(true);
@@ -240,7 +235,7 @@ const NoiseyBlob = connector(({ isProduction, show, setShow, section }: { isProd
         >
             <Canvas
                 className={"block w-full h-full"}
-                dpr={window?.devicePixelRatio}
+                dpr={typeof window === "undefined" ? undefined : window?.devicePixelRatio}
                 frameloop={frameLoop}
                 gl={{
                     powerPreference: isProduction ? "high-performance" : undefined,

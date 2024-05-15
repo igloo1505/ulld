@@ -10,6 +10,7 @@ import { getSettings } from "../actions/getSettings";
 import fs from "fs";
 import path from "path";
 import { ParsedAppConfig } from "@ulld/configschema/types";
+import {getUlldConfig} from "@ulld/developer/utils"
 import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
 
 /* FIX: These are missing from the complete app. Add them back once the sandbox is working. */
@@ -18,15 +19,15 @@ import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
 /* <CommandPalettePopover /> */
 /* <ConfirmationModal /> */
 
-const configPath = "appConfig.ulld.json";
-
 /* NOTE: Children should only used in development for now. */
 export const StateWrappedUI = async ({
     children,
     ignoreConfig = false,
+    store
 }: {
     children?: React.ReactNode;
     ignoreConfig?: boolean;
+    store?: ToolkitStore
 }) => {
     const cookieJar = cookies();
     const settings = await getSettings();
@@ -35,20 +36,15 @@ export const StateWrappedUI = async ({
     const themeCookie = cookieJar.get("theme");
     let config: ParsedAppConfig | null = null;
     if (!ignoreConfig) {
-        const _config = path.join(process.cwd(), configPath);
-        const configContent = await fs.promises.readFile(_config, {
-            encoding: "utf-8",
-        });
-        if (!configContent) {
-            throw new Error(`No config was found at ${_config}.`);
-        }
-        config = JSON.parse(configContent) as ParsedAppConfig;
+        /* const _config = path.join(process.cwd(), configPath); */
+        /* if(_confi) */
+        config = getUlldConfig()
     }
 
     return (
         <>
             <InitialLoader />
-            <ReduxProvider findOverride>
+            <ReduxProvider store={store}>
                 <div id="global-state-target" />
                 <Observers
                     settings={settings}

@@ -114,6 +114,7 @@
     "@ulld/utilities": "workspace:*",
     "@ulld/tailwind": "workspace:*",
     "@ulld/hooks": "workspace:*",
+    "@ulld/developer": "workspace:*",
     "chai": "^5.1.0",
     "cypress": "^13.7.1",
     "eslint-plugin-jest-dom": "^5.2.0",

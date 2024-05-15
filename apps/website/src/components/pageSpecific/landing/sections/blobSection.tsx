@@ -1,8 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import NoiseyBlob from "#/components/three/blob/main";
 import { LandingPageTitleBox } from "../titleBox";
 import InternalReduxProvider from "#/state/provider";
+import dynamic from "next/dynamic";
+const NoiseyBlob = dynamic(() => import("#/components/three/blob/main"), {
+    ssr: false
+})
 
 interface BlobSectionProps {
   isProduction: boolean;

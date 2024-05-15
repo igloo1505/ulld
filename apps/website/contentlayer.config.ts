@@ -1,0 +1,185 @@
+import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import remarkMath from "remark-math";
+import remarkGfm from "remark-gfm";
+import rehypeMathjax from "rehype-mathjax/chtml.js";
+import rehypePrettyCode from "rehype-pretty-code";
+import emoji from "remark-emoji";
+import rehypeSlug from "rehype-slug";
+import rehypeVideo from "rehype-video";
+import rehypeMermaid from "rehype-mermaid";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import { mathOptions, mermaidConfig } from '@ulld/utilities/defaults/markdownUniversalOptions';
+
+
+const contentRoot = "./src/mdx"
+
+export const PrivacyPolicy = defineDocumentType(() => ({
+    name: 'PrivacyPolicy',
+    filePathPattern: `legal/privacyPolicy.mdx`,
+    fields: {
+        title: { type: 'string', required: false },
+        lastUpdated: { type: 'date', required: false },
+    },
+    computedFields: {
+        // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
+    },
+    contentType: "mdx"
+}))
+
+export const AboutUs = defineDocumentType(() => ({
+    name: 'AboutUs',
+    filePathPattern: `brand/aboutUs.mdx`,
+    fields: {
+        title: { type: 'string', required: false },
+        lastUpdated: { type: 'date', required: false },
+    },
+    computedFields: {
+        // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
+    },
+    contentType: "mdx"
+}))
+
+
+export const StoryOfULLD = defineDocumentType(() => ({
+    name: 'StoryOfULLD',
+    filePathPattern: `brand/storyOfUlld.mdx`,
+    fields: {
+        title: { type: 'string', required: false },
+        lastUpdated: { type: 'date', required: false },
+    },
+    computedFields: {
+        // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
+    },
+    contentType: "mdx"
+}))
+
+
+export const MyNotes = defineDocumentType(() => ({
+    name: 'MyNotes',
+    filePathPattern: `myNotes/**.mdx`,
+    fields: {
+        title: { type: 'string', required: false },
+        lastUpdated: { type: 'date', required: false },
+    },
+    computedFields: {
+        // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
+    },
+    contentType: "mdx"
+}))
+
+export const Tos = defineDocumentType(() => ({
+    name: 'TermsOfService',
+    filePathPattern: `legal/termsOfService.mdx`,
+    fields: {
+        title: { type: 'string', required: false },
+        lastUpdated: { type: 'date', required: false },
+    },
+    computedFields: {
+        // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
+    },
+    contentType: "mdx"
+}))
+
+
+export const CancelSubscriptionPrompt = defineDocumentType(() => ({
+    name: 'CancelSubscriptionPrompt',
+    filePathPattern: `legal/cancelSubscriptionPrompt.mdx`,
+    fields: {
+        title: { type: 'string', required: false },
+        lastUpdated: { type: 'date', required: false },
+    },
+    computedFields: {
+        // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
+    },
+    contentType: "mdx"
+}))
+
+export const RefundPolicy = defineDocumentType(() => ({
+    name: 'RefundPolicy',
+    filePathPattern: `legal/refundPolicy.mdx`,
+    fields: {
+        title: { type: 'string', required: false },
+        lastUpdated: { type: 'date', required: false },
+    },
+    computedFields: {
+        // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
+    },
+    contentType: "mdx"
+}))
+
+
+export const Documentation = defineDocumentType(() => ({
+    name: 'Documentation',
+    filePathPattern: `docs/*.mdx`,
+    fields: {
+        title: { type: 'string', required: false },
+        lastUpdated: { type: 'date', required: false },
+        category: { type: "string", required: true }
+    },
+    computedFields: {
+        // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
+    },
+    contentType: "mdx"
+}))
+
+
+
+export default makeSource({
+    contentDirPath: contentRoot,
+    documentTypes: [
+        PrivacyPolicy,
+        Tos,
+        RefundPolicy,
+        AboutUs,
+        MyNotes,
+        StoryOfULLD,
+        Documentation,
+        CancelSubscriptionPrompt
+    ],
+    mdx: {
+        remarkPlugins: [remarkMath, remarkGfm, [emoji as any, {}]],
+        rehypePlugins: [
+            [rehypeMermaid as any, mermaidConfig],
+            [
+                rehypeVideo as any,
+                {
+                    test: /\/(.*)(.mp4|.mov|.webm)$/,
+                    details: false,
+                },
+            ],
+            [rehypeMathjax, mathOptions],
+            [
+                /* @ts-ignore */
+                rehypePrettyCode,
+                {
+                    keepBackground: false,
+                    theme: {
+                        light: "material-theme-lighter",
+                        dark: "dracula",
+                    },
+                    onVisitLine(node: any) {
+                        if (node.children.length === 0) {
+                            node.children = [{ type: "text", value: " " }];
+                        }
+                    },
+                    onVisitHighlightedLine(node: any) {
+                        node.properties.className.push("line--highlighted");
+                    },
+                    onVisitHighlightedWord(node: any) {
+                        node.properties.className = ["word--highlighted"];
+                    },
+                },
+            ],
+            [
+                rehypeAutolinkHeadings,
+                {
+                    properties: {
+                        className: ["subheading-anchor"],
+                        ariaLabel: "Link to section",
+                    },
+                },
+            ],
+            rehypeSlug,
+        ],
+    }
+})
