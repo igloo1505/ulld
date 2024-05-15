@@ -1,4 +1,3 @@
-"use server"
 import type {cookies} from "next/headers"
 import {ThemeOptions} from "./themeUtils"
 import { NextResponse } from "next/dist/server/web/spec-extension/response"
