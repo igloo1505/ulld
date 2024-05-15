@@ -78,7 +78,7 @@
     "mathjax-full": "^3.2.2",
     "mdx-mermaid": "^2.0.0",
     "monaco-editor-webpack-plugin": "^7.1.0",
-    "next": "^14.2.3",
+    "next": "^13.0.0",
     "postprocessing": "^6.35.4",
     "prisma": "latest",
     "raw-loader": "^4.0.2",
