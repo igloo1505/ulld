@@ -19,5 +19,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".contentlayer/generated"
+  ],
+  "ignore": [
+      "next.config.mjs"
   ]
 }
