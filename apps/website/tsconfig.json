@@ -7,7 +7,9 @@
       "#/*": [
         "./src/*"
       ],
-    "contentlayer/generated": ["./.contentlayer/generated"]
+    "contentlayer/generated": ["./.contentlayer/generated"],
+    "mdx/*": ["./src/mdx/*"]
+
     },
     "incremental": true
   },

@@ -1,6 +1,6 @@
 import React from "react";
 import Content from "./pageContent.mdx";
-import EmojiTable from "#/docs/emojiTable.mdx";
+import EmojiTable from "mdx/docs/emojiTable.mdx";
 
 interface UserComponentDocumentationPageProps {}
 
