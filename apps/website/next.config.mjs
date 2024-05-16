@@ -10,7 +10,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
 import rehypeMermaid from "rehype-mermaid";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { withContentlayer } from "next-contentlayer";
+import { withContentlayer } from "next-contentlayer/dist/index-cjs";
 // import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
 
 // import dotenv from "dotenv";
