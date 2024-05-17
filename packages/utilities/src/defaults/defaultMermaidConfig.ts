@@ -1,4 +1,4 @@
-import { MermaidConfig } from "mermaid"
+// import { MermaidConfig } from "mermaid"
 
 export interface MermaidConfigType {
     output: "svg" | "ast"
@@ -6,7 +6,7 @@ export interface MermaidConfigType {
         dark?: string
         light?: string
     }
-    mermaid: MermaidConfig
+    mermaid: any
 }
 
 

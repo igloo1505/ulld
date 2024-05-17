@@ -1,24 +1,24 @@
 {
-  "name": "@ulld/calendar",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
-    "build": "echo 'Add build script here'",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'"
-  },
-  "dependencies": {
-    "ical.js": "^2.0.0",
-    "@ulld/developer": "workspace:*"
-  },
-  "devDependencies": {
-    "dayjs": "^1.11.10",
-    "use-lilius": "^2.0.5"
-  },
-  "peerDependencies": {
-    "dayjs": "^1.11.10",
-    "use-lilius": "^2.0.5"
-  },
-  "packageManager": "pnpm@9.1.1"
+    "name": "@ulld/calendar",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
+        "build": "echo 'Add build script here'",
+        "test": "echo 'Add test script here'",
+        "lint": "echo 'Add lint script here'"
+    },
+    "dependencies": {
+        "ical.js": "^2.0.0",
+        "@ulld/developer": "workspace:*"
+    },
+    "devDependencies": {
+        "dayjs": "^1.11.10",
+        "use-lilius": "^2.0.5"
+    },
+    "peerDependencies": {
+        "dayjs": "^1.11.10",
+        "use-lilius": "^2.0.5"
+    },
+    "packageManager": "pnpm@9.1.1"
 }

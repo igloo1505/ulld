@@ -2,16 +2,28 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@repo/typescript-config/nextjs.json",
   "compilerOptions": {
-  "baseUrl": ".",
+    "baseUrl": ".",
     "paths": {
       "#/*": [
         "./src/*"
       ],
-    "contentlayer/generated": ["./.contentlayer/generated"],
-    "mdx/*": ["./src/mdx/*"],
-    "staticContent": ["./src/staticData/staticContent.json"]
+      "contentlayer/generated": [
+        "./.contentlayer/generated"
+      ],
+      "mdx/*": [
+        "./src/mdx/*"
+      ],
+      "staticContent": [
+        "./src/staticData/staticContent.json"
+      ]
     },
-    "incremental": true
+    "incremental": true,
+    "moduleResolution": "node",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
@@ -21,6 +33,6 @@
     ".contentlayer/generated"
   ],
   "ignore": [
-      "next.config.mjs"
+    "next.config.mjs"
   ]
 }

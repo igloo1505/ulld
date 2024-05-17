@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 
 export interface FooterBannerProps {
     content: ReactNode;
@@ -7,15 +8,36 @@ export interface FooterBannerProps {
 }
 
 interface Props {
+    initialDelay?: number
     banners: FooterBannerProps[];
     inView: boolean
 }
 
-const Banner = ({ item }: { item: FooterBannerProps, idx: number }) => {
-    return <div className={clsx("text-sm text-center", item.className)}>{item.content}</div>;
+type T = { item: FooterBannerProps, idx: number, initialDelay?: number } & Pick<Props, "initialDelay" | 'inView'>
+
+const Banner = ({ item, idx, initialDelay = 2.5 }: T) => {
+    return <motion.div 
+        className={clsx("text-sm text-center", item.className)}
+        initial={{
+            y: -100,
+            opacity: 0
+        }}
+        whileInView={{
+            y: 1,
+            opacity: 1,
+        }}
+        transition={{
+            delay: initialDelay + idx * 0.15,
+        }}
+        viewport={{
+            once: true
+        }}
+    >
+        {item.content}
+    </motion.div>;
 };
 
-const FooterBanners = ({ banners, inView }: Props) => {
+const FooterBanners = ({ banners, inView, initialDelay }: Props) => {
     return (
         <div
             className={
@@ -23,7 +45,7 @@ const FooterBanners = ({ banners, inView }: Props) => {
             }
         >
             {banners.map((item, i) => (
-                <Banner item={item} key={i} idx={i} />
+                <Banner item={item} key={i} idx={i} inView={inView} initialDelay={initialDelay} />
             ))}
         </div>
     );

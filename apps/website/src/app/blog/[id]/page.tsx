@@ -17,19 +17,6 @@ const BlogArticlePage = ({ params: { id } }: BlogArticlePageProps) => {
     if (!article) return notFound();
     return (
         <>
-            <ArticleJsonLd
-                type="BlogPosting"
-                url={`${staticContent.links.home}/blog`}
-                title={`Uh Little Less Dum: ${article.title}`}
-                description={article.description}
-                author={article.author || staticContent.blog.defaultAuthor}
-                datePublished={article.created}
-                dateModified={article.updated}
-                publisherName={staticContent.blog.publisherName}
-                publisherLogo={staticContent.links.media.logo}
-                useAppDir
-                isAccessibleForFree
-            />
             <MDXArticle mdx={article} />
         </>
     );

@@ -22,7 +22,7 @@ interface LinkGroupProps {
 const LinkGroup = ({ items, title, inView, idx }: LinkGroupProps) => {
     const initialDelay = idx * 0.45
     return (
-        <div className={"w-full h-fit flex flex-col justify-center lg:justify-start items-center"}>
+        <div className={"w-fit h-fit flex flex-col justify-center lg:justify-start items-start"}>
             <motion.h4
                 className={"text-lg capitalize"}
                         animate={inView ? "show" : "hide"}
@@ -42,7 +42,7 @@ const LinkGroup = ({ items, title, inView, idx }: LinkGroupProps) => {
                     delay: initialDelay
                 }}
             >{title}</motion.h4>
-            <div className={"flex flex-col justify-center items-center gap-2"}>
+            <div className={"flex flex-col justify-center items-start gap-2"}>
                 {items.map((itemProps, itemIndex) => {
                     return <MotionLink
                         {...itemProps}

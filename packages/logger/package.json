@@ -1,23 +1,25 @@
 {
-  "name": "@ulld/logger",
-  "version": "0.0.0",
-  "private": true,
-  "types": "./src/index.ts",
-  "exports": {
-    "./server": "./src/server/logger.ts",
-    "./client": "./src/client/logger.ts"
-  },
-  "scripts": {
-    "dev": "echo 'Add dev script here'",
-    "build": "echo 'Add build script here'",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'"
-  },
-  "dependencies": {
-    "chalk": "^5.3.0",
-    "colors": "^1.4.0",
-    "dayjs": "^1.11.9",
-    "zod": "^3.22.4"
-  },
-  "packageManager": "pnpm@9.1.1"
+    "name": "@ulld/logger",
+    "version": "0.0.0",
+    "private": true,
+    "types": "./src/index.ts",
+    "exports": {
+        "./server": "./src/server/logger.ts",
+        "./client": "./src/client/logger.ts"
+    },
+    "scripts": {
+        "dev": "echo 'Add dev script here'",
+        "build": "echo 'Add build script here'",
+        "test": "echo 'Add test script here'",
+        "lint": "echo 'Add lint script here'"
+    },
+    "dependencies": {
+        "chalk": "^5.3.0",
+        "colors": "^1.4.0",
+        "dayjs": "^1.11.9",
+        "zod": "^3.22.4"
+    },
+    "packageManager": "pnpm@9.1.1",
+    "peerDependencies": {},
+    "devDependencies": {}
 }

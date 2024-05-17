@@ -10,7 +10,6 @@ import { MdxInput } from "@ulld/embeddable-components/components/mdxInput";
 import BlockQuote from "@ulld/embeddable-components/components/blockQuote";
 import { Highlight } from "@ulld/embeddable-components/components/client/hl";
 import { ImgComponent } from "@ulld/embeddable-components/components/img";
-import { InternalMermaid } from "@ulld/embeddable-components/components/internalMermaid";
 import { H1, H2, H3, H4, H5, H6 } from "@ulld/embeddable-components/components/heading";
 
 
@@ -32,7 +31,6 @@ export const components: MDXComponents = {
     blockquote: BlockQuote,
     mark: Highlight,
     img: ImgComponent,
-    Mermaid: InternalMermaid,
 }
 
 

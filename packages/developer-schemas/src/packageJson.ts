@@ -14,7 +14,7 @@ export const ulldCompletePackageJsonSchema = z.object({
     exports: z.record(z.string(), z.string()).optional(),
     files: z.string().array().optional().default(["src"]),
     dependencies: z.record(z.string(), z.string()),
-    packageManager: z.string().optional().default("pnpm@9.1.1"),
+    packageManager: z.string().optional().default("pnpm@8.1.1"),
     devDependencies: z.record(z.string(), z.string()).optional(),
     peerDependencies: z.record(z.string(), z.string()).optional(),
     peerDependenciesMeta: z.any().optional(),

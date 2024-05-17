@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
+import { ConditionalComponentQuery } from "../types";
 const Admonition = dynamic(() => import("@ulld/embeddable-components/components/client/admonition").then((a) => a.Admonition))
-const NotebookCell = dynamic(() => import("@ulld/embeddable-components/components/client/jupyterCell").then((a) => a.NotebookCell))
 // // const JupyterConsole = dynamic(() => import("../jupyter/console/index"))
 // const Pdf = dynamic(() => import("../functionality/pdf/MdxPdfView"))
 const TabGroup = dynamic(() => import("@ulld/embeddable-components/components/client/tabGroup").then((a) => a.TabGroup))
@@ -57,7 +57,7 @@ export type EmbeddableClientComponents = typeof Admonition | typeof NotebookCell
 
 
 
-export const conditionalClientComponents: ConditionalComponentQuery[] = [
+export const conditionalClientComponents: ConditionalComponentQuery<EmbeddableClientComponents>[] = [
         // Layout stuff
         { regex: new RegExp(`<Grid`), component: Grid, label: "Grid" },
         { regex: new RegExp(`<GridItem`), component: GridItem, label: "GridItem" },
@@ -84,7 +84,6 @@ export const conditionalClientComponents: ConditionalComponentQuery[] = [
         { regex: new RegExp(`<EqRef`), component: EqRef, label: "EqRef" },
         { regex: new RegExp(`<EquationTag`), component: EquationTag, label: "EquationTag" },
         // Jupyter
-        { regex: new RegExp(`<Cell`), component: NotebookCell, label: "Cell" },
         // 3D
         { regex: new RegExp(`<ModelView`), component: ModelView, label: "ModelView" },
         // Media components

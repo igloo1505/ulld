@@ -35,7 +35,7 @@
                 },
                 "packageManager": {
                     "type": "string",
-                    "default": "pnpm@9.1.1"
+                    "default": "pnpm@8.1.1"
                 },
                 "devDependencies": {
                     "type": "object",

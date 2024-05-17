@@ -18,7 +18,7 @@ const Footer = (props: FooterProps) => {
     const ref = useRef<HTMLDivElement>(null!);
     const inView = useInView(ref, {once: true});
     return (
-        <div className={clsx("group/footer flex flex-col justify-center items-center gap-6 mt-20 px-12 pb-8 pt-6 border-t", (footerLinks.banners && footerLinks.banners.length > 0) && "withBanners")}>
+        <div className={clsx("group/footer max-w-content flex flex-col justify-center items-center gap-6 mt-20 px-12 pb-8 pt-6 border-t", (footerLinks.banners && footerLinks.banners.length > 0) && "withBanners")}>
             <div
                 ref={ref}
                 className={
@@ -59,7 +59,7 @@ const Footer = (props: FooterProps) => {
                     </div>
                 </div>
                 <div
-                    className={"grid w-full gap-6 mt-6 lg:mt-0"}
+                    className={"flex flex-row justify-around items-start w-full gap-6 mt-6 lg:mt-0 lg:ml-6"}
                     style={{
                         gridTemplateColumns: `repeat(${footerKeys.length}, 1fr)`,
                     }}

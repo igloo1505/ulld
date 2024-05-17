@@ -11,14 +11,12 @@ import { MdxInput } from "@ulld/embeddable-components/components/mdxInput";
 import BlockQuote from "@ulld/embeddable-components/components/blockQuote";
 import { Highlight } from "@ulld/embeddable-components/components/client/hl";
 import { ImgComponent } from "@ulld/embeddable-components/components/img";
-import { InternalMermaid } from "@ulld/embeddable-components/components/internalMermaid";
 import { H1, H2, H3, H4, H5, H6 } from "@ulld/embeddable-components/components/heading";
 import { ConditionalComponentQuery } from "../types";
 import { getBaseComponents } from "../utils";
 
 
-
-export const components: MDXComponents = {
+export const components: any = {
     h1: H1,
     h2: H2,
     h3: H3,
@@ -34,8 +32,7 @@ export const components: MDXComponents = {
     table: TableWrapper,
     blockquote: BlockQuote,
     mark: Highlight,
-    img: ImgComponent,
-    Mermaid: InternalMermaid,
+    img: ImgComponent as any,
 }
 
 
