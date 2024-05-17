@@ -9,11 +9,11 @@ export const allMiniFeatures: MiniFeature[] = [
         title: "A Second Brain",
         desc: <div>One of the primary inspirations for <LogoAsText fontSize={13} /> was the lack of all-in-one academic note taking. <LogoAsText fontSize={13} /> puts organization first, with several methods for ogranizing your notes so you can always find what you're looking for.</div>,
         icon: "search",
-        seeMoreHref: staticData.documentationLinks.internal.organization
+        seeMoreHref: staticData.links.docs.internal.organization
     },
     {
         title: "Interactive Plotting",
-        desc: <div>With support for multiple plotting libraries on day 1, you can visualize your data with only <span className={"font-bold"}>MDX</span>. Familiar with <a href={staticData.documentationLinks.external.python} className={"font-bold text-link"}>Python</a>? Embed <a href={staticData.documentationLinks.external.jupyter} className={"font-bold text-link"}>Jupyter</a> cells directly in your notes and create your own visualizations.</div>,
+        desc: <div>With support for multiple plotting libraries on day 1, you can visualize your data with only <span className={"font-bold"}>MDX</span>. Familiar with <a href={staticData.links.docs.external.python} className={"font-bold text-link"}>Python</a>? Embed <a href={staticData.links.docs.external.jupyter} className={"font-bold text-link"}>Jupyter</a> cells directly in your notes and create your own visualizations.</div>,
         icon: "line-chart",
         featureKey: "plotting"
     },

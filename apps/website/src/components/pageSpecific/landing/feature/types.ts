@@ -1,4 +1,4 @@
-import { LandingSection } from "#/types/landingSection"
+import { ForwardRefComponent } from "framer-motion"
 import { FC, ReactNode } from "react"
 
 export const initialFeatureTimeout = 3000
@@ -18,7 +18,7 @@ type FCProps = {
 }
 
 type FeatureFCField = FC<FCProps>
-type FeatureFCFieldNoAnim = FC<FCProps>
+type FeatureFCFieldNoAnim = ForwardRefComponent<HTMLDivElement, FCProps>
 
 export interface FeatureContainerProps {
     title: NonNullable<ReactNode> | FeatureFCField
@@ -31,11 +31,8 @@ export interface FeatureContainerProps {
     override?: FeatureFCFieldNoAnim
     expandDisplay?: boolean
     spaceEven?: boolean
-    idx: number
     displayContainerClasses?: string
-    sectionIndex: number
-    top: number
 }
 
 
-export type FeaturedContainerPropsRequired = Omit<FeatureContainerProps, "idx" | "orientation" | "sectionIndex" | "top">
+export type FeaturedContainerPropsRequired = Omit<FeatureContainerProps, "idx" | "orientation" | "top">

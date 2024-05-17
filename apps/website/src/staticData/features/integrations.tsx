@@ -1,3 +1,4 @@
+"use client"
 import { LogoAsText } from "#/components/general/logoAsText";
 import { FeatureDescContainer } from "#/components/pageSpecific/landing/feature/featureDescContainer";
 import { FeaturedContainerPropsRequired } from "#/components/pageSpecific/landing/feature/types";
@@ -6,6 +7,8 @@ import { buttonVariants } from "@ulld/tailwind/button";
 import clsx from 'clsx'
 import Link from "next/link";
 import { TechIconLink } from "./featureAssets/communityTechIcons/techIconLink";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 
 export const integrationsFeature: FeaturedContainerPropsRequired = {
@@ -21,7 +24,7 @@ export const integrationsFeature: FeaturedContainerPropsRequired = {
             </span>
         );
     },
-    title: ({ shouldShow }) => {
+    title: () => {
         return (
             <div
                 className={
@@ -30,7 +33,7 @@ export const integrationsFeature: FeaturedContainerPropsRequired = {
             >
                 An integral part of{" "}
                 <span className={"pl-1 inline-block w-16"}>
-                    <AnimatedUlldLogo show={shouldShow} height={32} speed={2} />
+                    <AnimatedUlldLogo show={true} height={32} speed={2} />
                 </span>
             </div>
         );
@@ -58,7 +61,7 @@ export const integrationsFeature: FeaturedContainerPropsRequired = {
             </FeatureDescContainer>
         );
     },
-    component: ({ shouldShow }) => {
+    component: ({shouldShow: isInView}) => {
         const techIconClasses = "max-w-full max-h-full h-full w-auto md:w-full [&>img]:h-full [&>img]:w-auto md:[&>img]:w-[5vw] md:[&>img]:h-auto inline-block"
         return (
             <div
@@ -67,25 +70,25 @@ export const integrationsFeature: FeaturedContainerPropsRequired = {
                 }
             >
                 <TechIconLink
-                    show={shouldShow}
+                    show={isInView}
                     index={1}
                     className={techIconClasses}
                     icon="jupyter"
                 />
                 <TechIconLink
-                    show={shouldShow}
+                    show={isInView}
                     index={2}
                     className={techIconClasses}
                     icon="mdx"
                 />
                 <TechIconLink
-                    show={shouldShow}
+                    show={isInView}
                     index={3}
                     className={techIconClasses}
                     icon="latex"
                 />
                 <TechIconLink
-                    show={shouldShow}
+                    show={isInView}
                     index={4}
                     className={techIconClasses}
                     icon="googleCalendar"

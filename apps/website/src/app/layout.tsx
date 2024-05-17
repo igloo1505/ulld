@@ -11,6 +11,9 @@ import { fontSans } from "@ulld/tailwind/defaultFont";
 import localFont from "next/font/local";
 import SetInitialRender from "#/components/utility/setInitialRender";
 import StateWrappedComponents from "#/components/utility/providers/stateWrappedComponents";
+import Navbar from "#/components/layouts/navbar/main";
+import Footer from "#/components/layouts/footer/main";
+import DefaultSeo from "#/components/utility/seo/root";
 
 const appFont = localFont({
     variable: "--ulld-app-font",
@@ -82,7 +85,7 @@ const RootLayout = async (props: {
         <html
             lang="en"
             className={clsx(
-                "group/html js-focus-visible dark border-border",
+                "group/html js-focus-visible dark border-border min-scrollbar",
                 appFont.variable,
             )}
             {...p}
@@ -119,12 +122,14 @@ const RootLayout = async (props: {
             </head>
             <body
                 className={clsx(
-                    "group/body",
+                    "group/body min-scrollbar relative h-auto overflow-x-hidden overflow-y-auto",
                     fontSans.variable,
                     preferFs && "preferFs",
                 )}
                 id={`Ulld-body-root`}
             >
+                <DefaultSeo />
+                <Navbar />
                 {props.children}
                 <Toaster />
                 {props.modal && props.modal}
@@ -136,6 +141,7 @@ const RootLayout = async (props: {
                     }}
                 />
                 <StateWrappedComponents />
+                <Footer />
             </body>
         </html>
     );

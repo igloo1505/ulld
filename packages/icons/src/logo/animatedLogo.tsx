@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { Variants, motion } from "framer-motion";
+"use client"
+import React, { RefObject, useEffect, useMemo, useRef, useState } from "react";
+import { Variants, motion, useInView } from "framer-motion";
 
-interface AnimatedUlldLogoProps
+interface BaseProps 
     extends React.ComponentProps<typeof motion.svg> {
-    show: boolean;
     width?: number;
     height?: number;
     delay?: number;
     speed?: number
 }
+
+type AnimatedUlldLogoProps = (BaseProps & {show: boolean, useInView?: never}) | (BaseProps & {useInView: true, show?: never})
+
 
 const uLineDir = 0.6;
 
@@ -92,16 +95,33 @@ const pathVariantsBackwards: Variants = {
     },
 };
 
+
+const useInViewOrShow = (ref: RefObject<Element>, show: boolean | undefined) => {
+    const inView = useInView(ref)
+    const [shouldShow, setShouldShow] = useState((typeof show === "boolean" ? show : inView) || false)
+    useEffect(() => {
+       if(typeof show === "boolean"){
+            setShouldShow(show)
+        } else {
+            setShouldShow(inView)
+        }
+    }, [show, inView])
+    return [shouldShow, setShouldShow] as [boolean, (v: boolean) => void]
+}
+
 export const AnimatedUlldLogo = ({
     show,
     width,
     height,
     delay,
     speed = 1,
+    useInView: shouldUseView,
     ...props
 }: AnimatedUlldLogoProps) => {
-    const [shouldShow, setShouldShow] = useState(show);
+    const ref = useRef<SVGSVGElement>(null!)
+    const [shouldShow, setShouldShow] = useInViewOrShow(ref, show)
     useEffect(() => {
+        if(typeof show !== "boolean") return
         if (show && delay) {
             setTimeout(() => {
                 setShouldShow(true);
@@ -109,9 +129,10 @@ export const AnimatedUlldLogo = ({
             return;
         }
         setShouldShow(show);
-    }, [show]);
+    }, [show, shouldUseView]);
     return (
         <motion.svg
+            ref={ref}
             height="100%"
             strokeMiterlimit="10"
             style={{

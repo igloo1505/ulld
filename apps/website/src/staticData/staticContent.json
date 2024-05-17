@@ -6,14 +6,52 @@
   ],
   "description": [],
   "forceProduction": false,
-  "documentationLinks": {
-    "external": {
-      "jupyter": "jupyter-notebook.readthedocs.io",
-      "python": "docs.python.org"
+  "manifest": {
+    "themeColor": "#000",
+    "creator": "Andrew Iglinski"
+  },
+  "blog": {
+    "defaultAuthor": "Andrew Iglinski",
+    "publisherName": "Uh Little Less Dum"
+  },
+  "social": {
+    "twitter": {
+      "handle": "@uhLittleLessDum"
+    }
+  },
+  "links": {
+    "home": "https://uhlittlelessdum.com",
+    "media": {
+      "logo": "https://uhlittlelessdum.com/icons/android-chrome-512x512.png"
     },
-    "internal": {
-      "organization": "/docs",
-      "inputs": "/docs"
+    "fund": {
+      "paypalDonate": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU"
+    },
+    "social": {
+      "github": "https://github.com/igloo1505/ulld"
+    },
+    "blog": {
+      "whyILeftWork": "/blog?id=whyILeftWork"
+    },
+    "demos": {
+      "main": "/demo",
+      "plots": "/demo/plots",
+      "layouts": "/demo/layouts",
+      "media": "/demo/media",
+      "navigation": "/demo/media"
+    },
+    "docs": {
+      "external": {
+        "jupyter": "jupyter-notebook.readthedocs.io",
+        "python": "docs.python.org"
+      },
+      "internal": {
+        "home": "/docs",
+        "organization": "/docs",
+        "developerHome": "/docs",
+        "teachers": "/docs",
+        "inputs": "/docs"
+      }
     }
   }
 }

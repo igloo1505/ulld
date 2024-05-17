@@ -1,6 +1,6 @@
 "use client"
 import { useMathjaxBandaid } from '@ulld/hooks/useMathjaxBandaid'
-import { RefObject } from 'react'
+import { ForwardedRef, RefObject } from 'react'
 
 
 

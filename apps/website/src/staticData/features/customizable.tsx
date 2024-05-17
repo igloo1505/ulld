@@ -1,27 +1,29 @@
+"use client"
 import { LogoAsText } from "#/components/general/logoAsText";
 import { FeaturedContainerPropsRequired } from "#/components/pageSpecific/landing/feature/types";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import clsx from 'clsx'
 import FeatureMiniCardContainer from "#/components/pageSpecific/landing/featureMinicard/featureMiniCardContainer";
+import { ForwardedRef, forwardRef } from "react";
+
 
 export const customizableFeature: FeaturedContainerPropsRequired = {
   label: "Customize Endlessly",
   title: "1 config to rule them all",
-  override: ({ orientation, shouldShow }) => {
+  override: forwardRef(({ orientation, shouldShow }, ref: ForwardedRef<HTMLDivElement>) => {
     return (
       <motion.div
+        ref={ref}
         className={clsx("max-w-[min(83%,1080px)]", shouldShow && "z-10")}
         initial="hide"
         animate={shouldShow ? "show" : "hide"}
         variants={{
           show: {
             opacity: 1,
-            /* y: 0, */
           },
           hide: {
             opacity: 0,
-            /* y: -100, */
           },
         }}
       >
@@ -47,7 +49,7 @@ export const customizableFeature: FeaturedContainerPropsRequired = {
           1 config to rule them all.
         </motion.h1>
         <motion.p
-          className={"text-muted-foreground font-bold my-6 w-5/6"}
+          className={"text-muted-foreground font-bold my-6 lg:w-5/6"}
           initial="hide"
           animate={shouldShow ? "show" : "hide"}
           variants={{
@@ -85,7 +87,7 @@ export const customizableFeature: FeaturedContainerPropsRequired = {
         <FeatureMiniCardContainer show={shouldShow} orientation={orientation}/>
       </motion.div>
     );
-  },
+  }),
   desc: () => null,
   component: () => null,
 };

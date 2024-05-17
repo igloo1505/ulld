@@ -50,6 +50,7 @@ interface P {
     noteSheetOpen: boolean;
     themeCookie?: ThemeOptions;
     store: ToolkitStore;
+    lockScrollForPages?: string[]
 }
 
 const applyHtmlClass = (cls: string, type: "add" | "remove" | "toggle") => {
@@ -64,6 +65,7 @@ const Observers = connector(
         noteSheetOpen,
         config,
         themeCookie,
+        lockScrollForPages
     }: P) => {
         const pathname = usePathname();
         const store = useUlldStore()
@@ -120,16 +122,16 @@ const Observers = connector(
         }, []);
 
         useEffect(() => {
-            if (pathname === "/") {
+            if(!lockScrollForPages) return
+            if (lockScrollForPages.includes(pathname)) {
                 document.body.classList.add("noScroll");
             } else {
                 document.body.classList.remove("noScroll");
             }
-        }, [pathname]);
+        }, [pathname, lockScrollForPages]);
 
         useEffect(() => {
             listenerMap.forEach((l) => {
-                console.log("l in listenerMap: ", l)
                 if (l.target === "window") {
                     window.addEventListener(l.event, l.function);
                 }

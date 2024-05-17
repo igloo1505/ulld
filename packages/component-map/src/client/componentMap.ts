@@ -1,3 +1,4 @@
+import { ComponentType } from "react";
 import { getConditionalClientComponents, ConditionalComponentProps } from "./conditionalComponents";
 import { A } from "@ulld/embeddable-components/components/a";
 import { Li } from "@ulld/embeddable-components/components/li";
@@ -12,6 +13,8 @@ import { Highlight } from "@ulld/embeddable-components/components/client/hl";
 import { ImgComponent } from "@ulld/embeddable-components/components/img";
 import { InternalMermaid } from "@ulld/embeddable-components/components/internalMermaid";
 import { H1, H2, H3, H4, H5, H6 } from "@ulld/embeddable-components/components/heading";
+import { ConditionalComponentQuery } from "../types";
+import { getBaseComponents } from "../utils";
 
 
 
@@ -36,16 +39,17 @@ export const components: MDXComponents = {
 }
 
 
-export const getComponentMap = (content: string, opts?: ConditionalComponentProps) => {
+export const getComponentMap = <J extends ComponentType<unknown>[]>(content: string, opts?: ConditionalComponentProps, extraComponents: ConditionalComponentQuery<J>[] = []) => {
+    let baseComponents = opts?.avoidKeys ? getBaseComponents(components, opts.avoidKeys) : components
      if (opts?.requiredOnly) {
-        return components satisfies MDXComponents
+        return baseComponents satisfies MDXComponents
      }
      return {
-         ...components,
+         ...baseComponents,
          ...getConditionalClientComponents(content, {
              all: false,
              ...opts
-         })
+         }, extraComponents)
      } satisfies MDXComponents
 }
 

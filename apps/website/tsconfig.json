@@ -8,8 +8,8 @@
         "./src/*"
       ],
     "contentlayer/generated": ["./.contentlayer/generated"],
-    "mdx/*": ["./src/mdx/*"]
-
+    "mdx/*": ["./src/mdx/*"],
+    "staticContent": ["./src/staticData/staticContent.json"]
     },
     "incremental": true
   },

@@ -1,9 +1,9 @@
 "use client"
-import React from "react";
+import React, { ForwardedRef } from "react";
 import { mathjaxMutationObserver } from "./mdxClassnameBandaid";
 
 export const applyMathjaxBandaid = (
-    element: string | React.RefObject<HTMLElement>,
+    element: string | React.RefObject<HTMLElement>
 ) => {
     let em =
         typeof element === "string"

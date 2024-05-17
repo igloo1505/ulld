@@ -10,10 +10,11 @@ import {
     dragAction,
     scrollAction,
     wheelAction,
-    CoordinatesConfig,
 } from "@use-gesture/vanilla";
 import { Lethargy } from "lethargy";
+import { useViewport } from "@ulld/hooks/useViewport";
 const lethargy = new Lethargy();
+import {useMeasure} from "@ulld/hooks/useMeasure"
 
 const Gesture = createGesture([scrollAction, wheelAction, dragAction]);
 
@@ -27,13 +28,16 @@ interface Props {
 }
 
 const cardWidth = 350;
-const gap = 16;
+
+const fullWidthBreakpoint = 640
 
 const FeatureMiniCardContainer = ({ show }: Props) => {
     const [focusedIndex, _setFocusedIndex] = useState(0);
     const [maxIndex, _setMaxIndex] = useState(0);
     const mi = useRef(0);
     const fi = useRef(0);
+    const vp = useViewport()
+    const gap = (vp && vp.window.width > fullWidthBreakpoint) ? 16 : 0
     const setMaxIndex = (newIndex: number) => {
         mi.current = newIndex;
         _setMaxIndex(newIndex);
@@ -43,7 +47,8 @@ const FeatureMiniCardContainer = ({ show }: Props) => {
         _setFocusedIndex(newIndex);
     };
     const scrolling = useRef(false);
-    const container = useRef<HTMLDivElement>(null!);
+    const container = useRef<HTMLDivElement>(null!)
+    const [dontUse, dims] = useMeasure<HTMLDivElement>(container)
     const containerInner = useRef<HTMLDivElement>(null!);
     const handleMaxIndex = () => {
         let containerWidth = container.current.clientWidth;
@@ -81,19 +86,10 @@ const FeatureMiniCardContainer = ({ show }: Props) => {
     > = ({ active, movement: [mx], direction: [xDir], cancel }) => {
         if (scrolling.current) return;
         scrolling.current = true;
-        /* let dir = lethargy.check(data.event); */
-        /* if (!dir) return; */
-        /* console.log(data.event); */
-        /* if (dir === -1 && "movementX" in data.event) { */
-        /*     dir = data.event.movementX <= 0 ? -1 : 1; */
-        /* } */
 
         if (!active || Math.abs(mx) < dragRequirement) {
             return;
         }
-        console.log("dir: ", xDir);
-        console.log("focusedIndex: ", fi.current);
-        console.log("maxIndex: ", mi.current);
         if (xDir > 0 && fi.current !== 0) {
             setFocusedIndex(fi.current - 1);
         } else if (xDir < 0 && fi.current < mi.current) {
@@ -157,11 +153,11 @@ const FeatureMiniCardContainer = ({ show }: Props) => {
                 className={"w-full h-fit grid min-h-0 min-w-0 touch-none"}
                 ref={containerInner}
                 style={{
-                    gridTemplateColumns: `repeat(${allMiniFeatures.length}, ${cardWidth}px)`,
+                    gridTemplateColumns: gap === 0 ? `repeat(${allMiniFeatures.length}, 83vw)` : `repeat(${allMiniFeatures.length}, ${cardWidth}px)`,
                     gap: `${gap}px`,
                 }}
                 animate={{
-                    x: (cardWidth + gap) * -focusedIndex,
+                    x: gap === 0 ? `${83 * -focusedIndex}vw` : ((cardWidth + gap) * -focusedIndex),
                     transition: {
                         bounce: 0,
                     },
@@ -173,7 +169,7 @@ const FeatureMiniCardContainer = ({ show }: Props) => {
                         <MiniFeatureCard
                             key={i}
                             idx={i}
-                            maxWidth={`${cardWidth}px`}
+                            maxWidth={gap === 0 ? '83vw' : `${cardWidth}px`}
                             show={show}
                             {...item}
                         />

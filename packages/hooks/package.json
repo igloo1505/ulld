@@ -42,7 +42,8 @@
     "./useIsClient": "./src/useIsClient.ts",
     "./useTraceUpdate": "./src/useTraceUpdate.ts",
     "./useEventListener": "./src/useEventListener.ts",
-    "./useMathjaxBandaid": "./src/useMathjaxBandaid.ts"
+    "./useMathjaxBandaid": "./src/useMathjaxBandaid.ts",
+    "./useMeasure": "./src/useMeasure.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",

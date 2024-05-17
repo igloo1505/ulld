@@ -2,9 +2,20 @@
   pre:not([data-language]) {
     background-color: transparent !important;
   }
-
-  mjx-container[display="true"] {
-    font-size: 1.5rem;
+  code.language-math {
+    &::before {
+      content: "";
+    }
+    &::after {
+      content: "";
+    }
+  }
+  mjx-container {
+    color: var(--tw-prose-invert-body);
+    &[display="true"] {
+      font-size: 1.5rem;
+      color: var(--tw-prose-invert-headings);
+    }
   }
   a {
     text-decoration: none;

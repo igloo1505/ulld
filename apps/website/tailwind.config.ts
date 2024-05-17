@@ -27,9 +27,11 @@ const tailwindCfg: Config = {
         hint: "#39f614",
         link: "#00bbf9",
       },
-      typography: {
+      typography: ({theme}: {theme: (val: string) => void}) => ({
         DEFAULT: {
           css: {
+            '--tw-prose-invert-body': theme("colors.gray[200]"),
+            '--tw-prose-invert-headings': "hsl(var(--foreground))",
             pre: {
               "&:not([data-language])": {
                 backgroundColor: "hsl(var(--background))",
@@ -37,7 +39,7 @@ const tailwindCfg: Config = {
             },
           },
         },
-      },
+      }),
     },
   },
   plugins: [require("@tailwindcss/typography")],

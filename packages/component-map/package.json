@@ -14,7 +14,8 @@
   ],
   "exports": {
     "./server": "./src/server/componentMap.ts",
-    "./client": "./src/client/componentMap.ts"
+    "./client": "./src/client/componentMap.ts",
+    "./types": "./src/types.ts"
   },
   "peerDependencies": {
     "@mdx-js/react": "^3.0.1",

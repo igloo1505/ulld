@@ -1,82 +1,83 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { FeatureContainerProps } from "./types";
 import FeatureContainerText from "./featureContainerText";
 import FeatureContainerDisplay from "./featureContainerDisplay";
 import clsx from "clsx";
 import { useViewport } from "@ulld/hooks/useViewport";
+import { useInView } from "framer-motion";
+
+
+const _delay = 3
+
+const indexStyles = (idx: number) => {
+       return "" 
+    }
 
 const FeatureContainer = ({
-  orientation = "ltr",
-  idx,
-  expandDisplay,
-  override,
-  spaceEven,
-  displayContainerClasses,
-  sectionIndex,
-  top,
-  ...props
-}: FeatureContainerProps) => {
-  const shouldShow = idx === sectionIndex - 1;
-  const vp = useViewport();
-  if (override) {
-    let O = override;
-    return <O orientation={orientation} shouldShow={shouldShow} />;
-  }
-  return (
-    <div
-      className={clsx(
-        "absolute group/feature left-0 top-0 h-[calc(100vh-76px)] w-screen max-w-[1440px] gap-4 md:gap-6 lg:gap-8 px-8 lg:px-12 pb-8 flex-col md:flex-row justify-center items-center place-items-center",
-        shouldShow && "z-10",
-        spaceEven ? "grid grid-cols-1 md:flex" : "flex",
-        expandDisplay && "display-expand",
-        vp?.window.width && vp.window.width < 768 ? "stack" : "flow",
-      )}
-      style={{
-        height: `calc(100vh - ${top}px)`,
-      }}
-    >
-      {orientation === "ltr" ? (
-        <>
-          <FeatureContainerText
-            title={props.title}
-            desc={props.desc}
-            label={props.label}
-            orientation={orientation}
-            idx={idx}
-            shouldShow={shouldShow}
-          />
-          <FeatureContainerDisplay
-            containerClasses={displayContainerClasses}
-            displayExpand={expandDisplay || spaceEven}
-            orientation={orientation}
-            component={props.component}
-            shouldShow={shouldShow}
-            idx={idx}
-          />
-        </>
-      ) : (
-        <>
-          <FeatureContainerDisplay
-            containerClasses={displayContainerClasses}
-            displayExpand={expandDisplay || spaceEven}
-            orientation={orientation}
-            component={props.component}
-            shouldShow={shouldShow}
-            idx={idx}
-          />
-          <FeatureContainerText
-            title={props.title}
-            desc={props.desc}
-            label={props.label}
-            orientation={orientation}
-            idx={idx}
-            shouldShow={shouldShow}
-          />
-        </>
-      )}
-    </div>
-  );
+    orientation = "ltr",
+    expandDisplay,
+    override,
+    spaceEven,
+    displayContainerClasses,
+    idx,
+    ...props
+}: FeatureContainerProps & {idx: number}) => {
+    const vp = useViewport();
+    const ref = useRef<HTMLDivElement>(null!);
+    const shouldShow = useInView(ref, {margin: "-100px", once: true});
+    if (override) {
+        let O = override;
+        return <O ref={ref} orientation={orientation} shouldShow={shouldShow} />;
+    }
+    return (
+        <div
+            ref={ref}
+            className={clsx(
+                "group/feature w-screen min-h-[calc(100vh-76px)] max-w-[1440px] gap-8 px-8 lg:px-12 mb-16 flex-col lg:flex-row justify-around lg:justify-center items-center place-items-center",
+                spaceEven ? "grid grid-cols-1 md:flex" : "flex",
+                expandDisplay && "display-expand",
+                vp?.window.width && vp.window.width < 768 ? "stack" : "flow",
+                orientation === "rtl" && "flex-col-reverse lg:flex-row",
+            )}
+        >
+            {orientation === "ltr" ? (
+                <>
+                    <FeatureContainerText
+                        title={props.title}
+                        desc={props.desc}
+                        label={props.label}
+                        orientation={orientation}
+                        shouldShow={shouldShow}
+                    />
+                    <FeatureContainerDisplay
+                        containerClasses={clsx(displayContainerClasses, indexStyles(idx))}
+                        displayExpand={expandDisplay || spaceEven}
+                        orientation={orientation}
+                        component={props.component}
+                        shouldShow={shouldShow}
+                    />
+                </>
+            ) : (
+                <>
+                    <FeatureContainerDisplay
+                        containerClasses={clsx(displayContainerClasses, indexStyles(idx))}
+                        displayExpand={expandDisplay || spaceEven}
+                        orientation={orientation}
+                        component={props.component}
+                        shouldShow={shouldShow}
+                    />
+                    <FeatureContainerText
+                        title={props.title}
+                        desc={props.desc}
+                        label={props.label}
+                        orientation={orientation}
+                        shouldShow={shouldShow}
+                    />
+                </>
+            )}
+        </div>
+    );
 };
 
 FeatureContainer.displayName = "FeatureContainer";
