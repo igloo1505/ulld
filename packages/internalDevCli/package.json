@@ -1,40 +1,45 @@
 {
-    "name": "@ulld/developer-cli",
+    "name": "@ulld/internal-dev-cli",
     "version": "0.0.0",
     "private": true,
+    "type": "module",
     "exports": "./lib/index.js",
     "types": "dist/index.d.ts",
     "bin": {
-        "ulld-dev": "./bin/run.js"
+        "mr": "./bin/run.js"
     },
     "engines": {
         "node": ">=18.0.0"
     },
+    "main": "./bin/run.js",
     "files": [
         "/bin",
         "/dist",
         "/oclif.manifest.json"
     ],
     "oclif": {
-        "bin": "ulld-dev",
-        "dirname": "ulld-dev",
-        "commands": "./dist/commands",
+        "bin": "mr",
+        "dirname": "mr",
+        "commands": {
+            "strategy": "pattern",
+            "target": "./dist/commands",
+            "globPatterns": [
+                "**/*.+(js|cjs|mjs|ts|tsx|mts|cts)",
+                "!**/*.+(d.*|test.*|spec.*|helpers.*)?(x)"
+            ]
+        },
         "plugins": [
             "@oclif/plugin-help",
             "@oclif/plugin-plugins",
             "@oclif/plugin-commands",
             "@oclif/plugin-autocomplete"
         ],
-        "topicSeparator": " ",
-        "topics": {
-            "appendRouter": {
-                "description": "Append trpc router while in development"
-            }
-        }
+        "topicSeparator": " "
     },
     "scripts": {
         "dev": "node ./bin/dev.js",
         "build": "rm -rf ./dist && tsc -b",
+        "compile": "oclif pack tarballs",
         "test": "jest",
         "lint": "eslint . --ext .ts"
     },
@@ -68,10 +73,9 @@
         "@oclif/plugin-commands": "^3.2.2",
         "@oclif/plugin-help": "^6.0.20",
         "@oclif/plugin-plugins": "^5.0.7",
-        "@ulld/developer": "workspace:*",
-        "@ulld/developer-schemas": "workspace:*",
         "cli-table3": "^0.6.4",
         "deepmerge": "^4.3.1",
+        "glob": "^10.3.15",
         "handlebars": "^4.7.8",
         "json-schema-to-ts": "^3.0.1",
         "terminal-link": "^3.0.0",

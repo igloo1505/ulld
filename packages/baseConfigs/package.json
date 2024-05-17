@@ -14,7 +14,7 @@
         "test": "echo 'Add test script here'",
         "lint": "echo 'Add lint script here'"
     },
-    "packageManager": "pnpm@9.1.1",
+    "packageManager": "pnpm@9.0.4",
     "devDependencies": {
         "next": "^13.1.16"
     },

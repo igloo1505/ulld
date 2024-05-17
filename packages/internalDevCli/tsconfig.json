@@ -1,0 +1,22 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig.json",
+    "compilerOptions": {
+        "declaration": true,
+        "module": "NodeNext",
+        "outDir": "dist",
+        "rootDir": "src",
+        "strict": true,
+        "target": "es2022",
+        "moduleResolution": "NodeNext",
+        "esModuleInterop": true,
+        "types": ["mocha", "chai", "node"]
+    },
+    "include": [
+        "./src/**/*.ts",
+        "./src/**/*.tsx"
+    ],
+    "esModuleInterop": true,
+    "ts-node": {
+        "esm": true
+    }
+}

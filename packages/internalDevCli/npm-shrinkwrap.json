@@ -1,0 +1,576 @@
+{
+  "name": "@ulld/internal-dev-cli",
+  "version": "0.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "@ulld/internal-dev-cli",
+      "version": "0.0.0",
+      "dependencies": {
+        "@inquirer/prompts": "^5.0.1",
+        "@oclif/core": "^3.26.2",
+        "@oclif/plugin-autocomplete": "^3.0.13",
+        "@oclif/plugin-commands": "^3.2.2",
+        "@oclif/plugin-help": "^6.0.20",
+        "@oclif/plugin-plugins": "^5.0.7",
+        "@ulld/developer": "workspace:*",
+        "@ulld/developer-schemas": "workspace:*",
+        "cli-table3": "^0.6.4",
+        "deepmerge": "^4.3.1",
+        "glob": "^10.3.15",
+        "handlebars": "^4.7.8",
+        "json-schema-to-ts": "^3.0.1",
+        "terminal-link": "^3.0.0",
+        "ts-import": "5.0.0-beta.0"
+      },
+      "bin": {
+        "mr": "bin/run.js"
+      },
+      "devDependencies": {
+        "@oclif/prettier-config": "^0.2.1",
+        "@oclif/test": "^3.2.8",
+        "@types/chai": "^4.3.14",
+        "@types/jest": "^29.5.11",
+        "@types/mocha": "^10.0.6",
+        "@types/node": "^20.11.24",
+        "@types/react": "^18.2.79",
+        "@types/react-dom": "^18.2.25",
+        "chai": "^4.4.1",
+        "eslint": "^9.0.0",
+        "eslint-config-oclif": "^5.1.1",
+        "eslint-config-oclif-typescript": "^3.1.4",
+        "eslint-config-prettier": "^9.1.0",
+        "mocha": "^10.3.0",
+        "nyc": "^15.1.0",
+        "shx": "^0.3.4",
+        "ts-jest": "^29.1.2",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.4.4",
+        "unexpected": "^13.2.1",
+        "zocker": "^1.4.1"
+      },
+      "engines": {
+        "node": ">=18.0.0"
+      }
+    },
+    "../baseConfigs": {
+      "name": "@ulld/baseConfigs",
+      "version": "0.0.0",
+      "dev": true,
+      "peer": true,
+      "devDependencies": {
+        "next": "^13.1.16"
+      }
+    },
+    "../config": {
+      "name": "@ulld/config",
+      "version": "0.0.0",
+      "peer": true,
+      "dependencies": {
+        "zod": "^3.22.4"
+      },
+      "devDependencies": {
+        "@ulld/baseConfigs": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/database": "workspace:*",
+        "@ulld/utilities": "workspace:*"
+      }
+    },
+    "../config-eslint": {
+      "name": "@repo/eslint-config",
+      "version": "0.0.0",
+      "license": "MIT",
+      "peer": true,
+      "devDependencies": {
+        "@vercel/style-guide": "^5.1.0",
+        "eslint-config-turbo": "^1.11.3",
+        "eslint-plugin-mdx": "^2.3.2",
+        "eslint-plugin-only-warn": "^1.1.0",
+        "eslint-plugin-storybook": "^0.6.15",
+        "eslint-plugin-tsdoc": "^0.2.17"
+      }
+    },
+    "../config-typescript": {
+      "name": "@repo/typescript-config",
+      "version": "0.0.0",
+      "license": "MIT",
+      "peer": true
+    },
+    "../config/node_modules/@ulld/baseConfigs": {
+      "resolved": "../baseConfigs",
+      "link": true
+    },
+    "../config/node_modules/@ulld/configschema": {
+      "resolved": "../configschema",
+      "link": true
+    },
+    "../config/node_modules/@ulld/database": {
+      "resolved": "../database",
+      "link": true
+    },
+    "../config/node_modules/@ulld/utilities": {
+      "resolved": "../utilities",
+      "link": true
+    },
+    "../configschema": {
+      "name": "@ulld/configschema",
+      "version": "0.0.0",
+      "dev": true,
+      "peer": true,
+      "dependencies": {
+        "@ulld/baseConfigs": "workspace:*",
+        "@ulld/developer-schemas": "workspace:*",
+        "@ulld/icons": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/utilities": "workspace:*",
+        "dayjs": "^1.11.10",
+        "glob-to-regexp": "^0.4.1",
+        "next": "^13.1.16",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "shiki": "^1.1.7"
+      },
+      "devDependencies": {
+        "@repo/typescript-config": "workspace:^",
+        "@testing-library/cypress": "^10.0.1",
+        "@testing-library/dom": "^9.3.4",
+        "@testing-library/jest-dom": "^6.4.2",
+        "@testing-library/react": "^14.2.2",
+        "@testing-library/user-event": "^14.5.2",
+        "chai": "^5.1.0",
+        "cypress": "^13.7.1",
+        "eslint-plugin-jest-dom": "^5.2.0",
+        "eslint-plugin-testing-library": "^6.2.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "mocha": "^10.3.0",
+        "react-test-renderer": "^18.2.0",
+        "rtl-simple-queries": "^1.0.1",
+        "supertest": "^6.3.4",
+        "supertest-session": "^5.0.1",
+        "ts-jest": "^29.1.2",
+        "tsx": "^4.7.2",
+        "zod": "^3.22.4",
+        "zod-to-json-schema": "^3.22.4"
+      },
+      "peerDependencies": {
+        "zod": "^3.22.4"
+      }
+    },
+    "../configschema/node_modules/@repo/typescript-config": {
+      "resolved": "../config-typescript",
+      "link": true
+    },
+    "../configschema/node_modules/@ulld/baseConfigs": {
+      "resolved": "../baseConfigs",
+      "link": true
+    },
+    "../configschema/node_modules/@ulld/developer-schemas": {
+      "resolved": "../developer-schemas",
+      "link": true
+    },
+    "../configschema/node_modules/@ulld/icons": {
+      "resolved": "../icons",
+      "link": true
+    },
+    "../configschema/node_modules/@ulld/tailwind": {
+      "resolved": "../tailwindAndShad",
+      "link": true
+    },
+    "../configschema/node_modules/@ulld/utilities": {
+      "resolved": "../utilities",
+      "link": true
+    },
+    "../database": {
+      "name": "@ulld/database",
+      "version": "0.0.0",
+      "dev": true,
+      "hasInstallScript": true,
+      "peer": true,
+      "dependencies": {
+        "@prisma/client": "^5.10.2"
+      },
+      "devDependencies": {},
+      "peerDependencies": {
+        "@repo/typescript-config": "workspace:*",
+        "prisma": "latest"
+      }
+    },
+    "../database/node_modules/@repo/typescript-config": {
+      "resolved": "../config-typescript",
+      "link": true
+    },
+    "../developer": {
+      "name": "@ulld/developer",
+      "version": "0.0.0",
+      "dependencies": {
+        "trpc-openapi": "^1.2.0"
+      },
+      "devDependencies": {},
+      "peerDependencies": {
+        "@repo/eslint-config": "workspace:*",
+        "@repo/typescript-config": "workspace:*",
+        "@ulld/config": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/database": "workspace:*",
+        "@ulld/logger": "workspace:*"
+      }
+    },
+    "../developer-schemas": {
+      "name": "@ulld/developer-schemas",
+      "version": "0.0.0",
+      "peer": true,
+      "dependencies": {
+        "zod": "^3.22.4"
+      },
+      "devDependencies": {
+        "tsx": "^4.7.2",
+        "zod-to-json-schema": "^3.22.4"
+      }
+    },
+    "../developer/node_modules/@repo/eslint-config": {
+      "resolved": "../config-eslint",
+      "link": true
+    },
+    "../developer/node_modules/@repo/typescript-config": {
+      "resolved": "../config-typescript",
+      "link": true
+    },
+    "../developer/node_modules/@ulld/config": {
+      "resolved": "../config",
+      "link": true
+    },
+    "../developer/node_modules/@ulld/configschema": {
+      "resolved": "../configschema",
+      "link": true
+    },
+    "../developer/node_modules/@ulld/database": {
+      "resolved": "../database",
+      "link": true
+    },
+    "../developer/node_modules/@ulld/logger": {
+      "resolved": "../logger",
+      "link": true
+    },
+    "../icons": {
+      "name": "@ulld/icons",
+      "version": "0.0.0",
+      "peer": true,
+      "dependencies": {
+        "react-icons": "^5.0.1"
+      },
+      "devDependencies": {
+        "@repo/typescript-config": "workspace:*",
+        "@types/react": "^18.2.75",
+        "@types/react-dom": "^18.2.24",
+        "@ulld/utilities": "workspace:*",
+        "clsx": "^2.1.0",
+        "framer-motion": "^11.1.7",
+        "lucide-react": "^0.344.0",
+        "next": "^13.1.16",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+      },
+      "peerDependencies": {
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/utilities": "workspace:*",
+        "clsx": "^2.1.0",
+        "framer-motion": "^11.1.7",
+        "lucide-react": "^0.344.0",
+        "next": "^13.1.16",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+      }
+    },
+    "../icons/node_modules/@repo/typescript-config": {
+      "resolved": "../config-typescript",
+      "link": true
+    },
+    "../icons/node_modules/@ulld/tailwind": {
+      "resolved": "../tailwindAndShad",
+      "link": true
+    },
+    "../icons/node_modules/@ulld/utilities": {
+      "resolved": "../utilities",
+      "link": true
+    },
+    "../logger": {
+      "name": "@ulld/logger",
+      "version": "0.0.0",
+      "peer": true,
+      "dependencies": {
+        "chalk": "^5.3.0",
+        "colors": "^1.4.0",
+        "dayjs": "^1.11.9",
+        "zod": "^3.22.4"
+      },
+      "devDependencies": {}
+    },
+    "../logger/node_modules/chalk": {
+      "version": "5.3.0",
+      "license": "MIT",
+      "peer": true,
+      "engines": {
+        "node": "^12.17.0 || ^14.13 || >=16.0.0"
+      },
+      "funding": {
+        "url": "https://github.com/chalk/chalk?sponsor=1"
+      }
+    },
+    "../tailwindAndShad": {
+      "name": "@ulld/tailwind",
+      "version": "0.0.0",
+      "peer": true,
+      "devDependencies": {
+        "@repo/typescript-config": "workspace:*",
+        "@types/react": "^18.2.76",
+        "@types/react-dom": "^18.2.25",
+        "autoprefixer": "^10.4.18",
+        "next": "^13.1.16",
+        "postcss": "^8.4.35",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "tailwindcss": "^3.4.1"
+      },
+      "peerDependencies": {
+        "@hookform/resolvers": "^3.3.4",
+        "@radix-ui/react-accordion": "^1.1.2",
+        "@radix-ui/react-alert-dialog": "^1.0.5",
+        "@radix-ui/react-aspect-ratio": "^1.0.3",
+        "@radix-ui/react-avatar": "^1.0.4",
+        "@radix-ui/react-checkbox": "^1.0.4",
+        "@radix-ui/react-collapsible": "^1.0.3",
+        "@radix-ui/react-context-menu": "^2.1.5",
+        "@radix-ui/react-dialog": "^1.0.5",
+        "@radix-ui/react-dropdown-menu": "^2.0.6",
+        "@radix-ui/react-hover-card": "^1.0.7",
+        "@radix-ui/react-label": "^2.0.2",
+        "@radix-ui/react-menubar": "^1.0.4",
+        "@radix-ui/react-navigation-menu": "^1.1.4",
+        "@radix-ui/react-popover": "^1.0.7",
+        "@radix-ui/react-progress": "^1.0.3",
+        "@radix-ui/react-radio-group": "^1.1.3",
+        "@radix-ui/react-scroll-area": "^1.0.5",
+        "@radix-ui/react-select": "^2.0.0",
+        "@radix-ui/react-separator": "^1.0.3",
+        "@radix-ui/react-slider": "^1.1.2",
+        "@radix-ui/react-slot": "^1.0.2",
+        "@radix-ui/react-switch": "^1.0.3",
+        "@radix-ui/react-tabs": "^1.0.4",
+        "@radix-ui/react-toast": "^1.1.5",
+        "@radix-ui/react-toggle": "^1.0.3",
+        "@radix-ui/react-toggle-group": "^1.0.4",
+        "@radix-ui/react-tooltip": "^1.0.7",
+        "@tailwindcss/container-queries": "^0.1.1",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.0.0",
+        "cmdk": "^0.2.0",
+        "date-fns": "^3.3.1",
+        "embla-carousel-react": "^8.0.0",
+        "lucide-react": "^0.344.0",
+        "next": "^13.1.16",
+        "next-themes": "^0.2.1",
+        "react": "^18.2.0",
+        "react-day-picker": "^8.8.1",
+        "react-dom": "^18.2.0",
+        "react-hook-form": "^7.51.3",
+        "react-resizable-panels": "^2.0.12",
+        "sonner": "^1.4.3",
+        "tailwind-merge": "^1.14.0",
+        "tailwindcss": "^3.4.1",
+        "tailwindcss-animate": "^1.0.7",
+        "tailwindcss-debug-screens": "^2.2.1",
+        "vaul": "^0.9.0",
+        "zod": "^3.22.4"
+      }
+    },
+    "../tailwindAndShad/node_modules/@repo/typescript-config": {
+      "resolved": "../config-typescript",
+      "link": true
+    },
+    "../utilities": {
+      "name": "@ulld/utilities",
+      "version": "0.0.0",
+      "dev": true,
+      "peer": true,
+      "devDependencies": {
+        "@repo/typescript-config": "workspace:^",
+        "@tanstack/react-table": "^8.13.2",
+        "@testing-library/cypress": "^10.0.1",
+        "@testing-library/dom": "^9.3.4",
+        "@testing-library/jest-dom": "^6.4.2",
+        "@testing-library/react": "^14.2.2",
+        "@testing-library/user-event": "^14.5.2",
+        "@types/react": "^18.2.76",
+        "@types/react-dom": "^18.2.25",
+        "@ulld/tailwind": "workspace:*",
+        "chai": "^5.1.0",
+        "cypress": "^13.7.1",
+        "eslint-plugin-jest-dom": "^5.2.0",
+        "eslint-plugin-testing-library": "^6.2.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "mocha": "^10.3.0",
+        "next": "^13.1.16",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-test-renderer": "^18.2.0",
+        "rehype-mathjax": "^4.0.3",
+        "rtl-simple-queries": "^1.0.1",
+        "supertest": "^6.3.4",
+        "supertest-session": "^5.0.1",
+        "ts-jest": "^29.1.2"
+      },
+      "peerDependencies": {
+        "@ulld/database": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "dayjs": "^1.11.10",
+        "next": "^13.1.16",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "zod": "^3.22.4"
+      }
+    },
+    "../utilities/node_modules/@repo/typescript-config": {
+      "resolved": "../config-typescript",
+      "link": true
+    },
+    "../utilities/node_modules/@ulld/database": {
+      "resolved": "../database",
+      "link": true
+    },
+    "../utilities/node_modules/@ulld/tailwind": {
+      "resolved": "../tailwindAndShad",
+      "link": true
+    },
+    "node_modules/@ulld/developer": {
+      "resolved": "../developer",
+      "link": true
+    },
+    "node_modules/@ulld/developer-schemas": {
+      "resolved": "../developer-schemas",
+      "link": true
+    },
+    "node_modules/assertion-error": {
+      "version": "1.1.0",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": "*"
+      }
+    },
+    "node_modules/chai": {
+      "version": "4.4.1",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "assertion-error": "^1.1.0",
+        "check-error": "^1.0.3",
+        "deep-eql": "^4.1.3",
+        "get-func-name": "^2.0.2",
+        "loupe": "^2.3.6",
+        "pathval": "^1.1.1",
+        "type-detect": "^4.0.8"
+      },
+      "engines": {
+        "node": ">=4"
+      }
+    },
+    "node_modules/check-error": {
+      "version": "1.0.3",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "get-func-name": "^2.0.2"
+      },
+      "engines": {
+        "node": "*"
+      }
+    },
+    "node_modules/deep-eql": {
+      "version": "4.1.3",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "type-detect": "^4.0.0"
+      },
+      "engines": {
+        "node": ">=6"
+      }
+    },
+    "node_modules/foreground-child": {
+      "version": "3.1.1",
+      "license": "ISC",
+      "dependencies": {
+        "cross-spawn": "^7.0.0",
+        "signal-exit": "^4.0.1"
+      },
+      "engines": {
+        "node": ">=14"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/isaacs"
+      }
+    },
+    "node_modules/glob": {
+      "version": "10.3.15",
+      "license": "ISC",
+      "dependencies": {
+        "foreground-child": "^3.1.0",
+        "jackspeak": "^2.3.6",
+        "minimatch": "^9.0.1",
+        "minipass": "^7.0.4",
+        "path-scurry": "^1.11.0"
+      },
+      "bin": {
+        "glob": "dist/esm/bin.mjs"
+      },
+      "engines": {
+        "node": ">=16 || 14 >=14.18"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/isaacs"
+      }
+    },
+    "node_modules/loupe": {
+      "version": "2.3.7",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "get-func-name": "^2.0.1"
+      }
+    },
+    "node_modules/minimatch": {
+      "version": "9.0.4",
+      "license": "ISC",
+      "dependencies": {
+        "brace-expansion": "^2.0.1"
+      },
+      "engines": {
+        "node": ">=16 || 14 >=14.17"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/isaacs"
+      }
+    },
+    "node_modules/pathval": {
+      "version": "1.1.1",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": "*"
+      }
+    },
+    "node_modules/signal-exit": {
+      "version": "4.1.0",
+      "license": "ISC",
+      "engines": {
+        "node": ">=14"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/isaacs"
+      }
+    }
+  }
+}

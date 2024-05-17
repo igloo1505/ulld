@@ -87,6 +87,6 @@
         "supertest-session": "^5.0.1",
         "ts-jest": "^29.1.2"
     },
-    "packageManager": "pnpm@9.1.1",
+    "packageManager": "pnpm@9.0.4",
     "peerDependencies": {}
 }

@@ -36,5 +36,5 @@
         "react-dom": "^18.2.0"
     },
     "dependencies": {},
-    "packageManager": "pnpm@9.1.1"
+    "packageManager": "pnpm@9.0.4"
 }
