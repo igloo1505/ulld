@@ -1,19 +1,30 @@
 import React from "react";
-import Content from "./pageContent.mdx";
-import EmojiTable from "mdx/docs/emojiTable.mdx";
+import { Documentation, allDocumentations } from ".contentlayer/generated";
+import staticContent from "staticContent";
+import { notFound } from "next/navigation";
+import MDXArticle from "#/components/layouts/mdxArticle";
 
-interface UserComponentDocumentationPageProps {}
+interface UserComponentDocumentationPageProps { }
+
+const targetIds = [staticContent.docIds.user.componentsHome];
 
 const UserComponentDocumentationPage = (
-  props: UserComponentDocumentationPageProps,
+    props: UserComponentDocumentationPageProps,
 ) => {
-  console.log("Content: ", Content);
-  return (
-    <>
-      <Content />
-      <EmojiTable />
-    </>
-  );
+    let articles = allDocumentations.filter(
+        (a) => a.id && targetIds.includes(a.id),
+    );
+    let sorted: Documentation[] = targetIds
+        .map((b) => articles.find((a) => a.id === b))
+        .filter(Boolean) as Documentation[];
+    if (!articles) return notFound();
+    return (
+        <>
+            {sorted.map((article) => {
+                return <MDXArticle mdx={article} />;
+            })}
+        </>
+    );
 };
 
 UserComponentDocumentationPage.displayName = "UserComponentDocumentationPage";

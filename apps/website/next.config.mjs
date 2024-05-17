@@ -192,16 +192,15 @@ const config = withPWA(
         ],
         experimental: {
             // typedRoutes: true,
-            appDir: true,
             esmExternals: "loose",
-            // optimizePackageImports: ["lucide-react", "katex"],
-            // serverComponentsExternalPackages: ['@ulld/editor'],
-            // mdxRs: true,
-            // turbo: {
-            //     resolveAlias: {
-            //         canvas: "./empty-module.ts",
-            //     },
-            // },
+            optimizePackageImports: ["lucide-react", "katex"],
+            serverComponentsExternalPackages: ['@ulld/editor'],
+            mdxRs: true,
+            turbo: {
+                resolveAlias: {
+                    canvas: "./empty-module.ts",
+                },
+            },
         },
         onDemandEntries: {
             maxInactiveAge: 10 * 1000,
@@ -209,11 +208,6 @@ const config = withPWA(
         },
         poweredByHeader: false,
         webpack: (config, ctx) => {
-            config.resolve.extensionAlias = {
-                ".js": [".ts", ".tsx", ".js", ".jsx"],
-                ".mjs": [".mts", ".mjs"],
-                ".cjs": [".cts", ".cjs"],
-            };
             config.resolve.alias.canvas = false;
             config.cache = false;
             // if(ctx.isServer){

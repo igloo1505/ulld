@@ -120,7 +120,12 @@ export const Documentation = defineDocumentType(() => ({
     fields: {
         title: { type: "string", required: false },
         lastUpdated: { type: "date", required: false },
-        category: { type: "string", required: true },
+        category: { type: "list", of: {type: "string"}, required: true },
+        id: {type: "string", required: false},
+        keywords: {
+            type: "list",
+            of: {type: "string"}
+        }
     },
     computedFields: {
         // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },

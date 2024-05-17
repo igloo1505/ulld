@@ -31,6 +31,16 @@
         ".env"
       ]
     },
+    "buildLocal": {
+      "dependsOn": ["^db:generate"],
+      "outputs": [".next/**", "!.next/cache/**"],
+      "dotEnv": [
+        ".env.production.local",
+        ".env.local",
+        ".env.production",
+        ".env"
+      ]
+    },
     "test": {
       "dependsOn": ["^build"],
       "outputs": ["coverage/**"]

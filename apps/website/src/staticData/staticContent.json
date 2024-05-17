@@ -19,6 +19,12 @@
       "handle": "@uhLittleLessDum"
     }
   },
+  "docIds": {
+    "user": {
+      "componentsHome": "user-components-home",
+      "emojiTable": "user-emoji-table"
+    }
+  },
   "links": {
     "home": "https://uhlittlelessdum.com",
     "media": {
