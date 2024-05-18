@@ -235,10 +235,10 @@
         "@types/react": "^18.2.76",
         "@types/react-dom": "^18.2.25",
         "autoprefixer": "^10.4.18",
-        "next": "^13.1.16",
+        "next": "^14.2.3",
         "postcss": "^8.4.35",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
         "tailwindcss": "^3.4.1"
     },
     "peerDependencies": {
@@ -293,5 +293,7 @@
         "zod": "^3.22.4"
     },
     "packageManager": "pnpm@9.0.4",
-    "dependencies": {}
+    "dependencies": {
+        "@next/mdx": "^14.0.0"
+    }
 }

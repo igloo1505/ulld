@@ -68,6 +68,7 @@
     },
     "dependencies": {
         "@inquirer/prompts": "^5.0.1",
+        "@next/mdx": "^14.0.0",
         "@oclif/core": "^3.26.2",
         "@oclif/plugin-autocomplete": "^3.0.13",
         "@oclif/plugin-commands": "^3.2.2",
@@ -78,9 +79,11 @@
         "glob": "^10.3.15",
         "handlebars": "^4.7.8",
         "json-schema-to-ts": "^3.0.1",
+        "next": "^14.2.3",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
         "terminal-link": "^3.0.0",
         "ts-import": "5.0.0-beta.0"
     },
-    "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {}
+    "packageManager": "pnpm@9.0.4"
 }

@@ -281,15 +281,19 @@
         "./autumn": "./src/imageMap/autumn.tsx"
     },
     "peerDependencies": {
-        "@ulld/config": "workspace:*",
         "@repo/eslint-config": "workspace:*",
         "@repo/typescript-config": "workspace:*",
+        "@ulld/config": "workspace:*",
         "@ulld/configschema": "workspace:*",
         "@ulld/logger": "workspace:*",
         "@ulld/tailwind": "workspace:*",
         "@ulld/utilities": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
-    "devDependencies": {},
-    "dependencies": {}
+    "dependencies": {
+        "@next/mdx": "^14.0.0",
+        "next": "^14.2.3",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    }
 }

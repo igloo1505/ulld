@@ -24,12 +24,15 @@
         "postinstall": "echo 'figure out how to run prisma generate --schema=./src/prisma/schema.prisma'"
     },
     "dependencies": {
-        "@prisma/client": "^5.10.2"
+        "@next/mdx": "^14.0.0",
+        "@prisma/client": "^5.10.2",
+        "next": "^14.2.3",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
     },
     "peerDependencies": {
         "@repo/typescript-config": "workspace:*",
         "prisma": "latest"
     },
-    "packageManager": "pnpm@9.0.4",
-    "devDependencies": {}
+    "packageManager": "pnpm@9.0.4"
 }

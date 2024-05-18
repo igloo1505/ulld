@@ -9,8 +9,12 @@
         "lint": "echo 'Add lint script here'"
     },
     "dependencies": {
+        "@next/mdx": "^14.0.0",
+        "@ulld/developer": "workspace:*",
         "ical.js": "^2.0.0",
-        "@ulld/developer": "workspace:*"
+        "next": "^14.2.3",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
     },
     "devDependencies": {
         "dayjs": "^1.11.10",

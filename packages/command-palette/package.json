@@ -11,9 +11,10 @@
     "peerDependencies": {
         "@ulld/api": "workspace:*",
         "@ulld/bib-manager": "workspace:*",
-        "@ulld/database": "workspace:*",
         "@ulld/calendar": "workspace:*",
         "@ulld/configschema": "workspace:*",
+        "@ulld/database": "workspace:*",
+        "@ulld/developer": "workspace:*",
         "@ulld/diagram": "workspace:*",
         "@ulld/editor": "workspace:*",
         "@ulld/equations": "workspace:*",
@@ -23,19 +24,18 @@
         "@ulld/note-network": "workspace:*",
         "@ulld/parsers": "workspace:*",
         "@ulld/snippets": "workspace:*",
+        "@ulld/state": "workspace:*",
         "@ulld/tailwind": "workspace:*",
         "@ulld/task-manager": "workspace:*",
         "@ulld/ui": "workspace:*",
         "@ulld/utilities": "workspace:*",
         "@ulld/whiteboard": "workspace:*",
-        "@ulld/developer": "workspace:*",
-        "@ulld/state": "workspace:*",
+        "cmdk": "^0.2.0",
+        "lucide-react": "latest",
         "next": "^13.1.16",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "cmdk": "^0.2.0",
         "tinykeys": "^2.1.0",
-        "lucide-react": "latest",
         "zod": "^3.22.2"
     },
     "devDependencies": {
@@ -46,5 +46,7 @@
         "@types/react-dom": "^18.2.24"
     },
     "packageManager": "pnpm@9.0.4",
-    "dependencies": {}
+    "dependencies": {
+        "@next/mdx": "^14.0.0"
+    }
 }

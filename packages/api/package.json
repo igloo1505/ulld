@@ -229,8 +229,8 @@
         "mocha": "^10.3.0",
         "nodejs-polars": "^0.10.0",
         "prisma": "latest",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
         "react-test-renderer": "^18.2.0",
         "rehype-pretty-code": "^0.13.0",
         "rtl-simple-queries": "^1.0.1",
@@ -243,7 +243,9 @@
     "packageManager": "pnpm@9.0.4",
     "dependencies": {
         "@jest/globals": "^29.7.0",
+        "@next/mdx": "^14.0.0",
         "@types/jest": "^29.5.11",
+        "next": "^14.2.3",
         "trpc-openapi": "^1.2.0"
     }
 }

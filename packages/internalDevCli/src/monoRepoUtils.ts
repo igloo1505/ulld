@@ -35,8 +35,18 @@ const dependencyTypes = [
 
 export class MonoRepoManager {
     packages: PackageSource[] = [];
+    rootPackageJson: {
+        path: string;
+        content: PackageJson;
+        modified?: boolean;
+    };
     constructor(public root: string = "/Users/bigsexy/Desktop/current/ulld") {
         this.packages = this.collectPackages();
+        let path = this.getRootRelativePath("package.json");
+        this.rootPackageJson = {
+            path,
+            content: this.loadJson(path),
+        };
     }
     getRootRelativePath(p: string) {
         return `${this.root}/${p.startsWith("/") ? p.slice(1, p.length) : p}`;
@@ -134,20 +144,26 @@ export class MonoRepoManager {
                 console.log(JSON.stringify(data.content, null, 4));
             }
         });
+        if (all || this.rootPackageJson.modified) {
+            fs.writeFileSync(
+                this.rootPackageJson.path,
+                JSON.stringify(this.rootPackageJson.content, null, 4),
+            );
+        }
     }
-    replaceContentByName(name: string, content: PackageJson) {
+    private replaceContentByName(name: string, content: PackageJson) {
         this.packages = this.packages.map((a) =>
             a.name === name ? { ...a, content: content, modified: true } : a,
         );
     }
     replacePackage(name: string, version: string) {
         this.findByDependency(name).forEach((a) => {
-        if(!a.content) return
+            if (!a.content) return;
             const match = a.deps.filter((b) => b.name === name);
-            let content = a.content
+            let content = a.content;
             match.forEach((u) => {
-                if(!content[u.type]){
-                content[u.type] = {}
+                if (!content[u.type]) {
+                    content[u.type] = {};
                 }
                 /* @ts-ignore */
                 content[u.type][name] = version;
@@ -177,8 +193,10 @@ export class MonoRepoManager {
         return this.packages.filter((a) => a.deps.find((b) => b.name === name));
     }
     filterStringByDependency(name: string) {
-        let items = this.findByDependency(name);
-        return items.map((a) => `--filter=${a.name}`).join(" ");
+        let items = name === "all" ? this.packages : this.findByDependency(name);
+        let s = items.map((a) => `--filter=${a.name}`).join(" ");
+        console.log(s)
+        return s
     }
     removePackageFromAll(name: string) {
         this.packages = this.packages.map((a) => {
@@ -199,6 +217,14 @@ export class MonoRepoManager {
                 },
             };
         });
+        this.rootPackageJson = {
+            ...this.rootPackageJson,
+            modified: true,
+            content: {
+                ...this.rootPackageJson.content,
+                packageManager: pm,
+            },
+        };
     }
 }
 

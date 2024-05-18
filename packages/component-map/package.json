@@ -18,29 +18,29 @@
         "./types": "./src/types.ts"
     },
     "peerDependencies": {
-        "@mdx-js/react": "^3.0.1",
         "@mdx-js/loader": "^3.0.1",
+        "@mdx-js/react": "^3.0.1",
         "@ulld/bib-manager": "workspace:*",
         "@ulld/calendar": "workspace:*",
         "@ulld/cookbook": "workspace:*",
         "@ulld/default-image-map": "workspace:*",
         "@ulld/diagram": "workspace:*",
         "@ulld/editor": "workspace:*",
+        "@ulld/embeddable-components": "workspace:*",
         "@ulld/equations": "workspace:*",
         "@ulld/full-form": "workspace:*",
         "@ulld/health-tracking": "workspace:*",
         "@ulld/journal": "workspace:*",
-        "@ulld/notebook": "workspace:*",
         "@ulld/kanban": "workspace:*",
         "@ulld/navigation": "workspace:*",
         "@ulld/note-network": "workspace:*",
+        "@ulld/notebook": "workspace:*",
         "@ulld/pdf": "workspace:*",
         "@ulld/plot": "workspace:*",
         "@ulld/snippets": "workspace:*",
         "@ulld/tailwind": "workspace:*",
         "@ulld/task-manager": "workspace:*",
         "@ulld/whiteboard": "workspace:*",
-        "@ulld/embeddable-components": "workspace:*",
         "next": "^13.1.16",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
@@ -51,11 +51,13 @@
         "@types/node": "^20.11.24",
         "@types/react": "^18.2.75",
         "@types/react-dom": "^18.2.24",
-        "next": "^13.1.16",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
+        "next": "^14.2.3",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
         "typescript": "^5.4.2"
     },
     "packageManager": "pnpm@9.0.4",
-    "dependencies": {}
+    "dependencies": {
+        "@next/mdx": "^14.0.0"
+    }
 }

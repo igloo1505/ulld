@@ -13,12 +13,12 @@
         "@types/react": "^18.2.73",
         "@types/react-dom": "^18.2.23",
         "@ulld/api": "workspace:*",
+        "@ulld/developer": "workspace:*",
+        "@ulld/hooks": "workspace:*",
         "@ulld/logger": "workspace:*",
         "@ulld/state": "workspace:*",
         "@ulld/tailwind": "workspace:*",
         "@ulld/utilities": "workspace:*",
-        "@ulld/hooks": "workspace:*",
-        "@ulld/developer": "workspace:*",
         "next": "^13.1.16",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -31,9 +31,9 @@
     "devDependencies": {
         "@types/react": "^18.2.73",
         "@types/react-dom": "^18.2.23",
-        "next": "^13.1.16",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
+        "next": "^14.2.3",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
         "tldraw": "^2.0.2",
         "y-indexeddb": "^9.0.12",
         "y-webrtc": "^10.3.0",
@@ -42,6 +42,7 @@
     },
     "dependencies": {
         "@excalidraw/excalidraw": "^0.17.3",
+        "@next/mdx": "^14.0.0",
         "sass": "^1.74.1"
     },
     "packageManager": "pnpm@9.0.4"

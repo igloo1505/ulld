@@ -9,13 +9,13 @@
         "lint": "echo 'Add lint script here'"
     },
     "peerDependencies": {
-        "@ulld/api": "workspace:*",
         "@repo/eslint-config": "workspace:*",
+        "@repo/jest-presets": "workspace:*",
         "@repo/typescript-config": "workspace:*",
+        "@ulld/api": "workspace:*",
         "@ulld/configschema": "workspace:*",
         "@ulld/developer": "workspace:*",
         "@ulld/hooks": "workspace:*",
-        "@repo/jest-presets": "workspace:*",
         "@ulld/logger": "workspace:*",
         "@ulld/plot": "workspace:*",
         "@ulld/state": "workspace:*",
@@ -23,7 +23,11 @@
         "@ulld/ui": "workspace:*",
         "@ulld/utilities": "workspace:*"
     },
-    "devDependencies": {},
-    "dependencies": {},
+    "dependencies": {
+        "@next/mdx": "^14.0.0",
+        "next": "^14.2.3",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    },
     "packageManager": "pnpm@9.0.4"
 }

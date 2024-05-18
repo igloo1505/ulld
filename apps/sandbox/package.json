@@ -12,6 +12,7 @@
         "@ducanh2912/next-pwa": "^10.2.5",
         "@hookform/resolvers": "^3.3.4",
         "@monaco-editor/react": "^4.6.0",
+        "@next/mdx": "^14.0.0",
         "@prisma/client": "latest",
         "@repo/jest-presets": "workspace:*",
         "@repo/typescript-config": "workspace:*",
@@ -34,11 +35,11 @@
         "monaco-editor": "^0.44.0",
         "monaco-editor-webpack-plugin": "^7.1.0",
         "monaco-vim": "^0.4.1",
-        "next": "^13.1.16",
+        "next": "^14.2.3",
         "prisma": "latest",
         "raw-loader": "^4.0.2",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
         "react-hook-form": "^7.51.1",
         "react-mathquill": "^1.0.3",
         "react-query-kit": "^1.4.8",
@@ -52,6 +53,5 @@
         "autoprefixer": "^10.4.18",
         "postcss": "^8.4.35",
         "tailwindcss": "^3.4.1"
-    },
-    "peerDependencies": {}
+    }
 }

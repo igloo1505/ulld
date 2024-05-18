@@ -28,8 +28,12 @@
         "@discordjs/next": "0.1.1-dev.1673526225-a580768.0",
         "@discordjs/rest": "^2.2.0",
         "@discordjs/voice": "^0.16.1",
+        "@next/mdx": "^14.0.0",
         "bufferutil": "^4.0.8",
         "discord.js": "^14.14.1",
+        "next": "^14.2.3",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
         "utf-8-validate": "^6.0.3",
         "zlib-sync": "^0.1.9"
     },
