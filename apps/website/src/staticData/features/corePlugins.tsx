@@ -3,13 +3,19 @@ import { useRef, useState } from "react";
 import NextImage from "next/image";
 import { LogoAsText } from "#/components/general/logoAsText";
 import { FeaturedContainerPropsRequired } from "#/components/pageSpecific/landing/feature/types";
-import { AnimatePresence, Variants, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { buttonVariants } from "@ulld/tailwind/button";
 import Link from "next/link";
 import { FeatureDescContainer } from "#/components/pageSpecific/landing/feature/featureDescContainer";
 import { slideShowScreenshots } from "./featureAssets/slideShowScreenshots";
+import staticContent from "staticContent"
+
 const maxIndex = 11;
 const Image = motion(NextImage);
+
+
+/* TODO: Come back here and animate this image again. It's currently just swapping without any transition at all. */
+/* TODO: Make those images scroll while the description stays fixed when it's flex-row, similar to Vercel's page with that stationary box on the left. */
 
 export const corePluginsFeature: FeaturedContainerPropsRequired = {
     label: "Built to quantize gravity",
@@ -26,7 +32,7 @@ export const corePluginsFeature: FeaturedContainerPropsRequired = {
                     equations, snippets, bibliography management, task lists, whiteboards,
                     and much, <em>much</em> more.
                 </span>
-                <Link className={buttonVariants({})} href="/notes">
+                <Link className={buttonVariants({})} href={staticContent.links.demos.myNotes}>
                     His Notes
                 </Link>
             </FeatureDescContainer>

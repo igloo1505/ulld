@@ -37,10 +37,12 @@
       "github": "https://github.com/igloo1505/ulld"
     },
     "blog": {
-      "whyILeftWork": "/blog?id=whyILeftWork"
+      "whyILeftWork": "/blog?id=whyILeftWork",
+      "plansForUlld": "/blog?id=plansForUlld"
     },
     "demos": {
       "main": "/demo",
+      "myNotes": "/demo",
       "plots": "/demo/plots",
       "layouts": "/demo/layouts",
       "media": "/demo/media",

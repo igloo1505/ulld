@@ -15,7 +15,6 @@
     "db:generate": "prisma generate --schema=./src/prisma/schema.prisma",
     "db:push": "prisma db push --skip-generate",
     "prisma:studio": "node ../../node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/apps/website/.env.local -- prisma studio --schema ./src/prisma/schema.prisma",
-    "vercel-build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/",
     "migrateRemote": "dotenv -e /Users/bigsexy/Desktop/current/ulld/apps/website/.env.remote -- prisma migrate dev --schema=./src/prisma/schema.prisma",
     "postinstall": "turbo db:generate --filter @ulld/website"
   },
