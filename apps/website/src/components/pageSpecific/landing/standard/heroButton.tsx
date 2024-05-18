@@ -13,7 +13,7 @@ interface HeroButtonProps extends ComponentProps<typeof Link> {
 const HeroButton = ({ delay, top, bottom, ...props }: HeroButtonProps) => {
     return <Link
         {...props} 
-        className={"text-2xl py-3 px-5 rounded-lg bg-primary hover:bg-primary/80 transition-colors duration-300"}
+        className={"text-2xl z-10 py-3 px-5 rounded-lg bg-primary hover:bg-blue-600 transition-colors duration-300"}
         initial={{
             scale: 0,
             opacity: 0,

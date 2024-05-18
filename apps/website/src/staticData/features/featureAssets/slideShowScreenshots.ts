@@ -9,13 +9,9 @@ import corePluginImage8 from "./corePluginScreenshots/corePlugin8.png";
 import corePluginImage9 from "./corePluginScreenshots/corePlugin9.png";
 import corePluginImage10 from "./corePluginScreenshots/corePlugin10.png";
 import corePluginImage11 from "./corePluginScreenshots/corePlugin11.png";
-import { StaticImageData } from "next/image";
+import { SlideShowImage } from "#/components/media/imageCarousel/main";
 
-type SlideShowScreenshot = {
-    src: StaticImageData;
-};
-
-export const slideShowScreenshots: SlideShowScreenshot[] = [
+export const slideShowScreenshots: SlideShowImage[] = [
     {
         src: corePluginImage1,
     },

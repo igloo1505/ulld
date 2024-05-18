@@ -82,10 +82,12 @@
     "lucide-react": "^0.344.0",
     "maath": "^0.10.7",
     "mathjax-full": "^3.2.2",
+    "mini-svg-data-uri": "^1.4.4",
     "monaco-editor-webpack-plugin": "^7.1.0",
     "next": "^14.2.3",
     "next-contentlayer": "^0.3.4",
     "next-seo": "^6.5.0",
+    "popmotion": "^11.0.5",
     "postprocessing": "^6.35.4",
     "prisma": "latest",
     "raw-loader": "^4.0.2",
@@ -106,6 +108,7 @@
     "remark-math": "^6.0.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.0",
+    "shiki": "^1.1.7",
     "simplex-noise": "^4.0.1",
     "stripe": "^15.6.0",
     "three": "^0.163.0",
@@ -116,6 +119,7 @@
     "@repo/eslint-config": "workspace:^",
     "@repo/jest-presets": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@shikijs/twoslash": "^1.5.2",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
     "@types/jest": "^29.5.11",
@@ -128,8 +132,8 @@
     "dotenv-cli": "^7.3.0",
     "globby": "^14.0.1",
     "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "twoslash": "^0.2.6"
   },
-  "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {}
+  "packageManager": "pnpm@9.0.4"
 }

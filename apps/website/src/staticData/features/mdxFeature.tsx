@@ -6,6 +6,7 @@ import mdxScreenshotOutput from "./featureAssets/mdxScreenshotOutput.png";
 import Hint from "../../components/general/hint";
 import NextImage from "next/image";
 import { AnimatePresence, MotionProps, motion } from "framer-motion";
+import ImageCarousel from "#/components/media/imageCarousel/main";
 
 const Image = motion(NextImage);
 
@@ -34,7 +35,7 @@ const imageMotionProps: MotionProps = {
 export const mdxFeature: FeaturedContainerPropsRequired = {
     label: "Write in MDX",
     title: "Markdown... Xtended",
-    expandDisplay: true,
+    /* expandDisplay: true, */
     desc: () => {
         return (
             <div className={"w-full h-fit flex flex-col gap-4 md:gap-6"}>
@@ -49,37 +50,20 @@ export const mdxFeature: FeaturedContainerPropsRequired = {
         );
     },
     component: () => {
-        const [showCode, setShowCode] = useState(true);
         return (
-            <div
-                className={"w-full h-full relative flex justify-center items-center"}
-            >
-                <AnimatePresence>
-                    {showCode ? (
-                        <Image
-                            key="code-image"
-                            className={"h-[60vh] w-auto"}
-                            src={mdxScreenshot}
-                            alt="Screenshot of MDX"
-                            onClick={() => setShowCode(false)}
-                            initial={imageMotionProps.initial}
-                            animate={imageMotionProps.animate}
-                            exit={imageMotionProps.exit}
-                        />
-                    ) : (
-                        <Image
-                            key="output-image"
-                            className={"h-[60vh] w-auto"}
-                            src={mdxScreenshotOutput}
-                            alt="Screenshot of MDX"
-                            onClick={() => setShowCode(true)}
-                            initial={imageMotionProps.initial}
-                            animate={imageMotionProps.animate}
-                            exit={imageMotionProps.exit}
-                        />
-                    )}
-                </AnimatePresence>
-            </div>
+            <ImageCarousel 
+                images={[
+                    {
+                        src: mdxScreenshot,
+                        alt: "MDX Code",
+                        className: "w-full lg:w-auto lg:h-full"
+                    },
+                    {
+                        src: mdxScreenshotOutput,
+                        alt: "MDX Output"
+                    }
+                ]}
+            />
         );
     },
 };

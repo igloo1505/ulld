@@ -34,9 +34,8 @@ const FeatureContainer = ({
         <div
             ref={ref}
             className={clsx(
-                "group/feature w-screen min-h-[calc(100vh-76px)] max-w-[1440px] gap-8 px-8 lg:px-12 mb-16 flex-col lg:flex-row justify-around lg:justify-center items-center place-items-center",
+                "group/feature w-screen min-h-[calc(100vh-76px)] max-w-[1440px] gap-8 px-8 lg:px-12 mb-16 flex-col justify-around items-center lg:grid lg:grid-cols-2  place-items-center",
                 spaceEven ? "grid grid-cols-1 md:flex" : "flex",
-                expandDisplay && "display-expand",
                 vp?.window.width && vp.window.width < 768 ? "stack" : "flow",
                 orientation === "rtl" && "flex-col-reverse lg:flex-row",
             )}

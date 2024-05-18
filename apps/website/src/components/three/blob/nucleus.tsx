@@ -139,7 +139,6 @@ const Nucleus = ({
                     speed={1}
                     distort={0.4}
                     specularColor={new Color("#000")}
-                    /* TODO: Change this emissive to a dark blue when back on wifi and power. */
                     emissive={new Color("#000")}
                     roughness={0}
                     metalness={springs.metalness}
