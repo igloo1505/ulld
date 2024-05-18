@@ -194,7 +194,7 @@ const config = withPWA(
             // typedRoutes: true,
             esmExternals: "loose",
             optimizePackageImports: ["lucide-react", "katex"],
-            serverComponentsExternalPackages: ['@ulld/editor'],
+            // serverComponentsExternalPackages: ['@ulld/editor'],
             mdxRs: true,
             turbo: {
                 resolveAlias: {
