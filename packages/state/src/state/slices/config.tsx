@@ -8,7 +8,7 @@ const slice = createSlice({
     initialState: initialState.config,
     reducers: {
         setConfigState(state, action: PayloadAction<AppConfigSchemaOutput>) {
-            state = action.payload ? {...action.payload} : undefined
+            state = action.payload
             return state
         }
     }

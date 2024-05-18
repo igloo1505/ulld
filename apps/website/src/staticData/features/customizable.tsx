@@ -1,6 +1,6 @@
 "use client"
 import { LogoAsText } from "#/components/general/logoAsText";
-import { FeaturedContainerPropsRequired } from "#/components/pageSpecific/landing/feature/types";
+import { FeatureFCProps, FeaturedContainerPropsRequired } from "#/components/pageSpecific/landing/feature/types";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import clsx from 'clsx'
@@ -11,7 +11,8 @@ import { ForwardedRef, forwardRef } from "react";
 export const customizableFeature: FeaturedContainerPropsRequired = {
   label: "Customize Endlessly",
   title: "1 config to rule them all",
-  override: forwardRef(({ orientation, shouldShow }, ref: ForwardedRef<HTMLDivElement>) => {
+    /* @ts-ignore */
+  override: forwardRef<HTMLDivElement, FeatureFCProps>(({ orientation, shouldShow }, ref: ForwardedRef<HTMLDivElement>) => {
     return (
       <motion.div
         ref={ref}

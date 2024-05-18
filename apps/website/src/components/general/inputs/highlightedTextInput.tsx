@@ -11,19 +11,17 @@ import { Input } from "@ulld/tailwind/input";
 import React, {
   InputHTMLAttributes,
   MouseEvent,
-  useRef,
   useState,
 } from "react";
 import {
   FieldValues,
   Path,
-  useFormContext,
   UseFormReturn,
 } from "react-hook-form";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 
 interface HighlightedTextInputProps<T extends FieldValues>
-  extends InputHTMLAttributes<HTMLInputElement> {
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "form"> {
   name: Path<T>;
   label?: string;
   desc?: string;

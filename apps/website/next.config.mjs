@@ -157,7 +157,7 @@ const withMDX = createMDX({
 const config = withPWA(
     withContentlayer({
         typescript: {
-            ignoreBuildErrors: true, // FOR DEVELOPMENT ONLY
+            ignoreBuildErrors: true, // HACK: For development only.
         },
         reactStrictMode: false,
         transpilePackages: [

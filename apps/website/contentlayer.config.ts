@@ -159,8 +159,15 @@ export const Blog = defineDocumentType(() => ({
                 type: "string",
             },
         },
+        images: {
+            type: "list",
+            of: {
+                type: "string",
+            },
+        },
         description: {
             type: "string",
+            required: true
         },
         id: {
             type: "string",

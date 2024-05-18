@@ -53,7 +53,7 @@ const EquationTag = dynamic(() => import("@ulld/embeddable-components/components
 // const Tikz = dynamic(() => import("./emeddedComponents/tikz"))
 const Color = dynamic(() => import("@ulld/embeddable-components/components/client/colorText").then((a) => a.ColorText))
 
-export type EmbeddableClientComponents = typeof Admonition | typeof NotebookCell | typeof TabGroup | typeof Tab | typeof Grid | typeof GridItem | typeof Video | typeof ModelView | typeof Card | typeof Highlight | typeof Underline | typeof Small | typeof Large | typeof Centered | typeof Lead | typeof VSpace | typeof EqRef | typeof EquationTag | typeof Color
+export type EmbeddableClientComponents = typeof Admonition | typeof TabGroup | typeof Tab | typeof Grid | typeof GridItem | typeof Video | typeof ModelView | typeof Card | typeof Highlight | typeof Underline | typeof Small | typeof Large | typeof Centered | typeof Lead | typeof VSpace | typeof EqRef | typeof EquationTag | typeof Color
 
 
 

@@ -31,7 +31,7 @@ export interface MultiSelectInputProps<
         value: L;
         content: React.ReactNode;
     }[];
-    maxHeight: number
+    maxHeight?: number
     placeholder?: string;
     className?: string;
     contentClasses?: string;

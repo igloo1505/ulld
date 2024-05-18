@@ -1,3 +1,4 @@
+/* @ts-ignore */
 import Cite from 'citation-js'
 import '@citation-js/plugin-csl'
 import '@citation-js/plugin-bibtex'

@@ -81,5 +81,6 @@
         "terminal-link": "^3.0.0",
         "ts-import": "5.0.0-beta.0"
     },
-    "packageManager": "pnpm@9.0.4"
+    "packageManager": "pnpm@9.0.4",
+    "peerDependencies": {}
 }

@@ -41,7 +41,7 @@ export const StateWrappedUI = async ({
     if (!ignoreConfig) {
         /* const _config = path.join(process.cwd(), configPath); */
         /* if(_confi) */
-        config = getUlldConfig();
+        config = getUlldConfig() as ParsedAppConfig
     }
 
     return (

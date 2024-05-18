@@ -1,7 +1,7 @@
-import type { MDXComponents } from "mdx/types";
 import { AdditionalComponentType, AdditionalComponents, ConditionalComponentQuery } from "../types";
 import { EmbeddableClientComponents, conditionalClientComponents } from "./componentList";
 import { conditionallyAddComponent } from "../utils";
+import { MDXComponents } from "mdx/types";
 
 
 export interface ConditionalComponentProps {

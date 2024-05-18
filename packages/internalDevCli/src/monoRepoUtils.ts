@@ -195,8 +195,8 @@ export class MonoRepoManager {
     filterStringByDependency(name: string) {
         let items = name === "all" ? this.packages : this.findByDependency(name);
         let s = items.map((a) => `--filter=${a.name}`).join(" ");
-        console.log(s)
-        return s
+        console.log(s);
+        return s;
     }
     removePackageFromAll(name: string) {
         this.packages = this.packages.map((a) => {
@@ -226,8 +226,27 @@ export class MonoRepoManager {
             },
         };
     }
+    getPackagesByRegex(re: string | string[]) {
+        if (typeof re === "string") {
+            re = [re];
+        }
+        let packages: (PackageSource & {matches: Dependency[]})[] = [];
+        re.forEach((reg) => {
+            this.packages.forEach((a) => {
+                let packageMatches: Dependency[] = [];
+                a.deps.forEach((b) => {
+                    if (new RegExp(reg, "gi").test(b.name)) {
+                        packageMatches.push(b);
+                    }
+                });
+                if (packageMatches.length > 0) {
+                    packages.push({
+                        ...a,
+                        matches: packageMatches,
+                    });
+                }
+            });
+        });
+        return packages
+    }
 }
-
-// p.removePackageFromAll("mermaid");
-// p.removePackageFromAll("rehype-mermaid");
-// p.removePackageFromAll("mdx-mermaid");

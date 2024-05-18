@@ -12,13 +12,13 @@ type Orientation = "rtl" | "ltr"
 
 export type FeatureUIStage = "hidden" | "current" | "past"
 
-type FCProps = {
+export type FeatureFCProps = {
     orientation: Orientation
     shouldShow: boolean
 }
 
-type FeatureFCField = FC<FCProps>
-type FeatureFCFieldNoAnim = ForwardRefComponent<HTMLDivElement, FCProps>
+type FeatureFCField = FC<FeatureFCProps>
+type FeatureFCFieldNoAnim = ForwardRefComponent<HTMLDivElement, FeatureFCProps>
 
 export interface FeatureContainerProps {
     title: NonNullable<ReactNode> | FeatureFCField

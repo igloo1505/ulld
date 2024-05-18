@@ -20,8 +20,6 @@ import {
     ToDoListStatus,
 } from "@ulld/database/internalDatabaseTypes";
 
-
-
 const taggableFields = z.object({
     topics: topicZodObject
         .array()
@@ -259,6 +257,7 @@ export const mdxNotePropsSchema = z
         noteType: zodDocTypeInput,
         trackRemote: z.boolean().default(false),
         toDo: todoTaskZodObject.array().default([]),
+        summary: z.string().nullish(),
         firstSync: z
             .union([
                 z
@@ -317,7 +316,7 @@ export const mdxNoteSummaryPropSchema = mdxNotePropsSchema
         citations: true,
         content: true,
         toDo: true,
-        sequentialList: true
+        sequentialList: true,
     })
     .required({
         subjects: true,
@@ -333,9 +332,14 @@ export const mdxNoteSummaryPropSchema = mdxNotePropsSchema
         firstSync: true,
         sequentialIndex: true,
         bookmarked: true,
-    }).merge(z.object({
-        sequentialList: sequentialListPropsSchema.pick({sequentialKey: true}).nullish()
-    }))
+    })
+    .merge(
+        z.object({
+            sequentialList: sequentialListPropsSchema
+                .pick({ sequentialKey: true })
+                .nullish(),
+        }),
+    )
     .transform((a) => {
         return {
             ...a,
@@ -354,7 +358,7 @@ export const mdxNoteFromStringPropsSchema = mdxNotePropsSchema
     .innerType()
     .pick({
         raw: true,
-        rootRelativePath: true
+        rootRelativePath: true,
     });
 
 export const mdxNoteIntriguingValSummaryPropsSchema = mdxNotePropsSchema

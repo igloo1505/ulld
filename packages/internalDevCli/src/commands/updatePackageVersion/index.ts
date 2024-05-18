@@ -3,7 +3,6 @@ import { MonoRepoManager } from "../../monoRepoUtils.js";
 
 
 export default class UpdatePackageVersion extends Command {
-    // static state: "beta";
     static summary = "Update Package Version";
     static description = "Update Package Version";
     static strict = false;
@@ -26,6 +25,6 @@ export default class UpdatePackageVersion extends Command {
         const { args } = await this.parse(UpdatePackageVersion);
         let m = new MonoRepoManager()
         m.replacePackage(args.package, args.version)
-        m.writeModified()
+        m.writeModified(true)
     }
 }

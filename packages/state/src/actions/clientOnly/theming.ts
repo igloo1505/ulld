@@ -18,7 +18,7 @@ export const getThemeCLIENT = (): ThemeOptions => {
         "ulld-theme",
     ) as ThemeOptions | undefined;
     if (!t) {
-        t = document.querySelector("html")?.getAttribute("data-ulld-theme");
+        t = document.querySelector("html")?.getAttribute("data-ulld-theme") as ThemeOptions
     }
     if (!t) {
         changeTheme("violet");

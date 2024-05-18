@@ -16,7 +16,7 @@ import emoji from "remark-emoji";
 /* import toc from "@jsdevtools/rehype-toc" */
 import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
-import { getConfig } from "@ulld/developer/getConfig";
+import { getUlldConfig } from "@ulld/developer/getConfig";
 import { ParsedAppConfig } from "@ulld/configschema/types";
 
 export const mermaidConfig: MermaidConfigType = {
@@ -77,14 +77,19 @@ const rehypePlugins = (
 const remarkPlugins = (
     config?: ParsedAppConfig,
 ): CompileOptions["remarkPlugins"] => {
-    return [remarkMath, remarkGfm, [emoji as any, {}]];
+    return [
+        remarkMath, 
+        /* @ts-ignore */
+        remarkGfm as any,
+        [emoji as any, {}]
+    ];
 };
 
 
 export const parseMdxString = async ({
     content,
 }: z.input<typeof parseMdxProps>) => {
-    const config = getConfig();
+    const config = getUlldConfig();
     let res = await compile(content, {
         outputFormat: "function-body",
         remarkPlugins: remarkPlugins(config),

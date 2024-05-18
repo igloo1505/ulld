@@ -73,7 +73,7 @@ const Observers = connector(
         useEffect(() => {
             if (!themeCookie) {
                 let htmlTheme = htmlEm()?.getAttribute("data-ulld-theme") || "violet";
-                changeTheme(htmlTheme);
+                changeTheme(htmlTheme as ThemeOptions);
             }
         }, [themeCookie]);
 

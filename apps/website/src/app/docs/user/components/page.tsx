@@ -1,5 +1,5 @@
 import React from "react";
-import { Documentation, allDocumentations } from ".contentlayer/generated";
+import { Documentation, allDocumentations } from "contentlayer/generated";
 import staticContent from "staticContent";
 import { notFound } from "next/navigation";
 import MDXArticle from "#/components/layouts/mdxArticle";

@@ -1,12 +1,10 @@
 "use client";
 import { run } from "@mdx-js/mdx";
-import type { MDXContent, MDXModule } from "mdx/types";
 import React, {
     useState,
     Fragment,
     useRef,
     useCallback,
-    useEffect,
 } from "react";
 import * as runtime from "react/jsx-runtime";
 import * as devRuntime from "react/jsx-dev-runtime";
@@ -14,6 +12,7 @@ import { getComponentMap } from "@ulld/component-map/client";
 import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
 import { useIsomorphicLayoutEffect } from "@ulld/hooks/useIsomorphicEffect";
 import { CopyContextMenu } from "@ulld/utilities/components/copyContextMenu"
+import { MDXModule } from "mdx/types";
 
 interface MdxContentPreCompiledProps {
     className?: string;
@@ -33,6 +32,7 @@ export const MdxContentPreCompiled = ({
 
     const runMdx = useCallback(
         async (_content: string) => {
+            /* @ts-ignore */
             const res = await run(_content, {
                 ...runtime,
                 ...devRuntime,
