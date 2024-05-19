@@ -1,16 +1,15 @@
 import React, { ReactNode } from "react";
 import "#/styles/proseStyles.scss"
+import MdxLayout from "#/components/layouts/mdxLayout";
 
 interface DocsLayoutProps {
   children: ReactNode;
 }
 
 const DocsLayout = ({ children }: DocsLayoutProps) => {
-  return <div className={"w-full h-full min-h-screen flex flex-col justify-start items-center"}>
-        <div>
+  return <MdxLayout>
             {children}
-        </div>
-    </div>;
+        </MdxLayout>
 };
 
 DocsLayout.displayName = "DocsLayout";

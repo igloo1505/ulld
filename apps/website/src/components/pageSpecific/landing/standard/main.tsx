@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { StoryOfUlldSection } from "../sections/storyOfULLD/section";
 import { DescriptionSection } from "../description/descriptionSection";
 import Hero from "./hero";
+import JoinWaitingList from "../waitinglist/joinWaitingList";
 
 interface HeroProps { }
 
@@ -17,6 +18,7 @@ const LandingPage = (props: HeroProps) => {
                 <DescriptionSection
                     key="dsec"
                 />
+            <JoinWaitingList />
             <StoryOfUlldSection key="stulld" />
         </div>
     );

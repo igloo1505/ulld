@@ -1,13 +1,10 @@
+import ComingSoon from "#/components/utility/comingSoon";
 import React from "react";
 
 interface AboutMePageProps {}
 
 const AboutMePage = (props: AboutMePageProps) => {
-  return (
-    <div className={"h-screen flex flex-col justify-center item-center gap-6"}>
-      <h1 className={"text-5xl font-bold"}>About me here</h1>
-    </div>
-  );
+    return <ComingSoon />;
 };
 
 AboutMePage.displayName = "AboutMePage";

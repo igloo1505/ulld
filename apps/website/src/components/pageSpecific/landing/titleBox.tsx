@@ -29,14 +29,6 @@ export const LandingPageTitleBox = ({ show }: LandingPageTitleBoxProps) => {
                 <span>Dum</span>
             </h1>
             <LandingSubTitle className={"mt-[-0.5rem] text-[3vw] md:text-base"} />
-            <HighlightButton
-                className={"mt-4 lg:mt-0"}
-                href="/joinMailingList"
-                _onClick={cancelLandingTyping}
-                show={show}
-            >
-                Join the waitlist
-            </HighlightButton>
         </div>
     );
 };

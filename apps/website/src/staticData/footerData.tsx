@@ -16,8 +16,8 @@ export const footerLinks: Record<FooterLinkKeys, LinkGroupItems> & {banners?: Fo
     ],
    docs: [
         {
-            href: links.docs.internal.home,
-            label: "Home"
+            href: links.docs.internal.users,
+            label: "Users"
         },
         {
             href: links.docs.internal.developerHome,

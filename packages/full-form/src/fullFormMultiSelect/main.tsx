@@ -19,8 +19,11 @@ import {
     flip,
     offset,
     size,
+    useDismiss,
     useFloating,
+    useInteractions,
 } from "@floating-ui/react";
+import {useOnClickOutside} from "@ulld/hooks/useClickOutside"
 
 export interface MultiSelectInputProps<
     T extends FieldValues,
@@ -89,6 +92,12 @@ export const MultiSelectInput = <T extends FieldValues, L extends string>({
         ],
     });
 
+    const dismiss = useDismiss(context)
+
+    const {getReferenceProps, getFloatingProps} = useInteractions([dismiss])
+
+
+
 
     return (
         <FormField
@@ -111,6 +120,7 @@ export const MultiSelectInput = <T extends FieldValues, L extends string>({
                                     e.preventDefault();
                                     toggleOpen();
                                 }}
+                                {...getReferenceProps()}
                             >
                                 <span
                                     className={
@@ -139,6 +149,7 @@ export const MultiSelectInput = <T extends FieldValues, L extends string>({
                                 isMounted={context.open}
                                 styles={floatingStyles}
                                 context={context}
+                                getFloatingProps={getFloatingProps}
                             />
                         </>
                     </FormControl>

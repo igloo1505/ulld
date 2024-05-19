@@ -33,6 +33,10 @@ export const propColorSchema = z.object({
     orange: z.boolean().default(false),
     green: z.boolean().default(false),
     red: z.boolean().default(false),
+    purple: z.boolean().default(false),
+    pink: z.boolean().default(false),
+    sky: z.boolean().default(false),
+    /* red: z.boolean().default(false), */
 })
 
 

@@ -13,7 +13,7 @@ type Props = {
     HTMLProps<HTMLSpanElement>;
 
 export const Underline = (p: Props) => {
-    const { thin, thick, ...props } = componentConfig.parse(p);
+    const props = componentConfig.parse(p);
     /* TODO: Move this to the zod object. */
     let tt = getToolTipWrapperContent(props);
     if (tt) {
@@ -28,13 +28,11 @@ export const Underline = (p: Props) => {
                 }
             >
                 <span
+                    {...props}
                     className={clsx(
                         "underline underline-offset-2",
-                        /* thick && "decoration-4", */
-                        /* thin && "decoration-1", */
-                        /* Boolean(!thin && !thick) && "decoration-2", */
+                        props.className
                     )}
-                    {...props}
                     style={{
                         ...props.css,
                         ...p.style,
@@ -47,9 +45,7 @@ export const Underline = (p: Props) => {
         <span
             className={clsx(
                 "underline underline-offset-2",
-                /* thick && "decoration-4", */
-                /* thin && "decoration-1", */
-                /* Boolean(!thin && !thick) && "decoration-2", */
+                props.className
             )}
             {...props}
             style={{

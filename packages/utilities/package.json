@@ -53,7 +53,8 @@
     "./isLocal": "./src/utils/isLocal.ts",
     "./initialLoader": "./src/loaders/installerComponents/initialLoader.tsx",
     "./tikzLoader": "./src/loaders/installerComponents/TikzLoader.tsx",
-    "./autoWrapMathSchemas": "./src/schemas/autoWrapMathSchema.ts"
+    "./autoWrapMathSchemas": "./src/schemas/autoWrapMathSchema.ts",
+    "./getDarkMode": "./src/utils/getDarkMode.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",

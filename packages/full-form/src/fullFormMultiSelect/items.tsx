@@ -2,24 +2,18 @@
 import React, {
     CSSProperties,
     ForwardedRef,
-    RefObject,
     forwardRef,
-    useRef,
     useState,
 } from "react";
 import { MultiSelectInputProps } from "./main";
 import cn from "@ulld/utilities/cn";
 import { Check } from "lucide-react";
 import { FieldValues } from "react-hook-form";
-import { createPortal } from "react-dom";
-import { motion } from "framer-motion";
 import PopoverBtnIndicator from "./buttonIndicators";
 import {
     FloatingFocusManager,
     FloatingOverlay,
     FloatingPortal,
-    autoUpdate,
-    flip,
     useFloating,
 } from "@floating-ui/react";
 
@@ -39,6 +33,7 @@ interface FullFormMultiSelectItemsProps<
     setOpen: (newOpen: boolean) => void;
     isMounted: boolean;
     styles: CSSProperties;
+    getFloatingProps: () => any
 }
 
 const FullFormMultiSelectItems = forwardRef(
@@ -55,7 +50,8 @@ const FullFormMultiSelectItems = forwardRef(
             setOpen,
             isMounted,
             styles,
-            context
+            context,
+            getFloatingProps
         }: FullFormMultiSelectItemsProps<T, HTMLSelectElement, L>,
         ref: ForwardedRef<any>,
     ) => {
@@ -82,6 +78,7 @@ const FullFormMultiSelectItems = forwardRef(
                             onAnimationEnd={() => {
                                 setReady(true)
                             }}
+                            {...getFloatingProps()}
                         >
                             <PopoverBtnIndicator
                                 ready={ready}

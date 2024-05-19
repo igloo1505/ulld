@@ -49,4 +49,3 @@ export const getComponentMap = <J extends ComponentType<unknown>[]>(content: str
          }, extraComponents)
      } satisfies MDXComponents
 }
-

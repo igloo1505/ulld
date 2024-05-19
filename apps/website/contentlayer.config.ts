@@ -6,10 +6,8 @@ import rehypePrettyCode from "rehype-pretty-code";
 import emoji from "remark-emoji";
 import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
-// import rehypeMermaid from "rehype-mermaid";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import fs from "fs";
-// import markdownOptions from "@ulld/utilities/defaults/markdown.json"
 
 const markdownOptions = fs.readFileSync(
     "../../packages/utilities/src/defaults/markdownOptions.json",
@@ -116,7 +114,7 @@ export const RefundPolicy = defineDocumentType(() => ({
 
 export const Documentation = defineDocumentType(() => ({
     name: "Documentation",
-    filePathPattern: `docs/*.mdx`,
+    filePathPattern: `docs/**/*.mdx`,
     fields: {
         title: { type: "string", required: false },
         lastUpdated: { type: "date", required: false },
@@ -129,6 +127,47 @@ export const Documentation = defineDocumentType(() => ({
     },
     computedFields: {
         // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
+    },
+    contentType: "mdx",
+}));
+
+
+export const Demos = defineDocumentType(() => ({
+    name: "Demo",
+    filePathPattern: `demos/**/*.mdx`,
+    fields: {
+        title: {
+            type: "string",
+            required: true,
+        },
+        updated: {
+            type: "date",
+            required: false,
+        },
+        created: {
+            type: "date",
+            required: true,
+        },
+        tags: {
+            type: "list",
+            of: {
+                type: "string",
+            },
+        },
+        // description: {
+        //     type: "string",
+        //     required: true
+        // },
+        id: {
+            type: "string",
+            required: true
+        },
+        sequential: {
+            type: "number"
+        },
+        sequentialId: {
+            type: "string"
+        }
     },
     contentType: "mdx",
 }));
@@ -188,6 +227,7 @@ export default makeSource({
         Documentation,
         CancelSubscriptionPrompt,
         Blog,
+        Demos
     ],
     mdx: {
         remarkPlugins: [remarkMath, remarkGfm, [emoji as any, {}]],

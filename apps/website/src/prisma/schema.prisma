@@ -39,8 +39,6 @@ model FeatureRequest {
 
 model WaitlistRequest {
     id         Int      @id @default(autoincrement())
-    firstName  String
-    lastName   String
     email      String
     receivedOn DateTime @default(now())
     emailsSent Int      @default(0)

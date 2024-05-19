@@ -1,3 +1,4 @@
+import ComingSoon from '#/components/utility/comingSoon';
 import React from 'react'
 
 
@@ -7,9 +8,7 @@ interface DonationCanceledPageProps {
 }
 
 const DonationCanceledPage = (props: DonationCanceledPageProps) => {
-return (
-    <div></div>
-)
+    return <ComingSoon />;
 }
 
 

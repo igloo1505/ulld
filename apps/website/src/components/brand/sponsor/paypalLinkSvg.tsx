@@ -1,25 +1,25 @@
-import React from "react";
+import React, { HTMLProps } from "react";
+import clsx from 'clsx'
 
-interface PayPalLinkQrProps {
+interface PayPalLinkQrProps extends HTMLProps<HTMLDivElement> {
     fill?: string;
     size?: number
+    background?: string
 }
 
-const PayPalLinkQr = ({ fill = "hsl(var(--primary))", size= 80 }: PayPalLinkQrProps) => {
+const PayPalLinkQr = ({ fill = "hsl(var(--foreground)/0.8)", size= 80, background = "transparent", ...htmlProps }: PayPalLinkQrProps) => {
     return (
-        <div>
+        <div {...htmlProps} className={clsx("relative w-fit h-fit", htmlProps.className)}>
             <svg
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
                 y="0px"
-                width="1147px"
-                height="1147px"
                 viewBox="0 0 1147 1147"
-                enable-background="new 0 0 1147 1147"
+                /* enable-background="new 0 0 1147 1147" */
                 xmlSpace="preserve"
             >
-                <rect x="0" y="0" width="1147" height="1147" fill="rgb(255,255,255)" />
+                <rect x="0" y="0" width="1147" height="1147" fill={background} />
                 <g transform="translate(62,62)">
                     <g transform="translate(279,0) scale(0.31,0.31)">
                         <g transform="" style={{ fill }}>

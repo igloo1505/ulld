@@ -1,0 +1,237 @@
+---
+title: Divergent Time
+created: 5-18-24
+sequentialId: myNotes 
+sequential: 1
+id: myNotes1
+---
+
+
+# Divergent Time
+
+<Abstract>
+A novel relativistic geometry is presented which yields several observed quantities that are not accounted for under classical relativistic models. Relative motion is re-examined under which a numerically equivalent function is applied. This function dictates that velocities should remain equivalent across reference frames, which in turn implies that it is not time alone that dilates, but rather the time elapsed between two points in space as space itself dilates between reference frames.  
+   
+A peculiar velocity of $\bar{v} \approx 526.6 ~ \text{km} / \text{s}$ is presented and briefly compared with research carried out through direct observation. A causal derivation of the speed of light is given, with an error of $0.04\%$, and a velocity proportional spacial dilation of $ds \approx \Psi = 1.618$ is presented with an error of $0.002\%$.  
+
+This model predicts a mechanism of gravity which can, with further research, offer an explanation for the bullet cluster's varied mass affects, the apparent lack of gravitational aberration, and potentially excess galactic rotation curves without the need for CDM[^5]
+</Abstract>
+
+Despite the mathematical convenience of describing many physical processes as a function of time, $\gamma$ as described in <EqRef id="time-dilation-1"/> indicates that time is in fact a function of velocity; not the other way around.
+
+
+<EqRef anchor id="time-dilation-1">
+$$
+\begin{align}
+\Delta t_{0} = \Delta t_{\prime} \gamma = \Delta t_{\prime} \frac{1}{\sqrt{1 - \frac{v^{2}}{c^{2}}}}
+\end{align}
+$$
+</EqRef>
+
+Of course the approximation of describing some physical process $f$ with respect to time as $\frac{df}{dt}$ is accurate for $v \ll c$, but how should a _"final"_ derivative be defined if not as $dt$? Of course any changing parameter can be measured as a rate of change with respect to another changing parameter, but current differential forms of relativistic geometries produce asymmetries that are yet to be remedied. Let us address these asymmetries below.
+
+
+### Covariance, Contravariance and Shared Coordinate Systems
+
+<Card title="Place whiteboard here with common SR time dilation geometry derivation">
+  A -> B 
+</Card>
+
+<Admonition title="Notation" type="definition" sidebar>
+ To distinguish between coordinate systems in a manner that differs at times from standard SR[^3] and GR[^4] models, let us describe all variables relevant to the reference frame of the observer in relative motion using a tilde. For an observer $O$ at relative rest according to some gravitation source, an observer in relative motion according to both that same gravitation source and $O$ would be described as moving at $\widetilde{v} = \frac{dx}{dt}$.
+</Admonition>
+
+A significant part of the model being proposed here is the notion that absolute motion is indeed physically consequential. This should not discount the significance of relative motion as defined by SR[^3], but rather expand upon it to include external, tertiary reference frames.
+
+Consider equation <EqRef id="time-dilation-1"/> with respect to the diagram above. If observer $\widetilde{O}$ is moving between points $A$ and $B$ at velocity $\widetilde{v}$, how is it possible that $\widetilde{O}$ should reach point $B$ at a time that is larger than $\frac{d}{v}$?
+
+$$
+\begin{align}
+\Delta \widetilde{t} = \Delta t \gamma \quad \Rightarrow \quad \Delta \widetilde{t} > \frac{\text{distance}}{\text{velocity}}
+\end{align}
+$$
+
+While current relativistic models dilate time in accordance with both SR and GR, they in turn must dilate time dependent variables. This breaks the most fundamental symmetries, including those that exist not as a matter of observation and experiment, but of pure definition.
+
+$$
+\begin{align}
+d = vt \quad \Rightarrow \quad d \neq v \widetilde{t} \iff \widetilde{t} = t \gamma
+\end{align}
+$$
+
+Let us consider a scenario in which observer $O$ communicates to another observer $\widetilde{O}$ that $\widetilde{O}$ should travel at precisely velocity $\widetilde{v}$ between two agreed upon points in space, $A$ and $B$. It is inconceivable that $O$ should measure the time elapsed between point $A$ and $B$ as being greater than $\frac{d}{v}$.  
+
+If we instead consider the motion of $\widetilde{O}$ with respect to the coordinate system of $O$, and allow that $v$ should be equivalent in both coordinate systems, such that $vt = \widetilde{v}t$ for $t$ as measured in the coordinate system of $O$, it must be not that time that dilates, but rather the time elapsed between two previously shared points in space. 
+
+This yields a geometric interpretation of time as a density axis, such that
+
+<Admonition title="Note" type="important" sidebar>
+   Equation <EqRef id="spatial-divergence" /> is actually incorrect according to the model being proposed. A modified version that follows the $\frac{1}{r^{2}}$ geometry of gravity and other radiating forces is given below with further derivation.
+</Admonition>
+
+
+<EqRef anchor id="spatial-divergence">
+$$
+\begin{align}
+ \widetilde{S} = S \left[\begin{array}{ccc}
+    \frac{1}{\sqrt{1 - \frac{v^{2}}{c^{2}}}} & 0 & 0 \\
+0 & \frac{1}{\sqrt{1 - \frac{v^{2}}{c^{2}}}} & 0 \\
+0 & 0 & \frac{1}{\sqrt{1 - \frac{v^{2}}{c^{2}}}}
+    \end{array}\right] dt
+\end{align}
+$$
+</EqRef>
+
+
+While profound and contradictory to current relativistic models, this dilation of space is in accordance with the concept of cosmic inflation, while requiring less modification to pre-relativity theories than SR itself. Further, this can potentially yield a means to define a state of absolute rest and absolute motion.
+
+
+## Relativity and Tertiary Reference Frames
+
+Let us consider this proposed dilation of space as it relates to both cosmic inflation and the equivalence principle.[^1] As both SR and GR rely heavily on both the equivalence principle and Mach's principle[^2], we should then examine the dilation of space necessary to produce local gravitational effects. Recall that:
+
+
+$$
+\begin{align}
+ \vec{g} = \sum_{i \neq j} G \frac{m_{i}}{R_{ji}^{2}}\hat{R}_{ji} 
+\end{align}
+$$
+
+If we instead reverse this, such that it is not $m_j$ that is being pulled towards $m_i$, but rather the space around $m_i$ that is dilating in the direction of $m_j$ we find a nearly identical equation as:
+
+$$
+\begin{align}
+ \vec{g} = \sum_{i \neq j} - G \frac{m_{i}}{R_{ij}^{2}}\hat{R}_{ij}
+\end{align}
+$$
+
+Differentiating this with respect to $R$ gives:
+
+<Boxed muted>
+$$
+\begin{align}
+\delta_{(R)} = \frac{d}{dR} \left[ -G \frac{m_{i}}{R_{ij}^{2}}\hat{R}_{ij} \right] = 2 G \frac{m_{i}}{R_{ij}^{3}} dR
+\end{align}
+$$
+</Boxed>
+
+### Applying $\delta_{(R)}$ as a Spacial Dilation Scalar
+
+As $\gamma$ is applied as a scale factor of relativistic quantities, let us then consider $\delta_{(R)}$ as it would be applied under a similar mathematical context. As integrating $\delta_{(R)}$ with respect to $R$ gives $\vec{g} + R_{\text{initial}}$, we find the following:
+
+
+$$
+\begin{align}
+ \int_{0}^{R_{\oplus}} \left[ 2 G \frac{M_{\oplus}}{R_{\oplus}^{3}}\hat{R} \right] dR = g + R_{\oplus}
+\end{align}
+$$
+
+Factoring $R_{\oplus}$ from this result, we find:
+
+<Boxed muted>
+<EqRef anchor id="gammaBar">
+$$
+\begin{align}
+ R_{\oplus} \bar{\gamma} = R_{\oplus} \left( 1 + \frac{g}{R_{\oplus}} \right)
+\end{align}
+$$
+</EqRef>
+</Boxed>
+
+While numerically equivalent, this result in the form of $\bar{\gamma}$ as opposed to $\int \delta$ allows us to apply this quantity in a manner that is symmetrical with that of the classical $\gamma$.
+
+### $\delta_{(R)}$ as a Function of Velocity
+
+Let us re-examine the classical $\gamma$ factor as:
+
+$$
+\begin{align}
+\gamma = \frac{1}{\sqrt{1 - \frac{v^{2}}{c^{2}}}}
+\end{align}
+$$
+
+Rearranging this to find $v$ gives:
+
+<EqRef anchor id="vbarPre">
+$$
+\begin{align}
+ v = c \sqrt{1 - \frac{1}{\gamma^{2}}}
+\end{align}
+$$
+</EqRef>
+
+If we consider equation <EqRef id="vbarPre"/> in the context of equation <EqRef id="gammaBar" />, we find:
+
+<Boxed muted>
+    <EqRef anchor id="vbar">
+        $$
+        \begin{align}
+        \bar{v} = c \sqrt{1 - \frac{1}{\left( 1 + \frac{g}{R_{\oplus}} \right)^{2}}} = 526,596.4 ~ \frac{\text{m}}{\text{s}}
+        \end{align}
+        $$
+    </EqRef>
+</Boxed>
+
+
+## Physically Accurate Time Scales
+
+As this model of divergent coordinate systems indicates time itself <Ul yellow>***is***</Ul> this divergence of space, let us then examine what a physically accurate unit of time might be.  
+
+
+Let $ds$ represent the dilation of $\mathbb{R}^{3}$ space as a function of both position and the velocity of surrounding massive bodies.
+
+<Center>
+    Add Diagram here of A and B spacial divergence in notebook on page with "page AB" in corner.
+</Center>
+
+Consider the diagram above, in which over the course of the integral 
+
+$$
+\begin{align}
+ \int_{A_{1}}^{A_{2}} \frac{dx_A}{dt}
+\end{align}
+$$
+
+coordinate system $A$ dilates to the corresponding coordinate system $B$.
+
+Let us define the integral of $dx_A$ to be the spacial integral between $A_1$ and $A_2$, over some time integral of $t$. If over that same time integral, the coordinate system of the observer dilates such that the spacial integral between $A_1$ and $A_2$ is now equivalent to the spacial integral between $B_1$ and $B_2$, let us then define this integral in terms of $\bar{v}$.
+
+As 
+
+$$
+\begin{align}
+ dx_B = \bar{v} \left( 1 + \delta_{(R_{\oplus})} \right)
+\end{align}
+$$
+
+
+<Admonition title="Significance of $\Psi$" type="info" sidebar>
+ Does this spacial dilation scalar somehow imply a resolution to both the fine tuning paradox and the Fermi paradox? While speculative, it could be that life as we know it is best suited to exist at densities and velocities such that the dilation of space as a scalar of velocity approaches $\Psi$.  
+If true, this indicates that extraterrestrial life might exist much closer than expected while remaining undetected, if it were to be separated by some density discrepancy $ds$.
+</Admonition>
+
+subtracting $dx_A = \bar{v}$ to find $ds$ gives:
+
+$$
+\begin{align}
+ ds_{\oplus} = \bar{v} \left( 1 + \delta_{(R_{\oplus})} \right) - \bar{v} = \bar{v} \delta_{(R_{\oplus})} = 1.61800 ~ \frac{\text{m}}{\text{s}}
+\end{align}
+$$
+
+This is equivalent to the golden ratio $\Psi - 0.00203\%$. It is important to note here, that while $\Psi$ is measured in units of meters per second, $\delta$ encapsulates $R$ in units of meters and likewise $\bar{\gamma}$ encapsulates $g$ in units of meters per second. It is this commonality of units that provides the significance of a transcendental quantity, $\Psi$. While $\Psi$ is expressed in the units of $\delta$, $\bar{v}$ and $\bar{\gamma}$, $\Psi$ itself acts as a dimensionless scalar.
+
+
+
+<Vspace height={64}/>
+
+[^1]: **Equivalence Principle:**  
+    The principle that the acceleration on the surface of a gravitational source is indistinguishable from the force experienced while on an upward accelerating platform of an equal magnitude.
+[^2]: **Mach's Principle:**  
+    The somewhat controversial principle that the inertia of a body is a function of the combined gravitation of all other bodies in the Universe.
+[^3]: **SR**  
+    Special Relativity
+[^4]: **GR**  
+    General Relativity
+[^5]: **CDM**  
+    Cold dark matter
+

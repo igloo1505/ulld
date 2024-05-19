@@ -1,22 +1,19 @@
 import clsx from 'clsx'
-import React from 'react'
+import React, { HTMLProps } from 'react'
 
 
 
-interface CenteredTextProps {
+interface CenteredTextProps extends HTMLProps<HTMLDivElement> {
     width?: number | string
     children?: React.ReactNode
     muted?: boolean
     noMargin?: boolean
 }
 
-export const CenteredText = ({ width, children, muted, noMargin }: CenteredTextProps) => {
+export const CenteredText = ({ width, children, muted, noMargin, ...props }: CenteredTextProps) => {
     return (
-        <div className={clsx("w-full h-fit flex flex-col justify-center items-center gap-3", !noMargin && "my-5")}>
+        <div {...props} className={clsx("w-full h-fit flex flex-col justify-center items-center gap-3", !noMargin && "my-5", props.className)}>
             <div
-                style={{
-                    width: width ? width : "min(400px, 85vw)"
-                }}
                 className={clsx("text-center", muted && "text-muted-foreground")}
             >
                 {children}

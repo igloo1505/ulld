@@ -1,10 +1,13 @@
 import React from "react";
+import cn from '@ulld/utilities/cn'
 
-interface PreventSharpEdgesProps {}
+interface PreventSharpEdgesProps {
+    className?: string
+}
 
-const PreventSharpEdges = (props: PreventSharpEdgesProps) => {
+const PreventSharpEdges = ({className}: PreventSharpEdgesProps) => {
   return (
-    <div className="absolute z-10 pointer-events-none inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,hsl(var(--background)))]" />
+    <div className={cn("absolute top-0 left-0 z-10 pointer-events-none inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,hsl(var(--background)))]", className)} />
   );
 };
 

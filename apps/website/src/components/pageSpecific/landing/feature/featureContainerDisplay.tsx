@@ -25,7 +25,7 @@ const FeatureContainerDisplay = ({
     return (
         <motion.div
             className={clsx(
-                "relative w-full max-h-[60vh] md:h-full flex flex-col justify-center items-center origin-center py-8",
+                "relative w-full max-h-[60vh] md:h-full flex flex-col justify-center items-center origin-center py-8 flex-grow",
                 displayExpand && "h-full",
                 containerClasses,
             )}

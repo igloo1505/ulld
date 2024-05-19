@@ -1,4 +1,4 @@
-import { FieldValues, Path } from "react-hook-form";
+import { FieldValues, Path, UseFormReturn } from "react-hook-form";
 
 export interface BaseFullFormInputProps<T extends FieldValues, H extends HTMLElement>
     extends Omit<React.InputHTMLAttributes<H>, "form"> {
@@ -8,3 +8,6 @@ export interface BaseFullFormInputProps<T extends FieldValues, H extends HTMLEle
     formItemClasses?: string;
     placeholder?: string;
 }
+
+
+export type { FieldValues, Path, UseFormReturn }
