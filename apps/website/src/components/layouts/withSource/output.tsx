@@ -1,20 +1,28 @@
-"use client"
-import React, { ReactNode } from 'react'
+"use client";
+import { HTMLMotionProps, MotionValue, motion } from "framer-motion";
+import React, { ForwardedRef, ReactNode, forwardRef } from "react";
 
-
-
-interface CodeOutputProps {
-   children: ReactNode
+interface CodeOutputProps extends HTMLMotionProps<"div"> {
+    children: ReactNode;
 }
 
-const CodeOutput = ({children}: CodeOutputProps) => {
-return (
-    <div className={"w-full h-full max-h-full overflow-y-auto"}>{children}</div>
-)
-}
+const CodeOutput = forwardRef(
+    (
+        { children, ...props }: CodeOutputProps,
+        ref: ForwardedRef<HTMLDivElement>,
+    ) => {
+        return (
+            <motion.div
+                className={"w-full h-full max-h-full overflow-y-auto"}
+                {...props}
+                ref={ref}
+            >
+                {children}
+            </motion.div>
+        );
+    },
+);
 
-
-CodeOutput.displayName = "CodeOutput"
-
+CodeOutput.displayName = "CodeOutput";
 
 export default CodeOutput;
