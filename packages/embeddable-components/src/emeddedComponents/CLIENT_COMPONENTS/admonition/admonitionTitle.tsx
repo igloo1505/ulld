@@ -1,16 +1,16 @@
 "use client";
-import { useDebounceMdxParse } from "@ulld/hooks/useDebounceMdxParse";
 import { cn } from "@ulld/utilities/cn";
-import React, { useEffect } from "react";
+import React from "react";
 import { DynamicIcon } from "@ulld/icons/dynamic";
 import { AdmonitionType } from "@ulld/utilities/admonition/types";
+import { useMathjaxDynamicParse } from "@ulld/hooks/useMathjaxDynamicParse";
 
 export interface AdmonitionTitleProps {
     title: string;
     admonitionType?: AdmonitionType;
     dropdown?: boolean;
     groupId: string;
-    titleBold?: boolean
+    titleBold?: boolean;
 }
 
 export const AdmonitionTitle = ({
@@ -20,13 +20,7 @@ export const AdmonitionTitle = ({
     titleBold,
     groupId,
 }: AdmonitionTitleProps) => {
-    const { value, setValue, Component } = useDebounceMdxParse(title, 500, {
-        bareAss: true
-    });
-
-    useEffect(() => {
-        setValue(title);
-    }, [title]);
+    useMathjaxDynamicParse(title);
 
     return (
         <div
@@ -43,11 +37,14 @@ export const AdmonitionTitle = ({
                 {Boolean(admonitionType && admonitionType !== "plain") && (
                     <DynamicIcon className={"w-4 h-4"} name={admonitionType} />
                 )}
-                <Component
-                    className={
-                        cn("admonition-title flex flex-row flex-wrap flex-grow font-bold tracking-wide inlineMath", titleBold && "font-semibold")
-                    }
-                />
+                <div
+                    className={cn(
+                        "admonition-title flex flex-row flex-wrap flex-grow font-bold tracking-wide inlineMath",
+                        titleBold && "font-semibold",
+                    )}
+                >
+                    {title}
+                </div>
             </div>
         </div>
     );

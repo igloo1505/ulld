@@ -12,6 +12,12 @@ interface Props<T extends string> {
     findOverride?: boolean;
 }
 
+declare global {
+    interface Window {
+        ulldStore: ToolkitStore;
+    }
+}
+
 export const ReduxProvider = <T extends string>({
     children,
     extraReducers,

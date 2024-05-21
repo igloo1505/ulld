@@ -32,7 +32,7 @@
     "./components/client/grid": "./src/emeddedComponents/grid.tsx",
     "./components/client/video": "./src/emeddedComponents/media/video.tsx",
     "./components/client/modelView": "./src/emeddedComponents/modelView/ModelView.tsx",
-    "./components/client/card": "./src/emeddedComponents/card.tsx",
+    "./components/client/card": "./src/emeddedComponents/CLIENT_COMPONENTS/card/main.tsx",
     "./components/client/hl": "./src/emeddedComponents/Hl.tsx",
     "./components/client/ul": "./src/emeddedComponents/Underline.tsx",
     "./components/client/text/small": "./src/emeddedComponents/text/small.tsx",

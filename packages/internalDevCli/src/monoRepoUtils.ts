@@ -230,7 +230,7 @@ export class MonoRepoManager {
         if (typeof re === "string") {
             re = [re];
         }
-        let packages: (PackageSource & {matches: Dependency[]})[] = [];
+        let packages: (PackageSource & { matches: Dependency[] })[] = [];
         re.forEach((reg) => {
             this.packages.forEach((a) => {
                 let packageMatches: Dependency[] = [];
@@ -247,6 +247,6 @@ export class MonoRepoManager {
                 }
             });
         });
-        return packages
+        return packages;
     }
 }
