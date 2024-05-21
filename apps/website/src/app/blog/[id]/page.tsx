@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import MDXArticle from "#/components/layouts/mdxArticle";
 import { ArticleJsonLd, NextSeo } from "next-seo";
 import staticContent from "staticContent";
+import Analytics from "#/components/utility/analytics";
 
 interface BlogArticlePageProps {
     params: {
@@ -17,6 +18,12 @@ const BlogArticlePage = ({ params: { id } }: BlogArticlePageProps) => {
     if (!article) return notFound();
     return (
         <>
+            <Analytics 
+                pageView={{
+                    path: `/blog/${id}`,
+                    title: `Blog View: ${article.title}`
+                }}
+            />
             <MDXArticle mdx={article} />
         </>
     );

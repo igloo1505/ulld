@@ -28,11 +28,11 @@ export const integrationsFeature: FeaturedContainerPropsRequired = {
         return (
             <div
                 className={
-                    "h-[40px] flex flex-row justify-start items-center flex-wrap"
+                    "min-h-[40px]"
                 }
             >
                 An integral part of{" "}
-                <span className={"pl-1 inline-block w-16"}>
+                <span className={"pl-1 inline-block w-16 translate-y-[25%]"}>
                     <AnimatedUlldLogo show={true} height={32} speed={2} />
                 </span>
             </div>
@@ -55,7 +55,7 @@ export const integrationsFeature: FeaturedContainerPropsRequired = {
                     <LogoAsText fontSize={18} /> with your existing workflow should be
                     painless.
                 </span>
-                <div className={clsx("w-full px-8 flex flex-row items-center", orientation === "rtl" ? "justify-end" : "justify-start")}>
+                <div className={clsx("w-full px-8 flex flex-row items-center justify-center mt-4 md:mt-0", orientation === "rtl" ? "md:justify-end" : "md:justify-start")}>
                     <Link href="/featureRequest" className={buttonVariants()}>Submit a feature request</Link>
                 </div>
             </FeatureDescContainer>

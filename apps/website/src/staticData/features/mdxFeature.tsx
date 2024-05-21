@@ -29,7 +29,6 @@ export const mdxFeature: FeaturedContainerPropsRequired = {
                     {
                         src: mdxScreenshot,
                         alt: "MDX Code",
-                        /* className: "w-full lg:w-auto lg:h-full" */
                     },
                     {
                         src: mdxScreenshotOutput,

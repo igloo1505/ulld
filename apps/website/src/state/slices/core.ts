@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { initialState } from "../initialState/initialState";
+import { NavbarButton } from "../initialState/core";
 
 
 
@@ -12,11 +13,17 @@ const slice = createSlice({
         },
         setLandingSectionState(state, action: PayloadAction<string>) {
            state.landingSection = action.payload
-        }
+        },
+        createNavbarButton(state, action: PayloadAction<NavbarButton>) {
+            state.navbarButtons = state.navbarButtons.some((a) => a.id === action.payload.id) ? state.navbarButtons : [...state.navbarButtons, action.payload]
+        },
+        removeNavbarButton(state, action: PayloadAction<string>) {
+           state.navbarButtons = state.navbarButtons.filter((a) => a.id !== action.payload)
+        },
     }
 })
 
 
-export const { setInitialRender, setLandingSectionState } = slice.actions
+export const { setInitialRender, setLandingSectionState, createNavbarButton, removeNavbarButton } = slice.actions
 export default slice.reducer
 

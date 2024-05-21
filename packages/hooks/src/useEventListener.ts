@@ -2,6 +2,14 @@ import { useEffect, useRef } from 'react'
 import type { RefObject } from 'react'
 import { useIsomorphicLayoutEffect } from './useIsomorphicEffect'
 
+declare global {
+  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+  interface WindowEventMap {
+    'mathjax-loaded': CustomEvent
+  }
+}
+
+
 
 // MediaQueryList Event based useEventListener interface
 function useEventListener<K extends keyof MediaQueryListEventMap>(

@@ -1,10 +1,21 @@
+import Analytics from "#/components/utility/analytics";
 import ComingSoon from "#/components/utility/comingSoon";
 import React from "react";
 
-interface ULLDStoryPageProps {}
+interface ULLDStoryPageProps { }
 
 const ULLDStoryPage = (props: ULLDStoryPageProps) => {
-    return <ComingSoon />;
+    return (
+        <>
+            <Analytics
+                pageView={{
+                    path: "/story",
+                    title: "Story Of ULLD",
+                }}
+            />
+            <ComingSoon />
+        </>
+    );
 };
 
 ULLDStoryPage.displayName = "ULLDStoryPage";

@@ -11,7 +11,8 @@
       "cache": false
     },
     "db:migrate": {
-      "cache": false
+      "cache": false,
+      "dotEnv": [".env.local"]
     },
     "updateJsonSchemas": {
       "dotEnv": [

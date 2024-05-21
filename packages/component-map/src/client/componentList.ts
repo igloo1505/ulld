@@ -49,9 +49,11 @@ const VSpace = dynamic(() => import("@ulld/embeddable-components/components/clie
 const EqRef = dynamic(() => import("@ulld/embeddable-components/components/client/equationRef").then((a) => a.EquationRef))
 const EquationTag = dynamic(() => import("@ulld/embeddable-components/components/client/equationTag").then((a) => a.EquationTag))
 // const DefinitionTag = dynamic(() => import("./utility/definitionTag"))
-// const Boxed = dynamic(() => import("./utility/boxed"))
+const Boxed = dynamic(() => import("@ulld/embeddable-components/components/client/boxed").then((a) => a.Boxed))
 // const Tikz = dynamic(() => import("./emeddedComponents/tikz"))
 const Color = dynamic(() => import("@ulld/embeddable-components/components/client/colorText").then((a) => a.ColorText))
+// TODO: Come back and add a better implementation of the client side whiteboard. This will work for now, just to get the website up, but push it all to the client and handle state that way when you have time.
+const Whiteboard = dynamic(() => import("@ulld/whiteboard/local").then((a) => a.WhiteboardLocal))
 
 export type EmbeddableClientComponents = typeof Admonition | typeof TabGroup | typeof Tab | typeof Grid | typeof GridItem | typeof Video | typeof ModelView | typeof Card | typeof Highlight | typeof Underline | typeof Small | typeof Large | typeof Centered | typeof Lead | typeof VSpace | typeof EqRef | typeof EquationTag | typeof Color
 
@@ -69,6 +71,7 @@ export const conditionalClientComponents: ConditionalComponentQuery<EmbeddableCl
         { regex: new RegExp(`<Vspace`), component: VSpace, label: "Vspace" },
         { regex: new RegExp(`<Centered`), component: Centered, label: "Centered" },
         { regex: new RegExp(`<Center`), component: Centered, label: "Center" },
+        { regex: new RegExp(`<Boxed`), component: Boxed, label: "Boxed" },
         // Text Styling Components
         { regex: new RegExp(`<Small`), component: Small, label: "Small" },
         { regex: new RegExp(`<Color`), component: Color, label: "Color" },
@@ -88,6 +91,7 @@ export const conditionalClientComponents: ConditionalComponentQuery<EmbeddableCl
         { regex: new RegExp(`<ModelView`), component: ModelView, label: "ModelView" },
         // Media components
         { regex: new RegExp(`<Video`), component: Video, label: "Video" },
+        { regex: new RegExp(`<Whiteboard`), component: Whiteboard, label: "Whiteboard" },
         // Academic components
         {regex: new RegExp("<ErrorMargin"), component: ErrorMargin, label: "ErrorMargin"},
         {regex: new RegExp("<Abstract"), component: Abstract, label: "Abstract"},

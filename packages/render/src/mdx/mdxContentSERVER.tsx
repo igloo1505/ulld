@@ -34,7 +34,6 @@ const parseProps = (p: MdxContentSERVERProps) => {
 
 export const MdxContentSERVER = async (_props: MdxContentSERVERProps) => {
     const props = parseProps(_props)
-    console.log("props.content: ", props.content)
     const compiled = await serverClient.mdx.parseMdxString({
         content: props.content,
         display: props.displayType

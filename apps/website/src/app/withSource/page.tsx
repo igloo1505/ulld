@@ -21,7 +21,7 @@ const WithSourcePage = ({ searchParams }: WithSourcePageProps) => {
   if (!article) return notFound();
 
   return (
-    <div>
+    <div className={"pt-[76px] min-h-screen-noNav"}>
       <SideBySideWithSource mdx={article} />
     </div>
   );

@@ -5,22 +5,25 @@ import React, { useEffect } from "react";
 import { DynamicIcon } from "@ulld/icons/dynamic";
 import { AdmonitionType } from "@ulld/utilities/admonition/types";
 
-interface AdmonitionTitleProps {
+export interface AdmonitionTitleProps {
     title: string;
-    admonitionType: AdmonitionType;
+    admonitionType?: AdmonitionType;
     dropdown?: boolean;
     groupId: string;
+    titleBold?: boolean
 }
 
 export const AdmonitionTitle = ({
     title,
-    admonitionType,
+    admonitionType = "plain",
     dropdown,
+    titleBold,
     groupId,
 }: AdmonitionTitleProps) => {
     const { value, setValue, Component } = useDebounceMdxParse(title, 500, {
         bareAss: true
     });
+
     useEffect(() => {
         setValue(title);
     }, [title]);
@@ -34,7 +37,7 @@ export const AdmonitionTitle = ({
         >
             <div
                 className={
-                    "w-full flex flex-row flex-nowrap gap-2 justify-center items-center"
+                    "w-full flex flex-row flex-nowrap gap-2 justify-start items-center"
                 }
             >
                 {Boolean(admonitionType && admonitionType !== "plain") && (
@@ -42,7 +45,7 @@ export const AdmonitionTitle = ({
                 )}
                 <Component
                     className={
-                        "admonition-title flex flex-row flex-wrap flex-grow font-bold tracking-wide inlineMath"
+                        cn("admonition-title flex flex-row flex-wrap flex-grow font-bold tracking-wide inlineMath", titleBold && "font-semibold")
                     }
                 />
             </div>

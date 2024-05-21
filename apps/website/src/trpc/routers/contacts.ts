@@ -1,7 +1,7 @@
 import { featureRequestFormSchema } from "#/components/pageSpecific/featureRequest/formSchema";
 import { publicProcedure, router } from "@ulld/api";
 import { prisma } from "#/db";
-import {z} from 'zod'
+import { z } from "zod";
 
 export const contactsRouter = router({
     submitFeatureRequest: publicProcedure
@@ -14,6 +14,14 @@ export const contactsRouter = router({
     submitWaitlistRequest: publicProcedure
         .input(z.string())
         .mutation(async ({ input }) => {
+            let exists = await prisma.waitlistRequest.findFirst({
+                where: {
+                    email: input,
+                },
+            });
+            if (exists) {
+                return "exists" as "exists";
+            }
             await prisma.waitlistRequest.create({
                 data: {
                     email: input,

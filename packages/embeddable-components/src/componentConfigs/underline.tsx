@@ -22,7 +22,6 @@ export const componentConfig = z.object({
 /* .passthrough() */
 .transform((a) => {
     let data = propColorSchemaTransform<typeof a>(a, "foreground")
-    console.log("data: ", data)
     let css: CSSProperties = {
         textDecorationColor: data.color,
         textDecorationThickness: a.thin ? 1 : a.thick ? 4 : 2

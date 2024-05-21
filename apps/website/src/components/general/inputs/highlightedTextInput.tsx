@@ -12,7 +12,7 @@ import React, { InputHTMLAttributes, MouseEvent, useState } from "react";
 import { FieldValues, Path } from "@ulld/full-form/types";
 import { useFormContext } from "@ulld/full-form/form";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
-import {cn} from "@ulld/utilities/cn"
+import { cn } from "@ulld/utilities/cn";
 
 interface HighlightedTextInputProps<T extends FieldValues>
     extends Omit<InputHTMLAttributes<HTMLInputElement>, "form"> {
@@ -20,7 +20,8 @@ interface HighlightedTextInputProps<T extends FieldValues>
     label?: string;
     desc?: string;
     radius?: number;
-    containerClasses?: string
+    containerClasses?: string;
+    formItemClasses?: string
 }
 
 const HighlightedTextInput = <T extends FieldValues>({
@@ -29,6 +30,7 @@ const HighlightedTextInput = <T extends FieldValues>({
     label,
     radius = 200,
     containerClasses,
+    formItemClasses,
     ...props
 }: HighlightedTextInputProps<T>) => {
     const [visible, setVisible] = useState(false);
@@ -52,12 +54,15 @@ const HighlightedTextInput = <T extends FieldValues>({
             control={form.control}
             name={name}
             render={({ field }) => (
-                <FormItem>
+                <FormItem className={formItemClasses}> 
                     <FormLabel>{label}</FormLabel>
                     <FormControl>
                         <>
                             <motion.div
-                                className={cn("p-[2px] rounded-lg transition duration-300", containerClasses)}
+                                className={cn(
+                                    "p-[2px] rounded-lg transition duration-300",
+                                    containerClasses,
+                                )}
                                 style={{
                                     background: useMotionTemplate`
         radial-gradient(

@@ -1,4 +1,5 @@
 import MdxLayout from "#/components/layouts/mdxLayout";
+import MathjaxProvider from "#/components/utility/providers/mathjax";
 import React, { ReactNode } from "react";
 
 interface DemoLayoutProps {
@@ -6,7 +7,11 @@ interface DemoLayoutProps {
 }
 
 const DemoLayout = ({ children }: DemoLayoutProps) => {
-    return <MdxLayout>{children}</MdxLayout>;
+    return (
+        <MdxLayout>
+            <MathjaxProvider>{children}</MathjaxProvider>
+        </MdxLayout>
+    );
 };
 
 DemoLayout.displayName = "DemoLayout";

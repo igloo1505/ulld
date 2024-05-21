@@ -1,15 +1,30 @@
 import React, { HTMLProps } from "react";
-import clsx from 'clsx'
+import clsx from "clsx";
 
-interface PayPalLinkQrProps extends HTMLProps<HTMLDivElement> {
+interface PayPalLinkQrProps
+    extends Omit<HTMLProps<HTMLDivElement>, "width" | "height"> {
     fill?: string;
-    size?: number
-    background?: string
+    size?: number;
+    background?: string;
 }
 
-const PayPalLinkQr = ({ fill = "hsl(var(--foreground)/0.8)", size= 80, background = "transparent", ...htmlProps }: PayPalLinkQrProps) => {
+const PayPalLinkQr = ({
+    fill = "hsl(var(--foreground)/0.8)",
+    size = 80,
+    background = "transparent",
+    ...htmlProps
+}: PayPalLinkQrProps) => {
     return (
-        <div {...htmlProps} className={clsx("relative w-fit h-fit", htmlProps.className)}>
+        <div
+            {...htmlProps}
+            className={clsx("relative w-fit h-fit", htmlProps.className)}
+            style={{
+                ...htmlProps?.style,
+                ...(size && {
+                    width: `${size}px`,
+                }),
+            }}
+        >
             <svg
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -2379,7 +2394,13 @@ const PayPalLinkQr = ({ fill = "hsl(var(--foreground)/0.8)", size= 80, backgroun
                     <g transform="translate(0,0) scale(2.17, 2.17)">
                         <g transform="" style={{ fill }}>
                             <g>
-                                <rect x="15" y="15" style={{fill: "none"}} width="70" height="70" />
+                                <rect
+                                    x="15"
+                                    y="15"
+                                    style={{ fill: "none" }}
+                                    width="70"
+                                    height="70"
+                                />
                                 <path d="M85,0H15H0v15v70v15h15h70h15V85V15V0H85z M85,85H15V15h70V85z" />
                             </g>
                         </g>
@@ -2387,7 +2408,13 @@ const PayPalLinkQr = ({ fill = "hsl(var(--foreground)/0.8)", size= 80, backgroun
                     <g transform="translate(806,0) scale(2.17, 2.17)">
                         <g transform="" style={{ fill }}>
                             <g>
-                                <rect x="15" y="15" style={{fill: "none"}} width="70" height="70" />
+                                <rect
+                                    x="15"
+                                    y="15"
+                                    style={{ fill: "none" }}
+                                    width="70"
+                                    height="70"
+                                />
                                 <path d="M85,0H15H0v15v70v15h15h70h15V85V15V0H85z M85,85H15V15h70V85z" />
                             </g>
                         </g>
@@ -2395,7 +2422,13 @@ const PayPalLinkQr = ({ fill = "hsl(var(--foreground)/0.8)", size= 80, backgroun
                     <g transform="translate(0,806) scale(2.17, 2.17)">
                         <g transform="" style={{ fill }}>
                             <g>
-                                <rect x="15" y="15" style={{fill: "none"}} width="70" height="70" />
+                                <rect
+                                    x="15"
+                                    y="15"
+                                    style={{ fill: "none" }}
+                                    width="70"
+                                    height="70"
+                                />
                                 <path d="M85,0H15H0v15v70v15h15h70h15V85V15V0H85z M85,85H15V15h70V85z" />
                             </g>
                         </g>

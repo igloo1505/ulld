@@ -1,5 +1,5 @@
 "use client";
-import React, { ForwardedRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import { applyMathjaxBandaid } from "@ulld/parsers/applyMathjaxBandaid";
 
 export const useMathjaxBandaid = (
@@ -7,7 +7,6 @@ export const useMathjaxBandaid = (
 ) => {
     useEffect(() => {
         const observer = applyMathjaxBandaid(element);
-        console.log("observer: ", observer)
         return () => {
             if (observer && "disconnect" in observer) {
                 observer?.disconnect();

@@ -1,4 +1,5 @@
 import SponsorULLDModalWrapper from '#/components/brand/sponsor/sponsorULLDModalWrapper';
+import Analytics from '#/components/utility/analytics';
 import ComingSoon from '#/components/utility/comingSoon';
 import React from 'react'
 
@@ -8,7 +9,15 @@ interface SupportULLDPageProps {
 }
 
 const SupportULLDPage = (props: SupportULLDPageProps) => {
-    return <ComingSoon />;
+        return <>
+            <Analytics
+                pageView={{
+                    path: "/sponsor/supportULLD",
+                    title: "Sponsor: Support ULLD",
+                }}
+            />
+            <ComingSoon />
+        </>
 }
 
 

@@ -75,6 +75,7 @@ export const StoryOfUlldSection = ({}: StoryOfUlldSectionProps) => {
                 <AnimatedLogoAsText show={true} delay={1.4} fontSize={36} />
             </motion.h2>
             <MDXArticle
+                paddingTop={false}
                 id="storyOfULLD"
                 className={"mt-20 max-w-[min(83vw,1440px)]"}
                 animate={inView ? "show" : "hide"}

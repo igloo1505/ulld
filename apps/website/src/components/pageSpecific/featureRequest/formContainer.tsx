@@ -62,7 +62,7 @@ export const FeatureRequestFormContainer = ({
     };
 
     return (
-        <Card>
+        <Card className={"w-[min(520px,90vw)]"}>
             <CardHeader>
                 <CardTitle>Feature Request</CardTitle>
                 <CardDescription>
@@ -73,7 +73,7 @@ export const FeatureRequestFormContainer = ({
                 <Form {...form}>
                     <form className={"space-y-6"}>
                         <TextInput name="email" type="email" label="Email" />
-                        <div className={"w-full grid grid-cols-2 gap-6"}>
+                        <div className={"w-full flex flex-col justify-center items-center md:grid md:grid-cols-2 gap-6"}>
                             <MultiSelectInput
                                 label="Category"
                                 name="category"
@@ -81,7 +81,7 @@ export const FeatureRequestFormContainer = ({
                                     value: v,
                                     content: v,
                                 }))}
-                                className={"w-[220px]"}
+                                className={"w-full md:w-[220px]"}
                             />
                             <MultiSelectInput
                                 label="User Base"
@@ -90,7 +90,7 @@ export const FeatureRequestFormContainer = ({
                                     value: v,
                                     content: v,
                                 }))}
-                                className={"w-[220px]"}
+                                className={"w-full md:w-[220px]"}
                             />
                         </div>
                         <TextAreaInput name="message" label="Feature Description" />

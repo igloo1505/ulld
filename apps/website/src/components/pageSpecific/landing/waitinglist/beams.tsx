@@ -52,20 +52,20 @@ export const BackgroundBeams = React.memo(
       "M-79 -533C-79 -533 -11 -128 453 -1C917 126 985 531 985 531",
       "M-72 -541C-72 -541 -4 -136 460 -9C924 118 992 523 992 523",
       "M-65 -549C-65 -549 3 -144 467 -17C931 110 999 515 999 515",
-      "M-58 -557C-58 -557 10 -152 474 -25C938 102 1006 507 1006 507",
       "M-51 -565C-51 -565 17 -160 481 -33C945 94 1013 499 1013 499",
+      "M-58 -557C-58 -557 10 -152 474 -25C938 102 1006 507 1006 507",
       "M-44 -573C-44 -573 24 -168 488 -41C952 86 1020 491 1020 491",
       "M-37 -581C-37 -581 31 -176 495 -49C959 78 1027 483 1027 483",
     ];
     return (
       <div
         className={cn(
-          "absolute  h-full w-full inset-0  [mask-size:40px] [mask-repeat:no-repeat] flex items-center justify-center",
+          "absolute  h-full w-full inset-0 [mask-size:40px] [mask-repeat:no-repeat] flex items-center justify-center",
           className
         )}
       >
         <svg
-          className=" z-0 h-full w-full pointer-events-none absolute "
+          className=" z-0 h-full w-full pointer-events-none absolute bg-background"
           width="100%"
           height="100%"
           viewBox="0 0 696 316"

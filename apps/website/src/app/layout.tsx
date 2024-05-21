@@ -14,6 +14,7 @@ import StateWrappedComponents from "#/components/utility/providers/stateWrappedC
 import Navbar from "#/components/layouts/navbar/main";
 import Footer from "#/components/layouts/footer/main";
 import DefaultSeo from "#/components/utility/seo/root";
+import ReactGA from "react-ga4";
 
 const appFont = localFont({
     variable: "--ulld-app-font",
@@ -66,9 +67,11 @@ const RootLayout = async (props: {
     children: React.ReactNode;
     modal: React.ReactNode;
 }) => {
+    ReactGA.initialize(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!, {
+        testMode: process.env.NODE_ENV !== "production",
+    });
 
     const cookieJar = cookies();
-    const settings = { tooltips: true };
 
     const preferFs = cookieJar.has("preferFs");
 
@@ -119,10 +122,16 @@ const RootLayout = async (props: {
                 <meta name="msapplication-TileColor" content="#2b5797" />
                 <meta name="msapplication-config" content="/icons/browserconfig.xml" />
                 <meta name="theme-color" content="#333333" />
+                {/* <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> */}
+                {/* <script */}
+                {/*     id="MathJax-script" */}
+                {/*     async */}
+                {/*     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" */}
+                {/* ></script> */}
             </head>
             <body
                 className={clsx(
-                    "group/body min-scrollbar relative h-auto overflow-x-hidden overflow-y-auto",
+                    "group/body dark min-scrollbar relative h-auto overflow-x-hidden w-screen min-h-screen overflow-y-auto",
                     fontSans.variable,
                     preferFs && "preferFs",
                 )}
@@ -137,7 +146,7 @@ const RootLayout = async (props: {
                 <StateWrappedUI
                     ignoreConfig
                     loader={{
-                        mathjax: "chtml"
+                        mathjax: ["config"],
                     }}
                 />
                 <StateWrappedComponents />

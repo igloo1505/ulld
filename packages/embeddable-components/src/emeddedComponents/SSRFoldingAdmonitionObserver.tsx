@@ -27,7 +27,7 @@ export const SSRFoldingAdmonitionTitle = ({ id, dropdown, title, type }: SSRFold
     >
         <div className={"w-full h-full flex flex-row justify-start items-center gap-3"}>
             {Boolean(type && type !== "plain") && <DynamicIcon className={"w-4 h-4"} name={type as AdmonitionType} />}
-            {title && <div className={"flex flex-row flex-wrap flex-grow font-bold tracking-wide inlineMath"} dangerouslySetInnerHTML={{ __html: title }} />}
+            {typeof title === "string" ? <div className={"flex flex-row flex-wrap flex-grow font-bold tracking-wide inlineMath"} dangerouslySetInnerHTML={{ __html: title }} /> : title || null}
         </div>
         <OpenToggleArrow />
     </div>)

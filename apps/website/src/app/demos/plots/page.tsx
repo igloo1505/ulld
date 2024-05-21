@@ -1,9 +1,19 @@
+import Analytics from "#/components/utility/analytics";
+import ComingSoon from "#/components/utility/comingSoon";
 import React from "react";
 
 interface PlotDemoPageProps { }
 
 const PlotDemoPage = (props: PlotDemoPageProps) => {
-    return <div>Plot Demo Page Here</div>;
+    return <>
+        <Analytics
+            pageView={{
+                path: "/demos/plots",
+                title: "Demos: Plots",
+            }}
+        />
+        <ComingSoon />
+    </>
 };
 
 PlotDemoPage.displayName = "PlotDemoPage";

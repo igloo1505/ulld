@@ -1,6 +1,7 @@
 import React, { ComponentProps } from "react";
 import NextLink from "next/link";
 import { motion } from "framer-motion";
+import clsx from 'clsx'
 
 const Link = motion(NextLink);
 
@@ -10,10 +11,10 @@ interface HeroButtonProps extends ComponentProps<typeof Link> {
     bottom?: boolean
 }
 
-const HeroButton = ({ delay, top, bottom, ...props }: HeroButtonProps) => {
+const HeroButton = ({ delay, top, bottom, className, ...props }: HeroButtonProps) => {
     return <Link
         {...props} 
-        className={"text-2xl z-10 py-3 px-5 rounded-lg bg-primary hover:bg-blue-600 transition-colors duration-300"}
+        className={clsx("text-2xl z-10 py-2 px-4 md:py-3 md:px-5 rounded-lg bg-primary hover:bg-blue-600 transition-colors duration-300 flex justify-center items-center", className)}
         initial={{
             scale: 0,
             opacity: 0,

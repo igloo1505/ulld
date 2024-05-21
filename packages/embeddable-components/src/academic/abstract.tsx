@@ -15,7 +15,7 @@ export const Abstract = ({ children }: AbstractProps) => {
         <div className={"w-full text-semibold text-lg px-4 py-2 border-b-2 border-secondary-foreground/20"}>
           Abstract
         </div>
-        <div className={"p-4 space-y-4"}>{children}</div>
+        <div className={"p-4 prose dark:prose-invert"}>{children}</div>
       </div>
     </div>
   );

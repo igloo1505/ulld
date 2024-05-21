@@ -49,6 +49,7 @@
       "navigation": "/demos/media"
     },
     "docs": {
+      "getStarted": "/docs",
       "external": {
         "jupyter": "jupyter-notebook.readthedocs.io",
         "python": "docs.python.org"

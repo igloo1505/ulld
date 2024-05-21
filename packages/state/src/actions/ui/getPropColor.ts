@@ -29,7 +29,7 @@ export const getPropColor = (d: PropColorAsProp, prefix?: string, _default?: str
         }
     })
     let _props: { [k: string]: any } = {}
-    let k = Object.keys(_config.UI.colors || {})
+    let k = Object.keys(_config?.UI?.colors || {})
     for (const l in d) {
         if (!k.includes(l)) {
             _props[l] = d[l]

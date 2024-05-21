@@ -6,7 +6,6 @@ import { autoWrapMath } from "@ulld/utilities/latexUtils"
 import { getMdxClassnames } from './getMdxClassnames';
 
 
-
 interface MdxContentClientSideProps extends MdxContentSERVERProps {
     stylesId?: string
     applyUserStyles?: boolean
@@ -14,10 +13,7 @@ interface MdxContentClientSideProps extends MdxContentSERVERProps {
     onReady?: () => void
 }
 
-
-
 export const MdxContentCLIENT = (props: MdxContentClientSideProps) => {
-    console.log("props: ", props)
     const {value, setValue, Component, isReady } = useDebounceMdxParse(props.content, props.debounceTimeout || 350, {
         bareAss: props.bareAss === false ? false : true
     })

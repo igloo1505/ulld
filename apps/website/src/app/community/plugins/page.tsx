@@ -1,3 +1,5 @@
+import Analytics from '#/components/utility/analytics';
+import ComingSoon from '#/components/utility/comingSoon';
 import React from 'react'
 
 
@@ -6,11 +8,17 @@ interface CommunityPluginsPageProps {
 }
 
 const CommunityPluginsPage = (props: CommunityPluginsPageProps) => {
-return (
-    <div className={"flex flex-col justify-center items-center gap-6"}>
-            <h1 className={"text-5xl"}>Community Plugins Page</h1>
-        </div>
-)
+    return (
+        <>
+            <Analytics
+                pageView={{
+                    path: "/community/plugins",
+                    title: "Community Plugins",
+                }}
+            />
+            <ComingSoon />
+        </>
+    );
 }
 
 

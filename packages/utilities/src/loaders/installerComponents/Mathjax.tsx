@@ -1,13 +1,19 @@
+"use client"
 import Script, { ScriptProps } from "next/script"
+import { MathJaxLoaders } from "./initialLoader"
 
 
-export const MathjaxSvgLoader = () => <Script
+export const MathjaxSvgLoader = () => {
+    console.log(`Loading Mathjax Svg`)
+return <Script
     id="mathjax-script" 
     src="/utils/tex-mml-svg.js"
     strategy="lazyOnload"
 />
+}
 
 export const MathjaxChtmlLoader = () => {
+    console.log(`Loading Mathjax Chtml`)
     return <Script
         id="mathjax-chtml-loader"
         src="/utils/tex-chtml.js"
@@ -16,8 +22,8 @@ export const MathjaxChtmlLoader = () => {
 }
 
 
-interface Props extends ScriptProps{
-    type?: "svg" | "chtml" | "both"
+interface Props extends Omit<ScriptProps, "type">{
+    type?: MathJaxLoaders[] | "all"
 }
 
 
@@ -28,10 +34,17 @@ interface Props extends ScriptProps{
 /* - /Users/bigsexy/Desktop/notes/App/node_modules/next-mdx-remote/dist/rsc.js */
 
 
-export const MathjaxLoader = ({type = "both"}: Props) => {
+
+export const MathjaxLoader = ({type = "all"}: Props) => {
+    let types: Record<MathJaxLoaders, boolean>  = {
+         chtml: type === "all" ? true : type.includes("chtml"),
+         svg: type === "all" ? true : type.includes("svg"),
+         config: type === "all" ? true : type.includes("config"),
+    }
     return (
         <>
-            <Script
+            {types.config && <Script
+                type="text/x-mathjax-config"
                 id="mathjax-settings"
                 strategy="beforeInteractive"
             >
@@ -46,10 +59,10 @@ export const MathjaxLoader = ({type = "both"}: Props) => {
     minScale: 0.2,
     fontURL: "/font/mathjax",
   }
-};`}
-            </Script>
-            {(type === "both" || type === "svg") && <MathjaxSvgLoader />}
-            {(type === "both" || type === "chtml") && <MathjaxChtmlLoader />}
+}`}
+            </Script>}
+            {types.svg && <MathjaxSvgLoader />}
+            {types.chtml && <MathjaxChtmlLoader />}
         </>
     )
 }

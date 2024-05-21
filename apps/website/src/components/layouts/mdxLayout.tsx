@@ -5,9 +5,15 @@ interface MdxLayoutProps {
 }
 
 const MdxLayout = ({ children }: MdxLayoutProps) => {
-    return <div>
-        {children}
-    </div>;
+    return (
+        <div
+            className={
+                "group/mdxLayout w-full mdx-wide flex flex-col justify-start items-center"
+            }
+        >
+            {children}
+        </div>
+    );
 };
 
 MdxLayout.displayName = "MdxLayout";

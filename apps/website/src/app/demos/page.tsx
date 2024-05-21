@@ -1,15 +1,21 @@
+import Analytics from "#/components/utility/analytics";
+import ComingSoon from "#/components/utility/comingSoon";
 import React from "react";
 
-interface MyNotesPageProps {}
+interface MyNotesPageProps { }
 
-
-/* RESUME: This should be up next after the landing page. Having this infront of potential partners should be a priority. */
 const MyNotesPage = (props: MyNotesPageProps) => {
-  return (
-    <div className={"flex flex-col justify-center items-center gap-6"}>
-      <h1 className={"text-5xl"}>My Notes Here</h1>
-    </div>
-  );
+    return (
+        <>
+            <Analytics
+                pageView={{
+                    path: "/demos",
+                    title: "Demos Home",
+                }}
+            />
+            <ComingSoon />
+        </>
+    );
 };
 
 MyNotesPage.displayName = "MyNotesPage";

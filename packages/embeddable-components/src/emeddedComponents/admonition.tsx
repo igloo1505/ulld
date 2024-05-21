@@ -6,14 +6,12 @@ import { AdmonitionProps, AdmonitionType } from '@ulld/utilities/admonition/type
 import { stringToConsistentId } from '@ulld/state/formatting/general';
 import { MdxContentSERVER } from '@ulld/render/mdx/server';
 import { OpenToggleArrow } from './openToggleArrow';
+import { getRandomId } from '@ulld/utilities/identity';
 
 
 
-export const Admonition = async (_props: AdmonitionProps) => {
-    const id = _props.id ? _props.id : _props.title ? stringToConsistentId(_props.title, "admon") : `${new Date().valueOf()}`
-    let props: any = {
-        ..._props,
-    }
+export const Admonition = async (props: AdmonitionProps) => {
+    const id = props.id ? props.id : typeof props.title === "string" ? stringToConsistentId(props.title, "admon") : getRandomId()
     /* let _title = _props.title ? await serverClient.mdx.parseMdxString({ content: _props.title, display: "inline" }) : undefined */
     /* props.title = _title?.compiledSource */
 
@@ -28,14 +26,14 @@ export const Admonition = async (_props: AdmonitionProps) => {
 
     const { children, type, title, dropdown, sidebar, footer } = props
     return (
-        <div className={clsx(`rounded-lg admonition group overflow-hidden`, !dropdown && "open", type || "note", dropdown && "foldable", sidebar ? "w-full mb-3 lg:w-[33%] lg:float-right lg:ml-4" : "my-3")} id={title ? stringToConsistentId(title) : id}>
+        <div className={clsx(`rounded-lg admonition group overflow-hidden`, !dropdown && "open", type || "note", dropdown && "foldable", sidebar ? "w-full mb-3 lg:w-[33%] lg:float-right lg:ml-4" : "my-3")} id={id}>
             {Boolean(title || dropdown) && <div className={clsx("title text-lg px-4 py-2 rounded-tl-lg rounded-tr-lg  relative z-[10] grid place-items-center", dropdown ? "grid-cols-[1fr_2rem]" : "grid-cols-1")}>
                 <div className={"w-full flex flex-row flex-nowrap gap-2 justify-center items-center"}>
                     {Boolean(type && type !== "plain") && <DynamicIcon className={"w-4 h-4"} name={type as AdmonitionType} />}
-                    <MdxContentSERVER 
+                    {typeof props.title === "string" ? <MdxContentSERVER 
                         content={props.title}
                         className={"admonition-title flex flex-row flex-wrap flex-grow font-bold tracking-wide inlineMath"}
-                    />
+                    /> : props.title ? props.title : null}
                 </div>
                 {dropdown && <OpenToggleArrow groupId={id} />}
             </div>}

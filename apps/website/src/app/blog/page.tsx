@@ -1,6 +1,7 @@
 import React from 'react'
 import { allBlogPosts } from "contentlayer/generated"
 import ComingSoon from '#/components/utility/comingSoon';
+import Analytics from '#/components/utility/analytics';
 
 
 /* export type BlogSearchParams = { */
@@ -11,7 +12,17 @@ interface BlogPageProps {
 }
 
 const BlogPage = (props: BlogPageProps) => {
-    return <ComingSoon />;
+        return (
+        <>
+            <Analytics
+                pageView={{
+                    path: "/blog",
+                    title: "Blog Home",
+                }}
+            />
+            <ComingSoon />
+        </>
+    );
 }
 
 

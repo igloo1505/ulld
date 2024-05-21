@@ -6,7 +6,8 @@
       "jest",
       "node",
       "react",
-      "mdx"
+      "mdx",
+      "mathjax"
     ],
     // "baseUrl": ".",
     "paths": {

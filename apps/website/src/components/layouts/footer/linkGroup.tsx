@@ -46,6 +46,7 @@ const LinkGroup = ({ items, title, inView, idx }: LinkGroupProps) => {
                 {items.map((itemProps, itemIndex) => {
                     return <MotionLink
                         {...itemProps}
+                        key={itemIndex}
                         animate={inView ? "show" : "hide"}
                         variants={{
                             show: {

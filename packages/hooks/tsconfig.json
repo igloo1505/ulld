@@ -1,6 +1,6 @@
 {
     "extends": "@repo/typescript-config/nextjs.json",
     "compilerOptions": {
-       "types": ["node", "react", "mdx"]
+       "types": ["node", "react", "mdx", "mathjax"]
     }
 }

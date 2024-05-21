@@ -97,36 +97,44 @@ body {
   width: 100vw;
   overflow-x: hidden;
   font-size: 1rem;
+
   span[role="slider"] {
     &:focus-visible {
       border: none;
     }
   }
+
   &.sidebarOpen {
     #sidebar-panel {
       transform: translateX(0);
     }
+
     // NOTE: Removed to remove cummulative layout shift inside of notes. Might consider adding back in in certain locations. .sidebarAdjust class still exists on appropritate elements
     // .sidebarAdjust {
     //   padding-left: var(--sidebar-width);
     // }
   }
+
   &.sidebarOpenPermanent {
     #sidebar-panel {
       transform: translateX(0);
     }
+
     .sidebarAdjust {
       padding-left: var(--sidebar-width);
     }
   }
+
   &.tooltips-hidden {
     .conditionalTooltip {
       display: none;
     }
   }
+
   .bookmark-indicator {
     display: none;
   }
+
   &.canBookmark {
     .bookmark-indicator {
       display: flex;
@@ -153,17 +161,21 @@ body {
 
 @layer components {
   .navbtn {
-    @apply text-gray-700 dark:hover:bg-gray-800 transition-colors duration-300 rounded-lg  dark:text-gray-200 hover:bg-gray-100;
+    @apply text-gray-700 dark:hover:bg-gray-800 transition-colors duration-300 rounded-lg dark:text-gray-200 hover:bg-gray-100;
   }
+
   .pixi-canvas {
     @apply bg-gray-100 dark:bg-gray-800;
   }
+
   .inputBase {
     @apply dark:bg-gray-900 text-gray-900 dark:text-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6;
   }
+
   .linkColor {
     @apply text-blue-500 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200;
   }
+
   .mdx {
     @apply lining-nums ordinal;
   }
@@ -181,15 +193,20 @@ body {
   .no-scrollbar,
   mjx-container,
   .math {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 }
 
 .no-scrollbar-all {
   * {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+
+    /* Firefox */
     &::-webkit-scrollbar {
       display: none;
     }
@@ -199,33 +216,43 @@ body {
 .min-scrollbar {
   scrollbar-width: 1px;
   scrollbar-color: hsl(var(--secondary)) hsl(var(--background));
+
   &::-webkit-scrollbar {
     width: 4px;
   }
+
   &::-webkit-scrollbar-thumb {
     background-color: hsl(var(--secondary));
     border-radius: 4px;
   }
+
   &.scrollbarMuted {
     scrollbar-color: hsl(var(--muted)) hsl(var(--background));
+
     &::-webkit-scrollbar-thumb {
       background-color: hsl(var(--muted));
     }
   }
+
   &.scrollbarMutedForeground {
     scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--background));
+
     &::-webkit-scrollbar-thumb {
       background-color: hsl(var(--muted-foreground));
     }
   }
+
   &.scrollbarPrimary {
     scrollbar-color: hsl(var(--primary)) hsl(var(--background));
+
     &::-webkit-scrollbar-thumb {
       background-color: hsl(var(--primary));
     }
   }
+
   &.scrollbarForeground {
     scrollbar-color: hsl(var(--foreground)) hsl(var(--background));
+
     &::-webkit-scrollbar-thumb {
       background-color: hsl(var(--foreground));
     }
@@ -239,8 +266,10 @@ div.jp-WindowedPanel-outer::-webkit-scrollbar {
 
 div[cmdk-list],
 div.jp-WindowedPanel-outer {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
   border-width: 1px;
   border-top-width: 0px;
 }
@@ -262,10 +291,12 @@ div.jp-WindowedPanel-outer {
   overflow-x: hidden;
   top: 0;
   left: 0;
+
   section {
     scroll-snap-align: start;
     min-height: 100vh;
   }
+
   .scrollSnapSection {
     width: 100vw;
   }
@@ -276,6 +307,7 @@ div.jp-WindowedPanel-outer {
     section {
       min-height: unset;
     }
+
     .scrollSnapSection {
       height: 100vh;
     }
@@ -296,6 +328,7 @@ div.jp-WindowedPanel-outer {
     display: inline-grid;
     place-content: center;
   }
+
   mjx-math {
     font-size: 18px;
   }
@@ -333,5 +366,20 @@ div[role="dialog"][cmdk-dialog] {
 .mdx {
   a[data-footnote-ref] {
     padding: 0;
+  }
+
+  .excalidraw {
+    &.theme--dark {
+      --color-surface-primary-container: hsl(var(--primary) / 0.5);
+      --color-primary: hsl(var(--primary) / 0.7);
+      --color-primary-darker: hsl(var(--primary) / 0.85);
+      --color-primary-darkest: hsl(var(--primary));
+      --color-primary-light: hsl(var(--primary) / 0.6);
+    }
+    --color-surface-primary-container: hsl(var(--primary) / 0.5);
+    --color-primary: hsl(var(--primary) / 0.7);
+    --color-primary-darker: hsl(var(--primary) / 0.85);
+    --color-primary-darkest: hsl(var(--primary));
+    --color-primary-light: hsl(var(--primary) / 0.6);
   }
 }
