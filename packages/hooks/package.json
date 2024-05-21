@@ -45,7 +45,8 @@
     "./useEventListener": "./src/useEventListener.ts",
     "./useMathjaxBandaid": "./src/useMathjaxBandaid.ts",
     "./useMeasure": "./src/useMeasure.ts",
-    "./useMathjaxDynamicParse": "./src/useMathjaxDynamicParse.ts"
+    "./useMathjaxDynamicParse": "./src/useMathjaxDynamicParse.ts",
+    "./useInitialRender": "./src/useInitialRender.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",

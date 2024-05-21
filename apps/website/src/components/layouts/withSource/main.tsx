@@ -1,6 +1,6 @@
 "use client";
 import { DocumentTypes } from "contentlayer/generated";
-import React, { UIEvent, UIEventHandler, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SourceCode from "./sourceCode";
 import CodeOutput from "./output";
 import MDXArticle from "../mdxArticle";
@@ -11,6 +11,9 @@ import {
 } from "@ulld/tailwind/resizable";
 import MathjaxProvider from "#/components/utility/providers/mathjax";
 import { useMotionValueEvent, useScroll } from "framer-motion";
+import NavbarButtonPortal from "#/components/utility/portals/navbar";
+import { navbarButtonClasses } from "../navbar/navbarButtonGroup";
+import { cn } from "@ulld/utilities/cn";
 
 interface SideBySideWithSourceProps {
     mdx: DocumentTypes;
@@ -22,10 +25,15 @@ const names = {
 };
 
 const SideBySideWithSource = ({ mdx }: SideBySideWithSourceProps) => {
+    const [scrollIndependent, setScrollIndependent] = useState(false)
     const sourceContainer = useRef<HTMLDivElement>(null!);
     const outputContainer = useRef<HTMLDivElement>(null!);
     const scrolling = useRef<false | "source" | "output">(false);
     const timer = useRef<NodeJS.Timeout | null>(null)
+
+    const toggleIndependent = () => {
+           setScrollIndependent(!scrollIndependent) 
+        }
 
     const setTimer = () => {
             if(timer.current){
@@ -42,7 +50,7 @@ const SideBySideWithSource = ({ mdx }: SideBySideWithSourceProps) => {
     });
 
     useMotionValueEvent(scrollCode.scrollYProgress, "change", (latest) => {
-        if (scrolling.current === "output") return;
+        if (scrollIndependent || scrolling.current === "output") return;
         scrolling.current = "source";
         outputContainer.current.scrollTop =
             latest * (outputContainer.current.scrollHeight - outputContainer.current.clientHeight);
@@ -50,7 +58,7 @@ const SideBySideWithSource = ({ mdx }: SideBySideWithSourceProps) => {
     });
 
     useMotionValueEvent(scrollOutput.scrollYProgress, "change", (latest) => {
-        if (scrolling.current === "source") return;
+        if (scrollIndependent || scrolling.current === "source") return;
         scrolling.current = "output";
         sourceContainer.current.scrollTop =
             latest * (sourceContainer.current.scrollHeight - sourceContainer.current.clientHeight);
@@ -62,10 +70,16 @@ const SideBySideWithSource = ({ mdx }: SideBySideWithSourceProps) => {
             className={"w-full h-full max-h-[calc(100vh-76px)]"}
             direction="horizontal"
         >
+            <NavbarButtonPortal>
+                <a 
+                    role="button"
+                    className={cn(navbarButtonClasses, !scrollIndependent && "text-foreground")}
+                    onClick={toggleIndependent}
+                >Scroll Together</a>
+            </NavbarButtonPortal>
             <ResizablePanel defaultSize={50}>
                 <SourceCode
                     ref={sourceContainer}
-                    /* onScroll={onScroll} */
                     content={mdx.body.raw}
                     data-name={names.source}
                 />
@@ -73,7 +87,6 @@ const SideBySideWithSource = ({ mdx }: SideBySideWithSourceProps) => {
             <ResizableHandle withHandle />
             <ResizablePanel defaultSize={50}>
                 <CodeOutput
-                    /* onScroll={onScroll} */
                     ref={outputContainer}
                     data-name={names.output}
                 >

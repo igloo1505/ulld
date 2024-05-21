@@ -17,6 +17,7 @@ import { webComponentMap } from "#/mdx/componentMap";
 import InternalReduxProvider from "#/state/provider";
 import store from "#/state/store";
 import { createNavbarButton } from "#/state/slices/core";
+import { useViewport } from "@ulld/hooks/useViewport";
 
 interface MDXArticleProps extends HTMLProps<HTMLElement> {
   mdx: DocumentTypes;
@@ -31,6 +32,7 @@ const MDXArticle = forwardRef(
     { mdx, paddingTop = true, isSource, ...props }: MDXArticleProps,
     ref: ForwardedRef<HTMLElement>,
   ) => {
+        const vp = useViewport()
     const id = props.id ? props.id : getRandomId();
     const article = useMDXComponent(mdx.body.code);
     const Article = useMemo(() => article, []);
@@ -40,15 +42,16 @@ const MDXArticle = forwardRef(
     useEffect(() => {
       if (isSource) return;
       if ("id" in mdx && Boolean(mdx.id)) {
+                const w = vp?.window?.width
         store.dispatch(
           createNavbarButton({
             id: btnId,
-            href: `/withSource?id=${mdx.id}`,
+            href: Boolean(w && w >= 768) ? `/withSource?id=${mdx.id}` : `/source?id=${mdx.id}`,
             label: "Source",
           }),
         );
       }
-    }, []);
+    }, [vp]);
 
     return (
       <InternalReduxProvider>

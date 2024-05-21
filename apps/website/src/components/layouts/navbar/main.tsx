@@ -10,7 +10,7 @@ const Navbar = (props: NavbarProps) => {
   return (
     <div
       className={
-        "absolute z-50 top-0 left-0 right-0 w-full flex flex-row justify-between items-center bg-transparent h-20 px-6"
+        "absolute z-50 top-0 left-0 right-0 w-full flex flex-row justify-between items-center h-20 px-6 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
       }
     >
       <div className={"w-fit h-full flex flex-row justify-start items-center"}>
