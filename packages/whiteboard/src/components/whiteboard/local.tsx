@@ -1,57 +1,23 @@
 "use client";
 import { WhiteboardRootProps, WBoard } from "./whiteboard";
-import { ExcalidrawInitialDataState } from "@excalidraw/excalidraw/types/types";
-import { useEffect, useState } from "react";
-import { WhiteboardStateConfig, useWhiteboardState } from "./useWhiteboardState";
+import {
+    WhiteboardStateConfig,
+    useWhiteboardState,
+} from "./useWhiteboardState";
 
 interface Props extends Omit<WhiteboardRootProps, "initialData"> {
-    data?: ExcalidrawInitialDataState;
-    showIfNoData?: boolean
+    showIfNoData?: boolean;
 }
 
-export const WhiteboardLocal = ({
-    data: _data,
-    url,
-    showIfNoData = true,
-    fullWidth,
-    full,
-    sidebar,
-    ...props
-}: Props & WhiteboardStateConfig) => {
-    if (!_data && !url) return null;
-    const [data, setData] = useState<ExcalidrawInitialDataState | null>(null);
+export const WhiteboardLocal = (props: Props & WhiteboardStateConfig) => {
+    if (!props.data && !props.url) return null;
 
-    const getData = async () => {
-        if (_data) {
-            setData(_data);
-        } else if (url) {
-            console.log("url: ", url)
-            let fetchRes = await fetch(url, {
-                method: "GET",
-                mode: "same-origin",
-                cache: "force-cache",
-            });
-            if(fetchRes){
-                const body = await fetchRes.json()
-                setData(body)
-            }
-        }
-    };
+    const [whiteboardState, data, isReady] = useWhiteboardState(props);
 
-    useEffect(() => {
-        getData();
-    }, [_data, url]);
+    if ((!data && !props.showIfNoData) || !isReady) return null;
+    console.log("whiteboardState: ", whiteboardState)
 
-    const whiteboardState = useWhiteboardState(props)
+    console.log("data, isReady: ", data, isReady)
 
-    if (!data && !showIfNoData) return null;
-
-    return (
-            <WBoard 
-            {...props} 
-            {...whiteboardState}
-            isLocal
-            initialData={data}
-            />
-    );
+    return <WBoard {...props} {...whiteboardState} isLocal initialData={data} />;
 };

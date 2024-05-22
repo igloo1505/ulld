@@ -23,6 +23,9 @@ importers:
       tsup:
         specifier: ^8.0.1
         version: 8.0.2(@microsoft/api-extractor@7.43.7(@types/node@20.12.12))(@swc/core@1.5.7(@swc/helpers@0.5.11))(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.5.7(@swc/helpers@0.5.11))(@types/node@20.12.12)(typescript@5.4.5))(typescript@5.4.5)
+      zod:
+        specifier: ^3.22.4
+        version: 3.23.8
     devDependencies:
       '@microsoft/api-extractor':
         specifier: ^7.42.3

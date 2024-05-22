@@ -14,6 +14,7 @@ declare global {
 const checkMath = async () => {
     if (typeof window !== "undefined" && window.MathJax) {
         try {
+        // MathJax?.Hub?.Queue(["Typeset", MathJax.Hub]);
             return await window.MathJax.typesetPromise();
         } catch (e) {
             console.log("MatJax error: " + e);
@@ -31,6 +32,5 @@ export const useMathjaxDynamicParse = (state: any) => {
     useEffect(() => {
         if (typeof MathJax === "undefined") return;
         handleMath()
-        // MathJax?.Hub?.Queue(["Typeset", MathJax.Hub]);
     }, [state]);
 };

@@ -29,6 +29,7 @@ export type WhiteboardRootProps = WhiteboardProps & {
     style?: CSSProperties;
     isLocal?: boolean;
     debounce?: number;
+    viewMode?: boolean
 };
 
 export const WBoard = ({
@@ -65,11 +66,11 @@ export const WBoard = ({
         if (timer.current) {
             clearTimeout(timer.current);
         }
-        if (!isLocal && props.id) {
+        if (!isLocal && typeof props.id === "string") {
             timer.current = setTimeout(async () => {
                 console.log("Saving whiteboard data: ", data);
                 await client.whiteboard.save.mutate({
-                    id: props.id,
+                    id: props.id as string,
                     data: jsonStringifyWhiteboard(data),
                 });
             }, debounce);

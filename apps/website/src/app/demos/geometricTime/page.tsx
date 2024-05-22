@@ -3,6 +3,7 @@ import React from "react";
 import { allDemos } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import Analytics from "#/components/utility/analytics";
+import staticContent from "staticContent"
 
 interface MyNotesPageProps {
     searchParams: {
@@ -20,7 +21,7 @@ const MyNotesPage = ({ searchParams }: MyNotesPageProps) => {
         <>
             <Analytics
                 pageView={{
-                    path: "/demos/geometricTime",
+                    path: staticContent.links.demos.myNotes,
                     title: "My Paper",
                 }}
             />
