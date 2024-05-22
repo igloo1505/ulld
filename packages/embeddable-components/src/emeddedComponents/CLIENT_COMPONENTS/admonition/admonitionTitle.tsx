@@ -1,9 +1,9 @@
 "use client";
 import { cn } from "@ulld/utilities/cn";
 import React from "react";
-import { DynamicIcon } from "@ulld/icons/dynamic";
 import { AdmonitionType } from "@ulld/utilities/admonition/types";
 import { useMathjaxDynamicParse } from "@ulld/hooks/useMathjaxDynamicParse";
+import { useMemoizedIcon } from "../../../hooks/useMemoizedIcon";
 
 export interface AdmonitionTitleProps {
     title: string;
@@ -22,6 +22,8 @@ export const AdmonitionTitle = ({
 }: AdmonitionTitleProps) => {
     useMathjaxDynamicParse(title);
 
+    const icon = useMemoizedIcon(admonitionType, "w-4 h-4");
+
     return (
         <div
             className={cn(
@@ -34,9 +36,7 @@ export const AdmonitionTitle = ({
                     "w-full flex flex-row flex-nowrap gap-2 justify-start items-center"
                 }
             >
-                {Boolean(admonitionType && admonitionType !== "plain") && (
-                    <DynamicIcon className={"w-4 h-4"} name={admonitionType} />
-                )}
+                {Boolean(admonitionType && admonitionType !== "plain") && icon}
                 <div
                     className={cn(
                         "admonition-title flex flex-row flex-wrap flex-grow font-bold tracking-wide inlineMath",

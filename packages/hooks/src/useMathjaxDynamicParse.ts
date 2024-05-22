@@ -4,12 +4,17 @@ declare global {
     interface Window {
         MathJax: any;
     }
+  interface WindowEventMap {
+    'mathjax-loaded': CustomEvent
+  }
 }
+
+
 
 const checkMath = async () => {
     if (typeof window !== "undefined" && window.MathJax) {
         try {
-            await window.MathJax.typesetPromise();
+            return await window.MathJax.typesetPromise();
         } catch (e) {
             console.log("MatJax error: " + e);
         }
@@ -17,9 +22,15 @@ const checkMath = async () => {
 };
 
 export const useMathjaxDynamicParse = (state: any) => {
+    const handleMath = async () => {
+           let res = await checkMath() 
+           if(res){
+            window.dispatchEvent(new CustomEvent("mathjax-loaded"))
+        }
+        }
     useEffect(() => {
         if (typeof MathJax === "undefined") return;
-        checkMath()
+        handleMath()
         // MathJax?.Hub?.Queue(["Typeset", MathJax.Hub]);
     }, [state]);
 };

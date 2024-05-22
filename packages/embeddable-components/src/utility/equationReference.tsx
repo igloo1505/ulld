@@ -19,7 +19,11 @@ export const EquationReference = ({
     const id = _id ? _id : getRandomId(16);
     const observer = useRef<MutationObserver | null>(null);
     const timer = useRef<NodeJS.Timeout | null>(null!);
+
     const getLabel = () => {
+        if (timer.current) {
+            clearTimeout(timer.current);
+        }
         let em = document.getElementById(`eqRef-${id}`);
         if (!em) return;
         let labelEm = em.querySelector("mjx-labels");
@@ -30,13 +34,15 @@ export const EquationReference = ({
         labelItems.forEach((l) => {
             let styles = window.getComputedStyle(l, ":before");
             let content = styles["content"];
-            let label = parseInt(replaceRecursively(content, /\"|\'/gm, ""));
+            let replaced = content.replaceAll(/[^\d]/gm, "");
+            let label = parseInt(replaced);
             if (!Number.isNaN(label)) {
                 parsedItems.push(`${label}`);
             }
         });
         if (parsedItems.length > 0) {
-            setLabelNumber(parsedItems.join(""));
+            const labelNumber = parsedItems.join("");
+            setLabelNumber(labelNumber);
             return true;
         } else {
             return false;
@@ -54,11 +60,17 @@ export const EquationReference = ({
             clearTimeout(timer.current);
         }
         let _observer = new MutationObserver((mutations) => {
-            if (mutations.map((m) => m.type).includes("childList")) {
-                const success = getLabel();
-                if (!success && retry < maxRetries) {
-                    timer.current = setTimeout(() => setObserver(retry + 1), 500);
-                }
+            if (
+                mutations.some(
+                    (m) => "localName" in m.target && m.target.localName === "mjx-c",
+                )
+            ) {
+                timer.current = setTimeout(() => {
+                    let success = getLabel();
+                    if (!success && retry < maxRetries) {
+                        timer.current = setTimeout(() => setObserver(retry + 1), 500);
+                    }
+                }, 500);
             }
         });
         _observer.observe(em, {
@@ -69,6 +81,13 @@ export const EquationReference = ({
         observer.current = _observer;
     };
 
+    useEventListener("equation-rendered", (e) => {
+        console.log("rendered event: ", e);
+    });
+    useEventListener("mathjax-loaded", (e) => {
+        console.log("loaded event: ", e);
+    });
+
     useEffect(() => {
         getLabel();
         setObserver();
@@ -78,8 +97,6 @@ export const EquationReference = ({
             }
         };
     }, [id]);
-
-    useEventListener("mathjax-loaded", () => { });
 
     if (!labelNumber) return defaultContent || null;
     return labelNumber;

@@ -1,9 +1,13 @@
-import { HTMLMotionProps, MotionValue, motion, useMotionValueEvent } from "framer-motion";
+import NavbarButtonPortal from "#/components/utility/portals/navbar";
+import { HTMLMotionProps, motion } from "framer-motion";
 import React, { ForwardedRef, forwardRef, useEffect, useState } from "react";
-import { codeToHtml } from "shiki";
+import { BundledTheme, codeToHtml } from "shiki";
+import ShikiThemeSelect from "#/components/modals/shikiTheme";
+import { navbarButtonClasses } from "../navbar/navbarButtonGroup";
 
 interface SourceCodeProps extends HTMLMotionProps<"div"> {
     content: string;
+    theme?: BundledTheme
 }
 
 const SourceCode = forwardRef(
@@ -12,35 +16,50 @@ const SourceCode = forwardRef(
         ref: ForwardedRef<HTMLDivElement>,
     ) => {
         const [source, setSource] = useState<string | null | undefined>(null);
+        const [theme, setTheme] = useState<{open: boolean, value: BundledTheme}>({
+            open: false,
+            value: "dracula"
+        })
+
 
         const gatherSource = async () => {
             const sourceCode = await codeToHtml(content, {
-                theme: "dracula",
+                theme: theme.value,
                 lang: "mdx",
                 mergeWhitespaces: false,
-                colorReplacements: {
-                    "#282A36": "hsl(var(--background))",
-                },
             });
             setSource(sourceCode);
         };
 
         useEffect(() => {
             gatherSource();
-        }, [content]);
+        }, [content, theme]);
 
         return (
-            <motion.div
-                className={
-                    "w-full max-w-full h-full max-h-full overflow-y-auto block not-prose [&_pre]:max-w-full py-6 pr-4 pl-6 text-sm [&_code]:max-w-full [&_code]:min-w-full [&_code]:whitespace-break-spaces [&_.line]:min-h-4 [&_code]:!bg-background"
-                }
-                dangerouslySetInnerHTML={source ? { __html: source } : undefined}
-                {...props}
-                ref={ref}
-                style={{
-                    
-                }}
-            />
+            <>
+                <NavbarButtonPortal>
+                    <button
+                        className={navbarButtonClasses}
+                        onClick={() => setTheme({...theme, open: true})}>Theme</button>
+                </NavbarButtonPortal>
+                <ShikiThemeSelect
+                    {...theme}
+                    onOpenChange={(o) => setTheme({...theme, open: o})}
+                    onChange={(newValue) => {
+                    setTheme({
+                        open: false,
+                        value: newValue
+                    })
+                }}/>
+                <motion.div
+                    className={
+                        "w-full max-w-full h-full max-h-full overflow-y-auto block not-prose [&_pre]:max-w-full py-6 pr-4 pl-6 text-sm [&_code]:max-w-full [&_code]:min-w-full [&_code]:whitespace-break-spaces [&_.line]:min-h-4 [&_code]:!bg-background no-scrollbar"
+                    }
+                    dangerouslySetInnerHTML={source ? { __html: source } : undefined}
+                    {...props}
+                    ref={ref}
+                />
+            </>
         );
     },
 );

@@ -42,7 +42,7 @@ const listenerMap: ListenerType[] = [
     },
 ];
 
-interface P {
+export interface ObserverProps {
     settings: ParsedSettings;
     darkMode: boolean;
     config: ParsedAppConfig | null;
@@ -51,6 +51,8 @@ interface P {
     themeCookie?: ThemeOptions;
     store: ToolkitStore;
     lockScrollForPages?: string[]
+    noSettings?: boolean
+    noThemeCookie?: boolean
 }
 
 const applyHtmlClass = (cls: string, type: "add" | "remove" | "toggle") => {
@@ -65,17 +67,20 @@ const Observers = connector(
         noteSheetOpen,
         config,
         themeCookie,
-        lockScrollForPages
-    }: P) => {
+        lockScrollForPages,
+        noSettings,
+        noThemeCookie
+    }: ObserverProps) => {
         const pathname = usePathname();
         const store = useUlldStore()
 
         useEffect(() => {
+            if(noThemeCookie) return
             if (!themeCookie) {
                 let htmlTheme = htmlEm()?.getAttribute("data-ulld-theme") || "violet";
                 changeTheme(htmlTheme as ThemeOptions);
             }
-        }, [themeCookie]);
+        }, [themeCookie, noThemeCookie]);
 
         useEffect(() => {
             applyHtmlClass("noPlotlyModebar", showPlotlyModebar ? "remove" : "add");
@@ -97,6 +102,7 @@ const Observers = connector(
         }, [darkMode, store]);
 
         useEffect(() => {
+            if(noSettings) return
             if (!settings) {
                 return console.log("No settings object returned from postgres");
             }
@@ -107,7 +113,7 @@ const Observers = connector(
                     settings.tooltips === false ? "add" : "remove",
                 );
             }
-        }, [settings, darkMode, store]);
+        }, [settings, darkMode, store, noSettings]);
 
         /* TODO: Move this to the keydown listener that already exists instead of appending here. Leaving for now because I have to fix a bug and the library closes in 13 minutes. */
         const keymapListener = (e: KeyboardEvent) => {

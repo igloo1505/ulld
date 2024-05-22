@@ -1,6 +1,6 @@
 import React from "react";
 import { ReduxProvider } from "./ReduxProvider";
-import Observers from "../observers/internalState";
+import Observers, { ObserverProps } from "../observers/internalState";
 import { OnlineStatusObserver } from "../observers/onlineStatus";
 import { ToastListener } from "../observers/toast";
 import { Toaster } from "@ulld/tailwind/toaster";
@@ -26,11 +26,13 @@ export const StateWrappedUI = async ({
     ignoreConfig = false,
     store,
     loader,
+    observers
 }: {
     children?: React.ReactNode;
     ignoreConfig?: boolean;
     store?: ToolkitStore;
     loader?: InitialLoaderProps;
+    observers?: Partial<ObserverProps>;
 }) => {
     const cookieJar = cookies();
     const settings = await getSettings();
@@ -41,7 +43,7 @@ export const StateWrappedUI = async ({
     if (!ignoreConfig) {
         /* const _config = path.join(process.cwd(), configPath); */
         /* if(_confi) */
-        config = getUlldConfig() as ParsedAppConfig
+        config = getUlldConfig() as ParsedAppConfig;
     }
 
     return (
@@ -55,6 +57,7 @@ export const StateWrappedUI = async ({
                     config={config}
                     showPlotlyModebar={showModebar}
                     themeCookie={themeCookie}
+                    {...observers}
                 />
                 <div id="navbar-target" />
                 <div id="sidebar-target" />

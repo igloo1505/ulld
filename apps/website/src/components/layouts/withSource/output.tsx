@@ -13,7 +13,7 @@ const CodeOutput = forwardRef(
     ) => {
         return (
             <motion.div
-                className={"w-full h-full max-h-full overflow-y-auto"}
+                className={"w-full h-full max-h-full overflow-y-auto no-scrollbar"}
                 {...props}
                 ref={ref}
             >

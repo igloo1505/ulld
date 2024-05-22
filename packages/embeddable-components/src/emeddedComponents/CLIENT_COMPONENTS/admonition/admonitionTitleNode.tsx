@@ -1,9 +1,9 @@
-import { DynamicIcon } from "@ulld/icons";
 import cn from "@ulld/utilities/cn";
 import React, { ReactNode } from "react";
 import { AdmonitionTitleProps } from "./admonitionTitle";
 import { useMathjaxDynamicParse } from "@ulld/hooks/useMathjaxDynamicParse";
 import { MathJax } from "better-react-mathjax";
+import { useMemoizedIcon } from "../../../hooks/useMemoizedIcon";
 
 interface AdmonitionTitleNodeProps extends Omit<AdmonitionTitleProps, "title"> {
     title: ReactNode;
@@ -23,6 +23,7 @@ const AdmonitionTitleNode = ({
     titleBold,
 }: AdmonitionTitleNodeProps) => {
     useMathjaxDynamicParse(title);
+    const icon = useMemoizedIcon(admonitionType, "w-4 h-4")
     return (
         <div
             className={cn(
@@ -38,7 +39,7 @@ const AdmonitionTitleNode = ({
                     )}
                 >
                     {Boolean(admonitionType && admonitionType !== "plain") && (
-                        <DynamicIcon className={"w-4 h-4"} name={admonitionType} />
+                    icon
                     )}
                     {title}
                 </div>

@@ -1366,6 +1366,52 @@ importers:
         specifier: ^5.4.2
         version: 5.4.5
 
+  packages/componentConfigs:
+    dependencies:
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../config-typescript
+      '@ulld/api':
+        specifier: workspace:*
+        version: link:../api
+      '@ulld/configschema':
+        specifier: workspace:*
+        version: link:../configschema
+      '@ulld/developer':
+        specifier: workspace:*
+        version: link:../developer
+      '@ulld/hooks':
+        specifier: workspace:*
+        version: link:../hooks
+      '@ulld/state':
+        specifier: workspace:*
+        version: link:../state
+      '@ulld/tailwind':
+        specifier: workspace:*
+        version: link:../tailwindAndShad
+      '@ulld/ui':
+        specifier: workspace:*
+        version: link:../ui
+      '@ulld/utilities':
+        specifier: workspace:*
+        version: link:../utilities
+    devDependencies:
+      '@types/react':
+        specifier: ^18.2.74
+        version: 18.3.2
+      '@types/react-dom':
+        specifier: ^18.2.24
+        version: 18.3.0
+      next:
+        specifier: ^14.2.3
+        version: 14.2.3(@babel/core@7.24.5)(@opentelemetry/api@1.8.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.2)
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
+
   packages/config:
     dependencies:
       '@next/mdx':
@@ -2179,6 +2225,9 @@ importers:
       '@next/mdx':
         specifier: ^14.0.0
         version: 14.2.3(@mdx-js/loader@3.0.1(webpack@5.91.0(@swc/core@1.5.7(@swc/helpers@0.5.11))(esbuild@0.19.12)))(@mdx-js/react@3.0.1(@types/react@18.3.2)(react@18.3.1))
+      '@ulld/component-configs':
+        specifier: workspace:*
+        version: link:../componentConfigs
       '@ulld/configschema':
         specifier: workspace:*
         version: link:../configschema
@@ -2702,6 +2751,9 @@ importers:
       '@next/mdx':
         specifier: ^14.0.0
         version: 14.2.3(@mdx-js/loader@3.0.1(webpack@5.91.0(@swc/core@1.5.7(@swc/helpers@0.5.11))(esbuild@0.19.12)))(@mdx-js/react@3.0.1(@types/react@18.3.2)(react@18.3.1))
+      '@tabler/icons-react':
+        specifier: ^3.5.0
+        version: 3.5.0(react@18.3.1)
       '@ulld/tailwind':
         specifier: workspace:*
         version: link:../tailwindAndShad
@@ -9719,6 +9771,14 @@ packages:
   '@szmarczak/http-timer@5.0.1':
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
+
+  '@tabler/icons-react@3.5.0':
+    resolution: {integrity: sha512-bn05XKZV3ZfOv5Jr1FCTmVPOQGBVJoA4NefrnR919rqg6WGXAa08NovONHJGSuMxXUMV3b9Cni85diIW/E9yuw==}
+    peerDependencies:
+      react: '>= 16'
+
+  '@tabler/icons@3.5.0':
+    resolution: {integrity: sha512-I53dC3ZSHQ2MZFGvDYJelfXm91L2bTTixS4w5jTAulLhHbCZso5Bih4Rk/NYZxlngLQMKHvEYwZQ+6w/WluKiA==}
 
   '@tailwindcss/container-queries@0.1.1':
     resolution: {integrity: sha512-p18dswChx6WnTSaJCSGx6lTmrGzNNvm2FtXmiO6AuA1V4U5REyoqwmT6kgAsIMdjo07QdAfYXHJ4hnMtfHzWgA==}
@@ -27355,6 +27415,13 @@ snapshots:
   '@szmarczak/http-timer@5.0.1':
     dependencies:
       defer-to-connect: 2.0.1
+
+  '@tabler/icons-react@3.5.0(react@18.3.1)':
+    dependencies:
+      '@tabler/icons': 3.5.0
+      react: 18.3.1
+
+  '@tabler/icons@3.5.0': {}
 
   '@tailwindcss/container-queries@0.1.1(tailwindcss@3.4.3(ts-node@10.9.2(@swc/core@1.5.7(@swc/helpers@0.5.11))(@types/node@20.12.12)(typescript@5.4.5)))':
     dependencies:

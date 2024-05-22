@@ -148,6 +148,10 @@ const RootLayout = async (props: {
                     loader={{
                         mathjax: ["config"],
                     }}
+                    observers={{
+                        noSettings: true,
+                        noThemeCookie: true
+                    }}
                 />
                 <StateWrappedComponents />
                 <Footer />

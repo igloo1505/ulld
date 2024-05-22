@@ -1,6 +1,10 @@
 "use client";
 import React from "react";
-import { Excalidraw } from "@excalidraw/excalidraw";
+import { connect } from "react-redux";
+import { RootState } from "@ulld/state/store";
+import { WhiteboardState } from "./useWhiteboardState";
+import dynamic from "next/dynamic"
+const Excalidraw = dynamic(() => import("@excalidraw/excalidraw").then((a) => a.Excalidraw), {ssr: false})
 import type {
     AppState,
     BinaryFiles,
@@ -8,7 +12,7 @@ import type {
     ExcalidrawInitialDataState,
     LibraryItems,
 } from "@excalidraw/excalidraw/types/types";
-import { ExcalidrawElement } from "@excalidraw/excalidraw/types/element/types";
+import type { ExcalidrawElement } from "@excalidraw/excalidraw/types/element/types";
 import { useClientDarkMode } from "@ulld/hooks/useClientDarkMode";
 /* import { restore } from "@excalidraw/excalidraw"; */
 
@@ -16,10 +20,6 @@ export type InitialWhiteboardData = ExcalidrawInitialDataState;
 
 export interface WhiteboardProps extends WhiteboardState {
 }
-
-import { connect } from "react-redux";
-import { RootState } from "@ulld/state/store";
-import { WhiteboardState } from "./useWhiteboardState";
 
 const connector = connect((state: RootState, props: any) => ({
     darkMode: state.UI.darkmode,

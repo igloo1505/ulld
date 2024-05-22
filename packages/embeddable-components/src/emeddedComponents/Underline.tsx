@@ -3,7 +3,7 @@ import React, { HTMLProps } from "react";
 import { WithTooltipWrapper, getToolTipWrapperContent } from "./Hl";
 import { PropColor } from "@ulld/utilities/shadColorMap";
 import { ComposedTooltip } from "./composedTooltip";
-import { componentConfig } from "../componentConfigs/underline";
+import { componentConfig } from "@ulld/component-configs/underline";
 
 type Props = {
     thin?: boolean;

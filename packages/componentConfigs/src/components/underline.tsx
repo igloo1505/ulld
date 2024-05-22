@@ -1,7 +1,7 @@
 import { CSSProperties } from "react"
 import {z} from 'zod'
-import { withToolTipWrapperSchema } from './subConfigs/withToolTipWrapper'
-import { propColorSchema, propColorSchemaTransform } from './subConfigs/colors'
+import { withToolTipWrapperSchema } from '../subConfigs/withToolTipWrapper'
+import { propColorSchema, propColorSchemaTransform } from '../subConfigs/colors'
 
 
 const colorSchema = propColorSchema.describe("Color of the underline.")

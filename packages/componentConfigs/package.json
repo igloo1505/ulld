@@ -1,0 +1,39 @@
+{
+  "name": "@ulld/component-configs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsx ./src/scripts/build/main.ts",
+    "writeImports": "tsx ./src/scripts/writeImports.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "exports": {
+    "./underline": "./src/components/underline.tsx"
+  },
+  "peerDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "@ulld/api": "workspace:*",
+    "@ulld/configschema": "workspace:*",
+    "@ulld/developer": "workspace:*",
+    "@ulld/hooks": "workspace:*",
+    "@ulld/state": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
+    "@ulld/ui": "workspace:*",
+    "@ulld/utilities": "workspace:*",
+    "next": "^13.1.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "next": "^14.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "packageManager": "pnpm@9.0.4"
+}

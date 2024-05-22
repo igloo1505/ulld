@@ -21,6 +21,16 @@ const MathjaxProvider = ({ children }: MathjaxProviderProps) => {
                     inlineMath: [["$", "$"]],
                     displayMath: [["$$", "$$"]],
                 },
+                startup: {
+                    ready: () => {
+                        /* @ts-ignore */
+                        MathJax.startup.defaultReady();
+                        /* @ts-ignore */
+                        MathJax.startup.promise.then(() => {
+                            window.dispatchEvent(new CustomEvent("mathjax-loaded"))
+                        });
+                    },
+                },
             }}
             src={
                 process.env.NODE_ENV === "production"
@@ -28,9 +38,10 @@ const MathjaxProvider = ({ children }: MathjaxProviderProps) => {
                     : "/utils/tex-chtml.js"
             }
             onLoad={() => {
-                window.dispatchEvent(new Event("mathjax-loaded"));
-                console.log(`Mathjax has loaded`);
+                window.dispatchEvent(new CustomEvent("mathjax-loaded"));
+                console.log("dispatching mathjax-loaded event")
             }}
+        /* onStartup */
         >
             {children}
         </MathJaxContext>

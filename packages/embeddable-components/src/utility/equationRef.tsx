@@ -1,5 +1,6 @@
 import React from 'react'
 import { EquationReference } from './equationReference'
+import EquationReferenceAnchor from './equationReferenceAnchor'
 
 export interface EquationRefProps {
     id: string
@@ -13,12 +14,9 @@ export const EquationRef = (props: EquationRefProps & {}) => {
     const { id, children, anchor } = props
     if (anchor) {
         return (
-            <div
-                className={"w-full h-fit"}
-                id={`eqRef-${id}`}
-            >
+        <EquationReferenceAnchor id={id}>
                 {children}
-            </div>
+        </EquationReferenceAnchor>
         )
     } else {
         return <EquationReference id={id} defaultContent={props.defaultContent} />

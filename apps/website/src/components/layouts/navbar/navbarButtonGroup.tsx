@@ -33,6 +33,7 @@ const NavbarButtonGroup = connector(({ buttons }: NavbarButtonGroupProps) => {
             {buttons.map((a, i) => {
                 return (
                     <Link
+                        key={i}
                         className={navbarButtonClasses}
                         href={a.href}
                         initial={{
