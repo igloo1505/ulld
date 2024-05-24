@@ -5,9 +5,14 @@
     "myNotes1": {
         "citations": [
             {
-                "htmlCitation": "<div class=\"csl-bib-body\">\n  <div data-csl-entry-id=\"einstein1905emc2\" class=\"csl-entry\">Einstein, A. (1905). Does the inertia of a body depend upon its energy-content. <i>Annalen Der Physik</i>, <i>18</i>(13), 639–641.</div>\n</div>",
-                "id": "einstein1905emc2",
+                "htmlCitation": "<div class=\"csl-bib-body\">\n  <div data-csl-entry-id=\"gordon_determining_2008\" class=\"csl-entry\">Gordon, C., Land, K., &#38; Slosar, A. (2008). Determining the motion of the Solar system relative to the cosmic microwave background using Type Ia supernovae. <i>Monthly Notices of the Royal Astronomical Society</i>, <i>387</i>(1), 371–376. https://doi.org/10.1111/j.1365-2966.2008.13239.x</div>\n</div>",
+                "id": "gordon_determining_2008",
                 "pageIndex": 0
+            },
+            {
+                "htmlCitation": "<div class=\"csl-bib-body\">\n  <div data-csl-entry-id=\"Jha_2007\" class=\"csl-entry\">Jha, S., Riess, A. G., &#38; Kirshner, R. P. (2007). Improved Distances to Type Ia Supernovae with Multicolor Light-Curve Shapes: MLCS2k2. <i>The Astrophysical Journal</i>, <i>659</i>(1), 122–148. https://doi.org/10.1086/512054</div>\n</div>",
+                "id": "jha_2007",
+                "pageIndex": 1
             }
         ]
     },

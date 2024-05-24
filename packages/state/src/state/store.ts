@@ -3,6 +3,7 @@ import { UIReducer } from "./slices/ui";
 import { SettingsReducer } from "./slices/settings";
 import { FunctionalityReducer } from "./slices/functionality";
 import { ConfigReducer } from "./slices/config";
+import { NoteReducer } from "./slices/note";
 import {
     FLUSH,
     PAUSE,
@@ -31,6 +32,7 @@ const rootReducer = <T extends string>(extraReducers?: ExtraReducers<T>) => {
         settings: SettingsReducer,
         functionality: FunctionalityReducer,
         config: ConfigReducer,
+        note: NoteReducer,
         ...extraReducers
     } satisfies Record<string, Reducer>
 };

@@ -12,9 +12,22 @@ a.queryTag {
   }
 }
 
+span.citationAnchor-container {
+  // width: "0.5ch",
+  // minWidth: "0.5ch",
+  // height: "100em",
+  // position: "relative",
+  // display: "inline-flex",
+  // flexDirection: "column",
+  // justifyContent: "center",
+  // alignItems: "center"
+  width: 0.5ch;
+}
+
 a.citationAnchor {
   font-size: 0.75rem;
-  position: absolute;
+  // position: absolute;
+  width: 0.5ch;
   top: -1;
   color: var(--general-link-color);
 }

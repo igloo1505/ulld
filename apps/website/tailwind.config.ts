@@ -49,7 +49,7 @@ const tailwindCfg: Config = {
             },
             colors: {
                 hint: "#39f614",
-                link: "#00bbf9",
+                link: "#1e90ff",
             },
             maxWidth: {
                 content: "1440px",

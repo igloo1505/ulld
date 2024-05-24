@@ -38,15 +38,16 @@ const Lead = dynamic(() => import("@ulld/embeddable-components/components/client
 // const CollapsablePanel = dynamic(() => import("./emeddedComponents/layout/interactive/collapsableSidePanel/collapsableSidePanel"))
 const VSpace = dynamic(() => import("@ulld/embeddable-components/components/client/vspace").then((a) => a.VSpace))
 // const InternalMermaid = dynamic(() => import("./emeddedComponents/diagrams/mermaid"))
-// const EmbeddedImage = dynamic(() => import("./emeddedComponents/image"))
+const EmbeddedImage = dynamic(() => import("@ulld/embeddable-components/components/client/image").then((a) => a.EmbeddedImage))
 // const EmbeddedSvg = dynamic(() => import("./emeddedComponents/svg"))
 // const Vectorize = dynamic(() => import("./emeddedComponents/vectorize"))
-// const Quote = dynamic(() => import("./emeddedComponents/text/quote"))
+const Quote = dynamic(() => import("@ulld/embeddable-components/components/blockQuote"))
 // const Hide = dynamic(() => import("./emeddedComponents/hide"))
 // const FlexRow = dynamic(() => import("./layout/flexRow"))
 // const NoMaxHeight = dynamic(() => import("./layout/noTableHeightLimit"))
 // const Equation = dynamic(() => import("./utility/equationWrapper"))
 const EqRef = dynamic(() => import("@ulld/embeddable-components/components/client/equationRef").then((a) => a.EquationRef))
+const FigureRef = dynamic(() => import("@ulld/embeddable-components/components/client/figureRef").then((a) => a.FigureRef))
 const EquationTag = dynamic(() => import("@ulld/embeddable-components/components/client/equationTag").then((a) => a.EquationTag))
 // const DefinitionTag = dynamic(() => import("./utility/definitionTag"))
 const Boxed = dynamic(() => import("@ulld/embeddable-components/components/client/boxed").then((a) => a.Boxed))
@@ -81,10 +82,12 @@ export const conditionalClientComponents: ConditionalComponentQuery<EmbeddableCl
         { regex: new RegExp(`<Hl`), component: Highlight, label: "Hl" },
         { regex: new RegExp(`<Highlight`), component: Highlight, label: "Highlight" },
         { regex: new RegExp(`<Lead`), component: Lead, label: "Lead" },
+        { regex: new RegExp(`<Quote`), component: Quote, label: "Quote" },
         // Notifications and Attention Components
         { regex: new RegExp(`<Admonition`), component: Admonition, label: "Admonition" },
         // Math related
         { regex: new RegExp(`<EqRef`), component: EqRef, label: "EqRef" },
+        { regex: new RegExp(`<FigRef`), component: FigureRef, label: "FigRef" },
         { regex: new RegExp(`<EquationTag`), component: EquationTag, label: "EquationTag" },
         // Jupyter
         // 3D
@@ -92,6 +95,7 @@ export const conditionalClientComponents: ConditionalComponentQuery<EmbeddableCl
         // Media components
         { regex: new RegExp(`<Video`), component: Video, label: "Video" },
         { regex: new RegExp(`<Whiteboard`), component: Whiteboard, label: "Whiteboard" },
+        { regex: new RegExp(`<Image`), component: EmbeddedImage, label: "Image" },
         // Academic components
         {regex: new RegExp("<ErrorMargin"), component: ErrorMargin, label: "ErrorMargin"},
         {regex: new RegExp("<Abstract"), component: Abstract, label: "Abstract"},

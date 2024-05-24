@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{tikz,amsmath,siunitx}
+\usetikzlibrary{arrows,snakes,backgrounds,patterns,matrix,shapes,fit,calc,shadows,plotmarks}
+\usepackage[graphics,tightpage,active]{preview}
+\PreviewEnvironment{tikzpicture}
+\PreviewEnvironment{equation}
+\PreviewEnvironment{equation*}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+\pagestyle{empty}
+\thispagestyle{empty}
+
+\definecolor{ulldBlue}{rgb}{0.11764706, 0.56470588, 1}
+
+\begin{document}
+\begin{tikzpicture}
+    \draw[fill=none, white](0,0) circle (1.0);
+    \draw[fill=none, white](0,1.272) circle (0.272);
+     \draw[fill=white](0,0) circle (1 pt);
+
+     \draw[white](0,0) -- (1,0) node [midway,below] {\scriptsize $r_{\tiny \text{Earth}}$};
+
+     \draw[fill=white](0,1.272) circle (1 pt);
+     \draw[white](0,1.272) -- (0,1);
+
+     \draw[red, |-|](0.35,1.272) -- (0.35,1) node [midway,right,white] {\scriptsize $r_{\tiny \text{Lunar}}$};
+
+     \draw[dashed, ulldBlue](1,0) -- (0,1.272) node [midway,left] {\scriptsize $R$};
+
+\end{tikzpicture}
+\end{document}

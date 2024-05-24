@@ -39,14 +39,8 @@
       "startArrowhead": null,
       "endArrowhead": "arrow",
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          200.53006746923518,
-          -203.23404799939067
-        ]
+        [0, 0],
+        [200.53006746923518, -203.23404799939067]
       ]
     },
     {
@@ -89,14 +83,8 @@
       "startArrowhead": null,
       "endArrowhead": "arrow",
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          393,
-          -0.9146878044753635
-        ]
+        [0, 0],
+        [393, -0.9146878044753635]
       ]
     },
     {
@@ -131,14 +119,8 @@
       "startArrowhead": null,
       "endArrowhead": "arrow",
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          200,
-          200
-        ]
+        [0, 0],
+        [200, 200]
       ]
     },
     {
@@ -173,14 +155,8 @@
       "startArrowhead": null,
       "endArrowhead": "arrow",
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          -200
-        ]
+        [0, 0],
+        [0, -200]
       ]
     },
     {
@@ -215,14 +191,8 @@
       "startArrowhead": null,
       "endArrowhead": "arrow",
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          -0.17271746253061337,
-          200
-        ]
+        [0, 0],
+        [-0.17271746253061337, 200]
       ]
     },
     {
@@ -253,7 +223,7 @@
       "locked": false,
       "fontSize": 28,
       "fontFamily": 3,
-      "text": "vt′",
+      "text": "vt'",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -289,11 +259,11 @@
       "locked": false,
       "fontSize": 28,
       "fontFamily": 3,
-      "text": "ct′",
+      "text": "ct'",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "ct′",
+      "originalText": "ct",
       "lineHeight": 1.2,
       "baseline": 26
     },
@@ -325,7 +295,7 @@
       "locked": false,
       "fontSize": 28,
       "fontFamily": 3,
-      "text": "ct",
+      "text": "ct'",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -511,18 +481,9 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          2.2140517943175837,
-          -0.6504360158144777
-        ],
-        [
-          22.576216767796154,
-          -0.42378323220387415
-        ]
+        [0, 0],
+        [2.2140517943175837, -0.6504360158144777],
+        [22.576216767796154, -0.42378323220387415]
       ]
     },
     {
@@ -645,14 +606,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          18.088824890555088,
-          0
-        ]
+        [0, 0],
+        [18.088824890555088, 0]
       ]
     }
   ],

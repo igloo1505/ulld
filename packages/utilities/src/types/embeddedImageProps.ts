@@ -1,6 +1,9 @@
+import { ReactNode } from "react"
+
 export interface EmbeddedImageProps extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
     file?: string
     url?: string
+    src?: string
     image?: string
     left?: boolean
     center?: boolean
@@ -21,4 +24,11 @@ export interface EmbeddedImageProps extends React.DetailedHTMLProps<React.ImgHTM
     border?: boolean
     bordered?: boolean
     circle?: boolean
+    noConfig?: boolean
+    desc?: ReactNode
+    descLeft?: boolean
+    descRight?: boolean
+    notFigure?: boolean
+    id?: string
+    label?: boolean
 }

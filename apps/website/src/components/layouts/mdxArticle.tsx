@@ -6,6 +6,7 @@ import React, {
     forwardRef,
     useEffect,
     useMemo,
+    useRef,
 } from "react";
 import clsx from "clsx";
 import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
@@ -19,6 +20,7 @@ import store from "#/state/store";
 import { createNavbarButton } from "#/state/slices/core";
 import { useViewport } from "@ulld/hooks/useViewport";
 import Citations from "../academic/citations";
+import { NoteStateObserver } from "@ulld/state/observers/noteState";
 
 interface MDXArticleProps extends HTMLProps<HTMLElement> {
     mdx: DocumentTypes;
@@ -33,16 +35,20 @@ const MDXArticle = forwardRef(
         { mdx, paddingTop = true, isSource, ...props }: MDXArticleProps,
         ref: ForwardedRef<HTMLElement>,
     ) => {
-        const vp = useViewport();
+        const vp = useViewport(true);
         const id = props.id ? props.id : getRandomId();
         const article = useMDXComponent(mdx.body.code);
         const Article = useMemo(() => article, []);
         useMathjaxBandaid(id);
         const components = getComponentMap(mdx.body.raw, {}, webComponentMap);
 
-        const citationsEm = useMemo(() => <Citations noteId={"id" in mdx ? mdx.id : undefined} />, [mdx])
-                        
+        const citationsEm = useMemo(
+            () => <Citations noteId={"id" in mdx ? mdx.id : undefined} />,
+            [mdx],
+        );
+
         useEffect(() => {
+            /* NOTE: Intentionally leaving out the vp dependency. The +- wasn't work it as it was causing some massive flickering issues, and most user's will have the same device width throughout their time on the app, or at least be able to expand their window again. */
             if (isSource) return;
             if ("id" in mdx && Boolean(mdx.id)) {
                 const w = vp?.window?.width;
@@ -56,10 +62,11 @@ const MDXArticle = forwardRef(
                     }),
                 );
             }
-        }, [vp]);
+        }, []);
 
         return (
             <InternalReduxProvider>
+                <NoteStateObserver store={store} />
                 <article
                     {...props}
                     ref={ref}
@@ -71,8 +78,8 @@ const MDXArticle = forwardRef(
                     )}
                 >
                     <Article components={components} />
+                    {citationsEm}
                 </article>
-                {citationsEm}
             </InternalReduxProvider>
         );
     },

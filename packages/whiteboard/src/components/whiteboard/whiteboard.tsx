@@ -90,7 +90,7 @@ export const WBoard = ({
     if (layout === "full") {
         return (
             <div
-                className={cn("w-full p-4 h-[calc(100vh-8rem)]", className)}
+                className={cn("w-full p-4 h-[calc(100vh-8rem)] block", className)}
                 style={style}
             >
                 <WhiteboardInternal {..._props} />
@@ -100,7 +100,7 @@ export const WBoard = ({
     if (layout === "full-width") {
         return (
             <div
-                className={cn("w-full p-4 h-[min(80vh,500px)]", className)}
+                className={cn("w-full p-4 h-[min(80vh,500px)] inline-block", className)}
                 style={style}
             >
                 <WhiteboardInternal {..._props} />
@@ -111,7 +111,7 @@ export const WBoard = ({
         return (
             <div
                 className={cn(
-                    "w-full p-4 lg:w-[33%] lg:float-right lg:m-4 h-[min(80vh,500px)]",
+                    "w-full p-4 lg:w-[33%] lg:float-right lg:m-4 h-[min(80vh,500px)] inline-block",
                     className,
                 )}
                 style={style}

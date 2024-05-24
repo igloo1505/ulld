@@ -1,3 +1,4 @@
+"use client"
 import NavbarButtonPortal from "#/components/utility/portals/navbar";
 import { HTMLMotionProps, motion } from "framer-motion";
 import React, { ForwardedRef, forwardRef, useEffect, useState } from "react";

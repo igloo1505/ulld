@@ -1,12 +1,13 @@
 "use client";
 import clsx from "clsx";
 import React from "react";
-import FoldingAdmonition from "./foldingAdmonition";
 import { AdmonitionProps } from "@ulld/utilities/admonition/types";
 import { stringToConsistentId } from "@ulld/state/formatting/general";
 import { AdmonitionTitle } from "./admonitionTitle";
 import { getRandomId } from "@ulld/utilities/identity";
 import AdmonitionTitleNode from "./admonitionTitleNode";
+import FoldingAdmonition from "../../FoldingAdmonition";
+
 
 export const Admonition = (props: AdmonitionProps) => {
     const id = props.id
@@ -40,7 +41,7 @@ export const Admonition = (props: AdmonitionProps) => {
                 <AdmonitionTitle
                     title={title || ""}
                     admonitionType={type}
-                    dropdown={false}
+                    dropdown={props.dropdown}
                     groupId={id}
                     titleBold={props.titleBold}
                 />
@@ -48,14 +49,14 @@ export const Admonition = (props: AdmonitionProps) => {
                 <AdmonitionTitleNode
                     title={title || ""}
                     admonitionType={type}
-                    dropdown={false}
+                    dropdown={props.dropdown}
                     groupId={id}
                     titleBold={props.titleBold}
                 />
             )}
             <div
                 className={clsx(
-                    "prose dark:prose-invert p-4 body w-full min-w-full -translate-y-full scale-y-0 group-[.open]:translate-y-0 group-[.open]:scale-y-100 transition-transform duration-300 bg-gray-100 dark:bg-gray-800",
+                    "prose dark:prose-invert p-4 body w-full min-w-full h-auto bg-gray-100 dark:bg-gray-800",
                     type === "plain" && "bg-transparent dark:bg-transparent",
                 )}
             >

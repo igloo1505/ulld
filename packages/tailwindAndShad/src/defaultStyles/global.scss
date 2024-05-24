@@ -146,18 +146,18 @@ body {
   min-height: calc(100vh - var(--nav-height));
 }
 
-.admonitionBody {
-  max-height: 0px;
-  transition: max-height 1s ease-in;
-  padding: 0rem 1rem;
-}
+// .admonitionBody {
+//   max-height: 0px;
+//   transition: max-height 1s ease-in;
+//   padding: 0rem 1rem;
+// }
 
-.admonition[data-state="open"] {
-  .admonitionBody {
-    max-height: 2000px;
-    padding: 1rem;
-  }
-}
+// .admonition[data-state="open"] {
+//   .admonitionBody {
+//     max-height: 2000px;
+//     padding: 1rem;
+//   }
+// }
 
 @layer components {
   .navbtn {
@@ -381,5 +381,20 @@ div[role="dialog"][cmdk-dialog] {
     --color-primary-darker: hsl(var(--primary) / 0.85);
     --color-primary-darkest: hsl(var(--primary));
     --color-primary-light: hsl(var(--primary) / 0.6);
+  }
+  span.citationAnchor-container {
+    width: 0.75ch;
+    height: 1em;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    a.citationAnchor {
+      transform: translateY(-0.25em);
+      font-size: 0.75em;
+      position: absolute;
+      top: -1;
+      color: var(--general-link-color);
+    }
   }
 }

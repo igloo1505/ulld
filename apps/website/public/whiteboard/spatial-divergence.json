@@ -35,14 +35,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          100
-        ]
+        [0, 0],
+        [0, 100]
       ]
     },
     {
@@ -77,14 +71,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          100
-        ]
+        [0, 0],
+        [0, 100]
       ]
     },
     {
@@ -119,14 +107,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          100
-        ]
+        [0, 0],
+        [0, 100]
       ]
     },
     {
@@ -161,14 +143,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          100
-        ]
+        [0, 0],
+        [0, 100]
       ]
     },
     {
@@ -203,14 +179,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          100
-        ]
+        [0, 0],
+        [0, 100]
       ]
     },
     {
@@ -245,14 +215,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          100
-        ]
+        [0, 0],
+        [0, 100]
       ]
     },
     {
@@ -287,14 +251,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          100
-        ]
+        [0, 0],
+        [0, 100]
       ]
     },
     {
@@ -329,14 +287,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          100
-        ]
+        [0, 0],
+        [0, 100]
       ]
     },
     {
@@ -371,14 +323,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          100
-        ]
+        [0, 0],
+        [0, 100]
       ]
     },
     {
@@ -413,14 +359,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          100
-        ]
+        [0, 0],
+        [0, 100]
       ]
     },
     {
@@ -491,14 +431,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          40,
-          0
-        ]
+        [0, 0],
+        [40, 0]
       ]
     },
     {
@@ -533,14 +467,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          60,
-          0
-        ]
+        [0, 0],
+        [60, 0]
       ]
     },
     {
@@ -611,14 +539,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          80,
-          0
-        ]
+        [0, 0],
+        [80, 0]
       ]
     },
     {
@@ -689,14 +611,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          20
-        ]
+        [0, 0],
+        [0, 20]
       ]
     },
     {
@@ -731,14 +647,8 @@
       "startArrowhead": null,
       "endArrowhead": null,
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          20
-        ]
+        [0, 0],
+        [0, 20]
       ]
     },
     {
@@ -773,14 +683,8 @@
       "startArrowhead": null,
       "endArrowhead": "arrow",
       "points": [
-        [
-          0,
-          0
-        ],
-        [
-          240,
-          0
-        ]
+        [0, 0],
+        [240, 0]
       ]
     }
   ],
