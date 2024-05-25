@@ -42,7 +42,7 @@
     },
     "demos": {
       "main": "/demos",
-      "myNotes": "/demos/geometricTime?page=1",
+      "myNotes": "/demos/onTheGravitationalNatureOfTime?page=1",
       "plots": "/demos/plots",
       "layouts": "/demos/layouts",
       "media": "/demos/media",

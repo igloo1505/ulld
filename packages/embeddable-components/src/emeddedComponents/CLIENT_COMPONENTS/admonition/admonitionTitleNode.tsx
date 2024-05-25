@@ -1,5 +1,6 @@
+"use client"
 import cn from "@ulld/utilities/cn";
-import React, { HTMLProps, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { AdmonitionTitleProps } from "./admonitionTitle";
 import { useMathjaxDynamicParse } from "@ulld/hooks/useMathjaxDynamicParse";
 import { MathJax } from "better-react-mathjax";

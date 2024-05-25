@@ -25,7 +25,7 @@ const C = (props: EmbeddedImageProps) => {
             <img
                 {...imgProps}
                 className={clsx(
-                    "!m-0",
+                    "!m-0 h-auto not-prose",
                     Boolean(props.sm || props.small) && "max-w-[120px] max-h-[120px]",
                     Boolean(props.md || props.medium) && "max-w-[200px] max-h-[200px]",
                     Boolean(props.lg || props.large) && "max-w-[350px] max-h-[350px]",
@@ -49,7 +49,7 @@ const C = (props: EmbeddedImageProps) => {
     return (
         <div
             className={clsx(
-                "px-3 !py-3 overflow-hidden [&_svg]:h-fit [&_img]:h-fit my-8",
+                "px-3 !py-3 overflow-hidden [&_svg]:h-fit my-8",
                 fullWidth && "w-full flex flex-col justify-center items-center",
                 props.block && "w-full",
                 props.block && props.right && "flex flex-row justify-end items-center",

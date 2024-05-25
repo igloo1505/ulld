@@ -4,9 +4,7 @@ import React, {
     ForwardedRef,
     HTMLProps,
     forwardRef,
-    useEffect,
     useMemo,
-    useRef,
 } from "react";
 import clsx from "clsx";
 import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
@@ -17,10 +15,9 @@ import { getComponentMap } from "@ulld/component-map/client";
 import { webComponentMap } from "#/mdx/componentMap";
 import InternalReduxProvider from "#/state/provider";
 import store from "#/state/store";
-import { createNavbarButton } from "#/state/slices/core";
-import { useViewport } from "@ulld/hooks/useViewport";
 import Citations from "../academic/citations";
 import { NoteStateObserver } from "@ulld/state/observers/noteState";
+import MdxArticleNavButtons from "./mdxArticleNavButtons";
 
 interface MDXArticleProps extends HTMLProps<HTMLElement> {
     mdx: DocumentTypes;
@@ -28,18 +25,18 @@ interface MDXArticleProps extends HTMLProps<HTMLElement> {
     isSource?: boolean;
 }
 
-const btnId = "mdx-article-source";
 
 const MDXArticle = forwardRef(
     (
         { mdx, paddingTop = true, isSource, ...props }: MDXArticleProps,
         ref: ForwardedRef<HTMLElement>,
     ) => {
-        const vp = useViewport(true);
         const id = props.id ? props.id : getRandomId();
         const article = useMDXComponent(mdx.body.code);
         const Article = useMemo(() => article, []);
+
         useMathjaxBandaid(id);
+
         const components = getComponentMap(mdx.body.raw, {}, webComponentMap);
 
         const citationsEm = useMemo(
@@ -47,26 +44,13 @@ const MDXArticle = forwardRef(
             [mdx],
         );
 
-        useEffect(() => {
-            /* NOTE: Intentionally leaving out the vp dependency. The +- wasn't work it as it was causing some massive flickering issues, and most user's will have the same device width throughout their time on the app, or at least be able to expand their window again. */
-            if (isSource) return;
-            if ("id" in mdx && Boolean(mdx.id)) {
-                const w = vp?.window?.width;
-                store.dispatch(
-                    createNavbarButton({
-                        id: btnId,
-                        href: Boolean(w && w >= 768)
-                            ? `/withSource?id=${mdx.id}`
-                            : `/source?id=${mdx.id}`,
-                        label: "Source",
-                    }),
-                );
-            }
-        }, []);
-
         return (
             <InternalReduxProvider>
                 <NoteStateObserver store={store} />
+                <MdxArticleNavButtons
+                    articleId={"id" in mdx ? mdx.id : undefined}
+                    isSource={isSource}
+                />
                 <article
                     {...props}
                     ref={ref}
@@ -74,7 +58,7 @@ const MDXArticle = forwardRef(
                     className={clsx(
                         "@container/mdx w-full prose prose-invert prose-a:text-link mdx !max-w-[min(83%,1080px)] py-8 mx-8 group-[.mdx-wide]/mdxLayout:!max-w-[min(1440px,100vw-128px)] group-[.mdx-full]/mdxLayout:!max-w-full",
                         props.className,
-                        paddingTop && "pt-[76px]",
+                        paddingTop && "pt-[108px]",
                     )}
                 >
                     <Article components={components} />

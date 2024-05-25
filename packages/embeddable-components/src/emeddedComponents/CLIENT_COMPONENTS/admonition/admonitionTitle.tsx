@@ -22,7 +22,6 @@ export const AdmonitionTitle = ({
     groupId,
     ...props
 }: AdmonitionTitleProps) => {
-    console.log("title: ", title)
     useMathjaxDynamicParse(title);
 
     const icon = useMemoizedIcon(admonitionType, "w-4 h-4");

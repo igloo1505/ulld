@@ -12,8 +12,6 @@ import { getRandomId } from '@ulld/utilities/identity';
 
 export const Admonition = async (props: AdmonitionProps) => {
     const id = props.id ? props.id : typeof props.title === "string" ? stringToConsistentId(props.title, "admon") : getRandomId()
-    /* let _title = _props.title ? await serverClient.mdx.parseMdxString({ content: _props.title, display: "inline" }) : undefined */
-    /* props.title = _title?.compiledSource */
 
     if (props.dropdown) {
         return <>

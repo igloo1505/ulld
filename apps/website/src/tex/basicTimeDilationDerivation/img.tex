@@ -15,10 +15,12 @@
 
 \begin{document}
 \begin{tikzpicture}
-    \draw[white, semithick, ->] (0.1, 0.1) -- (2, 0) node[pos=0.5, below] {$v dt^{\prime}$};
-    \draw[white, semithick, ->] (0, 0) -- (1, 1) node[pos=0.5, left] {$c dt^{\prime}$};
-    \draw[white, semithick, ->] (1.1, 0.9) -- (1.9, 0.1);
-    \draw[white, semithick, ->] (2.5, 0) -- (2.5, 1);
-    \draw[white, semithick, ->] (2.7, 1) -- (2.7, 0)  node[pos=0.5, right] {$c dt$};
+    \draw[white, semithick, ->] (0.1, 0) -- (10, 0) node[pos=0.5, below] {$v dt^{\prime}$};
+    \draw[white, semithick, ->] (0, 0) -- (5, 5) node[pos=0.5, left] {$c dt^{\prime}$};
+    \draw[white, semithick, ->] (5.1, 4.9) -- (9.9, 0.1);
+    \draw[white, semithick, ->] (11, 0) -- (11, 5);
+    \draw[white, semithick, ->] (11.5, 5) -- (11.5, 0)  node[pos=0.5, right] {$c dt$};
+    \node [opacity=1, below, white] (A) at (0, 0) {$A$};
+    \node [opacity=1, below, white] (B) at (10, 0) {$B$};
 \end{tikzpicture}
 \end{document}
