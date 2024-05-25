@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { RootState } from "#/state/store";
 import { connect } from "react-redux";
 import { InitialCoreState } from "#/state/initialState/core";
 import NextLink from "next/link";
 import { motion } from "framer-motion";
 import { useInitialRender } from "@ulld/hooks/useInitialRender";
+import { usePathname } from "next/navigation";
 
 const Link = motion(NextLink);
 
@@ -23,6 +24,16 @@ export const navbarButtonClasses =
 
 const NavbarButtonGroup = connector(({ buttons }: NavbarButtonGroupProps) => {
     const isInitial = useInitialRender();
+    const pathname = usePathname()
+
+    const setTransparent = (beTransparent: boolean) => {
+            document.getElementById("main-navbar-container")?.classList?.[beTransparent ? "add" : "remove"]("bg-transparent")
+        }
+
+    useEffect(() => {
+       setTransparent(pathname === "/") 
+    }, [pathname])
+
     return (
         <div
             id="navbar-btn-container"

@@ -67,9 +67,9 @@ const RootLayout = async (props: {
     children: React.ReactNode;
     modal: React.ReactNode;
 }) => {
-    ReactGA.initialize(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!, {
-        testMode: process.env.NODE_ENV !== "production",
-    });
+    /* ReactGA.initialize(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!, { */
+        /* testMode: process.env.NODE_ENV !== "production", */
+    /* }); */
 
     const cookieJar = cookies();
 
@@ -128,6 +128,18 @@ const RootLayout = async (props: {
                 {/*     async */}
                 {/*     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" */}
                 {/* ></script> */}
+                <script
+                    async
+                    src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+                />
+                <script>
+                    {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
+`}
+                </script>
             </head>
             <body
                 className={clsx(
@@ -150,7 +162,7 @@ const RootLayout = async (props: {
                     }}
                     observers={{
                         noSettings: true,
-                        noThemeCookie: true
+                        noThemeCookie: true,
                     }}
                 />
                 <StateWrappedComponents />
