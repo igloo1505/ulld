@@ -61,8 +61,10 @@ const appFont = localFont({
 
 export const metadata: Metadata = {
     title: "Uh Little Less Dum",
-    description: "The world has enough stupid people.",
+    description: "Forever free, perpetually open source academic note taking.",
 };
+
+
 
 const RootLayout = async (props: {
     children: React.ReactNode;
