@@ -3,7 +3,6 @@ import { Documentation, allDocumentations } from "contentlayer/generated";
 import staticContent from "staticContent";
 import { notFound } from "next/navigation";
 import MDXArticle from "#/components/layouts/mdxArticle";
-import Analytics from "#/components/utility/analytics";
 
 interface UserComponentDocumentationPageProps { }
 
@@ -21,12 +20,6 @@ const UserComponentDocumentationPage = (
     if (!articles) return notFound();
     return (
         <>
-            <Analytics
-                pageView={{
-                    path: "/docs/user/components",
-                    title: "Documentation: Components",
-                }}
-            />
             {sorted.map((article) => {
                 return <MDXArticle mdx={article} />;
             })}

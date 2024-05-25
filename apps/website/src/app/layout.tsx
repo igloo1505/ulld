@@ -13,7 +13,6 @@ import SetInitialRender from "#/components/utility/setInitialRender";
 import StateWrappedComponents from "#/components/utility/providers/stateWrappedComponents";
 import Navbar from "#/components/layouts/navbar/main";
 import Footer from "#/components/layouts/footer/main";
-import DefaultSeo from "#/components/utility/seo/root";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import ReactGA from "react-ga4";
 
@@ -134,7 +133,6 @@ const RootLayout = async (props: {
                 )}
                 id={`Ulld-body-root`}
             >
-                <DefaultSeo />
                 <Navbar />
                 {props.children}
                 <Toaster />

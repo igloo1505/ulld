@@ -9,6 +9,7 @@ interface BlogPostSEOProps {
 }
 
 
+/* TODO: Rework this to fit jsonLD in next.js docs. Get rid of next-seo completely. */
 const BlogPostSEO = ({ article }: BlogPostSEOProps) => {
     return (
         <ArticleJsonLd

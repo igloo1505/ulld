@@ -2,7 +2,6 @@ import MDXArticle from "#/components/layouts/mdxArticle";
 import React from "react";
 import { allDemos } from "contentlayer/generated";
 import { notFound } from "next/navigation";
-import Analytics from "#/components/utility/analytics";
 import staticContent from "staticContent"
 
 interface MyNotesPageProps {
@@ -19,12 +18,6 @@ const MyNotesPage = ({ searchParams }: MyNotesPageProps) => {
     if (!myNotes) return notFound();
     return (
         <>
-            <Analytics
-                pageView={{
-                    path: staticContent.links.demos.myNotes,
-                    title: "My Paper",
-                }}
-            />
             <MDXArticle mdx={myNotes} />
         </>
     );

@@ -4,7 +4,6 @@ import { StoryOfUlldSection } from "../sections/storyOfULLD/section";
 import { DescriptionSection } from "../description/descriptionSection";
 import Hero from "./hero";
 import JoinWaitingList from "../waitinglist/joinWaitingList";
-import Analytics from "#/components/utility/analytics";
 
 interface HeroProps { }
 
@@ -15,12 +14,6 @@ const LandingPage = (props: HeroProps) => {
                 "min-h-screen h-fit w-full flex flex-col justify-center items-center gap-6",
             )}
         >
-            <Analytics 
-                pageView={{
-                    path: "/",
-                    title: "Home"
-                }}
-            />
                <Hero />
                 <DescriptionSection
                     key="dsec"
