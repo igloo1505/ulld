@@ -3,6 +3,7 @@ import React from "react";
 import AnimatedBrokenSubtitle from "./animatedBrokenSubtitle";
 import NavbarButtonGroup from "./navbarButtonGroup";
 import InternalReduxProvider from "#/state/provider";
+import Link from "next/link"
 
 interface NavbarProps { }
 
@@ -11,13 +12,13 @@ const Navbar = (props: NavbarProps) => {
         <div
             id="main-navbar-container"
             className={
-                "absolute z-50 top-0 left-0 right-0 w-full flex flex-row justify-between items-center h-20 px-6 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+                "absolute z-50 top-0 left-0 right-0 w-full flex flex-row justify-between items-center h-20 px-6"
             }
         >
             <div className={"w-fit h-full flex flex-row justify-start items-center"}>
-                <div className={"w-16 mr-4"}>
+                <Link href="/" className={"w-16 mr-4"}>
                     <AnimatedUlldLogo delay={3} show={true} speed={3} />
-                </div>
+                </Link>
                 <AnimatedBrokenSubtitle delay={5} />
             </div>
             <InternalReduxProvider>

@@ -27,6 +27,8 @@ const otherHomeNavbarClasses = [
     "bg-background/95",
     "supports-[backdrop-filter]:bg-background/60",
     "backdrop-blur",
+    "border-b",
+    "border-border/40"
 ];
 
 const NavbarButtonGroup = connector(({ buttons }: NavbarButtonGroupProps) => {
