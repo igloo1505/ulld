@@ -29,6 +29,7 @@
     "@mdx-js/react": "^3.0.1",
     "@napi-rs/canvas": "^0.1.52",
     "@next/mdx": "^14.2.3",
+    "@next/third-parties": "^14.2.3",
     "@prisma/client": "latest",
     "@prisma/nextjs-monorepo-workaround-plugin": "latest",
     "@react-spring/three": "^9.7.3",

@@ -22,17 +22,29 @@ interface NavbarButtonGroupProps {
 export const navbarButtonClasses =
     "text-muted-foreground hover:text-foreground/90 transition-colors";
 
+const homeNavbarClasses = ["bg-transparent"];
+const otherHomeNavbarClasses = [
+    "bg-background/95",
+    "supports-[backdrop-filter]:bg-background/60",
+    "backdrop-blur",
+];
+
 const NavbarButtonGroup = connector(({ buttons }: NavbarButtonGroupProps) => {
     const isInitial = useInitialRender();
-    const pathname = usePathname()
+    const pathname = usePathname();
 
     const setTransparent = (beTransparent: boolean) => {
-            document.getElementById("main-navbar-container")?.classList?.[beTransparent ? "add" : "remove"]("bg-transparent")
-        }
+        let em = document.getElementById("main-navbar-container");
+        if (!em) return;
+        let add = beTransparent ? homeNavbarClasses : otherHomeNavbarClasses;
+        let remove = beTransparent ? otherHomeNavbarClasses : homeNavbarClasses;
+        add.forEach((a) => em.classList.add(a));
+        remove.forEach((a) => em.classList.remove(a));
+    };
 
     useEffect(() => {
-       setTransparent(pathname === "/") 
-    }, [pathname])
+        setTransparent(pathname === "/");
+    }, [pathname]);
 
     return (
         <div
