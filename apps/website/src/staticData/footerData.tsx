@@ -30,7 +30,7 @@ export const footerLinks: Record<FooterLinkKeys, LinkGroupItems> & {banners?: Fo
     ],
     demos: [
         {
-            href: links.demos.main,
+            href: links.demos.myNotes,
             label: "My Notes"
         },
         {
