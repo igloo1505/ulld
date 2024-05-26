@@ -95,7 +95,15 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  icons: ["/favicon.ico"],
+  icons: [
+        "/icons/favicon.ico",
+        "/icons/favicon-16x16.png",
+        "/icons/favicon-32x32.png",
+        "/icons/apple-touch-icon.png",
+        "/icons/android-chrome-192x192.png",
+        "/icons/android-chrome-512x512.png",
+        "/icons/mstile-150x150.png",
+    ],
     openGraph: {
         type: "website",
         determiner: "auto",
