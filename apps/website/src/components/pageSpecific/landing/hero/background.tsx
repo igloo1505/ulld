@@ -1,3 +1,4 @@
+"use client"
 import PreventSharpEdges from "#/components/utility/ui/preventSharpEdges";
 import cn from "@ulld/utilities/cn";
 import {

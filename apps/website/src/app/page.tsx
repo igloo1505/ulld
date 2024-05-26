@@ -1,4 +1,4 @@
-import { LandingSection } from "#/types/landingSection";
+import type { LandingSection } from "#/types/landingSection";
 import React from "react";
 import LandingPage from "#/components/pageSpecific/landing/standard/main";
 

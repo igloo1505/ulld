@@ -14,7 +14,6 @@ import StateWrappedComponents from "#/components/utility/providers/stateWrappedC
 import Navbar from "#/components/layouts/navbar/main";
 import Footer from "#/components/layouts/footer/main";
 import { GoogleAnalytics } from '@next/third-parties/google'
-import ReactGA from "react-ga4";
 
 const appFont = localFont({
     variable: "--ulld-app-font",

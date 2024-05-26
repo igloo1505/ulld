@@ -1,6 +1,6 @@
 import React from "react";
 import { ReduxProvider } from "./ReduxProvider";
-import Observers, { ObserverProps } from "../observers/internalState";
+import Observers, { type ObserverProps } from "../observers/internalState";
 import { OnlineStatusObserver } from "../observers/onlineStatus";
 import { ToastListener } from "../observers/toast";
 import { Toaster } from "@ulld/tailwind/toaster";
@@ -10,9 +10,9 @@ import {
 } from "@ulld/utilities/initialLoader";
 import { cookies } from "next/headers";
 import { getSettings } from "../actions/getSettings";
-import { ParsedAppConfig } from "@ulld/configschema/types";
+import type { ParsedAppConfig } from "@ulld/configschema/types";
 import { getUlldConfig } from "@ulld/developer/utils";
-import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
+import type { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
 
 /* FIX: These are missing from the complete app. Add them back once the sandbox is working. */
 /* <Navbar /> */
