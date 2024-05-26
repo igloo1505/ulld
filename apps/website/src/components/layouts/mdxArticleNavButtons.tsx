@@ -27,8 +27,8 @@ const MdxArticleNavButtons = ({
                     className={navbarButtonClasses}
                     href={
                         vp?.window.width && vp?.window?.width >= 768
-                            ? `withSource?id=${articleId}`
-                            : `source?id=${articleId}`
+                            ? `/withSource?id=${articleId}`
+                            : `/source?id=${articleId}`
                     }
                 >Source</Link>
         </NavbarButtonPortal>
