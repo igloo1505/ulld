@@ -28,7 +28,10 @@
   "links": {
     "home": "https://uhlittlelessdum.com",
     "media": {
-      "logo": "https://uhlittlelessdum.com/icons/android-chrome-512x512.png"
+      "logo": "https://uhlittlelessdum.com/icons/android-chrome-512x512.png",
+      "screenshots": {
+        "hero": "https://uhlittlelessdum.com/assets/images/screenshots/hero.png"
+      }
     },
     "fund": {
       "paypalDonate": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU"

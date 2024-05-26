@@ -14,6 +14,7 @@ import StateWrappedComponents from "#/components/utility/providers/stateWrappedC
 import Navbar from "#/components/layouts/navbar/main";
 import Footer from "#/components/layouts/footer/main";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import staticContent from "staticContent"
 
 const appFont = localFont({
   variable: "--ulld-app-font",
@@ -57,12 +58,65 @@ const appFont = localFont({
   display: "swap",
 });
 
+const metaDataDesc = "Uh Little Less Dum is a forever free, perpetually open source academic note taking app built by a former software engineer for his own pursuit of a theory of quantum gravity."
+
 /* PRIORITY: Handle this much better and apply throughout the app. Use this source here: https://nextjs.org/docs/app/api-reference/functions/generate-metadata#category */
 export const metadata: Metadata = {
   title: "Uh Little Less Dum",
-  description: "Forever free, perpetually open source academic note taking.",
+  description: metaDataDesc,
   category: "technology",
-  creator: "Andrew C. Mueller",
+  creator: "Andrew C. Iglinski",
+  applicationName: "Uh Little Less Dum",
+  authors: [
+    {
+      name: "Andrew C. Mueller",
+    },
+    {
+      name: "Andrew C. Iglinski",
+    },
+  ],
+  keywords: [
+    "physics",
+    "science",
+    "math",
+    "academic",
+    "note taking",
+    "A little less dumb",
+    "gravity",
+    "study tools",
+    "notes",
+    "research",
+    "markdown",
+    "mdx",
+  ],
+  themeColor: "#333333",
+  colorScheme: "dark",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: ["/favicon.ico"],
+    openGraph: {
+        type: "website",
+        determiner: "auto",
+        description: metaDataDesc,
+        siteName: "Uh Little Less Dum",
+        url: staticContent.links.home
+        /* emails: Add this when able to get back on a domain associated email address. */
+    },
+    twitter: {
+        site: staticContent.links.home,
+        creator: "Andrew C. Iglinski",
+        description: metaDataDesc,
+        title: "Uh Little Less Dum",
+        images: staticContent.links.media.screenshots.hero
+    },
+    appleWebApp: {
+        capable: true,
+        title: "Uh Little Less Dum",
+        startupImage: staticContent.links.media.logo,
+        statusBarStyle: "black"
+    }
 };
 
 const RootLayout = async (props: {
