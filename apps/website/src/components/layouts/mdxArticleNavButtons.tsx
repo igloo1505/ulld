@@ -21,6 +21,9 @@ const MdxArticleNavButtons = ({
         console.log(`No article id found.`)
         return null
     }
+    if(isSource){
+        return null
+    }
     return (
         <NavbarButtonPortal>
                 <Link
