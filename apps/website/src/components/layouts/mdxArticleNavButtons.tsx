@@ -3,6 +3,7 @@ import React from "react";
 import NavbarButtonPortal from "../utility/portals/navbar";
 import Link from "next/link";
 import { useViewport } from "@ulld/hooks/useViewport";
+import { navbarButtonClasses } from "./navbar/navbarButtonGroup";
 
 interface MdxArticleNavButtonsProps {
     articleId?: string;
@@ -16,17 +17,20 @@ const MdxArticleNavButtons = ({
     isSource,
 }: MdxArticleNavButtonsProps) => {
     const vp = useViewport();
+    if(!articleId){
+        console.log(`No article id found.`)
+        return null
+    }
     return (
         <NavbarButtonPortal>
-            {articleId && (
                 <Link
+                    className={navbarButtonClasses}
                     href={
                         vp?.window.width && vp?.window?.width >= 768
                             ? `withSource?id=${articleId}`
                             : `source?id=${articleId}`
                     }
-                ></Link>
-            )}
+                >Source</Link>
         </NavbarButtonPortal>
     );
 };

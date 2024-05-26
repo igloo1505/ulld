@@ -2,7 +2,6 @@ import MDXArticle from "#/components/layouts/mdxArticle";
 import React from "react";
 import { allDemos } from "contentlayer/generated";
 import { notFound } from "next/navigation";
-import staticContent from "staticContent"
 
 interface MyNotesPageProps {
     searchParams: {
