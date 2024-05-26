@@ -28,8 +28,8 @@ const C = (props: EmbeddedImageProps) => {
                     "!m-0 h-auto not-prose",
                     Boolean(props.sm || props.small) && "max-w-[120px] max-h-[120px]",
                     Boolean(props.md || props.medium) && "max-w-[200px] max-h-[200px]",
-                    Boolean(props.lg || props.large) && "max-w-[350px] max-h-[350px]",
-                    props.xl && "max-w-[500px] max-h-[500px]",
+                    Boolean(props.lg || props.large) && "max-w-[min(350px,calc(100vw-80px))] max-h-[350px]",
+                    props.xl && "max-w-[min(500px,calc(100vw-80px))] max-h-[500px]",
                 )}
             />
         ),
@@ -56,8 +56,8 @@ const C = (props: EmbeddedImageProps) => {
                 props.block &&
                 props.center &&
                 "flex flex-col justify-center items-center",
-                props.right && "float-right ml-4",
-                props.left && "float-left mr-4",
+                props.right && "md:float-right md:ml-4",
+                props.left && "md:float-left md:mr-4",
                 Boolean(props.border || props.bordered) &&
                 "border shadow-md hover:shadow-sm transition-shadow duration-200",
                 props.inline && "inline h-4",

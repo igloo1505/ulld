@@ -152,7 +152,7 @@ const RootLayout = async (props: {
     <html
       lang="en"
       className={clsx(
-        "group/html js-focus-visible dark border-border min-scrollbar",
+        "group/html overflow-x-hidden max-w-screen js-focus-visible dark border-border min-scrollbar",
         appFont.variable,
       )}
       {...p}
@@ -193,7 +193,7 @@ const RootLayout = async (props: {
       </head>
       <body
         className={clsx(
-          "group/body dark min-scrollbar relative h-auto overflow-x-hidden w-screen min-h-screen overflow-y-auto",
+          "group/body dark max-w-full relative h-auto overflow-x-hidden w-screen min-h-screen overflow-y-auto",
           fontSans.variable,
           preferFs && "preferFs",
         )}

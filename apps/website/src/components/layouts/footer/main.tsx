@@ -83,7 +83,7 @@ const Footer = (props: FooterProps) => {
             />
             }
             <motion.p
-                className={"flex flex-col text-sm text-gray-400"}
+                className={"flex flex-col text-sm text-gray-400 text-center"}
                 initial={{
                     x: -200,
                     scale: 0,

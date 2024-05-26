@@ -12,10 +12,12 @@ type BoxedProps = {
 export const Boxed = ({ children, ...props }: BoxedProps) => {
     const { color, props: _props } = getPropColor(props, "border")
     return (
-        <div className={"w-auto h-fit flex flex-col justify-center items-center"}>
-            <div className={clsx("w-fit h-fit border-2 px-4 rounded-md", color ? color : "border-foreground")}>
+        <div className={"w-auto flex flex-col justify-center items-center"}>
+        <div className={clsx("w-fit h-fit max-w-full flex flex-col justify-center items-center overflow-x-auto min-scrollbar border-2 rounded-md", color ? color : "border-foreground")}>
+            <div className={"w-fit h-fit mx-4"}>
                 {children}
             </div>
+        </div>
         </div>
     )
 }

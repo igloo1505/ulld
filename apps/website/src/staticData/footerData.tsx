@@ -47,6 +47,10 @@ export const footerLinks: Record<FooterLinkKeys, LinkGroupItems> & {banners?: Fo
             href: links.demos.main,
             label: "Paypal"
         },
+        {
+            href: links.contactMe,
+            label: "Contact Me"
+        },
     ]
 
 }

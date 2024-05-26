@@ -190,9 +190,7 @@ body {
   }
 
   /* Hide scrollbar for IE, Edge and Firefox */
-  .no-scrollbar,
-  mjx-container,
-  .math {
+  .no-scrollbar {
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
@@ -214,8 +212,8 @@ body {
 }
 
 .min-scrollbar {
-  scrollbar-width: 1px;
-  scrollbar-color: hsl(var(--secondary)) hsl(var(--background));
+  scrollbar-width: thin;
+  scrollbar-color: #1f2937 black;
 
   &::-webkit-scrollbar {
     width: 4px;
@@ -315,6 +313,7 @@ div.jp-WindowedPanel-outer {
 }
 
 .math-display {
+  scrollbar-width: thin;
   .MathJax {
     display: flex;
     justify-content: center;

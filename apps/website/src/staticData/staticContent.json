@@ -27,6 +27,7 @@
   },
   "links": {
     "home": "https://uhlittlelessdum.com",
+    "contactMe": "/contactMe",
     "media": {
       "logo": "https://uhlittlelessdum.com/icons/android-chrome-512x512.png",
       "screenshots": {
@@ -66,5 +67,8 @@
         "users": "/docs/user"
       }
     }
+  },
+  "contact": {
+    "email": "aiglinski414@gmail.com"
   }
 }
