@@ -24,7 +24,6 @@ const shouldIgnoreTooltip = (
 };
 
 export const A = (props: Props) => {
-    console.log("props: ", props)
     const id = useId();
     const [ignoreTooltip, setIgnoreTooltip] = useState(
         shouldIgnoreTooltip(props),

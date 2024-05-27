@@ -56,8 +56,8 @@ const C = (props: EmbeddedImageProps) => {
                 props.block &&
                 props.center &&
                 "flex flex-col justify-center items-center",
-                props.right && "md:float-right md:ml-4",
-                props.left && "md:float-left md:mr-4",
+                props.right && "@[768px]/mdx:float-right @[768px]/mdx:ml-4",
+                props.left && "@[768px]/mdx:float-left @[768px]/mdx:mr-4",
                 Boolean(props.border || props.bordered) &&
                 "border shadow-md hover:shadow-sm transition-shadow duration-200",
                 props.inline && "inline h-4",
@@ -80,7 +80,7 @@ const C = (props: EmbeddedImageProps) => {
                     (props.left || props.right) &&
                     !props.block &&
                     Boolean(props.lg || props.large),
-                ) && "w-full flex flex-col justify-center items-center md:w-fit",
+                ) && "w-full flex flex-col justify-center items-center @[768px]/mdx:w-fit",
                 Boolean(
                     (props.left || props.right) && !props.block && Boolean(props.xl),
                 ) && "w-full flex flex-col justify-center items-center mdlg:w-fit",

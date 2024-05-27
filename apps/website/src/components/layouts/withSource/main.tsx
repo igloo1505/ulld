@@ -1,6 +1,6 @@
 "use client";
 import { DocumentTypes } from "contentlayer/generated";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import SourceCode from "./sourceCode";
 import CodeOutput from "./output";
 import MDXArticle from "../mdxArticle";
@@ -29,6 +29,7 @@ const SideBySideWithSource = ({ mdx }: SideBySideWithSourceProps) => {
     const sourceContainer = useRef<HTMLDivElement>(null!);
     const outputContainer = useRef<HTMLDivElement>(null!);
     const scrolling = useRef<false | "source" | "output">(false);
+    const [sourceWidth, setSourceWidth] = useState<null | undefined | string>(null)
     const timer = useRef<NodeJS.Timeout | null>(null);
 
     const toggleIndependent = () => {
@@ -69,10 +70,17 @@ const SideBySideWithSource = ({ mdx }: SideBySideWithSourceProps) => {
         setTimer();
     });
 
+    const handleResize = (widths: number[]) => {
+        const newSourceWidth = `${widths[0] / 100 * window.innerWidth - 32}px`
+        setSourceWidth(newSourceWidth)
+        }
+
     return (
         <ResizablePanelGroup
             className={"w-full h-full max-h-[calc(100vh-76px)]"}
             direction="horizontal"
+            autoSaveId={"ulldWithSource"}
+            onLayout={handleResize}
         >
             <NavbarButtonPortal>
                 <a
@@ -86,11 +94,14 @@ const SideBySideWithSource = ({ mdx }: SideBySideWithSourceProps) => {
                     Scroll Together
                 </a>
             </NavbarButtonPortal>
-            <ResizablePanel defaultSize={50}>
+            <ResizablePanel
+                defaultSize={50}
+            >
                 <SourceCode
                     ref={sourceContainer}
                     content={mdx.body.raw}
                     data-name={names.source}
+                    maxWidth={sourceWidth}
                 />
             </ResizablePanel>
             <ResizableHandle withHandle />

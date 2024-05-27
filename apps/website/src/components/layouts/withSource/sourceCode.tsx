@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import NavbarButtonPortal from "#/components/utility/portals/navbar";
 import { HTMLMotionProps, motion } from "framer-motion";
 import React, { ForwardedRef, forwardRef, useEffect, useState } from "react";
@@ -8,20 +8,20 @@ import { navbarButtonClasses } from "../navbar/navbarButtonGroup";
 
 interface SourceCodeProps extends HTMLMotionProps<"div"> {
     content: string;
-    theme?: BundledTheme
+    theme?: BundledTheme;
+    maxWidth?: string | null;
 }
 
 const SourceCode = forwardRef(
     (
-        { content, ...props }: SourceCodeProps,
+        { content, maxWidth, ...props }: SourceCodeProps,
         ref: ForwardedRef<HTMLDivElement>,
     ) => {
         const [source, setSource] = useState<string | null | undefined>(null);
-        const [theme, setTheme] = useState<{open: boolean, value: BundledTheme}>({
+        const [theme, setTheme] = useState<{ open: boolean; value: BundledTheme }>({
             open: false,
-            value: "dracula"
-        })
-
+            value: "dracula",
+        });
 
         const gatherSource = async () => {
             const sourceCode = await codeToHtml(content, {
@@ -36,22 +36,39 @@ const SourceCode = forwardRef(
             gatherSource();
         }, [content, theme]);
 
+        useEffect(() => {
+            if (maxWidth && ref && "current" in ref) {
+                let ems = ref.current?.querySelectorAll(".line");
+                ems?.forEach((a) => {
+                    console.log("a: ", a)
+                    if ("style" in a) {
+                        /* @ts-ignore */
+                        a.style.maxWidth = maxWidth;
+                    }
+                });
+            }
+        }, [maxWidth]);
+
         return (
             <>
                 <NavbarButtonPortal>
                     <button
                         className={navbarButtonClasses}
-                        onClick={() => setTheme({...theme, open: true})}>Theme</button>
+                        onClick={() => setTheme({ ...theme, open: true })}
+                    >
+                        Theme
+                    </button>
                 </NavbarButtonPortal>
                 <ShikiThemeSelect
                     {...theme}
-                    onOpenChange={(o) => setTheme({...theme, open: o})}
+                    onOpenChange={(o) => setTheme({ ...theme, open: o })}
                     onChange={(newValue) => {
-                    setTheme({
-                        open: false,
-                        value: newValue
-                    })
-                }}/>
+                        setTheme({
+                            open: false,
+                            value: newValue,
+                        });
+                    }}
+                />
                 <motion.div
                     className={
                         "w-full max-w-full h-full max-h-full overflow-y-auto block not-prose [&_pre]:max-w-full py-6 pr-4 pl-6 text-sm [&_code]:max-w-full [&_code]:min-w-full [&_code]:whitespace-break-spaces [&_.line]:min-h-4 [&_code]:!bg-background no-scrollbar"
