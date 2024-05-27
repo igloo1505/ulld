@@ -5,6 +5,7 @@ import React, { ForwardedRef, forwardRef, useEffect, useState } from "react";
 import { BundledTheme, codeToHtml } from "shiki";
 import ShikiThemeSelect from "#/components/modals/shikiTheme";
 import { navbarButtonClasses } from "../navbar/navbarButtonGroup";
+import { useObserveChildren } from "@ulld/hooks/useObserveChildren";
 
 interface SourceCodeProps extends HTMLMotionProps<"div"> {
     content: string;
@@ -36,18 +37,48 @@ const SourceCode = forwardRef(
             gatherSource();
         }, [content, theme]);
 
-        useEffect(() => {
-            if (maxWidth && ref && "current" in ref) {
+        const getMaxWidth = (): string => {
+            if (ref && "current" in ref) {
+                let rect = ref.current?.getBoundingClientRect();
+                if (rect) {
+                    return `${Math.floor(rect.width - 32)}px`;
+                }
+            }
+            return "40vw";
+        };
+
+        const setMaxWidth = (mw?: string) => {
+            let newMaxWidth = mw ? mw : getMaxWidth()
+            if (newMaxWidth && ref && "current" in ref) {
                 let ems = ref.current?.querySelectorAll(".line");
                 ems?.forEach((a) => {
-                    console.log("a: ", a)
                     if ("style" in a) {
                         /* @ts-ignore */
-                        a.style.maxWidth = maxWidth;
+                        a.style.maxWidth = newMaxWidth;
                     }
                 });
             }
+        };
+
+        const handleResize = () => {
+            setMaxWidth()    
+        }
+
+
+        useEffect(() => {
+            let mw = maxWidth ? maxWidth : getMaxWidth();
+            console.log("mw: ", mw)
+            setMaxWidth(mw);
         }, [maxWidth]);
+
+        useObserveChildren(() => setMaxWidth(), {
+            once: true
+        }, ref)
+
+        useEffect(() => {
+           window.addEventListener("resize", handleResize) 
+           return () => window.removeEventListener("resize", handleResize) 
+        }, [])
 
         return (
             <>

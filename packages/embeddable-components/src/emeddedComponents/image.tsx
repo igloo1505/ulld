@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import fs from "fs";
 import clsx from "clsx";
 import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import ImageMapImage from "./imageMapImage";
@@ -107,21 +106,13 @@ const C = (props: EmbeddedImageProps) => {
     );
 };
 
-export const EmbeddedImage = async (props: EmbeddedImageProps) => {
+export const EmbeddedImage = (props: EmbeddedImageProps) => {
     const config = props.noConfig ? null : getInternalConfig();
-    const { image, file, url } = props;
+    const { image } = props;
     if (image && config && image in config.UI.media.imageMap) {
         return <ImageMapImage {...props} image={image} />;
     }
-    let _src = props.src
-        ? props.src
-        : url
-            ? url
-            : await fs.promises.readFile(file as string);
-    if (_src instanceof Buffer) {
-        _src = _src.toString("base64url");
-    }
-    return <C {...props} src={_src} />;
+    return <C {...props} />;
 };
 
 EmbeddedImage.displayName = "EmbeddedImage";

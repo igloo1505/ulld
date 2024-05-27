@@ -23,7 +23,7 @@ const ShikiThemeSelect = ({
 }: ShikiThemeSelectProps) => {
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent >
+            <DialogContent className={"pr-0"}>
             <DialogHeader>
                 <DialogTitle>Theme</DialogTitle>
             </DialogHeader>
@@ -31,7 +31,8 @@ const ShikiThemeSelect = ({
                 {shikiThemes.map((a) => {
                     return <li
                             onClick={() => onChange(a)}
-                            className={"py-2 w-full border-b list-none flex flex-row justify-start items-center"}
+                            className={"py-2 w-auto border-b list-none select-none cursor-pointer flex flex-row justify-start items-center hover:bg-muted/50 mr-2"}
+                            key={a}
                         >
                             <span className={"w-8 h-full inline-block"}>{value === a && <CheckIcon className={"w-4 h-4"}/>}</span>
                             <span>
