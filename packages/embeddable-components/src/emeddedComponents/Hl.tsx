@@ -1,64 +1,90 @@
-import clsx from 'clsx'
-import React from 'react'
-import { PropColor } from '@ulld/utilities/shadColorMap'
-import { getPropColor } from "@ulld/state/actions/ui/getPropColor"
-import { ComposedTooltip } from './composedTooltip'
+import clsx from "clsx";
+import React from "react";
+import { PropColor } from "@ulld/utilities/shadColorMap";
+import { getPropColor } from "@ulld/state/actions/ui/getPropColor";
+import { ComposedTooltip } from "./composedTooltip";
+import { componentConfig } from "@ulld/component-configs/underline";
 
 export interface WithTooltipWrapper {
-    toolTip?: string
-    tooltip?: string
-    tt?: string
-    toolTipAsLink?: boolean
-    ttAslink?: boolean
+    toolTip?: string;
+    tooltip?: string;
+    tt?: string;
+    toolTipAsLink?: boolean;
+    ttAslink?: boolean;
 }
 
 const ttIsLink = (t: string) => {
-    return Boolean(/^(\/|http|www|\#)/gm.test(t))
-}
+    return Boolean(/^(\/|http|www|\#)/gm.test(t));
+};
 
 export const getToolTipWrapperContent = (t: WithTooltipWrapper) => {
-    let val: string | undefined = undefined
+    let val: string | undefined = undefined;
     if (t.tooltip) {
-        val = t.tooltip
+        val = t.tooltip;
     }
     if (t.toolTip) {
-        val = t.toolTip
+        val = t.toolTip;
     }
     if (t.tt) {
-        val = t.tt
+        val = t.tt;
     }
-    return val ? {
-        content: val,
-        isLink: t.toolTipAsLink || t.ttAslink || ttIsLink(val)
-    } : false
-}
+    return val
+        ? {
+            content: val,
+            isLink: t.toolTipAsLink || t.ttAslink || ttIsLink(val),
+        }
+        : false;
+};
 
+export interface HighlightProps extends Record<keyof PropColor, boolean> { }
 
-export interface HighlightProps extends Record<keyof PropColor, boolean> {
-}
-
-
-export const Highlight = (props: HighlightProps & any & WithTooltipWrapper & { light?: boolean, faint?: boolean, muted?: boolean }) => {
-    let { color, props: _props } = getPropColor(props, "bg", "yellow")
-    let tt = getToolTipWrapperContent(props)
+export const Highlight = (
+    p: HighlightProps &
+        any &
+        WithTooltipWrapper & { light?: boolean; faint?: boolean; muted?: boolean },
+) => {
+    const props = componentConfig.parse(p);
+    console.log("props.css: ", props.css)
+    /* let { color, props: _props } = getPropColor(props, "bg", "yellow") */
+    let tt = getToolTipWrapperContent(props);
     if (tt) {
         return (
             <ComposedTooltip
-                content={tt.isLink ? <a href={tt.content}>{tt.content}</a> : <p>{tt.content}</p>}
+                content={
+                    tt.isLink ? (
+                        <a href={tt.content}>{tt.content}</a>
+                    ) : (
+                        <p>{tt.content}</p>
+                    )
+                }
             >
-                <span className={clsx("px-1 rounded-md",
-                    color && color,
-                    Boolean(props.light || props.faint || props.muted) && "bg-opacity-60 hl-faint"
-                )} {..._props} />
+                <span
+                    className={clsx(
+                        "px-1 rounded-md",
+                        props.className,
+                        /* Boolean(props.light || props.faint || props.muted) && "bg-opacity-60 hl-faint" */
+                    )}
+                    {...p}
+                    style={{
+                        ...props.css,
+                        backgroundColor: props.css?.textDecorationColor,
+                        ...p.style,
+                    }}
+                />
             </ComposedTooltip>
-        )
+        );
     }
     return (
-        <span className={clsx("px-1 rounded-md",
-            color && color
-        )} {..._props} />
-    )
-}
+        <span
+            className={clsx("px-1 rounded-md", props.className)}
+            {...p}
+            style={{
+                ...props.css,
+                backgroundColor: props.css?.textDecorationColor,
+                ...p.style,
+            }}
+        />
+    );
+};
 
-
-Highlight.displayName = "Highlight"
+Highlight.displayName = "Highlight";

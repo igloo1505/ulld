@@ -172,9 +172,10 @@ export const Demos = defineDocumentType(() => ({
     contentType: "mdx",
 }));
 
+
 export const Blog = defineDocumentType(() => ({
     name: "BlogPost",
-    filePathPattern: `blog/*.mdx`,
+    filePathPattern: `blog/**/*.mdx`,
     fields: {
         title: {
             type: "string",
