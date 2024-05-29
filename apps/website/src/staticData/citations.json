@@ -1,25 +1,49 @@
 {
-    "user-emoji-table": {
-        "citations": []
-    },
-    "myNotes1": {
-        "citations": [
-            {
-                "htmlCitation": "<div class=\"csl-bib-body\">\n  <div data-csl-entry-id=\"gordon_determining_2008\" class=\"csl-entry\">Gordon, C., Land, K., &#38; Slosar, A. (2008). Determining the motion of the Solar system relative to the cosmic microwave background using Type Ia supernovae. <i>Monthly Notices of the Royal Astronomical Society</i>, <i>387</i>(1), 371–376. https://doi.org/10.1111/j.1365-2966.2008.13239.x</div>\n</div>",
-                "id": "gordon_determining_2008",
-                "pageIndex": 0
-            },
-            {
-                "htmlCitation": "<div class=\"csl-bib-body\">\n  <div data-csl-entry-id=\"Jha_2007\" class=\"csl-entry\">Jha, S., Riess, A. G., &#38; Kirshner, R. P. (2007). Improved Distances to Type Ia Supernovae with Multicolor Light-Curve Shapes: MLCS2k2. <i>The Astrophysical Journal</i>, <i>659</i>(1), 122–148. https://doi.org/10.1086/512054</div>\n</div>",
-                "id": "jha_2007",
-                "pageIndex": 1
-            }
-        ]
-    },
-    "whyILeftWork": {
-        "citations": []
-    },
-    "plansForUlld": {
-        "citations": []
-    }
+  "user-emoji-table": {
+    "citations": []
+  },
+  "myNotes1": {
+    "citations": [
+      {
+        "htmlCitation": "<div class=\"csl-bib-body\">\n  <div data-csl-entry-id=\"gordon_determining_2008\" class=\"csl-entry\">Gordon, C., Land, K., &#38; Slosar, A. (2008). Determining the motion of the Solar system relative to the cosmic microwave background using Type Ia supernovae. <i>Monthly Notices of the Royal Astronomical Society</i>, <i>387</i>(1), 371–376. https://doi.org/10.1111/j.1365-2966.2008.13239.x</div>\n</div>",
+        "id": "gordon_determining_2008",
+        "pageIndex": 0
+      },
+      {
+        "htmlCitation": "<div class=\"csl-bib-body\">\n  <div data-csl-entry-id=\"Jha_2007\" class=\"csl-entry\">Jha, S., Riess, A. G., &#38; Kirshner, R. P. (2007). Improved Distances to Type Ia Supernovae with Multicolor Light-Curve Shapes: MLCS2k2. <i>The Astrophysical Journal</i>, <i>659</i>(1), 122–148. https://doi.org/10.1086/512054</div>\n</div>",
+        "id": "jha_2007",
+        "pageIndex": 1
+      }
+    ]
+  },
+  "whyILeftWork": {
+    "citations": []
+  },
+  "plansForUlld": {
+    "citations": []
+  },
+  "predictionsAndTheTheoryOfGravitationalTime": {
+    "citations": [
+      {
+        "htmlCitation": "<div class=\"csl-bib-body\">\n  <div data-csl-entry-id=\"Pound_Rebka\" class=\"csl-entry\">R. V. Pound and G. A. Rebka, Jr. (1959). Gravitational Red-Shift in Nuclear Resonance. <i>Physical Review Letters</i>, <i>3</i>(9), 439–441.</div>\n</div>",
+        "id": "pound_rebka",
+        "pageIndex": 0
+      },
+      {
+        "htmlCitation": "<div class=\"csl-bib-body\">\n  <div data-csl-entry-id=\"Michelson_Morely\" class=\"csl-entry\">Albert Abraham Michelson, Edward Morley. (1887). On the Relative Motion of the Earth and the Luminiferous Ether. <i>American Journal of Science</i>, <i>34</i>(203), 333–345.</div>\n</div>",
+        "id": "michelson_morely",
+        "pageIndex": 1
+      },
+      {
+        "htmlCitation": "<div class=\"csl-bib-body\">\n  <div data-csl-entry-id=\"Pound_Rebka\" class=\"csl-entry\">R. V. Pound and G. A. Rebka, Jr. (1959). Gravitational Red-Shift in Nuclear Resonance. <i>Physical Review Letters</i>, <i>3</i>(9), 439–441.</div>\n</div>",
+        "id": "pound_rebka",
+        "pageIndex": 0
+      },
+      {
+        "htmlCitation": "<div class=\"csl-bib-body\">\n  <div data-csl-entry-id=\"IvesStillwell\" class=\"csl-entry\">Ives, H. E., &#38; Stilwell, G. R. (1938). An Experimental Study of the Rate of a Moving Atomic Clock. <i>J. Opt. Soc. Am.</i>, <i>28</i>(7), 215–226. https://doi.org/10.1364/JOSA.28.000215</div>\n</div>",
+        "id": "ivesstillwell",
+        "pageIndex": 3
+      }
+    ]
+  }
 }
