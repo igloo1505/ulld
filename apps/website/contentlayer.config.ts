@@ -185,6 +185,10 @@ export const Blog = defineDocumentType(() => ({
             type: "date",
             required: false,
         },
+        featured: {
+            type: "boolean",
+            required: false,
+        },
         created: {
             type: "date",
             required: true,
@@ -204,6 +208,10 @@ export const Blog = defineDocumentType(() => ({
             of: {
                 type: "string",
             },
+        },
+        featuredEquation: {
+type: "string",
+            required: false
         },
         description: {
             type: "string",
