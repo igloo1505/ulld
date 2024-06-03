@@ -41,7 +41,6 @@ const MathjaxProvider = ({ children }: MathjaxProviderProps) => {
                 window.dispatchEvent(new CustomEvent("mathjax-loaded"));
                 console.log("dispatching mathjax-loaded event")
             }}
-        /* onStartup */
         >
             {children}
         </MathJaxContext>

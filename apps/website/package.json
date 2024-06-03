@@ -16,7 +16,8 @@
     "db:push": "prisma db push --skip-generate",
     "prisma:studio": "dotenv -e .env.local -- prisma studio --schema=./src/prisma/schema.prisma",
     "migrateRemote": "dotenv -e /Users/bigsexy/Desktop/current/ulld/apps/website/.env.remote -- prisma migrate dev --schema=./src/prisma/schema.prisma",
-    "postinstall": "turbo db:generate --filter @ulld/website"
+    "postinstall": "turbo db:generate --filter @ulld/website",
+    "generateTagList": "tsx --tsconfig ./tsconfig.json ./src/utils/getTagList.ts"
   },
   "dependencies": {
     "@dimforge/rapier3d": "^0.12.0",
@@ -117,8 +118,7 @@
     "simplex-noise": "^4.0.1",
     "stripe": "^15.6.0",
     "three": "^0.163.0",
-    "three-noise": "^1.1.2",
-    "tsx": "^4.7.2"
+    "three-noise": "^1.1.2"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:^",
@@ -138,6 +138,7 @@
     "globby": "^14.0.1",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
+    "tsx": "^4.10.4",
     "twoslash": "^0.2.6"
   },
   "packageManager": "pnpm@9.0.4"

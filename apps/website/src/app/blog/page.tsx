@@ -1,25 +1,23 @@
-import React from 'react'
-import { allBlogPosts } from "contentlayer/generated"
-import ComingSoon from '#/components/utility/comingSoon';
+import React from "react";
+import BlogPostList from "#/components/pageSpecific/blog/blogPostList/blogPostList";
 
-
-/* export type BlogSearchParams = { */
-/*     id?: string */
-/* } */
+export type BlogSearchParams = {
+    tags?: string[];
+}
 
 interface BlogPageProps {
+    searchParams: BlogSearchParams
 }
 
-const BlogPage = (props: BlogPageProps) => {
-        return (
-        <>
-            <ComingSoon />
-        </>
-    );
-}
+const BlogPage = ({ searchParams }: BlogPageProps) => {
+    let tags = searchParams.tags
+        ? Array.isArray(searchParams.tags)
+            ? searchParams.tags
+            : [searchParams.tags]
+        : [];
+    return <BlogPostList tags={tags} />;
+};
 
-
-BlogPage.displayName = "BlogPage"
-
+BlogPage.displayName = "BlogPage";
 
 export default BlogPage;

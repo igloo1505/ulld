@@ -1,4 +1,8 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import {
+    defineDocumentType,
+    makeSource,
+    DocumentTypeDef,
+} from "contentlayer/source-files";
 import remarkMath from "remark-math";
 import remarkGfm from "remark-gfm";
 import rehypeMathjax from "rehype-mathjax/chtml.js";
@@ -9,15 +13,64 @@ import rehypeVideo from "rehype-video";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import fs from "fs";
 
+const baseFields: DocumentTypeDef["fields"] = {
+    id: {
+        type: "string",
+        required: true,
+    },
+    title: {
+        type: "string",
+        required: true,
+    },
+    description: {
+        type: "string",
+        required: true,
+    },
+    created: {
+        type: "date",
+        required: true,
+    },
+    tags: {
+        type: "list",
+        of: {
+            type: "string",
+        },
+    },
+    keywords: {
+        type: "list",
+        of: { type: "string" },
+    },
+    updated: {
+        type: "date",
+        required: false,
+    },
+    blog: {
+        type: "boolean",
+        default: false,
+    },
+    images: {
+        type: "list",
+        of: {
+            type: "string",
+        },
+    },
+    icon: {
+        type: "string",
+        required: false
+    },
+    featuredEquation: {
+        type: "string",
+        required: false,
+    },
+};
+
 const markdownOptions = fs.readFileSync(
     "../../packages/utilities/src/defaults/markdownOptions.json",
     {
         encoding: "utf-8",
     },
 );
-const { math } = markdownOptions
-    ? JSON.parse(markdownOptions)
-    : { math: {}};
+const { math } = markdownOptions ? JSON.parse(markdownOptions) : { math: {} };
 
 const contentRoot = "./src/mdx";
 
@@ -25,8 +78,15 @@ export const PrivacyPolicy = defineDocumentType(() => ({
     name: "PrivacyPolicy",
     filePathPattern: `legal/privacyPolicy.mdx`,
     fields: {
-        title: { type: "string", required: false },
-        lastUpdated: { type: "date", required: false },
+        id: {
+            type: "string",
+            required: true,
+        },
+        created: {
+            type: "date",
+            required: true,
+        },
+        updated: { type: "date", required: false },
     },
     computedFields: {
         // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
@@ -38,7 +98,7 @@ export const AboutUs = defineDocumentType(() => ({
     name: "AboutUs",
     filePathPattern: `brand/aboutUs.mdx`,
     fields: {
-        title: { type: "string", required: false },
+        ...baseFields,
         lastUpdated: { type: "date", required: false },
     },
     computedFields: {
@@ -51,7 +111,18 @@ export const StoryOfULLD = defineDocumentType(() => ({
     name: "StoryOfULLD",
     filePathPattern: `brand/storyOfUlld.mdx`,
     fields: {
-        title: { type: "string", required: false },
+        title: {
+            type: "string",
+            required: true,
+        },
+        created: {
+            type: "date",
+            required: true,
+        },
+        id: {
+            type: "string",
+            required: true,
+        },
         lastUpdated: { type: "date", required: false },
     },
     computedFields: {
@@ -64,7 +135,7 @@ export const MyNotes = defineDocumentType(() => ({
     name: "MyNotes",
     filePathPattern: `myNotes/**.mdx`,
     fields: {
-        title: { type: "string", required: false },
+        ...baseFields,
         lastUpdated: { type: "date", required: false },
     },
     computedFields: {
@@ -77,8 +148,15 @@ export const Tos = defineDocumentType(() => ({
     name: "TermsOfService",
     filePathPattern: `legal/termsOfService.mdx`,
     fields: {
-        title: { type: "string", required: false },
-        lastUpdated: { type: "date", required: false },
+        id: {
+            type: "string",
+            required: true,
+        },
+        created: {
+            type: "date",
+            required: true,
+        },
+        updated: { type: "date", required: false },
     },
     computedFields: {
         // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
@@ -90,8 +168,15 @@ export const CancelSubscriptionPrompt = defineDocumentType(() => ({
     name: "CancelSubscriptionPrompt",
     filePathPattern: `legal/cancelSubscriptionPrompt.mdx`,
     fields: {
-        title: { type: "string", required: false },
-        lastUpdated: { type: "date", required: false },
+        id: {
+            type: "string",
+            required: true,
+        },
+        created: {
+            type: "date",
+            required: true,
+        },
+        updated: { type: "date", required: false },
     },
     computedFields: {
         // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
@@ -103,8 +188,15 @@ export const RefundPolicy = defineDocumentType(() => ({
     name: "RefundPolicy",
     filePathPattern: `legal/refundPolicy.mdx`,
     fields: {
-        title: { type: "string", required: false },
-        lastUpdated: { type: "date", required: false },
+        id: {
+            type: "string",
+            required: true,
+        },
+        created: {
+            type: "date",
+            required: true,
+        },
+        updated: { type: "date", required: false },
     },
     computedFields: {
         // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
@@ -116,14 +208,34 @@ export const Documentation = defineDocumentType(() => ({
     name: "Documentation",
     filePathPattern: `docs/**/*.mdx`,
     fields: {
-        title: { type: "string", required: false },
-        lastUpdated: { type: "date", required: false },
-        category: { type: "list", of: {type: "string"}, required: true },
-        id: {type: "string", required: false},
+        id: {
+            type: "string",
+            required: true,
+        },
+        created: {
+            type: "date",
+            required: true,
+        },
+
+        title: {
+            type: "string",
+            required: true,
+        },
+        tags: {
+            type: "list",
+            of: {
+                type: "string",
+            },
+        },
+        updated: {
+            type: "date",
+            required: false,
+        },
+        category: { type: "list", of: { type: "string" }, required: true },
         keywords: {
             type: "list",
-            of: {type: "string"}
-        }
+            of: { type: "string" },
+        },
     },
     computedFields: {
         // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
@@ -131,71 +243,37 @@ export const Documentation = defineDocumentType(() => ({
     contentType: "mdx",
 }));
 
-
 export const Demos = defineDocumentType(() => ({
     name: "Demo",
     filePathPattern: `demos/**/*.mdx`,
     fields: {
-        title: {
-            type: "string",
-            required: true,
-        },
-        updated: {
-            type: "date",
-            required: false,
-        },
-        created: {
-            type: "date",
-            required: true,
-        },
-        tags: {
-            type: "list",
-            of: {
-                type: "string",
-            },
-        },
-        // description: {
-        //     type: "string",
-        //     required: true
-        // },
-        id: {
-            type: "string",
-            required: true
-        },
+        ...baseFields,
         sequential: {
-            type: "number"
+            type: "number",
         },
         sequentialId: {
-            type: "string"
-        }
+            type: "string",
+        },
     },
     contentType: "mdx",
 }));
-
 
 export const Blog = defineDocumentType(() => ({
     name: "BlogPost",
     filePathPattern: `blog/**/*.mdx`,
     fields: {
-        title: {
-            type: "string",
-            required: true,
-        },
-        updated: {
-            type: "date",
-            required: false,
+        ...baseFields,
+        blog: {
+            type: "boolean",
+            default: true,
         },
         featured: {
             type: "boolean",
             required: false,
         },
-        created: {
-            type: "date",
-            required: true,
-        },
         author: {
             type: "string",
-            required: false
+            required: false,
         },
         tags: {
             type: "list",
@@ -203,22 +281,9 @@ export const Blog = defineDocumentType(() => ({
                 type: "string",
             },
         },
-        images: {
-            type: "list",
-            of: {
-                type: "string",
-            },
-        },
-        featuredEquation: {
-type: "string",
-            required: false
-        },
         description: {
             type: "string",
-            required: true
-        },
-        id: {
-            type: "string",
+            required: true,
         },
     },
     contentType: "mdx",
@@ -236,7 +301,7 @@ export default makeSource({
         Documentation,
         CancelSubscriptionPrompt,
         Blog,
-        Demos
+        Demos,
     ],
     mdx: {
         remarkPlugins: [remarkMath, remarkGfm, [emoji as any, {}]],
