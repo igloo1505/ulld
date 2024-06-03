@@ -1,5 +1,5 @@
 #!/usr/bin/env tsx
-import { allDocuments } from "../../.contentlayer/generated/index.mjs";
+import { allDocuments } from "../.contentlayer/generated/index.mjs";
 import fs from "fs";
 import path from "path";
 import data from "#/staticData/mdxData.json";

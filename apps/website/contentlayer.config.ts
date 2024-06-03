@@ -216,7 +216,6 @@ export const Documentation = defineDocumentType(() => ({
             type: "date",
             required: true,
         },
-
         title: {
             type: "string",
             required: true,

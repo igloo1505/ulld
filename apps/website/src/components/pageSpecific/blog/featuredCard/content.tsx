@@ -17,7 +17,7 @@ const FeaturedBlogPostContent = ({
 }: FeaturedBlogPostContentProps) => {
     let href = `/blog/${id}`
     return (
-        <MathJax className={"flex-grow"} hideUntilTypeset="first">
+        <MathJax className={"flex-grow w-full"} hideUntilTypeset="first">
             <div className={"h-full w-full flex flex-col justify-start items-start p-4"}>
                 <Link href={href}>
                 <h2 className={"text-xl font-semibold"}>{title}</h2>
