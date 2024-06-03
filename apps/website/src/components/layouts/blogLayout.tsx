@@ -1,5 +1,8 @@
-import React, { ReactNode } from "react";
+"use client"
+import React, { ReactNode, useState } from "react";
 import BlogTagSideBar from "../pageSpecific/blog/tagSideBar/tagSideBar";
+import {motion} from 'framer-motion'
+import clsx from 'clsx'
 
 interface BlogLayoutProps {
   children: ReactNode;
@@ -9,17 +12,22 @@ interface BlogLayoutProps {
 /* RESUME: Come back here and handle the tag bar. Make it scroll with a paralax with framer motion. Make it stick to the top when scrolling further. Also, move it to a drawer on mobile devices. */
 
 const BlogLayout = ({ children }: BlogLayoutProps) => {
+    const [open, setOpen] = useState(true);
   return (
-    <div className={"grid grid-cols-[300px_1fr] min-h-screen-noNav mt-[76px]"}>
-      <BlogTagSideBar />
-      <div
+    <motion.div
+            id="blog-layout"
+            className={clsx("group/blogLayout flex flex-row justify-start items-start min-h-screen-noNav mt-[76px]", !open && "noSidebar")}
+            animate={open ? "open" : "closed"}
+        >
+      <BlogTagSideBar open={open} setOpen={setOpen} />
+      <motion.div
         className={
-          "group/mdxLayout w-full mdx-wide flex flex-col justify-start items-center"
+          clsx("group/mdxLayout w-full mdx-wide flex flex-col justify-start items-center p-6 lg:px-12", !open && "lg:w-screen")
         }
       >
         {children}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

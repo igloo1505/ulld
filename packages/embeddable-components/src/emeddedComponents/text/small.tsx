@@ -17,7 +17,7 @@ export const Small = ({ children, y, close, noMargin, muted, center, ..._props }
     return (
         <span
             {...props}
-            className={clsx("text-sm", (close !== false && !noMargin) && "!mt-2", center && "w-full text-center", noMargin && "!my-0", muted && "text-muted-foreground", props.className)}
+            className={clsx("text-sm not-prose", (close !== false && !noMargin) && "!mt-2", center && "w-full text-center", noMargin && "!my-0", muted && "text-muted-foreground", props.className)}
             style={{
                 ...props.style,
                 ...(y && {transform: `translateY(${y}px)`})

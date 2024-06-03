@@ -1,5 +1,6 @@
 import React from "react";
 import BlogPostList from "#/components/pageSpecific/blog/blogPostList/blogPostList";
+import { getAllBlogItems } from "#/components/pageSpecific/blog/utils";
 
 export type BlogSearchParams = {
     tags?: string[];
@@ -15,7 +16,12 @@ const BlogPage = ({ searchParams }: BlogPageProps) => {
             ? searchParams.tags
             : [searchParams.tags]
         : [];
-    return <BlogPostList tags={tags} />;
+
+    const allPosts = getAllBlogItems();
+    return <BlogPostList
+        allPosts={allPosts}
+        tags={tags}
+    />;
 };
 
 BlogPage.displayName = "BlogPage";

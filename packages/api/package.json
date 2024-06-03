@@ -247,6 +247,7 @@
     "@next/mdx": "^14.0.0",
     "@types/jest": "^29.5.11",
     "next": "^14.2.3",
+    "react-device-detect": "^2.2.3",
     "trpc-openapi": "^1.2.0"
   }
 }

@@ -60,6 +60,9 @@ const tailwindCfg: Config = {
             minHeight: {
                 "screen-noNav": "calc(100vh - 76px)"
             },
+            maxHeight: {
+                "screen-noNav": "calc(100vh - 76px)"
+            },
             typography: ({ theme }: { theme: (val: string) => void }) => ({
                 DEFAULT: {
                     css: {

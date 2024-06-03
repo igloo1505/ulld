@@ -56,7 +56,7 @@ const MDXArticle = forwardRef(
                     ref={ref}
                     id={id}
                     className={clsx(
-                        "@container/mdx w-full prose prose-invert prose-a:text-link mdx !max-w-[min(83%,1080px)] py-8 mx-8 group-[.mdx-wide]/mdxLayout:w-full group-[.mdx-wide]/mdxLayout:md:!max-w-[min(1440px,100vw-128px)] group-[.mdx-full]/mdxLayout:!max-w-full",
+                        "@container/mdx w-full prose prose-invert prose-a:text-link mdx !max-w-[min(83%,1080px)] py-8 group-[.mdx-wide]/mdxLayout:w-full group-[.mdx-wide]/mdxLayout:md:!max-w-[min(1440px,100vw-128px)] group-[.mdx-full]/mdxLayout:!max-w-full",
                         props.className,
                         paddingTop && "pt-[108px]",
                     )}

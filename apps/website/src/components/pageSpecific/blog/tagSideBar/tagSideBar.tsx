@@ -1,64 +1,72 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import TagListComponent from "./tagList";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import TagList from "./tagList";
 import { useSearchParams } from "next/navigation";
+import { XIcon } from "lucide-react";
+import { motion } from "framer-motion";
 
-const TagList = motion(TagListComponent);
-
-interface BlogTagSideBarProps {}
+interface BlogTagSideBarProps {
+    open: boolean;
+    setOpen: (isOpen: boolean) => void;
+}
 
 /* PRIORITY: Move this scroll listener to framer-motion when back online and capable of looking up docs. This is handled inside the react render function, so framer-motion will likely be much more performant. */
 
-const BlogTagSideBar = (props: BlogTagSideBarProps) => {
-  const [containerY, setContainerY] = useState<number | undefined>(undefined);
-  const sp = useSearchParams();
-  const ref = useRef<HTMLDivElement>(null!);
-  let t = sp.getAll("tags");
+const BlogTagSideBar = ({ open, setOpen }: BlogTagSideBarProps) => {
+    const sp = useSearchParams();
+    let t = sp.getAll("tags");
 
-  let activeTags: string[] = Array.isArray(t)
-    ? t
-    : t !== null
-      ? [t]
-      : ([] as string[]);
+    let activeTags: string[] = Array.isArray(t)
+        ? t
+        : t !== null
+            ? [t]
+            : ([] as string[]);
 
-  const handleScroll = () => {
-    let scroll = {
-      y: document.body.scrollTop,
-      height: document.body.scrollHeight,
-      target: ref.current.getBoundingClientRect(),
+    const toggleOpen = () => {
+        setOpen(!open);
     };
-    if (scroll.target.y < 0) {
-      setContainerY(scroll.target.y * -1);
-    } else {
-      setContainerY(undefined);
-    }
-  };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
-    <motion.div
-      className={"h-full max-h-full overflow-y-auto border-r"}
-      ref={ref}
-    >
-      <TagList
-        activeTags={activeTags}
-        animate={{
-          y: containerY,
-          transition: {
-            bounce: 0,
-          },
-        }}
-        transition={{
-          bounce: 0,
-        }}
-      />
-    </motion.div>
-  );
+    return (
+        <motion.div
+            className={
+                "h-full max-h-full min-h-screen-noNav overflow-y-auto border-r relative"
+            }
+            animate={open ? "open" : "closed"}
+            initial={false}
+            variants={{
+                open: {
+                    x: 0,
+                    opacity: 1,
+                },
+                closed: {
+                    x: -300,
+                    opacity: 0,
+                },
+            }}
+        >
+            <motion.button
+                className={"top-4 right-4 absolute opacity-100"}
+                onClick={toggleOpen}
+                animate={open ? "open" : "closed"}
+                initial={false}
+                variants={{
+                    open: {
+                        x: 0,
+                    },
+                    closed: {
+                        x: 64,
+                    },
+                }}
+            >
+                <XIcon
+                    className={
+                        "text-muted-foreground hover:text-foreground transition-colors duration-300 w-3 h-3"
+                    }
+                />
+            </motion.button>
+            <TagList activeTags={activeTags} />
+        </motion.div>
+    );
 };
 
 BlogTagSideBar.displayName = "BlogTagSideBar";

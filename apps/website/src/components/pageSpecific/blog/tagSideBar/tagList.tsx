@@ -18,12 +18,12 @@ const getSearchParams = (activeTags: string[], clickedTag: string) => {
     return sp.toString()
 }
 
-const TagList = forwardRef(({ activeTags = [] }: TagListProps, ref: ForwardedRef<HTMLDivElement>) => {
-     
+
+const TagList = forwardRef(({ activeTags = [] }: TagListProps, ref: ForwardedRef<HTMLDivElement>) => {     
     const tags = data.tags;
 
     return (
-        <div className={"w-full flex flex-col justify-start items-start text-foreground"} ref={ref}>
+        <div className={"w-full flex flex-col justify-start items-start text-foreground pt-8"} ref={ref}>
             <div className={"w-full px-4 flex flex-row justify-center items-center gap-1 mt-4"}>
                 <span className={"w-full flex-grow h-[1px] bg-muted"}/>
                 <span className={"w-fit h-full text-muted-foreground"}>

@@ -1,5 +1,5 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useMemo } from "react";
 import FeaturedBlogPostEquation from "./featuredEquation";
 import FeaturedImage from "./image";
 import MathjaxProvider from "#/components/utility/providers/mathjax";
@@ -12,13 +12,13 @@ import { motion } from "framer-motion";
 interface Props {
     post: PostTypes;
     isFeatured?: boolean;
-    imagePriority?: boolean
+    imagePriority?: boolean;
 }
 
-const FeaturedBlogPost = ({
+const FeaturedBlogPostComp = ({
     post: { images, featuredEquation, icon, ...post },
     isFeatured,
-    imagePriority
+    imagePriority,
 }: Props) => {
     if (
         isFeatured
@@ -47,12 +47,17 @@ const FeaturedBlogPost = ({
                 }}
             >
                 <div
-                    className={"w-full h-full max-h-[300px] relative flex flex-col justify-center items-center pb-[1.2px]"}
+                    className={
+                        "w-full h-full max-h-[300px] relative flex flex-col justify-center items-center pb-[1.2px]"
+                    }
                 >
                     {featuredEquation ? (
                         <FeaturedBlogPostEquation equation={featuredEquation} />
                     ) : images && images.length ? (
-                        <FeaturedImage priority={imagePriority} src={`/assets/blog/${images[0]}`} />
+                        <FeaturedImage
+                            priority={imagePriority}
+                            src={`/assets/blog/${images[0]}`}
+                        />
                     ) : icon ? (
                         <BlogPostCardIcon icon={icon as ValidIconName} />
                     ) : null}
@@ -65,6 +70,11 @@ const FeaturedBlogPost = ({
             </motion.div>
         </MathjaxProvider>
     );
+};
+
+const FeaturedBlogPost = (props: Props) => {
+    const Item = useMemo(() => <FeaturedBlogPostComp {...props} />, [props]);
+    return Item;
 };
 
 FeaturedBlogPost.displayName = "FeaturedBlogPost";

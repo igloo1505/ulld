@@ -46,6 +46,8 @@
     "./components/client/figureRef": "./src/utility/figureRef.tsx",
     "./components/client/equationTag": "./src/utility/equationTag.tsx",
     "./components/client/boxed": "./src/utility/boxed.tsx",
+    "./components/client/title": "./src/emeddedComponents/text/title.tsx",
+    "./components/server/title": "./src/emeddedComponents/text/title.tsx",
     "./components/server/boxed": "./src/utility/boxed.tsx",
     "./components/server/tab": "./src/emeddedComponents/tabs/tab.tsx",
     "./components/server/tabGroup": "./src/emeddedComponents/tabs/tabGroup.tsx",

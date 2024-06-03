@@ -16,6 +16,7 @@ const Card = dynamic(() => import("@ulld/embeddable-components/components/client
 const ErrorMargin = dynamic(() => import("@ulld/embeddable-components/academic/error").then((a) => a.ErrorMargin))
 const Abstract = dynamic(() => import("@ulld/embeddable-components/academic/abstract").then((a) => a.Abstract))
 const TableFit = dynamic(() => import("@ulld/embeddable-components/format/tableFit").then((a) => a.TableFit))
+const Title = dynamic(() => import("@ulld/embeddable-components/components/client/title").then((a) => a.Title))
 // const LinePlot = dynamic(() => import("./emeddedComponents/plots/linePlot"))
 // const RemoteMarkdown = dynamic(() => import("./emeddedComponents/remote/RemoteMarkdown"))
 // const Carousel = dynamic(() => import("./emeddedComponents/media/carousel"))
@@ -83,6 +84,7 @@ export const conditionalClientComponents: ConditionalComponentQuery<EmbeddableCl
         { regex: new RegExp(`<Highlight`), component: Highlight, label: "Highlight" },
         { regex: new RegExp(`<Lead`), component: Lead, label: "Lead" },
         { regex: new RegExp(`<Quote`), component: Quote, label: "Quote" },
+        { regex: new RegExp(`<Title`), component: Title, label: "Title" },
         // Notifications and Attention Components
         { regex: new RegExp(`<Admonition`), component: Admonition, label: "Admonition" },
         // Math related
