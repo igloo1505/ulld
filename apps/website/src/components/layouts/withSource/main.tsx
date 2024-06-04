@@ -111,7 +111,11 @@ const SideBySideWithSource = ({ mdx }: SideBySideWithSourceProps) => {
             <ResizablePanel defaultSize={50}>
                 <CodeOutput ref={outputContainer} data-name={names.output}>
                     <MathjaxProvider>
-                        <MDXArticle isSource mdx={mdx} />
+                        <MDXArticle
+                            className={"!max-w-full"}
+                            isSource 
+                            mdx={mdx}
+                        />
                     </MathjaxProvider>
                 </CodeOutput>
             </ResizablePanel>

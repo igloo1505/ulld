@@ -17,9 +17,7 @@ const BlogArticlePage = ({ params: { id } }: BlogArticlePageProps) => {
     if (!article) return notFound();
     return (
         <MathjaxProvider>
-            <div className={"lg:max-h-[calc(100vh-116px)] group-[.noSidebar]/blogLayout:max-h-fit no-scrollbar max-w-full lg:overflow-y-auto"}>
             <MDXArticle paddingTop={false} mdx={article} />
-            </div>
         </MathjaxProvider>
     );
 };

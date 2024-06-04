@@ -1,0 +1,14 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "defaultCategory": "Other",
+  "categoryOrder": [
+    "Layout",
+    "Plotting",
+    "Text",
+    "Colors",
+    "Linking & Searching",
+    "Referencing",
+    "Academic",
+    "*"
+  ]
+}

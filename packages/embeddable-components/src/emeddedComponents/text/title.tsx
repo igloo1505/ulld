@@ -34,7 +34,7 @@ export const Title = ({
                         subtitleProps?.className,
                     )}
                 >
-                    {children}
+                    {subtitle}
                 </span>
             )}
         </div>

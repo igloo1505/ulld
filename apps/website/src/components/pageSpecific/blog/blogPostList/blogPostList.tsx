@@ -22,6 +22,7 @@ const getBlogPostsByTags = (
     });
 };
 
+
 const BlogPostList = ({ tags = [], allPosts }: BlogPostListProps) => {
     const vp = useViewport(true)
     let posts = (
@@ -47,13 +48,13 @@ const BlogPostList = ({ tags = [], allPosts }: BlogPostListProps) => {
 
     return (
         <motion.div
-            className={"w-full lg:max-h-[calc(100vh-116px)] lg:overflow-y-auto flex flex-col justify-start items-center gap-6"}
+            className={"w-full h-fit flex flex-col justify-start items-center gap-6"}
             variants={{
                 open: {
-                    width: "100%",
+                    width: vp ? vp.window.width - 396 : "100%",
                 },
                 closed: {
-                    width: vp ? vp?.window.width - 64 : "calc(100vw - 4rem)"
+                    width: vp ? vp.window.width - 96 : "calc(100vw - 4rem)"
                 }
             }}
         >

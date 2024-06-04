@@ -6,7 +6,7 @@ import React, {
     forwardRef,
     useMemo,
 } from "react";
-import clsx from "clsx";
+import { cn } from "@ulld/utilities/cn"
 import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
 import "#/styles/proseStyles.scss";
 import { DocumentTypes } from "contentlayer/generated";
@@ -55,7 +55,7 @@ const MDXArticle = forwardRef(
                     {...props}
                     ref={ref}
                     id={id}
-                    className={clsx(
+                    className={cn(
                         "@container/mdx w-full prose prose-invert prose-a:text-link mdx !max-w-[min(83%,1080px)] py-8 group-[.mdx-wide]/mdxLayout:w-full group-[.mdx-wide]/mdxLayout:md:!max-w-[min(1440px,100vw-128px)] group-[.mdx-full]/mdxLayout:!max-w-full",
                         props.className,
                         paddingTop && "pt-[108px]",

@@ -18,7 +18,7 @@ const Footer = (props: FooterProps) => {
     const ref = useRef<HTMLDivElement>(null!);
     const inView = useInView(ref, {once: true});
     return (
-        <div className={clsx("group/footer max-w-content flex flex-col justify-center items-center gap-6 px-12 pb-8 pt-6 border-t", (footerLinks.banners && footerLinks.banners.length > 0) && "withBanners")}>
+        <div className={clsx("group/footer max-w-content flex flex-col justify-center items-center gap-6 px-12 pb-8 pt-6 border-t bg-background z-10 relative", (footerLinks.banners && footerLinks.banners.length > 0) && "withBanners")}>
             <div
                 ref={ref}
                 className={

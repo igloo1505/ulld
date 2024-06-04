@@ -17,6 +17,7 @@ const BlogPage = ({ searchParams }: BlogPageProps) => {
             : [searchParams.tags]
         : [];
 
+    /* TODO: Enable pagination here. This can wait until there are most posts, but this definitely needs to be handled. */
     const allPosts = getAllBlogItems();
     return <BlogPostList
         allPosts={allPosts}

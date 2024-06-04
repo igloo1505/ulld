@@ -24,6 +24,16 @@ const BlogLayout = ({ children }: BlogLayoutProps) => {
         className={
           clsx("group/mdxLayout w-full mdx-wide flex flex-col justify-start items-center p-6 lg:px-12", !open && "lg:w-screen")
         }
+        animate={open ? "open" : "closed"}
+        initial={false}
+        variants={{
+          open: {
+            marginLeft: 300,
+          },
+          closed: {
+            marginLeft: 0,
+          },
+        }}
       >
         {children}
       </motion.div>

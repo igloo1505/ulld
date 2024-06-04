@@ -1,72 +1,94 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import TagList from "./tagList";
 import { useSearchParams } from "next/navigation";
 import { XIcon } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  navbarButtonClasses,
+} from "#/components/layouts/navbar/navbarButtonGroup";
+import clsx from "clsx";
+import NavbarButtonPortal from "#/components/utility/portals/navbar";
 
 interface BlogTagSideBarProps {
-    open: boolean;
-    setOpen: (isOpen: boolean) => void;
+  open: boolean;
+  setOpen: (isOpen: boolean) => void;
 }
 
 /* PRIORITY: Move this scroll listener to framer-motion when back online and capable of looking up docs. This is handled inside the react render function, so framer-motion will likely be much more performant. */
 
 const BlogTagSideBar = ({ open, setOpen }: BlogTagSideBarProps) => {
-    const sp = useSearchParams();
-    let t = sp.getAll("tags");
+  const sp = useSearchParams();
+  let t = sp.getAll("tags");
+  const ref = useRef<HTMLDivElement>(null!);
+  const scroll = useScroll({
+    target: ref,
+  });
 
-    let activeTags: string[] = Array.isArray(t)
-        ? t
-        : t !== null
-            ? [t]
-            : ([] as string[]);
+  const y = useTransform(scroll.scrollY, (currentValue) => {
+    if (currentValue >= 76) {
+      return currentValue - 76;
+    }
+    return 0;
+  });
 
-    const toggleOpen = () => {
-        setOpen(!open);
-    };
+  let activeTags: string[] = Array.isArray(t)
+    ? t
+    : t !== null
+      ? [t]
+      : ([] as string[]);
 
-    return (
-        <motion.div
-            className={
-                "h-full max-h-full min-h-screen-noNav overflow-y-auto border-r relative"
-            }
-            animate={open ? "open" : "closed"}
-            initial={false}
-            variants={{
-                open: {
-                    x: 0,
-                    opacity: 1,
-                },
-                closed: {
-                    x: -300,
-                    opacity: 0,
-                },
-            }}
+  const toggleOpen = () => {
+    setOpen(!open);
+  };
+
+  return (
+    <motion.div
+      className={
+        "h-full min-h-screen border-r w-[300px] absolute left-0 top-0 pt-[76px]"
+      }
+      ref={ref}
+      animate={open ? "open" : "closed"}
+      initial={false}
+      variants={{
+        open: {
+          x: 0,
+          opacity: 1,
+        },
+        closed: {
+          x: -300,
+          opacity: 0,
+        },
+      }}
+    >
+      <NavbarButtonPortal>
+        <button
+          onClick={toggleOpen}
+          className={clsx(navbarButtonClasses, open && "!text-foreground")}
         >
-            <motion.button
-                className={"top-4 right-4 absolute opacity-100"}
-                onClick={toggleOpen}
-                animate={open ? "open" : "closed"}
-                initial={false}
-                variants={{
-                    open: {
-                        x: 0,
-                    },
-                    closed: {
-                        x: 64,
-                    },
-                }}
-            >
-                <XIcon
-                    className={
-                        "text-muted-foreground hover:text-foreground transition-colors duration-300 w-3 h-3"
-                    }
-                />
-            </motion.button>
-            <TagList activeTags={activeTags} />
-        </motion.div>
-    );
+          Sidebar
+        </button>
+      </NavbarButtonPortal>
+      <motion.div
+        className={"relative"}
+        style={{
+          y: y,
+        }}
+        transition={{
+          duration: 0,
+        }}
+      >
+        <button className={"top-4 right-4 absolute"} onClick={toggleOpen}>
+          <XIcon
+            className={
+              "text-muted-foreground hover:text-foreground transition-colors duration-300 w-3 h-3"
+            }
+          />
+        </button>
+        <TagList activeTags={activeTags} />
+      </motion.div>
+    </motion.div>
+  );
 };
 
 BlogTagSideBar.displayName = "BlogTagSideBar";
