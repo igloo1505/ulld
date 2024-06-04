@@ -4,6 +4,9 @@ import { StoryOfUlldSection } from "../sections/storyOfULLD/section";
 import { DescriptionSection } from "../description/descriptionSection";
 import Hero from "./hero";
 import JoinWaitingList from "../waitinglist/joinWaitingList";
+import NavbarButtonPortal from "#/components/utility/portals/navbar";
+import Link from "next/link";
+import { navbarButtonClasses } from "#/components/layouts/navbar/navbarButtonGroup";
 
 interface HeroProps { }
 
@@ -14,6 +17,11 @@ const LandingPage = (props: HeroProps) => {
                 "min-h-screen h-fit w-full flex flex-col justify-center items-center gap-6",
             )}
         >
+            <NavbarButtonPortal>
+                <Link className={navbarButtonClasses} href="/blog">
+                    Blog
+                </Link>
+            </NavbarButtonPortal>
                <Hero />
                 <DescriptionSection
                     key="dsec"

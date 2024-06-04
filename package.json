@@ -11,7 +11,8 @@
     "test": "turbo test",
     "test:watch": "turbo test:watch",
     "postinstall": "echo 'manypkg check'",
-    "forcePackgeMatch": "manypkg fix"
+    "forcePackgeMatch": "manypkg fix",
+    "docs": "typedoc"
   },
   "devDependencies": {
     "@droppedcode/typedoc-plugin-relative-includes": "^1.0.5",

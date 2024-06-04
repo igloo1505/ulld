@@ -19,16 +19,18 @@ import Citations from "../academic/citations";
 import { NoteStateObserver } from "@ulld/state/observers/noteState";
 import MdxArticleNavButtons from "./mdxArticleNavButtons";
 
+
 interface MDXArticleProps extends HTMLProps<HTMLElement> {
     mdx: DocumentTypes;
     paddingTop?: boolean;
     isSource?: boolean;
+    hideSourceButton?: boolean
 }
 
 
 const MDXArticle = forwardRef(
     (
-        { mdx, paddingTop = true, isSource, ...props }: MDXArticleProps,
+        { mdx, paddingTop = true, hideSourceButton = false, isSource, ...props }: MDXArticleProps,
         ref: ForwardedRef<HTMLElement>,
     ) => {
         const id = props.id ? props.id : getRandomId();
@@ -47,10 +49,10 @@ const MDXArticle = forwardRef(
         return (
             <InternalReduxProvider>
                 <NoteStateObserver store={store} />
-                <MdxArticleNavButtons
+                {!hideSourceButton && <MdxArticleNavButtons
                     articleId={"id" in mdx ? mdx.id : undefined}
                     isSource={isSource}
-                />
+                />}
                 <article
                     {...props}
                     ref={ref}

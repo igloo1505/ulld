@@ -3,6 +3,10 @@
   "globalDependencies": ["**/.env.*local"],
   "globalDotEnv": [".env.local"],
   "pipeline": {
+    "docs": {
+      "cache": false,
+      "dotEnv": [".env.local"]
+    },
     "db:generate": {
       "cache": false,
       "dotEnv": [".env.local"]

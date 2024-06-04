@@ -28,7 +28,7 @@ export const StoryOfUlldSection = ({}: StoryOfUlldSectionProps) => {
         <div
             ref={ref}
             className={clsx(
-                "group/feature relative w-screen top-[76px] left-0 min-h-[calc(100vh-76px)] h-fit flex flex-col justify-start items-center gap-6 z-10",
+                "group/feature relative w-screen left-0 min-h-[calc(100vh-76px)] h-fit flex flex-col justify-start items-center gap-6 z-10",
                 vp?.window.width && vp.window.width < 768 ? "stack" : "flow",
             )}
         >
@@ -75,6 +75,7 @@ export const StoryOfUlldSection = ({}: StoryOfUlldSectionProps) => {
                 <AnimatedLogoAsText show={true} delay={1.4} fontSize={36} />
             </motion.h2>
             <MDXArticle
+                hideSourceButton
                 paddingTop={false}
                 id="storyOfULLD"
                 className={"mt-20 max-w-[min(83vw,1440px)]"}

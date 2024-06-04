@@ -1,6 +1,6 @@
 "use client";
 import { DocumentTypes } from "contentlayer/generated";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import SourceCode from "./sourceCode";
 import CodeOutput from "./output";
 import MDXArticle from "../mdxArticle";
@@ -15,16 +15,20 @@ import NavbarButtonPortal from "#/components/utility/portals/navbar";
 import { navbarButtonClasses } from "../navbar/navbarButtonGroup";
 import { cn } from "@ulld/utilities/cn";
 
+
 interface SideBySideWithSourceProps {
     mdx: DocumentTypes;
 }
+
 
 const names = {
     output: "code-output",
     source: "source-code",
 };
 
+
 const saveId = "ulldWithSource";
+
 
 const SideBySideWithSource = ({ mdx }: SideBySideWithSourceProps) => {
     const [scrollIndependent, setScrollIndependent] = useState(false);
@@ -112,9 +116,10 @@ const SideBySideWithSource = ({ mdx }: SideBySideWithSourceProps) => {
                 <CodeOutput ref={outputContainer} data-name={names.output}>
                     <MathjaxProvider>
                         <MDXArticle
-                            className={"!max-w-full"}
+                            className={"!max-w-full pt-8"}
                             isSource 
                             mdx={mdx}
+                            paddingTop={false}
                         />
                     </MathjaxProvider>
                 </CodeOutput>
