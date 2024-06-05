@@ -10,3 +10,6 @@ export const getAllBlogItems = () => {
     console.log("allAboutUs: ", allAboutUs)
     return [...allMyNotes, ...allAboutUs, ...allDemos, ...allBlogPosts].filter((a) => a.blog === true) as PostTypes[]
 }
+
+
+export const blogLayoutMobileBreakpoint = 840;

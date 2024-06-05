@@ -1,10 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { HTMLProps } from "react";
 import staticContent from "#/staticData/staticContent.json";
 import { usePathname } from "next/navigation";
+import clsx from 'clsx'
 
-interface AnimatedBrokenSubtitleProps {
+interface AnimatedBrokenSubtitleProps extends HTMLProps<HTMLDivElement> {
     delay: number;
 }
 
@@ -13,11 +14,13 @@ const defaultDelay = 1.5;
 const Broken = ({
     delay,
     pathName,
+    ...props
 }: AnimatedBrokenSubtitleProps & { pathName: string }) => {
     return (
         <div
+            {...props}
             className={
-                "w-fit min-w-fit flex-col justify-center items-start flex-grow hidden md:flex"
+                clsx("w-fit min-w-fit flex-col justify-center items-start flex-grow hidden navbarPartial:flex", props.className)
             }
         >
             <motion.h3
@@ -59,9 +62,13 @@ const Broken = ({
 const Solid = ({
     delay,
     pathName,
+    ...props
 }: AnimatedBrokenSubtitleProps & { pathName: string }) => {
     return (
-        <div className={"w-[calc(100vw-8rem)] hidden xxs:inline-block md:hidden"}>
+        <div
+            {...props}
+            className={clsx("w-[calc(100vw-8rem)] hidden xxs:inline-block md:hidden", props.className)}
+        >
             <motion.h3
                 className={"text-sm"}
                 initial={{
@@ -87,7 +94,7 @@ const AnimatedBrokenSubtitle = (props: AnimatedBrokenSubtitleProps) => {
     return (
         <>
             <Broken {...props} pathName={pathName} />
-            <Solid {...props} pathName={pathName} />
+            {/* <Solid {...props} pathName={pathName} /> */}
         </>
     );
 };

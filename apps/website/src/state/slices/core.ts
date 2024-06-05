@@ -27,6 +27,28 @@ const slice = createSlice({
                 (a) => a.id !== action.payload,
             );
         },
+        setDrawerBreakpoint(state, action: PayloadAction<number>) {
+            state.drawer = {
+                ...state.drawer,
+                breakpoint: action.payload,
+            };
+        },
+        closeDrawer(state, action: PayloadAction) {
+            state.drawer = {
+                ...state.drawer,
+                open: false,
+            };
+        },
+        openDrawer(
+            state,
+            action: PayloadAction<Partial<Omit<typeof initialState.core.drawer, "open">>>,
+        ) {
+            state.drawer = {
+                ...state.drawer,
+                ...action.payload,
+                open: true,
+            };
+        },
     },
 });
 
@@ -35,5 +57,8 @@ export const {
     setLandingSectionState,
     createNavbarButton,
     removeNavbarButton,
+    openDrawer,
+    closeDrawer,
+    setDrawerBreakpoint,
 } = slice.actions;
 export default slice.reducer;

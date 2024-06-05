@@ -4,10 +4,10 @@ import AnimatedBrokenSubtitle from "./animatedBrokenSubtitle";
 import NavbarButtonGroup from "./navbarButtonGroup";
 import InternalReduxProvider from "#/state/provider";
 import Link from "next/link"
+import NavbarDrawerToggle from "./navbarDrawerToggle";
 
-interface NavbarProps { }
 
-const Navbar = (props: NavbarProps) => {
+const Navbar = () => {
     return (
         <div
             id="main-navbar-container"
@@ -23,6 +23,7 @@ const Navbar = (props: NavbarProps) => {
             </div>
             <InternalReduxProvider>
                 <NavbarButtonGroup />
+                <NavbarDrawerToggle />
             </InternalReduxProvider>
         </div>
     );

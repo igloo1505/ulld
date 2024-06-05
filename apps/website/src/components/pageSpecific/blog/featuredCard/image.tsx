@@ -10,7 +10,7 @@ const FeaturedImage = (props: FeaturedImageProps) => {
         <Image
             alt="Featured blog post image"
             {...props}
-            className={clsx("w-full max-h-full object-cover rounded-tl-lg rounded-tr-lg lg:rounded-bl-lg lg:rounded-tr-none", props.className)}
+            className={clsx("w-full h-auto max-h-[300px] lg:max-h-full object-cover rounded-tl-lg rounded-tr-lg lg:rounded-bl-lg lg:rounded-tr-none", props.className)}
             width={768}
             height={768} 
         />

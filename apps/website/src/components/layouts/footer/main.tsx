@@ -10,15 +10,14 @@ import { PaypalIcon } from "@ulld/icons/paypal";
 import FooterBanners from "./footerBanner";
 import clsx from 'clsx'
 
-interface FooterProps { }
 
 const footerKeys = Object.keys(footerLinks).filter((a) => a !== "banners")
 
-const Footer = (props: FooterProps) => {
+const Footer = () => {
     const ref = useRef<HTMLDivElement>(null!);
     const inView = useInView(ref, {once: true});
     return (
-        <div className={clsx("group/footer max-w-content flex flex-col justify-center items-center gap-6 px-12 pb-8 pt-6 border-t bg-background z-10 relative", (footerLinks.banners && footerLinks.banners.length > 0) && "withBanners")}>
+        <div id="main-footer-container" className={clsx("group/footer max-w-content flex flex-col justify-center items-center gap-6 px-12 pb-8 pt-6 border-t bg-background z-10 relative", (footerLinks.banners && footerLinks.banners.length > 0) && "withBanners")}>
             <div
                 ref={ref}
                 className={

@@ -1,14 +1,18 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import FeaturedBlogPost from "../featuredCard/main";
 import { PostTypes } from "./types";
 import { getAllBlogItems } from "../utils";
-import { motion } from "framer-motion";
-import { useViewport } from "@ulld/hooks/useViewport";
+import {
+    motion,
+    motionValue,
+    useIsomorphicLayoutEffect,
+    useTransform,
+} from "framer-motion";
 
 interface BlogPostListProps {
     tags: string[];
-    allPosts: ReturnType<typeof getAllBlogItems>
+    allPosts: ReturnType<typeof getAllBlogItems>;
 }
 
 const priorityImages = 4;
@@ -22,9 +26,10 @@ const getBlogPostsByTags = (
     });
 };
 
-
 const BlogPostList = ({ tags = [], allPosts }: BlogPostListProps) => {
-    const vp = useViewport(true)
+    const ref = useRef<HTMLDivElement>(null!);
+    const transition = useRef<string>("");
+    const timer = useRef<NodeJS.Timeout | null>(null);
     let posts = (
         tags.length === 0 ? allPosts : getBlogPostsByTags(tags, allPosts)
     ).sort((a, b) => {
@@ -46,17 +51,39 @@ const BlogPostList = ({ tags = [], allPosts }: BlogPostListProps) => {
         });
     }
 
+    const handleResize = () => {
+        if (
+            transition.current === "" &&
+            ref.current.style.transition &&
+            ref.current.style.transition !== ""
+        ) {
+            transition.current = ref.current.style.transition;
+        }
+        ref.current.style.transition = ""
+        timer.current = setTimeout(() => { 
+            ref.current.style.transition = transition.current
+        }, 250);
+    };
+
+    /* useEffect(() => { */
+    /*     window.addEventListener("resize", handleResize); */
+    /*     return () => window.removeEventListener("resize", handleResize); */
+    /* }, []); */
+
     return (
-        <motion.div
-            className={"w-full h-fit flex flex-col justify-start items-center gap-6"}
-            variants={{
-                open: {
-                    width: vp ? vp.window.width - 396 : "100%",
-                },
-                closed: {
-                    width: vp ? vp.window.width - 96 : "calc(100vw - 4rem)"
-                }
-            }}
+        <div
+            ref={ref}
+            className={
+                "w-full blogMobile:w-[calc(100vw-112px)] group-[.open]/blogLayout:blogMobile:w-[calc(100vw-412px)] group-[.transitioning]/blogLayout:blogMobile:transition-[width] group-[.transitioning]/blogLayout:blogMobile:duration-300 h-fit space-y-6 flex flex-col justify-center items-end"
+            }
+        /* variants={{ */
+        /*     open: { */
+        /*         width: vpWidth.current ? vpWidth.current - 396 : "100%", */
+        /*     }, */
+        /*     closed: { */
+        /*         width: vpWidth.current ? vpWidth.current - 96 : "calc(100vw - 4rem)", */
+        /*     }, */
+        /* }} */
         >
             {featured && <FeaturedBlogPost isFeatured post={featured} />}
             {(featured ? posts.filter((a) => a.id !== featured.id) : posts).map(
@@ -70,7 +97,7 @@ const BlogPostList = ({ tags = [], allPosts }: BlogPostListProps) => {
                     );
                 },
             )}
-        </motion.div>
+        </div>
     );
 };
 

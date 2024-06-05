@@ -1,5 +1,4 @@
-"use client";
-import React, { useMemo } from "react";
+import React from "react";
 import FeaturedBlogPostEquation from "./featuredEquation";
 import FeaturedImage from "./image";
 import MathjaxProvider from "#/components/utility/providers/mathjax";
@@ -7,7 +6,14 @@ import FeaturedBlogPostContent from "./content";
 import BlogPostCardIcon from "./icon";
 import { ValidIconName } from "@ulld/icons";
 import { PostTypes } from "../blogPostList/types";
-import { motion } from "framer-motion";
+
+const postPadding = 112;
+
+const offsets = {
+    closed: postPadding,
+    open: 300 + postPadding,
+    mobile: postPadding,
+};
 
 interface Props {
     post: PostTypes;
@@ -15,7 +21,7 @@ interface Props {
     imagePriority?: boolean;
 }
 
-const FeaturedBlogPostComp = ({
+const FeaturedBlogPost = ({
     post: { images, featuredEquation, icon, ...post },
     isFeatured,
     imagePriority,
@@ -33,18 +39,10 @@ const FeaturedBlogPostComp = ({
     /* TODO: Look up framer-motion property that allows the initial animation to be hidden if the object is initially in view. I forget, but I know it exists. */
     return (
         <MathjaxProvider>
-            <motion.div
+            <div
                 className={
-                    "w-full flex flex-col justify-center items-center lg:grid lg:grid-cols-[300px_1fr] lg:max-h-[300px] lg:gap-6 border border-b-border border-r-transparent border-l-transparent border-t-transparent hover:border-foreground/20 hover:rounded-lg lg:border-border lg:rounded-lg transition-colors duration-300"
+                    "w-full flex flex-col justify-center items-center lg:grid lg:grid-cols-[300px_1fr] lg:max-h-[300px] lg:gap-6 border border-b-border border-r-transparent border-l-transparent border-t-transparent hover:border-foreground/20 hover:rounded-lg lg:border-border lg:rounded-lg transition-colors duration-300 "
                 }
-                initial={{
-                    /* x: "100vw", */
-                    opacity: 0,
-                }}
-                whileInView={{
-                    /* x: 0, */
-                    opacity: 1,
-                }}
             >
                 <div
                     className={
@@ -67,15 +65,15 @@ const FeaturedBlogPostComp = ({
                     summary={post.description}
                     id={post.id as string}
                 />
-            </motion.div>
+            </div>
         </MathjaxProvider>
     );
 };
 
-const FeaturedBlogPost = (props: Props) => {
-    const Item = useMemo(() => <FeaturedBlogPostComp {...props} />, [props]);
-    return Item;
-};
+/* const FeaturedBlogPost = (props: Props) => { */
+/*     const Item = useMemo(() => <FeaturedBlogPostComp {...props} />, [props]); */
+/*     return Item; */
+/* }; */
 
 FeaturedBlogPost.displayName = "FeaturedBlogPost";
 

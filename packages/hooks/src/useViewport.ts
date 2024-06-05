@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useIsomorphicLayoutEffect } from "./useIsomorphicEffect";
 
 export interface ViewportData {
     window: {
@@ -8,7 +9,7 @@ export interface ViewportData {
     };
 }
 
-export const useViewport = (noScroll: boolean = false) => {
+export const useViewport = (noScroll: boolean = false, once: boolean = false) => {
     const [viewport, setViewport] = useState<ViewportData | null>(null);
     const handleViewport = () => {
         let d = document.body?.getBoundingClientRect();
@@ -22,8 +23,10 @@ export const useViewport = (noScroll: boolean = false) => {
         });
     };
 
-    useEffect(() => {
+    useIsomorphicLayoutEffect(() => {
+        if (typeof window === "undefined") return;
         handleViewport();
+        if(once) return
         window.addEventListener("resize", handleViewport);
         if (!noScroll) {
             window.addEventListener("scroll", handleViewport);

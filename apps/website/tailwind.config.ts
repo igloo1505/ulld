@@ -40,6 +40,9 @@ const tailwindCfg: Config = {
         extend: {
             screens: {
                 xxs: "450px",
+                blogMobile: "840px",
+                navbarFull: "1024px",
+                navbarPartial: "768px",
             },
             transitionDelay: {
                 "400": "400ms",

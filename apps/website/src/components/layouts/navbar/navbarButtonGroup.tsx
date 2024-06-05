@@ -7,16 +7,20 @@ import NextLink from "next/link";
 import { motion } from "framer-motion";
 import { useInitialRender } from "@ulld/hooks/useInitialRender";
 import { usePathname } from "next/navigation";
+import { useViewport } from "@ulld/hooks/useViewport";
+import clsx from 'clsx'
 
 const Link = motion(NextLink);
 
 const connector = connect((state: RootState, props: any) => ({
     buttons: state.core.navbarButtons,
+    breakpoint: state.core.drawer.breakpoint,
     props: props,
 }));
 
 interface NavbarButtonGroupProps {
     buttons: InitialCoreState["navbarButtons"];
+    breakpoint: InitialCoreState["drawer"]["breakpoint"];
 }
 
 export const navbarButtonClasses =
@@ -31,9 +35,10 @@ const otherHomeNavbarClasses = [
     "border-border/40"
 ];
 
-const NavbarButtonGroup = connector(({ buttons }: NavbarButtonGroupProps) => {
+const NavbarButtonGroup = connector(({ buttons, breakpoint }: NavbarButtonGroupProps) => {
     const isInitial = useInitialRender();
     const pathname = usePathname();
+    const vp = useViewport()
 
     const setTransparent = (beTransparent: boolean) => {
         let em = document.getElementById("main-navbar-container");
@@ -48,11 +53,12 @@ const NavbarButtonGroup = connector(({ buttons }: NavbarButtonGroupProps) => {
         setTransparent(pathname === "/");
     }, [pathname]);
 
+
     return (
         <div
             id="navbar-btn-container"
             className={
-                "w-full h-full flex flex-row justify-end items-center gap-4 flex-grow pr-8"
+                clsx("w-full h-full flex flex-row justify-end items-center gap-4 flex-grow pr-8", (!vp || vp.window.width < breakpoint) && "hidden")
             }
         >
             {buttons.map((a, i) => {
