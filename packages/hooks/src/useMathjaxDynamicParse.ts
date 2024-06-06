@@ -30,7 +30,7 @@ export const useMathjaxDynamicParse = (state: any) => {
         }
         }
     useEffect(() => {
-        if (typeof MathJax === "undefined") return;
+        // if (typeof MathJax === "undefined") return;
         handleMath()
     }, [state]);
 };

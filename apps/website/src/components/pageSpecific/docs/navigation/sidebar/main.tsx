@@ -4,9 +4,11 @@ import { staticDocsData } from "#/staticData/docs";
 import SDC from "./category";
 import { useEventListener } from "@ulld/hooks/useEventListener";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeftIcon } from "lucide-react";
+import { ArrowBigLeft as ABL } from "lucide-react";
 import clsx from "clsx";
 import { usePathname, useRouter } from "next/navigation";
+
+const ArrowBigLeft = motion(ABL)
 
 const SidebarDocsCategory = motion(SDC);
 
@@ -15,6 +17,10 @@ declare global {
     interface WindowEventMap {
         "set-docs-category": CustomEvent<{
             docsCategory: (typeof staticDocsData.docsCategories)[number];
+        }>;
+
+        "set-docs-back-button-path": CustomEvent<{
+            path: string
         }>;
     }
 }
@@ -34,14 +40,16 @@ declare global {
 /* }; */
 
 
-
-
 const DocsSidebar = () => {
     const pathname = usePathname()
     const [docsCategory, setDocsCategory] = useState(staticDocsData.docsCategories.find((f) => f.href === pathname));
+    const [backButtonPath, setBackButtonPath] = useState("/docs")
     useEventListener("set-docs-category", (e) =>
         setDocsCategory(e.detail.docsCategory),
     );
+    useEventListener("set-docs-back-button-path", (e) => {
+        setBackButtonPath(e.detail.path)
+    })
     useEffect(() => {
        setDocsCategory(staticDocsData.docsCategories.find((f) => f.href === pathname)) 
     }, [pathname])
@@ -49,27 +57,32 @@ const DocsSidebar = () => {
 
     const handleBackClick = () => {
         if (docsCategory) {
-            router.push("/docs");
+            router.push(backButtonPath);
             setDocsCategory(undefined)
         }
     };
 
     return (
-        <div className={"w-full h-full border-r px-8 pt-8 pb-4"}>
+        <div className={"w-full h-full border-r px-8 pt-8 py-4"}>
             <div
                 className={"w-full flex flex-row justify-center items-center relative"}
             >
-                <ArrowLeftIcon
+                {pathname !== "/docs" && <ArrowBigLeft
                     role="button"
                     className={clsx(
-                        "w-4 h-4 absolute left-4 top-[50%] translate-y-[-50%] transition-all duration-300 cursor-pointer",
-                        pathname === "/docs"
-                            ? "scale-0 opacity-0"
-                            : "scale-100 opacity-100",
+                        "w-6 h-6 absolute left-2 top-[3px] cursor-pointer",
                     )}
                     onClick={handleBackClick}
-                />
-                <h3 className={"px-12 text-xl"}>Documentation</h3>
+                    initial={{
+                        y: -100,
+                        opacity: 0
+                    }}
+                    animate={{
+                        y: 0,
+                        opacity: 1
+                    }}
+                />}
+                <h3 className={"px-12 text-xl pb-3"}>Documentation</h3>
             </div>
             <AnimatePresence>
                 {pathname === "/docs" && (
@@ -80,7 +93,7 @@ const DocsSidebar = () => {
                         title="Components"
                         items={staticDocsData.categories.map((c) => ({
                             label: c,
-                            href: `/docs?category=${c}`,
+                            href: `/docs/user/components?category=${c}`,
                         }))}
                     />
                 )}

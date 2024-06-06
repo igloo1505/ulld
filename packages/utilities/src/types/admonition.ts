@@ -5,8 +5,27 @@ export type AdmonitionType = "info" | "bug" | "note" | "tip" | "faq" | "abstract
 
 /**
  * An admonition is usually used to draw attention to a specific subset of your content. The primary content is passed in as [a child](/docs/user/introToJsx), but quite a few additional properties are available to configure the layout and appearance of the admonition as well. Both the title and footer can contain markdown, but be sure to escape your backslashes by adding another backslash. As mentioned in the [intro to jsx](/docs/user/introToJsx) documentation, this is a limitation of javascript as a whole, and applies to most programming languages where a backslash is required inside of a string.
+ * @example 
+ * ```tsx
+ * <Admonition 
+ * title="Mass Equivalency: $e=mc^2$" 
+ * footer="Man that Einstein guy was smart."
+ * type="info"
+ * dropdown
+ * >
+ *    Following from the 1905 publication of _On the electrodynamics of moving bodies_, Einstein offered a follow up paper, _On the relativity principle and the conclusions drawn from it_ in 1907. 
+ * </Admonition>
+ * ```
+ * #### Output
+ * <Admonition 
+ * title="Mass Equivalency: $e=mc^2$" 
+ * footer="Man that Einstein guy was smart."
+ * type="info"
+ * dropdown
+ * >
+ *    Following from the 1905 publication of _On the electrodynamics of moving bodies_, Einstein offered a follow up paper, _On the relativity principle and the conclusions drawn from it_ in 1907. 
+ * </Admonition>
  * @alpha
- * @includeExample /Users/bigsexy/Desktop/current/ulld/packages/embeddable-components/docs/examples/admonition.mdx
  * @interface
  */
 export interface AdmonitionProps {

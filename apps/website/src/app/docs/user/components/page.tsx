@@ -1,7 +1,8 @@
 import MDXArticle from "#/components/layouts/mdxArticle";
 import MdxList from "#/components/layouts/mdxList/main";
-import { staticDocsData } from "#/staticData/docs";
-import { allDocumentations } from "contentlayer/generated";
+import MathjaxProvider from "#/components/utility/providers/mathjax";
+import InternalReduxProvider from "#/state/provider";
+import { allDocumentations, allStaticDocs } from "contentlayer/generated";
 import React from "react";
 
 interface Props {
@@ -10,12 +11,29 @@ interface Props {
     };
 }
 
-const ComponentDocsPage = ({ searchParams: { category = staticDocsData.categories[0] } }: Props) => {
+const ComponentDocsPage = ({ searchParams: { category } }: Props) => {
     /* let item = allStaticDocs.find((f) => f.id === "docsHome"); */
 
-    const items = allDocumentations.filter((a) => a.category === category).sort((a, b) => b.component > a.component ? 1 : -1)
+    const items = allDocumentations
+        .filter((a) => a.category === category)
+        .sort((a, b) => (b.component > a.component ? 1 : -1));
 
-    return <MdxList items={items}/>
+    if (category) {
+        return <MdxList items={items} />;
+    }
+
+    const componentsHome = allStaticDocs.find((f) => f.id === "componentsHome");
+    if (!componentsHome) {
+        throw new Error("No components home page article found");
+    }
+
+    return (
+        <InternalReduxProvider>
+            <MathjaxProvider>
+                <MDXArticle mdx={componentsHome} paddingTop={false} />
+            </MathjaxProvider>
+        </InternalReduxProvider>
+    );
 };
 
 ComponentDocsPage.displayName = "ComponentDocsPage";

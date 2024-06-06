@@ -1,3 +1,11 @@
+
+// const walkTokens = (token) => {
+//     console.log("token: ", token)
+//   if (token.type === 'heading') {
+//     token.depth += 1;
+//   }
+// };
+
 /** @type {import('typedoc').TypeDocOptions} */
 module.exports = {
     $schema: "https://typedoc.org/schema.json",
@@ -16,6 +24,7 @@ module.exports = {
     sort: ["source-order"],
     // media: "media",
     readme: "./README.md",
+    // basePath: "/docs/user/components",
     mergeReadme: true,
     publicPath: "/",
     expandObjects: true,
@@ -41,13 +50,13 @@ module.exports = {
     // searchGroupBoosts: {
     //     Classes: 1.5,
     // },
-    navigationLinks: {
-        Docs: "https://typedoc.org/guides/overview",
-        GitHub: "https://github.com/TypeStrong/typedoc",
-    },
-    sidebarLinks: {
-        API: "https://typedoc.org/api",
-    },
+    // navigationLinks: {
+    //     Docs: "https://typedoc.org/guides/overview",
+    //     GitHub: "https://github.com/TypeStrong/typedoc",
+    // },
+    // sidebarLinks: {
+    //     API: "https://typedoc.org/api",
+    // },
     plugin: [
         "typedoc-plugin-markdown",
         "typedoc-plugin-remark",
@@ -56,13 +65,22 @@ module.exports = {
         "typedoc-plugin-mdn-links",
         "typedoc-plugin-rename-defaults",
         "typedoc-plugin-missing-exports",
-        "typedoc-plugin-inline-sources",
+        // "typedoc-plugin-inline-sources",
         "typedoc-plugin-zod",
         "typedoc-plugin-include-example",
         "@droppedcode/typedoc-plugin-relative-includes",
         "typedoc-plugin-frontmatter",
-        "../../typedoc/navigation.cjs",
-        "../../typedoc/customFrontMatter.cjs"
+        // "../../typedoc/navigation.cjs",
+        // "../../typedoc/customFrontMatter.cjs"
     ],
+    remarkPlugins: [
+        "unified-prettier",
+        // ["remark-link-rewrite", {
+        //     replacer: (currentUrl) => console.log("currentUrl: ", currentUrl)
+        // }]
+    ],
+    markedOptions: {
+        // walkTokens 
+    }
     // includes: ["typedocIncludes"],
 };

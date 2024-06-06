@@ -4,7 +4,8 @@ import React, { HTMLProps } from "react";
 import { AdmonitionType } from "@ulld/utilities/admonition/types";
 import { useMathjaxDynamicParse } from "@ulld/hooks/useMathjaxDynamicParse";
 import { useMemoizedIcon } from "../../../hooks/useMemoizedIcon";
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown } from "lucide-react";
+import { MathJax } from "better-react-mathjax";
 
 export interface AdmonitionTitleProps extends HTMLProps<HTMLDivElement> {
     title: string;
@@ -30,7 +31,7 @@ export const AdmonitionTitle = ({
         <div
             {...props}
             className={cn(
-                "title w-full flex flex-row justify-start items-center text-lg px-4 py-2 rounded-tl-lg rounded-tr-lg  relative z-[10] grid place-items-center",
+                "title not-prose w-full flex flex-row justify-start items-center text-lg px-4 py-2 rounded-tl-lg rounded-tr-lg  relative z-[10] grid place-items-center",
                 dropdown ? "grid-cols-[1fr_2rem] cursor-pointer" : "grid-cols-1",
                 props.className,
             )}
@@ -45,12 +46,18 @@ export const AdmonitionTitle = ({
                     className={cn(
                         "admonition-title flex flex-row flex-wrap flex-grow font-bold tracking-wide inlineMath relative",
                         titleBold && "font-semibold",
-                        dropdown && "mr-8"
+                        dropdown && "mr-8",
                     )}
                 >
-                    {title}
+                    <MathJax>{title}</MathJax>
                 </div>
-                {dropdown && <ChevronDown className={"absolute right-4 top-[50%] translate-y-[-50%] group-data-[state=open]/fold:rotate-180 transition-transform duration-300"} />}
+                {dropdown && (
+                    <ChevronDown
+                        className={
+                            "absolute right-4 top-[50%] translate-y-[-50%] group-data-[state=open]/fold:rotate-180 transition-transform duration-300"
+                        }
+                    />
+                )}
             </div>
         </div>
     );

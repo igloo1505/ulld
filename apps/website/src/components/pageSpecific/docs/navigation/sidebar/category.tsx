@@ -1,6 +1,9 @@
-import Link from "next/link";
+import NextLink from "next/link";
 import React, { ForwardedRef, ReactNode, forwardRef } from "react";
 import { DocsSidebarLink } from "./types";
+import { motion } from "framer-motion";
+
+const Link = motion(NextLink)
 
 interface SidebarDocsCategoryProps {
     items: DocsSidebarLink[];
@@ -8,7 +11,7 @@ interface SidebarDocsCategoryProps {
 }
 
 const linkClassName =
-    "w-full text-muted-foreground hover:text-foreground transition-colors duration-300 px-3 py-2";
+    "w-full text-muted-foreground hover:text-foreground transition-colors duration-300 px-3 py-1";
 
 const SidebarDocsCategory = forwardRef(
     (
@@ -31,6 +34,18 @@ const SidebarDocsCategory = forwardRef(
                                     key={i}
                                     className={linkClassName}
                                     onClick={c.onClick}
+                                    initial={{
+                                        x: -300,
+                                    }}
+                                    animate={{
+                                        x: 0
+                                    }}
+                                    exit={{
+                                        x: -300
+                                    }}
+                                    transition={{
+                                        delay: i * 0.15
+                                    }}
                                 >
                                     {c.label}
                                 </Link>
