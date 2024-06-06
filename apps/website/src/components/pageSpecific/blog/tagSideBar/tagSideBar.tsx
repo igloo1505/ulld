@@ -1,10 +1,12 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import TagList from "./tagList";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { XIcon } from "lucide-react";
 import { navbarButtonClasses } from "#/components/layouts/navbar/navbarButtonGroup";
 import NavbarButtonPortal from "#/components/utility/portals/navbar";
+import Backdrop from "#/components/utility/backdrop";
+import { toggleBlogSidebar } from "#/lib/actions/client";
 interface BlogTagSideBarProps { }
 
 
@@ -18,14 +20,14 @@ const BlogTagSideBar = ({ }: BlogTagSideBarProps) => {
     const footer = useRef<HTMLDivElement | null>(null!);
     const buttonRef = useRef<HTMLButtonElement>(null!);
     const y = useRef<number>(null!);
+    const pn = usePathname()
 
     const getSidebarPosition = (currentScrollPosition: number) => {
         if (footer.current) {
             let footerDiff =
                 window.innerHeight +
                 currentScrollPosition -
-                footer.current?.offsetTop -
-                76;
+                footer.current?.offsetTop;
             if (footerDiff > 0) {
                 return -footerDiff - 76;
             }
@@ -49,6 +51,7 @@ const BlogTagSideBar = ({ }: BlogTagSideBarProps) => {
     const handleScroll = () => {
         let newPosition = getSidebarPosition(window.scrollY);
         ref.current.style.transform = `translateY(${newPosition}px)`;
+        ref.current.style.height = `${Math.min(window.innerHeight, window.innerHeight - (76 - window.scrollY))}px`
         y.current = newPosition;
     };
 
@@ -63,21 +66,6 @@ const BlogTagSideBar = ({ }: BlogTagSideBarProps) => {
             ? [t]
             : ([] as string[]);
 
-    const toggleOpen = () => {
-        let em = document.getElementById("blog-layout");
-        if (!em) return;
-        let isOpen = !em?.classList.contains("open");
-        em.classList.add("transitioning");
-        em.ontransitionend = () => em.classList.remove("transitioning")
-        if (isOpen) {
-            em.classList.add("open");
-            buttonRef.current.style.color = "hsl(var(--foreground))";
-            return;
-        }
-        em.classList.remove("open");
-        buttonRef.current.style.color = "hsl(var(--muted-foreground))";
-        /* setTimeout(() => em.classList.remove("transitioning"), 400) */
-        };
 
     /* TODO: A *horrible* approach to avoiding the flashing of a misaligned sidebar, but for now it's going to have to be good enough. Look further into this when on wifi. */
     /* if (!hasSetInitialPosition) return null; */
@@ -86,14 +74,18 @@ const BlogTagSideBar = ({ }: BlogTagSideBarProps) => {
         <div
             ref={ref}
             className={
-                "h-screen-noNav border-r w-[300px] fixed top-[76px] left-[-300px] group-[.open]/blogLayout:left-0 hidden blogMobile:block transition-[left] duration-300 bg-background z-10"
+                "h-screen-noNav border-r w-[300px] fixed top-[76px] left-[-300px] group-[.open]/blogLayout:left-0 hidden blogMobile:block transition-[left] duration-300 bg-background z-50"
             }
         >
+            {pn !== "/blog" && <Backdrop
+                onClose={() => toggleBlogSidebar({buttonRef})}
+            />}
             <NavbarButtonPortal>
                 <button
-                    onClick={toggleOpen}
+                    onClick={() => toggleBlogSidebar({buttonRef})}
                     ref={buttonRef}
                     className={navbarButtonClasses}
+                    id="navbar-blog-sidebar-toggle"
                 >
                     Explore
                 </button>
@@ -101,7 +93,7 @@ const BlogTagSideBar = ({ }: BlogTagSideBarProps) => {
             <div
                 className={"relative"}
             >
-                <button className={"top-4 right-4 absolute"} onClick={toggleOpen}>
+                <button className={"top-4 right-4 absolute"} onClick={() => toggleBlogSidebar({buttonRef})}>
                     <XIcon
                         className={
                             "text-muted-foreground hover:text-foreground transition-colors duration-300 w-3 h-3"

@@ -1,11 +1,11 @@
 // @ts-check
-import { ReflectionKind } from "typedoc";
-import { MarkdownPageEvent } from "typedoc-plugin-markdown";
+const { ReflectionKind } = require("typedoc");
+const { MarkdownPageEvent } = require("typedoc-plugin-markdown");
 
 /**
  * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
  */
-export function load(app) {
+function load(app) {
   app.renderer.on(
     MarkdownPageEvent.BEGIN,
     /** @param {import('typedoc-plugin-markdown').MarkdownPageEvent} page */
@@ -28,3 +28,5 @@ export function load(app) {
     }
   );
 }
+
+module.exports = { load }

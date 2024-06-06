@@ -107,7 +107,7 @@ importers:
         version: 10.9.2(@swc/core@1.5.7(@swc/helpers@0.5.11))(@types/node@20.12.12)(typescript@5.4.5)
       turbo:
         specifier: latest
-        version: 1.13.3
+        version: 2.0.1
       typedoc:
         specifier: ^0.25.13
         version: 0.25.13(typescript@5.4.5)
@@ -296,7 +296,7 @@ importers:
         version: 14.2.3(@mdx-js/loader@3.0.1(webpack@5.91.0(@swc/core@1.5.7(@swc/helpers@0.5.11))(esbuild@0.19.12)))(@mdx-js/react@3.0.1(@types/react@18.3.2)(react@18.3.1))
       '@prisma/client':
         specifier: latest
-        version: 5.14.0(prisma@5.14.0)
+        version: 5.15.0(prisma@5.15.0)
       '@repo/jest-presets':
         specifier: workspace:*
         version: link:../../packages/jest-presets
@@ -365,7 +365,7 @@ importers:
         version: 14.2.3(@babel/core@7.24.5)(@opentelemetry/api@1.8.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.2)
       prisma:
         specifier: latest
-        version: 5.14.0
+        version: 5.15.0
       raw-loader:
         specifier: ^4.0.2
         version: 4.0.2(webpack@5.91.0(@swc/core@1.5.7(@swc/helpers@0.5.11))(esbuild@0.19.12))
@@ -444,10 +444,10 @@ importers:
         version: 14.2.3(next@14.2.3(@babel/core@7.24.5)(@opentelemetry/api@1.8.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.2))(react@18.3.1)
       '@prisma/client':
         specifier: latest
-        version: 5.14.0(prisma@5.14.0)
+        version: 5.15.0(prisma@5.15.0)
       '@prisma/nextjs-monorepo-workaround-plugin':
         specifier: latest
-        version: 5.14.0
+        version: 5.15.0
       '@react-spring/three':
         specifier: ^9.7.3
         version: 9.7.3(@react-three/fiber@8.16.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(react@18.3.1)(three@0.163.0)
@@ -630,7 +630,7 @@ importers:
         version: 6.35.4(three@0.163.0)
       prisma:
         specifier: latest
-        version: 5.14.0
+        version: 5.15.0
       raw-loader:
         specifier: ^4.0.2
         version: 4.0.2(webpack@5.91.0(@swc/core@1.5.7(@swc/helpers@0.5.11))(esbuild@0.20.2))
@@ -793,7 +793,7 @@ importers:
         version: 14.2.3(@mdx-js/loader@3.0.1(webpack@5.91.0(@swc/core@1.5.7(@swc/helpers@0.5.11))(esbuild@0.20.2)))(@mdx-js/react@3.0.1(@types/react@18.3.2)(react@18.3.1))
       '@prisma/client':
         specifier: latest
-        version: 5.14.0(prisma@5.14.0)
+        version: 5.15.0(prisma@5.15.0)
       '@reduxjs/toolkit':
         specifier: ^1.9.5
         version: 1.9.7(react-redux@8.1.3(@types/react-dom@18.3.0)(@types/react@18.3.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(redux@4.2.1))(react@18.3.1)
@@ -995,7 +995,7 @@ importers:
         version: 0.10.0
       prisma:
         specifier: latest
-        version: 5.14.0
+        version: 5.15.0
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -1705,8 +1705,8 @@ importers:
         specifier: ^14.0.0
         version: 14.2.3(@mdx-js/loader@3.0.1(webpack@5.91.0(@swc/core@1.5.7(@swc/helpers@0.5.11))(esbuild@0.19.12)))(@mdx-js/react@3.0.1(@types/react@18.3.2)(react@18.3.1))
       '@prisma/client':
-        specifier: ^5.10.2
-        version: 5.14.0(prisma@5.14.0)
+        specifier: ^5.15.0
+        version: 5.15.0(prisma@5.15.0)
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../config-typescript
@@ -1715,7 +1715,7 @@ importers:
         version: 14.2.3(@babel/core@7.24.5)(@opentelemetry/api@1.8.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.2)
       prisma:
         specifier: latest
-        version: 5.14.0
+        version: 5.15.0
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -2352,12 +2352,36 @@ importers:
       typedoc:
         specifier: ^0.25.13
         version: 0.25.13(typescript@5.4.5)
+      typedoc-github-wiki-theme:
+        specifier: ^2.0.0
+        version: 2.0.0(typedoc-plugin-markdown@4.0.3(typedoc@0.25.13(typescript@5.4.5)))
       typedoc-plugin-coverage:
         specifier: ^3.1.1
         version: 3.1.1(typedoc@0.25.13(typescript@5.4.5))
+      typedoc-plugin-frontmatter:
+        specifier: ^1.0.0
+        version: 1.0.0(typedoc-plugin-markdown@4.0.3(typedoc@0.25.13(typescript@5.4.5)))
+      typedoc-plugin-include-example:
+        specifier: ^1.2.0
+        version: 1.2.0(typedoc@0.25.13(typescript@5.4.5))
+      typedoc-plugin-inline-sources:
+        specifier: ^1.0.2
+        version: 1.0.2(typedoc@0.25.13(typescript@5.4.5))
       typedoc-plugin-markdown:
         specifier: ^4.0.3
         version: 4.0.3(typedoc@0.25.13(typescript@5.4.5))
+      typedoc-plugin-mdn-links:
+        specifier: ^3.1.28
+        version: 3.1.28(typedoc@0.25.13(typescript@5.4.5))
+      typedoc-plugin-missing-exports:
+        specifier: ^2.2.0
+        version: 2.2.0(typedoc@0.25.13(typescript@5.4.5))
+      typedoc-plugin-remark:
+        specifier: ^1.0.1
+        version: 1.0.1(typedoc-plugin-markdown@4.0.3(typedoc@0.25.13(typescript@5.4.5)))
+      typedoc-plugin-rename-defaults:
+        specifier: ^0.7.0
+        version: 0.7.0(typedoc@0.25.13(typescript@5.4.5))
       typedoc-plugin-zod:
         specifier: ^1.1.2
         version: 1.1.2(typedoc@0.25.13(typescript@5.4.5))
@@ -4284,7 +4308,7 @@ importers:
         version: 14.2.3(@mdx-js/loader@3.0.1(webpack@5.91.0(@swc/core@1.5.7(@swc/helpers@0.5.11))(esbuild@0.19.12)))(@mdx-js/react@3.0.1(@types/react@18.3.2)(react@18.3.1))
       '@prisma/client':
         specifier: latest
-        version: 5.14.0(prisma@5.14.0)
+        version: 5.15.0(prisma@5.15.0)
       '@radix-ui/colors':
         specifier: ^3.0.0
         version: 3.0.0
@@ -4560,7 +4584,7 @@ importers:
         version: 2.32.0(mapbox-gl@1.13.3)
       prisma:
         specifier: latest
-        version: 5.14.0
+        version: 5.15.0
       react-big-calendar:
         specifier: ^1.11.1
         version: 1.12.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8344,8 +8368,8 @@ packages:
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
 
-  '@prisma/client@5.14.0':
-    resolution: {integrity: sha512-akMSuyvLKeoU4LeyBAUdThP/uhVP3GuLygFE3MlYzaCb3/J8SfsYBE5PkaFuLuVpLyA6sFoW+16z/aPhNAESqg==}
+  '@prisma/client@5.15.0':
+    resolution: {integrity: sha512-wPTeTjbd2Q0abOeffN7zCDCbkp9C9cF+e9HPiI64lmpehyq2TepgXE+sY7FXr7Rhbb21prLMnhXX27/E11V09w==}
     engines: {node: '>=16.13'}
     peerDependencies:
       prisma: '*'
@@ -8353,23 +8377,23 @@ packages:
       prisma:
         optional: true
 
-  '@prisma/debug@5.14.0':
-    resolution: {integrity: sha512-iq56qBZuFfX3fCxoxT8gBX33lQzomBU0qIUaEj1RebsKVz1ob/BVH1XSBwwwvRVtZEV1b7Fxx2eVu34Ge/mg3w==}
+  '@prisma/debug@5.15.0':
+    resolution: {integrity: sha512-QpEAOjieLPc/4sMny/WrWqtpIAmBYsgqwWlWwIctqZO0AbhQ9QcT6x2Ut3ojbDo/pFRCCA1Z1+xm2MUy7fAkZA==}
 
-  '@prisma/engines-version@5.14.0-25.e9771e62de70f79a5e1c604a2d7c8e2a0a874b48':
-    resolution: {integrity: sha512-ip6pNkRo1UxWv+6toxNcYvItNYaqQjXdFNGJ+Nuk2eYtRoEdoF13wxo7/jsClJFFenMPVNVqXQDV0oveXnR1cA==}
+  '@prisma/engines-version@5.15.0-29.12e25d8d06f6ea5a0252864dd9a03b1bb51f3022':
+    resolution: {integrity: sha512-3BEgZ41Qb4oWHz9kZNofToRvNeS4LZYaT9pienR1gWkjhky6t6K1NyeWNBkqSj2llgraUNbgMOCQPY4f7Qp5wA==}
 
-  '@prisma/engines@5.14.0':
-    resolution: {integrity: sha512-lgxkKZ6IEygVcw6IZZUlPIfLQ9hjSYAtHjZ5r64sCLDgVzsPFCi2XBBJgzPMkOQ5RHzUD4E/dVdpn9+ez8tk1A==}
+  '@prisma/engines@5.15.0':
+    resolution: {integrity: sha512-hXL5Sn9hh/ZpRKWiyPA5GbvF3laqBHKt6Vo70hYqqOhh5e0ZXDzHcdmxNvOefEFeqxra2DMz2hNbFoPvqrVe1w==}
 
-  '@prisma/fetch-engine@5.14.0':
-    resolution: {integrity: sha512-VrheA9y9DMURK5vu8OJoOgQpxOhas3qF0IBHJ8G/0X44k82kc8E0w98HCn2nhnbOOMwbWsJWXfLC2/F8n5u0gQ==}
+  '@prisma/fetch-engine@5.15.0':
+    resolution: {integrity: sha512-z6AY5yyXxc20Klj7wwnfGP0iIUkVKzybqapT02zLYR/nf9ynaeN8bq73WRmi1TkLYn+DJ5Qy+JGu7hBf1pE78A==}
 
-  '@prisma/get-platform@5.14.0':
-    resolution: {integrity: sha512-/yAyBvcEjRv41ynZrhdrPtHgk47xLRRq/o5eWGcUpBJ1YrUZTYB8EoPiopnP7iQrMATK8stXQdPOoVlrzuTQZw==}
+  '@prisma/get-platform@5.15.0':
+    resolution: {integrity: sha512-1GULDkW4+/VQb73vihxCBSc4Chc2x88MA+O40tcZFjmBzG4/fF44PaXFxUqKSFltxU9L9GIMLhh0Gfkk/pUbtg==}
 
-  '@prisma/nextjs-monorepo-workaround-plugin@5.14.0':
-    resolution: {integrity: sha512-g7uES5FqXVW3YhpaJdjbcwKuFoPqMRGPB3b3z3pBsy53muSy1AkW8ew1LDZWgpBnyJfASCExQcMfFJYEZMqnRw==}
+  '@prisma/nextjs-monorepo-workaround-plugin@5.15.0':
+    resolution: {integrity: sha512-aIrt8gkTIcZz+kNWV3MwnsHQfGOIoFRK8GsmPPIZWqinGSpPZ729fH7T1Jwlbo+YyUaVPgI1HCsBKRl1qn6d0g==}
 
   '@protobufjs/aspromise@1.1.2':
     resolution: {integrity: sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ==}
@@ -11588,6 +11612,10 @@ packages:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
 
+  camelcase@8.0.0:
+    resolution: {integrity: sha512-8WB3Jcas3swSvjIeA2yvCJ+Miyz5l1ZmB6HFb9R1317dt9LCQoswg/BGrmAmkWVEszSrrg4RwmO46qIm2OEnSA==}
+    engines: {node: '>=16'}
+
   camelize@1.0.1:
     resolution: {integrity: sha512-dU+Tx2fsypxTgtLoE36npi3UqcjSSMNYfkqgmoEhtZrraP5VWq0K7FkWVTYa8eMPtnU/G2txVsfdCJTn9uzpuQ==}
 
@@ -14145,10 +14173,12 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   glob@8.1.0:
     resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
     engines: {node: '>=12'}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   global-dirs@3.0.1:
     resolution: {integrity: sha512-NBcGGFbBA9s1VzD41QXDG+3++t9Mn5t1FpLdhESY6oKY4gYTFpX4wO3sqGUa0Srjtbfj3szX0RnemmrVRUdULA==}
@@ -14752,6 +14782,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -18015,8 +18046,8 @@ packages:
       opusscript:
         optional: true
 
-  prisma@5.14.0:
-    resolution: {integrity: sha512-gCNZco7y5XtjrnQYeDJTiVZmT/ncqCr5RY1/Cf8X2wgLRmyh9ayPAGBNziI4qEE4S6SxCH5omQLVo9lmURaJ/Q==}
+  prisma@5.15.0:
+    resolution: {integrity: sha512-JA81ACQSCi3a7NUOgonOIkdx8PAVkO+HbUOxmd00Yb8DgIIEpr2V9+Qe/j6MLxIgWtE/OtVQ54rVjfYRbZsCfw==}
     engines: {node: '>=16.13'}
     hasBin: true
 
@@ -19026,10 +19057,12 @@ packages:
 
   rimraf@2.6.3:
     resolution: {integrity: sha512-mwqeW5XsA2qAejG46gYdENaxXjx9onRNCfn7L0duuP4hCuTIi/QO7PDK07KJfp1d+izWPrzEJDcSqBa0OZQriA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   robust-predicates@3.0.2:
@@ -20425,38 +20458,38 @@ packages:
   tunnel-rat@0.1.2:
     resolution: {integrity: sha512-lR5VHmkPhzdhrM092lI2nACsLO4QubF0/yoOhzX7c+wIpbN1GjHNzCc91QlpxBi+cnx8vVJ+Ur6vL5cEoQPFpQ==}
 
-  turbo-darwin-64@1.13.3:
-    resolution: {integrity: sha512-glup8Qx1qEFB5jerAnXbS8WrL92OKyMmg5Hnd4PleLljAeYmx+cmmnsmLT7tpaVZIN58EAAwu8wHC6kIIqhbWA==}
+  turbo-darwin-64@2.0.1:
+    resolution: {integrity: sha512-GO391pUmI6c6l/EpUIaXNzwbVDWRvYahm5oLB176dAWRYKYO+Osqs/XBdOM0G3l7ZFdR6nUtRJc8qinJp7qDUQ==}
     cpu: [x64]
     os: [darwin]
 
-  turbo-darwin-arm64@1.13.3:
-    resolution: {integrity: sha512-/np2xD+f/+9qY8BVtuOQXRq5f9LehCFxamiQnwdqWm5iZmdjygC5T3uVSYuagVFsZKMvX3ycySwh8dylGTl6lg==}
+  turbo-darwin-arm64@2.0.1:
+    resolution: {integrity: sha512-rmjJoxeq7nmH/F2aWKapahrDE2zE2Uc15rvs4Rz6qHOzSqC8R5uyLpQyTKIPIZ95O/z9nKfLfVPyiRENuk5vpw==}
     cpu: [arm64]
     os: [darwin]
 
-  turbo-linux-64@1.13.3:
-    resolution: {integrity: sha512-G+HGrau54iAnbXLfl+N/PynqpDwi/uDzb6iM9hXEDG+yJnSJxaHMShhOkXYJPk9offm9prH33Khx2scXrYVW1g==}
+  turbo-linux-64@2.0.1:
+    resolution: {integrity: sha512-vwTOc4v4jm6tM+9WlsiDlN+zwHP8A2wlsAYiNqz2u0DZL55aCWaVdivh2VpVLN36Mr9HgREGH0Fw+jx6ObcNRg==}
     cpu: [x64]
     os: [linux]
 
-  turbo-linux-arm64@1.13.3:
-    resolution: {integrity: sha512-qWwEl5VR02NqRyl68/3pwp3c/olZuSp+vwlwrunuoNTm6JXGLG5pTeme4zoHNnk0qn4cCX7DFrOboArlYxv0wQ==}
+  turbo-linux-arm64@2.0.1:
+    resolution: {integrity: sha512-DkVt76fjwY940DfmqznWhpYIlKYduvKAoTtylkERrDlcWUpDYWwqNbcf9PRRIbnjnv9lIxvuom1KZmMY+cw/Ig==}
     cpu: [arm64]
     os: [linux]
 
-  turbo-windows-64@1.13.3:
-    resolution: {integrity: sha512-Nudr4bRChfJzBPzEmpVV85VwUYRCGKecwkBFpbp2a4NtrJ3+UP1VZES653ckqCu2FRyRuS0n03v9euMbAvzH+Q==}
+  turbo-windows-64@2.0.1:
+    resolution: {integrity: sha512-XskV34kYuXVIHbRbgH8jr35Y8uA6kJOQ0LJStU4jFk7piiyk0a4n2GNDymMtvIwAxYdbuTe+pKuPCThFdirHBQ==}
     cpu: [x64]
     os: [win32]
 
-  turbo-windows-arm64@1.13.3:
-    resolution: {integrity: sha512-ouJCgsVLd3icjRLmRvHQDDZnmGzT64GBupM1Y+TjtYn2LVaEBoV6hicFy8x5DUpnqdLy+YpCzRMkWlwhmkX7sQ==}
+  turbo-windows-arm64@2.0.1:
+    resolution: {integrity: sha512-R2/RmKr2uQxkOCtXK5LNxdD3Iv7lUm56iy2FrDwTDgPI7X7K6WRjrxdirmFIu/fABYE5n6EampU3ejbG5mmGtg==}
     cpu: [arm64]
     os: [win32]
 
-  turbo@1.13.3:
-    resolution: {integrity: sha512-n17HJv4F4CpsYTvKzUJhLbyewbXjq1oLCi90i5tW1TiWDz16ML1eDG7wi5dHaKxzh5efIM56SITnuVbMq5dk4g==}
+  turbo@2.0.1:
+    resolution: {integrity: sha512-sJhxfBaN14pYj//xxAG6zAyStkE2j4HI9JVXVMob35SGob6dz/HuSqV/4QlVqw0uKAkwc1lXIsnykbe8RLmOOw==}
     hasBin: true
 
   tweetnacl@0.14.5:
@@ -20570,6 +20603,12 @@ packages:
     peerDependencies:
       typedoc: ^0.25.1
 
+  typedoc-plugin-inline-sources@1.0.2:
+    resolution: {integrity: sha512-J1L2Ky6t5EeAI2fTqhcRii/ntxYN6lSPyKiaTKc/MIHgMTDh81elRvXPZFmvy+xMY9EEE9nlkUujfLGNo5c5Tw==}
+    engines: {node: '>= 10.8.0'}
+    peerDependencies:
+      typedoc: ^0.25.7
+
   typedoc-plugin-markdown@4.0.3:
     resolution: {integrity: sha512-0tZbeVGGCd4+lpoIX+yHWgUfyaLZCQCgJOpuVdTtOtD3+jKaedJ4sl/tkNaYBPeWVKiyDkSHfGuHkq53jlzIFg==}
     peerDependencies:
@@ -20580,10 +20619,20 @@ packages:
     peerDependencies:
       typedoc: '>= 0.23.14 || 0.24.x || 0.25.x'
 
+  typedoc-plugin-missing-exports@2.2.0:
+    resolution: {integrity: sha512-2+XR1IcyQ5UwXZVJe9NE6HrLmNufT9i5OwoIuuj79VxuA3eYq+Y6itS9rnNV1D7UeQnUSH8kISYD73gHE5zw+w==}
+    peerDependencies:
+      typedoc: 0.24.x || 0.25.x
+
   typedoc-plugin-remark@1.0.1:
     resolution: {integrity: sha512-6dIflOxIaSiPkojD07neyTV5iipbhgMZyRcRi5C4UPYm5HMmww897ZhBezU8W73kS/zXWMsH53uw2bk1o+/+Jg==}
     peerDependencies:
       typedoc-plugin-markdown: '>=4.0.0'
+
+  typedoc-plugin-rename-defaults@0.7.0:
+    resolution: {integrity: sha512-NudSQ1o/XLHNF9c4y7LzIZxfE9ltz09yCDklBPJpP5VMRvuBpYGIbQ0ZgmPz+EIV8vPx9Z/OyKwzp4HT2vDtfg==}
+    peerDependencies:
+      typedoc: 0.22.x || 0.23.x || 0.24.x || 0.25.x
 
   typedoc-plugin-zod@1.1.2:
     resolution: {integrity: sha512-jsmuYg1xsGjwKdhKN4tgRYORnbKpU7v5B1ZpsazMH5lUsI6ZLxBqAY5iiZ06oz/01gHOsAdhpABgWD97MOjKQA==}
@@ -21590,10 +21639,10 @@ snapshots:
       '@babel/helpers': 7.24.5
       '@babel/parser': 7.24.5
       '@babel/template': 7.24.0
-      '@babel/traverse': 7.24.5(supports-color@5.5.0)
+      '@babel/traverse': 7.24.5
       '@babel/types': 7.24.5
       convert-source-map: 2.0.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -21656,7 +21705,7 @@ snapshots:
       '@babel/core': 7.24.5
       '@babel/helper-compilation-targets': 7.23.6
       '@babel/helper-plugin-utils': 7.24.5
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       lodash.debounce: 4.0.8
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -21737,7 +21786,7 @@ snapshots:
   '@babel/helpers@7.24.5':
     dependencies:
       '@babel/template': 7.24.0
-      '@babel/traverse': 7.24.5(supports-color@5.5.0)
+      '@babel/traverse': 7.24.5
       '@babel/types': 7.24.5
     transitivePeerDependencies:
       - supports-color
@@ -22352,6 +22401,21 @@ snapshots:
       '@babel/code-frame': 7.24.2
       '@babel/parser': 7.24.5
       '@babel/types': 7.24.5
+
+  '@babel/traverse@7.24.5':
+    dependencies:
+      '@babel/code-frame': 7.24.2
+      '@babel/generator': 7.24.5
+      '@babel/helper-environment-visitor': 7.22.20
+      '@babel/helper-function-name': 7.23.0
+      '@babel/helper-hoist-variables': 7.22.5
+      '@babel/helper-split-export-declaration': 7.24.5
+      '@babel/parser': 7.24.5
+      '@babel/types': 7.24.5
+      debug: 4.3.4(supports-color@8.1.1)
+      globals: 11.12.0
+    transitivePeerDependencies:
+      - supports-color
 
   '@babel/traverse@7.24.5(supports-color@5.5.0)':
     dependencies:
@@ -23622,7 +23686,7 @@ snapshots:
   '@esbuild-plugins/node-resolve@0.1.4(esbuild@0.20.2)':
     dependencies:
       '@types/resolve': 1.20.6
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       esbuild: 0.20.2
       escape-string-regexp: 4.0.0
       resolve: 1.22.8
@@ -23777,7 +23841,7 @@ snapshots:
   '@eslint/eslintrc@3.0.2':
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       espree: 10.0.1
       globals: 14.0.0
       ignore: 5.3.1
@@ -24001,7 +24065,7 @@ snapshots:
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -25238,7 +25302,7 @@ snapshots:
     dependencies:
       '@oclif/core': 3.26.6
       chalk: 5.3.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       ejs: 3.1.10
     transitivePeerDependencies:
       - supports-color
@@ -25256,7 +25320,7 @@ snapshots:
     dependencies:
       '@oclif/core': 3.26.6
       chalk: 5.3.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       npm: 10.8.0
       npm-package-arg: 11.0.2
       npm-run-path: 5.3.0
@@ -25682,32 +25746,32 @@ snapshots:
 
   '@popperjs/core@2.11.8': {}
 
-  '@prisma/client@5.14.0(prisma@5.14.0)':
+  '@prisma/client@5.15.0(prisma@5.15.0)':
     optionalDependencies:
-      prisma: 5.14.0
+      prisma: 5.15.0
 
-  '@prisma/debug@5.14.0': {}
+  '@prisma/debug@5.15.0': {}
 
-  '@prisma/engines-version@5.14.0-25.e9771e62de70f79a5e1c604a2d7c8e2a0a874b48': {}
+  '@prisma/engines-version@5.15.0-29.12e25d8d06f6ea5a0252864dd9a03b1bb51f3022': {}
 
-  '@prisma/engines@5.14.0':
+  '@prisma/engines@5.15.0':
     dependencies:
-      '@prisma/debug': 5.14.0
-      '@prisma/engines-version': 5.14.0-25.e9771e62de70f79a5e1c604a2d7c8e2a0a874b48
-      '@prisma/fetch-engine': 5.14.0
-      '@prisma/get-platform': 5.14.0
+      '@prisma/debug': 5.15.0
+      '@prisma/engines-version': 5.15.0-29.12e25d8d06f6ea5a0252864dd9a03b1bb51f3022
+      '@prisma/fetch-engine': 5.15.0
+      '@prisma/get-platform': 5.15.0
 
-  '@prisma/fetch-engine@5.14.0':
+  '@prisma/fetch-engine@5.15.0':
     dependencies:
-      '@prisma/debug': 5.14.0
-      '@prisma/engines-version': 5.14.0-25.e9771e62de70f79a5e1c604a2d7c8e2a0a874b48
-      '@prisma/get-platform': 5.14.0
+      '@prisma/debug': 5.15.0
+      '@prisma/engines-version': 5.15.0-29.12e25d8d06f6ea5a0252864dd9a03b1bb51f3022
+      '@prisma/get-platform': 5.15.0
 
-  '@prisma/get-platform@5.14.0':
+  '@prisma/get-platform@5.15.0':
     dependencies:
-      '@prisma/debug': 5.14.0
+      '@prisma/debug': 5.15.0
 
-  '@prisma/nextjs-monorepo-workaround-plugin@5.14.0': {}
+  '@prisma/nextjs-monorepo-workaround-plugin@5.15.0': {}
 
   '@protobufjs/aspromise@1.1.2': {}
 
@@ -28373,7 +28437,7 @@ snapshots:
       '@typescript-eslint/type-utils': 6.21.0(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/utils': 6.21.0(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/visitor-keys': 6.21.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       eslint: 9.2.0
       graphemer: 1.4.0
       ignore: 5.3.1
@@ -28391,7 +28455,7 @@ snapshots:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.4.5)
       '@typescript-eslint/visitor-keys': 6.21.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       eslint: 9.2.0
     optionalDependencies:
       typescript: 5.4.5
@@ -28417,7 +28481,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.4.5)
       '@typescript-eslint/utils': 6.21.0(eslint@9.2.0)(typescript@5.4.5)
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       eslint: 9.2.0
       ts-api-utils: 1.3.0(typescript@5.4.5)
     optionalDependencies:
@@ -28435,7 +28499,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 5.62.0
       '@typescript-eslint/visitor-keys': 5.62.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.6.2
@@ -28449,7 +28513,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/visitor-keys': 6.21.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
@@ -28464,7 +28528,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 7.9.0
       '@typescript-eslint/visitor-keys': 7.9.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.4
@@ -28532,7 +28596,7 @@ snapshots:
 
   '@typescript/vfs@1.5.0':
     dependencies:
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -28934,13 +28998,13 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
   agent-base@7.1.1:
     dependencies:
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -29648,6 +29712,8 @@ snapshots:
   camelcase@5.3.1: {}
 
   camelcase@6.3.0: {}
+
+  camelcase@8.0.0: {}
 
   camelize@1.0.1: {}
 
@@ -31635,7 +31701,7 @@ snapshots:
 
   eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@9.2.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1)(eslint@9.2.0):
     dependencies:
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       enhanced-resolve: 5.16.1
       eslint: 9.2.0
       eslint-module-utils: 2.8.1(@typescript-eslint/parser@6.21.0(eslint@9.2.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@9.2.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1)(eslint@9.2.0))(eslint@9.2.0)
@@ -31931,7 +31997,7 @@ snapshots:
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.3
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       escape-string-regexp: 4.0.0
       eslint-scope: 8.0.1
       eslint-visitor-keys: 4.0.0
@@ -33425,14 +33491,14 @@ snapshots:
     dependencies:
       '@tootallnate/once': 2.0.0
       agent-base: 6.0.2
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
   http-proxy-agent@7.0.2:
     dependencies:
       agent-base: 7.1.1
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -33450,14 +33516,14 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
   https-proxy-agent@7.0.4:
     dependencies:
       agent-base: 7.1.1
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -33934,7 +34000,7 @@ snapshots:
 
   istanbul-lib-source-maps@4.0.1:
     dependencies:
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       istanbul-lib-coverage: 3.2.2
       source-map: 0.6.1
     transitivePeerDependencies:
@@ -36094,7 +36160,7 @@ snapshots:
 
   micromark@2.11.4:
     dependencies:
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       parse-entities: 2.0.0
     transitivePeerDependencies:
       - supports-color
@@ -36102,7 +36168,7 @@ snapshots:
   micromark@3.2.0:
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       decode-named-character-reference: 1.0.2
       micromark-core-commonmark: 1.1.0
       micromark-factory-space: 1.1.0
@@ -36124,7 +36190,7 @@ snapshots:
   micromark@4.0.0:
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       decode-named-character-reference: 1.0.2
       devlop: 1.1.0
       micromark-core-commonmark: 2.0.1
@@ -36577,7 +36643,7 @@ snapshots:
 
   nock@13.5.4:
     dependencies:
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       json-stringify-safe: 5.0.1
       propagate: 2.0.1
     transitivePeerDependencies:
@@ -37820,9 +37886,9 @@ snapshots:
 
   prism-media@1.3.5: {}
 
-  prisma@5.14.0:
+  prisma@5.15.0:
     dependencies:
-      '@prisma/engines': 5.14.0
+      '@prisma/engines': 5.15.0
 
   prismjs@1.29.0: {}
 
@@ -39180,7 +39246,7 @@ snapshots:
   rollup-plugin-esbuild@6.1.1(esbuild@0.19.12)(rollup@4.17.2):
     dependencies:
       '@rollup/pluginutils': 5.1.0(rollup@4.17.2)
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       es-module-lexer: 1.5.3
       esbuild: 0.19.12
       get-tsconfig: 4.7.5
@@ -39646,7 +39712,7 @@ snapshots:
   simple-peer@9.11.1:
     dependencies:
       buffer: 6.0.3
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       err-code: 3.0.1
       get-browser-rtc: 1.1.0
       queue-microtask: 1.2.3
@@ -39881,7 +39947,7 @@ snapshots:
 
   stdout-stderr@0.1.13:
     dependencies:
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       strip-ansi: 6.0.1
     transitivePeerDependencies:
       - supports-color
@@ -40091,7 +40157,7 @@ snapshots:
   stylus@0.62.0:
     dependencies:
       '@adobe/css-tools': 4.3.3
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       glob: 7.2.3
       sax: 1.3.0
       source-map: 0.7.4
@@ -40112,7 +40178,7 @@ snapshots:
     dependencies:
       component-emitter: 1.3.1
       cookiejar: 2.1.4
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       fast-safe-stringify: 2.1.1
       form-data: 4.0.0
       formidable: 2.1.2
@@ -40824,7 +40890,7 @@ snapshots:
       bundle-require: 4.1.0(esbuild@0.19.12)
       cac: 6.7.14
       chokidar: 3.6.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       esbuild: 0.19.12
       execa: 5.1.1
       globby: 11.1.0
@@ -40878,32 +40944,32 @@ snapshots:
       - immer
       - react
 
-  turbo-darwin-64@1.13.3:
+  turbo-darwin-64@2.0.1:
     optional: true
 
-  turbo-darwin-arm64@1.13.3:
+  turbo-darwin-arm64@2.0.1:
     optional: true
 
-  turbo-linux-64@1.13.3:
+  turbo-linux-64@2.0.1:
     optional: true
 
-  turbo-linux-arm64@1.13.3:
+  turbo-linux-arm64@2.0.1:
     optional: true
 
-  turbo-windows-64@1.13.3:
+  turbo-windows-64@2.0.1:
     optional: true
 
-  turbo-windows-arm64@1.13.3:
+  turbo-windows-arm64@2.0.1:
     optional: true
 
-  turbo@1.13.3:
+  turbo@2.0.1:
     optionalDependencies:
-      turbo-darwin-64: 1.13.3
-      turbo-darwin-arm64: 1.13.3
-      turbo-linux-64: 1.13.3
-      turbo-linux-arm64: 1.13.3
-      turbo-windows-64: 1.13.3
-      turbo-windows-arm64: 1.13.3
+      turbo-darwin-64: 2.0.1
+      turbo-darwin-arm64: 2.0.1
+      turbo-linux-64: 2.0.1
+      turbo-linux-arm64: 2.0.1
+      turbo-windows-64: 2.0.1
+      turbo-windows-arm64: 2.0.1
 
   tweetnacl@0.14.5: {}
 
@@ -41014,6 +41080,10 @@ snapshots:
     dependencies:
       typedoc: 0.25.13(typescript@5.4.5)
 
+  typedoc-plugin-inline-sources@1.0.2(typedoc@0.25.13(typescript@5.4.5)):
+    dependencies:
+      typedoc: 0.25.13(typescript@5.4.5)
+
   typedoc-plugin-markdown@4.0.3(typedoc@0.25.13(typescript@4.9.5)):
     dependencies:
       typedoc: 0.25.13(typescript@4.9.5)
@@ -41023,6 +41093,10 @@ snapshots:
       typedoc: 0.25.13(typescript@5.4.5)
 
   typedoc-plugin-mdn-links@3.1.28(typedoc@0.25.13(typescript@5.4.5)):
+    dependencies:
+      typedoc: 0.25.13(typescript@5.4.5)
+
+  typedoc-plugin-missing-exports@2.2.0(typedoc@0.25.13(typescript@5.4.5)):
     dependencies:
       typedoc: 0.25.13(typescript@5.4.5)
 
@@ -41036,6 +41110,11 @@ snapshots:
       typedoc-plugin-markdown: 4.0.3(typedoc@0.25.13(typescript@5.4.5))
     transitivePeerDependencies:
       - supports-color
+
+  typedoc-plugin-rename-defaults@0.7.0(typedoc@0.25.13(typescript@5.4.5)):
+    dependencies:
+      camelcase: 8.0.0
+      typedoc: 0.25.13(typescript@5.4.5)
 
   typedoc-plugin-zod@1.1.2(typedoc@0.25.13(typescript@4.9.5)):
     dependencies:
@@ -41200,7 +41279,7 @@ snapshots:
       '@types/node': 18.19.33
       '@types/unist': 2.0.10
       concat-stream: 2.0.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       fault: 2.0.1
       glob: 8.1.0
       ignore: 5.3.1

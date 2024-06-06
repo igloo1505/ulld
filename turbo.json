@@ -1,50 +1,35 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
-  "globalDotEnv": [".env.local"],
-  "pipeline": {
-    "docs": {
+  "globalEnv": [".env.local"],
+  "tasks": {
+    "typedoc": {
       "cache": false,
-      "dotEnv": [".env.local"]
+      "env": [".env.local"]
     },
     "db:generate": {
       "cache": false,
-      "dotEnv": [".env.local"]
+      "env": [".env.local"]
     },
     "db:push": {
       "cache": false
     },
     "db:migrate": {
       "cache": false,
-      "dotEnv": [".env.local"]
+      "env": [".env.local"]
     },
     "updateJsonSchemas": {
-      "dotEnv": [
-        ".env.production.local",
-        ".env.local",
-        ".env.production",
-        ".env"
-      ]
+      "env": [".env.production.local", ".env.local", ".env.production", ".env"]
     },
     "build": {
       "dependsOn": ["^db:generate"],
       "outputs": [".next/**", "!.next/cache/**"],
-      "dotEnv": [
-        ".env.production.local",
-        ".env.local",
-        ".env.production",
-        ".env"
-      ]
+      "env": [".env.production.local", ".env.local", ".env.production", ".env"]
     },
     "buildLocal": {
       "dependsOn": ["^db:generate"],
       "outputs": [".next/**", "!.next/cache/**"],
-      "dotEnv": [
-        ".env.production.local",
-        ".env.local",
-        ".env.production",
-        ".env"
-      ]
+      "env": [".env.production.local", ".env.local", ".env.production", ".env"]
     },
     "test": {
       "dependsOn": ["^build"],
@@ -61,7 +46,7 @@
     },
     "dev": {
       "dependsOn": ["^db:generate"],
-      "dotEnv": [".env.development.local", ".env.local", ".env"],
+      "env": [".env.development.local", ".env.local", ".env"],
       "cache": false,
       "persistent": true
     },

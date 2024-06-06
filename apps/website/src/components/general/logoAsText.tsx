@@ -1,12 +1,19 @@
+"use client"
 import React from "react";
 import clsx from "clsx";
+import { useViewport } from "@ulld/hooks/useViewport";
 
 interface LogoAsTextProps {
-    fontSize?: number;
+    fontSize?: number | "h1";
     className?: string;
 }
 
 export const LogoAsText = ({ fontSize = 16, className }: LogoAsTextProps) => {
+    const vp = useViewport()
+    if(fontSize === "h1"){
+        let vw = vp?.window.width
+        fontSize = vw ? vw >= 1024 ? 48 : 36 : 48
+    }
     return (
         <span
             className={clsx("inline-block w-fit leading-none font-semibold", className)}

@@ -28,8 +28,8 @@ const getBlogPostsByTags = (
 
 const BlogPostList = ({ tags = [], allPosts }: BlogPostListProps) => {
     const ref = useRef<HTMLDivElement>(null!);
-    const transition = useRef<string>("");
-    const timer = useRef<NodeJS.Timeout | null>(null);
+    /* const transition = useRef<string>(""); */
+    /* const timer = useRef<NodeJS.Timeout | null>(null); */
     let posts = (
         tags.length === 0 ? allPosts : getBlogPostsByTags(tags, allPosts)
     ).sort((a, b) => {
@@ -51,19 +51,19 @@ const BlogPostList = ({ tags = [], allPosts }: BlogPostListProps) => {
         });
     }
 
-    const handleResize = () => {
-        if (
-            transition.current === "" &&
-            ref.current.style.transition &&
-            ref.current.style.transition !== ""
-        ) {
-            transition.current = ref.current.style.transition;
-        }
-        ref.current.style.transition = ""
-        timer.current = setTimeout(() => { 
-            ref.current.style.transition = transition.current
-        }, 250);
-    };
+    /* const handleResize = () => { */
+    /*     if ( */
+    /*         transition.current === "" && */
+    /*         ref.current.style.transition && */
+    /*         ref.current.style.transition !== "" */
+    /*     ) { */
+    /*         transition.current = ref.current.style.transition; */
+    /*     } */
+    /*     ref.current.style.transition = "" */
+    /*     timer.current = setTimeout(() => {  */
+    /*         ref.current.style.transition = transition.current */
+    /*     }, 250); */
+    /* }; */
 
     /* useEffect(() => { */
     /*     window.addEventListener("resize", handleResize); */
@@ -76,14 +76,6 @@ const BlogPostList = ({ tags = [], allPosts }: BlogPostListProps) => {
             className={
                 "w-full blogMobile:w-[calc(100vw-112px)] group-[.open]/blogLayout:blogMobile:w-[calc(100vw-412px)] group-[.transitioning]/blogLayout:blogMobile:transition-[width] group-[.transitioning]/blogLayout:blogMobile:duration-300 h-fit space-y-6 flex flex-col justify-center items-end"
             }
-        /* variants={{ */
-        /*     open: { */
-        /*         width: vpWidth.current ? vpWidth.current - 396 : "100%", */
-        /*     }, */
-        /*     closed: { */
-        /*         width: vpWidth.current ? vpWidth.current - 96 : "calc(100vw - 4rem)", */
-        /*     }, */
-        /* }} */
         >
             {featured && <FeaturedBlogPost isFeatured post={featured} />}
             {(featured ? posts.filter((a) => a.id !== featured.id) : posts).map(

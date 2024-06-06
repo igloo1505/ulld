@@ -1,12 +1,10 @@
 import ComingSoon from "#/components/utility/comingSoon";
 import React from "react";
 
-interface UserDocsHomePageProps {}
+interface UserDocsHomePageProps { }
 
 const UserDocsHomePage = (props: UserDocsHomePageProps) => {
-            return <>
-            <ComingSoon />
-        </>
+    return <ComingSoon />;
 };
 
 UserDocsHomePage.displayName = "UserDocsHomePage";

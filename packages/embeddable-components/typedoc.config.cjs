@@ -1,9 +1,68 @@
-// @ts-check
-
-/** @type {import('typedoc').TypeDocOptions & import('typedoc-plugin-markdown').PluginOptions} */
+/** @type {import('typedoc').TypeDocOptions} */
 module.exports = {
-    entryPoints: ["./src/*"],
-    includeVersion: true,
-    // outputFileStrategy: "members",
-    readme: "none",
-}
+    $schema: "https://typedoc.org/schema.json",
+    name: "Embeddable Components",
+    tsconfig: "./tsconfig.docs.json",
+    out: "./docs/output",
+    useTsLinkResolution: true,
+    entryPoints: ["./src/academic/error.tsx", "./src/academic/abstract.tsx", "../utilities/src/types/admonition.ts"],
+    // entryPointStrategy: "Expand",
+    excludeExternals: true,
+    exclude: [
+        "@ulld/database",
+        "prisma",
+    ],
+    fileExtension: ".mdx",
+    sort: ["source-order"],
+    // media: "media",
+    readme: "./README.md",
+    mergeReadme: true,
+    publicPath: "/",
+    expandObjects: true,
+    expandParameters: true,
+    parametersFormat: "table", // "table" | "list"
+    propertiesFormat: "table", // "table" | "list"
+    enumMembersFormat: "list", // "table" | "list"
+    useCodeBlocks: true,
+    outputFileStrategy: "modules",
+    hidePageHeader: true,
+    hidePageTitle: true,
+    hideBreadcrumbs: true,
+    navigationModel: {
+        excludeGroups: true,
+        excludeCategories: true,
+        excludeFolders: true
+    },
+    // categorizeByGroup: false,
+    // searchCategoryBoosts: {
+    //     Component: 2,
+    //     Model: 1.2,
+    // },
+    // searchGroupBoosts: {
+    //     Classes: 1.5,
+    // },
+    navigationLinks: {
+        Docs: "https://typedoc.org/guides/overview",
+        GitHub: "https://github.com/TypeStrong/typedoc",
+    },
+    sidebarLinks: {
+        API: "https://typedoc.org/api",
+    },
+    plugin: [
+        "typedoc-plugin-markdown",
+        "typedoc-plugin-remark",
+        "typedoc-github-wiki-theme",
+        "typedoc-plugin-coverage",
+        "typedoc-plugin-mdn-links",
+        "typedoc-plugin-rename-defaults",
+        "typedoc-plugin-missing-exports",
+        "typedoc-plugin-inline-sources",
+        "typedoc-plugin-zod",
+        "typedoc-plugin-include-example",
+        "@droppedcode/typedoc-plugin-relative-includes",
+        "typedoc-plugin-frontmatter",
+        "../../typedoc/navigation.cjs",
+        "../../typedoc/customFrontMatter.cjs"
+    ],
+    // includes: ["typedocIncludes"],
+};

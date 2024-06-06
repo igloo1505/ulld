@@ -1,18 +1,65 @@
 // @ts-check
 
-
 const packagesToCheck = [
     "embeddable-components",
     "editor"
 ]
 
+// NOTE: From the template online. 
+/** @type {import('typedoc').TypeDocOptions} */
+// module.exports = {
+//   tsconfig: "tsconfig.docs.json",
+//   name: "React18 Loaders",
+//   entryPoints: ["./lib/src"],
+//   exclude: ["**/*.test.tsx", "**/index.ts", "**/declaration.d.ts"],
+//   entryPointStrategy: "Expand",
+//   out: "./docs",
+//   commentStyle: "all",
+//   searchInComments: true,
+//   excludeExternals: true,
+//   plugin: [
+//     "typedoc-plugin-mdn-links",
+//     "typedoc-plugin-rename-defaults",
+//     "typedoc-plugin-missing-exports",
+//     "typedoc-plugin-zod",
+//     "typedoc-plugin-inline-sources",
+//     // "typedoc-plugin-extras",
+//   ],
+// };
+
 /** @type {import('typedoc').TypeDocOptions & import('typedoc-plugin-markdown').PluginOptions} */
 module.exports = {
-    entryPoints: [`./packages/{${packagesToCheck.join(",")}}`],
-    includeVersion: true,
-    out: "docs",
     name: "Uh Little Less Dum",
-    plugin: ["typedoc-plugin-markdown", "typedoc-plugin-remark", "typedoc-github-wiki-theme", "typedoc-plugin-coverage", "typedoc-plugin-mdn-links", "typedoc-plugin-zod", "typedoc-plugin-include-example", "@droppedcode/typedoc-plugin-relative-includes", "typedoc-plugin-frontmatter", "./typedoc/navigation.cjs", "./typedoc/customFrontMatter.cjs"],
+    // entryPoints: [`./packages/{${packagesToCheck.join(",")}}/**`],
+    entryPoints: [`./packages/embeddable-components/**`],
+    tsconfig: "tsconfig.docs.json",
+    includeVersion: true,
+    out: "./docs",
+    exclude: [
+        "**/*.test.tsx",
+        "**/index.ts",
+        "**/declaration.d.ts"
+    ],
+    commentStyle: "all",
+    entryPointStrategy: "expand",
+    searchInComments: true,
+    excludeExternals: true,
+    plugin: [
+        "typedoc-plugin-markdown",
+        "typedoc-plugin-remark",
+        "typedoc-github-wiki-theme",
+        "typedoc-plugin-coverage",
+        "typedoc-plugin-mdn-links",
+        "typedoc-plugin-rename-defaults",
+        "typedoc-plugin-missing-exports",
+        "typedoc-plugin-inline-sources",
+        "typedoc-plugin-zod",
+        "typedoc-plugin-include-example",
+        "@droppedcode/typedoc-plugin-relative-includes",
+        "typedoc-plugin-frontmatter",
+        "./typedoc/navigation.cjs",
+        "./typedoc/customFrontMatter.cjs"
+    ],
     includes: ["typedocIncludes"],
     outputFileStrategy: "modules",
     githubPages: false,

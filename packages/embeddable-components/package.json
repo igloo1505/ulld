@@ -7,7 +7,8 @@
     "build": "echo 'Add build script here'",
     "test": "echo 'Add test script here'",
     "lint": "echo 'Add lint script here'",
-    "docs": "typedoc --gaID G-K46X7QHBEX --entryPointStrategy expand ./src --json ./docs.json --pretty"
+    "docs": "typedoc --gaID G-K46X7QHBEX --entryPointStrategy expand ./src --json ./docs.json --pretty",
+    "typedoc": "typedoc"
   },
   "main": "src/index.ts",
   "types": "src/types/general.ts",
@@ -89,12 +90,12 @@
   "dependencies": {
     "@google/model-viewer": "^3.4.0",
     "@next/mdx": "^14.0.0",
+    "@ulld/component-configs": "workspace:*",
     "better-react-mathjax": "^2.0.3",
     "clsx": "^2.1.0",
     "next": "^14.2.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "@ulld/component-configs": "workspace:*"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
@@ -105,12 +106,20 @@
     "@ulld/render": "workspace:*",
     "react-loader-spinner": "^5.5.0",
     "react-spinners": "^0.13.8",
-    "typescript": "^5.4.5",
     "typedoc": "^0.25.13",
+    "typedoc-github-wiki-theme": "^2.0.0",
     "typedoc-plugin-coverage": "^3.1.1",
+    "typedoc-plugin-frontmatter": "^1.0.0",
+    "typedoc-plugin-include-example": "^1.2.0",
+    "typedoc-plugin-inline-sources": "^1.0.2",
     "typedoc-plugin-markdown": "^4.0.3",
+    "typedoc-plugin-mdn-links": "^3.1.28",
+    "typedoc-plugin-missing-exports": "^2.2.0",
+    "typedoc-plugin-remark": "^1.0.1",
+    "typedoc-plugin-rename-defaults": "^0.7.0",
     "typedoc-plugin-zod": "^1.1.2",
-    "typedoc-theme-category-nav": "^0.0.3"
+    "typedoc-theme-category-nav": "^0.0.3",
+    "typescript": "^5.4.5"
   },
   "packageManager": "pnpm@9.0.4"
 }

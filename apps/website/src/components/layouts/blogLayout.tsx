@@ -14,7 +14,7 @@ const BlogLayout = ({ children }: BlogLayoutProps) => {
     <div
       id="blog-layout"
       className={
-        "group/blogLayout flex flex-row justify-start items-start min-h-screen-noNav mt-[76px]"
+        "group/blogLayout group/backdropParent flex flex-row justify-start items-start min-h-screen-noNav mt-[76px]"
       }
     >
         <BlogTagSideBar />

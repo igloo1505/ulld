@@ -56,7 +56,7 @@ const baseFields: DocumentTypeDef["fields"] = {
     },
     icon: {
         type: "string",
-        required: false
+        required: false,
     },
     featuredEquation: {
         type: "string",
@@ -204,7 +204,7 @@ export const RefundPolicy = defineDocumentType(() => ({
     contentType: "mdx",
 }));
 
-export const Documentation = defineDocumentType(() => ({
+const docsProps: DocumentTypeDef = {
     name: "Documentation",
     filePathPattern: `docs/**/*.mdx`,
     fields: {
@@ -220,6 +220,10 @@ export const Documentation = defineDocumentType(() => ({
             type: "string",
             required: true,
         },
+        description: {
+            type: "string",
+            required: false,
+        },
         tags: {
             type: "list",
             of: {
@@ -230,10 +234,42 @@ export const Documentation = defineDocumentType(() => ({
             type: "date",
             required: false,
         },
-        category: { type: "list", of: { type: "string" }, required: true },
         keywords: {
             type: "list",
             of: { type: "string" },
+        },
+        category: {
+            type: "string",
+            required: true
+        },
+        component: {
+            type: "string",
+            required: true
+        },
+    },
+    computedFields: {
+        // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
+    },
+    contentType: "mdx",
+};
+
+export const Documentation = defineDocumentType(() => docsProps);
+
+export const StaticDocumentation = defineDocumentType(() => ({
+    name: "StaticDocs",
+    filePathPattern: `docsStatic/**/*.mdx`,
+    fields: {
+        id: {
+            type: "string",
+            required: true,
+        },
+        created: {
+            type: "date",
+            required: true,
+        },
+        updated: {
+            type: "date",
+            required: false,
         },
     },
     computedFields: {
@@ -301,6 +337,7 @@ export default makeSource({
         CancelSubscriptionPrompt,
         Blog,
         Demos,
+        StaticDocumentation,
     ],
     mdx: {
         remarkPlugins: [remarkMath, remarkGfm, [emoji as any, {}]],

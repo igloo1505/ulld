@@ -1,5 +1,14 @@
 import React from "react";
 
+/**
+ * Takes no properties directly, but can wrap content to indicate an error margin for a nearby calculation.
+ * @example
+ * ```tsx
+ * <ErrorMargin>
+ * 0.002%
+ * </ErrorMargin>
+ * ```
+ */
 interface ErrorMarginProps {
     children: string;
 }

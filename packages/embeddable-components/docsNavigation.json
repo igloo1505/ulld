@@ -1,0 +1,31 @@
+[
+    {
+        "title": "embeddable-components/src/academic/abstract",
+        "kind": 2,
+        "path": "embeddable-components.src.academic.abstract.mdx",
+        "children": [
+            {
+                "title": "<internal>",
+                "kind": 2,
+                "path": "embeddable-components.src.academic.abstract.<internal>.mdx"
+            }
+        ]
+    },
+    {
+        "title": "embeddable-components/src/academic/error",
+        "kind": 2,
+        "path": "embeddable-components.src.academic.error.mdx",
+        "children": [
+            {
+                "title": "<internal>",
+                "kind": 2,
+                "path": "embeddable-components.src.academic.error.<internal>.mdx"
+            }
+        ]
+    },
+    {
+        "title": "utilities/src/types/admonition",
+        "kind": 2,
+        "path": "utilities.src.types.admonition.mdx"
+    }
+]

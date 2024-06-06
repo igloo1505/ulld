@@ -114,7 +114,7 @@ const equationsRouter = router({
         let data = await equationItemSchema.parseAsync(eq)
         return {
             ...data,
-            rawLatex: eq?.content
+            rawLatex: eq?.content as string
         }
     }),
     deleteEquationById: publicProcedure.input(z.number().int()).mutation(async (opts) => {

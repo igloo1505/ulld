@@ -1,5 +1,5 @@
 import { type BibFilePresenter, parseBibFile } from "bibtex";
-import { BibEntry, type BibEntryDataTableOutput, type BibEntryPrismaAcceptedTypes } from "./BibEntry";
+import { BibEntry, type BibEntryDataTableOutput } from "./BibEntry";
 import type { Prisma, Bib as PrismaBib } from '@ulld/database/internalDatabaseTypes'
 import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
@@ -112,7 +112,7 @@ export class BibCore {
         if (!_bibFile) {
             return
         }
-        let content = []
+        let content: string | undefined = undefined
         let parsed: BibFilePresenter | undefined
         const query = await getUniversalQuery("readBibFromFileSystem")
         const res = await query()

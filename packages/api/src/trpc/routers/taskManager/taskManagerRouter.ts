@@ -58,7 +58,7 @@ export const toDoRouter = router({
     getToDos: publicProcedure.input(getToDoSearchParams.omit({
         listNames: true
     })).query(async ({ input }) => {
-        let lists = await getToDoLists<undefined>()
+        let lists: TaskListIds[] = await getToDoLists<undefined>()
         const listIds = (input.listIds && input.listIds.length) ? input.listIds : (lists && lists.length) ? [lists[0].id] : []
         let res = await getToDoPageData(input, listIds)
         const parsedTodos = await parseTodoLists(res)
