@@ -1,0 +1,30 @@
+---
+id: syntaxDocs
+created: 6-8-24
+---
+
+
+# <H1Size><AnimatedLogo height={48} /></H1Size> Syntax
+
+## Links
+
+### Timestamp Link
+
+You can create links to time stamps of videos on the current page with the following syntax:
+
+```mdx
+<Video file="/path/to/my/video.mp4" id="videosUniqueReferenceId" />
+
+As you can see at [4 minutes and 6 seconds](videoLink/videosUniqueReferenceId/1:12) in the video above, the creator of ULLD is incredibly good looking.
+```
+
+Note that the time stamp link follows normal markdown link syntax, but is identified internally by the leading `videoLink/...` path. This `videoLink/...` must be immediately followed by the matching unique id of the video you're addressing, and then by the time stamp. The time stamp is in the format of `hours:minutes:seconds` or `minutes:seconds`.
+
+<Hint>
+    See the [intro to jsx](/docs/user/introToJsx) documentation for a brief summary of valid ids.
+</Hint>
+
+
+---
+
+### Root Relative Paths

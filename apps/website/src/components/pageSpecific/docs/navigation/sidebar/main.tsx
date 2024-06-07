@@ -16,7 +16,7 @@ declare global {
     // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
     interface WindowEventMap {
         "set-docs-category": CustomEvent<{
-            docsCategory: (typeof staticDocsData.docsCategories)[number];
+            docsCategory: (typeof staticDocsData.gettingStarted)[number];
         }>;
 
         "set-docs-back-button-path": CustomEvent<{
@@ -42,10 +42,8 @@ const DocsSidebar = () => {
     const router = useRouter();
 
     const handleBackClick = () => {
-        if (docsCategory) {
             router.push(backButtonPath);
             setDocsCategory(undefined)
-        }
     };
 
     return (

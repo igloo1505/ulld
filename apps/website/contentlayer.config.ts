@@ -12,6 +12,14 @@ import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import fs from "fs";
+import rehypeFormat from "rehype-format";
+
+const styleFields: DocumentTypeDef["fields"] = {
+    autoWrapCode: {
+        type: "boolean",
+        default: false
+    },
+}
 
 const baseFields: DocumentTypeDef["fields"] = {
     id: {
@@ -214,6 +222,7 @@ const docsProps: DocumentTypeDef = {
     name: "Documentation",
     filePathPattern: `docs/**/*.mdx`,
     fields: {
+        ...styleFields,
         id: {
             type: "string",
             required: true,
@@ -265,6 +274,7 @@ export const StaticDocumentation = defineDocumentType(() => ({
     name: "StaticDocs",
     filePathPattern: `docsStatic/**/*.mdx`,
     fields: {
+       ...styleFields, 
         id: {
             type: "string",
             required: true,
@@ -283,7 +293,6 @@ export const StaticDocumentation = defineDocumentType(() => ({
     },
     contentType: "mdx",
 }));
-
 
 export const Demos = defineDocumentType(() => ({
     name: "Demo",
@@ -391,6 +400,7 @@ export default makeSource({
                 },
             ],
             rehypeSlug,
+         rehypeFormat,
         ],
     },
 });

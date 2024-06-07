@@ -1,0 +1,21 @@
+## Interfaces
+
+### VideoProps
+
+A simple video player with support full-screen mode, picture-in-picture and [timestamp links](/docs/user/syntax#timestamplinks) directly in your note.
+
+#### Example
+
+```tsx
+<Video file="resources/videos/SusskindGeneralRelativity12.mp4" />
+```
+
+<RemoteExampleLimitation />
+
+#### Properties
+
+| Property | Type     | Description                                                                                              |
+| :------- | :------- | :------------------------------------------------------------------------------------------------------- |
+| `file?`  | `string` | The path to the video file. This can either be absolute, or relative to the root of your note directory. |
+| `url?`   | `string` | A valid remote video url.                                                                                |
+| `id?`    | `string` | A valid DOM id used for time stamp links                                                                 |

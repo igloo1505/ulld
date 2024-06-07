@@ -47,7 +47,8 @@
     "./useMeasure": "./src/useMeasure.ts",
     "./useMathjaxDynamicParse": "./src/useMathjaxDynamicParse.ts",
     "./useInitialRender": "./src/useInitialRender.ts",
-    "./useObserveChildren": "./src/useObserveChildren.ts"
+    "./useObserveChildren": "./src/useObserveChildren.ts",
+    "./useAutoWrapCode": "./src/useAutoWrapCode.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",

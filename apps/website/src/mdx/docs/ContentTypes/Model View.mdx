@@ -1,0 +1,32 @@
+---
+category: Content Types
+component: Model View
+id: modelview
+---
+
+## Interfaces
+
+### ModelViewProps
+
+The ModelView component supports embedding gltf files directly in your note, with support for AR on some devices.
+
+#### Example
+
+```tsx
+<ModelView url="/assets/models/Ring.glb" width={400} />
+```
+
+### Output
+
+<ModelView url="/assets/models/Ring.glb" width={400} />
+
+#### Properties
+
+| Property  | Type      | Description                                                                                          |
+| :-------- | :-------- | :--------------------------------------------------------------------------------------------------- |
+| `file?`   | `string`  | The [root-relative](/docs/user/syntax#rootrelativepaths) file path to a gltf or glb file.            |
+| `url?`    | `string`  | A remote url returning a valid gltf or glb model.                                                    |
+| `width?`  | `number`  | An optional width of the model as an [**assumed dimension**](/docs/terminology?id=assumedDimension). |
+| `height?` | `number`  | An optional width of the model as an [**assumed dimension**](/docs/terminology?id=assumedDimension). |
+| `rotate?` | `boolean` | Should model slowly rotate without user interaction.                                                 |
+

@@ -1,13 +1,13 @@
 "use client"
 import React, { RefObject, useEffect, useMemo, useRef, useState } from "react";
 import { Variants, motion, useInView } from "framer-motion";
+import {useViewport} from "@ulld/hooks/useViewport"
 
 interface BaseProps 
     extends React.ComponentProps<typeof motion.svg> {
-    width?: number;
-    height?: number;
     delay?: number;
     speed?: number
+    h1?: boolean
 }
 
 type AnimatedUlldLogoProps = (BaseProps & {show: boolean, useInView?: never}) | (BaseProps & {useInView: true, show?: never})
@@ -112,14 +112,15 @@ const useInViewOrShow = (ref: RefObject<Element>, show: boolean | undefined) => 
 export const AnimatedUlldLogo = ({
     show,
     width,
-    height,
     delay,
     speed = 1,
     useInView: shouldUseView,
+    h1,
     ...props
 }: AnimatedUlldLogoProps) => {
     const ref = useRef<SVGSVGElement>(null!)
     const [shouldShow, setShouldShow] = useInViewOrShow(ref, show)
+    const vp = useViewport()
     useEffect(() => {
         if(typeof show !== "boolean") return
         if (show && delay) {

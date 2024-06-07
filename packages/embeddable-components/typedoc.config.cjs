@@ -22,6 +22,9 @@ module.exports = {
         "./src/emeddedComponents/CLIENT_COMPONENTS/card/props.tsx",
         "./src/emeddedComponents/gridProps.ts",
         "../utilities/src/types/admonition.ts",
+        "./src/emeddedComponents/tabs/props.ts",
+        "./src/emeddedComponents/media/videoProps.ts",
+        "./src/emeddedComponents/modelView/props.tsx"
     ],
     entryPointStrategy: "Expand",
     excludeExternals: true,

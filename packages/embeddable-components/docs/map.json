@@ -13,6 +13,9 @@
     },
     "Grid": {
       "path": "embeddable-components.src.emeddedComponents.gridProps.mdx"
+    },
+    "Tabs": {
+      "path": "embeddable-components.src.emeddedComponents.tabs.props.mdx"
     }
   },
   "Academic": {
@@ -21,6 +24,14 @@
     },
     "Abstract": {
       "path": "embeddable-components.src.academic.abstract.<internal>.mdx"
+    }
+  },
+  "Content Types": {
+    "Model View": {
+      "path": "embeddable-components.src.emeddedComponents.modelView.props.mdx"
+    },
+    "Video": {
+      "path": "embeddable-components.src.emeddedComponents.media.videoProps.mdx"
     }
   }
 }

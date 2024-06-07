@@ -57,7 +57,8 @@
     "./getDarkMode": "./src/utils/getDarkMode.ts",
     "./internalDevTypes": "./src/internalDevTypes/main.ts",
     "./shikiLanguages": "./src/shiki/languageList.ts",
-    "./shikiThemes": "./src/shiki/themeList.ts"
+    "./shikiThemes": "./src/shiki/themeList.ts",
+    "./getAssumedDimensions": "./src/utils/getAssumedDimensions.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",

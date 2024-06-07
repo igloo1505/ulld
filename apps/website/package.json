@@ -103,6 +103,7 @@
     "react-use-measure": "^2.1.1",
     "redux-persist-indexeddb-storage": "^1.0.4",
     "rehype-autolink-headings": "^7.1.0",
+    "rehype-format": "^5.0.0",
     "rehype-mathjax": "^4.0.3",
     "rehype-pretty-code": "^0.13.1",
     "rehype-sanitize": "^6.0.0",

@@ -1,4 +1,6 @@
+import H1SizeContainer from "#/components/UIUtils/h1SizeContainer";
 import PayPalLinkQr from "#/components/brand/sponsor/paypalLinkSvg";
+import RemoteExampleLimitation from "#/components/docUtils/remoteExampleLimitation";
 import Hint from "#/components/general/hint";
 import { LogoAsText } from "#/components/general/logoAsText";
 import ComingSoon from "#/components/utility/comingSoon";
@@ -30,5 +32,15 @@ export const webComponentMap: AdditionalComponents<any> = [
         regex: new RegExp("<Hint"),
         component: Hint,
         label: "Hint"
-    }
+    },
+    {
+        regex: new RegExp("<H1Size"),
+        component: H1SizeContainer,
+        label: "H1Size"
+    },
+    {
+        regex: new RegExp("<RemoteExampleLimitation"),
+        component: RemoteExampleLimitation,
+        label: "RemoteExampleLimitation"
+    },
 ];

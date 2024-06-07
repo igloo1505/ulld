@@ -164,6 +164,10 @@ body {
     @apply text-gray-700 dark:hover:bg-gray-800 transition-colors duration-300 rounded-lg dark:text-gray-200 hover:bg-gray-100;
   }
 
+  .prose-all {
+    @apply prose dark:prose-invert;
+  }
+
   .pixi-canvas {
     @apply bg-gray-100 dark:bg-gray-800;
   }
@@ -396,4 +400,7 @@ div[role="dialog"][cmdk-dialog] {
       color: var(--general-link-color);
     }
   }
+  // .ulld-separator {
+  //   margin-top:
+  // }
 }

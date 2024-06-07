@@ -18,6 +18,7 @@ import store from "#/state/store";
 import Citations from "../academic/citations";
 import { NoteStateObserver } from "@ulld/state/observers/noteState";
 import MdxArticleNavButtons from "./mdxArticleNavButtons";
+import {useAutoWrapCode} from "@ulld/hooks/useAutoWrapCode"
 
 
 interface MDXArticleProps extends HTMLProps<HTMLElement> {
@@ -25,17 +26,19 @@ interface MDXArticleProps extends HTMLProps<HTMLElement> {
     paddingTop?: boolean;
     isSource?: boolean;
     hideSourceButton?: boolean
+    wrapCode?: boolean
 }
 
 
 const MDXArticle = forwardRef(
     (
-        { mdx, paddingTop = true, hideSourceButton = false, isSource, ...props }: MDXArticleProps,
+        { mdx, wrapCode, paddingTop = true, hideSourceButton = false, isSource, ...props }: MDXArticleProps,
         ref: ForwardedRef<HTMLElement>,
     ) => {
         const id = props.id ? props.id : getRandomId();
         const article = useMDXComponent(mdx.body.code);
         const Article = useMemo(() => article, []);
+        const wrapCodeRef = useAutoWrapCode()
 
         useMathjaxBandaid(id);
 
@@ -63,7 +66,10 @@ const MDXArticle = forwardRef(
                         paddingTop && "pt-[108px]",
                     )}
                 >
-                    <Article components={components} />
+                    <Article 
+                        ref={(wrapCode || ("wrapCode" in mdx && mdx.wrapCode)) ? wrapCodeRef : undefined}
+                        components={components} 
+                    />
                     {citationsEm}
                 </article>
             </InternalReduxProvider>
