@@ -17,6 +17,7 @@ export type AdmonitionType = "info" | "bug" | "note" | "tip" | "faq" | "abstract
  * </Admonition>
  * ```
  * #### Output
+ * <Small noMargin muted>You can find demos of the other types [here](/demos/attentionGetters)</Small>
  * <Admonition 
  * title="Mass Equivalency: $e=mc^2$" 
  * footer="Man that Einstein guy was smart."
@@ -29,7 +30,7 @@ export type AdmonitionType = "info" | "bug" | "note" | "tip" | "faq" | "abstract
  * @interface
  */
 export interface AdmonitionProps {
-    /** The type of the admonition for now is limited to the supplied default admonition types. The appearance of these types however is easily changed inside of your [configuration file](/configure). In the version 2 of ULLD, the configuration file will support adding additional admonition types. */
+    /** The type of the admonition for now is limited to the supplied default admonition types. The appearance of these types however is easily changed inside of your [configuration file](/configure). In the version 2 of <LogoAsText fontSize={13} />, the configuration file will support adding additional admonition types. */
     type?: AdmonitionType
     /** Optional. This is the content that is displayed inside the colored portion of the admonition. This can include markdown. */
     title?: ReactNode

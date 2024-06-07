@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 import os
 import re
+from typing import List
 import urllib.parse
 from pprint import pprint
 
@@ -19,10 +20,19 @@ for m in allMaps:
         if category not in items:
             items[category] = []
         for component in content[category]:
+            data = content[category][component]
             items[category].append(
                 {
                     "component": component,
-                    "path": m.parent / "output" / content[category][component],
+                    "path": m.parent / "output" / data["path"],
+                    "removeSections": (
+                        data["removeSections"] if "removeSections" in data else []
+                    ),
+                    "removePropertyTableColumns": (
+                        data["removePropertyTableColumns"]
+                        if "removePropertyTableColumns" in data
+                        else []
+                    ),
                 }
             )
 
@@ -65,8 +75,70 @@ def makeValidId(value: str):
     return "".join([c.lower() for c in list(value) if c.lower() in validIdChars])
 
 
-def removeSourceSection(content: str):
-    return content[0 : content.index("### Source")]
+def removePropertyTableColumns(content: str, columns: List[str] = []) -> str:
+    if columns.__len__() == 0:
+        return content
+    newLines = []
+    lines = content.splitlines()
+    isTable = False
+    isHeading = False
+    removeIndices = []
+    for line in lines:
+        l = line
+        if line.startswith("| Property"):
+            isTable = True
+            isHeading = True
+            cols = line.split("|")
+            for i, col in enumerate(cols):
+                if col.strip() in columns:
+                    removeIndices.append(i)
+            headingLine = "|".join(
+                [c for i, c in enumerate(cols) if i not in removeIndices]
+            )
+            l = headingLine
+        else:
+            isHeading = False
+        if isTable and not isHeading:
+            l = "|".join(
+                [c for i, c in enumerate(line.split("|")) if i not in removeIndices]
+            )
+        if not line.startswith("|"):
+            isTable = False
+        newLines.append(l)
+
+    return f"""
+""".join(
+        newLines
+    )
+
+
+def removeSection(
+    content: str, heading: str = "Source", depth: int = 2, sectionIndex: int = 1
+) -> str:
+    headingContent = f"{''.join(['#' for _ in range(depth)])} {heading}"
+    secOccurance = 0
+    if headingContent not in content:
+        if depth == 6:
+            return content
+        return removeSection(content, heading, depth + 1)
+    newLines = []
+    lines = content.splitlines()
+    isModuleSection = False
+    for l in lines:
+        isModuleLine = l.startswith(headingContent)
+        if isModuleLine:
+            if secOccurance == sectionIndex - 1:
+                isModuleSection = True
+            else:
+                secOccurance = secOccurance + 1
+        if isModuleSection and l.startswith("#") and not isModuleLine:
+            isModuleSection = False
+        if not isModuleSection and not isModuleLine:
+            newLines.append(l)
+    return f"""
+""".join(
+        newLines
+    )
 
 
 def replaceLinks(content: str, category: str, path: Path) -> str:
@@ -92,7 +164,19 @@ for category in items:
     for item in items[category]:
         targetFile = target / f"{item['component']}.mdx"
         content = item["path"].read_text()
-        content = removeSourceSection(content)
+        content = removeSection(content, "Source", 4)
+        content = removeSection(content, "Modules", 3)
+        for removeSec in item["removeSections"]:
+            content = removeSection(
+                content,
+                removeSec["heading"],
+                removeSec["depth"] if "depth" in removeSec else 2,
+                removeSec["index"] if "index" in removeSec else 1,
+            )
+        content = removePropertyTableColumns(
+            content, item["removePropertyTableColumns"]
+        )
+        content = replaceLinks(content, category, item["path"])
         targetFile.write_text(
             f"""---
 category: {category}
@@ -100,7 +184,7 @@ component: {item['component']}
 id: {makeValidId(item['component'])}
 ---
 
-{replaceLinks(content, category, item["path"])}
+{content}
 """
         )
 

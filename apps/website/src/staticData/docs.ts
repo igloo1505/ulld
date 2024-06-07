@@ -1,25 +1,31 @@
 interface DocCategory {
     label: string;
     href: string;
-    id: string
+    id: string;
 }
 
 interface StaticDocsData {
     docsCategories: DocCategory[];
-    categories: string[]
+    gettingStarted: DocCategory[];
+    categories: string[];
 }
 
 export const staticDocsData: StaticDocsData = {
-    docsCategories: [
+    gettingStarted: [
         {
-            label: "Getting Started",
-            id: "gettingStarted",
-            href: "/docs/user"
+            label: "Intro to Jsx",
+            id: "introToJsx",
+            href: "/docs/user/introToJsx",
+        },
+        {
+            label: "Configure",
+            id: "configure",
+            href: "/configure",
         },
         {
             label: "Components",
             id: "components",
-            href: "/docs/user/components"
+            href: "/docs/user/components",
         },
     ],
     categories: [

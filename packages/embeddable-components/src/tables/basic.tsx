@@ -3,7 +3,6 @@ import { TableProps } from './tableProps'
 import {
     Table,
     TableBody,
-    TableCaption,
     TableCell,
     TableHead,
     TableHeader,
@@ -21,6 +20,7 @@ interface TheadProps {
 
 
 const InternalTableHead = ({ head, id }: TheadProps) => {
+    console.log("head: ", head)
     const data = head.props.children.props.children.map((c) => ({ align: c.props.align, text: c.props.children }))
     return (
         <TableHeader>
@@ -96,7 +96,7 @@ const InternalTable = (props: TableWrapperProps) => {
     const config = getInternalConfig()
     return (
         <div
-            className={"!mb-8 internalTable no-scrollbar"}
+            className={"!mb-8 internalTable no-scrollbar not-prose [&_code]:bg-secondary [&_code]:font-code [&_code]:px-2 [&_code]:py-1 [&_code]:rounded-[3px]"}
             style={{
                 ...(config.UI?.table?.maxHeight && {
                     maxHeight: config.UI.table.maxHeight,

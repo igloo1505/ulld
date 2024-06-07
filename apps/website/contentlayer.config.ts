@@ -133,10 +133,16 @@ export const StoryOfULLD = defineDocumentType(() => ({
 
 export const MyNotes = defineDocumentType(() => ({
     name: "MyNotes",
-    filePathPattern: `myNotes/**.mdx`,
+    filePathPattern: `myNotes/**/*.mdx`,
     fields: {
         ...baseFields,
         lastUpdated: { type: "date", required: false },
+        sequential: {
+            type: "number",
+        },
+        sequentialId: {
+            type: "string",
+        },
     },
     computedFields: {
         // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
@@ -240,11 +246,11 @@ const docsProps: DocumentTypeDef = {
         },
         category: {
             type: "string",
-            required: true
+            required: true,
         },
         component: {
             type: "string",
-            required: true
+            required: true,
         },
     },
     computedFields: {
@@ -278,17 +284,19 @@ export const StaticDocumentation = defineDocumentType(() => ({
     contentType: "mdx",
 }));
 
+
 export const Demos = defineDocumentType(() => ({
     name: "Demo",
     filePathPattern: `demos/**/*.mdx`,
     fields: {
-        ...baseFields,
-        sequential: {
-            type: "number",
-        },
-        sequentialId: {
+        id: {
             type: "string",
+            required: true,
         },
+        created: baseFields.created,
+    },
+    computedFields: {
+        // url: { type: 'string', resolve: (post) => `/posts/${post._raw.flattenedPath}` },
     },
     contentType: "mdx",
 }));

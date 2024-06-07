@@ -3,7 +3,7 @@ import React from 'react'
 import { BaseEmbeddableComponentProps, getBaseEmbeddableProps } from '../baseEmbeddableComponentTypes'
 
 
-interface SmallProps extends BaseEmbeddableComponentProps {
+interface SmallProps extends BaseEmbeddableComponentProps<HTMLSpanElement> {
     children: string
     center?: boolean
     muted?: boolean

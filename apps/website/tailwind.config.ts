@@ -49,6 +49,16 @@ const tailwindCfg: Config = {
             },
             fontFamily: {
                 sans: ["var(--ulld-app-font)"],
+                code: [
+                    "ui-monospace",
+                    "SFMono-Regular",
+                    "Menlo",
+                    "Monaco",
+                    "Consolas",
+                    "Liberation Mono",
+                    "Courier New",
+                    "monospace",
+                ],
             },
             colors: {
                 hint: "#39f614",
@@ -58,13 +68,13 @@ const tailwindCfg: Config = {
                 content: "1440px",
             },
             height: {
-                "screen-noNav": "calc(100vh - 76px)"
+                "screen-noNav": "calc(100vh - 76px)",
             },
             minHeight: {
-                "screen-noNav": "calc(100vh - 76px)"
+                "screen-noNav": "calc(100vh - 76px)",
             },
             maxHeight: {
-                "screen-noNav": "calc(100vh - 76px)"
+                "screen-noNav": "calc(100vh - 76px)",
             },
             typography: ({ theme }: { theme: (val: string) => void }) => ({
                 DEFAULT: {

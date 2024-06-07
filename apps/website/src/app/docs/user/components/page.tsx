@@ -16,7 +16,7 @@ const ComponentDocsPage = ({ searchParams: { category } }: Props) => {
 
     const items = allDocumentations
         .filter((a) => a.category === category)
-        .sort((a, b) => (b.component > a.component ? 1 : -1));
+        .sort((a, b) => (a.component > b.component ? 1 : -1));
 
     if (category) {
         return <MdxList items={items} />;

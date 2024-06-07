@@ -9,7 +9,7 @@ import {MdxContentPreCompiled} from "@ulld/render/mdx/preCompiled"
 
 
 
-interface EquationWrapperProps extends BaseEmbeddableComponentProps {
+interface EquationWrapperProps extends BaseEmbeddableComponentProps<HTMLDivElement> {
     children?: React.ReactNode
     id: string /// Equation Id... not DOM id
     python?: string

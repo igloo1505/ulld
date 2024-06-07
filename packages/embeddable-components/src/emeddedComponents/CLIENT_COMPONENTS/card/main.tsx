@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { ReactNode } from "react";
 import {
     Card,
@@ -9,20 +9,13 @@ import {
 } from "@ulld/tailwind/card";
 import { stringToConsistentId } from "@ulld/state/formatting/general";
 import {
-    BaseEmbeddableComponentProps,
     getBaseEmbeddableProps,
 } from "../../baseEmbeddableComponentTypes";
 import { useMathjaxDynamicParse } from "@ulld/hooks/useMathjaxDynamicParse";
+import clsx from "clsx";
+import { MathJax } from "better-react-mathjax";
+import { EmbeddableCardProps } from "./props";
 
-type C = string | undefined | null;
-
-interface EmbeddableCardProps extends BaseEmbeddableComponentProps {
-    title?: ReactNode;
-    body?: C;
-    children?: C | React.ReactNode;
-    description?: C;
-    desc?: C;
-}
 
 export const EmbeddableCard = ({
     title,
@@ -40,21 +33,22 @@ export const EmbeddableCard = ({
             : `card-${new Date().valueOf() * Math.random()}`;
 
     useMathjaxDynamicParse([title, desc, c]);
+    let newProps = getBaseEmbeddableProps<HTMLDivElement>(_props);
     return (
-        <Card {...getBaseEmbeddableProps(_props)} id={id}>
-            {(title || desc || description) && (
-                <CardHeader>
-                    {title && <CardTitle>{title}</CardTitle>}
-                    {(desc || description) && (
-                        <CardDescription>
-                            {desc || description}
-                        </CardDescription>
-                    )}
-                </CardHeader>
-            )}
-            <CardContent>
-                {c}
-            </CardContent>
+        <Card {...newProps} className={clsx("not-prose", newProps)} id={id}>
+            <MathJax inline>
+                {(title || desc || description) && (
+                    <CardHeader>
+                        {title && <CardTitle>{title}</CardTitle>}
+                        {(desc || description) && (
+                            <CardDescription>{desc || description}</CardDescription>
+                        )}
+                    </CardHeader>
+                )}
+            </MathJax>
+            <MathJax inline={false}>
+                <CardContent>{c}</CardContent>
+            </MathJax>
         </Card>
     );
 };

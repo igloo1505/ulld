@@ -26,24 +26,10 @@ declare global {
 }
 
 
-
-/* const sendCategoryChangeEvent = ( */
-/*     category: (typeof docData.docsCategories)[number], */
-/* ) => () => { */
-/*     window.dispatchEvent( */
-/*         new CustomEvent("set-docs-category", { */
-/*             detail: { */
-/*                 docsCategory: category, */
-/*             }, */
-/*         }), */
-/*     ); */
-/* }; */
-
-
 const DocsSidebar = () => {
     const pathname = usePathname()
-    const [docsCategory, setDocsCategory] = useState(staticDocsData.docsCategories.find((f) => f.href === pathname));
-    const [backButtonPath, setBackButtonPath] = useState("/docs")
+    const [docsCategory, setDocsCategory] = useState(staticDocsData.gettingStarted.find((f) => f.href === pathname));
+    const [backButtonPath, setBackButtonPath] = useState("/docs/user")
     useEventListener("set-docs-category", (e) =>
         setDocsCategory(e.detail.docsCategory),
     );
@@ -51,7 +37,7 @@ const DocsSidebar = () => {
         setBackButtonPath(e.detail.path)
     })
     useEffect(() => {
-       setDocsCategory(staticDocsData.docsCategories.find((f) => f.href === pathname)) 
+       setDocsCategory(staticDocsData.gettingStarted.find((f) => f.href === pathname)) 
     }, [pathname])
     const router = useRouter();
 
@@ -67,10 +53,10 @@ const DocsSidebar = () => {
             <div
                 className={"w-full flex flex-row justify-center items-center relative"}
             >
-                {pathname !== "/docs" && <ArrowBigLeft
+                {pathname !== "/docs/user" && <ArrowBigLeft
                     role="button"
                     className={clsx(
-                        "w-6 h-6 absolute left-2 top-[3px] cursor-pointer",
+                        "w-5 h-5 absolute left-2 top-[5px] cursor-pointer text-muted-foreground hover:text-foreground transition-colors duration-300",
                     )}
                     onClick={handleBackClick}
                     initial={{
@@ -81,12 +67,18 @@ const DocsSidebar = () => {
                         y: 0,
                         opacity: 1
                     }}
+                    transition={{
+                        bounce: 0
+                    }}
                 />}
-                <h3 className={"px-12 text-xl pb-3"}>Documentation</h3>
+                <h3 className={"px-12 text-xl mb-6"}>Documentation</h3>
             </div>
             <AnimatePresence>
-                {pathname === "/docs" && (
-                    <SidebarDocsCategory items={staticDocsData.docsCategories} />
+                {pathname === "/docs/user" && (
+                    <SidebarDocsCategory 
+                        title="Getting Started"
+                        items={staticDocsData.gettingStarted}
+                    />
                 )}
                 {docsCategory?.id === "components" && (
                     <SidebarDocsCategory

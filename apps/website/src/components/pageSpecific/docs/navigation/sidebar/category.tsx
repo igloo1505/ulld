@@ -2,6 +2,7 @@ import NextLink from "next/link";
 import React, { ForwardedRef, ReactNode, forwardRef } from "react";
 import { DocsSidebarLink } from "./types";
 import { motion } from "framer-motion";
+import { usePathname, useSearchParams } from "next/navigation";
 
 const Link = motion(NextLink)
 
@@ -11,13 +12,15 @@ interface SidebarDocsCategoryProps {
 }
 
 const linkClassName =
-    "w-full text-muted-foreground hover:text-foreground transition-colors duration-300 px-3 py-1";
+    "w-full text-muted-foreground hover:text-foreground transition-colors duration-300 px-3 py-1 data-[state=active]:text-foreground";
 
 const SidebarDocsCategory = forwardRef(
     (
         { title, items }: SidebarDocsCategoryProps,
         ref: ForwardedRef<HTMLDivElement>,
     ) => {
+        const pathname = usePathname()
+        const sp = useSearchParams()
         return (
             <div className={"w-full flex flex-col"} ref={ref}>
                 {title && <h3>{title}</h3>}
@@ -34,6 +37,7 @@ const SidebarDocsCategory = forwardRef(
                                     key={i}
                                     className={linkClassName}
                                     onClick={c.onClick}
+                                    data-state={(pathname === "/docs/user/components" && sp.get("category") === c.label) ? "active" : "inactive"}
                                     initial={{
                                         x: -300,
                                     }}

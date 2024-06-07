@@ -1,7 +1,7 @@
 "use client";
 import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
 import { getRandomId } from "@ulld/utilities/identity";
-import { DocumentTypes } from "contentlayer/generated";
+import { DocumentTypes, Documentation } from "contentlayer/generated";
 import React, { HTMLProps } from "react";
 import clsx from "clsx";
 import MdxListItem from "./mdxItem";
@@ -12,12 +12,11 @@ import { MathJaxContext } from "better-react-mathjax";
 import MathjaxProvider from "#/components/utility/providers/mathjax";
 
 interface MdxListProps extends HTMLProps<HTMLDivElement> {
-    items: DocumentTypes[];
+    items: Documentation[];
 }
 
 const MdxList = (props: MdxListProps) => {
     const id = props.id ? props.id : getRandomId();
-    console.log("props: ", props);
     useMathjaxBandaid(id);
     return (
         <InternalReduxProvider>
@@ -28,8 +27,12 @@ const MdxList = (props: MdxListProps) => {
                 className={clsx("w-full max-w-full", props.className)}
             >
                 <NoteStateObserver store={store} />
-                {props.items.map((item) => {
-                    return <MdxListItem key={item._id} mdx={item} />;
+                {props.items.map((item, i) => {
+                    return <MdxListItem 
+                            key={item._id}
+                            mdx={item}
+                            isLast={i === props.items.length - 1}
+                        />;
                 })}
             </div>
             </MathjaxProvider>

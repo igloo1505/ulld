@@ -9,6 +9,7 @@
     "lint": "echo 'Add lint script here'",
     "docs": "typedoc --gaID G-K46X7QHBEX --entryPointStrategy expand ./src --json ./docs.json --pretty",
     "typedoc": "typedoc && python /Users/bigsexy/Desktop/current/ulld/typedoc/scripts/gatherDocumentation.py",
+    "gatherDocs": "python /Users/bigsexy/Desktop/current/ulld/typedoc/scripts/gatherDocumentation.py",
     "typedocOnly": "typedoc"
   },
   "main": "src/index.ts",

@@ -13,8 +13,16 @@ module.exports = {
     tsconfig: "./tsconfig.docs.json",
     out: "./docs/output",
     useTsLinkResolution: true,
-    entryPoints: ["./src/academic/error.tsx", "./src/academic/abstract.tsx", "../utilities/src/types/admonition.ts"],
-    // entryPointStrategy: "Expand",
+    // commentStyle: "block",
+    cleanOutputDir: true,
+    entryPoints: [
+        // "./src/**/*.tsx",
+        "./src/academic/error.tsx",
+        "./src/academic/abstract.tsx",
+        "./src/emeddedComponents/CLIENT_COMPONENTS/card/props.tsx",
+        "../utilities/src/types/admonition.ts",
+    ],
+    entryPointStrategy: "Expand",
     excludeExternals: true,
     exclude: [
         "@ulld/database",
@@ -25,7 +33,7 @@ module.exports = {
     // media: "media",
     readme: "./README.md",
     // basePath: "/docs/user/components",
-    mergeReadme: true,
+    // mergeReadme: true,
     publicPath: "/",
     expandObjects: true,
     expandParameters: true,
@@ -37,6 +45,8 @@ module.exports = {
     hidePageHeader: true,
     hidePageTitle: true,
     hideBreadcrumbs: true,
+    visibilityFilters: {
+    },
     navigationModel: {
         excludeGroups: true,
         excludeCategories: true,

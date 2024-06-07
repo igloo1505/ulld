@@ -1,5 +1,15 @@
 {
   "Layout": {
-    "Admonition": "utilities.src.types.admonition.mdx"
+    "Admonition": {
+      "path": "utilities.src.types.admonition.mdx"
+    },
+    "Card": {
+      "path": "embeddable-components.src.emeddedComponents.CLIENT_COMPONENTS.card.props.mdx",
+      "removeSections": [
+        { "heading": "Index" },
+        { "heading": "Extends", "depth": 4, "index": 1 }
+      ],
+      "removePropertyTableColumns": ["Overrides", "Inherited from"]
+    }
   }
 }

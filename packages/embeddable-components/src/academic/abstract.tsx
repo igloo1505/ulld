@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 
 /**
  * Takes no properties directly, but can wrap content to add an abstract to mdx content.
+ * @alpha
  */
 interface AbstractProps {
   children: ReactNode;
