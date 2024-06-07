@@ -60,10 +60,11 @@ const tailwindCfg: Config = {
                     "monospace",
                 ],
             },
-            colors: {
+            colors: (cfg) => ({
                 hint: "#39f614",
                 link: "#1e90ff",
-            },
+                error: cfg.colors.red["500"],
+            }),
             maxWidth: {
                 content: "1440px",
             },

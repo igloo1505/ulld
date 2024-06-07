@@ -10,6 +10,17 @@
         { "heading": "Extends", "depth": 4, "index": 1 }
       ],
       "removePropertyTableColumns": ["Overrides", "Inherited from"]
+    },
+    "Grid": {
+      "path": "embeddable-components.src.emeddedComponents.gridProps.mdx"
+    }
+  },
+  "Academic": {
+    "Error Margin": {
+      "path": "embeddable-components.src.academic.error.<internal>.mdx"
+    },
+    "Abstract": {
+      "path": "embeddable-components.src.academic.abstract.<internal>.mdx"
     }
   }
 }

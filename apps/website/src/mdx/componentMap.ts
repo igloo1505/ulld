@@ -1,4 +1,5 @@
 import PayPalLinkQr from "#/components/brand/sponsor/paypalLinkSvg";
+import Hint from "#/components/general/hint";
 import { LogoAsText } from "#/components/general/logoAsText";
 import ComingSoon from "#/components/utility/comingSoon";
 import { AdditionalComponents } from "@ulld/component-map/types";
@@ -25,4 +26,9 @@ export const webComponentMap: AdditionalComponents<any> = [
         component: ComingSoon,
         label: "ComingSoon",
     },
+    {
+        regex: new RegExp("<Hint"),
+        component: Hint,
+        label: "Hint"
+    }
 ];

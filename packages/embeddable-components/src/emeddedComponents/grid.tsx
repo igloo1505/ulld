@@ -1,15 +1,9 @@
 import clsx from 'clsx'
 import React from 'react'
+import { GridItemProps, GridProps } from './gridProps'
 
 
 
-interface GridProps {
-    cols?: number
-    columns?: number
-    minMax?: number
-    children: React.ReactNode
-    autoFit?: boolean
-}
 
 const columnMap = {
     "2": "gridCols-2 w-full",
@@ -17,8 +11,7 @@ const columnMap = {
     "4": "gridCols-4 w-full",
 }
 
-
-export const GridItem = ({ children, background, center }: { children: React.ReactNode, background?: boolean, center?: boolean }) => {
+export const GridItem = ({ children, background, center }: GridItemProps) => {
     return (
         <div className={clsx("w-full min-h-full p-4 rounded-lg", center && " flex flex-col justify-center items-center", background && "bg-gray-100 dark:bg-gray-800")}>
             {children}

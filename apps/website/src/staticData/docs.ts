@@ -5,7 +5,6 @@ interface DocCategory {
 }
 
 interface StaticDocsData {
-    docsCategories: DocCategory[];
     gettingStarted: DocCategory[];
     categories: string[];
 }

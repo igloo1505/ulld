@@ -4,6 +4,17 @@ import React, { ReactNode } from "react";
 /**
  * Takes no properties directly, but can wrap content to add an abstract to mdx content.
  * @alpha
+ * @example
+ * ```tsx
+ * <Abstract>
+ * While Einstein revolutionized our understanding of space and time, experimental evidence only supports the fact that the fundamental identity $d=vt$ is broken at relativistic velocities, not that time itself dilates. Dilating space according to $\gamma$ as opposed to time not only maintains all of special relativity's experimental validations, but provides a mechanism for the equivalence principle and yields multiple directly observed quantities.
+ * </Abstract>
+ * ```
+ * ### Output
+ * <Abstract>
+ * While Einstein revolutionized our understanding of space and time, experimental evidence only supports the fact that the fundamental identity $d=vt$ is broken at relativistic velocities, not that time itself dilates. Dilating space according to $\gamma$ as opposed to time not only maintains all of special relativity's experimental validations, but provides a mechanism for the equivalence principle and yields multiple directly observed quantities.
+ * </Abstract>
+ * @interface
  */
 interface AbstractProps {
   children: ReactNode;

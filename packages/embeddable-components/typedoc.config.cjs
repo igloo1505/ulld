@@ -20,6 +20,7 @@ module.exports = {
         "./src/academic/error.tsx",
         "./src/academic/abstract.tsx",
         "./src/emeddedComponents/CLIENT_COMPONENTS/card/props.tsx",
+        "./src/emeddedComponents/gridProps.ts",
         "../utilities/src/types/admonition.ts",
     ],
     entryPointStrategy: "Expand",
