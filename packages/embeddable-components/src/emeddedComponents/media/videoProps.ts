@@ -8,7 +8,6 @@
  * ```
  * <RemoteExampleLimitation />
  * @alpha
- * @interface
  */
 export type VideoProps = ({
     /** The path to the video file. This can either be absolute, or relative to the root of your note directory. */

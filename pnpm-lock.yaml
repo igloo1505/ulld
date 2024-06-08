@@ -32,6 +32,9 @@ importers:
       remark-math:
         specifier: ^6.0.0
         version: 6.0.0
+      tinycolor2:
+        specifier: ^1.6.0
+        version: 1.6.0
       tsup:
         specifier: ^8.0.1
         version: 8.0.2(@microsoft/api-extractor@7.43.7(@types/node@20.12.12))(@swc/core@1.5.7(@swc/helpers@0.5.11))(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.5.7(@swc/helpers@0.5.11))(@types/node@20.12.12)(typescript@5.4.5))(typescript@5.4.5)
@@ -63,6 +66,9 @@ importers:
       '@types/mdx':
         specifier: ^2.0.13
         version: 2.0.13
+      '@types/tinycolor2':
+        specifier: ^1.4.6
+        version: 1.4.6
       autoprefixer:
         specifier: ^10.4.18
         version: 10.4.19(postcss@8.4.38)
@@ -2300,9 +2306,6 @@ importers:
       '@next/mdx':
         specifier: ^14.0.0
         version: 14.2.3(@mdx-js/loader@3.0.1(webpack@5.91.0(@swc/core@1.5.7(@swc/helpers@0.5.11))(esbuild@0.19.12)))(@mdx-js/react@3.0.1(@types/react@18.3.2)(react@18.3.1))
-      '@ulld/component-configs':
-        specifier: workspace:*
-        version: link:../componentConfigs
       '@ulld/configschema':
         specifier: workspace:*
         version: link:../configschema
@@ -2337,6 +2340,9 @@ importers:
       '@ulld/api':
         specifier: workspace:*
         version: link:../api
+      '@ulld/component-configs':
+        specifier: workspace:*
+        version: link:../componentConfigs
       '@ulld/default-image-map':
         specifier: workspace:*
         version: link:../default-image-map
@@ -10545,6 +10551,9 @@ packages:
 
   '@types/three@0.163.0':
     resolution: {integrity: sha512-uIdDhsXRpQiBUkflBS/i1l3JX14fW6Ot9csed60nfbZNXHDTRsnV2xnTVwXcgbvTiboAR4IW+t+lTL5f1rqIqA==}
+
+  '@types/tinycolor2@1.4.6':
+    resolution: {integrity: sha512-iEN8J0BoMnsWBqjVbWH/c0G0Hh7O21lpR2/+PrvAVgWdzL7eexIFm4JN/Wn10PTcmNdtS6U67r499mlWMXOxNw==}
 
   '@types/tough-cookie@4.0.5':
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
@@ -28411,6 +28420,8 @@ snapshots:
       '@types/webxr': 0.5.16
       fflate: 0.8.2
       meshoptimizer: 0.18.1
+
+  '@types/tinycolor2@1.4.6': {}
 
   '@types/tough-cookie@4.0.5': {}
 

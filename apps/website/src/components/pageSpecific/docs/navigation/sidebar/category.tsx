@@ -4,12 +4,12 @@ import { DocsSidebarLink } from "./types";
 import { motion } from "framer-motion";
 import { usePathname, useSearchParams } from "next/navigation";
 
-const Link = motion(NextLink)
+const Link = motion(NextLink);
 
 interface SidebarDocsCategoryProps {
     items: DocsSidebarLink[];
     title?: ReactNode;
-    keyId: string
+    keyId: string;
 }
 
 const linkClassName =
@@ -20,69 +20,89 @@ const SidebarDocsCategory = forwardRef(
         { title, items, keyId }: SidebarDocsCategoryProps,
         ref: ForwardedRef<HTMLDivElement>,
     ) => {
-        const pathname = usePathname()
-        const sp = useSearchParams()
+        const pathname = usePathname();
+        const sp = useSearchParams();
         return (
-            <div className={"w-full flex flex-col"} ref={ref}>
-                {title && <h3>{title}</h3>}
-                <div
-                    className={
-                        "w-full max-w-full flex flex-col justify-start items-center"
+            <>
+                {title && <motion.h3
+                    className={"w-full"}
+                    initial={{
+                        opacity: 0,
+                        scale: 1
+                    }}
+                    animate={{
+                        opacity: 1
+                    }}
+                    exit={{
+                        scale: 0
+                    }}
+                >{title}</motion.h3>}
+                {items.map((c, i) => {
+                    if (c.href) {
+                        return (
+                            <Link
+                                href={c.href}
+                                key={`${keyId}-${i}`}
+                                className={linkClassName}
+                                onClick={c.onClick}
+                                data-state={
+                                    pathname === "/docs/user/components" &&
+                                        sp.get("category") === c.label
+                                        ? "active"
+                                        : "inactive"
+                                }
+                                initial={{
+                                    x: -300,
+                                }}
+                                animate={{
+                                    x: 0,
+                                    opacity: 1,
+                                    transition: {
+                                        delay: i * 0.15,
+                                    },
+                                }}
+                                exit={{
+                                    x: 100,
+                                    opacity: 0,
+                                }}
+                            >
+                                {c.label}
+                            </Link>
+                        );
+                    } else {
+                        return (
+                            <motion.a
+                                role="button"
+                                key={`${keyId}-${i}`}
+                                className={linkClassName}
+                                onClick={c.onClick}
+                                data-state={
+                                    pathname === "/docs/user/components" &&
+                                        sp.get("category") === c.label
+                                        ? "active"
+                                        : "inactive"
+                                }
+                                initial={{
+                                    x: -300,
+                                }}
+                                animate={{
+                                    x: 0,
+                                    opacity: 1,
+                                    transition: {
+                                        delay: i * 0.15,
+                                    },
+                                }}
+                                exit={{
+                                    x: 100,
+                                    opacity: 0,
+                                }}
+                            >
+                                {c.label}
+                            </motion.a>
+                        );
                     }
-                >
-                    {items.map((c, i) => {
-                        if (c.href) {
-                            return (
-                                <Link
-                                    href={c.href}
-                                    key={`${keyId}-${i}`}
-                                    className={linkClassName}
-                                    onClick={c.onClick}
-                                    data-state={(pathname === "/docs/user/components" && sp.get("category") === c.label) ? "active" : "inactive"}
-                                    initial={{
-                                        x: -300,
-                                    }}
-                                    animate={{
-                                        x: 0
-                                    }}
-                                    exit={{
-                                        x: -300
-                                    }}
-                                    transition={{
-                                        delay: i * 0.15
-                                    }}
-                                >
-                                    {c.label}
-                                </Link>
-                            );
-                        } else {
-                            return (
-                                <motion.a
-                                    role="button"
-                                    key={`${keyId}-${i}`}
-                                    className={linkClassName}
-                                    onClick={c.onClick}
-                                    data-state={(pathname === "/docs/user/components" && sp.get("category") === c.label) ? "active" : "inactive"}
-                                    initial={{
-                                        x: -300,
-                                    }}
-                                    animate={{
-                                        x: 0
-                                    }}
-                                    exit={{
-                                        x: -300
-                                    }}
-                                    transition={{
-                                        delay: i * 0.15
-                                    }}
-                                >
-                                    {c.label}
-                                </motion.a>
-                            );
-                        }
-                    })}
-                </div>
-            </div>
+                })}
+            </>
         );
     },
 );

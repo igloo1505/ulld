@@ -1,10 +1,8 @@
 import React from 'react'
+import { VSpaceProps } from './vspaceProps'
 
 
 
-interface VSpaceProps {
-    height: number | string
-}
 
 export const VSpace = ({ height }: VSpaceProps) => {
     let h = height || 16

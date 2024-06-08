@@ -16,6 +16,9 @@
     },
     "Tabs": {
       "path": "embeddable-components.src.emeddedComponents.tabs.props.mdx"
+    },
+    "VSpace": {
+      "path": "embeddable-components.src.emeddedComponents.layout.vspaceProps.mdx"
     }
   },
   "Academic": {
@@ -32,6 +35,9 @@
     },
     "Video": {
       "path": "embeddable-components.src.emeddedComponents.media.videoProps.mdx"
+    },
+    "Image": {
+      "path": "utilities.src.types.embeddedImageProps.mdx"
     }
   },
   "Text": {
@@ -39,6 +45,9 @@
       "path": "embeddable-components.src.emeddedComponents.text.titleProps.mdx",
       "removeSections": [{ "heading": "Extends", "depth": 4, "index": 1 }],
       "removePropertyTableColumns": ["Overrides"]
+    },
+    "Underline": {
+      "path": "embeddable-components.src.emeddedComponents.props.underlineProps.mdx"
     }
   },
   "Interactivity": {
@@ -46,10 +55,5 @@
       "path": "embeddable-components.src.emeddedComponents.props.withTooltipWrapperProps.mdx"
     }
   },
-  "Colors": {
-    "Color Properties": {
-      "path": "embeddable-components.src.emeddedComponents.props.propcolor.mdx",
-      "removePropertyTableColumns": ["Default value"]
-    }
-  }
+  "Colors": {}
 }

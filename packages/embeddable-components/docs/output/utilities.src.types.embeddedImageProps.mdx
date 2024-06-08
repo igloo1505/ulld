@@ -1,0 +1,57 @@
+## Interfaces
+
+### EmbeddedImageProps
+
+The Image component extends the img html element with a bunch of style utilities and the ability to more easily utilize images on your local file system without needing to copy or move them.
+
+#### Example
+
+```tsx
+<Image
+  url="/assets/images/demos/definitelyMe.jpg"
+  lg
+  center
+  desc="Me in the selfie I took for my dating profile."
+/>
+```
+
+<Image
+  url="/assets/images/demos/definitelyMe.jpg"
+  lg
+  center
+  desc="Me in the selfie I took for my dating profile."
+/>
+
+#### Properties
+
+| Property     | Type                 | Description                                                                                                                      |
+| :----------- | :------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| `file?`      | `string`             | A [root-relative](/docs/user/syntax#root-relative-paths) to an image file.                                                       |
+| `url?`       | `string`             | A url to a remote image.                                                                                                         |
+| `src?`       | `string`             | An alias for url                                                                                                                 |
+| `image?`     | `string`             | The name of a file described in your config. This adds support for easily accessing sets of images, but is currently in beta.    |
+| `left?`      | `boolean`            | Float image to the left, and wrap other content around it.                                                                       |
+| `center?`    | `boolean`            | Center align the image, and do not wrap content around it.                                                                       |
+| `right?`     | `boolean`            | Float image to the right, and wrap other content around it.                                                                      |
+| `inline?`    | `boolean`            | Setting for inline, small images.                                                                                                |
+| `width?`     | `string` \| `number` | CSS compliant width or "full" as an alias for `full` and `fullWidth`                                                             |
+| `height?`    | `string` \| `number` | CSS compliant height                                                                                                             |
+| `block?`     | `boolean`            | Display image block style, making the entire width of the note reserved for the image, regardless of the image's width.          |
+| `full?`      | `boolean`            | Make image full width of note, within certain automatic viewport related size constraints.                                       |
+| `fullWidth?` | `boolean`            | Alias for full.                                                                                                                  |
+| `md?`        | `boolean`            | Size convenience property                                                                                                        |
+| `sm?`        | `boolean`            | Size convenience property                                                                                                        |
+| `lg?`        | `boolean`            | Size convenience property                                                                                                        |
+| `xl?`        | `boolean`            | Size convenience property                                                                                                        |
+| `small?`     | `boolean`            | Size convenience property                                                                                                        |
+| `medium?`    | `boolean`            | Size convenience property                                                                                                        |
+| `large?`     | `boolean`            | Size convenience property                                                                                                        |
+| `border?`    | `boolean`            | Add a minimalist border around image                                                                                             |
+| `bordered?`  | `boolean`            | Alias for border                                                                                                                 |
+| `circle?`    | `boolean`            | Round image into a circle without distorting it's content.                                                                       |
+| `desc?`      | `ReactNode`          | An optional description displayed below the image                                                                                |
+| `descLeft?`  | `boolean`            | Align description to the left                                                                                                    |
+| `descRight?` | `boolean`            | Align description to the right                                                                                                   |
+| `notFigure?` | `boolean`            | Do not include image in figure referencing indices.                                                                              |
+| `id?`        | `string`             | Unique id of image. Optional, but required for figure referencing using the **FigRef** component.                                |
+| `label?`     | `boolean`            | Apply a default description showing the index of the figure to add a visual reference for pairing with the **FigRef** component. |

@@ -10,7 +10,8 @@
     "src"
   ],
   "exports": {
-    "./underline": "./src/components/underline.tsx"
+    "./underline": "./src/components/underline.tsx",
+    "./colors": "./src/subConfigs/colors.tsx"
   },
   "peerDependencies": {
     "@repo/typescript-config": "workspace:*",

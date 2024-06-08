@@ -1,4 +1,3 @@
-
 // const walkTokens = (token) => {
 //     console.log("token: ", token)
 //   if (token.type === 'heading') {
@@ -21,20 +20,20 @@ module.exports = {
         "./src/academic/abstract.tsx",
         "./src/emeddedComponents/CLIENT_COMPONENTS/card/props.tsx",
         "./src/emeddedComponents/gridProps.ts",
-        "../utilities/src/types/admonition.ts",
         "./src/emeddedComponents/tabs/props.ts",
         "./src/emeddedComponents/media/videoProps.ts",
         "./src/emeddedComponents/modelView/props.tsx",
         "./src/emeddedComponents/text/titleProps.ts",
         "./src/emeddedComponents/props/withTooltipWrapperProps.ts",
+        "./src/emeddedComponents/layout/vspaceProps.ts",
+        "./src/emeddedComponents/props/underlineProps.ts",
+        "../utilities/src/types/admonition.ts",
+        "../utilities/src/types/embeddedImageProps.ts",
         // "./src/emeddedComponents/props/propcolor.ts"
     ],
     entryPointStrategy: "Expand",
     excludeExternals: true,
-    exclude: [
-        "@ulld/database",
-        "prisma",
-    ],
+    exclude: ["@ulld/database", "prisma"],
     fileExtension: ".mdx",
     sort: ["source-order"],
     // media: "media",
@@ -52,12 +51,11 @@ module.exports = {
     hidePageHeader: true,
     hidePageTitle: true,
     hideBreadcrumbs: true,
-    visibilityFilters: {
-    },
+    visibilityFilters: {},
     navigationModel: {
         excludeGroups: true,
         excludeCategories: true,
-        excludeFolders: true
+        excludeFolders: true,
     },
     // categorizeByGroup: false,
     // searchCategoryBoosts: {
@@ -97,7 +95,7 @@ module.exports = {
         // }]
     ],
     markedOptions: {
-        // walkTokens 
-    }
+        // walkTokens
+    },
     // includes: ["typedocIncludes"],
 };

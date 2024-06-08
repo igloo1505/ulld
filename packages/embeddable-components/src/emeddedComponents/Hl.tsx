@@ -4,7 +4,7 @@ import { PropColor } from "@ulld/utilities/shadColorMap";
 import { ComposedTooltip } from "./composedTooltip";
 import { componentConfig } from "@ulld/component-configs/underline";
 import { WithTooltipWrapper } from "./props/withTooltipWrapperProps";
-
+import { propColorSchemaTransform } from "@ulld/component-configs/colors";
 
 const ttIsLink = (t: string) => {
     return Boolean(/^(\/|http|www|\#)/gm.test(t));
@@ -37,8 +37,9 @@ export const Highlight = (
         WithTooltipWrapper & { light?: boolean; faint?: boolean; muted?: boolean },
 ) => {
     const props = componentConfig.parse(p);
+    console.log("highlight props: ", props);
     /* let { color, props: _props } = getPropColor(props, "bg", "yellow") */
-    let tt = getToolTipWrapperContent(props);
+    let tt = getToolTipWrapperContent(p);
     if (tt) {
         return (
             <ComposedTooltip
@@ -53,13 +54,14 @@ export const Highlight = (
                 <span
                     className={clsx(
                         "px-1 rounded-md",
-                        props.className,
+                        p.className,
                         /* Boolean(props.light || props.faint || props.muted) && "bg-opacity-60 hl-faint" */
                     )}
                     {...p}
                     style={{
                         ...props.css,
                         backgroundColor: props.css?.textDecorationColor,
+                        color: props.contrastColor,
                         ...p.style,
                     }}
                 />
@@ -68,11 +70,12 @@ export const Highlight = (
     }
     return (
         <span
-            className={clsx("px-1 rounded-md", props.className)}
+            className={clsx("px-1 rounded-md", p.className)}
             {...p}
             style={{
                 ...props.css,
                 backgroundColor: props.css?.textDecorationColor,
+                color: props.contrastColor,
                 ...p.style,
             }}
         />

@@ -1,5 +1,11 @@
 import { ReactNode } from "react";
 
+
+interface ExtendsProps {
+    label: string
+    href: string
+}
+
 interface DocCategory {
     label: string;
     href: string;
@@ -7,7 +13,7 @@ interface DocCategory {
     back?: {
         path: string
         category: string
-    }
+    };
 }
 
 interface Term {
@@ -20,7 +26,25 @@ interface StaticDocsData {
     gettingStarted: DocCategory[];
     categories: string[];
     terms: Term[]
+    extendsMap: Record<string, ExtendsProps>
 }
+
+const docCategories = [
+        "Layout",
+        "Text",
+        "Linking & Searching",
+        "Referencing",
+        "Colors",
+        "Plotting",
+        "Academic",
+        "Content Types",
+        "Interactivity",
+]
+
+const initalCategorySearchParam = new URLSearchParams()
+initalCategorySearchParam.set("category", docCategories[0])
+
+
 
 export const staticDocsData: StaticDocsData = {
     gettingStarted: [
@@ -42,25 +66,21 @@ export const staticDocsData: StaticDocsData = {
         {
             label: "Components",
             id: "components",
-            href: "/docs/user/components",
+            href: `/docs/user/components?${initalCategorySearchParam.toString()}`,
         },
     ],
-    categories: [
-        "Layout",
-        "Plotting",
-        "Text",
-        "Colors",
-        "Linking & Searching",
-        "Referencing",
-        "Academic",
-        "Content Types",
-        "Interactivity",
-    ],
+    categories: docCategories,
     terms: [
         {
             label: "Assumed Dimension",
             content: "A number which if greater than 1 is interpreted as pixels, and if less than 1 is interpreted as a proportion of the viewport.",
             id: "assumedDimension"
         }
-    ]
+    ],
+    extendsMap: {
+       "colorProps": {
+            href: "/docs/user/components?category=Colors#colorproperties",
+            label: "Color Properties"
+        }
+    }
 } as const;

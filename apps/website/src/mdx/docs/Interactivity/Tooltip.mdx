@@ -4,13 +4,19 @@ component: Tooltip
 id: tooltip
 ---
 
-## Index
-
 ## Interfaces
 
 ### WithTooltipWrapper
 
 Several components extend the WithTooltipWrapper interface to support adding a tooltip around specific content.
+
+#### Example
+
+```tsx
+See? <Ul yellow tooltip="The underline component">underline</Ul>, <Color orange tooltip="color component,">color</Color> and <Hl green tt="and highlight component all support WithTooltipWrapper properties.">highlight</Hl>
+```
+
+See? <Ul yellow tooltip="The underline component">underline</Ul>, <Color orange tooltip="color component,">color</Color> and <Hl green tt="and highlight component all support WithTooltipWrapper properties.">highlight</Hl>
 
 #### Properties
 
@@ -22,33 +28,3 @@ Several components extend the WithTooltipWrapper interface to support adding a t
 | `toolTipAsLink?` | `boolean` |
 | `ttAslink?`      | `boolean` |
 
-## Type Aliases
-
-### UnderlineProps
-
-```ts
-type UnderlineProps: {
-  thin: boolean;
-  thick: boolean;
-} & PropColorInput & WithTooltipWrapper & HTMLProps<HTMLSpanElement>;
-```
-
-The Underline component is available either as **Underline** or **UL**. Along with several other components, the underline component takes a color as a boolean property. You can both define new colors and override default colors in your configuration file.
-
-#### Type declaration
-
-##### thin?
-
-```ts
-optional thin: boolean;
-```
-
-Make underline thinner
-
-##### thick?
-
-```ts
-optional thick: boolean;
-```
-
-Make underline thicker

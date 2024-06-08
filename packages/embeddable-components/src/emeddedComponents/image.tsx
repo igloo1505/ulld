@@ -8,10 +8,14 @@ import { getRandomId } from "@ulld/utilities/identity";
 import SelfFigureIndex from "./selfImageIndex";
 import DispatchRenderedImageEvent from "./dispatchRenderedImageEvent";
 
+type ImgProps = EmbeddedImageProps & React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> & {noConfig?: boolean}
 
-const C = (props: EmbeddedImageProps) => {
+const C = (props: ImgProps) => {
+
     let id = props.id || getRandomId();
+
     const fullWidth = isFullWidth(props);
+
     let imgProps = {
         src: props.src,
         alt: props.alt,
@@ -45,6 +49,7 @@ const C = (props: EmbeddedImageProps) => {
             id,
         ],
     );
+
     return (
         <div
             className={clsx(
@@ -98,7 +103,11 @@ const C = (props: EmbeddedImageProps) => {
                         props.descLeft && "w-full text-left",
                     )}
                 >
-                    {props.label ? <SelfFigureIndex id={id} /> : props.desc}
+                    {(props.label || props.desc) && <SelfFigureIndex 
+                        id={id} 
+                        desc={props.desc}
+                        imageId={imgProps.id}
+                    />}
                 </div>
             )}
             <DispatchRenderedImageEvent />
@@ -106,13 +115,14 @@ const C = (props: EmbeddedImageProps) => {
     );
 };
 
-export const EmbeddedImage = (props: EmbeddedImageProps) => {
+
+export const EmbeddedImage = (props: ImgProps) => {
     const config = props.noConfig ? null : getInternalConfig();
     const { image } = props;
     if (image && config && image in config.UI.media.imageMap) {
         return <ImageMapImage {...props} image={image} />;
     }
-    return <C {...props} />;
+    return <C {...props} src={props.src || props.url} />;
 };
 
 EmbeddedImage.displayName = "EmbeddedImage";

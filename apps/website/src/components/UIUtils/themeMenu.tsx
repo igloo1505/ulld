@@ -15,6 +15,7 @@ import { useViewport } from "@ulld/hooks/useViewport";
 import { setTheme } from "#/state/actions/dom";
 import { useEventListener } from "@ulld/hooks/useEventListener";
 import { LogoAsText } from "../general/logoAsText";
+import { NavbarButton, NavbarButtonClick } from "#/state/initialState/core";
 
 interface ThemeMenuProps {
     open: boolean;
@@ -57,8 +58,9 @@ const ThemeMenuDrawer = ({ open, close }: ThemeMenuProps) => {
                 </DrawerHeader>
                 <MainNavigationDrawerButtonGroup
                     hide={false}
+                    className={"pb-4"}
                     buttons={defaultSupportedThemes
-                        .map((t) => ({
+                        .map((t): NavbarButton | NavbarButtonClick => ({
                             onClick: () => {
                                 setTheme(t);
                                 close();

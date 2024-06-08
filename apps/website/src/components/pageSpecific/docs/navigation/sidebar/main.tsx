@@ -12,6 +12,7 @@ const ArrowBigLeft = motion(ABL)
 
 const SidebarDocsCategory = motion(SDC);
 
+
 declare global {
     // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
     interface WindowEventMap {
@@ -71,6 +72,7 @@ const DocsSidebar = () => {
                 />}
                 <h3 className={"px-12 text-xl mb-6"}>Documentation</h3>
             </div>
+            <div className={"w-full flex flex-col justify-start items-center"}>
             <AnimatePresence>
                 {pathname === "/docs/user" && (
                     <SidebarDocsCategory 
@@ -80,7 +82,7 @@ const DocsSidebar = () => {
                         keyId="docsHome"
                     />
                 )}
-                {docsCategory?.id === "components" && (
+                {pathname === "/docs/user/components" && (
                     <SidebarDocsCategory
                         key="docsComponents"
                         keyId="components"
@@ -92,6 +94,7 @@ const DocsSidebar = () => {
                     />
                 )}
             </AnimatePresence>
+            </div>
         </div>
     );
 };

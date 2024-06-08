@@ -1,10 +1,14 @@
-import { PropColor } from "@ulld/utilities/shadColorMap";
-import { HTMLProps } from "react";
-import { PropColorInput } from "../../../../componentConfigs/src/subConfigs/colors";
 
 
 /**
  * Several components extend the WithTooltipWrapper interface to support adding a tooltip around specific content.
+ * @example
+ * ```tsx
+ * See? <Ul yellow tooltip="The underline component">underline</Ul>, <Color orange tooltip="color component,">color</Color> and <Hl green tt="and highlight component all support WithTooltipWrapper properties.">highlight</Hl>
+ * ```
+ * See? <Ul yellow tooltip="The underline component">underline</Ul>, <Color orange tooltip="color component,">color</Color> and <Hl green tt="and highlight component all support WithTooltipWrapper properties.">highlight</Hl>
+ * @alpha
+ * @interface
  */
 export interface WithTooltipWrapper {
     toolTip?: string;
@@ -13,16 +17,3 @@ export interface WithTooltipWrapper {
     toolTipAsLink?: boolean;
     ttAslink?: boolean;
 }
-
-
-/**
- * The Underline component is available either as **Underline** or **UL**. Along with several other components, the underline component takes a color as a boolean property. You can both define new colors and override default colors in your configuration file.
- */
-export type UnderlineProps = {
-    /** Make underline thinner */
-    thin?: boolean;
-    /** Make underline thicker */
-    thick?: boolean;
-} & PropColorInput &
-    WithTooltipWrapper &
-    HTMLProps<HTMLSpanElement>;

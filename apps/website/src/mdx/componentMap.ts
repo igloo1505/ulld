@@ -1,6 +1,7 @@
 import H1SizeContainer from "#/components/UIUtils/h1SizeContainer";
 import ThemeSwitchTrigger from "#/components/UIUtils/themeSwitchButton";
 import PayPalLinkQr from "#/components/brand/sponsor/paypalLinkSvg";
+import Extends from "#/components/docUtils/extendsReference";
 import RemoteExampleLimitation from "#/components/docUtils/remoteExampleLimitation";
 import Hint from "#/components/general/hint";
 import { LogoAsText } from "#/components/general/logoAsText";
@@ -48,5 +49,10 @@ export const webComponentMap: AdditionalComponents<any> = [
         regex: new RegExp("<ThemeSwitch"),
         component: ThemeSwitchTrigger,
         label: "ThemeSwitch"
-    }
+    },
+    {
+        regex: new RegExp("<Extends"),
+        component: Extends,
+        label: "Extends"
+    },
 ];

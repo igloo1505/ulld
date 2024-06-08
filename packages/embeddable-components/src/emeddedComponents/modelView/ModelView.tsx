@@ -69,7 +69,7 @@ export const ModelView = ({
     const dimensions = useMemo(
         () =>
             getAssumedDimensions({
-                width,
+                /* width, */
                 height,
                 maxViewportWidth: 30,
                 maxViewportHeight: 30,
