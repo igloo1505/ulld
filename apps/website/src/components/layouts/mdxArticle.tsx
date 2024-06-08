@@ -38,7 +38,7 @@ const MDXArticle = forwardRef(
         const id = props.id ? props.id : getRandomId();
         const article = useMDXComponent(mdx.body.code);
         const Article = useMemo(() => article, []);
-        const wrapCodeRef = useAutoWrapCode()
+        /* const wrapCodeRef = useAutoWrapCode() */
 
         useMathjaxBandaid(id);
 
@@ -67,7 +67,7 @@ const MDXArticle = forwardRef(
                     )}
                 >
                     <Article 
-                        ref={(wrapCode || ("wrapCode" in mdx && mdx.wrapCode)) ? wrapCodeRef : undefined}
+                        /* ref={(wrapCode || ("wrapCode" in mdx && mdx.wrapCode)) ? wrapCodeRef : undefined} */
                         components={components} 
                     />
                     {citationsEm}

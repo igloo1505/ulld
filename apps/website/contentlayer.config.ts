@@ -12,7 +12,6 @@ import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import fs from "fs";
-import rehypeFormat from "rehype-format";
 
 const styleFields: DocumentTypeDef["fields"] = {
     autoWrapCode: {
@@ -400,7 +399,6 @@ export default makeSource({
                 },
             ],
             rehypeSlug,
-         rehypeFormat,
         ],
     },
 });

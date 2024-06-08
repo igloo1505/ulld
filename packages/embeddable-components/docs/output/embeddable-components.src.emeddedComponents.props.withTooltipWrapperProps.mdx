@@ -1,0 +1,56 @@
+## Index
+
+### Modules
+
+- [\<internal>](/embeddable-components.src.emeddedComponents.props.withTooltipWrapperProps.%3Cinternal%3E.mdx)
+
+## Interfaces
+
+### WithTooltipWrapper
+
+Several components extend the WithTooltipWrapper interface to support adding a tooltip around specific content.
+
+#### Properties
+
+| Property         | Type      |
+| :--------------- | :-------- |
+| `toolTip?`       | `string`  |
+| `tooltip?`       | `string`  |
+| `tt?`            | `string`  |
+| `toolTipAsLink?` | `boolean` |
+| `ttAslink?`      | `boolean` |
+
+## Type Aliases
+
+### UnderlineProps
+
+```ts
+type UnderlineProps: {
+  thin: boolean;
+  thick: boolean;
+} & PropColorInput & WithTooltipWrapper & HTMLProps<HTMLSpanElement>;
+```
+
+The Underline component is available either as **Underline** or **UL**. Along with several other components, the underline component takes a color as a boolean property. You can both define new colors and override default colors in your configuration file.
+
+#### Type declaration
+
+##### thin?
+
+```ts
+optional thin: boolean;
+```
+
+Make underline thinner
+
+##### thick?
+
+```ts
+optional thick: boolean;
+```
+
+Make underline thicker
+
+#### Source
+
+packages/embeddable-components/src/emeddedComponents/props/withTooltipWrapperProps.ts:21

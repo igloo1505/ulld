@@ -76,10 +76,14 @@ const DocsSidebar = () => {
                     <SidebarDocsCategory 
                         title="Getting Started"
                         items={staticDocsData.gettingStarted}
+                        key="docsUserHome"
+                        keyId="docsHome"
                     />
                 )}
                 {docsCategory?.id === "components" && (
                     <SidebarDocsCategory
+                        key="docsComponents"
+                        keyId="components"
                         title="Components"
                         items={staticDocsData.categories.map((c) => ({
                             label: c,

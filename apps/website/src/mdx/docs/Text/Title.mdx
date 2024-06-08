@@ -1,0 +1,34 @@
+---
+category: Text
+component: Title
+id: title
+---
+
+## Interfaces
+
+### TitleProps
+
+A simple title component that supports adding a subtitle with reasonable default styles.
+
+#### Example
+
+```tsx
+<Title subtitle="And this is my subtitle" subtitleMuted>
+  This is my title
+</Title>
+```
+
+### Output
+
+<Title subtitle="And this is my subtitle" subtitleMuted>
+  This is my title
+</Title>
+
+#### Properties
+
+| Property         | Type                                                                                          | Description                                                                   |
+| :--------------- | :-------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------- |
+| `children`       | `ReactNode`                                                                                   | The main title content                                                        |
+| `subtitle?`      | `ReactNode`                                                                                   | The optional subtitle                                                         |
+| `subtitleMuted?` | `boolean`                                                                                     | Whether or not subtitle should have a muted appearance. Defaults to **true**. |
+| `subtitleProps?` | `HTMLProps`\<[`HTMLSpanElement`](https://developer.mozilla.org/docs/Web/API/HTMLSpanElement)> | Properties passed directly to the subtitle component.                         |

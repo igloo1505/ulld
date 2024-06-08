@@ -18,6 +18,7 @@ import staticContent from "staticContent";
 import MainNavigationDrawer from "#/components/layouts/drawer/main";
 import InternalReduxProvider from "#/state/provider";
 import NavbarBreakpointHandler from "#/components/utility/navbarBreakpointHandler";
+import ThemeMenu from "#/components/UIUtils/themeMenu";
 
 const appFont = localFont({
     variable: "--ulld-app-font",
@@ -223,6 +224,7 @@ const RootLayout = async (props: {
                     }}
                 />
                 <StateWrappedComponents />
+                <ThemeMenu />
                 <Footer />
             </body>
             <GoogleAnalytics gaId="G-K46X7QHBEX" />

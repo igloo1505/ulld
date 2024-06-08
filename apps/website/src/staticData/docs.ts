@@ -54,6 +54,7 @@ export const staticDocsData: StaticDocsData = {
         "Referencing",
         "Academic",
         "Content Types",
+        "Interactivity",
     ],
     terms: [
         {

@@ -1,17 +1,10 @@
 import clsx from "clsx";
 import React from "react";
 import { PropColor } from "@ulld/utilities/shadColorMap";
-import { getPropColor } from "@ulld/state/actions/ui/getPropColor";
 import { ComposedTooltip } from "./composedTooltip";
 import { componentConfig } from "@ulld/component-configs/underline";
+import { WithTooltipWrapper } from "./props/withTooltipWrapperProps";
 
-export interface WithTooltipWrapper {
-    toolTip?: string;
-    tooltip?: string;
-    tt?: string;
-    toolTipAsLink?: boolean;
-    ttAslink?: boolean;
-}
 
 const ttIsLink = (t: string) => {
     return Boolean(/^(\/|http|www|\#)/gm.test(t));
@@ -44,7 +37,6 @@ export const Highlight = (
         WithTooltipWrapper & { light?: boolean; faint?: boolean; muted?: boolean },
 ) => {
     const props = componentConfig.parse(p);
-    console.log("props.css: ", props.css)
     /* let { color, props: _props } = getPropColor(props, "bg", "yellow") */
     let tt = getToolTipWrapperContent(props);
     if (tt) {

@@ -1,13 +1,8 @@
 import React, { HTMLProps, ReactNode } from "react";
 import { H1 } from "../../heading";
 import clsx from "clsx";
+import { TitleProps } from "./titleProps";
 
-interface TitleProps extends HTMLProps<HTMLDivElement> {
-    children: ReactNode;
-    subtitle?: ReactNode;
-    subtitleMuted?: boolean;
-    subtitleProps?: HTMLProps<HTMLSpanElement>;
-}
 
 export const Title = ({
     children,
@@ -20,7 +15,7 @@ export const Title = ({
         <div
             {...props}
             className={clsx(
-                "w-full h-fit flex flex-col justify-center items-center mb-8",
+                "not-prose w-full h-fit flex flex-col justify-center items-center mb-8",
                 props.className,
             )}
         >

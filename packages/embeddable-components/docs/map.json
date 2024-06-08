@@ -33,5 +33,23 @@
     "Video": {
       "path": "embeddable-components.src.emeddedComponents.media.videoProps.mdx"
     }
+  },
+  "Text": {
+    "Title": {
+      "path": "embeddable-components.src.emeddedComponents.text.titleProps.mdx",
+      "removeSections": [{ "heading": "Extends", "depth": 4, "index": 1 }],
+      "removePropertyTableColumns": ["Overrides"]
+    }
+  },
+  "Interactivity": {
+    "Tooltip": {
+      "path": "embeddable-components.src.emeddedComponents.props.withTooltipWrapperProps.mdx"
+    }
+  },
+  "Colors": {
+    "Color Properties": {
+      "path": "embeddable-components.src.emeddedComponents.props.propcolor.mdx",
+      "removePropertyTableColumns": ["Default value"]
+    }
   }
 }

@@ -54,6 +54,7 @@ const EquationTag = dynamic(() => import("@ulld/embeddable-components/components
 const Boxed = dynamic(() => import("@ulld/embeddable-components/components/client/boxed").then((a) => a.Boxed))
 // const Tikz = dynamic(() => import("./emeddedComponents/tikz"))
 const Color = dynamic(() => import("@ulld/embeddable-components/components/client/colorText").then((a) => a.ColorText))
+const ColorChip = dynamic(() => import("@ulld/embeddable-components/components/client/colorChip").then((a) => a.ColorChip))
 // TODO: Come back and add a better implementation of the client side whiteboard. This will work for now, just to get the website up, but push it all to the client and handle state that way when you have time.
 const Whiteboard = dynamic(() => import("@ulld/whiteboard/local").then((a) => a.WhiteboardLocal))
 
@@ -87,6 +88,7 @@ export const conditionalClientComponents: ConditionalComponentQuery<EmbeddableCl
         { regex: new RegExp(`<Title`), component: Title, label: "Title" },
         // Notifications and Attention Components
         { regex: new RegExp(`<Admonition`), component: Admonition, label: "Admonition" },
+        { regex: new RegExp(`<ColorChip`), component: ColorChip, label: "ColorChip" },
         // Math related
         { regex: new RegExp(`<EqRef`), component: EqRef, label: "EqRef" },
         { regex: new RegExp(`<FigRef`), component: FigureRef, label: "FigRef" },

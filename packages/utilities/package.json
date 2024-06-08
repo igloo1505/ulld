@@ -58,7 +58,8 @@
     "./internalDevTypes": "./src/internalDevTypes/main.ts",
     "./shikiLanguages": "./src/shiki/languageList.ts",
     "./shikiThemes": "./src/shiki/themeList.ts",
-    "./getAssumedDimensions": "./src/utils/getAssumedDimensions.ts"
+    "./getAssumedDimensions": "./src/utils/getAssumedDimensions.ts",
+    "./removeEmptyChildren": "./src/utils/removeEmptyChildren.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",

@@ -40,6 +40,8 @@ export const propColorSchema = z.object({
 })
 
 
+export type PropColorInput = z.input<typeof propColorSchema>
+
 
 type RT<T, U extends string> = Omit<T, U> & {colors: Partial<Record<U, boolean>>, color: string}
 

@@ -1,18 +1,13 @@
 import clsx from "clsx";
 import React, { HTMLProps } from "react";
-import { WithTooltipWrapper, getToolTipWrapperContent } from "./Hl";
+import { getToolTipWrapperContent } from "./Hl";
 import { PropColor } from "@ulld/utilities/shadColorMap";
 import { ComposedTooltip } from "./composedTooltip";
 import { componentConfig } from "@ulld/component-configs/underline";
+import { UnderlineProps } from "./props/withTooltipWrapperProps";
 
-type Props = {
-    thin?: boolean;
-    thick?: boolean;
-} & Record<keyof PropColor, boolean> &
-    WithTooltipWrapper &
-    HTMLProps<HTMLSpanElement>;
 
-export const Underline = (p: Props) => {
+export const Underline = (p: UnderlineProps) => {
     const props = componentConfig.parse(p);
     /* TODO: Move this to the zod object. */
     let tt = getToolTipWrapperContent(props);

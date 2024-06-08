@@ -1,5 +1,5 @@
 "use client"
-import React, { RefObject, useEffect, useMemo, useRef, useState } from "react";
+import React, { RefObject, useEffect, useRef, useState } from "react";
 import { Variants, motion, useInView } from "framer-motion";
 import {useViewport} from "@ulld/hooks/useViewport"
 
@@ -120,7 +120,7 @@ export const AnimatedUlldLogo = ({
 }: AnimatedUlldLogoProps) => {
     const ref = useRef<SVGSVGElement>(null!)
     const [shouldShow, setShouldShow] = useInViewOrShow(ref, show)
-    const vp = useViewport()
+    /* const vp = useViewport() */
     useEffect(() => {
         if(typeof show !== "boolean") return
         if (show && delay) {

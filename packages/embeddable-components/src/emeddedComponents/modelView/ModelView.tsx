@@ -10,7 +10,7 @@ import React, {
 } from "react";
 /// deep import from model-view package causing a *ton* of typescript errors without any noticeable issues.
 import "@google/model-viewer/dist/model-viewer.js";
-import { ModelViewerElement } from "@google/model-viewer";
+/* import { ModelViewerElement } from "@google/model-viewer"; */
 import clsx from "clsx";
 import { Progress } from "@ulld/tailwind/progress";
 import { Button } from "@ulld/tailwind/button";
@@ -43,7 +43,6 @@ export const ModelView = ({
         className = props.class as string;
     }
     const progressBar = useRef<HTMLDivElement>(null!);
-    const value = useRef<number>(0);
     const viewer = useRef<HTMLElement>(null!);
     const id = useId();
     const [progress, setProgress] = useState(0)

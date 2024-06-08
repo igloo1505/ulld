@@ -1,7 +1,7 @@
 import React from 'react'
-import { WithTooltipWrapper } from './Hl'
 import { getPropColor } from '@ulld/state/actions/ui/getPropColor'
 import { PropColor } from '@ulld/utilities/shadColorMap'
+import { WithTooltipWrapper } from './props/withTooltipWrapperProps'
 
 
 

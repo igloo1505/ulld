@@ -24,7 +24,10 @@ module.exports = {
         "../utilities/src/types/admonition.ts",
         "./src/emeddedComponents/tabs/props.ts",
         "./src/emeddedComponents/media/videoProps.ts",
-        "./src/emeddedComponents/modelView/props.tsx"
+        "./src/emeddedComponents/modelView/props.tsx",
+        "./src/emeddedComponents/text/titleProps.ts",
+        "./src/emeddedComponents/props/withTooltipWrapperProps.ts",
+        // "./src/emeddedComponents/props/propcolor.ts"
     ],
     entryPointStrategy: "Expand",
     excludeExternals: true,

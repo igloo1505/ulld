@@ -9,6 +9,7 @@ const Link = motion(NextLink)
 interface SidebarDocsCategoryProps {
     items: DocsSidebarLink[];
     title?: ReactNode;
+    keyId: string
 }
 
 const linkClassName =
@@ -16,7 +17,7 @@ const linkClassName =
 
 const SidebarDocsCategory = forwardRef(
     (
-        { title, items }: SidebarDocsCategoryProps,
+        { title, items, keyId }: SidebarDocsCategoryProps,
         ref: ForwardedRef<HTMLDivElement>,
     ) => {
         const pathname = usePathname()
@@ -34,7 +35,7 @@ const SidebarDocsCategory = forwardRef(
                             return (
                                 <Link
                                     href={c.href}
-                                    key={i}
+                                    key={`${keyId}-${i}`}
                                     className={linkClassName}
                                     onClick={c.onClick}
                                     data-state={(pathname === "/docs/user/components" && sp.get("category") === c.label) ? "active" : "inactive"}
@@ -56,14 +57,27 @@ const SidebarDocsCategory = forwardRef(
                             );
                         } else {
                             return (
-                                <a
+                                <motion.a
                                     role="button"
-                                    key={i}
+                                    key={`${keyId}-${i}`}
                                     className={linkClassName}
                                     onClick={c.onClick}
+                                    data-state={(pathname === "/docs/user/components" && sp.get("category") === c.label) ? "active" : "inactive"}
+                                    initial={{
+                                        x: -300,
+                                    }}
+                                    animate={{
+                                        x: 0
+                                    }}
+                                    exit={{
+                                        x: -300
+                                    }}
+                                    transition={{
+                                        delay: i * 0.15
+                                    }}
                                 >
                                     {c.label}
-                                </a>
+                                </motion.a>
                             );
                         }
                     })}

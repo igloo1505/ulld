@@ -1,7 +1,17 @@
+import { ReactNode } from "react";
+
 export interface NavbarButton {
     href: string;
-    label: string;
+    label: ReactNode;
     id: string;
+    active?: boolean
+}
+
+export interface NavbarButtonClick {
+    onClick: () => void;
+    label: ReactNode;
+    id: string;
+    active?: boolean
 }
 
 export type InitialCoreState = {

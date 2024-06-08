@@ -1,4 +1,5 @@
 import H1SizeContainer from "#/components/UIUtils/h1SizeContainer";
+import ThemeSwitchTrigger from "#/components/UIUtils/themeSwitchButton";
 import PayPalLinkQr from "#/components/brand/sponsor/paypalLinkSvg";
 import RemoteExampleLimitation from "#/components/docUtils/remoteExampleLimitation";
 import Hint from "#/components/general/hint";
@@ -43,4 +44,9 @@ export const webComponentMap: AdditionalComponents<any> = [
         component: RemoteExampleLimitation,
         label: "RemoteExampleLimitation"
     },
+    {
+        regex: new RegExp("<ThemeSwitch"),
+        component: ThemeSwitchTrigger,
+        label: "ThemeSwitch"
+    }
 ];
