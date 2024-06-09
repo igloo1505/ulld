@@ -60,11 +60,11 @@
         "python": "docs.python.org"
       },
       "internal": {
-        "home": "/docs",
+        "home": "/docs/user",
         "organization": "/docs",
-        "developerHome": "/docs",
+        "developerHome": "/docs/developer",
         "teachers": "/docs/teachers",
-        "inputs": "/docs",
+        "inputs": "/docs/developer",
         "users": "/docs/user"
       }
     }

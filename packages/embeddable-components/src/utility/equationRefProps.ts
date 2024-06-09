@@ -10,6 +10,7 @@
  * </EqRef>
  * Consider that in equation <EqRef id="delta />...
  * ```
+ * ### Output
  * $$
  * INSERT-gammaEquiv!
  * $$

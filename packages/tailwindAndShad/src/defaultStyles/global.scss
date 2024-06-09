@@ -219,46 +219,113 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #1f2937 black;
 
-  &::-webkit-scrollbar {
-    width: 4px;
+  @supports (scrollbar-width: auto) {
+    * {
+      scrollbar-width: thin;
+    }
   }
 
-  &::-webkit-scrollbar-thumb {
-    background-color: hsl(var(--secondary));
-    border-radius: 4px;
+  @supports (scrollbar-color: auto) {
+    // scrollbar-color: hsl(var(--muted)) hsl(var(--background));
+    // &.scrollbarMuted {
+    //   scrollbar-color: hsl(var(--muted)) hsl(var(--background));
+    // }
+
+    // &.scrollbarMutedForeground {
+    //   scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--background));
+    // }
+
+    // &.scrollbarPrimary {
+    //   scrollbar-color: hsl(var(--primary)) hsl(var(--background));
+    // }
+
+    // &.scrollbarForeground {
+    //   scrollbar-color: hsl(var(--foreground)) hsl(var(--background));
+    // }
   }
 
-  &.scrollbarMuted {
-    scrollbar-color: hsl(var(--muted)) hsl(var(--background));
-
-    &::-webkit-scrollbar-thumb {
+  @supports selector(::-webkit-scrollbar) {
+    & *::-webkit-scrollbar {
       background-color: hsl(var(--muted));
+      width: 2px;
+      height: 6px;
+    }
+    & *::-webkit-scrollbar-thumb {
+      background-color: hsl(var(--background));
+    }
+
+    &.scrollbarMuted {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--muted));
+      }
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
+    }
+
+    &.scrollbarMutedForeground {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--muted-foreground));
+      }
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
+    }
+
+    &.scrollbarPrimary {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--primary));
+      }
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
+    }
+
+    &.scrollbarForeground {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--foreground));
+      }
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
     }
   }
 
-  &.scrollbarMutedForeground {
-    scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--background));
+  // &::-webkit-scrollbar-thumb {
+  //   background-color: hsl(var(--secondary));
+  //   border-radius: 4px;
+  // }
 
-    &::-webkit-scrollbar-thumb {
-      background-color: hsl(var(--muted-foreground));
-    }
-  }
+  // &.scrollbarMuted {
+  //   scrollbar-color: hsl(var(--muted)) hsl(var(--background));
 
-  &.scrollbarPrimary {
-    scrollbar-color: hsl(var(--primary)) hsl(var(--background));
+  //   &::-webkit-scrollbar-thumb {
+  //     background-color: hsl(var(--muted));
+  //   }
+  // }
 
-    &::-webkit-scrollbar-thumb {
-      background-color: hsl(var(--primary));
-    }
-  }
+  // &.scrollbarMutedForeground {
+  //   scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--background));
 
-  &.scrollbarForeground {
-    scrollbar-color: hsl(var(--foreground)) hsl(var(--background));
+  //   &::-webkit-scrollbar-thumb {
+  //     background-color: hsl(var(--muted-foreground));
+  //   }
+  // }
 
-    &::-webkit-scrollbar-thumb {
-      background-color: hsl(var(--foreground));
-    }
-  }
+  // &.scrollbarPrimary {
+  //   scrollbar-color: hsl(var(--primary)) hsl(var(--background));
+  //   &::-webkit-scrollbar-thumb {
+  //     background-color: hsl(var(--primary));
+  //   }
+  // }
+
+  // &.scrollbarForeground {
+  //   scrollbar-color: hsl(var(--foreground)) hsl(var(--background));
+
+  //   &::-webkit-scrollbar-thumb {
+  //     background-color: hsl(var(--foreground));
+  //   }
+  // }
 }
 
 div[cmdk-list]::-webkit-scrollbar,
@@ -318,6 +385,7 @@ div.jp-WindowedPanel-outer {
 
 .math-display {
   scrollbar-width: thin;
+
   .MathJax {
     display: flex;
     justify-content: center;
@@ -379,12 +447,14 @@ div[role="dialog"][cmdk-dialog] {
       --color-primary-darkest: hsl(var(--primary));
       --color-primary-light: hsl(var(--primary) / 0.6);
     }
+
     --color-surface-primary-container: hsl(var(--primary) / 0.5);
     --color-primary: hsl(var(--primary) / 0.7);
     --color-primary-darker: hsl(var(--primary) / 0.85);
     --color-primary-darkest: hsl(var(--primary));
     --color-primary-light: hsl(var(--primary) / 0.6);
   }
+
   span.citationAnchor-container {
     width: 0.75ch;
     height: 1em;
@@ -392,6 +462,7 @@ div[role="dialog"][cmdk-dialog] {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+
     a.citationAnchor {
       transform: translateY(-0.25em);
       font-size: 0.75em;
@@ -400,6 +471,7 @@ div[role="dialog"][cmdk-dialog] {
       color: var(--general-link-color);
     }
   }
+
   // .ulld-separator {
   //   margin-top:
   // }

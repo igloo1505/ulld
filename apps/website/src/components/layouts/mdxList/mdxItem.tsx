@@ -16,7 +16,6 @@ const MdxListItem = ({ mdx, isLast, ...props }: MdxListItemProps) => {
     const article = useMDXComponent(mdx.body.code);
     const Article = useMemo(() => article, []);
     const components = getComponentMap(mdx.body.raw, {}, webComponentMap);
-    /* const wrapCodeRef = useAutoWrapCode(); */
 
     return (
         <>
@@ -25,7 +24,7 @@ const MdxListItem = ({ mdx, isLast, ...props }: MdxListItemProps) => {
                 /* ref={ref} */
                 id={mdx.id}
                 className={cn(
-                    "@container/mdx w-full prose prose-invert prose-a:text-link mdx !max-w-[min(83%,1080px)] pl-8 py-8 group-[.mdx-wide]/mdxLayout:w-full group-[.mdx-wide]/mdxLayout:md:!max-w-[min(1440px,100vw-128px)] group-[.mdx-full]/mdxLayout:!max-w-full",
+                    "@container/mdx w-full prose prose-invert prose-a:text-link mdx !max-w-[min(calc(100vw-8rem),1080px)] px-8 py-8 group-[.mdx-wide]/mdxLayout:w-full group-[.mdx-wide]/mdxLayout:md:!max-w-[min(1440px,100vw-8rem)] group-[.mdx-full]/mdxLayout:!max-w-full",
                     props.className,
                 )}
             >

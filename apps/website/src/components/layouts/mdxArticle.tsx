@@ -38,7 +38,6 @@ const MDXArticle = forwardRef(
         const id = props.id ? props.id : getRandomId();
         const article = useMDXComponent(mdx.body.code);
         const Article = useMemo(() => article, []);
-        /* const wrapCodeRef = useAutoWrapCode() */
 
         useMathjaxBandaid(id);
 

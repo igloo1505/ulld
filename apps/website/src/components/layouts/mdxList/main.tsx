@@ -10,6 +10,7 @@ import { NoteStateObserver } from "@ulld/state/observers/noteState";
 import InternalReduxProvider from "#/state/provider";
 import MathjaxProvider from "#/components/utility/providers/mathjax";
 import { applyTableCodeStyles } from "#/state/actions/dom";
+import { useObserveChildren } from "@ulld/hooks/useObserveChildren";
 
 interface MdxListProps extends HTMLProps<HTMLDivElement> {
     items: Documentation[];
@@ -19,9 +20,13 @@ const MdxList = (props: MdxListProps) => {
     const id = props.id ? props.id : getRandomId();
     const ref = useRef<HTMLDivElement>(null!);
     useMathjaxBandaid(id);
-    useEffect(() => {
-        applyTableCodeStyles(ref.current)
-    }, [])
+    useObserveChildren(() => applyTableCodeStyles(ref.current), {
+        childList: true,
+        subtree: true
+    }, ref)
+    /* useEffect(() => { */
+    /*     applyTableCodeStyles(ref.current) */
+    /* }, []) */
     return (
         <InternalReduxProvider>
             <MathjaxProvider>
@@ -30,6 +35,7 @@ const MdxList = (props: MdxListProps) => {
                     id={id}
                     ref={ref}
                     className={clsx("w-full max-w-full", props.className)}
+                    onLoad={() => console.log(`Has loaded`)}
                 >
                     <NoteStateObserver store={store} />
                     {props.items.map((item, i) => {
