@@ -27,6 +27,13 @@ module.exports = {
         "./src/emeddedComponents/props/withTooltipWrapperProps.ts",
         "./src/emeddedComponents/layout/vspaceProps.ts",
         "./src/emeddedComponents/props/underlineProps.ts",
+        "./src/emeddedComponents/text/smallProps.ts",
+        "./src/emeddedComponents/text/centeredTextProps.ts",
+        "./src/emeddedComponents/text/largeProps.ts",
+        "./src/emeddedComponents/text/leadProps.ts",
+        "./src/emeddedComponents/text/quoteProps.ts",
+        "./src/utility/equationRefProps.ts",
+        "./src/emeddedComponents/HlProps.ts",
         "../utilities/src/types/admonition.ts",
         "../utilities/src/types/embeddedImageProps.ts",
         // "./src/emeddedComponents/props/propcolor.ts"

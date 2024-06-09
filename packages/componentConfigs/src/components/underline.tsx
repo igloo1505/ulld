@@ -22,7 +22,7 @@ export const componentConfig = z.object({
 .describe("Underline")
 /* .passthrough() */
 .transform((a): {css: CSSProperties} & ReturnType<typeof propColorSchemaTransform> => {
-    let data = propColorSchemaTransform<typeof a>(a, "foreground")
+    let data = propColorSchemaTransform<typeof a>(a, "yellow")
     let css: CSSProperties = {
         textDecorationColor: data.color,
         textDecorationThickness: a.thin ? 1 : a.thick ? 4 : 2

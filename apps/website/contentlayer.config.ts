@@ -252,6 +252,10 @@ const docsProps: DocumentTypeDef = {
             type: "list",
             of: { type: "string" },
         },
+        aliases: {
+            type: "list",
+            of: { type: "string" },
+        },
         category: {
             type: "string",
             required: true,

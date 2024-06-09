@@ -10,6 +10,13 @@ from pprint import pprint
 root = Path("/Users/bigsexy/Desktop/current/ulld/packages")
 t = Path("/Users/bigsexy/Desktop/current/ulld/apps/website/src/mdx/docs/")
 
+
+replacements = json.loads(
+    Path(
+        "/Users/bigsexy/Desktop/current/ulld/packages/embeddable-components/docs/replacements.json"
+    ).read_text()
+)
+
 allMaps = root.glob("*/docs/map.json")
 
 items = {}
@@ -141,6 +148,21 @@ def removeSection(
     )
 
 
+def insertReplacements(content: str) -> str:
+    matches = re.finditer(r"INSERT-(?P<id>[^!]*)!", content)
+    c = content
+    for match in matches:
+        matchText = match[0]
+        id = match[1]
+        if id not in replacements:
+            print(f"No replacement found for {id}")
+            return c
+        replacement = replacements[id]
+        print(f"Replacing {id}")
+        c = c.replace(matchText, replacement)
+    return c
+
+
 def replaceLinks(content: str, category: str, path: Path) -> str:
     c = content
     matches = re.finditer(r"\[[^]]+\]\((?P<linkContent>[^)]+)\)", content)
@@ -166,6 +188,9 @@ for category in items:
         content = item["path"].read_text()
         content = removeSection(content, "Source", 4)
         content = removeSection(content, "Modules", 3)
+        aliases = ",".join(
+            [f"'{x}'" for x in item["aliases"]] if "aliases" in item else []
+        )
         for removeSec in item["removeSections"]:
             content = removeSection(
                 content,
@@ -177,11 +202,13 @@ for category in items:
             content, item["removePropertyTableColumns"]
         )
         content = replaceLinks(content, category, item["path"])
+        content = insertReplacements(content)
         targetFile.write_text(
             f"""---
 category: {category}
 component: {item['component']}
 id: {makeValidId(item['component'])}
+aliases: [{aliases}]
 ---
 
 {content}

@@ -1,12 +1,8 @@
 "use client";
 import { useMathjaxDynamicParse } from "@ulld/hooks/useMathjaxDynamicParse";
-import React, { ReactNode } from "react";
+import React from "react";
 import { useObserveChildren } from "@ulld/hooks/useObserveChildren";
-
-interface EquationReferenceAnchorProps {
-    children: ReactNode;
-    id: string;
-}
+import { EquationRefProps } from "./equationRefProps";
 
 declare global {
     // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
@@ -18,7 +14,7 @@ declare global {
 const EquationReferenceAnchor = ({
     children,
     id,
-}: EquationReferenceAnchorProps) => {
+}: Pick<EquationRefProps, "id" | "children">) => {
     const ref = useObserveChildren<HTMLDivElement>(() => {
         window.dispatchEvent(
             new CustomEvent("equation-rendered", {

@@ -8,7 +8,8 @@ import { getRandomId } from "@ulld/utilities/identity";
 import SelfFigureIndex from "./selfImageIndex";
 import DispatchRenderedImageEvent from "./dispatchRenderedImageEvent";
 
-type ImgProps = EmbeddedImageProps & React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> & {noConfig?: boolean}
+type ImgProps = EmbeddedImageProps & Omit<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>, "title"> & { noConfig?: boolean }
+
 
 const C = (props: ImgProps) => {
 

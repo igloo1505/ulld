@@ -1,12 +1,9 @@
 import clsx from 'clsx'
 import React from 'react'
+import { LeadTextProps } from './leadProps'
 
 
 
-interface LeadTextProps {
-    children: string
-    center?: boolean
-}
 
 export const LeadText = ({ children, center }: LeadTextProps) => {
     return (

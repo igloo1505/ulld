@@ -58,7 +58,8 @@ const ColorChip = dynamic(() => import("@ulld/embeddable-components/components/c
 // TODO: Come back and add a better implementation of the client side whiteboard. This will work for now, just to get the website up, but push it all to the client and handle state that way when you have time.
 const Whiteboard = dynamic(() => import("@ulld/whiteboard/local").then((a) => a.WhiteboardLocal))
 
-export type EmbeddableClientComponents = typeof Admonition | typeof TabGroup | typeof Tab | typeof Grid | typeof GridItem | typeof Video | typeof ModelView | typeof Card | typeof Highlight | typeof Underline | typeof Small | typeof Large | typeof Centered | typeof Lead | typeof VSpace | typeof EqRef | typeof EquationTag | typeof Color
+export type EmbeddableClientComponents = typeof Admonition | typeof TabGroup | typeof Tab | typeof Grid | typeof GridItem | typeof Video | typeof ModelView | typeof Card | typeof Highlight | typeof Underline | typeof Small | typeof Large | typeof Centered | typeof Lead | typeof VSpace | typeof EqRef | typeof EquationTag | typeof Color | typeof Boxed | typeof ColorChip | typeof EmbeddedImage
+// export type EmbeddableClientComponents = any
 
 
 
@@ -98,7 +99,7 @@ export const conditionalClientComponents: ConditionalComponentQuery<EmbeddableCl
         { regex: new RegExp(`<ModelView`), component: ModelView, label: "ModelView" },
         // Media components
         { regex: new RegExp(`<Video`), component: Video, label: "Video" },
-        { regex: new RegExp(`<Whiteboard`), component: Whiteboard, label: "Whiteboard" },
+        // { regex: new RegExp(`<Whiteboard`), component: Whiteboard, label: "Whiteboard" },
         { regex: new RegExp(`<Image`), component: EmbeddedImage, label: "Image" },
         // Academic components
         {regex: new RegExp("<ErrorMargin"), component: ErrorMargin, label: "ErrorMargin"},

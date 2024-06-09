@@ -1,18 +1,11 @@
 import clsx from 'clsx'
 import React from 'react'
 import { BaseEmbeddableComponentProps, getBaseEmbeddableProps } from '../baseEmbeddableComponentTypes'
+import { SmallProps } from './smallProps'
 
 
-interface SmallProps extends BaseEmbeddableComponentProps<HTMLSpanElement> {
-    children: string
-    center?: boolean
-    muted?: boolean
-    close?: boolean
-    noMargin?: boolean
-    y?: number
-}
 
-export const Small = ({ children, y, close, noMargin, muted, center, ..._props }: SmallProps) => {
+export const Small = ({ children, y, close, noMargin, muted, center, ..._props }: SmallProps & {y?: number, close?: boolean} & BaseEmbeddableComponentProps<HTMLSpanElement>) => {
     const props = getBaseEmbeddableProps(_props)
     return (
         <span

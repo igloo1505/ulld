@@ -1,12 +1,5 @@
 import React from 'react'
-
-
-interface QuoteProps {
-    children: string
-    author?: React.ReactNode
-    by?: React.ReactNode
-    from?: React.ReactNode
-}
+import { QuoteProps } from './quoteProps'
 
 
 export const Quote = ({ children, author, by, from }: QuoteProps) => {

@@ -15,10 +15,14 @@
       "path": "embeddable-components.src.emeddedComponents.gridProps.mdx"
     },
     "Tabs": {
-      "path": "embeddable-components.src.emeddedComponents.tabs.props.mdx"
+      "path": "embeddable-components.src.emeddedComponents.tabs.props.mdx",
+      "aliases": ["TabGroup"]
     },
     "VSpace": {
       "path": "embeddable-components.src.emeddedComponents.layout.vspaceProps.mdx"
+    },
+    "Center": {
+      "path": "embeddable-components.src.emeddedComponents.text.centeredTextProps.mdx"
     }
   },
   "Academic": {
@@ -47,12 +51,33 @@
       "removePropertyTableColumns": ["Overrides"]
     },
     "Underline": {
-      "path": "embeddable-components.src.emeddedComponents.props.underlineProps.mdx"
+      "path": "embeddable-components.src.emeddedComponents.props.underlineProps.mdx",
+      "aliases": ["Ul"]
+    },
+    "Highlight": {
+      "path": "embeddable-components.src.emeddedComponents.HlProps.mdx"
+    },
+    "Small": {
+      "path": "embeddable-components.src.emeddedComponents.text.smallProps.mdx"
+    },
+    "Large": {
+      "path": "embeddable-components.src.emeddedComponents.text.largeProps.mdx"
+    },
+    "Lead": {
+      "path": "embeddable-components.src.emeddedComponents.text.leadProps.mdx"
+    },
+    "Quote": {
+      "path": "embeddable-components.src.emeddedComponents.text.quoteProps.mdx"
     }
   },
   "Interactivity": {
     "Tooltip": {
       "path": "embeddable-components.src.emeddedComponents.props.withTooltipWrapperProps.mdx"
+    }
+  },
+  "Referencing": {
+    "EqRef": {
+      "path": "embeddable-components.src.utility.equationRefProps.mdx"
     }
   },
   "Colors": {}
