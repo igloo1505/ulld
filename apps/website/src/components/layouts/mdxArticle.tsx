@@ -27,12 +27,13 @@ interface MDXArticleProps extends HTMLProps<HTMLElement> {
     isSource?: boolean;
     hideSourceButton?: boolean
     wrapCode?: boolean
+    docsWide?: boolean
 }
 
 
 const MDXArticle = forwardRef(
     (
-        { mdx, wrapCode, paddingTop = true, hideSourceButton = false, isSource, ...props }: MDXArticleProps,
+        { mdx, wrapCode, docsWide, paddingTop = true, hideSourceButton = false, isSource, ...props }: MDXArticleProps,
         ref: ForwardedRef<HTMLElement>,
     ) => {
         const id = props.id ? props.id : getRandomId();
@@ -60,9 +61,10 @@ const MDXArticle = forwardRef(
                     ref={ref}
                     id={id}
                     className={cn(
-                        "@container/mdx w-full prose prose-invert prose-a:text-link mdx !max-w-[min(83%,1080px)] py-8 group-[.mdx-wide]/mdxLayout:w-full group-[.mdx-wide]/mdxLayout:md:!max-w-[min(1440px,100vw-128px)] group-[.mdx-full]/mdxLayout:!max-w-full",
-                        props.className,
+                        "@container/mdx w-full prose prose-invert prose-a:text-link mdx py-8 group-[.mdx-wide]/mdxLayout:w-full group-[.mdx-wide]/mdxLayout:md:!max-w-[min(1440px,calc(100%-128px))] group-[.mdx-full]/mdxLayout:!max-w-full",
+                        docsWide ? "!max-w-[min(calc(100%-6rem),1440px)]" : "!max-w-[min(83%,1080px)]",
                         paddingTop && "pt-[108px]",
+                        props.className,
                     )}
                 >
                     <Article 

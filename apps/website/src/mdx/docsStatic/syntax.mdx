@@ -6,11 +6,55 @@ created: 6-8-24
 
 <AnimatedLogo show height={48} suffixDelay={1.45} speed={3} h1 suffix={"Syntax"} />
 
+
+<Admonition title="React Syntax" type="important" sidebar>
+
+ If you are unfamiliar with React syntax, **JSX**, you should definitely start by reviewing the [intro to jsx](/docs/user/introToJsx) documentation. There is nothing unique about the JSX in <LogoAsText />, and the React documentation [here](https://react.dev) can provide the same information, but the [intro to jsx](/docs/user/introToJsx) documentation was created to skip the bits that refer to those _creating_ their own React components, and instead provide a quick reference for those simply trying to implement pre-existing components in their notes.
+    j
+</Admonition>
+
+<LogoAsText /> extends standard Markdown syntax to include [Github flavored markdown](https://docs.github.com/articles/basic-writing-and-formatting-syntax) and embedded [React](https://react.dev) components thanks to the awesome work of the contributors over at [MDX](https://mdxjs.com).
+
+If you're unfamiliar with React, don't worry. You don't need to know how to create your own components, write your own css, or retrieve anything from the database yourself. One of the primary goals of <LogoAsText /> is to become a unified framework for all sorts of academic note taking and organization by making it easy for those with development experience or those willing to learn to share their own components with other <LogoAsText /> users.
+
+Along with the ability to create their own components that can be easily added by other users by simply adding the package name to their configuration file, developers can also add additional parsing functionality that adds the ability to convert different syntaxes into useful components, outside of standard **JSX** or markdown syntax.
+
+The following syntaxes are enabled by default.
+
+***
+
 ## Links
 
-### Timestamp Link
+### Smart Linking ||note-id-link-syntax||
 
-You can create links to time stamps of videos on the current page with the following syntax:
+Alongside standard markdown link syntax, where `[Google](https://www.google.com){:mdx}` gives [Google](https://www.google.com), <LogoAsText /> adds the ability to link to other notes by a unique ID added to that note's [front matter](/docs/user/frontMatter).
+
+#### Example 
+
+```mdx title="MyOtherNote.mdx"
+---
+title: My Other Note
+id: noteExampleWithId
+---
+
+...Some other arbitrary note content.
+
+<Admonition title="Some admonition" sidebar id="someOptionalElementIdInPage">
+    When the link below links to this page, the note will automatically scroll to this element.
+    The id in the link is optional, and comes after the `#`.
+    If you do not include an element ID, do not include the `#` either.
+</Admonition>
+```
+
+```mdx title="MyNote.mdx"
+Review the note [here](note:noteExampleWithId#someOptionalElementIdInPage)
+```
+
+*** 
+
+### Timestamp Link ||timestamp-link-syntax||
+
+Specific to video elements, you can create links to time stamps of videos on the current page with the following syntax:
 
 ```mdx
 <Video file="/path/to/my/video.mp4" id="videosUniqueReferenceId" />
@@ -18,13 +62,78 @@ You can create links to time stamps of videos on the current page with the follo
 As you can see at [4 minutes and 6 seconds](videoLink/videosUniqueReferenceId/1:12) in the video above, the creator of ULLD is incredibly good looking.
 ```
 
-Note that the time stamp link follows normal markdown link syntax, but is identified internally by the leading `videoLink/...` path. This `videoLink/...` must be immediately followed by the matching unique id of the video you're addressing, and then by the time stamp. The time stamp is in the format of `hours:minutes:seconds` or `minutes:seconds`.
+Note that the time stamp link follows normal markdown link syntax, but is identified internally by the leading `videoLink/...{:mdx}` path. This `videoLink/...{:mdx}` must be immediately followed by the matching unique id of the video you're addressing, and then by the time stamp. The time stamp is in the format of `hours:minutes:seconds{:mdx}` or `minutes:seconds{:mdx}`.
 
 <Hint>
     See the [intro to jsx](/docs/user/introToJsx) documentation for a brief summary of valid ids.
 </Hint>
 
+***
 
----
+## Tagging
+
+### General Purpose Tags ||general-purpose-tag-syntax||
+
+<LogoAsText /> supports tags in several places and multiple components. Tags are used for connecting notes and other content based on shared content that's more specific than a text based search alone. To add a general purpose tag directly in a note, simply use the `#` symbol surrounded by square brackets, followed by the content of that tag.  
+
+```mdx
+You can find related notes by clicking [#here], [#overThere], and [#overHere].
+```
+
+#### Output
+
+You can find related notes by clicking <Tag>here</Tag>, <Tag>overThere</Tag> and <Tag>overHere</Tag>.
+
+In the demo the tags above won't do anything, but in an actual <LogoAsText /> app, they will link to a page displaying search results for all content that includes that same tag.
+
+<Hint>
+    Several features, including the tagging feature rely on data inside of the <LogoAsText fontSize={13} /> database. This database runs on your own machine, and is not shared with anyone, but links will only be found within a note after the database is synchronized after adding that tag within that note. This speeds up searching significantly as opposed to parsing the text of every note on every search.
+</Hint>
+
+Note that if you prefer a centered tag list somewhere in your note, you also use the **TagBar** component.
+
+```mdx
+<TagBar>here overThere overHere</TagBar>
+```
+
+<TagBar>here overThere overHere</TagBar>
+
+***
+
+### Equation Tags ||equation-tag-syntax||
+
+Since Latex's math syntax allows a wide variety of syntax to produce mathematically equivalent output, <LogoAsText /> allows for referencing equations in several alternative ways. The equation input form is not required to embed math inside of your note. You can just surround math with a single `${:mdx}` for inline math, or with `$${:mdx}` for block style math, but adding important equations through the equation page allows enhanced tagging and searching features, as well as repeatedly including the equation without needing to type it multiple times.
+
+When you add an equation through the equations page, choose an ID that represents that unique equation for the ID field. Keep in mind, this ID must be [DOM compliant](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id), but adding this ID allows you to include a reference to this equation in your notes in two new ways.
+
+First, you can add an equation specific tag, with the following syntax:
+
+```mdx
+[eq:timeDilationGamma]
+```
+
+This will output a tag similar in style to general purpose tags, but will include the note that includes this tag in the search result when filtering notes by that specific equation.
+
+If you want to actually display the equation in the note instead of a tag, you can use the **Equation**  component.
+
+```mdx
+<Equation id="timeDilationGamma" />
+```
+
+<Image 
+    url="/assets/images/demos/equationModal.png" 
+    xl 
+    center
+/>
+
+
+The output of the above snippet will be a similar in style to regular block style math, but will also be clickable. On click, a modal will display allowing you to filter notes by that equation, copy code for that equation, copy the latex for that equation, or to edit that equation in your personal database.
+
+*** 
+
+## Citations  ||citation-syntax||
+
+
+
 
 ### Root Relative Paths

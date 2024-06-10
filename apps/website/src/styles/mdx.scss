@@ -26,6 +26,29 @@ code {
   }
 }
 
+p code {
+  &::before {
+    content: "" !important;
+  }
+  &::after {
+    content: "" !important;
+  }
+}
+
+span[data-rehype-pretty-code-figure] {
+  code {
+    background-color: #282a36;
+    padding: 0.2rem 0.3rem;
+    border-radius: 6px;
+    &::before {
+      content: "" !important;
+    }
+    &::after {
+      content: "" !important;
+    }
+  }
+}
+
 pre[data-theme="dark"],
 pre[data-theme="light"] {
   overflow: auto;

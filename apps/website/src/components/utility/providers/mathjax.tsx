@@ -4,6 +4,7 @@ import React, { ReactNode } from "react";
 
 interface MathjaxProviderProps {
     children: ReactNode;
+    className?: string
 }
 
 declare global {
@@ -13,7 +14,7 @@ declare global {
     }
 }
 
-const MathjaxProvider = ({ children }: MathjaxProviderProps) => {
+const MathjaxProvider = ({ children, className }: MathjaxProviderProps) => {
     return (
         <MathJaxContext
             config={{
@@ -42,7 +43,7 @@ const MathjaxProvider = ({ children }: MathjaxProviderProps) => {
                 console.log("dispatching mathjax-loaded event")
             }}
         >
-            {children}
+            {className ? <div className={className}>{children}</div> : children}
         </MathJaxContext>
     );
 };

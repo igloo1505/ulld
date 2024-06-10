@@ -10,7 +10,8 @@ import rehypePrettyCode from "rehype-pretty-code";
 import emoji from "remark-emoji";
 import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
+// import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import remarkHeadingId from "remark-custom-header-id"
 import fs from "fs";
 
 const styleFields: DocumentTypeDef["fields"] = {
@@ -360,7 +361,10 @@ export default makeSource({
         StaticDocumentation,
     ],
     mdx: {
-        remarkPlugins: [remarkMath, remarkGfm, [emoji as any, {}]],
+        remarkPlugins: [remarkMath, remarkGfm, 
+            [remarkHeadingId, {
+                defaults: true
+            }], [emoji as any, {}]],
         rehypePlugins: [
             // [rehypeMermaid as any, mermaid],
             [
@@ -376,10 +380,7 @@ export default makeSource({
                 rehypePrettyCode,
                 {
                     keepBackground: false,
-                    theme: {
-                        light: "material-theme-lighter",
-                        dark: "dracula",
-                    },
+                    theme: "dracula",
                     onVisitLine(node: any) {
                         if (node.children.length === 0) {
                             node.children = [{ type: "text", value: " " }];
@@ -393,15 +394,15 @@ export default makeSource({
                     },
                 },
             ],
-            [
-                rehypeAutolinkHeadings,
-                {
-                    properties: {
-                        className: ["subheading-anchor"],
-                        ariaLabel: "Link to section",
-                    },
-                },
-            ],
+            // [
+            //     rehypeAutolinkHeadings,
+            //     {
+            //         properties: {
+            //             className: ["subheading-anchor"],
+            //             ariaLabel: "Link to section",
+            //         },
+            //     },
+            // ],
             rehypeSlug,
         ],
     },

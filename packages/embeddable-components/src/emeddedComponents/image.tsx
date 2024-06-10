@@ -32,8 +32,8 @@ const C = (props: ImgProps) => {
                     "!m-0 h-auto not-prose",
                     Boolean(props.sm || props.small) && "max-w-[120px] max-h-[120px]",
                     Boolean(props.md || props.medium) && "max-w-[200px] max-h-[200px]",
-                    Boolean(props.lg || props.large) && "max-w-[min(350px,calc(100vw-80px))] max-h-[350px]",
-                    props.xl && "max-w-[min(500px,calc(100vw-80px))] max-h-[500px]",
+                    Boolean(props.lg || props.large) && "max-w-[min(350px,calc(100%-80px))] max-h-[350px]",
+                    props.xl && "max-w-[min(500px,calc(100%-80px))] max-h-[500px]",
                 )}
             />
         ),
@@ -119,11 +119,12 @@ const C = (props: ImgProps) => {
 
 export const EmbeddedImage = (props: ImgProps) => {
     const config = props.noConfig ? null : getInternalConfig();
+    console.log("props: ", props)
     const { image } = props;
     if (image && config && image in config.UI.media.imageMap) {
-        return <ImageMapImage {...props} image={image} />;
+        return <ImageMapImage {...props} image={image} />
     }
-    return <C {...props} src={props.src || props.url} />;
+    return <C {...props} src={props.src || props.url} />
 };
 
 EmbeddedImage.displayName = "EmbeddedImage";

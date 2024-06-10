@@ -51,6 +51,7 @@
     "./components/client/equationTag": "./src/utility/equationTag.tsx",
     "./components/client/boxed": "./src/utility/boxed.tsx",
     "./components/client/title": "./src/emeddedComponents/text/title.tsx",
+    "./components/client/tagBar": "./src/emeddedComponents/tagbar.tsx",
     "./components/client/colorChip": "./src/emeddedComponents/colorChip.tsx",
     "./components/server/colorChip": "./src/emeddedComponents/colorChip.tsx",
     "./components/server/title": "./src/emeddedComponents/text/title.tsx",

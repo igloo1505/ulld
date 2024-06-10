@@ -3,10 +3,10 @@ import MathjaxProvider from "#/components/utility/providers/mathjax";
 import { allStaticDocs } from "contentlayer/generated";
 import React from "react";
 
-interface DocsSyntaxPageProps { }
+interface DocsFrontMatterPageProps { }
 
-const DocsSyntaxPage = (props: DocsSyntaxPageProps) => {
-    const doc = allStaticDocs.find((f) => f.id === "syntaxDocs");
+const DocsFrontMatterPage = (props: DocsFrontMatterPageProps) => {
+    const doc = allStaticDocs.find((f) => f.id === "frontMatterDocs");
     if (!doc) {
         throw new Error("No syntax documentation found.");
     }
@@ -17,11 +17,11 @@ const DocsSyntaxPage = (props: DocsSyntaxPageProps) => {
                 docsWide
                 paddingTop={false}
                 className={"!max-w-full"}
-            />
+            />;
         </MathjaxProvider>
     );
 };
 
-DocsSyntaxPage.displayName = "DocsSyntaxPage";
+DocsFrontMatterPage.displayName = "DocsFrontMatterPage";
 
-export default DocsSyntaxPage;
+export default DocsFrontMatterPage;

@@ -1,6 +1,7 @@
 import H1SizeContainer from "#/components/UIUtils/h1SizeContainer";
 import ThemeSwitchTrigger from "#/components/UIUtils/themeSwitchButton";
 import PayPalLinkQr from "#/components/brand/sponsor/paypalLinkSvg";
+import InternalTag from "#/components/docUtils/button";
 import Extends from "#/components/docUtils/extendsReference";
 import RemoteExampleLimitation from "#/components/docUtils/remoteExampleLimitation";
 import Hint from "#/components/general/hint";
@@ -8,6 +9,7 @@ import { LogoAsText } from "#/components/general/logoAsText";
 import ComingSoon from "#/components/utility/comingSoon";
 import { AdditionalComponents } from "@ulld/component-map/types";
 import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
+import { Button } from "@ulld/tailwind/button";
 
 export const webComponentMap: AdditionalComponents<any> = [
     {
@@ -54,5 +56,10 @@ export const webComponentMap: AdditionalComponents<any> = [
         regex: new RegExp("<Extends"),
         component: Extends,
         label: "Extends"
+    },
+    {
+        regex: new RegExp("<Tag"),
+        component: InternalTag,
+        label: "Tag"
     },
 ];

@@ -5,7 +5,6 @@ const Admonition = dynamic(() => import("@ulld/embeddable-components/components/
 // const Pdf = dynamic(() => import("../functionality/pdf/MdxPdfView"))
 const TabGroup = dynamic(() => import("@ulld/embeddable-components/components/client/tabGroup").then((a) => a.TabGroup))
 const Tab = dynamic(() => import("@ulld/embeddable-components/components/client/tab").then((a) => a.Tab))
-// const TagBar = dynamic(() => import("./emeddedComponents/tagbar"))
 // const WithSidebar = dynamic(() => import("./emeddedComponents/withSidebar"))
 // const Diagram = dynamic(() => import("./emeddedComponents/diagrams/pixi"))
 const Grid = dynamic(() => import("@ulld/embeddable-components/components/client/grid").then((a) => a.Grid))
@@ -55,10 +54,11 @@ const Boxed = dynamic(() => import("@ulld/embeddable-components/components/clien
 // const Tikz = dynamic(() => import("./emeddedComponents/tikz"))
 const Color = dynamic(() => import("@ulld/embeddable-components/components/client/colorText").then((a) => a.ColorText))
 const ColorChip = dynamic(() => import("@ulld/embeddable-components/components/client/colorChip").then((a) => a.ColorChip))
+const TagBar = dynamic(() => import("@ulld/embeddable-components/components/client/tagBar").then((a) => a.TagBar))
 // TODO: Come back and add a better implementation of the client side whiteboard. This will work for now, just to get the website up, but push it all to the client and handle state that way when you have time.
 const Whiteboard = dynamic(() => import("@ulld/whiteboard/local").then((a) => a.WhiteboardLocal))
 
-export type EmbeddableClientComponents = typeof Admonition | typeof TabGroup | typeof Tab | typeof Grid | typeof GridItem | typeof Video | typeof ModelView | typeof Card | typeof Highlight | typeof Underline | typeof Small | typeof Large | typeof Centered | typeof Lead | typeof VSpace | typeof EqRef | typeof EquationTag | typeof Color | typeof Boxed | typeof ColorChip | typeof EmbeddedImage
+export type EmbeddableClientComponents = typeof Admonition | typeof TabGroup | typeof Tab | typeof Grid | typeof GridItem | typeof Video | typeof ModelView | typeof Card | typeof Highlight | typeof Underline | typeof Small | typeof Large | typeof Centered | typeof Lead | typeof VSpace | typeof EqRef | typeof EquationTag | typeof Color | typeof Boxed | typeof ColorChip | typeof EmbeddedImage | typeof TagBar
 // export type EmbeddableClientComponents = any
 
 
@@ -76,6 +76,8 @@ export const conditionalClientComponents: ConditionalComponentQuery<EmbeddableCl
         { regex: new RegExp(`<Centered`), component: Centered, label: "Centered" },
         { regex: new RegExp(`<Center`), component: Centered, label: "Center" },
         { regex: new RegExp(`<Boxed`), component: Boxed, label: "Boxed" },
+        { regex: new RegExp(`<TagBar`), component: TagBar, label: "TagBar" },
+     
         // Text Styling Components
         { regex: new RegExp(`<Small`), component: Small, label: "Small" },
         { regex: new RegExp(`<Color`), component: Color, label: "Color" },

@@ -1,21 +1,7 @@
 import nextPwa from "@ducanh2912/next-pwa";
 import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
-import createMDX from "@next/mdx";
-import remarkMath from "remark-math";
-import remarkGfm from "remark-gfm";
-import rehypeMathjax from "rehype-mathjax/chtml.js";
-import rehypePrettyCode from "rehype-pretty-code";
-import emoji from "remark-emoji";
-import rehypeSlug from "rehype-slug";
-import rehypeVideo from "rehype-video";
-// import rehypeMermaid from "rehype-mermaid";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { withContentlayer } from "next-contentlayer";
-// import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
 
-// import dotenv from "dotenv";
-// dotenv.config();
-// import webpack from "webpack"
 
 // NOTE: For building on vercel: https://github.com/Automattic/node-canvas/issues/1779
 if (
@@ -105,53 +91,53 @@ const withPWA = nextPwa({
     }),
 });
 
-const withMDX = createMDX({
-    options: {
-        remarkPlugins: [remarkMath, remarkGfm, [emoji, {}]],
-        rehypePlugins: [
-            // [rehypeMermaid, mermaidOptions],
-            [
-                rehypeVideo,
-                {
-                    test: /\/(.*)(.mp4|.mov|.webm)$/,
-                    details: false,
-                },
-            ],
-            [rehypeMathjax, mathOptions],
-            [
-                rehypePrettyCode,
-                {
-                    keepBackground: false,
-                    theme: {
-                        light: "material-theme-lighter",
-                        dark: "dracula",
-                    },
-                    onVisitLine(node) {
-                        if (node.children.length === 0) {
-                            node.children = [{ type: "text", value: " " }];
-                        }
-                    },
-                    onVisitHighlightedLine(node) {
-                        node.properties.className.push("line--highlighted");
-                    },
-                    onVisitHighlightedWord(node) {
-                        node.properties.className = ["word--highlighted"];
-                    },
-                },
-            ],
-            [
-                rehypeAutolinkHeadings,
-                {
-                    properties: {
-                        className: ["subheading-anchor"],
-                        ariaLabel: "Link to section",
-                    },
-                },
-            ],
-            rehypeSlug,
-        ],
-    },
-});
+// const withMDX = createMDX({
+//     options: {
+//         remarkPlugins: [remarkMath, remarkGfm, [emoji, {}]],
+//         rehypePlugins: [
+//             // [rehypeMermaid, mermaidOptions],
+//             [
+//                 rehypeVideo,
+//                 {
+//                     test: /\/(.*)(.mp4|.mov|.webm)$/,
+//                     details: false,
+//                 },
+//             ],
+//             [rehypeMathjax, mathOptions],
+//             [
+//                 rehypePrettyCode,
+//                 {
+//                     keepBackground: false,
+//                     theme: {
+//                         light: "material-theme-lighter",
+//                         dark: "dracula",
+//                     },
+//                     onVisitLine(node) {
+//                         if (node.children.length === 0) {
+//                             node.children = [{ type: "text", value: " " }];
+//                         }
+//                     },
+//                     onVisitHighlightedLine(node) {
+//                         node.properties.className.push("line--highlighted");
+//                     },
+//                     onVisitHighlightedWord(node) {
+//                         node.properties.className = ["word--highlighted"];
+//                     },
+//                 },
+//             ],
+//             [
+//                 rehypeAutolinkHeadings,
+//                 {
+//                     properties: {
+//                         className: ["subheading-anchor"],
+//                         ariaLabel: "Link to section",
+//                     },
+//                 },
+//             ],
+//             rehypeSlug,
+//         ],
+//     },
+// });
 
 /** @type {import('next').NextConfig} */
 const config = withPWA(
