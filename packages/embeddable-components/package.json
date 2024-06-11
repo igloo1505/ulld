@@ -28,6 +28,7 @@
     "./components/ul": "./src/ul.tsx",
     "./components/mdxInput": "./src/input.tsx",
     "./components/blockQuote": "./src/blockQuote.tsx",
+    "./components/quoteComponent": "./src/emeddedComponents/text/quote.tsx",
     "./components/img": "./src/img.tsx",
     "./components/heading": "./src/heading.tsx",
     "./components/client/admonition": "./src/emeddedComponents/CLIENT_COMPONENTS/admonition/admonition.tsx",

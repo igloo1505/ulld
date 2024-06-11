@@ -368,13 +368,6 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
       font-size: 0.875rem;
     }
   }
-  li.task-list-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.5rem;
-  }
 }
 
 html.dark {

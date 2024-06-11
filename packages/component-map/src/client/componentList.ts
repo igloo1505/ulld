@@ -41,7 +41,7 @@ const VSpace = dynamic(() => import("@ulld/embeddable-components/components/clie
 const EmbeddedImage = dynamic(() => import("@ulld/embeddable-components/components/client/image").then((a) => a.EmbeddedImage))
 // const EmbeddedSvg = dynamic(() => import("./emeddedComponents/svg"))
 // const Vectorize = dynamic(() => import("./emeddedComponents/vectorize"))
-const Quote = dynamic(() => import("@ulld/embeddable-components/components/blockQuote"))
+const Quote = dynamic(() => import("@ulld/embeddable-components/components/quoteComponent").then((a) => a.Quote))
 // const Hide = dynamic(() => import("./emeddedComponents/hide"))
 // const FlexRow = dynamic(() => import("./layout/flexRow"))
 // const NoMaxHeight = dynamic(() => import("./layout/noTableHeightLimit"))

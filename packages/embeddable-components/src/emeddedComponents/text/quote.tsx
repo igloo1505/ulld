@@ -4,6 +4,7 @@ import { QuoteProps } from './quoteProps'
 
 export const Quote = ({ children, author, by, from }: QuoteProps) => {
     const _author = author || by || from
+    console.log("_author: ", _author)
     return (
         <div className={"w-full flex flex-col justify-center items-center !my-6"}>
             <div className={"w-fit max-w-[83vw] mdlg:max-w-screen-md h-fit flex flex-col gap-3 justify-center items-center bg-secondary/40 text-secondary-foreground rounded-lg p-5 border"}>
