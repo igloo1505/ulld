@@ -10,9 +10,9 @@ created: 6-10-24
 
 The primary goal of **JSX** is to add the ability to write multiple different languages in a single file. React components, which are written in **TSX**[^1], work primarily as a render function. React components are functions that either return some sort of valid [**HTML**](https://developer.mozilla.org/en-US/docs/Web/HTML), or `null{:tsx}` if the internal logic determines that nothing visible should be returned.  
 
-Through the great work at the people over at [MDX](https://mdxjs.com), we can now embed entire React components directly in markdown files, with the `.mdx{:sh}` file extension. All of the original functionality of markdown remains intact, and in <LogoAsText /> is actually extended, but users can now include neatly bundled **HTML**, **CSS**, and **Javascript** in pre-defined React components. 
+Through the great work at the people over at [MDX](https://mdxjs.com), we can now embed entire React components directly in markdown files, with the `.mdx` file extension. All of the original functionality of markdown remains intact, and in <LogoAsText /> is actually extended, but users can now include neatly bundled **HTML**, **CSS**, and **Javascript** in pre-defined React components. 
 
-> All you need to know is how to properly pass in the data that these components need to determine what they should return.
+> All you need to know is how to properly pass in the data that these components need to calculate what they should return. If you're already familiar with **JSX**, you can move on to the [components documentation](/docs/user/components?category=Layout). Otherwise, a quick review of this documentation is important if you want to get the most from <LogoAsText />. Don't worry; It's incredibly simple.
 
 
 ## How to read documentation ||how-to-read-docs||
@@ -160,6 +160,36 @@ To pass a number into a React component, simply wrap the value in curly braces *
 
 #### Boolean Props ||jsx-boolean-props||
 
+<Hint>
+    If a value is passed in as just the key of that value without any actual value declared, it is interpreted as `true`. Therefore, if a component expects a value of `applyModal` to be of a type `boolean`, and you want that value to be `true`, `<ThatComponent applyModal={true} />{:tsx}` and `<ThatComponent applyModal />{:tsx}` are equivalent.
+</Hint>
+
+Boolean properties are passed in using an almost identical syntax to number properties, and like number properties, `string` properties are not equivalent... _kind of._ Javascript along with many other programming languages has a concept of 'truthy' and 'falsy'. In Javascript, all strings will evaluate to true if they are tested using an `if` statement and many other comparison operators, but will be `false` if tested using the comparision `"true" === true{:tsx}`.  
+
+Since **MDX** files are not evaluated for type correctness, it can be very easy for new users to mistakenly pass in a value as a string and think they have the right value, if they expect that value to be true, only to find out that it will never be evaluated as false. This happens due to the tuthy-ness of strings, which will always be true. This gives a scenario in which:
+
+
+```tsx
+const EOrPi = ({valueIsSquared, value}: {valueIsSquared: boolean, value: number}) => {
+    // This is what a component looks like internally.
+    // This is where logic would be applied to return the proper value.
+   let renderThis = valueIsSquared ? value**2 : value
+   return renderThis
+}
+```
+
+While the example above is intentionally over simplified and almost entirely useless, we can demonstrate the truthy and falsy nature of Javascript. If we run include this component with the following syntax:
+
+```mdx
+<EOrPi valueIsSquared={"false"} value={2} /> value will return 4,
+while <EOrPi valueIsSquared={false} value={2} /> will return 2.
+```
+
+###### Output
+
+4 will return 4, while 2 will return 2
+
+
 
 #### ReactNode Type
 
@@ -177,6 +207,21 @@ React provides hundreds of it's own types, but one that appears quite often is t
     someIncorrectElementProp={SomeOtherComponent} 
 />
 ```
+
+
+#### Extended Types
+
+_"Extending"_ types is almost universal among programming languages. If type `A` extends type `B`, then type `A` will have all of the same properties as `B`, and any extra properties that are unique to `A`. If `A` and `B` have a property in common, the property of `A` will overwrite that of `B`.  
+
+<LogoAsText /> takes advantage of this structure throughout it's **MDX** interface, but two instances are currently the most common. 
+
+Many components like the `Ul`, `Color` and `Hl` components accept props that extend the `ColorProps` type. You can review that documentation [here](/docs/user/components?category=Colors). This is a single object that has a set of default boolean values. Those default values can be overridden in your configuration file, where new ones can be added as well. Despite the fact that those properties are not explicitly described in the documentation of those components, the **Extends: ...** implies that all properties of the extended type are also accepted.
+
+##### Extending HTML Attributes
+
+For those familiar with **HTML** or **CSS**, most components extend the **HTML** attributes of the outer most element. However, be aware that while <LogoAsText /> relies on Tailwind for it's theme-ability, `.mdx` files are currently not evaluated for their `className` content.  
+
+If you notice a bug with the way **HTML** attributes are handled, please submit a bug report on Github.
 
 
 
