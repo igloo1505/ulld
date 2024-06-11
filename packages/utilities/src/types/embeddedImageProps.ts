@@ -23,7 +23,7 @@ import { ReactNode } from "react"
  * @interface
  */
 export interface EmbeddedImageProps  {
-    /** A [root-relative](/docs/user/syntax#root-relative-paths) to an image file. */
+    /** A [root relative path](/docs/terminology?id=rootRelativePath) to an image file. */
     file?: string
     /** A url to a remote image. */
     url?: string

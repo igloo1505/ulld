@@ -12,8 +12,6 @@ interface Props {
 }
 
 const ComponentDocsPage = ({ searchParams: { category } }: Props) => {
-    /* let item = allStaticDocs.find((f) => f.id === "docsHome"); */
-
     const items = allDocumentations
         .filter((a) => a.category === category)
         .sort((a, b) => (a.component > b.component ? 1 : -1));

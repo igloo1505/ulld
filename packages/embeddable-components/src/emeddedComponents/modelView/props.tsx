@@ -11,7 +11,7 @@
  * @interface
  */
 export interface ModelViewProps {
-    /** The [root-relative](/docs/user/syntax#root-relative-paths) file path to a gltf or glb file.  */
+    /** The [root-relative](/docs/terminology?id=rootRelativePath) file path to a gltf or glb file.  */
     file?: string;
     /** A remote url returning a valid gltf or glb model. */
     url?: string

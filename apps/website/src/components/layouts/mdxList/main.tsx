@@ -2,7 +2,7 @@
 import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
 import { getRandomId } from "@ulld/utilities/identity";
 import { Documentation } from "contentlayer/generated";
-import React, { HTMLProps, useEffect, useRef } from "react";
+import React, { HTMLProps, useRef } from "react";
 import clsx from "clsx";
 import MdxListItem from "./mdxItem";
 import store from "#/state/store";
@@ -19,14 +19,23 @@ interface MdxListProps extends HTMLProps<HTMLDivElement> {
 const MdxList = (props: MdxListProps) => {
     const id = props.id ? props.id : getRandomId();
     const ref = useRef<HTMLDivElement>(null!);
+    const hasSetTables = useRef(false);
     useMathjaxBandaid(id);
-    useObserveChildren(() => applyTableCodeStyles(ref.current), {
-        childList: true,
-        subtree: true
-    }, ref)
-    /* useEffect(() => { */
-    /*     applyTableCodeStyles(ref.current) */
-    /* }, []) */
+    useObserveChildren(
+        () => {
+            if (!hasSetTables.current) {
+                let success = applyTableCodeStyles(ref.current);
+                if (success) {
+                    hasSetTables.current = true;
+                }
+            }
+        },
+        {
+            childList: true,
+            subtree: true,
+        },
+        ref,
+    );
     return (
         <InternalReduxProvider>
             <MathjaxProvider>

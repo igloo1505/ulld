@@ -16,7 +16,7 @@ interface DocCategory {
     };
 }
 
-interface Term {
+export interface Term {
    label: string
     content: ReactNode
     id: string
@@ -32,7 +32,6 @@ interface StaticDocsData {
 const docCategories = [
         "Layout",
         "Text",
-        "Linking & Searching",
         "Referencing",
         "Colors",
         "Plotting",
@@ -75,7 +74,12 @@ export const staticDocsData: StaticDocsData = {
             label: "Assumed Dimension",
             content: "A number which if greater than 1 is interpreted as pixels, and if less than 1 is interpreted as a proportion of the viewport.",
             id: "assumedDimension"
-        }
+        },
+        {
+            label: "Root Relative Path",
+            content: "FIX THIS",
+            id: "rootRelativePath"
+        },
     ],
     extendsMap: {
        "colorProps": {

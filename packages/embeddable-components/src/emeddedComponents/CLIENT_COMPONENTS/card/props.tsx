@@ -24,9 +24,11 @@ import { BaseEmbeddableComponentProps } from "../../baseEmbeddableComponentTypes
  * @interface
  */
 export interface EmbeddableCardProps extends Omit<BaseEmbeddableComponentProps<HTMLDivElement>, "title"> {
+    /** The title text. Can include mdx. */
     title?: ReactNode;
     /** Body here is an alias for children. You can pass in the main content through either property. */
     body?: ReactNode;
+    /** The main body of the card. Can include mdx. */
     children?: React.ReactNode;
     /** The muted text below the title */
     description?: string;

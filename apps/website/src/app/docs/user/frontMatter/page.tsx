@@ -17,7 +17,7 @@ const DocsFrontMatterPage = (props: DocsFrontMatterPageProps) => {
                 docsWide
                 paddingTop={false}
                 className={"!max-w-full"}
-            />;
+            />
         </MathjaxProvider>
     );
 };

@@ -22,7 +22,7 @@ const FoldingAdmonition = ({ type, id, sidebar, dropdown, children, open: _open,
 
     return (
         <div
-            className={clsx(`rounded-lg  my-4 admonition ${type || "note"} overflow-hidden group/fold h-fit`, !dropdown && "open", type || "note", dropdown && "foldable", sidebar && "w-full lg:w-[33%] lg:float-right lg:ml-4")}
+            className={clsx(`rounded-lg my-4 admonition ${type || "note"} overflow-hidden group/fold h-fit`, !dropdown && "open", type || "note", dropdown && "foldable", sidebar && "w-full lg:w-[33%] lg:float-right lg:ml-4")}
             id={id}
             data-state={open ? "open" : "closed"}
         >
@@ -46,7 +46,7 @@ const FoldingAdmonition = ({ type, id, sidebar, dropdown, children, open: _open,
                 />
             )}
             <motion.div 
-                className={clsx("body px-4 space-y-3 bg-gray-100 dark:bg-gray-800 origin-top relative overflow-hidden will-change-auto", type === "plain" && "bg-transparent dark:bg-transparent")}
+                className={clsx("body admonition-body px-4 space-y-3 bg-gray-100 dark:bg-gray-800 origin-top relative overflow-hidden will-change-auto", type === "plain" && "bg-transparent dark:bg-transparent")}
                 initial={dropdown ? _open ? "open" : "closed" : "open"}
                 animate={open ? "open" : "closed"}
                 variants={{

@@ -10,7 +10,7 @@ import { CSSProperties, HTMLProps } from "react"
 export interface BaseEmbeddableComponentProps<T extends HTMLElement> extends HTMLProps<T> {
     /** Whether component should expand to occupy the entire available space. */
     fitParent?: boolean
-    /** Alias for `fitParent` */
+    /** Alias for fitParent */
     fitContainer?: boolean
 }
 

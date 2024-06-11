@@ -237,6 +237,73 @@ You can also add a block quote by starting a line with `>` as:
 
 > This is a block quote.
 
+And you can add syntax highlighted code inline, with `` `const x = 2{:js}` {:mdx}``, where `\{:js}` is optional, and `js` is interchangable with any [Shiki](https://shiki.style/languages) supported language. To add a code block, you can use the following syntax:
+
+````mdx
+```js
+const x = 2
+```
+````
+
+#### Output
+
+```js
+const x = 2
+```
+
+Additionally, in code blocks, you can add titles and highlight specific lines with the following syntax:
+
+````mdx
+```python {4,5} title="gamma.py" caption="The time dilation scalar."
+import numpy as np
+import scipy.constants as spc
+
+def gamma(v):
+    return 1 / np.sqrt(1 - v**2 / spc.c**2)
+```
+````
 
 
-### Root Relative Paths
+```python {4,5} title="gamma.py" caption="The time dilation scalar."
+import numpy as np
+import scipy.constants as spc
+
+def gamma(v):
+    return 1 / np.sqrt(1 - v**2 / spc.c**2)
+```
+
+Or highlight specific words based on a regular expression with:
+
+
+````mdx
+```python /delta/ title="dgdr.py"
+import numpy as np
+import sympy as smp
+import scipy.constants as spc
+
+G, R, m, c = smp.symbols(["G", "R", "m", "c"])
+
+delta = 2 * G * m / R**3
+
+deltaBar = smp.integrate(delta, R) / R
+
+vBar = c * smp.sqrt(1 - 1 / (deltaBar)**2)
+```
+````
+
+
+```python /delta/ title="dgdr.py"
+import numpy as np
+import sympy as smp
+import scipy.constants as spc
+
+G, R, m, c = smp.symbols(["G", "R", "m", "c"])
+
+delta = 2 * G * m / R**3
+
+deltaBar = smp.integrate(delta, R) / R
+
+vBar = c * smp.sqrt(1 - 1 / (deltaBar)**2)
+```
+
+Syntax highlighting inside of code blocks is powered by [rehype-pretty-code](https://rehype-pretty.pages.dev), which in turn relies on [Shiki](https://shiki.style). By default, the `transformerNotationWordHighlight` and `transformerMetaHighlight` transformers are enabled. Before the alpha release of <LogoAsText />, these transformers will be configurable from your configuration file, and be extended to optional include any of the remaining Shiki transfomers available [here](https://shiki.style/packages/transformers).

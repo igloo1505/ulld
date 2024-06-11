@@ -17,7 +17,7 @@ const DocsIntroToJsxPage = (props: DocsIntroToJsxPageProps) => {
                 docsWide
                 paddingTop={false}
                 className={"!max-w-full"}
-            />;
+            />
         </MathjaxProvider>
     );
 };

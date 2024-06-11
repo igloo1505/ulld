@@ -11,15 +11,20 @@ import emoji from "remark-emoji";
 import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
 // import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import remarkHeadingId from "remark-custom-header-id"
+import remarkHeadingId from "remark-custom-header-id";
 import fs from "fs";
+import {
+    transformerMetaHighlight,
+    transformerNotationWordHighlight,
+} from "@shikijs/transformers";
+import { transform } from "next/dist/build/swc";
 
 const styleFields: DocumentTypeDef["fields"] = {
     autoWrapCode: {
         type: "boolean",
-        default: false
+        default: false,
     },
-}
+};
 
 const baseFields: DocumentTypeDef["fields"] = {
     id: {
@@ -278,7 +283,7 @@ export const StaticDocumentation = defineDocumentType(() => ({
     name: "StaticDocs",
     filePathPattern: `docsStatic/**/*.mdx`,
     fields: {
-       ...styleFields, 
+        ...styleFields,
         id: {
             type: "string",
             required: true,
@@ -361,10 +366,17 @@ export default makeSource({
         StaticDocumentation,
     ],
     mdx: {
-        remarkPlugins: [remarkMath, remarkGfm, 
-            [remarkHeadingId, {
-                defaults: true
-            }], [emoji as any, {}]],
+        remarkPlugins: [
+            remarkMath,
+            remarkGfm,
+            [
+                remarkHeadingId,
+                {
+                    defaults: true,
+                },
+            ],
+            [emoji as any, {}],
+        ],
         rehypePlugins: [
             // [rehypeMermaid as any, mermaid],
             [
@@ -392,6 +404,10 @@ export default makeSource({
                     onVisitHighlightedWord(node: any) {
                         node.properties.className = ["word--highlighted"];
                     },
+                    transformers: [
+                        transformerNotationWordHighlight(),
+                        transformerMetaHighlight(),
+                    ],
                 },
             ],
             // [

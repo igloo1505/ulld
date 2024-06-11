@@ -2,6 +2,7 @@ import H1SizeContainer from "#/components/UIUtils/h1SizeContainer";
 import ThemeSwitchTrigger from "#/components/UIUtils/themeSwitchButton";
 import PayPalLinkQr from "#/components/brand/sponsor/paypalLinkSvg";
 import InternalTag from "#/components/docUtils/button";
+import ExtendsColorProps from "#/components/docUtils/extendsColorProps";
 import Extends from "#/components/docUtils/extendsReference";
 import RemoteExampleLimitation from "#/components/docUtils/remoteExampleLimitation";
 import Hint from "#/components/general/hint";
@@ -56,6 +57,11 @@ export const webComponentMap: AdditionalComponents<any> = [
         regex: new RegExp("<Extends"),
         component: Extends,
         label: "Extends"
+    },
+    {
+        regex: new RegExp("<ExtendsColorProps"),
+        component: ExtendsColorProps,
+        label: "ExtendsColorProps"
     },
     {
         regex: new RegExp("<Tag"),

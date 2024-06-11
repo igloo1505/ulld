@@ -8,6 +8,7 @@ import { ReactNode } from "react";
  * This isn't as important as <Hl>this</Hl> is!
  * ```
  * This isn't as important as <Hl>this</Hl> is!
+ * <ExtendsColorProps />
  * @alpha
  * @interface
  */

@@ -19,4 +19,5 @@ export const applyTableCodeStyles = (parent: HTMLElement = document.body) => {
             em.replaceChildren(span);
         }
     });
+    return true
 };

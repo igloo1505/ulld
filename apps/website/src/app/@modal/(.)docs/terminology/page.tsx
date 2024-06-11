@@ -1,24 +1,27 @@
 import TerminologyCard from "#/components/docUtils/terminologyCard";
 import { staticDocsData } from "#/staticData/docs";
+import { ModalPageContainer } from "@ulld/ui/modalPage";
 import { notFound } from "next/navigation";
 import React from "react";
 
-interface TerminologyDocsPageProps {
+interface TerminologyDocsModalPageProps {
     searchParams: {
         id: string;
     };
 }
 
-const TerminologyDocsPage = ({
+const TerminologyDocsModalPage = ({
     searchParams: { id },
-}: TerminologyDocsPageProps) => {
+}: TerminologyDocsModalPageProps) => {
     const item = staticDocsData.terms.find((t) => t.id === id);
     if (!item) {
         return notFound();
     }
-    return <TerminologyCard {...item} />
+    return <ModalPageContainer>
+<TerminologyCard isModal {...item}/>
+    </ModalPageContainer>;
 };
 
-TerminologyDocsPage.displayName = "TerminologyDocsPage";
+TerminologyDocsModalPage.displayName = "TerminologyDocsModalPage";
 
-export default TerminologyDocsPage;
+export default TerminologyDocsModalPage;

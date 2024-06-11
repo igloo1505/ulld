@@ -24,6 +24,15 @@ code {
       transform: scale(1);
     }
   }
+  & span.highlighted {
+    background-color: hsl(var(--secondary) / 0.6);
+    border: 1px solid hsl(var(--border) / 0.7);
+  }
+  & span[data-highlighted-chars] {
+    * {
+      color: inherit !important;
+    }
+  }
 }
 
 p code {
@@ -374,6 +383,11 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
     justify-content: flex-start;
     align-items: center;
     gap: 0.5rem;
+  }
+  .admonition-body {
+    figure[data-rehype-pretty-code-figure] {
+      margin: 0.75rem 0px !important;
+    }
   }
 }
 
