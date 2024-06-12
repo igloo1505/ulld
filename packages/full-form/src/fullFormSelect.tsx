@@ -51,7 +51,6 @@ export const SelectInput = <T extends FieldValues, L extends string>({
 }: SelectInputProps<T, HTMLTextAreaElement, L>) => {
     const form = useFormContext<T>();
     const appendValue = (val: string | number) => {
-        console.log("val: ", val);
         if (!val || val === "") return;
         if (multiple) {
             const currentValues = makeArrayTransform(form.getValues(name));

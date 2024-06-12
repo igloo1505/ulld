@@ -9,7 +9,6 @@ import { isValidNumber } from "./numberValidator";
 export const NumberInput = (props: NumberInputProps) => {
     const { onChange, min, max, step, initial, value, label, integerOnly } =
         props;
-    const ref = useRef<HTMLAnchorElement>(null!);
 
     const handleMinus = () => {
         let nv = value - step;

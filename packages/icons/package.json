@@ -6,7 +6,8 @@
     "dev": "echo 'Add dev script here'",
     "build": "echo 'Add build script here'",
     "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'"
+    "lint": "echo 'Add lint script here'",
+    "buildLocal": "tsx ./src/scripts/gatherNames.ts"
   },
   "files": [
     "src"
@@ -32,7 +33,8 @@
     "./paypal": "./src/logoIcons/paypal.tsx",
     "./ulld": "./src/logo/ulldLogo.tsx",
     "./ulld-animated": "./src/logo/animatedLogo.tsx",
-    "./clientX": "./src/clientSideUtilityComponents/xIcon.tsx"
+    "./clientX": "./src/clientSideUtilityComponents/xIcon.tsx",
+    "./names": "./src/allIconNames.ts"
   },
   "peerDependencies": {
     "@ulld/tailwind": "workspace:*",
