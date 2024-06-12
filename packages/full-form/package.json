@@ -14,6 +14,7 @@
     "./numberInput": "./src/numberInput.tsx",
     "./checkbox": "./src/checkbox.tsx",
     "./checkboxGroup": "./src/inputs/checkboxGroup/main.tsx",
+    "./checkboxGroupTypes": "./src/inputs/checkboxGroup/types.ts",
     "./textInput": "./src/fullFormTextInput.tsx",
     "./textArea": "./src/fullFormTextArea.tsx",
     "./select": "./src/fullFormSelect.tsx",

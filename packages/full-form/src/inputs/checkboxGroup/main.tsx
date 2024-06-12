@@ -6,16 +6,18 @@ import {
     CardDescription,
     CardFooter,
 } from "@ulld/tailwind/card";
-import React, { ReactNode } from "react";
+import React, { ComponentPropsWithoutRef, ReactNode } from "react";
 import { FieldValues } from "react-hook-form";
 import CheckboxGroupItem, { CheckboxInputItem } from "./item";
 import clsx from 'clsx'
+import type { Switch } from "@ulld/tailwind/switch";
 
 export interface CheckboxGroupProps<T extends FieldValues> {
     label?: ReactNode;
     desc?: ReactNode;
     items: CheckboxInputItem<T>[];
     footer?: ReactNode
+    switchProps?: ComponentPropsWithoutRef<typeof Switch>
 }
 
 
@@ -23,8 +25,10 @@ export const CheckboxGroup = <T extends FieldValues>({
     label,
     desc,
     items,
-    footer
+    footer,
+    switchProps
 }: CheckboxGroupProps<T>) => {
+    console.log("items: ", items)
     return (
         <Card>
             {(label || desc) && <CardHeader>
@@ -32,7 +36,7 @@ export const CheckboxGroup = <T extends FieldValues>({
                 {desc && <CardDescription>{desc}</CardDescription>}
             </CardHeader>}
             <CardContent className={clsx("grid gap-6", (!label && !desc) && "pt-6")}>
-                {items.map((item) => <CheckboxGroupItem item={item} key={item.name} />)}
+                {items.map((item) => <CheckboxGroupItem switchProps={switchProps} item={item} key={item.name} />)}
             </CardContent>
             {footer && <CardFooter>
                 {footer}

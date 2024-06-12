@@ -29,7 +29,7 @@ export default function SettingsLayout({ children }: SettingsLayoutProps) {
                 <aside className="-mx-4 lg:w-1/5">
                     <ConfigureSidebar items={sidebarNavItems} />
                 </aside>
-                <div className="flex-1 lg:max-w-2xl">
+                <div className="flex-1 lg:max-w-[min(1080px,100%)]">
                     <ConfigureFormWrapper>{children}</ConfigureFormWrapper>
                 </div>
             </div>

@@ -27,9 +27,10 @@ export const sidebarNavItems: {title: string, href: string, id: string}[] = [
 
 
 export const configurationNoteTypeSchema = z.object({
-    label: z.string(),
-    icon: z.enum(allIcons),
-    inSidebar: z.boolean().default(false)
+    label: z.string().default(""),
+    icon: z.enum(allIcons).default("ulld"),
+    inSidebar: z.boolean().default(false),
+    inNavbar: z.boolean().default(false),
 })
 
 
@@ -43,10 +44,14 @@ export const configurationFormSchema = z.object({
 
 export type ConfigurationFormData = z.output<typeof configurationFormSchema>
 
+export type NoteTypeInput = z.input<typeof configurationNoteTypeSchema>
+
 
 export const defaultNoteType: z.input<typeof configurationNoteTypeSchema> = {
     label: "",
     icon: "ulld",
+    inSidebar: false,
+    inNavbar: false,
 }
 
 

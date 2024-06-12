@@ -1,99 +1,139 @@
-import { AllDynamicIconNames } from "@ulld/icons";
 import {
     FormField,
     FormItem,
     FormLabel,
-    FormControl,
     FormDescription,
     FormMessage,
 } from "@ulld/tailwind/form";
-import {
-    Select,
-    SelectTrigger,
-    SelectValue,
-    SelectContent,
-} from "@ulld/tailwind/select";
-import dynamicIconImports from "lucide-react/dynamicIconImports";
-import React, { ReactNode, useMemo } from "react";
+import React, { ReactNode, useState } from "react";
 import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
-import IconSelectOption from "./iconSelectOption";
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "@ulld/tailwind/popover";
+import cn from "@ulld/utilities/cn";
+import { Button } from "@ulld/tailwind/button";
+import { useMinWidth } from "@ulld/hooks/useMinWidth";
+import IconList from "./iconList";
+import {
+    Drawer,
+    DrawerTitle,
+    DrawerTrigger,
+    DrawerFooter,
+    DrawerContent,
+    DrawerPortal,
+    DrawerDescription,
+} from "@ulld/tailwind/drawer";
+import PlaceHolder from "./placeholder";
 
-interface IconSelectProps<T extends FieldValues> {
+interface IconInputProps<T extends FieldValues> {
     name: Path<T>;
     label?: ReactNode;
     placeholder?: string;
-    className?: string;
-    contentClasses?: string;
-    itemClasses?: string;
+    searchPlaceholder?: string;
     desc?: ReactNode;
+    classes?: {
+        popover?: string;
+        drawerContent?: string;
+        item?: string;
+        button?: string;
+        icon?: string;
+    };
 }
 
-/* TODO: Move this to an infinite list. This is wayyyy too heavy with almost 1000 items. */
-export const IconSelect = <T extends FieldValues>({
+export const IconInput = <T extends FieldValues>({
     name = "icon" as Path<T>,
     label = "Icon",
-    className,
     placeholder,
-    contentClasses,
-    itemClasses,
     desc,
-}: IconSelectProps<T>) => {
+    classes = {},
+    searchPlaceholder,
+}: IconInputProps<T>) => {
     const form = useFormContext<T>();
+    const [open, setOpen] = useState(false);
+    const isDesktop = useMinWidth(768);
 
-    const options = useMemo(() => {
-        let dynamicKeys = Object.keys(dynamicIconImports);
-        for (const k in AllDynamicIconNames) {
-            if (!dynamicKeys.includes(k)) {
-                dynamicKeys.push(k);
-            }
-        }
-        return dynamicKeys.map((i) => {
-            return (
-                <IconSelectOption
-                    item={{
-                        value: i,
-                        content: i,
-                    }}
-                    className={itemClasses}
-                    onClick={(newValue) =>
-                        form.setValue(name as Path<T>, newValue as PathValue<T, Path<T>>)
-                    }
-                />
-            );
-        });
-    }, [itemClasses, name]);
+    const iconValue = form.watch(name);
+
+    if (isDesktop) {
+        return (
+            <FormField
+                control={form.control}
+                name={name}
+                render={({ field }) => (
+                    <FormItem className="flex flex-col">
+                        <FormLabel>{label}</FormLabel>
+                        <Popover open={open} onOpenChange={setOpen}>
+                            <PopoverTrigger asChild>
+                                <Button
+                                    variant="outline"
+                                    className={cn("w-[350px] justify-start", classes.button)}
+                                >
+                                    <PlaceHolder
+                                        open={open}
+                                        iconClasses={classes.icon}
+                                        value={iconValue}
+                                        placeholder={placeholder}
+                                    />
+                                </Button>
+                            </PopoverTrigger>
+                            <PopoverContent
+                                className={cn("w-[350px] p-0", classes.popover)}
+                                align="start"
+                            >
+                                <IconList
+                                    iconClasses={classes.icon}
+                                    setValue={(newVal) =>
+                                        form.setValue(
+                                            name as Path<T>,
+                                            newVal as PathValue<T, Path<T>>,
+                                        )
+                                    }
+                                    setOpen={setOpen}
+                                    placeholder={searchPlaceholder}
+                                    className={classes.item}
+                                />
+                            </PopoverContent>
+                        </Popover>
+                        {desc && <FormDescription>{desc}</FormDescription>}
+                        <FormMessage />
+                    </FormItem>
+                )}
+            />
+        );
+    }
 
     return (
-        <FormField
-            control={form.control}
-            name={name}
-            render={({ field }) => (
-                <FormItem className={className}>
-                    {label && <FormLabel>{label}</FormLabel>}
-                    <Select
-                        /* value={field.value} */
-                        onValueChange={(newValue) => {
-                            form.setValue(name as Path<T>, newValue as PathValue<T, Path<T>>);
-                        }}
-                        defaultValue={
-                            Array.isArray(field.value)
-                                ? `${field.value.length} items`
-                                : field.value
+        <Drawer open={open} onOpenChange={setOpen}>
+            <DrawerTrigger asChild>
+                <Button
+                    variant="outline"
+                    className={cn("w-[350px] justify-start", classes.button)}
+                >
+                    <PlaceHolder
+                        open={open}
+                        iconClasses={classes.icon}
+                        value={iconValue}
+                        placeholder={placeholder}
+                    />
+                </Button>
+            </DrawerTrigger>
+            <DrawerContent>
+                <div className={cn("mt-4 border-t", classes.drawerContent)}>
+                    <IconList
+                        iconClasses={classes.icon}
+                        setValue={(newVal) =>
+                            form.setValue(name as Path<T>, newVal as PathValue<T, Path<T>>)
                         }
-                    >
-                        <FormControl>
-                            <SelectTrigger className={"[&_svg]:inline [&_svg]:mr-2"}>
-                                <SelectValue placeholder={placeholder || undefined} />
-                            </SelectTrigger>
-                        </FormControl>
-                        <SelectContent className={contentClasses}>{options}</SelectContent>
-                    </Select>
-                    {desc && <FormDescription>{desc}</FormDescription>}
-                    <FormMessage />
-                </FormItem>
-            )}
-        />
+                        setOpen={setOpen}
+                        className={classes.item}
+                        placeholder={searchPlaceholder}
+                    />
+                </div>
+            </DrawerContent>
+        </Drawer>
     );
 };
 
-IconSelect.displayName = "IconSelect";
+IconInput.displayName = "IconInput";

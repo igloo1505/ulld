@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import type { LucideProps } from "lucide-react";
 import dynamicIconImports from "lucide-react/dynamicIconImports";
 import { AdmonitionType } from "@ulld/utilities/admonition/types";
@@ -179,6 +179,7 @@ export const completeValidIconNameList = [
 
 interface IconProps extends LucideProps {
     name: ValidIconName;
+    onLoad?: () => void
 }
 
 const DynamicIconComponent = ({ name, ...props }: IconProps) => { };
@@ -203,6 +204,11 @@ export const DynamicIcon = (props: IconProps) => {
         /* ); */
         /* return <LucideIcon {...props} />; */
     }
+    useEffect(() => {
+       if(props.onLoad){
+            props.onLoad()
+        } 
+    }, [])
     return useMemo(() => {
         if (!iconType) return null;
         if (iconType === "logo") {

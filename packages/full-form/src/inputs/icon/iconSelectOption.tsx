@@ -1,36 +1,67 @@
-import { SelectItem } from "@ulld/tailwind/select";
-import React from "react";
-import { SelectOption } from "../../types";
+"use client";
+import React, { ForwardedRef, forwardRef, useMemo } from "react";
 import { DynamicIcon, ValidIconName } from "@ulld/icons";
 import clsx from "clsx";
+import allIcons from "@ulld/icons/names";
+import cn from "@ulld/utilities/cn";
 
-interface IconSelectOptionProps<T extends unknown> {
-  item: SelectOption<T>;
-  className?: string;
-  onClick: (newValue: T) => void;
+interface IconSelectOptionProps {
+    item: (typeof allIcons)[number];
+    className?: string;
+    iconClasses?: string
+    /* index: number; */
+    setValue: (newVal: (typeof allIcons)[number]) => void;
+    setOpen: (newOpen: boolean) => void;
 }
 
-const IconSelectOption = ({
-  item,
-  className,
-  onClick,
-}: IconSelectOptionProps<string>) => {
-  return (
-    <SelectItem
-      value={item.value}
-      className={clsx("!grid grid-cols-[40px_1fr]", className)}
-      onClick={() => {
-        onClick(item.value);
-      }}
-    >
-      <DynamicIcon
-        name={item.value as ValidIconName}
-        className={"h-4 w-4 inline"}
-      />
-      <span className={"w-full"}>{item.content}</span>
-    </SelectItem>
-  );
-};
+const IconSelectOption = forwardRef(({
+    item,
+    setValue,
+    setOpen,
+    className,
+    iconClasses
+}: IconSelectOptionProps, ref: ForwardedRef<HTMLDivElement>) => {
+    const icon = useMemo(() => {
+        return (
+            <DynamicIcon
+                className={cn("place-self-center w-3 h-3 text-foreground stroke-foreground", iconClasses)}
+                style={{ gridColumn: "icon" }}
+                name={item as ValidIconName}
+            />
+        );
+    }, [item]);
+
+    if (!icon) return null;
+    return (
+        <div
+            ref={ref}
+            className={clsx(
+                "not-prose grid h-12 text-sm grid w-full cursor-pointer hover:bg-secondary/50",
+                className,
+            )}
+            style={{
+                gridTemplateColumns: "[icon] 32px [content] 1fr",
+            }}
+            key={item}
+            onClick={() => {
+                setValue(item);
+                setOpen(false);
+            }}
+        >
+            {icon}
+            <span
+                className={
+                    "h-full w-full min-w-full flex flex-row justify-start items-center"
+                }
+                style={{
+                    gridColumn: "content",
+                }}
+            >
+                {item}
+            </span>
+        </div>
+    );
+});
 
 IconSelectOption.displayName = "IconSelectOption";
 

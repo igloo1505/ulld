@@ -1,6 +1,6 @@
 import { Label } from "@ulld/tailwind/label";
 import { Switch } from "@ulld/tailwind/switch";
-import React, { ReactNode } from "react";
+import React, { ComponentProps, ComponentPropsWithoutRef, ReactNode } from "react";
 import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
 
 export type CheckboxInputItem<T extends FieldValues> = {
@@ -13,9 +13,10 @@ export type CheckboxInputItem<T extends FieldValues> = {
 
 interface CheckboxGroupItemProps<T extends FieldValues> { 
     item: CheckboxInputItem<T>
+    switchProps?: ComponentPropsWithoutRef<typeof Switch>
 }
 
-const CheckboxGroupItem = <T extends FieldValues>({item}: CheckboxGroupItemProps<T>) => {
+const CheckboxGroupItem = <T extends FieldValues>({item, switchProps}: CheckboxGroupItemProps<T>) => {
     const form = useFormContext<T>()
     const value = form.watch(item.name)
     return (
@@ -27,8 +28,9 @@ const CheckboxGroupItem = <T extends FieldValues>({item}: CheckboxGroupItemProps
                 </span>
             </Label>
             <Switch 
+                {...switchProps}
                 id={`checkbox-group-${item.name}`} 
-                defaultChecked={item.default} 
+                defaultChecked={item.default || item.value} 
                 value={value}
                 onCheckedChange={(isChecked) => form.setValue(item.name, isChecked as PathValue<T, Path<T>>)}
             />
