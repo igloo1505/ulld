@@ -13,16 +13,13 @@ import {
     configurationNoteTypeSchema,
     defaultNoteType,
 } from "../../staticData";
-import { FieldValues, useForm } from "@ulld/full-form/form";
+import { useForm } from "@ulld/full-form/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TextInput } from "@ulld/full-form/textInput";
 import { Form } from "@ulld/tailwind/form";
 import { Button } from "@ulld/tailwind/button";
 import { IconInput } from "@ulld/full-form/iconSelect";
-import {
-    CheckboxGroup,
-    CheckboxGroupProps,
-} from "@ulld/full-form/checkboxGroup";
+import { CheckboxGroup } from "@ulld/full-form/checkboxGroup";
 import { z } from "zod";
 import { CheckboxInputItem } from "@ulld/full-form/checkboxGroupTypes";
 
@@ -31,13 +28,9 @@ interface NoteTypeModalProps {
     onClose: () => void;
     onAccept: (values: NoteTypeInput) => void;
     editingItem?: NoteTypeInput & { index: number };
-    setItems: (newItems: NoteTypeInput[]) => void;
+    setItems: (newItems: ConfigurationFormData["noteTypes"]) => void;
     noteTypes: ConfigurationFormData["noteTypes"];
 }
-
-/* type CheckboxItems = CheckboxGroupProps< */
-/*     Omit<z.input<typeof configurationNoteTypeSchema>, "icon"> */
-/* >["items"] */
 
 type CheckboxItems = CheckboxInputItem<
     Omit<z.input<typeof configurationNoteTypeSchema>, "icon">
@@ -68,7 +61,7 @@ const NoteTypeModal = ({
     setItems,
     noteTypes,
 }: NoteTypeModalProps) => {
-    const form = useForm({
+    const form = useForm<z.infer<typeof configurationNoteTypeSchema>>({
         resolver: zodResolver(configurationNoteTypeSchema),
         defaultValues: defaultNoteType,
     });
@@ -104,15 +97,14 @@ const NoteTypeModal = ({
         }
     }, [editingItem]);
 
-    const appendItem = () => {
-        /* TODO: Handle errors here. Check for the number of items with given sidebar and navbar values, and alert the user if they exceed a number likely to look decent. */
-        const values = form.getValues();
+    const appendItem = (values: z.infer<typeof configurationNoteTypeSchema>) => {
         if (typeof editingIndex === "number") {
             setItems(noteTypes.map((a, i) => (i === editingIndex ? values : a)));
             setEditingIndex(undefined);
         } else {
             onAccept(values);
         }
+        form.reset();
         onClose();
     };
 
@@ -133,37 +125,44 @@ const NoteTypeModal = ({
                         much. You can always filter them by subject, by topic or by tag from
                         within the compiled application.
                     </DialogDescription>
-                    <Form {...form}>
-                        <form
-                            className={
-                                "space-y-6 lg:flex lg:flex-row lg:justify-center lg:items-start lg:gap-6"
-                            }
-                        >
-                            <div className={"space-y-6 min-w-[min(400px,80vw)]"}>
-                                <TextInput name="label" label="Label" />
-                                <IconInput
-                                    name="icon"
-                                    classes={{
-                                        popover: "w-full min-w-[min(400px,80vw)]",
-                                        button: "w-full min-w-[min(400px,80vw)]",
-                                        icon: "text-foreground stroke-foreground",
-                                    }}
-                                />
-                            </div>
-                            <CheckboxGroup
-                                switchProps={{
-                                    white: true,
-                                }}
-                                /* label="Note Application" */
-                                /* desc="Describe how this note should be displayed initially. You can always change this in the app's settings." */
-                                items={checkboxGroupItems}
-                            />
-                        </form>
-                    </Form>
                 </DialogHeader>
-                <DialogFooter>
-                    <Button onClick={appendItem}>Save</Button>
-                </DialogFooter>
+                <Form {...form}>
+                    <form
+                        className={
+                            "flex flex-col justify-center items-start gap-6"
+                        }
+                        onSubmit={form.handleSubmit(appendItem)}
+                    >
+                        <div 
+                        className={
+                            "space-y-6 lg:flex lg:flex-row lg:justify-center lg:items-start lg:gap-6"
+                        }
+                        >
+                        <div className={"space-y-6 w-full lg:w-[min(400px,80vw)] lg:flex lg:h-full lg:flex-col lg:justify-between"}>
+                            <TextInput name="label" label="Label" />
+                            <IconInput
+                                name="icon"
+                                classes={{
+                                    popover: "w-full min-w-[min(400px,80vw)]",
+                                    button: "w-full min-w-[min(400px,80vw)]",
+                                    icon: "text-foreground stroke-foreground",
+                                }}
+                            />
+                        </div>
+                        <CheckboxGroup
+                            switchProps={{
+                                white: true,
+                            }}
+                            /* label="Note Application" */
+                            /* desc="Describe how this note should be displayed initially. You can always change this in the app's settings." */
+                            items={checkboxGroupItems}
+                        />
+                        </div>
+                        <DialogFooter className={"w-full flex flex-row justify-end items-center"}>
+                            <Button type="submit">Save</Button>
+                        </DialogFooter>
+                    </form>
+                </Form>
             </DialogContent>
         </Dialog>
     );

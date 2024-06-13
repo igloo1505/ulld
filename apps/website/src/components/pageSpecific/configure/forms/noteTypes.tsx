@@ -51,7 +51,7 @@ const NoteTypesForm = (props: NoteTypesFormProps) => {
                 onAccept={appendNoteType}
                 editingItem={editingItem}
                 noteTypes={currentNoteTypes}
-                setItems={(newItems: NoteTypeInput[]) =>
+                setItems={(newItems: ConfigurationFormData["noteTypes"]) =>
                     form.setValue("noteTypes", newItems)
                 }
             />

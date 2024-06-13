@@ -12,7 +12,6 @@ interface NoteTypeItemProps {
 }
 
 const NoteTypeItem = ({ item, editItem, removeItem }: NoteTypeItemProps) => {
-    console.log("item: ", item)
     return (
         <div
             className={

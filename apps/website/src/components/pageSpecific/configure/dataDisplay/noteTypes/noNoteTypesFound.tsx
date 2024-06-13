@@ -4,7 +4,7 @@ interface NoNoteTypesFoundProps { }
 
 const NoNoteTypesFound = (props: NoNoteTypesFoundProps) => {
     return (
-        <h3 className={"text-xl text-muted-foreground"}>
+        <h3 className={"text-xl text-muted-foreground text-center"}>
             You haven't created any note types. Add at least one to continue
             generating your config.
         </h3>

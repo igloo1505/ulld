@@ -50,6 +50,7 @@ const logoIconNames = [
     "swift",
     "vercel",
     "youtube",
+    "ulld"
 ] as const;
 
 export type LogoIconNames = (typeof logoIconNames)[number];
@@ -189,20 +190,11 @@ export const DynamicIcon = (props: IconProps) => {
     let iconType: "logo" | "lucide" | null = null;
     if (logoIconNames.includes(name as (typeof logoIconNames)[number])) {
         iconType = "logo";
-        /* let Icon = dynamic(() => import(`./logoIcons/${name}`)); */
-        /* return <Icon {...props} />; */
     }
     let _name =
         name in iconNameMap ? iconNameMap[name as keyof typeof iconNameMap] : name;
-    /* if (_name === false) { */
-    /*     return null; */
-    /* } */
     if (!iconType && _name && Object.keys(dynamicIconImports).includes(_name)) {
         iconType = "lucide";
-        /* const LucideIcon = dynamic( */
-        /*     dynamicIconImports[_name as keyof typeof dynamicIconImports], */
-        /* ); */
-        /* return <LucideIcon {...props} />; */
     }
     useEffect(() => {
        if(props.onLoad){
