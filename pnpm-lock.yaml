@@ -595,6 +595,9 @@ importers:
       gsap:
         specifier: ^3.12.5
         version: 3.12.5
+      jszip:
+        specifier: ^3.10.1
+        version: 3.10.1
       lethargy:
         specifier: ^1.0.9
         version: 1.0.9
@@ -646,6 +649,9 @@ importers:
       react:
         specifier: ^18.3.1
         version: 18.3.1
+      react-colorful:
+        specifier: ^5.6.1
+        version: 5.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-device-detect:
         specifier: ^2.2.3
         version: 2.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2611,6 +2617,9 @@ importers:
       react-color:
         specifier: ^2.19.3
         version: 2.19.3(react@18.3.1)
+      react-colorful:
+        specifier: ^5.6.1
+        version: 5.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-datepicker:
         specifier: ^4.25.0
         version: 4.25.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -15595,6 +15604,9 @@ packages:
     resolution: {integrity: sha512-PeeujnRHCqX65wN3HxQfwawB6y3bihBR60Cpa5WatTjbsfwxy/B/RG2uokAnkz5C4XTLdocqrNzi9VZisCYcUQ==}
     engines: {node: '>=0.6.0'}
 
+  jszip@3.10.1:
+    resolution: {integrity: sha512-xXDvecyTpGLrqFrvkrUSoxxfJI5AH7U8zxxtVclpsUtMCq4JQ290LY8AW5c7Ggnr/Y/oK+bQMbqK2qmtk3pN4g==}
+
   jupyter-js-services@0.21.1:
     resolution: {integrity: sha512-NpHoRcKlprjbGpTDNjXlV+JoSpsjcvNqxMn2gSMleUKRWhLiJRXwp8BWYp1rNJ2GQ6s7KIaCu7DtTUrdtt/fdA==}
     deprecated: This package has moved to @jupyterlab/services
@@ -19522,6 +19534,9 @@ packages:
   set-value@2.0.1:
     resolution: {integrity: sha512-JxHc1weCN68wRY0fhCoXpyK55m/XPHafOmK4UWD7m2CI14GMcFypt4w/0+NV5f/ZMby2F6S2wwA7fgynh9gWSw==}
     engines: {node: '>=0.10.0'}
+
+  setimmediate@1.0.5:
+    resolution: {integrity: sha512-MATJdZp8sLqDl/68LfQmbP8zKPLQNV6BIZoIgrscFDQ+RsvK/BxeDQOgyxKKoh0y/8h3BqVFnCqQ/gd+reiIXA==}
 
   setprototypeof@1.2.0:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
@@ -34706,6 +34721,13 @@ snapshots:
 
   jsxgraph@1.8.0: {}
 
+  jszip@3.10.1:
+    dependencies:
+      lie: 3.3.0
+      pako: 1.0.11
+      readable-stream: 2.3.8
+      setimmediate: 1.0.5
+
   jupyter-js-services@0.21.1:
     dependencies:
       '@types/minimist': 1.2.5
@@ -39777,6 +39799,8 @@ snapshots:
       is-extendable: 0.1.1
       is-plain-object: 2.0.4
       split-string: 3.1.0
+
+  setimmediate@1.0.5: {}
 
   setprototypeof@1.2.0: {}
 

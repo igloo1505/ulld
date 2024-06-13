@@ -8,10 +8,10 @@ import {
 } from "@ulld/tailwind/dialog";
 import React, { useEffect, useState } from "react";
 import {
-    ConfigurationFormData,
     NoteTypeInput,
-    configurationNoteTypeSchema,
+    NoteType,
     defaultNoteType,
+    noteTypeSchema,
 } from "../../staticData";
 import { useForm } from "@ulld/full-form/form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -20,21 +20,12 @@ import { Form } from "@ulld/tailwind/form";
 import { Button } from "@ulld/tailwind/button";
 import { IconInput } from "@ulld/full-form/iconSelect";
 import { CheckboxGroup } from "@ulld/full-form/checkboxGroup";
-import { z } from "zod";
 import { CheckboxInputItem } from "@ulld/full-form/checkboxGroupTypes";
+import { useNoteTypeFormState } from "../../dataDisplay/noteTypes/useNoteTypeFormState";
 
-interface NoteTypeModalProps {
-    open: boolean;
-    onClose: () => void;
-    onAccept: (values: NoteTypeInput) => void;
-    editingItem?: NoteTypeInput & { index: number };
-    setItems: (newItems: ConfigurationFormData["noteTypes"]) => void;
-    noteTypes: ConfigurationFormData["noteTypes"];
-}
+export interface NoteTypeModalProps { }
 
-type CheckboxItems = CheckboxInputItem<
-    Omit<z.input<typeof configurationNoteTypeSchema>, "icon">
->[];
+type CheckboxItems = CheckboxInputItem<Omit<NoteTypeInput, "icon">>[];
 
 const cbGroupItems: CheckboxItems = [
     {
@@ -53,21 +44,22 @@ const cbGroupItems: CheckboxItems = [
 
 const cbGroupNames = cbGroupItems.map((a) => a.name);
 
-const NoteTypeModal = ({
-    open,
-    onClose,
-    onAccept,
-    editingItem,
-    setItems,
-    noteTypes,
-}: NoteTypeModalProps) => {
-    const form = useForm<z.infer<typeof configurationNoteTypeSchema>>({
-        resolver: zodResolver(configurationNoteTypeSchema),
+const NoteTypeModal = ({ }: NoteTypeModalProps) => {
+    const form = useForm<NoteType>({
+        resolver: zodResolver(noteTypeSchema),
         defaultValues: defaultNoteType,
     });
-    const [editingIndex, setEditingIndex] = useState<number | undefined>(
-        undefined,
-    );
+
+    const {
+        editingItem,
+        noteTypes,
+        editingIndex,
+        closeAddItemModal: close,
+        clearEditing,
+        addItemModalOpen: open,
+        setItems,
+        appendNoteType: onAccept,
+    } = useNoteTypeFormState();
 
     const [checkboxGroupItems, setCheckboxGroupItems] =
         useState<CheckboxItems>(cbGroupItems);
@@ -77,35 +69,36 @@ const NoteTypeModal = ({
         if (editingItem) {
             for (const k in editingItem) {
                 if (k !== "index") {
-                    let value =
-                        editingItem[k as keyof ConfigurationFormData["noteTypes"][number]];
+                    let value = editingItem[k as keyof NoteTypeInput];
                     if (cbGroupNames.includes(k as any)) {
                         cbItems = cbItems.map((c) =>
                             c.name === k ? { ...c, value: value as boolean } : c,
                         );
                     }
                     if (typeof value !== "undefined") {
-                        form.setValue(
-                            k as keyof ConfigurationFormData["noteTypes"][number],
-                            value,
-                        );
+                        form.setValue(k as keyof NoteTypeInput, value as any);
                     }
                 }
             }
             setCheckboxGroupItems(cbItems);
-            setEditingIndex(editingItem.index);
         }
     }, [editingItem]);
 
-    const appendItem = (values: z.infer<typeof configurationNoteTypeSchema>) => {
+    const reset = () => {
+        form.reset();
+        setCheckboxGroupItems(cbGroupItems);
+    };
+
+    const appendItem = (values: NoteType) => {
         if (typeof editingIndex === "number") {
             setItems(noteTypes.map((a, i) => (i === editingIndex ? values : a)));
-            setEditingIndex(undefined);
+            clearEditing();
         } else {
             onAccept(values);
         }
-        form.reset();
-        onClose();
+        console.log("resetting form ");
+        reset();
+        close();
     };
 
     return (
@@ -113,7 +106,8 @@ const NoteTypeModal = ({
             open={open}
             onOpenChange={(newOpen) => {
                 if (!newOpen) {
-                    onClose();
+                    close();
+                    reset();
                 }
             }}
         >
@@ -128,37 +122,41 @@ const NoteTypeModal = ({
                 </DialogHeader>
                 <Form {...form}>
                     <form
-                        className={
-                            "flex flex-col justify-center items-start gap-6"
-                        }
+                        className={"flex flex-col justify-center items-start gap-6"}
                         onSubmit={form.handleSubmit(appendItem)}
                     >
-                        <div 
-                        className={
-                            "space-y-6 lg:flex lg:flex-row lg:justify-center lg:items-start lg:gap-6"
-                        }
+                        <div
+                            className={
+                                "space-y-6 lg:flex lg:flex-row lg:justify-center lg:items-start lg:gap-6"
+                            }
                         >
-                        <div className={"space-y-6 w-full lg:w-[min(400px,80vw)] lg:flex lg:h-full lg:flex-col lg:justify-between"}>
-                            <TextInput name="label" label="Label" />
-                            <IconInput
-                                name="icon"
-                                classes={{
-                                    popover: "w-full min-w-[min(400px,80vw)]",
-                                    button: "w-full min-w-[min(400px,80vw)]",
-                                    icon: "text-foreground stroke-foreground",
+                            <div
+                                className={
+                                    "space-y-6 w-full lg:w-[min(400px,80vw)] lg:flex lg:h-full lg:flex-col lg:justify-between"
+                                }
+                            >
+                                <TextInput name="label" label="Label" />
+                                <IconInput
+                                    name="icon"
+                                    classes={{
+                                        popover: "w-full min-w-[min(400px,80vw)]",
+                                        button: "w-full min-w-[min(400px,80vw)]",
+                                        icon: "text-foreground stroke-foreground",
+                                    }}
+                                />
+                            </div>
+                            <CheckboxGroup
+                                switchProps={{
+                                    white: true,
                                 }}
+                                /* label="Note Application" */
+                                /* desc="Describe how this note should be displayed initially. You can always change this in the app's settings." */
+                                items={checkboxGroupItems}
                             />
                         </div>
-                        <CheckboxGroup
-                            switchProps={{
-                                white: true,
-                            }}
-                            /* label="Note Application" */
-                            /* desc="Describe how this note should be displayed initially. You can always change this in the app's settings." */
-                            items={checkboxGroupItems}
-                        />
-                        </div>
-                        <DialogFooter className={"w-full flex flex-row justify-end items-center"}>
+                        <DialogFooter
+                            className={"w-full flex flex-row justify-end items-center"}
+                        >
                             <Button type="submit">Save</Button>
                         </DialogFooter>
                     </form>

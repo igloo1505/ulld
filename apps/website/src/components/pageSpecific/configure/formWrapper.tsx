@@ -4,9 +4,11 @@ import { useForm } from "@ulld/full-form/form";
 import { Button } from "@ulld/tailwind/button";
 import React, { ReactNode, useEffect } from "react";
 import { ZodBoolean, z } from "zod";
-import { configurationFormSchema, sidebarNavItems } from "./staticData";
+import { ConfigurationFormInput, sidebarNavItems } from "./staticData";
 import { usePathname } from "next/navigation";
 import { Form } from "@ulld/tailwind/form";
+import { appConfigSchema } from "@ulld/configschema/zod/main";
+import EvalFixModals from "./modals/evalFixModals/main";
 
 interface ConfigureFormWrapperProps {
     children: ReactNode;
@@ -28,24 +30,23 @@ for (const k of sidebarNavItems) {
 
 const ConfigureFormWrapper = ({ children }: ConfigureFormWrapperProps) => {
     const pathname = usePathname();
-    const form = useForm({
-        resolver: zodResolver(configurationFormSchema),
-        defaultValues: {
-            noteTypes: [],
-            completed: completedInitial,
-        },
+    const form = useForm<ConfigurationFormInput>({
+        resolver: zodResolver(appConfigSchema),
     });
 
+    let formData = form.watch()
+
     const saveForm = (
-        values: Partial<z.output<typeof configurationFormSchema>>,
+        values: typeof formData,
     ) => {
         window.localStorage.setItem(localStorageKey, JSON.stringify(values));
     };
 
-    form.watch((formState) => {
-        console.log("formState: ", formState);
-        /* saveForm(formState) */
-    });
+
+    useEffect(() => {
+        saveForm(formData)
+    }, [formData])
+
 
     useEffect(() => {
         let savedValues = window.localStorage.getItem(localStorageKey);
@@ -53,7 +54,7 @@ const ConfigureFormWrapper = ({ children }: ConfigureFormWrapperProps) => {
             let values = JSON.parse(savedValues);
             Object.keys(values).forEach((k) => {
                 form.setValue(
-                    k as keyof z.input<typeof configurationFormSchema>,
+                    k as keyof ConfigurationFormInput,
                     values[k],
                     { shouldTouch: false },
                 );
@@ -68,6 +69,7 @@ const ConfigureFormWrapper = ({ children }: ConfigureFormWrapperProps) => {
             <form className="space-y-8">
                 {children}
                 <Button>{isLast ? "Submit" : "Continue"}</Button>
+                <EvalFixModals />
             </form>
         </Form>
     );

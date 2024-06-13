@@ -1,6 +1,6 @@
 import { Label } from "@ulld/tailwind/label";
 import { Switch } from "@ulld/tailwind/switch";
-import React, { ComponentProps, ComponentPropsWithoutRef, ReactNode } from "react";
+import React, { ComponentPropsWithoutRef, ReactNode } from "react";
 import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
 
 export type CheckboxInputItem<T extends FieldValues> = {

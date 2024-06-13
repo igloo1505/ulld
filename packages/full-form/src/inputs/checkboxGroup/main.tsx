@@ -28,7 +28,6 @@ export const CheckboxGroup = <T extends FieldValues>({
     footer,
     switchProps
 }: CheckboxGroupProps<T>) => {
-    console.log("items: ", items)
     return (
         <Card>
             {(label || desc) && <CardHeader>

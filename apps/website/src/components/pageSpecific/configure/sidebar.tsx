@@ -4,17 +4,13 @@ import { cn } from "@ulld/utilities/cn";
 import { usePathname } from "next/navigation";
 import { buttonVariants } from "@ulld/tailwind/button";
 import Link from "next/link";
+import { sidebarNavItems } from "./staticData";
 
 interface ConfigureSidebarProps extends HTMLProps<HTMLElement> {
-    items: {
-        href: string;
-        title: string;
-    }[];
 }
 
 const ConfigureSidebar = ({
     className,
-    items,
     ...props
 }: ConfigureSidebarProps) => {
     const pathname = usePathname();
@@ -26,7 +22,7 @@ const ConfigureSidebar = ({
             )}
             {...props}
         >
-            {items.map((item) => (
+            {sidebarNavItems.map((item) => (
                 <Link
                     key={item.href}
                     href={item.href}

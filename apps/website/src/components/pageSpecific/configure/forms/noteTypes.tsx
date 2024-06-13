@@ -2,77 +2,32 @@
 import React, { useState } from "react";
 import NoteTypesList from "../dataDisplay/noteTypes/main";
 import { useFormContext } from "@ulld/full-form/form";
-import { ConfigurationFormData, NoteTypeInput, defaultNoteType } from "../staticData";
+import {
+    ConfigurationFormData,
+    ConfigurationFormType,
+    NoteType,
+    NoteTypeInput,
+} from "../staticData";
 import { Button } from "@ulld/tailwind/button";
 import NoteTypeModal from "../modals/noteTypeModal/main";
+import { documentTypeConfigSchema } from "@ulld/configschema/zod/documentConfigSchema";
+import NoteTypeColorModal from "../modals/noteTypeColor/main";
+import { NoteTypeFormProvider } from "../dataDisplay/noteTypes/noteTypeFormContext";
+import AddNoteTypeButton from "../dataDisplay/noteTypes/addNoteTypeButton";
 
-interface NoteTypesFormProps { }
 
-const NoteTypesForm = (props: NoteTypesFormProps) => {
-    const [noteTypeModalOpen, setNoteTypeModalOpen] = useState(false);
-    const form = useFormContext<ConfigurationFormData>();
-    const [editingItem, setEditingItem] = useState<(NoteTypeInput & {index: number}) | undefined>(undefined)
-    const showNoteTypeModal = () => setNoteTypeModalOpen(true);
-    const appendNoteType = (
-        value: NoteTypeInput,
-    ) => {
-        form.setValue("noteTypes", [...form.getValues("noteTypes"), value]);
-    };
-    const removeItem = (itemToRemove: ConfigurationFormData["noteTypes"][number]) => {
-        form.setValue(
-            "noteTypes",
-            form
-                .getValues("noteTypes")
-                .filter(
-                    (a) =>
-                        !Boolean(
-                            a.icon === itemToRemove.icon &&
-                            a.label === itemToRemove.label &&
-                            a.inNavbar === itemToRemove.inNavbar &&
-                            a.inSidebar === itemToRemove.inSidebar,
-                        ),
-                ),
-        );
-    };
-
-    const editItem = (index: number) => {
-        let itemToEdit = form.getValues("noteTypes")[index]
-        setEditingItem({...itemToEdit, index})
-        setNoteTypeModalOpen(true)
-    };
-
-    const currentNoteTypes = form.watch("noteTypes")
+const NoteTypesForm = () => {
 
     return (
-        <>
+        <NoteTypeFormProvider>
             <NoteTypeModal
-                open={noteTypeModalOpen}
-                onClose={() => setNoteTypeModalOpen(false)}
-                onAccept={appendNoteType}
-                editingItem={editingItem}
-                noteTypes={currentNoteTypes}
-                setItems={(newItems: ConfigurationFormData["noteTypes"]) =>
-                    form.setValue("noteTypes", newItems)
-                }
+            />
+            <NoteTypeColorModal 
             />
             <NoteTypesList
-                items={currentNoteTypes || []}
-                setItems={(newItems: ConfigurationFormData["noteTypes"]) =>
-                    form.setValue("noteTypes", newItems)
-                }
-                removeItem={removeItem}
-                editItem={editItem}
             />
-            <Button
-                type="button"
-                variant="outline"
-                size="sm"
-                className="mt-2"
-                onClick={showNoteTypeModal}
-            >
-                Add Note Type
-            </Button>
-        </>
+            <AddNoteTypeButton />
+        </NoteTypeFormProvider>
     );
 };
 

@@ -12,6 +12,7 @@
     "./form": "./src/form.tsx",
     "./utils": "./src/utils.ts",
     "./numberInput": "./src/numberInput.tsx",
+    "./colorInput": "./src/inputs/color/main.tsx",
     "./checkbox": "./src/checkbox.tsx",
     "./checkboxGroup": "./src/inputs/checkboxGroup/main.tsx",
     "./checkboxGroupTypes": "./src/inputs/checkboxGroup/types.ts",
@@ -53,10 +54,10 @@
     "@ulld/database": "workspace:*",
     "@ulld/editor": "workspace:*",
     "@ulld/hooks": "workspace:*",
+    "@ulld/icons": "workspace:*",
     "@ulld/state": "workspace:*",
     "@ulld/tailwind": "workspace:*",
     "@ulld/utilities": "workspace:*",
-    "@ulld/icons": "workspace:*",
     "clsx": "^2.1.0",
     "dayjs": "^1.11.10",
     "glob-to-regexp": "^0.4.1",
@@ -116,6 +117,7 @@
     "rc-tree": "^5.8.5",
     "react": "^18.3.1",
     "react-color": "^2.19.3",
+    "react-colorful": "^5.6.1",
     "react-time-picker": "^6.6.0"
   }
 }

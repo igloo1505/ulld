@@ -1,5 +1,10 @@
 import { z } from "zod"
-import allIcons from "@ulld/icons/names"
+import { appConfigSchema } from "@ulld/configschema/zod/main"
+import {documentTypeConfigSchema} from "@ulld/configschema/zod/documentConfigSchema"
+
+export const noteTypeSchema = documentTypeConfigSchema
+
+const appConfigDeepPartial = appConfigSchema.deepPartial()
 
 
 // TODO: Add an input for a directory on the user's local file system in the full-form package, and use that input to gather the target root directory, the tempDir and the generatedDir in the next step.
@@ -9,7 +14,7 @@ export const sidebarNavItems: {title: string, href: string, id: string}[] = [
   {
     title: "Note Organization",
     href: "/configure",
-    id: "noteTypes"
+    id: "noteTypes",
   },
   // {
   //   title: "Account",
@@ -30,32 +35,25 @@ export const sidebarNavItems: {title: string, href: string, id: string}[] = [
 ]
 
 
-export const configurationNoteTypeSchema = z.object({
-    label: z.string().max(15, "To fit properly in navigation components, the label cannot be more than 15 characters.").min(2, "Label must be at least 2 characters"),
-    icon: z.enum(allIcons).default("ulld"),
-    inSidebar: z.boolean().default(false),
-    inNavbar: z.boolean().default(false),
-})
+export type ConfigurationFormData = z.output<typeof appConfigSchema>
+export type ConfigurationFormInput = z.input<typeof appConfigSchema>
+export type ConfigurationFormType = z.infer<typeof appConfigSchema>
+
+export type ConfigurationFormDeepPartialInput = z.input<typeof appConfigDeepPartial>
+export type ConfigurationFormDeepPartialType = z.infer<typeof appConfigDeepPartial>
 
 
-export const configurationFormSchema = z.object({
-    noteTypes: configurationNoteTypeSchema.array(),
-    completed: z.object({
-        noteTypes: z.boolean().default(false),
-    })
-})
+export type NoteTypeInput = z.input<typeof noteTypeSchema>
+export type NoteTypeOutput = z.output<typeof noteTypeSchema>
+export type NoteType = z.infer<typeof noteTypeSchema>
 
 
-export type ConfigurationFormData = z.output<typeof configurationFormSchema>
-
-export type NoteTypeInput = z.input<typeof configurationNoteTypeSchema>
-
-
-export const defaultNoteType: z.input<typeof configurationNoteTypeSchema> = {
+export const defaultNoteType: Partial<NoteTypeInput> = {
     label: "",
     icon: "ulld",
     inSidebar: false,
     inNavbar: false,
+    fs: "/quickNote"
 }
 
 
