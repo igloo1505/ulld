@@ -17,9 +17,15 @@ importers:
       '@mdx-js/mdx':
         specifier: ^3.0.1
         version: 3.0.1
+      deepmerge:
+        specifier: ^4.3.1
+        version: 4.3.1
       framer-motion:
         specifier: ^11.1.7
         version: 11.2.4(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      glob:
+        specifier: ^10.3.15
+        version: 10.3.15
       remark-emoji:
         specifier: ^4.0.1
         version: 4.0.1
@@ -1329,7 +1335,7 @@ importers:
         version: 0.2.1(@types/react@18.3.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       lucide-react:
         specifier: latest
-        version: 0.394.0(react@18.3.1)
+        version: 0.395.0(react@18.3.1)
       next:
         specifier: ^13.1.16
         version: 13.5.6(@babel/core@7.24.5)(@opentelemetry/api@1.8.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.2)
@@ -2677,6 +2683,9 @@ importers:
       tailwindcss-debug-screens:
         specifier: ^2.2.1
         version: 2.2.1(tailwindcss@3.4.3(ts-node@10.9.2(@swc/core@1.5.7(@swc/helpers@0.5.11))(@types/node@20.12.12)(typescript@5.4.5)))
+      tinycolor2:
+        specifier: ^1.6.0
+        version: 1.6.0
       zod:
         specifier: ^3.22.4
         version: 3.23.8
@@ -15954,8 +15963,8 @@ packages:
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
 
-  lucide-react@0.394.0:
-    resolution: {integrity: sha512-PzTbJ0bsyXRhH59k5qe7MpTd5MxlpYZUcM9kGSwvPGAfnn0J6FElDwu2EX6Vuh//F7y60rcVJiFQ7EK9DCMgfw==}
+  lucide-react@0.395.0:
+    resolution: {integrity: sha512-6hzdNH5723A4FLaYZWpK50iyZH8iS2Jq5zuPRRotOFkhu6kxxJiebVdJ72tCR5XkiIeYFOU5NUawFZOac+VeYw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
 
@@ -35115,7 +35124,7 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  lucide-react@0.394.0(react@18.3.1):
+  lucide-react@0.395.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 

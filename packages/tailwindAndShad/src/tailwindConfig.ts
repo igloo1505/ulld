@@ -1,9 +1,16 @@
 import { fontFamily } from "tailwindcss/defaultTheme";
 import { Config } from "tailwindcss/types/config";
 
-
 export const tailwindConfig: Config = {
-    darkMode: ["class"],
+    // darkMode: ["class"],
+    darkMode: ["variant", "&:not(.light *)"],
+    // darkMode: [
+    //     "variant",
+    //     [
+    //         "@media (prefers-color-scheme: dark) { &:not(.light *) }",
+    //         "&:is(.dark *)",
+    //     ],
+    // ],
     import: true,
     content: [
         "./pages/**/*.{ts,tsx}",
@@ -11,9 +18,7 @@ export const tailwindConfig: Config = {
         "./app/**/*.{ts,tsx}",
         "./src/**/*.{ts,tsx}",
     ],
-    safelist: [
-        'border',
-    ],
+    safelist: ["border"],
     theme: {
         container: {
             center: true,

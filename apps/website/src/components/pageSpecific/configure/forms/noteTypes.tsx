@@ -14,6 +14,8 @@ import { documentTypeConfigSchema } from "@ulld/configschema/zod/documentConfigS
 import NoteTypeColorModal from "../modals/noteTypeColor/main";
 import { NoteTypeFormProvider } from "../dataDisplay/noteTypes/noteTypeFormContext";
 import AddNoteTypeButton from "../dataDisplay/noteTypes/addNoteTypeButton";
+import NoteTypeKeywordModal from "../modals/keywordsModal/noteTypeKeywordModal";
+import NoteTypeMatchPriorityModal from "../modals/noteTypeMatchPriorityModal/main";
 
 
 const NoteTypesForm = () => {
@@ -21,6 +23,10 @@ const NoteTypesForm = () => {
     return (
         <NoteTypeFormProvider>
             <NoteTypeModal
+            />
+            <NoteTypeKeywordModal 
+            />
+            <NoteTypeMatchPriorityModal
             />
             <NoteTypeColorModal 
             />

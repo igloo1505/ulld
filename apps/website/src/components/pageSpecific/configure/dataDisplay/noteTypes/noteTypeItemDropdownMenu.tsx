@@ -1,7 +1,10 @@
 import {
-    User,
     CircleEllipsis,
     TrashIcon,
+    FilePenLine,
+    PaletteIcon,
+    WeightIcon,
+    FolderSearch,
 } from "lucide-react";
 import React, { MouseEvent, useState } from "react";
 import {
@@ -17,6 +20,9 @@ import {
 interface NoteTypeItemDropdownProps {
     removeItem: () => void;
     editItem: () => void;
+    showColorModal: () => void
+    showKeywordModal: () => void
+    showMatchMagnitudeModal: () => void
     label: string;
 }
 
@@ -24,6 +30,9 @@ const NoteTypeItemDropdown = ({
     label,
     removeItem,
     editItem,
+    showColorModal,
+    showKeywordModal,
+    showMatchMagnitudeModal
 }: NoteTypeItemDropdownProps) => {
     const [open, setOpen] = useState(false);
     const clickableFunction = (cb: () => void) => {
@@ -51,8 +60,26 @@ const NoteTypeItemDropdown = ({
                     <DropdownMenuItem
                         onClick={clickableFunction(editItem)}
                     >
-                        <User className="mr-2 h-4 w-4" />
+                        <FilePenLine className="mr-2 h-4 w-4" />
                         <span>Edit</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                        onClick={clickableFunction(showColorModal)}
+                    >
+                        <PaletteIcon className="mr-2 h-4 w-4" />
+                        <span>Colors</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                        onClick={clickableFunction(showKeywordModal)}
+                    >
+                        <FolderSearch className="mr-2 h-4 w-4" />
+                        <span>Keywords</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                        onClick={clickableFunction(showMatchMagnitudeModal)}
+                    >
+                        <WeightIcon className="mr-2 h-4 w-4" />
+                        <span>Match Priority</span>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />

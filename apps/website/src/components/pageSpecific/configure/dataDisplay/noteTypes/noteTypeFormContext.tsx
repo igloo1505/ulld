@@ -5,22 +5,30 @@ interface NoteTypeFormState {
     editingItem?: NoteTypeInput & { index?: number };
     addItemModalOpen: boolean;
     showColorModal: boolean;
+    showMatchPriorityModal: boolean;
+    showKeywordModal: boolean;
 }
 
 
-const defaultInitialValues = {
+const defaultInitialValues: NoteTypeFormState = {
     addItemModalOpen: false,
     showColorModal: false,
+    showMatchPriorityModal: false,
+    showKeywordModal: false,
 }
 
 export const NoteTypeFormContext = createContext<NoteTypeFormState>(defaultInitialValues);
 
 type NoteTypeFormContextActions =
     | { type: "showColorModal"; payload?: NoteTypeFormState["editingItem"] }
+    | { type: "showKeywordModal"; payload?: NoteTypeFormState["editingItem"] }
+    | { type: "showMatchPriority"; payload?: NoteTypeFormState["editingItem"] }
     | { type: "setEditingItem"; payload?: NoteTypeFormState["editingItem"] }
     | { type: "showAddItemModal"; payload?: boolean }
     | { type: "clearEditing" }
-    | { type: "closeColorModal" };
+    | { type: "closeColorModal" }
+    | { type: "closeKeywordModal" }
+    | { type: "closeMatchPriorityModal" };
 
 export const NoteTypeFormDispatchContext = createContext<
     React.Dispatch<NoteTypeFormContextActions>
@@ -42,10 +50,36 @@ export const NoteTypeFormContextReducer = (
                 editingItem: action.payload,
             };
         }
+        case "showKeywordModal": {
+            return {
+                ...state,
+                showKeywordModal: true,
+                editingItem: action.payload,
+            };
+        }
+        case "showMatchPriority": {
+            return {
+                ...state,
+                showMatchPriorityModal: true,
+                editingItem: action.payload,
+            };
+        }
         case "closeColorModal": {
             return {
                 ...state,
                 showColorModal: false,
+            };
+        }
+        case "closeKeywordModal": {
+            return {
+                ...state,
+                showKeywordModal: false,
+            };
+        }
+        case "closeMatchPriorityModal": {
+            return {
+                ...state,
+                showMatchPriorityModal: false,
             };
         }
         case "setEditingItem": {

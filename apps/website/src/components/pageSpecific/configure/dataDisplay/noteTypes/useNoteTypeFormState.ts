@@ -17,6 +17,10 @@ export const useNoteTypeFormState = () => {
 
     const noteTypes = form.watch("noteTypes");
 
+    const getItemByIndex = (index: number) => {
+           return noteTypes[index] 
+    }
+
     return {
         isEditing,
         editingIndex: context.editingItem?.index,
@@ -47,7 +51,12 @@ export const useNoteTypeFormState = () => {
                 values.map((a, i) => (i === editing.index ? data : a)) as any,
             );
         },
+        setShowColorModal: (index: number) => dispatch({type: "showColorModal", payload: {...getItemByIndex(index), index}}),
+        setShowKeywordModal: (index: number) => dispatch({type: "showKeywordModal", payload: {...getItemByIndex(index), index}}),
+        setShowMatchPriorityModal: (index: number) => dispatch({type: "showMatchPriority", payload: {...getItemByIndex(index), index}}),
         closeColorModal: () => dispatch({ type: "closeColorModal" }),
+        closeKeywordModal: () => dispatch({ type: "closeKeywordModal" }),
+        closeMatchPriorityModal: () => dispatch({ type: "closeMatchPriorityModal" }),
         removeItem: (index: number) => {
             let values = form.getValues("noteTypes");
             if (!values) return;
@@ -55,9 +64,6 @@ export const useNoteTypeFormState = () => {
         },
         showAddItemModal: () => {
             dispatch({ type: "showAddItemModal", payload: true });
-        },
-        closeAddItemModal: () => {
-            dispatch({ type: "showAddItemModal" });
         },
         appendNoteType: (value: NoteTypeInput) => {
             let parsedValues = documentTypeConfigSchema.safeParse(value);

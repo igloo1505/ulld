@@ -30,6 +30,7 @@
     "./types": "./src/types.ts",
     "./provider": "./src/fullFormProvider.tsx",
     "./ratingSlider": "./src/ratingSlider.tsx",
+    "./slider": "./src/inputs/slider/general/main.tsx",
     "./triPosSlider": "./src/triPosSlider.tsx",
     "./heading": "./src/fullFormMainHeading.tsx",
     "./sidePanel": "./src/fullFormSidePanel.tsx",
@@ -118,6 +119,7 @@
     "react": "^18.3.1",
     "react-color": "^2.19.3",
     "react-colorful": "^5.6.1",
-    "react-time-picker": "^6.6.0"
+    "react-time-picker": "^6.6.0",
+    "tinycolor2": "^1.6.0"
   }
 }

@@ -20,7 +20,7 @@ const ColorPopover = ({ children, label, desc, value, setValue }: ColorPopoverPr
         <Popover>
             <PopoverTrigger asChild>{children}</PopoverTrigger>
             <PopoverContent className="w-80">
-                <div className="grid gap-4">
+                <div className="flex flex-col gap-4">
                     <div className="space-y-2">
                         <h4 className="font-medium leading-none">{label}</h4>
                         {desc && <p className="text-sm text-muted-foreground">{desc}</p>}

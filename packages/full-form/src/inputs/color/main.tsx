@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
 import ColorPopover from "./popover";
 import { Button } from "@ulld/tailwind/button";
@@ -9,50 +9,62 @@ import {
     FormDescription,
     FormMessage,
 } from "@ulld/tailwind/form";
+import cn from "@ulld/utilities/cn";
 
 interface ColorInputProps<T extends FieldValues> {
     name: Path<T>;
     desc?: ReactNode;
-    classes?: {};
+    classes?: {
+        container?: string
+    };
     label?: ReactNode;
+    /** Passed in to style.width and style.height */
+    colorChipSize?: string;
+    defaultColor?: string;
+    setNotDefault?: () => void;
 }
 
 export const ColorInput = <T extends FieldValues>({
     name = "icon" as Path<T>,
     desc,
-    classes,
+    classes = {},
     label = "Color",
+    defaultColor = "#3b81f6",
+    colorChipSize = "2rem",
+    setNotDefault,
 }: ColorInputProps<T>) => {
     const form = useFormContext<T>();
     const value = form.watch(name);
+    console.log("value: ", value)
     return (
         <FormField
             control={form.control}
             name={name}
             render={({ field }) => (
-                <FormItem className="flex flex-col">
-                    <FormLabel>{label}</FormLabel>
+                <FormItem className={cn("flex flex-row items-center justify-between rounded-lg border p-4 gap-16 bg-background", classes.container)}>
+                    <div className={"space-y-0.5"}>
+                        <FormLabel className={"text-base text-foreground"}>{label}</FormLabel>
+                        {desc && <FormDescription>{desc}</FormDescription>}
+                    </div>
                     <ColorPopover
                         value={value}
-                        setValue={(colorValue) =>
-                            form.setValue(name, colorValue as PathValue<T, Path<T>>)
-                        }
+                        setValue={(colorValue) => {
+                            if (setNotDefault) {
+                                setNotDefault();
+                            }
+                            form.setValue(name, colorValue as PathValue<T, Path<T>>);
+                        }}
                     >
-                        <Button
-                            variant={"outline"}
-                            className={"flex flex-row justify-center items-center gap-4"}
-                        >
-                            <div
-                                style={{
-                                    backgroundColor: value,
-                                    width: "8px",
-                                    height: "8px",
-                                }}
-                            />
-                            <span>{label}</span>
-                        </Button>
+                        <div
+                            role="button"
+                            className={"rounded-lg border"}
+                            style={{
+                                backgroundColor: value || defaultColor,
+                                width: colorChipSize,
+                                height: colorChipSize,
+                            }}
+                        />
                     </ColorPopover>
-                    {desc && <FormDescription>{desc}</FormDescription>}
                     <FormMessage />
                 </FormItem>
             )}

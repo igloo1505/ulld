@@ -29,7 +29,7 @@ const docTypeColorGroup = z.object({
         ),
 });
 
-const docTypeUISchema = z
+export const docTypeUISchema = z
     .object({
         styles: z
             .object({

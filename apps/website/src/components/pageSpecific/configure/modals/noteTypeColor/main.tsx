@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { NoteType, NoteTypeInput } from "../../staticData";
+import React, { useEffect } from "react";
+import { NoteType, NoteTypeOutput } from "../../staticData";
 import { Button } from "@ulld/tailwind/button";
 import { Form } from "@ulld/tailwind/form";
 import {
@@ -12,43 +12,49 @@ import {
 } from "@ulld/tailwind/dialog";
 import { useForm } from "@ulld/full-form/form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { documentTypeConfigSchema } from "@ulld/configschema/zod/documentConfigSchema";
+import { docTypeUISchema } from "@ulld/configschema/zod/documentConfigSchema";
 import { useNoteTypeFormState } from "../../dataDisplay/noteTypes/useNoteTypeFormState";
+import ThemeColors from "./themeColors";
+import deepmerge from "deepmerge";
 
+
+type StyleType = NoteTypeOutput["UI"]["styles"]
 
 const NoteTypeColorModal = () => {
-
     const {
         editingItem,
         showColorModal: open,
         closeColorModal: close,
-        isEditing,
         clearEditing,
         updateEditingItem,
     } = useNoteTypeFormState();
 
-    const form = useForm<NoteType>({
-        resolver: zodResolver(documentTypeConfigSchema),
-        defaultValues: editingItem,
+    const form = useForm<NoteType["UI"]>({
+        resolver: zodResolver(docTypeUISchema),
+        defaultValues: editingItem?.UI,
     });
 
     useEffect(() => {
         if (editingItem) {
-            for (const k in editingItem) {
-                if (k !== "index") {
-                    let value = editingItem[k as keyof NoteTypeInput];
-                    if (typeof value !== "undefined") {
-                        form.setValue(k as keyof NoteTypeInput, value as any);
+            let style: StyleType =
+                form.getValues("styles") ||
+                ({} as StyleType);
+            let editingStyle = editingItem?.UI?.styles;
+            if (editingStyle) {
+                for (const k in editingStyle) {
+                    let value = editingStyle[k as keyof StyleType];
+                    if(k && value !== undefined) {
+                        style[k as keyof StyleType] = value as any
                     }
                 }
             }
         }
     }, [editingItem]);
 
-    const appendItem = (values: NoteType) => {
-        console.log(`Appending with `, values);
-        if (isEditing.current) {
-            updateEditingItem(values);
+    const appendItem = (values: NoteTypeOutput["UI"]) => {
+        if (editingItem) {
+            const newItem = deepmerge(editingItem, { UI: values });
+            updateEditingItem(newItem);
             clearEditing();
             form.reset();
             close();
@@ -82,10 +88,11 @@ const NoteTypeColorModal = () => {
                     >
                         <div
                             className={
-                                "space-y-6 lg:flex lg:flex-row lg:justify-center lg:items-start lg:gap-6"
+                                "w-full space-y-6 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-8 lg:mt-6"
                             }
                         >
-                            NOTE TYPE COLOR SETTINGS GO HERE
+                            <ThemeColors theme="dark" />
+                            <ThemeColors theme="light" />
                         </div>
                         <DialogFooter
                             className={"w-full flex flex-row justify-end items-center"}

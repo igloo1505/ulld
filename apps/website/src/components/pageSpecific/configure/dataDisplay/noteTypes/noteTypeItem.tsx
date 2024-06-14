@@ -11,7 +11,13 @@ interface NoteTypeItemProps {
 }
 
 const NoteTypeItem = ({ item, index }: NoteTypeItemProps) => {
-    const { setEditingItem, removeItem } = useNoteTypeFormState();
+    const {
+        setEditingItem,
+        removeItem,
+        setShowColorModal,
+        setShowKeywordModal,
+        setShowMatchPriorityModal,
+    } = useNoteTypeFormState();
 
     const editItem = () => {
         setEditingItem(index);
@@ -69,7 +75,10 @@ const NoteTypeItem = ({ item, index }: NoteTypeItemProps) => {
                 <NoteTypeItemDropdown
                     removeItem={remove}
                     editItem={editItem}
+                    showColorModal={() => setShowColorModal(index)}
                     label={item.label}
+                    showKeywordModal={() => setShowKeywordModal(index)}
+                    showMatchMagnitudeModal={() => setShowMatchPriorityModal(index)}
                 />
             </div>
         </div>
