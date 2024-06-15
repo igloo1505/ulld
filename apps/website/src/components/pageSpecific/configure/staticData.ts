@@ -16,10 +16,10 @@ export const sidebarNavItems: {title: string, href: string, id: string}[] = [
     href: "/configure",
     id: "noteTypes",
   },
-  // {
-  //   title: "Account",
-  //   href: "/configure/account",
-  // },
+  {
+    title: "Code",
+    href: "/configure/code",
+  },
   // {
   //   title: "Appearance",
   //   href: "/configure/appearance",

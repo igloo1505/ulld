@@ -1,10 +1,9 @@
 import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
 import React from "react";
 import AnimatedBrokenSubtitle from "./animatedBrokenSubtitle";
-import NavbarButtonGroup from "./navbarButtonGroup";
 import InternalReduxProvider from "#/state/provider";
 import Link from "next/link";
-import NavbarDrawerToggle from "./navbarDrawerToggle";
+import NavbarDynamicButtons from "./navbarDynamicButtons";
 
 
 const Navbar = () => {
@@ -22,8 +21,7 @@ const Navbar = () => {
         <AnimatedBrokenSubtitle delay={5} />
       </div>
       <InternalReduxProvider>
-        <NavbarButtonGroup />
-        <NavbarDrawerToggle />
+            <NavbarDynamicButtons />
       </InternalReduxProvider>
     </div>
   );

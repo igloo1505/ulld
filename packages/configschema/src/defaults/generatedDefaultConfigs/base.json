@@ -1,0 +1,156 @@
+{
+    "fsRoot": "/Users/bigsexy/notes",
+    "alwaysPreferFs": false,
+    "ignoreFilepaths": [],
+    "tempDir": "/__temp__",
+    "generatedDir": "/generated",
+    "ignorePreferFsExtensions": [],
+    "fileTypePriority": [
+        ".mdx",
+        ".md",
+        ".ipynb",
+        ".json",
+        ".csv",
+        ".tsv",
+        ".excel",
+        ".tex",
+        ".db",
+        ".html",
+        ".pdf"
+    ],
+    "noteTypes": [],
+    "bibPath": "/citations.bib",
+    "dateHandling": {
+        "enableAdvancedFormat": true,
+        "format": {
+            "short": "MM/DD/YYYY",
+            "long": "MMM Do, YYYY",
+            "withTime": "MM/DD/YY [at] HH:mm a",
+            "timeOnly": "HH:mm a"
+        },
+        "defaultTimeDisplayType": "analog"
+    },
+    "autoTag": [],
+    "autoTopic": [],
+    "autoSubject": [],
+    "linkAliases": {},
+    "code": {
+        "theme": {
+            "dark": "dracula",
+            "light": "material-theme-lighter"
+        }
+    },
+    "math": {
+        "latexPackages": "all"
+    },
+    "plotting": {
+        "plotColorList": [
+            "#e91e62",
+            "#9c27b0",
+            "#673ab6",
+            "#3f50b5",
+            "#f44336",
+            "#4caf4f",
+            "#00a8f4",
+            "#ff5721",
+            "#ffeb3a",
+            "#00bcd4",
+            "#cddc39"
+        ],
+        "plotColorCycleMethod": "inOrder"
+    },
+    "navigation": {
+        "navbarBreakpoint": {
+            "full": 1024,
+            "minimal": 640
+        },
+        "maxResultLength": {
+            "categories": 12,
+            "equations": 10,
+            "snippets": 10,
+            "searchAll": 12
+        },
+        "navbarLinks": [],
+        "sidebarLinks": []
+    },
+    "UI": {
+        "table": {
+            "maxHeight": "300px"
+        },
+        "text": {
+            "blockQuoteItalic": false,
+            "fontPaths": "default"
+        },
+        "media": {
+            "imageMap": {
+                "imageMap": {},
+                "includeDefaultImageMap": true,
+                "imageRemoteTest": []
+            },
+            "includeDefaultImageMap": true,
+            "imageRemoteTest": []
+        },
+        "theme": "violet"
+    },
+    "database": {
+        "storeFormatted": true,
+        "removeIfNotPresentInFs": true
+    },
+    "jupyter": {
+        "execute": false,
+        "environment": "/opt/anaconda3/bin/python",
+        "syntaxHighlightTheme": "dracula",
+        "jupyterPort": 21521,
+        "initiallyFoldCells": true,
+        "kernel": "python3",
+        "jupyterReactProps": {
+            "collaborative": false,
+            "lite": false
+        },
+        "nbConvert": {
+            "conversionTimeout": 300,
+            "execute": false,
+            "nbConvertTemplate": "classic",
+            "notebookOutputDir": "/generated"
+        },
+        "jupyterNotebookProps": {
+            "cellMetadataPanel": true,
+            "cellSidebarMargin": 120,
+            "bundledIPyWidgets": [],
+            "externalIPyWidgets": [],
+            "nbgrader": false,
+            "readOnly": false
+        }
+    },
+    "credentials": {},
+    "performance": {
+        "latexParsingDebounceTimeout": 500,
+        "mdxParsingDebounceTimeout": 500
+    },
+    "terminal": {
+        "logLevel": "info"
+    },
+    "slots": {
+        "navigation": "@ulld/navigation",
+        "plot": "@ulld/plot",
+        "bibliography": "@ulld/bib-manager",
+        "calendar": "@ulld/calendar",
+        "commandPalette": "@ulld/command-palette",
+        "editor": "@ulld/editor",
+        "math": "@ulld/equations",
+        "form": "@ulld/full-form",
+        "icons": "@ulld/icons",
+        "notebook": "@ulld/notebook",
+        "kanban": "@ulld/kanban",
+        "dashboard": "@ulld/landing-layouts",
+        "logger": "@ulld/logger",
+        "journal": "@ulld/journal",
+        "noteNetwork": "@ulld/note-network",
+        "pdf": "@ulld/pdf",
+        "snippets": "@ulld/snippets",
+        "taskManager": "@ulld/task-manager",
+        "whiteboard": "@ulld/whiteboard",
+        "components": {},
+        "parsers": {}
+    }
+}

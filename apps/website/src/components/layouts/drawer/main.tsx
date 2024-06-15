@@ -46,7 +46,6 @@ const MainNavigationDrawer = connector(
                             <DrawerDescription>{staticContent.description}</DrawerDescription>
                         </DrawerHeader>
                         <MainNavigationDrawerButtonGroup hide={!vp || vp.window.width >= drawer.breakpoint} buttons={buttons} />
-                        <DrawerFooter>Drawer Footer</DrawerFooter>
                     </DrawerContent>
             </Drawer>
         );

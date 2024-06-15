@@ -1,6 +1,8 @@
 
 export const withForwardSlash = (p: string) => p.startsWith("/") ? p : `/${p}`
 
+export const withForwardSlashOptional = (p?: string) => typeof p === "undefined" ? undefined : withForwardSlash(p) 
+
 export const noTrailingSlash = (p: string) => p.endsWith("/") ? p.slice(0, p.length - 1) : p
 
 export const withTrailingSlash = (p: string) => p.endsWith("/") ? p : `${p}/`

@@ -49,7 +49,9 @@
     "./useInitialRender": "./src/useInitialRender.ts",
     "./useObserveChildren": "./src/useObserveChildren.ts",
     "./useAutoWrapCode": "./src/useAutoWrapCode.ts",
-    "./useMinWidth": "./src/useMinWidth.ts"
+    "./useMinWidth": "./src/useMinWidth.ts",
+    "./useShikiParse": "./src/useShikiParsedContent.ts",
+    "./useResponsiveCode": "./src/useResponsiveCodeblock.tsx"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",

@@ -57,7 +57,8 @@
       "external": {
         "jupyter": "jupyter-notebook.readthedocs.io",
         "shad": "FIX ME",
-        "python": "docs.python.org"
+        "python": "docs.python.org",
+        "cslRepo": "https://github.com/citation-style-language/styles"
       },
       "internal": {
         "home": "/docs/user",

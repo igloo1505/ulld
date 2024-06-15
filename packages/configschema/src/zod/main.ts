@@ -18,6 +18,7 @@ import { slashesTransform } from './transforms/general'
 import { allParsableFileExtensionSchema } from './secondaryConfigParse/getParsableExtensions'
 import { featuresConfigSchema } from './features/main'
 import { pluginSlotSchema } from '@ulld/developer-schemas/slots'
+import { withForwardSlash, withForwardSlashOptional } from '@ulld/utilities/fsUtils'
 
 
 export const zodRegexField = z.union([
@@ -71,9 +72,9 @@ export const appConfigSchema = z.object({
         ".html",
         ".pdf",
     ]),
-    noteTypes: documentTypeConfigSchema.array().nonempty().describe("This is the main location to describe the structure of your notes. Break up your note directory into as many categories as you like, but this app is designed to allow for increasingly refined searching and filtering. Categories of 'math', 'physics' and 'chemistry' would likely fit most users better than 'calc1', 'calc2', 'linearAlgebra', etc. For use cases such as those, please look at the 'autoTag', 'autoSubject', and 'autoTopic' feature."),
-    bibPath: zodStringFieldWithFileExtension(".bib").transform(zodWithForwardSlashTransform).describe("The root relative path to the .bib file to be integrated within your app."),
-    cslPath: zodStringFieldWithFileExtension(".csl").transform(zodWithForwardSlashTransform).describe("The root relative path to the .csl file to be used for styling citations. An incredibly robust repo of different csl styles can be found at https://github.com/citation-style-language/styles"),
+    noteTypes: documentTypeConfigSchema.array().default([]).describe("This is the main location to describe the structure of your notes. Break up your note directory into as many categories as you like, but this app is designed to allow for increasingly refined searching and filtering. Categories of 'math', 'physics' and 'chemistry' would likely fit most users better than 'calc1', 'calc2', 'linearAlgebra', etc. For use cases such as those, please look at the 'autoTag', 'autoSubject', and 'autoTopic' feature."),
+    bibPath: z.string().default("/citations.bib").transform(withForwardSlash).describe("The root relative path to the .bib file to be integrated within your app."),
+    cslPath: z.string().optional().transform(withForwardSlashOptional).describe("The root relative path to the .csl file to be used for styling citations. An incredibly robust repo of different csl styles can be found at https://github.com/citation-style-language/styles"),
     dateHandling: dateParseConfigSchema,
     autoTag: z.object({
         path: z.string().describe("The glob pattern to test paths against."),
@@ -95,11 +96,11 @@ export const appConfigSchema = z.object({
     navigation: navigationConfigSchema,
     UI: mainUIConfigSchema,
     database: databaseConfigSchema,
-    jupyter: jupyterConfigSchema,
+    jupyter: jupyterConfigSchema.default({}),
     credentials: credentialsConfigSchema,
     performance: performanceConfigSchema,
     terminal: terminalConfigSchema,
-    slots: pluginSlotSchema 
+    slots: pluginSlotSchema.default({}) 
 })
 
 

@@ -1,7 +1,6 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode } from "react";
 import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
 import ColorPopover from "./popover";
-import { Button } from "@ulld/tailwind/button";
 import {
     FormField,
     FormItem,
@@ -35,7 +34,6 @@ export const ColorInput = <T extends FieldValues>({
 }: ColorInputProps<T>) => {
     const form = useFormContext<T>();
     const value = form.watch(name);
-    console.log("value: ", value)
     return (
         <FormField
             control={form.control}
