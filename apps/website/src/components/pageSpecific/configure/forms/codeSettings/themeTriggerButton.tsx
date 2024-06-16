@@ -11,7 +11,7 @@ interface ThemeTriggerButtonProps {
 const ThemeTriggerButton = ({ theme }: ThemeTriggerButtonProps) => {
     const state = useCodeFormState();
     return (
-        <div className={"flex flex-row justify-start items-end gap-4 w-full"}>
+        <div className={"flex flex-row justify-start items-end gap-4 w-[400px]"}>
             <ShikiThemeSelect<AppConfigSchemaType> 
                 label={theme === "dark" ? "Dark Mode" : "Light Mode"}
                 name={`code.theme.${theme}`}

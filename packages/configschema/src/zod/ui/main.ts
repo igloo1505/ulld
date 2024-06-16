@@ -10,7 +10,7 @@ export const mainUIConfigSchema = z
         table: tableUIConfigSchema,
         text: textConfigSchema,
         media: mediaConfigSchema,
-        colors: colorsConfigSchema.optional(),
-        theme: themeSchema.default("violet"),
+        colors: colorsConfigSchema,
+        theme: themeSchema.default("ulld"),
     })
     .default({});

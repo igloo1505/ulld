@@ -146,6 +146,7 @@
     "math-expression-evaluator": "^2.0.5",
     "mathjax": "^3.2.2",
     "mathjs": "^12.4.0",
+    "monaco-editor": "0.49.0",
     "monaco-editor-webpack-plugin": "^7.1.0",
     "monaco-vim": "^0.4.1",
     "mp4-stream": "^3.1.3",

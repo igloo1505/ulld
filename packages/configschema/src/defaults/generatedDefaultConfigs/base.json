@@ -38,6 +38,10 @@
         "theme": {
             "dark": "dracula",
             "light": "material-theme-lighter"
+        },
+        "editor": {
+            "defaultLangauge": "python",
+            "useVimMode": false
         }
     },
     "math": {
@@ -90,7 +94,117 @@
             "includeDefaultImageMap": true,
             "imageRemoteTest": []
         },
-        "theme": "violet"
+        "colors": {
+            "success": {
+                "dark": "#16a34a",
+                "light": "#16a34a"
+            },
+            "info": {
+                "dark": "#0284c7",
+                "light": "#0284c7"
+            },
+            "error": {
+                "dark": "#dc2626",
+                "light": "#dc2626"
+            },
+            "sky": {
+                "dark": "#07c8f9",
+                "light": "#07c8f9"
+            },
+            "yellow": {
+                "dark": "#ffff24",
+                "light": "#ffff24"
+            },
+            "blue": {
+                "dark": "#00a1e4",
+                "light": "#00a1e4"
+            },
+            "orange": {
+                "dark": "#ff7d00",
+                "light": "#ff7d00"
+            },
+            "green": {
+                "dark": "#89fc00",
+                "light": "#89fc00"
+            },
+            "red": {
+                "dark": "#ff0000",
+                "light": "#ff0000"
+            },
+            "purple": {
+                "dark": "#9908ff",
+                "light": "#9908ff"
+            },
+            "pink": {
+                "dark": "#dc0073",
+                "light": "#dc0073"
+            },
+            "amber": {
+                "dark": "#f59e0b",
+                "light": "#d97706"
+            },
+            "lime": {
+                "dark": "#84cc16",
+                "light": "#65a30d"
+            },
+            "emerald": {
+                "dark": "#10b981",
+                "light": "#059669"
+            },
+            "teal": {
+                "dark": "#14b8a6",
+                "light": "#0d9488"
+            },
+            "cyan": {
+                "dark": "#06b6d4",
+                "light": "#0891b2"
+            },
+            "indigo": {
+                "dark": "#6366f1",
+                "light": "#4f46e5"
+            },
+            "fuchsia": {
+                "dark": "#d946ef",
+                "light": "#c026d3"
+            },
+            "rose": {
+                "dark": "#f43f5e",
+                "light": "#e11d48"
+            },
+            "slate": {
+                "dark": "#64748b",
+                "light": "#475569"
+            },
+            "gray": {
+                "dark": "#6b7280",
+                "light": "#4b5563"
+            },
+            "stone": {
+                "dark": "#78716c",
+                "light": "#57534e"
+            },
+            "zinc": {
+                "dark": "#71717a",
+                "light": "#52525b"
+            },
+            "warning": {
+                "dark": "#eab308",
+                "light": "#eab308"
+            },
+            "alert": {
+                "dark": "#3b82f6",
+                "light": "#3b82f6"
+            },
+            "primary": {
+                "dark": "hsl(var(--primary))",
+                "light": "hsl(var(--primary))"
+            },
+            "secondary": {
+                "dark": "hsl(var(--secondary))",
+                "light": "hsl(var(--secondary))"
+            }
+        },
+        "theme": "ulld"
     },
     "database": {
         "storeFormatted": true,

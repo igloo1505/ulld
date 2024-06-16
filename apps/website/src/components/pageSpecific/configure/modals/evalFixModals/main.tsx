@@ -2,7 +2,7 @@ import InternalReduxProvider from "#/state/provider";
 import React, { useEffect, useRef, useState } from "react";
 import DocTypesOverlapFixModal from "./docTypesOverlap";
 import { useFormContext } from "@ulld/full-form/form";
-import { ConfigurationFormData, ConfigurationFormType } from "../../staticData";
+import { ConfigurationFormOutput, ConfigurationFormType } from "../../staticData";
 import { EvaluationErrors } from "@ulld/configschema/evaluateConfigTypes";
 import evaluateConfig from "@ulld/configschema/evaluateConfig";
 import { useEventListener } from "@ulld/hooks/useEventListener";

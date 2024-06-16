@@ -4,7 +4,7 @@ import { useForm } from "@ulld/full-form/form";
 import { Button, buttonVariants } from "@ulld/tailwind/button";
 import React, { MouseEvent, ReactNode, useEffect, useMemo } from "react";
 import { ZodBoolean, z } from "zod";
-import { ConfigurationFormInput, ConfigurationFormData, sidebarNavItems, ConfigurationFormType } from "./staticData";
+import { ConfigurationFormInput, ConfigurationFormOutput, sidebarNavItems, ConfigurationFormType } from "./staticData";
 import { usePathname, useRouter } from "next/navigation";
 import { Form } from "@ulld/tailwind/form";
 import { appConfigSchema } from "@ulld/configschema/zod/main";
@@ -36,7 +36,7 @@ const ConfigureFormWrapper = ({ children }: ConfigureFormWrapperProps) => {
     const pathname = usePathname();
     const form = useForm<ConfigurationFormType>({
         resolver: zodResolver(appConfigSchema),
-        defaultValues: defaultBaseConfig as ConfigurationFormData
+        defaultValues: defaultBaseConfig as unknown as ConfigurationFormOutput
     });
 
     const router = useRouter()

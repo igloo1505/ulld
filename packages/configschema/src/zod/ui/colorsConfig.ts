@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { defaultUlldColorMap } from "./defaultColorMap"
 
 const colorScaleKeys = [
     "50",
@@ -76,10 +77,9 @@ const colorGroupItem = z
             .nullish(),
         gradient: z
             .union([
-                gradientObjectSchema
-                    .describe(
-                        "An object of a single color, in which 50 represents the lightest variation and 950 represents the darkest.",
-                    ),
+                gradientObjectSchema.describe(
+                    "An object of a single color, in which 50 represents the lightest variation and 950 represents the darkest.",
+                ),
                 z
                     .string()
                     .array()
@@ -97,7 +97,9 @@ const colorGroupItem = z
             main: a.main,
             contrast: a.contrast,
             muted: typeof a.muted === "string" ? { foreground: a.muted } : a.muted,
-            gradient: Array.isArray(a.gradient) ? getObj(a.gradient) as T : a.gradient as T,
+            gradient: Array.isArray(a.gradient)
+                ? (getObj(a.gradient) as T)
+                : (a.gradient as T),
         } satisfies {
             main: typeof a.main;
             contrast: typeof a.contrast;
@@ -107,34 +109,49 @@ const colorGroupItem = z
     })
     .nullish();
 
-const colorGroup = z
-    .object({
-        dark: colorGroupItem.nullish(),
-        light: colorGroupItem.nullish(),
-    })
-    .deepPartial()
-    .transform((a) => {
-        return {
-            light: a.light || a.dark,
-            dark: a.dark || a.light,
-        };
-    })
-    .nullish();
+// const colorGroup = z
+//     .object({
+//         dark: colorGroupItem.nullish(),
+//         light: colorGroupItem.nullish(),
+//     })
+//     .deepPartial()
+//     .transform((a) => {
+//         return {
+//             light: a.light || a.dark,
+//             dark: a.dark || a.light,
+//         };
+//     })
+    // .nullish();
+
+export const colorGroup = z.object({
+    dark: z.string().optional(),
+    light: z.string().optional()
+})
 
 export type ColorGroup = z.output<typeof colorGroup>;
 
 const colorValue = z
-    .union([colorGroup, colorGroupItem])
+    .union([colorGroup, z.string()])
     .nullish()
     .transform((a) => {
         if (!a) return undefined;
-        if (!("dark" in a)) {
+
+        if (typeof a === "string") {
             return {
                 dark: a,
                 light: a,
             } as {
-                dark: typeof a;
-                light: typeof a;
+                dark: string;
+                light: string
+            };
+        }
+        if ( !("dark" in a)) {
+            return {
+                dark: a.light,
+                light: a.light,
+            } as {
+                dark: string;
+                light: string;
             };
         }
         return a;
@@ -168,11 +185,22 @@ const configColors = z.union([
     z.literal("success"),
     z.literal("primary"),
     z.literal("secondary"),
-    z.string(),
+    z.literal("success"),
 ]);
 
 export type ConfigColorKey = z.input<typeof configColors>;
 
 export const colorsConfigSchema = z
-    .record(configColors, colorValue)
-    .default({});
+    .record(z.string(), colorValue)
+    .default(defaultUlldColorMap);
+
+
+export type ColorGroupType = z.infer<typeof colorGroup>
+
+export type ColorsConfigSchemaType = z.infer<typeof colorsConfigSchema>
+export type ColorsConfigSchemaInput = z.input<typeof colorsConfigSchema>
+
+export type ConfigColorValueType = z.infer<typeof colorValue>;
+export type ConfigColorValueTypeWithId = z.output<typeof colorValue> & {
+    colorId: string;
+};

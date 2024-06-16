@@ -43,7 +43,7 @@ const CodeThemeModalPreview = ({
         <div
             ref={ref}
             className={clsx(
-                "w-full max-w-full h-full max-h-full overflow-y-auto block not-prose [&_pre]:max-w-full text-sm [&_code]:max-w-full [&_code]:min-w-full [&_code]:p-4 [&_code]:whitespace-break-spaces [&_.line]:min-h-4 [&_code]:!bg-background no-scrollbar",
+                "w-full max-w-full h-fit max-h-fit overflow-y-auto block not-prose [&_pre]:max-w-full text-sm [&_code]:max-w-full [&_code]:min-w-full [&_code]:p-4 [&_code]:whitespace-break-spaces [&_.line]:min-h-4 [&_code]:!bg-background no-scrollbar",
                 themeMode,
             )}
             dangerouslySetInnerHTML={state.content ? { __html: state.content } : undefined}

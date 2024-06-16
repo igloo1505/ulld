@@ -6,5 +6,5 @@ export interface BaseInputProps<T extends FieldValues, Classes extends string> {
     desc?: ReactNode
     name: Path<T>
     // classes?: Record<"formItem" | Classes, string | undefined>
-    classes?: {[k in "formItem" | Classes]?:  string}
+    classes?: {[k in "formItem" | "desc" | "label" | Classes]?:  string}
 }

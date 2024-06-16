@@ -30,7 +30,7 @@ const code_config_schema = z.object({
             dark: "dracula",
             light: "material-theme-lighter",
         }),
-    editor: monacoEditorConfigSchema.optional(),
+    editor: monacoEditorConfigSchema,
 });
 
 export const codeConfigSchema = code_config_schema.default({});

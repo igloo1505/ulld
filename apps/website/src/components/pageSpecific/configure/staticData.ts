@@ -19,6 +19,12 @@ export const sidebarNavItems: {title: string, href: string, id: string}[] = [
   {
     title: "Code",
     href: "/configure/code",
+    id: "code"
+  },
+  {
+    title: "Colors",
+    href: "/configure/colors",
+    id: "colors"
   },
   // {
   //   title: "Appearance",
@@ -35,7 +41,7 @@ export const sidebarNavItems: {title: string, href: string, id: string}[] = [
 ]
 
 
-export type ConfigurationFormData = z.output<typeof appConfigSchema>
+export type ConfigurationFormOutput = z.output<typeof appConfigSchema>
 export type ConfigurationFormInput = z.input<typeof appConfigSchema>
 export type ConfigurationFormType = z.infer<typeof appConfigSchema>
 

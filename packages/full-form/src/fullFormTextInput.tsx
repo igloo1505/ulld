@@ -17,12 +17,18 @@ export interface TextInputProps<
     H extends Omit<HTMLElement, "onChange">,
 > extends Omit<BaseFullFormInputProps<T, H>, "onChange"> {
     keyboardFilter?: string // TODO: This keyboardFilter needs to be enabled again. Reference original app.
+    classes?: {
+        formItem?: string
+        input?: string
+        desc?: string
+    }
 }
 
 export const TextInput = <T extends FieldValues>({
     name,
     label,
     desc,
+    classes={},
     ...props
 }: TextInputProps<T, HTMLInputElement>) => {
     const form = useFormContext<T>();
@@ -31,15 +37,16 @@ export const TextInput = <T extends FieldValues>({
             control={form.control}
             name={name}
             render={({ field }) => (
-                <FormItem>
+                <FormItem className={classes.formItem}>
                     <FormLabel>{label}</FormLabel>
                     <FormControl>
                         <Input
                             {...props}
                             {...field}
+                            className={classes.input}
                         />
                     </FormControl>
-                    {desc && <FormDescription>{desc}</FormDescription>}
+                    {desc && <FormDescription className={classes.desc}>{desc}</FormDescription>}
                     <FormMessage />
                 </FormItem>
             )}

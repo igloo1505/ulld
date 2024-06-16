@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { useCodeFormState } from "../../forms/codeSettings/useCodeFormState";
 import { Button } from "@ulld/tailwind/button";
 import { useForm } from "@ulld/full-form/form";
@@ -75,32 +75,33 @@ const CodeThemeSelectModal = ({
                 }
             }}
         >
-            <DialogContent className={"lg:w-fit lg:max-w-[calc(100vw-4rem)]"}>
+            <DialogContent className={"w-[min(768px,90vw)] max-w-[min(768px,90vw)]"}>
                 <DialogHeader>
                     <DialogTitle>{label || "Set Theme"}</DialogTitle>
                     {desc && <DialogDescription>{desc}</DialogDescription>}
                 </DialogHeader>
                 <Form {...form}>
                     <form
-                        className={"w-full space-y-6"}
+                        className={
+                            "w-[calc(min(768px,90vw)-64px)] max-w-[calc(min(768px,90vw)-64px)] space-y-6"
+                        }
                         onSubmit={form.handleSubmit(onAccept)}
                     >
-                        <div
-                            className={"grid grid-cols-1 md:grid-cols-[auto_[300px]] gap-6"}
-                        >
-                            <ComboboxInput
-                                label={targetTheme === "dark" ? "Dark Mode" : "Light Mode"}
-                                name={targetTheme}
-                                options={options}
-                                classes={{
-                                    popoverContent: "overflow-y-auto min-scrollbar",
-                                }}
-                            />
-                            <CodeThemeModalPreview
-                                content={defaultPythonSampleCode}
-                                themeMode={targetTheme}
-                            />
-                        </div>
+                        <ComboboxInput
+                            label={targetTheme === "dark" ? "Dark Mode" : "Light Mode"}
+                            name={targetTheme}
+                            options={options}
+                            classes={{
+                                popoverContent: "overflow-y-auto min-scrollbar w-[300px]",
+                                formItem: "w-[300px]",
+                                button: "w-[300px]",
+                                commandList: "w-[300px]"
+                            }}
+                        />
+                        <CodeThemeModalPreview
+                            content={defaultPythonSampleCode}
+                            themeMode={targetTheme}
+                        />
                         <DialogFooter
                             className={"w-full flex flex-row justify-end items-center"}
                         >

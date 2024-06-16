@@ -1,12 +1,12 @@
 import React from "react";
-import { ConfigurationFormData } from "../../staticData";
+import { ConfigurationFormOutput } from "../../staticData";
 import { DynamicIcon, ValidIconName } from "@ulld/icons";
 import { Badge } from "@ulld/tailwind/badge";
 import NoteTypeItemDropdown from "./noteTypeItemDropdownMenu";
 import { useNoteTypeFormState } from "./useNoteTypeFormState";
 
 interface NoteTypeItemProps {
-    item: ConfigurationFormData["noteTypes"][number];
+    item: ConfigurationFormOutput["noteTypes"][number];
     index: number;
 }
 

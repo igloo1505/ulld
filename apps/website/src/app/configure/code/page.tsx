@@ -13,6 +13,7 @@ return (
       title="Code Settings"
       subtitle="If you use code or are planning to learn, take a minute to set some default settings."
     >
+
       <CodeSettingsForm />
     </ConfigurationFormPageContainer>
 )

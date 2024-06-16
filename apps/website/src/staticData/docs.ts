@@ -82,7 +82,7 @@ export const staticDocsData: StaticDocsData = {
         },
     ],
     extendsMap: {
-       "colorProps": {
+       colorProps: {
             href: "/docs/user/components?category=Colors#colorproperties",
             label: "Color Properties"
         }

@@ -20,6 +20,7 @@ import {
     Popover,
     PopoverTrigger,
     PopoverContent,
+    PopoverContentNoPortal,
 } from "@ulld/tailwind/popover";
 import cn from "@ulld/utilities/cn";
 import { ChevronsUpDown, Check } from "lucide-react";
@@ -66,7 +67,6 @@ export const ComboboxInput = <
             control={form.control}
             name={name}
             render={({ field }) => {
-                console.log("field.value: ", field.value);
                 return (
                     <FormItem className={cn("flex flex-col", classes.formItem)}>
                         <FormLabel>{label}</FormLabel>
@@ -90,7 +90,7 @@ export const ComboboxInput = <
                                     </Button>
                                 </FormControl>
                             </PopoverTrigger>
-                            <PopoverContent
+                            <PopoverContentNoPortal
                                 className={cn("w-[200px] p-0", classes.popoverContent)}
                             >
                                 <Command>
@@ -124,7 +124,7 @@ export const ComboboxInput = <
                                         </CommandGroup>
                                     </CommandList>
                                 </Command>
-                            </PopoverContent>
+                            </PopoverContentNoPortal>
                         </Popover>
                         {desc && <FormDescription>{desc}</FormDescription>}
                         <FormMessage />
