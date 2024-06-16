@@ -1,15 +1,19 @@
 "use client"
 import { ReactNode, createContext, useReducer, useContext } from "react";
 
+export type AvailableColorStringFormats = "hex" | "hsl" | "hsv" | "rgb"
+
 interface ConfigureColorState {
     addColorModal: boolean;
     editColorModal?: string
+    colorFormat: AvailableColorStringFormats
 }
 
 
 const defaultInitialValues: ConfigureColorState = {
     addColorModal: false,
-    editColorModal: undefined
+    editColorModal: undefined,
+    colorFormat: "hsl"
 };
 
 export const ConfigureColorContext =
@@ -19,6 +23,7 @@ type ConfigureColorContextActions =
     | { type: "openAddColorModal" }
     | { type: "closeAddColorModal" }
     | { type: "openEditColorModal"; payload: string }
+    | { type: "setColorFormat"; payload: AvailableColorStringFormats }
     | { type: "closeEditColorModal" };
 
 export const ConfigureColorDispatchContext = createContext<
@@ -56,6 +61,12 @@ export const ConfigureColorContextReducer = (
             return {
                 ...state,
                 editColorModal: undefined,
+            };
+        }
+        case "setColorFormat": {
+            return {
+                ...state,
+                colorFormat: action.payload,
             };
         }
         default: {

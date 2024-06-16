@@ -27,8 +27,13 @@ const schema = colorGroup.extend({
 export type AddColorSchemaType = z.infer<typeof schema>;
 
 const AddColorModal = () => {
+
   const form = useForm<AddColorSchemaType>({
     resolver: zodResolver(schema),
+        defaultValues: {
+            dark: "#0ba5e9",
+            light: '#2563eb'
+        }
   });
 
   const {

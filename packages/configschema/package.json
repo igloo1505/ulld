@@ -52,7 +52,8 @@
     "./evaluateConfig": "./src/evaluate/main.ts",
     "./evaluateConfigTypes": "./src/evaluate/types.ts",
     "./defaultConfigBase": "./src/defaults/generatedDefaultConfigs/base.json",
-    "./codeThemeSchemas": "./src/zod/codeThemeSchemas.ts"
+    "./codeThemeSchemas": "./src/zod/codeThemeSchemas.ts",
+    "./defaultColorMap": "./src/zod/ui/defaultColorMap.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",

@@ -1,6 +1,6 @@
 "use client"
 import { useContext, useMemo } from "react"
-import { ConfigureColorContext, ConfigureColorDispatchContext } from "./colorFormContext"
+import { AvailableColorStringFormats, ConfigureColorContext, ConfigureColorDispatchContext } from "./colorFormContext"
 import { useFormContext } from "@ulld/full-form/form"
 import { AppConfigSchemaType } from "@ulld/configschema/zod/main"
 import { ColorsConfigSchemaType, ConfigColorValueTypeWithId } from "@ulld/configschema/zod/ui/colorsConfig"
@@ -15,7 +15,6 @@ export const useColorFormState = () => {
 
     const colorItems: ConfigColorValueTypeWithId[] = useMemo(() => Object.keys(colors).map((k) => ({colorId: k, ...colors[k]})), [colors]) as ConfigColorValueTypeWithId[]
 
-    console.log("colorItems: ", colorItems)
 
     return {
         ...context,
@@ -27,7 +26,6 @@ export const useColorFormState = () => {
         closeEditColorModal: () => dispatch({type: "closeEditColorModal"}),
         appendColor: (newColor: AddColorSchemaType) => {
             const values = form.getValues("UI.colors")
-            console.log("values: ", values)
             form.setValue("UI.colors", {
                 ...values,
                 [newColor.colorId]: {
@@ -35,7 +33,12 @@ export const useColorFormState = () => {
                     light: newColor.light
                 }
             })
+        },
+        setColorFormat: (newFormat: AvailableColorStringFormats) => dispatch({type: "setColorFormat", payload: newFormat}),
+        removeColor: (colorId: string) => {
+            let values = form.getValues("UI.colors")
+            delete values[colorId]
+            form.setValue("UI.colors", values)
         }
-        // updateEditingColor: 
     }
 }
