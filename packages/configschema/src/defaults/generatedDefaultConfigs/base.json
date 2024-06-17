@@ -96,112 +96,112 @@
         },
         "colors": {
             "success": {
-                "dark": "#16a34a",
-                "light": "#16a34a"
+                "dark": "hsl(142, 76%, 36%)",
+                "light": "hsl(142, 76%, 36%)"
             },
             "info": {
-                "dark": "#0284c7",
-                "light": "#0284c7"
+                "dark": "hsl(200, 98%, 39%)",
+                "light": "hsl(200, 98%, 39%)"
             },
             "error": {
-                "dark": "#dc2626",
-                "light": "#dc2626"
+                "dark": "hsl(0, 72%, 51%)",
+                "light": "hsl(0, 72%, 51%)"
             },
             "sky": {
-                "dark": "#07c8f9",
-                "light": "#07c8f9"
+                "dark": "hsl(192, 95%, 50%)",
+                "light": "hsl(192, 95%, 50%)"
             },
             "yellow": {
-                "dark": "#ffff24",
-                "light": "#ffff24"
+                "dark": "hsl(60, 100%, 57%)",
+                "light": "hsl(60, 100%, 57%)"
             },
             "blue": {
-                "dark": "#00a1e4",
-                "light": "#00a1e4"
+                "dark": "hsl(198, 100%, 45%)",
+                "light": "hsl(198, 100%, 45%)"
             },
             "orange": {
-                "dark": "#ff7d00",
-                "light": "#ff7d00"
+                "dark": "hsl(29, 100%, 50%)",
+                "light": "hsl(29, 100%, 50%)"
             },
             "green": {
-                "dark": "#89fc00",
-                "light": "#89fc00"
+                "dark": "hsl(87, 100%, 49%)",
+                "light": "hsl(87, 100%, 49%)"
             },
             "red": {
-                "dark": "#ff0000",
-                "light": "#ff0000"
+                "dark": "hsl(0, 100%, 50%)",
+                "light": "hsl(0, 100%, 50%)"
             },
             "purple": {
-                "dark": "#9908ff",
-                "light": "#9908ff"
+                "dark": "hsl(275, 100%, 52%)",
+                "light": "hsl(275, 100%, 52%)"
             },
             "pink": {
-                "dark": "#dc0073",
-                "light": "#dc0073"
+                "dark": "hsl(329, 100%, 43%)",
+                "light": "hsl(329, 100%, 43%)"
             },
             "amber": {
-                "dark": "#f59e0b",
-                "light": "#d97706"
+                "dark": "hsl(38, 92%, 50%)",
+                "light": "hsl(32, 95%, 44%)"
             },
             "lime": {
-                "dark": "#84cc16",
-                "light": "#65a30d"
+                "dark": "hsl(84, 81%, 44%)",
+                "light": "hsl(85, 85%, 35%)"
             },
             "emerald": {
-                "dark": "#10b981",
-                "light": "#059669"
+                "dark": "hsl(160, 84%, 39%)",
+                "light": "hsl(161, 94%, 30%)"
             },
             "teal": {
-                "dark": "#14b8a6",
-                "light": "#0d9488"
+                "dark": "hsl(173, 80%, 40%)",
+                "light": "hsl(175, 84%, 32%)"
             },
             "cyan": {
-                "dark": "#06b6d4",
-                "light": "#0891b2"
+                "dark": "hsl(189, 94%, 43%)",
+                "light": "hsl(192, 91%, 36%)"
             },
             "indigo": {
-                "dark": "#6366f1",
-                "light": "#4f46e5"
+                "dark": "hsl(239, 84%, 67%)",
+                "light": "hsl(243, 75%, 59%)"
             },
             "fuchsia": {
-                "dark": "#d946ef",
-                "light": "#c026d3"
+                "dark": "hsl(292, 84%, 61%)",
+                "light": "hsl(293, 69%, 49%)"
             },
             "rose": {
-                "dark": "#f43f5e",
-                "light": "#e11d48"
+                "dark": "hsl(350, 89%, 60%)",
+                "light": "hsl(347, 77%, 50%)"
             },
             "slate": {
-                "dark": "#64748b",
-                "light": "#475569"
+                "dark": "hsl(215, 16%, 47%)",
+                "light": "hsl(215, 19%, 35%)"
             },
             "gray": {
-                "dark": "#6b7280",
-                "light": "#4b5563"
+                "dark": "hsl(220, 9%, 46%)",
+                "light": "hsl(215, 14%, 34%)"
             },
             "stone": {
-                "dark": "#78716c",
-                "light": "#57534e"
+                "dark": "hsl(25, 5%, 45%)",
+                "light": "hsl(33, 5%, 32%)"
             },
             "zinc": {
-                "dark": "#71717a",
-                "light": "#52525b"
+                "dark": "hsl(240, 4%, 46%)",
+                "light": "hsl(240, 5%, 34%)"
             },
             "warning": {
-                "dark": "#eab308",
-                "light": "#eab308"
+                "dark": "hsl(45, 93%, 47%)",
+                "light": "hsl(45, 93%, 47%)"
             },
             "alert": {
-                "dark": "#3b82f6",
-                "light": "#3b82f6"
+                "dark": "hsl(217, 91%, 60%)",
+                "light": "hsl(217, 91%, 60%)"
             },
             "primary": {
-                "dark": "hsl(var(--primary))",
-                "light": "hsl(var(--primary))"
+                "dark": "hsl(0, 0%, 0%)",
+                "light": "hsl(0, 0%, 0%)"
             },
             "secondary": {
-                "dark": "hsl(var(--secondary))",
-                "light": "hsl(var(--secondary))"
+                "dark": "hsl(0, 0%, 0%)",
+                "light": "hsl(0, 0%, 0%)"
             }
         },
         "theme": "ulld"

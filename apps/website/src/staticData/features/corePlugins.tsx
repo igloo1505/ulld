@@ -38,6 +38,14 @@ export const corePluginsFeature: FeaturedContainerPropsRequired = {
     );
   },
   component: () => {
-    return <ImageCarousel images={slideShowScreenshots} withButtons />;
+    return <ImageCarousel
+            images={slideShowScreenshots}
+            withButtons 
+            buttonsBottom
+            className={"w-full h-auto min-h-[40vh]"}
+            classes={{
+                buttonContainer: "justify-center lg:justify-end"
+            }}
+        />;
   },
 };

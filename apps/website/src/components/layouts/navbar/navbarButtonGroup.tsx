@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { useInitialRender } from "@ulld/hooks/useInitialRender";
 import { usePathname } from "next/navigation";
 import { useViewport } from "@ulld/hooks/useViewport";
-import clsx from 'clsx'
+import clsx from "clsx";
 
 const Link = motion(NextLink);
 
@@ -32,58 +32,70 @@ const otherHomeNavbarClasses = [
     "supports-[backdrop-filter]:bg-background/60",
     "backdrop-blur",
     "border-b",
-    "border-border/40"
+    "border-border/40",
 ];
 
-const NavbarButtonGroup = connector(({ buttons, breakpoint }: NavbarButtonGroupProps) => {
-    const isInitial = useInitialRender();
-    const pathname = usePathname();
-    const vp = useViewport()
+const NavbarButtonGroup = connector(
+    ({ buttons, breakpoint }: NavbarButtonGroupProps) => {
+        const isInitial = useInitialRender();
+        const pathname = usePathname();
+        const vp = useViewport();
 
-    const setTransparent = (beTransparent: boolean) => {
-        let em = document.getElementById("main-navbar-container");
-        if (!em) return;
-        let add = beTransparent ? homeNavbarClasses : otherHomeNavbarClasses;
-        let remove = beTransparent ? otherHomeNavbarClasses : homeNavbarClasses;
-        add.forEach((a) => em.classList.add(a));
-        remove.forEach((a) => em.classList.remove(a));
-    };
+        const setTransparent = (beTransparent: boolean) => {
+            let em = document.getElementById("main-navbar-container");
+            if (!em) return;
+            let add = beTransparent ? homeNavbarClasses : otherHomeNavbarClasses;
+            let remove = beTransparent ? otherHomeNavbarClasses : homeNavbarClasses;
+            add.forEach((a) => em.classList.add(a));
+            remove.forEach((a) => em.classList.remove(a));
+        };
 
-    useEffect(() => {
-        setTransparent(pathname === "/");
-    }, [pathname]);
+        useEffect(() => {
+            setTransparent(pathname === "/");
+        }, [pathname]);
 
-
-    return (
-        <div
-            id="navbar-btn-container"
-            className={
-                clsx("w-full h-full flex flex-row justify-end items-center gap-4 flex-grow pr-8", (!vp || vp.window.width < breakpoint) && "hidden")
-            }
-        >
-            {buttons.map((a, i) => {
-                return (
-                    <Link
-                        key={i}
-                        className={navbarButtonClasses}
-                        href={a.href}
-                        initial={{
-                            scale: 0,
-                        }}
-                        whileInView={{
-                            scale: 1,
-                        }}
-                        transition={{
-                            delay: isInitial ? buttons.length - i - 1 * 0.15 : 0,
-                        }}
-                    >
-                        {a.label}
-                    </Link>
-                );
-            })}
-        </div>
-    );
-});
+        return (
+            <div
+                id="navbar-btn-container"
+                className={clsx(
+                    "w-full h-full flex flex-row justify-end items-center gap-4 flex-grow pr-8",
+                    (!vp || vp.window.width < breakpoint) && "hidden",
+                )}
+            >
+                <Link
+                    href={"/sponsor"}
+                    className={navbarButtonClasses}
+                    initial={{
+                        scale: 0,
+                    }}
+                    whileInView={{
+                        scale: 1,
+                    }}
+                >Donate</Link>
+                {buttons.map((a, i) => {
+                    return (
+                        <Link
+                            key={i}
+                            className={navbarButtonClasses}
+                            href={a.href}
+                            initial={{
+                                scale: 0,
+                            }}
+                            whileInView={{
+                                scale: 1,
+                            }}
+                            transition={{
+                                delay: isInitial ? buttons.length - i - 1 * 0.15 : 0,
+                            }}
+                        >
+                            {a.label}
+                        </Link>
+                    );
+                })}
+            </div>
+        );
+    },
+);
 
 NavbarButtonGroup.displayName = "NavbarButtonGroup";
 

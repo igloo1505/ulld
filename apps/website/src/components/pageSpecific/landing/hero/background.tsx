@@ -6,7 +6,6 @@ import {
   motion,
   useMotionTemplate,
   useInView,
-  useScroll,
 } from "framer-motion";
 import { useEffect, useRef } from "react";
 
@@ -32,7 +31,7 @@ export const HeroBackground = ({
     mouseY.set(clientY - top);
   };
 
-  const scroll = useScroll()
+  /* const scroll = useScroll() */
 
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);

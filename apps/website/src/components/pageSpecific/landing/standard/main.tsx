@@ -7,6 +7,7 @@ import JoinWaitingList from "../waitinglist/joinWaitingList";
 import NavbarButtonPortal from "#/components/utility/portals/navbar";
 import Link from "next/link";
 import { navbarButtonClasses } from "#/components/layouts/navbar/navbarButtonGroup";
+import { MainSponsorSection } from "../sections/sponsorSection/main";
 
 interface HeroProps { }
 
@@ -27,6 +28,7 @@ const LandingPage = (props: HeroProps) => {
                     key="dsec"
                 />
             <JoinWaitingList />
+            <MainSponsorSection />
             <StoryOfUlldSection key="stulld" />
         </div>
     );

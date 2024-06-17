@@ -1,4 +1,3 @@
-// import { ParsedAppConfig } from "../types"
 import { applySearchParamConfigOverride } from "./applySearchParamOverride"
 import type { InternalDocumentConfigType } from "./internalDocumentTypes"
 import type { AppConfigSchemaOutput } from "./main"
@@ -30,6 +29,8 @@ export const getInternalConfig = <T extends object>(appConfig?: AppConfigSchemaO
             ]
         }
     }
+
+    console.log("appConfig: ", appConfig)
 
     if(!appConfig) {
     return {

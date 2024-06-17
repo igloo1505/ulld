@@ -51,7 +51,8 @@
     "./useAutoWrapCode": "./src/useAutoWrapCode.ts",
     "./useMinWidth": "./src/useMinWidth.ts",
     "./useShikiParse": "./src/useShikiParsedContent.ts",
-    "./useResponsiveCode": "./src/useResponsiveCodeblock.tsx"
+    "./useResponsiveCode": "./src/useResponsiveCodeblock.tsx",
+    "./useViewportProportionalPosition": "./src/useViewportProportionalPosition.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",

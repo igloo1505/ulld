@@ -1,3 +1,3 @@
-import { MyNotes, Demo, BlogPost, AboutUs } from "contentlayer/generated";
+import { MyNotes, BlogPost, AboutUs } from "contentlayer/generated";
 
-export type PostTypes = MyNotes | Demo | BlogPost | AboutUs
+export type PostTypes = MyNotes | BlogPost | AboutUs

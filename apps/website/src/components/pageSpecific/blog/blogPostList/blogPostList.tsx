@@ -1,14 +1,8 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import FeaturedBlogPost from "../featuredCard/main";
 import { PostTypes } from "./types";
 import { getAllBlogItems } from "../utils";
-import {
-    motion,
-    motionValue,
-    useIsomorphicLayoutEffect,
-    useTransform,
-} from "framer-motion";
 
 interface BlogPostListProps {
     tags: string[];
