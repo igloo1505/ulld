@@ -1,11 +1,11 @@
 import cn from "@ulld/utilities/cn";
-import { motion } from "framer-motion";
-import React, { ReactNode, useRef } from "react";
+import { HTMLMotionProps, motion } from "framer-motion";
+import React, { ComponentPropsWithoutRef, HTMLProps, ReactNode, useRef } from "react";
 import { useViewportProportionalPosition } from "@ulld/hooks/useViewportProportionalPosition";
 
 const maxOpacity = 0.8;
 
-interface BackgroundGradientProps {
+interface BackgroundGradientProps extends HTMLMotionProps<"div"> {
     children: ReactNode;
     className?: string;
     animate?: boolean;
@@ -22,6 +22,7 @@ export const BackgroundGradient = ({
     classes = {},
     className,
     border = false,
+    ...props
 }: BackgroundGradientProps) => {
     const ref = useRef<HTMLDivElement>(null!);
     const bg = useRef<HTMLDivElement>(null!);
@@ -54,6 +55,7 @@ export const BackgroundGradient = ({
 
     return (
         <motion.div
+            {...props}
             className={cn("relative p-[4px] group", classes.container)}
             ref={ref}
             onMouseEnter={() => handleHover(true)}

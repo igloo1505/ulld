@@ -1,4 +1,5 @@
 import MDXArticle from "#/components/layouts/mdxArticle";
+import MathjaxProvider from "#/components/utility/providers/mathjax";
 import { allStaticDocs } from "contentlayer/generated";
 import React from "react";
 
@@ -9,7 +10,11 @@ const UserDocsHomePage = (props: UserDocsHomePageProps) => {
     if (!item) {
         throw new Error("No item found for id docsHome. Fix this Einstein.");
     }
-    return <MDXArticle paddingTop={false} mdx={item} />;
+    return (
+        <MathjaxProvider>
+            <MDXArticle paddingTop={false} mdx={item} />
+        </MathjaxProvider>
+    );
 };
 
 UserDocsHomePage.displayName = "UserDocsHomePage";

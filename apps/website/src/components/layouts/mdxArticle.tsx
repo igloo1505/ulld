@@ -4,9 +4,11 @@ import React, {
     ForwardedRef,
     HTMLProps,
     forwardRef,
+    useImperativeHandle,
     useMemo,
+    useRef,
 } from "react";
-import { cn } from "@ulld/utilities/cn"
+import { cn } from "@ulld/utilities/cn";
 import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
 import "#/styles/proseStyles.scss";
 import { DocumentTypes } from "contentlayer/generated";
@@ -18,24 +20,33 @@ import store from "#/state/store";
 import Citations from "../academic/citations";
 import { NoteStateObserver } from "@ulld/state/observers/noteState";
 import MdxArticleNavButtons from "./mdxArticleNavButtons";
-import {useAutoWrapCode} from "@ulld/hooks/useAutoWrapCode"
-
+import { useAutoWrapCode } from "@ulld/hooks/useAutoWrapCode";
+import { useResponsiveCode } from "@ulld/hooks/useResponsiveCode";
 
 interface MDXArticleProps extends HTMLProps<HTMLElement> {
     mdx: DocumentTypes;
     paddingTop?: boolean;
     isSource?: boolean;
-    hideSourceButton?: boolean
-    wrapCode?: boolean
-    docsWide?: boolean
+    hideSourceButton?: boolean;
+    wrapCode?: boolean;
+    docsWide?: boolean;
 }
-
 
 const MDXArticle = forwardRef(
     (
-        { mdx, wrapCode, docsWide, paddingTop = true, hideSourceButton = false, isSource, ...props }: MDXArticleProps,
-        ref: ForwardedRef<HTMLElement>,
+        {
+            mdx,
+            wrapCode,
+            docsWide,
+            paddingTop = true,
+            hideSourceButton = false,
+            isSource,
+            ...props
+        }: MDXArticleProps,
+        _ref: ForwardedRef<HTMLElement>,
     ) => {
+        const { ref } = useResponsiveCode<HTMLDivElement>({nested: true, defaultMaxWidth: "40vw"});
+        useImperativeHandle(_ref, () => ref.current!, []);
         const id = props.id ? props.id : getRandomId();
         const article = useMDXComponent(mdx.body.code);
         const Article = useMemo(() => article, []);
@@ -52,24 +63,28 @@ const MDXArticle = forwardRef(
         return (
             <InternalReduxProvider>
                 <NoteStateObserver store={store} />
-                {!hideSourceButton && <MdxArticleNavButtons
-                    articleId={"id" in mdx ? mdx.id : undefined}
-                    isSource={isSource}
-                />}
+                {!hideSourceButton && (
+                    <MdxArticleNavButtons
+                        articleId={"id" in mdx ? mdx.id : undefined}
+                        isSource={isSource}
+                    />
+                )}
                 <article
                     {...props}
                     ref={ref}
                     id={id}
                     className={cn(
                         "@container/mdx w-full prose prose-invert prose-a:text-link mdx py-8 group-[.mdx-wide]/mdxLayout:w-full group-[.mdx-wide]/mdxLayout:md:!max-w-[min(1440px,calc(100%-128px))] group-[.mdx-full]/mdxLayout:!max-w-full",
-                        docsWide ? "!max-w-[min(calc(100%-6rem),1440px)]" : "!max-w-[min(83%,1080px)]",
+                        docsWide
+                            ? "!max-w-[min(calc(100%-6rem),1440px)]"
+                            : "!max-w-[min(83%,1080px)]",
                         paddingTop && "pt-[108px]",
                         props.className,
                     )}
                 >
-                    <Article 
+                    <Article
                         /* ref={(wrapCode || ("wrapCode" in mdx && mdx.wrapCode)) ? wrapCodeRef : undefined} */
-                        components={components} 
+                        components={components}
                     />
                     {citationsEm}
                 </article>

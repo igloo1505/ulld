@@ -2,11 +2,12 @@ import { BackgroundGradientCard } from "#/components/layouts/backgroundGradientC
 import React, { ComponentPropsWithoutRef, ReactNode } from "react";
 import clsx from "clsx";
 import { cn } from "@ulld/utilities/cn";
+import { useRouter } from "next/navigation";
 
 interface SponsorLogoCardProps
   extends Omit<
     ComponentPropsWithoutRef<typeof BackgroundGradientCard>,
-    "children" | "classes"
+    "children" | "classes" | "title"
   > {
   logo: ReactNode;
   title: ReactNode;
@@ -32,14 +33,17 @@ const SponsorLogoCard = ({
   classes = {},
   ...props
 }: SponsorLogoCardProps) => {
+    const router = useRouter()
   return (
     <BackgroundGradientCard
       {...props}
       classes={classes}
       className={clsx(
-        "grid grid-cols-[120px_1fr] gap-6 border place-items-center",
+        "grid cursor-pointer grid-cols-[120px_1fr] gap-6 border place-items-center",
         isPrimary && "col-span-2",
       )}
+       role="button"
+            onClick={() => href ? router.push(href) : {}}
     >
       <div
         className={"h-[64px] w-auto flex flex-col justify-center items-center"}

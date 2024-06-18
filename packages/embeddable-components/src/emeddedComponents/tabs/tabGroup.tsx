@@ -20,7 +20,6 @@ import { Tab } from './tab'
 /* NOTE: Overriding children to display better property in documentation without causing typescript errors. */
 export const TabGroup = ({ children: _children, primary }: TabGroupProps & {children: Array<ReactElement<TabProps, typeof Tab>>}) => {
     const children = _children.filter((a) => typeof a !== "string")
-    console.log("children: ", children, _children.forEach((c) => console.log(typeof c)))
     /* HACK: Fix this when back on wifi. Look up the syntax for using a specific component as a children array type. */
     /* const titles = children.map((c) => c.props.title) */
     /// @ts-ignore

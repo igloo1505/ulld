@@ -1,6 +1,6 @@
 "use client";
 import { LogoAsText } from "#/components/general/logoAsText";
-import React, { useState } from "react";
+import React from "react";
 import { BackgroundBeams } from "./beams";
 import { z } from "zod";
 import HighlightedTextInput from "#/components/general/inputs/highlightedTextInput";
@@ -8,8 +8,6 @@ import { useForm } from "@ulld/full-form/form";
 import { Form } from "@ulld/tailwind/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { client } from "#/trpc/main";
-import store from "#/state/store";
-import { showToast } from "@ulld/state/slices/ui";
 import { onEnter } from "@ulld/state/listeners/keydown";
 import { useToast } from "@ulld/tailwind/use-toast";
 
@@ -64,10 +62,9 @@ const JoinWaitingList = (props: JoinWaitingListProps) => {
                 </h1>
                 <p></p>
                 <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center relative z-10">
-                    Sign up to receive emails regarding the release date of <LogoAsText fontSize={13} />
-                    , new features as they're added, Welcome to <LogoAsText fontSize={13} />, the note
+                    Welcome to <LogoAsText fontSize={13} />, the note
                     taking software tailored to meet the needs of modern students and
-                    academics, from grade school to post-doc.
+                    academics, from grade school to post-doc. Sign up to receive emails regarding the release date of <LogoAsText fontSize={13} /> and to hear about new features as they're added.
                 </p>
                 <Form
                     {...form}

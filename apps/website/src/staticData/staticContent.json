@@ -28,6 +28,13 @@
   "links": {
     "home": "https://uhlittlelessdum.com",
     "contactMe": "/contactMe",
+    "repo": {
+      "home": "https://github.com/igloo1505/ulld",
+      "clone": {
+        "https": "https://github.com/igloo1505/ulld.git",
+        "ssh": "git@github.com:igloo1505/ulld.git"
+      }
+    },
     "media": {
       "logo": "https://uhlittlelessdum.com/icons/android-chrome-512x512.png",
       "screenshots": {
@@ -35,7 +42,8 @@
       }
     },
     "fund": {
-      "paypalDonate": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU"
+      "paypalDonate": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU",
+      "patreon": "https://www.patreon.com/uhlittlelessdum/about"
     },
     "social": {
       "github": "https://github.com/igloo1505/ulld"

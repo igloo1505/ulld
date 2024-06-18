@@ -8,6 +8,7 @@ import NavbarButtonPortal from "#/components/utility/portals/navbar";
 import Link from "next/link";
 import { navbarButtonClasses } from "#/components/layouts/navbar/navbarButtonGroup";
 import { MainSponsorSection } from "../sections/sponsorSection/main";
+import { WhyShouldIUseULLDSection } from "../sections/whyShouldIUse/main";
 
 interface HeroProps { }
 
@@ -28,6 +29,7 @@ const LandingPage = (props: HeroProps) => {
                     key="dsec"
                 />
             <JoinWaitingList />
+            <WhyShouldIUseULLDSection />
             <MainSponsorSection />
             <StoryOfUlldSection key="stulld" />
         </div>

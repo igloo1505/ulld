@@ -5,12 +5,15 @@ import InternalTag from "#/components/docUtils/button";
 import ExtendsColorProps from "#/components/docUtils/extendsColorProps";
 import Extends from "#/components/docUtils/extendsReference";
 import RemoteExampleLimitation from "#/components/docUtils/remoteExampleLimitation";
+import StaticDataLink from "#/components/docUtils/staticDataLink";
+import StaticLinkValue from "#/components/docUtils/staticLinkValue";
+import CodeBlock from "#/components/general/codeBlock";
 import Hint from "#/components/general/hint";
 import { LogoAsText } from "#/components/general/logoAsText";
 import ComingSoon from "#/components/utility/comingSoon";
 import { AdditionalComponents } from "@ulld/component-map/types";
 import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
-import { Button } from "@ulld/tailwind/button";
+
 
 export const webComponentMap: AdditionalComponents<any> = [
     {
@@ -67,5 +70,20 @@ export const webComponentMap: AdditionalComponents<any> = [
         regex: new RegExp("<Tag"),
         component: InternalTag,
         label: "Tag"
+    },
+    {
+        regex: new RegExp("<CodeBlock"),
+        component: CodeBlock,
+        label: "CodeBlock"
+    },
+    {
+        regex: new RegExp("<StaticLink"),
+        component: StaticDataLink,
+        label: "StaticLink"
+    },
+    {
+        regex: new RegExp("<StaticLinkContent"),
+        component: StaticLinkValue,
+        label: "StaticLinkContent"
     },
 ];

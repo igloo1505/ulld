@@ -5,3 +5,72 @@ created: 6-6-24
 
 
 # Getting Started
+
+<LogoAsText /> functions primarily as an ecosystem of note taking and academic focused React components and a build script to generate a complete web application using all of the most modern technologies, customized to your own configuration. 
+
+<Admonition title="Environment" type="info" sidebar>
+ For now, <LogoAsText /> runs only in the browser with an accompanying **Node** backend. In time, a companion mobile application will be released for both Android and iOS, and if user's collectively determine that a native desktop app is preferrable, a native desktop application as well.
+</Admonition>
+
+
+## Where to go from here
+
+- If you are unfamiliar with **JSX** syntax, review the [intro to jsx](/docs/user/introToJsx) article.
+- Configure your application using either the configuration form [here](/configure), or by writing your own [`appConfig.ulld.json`](#write-own-config)
+- If you do not have `Node.js` installed, install the specific _stable_ build for your operating system by clicking [here](https://nodejs.org)[^1]
+- While an installer completely independent of **Git** is in the works, for now, the main <LogoAsText /> repo must be cloned using **Git**. Install **Git** by following the instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), and then use:
+
+
+
+<CodeBlock>
+    {`git clone [link:links.repo.clone.https]`}
+</CodeBlock>
+
+
+**Node.js** ships with an accompanying package, `npm`, the _Node Package Manager_. A preferable alternative to **npm**, which needs to be installed separately, is **pnpm** or _Performant Node Package Manager_. If you are comfortable installing packages using the terminal, you can install **pnpm** by following the instructions [here](https://pnpm.io/installation).
+
+
+<TabGroup>
+    <Tab label="npm">
+        `npm install`
+    </Tab>
+    <Tab label="pnpm">
+        `pnpm add`
+    </Tab>
+</TabGroup>
+
+
+
+
+
+
+### **Optional:** Writing your own configuration file ||write-own-config||
+
+If you choose to write your own configuration file, follow the `AppConfigSchemaOutput` type exported from `@ulld/configschema/zod/main`. That same module also exports a zod object, `appConfigSchema` that can be used to generate a more complete `AppConfigSchemaOutput` type with sensible defaults, however you must at least fulfill the `AppConfigSchemaInput` type and then write the output to an `appConfig.ulld.json` file at the root of the <Ul yellow>application</Ul>. That would look something like this:
+
+```tsx /TODO:/
+import fs from 'fs'
+import path from 'path'
+import {appConfigSchema, AppConfigSchemaInput} from "@ulld/configschema/zod/main"
+
+// TODO: Change this to wherever you are storing the application.
+const target = "/Users/bigsexy/ulld/appConfig.schema.json" // Yes... my real home directory. Self confidence is important.
+
+const myConfig: AppConfigSchemaInput = {
+    fsRoot: "/Users/bigsexy/Desktop/notes",
+    ...
+}
+
+fs.writeFileSync(target, JSON.stringify(myConfig, null, 4), { encoding: "utf-8" })
+
+console.log(`Your app config was written to ${target}!`)
+
+```
+
+<Hint>
+    Make ***sure*** to set the `fsRoot` key to the root of your <Ul yellow>notes</Ul>; not the root of your compiled application. This allows the application to be stored separately from the notes folder.
+</Hint>
+
+
+
+[^1]: **Node.js** is a popular _run time_ that allows Javascript, a language that was intended to run inside of browser environments, to be executed on the server. <LogoAsText fontSize={13} />, along with many other applications relies on a locally running server instance for interacting with it's internal database. <LogoAsText fontSize={13} /> does not contact any outside service or remote database if your application does not specifically set a database connection url to a remote instance, and if your application does not provide credentials for a third party service like Google Calendar.

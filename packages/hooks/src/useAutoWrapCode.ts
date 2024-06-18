@@ -21,6 +21,10 @@ export const useAutoWrapCode = ({ maxWidth: mw }: Props = {}) => {
         return "40vw";
     };
 
+    const getLines = () => {
+            
+        }
+
     const setMaxWidth = (isResize?: boolean) => {
         if(!ref.current) return
         for (const k of ref.current.querySelectorAll("code")) {
@@ -29,6 +33,7 @@ export const useAutoWrapCode = ({ maxWidth: mw }: Props = {}) => {
                 let targets = getTargets();
                 for (const k of targets) {
                     let ems = k.querySelectorAll(".line");
+                    console.log("ems: ", ems)
                     ems?.forEach((a) => {
                         if ("style" in a) {
                             /* @ts-ignore */

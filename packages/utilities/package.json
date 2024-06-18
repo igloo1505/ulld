@@ -60,7 +60,9 @@
     "./shikiLanguages": "./src/shiki/languageList.ts",
     "./shikiThemes": "./src/shiki/themeList.ts",
     "./getAssumedDimensions": "./src/utils/getAssumedDimensions.ts",
-    "./removeEmptyChildren": "./src/utils/removeEmptyChildren.ts"
+    "./removeEmptyChildren": "./src/utils/removeEmptyChildren.ts",
+    "./getAllRegexMatches": "./src/utils/getAllRegexMatches.ts",
+    "./replaceContentByMatch": "./src/utils/replaceContentByRegexMatch.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",
