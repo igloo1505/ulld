@@ -9,14 +9,14 @@
         ".mdx",
         ".md",
         ".ipynb",
+        ".pdf",
         ".json",
         ".csv",
         ".tsv",
         ".excel",
         ".tex",
         ".db",
-        ".html",
-        ".pdf"
+        ".html"
     ],
     "noteTypes": [],
     "bibPath": "/citations.bib",

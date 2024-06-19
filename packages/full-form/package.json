@@ -30,7 +30,7 @@
     "./mathInput": "./src/fullFormMathInput.tsx",
     "./textInputWithBadgeList": "./src/fullFormTextInputWithBadgeList.tsx",
     "./checkboxOneFromGroup": "./src/inputs/checkbox/checkboxOneFromGroup/main.tsx",
-    "./reorder": "./inputs/reorder/general/main.tsx",
+    "./reorder": "./src/inputs/reorder/general/main.tsx",
     "./codeTextArea": "./src/codeTextArea.tsx",
     "./types": "./src/types.ts",
     "./provider": "./src/fullFormProvider.tsx",

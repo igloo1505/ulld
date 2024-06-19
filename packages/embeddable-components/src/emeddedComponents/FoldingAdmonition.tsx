@@ -61,7 +61,7 @@ const FoldingAdmonition = ({
             )}
             <motion.div
                 className={clsx(
-                    "body admonition-body px-4 pb-4 @[640px]/admonition:px-6 space-y-3 bg-gray-100 dark:bg-gray-800 origin-top relative overflow-hidden will-change-auto",
+                    "body admonition-body bg-gray-100 dark:bg-gray-800 origin-top relative overflow-hidden will-change-auto",
                     type === "plain" && "bg-transparent dark:bg-transparent",
                 )}
                 initial={dropdown ? (_open ? "open" : "closed") : "open"}
@@ -69,17 +69,15 @@ const FoldingAdmonition = ({
                 variants={{
                     open: {
                         height: "auto",
-                        paddingBottom: "1rem",
-                        paddingTop: "1rem"
                     },
                     closed: {
                         height: 0,
-                        paddingBottom: 0,
-                        paddingTop: 0
                     },
                 }}
             >
+                <div className={"w-full h-full p-4 space-y-3"}>
                 {children}
+                </div>
             </motion.div>
             {footer && (
                 <div
