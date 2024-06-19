@@ -3,11 +3,9 @@ import React from 'react'
 import { LeadTextProps } from './leadProps'
 
 
-
-
-export const LeadText = ({ children, center }: LeadTextProps) => {
+export const LeadText = ({ children, center, className }: LeadTextProps & {className?: string}) => {
     return (
-        <p className={clsx("text-xl text-muted-foreground", center && "w-full text-center")}>{children}</p>
+        <p className={clsx("text-xl text-muted-foreground", center && "w-full text-center", className)}>{children}</p>
     )
 }
 

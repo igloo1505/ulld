@@ -1,19 +1,17 @@
-"use client"
+"use client";
 import { ReactNode, createContext, useReducer, useContext } from "react";
-
-export type AvailableColorStringFormats = "hex" | "hsl" | "hsv" | "rgb"
+import { AvailableColorStringFormats } from "@ulld/utilities/types";
 
 interface ConfigureColorState {
     addColorModal: boolean;
-    editColorModal?: string
-    colorFormat: AvailableColorStringFormats
+    editColorModal?: string;
+    colorFormat: AvailableColorStringFormats;
 }
-
 
 const defaultInitialValues: ConfigureColorState = {
     addColorModal: false,
     editColorModal: undefined,
-    colorFormat: "hsl"
+    colorFormat: "hsl",
 };
 
 export const ConfigureColorContext =

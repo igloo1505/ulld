@@ -1,5 +1,6 @@
+"use client"
 import { useEffect, useState } from "react";
-import { codeToHtml, BundledTheme, BundledLanguage } from "shiki";
+import { codeToHtml, type BundledTheme, type BundledLanguage } from "shiki";
 
 export const useShikiParse = (
     initialContent: string,
@@ -12,6 +13,7 @@ export const useShikiParse = (
     const [language, setLanguage] = useState<BundledLanguage>(initialLanguage);
 
     const handleContent = async (_content: string) => {
+        console.log("_content: ", _content)
         const parsedContent = await codeToHtml(_content, {
             theme: theme,
             lang: language,

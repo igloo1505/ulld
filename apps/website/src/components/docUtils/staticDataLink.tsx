@@ -23,7 +23,7 @@ const StaticDataLink = ({ link, children }: StaticDataLinkProps) => {
         throw new Error(`StaticDataLink could not parse the link ${link}`);
     }
     return (
-        <Link className={"text-link"} href={href}>
+        <Link className={"!text-link [&_*]:!text-link"} href={href}>
             {children}
         </Link>
     );

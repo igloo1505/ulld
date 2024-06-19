@@ -196,12 +196,12 @@
                 "light": "hsl(217, 91%, 60%)"
             },
             "primary": {
-                "dark": "hsl(0, 0%, 0%)",
-                "light": "hsl(0, 0%, 0%)"
+                "dark": "hsl(var(--primary))",
+                "light": "hsl(var(--primary))"
             },
             "secondary": {
-                "dark": "hsl(0, 0%, 0%)",
-                "light": "hsl(0, 0%, 0%)"
+                "dark": "hsl(var(--secondary))",
+                "light": "hsl(var(--secondary))"
             }
         },
         "theme": "ulld"
@@ -266,5 +266,15 @@
         "whiteboard": "@ulld/whiteboard",
         "components": {},
         "parsers": {}
+    },
+    "build": {
+        "database": {
+            "type": "SQLite",
+            "postgres": {
+                "port": 5432,
+                "dbName": "ulld"
+            },
+            "prioritize": "speed"
+        }
     }
 }

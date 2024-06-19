@@ -1,6 +1,5 @@
 import React from "react";
 import { ConfigureColorProvider } from "./colorFormContext";
-import ConfigureColorFormContent from "./configureColorFormContent";
 import ConfigureColorList from "./colorList";
 import AddColorModal from "../../modals/addColorModal/main";
 import EditColorModal from "../../modals/editColorModal/main";
@@ -13,7 +12,6 @@ const ConfigureColorsForm = (props: ConfigureColorsFormProps) => {
             <AddColorModal />
             <EditColorModal />
             <ConfigureColorList />
-            <ConfigureColorFormContent />
         </ConfigureColorProvider>
     );
 };

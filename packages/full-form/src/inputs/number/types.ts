@@ -13,5 +13,6 @@ export interface NumberInputProps {
     label?: string
     desc?: string
     decimals?: number
+    noButtons?: boolean
     inputProps?: Omit<ComponentProps<typeof Input>, "onChange" | "value">
 }

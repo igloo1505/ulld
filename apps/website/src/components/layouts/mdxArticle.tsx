@@ -6,7 +6,6 @@ import React, {
     forwardRef,
     useImperativeHandle,
     useMemo,
-    useRef,
 } from "react";
 import { cn } from "@ulld/utilities/cn";
 import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
@@ -20,7 +19,6 @@ import store from "#/state/store";
 import Citations from "../academic/citations";
 import { NoteStateObserver } from "@ulld/state/observers/noteState";
 import MdxArticleNavButtons from "./mdxArticleNavButtons";
-import { useAutoWrapCode } from "@ulld/hooks/useAutoWrapCode";
 import { useResponsiveCode } from "@ulld/hooks/useResponsiveCode";
 
 interface MDXArticleProps extends HTMLProps<HTMLElement> {

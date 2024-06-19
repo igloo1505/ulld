@@ -49,6 +49,14 @@ code {
   }
 }
 
+:not(pre) {
+  code {
+    background-color: hsl(var(--secondary));
+    padding: 0.2rem 0.3rem;
+    border-radius: 4px;
+  }
+}
+
 p,
 li {
   code {

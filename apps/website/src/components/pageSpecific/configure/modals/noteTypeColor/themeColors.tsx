@@ -3,7 +3,6 @@ import { Path, useFormContext } from "@ulld/full-form/form";
 import React, { useEffect, useState } from "react";
 import { z } from "zod";
 import { ColorInput } from "@ulld/full-form/colorInput";
-import { FormLabel } from "@ulld/tailwind/form";
 import tinycolor from "tinycolor2";
 import { Label } from "@ulld/tailwind/label";
 
@@ -30,9 +29,10 @@ const ThemeColors = ({ theme }: ThemeColorsProps) => {
         if(fg){
             opts.push(fg as string)
         }
-        if(isDefault.fg && bg){
-            let bgColor = tinycolor.mostReadable(bg as string, opts).toHslString()
-            form.setValue(names.fg, bgColor)
+        if(isDefault.fg && bg && typeof bg === "string" && bg.indexOf("--") === -1){
+            let fgColor = tinycolor.mostReadable(bg as string, opts).toHslString()
+            console.log("fgColor: ", fgColor)
+            form.setValue(names.fg, fgColor)
         }
     }, [bg])
 

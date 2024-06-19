@@ -29,29 +29,31 @@ const docTypeColorGroup = z.object({
         ),
 });
 
+
+
 export const docTypeUISchema = z
     .object({
         styles: z
             .object({
                 dark: docTypeColorGroup.default({}),
                 light: docTypeColorGroup.default({}),
-                combined_classes: z
-                    .string()
-                    .optional()
-                    .describe(
-                        "Css classes to be applied to elements related to this specific document type.",
-                    ),
+                // combined_classes: z
+                //     .string()
+                //     .optional()
+                //     .describe(
+                //         "Css classes to be applied to elements related to this specific document type.",
+                //     ),
             })
             .default({})
-            .transform((a) => {
-                return {
-                    dark: a.dark,
-                    light: a.light,
-                    combined_classes:
-                        a.combined_classes ||
-                        `${a.dark.bg || ""} ${a.dark.fg || ""} ${a.light.bg || ""} ${a.light.fg || ""}`,
-                };
-            }),
+            // .transform((a) => {
+            //     return {
+            //         dark: a.dark,
+            //         light: a.light,
+            //         // combined_classes:
+            //         //     a.combined_classes ||
+            //         //     `${a.dark.bg || ""} ${a.dark.fg || ""} ${a.light.bg || ""} ${a.light.fg || ""}`,
+            //     };
+            // }),
     })
     .default({});
 

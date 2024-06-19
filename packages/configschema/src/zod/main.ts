@@ -2,8 +2,7 @@ import { z } from 'zod'
 import { performanceConfigSchema } from './performanceConfig'
 import { terminalConfigSchema } from './terminalConfig'
 import { documentTypeConfigSchema } from './documentConfigSchema'
-import { zodPathGlobTransform, zodWithForwardSlashTransform } from './configUtilitySchemas'
-import { zodStringFieldWithFileExtension } from './customConfigSchemas'
+import { zodPathGlobTransform } from './configUtilitySchemas'
 import { dateParseConfigSchema } from './dateParseConfig'
 import { codeConfigSchema } from './codeConfig'
 import { navigationConfigSchema } from './navigationConfig'
@@ -19,7 +18,7 @@ import { allParsableFileExtensionSchema } from './secondaryConfigParse/getParsab
 import { featuresConfigSchema } from './features/main'
 import { pluginSlotSchema } from '@ulld/developer-schemas/slots'
 import { withForwardSlash, withForwardSlashOptional } from '@ulld/utilities/fsUtils'
-
+import {buildOnlySchema} from "./build/main"
 
 export const zodRegexField = z.union([
     z.instanceof(RegExp),
@@ -100,7 +99,8 @@ export const appConfigSchema = z.object({
     credentials: credentialsConfigSchema,
     performance: performanceConfigSchema,
     terminal: terminalConfigSchema,
-    slots: pluginSlotSchema.default({}) 
+    slots: pluginSlotSchema.default({}),
+    build: buildOnlySchema
 })
 
 

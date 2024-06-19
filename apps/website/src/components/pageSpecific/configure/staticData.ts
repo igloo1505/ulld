@@ -26,18 +26,21 @@ export const sidebarNavItems: {title: string, href: string, id: string}[] = [
     href: "/configure/colors",
     id: "colors"
   },
-  // {
-  //   title: "Appearance",
-  //   href: "/configure/appearance",
-  // },
-  // {
-  //   title: "Notifications",
-  //   href: "/configure/notifications",
-  // },
-  // {
-  //   title: "Display",
-  //   href: "/configure/display",
-  // },
+  {
+    title: "Database",
+    href: "/configure/database",
+    id: "database"
+  },
+  {
+    title: "Notebooks",
+    href: "/configure/notebook",
+    id: "notebook"
+  },
+  {
+    title: "Search",
+    href: "/configure/search",
+    id: "search"
+  },
 ]
 
 

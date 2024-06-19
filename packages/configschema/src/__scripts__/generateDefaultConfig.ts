@@ -2,7 +2,7 @@ import { AppConfigSchemaInput, appConfigSchema } from "../zod/main";
 import fs from "fs";
 import path from "path";
 
-const targetPath = path.join(__dirname, "/generatedDefaultConfigs/base.json");
+const targetPath = path.join(__dirname, "../defaults/generatedDefaultConfigs/base.json");
 
 const dummyConfig: AppConfigSchemaInput = {
     fsRoot: "/Users/bigsexy/notes",

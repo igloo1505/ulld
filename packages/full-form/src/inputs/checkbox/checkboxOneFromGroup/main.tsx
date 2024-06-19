@@ -16,7 +16,7 @@ interface Option {
 }
 
 interface CheckboxOneFromGroupProps<T extends FieldValues>
-    extends Omit<BaseInputProps<T, undefined>, "desc"> {
+    extends Omit<BaseInputProps<T, "">, "desc"> {
     options: Option[];
 }
 
@@ -34,7 +34,7 @@ const CheckboxItem = <T extends FieldValues>({
     );
 };
 
-const CheckboxOneFromGroup = <T extends FieldValues>({
+export const CheckboxOneFromGroup = <T extends FieldValues>({
     name,
     label,
     options
@@ -70,5 +70,3 @@ const CheckboxOneFromGroup = <T extends FieldValues>({
 };
 
 CheckboxOneFromGroup.displayName = "CheckboxOneFromGroup";
-
-export default CheckboxOneFromGroup;

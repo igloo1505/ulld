@@ -31,6 +31,7 @@
     "./vercel": "./src/logoIcons/vercel.tsx",
     "./youtube": "./src/logoIcons/youtube.tsx",
     "./paypal": "./src/logoIcons/paypal.tsx",
+    "./patreon": "./src/logoIcons/patreon.tsx",
     "./ulld": "./src/logo/ulldLogo.tsx",
     "./ulld-animated": "./src/logo/animatedLogo.tsx",
     "./clientX": "./src/clientSideUtilityComponents/xIcon.tsx",

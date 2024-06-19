@@ -1,14 +1,8 @@
 import { z } from "zod";
 import { defaultUlldColorMap } from "./defaultColorMap";
-import tinycolor from "tinycolor2";
+import { convertColorString } from "@ulld/utilities/convertColorString";
 
-const colorTransform = (val: string) => {
-    return tinycolor(val).toHslString();
-};
-
-const colorTransformOptional = (val?: string | null) => {
-    return val ? tinycolor(val).toHslString() : undefined;
-};
+const colorTransformOptional = (val?: string | null) => val ? convertColorString(val) : undefined;
 
 const colorScaleKeys = [
     "50",
@@ -59,7 +53,10 @@ export const colorGroup = z.object({
 export type ColorGroup = z.output<typeof colorGroup>;
 
 const colorValue = z
-    .union([colorGroup, z.string().transform(colorTransform)])
+    .union([
+        colorGroup,
+        z.string().transform((c) => convertColorString(c, "hsl")),
+    ])
     .nullish()
     .transform((a) => {
         if (!a) return undefined;

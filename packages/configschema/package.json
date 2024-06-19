@@ -58,7 +58,7 @@
   "scripts": {
     "dev": "echo 'Add dev script here'",
     "updateJsonSchemas": "tsx src/__scripts__/updateJsonSchema.ts",
-    "generateDefaultConfig": "tsx src/defaults/generateDefaultConfig.ts",
+    "generateDefaultConfig": "tsx src/__scripts__/generateDefaultConfig.ts",
     "buildLocal": "tsx ./src/__scripts__/updateShikiThemes.ts && tsx ./src/defaults/generateDefaultConfig.ts",
     "test": "echo 'Add test script here'",
     "lint": "echo 'Add lint script here'"

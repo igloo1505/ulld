@@ -5,7 +5,7 @@ import ColorTable from "./colorTable";
 
 const ConfigureColorList = () => {
     return (
-        <div className={"w-full space-y-4"}>
+        <div className={"w-full space-y-4 [&_div]:overflow-y-hidden"}>
             <ColorTable />
         </div>
     );

@@ -14,9 +14,6 @@ import { ConfigColorValueTypeWithId } from "@ulld/configschema/zod/ui/colorsConf
 import InlineCode from "#/components/general/inlineCode";
 import { Button } from "@ulld/tailwind/button";
 import { PlusIcon, XIcon } from "lucide-react";
-import { AvailableColorStringFormats } from "./colorFormContext";
-import tinycolor from "tinycolor2";
-import { ColorFormat, colorFormats } from "./staticData";
 import { ColorFormatDropdown } from "./colorFormatDropdown";
 import { defaultUlldColorMap } from "@ulld/configschema/defaultColorMap";
 import clsx from "clsx";
@@ -26,14 +23,13 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "@ulld/tailwind/tooltip";
+import { AvailableColorStringFormats } from "@ulld/utilities/types";
+import { convertColorString } from "@ulld/utilities/convertColorString";
 
 const defaultKeys = Object.keys(defaultUlldColorMap);
 
 const formatColor = (color: string, format: AvailableColorStringFormats) => {
-    let fnc: ColorFormat | undefined = colorFormats.find(
-        (c) => c.value === format,
-    );
-    return fnc ? fnc.func(tinycolor(color)) : color;
+    return convertColorString(color, format);
 };
 
 const TableCellColor = ({
@@ -61,7 +57,6 @@ const TableCellColor = ({
         <TableCell className={""}>
             <span
                 className={"w-4 h-4 inline-block rounded border mr-4"}
-                /* w-8 h-8 inline-flex flex-col justify-center items-center */
                 style={{
                     backgroundColor: item[target],
                 }}
@@ -82,7 +77,10 @@ const RemoveCellContent = ({
 }) => {
     return (
         <span
-            className={clsx("w-8 h-8 inline-flex flex-col justify-center items-center", isDefault && "!cursor-not-allowed")}
+            className={clsx(
+                "w-8 h-8 inline-flex flex-col justify-center items-center",
+                isDefault && "!cursor-not-allowed",
+            )}
         >
             <XIcon
                 role="button"

@@ -7,17 +7,23 @@ import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
 import staticContent from "staticContent";
 import { GithubIcon } from "@ulld/icons/github";
 import { PaypalIcon } from "@ulld/icons/paypal";
+import { PatreonIcon } from "@ulld/icons/patreon";
 import FooterBanners from "./footerBanner";
-import clsx from 'clsx'
+import clsx from "clsx";
 
-
-const footerKeys = Object.keys(footerLinks).filter((a) => a !== "banners")
+const footerKeys = Object.keys(footerLinks).filter((a) => a !== "banners");
 
 const Footer = () => {
     const ref = useRef<HTMLDivElement>(null!);
-    const inView = useInView(ref, {once: true});
+    const inView = useInView(ref, { once: true });
     return (
-        <div id="main-footer-container" className={clsx("group/footer max-w-content flex flex-col justify-center items-center gap-6 px-12 pb-8 pt-6 border-t bg-background z-10 relative", (footerLinks.banners && footerLinks.banners.length > 0) && "withBanners")}>
+        <div
+            id="main-footer-container"
+            className={clsx(
+                "group/footer max-w-content flex flex-col justify-center items-center gap-6 px-12 pb-8 pt-6 border-t bg-background z-10 relative",
+                footerLinks.banners && footerLinks.banners.length > 0 && "withBanners",
+            )}
+        >
             <div
                 ref={ref}
                 className={
@@ -43,13 +49,21 @@ const Footer = () => {
                         <a href={staticContent.links.social.github}>
                             <GithubIcon
                                 className={
-                                    "text-gray-300 h-6 w-6 hover:text-primary transition-colors duration-300"
+                                    "text-gray-300 h-6 w-6 hover:text-white transition-colors duration-300"
                                 }
                             />
                         </a>
-                        <a href={staticContent.links.fund.paypalDonate} className={""}>
+                        <a href={staticContent.links.fund.paypalDonate}>
                             <PaypalIcon
-                                className={"fill-gray-300 h-6 w-6 hover:fill-primary"}
+                                className={"fill-gray-300 h-6 w-6 hover:fill-white"}
+                                style={{
+                                    transition: "fill 300ms ease-in-out",
+                                }}
+                            />
+                        </a>
+                        <a href={staticContent.links.fund.patreon}>
+                            <PatreonIcon
+                                className={"fill-gray-300 h-6 w-6 hover:fill-white"}
                                 style={{
                                     transition: "fill 300ms ease-in-out",
                                 }}
@@ -58,7 +72,9 @@ const Footer = () => {
                     </div>
                 </div>
                 <div
-                    className={"flex flex-row justify-around items-start w-full gap-6 mt-6 lg:mt-0 lg:ml-6"}
+                    className={
+                        "flex flex-row justify-around items-start w-full gap-6 mt-6 lg:mt-0 lg:ml-6"
+                    }
                     style={{
                         gridTemplateColumns: `repeat(${footerKeys.length}, 1fr)`,
                     }}
@@ -76,25 +92,23 @@ const Footer = () => {
                     })}
                 </div>
             </div>
-            {footerLinks.banners && <FooterBanners
-                inView={inView}
-                banners={footerLinks.banners}
-            />
-            }
+            {footerLinks.banners && (
+                <FooterBanners inView={inView} banners={footerLinks.banners} />
+            )}
             <motion.p
                 className={"flex flex-col text-sm text-gray-400 text-center"}
                 initial={{
                     x: -200,
                     scale: 0,
-                    opacity: 0
+                    opacity: 0,
                 }}
                 whileInView={{
                     x: 0,
                     scale: 1,
-                    opacity: 1
+                    opacity: 1,
                 }}
                 transition={{
-                    delay: 2
+                    delay: 2,
                 }}
             >
                 {`© Uh Little Less Dum ${new Date().getFullYear()}- All rights reserved, but do your thang`}

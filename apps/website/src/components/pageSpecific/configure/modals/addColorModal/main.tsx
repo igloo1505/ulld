@@ -43,7 +43,6 @@ const AddColorModal = () => {
   } = useColorFormState();
 
   const onAccept = (values: AddColorSchemaType) => {
-    console.log(`Appending ${values}`);
     appendColor(values);
     form.reset();
     close();
