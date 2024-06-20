@@ -17,7 +17,7 @@
     "prisma:studio": "dotenv -e .env.local -- prisma studio --schema=./src/prisma/schema.prisma",
     "migrateRemote": "dotenv -e /Users/bigsexy/Desktop/current/ulld/apps/website/.env.remote -- prisma migrate dev --schema=./src/prisma/schema.prisma",
     "postinstall": "turbo db:generate --filter @ulld/website",
-    "generateTagList": "tsx --tsconfig ./tsconfig.json ./scripts/getTagList.ts"
+    "generateWebTags": "tsx --tsconfig ./tsconfig.json ./scripts/getTagList.ts"
   },
   "dependencies": {
     "@dimforge/rapier3d": "^0.12.0",

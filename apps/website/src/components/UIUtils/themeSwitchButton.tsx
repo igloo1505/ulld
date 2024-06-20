@@ -14,7 +14,7 @@ const ThemeSwitchTrigger = ({
     return <a 
         {...props}
         role="button"
-        className={clsx("text-link cursor-pointer", props.className)}
+        className={clsx("!text-link cursor-pointer", props.className)}
         onClick={showThemeModal}
     >{children}</a>;
 };

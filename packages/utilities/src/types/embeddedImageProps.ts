@@ -3,7 +3,7 @@ import { ReactNode } from "react"
 
 
 /**
- * The Image component extends the img html element with a bunch of style utilities and the ability to more easily utilize images on your local file system without needing to copy or move them.
+ * The Image component extends the html img element with a bunch of style utilities and the ability to more easily utilize images on your local file system without needing to copy or move them.
  * @example
  * ```tsx
  * <Image

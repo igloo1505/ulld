@@ -1,4 +1,4 @@
-import { allMyNotes, allAboutUs, allDemos, allBlogPosts } from "contentlayer/generated"
+import { allMyNotes, allAboutUs, allBlogPosts } from "contentlayer/generated"
 import { PostTypes } from "./blogPostList/types"
 
 export const wrapMath = (equation: string) => {
@@ -7,8 +7,7 @@ export const wrapMath = (equation: string) => {
 
 
 export const getAllBlogItems = () => {
-    console.log("allAboutUs: ", allAboutUs)
-    return [...allMyNotes, ...allAboutUs, ...allDemos, ...allBlogPosts].filter((a) => a.blog === true) as PostTypes[]
+    return [...allMyNotes, ...allAboutUs, ...allBlogPosts].filter((a) => a.blog === true) as PostTypes[]
 }
 
 

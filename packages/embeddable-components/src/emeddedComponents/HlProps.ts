@@ -4,11 +4,11 @@ import { ReactNode } from "react";
 /**
  * Add a simple background highlight to some text with the Highlight component.
  * @example
- * ```tsx
+ * ```mdx
  * This isn't as important as <Hl>this</Hl> is!
  * ```
  * This isn't as important as <Hl>this</Hl> is!
- * <ExtendsColorProps />
+ * <ExtendsMap extends={["colorProps", "tooltipProps"]} />
  * @alpha
  * @interface
  */

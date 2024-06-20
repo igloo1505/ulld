@@ -6,7 +6,7 @@
  * This is some <Ul>underlined</Ul> <Ul red>red</Ul>, <Ul blue>blue</Ul>, and <Ul green>green</Ul> text.
  * ```
  * This is some <Ul>underlined</Ul> <Ul red>red</Ul>, <Ul blue>blue</Ul>, and <Ul green>green</Ul> text.
- * <ExtendsColorProps />
+ * <ExtendsMap extends={["colorProps", "tooltipProps"]} />
  * @alpha
  * @interface
  */

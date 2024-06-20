@@ -1,5 +1,4 @@
 "use client";
-import { Dialog } from "@ulld/tailwind/dialog";
 import {
     Drawer,
     DrawerContent,
@@ -16,6 +15,8 @@ import { setTheme } from "#/state/actions/dom";
 import { useEventListener } from "@ulld/hooks/useEventListener";
 import { LogoAsText } from "../general/logoAsText";
 import { NavbarButton, NavbarButtonClick } from "#/state/initialState/core";
+import ShikiThemeSelect from "#/components/modals/shikiTheme";
+import theme from "tailwindcss/defaultTheme";
 
 interface ThemeMenuProps {
     open: boolean;
@@ -29,7 +30,7 @@ declare global {
 }
 
 /* TODO: Come back and handle this on desktop screen sizes. Add the modal in and then set this to something reasonable. */
-const breakpoint = 999999;
+const breakpoint = 768;
 
 const ThemeMenuDrawer = ({ open, close }: ThemeMenuProps) => {
     return (
@@ -85,14 +86,29 @@ const ThemeMenuDrawer = ({ open, close }: ThemeMenuProps) => {
 };
 
 const ThemeMenuModal = ({ open, close }: ThemeMenuProps) => {
-    return <div></div>;
+    const handleOpenChange = (isOpen: boolean) => {
+        if (!isOpen) {
+            close();
+        }
+    };
+    return (
+        <ShikiThemeSelect
+            {...theme}
+            open={open}
+            onOpenChange={handleOpenChange}
+            onChange={(newValue) => {
+                setTheme(newValue)
+                close()
+            }}
+        />
+    );
 };
 
 const ThemeMenu = () => {
     const [open, setOpen] = useState(false);
     const vp = useViewport();
     useEventListener("show-theme-modal", () => setOpen(true));
-    return vp && vp.window.width > breakpoint ? (
+    return Boolean(vp && vp.window.width > breakpoint) ? (
         <ThemeMenuModal open={open} close={() => setOpen(false)} />
     ) : (
         <ThemeMenuDrawer open={open} close={() => setOpen(false)} />

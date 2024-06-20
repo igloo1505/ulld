@@ -13,7 +13,7 @@ export const mdxFeature: FeaturedContainerPropsRequired = {
     return (
       <div className={"w-full h-fit flex flex-col gap-4 md:gap-6"}>
         <div>
-          <span className={"text-brand font-semibold"}> Mdx </span>{" "}
+          <span className={"text-primary font-semibold"}> Mdx </span>{" "}
           {
             "takes all of the simplicity of markdown and extends it to support React components directly in your notes. Plots, modals, whiteboards, and more are right at your fingertips, in a language that anyone can learn in a single day."
           }

@@ -75,6 +75,10 @@ const baseFields: DocumentTypeDef["fields"] = {
         type: "string",
         required: false,
     },
+    priority: {
+        type: "number",
+        required: false
+    },
 };
 
 const markdownOptions = fs.readFileSync(

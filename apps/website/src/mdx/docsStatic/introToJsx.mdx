@@ -85,6 +85,12 @@ The use of curly braces is important for other value types, but is optional in _
     If your string property includes a single quotation, wrap it in double quotes. If it has a double quote, wrap it in single quotes. Alternatively, you can escape _special_ characters, including quotes in a string with a `\` before the special character. This is more or less universal across programming languages, and applies to all special characters. Adding a leading `\` removes the _"special"_ meaning of that character, and makes it function as the literal character.
 </Hint>
 
+```tsx
+const validString1 = "This is a 'valid' string." 
+const validString2 = 'This is a "valid" string.'
+const validString3 = "And this is a \"valid\" string too!"
+```
+
 ##### String Literals ||jsx-string-literals||
 
 > **Note:** String literals <Ul yellow>must</Ul> be wrapped in curly braces when passed in as a component property. Curly braces are optional with both single and double quotes.
@@ -158,6 +164,11 @@ To pass a number into a React component, simply wrap the value in curly braces *
 />
 ````
 
+<Hint note>
+    Many number and string properties are in the process of being converted to a format where they will also accept a function. That function will be provided a _greatly_ extended Math object as an argument, and will be able to be used to generate calculations directly in your markdown files, without requiring an entire Jupyter cell.  
+    Follow [this blog post](/blog/plansForUlld) to stay up to day on features coming to <LogoAsText fontSize={13} />
+</Hint>
+
 #### Boolean Props ||jsx-boolean-props||
 
 <Hint>
@@ -166,11 +177,11 @@ To pass a number into a React component, simply wrap the value in curly braces *
 
 Boolean properties are passed in using an almost identical syntax to number properties, and like number properties, `string` properties are not equivalent... _kind of._ Javascript along with many other programming languages has a concept of 'truthy' and 'falsy'. In Javascript, all strings will evaluate to true if they are tested using an `if` statement and many other comparison operators, but will be `false` if tested using the comparision `"true" === true{:tsx}`.  
 
-Since **MDX** files are not evaluated for type correctness, it can be very easy for new users to mistakenly pass in a value as a string and think they have the right value, if they expect that value to be true, only to find out that it will never be evaluated as false. This happens due to the tuthy-ness of strings, which will always be true. This gives a scenario in which:
+Since **MDX** files are not evaluated for type correctness, it can be very easy for new users to mistakenly pass in a value as a string and think they have the right value, if they expect that value to be true, only to find out that it will never be evaluated as false. The _truthyness_ of strings gives a scenario in which the following occurs.
 
 
 ```tsx
-const EOrPi = ({valueIsSquared, value}: {valueIsSquared: boolean, value: number}) => {
+const ToSquareOrNotToSquare = ({valueIsSquared, value}: {valueIsSquared: boolean, value: number}) => {
     // This is what a component looks like internally.
     // This is where logic would be applied to return the proper value.
    let renderThis = valueIsSquared ? value**2 : value
@@ -178,11 +189,11 @@ const EOrPi = ({valueIsSquared, value}: {valueIsSquared: boolean, value: number}
 }
 ```
 
-While the example above is intentionally over simplified and almost entirely useless, we can demonstrate the truthy and falsy nature of Javascript. If we run include this component with the following syntax:
+While the example above is intentionally over simplified and almost entirely useless, we can demonstrate the truthy and falsy nature of Javascript. If we include this component with the following syntax:
 
 ```mdx
-<EOrPi valueIsSquared={"false"} value={2} /> value will return 4,
-while <EOrPi valueIsSquared={false} value={2} /> will return 2.
+<ToSquareOrNotToSquare valueIsSquared={"false"} value={2} /> value will return 4,
+while <ToSquareOrNotToSquare valueIsSquared={false} value={2} /> will return 2.
 ```
 
 ###### Output
@@ -193,7 +204,7 @@ while <EOrPi valueIsSquared={false} value={2} /> will return 2.
 
 #### ReactNode Type
 
-React provides hundreds of it's own types, but one that appears quite often is that of `ReactNode`. The `ReactNode` type is really pretty much anything that React can render _as is_. It accepts a [boolean](#jsx-boolean-props), a [string](#jsx-string-props), a [number](#jsx-number-props), or another ***rendered*** component.
+React provides hundreds of it's own types, but one that appears quite often is that of `ReactNode`. The `ReactNode` type is pretty much anything that React can render _as is_. It accepts a [boolean](#jsx-boolean-props), a [string](#jsx-string-props), a [number](#jsx-number-props), or another ***rendered*** component.
 
 ```tsx
 <SomeComponent 
@@ -203,7 +214,7 @@ React provides hundreds of it's own types, but one that appears quite often is t
     someReactElementProp={<SomeOtherComponent name="Some property of SomeOtherComponent." />}
     // Do NOT do this:
     // This is actually of type Component.
-    // It is a valid type, but not part of the much more common ReactNode type.
+    // It is valid typescript, but not part of the ReactNode type. While externally developed plugins are free to build for their own use case, internally developed components will never use this type in user accessible components.
     someIncorrectElementProp={SomeOtherComponent} 
 />
 ```
@@ -211,17 +222,24 @@ React provides hundreds of it's own types, but one that appears quite often is t
 
 #### Extended Types
 
-_"Extending"_ types is almost universal among programming languages. If type `A` extends type `B`, then type `A` will have all of the same properties as `B`, and any extra properties that are unique to `A`. If `A` and `B` have a property in common, the property of `A` will overwrite that of `B`.  
+_"Extending"_ types is almost universal among programming languages as well. If type `A` extends type `B`, then type `A` will have all of the same properties as `B`, and any extra properties that are unique to `A`. If `A` and `B` have a property in common, the property of `A` will overwrite that of `B`.  
 
 <LogoAsText /> takes advantage of this structure throughout it's **MDX** interface, but two instances are currently the most common. 
+
+
+##### Extending ColorProps
 
 Many components like the `Ul`, `Color` and `Hl` components accept props that extend the `ColorProps` type. You can review that documentation [here](/docs/user/components?category=Colors). This is a single object that has a set of default boolean values. Those default values can be overridden in your configuration file, where new ones can be added as well. Despite the fact that those properties are not explicitly described in the documentation of those components, the **Extends: ...** implies that all properties of the extended type are also accepted.
 
 ##### Extending HTML Attributes
 
-For those familiar with **HTML** or **CSS**, most components extend the **HTML** attributes of the outer most element. However, be aware that while <LogoAsText /> relies on Tailwind for it's theme-ability, `.mdx` files are currently not evaluated for their `className` content.  
+For those familiar with **HTML** or **CSS**, most components extend the **HTML** attributes of the outer most element. This wasn't documented intentionally to avoid complicating the documentation for non-developers. However, be aware that while <LogoAsText /> relies on Tailwind for it's theme-ability, `.mdx` files are currently not evaluated for their `className` content. 
 
-If you notice a bug with the way **HTML** attributes are handled, please submit a bug report on Github.
+<Hint>
+    If you want to add your own `.css` or `.scss` files, you can provide a path to a directory in your `appConfig.ulld.json` file at the `build.additionalUserContent.css` path. Despite the name, Scss files in this directory will be applied as well.
+</Hint>
+
+If you notice a bug with the way **HTML** attributes are handled, please submit an issue on Github <StaticLink link="links.repo.home">{'here'}</StaticLink>.
 
 
 

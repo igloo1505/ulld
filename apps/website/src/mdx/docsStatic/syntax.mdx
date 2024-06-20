@@ -23,6 +23,29 @@ The following syntaxes are enabled by default.
 
 ***
 
+## Assigning Id's ||valid-dom-id-reference||
+
+
+Many of the included example url's use a `/some/note/here#withAPoundSymbol` syntax. The value following the `#` symbol can be any id on that page. While many components will generate their own id's, they're very likely to be dynamically generated and be useless for navigating after a page reloads. You can however override these dynamically generated id's as most components will accept an `id` property, and they can be applied to any header with the following syntax:
+
+```mdx
+---
+title: My Note
+id: mySpecialNote
+---
+... 
+
+## This is some header ||my-header-id||
+```
+
+Now you can navigate to the page with the id of `mySpecialNote` using the link syntax described [below](#note-id-link-syntax). You can also link directly to another element on the same page by forgoing the first bit of the URL as I just did above where I used `[below](#note-id-link-syntax){:mdx}` to link to the next section. 
+
+<Hint>
+    Try opening up the inspector panel in your browser to see where that id appears.
+</Hint>
+
+> Make ***sure*** to use a valid HTML id. This means it must start with a letter, not a number, must have no spaces, and only a subset of special characters. It's usually best to just stick with letters and `-` symbols. You can take a look at a much more detailed explanation [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id)
+
 ## Links
 
 ### Smart Linking ||note-id-link-syntax||
@@ -47,7 +70,8 @@ id: noteExampleWithId
 ```
 
 ```mdx title="MyNote.mdx"
-Review the note [here](note:noteExampleWithId#someOptionalElementIdInPage)
+Review the note [here](note:noteExampleWithId), 
+especially the bit [here](note:noteExampleWithId#someOptionalElementIdInPage).
 ```
 
 *** 
@@ -59,13 +83,14 @@ Specific to video elements, you can create links to time stamps of videos on the
 ```mdx
 <Video file="/path/to/my/video.mp4" id="videosUniqueReferenceId" />
 
-As you can see at [4 minutes and 6 seconds](videoLink/videosUniqueReferenceId/1:12) in the video above, the creator of ULLD is incredibly good looking.
+As you can see at [4 minutes and 6 seconds](videoLink/videosUniqueReferenceId/4:06) in the video above,
+the creator of ULLD is incredibly good looking.
 ```
 
 Note that the time stamp link follows normal markdown link syntax, but is identified internally by the leading `videoLink/...{:mdx}` path. This `videoLink/...{:mdx}` must be immediately followed by the matching unique id of the video you're addressing, and then by the time stamp. The time stamp is in the format of `hours:minutes:seconds{:mdx}` or `minutes:seconds{:mdx}`.
 
 <Hint>
-    See the [intro to jsx](/docs/user/introToJsx) documentation for a brief summary of valid ids.
+    Make sure to follow the id limitations described [here](#valid-dom-id-reference).
 </Hint>
 
 ***
@@ -102,9 +127,9 @@ Note that if you prefer a centered tag list somewhere in your note, you also use
 
 ### Equation Tags ||equation-tag-syntax||
 
-Since Latex's math syntax allows a wide variety of syntax to produce mathematically equivalent output, <LogoAsText /> allows for referencing equations in several alternative ways. The equation input form is not required to embed math inside of your note. You can just surround math with a single `$...${:mdx}` for inline math, or with `$$...$${:mdx}` for block style math, but adding important equations through the equation page allows enhanced tagging and searching features, as well as repeatedly including the equation without needing to type it multiple times.
+Since Latex's math syntax allows a wide variety of syntax to produce mathematically equivalent output, searching by equation would be almost impossible to achieve reliably. <LogoAsText /> adds two alternative ways to link and search notes by equation, without the inherent reliability issue that would arise from trying to parse latex content for equivalency. The equation input form is not required to embed math inside of your note. You can just surround math with a single `$...${:mdx}` for inline math, or with `$$...$${:mdx}` for block style math, but adding important equations through the equation page allows enhanced tagging and searching features, as well as repeatedly including the equation without needing to type it multiple times.
 
-When you add an equation through the equations page, choose an ID that represents that unique equation for the ID field. Keep in mind, this ID must be [DOM compliant](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id), but adding this ID allows you to include a reference to this equation in your notes in two new ways.
+> When you add an equation through the equations page, choose an ID that represents that unique equation for the ID field. Keep in mind, this ID must be [DOM compliant](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id), but adding this ID allows you to include a reference to this equation in your notes in two new ways.
 
 First, you can add an equation specific tag, with the following syntax:
 
@@ -120,6 +145,9 @@ If you want to actually display the equation in the note instead of a tag, you c
 <Equation id="timeDilationGamma" />
 ```
 
+The output of the above snippet will be a similar in style to regular block style math, but will also be clickable. When an equation that is embedded through the `<Equation/>{:tsx}` component is clicked, a modal similar to the screenshot below will appear allowing you to filter notes by that equation, copy code for that equation, copy the latex for that equation, or to edit that equation in your personal database.
+
+
 <Image 
     url="/assets/images/demos/equationModal.png" 
     xl 
@@ -127,15 +155,14 @@ If you want to actually display the equation in the note instead of a tag, you c
 />
 
 
-The output of the above snippet will be a similar in style to regular block style math, but will also be clickable. On click, a modal will display allowing you to filter notes by that equation, copy code for that equation, copy the latex for that equation, or to edit that equation in your personal database.
 
 *** 
 
 ## Citations  ||citation-syntax||
 
-<LogoAsText /> also supports citations directly in your note. From a single `.bib{:sh}` file in your notes directory, along with the ability to drag-and-drop or paste additional bibtex citations, <LogoAsText /> builds an internal bibliography in your local database. Using an almost identical syntax to that of the [general purpose tag](#general-purpose-tag-syntax), a list of citations is generated at the end of your note and the citations used are added to that note in your database. By clicking on one of the generated citations, you'll be redirected to a search results page for all of your content that references that particular citation.
+<LogoAsText /> also supports citations directly in your note. From a single `.bib` file in your notes directory, along with the ability to drag-and-drop or paste additional bibtex citations, <LogoAsText /> builds an internal bibliography in your local database. Using an almost identical syntax to that of the [general purpose tag](#general-purpose-tag-syntax), a list of citations is generated at the end of your note and the citations used are added to that note in your database. By clicking on one of the generated citations, you'll be redirected to a search results page for all of your content that references that particular citation.
 
-The default citation format is **AIP**, but you can also add any valid `.csl{:sh}` file to format your citations at the root of your notes directory.
+The default citation format is **AIP**, but you can also add any valid `.csl` file to format your citations at the root of your notes directory. You can find a repository of dozens of `.csl` files for a wide variety of citation formats <StaticLink link="links.docs.external.cslRepo">here</StaticLink>
 
 #### Example
 
@@ -172,7 +199,7 @@ As you can see, $\bar{v}$ corresponds closely with several observational studies
 
 ## Definitions
 
-You can also add definitions through your notes, which are then turned into a single dictionary that can be accessed either on it's own page or through the command palette.
+You can also add definitions through your notes, which are then turned into a single dictionary that can be accessed either on it's own page or through your app's command palette.
 
 To add a dictionary entry anywhere inside of `MDX` content, use the following syntax:
 
@@ -185,7 +212,7 @@ or two right circular cones.)
 
 <dl id="def-conicSections" class="definitionAnchor not-prose"><dt><p>Conic Sections</p></dt><dd><p>The circle, ellipse, parabola and hyperbola are called <em>conic sections</em> because each shape can be obtained when a plane intersects one or two right circular cones.</p></dd></dl>
 
-The definition will appear in that note with a reasonable defintion style, and it will be automatically added to a global dictionary which can be access at the dedicated dictionary page, or through the command palette for quick reference.
+The definition will appear in that note with a reasonable defintion style as shown above, and it will be automatically added to a global dictionary which can be access at the dedicated dictionary page, or through the command palette from anywhere in your app for quick reference.
 
 
 ## Markdown Syntax Review
@@ -276,7 +303,7 @@ Or highlight specific words based on a regular expression with:
 
 
 ````mdx
-```python /delta/ title="dgdr.py"
+```python /delta/ title="dsdr.py"
 import numpy as np
 import sympy as smp
 import scipy.constants as spc
@@ -292,7 +319,7 @@ vBar = c * smp.sqrt(1 - 1 / (deltaBar)**2)
 ````
 
 
-```python /delta/ title="dgdr.py"
+```python /delta/ title="dsdr.py"
 import numpy as np
 import sympy as smp
 import scipy.constants as spc

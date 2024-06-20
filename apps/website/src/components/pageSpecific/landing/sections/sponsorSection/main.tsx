@@ -23,7 +23,7 @@ export const MainSponsorSection = (props: MainSponsorSectionProps) => {
         >
             <div className="absolute inset-0 bg-grid-small-neutral-700 pointer-events-none" />
             <motion.h1
-                className="relative md:w-full md:max-w-5/6 z-20 text-[9vw] md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-primary text-center font-sans font-bold"
+                className="relative md:w-full md:max-w-5/6 z-20 text-[9vw] md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-brand text-center font-sans font-bold"
                 whileInView={"animate"}
                 initial="initial"
                 viewport={{

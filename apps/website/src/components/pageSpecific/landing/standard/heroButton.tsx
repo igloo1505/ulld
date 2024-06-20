@@ -14,7 +14,7 @@ interface HeroButtonProps extends ComponentProps<typeof Link> {
 const HeroButton = ({ delay, top, bottom, className, ...props }: HeroButtonProps) => {
     return <Link
         {...props} 
-        className={clsx("text-2xl z-10 py-2 px-4 md:py-3 md:px-5 rounded-lg bg-primary hover:bg-blue-600 transition-colors duration-300 flex justify-center items-center", className)}
+        className={clsx("text-2xl z-10 py-2 px-4 md:py-3 md:px-5 rounded-lg bg-primary hover:bg-primary/90 transition-colors duration-300 flex justify-center items-center text-primary-foreground", className)}
         initial={{
             scale: 0,
             opacity: 0,

@@ -24,8 +24,20 @@ const BlogPostList = ({ tags = [], allPosts }: BlogPostListProps) => {
     const ref = useRef<HTMLDivElement>(null!);
     /* const transition = useRef<string>(""); */
     /* const timer = useRef<NodeJS.Timeout | null>(null); */
-    let posts = (
-        tags.length === 0 ? allPosts : getBlogPostsByTags(tags, allPosts)
+    let withPriority: typeof allPosts = []
+    let withoutPriority: typeof allPosts = []
+    allPosts.forEach((p) => {
+     if(typeof p.priority === "number"){
+            withPriority.push(p)
+        } else {
+            withoutPriority.push(p)
+        }
+    })
+    let postsWithPriority = withPriority.sort((a, b) => {
+        return a.priority < b.priority ? 1 : -1
+    })
+    let postsWithoutPriority = (
+        tags.length === 0 ? withoutPriority : getBlogPostsByTags(tags, allPosts)
     ).sort((a, b) => {
         if (new Date(a.updated || a.created) < new Date(b.updated || b.created)) {
             return 1;
@@ -33,18 +45,8 @@ const BlogPostList = ({ tags = [], allPosts }: BlogPostListProps) => {
             return -1;
         }
     });
-    let featured = posts.find((a) => {
-        return "featured" in a && a.featured;
-    });
-    if (!featured) {
-        featured = posts.find((a) => {
-            return (
-                ("images" in a && a.images && a.images.length > 0) ||
-                ("featuredEquation" in a && a.featuredEquation)
-            );
-        });
-    }
 
+    const posts = [...postsWithPriority, ...postsWithoutPriority]
     /* const handleResize = () => { */
     /*     if ( */
     /*         transition.current === "" && */
@@ -71,8 +73,7 @@ const BlogPostList = ({ tags = [], allPosts }: BlogPostListProps) => {
                 "w-full blogMobile:w-[calc(100vw-112px)] group-[.open]/blogLayout:blogMobile:w-[calc(100vw-412px)] group-[.transitioning]/blogLayout:blogMobile:transition-[width] group-[.transitioning]/blogLayout:blogMobile:duration-300 h-fit space-y-6 flex flex-col justify-center items-end"
             }
         >
-            {featured && <FeaturedBlogPost isFeatured post={featured} />}
-            {(featured ? posts.filter((a) => a.id !== featured.id) : posts).map(
+            {posts.map(
                 (p, i) => {
                     return (
                         <FeaturedBlogPost

@@ -7,14 +7,6 @@ import BlogPostCardIcon from "./icon";
 import { ValidIconName } from "@ulld/icons";
 import { PostTypes } from "../blogPostList/types";
 
-const postPadding = 112;
-
-const offsets = {
-    closed: postPadding,
-    open: 300 + postPadding,
-    mobile: postPadding,
-};
-
 interface Props {
     post: PostTypes;
     isFeatured?: boolean;
@@ -41,12 +33,12 @@ const FeaturedBlogPost = ({
         <MathjaxProvider>
             <div
                 className={
-                    "w-full flex flex-col justify-center items-center lg:grid lg:grid-cols-[300px_1fr] lg:max-h-[300px] lg:gap-6 border border-b-border border-r-transparent border-l-transparent border-t-transparent hover:border-foreground/20 hover:rounded-lg lg:border-border lg:rounded-lg transition-colors duration-300 "
+                    "w-full flex flex-col justify-center items-center lg:flex-row lg:max-h-[300px] lg:gap-6 border border-b-border border-r-transparent border-l-transparent border-t-transparent hover:border-foreground/20 hover:rounded-lg lg:border-border lg:rounded-lg transition-colors duration-300 "
                 }
             >
                 <div
                     className={
-                        "w-full h-full max-h-[300px] relative flex flex-col justify-center items-center pb-[1.2px]"
+                        "w-full h-full max-h-[300px] lg:h-[300px] lg:max-w-[25%] relative flex flex-col justify-center items-center pb-[1.2px]"
                     }
                 >
                     {featuredEquation ? (
@@ -69,11 +61,6 @@ const FeaturedBlogPost = ({
         </MathjaxProvider>
     );
 };
-
-/* const FeaturedBlogPost = (props: Props) => { */
-/*     const Item = useMemo(() => <FeaturedBlogPostComp {...props} />, [props]); */
-/*     return Item; */
-/* }; */
 
 FeaturedBlogPost.displayName = "FeaturedBlogPost";
 

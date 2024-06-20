@@ -7,7 +7,7 @@ export const Large = ({ children, center, noMargin, muted, ...props }: LargeProp
     return (
         <span 
             {...props}
-            className={clsx("text-lg not-prose", !noMargin && "!mt-2", center && "w-full text-center", noMargin && "!my-0", muted && "text-muted-foreground", props.className)}
+            className={clsx("text-lg not-prose inline-block", !noMargin && "!mt-2", center && "w-full text-center", noMargin && "!my-0", muted && "text-muted-foreground", props.className)}
         >{children}</span>
     )
 }

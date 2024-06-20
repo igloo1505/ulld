@@ -3,6 +3,10 @@
   "globalDependencies": ["**/.env.*local"],
   "globalEnv": [".env.local"],
   "tasks": {
+    "generateWebTags": {
+      "cache": false,
+      "env": [".env.local"]
+    },
     "typedoc": {
       "cache": false,
       "env": [".env.local"]
@@ -27,7 +31,7 @@
       "env": [".env.production.local", ".env.local", ".env.production", ".env"]
     },
     "buildLocal": {
-      "dependsOn": ["^db:generate"],
+      "dependsOn": ["^db:generate", "^generateWebTags"],
       "outputs": [".next/**", "!.next/cache/**"],
       "env": [".env.production.local", ".env.local", ".env.production", ".env"]
     },

@@ -12,18 +12,23 @@ interface Props {
 
 const Large = ({ children }: Props) => {
     const [em, setEm] = useState<Element | false>(false);
-    useEffect(() => {
+
+    const handleEm = () => {
         let _em = document.getElementById("navbar-btn-container");
         if (!_em) return;
         setEm(_em);
+    };
+
+    useEffect(() => {
+        handleEm();
     }, []);
+
+    useEventListener("navbar-buttons-visible", handleEm);
     if (!em) return null;
     return createPortal(children, em);
 };
 
-const Mobile = ({
-    children,
-}: Props) => {
+const Mobile = ({ children }: Props) => {
     const [em, setEm] = useState<Element | false>(false);
     const handleEm = () => {
         let _em = document.getElementById("navbar-btn-container-mobile");
@@ -40,13 +45,12 @@ const Mobile = ({
     return createPortal(children, em);
 };
 
-
 export const createDrawerCallback = (cb: () => void) => {
     return () => {
-        store.dispatch(closeDrawer())
-        cb()
-    }
-}
+        store.dispatch(closeDrawer());
+        cb();
+    };
+};
 
 const NavbarButtonPortal = ({ children }: Props) => {
     return (

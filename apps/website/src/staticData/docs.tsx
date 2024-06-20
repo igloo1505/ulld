@@ -63,6 +63,11 @@ export const staticDocsData: StaticDocsData = {
             href: "/docs/user/syntax",
         },
         {
+            label: "Front Matter",
+            id: "frontMatter",
+            href: "/docs/user/frontMatter",
+        },
+        {
             label: "Components",
             id: "components",
             href: `/docs/user/components?${initalCategorySearchParam.toString()}`,
@@ -77,7 +82,7 @@ export const staticDocsData: StaticDocsData = {
         },
         {
             label: "Root Relative Path",
-            content: "FIX THIS",
+            content: <>A file path as it appears from the root of your <span className={"italic"}>notes</span> directory.</>,
             id: "rootRelativePath"
         },
     ],
@@ -85,6 +90,10 @@ export const staticDocsData: StaticDocsData = {
        colorProps: {
             href: "/docs/user/components?category=Colors#colorproperties",
             label: "Color Properties"
+        },
+        tooltipProps: {
+            href: "/docs/user/components?category=Interactivity#withtooltipwrapper",
+            label: "Tooltip Wrapper"
         }
     }
 } as const;

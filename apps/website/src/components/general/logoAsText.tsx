@@ -20,7 +20,7 @@ export const LogoAsText = ({ fontSize = 16, absolute = false, className }: LogoA
             className={clsx("group/logoAsText relative inline-block w-fit h-fit overflow-visible leading-none font-semibold", absolute && "beAbsolute", className)}
         >
             <span
-                className={"text-brand !inline-block group-[.beAbsolute]/logoAsText:absolute group-[.beAbsolute]/logoAsText:!translate-y-0"}
+                className={"text-primary !inline-block group-[.beAbsolute]/logoAsText:absolute group-[.beAbsolute]/logoAsText:!translate-y-0"}
                 style={{
                     transform: `translateY(${fontSize * 0.25}px)`,
                     fontSize: `${fontSize * 1.5}px`,

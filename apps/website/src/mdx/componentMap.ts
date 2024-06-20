@@ -4,6 +4,7 @@ import PayPalLinkQr from "#/components/brand/sponsor/paypalLinkSvg";
 import InternalTag from "#/components/docUtils/button";
 import ExtendsColorProps from "#/components/docUtils/extendsColorProps";
 import Extends from "#/components/docUtils/extendsReference";
+import ExtendsUtil from "#/components/docUtils/extendsUtil";
 import RemoteExampleLimitation from "#/components/docUtils/remoteExampleLimitation";
 import StaticDataLink from "#/components/docUtils/staticDataLink";
 import StaticLinkValue from "#/components/docUtils/staticLinkValue";
@@ -62,9 +63,19 @@ export const webComponentMap: AdditionalComponents<any> = [
         label: "Extends"
     },
     {
+        regex: new RegExp("<StaticLinkContent"),
+        component: StaticLinkValue,
+        label: "StaticLinkContent"
+    },
+    {
         regex: new RegExp("<ExtendsColorProps"),
         component: ExtendsColorProps,
         label: "ExtendsColorProps"
+    },
+    {
+        regex: new RegExp("<ExtendsMap"),
+        component: ExtendsUtil,
+        label: "ExtendsMap"
     },
     {
         regex: new RegExp("<Tag"),

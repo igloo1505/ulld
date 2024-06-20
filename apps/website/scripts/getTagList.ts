@@ -7,7 +7,7 @@ import data from "#/staticData/mdxData.json";
 export const getTagList = () => {
     let items: string[] = [];
     allDocuments.forEach((a) => {
-        if ("tags" in a) {
+        if ("tags" in a && Array.isArray(a.tags)) {
             a.tags?.forEach((t: string) => {
                 if (!items.includes(t)) {
                     items.push(t);
@@ -29,7 +29,6 @@ export const getTagList = () => {
             return 0;
         }) as any,
     };
-    console.log("newData: ", newData)
     fs.writeFileSync(
         path.join(process.cwd(), "src/staticData/mdxData.json"),
         JSON.stringify(newData, null, 4),

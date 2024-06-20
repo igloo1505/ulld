@@ -24,7 +24,7 @@ interface NavbarButtonGroupProps {
 }
 
 export const navbarButtonClasses =
-    "text-muted-foreground hover:text-foreground/90 transition-colors";
+    "text-muted-foreground hover:text-foreground/90 transition-colors group-[.drawer-container]/drawer:hover:bg-secondary group-[.drawer-container]/drawer:text-muted-foreground group-[.drawer-container]/drawer:hover:text-secondary-foreground";
 
 const homeNavbarClasses = ["bg-transparent"];
 const otherHomeNavbarClasses = [
