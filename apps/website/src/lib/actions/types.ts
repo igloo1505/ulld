@@ -1,7 +1,7 @@
 import { RefObject } from "react";
 
 export interface ToggleBlogSidebarProps {
-    buttonRef?: RefObject<HTMLButtonElement>
+    buttonRef?: RefObject<HTMLAnchorElement>
     open?: boolean
 }
 

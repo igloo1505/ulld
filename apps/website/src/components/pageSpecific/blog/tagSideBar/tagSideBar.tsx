@@ -18,7 +18,7 @@ const BlogTagSideBar = ({ }: BlogTagSideBarProps) => {
     let t = sp.getAll("tags");
     const ref = useRef<HTMLDivElement>(null!);
     const footer = useRef<HTMLDivElement | null>(null!);
-    const buttonRef = useRef<HTMLButtonElement>(null!);
+    const buttonRef = useRef<HTMLAnchorElement>(null!);
     const y = useRef<number>(null!);
     const pn = usePathname()
 
@@ -81,14 +81,15 @@ const BlogTagSideBar = ({ }: BlogTagSideBarProps) => {
                 onClose={() => toggleBlogSidebar({buttonRef})}
             />}
             <NavbarButtonPortal>
-                <button
+                <a
+                    role="button"
                     onClick={() => toggleBlogSidebar({buttonRef})}
                     ref={buttonRef}
                     className={navbarButtonClasses}
                     id="navbar-blog-sidebar-toggle"
                 >
                     Explore
-                </button>
+                </a>
             </NavbarButtonPortal>
             <div
                 className={"relative"}

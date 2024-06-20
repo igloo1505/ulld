@@ -23,7 +23,6 @@ const Large = ({ children }: Props) => {
         handleEm();
     }, []);
 
-    useEventListener("navbar-buttons-visible", handleEm);
     if (!em) return null;
     return createPortal(children, em);
 };
