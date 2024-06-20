@@ -67,7 +67,8 @@
         "shad": "FIX ME",
         "python": "docs.python.org",
         "cslRepo": "https://github.com/citation-style-language/styles",
-        "monaco": "https://microsoft.github.io/monaco-editor"
+        "monaco": "https://microsoft.github.io/monaco-editor",
+        "SQLiteDownload": "https://sqlite.org/download.html"
       },
       "internal": {
         "home": "/docs/user",

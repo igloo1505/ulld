@@ -63,7 +63,8 @@
     "./removeEmptyChildren": "./src/utils/removeEmptyChildren.ts",
     "./getAllRegexMatches": "./src/utils/getAllRegexMatches.ts",
     "./replaceContentByMatch": "./src/utils/replaceContentByRegexMatch.ts",
-    "./convertColorString": "./src/utils/colors/convertColorString.ts"
+    "./convertColorString": "./src/utils/colors/convertColorString.ts",
+    "./appData": "./src/appData.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",
