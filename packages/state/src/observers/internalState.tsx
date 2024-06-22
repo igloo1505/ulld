@@ -8,12 +8,14 @@ import { setDarkmode, showNoteSheet } from "../state/slices/ui";
 import { RootState } from "../state/store";
 import { keyDown } from "../listeners/keydown";
 import { useEffect } from "react";
-import {useUlldStore} from "@ulld/hooks/useUlldStore"
+import { useUlldStore } from "@ulld/hooks/useUlldStore";
 import { ParsedAppConfig } from "@ulld/configschema/types";
 import { ParsedSettings } from "@ulld/parsers/settings/settingsParser";
 import { ThemeOptions } from "@ulld/tailwind/themeUtils";
 import { changeTheme } from "@ulld/state/actions/client/theming";
 import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
+import { useLocalStorage } from "@ulld/hooks/useLocalStorage";
+import { handleSettingsChange } from "../handlers/settings";
 
 const connector = connect((state: RootState, props: any) => ({
     sidebarOpen: state.UI.sidebar.open,
@@ -50,9 +52,9 @@ export interface ObserverProps {
     noteSheetOpen: boolean;
     themeCookie?: ThemeOptions;
     store: ToolkitStore;
-    lockScrollForPages?: string[]
-    noSettings?: boolean
-    noThemeCookie?: boolean
+    lockScrollForPages?: string[];
+    noSettings?: boolean;
+    noThemeCookie?: boolean;
 }
 
 const applyHtmlClass = (cls: string, type: "add" | "remove" | "toggle") => {
@@ -69,13 +71,15 @@ const Observers = connector(
         themeCookie,
         lockScrollForPages,
         noSettings,
-        noThemeCookie
+        noThemeCookie,
     }: ObserverProps) => {
         const pathname = usePathname();
-        const store = useUlldStore()
+        const store = useUlldStore();
+
+        const [storedConfig, setStoredConfig] = useLocalStorage("ulld-app-config");
 
         useEffect(() => {
-            if(noThemeCookie) return
+            if (noThemeCookie) return;
             if (!themeCookie) {
                 let htmlTheme = htmlEm()?.getAttribute("data-ulld-theme") || "violet";
                 changeTheme(htmlTheme as ThemeOptions);
@@ -92,6 +96,7 @@ const Observers = connector(
 
         useEffect(() => {
             if (config) {
+                setStoredConfig(config);
                 store?.dispatch(setConfigState(config));
             }
         }, [config, store]);
@@ -102,16 +107,12 @@ const Observers = connector(
         }, [darkMode, store]);
 
         useEffect(() => {
-            if(noSettings) return
+            if (noSettings) return;
             if (!settings) {
-                return console.log("No settings object returned from postgres");
+                return console.log("No settings object returned from the database");
             }
             if (settings) {
-                store?.dispatch(setLocalSettings(settings));
-                applyHtmlClass(
-                    "noTooltips",
-                    settings.tooltips === false ? "add" : "remove",
-                );
+                handleSettingsChange(settings, store);
             }
         }, [settings, darkMode, store, noSettings]);
 
@@ -128,7 +129,7 @@ const Observers = connector(
         }, []);
 
         useEffect(() => {
-            if(!lockScrollForPages) return
+            if (!lockScrollForPages) return;
             if (lockScrollForPages.includes(pathname)) {
                 document.body.classList.add("noScroll");
             } else {

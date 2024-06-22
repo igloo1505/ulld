@@ -4,7 +4,7 @@ import { NavItem } from './fullScreenNavigationItem'
 import FullScreenNavigationGroup from './fullScreenNavigationGroup'
 import { formatLocationData } from '@ulld/state/formatting/formatLocationData'
 import { NoteTypeOverview } from '@ulld/state/formatting/formatLocationDataZodSchema'
-import { ClientSideXIcon } from '../../icons/clientSideUtilityComponents/xIcon'
+import { ClientSideXIcon } from '@ulld/icons/clientX'
 
 
 interface FullScreenNavigationMenuProps {
@@ -24,14 +24,14 @@ export const utilityNavLinks: NavItem[] = [
         label: "Add Snippet",
         url: "/snippets/add"
     },
-    {
-        label: "Flip Cards",
-        url: "/flipCard"
-    },
-    {
-        label: "Add Flip Card",
-        url: "/flipCard/add"
-    },
+    /* { */
+    /*     label: "Flip Cards", */
+    /*     url: "/flipCard" */
+    /* }, */
+    /* { */
+    /*     label: "Add Flip Card", */
+    /*     url: "/flipCard/add" */
+    /* }, */
     {
         label: "Equations",
         url: "/equations"
@@ -57,18 +57,18 @@ export const utilityNavLinks: NavItem[] = [
         label: "To Do's",
         url: "/todo"
     },
-    {
-        label: "Practice Exam",
-        url: "/practiceExam"
-    },
+    /* { */
+    /*     label: "Practice Exam", */
+    /*     url: "/practiceExam" */
+    /* }, */
     {
         label: "Bibliography",
         url: "/bibliography"
     },
-    {
-        label: "Calendar",
-        url: "/calendar?past=true"
-    },
+    /* { */
+    /*     label: "Calendar", */
+    /*     url: "/calendar?past=true" */
+    /* }, */
     {
         label: "Notebooks",
         url: "/notebooks"
@@ -115,7 +115,7 @@ const healthLinks: NavItem[] = [
     },
 ]
 
-const FullScreenNavigationMenu = async ({ backOnClick, isPopupState }: FullScreenNavigationMenuProps) => {
+export const FullScreenNavigationMenu = async ({ backOnClick, isPopupState }: FullScreenNavigationMenuProps) => {
     let data: NoteTypeOverview[] = await formatLocationData()
     const columns = 2 // Come back and make this part of state that's responsive to viewport width eventually. Hardcoding it for now.
     const sources: {
@@ -130,10 +130,11 @@ const FullScreenNavigationMenu = async ({ backOnClick, isPopupState }: FullScree
             }, {
                 items: utilityNavLinks,
                 label: "Utility"
-            }, {
-                items: healthLinks,
-                label: "Health"
             }
+            /* , { */
+            /*     items: healthLinks, */
+            /*     label: "Health" */
+            /* } */
         ]
 
     const li = sources.length - (sources.length % columns)
@@ -178,6 +179,3 @@ const FullScreenNavigationMenu = async ({ backOnClick, isPopupState }: FullScree
 
 
 FullScreenNavigationMenu.displayName = "FullScreenNavigationMenu"
-
-
-export default FullScreenNavigationMenu;

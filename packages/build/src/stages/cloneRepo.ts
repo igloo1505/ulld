@@ -59,4 +59,20 @@ export const cloneBaseRepo = async (targetDirectory: string) => {
             console.log(data);
         },
     );
+    return true;
+};
+
+export const updateBaseRepo = async (targetDirectory: string) => {
+    const options: Partial<SimpleGitOptions> = {
+        baseDir: targetDirectory,
+        binary: "git",
+        maxConcurrentProcesses: 10,
+        trimmed: false,
+        progress,
+    };
+    const git: SimpleGit = simpleGit(options);
+
+    await git.pull();
+
+    return true;
 };

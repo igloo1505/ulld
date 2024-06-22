@@ -13,6 +13,7 @@
     "test:watch": "turbo test:watch",
     "postinstall": "echo 'manypkg check'",
     "forcePackgeMatch": "manypkg fix",
+    "checkPackages": "manypkg check",
     "typedoc": "typedoc"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { pluginSlotSchema } from "@ulld/developer-schemas/slots";
-import type { PluginSlotKey } from "@ulld/developer-schemas/types";
+import { pluginSlotSchema } from "@ulld/configschema/slotsSchema";
+import { PluginSlotKey } from "@ulld/configschema/developerTypes";
 import { pluginStatusTypeSchema } from "../types";
 import path from 'path'
 import fs from 'fs'

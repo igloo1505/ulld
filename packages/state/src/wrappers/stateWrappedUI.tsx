@@ -4,6 +4,7 @@ import Observers, { type ObserverProps } from "../observers/internalState";
 import { OnlineStatusObserver } from "../observers/onlineStatus";
 import { ToastListener } from "../observers/toast";
 import { Toaster } from "@ulld/tailwind/toaster";
+import {AppConfigSchemaOutput} from "@ulld/configschema/zod/main"
 import {
     InitialLoader,
     InitialLoaderProps,
@@ -13,11 +14,9 @@ import { getSettings } from "../actions/getSettings";
 import type { ParsedAppConfig } from "@ulld/configschema/types";
 import { getUlldConfig } from "@ulld/developer/utils";
 import type { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
+import { ParsedSettings } from "@ulld/parsers/settings/settingsParser";}
 
 /* FIX: These are missing from the complete app. Add them back once the sandbox is working. */
-/* <Navbar /> */
-/* <PermanentSidebar /> */
-/* <CommandPalettePopover /> */
 /* <ConfirmationModal /> */
 
 /* NOTE: Children should only used in development for now. */
@@ -26,20 +25,23 @@ export const StateWrappedUI = async ({
     ignoreConfig = false,
     store,
     loader,
-    observers
+    observers,
+    settings: _settings,
+    config
 }: {
     children?: React.ReactNode;
     ignoreConfig?: boolean;
     store?: ToolkitStore;
     loader?: InitialLoaderProps;
     observers?: Partial<ObserverProps>;
+    settings?: ParsedSettings;
+    config?: AppConfigSchemaOutput
 }) => {
     const cookieJar = cookies();
-    const settings = await getSettings();
+    const settings = _settings ? _settings : await getSettings();
     const darkMode = cookieJar.has("darkMode");
     const showModebar = cookieJar.has("showModebar");
     const themeCookie = cookieJar.get("theme");
-    let config: ParsedAppConfig | null = null;
     if (!ignoreConfig) {
         /* const _config = path.join(process.cwd(), configPath); */
         /* if(_confi) */

@@ -1,0 +1,13 @@
+{
+  "pluginName": "@ulld/landing-layouts",
+  "slot": "UI",
+  "components": [
+    {
+      "slot": "landingPage",
+      "export": "beta"
+    }
+  ],
+  "parsers": [],
+  "pages": [],
+  "events": {}
+}

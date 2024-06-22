@@ -1,0 +1,16 @@
+{
+    "navigation": {
+        "navbar": {
+            "parentSlot": "navigation",
+            "slot": "navbar",
+            "clientOnly": false,
+            "inStoreProvider": false
+        },
+        "secondary": {
+            "parentSlot": "navigation",
+            "slot": "secondary",
+            "clientOnly": false,
+            "inStoreProvider": false
+        }
+    }
+}

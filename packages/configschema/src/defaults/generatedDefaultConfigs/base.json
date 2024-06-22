@@ -245,27 +245,128 @@
         "logLevel": "info"
     },
     "slots": {
-        "navigation": "@ulld/navigation",
-        "plot": "@ulld/plot",
-        "bibliography": "@ulld/bib-manager",
-        "calendar": "@ulld/calendar",
-        "commandPalette": "@ulld/command-palette",
-        "editor": "@ulld/editor",
-        "math": "@ulld/equations",
-        "form": "@ulld/full-form",
-        "icons": "@ulld/icons",
-        "notebook": "@ulld/notebook",
-        "kanban": "@ulld/kanban",
-        "dashboard": "@ulld/landing-layouts",
-        "logger": "@ulld/logger",
-        "journal": "@ulld/journal",
-        "noteNetwork": "@ulld/note-network",
-        "pdf": "@ulld/pdf",
-        "snippets": "@ulld/snippets",
-        "taskManager": "@ulld/task-manager",
-        "whiteboard": "@ulld/whiteboard",
+        "navigation": [
+            {
+                "name": "@ulld/navigation",
+                "version": "latest"
+            }
+        ],
+        "plot": [
+            {
+                "name": "@ulld/plot",
+                "version": "latest"
+            }
+        ],
+        "bibliography": [
+            {
+                "name": "@ulld/bib-manager",
+                "version": "latest"
+            }
+        ],
+        "calendar": [
+            {
+                "name": "@ulld/calendar",
+                "version": "latest"
+            }
+        ],
+        "commandPalette": [
+            {
+                "name": "@ulld/command-palette",
+                "version": "latest"
+            }
+        ],
+        "editor": [
+            {
+                "name": "@ulld/editor",
+                "version": "latest"
+            }
+        ],
+        "math": [
+            {
+                "name": "@ulld/equations",
+                "version": "latest"
+            }
+        ],
+        "form": [
+            {
+                "name": "@ulld/full-form",
+                "version": "latest"
+            }
+        ],
+        "icons": [
+            {
+                "name": "@ulld/icons",
+                "version": "latest"
+            }
+        ],
+        "notebook": [
+            {
+                "name": "@ulld/notebook",
+                "version": "latest"
+            }
+        ],
+        "kanban": [
+            {
+                "name": "@ulld/kanban",
+                "version": "latest"
+            }
+        ],
+        "dashboard": [
+            {
+                "name": "@ulld/landing-layouts",
+                "version": "latest"
+            }
+        ],
+        "logger": [
+            {
+                "name": "@ulld/logger",
+                "version": "latest"
+            }
+        ],
+        "journal": [
+            {
+                "name": "@ulld/journal",
+                "version": "latest"
+            }
+        ],
+        "noteNetwork": [
+            {
+                "name": "@ulld/note-network",
+                "version": "latest"
+            }
+        ],
+        "pdf": [
+            {
+                "name": "@ulld/pdf",
+                "version": "latest"
+            }
+        ],
+        "snippets": [
+            {
+                "name": "@ulld/snippets",
+                "version": "latest"
+            }
+        ],
+        "taskManager": [
+            {
+                "name": "@ulld/task-manager",
+                "version": "latest"
+            }
+        ],
+        "whiteboard": [
+            {
+                "name": "@ulld/whiteboard",
+                "version": "latest"
+            }
+        ],
         "components": {},
-        "parsers": {}
+        "parsers": {},
+        "UI": [
+            {
+                "name": "@ulld/ui",
+                "version": "latest"
+            }
+        ]
     },
     "build": {
         "database": {
@@ -275,6 +376,8 @@
                 "dbName": "ulld"
             },
             "prioritize": "speed"
-        }
-    }
+        },
+        "additionalUserContent": {}
+    },
+    "plugins": []
 }

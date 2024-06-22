@@ -1,3 +1,29 @@
 {
-  "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/ulldPluginConfig.json"
+    "pluginName": "@ulld/equations",
+    "slot": "math",
+    "components": [],
+    "parsers": [],
+    "pages": [
+        {
+            "targetUrl": "(.)equations/details/[equationId]",
+            "export": "./equationModal",
+            "exportsPageProps": true
+        },
+        {
+            "targetUrl": "equations/add",
+            "export": "./addEquationPage",
+            "exportsPageProps": true
+        },
+        {
+            "targetUrl": "equations/details/[equationId]",
+            "export": "./equationDetailsPage",
+            "exportsPageProps": true
+        },
+        {
+            "targetUrl": "equations",
+            "export": "./equationsPage",
+            "exportsPageProps": true
+        }
+    ],
+    "events": {}
 }

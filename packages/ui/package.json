@@ -32,7 +32,10 @@
     "./stringBadgeList": "./src/components/inputs/stringBadgeList.tsx",
     "./deleteModalTriggerButton": "./src/components/inputs/deleteModalTriggerButton.tsx",
     "./getConditionalComponents/client": "./src/components/markdown/getConditionalClientComponents.ts",
-    "./autoWrapCode": "./src/components/layouts/wrappingCode.tsx"
+    "./autoWrapCode": "./src/components/layouts/wrappingCode.tsx",
+    "./randomBackground": "./src/components/landing/hero/randomBackground.tsx",
+    "./fullScreenNav": "./src/components/menus/fullScreenNavigationMenu/fullScreenNavigationMenu.tsx",
+    "./confirmationModal": "./src/components/modals/confirmation/confirmationModal.tsx"
   },
   "scripts": {
     "build": "echo 'add build:internal script here'",
@@ -72,7 +75,7 @@
     "@mdx-js/react": "^3.0.1",
     "@mdxeditor/editor": "^2.12.0",
     "@next/mdx": "^14.0.0",
-    "@prisma/client": "latest",
+    "@prisma/client": "^5.15.1",
     "@radix-ui/colors": "^3.0.0",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-alert-dialog": "^1.0.5",
@@ -155,7 +158,7 @@
     "paginator": "^1.0.0",
     "pixi.js": "^7.4.0",
     "plotly.js": "^2.30.0",
-    "prisma": "latest",
+    "prisma": "^5.15.1",
     "react-big-calendar": "^1.11.1",
     "react-datepicker": "^4.25.0",
     "react-day-picker": "^8.10.0",
@@ -263,7 +266,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "lucide-react": "^0.344.0",
     "mocha": "^10.3.0",
-    "next": "^14.2.3",
+    "next": "^14.2.4",
     "postcss": "^8.4.35",
     "postcss-import": "^16.0.1",
     "postcss-modules": "^6.0.0",

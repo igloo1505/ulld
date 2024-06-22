@@ -19,14 +19,11 @@ export const verifyDirectory = async (forceCurrentDir: boolean) => {
 You're currently in the ${currentDir} directory.
 Is this where you'd like to build ${chalk.hex("#0ba5e9")("U")}LLD?`,
         initial: true,
-        // onState: (prev, val) => console.log("prev, val: ", prev, val),
     });
     if ("useCurrentDir" in useCurrentDir && useCurrentDir.useCurrentDir) {
         return currentDir;
     }
-    console.log("useCurrentDir: ", useCurrentDir);
 
-    // const prompt = new AutoComplete({})
 
     const newPath: {path: string} = await prompt({
         type: "autocomplete",

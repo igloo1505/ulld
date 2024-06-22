@@ -25,12 +25,11 @@ export const getInternalConfig = <T extends object>(appConfig?: AppConfigSchemaO
         // internalDocumentTypes: internalDocumentTypeConfigSchema.array().parse(internalDocumentTypes),
         fileTypes: {
             image: [
-                "jpeg", "jpg", "webp", "png", "heif", "gif"
+                "jpeg", "jpg", "webp", "png", "gif"
             ]
         }
     }
 
-    console.log("appConfig: ", appConfig)
 
     if(!appConfig) {
     return {
@@ -47,7 +46,7 @@ export const getInternalConfig = <T extends object>(appConfig?: AppConfigSchemaO
         // internalDocumentTypes: internalDocumentTypeConfigSchema.array().parse(internalDocumentTypes),
         fileTypes: {
             image: [
-                "jpeg", "jpg", "webp", "png", "heif", "gif"
+                "jpeg", "jpg", "webp", "png", "gif"
             ]
         }
     } as ExtraConfig & AppConfigSchemaOutput

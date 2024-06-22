@@ -91,7 +91,6 @@ export const makeStore = <T extends string>(extraReducers?: ExtraReducers<T>, ex
     }
 };
 
-
 declare global {
     interface Window {
         store: ReturnType<typeof makeStore>;

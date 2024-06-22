@@ -92,3 +92,8 @@ const idSelectClickListener = async (e: Event) => {
     await copyStringToClipboard(`${path}#${id}`);
     clearIdSelectMode();
 };
+
+
+export const applyHtmlClass = (cls: string, type: "add" | "remove" | "toggle") => {
+    htmlEm()?.classList[type](cls);
+};

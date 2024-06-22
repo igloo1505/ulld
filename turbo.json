@@ -3,6 +3,9 @@
   "globalDependencies": ["**/.env.*local"],
   "globalEnv": [".env.local"],
   "tasks": {
+    "writePluginConfig": {
+      "env": [".env.local"]
+    },
     "generateWebTags": {
       "cache": false,
       "env": [".env.local"]

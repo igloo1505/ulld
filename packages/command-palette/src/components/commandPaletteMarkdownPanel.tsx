@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import CommandPalettePanelListeners from './commandPaletteMarkdownPanelListeners'
-import { MdxContentCLIENT } from '@ulld/ui/mdxDisplayCLIENT'
+import { MdxContentCLIENT } from "@ulld/render/mdx/client";
 
 
 
