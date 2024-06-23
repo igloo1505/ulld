@@ -57,6 +57,9 @@ export class UlldPlugin {
             );
         }
     }
+    removeUnusedPages() {
+        this.pages = this.pages.filter((f) => f.shouldUse)
+    }
     removeRejectedSlots() {
         this.components = this.components.filter((c) => {
             if (c.subSlot && c.subSlot.shouldUse) {

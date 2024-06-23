@@ -9,7 +9,8 @@
     "lint": "turbo lint",
     "typecheck": "turbo typecheck",
     "update-ulldBase": "git subtree push --prefix=apps/base/ ulldBase main",
-    "publish-packages": "turbo run build lint test && changeset version && changeset publish",
+    "publish-packages": "changeset version && changeset publish",
+    "publish-packages-full": "turbo run build lint test && changeset version && changeset publish",
     "test": "turbo test",
     "test:watch": "turbo test:watch",
     "postinstall": "echo 'manypkg check'",
@@ -61,7 +62,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@changesets/cli": "^2.27.1",
+    "@changesets/cli": "^2.27.5",
     "@manypkg/cli": "^0.21.4",
     "@mdx-js/mdx": "^3.0.1",
     "deepmerge": "^4.3.1",

@@ -18,6 +18,7 @@ import { SlotConflict } from "./slotConflict";
 import { PluginSlotKey } from "@ulld/configschema/developerTypes";
 import { PluginPage } from "./page";
 import { PageConflict } from "./pageConflict";
+import { GitManager } from "./baseClasses/gitManager";
 
 export class UlldBuildProcess extends Prompter {
     plugins: UlldPlugin[] = [];
@@ -30,8 +31,10 @@ export class UlldBuildProcess extends Prompter {
     packageManager: PackageManagers = "pnpm";
     slotConflicts: SlotConflict[] = [];
     pageConflicts: PageConflict[] = [];
+    git: GitManager;
     constructor(public targetDir: string) {
         super();
+        this.git = new GitManager(targetDir);
         this.isLocalDev = process.env.LOCAL_DEVELOPMENT === "true";
         this.applicationDir = path.join(
             targetDir,
@@ -51,11 +54,11 @@ export class UlldBuildProcess extends Prompter {
     }
     /** Returns true if a project exists at the targetDir and if that project is a ULLD app. */
     projectExists() {
-        return [
-            this.packageJson.exists(),
-            this.packageJson.includesUlldDependencies(),
-            this.paths.targetDirExists(),
-        ].every((a) => a);
+        if (this.paths.targetDirExists() && this.packageJson.exists()) {
+            this.packageJson.gather();
+            return this.packageJson.includesUlldDependencies();
+        }
+        return false;
     }
     async gatherPlugins() {
         this.log(
@@ -158,7 +161,7 @@ and continue when that file is in place.`,
     async resolvePageConflicts() {
         if (this.slotConflicts.length > 0) {
             await this.getPagePreferences(this.pageConflicts);
-            // this.removeSlotConflicts()
+            this.removePageConflicts()
         } else {
             this.log(
                 this.slotConflicts.length === 0
@@ -209,6 +212,11 @@ and continue when that file is in place.`,
     removeSlotConflicts() {
         this.plugins.forEach((p) => p.removeRejectedSlots());
     }
+    removePageConflicts() {
+        for (const k of this.plugins) {
+            k.removeUnusedPages()
+        }
+    }
     async resolveSlotConflicts() {
         if (this.slotConflicts.length > 0) {
             await this.getSlotPreferences(this.slotConflicts);
@@ -221,20 +229,13 @@ and continue when that file is in place.`,
         let exists = this.projectExists();
         let success = false;
         if (!exists) {
-            log(
-                `Great! Give me a second to clone the ${chalk.hex("#0ba5e9")("U")}LLD code base onto your machine. This might take a minute or two.`,
-            );
-            success = await cloneBaseRepo(this.targetDir);
+            success = await this.clone();
         } else {
-            log(
-                `It looks like a ${chalk.hex("#0ba5e9")("U")}LLD project already exists in this directory. Let's just try to update it.`,
-            );
-            success = await updateBaseRepo(this.targetDir);
+            success = await this.gitPull();
         }
         if (success) {
-            log(`We have a baseline ${chalk.hex("#0ba5e9")("U")}LLD app now!`);
+            this.log(`We have a baseline ${this.ulld()} app now!`);
         }
         return success;
     }
 }
-

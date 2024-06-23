@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@changesets/cli':
-        specifier: ^2.27.1
+        specifier: ^2.27.5
         version: 2.27.5
       '@manypkg/cli':
         specifier: ^0.21.4

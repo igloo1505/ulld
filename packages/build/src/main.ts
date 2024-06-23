@@ -6,7 +6,7 @@ import fs from "fs";
 import { UlldBuildProcess } from "./classes/build";
 import { log } from "console";
 
-const isLocalDev = true
+const isLocalDev = true;
 
 program.option("--noPlugins").option("--here");
 
@@ -24,15 +24,14 @@ const options = program.opts();
 
         let build = new UlldBuildProcess(targetDirectory);
         let success = false;
-        !isLocalDev && (success = await build.createBaseProject()); // alpha
-        if (isLocalDev || success) {
-            build.packageJson.gather(); // alpha
-            await build.gatherAppConfig(); // beta
-            await build.gatherPlugins(); // alpha
-            await build.checkPluginValidity(); //beta
-            !isLocalDev && await build.packageJson.installDependencies(); //beta
-            await build.resolveSlotConflicts(); // beta
-        }
+        success = await build.createBaseProject(); // alpha
+        build.packageJson.gather(); // alpha
+        await build.gatherAppConfig(); // beta
+        await build.gatherPlugins(); // alpha
+        await build.checkPluginValidity(); //beta
+        await build.packageJson.installDependencies(); //beta
+        await build.resolveSlotConflicts(); // beta
+        await build.resolvePageConflicts(); // beta
     } catch (err) {
         if (!err) {
             log(`No worries. We can handle this later.`);

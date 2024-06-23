@@ -1,10 +1,10 @@
 import { UlldPlugin } from "./plugin";
 import { prompt } from "enquirer";
 import { SlotConflict } from "./slotConflict";
-import { ShellManager } from "./baseClasses/shell";
 import { PageConflict } from "./pageConflict";
+import { GitManager } from "./baseClasses/gitManager";
 
-export class Prompter extends ShellManager {
+export class Prompter extends GitManager {
     constructor() {
         super();
     }
@@ -28,7 +28,13 @@ export class Prompter extends ShellManager {
         return false;
     }
     async getPagePreferences(pageConflicts: PageConflict[]){
-
+        let opts = pageConflicts.map((s) => s.getSurveyPromptData());
+        const response: Record<string, string> = await prompt(opts);
+        for (const k of pageConflicts) {
+            if (k.surveyKey in response) {
+                k.resolveSlotConflict(response[k.surveyKey]);
+            }
+        }
     }
     async getSlotPreferences(slotConflicts: SlotConflict[]) {
         let opts = slotConflicts.map((s) => s.getSurveyPromptData());

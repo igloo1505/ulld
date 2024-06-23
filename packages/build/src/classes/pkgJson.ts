@@ -37,6 +37,7 @@ export class TargetPackageJson extends Prompter {
             return false;
         }
         let deps = Object.keys(this.data.dependencies);
+        console.log("deps: ", deps)
         return deps.filter((a) => a.startsWith("@ulld")).length > 0;
     }
     write() {
