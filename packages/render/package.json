@@ -61,5 +61,8 @@
     "dependencies": {
         "@mdx-js/mdx": "^3.0.1",
         "@next/mdx": "^14.0.0"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }

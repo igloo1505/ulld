@@ -17,6 +17,9 @@ interface PackageSource {
     deps: Dependency[];
     modified?: boolean;
     node_modules: string;
+    publishConfig?: {
+        access?: string;
+    };
 }
 
 const dependencyTypes = [
@@ -25,18 +28,18 @@ const dependencyTypes = [
     "dependencies",
 ] as const;
 
-
-const glob = () => globSync(`**/package.json`, {
-            ignore: "**/node_modules/**",
-        });
+const glob = () =>
+    globSync(`**/package.json`, {
+        ignore: "**/node_modules/**",
+    });
 
 class PackageManager {
     packages: PackageSource[] = [];
     constructor(public root: string = "/Users/bigsexy/Desktop/current/ulld") {
         this.packages = this.collectPackages();
     }
-    getRootRelativePath(p: string){
-    return `${this.root}/${p.startsWith("/") ? p.slice(1, p.length) : p}`
+    getRootRelativePath(p: string) {
+        return `${this.root}/${p.startsWith("/") ? p.slice(1, p.length) : p}`;
     }
     loadJson(p: string) {
         return JSON.parse(fs.readFileSync(p, { encoding: "utf-8" }));
@@ -50,7 +53,7 @@ class PackageManager {
     }
     collectPackages() {
         let packages: PackageSource[] = [];
-        let _p = glob()
+        let _p = glob();
         _p.forEach((a) => {
             const targetPath = path.join(process.cwd(), a);
             let content = this.loadJson(targetPath);
@@ -84,19 +87,19 @@ class PackageManager {
         }
         return deps;
     }
-    rmDir(p: string){
-                if (fs.existsSync(p)) {
-                    fs.rmSync(p, { recursive: true });
-                }
+    rmDir(p: string) {
+        if (fs.existsSync(p)) {
+            fs.rmSync(p, { recursive: true });
+        }
     }
-    rm(p: string){
-                if (fs.existsSync(p)) {
-                    fs.rmSync(p);
-                }
+    rm(p: string) {
+        if (fs.existsSync(p)) {
+            fs.rmSync(p);
+        }
     }
     clearNodeModules(dry: boolean = false) {
         let paths = this.packages.map((a) => a.node_modules);
-        paths.push(`${this.root}/node_modules`)
+        paths.push(`${this.root}/node_modules`);
         if (dry) {
             console.log("paths to be removed: ", paths);
         } else {
@@ -107,9 +110,15 @@ class PackageManager {
             }
         }
     }
-    removePackageLock(){
-        this.rm(this.getRootRelativePath("pnpm-lock.yaml")) 
+    removePackageLock() {
+        this.rm(this.getRootRelativePath("pnpm-lock.yaml"));
     }
+    // writeRaw(){
+    //     this.packages.forEach(({path, ...item}) => {
+    //         console.log("item.path: ", item.path)
+    //             fs.writeFileSync(item.path, JSON.stringify(item.content, null, 4));
+    //     });
+    // }
     writeModified(all: boolean = false, dry: boolean = false) {
         let p = all ? this.packages : this.packages.filter((a) => a.modified);
         p.forEach((item) => {
@@ -122,6 +131,7 @@ class PackageManager {
                 data.content[k] = f;
             }
             if (!dry) {
+                console.log("item.path: ", item.path);
                 fs.writeFileSync(item.path, JSON.stringify(item.content, null, 4));
             } else {
                 console.log(JSON.stringify(data.content, null, 4));
@@ -191,6 +201,20 @@ class PackageManager {
 }
 
 const p = new PackageManager();
+
+p.packages = p.packages.map((u) => {
+    return {
+        ...u,
+        content: {
+            ...u.content,
+            publishConfig: {
+                access: "public",
+            },
+        },
+    };
+});
+
+p.writeModified(true);
 
 // p.clearNodeModules()
 

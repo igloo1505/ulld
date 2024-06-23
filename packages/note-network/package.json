@@ -36,5 +36,8 @@
         "3d-force-graph": "^1.73.3",
         "@next/mdx": "^14.0.0"
     },
-    "packageManager": "pnpm@9.0.4"
+    "packageManager": "pnpm@9.0.4",
+    "publishConfig": {
+        "access": "public"
+    }
 }

@@ -41,5 +41,8 @@
     "packageManager": "pnpm@9.0.4",
     "dependencies": {
         "@next/mdx": "^14.0.0"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }

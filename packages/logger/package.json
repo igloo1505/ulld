@@ -23,5 +23,10 @@
         "react-dom": "^18.3.1",
         "zod": "^3.22.4"
     },
-    "packageManager": "pnpm@9.0.4"
+    "packageManager": "pnpm@9.0.4",
+    "peerDependencies": {},
+    "devDependencies": {},
+    "publishConfig": {
+        "access": "public"
+    }
 }

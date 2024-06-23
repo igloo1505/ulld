@@ -1,30 +1,34 @@
 {
-  "name": "@ulld/developer-schemas",
-  "version": "1.0.1-beta.0",
-  "private": true,
-  "scripts": {
-    "dev": "echo 'Add dev script here'",
-    "updateJsonSchemas": "tsx src/__scripts__/updateSchemas.ts",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'"
-  },
-  "files": [
-    "src"
-  ],
-  "exports": {
-    "./pluginConfig": "./src/pluginConfigSchema.ts",
-    "./fullPackageJson": "./src/packageJson.ts"
-  },
-  "dependencies": {
-    "@next/mdx": "^14.0.0",
-    "next": "^14.2.4",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "zod": "^3.22.4"
-  },
-  "packageManager": "pnpm@9.0.4",
-  "devDependencies": {
-    "tsx": "^4.15.6",
-    "zod-to-json-schema": "^3.22.4"
-  }
+    "name": "@ulld/developer-schemas",
+    "version": "1.0.1-beta.0",
+    "private": true,
+    "scripts": {
+        "dev": "echo 'Add dev script here'",
+        "updateJsonSchemas": "tsx src/__scripts__/updateSchemas.ts",
+        "test": "echo 'Add test script here'",
+        "lint": "echo 'Add lint script here'"
+    },
+    "files": [
+        "src"
+    ],
+    "exports": {
+        "./pluginConfig": "./src/pluginConfigSchema.ts",
+        "./fullPackageJson": "./src/packageJson.ts"
+    },
+    "dependencies": {
+        "@next/mdx": "^14.0.0",
+        "next": "^14.2.4",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "zod": "^3.22.4"
+    },
+    "packageManager": "pnpm@9.0.4",
+    "devDependencies": {
+        "tsx": "^4.15.6",
+        "zod-to-json-schema": "^3.22.4"
+    },
+    "peerDependencies": {},
+    "publishConfig": {
+        "access": "public"
+    }
 }
