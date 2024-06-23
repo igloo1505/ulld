@@ -1,5 +1,29 @@
 # @ulld/ui
 
+## 1.0.0-beta.1
+
+### Minor Changes
+
+- e2de111: Publish prebeta
+
+### Patch Changes
+
+- Updated dependencies [e2de111]
+  - @ulld/api@1.0.0-beta.1
+  - @ulld/component-map@1.0.0-beta.1
+  - @ulld/config@1.0.0-beta.1
+  - @ulld/configschema@1.0.0-beta.1
+  - @ulld/editor@1.0.0-beta.1
+  - @ulld/embeddable-components@1.0.0-beta.1
+  - @ulld/full-form@1.0.0-beta.1
+  - @ulld/hooks@1.0.0-beta.1
+  - @ulld/icons@1.0.0-beta.1
+  - @ulld/logger@1.0.0-beta.1
+  - @ulld/render@1.0.0-beta.1
+  - @ulld/state@1.0.0-beta.1
+  - @ulld/tailwind@1.0.0-beta.1
+  - @ulld/utilities@1.0.0-beta.1
+
 ## 1.0.0-beta.0
 
 ### Major Changes

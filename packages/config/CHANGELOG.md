@@ -1,5 +1,11 @@
 # @ulld/config
 
+## 1.0.0-beta.1
+
+### Minor Changes
+
+- e2de111: Publish prebeta
+
 ## 1.0.0-beta.0
 
 ### Major Changes

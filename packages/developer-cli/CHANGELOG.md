@@ -1,5 +1,17 @@
 # @ulld/developer-cli
 
+## 1.0.0-beta.1
+
+### Minor Changes
+
+- e2de111: Publish prebeta
+
+### Patch Changes
+
+- Updated dependencies [e2de111]
+  - @ulld/developer@1.0.0-beta.1
+  - @ulld/developer-schemas@1.0.0-beta.1
+
 ## 1.0.0-beta.0
 
 ### Major Changes

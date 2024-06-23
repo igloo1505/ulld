@@ -1,5 +1,23 @@
 # @ulld/editor
 
+## 1.0.0-beta.1
+
+### Minor Changes
+
+- e2de111: Publish prebeta
+
+### Patch Changes
+
+- Updated dependencies [e2de111]
+  - @repo/typescript-config@1.0.0-beta.1
+  - @ulld/developer@1.0.0-beta.1
+  - @ulld/hooks@1.0.0-beta.1
+  - @ulld/parsers@1.0.0-beta.1
+  - @ulld/state@1.0.0-beta.1
+  - @ulld/tailwind@1.0.0-beta.1
+  - @ulld/ui@1.0.0-beta.1
+  - @ulld/utilities@1.0.0-beta.1
+
 ## 1.0.0-beta.0
 
 ### Major Changes
