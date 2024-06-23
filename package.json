@@ -17,7 +17,7 @@
     "forcePackgeMatch": "manypkg fix",
     "checkPackages": "manypkg check",
     "typedoc": "typedoc",
-    "ci:publish": "pnpm publish -r"
+    "ci:publish": "pnpm publish -r --no-git-checks"
   },
   "devDependencies": {
     "@droppedcode/typedoc-plugin-relative-includes": "^1.0.5",
