@@ -16,7 +16,8 @@
     "postinstall": "echo 'manypkg check'",
     "forcePackgeMatch": "manypkg fix",
     "checkPackages": "manypkg check",
-    "typedoc": "typedoc"
+    "typedoc": "typedoc",
+    "ci:publish": "pnpm publish -r"
   },
   "devDependencies": {
     "@droppedcode/typedoc-plugin-relative-includes": "^1.0.5",
