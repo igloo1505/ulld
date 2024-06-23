@@ -50,4 +50,4 @@
 "@ulld/base": patch
 ---
 
-Very early publish to work on build script. Almost entirely unusable at this point.
+Publish to work on build script.

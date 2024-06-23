@@ -202,6 +202,13 @@ class PackageManager {
 
 const p = new PackageManager();
 
+p.packages = p.packages.map((u) => {
+    u.content.version = "0.0.0"
+    return {
+        ...u,
+        content: u.content,
+    };
+});
 
 // p.writeModified(true);
 
@@ -216,5 +223,3 @@ const p = new PackageManager();
 // p.removePackageFromAll("mermaid");
 // p.removePackageFromAll("rehype-mermaid");
 // p.removePackageFromAll("mdx-mermaid");
-//
-

@@ -1,7 +1,7 @@
 {
-    "version": "0.0.1-beta.0",
+    "version": "0.0.0",
     "name": "@ulld/component-configs",
-    "private": true,
+    "private": false,
     "scripts": {
         "build": "tsx ./src/scripts/build/main.ts",
         "writeImports": "tsx ./src/scripts/writeImports.ts"

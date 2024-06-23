@@ -1,7 +1,7 @@
 {
-    "version": "0.0.1-beta.0",
+    "version": "0.0.0",
     "name": "@ulld/website",
-    "private": true,
+    "private": false,
     "scripts": {
         "dev": "next dev",
         "simulateProduction": "OVERRIDE_PRODUCTION=true next dev",

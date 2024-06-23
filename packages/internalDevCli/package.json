@@ -1,7 +1,7 @@
 {
-    "version": "0.0.1-beta.0",
+    "version": "0.0.0",
     "name": "@ulld/internal-dev-cli",
-    "private": true,
+    "private": false,
     "type": "module",
     "exports": "./lib/index.js",
     "types": "dist/index.d.ts",

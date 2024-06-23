@@ -1,7 +1,7 @@
 {
-    "version": "0.0.1-beta.0",
+    "version": "0.0.0",
     "name": "@ulld/parsers",
-    "private": true,
+    "private": false,
     "exports": {
         ".": "./src/mdx/compiler/mdx-to-jsx.tsx",
         "./serializeMdxContent": "./src/mdx/compiler/mdx-to-jsx.tsx",

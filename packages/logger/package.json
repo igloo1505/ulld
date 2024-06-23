@@ -1,7 +1,7 @@
 {
-    "version": "0.0.1-beta.0",
+    "version": "0.0.0",
     "name": "@ulld/logger",
-    "private": true,
+    "private": false,
     "types": "./src/index.ts",
     "exports": {
         "./server": "./src/server/logger.ts",

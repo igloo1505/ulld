@@ -1,8 +1,8 @@
 {
-    "version": "0.0.1-beta.0",
+    "version": "0.0.0",
     "$schema": "./node_modules/@ulld/developer-schemas/src/static/ulldPackageJson.schema.json",
     "name": "@ulld/navigation",
-    "private": true,
+    "private": false,
     "scripts": {
         "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
         "build": "echo 'Add build script here'",
