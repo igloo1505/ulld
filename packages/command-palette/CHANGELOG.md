@@ -1,5 +1,33 @@
 # @ulld/command-palette
 
+## 1.0.1-beta.0
+
+### Patch Changes
+
+- Publish to work on build script.
+- Updated dependencies
+  - @ulld/api@1.0.1-beta.0
+  - @ulld/bib-manager@1.0.1-beta.0
+  - @ulld/calendar@1.0.1-beta.0
+  - @ulld/configschema@1.0.1-beta.0
+  - @ulld/database@1.0.1-beta.0
+  - @ulld/developer@1.0.1-beta.0
+  - @ulld/diagram@1.0.1-beta.0
+  - @ulld/editor@1.0.1-beta.0
+  - @ulld/equations@1.0.1-beta.0
+  - @ulld/hooks@1.0.1-beta.0
+  - @ulld/kanban@1.0.1-beta.0
+  - @ulld/logger@1.0.1-beta.0
+  - @ulld/note-network@1.0.1-beta.0
+  - @ulld/parsers@1.0.1-beta.0
+  - @ulld/snippets@1.0.1-beta.0
+  - @ulld/state@1.0.1-beta.0
+  - @ulld/tailwind@1.0.1-beta.0
+  - @ulld/task-manager@1.0.1-beta.0
+  - @ulld/ui@1.0.1-beta.0
+  - @ulld/utilities@1.0.1-beta.0
+  - @ulld/whiteboard@1.0.1-beta.0
+
 ## 1.0.0
 
 ### Major Changes

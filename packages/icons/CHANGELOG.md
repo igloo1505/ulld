@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 1.0.1-beta.0
+
+### Patch Changes
+
+- Publish to work on build script.
+- Updated dependencies
+  - @ulld/hooks@1.0.1-beta.0
+  - @ulld/tailwind@1.0.1-beta.0
+  - @ulld/utilities@1.0.1-beta.0
+
 ## 1.0.0
 
 ### Major Changes

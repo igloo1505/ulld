@@ -1,5 +1,15 @@
 # @ulld/hooks
 
+## 1.0.1-beta.0
+
+### Patch Changes
+
+- Publish to work on build script.
+- Updated dependencies
+  - @ulld/api@1.0.1-beta.0
+  - @ulld/component-map@1.0.1-beta.0
+  - @ulld/parsers@1.0.1-beta.0
+
 ## 1.0.0
 
 ### Major Changes

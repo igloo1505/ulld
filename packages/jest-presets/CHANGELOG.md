@@ -1,5 +1,11 @@
 # @repo/jest-presets
 
+## 0.1.1-beta.0
+
+### Patch Changes
+
+- Publish to work on build script.
+
 ## 0.1.0
 
 ### Minor Changes

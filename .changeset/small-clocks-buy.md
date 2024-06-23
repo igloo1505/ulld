@@ -1,0 +1,56 @@
+---
+"@ulld/base": patch
+"@ulld/build-sandbox": patch
+"@ulld/sandbox": patch
+"@ulld/website": patch
+"@ulld/api": patch
+"@ulld/baseConfigs": patch
+"@ulld/bib-manager": patch
+"@ulld/build": patch
+"@ulld/calendar": patch
+"@ulld/chat": patch
+"@ulld/command-palette": patch
+"@ulld/component-map": patch
+"@ulld/component-configs": patch
+"@ulld/config": patch
+"@repo/eslint-config": patch
+"@repo/typescript-config": patch
+"@ulld/configschema": patch
+"@ulld/cookbook": patch
+"@ulld/database": patch
+"@ulld/default-image-map": patch
+"@ulld/developer": patch
+"@ulld/developer-cli": patch
+"@ulld/developer-schemas": patch
+"@ulld/developer-template": patch
+"@ulld/diagram": patch
+"@ulld/editor": patch
+"@ulld/embeddable-components": patch
+"@ulld/equations": patch
+"@ulld/full-form": patch
+"@ulld/health-tracking": patch
+"@ulld/hooks": patch
+"@ulld/icons": patch
+"@ulld/internal-dev-cli": patch
+"@repo/jest-presets": patch
+"@ulld/journal": patch
+"@ulld/kanban": patch
+"@ulld/landing-layouts": patch
+"@ulld/logger": patch
+"@ulld/navigation": patch
+"@ulld/note-network": patch
+"@ulld/notebook": patch
+"@ulld/parsers": patch
+"@ulld/pdf": patch
+"@ulld/plot": patch
+"@ulld/render": patch
+"@ulld/snippets": patch
+"@ulld/state": patch
+"@ulld/tailwind": patch
+"@ulld/task-manager": patch
+"@ulld/ui": patch
+"@ulld/utilities": patch
+"@ulld/whiteboard": patch
+---
+
+Publish to work on build script.

@@ -1,5 +1,20 @@
 # @ulld/render
 
+## 1.0.1-beta.0
+
+### Patch Changes
+
+- Publish to work on build script.
+- Updated dependencies
+  - @ulld/api@1.0.1-beta.0
+  - @ulld/component-map@1.0.1-beta.0
+  - @ulld/config@1.0.1-beta.0
+  - @repo/typescript-config@1.0.1-beta.0
+  - @ulld/configschema@1.0.1-beta.0
+  - @ulld/hooks@1.0.1-beta.0
+  - @repo/jest-presets@0.1.1-beta.0
+  - @ulld/utilities@1.0.1-beta.0
+
 ## 1.0.0
 
 ### Major Changes
