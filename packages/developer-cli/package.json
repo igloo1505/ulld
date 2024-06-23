@@ -1,6 +1,6 @@
 {
+    "version": "0.0.1-beta.0",
     "name": "@ulld/developer-cli",
-    "version": "1.0.1-beta.1",
     "private": true,
     "exports": "./lib/index.js",
     "types": "dist/index.d.ts",

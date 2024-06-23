@@ -1,6 +1,6 @@
 {
+    "version": "0.0.1-beta.0",
     "name": "@ulld/ui",
-    "version": "1.0.1-beta.1",
     "private": true,
     "license": "MIT",
     "main": "dist/index.js",

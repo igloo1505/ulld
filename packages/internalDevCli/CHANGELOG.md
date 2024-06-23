@@ -1,5 +1,11 @@
 # @ulld/internal-dev-cli
 
+## 0.0.1-beta.0
+
+### Patch Changes
+
+- Very early publish to work on build script. Almost entirely unusable at this point.
+
 ## 1.0.1-beta.1
 
 ### Patch Changes

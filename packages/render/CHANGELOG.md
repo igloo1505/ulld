@@ -1,5 +1,18 @@
 # @ulld/render
 
+## 0.0.1-beta.0
+
+### Patch Changes
+
+- Very early publish to work on build script. Almost entirely unusable at this point.
+- Updated dependencies
+  - @ulld/component-map@0.0.1-beta.0
+  - @ulld/configschema@0.0.1-beta.0
+  - @ulld/utilities@0.0.1-beta.0
+  - @ulld/config@0.0.1-beta.0
+  - @ulld/hooks@0.0.1-beta.0
+  - @ulld/api@0.0.1-beta.0
+
 ## 1.0.1-beta.1
 
 ### Patch Changes

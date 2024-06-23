@@ -1,5 +1,27 @@
 # @ulld/equations
 
+## 0.0.1-beta.0
+
+### Patch Changes
+
+- Very early publish to work on build script. Almost entirely unusable at this point.
+- Updated dependencies
+  - @ulld/embeddable-components@0.0.1-beta.0
+  - @ulld/developer-schemas@0.0.1-beta.0
+  - @ulld/tailwind@0.0.1-beta.0
+  - @ulld/configschema@0.0.1-beta.0
+  - @ulld/developer@0.0.1-beta.0
+  - @ulld/full-form@0.0.1-beta.0
+  - @ulld/utilities@0.0.1-beta.0
+  - @ulld/database@0.0.1-beta.0
+  - @ulld/parsers@0.0.1-beta.0
+  - @ulld/editor@0.0.1-beta.0
+  - @ulld/render@0.0.1-beta.0
+  - @ulld/hooks@0.0.1-beta.0
+  - @ulld/state@0.0.1-beta.0
+  - @ulld/api@0.0.1-beta.0
+  - @ulld/ui@0.0.1-beta.0
+
 ## 1.0.1-beta.1
 
 ### Patch Changes

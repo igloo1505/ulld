@@ -202,19 +202,8 @@ class PackageManager {
 
 const p = new PackageManager();
 
-p.packages = p.packages.map((u) => {
-    return {
-        ...u,
-        content: {
-            ...u.content,
-            publishConfig: {
-                access: "public",
-            },
-        },
-    };
-});
 
-p.writeModified(true);
+// p.writeModified(true);
 
 // p.clearNodeModules()
 
@@ -227,3 +216,5 @@ p.writeModified(true);
 // p.removePackageFromAll("mermaid");
 // p.removePackageFromAll("rehype-mermaid");
 // p.removePackageFromAll("mdx-mermaid");
+//
+

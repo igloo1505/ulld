@@ -1,6 +1,6 @@
 {
+    "version": "0.0.1-beta.0",
     "name": "@ulld/component-map",
-    "version": "1.0.1-beta.1",
     "private": true,
     "scripts": {
         "dev": "echo 'Add dev script here'",

@@ -1,6 +1,6 @@
 {
+    "version": "0.0.1-beta.0",
     "name": "@ulld/health-tracking",
-    "version": "1.0.1-beta.1",
     "private": true,
     "scripts": {
         "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",

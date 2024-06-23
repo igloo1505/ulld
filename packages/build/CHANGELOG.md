@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.1-beta.0
+
+### Patch Changes
+
+- Very early publish to work on build script. Almost entirely unusable at this point.
+- Updated dependencies
+  - @ulld/developer-schemas@0.0.1-beta.0
+  - @ulld/configschema@0.0.1-beta.0
+  - @ulld/baseConfigs@0.0.1-beta.0
+  - @ulld/utilities@0.0.1-beta.0
+
 ## 1.0.1-beta.1
 
 ### Patch Changes

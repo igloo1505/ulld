@@ -1,0 +1,53 @@
+---
+"@ulld/embeddable-components": patch
+"@ulld/developer-template": patch
+"@ulld/default-image-map": patch
+"@ulld/developer-schemas": patch
+"@ulld/component-configs": patch
+"@ulld/command-palette": patch
+"@ulld/health-tracking": patch
+"@ulld/landing-layouts": patch
+"@ulld/tailwind": patch
+"@ulld/internal-dev-cli": patch
+"@ulld/component-map": patch
+"@ulld/developer-cli": patch
+"@ulld/configschema": patch
+"@ulld/note-network": patch
+"@ulld/task-manager": patch
+"@ulld/baseConfigs": patch
+"@ulld/bib-manager": patch
+"@ulld/navigation": patch
+"@ulld/whiteboard": patch
+"@ulld/build-sandbox": patch
+"@ulld/developer": patch
+"@ulld/equations": patch
+"@ulld/full-form": patch
+"@ulld/utilities": patch
+"@ulld/calendar": patch
+"@ulld/cookbook": patch
+"@ulld/database": patch
+"@ulld/notebook": patch
+"@ulld/snippets": patch
+"@ulld/diagram": patch
+"@ulld/journal": patch
+"@ulld/parsers": patch
+"@ulld/config": patch
+"@ulld/editor": patch
+"@ulld/kanban": patch
+"@ulld/logger": patch
+"@ulld/render": patch
+"@ulld/build": patch
+"@ulld/hooks": patch
+"@ulld/icons": patch
+"@ulld/state": patch
+"@ulld/chat": patch
+"@ulld/plot": patch
+"@ulld/sandbox": patch
+"@ulld/website": patch
+"@ulld/api": patch
+"@ulld/pdf": patch
+"@ulld/ui": patch
+"@ulld/base": patch
+---
+
+Very early publish to work on build script. Almost entirely unusable at this point.

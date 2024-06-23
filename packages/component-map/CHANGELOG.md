@@ -1,5 +1,33 @@
 # @ulld/component-map
 
+## 0.0.1-beta.0
+
+### Patch Changes
+
+- Very early publish to work on build script. Almost entirely unusable at this point.
+- Updated dependencies
+  - @ulld/embeddable-components@0.0.1-beta.0
+  - @ulld/default-image-map@0.0.1-beta.0
+  - @ulld/health-tracking@0.0.1-beta.0
+  - @ulld/tailwind@0.0.1-beta.0
+  - @ulld/note-network@0.0.1-beta.0
+  - @ulld/task-manager@0.0.1-beta.0
+  - @ulld/bib-manager@0.0.1-beta.0
+  - @ulld/navigation@0.0.1-beta.0
+  - @ulld/whiteboard@0.0.1-beta.0
+  - @ulld/equations@0.0.1-beta.0
+  - @ulld/full-form@0.0.1-beta.0
+  - @ulld/calendar@0.0.1-beta.0
+  - @ulld/cookbook@0.0.1-beta.0
+  - @ulld/notebook@0.0.1-beta.0
+  - @ulld/snippets@0.0.1-beta.0
+  - @ulld/diagram@0.0.1-beta.0
+  - @ulld/journal@0.0.1-beta.0
+  - @ulld/editor@0.0.1-beta.0
+  - @ulld/kanban@0.0.1-beta.0
+  - @ulld/plot@0.0.1-beta.0
+  - @ulld/pdf@0.0.1-beta.0
+
 ## 1.0.1-beta.1
 
 ### Patch Changes

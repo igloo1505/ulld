@@ -1,5 +1,17 @@
 # @ulld/kanban
 
+## 0.0.1-beta.0
+
+### Patch Changes
+
+- Very early publish to work on build script. Almost entirely unusable at this point.
+- Updated dependencies
+  - @ulld/tailwind@0.0.1-beta.0
+  - @ulld/developer@0.0.1-beta.0
+  - @ulld/logger@0.0.1-beta.0
+  - @ulld/state@0.0.1-beta.0
+  - @ulld/api@0.0.1-beta.0
+
 ## 1.0.1-beta.1
 
 ### Patch Changes
