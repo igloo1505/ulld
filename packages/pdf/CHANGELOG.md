@@ -1,5 +1,22 @@
 # @ulld/pdf
 
+## 1.0.1-beta.1
+
+### Patch Changes
+
+- ee6a7ce: Commit to work with build script.
+- Updated dependencies [ee6a7ce]
+  - @ulld/api@1.0.1-beta.1
+  - @repo/eslint-config@0.1.1-beta.1
+  - @repo/typescript-config@1.0.1-beta.1
+  - @ulld/configschema@1.0.1-beta.1
+  - @ulld/developer@1.0.1-beta.1
+  - @ulld/hooks@1.0.1-beta.1
+  - @repo/jest-presets@0.1.1-beta.1
+  - @ulld/ui@1.0.1-beta.1
+  - @ulld/utilities@1.0.1-beta.1
+  - @ulld/whiteboard@1.0.1-beta.1
+
 ## 1.0.1-beta.0
 
 ### Patch Changes

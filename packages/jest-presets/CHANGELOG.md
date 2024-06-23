@@ -1,5 +1,11 @@
 # @repo/jest-presets
 
+## 0.1.1-beta.1
+
+### Patch Changes
+
+- ee6a7ce: Commit to work with build script.
+
 ## 0.1.1-beta.0
 
 ### Patch Changes

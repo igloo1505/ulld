@@ -1,6 +1,6 @@
 {
     "name": "@ulld/configschema",
-    "version": "1.0.1-beta.0",
+    "version": "1.0.1-beta.1",
     "private": true,
     "main": "./src/types.ts",
     "types": "./src/types.ts",

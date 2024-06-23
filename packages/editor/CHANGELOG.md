@@ -1,5 +1,20 @@
 # @ulld/editor
 
+## 1.0.1-beta.1
+
+### Patch Changes
+
+- ee6a7ce: Commit to work with build script.
+- Updated dependencies [ee6a7ce]
+  - @repo/typescript-config@1.0.1-beta.1
+  - @ulld/developer@1.0.1-beta.1
+  - @ulld/hooks@1.0.1-beta.1
+  - @ulld/parsers@1.0.1-beta.1
+  - @ulld/state@1.0.1-beta.1
+  - @ulld/tailwind@1.0.1-beta.1
+  - @ulld/ui@1.0.1-beta.1
+  - @ulld/utilities@1.0.1-beta.1
+
 ## 1.0.1-beta.0
 
 ### Patch Changes

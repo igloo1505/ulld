@@ -1,5 +1,11 @@
 # @ulld/logger
 
+## 1.0.1-beta.1
+
+### Patch Changes
+
+- ee6a7ce: Commit to work with build script.
+
 ## 1.0.1-beta.0
 
 ### Patch Changes

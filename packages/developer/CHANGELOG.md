@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 1.0.1-beta.1
+
+### Patch Changes
+
+- ee6a7ce: Commit to work with build script.
+- Updated dependencies [ee6a7ce]
+  - @ulld/config@1.0.1-beta.1
+  - @repo/eslint-config@0.1.1-beta.1
+  - @repo/typescript-config@1.0.1-beta.1
+  - @ulld/configschema@1.0.1-beta.1
+  - @ulld/database@1.0.1-beta.1
+  - @ulld/logger@1.0.1-beta.1
+
 ## 1.0.1-beta.0
 
 ### Patch Changes

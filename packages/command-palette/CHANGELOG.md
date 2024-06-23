@@ -1,5 +1,33 @@
 # @ulld/command-palette
 
+## 1.0.1-beta.1
+
+### Patch Changes
+
+- ee6a7ce: Commit to work with build script.
+- Updated dependencies [ee6a7ce]
+  - @ulld/api@1.0.1-beta.1
+  - @ulld/bib-manager@1.0.1-beta.1
+  - @ulld/calendar@1.0.1-beta.1
+  - @ulld/configschema@1.0.1-beta.1
+  - @ulld/database@1.0.1-beta.1
+  - @ulld/developer@1.0.1-beta.1
+  - @ulld/diagram@1.0.1-beta.1
+  - @ulld/editor@1.0.1-beta.1
+  - @ulld/equations@1.0.1-beta.1
+  - @ulld/hooks@1.0.1-beta.1
+  - @ulld/kanban@1.0.1-beta.1
+  - @ulld/logger@1.0.1-beta.1
+  - @ulld/note-network@1.0.1-beta.1
+  - @ulld/parsers@1.0.1-beta.1
+  - @ulld/snippets@1.0.1-beta.1
+  - @ulld/state@1.0.1-beta.1
+  - @ulld/tailwind@1.0.1-beta.1
+  - @ulld/task-manager@1.0.1-beta.1
+  - @ulld/ui@1.0.1-beta.1
+  - @ulld/utilities@1.0.1-beta.1
+  - @ulld/whiteboard@1.0.1-beta.1
+
 ## 1.0.1-beta.0
 
 ### Patch Changes
