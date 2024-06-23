@@ -1,13 +1,33 @@
 {
   "UI": {
-    "confirmationModal": "components/slots/ui/confirmationModal.ts",
-    "landingPage": "components/slots/landingPage/main.tsx"
+    "confirmationModal": {
+      "path": "components/slots/ui/confirmationModal.ts",
+      "clientOnly": true,
+      "inReduxProvider": false
+    },
+    "landingPage": {
+      "path": "components/slots/landingPage/main.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false
+    }
   },
   "navigation": {
-    "secondary": "components/slots/navigation/secondaryNavigation.tsx",
-    "navbar": "components/slots/navigation/navbar.tsx"
+    "secondary": {
+      "path": "components/slots/navigation/secondaryNavigation.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false
+    },
+    "navbar": {
+      "path": "components/slots/navigation/navbar.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false
+    }
   },
   "commandPalette": {
-    "commandPalette": "components/slots/commandPalette/main.tsx"
+    "commandPalette": {
+      "path": "components/slots/commandPalette/main.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false
+    }
   }
 }
