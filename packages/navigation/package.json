@@ -1,5 +1,5 @@
 {
-    "version": "0.0.0",
+    "version": "0.0.1",
     "$schema": "./node_modules/@ulld/developer-schemas/src/static/ulldPackageJson.schema.json",
     "name": "@ulld/navigation",
     "private": false,
