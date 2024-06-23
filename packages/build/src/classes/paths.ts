@@ -7,9 +7,11 @@ export class TargetPaths implements Record<PathKeys, string> {
     public: string;
     styles: string;
     packageJson: string;
+    app:  string;
     constructor(public targetDir: string, public isLocalDev: boolean) {
         this.public = path.join(targetDir, "public");
-        this.styles = path.join(targetDir, "src/styles");
+        this.styles = path.join(targetDir, "src", "styles");
+        this.app = path.join(targetDir, "src", "app")
         this.packageJson = path.join(targetDir, "package.json");
     }
     update(targetDir: string){

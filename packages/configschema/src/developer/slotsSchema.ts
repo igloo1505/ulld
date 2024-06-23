@@ -1,5 +1,5 @@
-import { z } from "zod";
-
+import { z, ZodTypeAny } from "zod";
+import slots from "@ulld/utilities/slotMap.json"
 
 export const configPluginSchema = z.object({
     name: z.string(),
@@ -11,6 +11,9 @@ const pluginConfigTransform = (val: string | z.input<typeof configPluginSchema> 
        let vals = Array.isArray(val) ? val : [val]
        return vals.map((v) => typeof v === "string" ? {name: v, version: "latest"} : configPluginSchema.parse(v))
 }
+
+
+// TODO: Type this with  {[k in keyof typeof slots]: ZodTypeAny} once the rest of the slots have been created in the base app and then generated to the slotMap file.
 
 export const slotFields = {
     navigation: z
@@ -94,7 +97,8 @@ export const slotFields = {
     UI: z.union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()]).default("@ulld/ui").transform(pluginConfigTransform)
 }
 
-// TODO: Move this to the configschema package.
+
+
 export const pluginSlotSchema = z.object(slotFields);
 
 export const pluginSlotKeys = pluginSlotSchema.keyof();

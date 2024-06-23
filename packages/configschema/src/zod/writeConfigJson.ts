@@ -11,7 +11,6 @@ export const writeConfigJson = async (config: AppConfigSchemaInput, targetDirect
         "$refStrategy": "relative",
         "basePath": [ targetDirectory ]
     })
-    console.log("jsonSchema: ", jsonSchema)
     await fs.promises.writeFile(path.join(targetDirectory, "appConfig.ulld.json"), JSON.stringify(parsed), {encoding: "utf-8"})
     return await fs.promises.writeFile(path.join(targetDirectory, "jsonSchema.ulld.json"), JSON.stringify(jsonSchema), {encoding: "utf-8"})
 }

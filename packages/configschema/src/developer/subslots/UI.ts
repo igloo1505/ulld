@@ -1,9 +1,10 @@
 import {z} from 'zod'
 
-export const slot = "ui"
+export const slot = "UI"
 
 export const fields = {
     landingPage: z.string().nullish().describe("Path to navbar component."),
+    confirmationModal: z.string().nullish().describe("Path to confirmation modal component.")
 }
 
 

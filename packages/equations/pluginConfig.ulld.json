@@ -1,27 +1,33 @@
 {
     "pluginName": "@ulld/equations",
     "slot": "math",
-    "components": [],
+    "components": [
+        {
+            "componentName": "LandingPageBetaRelease",
+            "slot": "landingPage",
+            "export": "beta"
+        }
+    ],
     "parsers": [],
     "pages": [
         {
-            "targetUrl": "(.)equations/details/[equationId]",
-            "export": "./equationModal",
+            "targetUrl": "@modal/(.)equations/details/[equationId]",
+            "export": "equationModal",
             "exportsPageProps": true
         },
         {
             "targetUrl": "equations/add",
-            "export": "./addEquationPage",
+            "export": "addEquationPage",
             "exportsPageProps": true
         },
         {
             "targetUrl": "equations/details/[equationId]",
-            "export": "./equationDetailsPage",
+            "export": "equationDetailsPage",
             "exportsPageProps": true
         },
         {
             "targetUrl": "equations",
-            "export": "./equationsPage",
+            "export": "equationsPage",
             "exportsPageProps": true
         }
     ],

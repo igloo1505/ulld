@@ -8,6 +8,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo lint",
     "typecheck": "turbo typecheck",
+    "update-ulldBase": "git subtree push --prefix=apps/base/ ulldBase main",
     "publish-packages": "turbo run build lint test && changeset version && changeset publish",
     "test": "turbo test",
     "test:watch": "turbo test:watch",

@@ -7,7 +7,7 @@
     "build": "echo 'Add build script here'",
     "test": "echo 'Add test script here'",
     "lint": "echo 'Add lint script here'",
-    "writePluginConfig": "tsx ./pluginConfig.ulld.ts"
+    "writePluginConfig": "dotenv -e ../../.env.local -- tsx ./pluginConfig.ulld.ts"
   },
   "files": [
     "src"

@@ -10,6 +10,7 @@ const ulldPluginConfig: DeveloperConfigInput = {
     slot: "UI",
     components: [
         {
+            componentName: "LandingPageBetaRelease",
             slot: "landingPage",
             export: "./beta"
         },

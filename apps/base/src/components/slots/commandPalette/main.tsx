@@ -1,3 +1,5 @@
+// Slot: commandPalette/commandPalette
+
 import DefaultCommandPalette from "@ulld/command-palette/commandPalette"
 
 

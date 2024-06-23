@@ -1,3 +1,5 @@
+// Slot: UI/confirmationModal
+
 "use client"
 import DefaultConfirmationModal from "@ulld/ui/confirmationModal"
 

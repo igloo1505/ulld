@@ -4,6 +4,7 @@
   "globalEnv": [".env.local"],
   "tasks": {
     "writePluginConfig": {
+      "cache": false,
       "env": [".env.local"]
     },
     "generateWebTags": {

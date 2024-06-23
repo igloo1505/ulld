@@ -1,8 +1,5 @@
 import cp from "child_process"
-import fs from 'fs'
-import path from 'path'
-import os from 'os'
-const validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+import chalk from "chalk"
 
 export class ShellManager {
     constructor(){}
@@ -10,6 +7,10 @@ export class ShellManager {
 
     log(val: any, ...vals: any){
         console.log(val, ...vals)
+    }
+
+    ulld(){
+        return `${chalk.hex("#0ba5e9")("U")}LLD`
     }
 
     // async genTempFile(content: string){

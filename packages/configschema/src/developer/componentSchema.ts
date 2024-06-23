@@ -3,14 +3,19 @@ import { transformExportString } from "./transforms";
 
 
 const embeddableConfigSchema = z.object({
-        componentName: z.string(),
-        aliases: z.string().array(),
-        regexToInclude: z.string().describe("String passed to new RegExp(<regexToInclude>) to determine if a component should be imported. The raw content of a mdx file will be tested using this regex, and imported if a match is found. Due to the nature of jsx, 99% of the time, the componentName property can be used with a prefix of < to give '<MyComponentName'")
-    })
+        regexToInclude: z.string().describe("String passed to new RegExp(<regexToInclude>) to determine if a component should be imported. The raw content of a mdx file will be tested using this regex, and imported if a match is found. Due to the nature of jsx, 99% of the time, the componentName property can be used with a prefix of < to give '<MyComponentName'"),
+       label: z.string().optional().describe("An object key that matches your regex. 99% of the time, this will just be the regexToInclude property without the leading '<'. It will default to that, but if your regexToInclude property is more specific and includes other special characters, you should provide this label yourself.")
+    }).transform((a) => {
+    return {
+        ...a,
+        label: a.label || a.regexToInclude.replaceAll(/\<|\\|\>/gm, "")
+    }
+})
 
 
 // TODO: Dynamically generate more strict types after the baseline build process is handled. The component slots should be more strict based on the parents type.
 export const componentConfigSchema = z.object({
+    componentName: z.string().describe("Must start with a capital letter.").transform((f) => `${f[0].toUpperCase()}${f.slice(1)}`),
     slot: z
         .string()
         .optional()

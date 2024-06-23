@@ -1,14 +1,4 @@
 {
-    "pluginName": "@ulld/landing-layouts",
-    "slot": "UI",
-    "components": [
-        {
-            "componentName": "LandingPageBetaRelease",
-            "slot": "landingPage",
-            "export": "beta"
-        }
-    ],
-    "parsers": [],
     "pages": [
         {
             "targetUrl": "@modal/(.)equations/details/[equationId]",
@@ -31,5 +21,11 @@
             "exportsPageProps": true
         }
     ],
-    "events": {}
+    "components": [
+        {
+            "componentName": "LandingPageBetaRelease",
+            "slot": "landingPage",
+            "export": "beta"
+        }
+    ]
 }

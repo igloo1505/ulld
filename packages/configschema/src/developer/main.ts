@@ -46,6 +46,8 @@ export const developerConfigSchema = z
         settings: pluginSettingsSchema.optional(),
         pages: pluginAdditionalPageSchema.array().default([]),
         events: pluginEventsSchema,
+        // Config seems right, but commented out because it's not yet enabled in the build script and I need to take care of enough of the build script to launch this app.
+        // commandPalette: pluginCommandPaletteSchema
     })
     .transform((data) => {
         if (data.settings && !data.settings.tabLabel) {

@@ -63,7 +63,7 @@ export class UlldBuildProcess extends Prompter {
         );
         this.plugins =
             this.appConfig.config?.plugins.map(
-                (c) => new UlldPlugin(this.targetDir, c.name, c.version),
+                (c) => new UlldPlugin(this.paths, c.name, c.version),
             ) || [];
         this.log(`Found ${this.plugins.length} plugins:`);
         for (const k of this.plugins) {
@@ -77,7 +77,6 @@ export class UlldBuildProcess extends Prompter {
             `Generating a package.json file specific to your configuration...`,
         );
         let pkg = this.packageJson.data;
-        console.log("pkg: ", pkg);
         if (!pkg) {
             process.exit(`UNDEFINED_PKG_DATA
 
@@ -85,9 +84,7 @@ It's not you it's me. Something broked.
 `);
         }
         let hasNew = false;
-        console.log("hasNew: ", hasNew);
         for (const k of this.plugins) {
-            console.log("k: ", k);
             let pkgRes = k.applyDependency(pkg);
             pkg = pkgRes.pkg;
             if (pkgRes.isNew && !hasNew) {
@@ -95,7 +92,6 @@ It's not you it's me. Something broked.
             }
         }
         this.packageJson.data = pkg;
-        console.log(`This is the end...`);
     }
     async gatherAppConfig() {
         if (!this.appConfig.exists) {
@@ -123,6 +119,7 @@ and continue when that file is in place.`,
         this.appConfig.gather();
     }
     async checkPluginValidity() {
+        this.log(`Checking to make sure plugins provided are valid...`);
         let invalidPlugins: UlldPlugin[] = [];
         for (const k of this.plugins) {
             if (!k.isValid()) {
@@ -158,21 +155,41 @@ and continue when that file is in place.`,
             }
         }
     }
+    async resolvePageConflicts() {
+        if (this.slotConflicts.length > 0) {
+            await this.getPagePreferences(this.pageConflicts);
+            // this.removeSlotConflicts()
+        } else {
+            this.log(
+                this.slotConflicts.length === 0
+                    ? `More great news! No page conflicts were found either!`
+                    : `Good news! No page conflicts were found.`,
+            );
+        }
+    }
     gatherSlotConflicts() {
-        let allSlots = this.getAllSlots();
+        // let allSlots = this.getAllSlots();
         let slotMap: Record<
             PluginSlotKey,
             Record<string, SubSlot[]>
         > = {} as Record<PluginSlotKey, Record<string, SubSlot[]>>;
-        for (const k of allSlots) {
-            if (!slotMap[k.slot]) {
-                slotMap[k.slot] = {};
-            }
-            for (const l of k.subslots) {
-                if (!slotMap[k.slot][l.subSlot]) {
-                    slotMap[k.slot][l.subSlot] = [];
+        let p = this.plugins.filter((f) => f.slot);
+        for (const plugin of p) {
+            for (const component of plugin.components) {
+                if (component.subSlot) {
+                    if (!slotMap[component.subSlot.parentSlot]) {
+                        slotMap[component.subSlot.parentSlot] = {};
+                    }
+                    if (
+                        !slotMap[component.subSlot.parentSlot][component.subSlot.subSlot]
+                    ) {
+                        slotMap[component.subSlot.parentSlot][component.subSlot.subSlot] =
+                            [];
+                    }
+                    slotMap[component.subSlot.parentSlot][component.subSlot.subSlot].push(
+                        component.subSlot,
+                    );
                 }
-                slotMap[k.slot][l.subSlot].push(l);
             }
         }
         for (const w in slotMap) {
@@ -189,9 +206,15 @@ and continue when that file is in place.`,
             }
         }
     }
+    removeSlotConflicts() {
+        this.plugins.forEach((p) => p.removeRejectedSlots());
+    }
     async resolveSlotConflicts() {
         if (this.slotConflicts.length > 0) {
             await this.getSlotPreferences(this.slotConflicts);
+            this.removeSlotConflicts();
+        } else {
+            this.log(`Great news! No slot conflicts were found.`);
         }
     }
     async createBaseProject() {
@@ -214,3 +237,4 @@ and continue when that file is in place.`,
         return success;
     }
 }
+

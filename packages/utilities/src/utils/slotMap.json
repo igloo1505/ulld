@@ -1,0 +1,13 @@
+{
+  "UI": {
+    "confirmationModal": "components/slots/ui/confirmationModal.ts",
+    "landingPage": "components/slots/landingPage/main.tsx"
+  },
+  "navigation": {
+    "secondary": "components/slots/navigation/secondaryNavigation.tsx",
+    "navbar": "components/slots/navigation/navbar.tsx"
+  },
+  "commandPalette": {
+    "commandPalette": "components/slots/commandPalette/main.tsx"
+  }
+}

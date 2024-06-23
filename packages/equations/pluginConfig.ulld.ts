@@ -10,7 +10,7 @@ const pluginConfig: DeveloperConfigInput = {
     pages: [
         {
             export: "./equationModal",
-            targetUrl: "(.)equations/details/[equationId]/page.tsx",
+            targetUrl: "@modal/(.)equations/details/[equationId]/page.tsx",
             exportsPageProps: true,
         },
         {

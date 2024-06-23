@@ -6,9 +6,9 @@ interface LandingPageProps {
 }
 
 const LandingPage = (props: LandingPageProps) => {
-return (
-    <LandingPageComponent {...props}/>
-)
+    return (
+        <LandingPageComponent {...props}/>
+    )
 }
 
 
