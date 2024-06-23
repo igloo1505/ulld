@@ -1,6 +1,6 @@
 {
     "name": "@ulld/pdf",
-    "version": "0.0.0",
+    "version": "1.0.0-beta.0",
     "private": true,
     "scripts": {
         "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
@@ -33,7 +33,7 @@
     "devDependencies": {
         "@types/react": "^18.2.74",
         "@types/react-dom": "^18.2.24",
-        "next": "^14.2.3",
+        "next": "^14.2.4",
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
     },

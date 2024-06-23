@@ -1,15 +1,14 @@
 "use client";
 import { MinusIcon, PlusIcon } from "lucide-react";
-import React, { useRef } from "react";
+import React, { ComponentProps, useRef } from "react";
 import { Button } from "@ulld/tailwind/button";
 import { NumberInputPopover } from "./numberInputPopover";
 import { NumberInputProps } from "./types";
 import { isValidNumber } from "./numberValidator";
 
-export const NumberInput = (props: NumberInputProps) => {
+export const NumberInput = (props: NumberInputProps & ComponentProps<typeof NumberInputPopover> ) => {
     const { onChange, min, max, step, initial, value, label, integerOnly } =
         props;
-    const ref = useRef<HTMLAnchorElement>(null!);
 
     const handleMinus = () => {
         let nv = value - step;
@@ -30,15 +29,15 @@ export const NumberInput = (props: NumberInputProps) => {
 
     return (
         <div className={"w-fit flex flex-row justify-center items-center gap-4"}>
-            <Button
+            {!props.noButtons && <Button
                 disabled={Boolean(typeof min === "number" && value <= min)}
                 onClick={handleMinus}
                 className={"bg-red-400 hover:bg-red-500 transition-colors duration-200"}
             >
                 <MinusIcon />
-            </Button>
+            </Button>}
             <NumberInputPopover {...props} />
-            <Button
+            {!props.noButtons && <Button
                 disabled={Boolean(typeof max === "number" && value >= max)}
                 onClick={handlePlus}
                 className={
@@ -46,7 +45,7 @@ export const NumberInput = (props: NumberInputProps) => {
                 }
             >
                 <PlusIcon />
-            </Button>
+            </Button>}
         </div>
     );
 };

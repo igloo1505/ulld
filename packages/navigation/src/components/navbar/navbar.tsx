@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
 import Link from "next/link";
 import NavbarSearchInput from "./navbarSearchInput";
 import { usePathname } from "next/navigation";
@@ -12,29 +11,37 @@ import { SearchIcon, BookmarkIcon } from "lucide-react";
 /* import { internalLinks } from "../sidebar/internalSidebarButtons"; */
 import Logo from "@ulld/icons/logo";
 import { toggleBookmark } from "@ulld/api/actions/clientOnly/bookmarking";
+import { useEventListener } from "@ulld/hooks/useEventListener";
+import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 
 const NavShowBreakpoint = 20;
 
-const connector = connect((state: RootState, props: any) => ({
-    open: state.UI.drawer.open,
-    navtype: state.UI.navtype,
-    noteId: state.functionality.currentNoteId,
-    config: state.config,
-    props: props,
-}));
 
+// DOCUMENT_DEVELOPER: 
 interface NavbarProps {
-    open: boolean;
-    navtype: RootState["UI"]["navtype"];
     noteId?: number;
-    config?: RootState["config"]
+    config?: AppConfigSchemaOutput
+}
+
+interface EventProps {
+
+}
+
+declare global {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+    interface WindowEventMap {
+        "set-note-id": CustomEvent<{noteId: number | false}>;
+    }
 }
 
 
-export const Navbar = connector(({ noteId, config }: NavbarProps) => {
+const Navbar = ({ config }: NavbarProps) => {
     const pathname = usePathname();
     const [show, setShow] = useState(pathname !== "/");
     const [isAbsolute, setIsAbsolute] = useState(false);
+    const [noteId, setNoteId] = useState<number | undefined>(undefined)
+
+    useEventListener("set-note-id", (e) => setNoteId(e.detail.noteId === false ? undefined : e.detail.noteId))
 
     const hoverListener = (e: MouseEvent) => {
         if (pathname !== "/") {
@@ -155,6 +162,6 @@ export const Navbar = connector(({ noteId, config }: NavbarProps) => {
             </div>
         </nav>
     );
-});
+};
 
-Navbar.displayName = "Navbar";
+export default Navbar

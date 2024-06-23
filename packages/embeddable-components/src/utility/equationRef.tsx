@@ -1,13 +1,8 @@
 import React from 'react'
 import { EquationReference } from './equationReference'
 import EquationReferenceAnchor from './equationReferenceAnchor'
+import { EquationRefProps } from './equationRefProps'
 
-export interface EquationRefProps {
-    id: string
-    children: React.ReactNode
-    anchor?: boolean
-    defaultContent?: string | number
-}
 
 
 export const EquationRef = (props: EquationRefProps & {}) => {

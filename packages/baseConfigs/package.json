@@ -1,6 +1,6 @@
 {
     "name": "@ulld/baseConfigs",
-    "version": "0.0.0",
+    "version": "1.0.0-beta.0",
     "private": true,
     "main": "./src/index.ts",
     "types": "./src/index.ts",
@@ -16,12 +16,11 @@
     },
     "packageManager": "pnpm@9.0.4",
     "devDependencies": {
-        "next": "^14.2.3"
+        "next": "^14.2.4"
     },
     "dependencies": {
         "@next/mdx": "^14.0.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
-    },
-    "peerDependencies": {}
+    }
 }

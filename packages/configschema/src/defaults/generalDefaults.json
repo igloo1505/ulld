@@ -1,0 +1,7 @@
+{
+  "jupyter": {
+    "environment": "/opt/anaconda3/bin/python",
+    "kernel": "python3",
+    "jupyterPort": 21521
+  }
+}

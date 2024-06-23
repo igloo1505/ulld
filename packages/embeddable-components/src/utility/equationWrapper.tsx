@@ -9,7 +9,7 @@ import {MdxContentPreCompiled} from "@ulld/render/mdx/preCompiled"
 
 
 
-interface EquationWrapperProps extends BaseEmbeddableComponentProps {
+interface EquationWrapperProps extends BaseEmbeddableComponentProps<HTMLDivElement> {
     children?: React.ReactNode
     id: string /// Equation Id... not DOM id
     python?: string
@@ -30,7 +30,7 @@ export const EquationWrapper = async ({ id, python, ..._props }: EquationWrapper
 
     return (
         <EquationContextMenu
-            python={res.asPython}
+            python={res.asPython || undefined}
             latex={res.rawLatex}
             equationId={id}
         >
@@ -43,7 +43,10 @@ export const EquationWrapper = async ({ id, python, ..._props }: EquationWrapper
                     id={appendToId}
                     href={`/equations/details/${id}`}
                 >
-                    {res.content && <MdxContentPreCompiled content={res.content} />}
+                    {res.content && <MdxContentPreCompiled 
+                        content={res.content}
+                        raw={res.rawLatex}
+                    />}
                 </Link>
             </div>
         </EquationContextMenu>

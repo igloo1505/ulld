@@ -17,3 +17,7 @@ export const makeValidId = (id: string) => {
     s = replaceRecursively(id, /([^\w]|\d)/gm, "")
     return s
 }
+
+export const makeValidIdOnlyLetters = (id: string) => {
+    return id.replaceAll(/[^\w]/gmi, "")
+}

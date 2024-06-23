@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import React from "react";
+import React, { useEffect, useMemo } from "react";
 import type { LucideProps } from "lucide-react";
 import dynamicIconImports from "lucide-react/dynamicIconImports";
 import { AdmonitionType } from "@ulld/utilities/admonition/types";
@@ -50,6 +50,7 @@ const logoIconNames = [
     "swift",
     "vercel",
     "youtube",
+    "ulld"
 ] as const;
 
 export type LogoIconNames = (typeof logoIconNames)[number];
@@ -179,24 +180,39 @@ export const completeValidIconNameList = [
 
 interface IconProps extends LucideProps {
     name: ValidIconName;
+    onLoad?: () => void
 }
 
-export const DynamicIcon = ({ name, ...props }: IconProps) => {
+const DynamicIconComponent = ({ name, ...props }: IconProps) => { };
+
+export const DynamicIcon = (props: IconProps) => {
+    const { name } = props;
+    let iconType: "logo" | "lucide" | null = null;
     if (logoIconNames.includes(name as (typeof logoIconNames)[number])) {
-        let Icon = dynamic(() => import(`./logoIcons/${name}`));
-        return <Icon {...props} />;
+        iconType = "logo";
     }
     let _name =
         name in iconNameMap ? iconNameMap[name as keyof typeof iconNameMap] : name;
-    if (_name === false) {
-        return null;
+    if (!iconType && _name && Object.keys(dynamicIconImports).includes(_name)) {
+        iconType = "lucide";
     }
-    if (Object.keys(dynamicIconImports).includes(_name)) {
-        const LucideIcon = dynamic(
-            dynamicIconImports[_name as keyof typeof dynamicIconImports],
-        );
-        return <LucideIcon {...props} />;
-    }
+    useEffect(() => {
+       if(props.onLoad){
+            props.onLoad()
+        } 
+    }, [])
+    return useMemo(() => {
+        if (!iconType) return null;
+        if (iconType === "logo") {
+            let Icon = dynamic(() => import(`./logoIcons/${name}`));
+            return <Icon {...props} />;
+        } else {
+            const LucideIcon = dynamic(
+                dynamicIconImports[_name as keyof typeof dynamicIconImports],
+            );
+            return <LucideIcon {...props} />;
+        }
+    }, [name]);
     console.log(`No icon found for ${name}`);
     return null;
 };

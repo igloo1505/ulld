@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { ulldPackageJsonConfig } from "./ulldPackageJsonConfig";
 import { pluginConfigSchema } from "./pluginConfigSchema";
 import { licenseUnion } from "./licenseUnion";
 
@@ -62,9 +61,7 @@ export const ulldCompletePackageJsonSchema = z.object({
             }),
         ])
         .optional(),
-    description: z.string().optional(),
-    ulld: ulldPackageJsonConfig.optional(),
-    "ulld-plugin": pluginConfigSchema,
+    description: z.string().optional()
 });
 
 export type PackageJsonType = z.input<typeof ulldCompletePackageJsonSchema>;

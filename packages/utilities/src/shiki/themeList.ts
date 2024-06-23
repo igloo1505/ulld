@@ -1,6 +1,6 @@
 import { BundledTheme } from "shiki";
 
-const shikiThemeList: BundledTheme[] = [
+const shikiThemeList = [
     "andromeeda",
     "aurora-x",
     "ayu-dark",
@@ -46,6 +46,6 @@ const shikiThemeList: BundledTheme[] = [
     "vitesse-black",
     "vitesse-dark",
     "vitesse-light",
-];
+] as const
 
 export default shikiThemeList;

@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import React from 'react'
+import React, { ReactNode } from 'react'
 import FoldingAdmonition from './FoldingAdmonition';
 import { DynamicIcon } from '@ulld/icons/dynamic';
 import { AdmonitionProps, AdmonitionType } from '@ulld/utilities/admonition/types';
@@ -35,7 +35,7 @@ export const Admonition = async (props: AdmonitionProps) => {
                 </div>
                 {dropdown && <OpenToggleArrow groupId={id} />}
             </div>}
-            <div className={clsx("p-4 space-y-3 body -translate-y-full scale-y-0 group-[.open]:translate-y-0 group-[.open]:scale-y-100 transition-transform duration-300 bg-gray-100 dark:bg-gray-800", type === "plain" && "bg-transparent dark:bg-transparent")}>
+            <div className={clsx("p-4 space-y-3 body admonition-body -translate-y-full scale-y-0 group-[.open]:translate-y-0 group-[.open]:scale-y-100 transition-transform duration-300 bg-gray-100 dark:bg-gray-800", type === "plain" && "bg-transparent dark:bg-transparent")}>
                 {children}
             </div>
             {footer && <div className={clsx("w-full py-3 px-3 text-sm text-muted-foreground bg-muted")}>{footer}</div>}

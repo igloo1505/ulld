@@ -1,0 +1,53 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    // "extends": "@repo/typescript-config/docs.json"
+    "compilerOptions": {
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "allowJs": true,
+        "declaration": false,
+        "declarationMap": false,
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "resolveJsonModule": true,
+        "target": "ES2021",
+        "types": [
+            "jest",
+            "node",
+            "mdx",
+            "mathjax",
+            "@testing-library/jest-dom",
+            "jest-environment-jsdom"
+        ],
+        "jsx": "react-jsx",
+        "experimentalDecorators": true,
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "baseUrl": "./src",
+        "noEmit": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noFallthroughCasesInSwitch": true,
+        "skipLibCheck": true,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "isolatedModules": true,
+        "inlineSources": false,
+        "allowImportingTsExtensions": true,
+        "esModuleInterop": true,
+        "composite": false
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+        ".turbo",
+        "src/**/*.test.ts",
+        "coverage"
+    ]
+}

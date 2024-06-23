@@ -1,0 +1,32 @@
+---
+category: Text
+component: Highlight
+id: highlight
+aliases: []
+---
+
+## Interfaces
+
+### HighlightProps
+
+Add a simple background highlight to some text with the Highlight component.
+
+#### Example
+
+```tsx
+This isn't as important as <Hl>this</Hl> is!
+```
+
+This isn't as important as <Hl>this</Hl> is!
+
+<ExtendsColorProps />
+
+#### Properties
+
+| Property   | Type        | Description                               |
+| :--------- | :---------- | :---------------------------------------- |
+| `children` | `ReactNode` | The text to be highlighted.               |
+| `light?`   | `boolean`   | Make the highlight semi-tranparent.       |
+| `faint?`   | `boolean`   | An alias for light.                       |
+| `muted?`   | `boolean`   | Make the text take on a muted appearance. |
+

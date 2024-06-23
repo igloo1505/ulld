@@ -1,0 +1,35 @@
+---
+category: Content Types
+component: Video
+id: video
+aliases: []
+---
+
+## Type Aliases
+
+### VideoProps
+
+`Alpha`
+
+```ts
+type VideoProps: {
+  file: string;
+  url: undefined;
+  id: string;
+ } | {
+  url: string;
+  file: undefined;
+  id: string;
+};
+```
+
+A simple video player with support full-screen mode, picture-in-picture and [timestamp links](/docs/user/syntax#timestamplinks) directly in your note.
+
+#### Example
+
+```tsx
+<Video file="resources/videos/SusskindGeneralRelativity12.mp4" />
+```
+
+<RemoteExampleLimitation />
+

@@ -101,7 +101,7 @@ export const TechIconLink = ({
     return (
         <motion.a
             href={docs[icon]}
-            className={clsx("relative tech-icon-link opacity-0 scale-0", className)}
+            className={clsx("relative tech-icon-link opacity-0 scale-0 max-w-[80px] max-h-[80px]", className)}
             initial="hide"
             animate={show ? "show" : "hide"}
             variants={{

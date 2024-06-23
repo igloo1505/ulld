@@ -4,7 +4,7 @@ import clsx from 'clsx'
 
 
 
-interface HideProps extends BaseEmbeddableComponentProps {
+interface HideProps extends BaseEmbeddableComponentProps<HTMLDivElement> {
     children: React.ReactNode
 }
 

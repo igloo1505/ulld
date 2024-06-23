@@ -7,8 +7,7 @@ import { buttonVariants } from "@ulld/tailwind/button";
 import clsx from 'clsx'
 import Link from "next/link";
 import { TechIconLink } from "./featureAssets/communityTechIcons/techIconLink";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { techIconClasses } from "./pluginArchitecture";
 
 
 export const integrationsFeature: FeaturedContainerPropsRequired = {
@@ -32,8 +31,8 @@ export const integrationsFeature: FeaturedContainerPropsRequired = {
                 }
             >
                 An integral part of{" "}
-                <span className={"pl-1 inline-block w-16 translate-y-[25%]"}>
-                    <AnimatedUlldLogo show={true} height={32} speed={2} />
+                <span className={"inline-block w-16 -ml-1 translate-y-[25%]"}>
+                    <AnimatedUlldLogo show={true} height={48} speed={2} />
                 </span>
             </div>
         );
@@ -55,18 +54,17 @@ export const integrationsFeature: FeaturedContainerPropsRequired = {
                     <LogoAsText fontSize={18} /> with your existing workflow should be
                     painless.
                 </span>
-                <div className={clsx("w-full px-8 flex flex-row items-center justify-center mt-4 md:mt-0", orientation === "rtl" ? "md:justify-end" : "md:justify-start")}>
+                <div className={clsx("w-full px-8 flex flex-row items-center justify-center mt-4 md:mt-0", orientation === "rtl" ? "justify-start md:justify-end" : "justify-start")}>
                     <Link href="/featureRequest" className={buttonVariants()}>Submit a feature request</Link>
                 </div>
             </FeatureDescContainer>
         );
     },
     component: ({shouldShow: isInView}) => {
-        const techIconClasses = "max-w-full max-h-full h-full w-auto md:w-full [&>img]:h-full [&>img]:w-auto md:[&>img]:w-[5vw] md:[&>img]:h-auto inline-block"
         return (
             <div
                 className={
-                    "w-auto h-[min(72px,10vh)] max-h-[min(72px,10vh)] flex flex-row justify-around items-center md:h-auto gap-4 md:gap-2 md:gap-y-8 place-items-center md:w-[30vw] md:max-h-full"
+                    "w-auto grid grid-cols-2 gap-8 grid-rows-2 xs:flex flex-row justify-center items-center xs:gap-4"
                 }
             >
                 <TechIconLink

@@ -1,8 +1,8 @@
 import React from "react";
-import { allBlogPosts } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import MDXArticle from "#/components/layouts/mdxArticle";
-import staticContent from "staticContent";
+import MathjaxProvider from "#/components/utility/providers/mathjax";
+import { getAllBlogItems } from "#/components/pageSpecific/blog/utils";
 
 interface BlogArticlePageProps {
     params: {
@@ -12,12 +12,13 @@ interface BlogArticlePageProps {
 
 /* TODO: Come back and generate all static data here like was done in original app. Now SEO actually matters. Add NextSEO here as well so Google can display articles properly. */
 const BlogArticlePage = ({ params: { id } }: BlogArticlePageProps) => {
+    const allBlogPosts = getAllBlogItems()
     let article = allBlogPosts.find((post) => post.id === id);
     if (!article) return notFound();
     return (
-        <>
-            <MDXArticle mdx={article} />
-        </>
+        <MathjaxProvider>
+            <MDXArticle paddingTop={false} mdx={article} />
+        </MathjaxProvider>
     );
 };
 

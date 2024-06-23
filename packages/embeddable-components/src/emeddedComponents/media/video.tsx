@@ -1,15 +1,7 @@
 import React from 'react'
 import {withRootUrl} from "@ulld/state/formatting/withRootUrl"
+import { VideoProps } from './videoProps'
 
-type VideoProps = ({
-    file: string
-    url?: undefined
-    id?: string
-}) | ({
-    url: string
-    file?: undefined
-    id?: string
-})
 
 const getVideoUrl = (filePath: string) => {
     const params = new URLSearchParams()

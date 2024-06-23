@@ -8,10 +8,15 @@ import { getRandomId } from "@ulld/utilities/identity";
 import SelfFigureIndex from "./selfImageIndex";
 import DispatchRenderedImageEvent from "./dispatchRenderedImageEvent";
 
+type ImgProps = EmbeddedImageProps & Omit<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>, "title"> & { noConfig?: boolean }
 
-const C = (props: EmbeddedImageProps) => {
+
+const C = (props: ImgProps) => {
+
     let id = props.id || getRandomId();
+
     const fullWidth = isFullWidth(props);
+
     let imgProps = {
         src: props.src,
         alt: props.alt,
@@ -27,8 +32,8 @@ const C = (props: EmbeddedImageProps) => {
                     "!m-0 h-auto not-prose",
                     Boolean(props.sm || props.small) && "max-w-[120px] max-h-[120px]",
                     Boolean(props.md || props.medium) && "max-w-[200px] max-h-[200px]",
-                    Boolean(props.lg || props.large) && "max-w-[min(350px,calc(100vw-80px))] max-h-[350px]",
-                    props.xl && "max-w-[min(500px,calc(100vw-80px))] max-h-[500px]",
+                    Boolean(props.lg || props.large) && "max-w-[min(350px,calc(100%-80px))] max-h-[350px]",
+                    props.xl && "max-w-[min(500px,calc(100%-80px))] max-h-[500px]",
                 )}
             />
         ),
@@ -45,6 +50,7 @@ const C = (props: EmbeddedImageProps) => {
             id,
         ],
     );
+
     return (
         <div
             className={clsx(
@@ -98,7 +104,11 @@ const C = (props: EmbeddedImageProps) => {
                         props.descLeft && "w-full text-left",
                     )}
                 >
-                    {props.label ? <SelfFigureIndex id={id} /> : props.desc}
+                    {(props.label || props.desc) && <SelfFigureIndex 
+                        id={id} 
+                        desc={props.desc}
+                        imageId={imgProps.id}
+                    />}
                 </div>
             )}
             <DispatchRenderedImageEvent />
@@ -106,13 +116,15 @@ const C = (props: EmbeddedImageProps) => {
     );
 };
 
-export const EmbeddedImage = (props: EmbeddedImageProps) => {
+
+export const EmbeddedImage = (props: ImgProps) => {
     const config = props.noConfig ? null : getInternalConfig();
+    console.log("props: ", props)
     const { image } = props;
     if (image && config && image in config.UI.media.imageMap) {
-        return <ImageMapImage {...props} image={image} />;
+        return <ImageMapImage {...props} image={image} />
     }
-    return <C {...props} />;
+    return <C {...props} src={props.src || props.url} />
 };
 
 EmbeddedImage.displayName = "EmbeddedImage";

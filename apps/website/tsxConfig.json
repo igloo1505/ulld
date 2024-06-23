@@ -3,7 +3,10 @@
   "extends": "@repo/typescript-config/nextjs.json",
   "compilerOptions": {
     "paths": {
-      "#/*": ["./src/*"]
+      "#/*": ["./src/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"],
+      "mdx/*": ["./src/mdx/*"],
+      "staticContent": ["./src/staticData/staticContent.json"]
     },
     "incremental": true,
     "moduleResolution": "NodeNext",

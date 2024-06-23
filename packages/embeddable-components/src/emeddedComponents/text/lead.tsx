@@ -1,16 +1,11 @@
 import clsx from 'clsx'
 import React from 'react'
+import { LeadTextProps } from './leadProps'
 
 
-
-interface LeadTextProps {
-    children: string
-    center?: boolean
-}
-
-export const LeadText = ({ children, center }: LeadTextProps) => {
+export const LeadText = ({ children, center, className }: LeadTextProps & {className?: string}) => {
     return (
-        <p className={clsx("text-xl text-muted-foreground", center && "w-full text-center")}>{children}</p>
+        <p className={clsx("text-xl text-muted-foreground", center && "w-full text-center", className)}>{children}</p>
     )
 }
 

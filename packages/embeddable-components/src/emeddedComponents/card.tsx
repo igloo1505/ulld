@@ -12,16 +12,10 @@ import {
 } from "@ulld/tailwind/card";
 import { stringToConsistentId } from "@ulld/state/formatting/general";
 import { MdxContentCLIENT } from "@ulld/render/mdx/client";
+import { EmbeddableCardProps } from "./CLIENT_COMPONENTS/card/props";
+import clsx from "clsx";
 
-type C = string | undefined | null;
 
-interface EmbeddableCardProps extends BaseEmbeddableComponentProps {
-    title?: ReactNode;
-    body?: C;
-    children?: C | React.ReactNode;
-    description?: C;
-    desc?: C;
-}
 
 export const EmbeddableCard = async ({
     title,
@@ -38,8 +32,10 @@ export const EmbeddableCard = async ({
             ? stringToConsistentId(title)
             : `card-${new Date().valueOf() * Math.random()}`;
 
+    const newProps = getBaseEmbeddableProps<HTMLDivElement>(_props)
+
     return (
-        <Card {...getBaseEmbeddableProps(_props)} id={id}>
+        <Card {...newProps} className={clsx("not-prose", newProps.className)} id={id}>
             {(title || desc || description) && (
                 <CardHeader>
                     {title && (

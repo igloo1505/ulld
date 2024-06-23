@@ -1,32 +1,39 @@
-import React from "react";
-import { Documentation, allDocumentations } from "contentlayer/generated";
-import staticContent from "staticContent";
-import { notFound } from "next/navigation";
 import MDXArticle from "#/components/layouts/mdxArticle";
+import MdxList from "#/components/layouts/mdxList/main";
+import MathjaxProvider from "#/components/utility/providers/mathjax";
+import InternalReduxProvider from "#/state/provider";
+import { allDocumentations, allStaticDocs } from "contentlayer/generated";
+import React from "react";
 
-interface UserComponentDocumentationPageProps { }
+interface Props {
+    searchParams: {
+        category?: string;
+    };
+}
 
-const targetIds = [staticContent.docIds.user.componentsHome];
+const ComponentDocsPage = ({ searchParams: { category } }: Props) => {
+    const items = allDocumentations
+        .filter((a) => a.category === category)
+        .sort((a, b) => (a.component > b.component ? 1 : -1));
 
-const UserComponentDocumentationPage = (
-    props: UserComponentDocumentationPageProps,
-) => {
-    let articles = allDocumentations.filter(
-        (a) => a.id && targetIds.includes(a.id),
-    );
-    let sorted: Documentation[] = targetIds
-        .map((b) => articles.find((a) => a.id === b))
-        .filter(Boolean) as Documentation[];
-    if (!articles) return notFound();
+    if (category) {
+        return <MdxList items={items} />;
+    }
+
+    const componentsHome = allStaticDocs.find((f) => f.id === "componentsHome");
+    if (!componentsHome) {
+        throw new Error("No components home page article found");
+    }
+
     return (
-        <>
-            {sorted.map((article) => {
-                return <MDXArticle mdx={article} />;
-            })}
-        </>
+        <InternalReduxProvider>
+            <MathjaxProvider>
+                <MDXArticle mdx={componentsHome} paddingTop={false} />
+            </MathjaxProvider>
+        </InternalReduxProvider>
     );
 };
 
-UserComponentDocumentationPage.displayName = "UserComponentDocumentationPage";
+ComponentDocsPage.displayName = "ComponentDocsPage";
 
-export default UserComponentDocumentationPage;
+export default ComponentDocsPage;

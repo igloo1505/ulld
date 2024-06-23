@@ -17,7 +17,7 @@ interface TagBarProps {
 
 const TagbarTag = ({ tag }: { tag: string }) => {
     return (
-        <Link href={searchByTagUrl(tag)} className={"bg-primary hover:bg-primary/70 transition-colors duration-200 text-primary-foreground px-2 py-[0.3rem] text-[0.8rem] rounded-lg"}>{tag}</Link>
+        <Link href={searchByTagUrl(tag)} className={"bg-primary hover:bg-primary/70 transition-colors duration-200 text-primary-foreground px-2 py-[0.3rem] text-[0.8rem] rounded-lg"}>{`#${tag}`}</Link>
     )
 }
 
@@ -27,7 +27,7 @@ export const TagBar = (props: TagBarProps) => {
         return c.split(/\s/gmi).filter((t) => t !== "").map((s) => s.split(" ")).flat().map((s) => s.trim())
     }
     return (
-        <div className={clsx("w-full flex flex-row flex-wrap items-center gap-4 my-4", props.start ? "justify-start" : "justify-center")}>
+        <div className={clsx("w-full not-prose flex flex-row flex-wrap items-center gap-4 my-4", props.start ? "justify-start" : "justify-center")}>
             {getTags(children).map((t) => <TagbarTag tag={t} key={`tag-${t}`} />)}
         </div>
     )

@@ -1,0 +1,35 @@
+{
+    "pluginName": "@ulld/landing-layouts",
+    "slot": "UI",
+    "components": [
+        {
+            "componentName": "LandingPageBetaRelease",
+            "slot": "landingPage",
+            "export": "beta"
+        }
+    ],
+    "parsers": [],
+    "pages": [
+        {
+            "targetUrl": "@modal/(.)equations/details/[equationId]",
+            "export": "equationModal",
+            "exportsPageProps": true
+        },
+        {
+            "targetUrl": "equations/add",
+            "export": "addEquationPage",
+            "exportsPageProps": true
+        },
+        {
+            "targetUrl": "equations/details/[equationId]",
+            "export": "equationDetailsPage",
+            "exportsPageProps": true
+        },
+        {
+            "targetUrl": "equations",
+            "export": "equationsPage",
+            "exportsPageProps": true
+        }
+    ],
+    "events": {}
+}

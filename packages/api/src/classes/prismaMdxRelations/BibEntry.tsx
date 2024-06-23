@@ -353,8 +353,8 @@ export class BibEntry {
     const query = await getUniversalQuery("getBibEntry");
     let entry: BibEntryReturned = await query(id);
     if (entry) {
-      let props = bibEntryPropsSchema.parse(entry);
-      return BibEntry.fromPrisma(props);
+      /* let props = bibEntryPropsSchema.parse(entry) as ParsedBibEntryProps */
+      return BibEntry.fromPrisma(entry);
     }
     return null;
   }

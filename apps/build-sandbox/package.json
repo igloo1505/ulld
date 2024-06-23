@@ -1,6 +1,6 @@
 {
     "name": "@ulld/build-sandbox",
-    "version": "0.0.0",
+    "version": "1.0.0-beta.0",
     "private": true,
     "scripts": {
         "dev": "echo 'Add dev script here'",
@@ -50,7 +50,7 @@
         "@ulld/ui": "workspace:*",
         "@ulld/utilities": "workspace:*",
         "@ulld/whiteboard": "workspace:*",
-        "next": "^14.2.3",
+        "next": "^14.2.4",
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
     },
@@ -62,7 +62,5 @@
             "@ulld/cookbook": "latest"
         }
     },
-    "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {},
-    "devDependencies": {}
+    "packageManager": "pnpm@9.0.4"
 }

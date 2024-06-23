@@ -1,0 +1,44 @@
+{
+  "name": "@ulld/build",
+  "version": "1.0.0-beta.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Add dev script here'",
+    "build": "echo 'Add build script here'",
+    "test": "jest",
+    "lint": "echo 'Add lint script here'"
+  },
+  "files": [
+    "src"
+  ],
+  "exports": {
+    "./classes/packageJson": "./src/classes/pkgJson.ts"
+  },
+  "dependencies": {
+    "@ulld/baseConfigs": "workspace:*",
+    "@ulld/configschema": "workspace:*",
+    "@ulld/utilities": "workspace:*",
+    "@ulld/developer-schemas": "workspace:*",
+    "ansi-colors": "^4.1.3",
+    "chalk": "^5.3.0",
+    "cli-progress": "^3.12.0",
+    "cli-spinners": "^3.0.0",
+    "cli-table3": "^0.6.4",
+    "cliui": "^8.0.1",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "enquirer": "^2.4.1",
+    "inquirer": "^9.2.23",
+    "ora": "^8.0.1",
+    "prompts": "^2.4.2",
+    "simple-git": "^3.25.0",
+    "terminal-link": "^3.0.0",
+    "tsx": "^4.15.6"
+  },
+  "devDependencies": {
+    "@commander-js/extra-typings": "^12.1.0",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.11.24",
+    "@types/prompts": "^2.4.9"
+  }
+}

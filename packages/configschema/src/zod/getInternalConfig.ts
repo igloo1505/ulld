@@ -1,4 +1,3 @@
-// import { ParsedAppConfig } from "../types"
 import { applySearchParamConfigOverride } from "./applySearchParamOverride"
 import type { InternalDocumentConfigType } from "./internalDocumentTypes"
 import type { AppConfigSchemaOutput } from "./main"
@@ -26,10 +25,11 @@ export const getInternalConfig = <T extends object>(appConfig?: AppConfigSchemaO
         // internalDocumentTypes: internalDocumentTypeConfigSchema.array().parse(internalDocumentTypes),
         fileTypes: {
             image: [
-                "jpeg", "jpg", "webp", "png", "heif", "gif"
+                "jpeg", "jpg", "webp", "png", "gif"
             ]
         }
     }
+
 
     if(!appConfig) {
     return {
@@ -46,7 +46,7 @@ export const getInternalConfig = <T extends object>(appConfig?: AppConfigSchemaO
         // internalDocumentTypes: internalDocumentTypeConfigSchema.array().parse(internalDocumentTypes),
         fileTypes: {
             image: [
-                "jpeg", "jpg", "webp", "png", "heif", "gif"
+                "jpeg", "jpg", "webp", "png", "gif"
             ]
         }
     } as ExtraConfig & AppConfigSchemaOutput

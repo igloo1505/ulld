@@ -2,7 +2,7 @@ import { z } from 'zod'
 import { Prisma, Technologies } from "@ulld/database/internalDatabaseTypes"
 
 
-export const SnippetCreatekeywordsInputObjectSchema: z.ZodType<Prisma.SnippetCreatekeywordsInput> = z
+export const SnippetCreatekeywordsInputObjectSchema = z
     .object({
         set: z.string().array(),
     })
@@ -12,7 +12,7 @@ export const SnippetCreatekeywordsInputObjectSchema: z.ZodType<Prisma.SnippetCre
 export const TechnologiesSchema = z.nativeEnum(Technologies);
 
 
-const Schema: z.ZodType<Prisma.SnippetCreateInput> = z
+export const SnippetCreateInputObjectSchema = z
     .object({
         content: z.string(),
         description: z.string(),
@@ -26,5 +26,3 @@ const Schema: z.ZodType<Prisma.SnippetCreateInput> = z
         id: z.number().int().optional()
     })
     .strict();
-
-export const SnippetCreateInputObjectSchema = Schema;

@@ -47,6 +47,7 @@ const SourceCode = forwardRef(
             return "40vw";
         };
 
+        /* FIX: This is why useResponsiveCode wasn't working. This is not a set state function as I lazily assumed, it was just called this. Correct that and then test that hook. Also remove the other autoWrapCode hook as it's applying the same thing. */
         const setMaxWidth = (mw?: string) => {
             let newMaxWidth = mw ? mw : getMaxWidth()
             if (newMaxWidth && ref && "current" in ref) {
@@ -67,7 +68,6 @@ const SourceCode = forwardRef(
 
         useEffect(() => {
             let mw = maxWidth ? maxWidth : getMaxWidth();
-            console.log("mw: ", mw)
             setMaxWidth(mw);
         }, [maxWidth]);
 

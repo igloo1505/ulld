@@ -20,5 +20,6 @@ export const settingSchema = z.object({
 })
 
 export type ParsedSettings = z.output<typeof settingSchema>
+export type AppSettings = z.output<typeof settingSchema>
 export type ParseSettingsInput = z.input<typeof settingSchema>
 

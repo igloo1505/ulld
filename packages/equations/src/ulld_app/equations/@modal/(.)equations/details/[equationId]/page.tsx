@@ -4,7 +4,6 @@ import React from 'react'
 import EquationDetailDisplay from '../../../../../../components/equationDetailDisplay'
 
 
-
 export interface PageProps {
     params: {
         equationId: string

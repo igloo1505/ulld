@@ -3,20 +3,14 @@ import React, { useEffect } from 'react'
 import { SidebarButton } from './sidebarButton';
 import { SidebarLink } from '@ulld/configschema/types';
 import { internalLinks } from './internalSidebarButtons';
-const sidebarOnHover = true
 const sidebarBreakpoint = 20
-import {RootState} from '@ulld/state/store';
-import {connect} from 'react-redux';
-
-const connector = connect((state: RootState, props: any) => ({
-    sidebarLinks: state.config?.navigation?.sidebarLinks,
-    props: props
-}))
+import { AppConfigSchemaOutput } from '@ulld/configschema/zod/main';
 
 
 interface PermanentSidebarProps {
     sidebarLinks?: SidebarLink[]
     bottomButtons?: SidebarLink[]
+    config: AppConfigSchemaOutput
 }
 
 
@@ -36,8 +30,9 @@ const hoverListener = (e: MouseEvent): void => {
 }
 
 
-export const PermanentSidebar = connector(({ sidebarLinks, bottomButtons = defaultBottomButtons }: PermanentSidebarProps) => {
-    console.log("sidebarLinks: ", sidebarLinks)
+const PermanentSidebar = ({  bottomButtons = defaultBottomButtons, config }: PermanentSidebarProps) => {
+    const sidebarLinks = config.navigation?.sidebarLinks
+
     useEffect(() => {
         window.addEventListener("mousemove", hoverListener)
         return () => {
@@ -69,7 +64,9 @@ export const PermanentSidebar = connector(({ sidebarLinks, bottomButtons = defau
             </div>
         </aside>
     )
-})
+}
 
 
 PermanentSidebar.displayName = "PermanentSidebar"
+
+export default PermanentSidebar

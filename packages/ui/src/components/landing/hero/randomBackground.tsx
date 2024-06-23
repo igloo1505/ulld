@@ -9,7 +9,7 @@ import { serverClient } from '@ulld/api/serverClient'
 
 const day = 24 * 60 * 60 * 1000
 
-const RandomBackground = async () => {
+export const RandomBackground = async () => {
     let _alignment = await serverClient.media.getRandomBackgroundSettings()
     let pastImage = {
         path: _alignment?.path,
@@ -61,6 +61,3 @@ const RandomBackground = async () => {
 
 
 RandomBackground.displayName = "RandomBackground"
-
-
-export default RandomBackground;

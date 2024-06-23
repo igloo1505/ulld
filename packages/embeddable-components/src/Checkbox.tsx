@@ -1,8 +1,10 @@
 "use client"
 import React, { DetailedHTMLProps, HTMLInputTypeAttribute, InputHTMLAttributes, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation';
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
 import { useToast } from '@ulld/tailwind/use-toast';
+import {Checkbox} from "@ulld/tailwind/checkbox"
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
+import clsx from 'clsx'
 
 
 
@@ -33,8 +35,9 @@ const MdxCheckbox = (props: MdxInputProps) => {
         }
     }
     return (
-        <CheckboxPrimitive.Checkbox
+        <Checkbox
             {...props as React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>}
+            className={clsx("not-prose", props.className)}
             ref={ref}
             disabled={false}
             checked={checked}

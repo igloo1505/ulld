@@ -11,6 +11,7 @@ export const baseDomComponentSchema = z.object({
     children: z.any()
 })
 
+
 export const componentConfig = z.object({
     thin: z.boolean().default(false),
     thick: z.boolean().default(false),
@@ -20,8 +21,8 @@ export const componentConfig = z.object({
 .merge(colorSchema)
 .describe("Underline")
 /* .passthrough() */
-.transform((a) => {
-    let data = propColorSchemaTransform<typeof a>(a, "foreground")
+.transform((a): {css: CSSProperties} & ReturnType<typeof propColorSchemaTransform> => {
+    let data = propColorSchemaTransform<typeof a>(a, "yellow")
     let css: CSSProperties = {
         textDecorationColor: data.color,
         textDecorationThickness: a.thin ? 1 : a.thick ? 4 : 2
@@ -29,5 +30,5 @@ export const componentConfig = z.object({
     return {
         ...data,
         css
-    }
+    } 
 })

@@ -1,17 +1,9 @@
 import clsx from "clsx";
-import React from "react";
-import { PropColor } from "@ulld/utilities/shadColorMap";
-import { getPropColor } from "@ulld/state/actions/ui/getPropColor";
+import React, { HTMLProps } from "react";
 import { ComposedTooltip } from "./composedTooltip";
 import { componentConfig } from "@ulld/component-configs/underline";
-
-export interface WithTooltipWrapper {
-    toolTip?: string;
-    tooltip?: string;
-    tt?: string;
-    toolTipAsLink?: boolean;
-    ttAslink?: boolean;
-}
+import { WithTooltipWrapper } from "./props/withTooltipWrapperProps";
+import { HighlightProps } from "./HlProps";
 
 const ttIsLink = (t: string) => {
     return Boolean(/^(\/|http|www|\#)/gm.test(t));
@@ -36,17 +28,13 @@ export const getToolTipWrapperContent = (t: WithTooltipWrapper) => {
         : false;
 };
 
-export interface HighlightProps extends Record<keyof PropColor, boolean> { }
 
 export const Highlight = (
-    p: HighlightProps &
-        any &
-        WithTooltipWrapper & { light?: boolean; faint?: boolean; muted?: boolean },
+    p: HighlightProps & WithTooltipWrapper & HTMLProps<HTMLDivElement>,
 ) => {
     const props = componentConfig.parse(p);
-    console.log("props.css: ", props.css)
     /* let { color, props: _props } = getPropColor(props, "bg", "yellow") */
-    let tt = getToolTipWrapperContent(props);
+    let tt = getToolTipWrapperContent(p);
     if (tt) {
         return (
             <ComposedTooltip
@@ -61,13 +49,16 @@ export const Highlight = (
                 <span
                     className={clsx(
                         "px-1 rounded-md",
-                        props.className,
+                        (p.faint || p.light) && "bg-opacity-50",
+                        p.muted && "text-muted-foreground",
+                        p.className,
                         /* Boolean(props.light || props.faint || props.muted) && "bg-opacity-60 hl-faint" */
                     )}
                     {...p}
                     style={{
                         ...props.css,
-                        backgroundColor: props.css?.textDecorationColor,
+                        backgroundColor: props.color,
+                        color: props.contrastColor,
                         ...p.style,
                     }}
                 />
@@ -76,11 +67,17 @@ export const Highlight = (
     }
     return (
         <span
-            className={clsx("px-1 rounded-md", props.className)}
             {...p}
+            className={clsx(
+                "px-1 rounded-md",
+                (p.faint || p.light) && "bg-opacity-50",
+                p.muted && "text-muted-foreground",
+                p.className,
+            )}
             style={{
                 ...props.css,
-                backgroundColor: props.css?.textDecorationColor,
+                backgroundColor: props.color,
+                color: props.contrastColor,
                 ...p.style,
             }}
         />

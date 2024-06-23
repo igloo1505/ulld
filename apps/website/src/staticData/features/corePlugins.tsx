@@ -1,15 +1,11 @@
 "use client";
-import { useRef, useState } from "react";
-import NextImage from "next/image";
 import { LogoAsText } from "#/components/general/logoAsText";
 import { FeaturedContainerPropsRequired } from "#/components/pageSpecific/landing/feature/types";
-import { AnimatePresence, motion } from "framer-motion";
 import { buttonVariants } from "@ulld/tailwind/button";
 import Link from "next/link";
 import { FeatureDescContainer } from "#/components/pageSpecific/landing/feature/featureDescContainer";
 import { slideShowScreenshots } from "./featureAssets/slideShowScreenshots";
 import staticContent from "staticContent";
-import { wrap } from "popmotion";
 import ImageCarousel from "#/components/media/imageCarousel/main";
 
 const maxIndex = 11;
@@ -42,6 +38,14 @@ export const corePluginsFeature: FeaturedContainerPropsRequired = {
     );
   },
   component: () => {
-    return <ImageCarousel images={slideShowScreenshots} withButtons />;
+    return <ImageCarousel
+            images={slideShowScreenshots}
+            withButtons 
+            buttonsBottom
+            className={"w-full h-auto min-h-[40vh]"}
+            classes={{
+                buttonContainer: "justify-center lg:justify-end"
+            }}
+        />;
   },
 };

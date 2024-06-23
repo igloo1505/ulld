@@ -5,7 +5,6 @@ const Admonition = dynamic(() => import("@ulld/embeddable-components/components/
 // const Pdf = dynamic(() => import("../functionality/pdf/MdxPdfView"))
 const TabGroup = dynamic(() => import("@ulld/embeddable-components/components/client/tabGroup").then((a) => a.TabGroup))
 const Tab = dynamic(() => import("@ulld/embeddable-components/components/client/tab").then((a) => a.Tab))
-// const TagBar = dynamic(() => import("./emeddedComponents/tagbar"))
 // const WithSidebar = dynamic(() => import("./emeddedComponents/withSidebar"))
 // const Diagram = dynamic(() => import("./emeddedComponents/diagrams/pixi"))
 const Grid = dynamic(() => import("@ulld/embeddable-components/components/client/grid").then((a) => a.Grid))
@@ -16,6 +15,7 @@ const Card = dynamic(() => import("@ulld/embeddable-components/components/client
 const ErrorMargin = dynamic(() => import("@ulld/embeddable-components/academic/error").then((a) => a.ErrorMargin))
 const Abstract = dynamic(() => import("@ulld/embeddable-components/academic/abstract").then((a) => a.Abstract))
 const TableFit = dynamic(() => import("@ulld/embeddable-components/format/tableFit").then((a) => a.TableFit))
+const Title = dynamic(() => import("@ulld/embeddable-components/components/client/title").then((a) => a.Title))
 // const LinePlot = dynamic(() => import("./emeddedComponents/plots/linePlot"))
 // const RemoteMarkdown = dynamic(() => import("./emeddedComponents/remote/RemoteMarkdown"))
 // const Carousel = dynamic(() => import("./emeddedComponents/media/carousel"))
@@ -41,7 +41,7 @@ const VSpace = dynamic(() => import("@ulld/embeddable-components/components/clie
 const EmbeddedImage = dynamic(() => import("@ulld/embeddable-components/components/client/image").then((a) => a.EmbeddedImage))
 // const EmbeddedSvg = dynamic(() => import("./emeddedComponents/svg"))
 // const Vectorize = dynamic(() => import("./emeddedComponents/vectorize"))
-const Quote = dynamic(() => import("@ulld/embeddable-components/components/blockQuote"))
+const Quote = dynamic(() => import("@ulld/embeddable-components/components/quoteComponent").then((a) => a.Quote))
 // const Hide = dynamic(() => import("./emeddedComponents/hide"))
 // const FlexRow = dynamic(() => import("./layout/flexRow"))
 // const NoMaxHeight = dynamic(() => import("./layout/noTableHeightLimit"))
@@ -53,10 +53,13 @@ const EquationTag = dynamic(() => import("@ulld/embeddable-components/components
 const Boxed = dynamic(() => import("@ulld/embeddable-components/components/client/boxed").then((a) => a.Boxed))
 // const Tikz = dynamic(() => import("./emeddedComponents/tikz"))
 const Color = dynamic(() => import("@ulld/embeddable-components/components/client/colorText").then((a) => a.ColorText))
+const ColorChip = dynamic(() => import("@ulld/embeddable-components/components/client/colorChip").then((a) => a.ColorChip))
+const TagBar = dynamic(() => import("@ulld/embeddable-components/components/client/tagBar").then((a) => a.TagBar))
 // TODO: Come back and add a better implementation of the client side whiteboard. This will work for now, just to get the website up, but push it all to the client and handle state that way when you have time.
 const Whiteboard = dynamic(() => import("@ulld/whiteboard/local").then((a) => a.WhiteboardLocal))
 
-export type EmbeddableClientComponents = typeof Admonition | typeof TabGroup | typeof Tab | typeof Grid | typeof GridItem | typeof Video | typeof ModelView | typeof Card | typeof Highlight | typeof Underline | typeof Small | typeof Large | typeof Centered | typeof Lead | typeof VSpace | typeof EqRef | typeof EquationTag | typeof Color
+export type EmbeddableClientComponents = typeof Admonition | typeof TabGroup | typeof Tab | typeof Grid | typeof GridItem | typeof Video | typeof ModelView | typeof Card | typeof Highlight | typeof Underline | typeof Small | typeof Large | typeof Centered | typeof Lead | typeof VSpace | typeof EqRef | typeof EquationTag | typeof Color | typeof Boxed | typeof ColorChip | typeof EmbeddedImage | typeof TagBar
+// export type EmbeddableClientComponents = any
 
 
 
@@ -73,6 +76,8 @@ export const conditionalClientComponents: ConditionalComponentQuery<EmbeddableCl
         { regex: new RegExp(`<Centered`), component: Centered, label: "Centered" },
         { regex: new RegExp(`<Center`), component: Centered, label: "Center" },
         { regex: new RegExp(`<Boxed`), component: Boxed, label: "Boxed" },
+        { regex: new RegExp(`<TagBar`), component: TagBar, label: "TagBar" },
+     
         // Text Styling Components
         { regex: new RegExp(`<Small`), component: Small, label: "Small" },
         { regex: new RegExp(`<Color`), component: Color, label: "Color" },
@@ -83,8 +88,10 @@ export const conditionalClientComponents: ConditionalComponentQuery<EmbeddableCl
         { regex: new RegExp(`<Highlight`), component: Highlight, label: "Highlight" },
         { regex: new RegExp(`<Lead`), component: Lead, label: "Lead" },
         { regex: new RegExp(`<Quote`), component: Quote, label: "Quote" },
+        { regex: new RegExp(`<Title`), component: Title, label: "Title" },
         // Notifications and Attention Components
         { regex: new RegExp(`<Admonition`), component: Admonition, label: "Admonition" },
+        { regex: new RegExp(`<ColorChip`), component: ColorChip, label: "ColorChip" },
         // Math related
         { regex: new RegExp(`<EqRef`), component: EqRef, label: "EqRef" },
         { regex: new RegExp(`<FigRef`), component: FigureRef, label: "FigRef" },
@@ -94,7 +101,7 @@ export const conditionalClientComponents: ConditionalComponentQuery<EmbeddableCl
         { regex: new RegExp(`<ModelView`), component: ModelView, label: "ModelView" },
         // Media components
         { regex: new RegExp(`<Video`), component: Video, label: "Video" },
-        { regex: new RegExp(`<Whiteboard`), component: Whiteboard, label: "Whiteboard" },
+        // { regex: new RegExp(`<Whiteboard`), component: Whiteboard, label: "Whiteboard" },
         { regex: new RegExp(`<Image`), component: EmbeddedImage, label: "Image" },
         // Academic components
         {regex: new RegExp("<ErrorMargin"), component: ErrorMargin, label: "ErrorMargin"},

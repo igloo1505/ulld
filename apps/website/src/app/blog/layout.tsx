@@ -1,19 +1,18 @@
-import MdxLayout from "#/components/layouts/mdxLayout";
-import MathjaxProvider from "#/components/utility/providers/mathjax";
+import BlogLayout from "#/components/layouts/blogLayout";
 import React, { ReactNode } from "react";
 
-interface DemoLayoutProps {
+interface BlogLayoutPageProps {
     children: ReactNode;
 }
 
-const DemoLayout = ({ children }: DemoLayoutProps) => {
+const BlogLayoutPage = ({ children }: BlogLayoutPageProps) => {
     return (
-        <MdxLayout>
-            <MathjaxProvider>{children}</MathjaxProvider>
-        </MdxLayout>
+        <BlogLayout>
+            {children}
+        </BlogLayout>
     );
 };
 
-DemoLayout.displayName = "DemoLayout";
+BlogLayoutPage.displayName = "BlogLayoutPage";
 
-export default DemoLayout;
+export default BlogLayoutPage;

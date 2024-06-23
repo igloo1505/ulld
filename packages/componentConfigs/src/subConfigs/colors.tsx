@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { colorPropSchemaMap } from "./colorMap";
+import tinycolor from "tinycolor2"
 
 
 
@@ -40,8 +41,10 @@ export const propColorSchema = z.object({
 })
 
 
+export type PropColorInput = z.input<typeof propColorSchema>
 
-type RT<T, U extends string> = Omit<T, U> & {colors: Partial<Record<U, boolean>>, color: string}
+
+type RT<T, U extends string> = Omit<T, U> & {colors: Partial<Record<U, boolean>>, color: string, contrastColor: string}
 
 type J = keyof z.input<typeof propColorSchema>
 
@@ -60,8 +63,13 @@ export const propColorSchemaTransform = <T extends z.input<typeof propColorSchem
         }
     }
 
+
     return {
         ...data,
+        contrastColor: `#${tinycolor.mostReadable(color, ["#fff", "#000"], {includeFallbackColors:true}).toHex()}`,
+        /* luminance: tc.getLuminance(), */
+        /* isDark: tc.isDark(), */
+        /* isLight: tc.isLight(), */
         colors,
         color
     }

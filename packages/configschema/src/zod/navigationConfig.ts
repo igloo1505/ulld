@@ -5,6 +5,7 @@ import {
 } from "@ulld/icons/dynamic";
 import { readDocumentTypes } from "../utilityFunctions/readDocumentTypes";
 import { DocumentTypeConfig } from "./documentConfigSchema";
+import allIcons from "@ulld/icons/names"
 
 // PRIORITY: Parsing the user's app config needs to write the document types to the file first, and then reparse everything else afterwards so they are accessible. It's not ideal, but it can be reworked once the entire build process is in place.
 //
@@ -33,10 +34,7 @@ const defaultResultLengths = {
     searchAll: 12,
 };
 
-export const iconNameField = z
-    .string()
-    .refine((s) => completeValidIconNameList.includes(s))
-    .transform((a) => a as ValidIconName);
+export const iconNameField = z.enum(allIcons)
 
 let docTypeList: DocumentTypeConfig[] | null = null;
 

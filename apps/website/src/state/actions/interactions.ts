@@ -8,3 +8,8 @@ export const setModalState = <K extends keyof InitialInteractionsState["modals"]
         value
     }))
 }
+
+
+export const showThemeModal = () => {
+    window.dispatchEvent(new CustomEvent("show-theme-modal"))
+}

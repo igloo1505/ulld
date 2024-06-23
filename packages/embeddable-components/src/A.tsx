@@ -64,7 +64,7 @@ export const A = (props: Props) => {
     return (
         <ComposedTooltip content={props.href} disable={ignoreTooltip.ignore}>
             <Link
-                className={"embeddedLink cursor-pointer rounded-sm px-1 !text-link"}
+                className={"embeddedLink cursor-pointer rounded-sm !text-link"}
                 {..._props}
                 id={id}
             />

@@ -44,13 +44,16 @@ export const footerLinks: Record<FooterLinkKeys, LinkGroupItems> & {banners?: Fo
     ],
     funding: [
         {
-            href: links.demos.main,
+            href: links.fund.paypalDonate,
             label: "Paypal"
+        },
+        {
+            href: links.fund.patreon,
+            label: "Patreon"
         },
         {
             href: links.contactMe,
             label: "Contact Me"
         },
     ]
-
 }

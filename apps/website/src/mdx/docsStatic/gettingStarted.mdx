@@ -1,0 +1,179 @@
+---
+id: gettingStarted
+created: 6-6-24
+---
+
+
+# Getting Started
+
+<LogoAsText /> functions primarily as an ecosystem of note taking and academic focused React components and a build script to generate a complete web application using all of the most modern technologies, customized to your own configuration. 
+
+<Admonition title="Installation" type="important" dropdown open>
+    The installation process described here only needs to be undertaken once. Once your app is built, future builds can be configured from this initial build using the existing configuration file. You do not need to reinstall everything from scratch or run your application every time your notes change. Once your application is built, simply creating new files of the file types that are supported by <LogoAsText /> inside of the directory you've added to your <LogoAsText /> configuration file will update your notes automatically, and clicking a single **sync** button available from anywhere within your app will update your database to include your new notes in seconds.
+
+    The in-app workflow would go something like this:
+    1. Create a new file of whichever <LogoAsText /> supported file type you require.
+    2. Click the `sync` button initially so <LogoAsText /> can add that note to your search results.
+    3. Navigate to that note, and simply refresh the browser every time you want to view an updated version of your note. Because <LogoAsText /> does not pull any data from remote sources, this refresh should be almost instant. Make sure to turn on the **Prefer File System** option from the command palette from within your app for this rapid updating to take effect. This is off by default to even further increase the loading performance, but turning this off will tell <LogoAsText /> to avoid the database for everything that doesn't completely depend on the database, and will instead choose to read directly from your file system.
+
+    While it's a good practice to sync your notes often, even the **sync** button really only _needs_ to be used everytime a note is added; not when a note is changed.
+</Admonition>
+
+<Admonition title="Environment" type="info" sidebar>
+ For now, <LogoAsText /> runs only in the browser with an accompanying **Node** back end. In time, a companion mobile application will be released for both Android and iOS, and if user's collectively determine that a native desktop app is preferable, a native desktop application as well.
+</Admonition>
+
+
+## Where to go from here
+
+#### 1. Review
+
+If you are unfamiliar with **JSX** syntax, review the [Intro to jsx](/docs/user/introToJsx) article.
+
+#### 2. Configure
+Configure your application using either the configuration form [here](/configure), or by writing your own [`appConfig.ulld.json`](#write-own-config)
+
+#### 3. Setup your computer
+If you do not have **Node.js** installed, install the specific _stable_ build for your operating system by clicking [here](https://nodejs.org)[^1] <LogoAsText /> works as an entire full-stack application, all on your own computer. This means that a locally running server is required, and for that, <LogoAsText /> uses **Node.js**. Because of the safety limitations inside of browsers and their intentional lack of access to the file system, any application of this type would not be able to function without a locally running server.
+
+#### 4. Create a copy of <LogoAsText/> on your own machine.
+
+While an installer completely independent of **Git** is in the works, for now, the main <LogoAsText /> repo must be cloned using **Git**. Install **Git** by following the instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), and then use:
+
+
+<CodeBlock
+    content={"git clone !!link:links.repo.clone.https!!"}
+/>
+
+The above command will create a new directory with the <LogoAsText /> code base inside of it. Make sure to run this command from _1 step above_ where you want the project to go. The project does <Hl style={{color: "white !important"}} red>not</Hl> need to be in the same directory as your notes. Feel free to burry it somewhere out of the way, as once it's configured, it will mostly run on it's own.  
+
+If you're unsure of how to find the folder you would like to place the project in from within the terminal, do a quick Google search for 'changing directories' on your specific operating system. On a mac, you can also right click on the folder in Finder, and select `Services > New Terminal Tab at Folder`. Remember to select the folder that the project should be _inside of_. Do not create a folder specifically for <LogoAsText />, as `git clone...` will take care of that for you.
+
+
+#### 5. Tell <LogoAsText fontSize={18} /> where to find the configuration file.
+
+This can be done in 1 of 2 ways. 
+
+1. You can simply plop the `appConfig.ulld.json` file you either created yourself or downloaded from the [configuration form](/configure) directly inside of the <LogoAsText /> folder you just created when you cloned the project in the step above. 
+2. You can set an environment variable for your specific terminal called `ULLD_APP_CONFIG` that is set to the path of wherever it is that you would like to keep your configuration file. This serves two purposes. First, many people with a complicated computer workflow prefer to keep all of their configuration files in a single location so they can back them up with ease. Second, while the app itself will mostly run on it's own after it's initially configured, as new features come around or your use case evolves, you can more easily use your existing configuration file as a baseline for generating a new configuration file that meets your needs, without having to dig too deeply. This includes adding plugins as <LogoAsText /> builds a community of developers.
+
+
+
+#### 6. Optional: Configure Postgres ||get-started-postgres||
+
+<LogoAsText /> supports two different databases; **SQLite** and **Postgres**. Postgres is strongly prefered for performance reasons, but both Postgres and SQLite offer their own unique advantages. 
+
+##### SQLite
+<Small noMargin muted>Default</Small>
+
+First, since SQLite does not require a running server instance, it requires almost no setup at all. You do however need to download the binary available <StaticLink link="links.docs.external.SQLiteDownload">here</StaticLink>. SQLite simply creates a file within your application and that file alone functions as a database. This means that you can backup your SQLite database on any platform that allows general purpose data. If you choose to, you can simply copy this file to a thumb drive, an external hard drive, or send it to a third party service like iCloud Drive or Google Drive. SQLite is the default for it's ease of use, but Postgres is preferred for users that are comfortable setting up the database themselves.
+
+##### Postgres
+
+Postgres offer's some significant advantages over SQLite. First, the performance of Postgres is likely to exceed that of SQLite. The greater advantage however, is the ability use a remote instance of Postgres _as a database_. While SQLite offers the ability to more easily store the SQLite file on almost any storage platform, it does not function _as_ a database on those platforms, and won't function as a database again until it is once again somewhere where <LogoAsText /> can find it. Postgres however has countless options for remote hosting of databases. As <LogoAsText /> continues to grow to soon include a native mobile application and the ability to publish all or a subset of your notes online, Postgres will be a requirement for these remote features to function. This is due to the fact that <LogoAsText /> relies on data from the database to handle searching, generating links, generating plot data and more. There are options for SQLite remote hosting, and <LogoAsText /> may possibly grow to permit other ***relational*** databases, but Postgres is usually the most affordable remotely hosted database available. 
+
+If you do choose to go with Postgres, you can find the current downloads [here](https://www.postgresql.org/download/), or through an operating system specific package manager like [HomeBrew](https://brew.sh) for mac.
+
+<Hint>
+    If you already have postgres configured on your machine, create a new postgres database and provide that connection URL to your `appConfig.ulld.json` file. If you do not, SQLite will be almost equivalent for now, apart from a possible small performance hit. As <LogoAsText fontSize={13} /> continues to grow and adds the ability to access your notes remotely, either on your own device or hosted online publicly, <LogoAsText fontSize={13} /> will provide the necessary features to easily move from SQLite to Postgres without losing any data.
+</Hint>
+
+
+
+#### 7. Tell <LogoAsText fontSize={18} /> to build itself.
+
+Lastly, you'll need to run 2 commands inside of the folder you just created by cloning the respository. Follow the same technique you used to find the directory you used to first clone the repository, except this time, go ***into*** the `ulld` directory itself.
+
+
+<Hint>
+**Node.js** ships with an accompanying package, `npm`, the _Node Package Manager_. A preferable alternative to **npm**, which needs to be installed separately, is **pnpm** or _Performant Node Package Manager_. If you are comfortable installing packages using the terminal, you can install **pnpm** by following the instructions [here](https://pnpm.io/installation).
+</Hint>
+
+You then need to tell <LogoAsText /> to install all of the other packages that <LogoAsText /> depends on. Once you're inside of the `ulld` directory that you just created by cloning <LogoAsText />, run one of the following commands, depending on whether or not you installed **pnpm**.
+
+<TabGroup>
+    <Tab label="npm">
+        `npm install`
+    </Tab>
+    <Tab label="pnpm">
+        `pnpm install`
+    </Tab>
+</TabGroup>
+
+This command might take a minute, as it's downloading all of the packages that <LogoAsText /> uses inside of the directory that you've just cloned.
+
+
+Once that is complete, you can run one of the following two commands, again depending on whether or not you installed **pnpm** to tell <LogoAsText /> to gather your configuration file and generate all of the components and paths that are specific to your workflow and configuration.
+
+
+<TabGroup>
+    <Tab label="npm">
+        `npm run ulldBuild`
+    </Tab>
+    <Tab label="pnpm">
+        `pnpm ulldBuild`
+    </Tab>
+</TabGroup>
+
+
+
+## That's It!
+
+I know that's a lot more complicated than installing a regular application, but building the app in this format will allow it to grow endlessly, as the learning curve for developers to contribute to <LogoAsText /> is near zero.
+
+You can now run your project with:
+
+<TabGroup>
+    <Tab label="npm">
+        `npm run start`
+    </Tab>
+    <Tab label="pnpm">
+        `pnpm start`
+    </Tab>
+    <Tab label="alias">
+        `ulldStart`
+    </Tab>
+</TabGroup>
+
+<Hint note>
+    Both the **pnpm** and **npm** commands above require that you be in the location of the project in order for them to function properly. <LogoAsText fontSize={13} /> attempts to create an alias that will work from anywhere, so you don't need to change directories into the `ulld` directory each time you want to run your application. In order for this command to take effect, you will likely have to close and then reopen your terminal first. If there is an issue, and the `ulldStart` command was not created successfully, please report an issue on Github <StaticLink link="links.repo.home">here</StaticLink>, and make sure to describe your operating system.
+</Hint>
+
+
+<Admonition title="Future Builds" type="note">
+    This build process will become significantly improved over the coming weeks and months. Under normal circumstances, I wouldn't even release this application until a better build process was in place, but because of my current living situation, the heat, and my sweet, sweet puppy, I'm unable to work for more than a few hours each day until my battery dies. Once that is taken care of, or even in small increments in the mean time, a significantly improved build process is my main focus.
+</Admonition>
+
+### **Optional:** Writing your own configuration file ||write-own-config||
+
+If you choose to write your own configuration file, follow the `AppConfigSchemaOutput` type exported from `@ulld/configschema/zod/main`. That same module also exports a zod object, `appConfigSchema` that can be used to generate a more complete `AppConfigSchemaOutput` type with sensible defaults, however you must at least fulfill the `AppConfigSchemaInput` type and then write the output to an `appConfig.ulld.json` file at the root of the <Ul yellow>application</Ul>. That would look something like this:
+
+```tsx /TODO:/
+import fs from 'fs'
+import path from 'path'
+import {appConfigSchema, AppConfigSchemaInput} from "@ulld/configschema/zod/main"
+
+// TODO: Change this to wherever you are storing the application.
+const target = "/Users/bigsexy/ulld/appConfig.schema.json" 
+
+const myConfig: AppConfigSchemaInput = {
+    fsRoot: "/Users/bigsexy/Desktop/notes", // Yes... my real home directory. Self confidence is important.
+    ...
+}
+
+fs.writeFileSync(target, JSON.stringify(myConfig, null, 4), { encoding: "utf-8" })
+
+console.log(`Your app config was written to ${target}!`)
+
+```
+
+<Hint>
+    Make ***sure*** to set the `fsRoot` value to the root of your <Ul yellow>notes</Ul>; not the root of your compiled application. This allows the you to have a folder that is dedicated only to your notes, not one that is complicated by an additional application.
+</Hint>
+
+
+### Configuring Jupyter ||configure-jupyter||
+
+
+
+[^1]: **Node.js** is a popular _run time_ that allows Javascript, a language that was intended to run inside of browser environments, to be executed on the server. <LogoAsText fontSize={13} />, along with many other applications, relies on a locally running server instance for interacting with it's internal database. <LogoAsText fontSize={13} /> does not contact any outside service or remote database if your application does not specifically set a database connection url to a remote instance, and if your application does not provide credentials for a third party service like Google Calendar.

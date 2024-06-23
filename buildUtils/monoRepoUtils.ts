@@ -1,5 +1,5 @@
 // NOTE: This must be run from the monorepo root. Consider adding a variable in here to allow it to run from anywhere later.
-import { GlobSync, IGlobBase } from "glob";
+import { globSync } from "glob";
 import fs from "fs";
 import path from "path";
 
@@ -25,13 +25,14 @@ const dependencyTypes = [
     "dependencies",
 ] as const;
 
-class PackageManager {
-    packages: PackageSource[] = [];
-    glob: IGlobBase;
-    constructor(public root: string = "/Users/bigsexy/Desktop/current/ulld") {
-        this.glob = new GlobSync(`**/package.json`, {
+
+const glob = () => globSync(`**/package.json`, {
             ignore: "**/node_modules/**",
         });
+
+class PackageManager {
+    packages: PackageSource[] = [];
+    constructor(public root: string = "/Users/bigsexy/Desktop/current/ulld") {
         this.packages = this.collectPackages();
     }
     getRootRelativePath(p: string){
@@ -49,7 +50,8 @@ class PackageManager {
     }
     collectPackages() {
         let packages: PackageSource[] = [];
-        this.glob.found.forEach((a) => {
+        let _p = glob()
+        _p.forEach((a) => {
             const targetPath = path.join(process.cwd(), a);
             let content = this.loadJson(targetPath);
             let name = content?.name;
@@ -190,7 +192,13 @@ class PackageManager {
 
 const p = new PackageManager();
 
-p.clearNodeModules();
+// p.clearNodeModules()
+
+// let found = p.filterStringByDependency("@prisma/client")
+
+// console.log(found)
+
+// p.clearNodeModules();
 
 // p.removePackageFromAll("mermaid");
 // p.removePackageFromAll("rehype-mermaid");

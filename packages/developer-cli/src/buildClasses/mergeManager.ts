@@ -2,7 +2,7 @@ import { PathManager, PathManagerProps } from "./pathManager";
 import { PluginManager } from "./pluginManager";
 import fs from 'fs'
 import path from 'path'
-import { pluginSlotSchema } from "@ulld/developer-schemas/slots";
+import { pluginSlotSchema } from "@ulld/configschema/slotsSchema";
 import type { PluginSlotData, PluginSlotKey } from "@ulld/developer-schemas/types";
 import {PackageJsonType} from "@ulld/developer-schemas/fullPackageJson"
 

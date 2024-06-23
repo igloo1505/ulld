@@ -1,21 +1,19 @@
 import clsx from "clsx";
 import React, { HTMLProps } from "react";
-import { WithTooltipWrapper, getToolTipWrapperContent } from "./Hl";
-import { PropColor } from "@ulld/utilities/shadColorMap";
+import { getToolTipWrapperContent } from "./Hl";
 import { ComposedTooltip } from "./composedTooltip";
 import { componentConfig } from "@ulld/component-configs/underline";
+import { UnderlineProps } from "./props/underlineProps";
+import { WithTooltipWrapper } from "./props/withTooltipWrapperProps";
+import { PropColorInput } from "@ulld/component-configs/colors";
 
-type Props = {
-    thin?: boolean;
-    thick?: boolean;
-} & Record<keyof PropColor, boolean> &
-    WithTooltipWrapper &
-    HTMLProps<HTMLSpanElement>;
 
-export const Underline = (p: Props) => {
+type ULProps = UnderlineProps & WithTooltipWrapper & HTMLProps<HTMLSpanElement> & PropColorInput
+
+export const Underline = (p: ULProps) => {
     const props = componentConfig.parse(p);
     /* TODO: Move this to the zod object. */
-    let tt = getToolTipWrapperContent(props);
+    let tt = getToolTipWrapperContent(p);
     if (tt) {
         return (
             <ComposedTooltip
@@ -31,7 +29,7 @@ export const Underline = (p: Props) => {
                     {...props}
                     className={clsx(
                         "underline underline-offset-2",
-                        props.className
+                        p.className
                     )}
                     style={{
                         ...props.css,
@@ -45,7 +43,7 @@ export const Underline = (p: Props) => {
         <span
             className={clsx(
                 "underline underline-offset-2",
-                props.className
+                p.className
             )}
             {...props}
             style={{

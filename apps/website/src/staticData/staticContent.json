@@ -28,6 +28,13 @@
   "links": {
     "home": "https://uhlittlelessdum.com",
     "contactMe": "/contactMe",
+    "repo": {
+      "home": "https://github.com/igloo1505/ulld",
+      "clone": {
+        "https": "https://github.com/igloo1505/ulld.git",
+        "ssh": "git@github.com:igloo1505/ulld.git"
+      }
+    },
     "media": {
       "logo": "https://uhlittlelessdum.com/icons/android-chrome-512x512.png",
       "screenshots": {
@@ -35,7 +42,8 @@
       }
     },
     "fund": {
-      "paypalDonate": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU"
+      "paypalDonate": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU",
+      "patreon": "https://www.patreon.com/uhlittlelessdum/about"
     },
     "social": {
       "github": "https://github.com/igloo1505/ulld"
@@ -46,24 +54,28 @@
     },
     "demos": {
       "main": "/demos",
-      "myNotes": "/demos/onTheGravitationalNatureOfTime",
+      "myNotes": "/myWork?id=onTheGravitationalNatureOfTime",
       "plots": "/demos/plots",
       "layouts": "/demos/layouts",
       "media": "/demos/media",
       "navigation": "/demos/media"
     },
     "docs": {
-      "getStarted": "/docs",
+      "getStarted": "/docs/user",
       "external": {
         "jupyter": "jupyter-notebook.readthedocs.io",
-        "python": "docs.python.org"
+        "shad": "FIX ME",
+        "python": "docs.python.org",
+        "cslRepo": "https://github.com/citation-style-language/styles",
+        "monaco": "https://microsoft.github.io/monaco-editor",
+        "SQLiteDownload": "https://sqlite.org/download.html"
       },
       "internal": {
-        "home": "/docs",
+        "home": "/docs/user",
         "organization": "/docs",
-        "developerHome": "/docs",
+        "developerHome": "/docs/developer",
         "teachers": "/docs/teachers",
-        "inputs": "/docs",
+        "inputs": "/docs/developer",
         "users": "/docs/user"
       }
     }

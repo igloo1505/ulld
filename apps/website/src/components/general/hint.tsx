@@ -1,16 +1,22 @@
-import React from "react";
+import React, { HTMLProps } from "react";
+import clsx from 'clsx'
+import cn from "@ulld/utilities/cn";
 
-interface HintProps {
-  children: string;
+interface HintProps extends HTMLProps<HTMLDivElement> {
+    note?: boolean;
+    alias?: boolean
 }
 
-const Hint = ({ children }: HintProps) => {
-  return (
-    <div className={"text-sm"}>
-      <span className={"text-hint font-bold"}>Hint:</span>
-      <span className={"text-sm pl-2"}>{children}</span>
-    </div>
-  );
+const Hint = ({ children, note, alias, ...props }: HintProps) => {
+    const label = note ? "Note" : alias ? "Alias" : "Hint";
+    return (
+        <div {...props} className={cn("text-sm mb-6", props.className)}>
+            <span className={clsx("font-bold", label === "Hint" ? "text-hint" : label === "Alias" ? "text-violet-400" : "text-sky-400")}>{`${label}:`}</span>
+            <span className={"text-sm pl-2 [&_*]:inline whitespace-break-spaces"}>
+                {children}
+            </span>
+        </div>
+    );
 };
 
 Hint.displayName = "Hint";
