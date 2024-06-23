@@ -1,6 +1,6 @@
 {
     "name": "@ulld/diagram",
-    "version": "1.0.0-beta.1",
+    "version": "1.0.0",
     "private": true,
     "scripts": {
         "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",

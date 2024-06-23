@@ -1,5 +1,26 @@
 # @ulld/developer
 
+## 1.0.0
+
+### Major Changes
+
+- 110517e: First beta publish to wrap up the build script with remote packages. **Very** pre-beta and most unusable.
+
+### Minor Changes
+
+- e2de111: Publish prebeta
+
+### Patch Changes
+
+- Updated dependencies [e2de111]
+- Updated dependencies [110517e]
+  - @ulld/config@1.0.0
+  - @repo/eslint-config@0.1.0
+  - @repo/typescript-config@1.0.0
+  - @ulld/configschema@1.0.0
+  - @ulld/database@1.0.0
+  - @ulld/logger@1.0.0
+
 ## 1.0.0-beta.1
 
 ### Minor Changes
