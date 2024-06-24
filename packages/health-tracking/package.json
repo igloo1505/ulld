@@ -1,37 +1,37 @@
 {
-  "version": "0.0.1",
-  "name": "@ulld/health-tracking",
-  "private": true,
-  "scripts": {
-    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
-    "build": "echo 'Add build script here'",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'"
-  },
-  "peerDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/jest-presets": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "@ulld/api": "workspace:*",
-    "@ulld/configschema": "workspace:*",
-    "@ulld/developer": "workspace:*",
-    "@ulld/hooks": "workspace:*",
-    "@ulld/logger": "workspace:*",
-    "@ulld/plot": "workspace:*",
-    "@ulld/state": "workspace:*",
-    "@ulld/tailwind": "workspace:*",
-    "@ulld/ui": "workspace:*",
-    "@ulld/utilities": "workspace:*"
-  },
-  "dependencies": {
-    "@next/mdx": "^14.0.0",
-    "next": "^14.2.4",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "packageManager": "pnpm@9.0.4",
-  "devDependencies": {},
-  "publishConfig": {
-    "access": "public"
-  }
+    "version": "0.0.1",
+    "name": "@ulld/health-tracking",
+    "private": true,
+    "scripts": {
+        "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
+        "build": "echo 'Add build script here'",
+        "test": "echo 'Add test script here'",
+        "lint": "echo 'Add lint script here'"
+    },
+    "peerDependencies": {
+        "@repo/eslint-config": "workspace:*",
+        "@repo/jest-presets": "workspace:*",
+        "@repo/typescript-config": "workspace:*",
+        "@ulld/api": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/developer": "workspace:*",
+        "@ulld/hooks": "workspace:*",
+        "@ulld/logger": "workspace:*",
+        "@ulld/plot": "workspace:*",
+        "@ulld/state": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/ui": "workspace:*",
+        "@ulld/utilities": "workspace:*"
+    },
+    "dependencies": {
+        "@next/mdx": "^14.0.0",
+        "next": "^14.2.4",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    },
+    "packageManager": "pnpm@8.15.8",
+    "devDependencies": {},
+    "publishConfig": {
+        "access": "public"
+    }
 }

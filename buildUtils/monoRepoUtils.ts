@@ -197,6 +197,13 @@ class PackageManager {
 
 const p = new PackageManager();
 
+// p.clearNodeModules()
+
+// p.setPackageManager("pnpm@8.15.8")
+
+// p.writeModified(true)
+
+
 
 // p.packages = p.packages.map((u) => {
 //     u.content.version = "0.0.0"
@@ -216,6 +223,3 @@ const p = new PackageManager();
 
 // p.clearNodeModules();
 
-// p.removePackageFromAll("mermaid");
-// p.removePackageFromAll("rehype-mermaid");
-// p.removePackageFromAll("mdx-mermaid");

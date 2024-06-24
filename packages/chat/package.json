@@ -1,47 +1,47 @@
 {
-  "version": "0.0.1",
-  "name": "@ulld/chat",
-  "private": true,
-  "scripts": {
-    "dev": "echo 'Add dev script here'",
-    "build": "echo 'Add build script here'",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'"
-  },
-  "peerDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/jest-presets": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "@ulld/api": "workspace:*",
-    "@ulld/calendar": "workspace:*",
-    "@ulld/configschema": "workspace:*",
-    "@ulld/full-form": "workspace:*",
-    "@ulld/hooks": "workspace:*",
-    "@ulld/icons": "workspace:*",
-    "@ulld/logger": "workspace:*",
-    "@ulld/state": "workspace:*",
-    "@ulld/tailwind": "workspace:*",
-    "@ulld/ui": "workspace:*",
-    "@ulld/utilities": "workspace:*"
-  },
-  "dependencies": {
-    "@discordjs/next": "0.1.1-dev.1673526225-a580768.0",
-    "@discordjs/rest": "^2.2.0",
-    "@discordjs/voice": "^0.16.1",
-    "@next/mdx": "^14.0.0",
-    "bufferutil": "^4.0.8",
-    "discord.js": "^14.14.1",
-    "next": "^14.2.4",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "utf-8-validate": "^6.0.3",
-    "zlib-sync": "^0.1.9"
-  },
-  "devDependencies": {
-    "@slack/types": "^2.11.0"
-  },
-  "packageManager": "pnpm@9.0.4",
-  "publishConfig": {
-    "access": "public"
-  }
+    "version": "0.0.1",
+    "name": "@ulld/chat",
+    "private": true,
+    "scripts": {
+        "dev": "echo 'Add dev script here'",
+        "build": "echo 'Add build script here'",
+        "test": "echo 'Add test script here'",
+        "lint": "echo 'Add lint script here'"
+    },
+    "peerDependencies": {
+        "@repo/eslint-config": "workspace:*",
+        "@repo/jest-presets": "workspace:*",
+        "@repo/typescript-config": "workspace:*",
+        "@ulld/api": "workspace:*",
+        "@ulld/calendar": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/full-form": "workspace:*",
+        "@ulld/hooks": "workspace:*",
+        "@ulld/icons": "workspace:*",
+        "@ulld/logger": "workspace:*",
+        "@ulld/state": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/ui": "workspace:*",
+        "@ulld/utilities": "workspace:*"
+    },
+    "dependencies": {
+        "@discordjs/next": "0.1.1-dev.1673526225-a580768.0",
+        "@discordjs/rest": "^2.2.0",
+        "@discordjs/voice": "^0.16.1",
+        "@next/mdx": "^14.0.0",
+        "bufferutil": "^4.0.8",
+        "discord.js": "^14.14.1",
+        "next": "^14.2.4",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "utf-8-validate": "^6.0.3",
+        "zlib-sync": "^0.1.9"
+    },
+    "devDependencies": {
+        "@slack/types": "^2.11.0"
+    },
+    "packageManager": "pnpm@8.15.8",
+    "publishConfig": {
+        "access": "public"
+    }
 }

@@ -58,7 +58,7 @@
     "typescript": "^5.4.2",
     "typescript-plugin-css-modules": "^5.1.0"
   },
-  "packageManager": "pnpm@9.0.4+sha256.caa915eaae9d9aefccf50ee8aeda25a2f8684d8f9d5c6e367eaf176d97c1f89e",
+  "packageManager": "pnpm@8.15.8",
   "engines": {
     "node": ">=18"
   },

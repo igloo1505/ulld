@@ -57,7 +57,7 @@
         "three": "^0.163.0",
         "typescript": "^5.4.5"
     },
-    "packageManager": "pnpm@9.0.4",
+    "packageManager": "pnpm@8.15.8",
     "dependencies": {
         "@mdx-js/mdx": "^3.0.1",
         "@next/mdx": "^14.0.0"

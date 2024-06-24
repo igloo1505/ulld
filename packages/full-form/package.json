@@ -93,7 +93,7 @@
         "tailwindcss-debug-screens": "^2.2.1",
         "zod": "^3.22.4"
     },
-    "packageManager": "pnpm@9.0.4",
+    "packageManager": "pnpm@8.15.8",
     "devDependencies": {
         "@hookform/devtools": "^4.3.1",
         "@testing-library/cypress": "^10.0.1",
