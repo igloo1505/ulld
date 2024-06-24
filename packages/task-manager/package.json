@@ -38,7 +38,7 @@
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
     },
-    "packageManager": "pnpm@9.2.0",
+    "packageManager": "pnpm@9.0.4",
     "dependencies": {
         "@next/mdx": "^14.0.0"
     },

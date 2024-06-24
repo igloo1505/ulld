@@ -107,7 +107,7 @@
         "react-dom": "^18.2.0",
         "shiki": "^1.1.7"
     },
-    "packageManager": "pnpm@9.2.0",
+    "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"
     }

@@ -62,7 +62,7 @@
             "@ulld/cookbook": "latest"
         }
     },
-    "packageManager": "pnpm@9.2.0",
+    "packageManager": "pnpm@9.0.4",
     "peerDependencies": {},
     "devDependencies": {},
     "publishConfig": {

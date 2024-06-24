@@ -90,7 +90,7 @@
         "supertest-session": "^5.0.1",
         "ts-jest": "^29.1.2"
     },
-    "packageManager": "pnpm@9.2.0",
+    "packageManager": "pnpm@9.0.4",
     "peerDependencies": {},
     "publishConfig": {
         "access": "public"
