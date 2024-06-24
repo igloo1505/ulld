@@ -45,7 +45,7 @@ importers:
         specifier: ^8.0.1
         version: 8.1.0(@microsoft/api-extractor@7.47.0(@types/node@20.14.8))(@swc/core@1.6.5(@swc/helpers@0.5.11))(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
       turbo:
-        specifier: latest
+        specifier: ^2.0.4
         version: 2.0.4
       zod:
         specifier: ^3.22.4
