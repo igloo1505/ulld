@@ -7,6 +7,7 @@ export const useShikiParse = (
     initialTheme: BundledTheme = "dracula",
     initialLanguage: BundledLanguage = "python",
 ) => {
+    console.log("initialContent: ", initialContent)
     const [content, setContent] = useState<string | undefined>(undefined);
     const [raw, setRaw] = useState(initialContent);
     const [theme, setTheme] = useState<BundledTheme>(initialTheme);

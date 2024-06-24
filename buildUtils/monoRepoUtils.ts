@@ -100,6 +100,7 @@ class PackageManager {
     clearNodeModules(dry: boolean = false) {
         let paths = this.packages.map((a) => a.node_modules);
         paths.push(`${this.root}/node_modules`);
+        paths.push(path.join(__dirname, "../pnpm-lock.yaml"))
         if (dry) {
             console.log("paths to be removed: ", paths);
         } else {
@@ -113,12 +114,6 @@ class PackageManager {
     removePackageLock() {
         this.rm(this.getRootRelativePath("pnpm-lock.yaml"));
     }
-    // writeRaw(){
-    //     this.packages.forEach(({path, ...item}) => {
-    //         console.log("item.path: ", item.path)
-    //             fs.writeFileSync(item.path, JSON.stringify(item.content, null, 4));
-    //     });
-    // }
     writeModified(all: boolean = false, dry: boolean = false) {
         let p = all ? this.packages : this.packages.filter((a) => a.modified);
         p.forEach((item) => {
@@ -202,13 +197,15 @@ class PackageManager {
 
 const p = new PackageManager();
 
-p.packages = p.packages.map((u) => {
-    u.content.version = "0.0.0"
-    return {
-        ...u,
-        content: u.content,
-    };
-});
+p.clearNodeModules()
+
+// p.packages = p.packages.map((u) => {
+//     u.content.version = "0.0.0"
+//     return {
+//         ...u,
+//         content: u.content,
+//     };
+// });
 
 // p.writeModified(true);
 

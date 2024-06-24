@@ -41,10 +41,10 @@ const HeroSection = (props: HeroSectionProps) => {
                 >
                     {title.split("").map((t, i) => {
                         return t === " " ? (
-                            <motion.span className={"w-[0.33ch] leading-none"}> </motion.span>
+                            <motion.span key={`hero-${i}`} className={"w-[0.33ch] leading-none"}> </motion.span>
                         ) : (
                             <motion.span
-                                key={i}
+                                key={`hero-${i}`}
                                 className={clsx(
                                     i === 0 && "text-primary text-[14vw] sm:text-7xl md:text-8xl",
                                 )}

@@ -16,6 +16,7 @@ import { changeTheme } from "@ulld/state/actions/client/theming";
 import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
 import { useLocalStorage } from "@ulld/hooks/useLocalStorage";
 import { handleSettingsChange } from "../handlers/settings";
+import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 
 const connector = connect((state: RootState, props: any) => ({
     sidebarOpen: state.UI.sidebar.open,
@@ -76,7 +77,7 @@ const Observers = connector(
         const pathname = usePathname();
         const store = useUlldStore();
 
-        const [storedConfig, setStoredConfig] = useLocalStorage("ulld-app-config");
+        const [storedConfig, setStoredConfig] = useLocalStorage<AppConfigSchemaOutput>("ulld-app-config", undefined as unknown as AppConfigSchemaOutput);
 
         useEffect(() => {
             if (noThemeCookie) return;
@@ -111,7 +112,7 @@ const Observers = connector(
             if (!settings) {
                 return console.log("No settings object returned from the database");
             }
-            if (settings) {
+            if (settings && store) {
                 handleSettingsChange(settings, store);
             }
         }, [settings, darkMode, store, noSettings]);

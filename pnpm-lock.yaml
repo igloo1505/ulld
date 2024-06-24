@@ -131,7 +131,7 @@ importers:
         version: 2.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)))
       typedoc-plugin-coverage:
         specifier: ^3.1.1
-        version: 3.2.0(typedoc@0.25.13(typescript@5.5.2))
+        version: 3.3.0(typedoc@0.25.13(typescript@5.5.2))
       typedoc-plugin-frontmatter:
         specifier: ^1.0.0
         version: 1.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)))
@@ -143,10 +143,10 @@ importers:
         version: 4.1.0(typedoc@0.25.13(typescript@5.5.2))
       typedoc-plugin-mdn-links:
         specifier: ^3.1.28
-        version: 3.2.0(typedoc@0.25.13(typescript@5.5.2))
+        version: 3.2.1(typedoc@0.25.13(typescript@5.5.2))
       typedoc-plugin-remark:
         specifier: ^1.0.1
-        version: 1.0.1(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)))
+        version: 1.0.2(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)))
       typedoc-plugin-zod:
         specifier: ^1.1.2
         version: 1.2.0(typedoc@0.25.13(typescript@5.5.2))
@@ -205,88 +205,88 @@ importers:
         specifier: ^1.9.5
         version: 1.9.7(react-redux@8.1.3(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(redux@4.2.1))(react@18.3.1)
       '@ulld/api':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/api
       '@ulld/bib-manager':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/bib-manager
       '@ulld/command-palette':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/command-palette
       '@ulld/component-map':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/component-map
       '@ulld/configschema':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/configschema
       '@ulld/database':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/database
       '@ulld/editor':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/editor
       '@ulld/embeddable-components':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/embeddable-components
       '@ulld/equations':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/equations
       '@ulld/full-form':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/full-form
       '@ulld/hooks':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/hooks
       '@ulld/icons':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/icons
       '@ulld/journal':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/journal
       '@ulld/kanban':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/kanban
       '@ulld/landing-layouts':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/landing-layouts
       '@ulld/navigation':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/navigation
       '@ulld/notebook':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/notebook
       '@ulld/parsers':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/parsers
       '@ulld/pdf':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/pdf
       '@ulld/plot':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/plot
       '@ulld/render':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/render
       '@ulld/snippets':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/snippets
       '@ulld/state':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/state
       '@ulld/tailwind':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/tailwindAndShad
       '@ulld/task-manager':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/task-manager
       '@ulld/ui':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/ui
       '@ulld/utilities':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/utilities
       '@ulld/whiteboard':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/whiteboard
       '@use-gesture/react':
         specifier: ^10.3.1
@@ -440,13 +440,13 @@ importers:
         version: 1.9.0
     devDependencies:
       '@repo/eslint-config':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/config-eslint
       '@repo/jest-presets':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/jest-presets
       '@repo/typescript-config':
-        specifier: 0.0.1
+        specifier: workspace:*
         version: link:../../packages/config-typescript
       '@shikijs/rehype':
         specifier: ^1.5.2
@@ -923,6 +923,9 @@ importers:
       better-react-mathjax:
         specifier: ^2.0.3
         version: 2.0.3(react@18.3.1)
+      clsx:
+        specifier: ^2.1.0
+        version: 2.1.1
       contentlayer:
         specifier: ^0.3.4
         version: 0.3.4(esbuild@0.21.5)
@@ -1145,7 +1148,7 @@ importers:
         version: 0.25.13(typescript@4.9.5)
       typedoc-plugin-coverage:
         specifier: ^3.1.1
-        version: 3.2.0(typedoc@0.25.13(typescript@4.9.5))
+        version: 3.3.0(typedoc@0.25.13(typescript@4.9.5))
       typedoc-plugin-markdown:
         specifier: ^4.0.3
         version: 4.1.0(typedoc@0.25.13(typescript@4.9.5))
@@ -2821,7 +2824,7 @@ importers:
         version: 2.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)))
       typedoc-plugin-coverage:
         specifier: ^3.1.1
-        version: 3.2.0(typedoc@0.25.13(typescript@5.5.2))
+        version: 3.3.0(typedoc@0.25.13(typescript@5.5.2))
       typedoc-plugin-frontmatter:
         specifier: ^1.0.0
         version: 1.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)))
@@ -2836,13 +2839,13 @@ importers:
         version: 4.1.0(typedoc@0.25.13(typescript@5.5.2))
       typedoc-plugin-mdn-links:
         specifier: ^3.1.28
-        version: 3.2.0(typedoc@0.25.13(typescript@5.5.2))
+        version: 3.2.1(typedoc@0.25.13(typescript@5.5.2))
       typedoc-plugin-missing-exports:
         specifier: ^2.2.0
         version: 2.3.0(typedoc@0.25.13(typescript@5.5.2))
       typedoc-plugin-remark:
         specifier: ^1.0.1
-        version: 1.0.1(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)))
+        version: 1.0.2(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)))
       typedoc-plugin-rename-defaults:
         specifier: ^0.7.0
         version: 0.7.1(typedoc@0.25.13(typescript@5.5.2))
@@ -3265,6 +3268,9 @@ importers:
       react-hook-form:
         specifier: ^7.51.3
         version: 7.52.0(react@18.3.1)
+      shiki:
+        specifier: ^1.1.7
+        version: 1.9.0
     devDependencies:
       '@mdx-js/mdx':
         specifier: ^3.0.1
@@ -4931,7 +4937,7 @@ importers:
         version: 2.0.3
       '@uiw/react-markdown-editor':
         specifier: ^6.0.0
-        version: 6.1.1(@babel/runtime@7.24.7)(@codemirror/autocomplete@6.16.3(@codemirror/language@6.10.2)(@codemirror/state@6.4.1)(@codemirror/view@6.28.2)(@lezer/common@1.2.1))(@codemirror/language@6.10.2)(@codemirror/lint@6.8.1)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.28.2)(@types/react@18.3.3)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 6.1.2(@babel/runtime@7.24.7)(@codemirror/autocomplete@6.16.3(@codemirror/language@6.10.2)(@codemirror/state@6.4.1)(@codemirror/view@6.28.2)(@lezer/common@1.2.1))(@codemirror/language@6.10.2)(@codemirror/lint@6.8.1)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.28.2)(@types/react@18.3.3)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@uiw/react-monacoeditor':
         specifier: ^3.6.0
         version: 3.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -11472,15 +11478,15 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  '@uiw/react-markdown-editor@6.1.1':
-    resolution: {integrity: sha512-95kx/okxoWKcrEZlAsT0AJT3fhF8/DpzPByS1a4zv16ljrz+GNu9XhsJmTrw88Dew0/6f0/UgYGUCtTnFWQxBA==}
+  '@uiw/react-markdown-editor@6.1.2':
+    resolution: {integrity: sha512-nC1EnPBzJdVdmi+8+R/8Tr4hoj5ewjpguVjOxz448c4TF9bieqCQEb9Ivar5tGkduEOV0xFkcKupp4nhkGHI6A==}
     peerDependencies:
       '@babel/runtime': '>=7.10.0'
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  '@uiw/react-markdown-preview@5.1.1':
-    resolution: {integrity: sha512-uN/1o53o+4F9jerU3ijZcukOSe+fBR6cmIWi3IjqPWqhc/JxUnbqE6sxiH6nDVJwLS2rx6TH8imb0r9r0aorqg==}
+  '@uiw/react-markdown-preview@5.1.2':
+    resolution: {integrity: sha512-IheBzajVKZ3NUhYAfrnnereJmKVNQ6vRZDjQhKEQy7IMarJXrUKC1eG8OzTgy1J/3m67MBTs6d52kkSB699efA==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -13130,8 +13136,8 @@ packages:
     resolution: {integrity: sha512-QTaY0XjjhTQOdguARF0lGKm5/mEq9PD9/VhZZegHDIBq2tQwgNpHc3dneD4mGo2iJs+fTKv5Bp0fZ+BRuY3Z0g==}
     engines: {node: '>= 0.1.90'}
 
-  ctrl-keys@1.0.2:
-    resolution: {integrity: sha512-MBVjzR+RlUqbgmDRbnrGsXdFo0xB5/OxO4o54tyhBvPtbZ/f5hPl/De4i5yEGPyKPKyyEbLCxR5qmY+NEbXnCA==}
+  ctrl-keys@1.0.3:
+    resolution: {integrity: sha512-Kcb05/xUNra57fxpsLOflECWYbjQEQ9ZuQEthB3cgESN5zMLJ364twA9h2kqz8n06RnTY/+rKWM3UbkOWKeEJg==}
     engines: {node: '>=10'}
 
   cypress@13.12.0:
@@ -21514,11 +21520,11 @@ packages:
     peerDependencies:
       typedoc-plugin-markdown: '>=4.0.0'
 
-  typedoc-plugin-coverage@3.2.0:
-    resolution: {integrity: sha512-jY6bEl/zNezRTAg0V4+FkJAtPlzSszK3QzcXSyGYcKjzzT8C6qw0xdh2KIJkxAtzYtgxT/4idiAYqZ1WRAieTA==}
+  typedoc-plugin-coverage@3.3.0:
+    resolution: {integrity: sha512-wpywQ95tqGSD6IbYUPMXSKiwnSWboSKdx2y9X6SJQKzQvBqZoz5iiUyDJFixtW8v7+xmrqXFR/B6Wy37FNhVqA==}
     engines: {node: '>= 18'}
     peerDependencies:
-      typedoc: 0.25.x
+      typedoc: 0.25.x || 0.26.x
 
   typedoc-plugin-frontmatter@1.0.0:
     resolution: {integrity: sha512-Mqn96+RjUjPUz/42H8MOp/8eOKjE5MVIgZRFDGmSI2YuggnMZSfh5MMpvd6ykjNTpq7gV5D2iwjqLt8nYRg9rg==}
@@ -21542,8 +21548,8 @@ packages:
     peerDependencies:
       typedoc: 0.26.x
 
-  typedoc-plugin-mdn-links@3.2.0:
-    resolution: {integrity: sha512-6q/FvPwiBukjgGG8SfBNTkBuT7Vv089NUdB0fwdCtIiCgpT88kLnV4obS4aqFxV/Wq96Ju4IJcngjFYnEsJ8aA==}
+  typedoc-plugin-mdn-links@3.2.1:
+    resolution: {integrity: sha512-l76VJKKhOxCYXnb16aV6nAQG5JCsuStqviNFmgzhS9dW73nqm3/1MO9497+0KlDTOPO3o+R2uVXq87d2cDy/hg==}
     peerDependencies:
       typedoc: '>= 0.23.14 || 0.24.x || 0.25.x || 0.26.x'
 
@@ -21552,10 +21558,10 @@ packages:
     peerDependencies:
       typedoc: 0.24.x || 0.25.x
 
-  typedoc-plugin-remark@1.0.1:
-    resolution: {integrity: sha512-6dIflOxIaSiPkojD07neyTV5iipbhgMZyRcRi5C4UPYm5HMmww897ZhBezU8W73kS/zXWMsH53uw2bk1o+/+Jg==}
+  typedoc-plugin-remark@1.0.2:
+    resolution: {integrity: sha512-douidOS94mVf7syC6kY3OabtqjUZGQvCEfcxw+O6HdIRb1Ps4BNaLDNTNERP2gcD6XcBhoL0YuDcqY75uwECoA==}
     peerDependencies:
-      typedoc-plugin-markdown: '>=4.0.0'
+      typedoc-plugin-markdown: '>=4.1.0'
 
   typedoc-plugin-rename-defaults@0.7.1:
     resolution: {integrity: sha512-hgg4mAy5IumgUmPOnVVGmGywjTGtUCmRJ2jRbseqtXdlUuYKj652ODL9joUWFt5uvNu4Dr/pNILc/qsKGHJw+w==}
@@ -29815,7 +29821,7 @@ snapshots:
       - '@codemirror/lint'
       - '@codemirror/search'
 
-  '@uiw/react-markdown-editor@6.1.1(@babel/runtime@7.24.7)(@codemirror/autocomplete@6.16.3(@codemirror/language@6.10.2)(@codemirror/state@6.4.1)(@codemirror/view@6.28.2)(@lezer/common@1.2.1))(@codemirror/language@6.10.2)(@codemirror/lint@6.8.1)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.28.2)(@types/react@18.3.3)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@uiw/react-markdown-editor@6.1.2(@babel/runtime@7.24.7)(@codemirror/autocomplete@6.16.3(@codemirror/language@6.10.2)(@codemirror/state@6.4.1)(@codemirror/view@6.28.2)(@lezer/common@1.2.1))(@codemirror/language@6.10.2)(@codemirror/lint@6.8.1)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.28.2)(@types/react@18.3.3)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.24.7
       '@codemirror/lang-markdown': 6.2.5
@@ -29823,7 +29829,7 @@ snapshots:
       '@uiw/codemirror-extensions-events': 4.22.2(@codemirror/view@6.28.2)
       '@uiw/codemirror-themes': 4.22.2(@codemirror/language@6.10.2)(@codemirror/state@6.4.1)(@codemirror/view@6.28.2)
       '@uiw/react-codemirror': 4.22.2(@babel/runtime@7.24.7)(@codemirror/autocomplete@6.16.3(@codemirror/language@6.10.2)(@codemirror/state@6.4.1)(@codemirror/view@6.28.2)(@lezer/common@1.2.1))(@codemirror/language@6.10.2)(@codemirror/lint@6.8.1)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.28.2)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@uiw/react-markdown-preview': 5.1.1(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@uiw/react-markdown-preview': 5.1.2(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
@@ -29838,7 +29844,7 @@ snapshots:
       - codemirror
       - supports-color
 
-  '@uiw/react-markdown-preview@5.1.1(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@uiw/react-markdown-preview@5.1.2(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.24.7
       '@uiw/copy-to-clipboard': 1.0.17
@@ -31740,7 +31746,7 @@ snapshots:
       csv-stringify: 5.6.5
       stream-transform: 2.1.3
 
-  ctrl-keys@1.0.2: {}
+  ctrl-keys@1.0.3: {}
 
   cypress@13.12.0:
     dependencies:
@@ -39973,7 +39979,7 @@ snapshots:
 
   reakeys@2.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      ctrl-keys: 1.0.2
+      ctrl-keys: 1.0.3
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
@@ -42458,11 +42464,11 @@ snapshots:
     dependencies:
       typedoc-plugin-markdown: 4.1.0(typedoc@0.25.13(typescript@5.5.2))
 
-  typedoc-plugin-coverage@3.2.0(typedoc@0.25.13(typescript@4.9.5)):
+  typedoc-plugin-coverage@3.3.0(typedoc@0.25.13(typescript@4.9.5)):
     dependencies:
       typedoc: 0.25.13(typescript@4.9.5)
 
-  typedoc-plugin-coverage@3.2.0(typedoc@0.25.13(typescript@5.5.2)):
+  typedoc-plugin-coverage@3.3.0(typedoc@0.25.13(typescript@5.5.2)):
     dependencies:
       typedoc: 0.25.13(typescript@5.5.2)
 
@@ -42487,7 +42493,7 @@ snapshots:
     dependencies:
       typedoc: 0.25.13(typescript@5.5.2)
 
-  typedoc-plugin-mdn-links@3.2.0(typedoc@0.25.13(typescript@5.5.2)):
+  typedoc-plugin-mdn-links@3.2.1(typedoc@0.25.13(typescript@5.5.2)):
     dependencies:
       typedoc: 0.25.13(typescript@5.5.2)
 
@@ -42495,7 +42501,7 @@ snapshots:
     dependencies:
       typedoc: 0.25.13(typescript@5.5.2)
 
-  typedoc-plugin-remark@1.0.1(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2))):
+  typedoc-plugin-remark@1.0.2(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2))):
     dependencies:
       remark: 15.0.1
       remark-frontmatter: 5.0.0

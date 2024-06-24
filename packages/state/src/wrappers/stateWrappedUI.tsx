@@ -14,10 +14,8 @@ import { getSettings } from "../actions/getSettings";
 import type { ParsedAppConfig } from "@ulld/configschema/types";
 import { getUlldConfig } from "@ulld/developer/utils";
 import type { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
-import { ParsedSettings } from "@ulld/parsers/settings/settingsParser";}
+import { ParsedSettings } from "@ulld/parsers/settings/settingsParser";
 
-/* FIX: These are missing from the complete app. Add them back once the sandbox is working. */
-/* <ConfirmationModal /> */
 
 /* NOTE: Children should only used in development for now. */
 export const StateWrappedUI = async ({
@@ -27,10 +25,12 @@ export const StateWrappedUI = async ({
     loader,
     observers,
     settings: _settings,
-    config
+    config,
+    ignoreSettings
 }: {
     children?: React.ReactNode;
     ignoreConfig?: boolean;
+        ignoreSettings?: boolean
     store?: ToolkitStore;
     loader?: InitialLoaderProps;
     observers?: Partial<ObserverProps>;
@@ -38,7 +38,7 @@ export const StateWrappedUI = async ({
     config?: AppConfigSchemaOutput
 }) => {
     const cookieJar = cookies();
-    const settings = _settings ? _settings : await getSettings();
+    const settings = _settings ? _settings : ignoreSettings ? undefined : await getSettings();
     const darkMode = cookieJar.has("darkMode");
     const showModebar = cookieJar.has("showModebar");
     const themeCookie = cookieJar.get("theme");
@@ -54,6 +54,7 @@ export const StateWrappedUI = async ({
             <ReduxProvider store={store}>
                 <div id="global-state-target" />
                 <Observers
+                    noSettings={ignoreSettings}
                     settings={settings}
                     darkMode={darkMode}
                     config={config}

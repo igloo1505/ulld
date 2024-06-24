@@ -19,6 +19,7 @@ import MainNavigationDrawer from "#/components/layouts/drawer/main";
 import InternalReduxProvider from "#/state/provider";
 import NavbarBreakpointHandler from "#/components/utility/navbarBreakpointHandler";
 import ThemeMenu from "#/components/UIUtils/themeMenu";
+import { BetaBanner } from "#/components/general/betaBanner";
 
 const appFont = localFont({
     variable: "--ulld-app-font",
@@ -204,6 +205,7 @@ const RootLayout = async (props: {
                 )}
                 id={`Ulld-body-root`}
             >
+                <BetaBanner />
                 <Navbar />
                 <InternalReduxProvider>
                     <MainNavigationDrawer />
@@ -215,6 +217,7 @@ const RootLayout = async (props: {
                 <SetInitialRender />
                 <StateWrappedUI
                     ignoreConfig
+                    ignoreSettings
                     loader={{
                         mathjax: ["config"],
                     }}
