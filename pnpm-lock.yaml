@@ -44,6 +44,9 @@ importers:
       tsup:
         specifier: ^8.0.1
         version: 8.1.0(@microsoft/api-extractor@7.47.0(@types/node@20.14.8))(@swc/core@1.6.5(@swc/helpers@0.5.11))(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
+      turbo:
+        specifier: latest
+        version: 2.0.4
       zod:
         specifier: ^3.22.4
         version: 3.23.8
@@ -120,9 +123,6 @@ importers:
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)
-      turbo:
-        specifier: latest
-        version: 2.0.4
       typedoc:
         specifier: ^0.25.13
         version: 0.25.13(typescript@5.5.2)
@@ -204,95 +204,89 @@ importers:
       '@reduxjs/toolkit':
         specifier: ^1.9.5
         version: 1.9.7(react-redux@8.1.3(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(redux@4.2.1))(react@18.3.1)
-      '@repo/jest-presets':
-        specifier: workspace:*
-        version: link:../../packages/jest-presets
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/config-typescript
       '@ulld/api':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/api
       '@ulld/bib-manager':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/bib-manager
       '@ulld/command-palette':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/command-palette
       '@ulld/component-map':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/component-map
       '@ulld/configschema':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/configschema
       '@ulld/database':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/database
       '@ulld/editor':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/editor
       '@ulld/embeddable-components':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/embeddable-components
       '@ulld/equations':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/equations
       '@ulld/full-form':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/full-form
       '@ulld/hooks':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/hooks
       '@ulld/icons':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/icons
       '@ulld/journal':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/journal
       '@ulld/kanban':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/kanban
       '@ulld/landing-layouts':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/landing-layouts
       '@ulld/navigation':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/navigation
       '@ulld/notebook':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/notebook
       '@ulld/parsers':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/parsers
       '@ulld/pdf':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/pdf
       '@ulld/plot':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/plot
       '@ulld/render':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/render
       '@ulld/snippets':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/snippets
       '@ulld/state':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/state
       '@ulld/tailwind':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/tailwindAndShad
       '@ulld/task-manager':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/task-manager
       '@ulld/ui':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/ui
       '@ulld/utilities':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/utilities
       '@ulld/whiteboard':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../../packages/whiteboard
       '@use-gesture/react':
         specifier: ^10.3.1
@@ -446,8 +440,14 @@ importers:
         version: 1.9.0
     devDependencies:
       '@repo/eslint-config':
-        specifier: workspace:^
+        specifier: 0.0.1
         version: link:../../packages/config-eslint
+      '@repo/jest-presets':
+        specifier: 0.0.1
+        version: link:../../packages/jest-presets
+      '@repo/typescript-config':
+        specifier: 0.0.1
+        version: link:../../packages/config-typescript
       '@shikijs/rehype':
         specifier: ^1.5.2
         version: 1.9.0
