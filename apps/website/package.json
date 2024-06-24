@@ -129,6 +129,7 @@
     "three-noise": "^1.1.2"
   },
   "devDependencies": {
+    "turbo": "^2.0.4",
     "@repo/eslint-config": "workspace:^",
     "@repo/jest-presets": "workspace:*",
     "@repo/typescript-config": "workspace:*",
@@ -157,8 +158,5 @@
     "typedoc-theme-category-nav": "^0.0.3"
   },
   "peerDependencies": {},
-  "engines": {
-    "node": "18.x"
-  },
-  "packageManager": "pnpm@8.15.8"
+  "packageManager": "pnpm@9.2.0"
 }

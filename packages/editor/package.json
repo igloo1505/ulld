@@ -69,7 +69,7 @@
         "y-websocket": "^2.0.2",
         "yjs": "^13.6.14"
     },
-    "packageManager": "pnpm@8.15.8",
+    "packageManager": "pnpm@9.2.0",
     "devDependencies": {
         "@shikijs/rehype": "^1.2.0",
         "@testing-library/cypress": "^10.0.1",

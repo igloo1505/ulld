@@ -20,7 +20,7 @@
     "ci:publish": "pnpm publish -r --no-git-checks"
   },
   "devDependencies": {
-    "turbo": "^2.0.3",
+    "turbo": "^2.0.4",
     "@droppedcode/typedoc-plugin-relative-includes": "^1.0.5",
     "@microsoft/api-extractor": "^7.42.3",
     "@rollup/plugin-commonjs": "^25.0.7",
@@ -58,7 +58,7 @@
     "typescript": "^5.4.2",
     "typescript-plugin-css-modules": "^5.1.0"
   },
-  "packageManager": "pnpm@8.15.8",
+  "packageManager": "pnpm@9.2.0+sha256.94fab213df221c55b6956b14a2264c21c6203cca9f0b3b95ff2fe9b84b120390",
   "engines": {
     "node": ">=18"
   },

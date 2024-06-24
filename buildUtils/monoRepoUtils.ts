@@ -197,9 +197,7 @@ class PackageManager {
 
 const p = new PackageManager();
 
+
 // p.clearNodeModules()
-
-// p.setPackageManager("pnpm@8.15.8")
-
+// p.setPackageManager("pnpm@9.2.0")
 // p.writeModified(true)
-

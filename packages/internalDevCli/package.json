@@ -92,7 +92,7 @@
         "terminal-link": "^3.0.0",
         "ts-import": "5.0.0-beta.0"
     },
-    "packageManager": "pnpm@8.15.8",
+    "packageManager": "pnpm@9.2.0",
     "peerDependencies": {},
     "publishConfig": {
         "access": "public"

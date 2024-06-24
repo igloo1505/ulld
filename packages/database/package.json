@@ -35,7 +35,7 @@
         "@repo/typescript-config": "workspace:*",
         "prisma": "latest"
     },
-    "packageManager": "pnpm@8.15.8",
+    "packageManager": "pnpm@9.2.0",
     "devDependencies": {},
     "publishConfig": {
         "access": "public"
