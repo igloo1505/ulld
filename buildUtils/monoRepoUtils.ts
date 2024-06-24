@@ -203,23 +203,3 @@ const p = new PackageManager();
 
 // p.writeModified(true)
 
-
-
-// p.packages = p.packages.map((u) => {
-//     u.content.version = "0.0.0"
-//     return {
-//         ...u,
-//         content: u.content,
-//     };
-// });
-
-// p.writeModified(true);
-
-// p.clearNodeModules()
-
-// let found = p.filterStringByDependency("@prisma/client")
-
-// console.log(found)
-
-// p.clearNodeModules();
-
