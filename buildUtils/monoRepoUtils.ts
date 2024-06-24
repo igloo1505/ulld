@@ -197,7 +197,6 @@ class PackageManager {
 
 const p = new PackageManager();
 
-p.clearNodeModules()
 
 // p.packages = p.packages.map((u) => {
 //     u.content.version = "0.0.0"
