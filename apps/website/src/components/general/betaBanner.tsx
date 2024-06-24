@@ -9,11 +9,10 @@ export const BetaBanner = () => {
     const [show, setShow] = useState(false)
     useEffect(() => {
         let hasShown = window.localStorage.getItem("ulld-beta-banner")
-        console.log("hasShown: ", hasShown)
         if(!hasShown || (hasShown && new Date().valueOf() > (parseInt(hasShown) + 86400000))){
             setShow(true)
         }
-        /* window.localStorage.setItem("ulld-beta-banner", new Date().valueOf()) */
+        window.localStorage.setItem("ulld-beta-banner", `${new Date().valueOf()}`)
     }, [])
 
     return (
