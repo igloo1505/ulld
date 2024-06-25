@@ -2,17 +2,18 @@
 
 ### EquationRefProps
 
+**`Alpha`**
+
 The EqRef component is used in two related but distinct ways. An equation can be wrapped in a EqRef component with the anchor property and an id property to gather the equation number in a separate EqRef component, with the same id but without the anchor property.
 
 #### Example
 
 ```mdx
-<EqRef anchor id="delta">
-$$
-INSERT-gammaEquiv!
-$$
+<EqRef anchor id="deltaGammaEquivalence">
+  $$ INSERT-gammaEquiv! $$
 </EqRef>
-Consider that in equation <EqRef id="delta />...
+Consider that in equation <EqRef id="deltaGammaEquivalence" />
+...
 ```
 
 ### Output
@@ -25,9 +26,9 @@ Consider that in equation 1...
 
 #### Properties
 
-| Property          | Type                 |
-| :---------------- | :------------------- |
-| `id`              | `string`             |
-| `children`        | `ReactNode`          |
-| `anchor?`         | `boolean`            |
-| `defaultContent?` | `string` \| `number` |
+| Property          | Type                 | Description |
+| ----------------- | -------------------- | ----------- |
+| `id`              | `string`             | **`Alpha`** |
+| `children`        | `ReactNode`          | **`Alpha`** |
+| `anchor?`         | `boolean`            | **`Alpha`** |
+| `defaultContent?` | `string` \| `number` | **`Alpha`** |

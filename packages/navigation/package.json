@@ -1,65 +1,65 @@
 {
-    "version": "0.0.1",
-    "$schema": "./node_modules/@ulld/developer-schemas/src/static/ulldPackageJson.schema.json",
-    "name": "@ulld/navigation",
-    "private": false,
-    "scripts": {
-        "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
-        "build": "echo 'Add build script here'",
-        "test": "echo 'Add test script here'",
-        "lint": "echo 'Add lint script here'"
-    },
-    "files": [
-        "src"
-    ],
-    "exports": {
-        "./navbar": "./src/components/navbar/navbar.tsx",
-        "./sidebar": "./src/components/sidebar/sidebarNavigation.tsx"
-    },
-    "peerDependencies": {
-        "@repo/eslint-config": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
-        "@types/react": "^18.2.74",
-        "@types/react-dom": "^18.2.24",
-        "@ulld/api": "workspace:*",
-        "@ulld/configschema": "workspace:*",
-        "@ulld/developer": "workspace:*",
-        "@ulld/developer-schemas": "workspace:*",
-        "@ulld/hooks": "workspace:*",
-        "@ulld/icons": "workspace:*",
-        "@ulld/state": "workspace:*",
-        "@ulld/tailwind": "workspace:*",
-        "@ulld/ui": "workspace:*",
-        "@ulld/utilities": "workspace:*",
-        "next": "^13.1.16",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "devDependencies": {
-        "@repo/jest-presets": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
-        "@tailwindcss/container-queries": "^0.1.1",
-        "@tailwindcss/forms": "^0.5.7",
-        "@types/react": "^18.2.74",
-        "@types/react-dom": "^18.2.24",
-        "@ulld/developer-cli": "workspace:*",
-        "next": "^14.2.4",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "sass": "^1.74.1",
-        "tailwind-merge": "^1.14.0",
-        "tailwindcss": "^3.4.1",
-        "tailwindcss-animate": "^1.0.7",
-        "typescript": "^5.4.5"
-    },
-    "packageManager": "pnpm@9.0.4",
-    "dependencies": {
-        "@next/mdx": "^14.0.0",
-        "autoprefixer": "^10.4.18",
-        "fuse.js": "^7.0.0",
-        "postcss": "^8.4.35"
-    },
-    "publishConfig": {
-        "access": "public"
-    }
+  "version": "0.0.1",
+  "$schema": "./node_modules/@ulld/developer-schemas/src/static/ulldPackageJson.schema.json",
+  "name": "@ulld/navigation",
+  "private": false,
+  "scripts": {
+    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
+    "build": "echo 'Add build script here'",
+    "test": "echo 'Add test script here'",
+    "lint": "echo 'Add lint script here'"
+  },
+  "files": [
+    "src"
+  ],
+  "exports": {
+    "./navbar": "./src/components/navbar/navbar.tsx",
+    "./sidebar": "./src/components/sidebar/sidebarNavigation.tsx"
+  },
+  "peerDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "@ulld/api": "workspace:*",
+    "@ulld/configschema": "workspace:*",
+    "@ulld/developer": "workspace:*",
+    "@ulld/developer-schemas": "workspace:*",
+    "@ulld/hooks": "workspace:*",
+    "@ulld/icons": "workspace:*",
+    "@ulld/state": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
+    "@ulld/ui": "workspace:*",
+    "@ulld/utilities": "workspace:*",
+    "next": "^13.1.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@repo/jest-presets": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.7",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "@ulld/developer-cli": "workspace:*",
+    "next": "^14.2.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sass": "^1.74.1",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@9.0.4",
+  "dependencies": {
+    "@next/mdx": "^14.0.0",
+    "autoprefixer": "^10.4.18",
+    "fuse.js": "^7.0.0",
+    "postcss": "^8.4.35"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

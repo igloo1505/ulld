@@ -3,10 +3,11 @@ import { prompt } from "enquirer";
 import { SlotConflict } from "./slotConflict";
 import { PageConflict } from "./pageConflict";
 import { GitManager } from "./baseClasses/gitManager";
+import { TargetPaths } from "./paths";
 
 export class Prompter extends GitManager {
-    constructor() {
-        super();
+    constructor(targetDirectory: string) {
+        super(targetDirectory);
     }
     async confirmContinueWithInvalidPlugins(
         invalidPlugins: UlldPlugin[],

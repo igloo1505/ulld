@@ -1,0 +1,49 @@
+---
+id: developerDocsHome
+created: 6-24-24
+---
+
+
+# Developer Documentation
+
+
+<LogoAsText /> supports several types of plugins. Developers can build plugins that integrate with <LogoAsText /> seemlessly and provide one more more of the following features:
+
+- **[Embeddable Components](#devDocs-embeddable-components):** Components that can be embedded in the user's mdx content.
+- **[Slot Components](#devDocs-slot-components):** Components that override specific component slots in the user's compiled application.
+- **[Parsing Functions](#devDocs-parsing-functions):** Functions that partially parse mdx content _before_ it is rendered to React, adding the ability to create new syntaxes unique to your specific plugin.
+
+
+## Developer Config Schema
+
+<LogoAsText /> exports a zod object from `@ulld/configschema/developer` as a named export, `developerConfigSchema` as well as a `DeveloperConfigInput` type. <LogoAsText /> also exports a simple utility function, `writePluginConfig` from `@ulld/developer/writePluginConfig`. This approach was taken to allow you, the developer, to ensure that your configuration can be successfully parsed before publishing your plugin to npm. With these exports, a file can be created at the root of your package (this already exists if you clone the developer template) which can then be executed with `ts-node` or `tsx` generate a completely type safe json file named `pluginConfig.ulld.json`, also at the root of your project.
+
+```ts title="<root>/createMyConfig.ts"
+import {
+    DeveloperConfigInput,
+    developerConfigSchema,
+} from "@ulld/configschema/developer";
+import { writePluginConfig } from "@ulld/developer/writePluginConfig";
+
+const pluginConfig: DeveloperConfigInput = {
+    ...
+};
+
+const parsedPlugin = developerConfigSchema.parse(pluginConfig);
+
+
+writePluginConfig(parsedPlugin, __dirname);
+```
+
+<EmbeddedDocs component="DeveloperConfigInput" />
+
+
+## Embeddable Components ||devDocs-embeddable-components||
+
+
+
+## Slot Components ||devDocs-slot-components||
+
+## Parsing Functions ||devDocs-parsing-functions||
+
+

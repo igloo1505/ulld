@@ -17,12 +17,17 @@ import {
     transformerMetaHighlight,
     transformerNotationWordHighlight,
 } from "@shikijs/transformers";
-import { transform } from "next/dist/build/swc";
 
 const styleFields: DocumentTypeDef["fields"] = {
     autoWrapCode: {
         type: "boolean",
         default: false,
+    },
+    removeColumns: {
+        type: "list",
+        of: {
+            type: "string",
+        },
     },
 };
 
@@ -77,7 +82,7 @@ const baseFields: DocumentTypeDef["fields"] = {
     },
     priority: {
         type: "number",
-        required: false
+        required: false,
     },
 };
 

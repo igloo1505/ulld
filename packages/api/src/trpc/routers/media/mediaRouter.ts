@@ -3,13 +3,15 @@ import { publicProcedure, router } from "../../trpc"
 import { getImagesInDir } from "../../../trpcInternalMethods/filesystem/getImagesInDir"
 import { prisma } from "@ulld/database/db"
 
-
-export const mediaRouter = router({
-    getImagesInDir: publicProcedure.input(z.object({
+const pathSchema = z.object({
         path: z.string(),
         recursive: z.boolean().optional().default(false)
-    })).query(async (opts) => {
-        return await getImagesInDir(opts.input)
+    })
+
+export const mediaRouter = router({
+    getImagesInDir: publicProcedure.input(pathSchema).query(async (opts) => {
+        let vals = pathSchema.parse(opts.input) as {path: string, recursive: boolean}
+        return await getImagesInDir(vals)
     }),
     getRandomBackgroundSettings: publicProcedure.query(async () => {
         let randomImage = await prisma.randomImage.findFirst({})

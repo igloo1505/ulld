@@ -4,7 +4,6 @@ import os
 import re
 from typing import List
 import urllib.parse
-from pprint import pprint
 
 
 root = Path("/Users/bigsexy/Desktop/current/ulld/packages")
@@ -40,6 +39,7 @@ for m in allMaps:
                         if "removePropertyTableColumns" in data
                         else []
                     ),
+                    "deleteUpTo": data["deleteUpTo"] if "deleteUpTo" in data else None,
                 }
             )
 
@@ -80,6 +80,35 @@ validIdChars = [
 
 def makeValidId(value: str):
     return "".join([c.lower() for c in list(value) if c.lower() in validIdChars])
+
+
+def extendTableCode(content: str) -> str:
+    newLines = []
+    lines = content.splitlines()
+    for l in lines:
+        if l.startswith("|"):
+            vals = re.split(r"(?<!\\)\|", l)
+            newVals = []
+            for v in vals:
+                if v.__contains__("`"):
+                    # Adjust code for table cell here.
+                    tempVal = v.replace("`", "").replace("\\", "")
+                    v = f"`{tempVal}`"
+                newVals.append(v)
+            l = "|".join(newVals)
+        newLines.append(l)
+
+    return f"""
+""".join(
+        newLines
+    )
+
+
+def deleteUpTo(content: str, deleteTo: str):
+    match = re.search(rf"{deleteTo}", content)
+    if match:
+        return content[match.span()[0] :]
+    return content
 
 
 def removePropertyTableColumns(content: str, columns: List[str] = []) -> str:
@@ -186,11 +215,18 @@ for category in items:
     for item in items[category]:
         targetFile = target / f"{item['component']}.mdx"
         content = item["path"].read_text()
+        if item["deleteUpTo"]:
+            content = deleteUpTo(content, item["deleteUpTo"])
         content = removeSection(content, "Source", 4)
         content = removeSection(content, "Modules", 3)
-        aliases = ",".join(
+        aliases = ", ".join(
             [f"'{x}'" for x in item["aliases"]] if "aliases" in item else []
         )
+        # removeCols = ", ".join(
+        #     [f"'{x}'" for x in item["removePropertyTableColumns"]]
+        #     if "removePropertyTableColumns" in item
+        #     else []
+        # )
         for removeSec in item["removeSections"]:
             content = removeSection(
                 content,
@@ -198,11 +234,12 @@ for category in items:
                 removeSec["depth"] if "depth" in removeSec else 2,
                 removeSec["index"] if "index" in removeSec else 1,
             )
-        content = removePropertyTableColumns(
-            content, item["removePropertyTableColumns"]
-        )
+        # content = removePropertyTableColumns(
+        #     content, item["removePropertyTableColumns"]
+        # )
         content = replaceLinks(content, category, item["path"])
         content = insertReplacements(content)
+        # content = extendTableCode(content)
         targetFile.write_text(
             f"""---
 category: {category}

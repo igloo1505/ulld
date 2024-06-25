@@ -14,7 +14,7 @@ type ColorTextProps = {} & Record<keyof PropColor, boolean> &
 export const ColorText = ({ children, ...props }: ColorTextProps) => {
     let { color, props: _props } = getPropColor(props, "text");
     let tt = getToolTipWrapperContent(props);
-    let data = propColorSchemaTransform<typeof props>(props, "foreground");
+    let data = propColorSchemaTransform(props as any, "foreground");
     if (tt) {
         return (
             <ComposedTooltip

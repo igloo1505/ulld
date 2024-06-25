@@ -2,7 +2,7 @@ import { router } from "./trpc";
 import { syncRouter } from "./routers/sync";
 import { autoSettingRouter } from "./routers/autoSettings";
 import { advancedSearchRouter } from "./routers/search";
-import { healthRouter } from "./routers/health/healthRouter";
+// import { healthRouter } from "./routers/health/healthRouter";
 import { parsingProcedure } from "./routers/parsing";
 import { settingsRouter } from "./routers/settings";
 import { mdxNoteActionsRouter } from "./routers/mdxNote";
@@ -30,7 +30,7 @@ export const _appRouter = {
     commandPalette: commandPaletteRouter,
     search: advancedSearchRouter,
     boards: kanBanBoardsRouter,
-    health: healthRouter,
+    // health: healthRouter,
     parse: parsingProcedure,
     settings: settingsRouter,
     mdx: mdxNoteActionsRouter,

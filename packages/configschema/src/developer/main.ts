@@ -6,6 +6,8 @@ import { pluginSettingsSchema } from "./pluginSettingsSchema";
 import { pluginAdditionalPageSchema } from "./pluginPageSchema";
 import { pluginEventsSchema } from "./pluginEventsSchema";
 import { pluginSlotSchema } from "./slotsSchema";
+export type { DeveloperConfigInput } from "./typedocInput";
+
 
 export const developerConfigSchema = z
     .object({
@@ -56,5 +58,5 @@ export const developerConfigSchema = z
         return data;
     });
 
-export type DeveloperConfigInput = z.input<typeof developerConfigSchema>;
+
 export type DeveloperConfigOutput = z.output<typeof developerConfigSchema>;

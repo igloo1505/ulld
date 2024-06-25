@@ -1,6 +1,6 @@
 
-export const randomFromArr = <T extends unknown>(arr: T[] | string): T => {
-    return arr[Math.floor(Math.random() * arr.length)]
+export const randomFromArr = <T extends unknown>(arr: T[]): T => {
+    return arr[Math.floor(Math.random() * arr.length)] as T
 }
 
 

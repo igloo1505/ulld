@@ -3,7 +3,9 @@ import { getRandomId } from "@ulld/utilities/identity";
 import React, {
     ForwardedRef,
     HTMLProps,
+    RefObject,
     forwardRef,
+    useEffect,
     useImperativeHandle,
     useMemo,
 } from "react";
@@ -21,20 +23,49 @@ import { NoteStateObserver } from "@ulld/state/observers/noteState";
 import MdxArticleNavButtons from "./mdxArticleNavButtons";
 import { useResponsiveCode } from "@ulld/hooks/useResponsiveCode";
 
-interface MDXArticleProps extends HTMLProps<HTMLElement> {
+export interface MDXArticleProps extends HTMLProps<HTMLElement> {
     mdx: DocumentTypes;
     paddingTop?: boolean;
     isSource?: boolean;
     hideSourceButton?: boolean;
     wrapCode?: boolean;
     docsWide?: boolean;
+    embedded?: boolean;
 }
+
+const replaceBackTicks = (s: string) => {
+    let val = s
+    if(val.startsWith("`")){
+        val = val.slice(1)
+    }
+
+    if(val.endsWith("`")){
+        val = val.slice(0, val.length - 1)
+    }
+    return val 
+    }
+
+/* TODO: Handle this directly in typedoc. This is a ridiculously lazy fix but I need to move on right now. */
+const replaceTableCode = (em: RefObject<HTMLDivElement>) => {
+    if (!em.current) return;
+    let tds = em.current.querySelectorAll("td");
+    tds.forEach((td) => {
+        let codeEm = td.querySelector("code");
+        if (codeEm) {
+            const text = td.textContent;
+            if(text){
+            td.innerHTML = `<span class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm semibold">${replaceBackTicks(text)}</span>`;
+            }
+        }
+    });
+};
 
 const MDXArticle = forwardRef(
     (
         {
             mdx,
             wrapCode,
+            embedded,
             docsWide,
             paddingTop = true,
             hideSourceButton = false,
@@ -43,11 +74,17 @@ const MDXArticle = forwardRef(
         }: MDXArticleProps,
         _ref: ForwardedRef<HTMLElement>,
     ) => {
-        const { ref } = useResponsiveCode<HTMLDivElement>({nested: true, defaultMaxWidth: "40vw"});
+        const { ref } = useResponsiveCode<HTMLDivElement>({
+            nested: true,
+            defaultMaxWidth: "40vw",
+        });
         useImperativeHandle(_ref, () => ref.current!, []);
         const id = props.id ? props.id : getRandomId();
         const article = useMDXComponent(mdx.body.code);
         const Article = useMemo(() => article, []);
+        useEffect(() => {
+            replaceTableCode(ref);
+        }, [mdx]);
 
         useMathjaxBandaid(id);
 
@@ -61,7 +98,7 @@ const MDXArticle = forwardRef(
         return (
             <InternalReduxProvider>
                 <NoteStateObserver store={store} />
-                {!hideSourceButton && (
+                {!hideSourceButton && !embedded && (
                     <MdxArticleNavButtons
                         articleId={"id" in mdx ? mdx.id : undefined}
                         isSource={isSource}

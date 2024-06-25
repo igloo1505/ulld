@@ -113,13 +113,11 @@ export const TaggableComboBox = <T extends FieldValues>({
                 ? Boolean(placeholder) ? placeholder : `${type}s`
                 : `${options.filter((l) => _formValues?.includes(l)).length} items`;
         }
-        return replaceUnderscores
-            ? (_formValues || "").replaceAll("_", " ")
-            : _formValues || "";
+        return `${type}s`
     };
 
     useEffect(() => {
-       setBtnDisplay(getDisplay(formValues)) 
+       setBtnDisplay(getDisplay(formValues as string[])) 
     }, [formValues])
 
     return (

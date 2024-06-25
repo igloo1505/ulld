@@ -9,24 +9,28 @@ aliases: []
 
 ### HighlightProps
 
+**`Alpha`**
+
 Add a simple background highlight to some text with the Highlight component.
+
+<Hint alias>Hl</Hint>
 
 #### Example
 
-```tsx
+```mdx
 This isn't as important as <Hl>this</Hl> is!
 ```
 
 This isn't as important as <Hl>this</Hl> is!
 
-<ExtendsColorProps />
+<ExtendsMap extends={["colorProps", "tooltipProps"]} />
 
 #### Properties
 
-| Property   | Type        | Description                               |
-| :--------- | :---------- | :---------------------------------------- |
-| `children` | `ReactNode` | The text to be highlighted.               |
-| `light?`   | `boolean`   | Make the highlight semi-tranparent.       |
-| `faint?`   | `boolean`   | An alias for light.                       |
-| `muted?`   | `boolean`   | Make the text take on a muted appearance. |
+| Property   | Type        | Description                                           |
+| ---------- | ----------- | ----------------------------------------------------- |
+| `children` | `ReactNode` | **`Alpha`** The text to be highlighted.               |
+| `light?`   | `boolean`   | **`Alpha`** Make the highlight semi-tranparent.       |
+| `faint?`   | `boolean`   | **`Alpha`** An alias for light.                       |
+| `muted?`   | `boolean`   | **`Alpha`** Make the text take on a muted appearance. |
 

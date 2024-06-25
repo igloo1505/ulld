@@ -43,14 +43,14 @@ importers:
         version: 1.6.0
       tsup:
         specifier: ^8.0.1
-        version: 8.1.0(@microsoft/api-extractor@7.47.0(@types/node@20.14.8))(@swc/core@1.6.5)(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
+        version: 8.1.0(@microsoft/api-extractor@7.47.0(@types/node@20.14.8))(@swc/core@1.6.5(@swc/helpers@0.5.11))(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
       zod:
         specifier: ^3.22.4
         version: 3.23.8
     devDependencies:
       '@droppedcode/typedoc-plugin-relative-includes':
         specifier: ^1.0.5
-        version: 1.0.5(typedoc@0.25.13(typescript@5.5.2))
+        version: 1.0.5
       '@microsoft/api-extractor':
         specifier: ^7.42.3
         version: 7.47.0(@types/node@20.14.8)
@@ -104,7 +104,7 @@ importers:
         version: 2.2.4(rollup@4.18.0)
       rollup-plugin-postcss:
         specifier: ^4.0.2
-        version: 4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+        version: 4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
       rollup-plugin-terser:
         specifier: ^7.0.2
         version: 7.0.2(rollup@4.18.0)
@@ -123,38 +123,35 @@ importers:
       turbo:
         specifier: ^2.0.4
         version: 2.0.4
-      typedoc:
-        specifier: ^0.25.13
-        version: 0.25.13(typescript@5.5.2)
       typedoc-github-wiki-theme:
         specifier: ^2.0.0
-        version: 2.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)))
+        version: 2.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2)))
       typedoc-plugin-coverage:
-        specifier: ^3.1.1
-        version: 3.3.0(typedoc@0.25.13(typescript@5.5.2))
+        specifier: ^3.3.0
+        version: 3.3.0(typedoc@0.26.2(typescript@5.5.2))
       typedoc-plugin-frontmatter:
         specifier: ^1.0.0
-        version: 1.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)))
+        version: 1.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2)))
       typedoc-plugin-include-example:
         specifier: ^1.2.0
-        version: 1.2.0(typedoc@0.25.13(typescript@5.5.2))
+        version: 1.2.0(typedoc@0.26.2(typescript@5.5.2))
       typedoc-plugin-markdown:
-        specifier: ^4.0.3
-        version: 4.1.0(typedoc@0.25.13(typescript@5.5.2))
+        specifier: ^4.1.0
+        version: 4.1.0(typedoc@0.26.2(typescript@5.5.2))
       typedoc-plugin-mdn-links:
-        specifier: ^3.1.28
-        version: 3.2.1(typedoc@0.25.13(typescript@5.5.2))
+        specifier: ^3.2.1
+        version: 3.2.1(typedoc@0.26.2(typescript@5.5.2))
       typedoc-plugin-remark:
-        specifier: ^1.0.1
-        version: 1.0.2(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)))
+        specifier: ^1.0.2
+        version: 1.0.2(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2)))
       typedoc-plugin-zod:
-        specifier: ^1.1.2
-        version: 1.2.0(typedoc@0.25.13(typescript@5.5.2))
+        specifier: ^1.2.0
+        version: 1.2.0(typedoc@0.26.2(typescript@5.5.2))
       typedoc-theme-category-nav:
         specifier: ^0.0.3
-        version: 0.0.3(typedoc@0.25.13(typescript@5.5.2))
+        version: 0.0.3(typedoc@0.26.2(typescript@5.5.2))
       typescript:
-        specifier: ^5.4.2
+        specifier: ^5.5.2
         version: 5.5.2
       typescript-plugin-css-modules:
         specifier: ^5.1.0
@@ -167,7 +164,7 @@ importers:
         version: 0.12.0
       '@ducanh2912/next-pwa':
         specifier: ^10.2.5
-        version: 10.2.7(@types/babel__core@7.20.5)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(webpack@5.92.1(@swc/core@1.6.5))
+        version: 10.2.7(@types/babel__core@7.20.5)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       '@google/model-viewer':
         specifier: ^3.4.0
         version: 3.5.0(three@0.163.0)
@@ -176,7 +173,7 @@ importers:
         version: 3.6.0(react-hook-form@7.52.0(react@18.3.1))
       '@mdx-js/loader':
         specifier: ^3.0.1
-        version: 3.0.1(webpack@5.92.1(@swc/core@1.6.5))
+        version: 3.0.1(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       '@mdx-js/mdx':
         specifier: ^3.0.1
         version: 3.0.1
@@ -191,7 +188,7 @@ importers:
         version: 0.1.53
       '@next/mdx':
         specifier: ^14.2.3
-        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@next/third-parties':
         specifier: ^14.2.3
         version: 14.2.4(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react@18.3.1)
@@ -308,7 +305,7 @@ importers:
         version: 16.4.5
       file-loader:
         specifier: ^6.2.0
-        version: 6.2.0(webpack@5.92.1(@swc/core@1.6.5))
+        version: 6.2.0(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       framer-motion:
         specifier: ^11.1.7
         version: 11.2.11(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -344,7 +341,7 @@ importers:
         version: 0.49.0
       monaco-editor-webpack-plugin:
         specifier: ^7.1.0
-        version: 7.1.0(monaco-editor@0.49.0)(webpack@5.92.1(@swc/core@1.6.5))
+        version: 7.1.0(monaco-editor@0.49.0)(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       next:
         specifier: ^14.2.4
         version: 14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
@@ -362,7 +359,7 @@ importers:
         version: 5.15.1
       raw-loader:
         specifier: ^4.0.2
-        version: 4.0.2(webpack@5.92.1(@swc/core@1.6.5))
+        version: 4.0.2(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       rc-virtual-list:
         specifier: ^3.14.2
         version: 3.14.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -507,7 +504,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/config-typescript
@@ -642,7 +639,7 @@ importers:
     dependencies:
       '@ducanh2912/next-pwa':
         specifier: ^10.2.5
-        version: 10.2.7(@types/babel__core@7.20.5)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(webpack@5.92.1(@swc/core@1.6.5))
+        version: 10.2.7(@types/babel__core@7.20.5)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       '@hookform/resolvers':
         specifier: ^3.3.4
         version: 3.6.0(react-hook-form@7.52.0(react@18.3.1))
@@ -651,7 +648,7 @@ importers:
         version: 4.6.0(monaco-editor@0.44.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@prisma/client':
         specifier: ^5.15.1
         version: 5.15.1(prisma@5.15.1)
@@ -708,13 +705,13 @@ importers:
         version: link:../../packages/utilities
       file-loader:
         specifier: ^6.2.0
-        version: 6.2.0(webpack@5.92.1(@swc/core@1.6.5))
+        version: 6.2.0(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       monaco-editor:
         specifier: ^0.44.0
         version: 0.44.0
       monaco-editor-webpack-plugin:
         specifier: ^7.1.0
-        version: 7.1.0(monaco-editor@0.44.0)(webpack@5.92.1(@swc/core@1.6.5))
+        version: 7.1.0(monaco-editor@0.44.0)(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       monaco-vim:
         specifier: ^0.4.1
         version: 0.4.1(monaco-editor@0.44.0)
@@ -726,7 +723,7 @@ importers:
         version: 5.15.1
       raw-loader:
         specifier: ^4.0.2
-        version: 4.0.2(webpack@5.92.1(@swc/core@1.6.5))
+        version: 4.0.2(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -763,7 +760,7 @@ importers:
         version: 8.4.38
       tailwindcss:
         specifier: ^3.4.1
-        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
 
   apps/website:
     dependencies:
@@ -1100,7 +1097,7 @@ importers:
         version: 1.9.0(typescript@5.5.2)
       '@tailwindcss/forms':
         specifier: ^0.5.7
-        version: 0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       '@tailwindcss/typography':
         specifier: ^0.5.13
         version: 0.5.13(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
@@ -1136,7 +1133,7 @@ importers:
         version: 8.4.38
       tailwindcss:
         specifier: ^3.4.1
-        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
       tsx:
         specifier: ^4.10.4
         version: 4.15.7
@@ -1181,7 +1178,7 @@ importers:
         version: 0.0.4
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@prisma/client':
         specifier: latest
         version: 5.15.1(prisma@5.15.1)
@@ -1425,7 +1422,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -1447,7 +1444,7 @@ importers:
         version: 0.7.14(@citation-js/core@0.7.14(encoding@0.1.13))
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -1587,7 +1584,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/developer':
         specifier: workspace:*
         version: link:../developer
@@ -1624,7 +1621,7 @@ importers:
         version: 0.16.1(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -1697,7 +1694,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/api':
         specifier: workspace:*
         version: link:../api
@@ -1803,13 +1800,13 @@ importers:
     dependencies:
       '@mdx-js/loader':
         specifier: ^3.0.1
-        version: 3.0.1(webpack@5.92.1(@swc/core@1.6.5))
+        version: 3.0.1(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       '@mdx-js/react':
         specifier: ^3.0.1
         version: 3.0.1(@types/react@18.3.3)(react@18.3.1)
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/bib-manager':
         specifier: workspace:*
         version: link:../bib-manager
@@ -1952,7 +1949,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       next:
         specifier: ^14.2.4
         version: 14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
@@ -2006,7 +2003,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/baseConfigs':
         specifier: workspace:*
         version: link:../baseConfigs
@@ -2094,7 +2091,7 @@ importers:
         version: 5.0.1(supertest@6.3.4)
       ts-jest:
         specifier: ^29.1.2
-        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.20.2)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
+        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.21.5)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
       tsx:
         specifier: ^4.7.2
         version: 4.15.7
@@ -2109,7 +2106,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -2170,7 +2167,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@prisma/client':
         specifier: ^5.15.1
         version: 5.15.1(prisma@5.15.1)
@@ -2194,7 +2191,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -2230,7 +2227,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -2269,7 +2266,7 @@ importers:
         version: 5.0.6
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@oclif/core':
         specifier: ^3.26.2
         version: 3.27.0
@@ -2369,7 +2366,7 @@ importers:
         version: 0.3.4
       ts-jest:
         specifier: ^29.1.2
-        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.20.2)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
+        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.21.5)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)
@@ -2387,7 +2384,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       next:
         specifier: ^14.2.4
         version: 14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
@@ -2412,7 +2409,7 @@ importers:
     dependencies:
       '@mdx-js/loader':
         specifier: ^3.0.1
-        version: 3.0.1(webpack@5.92.1(@swc/core@1.6.5))
+        version: 3.0.1(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       '@mdx-js/mdx':
         specifier: ^3.0.1
         version: 3.0.1
@@ -2421,7 +2418,7 @@ importers:
         version: 3.0.1(@types/react@18.3.3)(react@18.3.1)
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -2430,7 +2427,7 @@ importers:
         version: link:../icons
       file-loader:
         specifier: ^6.2.0
-        version: 6.2.0(webpack@5.92.1(@swc/core@1.6.5))
+        version: 6.2.0(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       mathjax-full:
         specifier: ^3.2.2
         version: 3.2.2
@@ -2439,7 +2436,7 @@ importers:
         version: 14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
       raw-loader:
         specifier: ^4.0.2
-        version: 4.0.2(webpack@5.92.1(@swc/core@1.6.5))
+        version: 4.0.2(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -2491,10 +2488,10 @@ importers:
         version: link:../config-typescript
       '@tailwindcss/container-queries':
         specifier: ^0.1.1
-        version: 0.1.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 0.1.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       '@tailwindcss/forms':
         specifier: ^0.5.7
-        version: 0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       '@types/react':
         specifier: ^18.2.74
         version: 18.3.3
@@ -2551,7 +2548,7 @@ importers:
         version: 3.2.2
       monaco-editor-webpack-plugin:
         specifier: ^7.1.0
-        version: 7.1.0(monaco-editor@0.49.0)(webpack@5.92.1(@swc/core@1.6.5))
+        version: 7.1.0(monaco-editor@0.49.0)(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       monaco-vim:
         specifier: ^0.4.1
         version: 0.4.1(monaco-editor@0.49.0)
@@ -2566,16 +2563,16 @@ importers:
         version: 1.14.0
       tailwindcss:
         specifier: ^3.4.1
-        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 1.0.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
 
   packages/diagram:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../config-typescript
@@ -2624,7 +2621,7 @@ importers:
         version: 4.6.0(monaco-editor@0.44.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../config-typescript
@@ -2657,7 +2654,7 @@ importers:
         version: 14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
       raw-loader:
         specifier: ^4.0.2
-        version: 4.0.2(webpack@5.92.1(@swc/core@1.6.5))
+        version: 4.0.2(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -2700,7 +2697,7 @@ importers:
         version: 6.2.2(eslint@9.5.0)(typescript@5.5.2)
       file-loader:
         specifier: ^6.2.0
-        version: 6.2.0(webpack@5.92.1(@swc/core@1.6.5))
+        version: 6.2.0(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
@@ -2712,13 +2709,13 @@ importers:
         version: 10.4.0
       monaco-editor-webpack-plugin:
         specifier: ^7.1.0
-        version: 7.1.0(monaco-editor@0.44.0)(webpack@5.92.1(@swc/core@1.6.5))
+        version: 7.1.0(monaco-editor@0.44.0)(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       monaco-vim:
         specifier: ^0.4.1
         version: 0.4.1(monaco-editor@0.44.0)
       next-remove-imports:
         specifier: ^1.0.12
-        version: 1.0.12(webpack@5.92.1(@swc/core@1.6.5))
+        version: 1.0.12(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       react-test-renderer:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
@@ -2736,7 +2733,7 @@ importers:
         version: 5.0.1(supertest@6.3.4)
       ts-jest:
         specifier: ^29.1.2
-        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.20.2)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
+        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.21.5)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
       y-indexeddb:
         specifier: ^9.0.12
         version: 9.0.12(yjs@13.6.18)
@@ -2760,7 +2757,7 @@ importers:
         version: 3.5.0(three@0.163.0)
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/configschema':
         specifier: workspace:*
         version: link:../configschema
@@ -2820,47 +2817,44 @@ importers:
         specifier: ^0.13.8
         version: 0.13.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       typedoc:
-        specifier: ^0.25.13
-        version: 0.25.13(typescript@5.5.2)
+        specifier: ^0.26.2
+        version: 0.26.2(typescript@5.5.2)
       typedoc-github-wiki-theme:
         specifier: ^2.0.0
-        version: 2.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)))
+        version: 2.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2)))
       typedoc-plugin-coverage:
         specifier: ^3.1.1
-        version: 3.3.0(typedoc@0.25.13(typescript@5.5.2))
+        version: 3.3.0(typedoc@0.26.2(typescript@5.5.2))
       typedoc-plugin-frontmatter:
         specifier: ^1.0.0
-        version: 1.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)))
+        version: 1.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2)))
       typedoc-plugin-include-example:
         specifier: ^1.2.0
-        version: 1.2.0(typedoc@0.25.13(typescript@5.5.2))
+        version: 1.2.0(typedoc@0.26.2(typescript@5.5.2))
       typedoc-plugin-inline-sources:
         specifier: ^1.0.2
-        version: 1.0.2(typedoc@0.25.13(typescript@5.5.2))
+        version: 1.0.2(typedoc@0.26.2(typescript@5.5.2))
       typedoc-plugin-markdown:
-        specifier: ^4.0.3
-        version: 4.1.0(typedoc@0.25.13(typescript@5.5.2))
+        specifier: ^4.1.0
+        version: 4.1.0(typedoc@0.26.2(typescript@5.5.2))
       typedoc-plugin-mdn-links:
         specifier: ^3.1.28
-        version: 3.2.1(typedoc@0.25.13(typescript@5.5.2))
+        version: 3.2.1(typedoc@0.26.2(typescript@5.5.2))
       typedoc-plugin-missing-exports:
-        specifier: ^2.2.0
-        version: 2.3.0(typedoc@0.25.13(typescript@5.5.2))
+        specifier: ^2.3.0
+        version: 2.3.0(typedoc@0.26.2(typescript@5.5.2))
       typedoc-plugin-remark:
-        specifier: ^1.0.1
-        version: 1.0.2(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)))
+        specifier: ^1.0.2
+        version: 1.0.2(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2)))
       typedoc-plugin-rename-defaults:
-        specifier: ^0.7.0
-        version: 0.7.1(typedoc@0.25.13(typescript@5.5.2))
+        specifier: ^0.7.1
+        version: 0.7.1(typedoc@0.26.2(typescript@5.5.2))
       typedoc-plugin-zod:
-        specifier: ^1.1.2
-        version: 1.2.0(typedoc@0.25.13(typescript@5.5.2))
+        specifier: ^1.2.0
+        version: 1.2.0(typedoc@0.26.2(typescript@5.5.2))
       typedoc-theme-category-nav:
         specifier: ^0.0.3
-        version: 0.0.3(typedoc@0.25.13(typescript@5.5.2))
-      typescript:
-        specifier: ^5.4.5
-        version: 5.5.2
+        version: 0.0.3(typedoc@0.26.2(typescript@5.5.2))
       unified-prettier:
         specifier: ^2.0.1
         version: 2.0.1(prettier@3.3.2)
@@ -2869,7 +2863,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/api':
         specifier: workspace:*
         version: link:../api
@@ -2936,10 +2930,10 @@ importers:
         version: link:../config-typescript
       '@tailwindcss/container-queries':
         specifier: ^0.1.1
-        version: 0.1.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 0.1.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       '@tailwindcss/forms':
         specifier: ^0.5.7
-        version: 0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       '@types/react':
         specifier: ^18.2.74
         version: 18.3.3
@@ -2957,10 +2951,10 @@ importers:
         version: 1.14.0
       tailwindcss:
         specifier: ^3.4.1
-        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 1.0.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
 
   packages/full-form:
     dependencies:
@@ -2972,7 +2966,7 @@ importers:
         version: 3.6.0(react-hook-form@7.52.0(react@18.3.1))
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@reduxjs/toolkit':
         specifier: ^1.9.5
         version: 1.9.7(react-redux@8.1.3(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(redux@4.2.1))(react@18.3.1)
@@ -3122,10 +3116,10 @@ importers:
         version: 1.14.0
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 1.0.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       tailwindcss-debug-screens:
         specifier: ^2.2.1
-        version: 2.2.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 2.2.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       tinycolor2:
         specifier: ^1.6.0
         version: 1.6.0
@@ -3186,16 +3180,16 @@ importers:
         version: 5.0.1(supertest@6.3.4)
       tailwindcss:
         specifier: ^3.4.1
-        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
       ts-jest:
         specifier: ^29.1.2
-        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.20.2)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
+        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.21.5)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
 
   packages/health-tracking:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -3249,7 +3243,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/api':
         specifier: workspace:*
         version: link:../api
@@ -3349,13 +3343,13 @@ importers:
         version: 5.0.1(supertest@6.3.4)
       ts-jest:
         specifier: ^29.1.2
-        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.20.2)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
+        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.21.5)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
 
   packages/icons:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@tabler/icons-react':
         specifier: ^3.5.0
         version: 3.6.0(react@18.3.1)
@@ -3413,7 +3407,7 @@ importers:
         version: 5.0.6
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@oclif/core':
         specifier: ^3.26.2
         version: 3.27.0
@@ -3525,7 +3519,7 @@ importers:
         version: 0.3.4
       ts-jest:
         specifier: ^29.1.2
-        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.20.2)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
+        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.21.5)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)
@@ -3543,7 +3537,7 @@ importers:
     dependencies:
       ts-jest:
         specifier: ^29.1.1
-        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.20.2)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
+        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.21.5)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
     devDependencies:
       jest-environment-jsdom:
         specifier: ^29.7.0
@@ -3553,7 +3547,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../config-typescript
@@ -3602,7 +3596,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/jest-presets':
         specifier: workspace:*
         version: link:../jest-presets
@@ -3651,7 +3645,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -3721,7 +3715,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       chalk:
         specifier: ^5.3.0
         version: 5.3.0
@@ -3748,7 +3742,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -3800,10 +3794,10 @@ importers:
         version: link:../config-typescript
       '@tailwindcss/container-queries':
         specifier: ^0.1.1
-        version: 0.1.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 0.1.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       '@tailwindcss/forms':
         specifier: ^0.5.7
-        version: 0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       '@types/react':
         specifier: ^18.2.74
         version: 18.3.3
@@ -3830,10 +3824,10 @@ importers:
         version: 1.14.0
       tailwindcss:
         specifier: ^3.4.1
-        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 1.0.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       typescript:
         specifier: ^5.4.5
         version: 5.5.2
@@ -3845,7 +3839,7 @@ importers:
         version: 1.73.3
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/jest-presets':
         specifier: workspace:*
         version: link:../jest-presets
@@ -3894,7 +3888,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -3957,7 +3951,7 @@ importers:
         version: 3.0.1
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/configschema':
         specifier: workspace:*
         version: link:../configschema
@@ -4096,13 +4090,13 @@ importers:
         version: 5.0.1(supertest@6.3.4)
       ts-jest:
         specifier: ^29.1.2
-        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.20.2)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
+        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.21.5)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
 
   packages/pdf:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@react-pdf/renderer':
         specifier: ^3.3.8
         version: 3.4.4(encoding@0.1.13)(react@18.3.1)
@@ -4160,7 +4154,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/api':
         specifier: workspace:*
         version: link:../api
@@ -4248,7 +4242,7 @@ importers:
         version: 3.0.1
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
     devDependencies:
       '@react-three/drei':
         specifier: ^9.99.7
@@ -4309,7 +4303,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -4379,7 +4373,7 @@ importers:
         version: 1.0.5
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@reduxjs/toolkit':
         specifier: ^1.9.5
         version: 1.9.7(react-redux@8.1.3(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(redux@4.2.1))(react@18.3.1)
@@ -4491,7 +4485,7 @@ importers:
         version: 5.0.1(supertest@6.3.4)
       ts-jest:
         specifier: ^29.1.2
-        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.20.2)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
+        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.21.5)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
 
   packages/tailwindAndShad:
     dependencies:
@@ -4500,7 +4494,7 @@ importers:
         version: 3.6.0(react-hook-form@7.52.0(react@18.3.1))
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@radix-ui/react-accordion':
         specifier: ^1.1.2
         version: 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4584,7 +4578,7 @@ importers:
         version: 1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tailwindcss/container-queries':
         specifier: ^0.1.1
-        version: 0.1.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 0.1.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -4623,10 +4617,10 @@ importers:
         version: 1.14.0
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 1.0.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       tailwindcss-debug-screens:
         specifier: ^2.2.1
-        version: 2.2.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 2.2.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       vaul:
         specifier: ^0.9.0
         version: 0.9.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4660,13 +4654,13 @@ importers:
         version: 18.3.1(react@18.3.1)
       tailwindcss:
         specifier: ^3.4.1
-        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
 
   packages/task-manager:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -4814,7 +4808,7 @@ importers:
         version: 2.20.7(@codemirror/language@6.10.2)(@lezer/common@1.2.1)(@lezer/highlight@1.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.18)
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@prisma/client':
         specifier: ^5.15.1
         version: 5.15.1(prisma@5.15.1)
@@ -4907,7 +4901,7 @@ importers:
         version: 8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.162.0)
       '@tailwindcss/container-queries':
         specifier: ^0.1.1
-        version: 0.1.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 0.1.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       '@tanstack/query-async-storage-persister':
         specifier: ^4.33.0
         version: 4.36.1
@@ -5198,10 +5192,10 @@ importers:
         version: 1.14.0
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 1.0.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       tailwindcss-debug-screens:
         specifier: ^2.2.1
-        version: 2.2.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 2.2.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       three:
         specifier: ^0.162.0
         version: 0.162.0
@@ -5289,7 +5283,7 @@ importers:
         version: 0.5.11
       '@tailwindcss/forms':
         specifier: ^0.5.7
-        version: 0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))
+        version: 0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))
       '@tanstack/eslint-plugin-query':
         specifier: ^4.34.1
         version: 4.38.0(eslint@9.5.0)
@@ -5448,7 +5442,7 @@ importers:
         version: 2.2.4(rollup@4.18.0)
       rollup-plugin-postcss:
         specifier: ^4.0.2
-        version: 4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+        version: 4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
       rollup-plugin-sizes:
         specifier: ^1.0.6
         version: 1.0.6(rollup@4.18.0)
@@ -5475,7 +5469,7 @@ importers:
         version: 5.0.1(supertest@6.3.4)
       tailwindcss:
         specifier: ^3.4.1
-        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
       ts-jest:
         specifier: ^29.1.2
         version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.21.5)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
@@ -5487,7 +5481,7 @@ importers:
         version: 2.6.3
       tsup:
         specifier: ^8.0.1
-        version: 8.1.0(@microsoft/api-extractor@7.47.0(@types/node@20.14.8))(@swc/core@1.6.5)(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
+        version: 8.1.0(@microsoft/api-extractor@7.47.0(@types/node@20.14.8))(@swc/core@1.6.5(@swc/helpers@0.5.11))(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
       typescript:
         specifier: ^5.4.2
         version: 5.5.2
@@ -5502,7 +5496,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/database':
         specifier: workspace:*
         version: link:../database
@@ -5596,7 +5590,7 @@ importers:
         version: 5.0.1(supertest@6.3.4)
       ts-jest:
         specifier: ^29.1.2
-        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.20.2)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
+        version: 29.1.5(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(esbuild@0.21.5)(jest@29.7.0(@types/node@20.14.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))(typescript@5.5.2)
 
   packages/whiteboard:
     dependencies:
@@ -5608,7 +5602,7 @@ importers:
         version: 1.0.0
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/jest-presets':
         specifier: workspace:*
         version: link:../jest-presets
@@ -16524,6 +16518,9 @@ packages:
     resolution: {integrity: sha512-wM1+Z03eypVAVUCE7QdSqpVIvelbOakn1M0bPDoA4SGWPx3sNDVUiMo3L6To6WWGClB7VyXnhQ4Sn7gxiJbE6A==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
+  linkify-it@5.0.0:
+    resolution: {integrity: sha512-5aHCbzQRADcdP+ATqnDuhhJ/MRIqDkZX5pyjFHRRysS8vZ5AbqGEoFIb6pYHPZ+L/OC2Lc+xT8uHVVR5CAK/wQ==}
+
   listr2@3.14.0:
     resolution: {integrity: sha512-TyWI8G99GX9GjE54cJ+RrNMcIFBfwMPxc3XTFiAYGN4s10hWROGtOg7+O6u6LE3mNkyld7RSLE6nrKBvTfcs3g==}
     engines: {node: '>=10.0.0'}
@@ -16801,6 +16798,10 @@ packages:
     resolution: {integrity: sha512-o5vL7aDWatOTX8LzaS1WMoaoxIiLRQJuIKKe2wAw6IeULDHaqbiqiggmx+pKvZDb1Sj+pE46Sn1T7lCqfFtg1Q==}
     engines: {node: '>=16'}
 
+  markdown-it@14.1.0:
+    resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
+    hasBin: true
+
   markdown-table@3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
 
@@ -16958,6 +16959,9 @@ packages:
 
   mdn-data@2.0.30:
     resolution: {integrity: sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==}
+
+  mdurl@2.0.0:
+    resolution: {integrity: sha512-Lf+9+2r+Tdp5wXDXC4PcIBjTDtq4UKjCPMQhKIuzpJNW0b96kVqSwW0bT7FhRSfmAiFYgP+SCRvdrDozfh0U5w==}
 
   mdx-bundler@9.2.1:
     resolution: {integrity: sha512-hWEEip1KU9MCNqeH2rqwzAZ1pdqPPbfkx9OTJjADqGPQz4t9BO85fhI7AP9gVYrpmfArf9/xJZUN0yBErg/G/Q==}
@@ -18940,6 +18944,10 @@ packages:
 
   pump@3.0.0:
     resolution: {integrity: sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==}
+
+  punycode.js@2.3.1:
+    resolution: {integrity: sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA==}
+    engines: {node: '>=6'}
 
   punycode@1.4.1:
     resolution: {integrity: sha512-jmYNElW7yvO7TV33CjSmvSiE2yco3bV2czu/OzDKdMNVZQWfxCblURLhf+47syQRBntjfLdd/H0egrzIG+oaFQ==}
@@ -21509,6 +21517,13 @@ packages:
     peerDependencies:
       typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x
 
+  typedoc@0.26.2:
+    resolution: {integrity: sha512-q/t+M+PZqhN9gPWLBZ3CCvP+KT8O1tyYkSzEYbcQ6mo89avdIrMlBEl3vfo5BgSzwC6Lbmq0W64E8RkY+eVsLA==}
+    engines: {node: '>= 18'}
+    hasBin: true
+    peerDependencies:
+      typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x
+
   typescript-plugin-css-modules@5.1.0:
     resolution: {integrity: sha512-6h+sLBa4l+XYSTn/31vZHd/1c3SvAbLpobY6FxDiUOHJQG1eD9Gh3eCs12+Eqc+TCOAdxcO+zAPvUq0jBfdciw==}
     peerDependencies:
@@ -21534,6 +21549,9 @@ packages:
 
   ua-parser-js@1.0.38:
     resolution: {integrity: sha512-Aq5ppTOfvrCMgAPneW1HfWj66Xi7XL+/mIy996R1/CLS/rcyJQm6QZdsKrUeivDFQ+Oc9Wyuwor8Ze8peEoUoQ==}
+
+  uc.micro@2.1.0:
+    resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
 
   ufo@1.5.3:
     resolution: {integrity: sha512-Y7HYmWaFwPUmkoQCUIAYpKqkOf+SbVj/2fJJZ4RJMCfZp0rTGwRbzQD+HghfnhKOjL9E01okqz+ncJskGYfBNw==}
@@ -24457,9 +24475,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@droppedcode/typedoc-plugin-relative-includes@1.0.5(typedoc@0.25.13(typescript@5.5.2))':
-    dependencies:
-      typedoc: 0.25.13(typescript@5.5.2)
+  '@droppedcode/typedoc-plugin-relative-includes@1.0.5': {}
 
   '@ducanh2912/next-pwa@10.2.7(@types/babel__core@7.20.5)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5))':
     dependencies:
@@ -24484,20 +24500,6 @@ snapshots:
       workbox-build: 7.1.0(@types/babel__core@7.20.5)
       workbox-core: 7.1.0
       workbox-webpack-plugin: 7.1.0(@types/babel__core@7.20.5)(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
-      workbox-window: 7.1.0
-    transitivePeerDependencies:
-      - '@types/babel__core'
-      - supports-color
-
-  '@ducanh2912/next-pwa@10.2.7(@types/babel__core@7.20.5)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(webpack@5.92.1(@swc/core@1.6.5))':
-    dependencies:
-      fast-glob: 3.3.2
-      next: 14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
-      semver: 7.6.0
-      webpack: 5.92.1(@swc/core@1.6.5)
-      workbox-build: 7.1.0(@types/babel__core@7.20.5)
-      workbox-core: 7.1.0
-      workbox-webpack-plugin: 7.1.0(@types/babel__core@7.20.5)(webpack@5.92.1(@swc/core@1.6.5))
       workbox-window: 7.1.0
     transitivePeerDependencies:
       - '@types/babel__core'
@@ -25826,14 +25828,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5))':
-    dependencies:
-      '@mdx-js/mdx': 3.0.1
-      source-map: 0.7.4
-      webpack: 5.92.1(@swc/core@1.6.5)
-    transitivePeerDependencies:
-      - supports-color
-
   '@mdx-js/mdx@2.3.0':
     dependencies:
       '@types/estree-jsx': 1.0.5
@@ -26144,25 +26138,18 @@ snapshots:
 
   '@next/env@14.2.4': {}
 
+  '@next/mdx@14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))':
+    dependencies:
+      source-map: 0.7.4
+    optionalDependencies:
+      '@mdx-js/loader': 3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5))
+      '@mdx-js/react': 3.0.1(@types/react@18.3.3)(react@18.3.1)
+
   '@next/mdx@14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))':
     dependencies:
       source-map: 0.7.4
     optionalDependencies:
       '@mdx-js/loader': 3.0.1(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
-      '@mdx-js/react': 3.0.1(@types/react@18.3.3)(react@18.3.1)
-
-  '@next/mdx@14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(react@18.3.1))':
-    dependencies:
-      source-map: 0.7.4
-    optionalDependencies:
-      '@mdx-js/loader': 3.0.1(webpack@5.92.1(@swc/core@1.6.5))
-      '@mdx-js/react': 3.0.1(@types/react@18.3.3)(react@18.3.1)
-
-  '@next/mdx@14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))':
-    dependencies:
-      source-map: 0.7.4
-    optionalDependencies:
-      '@mdx-js/loader': 3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5))
       '@mdx-js/react': 3.0.1(@types/react@18.3.3)(react@18.3.1)
 
   '@next/swc-darwin-arm64@13.5.6':
@@ -28802,19 +28789,19 @@ snapshots:
 
   '@tabler/icons@3.6.0': {}
 
-  '@tailwindcss/container-queries@0.1.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))':
+  '@tailwindcss/container-queries@0.1.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))':
     dependencies:
-      tailwindcss: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+      tailwindcss: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
+
+  '@tailwindcss/forms@0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)))':
+    dependencies:
+      mini-svg-data-uri: 1.4.4
+      tailwindcss: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
 
   '@tailwindcss/forms@0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@16.18.11)(typescript@4.9.5)))':
     dependencies:
       mini-svg-data-uri: 1.4.4
       tailwindcss: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@16.18.11)(typescript@4.9.5))
-
-  '@tailwindcss/forms@0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)))':
-    dependencies:
-      mini-svg-data-uri: 1.4.4
-      tailwindcss: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
 
   '@tailwindcss/typography@0.5.13(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@16.18.11)(typescript@4.9.5)))':
     dependencies:
@@ -28830,7 +28817,7 @@ snapshots:
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+      tailwindcss: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
 
   '@tanstack/eslint-plugin-query@4.38.0(eslint@9.5.0)':
     dependencies:
@@ -30545,12 +30532,12 @@ snapshots:
       schema-utils: 4.2.0
       webpack: 5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)
 
-  babel-loader@9.1.3(@babel/core@7.24.7)(webpack@5.92.1(@swc/core@1.6.5)):
+  babel-loader@9.1.3(@babel/core@7.24.7)(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)):
     dependencies:
       '@babel/core': 7.24.7
       find-cache-dir: 4.0.0
       schema-utils: 4.2.0
-      webpack: 5.92.1(@swc/core@1.6.5)
+      webpack: 5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)
 
   babel-plugin-istanbul@6.1.1:
     dependencies:
@@ -33529,12 +33516,6 @@ snapshots:
       schema-utils: 3.3.0
       webpack: 5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)
 
-  file-loader@6.2.0(webpack@5.92.1(@swc/core@1.6.5)):
-    dependencies:
-      loader-utils: 2.0.4
-      schema-utils: 3.3.0
-      webpack: 5.92.1(@swc/core@1.6.5)
-
   file-selector@0.5.0:
     dependencies:
       tslib: 2.6.3
@@ -36105,6 +36086,10 @@ snapshots:
 
   lines-and-columns@2.0.4: {}
 
+  linkify-it@5.0.0:
+    dependencies:
+      uc.micro: 2.1.0
+
   listr2@3.14.0(enquirer@2.4.1):
     dependencies:
       cli-truncate: 2.1.0
@@ -36414,6 +36399,15 @@ snapshots:
   markdown-extensions@1.1.1: {}
 
   markdown-extensions@2.0.0: {}
+
+  markdown-it@14.1.0:
+    dependencies:
+      argparse: 2.0.1
+      entities: 4.5.0
+      linkify-it: 5.0.0
+      mdurl: 2.0.0
+      punycode.js: 2.3.1
+      uc.micro: 2.1.0
 
   markdown-table@3.0.3: {}
 
@@ -36826,6 +36820,8 @@ snapshots:
   mdn-data@2.0.28: {}
 
   mdn-data@2.0.30: {}
+
+  mdurl@2.0.0: {}
 
   mdx-bundler@9.2.1(esbuild@0.21.5):
     dependencies:
@@ -37643,11 +37639,11 @@ snapshots:
 
   moment@2.30.1: {}
 
-  monaco-editor-webpack-plugin@7.1.0(monaco-editor@0.44.0)(webpack@5.92.1(@swc/core@1.6.5)):
+  monaco-editor-webpack-plugin@7.1.0(monaco-editor@0.44.0)(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)):
     dependencies:
       loader-utils: 2.0.4
       monaco-editor: 0.44.0
-      webpack: 5.92.1(@swc/core@1.6.5)
+      webpack: 5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)
 
   monaco-editor-webpack-plugin@7.1.0(monaco-editor@0.49.0)(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)):
     dependencies:
@@ -37660,12 +37656,6 @@ snapshots:
       loader-utils: 2.0.4
       monaco-editor: 0.49.0
       webpack: 5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)
-
-  monaco-editor-webpack-plugin@7.1.0(monaco-editor@0.49.0)(webpack@5.92.1(@swc/core@1.6.5)):
-    dependencies:
-      loader-utils: 2.0.4
-      monaco-editor: 0.49.0
-      webpack: 5.92.1(@swc/core@1.6.5)
 
   monaco-editor@0.44.0: {}
 
@@ -37832,10 +37822,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  next-remove-imports@1.0.12(webpack@5.92.1(@swc/core@1.6.5)):
+  next-remove-imports@1.0.12(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)):
     dependencies:
       '@babel/core': 7.24.7
-      babel-loader: 9.1.3(@babel/core@7.24.7)(webpack@5.92.1(@swc/core@1.6.5))
+      babel-loader: 9.1.3(@babel/core@7.24.7)(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       babel-plugin-transform-remove-imports: 1.8.0(@babel/core@7.24.7)
     transitivePeerDependencies:
       - supports-color
@@ -38845,10 +38835,18 @@ snapshots:
       '@csstools/utilities': 1.0.0(postcss@8.4.38)
       postcss: 8.4.38
 
-  postcss-load-config@3.1.4(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)):
+  postcss-load-config@3.1.4(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)):
     dependencies:
       lilconfig: 2.1.0
       yaml: 1.10.2
+    optionalDependencies:
+      postcss: 8.4.38
+      ts-node: 10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)
+
+  postcss-load-config@4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)):
+    dependencies:
+      lilconfig: 3.1.2
+      yaml: 2.4.5
     optionalDependencies:
       postcss: 8.4.38
       ts-node: 10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)
@@ -38860,14 +38858,6 @@ snapshots:
     optionalDependencies:
       postcss: 8.4.38
       ts-node: 10.9.2(@swc/core@1.6.5)(@types/node@16.18.11)(typescript@4.9.5)
-
-  postcss-load-config@4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)):
-    dependencies:
-      lilconfig: 3.1.2
-      yaml: 2.4.5
-    optionalDependencies:
-      postcss: 8.4.38
-      ts-node: 10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)
 
   postcss-logical@7.0.1(postcss@8.4.38):
     dependencies:
@@ -39294,6 +39284,8 @@ snapshots:
       end-of-stream: 1.4.4
       once: 1.4.0
 
+  punycode.js@2.3.1: {}
+
   punycode@1.4.1: {}
 
   punycode@2.3.1: {}
@@ -39365,12 +39357,6 @@ snapshots:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
       webpack: 5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)
-
-  raw-loader@4.0.2(webpack@5.92.1(@swc/core@1.6.5)):
-    dependencies:
-      loader-utils: 2.0.4
-      schema-utils: 3.3.0
-      webpack: 5.92.1(@swc/core@1.6.5)
 
   rc-motion@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -40654,7 +40640,7 @@ snapshots:
     dependencies:
       rollup: 4.18.0
 
-  rollup-plugin-postcss@4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)):
+  rollup-plugin-postcss@4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)):
     dependencies:
       chalk: 4.1.2
       concat-with-sourcemaps: 1.1.0
@@ -40663,7 +40649,7 @@ snapshots:
       p-queue: 6.6.2
       pify: 5.0.0
       postcss: 8.4.38
-      postcss-load-config: 3.1.4(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+      postcss-load-config: 3.1.4(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
       postcss-modules: 4.3.1(postcss@8.4.38)
       promise.series: 0.2.0
       resolve: 1.22.8
@@ -41722,13 +41708,40 @@ snapshots:
 
   tailwind-merge@1.14.0: {}
 
-  tailwindcss-animate@1.0.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))):
+  tailwindcss-animate@1.0.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))):
     dependencies:
-      tailwindcss: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+      tailwindcss: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
 
-  tailwindcss-debug-screens@2.2.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))):
+  tailwindcss-debug-screens@2.2.1(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))):
     dependencies:
-      tailwindcss: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+      tailwindcss: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
+
+  tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)):
+    dependencies:
+      '@alloc/quick-lru': 5.2.0
+      arg: 5.0.2
+      chokidar: 3.6.0
+      didyoumean: 1.2.2
+      dlv: 1.1.3
+      fast-glob: 3.3.2
+      glob-parent: 6.0.2
+      is-glob: 4.0.3
+      jiti: 1.21.6
+      lilconfig: 2.1.0
+      micromatch: 4.0.7
+      normalize-path: 3.0.0
+      object-hash: 3.0.0
+      picocolors: 1.0.1
+      postcss: 8.4.38
+      postcss-import: 15.1.0(postcss@8.4.38)
+      postcss-js: 4.0.1(postcss@8.4.38)
+      postcss-load-config: 4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
+      postcss-nested: 6.0.1(postcss@8.4.38)
+      postcss-selector-parser: 6.1.0
+      resolve: 1.22.8
+      sucrase: 3.35.0
+    transitivePeerDependencies:
+      - ts-node
 
   tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@16.18.11)(typescript@4.9.5)):
     dependencies:
@@ -41750,33 +41763,6 @@ snapshots:
       postcss-import: 15.1.0(postcss@8.4.38)
       postcss-js: 4.0.1(postcss@8.4.38)
       postcss-load-config: 4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@16.18.11)(typescript@4.9.5))
-      postcss-nested: 6.0.1(postcss@8.4.38)
-      postcss-selector-parser: 6.1.0
-      resolve: 1.22.8
-      sucrase: 3.35.0
-    transitivePeerDependencies:
-      - ts-node
-
-  tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2)):
-    dependencies:
-      '@alloc/quick-lru': 5.2.0
-      arg: 5.0.2
-      chokidar: 3.6.0
-      didyoumean: 1.2.2
-      dlv: 1.1.3
-      fast-glob: 3.3.2
-      glob-parent: 6.0.2
-      is-glob: 4.0.3
-      jiti: 1.21.6
-      lilconfig: 2.1.0
-      micromatch: 4.0.7
-      normalize-path: 3.0.0
-      object-hash: 3.0.0
-      picocolors: 1.0.1
-      postcss: 8.4.38
-      postcss-import: 15.1.0(postcss@8.4.38)
-      postcss-js: 4.0.1(postcss@8.4.38)
-      postcss-load-config: 4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
       postcss-nested: 6.0.1(postcss@8.4.38)
       postcss-selector-parser: 6.1.0
       resolve: 1.22.8
@@ -41838,17 +41824,6 @@ snapshots:
     optionalDependencies:
       '@swc/core': 1.6.5(@swc/helpers@0.5.11)
       esbuild: 0.21.5
-
-  terser-webpack-plugin@5.3.10(@swc/core@1.6.5)(webpack@5.92.1(@swc/core@1.6.5)):
-    dependencies:
-      '@jridgewell/trace-mapping': 0.3.25
-      jest-worker: 27.5.1
-      schema-utils: 3.3.0
-      serialize-javascript: 6.0.2
-      terser: 5.31.1
-      webpack: 5.92.1(@swc/core@1.6.5)
-    optionalDependencies:
-      '@swc/core': 1.6.5(@swc/helpers@0.5.11)
 
   terser@5.31.1:
     dependencies:
@@ -42310,7 +42285,7 @@ snapshots:
 
   tslib@2.6.3: {}
 
-  tsup@8.1.0(@microsoft/api-extractor@7.47.0(@types/node@20.14.8))(@swc/core@1.6.5)(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2):
+  tsup@8.1.0(@microsoft/api-extractor@7.47.0(@types/node@20.14.8))(@swc/core@1.6.5(@swc/helpers@0.5.11))(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2):
     dependencies:
       bundle-require: 4.2.1(esbuild@0.21.5)
       cac: 6.7.14
@@ -42320,7 +42295,7 @@ snapshots:
       execa: 5.1.1
       globby: 11.1.0
       joycon: 3.1.1
-      postcss-load-config: 4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+      postcss-load-config: 4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
       resolve-from: 5.0.0
       rollup: 4.18.0
       source-map: 0.8.0-beta.0
@@ -42480,62 +42455,78 @@ snapshots:
 
   typedarray@0.0.6: {}
 
-  typedoc-github-wiki-theme@2.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2))):
+  typedoc-github-wiki-theme@2.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2))):
     dependencies:
-      typedoc-plugin-markdown: 4.1.0(typedoc@0.25.13(typescript@5.5.2))
+      typedoc-plugin-markdown: 4.1.0(typedoc@0.26.2(typescript@5.5.2))
 
   typedoc-plugin-coverage@3.3.0(typedoc@0.25.13(typescript@5.5.2)):
     dependencies:
       typedoc: 0.25.13(typescript@5.5.2)
 
-  typedoc-plugin-frontmatter@1.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2))):
+  typedoc-plugin-coverage@3.3.0(typedoc@0.26.2(typescript@5.5.2)):
     dependencies:
-      typedoc-plugin-markdown: 4.1.0(typedoc@0.25.13(typescript@5.5.2))
+      typedoc: 0.26.2(typescript@5.5.2)
+
+  typedoc-plugin-frontmatter@1.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2))):
+    dependencies:
+      typedoc-plugin-markdown: 4.1.0(typedoc@0.26.2(typescript@5.5.2))
       yaml: 2.4.5
 
-  typedoc-plugin-include-example@1.2.0(typedoc@0.25.13(typescript@5.5.2)):
+  typedoc-plugin-include-example@1.2.0(typedoc@0.26.2(typescript@5.5.2)):
     dependencies:
-      typedoc: 0.25.13(typescript@5.5.2)
+      typedoc: 0.26.2(typescript@5.5.2)
 
-  typedoc-plugin-inline-sources@1.0.2(typedoc@0.25.13(typescript@5.5.2)):
+  typedoc-plugin-inline-sources@1.0.2(typedoc@0.26.2(typescript@5.5.2)):
     dependencies:
-      typedoc: 0.25.13(typescript@5.5.2)
+      typedoc: 0.26.2(typescript@5.5.2)
 
   typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)):
     dependencies:
       typedoc: 0.25.13(typescript@5.5.2)
 
-  typedoc-plugin-mdn-links@3.2.1(typedoc@0.25.13(typescript@5.5.2)):
+  typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2)):
     dependencies:
-      typedoc: 0.25.13(typescript@5.5.2)
+      typedoc: 0.26.2(typescript@5.5.2)
 
-  typedoc-plugin-missing-exports@2.3.0(typedoc@0.25.13(typescript@5.5.2)):
+  typedoc-plugin-mdn-links@3.2.1(typedoc@0.26.2(typescript@5.5.2)):
     dependencies:
-      typedoc: 0.25.13(typescript@5.5.2)
+      typedoc: 0.26.2(typescript@5.5.2)
 
-  typedoc-plugin-remark@1.0.2(typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2))):
+  typedoc-plugin-missing-exports@2.3.0(typedoc@0.26.2(typescript@5.5.2)):
+    dependencies:
+      typedoc: 0.26.2(typescript@5.5.2)
+
+  typedoc-plugin-remark@1.0.2(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2))):
     dependencies:
       remark: 15.0.1
       remark-frontmatter: 5.0.0
       remark-gfm: 4.0.0
       remark-mdx: 3.0.1
       to-vfile: 8.0.0
-      typedoc-plugin-markdown: 4.1.0(typedoc@0.25.13(typescript@5.5.2))
+      typedoc-plugin-markdown: 4.1.0(typedoc@0.26.2(typescript@5.5.2))
     transitivePeerDependencies:
       - supports-color
 
-  typedoc-plugin-rename-defaults@0.7.1(typedoc@0.25.13(typescript@5.5.2)):
+  typedoc-plugin-rename-defaults@0.7.1(typedoc@0.26.2(typescript@5.5.2)):
     dependencies:
       camelcase: 8.0.0
-      typedoc: 0.25.13(typescript@5.5.2)
+      typedoc: 0.26.2(typescript@5.5.2)
 
   typedoc-plugin-zod@1.2.0(typedoc@0.25.13(typescript@5.5.2)):
     dependencies:
       typedoc: 0.25.13(typescript@5.5.2)
 
+  typedoc-plugin-zod@1.2.0(typedoc@0.26.2(typescript@5.5.2)):
+    dependencies:
+      typedoc: 0.26.2(typescript@5.5.2)
+
   typedoc-theme-category-nav@0.0.3(typedoc@0.25.13(typescript@5.5.2)):
     dependencies:
       typedoc: 0.25.13(typescript@5.5.2)
+
+  typedoc-theme-category-nav@0.0.3(typedoc@0.26.2(typescript@5.5.2)):
+    dependencies:
+      typedoc: 0.26.2(typescript@5.5.2)
 
   typedoc@0.25.13(typescript@5.5.2):
     dependencies:
@@ -42544,6 +42535,15 @@ snapshots:
       minimatch: 9.0.4
       shiki: 0.14.7
       typescript: 5.5.2
+
+  typedoc@0.26.2(typescript@5.5.2):
+    dependencies:
+      lunr: 2.3.9
+      markdown-it: 14.1.0
+      minimatch: 9.0.4
+      shiki: 1.9.0
+      typescript: 5.5.2
+      yaml: 2.4.5
 
   typescript-plugin-css-modules@5.1.0(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2):
     dependencies:
@@ -42554,7 +42554,7 @@ snapshots:
       less: 4.2.0
       lodash.camelcase: 4.3.0
       postcss: 8.4.38
-      postcss-load-config: 3.1.4(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.8)(typescript@5.5.2))
+      postcss-load-config: 3.1.4(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2))
       postcss-modules-extract-imports: 3.1.0(postcss@8.4.38)
       postcss-modules-local-by-default: 4.0.5(postcss@8.4.38)
       postcss-modules-scope: 3.2.0(postcss@8.4.38)
@@ -42577,6 +42577,8 @@ snapshots:
   typo-js@1.2.4: {}
 
   ua-parser-js@1.0.38: {}
+
+  uc.micro@2.1.0: {}
 
   ufo@1.5.3: {}
 
@@ -43225,37 +43227,6 @@ snapshots:
       - esbuild
       - uglify-js
 
-  webpack@5.92.1(@swc/core@1.6.5):
-    dependencies:
-      '@types/eslint-scope': 3.7.7
-      '@types/estree': 1.0.5
-      '@webassemblyjs/ast': 1.12.1
-      '@webassemblyjs/wasm-edit': 1.12.1
-      '@webassemblyjs/wasm-parser': 1.12.1
-      acorn: 8.12.0
-      acorn-import-attributes: 1.9.5(acorn@8.12.0)
-      browserslist: 4.23.1
-      chrome-trace-event: 1.0.4
-      enhanced-resolve: 5.17.0
-      es-module-lexer: 1.5.4
-      eslint-scope: 5.1.1
-      events: 3.3.0
-      glob-to-regexp: 0.4.1
-      graceful-fs: 4.2.11
-      json-parse-even-better-errors: 2.3.1
-      loader-runner: 4.3.0
-      mime-types: 2.1.35
-      neo-async: 2.6.2
-      schema-utils: 3.3.0
-      tapable: 2.2.1
-      terser-webpack-plugin: 5.3.10(@swc/core@1.6.5)(webpack@5.92.1(@swc/core@1.6.5))
-      watchpack: 2.4.1
-      webpack-sources: 3.2.3
-    transitivePeerDependencies:
-      - '@swc/core'
-      - esbuild
-      - uglify-js
-
   webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5):
     dependencies:
       '@types/eslint-scope': 3.7.7
@@ -43543,18 +43514,6 @@ snapshots:
       pretty-bytes: 5.6.0
       upath: 1.2.0
       webpack: 5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)
-      webpack-sources: 1.4.3
-      workbox-build: 7.1.0(@types/babel__core@7.20.5)
-    transitivePeerDependencies:
-      - '@types/babel__core'
-      - supports-color
-
-  workbox-webpack-plugin@7.1.0(@types/babel__core@7.20.5)(webpack@5.92.1(@swc/core@1.6.5)):
-    dependencies:
-      fast-json-stable-stringify: 2.1.0
-      pretty-bytes: 5.6.0
-      upath: 1.2.0
-      webpack: 5.92.1(@swc/core@1.6.5)
       webpack-sources: 1.4.3
       workbox-build: 7.1.0(@types/babel__core@7.20.5)
     transitivePeerDependencies:

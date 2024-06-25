@@ -8,6 +8,8 @@
 
 ### EmbeddableCardProps
 
+**`Alpha`**
+
 A card is a component commonly used to assign an optional title and description to a subset of a note's content. It is in some ways similar to an admonition, but in most themes is more muted in it's appearance. As with other comonents, all content properties can include markdown.
 
 #### Example
@@ -40,12 +42,12 @@ A card is a component commonly used to assign an optional title and description 
 
 #### Properties
 
-| Property        | Type        | Description                                                                                   | Overrides           | Inherited from      |
-| :-------------- | :---------- | :-------------------------------------------------------------------------------------------- | :------------------ | :------------------ |
-| `title?`        | `ReactNode` | The title text. Can include mdx.                                                              | -                   | -                   |
-| `body?`         | `ReactNode` | Body here is an alias for children. You can pass in the main content through either property. | -                   | -                   |
-| `children?`     | `ReactNode` | The main body of the card. Can include mdx.                                                   | `Omit.children`     | `Omit.children`     |
-| `description?`  | `string`    | The muted text below the title                                                                | -                   | -                   |
-| `desc?`         | `string`    | An alias for the description property.                                                        | -                   | -                   |
-| `fitParent?`    | `boolean`   | Whether component should expand to occupy the entire available space.                         | `Omit.fitParent`    | `Omit.fitParent`    |
-| `fitContainer?` | `boolean`   | Alias for fitParent                                                                           | `Omit.fitContainer` | `Omit.fitContainer` |
+| Property        | Type        | Description                                                                                               | Overrides       | Inherited from      |
+| --------------- | ----------- | --------------------------------------------------------------------------------------------------------- | --------------- | ------------------- |
+| `title?`        | `ReactNode` | **`Alpha`** The title text. Can include mdx.                                                              | -               | -                   |
+| `body?`         | `ReactNode` | **`Alpha`** Body here is an alias for children. You can pass in the main content through either property. | -               | -                   |
+| `children?`     | `ReactNode` | **`Alpha`** The main body of the card. Can include mdx.                                                   | `Omit.children` | -                   |
+| `description?`  | `string`    | **`Alpha`** The muted text below the title                                                                | -               | -                   |
+| `desc?`         | `string`    | **`Alpha`** An alias for the description property.                                                        | -               | -                   |
+| `fitParent?`    | `boolean`   | **`Alpha`** Whether component should expand to occupy the entire available space.                         | -               | `Omit.fitParent`    |
+| `fitContainer?` | `boolean`   | **`Alpha`** Alias for fitParent                                                                           | -               | `Omit.fitContainer` |

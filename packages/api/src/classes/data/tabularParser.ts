@@ -1,5 +1,5 @@
 type ParsableFileFormats = "csv" /// Obviously going to add more here.
-import { Parser as CsvParser } from 'csv-parse'
+// import { Parser as CsvParser } from 'csv-parse'
 
 const FilePathMap: { [k in ParsableFileFormats]: string } = {
     csv: "/resources/csv"
@@ -13,7 +13,7 @@ export class TabularDataHandler {
     rows: any[] = []
     constructor(public fileContent: string, fileName: string) { }
 
-    parse_csv() {
+    // parse_csv() {
         // const parser = parse({
         //     delimiter: ","
         // })
@@ -23,5 +23,5 @@ export class TabularDataHandler {
         //         this.rows.push(record);
         //     }
         // })
-    }
+    // }
 }

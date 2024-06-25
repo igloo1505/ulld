@@ -1,6 +1,6 @@
 {
     "$schema": "https://json.schemastore.org/tsconfig",
-    // "extends": "@repo/typescript-config/docs.json"
+    // "extends": "@repo/typescript-config/docs.json",
     "compilerOptions": {
         "plugins": [
             {
@@ -32,7 +32,7 @@
         "baseUrl": "./src",
         "noEmit": true,
         "forceConsistentCasingInFileNames": true,
-        "strict": true,
+        "strict": false,
         "noFallthroughCasesInSwitch": true,
         "skipLibCheck": true,
         "noUnusedLocals": false,
@@ -43,8 +43,18 @@
         "esModuleInterop": true,
         "composite": false
     },
+    "include": [
+        "../embeddable-components/src/**/*.tsx",
+        "../utilities/src/**/*.tsx",
+        "../configschema/src/**/*.tsx",
+        "../embeddable-components/src/**/*.ts",
+        "../utilities/src/**/*.ts",
+        "../configschema/src/**/*.ts"
+    ],
     "exclude": [
         "node_modules",
+        "../**/node_modules",
+        "../../node_modules",
         "dist",
         ".turbo",
         "src/**/*.test.ts",

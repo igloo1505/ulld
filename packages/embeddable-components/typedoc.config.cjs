@@ -12,6 +12,7 @@ module.exports = {
     tsconfig: "./tsconfig.docs.json",
     out: "./docs/output",
     useTsLinkResolution: true,
+    options: {},
     // commentStyle: "block",
     cleanOutputDir: true,
     entryPoints: [
@@ -36,11 +37,12 @@ module.exports = {
         "./src/emeddedComponents/HlProps.ts",
         "../utilities/src/types/admonition.ts",
         "../utilities/src/types/embeddedImageProps.ts",
+        "../configschema/src/developer/typedocInput.ts",
         // "./src/emeddedComponents/props/propcolor.ts"
     ],
     entryPointStrategy: "Expand",
     excludeExternals: true,
-    exclude: ["@ulld/database", "prisma"],
+    exclude: ["@ulld/database", "prisma", ".changeset"],
     fileExtension: ".mdx",
     sort: ["source-order"],
     // media: "media",
@@ -80,17 +82,16 @@ module.exports = {
     //     API: "https://typedoc.org/api",
     // },
     plugin: [
-        "typedoc-plugin-markdown",
         "typedoc-plugin-remark",
         "typedoc-github-wiki-theme",
         "typedoc-plugin-coverage",
         "typedoc-plugin-mdn-links",
         "typedoc-plugin-rename-defaults",
+        "typedoc-plugin-markdown",
         "typedoc-plugin-missing-exports",
-        // "typedoc-plugin-inline-sources",
         "typedoc-plugin-zod",
         "typedoc-plugin-include-example",
-        "@droppedcode/typedoc-plugin-relative-includes",
+        // "@droppedcode/typedoc-plugin-relative-includes",
         "typedoc-plugin-frontmatter",
         // "../../typedoc/navigation.cjs",
         // "../../typedoc/customFrontMatter.cjs"
@@ -101,8 +102,18 @@ module.exports = {
         //     replacer: (currentUrl) => console.log("currentUrl: ", currentUrl)
         // }]
     ],
-    markedOptions: {
-        // walkTokens
+    tableColumnSettings: {
+        hideDefaults: true,
+        hideInherited: false,
+        hideModifiers: true,
+        hideOverrides: false,
+        hideSources: true,
+        hideValues: true,
+        leftAlignHeaders: false,
     },
+    // markdownItLoader: {}
+    // markedOptions: {
+    // walkTokens
+    // },
     // includes: ["typedocIncludes"],
 };

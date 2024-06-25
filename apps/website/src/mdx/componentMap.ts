@@ -2,6 +2,7 @@ import H1SizeContainer from "#/components/UIUtils/h1SizeContainer";
 import ThemeSwitchTrigger from "#/components/UIUtils/themeSwitchButton";
 import PayPalLinkQr from "#/components/brand/sponsor/paypalLinkSvg";
 import InternalTag from "#/components/docUtils/button";
+import { EmbeddedDocs } from "#/components/docUtils/embeddedDocumentation";
 import ExtendsColorProps from "#/components/docUtils/extendsColorProps";
 import Extends from "#/components/docUtils/extendsReference";
 import ExtendsUtil from "#/components/docUtils/extendsUtil";
@@ -96,5 +97,10 @@ export const webComponentMap: AdditionalComponents<any> = [
         regex: new RegExp("<StaticLinkContent"),
         component: StaticLinkValue,
         label: "StaticLinkContent"
+    },
+    {
+        regex: new RegExp("<EmbeddedDoc"),
+        component: EmbeddedDocs,
+        label: "EmbeddedDocs"
     },
 ];

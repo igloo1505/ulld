@@ -20,7 +20,7 @@ export class TargetPackageJson extends Prompter {
         public targetDir: string,
         public isLocalDev: boolean,
     ) {
-        super();
+        super(targetDir);
         this.path = path.join(targetDir, "package.json");
     }
     gather() {

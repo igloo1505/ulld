@@ -48,7 +48,7 @@ type RT<T, U extends string> = Omit<T, U> & {colors: Partial<Record<U, boolean>>
 
 type J = keyof z.input<typeof propColorSchema>
 
-export const propColorSchemaTransform = <T extends z.input<typeof propColorSchema>>(a: T, defaultColor: keyof typeof colorPropSchemaMap): RT<T, J> => {
+export const propColorSchemaTransform = <T extends PropColorInput>(a: T, defaultColor: keyof typeof colorPropSchemaMap): RT<T, J> => {
     let colors: z.output<typeof propColorSchema> = {} as z.output<typeof propColorSchema>
     let data: RT<T, J> = {} as RT<T, J>
     let color: string = colorPropSchemaMap[defaultColor]

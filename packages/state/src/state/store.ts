@@ -91,6 +91,10 @@ export const makeStore = <T extends string>(extraReducers?: ExtraReducers<T>, ex
     }
 };
 
+
+// WARN: This might not be a good idea to create this here if an extended store will be created on top of it. Leaving this for now to handle some other things and deal with the type errors once everything is building.
+const store = makeStore()
+
 declare global {
     interface Window {
         store: ReturnType<typeof makeStore>;
@@ -103,3 +107,5 @@ export type AppDispatch = AppStore["dispatch"]
 
 
 export type CombinedAppRootState<J extends string, T extends ExtraInitialState<J>> = RootState & T
+
+export default store

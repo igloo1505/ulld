@@ -5,7 +5,6 @@ import { TargetPaths } from "./paths";
 import { TargetPackageJson } from "./pkgJson";
 import { UlldPlugin } from "./plugin";
 import path from "path";
-import { cloneBaseRepo, updateBaseRepo } from "../stages/cloneRepo";
 import { prompt } from "enquirer";
 import { appData } from "@ulld/utilities/appData";
 import terminalLink from "terminal-link";
@@ -33,7 +32,7 @@ export class UlldBuildProcess extends Prompter {
     pageConflicts: PageConflict[] = [];
     git: GitManager;
     constructor(public targetDir: string) {
-        super();
+        super(targetDir);
         this.git = new GitManager(targetDir);
         this.isLocalDev = process.env.LOCAL_DEVELOPMENT === "true";
         this.applicationDir = path.join(

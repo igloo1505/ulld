@@ -2,6 +2,8 @@
 
 ### GridProps
 
+**`Alpha`**
+
 A grid can be used to align content into a symmetrical grid of user defined sizes and dimensions.
 
 <Hint>
@@ -11,17 +13,19 @@ A grid can be used to align content into a symmetrical grid of user defined size
 
 #### Properties
 
-| Property   | Type        | Description                                                                                                                                                                                                                                                 |
-| :--------- | :---------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `columns?` | `number`    | Number of columns in the grid                                                                                                                                                                                                                               |
-| `cols?`    | `number`    | Alias for columns                                                                                                                                                                                                                                           |
-| `minMax?`  | `number`    | The minimum width in pixels for each column. This will create an auto-scaling grid, with the most columns capable of fitting horizontally for this given piexel width. This is ideal for grid styling, as it will scale appropriately for all window sizes. |
-| `children` | `ReactNode` | The grid content takes several child components, ideal of type GridItem                                                                                                                                                                                     |
-| `autoFit?` | `boolean`   | If applying styles using the `minMax` property, this sets the property to `repeat(auto-fit, ...)`. The default is false, which sets this property to `repeat(auto-fill, ...)`.                                                                              |
+| Property   | Type        | Description                                                                                                                                                                                                                                                             |
+| ---------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `columns?` | `number`    | **`Alpha`** Number of columns in the grid                                                                                                                                                                                                                               |
+| `cols?`    | `number`    | **`Alpha`** Alias for columns                                                                                                                                                                                                                                           |
+| `minMax?`  | `number`    | **`Alpha`** The minimum width in pixels for each column. This will create an auto-scaling grid, with the most columns capable of fitting horizontally for this given piexel width. This is ideal for grid styling, as it will scale appropriately for all window sizes. |
+| `children` | `ReactNode` | **`Alpha`** The grid content takes several child components, ideal of type GridItem                                                                                                                                                                                     |
+| `autoFit?` | `boolean`   | **`Alpha`** If applying styles using the `minMax` property, this sets the property to `repeat(auto-fit, ...)`. The default is false, which sets this property to `repeat(auto-fill, ...)`.                                                                              |
 
 ---
 
 ### GridItemProps
+
+**`Alpha`**
 
 The GridItem component can be used to add default styles to content within the Grid component. This is not required to display content within the grid component, but adds reasonable default styling and size properties.
 
@@ -47,8 +51,8 @@ The GridItem component can be used to add default styles to content within the G
 
 #### Properties
 
-| Property      | Type        | Description                                                                                       |
-| :------------ | :---------- | :------------------------------------------------------------------------------------------------ |
-| `children`    | `ReactNode` | The content within this grid column and row.                                                      |
-| `background?` | `boolean`   | Whether to add a minimal, muted background to the grid item.                                      |
-| `center?`     | `boolean`   | Centers the children within the grid container, as opposed to displaying them from top to bottom. |
+| Property      | Type        | Description                                                                                                   |
+| ------------- | ----------- | ------------------------------------------------------------------------------------------------------------- |
+| `children`    | `ReactNode` | **`Alpha`** The content within this grid column and row.                                                      |
+| `background?` | `boolean`   | **`Alpha`** Whether to add a minimal, muted background to the grid item.                                      |
+| `center?`     | `boolean`   | **`Alpha`** Centers the children within the grid container, as opposed to displaying them from top to bottom. |

@@ -80,5 +80,16 @@
       "path": "embeddable-components.src.utility.equationRefProps.mdx"
     }
   },
-  "Colors": {}
+  "Colors": {},
+  "Developer": {
+    "DeveloperConfigInput": {
+      "path": "configschema.src.developer.typedocInput.mdx",
+      "removePropertyTableColumns": [
+        "Description",
+        "Default value",
+        "Defined in"
+      ],
+      "deleteUpTo": "#### Properties"
+    }
+  }
 }
