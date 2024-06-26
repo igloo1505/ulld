@@ -157,354 +157,11 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)
 
-  apps/base:
-    dependencies:
-      '@dimforge/rapier3d':
-        specifier: ^0.12.0
-        version: 0.12.0
-      '@ducanh2912/next-pwa':
-        specifier: ^10.2.5
-        version: 10.2.7(@types/babel__core@7.20.5)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(webpack@5.92.1(@swc/core@1.6.5))
-      '@google/model-viewer':
-        specifier: ^3.4.0
-        version: 3.5.0(three@0.163.0)
-      '@hookform/resolvers':
-        specifier: ^3.3.4
-        version: 3.6.0(react-hook-form@7.52.0(react@18.3.1))
-      '@mdx-js/loader':
-        specifier: ^3.0.1
-        version: 3.0.1(webpack@5.92.1(@swc/core@1.6.5))
-      '@mdx-js/mdx':
-        specifier: ^3.0.1
-        version: 3.0.1
-      '@mdx-js/node-loader':
-        specifier: ^3.0.1
-        version: 3.0.1
-      '@mdx-js/react':
-        specifier: ^3.0.1
-        version: 3.0.1(@types/react@18.3.3)(react@18.3.1)
-      '@napi-rs/canvas':
-        specifier: ^0.1.52
-        version: 0.1.53
-      '@next/mdx':
-        specifier: ^14.2.3
-        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(react@18.3.1))
-      '@next/third-parties':
-        specifier: ^14.2.3
-        version: 14.2.4(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react@18.3.1)
-      '@prisma/client':
-        specifier: ^5.15.1
-        version: 5.16.0(prisma@5.16.0)
-      '@prisma/nextjs-monorepo-workaround-plugin':
-        specifier: ^5.15.1
-        version: 5.16.0
-      '@reduxjs/toolkit':
-        specifier: ^1.9.5
-        version: 1.9.7(react-redux@8.1.3(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(redux@4.2.1))(react@18.3.1)
-      '@ulld/api':
-        specifier: workspace:*
-        version: link:../../packages/api
-      '@ulld/bib-manager':
-        specifier: workspace:*
-        version: link:../../packages/bib-manager
-      '@ulld/command-palette':
-        specifier: workspace:*
-        version: link:../../packages/command-palette
-      '@ulld/component-map':
-        specifier: workspace:*
-        version: link:../../packages/component-map
-      '@ulld/configschema':
-        specifier: workspace:*
-        version: link:../../packages/configschema
-      '@ulld/database':
-        specifier: workspace:*
-        version: link:../../packages/database
-      '@ulld/editor':
-        specifier: workspace:*
-        version: link:../../packages/editor
-      '@ulld/embeddable-components':
-        specifier: workspace:*
-        version: link:../../packages/embeddable-components
-      '@ulld/equations':
-        specifier: workspace:*
-        version: link:../../packages/equations
-      '@ulld/full-form':
-        specifier: workspace:*
-        version: link:../../packages/full-form
-      '@ulld/hooks':
-        specifier: workspace:*
-        version: link:../../packages/hooks
-      '@ulld/icons':
-        specifier: workspace:*
-        version: link:../../packages/icons
-      '@ulld/journal':
-        specifier: workspace:*
-        version: link:../../packages/journal
-      '@ulld/kanban':
-        specifier: workspace:*
-        version: link:../../packages/kanban
-      '@ulld/landing-layouts':
-        specifier: workspace:*
-        version: link:../../packages/landing-layouts
-      '@ulld/navigation':
-        specifier: workspace:*
-        version: link:../../packages/navigation
-      '@ulld/notebook':
-        specifier: workspace:*
-        version: link:../../packages/notebook
-      '@ulld/parsers':
-        specifier: workspace:*
-        version: link:../../packages/parsers
-      '@ulld/pdf':
-        specifier: workspace:*
-        version: link:../../packages/pdf
-      '@ulld/plot':
-        specifier: workspace:*
-        version: link:../../packages/plot
-      '@ulld/render':
-        specifier: workspace:*
-        version: link:../../packages/render
-      '@ulld/snippets':
-        specifier: workspace:*
-        version: link:../../packages/snippets
-      '@ulld/state':
-        specifier: workspace:*
-        version: link:../../packages/state
-      '@ulld/tailwind':
-        specifier: workspace:*
-        version: link:../../packages/tailwindAndShad
-      '@ulld/task-manager':
-        specifier: workspace:*
-        version: link:../../packages/task-manager
-      '@ulld/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
-      '@ulld/utilities':
-        specifier: workspace:*
-        version: link:../../packages/utilities
-      '@ulld/whiteboard':
-        specifier: workspace:*
-        version: link:../../packages/whiteboard
-      '@use-gesture/react':
-        specifier: ^10.3.1
-        version: 10.3.1(react@18.3.1)
-      '@use-gesture/vanilla':
-        specifier: ^10.3.1
-        version: 10.3.1
-      alea:
-        specifier: ^1.0.1
-        version: 1.0.1
-      better-react-mathjax:
-        specifier: ^2.0.3
-        version: 2.0.3(react@18.3.1)
-      dayjs:
-        specifier: ^1.11.10
-        version: 1.11.11
-      dotenv:
-        specifier: ^16.4.5
-        version: 16.4.5
-      file-loader:
-        specifier: ^6.2.0
-        version: 6.2.0(webpack@5.92.1(@swc/core@1.6.5))
-      framer-motion:
-        specifier: ^11.1.7
-        version: 11.2.12(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      fuse.js:
-        specifier: ^7.0.0
-        version: 7.0.0
-      gray-matter:
-        specifier: ^4.0.3
-        version: 4.0.3
-      gsap:
-        specifier: ^3.12.5
-        version: 3.12.5
-      lethargy:
-        specifier: ^1.0.9
-        version: 1.0.9
-      lucide-react:
-        specifier: ^0.344.0
-        version: 0.344.0(react@18.3.1)
-      maath:
-        specifier: ^0.10.7
-        version: 0.10.7(@types/three@0.162.0)(three@0.163.0)
-      mathjax:
-        specifier: ^3.2.2
-        version: 3.2.2
-      mathjax-full:
-        specifier: ^3.2.2
-        version: 3.2.2
-      mini-svg-data-uri:
-        specifier: ^1.4.4
-        version: 1.4.4
-      monaco-editor:
-        specifier: 0.49.0
-        version: 0.49.0
-      monaco-editor-webpack-plugin:
-        specifier: ^7.1.0
-        version: 7.1.0(monaco-editor@0.49.0)(webpack@5.92.1(@swc/core@1.6.5))
-      next:
-        specifier: ^14.2.4
-        version: 14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
-      next-seo:
-        specifier: ^6.5.0
-        version: 6.5.0(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      popmotion:
-        specifier: ^11.0.5
-        version: 11.0.5
-      postprocessing:
-        specifier: ^6.35.4
-        version: 6.35.5(three@0.163.0)
-      prisma:
-        specifier: ^5.15.1
-        version: 5.16.0
-      raw-loader:
-        specifier: ^4.0.2
-        version: 4.0.2(webpack@5.92.1(@swc/core@1.6.5))
-      rc-virtual-list:
-        specifier: ^3.14.2
-        version: 3.14.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react:
-        specifier: ^18.3.1
-        version: 18.3.1
-      react-colorful:
-        specifier: ^5.6.1
-        version: 5.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-device-detect:
-        specifier: ^2.2.3
-        version: 2.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-dom:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
-      react-ga4:
-        specifier: ^2.1.0
-        version: 2.1.0
-      react-redux:
-        specifier: ^8.1.2
-        version: 8.1.3(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(redux@4.2.1)
-      react-use-measure:
-        specifier: ^2.1.1
-        version: 2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      redux-persist-indexeddb-storage:
-        specifier: ^1.0.4
-        version: 1.0.4
-      rehype-autolink-headings:
-        specifier: ^7.1.0
-        version: 7.1.0
-      rehype-format:
-        specifier: ^5.0.0
-        version: 5.0.0
-      rehype-mathjax:
-        specifier: ^4.0.3
-        version: 4.0.3(bufferutil@4.0.8)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.4)
-      rehype-pretty-code:
-        specifier: ^0.13.1
-        version: 0.13.2(shiki@1.9.1)
-      rehype-sanitize:
-        specifier: ^6.0.0
-        version: 6.0.0
-      rehype-slug:
-        specifier: ^6.0.0
-        version: 6.0.0
-      rehype-stringify:
-        specifier: ^10.0.0
-        version: 10.0.0
-      rehype-video:
-        specifier: ^2.0.2
-        version: 2.0.2
-      remark-custom-header-id:
-        specifier: ^1.0.0
-        version: 1.0.0
-      remark-emoji:
-        specifier: ^4.0.1
-        version: 4.0.1
-      remark-gfm:
-        specifier: ^3.0.1
-        version: 3.0.1
-      remark-heading-id:
-        specifier: ^1.0.1
-        version: 1.0.1
-      remark-math:
-        specifier: ^5.1.1
-        version: 5.1.1
-      remark-parse:
-        specifier: ^11.0.0
-        version: 11.0.0
-      remark-rehype:
-        specifier: ^11.1.0
-        version: 11.1.0
-      shiki:
-        specifier: ^1.1.7
-        version: 1.9.1
-    devDependencies:
-      '@repo/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/config-eslint
-      '@repo/jest-presets':
-        specifier: workspace:*
-        version: link:../../packages/jest-presets
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/config-typescript
-      '@shikijs/rehype':
-        specifier: ^1.5.2
-        version: 1.9.1
-      '@shikijs/transformers':
-        specifier: ^1.6.4
-        version: 1.9.1
-      '@shikijs/twoslash':
-        specifier: ^1.5.2
-        version: 1.9.1(typescript@4.9.5)
-      '@tailwindcss/forms':
-        specifier: ^0.5.7
-        version: 0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@16.18.11)(typescript@4.9.5)))
-      '@tailwindcss/typography':
-        specifier: ^0.5.13
-        version: 0.5.13(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@16.18.11)(typescript@4.9.5)))
-      '@types/jest':
-        specifier: ^29.5.11
-        version: 29.5.12
-      '@types/mathjax':
-        specifier: ^0.0.40
-        version: 0.0.40
-      '@types/mdx':
-        specifier: ^2.0.11
-        version: 2.0.13
-      '@types/react':
-        specifier: ^18.2.75
-        version: 18.3.3
-      '@types/react-dom':
-        specifier: ^18.2.24
-        version: 18.3.0
-      '@types/three':
-        specifier: ^0.162.0
-        version: 0.162.0
-      '@vercel/node':
-        specifier: ^3.1.4
-        version: 3.2.0(@swc/core@1.6.5)(encoding@0.1.13)
-      autoprefixer:
-        specifier: ^10.4.18
-        version: 10.4.19(postcss@8.4.38)
-      dotenv-cli:
-        specifier: ^7.3.0
-        version: 7.4.2
-      globby:
-        specifier: ^14.0.1
-        version: 14.0.1
-      postcss:
-        specifier: ^8.4.35
-        version: 8.4.38
-      tailwindcss:
-        specifier: ^3.4.1
-        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@16.18.11)(typescript@4.9.5))
-      tsx:
-        specifier: ^4.10.4
-        version: 4.15.7
-
   apps/build-sandbox:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/config-typescript
@@ -648,7 +305,7 @@ importers:
         version: 4.6.0(monaco-editor@0.44.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@prisma/client':
         specifier: ^5.15.1
         version: 5.16.0(prisma@5.16.0)
@@ -1094,13 +751,13 @@ importers:
         version: 1.9.1
       '@shikijs/twoslash':
         specifier: ^1.5.2
-        version: 1.9.1(typescript@5.5.2)
+        version: 1.9.1(typescript@4.9.5)
       '@tailwindcss/forms':
         specifier: ^0.5.7
-        version: 0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.9)(typescript@5.5.2)))
+        version: 0.5.7(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@16.18.11)(typescript@4.9.5)))
       '@tailwindcss/typography':
         specifier: ^0.5.13
-        version: 0.5.13(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.9)(typescript@5.5.2)))
+        version: 0.5.13(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@16.18.11)(typescript@4.9.5)))
       '@types/jest':
         specifier: ^29.5.11
         version: 29.5.12
@@ -1133,7 +790,7 @@ importers:
         version: 8.4.38
       tailwindcss:
         specifier: ^3.4.1
-        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.9)(typescript@5.5.2))
+        version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@16.18.11)(typescript@4.9.5))
       tsx:
         specifier: ^4.10.4
         version: 4.15.7
@@ -1142,22 +799,22 @@ importers:
         version: 2.0.5
       twoslash:
         specifier: ^0.2.6
-        version: 0.2.9(typescript@5.5.2)
+        version: 0.2.9(typescript@4.9.5)
       typedoc:
         specifier: ^0.25.13
-        version: 0.25.13(typescript@5.5.2)
+        version: 0.25.13(typescript@4.9.5)
       typedoc-plugin-coverage:
         specifier: ^3.1.1
-        version: 3.3.0(typedoc@0.25.13(typescript@5.5.2))
+        version: 3.3.0(typedoc@0.25.13(typescript@4.9.5))
       typedoc-plugin-markdown:
         specifier: ^4.0.3
-        version: 4.1.0(typedoc@0.25.13(typescript@5.5.2))
+        version: 4.1.0(typedoc@0.25.13(typescript@4.9.5))
       typedoc-plugin-zod:
         specifier: ^1.1.2
-        version: 1.2.0(typedoc@0.25.13(typescript@5.5.2))
+        version: 1.2.0(typedoc@0.25.13(typescript@4.9.5))
       typedoc-theme-category-nav:
         specifier: ^0.0.3
-        version: 0.0.3(typedoc@0.25.13(typescript@5.5.2))
+        version: 0.0.3(typedoc@0.25.13(typescript@4.9.5))
 
   packages/api:
     dependencies:
@@ -1178,7 +835,7 @@ importers:
         version: 0.0.4
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@prisma/client':
         specifier: latest
         version: 5.16.0(prisma@5.16.0)
@@ -1422,7 +1079,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -1444,7 +1101,7 @@ importers:
         version: 0.7.14(@citation-js/core@0.7.14(encoding@0.1.13))
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -1584,7 +1241,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/developer':
         specifier: workspace:*
         version: link:../developer
@@ -1621,7 +1278,7 @@ importers:
         version: 0.16.1(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -1694,7 +1351,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/api':
         specifier: workspace:*
         version: link:../api
@@ -1806,7 +1463,7 @@ importers:
         version: 3.0.1(@types/react@18.3.3)(react@18.3.1)
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/bib-manager':
         specifier: workspace:*
         version: link:../bib-manager
@@ -1949,7 +1606,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       next:
         specifier: ^14.2.4
         version: 14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
@@ -2003,7 +1660,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/baseConfigs':
         specifier: workspace:*
         version: link:../baseConfigs
@@ -2106,7 +1763,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -2167,7 +1824,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@prisma/client':
         specifier: ^5.15.1
         version: 5.16.0(prisma@5.16.0)
@@ -2191,7 +1848,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -2227,7 +1884,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -2266,7 +1923,7 @@ importers:
         version: 5.0.6
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@oclif/core':
         specifier: ^3.26.2
         version: 3.27.0
@@ -2384,7 +2041,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       next:
         specifier: ^14.2.4
         version: 14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
@@ -2418,7 +2075,7 @@ importers:
         version: 3.0.1(@types/react@18.3.3)(react@18.3.1)
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -2572,7 +2229,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../config-typescript
@@ -2621,7 +2278,7 @@ importers:
         version: 4.6.0(monaco-editor@0.44.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../config-typescript
@@ -2757,7 +2414,7 @@ importers:
         version: 3.5.0(three@0.163.0)
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/configschema':
         specifier: workspace:*
         version: link:../configschema
@@ -2863,7 +2520,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/api':
         specifier: workspace:*
         version: link:../api
@@ -2966,7 +2623,7 @@ importers:
         version: 3.6.0(react-hook-form@7.52.0(react@18.3.1))
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@reduxjs/toolkit':
         specifier: ^1.9.5
         version: 1.9.7(react-redux@8.1.3(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(redux@4.2.1))(react@18.3.1)
@@ -3189,7 +2846,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -3243,7 +2900,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/api':
         specifier: workspace:*
         version: link:../api
@@ -3349,7 +3006,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@tabler/icons-react':
         specifier: ^3.5.0
         version: 3.7.0(react@18.3.1)
@@ -3407,7 +3064,7 @@ importers:
         version: 5.0.6
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@oclif/core':
         specifier: ^3.26.2
         version: 3.27.0
@@ -3547,7 +3204,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../config-typescript
@@ -3596,7 +3253,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/jest-presets':
         specifier: workspace:*
         version: link:../jest-presets
@@ -3645,7 +3302,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -3715,7 +3372,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       chalk:
         specifier: ^5.3.0
         version: 5.3.0
@@ -3742,7 +3399,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -3839,7 +3496,7 @@ importers:
         version: 1.73.3
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/jest-presets':
         specifier: workspace:*
         version: link:../jest-presets
@@ -3888,7 +3545,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -3951,7 +3608,7 @@ importers:
         version: 3.0.1
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/configschema':
         specifier: workspace:*
         version: link:../configschema
@@ -4096,7 +3753,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@react-pdf/renderer':
         specifier: ^3.3.8
         version: 3.4.4(encoding@0.1.13)(react@18.3.1)
@@ -4154,7 +3811,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/api':
         specifier: workspace:*
         version: link:../api
@@ -4242,7 +3899,7 @@ importers:
         version: 3.0.1
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
     devDependencies:
       '@react-three/drei':
         specifier: ^9.99.7
@@ -4303,7 +3960,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -4373,7 +4030,7 @@ importers:
         version: 1.0.5
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@reduxjs/toolkit':
         specifier: ^1.9.5
         version: 1.9.7(react-redux@8.1.3(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(redux@4.2.1))(react@18.3.1)
@@ -4494,7 +4151,7 @@ importers:
         version: 3.6.0(react-hook-form@7.52.0(react@18.3.1))
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@radix-ui/react-accordion':
         specifier: ^1.1.2
         version: 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4660,7 +4317,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
@@ -4808,7 +4465,7 @@ importers:
         version: 2.20.7(@codemirror/language@6.10.2)(@lezer/common@1.2.1)(@lezer/highlight@1.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.18)
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@prisma/client':
         specifier: ^5.15.1
         version: 5.16.0(prisma@5.16.0)
@@ -5496,7 +5153,7 @@ importers:
     dependencies:
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@ulld/database':
         specifier: workspace:*
         version: link:../database
@@ -5602,7 +5259,7 @@ importers:
         version: 1.0.0
       '@next/mdx':
         specifier: ^14.0.0
-        version: 14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))
+        version: 14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))
       '@repo/jest-presets':
         specifier: workspace:*
         version: link:../jest-presets
@@ -26186,6 +25843,13 @@ snapshots:
 
   '@next/env@14.2.4': {}
 
+  '@next/mdx@14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))':
+    dependencies:
+      source-map: 0.7.4
+    optionalDependencies:
+      '@mdx-js/loader': 3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5))
+      '@mdx-js/react': 3.0.1(@types/react@18.3.3)(react@18.3.1)
+
   '@next/mdx@14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))':
     dependencies:
       source-map: 0.7.4
@@ -26193,18 +25857,11 @@ snapshots:
       '@mdx-js/loader': 3.0.1(webpack@5.92.1(@swc/core@1.6.5)(esbuild@0.21.5))
       '@mdx-js/react': 3.0.1(@types/react@18.3.3)(react@18.3.1)
 
-  '@next/mdx@14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(react@18.3.1))':
+  '@next/mdx@14.2.4(@mdx-js/loader@3.0.1(webpack@5.92.1(@swc/core@1.6.5)))(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1))':
     dependencies:
       source-map: 0.7.4
     optionalDependencies:
       '@mdx-js/loader': 3.0.1(webpack@5.92.1(@swc/core@1.6.5))
-      '@mdx-js/react': 3.0.1(@types/react@18.3.3)(react@18.3.1)
-
-  '@next/mdx@14.2.4(@mdx-js/loader@3.0.1)(@mdx-js/react@3.0.1(react@18.3.1))':
-    dependencies:
-      source-map: 0.7.4
-    optionalDependencies:
-      '@mdx-js/loader': 3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5))
       '@mdx-js/react': 3.0.1(@types/react@18.3.3)(react@18.3.1)
 
   '@next/swc-darwin-arm64@13.5.6':
@@ -28595,14 +28252,6 @@ snapshots:
       - supports-color
       - typescript
 
-  '@shikijs/twoslash@1.9.1(typescript@5.5.2)':
-    dependencies:
-      '@shikijs/core': 1.9.1
-      twoslash: 0.2.9(typescript@5.5.2)
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-
   '@sinclair/typebox@0.27.8': {}
 
   '@sindresorhus/is@4.6.0': {}
@@ -28865,14 +28514,6 @@ snapshots:
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@16.18.11)(typescript@4.9.5))
-
-  '@tailwindcss/typography@0.5.13(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.9)(typescript@5.5.2)))':
-    dependencies:
-      lodash.castarray: 4.4.0
-      lodash.isplainobject: 4.0.6
-      lodash.merge: 4.6.2
-      postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5)(@types/node@20.14.9)(typescript@5.5.2))
 
   '@tanstack/eslint-plugin-query@4.38.0(eslint@9.5.0)':
     dependencies:
@@ -42474,14 +42115,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  twoslash@0.2.9(typescript@5.5.2):
-    dependencies:
-      '@typescript/vfs': 1.5.0
-      twoslash-protocol: 0.2.9
-      typescript: 5.5.2
-    transitivePeerDependencies:
-      - supports-color
-
   typanion@3.14.0: {}
 
   type-check@0.4.0:
@@ -42560,9 +42193,9 @@ snapshots:
     dependencies:
       typedoc-plugin-markdown: 4.1.0(typedoc@0.26.2(typescript@5.5.2))
 
-  typedoc-plugin-coverage@3.3.0(typedoc@0.25.13(typescript@5.5.2)):
+  typedoc-plugin-coverage@3.3.0(typedoc@0.25.13(typescript@4.9.5)):
     dependencies:
-      typedoc: 0.25.13(typescript@5.5.2)
+      typedoc: 0.25.13(typescript@4.9.5)
 
   typedoc-plugin-coverage@3.3.0(typedoc@0.26.2(typescript@5.5.2)):
     dependencies:
@@ -42581,9 +42214,9 @@ snapshots:
     dependencies:
       typedoc: 0.26.2(typescript@5.5.2)
 
-  typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@5.5.2)):
+  typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@4.9.5)):
     dependencies:
-      typedoc: 0.25.13(typescript@5.5.2)
+      typedoc: 0.25.13(typescript@4.9.5)
 
   typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2)):
     dependencies:
@@ -42613,29 +42246,29 @@ snapshots:
       camelcase: 8.0.0
       typedoc: 0.26.2(typescript@5.5.2)
 
-  typedoc-plugin-zod@1.2.0(typedoc@0.25.13(typescript@5.5.2)):
+  typedoc-plugin-zod@1.2.0(typedoc@0.25.13(typescript@4.9.5)):
     dependencies:
-      typedoc: 0.25.13(typescript@5.5.2)
+      typedoc: 0.25.13(typescript@4.9.5)
 
   typedoc-plugin-zod@1.2.0(typedoc@0.26.2(typescript@5.5.2)):
     dependencies:
       typedoc: 0.26.2(typescript@5.5.2)
 
-  typedoc-theme-category-nav@0.0.3(typedoc@0.25.13(typescript@5.5.2)):
+  typedoc-theme-category-nav@0.0.3(typedoc@0.25.13(typescript@4.9.5)):
     dependencies:
-      typedoc: 0.25.13(typescript@5.5.2)
+      typedoc: 0.25.13(typescript@4.9.5)
 
   typedoc-theme-category-nav@0.0.3(typedoc@0.26.2(typescript@5.5.2)):
     dependencies:
       typedoc: 0.26.2(typescript@5.5.2)
 
-  typedoc@0.25.13(typescript@5.5.2):
+  typedoc@0.25.13(typescript@4.9.5):
     dependencies:
       lunr: 2.3.9
       marked: 4.3.0
       minimatch: 9.0.5
       shiki: 0.14.7
-      typescript: 5.5.2
+      typescript: 4.9.5
 
   typedoc@0.26.2(typescript@5.5.2):
     dependencies:
