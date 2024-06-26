@@ -1,6 +1,7 @@
 import nextPwa from "@ducanh2912/next-pwa";
 import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
 import { withContentlayer } from "next-contentlayer";
+import path from 'path'
 
 // NOTE: For building on vercel: https://github.com/Automattic/node-canvas/issues/1779
 if (
