@@ -35,6 +35,7 @@ const glob = () =>
 
 class PackageManager {
     packages: PackageSource[] = [];
+    rootPackageJsonPath: string = path.join(__dirname, "../package.json");
     constructor(public root: string = "/Users/bigsexy/Desktop/current/ulld") {
         this.packages = this.collectPackages();
     }
@@ -51,22 +52,32 @@ class PackageManager {
                 ? ("package" as "package")
                 : ("unknown" as "unknown");
     }
-    collectPackages() {
+    getPackageFromPath(a: string) {
+        let cwd = process.cwd();
+        const targetPath = a.includes(cwd) ? a : path.join(process.cwd(), a);
+        let content = this.loadJson(targetPath);
+        let name = content?.name;
+        if (name && (name.startsWith("@ulld") || name === "ULLD")) {
+            return {
+                name,
+                type: this.getType(targetPath),
+                content: content,
+                path: targetPath,
+                deps: this.getDependencies(content),
+                node_modules: targetPath.replace("package.json", "node_modules"),
+            };
+        }
+    }
+    collectPackages(withRoot?: boolean) {
         let packages: PackageSource[] = [];
         let _p = glob();
-        _p.forEach((a) => {
-            const targetPath = path.join(process.cwd(), a);
-            let content = this.loadJson(targetPath);
-            let name = content?.name;
-            if (name && name.startsWith("@ulld")) {
-                packages.push({
-                    name,
-                    type: this.getType(targetPath),
-                    content: content,
-                    path: targetPath,
-                    deps: this.getDependencies(content),
-                    node_modules: targetPath.replace("package.json", "node_modules"),
-                });
+        let _files = withRoot
+            ? [..._p, path.join(__dirname, "../package.json")]
+            : _p;
+        _files.forEach((a) => {
+            let p = this.getPackageFromPath(a);
+            if (p) {
+                packages.push(p);
             }
         });
         return packages;
@@ -100,7 +111,7 @@ class PackageManager {
     clearNodeModules(dry: boolean = false) {
         let paths = this.packages.map((a) => a.node_modules);
         paths.push(`${this.root}/node_modules`);
-        paths.push(path.join(__dirname, "../pnpm-lock.yaml"))
+        paths.push(path.join(__dirname, "../pnpm-lock.yaml"));
         if (dry) {
             console.log("paths to be removed: ", paths);
         } else {
@@ -182,6 +193,12 @@ class PackageManager {
         });
     }
     setPackageManager(pm: string) {
+        if (!this.packages.map((f) => f.path).includes(this.rootPackageJsonPath)) {
+            let root = this.getPackageFromPath(this.rootPackageJsonPath);
+            if (root) {
+                this.packages = [...this.packages, root];
+            }
+        }
         this.packages = this.packages.map((a) => {
             return {
                 ...a,
@@ -197,10 +214,7 @@ class PackageManager {
 
 const p = new PackageManager();
 
-p.clearNodeModules()
-
+p.clearNodeModules();
 
 // const found = p.findByDependency("typescript")
 // console.log("found: ", found)
-
-
