@@ -1,13 +1,16 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { allDocumentations } from "contentlayer/generated";
 import MathjaxProvider from "../utility/providers/mathjax";
 import MDXArticle, { MDXArticleProps } from "../layouts/mdxArticle";
+import InlineCode from "../general/inlineCode";
 
-interface EmbeddedDocsProps extends MDXArticleProps {
+interface EmbeddedDocsProps extends Omit<MDXArticleProps, "title"> {
     component: string;
+    title?: ReactNode
+    titleAsCode?: boolean
 }
 
-export const EmbeddedDocs = ({ component, ...props }: EmbeddedDocsProps) => {
+export const EmbeddedDocs = ({ component, title, titleAsCode, ...props }: EmbeddedDocsProps) => {
     const item = allDocumentations.find(
         (f) => f.component === component,
     );
@@ -18,12 +21,16 @@ export const EmbeddedDocs = ({ component, ...props }: EmbeddedDocsProps) => {
     }
     return (
         <MathjaxProvider>
+        <div className={"w-full h-fit inline-block"}>
+            {title && <div className={"my-4"}>{titleAsCode ? <InlineCode>{title}</InlineCode> : title}</div>}
             <MDXArticle 
                 {...props}
                 paddingTop={false}
                 embedded
+                className={title ? "pt-0" : ""}
                 mdx={item}
             />
+        </div>
         </MathjaxProvider>
     );
 };

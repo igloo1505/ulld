@@ -88,7 +88,8 @@ const MDXArticle = forwardRef(
 
         useMathjaxBandaid(id);
 
-        const components = getComponentMap(mdx.body.raw, {}, webComponentMap);
+        const components = getComponentMap(mdx.body.raw, {avoidKeys: ["mark"]}, webComponentMap);
+        console.log("Object.keys(components): ", Object.keys(components))
 
         const citationsEm = useMemo(
             () => <Citations noteId={"id" in mdx ? mdx.id : undefined} />,
@@ -114,6 +115,7 @@ const MDXArticle = forwardRef(
                             ? "!max-w-[min(calc(100%-6rem),1440px)]"
                             : "!max-w-[min(83%,1080px)]",
                         paddingTop && "pt-[108px]",
+                        embedded && "!w-full !max-w-full",
                         props.className,
                     )}
                 >

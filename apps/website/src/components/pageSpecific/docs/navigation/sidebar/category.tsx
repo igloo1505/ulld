@@ -1,16 +1,17 @@
 import NextLink from "next/link";
 import React, { ForwardedRef, ReactNode, forwardRef } from "react";
-import { DocsSidebarLink } from "./types";
+import { KeyListItem, ValidDocKeyValue } from "./types";
 import { motion } from "framer-motion";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 const Link = motion(NextLink);
 
 interface SidebarDocsCategoryProps {
-    items: DocsSidebarLink[];
+    items: ValidDocKeyValue["items"];
     title?: ReactNode;
     keyId: string;
-    activeKey: string;
+    activeItem?: KeyListItem
+    active: boolean
 }
 
 const linkClassName =
@@ -20,10 +21,14 @@ const initialDelay = 0.5;
 
 const SidebarDocsCategory = forwardRef(
     (
-        { title, items, keyId, activeKey }: SidebarDocsCategoryProps,
+        { title, items, keyId, active, activeItem }: SidebarDocsCategoryProps,
         ref: ForwardedRef<HTMLDivElement>,
     ) => {
+        console.log("active, title: ", active, title)
         const sp = useSearchParams()
+        const pathname = usePathname()
+        console.log("items: ", items)
+       const cat = sp.get("category")
         /* const dataState = ; */
         return (
             <motion.div
@@ -59,7 +64,7 @@ const SidebarDocsCategory = forwardRef(
                                 key={`${keyId}-${i}`}
                                 className={linkClassName}
                                 onClick={c.onClick}
-                                data-state={sp.get("category") === c.activeKey ? "active" : "inactive"}
+                                data-state={cat ? ("activeKey" in c && cat === c.activeKey) ? "active" : "inactive" : ("getActive" in c && c.getActive) ? c.getActive(pathname) : "inactive"}
                             /* initial={{ */
                             /*     x: -300, */
                             /* }} */
@@ -87,7 +92,7 @@ const SidebarDocsCategory = forwardRef(
                                 key={`${keyId}-${i}`}
                                 className={linkClassName}
                                 onClick={c.onClick}
-                                data-state={sp.get("category") === c.activeKey ? "active" : "inactive"}
+                                data-state={cat ? ("activeKey" in c && cat === c.activeKey) ? "active" : "inactive" : ("getActive" in c && c.getActive) ? c.getActive(pathname) : "inactive"}
                             /* initial={{ */
                             /*     x: -300, */
                             /* }} */

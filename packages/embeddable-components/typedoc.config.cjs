@@ -38,6 +38,8 @@ module.exports = {
         "../utilities/src/types/admonition.ts",
         "../utilities/src/types/embeddedImageProps.ts",
         "../configschema/src/developer/typedocInput.ts",
+        "../configschema/src/developer/typedoc/componentConfigSchema.ts",
+        "../configschema/src/developer/typedoc/embeddableConfigSchema.ts"
         // "./src/emeddedComponents/props/propcolor.ts"
     ],
     entryPointStrategy: "Expand",

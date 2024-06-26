@@ -90,6 +90,14 @@
         "Defined in"
       ],
       "deleteUpTo": "#### Properties"
+    },
+    "ComponentConfigSchema": {
+      "path": "configschema.src.developer.typedoc.componentConfigSchema.mdx",
+      "deleteUpTo": "#### Properties"
+    },
+    "EmbeddableConfigSchema": {
+      "path": "configschema.src.developer.typedoc.embeddableConfigSchema.mdx",
+      "deleteUpTo": "#### Properties"
     }
   }
 }

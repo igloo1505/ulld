@@ -1,17 +1,19 @@
 import MDXArticle from "#/components/layouts/mdxArticle";
 import MathjaxProvider from "#/components/utility/providers/mathjax";
-import { allDocumentations } from "contentlayer/generated";
+import { allSlotDocs } from ".contentlayer/generated/SlotDocs/_index.mjs";
 import { notFound } from "next/navigation";
 import React from "react";
 
-interface DeveloperDocsByIdPageProps {
+interface SlotDocsPageProps {
     params: {
-        id: string;
+        slot: string;
     };
 }
 
-const DeveloperDocsByIdPage = ({ params }: DeveloperDocsByIdPageProps) => {
-    let item = allDocumentations.find((f) => f.id === params.id);
+const SlotDocsPage = ({ params }: SlotDocsPageProps) => {
+    const item = allSlotDocs.find((f) =>
+        Boolean(f.slot === params.slot && !f.subSlot),
+    );
     if (!item) {
         return notFound();
     }
@@ -22,6 +24,6 @@ const DeveloperDocsByIdPage = ({ params }: DeveloperDocsByIdPageProps) => {
     );
 };
 
-DeveloperDocsByIdPage.displayName = "DeveloperDocsByIdPage";
+SlotDocsPage.displayName = "SlotDocsPage";
 
-export default DeveloperDocsByIdPage;
+export default SlotDocsPage;

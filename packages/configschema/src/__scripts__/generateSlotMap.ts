@@ -3,6 +3,8 @@ import path from "path";
 import fs from "fs";
 
 const targetDir = path.join(__dirname, "../../../../apps/base/src");
+const mdxPath = path.join(__dirname, "../../../../apps/website/src/mdx/docs/Developer/slotMap.mdx")
+const typePath = path.join(__dirname, "../developer/slotMapType.ts")
 
 const glob = () =>
     globSync(`**/*.{tsx,ts}`, {
@@ -65,6 +67,41 @@ const targetPath = path.join(
     __dirname,
     "../../../utilities/src/utils/slotMap.json",
 );
+
+
+
+const wrapMdxContent = (val: string) => {
+const d = new Date()
+    return `---
+id: slotMapType
+category: developerTypes
+component: SlotMapType
+created: 6-24-24
+updated: ${d.getMonth()}-${d.getDate()}-${d.getFullYear()}
+---
+
+\`\`\`tsx
+${val}
+\`\`\`
+`
+}
+
+let mdxSlotMap = `type SlotMap = {
+`
+
+for (const k in slotMap) {
+    mdxSlotMap += `    ${k}: {\n`
+    for (const l in slotMap[k as keyof typeof slotMap]) {
+       mdxSlotMap += `        ${l}: string,\n` 
+    }
+    mdxSlotMap += "    }, \n"
+}
+
+mdxSlotMap += "}"
+
+
+fs.writeFileSync(mdxPath, wrapMdxContent(mdxSlotMap), {encoding: "utf-8"})
+fs.writeFileSync(typePath, `export ${mdxSlotMap}`, {encoding: "utf-8"})
 
 fs.writeFileSync(targetPath, JSON.stringify(slotMap, null, 4), {
     encoding: "utf-8",

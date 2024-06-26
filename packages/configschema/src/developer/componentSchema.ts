@@ -2,7 +2,7 @@ import { z } from "zod";
 import { transformExportString } from "./transforms";
 
 
-const embeddableConfigSchema = z.object({
+export const embeddableConfigSchema = z.object({
         regexToInclude: z.string().describe("String passed to new RegExp(<regexToInclude>) to determine if a component should be imported. The raw content of a mdx file will be tested using this regex, and imported if a match is found. Due to the nature of jsx, 99% of the time, the componentName property can be used with a prefix of < to give '<MyComponentName'"),
        label: z.string().optional().describe("An object key that matches your regex. 99% of the time, this will just be the regexToInclude property without the leading '<'. It will default to that, but if your regexToInclude property is more specific and includes other special characters, you should provide this label yourself.")
     }).transform((a) => {

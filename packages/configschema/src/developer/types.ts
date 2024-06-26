@@ -1,8 +1,9 @@
-import { z } from "zod"
-import { pluginSlotSchema } from "./slotsSchema"
+import { z } from "zod";
+import { pluginSlotSchema } from "./slotsSchema";
+export type { SlotMap } from "./slotMapType";
 
-export type PluginSlotData = z.output<typeof pluginSlotSchema>
+export type PluginSlotData = z.output<typeof pluginSlotSchema>;
 
-let pk = pluginSlotSchema.keyof()
+let pk = pluginSlotSchema.keyof();
 
-export type PluginSlotKey = z.output<typeof pk>
+export type PluginSlotKey = z.output<typeof pk>;

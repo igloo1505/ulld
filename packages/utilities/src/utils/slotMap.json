@@ -1,33 +1,33 @@
 {
-  "UI": {
-    "confirmationModal": {
-      "path": "components/slots/ui/confirmationModal.ts",
-      "clientOnly": true,
-      "inReduxProvider": false
+    "UI": {
+        "confirmationModal": {
+            "path": "components/slots/ui/confirmationModal.ts",
+            "clientOnly": true,
+            "inReduxProvider": false
+        },
+        "landingPage": {
+            "path": "components/slots/landingPage/main.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false
+        }
     },
-    "landingPage": {
-      "path": "components/slots/landingPage/main.tsx",
-      "clientOnly": false,
-      "inReduxProvider": false
-    }
-  },
-  "navigation": {
-    "secondary": {
-      "path": "components/slots/navigation/secondaryNavigation.tsx",
-      "clientOnly": false,
-      "inReduxProvider": false
+    "navigation": {
+        "secondary": {
+            "path": "components/slots/navigation/secondaryNavigation.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false
+        },
+        "navbar": {
+            "path": "components/slots/navigation/navbar.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false
+        }
     },
-    "navbar": {
-      "path": "components/slots/navigation/navbar.tsx",
-      "clientOnly": false,
-      "inReduxProvider": false
-    }
-  },
-  "commandPalette": {
     "commandPalette": {
-      "path": "components/slots/commandPalette/main.tsx",
-      "clientOnly": false,
-      "inReduxProvider": false
+        "commandPalette": {
+            "path": "components/slots/commandPalette/main.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false
+        }
     }
-  }
 }

@@ -1,16 +1,18 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { staticDocsData } from "#/staticData/docs";
-import SDC from "./category";
+import SidebarDocsCategory from "./category";
 import { useEventListener } from "@ulld/hooks/useEventListener";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowBigLeft as ABL } from "lucide-react";
 import clsx from "clsx";
 import { usePathname, useRouter } from "next/navigation";
+import { KeyListItem } from "./types";
+import slotMap from "@ulld/utilities/slotMap.json"
 
 const ArrowBigLeft = motion(ABL);
 
-const SidebarDocsCategory = motion(SDC);
+/* const SidebarDocsCategory = motion(SDC); */
 
 declare global {
     interface WindowEventMap {
@@ -20,23 +22,40 @@ declare global {
     }
 }
 
-const keyMap = {
-    "components": "/docs/user/components",
-    "home": "/docs/user"
-}
 
-const pathKeyMap = {
-    [keyMap.home]: "docsHome",
-    [keyMap.components]: "components",
-};
-
-
-const allKeys = Object.keys(keyMap)
+const keyList: KeyListItem[] = [
+    {
+        pathname: "/docs/user",
+        docsKey: "gettingStarted",
+        title: "Getting Started",
+    },
+    {
+        pathname: "/docs/user/components",
+        docsKey: "categories",
+        title: "Components"
+    },
+    {
+        pathname: "/docs/developer",
+        docsKey: "developer",
+        title: "Developer"
+    },
+    ...Object.keys(slotMap).map((k) => {
+        let _key = k as keyof typeof slotMap
+        return {
+            pathname: `/docs/developer/slots/${_key}`,
+            docsKey: _key,
+            title: _key
+        }
+    })
+];
 
 const DocsSidebar = () => {
     const pathname = usePathname();
-    const [activeKey, setActiveKey] = useState(allKeys[0])
     const [backButtonPath, setBackButtonPath] = useState("/docs/user");
+    const [activeItem, setActiveItem] = useState<
+        (typeof keyList)[number] | undefined
+    >(keyList.find((f) => f.pathname === pathname));
+
     useEventListener("set-docs-back-button-path", (e) => {
         setBackButtonPath(e.detail.path);
     });
@@ -47,16 +66,20 @@ const DocsSidebar = () => {
     };
 
     useEffect(() => {
-       if(pathname in pathKeyMap){
-            setActiveKey(pathKeyMap[pathname])
-        } 
-    }, [pathname])
+        let newItem = keyList.find((f) => pathname === f.pathname);
+        setActiveItem(newItem);
+        if(newItem && newItem.docsKey && staticDocsData[newItem.docsKey]?.back){
+            setBackButtonPath(staticDocsData[newItem.docsKey].back as string)
+        } else {
+            setBackButtonPath("/docs/user")
+        }
+    }, [pathname]);
 
     return (
         <motion.div
             initial={false}
             className={"w-full h-full border-r px-8 pt-8 py-4"}
-            animate={pathname in keyMap ? keyMap[pathname as keyof typeof keyMap] : "hidden"}
+        /* animate={pathname in keyMap ? keyMap[pathname as keyof typeof keyMap] : "hidden"} */
         >
             <div
                 className={"w-full flex flex-row justify-center items-center relative"}
@@ -68,42 +91,37 @@ const DocsSidebar = () => {
                             "w-5 h-5 absolute left-2 top-[5px] cursor-pointer text-muted-foreground hover:text-foreground transition-colors duration-300",
                         )}
                         onClick={handleBackClick}
-                        /* initial={{ */
-                        /*     y: -100, */
-                        /*     opacity: 0, */
-                        /* }} */
-                        /* animate={{ */
-                        /*     y: 0, */
-                        /*     opacity: 1, */
-                        /* }} */
-                        /* transition={{ */
-                        /*     bounce: 0, */
-                        /* }} */
+                    /* initial={{ */
+                    /*     y: -100, */
+                    /*     opacity: 0, */
+                    /* }} */
+                    /* animate={{ */
+                    /*     y: 0, */
+                    /*     opacity: 1, */
+                    /* }} */
+                    /* transition={{ */
+                    /*     bounce: 0, */
+                    /* }} */
                     />
                 )}
                 <h3 className={"px-12 text-xl mb-6"}>Documentation</h3>
             </div>
-            {pathname === keyMap.home && (
-                <SidebarDocsCategory
-                    title="Getting Started"
-                    items={staticDocsData.gettingStarted}
-                    key="docsUserHome"
-                    keyId={pathKeyMap[keyMap.home]}
-                    activeKey={activeKey}
-                />
-            )}
-            {pathname === keyMap.components && (
-                <SidebarDocsCategory
-                    key="docsComponents"
-                    keyId={pathKeyMap[keyMap.components]}
-                    title="Components"
-                    activeKey={activeKey}
-                    items={staticDocsData.categories.map((c) => ({
-                        label: c,
-                        href: `/docs/user/components?category=${c}`,
-                    }))}
-                />
-            )}
+            {keyList.map((k) => {
+                if (!activeItem || !pathname || (pathname !== k?.pathname)) {
+                    return null
+                }
+                let _key = k.pathname.replaceAll(/[\\|\/|\?]/gm, "")
+                return (
+                    <SidebarDocsCategory
+                        title={k.title}
+                        active={pathname === k.pathname}
+                        activeItem={activeItem}
+                        items={staticDocsData[k.docsKey].items}
+                        key={_key}
+                        keyId={_key}
+                    />
+                );
+            })}
         </motion.div>
     );
 };

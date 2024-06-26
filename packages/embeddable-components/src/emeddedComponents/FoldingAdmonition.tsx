@@ -75,7 +75,7 @@ const FoldingAdmonition = ({
                     },
                 }}
             >
-                <div className={"w-full h-full p-4 space-y-3"}>
+                <div className={"admonition-bodyContainer w-full h-full p-4 space-y-3"}>
                 {children}
                 </div>
             </motion.div>

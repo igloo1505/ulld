@@ -1,5 +1,7 @@
 ## API
 
+- [configschema/src/developer/typedoc/componentConfigSchema](../wiki/configschema.src.developer.typedoc.componentConfigSchemax)
+- [configschema/src/developer/typedoc/embeddableConfigSchema](../wiki/configschema.src.developer.typedoc.embeddableConfigSchemax)
 - [configschema/src/developer/typedocInput](../wiki/configschema.src.developer.typedocInputx)
 - [embeddable-components/src/academic/abstract](../wiki/embeddable-components.src.academic.abstractx)
 - [embeddable-components/src/academic/error](../wiki/embeddable-components.src.academic.errorx)

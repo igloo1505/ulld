@@ -49,6 +49,17 @@ span[data-rehype-pretty-code-figure] {
   }
 }
 
+figure[data-rehype-pretty-code-figure] {
+  mark[data-highlighted-chars] {
+    background-color: hsl(var(--bg-muted-foreground) / 0.4) !important;
+    color: hsl(var(--text-foreground));
+    span {
+      background-color: hsl(var(--bg-muted-foreground) / 0.4) !important;
+      color: hsl(var(--text-foreground));
+    }
+  }
+}
+
 pre[data-theme="dark"],
 pre[data-theme="light"] {
   overflow: auto;
@@ -85,6 +96,15 @@ code[data-theme="dark"] {
   }
 }
 
+.admonition-bodyContainer {
+  :first-child {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
 @layer components {
   .note-base-layout {
     @apply w-full h-fit bg-background text-foreground;
@@ -101,11 +121,13 @@ code[data-theme="dark"] {
       code {
         // @apply p-2 bg-gray-100 dark:bg-gray-800;
         @apply bg-transparent;
-        span[data-highlighted-chars] {
-          @apply bg-yellow-300 text-black rounded-md;
-          color: #000 !important;
-          span {
-            @apply bg-yellow-300 text-black;
+        span,
+        mark {
+          [data-highlighted-chars] {
+            @apply bg-muted-foreground/40 border text-foreground;
+            span {
+              @apply bg-muted-foreground text-foreground;
+            }
           }
         }
       }

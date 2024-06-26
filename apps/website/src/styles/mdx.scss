@@ -27,16 +27,19 @@ code {
     }
   }
 
-  & span.highlighted {
-    background-color: hsl(var(--secondary) / 0.6);
-    border: 1px solid hsl(var(--border) / 0.7);
-  }
-
-  & span[data-highlighted-chars] {
-    * {
-      color: inherit !important;
+  & span,
+  mark {
+    &.highlighted {
+      background-color: hsl(var(--secondary) / 0.6);
+      border: 1px solid hsl(var(--border) / 0.7);
     }
   }
+
+  // & span[data-highlighted-chars] {
+  // * {
+  //   color: inherit !important;
+  // }
+  // }
 }
 
 .no-code-before {
@@ -82,6 +85,18 @@ span[data-rehype-pretty-code-figure] {
 
     &::after {
       content: "" !important;
+    }
+  }
+}
+
+figure[data-rehype-pretty-code-figure] {
+  mark[data-highlighted-chars] {
+    background-color: hsl(var(--muted-foreground) / 0.4);
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--border));
+    span {
+      background-color: hsl(var(--muted-foreground) / 0.4);
+      color: hsl(var(--foreground));
     }
   }
 }
@@ -146,15 +161,6 @@ code[data-theme="dark"] {
       code {
         // @apply p-2 bg-gray-100 dark:bg-gray-800;
         @apply bg-transparent;
-
-        span[data-highlighted-chars] {
-          @apply bg-yellow-300 text-black rounded-md;
-          color: #000 !important;
-
-          span {
-            @apply bg-yellow-300 text-black;
-          }
-        }
       }
     }
   }

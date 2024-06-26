@@ -1,4 +1,12 @@
 .prose {
+  code {
+    &::before {
+      content: "";
+    }
+    &::after {
+      content: "";
+    }
+  }
   pre:not([data-language]) {
     background-color: transparent !important;
   }

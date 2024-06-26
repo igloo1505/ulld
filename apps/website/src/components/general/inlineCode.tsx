@@ -1,8 +1,8 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { cn } from "@ulld/utilities/cn";
 
 interface InlineCodeProps {
-    children: string;
+    children: ReactNode;
     className?: string;
 }
 
