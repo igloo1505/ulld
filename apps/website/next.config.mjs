@@ -1,7 +1,7 @@
 import nextPwa from "@ducanh2912/next-pwa";
 import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
 import { withContentlayer } from "next-contentlayer";
-import path from 'path'
+// import path from 'path'
 
 // NOTE: For building on vercel: https://github.com/Automattic/node-canvas/issues/1779
 if (
@@ -178,7 +178,7 @@ const config = withPWA(
         ],
         experimental: {
             // typedRoutes: true,
-            outputFileTracingRoot: path.join(__dirname, "../../"),
+            // outputFileTracingRoot: path.join(__dirname, "../../"),
             esmExternals: "loose",
             optimizePackageImports: ["lucide-react", "katex"],
             // serverComponentsExternalPackages: ['@ulld/editor'],
