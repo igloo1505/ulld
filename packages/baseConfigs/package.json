@@ -1,30 +1,30 @@
 {
-  "version": "0.0.1",
-  "name": "@ulld/baseConfigs",
-  "private": false,
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
-  "exports": {
-    ".": "./src/index.ts",
-    "./beta": "./src/validConfig.ts"
-  },
-  "scripts": {
-    "dev": "echo 'Add dev script here'",
-    "build": "echo 'Add build script here'",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'"
-  },
-  "packageManager": "pnpm@9.0.4",
-  "devDependencies": {
-    "next": "^14.2.4"
-  },
-  "dependencies": {
-    "@next/mdx": "^14.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "peerDependencies": {},
-  "publishConfig": {
-    "access": "public"
-  }
+    "version": "0.0.1",
+    "name": "@ulld/baseConfigs",
+    "private": false,
+    "main": "./src/index.ts",
+    "types": "./src/index.ts",
+    "exports": {
+        ".": "./src/index.ts",
+        "./beta": "./src/validConfig.ts"
+    },
+    "scripts": {
+        "dev": "echo 'Add dev script here'",
+        "build": "echo 'Add build script here'",
+        "test": "echo 'Add test script here'",
+        "lint": "echo 'Add lint script here'"
+    },
+    "packageManager": "pnpm@9.0.4",
+    "devDependencies": {
+        "next": "^14.2.4"
+    },
+    "dependencies": {
+        "@next/mdx": "^14.0.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    },
+    "peerDependencies": {},
+    "publishConfig": {
+        "access": "public"
+    }
 }

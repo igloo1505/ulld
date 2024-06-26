@@ -169,7 +169,19 @@ While neither documentation field is strictly required for your component, it is
 
 ### Slot Components ||devDocs-slot-components||
 
-_Slot_ components are only slightly more complicated than _embeddable_ components.
+_Slot_ components are only slightly more complicated than _embeddable_ components. To occupy a slot within the user's compiled application, your entire plugin must occupy that parent slot. This means that for any given plugin, you are only able to produce components for one subset of the compiled application. For example, if you want to build a plugin that replaces the navbar for users, your plugin config must satisfy the following values:
+
+```ts
+const pluginConfig: DeveloperConfigInput = {
+    slot: "navigation",
+    components: [
+        {
+            slot: "navbar",
+            ...
+        }
+    ]
+};
+```
 
 
 ### Styling your components

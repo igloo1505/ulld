@@ -197,7 +197,10 @@ class PackageManager {
 
 const p = new PackageManager();
 
-const found = p.findByDependency("typescript")
+// p.clearNodeModules()
 
-console.log("found: ", found)
+
+// const found = p.findByDependency("typescript")
+// console.log("found: ", found)
+
 
