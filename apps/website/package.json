@@ -73,6 +73,13 @@
     "dayjs": "^1.11.10",
     "dotenv": "^16.4.5",
     "file-loader": "^6.2.0",
+    "fumadocs-contentlayer": "^1.1.34",
+    "fumadocs-core": "^12.2.5",
+    "fumadocs-docgen": "^1.0.2",
+    "fumadocs-mdx": "^8.2.33",
+    "fumadocs-twoslash": "^1.1.0",
+    "fumadocs-typescript": "^2.0.1",
+    "fumadocs-ui": "^12.2.5",
     "fuse.js": "^7.0.0",
     "gray-matter": "^4.0.3",
     "gsap": "^3.12.5",
@@ -142,6 +149,5 @@
     "tsx": "^4.10.4",
     "twoslash": "^0.2.6"
   },
-  "peerDependencies": {},
   "packageManager": "pnpm@9.0.4"
 }
