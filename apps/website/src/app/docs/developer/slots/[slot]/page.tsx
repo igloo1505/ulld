@@ -1,6 +1,6 @@
 import MDXArticle from "#/components/layouts/mdxArticle";
 import MathjaxProvider from "#/components/utility/providers/mathjax";
-import { allSlotDocs } from ".contentlayer/generated/SlotDocs/_index.mjs";
+import { allSlotDocs } from 'contentlayer/generated';
 import { notFound } from "next/navigation";
 import React from "react";
 
