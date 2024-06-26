@@ -288,23 +288,23 @@ const docsProps: DocumentTypeDef = {
 
 export const Documentation = defineDocumentType(() => docsProps);
 
-export const SlotDocumentation = defineDocumentType(() => {
-    return {
-        name: "SlotDocs",
-        fieldPathPattern: "slotDocs/**/*.mdx",
-        contentType: "mdx",
-        fields: {
-            ...docsProps.fields,
-            slot: {
-                type: "string",
-                required: true
-            },
-            subSlot: {
-                type: "string",
-            }
-        }
-    }
-})
+export const SlotDocumentation = defineDocumentType(() => ({
+    name: "SlotDocs",
+    filePathPattern: `slotDocs/**/*.mdx`,
+    contentType: "mdx",
+    fields: {
+        ...docsProps.fields,
+        slot: {
+            type: "string",
+            required: true,
+        },
+        subSlot: {
+            type: "string",
+            required: false
+        },
+    },
+    computedFields: {},
+}));
 
 export const StaticDocumentation = defineDocumentType(() => ({
     name: "StaticDocs",
