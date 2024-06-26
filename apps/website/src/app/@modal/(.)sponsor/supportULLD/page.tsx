@@ -1,24 +1,17 @@
-import SponsorULLDModalWrapper from '#/components/brand/sponsor/sponsorULLDModalWrapper';
-import { ModalPageContainer } from '@ulld/ui/modalPage';
-import React from 'react'
+import SponsorULLDModalWrapper from "#/components/brand/sponsor/sponsorULLDModalWrapper";
+import { ModalPageContainer } from "@ulld/ui/modalPage";
+import React from "react";
 
-
-
-interface SponsorULLDPageProps {
-
-}
+interface SponsorULLDPageProps { }
 
 const SponsorULLDPage = (props: SponsorULLDPageProps) => {
     return (
-        <ModalPageContainer
-        >
+        <ModalPageContainer>
             <SponsorULLDModalWrapper isModal />
         </ModalPageContainer>
-    )
-}
+    );
+};
 
-
-SponsorULLDPage.displayName = "SponsorULLDPage"
-
+SponsorULLDPage.displayName = "SponsorULLDPage";
 
 export default SponsorULLDPage;
