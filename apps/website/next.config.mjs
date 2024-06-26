@@ -144,6 +144,7 @@ const config = withPWA(
     withContentlayer({
         typescript: {
             ignoreBuildErrors: true, // HACK: For development only.
+            tsconfigPath: "./tsconfig.json"
         },
         reactStrictMode: false,
         transpilePackages: [
