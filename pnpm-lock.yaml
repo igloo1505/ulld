@@ -26,18 +26,6 @@ importers:
       glob:
         specifier: ^10.3.15
         version: 10.4.2
-      remark-emoji:
-        specifier: ^4.0.1
-        version: 4.0.1
-      remark-gfm:
-        specifier: ^3.0.1
-        version: 3.0.1
-      remark-github:
-        specifier: ^12.0.0
-        version: 12.0.0
-      remark-math:
-        specifier: ^6.0.0
-        version: 6.0.0
       tinycolor2:
         specifier: ^1.6.0
         version: 1.6.0
@@ -93,9 +81,6 @@ importers:
       prettier:
         specifier: ^3.1.1
         version: 3.3.2
-      remark-link-rewrite:
-        specifier: ^1.0.7
-        version: 1.0.7
       rollup:
         specifier: ^4.12.1
         version: 4.18.0
@@ -436,9 +421,6 @@ importers:
       '@mdx-js/loader':
         specifier: ^3.0.1
         version: 3.0.1(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5))
-      '@mdx-js/mdx':
-        specifier: ^3.0.1
-        version: 3.0.1
       '@mdx-js/node-loader':
         specifier: ^3.0.1
         version: 3.0.1
@@ -468,7 +450,7 @@ importers:
         version: 9.7.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-three/drei':
         specifier: ^9.105.6
-        version: 9.107.1(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/three@0.162.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)
+        version: 9.107.1(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/react@18.3.3)(@types/three@0.162.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)
       '@react-three/fiber':
         specifier: ^8.16.3
         version: 8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)
@@ -583,9 +565,6 @@ importers:
       file-loader:
         specifier: ^6.2.0
         version: 6.2.0(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5))
-      framer-motion:
-        specifier: ^11.1.7
-        version: 11.2.12(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       fuse.js:
         specifier: ^7.0.0
         version: 7.0.0
@@ -764,9 +743,6 @@ importers:
       '@types/mathjax':
         specifier: ^0.0.40
         version: 0.0.40
-      '@types/mdx':
-        specifier: ^2.0.11
-        version: 2.0.13
       '@types/react':
         specifier: ^18.2.75
         version: 18.3.3
@@ -776,45 +752,18 @@ importers:
       '@vercel/node':
         specifier: ^3.1.4
         version: 3.2.0(@swc/core@1.6.5(@swc/helpers@0.5.11))(encoding@0.1.13)
-      autoprefixer:
-        specifier: ^10.4.18
-        version: 10.4.19(postcss@8.4.38)
-      dotenv-cli:
-        specifier: ^7.3.0
-        version: 7.4.2
       globby:
         specifier: ^14.0.1
         version: 14.0.1
-      postcss:
-        specifier: ^8.4.35
-        version: 8.4.38
       tailwindcss:
         specifier: ^3.4.1
         version: 3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@16.18.11)(typescript@4.9.5))
       tsx:
         specifier: ^4.10.4
         version: 4.15.7
-      turbo:
-        specifier: ^2.0.4
-        version: 2.0.5
       twoslash:
         specifier: ^0.2.6
         version: 0.2.9(typescript@4.9.5)
-      typedoc:
-        specifier: ^0.25.13
-        version: 0.25.13(typescript@4.9.5)
-      typedoc-plugin-coverage:
-        specifier: ^3.1.1
-        version: 3.3.0(typedoc@0.25.13(typescript@4.9.5))
-      typedoc-plugin-markdown:
-        specifier: ^4.0.3
-        version: 4.1.0(typedoc@0.25.13(typescript@4.9.5))
-      typedoc-plugin-zod:
-        specifier: ^1.1.2
-        version: 1.2.0(typedoc@0.25.13(typescript@4.9.5))
-      typedoc-theme-category-nav:
-        specifier: ^0.0.3
-        version: 0.0.3(typedoc@0.25.13(typescript@4.9.5))
 
   packages/api:
     dependencies:
@@ -1037,7 +986,7 @@ importers:
         version: 0.5.0
       mocha:
         specifier: ^10.3.0
-        version: 10.5.1
+        version: 10.5.2
       nodejs-polars:
         specifier: ^0.10.0
         version: 0.10.0
@@ -1733,7 +1682,7 @@ importers:
         version: 29.7.0(bufferutil@4.0.8)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.4)
       mocha:
         specifier: ^10.3.0
-        version: 10.5.1
+        version: 10.5.2
       react-test-renderer:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
@@ -2014,7 +1963,7 @@ importers:
         version: 9.1.0(eslint@9.5.0)
       mocha:
         specifier: ^10.3.0
-        version: 10.5.1
+        version: 10.5.2
       nyc:
         specifier: ^15.1.0
         version: 15.1.0
@@ -2363,7 +2312,7 @@ importers:
         version: 29.7.0(bufferutil@4.0.8)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.4)
       mocha:
         specifier: ^10.3.0
-        version: 10.5.1
+        version: 10.5.2
       monaco-editor-webpack-plugin:
         specifier: ^7.1.0
         version: 7.1.0(monaco-editor@0.44.0)(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5))
@@ -2822,7 +2771,7 @@ importers:
         version: 29.7.0(bufferutil@4.0.8)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.4)
       mocha:
         specifier: ^10.3.0
-        version: 10.5.1
+        version: 10.5.2
       react-test-renderer:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
@@ -2982,7 +2931,7 @@ importers:
         version: 29.7.0(bufferutil@4.0.8)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.4)
       mocha:
         specifier: ^10.3.0
-        version: 10.5.1
+        version: 10.5.2
       next:
         specifier: ^14.2.4
         version: 14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
@@ -3167,7 +3116,7 @@ importers:
         version: 9.1.0(eslint@9.5.0)
       mocha:
         specifier: ^10.3.0
-        version: 10.5.1
+        version: 10.5.2
       nyc:
         specifier: ^15.1.0
         version: 15.1.0
@@ -3539,7 +3488,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       reagraph:
         specifier: ^4.15.26
-        version: 4.19.2(@types/three@0.163.0)(graphology-types@0.24.7)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 4.19.2(@types/react@18.3.3)(@types/three@0.163.0)(graphology-types@0.24.7)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
   packages/notebook:
     dependencies:
@@ -3729,7 +3678,7 @@ importers:
         version: 29.7.0(bufferutil@4.0.8)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.4)
       mocha:
         specifier: ^10.3.0
-        version: 10.5.1
+        version: 10.5.2
       next:
         specifier: ^14.2.4
         version: 14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
@@ -3903,7 +3852,7 @@ importers:
     devDependencies:
       '@react-three/drei':
         specifier: ^9.99.7
-        version: 9.107.1(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/three@0.163.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)
+        version: 9.107.1(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/react@18.3.3)(@types/three@0.163.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)
       '@react-three/fiber':
         specifier: ^8.15.19
         version: 8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)
@@ -4118,7 +4067,7 @@ importers:
         version: 29.7.0(bufferutil@4.0.8)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.4)
       mocha:
         specifier: ^10.3.0
-        version: 10.5.1
+        version: 10.5.2
       next:
         specifier: ^14.2.4
         version: 14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
@@ -4552,7 +4501,7 @@ importers:
         version: 3.4.4(encoding@0.1.13)(react@18.3.1)
       '@react-three/drei':
         specifier: ^9.99.7
-        version: 9.107.1(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.162.0))(@types/three@0.162.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.162.0)
+        version: 9.107.1(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.162.0))(@types/react@18.3.3)(@types/three@0.162.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.162.0)
       '@react-three/fiber':
         specifier: ^8.15.19
         version: 8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.162.0)
@@ -4864,7 +4813,7 @@ importers:
         version: 0.2.4
       tunnel-rat:
         specifier: ^0.1.2
-        version: 0.1.2(immer@9.0.21)(react@18.3.1)
+        version: 0.1.2(@types/react@18.3.3)(immer@9.0.21)(react@18.3.1)
       vaul:
         specifier: ^0.9.0
         version: 0.9.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5060,7 +5009,7 @@ importers:
         version: 0.344.0(react@18.3.1)
       mocha:
         specifier: ^10.3.0
-        version: 10.5.1
+        version: 10.5.2
       next:
         specifier: ^14.2.4
         version: 14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
@@ -5220,7 +5169,7 @@ importers:
         version: 29.7.0(bufferutil@4.0.8)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.4)
       mocha:
         specifier: ^10.3.0
-        version: 10.5.1
+        version: 10.5.2
       next:
         specifier: ^14.2.4
         version: 14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6)
@@ -11459,9 +11408,6 @@ packages:
     resolution: {integrity: sha512-n5M855fKb2SsfMIiFFoVrABHJC8QtHwVx+mHWP3QcEqBHYienj5dHSgjbxtC0WEZXYt4wcD6zrQElDPhFuZgfA==}
     engines: {node: '>=12'}
 
-  ansi-sequence-parser@1.1.1:
-    resolution: {integrity: sha512-vJXt3yiaUL4UU546s3rPXlsry/RnM730G1+HkpKE012AN0sx1eOrxSu95oKDIonskeLTijMgqWZ3uDEe3NFvyg==}
-
   ansi-styles@2.0.0:
     resolution: {integrity: sha512-0kjBHdIQSa1iuh2rs8Md1GQNHAKrefcRSp2W5OKQU1oBZgCSqQ5aG4o+r69irBlhIPwA8wUaPdN/FWZVIHW7rA==}
     engines: {node: '>=0.10.0'}
@@ -15969,9 +15915,6 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  jsonc-parser@3.3.1:
-    resolution: {integrity: sha512-HUgH65KyejrUFPvHFPbqOY0rsFip3Bo5wb4ngvdi1EpCYWUQDC5V+Y7mZws+DLkr4M//zQJoanu1SP+87Dv1oQ==}
-
   jsonfile@2.4.0:
     resolution: {integrity: sha512-PKllAqbgLgxHaj8TElYymKCAgrASebJrWpTnEkOaTowt23VKXXN0sUeriJ+eh7y6ufb/CC5ap11pz71/cM0hUw==}
 
@@ -17036,8 +16979,8 @@ packages:
   mnemonist@0.39.8:
     resolution: {integrity: sha512-vyWo2K3fjrUw8YeeZ1zF0fy6Mu59RHokURlld8ymdUPjMlD9EC9ov1/YPqTgqRvUN9nTr3Gqfz29LYAmu0PHPQ==}
 
-  mocha@10.5.1:
-    resolution: {integrity: sha512-eq5tEnaz2kM9ade8cuGJBMh5fBb9Ih/TB+ddlmPR+wLQmwLhUwa0ovqDlg7OTfKquW0BI7NUcNWX7DH8sC+3gw==}
+  mocha@10.5.2:
+    resolution: {integrity: sha512-9btlN3JKCefPf+vKd/kcKz2SXxi12z6JswkGfaAF0saQvnsqLJk504ZmbxhSoENge08E9dsymozKgFMTl5PQsA==}
     engines: {node: '>= 14.0.0'}
     hasBin: true
 
@@ -19382,16 +19325,9 @@ packages:
     resolution: {integrity: sha512-qNf2mSAoZgh3Cl23/9Y1L7S4Kbf9NsdHvYK398ab/52yEsDPDU5I4cuTcgDRrdIX7Ltc6RK+KCLRtWkbFnL6Dg==}
     engines: {node: '>=16'}
 
-  remark-github@12.0.0:
-    resolution: {integrity: sha512-ByefQKFN184LeiGRCabfl7zUJsdlMYWEhiLX1gpmQ11yFg6xSuOTW7LVCv0oc1x+YvUMJW23NU36sJX2RWGgvg==}
-
   remark-heading-id@1.0.1:
     resolution: {integrity: sha512-GmJjuCeEkYvwFlvn/Skjc/1Qafj71412gbQnrwUmP/tKskmAf1cMRlZRNoovV+aIvsSRkTb2rCmGv2b9RdoJbQ==}
     engines: {node: '>=8'}
-
-  remark-link-rewrite@1.0.7:
-    resolution: {integrity: sha512-jfmXL8VL3O7Ca4g+Ya0A0S9LIpVhCUSqMHiei4N8Z8Mx9z/oEI1HDoa1ZcF9/tS0I7NwydGsPkw2zT4eeoD6+Q==}
-    engines: {node: '>=12.20'}
 
   remark-math@5.1.1:
     resolution: {integrity: sha512-cE5T2R/xLVtfFI4cCePtiRn+e6jKMtFDR3P8V3qpv8wpKjwvHoBA4eJzvX+nVrnlNy0911bdGmuspCSwetfYHw==}
@@ -19992,9 +19928,6 @@ packages:
     resolution: {integrity: sha512-TiwcRcrkhHvbrZbnRcFYMLl30Dfov3HKqzp5tO5b4pt6G/SezKcYhmDg15zXVBswHmctSAQKznqNW2LO5tTDow==}
     engines: {node: '>=4'}
     hasBin: true
-
-  shiki@0.14.7:
-    resolution: {integrity: sha512-dNPAPrxSc87ua2sKJ3H5dQ/6ZaY8RNnaAqK+t0eG7p0Soi2ydiqbGOTaZCqaYvA/uZYfS1LJnemt3Q+mSfcPCg==}
 
   shiki@1.9.1:
     resolution: {integrity: sha512-8PDkgb5ja3nfujTjvC4VytL6wGOGCtFAClUb2r3QROevYXxcq+/shVJK5s6gy0HZnjaJgFxd6BpPqpRfqne5rA==}
@@ -20979,19 +20912,9 @@ packages:
   tunnel-rat@0.1.2:
     resolution: {integrity: sha512-lR5VHmkPhzdhrM092lI2nACsLO4QubF0/yoOhzX7c+wIpbN1GjHNzCc91QlpxBi+cnx8vVJ+Ur6vL5cEoQPFpQ==}
 
-  turbo-darwin-64@2.0.5:
-    resolution: {integrity: sha512-t/9XpWYIjOhIHUdwiR47SYBGYHkR1zWLxTkTNKZwCSn8BN0cfjPZ1BR6kcwYGxLGBhtl5GBf6A29nq2K7iwAjg==}
-    cpu: [x64]
-    os: [darwin]
-
   turbo-darwin-64@2.0.6-canary.0:
     resolution: {integrity: sha512-gVqfplset6aKF1cHfVrRa6YxHiTwHpGpRAt+owj9HeRLajc2MtD6TsacvKh9le/iUsIhY69n1fXLujImklAFtQ==}
     cpu: [x64]
-    os: [darwin]
-
-  turbo-darwin-arm64@2.0.5:
-    resolution: {integrity: sha512-//5y4RJvnal8CttOLBwlaBqblcQb1qTlIxLN+I8O3E3rPuvHOupNKB9ZJxYIQ8oWf8ns8Ec8cxQ0GSBLTJIMtA==}
-    cpu: [arm64]
     os: [darwin]
 
   turbo-darwin-arm64@2.0.6-canary.0:
@@ -20999,19 +20922,9 @@ packages:
     cpu: [arm64]
     os: [darwin]
 
-  turbo-linux-64@2.0.5:
-    resolution: {integrity: sha512-LDtEDU2Gm8p3lKu//aHXZFRKUCVu68BNF9LQ+HmiCKFpNyK7khpMTxIAAUhDqt+AzlrbxtrxcCpCJaWg1JDjHg==}
-    cpu: [x64]
-    os: [linux]
-
   turbo-linux-64@2.0.6-canary.0:
     resolution: {integrity: sha512-qlQEijj3uAFXxdbmaDFFF+D23OkelgAH4j44ExEAnbyEPk9bizLFEgkDjTWA5VNnrc6S0L/7kYuISsMDFhM39A==}
     cpu: [x64]
-    os: [linux]
-
-  turbo-linux-arm64@2.0.5:
-    resolution: {integrity: sha512-84wdrzntErBNxkHcwHxiTZdaginQAxGPnwLTyZj8lpUYI7okPoxy3jKpUeMHN3adm3iDedl/x0mYSIvVVkmOiA==}
-    cpu: [arm64]
     os: [linux]
 
   turbo-linux-arm64@2.0.6-canary.0:
@@ -21019,29 +20932,15 @@ packages:
     cpu: [arm64]
     os: [linux]
 
-  turbo-windows-64@2.0.5:
-    resolution: {integrity: sha512-SgaFZ0VW6kHCJogLNuLEleAauAJx2Y48wazZGVRmBpgSUS2AylXesaBMhJaEScYqLz7mIRn6KOgwM8D4wTxI9g==}
-    cpu: [x64]
-    os: [win32]
-
   turbo-windows-64@2.0.6-canary.0:
     resolution: {integrity: sha512-hF7RFAy3CQfFW0aYFPfY/5X5cCeT4znfdgkDrHbyjUHFlKB48WHyLIqmZSQTMKbCflLle6Us+wkQUzAmxDomuA==}
     cpu: [x64]
-    os: [win32]
-
-  turbo-windows-arm64@2.0.5:
-    resolution: {integrity: sha512-foUxLOZoru0IRNIxm53fkfM4ubas9P0nTFjIcHtd+E8YHeogt8GqTweNre2e6ri1EHDo71emmuQgpuoFCOXZMg==}
-    cpu: [arm64]
     os: [win32]
 
   turbo-windows-arm64@2.0.6-canary.0:
     resolution: {integrity: sha512-u4lFLneOck9VFYquewspI/RHsGYoZB2UtEm7VhtyBmxSZHIBQlX9e9bX0bpztVD2l9XuAoTdFxATt221hVNX+w==}
     cpu: [arm64]
     os: [win32]
-
-  turbo@2.0.5:
-    resolution: {integrity: sha512-+6+hcWr4nwuESlKqUc626HMOTd3QT8hUOc9QM45PP1d4nErGkNOgExm4Pcov3in7LTuadMnB0gcd/BuzkEDIPw==}
-    hasBin: true
 
   turbo@2.0.6-canary.0:
     resolution: {integrity: sha512-35bevmsAkogFCfzil46dsM9vk1QVhMC63vqcXSSgzkQerDVYjrdfl/eMrMoqxzJI8ZHZYIBHAsiHMK7TteOCGw==}
@@ -21196,13 +21095,6 @@ packages:
     engines: {node: '>= 18'}
     peerDependencies:
       typedoc: ^0.25.6
-
-  typedoc@0.25.13:
-    resolution: {integrity: sha512-pQqiwiJ+Z4pigfOnnysObszLiU3mVLWAExSPf+Mu06G/qsc3wzbuM56SZQvONhHLncLUhYzOVkjFFpFfL5AzhQ==}
-    engines: {node: '>= 16'}
-    hasBin: true
-    peerDependencies:
-      typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x
 
   typedoc@0.26.2:
     resolution: {integrity: sha512-q/t+M+PZqhN9gPWLBZ3CCvP+KT8O1tyYkSzEYbcQ6mo89avdIrMlBEl3vfo5BgSzwC6Lbmq0W64E8RkY+eVsLA==}
@@ -21643,12 +21535,6 @@ packages:
   vite-compatible-readable-stream@3.6.1:
     resolution: {integrity: sha512-t20zYkrSf868+j/p31cRIGN28Phrjm3nRSLR2fyc2tiWi4cZGVdv68yNlwnIINTkMTmPoMiSlc0OadaO7DXZaQ==}
     engines: {node: '>= 6'}
-
-  vscode-oniguruma@1.7.0:
-    resolution: {integrity: sha512-L9WMGRfrjOhgHSdOYgCt/yRMsXzLDJSL7BPrOZt73gU0iWO4mpqzqQzOz5srxqTvMBaR0XZTSrVWo4j55Rc6cA==}
-
-  vscode-textmate@8.0.0:
-    resolution: {integrity: sha512-AFbieoL7a5LMqcnOF04ji+rpXadgOXnZsxQr//r83kLPr7biP7am3g9zbaZIaBGwBRWeSvoMD4mgPdX3e4NWBg==}
 
   vt-pbf@3.1.3:
     resolution: {integrity: sha512-2LzDFzt0mZKZ9IpVF2r69G9bXaP2Q2sArJCmcCgvfTdCCZzSyz4aCLoQyUilu37Ll56tCblIZrXFIjNUpGIlmA==}
@@ -27716,7 +27602,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@react-three/drei@9.107.1(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.162.0))(@types/three@0.162.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.162.0)':
+  '@react-three/drei@9.107.1(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.162.0))(@types/react@18.3.3)(@types/three@0.162.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.162.0)':
     dependencies:
       '@babel/runtime': 7.24.7
       '@mediapipe/tasks-vision': 0.10.8
@@ -27740,17 +27626,18 @@ snapshots:
       three-mesh-bvh: 0.7.5(three@0.162.0)
       three-stdlib: 2.30.3(three@0.162.0)
       troika-three-text: 0.49.1(three@0.162.0)
-      tunnel-rat: 0.1.2(immer@9.0.21)(react@18.3.1)
+      tunnel-rat: 0.1.2(@types/react@18.3.3)(immer@9.0.21)(react@18.3.1)
       utility-types: 3.11.0
       uuid: 9.0.1
       zustand: 3.7.2(react@18.3.1)
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
+      - '@types/react'
       - '@types/three'
       - immer
 
-  '@react-three/drei@9.107.1(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/three@0.162.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)':
+  '@react-three/drei@9.107.1(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/react@18.3.3)(@types/three@0.162.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)':
     dependencies:
       '@babel/runtime': 7.24.7
       '@mediapipe/tasks-vision': 0.10.8
@@ -27774,17 +27661,18 @@ snapshots:
       three-mesh-bvh: 0.7.5(three@0.163.0)
       three-stdlib: 2.30.3(three@0.163.0)
       troika-three-text: 0.49.1(three@0.163.0)
-      tunnel-rat: 0.1.2(immer@9.0.21)(react@18.3.1)
+      tunnel-rat: 0.1.2(@types/react@18.3.3)(immer@9.0.21)(react@18.3.1)
       utility-types: 3.11.0
       uuid: 9.0.1
       zustand: 3.7.2(react@18.3.1)
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
+      - '@types/react'
       - '@types/three'
       - immer
 
-  '@react-three/drei@9.107.1(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/three@0.163.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)':
+  '@react-three/drei@9.107.1(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0))(@types/react@18.3.3)(@types/three@0.163.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)':
     dependencies:
       '@babel/runtime': 7.24.7
       '@mediapipe/tasks-vision': 0.10.8
@@ -27808,13 +27696,14 @@ snapshots:
       three-mesh-bvh: 0.7.5(three@0.163.0)
       three-stdlib: 2.30.3(three@0.163.0)
       troika-three-text: 0.49.1(three@0.163.0)
-      tunnel-rat: 0.1.2(immer@9.0.21)(react@18.3.1)
+      tunnel-rat: 0.1.2(@types/react@18.3.3)(immer@9.0.21)(react@18.3.1)
       utility-types: 3.11.0
       uuid: 9.0.1
       zustand: 3.7.2(react@18.3.1)
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
+      - '@types/react'
       - '@types/three'
       - immer
 
@@ -29889,8 +29778,6 @@ snapshots:
   ansi-regex@5.0.1: {}
 
   ansi-regex@6.0.1: {}
-
-  ansi-sequence-parser@1.1.1: {}
 
   ansi-styles@2.0.0: {}
 
@@ -33612,7 +33499,7 @@ snapshots:
       slash: 5.1.0
       unicorn-magic: 0.1.0
 
-  glodrei@0.0.1(@react-three/fiber@8.13.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.154.0))(@types/three@0.163.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.154.0):
+  glodrei@0.0.1(@react-three/fiber@8.13.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.154.0))(@types/react@18.3.3)(@types/three@0.163.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.154.0):
     dependencies:
       '@babel/runtime': 7.24.7
       '@mediapipe/tasks-vision': 0.10.8
@@ -33635,13 +33522,14 @@ snapshots:
       three-mesh-bvh: 0.7.5(three@0.154.0)
       three-stdlib: 2.30.3(three@0.154.0)
       troika-three-text: 0.47.2(three@0.154.0)
-      tunnel-rat: 0.1.2(immer@9.0.21)(react@18.3.1)
+      tunnel-rat: 0.1.2(@types/react@18.3.3)(immer@9.0.21)(react@18.3.1)
       utility-types: 3.11.0
       uuid: 9.0.1
       zustand: 3.7.2(react@18.3.1)
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
+      - '@types/react'
       - '@types/three'
       - immer
 
@@ -35412,8 +35300,6 @@ snapshots:
 
   json5@2.2.3: {}
 
-  jsonc-parser@3.3.1: {}
-
   jsonfile@2.4.0:
     optionalDependencies:
       graceful-fs: 4.2.11
@@ -37180,7 +37066,7 @@ snapshots:
     dependencies:
       obliterator: 2.0.4
 
-  mocha@10.5.1:
+  mocha@10.5.2:
     dependencies:
       ansi-colors: 4.1.1
       browser-stdout: 1.3.1
@@ -39502,7 +39388,7 @@ snapshots:
     dependencies:
       picomatch: 2.3.1
 
-  reagraph@4.19.2(@types/three@0.163.0)(graphology-types@0.24.7)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  reagraph@4.19.2(@types/react@18.3.3)(@types/three@0.163.0)(graphology-types@0.24.7)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@react-spring/three': 9.6.1(@react-three/fiber@8.13.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.154.0))(react@18.3.1)(three@0.154.0)
       '@react-three/fiber': 8.13.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.163.0)
@@ -39513,7 +39399,7 @@ snapshots:
       d3-hierarchy: 3.1.2
       d3-scale: 4.0.2
       ellipsize: 0.5.1
-      glodrei: 0.0.1(@react-three/fiber@8.13.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.154.0))(@types/three@0.163.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.154.0)
+      glodrei: 0.0.1(@react-three/fiber@8.13.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.154.0))(@types/react@18.3.3)(@types/three@0.163.0)(immer@9.0.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.154.0)
       graphology: 0.25.4(graphology-types@0.24.7)
       graphology-layout: 0.6.1(graphology-types@0.24.7)
       graphology-layout-forceatlas2: 0.10.1(graphology-types@0.24.7)
@@ -39529,6 +39415,7 @@ snapshots:
       three-stdlib: 2.30.3(three@0.154.0)
       zustand: 4.3.9(immer@9.0.21)(react@18.3.1)
     transitivePeerDependencies:
+      - '@types/react'
       - '@types/three'
       - expo
       - expo-asset
@@ -39936,23 +39823,10 @@ snapshots:
     dependencies:
       unist-util-visit: 5.0.0
 
-  remark-github@12.0.0:
-    dependencies:
-      '@types/mdast': 4.0.4
-      mdast-util-find-and-replace: 3.0.1
-      mdast-util-to-string: 4.0.0
-      to-vfile: 8.0.0
-      unist-util-visit: 5.0.0
-      vfile: 6.0.1
-
   remark-heading-id@1.0.1:
     dependencies:
       lodash: 4.17.21
       unist-util-visit: 1.4.1
-
-  remark-link-rewrite@1.0.7:
-    dependencies:
-      unist-util-visit: 4.1.2
 
   remark-math@5.1.1:
     dependencies:
@@ -40600,13 +40474,6 @@ snapshots:
       glob: 7.2.3
       interpret: 1.4.0
       rechoir: 0.6.2
-
-  shiki@0.14.7:
-    dependencies:
-      ansi-sequence-parser: 1.1.1
-      jsonc-parser: 3.3.1
-      vscode-oniguruma: 1.7.0
-      vscode-textmate: 8.0.0
 
   shiki@1.9.1:
     dependencies:
@@ -41873,57 +41740,31 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  tunnel-rat@0.1.2(immer@9.0.21)(react@18.3.1):
+  tunnel-rat@0.1.2(@types/react@18.3.3)(immer@9.0.21)(react@18.3.1):
     dependencies:
-      zustand: 4.3.9(immer@9.0.21)(react@18.3.1)
+      zustand: 4.5.4(@types/react@18.3.3)(immer@9.0.21)(react@18.3.1)
     transitivePeerDependencies:
+      - '@types/react'
       - immer
       - react
 
-  turbo-darwin-64@2.0.5:
-    optional: true
-
   turbo-darwin-64@2.0.6-canary.0:
-    optional: true
-
-  turbo-darwin-arm64@2.0.5:
     optional: true
 
   turbo-darwin-arm64@2.0.6-canary.0:
     optional: true
 
-  turbo-linux-64@2.0.5:
-    optional: true
-
   turbo-linux-64@2.0.6-canary.0:
-    optional: true
-
-  turbo-linux-arm64@2.0.5:
     optional: true
 
   turbo-linux-arm64@2.0.6-canary.0:
     optional: true
 
-  turbo-windows-64@2.0.5:
-    optional: true
-
   turbo-windows-64@2.0.6-canary.0:
-    optional: true
-
-  turbo-windows-arm64@2.0.5:
     optional: true
 
   turbo-windows-arm64@2.0.6-canary.0:
     optional: true
-
-  turbo@2.0.5:
-    optionalDependencies:
-      turbo-darwin-64: 2.0.5
-      turbo-darwin-arm64: 2.0.5
-      turbo-linux-64: 2.0.5
-      turbo-linux-arm64: 2.0.5
-      turbo-windows-64: 2.0.5
-      turbo-windows-arm64: 2.0.5
 
   turbo@2.0.6-canary.0:
     optionalDependencies:
@@ -42024,10 +41865,6 @@ snapshots:
     dependencies:
       typedoc-plugin-markdown: 4.1.0(typedoc@0.26.2(typescript@5.5.2))
 
-  typedoc-plugin-coverage@3.3.0(typedoc@0.25.13(typescript@4.9.5)):
-    dependencies:
-      typedoc: 0.25.13(typescript@4.9.5)
-
   typedoc-plugin-coverage@3.3.0(typedoc@0.26.2(typescript@5.5.2)):
     dependencies:
       typedoc: 0.26.2(typescript@5.5.2)
@@ -42044,10 +41881,6 @@ snapshots:
   typedoc-plugin-inline-sources@1.0.2(typedoc@0.26.2(typescript@5.5.2)):
     dependencies:
       typedoc: 0.26.2(typescript@5.5.2)
-
-  typedoc-plugin-markdown@4.1.0(typedoc@0.25.13(typescript@4.9.5)):
-    dependencies:
-      typedoc: 0.25.13(typescript@4.9.5)
 
   typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2)):
     dependencies:
@@ -42077,29 +41910,13 @@ snapshots:
       camelcase: 8.0.0
       typedoc: 0.26.2(typescript@5.5.2)
 
-  typedoc-plugin-zod@1.2.0(typedoc@0.25.13(typescript@4.9.5)):
-    dependencies:
-      typedoc: 0.25.13(typescript@4.9.5)
-
   typedoc-plugin-zod@1.2.0(typedoc@0.26.2(typescript@5.5.2)):
     dependencies:
       typedoc: 0.26.2(typescript@5.5.2)
 
-  typedoc-theme-category-nav@0.0.3(typedoc@0.25.13(typescript@4.9.5)):
-    dependencies:
-      typedoc: 0.25.13(typescript@4.9.5)
-
   typedoc-theme-category-nav@0.0.3(typedoc@0.26.2(typescript@5.5.2)):
     dependencies:
       typedoc: 0.26.2(typescript@5.5.2)
-
-  typedoc@0.25.13(typescript@4.9.5):
-    dependencies:
-      lunr: 2.3.9
-      marked: 4.3.0
-      minimatch: 9.0.5
-      shiki: 0.14.7
-      typescript: 4.9.5
 
   typedoc@0.26.2(typescript@5.5.2):
     dependencies:
@@ -42669,10 +42486,6 @@ snapshots:
       inherits: 2.0.4
       string_decoder: 1.3.0
       util-deprecate: 1.0.2
-
-  vscode-oniguruma@1.7.0: {}
-
-  vscode-textmate@8.0.0: {}
 
   vt-pbf@3.1.3:
     dependencies:

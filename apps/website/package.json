@@ -25,7 +25,6 @@
     "@google/model-viewer": "^3.4.0",
     "@hookform/resolvers": "^3.3.4",
     "@mdx-js/loader": "^3.0.1",
-    "@mdx-js/mdx": "^3.0.1",
     "@mdx-js/node-loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@napi-rs/canvas": "^0.1.52",
@@ -74,7 +73,6 @@
     "dayjs": "^1.11.10",
     "dotenv": "^16.4.5",
     "file-loader": "^6.2.0",
-    "framer-motion": "^11.1.7",
     "fuse.js": "^7.0.0",
     "gray-matter": "^4.0.3",
     "gsap": "^3.12.5",
@@ -126,7 +124,6 @@
     "three-noise": "^1.1.2"
   },
   "devDependencies": {
-    "turbo": "^2.0.4",
     "@repo/eslint-config": "workspace:^",
     "@repo/jest-presets": "workspace:*",
     "@repo/typescript-config": "workspace:*",
@@ -137,22 +134,13 @@
     "@tailwindcss/typography": "^0.5.13",
     "@types/jest": "^29.5.11",
     "@types/mathjax": "^0.0.40",
-    "@types/mdx": "^2.0.11",
     "@types/react": "^18.2.75",
     "@types/react-dom": "^18.2.24",
     "@vercel/node": "^3.1.4",
-    "autoprefixer": "^10.4.18",
-    "dotenv-cli": "^7.3.0",
     "globby": "^14.0.1",
-    "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "tsx": "^4.10.4",
-    "twoslash": "^0.2.6",
-    "typedoc": "^0.25.13",
-    "typedoc-plugin-coverage": "^3.1.1",
-    "typedoc-plugin-markdown": "^4.0.3",
-    "typedoc-plugin-zod": "^1.1.2",
-    "typedoc-theme-category-nav": "^0.0.3"
+    "twoslash": "^0.2.6"
   },
   "peerDependencies": {},
   "packageManager": "pnpm@9.0.4"
