@@ -1,10 +1,13 @@
 import { getPage, getPages } from "docs";
 import type { Metadata } from "next";
-import { DocsPage, DocsBody } from "fumadocs-ui/page";
+import { DocsPage, DocsPageProps, DocsBody } from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
 import { getComponentMap } from "@ulld/component-map/client";
 import { webComponentMap } from "#/mdx/componentMap";
 import componentMap from "#/fumaDocs/generatedComponentMap.json";
+
+/* const pageProps: Omit<DocsPageProps, "children" | "toc" | "full"> = { */
+/* } */
 
 export default async function Page({
     params,

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  overscroll-behavior-y: contain;
+  position: relative;
+  text-rendering: optimizeLegibility;
+}
 .centerAbsPos {
   left: 50%;
   top: 50%;

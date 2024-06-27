@@ -34,6 +34,8 @@ const BlogPostList = ({ tags = [], allPosts }: BlogPostListProps) => {
         }
     })
     let postsWithPriority = withPriority.sort((a, b) => {
+        if(!a.priority) return 1
+        if(!b.priority) return -1
         return a.priority < b.priority ? 1 : -1
     })
     let postsWithoutPriority = (

@@ -22,6 +22,7 @@ import ThemeMenu from "#/components/UIUtils/themeMenu";
 import { BetaBanner } from "#/components/general/betaBanner";
 import { RootProvider } from "fumadocs-ui/provider";
 import MathjaxProvider from "#/components/utility/providers/mathjax";
+import { HandleBodyDisplay } from "#/components/docUtils/handleBodyLayout";
 
 const appFont = localFont({
     variable: "--ulld-app-font",
@@ -201,7 +202,7 @@ const RootLayout = async (props: {
             </head>
             <body
                 className={clsx(
-                    "group/body dark max-w-full relative h-auto overflow-x-hidden w-screen min-h-screen overflow-y-auto",
+                    "group/body dark max-w-full relative h-auto overflow-x-hidden w-screen min-h-screen overflow-y-auto data-[disContents=true]:contents",
                     fontSans.variable,
                     preferFs && "preferFs",
                 )}
@@ -209,6 +210,7 @@ const RootLayout = async (props: {
             >
                 <RootProvider>
                     <MathjaxProvider>
+                        <HandleBodyDisplay />
                         <BetaBanner />
                         <Navbar />
                         <InternalReduxProvider>
