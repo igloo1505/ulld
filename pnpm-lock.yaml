@@ -23,6 +23,24 @@ importers:
       framer-motion:
         specifier: ^11.1.7
         version: 11.2.12(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      fumadocs-core:
+        specifier: ^12.2.5
+        version: 12.2.5(@types/react@18.3.3)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      fumadocs-docgen:
+        specifier: ^1.0.2
+        version: 1.0.2(typescript@5.5.2)
+      fumadocs-mdx:
+        specifier: ^8.2.33
+        version: 8.2.33(fumadocs-core@12.2.5(@types/react@18.3.3)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))
+      fumadocs-twoslash:
+        specifier: ^1.1.0
+        version: 1.1.0(typescript@5.5.2)
+      fumadocs-typescript:
+        specifier: ^2.0.1
+        version: 2.0.1(typescript@5.5.2)
+      fumadocs-ui:
+        specifier: ^12.2.5
+        version: 12.2.5(@types/react-dom@18.3.0)(@types/react@18.3.3)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       glob:
         specifier: ^10.3.15
         version: 10.4.2
@@ -110,13 +128,13 @@ importers:
         version: 2.0.6-canary.0
       typedoc-github-wiki-theme:
         specifier: ^2.0.0
-        version: 2.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2)))
+        version: 2.0.0(typedoc-plugin-markdown@4.1.0)
       typedoc-plugin-coverage:
         specifier: ^3.3.0
         version: 3.3.0(typedoc@0.26.2(typescript@5.5.2))
       typedoc-plugin-frontmatter:
         specifier: ^1.0.0
-        version: 1.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2)))
+        version: 1.0.0(typedoc-plugin-markdown@4.1.0)
       typedoc-plugin-include-example:
         specifier: ^1.2.0
         version: 1.2.0(typedoc@0.26.2(typescript@5.5.2))
@@ -128,7 +146,7 @@ importers:
         version: 3.2.1(typedoc@0.26.2(typescript@5.5.2))
       typedoc-plugin-remark:
         specifier: ^1.0.2
-        version: 1.0.2(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2)))
+        version: 1.0.2(typedoc-plugin-markdown@4.1.0)
       typedoc-plugin-zod:
         specifier: ^1.2.0
         version: 1.2.0(typedoc@0.26.2(typescript@5.5.2))
@@ -565,27 +583,6 @@ importers:
       file-loader:
         specifier: ^6.2.0
         version: 6.2.0(webpack@5.92.1(@swc/core@1.6.5(@swc/helpers@0.5.11))(esbuild@0.21.5))
-      fumadocs-contentlayer:
-        specifier: ^1.1.34
-        version: 1.1.34(fumadocs-core@12.2.5(@types/react@18.3.3)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      fumadocs-core:
-        specifier: ^12.2.5
-        version: 12.2.5(@types/react@18.3.3)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      fumadocs-docgen:
-        specifier: ^1.0.2
-        version: 1.0.2(typescript@4.9.5)
-      fumadocs-mdx:
-        specifier: ^8.2.33
-        version: 8.2.33(fumadocs-core@12.2.5(@types/react@18.3.3)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))
-      fumadocs-twoslash:
-        specifier: ^1.1.0
-        version: 1.1.0(typescript@4.9.5)
-      fumadocs-typescript:
-        specifier: ^2.0.1
-        version: 2.0.1(typescript@4.9.5)
-      fumadocs-ui:
-        specifier: ^12.2.5
-        version: 12.2.5(@types/react-dom@18.3.0)(@types/react@18.3.3)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@16.18.11)(typescript@4.9.5)))
       fuse.js:
         specifier: ^7.0.0
         version: 7.0.0
@@ -2448,13 +2445,13 @@ importers:
         version: 0.26.2(typescript@5.5.2)
       typedoc-github-wiki-theme:
         specifier: ^2.0.0
-        version: 2.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2)))
+        version: 2.0.0(typedoc-plugin-markdown@4.1.0)
       typedoc-plugin-coverage:
         specifier: ^3.1.1
         version: 3.3.0(typedoc@0.26.2(typescript@5.5.2))
       typedoc-plugin-frontmatter:
         specifier: ^1.0.0
-        version: 1.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2)))
+        version: 1.0.0(typedoc-plugin-markdown@4.1.0)
       typedoc-plugin-include-example:
         specifier: ^1.2.0
         version: 1.2.0(typedoc@0.26.2(typescript@5.5.2))
@@ -2472,7 +2469,7 @@ importers:
         version: 2.3.0(typedoc@0.26.2(typescript@5.5.2))
       typedoc-plugin-remark:
         specifier: ^1.0.2
-        version: 1.0.2(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2)))
+        version: 1.0.2(typedoc-plugin-markdown@4.1.0)
       typedoc-plugin-rename-defaults:
         specifier: ^0.7.1
         version: 0.7.1(typedoc@0.26.2(typescript@5.5.2))
@@ -14510,11 +14507,6 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  fumadocs-contentlayer@1.1.34:
-    resolution: {integrity: sha512-dkDRAV/F6Zd7i75A/aDkxUqQRCbQHZPLeo+E625JIDa7TE6F5eHUOx5lML/48bbHKCSHM3nI3r1hxZSVrTINMQ==}
-    peerDependencies:
-      fumadocs-core: 12.x.x
-
   fumadocs-core@12.2.5:
     resolution: {integrity: sha512-AKr3H4DZNA4882dRgX9CKYkiDFvBT93CV+mYAKiXw/AV9PUvoNN9PfppWXYVK+31UTqvLuw+hSQOR1X9ADGiYw==}
     peerDependencies:
@@ -19420,10 +19412,6 @@ packages:
   rehype-ignore@2.0.2:
     resolution: {integrity: sha512-BpAT/3lU9DMJ2siYVD/dSR0A/zQgD6Fb+fxkJd4j+wDVy6TYbYpK+FZqu8eM9EuNKGvi4BJR7XTZ/+zF02Dq8w==}
     engines: {node: '>=16'}
-
-  rehype-img-size@1.0.1:
-    resolution: {integrity: sha512-+rLkxF2H3mQULAg3iA2Z2spJQlBcCpApG8sHC47bc0p33ol+ddz+O3gyUcTgk5xX5jGaj1oQOBs/cBy8nIIhoQ==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
   rehype-mathjax@4.0.3:
     resolution: {integrity: sha512-QIwWH9U+r54nMQklVkT1qluxhKyzdPWz9dFwgel3BrseQsWZafRTDTUj8VR8/14nFuRIV2ChuCMz4zpACPoYvg==}
@@ -28359,10 +28347,10 @@ snapshots:
     dependencies:
       shiki: 1.9.1
 
-  '@shikijs/twoslash@1.6.5(typescript@4.9.5)':
+  '@shikijs/twoslash@1.6.5(typescript@5.5.2)':
     dependencies:
       '@shikijs/core': 1.6.5
-      twoslash: 0.2.9(typescript@4.9.5)
+      twoslash: 0.2.9(typescript@5.5.2)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -33559,11 +33547,6 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  fumadocs-contentlayer@1.1.34(fumadocs-core@12.2.5(@types/react@18.3.3)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
-    dependencies:
-      fumadocs-core: 12.2.5(@types/react@18.3.3)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      rehype-img-size: 1.0.1
-
   fumadocs-core@12.2.5(@types/react@18.3.3)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@formatjs/intl-localematcher': 0.5.4
@@ -33588,10 +33571,10 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  fumadocs-docgen@1.0.2(typescript@4.9.5):
+  fumadocs-docgen@1.0.2(typescript@5.5.2):
     dependencies:
       estree-util-value-to-estree: 3.1.2
-      fumadocs-typescript: 2.0.1(typescript@4.9.5)
+      fumadocs-typescript: 2.0.1(typescript@5.5.2)
       hast-util-to-estree: 3.1.0
       npm-to-yarn: 2.2.1
       unist-util-visit: 5.0.0
@@ -33612,9 +33595,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  fumadocs-twoslash@1.1.0(typescript@4.9.5):
+  fumadocs-twoslash@1.1.0(typescript@5.5.2):
     dependencies:
-      '@shikijs/twoslash': 1.6.5(typescript@4.9.5)
+      '@shikijs/twoslash': 1.6.5(typescript@5.5.2)
       mdast-util-from-markdown: 2.0.1
       mdast-util-gfm: 3.0.0
       mdast-util-to-hast: 13.2.0
@@ -33623,18 +33606,18 @@ snapshots:
       - supports-color
       - typescript
 
-  fumadocs-typescript@2.0.1(typescript@4.9.5):
+  fumadocs-typescript@2.0.1(typescript@5.5.2):
     dependencies:
       fast-glob: 3.3.2
       hast-util-to-jsx-runtime: 2.3.0
       mdast-util-from-markdown: 2.0.1
       mdast-util-gfm: 3.0.0
       mdast-util-to-hast: 13.2.0
-      typescript: 4.9.5
+      typescript: 5.5.2
     transitivePeerDependencies:
       - supports-color
 
-  fumadocs-ui@12.2.5(@types/react-dom@18.3.0)(@types/react@18.3.3)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@16.18.11)(typescript@4.9.5))):
+  fumadocs-ui@12.2.5(@types/react-dom@18.3.0)(@types/react@18.3.3)(next@14.2.4(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@radix-ui/react-accordion': 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-collapsible': 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -40061,11 +40044,6 @@ snapshots:
       unified: 11.0.5
       unist-util-visit: 5.0.0
 
-  rehype-img-size@1.0.1:
-    dependencies:
-      image-size: 1.1.1
-      unist-util-visit: 4.1.2
-
   rehype-mathjax@4.0.3(bufferutil@4.0.8)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.4):
     dependencies:
       '@types/hast': 2.3.10
@@ -42235,6 +42213,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  twoslash@0.2.9(typescript@5.5.2):
+    dependencies:
+      '@typescript/vfs': 1.5.0
+      twoslash-protocol: 0.2.9
+      typescript: 5.5.2
+    transitivePeerDependencies:
+      - supports-color
+
   typanion@3.14.0: {}
 
   type-check@0.4.0:
@@ -42309,7 +42295,7 @@ snapshots:
 
   typedarray@0.0.6: {}
 
-  typedoc-github-wiki-theme@2.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2))):
+  typedoc-github-wiki-theme@2.0.0(typedoc-plugin-markdown@4.1.0):
     dependencies:
       typedoc-plugin-markdown: 4.1.0(typedoc@0.26.2(typescript@5.5.2))
 
@@ -42317,7 +42303,7 @@ snapshots:
     dependencies:
       typedoc: 0.26.2(typescript@5.5.2)
 
-  typedoc-plugin-frontmatter@1.0.0(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2))):
+  typedoc-plugin-frontmatter@1.0.0(typedoc-plugin-markdown@4.1.0):
     dependencies:
       typedoc-plugin-markdown: 4.1.0(typedoc@0.26.2(typescript@5.5.2))
       yaml: 2.4.5
@@ -42342,7 +42328,7 @@ snapshots:
     dependencies:
       typedoc: 0.26.2(typescript@5.5.2)
 
-  typedoc-plugin-remark@1.0.2(typedoc-plugin-markdown@4.1.0(typedoc@0.26.2(typescript@5.5.2))):
+  typedoc-plugin-remark@1.0.2(typedoc-plugin-markdown@4.1.0):
     dependencies:
       remark: 15.0.1
       remark-frontmatter: 5.0.0

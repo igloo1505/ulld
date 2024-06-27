@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from "react";
 import { RootState } from "@ulld/state/store";
 import { connect } from "react-redux";

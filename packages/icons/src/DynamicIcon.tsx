@@ -1,3 +1,4 @@
+"use client"
 import dynamic from "next/dynamic";
 import React, { useEffect, useMemo } from "react";
 import type { LucideProps } from "lucide-react";

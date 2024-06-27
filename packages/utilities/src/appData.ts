@@ -4,5 +4,8 @@ export const appData = {
         url: "https://github.com/igloo1505/ulldApp.git",
         branch: "main",
         buildDirName: "ulldApp"
+    },
+    projectRepo: {
+        url: "https://github.com/igloo1505/ulld"
     }
 }

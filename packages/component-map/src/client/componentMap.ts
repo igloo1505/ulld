@@ -37,7 +37,7 @@ export const components: any = {
 
 
 export const getComponentMap = <J extends ComponentType<unknown>[]>(content: string, opts?: ConditionalComponentProps, extraComponents: ConditionalComponentQuery<J>[] = []) => {
-    let baseComponents = opts?.avoidKeys ? getBaseComponents(components, opts.avoidKeys) : components
+    let baseComponents = opts?.noDefaults ? {} : opts?.avoidKeys ? getBaseComponents(components, opts.avoidKeys) : components
      if (opts?.requiredOnly) {
         return baseComponents satisfies MDXComponents
      }

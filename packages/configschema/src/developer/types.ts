@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { pluginSlotSchema } from "./slotsSchema";
 export type { SlotMap } from "./slotMapType";
+export type { ComponentConfigSchema } from "./componentSchema";
 
 export type PluginSlotData = z.output<typeof pluginSlotSchema>;
 

@@ -32,3 +32,6 @@ export const componentConfigSchema = z.object({
     docsExport: z.string().optional().describe("The package.json export that points to a .md or .mdx file that provides a quick reference for the component. This should be simple enough to be opened in the command palette in split view. If only docsExport or fullDocsExport is provided, this shorter docsExport is heavily preferred."),
     fullDocsExport: z.string().optional().describe("Similar to docsExport, but will be shown when users redirect to an entire page. This markdown can be more complex and include examples, but the components used must only consist of core ULLD components and your plugin, since we don't know what plugins other user's will be using.")
 });
+
+
+export type ComponentConfigSchema = z.input<typeof componentConfigSchema>

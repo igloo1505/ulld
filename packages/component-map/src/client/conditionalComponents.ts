@@ -8,6 +8,7 @@ export interface ConditionalComponentProps {
     all?: boolean
     noMermaid?: boolean
     requiredOnly?: boolean
+    noDefaults?: boolean
     avoidKeys?: string[]
 }
 

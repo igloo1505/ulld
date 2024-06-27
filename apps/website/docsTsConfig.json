@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@repo/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": ["jest", "node", "react", "mdx", "mathjax"],
+    "paths": {
+      "#/*": ["./src/*"],
+      "docs": ["./src/fumaDocs/main.ts"],
+      "contentlayer/generated": ["./.contentlayer/generated"],
+      "mdx/*": ["./src/mdx/*"],
+      "staticContent": ["./src/staticData/staticContent.json"]
+    },
+    "incremental": true
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".contentlayer/generated",
+    "../../packages/configschema/src/**/*.ts",
+    "../../packages/configschema/src/**/*.tsx"
+  ],
+  "ignore": ["**docs/examples**", "**.mdx"]
+}

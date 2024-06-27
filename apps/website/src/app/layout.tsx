@@ -20,6 +20,8 @@ import InternalReduxProvider from "#/state/provider";
 import NavbarBreakpointHandler from "#/components/utility/navbarBreakpointHandler";
 import ThemeMenu from "#/components/UIUtils/themeMenu";
 import { BetaBanner } from "#/components/general/betaBanner";
+import { RootProvider } from "fumadocs-ui/provider";
+import MathjaxProvider from "#/components/utility/providers/mathjax";
 
 const appFont = localFont({
     variable: "--ulld-app-font",
@@ -205,30 +207,34 @@ const RootLayout = async (props: {
                 )}
                 id={`Ulld-body-root`}
             >
-                <BetaBanner />
-                <Navbar />
-                <InternalReduxProvider>
-                    <MainNavigationDrawer />
-                    <NavbarBreakpointHandler />
-                </InternalReduxProvider>
-                {props.children}
-                <Toaster />
-                {props.modal && props.modal}
-                <SetInitialRender />
-                <StateWrappedUI
-                    ignoreConfig
-                    ignoreSettings
-                    loader={{
-                        mathjax: ["config"],
-                    }}
-                    observers={{
-                        noSettings: true,
-                        noThemeCookie: true,
-                    }}
-                />
-                <StateWrappedComponents />
-                <ThemeMenu />
-                <Footer />
+                <RootProvider>
+                    <MathjaxProvider>
+                        <BetaBanner />
+                        <Navbar />
+                        <InternalReduxProvider>
+                            <MainNavigationDrawer />
+                            <NavbarBreakpointHandler />
+                        </InternalReduxProvider>
+                        {props.children}
+                        <Toaster />
+                        {props.modal && props.modal}
+                        <SetInitialRender />
+                        <StateWrappedUI
+                            ignoreConfig
+                            ignoreSettings
+                            loader={{
+                                mathjax: ["config"],
+                            }}
+                            observers={{
+                                noSettings: true,
+                                noThemeCookie: true,
+                            }}
+                        />
+                        <StateWrappedComponents />
+                        <ThemeMenu />
+                        <Footer />
+                    </MathjaxProvider>
+                </RootProvider>
             </body>
             <GoogleAnalytics gaId="G-K46X7QHBEX" />
         </html>

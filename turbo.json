@@ -7,6 +7,10 @@
       "cache": false,
       "env": [".env.local"]
     },
+    "generateComponentMap": {
+      "cache": false,
+      "env": [".env.local"]
+    },
     "generateWebTags": {
       "cache": false,
       "env": [".env.local"]
@@ -35,7 +39,11 @@
       "env": [".env.production.local", ".env.local", ".env.production", ".env"]
     },
     "buildLocal": {
-      "dependsOn": ["^db:generate", "^generateWebTags"],
+      "dependsOn": [
+        "^db:generate",
+        "^generateWebTags",
+        "^generateComponentMap"
+      ],
       "outputs": [".next/**", "!.next/cache/**"],
       "env": [".env.production.local", ".env.local", ".env.production", ".env"]
     },
@@ -53,7 +61,7 @@
       "dependsOn": ["^build"]
     },
     "dev": {
-      "dependsOn": ["^db:generate"],
+      "dependsOn": ["^db:generate", "^generateComponentMap"],
       "env": [".env.development.local", ".env.local", ".env"],
       "cache": false,
       "persistent": true

@@ -1,11 +1,11 @@
 import type { MDXComponents } from "mdx/types";
 import defaultComponents from "fumadocs-ui/mdx";
-import { TypeTable } from "./components/docs/typeTable";
+import { AutoTypeTable } from "fumadocs-typescript/ui";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
-        /* TypeTable, */
-        ...defaultComponents as any,
+        ...(defaultComponents as any),
+        AutoTypeTable,
         ...components,
     };
 }
