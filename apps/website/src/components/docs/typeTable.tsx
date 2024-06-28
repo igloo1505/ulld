@@ -1,32 +1,22 @@
-import React from "react";
+import React, { ComponentPropsWithoutRef } from "react";
 import { AutoTypeTable } from "fumadocs-typescript/ui";
-import { GenerateOptions } from "fumadocs-typescript";
 import path from "path";
 
-interface TypeTableProps {
-    path: string;
+interface TypeTableProps extends ComponentPropsWithoutRef<typeof AutoTypeTable> {
     name: string;
-    packageName?: string;
 }
 
 export const TypeTable = ({
-    path: _path,
     name,
-    packageName,
+    ...props
 }: TypeTableProps) => {
-    /* const _path = packageName ? `../../../../../packages/${packageName}` : path */
-    const p = path.join(__dirname, `../../../../../packages/${packageName}`);
     return (
         <AutoTypeTable
-            path={_path}
+            {...props}
+            path={"./src/fumaDocs/typesForDocumentation.ts"}
             name={name}
-            options={
-                {
-                    /* config: { */
-                    /*     tsConfigPath: "docsTsConfig.json" */
-                    /* } */
-                }
-            }
+            /* options={ */
+            /* } */
         />
     );
 };

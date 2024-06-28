@@ -33,11 +33,11 @@ const parsedPlugin = developerConfigSchema.parse(pluginConfig);
 writePluginConfig(parsedPlugin, __dirname);
 ```
 
-## DeveloperConfigInput
+## Type: DeveloperConfigInput
 
-```tsx
-EmbeddedDocs component="DeveloperConfigInput" />
-```
+<TypeDoc 
+    name="DeveloperConfigInput" 
+/>
 
 #### Slot
 <Small noMargin muted>Optional</Small>
@@ -51,9 +51,8 @@ For example, if your `pluginConfig.ulld.json` specifies a slot property of `navi
     This `SlotMap` type is exported from `@ulld/configschema/developerTypes`, and a matching Typescript object is exported from `@ulld/utilities/slotMap`.
 </Hint>
 
-```tsx
-EmbeddedDocs component="SlotMapType" />
-```
+
+<TypeDoc name="SlotMap" />
 
 <Button href="/docs/developer/slots">
     Further Slot Documentation
@@ -72,14 +71,10 @@ The `DeveloperConfigInput["components"]` path is an array of objects which maps 
 2. A slot component, which can override slots that are by default occupied by internally developed <LogoAsText /> components.
 
 
-
-```tsx
-EmbeddedDocs
-    title={"DeveloperConfigInput[\"components\"][number]"}
-    titleAsCode
-    component="ComponentConfigSchema"
+<TypeDoc 
+    name="ComponentConfigSchema"
 />
-```
+
 
 Of the above properties, the following are universal, regardless if the component is an _embeddable component_ or a _slot component_.
 
@@ -145,20 +140,10 @@ The `slot` property does not apply to _embeddable_ components, as they will be m
     An array can be used to create aliases for the same component. This is the case with internal components like the `Highlight` component, which can also be used as `Hl`. The component will not be imported twice, even if it is used with multiple aliases.
 </Hint>
 
-```tsx
-EmbeddedDocs
-    title={"DeveloperConfigInput[\"components\"][number][\"embeddable\"][number]"}
-    titleAsCode
-    component="EmbeddableConfigSchema"
-```
 
-
-```json doc-gen:typescript
-{
-    "file": "./src/fumaDocs/typesForDocumentation.ts",
-    "name": "ComponentConfigSchema"
-}
-```
+<TypeDoc 
+    name="EmbeddableConfigSchema"
+/>
 
 
 

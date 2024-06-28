@@ -6,10 +6,10 @@ import { pluginSettingsSchema } from "./pluginSettingsSchema";
 import { pluginAdditionalPageSchema } from "./pluginPageSchema";
 import { pluginEventsSchema } from "./pluginEventsSchema";
 import { pluginSlotSchema } from "./slotsSchema";
-export type { DeveloperConfigInput } from "./typedocInput";
+import { DeveloperConfigInput } from "./types/developerConfig";
 
 
-export const developerConfigSchema = z
+export const developerConfigSchema: z.ZodType<DeveloperConfigInput> = z
     .object({
         pluginName: z.string(),
         slot: pluginSlotSchema.keyof().optional(),

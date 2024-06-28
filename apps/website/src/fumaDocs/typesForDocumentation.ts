@@ -1,1 +1,2 @@
-export type {ComponentConfigSchema} from "@ulld/configschema/developerTypes"
+export type {ComponentConfig, DeveloperConfigInput, SlotMap, EmbeddableConfig } from "@ulld/configschema/developerTypes"
+

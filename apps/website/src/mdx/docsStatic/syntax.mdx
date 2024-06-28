@@ -23,7 +23,7 @@ The following syntaxes are enabled by default.
 
 ***
 
-## Assigning Id's ||valid-dom-id-reference||
+## Assigning Id's [#valid-dom-id-reference]
 
 
 Many of the included example url's use a `/some/note/here#withAPoundSymbol` syntax. The value following the `#` symbol can be any id on that page. While many components will generate their own id's, they're very likely to be dynamically generated and be useless for navigating after a page reloads. You can however override these dynamically generated id's as most components will accept an `id` property, and they can be applied to any header with the following syntax:
@@ -35,7 +35,7 @@ id: mySpecialNote
 ---
 ... 
 
-## This is some header ||my-header-id||
+## This is some header [#my-header-id]
 ```
 
 Now you can navigate to the page with the id of `mySpecialNote` using the link syntax described [below](#note-id-link-syntax). You can also link directly to another element on the same page by forgoing the first bit of the URL as I just did above where I used `[below](#note-id-link-syntax){:mdx}` to link to the next section. 
@@ -48,7 +48,7 @@ Now you can navigate to the page with the id of `mySpecialNote` using the link s
 
 ## Links
 
-### Smart Linking ||note-id-link-syntax||
+### Smart Linking [#note-id-link-syntax]
 
 Alongside standard markdown link syntax, where `[Google](https://www.google.com){:mdx}` gives [Google](https://www.google.com), <LogoAsText /> adds the ability to link to other notes by a unique ID added to that note's [front matter](/docs/user/frontMatter).
 
@@ -76,7 +76,7 @@ especially the bit [here](note:noteExampleWithId#someOptionalElementIdInPage).
 
 *** 
 
-### Timestamp Link ||timestamp-link-syntax||
+### Timestamp Link [#timestamp-link-syntax]
 
 Specific to video elements, you can create links to time stamps of videos on the current page with the following syntax:
 
@@ -97,7 +97,7 @@ Note that the time stamp link follows normal markdown link syntax, but is identi
 
 ## Tagging
 
-### General Purpose Tags ||general-purpose-tag-syntax||
+### General Purpose Tags [#general-purpose-tag-syntax]
 
 <LogoAsText /> supports tags in several places and multiple components. Tags are used for connecting notes and other content based on shared content that's more specific than a text based search alone. To add a general purpose tag directly in a note, simply use the `#` symbol surrounded by square brackets, followed by the content of that tag.  
 
@@ -125,7 +125,7 @@ Note that if you prefer a centered tag list somewhere in your note, you also use
 
 ***
 
-### Equation Tags ||equation-tag-syntax||
+### Equation Tags [#equation-tag-syntax]
 
 Since Latex's math syntax allows a wide variety of syntax to produce mathematically equivalent output, searching by equation would be almost impossible to achieve reliably. <LogoAsText /> adds two alternative ways to link and search notes by equation, without the inherent reliability issue that would arise from trying to parse latex content for equivalency. The equation input form is not required to embed math inside of your note. You can just surround math with a single `$...${:mdx}` for inline math, or with `$$...$${:mdx}` for block style math, but adding important equations through the equation page allows enhanced tagging and searching features, as well as repeatedly including the equation without needing to type it multiple times.
 
@@ -158,7 +158,7 @@ The output of the above snippet will be a similar in style to regular block styl
 
 *** 
 
-## Citations  ||citation-syntax||
+## Citations  [#citation-syntax]
 
 <LogoAsText /> also supports citations directly in your note. From a single `.bib` file in your notes directory, along with the ability to drag-and-drop or paste additional bibtex citations, <LogoAsText /> builds an internal bibliography in your local database. Using an almost identical syntax to that of the [general purpose tag](#general-purpose-tag-syntax), a list of citations is generated at the end of your note and the citations used are added to that note in your database. By clicking on one of the generated citations, you'll be redirected to a search results page for all of your content that references that particular citation.
 

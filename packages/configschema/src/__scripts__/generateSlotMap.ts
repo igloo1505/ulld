@@ -2,17 +2,21 @@ import { globSync } from "glob";
 import path from "path";
 import fs from "fs";
 
+// const targetDir = path.join(__dirname, "../../../../apps/base/src");
 const targetDir = path.join(__dirname, "../../../../apps/base/src");
 const mdxPath = path.join(__dirname, "../../../../apps/website/src/mdx/docs/Developer/slotMap.mdx")
 const typePath = path.join(__dirname, "../developer/slotMapType.ts")
+const zodSlotKeyPath = path.join(__dirname, "../developer/slotKeySchema.ts")
 
-const glob = () =>
-    globSync(`**/*.{tsx,ts}`, {
+    
+
+const files = globSync(`**/*.{tsx,ts}`, {
         ignore: "**/node_modules/**",
         cwd: targetDir,
     });
 
-const files = glob();
+
+console.log("files: ", files)
 
 let items: {
     path: string;
@@ -99,6 +103,51 @@ for (const k in slotMap) {
 
 mdxSlotMap += "}"
 
+let slotKeyContent = `
+export const slotKeySchema = z.union([
+`
+
+
+let slotSubKeys: Record<string, string> = {}
+
+let subslotSchemas: string[] = []
+let addedParentSlots: string[] = []
+
+for (const k of items) {
+    console.log("k: ", k)
+    if(!addedParentSlots.includes(k.parentSlot)){
+        slotKeyContent += `z.literal("${k.parentSlot}"),`
+        addedParentSlots.push(k.parentSlot)
+    }
+   if(k.parentSlot !in slotSubKeys){
+        console.log(`In here`)
+        let name = `${k.parentSlot}SubkeySchema`
+        subslotSchemas.push(name)
+        slotSubKeys[k.parentSlot] = `
+const ${name} = z.union([`
+    }
+    if(k.subSlot){
+        slotSubKeys[k.parentSlot] += `z.literal("${k.subSlot}"),
+`
+    }
+}
+
+slotKeyContent += "])" 
+for (const k in slotSubKeys) {
+   slotSubKeys[k] += "])" 
+}
+
+const slotKeyFileContent = `
+import { z } from 'zod';
+
+${slotKeyContent}
+
+${Object.values(slotSubKeys).join("\n\n")}
+`
+
+console.log("items: ", items)
+console.log("slotKeyFileContent: ", slotKeyFileContent)
+
 
 fs.writeFileSync(mdxPath, wrapMdxContent(mdxSlotMap), {encoding: "utf-8"})
 fs.writeFileSync(typePath, `export ${mdxSlotMap}`, {encoding: "utf-8"})
@@ -106,5 +155,8 @@ fs.writeFileSync(typePath, `export ${mdxSlotMap}`, {encoding: "utf-8"})
 fs.writeFileSync(targetPath, JSON.stringify(slotMap, null, 4), {
     encoding: "utf-8",
 });
+
+
+
 
 console.log(`Wrote slotMap to @ulld/utilities/slotMap.json`);

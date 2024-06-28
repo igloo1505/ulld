@@ -3,7 +3,6 @@ import { pageTree } from "docs";
 import { appData } from "@ulld/utilities/appData";
 import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
 
-// shared configuration
 export const baseOptions: BaseLayoutProps = {
     nav: {
         title: (
@@ -20,21 +19,31 @@ export const baseOptions: BaseLayoutProps = {
             active: "nested-url",
         },
         {
-            text: "User",
-            url: "/docs/user",
+            text: "Demos",
+            url: "/demos",
             active: "nested-url",
         },
         {
-            text: "Developer",
-            url: "/docs/developer",
+            text: "Blog",
+            url: "/blog",
+            active: "nested-url",
+        },
+        {
+            text: "Configure",
+            url: "/configure",
+            active: "nested-url",
+        },
+        {
+            text: "Sponsor",
+            url: "/sponsor/newSponsors",
             active: "nested-url",
         },
     ],
     githubUrl: appData.projectRepo.url,
 };
 
-// docs layout configuration
-export const docsOptions: DocsLayoutProps = {
+
+export const docsLayoutOptions: DocsLayoutProps = {
     ...baseOptions,
     tree: pageTree,
 };
