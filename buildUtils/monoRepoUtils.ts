@@ -225,7 +225,7 @@ pnpm add @types/react@latest @types/react-dom@latest ${filter}
 
 const p = new PackageManager();
 
-// p.clearNodeModules();
+p.clearNodeModules();
 
-const found = p.findByDependency("react");
-console.log(found.map((f) => `--filter=${f.name}`).join(" "));
+// const found = p.findByDependency("react");
+// console.log(found.map((f) => `--filter=${f.name}`).join(" "));

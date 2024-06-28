@@ -9,9 +9,12 @@ export default function Layout({ children }: { children: ReactNode }) {
         <DocsLayout
             {...docsLayoutOptions}
             containerProps={{
-                className: "relative [&_#nd-sidebar]:sticky [&_#nd-sidebar]:top-0 bg-background",
+                className: "relative [&_#nd-sidebar]:sticky [&_#nd-sidebar]:top-0 bg-background text-foreground",
             }}
             sidebar={{
+                footerProps: {
+                    className: "[&_.lucide-sun]:hidden [&_.lucide-moon]:hidden"
+                },
                 banner: (
                     <RootToggle
                         options={[

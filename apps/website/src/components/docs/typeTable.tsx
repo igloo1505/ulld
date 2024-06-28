@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithoutRef } from "react";
 import { AutoTypeTable } from "fumadocs-typescript/ui";
-import path from "path";
+/* import path from "path"; */
 
 interface TypeTableProps extends ComponentPropsWithoutRef<typeof AutoTypeTable> {
     name: string;

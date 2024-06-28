@@ -57,7 +57,7 @@
     "typescript-plugin-css-modules": "^5.1.0",
     "zod-to-ts": "^1.2.0"
   },
-  "packageManager": "pnpm@9.0.4",
+  "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74",
   "engines": {
     "node": ">=20"
   },
@@ -72,7 +72,7 @@
     "fumadocs-mdx": "^8.2.33",
     "fumadocs-twoslash": "^1.1.0",
     "fumadocs-typescript": "^2.0.1",
-    "fumadocs-ui": "^12.2.5",
+    "fumadocs-ui": "link:/Users/bigsexy/Desktop/current/forks/fumadocs/packages/ui",
     "glob": "^10.3.15",
     "tinycolor2": "^1.6.0",
     "tsup": "^8.0.1",

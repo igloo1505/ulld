@@ -32,7 +32,7 @@ export default async function Page({
     return (
         <DocsPage toc={page.data.exports.toc} full={page.data.full}>
             <DocsBody
-                className={"@container/mdx prose prose-invert prose-a:text-link mdx"}
+                className={"@container/mdx prose dark:prose-invert prose-a:text-link mdx"}
             >
                 <h1>{page.data.title}</h1>
                 <MDX components={components} />

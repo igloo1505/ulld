@@ -203,13 +203,20 @@ const RootLayout = async (props: {
             <body
                 className={clsx(
                     "group/body dark max-w-full relative h-auto overflow-x-hidden w-screen min-h-screen overflow-y-auto data-[disContents=true]:contents",
-                    "contents", // Remove this if it causes issues. Added on 6-27 to handle sticky sidebar on docs pages.
+                    "contents", // Remove this if it causes issues. Added on 6-27 to handle sticky sidebar.
                     fontSans.variable,
                     preferFs && "preferFs",
                 )}
                 id={`Ulld-body-root`}
             >
-                <RootProvider>
+                <RootProvider
+                    theme={{
+                        // Come back and enable this. Was having issues with tailwind, but shouldn't be too hard to adress with a little bit of free time.
+                        enabled: false,
+                        enableColorScheme: false,
+                        enableSystem: false
+                    }}
+                >
                     <MathjaxProvider>
                         <HandleBodyDisplay />
                         <BetaBanner />

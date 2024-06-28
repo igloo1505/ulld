@@ -1,7 +1,7 @@
 import { tailwindConfig } from "@ulld/tailwind/tailwindConfig";
 import svgToDataUri from "mini-svg-data-uri";
 import { Config } from "tailwindcss/types/config";
-import { createPreset } from "fumadocs-ui/tailwind-plugin";
+import { createPreset, presets } from "fumadocs-ui/tailwind-plugin";
 
 const flattenColorPalette = (colors: any): any =>
     Object.assign(
@@ -134,8 +134,15 @@ const tailwindCfg: Config = {
         },
     ],
     presets: [
-        createPreset(),
-        // tailwindConfig
+        createPreset({
+            preset: {
+                ...presets.default,
+                dark: {
+                    ...presets.default.dark
+                }
+            }
+        }),
+        tailwindConfig
     ],
 };
 

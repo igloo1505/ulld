@@ -11,6 +11,7 @@ export const baseOptions: BaseLayoutProps = {
             </span>
         ),
         url: "/",
+        transparentMode: "top"
     },
     links: [
         {
