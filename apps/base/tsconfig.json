@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "extends": "@repo/typescript-config/nextjs.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "types": [
+            "jest",
+            "node",
+            "react",
+            "mdx",
+            "mathjax"
+        ],
+        "paths": {
+            "#/*": [
+                "./src/*"
+            ]
+        },
+        "incremental": true
+    },
+    "include": [
+        "next-env.d.ts",
+        ".next/types/**/*.ts",
+        "**/*.ts",
+        "**/*.tsx"
+    ],
+    "ignore": [
+        "**.mdx"
+    ]
+}
