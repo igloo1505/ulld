@@ -108,6 +108,17 @@ class PackageManager {
             fs.rmSync(p);
         }
     }
+    writeUpdateReactScript() {
+        let packages = this.findByDependency("react");
+        const filter = packages.map((f) => `--filter=${f.name}`).join(" ");
+        const fileContent = `#!/bin/zsh
+pnpm add next@latest react@latest react-dom@latest ${filter}
+
+pnpm add @types/react@latest @types/react-dom@latest ${filter}
+`;
+        const targetFile = path.join(__dirname, "./updateReactAndNext.zsh");
+        fs.writeFileSync(targetFile, fileContent, { encoding: "utf-8" });
+    }
     clearNodeModules(dry: boolean = false) {
         let paths = this.packages.map((a) => a.node_modules);
         paths.push(`${this.root}/node_modules`);
@@ -214,7 +225,7 @@ class PackageManager {
 
 const p = new PackageManager();
 
-p.clearNodeModules();
+// p.clearNodeModules();
 
-// const found = p.findByDependency("typescript")
-// console.log("found: ", found)
+const found = p.findByDependency("react");
+console.log(found.map((f) => `--filter=${f.name}`).join(" "));

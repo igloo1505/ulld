@@ -6,7 +6,7 @@ import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
 export const baseOptions: BaseLayoutProps = {
     nav: {
         title: (
-            <span className={"h-12"}>
+            <span className={"h-12 w-16"}>
                 <AnimatedUlldLogo speed={2.5} show={true} />
             </span>
         ),

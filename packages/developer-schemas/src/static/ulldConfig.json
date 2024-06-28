@@ -107,14 +107,14 @@
                         ".mdx",
                         ".md",
                         ".ipynb",
+                        ".pdf",
                         ".json",
                         ".csv",
                         ".tsv",
                         ".excel",
                         ".tex",
                         ".db",
-                        ".html",
-                        ".pdf"
+                        ".html"
                     ]
                 },
                 "noteTypes": {
@@ -244,10 +244,6 @@
                                             "light": {
                                                 "$ref": "#/definitions/ULLDConfig/properties/noteTypes/items/properties/UI/properties/styles/properties/dark",
                                                 "default": {}
-                                            },
-                                            "combined_classes": {
-                                                "type": "string",
-                                                "description": "Css classes to be applied to elements related to this specific document type."
                                             }
                                         },
                                         "additionalProperties": false,
@@ -2408,154 +2404,6 @@
                                                         "additionalProperties": false
                                                     },
                                                     {
-                                                        "anyOf": [
-                                                            {
-                                                                "not": {}
-                                                            },
-                                                            {
-                                                                "anyOf": [
-                                                                    {
-                                                                        "type": "object",
-                                                                        "properties": {
-                                                                            "main": {
-                                                                                "type": [
-                                                                                    "string",
-                                                                                    "null"
-                                                                                ]
-                                                                            },
-                                                                            "contrast": {
-                                                                                "type": [
-                                                                                    "string",
-                                                                                    "null"
-                                                                                ]
-                                                                            },
-                                                                            "muted": {
-                                                                                "anyOf": [
-                                                                                    {
-                                                                                        "anyOf": [
-                                                                                            {
-                                                                                                "type": "object",
-                                                                                                "properties": {
-                                                                                                    "main": {
-                                                                                                        "type": [
-                                                                                                            "string",
-                                                                                                            "null"
-                                                                                                        ]
-                                                                                                    },
-                                                                                                    "contrast": {
-                                                                                                        "type": [
-                                                                                                            "string",
-                                                                                                            "null"
-                                                                                                        ]
-                                                                                                    }
-                                                                                                },
-                                                                                                "additionalProperties": false
-                                                                                            },
-                                                                                            {
-                                                                                                "anyOf": [
-                                                                                                    {
-                                                                                                        "not": {}
-                                                                                                    },
-                                                                                                    {
-                                                                                                        "type": [
-                                                                                                            "string",
-                                                                                                            "null"
-                                                                                                        ]
-                                                                                                    }
-                                                                                                ],
-                                                                                                "description": "Color variant to be used in a 'muted' component. Should more subtly contrast with the background color than the primary foreground color."
-                                                                                            }
-                                                                                        ]
-                                                                                    },
-                                                                                    {
-                                                                                        "type": "null"
-                                                                                    }
-                                                                                ]
-                                                                            },
-                                                                            "gradient": {
-                                                                                "anyOf": [
-                                                                                    {
-                                                                                        "anyOf": [
-                                                                                            {
-                                                                                                "type": "object",
-                                                                                                "properties": {
-                                                                                                    "50": {
-                                                                                                        "type": "string"
-                                                                                                    },
-                                                                                                    "100": {
-                                                                                                        "type": "string"
-                                                                                                    },
-                                                                                                    "200": {
-                                                                                                        "type": "string"
-                                                                                                    },
-                                                                                                    "300": {
-                                                                                                        "type": "string"
-                                                                                                    },
-                                                                                                    "400": {
-                                                                                                        "type": "string"
-                                                                                                    },
-                                                                                                    "500": {
-                                                                                                        "type": "string"
-                                                                                                    },
-                                                                                                    "600": {
-                                                                                                        "type": "string"
-                                                                                                    },
-                                                                                                    "700": {
-                                                                                                        "type": "string"
-                                                                                                    },
-                                                                                                    "800": {
-                                                                                                        "type": "string"
-                                                                                                    },
-                                                                                                    "900": {
-                                                                                                        "type": "string"
-                                                                                                    },
-                                                                                                    "950": {
-                                                                                                        "type": "string"
-                                                                                                    }
-                                                                                                },
-                                                                                                "required": [
-                                                                                                    "50",
-                                                                                                    "100",
-                                                                                                    "200",
-                                                                                                    "300",
-                                                                                                    "400",
-                                                                                                    "500",
-                                                                                                    "600",
-                                                                                                    "700",
-                                                                                                    "800",
-                                                                                                    "900",
-                                                                                                    "950"
-                                                                                                ],
-                                                                                                "additionalProperties": false,
-                                                                                                "description": "An object of a single color, in which 50 represents the lightest variation and 950 represents the darkest."
-                                                                                            },
-                                                                                            {
-                                                                                                "type": "array",
-                                                                                                "items": {
-                                                                                                    "type": "string"
-                                                                                                },
-                                                                                                "minItems": 11,
-                                                                                                "maxItems": 11,
-                                                                                                "description": "An array of css color values arranged from the lightest to the darkest."
-                                                                                            }
-                                                                                        ]
-                                                                                    },
-                                                                                    {
-                                                                                        "type": "null"
-                                                                                    }
-                                                                                ]
-                                                                            }
-                                                                        },
-                                                                        "additionalProperties": false
-                                                                    },
-                                                                    {
-                                                                        "type": "null"
-                                                                    }
-                                                                ]
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
                                                         "type": "string"
                                                     }
                                                 ]
@@ -2950,79 +2798,453 @@
                     "type": "object",
                     "properties": {
                         "navigation": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "version": {
+                                            "type": "string",
+                                            "default": "latest"
+                                        }
+                                    },
+                                    "required": [
+                                        "name"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/navigation"
                         },
                         "plot": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/plot"
                         },
                         "bibliography": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/bib-manager"
                         },
                         "calendar": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/calendar"
                         },
                         "commandPalette": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/command-palette"
                         },
                         "editor": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/editor"
                         },
                         "math": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/equations"
                         },
                         "form": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/full-form"
                         },
                         "icons": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/icons"
                         },
                         "notebook": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/notebook"
                         },
                         "kanban": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/kanban"
                         },
                         "dashboard": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/landing-layouts"
                         },
                         "logger": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/logger"
                         },
                         "journal": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/journal"
                         },
                         "noteNetwork": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/note-network"
                         },
                         "pdf": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/pdf"
                         },
                         "snippets": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/snippets"
                         },
                         "taskManager": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/task-manager"
                         },
                         "whiteboard": {
-                            "type": "string",
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
                             "default": "@ulld/whiteboard"
                         },
                         "components": {
@@ -3038,10 +3260,134 @@
                                 "type": "string"
                             },
                             "default": {}
+                        },
+                        "UI": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
+                                    }
+                                }
+                            ],
+                            "default": "@ulld/ui"
                         }
                     },
                     "additionalProperties": false,
                     "default": {}
+                },
+                "build": {
+                    "type": "object",
+                    "properties": {
+                        "database": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "Postgres",
+                                        "SQLite"
+                                    ],
+                                    "default": "SQLite"
+                                },
+                                "postgres": {
+                                    "type": "object",
+                                    "properties": {
+                                        "port": {
+                                            "type": "integer",
+                                            "default": 5432
+                                        },
+                                        "dbName": {
+                                            "type": "string",
+                                            "default": "ulld"
+                                        },
+                                        "connectionURI": {
+                                            "type": "string",
+                                            "default": ""
+                                        }
+                                    },
+                                    "additionalProperties": false,
+                                    "default": {}
+                                },
+                                "prioritize": {
+                                    "type": "string",
+                                    "enum": [
+                                        "speed",
+                                        "size"
+                                    ],
+                                    "default": "speed"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "default": {}
+                        },
+                        "additionalUserContent": {
+                            "type": "object",
+                            "properties": {
+                                "css": {
+                                    "type": "string"
+                                },
+                                "favicon": {
+                                    "type": "string"
+                                },
+                                "logo": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "default": {}
+                        }
+                    },
+                    "additionalProperties": false,
+                    "default": {}
+                },
+                "plugins": {
+                    "anyOf": [
+                        {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "version": {
+                                    "type": "string",
+                                    "default": "latest"
+                                }
+                            },
+                            "required": [
+                                "name"
+                            ],
+                            "additionalProperties": false
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/ULLDConfig/properties/plugins/anyOf/0"
+                            }
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    ],
+                    "default": []
                 }
             },
             "required": [

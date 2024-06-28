@@ -2,6 +2,7 @@ import { z } from "zod";
 import { transformExportString } from "./transforms";
 import { EmbeddableConfig } from "./types/embeddableConfig";
 import { ComponentConfig } from "./types";
+import { slotKeySchema } from "./slotKeySchema";
 
 export const embeddableConfigSchema: z.ZodType<EmbeddableConfig> = z
     .object({
@@ -31,7 +32,7 @@ export const componentConfigSchema: z.ZodType<ComponentConfig> = z.object({
         .describe("Must start with a capital letter.")
         .transform((f) => `${f[0].toUpperCase()}${f.slice(1)}`),
     slot: z
-        .string()
+    .string()
         .optional()
         .describe(
             "This only applys if the component is meant to override an existing slot. All 'slots' in the appConfigSchema exported from @ulld/configschema/main/zod at the slots key will have an accompanying 'subslot' schema exported from @ulld/configschema/subslots/<name of that slot>. This schema will be a record of a specific set of keys unique to that slot, and a path to a component. All of these paths are initially populated by internally developed components, but can be overridden if your plugin defines the initial slot at the developerConfigSchema.slot path, and then overrides one or more subslots unique to that slot. This componentConfigSchema.slot path will be that subslot if it applies. Most components that are embedded in a user's notes, and don't modify the app as a whole do not occupy slots.",

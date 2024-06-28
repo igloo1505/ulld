@@ -2,7 +2,6 @@ import { globSync } from "glob";
 import path from "path";
 import fs from "fs";
 
-// const targetDir = path.join(__dirname, "../../../../apps/base/src");
 const targetDir = path.join(__dirname, "../../../../apps/base/src");
 const mdxPath = path.join(__dirname, "../../../../apps/website/src/mdx/docs/Developer/slotMap.mdx")
 const typePath = path.join(__dirname, "../developer/slotMapType.ts")
@@ -16,7 +15,6 @@ const files = globSync(`**/*.{tsx,ts}`, {
     });
 
 
-console.log("files: ", files)
 
 let items: {
     path: string;
@@ -38,13 +36,27 @@ for (const k of files) {
         if (slots.length !== 2) {
             throw new Error(`Misformed slot string at ${k}`);
         }
-        items.push({
+        const newItem = {
             path: k,
             parentSlot: slots[0],
             subSlot: slots[1],
             clientOnly: content.includes("Slot:clientOnly"),
             inReduxProvider: content.includes("Slot:inReduxProvider"),
-        });
+        }
+        let hasItem = items.find((f) => Boolean(f.parentSlot === newItem.parentSlot && f.subSlot === newItem.subSlot))
+        if(hasItem){
+            throw new Error(`Found duplicate slots at:
+parentSlot: ${hasItem.parentSlot}
+subSlot: ${hasItem.subSlot}
+path: ${hasItem.path}
+----
+parentSlot: ${newItem.parentSlot}
+subSlot: ${newItem.subSlot}
+path: ${newItem.path}
+`)
+        }
+
+        items.push(newItem);
     }
 }
 
@@ -114,20 +126,24 @@ let subslotSchemas: string[] = []
 let addedParentSlots: string[] = []
 
 for (const k of items) {
-    console.log("k: ", k)
     if(!addedParentSlots.includes(k.parentSlot)){
-        slotKeyContent += `z.literal("${k.parentSlot}"),`
+        slotKeyContent += `    z.literal("${k.parentSlot}"),
+`
         addedParentSlots.push(k.parentSlot)
     }
-   if(k.parentSlot !in slotSubKeys){
-        console.log(`In here`)
+    // console.log("slotSubKeys: ", slotSubKeys)
+   if(!(k.parentSlot in slotSubKeys)){
         let name = `${k.parentSlot}SubkeySchema`
         subslotSchemas.push(name)
         slotSubKeys[k.parentSlot] = `
-const ${name} = z.union([`
-    }
+export const ${name} = z.union([
+`
+    }  
     if(k.subSlot){
-        slotSubKeys[k.parentSlot] += `z.literal("${k.subSlot}"),
+        // console.log("k: ", k)
+        // console.log("k.parentSlot: ", k.parentSlot)
+        // console.log("slotSubKeys: ", slotSubKeys)
+        slotSubKeys[k.parentSlot] += `    z.literal("${k.subSlot}"),
 `
     }
 }
@@ -143,9 +159,9 @@ import { z } from 'zod';
 ${slotKeyContent}
 
 ${Object.values(slotSubKeys).join("\n\n")}
+
 `
 
-console.log("items: ", items)
 console.log("slotKeyFileContent: ", slotKeyFileContent)
 
 
@@ -156,6 +172,9 @@ fs.writeFileSync(targetPath, JSON.stringify(slotMap, null, 4), {
     encoding: "utf-8",
 });
 
+fs.writeFileSync(zodSlotKeyPath, slotKeyFileContent, {
+    encoding: "utf-8",
+});
 
 
 

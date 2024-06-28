@@ -1,2 +1,12 @@
-export type {ComponentConfig, DeveloperConfigInput, SlotMap, EmbeddableConfig } from "@ulld/configschema/developerTypes"
-
+export type {
+    SlotMap,
+    ComponentConfig,
+    EmbeddableConfig,
+    DeveloperConfigInput,
+    ParserConfig,
+    AdditionalImportsConfig,
+    TrpcConfig,
+    PluginSettingsConfig,
+    PluginPageConfig,
+    PluginEventsConfig,
+} from "@ulld/configschema/developerTypes";

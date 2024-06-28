@@ -1,4 +1,7 @@
-import { generateComponentMaps } from "./generateComponentMaps.ts"
+import { convertUlldSyntax } from "./convertUlldSyntax.ts";
+import { generateComponentMaps } from "./generateComponentMaps.ts";
 
-
-await generateComponentMaps()
+(async () => {
+    await convertUlldSyntax();
+    await generateComponentMaps();
+})();
