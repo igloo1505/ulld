@@ -9,9 +9,11 @@ import { PluginPage } from "./page";
 import { PluginParser } from "./parser";
 import { PluginEvents } from "./pluginEvents";
 import { TargetPaths } from "./paths";
+import { ShellManager } from "./baseClasses/shell";
 
-export class UlldPlugin {
-    pluginConfig?: DeveloperConfigOutput;
+export class UlldPlugin extends ShellManager {
+    pluginConfig: DeveloperConfigOutput | "Unusable" = "Unusable";
+    inConfigAsSlot: boolean = false
     packageRoot: string;
     hasConfig: boolean = false;
     slot?: PluginSlot;
@@ -28,16 +30,22 @@ export class UlldPlugin {
         public name: string,
         public version?: string,
     ) {
+        super();
         this.targetDir = paths.targetDir;
         this.packageRoot = path.join(this.targetDir, "node_modules", this.name);
         let configPath = path.join(this.packageRoot, "pluginConfig.ulld.json");
-        if (fs.existsSync(configPath)) {
-            this.hasConfig = true;
-            this.pluginConfig = JSON.parse(
-                fs.readFileSync(configPath, { encoding: "utf-8" }),
-            ) as DeveloperConfigOutput;
+        if (!fs.existsSync(configPath)) {
+            this.log(
+                `No plugin configuration was found for the ${this.name} plugin. This plugin will be overridden.`,
+            );
+            return;
+        }
+        this.hasConfig = true;
+        this.pluginConfig = JSON.parse(
+            fs.readFileSync(configPath, { encoding: "utf-8" }),
+        ) as DeveloperConfigOutput;
+        if ((this.pluginConfig as any) !== "Unusable") {
             this.events = new PluginEvents(this.pluginConfig?.events || {});
-            if (!this.pluginConfig) return;
             if (this.pluginConfig?.slot) {
                 this.slot = new PluginSlot(
                     this.name,
@@ -47,7 +55,7 @@ export class UlldPlugin {
             this.components = this.pluginConfig.components.map(
                 (f) =>
                     new PluginComponent(f, {
-                        parentSlot: this.pluginConfig?.slot,
+                        parentSlot: (this.pluginConfig as DeveloperConfigOutput)?.slot,
                         pluginName: this.name,
                     }),
             );
@@ -58,7 +66,7 @@ export class UlldPlugin {
         }
     }
     removeUnusedPages() {
-        this.pages = this.pages.filter((f) => f.shouldUse)
+        this.pages = this.pages.filter((f) => f.shouldUse);
     }
     removeRejectedSlots() {
         this.components = this.components.filter((c) => {
@@ -141,5 +149,10 @@ export class UlldPlugin {
             [this.name]: this.version || "latest",
         };
         return { pkg: pkg, isNew };
+    }
+    async applyPages() {
+        for await (const k of this.pages) {
+            await k.writePage();
+        }
     }
 }

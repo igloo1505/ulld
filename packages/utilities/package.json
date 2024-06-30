@@ -67,6 +67,7 @@
     "./appData": "./src/appData.ts",
     "./listUtils": "./src/utils/listUtils.ts",
     "./stringUtils": "./src/utils/stringUtils.ts",
+    "./numberUtils": "./src/utils/numberUtils.ts",
     "./regexUtils": "./src/utils/regexUtils.ts",
     "./slotMap.json": "./src/utils/slotMap.json"
   },
@@ -107,6 +108,7 @@
   "peerDependencies": {
     "@ulld/database": "workspace:*",
     "@ulld/tailwind": "workspace:*",
+    "@ulld/math": "workspace:*",
     "dayjs": "^1.11.10",
     "next": "^13.1.16",
     "react": "^18.2.0",

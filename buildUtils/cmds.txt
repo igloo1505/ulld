@@ -1,7 +1,11 @@
-Generate Docs | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/generateDocs.zsh
+Generate docs | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/generateDocs.zsh
 Clear test build | trash /Users/bigsexy/Desktop/current/ulldApp
 Copy backup build to correct location | cp -r /Users/bigsexy/Desktop/current/ulldAppBackup/ /Users/bigsexy/Desktop/current/ulldApp
 Run build script | tsx /Users/bigsexy/Desktop/current/ulld/packages/build/src/main.ts 
 Copy app config for build script | tsx /Users/bigsexy/Desktop/current/ulld/packages/build/src/devScripts/copyAppConfig.ts
 Update React and Next | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/updateReactAndNext.zsh
-Generate Unified Theme | tsx /Users/bigsexy/Desktop/current/ulld/packages/tailwindAndShad/src/scripts/generateUnifiedTheme.ts
+Generate unified theme | tsx /Users/bigsexy/Desktop/current/ulld/packages/tailwindAndShad/src/scripts/generateUnifiedTheme.ts
+Generate Web Component Map | tsx /Users/bigsexy/Desktop/current/ulld/apps/website/src/buildScripts/generateComponentMaps.ts
+Run web app in development | pnpm turbo --log-order=stream run dev --filter @ulld/website
+Generate test directory | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/copyBaseForTesting.zsh
+Create new math test data | python /Users/bigsexy/Desktop/current/ulld/buildUtils/generateExtendedMathTestData.py

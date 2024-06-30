@@ -1,20 +1,20 @@
 import { globSync } from "glob";
 import path from "path";
 import fs from "fs";
+import { capitalize } from "@ulld/utilities/stringUtils";
 
 const targetDir = path.join(__dirname, "../../../../apps/base/src");
-const mdxPath = path.join(__dirname, "../../../../apps/website/src/mdx/docs/Developer/slotMap.mdx")
-const typePath = path.join(__dirname, "../developer/slotMapType.ts")
-const zodSlotKeyPath = path.join(__dirname, "../developer/slotKeySchema.ts")
-
-    
+const mdxPath = path.join(
+    __dirname,
+    "../../../../apps/website/src/mdx/docs/Developer/slotMap.mdx",
+);
+const typePath = path.join(__dirname, "../developer/slotMapType.ts");
+const zodSlotKeyPath = path.join(__dirname, "../developer/slotKeySchema.ts");
 
 const files = globSync(`**/*.{tsx,ts}`, {
-        ignore: "**/node_modules/**",
-        cwd: targetDir,
-    });
-
-
+    ignore: "**/node_modules/**",
+    cwd: targetDir,
+});
 
 let items: {
     path: string;
@@ -42,9 +42,13 @@ for (const k of files) {
             subSlot: slots[1],
             clientOnly: content.includes("Slot:clientOnly"),
             inReduxProvider: content.includes("Slot:inReduxProvider"),
-        }
-        let hasItem = items.find((f) => Boolean(f.parentSlot === newItem.parentSlot && f.subSlot === newItem.subSlot))
-        if(hasItem){
+        };
+        let hasItem = items.find((f) =>
+            Boolean(
+                f.parentSlot === newItem.parentSlot && f.subSlot === newItem.subSlot,
+            ),
+        );
+        if (hasItem) {
             throw new Error(`Found duplicate slots at:
 parentSlot: ${hasItem.parentSlot}
 subSlot: ${hasItem.subSlot}
@@ -53,7 +57,7 @@ path: ${hasItem.path}
 parentSlot: ${newItem.parentSlot}
 subSlot: ${newItem.subSlot}
 path: ${newItem.path}
-`)
+`);
         }
 
         items.push(newItem);
@@ -84,10 +88,8 @@ const targetPath = path.join(
     "../../../utilities/src/utils/slotMap.json",
 );
 
-
-
 const wrapMdxContent = (val: string) => {
-const d = new Date()
+    const d = new Date();
     return `---
 id: slotMapType
 category: developerTypes
@@ -99,58 +101,53 @@ updated: ${d.getMonth()}-${d.getDate()}-${d.getFullYear()}
 \`\`\`tsx
 ${val}
 \`\`\`
-`
-}
+`;
+};
 
 let mdxSlotMap = `type SlotMap = {
-`
+`;
 
 for (const k in slotMap) {
-    mdxSlotMap += `    ${k}: {\n`
+    mdxSlotMap += `    ${k}: {\n`;
     for (const l in slotMap[k as keyof typeof slotMap]) {
-       mdxSlotMap += `        ${l}: string,\n` 
+        mdxSlotMap += `        ${l}: string,\n`;
     }
-    mdxSlotMap += "    }, \n"
+    mdxSlotMap += "    }, \n";
 }
 
-mdxSlotMap += "}"
+mdxSlotMap += "}";
 
 let slotKeyContent = `
 export const slotKeySchema = z.union([
-`
+`;
 
+let slotSubKeys: Record<string, string> = {};
 
-let slotSubKeys: Record<string, string> = {}
-
-let subslotSchemas: string[] = []
-let addedParentSlots: string[] = []
+let subslotSchemas: string[] = [];
+let addedParentSlots: string[] = [];
 
 for (const k of items) {
-    if(!addedParentSlots.includes(k.parentSlot)){
+    if (!addedParentSlots.includes(k.parentSlot)) {
         slotKeyContent += `    z.literal("${k.parentSlot}"),
-`
-        addedParentSlots.push(k.parentSlot)
+`;
+        addedParentSlots.push(k.parentSlot);
     }
-    // console.log("slotSubKeys: ", slotSubKeys)
-   if(!(k.parentSlot in slotSubKeys)){
-        let name = `${k.parentSlot}SubkeySchema`
-        subslotSchemas.push(name)
+    if (!(k.parentSlot in slotSubKeys)) {
+        let name = `${k.parentSlot}SubkeySchema`;
+        subslotSchemas.push(name);
         slotSubKeys[k.parentSlot] = `
 export const ${name} = z.union([
-`
-    }  
-    if(k.subSlot){
-        // console.log("k: ", k)
-        // console.log("k.parentSlot: ", k.parentSlot)
-        // console.log("slotSubKeys: ", slotSubKeys)
+`;
+    }
+    if (k.subSlot) {
         slotSubKeys[k.parentSlot] += `    z.literal("${k.subSlot}"),
-`
+`;
     }
 }
 
-slotKeyContent += "])" 
+slotKeyContent += "])";
 for (const k in slotSubKeys) {
-   slotSubKeys[k] += "])" 
+    slotSubKeys[k] += "])";
 }
 
 const slotKeyFileContent = `
@@ -160,13 +157,19 @@ ${slotKeyContent}
 
 ${Object.values(slotSubKeys).join("\n\n")}
 
-`
-
-console.log("slotKeyFileContent: ", slotKeyFileContent)
+`;
 
 
-fs.writeFileSync(mdxPath, wrapMdxContent(mdxSlotMap), {encoding: "utf-8"})
-fs.writeFileSync(typePath, `export ${mdxSlotMap}`, {encoding: "utf-8"})
+fs.writeFileSync(mdxPath, wrapMdxContent(mdxSlotMap), { encoding: "utf-8" });
+fs.writeFileSync(
+    typePath,
+    `export ${mdxSlotMap}
+
+export type PluginSlotKey = keyof SlotMap
+
+${Object.keys(slotSubKeys).map((k) => `export type ${capitalize(k)}SubSlots = keyof SlotMap["${k}"]`).join("\n\n")}`,
+    { encoding: "utf-8" },
+);
 
 fs.writeFileSync(targetPath, JSON.stringify(slotMap, null, 4), {
     encoding: "utf-8",
@@ -175,7 +178,5 @@ fs.writeFileSync(targetPath, JSON.stringify(slotMap, null, 4), {
 fs.writeFileSync(zodSlotKeyPath, slotKeyFileContent, {
     encoding: "utf-8",
 });
-
-
 
 console.log(`Wrote slotMap to @ulld/utilities/slotMap.json`);

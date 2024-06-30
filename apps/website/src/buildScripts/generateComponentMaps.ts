@@ -47,6 +47,8 @@ export const generateComponentMaps = async () => {
     fs.writeFileSync(targetPath, JSON.stringify(data, null, 4), {
         encoding: "utf-8",
     });
+    console.log(`Updated website component map.`)
 };
 
 generateComponentMaps();
+

@@ -1,0 +1,337 @@
+---
+title: ULLD Syntax
+id: syntaxDocs
+created: 6-8-24
+---
+
+
+<AnimatedLogo show height={48} suffixDelay={1.45} speed={3} h1 suffix={"Syntax"} />
+
+
+<Admonition title="React Syntax" type="important" sidebar>
+
+ If you are unfamiliar with React syntax, **JSX**, you should definitely start by reviewing the [intro to jsx](/docs/user/introToJsx) documentation. There is nothing unique about the JSX in <LogoAsText />, and the React documentation [here](https://react.dev) can provide the same information, but the [intro to jsx](/docs/user/introToJsx) documentation was created to skip the bits that refer to those _creating_ their own React components, and instead provide a quick reference for those simply trying to implement pre-existing components in their notes.
+
+</Admonition>
+
+<LogoAsText /> extends standard Markdown syntax to include [Github flavored markdown](https://docs.github.com/articles/basic-writing-and-formatting-syntax) and embedded [React](https://react.dev) components thanks to the awesome work of the contributors over at [MDX](https://mdxjs.com).
+
+If you're unfamiliar with React, don't worry. You don't need to know how to create your own components, write your own css, or retrieve anything from the database yourself. One of the primary goals of <LogoAsText /> is to become a unified framework for all sorts of academic note taking and organization by making it easy for those with development experience or those willing to learn to share their own components with other <LogoAsText /> users.
+
+Along with the ability to create their own components that can be easily added by other users by simply adding the package name to their configuration file, developers can also add additional parsing functionality that adds the ability to convert different syntaxes into useful components, outside of standard **JSX** or markdown syntax.
+
+The following syntaxes are enabled by default.
+
+***
+
+## Assigning Id's [#valid-dom-id-reference]
+
+
+Many of the included example url's use a `/some/note/here#withAPoundSymbol` syntax. The value following the `#` symbol can be any id on that page. While many components will generate their own id's, they're very likely to be dynamically generated and be useless for navigating after a page reloads. You can however override these dynamically generated id's as most components will accept an `id` property, and they can be applied to any header with the following syntax:
+
+```mdx
+---
+title: My Note
+id: mySpecialNote
+---
+... 
+
+## This is some header [#my-header-id]
+```
+
+Now you can navigate to the page with the id of `mySpecialNote` using the link syntax described [below](#note-id-link-syntax). You can also link directly to another element on the same page by forgoing the first bit of the URL as I just did above where I used `[below](#note-id-link-syntax){:mdx}` to link to the next section. 
+
+<Hint>
+    Try opening up the inspector panel in your browser to see where that id appears.
+</Hint>
+
+> Make ***sure*** to use a valid HTML id. This means it must start with a letter, not a number, must have no spaces, and only a subset of special characters. It's usually best to just stick with letters and `-` symbols. You can take a look at a much more detailed explanation [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id)
+
+## Links
+
+### Smart Linking [#note-id-link-syntax]
+
+Alongside standard markdown link syntax, where `[Google](https://www.google.com){:mdx}` gives [Google](https://www.google.com), <LogoAsText /> adds the ability to link to other notes by a unique ID added to that note's [front matter](/docs/user/frontMatter).
+
+#### Example 
+
+```mdx title="MyOtherNote.mdx"
+---
+title: My Other Note
+id: noteExampleWithId
+---
+
+...Some other arbitrary note content.
+
+<Admonition title="Some admonition" sidebar id="someOptionalElementIdInPage">
+    When the link below links to this page, the note will automatically scroll to this element.
+    The id in the link is optional, and comes after the `#`.
+    If you do not include an element ID, do not include the `#` either.
+</Admonition>
+```
+
+```mdx title="MyNote.mdx"
+Review the note [here](note:noteExampleWithId), 
+especially the bit [here](note:noteExampleWithId#someOptionalElementIdInPage).
+```
+
+*** 
+
+### Timestamp Link [#timestamp-link-syntax]
+
+Specific to video elements, you can create links to time stamps of videos on the current page with the following syntax:
+
+```mdx
+<Video file="/path/to/my/video.mp4" id="videosUniqueReferenceId" />
+
+As you can see at [4 minutes and 6 seconds](videoLink/videosUniqueReferenceId/4:06) in the video above,
+the creator of ULLD is incredibly good looking.
+```
+
+Note that the time stamp link follows normal markdown link syntax, but is identified internally by the leading `videoLink/...{:mdx}` path. This `videoLink/...{:mdx}` must be immediately followed by the matching unique id of the video you're addressing, and then by the time stamp. The time stamp is in the format of `hours:minutes:seconds{:mdx}` or `minutes:seconds{:mdx}`.
+
+<Hint>
+    Make sure to follow the id limitations described [here](#valid-dom-id-reference).
+</Hint>
+
+***
+
+## Tagging
+
+### General Purpose Tags [#general-purpose-tag-syntax]
+
+<LogoAsText /> supports tags in several places and multiple components. Tags are used for connecting notes and other content based on shared content that's more specific than a text based search alone. To add a general purpose tag directly in a note, simply use the `#` symbol surrounded by square brackets, followed by the content of that tag.  
+
+```mdx
+You can find related notes by clicking [#here], [#overThere], and [#overHere].
+```
+
+#### Output
+
+You can find related notes by clicking <Tag>here</Tag>, <Tag>overThere</Tag> and <Tag>overHere</Tag>.
+
+In the demo the tags above won't do anything, but in an actual <LogoAsText /> app, they will link to a page displaying search results for all content that includes that same tag.
+
+<Hint>
+    Several features, including the tagging feature rely on data inside of the <LogoAsText fontSize={13} /> database. This database runs on your own machine, and is not shared with anyone, but links will only be found within a note after the database is synchronized after adding that tag within that note. This speeds up searching significantly as opposed to parsing the text of every note on every search.
+</Hint>
+
+Note that if you prefer a centered tag list somewhere in your note, you also use the **TagBar** component.
+
+```tsx
+<TagBar>here overThere overHere</TagBar>
+```
+
+<TagBar>here overThere overHere</TagBar>
+
+***
+
+### Equation Tags [#equation-tag-syntax]
+
+Since Latex's math syntax allows a wide variety of syntax to produce mathematically equivalent output, searching by equation would be almost impossible to achieve reliably. <LogoAsText /> adds two alternative ways to link and search notes by equation, without the inherent reliability issue that would arise from trying to parse latex content for equivalency. The equation input form is not required to embed math inside of your note. You can just surround math with a single `$...${:mdx}` for inline math, or with `$$...$${:mdx}` for block style math, but adding important equations through the equation page allows enhanced tagging and searching features, as well as repeatedly including the equation without needing to type it multiple times.
+
+> When you add an equation through the equations page, choose an ID that represents that unique equation for the ID field. Keep in mind, this ID must be [DOM compliant](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id), but adding this ID allows you to include a reference to this equation in your notes in two new ways.
+
+First, you can add an equation specific tag, with the following syntax:
+
+```mdx
+[eq:timeDilationGamma]
+```
+
+This will output a tag similar in style to general purpose tags, but will include the note that includes this tag in the search result when filtering notes by that specific equation.
+
+If you want to actually display the equation in the note instead of a tag, you can use the **Equation**  component.
+
+```mdx
+<Equation id="timeDilationGamma" />
+```
+
+The output of the above snippet will be a similar in style to regular block style math, but will also be clickable. When an equation that is embedded through the `<Equation/>{:tsx}` component is clicked, a modal similar to the screenshot below will appear allowing you to filter notes by that equation, copy code for that equation, copy the latex for that equation, or to edit that equation in your personal database.
+
+
+<Image 
+    url="/assets/images/demos/equationModal.png" 
+    xl 
+    center
+/>
+
+
+
+*** 
+
+## Citations  [#citation-syntax]
+
+<LogoAsText /> also supports citations directly in your note. From a single `.bib` file in your notes directory, along with the ability to drag-and-drop or paste additional bibtex citations, <LogoAsText /> builds an internal bibliography in your local database. Using an almost identical syntax to that of the [general purpose tag](#general-purpose-tag-syntax), a list of citations is generated at the end of your note and the citations used are added to that note in your database. By clicking on one of the generated citations, you'll be redirected to a search results page for all of your content that references that particular citation.
+
+The default citation format is **AIP**, but you can also add any valid `.csl` file to format your citations at the root of your notes directory. You can find a repository of dozens of `.csl` files for a wide variety of citation formats <StaticLink link="links.docs.external.cslRepo">here</StaticLink>
+
+#### Example
+
+```bibtex title="citations.bib"
+@article{gordon_determining_2008,
+    title = {Determining the motion of the {Solar} system relative to the cosmic
+             microwave background using {Type} {Ia} supernovae},
+    volume = {387},
+    issn = {0035-8711},
+    url = {https://doi.org/10.1111/j.1365-2966.2008.13239.x},
+    doi = {10.1111/j.1365-2966.2008.13239.x},
+    ...
+    journal = {Monthly Notices of the Royal Astronomical Society},
+    author = {Gordon, Christopher and Land, Kate and Slosar, Anže},
+    month = {jun},
+    year = {2008},
+    pages = {371--376},
+}
+```
+
+```mdx title="MyNote.mdx"
+As you can see, $\bar{v}$ corresponds closely with
+several observational studies[@gordon_determining_2008],
+giving further credence to this proposed model of relativistic spatial dilation.
+```
+
+#### Output
+
+As you can see, $\bar{v}$ corresponds closely with several observational studies<sup><a role="button" class="citation citationAnchor" id="cit-gordon_determining_2008-idx-0">1</a></sup>, giving further credence to this proposed model of relativistic spatial dilation.
+
+
+<div class="w-full not-prose"><h2 class="w-full text-start text-xl font-semibold my-4">References</h2><a role="button"><div id="bib-gordon_determining_2008" class="flex flex-row justify-start items-start gap-4 text-sm text-gray-600 dark:text-gray-400"><div class="csl-bib-body"><div data-csl-entry-id="gordon_determining_2008" class="csl-entry"><sup>1</sup> C. Gordon, K. Land, and A. Slosar, “Determining the motion of the Solar system relative to the cosmic microwave background using Type Ia supernovae,” Monthly Notices of the Royal Astronomical Society <b>387</b>(1), 371–376 (2008).</div></div></div></a></div>
+
+
+## Definitions
+
+You can also add definitions through your notes, which are then turned into a single dictionary that can be accessed either on it's own page or through your app's command palette.
+
+To add a dictionary entry anywhere inside of `MDX` content, use the following syntax:
+
+```mdx
+[define:someUniqueEntryId]{Conic Section}(The circle,
+ellipse, parabola and hyperbola are called _conic sections_ 
+because each shape can be obtained when a plane intersects one
+or two right circular cones.)
+```
+
+<dl id="def-conicSections" class="definitionAnchor not-prose"><dt><p>Conic Sections</p></dt><dd><p>The circle, ellipse, parabola and hyperbola are called <em>conic sections</em> because each shape can be obtained when a plane intersects one or two right circular cones.</p></dd></dl>
+
+The definition will appear in that note with a reasonable defintion style as shown above, and it will be automatically added to a global dictionary which can be access at the dedicated dictionary page, or through the command palette from anywhere in your app for quick reference.
+
+
+## Markdown Syntax Review
+
+As a quick refresher, all markdown and GFM markdown syntax is supported in <LogoAsText />. 
+
+You can add _italic_ text with `_this is italic_{:mdx}`, **bold** text with `**this is bold**{:mdx}`, and make text both bold ***and*** italic with `***this is bold and italic***{:mdx}`. As a matter of fact, using underscores for italics is a common pattern, but underscores and astericks are interchangable with regards to bold and italic text. 
+
+You can add a [link](/) with `[the text of my link](/some/path/in/my/notes){:mdx}` or `[some other text](https://google.com){:mdx}`.
+
+You can create lists with either:
+
+```mdx
+1. Item one
+2. Item two
+3. Item three
+
+or 
+
+- Item one
+- Item two
+- Item three
+```
+
+You can create checkboxes with `- [ ] Some unchecked item{:mdx}` or `- [x] Some checked item{:mdx}` which gives:
+
+- [ ] Some unchecked item
+- [x] Some checked item
+
+You can create titles up to 6 levels deep by starting the line with a `#` symbol, where `#{:mdx}` is the largest title and `######{:mdx}` is the smallest.
+
+You can create footnotes by including two paired items with the following syntax:
+
+```mdx
+This is regular text[^1]
+
+[^1]: This is the footnote appended to the bottom. 
+    Make sure to increment the indices.
+    They do not need to be in order.
+    They will be sorted to match the order in which they appear.
+    To include a line break, indent the following line 4 spaces.
+```
+
+You can also add a block quote by starting a line with `>` as:
+
+```mdx
+> This is a block quote.
+```
+
+> This is a block quote.
+
+And you can add syntax highlighted code inline, with `` `const x = 2{:js}` {:mdx}``, where `\{:js}` is optional, and `js` is interchangable with any [Shiki](https://shiki.style/languages) supported language. To add a code block, you can use the following syntax:
+
+````mdx
+```js
+const x = 2
+```
+````
+
+#### Output
+
+```js
+const x = 2
+```
+
+Additionally, in code blocks, you can add titles and highlight specific lines with the following syntax:
+
+````mdx
+```python {4,5} title="gamma.py" caption="The time dilation scalar."
+import numpy as np
+import scipy.constants as spc
+
+def gamma(v):
+    return 1 / np.sqrt(1 - v**2 / spc.c**2)
+```
+````
+
+
+```python {4,5} title="gamma.py" caption="The time dilation scalar."
+import numpy as np
+import scipy.constants as spc
+
+def gamma(v):
+    return 1 / np.sqrt(1 - v**2 / spc.c**2)
+```
+
+Or highlight specific words based on a regular expression with:
+
+
+````mdx
+```python /delta/ title="dsdr.py"
+import numpy as np
+import sympy as smp
+import scipy.constants as spc
+
+G, R, m, c = smp.symbols(["G", "R", "m", "c"])
+
+delta = 2 * G * m / R**3
+
+deltaBar = smp.integrate(delta, R) / R
+
+vBar = c * smp.sqrt(1 - 1 / (deltaBar)**2)
+```
+````
+
+
+```python /delta/ title="dsdr.py"
+import numpy as np
+import sympy as smp
+import scipy.constants as spc
+
+G, R, m, c = smp.symbols(["G", "R", "m", "c"])
+
+delta = 2 * G * m / R**3
+
+deltaBar = smp.integrate(delta, R) / R
+
+vBar = c * smp.sqrt(1 - 1 / (deltaBar)**2)
+```
+
+Syntax highlighting inside of code blocks is powered by [rehype-pretty-code](https://rehype-pretty.pages.dev), which in turn relies on [Shiki](https://shiki.style). By default, the `transformerNotationWordHighlight` and `transformerMetaHighlight` transformers are enabled. Before the alpha release of <LogoAsText />, these transformers will be configurable from your configuration file, and be extended to optional include any of the remaining Shiki transfomers available [here](https://shiki.style/packages/transformers).

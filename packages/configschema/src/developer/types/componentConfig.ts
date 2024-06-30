@@ -4,7 +4,7 @@ export type ComponentConfig = {
     componentName: string;
     slot?: string;
     export: string
-    embedable?: EmbeddableConfig | EmbeddableConfig[]
+    embeddable?: EmbeddableConfig | EmbeddableConfig[]
     docsExport?: string
     fullDocsExport?: string
 };

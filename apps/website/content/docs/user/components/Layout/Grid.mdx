@@ -1,0 +1,48 @@
+---
+title: Grid & GridItem
+---
+
+
+## Grid 
+
+A grid can be used to align content into a symmetrical grid of user defined sizes and dimensions.
+
+<Hint>
+  Try combining the Grid component with multiple Card components for lists of
+  content that is too complex to fit in an actual list.
+</Hint>
+
+<TypeDoc 
+    propsTitle
+    name="GridProps"
+/>
+
+
+## Grid Item
+
+The GridItem component can be used to add default styles to content within the Grid component. This is not required to display content within the grid component, but adds reasonable default styling and size properties.
+
+<TypeDoc 
+    propsTitle
+    name="GridItemProps"
+/>
+
+#### Example 
+
+```tsx
+<Grid minMax={200}>
+  <GridItem>Plain</GridItem>
+  <GridItem background>With background</GridItem>
+  <GridItem center background>
+    Centered
+  </GridItem>
+</Grid>
+```
+
+### Output
+
+<Grid minMax={200}>
+  <GridItem>Plain</GridItem>
+  <GridItem background>With background</GridItem>
+  <GridItem center>Centered</GridItem>
+</Grid>

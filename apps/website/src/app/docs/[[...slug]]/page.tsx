@@ -5,7 +5,9 @@ import { notFound } from "next/navigation";
 import { getComponentMap } from "@ulld/component-map/client";
 import componentMap from "#/fumaDocs/generatedComponentMap.json";
 import { serverComponentMap } from "#/mdx/serverComponentMap";
-
+import MathjaxProvider from "#/components/utility/providers/mathjax";
+import { TypeTable } from "#/components/docs/typeTable";
+import { Content } from "./content";
 
 export default async function Page({
     params,
@@ -18,24 +20,33 @@ export default async function Page({
         notFound();
     }
 
-    const MDX = page.data.exports.default;
+    /* const MDX = page.data.exports.default; */
     let componentData =
         page.data.title in componentMap
             ? componentMap[page.data.title as keyof typeof componentMap]
             : undefined;
 
     const components = componentData
-        ? getComponentMap(componentData, { avoidKeys: ["mark"] }, serverComponentMap)
+        ? getComponentMap(
+            componentData,
+            { avoidKeys: ["mark"] },
+            serverComponentMap,
+        )
         : {};
 
+    console.log("page: ", page)
 
     return (
-        <DocsPage toc={page.data.exports.toc} full={page.data.full}>
+        <DocsPage toc={page.data.toc} full={page.data.full}>
             <DocsBody
-                className={"@container/mdx prose dark:prose-invert prose-a:text-link mdx"}
+                className={
+                    "@container/mdx prose dark:prose-invert prose-a:text-link mdx"
+                }
             >
-                <h1>{page.data.title}</h1>
-                <MDX components={components} />
+                <MathjaxProvider>
+                    <h1>{page.data.title}</h1>
+                    <Content code={page.data.body.code} TypeTableComponent={TypeTable} />
+                </MathjaxProvider>
             </DocsBody>
         </DocsPage>
     );

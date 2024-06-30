@@ -7,6 +7,7 @@ import { UlldBuildProcess } from "./classes/build";
 import { log } from "console";
 
 const isLocalDev = true;
+const workingOffline = true
 
 program.option("--noPlugins").option("--here");
 
@@ -24,14 +25,17 @@ const options = program.opts();
 
         let build = new UlldBuildProcess(targetDirectory);
         let success = false;
-        success = await build.createBaseProject(); // alpha
+        success = workingOffline ? true : await build.createBaseProject(); // alpha
         build.packageJson.gather(); // alpha
         await build.gatherAppConfig(); // beta
         await build.gatherPlugins(); // alpha
         await build.checkPluginValidity(); //beta
-        await build.packageJson.installDependencies(); //beta
+        !workingOffline && await build.packageJson.installDependencies(); //beta
         await build.resolveSlotConflicts(); // beta
         await build.resolvePageConflicts(); // beta
+        build.removeUnusablePlugins() // alpha
+        build.convertSlotsToPlugins()
+        // await build.applyPages()
     } catch (err) {
         if (!err) {
             log(`No worries. We can handle this later.`);

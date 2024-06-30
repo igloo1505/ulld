@@ -11,3 +11,12 @@ export type SlotMap = {
         commandPalette: string,
     }, 
 }
+
+
+export type PluginSlotKey = keyof SlotMap
+
+export type UISubSlots = keyof SlotMap["UI"]
+
+export type NavigationSubSlots = keyof SlotMap["navigation"]
+
+export type CommandPaletteSubSlots = keyof SlotMap["commandPalette"]

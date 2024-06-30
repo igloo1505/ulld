@@ -21,7 +21,6 @@ import NavbarBreakpointHandler from "#/components/utility/navbarBreakpointHandle
 import ThemeMenu from "#/components/UIUtils/themeMenu";
 import { BetaBanner } from "#/components/general/betaBanner";
 import { RootProvider } from "fumadocs-ui/provider";
-import MathjaxProvider from "#/components/utility/providers/mathjax";
 import { HandleBodyDisplay } from "#/components/docUtils/handleBodyLayout";
 
 const appFont = localFont({
@@ -217,7 +216,6 @@ const RootLayout = async (props: {
                         enableSystem: false
                     }}
                 >
-                    <MathjaxProvider>
                         <HandleBodyDisplay />
                         <BetaBanner />
                         <Navbar />
@@ -243,7 +241,6 @@ const RootLayout = async (props: {
                         <StateWrappedComponents />
                         <ThemeMenu />
                         <Footer />
-                    </MathjaxProvider>
                 </RootProvider>
             </body>
             <GoogleAnalytics gaId="G-K46X7QHBEX" />

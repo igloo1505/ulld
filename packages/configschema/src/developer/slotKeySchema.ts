@@ -23,6 +23,5 @@ export const navigationSubkeySchema = z.union([
 
 export const commandPaletteSubkeySchema = z.union([
     z.literal("commandPalette"),
-    z.literal("commandPalettePreview"),
 ])
 

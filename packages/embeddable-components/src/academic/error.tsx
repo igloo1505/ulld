@@ -13,7 +13,7 @@ import React from "react";
  * 0.002%
  * </ErrorMargin>
  */
-interface ErrorMarginProps {
+export interface ErrorMarginProps {
     children: string;
     /** Whether error content should be colored with the app's 'error' color. */
     errorText?: boolean

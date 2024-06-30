@@ -26,7 +26,7 @@ export const embeddableConfigSchema: z.ZodType<EmbeddableConfig> = z
     });
 
 // TODO: Dynamically generate more strict types after the baseline build process is handled. The component slots should be more strict based on the parents type.
-export const componentConfigSchema: z.ZodType<ComponentConfig> = z.object({
+export const componentConfigSchema = z.object({
     componentName: z
         .string()
         .describe("Must start with a capital letter.")

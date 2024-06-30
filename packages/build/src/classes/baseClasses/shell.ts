@@ -1,11 +1,33 @@
 import cp from "child_process"
 import chalk from "chalk"
 
+type LogLevel = "normal" | "verbose" | "debug"
+
 export class ShellManager {
-    constructor(){}
+    logLevel: LogLevel = "normal"
+    private logLevelOrder: LogLevel[] = ["normal", "verbose", "debug"]
+    constructor(){
+        if(process.env.ULLD_LOG_LEVEL){
+            this.logLevel = process.env.ULLD_LOG_LEVEL as LogLevel
+        }
+    }
     tempFiles: string[] = []
 
+    shouldLog(level: LogLevel){
+        return this.logLevelOrder.indexOf(this.logLevel) >= this.logLevelOrder.indexOf(level)
+    }
+
     log(val: any, ...vals: any){
+        console.log(val, ...vals)
+    }
+
+    logDebug(val: any, ...vals: any){
+        if(!this.shouldLog("debug")) return
+        console.log(val, ...vals)
+    }
+
+    logVerbose(val: any, ...vals: any){
+        if(!this.shouldLog("verbose")) return
         console.log(val, ...vals)
     }
 

@@ -113,12 +113,10 @@
     "rehype-video": "^2.0.2",
     "remark-custom-header-id": "^1.0.0",
     "remark-emoji": "^4.0.1",
-    "remark-gfm": "^3.0.1",
     "remark-heading-id": "^1.0.1",
     "remark-math": "^5.1.1",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.0",
-    "shiki": "^1.1.7",
     "simplex-noise": "^4.0.1",
     "stripe": "^15.6.0",
     "three": "^0.163.0",
@@ -143,5 +141,9 @@
     "tsx": "^4.10.4",
     "twoslash": "^0.2.6"
   },
-  "packageManager": "pnpm@9.0.4"
+  "packageManager": "pnpm@9.0.4",
+  "overrides": {
+    "unified": "^11.0.4",
+    "mdx-bundler": "^10.0.1"
+  }
 }

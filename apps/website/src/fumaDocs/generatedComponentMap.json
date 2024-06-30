@@ -1,3 +1,24 @@
 {
-    "Developer Documentation": "<LogoAsText <TypeDoc <Small <Hint <Button <Admonition <Ul <MyComponentNameOrAlias <StaticLink"
+  "ColorProps": "<Hint <ThemeSwitch <ColorChip",
+  "Underline": "<Hint <Ul <TypeDoc",
+  "Title": "<Title <TypeDoc",
+  "Small": "<Small <TypeDoc",
+  "Quote": "<Quote <TypeDoc",
+  "Lead": "<Lead <TypeDoc",
+  "Large": "<Large <TypeDoc",
+  "Highlight": "<Hint <Hl <TypeDoc",
+  "EqRef": "<EqRef <TypeDoc",
+  "VSpace": "<TypeDoc",
+  "TabGroup & Tab": "<TypeDoc <TabGroup <Tab",
+  "Grid & GridItem": "<Hint <TypeDoc <Grid <GridItem",
+  "Center": "<Center <TypeDoc",
+  "Card": "<Card <TypeDoc",
+  "Admonition": "<Admonition <Small <TypeDoc",
+  "WithTooltip": "<Ul <Color <Hl <TypeDoc",
+  "Video": "<Video <RemoteExampleLimitation <TypeDoc",
+  "ModelView": "<ModelView <TypeDoc",
+  "Image": "<Image <TypeDoc",
+  "ErrorMargin": "<ErrorMargin <TypeDoc",
+  "Abstract": "<Abstract <TypeDoc",
+  "Developer Documentation": "<LogoAsText <TypeDoc <Small <Hint <Button <Admonition <Ul <MyComponentNameOrAlias <StaticLink"
 }

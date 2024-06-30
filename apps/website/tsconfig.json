@@ -34,11 +34,10 @@
         ".next/types/**/*.ts",
         "**/*.ts",
         "**/*.tsx",
-        "../../packages/configschema/src/developer/**/*.ts",
         ".contentlayer/generated"
     ],
     "ignore": [
-        "**docs/examples**",
-        "**.mdx"
+        // "**docs/examples**"
+        // "**.mdx"
     ]
 }

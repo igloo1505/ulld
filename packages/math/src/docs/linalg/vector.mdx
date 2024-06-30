@@ -1,0 +1,32 @@
+---
+title: Vector
+desc: Vector functions as part of the extended Math object.
+---
+
+
+## Vector.dot
+
+Takes another vector as an argument.
+
+$$
+\vec{A} \cdot \vec{B} = A_{i} B_{i} + A_{j} B_{j} + A_{k} B_{k}
+$$
+
+
+### Example
+
+```mdx
+<LinePlot fnc={(math, idx) => {
+    let vector1 = math.vector([1, 2, 3])
+    let vector2 = math.vector([4, 5, 6])
+    return [idx, vector1.dot(vector2)]
+}}/>
+```
+
+
+
+## Vector.unit
+
+$$
+ \frac{\vec{A}}{\left\Vert\vec{A}\right\Vert} 
+$$

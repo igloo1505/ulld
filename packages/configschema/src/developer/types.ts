@@ -1,6 +1,4 @@
-// import { z } from "zod";
-// import { pluginSlotSchema } from "./slotsSchema";
-export type { SlotMap } from "./slotMapType";
+export type * from "./slotMapType";
 export type { ComponentConfig } from "./types/componentConfig";
 export type { EmbeddableConfig } from "./types/embeddableConfig";
 export type { DeveloperConfigInput } from "./types/developerConfig";
@@ -10,3 +8,4 @@ export type { TrpcConfig } from "./types/trpcConfig";
 export type { PluginSettingsConfig } from "./types/pluginSettingsConfig";
 export type { PluginPageConfig } from "./types/pageConfig";
 export type { PluginEventsConfig } from "./types/pluginEventsConfig";
+

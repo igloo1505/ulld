@@ -1,3 +1,4 @@
+"use client"
 import React, { ComponentPropsWithRef, ReactNode } from "react";
 import {
     FormControl,
@@ -11,7 +12,7 @@ import { Slider } from "@ulld/tailwind/slider";
 import cn from "@ulld/utilities/cn";
 import { useFormContext, PathValue, Path, FieldValues } from "react-hook-form";
 
-interface SliderInputProps<T extends FieldValues> {
+export interface SliderInputProps<T extends FieldValues> {
     name: Path<T>;
     label?: ReactNode;
     desc?: ReactNode;

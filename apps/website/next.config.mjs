@@ -1,31 +1,9 @@
+// import path from 'path'
+// import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import { withContentlayer } from "next-contentlayer";
 import nextPwa from "@ducanh2912/next-pwa";
 import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
-import { withContentlayer } from "next-contentlayer";
-import createMDX from "fumadocs-mdx/config";
-// import path from 'path'
-import remarkMath from "remark-math";
-import remarkGfm from "remark-gfm";
-import rehypeMathjax from "rehype-mathjax/chtml.js";
-// import rehypePrettyCode from "rehype-pretty-code";
-import emoji from "remark-emoji";
-import rehypeVideo from "rehype-video";
-import rehypeSlug from "rehype-slug";
-// import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import remarkHeadingId from "remark-custom-header-id";
 import fs from "fs";
-import {
-    remarkDocGen,
-    remarkInstall,
-    fileGenerator,
-    typescriptGenerator,
-} from "fumadocs-docgen";
-import { rehypeCodeDefaultOptions } from "fumadocs-core/mdx-plugins";
-import { transformerTwoslash } from "fumadocs-twoslash";
-import path from "path";
-import {
-    transformerMetaHighlight,
-    transformerNotationWordHighlight,
-} from "@shikijs/transformers";
 
 const markdownOptions = fs.readFileSync(
     "../../packages/utilities/src/defaults/markdownOptions.json",
@@ -35,54 +13,6 @@ const markdownOptions = fs.readFileSync(
 );
 
 const { math } = markdownOptions ? JSON.parse(markdownOptions) : { math: {} };
-
-const withMDX = createMDX({
-    // rootContentPath: "src/mdx",
-    // include: [`./**/*.{md,mdx,json}`],
-    rootMapPath: "./src/fumaDocs/map.ts",
-    mdxOptions: {
-        lastModifiedTime: "git",
-        rehypeCodeOptions: {
-            defaultLanguage: "tsx",
-            transformers: [
-                ...rehypeCodeDefaultOptions.transformers,
-                transformerTwoslash(),
-                transformerNotationWordHighlight(),
-                transformerMetaHighlight(),
-            ],
-            themes: {
-                light: "github-light",
-                dark: "aurora-x",
-            },
-        },
-        remarkPlugins: [
-            remarkMath,
-            [remarkInstall, {Tags: "InstallTabs"}],
-            // remarkGfm,
-            [
-                remarkHeadingId,
-                {
-                    defaults: true,
-                },
-            ],
-            [emoji, {}],
-            [remarkDocGen, { generators: [fileGenerator(), typescriptGenerator()] }],
-        ],
-        rehypePlugins: (v) => [
-            // [rehypeMermaid as any, mermaid],
-            [
-                rehypeVideo,
-                {
-                    test: /\/(.*)(.mp4|.mov|.webm)$/,
-                    details: false,
-                },
-            ],
-            [rehypeMathjax, math],
-            rehypeSlug,
-            ...v
-        ],
-    },
-});
 
 // NOTE: For building on vercel: https://github.com/Automattic/node-canvas/issues/1779
 if (
@@ -172,187 +102,141 @@ const withPWA = nextPwa({
     }),
 });
 
-// const withMDX = createMDX({
-//     options: {
-//         remarkPlugins: [remarkMath, remarkGfm, [emoji, {}]],
-//         rehypePlugins: [
-//             // [rehypeMermaid, mermaidOptions],
-//             [
-//                 rehypeVideo,
-//                 {
-//                     test: /\/(.*)(.mp4|.mov|.webm)$/,
-//                     details: false,
-//                 },
-//             ],
-//             [rehypeMathjax, mathOptions],
-//             [
-//                 rehypePrettyCode,
-//                 {
-//                     keepBackground: false,
-//                     theme: {
-//                         light: "material-theme-lighter",
-//                         dark: "dracula",
-//                     },
-//                     onVisitLine(node) {
-//                         if (node.children.length === 0) {
-//                             node.children = [{ type: "text", value: " " }];
-//                         }
-//                     },
-//                     onVisitHighlightedLine(node) {
-//                         node.properties.className.push("line--highlighted");
-//                     },
-//                     onVisitHighlightedWord(node) {
-//                         node.properties.className = ["word--highlighted"];
-//                     },
-//                 },
-//             ],
-//             [
-//                 rehypeAutolinkHeadings,
-//                 {
-//                     properties: {
-//                         className: ["subheading-anchor"],
-//                         ariaLabel: "Link to section",
-//                     },
-//                 },
-//             ],
-//             rehypeSlug,
-//         ],
-//     },
-// });
-
 /** @type {import('next').NextConfig} */
-const config = withPWA({
-    typescript: {
-        ignoreBuildErrors: true, // HACK: For development only.
-        tsconfigPath: "./tsconfig.json",
-    },
-    images: {
-        // For displaying sponsors.
-        remotePatterns: [
-            {
-                protocol: "https",
-                hostname: "avatars.githubusercontent.com",
-                port: "",
-            },
-        ],
-    },
-    reactStrictMode: false,
-    transpilePackages: [
-        "three",
-        "react-three-fiber",
-        "drei",
-        "glsify",
-        "monaco-editor",
-        "@ulld/api",
-        "@ulld/baseConfigs",
-        "@ulld/calendar",
-        "@ulld/config",
-        "@ulld/configschema",
-        "@ulld/database",
-        "@ulld/diagram",
-        "@ulld/editor",
-        "@ulld/embeddable-components",
-        "@ulld/component-map",
-        "@ulld/full-form",
-        "@ulld/hooks",
-        "@ulld/icons",
-        "@ulld/kanban",
-        "@ulld/logger",
-        "@ulld/note-network",
-        "@ulld/parsers",
-        "@ulld/render",
-        "@ulld/state",
-        "@ulld/tailwind",
-        "@ulld/ui",
-        "@ulld/utilities",
-        "@ulld/whiteboard",
-    ],
-    experimental: {
-        // typedRoutes: true,
-        // outputFileTracingRoot: path.join(__dirname, "../../"),
-        esmExternals: "loose",
-        optimizePackageImports: ["lucide-react", "katex"],
-        // serverComponentsExternalPackages: ['@ulld/editor'],
-        mdxRs: true,
-        turbo: {
-            resolveAlias: {
-                canvas: "./empty-module.ts",
-            },
+const config = withPWA(
+    withContentlayer({
+        typescript: {
+            ignoreBuildErrors: true, // HACK: For development only.
+            tsconfigPath: "./tsconfig.json",
         },
-    },
-    onDemandEntries: {
-        maxInactiveAge: 10 * 1000,
-        pagesBufferLength: isDevelopment ? 2 : undefined,
-    },
-    poweredByHeader: false,
-    webpack: (config, ctx) => {
-        config.resolve.alias.canvas = false;
-        config.cache = false;
-        // if(ctx.isServer){
-        //     config.plugins.push(new PrismaPlugin())
-        // }
-        if (!ctx.isServer) {
-            // run only for client side
-            config.plugins.push(
-                new MonacoEditorWebpackPlugin({
-                    // available options are documented at https://github.com/microsoft/monaco-editor/blob/main/webpack-plugin/README.md#options
-                    // languages: [
-                    //     'json',
-                    //     'typescript',
-                    //     'html',
-                    //     'css',
-                    //     'python',
-                    //     'markdown',
-                    //     'yaml'
-                    // ],
-                    filename: "static/[name].worker.js",
-                }),
-            );
-            config.module.rules.push(...monacoRules);
-        }
-        config.externals.push({
-            "utf-8-validate": "commonjs utf-8-validate",
-            bufferutil: "commonjs bufferutil",
-        });
-        if (!ctx.isServer) {
-            // config.resolve.modules.push(path.resolve("node_modules/monaco-editor"));
-            config.resolve = {
-                ...config.resolve,
-                fallback: {
-                    net: false,
-                    dns: false,
-                    tls: false,
-                    fs: false,
-                    request: false,
-                    child_process: false,
-                    perf_hooks: false,
-                },
-                // alias: {
-                //     "styled-components": path.resolve(process.cwd(), "node_modules", "styled-components"),
-                // }
-            };
-        }
-        config.module.rules.push({
-            test: /canvas\.node|\.csl|\.pdf|\.glb|\.gltf|\.whl|\.tif/,
-            use: "raw-loader",
-        });
-        config.module.rules.push({
-            test: /\.ttf$/,
-            use: ["file-loader"],
-        });
-        config.module.rules.push({
-            test: /\.bib/,
-            use: [
-                // {
-                //     loader: 'file-loader'
-                // },
+        images: {
+            // For displaying sponsors.
+            remotePatterns: [
                 {
-                    loader: "raw-loader",
+                    protocol: "https",
+                    hostname: "avatars.githubusercontent.com",
+                    port: "",
                 },
             ],
-        });
-        return config;
-    },
-});
+        },
+        reactStrictMode: false,
+        transpilePackages: [
+            "three",
+            "react-three-fiber",
+            "drei",
+            "glsify",
+            "monaco-editor",
+            "@ulld/api",
+            "@ulld/baseConfigs",
+            "@ulld/calendar",
+            "@ulld/config",
+            "@ulld/configschema",
+            "@ulld/database",
+            "@ulld/diagram",
+            "@ulld/editor",
+            "@ulld/embeddable-components",
+            "@ulld/component-map",
+            "@ulld/full-form",
+            "@ulld/hooks",
+            "@ulld/icons",
+            "@ulld/kanban",
+            "@ulld/logger",
+            "@ulld/note-network",
+            "@ulld/parsers",
+            "@ulld/render",
+            "@ulld/state",
+            "@ulld/tailwind",
+            "@ulld/ui",
+            "@ulld/utilities",
+            "@ulld/whiteboard",
+        ],
+        experimental: {
+            // typedRoutes: true,
+            // outputFileTracingRoot: path.join(__dirname, "../../"),
+            esmExternals: "loose",
+            optimizePackageImports: ["lucide-react", "katex"],
+            // serverComponentsExternalPackages: ['@ulld/editor'],
+            mdxRs: true,
+            turbo: {
+                resolveAlias: {
+                    canvas: "./empty-module.ts",
+                },
+            },
+        },
+        onDemandEntries: {
+            maxInactiveAge: 10 * 1000,
+            pagesBufferLength: isDevelopment ? 2 : undefined,
+        },
+        poweredByHeader: false,
+        webpack: (config, ctx) => {
+            config.resolve.alias.canvas = false;
+            config.cache = false;
+            // if(ctx.isServer){
+            //     config.plugins.push(new PrismaPlugin())
+            // }
+            if (!ctx.isServer) {
+                // run only for client side
+                config.plugins.push(
+                    new MonacoEditorWebpackPlugin({
+                        // available options are documented at https://github.com/microsoft/monaco-editor/blob/main/webpack-plugin/README.md#options
+                        // languages: [
+                        //     'json',
+                        //     'typescript',
+                        //     'html',
+                        //     'css',
+                        //     'python',
+                        //     'markdown',
+                        //     'yaml'
+                        // ],
+                        filename: "static/[name].worker.js",
+                    }),
+                );
+                config.module.rules.push(...monacoRules);
+            }
+            config.externals.push({
+                "utf-8-validate": "commonjs utf-8-validate",
+                bufferutil: "commonjs bufferutil",
+            });
+            if (!ctx.isServer) {
+                // config.resolve.modules.push(path.resolve("node_modules/monaco-editor"));
+                config.resolve = {
+                    ...config.resolve,
+                    fallback: {
+                        net: false,
+                        dns: false,
+                        tls: false,
+                        fs: false,
+                        request: false,
+                        child_process: false,
+                        perf_hooks: false,
+                    },
+                    // alias: {
+                    //     "styled-components": path.resolve(process.cwd(), "node_modules", "styled-components"),
+                    // }
+                };
+            }
+            config.module.rules.push({
+                test: /canvas\.node|\.csl|\.pdf|\.glb|\.gltf|\.whl|\.tif/,
+                use: "raw-loader",
+            });
+            config.module.rules.push({
+                test: /\.ttf$/,
+                use: ["file-loader"],
+            });
+            config.module.rules.push({
+                test: /\.bib/,
+                use: [
+                    // {
+                    //     loader: 'file-loader'
+                    // },
+                    {
+                        loader: "raw-loader",
+                    },
+                ],
+            });
+            return config;
+        },
+    }),
+);
 
-export default withMDX(config);
+export default config;

@@ -10,7 +10,9 @@ import { trpcConfigSchema } from "./trpcConfigSchema";
 import { additionalImportsConfigSchema } from "./additionalImportsConfigSchema";
 
 
-export const developerConfigSchema: z.ZodType<DeveloperConfigInput> = z
+// WARN: Removed this type checking for now as the output value was returning the input type with too many optionals.
+// export const developerConfigSchema: z.ZodType<DeveloperConfigInput> = z
+export const developerConfigSchema = z
     .object({
         pluginName: z.string(),
         slot: slotKeySchema.optional(),

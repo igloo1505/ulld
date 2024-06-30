@@ -14,10 +14,12 @@ import { Prompter } from "./prompter";
 import { SubSlot } from "./subslot";
 import { PluginSlot } from "./slot";
 import { SlotConflict } from "./slotConflict";
-import { PluginSlotKey } from "@ulld/configschema/developerTypes";
+import { SlotMap } from "@ulld/configschema/developerTypes";
 import { PluginPage } from "./page";
 import { PageConflict } from "./pageConflict";
 import { GitManager } from "./baseClasses/gitManager";
+
+type PluginSlotKey = keyof SlotMap;
 
 export class UlldBuildProcess extends Prompter {
     plugins: UlldPlugin[] = [];
@@ -63,10 +65,31 @@ export class UlldBuildProcess extends Prompter {
         this.log(
             `Gathering ${chalk.hex("#0ba5e9")("U")}LLD plugins from your appConfig...`,
         );
-        this.plugins =
-            this.appConfig.config?.plugins.map(
-                (c) => new UlldPlugin(this.paths, c.name, c.version),
-            ) || [];
+        if (!this.appConfig.config) {
+            throw new Error(
+                `No app configuration was found during the gatherPlugins phase.`,
+            );
+        }
+        let newPlugins: UlldPlugin[] = [];
+        let fromConfigPlugins = this.appConfig.config?.plugins.map(
+            (c) => new UlldPlugin(this.paths, c.name, c.version),
+        ) || [] as UlldPlugin[];
+        for (const k in this.appConfig.config.slots) {
+            let newSlot =
+                this.appConfig.config.slots[
+                k as keyof typeof this.appConfig.config.slots
+                ];
+            if (Array.isArray(newSlot)) {
+                for (const l of newSlot) {
+                    newPlugins.push(new UlldPlugin(this.paths, l.name, l.version));
+                }
+            } else {
+                this.logDebug(`Found a slot that was not added to plugins:
+${JSON.stringify(k, null, 4)}
+`)
+            }
+        }
+        this.plugins = [...newPlugins, ...fromConfigPlugins];
         this.log(`Found ${this.plugins.length} plugins:`);
         for (const k of this.plugins) {
             this.log(k.name);
@@ -101,7 +124,7 @@ It's not you it's me. Something broked.
                 type: "confirm",
                 name: "addedConfig",
                 initial: true,
-                message: `We couldn't find configuration file in either your app's
+                message: `We couldn't find a configuration file in either your app's
 directory or through the ULLD_APP_CONFIG environment variable. 
 Drop a configuration file in the app directory now at
 ${this.applicationDir}
@@ -160,7 +183,7 @@ and continue when that file is in place.`,
     async resolvePageConflicts() {
         if (this.slotConflicts.length > 0) {
             await this.getPagePreferences(this.pageConflicts);
-            this.removePageConflicts()
+            this.removePageConflicts();
         } else {
             this.log(
                 this.slotConflicts.length === 0
@@ -213,7 +236,7 @@ and continue when that file is in place.`,
     }
     removePageConflicts() {
         for (const k of this.plugins) {
-            k.removeUnusedPages()
+            k.removeUnusedPages();
         }
     }
     async resolveSlotConflicts() {
@@ -236,5 +259,33 @@ and continue when that file is in place.`,
             this.log(`We have a baseline ${this.ulld()} app now!`);
         }
         return success;
+    }
+    removeUnusablePlugins() {
+        let pluginData: {
+            usable: UlldPlugin[];
+            unusable: UlldPlugin[];
+        } = {
+            usable: [],
+            unusable: [],
+        };
+        for (const k of this.plugins) {
+            pluginData[k.pluginConfig === "Unusable" ? "unusable" : "usable"].push(k);
+        }
+        if (pluginData.unusable.length === 0) {
+            console.log(
+                `Checked for issues with your plugins and found none! Continuing with the build process.`,
+            );
+        } else {
+            for (const l of pluginData.unusable) {
+                this.log(`Removing unsable plugin ${l.name}`);
+            }
+        }
+        this.plugins = pluginData.usable;
+    }
+    convertSlotsToPlugins() { }
+    async applyPages() {
+        for await (const k of this.plugins) {
+            await k.applyPages();
+        }
     }
 }

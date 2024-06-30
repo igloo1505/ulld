@@ -2,8 +2,9 @@ import { DeveloperConfigOutput } from "@ulld/configschema/developer";
 import { capitalize } from "@ulld/utilities/stringUtils";
 import path from "path";
 import { TargetPaths } from "./paths";
+import { ShellManager } from "./baseClasses/shell";
 
-export class PluginPage {
+export class PluginPage extends ShellManager{
     shouldUse: boolean = true;
     importName: string;
     constructor(
@@ -12,6 +13,7 @@ export class PluginPage {
         public pageIndex: number,
         public paths: TargetPaths,
     ) {
+        super()
         let s = capitalize(this.pluginName)
         if(this.pageIndex > 0){
             s += `${this.pageIndex + 1}`
@@ -26,7 +28,6 @@ export class PluginPage {
     }
     getPathFromTargetUrl() {
         let paths = this.data.targetUrl.split("/");
-        console.log("this.paths: ", this.paths)
         return path.join(this.paths.app, ...paths);
     }
     getTypeString() {
@@ -55,6 +56,10 @@ export default UlldPage;
 `;
     }
     writePage(){
+        if(!this.shouldUse){
+            return this.log(`Not writing page ${this.data.targetUrl} from plugin ${this.pluginName}. There was an issue with their configuration.`)
+        }
+        console.log(`Writing content to path ${this.getPathFromTargetUrl()}`)
     }
 }
 

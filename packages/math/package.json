@@ -1,0 +1,43 @@
+{
+  "version": "0.0.1",
+  "$schema": "./node_modules/@ulld/developer-schemas/src/static/ulldPackageJson.schema.json",
+  "name": "@ulld/math",
+  "private": false,
+  "scripts": {
+    "dev": "echo 'Add dev script here'",
+    "build": "echo 'Add build script here'",
+    "test": "echo 'Add test script here'",
+    "lint": "echo 'Add lint script here'"
+  },
+  "files": [
+    "src"
+  ],
+  "exports": {
+    "./extendedMath": "./src/Math.ts",
+    "./plotMathHandler": "./src/plotMathHandler.ts"
+  },
+  "peerDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "@ulld/configschema": "workspace:*",
+    "@ulld/hooks": "workspace:*",
+    "@ulld/icons": "workspace:*",
+    "@ulld/state": "workspace:*",
+    "@ulld/utilities": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/jest-presets": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.7",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@9.0.4",
+  "publishConfig": {
+    "access": "public"
+  }
+}

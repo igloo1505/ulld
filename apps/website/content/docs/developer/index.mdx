@@ -33,9 +33,10 @@ const parsedPlugin = developerConfigSchema.parse(pluginConfig);
 writePluginConfig(parsedPlugin, __dirname);
 ```
 
-## Type: DeveloperConfigInput
 
-<TypeDoc 
+<TypeDoc
+    showName
+    hideCol={2}
     name="DeveloperConfigInput" 
 />
 
@@ -51,7 +52,11 @@ For example, if your `pluginConfig.ulld.json` specifies a slot property of `navi
     This `SlotMap` type is exported from `@ulld/configschema/developerTypes`, and a matching Typescript object is exported from `@ulld/utilities/slotMap`.
 </Hint>
 
-<TypeDoc name="SlotMap" />
+<TypeDoc 
+    title="Slots"
+    name="SlotMap"
+    hideCol={2}
+/>
 
 <Button href="/docs/developer/slots">
     Further Slot Documentation
@@ -84,7 +89,7 @@ The name of the component. This is used for generating files, and more important
 #### `export`
 
 <Hint note>
-    Your files will be ran through a bundler once the app is compiled. There's no need to bundle your app as javascript before hand, and in fact, it might actually complicate the build process. Unless you built your components in Javascript originally, export the `.tsx` file directly.
+    Your files will be ran through a bundler as your app is compiled. There's no need to bundle your app as javascript before hand, and in fact, it might actually complicate the build process. Unless you built your components in Javascript originally, export the `.tsx` file directly.
 </Hint>
 
 This must match an export field in your `package.json` file. For example, take the following truncated `package.json` file:
@@ -150,9 +155,10 @@ The `slot` property does not apply to _embeddable_ components, as they will be m
 The `regexToInclude` property will be passed to a `RegExp` class and used to test a note's raw content for whether or not your component should be imported. 99% of the time, this field should take the form of:
 
 ```tsx /\</
+// [!code word:<]
 const myComponentConfig: DeveloperConfigInput["components"][number]["embeddable"] = {
     ...,
-    regexToInclude: "<MyComponentNameOrAlias"
+    regexToInclude: "<MyComponentNameOrAlias" 
 }
 ```
 
@@ -198,9 +204,11 @@ All mdx content will always be wrapped in a `@container/mdx` class applied throu
 
 ## Parsing Functions [#devDocs-parsing-functions]
 
+Documentation in progress
 
 ---
 
 ## Pages [#config-dev-pageProps]
 
+Documentation in progress
 

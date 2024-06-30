@@ -1,0 +1,28 @@
+{
+    "files": [
+        "index.mdx",
+        "user/types/ColorProps.mdx",
+        "user/components/index.mdx",
+        "user/components/Text/Underline.mdx",
+        "user/components/Text/Title.mdx",
+        "user/components/Text/Small.mdx",
+        "user/components/Text/Quote.mdx",
+        "user/components/Text/Lead.mdx",
+        "user/components/Text/Large.mdx",
+        "user/components/Text/Highlight.mdx",
+        "user/components/Referencing/EqRef.mdx",
+        "user/components/Layout/VSpace.mdx",
+        "user/components/Layout/Tabs.mdx",
+        "user/components/Layout/Grid.mdx",
+        "user/components/Layout/Center.mdx",
+        "user/components/Layout/Card.mdx",
+        "user/components/Layout/Admonition.mdx",
+        "user/components/Interactivity/WithTooltip.mdx",
+        "user/components/ContentTypes/Video.mdx",
+        "user/components/ContentTypes/ModelView.mdx",
+        "user/components/ContentTypes/Image.mdx",
+        "user/components/Academic/errorMargin.mdx",
+        "user/components/Academic/abstract.mdx",
+        "developer/index.mdx"
+    ]
+}

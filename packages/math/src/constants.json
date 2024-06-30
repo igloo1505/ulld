@@ -1,0 +1,1900 @@
+{
+  "constants": {
+    "kilogramhertzRelationship": {
+      "name": "kilogram-hertz relationship",
+      "value": 1.356392489e50
+    },
+    "kilograminverseMeterRelationship": {
+      "name": "kilogram-inverse meter relationship",
+      "value": 4.524438335e41
+    },
+    "kilogramkelvinRelationship": {
+      "name": "kilogram-kelvin relationship",
+      "value": 6.50965726e39
+    },
+    "kilogramelectronVoltRelationship": {
+      "name": "kilogram-electron volt relationship",
+      "value": 5.609588603e35
+    },
+    "kilogramhartreeRelationship": {
+      "name": "kilogram-hartree relationship",
+      "value": 2.0614857887409e34
+    },
+    "joulehertzRelationship": {
+      "name": "joule-hertz relationship",
+      "value": 1.509190179e33
+    },
+    "planckTemperature": {
+      "name": "Planck temperature",
+      "value": 1.416784e32
+    },
+    "kilogramatomicMassUnitRelationship": {
+      "name": "kilogram-atomic mass unit relationship",
+      "value": 6.0221407621e26
+    },
+    "loschmidtConstant(273.15K,101.325KPa)": {
+      "name": "Loschmidt constant (273.15 K, 101.325 kPa)",
+      "value": 2.686780111e25
+    },
+    "loschmidtConstant(273.15K,100KPa)": {
+      "name": "Loschmidt constant (273.15 K, 100 kPa)",
+      "value": 2.651645804e25
+    },
+    "jouleinverseMeterRelationship": {
+      "name": "joule-inverse meter relationship",
+      "value": 5.034116567e24
+    },
+    "avogadroConstant": {
+      "name": "Avogadro constant",
+      "value": 6.02214076e23
+    },
+    "atomicMassUnithertzRelationship": {
+      "name": "atomic mass unit-hertz relationship",
+      "value": 2.25234271871e23
+    },
+    "joulekelvinRelationship": {
+      "name": "joule-kelvin relationship",
+      "value": 7.242970516e22
+    },
+    "atomicUnitOfElectricFieldGradient": {
+      "name": "atomic unit of electric field gradient",
+      "value": 9.7173624292e21
+    },
+    "planckMassEnergyEquivalentInGeV": {
+      "name": "Planck mass energy equivalent in GeV",
+      "value": 12208900000000000000
+    },
+    "jouleelectronVoltRelationship": {
+      "name": "joule-electron volt relationship",
+      "value": 6241509074000000000
+    },
+    "joulehartreeRelationship": {
+      "name": "joule-hartree relationship",
+      "value": 229371227839630000
+    },
+    "kilogramjouleRelationship": {
+      "name": "kilogram-joule relationship",
+      "value": 89875517873681760
+    },
+    "hartreehertzRelationship": {
+      "name": "hartree-hertz relationship",
+      "value": 6579683920502000
+    },
+    "rydbergConstantTimesCInHz": {
+      "name": "Rydberg constant times c in Hz",
+      "value": 3289841960250800
+    },
+    "elementaryChargeOverHbar": {
+      "name": "elementary charge over h-bar",
+      "value": 1519267447000000
+    },
+    "atomicMassUnitinverseMeterRelationship": {
+      "name": "atomic mass unit-inverse meter relationship",
+      "value": 751300661040000
+    },
+    "conventionalValueOfJosephsonConstant": {
+      "name": "conventional value of Josephson constant",
+      "value": 483597900000000
+    },
+    "josephsonConstant": {
+      "name": "Josephson constant",
+      "value": 483597848400000
+    },
+    "elementaryChargeOverH": {
+      "name": "elementary charge over h",
+      "value": 241798926200000
+    },
+    "electronVolthertzRelationship": {
+      "name": "electron volt-hertz relationship",
+      "value": 241798924200000
+    },
+    "atomicMassUnitkelvinRelationship": {
+      "name": "atomic mass unit-kelvin relationship",
+      "value": 10809540191600
+    },
+    "atomicUnitOfChargeDensity": {
+      "name": "atomic unit of charge density",
+      "value": 1081202384570
+    },
+    "atomicUnitOfElectricField": {
+      "name": "atomic unit of electric field",
+      "value": 514220674763
+    },
+    "electronGyromagn.Ratio": {
+      "name": "electron gyromagn. ratio",
+      "value": 176085963023
+    },
+    "electronGyromag.Ratio": {
+      "name": "electron gyromag. ratio",
+      "value": 176085963023
+    },
+    "wienFrequencyDisplacementLawConstant": {
+      "name": "Wien frequency displacement law constant",
+      "value": 58789257570
+    },
+    "boltzmannConstantInHz/K": {
+      "name": "Boltzmann constant in Hz/K",
+      "value": 20836619120
+    },
+    "kelvinhertzRelationship": {
+      "name": "kelvin-hertz relationship",
+      "value": 20836619120
+    },
+    "bohrMagnetonInHz/T": {
+      "name": "Bohr magneton in Hz/T",
+      "value": 13996244936.1
+    },
+    "hyperfineTransitionFrequencyOfCs133": {
+      "name": "hyperfine transition frequency of Cs-133",
+      "value": 9192631770
+    },
+    "jouleatomicMassUnitRelationship": {
+      "name": "joule-atomic mass unit relationship",
+      "value": 6700535256.5
+    },
+    "atomicMassUnitelectronVoltRelationship": {
+      "name": "atomic mass unit-electron volt relationship",
+      "value": 931494102.42
+    },
+    "inverseMeterhertzRelationship": {
+      "name": "inverse meter-hertz relationship",
+      "value": 299792458
+    },
+    "naturalUnitOfVelocity": {
+      "name": "natural unit of velocity",
+      "value": 299792458
+    },
+    "speedOfLightInVacuum": {
+      "name": "speed of light in vacuum",
+      "value": 299792458
+    },
+    "protonGyromagn.Ratio": {
+      "name": "proton gyromagn. ratio",
+      "value": 267522187.44
+    },
+    "protonGyromag.Ratio": {
+      "name": "proton gyromag. ratio",
+      "value": 267522187.44
+    },
+    "shieldedProtonGyromag.Ratio": {
+      "name": "shielded proton gyromag. ratio",
+      "value": 267515315.1
+    },
+    "shieldedHelionGyromagn.Ratio": {
+      "name": "shielded helion gyromagn. ratio",
+      "value": 203789456.9
+    },
+    "shieldedHelionGyromag.Ratio": {
+      "name": "shielded helion gyromag. ratio",
+      "value": 203789456.9
+    },
+    "neutronGyromagn.Ratio": {
+      "name": "neutron gyromagn. ratio",
+      "value": 183247171
+    },
+    "neutronGyromag.Ratio": {
+      "name": "neutron gyromag. ratio",
+      "value": 183247171
+    },
+    "protonChargeToMassQuotient": {
+      "name": "proton charge to mass quotient",
+      "value": 95788331.56
+    },
+    "atomicMassUnithartreeRelationship": {
+      "name": "atomic mass unit-hartree relationship",
+      "value": 34231776.874
+    },
+    "hartreeinverseMeterRelationship": {
+      "name": "hartree-inverse meter relationship",
+      "value": 21947463.13632
+    },
+    "rydbergConstant": {
+      "name": "Rydberg constant",
+      "value": 10973731.56816
+    },
+    "atomicUnitOfVelocity": {
+      "name": "atomic unit of velocity",
+      "value": 2187691.26364
+    },
+    "electronVoltinverseMeterRelationship": {
+      "name": "electron volt-inverse meter relationship",
+      "value": 806554.3937
+    },
+    "hartreekelvinRelationship": {
+      "name": "hartree-kelvin relationship",
+      "value": 315775.02480407
+    },
+    "atomicUnitOfMagn.FluxDensity": {
+      "name": "atomic unit of magn. flux density",
+      "value": 235051.756758
+    },
+    "atomicUnitOfMag.FluxDensity": {
+      "name": "atomic unit of mag. flux density",
+      "value": 235051.756758
+    },
+    "standardAtmosphere": {
+      "name": "standard atmosphere",
+      "value": 101325
+    },
+    "standardstatePressure": {
+      "name": "standard-state pressure",
+      "value": 100000
+    },
+    "faradayConstant": {
+      "name": "Faraday constant",
+      "value": 96485.33212
+    },
+    "faradayConstantForConventionalElectricCurrent": {
+      "name": "Faraday constant for conventional electric current",
+      "value": 96485.3251
+    },
+    "electronGyromagn.RatioOver2Pi": {
+      "name": "electron gyromagn. ratio over 2 pi",
+      "value": 28024.9532
+    },
+    "electronGyromag.RatioOver2Pi": {
+      "name": "electron gyromag. ratio over 2 pi",
+      "value": 28024.95164
+    },
+    "electronGyromag.RatioInMHz/T": {
+      "name": "electron gyromag. ratio in MHz/T",
+      "value": 28024.9514242
+    },
+    "vonKlitzingConstant": {
+      "name": "von Klitzing constant",
+      "value": 25812.80745
+    },
+    "conventionalValueOfVonKlitzingConstant": {
+      "name": "conventional value of von Klitzing constant",
+      "value": 25812.807
+    },
+    "inverseOfConductanceQuantum": {
+      "name": "inverse of conductance quantum",
+      "value": 12906.40372
+    },
+    "electronVoltkelvinRelationship": {
+      "name": "electron volt-kelvin relationship",
+      "value": 11604.51812
+    },
+    "alphaParticleelectronMassRatio": {
+      "name": "alpha particle-electron mass ratio",
+      "value": 7294.29954142,
+      "unit": ""
+    },
+    "tritonelectronMassRatio": {
+      "name": "triton-electron mass ratio",
+      "value": 5496.92153573,
+      "unit": ""
+    },
+    "helionelectronMassRatio": {
+      "name": "helion-electron mass ratio",
+      "value": 5495.88528007,
+      "unit": ""
+    },
+    "alphaParticleMassEnergyEquivalentInMeV": {
+      "name": "alpha particle mass energy equivalent in MeV",
+      "value": 3727.3794066
+    },
+    "deuteronelectronMassRatio": {
+      "name": "deuteron-electron mass ratio",
+      "value": 3670.48296788,
+      "unit": ""
+    },
+    "tauelectronMassRatio": {
+      "name": "tau-electron mass ratio",
+      "value": 3477.23,
+      "unit": ""
+    },
+    "tritonMassEnergyEquivalentInMeV": {
+      "name": "triton mass energy equivalent in MeV",
+      "value": 2808.92113298
+    },
+    "helionMassEnergyEquivalentInMeV": {
+      "name": "helion mass energy equivalent in MeV",
+      "value": 2808.39160743
+    },
+    "deuteronMassEnergyEquivalentInMeV": {
+      "name": "deuteron mass energy equivalent in MeV",
+      "value": 1875.61294257
+    },
+    "neutronelectronMassRatio": {
+      "name": "neutron-electron mass ratio",
+      "value": 1838.68366173,
+      "unit": ""
+    },
+    "protonelectronMassRatio": {
+      "name": "proton-electron mass ratio",
+      "value": 1836.15267343,
+      "unit": ""
+    },
+    "tauEnergyEquivalent": {
+      "name": "tau energy equivalent",
+      "value": 1776.86
+    },
+    "tauMassEnergyEquivalentInMeV": {
+      "name": "tau mass energy equivalent in MeV",
+      "value": 1776.82
+    },
+    "electronneutronMagn.MomentRatio": {
+      "name": "electron-neutron magn. moment ratio",
+      "value": 960.9205,
+      "unit": ""
+    },
+    "electronneutronMag.Mom.Ratio": {
+      "name": "electron-neutron mag. mom. ratio",
+      "value": 960.9205,
+      "unit": ""
+    },
+    "neutronMassEnergyEquivalentInMeV": {
+      "name": "neutron mass energy equivalent in MeV",
+      "value": 939.56542052
+    },
+    "protonMassEnergyEquivalentInMeV": {
+      "name": "proton mass energy equivalent in MeV",
+      "value": 938.27208816
+    },
+    "atomicMassConstantEnergyEquivalentInMeV": {
+      "name": "atomic mass constant energy equivalent in MeV",
+      "value": 931.49410242
+    },
+    "electronToShieldedHelionMag.Mom.Ratio": {
+      "name": "electron to shielded helion mag. mom. ratio",
+      "value": 864.058257,
+      "unit": ""
+    },
+    "electronToShieldedHelionMagn.MomentRatio": {
+      "name": "electron to shielded helion magn. moment ratio",
+      "value": 864.058255,
+      "unit": ""
+    },
+    "luminousEfficacy": {
+      "name": "luminous efficacy",
+      "value": 683
+    },
+    "characteristicImpedanceOfVacuum": {
+      "name": "characteristic impedance of vacuum",
+      "value": 376.73031366686166
+    },
+    "muonelectronMassRatio": {
+      "name": "muon-electron mass ratio",
+      "value": 206.768283,
+      "unit": ""
+    },
+    "electronmuonMagn.MomentRatio": {
+      "name": "electron-muon magn. moment ratio",
+      "value": 206.7669894,
+      "unit": ""
+    },
+    "electronmuonMag.Mom.Ratio": {
+      "name": "electron-muon mag. mom. ratio",
+      "value": 206.7669883,
+      "unit": ""
+    },
+    "reducedPlanckConstantTimesCInMeVFm": {
+      "name": "reduced Planck constant times c in MeV fm",
+      "value": 197.3269804
+    },
+    "planckConstantOver2PiTimesCInMeVFm": {
+      "name": "Planck constant over 2 pi times c in MeV fm",
+      "value": 197.3269788
+    },
+    "inverseFinestructureConstant": {
+      "name": "inverse fine-structure constant",
+      "value": 137.035999084,
+      "unit": ""
+    },
+    "muonMassEnergyEquivalentInMeV": {
+      "name": "muon mass energy equivalent in MeV",
+      "value": 105.6583755
+    },
+    "kelvininverseMeterRelationship": {
+      "name": "kelvin-inverse meter relationship",
+      "value": 69.50348004
+    },
+    "boltzmannConstantInInverseMeterPerKelvin": {
+      "name": "Boltzmann constant in inverse meter per kelvin",
+      "value": 69.50348004
+    },
+    "boltzmannConstantInInverseMetersPerKelvin": {
+      "name": "Boltzmann constant in inverse meters per kelvin",
+      "value": 69.503457
+    },
+    "bohrMagnetonInInverseMetersPerTesla": {
+      "name": "Bohr magneton in inverse meters per tesla",
+      "value": 46.68644814
+    },
+    "bohrMagnetonInInverseMeterPerTesla": {
+      "name": "Bohr magneton in inverse meter per tesla",
+      "value": 46.686447783
+    },
+    "protonGyromagn.RatioOver2Pi": {
+      "name": "proton gyromagn. ratio over 2 pi",
+      "value": 42.5774813
+    },
+    "protonGyromag.RatioOver2Pi": {
+      "name": "proton gyromag. ratio over 2 pi",
+      "value": 42.57747892
+    },
+    "protonGyromag.RatioInMHz/T": {
+      "name": "proton gyromag. ratio in MHz/T",
+      "value": 42.577478518
+    },
+    "shieldedProtonGyromag.RatioOver2Pi": {
+      "name": "shielded proton gyromag. ratio over 2 pi",
+      "value": 42.57638507
+    },
+    "shieldedProtonGyromag.RatioInMHz/T": {
+      "name": "shielded proton gyromag. ratio in MHz/T",
+      "value": 42.57638474
+    },
+    "shieldedHelionGyromagn.RatioOver2Pi": {
+      "name": "shielded helion gyromagn. ratio over 2 pi",
+      "value": 32.4341015
+    },
+    "shieldedHelionGyromag.RatioOver2Pi": {
+      "name": "shielded helion gyromag. ratio over 2 pi",
+      "value": 32.43409966
+    },
+    "shieldedHelionGyromag.RatioInMHz/T": {
+      "name": "shielded helion gyromag. ratio in MHz/T",
+      "value": 32.43409942
+    },
+    "neutronGyromagn.RatioOver2Pi": {
+      "name": "neutron gyromagn. ratio over 2 pi",
+      "value": 29.164695
+    },
+    "neutronGyromag.RatioOver2Pi": {
+      "name": "neutron gyromag. ratio over 2 pi",
+      "value": 29.1646933
+    },
+    "neutronGyromag.RatioInMHz/T": {
+      "name": "neutron gyromag. ratio in MHz/T",
+      "value": 29.1646931
+    },
+    "atomicUnitOfElectricPotential": {
+      "name": "atomic unit of electric potential",
+      "value": 27.211386245988
+    },
+    "hartreeelectronVoltRelationship": {
+      "name": "hartree-electron volt relationship",
+      "value": 27.211386245988
+    },
+    "hartreeEnergyInEV": {
+      "name": "Hartree energy in eV",
+      "value": 27.211386245988
+    },
+    "taumuonMassRatio": {
+      "name": "tau-muon mass ratio",
+      "value": 16.817,
+      "unit": ""
+    },
+    "rydbergConstantTimesHcInEV": {
+      "name": "Rydberg constant times hc in eV",
+      "value": 13.605693122994
+    },
+    "standardAccelerationOfGravity": {
+      "name": "standard acceleration of gravity",
+      "value": 9.80665
+    },
+    "neutronmuonMassRatio": {
+      "name": "neutron-muon mass ratio",
+      "value": 8.89248406,
+      "unit": ""
+    },
+    "protonmuonMassRatio": {
+      "name": "proton-muon mass ratio",
+      "value": 8.88024337,
+      "unit": ""
+    },
+    "molarGasConstant": {
+      "name": "molar gas constant",
+      "value": 8.314462618
+    },
+    "nuclearMagnetonInMHz/T": {
+      "name": "nuclear magneton in MHz/T",
+      "value": 7.6225932291
+    },
+    "tritonGFactor": {
+      "name": "triton g factor",
+      "value": 5.957924931,
+      "unit": ""
+    },
+    "protonGFactor": {
+      "name": "proton g factor",
+      "value": 5.5856946893,
+      "unit": ""
+    },
+    "alphaParticleMassInU": {
+      "name": "alpha particle mass in u",
+      "value": 4.001506179127
+    },
+    "alphaParticleRelativeAtomicMass": {
+      "name": "alpha particle relative atomic mass",
+      "value": 4.001506179127,
+      "unit": ""
+    },
+    "alphaParticleprotonMassRatio": {
+      "name": "alpha particle-proton mass ratio",
+      "value": 3.97259969009,
+      "unit": ""
+    },
+    "tritonMassInU": {
+      "name": "triton mass in u",
+      "value": 3.01550071621
+    },
+    "tritonRelativeAtomicMass": {
+      "name": "triton relative atomic mass",
+      "value": 3.01550071621,
+      "unit": ""
+    },
+    "helionMassInU": {
+      "name": "helion mass in u",
+      "value": 3.014932247175
+    },
+    "helionRelativeAtomicMass": {
+      "name": "helion relative atomic mass",
+      "value": 3.014932247175,
+      "unit": ""
+    },
+    "tritonprotonMassRatio": {
+      "name": "triton-proton mass ratio",
+      "value": 2.99371703414,
+      "unit": ""
+    },
+    "helionprotonMassRatio": {
+      "name": "helion-proton mass ratio",
+      "value": 2.99315267167,
+      "unit": ""
+    },
+    "tritonMag.Mom.ToNuclearMagnetonRatio": {
+      "name": "triton mag. mom. to nuclear magneton ratio",
+      "value": 2.9789624656,
+      "unit": ""
+    },
+    "protonMagn.MomentToNuclearMagnetonRatio": {
+      "name": "proton magn. moment to nuclear magneton ratio",
+      "value": 2.792847351,
+      "unit": ""
+    },
+    "protonMag.Mom.ToNuclearMagnetonRatio": {
+      "name": "proton mag. mom. to nuclear magneton ratio",
+      "value": 2.79284734463,
+      "unit": ""
+    },
+    "shieldedProtonMagn.MomentToNuclearMagnetonRatio": {
+      "name": "shielded proton magn. moment to nuclear magneton ratio",
+      "value": 2.792775604,
+      "unit": ""
+    },
+    "shieldedProtonMag.Mom.ToNuclearMagnetonRatio": {
+      "name": "shielded proton mag. mom. to nuclear magneton ratio",
+      "value": 2.792775599,
+      "unit": ""
+    },
+    "deuteronMassInU": {
+      "name": "deuteron mass in u",
+      "value": 2.013553212745
+    },
+    "deuteronRelativeAtomicMass": {
+      "name": "deuteron relative atomic mass",
+      "value": 2.013553212745,
+      "unit": ""
+    },
+    "deuteronprotonMassRatio": {
+      "name": "deuteron-proton mass ratio",
+      "value": 1.99900750139,
+      "unit": ""
+    },
+    "tauMassInU": {
+      "name": "tau mass in u",
+      "value": 1.90754
+    },
+    "tauprotonMassRatio": {
+      "name": "tau-proton mass ratio",
+      "value": 1.89376,
+      "unit": ""
+    },
+    "tauneutronMassRatio": {
+      "name": "tau-neutron mass ratio",
+      "value": 1.89115,
+      "unit": ""
+    },
+    "neutronprotonMassDifferenceEnergyEquivalentInMeV": {
+      "name": "neutron-proton mass difference energy equivalent in MeV",
+      "value": 1.29333236
+    },
+    "tritonToProtonMag.Mom.Ratio": {
+      "name": "triton to proton mag. mom. ratio",
+      "value": 1.0666399191,
+      "unit": ""
+    },
+    "tritonprotonMag.Mom.Ratio": {
+      "name": "triton-proton mag. mom. ratio",
+      "value": 1.066639908,
+      "unit": ""
+    },
+    "neutronMassInU": {
+      "name": "neutron mass in u",
+      "value": 1.00866491595
+    },
+    "neutronRelativeAtomicMass": {
+      "name": "neutron relative atomic mass",
+      "value": 1.00866491595,
+      "unit": ""
+    },
+    "protonMassInU": {
+      "name": "proton mass in u",
+      "value": 1.007276466621
+    },
+    "protonRelativeAtomicMass": {
+      "name": "proton relative atomic mass",
+      "value": 1.007276466621,
+      "unit": ""
+    },
+    "neutronprotonMassRatio": {
+      "name": "neutron-proton mass ratio",
+      "value": 1.00137841931,
+      "unit": ""
+    },
+    "conventionalValueOfWatt90": {
+      "name": "conventional value of watt-90",
+      "value": 1.00000019553
+    },
+    "conventionalValueOfVolt90": {
+      "name": "conventional value of volt-90",
+      "value": 1.00000010666
+    },
+    "conventionalValueOfAmpere90": {
+      "name": "conventional value of ampere-90",
+      "value": 1.00000008887
+    },
+    "conventionalValueOfCoulomb90": {
+      "name": "conventional value of coulomb-90",
+      "value": 1.00000008887
+    },
+    "conventionalValueOfHenry90": {
+      "name": "conventional value of henry-90",
+      "value": 1.00000001779
+    },
+    "conventionalValueOfOhm90": {
+      "name": "conventional value of ohm-90",
+      "value": 1.00000001779
+    },
+    "conventionalValueOfFarad90": {
+      "name": "conventional value of farad-90",
+      "value": 0.9999999822
+    },
+    "protonneutronMassRatio": {
+      "name": "proton-neutron mass ratio",
+      "value": 0.99862347812,
+      "unit": ""
+    },
+    "wToZMassRatio": {
+      "name": "W to Z mass ratio",
+      "value": 0.88153,
+      "unit": ""
+    },
+    "deuteronGFactor": {
+      "name": "deuteron g factor",
+      "value": 0.8574382338,
+      "unit": ""
+    },
+    "deuteronMag.Mom.ToNuclearMagnetonRatio": {
+      "name": "deuteron mag. mom. to nuclear magneton ratio",
+      "value": 0.8574382338,
+      "unit": ""
+    },
+    "deuteronMagn.MomentToNuclearMagnetonRatio": {
+      "name": "deuteron magn. moment to nuclear magneton ratio",
+      "value": 0.8574382329,
+      "unit": ""
+    },
+    "bohrMagnetonInK/T": {
+      "name": "Bohr magneton in K/T",
+      "value": 0.67171381563
+    },
+    "neutrontauMassRatio": {
+      "name": "neutron-tau mass ratio",
+      "value": 0.528779,
+      "unit": ""
+    },
+    "protontauMassRatio": {
+      "name": "proton-tau mass ratio",
+      "value": 0.528051,
+      "unit": ""
+    },
+    "electronMassEnergyEquivalentInMeV": {
+      "name": "electron mass energy equivalent in MeV",
+      "value": 0.51099895
+    },
+    "naturalUnitOfEnergyInMeV": {
+      "name": "natural unit of energy in MeV",
+      "value": 0.51099895
+    },
+    "naturalUnitOfMomentumInMeV/c": {
+      "name": "natural unit of momentum in MeV/c",
+      "value": 0.5109989461
+    },
+    "naturalUnitOfMom.umInMeV/c": {
+      "name": "natural unit of mom.um in MeV/c",
+      "value": 0.5109989461
+    },
+    "deuteronprotonMag.Mom.Ratio": {
+      "name": "deuteron-proton mag. mom. ratio",
+      "value": 0.30701220939,
+      "unit": ""
+    },
+    "deuteronprotonMagn.MomentRatio": {
+      "name": "deuteron-proton magn. moment ratio",
+      "value": 0.3070122084,
+      "unit": ""
+    },
+    "weakMixingAngle": {
+      "name": "weak mixing angle",
+      "value": 0.2229,
+      "unit": ""
+    },
+    "molarPlanckConstantTimesC": {
+      "name": "molar Planck constant times c",
+      "value": 0.119626565582
+    },
+    "muonMassInU": {
+      "name": "muon mass in u",
+      "value": 0.1134289259
+    },
+    "muonprotonMassRatio": {
+      "name": "muon-proton mass ratio",
+      "value": 0.1126095264,
+      "unit": ""
+    },
+    "muonneutronMassRatio": {
+      "name": "muon-neutron mass ratio",
+      "value": 0.112454517,
+      "unit": ""
+    },
+    "muontauMassRatio": {
+      "name": "muon-tau mass ratio",
+      "value": 0.0594635,
+      "unit": ""
+    },
+    "electronVolthartreeRelationship": {
+      "name": "electron volt-hartree relationship",
+      "value": 0.036749322175655
+    },
+    "nuclearMagnetonInInverseMetersPerTesla": {
+      "name": "nuclear magneton in inverse meters per tesla",
+      "value": 0.02542623432
+    },
+    "nuclearMagnetonInInverseMeterPerTesla": {
+      "name": "nuclear magneton in inverse meter per tesla",
+      "value": 0.0254262341353
+    },
+    "molarVolumeOfIdealGas(273.15K,100KPa)": {
+      "name": "molar volume of ideal gas (273.15 K, 100 kPa)",
+      "value": 0.02271095464
+    },
+    "molarVolumeOfIdealGas(273.15K,101.325KPa)": {
+      "name": "molar volume of ideal gas (273.15 K, 101.325 kPa)",
+      "value": 0.02241396954
+    },
+    "inverseMeterkelvinRelationship": {
+      "name": "inverse meter-kelvin relationship",
+      "value": 0.01438776877
+    },
+    "secondRadiationConstant": {
+      "name": "second radiation constant",
+      "value": 0.01438776877
+    },
+    "molarMassOfCarbon12": {
+      "name": "molar mass of carbon-12",
+      "value": 0.0119999999958
+    },
+    "finestructureConstant": {
+      "name": "fine-structure constant",
+      "value": 0.0072973525693,
+      "unit": ""
+    },
+    "atomicUnitOfCurrent": {
+      "name": "atomic unit of current",
+      "value": 0.00662361823751
+    },
+    "electronmuonMassRatio": {
+      "name": "electron-muon mass ratio",
+      "value": 0.00483633169,
+      "unit": ""
+    },
+    "alphaParticleMolarMass": {
+      "name": "alpha particle molar mass",
+      "value": 0.0040015061777
+    },
+    "tritonMolarMass": {
+      "name": "triton molar mass",
+      "value": 0.00301550071517
+    },
+    "helionMolarMass": {
+      "name": "helion molar mass",
+      "value": 0.00301493224613
+    },
+    "wienWavelengthDisplacementLawConstant": {
+      "name": "Wien wavelength displacement law constant",
+      "value": 0.002897771955
+    },
+    "wienDisplacementLawConstant": {
+      "name": "Wien displacement law constant",
+      "value": 0.0028977685
+    },
+    "deuteronMolarMass": {
+      "name": "deuteron molar mass",
+      "value": 0.00201355321205
+    },
+    "tauMolarMass": {
+      "name": "tau molar mass",
+      "value": 0.00190754
+    },
+    "tritonMag.Mom.ToBohrMagnetonRatio": {
+      "name": "triton mag. mom. to Bohr magneton ratio",
+      "value": 0.0016223936651,
+      "unit": ""
+    },
+    "protonMagn.MomentToBohrMagnetonRatio": {
+      "name": "proton magn. moment to Bohr magneton ratio",
+      "value": 0.001521032206,
+      "unit": ""
+    },
+    "protonMag.Mom.ToBohrMagnetonRatio": {
+      "name": "proton mag. mom. to Bohr magneton ratio",
+      "value": 0.0015210322023,
+      "unit": ""
+    },
+    "shieldedProtonMagn.MomentToBohrMagnetonRatio": {
+      "name": "shielded proton magn. moment to Bohr magneton ratio",
+      "value": 0.001520993132,
+      "unit": ""
+    },
+    "shieldedProtonMag.Mom.ToBohrMagnetonRatio": {
+      "name": "shielded proton mag. mom. to Bohr magneton ratio",
+      "value": 0.001520993128,
+      "unit": ""
+    },
+    "neutronprotonMassDifferenceInU": {
+      "name": "neutron-proton mass difference in u",
+      "value": 0.00138844933
+    },
+    "muonMag.Mom.Anomaly": {
+      "name": "muon mag. mom. anomaly",
+      "value": 0.00116592089,
+      "unit": ""
+    },
+    "electronMagn.MomentAnomaly": {
+      "name": "electron magn. moment anomaly",
+      "value": 0.0011596521859,
+      "unit": ""
+    },
+    "electronMag.Mom.Anomaly": {
+      "name": "electron mag. mom. anomaly",
+      "value": 0.00115965218128,
+      "unit": ""
+    },
+    "neutronelectronMagn.MomentRatio": {
+      "name": "neutron-electron magn. moment ratio",
+      "value": 0.00104066882,
+      "unit": ""
+    },
+    "neutronelectronMag.Mom.Ratio": {
+      "name": "neutron-electron mag. mom. ratio",
+      "value": 0.00104066882,
+      "unit": ""
+    },
+    "neutronMolarMass": {
+      "name": "neutron molar mass",
+      "value": 0.0010086649156
+    },
+    "protonMolarMass": {
+      "name": "proton molar mass",
+      "value": 0.00100727646627
+    },
+    "molarMassConstant": {
+      "name": "molar mass constant",
+      "value": 0.00099999999965
+    },
+    "quantumOfCirculationTimes2": {
+      "name": "quantum of circulation times 2",
+      "value": 0.00072738951032
+    },
+    "electronMassInU": {
+      "name": "electron mass in u",
+      "value": 0.000548579909065
+    },
+    "electronRelativeAtomicMass": {
+      "name": "electron relative atomic mass",
+      "value": 0.000548579909065,
+      "unit": ""
+    },
+    "electronprotonMassRatio": {
+      "name": "electron-proton mass ratio",
+      "value": 0.000544617021487,
+      "unit": ""
+    },
+    "electronneutronMassRatio": {
+      "name": "electron-neutron mass ratio",
+      "value": 0.00054386734424,
+      "unit": ""
+    },
+    "deuteronMag.Mom.ToBohrMagnetonRatio": {
+      "name": "deuteron mag. mom. to Bohr magneton ratio",
+      "value": 0.000466975457,
+      "unit": ""
+    },
+    "deuteronMagn.MomentToBohrMagnetonRatio": {
+      "name": "deuteron magn. moment to Bohr magneton ratio",
+      "value": 0.0004669754567,
+      "unit": ""
+    },
+    "nuclearMagnetonInK/T": {
+      "name": "nuclear magneton in K/T",
+      "value": 0.00036582677756
+    },
+    "quantumOfCirculation": {
+      "name": "quantum of circulation",
+      "value": 0.00036369475516
+    },
+    "electrontauMassRatio": {
+      "name": "electron-tau mass ratio",
+      "value": 0.000287585,
+      "unit": ""
+    },
+    "electrondeuteronMassRatio": {
+      "name": "electron-deuteron mass ratio",
+      "value": 0.0002724437107462,
+      "unit": ""
+    },
+    "electronhelionMassRatio": {
+      "name": "electron-helion mass ratio",
+      "value": 0.0001819543074573,
+      "unit": ""
+    },
+    "electrontritonMassRatio": {
+      "name": "electron-triton mass ratio",
+      "value": 0.0001819200062251,
+      "unit": ""
+    },
+    "electronToAlphaParticleMassRatio": {
+      "name": "electron to alpha particle mass ratio",
+      "value": 0.0001370933554787,
+      "unit": ""
+    },
+    "muonMolarMass": {
+      "name": "muon molar mass",
+      "value": 0.0001134289259
+    },
+    "boltzmannConstantInEV/K": {
+      "name": "Boltzmann constant in eV/K",
+      "value": 0.00008617333262
+    },
+    "kelvinelectronVoltRelationship": {
+      "name": "kelvin-electron volt relationship",
+      "value": 0.00008617333262
+    },
+    "conductanceQuantum": {
+      "name": "conductance quantum",
+      "value": 0.00007748091729
+    },
+    "helionShieldingShift": {
+      "name": "helion shielding shift",
+      "value": 0.00005996743,
+      "unit": ""
+    },
+    "bohrMagnetonInEV/T": {
+      "name": "Bohr magneton in eV/T",
+      "value": 0.00005788381806
+    },
+    "protonMagn.ShieldingCorrection": {
+      "name": "proton magn. shielding correction",
+      "value": 0.000025689,
+      "unit": ""
+    },
+    "protonMag.ShieldingCorrection": {
+      "name": "proton mag. shielding correction",
+      "value": 0.000025689,
+      "unit": ""
+    },
+    "molarVolumeOfSilicon": {
+      "name": "molar volume of silicon",
+      "value": 0.00001205883199
+    },
+    "fermiCouplingConstant": {
+      "name": "Fermi coupling constant",
+      "value": 0.000011663787
+    },
+    "kelvinhartreeRelationship": {
+      "name": "kelvin-hartree relationship",
+      "value": 0.0000031668115634556
+    },
+    "mag.Constant": {
+      "name": "mag. constant",
+      "value": 0.00000125663706212
+    },
+    "vacuumMag.Permeability": {
+      "name": "vacuum mag. permeability",
+      "value": 0.00000125663706212
+    },
+    "magn.Constant": {
+      "name": "magn. constant",
+      "value": 0.0000012566370614
+    },
+    "inverseMeterelectronVoltRelationship": {
+      "name": "inverse meter-electron volt relationship",
+      "value": 0.000001239841984
+    },
+    "electronMolarMass": {
+      "name": "electron molar mass",
+      "value": 5.4857990888e-7
+    },
+    "atomicUnitOfForce": {
+      "name": "atomic unit of force",
+      "value": 8.2387234983e-8
+    },
+    "stefanboltzmannConstant": {
+      "name": "Stefan-Boltzmann constant",
+      "value": 5.670374419e-8
+    },
+    "inverseMeterhartreeRelationship": {
+      "name": "inverse meter-hartree relationship",
+      "value": 4.556335252912e-8
+    },
+    "nuclearMagnetonInEV/T": {
+      "name": "nuclear magneton in eV/T",
+      "value": 3.15245125844e-8
+    },
+    "hartreeatomicMassUnitRelationship": {
+      "name": "hartree-atomic mass unit relationship",
+      "value": 2.92126232205e-8
+    },
+    "shieldingDifferenceOfTAndPInHT": {
+      "name": "shielding difference of t and p in HT",
+      "value": 2.414e-8,
+      "unit": ""
+    },
+    "planckMass": {
+      "name": "Planck mass",
+      "value": 2.176434e-8
+    },
+    "shieldingDifferenceOfDAndPInHD": {
+      "name": "shielding difference of d and p in HD",
+      "value": 2.02e-8,
+      "unit": ""
+    },
+    "hertzinverseMeterRelationship": {
+      "name": "hertz-inverse meter relationship",
+      "value": 3.3356409519815204e-9
+    },
+    "electronVoltatomicMassUnitRelationship": {
+      "name": "electron volt-atomic mass unit relationship",
+      "value": 1.07354410233e-9
+    },
+    "alphaParticleMassEnergyEquivalent": {
+      "name": "alpha particle mass energy equivalent",
+      "value": 5.9719201914e-10
+    },
+    "latticeParameterOfSilicon": {
+      "name": "lattice parameter of silicon",
+      "value": 5.431020511e-10
+    },
+    "tritonMassEnergyEquivalent": {
+      "name": "triton mass energy equivalent",
+      "value": 4.500387806e-10
+    },
+    "helionMassEnergyEquivalent": {
+      "name": "helion mass energy equivalent",
+      "value": 4.4995394125e-10
+    },
+    "molarPlanckConstant": {
+      "name": "molar Planck constant",
+      "value": 3.990312712e-10
+    },
+    "deuteronMassEnergyEquivalent": {
+      "name": "deuteron mass energy equivalent",
+      "value": 3.00506323102e-10
+    },
+    "tauMassEnergyEquivalent": {
+      "name": "tau mass energy equivalent",
+      "value": 2.84684e-10
+    },
+    "latticeSpacingOfSilicon": {
+      "name": "lattice spacing of silicon",
+      "value": 1.920155762e-10
+    },
+    "latticeSpacingOfIdealSi(220)": {
+      "name": "lattice spacing of ideal Si (220)",
+      "value": 1.920155716e-10
+    },
+    "{220}LatticeSpacingOfSilicon": {
+      "name": "{220} lattice spacing of silicon",
+      "value": 1.920155714e-10
+    },
+    "neutronMassEnergyEquivalent": {
+      "name": "neutron mass energy equivalent",
+      "value": 1.50534976287e-10
+    },
+    "protonMassEnergyEquivalent": {
+      "name": "proton mass energy equivalent",
+      "value": 1.50327761598e-10
+    },
+    "atomicMassConstantEnergyEquivalent": {
+      "name": "atomic mass constant energy equivalent",
+      "value": 1.4924180856e-10
+    },
+    "atomicMassUnitjouleRelationship": {
+      "name": "atomic mass unit-joule relationship",
+      "value": 1.4924180856e-10
+    },
+    "atomicUnitOfPermittivity": {
+      "name": "atomic unit of permittivity",
+      "value": 1.11265005545e-10
+    },
+    "angstromStar": {
+      "name": "Angstrom star",
+      "value": 1.00001495e-10
+    },
+    "newtonianConstantOfGravitation": {
+      "name": "Newtonian constant of gravitation",
+      "value": 6.6743e-11
+    },
+    "atomicUnitOfLength": {
+      "name": "atomic unit of length",
+      "value": 5.29177210903e-11
+    },
+    "bohrRadius": {
+      "name": "Bohr radius",
+      "value": 5.29177210903e-11
+    },
+    "hertzkelvinRelationship": {
+      "name": "hertz-kelvin relationship",
+      "value": 4.799243073e-11
+    },
+    "muonMassEnergyEquivalent": {
+      "name": "muon mass energy equivalent",
+      "value": 1.692833804e-11
+    },
+    "electricConstant": {
+      "name": "electric constant",
+      "value": 8.8541878128e-12
+    },
+    "vacuumElectricPermittivity": {
+      "name": "vacuum electric permittivity",
+      "value": 8.8541878128e-12
+    },
+    "comptonWavelength": {
+      "name": "Compton wavelength",
+      "value": 2.42631023867e-12
+    },
+    "naturalUnitOfLength": {
+      "name": "natural unit of length",
+      "value": 3.8615926796e-13
+    },
+    "reducedComptonWavelength": {
+      "name": "reduced Compton wavelength",
+      "value": 3.8615926796e-13
+    },
+    "comptonWavelengthOver2Pi": {
+      "name": "Compton wavelength over 2 pi",
+      "value": 3.8615926764e-13
+    },
+    "neutronprotonMassDifferenceEnergyEquivalent": {
+      "name": "neutron-proton mass difference energy equivalent",
+      "value": 2.07214689e-13
+    },
+    "moXUnit": {
+      "name": "Mo x unit",
+      "value": 1.00209952e-13
+    },
+    "cuXUnit": {
+      "name": "Cu x unit",
+      "value": 1.00207697e-13
+    },
+    "kelvinatomicMassUnitRelationship": {
+      "name": "kelvin-atomic mass unit relationship",
+      "value": 9.2510873014e-14
+    },
+    "electronMassEnergyEquivalent": {
+      "name": "electron mass energy equivalent",
+      "value": 8.1871057769e-14
+    },
+    "naturalUnitOfEnergy": {
+      "name": "natural unit of energy",
+      "value": 8.1871057769e-14
+    },
+    "muonComptonWavelength": {
+      "name": "muon Compton wavelength",
+      "value": 1.17344411e-14
+    },
+    "hertzelectronVoltRelationship": {
+      "name": "hertz-electron volt relationship",
+      "value": 4.135667696e-15
+    },
+    "planckConstantInEV/Hz": {
+      "name": "Planck constant in eV/Hz",
+      "value": 4.135667696e-15
+    },
+    "planckConstantInEVS": {
+      "name": "Planck constant in eV s",
+      "value": 4.135667662e-15
+    },
+    "classicalElectronRadius": {
+      "name": "classical electron radius",
+      "value": 2.8179403262e-15
+    },
+    "deuteronRmsChargeRadius": {
+      "name": "deuteron rms charge radius",
+      "value": 2.12799e-15
+    },
+    "magn.FluxQuantum": {
+      "name": "magn. flux quantum",
+      "value": 2.067833848e-15
+    },
+    "mag.FluxQuantum": {
+      "name": "mag. flux quantum",
+      "value": 2.067833848e-15
+    },
+    "muonComptonWavelengthOver2Pi": {
+      "name": "muon Compton wavelength over 2 pi",
+      "value": 1.867594308e-15
+    },
+    "reducedMuonComptonWavelength": {
+      "name": "reduced muon Compton wavelength",
+      "value": 1.867594306e-15
+    },
+    "inverseMeteratomicMassUnitRelationship": {
+      "name": "inverse meter-atomic mass unit relationship",
+      "value": 1.3310250501e-15
+    },
+    "protonComptonWavelength": {
+      "name": "proton Compton wavelength",
+      "value": 1.32140985539e-15
+    },
+    "neutronComptonWavelength": {
+      "name": "neutron Compton wavelength",
+      "value": 1.31959090581e-15
+    },
+    "protonRmsChargeRadius": {
+      "name": "proton rms charge radius",
+      "value": 8.414e-16
+    },
+    "tauComptonWavelength": {
+      "name": "tau Compton wavelength",
+      "value": 6.97771e-16
+    },
+    "naturalUnitOfActionInEVS": {
+      "name": "natural unit of action in eV s",
+      "value": 6.582119569e-16
+    },
+    "reducedPlanckConstantInEVS": {
+      "name": "reduced Planck constant in eV s",
+      "value": 6.582119569e-16
+    },
+    "planckConstantOver2PiInEVS": {
+      "name": "Planck constant over 2 pi in eV s",
+      "value": 6.582119514e-16
+    },
+    "firstRadiationConstant": {
+      "name": "first radiation constant",
+      "value": 3.741771852e-16
+    },
+    "reducedProtonComptonWavelength": {
+      "name": "reduced proton Compton wavelength",
+      "value": 2.10308910336e-16
+    },
+    "protonComptonWavelengthOver2Pi": {
+      "name": "proton Compton wavelength over 2 pi",
+      "value": 2.10308910109e-16
+    },
+    "reducedNeutronComptonWavelength": {
+      "name": "reduced neutron Compton wavelength",
+      "value": 2.1001941552e-16
+    },
+    "neutronComptonWavelengthOver2Pi": {
+      "name": "neutron Compton wavelength over 2 pi",
+      "value": 2.1001941536e-16
+    },
+    "hertzhartreeRelationship": {
+      "name": "hertz-hartree relationship",
+      "value": 1.519829846057e-16
+    },
+    "firstRadiationConstantForSpectralRadiance": {
+      "name": "first radiation constant for spectral radiance",
+      "value": 1.191042972e-16
+    },
+    "tauComptonWavelengthOver2Pi": {
+      "name": "tau Compton wavelength over 2 pi",
+      "value": 1.11056e-16
+    },
+    "reducedTauComptonWavelength": {
+      "name": "reduced tau Compton wavelength",
+      "value": 1.110538e-16
+    },
+    "atomicUnitOfTime": {
+      "name": "atomic unit of time",
+      "value": 2.4188843265857e-17
+    },
+    "joulekilogramRelationship": {
+      "name": "joule-kilogram relationship",
+      "value": 1.1126500560536185e-17
+    },
+    "atomicUnitOfEnergy": {
+      "name": "atomic unit of energy",
+      "value": 4.3597447222071e-18
+    },
+    "hartreeEnergy": {
+      "name": "Hartree energy",
+      "value": 4.3597447222071e-18
+    },
+    "hartreejouleRelationship": {
+      "name": "hartree-joule relationship",
+      "value": 4.3597447222071e-18
+    },
+    "rydbergConstantTimesHcInJ": {
+      "name": "Rydberg constant times hc in J",
+      "value": 2.1798723611035e-18
+    },
+    "atomicUnitOfCharge": {
+      "name": "atomic unit of charge",
+      "value": 1.602176634e-19
+    },
+    "electronVolt": {
+      "name": "electron volt",
+      "value": 1.602176634e-19
+    },
+    "electronVoltjouleRelationship": {
+      "name": "electron volt-joule relationship",
+      "value": 1.602176634e-19
+    },
+    "elementaryCharge": {
+      "name": "elementary charge",
+      "value": 1.602176634e-19
+    },
+    "naturalUnitOfTime": {
+      "name": "natural unit of time",
+      "value": 1.28808866819e-21
+    },
+    "naturalUnitOfMomentum": {
+      "name": "natural unit of momentum",
+      "value": 2.730924488e-22
+    },
+    "naturalUnitOfMom.um": {
+      "name": "natural unit of mom.um",
+      "value": 2.730924488e-22
+    },
+    "atomicUnitOfMag.DipoleMom.": {
+      "name": "atomic unit of mag. dipole mom.",
+      "value": 1.85480201566e-23
+    },
+    "atomicUnitOfMagn.DipoleMoment": {
+      "name": "atomic unit of magn. dipole moment",
+      "value": 1.8548019e-23
+    },
+    "boltzmannConstant": {
+      "name": "Boltzmann constant",
+      "value": 1.380649e-23
+    },
+    "kelvinjouleRelationship": {
+      "name": "kelvin-joule relationship",
+      "value": 1.380649e-23
+    },
+    "bohrMagneton": {
+      "name": "Bohr magneton",
+      "value": 9.2740100783e-24
+    },
+    "hertzatomicMassUnitRelationship": {
+      "name": "hertz-atomic mass unit relationship",
+      "value": 4.4398216652e-24
+    },
+    "atomicUnitOfMomentum": {
+      "name": "atomic unit of momentum",
+      "value": 1.9928519141e-24
+    },
+    "atomicUnitOfMom.um": {
+      "name": "atomic unit of mom.um",
+      "value": 1.992851882e-24
+    },
+    "inverseMeterjouleRelationship": {
+      "name": "inverse meter-joule relationship",
+      "value": 1.986445857e-25
+    },
+    "tritonMag.Mom.": {
+      "name": "triton mag. mom.",
+      "value": 1.5046095202e-26
+    },
+    "protonMag.Mom.": {
+      "name": "proton mag. mom.",
+      "value": 1.41060679736e-26
+    },
+    "protonMagn.Moment": {
+      "name": "proton magn. moment",
+      "value": 1.41060671e-26
+    },
+    "shieldedProtonMag.Mom.": {
+      "name": "shielded proton mag. mom.",
+      "value": 1.41057056e-26
+    },
+    "shieldedProtonMagn.Moment": {
+      "name": "shielded proton magn. moment",
+      "value": 1.41057047e-26
+    },
+    "alphaParticleMass": {
+      "name": "alpha particle mass",
+      "value": 6.6446573357e-27
+    },
+    "nuclearMagneton": {
+      "name": "nuclear magneton",
+      "value": 5.0507837461e-27
+    },
+    "tritonMass": {
+      "name": "triton mass",
+      "value": 5.0073567446e-27
+    },
+    "helionMass": {
+      "name": "helion mass",
+      "value": 5.0064127796e-27
+    },
+    "deuteronMag.Mom.": {
+      "name": "deuteron mag. mom.",
+      "value": 4.330735094e-27
+    },
+    "deuteronMagn.Moment": {
+      "name": "deuteron magn. moment",
+      "value": 4.33073482e-27
+    },
+    "deuteronMass": {
+      "name": "deuteron mass",
+      "value": 3.3435837724e-27
+    },
+    "tauMass": {
+      "name": "tau mass",
+      "value": 3.16754e-27
+    },
+    "neutronMass": {
+      "name": "neutron mass",
+      "value": 1.67492749804e-27
+    },
+    "protonMass": {
+      "name": "proton mass",
+      "value": 1.67262192369e-27
+    },
+    "atomicMassConstant": {
+      "name": "atomic mass constant",
+      "value": 1.6605390666e-27
+    },
+    "atomicMassUnitkilogramRelationship": {
+      "name": "atomic mass unit-kilogram relationship",
+      "value": 1.6605390666e-27
+    },
+    "unifiedAtomicMassUnit": {
+      "name": "unified atomic mass unit",
+      "value": 1.6605390666e-27
+    },
+    "muonMass": {
+      "name": "muon mass",
+      "value": 1.883531627e-28
+    },
+    "atomicUnitOfMagnetizability": {
+      "name": "atomic unit of magnetizability",
+      "value": 7.8910366008e-29
+    },
+    "thomsonCrossSection": {
+      "name": "Thomson cross section",
+      "value": 6.6524587321e-29
+    },
+    "atomicUnitOfElectricDipoleMom.": {
+      "name": "atomic unit of electric dipole mom.",
+      "value": 8.4783536255e-30
+    },
+    "atomicUnitOfElectricDipoleMoment": {
+      "name": "atomic unit of electric dipole moment",
+      "value": 8.47835309e-30
+    },
+    "neutronprotonMassDifference": {
+      "name": "neutron-proton mass difference",
+      "value": 2.30557435e-30
+    },
+    "atomicUnitOfMass": {
+      "name": "atomic unit of mass",
+      "value": 9.1093837015e-31
+    },
+    "electronMass": {
+      "name": "electron mass",
+      "value": 9.1093837015e-31
+    },
+    "naturalUnitOfMass": {
+      "name": "natural unit of mass",
+      "value": 9.1093837015e-31
+    },
+    "hertzjouleRelationship": {
+      "name": "hertz-joule relationship",
+      "value": 6.62607015e-34
+    },
+    "planckConstant": {
+      "name": "Planck constant",
+      "value": 6.62607015e-34
+    },
+    "atomicUnitOfAction": {
+      "name": "atomic unit of action",
+      "value": 1.054571817e-34
+    },
+    "naturalUnitOfAction": {
+      "name": "natural unit of action",
+      "value": 1.054571817e-34
+    },
+    "reducedPlanckConstant": {
+      "name": "reduced Planck constant",
+      "value": 1.054571817e-34
+    },
+    "planckConstantOver2Pi": {
+      "name": "Planck constant over 2 pi",
+      "value": 1.0545718e-34
+    },
+    "hartreekilogramRelationship": {
+      "name": "hartree-kilogram relationship",
+      "value": 4.8508702095432e-35
+    },
+    "planckLength": {
+      "name": "Planck length",
+      "value": 1.616255e-35
+    },
+    "electronVoltkilogramRelationship": {
+      "name": "electron volt-kilogram relationship",
+      "value": 1.782661921e-36
+    },
+    "newtonianConstantOfGravitationOverHbarC": {
+      "name": "Newtonian constant of gravitation over h-bar c",
+      "value": 6.70883e-39
+    },
+    "atomicUnitOfElectricQuadrupoleMom.": {
+      "name": "atomic unit of electric quadrupole mom.",
+      "value": 4.4865515246e-40
+    },
+    "atomicUnitOfElectricQuadrupoleMoment": {
+      "name": "atomic unit of electric quadrupole moment",
+      "value": 4.48655124e-40
+    },
+    "kelvinkilogramRelationship": {
+      "name": "kelvin-kilogram relationship",
+      "value": 1.536179187e-40
+    },
+    "atomicUnitOfElectricPolarizability": {
+      "name": "atomic unit of electric polarizability",
+      "value": 1.64877727436e-41
+    },
+    "atomicUnitOfElectricPolarizablity": {
+      "name": "atomic unit of electric polarizablity",
+      "value": 1.648777274e-41
+    },
+    "inverseMeterkilogramRelationship": {
+      "name": "inverse meter-kilogram relationship",
+      "value": 2.210219094e-42
+    },
+    "planckTime": {
+      "name": "Planck time",
+      "value": 5.391247e-44
+    },
+    "hertzkilogramRelationship": {
+      "name": "hertz-kilogram relationship",
+      "value": 7.372497323e-51
+    },
+    "atomicUnitOf1stHyperpolarizablity": {
+      "name": "atomic unit of 1st hyperpolarizablity",
+      "value": 3.20636151e-53
+    },
+    "atomicUnitOf1stHyperpolarizability": {
+      "name": "atomic unit of 1st hyperpolarizability",
+      "value": 3.2063613061e-53
+    },
+    "atomicUnitOf2ndHyperpolarizablity": {
+      "name": "atomic unit of 2nd hyperpolarizablity",
+      "value": 6.2353808e-65
+    },
+    "atomicUnitOf2ndHyperpolarizability": {
+      "name": "atomic unit of 2nd hyperpolarizability",
+      "value": 6.2353799905e-65
+    },
+    "neutronMagn.Moment": {
+      "name": "neutron magn. moment",
+      "value": -9.6623645e-27
+    },
+    "neutronMag.Mom.": {
+      "name": "neutron mag. mom.",
+      "value": -9.6623651e-27
+    },
+    "shieldedHelionMagn.Moment": {
+      "name": "shielded helion magn. moment",
+      "value": -1.074553024e-26
+    },
+    "shieldedHelionMag.Mom.": {
+      "name": "shielded helion mag. mom.",
+      "value": -1.07455309e-26
+    },
+    "helionMag.Mom.": {
+      "name": "helion mag. mom.",
+      "value": -1.074617532e-26
+    },
+    "muonMagn.Moment": {
+      "name": "muon magn. moment",
+      "value": -4.49044799e-26
+    },
+    "muonMag.Mom.": {
+      "name": "muon mag. mom.",
+      "value": -4.4904483e-26
+    },
+    "electronMagn.Moment": {
+      "name": "electron magn. moment",
+      "value": -9.28476412e-24
+    },
+    "electronMag.Mom.": {
+      "name": "electron mag. mom.",
+      "value": -9.2847647043e-24
+    },
+    "deuteronelectronMagn.MomentRatio": {
+      "name": "deuteron-electron magn. moment ratio",
+      "value": -0.0004664345548,
+      "unit": ""
+    },
+    "deuteronelectronMag.Mom.Ratio": {
+      "name": "deuteron-electron mag. mom. ratio",
+      "value": -0.0004664345551,
+      "unit": ""
+    },
+    "neutronMagn.MomentToBohrMagnetonRatio": {
+      "name": "neutron magn. moment to Bohr magneton ratio",
+      "value": -0.00104187563,
+      "unit": ""
+    },
+    "neutronMag.Mom.ToBohrMagnetonRatio": {
+      "name": "neutron mag. mom. to Bohr magneton ratio",
+      "value": -0.00104187563,
+      "unit": ""
+    },
+    "shieldedHelionMag.Mom.ToBohrMagnetonRatio": {
+      "name": "shielded helion mag. mom. to Bohr magneton ratio",
+      "value": -0.001158671471,
+      "unit": ""
+    },
+    "shieldedHelionMagn.MomentToBohrMagnetonRatio": {
+      "name": "shielded helion magn. moment to Bohr magneton ratio",
+      "value": -0.001158671474,
+      "unit": ""
+    },
+    "helionMag.Mom.ToBohrMagnetonRatio": {
+      "name": "helion mag. mom. to Bohr magneton ratio",
+      "value": -0.001158740958,
+      "unit": ""
+    },
+    "tritonelectronMag.Mom.Ratio": {
+      "name": "triton-electron mag. mom. ratio",
+      "value": -0.001620514423,
+      "unit": ""
+    },
+    "muonMagn.MomentToBohrMagnetonRatio": {
+      "name": "muon magn. moment to Bohr magneton ratio",
+      "value": -0.00484197045,
+      "unit": ""
+    },
+    "muonMag.Mom.ToBohrMagnetonRatio": {
+      "name": "muon mag. mom. to Bohr magneton ratio",
+      "value": -0.00484197047,
+      "unit": ""
+    },
+    "deuteronneutronMagn.MomentRatio": {
+      "name": "deuteron-neutron magn. moment ratio",
+      "value": -0.44820652,
+      "unit": ""
+    },
+    "deuteronneutronMag.Mom.Ratio": {
+      "name": "deuteron-neutron mag. mom. ratio",
+      "value": -0.44820653,
+      "unit": ""
+    },
+    "neutronprotonMagn.MomentRatio": {
+      "name": "neutron-proton magn. moment ratio",
+      "value": -0.68497934,
+      "unit": ""
+    },
+    "neutronprotonMag.Mom.Ratio": {
+      "name": "neutron-proton mag. mom. ratio",
+      "value": -0.68497934,
+      "unit": ""
+    },
+    "neutronToShieldedProtonMagn.MomentRatio": {
+      "name": "neutron to shielded proton magn. moment ratio",
+      "value": -0.68499694,
+      "unit": ""
+    },
+    "neutronToShieldedProtonMag.Mom.Ratio": {
+      "name": "neutron to shielded proton mag. mom. ratio",
+      "value": -0.68499694,
+      "unit": ""
+    },
+    "shieldedHelionToProtonMag.Mom.Ratio": {
+      "name": "shielded helion to proton mag. mom. ratio",
+      "value": -0.7617665618,
+      "unit": ""
+    },
+    "shieldedHelionToProtonMagn.MomentRatio": {
+      "name": "shielded helion to proton magn. moment ratio",
+      "value": -0.761766562,
+      "unit": ""
+    },
+    "shieldedHelionToShieldedProtonMagn.MomentRatio": {
+      "name": "shielded helion to shielded proton magn. moment ratio",
+      "value": -0.7617861313,
+      "unit": ""
+    },
+    "shieldedHelionToShieldedProtonMag.Mom.Ratio": {
+      "name": "shielded helion to shielded proton mag. mom. ratio",
+      "value": -0.7617861313,
+      "unit": ""
+    },
+    "electronMag.Mom.ToBohrMagnetonRatio": {
+      "name": "electron mag. mom. to Bohr magneton ratio",
+      "value": -1.00115965218128,
+      "unit": ""
+    },
+    "electronMagn.MomentToBohrMagnetonRatio": {
+      "name": "electron magn. moment to Bohr magneton ratio",
+      "value": -1.0011596521859,
+      "unit": ""
+    },
+    "sackurtetrodeConstant(1K,100KPa)": {
+      "name": "Sackur-Tetrode constant (1 K, 100 kPa)",
+      "value": -1.15170753706,
+      "unit": ""
+    },
+    "sackurtetrodeConstant(1K,101.325KPa)": {
+      "name": "Sackur-Tetrode constant (1 K, 101.325 kPa)",
+      "value": -1.16487052358,
+      "unit": ""
+    },
+    "protonneutronMagn.MomentRatio": {
+      "name": "proton-neutron magn. moment ratio",
+      "value": -1.45989805,
+      "unit": ""
+    },
+    "protonneutronMag.Mom.Ratio": {
+      "name": "proton-neutron mag. mom. ratio",
+      "value": -1.45989805,
+      "unit": ""
+    },
+    "tritonneutronMag.Mom.Ratio": {
+      "name": "triton-neutron mag. mom. ratio",
+      "value": -1.55718553,
+      "unit": ""
+    },
+    "neutronMagn.MomentToNuclearMagnetonRatio": {
+      "name": "neutron magn. moment to nuclear magneton ratio",
+      "value": -1.91304273,
+      "unit": ""
+    },
+    "neutronMag.Mom.ToNuclearMagnetonRatio": {
+      "name": "neutron mag. mom. to nuclear magneton ratio",
+      "value": -1.91304273,
+      "unit": ""
+    },
+    "electronGFactor": {
+      "name": "electron g factor",
+      "value": -2.00231930436256,
+      "unit": ""
+    },
+    "muonGFactor": {
+      "name": "muon g factor",
+      "value": -2.0023318418,
+      "unit": ""
+    },
+    "shieldedHelionMag.Mom.ToNuclearMagnetonRatio": {
+      "name": "shielded helion mag. mom. to nuclear magneton ratio",
+      "value": -2.127497719,
+      "unit": ""
+    },
+    "shieldedHelionMagn.MomentToNuclearMagnetonRatio": {
+      "name": "shielded helion magn. moment to nuclear magneton ratio",
+      "value": -2.127497723,
+      "unit": ""
+    },
+    "helionMag.Mom.ToNuclearMagnetonRatio": {
+      "name": "helion mag. mom. to nuclear magneton ratio",
+      "value": -2.127625307,
+      "unit": ""
+    },
+    "muonprotonMagn.MomentRatio": {
+      "name": "muon-proton magn. moment ratio",
+      "value": -3.183345118,
+      "unit": ""
+    },
+    "muonprotonMag.Mom.Ratio": {
+      "name": "muon-proton mag. mom. ratio",
+      "value": -3.183345142,
+      "unit": ""
+    },
+    "neutronGFactor": {
+      "name": "neutron g factor",
+      "value": -3.82608545,
+      "unit": ""
+    },
+    "helionGFactor": {
+      "name": "helion g factor",
+      "value": -4.255250615,
+      "unit": ""
+    },
+    "muonMagn.MomentToNuclearMagnetonRatio": {
+      "name": "muon magn. moment to nuclear magneton ratio",
+      "value": -8.89059698,
+      "unit": ""
+    },
+    "muonMag.Mom.ToNuclearMagnetonRatio": {
+      "name": "muon mag. mom. to nuclear magneton ratio",
+      "value": -8.89059703,
+      "unit": ""
+    },
+    "electronprotonMagn.MomentRatio": {
+      "name": "electron-proton magn. moment ratio",
+      "value": -658.2106862,
+      "unit": ""
+    },
+    "electronprotonMag.Mom.Ratio": {
+      "name": "electron-proton mag. mom. ratio",
+      "value": -658.21068789,
+      "unit": ""
+    },
+    "electronToShieldedProtonMagn.MomentRatio": {
+      "name": "electron to shielded proton magn. moment ratio",
+      "value": -658.2275956,
+      "unit": ""
+    },
+    "electronToShieldedProtonMag.Mom.Ratio": {
+      "name": "electron to shielded proton mag. mom. ratio",
+      "value": -658.2275971,
+      "unit": ""
+    },
+    "electronMagn.MomentToNuclearMagnetonRatio": {
+      "name": "electron magn. moment to nuclear magneton ratio",
+      "value": -1838.28197107,
+      "unit": ""
+    },
+    "electronMag.Mom.ToNuclearMagnetonRatio": {
+      "name": "electron mag. mom. to nuclear magneton ratio",
+      "value": -1838.28197188,
+      "unit": ""
+    },
+    "electrondeuteronMag.Mom.Ratio": {
+      "name": "electron-deuteron mag. mom. ratio",
+      "value": -2143.9234915,
+      "unit": ""
+    },
+    "electrondeuteronMagn.MomentRatio": {
+      "name": "electron-deuteron magn. moment ratio",
+      "value": -2143.923493,
+      "unit": ""
+    },
+    "electronChargeToMassQuotient": {
+      "name": "electron charge to mass quotient",
+      "value": -175882001076
+    }
+  }
+}

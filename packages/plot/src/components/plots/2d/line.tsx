@@ -1,48 +1,29 @@
-import React from "react";
-import { DataManager2d } from "../../../lib/classes/dataManager";
-import { Plot } from "../plot";
+import React, { useCallback, useMemo } from "react";
+import { BasePlotProps, LineAndScatterProps } from "../../../types";
+import { PlotContainer } from "../../container";
 import {
-    DataManager2dLinePropInput,
-    dataManagerPropsLine2d,
-} from "../../../lib/schemas/plotSpecific/line2d";
+    lineAndScatterSchema,
+    LineAndScatterSchema,
+} from "../../../schemas/plotProps/lineAndScatterSchema";
+import { usePlotVariables } from "../../../hooks/usePlotInput";
+import { getRandomId } from "@ulld/utilities/identity";
+/* import { PlotMathHandler } from "@ulld/math/plotMathHandler"; */
 
-const isWalkable = (d: any) => Array.isArray(d) || typeof d === "object";
+interface LinePlotProps
+    extends BasePlotProps,
+    LineAndScatterSchema,
+    LineAndScatterProps { }
 
-const walkObject = (d: object | any[]) => {
-    const isArr = Array.isArray(d);
-    const iter = isArr ? d : Object.keys(d);
-    iter.forEach((k) => {
-        const item = isArr ? k : d[k];
-        if (isWalkable(item)) {
-            return walkObject(item);
-        }
-        console.log("isArray: ", isArr)
-        console.log(`Typeof ${k}: ${typeof item}`)
-        if (typeof item === "function") {
-            console.log("FUNCTION: ", item);
-        }
-    });
-};
-
-const LinePlot2d = async (_props: DataManager2dLinePropInput) => {
-    const props = await dataManagerPropsLine2d.parseAsync(_props);
-    const manager = new DataManager2d(props);
-    const data = manager.getDataAs("scatter");
-    const propData = manager.getProps();
-    console.log("data: ", JSON.stringify(data, null, 4));
-    /* walkObject(propData); */
+export const LinePlot = (props: LinePlotProps) => {
+    const parsed = lineAndScatterSchema.parse(props);
+    const vars = usePlotVariables(props.id, props.variables);
+    let x = useMemo(() => , [props.min, props.max])
+    const values = useMemo(() => props.fnc);
     return (
-        <div>
-            <Plot
-                params={{
-                    ...propData,
-                    data: data,
-                }}
-            />
-        </div>
+        <PlotContainer validVariables={vars.isValid}>
+            <div>Line Plot here</div>
+        </PlotContainer>
     );
 };
 
-LinePlot2d.displayName = "LinePlot2d";
-
-export default LinePlot2d;
+LinePlot.displayName = "LinePlot";

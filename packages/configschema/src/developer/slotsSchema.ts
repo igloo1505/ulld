@@ -2,7 +2,7 @@ import { z } from "zod";
 // import slots from "@ulld/utilities/slotMap.json"
 import { PluginSlotConfig, PluginSlotObject } from "./types/pluginSlotConfig";
 
-export const configPluginSchema: z.ZodType<PluginSlotObject> = z.object({
+export const configPluginSchema = z.object({
     name: z.string(),
     version: z.string().default("latest")
 })
@@ -99,7 +99,7 @@ export const slotFields = {
 }
 
 
-export const pluginSlotSchema: z.ZodType<PluginSlotConfig> = z.object({
+export const pluginSlotSchema = z.object({
     navigation: z
         .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
         .default("@ulld/navigation")
