@@ -233,8 +233,8 @@
     },
     "devDependencies": {
         "@repo/typescript-config": "workspace:*",
-        "@types/react": "^18.2.76",
-        "@types/react-dom": "^18.2.25",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
         "autoprefixer": "^10.4.18",
         "next": "^14.2.4",
         "postcss": "^8.4.35",
@@ -294,10 +294,8 @@
         "zod": "^3.22.4"
     },
     "packageManager": "pnpm@9.0.4",
-    "dependencies": {
-        "@next/mdx": "^14.0.0"
-    },
     "publishConfig": {
         "access": "public"
-    }
+    },
+    "dependencies": {}
 }

@@ -27,14 +27,13 @@
         "@repo/eslint-config": "workspace:*",
         "@repo/jest-presets": "workspace:*",
         "@repo/typescript-config": "workspace:*",
-        "@types/react": "^18.2.79",
-        "@types/react-dom": "^18.2.25",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
         "next": "^14.2.4",
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
     },
     "dependencies": {
-        "@next/mdx": "^14.0.0",
         "colormap": "^2.3.2",
         "echarts": "^5.5.0",
         "jsxgraph": "^1.8.0",

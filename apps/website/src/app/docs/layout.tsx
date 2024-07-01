@@ -1,5 +1,6 @@
 import { docsLayoutOptions } from "#/fumaDocs/layoutOptions";
 import { DocsLayout } from "fumadocs-ui/layout";
+/* import 'fumadocs-ui/style.css'; */
 import type { ReactNode } from "react";
 import { RootToggle } from "fumadocs-ui/components/layout/root-toggle";
 import { TerminalIcon, UserIcon } from "lucide-react";

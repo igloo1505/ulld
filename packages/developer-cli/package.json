@@ -45,8 +45,8 @@
         "@types/jest": "^29.5.11",
         "@types/mocha": "^10.0.6",
         "@types/node": "^20.11.24",
-        "@types/react": "^18.2.79",
-        "@types/react-dom": "^18.2.25",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
         "chai": "^4.4.1",
         "eslint": "^9.0.0",
         "eslint-config-oclif": "^5.1.1",
@@ -63,7 +63,6 @@
     },
     "dependencies": {
         "@inquirer/prompts": "^5.0.1",
-        "@next/mdx": "^14.0.0",
         "@oclif/core": "^3.26.2",
         "@oclif/plugin-autocomplete": "^3.0.13",
         "@oclif/plugin-commands": "^3.2.2",
@@ -82,8 +81,8 @@
         "ts-import": "5.0.0-beta.0"
     },
     "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {},
     "publishConfig": {
         "access": "public"
-    }
+    },
+    "peerDependencies": {}
 }

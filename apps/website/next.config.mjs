@@ -1,9 +1,32 @@
+// import { withContentlayer } from "next-contentlayer";
 // import path from 'path'
+// import remarkGfm from "remark-gfm";
+// import rehypePrettyCode from "rehype-pretty-code";
 // import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { withContentlayer } from "next-contentlayer";
+// import path from "path";
 import nextPwa from "@ducanh2912/next-pwa";
 import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
+import createMDX from "fumadocs-mdx/config";
+import remarkMath from "remark-math";
+import rehypeMathjax from "rehype-mathjax/chtml.js";
+import emoji from "remark-emoji";
+// import rehypeVideo from "rehype-video";
+import remarkHeadingId from "remark-custom-header-id";
 import fs from "fs";
+import {
+    remarkDocGen,
+    remarkInstall,
+    fileGenerator,
+    typescriptGenerator,
+} from "fumadocs-docgen";
+import { rehypeCodeDefaultOptions } from "fumadocs-core/mdx-plugins";
+import { transformerTwoslash } from "fumadocs-twoslash";
+import {
+    transformerMetaHighlight,
+    transformerNotationWordHighlight,
+} from "@shikijs/transformers";
+
+
 
 const markdownOptions = fs.readFileSync(
     "../../packages/utilities/src/defaults/markdownOptions.json",
@@ -25,50 +48,50 @@ if (
         }/node_modules/canvas/build/Release:${process.env.LD_LIBRARY_PATH || ""}`;
 }
 
-const mermaidTheme = {
-    light: {
-        darkMode: false,
-        background: "#fff",
-        primaryColor: "#7c3aed",
-        primaryTextColor: "#f9fafb",
-        secondaryColor: "#2563eb",
-        secondaryTextColor: "#111827",
-        primaryBorderColor: "#e5e7eb",
-        secondaryBorderColor: "#e5e7eb",
-        noteBorderColor: "#e5e7eb",
-        tertiaryBorderColor: "#e5e7eb",
-        tertiaryColor: "#c026d3",
-        tertiaryTextColor: "#6b7280",
-        lineColor: "#6b7280",
-        noteBkgColor: "#f4f4f5",
-        noteTextColor: "#000000",
-    },
-    dark: {
-        darkMode: true,
-        background: "#000",
-        primaryColor: "#6d28d9",
-        primaryTextColor: "#f9fafb",
-        secondaryColor: "#1d4ed8",
-        secondaryTextColor: "#f9fafb",
-        primaryBorderColor: "#1f2937",
-        tertiaryBorderColor: "#1f2937",
-        secondaryBorderColor: "#1f2937",
-        tertiaryColor: "#a21caf",
-        tertiaryTextColor: "#9ca3af",
-        lineColor: "#9ca3af",
-        noteBkgColor: "#1b1917",
-        noteTextColor: "#000000",
-    },
-};
+// const mermaidTheme = {
+//     light: {
+//         darkMode: false,
+//         background: "#fff",
+//         primaryColor: "#7c3aed",
+//         primaryTextColor: "#f9fafb",
+//         secondaryColor: "#2563eb",
+//         secondaryTextColor: "#111827",
+//         primaryBorderColor: "#e5e7eb",
+//         secondaryBorderColor: "#e5e7eb",
+//         noteBorderColor: "#e5e7eb",
+//         tertiaryBorderColor: "#e5e7eb",
+//         tertiaryColor: "#c026d3",
+//         tertiaryTextColor: "#6b7280",
+//         lineColor: "#6b7280",
+//         noteBkgColor: "#f4f4f5",
+//         noteTextColor: "#000000",
+//     },
+//     dark: {
+//         darkMode: true,
+//         background: "#000",
+//         primaryColor: "#6d28d9",
+//         primaryTextColor: "#f9fafb",
+//         secondaryColor: "#1d4ed8",
+//         secondaryTextColor: "#f9fafb",
+//         primaryBorderColor: "#1f2937",
+//         tertiaryBorderColor: "#1f2937",
+//         secondaryBorderColor: "#1f2937",
+//         tertiaryColor: "#a21caf",
+//         tertiaryTextColor: "#9ca3af",
+//         lineColor: "#9ca3af",
+//         noteBkgColor: "#1b1917",
+//         noteTextColor: "#000000",
+//     },
+// };
 
-const mermaidOptions = {
-    output: "svg",
-    /* theme: { light: 'dark', dark: 'dark' }, */
-    mermaid: {
-        themeVariables: mermaidTheme.dark,
-        theme: "base",
-    },
-};
+// const mermaidOptions = {
+//     output: "svg",
+//     /* theme: { light: 'dark', dark: 'dark' }, */
+//     mermaid: {
+//         themeVariables: mermaidTheme.dark,
+//         theme: "base",
+//     },
+// };
 
 export const mathOptions = {
     tex: {
@@ -83,6 +106,55 @@ export const mathOptions = {
         adaptiveCSS: true,
     },
 };
+
+
+const withMDX = createMDX({
+    // rootContentPath: "src/mdx",
+    // include: [`./**/*.{md,mdx,json}`],
+    rootMapPath: "./src/fumaDocs/map.ts",
+    mdxOptions: {
+        lastModifiedTime: "git",
+        rehypeCodeOptions: {
+            defaultLanguage: "tsx",
+            transformers: [
+                ...rehypeCodeDefaultOptions.transformers,
+                transformerTwoslash(),
+                transformerNotationWordHighlight(),
+                transformerMetaHighlight(),
+            ],
+            themes: {
+                light: "github-light",
+                dark: "aurora-x",
+            },
+        },
+        remarkPlugins: [
+            remarkMath,
+            [remarkInstall, {Tags: "InstallTabs"}],
+            // remarkGfm,
+            [
+                remarkHeadingId,
+                {
+                    defaults: true,
+                },
+            ],
+            [emoji, {}],
+            [remarkDocGen, { generators: [fileGenerator(), typescriptGenerator()] }],
+        ],
+        rehypePlugins: (v) => [
+            // [rehypeMermaid as any, mermaid],
+            // [
+            //     rehypeVideo,
+            //     {
+            //         test: /\/(.*)(.mp4|.mov|.webm)$/,
+            //         details: false,
+            //     },
+            // ],
+            [rehypeMathjax, math],
+            ...v
+        ],
+    },
+})
+
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
@@ -104,13 +176,13 @@ const withPWA = nextPwa({
 
 /** @type {import('next').NextConfig} */
 const config = withPWA(
-    withContentlayer({
+    withMDX({
         typescript: {
             ignoreBuildErrors: true, // HACK: For development only.
             tsconfigPath: "./tsconfig.json",
         },
         images: {
-            // For displaying sponsors.
+            // TODO: For displaying sponsors.
             remotePatterns: [
                 {
                     protocol: "https",
@@ -156,7 +228,7 @@ const config = withPWA(
             esmExternals: "loose",
             optimizePackageImports: ["lucide-react", "katex"],
             // serverComponentsExternalPackages: ['@ulld/editor'],
-            mdxRs: true,
+            // mdxRs: true,
             turbo: {
                 resolveAlias: {
                     canvas: "./empty-module.ts",

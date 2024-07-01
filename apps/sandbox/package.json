@@ -12,11 +12,12 @@
         "@ducanh2912/next-pwa": "^10.2.5",
         "@hookform/resolvers": "^3.3.4",
         "@monaco-editor/react": "^4.6.0",
-        "@next/mdx": "^14.0.0",
         "@prisma/client": "^5.15.1",
         "@repo/jest-presets": "workspace:*",
         "@repo/typescript-config": "workspace:*",
         "@shikijs/rehype": "^1.2.0",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
         "@ulld/api": "workspace:*",
         "@ulld/baseConfigs": "workspace:*",
         "@ulld/config": "workspace:*",
@@ -54,8 +55,8 @@
         "postcss": "^8.4.35",
         "tailwindcss": "^3.4.1"
     },
-    "peerDependencies": {},
     "publishConfig": {
         "access": "public"
-    }
+    },
+    "peerDependencies": {}
 }

@@ -1,4 +1,12 @@
 import { numberBool } from "@ulld/utilities/numberUtils";
+import numbers from "numbers"
+// NOTE: Statistics stuff to add
+// numbers.statistic.mean(array);
+// numbers.statistic.median(array);
+// numbers.statistic.mode(array);
+// numbers.statistic.standardDev(array);
+// numbers.statistic.randomSample(lower, upper, n);
+// numbers.statistic.correlation(array1, array2);
 
 export class NumericList {
     constructor(public value: number[]) { }

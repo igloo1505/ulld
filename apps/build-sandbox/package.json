@@ -9,8 +9,9 @@
         "lint": "echo 'Add lint script here'"
     },
     "dependencies": {
-        "@next/mdx": "^14.0.0",
         "@repo/typescript-config": "workspace:*",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
         "@ulld/api": "workspace:*",
         "@ulld/baseConfigs": "workspace:*",
         "@ulld/bib-manager": "workspace:*",
@@ -63,9 +64,9 @@
         }
     },
     "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {},
-    "devDependencies": {},
     "publishConfig": {
         "access": "public"
-    }
+    },
+    "peerDependencies": {},
+    "devDependencies": {}
 }

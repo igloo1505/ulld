@@ -25,16 +25,15 @@
         "reagraph": "^4.15.26"
     },
     "devDependencies": {
-        "@types/react": "^18.2.74",
-        "@types/react-dom": "^18.2.24",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
         "next": "^14.2.4",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "reagraph": "^4.15.26"
     },
     "dependencies": {
-        "3d-force-graph": "^1.73.3",
-        "@next/mdx": "^14.0.0"
+        "3d-force-graph": "^1.73.3"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {

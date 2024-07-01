@@ -12,7 +12,6 @@ export type SlotMap = {
     }, 
 }
 
-
 export type PluginSlotKey = keyof SlotMap
 
 export type UISubSlots = keyof SlotMap["UI"]

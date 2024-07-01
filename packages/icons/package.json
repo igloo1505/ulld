@@ -50,8 +50,8 @@
     },
     "devDependencies": {
         "@repo/typescript-config": "workspace:*",
-        "@types/react": "^18.2.75",
-        "@types/react-dom": "^18.2.24",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
         "@ulld/utilities": "workspace:*",
         "clsx": "^2.1.0",
         "framer-motion": "^11.1.7",
@@ -61,7 +61,6 @@
         "react-dom": "^18.3.1"
     },
     "dependencies": {
-        "@next/mdx": "^14.0.0",
         "@tabler/icons-react": "^3.5.0",
         "react-icons": "^5.0.1"
     },

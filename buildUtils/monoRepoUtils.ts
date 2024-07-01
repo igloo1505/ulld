@@ -1,7 +1,14 @@
-// NOTE: This must be run from the monorepo root. Consider adding a variable in here to allow it to run from anywhere later.
 import { globSync } from "glob";
 import fs from "fs";
 import path from "path";
+import rl from "readline";
+
+const readLine = rl.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
+
+const args = process.argv.slice(2);
 
 interface Dependency {
     name: string;
@@ -36,7 +43,7 @@ const glob = () =>
 class PackageManager {
     packages: PackageSource[] = [];
     rootPackageJsonPath: string = path.join(__dirname, "../package.json");
-    constructor(public root: string = "/Users/bigsexy/Desktop/current/ulld") {
+    constructor(public root: string = process.env.ULLD_DEV_ROOT!) {
         this.packages = this.collectPackages();
     }
     getRootRelativePath(p: string) {
@@ -132,6 +139,9 @@ pnpm add @types/react@latest @types/react-dom@latest ${filter}
                 }
             }
         }
+        console.log(
+            `Successfully cleared all node_modules directory in ${this.root}`,
+        );
     }
     removePackageLock() {
         this.rm(this.getRootRelativePath("pnpm-lock.yaml"));
@@ -191,6 +201,15 @@ pnpm add @types/react@latest @types/react-dom@latest ${filter}
     findByDependency(name: string) {
         return this.packages.filter((a) => a.deps.find((b) => b.name === name));
     }
+    findByRegex(regexString: string): { package: string; deps: string[] }[] {
+        let regex = new RegExp(regexString, "gmi");
+        return this.packages
+            .map((a) => ({
+                package: a.name,
+                deps: a.deps.filter((b) => regex.test(b.name)).map((d) => d.name),
+            }))
+            .filter((c) => c.deps.length);
+    }
     filterStringByDependency(name: string) {
         let items = this.findByDependency(name);
         return items.map((a) => `--filter=${a.name}`).join(" ");
@@ -221,11 +240,45 @@ pnpm add @types/react@latest @types/react-dom@latest ${filter}
             };
         });
     }
+    processArgs(args: string[]) {
+        console.log(
+            `Processing args: \n${args.map((a, i) => `${i + 1}. ${a}`).join("\n")}`,
+        );
+        if (args[0] === "clearModules") {
+            this.clearNodeModules();
+            process.exit();
+        }
+        if (args[0] === "findByPackage") {
+            readLine.question("What package? ", (packageName) => {
+                const found = p.findByDependency(packageName);
+                console.log(found.map((f) => `--filter=${f.name}`).join(" "));
+                process.exit(0);
+            });
+        }
+        if(args[0] === "findByRegex"){
+            readLine.question("What package? ", (packageTest) => {
+                const found = p.findByRegex(packageTest);
+                console.log(found.map((f) => `Package: ${f.package}\n Dependencies:\n-${f.deps.join("\n-")}`).join("\n-----\n"))
+                console.log(`\n\n ${found.map((f) => `--filter=${f.package}`).join(" ")}`);
+                process.exit(0);
+            });
+        }
+    }
 }
 
 const p = new PackageManager();
+p.processArgs(args);
 
-p.clearNodeModules();
 
-// const found = p.findByDependency("react");
-// console.log(found.map((f) => `--filter=${f.name}`).join(" "));
+p.packages.forEach((a) => {
+     for (const k in a.content.peerDependencies) {
+         if(!(k in a.content.devDependencies)){
+         a.content.devDependencies[k] = a.content.peerDependencies[k]
+         console.log(`Added ${k} in ${a.name}`)
+         } 
+     }
+     // console.log("a.content: ", a.content)
+})
+
+
+// p.writeModified(true)

@@ -63,12 +63,10 @@
         "lint": "echo 'Add lint script here'"
     },
     "dependencies": {
-        "@next/mdx": "^14.0.0",
         "react-hook-form": "^7.51.3",
         "shiki": "^1.1.7"
     },
     "devDependencies": {
-        "@mdx-js/mdx": "^3.0.1",
         "@repo/typescript-config": "workspace:^",
         "@testing-library/cypress": "^10.0.1",
         "@testing-library/dom": "^9.3.4",
@@ -77,8 +75,8 @@
         "@testing-library/user-event": "^14.5.2",
         "@types/lodash.debounce": "^4.0.9",
         "@types/mathjax": "^0.0.40",
-        "@types/react": "^18.2.66",
-        "@types/react-dom": "^18.2.22",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
         "@ulld/configschema": "workspace:*",
         "chai": "^5.1.0",
         "cypress": "^13.7.1",
@@ -95,7 +93,6 @@
         "ts-jest": "^29.1.2"
     },
     "peerDependencies": {
-        "@mdx-js/mdx": "^3.0.1",
         "@types/react": "^18.2.66",
         "@types/react-dom": "^18.2.22",
         "@ulld/api": "workspace:*",

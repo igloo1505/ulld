@@ -1,6 +1,7 @@
 {
     "files": [
         "index.mdx",
+        "docsHome.mdx",
         "user/types/ColorProps.mdx",
         "user/components/index.mdx",
         "user/components/Text/Underline.mdx",
@@ -23,6 +24,15 @@
         "user/components/ContentTypes/Image.mdx",
         "user/components/Academic/errorMargin.mdx",
         "user/components/Academic/abstract.mdx",
-        "developer/index.mdx"
+        "static/syntax.mdx",
+        "static/myWorkHome.mdx",
+        "static/introToJsx.mdx",
+        "static/gettingStarted.mdx",
+        "static/frontMatter.mdx",
+        "static/docsHome.mdx",
+        "developer/styleUtilities.mdx",
+        "developer/index.mdx",
+        "developer/functionalUtilities.mdx",
+        "developer/events.mdx"
     ]
 }

@@ -21,7 +21,6 @@
         "./3d/threeJsCanvas": "./src/3d/ThreeCanvas.tsx"
     },
     "peerDependencies": {
-        "@mdx-js/mdx": "^3.0.1",
         "@react-three/drei": "^9.99.7",
         "@react-three/fiber": "^8.15.19",
         "@repo/jest-presets": "workspace:*",
@@ -43,8 +42,8 @@
         "@repo/jest-presets": "workspace:*",
         "@repo/typescript-config": "workspace:*",
         "@types/mdx": "^2.0.11",
-        "@types/react": "^18.2.75",
-        "@types/react-dom": "^18.2.24",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
         "@ulld/api": "workspace:*",
         "@ulld/component-map": "workspace:*",
         "@ulld/config": "workspace:*",
@@ -58,11 +57,8 @@
         "typescript": "^5.4.5"
     },
     "packageManager": "pnpm@9.0.4",
-    "dependencies": {
-        "@mdx-js/mdx": "^3.0.1",
-        "@next/mdx": "^14.0.0"
-    },
     "publishConfig": {
         "access": "public"
-    }
+    },
+    "dependencies": {}
 }
