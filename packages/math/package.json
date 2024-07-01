@@ -34,20 +34,21 @@
         "@tailwindcss/forms": "^0.5.7",
         "@types/react": "^18.2.74",
         "@types/react-dom": "^18.2.24",
-        "typescript": "^5.4.5"
+        "typescript": "^5.4.5",
+        "@repo/eslint-config": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
-        "@mathigon/fermat": "^1.1.18",
-        "complex.js": "^2.1.1",
-        "fraction.js": "^4.3.7",
-        "mathjs": "^12.4.0",
-        "mz-math": "^3.0.26",
-        "numbers": "^0.7.0",
-        "numeric": "^1.2.6",
-        "quaternion": "^1.5.1"
+        "@mathigon/fermat": "1.1.18",
+        "complex.js": "2.1.1",
+        "fraction.js": "4.3.7",
+        "mathjs": "12.4.0",
+        "mz-math": "3.0.26",
+        "numbers": "0.7.0",
+        "numeric": "1.2.6",
+        "quaternion": "1.5.1"
     }
 }

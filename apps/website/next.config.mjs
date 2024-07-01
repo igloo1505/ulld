@@ -1,17 +1,12 @@
 // import { withContentlayer } from "next-contentlayer";
-// import path from 'path'
-// import remarkGfm from "remark-gfm";
-// import rehypePrettyCode from "rehype-pretty-code";
-// import rehypeAutolinkHeadings from "rehype-autolink-headings";
 // import path from "path";
 import nextPwa from "@ducanh2912/next-pwa";
 import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
 import createMDX from "fumadocs-mdx/config";
 import remarkMath from "remark-math";
-import rehypeMathjax from "rehype-mathjax/chtml.js";
+import rehypeMathjax from "rehype-mathjax/chtml";
 import emoji from "remark-emoji";
 // import rehypeVideo from "rehype-video";
-import remarkHeadingId from "remark-custom-header-id";
 import fs from "fs";
 import {
     remarkDocGen,
@@ -129,14 +124,8 @@ const withMDX = createMDX({
         },
         remarkPlugins: [
             remarkMath,
-            [remarkInstall, {Tags: "InstallTabs"}],
             // remarkGfm,
-            [
-                remarkHeadingId,
-                {
-                    defaults: true,
-                },
-            ],
+            [remarkInstall, {Tags: "InstallTabs"}],
             [emoji, {}],
             [remarkDocGen, { generators: [fileGenerator(), typescriptGenerator()] }],
         ],

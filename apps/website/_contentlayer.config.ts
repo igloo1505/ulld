@@ -1,13 +1,13 @@
-// import remarkGfm from "remark-gfm";
 // import rehypePrettyCode from "rehype-pretty-code";
 // import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import remarkGfm from "remark-gfm";
 import {
   defineDocumentType,
   makeSource,
   DocumentTypeDef,
 } from "contentlayer/source-files";
 import remarkMath from "remark-math";
-import rehypeMathjax from "rehype-mathjax/chtml.js";
+import rehypeMathjax from "rehype-mathjax/chtml";
 import emoji from "remark-emoji";
 import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
@@ -17,11 +17,11 @@ import {
   transformerMetaHighlight,
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
-import {
-  defaultConfig,
-  createConfig,
-  Options,
-} from "fumadocs-contentlayer/configuration";
+// import {
+//   defaultConfig,
+//   createConfig,
+//   Options,
+// } from "fumadocs-contentlayer/configuration";
 import {
   remarkDocGen,
   remarkInstall,
@@ -488,87 +488,83 @@ const fumaOptions: Options = {
   },
 };
 
-const fumaBaseConfig = createConfig(fumaOptions);
-
-
-
-console.log("fumaBaseConfig: ", fumaBaseConfig)
+// const fumaBaseConfig = createConfig(fumaOptions);
+// console.log("fumaBaseConfig: ", fumaBaseConfig)
+// export default makeSource(defaultConfig);
 
 // export default makeSource(fumaBaseConfig);
-export default makeSource(defaultConfig);
 
-// export default makeSource({
-//   ...defaultConfig,
-//   contentDirPath: contentRoot,
-//   documentTypes: [
-//     PrivacyPolicy,
-//     Tos,
-//     RefundPolicy,
-//     AboutUs,
-//     MyNotes,
-//     StoryOfULLD,
-//     Documentation,
-//     SlotDocumentation,
-//     CancelSubscriptionPrompt,
-//     Blog,
-//     Demos,
-//     StaticDocumentation,
-//   ],
-//   mdx: {
-//     remarkPlugins: [
-//       remarkMath,
-//       remarkGfm,
-//       [
-//         remarkHeadingId,
-//         {
-//           defaults: true,
-//         },
-//       ],
-//       [emoji as any, {}],
-//     ],
-//     rehypePlugins: [
-//       // [rehypeMermaid as any, mermaid],
-//       [
-//         rehypeVideo as any,
-//         {
-//           test: /\/(.*)(.mp4|.mov|.webm)$/,
-//           details: false,
-//         },
-//       ],
-//       [rehypeMathjax, math],
-//       [
-//         /* @ts-ignore */
-//         rehypePrettyCode,
-//         {
-//           keepBackground: false,
-//           theme: "dracula",
-//           onVisitLine(node: any) {
-//             if (node.children.length === 0) {
-//               node.children = [{ type: "text", value: " " }];
-//             }
-//           },
-//           onVisitHighlightedLine(node: any) {
-//             node.properties.className.push("line--highlighted");
-//           },
-//           onVisitHighlightedWord(node: any) {
-//             node.properties.className = ["word--highlighted"];
-//           },
-//           transformers: [
-//             transformerNotationWordHighlight(),
-//             transformerMetaHighlight(),
-//           ],
-//         },
-//       ],
-//       // [
-//       //     rehypeAutolinkHeadings,
-//       //     {
-//       //         properties: {
-//       //             className: ["subheading-anchor"],
-//       //             ariaLabel: "Link to section",
-//       //         },
-//       //     },
-//       // ],
-//       rehypeSlug,
-//     ],
-//   },
-// });
+export default makeSource({
+  contentDirPath: contentRoot,
+  documentTypes: [
+    PrivacyPolicy,
+    Tos,
+    RefundPolicy,
+    AboutUs,
+    MyNotes,
+    StoryOfULLD,
+    Documentation,
+    SlotDocumentation,
+    CancelSubscriptionPrompt,
+    Blog,
+    Demos,
+    StaticDocumentation,
+  ],
+  mdx: {
+    remarkPlugins: [
+      remarkMath,
+      remarkGfm,
+      [
+        remarkHeadingId,
+        {
+          defaults: true,
+        },
+      ],
+      [emoji as any, {}],
+    ],
+    rehypePlugins: [
+      // [rehypeMermaid as any, mermaid],
+      [
+        rehypeVideo as any,
+        {
+          test: /\/(.*)(.mp4|.mov|.webm)$/,
+          details: false,
+        },
+      ],
+      [rehypeMathjax, math],
+      [
+        /* @ts-ignore */
+        rehypePrettyCode,
+        {
+          keepBackground: false,
+          theme: "dracula",
+          onVisitLine(node: any) {
+            if (node.children.length === 0) {
+              node.children = [{ type: "text", value: " " }];
+            }
+          },
+          onVisitHighlightedLine(node: any) {
+            node.properties.className.push("line--highlighted");
+          },
+          onVisitHighlightedWord(node: any) {
+            node.properties.className = ["word--highlighted"];
+          },
+          transformers: [
+            transformerNotationWordHighlight(),
+            transformerMetaHighlight(),
+          ],
+        },
+      ],
+      // [
+      //     rehypeAutolinkHeadings,
+      //     {
+      //         properties: {
+      //             className: ["subheading-anchor"],
+      //             ariaLabel: "Link to section",
+      //         },
+      //     },
+      // ],
+      rehypeSlug,
+    ],
+  },
+});

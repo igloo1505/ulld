@@ -117,14 +117,32 @@ class PackageManager {
     }
     writeUpdateReactScript() {
         let packages = this.findByDependency("react");
-        const filter = packages.map((f) => `--filter=${f.name}`).join(" ");
-        const fileContent = `#!/bin/zsh
-pnpm add next@latest react@latest react-dom@latest ${filter}
+        let peerPackages = packages.filter((f) => f.deps.some((d) => Boolean(["react", "react-dom"].includes(d.name) && ["peerDependencies", "devDependencies"].includes(d.type))))
+        let peerNames = peerPackages.map((p) => p.name)
+        const filter = packages.filter((f) => !peerNames.includes(f.name)).map((f) => `--filter=${f.name}`).join(" ");
+        const peerFilter = peerPackages.map((f) => `--filter=${f.name}`).join(" ");
 
-pnpm add @types/react@latest @types/react-dom@latest ${filter}
-`;
+        let s = `#!/bin/zsh\n`
+        if(filter.length){
+        s += `
+pnpm add next@latest react@latest react-dom@latest ${filter}
+`
+        }
+        if(peerFilter.length){
+        s += `
+pnpm add --save-peer next@latest react@latest react-dom@latest ${peerFilter}
+
+pnpm add -D next@latest react@latest react-dom@latest ${peerFilter}
+`
+        }
+        if(packages.length){
+        s += `
+pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--filter=${f.name}`).join(" ")}`
+        }
         const targetFile = path.join(__dirname, "./updateReactAndNext.zsh");
-        fs.writeFileSync(targetFile, fileContent, { encoding: "utf-8" });
+        fs.writeFileSync(targetFile, s, { encoding: "utf-8" });
+        console.log(`Update React update script with new package data.`)
+        process.exit(0)
     }
     clearNodeModules(dry: boolean = false) {
         let paths = this.packages.map((a) => a.node_modules);
@@ -142,6 +160,7 @@ pnpm add @types/react@latest @types/react-dom@latest ${filter}
         console.log(
             `Successfully cleared all node_modules directory in ${this.root}`,
         );
+        process.exit(0)
     }
     removePackageLock() {
         this.rm(this.getRootRelativePath("pnpm-lock.yaml"));
@@ -246,7 +265,7 @@ pnpm add @types/react@latest @types/react-dom@latest ${filter}
         );
         if (args[0] === "clearModules") {
             this.clearNodeModules();
-            process.exit();
+            process.exit(0);
         }
         if (args[0] === "findByPackage") {
             readLine.question("What package? ", (packageName) => {
@@ -255,7 +274,7 @@ pnpm add @types/react@latest @types/react-dom@latest ${filter}
                 process.exit(0);
             });
         }
-        if(args[0] === "findByRegex"){
+        if (args[0] === "findByRegex") {
             readLine.question("What package? ", (packageTest) => {
                 const found = p.findByRegex(packageTest);
                 console.log(found.map((f) => `Package: ${f.package}\n Dependencies:\n-${f.deps.join("\n-")}`).join("\n-----\n"))
@@ -263,22 +282,11 @@ pnpm add @types/react@latest @types/react-dom@latest ${filter}
                 process.exit(0);
             });
         }
+        if (args[0] === "updateReactScript") {
+            this.writeUpdateReactScript()
+        }
     }
 }
 
 const p = new PackageManager();
 p.processArgs(args);
-
-
-p.packages.forEach((a) => {
-     for (const k in a.content.peerDependencies) {
-         if(!(k in a.content.devDependencies)){
-         a.content.devDependencies[k] = a.content.peerDependencies[k]
-         console.log(`Added ${k} in ${a.name}`)
-         } 
-     }
-     // console.log("a.content: ", a.content)
-})
-
-
-// p.writeModified(true)

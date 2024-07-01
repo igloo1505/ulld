@@ -12,3 +12,5 @@ Create new math test data | python /Users/bigsexy/Desktop/current/ulld/buildUtil
 Clear all node_modules | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoRepoUtils.ts clearModules
 Find by package | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoRepoUtils.ts findByPackage 
 Find by package regex | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoRepoUtils.ts findByRegex
+Update workspace update react script | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoRepoUtils.ts updateReactScript
+

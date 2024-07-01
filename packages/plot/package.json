@@ -34,14 +34,14 @@
         "react-dom": "^18.3.1"
     },
     "dependencies": {
-        "colormap": "^2.3.2",
-        "echarts": "^5.5.0",
-        "jsxgraph": "^1.8.0",
-        "plotly.js": "^2.30.0",
-        "plotly.js-dist": "^2.31.1",
-        "react-plotly.js": "^2.6.0",
-        "recharts": "^2.12.2",
-        "zod": "^3.22.4"
+        "colormap": "2.3.2",
+        "echarts": "5.5.0",
+        "jsxgraph": "1.8.0",
+        "plotly.js": "2.30.0",
+        "plotly.js-dist": "2.31.1",
+        "react-plotly.js": "2.6.0",
+        "recharts": "2.12.2",
+        "zod": "3.22.4"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {

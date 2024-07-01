@@ -36,7 +36,10 @@
         "@types/react-dom": "^18.3.0",
         "next": "^14.2.4",
         "react": "^18.3.1",
-        "react-dom": "^18.3.1"
+        "react-dom": "^18.3.1",
+        "@repo/eslint-config": "workspace:*",
+        "@repo/jest-presets": "workspace:*",
+        "@repo/typescript-config": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {

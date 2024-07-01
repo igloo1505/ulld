@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "ULLD",
+  "name": "ulld",
   "scripts": {
     "build": "turbo build",
     "clean": "turbo clean",
@@ -61,14 +61,32 @@
     }
   },
   "dependencies": {
-    "@changesets/cli": "^2.27.5",
-    "@manypkg/cli": "^0.21.4",
-    "deepmerge": "^4.3.1",
-    "framer-motion": "^11.1.7",
-    "glob": "^10.3.15",
-    "tinycolor2": "^1.6.0",
-    "tsup": "^8.0.1",
-    "zod": "^3.22.4"
+    "@changesets/cli": "2.27.5",
+    "@manypkg/cli": "0.21.4",
+    "deepmerge": "4.3.1",
+    "framer-motion": "11.1.7",
+    "glob": "10.3.15",
+    "tinycolor2": "1.6.0",
+    "tsup": "8.0.1",
+    "zod": "3.22.4"
   },
-  "peerDependencies": {}
+  "keywords": [
+    "markdown",
+    "note taking",
+    "mdx",
+    "math",
+    "research",
+    "academic",
+    "STEM"
+  ],
+  "author": "Andrew Mueller <aiglinski414@gmail.com> (https://uhlittlelessdum.com)",
+  "contributors": [
+    "Andrew Mueller <aiglinski414@gmail.com> (https://uhlittlelessdum.com)"
+  ],
+  "funding": [
+    {
+      "type": "GitHub Sponsors",
+      "url": "https://github.com/igloo1505/ulld"
+    }
+  ]
 }

@@ -26,20 +26,23 @@
     },
     "dependencies": {
         "@discordjs/next": "0.1.1-dev.1673526225-a580768.0",
-        "@discordjs/rest": "^2.2.0",
-        "@discordjs/voice": "^0.16.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
-        "bufferutil": "^4.0.8",
-        "discord.js": "^14.14.1",
-        "next": "^14.2.4",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "utf-8-validate": "^6.0.3",
-        "zlib-sync": "^0.1.9"
+        "@discordjs/rest": "2.2.0",
+        "@discordjs/voice": "0.16.1",
+        "@types/react": "18.3.3",
+        "@types/react-dom": "18.3.0",
+        "bufferutil": "4.0.8",
+        "discord.js": "14.14.1",
+        "next": "14.2.4",
+        "react": "18.3.1",
+        "react-dom": "18.3.1",
+        "utf-8-validate": "6.0.3",
+        "zlib-sync": "0.1.9"
     },
     "devDependencies": {
-        "@slack/types": "^2.11.0"
+        "@slack/types": "^2.11.0",
+        "@repo/eslint-config": "workspace:*",
+        "@repo/jest-presets": "workspace:*",
+        "@repo/typescript-config": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {

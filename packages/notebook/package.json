@@ -23,16 +23,20 @@
         "@ulld/utilities": "workspace:*"
     },
     "dependencies": {
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "18.3.3",
+        "@types/react-dom": "18.3.0",
         "monaco-editor": "0.49.0",
-        "next": "^14.2.4",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1"
+        "next": "14.2.4",
+        "react": "18.3.1",
+        "react-dom": "18.3.1"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"
     },
-    "devDependencies": {}
+    "devDependencies": {
+        "@repo/eslint-config": "workspace:*",
+        "@repo/jest-presets": "workspace:*",
+        "@repo/typescript-config": "workspace:*"
+    }
 }

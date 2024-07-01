@@ -99,15 +99,18 @@
         "y-monaco": "^0.1.5",
         "y-webrtc": "^10.3.0",
         "y-websocket": "^2.0.2",
-        "yjs": "^13.6.14"
+        "yjs": "^13.6.14",
+        "@monaco-editor/react": "^4.6.0",
+        "@repo/typescript-config": "workspace:*",
+        "raw-loader": "^4.0.2"
     },
     "dependencies": {
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
-        "monaco-editor": "^0.44.0",
-        "next": "^14.2.4",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1"
+        "@types/react": "18.3.3",
+        "@types/react-dom": "18.3.0",
+        "monaco-editor": "0.49.0",
+        "next": "14.2.4",
+        "react": "18.3.1",
+        "react-dom": "18.3.1"
     },
     "publishConfig": {
         "access": "public"

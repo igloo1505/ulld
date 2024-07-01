@@ -10,8 +10,8 @@
     },
     "dependencies": {
         "@repo/typescript-config": "workspace:*",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "18.3.3",
+        "@types/react-dom": "18.3.0",
         "@ulld/api": "workspace:*",
         "@ulld/baseConfigs": "workspace:*",
         "@ulld/bib-manager": "workspace:*",
@@ -51,9 +51,9 @@
         "@ulld/ui": "workspace:*",
         "@ulld/utilities": "workspace:*",
         "@ulld/whiteboard": "workspace:*",
-        "next": "^14.2.4",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1"
+        "next": "14.2.4",
+        "react": "18.3.1",
+        "react-dom": "18.3.1"
     },
     "ulld": {
         "navigation": "@ulld/navigation",

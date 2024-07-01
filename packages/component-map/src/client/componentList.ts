@@ -107,5 +107,4 @@ export const conditionalClientComponents: ConditionalComponentQuery<EmbeddableCl
         {regex: new RegExp("<ErrorMargin"), component: ErrorMargin, label: "ErrorMargin"},
         {regex: new RegExp("<Abstract"), component: Abstract, label: "Abstract"},
         {regex: new RegExp("<TableFit"), component: TableFit, label: "TableFit"},
-
     ]

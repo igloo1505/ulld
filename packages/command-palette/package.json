@@ -49,7 +49,14 @@
         "@repo/jest-presets": "workspace:*",
         "@repo/typescript-config": "workspace:*",
         "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0"
+        "@types/react-dom": "^18.3.0",
+        "cmdk": "^0.2.0",
+        "lucide-react": "latest",
+        "next": "^13.1.16",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "tinykeys": "^2.1.0",
+        "zod": "^3.22.2"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {

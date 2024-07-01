@@ -7,7 +7,6 @@ import componentMap from "#/fumaDocs/generatedComponentMap.json";
 import { serverComponentMap } from "#/mdx/serverComponentMap";
 import MathjaxProvider from "#/components/utility/providers/mathjax";
 import { TypeTable } from "#/components/docs/typeTable";
-import { Content } from "./content";
 
 export default async function Page({
     params,
@@ -20,7 +19,6 @@ export default async function Page({
         notFound();
     }
 
-    /* const MDX = page.data.exports.default; */
     let componentData =
         page.data.title in componentMap
             ? componentMap[page.data.title as keyof typeof componentMap]
@@ -33,6 +31,9 @@ export default async function Page({
             serverComponentMap,
         )
         : {};
+    
+
+  const MDX = page.data.exports.default;
 
     console.log("page: ", page)
 
@@ -45,7 +46,7 @@ export default async function Page({
             >
                 <MathjaxProvider>
                     <h1>{page.data.title}</h1>
-                    <Content code={page.data.body.code} TypeTableComponent={TypeTable} />
+                    <MDX />
                 </MathjaxProvider>
             </DocsBody>
         </DocsPage>
