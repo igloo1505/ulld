@@ -131,7 +131,7 @@ writePluginConfig(parsedPlugin, __dirname);
 </Hint>
 
 
-### Embeddable Components [#devDocs-embeddable-components]
+### Embeddable Components ||devDocs-embeddable-components||
 
 **Embeddable components** are the most simple plugin feature to develop for <LogoAsText />. Like all components exported by your plugin, they must be a default export and the both `DeveloperConfigInput["components"][number]["export"]` and `DeveloperConfigInput["components"][number]["componentName"]` properties are required.  
 
@@ -167,7 +167,7 @@ The component configuration type also supports two documentation fields, `docsEx
 
 While neither documentation field is strictly required for your component, it is heavily preferred that you include at least a `docsExport` field to summarize the component's props if they are not immediately obvious. Keep in mind that in most cases, the `docsExport` field will be displayed within a container that is no more than 500-600px wide. The difference between these two fields is that the `docsExport` field will be displayed in the users command palette for quick reference, and the `fullDocsExport` will optionally link to an independent documentation page for more verbose documentation with a full screen layout to include demonstrations and examples.
 
-### Slot Components [#devDocs-slot-components]
+### Slot Components ||devDocs-slot-components||
 
 _Slot_ components are only slightly more complicated than _embeddable_ components. To occupy a slot within the user's compiled application, your entire plugin must occupy that parent slot. This means that for any given plugin, you are only able to produce components for one subset of the compiled application. For example, if you want to build a plugin that replaces the navbar for users, your plugin config must satisfy the following values:
 
@@ -196,11 +196,11 @@ Since a user will likely include other plugins along side yours, it is important
 
 All mdx content will always be wrapped in a `@container/mdx` class applied through the `@tailwindcss/container-queries` tailwind plugin, and it is heavily suggested that you rely upon this class for most responsiveness issues and not the viewport or parent directly, unless your component triggers something absolutely positioned like modal.
 
-## Parsing Functions [#devDocs-parsing-functions]
+## Parsing Functions ||devDocs-parsing-functions||
 
 
 ---
 
-## Pages [#config-dev-pageProps]
+## Pages ||config-dev-pageProps||
 
 

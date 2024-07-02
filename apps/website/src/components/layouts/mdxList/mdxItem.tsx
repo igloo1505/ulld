@@ -3,22 +3,20 @@ import { getComponentMap } from "@ulld/component-map/client";
 import { useAutoWrapCode } from "@ulld/hooks/useAutoWrapCode";
 import { Separator } from "@ulld/tailwind/separator";
 import cn from "@ulld/utilities/cn";
-/* import { Documentation } from "contentlayer/generated"; */
-/* import { useMDXComponent } from "next-contentlayer/hooks"; */
+import { Documentation } from "contentlayer/generated";
+import { useMDXComponent } from "next-contentlayer/hooks";
 import React, { HTMLProps, useMemo } from "react";
 
 interface MdxListItemProps extends HTMLProps<HTMLElement> {
-    /* mdx: Documentation; */
-    mdx: any;
+    mdx: Documentation;
     isLast: boolean;
 }
 
 const MdxListItem = ({ mdx, isLast, ...props }: MdxListItemProps) => {
-    /* const article = useMDXComponent(mdx.body.code); */
-    /* const Article = useMemo(() => article, []); */
+    const article = useMDXComponent(mdx.body.code);
+    const Article = useMemo(() => article, []);
     const components = getComponentMap(mdx.body.raw, {}, webComponentMap);
 
-    const Article  =(props: any) => <div>Fix this! Disabled contentlayer for now.</div>
     return (
         <>
             <section

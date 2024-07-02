@@ -1,12 +1,11 @@
-import { createMDXSource } from "fumadocs-mdx";
-import { map } from "./map";
+import { createMDXSource } from "@fumadocs/content-collections";
+import { allDocs, allMetas } from "content-collections";
 import { loader, LoaderOptions } from "fumadocs-core/source";
+// import { map } from "./map";
 // import { z } from "zod";
 // import { allDocs, allMeta } from "contentlayer/generated";
 // import { createContentlayerSource } from "fumadocs-contentlayer";
 // import type { PageTree } from 'fumadocs-core/server';
-
-
 
 // const documentationFrontMatterSchema = z.object({
 //   title: z.string(),
@@ -27,12 +26,17 @@ import { loader, LoaderOptions } from "fumadocs-core/source";
 //   }),
 // };
 
-
-export const {getPage, getPages, pageTree, getLanguages, files: docFiles} = loader({
-    rootDir: 'docs',
-    baseUrl: '/docs',
-    source: createMDXSource(map)
-})
+export const {
+    getPage,
+    getPages,
+    pageTree,
+    getLanguages,
+    files: docFiles,
+} = loader({
+    rootDir: "docs",
+    baseUrl: "/docs",
+    source: createMDXSource(allDocs, allMetas),
+});
 
 // export const {
 //   getPage,

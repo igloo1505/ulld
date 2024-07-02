@@ -59,7 +59,7 @@ This can be done in 1 of 2 ways.
 
 
 
-#### 6. Optional: Configure Postgres [#get-started-postgres]
+#### 6. Optional: Configure Postgres ||get-started-postgres||
 
 <LogoAsText /> supports two different databases; **SQLite** and **Postgres**. Postgres is strongly prefered for performance reasons, but both Postgres and SQLite offer their own unique advantages. 
 
@@ -144,7 +144,7 @@ You can now run your project with:
     This build process will become significantly improved over the coming weeks and months. Under normal circumstances, I wouldn't even release this application until a better build process was in place, but because of my current living situation, the heat, and my sweet, sweet puppy, I'm unable to work for more than a few hours each day until my battery dies. Once that is taken care of, or even in small increments in the mean time, a significantly improved build process is my main focus.
 </Admonition>
 
-### **Optional:** Writing your own configuration file [#write-own-config]
+### **Optional:** Writing your own configuration file ||write-own-config||
 
 If you choose to write your own configuration file, follow the `AppConfigSchemaOutput` type exported from `@ulld/configschema/zod/main`. That same module also exports a zod object, `appConfigSchema` that can be used to generate a more complete `AppConfigSchemaOutput` type with sensible defaults, however you must at least fulfill the `AppConfigSchemaInput` type and then write the output to an `appConfig.ulld.json` file at the root of the <Ul yellow>application</Ul>. That would look something like this:
 
@@ -172,7 +172,7 @@ console.log(`Your app config was written to ${target}!`)
 </Hint>
 
 
-### Configuring Jupyter [#configure-jupyter]
+### Configuring Jupyter ||configure-jupyter||
 
 
 

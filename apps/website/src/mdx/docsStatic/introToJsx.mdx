@@ -15,7 +15,7 @@ Through the great work at the people over at [MDX](https://mdxjs.com), we can no
 > All you need to know is how to properly pass in the data that these components need to calculate what they should return. If you're already familiar with **JSX**, you can move on to the [components documentation](/docs/user/components?category=Layout). Otherwise, a quick review of this documentation is important if you want to get the most from <LogoAsText />. Don't worry; It's incredibly simple.
 
 
-## How to read documentation [#how-to-read-docs]
+## How to read documentation ||how-to-read-docs||
 
 Regardless of whether or not a component is actually built using Typescript (**TSX**), a similar syntax is used to define the properties that any given component accepts. Because these types are often defined in the same file as regular javascript code, they use an intentionally similar syntax, but not an identical syntax to regular javascript.
 
@@ -69,7 +69,7 @@ In the example above, the property `name` follows a similar syntax to [other](#n
 ```
 
 
-### Other Component Properties [#normal-jsx-prop-syntax]
+### Other Component Properties ||normal-jsx-prop-syntax||
 
 Passing in other properties to react components follows a similar syntax to that of the `name` property above, but there are slight variations for different ***types***. All properties can be wrapped in a pair of curly braces as:
 
@@ -77,7 +77,7 @@ Passing in other properties to react components follows a similar syntax to that
 <SomeComponent name={"Some name property"} />
 ```
 
-#### Strings [#jsx-string-props]
+#### Strings ||jsx-string-props||
 
 The use of curly braces is important for other value types, but is optional in _most_ cases for strings. Note that the `name` property in the example above has a value that is still wrapped in quotations along with the curly braces. There is no difference between single and double quotes, and backticks `` ` `` can also be used.[^2]
 
@@ -91,7 +91,7 @@ const validString2 = 'This is a "valid" string.'
 const validString3 = "And this is a \"valid\" string too!"
 ```
 
-##### String Literals [#jsx-string-literals]
+##### String Literals ||jsx-string-literals||
 
 > **Note:** String literals <Ul yellow>must</Ul> be wrapped in curly braces when passed in as a component property. Curly braces are optional with both single and double quotes.
 
@@ -136,7 +136,7 @@ Note that `phi` inside of the `` `...${phi}` {:tsx}`` block is just regular java
 </Admonition>
 
 
-#### Numbers [#jsx-number-props]
+#### Numbers ||jsx-number-props||
 
 As is the case in most programming languages, `"3.14"{:tsx}` is not the same as `3.14{:tsx}`. If a property requires a type of `number`, there is a significant chance that there will be some sort of mathematical operations taking place within that component. Ironically, strings also accept several mathematical functions, but they will return a significantly different value as demonstrated below:
 
@@ -169,7 +169,7 @@ To pass a number into a React component, simply wrap the value in curly braces *
     Follow [this blog post](/blog/plansForUlld) to stay up to day on features coming to <LogoAsText fontSize={13} />
 </Hint>
 
-#### Boolean Props [#jsx-boolean-props]
+#### Boolean Props ||jsx-boolean-props||
 
 <Hint>
     If a value is passed in as just the key of that value without any actual value declared, it is interpreted as `true`. Therefore, if a component expects a value of `applyModal` to be of a type `boolean`, and you want that value to be `true`, `<ThatComponent applyModal={true} />{:tsx}` and `<ThatComponent applyModal />{:tsx}` are equivalent.

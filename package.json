@@ -55,8 +55,6 @@
       ]
     },
     "overrides": {
-      "unified": "^11.0.4",
-      "mdx-bundler": "^10.0.1",
       "mapbox-gl": "^1.13.3"
     }
   },

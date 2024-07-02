@@ -2,6 +2,5 @@
 notes.md
 public/sw**
 public/workbox**
-./src/fumaDocs/map.ts
-.vercel
-layaway
+.contentlayer
+.content-collections

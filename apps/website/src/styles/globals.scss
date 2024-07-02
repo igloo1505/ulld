@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  overscroll-behavior-y: contain;
-  position: relative;
-  text-rendering: optimizeLegibility;
-}
-
 .centerAbsPos {
   left: 50%;
   top: 50%;
@@ -15,37 +9,4 @@ body {
 
 .centerAbsTran {
   transform: translate(-50%, -50%);
-}
-
-.hide-table-col-0 {
-  tr {
-    td:nth-child(1) {
-      display: none;
-    }
-    th:nth-child(1) {
-      display: none;
-    }
-  }
-}
-
-.hide-table-col-1 {
-  tr {
-    td:nth-child(2) {
-      display: none;
-    }
-    th:nth-child(2) {
-      display: none;
-    }
-  }
-}
-
-.hide-table-col-2 {
-  tr {
-    td:nth-child(3) {
-      display: none;
-    }
-    th:nth-child(3) {
-      display: none;
-    }
-  }
 }

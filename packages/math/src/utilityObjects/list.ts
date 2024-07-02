@@ -1,10 +1,6 @@
 import { numberBool } from "@ulld/utilities/numberUtils";
-import numbers from "numbers"
+import * as numbers from "numbers";
 // NOTE: Statistics stuff to add
-// numbers.statistic.mean(array);
-// numbers.statistic.median(array);
-// numbers.statistic.mode(array);
-// numbers.statistic.standardDev(array);
 // numbers.statistic.randomSample(lower, upper, n);
 // numbers.statistic.correlation(array1, array2);
 
@@ -37,7 +33,7 @@ export class NumericList {
     ) {
         if (typeof n === "number") {
             this.value = this.value.map((d) => operation(d, n));
-        } else if(Array.isArray(n)) {
+        } else if (Array.isArray(n)) {
             this.value = this.value.map((d, i) => operation(d, n[i]));
         } else {
             this.value = this.value.map((d, i) => operation(d, n.value[i]));
@@ -65,7 +61,7 @@ export class NumericList {
     rootIndex() {
         let minMax = this.minMax();
         if (minMax[1] < 0 || minMax[0] > 0) return;
-        return this.nearest(0)[1]
+        return this.nearest(0)[1];
     }
     round() {
         this.value = this.value.map((n) => Math.round(n));
@@ -74,7 +70,7 @@ export class NumericList {
         this.value = this.value.map((n) => Math.floor(n));
     }
     toFixed(digits: number = 2) {
-        return this.value.map((n) => n.toFixed(digits))
+        return this.value.map((n) => n.toFixed(digits));
     }
     ceil() {
         this.value = this.value.map((n) => Math.ceil(n));
@@ -93,7 +89,7 @@ export class NumericList {
         }
         return value;
     }
-    std(){}
+    std() { }
     /** Returns an array of two numbers. The first is the numerical value that is nearest to specified value, and the second is the index of that number. */
     nearest(nearestTo: number): [number, number] {
         let d = [Math.abs(this.value[0] - nearestTo), 0] as [number, number];
@@ -103,7 +99,7 @@ export class NumericList {
                 d = [nt, i + 1];
             }
         });
-        return d
+        return d;
     }
     /** Returns a difference between lists if a list is provided, other wise returns a running difference. */
     diff(list?: NumericList) {
@@ -159,19 +155,67 @@ export class NumericList {
         return [this.min(), this.max()] as [number, number];
     }
     /** Returns an integer representing the number of occurances of the provided number. */
-    count(n: number){
-        return this.value.filter((a) => a === n).length
+    count(n: number) {
+        return this.value.filter((a) => a === n).length;
     }
     range() {
         let minMax = this.minMax();
         return minMax[1] - minMax[0];
     }
     mean() {
-        let data = this.value;
-        do {
-            data.shift();
-            data.pop();
-        } while (data.length >= 2);
-        return data[0];
+        return numbers.statistic.mean(this.value);
+    }
+    median() {
+        return numbers.statistic.median(this.value);
+    }
+    mode() {
+        return numbers.statistic.mode(this.value);
+    }
+    correlation(n: NumericList) {
+        return numbers.statistic.correlation(this.value, n.value);
+    }
+    covariance(n: NumericList) {
+        return numbers.statistic.covariance(this.value, n.value);
+    }
+    getExponentialRegressionFunc(): (
+        val: number | number[],
+    ) => number | NumericList {
+        let f = numbers.statistic.exponentialRegression(this.value);
+        return (val) => {
+            let newVal = f(val);
+            if (Array.isArray(newVal)) {
+                return new NumericList(newVal);
+            } else {
+                return newVal;
+            }
+        };
+    }
+    getLinearRegressionFunc(
+        n: NumericList,
+    ): (val: number | number[]) => number | number[] {
+        let f = numbers.statistic.linearRegression(this.value, n.value);
+        return (val) => {
+            let newVal = f(val);
+            if (Array.isArray(newVal)) {
+                return new NumericList(newVal);
+            } else {
+                return newVal;
+            }
+        };
+    }
+    standardDeviation() {
+        return numbers.statistic.standardDev(this.value);
+    }
+    quantile(quantileIndex: number, quantiles: number = 100){
+        return numbers.statistic.quantile(this.value, quantileIndex, quantiles)
+    }
+    summary(): {
+        mean: number;
+        firstQuartile: number;
+        median: number;
+        thirdQuartile: number;
+        standardDev: number;
+    }{
+        return numbers.statistic.report(this.value)
     }
 }

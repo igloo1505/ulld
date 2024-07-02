@@ -1,7 +1,7 @@
 "use client";
 import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
 import { getRandomId } from "@ulld/utilities/identity";
-/* import { Documentation } from "contentlayer/generated"; */
+import { Documentation } from "contentlayer/generated";
 import React, { HTMLProps, useRef } from "react";
 import clsx from "clsx";
 import MdxListItem from "./mdxItem";
@@ -13,8 +13,7 @@ import { applyTableCodeStyles } from "#/state/actions/dom";
 import { useObserveChildren } from "@ulld/hooks/useObserveChildren";
 
 interface MdxListProps extends HTMLProps<HTMLDivElement> {
-    /* items: Documentation[]; */
-    items: any[]
+    items: Documentation[];
 }
 
 const MdxList = (props: MdxListProps) => {

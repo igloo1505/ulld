@@ -1,7 +1,6 @@
 import { tailwindConfig } from "@ulld/tailwind/tailwindConfig";
 import svgToDataUri from "mini-svg-data-uri";
 import { Config } from "tailwindcss/types/config";
-import { createPreset, presets } from "fumadocs-ui/tailwind-plugin";
 
 const flattenColorPalette = (colors: any): any =>
     Object.assign(
@@ -24,6 +23,7 @@ const flattenColorPalette = (colors: any): any =>
 const tailwindCfg: Config = {
     content: [
         "./app/**/*.{js,ts,jsx,tsx,mdx}",
+        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
         "./components/**/*.{js,ts,jsx,tsx,mdx}",
         "./node_modules/@ulld/tailwind/src/**/*.{js,ts,jsx,tsx,mdx}",
         "./node_modules/@ulld/embeddable-components/src/**/*.{js,ts,jsx,tsx,mdx}",
@@ -33,10 +33,6 @@ const tailwindCfg: Config = {
         "./node_modules/@ulld/full-form/src/**/*.{js,ts,jsx,tsx,mdx}",
         "./node_modules/@ulld/icons/src/**/*.{js,ts,jsx,tsx,mdx}",
         "./node_modules/@ulld/whiteboard/src/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/mdx/**/*.{md,mdx}",
-        "./mdx-components.{ts,tsx}",
-        "./node_modules/fumadocs-ui/dist/**/*.js",
-        "../../node_modules/fumadocs-ui/dist/**/*.js",
         // Or if using `src` directory:
         "./src/**/*.{js,ts,jsx,tsx,mdx}",
     ],
@@ -133,17 +129,7 @@ const tailwindCfg: Config = {
             );
         },
     ],
-    presets: [
-        createPreset({
-            preset: {
-                ...presets.default,
-                dark: {
-                    ...presets.default.dark
-                }
-            }
-        }),
-        tailwindConfig
-    ],
+    presets: [tailwindConfig],
 };
 
 export default tailwindCfg;

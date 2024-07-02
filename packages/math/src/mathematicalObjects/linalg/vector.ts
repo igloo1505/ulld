@@ -1,5 +1,6 @@
 import { Point } from "./point";
 import { PosThree } from "../../types";
+import * as numbers from "numbers"
 
 
 export class Vector extends Point {
@@ -31,9 +32,7 @@ export class Vector extends Point {
         return new Vector(newDeltas, this.position);
     }
     dot(vec: Vector) {
-        return vec.position
-            .map((n, i) => n * this.position[i])
-            .reduce((a, b) => a + b);
+        return numbers.matrix.dotproduct(this.deltas, vec.deltas)
     }
     magnitude() {
         return Math.sqrt(this.deltas.map((a) => a ** 2).reduce((a, b) => a + b));
@@ -48,5 +47,8 @@ export class Vector extends Point {
     }
     unit() {
         return this.divide(this.magnitude());
+    }
+    outer(v: Vector){
+        return numbers.matrix.outer(this.deltas, v.deltas)
     }
 }

@@ -10,7 +10,7 @@ const getRoute = (subPath: string) => {
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: getRoute("/"),
+      url: getRoute(""),
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,

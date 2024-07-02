@@ -12,8 +12,8 @@ import React, {
 import { cn } from "@ulld/utilities/cn";
 import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
 import "#/styles/proseStyles.scss";
-/* import { DocumentTypes } from "contentlayer/generated"; */
-/* import { useMDXComponent } from "next-contentlayer/hooks"; */
+import { DocumentTypes } from "contentlayer/generated";
+import { useMDXComponent } from "next-contentlayer/hooks";
 import { getComponentMap } from "@ulld/component-map/client";
 import { webComponentMap } from "#/mdx/componentMap";
 import InternalReduxProvider from "#/state/provider";
@@ -24,8 +24,7 @@ import MdxArticleNavButtons from "./mdxArticleNavButtons";
 import { useResponsiveCode } from "@ulld/hooks/useResponsiveCode";
 
 export interface MDXArticleProps extends HTMLProps<HTMLElement> {
-    /* mdx: DocumentTypes; */
-    mdx: any;
+    mdx: DocumentTypes;
     paddingTop?: boolean;
     isSource?: boolean;
     hideSourceButton?: boolean;
@@ -81,17 +80,16 @@ const MDXArticle = forwardRef(
         });
         useImperativeHandle(_ref, () => ref.current!, []);
         const id = props.id ? props.id : getRandomId();
-        /* const article = useMDXComponent(mdx.body.code); */
-        /* const Article = useMemo(() => article, []); */
-        const Article = useMemo(() => ({ components }: {components: any}) => <div>Fix this. This used to use the MdxArticle component that pulled data from contentlayer.</div>, []);
+        const article = useMDXComponent(mdx.body.code);
+        const Article = useMemo(() => article, []);
         useEffect(() => {
             replaceTableCode(ref);
         }, [mdx]);
 
         useMathjaxBandaid(id);
 
-        /* const components = getComponentMap(mdx.body.raw, {avoidKeys: ["mark"]}, webComponentMap); */
-        const components = {}
+        const components = getComponentMap(mdx.body.raw, {avoidKeys: ["mark"]}, webComponentMap);
+        console.log("Object.keys(components): ", Object.keys(components))
 
         const citationsEm = useMemo(
             () => <Citations noteId={"id" in mdx ? mdx.id : undefined} />,
