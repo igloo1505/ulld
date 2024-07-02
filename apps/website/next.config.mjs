@@ -1,6 +1,6 @@
 import nextPwa from "@ducanh2912/next-pwa";
 import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
-const { withContentCollections } = require("@content-collections/next");
+import { withContentCollections } from "@content-collections/next";
 // import { withContentlayer } from "next-contentlayer";
 // import path from 'path'
 

@@ -25,6 +25,9 @@
             ],
             "staticContent": [
                 "./src/staticData/staticContent.json"
+            ],
+            "docs": [
+                "./src/fumaDocs/main.ts"
             ]
         },
         "incremental": true

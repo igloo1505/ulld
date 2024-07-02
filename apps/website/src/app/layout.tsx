@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import "@ulld/tailwind/websiteStyles.scss";
 import "#/styles/globals.scss";
 import "#/styles/mdx.scss";
@@ -20,6 +19,8 @@ import InternalReduxProvider from "#/state/provider";
 import NavbarBreakpointHandler from "#/components/utility/navbarBreakpointHandler";
 import ThemeMenu from "#/components/UIUtils/themeMenu";
 import { BetaBanner } from "#/components/general/betaBanner";
+import { RootProvider } from "fumadocs-ui/provider";
+import clsx from "@ulld/utilities/cn";
 
 const appFont = localFont({
     variable: "--ulld-app-font",
@@ -205,6 +206,15 @@ const RootLayout = async (props: {
                 )}
                 id={`Ulld-body-root`}
             >
+
+                <RootProvider
+                    theme={{
+                        // Come back and enable this. Was having issues with tailwind, but shouldn't be too hard to adress with a little bit of free time.
+                        enabled: false,
+                        enableColorScheme: false,
+                        enableSystem: false
+                    }}
+                >
                 <BetaBanner />
                 <Navbar />
                 <InternalReduxProvider>
@@ -229,6 +239,7 @@ const RootLayout = async (props: {
                 <StateWrappedComponents />
                 <ThemeMenu />
                 <Footer />
+                </RootProvider>
             </body>
             <GoogleAnalytics gaId="G-K46X7QHBEX" />
         </html>
