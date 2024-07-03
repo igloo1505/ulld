@@ -4,9 +4,6 @@ id: gettingStarted
 created: 6-6-24
 ---
 
-
-# Getting Started
-
 <LogoAsText /> functions primarily as an ecosystem of note taking and academic focused React components and a build script to generate a complete web application using all of the most modern technologies, customized to your own configuration. 
 
 <Admonition title="Installation" type="important" dropdown open>
@@ -43,6 +40,7 @@ While an installer completely independent of **Git** is in the works, for now, t
 
 
 <CodeBlock
+    lang={"zsh"}
     content={"git clone !!link:links.repo.clone.https!!"}
 />
 
@@ -92,7 +90,7 @@ Lastly, you'll need to run 2 commands inside of the folder you just created by c
 
 You then need to tell <LogoAsText /> to install all of the other packages that <LogoAsText /> depends on. Once you're inside of the `ulld` directory that you just created by cloning <LogoAsText />, run one of the following commands, depending on whether or not you installed **pnpm**.
 
-<TabGroup>
+<TabGroup labels={["npm", "pnpm"]}>
     <Tab label="npm">
         `npm install`
     </Tab>
@@ -107,7 +105,7 @@ This command might take a minute, as it's downloading all of the packages that <
 Once that is complete, you can run one of the following two commands, again depending on whether or not you installed **pnpm** to tell <LogoAsText /> to gather your configuration file and generate all of the components and paths that are specific to your workflow and configuration.
 
 
-<TabGroup>
+<TabGroup labels={["npm", "pnpm"]}>
     <Tab label="npm">
         `npm run ulldBuild`
     </Tab>
@@ -124,7 +122,7 @@ I know that's a lot more complicated than installing a regular application, but 
 
 You can now run your project with:
 
-<TabGroup>
+<TabGroup labels={["npm", "pnpm", "alias"]}>
     <Tab label="npm">
         `npm run start`
     </Tab>

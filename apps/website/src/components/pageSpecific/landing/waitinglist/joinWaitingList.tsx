@@ -10,6 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { client } from "#/trpc/main";
 import { onEnter } from "@ulld/state/listeners/keydown";
 import { useToast } from "@ulld/tailwind/use-toast";
+import PreventSharpEdges from "#/components/utility/ui/preventSharpEdges";
 
 interface JoinWaitingListProps { }
 
@@ -82,6 +83,7 @@ const JoinWaitingList = (props: JoinWaitingListProps) => {
                 </Form>
             </div>
             <BackgroundBeams />
+            <PreventSharpEdges tight />
         </div>
     );
 };

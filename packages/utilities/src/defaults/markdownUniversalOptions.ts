@@ -1,8 +1,8 @@
-import type { Options } from 'rehype-mathjax/lib/create-plugin'
+// import type { Options } from 'rehype-mathjax/lib/create-plugin'
 import { MermaidConfigType, mermaidTheme } from './defaultMermaidConfig'
 
 
-export const mathOptions: Options = {
+export const mathOptions = {
     tex: {
         // packages: [],
         tags: 'all', // "all" | "ams" (ams breaks EqRef component, unless can find other way to force label creation.),

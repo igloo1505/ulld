@@ -1,29 +1,22 @@
-"use client"
-import { usePathname } from 'next/navigation'
-import { useEffect } from 'react'
+"use client";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
+interface HandleBodyDisplayProps { }
 
-
-interface HandleBodyDisplayProps {
-
-}
-
-const contentsPages = [
-    "/docs"
-]
+const contentsPages = ["/docs"];
 
 export const HandleBodyDisplay = (props: HandleBodyDisplayProps) => {
-    const pathname = usePathname()
+    const pathname = usePathname();
     useEffect(() => {
-        let em = document.querySelector("body")
-       if(contentsPages.some((f) => pathname.startsWith(f))){
-            em?.setAttribute("data-disContents", "true")
+        let em = document.querySelector("body");
+        if (contentsPages.some((f) => pathname.startsWith(f))) {
+            em?.setAttribute("data-disContents", "true");
         } else {
-            em?.removeAttribute("data-disContents")
+            em?.removeAttribute("data-disContents");
         }
-    }, [pathname])
-return null
-}
+    }, [pathname]);
+    return null;
+};
 
-
-HandleBodyDisplay.displayName = "HandleBodyDisplay"
+HandleBodyDisplay.displayName = "HandleBodyDisplay";

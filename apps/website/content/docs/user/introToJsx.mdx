@@ -4,12 +4,10 @@ id: introToJsx
 created: 6-10-24
 ---
 
-# Intro to JSX
-
 
 **JSX** is an extension of javascript that's used by React as well as several other single page application frameworks. **TSX** is _almost_ identical, except **TSX** adds the ability to more strictly define types. For the purposes of using <LogoAsText />, **TSX** and **JSX** can be referenced interchangeably. 
 
-The primary goal of **JSX** is to add the ability to write multiple different languages in a single file. React components, which are written in **TSX**[^1], work primarily as a render function. React components are functions that either return some sort of valid [**HTML**](https://developer.mozilla.org/en-US/docs/Web/HTML), or `null{:tsx}` if the internal logic determines that nothing visible should be returned.  
+The primary goal of **JSX** is to add the ability to write multiple different languages in a single file. React components, which are written in **TSX**[^1], work primarily as a render function. React components are functions that either return some sort of valid [**HTML**](https://developer.mozilla.org/en-US/docs/Web/HTML), or `null` if the internal logic determines that nothing visible should be returned.  
 
 Through the great work at the people over at [MDX](https://mdxjs.com), we can now embed entire React components directly in markdown files, with the `.mdx` file extension. All of the original functionality of markdown remains intact, and in <LogoAsText /> is actually extended, but users can now include neatly bundled **HTML**, **CSS**, and **Javascript** in pre-defined React components. 
 
@@ -24,7 +22,7 @@ Regardless of whether or not a component is actually built using Typescript (**T
 | Property | Description |
 | -------- | ----------- |
 | `optionalProperty?` | An optional property is denoted by a following question mark |
-| `TypeOne \| TypeTwo` | When multiple types are valid for a given property, this list of valid types is separated by a `\|` symbol |
+| `TypeOne \| TypeTwo` | When multiple types are valid for a given property, this list of valid types is separated by a <span className="inline-code">\|</span> symbol |
 
 
 ***

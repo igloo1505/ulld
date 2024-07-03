@@ -30,7 +30,8 @@
                 "./src/fumaDocs/main.ts"
             ]
         },
-        "incremental": true
+        "incremental": true,
+        "resolveJsonModule": true
     },
     "include": [
         "next-env.d.ts",

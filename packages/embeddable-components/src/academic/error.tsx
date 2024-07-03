@@ -22,7 +22,7 @@ export interface ErrorMarginProps {
 export const ErrorMargin = ({children, errorText}: ErrorMarginProps) => {
     return (
         <div
-            className={"w-fit h-fit pl-1 mb-2 leading-none text-sm flex flex-row justify-start items-center gap-[1ch] border-l-[3px] border-error"}
+            className={"not-prose w-fit h-fit pl-1 mb-2 leading-none text-sm flex flex-row justify-start items-center gap-[1ch] border-l-[3px] border-error"}
         >
             <span
                 className={"font-semibold inline text-foreground"}

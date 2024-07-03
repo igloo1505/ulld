@@ -44,6 +44,7 @@ export interface TabGroupProps {
     children: ReactNode
     /** By default the active button takes on a muted color. If primary is true, the active button will take on the current theme's primary color. */
     primary?: boolean
+    labels?: string[]
 }
 
 

@@ -1,4 +1,5 @@
 import { tailwindConfig } from "@ulld/tailwind/tailwindConfig";
+import { createPreset } from "fumadocs-ui/tailwind-plugin";
 import svgToDataUri from "mini-svg-data-uri";
 import { Config } from "tailwindcss/types/config";
 
@@ -33,7 +34,8 @@ const tailwindCfg: Config = {
         "./node_modules/@ulld/full-form/src/**/*.{js,ts,jsx,tsx,mdx}",
         "./node_modules/@ulld/icons/src/**/*.{js,ts,jsx,tsx,mdx}",
         "./node_modules/@ulld/whiteboard/src/**/*.{js,ts,jsx,tsx,mdx}",
-        // Or if using `src` directory:
+        './node_modules/fumadocs-ui/dist/**/*.js',
+        '../../node_modules/fumadocs-ui/dist/**/*.js',
         "./src/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
@@ -129,7 +131,10 @@ const tailwindCfg: Config = {
             );
         },
     ],
-    presets: [tailwindConfig],
+    presets: [
+        createPreset(),
+        tailwindConfig
+    ],
 };
 
 export default tailwindCfg;

@@ -1,7 +1,6 @@
 import React, { ComponentPropsWithoutRef } from "react";
 import { AutoTypeTable } from "fumadocs-typescript/ui";
 import cn from "@ulld/utilities/cn";
-import { getPages, pageTree } from "#/fumaDocs/main";
 
 interface TypeTableProps
     extends ComponentPropsWithoutRef<typeof AutoTypeTable> {
@@ -24,9 +23,9 @@ export const TypeTable = ({
 }: TypeTableProps) => {
     let hideClass = (Array.isArray(hideCol) ? hideCol : [hideCol]).map((n) => `hide-table-col-${n}`)
     let _title = propsTitle ? "Properties" : (title || name)
-    console.log("pageTree: ", pageTree)
     /* const pages = getPages() */
     /* console.log("pages: ", pages) */
+    console.log("name: ", name)
     return (
         <div className={cn("w-full inline-block", hideClass)}>
             {(showName || title || propsTitle) && (

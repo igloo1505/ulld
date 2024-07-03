@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { RootToggle } from "fumadocs-ui/components/layout/root-toggle";
 import { TerminalIcon, UserIcon } from "lucide-react";
 
+
 export default function Layout({ children }: { children: ReactNode }) {
     return (
         <DocsLayout

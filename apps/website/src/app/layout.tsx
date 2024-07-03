@@ -1,6 +1,6 @@
+import "#/styles/mdx.scss";
 import "@ulld/tailwind/websiteStyles.scss";
 import "#/styles/globals.scss";
-import "#/styles/mdx.scss";
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import React from "react";
@@ -21,6 +21,7 @@ import ThemeMenu from "#/components/UIUtils/themeMenu";
 import { BetaBanner } from "#/components/general/betaBanner";
 import { RootProvider } from "fumadocs-ui/provider";
 import clsx from "@ulld/utilities/cn";
+import { HandleBodyDisplay } from "#/components/docUtils/handleBodyLayout";
 
 const appFont = localFont({
     variable: "--ulld-app-font",
@@ -200,45 +201,46 @@ const RootLayout = async (props: {
             </head>
             <body
                 className={clsx(
-                    "group/body dark max-w-full relative h-auto overflow-x-hidden w-screen min-h-screen overflow-y-auto",
+                    "group/body dark max-w-full relative h-auto overflow-x-hidden w-screen min-h-screen overflow-y-auto data-[disContents=true]:contents",
+                    /* "contents", // Remove this if it causes issues. Added on 6-27 to handle sticky sidebar. */
                     fontSans.variable,
                     preferFs && "preferFs",
                 )}
                 id={`Ulld-body-root`}
             >
-
                 <RootProvider
                     theme={{
                         // Come back and enable this. Was having issues with tailwind, but shouldn't be too hard to adress with a little bit of free time.
                         enabled: false,
                         enableColorScheme: false,
-                        enableSystem: false
+                        enableSystem: false,
                     }}
                 >
-                <BetaBanner />
-                <Navbar />
-                <InternalReduxProvider>
-                    <MainNavigationDrawer />
-                    <NavbarBreakpointHandler />
-                </InternalReduxProvider>
-                {props.children}
-                <Toaster />
-                {props.modal && props.modal}
-                <SetInitialRender />
-                <StateWrappedUI
-                    ignoreConfig
-                    ignoreSettings
-                    loader={{
-                        mathjax: ["config"],
-                    }}
-                    observers={{
-                        noSettings: true,
-                        noThemeCookie: true,
-                    }}
-                />
-                <StateWrappedComponents />
-                <ThemeMenu />
-                <Footer />
+                    <HandleBodyDisplay />
+                    <BetaBanner />
+                    <Navbar />
+                    <InternalReduxProvider>
+                        <MainNavigationDrawer />
+                        <NavbarBreakpointHandler />
+                    </InternalReduxProvider>
+                    {props.children}
+                    <Toaster />
+                    {props.modal && props.modal}
+                    <SetInitialRender />
+                    <StateWrappedUI
+                        ignoreConfig
+                        ignoreSettings
+                        loader={{
+                            mathjax: ["config"],
+                        }}
+                        observers={{
+                            noSettings: true,
+                            noThemeCookie: true,
+                        }}
+                    />
+                    <StateWrappedComponents />
+                    <ThemeMenu />
+                    <Footer />
                 </RootProvider>
             </body>
             <GoogleAnalytics gaId="G-K46X7QHBEX" />

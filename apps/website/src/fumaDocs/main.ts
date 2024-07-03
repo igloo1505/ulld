@@ -1,9 +1,7 @@
 import { createMDXSource } from "@fumadocs/content-collections";
 import { allDocs, allMetas } from "content-collections";
 import { loader, LoaderOptions } from "fumadocs-core/source";
-// import { map } from "./map";
 // import { z } from "zod";
-// import { allDocs, allMeta } from "contentlayer/generated";
 // import { createContentlayerSource } from "fumadocs-contentlayer";
 // import type { PageTree } from 'fumadocs-core/server';
 
@@ -18,17 +16,6 @@ import { loader, LoaderOptions } from "fumadocs-core/source";
 // });
 
 
-// const options: LoaderOptions = {
-//   rootDir: "docs",
-//   baseUrl: "/docs",
-//   source: createMDXSource(map, {
-//     // schema: {
-//     //     frontmatter: documentationFrontMatterSchema,
-//     // },
-//   }),
-// };
-
-
 export const {
     getPage,
     getPages,
@@ -38,18 +25,5 @@ export const {
 } = loader({
     // rootDir: "docs",
     baseUrl: "/docs",
-    source: createMDXSource(allDocs, allMetas),
+    source: createMDXSource(allDocs as any, allMetas),
 });
-
-// export const {
-//   getPage,
-//   getPages,
-//   pageTree,
-//   getLanguages,
-//   files: docFiles,
-// } = loader({
-//   rootDir: "docs",
-//   baseUrl: "/docs",
-//   source: createContentlayerSource(allMeta, allDocs),
-//   // source: createMDXSource(map),
-// });

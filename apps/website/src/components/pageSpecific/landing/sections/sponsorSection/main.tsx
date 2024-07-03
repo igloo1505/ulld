@@ -17,7 +17,7 @@ export const MainSponsorSection = (props: MainSponsorSectionProps) => {
         <div
             ref={ref}
             className={clsx(
-                "group/feature relative w-screen left-0 min-h-[calc(100vh-76px)] h-fit flex flex-col justify-start items-center gap-6 z-10 mb-12",
+                "group/feature relative w-screen left-0 min-h-screen h-fit flex flex-col justify-center items-center gap-6 z-10 mb-12",
                 vp?.window.width && vp.window.width < 768 ? "stack" : "flow",
             )}
         >
@@ -64,7 +64,7 @@ export const MainSponsorSection = (props: MainSponsorSectionProps) => {
                 <SponsorLogoSampleCard />
                 <AddSponsorCard />
             </div>
-            <PreventSharpEdges />
+            <PreventSharpEdges tighter />
         </div>
     );
 };
