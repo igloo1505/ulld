@@ -23,7 +23,6 @@ export const TypeTable = ({
 }: TypeTableProps) => {
     let hideClass = (Array.isArray(hideCol) ? hideCol : [hideCol]).map((n) => `hide-table-col-${n}`)
     let _title = propsTitle ? "Properties" : (title || name)
-    /* const pages = getPages() */
     /* console.log("pages: ", pages) */
     console.log("name: ", name)
     return (

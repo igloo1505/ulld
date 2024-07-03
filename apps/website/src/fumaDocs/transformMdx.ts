@@ -71,7 +71,6 @@ export const transformMDX = async (document: Document, context: Context) => {
       remarkStructure,
       () => {
         return (_, file) => {
-          console.log("file: ", file);
           if (file.includes("$$")) {
             debugger;
           }
