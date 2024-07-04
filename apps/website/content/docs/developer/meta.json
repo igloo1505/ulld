@@ -1,4 +1,5 @@
 {
-  "title": "Developer Docs",
-  "root": true
+  "title": "developer",
+  "root": true,
+  "pages": ["..."]
 }

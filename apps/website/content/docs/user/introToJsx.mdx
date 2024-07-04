@@ -232,13 +232,14 @@ Many components like the `Ul`, `Color` and `Hl` components accept props that ext
 
 ##### Extending HTML Attributes
 
-For those familiar with **HTML** or **CSS**, most components extend the **HTML** attributes of the outer most element. This wasn't documented intentionally to avoid complicating the documentation for non-developers. However, be aware that while <LogoAsText /> relies on Tailwind for it's theme-ability, `.mdx` files are currently not evaluated for their `className` content. 
+For those familiar with **HTML** or **CSS**, most components extend the **HTML** attributes of the outer most element. This wasn't documented intentionally to avoid complicating the documentation for those without developer experience. However, be aware that while <LogoAsText /> relies on Tailwind for it's theme-ability, `.mdx` files are currently not evaluated for their `className` content. 
 
 <Hint>
     If you want to add your own `.css` or `.scss` files, you can provide a path to a directory in your `appConfig.ulld.json` file at the `build.additionalUserContent.css` path. Despite the name, Scss files in this directory will be applied as well.
 </Hint>
 
 If you notice a bug with the way **HTML** attributes are handled, please submit an issue on Github <StaticLink link="links.repo.home">{'here'}</StaticLink>.
+
 
 
 

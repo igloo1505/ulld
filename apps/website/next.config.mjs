@@ -93,6 +93,7 @@ const config = withContentCollections(
         webpack: (config, ctx) => {
             config.resolve.alias.canvas = false;
             config.cache = false;
+            config.module.noParse = [/typescript\/lib\/typescript.js/];
             // if(ctx.isServer){
             //     config.plugins.push(new PrismaPlugin())
             // }

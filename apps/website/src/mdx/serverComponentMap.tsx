@@ -1,11 +1,11 @@
 import { webComponentMap } from "./componentMap";
-import { TypeTable } from "#/components/docs/typeTable";
+import { TypeTableEm } from "#/components/docs/typeTable";
 
 export const serverComponentMap = [
     ...webComponentMap,
     {
         regex: new RegExp("<TypeDoc"),
-        component: TypeTable,
+        component: TypeTableEm,
         label: "TypeDoc",
     },
 ];

@@ -567,12 +567,15 @@ table {
   &::-webkit-scrollbar {
     display: none;
   }
+
   td {
     padding-right: 6px !important;
+
     code {
       &::before {
         content: " " !important;
       }
+
       &::after {
         content: " " !important;
       }
@@ -618,5 +621,11 @@ dl.definitionAnchor {
   .embeddedLink {
     padding-left: 0px;
     padding-right: 0px;
+  }
+}
+
+section[data-footnotes] {
+  h2#footnote-label {
+    display: contents;
   }
 }

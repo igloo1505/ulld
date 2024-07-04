@@ -2,7 +2,7 @@ import { defineCollection, defineConfig } from "@content-collections/core";
 import {
   createMetaSchema,
   createDocSchema,
-  // transformMDX
+  // transformMDX as td
 } from "@fumadocs/content-collections/configuration";
 import { transformMDX } from "#/fumaDocs/transformMdx";
 

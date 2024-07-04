@@ -1,5 +1,3 @@
-// import fs from "fs";
-// import path from "path";
 import {
   rehypeCode,
   rehypeCodeDefaultOptions,
@@ -23,7 +21,7 @@ import {
   remarkDocGen,
   remarkInstall,
   fileGenerator,
-  typescriptGenerator,
+  // typescriptGenerator,
 } from "fumadocs-docgen";
 import mdOpts from "@ulld/utilities/defaults/markdown.json" assert { type: "json" };
 import rehypeMathJaxCHtml from "rehype-mathjax/chtml";
@@ -71,9 +69,9 @@ export const transformMDX = async (document: Document, context: Context) => {
       remarkStructure,
       () => {
         return (_, file) => {
-          if (file.includes("$$")) {
-            debugger;
-          }
+          // if (file.includes("$$")) {
+          //   debugger;
+          // }
           data = file.data as any;
         };
       },
