@@ -629,3 +629,9 @@ section[data-footnotes] {
     display: contents;
   }
 }
+
+div[data-radix-popper-content-wrapper] {
+  div[role="dialog"] {
+    max-width: calc(100vw - 4rem);
+  }
+}

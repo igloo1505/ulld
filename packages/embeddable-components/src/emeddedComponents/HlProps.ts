@@ -16,10 +16,13 @@ import { ReactNode } from "react";
 export interface HighlightProps {
     /** The text to be highlighted. */
     children: ReactNode;
-    /** Make the highlight semi-tranparent. */
+    /** Make the highlight semi-tranparent.
+     * @default false */
     light?: boolean;
-    /** An alias for light. */
+    /** An alias for light.
+     * @default false */
     faint?: boolean;
-    /** Make the text take on a muted appearance. */
+    /** Make the text take on a muted appearance. 
+     * @default false */
     muted?: boolean;
 }

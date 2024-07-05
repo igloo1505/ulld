@@ -17,6 +17,7 @@ import { AdditionalComponents } from "@ulld/component-map/types";
 import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
 import { Button, ButtonProps, buttonVariants } from "@ulld/tailwind/button";
 import Link from "next/link";
+import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 export const webComponentMap: AdditionalComponents<any> = [
     {
@@ -103,6 +104,16 @@ export const webComponentMap: AdditionalComponents<any> = [
         regex: new RegExp("<EmbeddedDoc"),
         component: EmbeddedDocs,
         label: "EmbeddedDocs",
+    },
+    {
+        regex: new RegExp("<Step"),
+        component: Step,
+        label: "Step",
+    },
+    {
+        regex: new RegExp("<Steps"),
+        component: Steps,
+        label: "Steps",
     },
     {
         regex: new RegExp("<Button"),

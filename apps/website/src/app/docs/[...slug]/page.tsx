@@ -7,6 +7,7 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import { serverComponentMap } from "#/mdx/serverComponentMap";
 import { getComponentMap } from "@ulld/component-map/client";
 import MathjaxProvider from "#/components/utility/providers/mathjax";
+import { ImageZoom } from "fumadocs-ui/components/image-zoom";
 /* import { TypeTable } from "fumadocs-ui/components/type-table"; */
 import {
     Pre,
@@ -15,10 +16,10 @@ import {
 } from "fumadocs-ui/components/codeblock";
 import cn from "@ulld/utilities/cn";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
-import { ReactNode } from "react";
-import ApplyMathjaxBandaid from "#/components/utility/applyMathjaxBandaid"
+import { ComponentProps, ReactNode } from "react";
+import ApplyMathjaxBandaid from "#/components/utility/applyMathjaxBandaid";
 
-const docsBodyId = "ulld-documentation-container"
+const docsBodyId = "ulld-documentation-container";
 
 interface DocOutput {
     data: {
@@ -32,14 +33,14 @@ interface DocOutput {
 }
 
 export default function Page({ params }: { params: { slug?: string[] } }) {
-    console.log("params: ", params)
-    const page = getPage(params.slug)
+    console.log("params: ", params);
+    const page = getPage(params.slug);
     console.log("page: ", page);
 
-    const rawContent = 
-        page && "content" in page?.data ? page?.data.content : undefined;
+    const rawContent =
+        (page && "content" in page?.data) ? page?.data.content : undefined;
 
-    console.log("rawContent: ", rawContent)
+    console.log("rawContent: ", rawContent);
 
     if (!page) notFound();
 
@@ -55,24 +56,28 @@ export default function Page({ params }: { params: { slug?: string[] } }) {
         /* Tab: Tab, */
         /* Tabs: Tabs, */
         /* code: InlineCode, */
+        img: (props: ComponentProps<typeof ImageZoom>) => <ImageZoom {...props} />,
         pre: ({ title, className, icon, allowCopy, ...props }: CodeBlockProps) => (
-            <CodeBlock title={title} icon={icon} allowCopy={typeof allowCopy === "boolean" ? allowCopy : true}>
+            <CodeBlock
+                title={title}
+                icon={icon}
+                allowCopy={typeof allowCopy === "boolean" ? allowCopy : true}
+            >
                 <Pre className={cn("max-h-[400px]", className)} {...props} />
             </CodeBlock>
         ),
-          InstallTabs: ({
+        InstallTabs: ({
             items,
             children,
-          }: {
+        }: {
             items: string[];
             children: ReactNode;
-          }) => (
+        }) => (
             <Tabs items={items} id="package-manager">
-              {children}
+                {children}
             </Tabs>
-          ),
+        ),
     };
-
 
     return (
         <DocsPage toc={page.data.toc} full={page.data.full}>
@@ -80,7 +85,7 @@ export default function Page({ params }: { params: { slug?: string[] } }) {
                 <MathjaxProvider>
                     <h1>{page.data.title}</h1>
                     <MDXContent code={page.data.body} components={components as any} />
-                    <ApplyMathjaxBandaid container={docsBodyId}/>
+                    <ApplyMathjaxBandaid container={docsBodyId} />
                 </MathjaxProvider>
             </DocsBody>
         </DocsPage>

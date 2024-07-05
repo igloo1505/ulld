@@ -17,6 +17,7 @@ export type {
     EmbeddableCardProps,
     EmbeddedImageProps,
     GridProps,
+    GridItemProps,
     TabGroupProps,
     VideoProps,
     ModelViewProps,
@@ -31,4 +32,5 @@ export type {
     QuoteProps,
     EquationRefProps,
     HighlightProps,
+    AdmonitionProps
 } from "@ulld/embeddable-components/propTypes";

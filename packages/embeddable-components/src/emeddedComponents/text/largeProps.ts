@@ -12,10 +12,13 @@
 export interface LargeProps {
     /** The text to make small. */
     children: string
-    /** Make the text centered. */
+    /** Make the text centered.
+     * @default false */
     center?: boolean
-    /** Make the text take on a muted appearance. */
+    /** Make the text take on a muted appearance.
+     * @default false */
     muted?: boolean
-    /** Remove the default margin around the content. */
+    /** Remove the default margin around the content.
+     * @default false */
     noMargin?: boolean
 }

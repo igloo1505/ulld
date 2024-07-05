@@ -42,9 +42,8 @@ export const BetaBanner = () => {
                 }}
             />
             <span className={"px-10 text-sm sm:text-base"}>
-            This app is currently in beta. I encourage you to explore and check back
-            often. While the app has been finished for months, the build script will
-            be wrapping up in early July.
+            This app is currently in beta. Please explore the docs, but be sure to check back
+            often. The build script will be wrapping up in early July.
             </span>
         </motion.div>
     );

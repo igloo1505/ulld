@@ -8,9 +8,9 @@ interface ExtendsProps {
 
 const Extends = (props: ExtendsProps) => {
     return (
-        <div className={"w-fit"}>
-            <span className={"font-bold mr-2"}>Extends:</span>
-            {props.href ? <Link className={"text-link"} href={props.href}>{props.extends}</Link> : <span>{props.extends}</span>}
+        <div className={"w-fit text-sm"}>
+            <span className={"font-bold mr-2 text-cyan-500 dark:text-cyan-400"}>Extends:</span>
+            {props.href ? <Link className={"hover:!text-link transition-colors duration-300"} href={props.href}>{props.extends}</Link> : <span>{props.extends}</span>}
         </div>
     );
 };

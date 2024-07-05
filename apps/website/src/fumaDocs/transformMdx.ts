@@ -21,7 +21,7 @@ import {
   remarkDocGen,
   remarkInstall,
   fileGenerator,
-  // typescriptGenerator,
+  typescriptGenerator,
 } from "fumadocs-docgen";
 import mdOpts from "@ulld/utilities/defaults/markdown.json" assert { type: "json" };
 import rehypeMathJaxCHtml from "rehype-mathjax/chtml";
@@ -61,11 +61,11 @@ export const transformMDX = async (document: Document, context: Context) => {
   };
   const body = await compileMDX(context, document as any, {
     remarkPlugins: [
-      remarkMath,
+      remarkMath as any,
       remarkGfm,
       remarkHeading,
       [remarkInstall as any, { Tags: "InstallTabs" }],
-      [remarkDocGen, { generators: [fileGenerator(), remarkInstall()] }],
+      [remarkDocGen, { generators: [fileGenerator(), typescriptGenerator()] }],
       remarkStructure,
       () => {
         return (_, file) => {
@@ -94,7 +94,7 @@ export const transformMDX = async (document: Document, context: Context) => {
         },
       ],
       [rehypeImgSize, { dir: "./public" }],
-      [rehypeMathJaxCHtml, math],
+      [rehypeMathJaxCHtml as any, math],
     ],
   });
   return {

@@ -12,6 +12,7 @@
 export interface LeadTextProps {
     /** The lead text. */
     children: string
-    /** Center the text. */
+    /** Center the text.
+     * @default false */
     center?: boolean
 }

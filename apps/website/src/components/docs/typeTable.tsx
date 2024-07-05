@@ -1,7 +1,6 @@
 import React, { ComponentPropsWithoutRef } from "react";
 import { AutoTypeTable } from "fumadocs-typescript/ui";
 import cn from "@ulld/utilities/cn";
-
   /* interface TypeTableProps { */
 interface TypeTableProps
   extends ComponentPropsWithoutRef<typeof AutoTypeTable> {
@@ -12,6 +11,7 @@ interface TypeTableProps
   extends?: string[] | string;
   propsTitle?: string;
 }
+
 
 export const TypeTableEm = ({
   name,
@@ -26,7 +26,6 @@ export const TypeTableEm = ({
     (n) => `hide-table-col-${n}`,
   );
   let _title = propsTitle ? "Properties" : title || name;
-  console.log("name: ", name);
   return (
     <div className={cn("w-full inline-block", hideClass)}>
       {(showName || title || propsTitle) && (
