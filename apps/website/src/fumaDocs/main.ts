@@ -6,18 +6,8 @@ import { InferMetaType, InferPageType, loader, LoaderOptions } from "fumadocs-co
 // import type { PageTree } from 'fumadocs-core/server';
 
 
-// const documentationFrontMatterSchema = z.object({
-//   title: z.string(),
-//   tags: z.string().array().default([]),
-//   alias: z.string().array().optional(),
-//   description: z.string().optional(),
-//   icon: z.string().optional(),
-//   full: z.boolean(),
-// });
-
-
 const data = loader({
-    // rootDir: "docs",
+    rootDir: "docs",
     baseUrl: "/docs",
     source: createMDXSource(allDocs as any, allMetas),
 });

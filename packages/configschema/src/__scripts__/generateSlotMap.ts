@@ -6,9 +6,10 @@ import { capitalize } from "@ulld/utilities/stringUtils";
 const targetDir = path.join(__dirname, "../../../../apps/base/src");
 const mdxPath = path.join(
     __dirname,
-    "../../../../apps/website/src/mdx/docs/Developer/slotMap.mdx",
+    "../../../../apps/website/content/embeddedDocs/developer/slotMap.txt",
 );
 const typePath = path.join(__dirname, "../developer/slotMapType.ts");
+const typeRootPath = path.join(__dirname, "../developer/slotMapRootType.ts");
 const zodSlotKeyPath = path.join(__dirname, "../developer/slotKeySchema.ts");
 
 const files = globSync(`**/*.{tsx,ts}`, {
@@ -91,9 +92,8 @@ const targetPath = path.join(
 const wrapMdxContent = (val: string) => {
     const d = new Date();
     return `---
+title: SlotMap Type
 id: slotMapType
-category: developerTypes
-component: SlotMapType
 created: 6-24-24
 updated: ${d.getMonth()}-${d.getDate()}-${d.getFullYear()}
 ---
@@ -160,14 +160,20 @@ ${Object.values(slotSubKeys).join("\n\n")}
 `;
 
 
-fs.writeFileSync(mdxPath, wrapMdxContent(mdxSlotMap), { encoding: "utf-8" });
+fs.writeFileSync(mdxPath, mdxSlotMap, { encoding: "utf-8" });
+
+fs.writeFileSync(typeRootPath, `export ${mdxSlotMap}
+`, {encoding: "utf-8"})
+
 fs.writeFileSync(
     typePath,
-    `export ${mdxSlotMap}
+    `import { SlotMap as SM } from "./slotMapRootType";
 
-export type PluginSlotKey = keyof SlotMap
+export type SlotMap = SM
 
-${Object.keys(slotSubKeys).map((k) => `export type ${capitalize(k)}SubSlots = keyof SlotMap["${k}"]`).join("\n\n")}`,
+export type PluginSlotKey = keyof SM
+
+${Object.keys(slotSubKeys).map((k) => `export type ${capitalize(k)}SubSlots = keyof SM["${k}"]`).join("\n\n")}`,
     { encoding: "utf-8" },
 );
 

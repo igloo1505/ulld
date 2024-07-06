@@ -94,7 +94,6 @@
     "monaco-editor": "0.49.0",
     "monaco-editor-webpack-plugin": "^7.1.0",
     "next": "^14.2.4",
-    "next-contentlayer": "^0.3.4",
     "next-seo": "^6.5.0",
     "popmotion": "^11.0.5",
     "postprocessing": "^6.35.4",

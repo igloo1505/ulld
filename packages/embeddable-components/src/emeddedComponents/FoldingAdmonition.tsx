@@ -35,7 +35,7 @@ const FoldingAdmonition = ({
                 !dropdown && "open",
                 type || "note",
                 dropdown && "foldable",
-                sidebar && "w-full lg:w-[33%] lg:float-right lg:ml-4",
+                sidebar && "w-full @[1024px]/mdx:w-[33%] @[1024px]/mdx:float-right @[1024px]/mdx:ml-4",
             )}
             id={id}
             data-state={open ? "open" : "closed"}

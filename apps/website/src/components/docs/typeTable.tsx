@@ -37,11 +37,11 @@ export const TypeTableEm = ({
         path={"./src/fumaDocs/typesForDocumentation.ts"}
         name={name}
         options={{
-          transform: (entry, propType, propSymbol) => {
-            console.log("entry: ", entry);
-            console.log("propType: ", propType);
-            console.log("propSymbol: ", propSymbol);
-          },
+          /* transform: (entry, propType, propSymbol) => { */
+          /*   console.log("entry: ", entry); */
+          /*   console.log("propType: ", propType); */
+          /*   console.log("propSymbol: ", propSymbol); */
+          /* }, */
         }}
       />
     </div>

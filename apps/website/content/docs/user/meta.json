@@ -1,5 +1,5 @@
 {
-  "title": "user",
+  "title": "User",
   "root": true,
-  "pages": ["..."]
+  "pages": ["index", "introToJsx", "frontMatter", "syntax", "components", "..."]
 }

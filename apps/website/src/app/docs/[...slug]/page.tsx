@@ -1,14 +1,13 @@
 import { getPage, getPages } from "docs";
 import type { Metadata } from "next";
-import { DocsPage, DocsBody } from "fumadocs-ui/page";
-import { notFound } from "next/navigation";
+import { DocsPage, DocsBody, DocsPageProps } from "fumadocs-ui/page";
+import { notFound, redirect } from "next/navigation";
 import { MDXContent } from "@content-collections/mdx/react";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { serverComponentMap } from "#/mdx/serverComponentMap";
 import { getComponentMap } from "@ulld/component-map/client";
 import MathjaxProvider from "#/components/utility/providers/mathjax";
 import { ImageZoom } from "fumadocs-ui/components/image-zoom";
-/* import { TypeTable } from "fumadocs-ui/components/type-table"; */
 import {
     Pre,
     CodeBlock,
@@ -32,23 +31,45 @@ interface DocOutput {
     };
 }
 
+type TocType = DocsPageProps["toc"]
+
+type PageType = {
+    data: {
+        toc?: TocType,
+        full?: boolean
+        body: string
+        content?: string
+    }
+} & ReturnType<typeof getPage>
+
+
+const redirectMap: Record<string, string> = {
+    "user/components": "/docs/user/components/Academic/abstract"
+}
+
 export default function Page({ params }: { params: { slug?: string[] } }) {
-    console.log("params: ", params);
-    const page = getPage(params.slug);
-    console.log("page: ", page);
+    const page: PageType | undefined = getPage(params.slug) as PageType | undefined
+
+    if (!page) {
+        let _slugPath = params.slug?.join("/")
+        if(_slugPath && _slugPath in redirectMap){
+            return redirect(redirectMap[_slugPath])
+        }
+        notFound();
+    }
+
 
     const rawContent =
-        (page && "content" in page?.data) ? page?.data.content : undefined;
+        ("content" in page.data) ? page?.data.content : undefined;
 
-    console.log("rawContent: ", rawContent);
 
-    if (!page) notFound();
 
     const filteredComponents = getComponentMap(
-        rawContent as string,
+        rawContent || "",
         { avoidKeys: ["mark"] },
         serverComponentMap,
     );
+
     const components = {
         ...defaultMdxComponents,
         ...filteredComponents,
@@ -80,7 +101,7 @@ export default function Page({ params }: { params: { slug?: string[] } }) {
     };
 
     return (
-        <DocsPage toc={page.data.toc} full={page.data.full}>
+        <DocsPage toc={page.data.toc as TocType} full={page.data.full}>
             <DocsBody id={docsBodyId} className={"@container/mdx"}>
                 <MathjaxProvider>
                     <h1>{page.data.title}</h1>
@@ -101,7 +122,13 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
     const page: DocOutput = getPage(params.slug) as unknown as DocOutput;
 
-    if (!page) notFound();
+    if (!page) {
+        let _slugPath = params.slug?.join("/")
+        if(_slugPath && _slugPath in redirectMap){
+            return redirect(redirectMap[_slugPath])
+        }
+        notFound();
+    }
 
     return {
         title: page.data.title,

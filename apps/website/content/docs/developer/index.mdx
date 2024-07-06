@@ -1,7 +1,8 @@
 ---
-title: Developer Documentation
+title: Plugin Configuration
 description: ULLD documentation for developers
 full: true
+index: true
 ---
 
 
@@ -52,11 +53,17 @@ For example, if your `pluginConfig.ulld.json` specifies a slot property of `navi
     This `SlotMap` type is exported from `@ulld/configschema/developerTypes`, and a matching Typescript object is exported from `@ulld/utilities/slotMap`.
 </Hint>
 
-<TypeDoc 
-    title="Slots"
-    name="SlotMap"
-    hideCol={2}
-/>
+
+```json doc-gen:file
+{
+    "file": "./content/embeddedDocs/developer/slotMap.txt",
+    "codeblock": {
+        "lang": "ts",
+         "meta": "title=\"@ulld/configschema/developerTypes\""
+    }
+}
+```
+
 
 <Button href="/docs/developer/slots">
     Further Slot Documentation
@@ -116,13 +123,13 @@ import {
 import { writePluginConfig } from "@ulld/developer/writePluginConfig";
 
 const parsedPlugin = developerConfigSchema.parse({
-    ...,
     components: [{
         componentName: "MyAwesomeComponent",
         export: "./myShortenedPath",
         // export: "/myShortenedPath" or this
         // export: "myShortenedPath" or this
-    }]
+    }],
+    // ...,
 });
 
 writePluginConfig(parsedPlugin, __dirname);

@@ -1,21 +1,11 @@
-export type SlotMap = {
-    UI: {
-        confirmationModal: string,
-        landingPage: string,
-    }, 
-    navigation: {
-        secondary: string,
-        navbar: string,
-    }, 
-    commandPalette: {
-        commandPalette: string,
-    }, 
-}
+import { SlotMap as SM } from "./slotMapRootType";
 
-export type PluginSlotKey = keyof SlotMap
+export type SlotMap = SM
 
-export type UISubSlots = keyof SlotMap["UI"]
+export type PluginSlotKey = keyof SM
 
-export type NavigationSubSlots = keyof SlotMap["navigation"]
+export type UISubSlots = keyof SM["UI"]
 
-export type CommandPaletteSubSlots = keyof SlotMap["commandPalette"]
+export type NavigationSubSlots = keyof SM["navigation"]
+
+export type CommandPaletteSubSlots = keyof SM["commandPalette"]

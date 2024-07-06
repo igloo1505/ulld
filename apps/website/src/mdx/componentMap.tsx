@@ -18,6 +18,7 @@ import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
 import { Button, ButtonProps, buttonVariants } from "@ulld/tailwind/button";
 import Link from "next/link";
 import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 
 export const webComponentMap: AdditionalComponents<any> = [
     {
@@ -114,6 +115,16 @@ export const webComponentMap: AdditionalComponents<any> = [
         regex: new RegExp("<Steps"),
         component: Steps,
         label: "Steps",
+    },
+    {
+        regex: new RegExp("<Accordion"),
+        component: Accordion,
+        label: "Accordion",
+    },
+    {
+        regex: new RegExp("<Accordions"),
+        component: Accordions,
+        label: "Accordions",
     },
     {
         regex: new RegExp("<Button"),
