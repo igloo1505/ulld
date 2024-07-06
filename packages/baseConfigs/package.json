@@ -25,7 +25,7 @@
     "react-dom": "18.3.1"
   },
   "publishConfig": {
-    "access": "private"
+    "access": "public"
   },
   "peerDependencies": {}
 }
