@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.2
+
+### Patch Changes
+
+- ceb2d95: Update dependencies to support base-configs.
+- Updated dependencies [ceb2d95]
+  - @ulld/tailwind@0.0.2
+  - @ulld/database@0.0.2
+  - @ulld/math@0.0.2
+
 ## 0.0.1
 
 ### Patch Changes

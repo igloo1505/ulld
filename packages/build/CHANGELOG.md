@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.2
+
+### Patch Changes
+
+- ceb2d95: Update dependencies to support base-configs.
+- Updated dependencies [ceb2d95]
+  - @ulld/developer-schemas@0.0.2
+  - @ulld/configschema@0.0.2
+  - @ulld/base-configs@0.0.2
+  - @ulld/utilities@0.0.2
+
 ## 0.0.1
 
 ### Patch Changes
