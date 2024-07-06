@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/full-form",
     "private": false,
     "scripts": {
@@ -51,8 +51,8 @@
     "peerDependencies": {
         "@hookform/resolvers": "^3.3.4",
         "@reduxjs/toolkit": "^1.9.5",
-        "@repo/jest-presets": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@types/glob-to-regexp": "^0.4.4",
         "@types/react": "^18.2.75",
         "@types/react-dom": "^18.2.24",
@@ -116,8 +116,8 @@
         "ts-jest": "^29.1.2",
         "@hookform/resolvers": "^3.3.4",
         "@reduxjs/toolkit": "^1.9.5",
-        "@repo/jest-presets": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@types/glob-to-regexp": "^0.4.4",
         "@types/react": "^18.2.75",
         "@types/react-dom": "^18.2.24",

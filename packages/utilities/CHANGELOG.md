@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.3
+
+### Patch Changes
+
+- Update to include utility repo dependencies.
+- Updated dependencies
+  - @ulld/tailwind@0.0.3
+  - @ulld/database@0.0.3
+  - @ulld/math@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes

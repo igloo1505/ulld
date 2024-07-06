@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/hooks",
     "private": false,
     "main": "./src/index.ts",
@@ -69,7 +69,7 @@
     "devDependencies": {
         "@mdx-js/mdx": "3.0.1",
         "@mdx-js/react": "^3.0.1",
-        "@repo/typescript-config": "workspace:^",
+        "@ulld/typescript-config": "workspace:^",
         "@testing-library/cypress": "^10.0.1",
         "@testing-library/dom": "^9.3.4",
         "@testing-library/jest-dom": "^6.4.2",

@@ -1,5 +1,6 @@
 {
-  "extends": "@repo/typescript-config/nextjs.json",
+  "extends": "@ulld/typescript-config/nextjs.json",
+  "version": "0.0.2",
   "compilerOptions": {
     "moduleResolution": "bundler",
     "lib": ["dom", "ES2015"],

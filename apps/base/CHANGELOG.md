@@ -1,5 +1,40 @@
 # @ulld/base
 
+## 1.0.1
+
+### Patch Changes
+
+- Update to include utility repo dependencies.
+- Updated dependencies
+  - @ulld/embeddable-components@0.0.3
+  - @ulld/command-palette@0.0.3
+  - @ulld/landing-layouts@0.0.3
+  - @ulld/tailwind@0.0.3
+  - @ulld/component-map@0.0.3
+  - @ulld/configschema@0.0.3
+  - @ulld/task-manager@0.0.3
+  - @ulld/bib-manager@0.0.3
+  - @ulld/navigation@0.0.3
+  - @ulld/whiteboard@0.0.3
+  - @ulld/equations@0.0.3
+  - @ulld/full-form@0.0.3
+  - @ulld/utilities@0.0.3
+  - @ulld/database@0.0.3
+  - @ulld/notebook@0.0.3
+  - @ulld/snippets@0.0.3
+  - @ulld/journal@0.0.3
+  - @ulld/parsers@0.0.3
+  - @ulld/editor@0.0.3
+  - @ulld/kanban@0.0.3
+  - @ulld/render@0.0.3
+  - @ulld/hooks@0.0.3
+  - @ulld/icons@0.0.3
+  - @ulld/state@0.0.3
+  - @ulld/plot@0.0.3
+  - @ulld/api@0.0.3
+  - @ulld/pdf@0.0.3
+  - @ulld/ui@0.0.3
+
 ## 1.0.0
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.3
+
+### Patch Changes
+
+- Update to include utility repo dependencies.
+- Updated dependencies
+  - @ulld/configschema@0.0.3
+  - @ulld/developer@0.0.3
+  - @ulld/utilities@0.0.3
+  - @ulld/database@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes

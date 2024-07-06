@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.3
+
+### Patch Changes
+
+- Update to include utility repo dependencies.
+- Updated dependencies
+  - @ulld/developer-schemas@0.0.3
+  - @ulld/developer@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes

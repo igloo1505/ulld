@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/default-image-map",
     "private": false,
     "scripts": {
@@ -281,8 +281,8 @@
         "./autumn": "./src/imageMap/autumn.tsx"
     },
     "peerDependencies": {
-        "@repo/eslint-config": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@ulld/config": "workspace:*",
         "@ulld/configschema": "workspace:*",
         "@ulld/logger": "workspace:*",
@@ -301,7 +301,7 @@
         "access": "public"
     },
     "devDependencies": {
-        "@repo/eslint-config": "workspace:*",
-        "@repo/typescript-config": "workspace:*"
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/typescript-config": "workspace:*"
     }
 }

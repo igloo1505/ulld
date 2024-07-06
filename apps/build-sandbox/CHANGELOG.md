@@ -1,5 +1,52 @@
 # @ulld/build-sandbox
 
+## 0.0.3
+
+### Patch Changes
+
+- Update to include utility repo dependencies.
+- Updated dependencies
+  - @ulld/embeddable-components@0.0.3
+  - @ulld/typescript-config@0.0.2
+  - @ulld/default-image-map@0.0.3
+  - @ulld/command-palette@0.0.3
+  - @ulld/health-tracking@0.0.3
+  - @ulld/landing-layouts@0.0.3
+  - @ulld/tailwind@0.0.3
+  - @ulld/component-map@0.0.3
+  - @ulld/developer-cli@0.0.3
+  - @ulld/configschema@0.0.3
+  - @ulld/note-network@0.0.3
+  - @ulld/task-manager@0.0.3
+  - @ulld/base-configs@0.0.3
+  - @ulld/bib-manager@0.0.3
+  - @ulld/navigation@0.0.3
+  - @ulld/whiteboard@0.0.3
+  - @ulld/developer@0.0.3
+  - @ulld/equations@0.0.3
+  - @ulld/full-form@0.0.3
+  - @ulld/utilities@0.0.3
+  - @ulld/calendar@0.0.3
+  - @ulld/cookbook@0.0.3
+  - @ulld/database@0.0.3
+  - @ulld/notebook@0.0.3
+  - @ulld/snippets@0.0.3
+  - @ulld/diagram@0.0.3
+  - @ulld/journal@0.0.3
+  - @ulld/parsers@0.0.3
+  - @ulld/config@0.0.3
+  - @ulld/editor@0.0.3
+  - @ulld/kanban@0.0.3
+  - @ulld/logger@0.0.3
+  - @ulld/render@0.0.3
+  - @ulld/hooks@0.0.3
+  - @ulld/icons@0.0.3
+  - @ulld/state@0.0.3
+  - @ulld/plot@0.0.3
+  - @ulld/api@0.0.3
+  - @ulld/pdf@0.0.3
+  - @ulld/ui@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes

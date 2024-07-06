@@ -1,7 +1,7 @@
 {
-  "name": "@repo/typescript-config",
-  "version": "0.0.1",
-  "private": true,
+  "name": "@ulld/typescript-config",
+  "version": "0.0.2",
+  "private": false,
   "license": "MIT",
   "publishConfig": {
     "access": "public"

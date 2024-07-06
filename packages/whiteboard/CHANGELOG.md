@@ -1,5 +1,21 @@
 # @ulld/whiteboard
 
+## 0.0.3
+
+### Patch Changes
+
+- Update to include utility repo dependencies.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.2
+  - @ulld/tailwind@0.0.3
+  - @ulld/jest-presets@0.0.3
+  - @ulld/developer@0.0.3
+  - @ulld/utilities@0.0.3
+  - @ulld/logger@0.0.3
+  - @ulld/hooks@0.0.3
+  - @ulld/state@0.0.3
+  - @ulld/api@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes

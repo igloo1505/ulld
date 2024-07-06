@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/tailwind",
     "private": false,
     "main": "./src/tailwind.config.ts",
@@ -232,7 +232,7 @@
         ]
     },
     "devDependencies": {
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@types/react": "^18.3.3",
         "@types/react-dom": "^18.3.0",
         "autoprefixer": "^10.4.18",

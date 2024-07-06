@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/note-network",
     "private": true,
     "scripts": {
@@ -9,8 +9,8 @@
         "lint": "echo 'Add lint script here'"
     },
     "peerDependencies": {
-        "@repo/jest-presets": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@types/react": "^18.2.74",
         "@types/react-dom": "^18.2.24",
         "@ulld/api": "workspace:*",
@@ -31,8 +31,8 @@
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "reagraph": "^4.15.26",
-        "@repo/jest-presets": "workspace:*",
-        "@repo/typescript-config": "workspace:*"
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/typescript-config": "workspace:*"
     },
     "dependencies": {
         "3d-force-graph": "1.73.3"

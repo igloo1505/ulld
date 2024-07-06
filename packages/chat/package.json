@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/chat",
     "private": true,
     "scripts": {
@@ -9,9 +9,9 @@
         "lint": "echo 'Add lint script here'"
     },
     "peerDependencies": {
-        "@repo/eslint-config": "workspace:*",
-        "@repo/jest-presets": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@ulld/api": "workspace:*",
         "@ulld/calendar": "workspace:*",
         "@ulld/configschema": "workspace:*",
@@ -40,9 +40,9 @@
     },
     "devDependencies": {
         "@slack/types": "^2.11.0",
-        "@repo/eslint-config": "workspace:*",
-        "@repo/jest-presets": "workspace:*",
-        "@repo/typescript-config": "workspace:*"
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/typescript-config": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {

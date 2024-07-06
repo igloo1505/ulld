@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "$schema": "./node_modules/@ulld/developer-schemas/src/static/ulldPackageJson.schema.json",
     "name": "@ulld/navigation",
     "private": false,
@@ -17,8 +17,8 @@
         "./sidebar": "./src/components/sidebar/sidebarNavigation.tsx"
     },
     "peerDependencies": {
-        "@repo/eslint-config": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@types/react": "^18.2.74",
         "@types/react-dom": "^18.2.24",
         "@ulld/api": "workspace:*",
@@ -36,8 +36,8 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@repo/jest-presets": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@tailwindcss/container-queries": "^0.1.1",
         "@tailwindcss/forms": "^0.5.7",
         "@types/react": "^18.3.3",
@@ -50,7 +50,7 @@
         "tailwindcss": "^3.4.1",
         "tailwindcss-animate": "^1.0.7",
         "typescript": "^5.4.5",
-        "@repo/eslint-config": "workspace:*"
+        "@ulld/eslint-config": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
     "dependencies": {

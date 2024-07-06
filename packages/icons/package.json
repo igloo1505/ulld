@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/icons",
     "private": false,
     "scripts": {
@@ -49,7 +49,7 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@types/react": "^18.3.3",
         "@types/react-dom": "^18.3.0",
         "clsx": "^2.1.0",

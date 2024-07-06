@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/embeddable-components",
     "private": false,
     "scripts": {
@@ -103,7 +103,7 @@
         "three": "0.163.0"
     },
     "devDependencies": {
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "react-spinners": "^0.13.8",
         "unified-prettier": "^2.0.1"
     },

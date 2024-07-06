@@ -117,32 +117,42 @@ class PackageManager {
     }
     writeUpdateReactScript() {
         let packages = this.findByDependency("react");
-        let peerPackages = packages.filter((f) => f.deps.some((d) => Boolean(["react", "react-dom"].includes(d.name) && ["peerDependencies", "devDependencies"].includes(d.type))))
-        let peerNames = peerPackages.map((p) => p.name)
-        const filter = packages.filter((f) => !peerNames.includes(f.name)).map((f) => `--filter=${f.name}`).join(" ");
+        let peerPackages = packages.filter((f) =>
+            f.deps.some((d) =>
+                Boolean(
+                    ["react", "react-dom"].includes(d.name) &&
+                    ["peerDependencies", "devDependencies"].includes(d.type),
+                ),
+            ),
+        );
+        let peerNames = peerPackages.map((p) => p.name);
+        const filter = packages
+            .filter((f) => !peerNames.includes(f.name))
+            .map((f) => `--filter=${f.name}`)
+            .join(" ");
         const peerFilter = peerPackages.map((f) => `--filter=${f.name}`).join(" ");
 
-        let s = `#!/bin/zsh\n`
-        if(filter.length){
-        s += `
+        let s = `#!/bin/zsh\n`;
+        if (filter.length) {
+            s += `
 pnpm add next@latest react@latest react-dom@latest ${filter}
-`
+`;
         }
-        if(peerFilter.length){
-        s += `
+        if (peerFilter.length) {
+            s += `
 pnpm add --save-peer next@latest react@latest react-dom@latest ${peerFilter}
 
 pnpm add -D next@latest react@latest react-dom@latest ${peerFilter}
-`
+`;
         }
-        if(packages.length){
-        s += `
-pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--filter=${f.name}`).join(" ")}`
+        if (packages.length) {
+            s += `
+pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--filter=${f.name}`).join(" ")}`;
         }
         const targetFile = path.join(__dirname, "./updateReactAndNext.zsh");
         fs.writeFileSync(targetFile, s, { encoding: "utf-8" });
-        console.log(`Update React update script with new package data.`)
-        process.exit(0)
+        console.log(`Update React update script with new package data.`);
+        process.exit(0);
     }
     clearNodeModules(dry: boolean = false) {
         let paths = this.packages.map((a) => a.node_modules);
@@ -160,7 +170,7 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
         console.log(
             `Successfully cleared all node_modules directory in ${this.root}`,
         );
-        process.exit(0)
+        process.exit(0);
     }
     removePackageLock() {
         this.rm(this.getRootRelativePath("pnpm-lock.yaml"));
@@ -277,16 +287,45 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
         if (args[0] === "findByRegex") {
             readLine.question("What package? ", (packageTest) => {
                 const found = p.findByRegex(packageTest);
-                console.log(found.map((f) => `Package: ${f.package}\n Dependencies:\n-${f.deps.join("\n-")}`).join("\n-----\n"))
-                console.log(`\n\n ${found.map((f) => `--filter=${f.package}`).join(" ")}`);
+                console.log(
+                    found
+                        .map(
+                            (f) =>
+                                `Package: ${f.package}\n Dependencies:\n-${f.deps.join("\n-")}`,
+                        )
+                        .join("\n-----\n"),
+                );
+                console.log(
+                    `\n\n ${found.map((f) => `--filter=${f.package}`).join(" ")}`,
+                );
                 process.exit(0);
             });
         }
         if (args[0] === "updateReactScript") {
-            this.writeUpdateReactScript()
+            this.writeUpdateReactScript();
         }
     }
 }
 
 const p = new PackageManager();
 p.processArgs(args);
+
+// const replaceMap = {
+//     "@repo/jest-presets": "@ulld/jest-presets",
+//     "@repo/typescript-config": "@ulld/typescript-config",
+//     "@repo/eslint-config": "@ulld/eslint-config",
+// };
+
+// for (const k of p.packages) {
+//     k.deps = k.deps.map((l) => {
+//         if (l.name in replaceMap) {
+//             return {
+//                 ...l,
+//                 name: replaceMap[l.name],
+//             };
+//         }
+//         return l;
+//     });
+// }
+
+// p.writeModified(true)

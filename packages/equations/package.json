@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/equations",
     "private": false,
     "files": [
@@ -42,8 +42,8 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@repo/jest-presets": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@tailwindcss/container-queries": "^0.1.1",
         "@tailwindcss/forms": "^0.5.7",
         "@types/react": "^18.3.3",

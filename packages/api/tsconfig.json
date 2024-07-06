@@ -1,5 +1,5 @@
 {
-    "extends": "@repo/typescript-config/nextjs.json",
+    "extends": "@ulld/typescript-config/nextjs.json",
     "compilerOptions": {
         "types": ["@testing-library/jest-dom", "jest-environment-jsdom"],
         "moduleResolution": "bundler",

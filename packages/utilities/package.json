@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/utilities",
     "private": false,
     "files": [
@@ -78,7 +78,7 @@
         "build": "echo 'Add lint build here'"
     },
     "devDependencies": {
-        "@repo/typescript-config": "workspace:^",
+        "@ulld/typescript-config": "workspace:^",
         "@tanstack/react-table": "^8.13.2",
         "@testing-library/cypress": "^10.0.1",
         "@testing-library/dom": "^9.3.4",

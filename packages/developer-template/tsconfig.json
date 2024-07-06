@@ -1,6 +1,6 @@
 {
     "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
-    "extends": "@repo/typescript-config/nextjs.json",
+    "extends": "@ulld/typescript-config/nextjs.json",
     "compilerOptions": {
         "incremental": true,
         "paths": {

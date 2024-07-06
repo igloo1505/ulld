@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/component-configs",
     "private": false,
     "scripts": {
@@ -14,7 +14,7 @@
         "./colors": "./src/subConfigs/colors.tsx"
     },
     "peerDependencies": {
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@types/react": "^18.2.74",
         "@types/react-dom": "^18.2.24",
         "@ulld/api": "workspace:*",
@@ -35,7 +35,7 @@
         "next": "^14.2.4",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "@repo/typescript-config": "workspace:*"
+        "@ulld/typescript-config": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {

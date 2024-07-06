@@ -1,7 +1,7 @@
 {
-  "name": "@repo/jest-presets",
-  "version": "0.0.2",
-  "private": true,
+  "name": "@ulld/jest-presets",
+  "version": "0.0.3",
+  "private": false,
   "license": "MIT",
   "exports": {
     "./new": "./jest/new/jest-next.js",
@@ -14,5 +14,8 @@
   },
   "devDependencies": {
     "jest-environment-jsdom": "^29.7.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

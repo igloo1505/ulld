@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/render",
     "private": false,
     "scripts": {
@@ -25,8 +25,8 @@
         "@mdx-js/react": "^3.0.1",
         "@react-three/drei": "^9.99.7",
         "@react-three/fiber": "^8.15.19",
-        "@repo/jest-presets": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@ulld/api": "workspace:*",
         "@ulld/component-map": "workspace:*",
         "@ulld/config": "workspace:*",
@@ -43,8 +43,8 @@
         "@mdx-js/react": "^3.0.1",
         "@react-three/drei": "^9.99.7",
         "@react-three/fiber": "^8.15.19",
-        "@repo/jest-presets": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@types/mdx": "^2.0.11",
         "@types/react": "^18.3.3",
         "@types/react-dom": "^18.3.0",
@@ -57,5 +57,6 @@
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"
-    }
+    },
+    "dependencies": {}
 }

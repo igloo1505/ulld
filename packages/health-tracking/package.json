@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/health-tracking",
     "private": true,
     "scripts": {
@@ -9,9 +9,9 @@
         "lint": "echo 'Add lint script here'"
     },
     "peerDependencies": {
-        "@repo/eslint-config": "workspace:*",
-        "@repo/jest-presets": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@ulld/api": "workspace:*",
         "@ulld/configschema": "workspace:*",
         "@ulld/developer": "workspace:*",
@@ -35,8 +35,8 @@
         "access": "public"
     },
     "devDependencies": {
-        "@repo/eslint-config": "workspace:*",
-        "@repo/jest-presets": "workspace:*",
-        "@repo/typescript-config": "workspace:*"
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/typescript-config": "workspace:*"
     }
 }

@@ -1,5 +1,21 @@
 # @ulld/state
 
+## 0.0.3
+
+### Patch Changes
+
+- Update to include utility repo dependencies.
+- Updated dependencies
+  - @ulld/tailwind@0.0.3
+  - @ulld/configschema@0.0.3
+  - @ulld/base-configs@0.0.3
+  - @ulld/developer@0.0.3
+  - @ulld/utilities@0.0.3
+  - @ulld/database@0.0.3
+  - @ulld/parsers@0.0.3
+  - @ulld/config@0.0.3
+  - @ulld/hooks@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes

@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/component-map",
     "private": false,
     "scripts": {
@@ -48,7 +48,7 @@
     "devDependencies": {
         "@mdx-js/mdx": "3.0.1",
         "@mdx-js/react": "^3.0.1",
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@types/mdx": "^2.0.11",
         "@types/node": "^20.11.24",
         "@types/react": "^18.3.3",
@@ -61,5 +61,6 @@
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"
-    }
+    },
+    "dependencies": {}
 }

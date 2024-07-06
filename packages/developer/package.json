@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/developer",
     "private": false,
     "files": [
@@ -22,8 +22,8 @@
         "lint": "echo 'Add lint script here'"
     },
     "peerDependencies": {
-        "@repo/eslint-config": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@ulld/config": "workspace:*",
         "@ulld/configschema": "workspace:*",
         "@ulld/database": "workspace:*",
@@ -42,7 +42,7 @@
         "access": "public"
     },
     "devDependencies": {
-        "@repo/eslint-config": "workspace:*",
-        "@repo/typescript-config": "workspace:*"
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/typescript-config": "workspace:*"
     }
 }

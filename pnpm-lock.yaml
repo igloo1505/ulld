@@ -436,7 +436,7 @@ importers:
       '@ulld/api':
         specifier: workspace:*
         version: link:../../packages/api
-      '@ulld/baseConfigs':
+      '@ulld/base-configs':
         specifier: workspace:*
         version: link:../../packages/baseConfigs
       '@ulld/bib-manager':
@@ -592,7 +592,7 @@ importers:
       '@ulld/api':
         specifier: workspace:*
         version: link:../../packages/api
-      '@ulld/baseConfigs':
+      '@ulld/base-configs':
         specifier: workspace:*
         version: link:../../packages/baseConfigs
       '@ulld/config':
@@ -767,7 +767,7 @@ importers:
       '@ulld/api':
         specifier: workspace:*
         version: link:../../packages/api
-      '@ulld/baseConfigs':
+      '@ulld/base-configs':
         specifier: workspace:*
         version: link:../../packages/baseConfigs
       '@ulld/calendar':
@@ -1044,7 +1044,7 @@ importers:
       '@types/react-dom':
         specifier: 18.3.0
         version: 18.3.0
-      '@ulld/baseConfigs':
+      '@ulld/base-configs':
         specifier: workspace:*
         version: link:../baseConfigs
       '@ulld/config':
@@ -1380,7 +1380,7 @@ importers:
 
   packages/build:
     dependencies:
-      '@ulld/baseConfigs':
+      '@ulld/base-configs':
         specifier: workspace:*
         version: link:../baseConfigs
       '@ulld/configschema':
@@ -1868,7 +1868,7 @@ importers:
       '@types/react-dom':
         specifier: 18.3.0
         version: 18.3.0
-      '@ulld/baseConfigs':
+      '@ulld/base-configs':
         specifier: workspace:*
         version: link:../baseConfigs
       '@ulld/developer-schemas':
@@ -2286,7 +2286,7 @@ importers:
       '@ulld/api':
         specifier: workspace:*
         version: link:../api
-      '@ulld/baseConfigs':
+      '@ulld/base-configs':
         specifier: workspace:*
         version: link:../baseConfigs
       '@ulld/config':
@@ -4233,7 +4233,7 @@ importers:
       '@testing-library/user-event':
         specifier: ^14.5.2
         version: 14.5.2(@testing-library/dom@9.3.4)
-      '@ulld/baseConfigs':
+      '@ulld/base-configs':
         specifier: workspace:*
         version: link:../baseConfigs
       '@ulld/config':

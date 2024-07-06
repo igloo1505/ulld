@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "@ulld/diagram",
     "private": false,
     "scripts": {
@@ -9,7 +9,7 @@
         "lint": "echo 'Add lint script here'"
     },
     "peerDependencies": {
-        "@repo/typescript-config": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@ulld/api": "workspace:*",
         "@ulld/developer": "workspace:*",
         "@ulld/state": "workspace:*",
@@ -26,7 +26,7 @@
         "y-webrtc": "^10.3.0",
         "y-websocket": "^2.0.2",
         "yjs": "^13.6.14",
-        "@repo/typescript-config": "workspace:*"
+        "@ulld/typescript-config": "workspace:*"
     },
     "dependencies": {
         "@types/react": "18.3.3",
