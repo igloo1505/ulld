@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.4
+
+### Patch Changes
+
+- Remove cookbook dependency.
+- Updated dependencies
+  - @ulld/tailwind@0.0.4
+  - @ulld/utilities@0.0.4
+  - @ulld/hooks@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes

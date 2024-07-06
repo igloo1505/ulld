@@ -1,5 +1,22 @@
 # @ulld/pdf
 
+## 0.0.4
+
+### Patch Changes
+
+- Remove cookbook dependency.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.3
+  - @ulld/eslint-config@0.0.4
+  - @ulld/configschema@0.0.4
+  - @ulld/jest-presets@0.0.4
+  - @ulld/whiteboard@0.0.4
+  - @ulld/developer@0.0.4
+  - @ulld/utilities@0.0.4
+  - @ulld/hooks@0.0.4
+  - @ulld/api@0.0.4
+  - @ulld/ui@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes

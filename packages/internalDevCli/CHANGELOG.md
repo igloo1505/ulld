@@ -1,5 +1,11 @@
 # @ulld/internal-dev-cli
 
+## 0.0.4
+
+### Patch Changes
+
+- Remove cookbook dependency.
+
 ## 0.0.3
 
 ### Patch Changes

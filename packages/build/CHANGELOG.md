@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.4
+
+### Patch Changes
+
+- Remove cookbook dependency.
+- Updated dependencies
+  - @ulld/developer-schemas@0.0.4
+  - @ulld/configschema@0.0.4
+  - @ulld/base-configs@0.0.4
+  - @ulld/utilities@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes

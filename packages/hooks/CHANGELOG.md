@@ -1,5 +1,15 @@
 # @ulld/hooks
 
+## 0.0.4
+
+### Patch Changes
+
+- Remove cookbook dependency.
+- Updated dependencies
+  - @ulld/component-map@0.0.4
+  - @ulld/parsers@0.0.4
+  - @ulld/api@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes

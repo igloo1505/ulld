@@ -1,5 +1,19 @@
 # @ulld/kanban
 
+## 0.0.4
+
+### Patch Changes
+
+- Remove cookbook dependency.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.3
+  - @ulld/tailwind@0.0.4
+  - @ulld/jest-presets@0.0.4
+  - @ulld/developer@0.0.4
+  - @ulld/logger@0.0.4
+  - @ulld/state@0.0.4
+  - @ulld/api@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.4
+
+### Patch Changes
+
+- Remove cookbook dependency.
+- Updated dependencies
+  - @ulld/default-image-map@0.0.4
+  - @ulld/component-configs@0.0.4
+  - @ulld/tailwind@0.0.4
+  - @ulld/configschema@0.0.4
+  - @ulld/utilities@0.0.4
+  - @ulld/render@0.0.4
+  - @ulld/hooks@0.0.4
+  - @ulld/icons@0.0.4
+  - @ulld/state@0.0.4
+  - @ulld/api@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.4
+
+### Patch Changes
+
+- Remove cookbook dependency.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.3
+
 ## 0.0.3
 
 ### Patch Changes
