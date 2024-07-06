@@ -1,38 +1,41 @@
-import cp from "child_process"
-import chalk from "chalk"
+import cp from "child_process";
+import chalk from "chalk";
 
-type LogLevel = "normal" | "verbose" | "debug"
+type LogLevel = "normal" | "verbose" | "debug";
 
 export class ShellManager {
-    logLevel: LogLevel = "normal"
-    private logLevelOrder: LogLevel[] = ["normal", "verbose", "debug"]
-    constructor(){
-        if(process.env.ULLD_LOG_LEVEL){
-            this.logLevel = process.env.ULLD_LOG_LEVEL as LogLevel
+    logLevel: LogLevel = "normal";
+    private logLevelOrder: LogLevel[] = ["normal", "verbose", "debug"];
+    constructor() {
+        if (process.env.ULLD_LOG_LEVEL) {
+            this.logLevel = process.env.ULLD_LOG_LEVEL as LogLevel;
         }
     }
-    tempFiles: string[] = []
+    tempFiles: string[] = [];
 
-    shouldLog(level: LogLevel){
-        return this.logLevelOrder.indexOf(this.logLevel) >= this.logLevelOrder.indexOf(level)
+    shouldLog(level: LogLevel) {
+        return (
+            this.logLevelOrder.indexOf(this.logLevel) >=
+            this.logLevelOrder.indexOf(level)
+        );
     }
 
-    log(val: any, ...vals: any){
-        console.log(val, ...vals)
+    log(val: any, ...vals: any) {
+        console.log(val, ...vals);
     }
 
-    logDebug(val: any, ...vals: any){
-        if(!this.shouldLog("debug")) return
-        console.log(val, ...vals)
+    logDebug(val: any, ...vals: any) {
+        if (!this.shouldLog("debug")) return;
+        console.log(val, ...vals);
     }
 
-    logVerbose(val: any, ...vals: any){
-        if(!this.shouldLog("verbose")) return
-        console.log(val, ...vals)
+    logVerbose(val: any, ...vals: any) {
+        if (!this.shouldLog("verbose")) return;
+        console.log(val, ...vals);
     }
 
-    ulld(){
-        return `${chalk.hex("#0ba5e9")("U")}LLD`
+    ulld() {
+        return `${chalk.hex("#0ba5e9")("U")}LLD`;
     }
 
     // async genTempFile(content: string){
@@ -42,15 +45,20 @@ export class ShellManager {
     //     await fs.promises.writeFile(path.join(tempDir, ))
     // }
 
-    clearLastTempFile(){
-        if(this.tempFiles.length === 0){
-            return
+    clearLastTempFile() {
+        if (this.tempFiles.length === 0) {
+            return;
         }
-        this.tempFiles = this.tempFiles.slice(0, this.tempFiles.length - 1)
+        this.tempFiles = this.tempFiles.slice(0, this.tempFiles.length - 1);
     }
 
     // TODO: Handle this and route all shell commands through here
-    async exec(val: string, cwd?: string){
-        cp.execSync(val, {cwd})
+    async exec(val: string, cwd?: string) {
+        cp.execSync(val, { cwd, stdio: "inherit" });
     }
 }
+
+(async () => {
+    const s = new ShellManager();
+    await s.exec("pnpm install", "/Users/bigsexy/Desktop/current/ulldApp");
+})();

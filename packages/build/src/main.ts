@@ -6,8 +6,7 @@ import fs from "fs";
 import { UlldBuildProcess } from "./classes/build";
 import { log } from "console";
 
-const isLocalDev = true;
-const workingOffline = true
+const workingOffline = false
 
 program.option("--noPlugins").option("--here");
 

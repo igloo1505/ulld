@@ -1,9 +1,7 @@
 import { DocsHomeContainer } from "#/components/docUtils/docsHome/container";
 import React from "react";
 
-interface DocsHomePageProps { }
-
-const DocsHomePage = (props: DocsHomePageProps) => {
+const DocsHomePage = () => {
     return (
         <div
             className={

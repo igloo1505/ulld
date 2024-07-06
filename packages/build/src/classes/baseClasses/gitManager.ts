@@ -9,6 +9,7 @@ import { MultiBar, SingleBar } from "cli-progress";
 
 export class GitManager extends ShellManager {
     status: "notSent" | "pending" | "success" | "fail" = "notSent";
+    showProgress: boolean = false
     constructor(public targetDirectory: string) {
         super();
     }
@@ -44,7 +45,7 @@ export class GitManager extends ShellManager {
             binary: "git",
             maxConcurrentProcesses: 10,
             trimmed: false,
-            progress: this.progress,
+            progress: this.showProgress ? this.progress : undefined,
         };
         const git: SimpleGit = simpleGit(options);
         await git.clone(
@@ -73,7 +74,7 @@ export class GitManager extends ShellManager {
             binary: "git",
             maxConcurrentProcesses: 10,
             trimmed: false,
-            progress: this.progress,
+            progress: this.showProgress ? this.progress : undefined,
         };
         const git: SimpleGit = simpleGit(options);
         await git.clone(

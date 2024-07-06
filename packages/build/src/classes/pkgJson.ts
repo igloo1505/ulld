@@ -58,7 +58,8 @@ export class TargetPackageJson extends Prompter {
         }
         this.log(`Downloading dependencies with ${manager}`);
         this.log(`This might take a minute... Now's the time to get some coffee.`)
+        this.logDebug("targetDir: ", this.targetDir)
         this.exec(`${manager} install`, this.targetDir);
-        console.log(`Whew! Installed everything we need to wrap this up...`)
+        this.log(`Whew! Installed everything we need to wrap this up...`)
     }
 }
