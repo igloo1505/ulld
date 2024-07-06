@@ -7,7 +7,7 @@ const DocsHomePage = (props: DocsHomePageProps) => {
     return (
         <div
             className={
-                "w-full h-full min-h-screen-noNav flex justify-center items-center"
+                "w-full h-full min-h-screen flex justify-center items-center bg-background"
             }
         >
             <DocsHomeContainer />
