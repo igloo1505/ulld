@@ -49,7 +49,7 @@ const config = withContentCollections(
             "glsify",
             "monaco-editor",
             "@ulld/api",
-            "@ulld/baseConfigs",
+            "@ulld/base-configs",
             "@ulld/calendar",
             "@ulld/config",
             "@ulld/configschema",

@@ -14,4 +14,4 @@ Clear all node_modules | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/mono
 Find by package | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoRepoUtils.ts findByPackage 
 Find by package regex | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoRepoUtils.ts findByRegex
 Update workspace update react script | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoRepoUtils.ts updateReactScript
-
+Set cloned base git config | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/setClonedUlldBaseGitConfig.zsh

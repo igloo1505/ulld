@@ -57,10 +57,10 @@ export const slotFields = {
         .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
         .default("@ulld/notebook")
         .transform(pluginConfigTransform),
-    kanban: z
-        .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
-        .default("@ulld/kanban")
-        .transform(pluginConfigTransform),
+    // kanban: z
+    //     .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
+    //     .default("@ulld/kanban")
+    //     .transform(pluginConfigTransform),
     dashboard: z
         .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
         .default("@ulld/landing-layouts")
@@ -140,10 +140,6 @@ export const pluginSlotSchema = z.object({
         .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
         .default("@ulld/notebook")
         .transform(pluginConfigTransform),
-    kanban: z
-        .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
-        .default("@ulld/kanban")
-        .transform(pluginConfigTransform),
     dashboard: z
         .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
         .default("@ulld/landing-layouts")
@@ -155,10 +151,6 @@ export const pluginSlotSchema = z.object({
     journal: z
         .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
         .default("@ulld/journal")
-        .transform(pluginConfigTransform),
-    noteNetwork: z
-        .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
-        .default("@ulld/note-network")
         .transform(pluginConfigTransform),
     pdf: z
         .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
@@ -178,7 +170,17 @@ export const pluginSlotSchema = z.object({
         .transform(pluginConfigTransform),
     components: z.record(z.string(), z.string()).default({}),
     parsers: z.record(z.string(), z.string()).default({}),
-    UI: z.union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()]).default("@ulld/ui").transform(pluginConfigTransform)
+    UI: z.union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()]).default("@ulld/ui").transform(pluginConfigTransform),
+    // Disabled for now until they are published and publically available.
+    // noteNetwork: z
+    //     .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
+    //     .default("@ulld/note-network")
+    //     .transform(pluginConfigTransform),
+    //
+    // kanban: z
+    //     .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
+    //     .default("@ulld/kanban")
+    //     .transform(pluginConfigTransform),
 });
 
 

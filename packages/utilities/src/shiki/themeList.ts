@@ -1,5 +1,168 @@
 import { BundledTheme } from "shiki";
 
+export const shikiThemeWithType = [
+    {
+        id: "andromeeda",
+        type: "dark",
+    },
+    {
+        id: "aurora-x",
+        type: "dark",
+    },
+    {
+        id: "ayu-dark",
+        type: "dark",
+    },
+    {
+        id: "catppuccin-frappe",
+        type: "dark",
+    },
+    {
+        id: "catppuccin-latte",
+        type: "light",
+    },
+    {
+        id: "catppuccin-macchiato",
+        type: "dark",
+    },
+    {
+        id: "catppuccin-mocha",
+        type: "dark",
+    },
+    {
+        id: "dark-plus",
+        type: "dark",
+    },
+    {
+        id: "dracula",
+        type: "dark",
+    },
+    {
+        id: "dracula-soft",
+        type: "dark",
+    },
+    {
+        id: "github-dark",
+        type: "dark",
+    },
+    {
+        id: "github-dark-dimmed",
+        type: "dark",
+    },
+    {
+        id: "github-light",
+        type: "light",
+    },
+    {
+        id: "light-plus",
+        type: "light",
+    },
+    {
+        id: "material-theme",
+        type: "dark",
+    },
+    {
+        id: "material-theme-darker",
+        type: "dark",
+    },
+    {
+        id: "material-theme-lighter",
+        type: "light",
+    },
+    {
+        id: "material-theme-ocean",
+        type: "dark",
+    },
+    {
+        id: "material-theme-palenight",
+        type: "dark",
+    },
+    {
+        id: "min-dark",
+        type: "dark",
+    },
+    {
+        id: "min-light",
+        type: "light",
+    },
+    {
+        id: "monokai",
+        type: "dark",
+    },
+    {
+        id: "night-owl",
+        type: "dark",
+    },
+    {
+        id: "nord",
+        type: "dark",
+    },
+    {
+        id: "one-dark-pro",
+        type: "dark",
+    },
+    {
+        id: "poimandres",
+        type: "dark",
+    },
+    {
+        id: "red",
+        type: "dark",
+    },
+    {
+        id: "rose-pine",
+        type: "dark",
+    },
+    {
+        id: "rose-pine-dawn",
+        type: "light",
+    },
+    {
+        id: "rose-pine-moon",
+        type: "dark",
+    },
+    {
+        id: "slack-dark",
+        type: "dark",
+    },
+    {
+        id: "slack-ochin",
+        type: "light",
+    },
+    {
+        id: "solarized-dark",
+        type: "dark",
+    },
+    {
+        id: "solarized-light",
+        type: "light",
+    },
+    {
+        id: "synthwave-84",
+        type: "dark",
+    },
+    {
+        id: "tokyo-night",
+        type: "dark",
+    },
+    {
+        id: "vesper",
+        type: "dark",
+    },
+    {
+        id: "vitesse-black",
+        type: "dark",
+    },
+    {
+        id: "vitesse-dark",
+        type: "dark",
+    },
+    {
+        id: "vitesse-light",
+        type: "light",
+    },
+];
+
 const shikiThemeList = [
     "andromeeda",
     "aurora-x",
@@ -12,11 +175,8 @@ const shikiThemeList = [
     "dracula",
     "dracula-soft",
     "github-dark",
-    "github-dark-default",
     "github-dark-dimmed",
     "github-light",
-    "github-light-default",
-    "houston",
     "light-plus",
     "material-theme",
     "material-theme-darker",
@@ -29,7 +189,6 @@ const shikiThemeList = [
     "night-owl",
     "nord",
     "one-dark-pro",
-    "one-light",
     "poimandres",
     "red",
     "rose-pine",
@@ -37,7 +196,6 @@ const shikiThemeList = [
     "rose-pine-moon",
     "slack-dark",
     "slack-ochin",
-    "snazzy-light",
     "solarized-dark",
     "solarized-light",
     "synthwave-84",
@@ -46,6 +204,6 @@ const shikiThemeList = [
     "vitesse-black",
     "vitesse-dark",
     "vitesse-light",
-] as const
+] as const;
 
 export default shikiThemeList;

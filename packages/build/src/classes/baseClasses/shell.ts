@@ -58,7 +58,7 @@ export class ShellManager {
     }
 }
 
-(async () => {
-    const s = new ShellManager();
-    await s.exec("pnpm install", "/Users/bigsexy/Desktop/current/ulldApp");
-})();
+// (async () => {
+//     const s = new ShellManager();
+//     await s.exec("pnpm install", "/Users/bigsexy/Desktop/current/ulldApp");
+// })();

@@ -2006,11 +2006,8 @@
                                         "dracula",
                                         "dracula-soft",
                                         "github-dark",
-                                        "github-dark-default",
                                         "github-dark-dimmed",
                                         "github-light",
-                                        "github-light-default",
-                                        "houston",
                                         "light-plus",
                                         "material-theme",
                                         "material-theme-darker",
@@ -2023,7 +2020,6 @@
                                         "night-owl",
                                         "nord",
                                         "one-dark-pro",
-                                        "one-light",
                                         "poimandres",
                                         "red",
                                         "rose-pine",
@@ -2031,7 +2027,6 @@
                                         "rose-pine-moon",
                                         "slack-dark",
                                         "slack-ochin",
-                                        "snazzy-light",
                                         "solarized-dark",
                                         "solarized-light",
                                         "synthwave-84",
@@ -3040,29 +3035,6 @@
                             ],
                             "default": "@ulld/notebook"
                         },
-                        "kanban": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                {
-                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                    }
-                                }
-                            ],
-                            "default": "@ulld/kanban"
-                        },
                         "dashboard": {
                             "anyOf": [
                                 {
@@ -3131,29 +3103,6 @@
                                 }
                             ],
                             "default": "@ulld/journal"
-                        },
-                        "noteNetwork": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                {
-                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                    }
-                                }
-                            ],
-                            "default": "@ulld/note-network"
                         },
                         "pdf": {
                             "anyOf": [

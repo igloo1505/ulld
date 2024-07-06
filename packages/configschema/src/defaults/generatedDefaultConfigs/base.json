@@ -305,12 +305,6 @@
                 "version": "latest"
             }
         ],
-        "kanban": [
-            {
-                "name": "@ulld/kanban",
-                "version": "latest"
-            }
-        ],
         "dashboard": [
             {
                 "name": "@ulld/landing-layouts",
@@ -326,12 +320,6 @@
         "journal": [
             {
                 "name": "@ulld/journal",
-                "version": "latest"
-            }
-        ],
-        "noteNetwork": [
-            {
-                "name": "@ulld/note-network",
                 "version": "latest"
             }
         ],

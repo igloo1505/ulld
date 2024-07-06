@@ -37,7 +37,6 @@ export class TargetPackageJson extends Prompter {
             return false;
         }
         let deps = Object.keys(this.data.dependencies);
-        console.log("deps: ", deps)
         return deps.filter((a) => a.startsWith("@ulld")).length > 0;
     }
     write() {
@@ -58,7 +57,6 @@ export class TargetPackageJson extends Prompter {
         }
         this.log(`Downloading dependencies with ${manager}`);
         this.log(`This might take a minute... Now's the time to get some coffee.`)
-        this.logDebug("targetDir: ", this.targetDir)
         this.exec(`${manager} install`, this.targetDir);
         this.log(`Whew! Installed everything we need to wrap this up...`)
     }

@@ -5,7 +5,7 @@ import { bundledThemes } from 'shiki';
 
 
 if(themes.length !== Object.keys(bundledThemes).length){
-    throw new Error(`Missing a theme most likely. Current theme list has ${themes.length} items, and the Shiki package exports ${Object.keys(themes).length} items.`)
+    throw new Error(`Missing a theme most likely. Current theme list has ${themes.length} items, and the Shiki package exports ${Object.keys(bundledThemes).length} items.`)
 }
 
 

@@ -14,7 +14,7 @@ import { fontSans } from "@ulld/tailwind/defaultFont"
 import appConfig from "#/appConfig.ulld.json"
 /* import "shiki/themes/dracula.mjs" */
 import {writeConfigJson} from "@ulld/configschema/zod/writeConfigJson"
-import lazyTestConfig from "@ulld/baseConfigs/test"
+import lazyTestConfig from "@ulld/base-configs/test"
 
 
 

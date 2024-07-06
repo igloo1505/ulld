@@ -45,7 +45,7 @@
     "@stripe/stripe-js": "^3.4.0",
     "@types/three": "^0.162.0",
     "@ulld/api": "workspace:*",
-    "@ulld/baseConfigs": "workspace:*",
+    "@ulld/base-configs": "workspace:*",
     "@ulld/calendar": "workspace:*",
     "@ulld/component-map": "workspace:*",
     "@ulld/config": "workspace:*",
