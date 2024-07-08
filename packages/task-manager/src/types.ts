@@ -8,3 +8,5 @@ export interface AddTaskProps {
     isModal: boolean;
     existingTaggables: UniqueTaggables;
 }
+
+export type AddTaskListProps = AddTaskProps

@@ -1,7 +1,5 @@
-import {z} from 'zod'
+import { z } from "zod";
 
-
-// TODO: Remove this. This was moved to packages/utilities/src/types/packageJson/packageJsonType.ts
 export const licenseUnion = z.union([
     z.literal('0BSD'),
     z.literal('AAL'),

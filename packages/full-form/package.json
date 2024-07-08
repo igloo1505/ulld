@@ -165,5 +165,6 @@
     },
     "publishConfig": {
         "access": "public"
-    }
+    },
+    "files": []
 }

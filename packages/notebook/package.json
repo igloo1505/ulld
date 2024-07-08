@@ -38,5 +38,6 @@
         "@ulld/eslint-config": "workspace:*",
         "@ulld/jest-presets": "workspace:*",
         "@ulld/typescript-config": "workspace:*"
-    }
+    },
+    "files": []
 }

@@ -134,5 +134,6 @@
         "twoslash": "^0.2.6"
     },
     "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {}
+    "peerDependencies": {},
+    "files": []
 }

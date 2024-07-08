@@ -3,7 +3,8 @@
   "name": "@ulld/equations",
   "private": false,
   "files": [
-    "src"
+    "src",
+    "pluginConfig.ulld.json"
   ],
   "exports": {
     "./equationModal": "./src/ulld_app/equations/@modal/(.)equations/details/[equationId]/page.tsx",

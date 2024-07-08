@@ -64,5 +64,6 @@
         "access": "public"
     },
     "peerDependencies": {},
-    "devDependencies": {}
+    "devDependencies": {},
+    "files": []
 }

@@ -4,6 +4,7 @@ import path from "path";
 import rl from "readline";
 import npmFetch from "npm-registry-fetch";
 import dns from "dns";
+import { PackageJsonType } from "@ulld/utilities/packageJsonType";
 
 const readLine = rl.createInterface({
     input: process.stdin,
@@ -20,7 +21,7 @@ interface Dependency {
 
 interface PackageSource {
     name: string;
-    content: object;
+    content: PackageJsonType;
     type: "package" | "app" | "unknown";
     path: string;
     deps: Dependency[];
@@ -193,7 +194,6 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
                 data.content[k] = f;
             }
             if (!dry) {
-                console.log("item.path: ", item.path);
                 fs.writeFileSync(item.path, JSON.stringify(item.content, null, 4));
             } else {
                 console.log(JSON.stringify(data.content, null, 4));
@@ -233,12 +233,12 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
             if (k.startsWith("@ulld")) {
                 try {
                     let exists = await npmFetch.json(k);
-                    this.packagePublishedMap[k] = true
+                    this.packagePublishedMap[k] = true;
                 } catch (err) {
                     console.log(
                         `${k} not found in npm repository. Removing from all internal packages.`,
                     );
-                    this.packagePublishedMap[k] = false
+                    this.packagePublishedMap[k] = false;
                     removeDepNames.push(k);
                 }
             }
@@ -320,6 +320,26 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
             };
         });
     }
+    applyPluginConfigToFiles() {
+        console.log(`Applying plugin config files to package.json files property.`);
+        for (const k of this.packages) {
+            let packageConfigPath = path.join(
+                path.dirname(k.path),
+                "./pluginConfig.ulld.json",
+            );
+            let existingFiles = k.content.files || []
+            if (fs.existsSync(packageConfigPath)) {
+                k.content.files = existingFiles.includes("pluginConfig.ulld.json")
+                    ? existingFiles
+                    : [...existingFiles, "pluginConfig.ulld.json"];
+            } else {
+                k.content.files = existingFiles.filter(
+                    (f) => f !== "pluginConfig.ulld.json",
+                )
+            }
+        }
+        this.writeModified(true)
+    }
     processArgs(args: string[]) {
         console.log(
             `Processing args: \n${args.map((a, i) => `${i + 1}. ${a}`).join("\n")}`,
@@ -354,6 +374,9 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
         }
         if (args[0] === "updateReactScript") {
             this.writeUpdateReactScript();
+        }
+        if (args[0] === "applyPluginConfigToPackageJsonFiles") {
+            this.applyPluginConfigToFiles();
         }
     }
 }

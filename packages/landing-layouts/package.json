@@ -10,7 +10,8 @@
         "writePluginConfig": "dotenv -e ../../.env.local -- tsx ./pluginConfig.ulld.ts"
     },
     "files": [
-        "src"
+        "src",
+        "pluginConfig.ulld.json"
     ],
     "exports": {
         "./beta": "./src/components/beta/main.tsx"

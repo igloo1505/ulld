@@ -8,5 +8,6 @@
     },
     "peerDependencies": {},
     "devDependencies": {},
-    "dependencies": {}
+    "dependencies": {},
+    "files": []
 }

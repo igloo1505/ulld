@@ -17,3 +17,5 @@ Update workspace update react script | tsx /Users/bigsexy/Desktop/current/ulld/b
 Set cloned base git config | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/setClonedUlldBaseGitConfig.zsh
 Set cloned base internal versions | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/updateBasePackageVersions.ts
 Generate Slot Map | tsx /Users/bigsexy/Desktop/current/ulld/packages/configschema/src/__scripts__/generateSlotMap.ts
+Apply plugin config files to package.json | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoRepoUtils.ts applyPluginConfigToPackageJsonFiles
+

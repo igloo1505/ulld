@@ -27,5 +27,6 @@
     "publishConfig": {
         "access": "public"
     },
-    "peerDependencies": {}
+    "peerDependencies": {},
+    "files": []
 }

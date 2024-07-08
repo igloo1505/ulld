@@ -1,7 +1,6 @@
 import { z } from "zod";
 import { licenseUnion } from "./licenseUnion";
 
-// TODO: Remove this. This was moved to packages/utilities/src/types/packageJson/packageJsonType.ts
 export const ulldCompletePackageJsonSchema = z.object({
     name: z
         .string()
