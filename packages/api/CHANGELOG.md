@@ -1,5 +1,39 @@
 # @ulld/api
 
+## 0.0.6
+
+### Patch Changes
+
+- Removed all unpublished packages dynamically.
+- Updated dependencies
+  - @ulld/tailwind@0.0.6
+  - @ulld/configschema@0.0.6
+  - @ulld/base-configs@0.0.6
+  - @ulld/developer@0.0.6
+  - @ulld/utilities@0.0.6
+  - @ulld/database@0.0.6
+  - @ulld/parsers@0.0.6
+  - @ulld/config@0.0.6
+  - @ulld/logger@0.0.6
+  - @ulld/state@0.0.6
+
+## 0.0.5
+
+### Patch Changes
+
+- One more time with this cluster\*\*\*\* of dependencies.
+- Updated dependencies
+  - @ulld/tailwind@0.0.5
+  - @ulld/configschema@0.0.5
+  - @ulld/base-configs@0.0.5
+  - @ulld/developer@0.0.5
+  - @ulld/utilities@0.0.5
+  - @ulld/database@0.0.5
+  - @ulld/parsers@0.0.5
+  - @ulld/config@0.0.5
+  - @ulld/logger@0.0.5
+  - @ulld/state@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes

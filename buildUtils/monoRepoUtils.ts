@@ -2,6 +2,8 @@ import { globSync } from "glob";
 import fs from "fs";
 import path from "path";
 import rl from "readline";
+import npmFetch from "npm-registry-fetch";
+import dns from "dns";
 
 const readLine = rl.createInterface({
     input: process.stdin,
@@ -40,10 +42,14 @@ const glob = () =>
         ignore: "**/node_modules/**",
     });
 
-class PackageManager {
+export class PackageManager {
     packages: PackageSource[] = [];
     rootPackageJsonPath: string = path.join(__dirname, "../package.json");
-    constructor(public root: string = process.env.ULLD_DEV_ROOT!) {
+    packagePublishedMap: Record<string, boolean> = {};
+    constructor(
+        public root: string = process.env.ULLD_DEV_ROOT!,
+        public offline: boolean = true,
+    ) {
         this.packages = this.collectPackages();
     }
     getRootRelativePath(p: string) {
@@ -199,6 +205,17 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
             a.name === name ? { ...a, content: content, modified: true } : a,
         );
     }
+    getFlattenedDeps() {
+        let deps: string[] = [];
+        for (const k of this.packages) {
+            for (const d of k.deps) {
+                if (!deps.includes(d.name)) {
+                    deps.push(d.name);
+                }
+            }
+        }
+        return deps;
+    }
     replacePackage(name: string, version: string) {
         this.findByDependency(name).forEach((a) => {
             const match = a.deps.filter((b) => b.name === name);
@@ -208,6 +225,40 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
             });
             this.replaceContentByName(a.name, content);
         });
+    }
+    async getPublishedMap() {
+        let allDeps = this.getFlattenedDeps();
+        let removeDepNames: string[] = [];
+        for (const k of allDeps) {
+            if (k.startsWith("@ulld")) {
+                try {
+                    let exists = await npmFetch.json(k);
+                    this.packagePublishedMap[k] = true
+                } catch (err) {
+                    console.log(
+                        `${k} not found in npm repository. Removing from all internal packages.`,
+                    );
+                    this.packagePublishedMap[k] = false
+                    removeDepNames.push(k);
+                }
+            }
+        }
+        for (const k of this.packages) {
+            let initialDepLength = k.deps.length;
+            k.deps = k.deps.filter((a) => {
+                let shouldKeep = !removeDepNames.includes(a.name);
+                if (!shouldKeep) {
+                    console.log(`Removing ${a.name} from ${k.name}`);
+                }
+                return shouldKeep;
+            });
+            let newDepsLength = k.deps.length;
+            if (initialDepLength !== newDepsLength) {
+                console.log(
+                    `${k.name} went from ${initialDepLength} to ${newDepsLength}.`,
+                );
+            }
+        }
     }
     getProperty(k: keyof (typeof this.packages)[number]) {
         return this.packages.map((a) => a[k]);
@@ -279,14 +330,14 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
         }
         if (args[0] === "findByPackage") {
             readLine.question("What package? ", (packageName) => {
-                const found = p.findByDependency(packageName);
+                const found = this.findByDependency(packageName);
                 console.log(found.map((f) => `--filter=${f.name}`).join(" "));
                 process.exit(0);
             });
         }
         if (args[0] === "findByRegex") {
             readLine.question("What package? ", (packageTest) => {
-                const found = p.findByRegex(packageTest);
+                const found = this.findByRegex(packageTest);
                 console.log(
                     found
                         .map(
@@ -307,25 +358,17 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
     }
 }
 
-const p = new PackageManager();
-p.processArgs(args);
-
-// const replaceMap = {
-//     "@repo/jest-presets": "@ulld/jest-presets",
-//     "@repo/typescript-config": "@ulld/typescript-config",
-//     "@repo/eslint-config": "@ulld/eslint-config",
-// };
-
-// for (const k of p.packages) {
-//     k.deps = k.deps.map((l) => {
-//         if (l.name in replaceMap) {
-//             return {
-//                 ...l,
-//                 name: replaceMap[l.name],
-//             };
-//         }
-//         return l;
-//     });
-// }
-
-// p.writeModified(true)
+(async () => {
+    const p = new PackageManager();
+    let isConnected = !!(await dns.promises
+        .resolve("google.com")
+        .catch(() => { }));
+    p.offline = !isConnected;
+    if (isConnected) {
+        console.log("Gathering publish map.");
+        await p.getPublishedMap();
+    } else {
+        console.log("No connection. Not applying remote publish map.");
+    }
+    p.processArgs(args);
+})();

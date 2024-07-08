@@ -13,7 +13,7 @@ import { ShellManager } from "./baseClasses/shell";
 
 export class UlldPlugin extends ShellManager {
     pluginConfig: DeveloperConfigOutput | "Unusable" = "Unusable";
-    inConfigAsSlot: boolean = false
+    inConfigAsSlot: boolean = false;
     packageRoot: string;
     hasConfig: boolean = false;
     slot?: PluginSlot;
@@ -35,10 +35,19 @@ export class UlldPlugin extends ShellManager {
         this.packageRoot = path.join(this.targetDir, "node_modules", this.name);
         let configPath = path.join(this.packageRoot, "pluginConfig.ulld.json");
         if (!fs.existsSync(configPath)) {
-            this.log(
-                `No plugin configuration was found for the ${this.name} plugin. This plugin will be overridden.`,
+            let packageJsonPath = path.join(this.packageRoot, "package.json");
+            if (!fs.existsSync(packageJsonPath)) {
+                this.noConfigError();
+                return;
+            }
+            let packageJsonData = JSON.parse(
+                fs.readFileSync(packageJsonPath, { encoding: "utf-8" }),
             );
-            return;
+            if (!packageJsonData["ulld-pluginConfig"]) {
+                this.noConfigError();
+                return;
+            }
+            this.pluginConfig = packageJsonData["ulld-pluginConfig"] as typeof this.pluginConfig
         }
         this.hasConfig = true;
         this.pluginConfig = JSON.parse(
@@ -61,9 +70,15 @@ export class UlldPlugin extends ShellManager {
             );
             this.parsers = this.pluginConfig.parsers.map((f) => new PluginParser(f));
             this.pages = this.pluginConfig.pages.map(
-                (p, i) => new PluginPage(p, this.name, i, this.paths),
+                (p, i) => new PluginPage(p, this.name, i, this.paths, this.slot?.slot),
             );
         }
+    }
+    noConfigError() {
+        this.hasConfig = false;
+        this.log(
+            `No plugin configuration was found for the ${this.name} plugin. This plugin will be overridden.`,
+        );
     }
     removeUnusedPages() {
         this.pages = this.pages.filter((f) => f.shouldUse);

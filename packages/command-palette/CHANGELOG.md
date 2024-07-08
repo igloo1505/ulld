@@ -1,5 +1,59 @@
 # @ulld/command-palette
 
+## 0.0.6
+
+### Patch Changes
+
+- Removed all unpublished packages dynamically.
+- Updated dependencies
+  - @ulld/tailwind@0.0.6
+  - @ulld/configschema@0.0.6
+  - @ulld/task-manager@0.0.6
+  - @ulld/bib-manager@0.0.6
+  - @ulld/whiteboard@0.0.6
+  - @ulld/developer@0.0.6
+  - @ulld/equations@0.0.6
+  - @ulld/utilities@0.0.6
+  - @ulld/calendar@0.0.6
+  - @ulld/database@0.0.6
+  - @ulld/snippets@0.0.6
+  - @ulld/diagram@0.0.6
+  - @ulld/parsers@0.0.6
+  - @ulld/editor@0.0.6
+  - @ulld/logger@0.0.6
+  - @ulld/hooks@0.0.6
+  - @ulld/state@0.0.6
+  - @ulld/api@0.0.6
+  - @ulld/ui@0.0.6
+
+## 0.0.5
+
+### Patch Changes
+
+- One more time with this cluster\*\*\*\* of dependencies.
+- Updated dependencies
+  - @ulld/tailwind@0.0.5
+  - @ulld/configschema@0.0.5
+  - @ulld/note-network@0.0.5
+  - @ulld/task-manager@0.0.5
+  - @ulld/bib-manager@0.0.5
+  - @ulld/whiteboard@0.0.5
+  - @ulld/developer@0.0.5
+  - @ulld/equations@0.0.5
+  - @ulld/utilities@0.0.5
+  - @ulld/calendar@0.0.5
+  - @ulld/database@0.0.5
+  - @ulld/snippets@0.0.5
+  - @ulld/diagram@0.0.5
+  - @ulld/parsers@0.0.5
+  - @ulld/editor@0.0.5
+  - @ulld/kanban@0.0.5
+  - @ulld/logger@0.0.5
+  - @ulld/hooks@0.0.5
+  - @ulld/state@0.0.5
+  - @ulld/api@0.0.5
+  - @ulld/ui@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes

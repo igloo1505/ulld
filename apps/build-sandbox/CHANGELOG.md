@@ -1,5 +1,94 @@
 # @ulld/build-sandbox
 
+## 0.0.6
+
+### Patch Changes
+
+- Removed all unpublished packages dynamically.
+- Updated dependencies
+  - @ulld/embeddable-components@0.0.6
+  - @ulld/typescript-config@0.0.5
+  - @ulld/default-image-map@0.0.6
+  - @ulld/command-palette@0.0.6
+  - @ulld/landing-layouts@0.0.6
+  - @ulld/tailwind@0.0.6
+  - @ulld/component-map@0.0.6
+  - @ulld/developer-cli@0.0.6
+  - @ulld/configschema@0.0.6
+  - @ulld/task-manager@0.0.6
+  - @ulld/base-configs@0.0.6
+  - @ulld/bib-manager@0.0.6
+  - @ulld/navigation@0.0.6
+  - @ulld/whiteboard@0.0.6
+  - @ulld/developer@0.0.6
+  - @ulld/equations@0.0.6
+  - @ulld/full-form@0.0.6
+  - @ulld/utilities@0.0.6
+  - @ulld/calendar@0.0.6
+  - @ulld/database@0.0.6
+  - @ulld/notebook@0.0.6
+  - @ulld/snippets@0.0.6
+  - @ulld/diagram@0.0.6
+  - @ulld/journal@0.0.6
+  - @ulld/parsers@0.0.6
+  - @ulld/config@0.0.6
+  - @ulld/editor@0.0.6
+  - @ulld/logger@0.0.6
+  - @ulld/render@0.0.6
+  - @ulld/hooks@0.0.6
+  - @ulld/icons@0.0.6
+  - @ulld/state@0.0.6
+  - @ulld/plot@0.0.6
+  - @ulld/api@0.0.6
+  - @ulld/pdf@0.0.6
+  - @ulld/ui@0.0.6
+
+## 0.0.5
+
+### Patch Changes
+
+- One more time with this cluster\*\*\*\* of dependencies.
+- Updated dependencies
+  - @ulld/embeddable-components@0.0.5
+  - @ulld/typescript-config@0.0.4
+  - @ulld/default-image-map@0.0.5
+  - @ulld/command-palette@0.0.5
+  - @ulld/health-tracking@0.0.5
+  - @ulld/landing-layouts@0.0.5
+  - @ulld/tailwind@0.0.5
+  - @ulld/component-map@0.0.5
+  - @ulld/developer-cli@0.0.5
+  - @ulld/configschema@0.0.5
+  - @ulld/note-network@0.0.5
+  - @ulld/task-manager@0.0.5
+  - @ulld/base-configs@0.0.5
+  - @ulld/bib-manager@0.0.5
+  - @ulld/navigation@0.0.5
+  - @ulld/whiteboard@0.0.5
+  - @ulld/developer@0.0.5
+  - @ulld/equations@0.0.5
+  - @ulld/full-form@0.0.5
+  - @ulld/utilities@0.0.5
+  - @ulld/calendar@0.0.5
+  - @ulld/database@0.0.5
+  - @ulld/notebook@0.0.5
+  - @ulld/snippets@0.0.5
+  - @ulld/diagram@0.0.5
+  - @ulld/journal@0.0.5
+  - @ulld/parsers@0.0.5
+  - @ulld/config@0.0.5
+  - @ulld/editor@0.0.5
+  - @ulld/kanban@0.0.5
+  - @ulld/logger@0.0.5
+  - @ulld/render@0.0.5
+  - @ulld/hooks@0.0.5
+  - @ulld/icons@0.0.5
+  - @ulld/state@0.0.5
+  - @ulld/plot@0.0.5
+  - @ulld/api@0.0.5
+  - @ulld/pdf@0.0.5
+  - @ulld/ui@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes

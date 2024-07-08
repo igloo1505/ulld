@@ -7,6 +7,7 @@ export enum EquationOrderBy {
     createdAt = "createdAt"
 }
 
+// TODO: Remove all imports of this location. This was moved to /packages/utilities/src/types/corePageProps.ts
 export const equationSearchParamsSchema = z.object({
     tags: z.union([z.string(), z.string().array()]).transform(ArrayUtilities.beArray).default([]),
     variables: z.union([z.string(), z.string().array()]).transform(ArrayUtilities.beArray).default([]),

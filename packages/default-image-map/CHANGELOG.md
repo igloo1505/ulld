@@ -1,5 +1,33 @@
 # @ulld/default-image-map
 
+## 0.0.6
+
+### Patch Changes
+
+- Removed all unpublished packages dynamically.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.5
+  - @ulld/tailwind@0.0.6
+  - @ulld/eslint-config@0.0.6
+  - @ulld/configschema@0.0.6
+  - @ulld/utilities@0.0.6
+  - @ulld/config@0.0.6
+  - @ulld/logger@0.0.6
+
+## 0.0.5
+
+### Patch Changes
+
+- One more time with this cluster\*\*\*\* of dependencies.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.4
+  - @ulld/tailwind@0.0.5
+  - @ulld/eslint-config@0.0.5
+  - @ulld/configschema@0.0.5
+  - @ulld/utilities@0.0.5
+  - @ulld/config@0.0.5
+  - @ulld/logger@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes

@@ -6,8 +6,9 @@ import { TrpcConfig } from "./trpcConfig";
 import { PluginSettingsConfig } from "./pluginSettingsConfig";
 import { PluginPageConfig } from "./pageConfig";
 import { PluginEventsConfig } from "./pluginEventsConfig";
+import { PluginSlotKey } from "../slotMapType";
 
-export type DeveloperConfigInput = {
+export type DeveloperConfigInput<T extends PluginSlotKey | undefined = undefined> = {
     pluginName: string;
     slot?: keyof typeof slots;
     components?: ComponentConfig[];
@@ -15,6 +16,6 @@ export type DeveloperConfigInput = {
     additionalImports?: AdditionalImportsConfig;
     trpc?: TrpcConfig;
     settings?: PluginSettingsConfig;
-    pages?: PluginPageConfig[];
+    pages?: PluginPageConfig<T>[];
     events?: PluginEventsConfig;
 };

@@ -21,20 +21,19 @@ const options = program.opts();
             log(`You need to specify a directory to continue.`);
             process.exit(1);
         }
-
         let build = new UlldBuildProcess(targetDirectory);
-        let success = false;
-        success = workingOffline ? true : await build.createBaseProject(); // alpha
+        // let success = false;
+        // success = workingOffline ? true : await build.createBaseProject(); // alpha
         build.packageJson.gather(); // alpha
         await build.gatherAppConfig(); // beta
-        await build.gatherPlugins(); // alpha
-        await build.checkPluginValidity(); //beta
-        !workingOffline && await build.packageJson.installDependencies(); //beta
-        await build.resolveSlotConflicts(); // beta
-        await build.resolvePageConflicts(); // beta
-        build.removeUnusablePlugins() // alpha
+        // await build.gatherPlugins(); // alpha
+        // await build.checkPluginValidity(); //beta
+        // !workingOffline && await build.packageJson.installDependencies(); //beta
+        // await build.resolveSlotConflicts(); // beta
+        // await build.resolvePageConflicts(); // beta
+        // build.removeUnusablePlugins() // alpha
         build.convertSlotsToPlugins()
-        // await build.applyPages()
+        await build.applyPages()
     } catch (err) {
         if (!err) {
             log(`No worries. We can handle this later.`);

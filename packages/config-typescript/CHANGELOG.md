@@ -1,5 +1,17 @@
 # @repo/typescript-config
 
+## 0.0.5
+
+### Patch Changes
+
+- Removed all unpublished packages dynamically.
+
+## 0.0.4
+
+### Patch Changes
+
+- One more time with this cluster\*\*\*\* of dependencies.
+
 ## 0.0.3
 
 ### Patch Changes

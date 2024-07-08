@@ -1,65 +1,62 @@
 {
-  "version": "0.0.4",
-  "name": "@ulld/component-map",
-  "private": false,
-  "scripts": {
-    "dev": "echo 'Add dev script here'",
-    "build": "echo 'Add build script here'",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'"
-  },
-  "types": "src/index.ts",
-  "files": [
-    "./src/**"
-  ],
-  "exports": {
-    "./server": "./src/server/componentMap.ts",
-    "./client": "./src/client/componentMap.ts",
-    "./types": "./src/types.ts"
-  },
-  "peerDependencies": {
-    "@mdx-js/mdx": "3.0.1",
-    "@mdx-js/react": "^3.0.1",
-    "@ulld/bib-manager": "workspace:*",
-    "@ulld/calendar": "workspace:*",
-    "@ulld/default-image-map": "workspace:*",
-    "@ulld/diagram": "workspace:*",
-    "@ulld/editor": "workspace:*",
-    "@ulld/embeddable-components": "workspace:*",
-    "@ulld/equations": "workspace:*",
-    "@ulld/full-form": "workspace:*",
-    "@ulld/health-tracking": "workspace:*",
-    "@ulld/journal": "workspace:*",
-    "@ulld/kanban": "workspace:*",
-    "@ulld/navigation": "workspace:*",
-    "@ulld/note-network": "workspace:*",
-    "@ulld/notebook": "workspace:*",
-    "@ulld/pdf": "workspace:*",
-    "@ulld/plot": "workspace:*",
-    "@ulld/snippets": "workspace:*",
-    "@ulld/tailwind": "workspace:*",
-    "@ulld/task-manager": "workspace:*",
-    "@ulld/whiteboard": "workspace:*",
-    "next": "^13.1.16",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@mdx-js/mdx": "3.0.1",
-    "@mdx-js/react": "^3.0.1",
-    "@ulld/typescript-config": "workspace:*",
-    "@types/mdx": "^2.0.11",
-    "@types/node": "^20.11.24",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "next": "^14.2.4",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "typescript": "^5.4.2"
-  },
-  "packageManager": "pnpm@9.0.4",
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {}
+    "version": "0.0.6",
+    "name": "@ulld/component-map",
+    "private": false,
+    "scripts": {
+        "dev": "echo 'Add dev script here'",
+        "build": "echo 'Add build script here'",
+        "test": "echo 'Add test script here'",
+        "lint": "echo 'Add lint script here'"
+    },
+    "types": "src/index.ts",
+    "files": [
+        "./src/**"
+    ],
+    "exports": {
+        "./server": "./src/server/componentMap.ts",
+        "./client": "./src/client/componentMap.ts",
+        "./types": "./src/types.ts"
+    },
+    "peerDependencies": {
+        "@mdx-js/mdx": "3.0.1",
+        "@mdx-js/react": "^3.0.1",
+        "@ulld/bib-manager": "workspace:*",
+        "@ulld/calendar": "workspace:*",
+        "@ulld/default-image-map": "workspace:*",
+        "@ulld/diagram": "workspace:*",
+        "@ulld/editor": "workspace:*",
+        "@ulld/embeddable-components": "workspace:*",
+        "@ulld/equations": "workspace:*",
+        "@ulld/full-form": "workspace:*",
+        "@ulld/journal": "workspace:*",
+        "@ulld/navigation": "workspace:*",
+        "@ulld/notebook": "workspace:*",
+        "@ulld/pdf": "workspace:*",
+        "@ulld/plot": "workspace:*",
+        "@ulld/snippets": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/task-manager": "workspace:*",
+        "@ulld/whiteboard": "workspace:*",
+        "next": "^13.1.16",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@mdx-js/mdx": "3.0.1",
+        "@mdx-js/react": "^3.0.1",
+        "@ulld/typescript-config": "workspace:*",
+        "@types/mdx": "^2.0.11",
+        "@types/node": "^20.11.24",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
+        "next": "^14.2.4",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "typescript": "^5.4.2"
+    },
+    "packageManager": "pnpm@9.0.4",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {}
 }

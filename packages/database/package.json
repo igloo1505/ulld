@@ -1,47 +1,47 @@
 {
-  "version": "0.0.4",
-  "name": "@ulld/database",
-  "private": false,
-  "exports": {
-    ".": "./src/internalDatabaseTypes.d.ts",
-    "./prisma": "./src/internalDatabaseTypes.d.ts",
-    "./internalDatabaseTypes": "./src/internalDatabaseTypes.ts",
-    "./db": "./src/db/main.ts"
-  },
-  "files": [
-    "src"
-  ],
-  "scripts": {
-    "dev": "echo 'Add dev script here'",
-    "build": "echo 'Add build script here'",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'",
-    "db:migrate": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- prisma migrate dev --schema ./src/prisma/schema.prisma",
-    "migrate:reset": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma migrate reset --schema ./src/prisma/schema.prisma",
-    "db:seed": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma db seed",
-    "db:push": "prisma db push --skip-generate",
-    "prisma:studio": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma studio --schema ./src/prisma/schema.prisma",
-    "postinstall": "echo 'figure out how to run prisma generate --schema=./src/prisma/schema.prisma'",
-    "db:generate": "prisma generate --schema ./src/prisma/schema.prisma"
-  },
-  "dependencies": {
-    "@prisma/client": "5.16.1",
-    "@types/react": "18.3.3",
-    "@types/react-dom": "18.3.0",
-    "next": "14.2.4",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
-  },
-  "peerDependencies": {
-    "@ulld/typescript-config": "workspace:*",
-    "prisma": "latest"
-  },
-  "packageManager": "pnpm@9.0.4",
-  "publishConfig": {
-    "access": "public"
-  },
-  "devDependencies": {
-    "@ulld/typescript-config": "workspace:*",
-    "prisma": "latest"
-  }
+    "version": "0.0.6",
+    "name": "@ulld/database",
+    "private": false,
+    "exports": {
+        ".": "./src/internalDatabaseTypes.d.ts",
+        "./prisma": "./src/internalDatabaseTypes.d.ts",
+        "./internalDatabaseTypes": "./src/internalDatabaseTypes.ts",
+        "./db": "./src/db/main.ts"
+    },
+    "files": [
+        "src"
+    ],
+    "scripts": {
+        "dev": "echo 'Add dev script here'",
+        "build": "echo 'Add build script here'",
+        "test": "echo 'Add test script here'",
+        "lint": "echo 'Add lint script here'",
+        "db:migrate": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- prisma migrate dev --schema ./src/prisma/schema.prisma",
+        "migrate:reset": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma migrate reset --schema ./src/prisma/schema.prisma",
+        "db:seed": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma db seed",
+        "db:push": "prisma db push --skip-generate",
+        "prisma:studio": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma studio --schema ./src/prisma/schema.prisma",
+        "postinstall": "echo 'figure out how to run prisma generate --schema=./src/prisma/schema.prisma'",
+        "db:generate": "prisma generate --schema ./src/prisma/schema.prisma"
+    },
+    "dependencies": {
+        "@prisma/client": "5.16.1",
+        "@types/react": "18.3.3",
+        "@types/react-dom": "18.3.0",
+        "next": "14.2.4",
+        "react": "18.3.1",
+        "react-dom": "18.3.1"
+    },
+    "peerDependencies": {
+        "@ulld/typescript-config": "workspace:*",
+        "prisma": "latest"
+    },
+    "packageManager": "pnpm@9.0.4",
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "@ulld/typescript-config": "workspace:*",
+        "prisma": "latest"
+    }
 }

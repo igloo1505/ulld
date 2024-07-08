@@ -22,9 +22,11 @@
   "devDependencies": {
     "@svgr/rollup": "^8.1.0",
     "@types/mdx": "^2.0.13",
+    "@types/npm-registry-fetch": "^8.0.7",
     "@types/tinycolor2": "^1.4.6",
     "autoprefixer": "^10.4.18",
     "dotenv-cli": "latest",
+    "npm-registry-fetch": "^17.1.0",
     "postcss": "^8.4.35",
     "postcss-modules": "^6.0.0",
     "postcss-preset-env": "^9.5.0",

@@ -4,36 +4,42 @@ import {
 } from "@ulld/configschema/developer";
 import { writePluginConfig } from "@ulld/developer/writePluginConfig";
 
-const pluginConfig: DeveloperConfigInput = {
+
+const pluginConfig: DeveloperConfigInput<"equations"> = {
     pluginName: "@ulld/equations",
-    slot: "math",
+    slot: "equations",
     pages: [
         {
             export: "./equationModal",
             targetUrl: "@modal/(.)equations/details/[equationId]/page.tsx",
             exportsPageProps: true,
+            slot: "EquationDetailsModalPage"
         },
         {
             export: "./addEquationPage",
             targetUrl: "equations/add/page.tsx",
             exportsPageProps: true,
+            slot: "AddEquationPage"
         },
         {
             export: "./equationDetailsPage",
             targetUrl: "equations/details/[equationId]/page.tsx",
             exportsPageProps: true,
+            slot: "EquationDetailsPage"
         },
         {
             export: "./equationsPage",
             targetUrl: "equations/page.tsx",
             exportsPageProps: true,
+            slot: "EquationsPage"
         },
     ],
     // RESUME: Come back here and handle the embeddable components provided in the equations package. If I can get this to build tomorrow, the rest should be just a repeat and we're on our way to a fucking beta!
     components: [],
 };
 
+
 const parsedPlugin = developerConfigSchema.parse(pluginConfig);
 
 
-writePluginConfig(parsedPlugin, __dirname);
+writePluginConfig(parsedPlugin, __dirname, "both");

@@ -1,5 +1,39 @@
 # @ulld/pdf
 
+## 0.0.6
+
+### Patch Changes
+
+- Removed all unpublished packages dynamically.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.5
+  - @ulld/eslint-config@0.0.6
+  - @ulld/configschema@0.0.6
+  - @ulld/jest-presets@0.0.6
+  - @ulld/whiteboard@0.0.6
+  - @ulld/developer@0.0.6
+  - @ulld/utilities@0.0.6
+  - @ulld/hooks@0.0.6
+  - @ulld/api@0.0.6
+  - @ulld/ui@0.0.6
+
+## 0.0.5
+
+### Patch Changes
+
+- One more time with this cluster\*\*\*\* of dependencies.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.4
+  - @ulld/eslint-config@0.0.5
+  - @ulld/configschema@0.0.5
+  - @ulld/jest-presets@0.0.5
+  - @ulld/whiteboard@0.0.5
+  - @ulld/developer@0.0.5
+  - @ulld/utilities@0.0.5
+  - @ulld/hooks@0.0.5
+  - @ulld/api@0.0.5
+  - @ulld/ui@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes

@@ -15,3 +15,5 @@ Find by package | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoRepoUti
 Find by package regex | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoRepoUtils.ts findByRegex
 Update workspace update react script | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoRepoUtils.ts updateReactScript
 Set cloned base git config | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/setClonedUlldBaseGitConfig.zsh
+Set cloned base internal versions | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/updateBasePackageVersions.ts
+Generate Slot Map | tsx /Users/bigsexy/Desktop/current/ulld/packages/configschema/src/__scripts__/generateSlotMap.ts

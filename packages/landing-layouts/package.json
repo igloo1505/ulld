@@ -1,5 +1,5 @@
 {
-    "version": "0.0.4",
+    "version": "0.0.6",
     "name": "@ulld/landing-layouts",
     "private": false,
     "scripts": {
@@ -27,8 +27,6 @@
         "@ulld/developer": "workspace:*",
         "@ulld/hooks": "workspace:*",
         "@ulld/journal": "workspace:*",
-        "@ulld/kanban": "workspace:*",
-        "@ulld/note-network": "workspace:*",
         "@ulld/state": "workspace:*",
         "@ulld/tailwind": "workspace:*",
         "@ulld/ui": "workspace:*",

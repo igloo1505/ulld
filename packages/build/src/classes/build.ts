@@ -71,9 +71,10 @@ export class UlldBuildProcess extends Prompter {
             );
         }
         let newPlugins: UlldPlugin[] = [];
-        let fromConfigPlugins = this.appConfig.config?.plugins.map(
-            (c) => new UlldPlugin(this.paths, c.name, c.version),
-        ) || [] as UlldPlugin[];
+        let fromConfigPlugins =
+            this.appConfig.config?.plugins.map(
+                (c) => new UlldPlugin(this.paths, c.name, c.version),
+            ) || ([] as UlldPlugin[]);
         for (const k in this.appConfig.config.slots) {
             let newSlot =
                 this.appConfig.config.slots[
@@ -86,7 +87,7 @@ export class UlldBuildProcess extends Prompter {
             } else {
                 this.logDebug(`Found a slot that was not added to plugins:
 ${JSON.stringify(k, null, 4)}
-`)
+`);
             }
         }
         this.plugins = [...newPlugins, ...fromConfigPlugins];
@@ -282,7 +283,24 @@ and continue when that file is in place.`,
         }
         this.plugins = pluginData.usable;
     }
-    convertSlotsToPlugins() { }
+    convertSlotsToPlugins() {
+        let slots = this.appConfig.config?.slots;
+        if (!slots) return;
+        let currentPluginNames = this.plugins.map((p) => p.name);
+        for (const slotKey in slots) {
+            let itemData = slots[slotKey as keyof typeof slots];
+            if (Array.isArray(itemData)) {
+                for (const slotItem of itemData) {
+                    if (!currentPluginNames.includes(slotItem.name)) {
+                        this.plugins.push(
+                            new UlldPlugin(this.paths, slotItem.name, slotItem.version),
+                        );
+                        currentPluginNames.push(slotItem.name);
+                    }
+                }
+            }
+        }
+    }
     async applyPages() {
         for await (const k of this.plugins) {
             await k.applyPages();

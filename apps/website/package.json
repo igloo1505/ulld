@@ -1,5 +1,5 @@
 {
-    "version": "0.0.4",
+    "version": "0.0.6",
     "name": "@ulld/website",
     "private": true,
     "scripts": {
@@ -57,9 +57,7 @@
         "@ulld/full-form": "workspace:*",
         "@ulld/hooks": "workspace:*",
         "@ulld/icons": "workspace:*",
-        "@ulld/kanban": "workspace:*",
         "@ulld/logger": "workspace:*",
-        "@ulld/note-network": "workspace:*",
         "@ulld/parsers": "workspace:*",
         "@ulld/render": "workspace:*",
         "@ulld/state": "workspace:*",

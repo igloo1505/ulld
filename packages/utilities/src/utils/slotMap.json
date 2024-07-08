@@ -1,33 +1,150 @@
 {
+    "equations": {
+        "EquationDetailsModalPage": {
+            "path": "src/corePages/modal/equationDetails.tsx",
+            "clientOnly": true,
+            "inReduxProvider": false,
+            "type": "page",
+            "propsExtends": "EquationDetailModalPageProps"
+        },
+        "EquationsPage": {
+            "path": "src/corePages/equations/list.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "page",
+            "propsExtends": "EquationsPageProps"
+        },
+        "EquationDetailsPage": {
+            "path": "src/corePages/equations/details.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "page",
+            "propsExtends": "EquationDetailModalPageProps"
+        },
+        "AddEquationPage": {
+            "path": "src/corePages/equations/add.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "page",
+            "propsExtends": "AddEquationsPageProps"
+        }
+    },
+    "editor": {
+        "EditorModalPage": {
+            "path": "src/corePages/modal/editor.tsx",
+            "clientOnly": true,
+            "inReduxProvider": false,
+            "type": "page",
+            "propsExtends": "MonacoPageParams"
+        },
+        "MdxEditorPage": {
+            "path": "src/corePages/editor/mdxEditor.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "page",
+            "propsExtends": "EditorPageContentProps"
+        },
+        "LatexEditorPage": {
+            "path": "src/corePages/editor/latexEditor.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "page",
+            "propsExtends": "EditorPageContentProps"
+        },
+        "EditorPage": {
+            "path": "src/corePages/editor/editor.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "page",
+            "propsExtends": "MonacoPageParams"
+        }
+    },
+    "bibliography": {
+        "BibliographyPage": {
+            "path": "src/corePages/bibliography/bibliography.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "page",
+            "propsExtends": "BibliographyPageProps"
+        }
+    },
     "UI": {
         "confirmationModal": {
-            "path": "components/slots/ui/confirmationModal.ts",
+            "path": "src/components/slots/ui/confirmationModal.ts",
             "clientOnly": true,
-            "inReduxProvider": false
+            "inReduxProvider": false,
+            "type": "component"
+        },
+        "SearchResultsPage": {
+            "path": "src/components/slots/search/searchResults.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "page"
+        },
+        "BookmarksPage": {
+            "path": "src/components/slots/search/bookmarksPage.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "page",
+            "propsExtends": "BookmarksResultsPageProps"
         },
         "landingPage": {
-            "path": "components/slots/landingPage/main.tsx",
+            "path": "src/components/slots/landingPage/main.tsx",
             "clientOnly": false,
-            "inReduxProvider": false
+            "inReduxProvider": false,
+            "type": "component"
+        }
+    },
+    "task-manager": {
+        "TaskDetails": {
+            "path": "src/components/slots/taskManager/taskDetail.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "TaskDetailsPageProps"
+        },
+        "AddTask": {
+            "path": "src/components/slots/taskManager/addTask.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "AddTaskProps"
+        },
+        "AddTaskList": {
+            "path": "src/components/slots/taskManager/addList.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "AddTaskListProps"
         }
     },
     "navigation": {
         "secondary": {
-            "path": "components/slots/navigation/secondaryNavigation.tsx",
+            "path": "src/components/slots/navigation/secondaryNavigation.tsx",
             "clientOnly": false,
-            "inReduxProvider": false
+            "inReduxProvider": false,
+            "type": "component"
         },
         "navbar": {
-            "path": "components/slots/navigation/navbar.tsx",
+            "path": "src/components/slots/navigation/navbar.tsx",
             "clientOnly": false,
-            "inReduxProvider": false
+            "inReduxProvider": false,
+            "type": "component"
+        },
+        "FullScreenNavigationMenu": {
+            "path": "src/components/slots/navigation/fullScreenNavigationMenu.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "FullScreenNavProps"
         }
     },
     "commandPalette": {
         "commandPalette": {
-            "path": "components/slots/commandPalette/main.tsx",
+            "path": "src/components/slots/commandPalette/main.tsx",
             "clientOnly": false,
-            "inReduxProvider": false
+            "inReduxProvider": false,
+            "type": "component"
         }
     }
 }

@@ -1,7 +1,7 @@
 {
     "name": "@ulld/eslint-config",
     "license": "MIT",
-    "version": "0.0.4",
+    "version": "0.0.6",
     "private": false,
     "devDependencies": {
         "@vercel/style-guide": "^5.1.0",
@@ -13,5 +13,7 @@
     },
     "publishConfig": {
         "access": "public"
-    }
+    },
+    "peerDependencies": {},
+    "dependencies": {}
 }

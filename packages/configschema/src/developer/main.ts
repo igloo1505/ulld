@@ -4,10 +4,11 @@ import { parserExtensionSchema } from "./parserSchema";
 import { pluginSettingsSchema } from "./pluginSettingsSchema";
 import { pluginAdditionalPageSchema } from "./pluginPageSchema";
 import { pluginEventsSchema } from "./pluginEventsSchema";
-import { DeveloperConfigInput } from "./types/developerConfig";
+import { DeveloperConfigInput as DCI } from "./types/developerConfig";
 import { slotKeySchema } from "./slotKeySchema";
 import { trpcConfigSchema } from "./trpcConfigSchema";
 import { additionalImportsConfigSchema } from "./additionalImportsConfigSchema";
+import { PluginSlotKey } from "./slotMapType";
 
 
 // WARN: Removed this type checking for now as the output value was returning the input type with too many optionals.
@@ -35,3 +36,4 @@ export const developerConfigSchema = z
 
 
 export type DeveloperConfigOutput = z.output<typeof developerConfigSchema>;
+export type DeveloperConfigInput<T extends PluginSlotKey | undefined = undefined> = DCI<T>
