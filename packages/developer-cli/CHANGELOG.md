@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.7
+
+### Patch Changes
+
+- Update to match base app's template progress.
+- Updated dependencies
+  - @ulld/developer-schemas@0.0.7
+  - @ulld/developer@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

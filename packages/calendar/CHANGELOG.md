@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.7
+
+### Patch Changes
+
+- Update to match base app's template progress.
+- Updated dependencies
+  - @ulld/developer@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

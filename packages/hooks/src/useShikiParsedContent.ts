@@ -1,20 +1,29 @@
 "use client"
 import { useEffect, useState } from "react";
 import { codeToHtml, type BundledTheme, type BundledLanguage } from "shiki";
+import { useAppConfig } from "./useAppConfig";
+import { useClientDarkMode } from "./useClientDarkMode";
 
 export const useShikiParse = (
     initialContent: string,
     initialTheme: BundledTheme = "dracula",
     initialLanguage: BundledLanguage = "python",
 ) => {
-    console.log("initialContent: ", initialContent)
+
+    const [appConfig, setAppConfig] = useAppConfig();
+    const dm = useClientDarkMode()
     const [content, setContent] = useState<string | undefined>(undefined);
     const [raw, setRaw] = useState(initialContent);
     const [theme, setTheme] = useState<BundledTheme>(initialTheme);
     const [language, setLanguage] = useState<BundledLanguage>(initialLanguage);
 
+    useEffect(() => {
+        if(!initialTheme){
+            setTheme(appConfig?.code.theme[dm ? "dark" : "light"] || "dracula")
+        }
+    }, [initialTheme])
+
     const handleContent = async (_content: string) => {
-        console.log("_content: ", _content)
         const parsedContent = await codeToHtml(_content, {
             theme: theme,
             lang: language,

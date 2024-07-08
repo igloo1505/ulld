@@ -1,5 +1,48 @@
 # @ulld/build-sandbox
 
+## 0.0.7
+
+### Patch Changes
+
+- Update to match base app's template progress.
+- Updated dependencies
+  - @ulld/embeddable-components@0.0.7
+  - @ulld/typescript-config@0.0.6
+  - @ulld/default-image-map@0.0.7
+  - @ulld/command-palette@0.0.7
+  - @ulld/landing-layouts@0.0.7
+  - @ulld/tailwind@0.0.7
+  - @ulld/component-map@0.0.7
+  - @ulld/developer-cli@0.0.7
+  - @ulld/configschema@0.0.7
+  - @ulld/task-manager@0.0.7
+  - @ulld/base-configs@0.0.7
+  - @ulld/bib-manager@0.0.7
+  - @ulld/navigation@0.0.7
+  - @ulld/whiteboard@0.0.7
+  - @ulld/developer@0.0.7
+  - @ulld/equations@0.0.7
+  - @ulld/full-form@0.0.7
+  - @ulld/utilities@0.0.7
+  - @ulld/calendar@0.0.7
+  - @ulld/database@0.0.7
+  - @ulld/notebook@0.0.7
+  - @ulld/snippets@0.0.7
+  - @ulld/diagram@0.0.7
+  - @ulld/journal@0.0.7
+  - @ulld/parsers@0.0.7
+  - @ulld/config@0.0.7
+  - @ulld/editor@0.0.7
+  - @ulld/logger@0.0.7
+  - @ulld/render@0.0.7
+  - @ulld/hooks@0.0.7
+  - @ulld/icons@0.0.7
+  - @ulld/state@0.0.7
+  - @ulld/plot@0.0.7
+  - @ulld/api@0.0.7
+  - @ulld/pdf@0.0.7
+  - @ulld/ui@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

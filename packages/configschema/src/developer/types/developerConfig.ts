@@ -11,7 +11,7 @@ import { PluginSlotKey } from "../slotMapType";
 export type DeveloperConfigInput<T extends PluginSlotKey | undefined = undefined> = {
     pluginName: string;
     slot?: keyof typeof slots;
-    components?: ComponentConfig[];
+    components?: ComponentConfig<T>[];
     parsers?: ParserConfig[];
     additionalImports?: AdditionalImportsConfig;
     trpc?: TrpcConfig;

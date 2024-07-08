@@ -1,5 +1,17 @@
 # @ulld/configschema
 
+## 0.0.7
+
+### Patch Changes
+
+- Update to match base app's template progress.
+- Updated dependencies
+  - @ulld/developer-schemas@0.0.7
+  - @ulld/tailwind@0.0.7
+  - @ulld/base-configs@0.0.7
+  - @ulld/utilities@0.0.7
+  - @ulld/icons@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

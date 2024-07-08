@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import themes from "@ulld/utilities/shikiThemes";
-import { bundledThemes } from 'shiki';
+import { bundledThemes, bundledLanguages } from 'shiki';
 
 
 if(themes.length !== Object.keys(bundledThemes).length){
@@ -11,6 +11,7 @@ if(themes.length !== Object.keys(bundledThemes).length){
 
 
 const targetFile = path.join(__dirname, "../zod/codeThemeSchemas.ts")
+const shikiLanguagePath = path.join(__dirname, "../../../utilities/src/shiki/languageList.ts")
 
 
 if(!fs.existsSync(targetFile)){
@@ -33,6 +34,13 @@ ${quotedThemes.map((t) => `z.literal(${t})`).join(",\n")}
 `
 
 
+const shikiLanguageFileContent = `const shikiLanguageList = [
+${Object.keys(bundledLanguages).map((p) => `"${p}"`).join(",\n")}
+] as const;
+
+export default shikiLanguageList`
+
+
 
 fs.writeFileSync(targetFile, s, {encoding: "utf-8"})
-
+fs.writeFileSync(shikiLanguagePath, shikiLanguageFileContent, {encoding: "utf-8"})

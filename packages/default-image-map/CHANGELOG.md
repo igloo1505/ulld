@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.7
+
+### Patch Changes
+
+- Update to match base app's template progress.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.6
+  - @ulld/tailwind@0.0.7
+  - @ulld/eslint-config@0.0.7
+  - @ulld/configschema@0.0.7
+  - @ulld/utilities@0.0.7
+  - @ulld/config@0.0.7
+  - @ulld/logger@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

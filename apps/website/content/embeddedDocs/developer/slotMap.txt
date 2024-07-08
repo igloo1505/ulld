@@ -1,4 +1,9 @@
 type SlotMap = {
+    snippets: {
+        AddSnippetPage: string,
+        SnippetList: string,
+        SnippetFilter: string,
+    }, 
     equations: {
         EquationDetailsModalPage: string,
         EquationsPage: string,
@@ -15,19 +20,27 @@ type SlotMap = {
         BibliographyPage: string,
     }, 
     UI: {
+        Pagination: string,
         confirmationModal: string,
+        AutoSettingsTable: string,
         SearchResultsPage: string,
         BookmarksPage: string,
         landingPage: string,
+        DictionaryLetterList: string,
+        DictionaryPageItem: string,
     }, 
     task-manager: {
         TaskDetails: string,
         AddTask: string,
         AddTaskList: string,
     }, 
+    pdf: {
+        FullPdf: string,
+    }, 
     navigation: {
         secondary: string,
         navbar: string,
+        MultiPageSidebar: string,
         FullScreenNavigationMenu: string,
     }, 
     commandPalette: {

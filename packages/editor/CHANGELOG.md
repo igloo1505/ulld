@@ -1,5 +1,20 @@
 # @ulld/editor
 
+## 0.0.7
+
+### Patch Changes
+
+- Update to match base app's template progress.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.6
+  - @ulld/tailwind@0.0.7
+  - @ulld/developer@0.0.7
+  - @ulld/utilities@0.0.7
+  - @ulld/parsers@0.0.7
+  - @ulld/hooks@0.0.7
+  - @ulld/state@0.0.7
+  - @ulld/ui@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

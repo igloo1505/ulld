@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.7
+
+### Patch Changes
+
+- Update to match base app's template progress.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.6
+  - @ulld/eslint-config@0.0.7
+  - @ulld/configschema@0.0.7
+  - @ulld/database@0.0.7
+  - @ulld/config@0.0.7
+  - @ulld/logger@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

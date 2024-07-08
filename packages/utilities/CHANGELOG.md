@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.7
+
+### Patch Changes
+
+- Update to match base app's template progress.
+- Updated dependencies
+  - @ulld/tailwind@0.0.7
+  - @ulld/database@0.0.7
+  - @ulld/math@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

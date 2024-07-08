@@ -1,5 +1,21 @@
 # @ulld/state
 
+## 0.0.7
+
+### Patch Changes
+
+- Update to match base app's template progress.
+- Updated dependencies
+  - @ulld/tailwind@0.0.7
+  - @ulld/configschema@0.0.7
+  - @ulld/base-configs@0.0.7
+  - @ulld/developer@0.0.7
+  - @ulld/utilities@0.0.7
+  - @ulld/database@0.0.7
+  - @ulld/parsers@0.0.7
+  - @ulld/config@0.0.7
+  - @ulld/hooks@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

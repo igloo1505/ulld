@@ -1,5 +1,15 @@
 # @ulld/hooks
 
+## 0.0.7
+
+### Patch Changes
+
+- Update to match base app's template progress.
+- Updated dependencies
+  - @ulld/component-map@0.0.7
+  - @ulld/parsers@0.0.7
+  - @ulld/api@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

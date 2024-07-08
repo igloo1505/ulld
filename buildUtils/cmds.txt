@@ -18,4 +18,5 @@ Set cloned base git config | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/
 Set cloned base internal versions | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/updateBasePackageVersions.ts
 Generate Slot Map | tsx /Users/bigsexy/Desktop/current/ulld/packages/configschema/src/__scripts__/generateSlotMap.ts
 Apply plugin config files to package.json | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoRepoUtils.ts applyPluginConfigToPackageJsonFiles
-
+Check Missing Slots | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/checkMissingSlots.ts
+Update Shiki Data | tsx /Users/bigsexy/Desktop/current/ulld/packages/configschema/src/__scripts__/updateShikiThemes.ts

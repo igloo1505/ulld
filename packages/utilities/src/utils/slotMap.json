@@ -1,4 +1,27 @@
 {
+    "snippets": {
+        "AddSnippetPage": {
+            "path": "src/corePages/snippets/add.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "page",
+            "propsExtends": "AddSnippetPageProps"
+        },
+        "SnippetList": {
+            "path": "src/components/slots/snippets/snippetList.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "SnippetListInternalProps"
+        },
+        "SnippetFilter": {
+            "path": "src/components/slots/snippets/snippetFilter.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "SnippetFilterProps"
+        }
+    },
     "equations": {
         "EquationDetailsModalPage": {
             "path": "src/corePages/modal/equationDetails.tsx",
@@ -69,17 +92,32 @@
         }
     },
     "UI": {
+        "Pagination": {
+            "path": "src/components/slots/ui/pagination.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "PaginationProps"
+        },
         "confirmationModal": {
             "path": "src/components/slots/ui/confirmationModal.ts",
             "clientOnly": true,
             "inReduxProvider": false,
             "type": "component"
         },
+        "AutoSettingsTable": {
+            "path": "src/components/slots/ui/autoSettingTable.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "AutoSettingsTableProps"
+        },
         "SearchResultsPage": {
             "path": "src/components/slots/search/searchResults.tsx",
             "clientOnly": false,
             "inReduxProvider": false,
-            "type": "page"
+            "type": "page",
+            "propsExtends": "SearchResultsPageProps"
         },
         "BookmarksPage": {
             "path": "src/components/slots/search/bookmarksPage.tsx",
@@ -93,6 +131,20 @@
             "clientOnly": false,
             "inReduxProvider": false,
             "type": "component"
+        },
+        "DictionaryLetterList": {
+            "path": "src/components/slots/dictionary/dictionaryLetterList.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "DictionaryLetterList"
+        },
+        "DictionaryPageItem": {
+            "path": "src/components/slots/dictionary/dictionaryItem.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "DictionaryItemProps"
         }
     },
     "task-manager": {
@@ -118,6 +170,15 @@
             "propsExtends": "AddTaskListProps"
         }
     },
+    "pdf": {
+        "FullPdf": {
+            "path": "src/components/slots/pdf/pdfFull.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "FullPdfProps"
+        }
+    },
     "navigation": {
         "secondary": {
             "path": "src/components/slots/navigation/secondaryNavigation.tsx",
@@ -130,6 +191,13 @@
             "clientOnly": false,
             "inReduxProvider": false,
             "type": "component"
+        },
+        "MultiPageSidebar": {
+            "path": "src/components/slots/navigation/multipageSidebar.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "MultipageSidebarProps"
         },
         "FullScreenNavigationMenu": {
             "path": "src/components/slots/navigation/fullScreenNavigationMenu.tsx",

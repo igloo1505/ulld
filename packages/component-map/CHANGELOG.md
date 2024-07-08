@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.7
+
+### Patch Changes
+
+- Update to match base app's template progress.
+- Updated dependencies
+  - @ulld/embeddable-components@0.0.7
+  - @ulld/default-image-map@0.0.7
+  - @ulld/tailwind@0.0.7
+  - @ulld/task-manager@0.0.7
+  - @ulld/bib-manager@0.0.7
+  - @ulld/navigation@0.0.7
+  - @ulld/whiteboard@0.0.7
+  - @ulld/equations@0.0.7
+  - @ulld/full-form@0.0.7
+  - @ulld/calendar@0.0.7
+  - @ulld/notebook@0.0.7
+  - @ulld/snippets@0.0.7
+  - @ulld/diagram@0.0.7
+  - @ulld/journal@0.0.7
+  - @ulld/editor@0.0.7
+  - @ulld/plot@0.0.7
+  - @ulld/pdf@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

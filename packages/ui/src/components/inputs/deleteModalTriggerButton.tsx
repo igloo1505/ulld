@@ -1,7 +1,6 @@
 "use client"
 import { ConfirmationModalConfig } from '@ulld/state/actions/confirmation/confirmationModalConfig'
 import { showConfirmationModal } from '@ulld/state/slices/ui'
-import { store } from '@ulld/state/store'
 import clsx from 'clsx'
 import { XIcon } from 'lucide-react'
 import React from 'react'
@@ -16,7 +15,7 @@ interface DeleteModalTriggerButtonProps {
 export const DeleteModalTriggerButton = ({ className, config }: DeleteModalTriggerButtonProps) => {
 
     const showDeleteModal = () => {
-        store.dispatch(showConfirmationModal(config))
+        window.ulldStore.dispatch(showConfirmationModal(config))
     }
 
     return (
