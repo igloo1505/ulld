@@ -3,3 +3,8 @@ export type UniqueTaggables = {
     subjects: string[];
     topics: string[];
 }
+
+export type FilePathProp = {
+    rootRelativePath: string
+    absolutePath: string
+}

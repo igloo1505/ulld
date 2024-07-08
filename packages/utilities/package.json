@@ -8,6 +8,10 @@
   ],
   "exports": {
     "./types": "./src/types/main.ts",
+    "./paginationUtils": "./src/utils/paginationUtils.ts",
+    "./filePathUtils": "./src/utils/filePathUtils.ts",
+    "./searchUtils": "./src/utils/searchUtils.ts",
+    "./sortUtils": "./src/utils/sortUtils.ts",
     "./admonition/types": "./src/types/admonition.ts",
     "./components/copyContextMenu": "./src/components/copyContextMenu.tsx",
     "./booleanAndEqualities/arrayTruthy": "./src/booleanAndEqualities/arrayTruthy.ts",

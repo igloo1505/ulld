@@ -2,7 +2,7 @@ import { autoSetting } from "@prisma/client"
 import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes"
 import {Route} from "next"
 
-
+// TODO: Remove this. This was moved to packages/utilities/src/types/general.ts
 export interface SearchAllParams {
     query?: string
     tags?: string[]

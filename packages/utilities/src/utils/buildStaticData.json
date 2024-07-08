@@ -15,7 +15,12 @@
     "AddSnippetPageProps": "@ulld/snippets/types",
     "SnippetFilterProps": "@ulld/snippets/types",
     "SnippetListInternalProps": "@ulld/snippets/types",
-    "MultipageSidebarProps": "@ulld/navigation/types"
+    "MultipageSidebarProps": "@ulld/navigation/types",
+    "AutoSettingsTableProps": "@ulld/ui/types",
+    "PaginationProps": "@ulld/ui/types",
+    "DictionaryLetterList": "@ulld/ui/types",
+    "DictionaryItemProps": "@ulld/ui/types",
+    "FullPdfProps": "@ulld/pdf/types"
   },
   "protectedPaths": [
     {

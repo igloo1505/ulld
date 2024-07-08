@@ -1,4 +1,3 @@
-import { autoSetting } from "@ulld/database/internalDatabaseTypes";
 import { publicProcedure, router } from "../trpc";
 import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { syncOptionsSchema } from "../../schemas/syncing/syncOptions";
@@ -17,13 +16,6 @@ import { backupBib } from "../../trpcInternalMethods/backup/nonFileSystem/bib"
 import { backupGoogleAuth } from "../../trpcInternalMethods/backup/nonFileSystem/googleAuth"
 import { backupQuotes } from "../../trpcInternalMethods/backup/nonFileSystem/quotes"
 import { dailyFocus } from "../../trpcInternalMethods/backup/nonFileSystem/dailyFocus"
-
-export interface AutoSettingType {
-    id?: number
-    glob: string,
-    type: autoSetting,
-    value: string
-}
 
 
 
