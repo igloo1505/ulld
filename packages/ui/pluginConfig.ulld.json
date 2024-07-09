@@ -1,0 +1,19 @@
+{
+    "pluginName": "@ulld/ui",
+    "slot": "UI",
+    "components": [
+        {
+            "componentName": "PaginationGroup",
+            "slot": "Pagination",
+            "export": "paginationGroup"
+        },
+        {
+            "componentName": "ConfirmationModal",
+            "slot": "confirmationModal",
+            "export": "confirmationModal"
+        }
+    ],
+    "parsers": [],
+    "pages": [],
+    "events": {}
+}

@@ -1,0 +1,25 @@
+{
+    "pluginName": "@ulld/snippets",
+    "slot": "snippets",
+    "components": [
+        {
+            "componentName": "SnippetList",
+            "slot": "SnippetList",
+            "export": "snippetList"
+        },
+        {
+            "componentName": "SnippetFilter",
+            "slot": "SnippetFilter",
+            "export": "snippetFilter"
+        }
+    ],
+    "parsers": [],
+    "pages": [
+        {
+            "slot": "AddSnippetPage",
+            "export": "addSnippetPage",
+            "exportsPageProps": true
+        }
+    ],
+    "events": {}
+}

@@ -55,7 +55,7 @@ export const UISubkeySchema = z.union([
 ])
 
 
-export const task-managerSubkeySchema = z.union([
+export const task_managerSubkeySchema = z.union([
     z.literal("TaskDetails"),
     z.literal("AddTask"),
     z.literal("AddTaskList"),

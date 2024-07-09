@@ -29,6 +29,17 @@ interface ConfirmationModalProps {
     config: ConfirmationModalConfig | false;
 }
 
+interface EventProps {
+    confirmationId: string;
+}
+
+declare global {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+    interface WindowEventMap {
+        "confirmation-accept": CustomEvent<EventProps>;
+        "confirmation-denied": CustomEvent<EventProps>;
+    }
+}
 
 const ConfirmationModal = connector(({ config }: ConfirmationModalProps) => {
     const { toast } = useToast();
@@ -41,6 +52,13 @@ const ConfirmationModal = connector(({ config }: ConfirmationModalProps) => {
             onOpenChange={(open: boolean) => {
                 if (!open) {
                     closeModal();
+                    if(config){
+                    window.dispatchEvent(
+                        new CustomEvent("confirmation-denied", {
+                            detail: { confirmationId: config.primaryId },
+                        }),
+                    );
+                    }
                 }
             }}
         >
@@ -63,6 +81,11 @@ const ConfirmationModal = connector(({ config }: ConfirmationModalProps) => {
                                 if (config.onConfirmCallback) {
                                     config.onConfirmCallback(config);
                                 }
+                                window.dispatchEvent(
+                                    new CustomEvent("confirmation-accept", {
+                                        detail: { confirmationId: config.primaryId },
+                                    }),
+                                );
                                 closeModal();
                             }}
                             variant={config.buttonVariant || undefined}

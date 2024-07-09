@@ -1,0 +1,29 @@
+{
+    "pluginName": "@ulld/snippets",
+    "slot": "editor",
+    "components": [],
+    "parsers": [],
+    "pages": [
+        {
+            "slot": "EditorModalPage",
+            "export": "editorModalPage",
+            "exportsPageProps": false
+        },
+        {
+            "slot": "EditorPage",
+            "export": "editorPage",
+            "exportsPageProps": false
+        },
+        {
+            "slot": "LatexEditorPage",
+            "export": "latexEditorPage",
+            "exportsPageProps": false
+        },
+        {
+            "slot": "MdxEditorPage",
+            "export": "mdxEditorPage",
+            "exportsPageProps": false
+        }
+    ],
+    "events": {}
+}

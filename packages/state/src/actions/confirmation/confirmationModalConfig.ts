@@ -1,3 +1,4 @@
+// TODO: Remove this. Moved to packages/utilities/src/types/general.ts
 export interface ConfirmationModalConfig {
     title: string
     body: string

@@ -35,8 +35,9 @@
         "./autoWrapCode": "./src/components/layouts/wrappingCode.tsx",
         "./randomBackground": "./src/components/landing/hero/randomBackground.tsx",
         "./fullScreenNav": "./src/components/menus/fullScreenNavigationMenu/fullScreenNavigationMenu.tsx",
-        "./confirmationModal": "./src/components/modals/confirmation/confirmationModal.tsx",
-        "./types": "./src/types/general.ts"
+        "./types": "./src/types/general.ts",
+        "./paginationGroup": "./src/components/slots/pagination/main.tsx",
+        "./confirmationModal": "./src/components/modals/confirmation/confirmationModal.tsx"
     },
     "scripts": {
         "build": "echo 'add build:internal script here'",
@@ -46,7 +47,8 @@
         "dev": "tsup src/index.ts --format esm --watch --dts --external react",
         "typecheck": "tsc --noEmit",
         "lint": "tsc",
-        "test": "echo 'add jest here once tests have been created'"
+        "test": "echo 'add jest here once tests have been created'",
+        "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
     },
     "dependencies": {
         "@citation-js/plugin-bibtex": "0.7.8",
@@ -269,6 +271,7 @@
         "tsup": "^8.0.1",
         "typescript": "^5.4.2",
         "unist-util-is": "^6.0.0",
+        "@ulld/developer": "workspace:*",
         "unist-util-visit": "^5.0.0"
     },
     "packageManager": "pnpm@9.0.4",
@@ -292,5 +295,24 @@
     },
     "publishConfig": {
         "access": "public"
+    },
+    "ulld-pluginConfig": {
+        "pluginName": "@ulld/ui",
+        "slot": "UI",
+        "components": [
+            {
+                "componentName": "PaginationGroup",
+                "slot": "Pagination",
+                "export": "paginationGroup"
+            },
+            {
+                "componentName": "ConfirmationModal",
+                "slot": "confirmationModal",
+                "export": "confirmationModal"
+            }
+        ],
+        "parsers": [],
+        "pages": [],
+        "events": {}
     }
 }

@@ -1,9 +1,10 @@
 "use client"
-import { MonacoPageParams, EditorLayout } from "@ulld/editor/editorTypes"
+import { MonacoPageParams, EditorLayout } from "../types"
 import dynamic from "next/dynamic"
 import React from 'react'
+const CodeEditor = dynamic(() => import("../monaco").then((a) => a.CodeEditor), { ssr: false })
 
-const CodeEditor = dynamic(() => import("@ulld/editor/ide").then((a) => a.CodeEditor), { ssr: false })
+
 
 
 
@@ -20,7 +21,7 @@ const CodeEditorPage = ({
             <CodeEditor
                 uniqueContentId={uniqueContentId}
                 layout={EditorLayout.modal}
-                onChange={(val) => console.log(`value`, val)}
+                /* onChange={(val) => {}} */
                 language={language}
             />
         </div>

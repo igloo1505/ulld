@@ -3,6 +3,10 @@
   "globalDependencies": ["**/.env.*local"],
   "globalEnv": [".env.local", "ENABLE_EXPERIMENTAL_COREPACK=1"],
   "tasks": {
+    "generatePluginConfig": {
+      "cache": false,
+      "env": [".env.local"]
+    },
     "writePluginConfig": {
       "cache": false,
       "env": [".env.local"]

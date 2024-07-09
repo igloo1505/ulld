@@ -18,5 +18,4 @@ public/workbox**
 
 *storybook.log
 /apps/storybook/storybook-static
-pluginConfig.ulld.ts
 slotExistsMap.json

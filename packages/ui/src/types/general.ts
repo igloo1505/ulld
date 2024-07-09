@@ -44,9 +44,39 @@ export interface DictionaryItemProps {
     content?: string
 }
 
+
 export interface DictionaryLetterList {
     children: ReactNode;
     letter: LetterType
     currentPage?: LetterType
 }
 
+
+export interface NoteSummaryProps {
+   index: number
+    // item: get this type
+}
+
+export interface TaskListSearchResultProps {
+    index: number
+    // data: // get this type
+}
+
+
+export interface SearchResultsPageProps {
+    notes: ReactNode
+    taskLists: ReactNode
+    // equations: ReactNode abborted for now to focus on getting this thing up and running first.
+}
+
+
+export type BookmarksResultsPageProps = Pick<SearchResultsPageProps, "notes">
+
+
+export interface NotesSearchResultsListProps {
+   children: ReactNode
+}
+
+export interface TaskListSearchResultsListProps {
+   children: ReactNode
+}

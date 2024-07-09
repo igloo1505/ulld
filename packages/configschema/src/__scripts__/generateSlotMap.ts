@@ -150,6 +150,11 @@ let slotSubKeys: Record<string, string> = {};
 let subslotSchemas: string[] = [];
 let addedParentSlots: string[] = [];
 
+
+const makeValidSymbol = (val: string) => {
+       return val.replaceAll("-", "_").replaceAll(" ", "_")
+    }
+
 for (const k of items) {
     if (!addedParentSlots.includes(k.parentSlot)) {
         slotKeyContent += `    z.literal("${k.parentSlot}"),
@@ -160,7 +165,7 @@ for (const k of items) {
         let name = `${k.parentSlot}SubkeySchema`;
         subslotSchemas.push(name);
         slotSubKeys[k.parentSlot] = `
-export const ${name} = z.union([
+export const ${makeValidSymbol(name)} = z.union([
 `;
     }
     if (k.subSlot) {

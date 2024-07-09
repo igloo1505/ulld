@@ -11,7 +11,12 @@
         "./modal": "./src/monacoModal.tsx",
         "./textAreaEditor": "./src/textAreaCodeEditor.tsx",
         "./editorTypes": "./src/types.ts",
-        "./utilityFunctions": "./src/utilityFunctions.ts"
+        "./types": "./src/types.ts",
+        "./utilityFunctions": "./src/utilityFunctions.ts",
+        "./editorModalPage": "./src/ulldPages/editorModalPage.tsx",
+        "./editorPage": "./src/ulldPages/editorPage.tsx",
+        "./latexEditorPage": "./src/ulldPages/latexEditorPage.tsx",
+        "./mdxEditorPage": "./src/ulldPages/mdxEditorPage.tsx"
     },
     "typesVersions": {
         "*": {
@@ -43,11 +48,13 @@
         "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
         "build": "echo 'Add build script here'",
         "test": "echo 'Add test script here'",
-        "lint": "echo 'Add lint script here'"
+        "lint": "echo 'Add lint script here'",
+        "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
     },
     "peerDependencies": {
         "@monaco-editor/react": "^4.6.0",
         "@ulld/typescript-config": "workspace:*",
+        "@ulld/configschema": "workspace:*",
         "@shikijs/rehype": "^1.2.0",
         "@uiw/react-textarea-code-editor": "^3.0.2",
         "@ulld/developer": "workspace:*",
@@ -114,5 +121,34 @@
     },
     "publishConfig": {
         "access": "public"
+    },
+    "ulld-pluginConfig": {
+        "pluginName": "@ulld/snippets",
+        "slot": "editor",
+        "components": [],
+        "parsers": [],
+        "pages": [
+            {
+                "slot": "EditorModalPage",
+                "export": "editorModalPage",
+                "exportsPageProps": false
+            },
+            {
+                "slot": "EditorPage",
+                "export": "editorPage",
+                "exportsPageProps": false
+            },
+            {
+                "slot": "LatexEditorPage",
+                "export": "latexEditorPage",
+                "exportsPageProps": false
+            },
+            {
+                "slot": "MdxEditorPage",
+                "export": "mdxEditorPage",
+                "exportsPageProps": false
+            }
+        ],
+        "events": {}
     }
 }
