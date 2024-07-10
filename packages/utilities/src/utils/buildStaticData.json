@@ -9,7 +9,7 @@
     "SearchResultsPageProps": "@ulld/ui/types",
     "BookmarksResultsPageProps": "@ulld/ui/types",
     "FullScreenNavProps": "@ulld/navigation/types",
-    "TaskDetailsPageProps": "@ulld/task-manager/types",
+    "TaskDetailsProps": "@ulld/task-manager/types",
     "AddTaskProps": "@ulld/task-manager/types",
     "AddTaskListProps": "@ulld/task-manager/types",
     "AddSnippetPageProps": "@ulld/snippets/types",

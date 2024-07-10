@@ -1,6 +1,5 @@
-import fs from 'fs'
 import path from 'path'
-import {PackageManager} from "./packageManager"
+import { PackageManager } from "./packageManager"
 const args = process.argv.slice(2);
 
 
@@ -17,10 +16,9 @@ const setPackagesToLocalSource = () => {
         return d
     })
     p.setNewClonedAppInternalPackages(newDeps)
-    process.exit()
+    process.exit(0)
 }
 
-// setPackagesToLocalSource()
 
 const setPackagesToMostRecentRemote = () => {
     const deps = p.getClonedBaseAppInternalPackages()        
@@ -33,7 +31,7 @@ const setPackagesToMostRecentRemote = () => {
         return d
     })
     p.setNewClonedAppInternalPackages(newDeps)
-    process.exit()
+    process.exit(0)
 }
 
 

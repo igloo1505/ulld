@@ -1,7 +1,9 @@
 import { UniqueTaggables } from "@ulld/utilities/types";
+import {serverClient} from "@ulld/api/serverClient"
 
-export interface TaskDetailsPageProps {
+export interface TaskDetailsProps {
     isModal: boolean;
+    data: Awaited<ReturnType<typeof serverClient.toDo.getToDoDetails>>
 }
 
 export interface AddTaskProps {
