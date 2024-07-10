@@ -21,5 +21,17 @@
             "exportsPageProps": true
         }
     ],
-    "events": {}
+    "events": {},
+    "navigationLinks": [
+        {
+            "label": "Snippets",
+            "href": "/snippets",
+            "category": "general"
+        },
+        {
+            "label": "Add Snippet",
+            "href": "/snippets/add",
+            "category": "general"
+        }
+    ]
 }

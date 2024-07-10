@@ -9,7 +9,7 @@ import React, {
 } from "react";
 import { Variants, motion, useInView } from "framer-motion";
 
-interface BaseProps extends React.ComponentProps<typeof motion.svg> {
+export interface BaseProps extends React.ComponentProps<typeof motion.svg> {
   delay?: number;
   speed?: number;
   h1?: boolean;
@@ -17,7 +17,7 @@ interface BaseProps extends React.ComponentProps<typeof motion.svg> {
   suffixDelay?: number;
 }
 
-type AnimatedUlldLogoProps =
+export type AnimatedUlldLogoProps =
   | (BaseProps & { show: boolean; useInView?: never })
   | (BaseProps & { useInView: true; show?: never });
 

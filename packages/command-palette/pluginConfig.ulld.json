@@ -1,0 +1,15 @@
+{
+    "pluginName": "@ulld/command-palette",
+    "slot": "commandPalette",
+    "components": [
+        {
+            "componentName": "CommandPalette",
+            "slot": "commandPalette",
+            "export": "commandPalette"
+        }
+    ],
+    "parsers": [],
+    "pages": [],
+    "events": {},
+    "navigationLinks": []
+}

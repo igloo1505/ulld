@@ -17,6 +17,7 @@ import { useToast } from "@ulld/tailwind/use-toast";
 import { ConfirmationModalConfig } from "@ulld/state/actions/confirmation/confirmationModalConfig";
 import { showConfirmationModal } from "@ulld/state/slices/ui";
 import { useUlldStore } from "@ulld/hooks/useUlldStore";
+import { ConfirmationModalProps } from "../../../types/general";
 
 export type { ConfirmationModalConfig };
 
@@ -25,9 +26,6 @@ const connector = connect((state: RootState, props: any) => ({
     props: props,
 }));
 
-interface ConfirmationModalProps {
-    config: ConfirmationModalConfig | false;
-}
 
 interface EventProps {
     confirmationId: string;

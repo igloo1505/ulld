@@ -1,0 +1,12 @@
+{
+  "extends": "@ulld/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "incremental": true
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
+}

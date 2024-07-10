@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { htmlEm, setInitialBrowserProps } from "../actions/clientOnly/dom";
 import { setConfigState } from "../state/slices/config";
 import { setLocalSettings } from "../state/slices/settings";
+import {useAppConfig} from "@ulld/hooks/useAppConfig"
 import { setDarkmode, showNoteSheet } from "../state/slices/ui";
 import { RootState } from "../state/store";
 import { keyDown } from "../listeners/keydown";
@@ -77,7 +78,7 @@ const Observers = connector(
         const pathname = usePathname();
         const store = useUlldStore();
 
-        const [storedConfig, setStoredConfig] = useLocalStorage<AppConfigSchemaOutput>("ulld-app-config", undefined as unknown as AppConfigSchemaOutput);
+        const [storedConfig, setStoredConfig] = useAppConfig()
 
         useEffect(() => {
             if (noThemeCookie) return;

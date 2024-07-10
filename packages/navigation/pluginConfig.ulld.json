@@ -1,0 +1,30 @@
+{
+    "pluginName": "@ulld/navigation",
+    "slot": "navigation",
+    "components": [
+        {
+            "componentName": "Navbar",
+            "slot": "navbar",
+            "export": "navbar"
+        },
+        {
+            "componentName": "SidebarNavigation",
+            "slot": "secondary",
+            "export": "sidebar"
+        },
+        {
+            "componentName": "MultiPageSidebar",
+            "slot": "MultiPageSidebar",
+            "export": "multiPageSidebar"
+        },
+        {
+            "componentName": "FullScreenNavigation",
+            "slot": "FullScreenNavigationMenu",
+            "export": "fullScreenNav"
+        }
+    ],
+    "parsers": [],
+    "pages": [],
+    "events": {},
+    "navigationLinks": []
+}

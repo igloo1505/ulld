@@ -16,6 +16,7 @@
     "SnippetFilterProps": "@ulld/snippets/types",
     "SnippetListInternalProps": "@ulld/snippets/types",
     "MultipageSidebarProps": "@ulld/navigation/types",
+    "NavbarComponentProps": "@ulld/navigation/types",
     "AutoSettingsTableProps": "@ulld/ui/types",
     "FullPdfProps": "@ulld/pdf/types",
     "PaginationProps": "@ulld/ui/types",
@@ -24,7 +25,12 @@
     "NoteSummaryProps": "@ulld/ui/types",
     "TaskListSearchResultProps": "@ulld/ui/types",
     "NotesSearchResultsListProps": "@ulld/ui/types",
-    "TaskListSearchResultsListProps": "@ulld/ui/types"
+    "TaskListSearchResultsListProps": "@ulld/ui/types",
+    "HTMLProps<HTMLElement>": "react",
+    "HTMLProps<HTMLOrSVGElement>": "react",
+    "SecondaryNavigationProps": "@ulld/navigation/types",
+    "CommandPalettePopoverProps": "@ulld/command-palette/types",
+    "LandingPageProps": "@ulld/landing-layouts/types"
   },
   "protectedPaths": [
     {

@@ -1,49 +1,56 @@
-export type SlotMap = {
-    snippets: {
+export interface SlotMap {
+    "snippets": {
         AddSnippetPage: string,
         SnippetList: string,
         SnippetFilter: string,
     }, 
-    equations: {
+    "equations": {
         EquationDetailsModalPage: string,
         EquationsPage: string,
         EquationDetailsPage: string,
         AddEquationPage: string,
     }, 
-    editor: {
+    "editor": {
         EditorModalPage: string,
         MdxEditorPage: string,
         LatexEditorPage: string,
         EditorPage: string,
     }, 
-    bibliography: {
+    "bibliography": {
         BibliographyPage: string,
     }, 
-    UI: {
+    "UI": {
         Pagination: string,
+        logo: string,
         confirmationModal: string,
         AutoSettingsTable: string,
         SearchResultsPage: string,
         BookmarksPage: string,
-        landingPage: string,
+        TaskListSearchResultList: string,
+        NotesSearchResultsList: string,
+        TaskListSearchResult: string,
+        NoteSummarySearchResult: string,
         DictionaryLetterList: string,
         DictionaryPageItem: string,
     }, 
-    task-manager: {
+    "task-manager": {
         TaskDetails: string,
         AddTask: string,
         AddTaskList: string,
     }, 
-    pdf: {
+    "pdf": {
         FullPdf: string,
     }, 
-    navigation: {
+    "navigation": {
         secondary: string,
         navbar: string,
         MultiPageSidebar: string,
         FullScreenNavigationMenu: string,
     }, 
-    commandPalette: {
+    "landing": {
+        LandingPage: string,
+    }, 
+    "commandPalette": {
         commandPalette: string,
     }, 
 }

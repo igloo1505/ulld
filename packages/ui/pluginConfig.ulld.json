@@ -11,9 +11,47 @@
             "componentName": "ConfirmationModal",
             "slot": "confirmationModal",
             "export": "confirmationModal"
+        },
+        {
+            "componentName": "DictionaryPageItem",
+            "slot": "DictionaryPageItem",
+            "export": "dictionaryItemEntry"
+        },
+        {
+            "componentName": "DictionaryLetterList",
+            "slot": "DictionaryLetterList",
+            "export": "dictionaryLetterList"
+        },
+        {
+            "componentName": "Logo",
+            "slot": "logo",
+            "export": "defaultLogo"
         }
     ],
     "parsers": [],
-    "pages": [],
-    "events": {}
+    "pages": [
+        {
+            "slot": "BookmarksPage",
+            "export": "bookmarksPage",
+            "exportsPageProps": false
+        },
+        {
+            "slot": "SearchResultsPage",
+            "export": "searchResultsPage",
+            "exportsPageProps": false
+        }
+    ],
+    "events": {},
+    "navigationLinks": [
+        {
+            "label": "Dictionary",
+            "href": "/dictionary",
+            "category": "general"
+        },
+        {
+            "label": "Auto-Property Settings",
+            "href": "/settings/autoSettings",
+            "category": "general"
+        }
+    ]
 }

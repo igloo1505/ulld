@@ -2,6 +2,7 @@ import { z } from "zod"
 import type { equationSearchParamsSchema } from "./corePageUtils/zod"
 
 export type EquationDetailModalPageProps = {
+    isModal?: boolean
     params: {
         equationId: string
     }

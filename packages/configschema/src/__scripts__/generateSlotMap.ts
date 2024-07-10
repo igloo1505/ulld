@@ -3,7 +3,7 @@ import path from "path";
 import fs from "fs";
 import { capitalize } from "@ulld/utilities/stringUtils";
 import { slotTypes } from "@ulld/utilities/types";
-import propsExtendsMap from "@ulld/utilities/buildStaticData"
+import propsExtendsMap from "@ulld/utilities/buildStaticData";
 import { gatherProtectedPaths } from "./gatherProtectedPaths";
 
 const testRoot = process.env.ULLD_TEST_ROOT;
@@ -23,11 +23,23 @@ const mdxPath = path.join(
 const typePath = path.join(__dirname, "../developer/slotMapType.ts");
 const typeRootPath = path.join(__dirname, "../developer/slotMapRootType.ts");
 const zodSlotKeyPath = path.join(__dirname, "../developer/slotKeySchema.ts");
+const staticBuildDataPath = path.join(
+    __dirname,
+    "../../../utilities/src/utils/buildStaticData.json",
+);
 
 const files = globSync(`**/*.{tsx,ts}`, {
     ignore: "**/node_modules/**",
     cwd: targetDir,
 });
+
+if (!fs.existsSync(staticBuildDataPath)) {
+    throw new Error(`staticBuildDataPath ${staticBuildDataPath} does not exist.`);
+}
+
+const staticBuildData = JSON.parse(
+    fs.readFileSync(staticBuildDataPath, { encoding: "utf-8" }),
+);
 
 let items: {
     path: string;
@@ -39,7 +51,7 @@ let items: {
     propsExtends?: string;
 }[] = [];
 
-gatherProtectedPaths(files.map((f) => path.join(targetDir, f)))
+gatherProtectedPaths(files.map((f) => path.join(targetDir, f)));
 
 for (const k of files) {
     let content = fs.readFileSync(path.join(targetDir, k), { encoding: "utf-8" });
@@ -50,10 +62,11 @@ for (const k of files) {
             .find((w) => w.includes("/"))
             .split("/")
             .map((s) => s.trim());
-        let type = words
-            .find((w) => w.startsWith("type:"))
-            ?.replace("type:", "")
-            .trim() || "component"
+        let type =
+            words
+                .find((w) => w.startsWith("type:"))
+                ?.replace("type:", "")
+                .trim() || "component";
         let propsExtends = words
             .find((w) => w.startsWith("propsExtends:"))
             ?.replace("propsExtends:", "")
@@ -61,11 +74,18 @@ for (const k of files) {
         if (slots.length !== 2) {
             throw new Error(`Misformed slot string at ${k}`);
         }
-        if(!slotTypes.includes(type as any)){
-            throw new Error(`No slotData type found for ${type}.`)
+        if (!slotTypes.includes(type as any)) {
+            throw new Error(`No slotData type found for ${type}.`);
         }
-        if(Boolean(propsExtends && !(propsExtends in propsExtendsMap.propsExtendsMap))){
-            throw new Error(`Slot prop can not extend ${propsExtends}. It was is not included in the propsExtendsMap object.`)
+        if (
+            Boolean(
+                propsExtends && !(propsExtends in propsExtendsMap.propsExtendsMap),
+            )
+        ) {
+            staticBuildData.propsExtendsMap[propsExtends] = "FIX ME";
+            console.warn(
+                `Slot prop can not extend ${propsExtends}. It was is not included in the propsExtendsMap object. Added a temporary place holder.`,
+            );
         }
         const newItem = {
             path: k,
@@ -127,12 +147,11 @@ const targetPath = path.join(
     "../../../utilities/src/utils/slotMap.json",
 );
 
-
-let mdxSlotMap = `type SlotMap = {
+let mdxSlotMap = `interface SlotMap {
 `;
 
 for (const k in slotMap) {
-    mdxSlotMap += `    ${k}: {\n`;
+    mdxSlotMap += `    "${k}": {\n`;
     for (const l in slotMap[k as keyof typeof slotMap]) {
         mdxSlotMap += `        ${l}: string,\n`;
     }
@@ -150,10 +169,9 @@ let slotSubKeys: Record<string, string> = {};
 let subslotSchemas: string[] = [];
 let addedParentSlots: string[] = [];
 
-
 const makeValidSymbol = (val: string) => {
-       return val.replaceAll("-", "_").replaceAll(" ", "_")
-    }
+    return val.replaceAll("-", "_").replaceAll(" ", "_");
+};
 
 for (const k of items) {
     if (!addedParentSlots.includes(k.parentSlot)) {
@@ -218,5 +236,11 @@ fs.writeFileSync(targetPath, JSON.stringify(slotMap, null, 4), {
 fs.writeFileSync(zodSlotKeyPath, slotKeyFileContent, {
     encoding: "utf-8",
 });
+
+fs.writeFileSync(
+    staticBuildDataPath,
+    JSON.stringify(staticBuildData, null, 4),
+    { encoding: "utf-8" },
+);
 
 console.log(`Wrote slotMap to @ulld/utilities/slotMap.json`);

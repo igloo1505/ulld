@@ -36,6 +36,16 @@ const pluginConfig: DeveloperConfigInput<"equations"> = {
     ],
     // RESUME: Come back here and handle the embeddable components provided in the equations package. If I can get this to build tomorrow, the rest should be just a repeat and we're on our way to a fucking beta!
     components: [],
+    navigationLinks: [
+    {
+        label: "Equations",
+        href: "/equations"
+    },
+    {
+        label: "Add Equation",
+        href: "/equations/add"
+    },
+    ]
 };
 
 

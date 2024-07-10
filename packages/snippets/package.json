@@ -17,9 +17,6 @@
         "./addSnippetPage": "./src/ulldPages/addSnippet.tsx"
     },
     "peerDependencies": {
-        "@ulld/eslint-config": "workspace:*",
-        "@ulld/jest-presets": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
         "@types/react": "^18.2.74",
         "@types/react-dom": "^18.2.24",
         "@ulld/api": "workspace:*",
@@ -27,14 +24,17 @@
         "@ulld/database": "workspace:*",
         "@ulld/developer": "workspace:*",
         "@ulld/editor": "workspace:*",
+        "@ulld/eslint-config": "workspace:*",
         "@ulld/full-form": "workspace:*",
         "@ulld/hooks": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
         "@ulld/parsers": "workspace:*",
+        "@ulld/render": "workspace:*",
         "@ulld/state": "workspace:*",
         "@ulld/tailwind": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@ulld/ui": "workspace:*",
         "@ulld/utilities": "workspace:*",
-        "@ulld/render": "workspace:*",
         "next": "^13.1.16",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
@@ -42,21 +42,25 @@
     "devDependencies": {
         "@types/react": "^18.3.3",
         "@types/react-dom": "^18.3.0",
-        "next": "^14.2.4",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
         "@ulld/eslint-config": "workspace:*",
         "@ulld/jest-presets": "workspace:*",
-        "@ulld/typescript-config": "workspace:*"
+        "@ulld/typescript-config": "workspace:*",
+        "next": "^14.2.4",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
     },
     "packageManager": "pnpm@9.0.4",
     "dependencies": {
+        "fumadocs-core": "^12.3.5",
+        "fumadocs-ui": "^12.3.5",
         "monaco-editor": "0.49.0"
     },
     "publishConfig": {
         "access": "public"
     },
-    "files": [],
+    "files": [
+        "pluginConfig.ulld.json"
+    ],
     "ulld-pluginConfig": {
         "pluginName": "@ulld/snippets",
         "slot": "snippets",
@@ -80,6 +84,18 @@
                 "exportsPageProps": true
             }
         ],
-        "events": {}
+        "events": {},
+        "navigationLinks": [
+            {
+                "label": "Snippets",
+                "href": "/snippets",
+                "category": "general"
+            },
+            {
+                "label": "Add Snippet",
+                "href": "/snippets/add",
+                "category": "general"
+            }
+        ]
     }
 }

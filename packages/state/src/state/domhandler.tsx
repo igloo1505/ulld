@@ -1,9 +1,10 @@
 "use client"
 import { useEffect } from 'react'
 import { setCurrentNoteData, setCurrentNoteId } from './slices/functionality'
-import { store } from './store'
 import { getHeadingHierarchy } from '../formatting/getHeadingHierarchy'
 import { setQuickLinkHtmlId, indicateBookmarked } from '../actions/clientOnly/dom'
+import {useActiveNoteId} from "@ulld/hooks/useActiveNoteId"
+import {useUlldStore} from "@ulld/hooks/useUlldStore"
 
 
 export interface ClientsideDomEventsProps {
@@ -14,7 +15,10 @@ export interface ClientsideDomEventsProps {
 }
 
 
-export const ClientsideNoteEvents = ({ bookmarked, fs, noteId, noteQuickLinkId }: ClientsideDomEventsProps) => {
+export const ClientsideNoteEvents = ({ bookmarked, fs, noteId: _noteId, noteQuickLinkId }: ClientsideDomEventsProps) => {
+    const [noteId, setNoteId, clearId] = useActiveNoteId(_noteId)
+    const store = useUlldStore()
+
     useEffect(() => {
         setQuickLinkHtmlId(noteQuickLinkId)
     }, [noteQuickLinkId])
@@ -31,17 +35,21 @@ export const ClientsideNoteEvents = ({ bookmarked, fs, noteId, noteQuickLinkId }
 
     useEffect(() => {
         indicateBookmarked(bookmarked || false)
-        if (noteId) {
+        if (_noteId) {
+            setNoteId(_noteId)
             store.dispatch(setCurrentNoteData({
-                id: noteId,
+                id: _noteId,
                 currentToc: getHeadingHierarchy()
             }))
-        } else if (fs && noteId) {
-            checkFsNoteId(noteId)
+        } else if (fs && _noteId) {
+            checkFsNoteId(_noteId)
         }
-    }, [bookmarked, noteId])
+        if(!_noteId){
+            clearId()
+        }
+    }, [bookmarked, _noteId])
 
-    return <></>
+    return null
 }
 
 

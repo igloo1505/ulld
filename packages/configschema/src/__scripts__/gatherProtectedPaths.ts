@@ -33,6 +33,9 @@ const getCalculatedRoute = (p: string): string => {
 
 export const gatherProtectedPaths = (files: string[]) => {
     const protectedPaths: ProtectedPath[] = [];
+    let targetData = JSON.parse(
+        fs.readFileSync(targetPath, { encoding: "utf-8" }),
+    );
     for (const k of files) {
         const data = fs.readFileSync(k, { encoding: "utf-8" });
         let re = /ULLD\:\s*protected-path/gm;
@@ -44,9 +47,6 @@ export const gatherProtectedPaths = (files: string[]) => {
             });
         }
     }
-    let targetData = JSON.parse(
-        fs.readFileSync(targetPath, { encoding: "utf-8" }),
-    );
     targetData.protectedPaths = protectedPaths;
     fs.writeFileSync(targetPath, JSON.stringify(targetData, null, 4), {
         encoding: "utf-8",

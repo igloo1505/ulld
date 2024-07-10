@@ -10,6 +10,7 @@ export type MonacoProps = React.ComponentProps<typeof MonacoEditor>
 
 
 export type MonacoPageParams = {
+    isModal?: boolean
     params: {
         uniqueContentId: string
     }

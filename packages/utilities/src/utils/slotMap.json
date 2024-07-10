@@ -99,6 +99,13 @@
             "type": "component",
             "propsExtends": "PaginationProps"
         },
+        "logo": {
+            "path": "src/components/slots/ui/logo.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "HTMLProps<HTMLOrSVGElement>"
+        },
         "confirmationModal": {
             "path": "src/components/slots/ui/confirmationModal.ts",
             "clientOnly": true,
@@ -126,11 +133,33 @@
             "type": "page",
             "propsExtends": "BookmarksResultsPageProps"
         },
-        "landingPage": {
-            "path": "src/components/slots/landingPage/main.tsx",
+        "TaskListSearchResultList": {
+            "path": "src/components/slots/search/lists/taskListSearchResults.tsx",
             "clientOnly": false,
             "inReduxProvider": false,
-            "type": "component"
+            "type": "component",
+            "propsExtends": "TaskListSearchResultsListProps"
+        },
+        "NotesSearchResultsList": {
+            "path": "src/components/slots/search/lists/noteSearchResultsList.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "NotesSearchResultsListProps"
+        },
+        "TaskListSearchResult": {
+            "path": "src/components/slots/search/items/taskListSearchResult.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "TaskListSearchResultProps"
+        },
+        "NoteSummarySearchResult": {
+            "path": "src/components/slots/search/items/noteSummary.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "NoteSummaryProps"
         },
         "DictionaryLetterList": {
             "path": "src/components/slots/dictionary/dictionaryLetterList.tsx",
@@ -184,13 +213,15 @@
             "path": "src/components/slots/navigation/secondaryNavigation.tsx",
             "clientOnly": false,
             "inReduxProvider": false,
-            "type": "component"
+            "type": "component",
+            "propsExtends": "SecondaryNavigationProps"
         },
         "navbar": {
             "path": "src/components/slots/navigation/navbar.tsx",
             "clientOnly": false,
             "inReduxProvider": false,
-            "type": "component"
+            "type": "component",
+            "propsExtends": "NavbarComponentProps"
         },
         "MultiPageSidebar": {
             "path": "src/components/slots/navigation/multipageSidebar.tsx",
@@ -205,6 +236,15 @@
             "inReduxProvider": false,
             "type": "component",
             "propsExtends": "FullScreenNavProps"
+        }
+    },
+    "landing": {
+        "LandingPage": {
+            "path": "src/components/slots/landingPage/main.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "LandingPageProps"
         }
     },
     "commandPalette": {

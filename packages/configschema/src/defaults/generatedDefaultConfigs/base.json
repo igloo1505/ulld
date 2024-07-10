@@ -1,5 +1,5 @@
 {
-    "fsRoot": "/Users/bigsexy/notes",
+    "fsRoot": "/Users/bigsexy/Desktop/notes/content",
     "alwaysPreferFs": false,
     "ignoreFilepaths": [],
     "tempDir": "/__temp__",
@@ -74,6 +74,10 @@
             "snippets": 10,
             "searchAll": 12
         },
+        "bookmarkLink": "navbar",
+        "syncLink": "sidebar",
+        "darkmodeToggle": "sidebar",
+        "snippetsLink": "sidebar",
         "navbarLinks": [],
         "sidebarLinks": []
     },

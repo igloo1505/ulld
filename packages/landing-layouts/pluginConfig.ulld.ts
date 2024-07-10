@@ -5,13 +5,13 @@ import {
 import { writePluginConfig } from "@ulld/developer/writePluginConfig";
 
 
-const ulldPluginConfig: DeveloperConfigInput = {
+const ulldPluginConfig: DeveloperConfigInput<"landing"> = {
     pluginName: "@ulld/landing-layouts",
-    slot: "UI",
+    slot: "landing",
     components: [
         {
             componentName: "LandingPageBetaRelease",
-            slot: "landingPage",
+            slot: "LandingPage",
             export: "./beta"
         },
     ],

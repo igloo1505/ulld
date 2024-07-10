@@ -106,7 +106,6 @@ const CommandPalette = ({
     SubjectSearchItem[]
   >([]);
   const setSubjectSearchCommands = (data: SubjectSearchItem[]) => {
-    console.log("data: ", data);
     subjectSearchCommandsRef.current = data;
     _setSubjectSearchCommands(data);
   };
@@ -274,7 +273,6 @@ const CommandPalette = ({
       let curIdx = subjectSearchCommandsRef.current
         ?.map((d) => d.value)
         .indexOf(valueRef.current);
-      console.log("curIdx: ", curIdx);
       const tcur = typeof curIdx;
       if (tcur === "undefined" || tcur !== "number") {
         return undefined;
@@ -332,14 +330,12 @@ const CommandPalette = ({
   };
 
   const keyboardListener = (e: KeyboardEvent) => {
-    console.log("page: ", _page, pageRef.current);
     let _key = pageRef.current || "none";
     if (_key in getAdjacentValueMap) {
       if (e.code === "KeyJ" && e.altKey) {
         e.preventDefault();
         let newValue =
           getAdjacentValueMap[_key as keyof typeof getAdjacentValueMap]("next");
-        console.log("newValue: ", newValue);
         if (newValue) {
           setValue(newValue);
         }
@@ -347,7 +343,6 @@ const CommandPalette = ({
         e.preventDefault();
         let newValue =
           getAdjacentValueMap[_key as keyof typeof getAdjacentValueMap]("prev");
-        console.log("newValue: ", newValue);
         if (newValue) {
           setValue(newValue);
         }
@@ -428,7 +423,6 @@ const CommandPalette = ({
       }}
       value={value || ""}
       onValueChange={(v) => {
-        console.log("setting value: ", v);
         if (v) {
           setValue(v);
         }

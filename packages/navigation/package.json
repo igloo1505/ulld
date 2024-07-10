@@ -1,21 +1,24 @@
 {
     "version": "0.0.7",
-    "$schema": "./node_modules/@ulld/developer-schemas/src/static/ulldPackageJson.schema.json",
     "name": "@ulld/navigation",
     "private": false,
     "scripts": {
-        "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
+        "dev": "next dev",
         "build": "echo 'Add build script here'",
         "test": "echo 'Add test script here'",
-        "lint": "echo 'Add lint script here'"
+        "lint": "echo 'Add lint script here'",
+        "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
     },
     "files": [
-        "src"
+        "src",
+        "pluginConfig.ulld.json"
     ],
     "exports": {
         "./types": "./src/types.ts",
         "./navbar": "./src/components/navbar/navbar.tsx",
-        "./sidebar": "./src/components/sidebar/sidebarNavigation.tsx"
+        "./sidebar": "./src/components/sidebar/sidebarNavigation.tsx",
+        "./multiPageSidebar": "./src/components/multipageSidebar/main.tsx",
+        "./fullScreenNav": "./src/components/fullScreenNavigationMenu/main.tsx"
     },
     "peerDependencies": {
         "@ulld/eslint-config": "workspace:*",
@@ -61,5 +64,35 @@
     },
     "publishConfig": {
         "access": "public"
+    },
+    "ulld-pluginConfig": {
+        "pluginName": "@ulld/navigation",
+        "slot": "navigation",
+        "components": [
+            {
+                "componentName": "Navbar",
+                "slot": "navbar",
+                "export": "navbar"
+            },
+            {
+                "componentName": "SidebarNavigation",
+                "slot": "secondary",
+                "export": "sidebar"
+            },
+            {
+                "componentName": "MultiPageSidebar",
+                "slot": "MultiPageSidebar",
+                "export": "multiPageSidebar"
+            },
+            {
+                "componentName": "FullScreenNavigation",
+                "slot": "FullScreenNavigationMenu",
+                "export": "fullScreenNav"
+            }
+        ],
+        "parsers": [],
+        "pages": [],
+        "events": {},
+        "navigationLinks": []
     }
 }

@@ -11,6 +11,7 @@ export const slotKeySchema = z.union([
     z.literal("task-manager"),
     z.literal("pdf"),
     z.literal("navigation"),
+    z.literal("landing"),
     z.literal("commandPalette"),
 ])
 
@@ -45,11 +46,15 @@ export const bibliographySubkeySchema = z.union([
 
 export const UISubkeySchema = z.union([
     z.literal("Pagination"),
+    z.literal("logo"),
     z.literal("confirmationModal"),
     z.literal("AutoSettingsTable"),
     z.literal("SearchResultsPage"),
     z.literal("BookmarksPage"),
-    z.literal("landingPage"),
+    z.literal("TaskListSearchResultList"),
+    z.literal("NotesSearchResultsList"),
+    z.literal("TaskListSearchResult"),
+    z.literal("NoteSummarySearchResult"),
     z.literal("DictionaryLetterList"),
     z.literal("DictionaryPageItem"),
 ])
@@ -72,6 +77,11 @@ export const navigationSubkeySchema = z.union([
     z.literal("navbar"),
     z.literal("MultiPageSidebar"),
     z.literal("FullScreenNavigationMenu"),
+])
+
+
+export const landingSubkeySchema = z.union([
+    z.literal("LandingPage"),
 ])
 
 

@@ -11,6 +11,18 @@ interface Dependency {
     type: (typeof dependencyTypes)[number];
 }
 
+const depTypes = [
+    "dependencies",
+    "peerDependencies",
+    "devDependencies",
+] as const;
+
+interface ClonedBaseAppInternalDep {
+    type: (typeof depTypes)[number];
+    name: string;
+    version: string;
+}
+
 interface PackageSource {
     name: string;
     content: PackageJsonType;
@@ -30,10 +42,17 @@ const dependencyTypes = [
     "dependencies",
 ] as const;
 
+if (!process.env.ULLD_DEV_ROOT) {
+    throw new Error(
+        "No ULLD_DEV_ROOT environment variable was found at run time. Monorepo utilities won't work reliably... aborting. ",
+    );
+}
+
 const glob = () =>
     globSync(`**/package.json`, {
         ignore: "**/node_modules/**",
-    });
+        cwd: process.env.ULLD_DEV_ROOT,
+    }).map((p) => path.join(process.env.ULLD_DEV_ROOT!, p));
 
 const readLine = rl.createInterface({
     input: process.stdin,
@@ -53,7 +72,7 @@ class PluginConfig {
     }
     getData() {
         if (this.exists) {
-            this.data = JSON.parse(fs.readFileSync(this.path, { encoding: "utf-8" }))
+            this.data = JSON.parse(fs.readFileSync(this.path, { encoding: "utf-8" }));
         }
     }
     static fromPackageJsonPath(packagePath: string) {
@@ -67,11 +86,20 @@ export class PackageManager {
     packages: PackageSource[] = [];
     rootPackageJsonPath: string = path.join(__dirname, "../package.json");
     packagePublishedMap: Record<string, boolean> = {};
+    testRootPath: string;
+    testRootPackageJson: PackageJsonType;
     constructor(
         public root: string = process.env.ULLD_DEV_ROOT!,
         public offline: boolean = true,
     ) {
+        if (!process.env.ULLD_TEST_ROOT) {
+            throw new Error(
+                "No ULLD_TEST_ROOT environment variable found at run time.",
+            );
+        }
         this.packages = this.collectPackages();
+        this.testRootPath = process.env.ULLD_TEST_ROOT;
+        this.testRootPackageJson = this.getClonedBaseAppPackageJson();
     }
     getSlotMap() {
         return JSON.parse(
@@ -80,6 +108,45 @@ export class PackageManager {
                 { encoding: "utf-8" },
             ),
         );
+    }
+    getClonedAppPackageJsonPath() {
+        return path.join(this.testRootPath, "package.json");
+    }
+    getClonedBaseAppPackageJson() {
+        let p = this.getClonedAppPackageJsonPath();
+        if (!fs.existsSync(p)) {
+            throw new Error(
+                "No package.json file found in the ULLD_TEST_ROOT path. Cannot gather base app data.",
+            );
+        }
+        return JSON.parse(fs.readFileSync(p, { encoding: "utf-8" }));
+    }
+    getClonedBaseAppInternalPackages(): ClonedBaseAppInternalDep[] {
+        let deps: ClonedBaseAppInternalDep[] = [];
+        for (const depType of depTypes) {
+            for (const dep in this.testRootPackageJson[depType]) {
+                if (dep.startsWith("@ulld")) {
+                    deps.push({
+                        name: dep,
+                        type: depType,
+                        version: this.testRootPackageJson[depType][dep],
+                    });
+                }
+            }
+        }
+        return deps;
+    }
+    setNewClonedAppInternalPackages(items: ClonedBaseAppInternalDep[]) {
+        for (const item of items) {
+            this.testRootPackageJson[item.type][item.name] = item.version;
+        }
+        this.writeClonedAppPackageJson();
+    }
+    writeClonedAppPackageJson() {
+        let p = this.getClonedAppPackageJsonPath();
+        fs.writeFileSync(p, JSON.stringify(this.testRootPackageJson, null, 4), {
+            encoding: "utf-8",
+        });
     }
     getRootRelativePath(p: string) {
         return `${this.root}/${p.startsWith("/") ? p.slice(1, p.length) : p}`;
@@ -99,9 +166,7 @@ export class PackageManager {
                 ? ("package" as "package")
                 : ("unknown" as "unknown");
     }
-    getPackageFromPath(a: string) {
-        let cwd = process.cwd();
-        const targetPath = a.includes(cwd) ? a : path.join(process.cwd(), a);
+    getPackageFromPath(targetPath: string) {
         let content = this.loadJson(targetPath);
         let name = content?.name;
         if (name && (name.startsWith("@ulld") || name === "ULLD")) {
@@ -407,9 +472,11 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
         }
         if (args[0] === "updateReactScript") {
             this.writeUpdateReactScript();
+            process.exit()
         }
         if (args[0] === "applyPluginConfigToPackageJsonFiles") {
             this.applyPluginConfigToFiles();
+            process.exit()
         }
     }
 }

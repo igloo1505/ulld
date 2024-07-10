@@ -13,7 +13,7 @@ import rehypeVideo from 'rehype-video';
 /* import mdxMermaid from 'mdx-mermaid' */
 import clsx from 'clsx'
 import { ImmediateNoteContentContainer } from './immediateNoteContainer'
-import {ClientsideDomEventsProps, ClientsideNoteEvents} from "@ulld/state/state/domhandler"
+import {ClientsideDomEventsProps, ClientsideNoteEvents } from "@ulld/state/state/domhandler"
 import { getComponentMap } from '../markdown/componentMap'
 import { MdxCitations, zodCitationObject } from '../markdown/citations'
 import { SequentialNoteBottomBar } from '../markdown/sequentialBottomBar'

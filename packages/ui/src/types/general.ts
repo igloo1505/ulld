@@ -1,4 +1,4 @@
-import { AutoSettingType, LetterType } from "@ulld/utilities/types";
+import { AutoSettingType, ConfirmationModalConfig, LetterType } from "@ulld/utilities/types";
 import { ReactNode, ReactNodeArray } from "react";
 
 export interface ToastConfigType {
@@ -10,6 +10,10 @@ export interface ToastConfigType {
 
 export interface UISearchParams {
     dark?: boolean;
+}
+
+export interface ConfirmationModalProps {
+    config: ConfirmationModalConfig | false;
 }
 
 export const pdfStateClasses = {

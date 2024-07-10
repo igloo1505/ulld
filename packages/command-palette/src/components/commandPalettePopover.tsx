@@ -7,10 +7,8 @@ import CommandPalette from './commandPalette'
 import { Command } from 'cmdk'
 import { pages as pageList, textSearchPages } from './commandPaletteUtilities'
 import { enterIdSelectMode } from '@ulld/state/actions/clientOnly/general'
+import { CommandPalettePopoverProps } from '../types'
 
-
-interface CommandPalettePopoverProps {
-}
 
 
 const shouldIgnoreKeymap = (e: KeyboardEvent<unknown>): boolean => {

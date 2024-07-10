@@ -6,13 +6,15 @@
         "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
         "build": "echo 'Add build script here'",
         "test": "echo 'Add test script here'",
-        "lint": "echo 'Add lint script here'"
+        "lint": "echo 'Add lint script here'",
+        "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
     },
     "files": [
         "src"
     ],
     "exports": {
-        "./commandPalette": "./src/components/commandPalettePopover.tsx"
+        "./commandPalette": "./src/components/commandPalettePopover.tsx",
+        "./types": "./src/types.ts"
     },
     "peerDependencies": {
         "@ulld/api": "workspace:*",
@@ -34,20 +36,23 @@
         "@ulld/ui": "workspace:*",
         "@ulld/utilities": "workspace:*",
         "@ulld/whiteboard": "workspace:*",
+        "@ulld/render": "workspace:*",
         "cmdk": "^0.2.0",
         "lucide-react": "latest",
         "next": "^13.1.16",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "tinykeys": "^2.1.0",
-        "zod": "^3.22.2"
+        "zod": "^3.22.2",
+        "fumadocs-core": "^12.3.5",
+        "fumadocs-ui": "^12.3.5"
     },
     "devDependencies": {
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
         "@ulld/eslint-config": "workspace:*",
         "@ulld/jest-presets": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
         "cmdk": "^0.2.0",
         "lucide-react": "latest",
         "next": "^13.1.16",
@@ -60,5 +65,20 @@
     "publishConfig": {
         "access": "public"
     },
-    "dependencies": {}
+    "dependencies": {},
+    "ulld-pluginConfig": {
+        "pluginName": "@ulld/command-palette",
+        "slot": "commandPalette",
+        "components": [
+            {
+                "componentName": "CommandPalette",
+                "slot": "commandPalette",
+                "export": "commandPalette"
+            }
+        ],
+        "parsers": [],
+        "pages": [],
+        "events": {},
+        "navigationLinks": []
+    }
 }

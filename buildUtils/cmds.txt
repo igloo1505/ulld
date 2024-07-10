@@ -20,3 +20,8 @@ Generate Slot Map | tsx /Users/bigsexy/Desktop/current/ulld/packages/configschem
 Apply plugin config files to package.json | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoRepoUtils.ts applyPluginConfigToPackageJsonFiles
 Check Missing Slots | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/checkMissingSlots.ts
 Update Shiki Data | tsx /Users/bigsexy/Desktop/current/ulld/packages/configschema/src/__scripts__/updateShikiThemes.ts
+Set cloned base internal dependencies to local source | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/setClonedBaseAppInternalDepLocations.ts toLocal
+Set cloned base internal dependencies to remote source | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/setClonedBaseAppInternalDepLocations.ts toRemote
+Generate Default Configs | tsx /Users/bigsexy/Desktop/current/ulld/packages/configschema/src/__scripts__/generateDefaultConfig.ts
+Sync base cloned app with local dependencies | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/syncBaseAppWithLocal.zsh
+

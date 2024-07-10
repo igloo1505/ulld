@@ -7,6 +7,7 @@ import { PluginSettingsConfig } from "./pluginSettingsConfig";
 import { PluginPageConfig } from "./pageConfig";
 import { PluginEventsConfig } from "./pluginEventsConfig";
 import { PluginSlotKey } from "../slotMapType";
+import { NavigationLinkType } from "../navigationLinkType";
 
 export type DeveloperConfigInput<T extends PluginSlotKey | undefined = undefined> = {
     pluginName: string;
@@ -18,4 +19,5 @@ export type DeveloperConfigInput<T extends PluginSlotKey | undefined = undefined
     settings?: PluginSettingsConfig;
     pages?: PluginPageConfig<T>[];
     events?: PluginEventsConfig;
+    navigationLinks?: NavigationLinkType[]
 };

@@ -2,8 +2,8 @@
 import type { AppConfigSchemaOutput } from "@ulld/configschema/zod/main"
 import { useLocalStorage } from "./useLocalStorage"
 
-export const useAppConfig = () => {
-    const [appConfig, setAppConfig] = useLocalStorage("ulld-app-config", undefined as AppConfigSchemaOutput | undefined, {})
+export const useAppConfig = (initialConfig?: AppConfigSchemaOutput) => {
+    const [appConfig, setAppConfig] = useLocalStorage("ulld-app-config", initialConfig as AppConfigSchemaOutput | undefined, {})
 
     return [appConfig, setAppConfig] as [AppConfigSchemaOutput | undefined, ((val: AppConfigSchemaOutput) => void)]
 }

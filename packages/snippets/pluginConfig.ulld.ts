@@ -4,7 +4,6 @@ import {
 } from "@ulld/configschema/developer";
 import { writePluginConfig } from "@ulld/developer/writePluginConfig";
 
-
 const pluginConfig: DeveloperConfigInput<"snippets"> = {
     pluginName: "@ulld/snippets",
     slot: "snippets",
@@ -12,25 +11,33 @@ const pluginConfig: DeveloperConfigInput<"snippets"> = {
         {
             export: "./addSnippetPage",
             exportsPageProps: true,
-            slot: "AddSnippetPage"
+            slot: "AddSnippetPage",
         },
     ],
     components: [
         {
             componentName: "SnippetList",
             slot: "SnippetList",
-            export: "./snippetList"
+            export: "./snippetList",
         },
         {
             componentName: "SnippetFilter",
             slot: "SnippetFilter",
-            export: "./snippetFilter"
-        }
+            export: "./snippetFilter",
+        },
+    ],
+    navigationLinks: [
+        {
+            label: "Snippets",
+            href: "/snippets",
+        },
+        {
+            label: "Add Snippet",
+            href: "/snippets/add",
+        },
     ],
 };
 
-
 const parsedPlugin = developerConfigSchema.parse(pluginConfig);
-
 
 writePluginConfig(parsedPlugin, __dirname, "both");

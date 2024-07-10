@@ -4,27 +4,15 @@ import Link from "next/link";
 import NavbarSearchInput from "./navbarSearchInput";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { RootState } from "@ulld/state/store";
 import { SearchIcon, BookmarkIcon } from "lucide-react";
-/* import { ParsedAppConfig } from "@ulld/configschema/types"; */
-/* import { Route } from "next"; */
-/* import { internalLinks } from "../sidebar/internalSidebarButtons"; */
-import Logo from "@ulld/icons/logo";
 import { toggleBookmark } from "@ulld/api/actions/clientOnly/bookmarking";
 import { useEventListener } from "@ulld/hooks/useEventListener";
-import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
+import { NavbarComponentProps } from "../../types";
 
 const NavShowBreakpoint = 20;
 
 
-// DOCUMENT_DEVELOPER: 
-interface NavbarProps {
-    noteId?: number;
-    config?: AppConfigSchemaOutput
-}
-
-interface EventProps {
-
+interface NavbarProps extends NavbarComponentProps {
 }
 
 declare global {
@@ -34,8 +22,10 @@ declare global {
     }
 }
 
+const showButtonTypes: NavbarComponentProps["navConfig"]["bookmarkLink"][] = ["both", "navbar"]
 
-const Navbar = ({ config }: NavbarProps) => {
+
+const Navbar = ({ navConfig: nav, noteTypes, logo: Logo }: NavbarProps) => {
     const pathname = usePathname();
     const [show, setShow] = useState(pathname !== "/");
     const [isAbsolute, setIsAbsolute] = useState(false);
@@ -66,7 +56,11 @@ const Navbar = ({ config }: NavbarProps) => {
         return () => window.removeEventListener("mousemove", hoverListener);
     }, [pathname]);
 
-    const buttons = config?.navigation?.navbarLinks
+
+    const btns = noteTypes.filter((a) => a.inNavbar)
+    const btns2 = noteTypes.sort((a, b) => a.matchWeight - b.matchWeight).slice(0, 3 - btns.length)
+    const buttons = [...btns, ...btns2]
+
 
     return (
         <nav
@@ -84,7 +78,6 @@ const Navbar = ({ config }: NavbarProps) => {
                             width={300}
                             height={300}
                             className={"h-[calc(var(--nav-height)*0.7)] w-auto"}
-                            priority
                         />
                     </Link>
                 </div>
@@ -108,29 +101,19 @@ const Navbar = ({ config }: NavbarProps) => {
                                     </Link>
                                 );
                             }
-                            return (
-                                <a
-                                    role="button"
-                                    onClick={b.onClick}
-                                    className={"px-2.5 py-2 navbtn transform mx-2 hidden lg:flex"}
-                                    key={`navbar-button-${i}`}
-                                >
-                                    {b.label}
-                                </a>
-                            );
                         })}
                     </div>
                     <div
                         className={"flex flex-row gap-2 justify-center items-center w-fit"}
                     >
-                        <Link
+                        {showButtonTypes.includes(nav.bookmarkLink) && <Link
                             href="/bookmarks"
                             className={
                                 "px-2.5 py-2 navbtn transform mx-2 hidden sm:flex lg:hidden"
                             }
                         >
                             Bookmarks
-                        </Link>
+                        </Link>}
                         <div className="relative mt-0 w-[225px]">
                             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                                 <SearchIcon className={"w-5 h-5 text-gray-400"} />

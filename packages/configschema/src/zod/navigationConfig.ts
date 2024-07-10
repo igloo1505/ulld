@@ -38,6 +38,13 @@ export const iconNameField = z.enum(allIcons)
 
 let docTypeList: DocumentTypeConfig[] | null = null;
 
+let linkLocationSchema = z.union([
+    z.literal("sidebar"),
+    z.literal("navbar"),
+    z.literal("both"),
+    z.literal("none"),
+])
+
 export const navigationConfigSchema = z
     .object({
         navbarBreakpoint: z
@@ -70,6 +77,13 @@ export const navigationConfigSchema = z
                 "The default length of search results to be retrieved for each search result type. Default values will likely work well for the default layout, but as more layouts become available this setting may be adjusted to fit different search result layouts.",
             )
             .default(defaultResultLengths),
+        bookmarkLink: linkLocationSchema.optional().default("navbar"),
+        syncLink: linkLocationSchema.optional().default("sidebar"),
+        fileSystemToggle: linkLocationSchema.optional(),
+        darkmodeToggle: linkLocationSchema.optional().default("sidebar"),
+        settings: linkLocationSchema.optional(),
+        equationsLink: linkLocationSchema.optional(),
+        snippetsLink: linkLocationSchema.optional().default("sidebar"),
         navbarLinks: z
             .union([
                 z.string().describe("A document type id"),
@@ -160,3 +174,6 @@ ${JSON.stringify(a, null, 4)}`);
             }),
     })
     .default({});
+
+
+export type InternalNavigationKeys = keyof Pick<z.output<typeof navigationConfigSchema>, "bookmarkLink" | "syncLink" | "fileSystemToggle" | "darkmodeToggle" | "settings" | "equationsLink" | "snippetsLink" >
