@@ -1,4 +1,3 @@
-import { createMDXSource } from "@fumadocs/content-collections";
 import { allMyNotes } from "content-collections";
 import { InferMetaType, InferPageType, loader, LoaderOptions } from "fumadocs-core/source";
 

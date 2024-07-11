@@ -1,41 +1,20 @@
-import MDXArticle from "#/components/layouts/mdxArticle";
+import DocsPageComponent from "#/components/docUtils/docsPage";
+import { getPages } from "#/fumaDocs/sources/myNotes";
+import { getPageById } from "#/fumaDocs/utils/getPageById";
+import { PageType } from "#/types/general";
 import React from "react";
-import { allMyNotes, allStaticDocs } from "contentlayer/generated";
-import { notFound } from "next/navigation";
 
-interface MyNotesPageProps {
-    searchParams: {
-        id?: string;
-    };
-}
+const DocsHomePage = () => {
+    let page = getPageById(getPages() as PageType[], "onTheGravitationalNatureOfTime")
 
-const MyNotesPage = ({ searchParams: {
-    id
-} }: MyNotesPageProps) => {
-    if(id){
-    const myNotes = allMyNotes.find((a) => a.id === id);
-    if (!myNotes) return notFound();
-    return (
-        <>
-            <MDXArticle
-                    mdx={myNotes}
-        paddingTop={false}
-                />
-        </>
-    );
+    if (!page) {
+        throw new Error(
+            "Could not find the paper that inspired this f-cking fiasco.",
+        );
     }
-    let item = allStaticDocs.find((a) => a.id === "myWorkHome")
-
-    if(!item){
-        throw new Error("myWorkHome article was not found.")
-    }
-
-    return <MDXArticle
-        mdx={item}
-        paddingTop={false}
-    />
+    return <DocsPageComponent page={page} />;
 };
 
-MyNotesPage.displayName = "MyNotesPage";
+DocsHomePage.displayName = "DocsHomePage";
 
-export default MyNotesPage;
+export default DocsHomePage;

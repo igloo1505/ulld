@@ -1,19 +1,57 @@
-import MdxLayout from "#/components/layouts/mdxLayout";
-import MathjaxProvider from "#/components/utility/providers/mathjax";
-import React, { ReactNode } from "react";
+import { BaseLayoutProps, DocsLayout } from "fumadocs-ui/layout";
+import type { ReactNode } from "react";
+import { pageTree } from "#/fumaDocs/sources/myNotes";
+import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
+import { appData } from "@ulld/utilities/appData";
+import { sidebarLinksWithoutHref } from "#/fumaDocs/utils/sidebarLinks";
 
-interface MyWorkLayoutProps {
-    children: ReactNode;
+const baseOptions: BaseLayoutProps = {
+    nav: {
+        title: (
+            <span className={"h-12 w-16"}>
+                <AnimatedUlldLogo speed={2.5} show={true} />
+            </span>
+        ),
+        url: "/",
+        transparentMode: "top"
+    },
+    links: sidebarLinksWithoutHref("/myWork"),
+    githubUrl: appData.projectRepo.url,
 }
 
-const MyWorkLayout = ({ children }: MyWorkLayoutProps) => {
+export default function Layout({ children }: { children: ReactNode }) {
     return (
-        <MdxLayout>
-            <MathjaxProvider>{children}</MathjaxProvider>
-        </MdxLayout>
+        <DocsLayout
+            {...baseOptions}
+            tree={pageTree}
+            containerProps={{
+                className: "relative [&_#nd-sidebar]:sticky [&_#nd-sidebar]:top-0 bg-background text-foreground",
+            }}
+            sidebar={{
+                footerProps: {
+                    className: "[&_.lucide-sun]:hidden [&_.lucide-moon]:hidden"
+                },
+                /* banner: ( */
+                /*     <RootToggle */
+                /*         options={[ */
+                /*             { */
+                /*                 title: "User", */
+                /*                 description: "User Documentation", */
+                /*                 url: "/docs/user", */
+                /*                 icon: <UserIcon />, */
+                /*             }, */
+                /*             { */
+                /*                 title: "Developer", */
+                /*                 description: "Developer Documentation", */
+                /*                 url: "/docs/developer", */
+                /*                 icon: <TerminalIcon />, */
+                /*             }, */
+                /*         ]} */
+                /*     /> */
+                /* ), */
+            }}
+        >
+            {children}
+        </DocsLayout>
     );
-};
-
-MyWorkLayout.displayName = "MyWorkLayout";
-
-export default MyWorkLayout;
+}

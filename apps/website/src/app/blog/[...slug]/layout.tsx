@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
 import { appData } from "@ulld/utilities/appData";
 import { pageTree } from "sources/blog"
+import { sidebarLinksWithoutHref } from "#/fumaDocs/utils/sidebarLinks";
 
 const baseOptions: BaseLayoutProps = {
     nav: {
@@ -14,33 +15,7 @@ const baseOptions: BaseLayoutProps = {
         url: "/",
         transparentMode: "top"
     },
-    links: [
-        {
-            text: "Home",
-            url: "/",
-            active: "nested-url",
-        },
-        {
-            text: "Docs",
-            url: "/docs",
-            active: "nested-url",
-        },
-        {
-            text: "Demos",
-            url: "/demos",
-            active: "nested-url",
-        },
-        {
-            text: "Configure",
-            url: "/configure",
-            active: "nested-url",
-        },
-        {
-            text: "Sponsor",
-            url: "/sponsor/newSponsors",
-            active: "nested-url",
-        },
-    ],
+    links: sidebarLinksWithoutHref("/blog"),
     githubUrl: appData.projectRepo.url,
 };
 
