@@ -16,7 +16,8 @@
     },
     "packageManager": "pnpm@9.0.4",
     "devDependencies": {
-        "next": "^14.2.4"
+        "next": "^14.2.4",
+        "@ulld/types": "workspace:*"
     },
     "dependencies": {
         "@types/react": "18.3.3",

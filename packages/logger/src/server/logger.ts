@@ -24,3 +24,5 @@ export class serverLogger {
         console.log("value: ", value)
     }
 }
+
+export default serverLogger

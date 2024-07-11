@@ -13,6 +13,7 @@ const Citations = ({ noteId }: CitationsProps) => {
     ) {
         return null;
     }
+
     return (
         <div
             className={

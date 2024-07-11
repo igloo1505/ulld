@@ -43,6 +43,11 @@ const pluginConfig: DeveloperConfigInput<"UI"> = {
             slot: "logo",
             export: "./defaultLogo",
         },
+        {
+            componentName: "TaskListResultList",
+            slot: "TaskListSearchResultList",
+            export: "./taskListResultList"
+        }
     ],
     navigationLinks: [
         {

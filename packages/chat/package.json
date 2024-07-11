@@ -42,7 +42,8 @@
         "@slack/types": "^2.11.0",
         "@ulld/eslint-config": "workspace:*",
         "@ulld/jest-presets": "workspace:*",
-        "@ulld/typescript-config": "workspace:*"
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/types": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {

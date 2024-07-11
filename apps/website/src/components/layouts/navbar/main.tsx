@@ -6,10 +6,13 @@ import InternalReduxProvider from "#/state/provider";
 import Link from "next/link";
 import NavbarDynamicButtons from "./navbarDynamicButtons";
 import { usePathname } from "next/navigation";
+import { pathIsMdxContent } from "#/fumaDocs/utils/pathIsMdxContent";
+
+
 
 const Navbar = () => {
     const pathname = usePathname();
-    if (pathname.startsWith("/docs")) {
+    if (pathIsMdxContent(pathname)) {
         return null;
     }
     return (

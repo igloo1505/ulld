@@ -1,9 +1,7 @@
 "use client";
-import { DocumentTypes } from "contentlayer/generated";
-import React, { useRef, useState } from "react";
+import React, { ReactNode, useRef, useState } from "react";
 import SourceCode from "./sourceCode";
 import CodeOutput from "./output";
-import MDXArticle from "../mdxArticle";
 import {
     ResizablePanelGroup,
     ResizablePanel,
@@ -14,12 +12,13 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import NavbarButtonPortal from "#/components/utility/portals/navbar";
 import { navbarButtonClasses } from "../navbar/navbarButtonGroup";
 import { cn } from "@ulld/utilities/cn";
+import { PageType } from "#/types/general";
 
 
 interface SideBySideWithSourceProps {
-    mdx: DocumentTypes;
+    mdx: PageType;
+    children: ReactNode
 }
-
 
 const names = {
     output: "code-output",
@@ -30,7 +29,7 @@ const names = {
 const saveId = "ulldWithSource";
 
 
-const SideBySideWithSource = ({ mdx }: SideBySideWithSourceProps) => {
+const SideBySideWithSource = ({ mdx, children }: SideBySideWithSourceProps) => {
     const [scrollIndependent, setScrollIndependent] = useState(false);
     const sourceContainer = useRef<HTMLDivElement>(null!);
     const outputContainer = useRef<HTMLDivElement>(null!);
@@ -106,7 +105,7 @@ const SideBySideWithSource = ({ mdx }: SideBySideWithSourceProps) => {
             <ResizablePanel defaultSize={50}>
                 <SourceCode
                     ref={sourceContainer}
-                    content={mdx.body.raw}
+                    content={mdx.data.content}
                     data-name={names.source}
                     maxWidth={sourceWidth}
                 />
@@ -115,12 +114,7 @@ const SideBySideWithSource = ({ mdx }: SideBySideWithSourceProps) => {
             <ResizablePanel defaultSize={50}>
                 <CodeOutput ref={outputContainer} data-name={names.output}>
                     <MathjaxProvider>
-                        <MDXArticle
-                            className={"!max-w-full pt-8"}
-                            isSource 
-                            mdx={mdx}
-                            paddingTop={false}
-                        />
+                        {children}
                     </MathjaxProvider>
                 </CodeOutput>
             </ResizablePanel>

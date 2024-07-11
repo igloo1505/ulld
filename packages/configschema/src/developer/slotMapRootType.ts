@@ -34,6 +34,7 @@ export interface SlotMap {
         DictionaryPageItem: string,
     }, 
     "task-manager": {
+        TaskManagerPage: string,
         TaskDetails: string,
         AddTask: string,
         AddTaskList: string,

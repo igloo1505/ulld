@@ -9,7 +9,7 @@ import { PluginEventsConfig } from "./pluginEventsConfig";
 import { PluginSlotKey } from "../slotMapType";
 import { NavigationLinkType } from "../navigationLinkType";
 
-export type DeveloperConfigInput<T extends PluginSlotKey | undefined = undefined> = {
+export type InternalDeveloperConfigInput<T extends PluginSlotKey | undefined = undefined> = {
     pluginName: string;
     slot?: keyof typeof slots;
     components?: ComponentConfig<T>[];

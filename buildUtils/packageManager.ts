@@ -337,7 +337,9 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
                         `${k} not found in npm repository. Removing from all internal packages.`,
                     );
                     this.packagePublishedMap[k] = false;
-                    removeDepNames.push(k);
+                    if (k !== "@ulld/types") {
+                        removeDepNames.push(k);
+                    }
                 }
             }
         }
@@ -353,7 +355,7 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
             let newDepsLength = k.deps.length;
             if (initialDepLength !== newDepsLength) {
                 console.log(
-                    `${k.name} went from ${initialDepLength} to ${newDepsLength}.`,
+                    `${k.name} went from ${initialDepLength} dependencies to ${newDepsLength}.`,
                 );
             }
         }
@@ -418,6 +420,21 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
             };
         });
     }
+    addPackageToAll(
+        packageConfig: (typeof this.packages)[number]["deps"][number] = {
+            type: "devDependencies",
+            name: "@ulld/types",
+            version: "workspace:*",
+        },
+        exclude: string[] = ["@ulld/types"],
+    ) {
+        for (const k of this.packages) {
+            if (!exclude.includes(k.name)) {
+                console.log(`Writing ${packageConfig.name} dependency to ${k.name}`);
+                k.deps.push(packageConfig);
+            }
+        }
+    }
     applyPluginConfigToFiles() {
         console.log(`Applying plugin config files to package.json files property.`);
         for (const k of this.packages) {
@@ -472,11 +489,11 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
         }
         if (args[0] === "updateReactScript") {
             this.writeUpdateReactScript();
-            process.exit()
+            process.exit();
         }
         if (args[0] === "applyPluginConfigToPackageJsonFiles") {
             this.applyPluginConfigToFiles();
-            process.exit()
+            process.exit();
         }
     }
 }

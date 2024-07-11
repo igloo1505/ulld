@@ -39,9 +39,7 @@ export const editorSubkeySchema = z.union([
 ])
 
 
-export const bibliographySubkeySchema = z.union([
-    z.literal("BibliographyPage"),
-])
+export const bibliographySubkeySchema = z.literal("BibliographyPage")
 
 
 export const UISubkeySchema = z.union([
@@ -61,15 +59,14 @@ export const UISubkeySchema = z.union([
 
 
 export const task_managerSubkeySchema = z.union([
+    z.literal("TaskManagerPage"),
     z.literal("TaskDetails"),
     z.literal("AddTask"),
     z.literal("AddTaskList"),
 ])
 
 
-export const pdfSubkeySchema = z.union([
-    z.literal("FullPdf"),
-])
+export const pdfSubkeySchema = z.literal("FullPdf")
 
 
 export const navigationSubkeySchema = z.union([
@@ -80,12 +77,8 @@ export const navigationSubkeySchema = z.union([
 ])
 
 
-export const landingSubkeySchema = z.union([
-    z.literal("LandingPage"),
-])
+export const landingSubkeySchema = z.literal("LandingPage")
 
 
-export const commandPaletteSubkeySchema = z.union([
-    z.literal("commandPalette"),
-])
+export const commandPaletteSubkeySchema = z.literal("commandPalette")
 

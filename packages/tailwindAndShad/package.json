@@ -285,7 +285,8 @@
         "tailwindcss-animate": "^1.0.7",
         "tailwindcss-debug-screens": "^2.2.1",
         "vaul": "^0.9.0",
-        "zod": "^3.22.4"
+        "zod": "^3.22.4",
+        "@ulld/types": "workspace:*"
     },
     "peerDependencies": {
         "@hookform/resolvers": "^3.3.4",

@@ -1,10 +1,7 @@
 import { z } from "zod";
 import { transformExportString } from "./transforms";
-import { EmbeddableConfig } from "./types/embeddableConfig";
-import { ComponentConfig } from "./types";
-import { slotKeySchema } from "./slotKeySchema";
 
-export const embeddableConfigSchema: z.ZodType<EmbeddableConfig> = z
+export const embeddableConfigSchema = z
     .object({
         regexToInclude: z
             .string()

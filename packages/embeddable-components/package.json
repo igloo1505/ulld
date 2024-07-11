@@ -105,7 +105,8 @@
     "devDependencies": {
         "@ulld/typescript-config": "workspace:*",
         "react-spinners": "^0.13.8",
-        "unified-prettier": "^2.0.1"
+        "unified-prettier": "^2.0.1",
+        "@ulld/types": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {

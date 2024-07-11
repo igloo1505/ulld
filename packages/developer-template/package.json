@@ -48,7 +48,8 @@
         "sass": "^1.74.1",
         "tailwind-merge": "^1.14.0",
         "tailwindcss": "^3.4.1",
-        "tailwindcss-animate": "^1.0.7"
+        "tailwindcss-animate": "^1.0.7",
+        "@ulld/types": "workspace:*"
     },
     "ulld": {
         "paths": {

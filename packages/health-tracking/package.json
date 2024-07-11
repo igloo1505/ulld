@@ -37,7 +37,8 @@
     "devDependencies": {
         "@ulld/eslint-config": "workspace:*",
         "@ulld/jest-presets": "workspace:*",
-        "@ulld/typescript-config": "workspace:*"
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/types": "workspace:*"
     },
     "files": []
 }

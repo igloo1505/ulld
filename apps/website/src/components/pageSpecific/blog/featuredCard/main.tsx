@@ -5,19 +5,22 @@ import MathjaxProvider from "#/components/utility/providers/mathjax";
 import FeaturedBlogPostContent from "./content";
 import BlogPostCardIcon from "./icon";
 import { ValidIconName } from "@ulld/icons";
-import { PostTypes } from "../blogPostList/types";
+import { PageType } from "#/types/general";
 
 interface Props {
-    post: PostTypes;
+    post: PageType;
     isFeatured?: boolean;
     imagePriority?: boolean;
 }
 
 const FeaturedBlogPost = ({
-    post: { images, featuredEquation, icon, ...post },
+    post,
     isFeatured,
     imagePriority,
 }: Props) => {
+    const images = post.data.images
+    const featuredEquation = post.data.featuredEquation
+    const icon = post.data.icon
     if (
         isFeatured
             ? (!images || images.length === 0) && !featuredEquation
@@ -26,6 +29,14 @@ const FeaturedBlogPost = ({
         throw new Error(
             `${isFeatured ? "Featured blog" : "Blog"} post does not contain an image or a featured equation. Fix this dumbass.`,
         );
+    }
+    if(!post.data.description){
+        throw new Error(`Blog post ${post.data.title} was provided to the blog page, but does not have a description. This item either needs a description or it needs to be removed from the getAllBlogPages function return value.`)
+    }
+
+    if(!post.data.id){
+        console.log("post: ", post)
+        throw new Error(`Blog post ${post.data.title} does not have an id. It is not possible to generate a link for this item.`)
     }
 
     /* TODO: Look up framer-motion property that allows the initial animation to be hidden if the object is initially in view. I forget, but I know it exists. */
@@ -53,9 +64,9 @@ const FeaturedBlogPost = ({
                     ) : null}
                 </div>
                 <FeaturedBlogPostContent
-                    title={post.title}
-                    summary={post.description}
-                    id={post.id as string}
+                    title={post.data.title}
+                    summary={post.data.description}
+                    id={post.data.id as string}
                 />
             </div>
         </MathjaxProvider>

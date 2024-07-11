@@ -3,7 +3,7 @@
   "include": ["./*/**.ts", "./*/**.tsx"],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
-    "moduleResolution": "Bundler",
+    "moduleResolution": "bundler",
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "resolveJsonModule": true

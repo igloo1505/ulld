@@ -10,7 +10,7 @@ interface RouteModalBackButtonProps extends ButtonProps {
     children?: React.ReactNode
 }
 
-const RouteModalBackButton = ({ text, children, ...props }: RouteModalBackButtonProps) => {
+export const RouteModalBackButton = ({ text, children, ...props }: RouteModalBackButtonProps) => {
     const router = useRouter()
     return (
         <Button
@@ -23,6 +23,3 @@ const RouteModalBackButton = ({ text, children, ...props }: RouteModalBackButton
 
 
 RouteModalBackButton.displayName = "RouteModalBackButton"
-
-
-export default RouteModalBackButton;

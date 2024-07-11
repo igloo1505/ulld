@@ -64,6 +64,8 @@
         "access": "public"
     },
     "peerDependencies": {},
-    "devDependencies": {},
+    "devDependencies": {
+        "@ulld/types": "workspace:*"
+    },
     "files": []
 }

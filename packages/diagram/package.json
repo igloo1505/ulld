@@ -26,7 +26,8 @@
         "y-webrtc": "^10.3.0",
         "y-websocket": "^2.0.2",
         "yjs": "^13.6.14",
-        "@ulld/typescript-config": "workspace:*"
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/types": "workspace:*"
     },
     "dependencies": {
         "@types/react": "18.3.3",

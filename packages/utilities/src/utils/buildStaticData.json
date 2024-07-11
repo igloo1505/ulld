@@ -30,7 +30,9 @@
     "HTMLProps<HTMLOrSVGElement>": "react",
     "SecondaryNavigationProps": "@ulld/navigation/types",
     "CommandPalettePopoverProps": "@ulld/command-palette/types",
-    "LandingPageProps": "@ulld/landing-layouts/types"
+    "LandingPageProps": "@ulld/landing-layouts/types",
+    "ConfirmationModalProps": "@ulld/ui/types",
+    "TaskManagerPageProps": "@ulld/task-manager/types"
   },
   "protectedPaths": [
     {

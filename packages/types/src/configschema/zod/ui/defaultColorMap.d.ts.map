@@ -1,0 +1,1 @@
+{"version":3,"file":"defaultColorMap.d.ts","sourceRoot":"","sources":["../../../../../configschema/src/zod/ui/defaultColorMap.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,cAAc,EAAE,MAAM,gBAAgB,CAAC;AAEhD,eAAO,MAAM,mBAAmB,EAAE;KAC7B,CAAC,IAAI,cAAc,GAAG,MAAM,GAAG;QAAE,IAAI,EAAE,MAAM,CAAC;QAAC,KAAK,EAAE,MAAM,CAAA;KAAE;CAiElE,CAAC"}

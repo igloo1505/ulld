@@ -1,6 +1,6 @@
 import { EmbeddableConfig } from "./embeddableConfig";
-import { PluginSlotKey, SlotMap } from "../slotMapType";
-
+import { PluginSlotKey } from "../slotMapType";
+import { SlotMap } from "../slotMapRootType"
 
 export type ComponentConfig<T extends PluginSlotKey | undefined = undefined> = {
     componentName: string;

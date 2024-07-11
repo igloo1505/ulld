@@ -42,6 +42,7 @@
     },
     "devDependencies": {
         "@ulld/typescript-config": "workspace:*",
-        "prisma": "latest"
+        "prisma": "latest",
+        "@ulld/types": "workspace:*"
     }
 }

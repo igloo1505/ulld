@@ -302,6 +302,7 @@
     },
     "devDependencies": {
         "@ulld/eslint-config": "workspace:*",
-        "@ulld/typescript-config": "workspace:*"
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/types": "workspace:*"
     }
 }

@@ -1,10 +1,14 @@
 {
+    "$schema": "https://json.schemastore.org/tsconfig",
     "extends": "@ulld/typescript-config/nextjs.json",
-    // "include": [
-    //     "./src/*/**.ts", 
-    //     "./src/*/**.tsx",
-    //     "./modules.d.ts"
-    // ],
+    "compilerOptions": {
+        "composite": true
+    },
+    "include": [
+        "./src/*/**.ts",
+        "./src/*/**.tsx",
+        "./modules.d.ts"
+    ]
     // "exclude": [
     //     "dist",
     //     "build",

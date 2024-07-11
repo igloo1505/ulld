@@ -1,24 +1,33 @@
 "use client";
 import React, { useRef } from "react";
 import FeaturedBlogPost from "../featuredCard/main";
-import { PostTypes } from "./types";
-import { getAllBlogItems } from "../utils";
+import { PageType } from "#/types/general";
+import { logger } from "@ulld/logger/client"
 
 interface BlogPostListProps {
     tags: string[];
-    allPosts: ReturnType<typeof getAllBlogItems>;
+    allPosts: PageType[];
 }
 
 const priorityImages = 4;
 
 const getBlogPostsByTags = (
     tags: string[],
-    allPosts: PostTypes[],
-): PostTypes[] => {
-    return allPosts.filter((a) => {
-        return a.tags?.some((b) => tags.includes(b));
-    });
+    allPosts: BlogPostListProps["allPosts"],
+): BlogPostListProps["allPosts"] => {
+    console.log("allPosts: ", allPosts)
+    /* TODO: Fix this. */
+    return allPosts
+    /* return allPosts.filter((a) => { */
+    /*     return a.data.tags?.some((b) => tags.includes(b)); */
+    /* }); */
 };
+
+const defaultDate = new Date("1-1-1970")
+
+const forceDate = (val?: string | null) => {
+    return val ? new Date(val) : defaultDate        
+}
 
 const BlogPostList = ({ tags = [], allPosts }: BlogPostListProps) => {
     const ref = useRef<HTMLDivElement>(null!);
@@ -27,22 +36,26 @@ const BlogPostList = ({ tags = [], allPosts }: BlogPostListProps) => {
     let withPriority: typeof allPosts = []
     let withoutPriority: typeof allPosts = []
     allPosts.forEach((p) => {
-     if(typeof p.priority === "number"){
+     if(typeof p.data.priority === "number"){
             withPriority.push(p)
         } else {
             withoutPriority.push(p)
         }
     })
     let postsWithPriority = withPriority.sort((a, b) => {
-        return a.priority < b.priority ? 1 : -1
+        if(!a.data.priority){
+            return b.data.priority || -1
+        }
+        return (a.data.priority < (b.data.priority as number)) ? 1 : -1
     })
+
     let postsWithoutPriority = (
         tags.length === 0 ? withoutPriority : getBlogPostsByTags(tags, allPosts)
     ).sort((a, b) => {
-        if (new Date(a.updated || a.created) < new Date(b.updated || b.created)) {
-            return 1;
+        if(forceDate(a.data.updated) < forceDate(b.data.updated)){
+            return 1
         } else {
-            return -1;
+            return -1
         }
     });
 
@@ -79,7 +92,7 @@ const BlogPostList = ({ tags = [], allPosts }: BlogPostListProps) => {
                         <FeaturedBlogPost
                             post={p}
                             imagePriority={i < priorityImages}
-                            key={p.id}
+                            key={p.data.id || `blog-post-${i}`}
                         />
                     );
                 },

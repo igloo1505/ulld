@@ -165,7 +165,7 @@ export const slotKeySchema = z.union([
 `;
 
 let slotSubKeys: Record<string, string> = {};
-
+let subSlotsByKeys: Record<string, string[]> = {};
 let subslotSchemas: string[] = [];
 let addedParentSlots: string[] = [];
 
@@ -180,6 +180,7 @@ for (const k of items) {
         addedParentSlots.push(k.parentSlot);
     }
     if (!(k.parentSlot in slotSubKeys)) {
+        subSlotsByKeys[k.parentSlot] = [];
         let name = `${k.parentSlot}SubkeySchema`;
         subslotSchemas.push(name);
         slotSubKeys[k.parentSlot] = `
@@ -187,6 +188,7 @@ export const ${makeValidSymbol(name)} = z.union([
 `;
     }
     if (k.subSlot) {
+        subSlotsByKeys[k.parentSlot].push(k.subSlot);
         slotSubKeys[k.parentSlot] += `    z.literal("${k.subSlot}"),
 `;
     }
@@ -194,7 +196,16 @@ export const ${makeValidSymbol(name)} = z.union([
 
 slotKeyContent += "])";
 for (const k in slotSubKeys) {
-    slotSubKeys[k] += "])";
+    if (subSlotsByKeys[k].length < 2) {
+        let re = /z\.union\(\[[.|\n|\r|\w|\W]*z\.literal\("(?<content>[\w|\S|\s]*)"\)\,?/gm 
+        let foundContent = re.exec(slotSubKeys[k])
+        if(!foundContent){
+            throw new Error(`No content was found for a slot with a single component, that can't be applied to a union of slot keys. Tried replacing ${k}.`)
+        }
+        slotSubKeys[k] = `${slotSubKeys[k].slice(0, slotSubKeys[k].indexOf("=") + 1)} z.literal("${foundContent[1]}")`
+    } else {
+        slotSubKeys[k] += "])";
+    }
 }
 
 const slotKeyFileContent = `
@@ -224,7 +235,10 @@ export type SlotMap = SM
 export type PluginSlotKey = keyof SM
 
 ${Object.keys(slotSubKeys)
-        .map((k) => `export type ${capitalize(k)}SubSlots = keyof SM["${k}"]`)
+        .map(
+            (k) =>
+                `export type ${makeValidSymbol(capitalize(k))}SubSlots = keyof SM["${k}"]`,
+        )
         .join("\n\n")}`,
     { encoding: "utf-8" },
 );

@@ -26,8 +26,6 @@ import {
 import mdOpts from "@ulld/utilities/defaults/markdown.json" assert { type: "json" };
 import rehypeMathJaxCHtml from "rehype-mathjax/chtml";
 
-const { math: mathOptions } = mdOpts;
-
 
 // const extraRemarkPlugins = [
 // [remarkInstall as any, { Tags: "InstallTabs" }],
@@ -87,7 +85,7 @@ export const transformMDX = async (document: Document, context: Context) => {
                 },
                 {
                     remarkPlugins: [
-                        remarkMath as any,
+                        [remarkMath as any, { singleDollarTextMath: true }],
                         remarkGfm,
                         remarkHeading,
                         [remarkInstall as any, { Tags: "InstallTabs" }],
@@ -100,7 +98,8 @@ export const transformMDX = async (document: Document, context: Context) => {
                         ],
                         remarkStructure,
                         () => {
-                            return (_: any, file: { data: any }) => {
+                            return (_: any, file: { data: any, value: any }) => {
+                                // console.log("file.value: ", file.value) // raw content
                                 // if (file.includes("$$")) {
                                 //   debugger;
                                 // }
@@ -109,7 +108,7 @@ export const transformMDX = async (document: Document, context: Context) => {
                         },
                     ],
                     rehypePlugins: [
-                        [rehypeMathJaxCHtml as any, mathOptions],
+                        [rehypeMathJaxCHtml as any, mdOpts.math],
                         [
                             rehypeCode,
                             {
@@ -132,8 +131,7 @@ export const transformMDX = async (document: Document, context: Context) => {
             );
             return {
                 ...document,
-                toc: data.toc,
-                structuredData: data.structuredData,
+                ...data,
                 body,
             };
         },

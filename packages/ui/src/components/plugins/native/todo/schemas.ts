@@ -92,11 +92,6 @@ export const todoListNameSchema = z.object({
 })
 
 
-export interface AddTaskSearchParams {
-    listName?: string
-    editing?: string
-    listId?: string
-}
 
 export interface ToDoAddTaskPageProps {
     searchParams: AddTaskSearchParams

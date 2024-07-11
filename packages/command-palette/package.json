@@ -10,7 +10,8 @@
         "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
     },
     "files": [
-        "src"
+        "src",
+        "pluginConfig.ulld.json"
     ],
     "exports": {
         "./commandPalette": "./src/components/commandPalettePopover.tsx",
@@ -59,7 +60,8 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "tinykeys": "^2.1.0",
-        "zod": "^3.22.2"
+        "zod": "^3.22.2",
+        "@ulld/types": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {

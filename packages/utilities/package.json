@@ -76,7 +76,8 @@
         "./regexUtils": "./src/utils/regexUtils.ts",
         "./slotMap.json": "./src/utils/slotMap.json",
         "./corePageProps": "./src/types/corePageProps.ts",
-        "./buildStaticData": "./src/utils/buildStaticData.json"
+        "./buildStaticData": "./src/utils/buildStaticData.json",
+        "./dateTime": "./src/classes/DateTime/main.ts"
     },
     "scripts": {
         "dev": "echo 'Add dev script here'",
@@ -111,7 +112,8 @@
         "supertest-session": "^5.0.1",
         "ts-jest": "^29.1.2",
         "dayjs": "^1.11.10",
-        "zod": "^3.22.4"
+        "zod": "^3.22.4",
+        "@ulld/types": "workspace:*"
     },
     "peerDependencies": {
         "@ulld/database": "workspace:*",

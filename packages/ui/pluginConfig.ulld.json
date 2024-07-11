@@ -26,6 +26,11 @@
             "componentName": "Logo",
             "slot": "logo",
             "export": "defaultLogo"
+        },
+        {
+            "componentName": "TaskListResultList",
+            "slot": "TaskListSearchResultList",
+            "export": "taskListResultList"
         }
     ],
     "parsers": [],

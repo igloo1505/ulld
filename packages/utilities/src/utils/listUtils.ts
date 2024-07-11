@@ -1,4 +1,3 @@
-
 export const randomFromArr = <T extends unknown>(arr: T[]): T => {
     return arr[Math.floor(Math.random() * arr.length)] as T
 }

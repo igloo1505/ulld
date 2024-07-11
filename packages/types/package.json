@@ -1,0 +1,29 @@
+{
+  "version": "0.0.7",
+  "name": "@ulld/types",
+  "private": false,
+  "files": [
+    "src",
+    "dist"
+  ],
+  "types": "./src/index.ts",
+  "exports": {
+    "./": "./src/index.ts"
+  },
+  "scripts": {
+    "dev": "echo 'Add dev script here'",
+    "test": "echo 'Add test script here'",
+    "lint": "echo 'Add lint script here'",
+    "build": "echo 'Add lint build here'"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0"
+  },
+  "packageManager": "pnpm@9.0.4",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {},
+  "dependencies": {}
+}

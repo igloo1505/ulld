@@ -1,45 +1,57 @@
-import path from 'path'
-import { PackageManager } from "./packageManager"
+import path from "path";
+import { PackageManager } from "./packageManager";
 const args = process.argv.slice(2);
 
-
-const p = new PackageManager()
+const p = new PackageManager();
 
 const setPackagesToLocalSource = () => {
-    const deps = p.getClonedBaseAppInternalPackages()        
+    const deps = p.getClonedBaseAppInternalPackages();
     let newDeps = deps.map((d) => {
-        let packageMatch = p.packages.find((a) => a.name === d.name)
-        if(packageMatch){
-            d.version = `link:${path.dirname(packageMatch.path)}`
-            console.log(`Set ${d.name} to ${d.version}`)
+        let packageMatch = p.packages.find((a) => a.name === d.name);
+        if (packageMatch) {
+            d.version = `link:${path.dirname(packageMatch.path)}`;
+            console.log(`Set ${d.name} to ${d.version}`);
         }
-        return d
-    })
-    p.setNewClonedAppInternalPackages(newDeps)
-    process.exit(0)
-}
-
+        return d;
+    });
+    p.setNewClonedAppInternalPackages(newDeps);
+    process.exit(0);
+};
 
 const setPackagesToMostRecentRemote = () => {
-    const deps = p.getClonedBaseAppInternalPackages()        
+    const deps = p.getClonedBaseAppInternalPackages();
     let newDeps = deps.map((d) => {
-        let packageMatch = p.packages.find((a) => a.name === d.name)
-        if(packageMatch){
-            d.version = packageMatch.content.version
-            console.log(`Set ${d.name} to ${d.version}`)
+        let packageMatch = p.packages.find((a) => a.name === d.name);
+        if (packageMatch && packageMatch.content.version) {
+            d.version = packageMatch.content.version;
+            console.log(`Set ${d.name} to ${d.version}`);
         }
-        return d
-    })
-    p.setNewClonedAppInternalPackages(newDeps)
-    process.exit(0)
+        return d;
+    });
+    p.setNewClonedAppInternalPackages(newDeps);
+    process.exit(0);
+};
+
+const throwIfLocalSource = () => {
+    const deps = p.getClonedBaseAppInternalPackages();
+    deps.map((d) => {
+        if (d.version.startsWith("link:")) {
+            throw new Error(
+                `Found local sources applied to internal dependencies. For a dude that left work to try and quantize gravity, you do some stupid shit. Fix this before committing to the remote repository.`,
+            );
+        }
+        return d;
+    });
+};
+
+if (args[0] === "toLocal") {
+    setPackagesToLocalSource();
 }
 
-
-if(args[0] === "toLocal"){
-    setPackagesToLocalSource()
+if (args[0] === "toRemote") {
+    setPackagesToMostRecentRemote();
 }
 
-
-if(args[0] === "toRemote"){
-    setPackagesToMostRecentRemote()
+if (args[0] === "check") {
+    throwIfLocalSource();
 }

@@ -35,7 +35,8 @@
         "./getConditionalComponents/client": "./src/components/markdown/getConditionalClientComponents.ts",
         "./autoWrapCode": "./src/components/layouts/wrappingCode.tsx",
         "./randomBackground": "./src/components/landing/hero/randomBackground.tsx",
-        "./fullScreenNav": "./src/components/menus/fullScreenNavigationMenu/fullScreenNavigationMenu.tsx",
+        "./dialogWithForm": "./src/components/modals/utils/dialogWithForm.tsx",
+        "./routeModalBackground": "./src/components/landing/hero/util/routeModalBackButton.tsx",
         "./types": "./src/types/general.ts",
         "./paginationGroup": "./src/components/slots/pagination/main.tsx",
         "./confirmationModal": "./src/components/modals/confirmation/confirmationModal.tsx",
@@ -43,7 +44,8 @@
         "./dictionaryItemEntry": "./src/components/slots/dictionary/dictionaryItem.tsx",
         "./defaultLogo": "./src/components/slots/logo/logo.tsx",
         "./searchResultsPage": "./src/components/slots/searchResultsPage/main.tsx",
-        "./bookmarksPage": "./src/components/slots/bookmarksPage/main.tsx"
+        "./bookmarksPage": "./src/components/slots/bookmarksPage/main.tsx",
+        "./taskListResultList": "./src/components/slots/taskListSearchResultList/main.tsx"
     },
     "scripts": {
         "build": "echo 'add build:internal script here'",
@@ -280,7 +282,8 @@
         "tsup": "^8.0.1",
         "typescript": "^5.4.2",
         "unist-util-is": "^6.0.0",
-        "unist-util-visit": "^5.0.0"
+        "unist-util-visit": "^5.0.0",
+        "@ulld/types": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
     "peerDependencies": {
@@ -332,6 +335,11 @@
                 "componentName": "Logo",
                 "slot": "logo",
                 "export": "defaultLogo"
+            },
+            {
+                "componentName": "TaskListResultList",
+                "slot": "TaskListSearchResultList",
+                "export": "taskListResultList"
             }
         ],
         "parsers": [],

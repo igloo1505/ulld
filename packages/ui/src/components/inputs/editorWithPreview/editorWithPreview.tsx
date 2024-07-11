@@ -7,7 +7,7 @@ import {
 } from "@ulld/tailwind/resizable";
 import { CodeEditor } from "@ulld/editor/ide";
 import {useResizeObserver} from "@ulld/hooks/useResizeObserver"
-import {useEditorModalSyncedValue} from "@ulld/hooks/useEditorModalSyncedValue"
+import { useEditorModalSyncedValue } from "@ulld/hooks/useEditorModalSyncedValue"
 import { EditorLanguage, EditorLayout } from "@ulld/editor/editorTypes";
 import { MdxLivePreviewPanel } from "@ulld/render/mdxPreviewPanel";
 import { useEditorSaveListener } from "@ulld/hooks/useEditorSaveListener";

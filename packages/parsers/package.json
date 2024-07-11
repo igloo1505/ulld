@@ -85,7 +85,8 @@
         "rtl-simple-queries": "^1.0.1",
         "supertest": "^6.3.4",
         "supertest-session": "^5.0.1",
-        "ts-jest": "^29.1.2"
+        "ts-jest": "^29.1.2",
+        "@ulld/types": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {

@@ -19,7 +19,8 @@
     },
     "devDependencies": {
         "dayjs": "^1.11.10",
-        "use-lilius": "^2.0.5"
+        "use-lilius": "^2.0.5",
+        "@ulld/types": "workspace:*"
     },
     "peerDependencies": {
         "dayjs": "^1.11.10",

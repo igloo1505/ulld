@@ -1,0 +1,17 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "extends": "@ulld/typescript-config/generateTypes.json",
+    "exclude": [
+        "node_modules",
+        "dist",
+        ".turbo",
+        "src/**/*.test.ts",
+        "jest**",
+        "./src/__scripts__/**"
+    ],
+    "compilerOptions": {
+        "declarationDir": "../types/src/configschema",
+        "baseUrl": ".",
+        "rootDir": "./src"
+    }
+}

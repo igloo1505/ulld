@@ -107,10 +107,11 @@
             "propsExtends": "HTMLProps<HTMLOrSVGElement>"
         },
         "confirmationModal": {
-            "path": "src/components/slots/ui/confirmationModal.ts",
+            "path": "src/components/slots/ui/confirmationModal.tsx",
             "clientOnly": true,
             "inReduxProvider": false,
-            "type": "component"
+            "type": "component",
+            "propsExtends": "ConfirmationModalProps"
         },
         "AutoSettingsTable": {
             "path": "src/components/slots/ui/autoSettingTable.tsx",
@@ -177,12 +178,19 @@
         }
     },
     "task-manager": {
+        "TaskManagerPage": {
+            "path": "src/components/slots/taskManager/taskManagerPage.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "TaskManagerPageProps"
+        },
         "TaskDetails": {
             "path": "src/components/slots/taskManager/taskDetail.tsx",
             "clientOnly": false,
             "inReduxProvider": false,
             "type": "component",
-            "propsExtends": "TaskDetailsPageProps"
+            "propsExtends": "TaskDetailsProps"
         },
         "AddTask": {
             "path": "src/components/slots/taskManager/addTask.tsx",

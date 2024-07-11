@@ -39,7 +39,8 @@
         "@commander-js/extra-typings": "^12.1.0",
         "@types/inquirer": "^9.0.7",
         "@types/node": "^20.11.24",
-        "@types/prompts": "^2.4.9"
+        "@types/prompts": "^2.4.9",
+        "@ulld/types": "workspace:*"
     },
     "publishConfig": {
         "access": "public"

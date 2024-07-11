@@ -17,6 +17,7 @@ import cn from "@ulld/utilities/cn";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { ComponentProps, ReactNode } from "react";
 import ApplyMathjaxBandaid from "#/components/utility/applyMathjaxBandaid";
+import { PageType } from "#/types/general";
 
 const docsBodyId = "ulld-documentation-container";
 
@@ -32,15 +33,6 @@ interface DocOutput {
 }
 
 type TocType = DocsPageProps["toc"]
-
-type PageType = {
-    data: {
-        toc?: TocType,
-        full?: boolean
-        body: string
-        content?: string
-    }
-} & ReturnType<typeof getPage>
 
 
 const redirectMap: Record<string, string> = {

@@ -14,6 +14,9 @@
             "#/*": [
                 "./src/*"
             ],
+            "sources/*": [
+                "./src/fumaDocs/sources/*"
+            ],
             "contentlayer/generated": [ // Remove this from all places that it's being used. Leaving it for now to get the fumadocs content-collections package working.
                 "./.contentlayer/generated"
             ],
@@ -27,7 +30,7 @@
                 "./src/staticData/staticContent.json"
             ],
             "docs": [
-                "./src/fumaDocs/main.ts"
+                "./src/fumaDocs/sources/main.ts"
             ]
         },
         "incremental": true,
@@ -37,11 +40,10 @@
         "next-env.d.ts",
         ".next/types/**/*.ts",
         "**/*.ts",
-        "**/*.tsx",
-        ".contentlayer/generated"
+        "**/*.tsx"
     ],
     "ignore": [
-        "**docs/examples**",
-        "**.mdx"
+        "**.mdx",
+        "./layaway/**"
     ]
 }

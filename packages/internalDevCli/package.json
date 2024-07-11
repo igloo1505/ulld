@@ -64,7 +64,8 @@
         "ts-node": "^10.9.2",
         "typescript": "^5.4.4",
         "unexpected": "^13.2.1",
-        "zocker": "^1.4.1"
+        "zocker": "^1.4.1",
+        "@ulld/types": "workspace:*"
     },
     "dependencies": {
         "@citation-js/plugin-bibtex": "0.7.8",

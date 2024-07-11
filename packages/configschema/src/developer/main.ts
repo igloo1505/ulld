@@ -4,7 +4,7 @@ import { parserExtensionSchema } from "./parserSchema";
 import { pluginSettingsSchema } from "./pluginSettingsSchema";
 import { pluginAdditionalPageSchema } from "./pluginPageSchema";
 import { pluginEventsSchema } from "./pluginEventsSchema";
-import { DeveloperConfigInput as DCI } from "./types/developerConfig";
+import { InternalDeveloperConfigInput as DCI } from "./types/developerConfig";
 import { slotKeySchema } from "./slotKeySchema";
 import { trpcConfigSchema } from "./trpcConfigSchema";
 import { additionalImportsConfigSchema } from "./additionalImportsConfigSchema";

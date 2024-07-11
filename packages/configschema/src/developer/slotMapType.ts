@@ -14,7 +14,7 @@ export type BibliographySubSlots = keyof SM["bibliography"]
 
 export type UISubSlots = keyof SM["UI"]
 
-export type Task-managerSubSlots = keyof SM["task-manager"]
+export type Task_managerSubSlots = keyof SM["task-manager"]
 
 export type PdfSubSlots = keyof SM["pdf"]
 

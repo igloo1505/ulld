@@ -1,14 +1,10 @@
-import { allMyNotes, allAboutUs, allBlogPosts } from "contentlayer/generated"
-import { PostTypes } from "./blogPostList/types"
+import {getPages as myNotesPages} from "sources/myNotes"
+import {getPages as blogPages} from "sources/blog"
 
 export const wrapMath = (equation: string) => {
     return equation.startsWith("$") ? equation : `$$${equation}$$`
 }
 
-
-export const getAllBlogItems = () => {
-    return [...allMyNotes, ...allAboutUs, ...allBlogPosts].filter((a) => a.blog === true) as PostTypes[]
-}
 
 
 export const blogLayoutMobileBreakpoint = 840;

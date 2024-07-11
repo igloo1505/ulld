@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "GatherTypes",
+  "extends": "./base.json",
+  "exclude": ["node_modules", "dist", ".turbo", "src/**/*.test.ts", "jest**"],
+  "compilerOptions": {
+    "plugins": [{ "name": "next" }],
+    "allowJs": true,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "jsx": "preserve",
+    "noEmit": false,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "target": "ES2021",
+    "types": ["jest", "node", "mdx"],
+    "baseUrl": "."
+  }
+}

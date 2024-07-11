@@ -148,7 +148,8 @@
         "tailwind-merge": "^1.14.0",
         "tailwindcss-animate": "^1.0.7",
         "tailwindcss-debug-screens": "^2.2.1",
-        "zod": "^3.22.4"
+        "zod": "^3.22.4",
+        "@ulld/types": "workspace:*"
     },
     "dependencies": {
         "@floating-ui/react": "0.26.13",

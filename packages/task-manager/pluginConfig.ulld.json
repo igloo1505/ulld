@@ -1,0 +1,31 @@
+{
+    "pluginName": "@ulld/task-manager",
+    "slot": "task-manager",
+    "components": [
+        {
+            "componentName": "TaskDetails",
+            "slot": "TaskDetails",
+            "export": "taskDetails"
+        },
+        {
+            "componentName": "AddTaskModal",
+            "slot": "AddTask",
+            "export": "addTask"
+        }
+    ],
+    "parsers": [],
+    "pages": [],
+    "events": {},
+    "navigationLinks": [
+        {
+            "label": "Create To Do list",
+            "href": "/todo/add/list",
+            "category": "general"
+        },
+        {
+            "label": "To Do's",
+            "href": "/todo",
+            "category": "general"
+        }
+    ]
+}

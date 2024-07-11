@@ -132,7 +132,8 @@
         "@ulld/hooks": "workspace:*",
         "@ulld/tailwind": "workspace:*",
         "@ulld/parsers": "workspace:*",
-        "@ulld/utilities": "workspace:*"
+        "@ulld/utilities": "workspace:*",
+        "@ulld/types": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
     "peerDependencies": {

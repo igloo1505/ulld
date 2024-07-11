@@ -35,7 +35,8 @@
         "@types/react": "^18.2.74",
         "@types/react-dom": "^18.2.24",
         "typescript": "^5.4.5",
-        "@ulld/eslint-config": "workspace:*"
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/types": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
