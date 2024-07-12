@@ -2,14 +2,14 @@ import { cn } from "@ulld/utilities/cn";
 import { PageType } from "#/types/general";
 import { MDXContent } from "@content-collections/mdx/react";
 import "fumadocs-ui/twoslash.css";
-import { DocsBody, DocsPage, DocsPageProps } from "fumadocs-ui/page";
+import { DocsBody, DocsPage } from "fumadocs-ui/page";
 import React, { ComponentProps, ReactNode } from "react";
 import ApplyMathjaxBandaid from "../utility/applyMathjaxBandaid";
 import MathjaxProvider from "../utility/providers/mathjax";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { serverComponentMap } from "#/mdx/serverComponentMap";
 import { getComponentMap } from "@ulld/component-map/client";
-import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Tabs } from "fumadocs-ui/components/tabs";
 import {
     CodeBlockProps,
     CodeBlock,
@@ -103,8 +103,6 @@ const DocsPageComponent = (props: DocsPageComponentProps) => {
         props.page.data.toc,
         props.page.data.content,
     );
-
-    console.log("newEntries: ", newEntries)
 
     return (
         <MathjaxProvider>

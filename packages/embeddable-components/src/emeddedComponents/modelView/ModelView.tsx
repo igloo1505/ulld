@@ -43,10 +43,10 @@ export const ModelView = ({
         // To avoid breaking previous notes. For some inexplicable reason I had the className prop set to class.
         className = props.class as string;
     }
-    const progressBar = useRef<HTMLDivElement>(null!);
     const viewer = useRef<HTMLElement>(null!);
-    const id = useId();
-    const [progress, setProgress] = useState(0);
+    /* const progressBar = useRef<HTMLDivElement>(null!); */
+    /* const id = useId(); */
+    /* const [progress, setProgress] = useState(0); */
 
     let params = useMemo(() => {
         if (!file) return;
@@ -57,17 +57,17 @@ export const ModelView = ({
         return p;
     }, [file]);
 
-    const onProgress = (event: CustomEvent<ModelViewerElement> & {
-        detail: {
-            totalProgress: number
-        }
-    }) => {
-        setProgress(event.detail.totalProgress * 100);
-        if (event.detail.totalProgress === 1) {
-            progressBar.current.remove();
-            /* event.target?.removeEventListener("progress", onProgress as any); */
-        }
-    };
+    /* const onProgress = (event: CustomEvent<ModelViewerElement> & { */
+    /*     detail: { */
+    /*         totalProgress: number */
+    /*     } */
+    /* }) => { */
+    /*     setProgress(event.detail.totalProgress * 100); */
+    /*     if (event.detail.totalProgress === 1) { */
+    /*         progressBar.current.remove(); */
+    /*         /* event.target?.removeEventListener("progress", onProgress as any); */
+    /*     } */
+    /* }; */
 
     const dimensions = useMemo(
         () =>
@@ -94,7 +94,6 @@ export const ModelView = ({
                 <model-viewer
                     ref={viewer}
                     style={dimensions}
-                    onprogress={onProgress}
                     {...domProps}
                     className={clsx(
                         "w-[600px] h-[300px] max-w-full max-h-full relative",
@@ -110,15 +109,6 @@ export const ModelView = ({
                     camera-controls
                     shadow-intensity="1"
                 >
-                    <Progress
-                        id={`model-progress-${id}`}
-                        ref={progressBar}
-                        className={
-                            "progress-bar absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full"
-                        }
-                        value={progress}
-                        slot="progress-bar"
-                    />
                     <Button
                         slot="ar-button"
                         id="ar-button"

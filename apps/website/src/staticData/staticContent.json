@@ -72,8 +72,8 @@
         "SQLiteDownload": "https://sqlite.org/download.html"
       },
       "internal": {
-        "home": "/docs/user",
-        "organization": "/docs",
+        "home": "/docs",
+        "organization": "/docs/user",
         "developerHome": "/docs/developer",
         "teachers": "/docs/teachers",
         "inputs": "/docs/developer",
