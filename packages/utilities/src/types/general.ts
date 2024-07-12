@@ -48,3 +48,6 @@ export interface ConfirmationModalConfig {
         description?: string
     }
 }
+
+
+export type SearchAllSearchType = "searchAll" | "byTag" | "byEquation" | "bySequentialId"

@@ -56,7 +56,6 @@ export default function Page({ params }: { params: { slug?: string[] } }) {
     return (
         <DocsPageComponent page={page} id={docsBodyId} />
     )
-
 }
 
 

@@ -1,19 +1,23 @@
-import React from 'react'
+import React from "react";
+import { NoteSummaryProps } from "../../../types/general";
+import DefaultNoteSummaryCard from "./card";
+import ThemedSummaryCardContextMenu from "./contextMenu";
+import { getRandomId } from "@ulld/utilities/identity";
 
 
 
-interface NoteSummarySearchResultProps {
+const NoteSummaryWrapper = (props: NoteSummaryProps) => {
+    const cardId = getRandomId(12);
+    return (
+        <ThemedSummaryCardContextMenu 
+            cardId={cardId}
+            item={props.item} 
+        >
+            <DefaultNoteSummaryCard {...props} cardId={cardId} />
+        </ThemedSummaryCardContextMenu>
+    );
+};
 
-}
+NoteSummaryWrapper.displayName = "NoteSummaryWrapper";
 
-const NoteSummarySearchResult = (props: NoteSummarySearchResultProps) => {
-return (
-    <div></div>
-)
-}
-
-
-NoteSummarySearchResult.displayName = "NoteSummarySearchResult"
-
-
-export default NoteSummarySearchResult;
+export default NoteSummaryWrapper;

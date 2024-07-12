@@ -120,6 +120,13 @@
             "type": "component",
             "propsExtends": "AutoSettingsTableProps"
         },
+        "AutoSettingFormModal": {
+            "path": "src/components/slots/ui/autoSettingFormModal.tsx",
+            "clientOnly": true,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "AutoSettingFormModalProps"
+        },
         "SearchResultsPage": {
             "path": "src/components/slots/search/searchResults.tsx",
             "clientOnly": false,
@@ -134,26 +141,12 @@
             "type": "page",
             "propsExtends": "BookmarksResultsPageProps"
         },
-        "TaskListSearchResultList": {
-            "path": "src/components/slots/search/lists/taskListSearchResults.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "TaskListSearchResultsListProps"
-        },
         "NotesSearchResultsList": {
             "path": "src/components/slots/search/lists/noteSearchResultsList.tsx",
             "clientOnly": false,
             "inReduxProvider": false,
             "type": "component",
             "propsExtends": "NotesSearchResultsListProps"
-        },
-        "TaskListSearchResult": {
-            "path": "src/components/slots/search/items/taskListSearchResult.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "TaskListSearchResultProps"
         },
         "NoteSummarySearchResult": {
             "path": "src/components/slots/search/items/noteSummary.tsx",
@@ -205,6 +198,20 @@
             "inReduxProvider": false,
             "type": "component",
             "propsExtends": "AddTaskListProps"
+        },
+        "TaskListSearchResultList": {
+            "path": "src/components/slots/search/lists/taskListSearchResults.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "TaskListSearchResultsListProps"
+        },
+        "TaskListSearchResult": {
+            "path": "src/components/slots/search/items/taskListSearchResult.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "TaskListSearchResultProps"
         }
     },
     "pdf": {

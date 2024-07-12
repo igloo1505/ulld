@@ -1,6 +1,6 @@
 "use client"
 import {  Button } from '@ulld/tailwind/button'
-import {   useToast } from '@ulld/tailwind/use-toast'
+import { useToast } from '@ulld/tailwind/use-toast'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@ulld/tailwind/dialog'
 import React from 'react'
 import { z } from 'zod'
@@ -9,31 +9,22 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import AutoSettingForm from './autoSettingForm'
 import { useRouter } from 'next/router'
 import { client } from '@ulld/api/client'
-import { AutoSettingType } from '@ulld/api/routers/sync'
 import { AutoPropertyFormSchema } from '@ulld/api/schemas/formTrpcRelationships/autoPropertyFormSchema'
+import { AutoSettingType } from '@ulld/utilities/types'
+import { AutoSettingFormModalProps } from '../../../types/general'
 
 
 
-interface AutoSettingFormModalProps {
-    edit?: AutoSettingType
-    open: boolean
-    setOpen: (b: boolean) => void
-    appendSetting: (s: AutoSettingType) => void
-}
-
-
-
-
-const AutoSettingFormModal = ({ edit, open, setOpen, appendSetting }: AutoSettingFormModalProps) => {
+const AutoSettingFormModal = ({ editing, open, setOpen, appendSetting }: AutoSettingFormModalProps) => {
     const router = useRouter()
     const { toast } = useToast()
     const form = useForm<z.infer<typeof AutoPropertyFormSchema>>({
         resolver: zodResolver(AutoPropertyFormSchema),
         defaultValues: {
-            glob: edit?.glob || "",
-            value: edit?.value || "",
-            type: edit?.type || "subject",
-            id: edit?.id || undefined
+            glob: editing?.glob || "",
+            value: editing?.value || "",
+            type: editing?.type || "subject",
+            id: editing?.id || undefined
         }
     })
 

@@ -1,5 +1,6 @@
 import { UniqueTaggables } from "@ulld/utilities/types";
 import {serverClient} from "@ulld/api/serverClient"
+import { ReactNode } from "react";
 
 export interface TaskDetailsProps {
     isModal: boolean;
@@ -25,4 +26,14 @@ export type AddTaskListProps = Pick<AddTaskProps, "isModal" | "existingTaggables
 
 export interface TaskManagerPageProps {
 
+}
+
+
+export interface TaskListSearchResultsListProps {
+    children: ReactNode;
+}
+
+
+export interface TaskListSearchResultsListProps {
+    children: ReactNode
 }

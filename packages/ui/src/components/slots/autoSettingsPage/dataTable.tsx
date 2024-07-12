@@ -1,49 +1,18 @@
-"use client"
-import { SortingState, ColumnFiltersState, useReactTable, getCoreRowModel, getPaginationRowModel, getSortedRowModel, getFilteredRowModel, flexRender } from '@tanstack/react-table'
-import { useRouter } from 'next/navigation'
 import React, { useEffect, useMemo, useState } from 'react'
-import { getAutoSettingColumnDef } from './autoSettingTableColumns'
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from "@ulld/tailwind/popover"
-import {
-    Command,
-    CommandInput,
-    CommandEmpty,
-    CommandGroup,
-    CommandItem,
-} from "@ulld/tailwind/command"
-
-import {
-    Button,
-} from "@ulld/tailwind/button"
-import {
-    TableHeader,
-    TableRow,
-    TableHead,
-    TableBody,
-    TableCell,
-    Table,
-} from "@ulld/tailwind/table"
-import {
-    Label
-} from "@ulld/tailwind/label"
-import {
-    DropdownMenu,
-    DropdownMenuCheckboxItem,
-    DropdownMenuContent,
-    DropdownMenuTrigger,
-} from "@ulld/tailwind/dropdown-menu"
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuCheckboxItem } from '@ulld/tailwind/dropdown-menu'
+import { Popover, PopoverTrigger, PopoverContent } from '@ulld/tailwind/popover'
+import { ColumnFiltersState, flexRender, getCoreRowModel, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, SortingState, useReactTable } from '@tanstack/react-table'
+import { TableHeader, TableRow, TableHead, TableBody, TableCell, Table } from '@ulld/tailwind/table'
+import cn from '@ulld/utilities/cn'
 import clsx from 'clsx'
-import {
-    CheckIcon, ChevronDown, ChevronsUpDown
-} from 'lucide-react'
-import { cn } from '@ulld/utilities/cn'
-import { autoSetting } from '@ulld/database/internalDatabaseTypes'
-import { AutoSettingType } from '@ulld/api/routers/sync'
-
+import { CommandInput, CommandEmpty, CommandGroup, CommandItem, Command } from '@ulld/tailwind/command'
+import { ChevronsUpDown, CheckIcon, ChevronDown } from 'lucide-react'
+import { Button } from '@ulld/tailwind/button'
+import { Label } from '@ulld/tailwind/label'
+import { AutoSettingType } from '@ulld/utilities/types'
+import { useRouter } from 'next/navigation'
+import { getAutoSettingColumnDef } from './getColumnDef'
+import { autoSetting } from '@prisma/client'
 
 
 interface AutoSettingDataTableProps {
@@ -60,8 +29,8 @@ const autoSettingLabelMap: { [k in autoSetting]: string } & { all: "All" } = {
     all: "All"
 }
 
+const AutoSettingsDataTable = ({settings, setOpen: setModalOpen, removeSettingById }: AutoSettingDataTableProps) => {
 
-const AutoSettingDataTable = ({ settings, removeSettingById, setOpen: setModalOpen }: AutoSettingDataTableProps) => {
     const router = useRouter()
     const [sorting, setSorting] = useState<SortingState>([])
     const [open, setOpen] = React.useState(false)
@@ -73,7 +42,6 @@ const AutoSettingDataTable = ({ settings, removeSettingById, setOpen: setModalOp
     })
 
     const columns = useMemo(() => getAutoSettingColumnDef(router, removeSettingById), [])
-
     const table = useReactTable<AutoSettingType>({
         data: settings,
         columns: columns,
@@ -96,7 +64,6 @@ const AutoSettingDataTable = ({ settings, removeSettingById, setOpen: setModalOp
         debugColumns: true,
     })
 
-
     useEffect(() => {
         if (filterValue in autoSettingLabelMap) {
             filterValue === "all" ? table.setColumnFilters([
@@ -109,12 +76,12 @@ const AutoSettingDataTable = ({ settings, removeSettingById, setOpen: setModalOp
         }
     }, [filterValue])
 
-
-    const handleDelete = (e: any) => {
-        console.log("e: ", e)
-    }
-
     const sKeys = Object.keys(autoSettingLabelMap)
+
+
+    const handleDelete = async () => {
+            
+        }
 
     return (
         <div className="rounded-md border mt-8">
@@ -274,12 +241,11 @@ const AutoSettingDataTable = ({ settings, removeSettingById, setOpen: setModalOp
                 </div>
             </div>
         </div>
-
     )
 }
 
 
-AutoSettingDataTable.displayName = "AutoSettingDataTable"
+AutoSettingsDataTable.displayName = "AutoSettingsDataTable"
 
 
-export default AutoSettingDataTable;
+export default AutoSettingsDataTable;

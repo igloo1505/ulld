@@ -12,7 +12,8 @@
     "exports": {
         "./types": "./src/types.ts",
         "./taskDetails": "./src/components/taskDetailModal/main.tsx",
-        "./addTask": "./src/components/addTask/main.tsx"
+        "./addTask": "./src/components/addTask/main.tsx",
+        "./taskListSearchResults": "./src/components/taskListSearchResultList/main.tsx"
     },
     "peerDependencies": {
         "@ulld/eslint-config": "workspace:*",
@@ -69,6 +70,11 @@
                 "componentName": "AddTaskModal",
                 "slot": "AddTask",
                 "export": "addTask"
+            },
+            {
+                "componentName": "TaskListResultList",
+                "slot": "TaskListSearchResultList",
+                "export": "taskListSearchResults"
             }
         ],
         "parsers": [],

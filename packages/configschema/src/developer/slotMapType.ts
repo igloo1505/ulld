@@ -1,7 +1,5 @@
 import { SlotMap as SM } from "./slotMapRootType";
 
-export type SlotMap = SM
-
 export type PluginSlotKey = keyof SM
 
 export type SnippetsSubSlots = keyof SM["snippets"]

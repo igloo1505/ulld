@@ -1,10 +1,22 @@
-import { LetterType, SearchAllParams } from "../types/general";
+import { LetterType, SearchAllParams, SearchAllSearchType } from "../types/general";
 
 export const getFirstLetterWithLatex = (value: string): LetterType => {
     return value.replaceAll(/\\|\:|\-|\=|\_/gm, "")[0] as LetterType
 }
 
 
+export const getSearchType = (sp: SearchAllParams): SearchAllSearchType => {
+    if(sp.equationId){
+        return "byEquation"
+    }
+    if(sp.sequentialId){
+        return "bySequentialId"
+    }
+    if(sp.tags && sp.tags.length){
+        return "byTag"
+    }
+    return "searchAll"
+}
 
 export const searchAllParamsToSearchParamsClass = (sp: SearchAllParams): URLSearchParams => {
    let data = new URLSearchParams()
@@ -61,4 +73,5 @@ export const searchAllParamsToSearchParamsClass = (sp: SearchAllParams): URLSear
     }
     return data
 }
+
 

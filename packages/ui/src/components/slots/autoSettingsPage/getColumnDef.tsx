@@ -19,8 +19,8 @@ import {
 } from "lucide-react"
 import type { useRouter } from "next/navigation"
 import { client } from "@ulld/api/client"
-import { AutoSettingType } from "@ulld/api/routers/sync"
 import { autoSettingSearchAllParamMap } from "@ulld/state/searchParamSchemas/utilities/formatSearchAllParams"
+import { AutoSettingType } from "@ulld/utilities/types"
 
 
 
@@ -142,3 +142,4 @@ export const getAutoSettingColumnDef = (router: ReturnType<typeof useRouter>, re
     ]
     return columns
 }
+

@@ -1,12 +1,12 @@
-import { getPage } from "sources/blog";
+import { getPage, getPages } from "sources/demos";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { PageType } from "#/types/general";
 import { getPageById } from "#/fumaDocs/utils/getPageById";
-import { getAllBlogPages } from "#/fumaDocs/utils/getConcatenatedPages";
 import DocsPageComponent from "#/components/docUtils/docsPage";
 
 const docsBodyId = "ulld-blog-container";
+
 
 interface PageProps {
     params: { slug?: string[] };
@@ -18,7 +18,7 @@ const getPageInternal = ({
     searchParams,
 }: PageProps): PageType | undefined => {
     return searchParams && searchParams.id
-        ? getPageById(getAllBlogPages(), searchParams.id)
+        ? getPageById(getPages() as PageType[], searchParams.id)
         : (getPage(params.slug) as PageType | undefined);
 };
 
@@ -28,13 +28,14 @@ export default function Page({ params, searchParams }: PageProps) {
         notFound();
     }
 
+
     return (
         <DocsPageComponent page={page} id={docsBodyId} />
     )
 }
 
 export function generateStaticParams() {
-    return getAllBlogPages().map((page) => ({
+    return getPages().map((page) => ({
         slug: page.slugs,
     }));
 }

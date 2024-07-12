@@ -1,8 +1,8 @@
-import { ParsedAppConfig } from "../types";
 import { DocumentTypeConfig } from "../zod/documentConfigSchema";
+import { AppConfigSchemaOutput } from "../zod/main";
 import { DocTypes } from "./docTypes";
-export declare const getDocumentTypeConfig: (docType: DocTypes | DocumentTypeConfig, config?: ParsedAppConfig) => DocumentTypeConfig | undefined;
-export declare const getNoteTypeFromPath: (rootRelativePath?: string | null, config?: ParsedAppConfig) => {
+export declare const getDocumentTypeConfig: (docType: string | DocumentTypeConfig, config?: AppConfigSchemaOutput) => DocumentTypeConfig | undefined;
+export declare const getNoteTypeFromPath: (rootRelativePath?: string | null, config?: AppConfigSchemaOutput) => {
     id: string;
     url: string;
     matchWeight: number;
@@ -33,5 +33,5 @@ export declare const getNoteTypeFromPath: (rootRelativePath?: string | null, con
     topicLabel?: string | undefined;
     subjectLabel?: string | undefined;
 } | "RemoteNote" | undefined;
-export declare const getRootRelativePath: (slug: string, docType: DocTypes, config?: ParsedAppConfig) => string;
+export declare const getRootRelativePath: (slug: string, docType: DocTypes, config?: AppConfigSchemaOutput) => string;
 //# sourceMappingURL=general.d.ts.map

@@ -11,6 +11,11 @@
             "componentName": "AddTaskModal",
             "slot": "AddTask",
             "export": "addTask"
+        },
+        {
+            "componentName": "TaskListResultList",
+            "slot": "TaskListSearchResultList",
+            "export": "taskListSearchResults"
         }
     ],
     "parsers": [],

@@ -1,5 +1,11 @@
-import { AutoSettingType, ConfirmationModalConfig, LetterType } from "@ulld/utilities/types";
-import { ReactNode, ReactNodeArray } from "react";
+import {
+    AutoSettingType,
+    ConfirmationModalConfig,
+    LetterType,
+    SearchAllSearchType,
+} from "@ulld/utilities/types";
+import { FC, ReactNode } from "react";
+import { NoteFilter } from "@ulld/api/classes/search/noteFilter";
 
 export interface ToastConfigType {
     destructive?: boolean;
@@ -25,13 +31,23 @@ export const pdfStateClasses = {
     asGrid: "pdf-as-grid",
 };
 
+
 export interface ChildrenOnly {
     children: React.ReactNode;
+}
+
+
+export interface AutoSettingFormModalProps {
+    open: boolean
+    editing: AutoSettingType | undefined | null
+    setOpen: (newOpen: boolean) => void
+    appendSetting: (s: AutoSettingType) => void
 }
 
 export interface AutoSettingsTableProps {
     settings: AutoSettingType[];
     editing?: AutoSettingType | undefined;
+    modal: FC<AutoSettingFormModalProps>
 }
 
 export interface PaginationProps {
@@ -42,45 +58,36 @@ export interface PaginationProps {
     hrefTemplate: string;
 }
 
-
-export interface DictionaryItemProps { 
-    label?: string
-    content?: string
+export interface DictionaryItemProps {
+    label?: string;
+    content?: string;
 }
-
 
 export interface DictionaryLetterList {
     children: ReactNode;
-    letter: LetterType
-    currentPage?: LetterType
+    letter: LetterType;
+    currentPage?: LetterType;
 }
 
-
 export interface NoteSummaryProps {
-   index: number
-    // item: get this type
+    index: number;
+    item: InstanceType<typeof NoteFilter>["notes"][number]
+    searchType: SearchAllSearchType
 }
 
 export interface TaskListSearchResultProps {
-    index: number
+    index: number;
     // data: // get this type
 }
 
-
 export interface SearchResultsPageProps {
-    notes: ReactNode
-    taskLists: ReactNode
+    notes: ReactNode;
+    taskLists: ReactNode;
     // equations: ReactNode abborted for now to focus on getting this thing up and running first.
 }
 
-
-export type BookmarksResultsPageProps = Pick<SearchResultsPageProps, "notes">
-
+export type BookmarksResultsPageProps = Pick<SearchResultsPageProps, "notes">;
 
 export interface NotesSearchResultsListProps {
-   children: ReactNode
-}
-
-export interface TaskListSearchResultsListProps {
-   children: ReactNode
+    children: ReactNode;
 }

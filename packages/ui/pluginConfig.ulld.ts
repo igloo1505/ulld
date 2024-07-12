@@ -44,9 +44,24 @@ const pluginConfig: DeveloperConfigInput<"UI"> = {
             export: "./defaultLogo",
         },
         {
-            componentName: "TaskListResultList",
-            slot: "TaskListSearchResultList",
-            export: "./taskListResultList"
+            componentName: "NoteSummaryCard",
+            slot: "NoteSummarySearchResult",
+            export: "./noteSummarySearchResult",
+        },
+        {
+            componentName: "AutoSettingsPage",
+            slot: "AutoSettingsTable",
+            export: "./autoSettingsPage"
+        },
+        {
+            componentName: "AutoSettingFormModal",
+            slot: "AutoSettingFormModal",
+            export: "./autoSettingFormModal"
+        },
+        {
+            componentName: "NotesSearchResultsList",
+            slot: "NotesSearchResultsList",
+            export: "./notesSearchResultsList"
         }
     ],
     navigationLinks: [

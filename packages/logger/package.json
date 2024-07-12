@@ -33,5 +33,6 @@
     "devDependencies": {
         "@ulld/types": "workspace:*"
     },
-    "files": []
+    "files": [],
+    "peerDependencies": {}
 }

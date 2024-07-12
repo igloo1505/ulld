@@ -47,11 +47,10 @@ export const UISubkeySchema = z.union([
     z.literal("logo"),
     z.literal("confirmationModal"),
     z.literal("AutoSettingsTable"),
+    z.literal("AutoSettingFormModal"),
     z.literal("SearchResultsPage"),
     z.literal("BookmarksPage"),
-    z.literal("TaskListSearchResultList"),
     z.literal("NotesSearchResultsList"),
-    z.literal("TaskListSearchResult"),
     z.literal("NoteSummarySearchResult"),
     z.literal("DictionaryLetterList"),
     z.literal("DictionaryPageItem"),
@@ -63,6 +62,8 @@ export const task_managerSubkeySchema = z.union([
     z.literal("TaskDetails"),
     z.literal("AddTask"),
     z.literal("AddTaskList"),
+    z.literal("TaskListSearchResultList"),
+    z.literal("TaskListSearchResult"),
 ])
 
 

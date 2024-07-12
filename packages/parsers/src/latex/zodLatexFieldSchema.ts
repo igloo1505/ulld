@@ -9,7 +9,8 @@ export const zodMdxTransform = async (data: string) => {
     return { parsed: res, original: data }
 }
 
-export const zodMdxFieldSchema = z.string().transform(zodMdxTransform)
+// export const zodMdxFieldSchema = z.string().transform(zodMdxTransform)
+export const zodMdxFieldSchema = z.string() // Remove this and move everything back to a normal string or optional string, now that components to parse mdx content on both the client and server are in place.
 
 export const zodMdxFieldSchemaOptional = z.string().nullable().transform(async (s) => s ? await zodMdxTransform(s) : undefined)
 

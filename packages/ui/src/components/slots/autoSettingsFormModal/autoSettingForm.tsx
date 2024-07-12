@@ -1,9 +1,9 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from '@ulld/tailwind/select';
 import {  Input} from '@ulld/tailwind/input';
-import {   Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@ulld/tailwind/form';
-import { autoSetting } from '@ulld/database/internalDatabaseTypes';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@ulld/tailwind/form';
 import React from 'react'
 import { UseFormReturn } from 'react-hook-form';
+import { autoSetting } from '@prisma/client';
 
 
 
@@ -16,11 +16,13 @@ interface AutoSettingFormProps {
     }, any, undefined>
 }
 
+
 const autoSettingDisplayMap: { [k in autoSetting]: string } = {
     tag: "Tag",
     topic: "Topic",
     subject: "Subject"
 }
+
 
 const AutoSettingForm = ({ form }: AutoSettingFormProps) => {
     return (

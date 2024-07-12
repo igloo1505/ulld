@@ -14,6 +14,16 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
+ * Model FeatureRequest
+ * 
+ */
+export type FeatureRequest = $Result.DefaultSelection<Prisma.$FeatureRequestPayload>
+/**
+ * Model WaitlistRequest
+ * 
+ */
+export type WaitlistRequest = $Result.DefaultSelection<Prisma.$WaitlistRequestPayload>
+/**
  * Model Subject
  * 
  */
@@ -355,8 +365,8 @@ export const QUANTITY_GUESS: typeof $Enums.QUANTITY_GUESS
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more Subjects
- * const subjects = await prisma.subject.findMany()
+ * // Fetch zero or more FeatureRequests
+ * const featureRequests = await prisma.featureRequest.findMany()
  * ```
  *
  * 
@@ -376,8 +386,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more Subjects
-   * const subjects = await prisma.subject.findMany()
+   * // Fetch zero or more FeatureRequests
+   * const featureRequests = await prisma.featureRequest.findMany()
    * ```
    *
    * 
@@ -471,6 +481,26 @@ export class PrismaClient<
   $extends: $Extensions.ExtendsHook<"extends", Prisma.TypeMapCb, ExtArgs>
 
       /**
+   * `prisma.featureRequest`: Exposes CRUD operations for the **FeatureRequest** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FeatureRequests
+    * const featureRequests = await prisma.featureRequest.findMany()
+    * ```
+    */
+  get featureRequest(): Prisma.FeatureRequestDelegate<ExtArgs>;
+
+  /**
+   * `prisma.waitlistRequest`: Exposes CRUD operations for the **WaitlistRequest** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more WaitlistRequests
+    * const waitlistRequests = await prisma.waitlistRequest.findMany()
+    * ```
+    */
+  get waitlistRequest(): Prisma.WaitlistRequestDelegate<ExtArgs>;
+
+  /**
    * `prisma.subject`: Exposes CRUD operations for the **Subject** model.
     * Example usage:
     * ```ts
@@ -1306,6 +1336,8 @@ export namespace Prisma {
 
 
   export const ModelName: {
+    FeatureRequest: 'FeatureRequest',
+    WaitlistRequest: 'WaitlistRequest',
     Subject: 'Subject',
     Topic: 'Topic',
     Tag: 'Tag',
@@ -1357,10 +1389,150 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "subject" | "topic" | "tag" | "quote" | "dailyFocus" | "autoSetting" | "readingList" | "bibEntry" | "citationsGroup" | "bib" | "googleCalendarAuth" | "snippet" | "relatedValues" | "equation" | "definition" | "settings" | "settingsAppendix" | "randomImage" | "noteType" | "qAPair" | "practiceExam" | "sequentialNoteList" | "mdxNote" | "ipynb" | "toDoList" | "toDo" | "kanBanCard" | "kanBanList" | "kanban" | "timePeriod" | "diet" | "serving" | "dietaryItem" | "healthReport" | "whiteboard" | "dJT"
+      modelProps: "featureRequest" | "waitlistRequest" | "subject" | "topic" | "tag" | "quote" | "dailyFocus" | "autoSetting" | "readingList" | "bibEntry" | "citationsGroup" | "bib" | "googleCalendarAuth" | "snippet" | "relatedValues" | "equation" | "definition" | "settings" | "settingsAppendix" | "randomImage" | "noteType" | "qAPair" | "practiceExam" | "sequentialNoteList" | "mdxNote" | "ipynb" | "toDoList" | "toDo" | "kanBanCard" | "kanBanList" | "kanban" | "timePeriod" | "diet" | "serving" | "dietaryItem" | "healthReport" | "whiteboard" | "dJT"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
+      FeatureRequest: {
+        payload: Prisma.$FeatureRequestPayload<ExtArgs>
+        fields: Prisma.FeatureRequestFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FeatureRequestFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FeatureRequestFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
+          }
+          findFirst: {
+            args: Prisma.FeatureRequestFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FeatureRequestFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
+          }
+          findMany: {
+            args: Prisma.FeatureRequestFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>[]
+          }
+          create: {
+            args: Prisma.FeatureRequestCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
+          }
+          createMany: {
+            args: Prisma.FeatureRequestCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FeatureRequestCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>[]
+          }
+          delete: {
+            args: Prisma.FeatureRequestDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
+          }
+          update: {
+            args: Prisma.FeatureRequestUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
+          }
+          deleteMany: {
+            args: Prisma.FeatureRequestDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FeatureRequestUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.FeatureRequestUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
+          }
+          aggregate: {
+            args: Prisma.FeatureRequestAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFeatureRequest>
+          }
+          groupBy: {
+            args: Prisma.FeatureRequestGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FeatureRequestGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FeatureRequestCountArgs<ExtArgs>
+            result: $Utils.Optional<FeatureRequestCountAggregateOutputType> | number
+          }
+        }
+      }
+      WaitlistRequest: {
+        payload: Prisma.$WaitlistRequestPayload<ExtArgs>
+        fields: Prisma.WaitlistRequestFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.WaitlistRequestFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.WaitlistRequestFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
+          }
+          findFirst: {
+            args: Prisma.WaitlistRequestFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.WaitlistRequestFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
+          }
+          findMany: {
+            args: Prisma.WaitlistRequestFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>[]
+          }
+          create: {
+            args: Prisma.WaitlistRequestCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
+          }
+          createMany: {
+            args: Prisma.WaitlistRequestCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.WaitlistRequestCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>[]
+          }
+          delete: {
+            args: Prisma.WaitlistRequestDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
+          }
+          update: {
+            args: Prisma.WaitlistRequestUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
+          }
+          deleteMany: {
+            args: Prisma.WaitlistRequestDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.WaitlistRequestUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.WaitlistRequestUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
+          }
+          aggregate: {
+            args: Prisma.WaitlistRequestAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateWaitlistRequest>
+          }
+          groupBy: {
+            args: Prisma.WaitlistRequestGroupByArgs<ExtArgs>
+            result: $Utils.Optional<WaitlistRequestGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.WaitlistRequestCountArgs<ExtArgs>
+            result: $Utils.Optional<WaitlistRequestCountAggregateOutputType> | number
+          }
+        }
+      }
       Subject: {
         payload: Prisma.$SubjectPayload<ExtArgs>
         fields: Prisma.SubjectFieldRefs
@@ -5236,6 +5408,1826 @@ export namespace Prisma {
   /**
    * Models
    */
+
+  /**
+   * Model FeatureRequest
+   */
+
+  export type AggregateFeatureRequest = {
+    _count: FeatureRequestCountAggregateOutputType | null
+    _avg: FeatureRequestAvgAggregateOutputType | null
+    _sum: FeatureRequestSumAggregateOutputType | null
+    _min: FeatureRequestMinAggregateOutputType | null
+    _max: FeatureRequestMaxAggregateOutputType | null
+  }
+
+  export type FeatureRequestAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type FeatureRequestSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type FeatureRequestMinAggregateOutputType = {
+    id: number | null
+    email: string | null
+    message: string | null
+    receivedOn: Date | null
+  }
+
+  export type FeatureRequestMaxAggregateOutputType = {
+    id: number | null
+    email: string | null
+    message: string | null
+    receivedOn: Date | null
+  }
+
+  export type FeatureRequestCountAggregateOutputType = {
+    id: number
+    email: number
+    message: number
+    category: number
+    userBase: number
+    receivedOn: number
+    _all: number
+  }
+
+
+  export type FeatureRequestAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type FeatureRequestSumAggregateInputType = {
+    id?: true
+  }
+
+  export type FeatureRequestMinAggregateInputType = {
+    id?: true
+    email?: true
+    message?: true
+    receivedOn?: true
+  }
+
+  export type FeatureRequestMaxAggregateInputType = {
+    id?: true
+    email?: true
+    message?: true
+    receivedOn?: true
+  }
+
+  export type FeatureRequestCountAggregateInputType = {
+    id?: true
+    email?: true
+    message?: true
+    category?: true
+    userBase?: true
+    receivedOn?: true
+    _all?: true
+  }
+
+  export type FeatureRequestAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FeatureRequest to aggregate.
+     */
+    where?: FeatureRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FeatureRequests to fetch.
+     */
+    orderBy?: FeatureRequestOrderByWithRelationInput | FeatureRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FeatureRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FeatureRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FeatureRequests.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FeatureRequests
+    **/
+    _count?: true | FeatureRequestCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: FeatureRequestAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: FeatureRequestSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FeatureRequestMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FeatureRequestMaxAggregateInputType
+  }
+
+  export type GetFeatureRequestAggregateType<T extends FeatureRequestAggregateArgs> = {
+        [P in keyof T & keyof AggregateFeatureRequest]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFeatureRequest[P]>
+      : GetScalarType<T[P], AggregateFeatureRequest[P]>
+  }
+
+
+
+
+  export type FeatureRequestGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FeatureRequestWhereInput
+    orderBy?: FeatureRequestOrderByWithAggregationInput | FeatureRequestOrderByWithAggregationInput[]
+    by: FeatureRequestScalarFieldEnum[] | FeatureRequestScalarFieldEnum
+    having?: FeatureRequestScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FeatureRequestCountAggregateInputType | true
+    _avg?: FeatureRequestAvgAggregateInputType
+    _sum?: FeatureRequestSumAggregateInputType
+    _min?: FeatureRequestMinAggregateInputType
+    _max?: FeatureRequestMaxAggregateInputType
+  }
+
+  export type FeatureRequestGroupByOutputType = {
+    id: number
+    email: string
+    message: string
+    category: string[]
+    userBase: string[]
+    receivedOn: Date
+    _count: FeatureRequestCountAggregateOutputType | null
+    _avg: FeatureRequestAvgAggregateOutputType | null
+    _sum: FeatureRequestSumAggregateOutputType | null
+    _min: FeatureRequestMinAggregateOutputType | null
+    _max: FeatureRequestMaxAggregateOutputType | null
+  }
+
+  type GetFeatureRequestGroupByPayload<T extends FeatureRequestGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FeatureRequestGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FeatureRequestGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FeatureRequestGroupByOutputType[P]>
+            : GetScalarType<T[P], FeatureRequestGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FeatureRequestSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    email?: boolean
+    message?: boolean
+    category?: boolean
+    userBase?: boolean
+    receivedOn?: boolean
+  }, ExtArgs["result"]["featureRequest"]>
+
+  export type FeatureRequestSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    email?: boolean
+    message?: boolean
+    category?: boolean
+    userBase?: boolean
+    receivedOn?: boolean
+  }, ExtArgs["result"]["featureRequest"]>
+
+  export type FeatureRequestSelectScalar = {
+    id?: boolean
+    email?: boolean
+    message?: boolean
+    category?: boolean
+    userBase?: boolean
+    receivedOn?: boolean
+  }
+
+
+  export type $FeatureRequestPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FeatureRequest"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      email: string
+      message: string
+      category: string[]
+      userBase: string[]
+      receivedOn: Date
+    }, ExtArgs["result"]["featureRequest"]>
+    composites: {}
+  }
+
+  type FeatureRequestGetPayload<S extends boolean | null | undefined | FeatureRequestDefaultArgs> = $Result.GetResult<Prisma.$FeatureRequestPayload, S>
+
+  type FeatureRequestCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<FeatureRequestFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: FeatureRequestCountAggregateInputType | true
+    }
+
+  export interface FeatureRequestDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FeatureRequest'], meta: { name: 'FeatureRequest' } }
+    /**
+     * Find zero or one FeatureRequest that matches the filter.
+     * @param {FeatureRequestFindUniqueArgs} args - Arguments to find a FeatureRequest
+     * @example
+     * // Get one FeatureRequest
+     * const featureRequest = await prisma.featureRequest.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FeatureRequestFindUniqueArgs>(args: SelectSubset<T, FeatureRequestFindUniqueArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one FeatureRequest that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {FeatureRequestFindUniqueOrThrowArgs} args - Arguments to find a FeatureRequest
+     * @example
+     * // Get one FeatureRequest
+     * const featureRequest = await prisma.featureRequest.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FeatureRequestFindUniqueOrThrowArgs>(args: SelectSubset<T, FeatureRequestFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first FeatureRequest that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FeatureRequestFindFirstArgs} args - Arguments to find a FeatureRequest
+     * @example
+     * // Get one FeatureRequest
+     * const featureRequest = await prisma.featureRequest.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FeatureRequestFindFirstArgs>(args?: SelectSubset<T, FeatureRequestFindFirstArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first FeatureRequest that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FeatureRequestFindFirstOrThrowArgs} args - Arguments to find a FeatureRequest
+     * @example
+     * // Get one FeatureRequest
+     * const featureRequest = await prisma.featureRequest.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FeatureRequestFindFirstOrThrowArgs>(args?: SelectSubset<T, FeatureRequestFindFirstOrThrowArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more FeatureRequests that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FeatureRequestFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FeatureRequests
+     * const featureRequests = await prisma.featureRequest.findMany()
+     * 
+     * // Get first 10 FeatureRequests
+     * const featureRequests = await prisma.featureRequest.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const featureRequestWithIdOnly = await prisma.featureRequest.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends FeatureRequestFindManyArgs>(args?: SelectSubset<T, FeatureRequestFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a FeatureRequest.
+     * @param {FeatureRequestCreateArgs} args - Arguments to create a FeatureRequest.
+     * @example
+     * // Create one FeatureRequest
+     * const FeatureRequest = await prisma.featureRequest.create({
+     *   data: {
+     *     // ... data to create a FeatureRequest
+     *   }
+     * })
+     * 
+     */
+    create<T extends FeatureRequestCreateArgs>(args: SelectSubset<T, FeatureRequestCreateArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many FeatureRequests.
+     * @param {FeatureRequestCreateManyArgs} args - Arguments to create many FeatureRequests.
+     * @example
+     * // Create many FeatureRequests
+     * const featureRequest = await prisma.featureRequest.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FeatureRequestCreateManyArgs>(args?: SelectSubset<T, FeatureRequestCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FeatureRequests and returns the data saved in the database.
+     * @param {FeatureRequestCreateManyAndReturnArgs} args - Arguments to create many FeatureRequests.
+     * @example
+     * // Create many FeatureRequests
+     * const featureRequest = await prisma.featureRequest.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FeatureRequests and only return the `id`
+     * const featureRequestWithIdOnly = await prisma.featureRequest.createManyAndReturn({ 
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FeatureRequestCreateManyAndReturnArgs>(args?: SelectSubset<T, FeatureRequestCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "createManyAndReturn">>
+
+    /**
+     * Delete a FeatureRequest.
+     * @param {FeatureRequestDeleteArgs} args - Arguments to delete one FeatureRequest.
+     * @example
+     * // Delete one FeatureRequest
+     * const FeatureRequest = await prisma.featureRequest.delete({
+     *   where: {
+     *     // ... filter to delete one FeatureRequest
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FeatureRequestDeleteArgs>(args: SelectSubset<T, FeatureRequestDeleteArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one FeatureRequest.
+     * @param {FeatureRequestUpdateArgs} args - Arguments to update one FeatureRequest.
+     * @example
+     * // Update one FeatureRequest
+     * const featureRequest = await prisma.featureRequest.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FeatureRequestUpdateArgs>(args: SelectSubset<T, FeatureRequestUpdateArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more FeatureRequests.
+     * @param {FeatureRequestDeleteManyArgs} args - Arguments to filter FeatureRequests to delete.
+     * @example
+     * // Delete a few FeatureRequests
+     * const { count } = await prisma.featureRequest.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FeatureRequestDeleteManyArgs>(args?: SelectSubset<T, FeatureRequestDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FeatureRequests.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FeatureRequestUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FeatureRequests
+     * const featureRequest = await prisma.featureRequest.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FeatureRequestUpdateManyArgs>(args: SelectSubset<T, FeatureRequestUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one FeatureRequest.
+     * @param {FeatureRequestUpsertArgs} args - Arguments to update or create a FeatureRequest.
+     * @example
+     * // Update or create a FeatureRequest
+     * const featureRequest = await prisma.featureRequest.upsert({
+     *   create: {
+     *     // ... data to create a FeatureRequest
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FeatureRequest we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FeatureRequestUpsertArgs>(args: SelectSubset<T, FeatureRequestUpsertArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of FeatureRequests.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FeatureRequestCountArgs} args - Arguments to filter FeatureRequests to count.
+     * @example
+     * // Count the number of FeatureRequests
+     * const count = await prisma.featureRequest.count({
+     *   where: {
+     *     // ... the filter for the FeatureRequests we want to count
+     *   }
+     * })
+    **/
+    count<T extends FeatureRequestCountArgs>(
+      args?: Subset<T, FeatureRequestCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FeatureRequestCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FeatureRequest.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FeatureRequestAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FeatureRequestAggregateArgs>(args: Subset<T, FeatureRequestAggregateArgs>): Prisma.PrismaPromise<GetFeatureRequestAggregateType<T>>
+
+    /**
+     * Group by FeatureRequest.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FeatureRequestGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FeatureRequestGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FeatureRequestGroupByArgs['orderBy'] }
+        : { orderBy?: FeatureRequestGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FeatureRequestGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFeatureRequestGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FeatureRequest model
+   */
+  readonly fields: FeatureRequestFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FeatureRequest.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FeatureRequestClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FeatureRequest model
+   */ 
+  interface FeatureRequestFieldRefs {
+    readonly id: FieldRef<"FeatureRequest", 'Int'>
+    readonly email: FieldRef<"FeatureRequest", 'String'>
+    readonly message: FieldRef<"FeatureRequest", 'String'>
+    readonly category: FieldRef<"FeatureRequest", 'String[]'>
+    readonly userBase: FieldRef<"FeatureRequest", 'String[]'>
+    readonly receivedOn: FieldRef<"FeatureRequest", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FeatureRequest findUnique
+   */
+  export type FeatureRequestFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which FeatureRequest to fetch.
+     */
+    where: FeatureRequestWhereUniqueInput
+  }
+
+  /**
+   * FeatureRequest findUniqueOrThrow
+   */
+  export type FeatureRequestFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which FeatureRequest to fetch.
+     */
+    where: FeatureRequestWhereUniqueInput
+  }
+
+  /**
+   * FeatureRequest findFirst
+   */
+  export type FeatureRequestFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which FeatureRequest to fetch.
+     */
+    where?: FeatureRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FeatureRequests to fetch.
+     */
+    orderBy?: FeatureRequestOrderByWithRelationInput | FeatureRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FeatureRequests.
+     */
+    cursor?: FeatureRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FeatureRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FeatureRequests.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FeatureRequests.
+     */
+    distinct?: FeatureRequestScalarFieldEnum | FeatureRequestScalarFieldEnum[]
+  }
+
+  /**
+   * FeatureRequest findFirstOrThrow
+   */
+  export type FeatureRequestFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which FeatureRequest to fetch.
+     */
+    where?: FeatureRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FeatureRequests to fetch.
+     */
+    orderBy?: FeatureRequestOrderByWithRelationInput | FeatureRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FeatureRequests.
+     */
+    cursor?: FeatureRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FeatureRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FeatureRequests.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FeatureRequests.
+     */
+    distinct?: FeatureRequestScalarFieldEnum | FeatureRequestScalarFieldEnum[]
+  }
+
+  /**
+   * FeatureRequest findMany
+   */
+  export type FeatureRequestFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which FeatureRequests to fetch.
+     */
+    where?: FeatureRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FeatureRequests to fetch.
+     */
+    orderBy?: FeatureRequestOrderByWithRelationInput | FeatureRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FeatureRequests.
+     */
+    cursor?: FeatureRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FeatureRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FeatureRequests.
+     */
+    skip?: number
+    distinct?: FeatureRequestScalarFieldEnum | FeatureRequestScalarFieldEnum[]
+  }
+
+  /**
+   * FeatureRequest create
+   */
+  export type FeatureRequestCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * The data needed to create a FeatureRequest.
+     */
+    data: XOR<FeatureRequestCreateInput, FeatureRequestUncheckedCreateInput>
+  }
+
+  /**
+   * FeatureRequest createMany
+   */
+  export type FeatureRequestCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FeatureRequests.
+     */
+    data: FeatureRequestCreateManyInput | FeatureRequestCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FeatureRequest createManyAndReturn
+   */
+  export type FeatureRequestCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * The data used to create many FeatureRequests.
+     */
+    data: FeatureRequestCreateManyInput | FeatureRequestCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FeatureRequest update
+   */
+  export type FeatureRequestUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * The data needed to update a FeatureRequest.
+     */
+    data: XOR<FeatureRequestUpdateInput, FeatureRequestUncheckedUpdateInput>
+    /**
+     * Choose, which FeatureRequest to update.
+     */
+    where: FeatureRequestWhereUniqueInput
+  }
+
+  /**
+   * FeatureRequest updateMany
+   */
+  export type FeatureRequestUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FeatureRequests.
+     */
+    data: XOR<FeatureRequestUpdateManyMutationInput, FeatureRequestUncheckedUpdateManyInput>
+    /**
+     * Filter which FeatureRequests to update
+     */
+    where?: FeatureRequestWhereInput
+  }
+
+  /**
+   * FeatureRequest upsert
+   */
+  export type FeatureRequestUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * The filter to search for the FeatureRequest to update in case it exists.
+     */
+    where: FeatureRequestWhereUniqueInput
+    /**
+     * In case the FeatureRequest found by the `where` argument doesn't exist, create a new FeatureRequest with this data.
+     */
+    create: XOR<FeatureRequestCreateInput, FeatureRequestUncheckedCreateInput>
+    /**
+     * In case the FeatureRequest was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FeatureRequestUpdateInput, FeatureRequestUncheckedUpdateInput>
+  }
+
+  /**
+   * FeatureRequest delete
+   */
+  export type FeatureRequestDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * Filter which FeatureRequest to delete.
+     */
+    where: FeatureRequestWhereUniqueInput
+  }
+
+  /**
+   * FeatureRequest deleteMany
+   */
+  export type FeatureRequestDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FeatureRequests to delete
+     */
+    where?: FeatureRequestWhereInput
+  }
+
+  /**
+   * FeatureRequest without action
+   */
+  export type FeatureRequestDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model WaitlistRequest
+   */
+
+  export type AggregateWaitlistRequest = {
+    _count: WaitlistRequestCountAggregateOutputType | null
+    _avg: WaitlistRequestAvgAggregateOutputType | null
+    _sum: WaitlistRequestSumAggregateOutputType | null
+    _min: WaitlistRequestMinAggregateOutputType | null
+    _max: WaitlistRequestMaxAggregateOutputType | null
+  }
+
+  export type WaitlistRequestAvgAggregateOutputType = {
+    id: number | null
+    emailsSent: number | null
+  }
+
+  export type WaitlistRequestSumAggregateOutputType = {
+    id: number | null
+    emailsSent: number | null
+  }
+
+  export type WaitlistRequestMinAggregateOutputType = {
+    id: number | null
+    email: string | null
+    receivedOn: Date | null
+    emailsSent: number | null
+  }
+
+  export type WaitlistRequestMaxAggregateOutputType = {
+    id: number | null
+    email: string | null
+    receivedOn: Date | null
+    emailsSent: number | null
+  }
+
+  export type WaitlistRequestCountAggregateOutputType = {
+    id: number
+    email: number
+    receivedOn: number
+    emailsSent: number
+    _all: number
+  }
+
+
+  export type WaitlistRequestAvgAggregateInputType = {
+    id?: true
+    emailsSent?: true
+  }
+
+  export type WaitlistRequestSumAggregateInputType = {
+    id?: true
+    emailsSent?: true
+  }
+
+  export type WaitlistRequestMinAggregateInputType = {
+    id?: true
+    email?: true
+    receivedOn?: true
+    emailsSent?: true
+  }
+
+  export type WaitlistRequestMaxAggregateInputType = {
+    id?: true
+    email?: true
+    receivedOn?: true
+    emailsSent?: true
+  }
+
+  export type WaitlistRequestCountAggregateInputType = {
+    id?: true
+    email?: true
+    receivedOn?: true
+    emailsSent?: true
+    _all?: true
+  }
+
+  export type WaitlistRequestAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which WaitlistRequest to aggregate.
+     */
+    where?: WaitlistRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WaitlistRequests to fetch.
+     */
+    orderBy?: WaitlistRequestOrderByWithRelationInput | WaitlistRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: WaitlistRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WaitlistRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WaitlistRequests.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned WaitlistRequests
+    **/
+    _count?: true | WaitlistRequestCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: WaitlistRequestAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: WaitlistRequestSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: WaitlistRequestMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: WaitlistRequestMaxAggregateInputType
+  }
+
+  export type GetWaitlistRequestAggregateType<T extends WaitlistRequestAggregateArgs> = {
+        [P in keyof T & keyof AggregateWaitlistRequest]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateWaitlistRequest[P]>
+      : GetScalarType<T[P], AggregateWaitlistRequest[P]>
+  }
+
+
+
+
+  export type WaitlistRequestGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: WaitlistRequestWhereInput
+    orderBy?: WaitlistRequestOrderByWithAggregationInput | WaitlistRequestOrderByWithAggregationInput[]
+    by: WaitlistRequestScalarFieldEnum[] | WaitlistRequestScalarFieldEnum
+    having?: WaitlistRequestScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: WaitlistRequestCountAggregateInputType | true
+    _avg?: WaitlistRequestAvgAggregateInputType
+    _sum?: WaitlistRequestSumAggregateInputType
+    _min?: WaitlistRequestMinAggregateInputType
+    _max?: WaitlistRequestMaxAggregateInputType
+  }
+
+  export type WaitlistRequestGroupByOutputType = {
+    id: number
+    email: string
+    receivedOn: Date
+    emailsSent: number
+    _count: WaitlistRequestCountAggregateOutputType | null
+    _avg: WaitlistRequestAvgAggregateOutputType | null
+    _sum: WaitlistRequestSumAggregateOutputType | null
+    _min: WaitlistRequestMinAggregateOutputType | null
+    _max: WaitlistRequestMaxAggregateOutputType | null
+  }
+
+  type GetWaitlistRequestGroupByPayload<T extends WaitlistRequestGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<WaitlistRequestGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof WaitlistRequestGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], WaitlistRequestGroupByOutputType[P]>
+            : GetScalarType<T[P], WaitlistRequestGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type WaitlistRequestSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    email?: boolean
+    receivedOn?: boolean
+    emailsSent?: boolean
+  }, ExtArgs["result"]["waitlistRequest"]>
+
+  export type WaitlistRequestSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    email?: boolean
+    receivedOn?: boolean
+    emailsSent?: boolean
+  }, ExtArgs["result"]["waitlistRequest"]>
+
+  export type WaitlistRequestSelectScalar = {
+    id?: boolean
+    email?: boolean
+    receivedOn?: boolean
+    emailsSent?: boolean
+  }
+
+
+  export type $WaitlistRequestPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "WaitlistRequest"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      email: string
+      receivedOn: Date
+      emailsSent: number
+    }, ExtArgs["result"]["waitlistRequest"]>
+    composites: {}
+  }
+
+  type WaitlistRequestGetPayload<S extends boolean | null | undefined | WaitlistRequestDefaultArgs> = $Result.GetResult<Prisma.$WaitlistRequestPayload, S>
+
+  type WaitlistRequestCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<WaitlistRequestFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: WaitlistRequestCountAggregateInputType | true
+    }
+
+  export interface WaitlistRequestDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['WaitlistRequest'], meta: { name: 'WaitlistRequest' } }
+    /**
+     * Find zero or one WaitlistRequest that matches the filter.
+     * @param {WaitlistRequestFindUniqueArgs} args - Arguments to find a WaitlistRequest
+     * @example
+     * // Get one WaitlistRequest
+     * const waitlistRequest = await prisma.waitlistRequest.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends WaitlistRequestFindUniqueArgs>(args: SelectSubset<T, WaitlistRequestFindUniqueArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one WaitlistRequest that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {WaitlistRequestFindUniqueOrThrowArgs} args - Arguments to find a WaitlistRequest
+     * @example
+     * // Get one WaitlistRequest
+     * const waitlistRequest = await prisma.waitlistRequest.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends WaitlistRequestFindUniqueOrThrowArgs>(args: SelectSubset<T, WaitlistRequestFindUniqueOrThrowArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first WaitlistRequest that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WaitlistRequestFindFirstArgs} args - Arguments to find a WaitlistRequest
+     * @example
+     * // Get one WaitlistRequest
+     * const waitlistRequest = await prisma.waitlistRequest.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends WaitlistRequestFindFirstArgs>(args?: SelectSubset<T, WaitlistRequestFindFirstArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first WaitlistRequest that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WaitlistRequestFindFirstOrThrowArgs} args - Arguments to find a WaitlistRequest
+     * @example
+     * // Get one WaitlistRequest
+     * const waitlistRequest = await prisma.waitlistRequest.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends WaitlistRequestFindFirstOrThrowArgs>(args?: SelectSubset<T, WaitlistRequestFindFirstOrThrowArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more WaitlistRequests that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WaitlistRequestFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all WaitlistRequests
+     * const waitlistRequests = await prisma.waitlistRequest.findMany()
+     * 
+     * // Get first 10 WaitlistRequests
+     * const waitlistRequests = await prisma.waitlistRequest.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const waitlistRequestWithIdOnly = await prisma.waitlistRequest.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends WaitlistRequestFindManyArgs>(args?: SelectSubset<T, WaitlistRequestFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a WaitlistRequest.
+     * @param {WaitlistRequestCreateArgs} args - Arguments to create a WaitlistRequest.
+     * @example
+     * // Create one WaitlistRequest
+     * const WaitlistRequest = await prisma.waitlistRequest.create({
+     *   data: {
+     *     // ... data to create a WaitlistRequest
+     *   }
+     * })
+     * 
+     */
+    create<T extends WaitlistRequestCreateArgs>(args: SelectSubset<T, WaitlistRequestCreateArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many WaitlistRequests.
+     * @param {WaitlistRequestCreateManyArgs} args - Arguments to create many WaitlistRequests.
+     * @example
+     * // Create many WaitlistRequests
+     * const waitlistRequest = await prisma.waitlistRequest.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends WaitlistRequestCreateManyArgs>(args?: SelectSubset<T, WaitlistRequestCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many WaitlistRequests and returns the data saved in the database.
+     * @param {WaitlistRequestCreateManyAndReturnArgs} args - Arguments to create many WaitlistRequests.
+     * @example
+     * // Create many WaitlistRequests
+     * const waitlistRequest = await prisma.waitlistRequest.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many WaitlistRequests and only return the `id`
+     * const waitlistRequestWithIdOnly = await prisma.waitlistRequest.createManyAndReturn({ 
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends WaitlistRequestCreateManyAndReturnArgs>(args?: SelectSubset<T, WaitlistRequestCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "createManyAndReturn">>
+
+    /**
+     * Delete a WaitlistRequest.
+     * @param {WaitlistRequestDeleteArgs} args - Arguments to delete one WaitlistRequest.
+     * @example
+     * // Delete one WaitlistRequest
+     * const WaitlistRequest = await prisma.waitlistRequest.delete({
+     *   where: {
+     *     // ... filter to delete one WaitlistRequest
+     *   }
+     * })
+     * 
+     */
+    delete<T extends WaitlistRequestDeleteArgs>(args: SelectSubset<T, WaitlistRequestDeleteArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one WaitlistRequest.
+     * @param {WaitlistRequestUpdateArgs} args - Arguments to update one WaitlistRequest.
+     * @example
+     * // Update one WaitlistRequest
+     * const waitlistRequest = await prisma.waitlistRequest.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends WaitlistRequestUpdateArgs>(args: SelectSubset<T, WaitlistRequestUpdateArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more WaitlistRequests.
+     * @param {WaitlistRequestDeleteManyArgs} args - Arguments to filter WaitlistRequests to delete.
+     * @example
+     * // Delete a few WaitlistRequests
+     * const { count } = await prisma.waitlistRequest.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends WaitlistRequestDeleteManyArgs>(args?: SelectSubset<T, WaitlistRequestDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more WaitlistRequests.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WaitlistRequestUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many WaitlistRequests
+     * const waitlistRequest = await prisma.waitlistRequest.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends WaitlistRequestUpdateManyArgs>(args: SelectSubset<T, WaitlistRequestUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one WaitlistRequest.
+     * @param {WaitlistRequestUpsertArgs} args - Arguments to update or create a WaitlistRequest.
+     * @example
+     * // Update or create a WaitlistRequest
+     * const waitlistRequest = await prisma.waitlistRequest.upsert({
+     *   create: {
+     *     // ... data to create a WaitlistRequest
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the WaitlistRequest we want to update
+     *   }
+     * })
+     */
+    upsert<T extends WaitlistRequestUpsertArgs>(args: SelectSubset<T, WaitlistRequestUpsertArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of WaitlistRequests.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WaitlistRequestCountArgs} args - Arguments to filter WaitlistRequests to count.
+     * @example
+     * // Count the number of WaitlistRequests
+     * const count = await prisma.waitlistRequest.count({
+     *   where: {
+     *     // ... the filter for the WaitlistRequests we want to count
+     *   }
+     * })
+    **/
+    count<T extends WaitlistRequestCountArgs>(
+      args?: Subset<T, WaitlistRequestCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], WaitlistRequestCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a WaitlistRequest.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WaitlistRequestAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends WaitlistRequestAggregateArgs>(args: Subset<T, WaitlistRequestAggregateArgs>): Prisma.PrismaPromise<GetWaitlistRequestAggregateType<T>>
+
+    /**
+     * Group by WaitlistRequest.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WaitlistRequestGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends WaitlistRequestGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: WaitlistRequestGroupByArgs['orderBy'] }
+        : { orderBy?: WaitlistRequestGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, WaitlistRequestGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWaitlistRequestGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the WaitlistRequest model
+   */
+  readonly fields: WaitlistRequestFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for WaitlistRequest.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__WaitlistRequestClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the WaitlistRequest model
+   */ 
+  interface WaitlistRequestFieldRefs {
+    readonly id: FieldRef<"WaitlistRequest", 'Int'>
+    readonly email: FieldRef<"WaitlistRequest", 'String'>
+    readonly receivedOn: FieldRef<"WaitlistRequest", 'DateTime'>
+    readonly emailsSent: FieldRef<"WaitlistRequest", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * WaitlistRequest findUnique
+   */
+  export type WaitlistRequestFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which WaitlistRequest to fetch.
+     */
+    where: WaitlistRequestWhereUniqueInput
+  }
+
+  /**
+   * WaitlistRequest findUniqueOrThrow
+   */
+  export type WaitlistRequestFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which WaitlistRequest to fetch.
+     */
+    where: WaitlistRequestWhereUniqueInput
+  }
+
+  /**
+   * WaitlistRequest findFirst
+   */
+  export type WaitlistRequestFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which WaitlistRequest to fetch.
+     */
+    where?: WaitlistRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WaitlistRequests to fetch.
+     */
+    orderBy?: WaitlistRequestOrderByWithRelationInput | WaitlistRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for WaitlistRequests.
+     */
+    cursor?: WaitlistRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WaitlistRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WaitlistRequests.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of WaitlistRequests.
+     */
+    distinct?: WaitlistRequestScalarFieldEnum | WaitlistRequestScalarFieldEnum[]
+  }
+
+  /**
+   * WaitlistRequest findFirstOrThrow
+   */
+  export type WaitlistRequestFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which WaitlistRequest to fetch.
+     */
+    where?: WaitlistRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WaitlistRequests to fetch.
+     */
+    orderBy?: WaitlistRequestOrderByWithRelationInput | WaitlistRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for WaitlistRequests.
+     */
+    cursor?: WaitlistRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WaitlistRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WaitlistRequests.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of WaitlistRequests.
+     */
+    distinct?: WaitlistRequestScalarFieldEnum | WaitlistRequestScalarFieldEnum[]
+  }
+
+  /**
+   * WaitlistRequest findMany
+   */
+  export type WaitlistRequestFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which WaitlistRequests to fetch.
+     */
+    where?: WaitlistRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WaitlistRequests to fetch.
+     */
+    orderBy?: WaitlistRequestOrderByWithRelationInput | WaitlistRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing WaitlistRequests.
+     */
+    cursor?: WaitlistRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WaitlistRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WaitlistRequests.
+     */
+    skip?: number
+    distinct?: WaitlistRequestScalarFieldEnum | WaitlistRequestScalarFieldEnum[]
+  }
+
+  /**
+   * WaitlistRequest create
+   */
+  export type WaitlistRequestCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * The data needed to create a WaitlistRequest.
+     */
+    data: XOR<WaitlistRequestCreateInput, WaitlistRequestUncheckedCreateInput>
+  }
+
+  /**
+   * WaitlistRequest createMany
+   */
+  export type WaitlistRequestCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many WaitlistRequests.
+     */
+    data: WaitlistRequestCreateManyInput | WaitlistRequestCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * WaitlistRequest createManyAndReturn
+   */
+  export type WaitlistRequestCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * The data used to create many WaitlistRequests.
+     */
+    data: WaitlistRequestCreateManyInput | WaitlistRequestCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * WaitlistRequest update
+   */
+  export type WaitlistRequestUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * The data needed to update a WaitlistRequest.
+     */
+    data: XOR<WaitlistRequestUpdateInput, WaitlistRequestUncheckedUpdateInput>
+    /**
+     * Choose, which WaitlistRequest to update.
+     */
+    where: WaitlistRequestWhereUniqueInput
+  }
+
+  /**
+   * WaitlistRequest updateMany
+   */
+  export type WaitlistRequestUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update WaitlistRequests.
+     */
+    data: XOR<WaitlistRequestUpdateManyMutationInput, WaitlistRequestUncheckedUpdateManyInput>
+    /**
+     * Filter which WaitlistRequests to update
+     */
+    where?: WaitlistRequestWhereInput
+  }
+
+  /**
+   * WaitlistRequest upsert
+   */
+  export type WaitlistRequestUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * The filter to search for the WaitlistRequest to update in case it exists.
+     */
+    where: WaitlistRequestWhereUniqueInput
+    /**
+     * In case the WaitlistRequest found by the `where` argument doesn't exist, create a new WaitlistRequest with this data.
+     */
+    create: XOR<WaitlistRequestCreateInput, WaitlistRequestUncheckedCreateInput>
+    /**
+     * In case the WaitlistRequest was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<WaitlistRequestUpdateInput, WaitlistRequestUncheckedUpdateInput>
+  }
+
+  /**
+   * WaitlistRequest delete
+   */
+  export type WaitlistRequestDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * Filter which WaitlistRequest to delete.
+     */
+    where: WaitlistRequestWhereUniqueInput
+  }
+
+  /**
+   * WaitlistRequest deleteMany
+   */
+  export type WaitlistRequestDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which WaitlistRequests to delete
+     */
+    where?: WaitlistRequestWhereInput
+  }
+
+  /**
+   * WaitlistRequest without action
+   */
+  export type WaitlistRequestDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+  }
+
 
   /**
    * Model Subject
@@ -42437,6 +44429,28 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+  export const FeatureRequestScalarFieldEnum: {
+    id: 'id',
+    email: 'email',
+    message: 'message',
+    category: 'category',
+    userBase: 'userBase',
+    receivedOn: 'receivedOn'
+  };
+
+  export type FeatureRequestScalarFieldEnum = (typeof FeatureRequestScalarFieldEnum)[keyof typeof FeatureRequestScalarFieldEnum]
+
+
+  export const WaitlistRequestScalarFieldEnum: {
+    id: 'id',
+    email: 'email',
+    receivedOn: 'receivedOn',
+    emailsSent: 'emailsSent'
+  };
+
+  export type WaitlistRequestScalarFieldEnum = (typeof WaitlistRequestScalarFieldEnum)[keyof typeof WaitlistRequestScalarFieldEnum]
+
+
   export const SubjectScalarFieldEnum: {
     value: 'value',
     kanbanId: 'kanbanId'
@@ -42948,6 +44962,23 @@ export namespace Prisma {
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
 
 
+  export const FeatureRequestOrderByRelevanceFieldEnum: {
+    email: 'email',
+    message: 'message',
+    category: 'category',
+    userBase: 'userBase'
+  };
+
+  export type FeatureRequestOrderByRelevanceFieldEnum = (typeof FeatureRequestOrderByRelevanceFieldEnum)[keyof typeof FeatureRequestOrderByRelevanceFieldEnum]
+
+
+  export const WaitlistRequestOrderByRelevanceFieldEnum: {
+    email: 'email'
+  };
+
+  export type WaitlistRequestOrderByRelevanceFieldEnum = (typeof WaitlistRequestOrderByRelevanceFieldEnum)[keyof typeof WaitlistRequestOrderByRelevanceFieldEnum]
+
+
   export const NullsOrder: {
     first: 'first',
     last: 'last'
@@ -43286,20 +45317,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'String'
-   */
-  export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
-    
-
-
-  /**
-   * Reference to a field of type 'String[]'
-   */
-  export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
-    
-
-
-  /**
    * Reference to a field of type 'Int'
    */
   export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -43314,9 +45331,16 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Boolean'
+   * Reference to a field of type 'String'
    */
-  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+  export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
+    
+
+
+  /**
+   * Reference to a field of type 'String[]'
+   */
+  export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
     
 
 
@@ -43331,6 +45355,13 @@ export namespace Prisma {
    * Reference to a field of type 'DateTime[]'
    */
   export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -43483,6 +45514,116 @@ export namespace Prisma {
    * Deep Input Types
    */
 
+
+  export type FeatureRequestWhereInput = {
+    AND?: FeatureRequestWhereInput | FeatureRequestWhereInput[]
+    OR?: FeatureRequestWhereInput[]
+    NOT?: FeatureRequestWhereInput | FeatureRequestWhereInput[]
+    id?: IntFilter<"FeatureRequest"> | number
+    email?: StringFilter<"FeatureRequest"> | string
+    message?: StringFilter<"FeatureRequest"> | string
+    category?: StringNullableListFilter<"FeatureRequest">
+    userBase?: StringNullableListFilter<"FeatureRequest">
+    receivedOn?: DateTimeFilter<"FeatureRequest"> | Date | string
+  }
+
+  export type FeatureRequestOrderByWithRelationInput = {
+    id?: SortOrder
+    email?: SortOrder
+    message?: SortOrder
+    category?: SortOrder
+    userBase?: SortOrder
+    receivedOn?: SortOrder
+    _relevance?: FeatureRequestOrderByRelevanceInput
+  }
+
+  export type FeatureRequestWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: FeatureRequestWhereInput | FeatureRequestWhereInput[]
+    OR?: FeatureRequestWhereInput[]
+    NOT?: FeatureRequestWhereInput | FeatureRequestWhereInput[]
+    email?: StringFilter<"FeatureRequest"> | string
+    message?: StringFilter<"FeatureRequest"> | string
+    category?: StringNullableListFilter<"FeatureRequest">
+    userBase?: StringNullableListFilter<"FeatureRequest">
+    receivedOn?: DateTimeFilter<"FeatureRequest"> | Date | string
+  }, "id">
+
+  export type FeatureRequestOrderByWithAggregationInput = {
+    id?: SortOrder
+    email?: SortOrder
+    message?: SortOrder
+    category?: SortOrder
+    userBase?: SortOrder
+    receivedOn?: SortOrder
+    _count?: FeatureRequestCountOrderByAggregateInput
+    _avg?: FeatureRequestAvgOrderByAggregateInput
+    _max?: FeatureRequestMaxOrderByAggregateInput
+    _min?: FeatureRequestMinOrderByAggregateInput
+    _sum?: FeatureRequestSumOrderByAggregateInput
+  }
+
+  export type FeatureRequestScalarWhereWithAggregatesInput = {
+    AND?: FeatureRequestScalarWhereWithAggregatesInput | FeatureRequestScalarWhereWithAggregatesInput[]
+    OR?: FeatureRequestScalarWhereWithAggregatesInput[]
+    NOT?: FeatureRequestScalarWhereWithAggregatesInput | FeatureRequestScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"FeatureRequest"> | number
+    email?: StringWithAggregatesFilter<"FeatureRequest"> | string
+    message?: StringWithAggregatesFilter<"FeatureRequest"> | string
+    category?: StringNullableListFilter<"FeatureRequest">
+    userBase?: StringNullableListFilter<"FeatureRequest">
+    receivedOn?: DateTimeWithAggregatesFilter<"FeatureRequest"> | Date | string
+  }
+
+  export type WaitlistRequestWhereInput = {
+    AND?: WaitlistRequestWhereInput | WaitlistRequestWhereInput[]
+    OR?: WaitlistRequestWhereInput[]
+    NOT?: WaitlistRequestWhereInput | WaitlistRequestWhereInput[]
+    id?: IntFilter<"WaitlistRequest"> | number
+    email?: StringFilter<"WaitlistRequest"> | string
+    receivedOn?: DateTimeFilter<"WaitlistRequest"> | Date | string
+    emailsSent?: IntFilter<"WaitlistRequest"> | number
+  }
+
+  export type WaitlistRequestOrderByWithRelationInput = {
+    id?: SortOrder
+    email?: SortOrder
+    receivedOn?: SortOrder
+    emailsSent?: SortOrder
+    _relevance?: WaitlistRequestOrderByRelevanceInput
+  }
+
+  export type WaitlistRequestWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: WaitlistRequestWhereInput | WaitlistRequestWhereInput[]
+    OR?: WaitlistRequestWhereInput[]
+    NOT?: WaitlistRequestWhereInput | WaitlistRequestWhereInput[]
+    email?: StringFilter<"WaitlistRequest"> | string
+    receivedOn?: DateTimeFilter<"WaitlistRequest"> | Date | string
+    emailsSent?: IntFilter<"WaitlistRequest"> | number
+  }, "id">
+
+  export type WaitlistRequestOrderByWithAggregationInput = {
+    id?: SortOrder
+    email?: SortOrder
+    receivedOn?: SortOrder
+    emailsSent?: SortOrder
+    _count?: WaitlistRequestCountOrderByAggregateInput
+    _avg?: WaitlistRequestAvgOrderByAggregateInput
+    _max?: WaitlistRequestMaxOrderByAggregateInput
+    _min?: WaitlistRequestMinOrderByAggregateInput
+    _sum?: WaitlistRequestSumOrderByAggregateInput
+  }
+
+  export type WaitlistRequestScalarWhereWithAggregatesInput = {
+    AND?: WaitlistRequestScalarWhereWithAggregatesInput | WaitlistRequestScalarWhereWithAggregatesInput[]
+    OR?: WaitlistRequestScalarWhereWithAggregatesInput[]
+    NOT?: WaitlistRequestScalarWhereWithAggregatesInput | WaitlistRequestScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"WaitlistRequest"> | number
+    email?: StringWithAggregatesFilter<"WaitlistRequest"> | string
+    receivedOn?: DateTimeWithAggregatesFilter<"WaitlistRequest"> | Date | string
+    emailsSent?: IntWithAggregatesFilter<"WaitlistRequest"> | number
+  }
 
   export type SubjectWhereInput = {
     AND?: SubjectWhereInput | SubjectWhereInput[]
@@ -46155,6 +48296,112 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"DJT"> | number
     type?: StringWithAggregatesFilter<"DJT"> | string
     data?: BytesWithAggregatesFilter<"DJT"> | Buffer
+  }
+
+  export type FeatureRequestCreateInput = {
+    email: string
+    message: string
+    category?: FeatureRequestCreatecategoryInput | string[]
+    userBase?: FeatureRequestCreateuserBaseInput | string[]
+    receivedOn?: Date | string
+  }
+
+  export type FeatureRequestUncheckedCreateInput = {
+    id?: number
+    email: string
+    message: string
+    category?: FeatureRequestCreatecategoryInput | string[]
+    userBase?: FeatureRequestCreateuserBaseInput | string[]
+    receivedOn?: Date | string
+  }
+
+  export type FeatureRequestUpdateInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    category?: FeatureRequestUpdatecategoryInput | string[]
+    userBase?: FeatureRequestUpdateuserBaseInput | string[]
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FeatureRequestUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    category?: FeatureRequestUpdatecategoryInput | string[]
+    userBase?: FeatureRequestUpdateuserBaseInput | string[]
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FeatureRequestCreateManyInput = {
+    id?: number
+    email: string
+    message: string
+    category?: FeatureRequestCreatecategoryInput | string[]
+    userBase?: FeatureRequestCreateuserBaseInput | string[]
+    receivedOn?: Date | string
+  }
+
+  export type FeatureRequestUpdateManyMutationInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    category?: FeatureRequestUpdatecategoryInput | string[]
+    userBase?: FeatureRequestUpdateuserBaseInput | string[]
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FeatureRequestUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    category?: FeatureRequestUpdatecategoryInput | string[]
+    userBase?: FeatureRequestUpdateuserBaseInput | string[]
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type WaitlistRequestCreateInput = {
+    email: string
+    receivedOn?: Date | string
+    emailsSent?: number
+  }
+
+  export type WaitlistRequestUncheckedCreateInput = {
+    id?: number
+    email: string
+    receivedOn?: Date | string
+    emailsSent?: number
+  }
+
+  export type WaitlistRequestUpdateInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+    emailsSent?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type WaitlistRequestUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+    emailsSent?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type WaitlistRequestCreateManyInput = {
+    id?: number
+    email: string
+    receivedOn?: Date | string
+    emailsSent?: number
+  }
+
+  export type WaitlistRequestUpdateManyMutationInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+    emailsSent?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type WaitlistRequestUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+    emailsSent?: IntFieldUpdateOperationsInput | number
   }
 
   export type SubjectCreateInput = {
@@ -49032,6 +51279,17 @@ export namespace Prisma {
     data?: BytesFieldUpdateOperationsInput | Buffer
   }
 
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -49046,6 +51304,148 @@ export namespace Prisma {
     search?: string
     mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type StringNullableListFilter<$PrismaModel = never> = {
+    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    has?: string | StringFieldRefInput<$PrismaModel> | null
+    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
+    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
+    isEmpty?: boolean
+  }
+
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type FeatureRequestOrderByRelevanceInput = {
+    fields: FeatureRequestOrderByRelevanceFieldEnum | FeatureRequestOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type FeatureRequestCountOrderByAggregateInput = {
+    id?: SortOrder
+    email?: SortOrder
+    message?: SortOrder
+    category?: SortOrder
+    userBase?: SortOrder
+    receivedOn?: SortOrder
+  }
+
+  export type FeatureRequestAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type FeatureRequestMaxOrderByAggregateInput = {
+    id?: SortOrder
+    email?: SortOrder
+    message?: SortOrder
+    receivedOn?: SortOrder
+  }
+
+  export type FeatureRequestMinOrderByAggregateInput = {
+    id?: SortOrder
+    email?: SortOrder
+    message?: SortOrder
+    receivedOn?: SortOrder
+  }
+
+  export type FeatureRequestSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type StringWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
+    mode?: QueryMode
+    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type WaitlistRequestOrderByRelevanceInput = {
+    fields: WaitlistRequestOrderByRelevanceFieldEnum | WaitlistRequestOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type WaitlistRequestCountOrderByAggregateInput = {
+    id?: SortOrder
+    email?: SortOrder
+    receivedOn?: SortOrder
+    emailsSent?: SortOrder
+  }
+
+  export type WaitlistRequestAvgOrderByAggregateInput = {
+    id?: SortOrder
+    emailsSent?: SortOrder
+  }
+
+  export type WaitlistRequestMaxOrderByAggregateInput = {
+    id?: SortOrder
+    email?: SortOrder
+    receivedOn?: SortOrder
+    emailsSent?: SortOrder
+  }
+
+  export type WaitlistRequestMinOrderByAggregateInput = {
+    id?: SortOrder
+    email?: SortOrder
+    receivedOn?: SortOrder
+    emailsSent?: SortOrder
+  }
+
+  export type WaitlistRequestSumOrderByAggregateInput = {
+    id?: SortOrder
+    emailsSent?: SortOrder
   }
 
   export type IntNullableFilter<$PrismaModel = never> = {
@@ -49178,25 +51578,6 @@ export namespace Prisma {
     kanbanId?: SortOrder
   }
 
-  export type StringWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
-    mode?: QueryMode
-    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedStringFilter<$PrismaModel>
-    _max?: NestedStringFilter<$PrismaModel>
-  }
-
   export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -49292,17 +51673,6 @@ export namespace Prisma {
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
-  export type DateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
   export type QuoteOrderByRelevanceInput = {
     fields: QuoteOrderByRelevanceFieldEnum | QuoteOrderByRelevanceFieldEnum[]
     sort: SortOrder
@@ -49360,20 +51730,6 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
-  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
   export type DailyFocusOrderByRelevanceInput = {
     fields: DailyFocusOrderByRelevanceFieldEnum | DailyFocusOrderByRelevanceFieldEnum[]
     sort: SortOrder
@@ -49393,17 +51749,6 @@ export namespace Prisma {
   export type DailyFocusMinOrderByAggregateInput = {
     value?: SortOrder
     createdAt?: SortOrder
-  }
-
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type EnumautoSettingFilter<$PrismaModel = never> = {
@@ -49446,22 +51791,6 @@ export namespace Prisma {
 
   export type AutoSettingSumOrderByAggregateInput = {
     id?: SortOrder
-  }
-
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type EnumautoSettingWithAggregatesFilter<$PrismaModel = never> = {
@@ -49785,14 +52114,6 @@ export namespace Prisma {
 
   export type GoogleCalendarAuthSumOrderByAggregateInput = {
     id?: SortOrder
-  }
-
-  export type StringNullableListFilter<$PrismaModel = never> = {
-    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    has?: string | StringFieldRefInput<$PrismaModel> | null
-    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
-    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
-    isEmpty?: boolean
   }
 
   export type EnumTechnologiesFilter<$PrismaModel = never> = {
@@ -51424,6 +53745,40 @@ export namespace Prisma {
     id?: SortOrder
   }
 
+  export type FeatureRequestCreatecategoryInput = {
+    set: string[]
+  }
+
+  export type FeatureRequestCreateuserBaseInput = {
+    set: string[]
+  }
+
+  export type StringFieldUpdateOperationsInput = {
+    set?: string
+  }
+
+  export type FeatureRequestUpdatecategoryInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type FeatureRequestUpdateuserBaseInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
   export type MdxNoteCreateNestedManyWithoutSubjectsInput = {
     create?: XOR<MdxNoteCreateWithoutSubjectsInput, MdxNoteUncheckedCreateWithoutSubjectsInput> | MdxNoteCreateWithoutSubjectsInput[] | MdxNoteUncheckedCreateWithoutSubjectsInput[]
     connectOrCreate?: MdxNoteCreateOrConnectWithoutSubjectsInput | MdxNoteCreateOrConnectWithoutSubjectsInput[]
@@ -51524,10 +53879,6 @@ export namespace Prisma {
     create?: XOR<EquationCreateWithoutSubjectsInput, EquationUncheckedCreateWithoutSubjectsInput> | EquationCreateWithoutSubjectsInput[] | EquationUncheckedCreateWithoutSubjectsInput[]
     connectOrCreate?: EquationCreateOrConnectWithoutSubjectsInput | EquationCreateOrConnectWithoutSubjectsInput[]
     connect?: EquationWhereUniqueInput | EquationWhereUniqueInput[]
-  }
-
-  export type StringFieldUpdateOperationsInput = {
-    set?: string
   }
 
   export type MdxNoteUpdateManyWithoutSubjectsNestedInput = {
@@ -52404,20 +54755,8 @@ export namespace Prisma {
     set?: boolean
   }
 
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
-  }
-
   export type EnumautoSettingFieldUpdateOperationsInput = {
     set?: $Enums.autoSetting
-  }
-
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
   }
 
   export type BibEntryCreateNestedManyWithoutReadingListInput = {
@@ -55081,6 +57420,17 @@ export namespace Prisma {
     update?: XOR<XOR<DietUpdateToOneWithWhereWithoutHealthReportInput, DietUpdateWithoutHealthReportInput>, DietUncheckedUpdateWithoutHealthReportInput>
   }
 
+  export type NestedIntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -55096,15 +57446,42 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
@@ -55125,15 +57502,29 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type NestedIntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -55183,17 +57574,6 @@ export namespace Prisma {
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
-  export type NestedDateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -55220,52 +57600,11 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
-  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
   export type NestedEnumautoSettingFilter<$PrismaModel = never> = {
     equals?: $Enums.autoSetting | EnumautoSettingFieldRefInput<$PrismaModel>
     in?: $Enums.autoSetting[] | ListEnumautoSettingFieldRefInput<$PrismaModel>
     notIn?: $Enums.autoSetting[] | ListEnumautoSettingFieldRefInput<$PrismaModel>
     not?: NestedEnumautoSettingFilter<$PrismaModel> | $Enums.autoSetting
-  }
-
-  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
-  export type NestedFloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type NestedEnumautoSettingWithAggregatesFilter<$PrismaModel = never> = {
@@ -66377,6 +68716,14 @@ export namespace Prisma {
      * @deprecated Use DietaryItemCountOutputTypeDefaultArgs instead
      */
     export type DietaryItemCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = DietaryItemCountOutputTypeDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use FeatureRequestDefaultArgs instead
+     */
+    export type FeatureRequestArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = FeatureRequestDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use WaitlistRequestDefaultArgs instead
+     */
+    export type WaitlistRequestArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = WaitlistRequestDefaultArgs<ExtArgs>
     /**
      * @deprecated Use SubjectDefaultArgs instead
      */
