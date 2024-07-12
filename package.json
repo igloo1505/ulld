@@ -58,7 +58,9 @@
       ]
     },
     "overrides": {
-      "mapbox-gl": "^1.13.3"
+      "unified": "^11.0.5",
+      "mapbox-gl": "^1.13.3",
+      "typescript": "^5.5.2"
     }
   },
   "dependencies": {

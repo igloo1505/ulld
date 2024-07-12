@@ -75,6 +75,12 @@
       "cache": false,
       "persistent": true
     },
+    "dev:debug": {
+      "dependsOn": ["^db:generate", "^generateComponentMap"],
+      "env": [".env.development.local", ".env.local", ".env"],
+      "cache": false,
+      "persistent": true
+    },
     "clean": {
       "cache": false
     }

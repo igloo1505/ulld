@@ -9,7 +9,7 @@ export type {
     PluginSettingsConfig,
     PluginPageConfig,
     PluginEventsConfig,
-} from "@ulld/configschema/developerTypes";
+} from "@ulld/types";
 
 export type {
     ErrorMarginProps,

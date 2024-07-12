@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:debug": "NODE_OPTIONS='--inspect' next dev",
     "simulateProduction": "OVERRIDE_PRODUCTION=true next dev",
     "build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 /vercel/path0/node_modules/canvas/build/Release/ && LD_LIBRARY_PATH=/var/task/node_modules/canvas/build/Release next build",
     "buildLocal": "LD_LIBRARY_PATH=/var/task/node_modules/canvas/build/Release dotenv -e .env.local -- next build",
@@ -64,6 +65,7 @@
     "@ulld/tailwind": "workspace:*",
     "@ulld/ui": "workspace:*",
     "@ulld/utilities": "workspace:*",
+    "@ulld/types": "workspace:*",
     "@ulld/whiteboard": "workspace:*",
     "@use-gesture/react": "^10.3.1",
     "@use-gesture/vanilla": "^10.3.1",
@@ -131,8 +133,7 @@
     "globby": "^14.0.1",
     "tailwindcss": "^3.4.1",
     "tsx": "^4.10.4",
-    "twoslash": "^0.2.6",
-    "@ulld/types": "workspace:*"
+    "twoslash": "^0.2.6"
   },
   "packageManager": "pnpm@9.0.4",
   "peerDependencies": {},
