@@ -625,6 +625,9 @@ importers:
       redux-persist-indexeddb-storage:
         specifier: ^1.0.4
         version: 1.0.4
+      rehype-img-size:
+        specifier: ^1.0.1
+        version: 1.0.1
       rehype-mathjax:
         specifier: ^6.0.0
         version: 6.0.0(bufferutil@4.0.8)(canvas@2.11.2)(utf-8-validate@6.0.3)
