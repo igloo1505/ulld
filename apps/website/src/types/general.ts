@@ -39,5 +39,6 @@ export type PageType = {
         tags?: string[];
         priority?: number;
         blog?: boolean;
+        titleCenter?: boolean
     };
 } & ReturnType<typeof getPage>;

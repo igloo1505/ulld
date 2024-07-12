@@ -21,7 +21,8 @@ const utilFields = (z: typeof _zod) => {
         sequentialId: z.string().optional(),
         title: z.string(),
         full: z.boolean().optional(),
-        id: z.string().optional()
+        id: z.string().optional(),
+        titleCenter: z.boolean().default(false)
     } as any;
 };
 

@@ -1,6 +1,7 @@
 export const mdxContentPaths = [
     "/docs",
-    "/blog/"
+    "/blog/",
+    "/myWork"
 ]
 
 export const pathIsMdxContent = (pathname: string) => {
