@@ -13,6 +13,7 @@ import { CodeBlockProps, CodeBlock, Pre } from "fumadocs-ui/components/codeblock
 import { ImageZoom } from "fumadocs-ui/components/image-zoom";
 import { getRandomId } from "@ulld/utilities/identity";
 import { WithRequired } from "@ulld/utilities/types";
+import { NoteStateObserver } from "@ulld/state/observers/noteState";
 
 
 interface DocsPageComponentProps {
@@ -69,6 +70,7 @@ const DocsPageInternal = ({ page, noTitle, id }: WithRequired<DocsPageComponentP
     };
     return (
         <MathjaxProvider>
+            <NoteStateObserver />
             {!noTitle && <h1>{page.data.title}</h1>}
             <MDXContent code={page.data.body} components={components as any} />
             <ApplyMathjaxBandaid container={id} />

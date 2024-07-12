@@ -19,6 +19,8 @@ export interface ModelViewProps {
     width?: number
     /** An optional width of the model as an [**assumed dimension**](/docs/terminology?id=assumedDimension). */
     height?: number
+    /** A minimum height to set the container. It will be expanded if the screen size allows. */
+    minHeight?: number
     /** Should model slowly rotate without user interaction. */
     rotate?: boolean
 }

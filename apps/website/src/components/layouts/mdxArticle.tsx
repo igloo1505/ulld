@@ -28,7 +28,7 @@ import { MDXContent } from "@content-collections/mdx/react";
 import ReplaceTableCode from "../docUtils/replaceTableCode";
 import ApplyMathjaxBandaid from "../utility/applyMathjaxBandaid";
 
-export interface MDXArticleProps extends HTMLProps<HTMLElement> {
+export interface MDXArticleProps extends Omit<HTMLProps<HTMLElement>, "data"> {
     paddingTop?: boolean;
     isSource?: boolean;
     hideSourceButton?: boolean;
@@ -93,11 +93,9 @@ const MDXArticle = (
         ),
     };
 
-    console.log("data.data.body: ", data.data.body)
-
     return (
         <>
-            {/* <NoteStateObserver /> */}
+            <NoteStateObserver />
             {!hideSourceButton && !embedded && (
                 <MdxArticleNavButtons articleId={pageId} isSource={isSource} />
             )}

@@ -12,7 +12,7 @@ import {
     getBaseEmbeddableProps,
 } from "../../baseEmbeddableComponentTypes";
 import { useMathjaxDynamicParse } from "@ulld/hooks/useMathjaxDynamicParse";
-import clsx from "clsx";
+import cn from "@ulld/utilities/cn";
 import { MathJax } from "better-react-mathjax";
 import { EmbeddableCardProps } from "./props";
 
@@ -35,10 +35,10 @@ export const EmbeddableCard = ({
     useMathjaxDynamicParse([title, desc, c]);
     let newProps = getBaseEmbeddableProps<HTMLDivElement>(_props);
     return (
-        <Card {...newProps} className={clsx("not-prose", newProps)} id={id}>
+        <Card {...newProps} className={cn(newProps.className, "mb-6")} id={id}>
             <MathJax inline>
                 {(title || desc || description) && (
-                    <CardHeader>
+                    <CardHeader className={"not-prose"}>
                         {title && <CardTitle>{title}</CardTitle>}
                         {(desc || description) && (
                             <CardDescription>{desc || description}</CardDescription>
@@ -47,7 +47,7 @@ export const EmbeddableCard = ({
                 )}
             </MathJax>
             <MathJax inline={false}>
-                <CardContent>{c}</CardContent>
+                <CardContent className={"not-prose"}>{c}</CardContent>
             </MathJax>
         </Card>
     );

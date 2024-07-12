@@ -1,7 +1,8 @@
 "use client"
-import React, { RefObject, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { RootState } from "@ulld/state/store";
 import { connect } from "react-redux";
+import clsx from "clsx";
 
 const connector = connect((state: RootState, props: any) => ({
     figureIds: state.note.figureIds,
@@ -14,6 +15,7 @@ interface SelfFigureIndexProps {
     imageId: string
     desc?: string;
 }
+
 
 const SelfFigureIndex = connector(
     ({ id, figureIds, imageId, desc }: SelfFigureIndexProps) => {
@@ -45,8 +47,8 @@ const SelfFigureIndex = connector(
             <div
                 ref={container}
             >
-                <span>{`Figure ${imgIndex + 1}:`}</span>
-                {desc && <span className={"ml-1"}>{desc}</span>}
+                {typeof imgIndex === "number" && <span>{`Figure ${imgIndex + 1}:`}</span>}
+                {desc && <span className={clsx(typeof imgIndex === "number" ? "ml-1" : "")}>{desc}</span>}
             </div>
         );
     },

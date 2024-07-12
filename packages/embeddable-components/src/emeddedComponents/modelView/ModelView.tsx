@@ -10,7 +10,7 @@ import React, {
 } from "react";
 /// deep import from model-view package causing a *ton* of typescript errors without any noticeable issues.
 import "@google/model-viewer/dist/model-viewer.js";
-/* import { ModelViewerElement } from "@google/model-viewer"; */
+import { ModelViewerElement } from "@google/model-viewer";
 import clsx from "clsx";
 import { Progress } from "@ulld/tailwind/progress";
 import { Button } from "@ulld/tailwind/button";
@@ -34,8 +34,9 @@ export const ModelView = ({
     className,
     url,
     width = 600,
-    height = 300,
+    height = 450,
     rotate,
+    minHeight,
     ...props
 }: MP) => {
     if ("class" in props && props.class) {
@@ -45,7 +46,8 @@ export const ModelView = ({
     const progressBar = useRef<HTMLDivElement>(null!);
     const viewer = useRef<HTMLElement>(null!);
     const id = useId();
-    const [progress, setProgress] = useState(0)
+    const [progress, setProgress] = useState(0);
+
     let params = useMemo(() => {
         if (!file) return;
         const config = getInternalConfig();
@@ -55,16 +57,17 @@ export const ModelView = ({
         return p;
     }, [file]);
 
-
-    useEffect(() => {
-        viewer.current.addEventListener("progress", (event: any) => {
-            setProgress(event.detail.totalProgress * 100)
-            if (event.detail.totalProgress === 1) {
-                progressBar.current.remove();
-                /* event.target?.removeEventListener("progress", onProgress as any); */
-            }
-        });
-    }, []);
+    const onProgress = (event: CustomEvent<ModelViewerElement> & {
+        detail: {
+            totalProgress: number
+        }
+    }) => {
+        setProgress(event.detail.totalProgress * 100);
+        if (event.detail.totalProgress === 1) {
+            progressBar.current.remove();
+            /* event.target?.removeEventListener("progress", onProgress as any); */
+        }
+    };
 
     const dimensions = useMemo(
         () =>
@@ -91,6 +94,7 @@ export const ModelView = ({
                 <model-viewer
                     ref={viewer}
                     style={dimensions}
+                    onprogress={onProgress}
                     {...domProps}
                     className={clsx(
                         "w-[600px] h-[300px] max-w-full max-h-full relative",

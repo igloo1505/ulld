@@ -35,11 +35,11 @@ export const EmbeddableCard = async ({
     const newProps = getBaseEmbeddableProps<HTMLDivElement>(_props)
 
     return (
-        <Card {...newProps} className={clsx("not-prose", newProps.className)} id={id}>
+        <Card {...newProps} className={newProps.className} id={id}>
             {(title || desc || description) && (
-                <CardHeader>
+                <CardHeader className={"not-prose"}>
                     {title && (
-                        <CardTitle>
+                        <CardTitle className={"not-prose"}>
                             {typeof title === "string" ? (
                                 <MdxContentCLIENT content={title as string} inline />
                             ) : (
@@ -48,7 +48,7 @@ export const EmbeddableCard = async ({
                         </CardTitle>
                     )}
                     {(desc || description) && (
-                        <CardDescription>
+                        <CardDescription className={"not-prose"}>
                             <MdxContentCLIENT
                                 content={desc || (description as string)}
                                 display
@@ -57,7 +57,7 @@ export const EmbeddableCard = async ({
                     )}
                 </CardHeader>
             )}
-            <CardContent>
+            <CardContent className={"not-prose"}>
                 {typeof c === "string" ? (
                     <MdxContentCLIENT content={c || ""} display />
                 ) : (

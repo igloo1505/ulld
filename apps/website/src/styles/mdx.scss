@@ -635,3 +635,9 @@ div[data-radix-popper-content-wrapper] {
     max-width: calc(100vw - 4rem);
   }
 }
+
+.prose {
+  a {
+    text-decoration: none !important;
+  }
+}

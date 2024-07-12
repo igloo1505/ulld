@@ -119,7 +119,6 @@ const C = (props: ImgProps) => {
 
 export const EmbeddedImage = (props: ImgProps) => {
     const config = props.noConfig ? null : getInternalConfig();
-    console.log("props: ", props)
     const { image } = props;
     if (image && config && image in config.UI.media.imageMap) {
         return <ImageMapImage {...props} image={image} />

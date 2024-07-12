@@ -216,31 +216,31 @@ const RootLayout = async (props: {
                         enableSystem: false,
                     }}
                 >
-                    <HandleBodyDisplay />
-                    <BetaBanner />
-                    <Navbar />
                     <InternalReduxProvider>
+                        <HandleBodyDisplay />
+                        <BetaBanner />
+                        <Navbar />
                         <MainNavigationDrawer />
                         <NavbarBreakpointHandler />
+                        {props.children}
+                        <Toaster />
+                        {props.modal && props.modal}
+                        <SetInitialRender />
+                        <StateWrappedUI
+                            ignoreConfig
+                            ignoreSettings
+                            loader={{
+                                mathjax: ["config"],
+                            }}
+                            observers={{
+                                noSettings: true,
+                                noThemeCookie: true,
+                            }}
+                        />
+                        <StateWrappedComponents />
+                        <ThemeMenu />
+                        <Footer />
                     </InternalReduxProvider>
-                    {props.children}
-                    <Toaster />
-                    {props.modal && props.modal}
-                    <SetInitialRender />
-                    <StateWrappedUI
-                        ignoreConfig
-                        ignoreSettings
-                        loader={{
-                            mathjax: ["config"],
-                        }}
-                        observers={{
-                            noSettings: true,
-                            noThemeCookie: true,
-                        }}
-                    />
-                    <StateWrappedComponents />
-                    <ThemeMenu />
-                    <Footer />
                 </RootProvider>
             </body>
             <GoogleAnalytics gaId="G-K46X7QHBEX" />

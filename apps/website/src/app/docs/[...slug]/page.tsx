@@ -18,6 +18,8 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { ComponentProps, ReactNode } from "react";
 import ApplyMathjaxBandaid from "#/components/utility/applyMathjaxBandaid";
 import { PageType } from "#/types/general";
+import DocsPageComponent from "#/components/docUtils/docsPage";
+
 
 const docsBodyId = "ulld-documentation-container";
 
@@ -51,59 +53,12 @@ export default function Page({ params }: { params: { slug?: string[] } }) {
     }
 
 
-    const rawContent =
-        ("content" in page.data) ? page?.data.content : undefined;
-
-
-
-    const filteredComponents = getComponentMap(
-        rawContent || "",
-        { avoidKeys: ["mark"] },
-        serverComponentMap,
-    );
-
-    const components = {
-        ...defaultMdxComponents,
-        ...filteredComponents,
-        // These Tab and Tabs components are used to automatically create pnpm, npm, bun and yarn command dynamically, but are causing conflicts with the existing TabGroup component, I think? Disabling for now since the app should probably rely on the stuff I'm trying to convince people to use.
-        /* Tab: Tab, */
-        /* Tabs: Tabs, */
-        /* code: InlineCode, */
-        img: (props: ComponentProps<typeof ImageZoom>) => <ImageZoom {...props} />,
-        pre: ({ title, className, icon, allowCopy, ...props }: CodeBlockProps) => (
-            <CodeBlock
-                title={title}
-                icon={icon}
-                allowCopy={typeof allowCopy === "boolean" ? allowCopy : true}
-            >
-                <Pre className={cn("max-h-[400px]", className)} {...props} />
-            </CodeBlock>
-        ),
-        InstallTabs: ({
-            items,
-            children,
-        }: {
-            items: string[];
-            children: ReactNode;
-        }) => (
-            <Tabs items={items} id="package-manager">
-                {children}
-            </Tabs>
-        ),
-    };
-
     return (
-        <DocsPage toc={page.data.toc as TocType} full={page.data.full}>
-            <DocsBody id={docsBodyId} className={"@container/mdx"}>
-                <MathjaxProvider>
-                    <h1>{page.data.title}</h1>
-                    <MDXContent code={page.data.body} components={components as any} />
-                    <ApplyMathjaxBandaid container={docsBodyId} />
-                </MathjaxProvider>
-            </DocsBody>
-        </DocsPage>
-    );
+        <DocsPageComponent page={page} id={docsBodyId} />
+    )
+
 }
+
 
 export function generateStaticParams() {
     return getPages().map((page) => ({

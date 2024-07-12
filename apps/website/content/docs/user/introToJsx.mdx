@@ -9,7 +9,7 @@ created: 6-10-24
 
 The primary goal of **JSX** is to add the ability to write multiple different languages in a single file. React components, which are written in **TSX**[^1], work primarily as a render function. React components are functions that either return some sort of valid [**HTML**](https://developer.mozilla.org/en-US/docs/Web/HTML), or `null` if the internal logic determines that nothing visible should be returned.  
 
-Through the great work at the people over at [MDX](https://mdxjs.com), we can now embed entire React components directly in markdown files, with the `.mdx` file extension. All of the original functionality of markdown remains intact, and in <LogoAsText /> is actually extended, but users can now include neatly bundled **HTML**, **CSS**, and **Javascript** in pre-defined React components. 
+Through the great work at the people over at [MDX](https://mdxjs.com), we can now embed entire React components directly in markdown files, with the `.mdx` file extension. All of the original functionality of markdown remains intact, and in <LogoAsText /> is actually extended quite a bit, but users can now include neatly bundled **HTML**, **CSS**, and **Javascript** in pre-defined React components. 
 
 > All you need to know is how to properly pass in the data that these components need to calculate what they should return. If you're already familiar with **JSX**, you can move on to the [components documentation](/docs/user/components?category=Layout). Otherwise, a quick review of this documentation is important if you want to get the most from <LogoAsText />. Don't worry; It's incredibly simple.
 
@@ -21,7 +21,7 @@ Regardless of whether or not a component is actually built using Typescript (**T
 
 | Property | Description |
 | -------- | ----------- |
-| `optionalProperty?` | An optional property is denoted by a following question mark |
+| `optionalProperty?` | An optional property is denoted by a question mark suffix |
 | `TypeOne \| TypeTwo` | When multiple types are valid for a given property, this list of valid types is separated by a <span className="inline-code">\|</span> symbol |
 
 
