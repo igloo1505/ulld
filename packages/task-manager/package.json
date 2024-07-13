@@ -1,97 +1,97 @@
 {
-  "version": "0.0.7",
-  "name": "@ulld/task-manager",
-  "private": false,
-  "scripts": {
-    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
-    "build": "echo 'Add build script here'",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'",
-    "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
-  },
-  "exports": {
-    "./types": "./src/types.ts",
-    "./taskDetails": "./src/components/taskDetailModal/main.tsx",
-    "./addTask": "./src/components/addTask/main.tsx",
-    "./taskListSearchResults": "./src/components/taskListSearchResultList/main.tsx"
-  },
-  "peerDependencies": {
-    "@ulld/eslint-config": "workspace:*",
-    "@ulld/jest-presets": "workspace:*",
-    "@ulld/typescript-config": "workspace:*",
-    "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.24",
-    "@ulld/api": "workspace:*",
-    "@ulld/calendar": "workspace:*",
-    "@ulld/configschema": "workspace:*",
-    "@ulld/developer": "workspace:*",
-    "@ulld/diagram": "workspace:*",
-    "@ulld/editor": "workspace:*",
-    "@ulld/full-form": "workspace:*",
-    "@ulld/hooks": "workspace:*",
-    "@ulld/state": "workspace:*",
-    "@ulld/tailwind": "workspace:*",
-    "@ulld/ui": "workspace:*",
-    "@ulld/utilities": "workspace:*",
-    "@ulld/whiteboard": "workspace:*",
-    "@ulld/render": "workspace:*",
-    "@ulld/icons": "workspace:*",
-    "@ulld/parsers": "workspace:*",
-    "next": "^13.1.16",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "next": "^14.2.4",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "@ulld/eslint-config": "workspace:*",
-    "@ulld/jest-presets": "workspace:*",
-    "@ulld/typescript-config": "workspace:*",
-    "@ulld/types": "workspace:*"
-  },
-  "packageManager": "pnpm@9.0.4",
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {},
-  "files": [],
-  "ulld-pluginConfig": {
-    "pluginName": "@ulld/task-manager",
-    "slot": "task-manager",
-    "components": [
-      {
-        "componentName": "TaskDetails",
-        "slot": "TaskDetails",
-        "export": "taskDetails"
-      },
-      {
-        "componentName": "AddTaskModal",
-        "slot": "AddTask",
-        "export": "addTask"
-      },
-      {
-        "componentName": "TaskListResultList",
-        "slot": "TaskListSearchResultList",
-        "export": "taskListSearchResults"
-      }
-    ],
-    "parsers": [],
-    "pages": [],
-    "events": {},
-    "navigationLinks": [
-      {
-        "label": "Create To Do list",
-        "href": "/todo/add/list",
-        "category": "general"
-      },
-      {
-        "label": "To Do's",
-        "href": "/todo",
-        "category": "general"
-      }
-    ]
-  }
+    "version": "0.0.7",
+    "name": "@ulld/task-manager",
+    "private": false,
+    "scripts": {
+        "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
+        "build": "echo 'Add build script here'",
+        "test": "echo 'Add test script here'",
+        "lint": "echo 'Add lint script here'",
+        "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
+    },
+    "exports": {
+        "./types": "./src/types.ts",
+        "./taskDetails": "./src/components/taskDetailModal/main.tsx",
+        "./addTask": "./src/components/addTask/main.tsx",
+        "./taskListSearchResults": "./src/components/taskListSearchResultList/main.tsx"
+    },
+    "peerDependencies": {
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "@types/react": "^18.2.74",
+        "@types/react-dom": "^18.2.24",
+        "@ulld/api": "workspace:*",
+        "@ulld/calendar": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/developer": "workspace:*",
+        "@ulld/diagram": "workspace:*",
+        "@ulld/editor": "workspace:*",
+        "@ulld/full-form": "workspace:*",
+        "@ulld/hooks": "workspace:*",
+        "@ulld/state": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/ui": "workspace:*",
+        "@ulld/utilities": "workspace:*",
+        "@ulld/whiteboard": "workspace:*",
+        "@ulld/render": "workspace:*",
+        "@ulld/icons": "workspace:*",
+        "@ulld/parsers": "workspace:*",
+        "next": "^13.1.16",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
+        "next": "^14.2.4",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/types": "workspace:*"
+    },
+    "packageManager": "pnpm@9.0.4",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {},
+    "files": [],
+    "ulld-pluginConfig": {
+        "pluginName": "@ulld/task-manager",
+        "slot": "task-manager",
+        "components": [
+            {
+                "componentName": "TaskDetails",
+                "slot": "TaskDetails",
+                "export": "taskDetails"
+            },
+            {
+                "componentName": "AddTaskModal",
+                "slot": "AddTask",
+                "export": "addTask"
+            },
+            {
+                "componentName": "TaskListResultList",
+                "slot": "TaskListSearchResultList",
+                "export": "taskListSearchResults"
+            }
+        ],
+        "parsers": [],
+        "pages": [],
+        "events": {},
+        "navigationLinks": [
+            {
+                "label": "Create To Do list",
+                "href": "/todo/add/list",
+                "category": "general"
+            },
+            {
+                "label": "To Do's",
+                "href": "/todo",
+                "category": "general"
+            }
+        ]
+    }
 }

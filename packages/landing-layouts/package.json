@@ -52,5 +52,20 @@
     "publishConfig": {
         "access": "public"
     },
-    "dependencies": {}
+    "dependencies": {},
+    "ulld-pluginConfig": {
+        "pluginName": "@ulld/landing-layouts",
+        "slot": "landing",
+        "components": [
+            {
+                "componentName": "LandingPageBetaRelease",
+                "slot": "LandingPage",
+                "export": "beta"
+            }
+        ],
+        "parsers": [],
+        "pages": [],
+        "events": {},
+        "navigationLinks": []
+    }
 }

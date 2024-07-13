@@ -7,7 +7,7 @@ export declare const bibliographySubkeySchema: z.ZodUnion<[z.ZodLiteral<"Bibliog
 export declare const UISubkeySchema: z.ZodUnion<[z.ZodLiteral<"Pagination">, z.ZodLiteral<"logo">, z.ZodLiteral<"loadingIndicator">, z.ZodLiteral<"confirmationModal">, z.ZodLiteral<"AutoSettingsTable">, z.ZodLiteral<"AutoSettingFormModal">, z.ZodLiteral<"SearchResultsPage">, z.ZodLiteral<"BookmarksPage">, z.ZodLiteral<"NotesSearchResultsList">, z.ZodLiteral<"NoteSummarySearchResult">, z.ZodLiteral<"DictionaryLetterList">, z.ZodLiteral<"DictionaryPageItem">]>;
 export declare const task_managerSubkeySchema: z.ZodUnion<[z.ZodLiteral<"TaskManagerPage">, z.ZodLiteral<"TaskDetails">, z.ZodLiteral<"AddTask">, z.ZodLiteral<"AddTaskList">, z.ZodLiteral<"TaskListSearchResultList">, z.ZodLiteral<"TaskListSearchResult">]>;
 export declare const pdfSubkeySchema: z.ZodUnion<[z.ZodLiteral<"FullPdf">, z.ZodLiteral<"EmbeddablePdf">]>;
-export declare const navigationSubkeySchema: z.ZodUnion<[z.ZodLiteral<"secondary">, z.ZodLiteral<"navbar">, z.ZodLiteral<"MultiPageSidebar">, z.ZodLiteral<"FullScreenNavigationMenu">]>;
+export declare const navigationSubkeySchema: z.ZodUnion<[z.ZodLiteral<"secondary">, z.ZodLiteral<"navbar">, z.ZodLiteral<"MultiPageSidebar">, z.ZodLiteral<"FullScreenNavigationMenu">, z.ZodLiteral<"Footer">]>;
 export declare const landingSubkeySchema: z.ZodLiteral<"LandingPage">;
 export declare const commandPaletteSubkeySchema: z.ZodLiteral<"commandPalette">;
 //# sourceMappingURL=slotKeySchema.d.ts.map

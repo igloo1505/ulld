@@ -51,6 +51,7 @@ export interface SlotMap {
         navbar: string;
         MultiPageSidebar: string;
         FullScreenNavigationMenu: string;
+        Footer: string;
     };
     "landing": {
         LandingPage: string;
