@@ -44,6 +44,7 @@ export interface SlotMap {
     }, 
     "pdf": {
         FullPdf: string,
+        EmbeddablePdf: string,
     }, 
     "navigation": {
         secondary: string,
@@ -56,8 +57,5 @@ export interface SlotMap {
     }, 
     "commandPalette": {
         commandPalette: string,
-    }, 
-    "Pdf": {
-        EmbeddablePdf: string,
     }, 
 }

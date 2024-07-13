@@ -8,7 +8,18 @@ const pluginConfig: DeveloperConfigInput<"bibliography"> = {
     pluginName: "@ulld/bib-manager",
     slot: "bibliography",
     pages: [],
-    components: [],
+    components: [
+        {
+            componentName: "BibManagerPage",
+            slot: "BibliographyPage",
+            export: "./bibliographyPage"
+        },
+        {
+            componentName: "BibEntryDetails",
+            slot: "BibEntryDetails",
+            export: "./bibEntryDetails"
+        }
+    ],
     navigationLinks: [
         {
             label: "Bibliography",

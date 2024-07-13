@@ -13,7 +13,6 @@ export const slotKeySchema = z.union([
     z.literal("navigation"),
     z.literal("landing"),
     z.literal("commandPalette"),
-    z.literal("Pdf"),
 ])
 
 
@@ -72,7 +71,10 @@ export const task_managerSubkeySchema = z.union([
 ])
 
 
-export const pdfSubkeySchema = z.literal("FullPdf")
+export const pdfSubkeySchema = z.union([
+    z.literal("FullPdf"),
+    z.literal("EmbeddablePdf"),
+])
 
 
 export const navigationSubkeySchema = z.union([
@@ -87,7 +89,4 @@ export const landingSubkeySchema = z.literal("LandingPage")
 
 
 export const commandPaletteSubkeySchema = z.literal("commandPalette")
-
-
-export const PdfSubkeySchema = z.literal("EmbeddablePdf")
 

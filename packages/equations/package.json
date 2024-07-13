@@ -20,7 +20,8 @@
         "build": "echo 'Add build script here'",
         "test": "echo 'Add test script here'",
         "lint": "echo 'Add lint script here'",
-        "copyRouter": "rm -rf ./node_modules/@ulld/api && mkdir ./node_modules/@ulld/api && cp -r /Users/bigsexy/Desktop/currentProjects/ulld/packages/api/ ./node_modules/@ulld/api"
+        "copyRouter": "rm -rf ./node_modules/@ulld/api && mkdir ./node_modules/@ulld/api && cp -r /Users/bigsexy/Desktop/currentProjects/ulld/packages/api/ ./node_modules/@ulld/api",
+        "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
     },
     "peerDependencies": {
         "@ulld/api": "workspace:*",
@@ -101,6 +102,18 @@
                 "exportsPageProps": true
             }
         ],
-        "events": {}
+        "events": {},
+        "navigationLinks": [
+            {
+                "label": "Equations",
+                "href": "/equations",
+                "category": "general"
+            },
+            {
+                "label": "Add Equation",
+                "href": "/equations/add",
+                "category": "general"
+            }
+        ]
     }
 }

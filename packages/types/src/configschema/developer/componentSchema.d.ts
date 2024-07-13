@@ -86,5 +86,10 @@ export declare const componentConfigSchema: z.ZodObject<{
     fullDocsExport?: string | undefined;
 }>;
 export type EmbeddableConfigSchema = z.infer<typeof embeddableConfigSchema>;
+export type BaseAppEmbeddableConfig = {
+    package: string;
+    slot: string;
+    data: EmbeddableConfigSchema | EmbeddableConfigSchema[];
+};
 export type ComponentConfigSchema = z.input<typeof componentConfigSchema>;
 //# sourceMappingURL=componentSchema.d.ts.map

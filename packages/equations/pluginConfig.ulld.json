@@ -29,5 +29,17 @@
             "exportsPageProps": true
         }
     ],
-    "events": {}
+    "events": {},
+    "navigationLinks": [
+        {
+            "label": "Equations",
+            "href": "/equations",
+            "category": "general"
+        },
+        {
+            "label": "Add Equation",
+            "href": "/equations/add",
+            "category": "general"
+        }
+    ]
 }

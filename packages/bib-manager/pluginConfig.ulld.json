@@ -1,0 +1,26 @@
+{
+    "pluginName": "@ulld/bib-manager",
+    "slot": "bibliography",
+    "components": [
+        {
+            "componentName": "BibManagerPage",
+            "slot": "BibliographyPage",
+            "export": "bibliographyPage"
+        },
+        {
+            "componentName": "BibEntryDetails",
+            "slot": "BibEntryDetails",
+            "export": "bibEntryDetails"
+        }
+    ],
+    "parsers": [],
+    "pages": [],
+    "events": {},
+    "navigationLinks": [
+        {
+            "label": "Bibliography",
+            "href": "/bibliography",
+            "category": "general"
+        }
+    ]
+}
