@@ -4331,6 +4331,9 @@ importers:
       '@ulld/icons':
         specifier: workspace:*
         version: link:../icons
+      '@ulld/parsers':
+        specifier: workspace:*
+        version: link:../parsers
       '@ulld/render':
         specifier: workspace:*
         version: link:../render

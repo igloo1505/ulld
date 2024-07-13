@@ -19,7 +19,7 @@ const getArrWithoutOverlap = <T extends unknown>(
 export const writePluginConfig = (
     config: DeveloperConfigOutput,
     directory: string,
-    appendToPackageJson: boolean | "both" = false,
+    appendToPackageJson: boolean | "both" = "both",
 ) => {
     if (process.env.INTERNAL_DEVELOPMENT) {
         let testDataPath = path.join(

@@ -1,10 +1,11 @@
 import { UniqueTaggables } from "@ulld/utilities/types";
-import {serverClient} from "@ulld/api/serverClient"
+import { serverClient } from "@ulld/api/serverClient"
 import { ReactNode } from "react";
+import { TodoTaskOutput } from "@ulld/parsers/plugins/todos";
 
 export interface TaskDetailsProps {
     isModal: boolean;
-    data: Awaited<ReturnType<typeof serverClient.toDo.getToDoDetails>>
+    data: TodoTaskOutput
 }
 
 

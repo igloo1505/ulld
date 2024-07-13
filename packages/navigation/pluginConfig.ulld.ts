@@ -28,6 +28,11 @@ const pluginConfig: DeveloperConfigInput<"navigation"> = {
             componentName: "FullScreenNavigation",
             slot: "FullScreenNavigationMenu",
             export: "./fullScreenNav"
+        },
+        {
+            componentName: "FooterComponent",
+            slot: "Footer",
+            export: "./footerSlotComponent"
         }
   ],
 };

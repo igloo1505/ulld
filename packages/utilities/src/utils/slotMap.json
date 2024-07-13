@@ -278,6 +278,13 @@
             "inReduxProvider": false,
             "type": "component",
             "propsExtends": "FullScreenNavProps"
+        },
+        "Footer": {
+            "path": "src/components/slots/navigation/footer.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "FooterProps"
         }
     },
     "landing": {

@@ -82,6 +82,7 @@ export const navigationSubkeySchema = z.union([
     z.literal("navbar"),
     z.literal("MultiPageSidebar"),
     z.literal("FullScreenNavigationMenu"),
+    z.literal("Footer"),
 ])
 
 
