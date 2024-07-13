@@ -13,6 +13,7 @@ export const slotKeySchema = z.union([
     z.literal("navigation"),
     z.literal("landing"),
     z.literal("commandPalette"),
+    z.literal("Pdf"),
 ])
 
 
@@ -39,12 +40,16 @@ export const editorSubkeySchema = z.union([
 ])
 
 
-export const bibliographySubkeySchema = z.literal("BibliographyPage")
+export const bibliographySubkeySchema = z.union([
+    z.literal("BibliographyPage"),
+    z.literal("BibEntryDetails"),
+])
 
 
 export const UISubkeySchema = z.union([
     z.literal("Pagination"),
     z.literal("logo"),
+    z.literal("loadingIndicator"),
     z.literal("confirmationModal"),
     z.literal("AutoSettingsTable"),
     z.literal("AutoSettingFormModal"),
@@ -82,4 +87,7 @@ export const landingSubkeySchema = z.literal("LandingPage")
 
 
 export const commandPaletteSubkeySchema = z.literal("commandPalette")
+
+
+export const PdfSubkeySchema = z.literal("EmbeddablePdf")
 

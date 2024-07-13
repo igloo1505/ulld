@@ -6,7 +6,6 @@ import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
 import { ParsedAppConfig } from "@ulld/configschema/types";
 import { BibPropsOutput, bibCoreSchema, bibEntryPropsSchema } from "./schemas/general";
 
-
 interface IsbnQueryParams {
 }
 

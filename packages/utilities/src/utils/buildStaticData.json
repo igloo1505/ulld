@@ -33,9 +33,16 @@
         "LandingPageProps": "@ulld/landing-layouts/types",
         "ConfirmationModalProps": "@ulld/ui/types",
         "AutoSettingFormModalProps": "@ulld/ui/types",
-        "TaskManagerPageProps": "@ulld/task-manager/types"
+        "TaskManagerPageProps": "@ulld/task-manager/types",
+        "LoadingIndicatorProps": "@ulld/ui/types",
+        "BibEntryDetailsProps": "@ulld/bib-manager/types",
+        "EmbeddablePdfProps": "FIX ME"
     },
     "protectedPaths": [
+        {
+            "filePath": "/src/app/todo/page.tsx",
+            "route": "todo"
+        },
         {
             "filePath": "/src/app/todo/details/[taskId]/page.tsx",
             "route": "todo/details/*"

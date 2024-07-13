@@ -3,7 +3,8 @@ import propsExtends from "../utils/buildStaticData.json"
 export const slotTypes = [
     "page",
     "component",
-    "modalPage"
+    "modalPage",
+    "embeddable"
 ] as const
 
 

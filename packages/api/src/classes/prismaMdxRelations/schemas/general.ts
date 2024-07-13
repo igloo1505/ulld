@@ -156,7 +156,7 @@ export const bibEntryPropsSchema = z
             .array()
             .transform((a) => a.map((b) => new CitationGroup(b))),
         added: z
-            .union([z.string().datetime(), z.date()])
+            .union([z.string().datetime(), z.date(), z.string()])
             .nullish()
             .transform((a) =>
                 typeof a === "string"

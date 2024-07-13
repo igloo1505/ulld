@@ -1015,6 +1015,9 @@ importers:
       '@ulld/hooks':
         specifier: workspace:*
         version: link:../hooks
+      '@ulld/icons':
+        specifier: workspace:*
+        version: link:../icons
       '@ulld/state':
         specifier: workspace:*
         version: link:../state
@@ -2792,6 +2795,9 @@ importers:
       '@ulld/configschema':
         specifier: workspace:*
         version: link:../configschema
+      '@ulld/database':
+        specifier: workspace:*
+        version: link:../database
       '@ulld/parsers':
         specifier: workspace:*
         version: link:../parsers

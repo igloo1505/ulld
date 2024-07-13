@@ -18,10 +18,12 @@ export interface SlotMap {
     }, 
     "bibliography": {
         BibliographyPage: string,
+        BibEntryDetails: string,
     }, 
     "UI": {
         Pagination: string,
         logo: string,
+        loadingIndicator: string,
         confirmationModal: string,
         AutoSettingsTable: string,
         AutoSettingFormModal: string,
@@ -54,5 +56,8 @@ export interface SlotMap {
     }, 
     "commandPalette": {
         commandPalette: string,
+    }, 
+    "Pdf": {
+        EmbeddablePdf: string,
     }, 
 }

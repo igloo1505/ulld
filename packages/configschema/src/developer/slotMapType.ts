@@ -21,3 +21,5 @@ export type NavigationSubSlots = keyof SM["navigation"]
 export type LandingSubSlots = keyof SM["landing"]
 
 export type CommandPaletteSubSlots = keyof SM["commandPalette"]
+
+export type PdfSubSlots = keyof SM["Pdf"]

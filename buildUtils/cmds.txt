@@ -16,7 +16,7 @@ Find by package regex | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoR
 Update workspace update react script | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoRepoUtils.ts updateReactScript
 Set cloned base git config | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/setClonedUlldBaseGitConfig.zsh
 Set cloned base internal versions | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/updateBasePackageVersions.ts
-Generate Slot Map | tsx /Users/bigsexy/Desktop/current/ulld/packages/configschema/src/__scripts__/generateSlotMap.ts
+Generate Slot Map | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/gatherSlots.zsh
 Apply plugin config files to package.json | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/monoRepoUtils.ts applyPluginConfigToPackageJsonFiles
 Check Missing Slots | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/checkMissingSlots.ts
 Update Shiki Data | tsx /Users/bigsexy/Desktop/current/ulld/packages/configschema/src/__scripts__/updateShikiThemes.ts
@@ -27,4 +27,4 @@ Sync base cloned app with local dependencies | zsh /Users/bigsexy/Desktop/curren
 Gather Types | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/gatherTypes.zsh
 Create unified types export | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/createTypesUnifiedExport.ts
 Clear generated types | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/clearGeneratedTypes.zsh
-
+Generate Required Embeddable Slots | tsx /Users/bigsexy/Desktop/current/ulld/packages/configschema/src/__scripts__/generateRequiredEmeddableSlots.ts

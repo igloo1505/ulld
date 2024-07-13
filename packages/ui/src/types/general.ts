@@ -91,3 +91,7 @@ export type BookmarksResultsPageProps = Pick<SearchResultsPageProps, "notes">;
 export interface NotesSearchResultsListProps {
     children: ReactNode;
 }
+
+export interface LoadingIndicatorProps {
+    loading: boolean
+}
