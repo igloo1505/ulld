@@ -1,4 +1,3 @@
-// Delete me and other task list table components not in the task-manager package.
 "use client"
 import { client } from '@ulld/api/client'
 import React from 'react'

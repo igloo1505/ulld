@@ -20,7 +20,7 @@ import {
     ToDoListStatus,
 } from "@ulld/database/internalDatabaseTypes";
 
-const taggableFields = z.object({
+export const taggableFields = z.object({
     topics: topicZodObject
         .array()
         .default([])

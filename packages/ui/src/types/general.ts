@@ -65,10 +65,6 @@ export interface NoteSummaryProps {
     searchType: SearchAllSearchType
 }
 
-export interface TaskListSearchResultProps {
-    index: number;
-    // data: // get this type
-}
 
 export interface SearchResultsPageProps {
     notes: ReactNode;

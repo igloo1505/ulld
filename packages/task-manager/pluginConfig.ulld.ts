@@ -1,25 +1,29 @@
 import {
-  DeveloperConfigInput,
-  developerConfigSchema,
+    DeveloperConfigInput,
+    developerConfigSchema,
 } from "@ulld/configschema/developer";
 import { writePluginConfig } from "@ulld/developer/writePluginConfig";
 
 const pluginConfig: DeveloperConfigInput<"task-manager"> = {
-  pluginName: "@ulld/task-manager",
-  slot: "task-manager",
-  pages: [
-    
-  ],
-  components: [
+    pluginName: "@ulld/task-manager",
+    slot: "task-manager",
+    pages: [
+        {
+            slot: "TaskManagerPage",
+            export: "./taskManagerPage",
+            exportsPageProps: true,
+        },
+    ],
+    components: [
         {
             slot: "TaskDetails",
             componentName: "TaskDetails",
-            export: "./taskDetails"
+            export: "./taskDetails",
         },
         {
             componentName: "AddTaskModal",
             slot: "AddTask",
-            export: "./addTask"
+            export: "./addTask",
         },
         {
             componentName: "TaskListResultList",
@@ -29,19 +33,24 @@ const pluginConfig: DeveloperConfigInput<"task-manager"> = {
         {
             componentName: "AddTaskList",
             slot: "AddTaskList",
-            export: "./addTaskList"
-        }
-  ],
+            export: "./addTaskList",
+        },
+        {
+            componentName: "TaskListSearchResult",
+            slot: "TaskListSearchResult",
+            export: "./taskListSearchResult",
+        },
+    ],
     navigationLinks: [
-    {
-        label: "Create To Do list",
-        href: "/todo/add/list",
-    },
-    {
-        label: "To Do's",
-        href: "/todo"
-    },
-    ]
+        {
+            label: "Create To Do list",
+            href: "/todo/add/list",
+        },
+        {
+            label: "To Do's",
+            href: "/todo",
+        },
+    ],
 };
 
 const parsedPlugin = developerConfigSchema.parse(pluginConfig);

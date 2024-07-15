@@ -21,10 +21,21 @@
             "componentName": "AddTaskList",
             "slot": "AddTaskList",
             "export": "addTaskList"
+        },
+        {
+            "componentName": "TaskListSearchResult",
+            "slot": "TaskListSearchResult",
+            "export": "taskListSearchResult"
         }
     ],
     "parsers": [],
-    "pages": [],
+    "pages": [
+        {
+            "slot": "TaskManagerPage",
+            "export": "taskManagerPage",
+            "exportsPageProps": true
+        }
+    ],
     "events": {},
     "navigationLinks": [
         {

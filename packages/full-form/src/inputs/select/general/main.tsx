@@ -23,7 +23,7 @@ export interface SelectOption {
 }
 
 
-interface SelectInputProps<T extends FieldValues>
+export interface SelectInputProps<T extends FieldValues>
     extends BaseInputProps<T, "formItem" | "selectTrigger"> {
     placeholder?: string;
     options: SelectOption[]

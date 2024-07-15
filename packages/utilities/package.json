@@ -8,6 +8,7 @@
     ],
     "exports": {
         "./types": "./src/types/main.ts",
+        "./paths": "./src/classes/urlManager.ts",
         "./packageJsonType": "./src/types/packageJson/packageJsonType.ts",
         "./paginationUtils": "./src/utils/paginationUtils.ts",
         "./filePathUtils": "./src/utils/filePathUtils.ts",

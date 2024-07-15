@@ -24,7 +24,8 @@
         "./math/latex/genTikzImage": "./src/math/latex/genTikzImage.ts",
         "./citations/formatCsl": "./src/citations/formatCsl.ts",
         "./mathjaxBandaid": "./src/mdx/compiler/mdxClassnameBandaid.tsx",
-        "./applyMathjaxBandaid": "./src/mdx/compiler/applyMathjaxBandaid.ts"
+        "./applyMathjaxBandaid": "./src/mdx/compiler/applyMathjaxBandaid.ts",
+        "./taggables": "./src/general/taggables.ts"
     },
     "files": [
         "dist",

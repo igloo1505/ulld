@@ -74,4 +74,10 @@ export const searchAllParamsToSearchParamsClass = (sp: SearchAllParams): URLSear
     return data
 }
 
-
+export const getTaggablesFromSearchAllParams = (sp: SearchAllParams) => {
+    return {
+        tags: sp.tags || [] as string[],
+        topics: sp.topics || [] as string[],
+        subjects: sp.subjects || [] as string[],
+    }
+}

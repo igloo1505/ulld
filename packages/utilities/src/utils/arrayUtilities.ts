@@ -1,4 +1,4 @@
-import { Tag, Topic, Subject, Prisma } from "@ulld/database/internalDatabaseTypes";
+import { Tag, Topic, Subject } from "@ulld/database/internalDatabaseTypes";
 import { Row } from "@tanstack/react-table";
 
 // TEST:  Test this properly asap.
@@ -12,7 +12,7 @@ export class ArrayUtilities {
     }
 
     static listFromListWithLoop<T extends unknown>(list: T[], take: number): T[] {
-        let items = [];
+        let items: T[] = [];
         for (var i = 0; i < take; i++) {
             items.push(ArrayUtilities.itemFromListWithLoop<T>(list, i));
         }
@@ -54,7 +54,7 @@ export class ArrayUtilities {
     }
 
     static generateData(func: (n: number) => number) {
-        let data = [];
+        let data: [number, number][] = [];
         for (let i = -200; i <= 200; i += 0.1) {
             data.push([i, func(i)]);
         }

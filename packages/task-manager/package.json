@@ -14,7 +14,9 @@
         "./taskDetails": "./src/components/taskDetailModal/main.tsx",
         "./addTask": "./src/components/addTask/main.tsx",
         "./taskListSearchResults": "./src/components/taskListSearchResultList/main.tsx",
-        "./addTaskList": "./src/components/addTaskListModal/main.tsx"
+        "./addTaskList": "./src/components/addTaskListModal/main.tsx",
+        "./taskManagerPage": "./src/components/taskManagerPage/main.tsx",
+        "./taskListSearchResult": "./src/components/TaskListSearchResults/main.tsx"
     },
     "peerDependencies": {
         "@ulld/eslint-config": "workspace:*",
@@ -82,10 +84,21 @@
                 "componentName": "AddTaskList",
                 "slot": "AddTaskList",
                 "export": "addTaskList"
+            },
+            {
+                "componentName": "TaskListSearchResult",
+                "slot": "TaskListSearchResult",
+                "export": "taskListSearchResult"
             }
         ],
         "parsers": [],
-        "pages": [],
+        "pages": [
+            {
+                "slot": "TaskManagerPage",
+                "export": "taskManagerPage",
+                "exportsPageProps": true
+            }
+        ],
         "events": {},
         "navigationLinks": [
             {
