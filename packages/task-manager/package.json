@@ -13,7 +13,8 @@
         "./types": "./src/types.ts",
         "./taskDetails": "./src/components/taskDetailModal/main.tsx",
         "./addTask": "./src/components/addTask/main.tsx",
-        "./taskListSearchResults": "./src/components/taskListSearchResultList/main.tsx"
+        "./taskListSearchResults": "./src/components/taskListSearchResultList/main.tsx",
+        "./addTaskList": "./src/components/addTaskListModal/main.tsx"
     },
     "peerDependencies": {
         "@ulld/eslint-config": "workspace:*",
@@ -76,6 +77,11 @@
                 "componentName": "TaskListResultList",
                 "slot": "TaskListSearchResultList",
                 "export": "taskListSearchResults"
+            },
+            {
+                "componentName": "AddTaskList",
+                "slot": "AddTaskList",
+                "export": "addTaskList"
             }
         ],
         "parsers": [],

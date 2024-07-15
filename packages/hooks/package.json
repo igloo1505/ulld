@@ -56,7 +56,8 @@
         "./useViewportProportionalPosition": "./src/useViewportProportionalPosition.ts",
         "./useAppConfig": "./src/useAppConfig.ts",
         "./useAppSettings": "./src/useAppSettings.ts",
-        "./useBibEntryDetails": "./src/useBibEntryDetailsDisplay.ts"
+        "./useBibEntryDetails": "./src/useBibEntryDetailsDisplay.ts",
+        "./useExistingTaggables": "./src/useExistingTaggables.ts"
     },
     "scripts": {
         "dev": "echo 'Add dev script here'",

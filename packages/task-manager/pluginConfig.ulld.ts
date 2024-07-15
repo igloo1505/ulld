@@ -26,6 +26,11 @@ const pluginConfig: DeveloperConfigInput<"task-manager"> = {
             slot: "TaskListSearchResultList",
             export: "./taskListSearchResults",
         },
+        {
+            componentName: "AddTaskList",
+            slot: "AddTaskList",
+            export: "./addTaskList"
+        }
   ],
     navigationLinks: [
     {

@@ -84,7 +84,6 @@ export const TaggableComboBox = <T extends FieldValues>({
     const cmdRef = useRef<HTMLDivElement>(null!);
     const [options, setOptions] = useState<string[]>([]);
     const [btnDisplay, setBtnDisplay] = useState(Boolean(placeholder) ? placeholder : `${type}s`)
-    console.log("placeholder: ", placeholder)
 
     const gatherOptions = async (_type: "tag" | "topic" | "subject") => {
         let opts = await client.search.getUniqueTagTopicAndSubjects.query(_type);

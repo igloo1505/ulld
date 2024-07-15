@@ -1,9 +1,9 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
-import { PdfViewer } from './Pdf'
+import { PdfViewer } from '../fullPdf/Pdf'
 import clsx from 'clsx'
-import TocContainer from './TocContainer'
-import { pdfStateClasses } from '../../../types/general'
+import TocContainer from '../fullPdf/TocContainer'
+import { pdfStateClasses } from '../../types'
 
 
 interface MdxPdfViewerProps {

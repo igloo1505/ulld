@@ -6,15 +6,22 @@
         "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
         "build": "echo 'Add build script here'",
         "test": "echo 'Add test script here'",
-        "lint": "echo 'Add lint script here'"
+        "lint": "echo 'Add lint script here'",
+        "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
     },
-    "extends": {
-        "./types": "./src/types.ts"
+    "files": [
+        "src",
+        "pluginConfig.ulld.ts"
+    ],
+    "types": "./src/types.ts",
+    "exports": {
+        "./types": "./src/types.ts",
+        "./embeddablePdf": "./src/components/embeddablePdf/main.tsx",
+        "./fullPdf": "./src/components/fullPdf/PdfPageWrapper.tsx"
     },
     "peerDependencies": {
         "@ulld/eslint-config": "workspace:*",
         "@ulld/jest-presets": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
         "@types/react": "^18.2.74",
         "@types/react-dom": "^18.2.24",
         "@ulld/api": "workspace:*",
@@ -24,6 +31,9 @@
         "@ulld/ui": "workspace:*",
         "@ulld/utilities": "workspace:*",
         "@ulld/whiteboard": "workspace:*",
+        "@ulld/state": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/icons": "workspace:*",
         "next": "^13.1.16",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
@@ -40,12 +50,40 @@
         "react-dom": "^18.3.1",
         "@ulld/eslint-config": "workspace:*",
         "@ulld/jest-presets": "workspace:*",
+        "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
-        "@ulld/types": "workspace:*"
+        "@ulld/configschema": "workspace:*",
+        "@ulld/developer": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"
     },
-    "files": []
+    "ulld-pluginConfig": {
+        "pluginName": "@ulld/pdf",
+        "slot": "pdf",
+        "components": [
+            {
+                "componentName": "EmbeddablePdf",
+                "slot": "EmbeddablePdf",
+                "export": "embeddablePdf",
+                "embeddable": [
+                    {
+                        "regexToInclude": "<Pdf",
+                        "label": "Pdf"
+                    }
+                ]
+            }
+        ],
+        "parsers": [],
+        "pages": [
+            {
+                "slot": "FullPdf",
+                "export": "fullPdf",
+                "exportsPageProps": true
+            }
+        ],
+        "events": {},
+        "navigationLinks": []
+    }
 }

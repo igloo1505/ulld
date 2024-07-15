@@ -1,40 +1,42 @@
 import { UniqueTaggables } from "@ulld/utilities/types";
-import { serverClient } from "@ulld/api/serverClient"
 import { ReactNode } from "react";
-import { TodoTaskOutput } from "@ulld/parsers/plugins/todos";
+import { ToDoSearchParams, TodoTaskOutput } from "@ulld/parsers/plugins/todos";
+import { serverClient } from "@ulld/api/serverClient";
 
 export interface TaskDetailsProps {
     isModal: boolean;
-    data: TodoTaskOutput
+    data: TodoTaskOutput;
 }
-
 
 export interface AddTaskSearchParams {
-    listName?: string
-    editing?: string
-    listId?: string
+    listName?: string;
+    editing?: string;
+    listId?: string;
 }
-
 
 export interface AddTaskProps {
     isModal: boolean;
     existingTaggables: UniqueTaggables;
-    sp: AddTaskSearchParams
-    lists: { label: string, id: number }[]
+    sp: AddTaskSearchParams;
+    lists: { label: string; id: number }[];
 }
 
-export type AddTaskListProps = Pick<AddTaskProps, "isModal" | "existingTaggables">
+export type AddTaskListProps = Pick<AddTaskProps, "isModal"> & {
+    editing?: Awaited<ReturnType<typeof serverClient.toDo.getToDoListById>>;
+};
 
-export interface TaskManagerPageProps {
+type TaskListDataReturnType = Awaited<
+    ReturnType<typeof serverClient.toDo.getToDos>
+>;
 
+export interface TaskManagerPageProps extends TaskListDataReturnType {
+    searchParams: ToDoSearchParams
 }
-
 
 export interface TaskListSearchResultsListProps {
     children: ReactNode;
 }
 
-
 export interface TaskListSearchResultsListProps {
-    children: ReactNode
+    children: ReactNode;
 }

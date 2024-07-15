@@ -55,6 +55,18 @@ export const toDoRouter = router({
     getToDoLists: publicProcedure.input(z.number().optional()).query(async ({ input }) => {
         return await getToDoLists<typeof input>(input)
     }),
+    getToDoListById: publicProcedure.input(z.number()).query(async ({input}) => {
+        return await prisma.toDoList.findFirst({
+            where: {
+                id: input
+            },
+            include: {
+                tags: true,
+                subjects: true,
+                topics: true
+            }
+        })
+    }),
     getToDos: publicProcedure.input(getToDoSearchParams.omit({
         listNames: true
     })).query(async ({ input }) => {

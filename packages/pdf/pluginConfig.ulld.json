@@ -1,0 +1,27 @@
+{
+    "pluginName": "@ulld/pdf",
+    "slot": "pdf",
+    "components": [
+        {
+            "componentName": "EmbeddablePdf",
+            "slot": "EmbeddablePdf",
+            "export": "embeddablePdf",
+            "embeddable": [
+                {
+                    "regexToInclude": "<Pdf",
+                    "label": "Pdf"
+                }
+            ]
+        }
+    ],
+    "parsers": [],
+    "pages": [
+        {
+            "slot": "FullPdf",
+            "export": "fullPdf",
+            "exportsPageProps": true
+        }
+    ],
+    "events": {},
+    "navigationLinks": []
+}

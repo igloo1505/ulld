@@ -16,6 +16,11 @@
             "componentName": "TaskListResultList",
             "slot": "TaskListSearchResultList",
             "export": "taskListSearchResults"
+        },
+        {
+            "componentName": "AddTaskList",
+            "slot": "AddTaskList",
+            "export": "addTaskList"
         }
     ],
     "parsers": [],

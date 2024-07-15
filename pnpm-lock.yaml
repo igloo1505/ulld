@@ -3723,15 +3723,18 @@ importers:
       '@ulld/api':
         specifier: workspace:*
         version: link:../api
-      '@ulld/configschema':
-        specifier: workspace:*
-        version: link:../configschema
-      '@ulld/developer':
-        specifier: workspace:*
-        version: link:../developer
       '@ulld/hooks':
         specifier: workspace:*
         version: link:../hooks
+      '@ulld/icons':
+        specifier: workspace:*
+        version: link:../icons
+      '@ulld/state':
+        specifier: workspace:*
+        version: link:../state
+      '@ulld/tailwind':
+        specifier: workspace:*
+        version: link:../tailwindAndShad
       '@ulld/ui':
         specifier: workspace:*
         version: link:../ui
@@ -3751,6 +3754,12 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.0
         version: 18.3.0
+      '@ulld/configschema':
+        specifier: workspace:*
+        version: link:../configschema
+      '@ulld/developer':
+        specifier: workspace:*
+        version: link:../developer
       '@ulld/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
