@@ -49,7 +49,8 @@
         "./noteSummarySearchResult": "./src/components/slots/noteSummarySearchResult/main.tsx",
         "./autoSettingsPage": "./src/components/slots/autoSettingsPage/main.tsx",
         "./autoSettingFormModal": "./src/components/slots/autoSettingsFormModal/main.tsx",
-        "./notesSearchResultsList": "./src/components/slots/noteSearchResultsList/main.tsx"
+        "./notesSearchResultsList": "./src/components/slots/noteSearchResultsList/main.tsx",
+        "./loadingIndicator": "./src/components/slots/loadingIndicator/main.tsx"
     },
     "scripts": {
         "build": "echo 'add build:internal script here'",
@@ -359,6 +360,11 @@
                 "componentName": "NotesSearchResultsList",
                 "slot": "NotesSearchResultsList",
                 "export": "notesSearchResultsList"
+            },
+            {
+                "componentName": "LoadingIndicator",
+                "slot": "loadingIndicator",
+                "export": "loadingIndicator"
             }
         ],
         "parsers": [],

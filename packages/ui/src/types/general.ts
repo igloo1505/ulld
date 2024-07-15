@@ -94,4 +94,8 @@ export interface NotesSearchResultsListProps {
 
 export interface LoadingIndicatorProps {
     loading: boolean
+    label?: ReactNode
+    fullScreen?: boolean
+    /** @default 100 */
+    size?: number
 }

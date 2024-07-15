@@ -51,18 +51,23 @@ const pluginConfig: DeveloperConfigInput<"UI"> = {
         {
             componentName: "AutoSettingsPage",
             slot: "AutoSettingsTable",
-            export: "./autoSettingsPage"
+            export: "./autoSettingsPage",
         },
         {
             componentName: "AutoSettingFormModal",
             slot: "AutoSettingFormModal",
-            export: "./autoSettingFormModal"
+            export: "./autoSettingFormModal",
         },
         {
             componentName: "NotesSearchResultsList",
             slot: "NotesSearchResultsList",
-            export: "./notesSearchResultsList"
-        }
+            export: "./notesSearchResultsList",
+        },
+        {
+            componentName: "LoadingIndicator",
+            slot: "loadingIndicator",
+            export: "./loadingIndicator",
+        },
     ],
     navigationLinks: [
         {

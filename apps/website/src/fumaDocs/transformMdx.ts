@@ -27,8 +27,7 @@ import {
     typescriptGenerator,
 } from "fumadocs-docgen";
 
-console.log("remarkMath: ", rm);
-import mdOpts from "@ulld/utilities/defaults/markdown.json" assert { type: "json" };
+import mdOpts from "@ulld/utilities/defaults/markdown.json" with { type: "json" };
 import rehypeMathJaxCHtml from "rehype-mathjax/chtml";
 
 // async function compileMDX(document: any, context: any, options: any = {}) {

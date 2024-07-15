@@ -46,6 +46,11 @@
             "componentName": "NotesSearchResultsList",
             "slot": "NotesSearchResultsList",
             "export": "notesSearchResultsList"
+        },
+        {
+            "componentName": "LoadingIndicator",
+            "slot": "loadingIndicator",
+            "export": "loadingIndicator"
         }
     ],
     "parsers": [],

@@ -1,5 +1,3 @@
-// import dotenv from "dotenv";
-// dotenv.config({path: "../.env.local"})
 import { program } from "commander";
 import { verifyDirectory } from "./stages/verifyDirectory";
 import fs from "fs";
