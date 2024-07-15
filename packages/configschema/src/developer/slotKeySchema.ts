@@ -4,14 +4,14 @@ import { z } from 'zod';
 
 export const slotKeySchema = z.union([
     z.literal("snippets"),
-    z.literal("equations"),
+    z.literal("math"),
     z.literal("editor"),
     z.literal("bibliography"),
     z.literal("UI"),
-    z.literal("task-manager"),
+    z.literal("taskManager"),
     z.literal("pdf"),
     z.literal("navigation"),
-    z.literal("landing"),
+    z.literal("dashboard"),
     z.literal("commandPalette"),
 ])
 
@@ -23,7 +23,7 @@ export const snippetsSubkeySchema = z.union([
 ])
 
 
-export const equationsSubkeySchema = z.union([
+export const mathSubkeySchema = z.union([
     z.literal("EquationDetailsModalPage"),
     z.literal("EquationsPage"),
     z.literal("EquationDetailsPage"),
@@ -61,7 +61,7 @@ export const UISubkeySchema = z.union([
 ])
 
 
-export const task_managerSubkeySchema = z.union([
+export const taskManagerSubkeySchema = z.union([
     z.literal("TaskManagerPage"),
     z.literal("TaskDetails"),
     z.literal("AddTask"),
@@ -86,7 +86,7 @@ export const navigationSubkeySchema = z.union([
 ])
 
 
-export const landingSubkeySchema = z.literal("LandingPage")
+export const dashboardSubkeySchema = z.literal("LandingPage")
 
 
 export const commandPaletteSubkeySchema = z.literal("commandPalette")

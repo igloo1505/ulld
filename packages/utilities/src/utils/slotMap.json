@@ -22,7 +22,7 @@
             "propsExtends": "SnippetFilterProps"
         }
     },
-    "equations": {
+    "math": {
         "EquationDetailsModalPage": {
             "path": "src/corePages/modal/equationDetails.tsx",
             "clientOnly": true,
@@ -184,7 +184,7 @@
             "propsExtends": "DictionaryItemProps"
         }
     },
-    "task-manager": {
+    "taskManager": {
         "TaskManagerPage": {
             "path": "src/components/slots/taskManager/taskManagerPage.tsx",
             "clientOnly": false,
@@ -287,7 +287,7 @@
             "propsExtends": "FooterProps"
         }
     },
-    "landing": {
+    "dashboard": {
         "LandingPage": {
             "path": "src/components/slots/landingPage/main.tsx",
             "clientOnly": false,

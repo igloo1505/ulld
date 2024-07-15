@@ -169,10 +169,12 @@ and continue when that file is in place.`,
         let pageMap: Record<string, PluginPage[]> = {};
         for (const p of this.plugins) {
             for (const k of p.pages) {
-                if (!pageMap[k.data.targetUrl]) {
-                    pageMap[k.data.targetUrl] = [];
+                if (k.data.targetUrl) {
+                    if (!pageMap[k.data.targetUrl]) {
+                        pageMap[k.data.targetUrl] = [];
+                    }
+                    pageMap[k.data.targetUrl].push(k);
                 }
-                pageMap[k.data.targetUrl].push(k);
             }
         }
         for (const l in pageMap) {

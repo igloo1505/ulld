@@ -298,21 +298,9 @@
                 "version": "latest"
             }
         ],
-        "plot": [
-            {
-                "name": "@ulld/plot",
-                "version": "latest"
-            }
-        ],
         "bibliography": [
             {
                 "name": "@ulld/bib-manager",
-                "version": "latest"
-            }
-        ],
-        "calendar": [
-            {
-                "name": "@ulld/calendar",
                 "version": "latest"
             }
         ],
@@ -334,18 +322,6 @@
                 "version": "latest"
             }
         ],
-        "form": [
-            {
-                "name": "@ulld/full-form",
-                "version": "latest"
-            }
-        ],
-        "icons": [
-            {
-                "name": "@ulld/icons",
-                "version": "latest"
-            }
-        ],
         "notebook": [
             {
                 "name": "@ulld/notebook",
@@ -361,12 +337,6 @@
         "logger": [
             {
                 "name": "@ulld/logger",
-                "version": "latest"
-            }
-        ],
-        "journal": [
-            {
-                "name": "@ulld/journal",
                 "version": "latest"
             }
         ],

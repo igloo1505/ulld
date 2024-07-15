@@ -24,7 +24,11 @@ export class UlldPlugin extends ShellManager {
     targetDir: string;
     embeddables?: (NonNullable<
         (typeof this.components)[number]["data"]["embeddable"]
-    >[number] & { export: string; componentName: string })[];
+    >[number] & {
+        export: string;
+        componentName: string;
+        generatedComponentName: string;
+    })[];
     constructor(
         public paths: TargetPaths,
         public name: string,
@@ -47,7 +51,9 @@ export class UlldPlugin extends ShellManager {
                 this.noConfigError();
                 return;
             }
-            this.pluginConfig = packageJsonData["ulld-pluginConfig"] as typeof this.pluginConfig
+            this.pluginConfig = packageJsonData[
+                "ulld-pluginConfig"
+            ] as typeof this.pluginConfig;
         }
         this.hasConfig = true;
         this.pluginConfig = JSON.parse(
@@ -73,6 +79,7 @@ export class UlldPlugin extends ShellManager {
                 (p, i) => new PluginPage(p, this.name, i, this.paths, this.slot?.slot),
             );
         }
+        this.embeddables = this.getEmbeddables()
     }
     noConfigError() {
         this.hasConfig = false;
@@ -94,9 +101,6 @@ export class UlldPlugin extends ShellManager {
 
     getEmbeddables() {
         let em: typeof this.embeddables = [];
-        if (this.embeddables) {
-            return this.embeddables;
-        }
         let componentsWithEmbeddable = this.components.filter(
             (f) => f.data.embeddable,
         );
@@ -107,17 +111,21 @@ export class UlldPlugin extends ShellManager {
                         ...embeddable,
                         export: component.data.export,
                         componentName: component.data.componentName,
+                        generatedComponentName: `${component.data.componentName[0].toUpperCase()}${component.data.componentName.slice(1)}`,
                     });
                 }
             }
         }
-        this.embeddables = em;
+        // this.embeddables = em;
         return em;
     }
 
     getUniqueEmbeddableComponents() {
-        let ems = this.getEmbeddables();
+        let ems = this.embeddables;
         let embeddables: typeof ems = [];
+        if (!ems) {
+            return embeddables;
+        }
         for (const k of ems) {
             if (!embeddables.find((f) => f.componentName === k.componentName)) {
                 embeddables.push(k);
@@ -136,17 +144,20 @@ export class UlldPlugin extends ShellManager {
         return s;
     }
     getComponentMapItemsAsString() {
-        let embeddables = this.getEmbeddables();
-        let s = "";
+        let embeddables = this.embeddables;
+        let data: string[] = [];
+        if (!embeddables) {
+            return "";
+        }
         for (const k of embeddables) {
-            s += `    {
+            data.push(`    {
         regex: new RegExp("${k.regexToInclude}"),
         component: ${k.componentName},
         label: "${k.label}",
-    },
-`;
+    }
+`);
         }
-        return s;
+        return data.join(",\n");
     }
     removeRejectedPages() {
         this.pages = this.pages.filter((p) => p.shouldUse);

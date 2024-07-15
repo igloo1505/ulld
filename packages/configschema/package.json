@@ -56,9 +56,10 @@
         "./codeThemeSchemas": "./src/zod/codeThemeSchemas.ts",
         "./defaultColorMap": "./src/zod/ui/defaultColorMap.ts",
         "./slotsSchema": "./src/developer/slotsSchema.ts",
+        "./slotMapRootType": "./src/developer/slotMapRootType.ts",
         "./developerComponentSchema": "./src/developer/componentSchema.ts",
         "./developer": "./src/developer/main.ts",
-        "./developerTypes": "./src/developer/types.ts",
+        "./developerTypes": "./src/developer/types/main.ts",
         "./buildTypes": "./src/buildStaticData/types.ts",
         "./baseAppSlot": "./src/baseApp/slot.tsx"
     },

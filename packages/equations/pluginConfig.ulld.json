@@ -1,6 +1,6 @@
 {
     "pluginName": "@ulld/equations",
-    "slot": "equations",
+    "slot": "math",
     "components": [],
     "parsers": [],
     "pages": [

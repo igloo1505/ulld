@@ -3,7 +3,7 @@ import { InternalDeveloperConfigInput as DCI } from "./types/developerConfig";
 import { PluginSlotKey } from "./slotMapType";
 export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     pluginName: z.ZodString;
-    slot: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"snippets">, z.ZodLiteral<"equations">, z.ZodLiteral<"editor">, z.ZodLiteral<"bibliography">, z.ZodLiteral<"UI">, z.ZodLiteral<"task-manager">, z.ZodLiteral<"pdf">, z.ZodLiteral<"navigation">, z.ZodLiteral<"landing">, z.ZodLiteral<"commandPalette">]>>;
+    slot: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"snippets">, z.ZodLiteral<"math">, z.ZodLiteral<"editor">, z.ZodLiteral<"bibliography">, z.ZodLiteral<"UI">, z.ZodLiteral<"taskManager">, z.ZodLiteral<"pdf">, z.ZodLiteral<"navigation">, z.ZodLiteral<"dashboard">, z.ZodLiteral<"commandPalette">]>>;
     components: z.ZodDefault<z.ZodArray<z.ZodObject<{
         componentName: z.ZodEffects<z.ZodString, string, string>;
         slot: z.ZodOptional<z.ZodString>;
@@ -118,6 +118,13 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         targetUrl?: string | undefined;
         slot?: string | undefined;
     }[];
+    navigationLinks: {
+        href: string;
+        label: string;
+        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general";
+        icon?: string | undefined;
+    }[];
+    pluginName: string;
     components: {
         componentName: string;
         export: string;
@@ -130,21 +137,14 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         fullDocsExport?: string | undefined;
     }[];
     parsers: import("./types/parserConfig").ParserConfig[];
-    navigationLinks: {
-        href: string;
-        label: string;
-        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general";
-        icon?: string | undefined;
-    }[];
-    pluginName: string;
     events: import("./types/pluginEventsConfig").PluginEventsConfig;
-    slot?: "bibliography" | "navigation" | "UI" | "equations" | "snippets" | "editor" | "pdf" | "commandPalette" | "task-manager" | "landing" | undefined;
+    slot?: "bibliography" | "math" | "navigation" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
     settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
 }, {
     pluginName: string;
-    slot?: "bibliography" | "navigation" | "UI" | "equations" | "snippets" | "editor" | "pdf" | "commandPalette" | "task-manager" | "landing" | undefined;
+    slot?: "bibliography" | "math" | "navigation" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
     components?: {
         componentName: string;
         export: string;
@@ -183,6 +183,13 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         targetUrl?: string | undefined;
         slot?: string | undefined;
     }[];
+    navigationLinks: {
+        href: string;
+        label: string;
+        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general";
+        icon?: string | undefined;
+    }[];
+    pluginName: string;
     components: {
         componentName: string;
         export: string;
@@ -195,21 +202,14 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         fullDocsExport?: string | undefined;
     }[];
     parsers: import("./types/parserConfig").ParserConfig[];
-    navigationLinks: {
-        href: string;
-        label: string;
-        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general";
-        icon?: string | undefined;
-    }[];
-    pluginName: string;
     events: import("./types/pluginEventsConfig").PluginEventsConfig;
-    slot?: "bibliography" | "navigation" | "UI" | "equations" | "snippets" | "editor" | "pdf" | "commandPalette" | "task-manager" | "landing" | undefined;
+    slot?: "bibliography" | "math" | "navigation" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
     settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
 }, {
     pluginName: string;
-    slot?: "bibliography" | "navigation" | "UI" | "equations" | "snippets" | "editor" | "pdf" | "commandPalette" | "task-manager" | "landing" | undefined;
+    slot?: "bibliography" | "math" | "navigation" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
     components?: {
         componentName: string;
         export: string;

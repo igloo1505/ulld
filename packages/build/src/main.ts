@@ -3,8 +3,9 @@ import { verifyDirectory } from "./stages/verifyDirectory";
 import fs from "fs";
 import { UlldBuildProcess } from "./classes/build";
 import { log } from "console";
+import { BaseApp } from "./classes/baseApp/baseApp";
 
-const workingOffline = false
+const workingOffline = true
 
 program.option("--noPlugins").option("--here");
 
@@ -20,18 +21,20 @@ const options = program.opts();
             process.exit(1);
         }
         let build = new UlldBuildProcess(targetDirectory);
-        // let success = false;
-        // success = workingOffline ? true : await build.createBaseProject(); // alpha
+        let success = false;
+        success = workingOffline ? true : await build.createBaseProject(); // alpha
         build.packageJson.gather(); // alpha
         await build.gatherAppConfig(); // beta
-        // await build.gatherPlugins(); // alpha
-        // await build.checkPluginValidity(); //beta
-        // !workingOffline && await build.packageJson.installDependencies(); //beta
-        // await build.resolveSlotConflicts(); // beta
-        // await build.resolvePageConflicts(); // beta
-        // build.removeUnusablePlugins() // alpha
+        await build.gatherPlugins(); // alpha
+        await build.checkPluginValidity(); //beta
+        !workingOffline && await build.packageJson.installDependencies(); //beta
+        await build.resolveSlotConflicts(); // beta
+        await build.resolvePageConflicts(); // beta
+        build.removeUnusablePlugins() // alpha
         build.convertSlotsToPlugins()
-        await build.applyPages()
+        let baseApp = new BaseApp(build)
+        baseApp.generate()
+        // await build.applyPages()
     } catch (err) {
         if (!err) {
             log(`No worries. We can handle this later.`);

@@ -4,9 +4,9 @@ import {
 } from "@ulld/configschema/developer";
 import { writePluginConfig } from "@ulld/developer/writePluginConfig";
 
-const pluginConfig: DeveloperConfigInput<"equations"> = {
+const pluginConfig: DeveloperConfigInput<"math"> = {
     pluginName: "@ulld/equations",
-    slot: "equations",
+    slot: "math",
     pages: [
         {
             export: "./equationModal",

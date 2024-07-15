@@ -1,120 +1,120 @@
 {
-  "propsExtendsMap": {
-    "MonacoPageParams": "@ulld/editor/editorTypes",
-    "EquationDetailModalPageProps": "@ulld/utilities/corePageProps",
-    "EquationsPageProps": "@ulld/utilities/corePageProps",
-    "AddEquationsPageProps": "@ulld/utilities/corePageProps",
-    "EditorPageContentProps": "@ulld/utilities/corePageProps",
-    "BibliographyPageProps": "@ulld/bib-manager/types",
-    "SearchResultsPageProps": "@ulld/ui/types",
-    "BookmarksResultsPageProps": "@ulld/ui/types",
-    "FullScreenNavProps": "@ulld/navigation/types",
-    "TaskDetailsProps": "@ulld/task-manager/types",
-    "AddTaskProps": "@ulld/task-manager/types",
-    "AddTaskListProps": "@ulld/task-manager/types",
-    "AddSnippetPageProps": "@ulld/snippets/types",
-    "SnippetFilterProps": "@ulld/snippets/types",
-    "SnippetListInternalProps": "@ulld/snippets/types",
-    "MultipageSidebarProps": "@ulld/navigation/types",
-    "NavbarComponentProps": "@ulld/navigation/types",
-    "AutoSettingsTableProps": "@ulld/ui/types",
-    "FullPdfProps": "@ulld/pdf/types",
-    "PaginationProps": "@ulld/ui/types",
-    "DictionaryLetterList": "@ulld/ui/types",
-    "DictionaryItemProps": "@ulld/ui/types",
-    "NoteSummaryProps": "@ulld/ui/types",
-    "TaskListSearchResultProps": "@ulld/task-manager/types",
-    "NotesSearchResultsListProps": "@ulld/ui/types",
-    "TaskListSearchResultsListProps": "@ulld/task-manager/types",
-    "HTMLProps<HTMLElement>": "react",
-    "HTMLProps<HTMLOrSVGElement>": "react",
-    "SecondaryNavigationProps": "@ulld/navigation/types",
-    "CommandPalettePopoverProps": "@ulld/command-palette/types",
-    "LandingPageProps": "@ulld/landing-layouts/types",
-    "ConfirmationModalProps": "@ulld/ui/types",
-    "AutoSettingFormModalProps": "@ulld/ui/types",
-    "TaskManagerPageProps": "@ulld/task-manager/types",
-    "LoadingIndicatorProps": "@ulld/ui/types",
-    "BibEntryDetailsProps": "@ulld/bib-manager/types",
-    "EmbeddablePdfProps": "FIX ME",
-    "FooterProps": "@ulld/navigation/types"
-  },
-  "protectedPaths": [
-    {
-      "filePath": "/src/app/todo/page.tsx",
-      "route": "todo"
+    "propsExtendsMap": {
+        "MonacoPageParams": "@ulld/editor/editorTypes",
+        "EquationDetailModalPageProps": "@ulld/utilities/corePageProps",
+        "EquationsPageProps": "@ulld/utilities/corePageProps",
+        "AddEquationsPageProps": "@ulld/utilities/corePageProps",
+        "EditorPageContentProps": "@ulld/utilities/corePageProps",
+        "BibliographyPageProps": "@ulld/bib-manager/types",
+        "SearchResultsPageProps": "@ulld/ui/types",
+        "BookmarksResultsPageProps": "@ulld/ui/types",
+        "FullScreenNavProps": "@ulld/navigation/types",
+        "TaskDetailsProps": "@ulld/task-manager/types",
+        "AddTaskProps": "@ulld/task-manager/types",
+        "AddTaskListProps": "@ulld/task-manager/types",
+        "AddSnippetPageProps": "@ulld/snippets/types",
+        "SnippetFilterProps": "@ulld/snippets/types",
+        "SnippetListInternalProps": "@ulld/snippets/types",
+        "MultipageSidebarProps": "@ulld/navigation/types",
+        "NavbarComponentProps": "@ulld/navigation/types",
+        "AutoSettingsTableProps": "@ulld/ui/types",
+        "FullPdfProps": "@ulld/pdf/types",
+        "PaginationProps": "@ulld/ui/types",
+        "DictionaryLetterList": "@ulld/ui/types",
+        "DictionaryItemProps": "@ulld/ui/types",
+        "NoteSummaryProps": "@ulld/ui/types",
+        "TaskListSearchResultProps": "@ulld/task-manager/types",
+        "NotesSearchResultsListProps": "@ulld/ui/types",
+        "TaskListSearchResultsListProps": "@ulld/task-manager/types",
+        "HTMLProps<HTMLElement>": "react",
+        "HTMLProps<HTMLOrSVGElement>": "react",
+        "SecondaryNavigationProps": "@ulld/navigation/types",
+        "CommandPalettePopoverProps": "@ulld/command-palette/types",
+        "LandingPageProps": "@ulld/landing-layouts/types",
+        "ConfirmationModalProps": "@ulld/ui/types",
+        "AutoSettingFormModalProps": "@ulld/ui/types",
+        "TaskManagerPageProps": "@ulld/task-manager/types",
+        "LoadingIndicatorProps": "@ulld/ui/types",
+        "BibEntryDetailsProps": "@ulld/bib-manager/types",
+        "EmbeddablePdfProps": "FIX ME",
+        "FooterProps": "@ulld/navigation/types"
     },
-    {
-      "filePath": "/src/app/todo/details/[taskId]/page.tsx",
-      "route": "todo/details/*"
-    },
-    {
-      "filePath": "/src/app/todo/add/task/page.tsx",
-      "route": "todo/add/task"
-    },
-    {
-      "filePath": "/src/app/todo/add/list/page.tsx",
-      "route": "todo/add/list"
-    },
-    {
-      "filePath": "/src/app/navigation/page.tsx",
-      "route": "navigation"
-    },
-    {
-      "filePath": "/src/app/mdxEditor/[uniqueContentId]/page.tsx",
-      "route": "mdxEditor/*"
-    },
-    {
-      "filePath": "/src/app/latexEditor/[uniqueContentId]/page.tsx",
-      "route": "latexEditor/*"
-    },
-    {
-      "filePath": "/src/app/equations/page.tsx",
-      "route": "equations"
-    },
-    {
-      "filePath": "/src/app/equations/details/page.tsx",
-      "route": "equations/details"
-    },
-    {
-      "filePath": "/src/app/equations/add/page.tsx",
-      "route": "equations/add"
-    },
-    {
-      "filePath": "/src/app/editor/[uniqueContentId]/page.tsx",
-      "route": "editor/*"
-    },
-    {
-      "filePath": "/src/app/bookmarks/page.tsx",
-      "route": "bookmarks"
-    },
-    {
-      "filePath": "/src/app/bibliography/page.tsx",
-      "route": "bibliography"
-    },
-    {
-      "filePath": "/src/app/@modal/(.)todo/details/[taskId]/page.tsx",
-      "route": "@modal/(.)todo/details/*"
-    },
-    {
-      "filePath": "/src/app/@modal/(.)todo/add/task/page.tsx",
-      "route": "@modal/(.)todo/add/task"
-    },
-    {
-      "filePath": "/src/app/@modal/(.)todo/add/list/page.tsx",
-      "route": "@modal/(.)todo/add/list"
-    },
-    {
-      "filePath": "/src/app/@modal/(.)navigation/page.tsx",
-      "route": "@modal/(.)navigation"
-    },
-    {
-      "filePath": "/src/app/@modal/(.)equations/details/[equationId]/page.tsx",
-      "route": "@modal/(.)equations/details/*"
-    },
-    {
-      "filePath": "/src/app/@modal/(.)editor/[uniqueContentId]/page.tsx",
-      "route": "@modal/(.)editor/*"
-    }
-  ]
+    "protectedPaths": [
+        {
+            "filePath": "/src/app/todo/page.tsx",
+            "route": "todo"
+        },
+        {
+            "filePath": "/src/app/todo/details/[taskId]/page.tsx",
+            "route": "todo/details/*"
+        },
+        {
+            "filePath": "/src/app/todo/add/task/page.tsx",
+            "route": "todo/add/task"
+        },
+        {
+            "filePath": "/src/app/todo/add/list/page.tsx",
+            "route": "todo/add/list"
+        },
+        {
+            "filePath": "/src/app/navigation/page.tsx",
+            "route": "navigation"
+        },
+        {
+            "filePath": "/src/app/mdxEditor/[uniqueContentId]/page.tsx",
+            "route": "mdxEditor/*"
+        },
+        {
+            "filePath": "/src/app/latexEditor/[uniqueContentId]/page.tsx",
+            "route": "latexEditor/*"
+        },
+        {
+            "filePath": "/src/app/equations/page.tsx",
+            "route": "equations"
+        },
+        {
+            "filePath": "/src/app/equations/details/page.tsx",
+            "route": "equations/details"
+        },
+        {
+            "filePath": "/src/app/equations/add/page.tsx",
+            "route": "equations/add"
+        },
+        {
+            "filePath": "/src/app/editor/[uniqueContentId]/page.tsx",
+            "route": "editor/*"
+        },
+        {
+            "filePath": "/src/app/bookmarks/page.tsx",
+            "route": "bookmarks"
+        },
+        {
+            "filePath": "/src/app/bibliography/page.tsx",
+            "route": "bibliography"
+        },
+        {
+            "filePath": "/src/app/@modal/(.)todo/details/[taskId]/page.tsx",
+            "route": "@modal/(.)todo/details/*"
+        },
+        {
+            "filePath": "/src/app/@modal/(.)todo/add/task/page.tsx",
+            "route": "@modal/(.)todo/add/task"
+        },
+        {
+            "filePath": "/src/app/@modal/(.)todo/add/list/page.tsx",
+            "route": "@modal/(.)todo/add/list"
+        },
+        {
+            "filePath": "/src/app/@modal/(.)navigation/page.tsx",
+            "route": "@modal/(.)navigation"
+        },
+        {
+            "filePath": "/src/app/@modal/(.)equations/details/[equationId]/page.tsx",
+            "route": "@modal/(.)equations/details/*"
+        },
+        {
+            "filePath": "/src/app/@modal/(.)editor/[uniqueContentId]/page.tsx",
+            "route": "@modal/(.)editor/*"
+        }
+    ]
 }

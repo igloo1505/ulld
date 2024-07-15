@@ -4,9 +4,9 @@ import {
 } from "@ulld/configschema/developer";
 import { writePluginConfig } from "@ulld/developer/writePluginConfig";
 
-const pluginConfig: DeveloperConfigInput<"task-manager"> = {
+const pluginConfig: DeveloperConfigInput<"taskManager"> = {
     pluginName: "@ulld/task-manager",
-    slot: "task-manager",
+    slot: "taskManager",
     pages: [
         {
             slot: "TaskManagerPage",

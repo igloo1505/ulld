@@ -1,6 +1,6 @@
 {
     "pluginName": "@ulld/landing-layouts",
-    "slot": "landing",
+    "slot": "dashboard",
     "components": [
         {
             "componentName": "LandingPageBetaRelease",

@@ -63,7 +63,7 @@
     "files": [],
     "ulld-pluginConfig": {
         "pluginName": "@ulld/task-manager",
-        "slot": "task-manager",
+        "slot": "taskManager",
         "components": [
             {
                 "componentName": "TaskDetails",

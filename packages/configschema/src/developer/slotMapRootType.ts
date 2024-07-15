@@ -4,7 +4,7 @@ export interface SlotMap {
         SnippetList: string,
         SnippetFilter: string,
     }, 
-    "equations": {
+    "math": {
         EquationDetailsModalPage: string,
         EquationsPage: string,
         EquationDetailsPage: string,
@@ -34,7 +34,7 @@ export interface SlotMap {
         DictionaryLetterList: string,
         DictionaryPageItem: string,
     }, 
-    "task-manager": {
+    "taskManager": {
         TaskManagerPage: string,
         TaskDetails: string,
         AddTask: string,
@@ -53,7 +53,7 @@ export interface SlotMap {
         FullScreenNavigationMenu: string,
         Footer: string,
     }, 
-    "landing": {
+    "dashboard": {
         LandingPage: string,
     }, 
     "commandPalette": {
