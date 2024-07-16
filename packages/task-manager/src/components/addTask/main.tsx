@@ -14,7 +14,7 @@ import { ToDoListAddTaskSchema, todoListAddTaskSchema } from '@ulld/api/plugins/
 import { AddTaskProps } from "../../types";
 
 
-const ToDoListAddTaskModal = ({ isModal, lists, sp }: AddTaskProps) => {
+const ToDoListAddTaskModal = ({ isModal, lists, searchParams: sp }: AddTaskProps) => {
     const router = useRouter()
     const { toast } = useToast()
     const form = useForm<ToDoListAddTaskSchema>({

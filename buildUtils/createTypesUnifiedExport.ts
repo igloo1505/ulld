@@ -5,41 +5,130 @@ import { PackageManager } from "./packageManager";
 
 const p = new PackageManager();
 
-const root = path.join(__dirname, "../packages/types/src");
-const internalAppTypePath = path.join(root, "internalAppNames.ts");
-const prismaTypesPath = path.join(__dirname, "../node_modules/.prisma/client/index.d.ts")
+const generatedRoot = path.join(__dirname, "../packages/types/src/generated");
+const enumRoot = path.join(__dirname, "../packages/types/src/enums");
+const manualTypesRoot = path.join(
+    __dirname,
+    "../packages/types/src/manualTypes",
+);
+const internalAppTypePath = path.join(
+    __dirname,
+    "../packages/types/src/internalAppNames.ts",
+);
+const prismaTypesPath = path.join(
+    __dirname,
+    "../node_modules/.prisma/client/index.d.ts",
+);
 
-if(!fs.existsSync(prismaTypesPath)){
-    throw new Error("Prisma types file does not exist. Aborting...")
+if (!fs.existsSync(prismaTypesPath)) {
+    throw new Error("Prisma types file does not exist. Aborting...");
 }
 
 const internalAppNames = p.packages.map((l) => `"${l.name}"`).join(" | ");
 
-
 const internalAppData = `export type InternalAppName = ${internalAppNames};
 
 export type InternalAppShortName = ${
-/* @ts-ignore */
-internalAppNames.replaceAll("@ulld/", "")};`
+    /* @ts-ignore */
+    internalAppNames.replaceAll("@ulld/", "")
+    };`;
+
+
+let prismaTypesData = fs.readFileSync(prismaTypesPath, { encoding: "utf-8" });
+
+fs.writeFileSync(
+    path.join(generatedRoot, "prismaTypes.d.ts"),
+    prismaTypesData,
+    {
+        encoding: "utf-8",
+    },
+);
 
 fs.writeFileSync(internalAppTypePath, internalAppData, {
     encoding: "utf-8",
 });
 
-const index = path.join(root, "index.ts");
+let pathsData = {
+    enums: "",
+    manualTypes: "",
+    generated: "",
+};
 
-const _paths = globSync("**/*.d.ts", {
-    cwd: root,
-})
+const applyLeadingSlash = (p: string) => {
+       if(p.startsWith(".")){
+        return p
+    } 
+    return `./${p}`
+    }
 
-const paths = [..._paths, "prismaTypes.d.ts", "internalAppNames.ts"].map((j) => `export type * from "./${j}"`).join(";\n");
+let targetPaths: {
+    key: keyof typeof pathsData;
+    path: string;
+    outputPath: string;
+    extraPaths?: string[];
+    includeOutputFrom?: keyof typeof pathsData;
+    exclude?: string[];
+    formatExport: (pathVar: string) => string;
+}[] = [
+        {
+            key: "enums",
+            path: enumRoot,
+            outputPath: path.join(enumRoot, "index.ts"),
+            formatExport: (p) => `export * from "${applyLeadingSlash(p.slice(0, p.lastIndexOf(".")))}"`,
+        },
 
-fs.writeFileSync(index, paths, { encoding: "utf-8" });
+        {
+            key: "manualTypes",
+            path: manualTypesRoot,
+            outputPath: path.join(manualTypesRoot, "index.ts"),
+            formatExport: (p) => `export type * from "${applyLeadingSlash(p)}"`,
+        },
+        {
+            key: "generated",
+            path: generatedRoot,
+            extraPaths: ["prismaTypes.d.ts", "../internalAppNames.ts"],
+            includeOutputFrom: "manualTypes",
+            outputPath: path.join(generatedRoot, "index.ts"),
+            formatExport: (p) => `export type * from "${applyLeadingSlash(p)}"`,
+        },
+    ];
 
-let prismaTypesData = fs.readFileSync(prismaTypesPath, {encoding: "utf-8"})
+const gatherPaths = (data: (typeof targetPaths)[number]) => {
+    let exclude = data.exclude || [];
+    let extraPaths = data.extraPaths || ([] as string[]);
+    exclude.push(data.outputPath.replace(`${data.path}/`, ""));
+    console.log("exclude: ", exclude);
+    let _paths = globSync("**/*.ts", {
+        cwd: data.path,
+    }).filter((f) => !exclude.includes(f));
+    _paths = _paths.concat(extraPaths);
+    if (data.includeOutputFrom) {
+        let output = targetPaths.find(
+            (f) => f.key === data.includeOutputFrom,
+        )?.outputPath;
+        if (!output) {
+            throw new Error(
+                `Could not gather output from key ${data.includeOutputFrom} while gathering a unified type export.`,
+            );
+        }
+        let include = path.relative(
+            path.dirname(data.outputPath),
+            output.slice(0, output.lastIndexOf(".")),
+        );
+        _paths.push(include);
+    }
+    pathsData[data.key] = _paths.map((j) => data.formatExport(j)).join(";\n");
+};
 
-fs.writeFileSync(path.join(root, "prismaTypes.d.ts"), prismaTypesData, {encoding: "utf-8"})
+targetPaths.forEach((p) => gatherPaths(p));
 
-console.log(`Created unified types export at @ulld/types successfully.`)
+targetPaths.forEach((p) => {
+    fs.writeFileSync(p.outputPath, pathsData[p.key], { encoding: "utf-8" });
+    console.log(
+        `Wrote types to ${p.outputPath.replace(process.env.ULLD_DEV_ROOT!, "")}`,
+    );
+});
 
-process.exit(0)
+console.log(`Created unified types export at @ulld/types successfully.`);
+
+process.exit(0);

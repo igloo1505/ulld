@@ -3,10 +3,13 @@ import path from "path";
 import fs from "fs";
 import { capitalize } from "@ulld/utilities/stringUtils";
 import { slotTypes } from "@ulld/utilities/types";
-import propsExtendsMap from "@ulld/utilities/buildStaticData";
 import { gatherProtectedPaths } from "./gatherProtectedPaths";
 
 const testRoot = process.env.ULLD_TEST_ROOT;
+
+const buildDataPath = path.join(__dirname, "../../../utilities/src/utils/buildStaticData.json")
+
+const _propsExtendsMap = JSON.parse(fs.readFileSync(buildDataPath, {encoding: "utf-8"}))
 
 if (!testRoot) {
     throw new Error(
@@ -37,10 +40,6 @@ if (!fs.existsSync(staticBuildDataPath)) {
     throw new Error(`staticBuildDataPath ${staticBuildDataPath} does not exist.`);
 }
 
-const staticBuildData = JSON.parse(
-    fs.readFileSync(staticBuildDataPath, { encoding: "utf-8" }),
-);
-
 let items: {
     path: string;
     parentSlot: string;
@@ -51,7 +50,7 @@ let items: {
     propsExtends?: string;
 }[] = [];
 
-gatherProtectedPaths(files.map((f) => path.join(targetDir, f)));
+let staticBuildData = gatherProtectedPaths(files.map((f) => path.join(targetDir, f)), _propsExtendsMap);
 
 for (const k of files) {
     let content = fs.readFileSync(path.join(targetDir, k), { encoding: "utf-8" });
@@ -79,9 +78,11 @@ for (const k of files) {
         }
         if (
             Boolean(
-                propsExtends && !(propsExtends in propsExtendsMap.propsExtendsMap),
+                // propsExtends && !(propsExtends in ((staticBuildData as any)?.propsExtendsMap as any)?.propsExtendsMap),
+                propsExtends && !(propsExtends in (staticBuildData as any)?.propsExtendsMap)
             )
         ) {
+            /* @ts-ignore */
             staticBuildData.propsExtendsMap[propsExtends] = "FIX ME";
             console.warn(
                 `Slot prop can not extend ${propsExtends}. It was is not included in the propsExtendsMap object. Added a temporary place holder.`,

@@ -7,10 +7,12 @@
         ".turbo",
         "src/**/*.test.ts",
         "jest**",
-        "./src/__scripts__/**"
+         "src/__scripts__/**"
     ],
     "compilerOptions": {
-        "declarationDir": "../types/src/configschema",
+        "declarationDir": "../types/src/generated/configschema",
+        "outDir": "./dist",
+        "moduleResolution": "Bundler",
         "baseUrl": ".",
         "rootDir": "./src"
     }

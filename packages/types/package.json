@@ -12,7 +12,8 @@
         ".": "./src/index.ts",
         "./": "./src/index.ts",
         "./types": "./src/index.ts",
-        "./prisma": "./src/prismaTypes.ts"
+        "./prisma": "./src/prismaTypes.ts",
+        "./enums": "./src/enums/index.ts"
     },
     "scripts": {
         "dev": "echo 'Add dev script here'",

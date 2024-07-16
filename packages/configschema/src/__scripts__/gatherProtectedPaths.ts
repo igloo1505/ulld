@@ -31,24 +31,34 @@ const getCalculatedRoute = (p: string): string => {
     return split.join("/")
 };
 
-export const gatherProtectedPaths = (files: string[]) => {
+export const gatherProtectedPaths = (files: string[], propsExtendsMap: object) => {
     const protectedPaths: ProtectedPath[] = [];
-    let targetData = JSON.parse(
-        fs.readFileSync(targetPath, { encoding: "utf-8" }),
-    );
+    // let targetData = JSON.parse(
+    //     fs.readFileSync(targetPath, { encoding: "utf-8" }),
+    // );
     for (const k of files) {
         const data = fs.readFileSync(k, { encoding: "utf-8" });
         let re = /ULLD\:\s*protected-path/gm;
+        const pageForRe = /pageFor:(?<slot>[\w]*)\/(?<subSlot>[\w]*)/gm
         if (re.test(data)) {
             const shortenedPath = k.replace(testRoot, "");
-            protectedPaths.push({
+            let pageFor = pageForRe.exec(data)
+            let d: any = {
                 filePath: shortenedPath,
                 route: getCalculatedRoute(shortenedPath),
-            });
+            }
+            if((pageFor?.groups?.slot && pageFor?.groups?.subSlot)){
+                d.pageFor = {
+                    slot: pageFor.groups.slot,
+                    subSlot: pageFor.groups.subSlot
+                }
+            }
+            protectedPaths.push(d);
         }
     }
-    targetData.protectedPaths = protectedPaths;
-    fs.writeFileSync(targetPath, JSON.stringify(targetData, null, 4), {
-        encoding: "utf-8",
-    });
+    (propsExtendsMap as any).protectedPaths = protectedPaths;
+    return propsExtendsMap
+    // fs.writeFileSync(targetPath, JSON.stringify(targetData, null, 4), {
+    //     encoding: "utf-8",
+    // });
 };

@@ -30,6 +30,8 @@ export type ZodFriendly<T extends object> = { [key in keyof T]: T[key] extends n
 export type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>
 
 
-export type PickPageParams<T extends {searchParams: any, params: any | never}> = Pick<T, "searchParams" | "params">
+export type PickPageParams<T> = {
+    searchParams: "searchParams" extends keyof T ? T["searchParams"] : {},
+    params: "params" extends keyof T ? T["params"] : {},
+};
 
-export type PickSearchParams<T extends {searchParams: any}> = Pick<T, "searchParams">

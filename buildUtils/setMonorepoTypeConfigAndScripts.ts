@@ -12,10 +12,13 @@ const template = (packageName: string) => {
         "dist",
         ".turbo",
         "src/**/*.test.ts",
-        "jest**"
+        "jest**",
+         "src/__scripts__/**"
     ],
     "compilerOptions": {
-        "declarationDir": "../types/src/${packageName.replace("@ulld/", "")}",
+        "declarationDir": "../types/src/generated/${packageName.replace("@ulld/", "")}",
+        "outDir": "./dist",
+        "moduleResolution": "Bundler",
         "baseUrl": ".",
         "rootDir": "./src"
     }

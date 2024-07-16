@@ -131,7 +131,7 @@
             "path": "src/components/slots/ui/autoSettingTable.tsx",
             "clientOnly": false,
             "inReduxProvider": false,
-            "type": "component",
+            "type": "page",
             "propsExtends": "AutoSettingsTableProps"
         },
         "AutoSettingFormModal": {
@@ -189,7 +189,7 @@
             "path": "src/components/slots/taskManager/taskManagerPage.tsx",
             "clientOnly": false,
             "inReduxProvider": false,
-            "type": "component",
+            "type": "page",
             "propsExtends": "TaskManagerPageProps"
         },
         "TaskDetails": {
@@ -292,7 +292,7 @@
             "path": "src/components/slots/landingPage/main.tsx",
             "clientOnly": false,
             "inReduxProvider": false,
-            "type": "component",
+            "type": "page",
             "propsExtends": "LandingPageProps"
         }
     },

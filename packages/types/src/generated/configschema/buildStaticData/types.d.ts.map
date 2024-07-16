@@ -1,0 +1,1 @@
+{"version":3,"file":"types.d.ts","sourceRoot":"","sources":["../../../../../configschema/src/buildStaticData/types.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,EAAE,qBAAqB,EAAE,MAAM,QAAQ,CAAC;AAE/C,MAAM,MAAM,qBAAqB,GAAG,CAAC,CAAC,MAAM,CAAC,OAAO,qBAAqB,CAAC,CAAA;AAE1E,MAAM,MAAM,cAAc,GAAG,qBAAqB,CAAC,iBAAiB,CAAC,CAAC,MAAM,CAAC,CAAA"}

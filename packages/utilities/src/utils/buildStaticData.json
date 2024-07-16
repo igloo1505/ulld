@@ -41,56 +41,152 @@
     },
     "protectedPaths": [
         {
+            "filePath": "/src/app/page.tsx",
+            "route": "",
+            "pageFor": {
+                "slot": "dashboard",
+                "subSlot": "LandingPage"
+            }
+        },
+        {
             "filePath": "/src/app/todo/page.tsx",
-            "route": "todo"
+            "route": "todo",
+            "pageFor": {
+                "slot": "taskManager",
+                "subSlot": "TaskManagerPage"
+            }
         },
         {
             "filePath": "/src/app/todo/details/[taskId]/page.tsx",
-            "route": "todo/details/*"
+            "route": "todo/details/*",
+            "pageFor": {
+                "slot": "taskManager",
+                "subSlot": "TaskDetails"
+            }
         },
         {
             "filePath": "/src/app/todo/add/task/page.tsx",
-            "route": "todo/add/task"
+            "route": "todo/add/task",
+            "pageFor": {
+                "slot": "taskManager",
+                "subSlot": "AddTask"
+            }
         },
         {
             "filePath": "/src/app/todo/add/list/page.tsx",
-            "route": "todo/add/list"
+            "route": "todo/add/list",
+            "pageFor": {
+                "slot": "taskManager",
+                "subSlot": "AddTaskList"
+            }
+        },
+        {
+            "filePath": "/src/app/snippets/page.tsx",
+            "route": "snippets"
+        },
+        {
+            "filePath": "/src/app/snippets/add/page.tsx",
+            "route": "snippets/add",
+            "pageFor": {
+                "slot": "snippets",
+                "subSlot": "AddSnippetPage"
+            }
+        },
+        {
+            "filePath": "/src/app/settings/autoSettings/page.tsx",
+            "route": "settings/autoSettings",
+            "pageFor": {
+                "slot": "UI",
+                "subSlot": "AutoSettingsTable"
+            }
+        },
+        {
+            "filePath": "/src/app/searchAll/page.tsx",
+            "route": "searchAll",
+            "pageFor": {
+                "slot": "UI",
+                "subSlot": "SearchResultsPage"
+            }
+        },
+        {
+            "filePath": "/src/app/pdf/page.tsx",
+            "route": "pdf",
+            "pageFor": {
+                "slot": "pdf",
+                "subSlot": "FullPdf"
+            }
         },
         {
             "filePath": "/src/app/navigation/page.tsx",
-            "route": "navigation"
+            "route": "navigation",
+            "pageFor": {
+                "slot": "navigation",
+                "subSlot": "FullScreenNavigationMenu"
+            }
         },
         {
             "filePath": "/src/app/mdxEditor/[uniqueContentId]/page.tsx",
-            "route": "mdxEditor/*"
+            "route": "mdxEditor/*",
+            "pageFor": {
+                "slot": "editor",
+                "subSlot": "MdxEditorPage"
+            }
         },
         {
             "filePath": "/src/app/latexEditor/[uniqueContentId]/page.tsx",
-            "route": "latexEditor/*"
+            "route": "latexEditor/*",
+            "pageFor": {
+                "slot": "editor",
+                "subSlot": "LatexEditorPage"
+            }
         },
         {
             "filePath": "/src/app/equations/page.tsx",
-            "route": "equations"
+            "route": "equations",
+            "pageFor": {
+                "slot": "math",
+                "subSlot": "EquationsPage"
+            }
         },
         {
             "filePath": "/src/app/equations/details/page.tsx",
-            "route": "equations/details"
+            "route": "equations/details",
+            "pageFor": {
+                "slot": "math",
+                "subSlot": "EquationDetailsPage"
+            }
         },
         {
             "filePath": "/src/app/equations/add/page.tsx",
-            "route": "equations/add"
+            "route": "equations/add",
+            "pageFor": {
+                "slot": "math",
+                "subSlot": "AddEquationPage"
+            }
         },
         {
             "filePath": "/src/app/editor/[uniqueContentId]/page.tsx",
-            "route": "editor/*"
+            "route": "editor/*",
+            "pageFor": {
+                "slot": "editor",
+                "subSlot": "EditorPage"
+            }
         },
         {
             "filePath": "/src/app/bookmarks/page.tsx",
-            "route": "bookmarks"
+            "route": "bookmarks",
+            "pageFor": {
+                "slot": "UI",
+                "subSlot": "BookmarksPage"
+            }
         },
         {
             "filePath": "/src/app/bibliography/page.tsx",
-            "route": "bibliography"
+            "route": "bibliography",
+            "pageFor": {
+                "slot": "bibliography",
+                "subSlot": "BibliographyPage"
+            }
         },
         {
             "filePath": "/src/app/@modal/(.)todo/details/[taskId]/page.tsx",

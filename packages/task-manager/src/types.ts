@@ -49,7 +49,7 @@ export interface AddTaskSearchParams {
 export interface AddTaskProps {
     isModal: boolean;
     existingTaggables: UniqueTaggables;
-    sp: AddTaskSearchParams;
+    searchParams: AddTaskSearchParams;
     lists: { label: string; id: number }[];
 }
 
