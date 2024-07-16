@@ -50,4 +50,4 @@ export interface ConfirmationModalConfig {
 }
 
 
-export type SearchAllSearchType = "searchAll" | "byTag" | "byEquation" | "bySequentialId"
+export type SearchAllSearchType = "searchAll" | "byTag" | "byEquation" | "bySequentialId" | "bookmarked"

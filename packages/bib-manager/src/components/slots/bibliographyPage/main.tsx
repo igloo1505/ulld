@@ -13,7 +13,7 @@ import { showBibEntryDetails } from "../../../utils/showBibEntryDetails";
 import BibTable from "./bibTable";
 
 const BibliographyPage = ({
-  prismaBib,
+  databaseBib: prismaBib,
   loadingIndicator: LoadingIndicator,
   bibEntryDetailsSheet: BibEntryDetailsSheet,
 }: BibliographyPageProps) => {

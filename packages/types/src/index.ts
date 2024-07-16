@@ -83,3 +83,4 @@ export type * from "./configschema/buildStaticData/settingsPage.d.ts";
 export type * from "./configschema/buildStaticData/main.d.ts";
 export type * from "./prismaTypes.d.ts";
 export type * from "./internalAppNames.ts"
+export type * from "./manualTypes/main.ts"

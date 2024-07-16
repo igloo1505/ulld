@@ -63,7 +63,7 @@ export const advancedSearchRouter = router({
             let j = await dictionaryDefinitionReturnType.parseAsync(d);
             definitions.push(j);
         }
-        return definitions;
+        return definitions as DictionaryDefinitionReturnType[]
     }),
     rootRelativePathIsBookmarked: publicProcedure
         .input(z.string())

@@ -14,7 +14,8 @@
     "./navbarPortal": "./src/components/navbarPortal.tsx",
     "./sidebarPortal": "./src/components/sidebarPortal.tsx",
     "./writePluginConfig": "./src/utilityMethods/writePluginConfig.ts",
-    "./readAppConfig": "./src/utilityMethods/readAppConfig.ts"
+    "./readAppConfig": "./src/utilityMethods/readAppConfig.ts",
+    "./readBuildData": "./src/utilityMethods/readBuildData.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",

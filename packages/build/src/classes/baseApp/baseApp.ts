@@ -1,37 +1,12 @@
-import path from "path";
 import { UlldPlugin } from "../plugin";
 import { getComponentMapContent } from "./fileContent/componentMap";
 import fs from "fs";
 import { ShellManager } from "../baseClasses/shell";
 import { UlldBuildProcess } from "../build";
+import { PathsGroup, getPathsGroup } from "./utils/getPathsGroup";
 
-interface PathsGroup {
-    packageJson: string;
-    node_modules: string;
-    src: string;
-    appDir: string;
-    public: string;
-    nextConfig: string;
-    tailwind: string;
-    ulldBuildData: string;
-    appConfig: string;
-    componentMap: string;
-}
 
-const getPathsGroup = (rootPath: string): PathsGroup => {
-    return {
-        packageJson: path.join(rootPath, "package.json"),
-        node_modules: path.join(rootPath, "node_modules"),
-        src: path.join(rootPath, "src"),
-        appDir: path.join(rootPath, "src/app"),
-        public: path.join(rootPath, "public"),
-        nextConfig: path.join(rootPath, "next.config.mjs"),
-        tailwind: path.join(rootPath, "tailwind.config.ts"),
-        ulldBuildData: path.join(rootPath, "ulldBuildData.json"),
-        appConfig: path.join(rootPath, "appConfig.ulld.json"),
-        componentMap: path.join(rootPath, "src/internal/componentMap.ts"),
-    };
-};
+
 
 export class BaseApp extends ShellManager {
     paths: PathsGroup;
@@ -47,7 +22,7 @@ export class BaseApp extends ShellManager {
         });
     }
     generate(){
-        this.createComponentMap(this.build.plugins)
+        // this.createComponentMap(this.build.plugins)
     }
     createComponentMap(plugins: UlldPlugin[]) {
         this.log(`Generating component map...`);
