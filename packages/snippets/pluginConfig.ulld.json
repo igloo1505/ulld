@@ -19,6 +19,11 @@
             "slot": "AddSnippetPage",
             "export": "addSnippetPage",
             "exportsPageProps": true
+        },
+        {
+            "slot": "SnippetListPage",
+            "export": "snippetsPage",
+            "exportsPageProps": false
         }
     ],
     "events": {},

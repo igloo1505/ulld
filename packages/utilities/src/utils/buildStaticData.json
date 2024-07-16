@@ -37,7 +37,9 @@
         "LoadingIndicatorProps": "@ulld/ui/types",
         "BibEntryDetailsProps": "@ulld/bib-manager/types",
         "EmbeddablePdfProps": "FIX ME",
-        "FooterProps": "@ulld/navigation/types"
+        "FooterProps": "@ulld/navigation/types",
+        "SnippetsPageProps": "FIX ME",
+        "SnippetListProps": "FIX ME"
     },
     "protectedPaths": [
         {
@@ -82,7 +84,11 @@
         },
         {
             "filePath": "/src/app/snippets/page.tsx",
-            "route": "snippets"
+            "route": "snippets",
+            "pageFor": {
+                "slot": "snippets",
+                "subSlot": "SnippetListPage"
+            }
         },
         {
             "filePath": "/src/app/snippets/add/page.tsx",
@@ -190,27 +196,51 @@
         },
         {
             "filePath": "/src/app/@modal/(.)todo/details/[taskId]/page.tsx",
-            "route": "@modal/(.)todo/details/*"
+            "route": "@modal/(.)todo/details/*",
+            "pageFor": {
+                "slot": "taskManager",
+                "subSlot": "TaskDetails"
+            }
         },
         {
             "filePath": "/src/app/@modal/(.)todo/add/task/page.tsx",
-            "route": "@modal/(.)todo/add/task"
+            "route": "@modal/(.)todo/add/task",
+            "pageFor": {
+                "slot": "taskManager",
+                "subSlot": "AddTask"
+            }
         },
         {
             "filePath": "/src/app/@modal/(.)todo/add/list/page.tsx",
-            "route": "@modal/(.)todo/add/list"
+            "route": "@modal/(.)todo/add/list",
+            "pageFor": {
+                "slot": "taskManager",
+                "subSlot": "AddTaskList"
+            }
         },
         {
             "filePath": "/src/app/@modal/(.)navigation/page.tsx",
-            "route": "@modal/(.)navigation"
+            "route": "@modal/(.)navigation",
+            "pageFor": {
+                "slot": "navigation",
+                "subSlot": "FullScreenNavigationMenu"
+            }
         },
         {
             "filePath": "/src/app/@modal/(.)equations/details/[equationId]/page.tsx",
-            "route": "@modal/(.)equations/details/*"
+            "route": "@modal/(.)equations/details/*",
+            "pageFor": {
+                "slot": "math",
+                "subSlot": "EquationDetailsModalPage"
+            }
         },
         {
             "filePath": "/src/app/@modal/(.)editor/[uniqueContentId]/page.tsx",
-            "route": "@modal/(.)editor/*"
+            "route": "@modal/(.)editor/*",
+            "pageFor": {
+                "slot": "editor",
+                "subSlot": "EditorModalPage"
+            }
         }
     ]
 }

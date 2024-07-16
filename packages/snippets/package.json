@@ -14,7 +14,8 @@
         "./schemas": "./src/schemas.ts",
         "./snippetList": "./src/components/snippetList/main.tsx",
         "./snippetFilter": "./src/components/snippetFilter/main.tsx",
-        "./addSnippetPage": "./src/ulldPages/addSnippet.tsx"
+        "./addSnippetPage": "./src/ulldPages/addSnippet.tsx",
+        "./snippetsPage": "./src/ulldPages/snippetsPage/main.tsx"
     },
     "peerDependencies": {
         "@types/react": "^18.2.74",
@@ -83,6 +84,11 @@
                 "slot": "AddSnippetPage",
                 "export": "addSnippetPage",
                 "exportsPageProps": true
+            },
+            {
+                "slot": "SnippetListPage",
+                "export": "snippetsPage",
+                "exportsPageProps": false
             }
         ],
         "events": {},

@@ -2,7 +2,7 @@ import { PackageJsonType } from "@ulld/developer-schemas/fullPackageJson";
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
 import path from "path";
 import fs from "fs";
-import { PluginSlotKey } from "@ulld/configschema/developerTypes";
+import { AnySubSlotKey, PluginSlotKey, SlotMap } from "@ulld/configschema/developerTypes";
 import { PluginSlot } from "./slot";
 import { PluginComponent } from "./component";
 import { PluginPage } from "./page";
@@ -11,7 +11,7 @@ import { PluginEvents } from "./pluginEvents";
 import { TargetPaths } from "./paths";
 import { ShellManager } from "./baseClasses/shell";
 
-export class UlldPlugin extends ShellManager {
+export class UlldPlugin<T extends keyof SlotMap | undefined = undefined> extends ShellManager {
     pluginConfig: DeveloperConfigOutput | "Unusable" = "Unusable";
     inConfigAsSlot: boolean = false;
     packageRoot: string;
@@ -61,12 +61,6 @@ export class UlldPlugin extends ShellManager {
         ) as DeveloperConfigOutput;
         if ((this.pluginConfig as any) !== "Unusable") {
             this.events = new PluginEvents(this.pluginConfig?.events || {});
-            if (this.pluginConfig?.slot) {
-                this.slot = new PluginSlot(
-                    this.name,
-                    this.pluginConfig.slot as PluginSlotKey,
-                );
-            }
             this.components = this.pluginConfig.components.map(
                 (f) =>
                     new PluginComponent(f, {
@@ -74,9 +68,16 @@ export class UlldPlugin extends ShellManager {
                         pluginName: this.name,
                     }),
             );
+            if (this.pluginConfig?.slot) {
+                this.slot = new PluginSlot(
+                    this.name,
+                    this.pluginConfig.slot as PluginSlotKey,
+                    this.components
+                );
+            }
             this.parsers = this.pluginConfig.parsers.map((f) => new PluginParser(f));
             this.pages = this.pluginConfig.pages.map(
-                (p, i) => new PluginPage(p, this.name, i, this.paths, this.slot?.slot),
+                (p, i) => new PluginPage(p, this.name, i, this.paths, this.slot?.slot, p.slot as AnySubSlotKey),
             );
         }
         this.embeddables = this.getEmbeddables()

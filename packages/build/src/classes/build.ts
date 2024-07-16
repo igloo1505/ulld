@@ -18,6 +18,11 @@ import { SlotMap } from "@ulld/configschema/developerTypes";
 import { PluginPage } from "./page";
 import { PageConflict } from "./pageConflict";
 import { GitManager } from "./baseClasses/gitManager";
+import { PluginComponent } from "./component";
+import { SlotMapOfType } from "@ulld/configschema/types";
+import { generateSlotMapOfType } from "../utils/slotMapUtils";
+import { slotMapIsFull } from "../utils/slotMapIsFull";
+import { getRandomChar } from "../utils/randomization";
 
 type PluginSlotKey = keyof SlotMap;
 
@@ -33,6 +38,7 @@ export class UlldBuildProcess extends Prompter {
     slotConflicts: SlotConflict[] = [];
     pageConflicts: PageConflict[] = [];
     git: GitManager;
+    componentImportMap: Record<string, boolean> = {}
     constructor(public targetDir: string) {
         super(targetDir);
         this.git = new GitManager(targetDir);
@@ -60,6 +66,28 @@ export class UlldBuildProcess extends Prompter {
             return this.packageJson.includesUlldDependencies();
         }
         return false;
+    }
+    private validateImportName(plugin: PluginComponent | PluginPage): void {
+        if (plugin.formattedComponentImport in this.componentImportMap) {
+            console.log(`component name occupied`);
+            plugin.formattedComponentImport = plugin.haveModifiedImportName
+                ? `${plugin.formattedComponentImport}${getRandomChar()}`
+                : `${plugin.formattedComponentImport}_${getRandomChar()}`;
+            return this.validateImportName(plugin);
+        } else {
+            console.log(`component name unoccupied`);
+            this.componentImportMap[plugin.formattedComponentImport] = true;
+        }
+    }
+    validateImportNames() {
+        console.log(
+            "this.getFlattenedComponents() : ",
+            this.getFlattenedComponents(),
+        );
+        this.getFlattenedComponents().forEach((c) => this.validateImportName(c));
+        console.log(`Validating import names2`);
+        this.getFlattenedPages().forEach((p) => this.validateImportName(p));
+        console.log("this.components: ", this.componentImportMap);
     }
     async gatherPlugins() {
         this.log(
@@ -161,6 +189,7 @@ and continue when that file is in place.`,
         }
     }
     getAllSlots() {
+        if (!this.plugins) return [];
         return this.plugins
             .filter((f) => f.slot)
             .map((f) => f.slot) as PluginSlot[];
@@ -302,6 +331,68 @@ and continue when that file is in place.`,
                 }
             }
         }
+    }
+    getComponentSlotMap(): SlotMapOfType<PluginComponent | PluginPage> {
+        let slotComponents = this.getSlotComponents();
+        let slotPages = this.getSlotPages();
+        let slotComponentMap = generateSlotMapOfType((slotKey, subSlotKey) => {
+            let slotPage = slotPages.find(
+                (f) => f.subSlotKey === subSlotKey && f.parentSlotKey === slotKey,
+            );
+            if (slotPage) {
+                return slotPage;
+            }
+            return (
+                slotComponents.find(
+                    (f) => f.slotKey === slotKey && f.subSlotKey === subSlotKey,
+                ) || false
+            );
+        });
+        let fullSlotMap = slotMapIsFull(slotComponentMap);
+        if (!fullSlotMap.passed) {
+            this
+                .logDebug(`Your slot map is incomplete! You're missing the following slots:
+
+${fullSlotMap.missingItems.map((k, i) => `${i + 1}. ${k.slot} -> ${k.subSlot}`).join("\n")}`);
+        }
+        return slotComponentMap as SlotMapOfType<PluginComponent | PluginPage>;
+    }
+
+    getSlotComponents(): PluginComponent[] {
+        let slotComponents: PluginComponent[] = [];
+        for (const k of this.plugins) {
+            for (const l of k.components) {
+                if (l.subSlot) {
+                    slotComponents.push(l);
+                }
+            }
+        }
+        return slotComponents;
+    }
+    getSlotPages(): PluginPage[] {
+        let data: PluginPage[] = [];
+        for (const k of this.plugins) {
+            for (const l of k.pages) {
+                if (l.data.slot) {
+                    data.push(l);
+                }
+            }
+        }
+        return data;
+    }
+    getFlattenedPages() {
+        let d: PluginPage[] = [];
+        for (const k of this.plugins) {
+            d = d.concat(k.pages);
+        }
+        return d;
+    }
+    getFlattenedComponents() {
+        let d: PluginComponent[] = [];
+        for (const k of this.plugins) {
+            d = d.concat(k.components);
+        }
+        return d;
     }
     async applyPages() {
         for await (const k of this.plugins) {

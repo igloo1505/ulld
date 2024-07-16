@@ -13,6 +13,11 @@ const pluginConfig: DeveloperConfigInput<"snippets"> = {
             exportsPageProps: true,
             slot: "AddSnippetPage",
         },
+        {
+            export: "./snippetsPage",
+            exportsPageProps: false,
+            slot: "SnippetListPage"
+        }
     ],
     components: [
         {

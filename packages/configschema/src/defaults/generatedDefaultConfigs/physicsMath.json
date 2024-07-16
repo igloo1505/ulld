@@ -322,21 +322,9 @@
                 "version": "latest"
             }
         ],
-        "notebook": [
-            {
-                "name": "@ulld/notebook",
-                "version": "latest"
-            }
-        ],
         "dashboard": [
             {
                 "name": "@ulld/landing-layouts",
-                "version": "latest"
-            }
-        ],
-        "logger": [
-            {
-                "name": "@ulld/logger",
                 "version": "latest"
             }
         ],
@@ -358,14 +346,6 @@
                 "version": "latest"
             }
         ],
-        "whiteboard": [
-            {
-                "name": "@ulld/whiteboard",
-                "version": "latest"
-            }
-        ],
-        "components": {},
-        "parsers": {},
         "UI": [
             {
                 "name": "@ulld/ui",

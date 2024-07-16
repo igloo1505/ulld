@@ -1,5 +1,12 @@
 {
     "snippets": {
+        "SnippetListPage": {
+            "path": "src/corePages/snippets/pageWrapper.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "page",
+            "propsExtends": "SnippetsPageProps"
+        },
         "AddSnippetPage": {
             "path": "src/corePages/snippets/add.tsx",
             "clientOnly": false,
@@ -12,7 +19,7 @@
             "clientOnly": false,
             "inReduxProvider": false,
             "type": "component",
-            "propsExtends": "SnippetListInternalProps"
+            "propsExtends": "SnippetListProps"
         },
         "SnippetFilter": {
             "path": "src/components/slots/snippets/snippetFilter.tsx",

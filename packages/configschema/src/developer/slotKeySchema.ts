@@ -17,6 +17,7 @@ export const slotKeySchema = z.union([
 
 
 export const snippetsSubkeySchema = z.union([
+    z.literal("SnippetListPage"),
     z.literal("AddSnippetPage"),
     z.literal("SnippetList"),
     z.literal("SnippetFilter"),

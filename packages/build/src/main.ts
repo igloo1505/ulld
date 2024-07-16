@@ -32,6 +32,9 @@ const options = program.opts();
         await build.resolvePageConflicts(); // beta
         build.removeUnusablePlugins() // alpha
         build.convertSlotsToPlugins()
+        // TODO: Add event functions when they are imported here as well.
+        build.validateImportNames()
+        console.log(`creating baseApp`)
         let baseApp = new BaseApp(build)
         baseApp.generate()
         // await build.applyPages()

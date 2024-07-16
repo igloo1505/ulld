@@ -1,5 +1,6 @@
 export interface SlotMap {
     "snippets": {
+        SnippetListPage: string;
         AddSnippetPage: string;
         SnippetList: string;
         SnippetFilter: string;

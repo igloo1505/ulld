@@ -209,6 +209,11 @@ for (const k in slotSubKeys) {
     }
 }
 
+
+const formatTypeSymbol = (k: string) => {
+       return `${makeValidSymbol(capitalize(k))}SubSlots` 
+    }
+
 const slotKeyFileContent = `
 import { z } from 'zod';
 
@@ -236,9 +241,12 @@ export type PluginSlotKey = keyof SM
 ${Object.keys(slotSubKeys)
         .map(
             (k) =>
-                `export type ${makeValidSymbol(capitalize(k))}SubSlots = keyof SM["${k}"]`,
+                `export type ${formatTypeSymbol(k)} = keyof SM["${k}"]`,
         )
-        .join("\n\n")}`,
+        .join("\n\n")}
+
+export type AnySubSlotKey = ${Object.keys(slotSubKeys).map((t) => formatTypeSymbol(t)).join(" | ")};
+`,
     { encoding: "utf-8" },
 );
 

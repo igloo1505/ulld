@@ -5,28 +5,32 @@ import { TargetPaths } from "./paths";
 import { ShellManager } from "./baseClasses/shell";
 import { SlotDataType } from "@ulld/utilities/types";
 import slotStaticData from "@ulld/utilities/slotMap.json"
-import { PluginSlotKey } from "@ulld/configschema/developerTypes";
+import { AnySubSlotKey, PluginSlotKey } from "@ulld/configschema/developerTypes";
+import buildData from "@ulld/utilities/buildStaticData"
 
 export class PluginPage extends ShellManager {
     shouldUse: boolean = true;
-    importName: string;
+    importName: string = "GeneratedPageComponent"
     slotData?: SlotDataType;
+    targetUrl: string
+    targetFile: string
+    formattedComponentImport: string
+    haveModifiedImportName: boolean = false
     constructor(
         public data: DeveloperConfigOutput["pages"][number],
         public pluginName: string,
         public pageIndex: number,
         public paths: TargetPaths,
-        public parentSlot?: PluginSlotKey
+        public parentSlotKey?: PluginSlotKey,
+        public subSlotKey?: AnySubSlotKey
     ) {
         super();
-        let s = capitalize(this.pluginName);
-        if (this.pageIndex > 0) {
-            s += `${this.pageIndex + 1}`;
+        if(data.slot && parentSlotKey){
+            this.slotData = slotStaticData[parentSlotKey]?.[data.slot as keyof typeof slotStaticData[typeof parentSlotKey]]
         }
-        this.importName = s;
-        if(data.slot && parentSlot){
-            this.slotData = slotStaticData[parentSlot]?.[data.slot as keyof typeof slotStaticData[typeof parentSlot]]
-        }
+        this.formattedComponentImport = "PageComponent"
+        this.targetUrl = this.getTargetUrl()
+        this.targetFile = this.getPathFromTargetUrl()
     }
     cancel() {
         this.shouldUse = false;
@@ -34,8 +38,24 @@ export class PluginPage extends ShellManager {
     getImportString() {
         return `import ${this.importName}${this.data.exportsPageProps ? ", { PageProps }" : ""} from "${this.pluginName}/${this.data.export}";`;
     }
+    throwTargetPathNotFound(){
+        throw new Error(`Could not find the target url for ${this.pluginName} at ${this.parentSlotKey} -> ${this.data.slot}`)
+    }
+    getTargetUrl(){
+       if(this.data.targetUrl){
+            return this.data.targetUrl
+        } 
+        if(!this.parentSlotKey || !this.subSlotKey){
+            this.throwTargetPathNotFound()
+        }
+        let protectedPathData = buildData.protectedPaths.find((q) => (q.pageFor.slot === this.parentSlotKey && q.pageFor.subSlot === this.subSlotKey)) 
+        if(!protectedPathData){
+            this.throwTargetPathNotFound()
+        }
+        return protectedPathData?.route as string
+    }
     getPathFromTargetUrl() {
-        let paths = this.data.targetUrl.split("/");
+        let paths = this.targetUrl.split("/");
         return path.join(this.paths.app, ...paths);
     }
     getTypeString() {
@@ -63,7 +83,7 @@ UlldPage.displayName = "${this.importName}"
 export default UlldPage;
 `;
     }
-    writePage() {
+    writeToFile() {
         if (!this.shouldUse) {
             return this.log(
                 `Not writing page ${this.data.targetUrl} from plugin ${this.pluginName}. There was an issue with their configuration.`,
