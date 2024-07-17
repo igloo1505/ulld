@@ -16,16 +16,16 @@ export declare const componentDocumentationSchema: z.ZodObject<{
     tags: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
 }, "strip", z.ZodTypeAny, {
     tags: string[];
-    componentName: string;
     pluginName: string;
+    componentName: string;
     embeddableSyntax: string[];
     paths: {
         short?: string | undefined;
         full?: string | undefined;
     };
 }, {
-    componentName: string;
     pluginName: string;
+    componentName: string;
     embeddableSyntax: string[];
     paths: {
         short?: string | undefined;

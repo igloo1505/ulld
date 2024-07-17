@@ -65,6 +65,7 @@ export type * from "./configschema/developer/parserSchema.d.ts";
 export type * from "./configschema/developer/navigationLinkType.d.ts";
 export type * from "./configschema/developer/navigationLink.d.ts";
 export type * from "./configschema/developer/main.d.ts";
+export type * from "./configschema/developer/eventMethodTypes.d.ts";
 export type * from "./configschema/developer/componentSchema.d.ts";
 export type * from "./configschema/developer/commandPalette.d.ts";
 export type * from "./configschema/developer/additionalImportsConfigSchema.d.ts";

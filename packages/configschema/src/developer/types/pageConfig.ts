@@ -14,6 +14,13 @@ type WithSlot<T extends PluginSlotKey | undefined> = {
 }
 
 
+
+type WithSlotWithoutGeneric = {
+    /** An optional slot that this page occupies. Not all pages are required to occupy a slot, but pages that do occupy a slot will override an internal page within the user's compiled application. */
+    slot: string
+}
+
+
 type WithUrl = {
     /** The target URL to place this page at. This is synonomous with a file path from the root of the app directory, including intercepted routes. An intercepted modal route for example should appear as `@modal/(.)myPath/...` even though `@modal` doesn't appear in the URL. This must be unique, as if it overwrites an existing route it will not be applied. */
     targetUrl: string
@@ -22,3 +29,4 @@ type WithUrl = {
 
 
 export type PluginPageConfig<T extends PluginSlotKey | undefined> = (PluginPageConfigBase & WithUrl) | (PluginPageConfigBase & WithSlot<T>)
+export type PluginPageConfigWithoutGeneric = (PluginPageConfigBase & WithUrl) | (PluginPageConfigBase & WithSlotWithoutGeneric)

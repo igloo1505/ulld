@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { InternalDeveloperConfigInput as DCI } from "./types/developerConfig";
+import { InternalDeveloperConfigInput as DCI, InternalDeveloperConfigInputWithoutGeneric } from "./types/developerConfig";
 import { PluginSlotKey } from "./slotMapType";
 export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     pluginName: z.ZodString;
@@ -258,4 +258,5 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
 }>;
 export type DeveloperConfigOutput = z.output<typeof developerConfigSchema>;
 export type DeveloperConfigInput<T extends PluginSlotKey | undefined = undefined> = DCI<T>;
+export type DeveloperConfigInputWithoutGeneric = InternalDeveloperConfigInputWithoutGeneric;
 //# sourceMappingURL=main.d.ts.map
