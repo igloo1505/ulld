@@ -47,6 +47,40 @@ export declare const buildStaticDataSchema: z.ZodObject<{
         href: string;
         label: string;
     }>, "many">>;
+    componentDocs: z.ZodDefault<z.ZodArray<z.ZodObject<{
+        pluginName: z.ZodString;
+        componentName: z.ZodString;
+        embeddableSyntax: z.ZodArray<z.ZodString, "many">;
+        paths: z.ZodObject<{
+            short: z.ZodOptional<z.ZodString>;
+            full: z.ZodOptional<z.ZodString>;
+        }, "strip", z.ZodTypeAny, {
+            short?: string | undefined;
+            full?: string | undefined;
+        }, {
+            short?: string | undefined;
+            full?: string | undefined;
+        }>;
+        tags: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
+    }, "strip", z.ZodTypeAny, {
+        tags: string[];
+        componentName: string;
+        pluginName: string;
+        embeddableSyntax: string[];
+        paths: {
+            short?: string | undefined;
+            full?: string | undefined;
+        };
+    }, {
+        componentName: string;
+        pluginName: string;
+        embeddableSyntax: string[];
+        paths: {
+            short?: string | undefined;
+            full?: string | undefined;
+        };
+        tags?: string[] | undefined;
+    }>, "many">>;
 }, "strip", z.ZodTypeAny, {
     fsRoot: string;
     navigationLinks: ({
@@ -64,6 +98,16 @@ export declare const buildStaticDataSchema: z.ZodObject<{
         href: string;
         label: string;
     }[];
+    componentDocs: {
+        tags: string[];
+        componentName: string;
+        pluginName: string;
+        embeddableSyntax: string[];
+        paths: {
+            short?: string | undefined;
+            full?: string | undefined;
+        };
+    }[];
 }, {
     fsRoot: string;
     navigationLinks?: {
@@ -76,6 +120,16 @@ export declare const buildStaticDataSchema: z.ZodObject<{
     settingsPage?: {
         href: string;
         label: string;
+    }[] | undefined;
+    componentDocs?: {
+        componentName: string;
+        pluginName: string;
+        embeddableSyntax: string[];
+        paths: {
+            short?: string | undefined;
+            full?: string | undefined;
+        };
+        tags?: string[] | undefined;
     }[] | undefined;
 }>;
 //# sourceMappingURL=main.d.ts.map

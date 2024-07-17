@@ -59,3 +59,8 @@ export const generateSlotMapOfType = <T extends unknown>(cb: (slot: PluginSlotKe
     }
     return d
 }
+
+
+export const getSlotMapData = <T extends PluginSlotKey>(parentSlot: T, subSlot: keyof typeof fullSlotMap[T]) => {
+    return fullSlotMap[parentSlot][subSlot]
+}

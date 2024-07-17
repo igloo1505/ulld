@@ -38,12 +38,11 @@ export class BaseApp extends ShellManager {
         this.log("wrote embeddable component map successfully!")
     }
     applySlots(){
-        this.log(`applying slots...`)
+        this.logVerbose(`applying slots...`)
         const componentSlotMap = this.build.getComponentSlotMap()
-        console.log("componentSlotMap: ", componentSlotMap)
         let flattenedMap = flattenSlotMap(componentSlotMap)
-        console.log("flattenedMap: ", flattenedMap)
         for (const k of flattenedMap) {
+            console.log("k.data: ", k.data)
             k.data.writeToFile()
         }
 

@@ -2,6 +2,7 @@ import { z } from "zod";
 import { navigationLinkSchema } from "../developer/navigationLink";
 import { settingsPageOutputSchema } from "./settingsPage";
 import { ValidIconName } from "@ulld/icons";
+import { componentDocumentationSchema } from "./componentDocumentation";
 
 export const buildStaticDataSchema = z.object({
     fsRoot: z.string(),
@@ -12,6 +13,7 @@ export const buildStaticDataSchema = z.object({
         icon: "cog" as ValidIconName
     },
     ]),
-    settingsPage: settingsPageOutputSchema.array().default([])
+    settingsPage: settingsPageOutputSchema.array().default([]),
+    componentDocs: componentDocumentationSchema.array().default([])
 });
 

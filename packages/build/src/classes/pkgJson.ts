@@ -4,6 +4,7 @@ import { PackageJsonType } from "@ulld/developer-schemas/fullPackageJson";
 import { PackageManagers } from "../types";
 import { ShellManager } from "./baseClasses/shell";
 import { Prompter } from "./prompter";
+import { PackageJson } from "./baseClasses/pkgJson";
 
 const installScripts: {
     [k in PackageManagers]: string;
@@ -13,24 +14,12 @@ const installScripts: {
     yarn: "yarn install", // Almost surely wrong. Figure this out when back on wifi and able to reinstall yarn and figure out this f---king pnpm issue.
 };
 
-export class TargetPackageJson extends Prompter {
-    data?: PackageJsonType;
-    path: string;
+export class TargetPackageJson extends PackageJson {
     constructor(
         public targetDir: string,
         public isLocalDev: boolean,
     ) {
         super(targetDir);
-        this.path = path.join(targetDir, "package.json");
-    }
-    gather() {
-        if (fs.existsSync(this.path)) {
-            let pkg = fs.readFileSync(this.path, { encoding: "utf-8" });
-            this.data = JSON.parse(pkg) as PackageJsonType;
-        }
-    }
-    exists() {
-        return fs.existsSync(this.path);
     }
     includesUlldDependencies(): boolean {
         if (!this.data) {
@@ -38,13 +27,6 @@ export class TargetPackageJson extends Prompter {
         }
         let deps = Object.keys(this.data.dependencies);
         return deps.filter((a) => a.startsWith("@ulld")).length > 0;
-    }
-    write() {
-        this.log(`Writing your modified package.json...`);
-        fs.writeFileSync(this.path, JSON.stringify(this.data, null, 4), {
-            encoding: "utf-8",
-        });
-        this.log(`Wrote modified package.json successfully.`);
     }
 
     // ULLD_BUILD_PROCESS: Need to handle this.

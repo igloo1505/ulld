@@ -17,6 +17,7 @@ export declare const embeddableConfigSchema: z.ZodEffects<z.ZodObject<{
 }>;
 export declare const componentConfigSchema: z.ZodObject<{
     componentName: z.ZodEffects<z.ZodString, string, string>;
+    tags: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
     slot: z.ZodOptional<z.ZodString>;
     export: z.ZodEffects<z.ZodString, string, string>;
     embeddable: z.ZodEffects<z.ZodOptional<z.ZodUnion<[z.ZodArray<z.ZodEffects<z.ZodObject<{
@@ -62,6 +63,7 @@ export declare const componentConfigSchema: z.ZodObject<{
     docsExport: z.ZodOptional<z.ZodString>;
     fullDocsExport: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
+    tags: string[];
     componentName: string;
     export: string;
     slot?: string | undefined;
@@ -74,6 +76,7 @@ export declare const componentConfigSchema: z.ZodObject<{
 }, {
     componentName: string;
     export: string;
+    tags?: string[] | undefined;
     slot?: string | undefined;
     embeddable?: {
         regexToInclude: string;

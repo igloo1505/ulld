@@ -3,11 +3,12 @@ import chalk from "chalk";
 
 type LogLevel = "normal" | "verbose" | "debug";
 
+
 export class ShellManager {
-    logLevel: LogLevel = "normal";
+    logLevel: LogLevel = "normal"
     private logLevelOrder: LogLevel[] = ["normal", "verbose", "debug"];
     constructor() {
-        if (process.env.ULLD_LOG_LEVEL) {
+        if (process.env.ULLD_LOG_LEVEL && this.logLevelOrder.includes(process.env.ULLD_LOG_LEVEL as any)) {
             this.logLevel = process.env.ULLD_LOG_LEVEL as LogLevel;
         }
     }
@@ -18,6 +19,10 @@ export class ShellManager {
             this.logLevelOrder.indexOf(this.logLevel) >=
             this.logLevelOrder.indexOf(level)
         );
+    }
+
+    logFixme(val: any, ...vals: any) {
+        console.log(chalk.bgBlueBright.whiteBright(val, ...vals))
     }
 
     log(val: any, ...vals: any) {
@@ -57,8 +62,3 @@ export class ShellManager {
         cp.execSync(val, { cwd, stdio: "inherit" });
     }
 }
-
-// (async () => {
-//     const s = new ShellManager();
-//     await s.exec("pnpm install", "/Users/bigsexy/Desktop/current/ulldApp");
-// })();

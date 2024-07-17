@@ -6,6 +6,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     slot: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"snippets">, z.ZodLiteral<"math">, z.ZodLiteral<"editor">, z.ZodLiteral<"bibliography">, z.ZodLiteral<"UI">, z.ZodLiteral<"taskManager">, z.ZodLiteral<"pdf">, z.ZodLiteral<"navigation">, z.ZodLiteral<"dashboard">, z.ZodLiteral<"commandPalette">]>>;
     components: z.ZodDefault<z.ZodArray<z.ZodObject<{
         componentName: z.ZodEffects<z.ZodString, string, string>;
+        tags: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
         slot: z.ZodOptional<z.ZodString>;
         export: z.ZodEffects<z.ZodString, string, string>;
         embeddable: z.ZodEffects<z.ZodOptional<z.ZodUnion<[z.ZodArray<z.ZodEffects<z.ZodObject<{
@@ -51,6 +52,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         docsExport: z.ZodOptional<z.ZodString>;
         fullDocsExport: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
+        tags: string[];
         componentName: string;
         export: string;
         slot?: string | undefined;
@@ -63,6 +65,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     }, {
         componentName: string;
         export: string;
+        tags?: string[] | undefined;
         slot?: string | undefined;
         embeddable?: {
             regexToInclude: string;
@@ -130,6 +133,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         pluginName?: string | undefined;
     }[];
     components: {
+        tags: string[];
         componentName: string;
         export: string;
         slot?: string | undefined;
@@ -152,6 +156,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     components?: {
         componentName: string;
         export: string;
+        tags?: string[] | undefined;
         slot?: string | undefined;
         embeddable?: {
             regexToInclude: string;
@@ -197,6 +202,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         pluginName?: string | undefined;
     }[];
     components: {
+        tags: string[];
         componentName: string;
         export: string;
         slot?: string | undefined;
@@ -219,6 +225,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     components?: {
         componentName: string;
         export: string;
+        tags?: string[] | undefined;
         slot?: string | undefined;
         embeddable?: {
             regexToInclude: string;

@@ -9,7 +9,7 @@ import { prompt } from "enquirer";
 import { appData } from "@ulld/utilities/appData";
 import terminalLink from "terminal-link";
 import { log } from "console";
-import { PackageManagers } from "../types";
+import { DocPaths, PackageManagers } from "../types";
 import { Prompter } from "./prompter";
 import { SubSlot } from "./subslot";
 import { PluginSlot } from "./slot";
@@ -23,6 +23,8 @@ import { SlotMapOfType } from "@ulld/configschema/types";
 import { generateSlotMapOfType } from "../utils/slotMapUtils";
 import { slotMapIsFull } from "../utils/slotMapIsFull";
 import { getRandomChar } from "../utils/randomization";
+import { DeveloperConfigOutput } from "@ulld/configschema/developer";
+import { PluginSettingsPage } from "./pluginSettingsPage";
 
 type PluginSlotKey = keyof SlotMap;
 
@@ -38,7 +40,7 @@ export class UlldBuildProcess extends Prompter {
     slotConflicts: SlotConflict[] = [];
     pageConflicts: PageConflict[] = [];
     git: GitManager;
-    componentImportMap: Record<string, boolean> = {}
+    componentImportMap: Record<string, boolean> = {};
     constructor(public targetDir: string) {
         super(targetDir);
         this.git = new GitManager(targetDir);
@@ -69,25 +71,17 @@ export class UlldBuildProcess extends Prompter {
     }
     private validateImportName(plugin: PluginComponent | PluginPage): void {
         if (plugin.formattedComponentImport in this.componentImportMap) {
-            console.log(`component name occupied`);
             plugin.formattedComponentImport = plugin.haveModifiedImportName
                 ? `${plugin.formattedComponentImport}${getRandomChar()}`
                 : `${plugin.formattedComponentImport}_${getRandomChar()}`;
             return this.validateImportName(plugin);
         } else {
-            console.log(`component name unoccupied`);
             this.componentImportMap[plugin.formattedComponentImport] = true;
         }
     }
     validateImportNames() {
-        console.log(
-            "this.getFlattenedComponents() : ",
-            this.getFlattenedComponents(),
-        );
         this.getFlattenedComponents().forEach((c) => this.validateImportName(c));
-        console.log(`Validating import names2`);
         this.getFlattenedPages().forEach((p) => this.validateImportName(p));
-        console.log("this.components: ", this.componentImportMap);
     }
     async gatherPlugins() {
         this.log(
@@ -224,6 +218,35 @@ and continue when that file is in place.`,
             );
         }
     }
+    getFlatComponentDocs() {
+        let docs: DocPaths[] = [];
+        for (const k of this.plugins) {
+            for (const p of k.components) {
+                if (p.hasDocsData) {
+                    docs.push(p.docPaths);
+                }
+            }
+        }
+        return docs;
+    }
+    getFlatNavigationLinks() {
+        let data: DeveloperConfigOutput["navigationLinks"] = [];
+        for (const k of this.plugins) {
+            if (k.pluginConfig !== "Unusable" && k.pluginConfig.navigationLinks) {
+                data = data.concat(k.pluginConfig.navigationLinks);
+            }
+        }
+        return data;
+    }
+    getFlatPluginSettingPages() {
+        let data: PluginSettingsPage[] = [];
+        for (const k of this.plugins) {
+            if (k.settingsPage) {
+                data.push(k.settingsPage);
+            }
+        }
+        return data;
+    }
     gatherSlotConflicts() {
         // let allSlots = this.getAllSlots();
         let slotMap: Record<
@@ -304,7 +327,7 @@ and continue when that file is in place.`,
             pluginData[k.pluginConfig === "Unusable" ? "unusable" : "usable"].push(k);
         }
         if (pluginData.unusable.length === 0) {
-            console.log(
+            this.log(
                 `Checked for issues with your plugins and found none! Continuing with the build process.`,
             );
         } else {

@@ -61,7 +61,8 @@ export const ulldCompletePackageJsonSchema = z.object({
             }),
         ])
         .optional(),
-    description: z.string().optional()
+    description: z.string().optional(),
+    "ulld-pluginConfig": z.any().optional()
 });
 
 export type PackageJsonType = z.input<typeof ulldCompletePackageJsonSchema>;

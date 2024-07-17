@@ -4,104 +4,113 @@ import path from "path";
 import { TargetPaths } from "./paths";
 import { ShellManager } from "./baseClasses/shell";
 import { SlotDataType } from "@ulld/utilities/types";
-import slotStaticData from "@ulld/utilities/slotMap.json"
-import { AnySubSlotKey, PluginSlotKey } from "@ulld/configschema/developerTypes";
-import buildData from "@ulld/utilities/buildStaticData"
+import slotStaticData from "@ulld/utilities/slotMap.json";
+import {
+    AnySubSlotKey,
+    PluginSlotKey,
+} from "@ulld/configschema/developerTypes";
+import buildData from "@ulld/utilities/buildStaticData";
+import { SubSlot } from "./subslot";
+import { PluginAdditionalPage } from "./pluginAdditionalPage";
 
 export class PluginPage extends ShellManager {
     shouldUse: boolean = true;
-    importName: string = "GeneratedPageComponent"
+    importName: string = "GeneratedPageComponent";
     slotData?: SlotDataType;
-    targetUrl: string
-    targetFile: string
-    formattedComponentImport: string
-    haveModifiedImportName: boolean = false
+    targetUrl: string;
+    targetFile: string;
+    formattedComponentImport: string;
+    formattedExport: string
+    haveModifiedImportName: boolean = false;
+    subSlot?: SubSlot
+    initialComponentImport: string
+    additionalPage?: PluginAdditionalPage
     constructor(
         public data: DeveloperConfigOutput["pages"][number],
         public pluginName: string,
         public pageIndex: number,
         public paths: TargetPaths,
         public parentSlotKey?: PluginSlotKey,
-        public subSlotKey?: AnySubSlotKey
+        public subSlotKey?: AnySubSlotKey,
     ) {
         super();
-        if(data.slot && parentSlotKey){
-            this.slotData = slotStaticData[parentSlotKey]?.[data.slot as keyof typeof slotStaticData[typeof parentSlotKey]]
+        if (data.slot && parentSlotKey) {
+            this.slotData =
+                slotStaticData[parentSlotKey]?.[
+                data.slot as keyof (typeof slotStaticData)[typeof parentSlotKey]
+                ];
         }
-        this.formattedComponentImport = "PageComponent"
-        this.targetUrl = this.getTargetUrl()
-        this.targetFile = this.getPathFromTargetUrl()
+        if(this.parentSlotKey && this.subSlotKey){
+            this.subSlot = new SubSlot(this.pluginName, this.parentSlotKey, this.subSlotKey, this.paths)
+        } else {
+            this.additionalPage = new PluginAdditionalPage(this.pluginName, this.parentSlotKey, this.subSlotKey, this.paths)
+        }
+        this.formattedExport = `${this.pluginName}/${this.data.export}`
+        this.formattedComponentImport = this.getFormattedComponentImport();
+        this.initialComponentImport = this.formattedComponentImport
+        this.targetUrl = this.getTargetUrl();
+        let targetFile = this.getTargetFile();
+        if(!targetFile){
+            this.throwTargetPathNotFound()
+        }
+        this.targetFile = targetFile as string
     }
     cancel() {
         this.shouldUse = false;
     }
+    getFormattedComponentImport(){
+        return "PageComponent"
+    }
     getImportString() {
         return `import ${this.importName}${this.data.exportsPageProps ? ", { PageProps }" : ""} from "${this.pluginName}/${this.data.export}";`;
     }
-    throwTargetPathNotFound(){
-        throw new Error(`Could not find the target url for ${this.pluginName} at ${this.parentSlotKey} -> ${this.data.slot}`)
+    throwTargetPathNotFound() {
+        throw new Error(
+            `Could not find the target url for ${this.pluginName} at ${this.parentSlotKey} -> ${this.data.slot}`,
+        );
     }
-    getTargetUrl(){
-       if(this.data.targetUrl){
-            return this.data.targetUrl
-        } 
-        if(!this.parentSlotKey || !this.subSlotKey){
-            this.throwTargetPathNotFound()
+    getTargetFile() {
+        return this.slotData?.path || this.data.targetUrl;
+    }
+    getTargetUrl() {
+        if (this.data.targetUrl) {
+            return this.data.targetUrl;
         }
-        let protectedPathData = buildData.protectedPaths.find((q) => (q.pageFor.slot === this.parentSlotKey && q.pageFor.subSlot === this.subSlotKey)) 
-        if(!protectedPathData){
-            this.throwTargetPathNotFound()
+        if (!this.parentSlotKey || !this.subSlotKey) {
+            this.throwTargetPathNotFound();
         }
-        return protectedPathData?.route as string
+        let protectedPathData = buildData.protectedPaths.find(
+            (q) =>
+                q.pageFor.slot === this.parentSlotKey &&
+                q.pageFor.subSlot === this.subSlotKey,
+        );
+        if (!protectedPathData) {
+            this.throwTargetPathNotFound();
+        }
+        return protectedPathData?.route as string;
     }
-    getPathFromTargetUrl() {
-        let paths = this.targetUrl.split("/");
-        return path.join(this.paths.app, ...paths);
+    logWriteToFile() {
+        if (this.parentSlotKey && this.subSlotKey) {
+            this.logVerbose(`Writing ${this.parentSlotKey} -> ${this.subSlotKey} to file.`);
+        } else {
+            this.logVerbose(
+                `Writing component from ${this.formattedExport} to file.`,
+            );
+        }
     }
-    getTypeString() {
-        return `
-interface Props${this.data.exportsPageProps ? " extends PageProps" : ""} {
-}`;
-    }
-    getPageContent() {
-        return `import React from 'react
-${this.getImportString()}';
 
-${this.getTypeString()}
-
-
-const UlldPage = (props: Props) => {
-    return (
-        <${this.importName} {...props}/>
-    )
-}
-
-
-UlldPage.displayName = "${this.importName}"
-
-
-export default UlldPage;
-`;
-    }
     writeToFile() {
         if (!this.shouldUse) {
             return this.log(
-                `Not writing page ${this.data.targetUrl} from plugin ${this.pluginName}. There was an issue with their configuration.`,
+                `Not writing page ${this.targetUrl} from plugin ${this.pluginName}. There was an issue with their configuration.`,
             );
         }
-        console.log(`Writing content to path ${this.getPathFromTargetUrl()}`);
+        if (this.subSlot) {
+            this.logWriteToFile()
+            this.subSlot.writeToFile(this.formattedExport, this.formattedComponentImport);
+        } else if(this.additionalPage) {
+            this.logWriteToFile()
+            this.additionalPage.writeToFile(this.formattedExport, this.formattedComponentImport);
+        }
     }
 }
-
-// const testDir = "/Users/bigsexy/Desktop/current/ulldApp/"
-// const pages = _pages.map(
-//     (p, i) =>
-//         new PluginPage(p, "test", i, new TargetPaths(testDir, false)),
-// );
-
-// console.log(JSON.stringify(pages, null, 4));
-
-// for (const k of pages) {
-//     console.log(k.getPathFromTargetUrl())
-//     // console.log(k.getPageContent())
-// }

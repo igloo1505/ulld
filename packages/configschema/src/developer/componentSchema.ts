@@ -28,6 +28,7 @@ export const componentConfigSchema = z.object({
         .string()
         .describe("Must start with a capital letter.")
         .transform((f) => `${f[0].toUpperCase()}${f.slice(1)}`),
+    tags: z.string().array().describe("Help user's find your component both before they install it, and while searching for documentation.").default([]),
     slot: z
     .string()
         .optional()

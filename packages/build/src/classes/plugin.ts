@@ -2,7 +2,10 @@ import { PackageJsonType } from "@ulld/developer-schemas/fullPackageJson";
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
 import path from "path";
 import fs from "fs";
-import { AnySubSlotKey, PluginSlotKey, SlotMap } from "@ulld/configschema/developerTypes";
+import {
+    AnySubSlotKey,
+    PluginSlotKey,
+} from "@ulld/configschema/developerTypes";
 import { PluginSlot } from "./slot";
 import { PluginComponent } from "./component";
 import { PluginPage } from "./page";
@@ -10,8 +13,10 @@ import { PluginParser } from "./parser";
 import { PluginEvents } from "./pluginEvents";
 import { TargetPaths } from "./paths";
 import { ShellManager } from "./baseClasses/shell";
+import { PackageJson } from "./baseClasses/pkgJson";
+import { PluginSettingsPage } from "./pluginSettingsPage";
 
-export class UlldPlugin<T extends keyof SlotMap | undefined = undefined> extends ShellManager {
+export class UlldPlugin extends ShellManager {
     pluginConfig: DeveloperConfigOutput | "Unusable" = "Unusable";
     inConfigAsSlot: boolean = false;
     packageRoot: string;
@@ -22,6 +27,8 @@ export class UlldPlugin<T extends keyof SlotMap | undefined = undefined> extends
     pages: PluginPage[] = [];
     events: PluginEvents = new PluginEvents({});
     targetDir: string;
+    packageJson: PackageJson;
+    settingsPage?: PluginSettingsPage;
     embeddables?: (NonNullable<
         (typeof this.components)[number]["data"]["embeddable"]
     >[number] & {
@@ -38,22 +45,21 @@ export class UlldPlugin<T extends keyof SlotMap | undefined = undefined> extends
         this.targetDir = paths.targetDir;
         this.packageRoot = path.join(this.targetDir, "node_modules", this.name);
         let configPath = path.join(this.packageRoot, "pluginConfig.ulld.json");
+        this.packageJson = new PackageJson(
+            this.paths.projectRoot,
+            path.join(this.packageRoot, "package.json"),
+        );
         if (!fs.existsSync(configPath)) {
-            let packageJsonPath = path.join(this.packageRoot, "package.json");
-            if (!fs.existsSync(packageJsonPath)) {
+            if (!this.packageJson.exists()) {
                 this.noConfigError();
                 return;
             }
-            let packageJsonData = JSON.parse(
-                fs.readFileSync(packageJsonPath, { encoding: "utf-8" }),
-            );
-            if (!packageJsonData["ulld-pluginConfig"]) {
+            let pkgJsonConfig = this.packageJson.getPluginConfig();
+            if (!pkgJsonConfig) {
                 this.noConfigError();
                 return;
             }
-            this.pluginConfig = packageJsonData[
-                "ulld-pluginConfig"
-            ] as typeof this.pluginConfig;
+            this.pluginConfig = pkgJsonConfig;
         }
         this.hasConfig = true;
         this.pluginConfig = JSON.parse(
@@ -63,24 +69,46 @@ export class UlldPlugin<T extends keyof SlotMap | undefined = undefined> extends
             this.events = new PluginEvents(this.pluginConfig?.events || {});
             this.components = this.pluginConfig.components.map(
                 (f) =>
-                    new PluginComponent(f, {
-                        parentSlot: (this.pluginConfig as DeveloperConfigOutput)?.slot,
-                        pluginName: this.name,
-                    }),
+                    new PluginComponent(
+                        f,
+                        {
+                            parentSlot: (this.pluginConfig as DeveloperConfigOutput)?.slot,
+                            pluginName: this.name,
+                        },
+                        this.paths,
+                        this.packageJson,
+                    ),
             );
             if (this.pluginConfig?.slot) {
                 this.slot = new PluginSlot(
                     this.name,
                     this.pluginConfig.slot as PluginSlotKey,
-                    this.components
+                    this.components,
+                    this.paths,
                 );
             }
-            this.parsers = this.pluginConfig.parsers.map((f) => new PluginParser(f));
+            this.parsers = this.pluginConfig.parsers.map(
+                (f) => new PluginParser(f, this.paths),
+            );
             this.pages = this.pluginConfig.pages.map(
-                (p, i) => new PluginPage(p, this.name, i, this.paths, this.slot?.slot, p.slot as AnySubSlotKey),
+                (p, i) =>
+                    new PluginPage(
+                        p,
+                        this.name,
+                        i,
+                        this.paths,
+                        this.slot?.slot,
+                        p.slot as AnySubSlotKey,
+                    ),
             );
         }
-        this.embeddables = this.getEmbeddables()
+        if (this.pluginConfig.settings) {
+            this.settingsPage = new PluginSettingsPage(
+                this.paths,
+                this.pluginConfig.settings,
+            );
+        }
+        this.embeddables = this.getEmbeddables();
     }
     noConfigError() {
         this.hasConfig = false;
@@ -100,7 +128,7 @@ export class UlldPlugin<T extends keyof SlotMap | undefined = undefined> extends
         });
     }
 
-    getEmbeddables() {
+    private getEmbeddables() {
         let em: typeof this.embeddables = [];
         let componentsWithEmbeddable = this.components.filter(
             (f) => f.data.embeddable,
@@ -176,10 +204,5 @@ export class UlldPlugin<T extends keyof SlotMap | undefined = undefined> extends
             [this.name]: this.version || "latest",
         };
         return { pkg: pkg, isNew };
-    }
-    async applyPages() {
-        for await (const k of this.pages) {
-            await k.writePage();
-        }
     }
 }

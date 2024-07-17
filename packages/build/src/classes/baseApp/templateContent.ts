@@ -1,8 +1,9 @@
 import { FileManager } from "../baseClasses/fileManager";
+import { TargetPaths } from "../paths";
 
 export class TemplateContent extends FileManager {
-    constructor(public path: string){
-        super(path)
+    constructor(public subPath: string, public paths: TargetPaths){
+        super(subPath, paths)
     }
     removeREPLACEMEImport(){
        let re = /^import\s+REPLACEME/
