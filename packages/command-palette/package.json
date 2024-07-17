@@ -30,6 +30,7 @@
         "@ulld/hooks": "workspace:*",
         "@ulld/logger": "workspace:*",
         "@ulld/parsers": "workspace:*",
+        "@ulld/render": "workspace:*",
         "@ulld/snippets": "workspace:*",
         "@ulld/state": "workspace:*",
         "@ulld/tailwind": "workspace:*",
@@ -37,37 +38,33 @@
         "@ulld/ui": "workspace:*",
         "@ulld/utilities": "workspace:*",
         "@ulld/whiteboard": "workspace:*",
-        "@ulld/render": "workspace:*",
         "cmdk": "^0.2.0",
+        "fumadocs-core": "^12.3.5",
+        "fumadocs-ui": "^12.3.5",
         "lucide-react": "latest",
-        "next": "^13.1.16",
+        "next": "^14.2.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "tinykeys": "^2.1.0",
-        "zod": "^3.22.2",
-        "fumadocs-core": "^12.3.5",
-        "fumadocs-ui": "^12.3.5"
+        "zod": "^3.22.2"
     },
     "devDependencies": {
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
         "@ulld/eslint-config": "workspace:*",
         "@ulld/jest-presets": "workspace:*",
+        "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
         "cmdk": "^0.2.0",
         "lucide-react": "latest",
-        "next": "^13.1.16",
+        "next": "^14.2.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "tinykeys": "^2.1.0",
-        "zod": "^3.22.2",
-        "@ulld/types": "workspace:*"
+        "zod": "^3.22.2"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"
     },
-    "dependencies": {},
     "ulld-pluginConfig": {
         "pluginName": "@ulld/command-palette",
         "slot": "commandPalette",
@@ -82,5 +79,6 @@
         "pages": [],
         "events": {},
         "navigationLinks": []
-    }
+    },
+    "dependencies": {}
 }

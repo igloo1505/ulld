@@ -37,23 +37,21 @@
         "@ulld/tailwind": "workspace:*",
         "@ulld/task-manager": "workspace:*",
         "@ulld/whiteboard": "workspace:*",
-        "next": "^13.1.16",
+        "next": "^14.2.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
         "@mdx-js/mdx": "3.0.1",
         "@mdx-js/react": "^3.0.1",
-        "@ulld/typescript-config": "workspace:*",
         "@types/mdx": "^2.0.11",
         "@types/node": "^20.11.24",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
-        "next": "^14.2.4",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "typescript": "^5.4.2",
-        "@ulld/types": "workspace:*"
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "typescript": "^5.4.2"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {

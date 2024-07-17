@@ -16,6 +16,7 @@ import { ShellManager } from "./baseClasses/shell";
 import { PackageJson } from "./baseClasses/pkgJson";
 import { PluginSettingsPage } from "./pluginSettingsPage";
 
+
 export class UlldPlugin extends ShellManager {
     pluginConfig: DeveloperConfigOutput | "Unusable" = "Unusable";
     inConfigAsSlot: boolean = false;
@@ -25,7 +26,7 @@ export class UlldPlugin extends ShellManager {
     components: PluginComponent[] = [];
     parsers: PluginParser[] = [];
     pages: PluginPage[] = [];
-    events: PluginEvents = new PluginEvents({});
+    events?: PluginEvents;
     targetDir: string;
     packageJson: PackageJson;
     settingsPage?: PluginSettingsPage;
@@ -66,7 +67,7 @@ export class UlldPlugin extends ShellManager {
             fs.readFileSync(configPath, { encoding: "utf-8" }),
         ) as DeveloperConfigOutput;
         if ((this.pluginConfig as any) !== "Unusable") {
-            this.events = new PluginEvents(this.pluginConfig?.events || {});
+            this.events = new PluginEvents(this.pluginConfig?.events || {}, paths, this.name);
             this.components = this.pluginConfig.components.map(
                 (f) =>
                     new PluginComponent(

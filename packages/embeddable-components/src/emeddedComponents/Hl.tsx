@@ -30,7 +30,7 @@ export const getToolTipWrapperContent = (t: WithTooltipWrapper) => {
 
 
 export const Highlight = (
-    p: HighlightProps & WithTooltipWrapper & HTMLProps<HTMLDivElement>,
+    p: HighlightProps & WithTooltipWrapper & Omit<HTMLProps<HTMLDivElement>, "children">,
 ) => {
     const props = componentConfig.parse(p);
     /* let { color, props: _props } = getPropColor(props, "bg", "yellow") */

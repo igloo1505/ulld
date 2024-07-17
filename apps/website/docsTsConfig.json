@@ -7,7 +7,6 @@
     "paths": {
       "#/*": ["./src/*"],
       "docs": ["./src/fumaDocs/main.ts"],
-      "contentlayer/generated": ["./.contentlayer/generated"],
       "mdx/*": ["./src/mdx/*"],
       "staticContent": ["./src/staticData/staticContent.json"]
     },
@@ -18,7 +17,6 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".contentlayer/generated",
     "../../packages/configschema/src/**/*.ts",
     "../../packages/configschema/src/**/*.tsx"
   ],

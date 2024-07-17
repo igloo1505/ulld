@@ -281,28 +281,26 @@
         "./autumn": "./src/imageMap/autumn.tsx"
     },
     "peerDependencies": {
-        "@ulld/eslint-config": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
         "@ulld/config": "workspace:*",
         "@ulld/configschema": "workspace:*",
+        "@ulld/eslint-config": "workspace:*",
         "@ulld/logger": "workspace:*",
         "@ulld/tailwind": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@ulld/utilities": "workspace:*"
     },
     "packageManager": "pnpm@9.0.4",
     "dependencies": {
-        "@types/react": "18.3.3",
-        "@types/react-dom": "18.3.0",
-        "next": "14.2.4",
-        "react": "18.3.1",
-        "react-dom": "18.3.1"
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
     },
     "publishConfig": {
         "access": "public"
     },
     "devDependencies": {
         "@ulld/eslint-config": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "@ulld/types": "workspace:*"
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*"
     }
 }

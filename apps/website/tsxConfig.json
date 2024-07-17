@@ -4,7 +4,6 @@
   "compilerOptions": {
     "paths": {
       "#/*": ["./src/*"],
-      "contentlayer/generated": ["./.contentlayer/generated"],
       "mdx/*": ["./src/mdx/*"],
       "staticContent": ["./src/staticData/staticContent.json"]
     },

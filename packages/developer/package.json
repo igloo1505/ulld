@@ -24,19 +24,17 @@
         "lint": "echo 'Add lint script here'"
     },
     "peerDependencies": {
-        "@ulld/eslint-config": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
         "@ulld/config": "workspace:*",
         "@ulld/configschema": "workspace:*",
         "@ulld/database": "workspace:*",
-        "@ulld/logger": "workspace:*"
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/logger": "workspace:*",
+        "@ulld/typescript-config": "workspace:*"
     },
     "dependencies": {
-        "@types/react": "18.3.3",
-        "@types/react-dom": "18.3.0",
-        "next": "14.2.4",
-        "react": "18.3.1",
-        "react-dom": "18.3.1",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
         "trpc-openapi": "1.2.0"
     },
     "packageManager": "pnpm@9.0.4",
@@ -45,7 +43,7 @@
     },
     "devDependencies": {
         "@ulld/eslint-config": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "@ulld/types": "workspace:*"
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*"
     }
 }

@@ -22,7 +22,7 @@ import { PluginComponent } from "./component";
 import { SlotMapOfType } from "@ulld/configschema/types";
 import { generateSlotMapOfType } from "../utils/slotMapUtils";
 import { slotMapIsFull } from "../utils/slotMapIsFull";
-import { getRandomChar } from "../utils/randomization";
+import { getRandomChar, modifyNameRandomly } from "../utils/randomization";
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
 import { PluginSettingsPage } from "./pluginSettingsPage";
 
@@ -71,9 +71,7 @@ export class UlldBuildProcess extends Prompter {
     }
     private validateImportName(plugin: PluginComponent | PluginPage): void {
         if (plugin.formattedComponentImport in this.componentImportMap) {
-            plugin.formattedComponentImport = plugin.haveModifiedImportName
-                ? `${plugin.formattedComponentImport}${getRandomChar()}`
-                : `${plugin.formattedComponentImport}_${getRandomChar()}`;
+            plugin.formattedComponentImport = modifyNameRandomly(plugin.formattedComponentImport, plugin.haveModifiedImportName);
             return this.validateImportName(plugin);
         } else {
             this.componentImportMap[plugin.formattedComponentImport] = true;

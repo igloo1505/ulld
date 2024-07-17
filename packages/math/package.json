@@ -19,8 +19,6 @@
     "peerDependencies": {
         "@ulld/eslint-config": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
-        "@types/react": "^18.2.74",
-        "@types/react-dom": "^18.2.24",
         "@ulld/configschema": "workspace:*",
         "@ulld/hooks": "workspace:*",
         "@ulld/icons": "workspace:*",
@@ -32,8 +30,6 @@
         "@ulld/typescript-config": "workspace:*",
         "@tailwindcss/container-queries": "^0.1.1",
         "@tailwindcss/forms": "^0.5.7",
-        "@types/react": "^18.2.74",
-        "@types/react-dom": "^18.2.24",
         "typescript": "^5.4.5",
         "@ulld/eslint-config": "workspace:*",
         "@ulld/types": "workspace:*"

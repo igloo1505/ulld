@@ -14,7 +14,7 @@ export const getAllMdx = () => {
         ...legalPages(),
         ...mainPages(),
         ...myNotesPages(),
-    ];
+    ] as PageType[]
 };
 
 

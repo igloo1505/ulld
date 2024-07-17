@@ -74,8 +74,6 @@
         "gatherTypes": "tsc --project ./tsconfigTypes.json --emitDeclarationOnly"
     },
     "dependencies": {
-        "@types/react": "18.3.3",
-        "@types/react-dom": "18.3.0",
         "@ulld/base-configs": "workspace:*",
         "@ulld/developer-schemas": "workspace:*",
         "@ulld/icons": "workspace:*",
@@ -83,18 +81,19 @@
         "@ulld/utilities": "workspace:*",
         "dayjs": "1.11.11",
         "glob-to-regexp": "0.4.1",
-        "next": "14.2.4",
-        "react": "18.3.1",
-        "react-dom": "18.3.1",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
         "shiki": "1.1.7"
     },
     "devDependencies": {
-        "@ulld/typescript-config": "workspace:^",
         "@testing-library/cypress": "^10.0.1",
         "@testing-library/dom": "^9.3.4",
         "@testing-library/jest-dom": "^6.4.2",
         "@testing-library/react": "^14.2.2",
         "@testing-library/user-event": "^14.5.2",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:^",
         "chai": "^5.1.0",
         "cypress": "^13.7.1",
         "eslint-plugin-jest-dom": "^5.2.0",
@@ -109,8 +108,7 @@
         "ts-jest": "^29.1.2",
         "tsx": "^4.7.2",
         "zod": "^3.22.4",
-        "zod-to-json-schema": "^3.22.4",
-        "@ulld/types": "workspace:*"
+        "zod-to-json-schema": "^3.22.4"
     },
     "peerDependencies": {
         "zod": "^3.22.4"

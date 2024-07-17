@@ -25,12 +25,10 @@
         "db:generate": "prisma generate --schema ./src/prisma/schema.prisma"
     },
     "dependencies": {
-        "@prisma/client": "5.16.2",
-        "@types/react": "18.3.3",
-        "@types/react-dom": "18.3.0",
-        "next": "14.2.4",
-        "react": "18.3.1",
-        "react-dom": "18.3.1"
+        "@prisma/client": "5.17.0",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
     },
     "peerDependencies": {
         "@ulld/typescript-config": "workspace:*",
@@ -41,8 +39,8 @@
         "access": "public"
     },
     "devDependencies": {
+        "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
-        "prisma": "latest",
-        "@ulld/types": "workspace:*"
+        "prisma": "latest"
     }
 }

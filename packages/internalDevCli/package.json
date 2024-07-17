@@ -50,8 +50,7 @@
         "@types/jest": "^29.5.11",
         "@types/mocha": "^10.0.6",
         "@types/node": "^20.11.24",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@ulld/types": "workspace:*",
         "chai": "^4.4.1",
         "eslint": "^9.0.0",
         "eslint-config-oclif": "^5.1.1",
@@ -64,8 +63,7 @@
         "ts-node": "^10.9.2",
         "typescript": "^5.4.4",
         "unexpected": "^13.2.1",
-        "zocker": "^1.4.1",
-        "@ulld/types": "workspace:*"
+        "zocker": "^1.4.1"
     },
     "dependencies": {
         "@citation-js/plugin-bibtex": "0.7.8",
@@ -84,9 +82,9 @@
         "gray-matter": "4.0.3",
         "handlebars": "4.7.8",
         "json-schema-to-ts": "3.0.1",
-        "next": "14.2.4",
-        "react": "18.3.1",
-        "react-dom": "18.3.1",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
         "terminal-link": "3.0.0",
         "ts-import": "5.0.0-beta.0"
     },

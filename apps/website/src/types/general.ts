@@ -1,4 +1,4 @@
-import { getPage } from "#/fumaDocs/sources/main";
+import type { getPage } from "#/fumaDocs/sources/main";
 import { DocsPageProps } from "fumadocs-ui/page";
 
 type TocType = DocsPageProps["toc"];

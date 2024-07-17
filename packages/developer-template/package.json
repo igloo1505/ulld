@@ -10,21 +10,21 @@
     },
     "peerDependencies": {
         "@mdx-js/react": "^3.0.1",
-        "@ulld/eslint-config": "workspace:*",
-        "@ulld/jest-presets": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
         "@ulld/api": "workspace:*",
         "@ulld/base-configs": "workspace:*",
         "@ulld/config": "workspace:*",
         "@ulld/configschema": "workspace:*",
         "@ulld/database": "workspace:*",
         "@ulld/developer": "workspace:*",
+        "@ulld/eslint-config": "workspace:*",
         "@ulld/hooks": "workspace:*",
         "@ulld/icons": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
         "@ulld/logger": "workspace:*",
         "@ulld/parsers": "workspace:*",
         "@ulld/state": "workspace:*",
         "@ulld/tailwind": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "@ulld/ui": "workspace:*",
         "@ulld/utilities": "workspace:*",
         "file-loader": "^6.2.0",
@@ -32,13 +32,12 @@
     },
     "devDependencies": {
         "@mdx-js/react": "^3.0.1",
-        "@ulld/eslint-config": "workspace:*",
-        "@ulld/jest-presets": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
         "@tailwindcss/container-queries": "^0.1.1",
         "@tailwindcss/forms": "^0.5.7",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
         "file-loader": "^6.2.0",
         "mathjax": "^3.2.2",
         "monaco-editor-webpack-plugin": "^7.1.0",
@@ -48,8 +47,7 @@
         "sass": "^1.74.1",
         "tailwind-merge": "^1.14.0",
         "tailwindcss": "^3.4.1",
-        "tailwindcss-animate": "^1.0.7",
-        "@ulld/types": "workspace:*"
+        "tailwindcss-animate": "^1.0.7"
     },
     "ulld": {
         "paths": {
@@ -59,9 +57,9 @@
     "dependencies": {
         "@mdx-js/mdx": "3.0.1",
         "mathjax-full": "3.2.2",
-        "next": "14.2.4",
-        "react": "18.3.1",
-        "react-dom": "18.3.1"
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
     },
     "packageManager": "pnpm@9.0.4",
     "files": [

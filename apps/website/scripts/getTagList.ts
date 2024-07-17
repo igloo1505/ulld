@@ -1,14 +1,15 @@
 #!/usr/bin/env tsx
-import { allDocuments } from "../.contentlayer/generated/index.mjs";
+import { getAllMdx } from "../src/fumaDocs/utils/getConcatenatedPages"
 import fs from "fs";
 import path from "path";
 import data from "#/staticData/mdxData.json";
 
 export const getTagList = () => {
+    let allDocuments = getAllMdx()
     let items: string[] = [];
     allDocuments.forEach((a) => {
-        if ("tags" in a && Array.isArray(a.tags)) {
-            a.tags?.forEach((t: string) => {
+        if ("tags" in a.data && Array.isArray(a.data.tags)) {
+            a.data.tags?.forEach((t: string) => {
                 if (!items.includes(t)) {
                     items.push(t);
                 }

@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
 import { ShellManager } from "./shell";
-import { TargetPaths } from "../paths";
+import { PathKeys, TargetPathKeys, TargetPaths } from "../paths";
+import { EventMethodKey } from "../../types";
 
 const DO_NOT_WRITE_FILE_CONTENT = true;
 
@@ -29,7 +30,9 @@ export class FileManager extends ShellManager {
                 `Not writing file content to ${this.subPath}. No content was read from file and none was provided.`,
             );
         }
-        if (!DO_NOT_WRITE_FILE_CONTENT) {
+        if (DO_NOT_WRITE_FILE_CONTENT) {
+            this.log(this.content);
+        } else {
             fs.writeFileSync(this.path, this.content, { encoding: "utf-8" });
         }
     }
@@ -82,5 +85,9 @@ export class FileManager extends ShellManager {
             }
         });
         return lineData;
+    }
+    static fromPathKey(pathKey: TargetPathKeys, paths: TargetPaths) {
+        const path = paths[pathKey];
+        return new FileManager(paths.makeSubPath(path), paths);
     }
 }

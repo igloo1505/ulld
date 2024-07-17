@@ -1,6 +1,6 @@
 import { getPage, getPages } from "sources/demos";
 import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { PageType } from "#/types/general";
 import { getPageById } from "#/fumaDocs/utils/getPageById";
 import DocsPageComponent from "#/components/docUtils/docsPage";

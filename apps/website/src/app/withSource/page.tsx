@@ -7,6 +7,7 @@ import {
 } from "#/utils/sourceUtils";
 import { searchAllMdxById } from "#/fumaDocs/utils/searchAllMdxById";
 import MDXArticle from "#/components/layouts/mdxArticle";
+import { PageType } from "#/types/general";
 
 interface WithSourcePageProps {
     searchParams: WithSourceSearchParams;
@@ -20,11 +21,11 @@ const WithSourcePage = ({ searchParams }: WithSourcePageProps) => {
 
     return (
         <div className={"pt-[76px] min-h-screen-noNav"}>
-            <SideBySideWithSource mdx={article}>
+            <SideBySideWithSource mdx={article as PageType}>
                 <MDXArticle
                     className={"!max-w-full pt-8"}
                     isSource 
-                    data={article}
+                    data={article as PageType}
                     paddingTop={false}
                 />
             </SideBySideWithSource>

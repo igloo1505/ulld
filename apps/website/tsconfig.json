@@ -17,9 +17,6 @@
             "sources/*": [
                 "./src/fumaDocs/sources/*"
             ],
-            "contentlayer/generated": [ // Remove this from all places that it's being used. Leaving it for now to get the fumadocs content-collections package working.
-                "./.contentlayer/generated"
-            ],
             "content-collections": [
                 "./.content-collections/generated"
             ],

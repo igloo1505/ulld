@@ -1,4 +1,4 @@
-import { PluginSlotKey } from "@ulld/types";
+import { DeveloperConfigInput, PluginSlotKey } from "@ulld/types";
 
 export type PackageManagers = "pnpm" | "npm" | "yarn";
 
@@ -17,3 +17,5 @@ export interface PluginComponentProps {
     pluginName: string;
     parentSlot?: PluginSlotKey;
 }
+
+export type EventMethodKey = keyof NonNullable<DeveloperConfigInput["events"]>

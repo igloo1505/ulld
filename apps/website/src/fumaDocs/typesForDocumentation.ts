@@ -19,6 +19,7 @@ export type {
     GridProps,
     GridItemProps,
     TabGroupProps,
+    TabProps,
     VideoProps,
     ModelViewProps,
     TitleProps,

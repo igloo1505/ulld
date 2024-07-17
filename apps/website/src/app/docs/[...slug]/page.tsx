@@ -1,22 +1,6 @@
 import { getPage, getPages } from "docs";
 import type { Metadata } from "next";
-import { DocsPage, DocsBody, DocsPageProps } from "fumadocs-ui/page";
 import { notFound, redirect } from "next/navigation";
-import { MDXContent } from "@content-collections/mdx/react";
-import defaultMdxComponents from "fumadocs-ui/mdx";
-import { serverComponentMap } from "#/mdx/serverComponentMap";
-import { getComponentMap } from "@ulld/component-map/client";
-import MathjaxProvider from "#/components/utility/providers/mathjax";
-import { ImageZoom } from "fumadocs-ui/components/image-zoom";
-import {
-    Pre,
-    CodeBlock,
-    CodeBlockProps,
-} from "fumadocs-ui/components/codeblock";
-import cn from "@ulld/utilities/cn";
-import { Tab, Tabs } from "fumadocs-ui/components/tabs";
-import { ComponentProps, ReactNode } from "react";
-import ApplyMathjaxBandaid from "#/components/utility/applyMathjaxBandaid";
 import { PageType } from "#/types/general";
 import DocsPageComponent from "#/components/docUtils/docsPage";
 
@@ -34,7 +18,6 @@ interface DocOutput {
     };
 }
 
-type TocType = DocsPageProps["toc"]
 
 
 const redirectMap: Record<string, string> = {

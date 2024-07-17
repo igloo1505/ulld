@@ -220,7 +220,10 @@ export class PackageManager {
             fs.rmSync(p);
         }
     }
-    writeUpdateReactScript() {
+    writeUpdateReactScript(
+        reactVersion: string = "latest",
+        nextVersion: string = "latest",
+    ) {
         let packages = this.findByDependency("react");
         let peerPackages = packages.filter((f) =>
             f.deps.some((d) =>
@@ -240,19 +243,19 @@ export class PackageManager {
         let s = `#!/bin/zsh\n`;
         if (filter.length) {
             s += `
-pnpm add next@latest react@latest react-dom@latest ${filter}
+pnpm add next@${nextVersion} react@${reactVersion} react-dom@${reactVersion} ${filter}
 `;
         }
         if (peerFilter.length) {
             s += `
-pnpm add --save-peer next@latest react@latest react-dom@latest ${peerFilter}
+pnpm add --save-peer next@${nextVersion} react@${reactVersion} react-dom@${reactVersion} ${peerFilter}
 
-pnpm add -D next@latest react@latest react-dom@latest ${peerFilter}
+pnpm add -D next@${nextVersion} react@${reactVersion} react-dom@${reactVersion} ${peerFilter}
 `;
         }
         if (packages.length) {
             s += `
-pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--filter=${f.name}`).join(" ")}`;
+pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${packages.map((f) => `--filter=${f.name}`).join(" ")}`;
         }
         const targetFile = path.join(__dirname, "./updateReactAndNext.zsh");
         fs.writeFileSync(targetFile, s, { encoding: "utf-8" });
@@ -333,11 +336,11 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
                     let exists = await npmFetch.json(k);
                     this.packagePublishedMap[k] = true;
                 } catch (err) {
+                    this.packagePublishedMap[k] = false;
+                    if (k !== "@ulld/types") {
                     console.log(
                         `${k} not found in npm repository. Removing from all internal packages.`,
                     );
-                    this.packagePublishedMap[k] = false;
-                    if (k !== "@ulld/types") {
                         removeDepNames.push(k);
                     }
                 }
@@ -497,3 +500,4 @@ pnpm add @types/react@latest @types/react-dom@latest ${packages.map((f) => `--fi
         }
     }
 }
+

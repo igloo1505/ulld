@@ -1,18 +1,25 @@
-import MDXArticle from "#/components/layouts/mdxArticle";
-import { allStaticDocs } from "contentlayer/generated";
+import DocsPageComponent from "#/components/docUtils/docsPage";
+import { getPageById } from "#/fumaDocs/utils/getPageById";
+import { PageType } from "#/types/general";
 import React from "react";
+import { getPages } from "sources/demos";
 
-interface MyNotesPageProps {}
+interface MyNotesPageProps {
+    searchParams: {
+        id?: string;
+    };
+}
 
-const MyNotesPage = (props: MyNotesPageProps) => {
-    const item = allStaticDocs.find((a) => a.id === "demosHome");
-    if (!item) {
+const MyNotesPage = ({ searchParams }: MyNotesPageProps) => {
+    const docHomeId = searchParams.id || "demosHome";
+
+    let page = getPageById(getPages() as PageType[], docHomeId);
+
+    if (!page) {
         throw new Error("No navigation demo found");
     }
-    return <MDXArticle
-        paddingTop={false}
-        mdx={item}
-    />;
+
+    return <DocsPageComponent page={page} id={docHomeId} />;
 };
 
 MyNotesPage.displayName = "MyNotesPage";
