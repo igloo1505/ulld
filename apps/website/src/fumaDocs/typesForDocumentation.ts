@@ -11,6 +11,11 @@ export type {
     PluginEventsConfig,
 } from "@ulld/types";
 
+
+export type {
+    DeveloperConfigInputWithoutGeneric,
+} from "@ulld/configschema/developer";
+
 export type {
     ErrorMarginProps,
     AbstractProps,

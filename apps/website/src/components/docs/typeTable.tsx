@@ -26,7 +26,6 @@ export const TypeTableEm = ({
         (n) => `hide-table-col-${n}`,
     );
     let _title = propsTitle ? "Properties" : title || name;
-    console.log("name: ", name)
     return (
         <div className={cn("w-full inline-block", hideClass)}>
             {(showName || title || propsTitle) && (
