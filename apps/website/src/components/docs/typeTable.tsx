@@ -34,8 +34,8 @@ export const TypeTableEm = ({
             <AutoTypeTable
                 {...props}
                 path={path.join(
-                    __dirname,
-                    "../../fumaDocs/typesForDocumentation.ts",
+                    process.cwd(),
+                    "src/fumaDocs/typesForDocumentation.ts",
                 )}
                 name={name}
                 options={{
