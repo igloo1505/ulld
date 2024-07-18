@@ -1,6 +1,5 @@
 "use client"
-import React, { DetailedHTMLProps, HTMLInputTypeAttribute, InputHTMLAttributes, useRef, useState } from 'react'
-import { usePathname } from 'next/navigation';
+import React, { DetailedHTMLProps, HTMLInputTypeAttribute, InputHTMLAttributes, useEffect, useRef, useState } from 'react'
 import { useToast } from '@ulld/tailwind/use-toast';
 import {Checkbox} from "@ulld/tailwind/checkbox"
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
@@ -18,10 +17,8 @@ const MdxCheckbox = (props: MdxInputProps) => {
     const [checked, setChecked] = useState(_checked)
     const ref = useRef<HTMLButtonElement>(null!)
     const { toast } = useToast()
-    const path = usePathname()
     const handleClick = async () => {
         const content = ref.current?.parentElement?.innerText
-        console.log("content: ", content)
         if (!content) {
             toast({
                 title: "Uh oh.",
@@ -34,6 +31,16 @@ const MdxCheckbox = (props: MdxInputProps) => {
 
         }
     }
+    const removeLiMarker = () => {
+        if(!ref.current) return
+        if(ref.current.parentElement?.nodeName?.toLowerCase() === "li"){
+            ref.current.parentElement.classList.add("hide-li-marker")
+        }
+        }
+
+    useEffect(() => {
+        removeLiMarker()
+    }, [])
     return (
         <Checkbox
             {...props as React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>}

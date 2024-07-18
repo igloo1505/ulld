@@ -45,28 +45,6 @@ body {
 //   }
 // }
 
-// .w-tc-editor-preview {
-//   code,
-//   code span {
-//     color: unset !important;
-//     background-color: unset !important;
-//     /* Optional, if you also want font styles */
-//     font-style: unset !important;
-//     font-weight: unset !important;
-//     text-decoration: unset !important;
-//   }
-
-//   html.dark code,
-//   html.dark code span {
-//     color: unset !important;
-//     background-color: unset !important;
-//     /* Optional, if you also want font styles */
-//     font-style: unset !important;
-//     font-weight: unset !important;
-//     text-decoration: unset !important;
-//   }
-// }
-
 .jupyterUI {
   --jp-ui-font-size: 13px !important;
   font-size: 13px;
@@ -146,19 +124,6 @@ body {
   min-height: calc(100vh - var(--nav-height));
 }
 
-// .admonitionBody {
-//   max-height: 0px;
-//   transition: max-height 1s ease-in;
-//   padding: 0rem 1rem;
-// }
-
-// .admonition[data-state="open"] {
-//   .admonitionBody {
-//     max-height: 2000px;
-//     padding: 1rem;
-//   }
-// }
-
 @layer components {
   .navbtn {
     @apply text-gray-700 dark:hover:bg-gray-800 transition-colors duration-300 rounded-lg dark:text-gray-200 hover:bg-gray-100;
@@ -225,25 +190,6 @@ body {
     }
   }
 
-  @supports (scrollbar-color: auto) {
-    // scrollbar-color: hsl(var(--muted)) hsl(var(--background));
-    // &.scrollbarMuted {
-    //   scrollbar-color: hsl(var(--muted)) hsl(var(--background));
-    // }
-
-    // &.scrollbarMutedForeground {
-    //   scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--background));
-    // }
-
-    // &.scrollbarPrimary {
-    //   scrollbar-color: hsl(var(--primary)) hsl(var(--background));
-    // }
-
-    // &.scrollbarForeground {
-    //   scrollbar-color: hsl(var(--foreground)) hsl(var(--background));
-    // }
-  }
-
   @supports selector(::-webkit-scrollbar) {
     & *::-webkit-scrollbar {
       background-color: hsl(var(--muted));
@@ -290,42 +236,6 @@ body {
       }
     }
   }
-
-  // &::-webkit-scrollbar-thumb {
-  //   background-color: hsl(var(--secondary));
-  //   border-radius: 4px;
-  // }
-
-  // &.scrollbarMuted {
-  //   scrollbar-color: hsl(var(--muted)) hsl(var(--background));
-
-  //   &::-webkit-scrollbar-thumb {
-  //     background-color: hsl(var(--muted));
-  //   }
-  // }
-
-  // &.scrollbarMutedForeground {
-  //   scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--background));
-
-  //   &::-webkit-scrollbar-thumb {
-  //     background-color: hsl(var(--muted-foreground));
-  //   }
-  // }
-
-  // &.scrollbarPrimary {
-  //   scrollbar-color: hsl(var(--primary)) hsl(var(--background));
-  //   &::-webkit-scrollbar-thumb {
-  //     background-color: hsl(var(--primary));
-  //   }
-  // }
-
-  // &.scrollbarForeground {
-  //   scrollbar-color: hsl(var(--foreground)) hsl(var(--background));
-
-  //   &::-webkit-scrollbar-thumb {
-  //     background-color: hsl(var(--foreground));
-  //   }
-  // }
 }
 
 div[cmdk-list]::-webkit-scrollbar,
@@ -471,8 +381,10 @@ div[role="dialog"][cmdk-dialog] {
       color: var(--general-link-color);
     }
   }
+}
 
-  // .ulld-separator {
-  //   margin-top:
-  // }
+li.hide-li-marker {
+  ::marker {
+    content: none !important;
+  }
 }
