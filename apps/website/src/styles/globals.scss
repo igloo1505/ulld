@@ -65,6 +65,11 @@ header#nd-subnav {
 
 mjx-container[jax="CHTML"][display="true"] {
   font-size: 1.15rem;
+  mjx-labels {
+    mjx-itable {
+      font-size: 1rem !important;
+    }
+  }
 }
 
 .mdx {

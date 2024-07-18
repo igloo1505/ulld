@@ -4,6 +4,7 @@ import fs from "fs";
 import { capitalize } from "@ulld/utilities/stringUtils";
 import { slotTypes } from "@ulld/utilities/types";
 import { gatherProtectedPaths } from "./gatherProtectedPaths";
+import { gatherReservedPublicPaths } from "./gatherReservedPublicPaths";
 
 const testRoot = process.env.ULLD_TEST_ROOT;
 
@@ -257,6 +258,10 @@ fs.writeFileSync(targetPath, JSON.stringify(slotMap, null, 4), {
 fs.writeFileSync(zodSlotKeyPath, slotKeyFileContent, {
     encoding: "utf-8",
 });
+
+const reservedPublicDirs = gatherReservedPublicPaths();
+
+(staticBuildData as any).reservedPublicDirs = reservedPublicDirs
 
 fs.writeFileSync(
     staticBuildDataPath,

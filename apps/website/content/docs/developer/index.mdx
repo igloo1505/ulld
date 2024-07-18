@@ -42,7 +42,8 @@ writePluginConfig(parsedPlugin, __dirname);
 }
 ```
 
-#### Slot
+#### Slot [#slot-map-documentation]
+
 <Small noMargin muted>Optional</Small>
 
 The slot field in the `DeveloperConfigInput` type refers to an existing slot in the user's entire application. These slots, mostly, don't affect the user's embedded components but rather their compiled application as a whole. If you do override a slot in the user's compiled application, you do _not_ need to override all _subSlots_ in that slot.
@@ -64,11 +65,6 @@ For example, if your `pluginConfig.ulld.json` specifies a slot property of `navi
     }
 }
 ```
-
-
-<Button href="/docs/developer/slots">
-    Further Slot Documentation
-</Button>
 
 
 ## Components

@@ -20,6 +20,7 @@ import Link from "next/link";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
 import AdditionalBuildSourceFileTree from "#/components/docUtils/additionalBuildSourceFileTree";
+import { ReservedPublicFileTree } from "#/components/docUtils/reservedPublicPaths";
 
 export const webComponentMap: AdditionalComponents<any> = [
     {
@@ -131,6 +132,12 @@ export const webComponentMap: AdditionalComponents<any> = [
         regex: new RegExp("<AdditionalSourcesFileTree"),
         component: AdditionalBuildSourceFileTree,
         label: "AdditionalSourcesFileTree",
+    },
+
+    {
+        regex: new RegExp("<ReservedPublicDirTree"),
+        component: ReservedPublicFileTree,
+        label: "ReservedPublicDirTree",
     },
     {
         regex: new RegExp("<Button"),

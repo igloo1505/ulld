@@ -4,7 +4,7 @@ import { MDXContent } from "@content-collections/mdx/react";
 import "fumadocs-ui/twoslash.css";
 import { DocsBody, DocsPage } from "fumadocs-ui/page";
 import React, { ComponentProps, ReactNode } from "react";
-import { TypeTable } from "fumadocs-ui/components/type-table";
+import TypeTable from "./typeTable";
 import ApplyMathjaxBandaid from "../utility/applyMathjaxBandaid";
 import MathjaxProvider from "../utility/providers/mathjax";
 import defaultMdxComponents from "fumadocs-ui/mdx";

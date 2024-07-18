@@ -242,5 +242,11 @@
                 "subSlot": "EditorModalPage"
             }
         }
+    ],
+    "reservedPublicDirs": [
+        "utils",
+        "scripts",
+        "highlighting",
+        "font"
     ]
 }

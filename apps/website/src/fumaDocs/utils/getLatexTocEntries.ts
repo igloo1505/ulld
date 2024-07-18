@@ -19,11 +19,22 @@ const temporaryReplaceLogoAsTextWithEntry = (s: string) => {
     return s.replace(re, "ULLD");
 };
 
+const replaceCodeStrings = (s: string) => {
+    return s.replaceAll("`", "");
+};
+
+const funcs: ((s: string) => string)[] = [
+    removeLeadingPounds,
+    removeIdSyntax,
+    temporaryReplaceLogoAsTextWithEntry,
+    replaceCodeStrings,
+];
+
 const parseTitle = (s: string) => {
     let val = s;
-    val = removeLeadingPounds(val);
-    val = removeIdSyntax(val);
-    val = temporaryReplaceLogoAsTextWithEntry(val);
+    for (const f of funcs) {
+        val = f(val);
+    }
     return val;
 };
 
@@ -33,8 +44,10 @@ export const getLatexTocEntries = (
 ) => {
     let titles = content.split("\n").filter((f) => f.trim().startsWith("#"));
     let t: DocsPageProps["toc"] = [];
-    if(toc.length !== titles.length){
-        console.error(`Found different lengths for the toc. Fumadocs found ${toc.length} entries, and you found ${titles.length}.`)
+    if (toc.length !== titles.length) {
+        console.error(
+            `Found different lengths for the toc. Fumadocs found ${toc.length} entries, and you found ${titles.length}.`,
+        );
     }
     toc.forEach((entry, i) => {
         const newTitle = titles[i].trim();

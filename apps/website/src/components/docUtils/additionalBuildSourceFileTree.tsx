@@ -1,16 +1,62 @@
-import React from "react";
+"use client"
+import { File, Folder, Files } from "fumadocs-ui/components/files";
+import React, { useState } from "react";
+import { additionalFilePaths } from "@ulld/utilities/additionalSources";
 
-interface AdditionalBuildSourceFileTreeProps { }
+type AdditionalBuildSourceFileTreeProps = {
+    item: typeof additionalFilePaths;
+};
 
-const AdditionalBuildSourceFileTree = (
-    props: AdditionalBuildSourceFileTreeProps,
-) => {
+const FileGroup = ({
+    item,
+    defaultOpen = true,
+}: AdditionalBuildSourceFileTreeProps & { defaultOpen?: boolean }) => {
+    const [open, setOpen] = useState(defaultOpen)
     return (
-        <div
-            className={"text-4xl w-full text-center flex justify-center items-center"}
+        <Folder
+            name={item.subPath}
+            defaultOpen={defaultOpen}
+            /* @ts-ignore */
+            open={open}
+            onOpenChange={(newOpen: boolean) => {
+                if(item.items?.length){
+                    setOpen(newOpen)
+                }
+            }}
+            onClick={(e) => {
+                e.stopPropagation()
+                e.preventDefault()
+                if(item.items?.length){
+                    setOpen(!open)
+                }
+            }
+            }
         >
-            <div className={"bg-yellow-400 text-black"}>FIX ME</div>
-        </div>
+            {item.items &&
+                item.items.map((d) => {
+                    if ((d.items && d.items.length) || d.forceDirDisplay) {
+                        return <FileGroup item={d} defaultOpen={false} />;
+                    } else {
+                        return <File
+                            name={d.subPath}
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                e.preventDefault()
+                            }}
+                        />;
+                    }
+                })}
+        </Folder>
+    );
+};
+
+const AdditionalBuildSourceFileTree = ({
+    item = additionalFilePaths,
+}: AdditionalBuildSourceFileTreeProps) => {
+    return (
+        <Files>
+            <FileGroup item={item} />
+        </Files>
     );
 };
 
