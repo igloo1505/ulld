@@ -7,20 +7,31 @@ title: TabGroup & Tab
 
 The TabGroup component allows the embedding of several children which can be then toggled by a series of buttons on top.
 
-<TypeDoc 
-    propsTitle
-    name="TabGroupProps"
-/>
+
+#### Properties
+
+```json doc-gen:typescript
+{
+  "file": "./src/fumaDocs/typesForDocumentation.ts",
+  "name": "TabGroupProps"
+}
+```
 
 
 ## Tab
 
 The Tab component functions only as an intended child of the TabGroup component.
 
-<TypeDoc 
-    propsTitle
-    name="TabProps"
-/>
+
+#### Properties
+
+```json doc-gen:typescript
+{
+  "file": "./src/fumaDocs/typesForDocumentation.ts",
+  "name": "TabProps"
+}
+```
+
 
 #### Example
 
@@ -44,21 +55,17 @@ The Tab component functions only as an intended child of the TabGroup component.
 ### Output
 
 <TabGroup>
-  <Tab title="Tab One" description="This is a description" label="One">
-    Tab one content
-  </Tab>
-
-{" "}
-<Tab title="Tab Two" label="Two">
-  Tab two content
-</Tab>
-
-{" "}
-<Tab title="Tab Three" label="Three">
-  Tab three content
-</Tab>
-
-  <Tab title="Tab Four" label="Four">
-    Tab four content
-  </Tab>
+    <Tab title="Tab One" description="This is a description" label="One">
+        Tab one content
+    </Tab>
+    <Tab title="Tab Two" label="Two">
+        Tab two content
+    </Tab>
+    <Tab title="Tab Three" label="Three">
+        Tab three content
+    </Tab>
+    <Tab title="Tab Four" label="Four">
+        Tab four content
+    </Tab>
 </TabGroup>
+

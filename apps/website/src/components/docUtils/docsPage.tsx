@@ -4,6 +4,7 @@ import { MDXContent } from "@content-collections/mdx/react";
 import "fumadocs-ui/twoslash.css";
 import { DocsBody, DocsPage } from "fumadocs-ui/page";
 import React, { ComponentProps, ReactNode } from "react";
+import { TypeTable } from "fumadocs-ui/components/type-table";
 import ApplyMathjaxBandaid from "../utility/applyMathjaxBandaid";
 import MathjaxProvider from "../utility/providers/mathjax";
 import defaultMdxComponents from "fumadocs-ui/mdx";
@@ -46,6 +47,7 @@ const DocsPageInternal = ({
     const components = {
         ...defaultMdxComponents,
         ...filteredComponents,
+        TypeTable: TypeTable,
         // These Tab and Tabs components are used to automatically create pnpm, npm, bun and yarn command dynamically, but are causing conflicts with the existing TabGroup component, I think? Disabling for now since the app should probably rely on the stuff I'm trying to convince people to use.
         /* Tab: Tab, */
         /* Tabs: Tabs, */

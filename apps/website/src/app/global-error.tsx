@@ -14,7 +14,7 @@ export default function GlobalError({
         <html>
             <body
                 className={
-                    "prose w-full h-screen flex flex-col justify-center items-center"
+                    "prose dark:prose-invert w-full h-screen flex flex-col justify-center items-center bg-background text-foreground"
                 }
             >
                 <h2>Something went wrong!</h2>

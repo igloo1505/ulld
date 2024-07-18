@@ -10,7 +10,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <DocsLayout
             {...docsLayoutOptions}
             containerProps={{
-                className: "relative [&_#nd-sidebar]:sticky [&_#nd-sidebar]:top-0 bg-background text-foreground",
+                className: "relative [&_#nd-sidebar]:md:sticky [&_#nd-sidebar]:top-0 [&_#nd-sidebar]:bg-background bg-background text-foreground",
             }}
             sidebar={{
                 footerProps: {

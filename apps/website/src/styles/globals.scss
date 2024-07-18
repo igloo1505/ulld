@@ -2,10 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  background-color: hsl(var(--background));
+  overscroll-behavior-block: none;
+}
+
 body {
-  overscroll-behavior-y: contain;
+  overscroll-behavior-y: none;
   position: relative;
   text-rendering: optimizeLegibility;
+  overflow: hidden;
+}
+
+header#nd-subnav {
+  background-color: hsl(var(--background));
 }
 
 .centerAbsPos {

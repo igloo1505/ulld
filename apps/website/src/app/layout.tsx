@@ -160,7 +160,7 @@ const RootLayout = async (props: {
         <html
             lang="en"
             className={clsx(
-                "group/html overflow-x-hidden max-w-screen js-focus-visible dark border-border min-scrollbar",
+                "group/html overflow-x-hidden max-w-screen js-focus-visible dark border-border min-scrollbar bg-background",
                 appFont.variable,
             )}
             {...p}
@@ -201,7 +201,7 @@ const RootLayout = async (props: {
             </head>
             <body
                 className={clsx(
-                    "group/body dark max-w-full relative h-auto overflow-x-hidden w-screen min-h-screen overflow-y-auto data-[disContents=true]:contents",
+                    "group/body dark max-w-full relative h-auto overflow-x-hidden w-screen min-h-screen overflow-y-auto data-[disContents=true]:contents bg-background",
                     /* "contents", // Remove this if it causes issues. Added on 6-27 to handle sticky sidebar. */
                     fontSans.variable,
                     preferFs && "preferFs",

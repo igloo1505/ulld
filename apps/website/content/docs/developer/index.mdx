@@ -35,11 +35,12 @@ writePluginConfig(parsedPlugin, __dirname);
 ```
 
 
-<TypeDoc
-    showName
-    hideCol={2}
-    name="DeveloperConfigInputWithoutGeneric" 
-/>
+```json doc-gen:typescript
+{
+  "file": "./src/fumaDocs/typesForDocumentation.ts",
+  "name": "DeveloperConfigInput"
+}
+```
 
 #### Slot
 <Small noMargin muted>Optional</Small>
@@ -82,9 +83,13 @@ The `DeveloperConfigInput["components"]` path is an array of objects which maps 
 2. A slot component, which can override slots that are by default occupied by internally developed <LogoAsText /> components.
 
 
-<TypeDoc 
-    name="ComponentConfig"
-/>
+
+```json doc-gen:typescript
+{
+  "file": "./src/fumaDocs/typesForDocumentation.ts",
+  "name": "ComponentConfig"
+}
+```
 
 
 Of the above properties, the following are universal, regardless if the component is an _embeddable component_ or a _slot component_.
@@ -152,9 +157,13 @@ The `slot` property does not apply to _embeddable_ components, as they will be m
 </Hint>
 
 
-<TypeDoc 
-    name="EmbeddableConfig"
-/>
+
+```json doc-gen:typescript
+{
+  "file": "./src/fumaDocs/typesForDocumentation.ts",
+  "name": "EmbeddableConfig"
+}
+```
 
 
 
