@@ -203,7 +203,7 @@ while <ToSquareOrNotToSquare valueIsSquared={false} value={2} /> will return 2.
 
 #### ReactNode Type
 
-React provides hundreds of it's own types, but one that appears quite often is that of `ReactNode`. The `ReactNode` type is pretty much anything that React can render _as is_. It accepts a [boolean](#jsx-boolean-props), a [string](#jsx-string-props), a [number](#jsx-number-props), or another ***rendered*** component.
+React provides dozens of it's own types, but one that appears quite often is that of `ReactNode`. The `ReactNode` type is pretty much anything that React can render _as is_. It accepts a [boolean](#jsx-boolean-props), a [string](#jsx-string-props), a [number](#jsx-number-props), or another ***rendered*** component.
 
 ```tsx
 <SomeComponent 
@@ -235,7 +235,7 @@ Many components like the `Ul`, `Color` and `Hl` components accept props that ext
 For those familiar with **HTML** or **CSS**, most components extend the **HTML** attributes of the outer most element. This wasn't documented intentionally to avoid complicating the documentation for those without developer experience. However, be aware that while <LogoAsText /> relies on Tailwind for it's theme-ability, `.mdx` files are currently not evaluated for their `className` content. 
 
 <Hint>
-    If you want to add your own `.css` or `.scss` files, you can provide a path to a directory in your `appConfig.ulld.json` file at the `build.additionalUserContent.css` path. Despite the name, Scss files in this directory will be applied as well.
+    If you want to add you own `.css` or `.scss` files, take a look at the documentation [here](/docs/user/extendingTheBuild) for how to provide a variety of your own files to the build process.
 </Hint>
 
 If you notice a bug with the way **HTML** attributes are handled, please submit an issue on Github <StaticLink link="links.repo.home">{'here'}</StaticLink>.

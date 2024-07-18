@@ -19,6 +19,7 @@ import { Button, ButtonProps, buttonVariants } from "@ulld/tailwind/button";
 import Link from "next/link";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
+import AdditionalBuildSourceFileTree from "#/components/docUtils/additionalBuildSourceFileTree";
 
 export const webComponentMap: AdditionalComponents<any> = [
     {
@@ -125,6 +126,11 @@ export const webComponentMap: AdditionalComponents<any> = [
         regex: new RegExp("<Accordions"),
         component: Accordions,
         label: "Accordions",
+    },
+    {
+        regex: new RegExp("<AdditionalSourcesFileTree"),
+        component: AdditionalBuildSourceFileTree,
+        label: "AdditionalSourcesFileTree",
     },
     {
         regex: new RegExp("<Button"),
