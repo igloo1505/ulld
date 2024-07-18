@@ -10,6 +10,8 @@ import { trpcConfigSchema } from "./trpcConfigSchema";
 import { additionalImportsConfigSchema } from "./additionalImportsConfigSchema";
 import { PluginSlotKey } from "./slotMapType";
 import { navigationLinkSchema } from "./navigationLink";
+import { pluginCommandPaletteSchema } from "./commandPalette";
+import { tailwindPluginConfig } from "./tailwind";
 
 
 // WARN: Removed this type checking for now as the output value was returning the input type with too many optionals.
@@ -26,8 +28,8 @@ export const developerConfigSchema = z
         pages: pluginAdditionalPageSchema.array().default([]),
         events: pluginEventsSchema.default({}),
         navigationLinks: navigationLinkSchema.array().default([]),
-        // Config seems right, but commented out because it's not yet enabled in the build script and I need to take care of enough of the build script to launch this app.
-        // commandPalette: pluginCommandPaletteSchema
+        commandPalette: pluginCommandPaletteSchema,
+        tailwind: tailwindPluginConfig
     })
     .transform((data) => {
         if (data.settings && !data.settings.tabLabel) {

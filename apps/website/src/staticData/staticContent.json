@@ -58,7 +58,7 @@
       "plots": "/demos/plots",
       "layouts": "/demos/layouts",
       "media": "/demos/media",
-      "navigation": "/demos/media"
+      "navigation": "/demos/navigation"
     },
     "docs": {
       "getStarted": "/docs/user",

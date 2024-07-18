@@ -1,6 +1,6 @@
 {
-    "$schema": "https://json.schemastore.org/tsconfig",
     "extends": "@ulld/typescript-config/nextjs.json",
+    "$schema": "https://json.schemastore.org/tsconfig",
     "compilerOptions": {
         "baseUrl": ".",
         "types": [

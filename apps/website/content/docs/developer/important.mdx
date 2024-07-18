@@ -1,0 +1,25 @@
+---
+title: Important
+created: 7-17-24
+---
+
+That's awesome that you want to contribute to <LogoAsText /> and extend it's usefulness, but there are some things to keep in mind so that as many users as possible can take advantage of your hard work.
+
+
+## Tailwind
+
+Use tailwind for as much of your styling needs as absolutely possible. Even if you think tailwind provides styles with the <LogoAsText /> defaults that don't immediately meet your needs, you should provide a tailwind extension at the `tailwind` field in your `pluginConfig.ulld.json` file. This ensures that your plugin will fit in stylistically with the rest of the user's configured application.
+
+## Embedded Mdx Content
+
+Use `MdxContentCLIENT` and `MdxContentSERVER` components whenever you want to include mdx content in the components you create. Children, when given inside of a mdx file will be automatically parsed to html, but depending on how other properties are provided, they may not be. 
+
+## Use TRPC, not the DB directly.
+
+To make sure that data does not become corrupted after being manipulated by multiple third party plugins, use the TRPC router when working with the user's database. Almost every utility methods you would need is already accounted for in the <LogoAsText /> TRPC router, and type safe approaches are in place to minimize the risk of data corruption.
+
+## Take advantage of internal components
+
+Of course, when developing your plugin feel free to develop as many components as you need to achieve your use case, but prefer internally developed components for common uses like a text input. This not only future proofs the user's application, but ensures a uniform appearance between various pages, and enables some features that are often skipped when developing these components internally like consistent error indicators.
+
+The `@ulld/full-form` package might be of interest to you in this respect, as it exports over a dozen input components that work flawlessly with `react-hook-form` and ShadCN's `Form` component. These inputs include not only the core input components like a text input and a number input, but also inputs for code and math that dynamically open a full screen Monaco editor via a keyboard shortcut, select and autocomplete inputs for <LogoAsText /> supported languages, color themes, icons, tags, subjects, topics and more.

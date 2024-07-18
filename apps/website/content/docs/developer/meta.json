@@ -1,5 +1,12 @@
 {
   "title": "Developer",
   "root": true,
-  "pages": ["index", "events", "functionalUtilities", "styleUtilities", "..."]
+  "pages": [
+    "index",
+    "important",
+    "events",
+    "functionalUtilities",
+    "styleUtilities",
+    "..."
+  ]
 }

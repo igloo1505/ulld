@@ -11,7 +11,7 @@ export class BuildStaticData {
         let data: BuildStaticDataInput = {
             fsRoot: this.build.appConfig.config.fsRoot,
             navigationLinks: this.build.getFlatNavigationLinks(),
-            componentDocs: this.build.getFlatComponentDocs()
+            // componentDocs: this.build.getFlatComponentDocs()
         }
     }
 }

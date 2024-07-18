@@ -34,17 +34,17 @@ export const TypeTableEm = ({
             <AutoTypeTable
                 {...props}
                 path={path.join(
-                    process.cwd(),
-                    "src/fumaDocs/typesForDocumentation.ts",
+                    __dirname,
+                    "../../fumaDocs/typesForDocumentation.ts",
                 )}
                 name={name}
                 options={{
                     /* allowInternal: true, */
-                    /* transform: (entry, propType, propSymbol) => { */
-                    /*     console.log("entry: ", entry); */
-                    /*     console.log("propType: ", propType); */
-                    /*     console.log("propSymbol: ", propSymbol); */
-                    /* }, */
+                    transform: (entry, propType, propSymbol) => {
+                        console.log("entry: ", entry);
+                        console.log("propType: ", propType);
+                        console.log("propSymbol: ", propSymbol);
+                    },
                 }}
             />
         </div>
