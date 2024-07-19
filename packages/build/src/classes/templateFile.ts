@@ -17,7 +17,7 @@ export class TemplateFile<T extends TemplateStringId> {
         this.itemData = itemData;
         this.absPath = path.join(templateData.basePath, itemData.path);
     }
-    getFileContent() {
+    private getFileContent() {
         return fs.readFileSync(this.absPath, { encoding: "utf-8" });
     }
     getNewContent(replacements: TemplateStringVariableRecord<T>) {

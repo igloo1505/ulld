@@ -4,51 +4,61 @@
     "components": [
         {
             "componentName": "PaginationGroup",
+            "tags": [],
             "slot": "Pagination",
             "export": "paginationGroup"
         },
         {
             "componentName": "ConfirmationModal",
+            "tags": [],
             "slot": "confirmationModal",
             "export": "confirmationModal"
         },
         {
             "componentName": "DictionaryPageItem",
+            "tags": [],
             "slot": "DictionaryPageItem",
             "export": "dictionaryItemEntry"
         },
         {
             "componentName": "DictionaryLetterList",
+            "tags": [],
             "slot": "DictionaryLetterList",
             "export": "dictionaryLetterList"
         },
         {
             "componentName": "Logo",
+            "tags": [],
             "slot": "logo",
             "export": "defaultLogo"
         },
         {
             "componentName": "NoteSummaryCard",
+            "tags": [],
             "slot": "NoteSummarySearchResult",
             "export": "noteSummarySearchResult"
         },
         {
             "componentName": "AutoSettingsPage",
+            "tags": [],
             "slot": "AutoSettingsTable",
             "export": "autoSettingsPage"
         },
         {
             "componentName": "AutoSettingFormModal",
+            "tags": [],
             "slot": "AutoSettingFormModal",
             "export": "autoSettingFormModal"
         },
         {
             "componentName": "NotesSearchResultsList",
+            "tags": [],
             "slot": "NotesSearchResultsList",
             "export": "notesSearchResultsList"
         },
         {
             "componentName": "LoadingIndicator",
+            "tags": [],
             "slot": "loadingIndicator",
             "export": "loadingIndicator"
         }
@@ -78,5 +88,7 @@
             "href": "/settings/autoSettings",
             "category": "general"
         }
-    ]
+    ],
+    "commandPalette": [],
+    "tailwind": {}
 }

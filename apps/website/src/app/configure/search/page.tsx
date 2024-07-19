@@ -2,8 +2,6 @@ import { SearchConfigurationForm } from '#/components/pageSpecific/configure/for
 import ConfigurationFormPageContainer from '#/components/pageSpecific/configure/pageContainer'
 import React from 'react'
 
-
-
 interface SearchConfigurationPageProps {
 
 }

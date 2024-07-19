@@ -150,6 +150,8 @@
             }
         ],
         "events": {},
-        "navigationLinks": []
+        "navigationLinks": [],
+        "commandPalette": [],
+        "tailwind": {}
     }
 }

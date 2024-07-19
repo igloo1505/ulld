@@ -4,6 +4,7 @@
     "components": [
         {
             "componentName": "EmbeddablePdf",
+            "tags": [],
             "slot": "EmbeddablePdf",
             "export": "embeddablePdf",
             "embeddable": [
@@ -23,5 +24,7 @@
         }
     ],
     "events": {},
-    "navigationLinks": []
+    "navigationLinks": [],
+    "commandPalette": [],
+    "tailwind": {}
 }

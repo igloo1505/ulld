@@ -1,0 +1,19 @@
+{
+    "pluginName": "@ulld/full-form",
+    "label": "Form",
+    "slot": "form",
+    "components": [
+        {
+            "componentName": "SettingPageWrapper",
+            "tags": [],
+            "slot": "SettingsPageContainer",
+            "export": "settingPageWrapper"
+        }
+    ],
+    "parsers": [],
+    "pages": [],
+    "events": {},
+    "navigationLinks": [],
+    "commandPalette": [],
+    "tailwind": {}
+}

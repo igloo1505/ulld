@@ -63,11 +63,13 @@
         "components": [
             {
                 "componentName": "BibManagerPage",
+                "tags": [],
                 "slot": "BibliographyPage",
                 "export": "bibliographyPage"
             },
             {
                 "componentName": "BibEntryDetails",
+                "tags": [],
                 "slot": "BibEntryDetails",
                 "export": "bibEntryDetails"
             }
@@ -81,6 +83,8 @@
                 "href": "/bibliography",
                 "category": "general"
             }
-        ]
+        ],
+        "commandPalette": [],
+        "tailwind": {}
     }
 }

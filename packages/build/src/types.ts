@@ -1,4 +1,5 @@
 import { DeveloperConfigInput, PluginSlotKey } from "@ulld/types";
+import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
 
 export type PackageManagers = "pnpm" | "npm" | "yarn";
 
@@ -18,4 +19,7 @@ export interface PluginComponentProps {
     parentSlot?: PluginSlotKey;
 }
 
-export type EventMethodKey = keyof NonNullable<DeveloperConfigInput["events"]>
+export type EventMethodKey = keyof NonNullable<DeveloperConfigInput["events"]>;
+
+export type SettingPageOutputData =
+    BuildStaticDataOutput["settingPages"][number];

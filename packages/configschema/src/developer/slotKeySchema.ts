@@ -12,6 +12,7 @@ export const slotKeySchema = z.union([
     z.literal("pdf"),
     z.literal("navigation"),
     z.literal("dashboard"),
+    z.literal("form"),
     z.literal("commandPalette"),
 ])
 
@@ -91,6 +92,9 @@ export const navigationSubkeySchema = z.union([
 
 
 export const dashboardSubkeySchema = z.literal("LandingPage")
+
+
+export const formSubkeySchema = z.literal("SettingsPageContainer")
 
 
 export const commandPaletteSubkeySchema = z.literal("commandPalette")

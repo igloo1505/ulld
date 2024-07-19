@@ -711,6 +711,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         bibliography?: any;
         math?: any;
         navigation?: any;
+        form?: any;
         UI?: any;
         snippets?: any;
         editor?: any;
@@ -722,6 +723,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         bibliography?: any;
         math?: any;
         navigation?: any;
+        form?: any;
         UI?: any;
         snippets?: any;
         editor?: any;
@@ -1358,6 +1360,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         bibliography?: any;
         math?: any;
         navigation?: any;
+        form?: any;
         UI?: any;
         snippets?: any;
         editor?: any;
@@ -1623,6 +1626,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         bibliography?: any;
         math?: any;
         navigation?: any;
+        form?: any;
         UI?: any;
         snippets?: any;
         editor?: any;
@@ -1905,6 +1909,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         bibliography?: any;
         math?: any;
         navigation?: any;
+        form?: any;
         UI?: any;
         snippets?: any;
         editor?: any;
@@ -2170,6 +2175,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         bibliography?: any;
         math?: any;
         navigation?: any;
+        form?: any;
         UI?: any;
         snippets?: any;
         editor?: any;

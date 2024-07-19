@@ -322,6 +322,12 @@
                 "version": "latest"
             }
         ],
+        "form": [
+            {
+                "name": "@ulld/full-form",
+                "version": "latest"
+            }
+        ],
         "dashboard": [
             {
                 "name": "@ulld/landing-layouts",

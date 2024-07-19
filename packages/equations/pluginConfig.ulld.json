@@ -41,5 +41,7 @@
             "href": "/equations/add",
             "category": "general"
         }
-    ]
+    ],
+    "commandPalette": [],
+    "tailwind": {}
 }

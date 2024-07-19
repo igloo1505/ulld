@@ -18,7 +18,7 @@ export class FileManager extends ShellManager {
     DO_NOT_WRITE_FILE_CONTENT = true;
     constructor(
         public subPath: string,
-        paths: TargetPaths,
+        public paths: TargetPaths,
         isDir?: boolean
     ) {
         super();
@@ -43,7 +43,6 @@ export class FileManager extends ShellManager {
     setPath(newPath: string, isDir?: boolean) {
         this.path = newPath;
         this.dirname = this.getDirname(isDir)
-        console.log(`Wtf?`)
     }
     mkdirIfNotExists() {
         console.log("this.dirname: ", this.dirname)
@@ -100,6 +99,15 @@ export class FileManager extends ShellManager {
         let data = fs.readFileSync(this.path, { encoding: "utf-8" });
         this.content = data;
         return data;
+    }
+    copyToFile(path: string, throwIfNotExists: boolean = false){
+        let content = this.getContent()
+        const output = FileManager.fromAbsolutePath(path, this.paths, false)
+        if(throwIfNotExists){
+            output.throwIfNotExists()
+        }
+        output.writeContent(content)
+        this.logVerbose(`Copied ${this.path} to ${output.path}`)
     }
     getLines() {
         return this.getContent().split("\n");

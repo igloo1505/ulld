@@ -11,14 +11,18 @@ import { EventMethodKey } from "../../types";
 import { getEventMethodListContent } from "./fileContent/eventMethodList";
 import { FileManager } from "../baseClasses/fileManager";
 import { PathKeys } from "@ulld/utilities/types";
+import { AdditionalSources } from "../additionalSources";
+import { BuildStaticData } from "./buildStaticData";
 
 export class BaseApp extends ShellManager {
     paths: TargetPaths;
     slotMap: SlotMapInternalType;
+    buildStaticData: BuildStaticData;
     constructor(public build: UlldBuildProcess) {
         super();
         this.paths = build.paths;
         this.slotMap = sm as SlotMapInternalType;
+        this.buildStaticData = new BuildStaticData(this.paths, this.build);
     }
     writeFile(location: PathKeys, content: string) {
         return fs.writeFileSync(this.paths[location], content, {
@@ -29,7 +33,9 @@ export class BaseApp extends ShellManager {
         // this.createComponentMap(this.build.plugins)
         // this.applySlots()
         // this.createEventFunctions()
-        this.writeNoteTypePages()
+        // this.writeNoteTypePages()
+        // this.copyAdditionalSources()
+        this.writePluginSettingPages();
     }
     createComponentMap(plugins: UlldPlugin[]) {
         this.log(`Generating component map...`);
@@ -52,23 +58,49 @@ export class BaseApp extends ShellManager {
         );
         pluginsWithEventMethods.forEach((a, i) => a.events?.applyIndex(i));
         let byMethodType: Record<EventMethodKey, string> = {
-            onBackup: '',
-            onRestore: '',
-            onSync: '',
-            onBuild: '',
+            onBackup: "",
+            onRestore: "",
+            onSync: "",
+            onBuild: "",
         };
         for (const k in byMethodType) {
-            let filteredPlugins = pluginsWithEventMethods.filter((f) => f.events?.hasEventType(k as EventMethodKey))
-            let content = getEventMethodListContent(filteredPlugins, k as EventMethodKey)
-            const file = FileManager.fromPathKey(`${k as EventMethodKey}MethodList`, this.paths)
-            file.content = content
-            file.writeContent()
+            let filteredPlugins = pluginsWithEventMethods.filter((f) =>
+                f.events?.hasEventType(k as EventMethodKey),
+            );
+            let content = getEventMethodListContent(
+                filteredPlugins,
+                k as EventMethodKey,
+            );
+            const file = FileManager.fromPathKey(
+                `${k as EventMethodKey}MethodList`,
+                this.paths,
+            );
+            file.content = content;
+            file.writeContent();
         }
     }
-    writeNoteTypePages(){
+    writeNoteTypePages() {
         for (const n of this.build.noteTypes) {
-            n.writePage()
+            n.writePage();
+        }
+    }
+    copyAdditionalSources() {
+        let additionalSources = new AdditionalSources(this.paths);
+        if (additionalSources.hasContent) {
+            additionalSources.write();
+        }
+    }
+    writePluginSettingPages() {
+        let pluginsWithSettingPage = this.build.plugins.filter(
+            (f) => f.settingsPage && f.settingsPage.hasContent,
+        );
+        for (const p of pluginsWithSettingPage) {
+            if (p.settingsPage?.outputData) {
+                p.settingsPage?.writePage();
+                this.buildStaticData.settingPageData.push(
+                    p.settingsPage.settingsPageData,
+                );
+            }
         }
     }
 }
-

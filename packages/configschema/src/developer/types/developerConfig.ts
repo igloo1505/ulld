@@ -11,6 +11,7 @@ import { NavigationLinkType } from "../navigationLinkType";
 
 export type InternalDeveloperConfigInput<T extends PluginSlotKey | undefined = undefined> = {
     pluginName: string;
+    label?: string;
     slot?: keyof typeof slots;
     components?: ComponentConfig<T>[];
     parsers?: ParserConfig[];

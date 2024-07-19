@@ -984,6 +984,7 @@ export declare const appConfigSchema: z.ZodObject<{
         bibliography?: any;
         math?: any;
         navigation?: any;
+        form?: any;
         UI?: any;
         snippets?: any;
         editor?: any;
@@ -995,6 +996,7 @@ export declare const appConfigSchema: z.ZodObject<{
         bibliography?: any;
         math?: any;
         navigation?: any;
+        form?: any;
         UI?: any;
         snippets?: any;
         editor?: any;
@@ -1372,6 +1374,7 @@ export declare const appConfigSchema: z.ZodObject<{
         bibliography?: any;
         math?: any;
         navigation?: any;
+        form?: any;
         UI?: any;
         snippets?: any;
         editor?: any;
@@ -1637,6 +1640,7 @@ export declare const appConfigSchema: z.ZodObject<{
         bibliography?: any;
         math?: any;
         navigation?: any;
+        form?: any;
         UI?: any;
         snippets?: any;
         editor?: any;

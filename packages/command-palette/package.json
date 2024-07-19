@@ -71,6 +71,7 @@
         "components": [
             {
                 "componentName": "CommandPalette",
+                "tags": [],
                 "slot": "commandPalette",
                 "export": "commandPalette"
             }
@@ -78,7 +79,9 @@
         "parsers": [],
         "pages": [],
         "events": {},
-        "navigationLinks": []
+        "navigationLinks": [],
+        "commandPalette": [],
+        "tailwind": {}
     },
     "dependencies": {}
 }

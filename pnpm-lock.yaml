@@ -1313,7 +1313,7 @@ importers:
         version: 0.2.0(@types/react@18.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       lucide-react:
         specifier: latest
-        version: 0.408.0(react@18.2.0)
+        version: 0.411.0(react@18.2.0)
       next:
         specifier: ^14.2.3
         version: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
@@ -2446,6 +2446,9 @@ importers:
       '@types/glob-to-regexp':
         specifier: ^0.4.4
         version: 0.4.4
+      '@ulld/developer':
+        specifier: workspace:*
+        version: link:../developer
       '@ulld/jest-presets':
         specifier: workspace:*
         version: link:../jest-presets
@@ -15343,8 +15346,8 @@ packages:
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  lucide-react@0.408.0:
-    resolution: {integrity: sha512-8kETAAeWmOvtGIr7HPHm51DXoxlfkNncQ5FZWXR+abX8saQwMYXANWIkUstaYtcKSo/imOe/q+tVFA8ANzdSVA==}
+  lucide-react@0.411.0:
+    resolution: {integrity: sha512-bDRvLt/jIIjsq4JVYB3EjyOtLHu8uQGzv7usri2DnVpOtfIRuLln96srS+d8WJsmJ52LBwDnYx7me/TSjZ6AcA==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -33171,7 +33174,7 @@ snapshots:
     dependencies:
       react: 18.2.0
 
-  lucide-react@0.408.0(react@18.2.0):
+  lucide-react@0.411.0(react@18.2.0):
     dependencies:
       react: 18.2.0
 

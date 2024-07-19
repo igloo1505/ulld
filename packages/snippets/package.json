@@ -65,11 +65,13 @@
         "components": [
             {
                 "componentName": "SnippetList",
+                "tags": [],
                 "slot": "SnippetList",
                 "export": "snippetList"
             },
             {
                 "componentName": "SnippetFilter",
+                "tags": [],
                 "slot": "SnippetFilter",
                 "export": "snippetFilter"
             }
@@ -99,6 +101,8 @@
                 "href": "/snippets/add",
                 "category": "general"
             }
-        ]
+        ],
+        "commandPalette": [],
+        "tailwind": {}
     }
 }

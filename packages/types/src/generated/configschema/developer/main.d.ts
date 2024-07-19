@@ -3,7 +3,8 @@ import { InternalDeveloperConfigInput as DCI, InternalDeveloperConfigInputWithou
 import { PluginSlotKey } from "./slotMapType";
 export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     pluginName: z.ZodString;
-    slot: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"snippets">, z.ZodLiteral<"math">, z.ZodLiteral<"editor">, z.ZodLiteral<"bibliography">, z.ZodLiteral<"UI">, z.ZodLiteral<"taskManager">, z.ZodLiteral<"pdf">, z.ZodLiteral<"navigation">, z.ZodLiteral<"dashboard">, z.ZodLiteral<"commandPalette">]>>;
+    label: z.ZodOptional<z.ZodString>;
+    slot: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"snippets">, z.ZodLiteral<"math">, z.ZodLiteral<"editor">, z.ZodLiteral<"bibliography">, z.ZodLiteral<"UI">, z.ZodLiteral<"taskManager">, z.ZodLiteral<"pdf">, z.ZodLiteral<"navigation">, z.ZodLiteral<"dashboard">, z.ZodLiteral<"form">, z.ZodLiteral<"commandPalette">]>>;
     components: z.ZodDefault<z.ZodArray<z.ZodObject<{
         componentName: z.ZodEffects<z.ZodString, string, string>;
         tags: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
@@ -117,70 +118,42 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         pluginName?: string | undefined;
         category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general" | undefined;
     }>, "many">>;
-    commandPalette: z.ZodObject<{
-        pluginLabel: z.ZodDefault<z.ZodOptional<z.ZodString>>;
-        items: z.ZodArray<z.ZodUnion<[z.ZodObject<{
-            label: z.ZodString;
-            isAvailable: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodBoolean>;
-            action: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>;
-        }, "strip", z.ZodTypeAny, {
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-            action: (...args: unknown[]) => unknown;
-        }, {
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-            action: (...args: unknown[]) => unknown;
-        }>, z.ZodObject<{
-            label: z.ZodString;
-            isAvailable: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodBoolean>;
-            href: z.ZodUnion<[z.ZodString, z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodString>]>;
-        }, "strip", z.ZodTypeAny, {
-            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-        }, {
-            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-        }>]>, "many">;
+    commandPalette: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodObject<{
+        label: z.ZodString;
+        isAvailable: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodBoolean>;
+        action: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>;
     }, "strip", z.ZodTypeAny, {
-        pluginLabel: string;
-        items: ({
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-            action: (...args: unknown[]) => unknown;
-        } | {
-            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-        })[];
+        label: string;
+        isAvailable: (...args: unknown[]) => boolean;
+        action: (...args: unknown[]) => unknown;
     }, {
-        items: ({
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-            action: (...args: unknown[]) => unknown;
-        } | {
-            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-        })[];
-        pluginLabel?: string | undefined;
-    }>;
-    tailwind: z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>;
+        label: string;
+        isAvailable: (...args: unknown[]) => boolean;
+        action: (...args: unknown[]) => unknown;
+    }>, z.ZodObject<{
+        label: z.ZodString;
+        isAvailable: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodBoolean>;
+        href: z.ZodUnion<[z.ZodString, z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodString>]>;
+    }, "strip", z.ZodTypeAny, {
+        href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
+        label: string;
+        isAvailable: (...args: unknown[]) => boolean;
+    }, {
+        href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
+        label: string;
+        isAvailable: (...args: unknown[]) => boolean;
+    }>]>, "many">>;
+    tailwind: z.ZodDefault<z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>>;
 }, "strip", z.ZodTypeAny, {
-    commandPalette: {
-        pluginLabel: string;
-        items: ({
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-            action: (...args: unknown[]) => unknown;
-        } | {
-            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-        })[];
-    };
+    commandPalette: ({
+        label: string;
+        isAvailable: (...args: unknown[]) => boolean;
+        action: (...args: unknown[]) => unknown;
+    } | {
+        href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
+        label: string;
+        isAvailable: (...args: unknown[]) => boolean;
+    })[];
     pages: {
         export: string;
         exportsPageProps: boolean;
@@ -210,26 +183,15 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     }[];
     parsers: import("./types/parserConfig").ParserConfig[];
     events: import("./types/pluginEventsConfig").PluginEventsConfig;
-    slot?: "bibliography" | "math" | "navigation" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
+    label?: string | undefined;
+    slot?: "bibliography" | "math" | "navigation" | "form" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
     settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
 }, {
-    commandPalette: {
-        items: ({
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-            action: (...args: unknown[]) => unknown;
-        } | {
-            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-        })[];
-        pluginLabel?: string | undefined;
-    };
-    tailwind: {};
     pluginName: string;
-    slot?: "bibliography" | "math" | "navigation" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
+    label?: string | undefined;
+    slot?: "bibliography" | "math" | "navigation" | "form" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
     components?: {
         componentName: string;
         export: string;
@@ -263,19 +225,26 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         pluginName?: string | undefined;
         category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general" | undefined;
     }[] | undefined;
+    commandPalette?: ({
+        label: string;
+        isAvailable: (...args: unknown[]) => boolean;
+        action: (...args: unknown[]) => unknown;
+    } | {
+        href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
+        label: string;
+        isAvailable: (...args: unknown[]) => boolean;
+    })[] | undefined;
+    tailwind?: {} | undefined;
 }>, {
-    commandPalette: {
-        pluginLabel: string;
-        items: ({
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-            action: (...args: unknown[]) => unknown;
-        } | {
-            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-        })[];
-    };
+    commandPalette: ({
+        label: string;
+        isAvailable: (...args: unknown[]) => boolean;
+        action: (...args: unknown[]) => unknown;
+    } | {
+        href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
+        label: string;
+        isAvailable: (...args: unknown[]) => boolean;
+    })[];
     pages: {
         export: string;
         exportsPageProps: boolean;
@@ -305,26 +274,15 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     }[];
     parsers: import("./types/parserConfig").ParserConfig[];
     events: import("./types/pluginEventsConfig").PluginEventsConfig;
-    slot?: "bibliography" | "math" | "navigation" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
+    label?: string | undefined;
+    slot?: "bibliography" | "math" | "navigation" | "form" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
     settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
 }, {
-    commandPalette: {
-        items: ({
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-            action: (...args: unknown[]) => unknown;
-        } | {
-            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
-            label: string;
-            isAvailable: (...args: unknown[]) => boolean;
-        })[];
-        pluginLabel?: string | undefined;
-    };
-    tailwind: {};
     pluginName: string;
-    slot?: "bibliography" | "math" | "navigation" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
+    label?: string | undefined;
+    slot?: "bibliography" | "math" | "navigation" | "form" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
     components?: {
         componentName: string;
         export: string;
@@ -358,6 +316,16 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         pluginName?: string | undefined;
         category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general" | undefined;
     }[] | undefined;
+    commandPalette?: ({
+        label: string;
+        isAvailable: (...args: unknown[]) => boolean;
+        action: (...args: unknown[]) => unknown;
+    } | {
+        href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
+        label: string;
+        isAvailable: (...args: unknown[]) => boolean;
+    })[] | undefined;
+    tailwind?: {} | undefined;
 }>;
 export type DeveloperConfigOutput = z.output<typeof developerConfigSchema>;
 export type DeveloperConfigInput<T extends PluginSlotKey | undefined = undefined> = DCI<T>;

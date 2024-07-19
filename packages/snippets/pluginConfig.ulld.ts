@@ -7,6 +7,7 @@ import { writePluginConfig } from "@ulld/developer/writePluginConfig";
 const pluginConfig: DeveloperConfigInput<"snippets"> = {
     pluginName: "@ulld/snippets",
     slot: "snippets",
+    label: "Snippets",
     pages: [
         {
             export: "./addSnippetPage",

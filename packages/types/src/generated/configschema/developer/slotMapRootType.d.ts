@@ -60,6 +60,9 @@ export interface SlotMap {
     "dashboard": {
         LandingPage: string;
     };
+    "form": {
+        SettingsPageContainer: string;
+    };
     "commandPalette": {
         commandPalette: string;
     };

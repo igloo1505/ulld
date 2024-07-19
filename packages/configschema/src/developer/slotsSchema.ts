@@ -1,6 +1,4 @@
 import { z, ZodTypeAny } from "zod";
-// import slots from "@ulld/utilities/slotMap.json"
-import { PluginSlotConfig, PluginSlotObject } from "./types/pluginSlotConfig";
 import { SlotMap } from "./slotMapRootType";
 
 export const configPluginSchema = z.object({
@@ -46,10 +44,10 @@ export const slotFields: Record<keyof SlotMap, ZodTypeAny> = {
         .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
         .default("@ulld/equations")
         .transform(pluginConfigTransform),
-    // form: z
-    //     .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
-    //     .default("@ulld/full-form")
-    //     .transform(pluginConfigTransform),
+    form: z
+        .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
+        .default("@ulld/full-form")
+        .transform(pluginConfigTransform),
     // icons: z
         // .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
         // .default("@ulld/icons")

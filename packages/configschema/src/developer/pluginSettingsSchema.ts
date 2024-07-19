@@ -16,5 +16,6 @@ export const pluginSettingsSchema: z.ZodType<PluginSettingsConfig> = z.object({
         .describe(
             "The export of a function that handles the saving of your settings specific to your plugin, most likely using the DJT model.",
         ),
-    tabLabel: z.string().optional().describe("The label applied to the tab of the user's setting page for this plugins settings. Defaults to the developerConfigSchema.pluginName property.")
+    title: z.string().optional().describe("The label applied to the tab of the user's setting page for this plugins settings. Defaults to the developerConfigSchema.pluginName property."),
+    subtitle: z.string().optional()
 });

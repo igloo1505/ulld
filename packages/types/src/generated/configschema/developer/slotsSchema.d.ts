@@ -15,6 +15,7 @@ export declare const pluginSlotSchema: z.ZodObject<Record<keyof SlotMap, z.ZodTy
     bibliography?: any;
     math?: any;
     navigation?: any;
+    form?: any;
     UI?: any;
     snippets?: any;
     editor?: any;
@@ -26,6 +27,7 @@ export declare const pluginSlotSchema: z.ZodObject<Record<keyof SlotMap, z.ZodTy
     bibliography?: any;
     math?: any;
     navigation?: any;
+    form?: any;
     UI?: any;
     snippets?: any;
     editor?: any;

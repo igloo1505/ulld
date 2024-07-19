@@ -62,26 +62,31 @@
         "components": [
             {
                 "componentName": "TaskDetails",
+                "tags": [],
                 "slot": "TaskDetails",
                 "export": "taskDetails"
             },
             {
                 "componentName": "AddTaskModal",
+                "tags": [],
                 "slot": "AddTask",
                 "export": "addTask"
             },
             {
                 "componentName": "TaskListResultList",
+                "tags": [],
                 "slot": "TaskListSearchResultList",
                 "export": "taskListSearchResults"
             },
             {
                 "componentName": "AddTaskList",
+                "tags": [],
                 "slot": "AddTaskList",
                 "export": "addTaskList"
             },
             {
                 "componentName": "TaskListSearchResult",
+                "tags": [],
                 "slot": "TaskListSearchResult",
                 "export": "taskListSearchResult"
             }
@@ -106,7 +111,9 @@
                 "href": "/todo",
                 "category": "general"
             }
-        ]
+        ],
+        "commandPalette": [],
+        "tailwind": {}
     },
     "dependencies": {}
 }

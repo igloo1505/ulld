@@ -4,6 +4,7 @@
     "components": [
         {
             "componentName": "LandingPageBetaRelease",
+            "tags": [],
             "slot": "LandingPage",
             "export": "beta"
         }
@@ -11,5 +12,7 @@
     "parsers": [],
     "pages": [],
     "events": {},
-    "navigationLinks": []
+    "navigationLinks": [],
+    "commandPalette": [],
+    "tailwind": {}
 }

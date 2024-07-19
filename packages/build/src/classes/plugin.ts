@@ -107,6 +107,7 @@ export class UlldPlugin extends ShellManager {
             this.settingsPage = new PluginSettingsPage(
                 this.paths,
                 this.pluginConfig.settings,
+                this.pluginConfig
             );
         }
         this.embeddables = this.getEmbeddables();

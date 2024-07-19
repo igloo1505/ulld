@@ -324,6 +324,15 @@
             "propsExtends": "LandingPageProps"
         }
     },
+    "form": {
+        "SettingsPageContainer": {
+            "path": "src/components/slots/form/settingsPageContainer.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "SettingsPageContainerProps"
+        }
+    },
     "commandPalette": {
         "commandPalette": {
             "path": "src/components/slots/commandPalette/main.tsx",

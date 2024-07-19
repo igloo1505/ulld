@@ -24,7 +24,7 @@ export const buildStaticDataSchema = z.object({
         icon: "cog" as ValidIconName
     },
     ]),
-    settingsPage: settingsPageOutputSchema.array().default([]),
+    settingPages: settingsPageOutputSchema.array().default([]),
     componentDocs: componentDocumentationSchema.array().default([]),
 }).transform((a) => {
     return {

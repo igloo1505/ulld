@@ -5,8 +5,9 @@ import {
 } from "@ulld/utilities/additionalSources";
 import { globSync } from "glob";
 import buildData from "@ulld/utilities/buildStaticData";
-import fs from 'fs'
-import path from 'path'
+import fs from "fs";
+import path from "path";
+import { FileManager } from "./baseClasses/fileManager";
 
 interface FoundItem extends FileItemWithRootGlob {
     filePath: string;
@@ -19,23 +20,28 @@ interface FoundDirContent extends FileItemWithRootGlob {
     type: "dir";
 }
 
-type FoundVal = FoundItem | FoundDirContent
+type FoundVal = FoundItem | FoundDirContent;
 type ItemData = {
     /** Absolute path */
-    input: string,
+    input: string;
     /** Absolute path */
-    output: string
-}
+    output: string;
+};
 
 export class AdditionalSources {
     sourcesDir?: string;
     allowedRootDirItems: FileItemWithRootGlob[];
+    hasContent: boolean = false;
     appendedCssPaths: string[] = [];
     constructor(public paths: TargetPaths) {
         this.sourcesDir = process.env.ULLD_ADDITIONAL_SOURCES;
+        this.hasContent = Boolean(this.sourcesDir);
         this.allowedRootDirItems = getFlattenedFileItems();
     }
-    validateSearch(search: string): { search: string; ignore?: string[] } {
+    private validateSearch(search: string): {
+        search: string;
+        ignore?: string[];
+    } {
         if (search === "<NOT_EXISTING_PUBLIC_DIR>") {
             return {
                 search: "*/**",
@@ -46,18 +52,20 @@ export class AdditionalSources {
             search,
         };
     }
-    glob(search: string, includeDirectories: boolean = true) {
+    private glob(search: string, includeDirectories: boolean = true) {
         let s = this.validateSearch(search);
         let vals = globSync(s.search, {
             cwd: this.sourcesDir,
             ignore: s.ignore,
         });
         if (includeDirectories) {
-            return vals
+            return vals;
         }
-        return vals.filter((f) => fs.statSync(path.join(this.sourcesDir!, f)).isFile())
+        return vals.filter((f) =>
+            fs.statSync(path.join(this.sourcesDir!, f)).isFile(),
+        );
     }
-    getItemData(
+    private getItemData(
         item: FileItemWithRootGlob,
     ): FoundItem[] | FoundDirContent[] | undefined {
         let files = this.glob(item.rootGlob, false);
@@ -68,56 +76,72 @@ export class AdditionalSources {
         }
         if (item.includeDirContents && files.length) {
             if (!item.dirPath) {
-                throw new Error(`Attempted to gather directory contents without a provided dirPath.`)
+                throw new Error(
+                    `Attempted to gather directory contents without a provided dirPath.`,
+                );
             }
-            return [{
-                ...item,
-                type: "dir",
-                dirPath: item.dirPath,
-                childPaths: files,
-            }]
+            return [
+                {
+                    ...item,
+                    type: "dir",
+                    dirPath: item.dirPath,
+                    childPaths: files,
+                },
+            ];
         }
         if (item.allowMultiple) {
             return files.map((f) => ({
                 ...item,
                 type: "file",
-                filePath: f
-            }))
+                filePath: f,
+            }));
         }
         if (files.length === 1) {
             return [
                 {
                     ...item,
                     type: "file",
-                    filePath: files[0]
-                }
-            ]
+                    filePath: files[0],
+                },
+            ];
         }
     }
-    getOutputPath(item: FoundVal): ItemData[] {
-        let itemData: ItemData[] = []
-        let items: string[] = item.type === "dir" ? item.childPaths : [item.filePath]
+    private getPaths(item: FoundVal): ItemData[] {
+        let itemData: ItemData[] = [];
+        let items: string[] =
+            item.type === "dir" ? item.childPaths : [item.filePath];
         for (const d of items) {
             itemData.push({
                 input: path.join(this.sourcesDir!, d),
-                output: path.join(this.paths.projectRoot, item.getOutputPath(d))
-            })
+                output: path.join(this.paths.projectRoot, item.getOutputPath(d)),
+            });
         }
-        return itemData
+        return itemData;
     }
-    getPaths() {
+    private getItems() {
         let items: FoundVal[] = [];
         for (const f of this.allowedRootDirItems) {
             let x = this.getItemData(f);
             if (x) {
-                items = items.concat(x)
+                items = items.concat(x);
             }
         }
-        return items
+        return items;
+    }
+    private copyPath(item: ItemData) {
+        const f = FileManager.fromAbsolutePath(item.input, this.paths, false);
+        f.copyToFile(item.output);
     }
     write() {
         if (!this.sourcesDir) {
             return;
+        }
+        const items = this.getItems();
+        for (const foundVal of items) {
+            let pathData = this.getPaths(foundVal);
+            for (const itemData of pathData) {
+                this.copyPath(itemData);
+            }
         }
     }
 }

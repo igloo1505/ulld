@@ -2,6 +2,15 @@
     "basePath": "/Users/bigsexy/Desktop/current/ulld/packages/build/src/fileContent",
     "data": [
         {
+            "path": "settings/settingsPage.txt",
+            "id": "settingsPage",
+            "variables": [
+                "PLUGIN_NAME",
+                "PLUGIN_SETTING_PAGE_EXPORT"
+            ],
+            "typeName": "SettingsPage"
+        },
+        {
             "path": "noteType/noteTypePage.txt",
             "id": "noteTypePage",
             "variables": [

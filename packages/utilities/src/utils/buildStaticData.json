@@ -42,7 +42,8 @@
         "SnippetListProps": "FIX ME",
         "NoteTypeSearchResultListProps": "@ulld/ui/types",
         "NotePageWrapperProps": "@ulld/ui/types",
-        "NoteTypeSecondaryFilterProps": "FIX ME"
+        "NoteTypeSecondaryFilterProps": "FIX ME",
+        "SettingsPageContainerProps": "@ulld/full-form/types"
     },
     "protectedPaths": [
         {

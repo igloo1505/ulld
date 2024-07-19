@@ -1,6 +1,8 @@
 import { z } from "zod";
 
 export const settingsPageOutputSchema = z.object({
-    label: z.string(),
-    href: z.string()
+    title: z.string().optional(),
+    subtitle: z.string().optional(),
+    href: z.string(),
+    pluginName: z.string()
 })

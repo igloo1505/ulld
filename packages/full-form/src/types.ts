@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { FieldValues, Path, UseFormReturn } from "react-hook-form";
+export * from "./slots/slotTypes"
 
 export interface BaseFullFormInputProps<
   T extends FieldValues,
@@ -18,3 +19,5 @@ export type SelectOption<T extends unknown = string> = {
 };
 
 export type { FieldValues, Path, UseFormReturn };
+
+
