@@ -67,9 +67,8 @@ export const WhyShouldIUseULLDSection = ({
 }: WhyShouldIUseULLDSectionProps) => {
     return (
         <div
-            /* ref={ref} */
             className={clsx(
-                "group/feature relative left-0 min-h-[calc(100vh-76px)] h-fit max-w-[1080px] w-full px-16 flex flex-col justify-center items-start gap-6 z-10 mb-12",
+                "group/feature relative left-0 min-h-[calc(100vh-76px)] h-fit max-w-[min(1080px,85vw)] w-full flex flex-col justify-center items-start gap-6 z-10 mb-12",
                 /* vp?.window.width && vp.window.width < 768 ? "stack" : "flow", */
             )}
         >
@@ -176,12 +175,8 @@ export const WhyShouldIUseULLDSection = ({
                                         className={
                                             "stroke-white top-0 right-0 scale-150 translate-x-[6px] -translate-y-[4px]"
                                         }
-                                        initial="initial"
-                                        whileInView={"animate"}
-                                        viewport={{
-                                            margin: "-80px",
-                                            /* once: process.env.NODE_ENV !== "production", */
-                                        }}
+                                        /* initial="initial" */
+                                        /* whileInView={"animate"} */
                                         variants={{
                                             initial: {
                                                 pathLength: 0,
@@ -192,6 +187,9 @@ export const WhyShouldIUseULLDSection = ({
                                                 opacity: 1,
                                                 strokeWidth: 3,
                                                 pathLength: 1,
+                                                transition: {
+                                                    delay: 0.5
+                                                }
                                             },
                                         }}
                                         transition={{

@@ -29,7 +29,7 @@ const Footer = () => {
             <div
                 ref={ref}
                 className={
-                    "w-full h-fit flex flex-col mb-6 lg:mb-0 lg:flex-row justify-between items-center"
+                    "w-full h-fit flex flex-col mb-0 sm:mb-6 lg:mb-0 lg:flex-row justify-between items-center"
                 }
             >
                 <div
