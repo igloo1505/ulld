@@ -111,7 +111,7 @@ const DocsPageComponent = (props: DocsPageComponentProps) => {
             <DocsPage toc={newEntries} full={props.page.data.full}>
                 <DocsBody
                     id={props.id}
-                    className={cn("@container/mdx", props.className)}
+                    className={cn("@container/mdx mdx", props.className)}
                 >
                     <DocsPageInternal {...props} id={id} />
                 </DocsBody>

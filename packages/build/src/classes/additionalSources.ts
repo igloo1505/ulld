@@ -121,14 +121,3 @@ export class AdditionalSources {
         }
     }
 }
-
-const x = new AdditionalSources(
-    new TargetPaths(process.env.ULLD_TEST_ROOT!, true),
-);
-
-let p = x.getPaths()[1]
-
-
-let data = x.getOutputPath(p)
-console.log("data: ", data)
-

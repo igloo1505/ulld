@@ -22,7 +22,7 @@ interface LinkGroupProps {
 const LinkGroup = ({ items, title, inView, idx }: LinkGroupProps) => {
     const initialDelay = idx * 0.45
     return (
-        <div className={"w-fit h-fit flex flex-col justify-center lg:justify-start items-start"}>
+        <div className={"w-fit h-fit flex flex-col justify-center items-center sm:justify-start sm:items-start"}>
             <motion.h4
                 className={"text-lg capitalize"}
                         animate={inView ? "show" : "hide"}
@@ -42,7 +42,7 @@ const LinkGroup = ({ items, title, inView, idx }: LinkGroupProps) => {
                     delay: initialDelay
                 }}
             >{title}</motion.h4>
-            <div className={"flex flex-col justify-center items-start gap-2"}>
+            <div className={"flex flex-col justify-center items-center sm:items-start gap-2"}>
                 {items.map((itemProps, itemIndex) => {
                     return <MotionLink
                         {...itemProps}
@@ -61,7 +61,7 @@ const LinkGroup = ({ items, title, inView, idx }: LinkGroupProps) => {
                         transition={{
                             delay: initialDelay + (itemIndex + 1) * 0.1
                         }}
-                        className="text-sm text-gray-400 hover:text-gray-300 transition-colors duration-300">{itemProps.label}</MotionLink> 
+                        className="text-sm text-gray-400 hover:text-gray-300 text-center sm:text-left transition-colors duration-300">{itemProps.label}</MotionLink> 
                 })}
             </div>
         </div>

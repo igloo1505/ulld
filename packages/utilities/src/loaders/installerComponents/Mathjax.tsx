@@ -1,4 +1,5 @@
 "use client";
+import React from 'react'
 import Script, { ScriptProps } from "next/script";
 import { MathJaxLoaders } from "./initialLoader";
 
@@ -36,6 +37,7 @@ export const MathjaxConfigScript = () => {
             strategy="beforeInteractive"
         >
             {`window.MathJax = {
+ "HTML-CSS": {linebreaks: { automatic: true }},
   tex: {
     inlineMath: [['$', '$']]
   },

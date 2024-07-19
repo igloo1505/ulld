@@ -270,6 +270,20 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
   margin-right: 0.25rem;
 }
 
+@media (max-width: 640px) {
+  mjx-container[jax="CHTML"][display="true"] {
+    max-width: 100%;
+    min-width: 0px !important;
+    overflow-x: auto;
+    mjx-table,
+    mjx-mtable,
+    mjx-itable {
+      max-width: 100%;
+      min-width: 0px !important;
+    }
+  }
+}
+
 .compactMdx .math.math-display {
   width: 100%;
 

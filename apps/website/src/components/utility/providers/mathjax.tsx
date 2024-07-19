@@ -40,7 +40,6 @@ const MathjaxProvider = ({ children, className }: MathjaxProviderProps) => {
             }
             onLoad={() => {
                 window.dispatchEvent(new CustomEvent("mathjax-loaded"));
-                console.log("dispatching mathjax-loaded event")
             }}
         >
             {className ? <div className={className}>{children}</div> : children}
