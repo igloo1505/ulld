@@ -1,19 +1,17 @@
-interface AdditionalSourceItem {
-    sourcePath: string;
-    outputPath: string;
-    displaySourceString?: string;
-    displayOutputString?: string;
-    id: string;
-}
-
-type AdditionalSourceRecord = Record<string, Omit<AdditionalSourceItem, "id">>;
+import path from "path";
+import { WithRequired } from "../../types/utilityTypes";
 
 export type FilePathItem = {
-    subPath: string
-    globPath?: string
-    forceDirDisplay?: boolean
-    items?: FilePathItem[]
-}
+    subPath: string;
+    globPath?: string;
+    forceDirDisplay?: boolean;
+    rootGlob?: string;
+    allowMultiple?: boolean;
+    dirPath?: string;
+    includeDirContents?: boolean;
+    validate?: (files: string[]) => boolean;
+    items?: FilePathItem[];
+};
 
 export type AdditionalSourceReplaceKey =
     | "<FILENAME>"
@@ -21,19 +19,67 @@ export type AdditionalSourceReplaceKey =
     | "<NOT_EXISTING_PUBLIC_DIR>"
     | "<PATH_AFTER>";
 
+type FileItemKey = "style" | "public" | "root";
+
+export type FileItemWithRootGlob = WithRequired<FilePathItem, "rootGlob"> & {
+    getOutputPath: (relativeFilePath: string) => string;
+};
+
+export const fileItems: Record<FileItemKey, FileItemWithRootGlob[]> = {
+    style: [
+        {
+            subPath: "index.scss",
+            rootGlob: "styles/**/*.scss",
+            dirPath: "styles",
+            validate: (items) => items.includes("styles/index.scss"),
+            includeDirContents: true,
+            getOutputPath: (filePath) => {
+            return `src/styles/userProvided/${filePath.startsWith(`styles${path.sep}`) ? filePath.slice(`styles${path.sep}`.length) : filePath}`
+            }
+        },
+    ],
+    public: [
+        {
+            subPath: "**",
+            rootGlob: "public/**",
+            dirPath: "public",
+            getOutputPath: (filePath) => filePath,
+            allowMultiple: true,
+        },
+    ],
+    root: [
+        {
+            subPath: "tailwind.config.ts",
+            rootGlob: "tailwind.config.ts",
+            getOutputPath: () => "tailwind.config.ts",
+        },
+        {
+            subPath: "anyFilename.bib",
+            globPath: "*.bib",
+            rootGlob: "*.bib",
+            getOutputPath: (filePath) => filePath,
+        },
+        {
+            subPath: "appConfig.ulld.json",
+            globPath: "appConfig.ulld.json",
+            rootGlob: "appConfig.ulld.json",
+            getOutputPath: () => "appConfig.ulld.json",
+        },
+        {
+            subPath: "favicon.{ico,png,jpg}",
+            rootGlob: "favicon.{ico,png,jpg}",
+            getOutputPath: (filePath) => `public/${filePath}`,
+        },
+    ],
+};
+
 export const additionalFilePaths: FilePathItem = {
     subPath: "/",
     items: [
-        {
-            subPath: "favicon.{ico,png,jpg}"
-        },
+        ...fileItems.root,
         {
             subPath: "styles",
-            items: [
-                {
-                    subPath: "index.scss"
-                }
-            ]
+            items: fileItems.style,
         },
         {
             subPath: "public",
@@ -41,103 +87,17 @@ export const additionalFilePaths: FilePathItem = {
                 {
                     subPath: "unreserved-public-dir",
                     globPath: "<NOT_EXISTING_PUBLIC_DIR>",
-                    items: [
-                        {
-                            subPath: "**"
-                        }
-                    ]
-                }
-            ]
+                    items: fileItems.public,
+                },
+            ],
         },
-        {
-            subPath: "tailwind.config.ts",
-        },
-        {
-            subPath: "anyFilename.bib",
-            globPath: "*.bib",
-        },
-        {
-            subPath: "appConfig.ulld.json",
-            globPath: "appConfig.ulld.json",
-        },
-    ]
-}
-
-export const additionalSourceFileStructure:
-    | AdditionalSourceRecord
-    | Record<string, AdditionalSourceRecord> = {
-    favicon: {
-        sourcePath: "favicon.{ico,png,jpg}",
-        outputPath: "public/<FILENAME>",
-    },
-    styles: {
-        sourcePath: "styles/index.scss",
-        outputPath: "src/styles/<PLUGIN_UNIQUE_ID>/index.scss",
-    },
-    public: {
-        sourcePath: "public/<NOT_EXISTING_PUBLIC_DIR>/**",
-        displaySourceString: "public/unReservedPublicDir/**",
-        outputPath: "public/<PATH_AFTER>[public]",
-    },
-    tailwind: {
-        sourcePath: "tailwind.config.ts",
-        outputPath: "tailwind.config.ts",
-    },
-    bib: {
-        sourcePath: "*.bib",
-        displaySourceString: "anyFilename.bib",
-        outputPath: "citations.bib",
-    },
+    ],
 };
 
-export const getAdditionalSourcePaths = () => {
-    let data: (AdditionalSourceItem & {
-        splitSourcePath: string[];
-        splitOutputPath: string[];
-    })[] = [];
-    for (const k in additionalSourceFileStructure) {
-        let item =
-            additionalSourceFileStructure[
-            k as keyof typeof additionalSourceFileStructure
-            ];
-        data.push({
-            ...item,
-            id: k,
-            splitSourcePath: (item.displaySourceString || item.sourcePath).split("/"),
-            splitOutputPath: item.outputPath.split("/"),
-        });
+export const getFlattenedFileItems = () => {
+    let data: FileItemWithRootGlob[] = [];
+    for (const k in fileItems) {
+        data = data.concat(fileItems[k]);
     }
     return data;
 };
-
-const getResursiveValue = (a: any, keys: string[]) => {
-    if (keys.length > 1) {
-        return getResursiveValue(a[keys[0]], keys.slice(1));
-    }
-    return a[keys[0]];
-};
-
-const applyRecursiveValue = (a: any, keys: string[], value: any) => {
-    let i: number | undefined;
-    for (i = 0; i < keys.length - 1; i++) {
-        a = a[keys[i]];
-    }
-    a[keys[i]] = value;
-};
-
-const getAdditionalSourceMap = () => {
-    let items = getAdditionalSourcePaths();
-    let d: AdditionalSourceRecord | Record<string, AdditionalSourceRecord> = {};
-    for (const k of items) {
-        let cumKeys: string[] = [];
-        for (const l of k.splitSourcePath) {
-            cumKeys.push(l);
-            if (!getResursiveValue(d, cumKeys)) {
-                applyRecursiveValue(d, cumKeys, {});
-            }
-        }
-    }
-    return d;
-};
-
-console.log("getAdditionalSourceMap: ", getAdditionalSourceMap());
