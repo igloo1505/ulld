@@ -8,7 +8,7 @@ export declare const navigationLinkSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     href: string;
     label: string;
-    category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general";
+    category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
     icon?: string | undefined;
     pluginName?: string | undefined;
 }, {
@@ -16,6 +16,6 @@ export declare const navigationLinkSchema: z.ZodObject<{
     label: string;
     icon?: string | undefined;
     pluginName?: string | undefined;
-    category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general" | undefined;
+    category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
 }>;
 //# sourceMappingURL=navigationLink.d.ts.map

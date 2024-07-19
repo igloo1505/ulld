@@ -1,12 +1,18 @@
 import { z } from "zod";
 export declare const settingsPageOutputSchema: z.ZodObject<{
-    label: z.ZodString;
+    title: z.ZodOptional<z.ZodString>;
+    subtitle: z.ZodOptional<z.ZodString>;
     href: z.ZodString;
+    pluginName: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     href: string;
-    label: string;
+    pluginName: string;
+    title?: string | undefined;
+    subtitle?: string | undefined;
 }, {
     href: string;
-    label: string;
+    pluginName: string;
+    title?: string | undefined;
+    subtitle?: string | undefined;
 }>;
 //# sourceMappingURL=settingsPage.d.ts.map

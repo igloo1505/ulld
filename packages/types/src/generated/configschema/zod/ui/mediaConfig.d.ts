@@ -1,6 +1,6 @@
 import { z } from "zod";
 export declare const mediaConfigSchema: z.ZodDefault<z.ZodEffects<z.ZodObject<{
-    imageMap: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined> | z.ZodEffects<z.ZodString, string, string>>>;
+    imageMap: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>>;
     includeDefaultImageMap: z.ZodDefault<z.ZodBoolean>;
     imageRemoteTest: z.ZodDefault<z.ZodArray<z.ZodType<RegExp, z.ZodTypeDef, RegExp>, "many">>;
 }, "strip", z.ZodTypeAny, {

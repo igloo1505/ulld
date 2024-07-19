@@ -3,7 +3,7 @@ import { InternalDeveloperConfigInput as DCI, InternalDeveloperConfigInputWithou
 import { PluginSlotKey } from "./slotMapType";
 export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     pluginName: z.ZodString;
-    label: z.ZodOptional<z.ZodString>;
+    label: z.ZodString;
     slot: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"snippets">, z.ZodLiteral<"math">, z.ZodLiteral<"editor">, z.ZodLiteral<"bibliography">, z.ZodLiteral<"UI">, z.ZodLiteral<"taskManager">, z.ZodLiteral<"pdf">, z.ZodLiteral<"navigation">, z.ZodLiteral<"dashboard">, z.ZodLiteral<"form">, z.ZodLiteral<"commandPalette">]>>;
     components: z.ZodDefault<z.ZodArray<z.ZodObject<{
         componentName: z.ZodEffects<z.ZodString, string, string>;
@@ -108,7 +108,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     }, "strip", z.ZodTypeAny, {
         href: string;
         label: string;
-        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general";
+        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
         icon?: string | undefined;
         pluginName?: string | undefined;
     }, {
@@ -116,7 +116,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         label: string;
         icon?: string | undefined;
         pluginName?: string | undefined;
-        category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general" | undefined;
+        category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
     }>, "many">>;
     commandPalette: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodObject<{
         label: z.ZodString;
@@ -145,6 +145,15 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     }>]>, "many">>;
     tailwind: z.ZodDefault<z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>>;
 }, "strip", z.ZodTypeAny, {
+    label: string;
+    pluginName: string;
+    navigationLinks: {
+        href: string;
+        label: string;
+        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+        icon?: string | undefined;
+        pluginName?: string | undefined;
+    }[];
     commandPalette: ({
         label: string;
         isAvailable: (...args: unknown[]) => boolean;
@@ -161,14 +170,6 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         slot?: string | undefined;
     }[];
     tailwind: {};
-    pluginName: string;
-    navigationLinks: {
-        href: string;
-        label: string;
-        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general";
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-    }[];
     components: {
         tags: string[];
         componentName: string;
@@ -183,15 +184,14 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     }[];
     parsers: import("./types/parserConfig").ParserConfig[];
     events: import("./types/pluginEventsConfig").PluginEventsConfig;
-    label?: string | undefined;
-    slot?: "bibliography" | "math" | "navigation" | "form" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
+    slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
     settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
 }, {
+    label: string;
     pluginName: string;
-    label?: string | undefined;
-    slot?: "bibliography" | "math" | "navigation" | "form" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
+    slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
     components?: {
         componentName: string;
         export: string;
@@ -223,7 +223,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         label: string;
         icon?: string | undefined;
         pluginName?: string | undefined;
-        category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general" | undefined;
+        category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
     }[] | undefined;
     commandPalette?: ({
         label: string;
@@ -236,6 +236,15 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     })[] | undefined;
     tailwind?: {} | undefined;
 }>, {
+    label: string;
+    pluginName: string;
+    navigationLinks: {
+        href: string;
+        label: string;
+        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+        icon?: string | undefined;
+        pluginName?: string | undefined;
+    }[];
     commandPalette: ({
         label: string;
         isAvailable: (...args: unknown[]) => boolean;
@@ -252,14 +261,6 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         slot?: string | undefined;
     }[];
     tailwind: {};
-    pluginName: string;
-    navigationLinks: {
-        href: string;
-        label: string;
-        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general";
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-    }[];
     components: {
         tags: string[];
         componentName: string;
@@ -274,15 +275,14 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     }[];
     parsers: import("./types/parserConfig").ParserConfig[];
     events: import("./types/pluginEventsConfig").PluginEventsConfig;
-    label?: string | undefined;
-    slot?: "bibliography" | "math" | "navigation" | "form" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
+    slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
     settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
 }, {
+    label: string;
     pluginName: string;
-    label?: string | undefined;
-    slot?: "bibliography" | "math" | "navigation" | "form" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
+    slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
     components?: {
         componentName: string;
         export: string;
@@ -314,7 +314,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         label: string;
         icon?: string | undefined;
         pluginName?: string | undefined;
-        category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general" | undefined;
+        category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
     }[] | undefined;
     commandPalette?: ({
         label: string;

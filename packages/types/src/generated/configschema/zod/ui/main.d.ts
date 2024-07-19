@@ -14,35 +14,35 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
             weight: z.ZodUnion<[z.ZodLiteral<"100">, z.ZodLiteral<"200">, z.ZodLiteral<"300">, z.ZodLiteral<"400">, z.ZodLiteral<"500">, z.ZodLiteral<"600">, z.ZodLiteral<"700">, z.ZodLiteral<"800">, z.ZodLiteral<"900">]>;
             style: z.ZodUnion<[z.ZodLiteral<"italic">, z.ZodLiteral<"bold">, z.ZodLiteral<"normal">]>;
         }, "strip", z.ZodTypeAny, {
-            path: string;
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
+            path: string;
         }, {
-            path: string;
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
+            path: string;
         }>, "many">, z.ZodLiteral<"default">]>>;
     }, "strip", z.ZodTypeAny, {
         blockQuoteItalic: boolean;
         fontPaths: ({
-            path: string;
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
+            path: string;
         }[] | "default") & ({
-            path: string;
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
+            path: string;
         }[] | "default" | undefined);
     }, {
         blockQuoteItalic?: boolean | undefined;
         fontPaths?: {
-            path: string;
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
+            path: string;
         }[] | "default" | undefined;
     }>>;
     media: z.ZodDefault<z.ZodEffects<z.ZodObject<{
-        imageMap: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined> | z.ZodEffects<z.ZodString, string, string>>>;
+        imageMap: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>>;
         includeDefaultImageMap: z.ZodDefault<z.ZodBoolean>;
         imageRemoteTest: z.ZodDefault<z.ZodArray<z.ZodType<RegExp, z.ZodTypeDef, RegExp>, "many">>;
     }, "strip", z.ZodTypeAny, {
@@ -90,13 +90,13 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
     text: {
         blockQuoteItalic: boolean;
         fontPaths: ({
-            path: string;
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
+            path: string;
         }[] | "default") & ({
-            path: string;
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
+            path: string;
         }[] | "default" | undefined);
     };
     media: {
@@ -120,9 +120,9 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
     text?: {
         blockQuoteItalic?: boolean | undefined;
         fontPaths?: {
-            path: string;
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
+            path: string;
         }[] | "default" | undefined;
     } | undefined;
     media?: {

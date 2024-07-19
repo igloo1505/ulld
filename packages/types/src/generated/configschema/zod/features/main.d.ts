@@ -19,9 +19,9 @@ export declare const featuresConfigSchema: z.ZodOptional<z.ZodObject<{
     }, "strip", z.ZodTypeAny, {
         bibliography: boolean;
         calendar: boolean;
-        equations: boolean;
         snippets: boolean;
         taskManager: boolean;
+        equations: boolean;
     }, {
         equations?: boolean | undefined;
         snippets?: boolean | undefined;
@@ -37,9 +37,9 @@ export declare const featuresConfigSchema: z.ZodOptional<z.ZodObject<{
     pages: {
         bibliography: boolean;
         calendar: boolean;
-        equations: boolean;
         snippets: boolean;
         taskManager: boolean;
+        equations: boolean;
     };
 }, {
     pages: {

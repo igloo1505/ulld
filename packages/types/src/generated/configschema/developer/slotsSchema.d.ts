@@ -16,25 +16,25 @@ export declare const pluginSlotSchema: z.ZodObject<Record<keyof SlotMap, z.ZodTy
     math?: any;
     navigation?: any;
     form?: any;
-    UI?: any;
     snippets?: any;
-    editor?: any;
-    pdf?: any;
-    commandPalette?: any;
-    taskManager?: any;
     dashboard?: any;
+    taskManager?: any;
+    UI?: any;
+    pdf?: any;
+    editor?: any;
+    commandPalette?: any;
 }, {
     bibliography?: any;
     math?: any;
     navigation?: any;
     form?: any;
-    UI?: any;
     snippets?: any;
-    editor?: any;
-    pdf?: any;
-    commandPalette?: any;
-    taskManager?: any;
     dashboard?: any;
+    taskManager?: any;
+    UI?: any;
+    pdf?: any;
+    editor?: any;
+    commandPalette?: any;
 }>;
 export declare const ulldSlots: string[];
 //# sourceMappingURL=slotsSchema.d.ts.map
