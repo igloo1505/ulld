@@ -117,13 +117,77 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         pluginName?: string | undefined;
         category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general" | undefined;
     }>, "many">>;
+    commandPalette: z.ZodObject<{
+        pluginLabel: z.ZodDefault<z.ZodOptional<z.ZodString>>;
+        items: z.ZodArray<z.ZodUnion<[z.ZodObject<{
+            label: z.ZodString;
+            isAvailable: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodBoolean>;
+            action: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>;
+        }, "strip", z.ZodTypeAny, {
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+            action: (...args: unknown[]) => unknown;
+        }, {
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+            action: (...args: unknown[]) => unknown;
+        }>, z.ZodObject<{
+            label: z.ZodString;
+            isAvailable: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodBoolean>;
+            href: z.ZodUnion<[z.ZodString, z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodString>]>;
+        }, "strip", z.ZodTypeAny, {
+            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+        }, {
+            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+        }>]>, "many">;
+    }, "strip", z.ZodTypeAny, {
+        pluginLabel: string;
+        items: ({
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+            action: (...args: unknown[]) => unknown;
+        } | {
+            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+        })[];
+    }, {
+        items: ({
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+            action: (...args: unknown[]) => unknown;
+        } | {
+            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+        })[];
+        pluginLabel?: string | undefined;
+    }>;
+    tailwind: z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>;
 }, "strip", z.ZodTypeAny, {
+    commandPalette: {
+        pluginLabel: string;
+        items: ({
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+            action: (...args: unknown[]) => unknown;
+        } | {
+            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+        })[];
+    };
     pages: {
         export: string;
         exportsPageProps: boolean;
         targetUrl?: string | undefined;
         slot?: string | undefined;
     }[];
+    tailwind: {};
     pluginName: string;
     navigationLinks: {
         href: string;
@@ -151,6 +215,19 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
     settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
 }, {
+    commandPalette: {
+        items: ({
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+            action: (...args: unknown[]) => unknown;
+        } | {
+            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+        })[];
+        pluginLabel?: string | undefined;
+    };
+    tailwind: {};
     pluginName: string;
     slot?: "bibliography" | "math" | "navigation" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
     components?: {
@@ -187,12 +264,25 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general" | undefined;
     }[] | undefined;
 }>, {
+    commandPalette: {
+        pluginLabel: string;
+        items: ({
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+            action: (...args: unknown[]) => unknown;
+        } | {
+            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+        })[];
+    };
     pages: {
         export: string;
         exportsPageProps: boolean;
         targetUrl?: string | undefined;
         slot?: string | undefined;
     }[];
+    tailwind: {};
     pluginName: string;
     navigationLinks: {
         href: string;
@@ -220,6 +310,19 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
     settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
 }, {
+    commandPalette: {
+        items: ({
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+            action: (...args: unknown[]) => unknown;
+        } | {
+            href: (string | ((...args: unknown[]) => string)) & (string | ((...args: unknown[]) => string) | undefined);
+            label: string;
+            isAvailable: (...args: unknown[]) => boolean;
+        })[];
+        pluginLabel?: string | undefined;
+    };
+    tailwind: {};
     pluginName: string;
     slot?: "bibliography" | "math" | "navigation" | "UI" | "snippets" | "editor" | "pdf" | "commandPalette" | "taskManager" | "dashboard" | undefined;
     components?: {

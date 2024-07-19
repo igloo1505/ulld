@@ -1,0 +1,22 @@
+{
+    "basePath": "/Users/bigsexy/Desktop/current/ulld/packages/build/src/fileContent",
+    "data": [
+        {
+            "path": "noteType/noteTypePage.txt",
+            "id": "noteTypePage",
+            "variables": [
+                "CATEGORY_ID",
+                "BASE_URL"
+            ],
+            "typeName": "NoteTypePage"
+        },
+        {
+            "path": "noteType/individualNotePage.txt",
+            "id": "individualNotePage",
+            "variables": [
+                "CATEGORY_ID"
+            ],
+            "typeName": "IndividualNotePage"
+        }
+    ]
+}

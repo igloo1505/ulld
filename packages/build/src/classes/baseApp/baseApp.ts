@@ -6,10 +6,11 @@ import { UlldBuildProcess } from "../build";
 import { SlotMapInternalType } from "@ulld/configschema/types";
 import sm from "@ulld/utilities/slotMap.json";
 import { flattenSlotMap } from "../../utils/slotMapUtils";
-import { PathKeys, TargetPaths } from "../paths";
+import { TargetPaths } from "../paths";
 import { EventMethodKey } from "../../types";
 import { getEventMethodListContent } from "./fileContent/eventMethodList";
 import { FileManager } from "../baseClasses/fileManager";
+import { PathKeys } from "@ulld/utilities/types";
 
 export class BaseApp extends ShellManager {
     paths: TargetPaths;
@@ -27,7 +28,8 @@ export class BaseApp extends ShellManager {
     generate() {
         // this.createComponentMap(this.build.plugins)
         // this.applySlots()
-        this.createEventFunctions()
+        // this.createEventFunctions()
+        this.writeNoteTypePages()
     }
     createComponentMap(plugins: UlldPlugin[]) {
         this.log(`Generating component map...`);
@@ -63,8 +65,10 @@ export class BaseApp extends ShellManager {
             file.writeContent()
         }
     }
+    writeNoteTypePages(){
+        for (const n of this.build.noteTypes) {
+            n.writePage()
+        }
+    }
 }
-
-
-
 

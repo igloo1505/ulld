@@ -1,13 +1,15 @@
 import { cookies } from "next/headers";
 import { documentConfigMap } from "./documentConfigMap";
 import { serverClient } from "../../trpc/serverClient";
-import { ParsedAppConfig } from "@ulld/configschema/types";
 import { DocumentTypeConfig } from "@ulld/configschema/zod/documentConfigSchema";
-import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
 import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes"
-import {SearchAllParams} from "@ulld/state/searchParamSchemas/utilities/formatSearchAllParams"
-import {ensureAbsolute} from "@ulld/utilities/utils/fsUtils"
+import { WithFSSearchParams } from "@ulld/state/searchParamSchemas/utilities/formatSearchAllParams"
+import { ensureAbsolute } from "@ulld/utilities/utils/fsUtils"
+import { getPathnameFromHeaders } from "#/trpcInternalMethods/filesystem/getPathnameFromHeaders";
+import { SearchAllParams } from "@ulld/utilities/types"
+import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
+import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
 
 
 type NotePropertiesOutput = ({
@@ -27,7 +29,7 @@ type NotePropertiesOutput = ({
 
 type NotePropsBeforeRun = {
     slug: string;
-    docType: DocTypes;
+    docType: DocTypes | string;
     preferFs: boolean;
     searchParams: (SearchAllParams & {
         fs?: string | boolean | null | undefined;
@@ -40,18 +42,20 @@ export class SpecificNoteQueryManager {
     pathname?: string | null
     preferFs: boolean
     props: Omit<NotePropsBeforeRun, "slug"> & { slug: string }
-    docType: DocTypes
+    docType: DocTypes | string
     filetype?: ParsableExtensions | null
     fsPath: string
     docTypeConfig: DocumentTypeConfig
     alwaysPreferFs: boolean
     fsRoot: string
-    constructor(props: NotePropsBeforeRun, docType: DocTypes, filetype?: ParsableExtensions, pathname?: string | null) {
+    filetypeSpecificAppendices: BuildStaticDataOutput["filetypeSpecificAppendices"]
+    constructor(props: NotePropsBeforeRun, docType: DocTypes | string, filetype?: ParsableExtensions, pathname?: string | null, appConfig: AppConfigSchemaOutput, buildData: BuildStaticDataOutput) {
         this.docType = docType
-        const internalConfig = getInternalConfig()
-        this.fsRoot = internalConfig.fsRoot
-        this.alwaysPreferFs = typeof internalConfig.alwaysPreferFs === "boolean" ? internalConfig.alwaysPreferFs : false
-        this.docTypeConfig = documentConfigMap(internalConfig)[this.docType]
+        this.filetypeSpecificAppendices = buildData.filetypeSpecificAppendices
+        // const internalConfig = getInternalConfig()
+        this.fsRoot = appConfig.fsRoot
+        this.alwaysPreferFs = typeof appConfig.alwaysPreferFs === "boolean" ? appConfig.alwaysPreferFs : false
+        this.docTypeConfig = documentConfigMap(appConfig)[this.docType]
         this.props = {
             ...props,
             slug: Array.isArray(props.slug) ? props.slug.join("/") : props.slug
@@ -59,22 +63,21 @@ export class SpecificNoteQueryManager {
         this.filetype = filetype
         this.pathname = pathname
         this.preferFs = this.doesPreferFs()
-        this.fsPath = this.__getFsPath(internalConfig)
+        this.fsPath = this.__getFsPath(appConfig)
     }
     async checkTypesExist() {
         return await serverClient.fsUtils.getParsableFiletypesAtPath(this.fsPath)
     }
-    private __getFsPath(config: ParsedAppConfig): string {
+    private __getFsPath(config: AppConfigSchemaOutput): string {
         let _p = this.props.slug
-        for (const k in config.filetypeSpecificAppendices) {
-            let appendex = config.filetypeSpecificAppendices[k as ParsableExtensions]
+        for (const k in this.filetypeSpecificAppendices) {
+            let appendex = this.filetypeSpecificAppendices[k as ParsableExtensions]
             if (appendex && _p.endsWith(appendex)) {
                 if (config.ignorePreferFsExtensions?.includes(k as any)) {
                     this.preferFs = false
                 }
                 _p = _p.slice(0, _p.length - appendex.length)
             }
-
         }
         return `${this.docTypeConfig.fs || ""}/${_p}`
     }
@@ -86,7 +89,7 @@ export class SpecificNoteQueryManager {
         return Boolean(pfs || this.alwaysPreferFs)
     }
 
-    shouldUseFilesystem(config: ParsedAppConfig): boolean {
+    shouldUseFilesystem(config: AppConfigSchemaOutput): boolean {
         let ignorePreferFs = config.ignorePreferFsExtensions || []
         if (this.filetype && this.filetype in ignorePreferFs) {
             return false
@@ -95,7 +98,7 @@ export class SpecificNoteQueryManager {
         let slugIsArray = Array.isArray(slug)
         for (var i = 0; i < ignorePreferFs.length; i++) {
             let _k = ignorePreferFs[i].original
-            const k = config.filetypeSpecificAppendices[_k as ParsableExtensions]
+            const k = this.filetypeSpecificAppendices[_k as ParsableExtensions]
             if (k && slugIsArray && slug?.at(-1)?.endsWith(k)) {
                 return false
             }
@@ -109,8 +112,8 @@ export class SpecificNoteQueryManager {
         return Boolean(this.preferFs)
     }
 
-    getFiletypeFromPathname(config: ParsedAppConfig) {
-        let _entries = Object.entries(config.filetypeSpecificAppendices)
+    getFiletypeFromPathname(config: AppConfigSchemaOutput) {
+        let _entries = Object.entries(this.filetypeSpecificAppendices)
         for (var i = 0; i < _entries.length; i++) {
             const item = _entries[i]
             if (item[1] && Boolean(this.pathname?.endsWith(item[1]) || this.props?.slug?.endsWith(item[1]))) {
@@ -141,6 +144,22 @@ export class SpecificNoteQueryManager {
             rootRelativePath: this.fsPath,
             rootRelativePathWithExtension: ftMatch ? `${this.fsPath}${ftMatch}` : undefined,
             absolutePath: ftMatch ? ensureAbsolute(`${this.fsPath}${ftMatch}`, this.fsRoot) : undefined
+        }
+    }
+    // TODO: Moved docType over to document id and am passing that in in the individual note page. If that is incorrect, resole that issue.
+    static async formatNoteProps<T extends WithFSSearchParams>(docType: string | DocTypes, params: T["params"], searchParams: WithFSSearchParams["searchParams"], appConfig: AppConfigSchemaOutput, buildData: BuildStaticDataOutput) {
+        let props = {
+            slug: Array.isArray(params.slug) ? params.slug.join("/") : params.slug,
+            docType,
+            preferFs: Boolean(searchParams?.fs),
+            searchParams: searchParams
+        }
+        let pathname = getPathnameFromHeaders()
+        let manager = new SpecificNoteQueryManager(props, props.docType, undefined, pathname, appConfig, buildData)
+        let noteProps = await manager.run()
+        return {
+            ...props,
+            noteProps: noteProps
         }
     }
 }

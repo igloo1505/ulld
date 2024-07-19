@@ -72,7 +72,6 @@ export const documentTypeConfigSchemaBase = z.object({
     docType: zodDocTypeInput.optional().describe(
         "A unique key which describes the nature of this document type: 'MathNote', 'Journal', 'References', etc...",
     ),
-    // filePathPattern: zodPathWithGlobField("The glob style string with which to test this document type.", true),
     filePathPattern: z
         .string()
         .optional()
@@ -167,7 +166,6 @@ export const documentTypeConfigSchema = documentTypeConfigSchemaBase
     //     return a;
     // })
     .transform((a) => {
-        console.log("a: ", a);
         const _id = makeValidId(a.id || a.label);
         return {
             ...a,

@@ -22,7 +22,7 @@ import { PluginComponent } from "./component";
 import { SlotMapOfType } from "@ulld/configschema/types";
 import { generateSlotMapOfType } from "../utils/slotMapUtils";
 import { slotMapIsFull } from "../utils/slotMapIsFull";
-import { getRandomChar, modifyNameRandomly } from "../utils/randomization";
+import { modifyNameRandomly } from "../utils/randomization";
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
 import { PluginSettingsPage } from "./pluginSettingsPage";
 
@@ -53,6 +53,7 @@ export class UlldBuildProcess extends Prompter {
         this.appConfig = new UlldAppConfigManager(
             this.applicationDir,
             this.isLocalDev,
+            this.paths
         );
         this.packageJson = new TargetPackageJson(
             this.applicationDir,
@@ -60,6 +61,7 @@ export class UlldBuildProcess extends Prompter {
         );
         this.gatherSlotConflicts();
         this.gatherPageConflicts();
+        this.noteTypes = this.appConfig.getNoteTypes()
     }
     /** Returns true if a project exists at the targetDir and if that project is a ULLD app. */
     projectExists() {

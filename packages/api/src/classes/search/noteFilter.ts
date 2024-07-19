@@ -1,6 +1,5 @@
-import { Topic, Subject, Prisma } from "@ulld/database/internalDatabaseTypes";
+import { Topic, Subject } from "@ulld/database/internalDatabaseTypes";
 import { getDocumentTypeConfig } from "@ulld/configschema/configUtilityTypes/general";
-import { ParsedAppConfig } from "@ulld/configschema/types";
 import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes";
 import { prisma } from "@ulld/database/db";
 import type { SerializeMdxConfig } from "@ulld/parsers/mdx/types";
@@ -19,6 +18,7 @@ import type {
     MdxNoteFindManyArgs,
     MdxNoteSelect,
 } from "@ulld/database/internalDatabaseTypes";
+import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 
 
 type SortedResult = MdxNote & { sortRank?: number };
@@ -131,7 +131,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
         // this.notes = items
         return items;
     }
-    async getBookmarked(config?: ParsedAppConfig) {
+    async getBookmarked(config?: AppConfigSchemaOutput) {
         const bms = await serverClient.search.getBookmarked();
         this.preParseNotes = bms.mdxNotes.map((bm) =>
             MdxNote.asSummary({ ...bm, bookmarked: true }),
@@ -154,12 +154,12 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
             );
         });
     }
-    getNoteType(config: ParsedAppConfig) {
+    getNoteType(config: AppConfigSchemaOutput) {
         return this.type
             ? config.noteTypes.find((n) => n.docType === this.type)
             : null;
     }
-    getMatchingTypes(config: ParsedAppConfig) {
+    getMatchingTypes(config: AppConfigSchemaOutput) {
         let type = this.getNoteType(config);
         if (!type) {
             return null;
@@ -183,7 +183,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
     }
     async defaultCategorySearch(
         noSecondary: boolean = false,
-        config: ParsedAppConfig,
+        config: AppConfigSchemaOutput,
     ) {
         await this.getResults(config);
         if (!noSecondary) {
@@ -199,7 +199,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
         }
         return _a;
     }
-    defaultWhereInput(config: ParsedAppConfig) {
+    defaultWhereInput(config: AppConfigSchemaOutput) {
         let matchingTypes = this.getMatchingTypes(config);
         return {
             ...(matchingTypes &&
@@ -280,11 +280,11 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
             }),
         } satisfies MdxNoteWhereInput;
     }
-    async toValueSearchTable(config: ParsedAppConfig) {
+    async toValueSearchTable(config: AppConfigSchemaOutput) {
         await this.getResultsBeforeParse(config);
         return this.preParseNotes.map((n) => n.toValueSearchTableItem());
     }
-    async getQuerySecondaryData(config: ParsedAppConfig) {
+    async getQuerySecondaryData(config: AppConfigSchemaOutput) {
         let topics = await prisma.topic.findMany({
             where: {
                 MdxNotes: {
@@ -388,7 +388,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
         this.totalFound = count || 0;
         return { notes, totalFound: count };
     }
-    async getResultsBeforeParse(config: ParsedAppConfig) {
+    async getResultsBeforeParse(config: AppConfigSchemaOutput) {
         if (this.sequentialId) {
             return await this.getSequentialList(this.sequentialId);
         } else {
@@ -408,7 +408,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
             };
         }
     }
-    async getResults(config: ParsedAppConfig) {
+    async getResults(config: AppConfigSchemaOutput) {
         const { notes, totalFound } = await this.getResultsBeforeParse(config);
         this.totalFound = totalFound;
         const v = notes[0] as WithDocType<(typeof notes)[0]>;
@@ -426,7 +426,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
             importantValues: true,
         } satisfies MdxNoteSelect;
     }
-    intriguingValueWhereInput(config: ParsedAppConfig) {
+    intriguingValueWhereInput(config: AppConfigSchemaOutput) {
         return {
             ...this.defaultWhereInput(config),
             importantValues: {
@@ -434,7 +434,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
             },
         } satisfies MdxNoteWhereInput;
     }
-    async intriguingValueSearch(config: ParsedAppConfig) {
+    async intriguingValueSearch(config: AppConfigSchemaOutput) {
         let notes = await prisma.mdxNote.findMany({
             where: {
                 ...this.intriguingValueWhereInput(config),

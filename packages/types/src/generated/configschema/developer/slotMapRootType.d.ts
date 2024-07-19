@@ -34,6 +34,9 @@ export interface SlotMap {
         NoteSummarySearchResult: string;
         DictionaryLetterList: string;
         DictionaryPageItem: string;
+        NoteTypeSecondaryFilter: string;
+        NoteTypeSearchResultList: string;
+        NoteTypePageContainer: string;
     };
     "taskManager": {
         TaskManagerPage: string;

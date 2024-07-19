@@ -2,10 +2,12 @@ import {
     AutoSettingType,
     ConfirmationModalConfig,
     LetterType,
+    NoteTypePageProps,
     SearchAllSearchType,
 } from "@ulld/utilities/types";
 import { FC, ReactNode } from "react";
 import { NoteFilter } from "@ulld/api/classes/search/noteFilter";
+import { AppConfigSchemaOutput } from "@ulld/types";
 
 export interface ToastConfigType {
     destructive?: boolean;
@@ -26,18 +28,17 @@ export interface ChildrenOnly {
     children: React.ReactNode;
 }
 
-
 export interface AutoSettingFormModalProps {
-    open: boolean
-    editing: AutoSettingType | undefined | null
-    setOpen: (newOpen: boolean) => void
-    appendSetting: (s: AutoSettingType) => void
+    open: boolean;
+    editing: AutoSettingType | undefined | null;
+    setOpen: (newOpen: boolean) => void;
+    appendSetting: (s: AutoSettingType) => void;
 }
 
 export interface AutoSettingsTableProps {
     settings: AutoSettingType[];
     editing?: AutoSettingType | undefined;
-    modal: FC<AutoSettingFormModalProps>
+    modal: FC<AutoSettingFormModalProps>;
 }
 
 export interface PaginationProps {
@@ -61,10 +62,9 @@ export interface DictionaryLetterList {
 
 export interface NoteSummaryProps {
     index: number;
-    item: InstanceType<typeof NoteFilter>["notes"][number]
-    searchType: SearchAllSearchType
+    item: InstanceType<typeof NoteFilter>["notes"][number];
+    searchType: SearchAllSearchType;
 }
-
 
 export interface SearchResultsPageProps {
     notes: ReactNode;
@@ -79,9 +79,23 @@ export interface NotesSearchResultsListProps {
 }
 
 export interface LoadingIndicatorProps {
-    loading: boolean
-    label?: ReactNode
-    fullScreen?: boolean
+    loading: boolean;
+    label?: ReactNode;
+    fullScreen?: boolean;
     /** @default 100 */
-    size?: number
+    size?: number;
+}
+
+export type NoteTypeSearchResultListProps = Pick<
+    SearchResultsPageProps,
+    "notes"
+>;
+
+export interface NotePageWrapperProps extends NoteTypePageProps {
+    children: ReactNode;
+    docTypeData?: AppConfigSchemaOutput["noteTypes"][number];
+}
+
+export interface NoteTypeSecondaryFilterProps extends NoteTypePageProps {
+    docTypeData?: AppConfigSchemaOutput["noteTypes"][number];
 }

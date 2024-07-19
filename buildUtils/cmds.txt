@@ -29,3 +29,5 @@ Create unified types export | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils
 Clear generated types | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/clearGeneratedTypes.zsh
 Generate Required Embeddable Slots | tsx /Users/bigsexy/Desktop/current/ulld/packages/configschema/src/__scripts__/generateRequiredEmeddableSlots.ts
 Generate plugin configs | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/generatePluginConfigs.zsh
+Gather build template string data | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/gatherBuildTemplateStrings.ts
+

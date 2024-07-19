@@ -6,6 +6,7 @@ import { NoteType } from "./noteType";
 import { log } from "console";
 import { ShellManager } from "./baseClasses/shell";
 import chalk from "chalk";
+import { TargetPaths } from "./paths";
 
 interface PathItem {
     path: string;
@@ -13,17 +14,17 @@ interface PathItem {
 }
 
 export class UlldAppConfigManager extends ShellManager {
-    config?: AppConfigSchemaOutput;
+    _config?: AppConfigSchemaOutput;
     preferredConfig: "env" | "directory";
     exists: boolean = true;
     envConfigPath?: PathItem;
     directoryConfigPath?: PathItem;
     selectedConfig?: string;
     directoryConfigPathTemplate: string;
-    noteTypes: NoteType[] = []
     constructor(
         public targetDir: string,
         public isLocalDev: boolean,
+        public paths: TargetPaths
     ) {
         super()
         let configEnv = process.env.ULLD_APP_CONFIG;
@@ -52,6 +53,17 @@ export class UlldAppConfigManager extends ShellManager {
             (this.directoryConfigPath && this.directoryConfigPath.exists),
         );
     }
+    get config(){
+        if(!this._config){
+            let c = this.gather(false)
+            this._config = c
+            return c
+        }
+        return this._config
+    }
+    set config(data: AppConfigSchemaOutput | undefined){
+        this._config = data
+    }
     gather(setConfig: boolean = true): AppConfigSchemaOutput | undefined {
         console.log(`Looking for ${chalk.hex("#0ba5e9")("U")}LLD appConfig...`)
         let configPath = this.getConfigPath();
@@ -69,7 +81,6 @@ ${this.targetDir}
             if (setConfig) {
                 this.config = data;
             }
-            this.noteTypes = data.noteTypes.map((f) => new NoteType(f))
             this.log(`Successfully gathered ${chalk.hex("#0ba5e9")("U")}LLD appConfig data.`)
             return data as AppConfigSchemaOutput;
         }
@@ -115,6 +126,12 @@ ${this.targetDir}
     }
     foundMultiple() {
         return this.getValidConfigPaths().length > 1;
+    }
+    getNoteTypes(): NoteType[] {
+        if(!this.config){
+            throw new Error(`No config was found while gathering NoteType classes.`)
+        }
+        return this.config.noteTypes.map((t) => new NoteType(t, this.paths))
     }
 // TODO:
 // getCss(): string {}

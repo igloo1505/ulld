@@ -1,4 +1,5 @@
 import { autoSetting } from "@ulld/database/internalDatabaseTypes"
+import { ReactNode } from "react";
 
 export interface AutoSettingType {
     id?: number
@@ -7,21 +8,6 @@ export interface AutoSettingType {
     value: string
 }
 
-export interface SearchAllParams {
-    query?: string
-    tags?: string[]
-    categories?: string[]
-    subjects?: string[]
-    topics?: string[]
-    citations?: string[]
-    tagRegex?: RegExp[]
-    equationId?: string
-    sequentialId?: string
-    perPage?: string
-    take?: string
-    page?: string
-    remote?: boolean
-}
 
 export interface DictionaryDefinitionReturnType {
     id: string;
@@ -50,4 +36,8 @@ export interface ConfirmationModalConfig {
 }
 
 
-export type SearchAllSearchType = "searchAll" | "byTag" | "byEquation" | "bySequentialId" | "bookmarked"
+export type SearchAllSearchType = "searchAll" | "byTag" | "byEquation" | "bySequentialId" | "bookmarked" | "byNoteType"
+
+export type OnlyChildren = {
+    children: ReactNode
+}

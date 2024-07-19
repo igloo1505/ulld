@@ -12,6 +12,7 @@
         "pluginConfig.ulld.json"
     ],
     "exports": {
+        "./individualNoteSwitch": "./src/components/noteContent/IndividualNoteSwitch.tsx",
         "./modalPage": "./src/components/modals/modalPage/main.ts",
         "./inputs/number": "./src/components/inputs/number/numberInput.tsx",
         "./inputs/number/types": "./src/components/inputs/number/types.ts",

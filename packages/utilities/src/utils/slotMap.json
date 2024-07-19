@@ -189,6 +189,27 @@
             "inReduxProvider": false,
             "type": "component",
             "propsExtends": "DictionaryItemProps"
+        },
+        "NoteTypeSecondaryFilter": {
+            "path": "src/components/notePageComponents/secondaryNoteTypeFilter.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "NoteTypeSecondaryFilterProps"
+        },
+        "NoteTypeSearchResultList": {
+            "path": "src/components/notePageComponents/searchResultList.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "page",
+            "propsExtends": "NoteTypeSearchResultListProps"
+        },
+        "NoteTypePageContainer": {
+            "path": "src/components/notePageComponents/pageContainer.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "page",
+            "propsExtends": "NotePageWrapperProps"
         }
     },
     "taskManager": {

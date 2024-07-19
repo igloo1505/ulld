@@ -52,6 +52,7 @@ export type * from "./configschema/evaluate/evaluations/jupyter.d.ts";
 export type * from "./configschema/evaluate/evaluations/calendar.d.ts";
 export type * from "./configschema/developer/trpcConfigSchema.d.ts";
 export type * from "./configschema/developer/transforms.d.ts";
+export type * from "./configschema/developer/tailwind.d.ts";
 export type * from "./configschema/developer/styleSchema.d.ts";
 export type * from "./configschema/developer/slotsSchema.d.ts";
 export type * from "./configschema/developer/slotMapType.d.ts";

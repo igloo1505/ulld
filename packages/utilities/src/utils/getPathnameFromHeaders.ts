@@ -1,4 +1,3 @@
-// TODO: Remove this. Moved to packages/utilities/src/utils/getPathnameFromHeaders.ts
 import { headers } from "next/headers"
 
 export const getPathnameFromHeaders = () => {

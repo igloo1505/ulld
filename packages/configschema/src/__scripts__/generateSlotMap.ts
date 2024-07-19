@@ -5,10 +5,14 @@ import { capitalize } from "@ulld/utilities/stringUtils";
 import { slotTypes } from "@ulld/utilities/types";
 import { gatherProtectedPaths } from "./gatherProtectedPaths";
 import { gatherReservedPublicPaths } from "./gatherReservedPublicPaths";
+import { getInternalDocumentTypes } from "./getInternalDocumentTypes";
+import { writeTestStaticBuildData } from "./getTestStaticBuildData";
 
 const testRoot = process.env.ULLD_TEST_ROOT;
 
 const buildDataPath = path.join(__dirname, "../../../utilities/src/utils/buildStaticData.json")
+
+
 
 const _propsExtendsMap = JSON.parse(fs.readFileSync(buildDataPath, {encoding: "utf-8"}))
 
@@ -261,12 +265,16 @@ fs.writeFileSync(zodSlotKeyPath, slotKeyFileContent, {
 
 const reservedPublicDirs = gatherReservedPublicPaths();
 
-(staticBuildData as any).reservedPublicDirs = reservedPublicDirs
+(staticBuildData as any).reservedPublicDirs = reservedPublicDirs;
+
+(staticBuildData as any).internalDocumentTypes = getInternalDocumentTypes()
 
 fs.writeFileSync(
     staticBuildDataPath,
     JSON.stringify(staticBuildData, null, 4),
     { encoding: "utf-8" },
 );
+
+writeTestStaticBuildData()
 
 console.log(`Wrote slotMap to @ulld/utilities/slotMap.json`);

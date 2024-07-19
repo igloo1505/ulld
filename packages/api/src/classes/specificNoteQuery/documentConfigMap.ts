@@ -1,15 +1,14 @@
-import {  ParsedAppConfig } from "@ulld/configschema/types"
 import { DocumentTypeConfig } from "@ulld/configschema/zod/documentConfigSchema"
-import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes"
+import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main"
 
 
+type ConfigMap = Record<string, DocumentTypeConfig>
 
-type ConfigMap = { [k in DocTypes]: DocumentTypeConfig }
 
-export const documentConfigMap = (parsedConfig: ParsedAppConfig): ConfigMap => {
+export const documentConfigMap = (parsedConfig: AppConfigSchemaOutput): ConfigMap => {
     let d = {} as ConfigMap
-    parsedConfig.noteTypes.forEach((t: ParsedAppConfig["noteTypes"][number]) => {
-        d[t.docType as DocTypes] = t
+    parsedConfig.noteTypes.forEach((t: AppConfigSchemaOutput["noteTypes"][number]) => {
+        d[t.docType as string] = t
     })
     return d
 }

@@ -39,7 +39,10 @@
         "EmbeddablePdfProps": "FIX ME",
         "FooterProps": "@ulld/navigation/types",
         "SnippetsPageProps": "FIX ME",
-        "SnippetListProps": "FIX ME"
+        "SnippetListProps": "FIX ME",
+        "NoteTypeSearchResultListProps": "@ulld/ui/types",
+        "NotePageWrapperProps": "@ulld/ui/types",
+        "NoteTypeSecondaryFilterProps": "FIX ME"
     },
     "protectedPaths": [
         {
@@ -248,5 +251,150 @@
         "scripts",
         "highlighting",
         "font"
+    ],
+    "parsableFileExtensions": [
+        ".mdx",
+        ".ipynb"
+    ],
+    "internalDocumentTypes": [
+        {
+            "id": "bookmarks",
+            "docType": "bookmarks",
+            "matchWeight": 50,
+            "url": "/bookmarks",
+            "urlQuery": {},
+            "keywords": [
+                "bookmarks"
+            ],
+            "label": "Bookmarks",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "ulld",
+            "inSidebar": false,
+            "inNavbar": false
+        },
+        {
+            "id": "settings",
+            "docType": "none",
+            "matchWeight": 50,
+            "url": "/settings",
+            "urlQuery": {},
+            "keywords": [
+                "settings"
+            ],
+            "label": "Settings",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "ulld",
+            "inSidebar": false,
+            "inNavbar": false
+        },
+        {
+            "id": "pdfs",
+            "docType": "pdfcollection",
+            "matchWeight": 50,
+            "fs": "/resources/pdf",
+            "url": "/pdf",
+            "urlQuery": {},
+            "keywords": [
+                "pdf",
+                "papers",
+                "research"
+            ],
+            "label": "Pdfs",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "ulld",
+            "inSidebar": false,
+            "inNavbar": false
+        },
+        {
+            "id": "bibliography",
+            "docType": "bibliography",
+            "matchWeight": 50,
+            "url": "/bibliography",
+            "urlQuery": {},
+            "keywords": [
+                "bib",
+                "references",
+                "citations"
+            ],
+            "label": "Bibliography",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "ulld",
+            "inSidebar": false,
+            "inNavbar": false
+        },
+        {
+            "id": "addSnippets",
+            "docType": "none",
+            "matchWeight": 50,
+            "url": "/snippets/add",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Add Snippets",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "ulld",
+            "inSidebar": false,
+            "inNavbar": false
+        },
+        {
+            "id": "snippets",
+            "docType": "snippet",
+            "matchWeight": 50,
+            "url": "/snippets",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Snippets",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "ulld",
+            "inSidebar": false,
+            "inNavbar": false
+        }
     ]
 }

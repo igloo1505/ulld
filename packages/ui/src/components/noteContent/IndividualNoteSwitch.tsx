@@ -6,7 +6,7 @@ import DatabaseNote from './noteWrappers/DatabaseNote'
 import FsNote from './noteWrappers/FsNote'
 
 
-const IndividualNoteSwitch = async (props: NotePageProps) => {
+export const IndividualNoteSwitch = async (props: NotePageProps) => {
     const { noteProps } = props
     serverLogger.info(noteProps, { label: "Note Props", component: "IndividualNoteSwitch" })
 
@@ -44,6 +44,3 @@ const IndividualNoteSwitch = async (props: NotePageProps) => {
 
 
 IndividualNoteSwitch.displayName = "RemoteMdx"
-
-
-export default IndividualNoteSwitch;

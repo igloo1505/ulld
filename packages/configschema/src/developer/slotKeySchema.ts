@@ -59,6 +59,9 @@ export const UISubkeySchema = z.union([
     z.literal("NoteSummarySearchResult"),
     z.literal("DictionaryLetterList"),
     z.literal("DictionaryPageItem"),
+    z.literal("NoteTypeSecondaryFilter"),
+    z.literal("NoteTypeSearchResultList"),
+    z.literal("NoteTypePageContainer"),
 ])
 
 

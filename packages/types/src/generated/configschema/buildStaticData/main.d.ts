@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { ValidIconName } from "@ulld/icons";
-export declare const buildStaticDataSchema: z.ZodObject<{
+export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
     fsRoot: z.ZodString;
     navigationLinks: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodObject<{
         label: z.ZodString;
@@ -82,6 +82,104 @@ export declare const buildStaticDataSchema: z.ZodObject<{
         tags?: string[] | undefined;
     }>, "many">>;
 }, "strip", z.ZodTypeAny, {
+    fsRoot: string;
+    navigationLinks: ({
+        href: string;
+        label: string;
+        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general";
+        icon?: string | undefined;
+        pluginName?: string | undefined;
+    } | {
+        label: string;
+        href: string;
+        icon: ValidIconName;
+    })[];
+    settingsPage: {
+        href: string;
+        label: string;
+    }[];
+    componentDocs: {
+        tags: string[];
+        pluginName: string;
+        componentName: string;
+        embeddableSyntax: string[];
+        paths: {
+            short?: string | undefined;
+            full?: string | undefined;
+        };
+    }[];
+}, {
+    fsRoot: string;
+    navigationLinks?: {
+        href: string;
+        label: string;
+        icon?: string | undefined;
+        pluginName?: string | undefined;
+        category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "research" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "project-planning" | "general" | undefined;
+    }[] | undefined;
+    settingsPage?: {
+        href: string;
+        label: string;
+    }[] | undefined;
+    componentDocs?: {
+        pluginName: string;
+        componentName: string;
+        embeddableSyntax: string[];
+        paths: {
+            short?: string | undefined;
+            full?: string | undefined;
+        };
+        tags?: string[] | undefined;
+    }[] | undefined;
+}>, {
+    parsableExtensions: string[];
+    filetypeSpecificAppendices: Record<string, string>;
+    internalDocumentTypes: ({
+        id: string;
+        docType: string;
+        matchWeight: number;
+        url: string;
+        urlQuery: {};
+        keywords: string[];
+        label: string;
+        autoTag: never[];
+        autoTopic: never[];
+        autoSubject: never[];
+        UI: {
+            styles: {
+                dark: {};
+                light: {};
+            };
+        };
+        icon: string;
+        inSidebar: boolean;
+        inNavbar: boolean;
+        fs?: undefined;
+    } | {
+        id: string;
+        docType: string;
+        matchWeight: number;
+        fs: string;
+        url: string;
+        urlQuery: {};
+        keywords: string[];
+        label: string;
+        autoTag: never[];
+        autoTopic: never[];
+        autoSubject: never[];
+        UI: {
+            styles: {
+                dark: {};
+                light: {};
+            };
+        };
+        icon: string;
+        inSidebar: boolean;
+        inNavbar: boolean;
+    })[];
+    fileTypes: {
+        image: string[];
+    };
     fsRoot: string;
     navigationLinks: ({
         href: string;

@@ -2,6 +2,7 @@ import path from "path";
 import fs from "fs";
 import { PluginEventsConfig } from "@ulld/types";
 import { PathKeys, MethodListPathKeys } from "@ulld/utilities/types";
+import { removeLeadingDotSlash } from "../utils/removeLeadingDotSlash";
 
 
 export class TargetPaths
@@ -84,8 +85,8 @@ export class TargetPaths
     getPathInNodeModule(packageName: string, subPath: string) {
         return this.joinPath("node_modules", `${packageName}/${subPath}`);
     }
-    joinPath(pathKey: PathKeys, joinWith: string) {
-        return path.join(this[pathKey], joinWith);
+    joinPath(pathKey: PathKeys, ...joinWith: string[]) {
+        return path.join(this[pathKey], ...joinWith);
     }
     exists(_key: PathKeys) {
         return fs.existsSync(this[_key]);
@@ -98,5 +99,13 @@ export class TargetPaths
     }
     makeSubPath(absolutePath: string){
         return absolutePath.replace(`${this.projectRoot}/`, "")
+    }
+    getNoteTypePathsFromTargetUrl(url: string){
+        let items = removeLeadingDotSlash(url).split(path.sep)
+        let dirPath = this.joinPath("appDir", ...items)
+        return {
+            page: path.join(dirPath, "page.tsx"),
+            individualNotePage: path.join(dirPath, "[...slug]", "page.tsx")
+        }
     }
 }
