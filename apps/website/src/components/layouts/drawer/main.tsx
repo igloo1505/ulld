@@ -42,7 +42,7 @@ const MainNavigationDrawer = connector(
             >
                     <DrawerContent>
                         <DrawerHeader>
-                            <DrawerTitle>{drawer.title || "Navigation"}</DrawerTitle>
+                        {drawer.title && <DrawerTitle>{drawer.title}</DrawerTitle>}
                             <DrawerDescription>{staticContent.description}</DrawerDescription>
                         </DrawerHeader>
                         <MainNavigationDrawerButtonGroup hide={!vp || vp.window.width >= drawer.breakpoint} buttons={buttons} />

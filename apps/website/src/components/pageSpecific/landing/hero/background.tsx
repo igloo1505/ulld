@@ -26,7 +26,8 @@ export const HeroBackground = ({
 
   const handleMouseMove = ({ currentTarget, clientX, clientY }: MouseEvent) => {
     if (!currentTarget) return;
-    let { left, top } = ref.current.getBoundingClientRect();
+    let { left, top } = ref.current?.getBoundingClientRect();
+    if(left === undefined || top === undefined) return
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   };

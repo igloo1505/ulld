@@ -9,9 +9,6 @@ import Link from "next/link";
 import { navbarButtonClasses } from "#/components/layouts/navbar/navbarButtonGroup";
 import { MainSponsorSection } from "../sections/sponsorSection/main";
 import { WhyShouldIUseULLDSection } from "../sections/whyShouldIUse/main";
-import { getPages } from "#/fumaDocs/sources/brand";
-import { Page, PageData } from "fumadocs-core/source";
-import { getPageById } from "#/fumaDocs/utils/getPageById";
 
 interface HeroProps { }
 
@@ -25,6 +22,9 @@ const LandingPage = (props: HeroProps) => {
             )}
         >
             <NavbarButtonPortal>
+                <Link className={navbarButtonClasses} href="/configure">
+                    Configure
+                </Link>
                 <Link className={navbarButtonClasses} href="/blog">
                     Blog
                 </Link>
