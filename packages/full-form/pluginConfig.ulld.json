@@ -1,13 +1,15 @@
 {
     "pluginName": "@ulld/full-form",
     "label": "Form",
+    "pluginId": "9cc833c0-4464-4d89-a7d8-4fd0ff539c15",
     "slot": "form",
     "components": [
         {
             "componentName": "SettingPageWrapper",
             "tags": [],
             "slot": "SettingsPageContainer",
-            "export": "settingPageWrapper"
+            "export": "settingPageWrapper",
+            "componentId": "56b956ac-2b8e-40a6-8c57-f6242090c1c3"
         }
     ],
     "parsers": [],

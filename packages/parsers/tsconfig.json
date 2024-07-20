@@ -8,6 +8,6 @@
     ],
     "compilerOptions": {
         "target": "ES2021",
-         "moduleResolution": "bundler"
+         "moduleResolution": "Bundler"
     }
 }

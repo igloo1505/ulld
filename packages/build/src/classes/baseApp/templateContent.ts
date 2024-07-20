@@ -2,6 +2,7 @@ import { FileManager } from "../baseClasses/fileManager";
 import { TargetPaths } from "../paths";
 
 export class TemplateContent extends FileManager {
+    replaceMeRegex: RegExp = /REPLACEME(\<[^\>]*>)?/gm
     constructor(public subPath: string, public paths: TargetPaths){
         super(subPath, paths)
     }
@@ -20,6 +21,6 @@ export class TemplateContent extends FileManager {
         this.replaceLinesByIndex(importLines)
     }
     replaceREPLACEME(componentName: string){
-        this.content = this.content?.replaceAll("REPLACEME", componentName)
+        this.content = this.content?.replaceAll(this.replaceMeRegex, componentName)
     }
 }

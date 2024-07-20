@@ -1,20 +1,21 @@
 import {
-  DeveloperConfigInput,
-  developerConfigSchema,
+    DeveloperConfigInput,
+    developerConfigSchema,
 } from "@ulld/configschema/developer";
 import { writePluginConfig } from "@ulld/developer/writePluginConfig";
 
 const pluginConfig: DeveloperConfigInput<"commandPalette"> = {
-  pluginName: "@ulld/command-palette",
-  slot: "commandPalette",
-  pages: [],
-  components: [
+    pluginName: "@ulld/command-palette",
+    slot: "commandPalette",
+    label: "Command Palette",
+    pages: [],
+    components: [
         {
             componentName: "CommandPalette",
             export: "./commandPalette",
-            slot: "commandPalette"
-        }
-  ],
+            slot: "commandPalette",
+        },
+    ],
 };
 
 const parsedPlugin = developerConfigSchema.parse(pluginConfig);

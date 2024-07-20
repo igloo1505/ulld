@@ -4,7 +4,8 @@ export const slotTypes = [
     "page",
     "component",
     "modalPage",
-    "embeddable"
+    "embeddable",
+    "generatedPage"
 ] as const
 
 

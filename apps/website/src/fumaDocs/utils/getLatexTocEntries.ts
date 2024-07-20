@@ -1,42 +1,5 @@
 import { DocsPageProps } from "fumadocs-ui/page";
-
-const removeIdSyntax = (s: string) => {
-    if (s.includes("[#") && s.endsWith("]")) {
-        return s.slice(0, s.lastIndexOf("["));
-    }
-    return s;
-};
-
-const removeLeadingPounds = (s: string): string => {
-    if (s.startsWith("#")) {
-        return removeLeadingPounds(s.slice(1));
-    }
-    return s;
-};
-
-const temporaryReplaceLogoAsTextWithEntry = (s: string) => {
-    let re = /\<LogoAsText[^/]*\/\>/gm;
-    return s.replace(re, "ULLD");
-};
-
-const replaceCodeStrings = (s: string) => {
-    return s.replaceAll("`", "");
-};
-
-const funcs: ((s: string) => string)[] = [
-    removeLeadingPounds,
-    removeIdSyntax,
-    temporaryReplaceLogoAsTextWithEntry,
-    replaceCodeStrings,
-];
-
-const parseTitle = (s: string) => {
-    let val = s;
-    for (const f of funcs) {
-        val = f(val);
-    }
-    return val;
-};
+import { parseMarkdownTitle } from "@ulld/utilities/getMarkdownHeadings";
 
 export const getLatexTocEntries = (
     toc: DocsPageProps["toc"] = [],
@@ -53,7 +16,7 @@ export const getLatexTocEntries = (
         const newTitle = titles[i].trim();
         t.push({
             ...entry,
-            title: parseTitle(newTitle),
+            title: parseMarkdownTitle(newTitle),
             // Removed this. No longer checking for validity and relying only on index. THe validity check was unreliable previously, but if this causes new issues revisit this.
             // let s = Array(entry.depth).fill("#").join("");
             // title: titles[i].startsWith(s) ? parseTitle(newTitle) : entry.title,

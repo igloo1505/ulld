@@ -59,19 +59,23 @@
     "files": [],
     "ulld-pluginConfig": {
         "pluginName": "@ulld/bib-manager",
+        "label": "Bibliography",
+        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself.",
         "slot": "bibliography",
         "components": [
             {
                 "componentName": "BibManagerPage",
                 "tags": [],
                 "slot": "BibliographyPage",
-                "export": "bibliographyPage"
+                "export": "bibliographyPage",
+                "componentId": "132b1fd2-26fd-4431-8a28-3cce7c41a0cc"
             },
             {
                 "componentName": "BibEntryDetails",
                 "tags": [],
                 "slot": "BibEntryDetails",
-                "export": "bibEntryDetails"
+                "export": "bibEntryDetails",
+                "componentId": "132b1fd2-26fd-4431-8a28-3cce7c41a0cc"
             }
         ],
         "parsers": [],
@@ -86,5 +90,6 @@
         ],
         "commandPalette": [],
         "tailwind": {}
-    }
+    },
+    "ulld-plugin-id": "5c8198c7-027a-4719-80bd-5ea7283be9dd"
 }

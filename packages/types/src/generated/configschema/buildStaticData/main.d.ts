@@ -57,7 +57,7 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
         pluginName: z.ZodString;
         componentName: z.ZodString;
         embeddableSyntax: z.ZodArray<z.ZodString, "many">;
-        paths: z.ZodObject<{
+        slugs: z.ZodObject<{
             short: z.ZodOptional<z.ZodString>;
             full: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
@@ -68,23 +68,29 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
             full?: string | undefined;
         }>;
         tags: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
+        componentId: z.ZodString;
+        pluginId: z.ZodString;
     }, "strip", z.ZodTypeAny, {
         tags: string[];
         pluginName: string;
         componentName: string;
         embeddableSyntax: string[];
-        paths: {
+        slugs: {
             short?: string | undefined;
             full?: string | undefined;
         };
+        componentId: string;
+        pluginId: string;
     }, {
         pluginName: string;
         componentName: string;
         embeddableSyntax: string[];
-        paths: {
+        slugs: {
             short?: string | undefined;
             full?: string | undefined;
         };
+        componentId: string;
+        pluginId: string;
         tags?: string[] | undefined;
     }>, "many">>;
 }, "strip", z.ZodTypeAny, {
@@ -111,10 +117,12 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
         pluginName: string;
         componentName: string;
         embeddableSyntax: string[];
-        paths: {
+        slugs: {
             short?: string | undefined;
             full?: string | undefined;
         };
+        componentId: string;
+        pluginId: string;
     }[];
 }, {
     fsRoot: string;
@@ -135,10 +143,12 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
         pluginName: string;
         componentName: string;
         embeddableSyntax: string[];
-        paths: {
+        slugs: {
             short?: string | undefined;
             full?: string | undefined;
         };
+        componentId: string;
+        pluginId: string;
         tags?: string[] | undefined;
     }[] | undefined;
 }>, {
@@ -213,10 +223,12 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
         pluginName: string;
         componentName: string;
         embeddableSyntax: string[];
-        paths: {
+        slugs: {
             short?: string | undefined;
             full?: string | undefined;
         };
+        componentId: string;
+        pluginId: string;
     }[];
 }, {
     fsRoot: string;
@@ -237,10 +249,12 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
         pluginName: string;
         componentName: string;
         embeddableSyntax: string[];
-        paths: {
+        slugs: {
             short?: string | undefined;
             full?: string | undefined;
         };
+        componentId: string;
+        pluginId: string;
         tags?: string[] | undefined;
     }[] | undefined;
 }>;

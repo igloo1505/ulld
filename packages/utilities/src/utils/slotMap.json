@@ -89,23 +89,14 @@
             "propsExtends": "MonacoPageParams"
         }
     },
-    "bibliography": {
-        "BibliographyPage": {
-            "path": "src/corePages/bibliography/bibliography.tsx",
+    "UI": {
+        "ComponentDocsListPage": {
+            "path": "src/corePages/componentDocs/componentDocsListPage.tsx",
             "clientOnly": false,
             "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "BibliographyPageProps"
-        },
-        "BibEntryDetails": {
-            "path": "src/components/slots/bibliography/bibEntryDetailsSheet.tsx",
-            "clientOnly": true,
-            "inReduxProvider": false,
             "type": "component",
-            "propsExtends": "BibEntryDetailsProps"
-        }
-    },
-    "UI": {
+            "propsExtends": "ComponentDocsListPageProps"
+        },
         "Pagination": {
             "path": "src/components/slots/ui/pagination.tsx",
             "clientOnly": false,
@@ -133,6 +124,13 @@
             "inReduxProvider": false,
             "type": "component",
             "propsExtends": "ConfirmationModalProps"
+        },
+        "ComponentDocumentationPageWrapper": {
+            "path": "src/components/slots/ui/componentDocumentationPageWrapper.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "ComponentDocWrapperProps"
         },
         "AutoSettingsTable": {
             "path": "src/components/slots/ui/autoSettingTable.tsx",
@@ -201,15 +199,31 @@
             "path": "src/components/notePageComponents/searchResultList.tsx",
             "clientOnly": false,
             "inReduxProvider": false,
-            "type": "page",
+            "type": "generatedPage",
             "propsExtends": "NoteTypeSearchResultListProps"
         },
         "NoteTypePageContainer": {
             "path": "src/components/notePageComponents/pageContainer.tsx",
             "clientOnly": false,
             "inReduxProvider": false,
-            "type": "page",
+            "type": "generatedPage",
             "propsExtends": "NotePageWrapperProps"
+        }
+    },
+    "bibliography": {
+        "BibliographyPage": {
+            "path": "src/corePages/bibliography/bibliography.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "page",
+            "propsExtends": "BibliographyPageProps"
+        },
+        "BibEntryDetails": {
+            "path": "src/components/slots/bibliography/bibEntryDetailsSheet.tsx",
+            "clientOnly": true,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "BibEntryDetailsProps"
         }
     },
     "taskManager": {
@@ -256,29 +270,14 @@
             "propsExtends": "TaskListSearchResultProps"
         }
     },
-    "pdf": {
-        "FullPdf": {
-            "path": "src/components/slots/pdf/pdfFull.tsx",
+    "navigation": {
+        "MdxNoteToc": {
+            "path": "src/components/slots/search/mdxNoteToc.tsx",
             "clientOnly": false,
             "inReduxProvider": false,
             "type": "component",
-            "propsExtends": "FullPdfProps"
+            "propsExtends": "MdxNoteTocProps"
         },
-        "EmbeddablePdf": {
-            "path": "src/components/requiredEmbeddableComponents/pdf.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "embeddable",
-            "propsExtends": "EmbeddablePdfProps",
-            "embeddables": [
-                {
-                    "regexToInclude": "<Pdf",
-                    "label": "Pdf"
-                }
-            ]
-        }
-    },
-    "navigation": {
         "secondary": {
             "path": "src/components/slots/navigation/secondaryNavigation.tsx",
             "clientOnly": false,
@@ -313,6 +312,28 @@
             "inReduxProvider": false,
             "type": "component",
             "propsExtends": "FooterProps"
+        }
+    },
+    "pdf": {
+        "FullPdf": {
+            "path": "src/components/slots/pdf/pdfFull.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "FullPdfProps"
+        },
+        "EmbeddablePdf": {
+            "path": "src/components/requiredEmbeddableComponents/pdf.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "embeddable",
+            "propsExtends": "EmbeddablePdfProps",
+            "embeddables": [
+                {
+                    "regexToInclude": "<Pdf",
+                    "label": "Pdf"
+                }
+            ]
         }
     },
     "dashboard": {

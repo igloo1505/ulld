@@ -8,6 +8,7 @@ import { writePluginConfig } from "@ulld/developer/writePluginConfig";
 const ulldPluginConfig: DeveloperConfigInput<"dashboard"> = {
     pluginName: "@ulld/landing-layouts",
     slot: "dashboard",
+    label: "Dashboards",
     components: [
         {
             componentName: "LandingPageBetaRelease",

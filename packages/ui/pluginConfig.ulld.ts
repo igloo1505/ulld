@@ -7,6 +7,7 @@ import { writePluginConfig } from "@ulld/developer/writePluginConfig";
 const pluginConfig: DeveloperConfigInput<"UI"> = {
     pluginName: "@ulld/ui",
     slot: "UI",
+    label: "UI",
     pages: [
         {
             slot: "BookmarksPage",
@@ -68,6 +69,26 @@ const pluginConfig: DeveloperConfigInput<"UI"> = {
             slot: "loadingIndicator",
             export: "./loadingIndicator",
         },
+        {
+            componentName: "ComponentDocsListPage",
+            slot: "ComponentDocsListPage",
+            export: "./componentDocsListPage"
+        },
+        {
+            componentName: "NoteTypeSecondaryFilter",
+            slot: "NoteTypeSecondaryFilter",
+            export: "./noteTypeSecondaryFilter"
+        },
+        {
+            componentName: "ComponentDocsPageNoteWrapper",
+            slot: "ComponentDocumentationPageWrapper",
+            export: "./componentDocsPageWrapper"
+        },
+        {
+            componentName: "NoteTypeSearchResultList",
+            slot: "NoteTypeSearchResultList",
+            export: "./noteTypeResultList"
+        }
     ],
     navigationLinks: [
         {

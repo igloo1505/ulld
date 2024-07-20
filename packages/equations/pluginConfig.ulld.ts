@@ -7,6 +7,7 @@ import { writePluginConfig } from "@ulld/developer/writePluginConfig";
 const pluginConfig: DeveloperConfigInput<"math"> = {
     pluginName: "@ulld/equations",
     slot: "math",
+    label: "Math",
     pages: [
         {
             export: "./equationModal",

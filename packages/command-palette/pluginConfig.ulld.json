@@ -1,12 +1,15 @@
 {
     "pluginName": "@ulld/command-palette",
+    "label": "Command Palette",
+    "pluginId": "d97de3cf-f893-4fb7-bb5f-b385c947d978",
     "slot": "commandPalette",
     "components": [
         {
             "componentName": "CommandPalette",
             "tags": [],
             "slot": "commandPalette",
-            "export": "commandPalette"
+            "export": "commandPalette",
+            "componentId": "a59461d9-9b64-4cf6-b7f0-ce87b0a30864"
         }
     ],
     "parsers": [],

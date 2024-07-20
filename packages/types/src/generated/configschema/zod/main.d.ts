@@ -352,16 +352,16 @@ export declare const appConfigSchema: z.ZodObject<{
             taskManager?: boolean | undefined;
         }>;
     }, "strip", z.ZodTypeAny, {
-        enabled: {
-            commandPalette: boolean;
-            tikz: boolean;
-        };
         pages: {
             bibliography: boolean;
             calendar: boolean;
             snippets: boolean;
             taskManager: boolean;
             equations: boolean;
+        };
+        enabled: {
+            commandPalette: boolean;
+            tikz: boolean;
         };
     }, {
         pages: {
@@ -1131,6 +1131,16 @@ export declare const appConfigSchema: z.ZodObject<{
             logo?: string | undefined;
         } | undefined;
     }>>;
+    meta: z.ZodDefault<z.ZodObject<{
+        title: z.ZodDefault<z.ZodString>;
+        desc: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        title: string;
+        desc?: string | undefined;
+    }, {
+        title?: string | undefined;
+        desc?: string | undefined;
+    }>>;
     plugins: z.ZodDefault<z.ZodEffects<z.ZodUnion<[z.ZodObject<{
         name: z.ZodString;
         version: z.ZodDefault<z.ZodString>;
@@ -1279,6 +1289,19 @@ export declare const appConfigSchema: z.ZodObject<{
             light?: string | undefined;
         } | undefined>;
     };
+    slots: {
+        bibliography?: any;
+        math?: any;
+        navigation?: any;
+        form?: any;
+        snippets?: any;
+        dashboard?: any;
+        taskManager?: any;
+        UI?: any;
+        pdf?: any;
+        editor?: any;
+        commandPalette?: any;
+    };
     fsRoot: string;
     autoTag: {
         tag: string;
@@ -1370,19 +1393,6 @@ export declare const appConfigSchema: z.ZodObject<{
         latexParsingDebounceTimeout: number;
         mdxParsingDebounceTimeout: number;
     };
-    slots: {
-        bibliography?: any;
-        math?: any;
-        navigation?: any;
-        form?: any;
-        snippets?: any;
-        dashboard?: any;
-        taskManager?: any;
-        UI?: any;
-        pdf?: any;
-        editor?: any;
-        commandPalette?: any;
-    };
     build: {
         database: {
             type: import("./build/database/database").ULLDSupportedDatabases;
@@ -1403,22 +1413,26 @@ export declare const appConfigSchema: z.ZodObject<{
             logo?: string | undefined;
         };
     };
+    meta: {
+        title: string;
+        desc?: string | undefined;
+    };
     plugins: {
         name: string;
         version: string;
     }[];
     cslPath?: string | undefined;
     features?: {
-        enabled: {
-            commandPalette: boolean;
-            tikz: boolean;
-        };
         pages: {
             bibliography: boolean;
             calendar: boolean;
             snippets: boolean;
             taskManager: boolean;
             equations: boolean;
+        };
+        enabled: {
+            commandPalette: boolean;
+            tikz: boolean;
         };
     } | undefined;
 }, {
@@ -1664,6 +1678,10 @@ export declare const appConfigSchema: z.ZodObject<{
             favicon?: string | undefined;
             logo?: string | undefined;
         } | undefined;
+    } | undefined;
+    meta?: {
+        title?: string | undefined;
+        desc?: string | undefined;
     } | undefined;
     plugins?: string | string[] | {
         name: string;

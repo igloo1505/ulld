@@ -7,6 +7,7 @@ import { writePluginConfig } from "@ulld/developer/writePluginConfig";
 const pluginConfig: DeveloperConfigInput<"pdf"> = {
     pluginName: "@ulld/pdf",
     slot: "pdf",
+    label: "Pdf",
     pages: [
         {
             slot: "FullPdf",

@@ -6,7 +6,7 @@ import { DocsBody, DocsPage } from "fumadocs-ui/page";
 import React, { ComponentProps, ReactNode } from "react";
 import TypeTable from "./typeTable";
 import ApplyMathjaxBandaid from "../utility/applyMathjaxBandaid";
-import MathjaxProvider from "../utility/providers/mathjax";
+import MathjaxProvider from "@ulld/utilities/providers-mathjax";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { serverComponentMap } from "#/mdx/serverComponentMap";
 import { getComponentMap } from "@ulld/component-map/client";
@@ -74,6 +74,7 @@ const DocsPageInternal = ({
             </Tabs>
         ),
     };
+
     return (
         <>
             <NoteStateObserver />

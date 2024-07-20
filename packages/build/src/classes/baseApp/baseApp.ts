@@ -34,8 +34,8 @@ export class BaseApp extends ShellManager {
         // this.applySlots()
         // this.createEventFunctions()
         // this.writeNoteTypePages()
+        // this.writePluginSettingPages();
         // this.copyAdditionalSources()
-        this.writePluginSettingPages();
     }
     createComponentMap(plugins: UlldPlugin[]) {
         this.log(`Generating component map...`);

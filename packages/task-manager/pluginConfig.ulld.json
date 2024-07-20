@@ -1,36 +1,43 @@
 {
     "pluginName": "@ulld/task-manager",
+    "label": "Task Manager",
+    "pluginId": "9a2f4468-9240-49ed-be6e-8a105d16bea5",
     "slot": "taskManager",
     "components": [
         {
             "componentName": "TaskDetails",
             "tags": [],
             "slot": "TaskDetails",
-            "export": "taskDetails"
+            "export": "taskDetails",
+            "componentId": "7e1d57b1-60da-4b3e-82f3-db102e80e0d6"
         },
         {
             "componentName": "AddTaskModal",
             "tags": [],
             "slot": "AddTask",
-            "export": "addTask"
+            "export": "addTask",
+            "componentId": "7e1d57b1-60da-4b3e-82f3-db102e80e0d6"
         },
         {
             "componentName": "TaskListResultList",
             "tags": [],
             "slot": "TaskListSearchResultList",
-            "export": "taskListSearchResults"
+            "export": "taskListSearchResults",
+            "componentId": "7e1d57b1-60da-4b3e-82f3-db102e80e0d6"
         },
         {
             "componentName": "AddTaskList",
             "tags": [],
             "slot": "AddTaskList",
-            "export": "addTaskList"
+            "export": "addTaskList",
+            "componentId": "7e1d57b1-60da-4b3e-82f3-db102e80e0d6"
         },
         {
             "componentName": "TaskListSearchResult",
             "tags": [],
             "slot": "TaskListSearchResult",
-            "export": "taskListSearchResult"
+            "export": "taskListSearchResult",
+            "componentId": "7e1d57b1-60da-4b3e-82f3-db102e80e0d6"
         }
     ],
     "parsers": [],

@@ -124,6 +124,8 @@
     },
     "ulld-pluginConfig": {
         "pluginName": "@ulld/snippets",
+        "label": "Editor",
+        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself.",
         "slot": "editor",
         "components": [],
         "parsers": [],
@@ -153,5 +155,6 @@
         "navigationLinks": [],
         "commandPalette": [],
         "tailwind": {}
-    }
+    },
+    "ulld-plugin-id": "500e04c0-0ff4-4c3e-9579-1754703c862d"
 }

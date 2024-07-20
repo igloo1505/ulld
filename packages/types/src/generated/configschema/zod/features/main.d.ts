@@ -30,16 +30,16 @@ export declare const featuresConfigSchema: z.ZodOptional<z.ZodObject<{
         taskManager?: boolean | undefined;
     }>;
 }, "strip", z.ZodTypeAny, {
-    enabled: {
-        commandPalette: boolean;
-        tikz: boolean;
-    };
     pages: {
         bibliography: boolean;
         calendar: boolean;
         snippets: boolean;
         taskManager: boolean;
         equations: boolean;
+    };
+    enabled: {
+        commandPalette: boolean;
+        tikz: boolean;
     };
 }, {
     pages: {

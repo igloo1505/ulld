@@ -300,6 +300,31 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         } | null | undefined> | undefined;
         theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
     }>>;
+    slots: z.ZodDefault<z.ZodObject<Record<keyof import("../../developer/slotMapRootType").SlotMap, z.ZodTypeAny>, "strip", z.ZodTypeAny, {
+        bibliography?: any;
+        math?: any;
+        navigation?: any;
+        form?: any;
+        snippets?: any;
+        dashboard?: any;
+        taskManager?: any;
+        UI?: any;
+        pdf?: any;
+        editor?: any;
+        commandPalette?: any;
+    }, {
+        bibliography?: any;
+        math?: any;
+        navigation?: any;
+        form?: any;
+        snippets?: any;
+        dashboard?: any;
+        taskManager?: any;
+        UI?: any;
+        pdf?: any;
+        editor?: any;
+        commandPalette?: any;
+    }>>;
     fsRoot: z.ZodEffects<z.ZodString, string, string>;
     autoTag: z.ZodDefault<z.ZodArray<z.ZodObject<{
         path: z.ZodString;
@@ -638,16 +663,16 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
             taskManager?: boolean | undefined;
         }>;
     }, "strip", z.ZodTypeAny, {
-        enabled: {
-            commandPalette: boolean;
-            tikz: boolean;
-        };
         pages: {
             bibliography: boolean;
             calendar: boolean;
             snippets: boolean;
             taskManager: boolean;
             equations: boolean;
+        };
+        enabled: {
+            commandPalette: boolean;
+            tikz: boolean;
         };
     }, {
         pages: {
@@ -706,31 +731,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
     }, {
         latexParsingDebounceTimeout?: number | undefined;
         mdxParsingDebounceTimeout?: number | undefined;
-    }>>;
-    slots: z.ZodDefault<z.ZodObject<Record<keyof import("../../developer/slotMapRootType").SlotMap, z.ZodTypeAny>, "strip", z.ZodTypeAny, {
-        bibliography?: any;
-        math?: any;
-        navigation?: any;
-        form?: any;
-        snippets?: any;
-        dashboard?: any;
-        taskManager?: any;
-        UI?: any;
-        pdf?: any;
-        editor?: any;
-        commandPalette?: any;
-    }, {
-        bibliography?: any;
-        math?: any;
-        navigation?: any;
-        form?: any;
-        snippets?: any;
-        dashboard?: any;
-        taskManager?: any;
-        UI?: any;
-        pdf?: any;
-        editor?: any;
-        commandPalette?: any;
     }>>;
     build: z.ZodDefault<z.ZodObject<{
         database: z.ZodDefault<z.ZodEffects<z.ZodDefault<z.ZodObject<{
@@ -857,6 +857,16 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
             favicon?: string | undefined;
             logo?: string | undefined;
         } | undefined;
+    }>>;
+    meta: z.ZodDefault<z.ZodObject<{
+        title: z.ZodDefault<z.ZodString>;
+        desc: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        title: string;
+        desc?: string | undefined;
+    }, {
+        title?: string | undefined;
+        desc?: string | undefined;
     }>>;
     plugins: z.ZodDefault<z.ZodEffects<z.ZodUnion<[z.ZodObject<{
         name: z.ZodString;
@@ -1265,6 +1275,19 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
             light?: string | undefined;
         } | undefined>;
     };
+    slots: {
+        bibliography?: any;
+        math?: any;
+        navigation?: any;
+        form?: any;
+        snippets?: any;
+        dashboard?: any;
+        taskManager?: any;
+        UI?: any;
+        pdf?: any;
+        editor?: any;
+        commandPalette?: any;
+    };
     fsRoot: string;
     autoTag: {
         tag: string;
@@ -1356,19 +1379,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         latexParsingDebounceTimeout: number;
         mdxParsingDebounceTimeout: number;
     };
-    slots: {
-        bibliography?: any;
-        math?: any;
-        navigation?: any;
-        form?: any;
-        snippets?: any;
-        dashboard?: any;
-        taskManager?: any;
-        UI?: any;
-        pdf?: any;
-        editor?: any;
-        commandPalette?: any;
-    };
     build: {
         database: {
             type: import("../build/database/database").ULLDSupportedDatabases;
@@ -1389,22 +1399,26 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
             logo?: string | undefined;
         };
     };
+    meta: {
+        title: string;
+        desc?: string | undefined;
+    };
     plugins: {
         name: string;
         version: string;
     }[];
     cslPath?: string | undefined;
     features?: {
-        enabled: {
-            commandPalette: boolean;
-            tikz: boolean;
-        };
         pages: {
             bibliography: boolean;
             calendar: boolean;
             snippets: boolean;
             taskManager: boolean;
             equations: boolean;
+        };
+        enabled: {
+            commandPalette: boolean;
+            tikz: boolean;
         };
     } | undefined;
 }, {
@@ -1529,6 +1543,19 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         } | null | undefined> | undefined;
         theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
     } | undefined;
+    slots?: {
+        bibliography?: any;
+        math?: any;
+        navigation?: any;
+        form?: any;
+        snippets?: any;
+        dashboard?: any;
+        taskManager?: any;
+        UI?: any;
+        pdf?: any;
+        editor?: any;
+        commandPalette?: any;
+    } | undefined;
     autoTag?: {
         tag: string;
         path: string;
@@ -1622,19 +1649,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         latexParsingDebounceTimeout?: number | undefined;
         mdxParsingDebounceTimeout?: number | undefined;
     } | undefined;
-    slots?: {
-        bibliography?: any;
-        math?: any;
-        navigation?: any;
-        form?: any;
-        snippets?: any;
-        dashboard?: any;
-        taskManager?: any;
-        UI?: any;
-        pdf?: any;
-        editor?: any;
-        commandPalette?: any;
-    } | undefined;
     build?: {
         database?: {
             type?: import("../build/database/database").ULLDSupportedDatabases | undefined;
@@ -1650,6 +1664,10 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
             favicon?: string | undefined;
             logo?: string | undefined;
         } | undefined;
+    } | undefined;
+    meta?: {
+        title?: string | undefined;
+        desc?: string | undefined;
     } | undefined;
     plugins?: string | string[] | {
         name: string;
@@ -1814,6 +1832,19 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
             light?: string | undefined;
         } | undefined>;
     };
+    slots: {
+        bibliography?: any;
+        math?: any;
+        navigation?: any;
+        form?: any;
+        snippets?: any;
+        dashboard?: any;
+        taskManager?: any;
+        UI?: any;
+        pdf?: any;
+        editor?: any;
+        commandPalette?: any;
+    };
     fsRoot: string;
     autoTag: {
         tag: string;
@@ -1905,19 +1936,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         latexParsingDebounceTimeout: number;
         mdxParsingDebounceTimeout: number;
     };
-    slots: {
-        bibliography?: any;
-        math?: any;
-        navigation?: any;
-        form?: any;
-        snippets?: any;
-        dashboard?: any;
-        taskManager?: any;
-        UI?: any;
-        pdf?: any;
-        editor?: any;
-        commandPalette?: any;
-    };
     build: {
         database: {
             type: import("../build/database/database").ULLDSupportedDatabases;
@@ -1938,22 +1956,26 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
             logo?: string | undefined;
         };
     };
+    meta: {
+        title: string;
+        desc?: string | undefined;
+    };
     plugins: {
         name: string;
         version: string;
     }[];
     cslPath?: string | undefined;
     features?: {
-        enabled: {
-            commandPalette: boolean;
-            tikz: boolean;
-        };
         pages: {
             bibliography: boolean;
             calendar: boolean;
             snippets: boolean;
             taskManager: boolean;
             equations: boolean;
+        };
+        enabled: {
+            commandPalette: boolean;
+            tikz: boolean;
         };
     } | undefined;
 }, {
@@ -2078,6 +2100,19 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         } | null | undefined> | undefined;
         theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
     } | undefined;
+    slots?: {
+        bibliography?: any;
+        math?: any;
+        navigation?: any;
+        form?: any;
+        snippets?: any;
+        dashboard?: any;
+        taskManager?: any;
+        UI?: any;
+        pdf?: any;
+        editor?: any;
+        commandPalette?: any;
+    } | undefined;
     autoTag?: {
         tag: string;
         path: string;
@@ -2171,19 +2206,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         latexParsingDebounceTimeout?: number | undefined;
         mdxParsingDebounceTimeout?: number | undefined;
     } | undefined;
-    slots?: {
-        bibliography?: any;
-        math?: any;
-        navigation?: any;
-        form?: any;
-        snippets?: any;
-        dashboard?: any;
-        taskManager?: any;
-        UI?: any;
-        pdf?: any;
-        editor?: any;
-        commandPalette?: any;
-    } | undefined;
     build?: {
         database?: {
             type?: import("../build/database/database").ULLDSupportedDatabases | undefined;
@@ -2199,6 +2221,10 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
             favicon?: string | undefined;
             logo?: string | undefined;
         } | undefined;
+    } | undefined;
+    meta?: {
+        title?: string | undefined;
+        desc?: string | undefined;
     } | undefined;
     plugins?: string | string[] | {
         name: string;

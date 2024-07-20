@@ -57,6 +57,8 @@
     },
     "ulld-pluginConfig": {
         "pluginName": "@ulld/pdf",
+        "label": "Pdf",
+        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself.",
         "slot": "pdf",
         "components": [
             {
@@ -69,7 +71,8 @@
                         "regexToInclude": "<Pdf",
                         "label": "Pdf"
                     }
-                ]
+                ],
+                "componentId": "f87885ce-67f7-476d-bde7-2f237ac46070"
             }
         ],
         "parsers": [],
@@ -84,5 +87,6 @@
         "navigationLinks": [],
         "commandPalette": [],
         "tailwind": {}
-    }
+    },
+    "ulld-plugin-id": "c521f76c-55f1-4898-a950-57107253044d"
 }

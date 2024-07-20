@@ -22,6 +22,7 @@ import {
     withForwardSlashOptional,
 } from "@ulld/utilities/fsUtils";
 import { buildOnlySchema } from "./build/main";
+import { appMetaSchema } from "./meta";
 
 export const zodRegexField = z
     .union([
@@ -179,6 +180,7 @@ export const appConfigSchema = z.object({
     terminal: terminalConfigSchema,
     slots: pluginSlotSchema.default({}),
     build: buildOnlySchema,
+    meta: appMetaSchema,
     plugins: z.union([pluginItemSchema, pluginItemSchema.array(), z.string(), z.string().array()]).transform((a) => {
         let items = Array.isArray(a) ? a : [a]
         return items.map((s) => typeof s === "string" ? {name: s, version: "latest"} : s)

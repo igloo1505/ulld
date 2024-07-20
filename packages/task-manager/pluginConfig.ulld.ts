@@ -7,6 +7,7 @@ import { writePluginConfig } from "@ulld/developer/writePluginConfig";
 const pluginConfig: DeveloperConfigInput<"taskManager"> = {
     pluginName: "@ulld/task-manager",
     slot: "taskManager",
+    label: "Task Manager",
     pages: [
         {
             slot: "TaskManagerPage",

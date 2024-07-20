@@ -17,15 +17,13 @@ interface SlotMap {
         LatexEditorPage: string,
         EditorPage: string,
     }, 
-    "bibliography": {
-        BibliographyPage: string,
-        BibEntryDetails: string,
-    }, 
     "UI": {
+        ComponentDocsListPage: string,
         Pagination: string,
         logo: string,
         loadingIndicator: string,
         confirmationModal: string,
+        ComponentDocumentationPageWrapper: string,
         AutoSettingsTable: string,
         AutoSettingFormModal: string,
         SearchResultsPage: string,
@@ -38,6 +36,10 @@ interface SlotMap {
         NoteTypeSearchResultList: string,
         NoteTypePageContainer: string,
     }, 
+    "bibliography": {
+        BibliographyPage: string,
+        BibEntryDetails: string,
+    }, 
     "taskManager": {
         TaskManagerPage: string,
         TaskDetails: string,
@@ -46,16 +48,17 @@ interface SlotMap {
         TaskListSearchResultList: string,
         TaskListSearchResult: string,
     }, 
-    "pdf": {
-        FullPdf: string,
-        EmbeddablePdf: string,
-    }, 
     "navigation": {
+        MdxNoteToc: string,
         secondary: string,
         navbar: string,
         MultiPageSidebar: string,
         FullScreenNavigationMenu: string,
         Footer: string,
+    }, 
+    "pdf": {
+        FullPdf: string,
+        EmbeddablePdf: string,
     }, 
     "dashboard": {
         LandingPage: string,

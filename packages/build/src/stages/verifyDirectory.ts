@@ -4,12 +4,14 @@ import {
 } from "../utils/locationUtils";
 import chalk from "chalk";
 import { prompt } from "enquirer";
+import fs from 'fs'
+import { UlldBuildProcess } from "../classes/build";
 
 export const verifyDirectory = async (forceCurrentDir: boolean) => {
     const currentDir = getCurrentDir();
 
     if (forceCurrentDir) {
-        return currentDir;
+        return new UlldBuildProcess(currentDir);
     }
 
     let useCurrentDir = await prompt({
@@ -21,7 +23,7 @@ Is this where you'd like to build ${chalk.hex("#0ba5e9")("U")}LLD?`,
         initial: true,
     });
     if ("useCurrentDir" in useCurrentDir && useCurrentDir.useCurrentDir) {
-        return currentDir;
+        return new UlldBuildProcess(currentDir);
     }
 
 
@@ -42,5 +44,9 @@ Is this where you'd like to build ${chalk.hex("#0ba5e9")("U")}LLD?`,
         },
         // initial: currentDir,
     });
-    return newPath.path
+    if (!newPath.path || !fs.existsSync(newPath.path)) {
+            console.log(`You need to specify a directory to continue.`);
+            process.exit(1);
+    }
+    return new UlldBuildProcess(newPath.path)
 };

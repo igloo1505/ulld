@@ -1,3 +1,4 @@
+export * from "./baseApp/main"
 export type MethodListPathKeys =
     | "onBackupMethodList"
     | "onRestoreMethodList"

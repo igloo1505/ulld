@@ -106,7 +106,6 @@ export class UlldPlugin extends ShellManager {
         if (this.pluginConfig.settings) {
             this.settingsPage = new PluginSettingsPage(
                 this.paths,
-                this.pluginConfig.settings,
                 this.pluginConfig
             );
         }

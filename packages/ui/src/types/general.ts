@@ -1,13 +1,21 @@
 import {
     AutoSettingType,
     ConfirmationModalConfig,
+    ContentHeading,
     LetterType,
     NoteTypePageProps,
     SearchAllSearchType,
 } from "@ulld/utilities/types";
-import { FC, ReactNode } from "react";
+import { ComponentType, FC, ReactNode } from "react";
 import { NoteFilter } from "@ulld/api/classes/search/noteFilter";
-import { AppConfigSchemaOutput } from "@ulld/types";
+import { AppConfigSchemaOutput, BuildStaticDataOutput } from "@ulld/types";
+import { ComponentDocsQueryParams } from "@ulld/utilities/types";
+
+
+export interface MdxNoteTocProps {
+    headings: ContentHeading[];
+    footer?: ReactNode;
+}
 
 export interface ToastConfigType {
     destructive?: boolean;
@@ -94,8 +102,25 @@ export type NoteTypeSearchResultListProps = Pick<
 export interface NotePageWrapperProps extends NoteTypePageProps {
     children: ReactNode;
     docTypeData?: AppConfigSchemaOutput["noteTypes"][number];
+    toc: ComponentType<MdxNoteTocProps>
 }
 
 export interface NoteTypeSecondaryFilterProps extends NoteTypePageProps {
-    docTypeData?: AppConfigSchemaOutput["noteTypes"][number];
+    noteType: AppConfigSchemaOutput["noteTypes"][number];
+    data: Awaited<
+        ReturnType<InstanceType<typeof NoteFilter>["getQuerySecondaryData"]>
+    >;
+}
+
+
+export interface ComponentDocsListPageProps {
+    searchParams: ComponentDocsQueryParams;
+    items: BuildStaticDataOutput["componentDocs"];
+}
+
+export interface ComponentDocWrapperProps {
+    headings: ContentHeading[];
+    item: BuildStaticDataOutput["componentDocs"][number];
+    children: ReactNode;
+    toc: ComponentType<MdxNoteTocProps>;
 }

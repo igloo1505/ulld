@@ -7,6 +7,7 @@ import { writePluginConfig } from "@ulld/developer/writePluginConfig";
 const pluginConfig: DeveloperConfigInput<"bibliography"> = {
     pluginName: "@ulld/bib-manager",
     slot: "bibliography",
+    label: "Bibliography",
     pages: [],
     components: [
         {

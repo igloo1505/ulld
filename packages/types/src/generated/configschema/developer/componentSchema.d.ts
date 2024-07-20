@@ -62,9 +62,11 @@ export declare const componentConfigSchema: z.ZodObject<{
     }[] | undefined>;
     docsExport: z.ZodOptional<z.ZodString>;
     fullDocsExport: z.ZodOptional<z.ZodString>;
+    componentId: z.ZodDefault<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     tags: string[];
     componentName: string;
+    componentId: string;
     export: string;
     slot?: string | undefined;
     embeddable?: {
@@ -87,6 +89,7 @@ export declare const componentConfigSchema: z.ZodObject<{
     }[] | undefined;
     docsExport?: string | undefined;
     fullDocsExport?: string | undefined;
+    componentId?: string | undefined;
 }>;
 export type EmbeddableConfigSchema = z.infer<typeof embeddableConfigSchema>;
 export type BaseAppEmbeddableConfig = {

@@ -1,5 +1,7 @@
 {
     "pluginName": "@ulld/equations",
+    "label": "Math",
+    "pluginId": "6e475731-b787-46d4-9ef1-fee1548eb30e",
     "slot": "math",
     "components": [],
     "parsers": [],

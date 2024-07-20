@@ -6,11 +6,11 @@ export const slotKeySchema = z.union([
     z.literal("snippets"),
     z.literal("math"),
     z.literal("editor"),
-    z.literal("bibliography"),
     z.literal("UI"),
+    z.literal("bibliography"),
     z.literal("taskManager"),
-    z.literal("pdf"),
     z.literal("navigation"),
+    z.literal("pdf"),
     z.literal("dashboard"),
     z.literal("form"),
     z.literal("commandPalette"),
@@ -41,17 +41,13 @@ export const editorSubkeySchema = z.union([
 ])
 
 
-export const bibliographySubkeySchema = z.union([
-    z.literal("BibliographyPage"),
-    z.literal("BibEntryDetails"),
-])
-
-
 export const UISubkeySchema = z.union([
+    z.literal("ComponentDocsListPage"),
     z.literal("Pagination"),
     z.literal("logo"),
     z.literal("loadingIndicator"),
     z.literal("confirmationModal"),
+    z.literal("ComponentDocumentationPageWrapper"),
     z.literal("AutoSettingsTable"),
     z.literal("AutoSettingFormModal"),
     z.literal("SearchResultsPage"),
@@ -66,6 +62,12 @@ export const UISubkeySchema = z.union([
 ])
 
 
+export const bibliographySubkeySchema = z.union([
+    z.literal("BibliographyPage"),
+    z.literal("BibEntryDetails"),
+])
+
+
 export const taskManagerSubkeySchema = z.union([
     z.literal("TaskManagerPage"),
     z.literal("TaskDetails"),
@@ -76,18 +78,19 @@ export const taskManagerSubkeySchema = z.union([
 ])
 
 
-export const pdfSubkeySchema = z.union([
-    z.literal("FullPdf"),
-    z.literal("EmbeddablePdf"),
-])
-
-
 export const navigationSubkeySchema = z.union([
+    z.literal("MdxNoteToc"),
     z.literal("secondary"),
     z.literal("navbar"),
     z.literal("MultiPageSidebar"),
     z.literal("FullScreenNavigationMenu"),
     z.literal("Footer"),
+])
+
+
+export const pdfSubkeySchema = z.union([
+    z.literal("FullPdf"),
+    z.literal("EmbeddablePdf"),
 ])
 
 

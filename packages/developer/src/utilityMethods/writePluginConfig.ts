@@ -1,6 +1,12 @@
-import { DeveloperConfigOutput } from "@ulld/configschema/developer";
+import {
+    DeveloperConfigOutput,
+    internalBuildDeveloperConfigSchema,
+} from "@ulld/configschema/developer";
 import fs from "fs";
 import path from "path";
+import { randomUUID } from "node:crypto";
+import { transformExportString } from "@ulld/utilities/transformExportString";
+import staticBuildData from "@ulld/utilities/buildStaticData";
 
 const getArrWithoutOverlap = <T extends unknown>(
     arr: T[],
@@ -14,6 +20,89 @@ const getArrWithoutOverlap = <T extends unknown>(
         }
     }
     return vals;
+};
+
+const getPackageJsonData = (pkgPath: string) => {
+    return JSON.parse(fs.readFileSync(pkgPath, { encoding: "utf-8" }));
+};
+
+const writeModifiedPackageJson = (pkgPath: string, data: object) => {
+    fs.writeFileSync(pkgPath, JSON.stringify(data, null, 4), {
+        encoding: "utf-8",
+    });
+};
+
+const writeComponentIds = (
+    dirName: string,
+    components: DeveloperConfigOutput["components"],
+) => {
+    let targetFile = path.join(dirName, "staticComponentIds.json");
+    let fileExists = fs.existsSync(targetFile);
+    let existingMap = fileExists
+        ? JSON.parse(fs.readFileSync(targetFile, { encoding: "utf-8" }))
+        : {};
+    for (const c of components) {
+        if (
+            !(c.componentName in existingMap) ||
+            existingMap[c.componentName] !== c.componentId
+        ) {
+            let newId = c.componentId ? c.componentId : randomUUID();
+            existingMap[c.componentName] = newId;
+        }
+    }
+    fs.writeFileSync(targetFile, JSON.stringify(existingMap, null, 4), {
+        encoding: "utf-8",
+    });
+};
+
+const getPluginId = (pkgData: object, pluginConfig?: DeveloperConfigOutput) => {
+    let data = pkgData as any;
+    let pluginId = data["ulld-plugin-id"];
+    let shouldWrite = false;
+    if (!pluginId) {
+        pluginId = randomUUID();
+        data["ulld-plugin-id"] = pluginId;
+        shouldWrite = true;
+    }
+    if (pluginConfig) {
+        data["ulld-pluginConfig"] = pluginConfig;
+        shouldWrite = true;
+    }
+    return { pluginId, shouldWrite, data };
+};
+
+const getExistingExports = (pkgJsonData: {
+    exports: Record<string, string>;
+}) => {
+    return Object.keys(pkgJsonData.exports).map((k) => transformExportString(k));
+};
+
+const validateExports = (
+    exportStrings: string[],
+    config: DeveloperConfigOutput,
+) => {
+    for (const configKeyItem of staticBuildData.developerConfigKeysWithExportField) {
+        if (configKeyItem.isArray) {
+            for (const k of (config[
+                configKeyItem.key as keyof typeof config
+            ] as any[] || [])) {
+                if (!exportStrings.includes(k.export)) {
+                    throw new Error(
+                        `Could not find matching export for ${k.componentName} in your package.json file.`,
+                    );
+                }
+            }
+        } else {
+            let item = config[configKeyItem.key as keyof typeof config] as {
+                export: string;
+            };
+            if (!exportStrings.includes(item.export)) {
+                throw new Error(
+                    `Could not find matching export for ${item} in your package.json file.`,
+                );
+            }
+        }
+    }
 };
 
 export const writePluginConfig = (
@@ -45,22 +134,29 @@ export const writePluginConfig = (
             encoding: "utf-8",
         });
     }
-    if (appendToPackageJson) {
-        let packageFilePath = path.join(directory, "package.json");
-        if (fs.existsSync(packageFilePath)) {
-            let data = JSON.parse(
-                fs.readFileSync(packageFilePath, { encoding: "utf-8" }),
-            );
-            data["ulld-pluginConfig"] = config;
-            fs.writeFileSync(packageFilePath, JSON.stringify(data, null, 4), {
-                encoding: "utf-8",
-            });
-        }
+    let packageFilePath = path.join(directory, "package.json");
+    let pkgData = getPackageJsonData(packageFilePath);
+    let existingExports = getExistingExports(pkgData);
+    validateExports(existingExports, config);
+    let {
+        pluginId,
+        shouldWrite,
+        data: newData,
+    } = getPluginId(pkgData, appendToPackageJson ? config : undefined);
+    if (shouldWrite) {
+        writeModifiedPackageJson(packageFilePath, newData);
     }
+    writeComponentIds(directory, config.components);
+
+    let data = internalBuildDeveloperConfigSchema.parse({
+        ...config,
+        pluginId,
+    });
+
     if (!appendToPackageJson || appendToPackageJson === "both") {
         fs.writeFileSync(
             path.join(directory, "pluginConfig.ulld.json"),
-            JSON.stringify(config, null, 4),
+            JSON.stringify(data, null, 4),
             { encoding: "utf-8" },
         );
     }

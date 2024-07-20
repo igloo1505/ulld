@@ -12,6 +12,9 @@ import PaginationGroup from "#/components/slots/ui/pagination";
 import { paginateTemplateString } from "@ulld/utilities/paginationUtils";
 import { searchAllParamsToSearchParamsClass } from "@ulld/utilities/searchUtils";
 import NoteTypeSecondaryFilterTemplate from "#/components/notePageComponents/secondaryNoteTypeFilter";
+import MdxNoteTocTemplate from "#/components/slots/navigation/mdxNoteToc";
+import { notFound } from "next/navigation";
+
 
 const categoryId: string = "<<CATEGORY_ID>>";
 
@@ -20,18 +23,25 @@ const baseUrl: string = "<<BASE_URL>>"
 const MathPage = async (props: NoteTypePageProps) => {
     const docTypeData = appConfig.noteTypes.find((n) => n.id === categoryId);
     const filter = new NoteFilter(categoryId, props?.searchParams);
-    await filter.defaultCategorySearch(false, appConfig as AppConfigSchemaOutput);
+    await filter.defaultCategorySearch(true, appConfig as AppConfigSchemaOutput);
     let sp = searchAllParamsToSearchParamsClass(props.searchParams)
     sp.set("page", paginateTemplateString)
+    let secondaryData = await filter.getQuerySecondaryData(appConfig as AppConfigSchemaOutput)
+
+    if(!docTypeData){
+        return notFound();
+    }
 
     return (
         <NotePageWrapperTemplate
             {...props}
+            toc={MdxNoteTocTemplate}
             docTypeData={docTypeData as NotePageWrapperProps["docTypeData"]}
         >
             <NoteTypeSecondaryFilterTemplate 
                 {...props}
-            docTypeData={docTypeData as NotePageWrapperProps["docTypeData"]}
+                data={secondaryData}
+                noteType={docTypeData as NotePageWrapperProps["docTypeData"]}
             />
             <NoteTypeSearchResultList
                 notes={
