@@ -75,42 +75,42 @@
                 "tags": [],
                 "slot": "navbar",
                 "export": "navbar",
-                "componentId": "f05cf102-7474-4549-a819-0c42a8276f77"
+                "componentId": "c94602cf-027a-4914-8e97-5f38baa0dc79"
             },
             {
                 "componentName": "SidebarNavigation",
                 "tags": [],
                 "slot": "secondary",
                 "export": "sidebar",
-                "componentId": "f05cf102-7474-4549-a819-0c42a8276f77"
+                "componentId": "c94602cf-027a-4914-8e97-5f38baa0dc79"
             },
             {
                 "componentName": "MultiPageSidebar",
                 "tags": [],
                 "slot": "MultiPageSidebar",
                 "export": "multiPageSidebar",
-                "componentId": "f05cf102-7474-4549-a819-0c42a8276f77"
+                "componentId": "c94602cf-027a-4914-8e97-5f38baa0dc79"
             },
             {
                 "componentName": "FullScreenNavigation",
                 "tags": [],
                 "slot": "FullScreenNavigationMenu",
                 "export": "fullScreenNav",
-                "componentId": "f05cf102-7474-4549-a819-0c42a8276f77"
+                "componentId": "c94602cf-027a-4914-8e97-5f38baa0dc79"
             },
             {
                 "componentName": "FooterComponent",
                 "tags": [],
                 "slot": "Footer",
                 "export": "footerSlotComponent",
-                "componentId": "f05cf102-7474-4549-a819-0c42a8276f77"
+                "componentId": "c94602cf-027a-4914-8e97-5f38baa0dc79"
             },
             {
                 "componentName": "MdxNoteToc",
                 "tags": [],
                 "slot": "MdxNoteToc",
                 "export": "mdxNoteToc",
-                "componentId": "f05cf102-7474-4549-a819-0c42a8276f77"
+                "componentId": "c94602cf-027a-4914-8e97-5f38baa0dc79"
             }
         ],
         "parsers": [],

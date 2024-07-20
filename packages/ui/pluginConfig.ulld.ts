@@ -88,6 +88,11 @@ const pluginConfig: DeveloperConfigInput<"UI"> = {
             componentName: "NoteTypeSearchResultList",
             slot: "NoteTypeSearchResultList",
             export: "./noteTypeResultList"
+        },
+        {
+            componentName: "NotePageWrapper",
+            slot: "MdxNoteContainer",
+            export: "./mdxPageContainer"
         }
     ],
     navigationLinks: [

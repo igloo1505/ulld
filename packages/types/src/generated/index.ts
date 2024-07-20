@@ -4,6 +4,7 @@ export type * from "./configschema/zod/writeConfigJson.d.ts";
 export type * from "./configschema/zod/terminalConfig.d.ts";
 export type * from "./configschema/zod/performanceConfig.d.ts";
 export type * from "./configschema/zod/navigationConfig.d.ts";
+export type * from "./configschema/zod/meta.d.ts";
 export type * from "./configschema/zod/main.d.ts";
 export type * from "./configschema/zod/internalDocumentTypes.d.ts";
 export type * from "./configschema/zod/getInternalConfig.d.ts";

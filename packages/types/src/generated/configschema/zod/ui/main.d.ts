@@ -41,24 +41,12 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
             path: string;
         }[] | "default" | undefined;
     }>>;
-    media: z.ZodDefault<z.ZodEffects<z.ZodObject<{
+    media: z.ZodDefault<z.ZodObject<{
         imageMap: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>>;
         includeDefaultImageMap: z.ZodDefault<z.ZodBoolean>;
         imageRemoteTest: z.ZodDefault<z.ZodArray<z.ZodType<RegExp, z.ZodTypeDef, RegExp>, "many">>;
     }, "strip", z.ZodTypeAny, {
         imageMap: Record<string, string | undefined>;
-        includeDefaultImageMap: boolean;
-        imageRemoteTest: RegExp[];
-    }, {
-        imageMap?: Record<string, string | undefined> | undefined;
-        includeDefaultImageMap?: boolean | undefined;
-        imageRemoteTest?: RegExp[] | undefined;
-    }>, {
-        imageMap: {
-            imageMap: Record<string, string | undefined>;
-            includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
-        };
         includeDefaultImageMap: boolean;
         imageRemoteTest: RegExp[];
     }, {
@@ -100,11 +88,7 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
         }[] | "default" | undefined);
     };
     media: {
-        imageMap: {
-            imageMap: Record<string, string | undefined>;
-            includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
-        };
+        imageMap: Record<string, string | undefined>;
         includeDefaultImageMap: boolean;
         imageRemoteTest: RegExp[];
     };

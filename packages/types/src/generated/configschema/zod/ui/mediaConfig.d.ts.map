@@ -1,1 +1,1 @@
-{"version":3,"file":"mediaConfig.d.ts","sourceRoot":"","sources":["../../../../../../configschema/src/zod/ui/mediaConfig.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AAIxB,eAAO,MAAM,iBAAiB;;;;;;;;;;;;;;;;;;;;;;;;GAWhB,CAAA"}
+{"version":3,"file":"mediaConfig.d.ts","sourceRoot":"","sources":["../../../../../../configschema/src/zod/ui/mediaConfig.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AAIxB,eAAO,MAAM,iBAAiB;;;;;;;;;;;;GAKlB,CAAA"}

@@ -34,7 +34,7 @@ interface SlotMap {
         DictionaryPageItem: string,
         NoteTypeSecondaryFilter: string,
         NoteTypeSearchResultList: string,
-        NoteTypePageContainer: string,
+        MdxNoteContainer: string,
     }, 
     "bibliography": {
         BibliographyPage: string,
@@ -48,17 +48,17 @@ interface SlotMap {
         TaskListSearchResultList: string,
         TaskListSearchResult: string,
     }, 
-    "navigation": {
-        MdxNoteToc: string,
-        secondary: string,
-        navbar: string,
-        MultiPageSidebar: string,
-        FullScreenNavigationMenu: string,
-        Footer: string,
-    }, 
     "pdf": {
         FullPdf: string,
         EmbeddablePdf: string,
+    }, 
+    "navigation": {
+        secondary: string,
+        navbar: string,
+        MultiPageSidebar: string,
+        MdxNoteToc: string,
+        FullScreenNavigationMenu: string,
+        Footer: string,
     }, 
     "dashboard": {
         LandingPage: string,

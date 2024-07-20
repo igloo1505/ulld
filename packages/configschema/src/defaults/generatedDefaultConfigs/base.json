@@ -90,11 +90,7 @@
             "fontPaths": "default"
         },
         "media": {
-            "imageMap": {
-                "imageMap": {},
-                "includeDefaultImageMap": true,
-                "imageRemoteTest": []
-            },
+            "imageMap": {},
             "includeDefaultImageMap": true,
             "imageRemoteTest": []
         },

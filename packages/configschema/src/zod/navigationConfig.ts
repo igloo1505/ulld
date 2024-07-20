@@ -1,9 +1,7 @@
 import { z } from "zod";
 import {
     ValidIconName,
-    completeValidIconNameList,
 } from "@ulld/icons/dynamic";
-import { readDocumentTypes } from "../utilityFunctions/readDocumentTypes";
 import { DocumentTypeConfig } from "./documentConfigSchema";
 import allIcons from "@ulld/icons/names"
 
@@ -98,36 +96,7 @@ export const navigationConfigSchema = z
             .default([])
             .describe(
                 "Either the document type id or the internalLink id to be to included in the navbar.",
-            )
-            .transform((navLinks) => {
-                let d: (Omit<SidebarLink, "Icon" | "icon"> & {
-                    icon?: SidebarLink["icon"];
-                })[] = [];
-                for (const k of navLinks) {
-                    const docTypes = docTypeList ? docTypeList : readDocumentTypes();
-                    if (!docTypeList) {
-                        docTypeList = docTypes;
-                    }
-                    if (typeof k === "string") {
-                        const dt = docTypes.find((a) => a.id === k);
-                        if (dt) {
-                            d.push({
-                                icon: dt.icon,
-                                href: dt.url,
-                                label: dt.label,
-                            });
-                        }
-                    } else {
-                        d.push({
-                            icon: k.icon,
-                            href: k.href,
-                            label: k.label,
-                            onClick: k.onClick,
-                        });
-                    }
-                }
-                return d;
-            }),
+            ),
         // RESUME: Come back and figure out this TS error.
         sidebarLinks: z
             .union([
@@ -145,33 +114,6 @@ export const navigationConfigSchema = z
             .describe(
                 "Either the document type id or the internalLink id to be to included in the navbar.",
             )
-            .transform((a) => {
-                let objs: SidebarLink[] = [];
-                const docTypes = docTypeList ? docTypeList : readDocumentTypes();
-                if (!docTypeList) {
-                    docTypeList = docTypes;
-                }
-                for (const k of a) {
-                    if (typeof k === "string") {
-                        const dt = docTypes.find((d) => d.id === k);
-                        if (dt) {
-                            objs.push({
-                                href: dt.url,
-                                label: dt.label,
-                                icon: dt.icon || "note",
-                            });
-                        }
-                    } else {
-                        if ((k.icon || k.Icon) && (k.href || k.onClick)) {
-                            objs.push(k as SidebarLink);
-                        } else {
-                            console.warn(`Could not process the sidebar link: 
-${JSON.stringify(a, null, 4)}`);
-                        }
-                    }
-                }
-                return objs;
-            }),
     })
     .default({});
 

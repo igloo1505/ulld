@@ -12,7 +12,6 @@ import PaginationGroup from "#/components/slots/ui/pagination";
 import { paginateTemplateString } from "@ulld/utilities/paginationUtils";
 import { searchAllParamsToSearchParamsClass } from "@ulld/utilities/searchUtils";
 import NoteTypeSecondaryFilterTemplate from "#/components/notePageComponents/secondaryNoteTypeFilter";
-import MdxNoteTocTemplate from "#/components/slots/navigation/mdxNoteToc";
 import { notFound } from "next/navigation";
 
 
@@ -35,7 +34,6 @@ const MathPage = async (props: NoteTypePageProps) => {
     return (
         <NotePageWrapperTemplate
             {...props}
-            toc={MdxNoteTocTemplate}
             docTypeData={docTypeData as NotePageWrapperProps["docTypeData"]}
         >
             <NoteTypeSecondaryFilterTemplate 

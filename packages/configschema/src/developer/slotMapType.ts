@@ -14,9 +14,9 @@ export type BibliographySubSlots = keyof SM["bibliography"]
 
 export type TaskManagerSubSlots = keyof SM["taskManager"]
 
-export type NavigationSubSlots = keyof SM["navigation"]
-
 export type PdfSubSlots = keyof SM["pdf"]
+
+export type NavigationSubSlots = keyof SM["navigation"]
 
 export type DashboardSubSlots = keyof SM["dashboard"]
 
@@ -24,4 +24,4 @@ export type FormSubSlots = keyof SM["form"]
 
 export type CommandPaletteSubSlots = keyof SM["commandPalette"]
 
-export type AnySubSlotKey = SnippetsSubSlots | MathSubSlots | EditorSubSlots | UISubSlots | BibliographySubSlots | TaskManagerSubSlots | NavigationSubSlots | PdfSubSlots | DashboardSubSlots | FormSubSlots | CommandPaletteSubSlots;
+export type AnySubSlotKey = SnippetsSubSlots | MathSubSlots | EditorSubSlots | UISubSlots | BibliographySubSlots | TaskManagerSubSlots | PdfSubSlots | NavigationSubSlots | DashboardSubSlots | FormSubSlots | CommandPaletteSubSlots;

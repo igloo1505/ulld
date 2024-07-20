@@ -202,7 +202,7 @@
             "type": "generatedPage",
             "propsExtends": "NoteTypeSearchResultListProps"
         },
-        "NoteTypePageContainer": {
+        "MdxNoteContainer": {
             "path": "src/components/notePageComponents/pageContainer.tsx",
             "clientOnly": false,
             "inReduxProvider": false,
@@ -270,14 +270,29 @@
             "propsExtends": "TaskListSearchResultProps"
         }
     },
-    "navigation": {
-        "MdxNoteToc": {
-            "path": "src/components/slots/search/mdxNoteToc.tsx",
+    "pdf": {
+        "FullPdf": {
+            "path": "src/components/slots/pdf/pdfFull.tsx",
             "clientOnly": false,
             "inReduxProvider": false,
             "type": "component",
-            "propsExtends": "MdxNoteTocProps"
+            "propsExtends": "FullPdfProps"
         },
+        "EmbeddablePdf": {
+            "path": "src/components/requiredEmbeddableComponents/pdf.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "embeddable",
+            "propsExtends": "EmbeddablePdfProps",
+            "embeddables": [
+                {
+                    "regexToInclude": "<Pdf",
+                    "label": "Pdf"
+                }
+            ]
+        }
+    },
+    "navigation": {
         "secondary": {
             "path": "src/components/slots/navigation/secondaryNavigation.tsx",
             "clientOnly": false,
@@ -299,6 +314,13 @@
             "type": "component",
             "propsExtends": "MultipageSidebarProps"
         },
+        "MdxNoteToc": {
+            "path": "src/components/slots/navigation/mdxNoteToc.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "MdxNoteTocProps"
+        },
         "FullScreenNavigationMenu": {
             "path": "src/components/slots/navigation/fullScreenNavigationMenu.tsx",
             "clientOnly": false,
@@ -312,28 +334,6 @@
             "inReduxProvider": false,
             "type": "component",
             "propsExtends": "FooterProps"
-        }
-    },
-    "pdf": {
-        "FullPdf": {
-            "path": "src/components/slots/pdf/pdfFull.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "FullPdfProps"
-        },
-        "EmbeddablePdf": {
-            "path": "src/components/requiredEmbeddableComponents/pdf.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "embeddable",
-            "propsExtends": "EmbeddablePdfProps",
-            "embeddables": [
-                {
-                    "regexToInclude": "<Pdf",
-                    "label": "Pdf"
-                }
-            ]
         }
     },
     "dashboard": {

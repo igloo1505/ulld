@@ -9,8 +9,8 @@ export const slotKeySchema = z.union([
     z.literal("UI"),
     z.literal("bibliography"),
     z.literal("taskManager"),
-    z.literal("navigation"),
     z.literal("pdf"),
+    z.literal("navigation"),
     z.literal("dashboard"),
     z.literal("form"),
     z.literal("commandPalette"),
@@ -58,7 +58,7 @@ export const UISubkeySchema = z.union([
     z.literal("DictionaryPageItem"),
     z.literal("NoteTypeSecondaryFilter"),
     z.literal("NoteTypeSearchResultList"),
-    z.literal("NoteTypePageContainer"),
+    z.literal("MdxNoteContainer"),
 ])
 
 
@@ -78,19 +78,19 @@ export const taskManagerSubkeySchema = z.union([
 ])
 
 
-export const navigationSubkeySchema = z.union([
-    z.literal("MdxNoteToc"),
-    z.literal("secondary"),
-    z.literal("navbar"),
-    z.literal("MultiPageSidebar"),
-    z.literal("FullScreenNavigationMenu"),
-    z.literal("Footer"),
-])
-
-
 export const pdfSubkeySchema = z.union([
     z.literal("FullPdf"),
     z.literal("EmbeddablePdf"),
+])
+
+
+export const navigationSubkeySchema = z.union([
+    z.literal("secondary"),
+    z.literal("navbar"),
+    z.literal("MultiPageSidebar"),
+    z.literal("MdxNoteToc"),
+    z.literal("FullScreenNavigationMenu"),
+    z.literal("Footer"),
 ])
 
 
