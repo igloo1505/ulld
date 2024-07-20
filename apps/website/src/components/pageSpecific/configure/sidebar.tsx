@@ -5,39 +5,39 @@ import { usePathname } from "next/navigation";
 import { buttonVariants } from "@ulld/tailwind/button";
 import Link from "next/link";
 import { sidebarNavItems } from "./staticData";
+import ConfigureFormMobileDropdown from "./mobileDropdown";
 
-interface ConfigureSidebarProps extends HTMLProps<HTMLElement> {
-}
+interface ConfigureSidebarProps extends HTMLProps<HTMLElement> { }
 
-const ConfigureSidebar = ({
-    className,
-    ...props
-}: ConfigureSidebarProps) => {
+const ConfigureSidebar = ({ className, ...props }: ConfigureSidebarProps) => {
     const pathname = usePathname();
     return (
-        <nav
-            className={cn(
-                "flex space-x-2 lg:flex-col lg:space-x-0 lg:space-y-1",
-                className,
-            )}
-            {...props}
-        >
-            {sidebarNavItems.map((item) => (
-                <Link
-                    key={item.href}
-                    href={item.href}
-                    className={cn(
-                        buttonVariants({ variant: "ghost" }),
-                        pathname === item.href
-                            ? "bg-muted hover:bg-muted"
-                            : "hover:bg-transparent hover:underline",
-                        "justify-start",
-                    )}
-                >
-                    {item.title}
-                </Link>
-            ))}
-        </nav>
+        <>
+            <nav
+                className={cn(
+                    "hidden smedium:flex space-x-2 lg:flex-col lg:space-x-0 lg:space-y-1",
+                    className,
+                )}
+                {...props}
+            >
+                {sidebarNavItems.map((item) => (
+                    <Link
+                        key={item.href}
+                        href={item.href}
+                        className={cn(
+                            buttonVariants({ variant: "ghost" }),
+                            pathname === item.href
+                                ? "bg-muted hover:bg-muted"
+                                : "hover:bg-transparent hover:underline",
+                            "justify-start",
+                        )}
+                    >
+                        {item.title}
+                    </Link>
+                ))}
+            </nav>
+            <ConfigureFormMobileDropdown />
+        </>
     );
 };
 

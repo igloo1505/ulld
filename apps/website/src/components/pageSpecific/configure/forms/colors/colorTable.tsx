@@ -56,12 +56,12 @@ const TableCellColor = ({
     return (
         <TableCell className={""}>
             <span
-                className={"w-4 h-4 inline-block rounded border mr-4"}
+                className={"w-6 h-6 sm:w-4 sm:h-4 inline-block rounded border mr-4"}
                 style={{
                     backgroundColor: item[target],
                 }}
             />
-            <span>{label}</span>
+            <span className={"hidden sm:inline-block"}>{label}</span>
         </TableCell>
     );
 };

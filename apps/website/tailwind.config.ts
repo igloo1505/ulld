@@ -45,6 +45,7 @@ const tailwindCfg: Config = {
                 blogMobile: "840px",
                 navbarFull: "1024px",
                 navbarPartial: "768px",
+                smedium: "680px"
             },
             transitionDelay: {
                 "400": "400ms",
