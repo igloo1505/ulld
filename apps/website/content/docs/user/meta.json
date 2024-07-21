@@ -1,5 +1,13 @@
 {
   "title": "User",
   "root": true,
-  "pages": ["index", "introToJsx", "frontMatter", "syntax", "components", "..."]
+  "pages": [
+    "index",
+    "introToJsx",
+    "frontMatter",
+    "syntax",
+    "jupyterIntegration",
+    "components",
+    "..."
+  ]
 }

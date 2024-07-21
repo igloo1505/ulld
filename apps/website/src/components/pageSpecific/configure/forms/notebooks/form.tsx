@@ -20,7 +20,6 @@ export const NotebookConfigurationForm = (
         name="jupyter.environment"
         desc="The path to the Jupyter environment on your own system. For now, only Python is supported as a programming interface, although all of the Markdown and non-programming features of Jupyter are still supported. When an internal package is developed, this will be extended to support a wide range of Jupyter kernels and languages."
       />
-
       <TextAreaInput<AppConfigSchemaType>
         label="Token"
         name="jupyter.jupyterToken"
@@ -39,10 +38,9 @@ export const NotebookConfigurationForm = (
         it to your configuration file yourself at the{" "}
         <InlineCode>jupyter.jupyterToken</InlineCode> path.
       </Hint>
-
       <Hint note className={"!mt-0"}>
         Read more about configuring the Jupyter integration{" "}
-        <Link href="/docs/user#configure-jupyter"></Link>
+        <Link className={"text-link"} href="/docs/user/jupyterIntegration">here</Link>
       </Hint>
       <TextInput<AppConfigSchemaType>
         label="Kernel"

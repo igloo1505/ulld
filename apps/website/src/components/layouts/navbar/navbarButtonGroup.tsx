@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { RootState } from "#/state/store";
 import { connect } from "react-redux";
 import { InitialCoreState } from "#/state/initialState/core";
@@ -35,11 +35,13 @@ const otherHomeNavbarClasses = [
     "border-border/40",
 ];
 
+
 const NavbarButtonGroup = connector(
     ({ buttons, breakpoint }: NavbarButtonGroupProps) => {
         const isInitial = useInitialRender();
         const pathname = usePathname();
         const vp = useViewport();
+        const [hideDonateLink, setHideDonateLink] = useState(false)
 
         const setTransparent = (beTransparent: boolean) => {
             let em = document.getElementById("main-navbar-container");
@@ -52,6 +54,7 @@ const NavbarButtonGroup = connector(
 
         useEffect(() => {
             setTransparent(pathname === "/");
+            setHideDonateLink(pathname.startsWith("/sponsor"))
         }, [pathname]);
 
         return (
@@ -62,7 +65,7 @@ const NavbarButtonGroup = connector(
                     (!vp || vp.window.width < breakpoint) && "hidden",
                 )}
             >
-                <Link
+                {!hideDonateLink && <Link
                     href={"/sponsor"}
                     className={navbarButtonClasses}
                     initial={{
@@ -71,7 +74,7 @@ const NavbarButtonGroup = connector(
                     whileInView={{
                         scale: 1,
                     }}
-                >Donate</Link>
+                >Donate</Link>}
                 {buttons.map((a, i) => {
                     return (
                         <Link

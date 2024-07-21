@@ -114,6 +114,7 @@
         "remark-math": "^6.0.0",
         "shiki": "^1.1.7",
         "simplex-noise": "^4.0.1",
+        "sponsorkit": "^0.15.2",
         "stripe": "^15.6.0",
         "three": "^0.163.0",
         "three-noise": "^1.1.2"
@@ -136,6 +137,5 @@
         "twoslash": "^0.2.6"
     },
     "packageManager": "pnpm@9.0.4",
-    "files": [],
-    "peerDependencies": {}
+    "files": []
 }

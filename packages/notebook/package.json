@@ -23,6 +23,7 @@
         "@ulld/utilities": "workspace:*"
     },
     "dependencies": {
+        "@jupyterlab/services": "^7.2.4",
         "monaco-editor": "0.49.0",
         "next": "14.2.3",
         "react": "18.2.0",

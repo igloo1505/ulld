@@ -120,7 +120,7 @@ export const IconInput = <T extends FieldValues>({
                 </Button>
             </DrawerTrigger>
             <DrawerContent>
-                <div className={cn("mt-4 border-t", classes.drawerContent)}>
+                <div className={cn("mt-4 p-4 border-t", classes.drawerContent)}>
                     <IconList
                         iconClasses={classes.icon}
                         setValue={(newVal) =>

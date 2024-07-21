@@ -5,6 +5,7 @@ import { useShikiParse } from "@ulld/hooks/useShikiParse";
 import { defaultThemes } from "@ulld/configschema/zod/codeConfig";
 import clsx from "clsx";
 import { useResponsiveCode } from "@ulld/hooks/useResponsiveCode";
+import { CodeBlock, CodeBlockProps } from "fumadocs-ui/components/codeblock";
 
 interface CodeThemeModalPreviewProps {
     content: string;
@@ -43,7 +44,7 @@ const CodeThemeModalPreview = ({
         <div
             ref={ref}
             className={clsx(
-                "w-full max-w-full h-fit max-h-fit overflow-y-auto block not-prose [&_pre]:max-w-full text-sm [&_code]:max-w-full [&_code]:min-w-full [&_code]:p-4 [&_code]:whitespace-break-spaces [&_.line]:min-h-4 [&_code]:!bg-background no-scrollbar",
+                "w-full max-w-full h-fit max-h-fit overflow-y-auto block not-prose [&_pre]:max-w-full text-sm [&_code]:max-w-full [&_code]:min-w-full [&_pre]:p-4 [&_code]:whitespace-break-spaces [&_.line]:min-h-4 no-scrollbar",
                 themeMode,
             )}
             dangerouslySetInnerHTML={state.content ? { __html: state.content } : undefined}

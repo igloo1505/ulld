@@ -43,7 +43,8 @@
     },
     "fund": {
       "paypalDonate": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU",
-      "patreon": "https://www.patreon.com/uhlittlelessdum/about"
+      "patreon": "https://www.patreon.com/uhlittlelessdum/about",
+      "github": "https://github.com/igloo1505/ulld"
     },
     "social": {
       "github": "https://github.com/igloo1505/ulld"
