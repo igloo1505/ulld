@@ -43,11 +43,7 @@
       "env": [".env.production.local", ".env.local", ".env.production", ".env"]
     },
     "buildLocal": {
-      "dependsOn": [
-        "^db:generate",
-        "^generateWebTags",
-        "^generateComponentMap"
-      ],
+      "dependsOn": ["^db:generate", "^prepareWeb", "^generateComponentMap"],
       "outputs": [".next/**", "!.next/cache/**"],
       "env": [".env.production.local", ".env.local", ".env.production", ".env"]
     },
