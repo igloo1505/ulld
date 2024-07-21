@@ -23,9 +23,9 @@ generator client {
 
 datasource db {
     provider   = "postgresql"
-    url = env("POSTGRES_URL") // uses connection pooling
-    directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
-    extensions = [citext]
+    url        = env("POSTGRES_URL") // uses connection pooling
+    directUrl  = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+    extensions = []
 }
 
 model FeatureRequest {
@@ -44,9 +44,21 @@ model WaitlistRequest {
     emailsSent Int      @default(0)
 }
 
+model BusinessContact {
+    id                Int      @id @default(autoincrement())
+    companyName       String
+    contactName       String
+    contactPreference String
+    email             String?
+    phone             String?
+    message           String
+    purpose           String?
+    createdAt         DateTime @default(now())
+}
+
 // Original app stuff
 model Subject {
-    value        String         @id @unique @db.Citext
+    value        String         @id @unique
     MdxNotes     MdxNote[]
     IpynbNotes   Ipynb[]
     QaPair       QAPair[]
@@ -60,7 +72,7 @@ model Subject {
 }
 
 model Topic {
-    value        String         @id @unique @db.Citext
+    value        String         @id @unique
     MdxNotes     MdxNote[]
     ipynbNotes   Ipynb[]
     QAPair       QAPair[]
@@ -74,7 +86,7 @@ model Topic {
 }
 
 model Tag {
-    value        String         @id @unique @db.Citext
+    value        String         @id @unique
     MdxNotes     MdxNote[]
     bibEntries   BibEntry[]
     ipynbNotes   Ipynb[]
@@ -336,7 +348,7 @@ model MdxNote {
     dietSummaryKey     String?
     title              String
     latexTitle         String?
-    rootRelativePath   String              @unique @db.Citext
+    rootRelativePath   String              @unique
     noteType           String
     content            String
     formatted          String?
@@ -368,7 +380,7 @@ model MdxNote {
 
 model Ipynb {
     id                 Int                 @id @default(autoincrement())
-    rootRelativePath   String              @unique @db.Citext
+    rootRelativePath   String              @unique
     isProtected        Boolean?            @default(false)
     title              String
     latexTitle         String?

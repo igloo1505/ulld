@@ -6,6 +6,7 @@ import { getPages as legalPages } from "../sources/legal";
 import { getPages as mainPages } from "../sources/main";
 import { getPages as myNotesPages } from "../sources/myNotes";
 
+
 export const getAllMdx = () => {
     return [
         ...blogPages(),

@@ -591,3 +591,35 @@ model DJT {
         type String
         data Bytes
 }
+
+
+
+// <<CUT-HERE>>
+// Added for the website
+
+model FeatureRequest {
+    id         Int      @id @default(autoincrement())
+    email      String
+    message    String
+    category   String[] @default([])
+    userBase   String[] @default([])
+    receivedOn DateTime @default(now())
+}
+
+model WaitlistRequest {
+    id         Int      @id @default(autoincrement())
+    email      String
+    receivedOn DateTime @default(now())
+    emailsSent Int      @default(0)
+}
+
+model BusinessContact {
+    id                Int     @id @default(autoincrement())
+    companyName       String
+    contactName       String
+    contactPreference String
+    email             String?
+    phone             String?
+    message           String
+    purpose           String?
+}

@@ -25,7 +25,7 @@ const SampleSponsorList = (props: SampleSponsorListProps) => {
                 <AddSponsorAvatar />
             </div>
             <p className={"text-sm text-muted-foreground my-4"}>
-                Ok. We don't have any sponsors yet, but checkout these funny animals in the mean
+                Ok. There aren't any sponsors yet, but checkout these funny animals in the mean
                 time.
             </p>
         </div>

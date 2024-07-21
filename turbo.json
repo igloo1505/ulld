@@ -7,6 +7,9 @@
       "cache": false,
       "env": [".env.local"]
     },
+    "prepareWeb": {
+      "env": [".env.local"]
+    },
     "generatePluginConfig": {
       "cache": false,
       "dependsOn": ["^gatherTypes"],
@@ -17,14 +20,6 @@
       "env": [".env.local"]
     },
     "generateComponentMap": {
-      "cache": false,
-      "env": [".env.local"]
-    },
-    "generateWebTags": {
-      "cache": false,
-      "env": [".env.local"]
-    },
-    "typedoc": {
       "cache": false,
       "env": [".env.local"]
     },

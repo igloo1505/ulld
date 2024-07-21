@@ -1,26 +1,36 @@
-#!/usr/bin/env tsx
-import { getAllMdx } from "../src/fumaDocs/utils/getConcatenatedPages"
+// #!/usr/bin/env tsx
+// import { getAllBlogPages } from "../src/fumaDocs/utils/getConcatenatedPages"
 import fs from "fs";
 import path from "path";
-import data from "#/staticData/mdxData.json";
+import { allBlogs, allMyNotes } from "content-collections";
 
 export const getTagList = () => {
-    let allDocuments = getAllMdx()
-    let items: string[] = [];
+    const targetPath = path.join(__dirname, "../src/staticData/mdxData.json");
+    const data = JSON.parse(
+        fs.readFileSync(targetPath, {
+            encoding: "utf-8",
+        }),
+    );
+    let allDocuments: { tags?: string[], category?: string }[] = [...allBlogs, ...allMyNotes];
+    let tagItems: string[] = [];
+    let categories: string[] = []
     allDocuments.forEach((a) => {
-        if ("tags" in a.data && Array.isArray(a.data.tags)) {
-            a.data.tags?.forEach((t: string) => {
-                if (!items.includes(t)) {
-                    items.push(t);
+        if ("tags" in a && Array.isArray(a.tags)) {
+            a.tags?.forEach((t: string) => {
+                if (!tagItems.includes(t)) {
+                    tagItems.push(t);
                 }
             });
+        }
+        if("category" in a && a.category){
+            categories.push(a.category)
         }
     });
     let newData: typeof data = {
         ...data,
-        tags: items.sort(function (a, b) {
-            const al = a.toLowerCase()
-            const bl = b.toLowerCase()
+        tags: tagItems.sort(function (a, b) {
+            const al = a.toLowerCase();
+            const bl = b.toLowerCase();
             if (al < bl) {
                 return -1;
             }
@@ -29,12 +39,11 @@ export const getTagList = () => {
             }
             return 0;
         }) as any,
+        categories
     };
-    fs.writeFileSync(
-        path.join(process.cwd(), "src/staticData/mdxData.json"),
-        JSON.stringify(newData, null, 4),
-        { encoding: "utf-8" },
-    );
+    fs.writeFileSync(targetPath, JSON.stringify(newData, null, 4), {
+        encoding: "utf-8",
+    });
 };
 
 getTagList();

@@ -4,12 +4,15 @@ import { htmlEm } from "../actions/clientOnly/dom";
 import { useEffect } from "react";
 
 interface OnlineStatusObserverProps { 
-
+   ignoreOnlineStatus?: boolean
 }
 
-export const OnlineStatusObserver = (props: OnlineStatusObserverProps) => {
+export const OnlineStatusObserver = ({ignoreOnlineStatus}: OnlineStatusObserverProps) => {
 
     const setOnlineStatusCookie = async (online: boolean) => {
+        if(ignoreOnlineStatus) {
+            return
+        }
         await axios.post("/api/utils/getOnlineStatusCookie", {
             online,
         });

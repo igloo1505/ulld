@@ -4,7 +4,7 @@ import Observers, { type ObserverProps } from "../observers/internalState";
 import { OnlineStatusObserver } from "../observers/onlineStatus";
 import { ToastListener } from "../observers/toast";
 import { Toaster } from "@ulld/tailwind/toaster";
-import {AppConfigSchemaOutput} from "@ulld/configschema/zod/main"
+import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 import {
     InitialLoader,
     InitialLoaderProps,
@@ -16,7 +16,6 @@ import { getUlldConfig } from "@ulld/developer/utils";
 import type { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
 import { ParsedSettings } from "@ulld/parsers/settings/settingsParser";
 
-
 /* NOTE: Children should only used in development for now. */
 export const StateWrappedUI = async ({
     children,
@@ -26,19 +25,25 @@ export const StateWrappedUI = async ({
     observers,
     settings: _settings,
     config,
-    ignoreSettings
+    ignoreSettings,
+    ignoreOnlineStatus,
 }: {
     children?: React.ReactNode;
     ignoreConfig?: boolean;
-        ignoreSettings?: boolean
+    ignoreSettings?: boolean;
     store?: ToolkitStore;
     loader?: InitialLoaderProps;
     observers?: Partial<ObserverProps>;
     settings?: ParsedSettings;
-    config?: AppConfigSchemaOutput
+    config?: AppConfigSchemaOutput;
+    ignoreOnlineStatus?: boolean;
 }) => {
     const cookieJar = cookies();
-    const settings = _settings ? _settings : ignoreSettings ? undefined : await getSettings();
+    let settings = _settings;
+    if (!settings && !ignoreSettings) {
+        settings = await getSettings();
+    }
+    /* const settings = _settings ? _settings : ignoreSettings ? undefined : await getSettings(); */
     const darkMode = cookieJar.has("darkMode");
     const showModebar = cookieJar.has("showModebar");
     const themeCookie = cookieJar.get("theme");
@@ -64,7 +69,7 @@ export const StateWrappedUI = async ({
                 />
                 <div id="navbar-target" />
                 <div id="sidebar-target" />
-                <OnlineStatusObserver />
+                <OnlineStatusObserver ignoreOnlineStatus={ignoreOnlineStatus} />
                 <ToastListener />
                 <Toaster />
                 {children}

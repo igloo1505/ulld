@@ -1,6 +1,3 @@
--- CreateExtension
-CREATE EXTENSION IF NOT EXISTS "citext";
-
 -- CreateEnum
 CREATE TYPE "Technologies" AS ENUM ('python', 'javascript', 'lua', 'typescript', 'css', 'scss', 'react', 'prisma', 'tailwind', 'node', 'bash', 'zsh', 'bibtex', 'latex', 'json', 'applescript', 'swift');
 
@@ -26,20 +23,8 @@ CREATE TYPE "TERTIARY_TOGGLE" AS ENUM ('on', 'off', 'partial');
 CREATE TYPE "DIETARY_GOAL" AS ENUM ('weightLoss', 'muscleGain', 'autoImmune', 'allergy', 'gsd', 'skin', 'sexDrive', 'anxiety', 'memory', 'energy', 'adhd', 'sleep', 'depression', 'mentalHealth');
 
 -- CreateTable
-CREATE TABLE "WaitlistRequest" (
-    "id" SERIAL NOT NULL,
-    "firstName" TEXT NOT NULL,
-    "lastName" TEXT NOT NULL,
-    "email" TEXT NOT NULL,
-    "receivedOn" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "emailsSent" INTEGER NOT NULL DEFAULT 0,
-
-    CONSTRAINT "WaitlistRequest_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
 CREATE TABLE "Subject" (
-    "value" CITEXT NOT NULL,
+    "value" TEXT NOT NULL,
     "kanbanId" INTEGER,
 
     CONSTRAINT "Subject_pkey" PRIMARY KEY ("value")
@@ -47,7 +32,7 @@ CREATE TABLE "Subject" (
 
 -- CreateTable
 CREATE TABLE "Topic" (
-    "value" CITEXT NOT NULL,
+    "value" TEXT NOT NULL,
     "kanbanId" INTEGER,
 
     CONSTRAINT "Topic_pkey" PRIMARY KEY ("value")
@@ -55,7 +40,7 @@ CREATE TABLE "Topic" (
 
 -- CreateTable
 CREATE TABLE "Tag" (
-    "value" CITEXT NOT NULL,
+    "value" TEXT NOT NULL,
     "kanbanId" INTEGER,
 
     CONSTRAINT "Tag_pkey" PRIMARY KEY ("value")
@@ -301,7 +286,7 @@ CREATE TABLE "MdxNote" (
     "dietSummaryKey" TEXT,
     "title" TEXT NOT NULL,
     "latexTitle" TEXT,
-    "rootRelativePath" CITEXT NOT NULL,
+    "rootRelativePath" TEXT NOT NULL,
     "noteType" TEXT NOT NULL,
     "content" TEXT NOT NULL,
     "formatted" TEXT,
@@ -327,7 +312,7 @@ CREATE TABLE "MdxNote" (
 -- CreateTable
 CREATE TABLE "Ipynb" (
     "id" SERIAL NOT NULL,
-    "rootRelativePath" CITEXT NOT NULL,
+    "rootRelativePath" TEXT NOT NULL,
     "isProtected" BOOLEAN DEFAULT false,
     "title" TEXT NOT NULL,
     "latexTitle" TEXT,
@@ -519,25 +504,25 @@ CREATE TABLE "DJT" (
 
 -- CreateTable
 CREATE TABLE "_SubjectToToDoList" (
-    "A" CITEXT NOT NULL,
+    "A" TEXT NOT NULL,
     "B" INTEGER NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_SubjectToToDo" (
-    "A" CITEXT NOT NULL,
+    "A" TEXT NOT NULL,
     "B" INTEGER NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_TagToToDo" (
-    "A" CITEXT NOT NULL,
+    "A" TEXT NOT NULL,
     "B" INTEGER NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_TagToToDoList" (
-    "A" CITEXT NOT NULL,
+    "A" TEXT NOT NULL,
     "B" INTEGER NOT NULL
 );
 
@@ -550,19 +535,19 @@ CREATE TABLE "_BibEntryToCitationsGroup" (
 -- CreateTable
 CREATE TABLE "_BibEntryToTag" (
     "A" TEXT NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_BibEntryToTopic" (
     "A" TEXT NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_BibEntryToSubject" (
     "A" TEXT NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
@@ -592,19 +577,19 @@ CREATE TABLE "_EquationToRelatedValues" (
 -- CreateTable
 CREATE TABLE "_EquationToTag" (
     "A" INTEGER NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_EquationToTopic" (
     "A" INTEGER NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_EquationToSubject" (
     "A" INTEGER NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
@@ -616,37 +601,37 @@ CREATE TABLE "_EquationToMdxNote" (
 -- CreateTable
 CREATE TABLE "_QAPairToTag" (
     "A" TEXT NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_QAPairToTopic" (
     "A" TEXT NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_QAPairToSubject" (
     "A" TEXT NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_PracticeExamToTopic" (
     "A" INTEGER NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_PracticeExamToTag" (
     "A" INTEGER NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_PracticeExamToSubject" (
     "A" INTEGER NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
@@ -658,19 +643,19 @@ CREATE TABLE "_PracticeExamToQAPair" (
 -- CreateTable
 CREATE TABLE "_MdxNoteToTopic" (
     "A" INTEGER NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_MdxNoteToSubject" (
     "A" INTEGER NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_MdxNoteToTag" (
     "A" INTEGER NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
@@ -688,19 +673,19 @@ CREATE TABLE "_MdxNoteToToDo" (
 -- CreateTable
 CREATE TABLE "_IpynbToTag" (
     "A" INTEGER NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_IpynbToTopic" (
     "A" INTEGER NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_IpynbToSubject" (
     "A" INTEGER NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
@@ -712,13 +697,13 @@ CREATE TABLE "_IpynbToReadingList" (
 -- CreateTable
 CREATE TABLE "_ToDoListToTopic" (
     "A" INTEGER NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "_ToDoToTopic" (
     "A" INTEGER NOT NULL,
-    "B" CITEXT NOT NULL
+    "B" TEXT NOT NULL
 );
 
 -- CreateTable

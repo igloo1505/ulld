@@ -74,7 +74,7 @@ const NavbarButtonGroup = connector(
                     whileInView={{
                         scale: 1,
                     }}
-                >Donate</Link>}
+                >Sponsor</Link>}
                 {buttons.map((a, i) => {
                     return (
                         <Link

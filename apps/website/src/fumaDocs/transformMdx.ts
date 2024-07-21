@@ -16,10 +16,9 @@ import rehypeImgSize from "rehype-img-size";
 // import rehypeVideo from "rehype-video";
 import { compileMDX as baseCompileMDX } from "@content-collections/mdx";
 // import rehypeMathjax from "rehype-mathjax/chtml.js";
-// import emoji from "remark-emoji";
+import remarkEmoji from "remark-emoji";
 import { Document, Context } from "@content-collections/core";
 import remarkMath from "remark-math";
-import * as rm from "remark-math";
 import {
     remarkDocGen,
     remarkInstall,
@@ -30,18 +29,8 @@ import {
 import mdOpts from "@ulld/utilities/defaults/markdown.json" with { type: "json" };
 import rehypeMathJaxCHtml from "rehype-mathjax/chtml";
 
-// async function compileMDX(document: any, context: any, options: any = {}) {
-//     const { remarkPlugins = [], rehypePlugins = [], ...rest } = options;
-//     return baseCompileMDX(context, document, {
-//         ...rest,
-//         remarkPlugins: [remarkGfm, remarkHeading, ...remarkPlugins],
-//         rehypePlugins: [
-//             ...rehypePlugins,
-//         ],
-//     });
-// }
 
-export const transformMDX = async (document: Document, context: Context) => {
+export const transformMDX = (document: Document, context: Context) => {
     return context.cache(
         {
             type: "fumadocs",
@@ -74,6 +63,7 @@ export const transformMDX = async (document: Document, context: Context) => {
                             },
                         ],
                         remarkStructure,
+                        remarkEmoji,
                         () => {
                             return (_: any, file: { data: any; value: any }) => {
                                 // console.log("file.value: ", file.value) // raw content
@@ -112,5 +102,5 @@ export const transformMDX = async (document: Document, context: Context) => {
                 body,
             };
         },
-    );
+    )
 };

@@ -230,6 +230,7 @@ const RootLayout = async (props: {
                             <StateWrappedUI
                                 ignoreConfig
                                 ignoreSettings
+                                ignoreOnlineStatus
                                 loader={{
                                     mathjax: ["config"],
                                 }}

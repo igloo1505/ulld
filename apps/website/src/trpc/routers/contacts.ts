@@ -2,6 +2,7 @@ import { featureRequestFormSchema } from "#/components/pageSpecific/featureReque
 import { publicProcedure, router } from "@ulld/api";
 import { prisma } from "#/db";
 import { z } from "zod";
+import { businessInterestFormSchema } from "#/components/pageSpecific/sponsor/githubSponsors/sponsorRequestForm/formSchema";
 
 export const contactsRouter = router({
     submitFeatureRequest: publicProcedure
@@ -29,4 +30,12 @@ export const contactsRouter = router({
             });
             return true;
         }),
+    submitBusinessRequest: publicProcedure.input(businessInterestFormSchema).mutation(async ({input}) => {
+        return await prisma.businessContact.create({
+            data: input,
+            select: {
+                contactName: true
+            }
+        })
+    })
 });

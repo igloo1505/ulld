@@ -2,7 +2,6 @@
 import React, { useRef } from "react";
 import FeaturedBlogPost from "../featuredCard/main";
 import { PageType } from "#/types/general";
-import { logger } from "@ulld/logger/client"
 
 interface BlogPostListProps {
     tags: string[];
@@ -15,12 +14,7 @@ const getBlogPostsByTags = (
     tags: string[],
     allPosts: BlogPostListProps["allPosts"],
 ): BlogPostListProps["allPosts"] => {
-    console.log("allPosts: ", allPosts)
-    /* TODO: Fix this. */
     return allPosts
-    /* return allPosts.filter((a) => { */
-    /*     return a.data.tags?.some((b) => tags.includes(b)); */
-    /* }); */
 };
 
 const defaultDate = new Date("1-1-1970")
