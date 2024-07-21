@@ -4,7 +4,7 @@ import { notFound, redirect } from "next/navigation";
 import { PageType } from "#/types/general";
 import DocsPageComponent from "#/components/docUtils/docsPage";
 
-const docsBodyId = "ulld-documentation-container";
+const docsBodyId = "ulld-mywork-container";
 
 interface DocOutput {
     data: {

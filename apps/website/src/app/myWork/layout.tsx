@@ -19,6 +19,7 @@ const baseOptions: BaseLayoutProps = {
     githubUrl: appData.projectRepo.url,
 }
 
+
 export default function Layout({ children }: { children: ReactNode }) {
     return (
         <DocsLayout

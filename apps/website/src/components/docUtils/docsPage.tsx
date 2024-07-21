@@ -6,7 +6,7 @@ import { DocsBody, DocsPage } from "fumadocs-ui/page";
 import React, { ComponentProps, ReactNode } from "react";
 import TypeTable from "./typeTable";
 import ApplyMathjaxBandaid from "../utility/applyMathjaxBandaid";
-import MathjaxProvider from "@ulld/utilities/providers-mathjax";
+import MathjaxProvider from "#/components/utility/providers/mathjax";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { serverComponentMap } from "#/mdx/serverComponentMap";
 import { getComponentMap } from "@ulld/component-map/client";
@@ -95,7 +95,7 @@ const DocsPageComponent = (props: DocsPageComponentProps) => {
     if (props.internal) {
         return (
             <MathjaxProvider>
-                <div className={cn("w-full @container/mdx", props.className)}>
+                <div id={id} className={cn("w-full @container/mdx", props.className)}>
                     <DocsPageInternal {...props} id={id} />
                 </div>
             </MathjaxProvider>
@@ -111,7 +111,7 @@ const DocsPageComponent = (props: DocsPageComponentProps) => {
         <MathjaxProvider>
             <DocsPage toc={newEntries} full={props.page.data.full}>
                 <DocsBody
-                    id={props.id}
+                    id={id}
                     className={cn("@container/mdx mdx", props.className)}
                 >
                     <DocsPageInternal {...props} id={id} />

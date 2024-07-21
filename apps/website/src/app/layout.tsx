@@ -22,6 +22,7 @@ import { BetaBanner } from "#/components/general/betaBanner";
 import { RootProvider } from "fumadocs-ui/provider";
 import clsx from "@ulld/utilities/cn";
 import { HandleBodyDisplay } from "#/components/docUtils/handleBodyLayout";
+import MathjaxProvider from "@ulld/utilities/providers-mathjax";
 
 const appFont = localFont({
     variable: "--ulld-app-font",
@@ -199,50 +200,50 @@ const RootLayout = async (props: {
                     content="note taking, academic, plot, math, physics, STEM, quantum gravity, relativity, time, theory"
                 />
             </head>
-            <body
-                className={clsx(
-                    "group/body dark max-w-full relative h-auto overflow-x-hidden w-screen min-h-screen overflow-y-auto data-[disContents=true]:contents bg-background",
-                    /* "contents", // Remove this if it causes issues. Added on 6-27 to handle sticky sidebar. */
-                    fontSans.variable,
-                    preferFs && "preferFs",
-                )}
-                id={`Ulld-body-root`}
-            >
-                <RootProvider
-                    theme={{
-                        // Come back and enable this. Was having issues with tailwind, but shouldn't be too hard to adress with a little bit of free time.
-                        enabled: false,
-                        enableColorScheme: false,
-                        enableSystem: false,
-                    }}
+                <body
+                    className={clsx(
+                        "group/body dark max-w-full relative h-auto overflow-x-hidden w-screen min-h-screen overflow-y-auto data-[disContents=true]:contents bg-background",
+                        /* "contents", // Remove this if it causes issues. Added on 6-27 to handle sticky sidebar. */
+                        fontSans.variable,
+                        preferFs && "preferFs",
+                    )}
+                    id={`Ulld-body-root`}
                 >
-                    <InternalReduxProvider>
-                        <HandleBodyDisplay />
-                        <BetaBanner />
-                        <Navbar />
-                        <MainNavigationDrawer />
-                        <NavbarBreakpointHandler />
-                        {props.children}
-                        <Toaster />
-                        {props.modal && props.modal}
-                        <SetInitialRender />
-                        <StateWrappedUI
-                            ignoreConfig
-                            ignoreSettings
-                            loader={{
-                                mathjax: ["config"],
-                            }}
-                            observers={{
-                                noSettings: true,
-                                noThemeCookie: true,
-                            }}
-                        />
-                        <StateWrappedComponents />
-                        <ThemeMenu />
-                        <Footer />
-                    </InternalReduxProvider>
-                </RootProvider>
-            </body>
+                    <RootProvider
+                        theme={{
+                            // Come back and enable this. Was having issues with tailwind, but shouldn't be too hard to adress with a little bit of free time.
+                            enabled: false,
+                            enableColorScheme: false,
+                            enableSystem: false,
+                        }}
+                    >
+                        <InternalReduxProvider>
+                            <HandleBodyDisplay />
+                            <BetaBanner />
+                            <Navbar />
+                            <MainNavigationDrawer />
+                            <NavbarBreakpointHandler />
+                            {props.children}
+                            <Toaster />
+                            {props.modal && props.modal}
+                            <SetInitialRender />
+                            <StateWrappedUI
+                                ignoreConfig
+                                ignoreSettings
+                                loader={{
+                                    mathjax: ["config"],
+                                }}
+                                observers={{
+                                    noSettings: true,
+                                    noThemeCookie: true,
+                                }}
+                            />
+                            <StateWrappedComponents />
+                            <ThemeMenu />
+                            <Footer />
+                        </InternalReduxProvider>
+                    </RootProvider>
+                </body>
             <GoogleAnalytics gaId="G-K46X7QHBEX" />
         </html>
     );

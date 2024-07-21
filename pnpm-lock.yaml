@@ -624,7 +624,7 @@ importers:
         version: 1.0.1
       rehype-mathjax:
         specifier: ^6.0.0
-        version: 6.0.0(bufferutil@4.0.8)(canvas@2.11.2)(utf-8-validate@6.0.3)
+        version: 6.0.0(bufferutil@4.0.8)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.3)
       remark-emoji:
         specifier: ^4.0.1
         version: 4.0.1
@@ -1313,7 +1313,7 @@ importers:
         version: 0.2.0(@types/react@18.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       lucide-react:
         specifier: latest
-        version: 0.411.0(react@18.2.0)
+        version: 0.412.0(react@18.2.0)
       next:
         specifier: ^14.2.3
         version: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
@@ -3397,7 +3397,7 @@ importers:
         version: 7.1.0
       rehype-mathjax:
         specifier: 6.0.0
-        version: 6.0.0(bufferutil@4.0.8)(canvas@2.11.2)(utf-8-validate@6.0.3)
+        version: 6.0.0(bufferutil@4.0.8)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.3)
       rehype-pretty-code:
         specifier: 0.13.2
         version: 0.13.2(shiki@1.10.3)
@@ -4815,6 +4815,9 @@ importers:
       '@ulld/tailwind':
         specifier: workspace:*
         version: link:../tailwindAndShad
+      better-react-mathjax:
+        specifier: ^2.0.3
+        version: 2.0.3(react@18.2.0)
       monaco-editor:
         specifier: 0.49.0
         version: 0.49.0
@@ -4881,7 +4884,7 @@ importers:
         version: 18.3.1(react@18.2.0)
       rehype-mathjax:
         specifier: ^6.0.0
-        version: 6.0.0(bufferutil@4.0.8)(canvas@2.11.2)(utf-8-validate@6.0.3)
+        version: 6.0.0(bufferutil@4.0.8)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.3)
       rtl-simple-queries:
         specifier: ^1.0.1
         version: 1.0.1(@testing-library/react@14.3.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -15346,8 +15349,8 @@ packages:
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  lucide-react@0.411.0:
-    resolution: {integrity: sha512-bDRvLt/jIIjsq4JVYB3EjyOtLHu8uQGzv7usri2DnVpOtfIRuLln96srS+d8WJsmJ52LBwDnYx7me/TSjZ6AcA==}
+  lucide-react@0.412.0:
+    resolution: {integrity: sha512-m7argY/PhSfjhwP2Dxey+VzFBvusfd8ULt+vWWFnzQhURLOtNyD1qWmMVdtJ4Nn+d+DTcoOiILrjThSjY9kaow==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -32656,7 +32659,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  jsdom@23.2.0(bufferutil@4.0.8)(canvas@2.11.2)(utf-8-validate@6.0.3):
+  jsdom@23.2.0(bufferutil@4.0.8)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.3):
     dependencies:
       '@asamuzakjp/dom-selector': 2.0.2
       cssstyle: 4.0.1
@@ -33174,7 +33177,7 @@ snapshots:
     dependencies:
       react: 18.2.0
 
-  lucide-react@0.411.0(react@18.2.0):
+  lucide-react@0.412.0(react@18.2.0):
     dependencies:
       react: 18.2.0
 
@@ -36607,13 +36610,13 @@ snapshots:
       image-size: 1.1.1
       unist-util-visit: 4.1.2
 
-  rehype-mathjax@6.0.0(bufferutil@4.0.8)(canvas@2.11.2)(utf-8-validate@6.0.3):
+  rehype-mathjax@6.0.0(bufferutil@4.0.8)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.3):
     dependencies:
       '@types/hast': 3.0.4
       '@types/mathjax': 0.0.40
       hast-util-from-dom: 5.0.0
       hast-util-to-text: 4.0.2
-      jsdom: 23.2.0(bufferutil@4.0.8)(canvas@2.11.2)(utf-8-validate@6.0.3)
+      jsdom: 23.2.0(bufferutil@4.0.8)(canvas@2.11.2(encoding@0.1.13))(utf-8-validate@6.0.3)
       mathjax-full: 3.2.2
       unified: 11.0.5
       unist-util-visit-parents: 6.0.1
