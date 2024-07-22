@@ -50,8 +50,8 @@
       "github": "https://github.com/igloo1505/ulld"
     },
     "blog": {
-      "whyILeftWork": "/blog?id=whyILeftWork",
-      "plansForUlld": "/blog?id=plansForUlld"
+      "whyILeftWork": "/blog/Ulld/whyILeftWork",
+      "plansForUlld": "/blog/Ulld/plansForUlld"
     },
     "demos": {
       "main": "/demos",

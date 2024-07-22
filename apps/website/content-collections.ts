@@ -31,7 +31,7 @@ const utilFields = (z: typeof _zod) => {
 const metas = defineCollection({
     name: "meta",
     directory: "content",
-    include: "docs/**/meta.json",
+    include: "*/**/meta.json",
     parser: "json",
     schema: (z) => {
         return {

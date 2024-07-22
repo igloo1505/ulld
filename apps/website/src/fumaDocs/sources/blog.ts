@@ -3,14 +3,13 @@ import {
     InferPageType,
     loader
 } from "fumadocs-core/source";
-import { allBlogs } from "content-collections";
+import { allBlogs, allMetas } from "content-collections";
+import { createMDXSource } from "@fumadocs/content-collections";
 
 const data = loader({
     rootDir: "blog",
     baseUrl: "/blog",
-    source: {
-        files: allBlogs.map((v) => ({ type: "page", data: v, path: v._meta.filePath, })),
-    },
+    source: createMDXSource(allBlogs as any, allMetas),
 });
 
 export const {
