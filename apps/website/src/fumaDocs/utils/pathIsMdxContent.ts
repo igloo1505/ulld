@@ -1,6 +1,6 @@
 export const mdxContentPaths = [
     "/docs",
-    "/blog/",
+    "/blog",
     "/myWork"
 ]
 

@@ -22,7 +22,6 @@ import { BetaBanner } from "#/components/general/betaBanner";
 import { RootProvider } from "fumadocs-ui/provider";
 import clsx from "@ulld/utilities/cn";
 import { HandleBodyDisplay } from "#/components/docUtils/handleBodyLayout";
-import MathjaxProvider from "@ulld/utilities/providers-mathjax";
 
 const appFont = localFont({
     variable: "--ulld-app-font",

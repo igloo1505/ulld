@@ -12,6 +12,7 @@ server/dist
 public/dist
 apps/ulld-storybook/storybook-static
 .env.remote
+.env.**
 .contentlayer
 public/sw**
 public/workbox**

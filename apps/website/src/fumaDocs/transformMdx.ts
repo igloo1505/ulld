@@ -28,9 +28,10 @@ import {
 
 import mdOpts from "@ulld/utilities/defaults/markdown.json" with { type: "json" };
 import rehypeMathJaxCHtml from "rehype-mathjax/chtml";
+import * as F from "@fumadocs/content-collections/configuration"
 
 
-export const transformMDX = (document: Document, context: Context) => {
+export const transformMDX: typeof F.transformMDX = (document: Document, context: Context) => {
     return context.cache(
         {
             type: "fumadocs",

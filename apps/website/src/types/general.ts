@@ -40,5 +40,6 @@ export type PageType = {
         priority?: number;
         blog?: boolean;
         titleCenter?: boolean
+        category?: string;
     };
 } & ReturnType<typeof getPage>;

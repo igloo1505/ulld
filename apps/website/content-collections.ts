@@ -55,7 +55,7 @@ const docs = defineCollection({
             full: z.boolean().optional(),
         };
     },
-    transform: transformMDX,
+    transform: transformMDX as any,
 });
 
 const blog = defineCollection({
@@ -63,7 +63,7 @@ const blog = defineCollection({
     directory: "content",
     include: "blog/**/*.mdx",
     schema: (z) => utilFields(z as any),
-    transform: transformMDX,
+    transform: transformMDX as any,
 });
 
 const legal = defineCollection({
@@ -79,7 +79,7 @@ const legal = defineCollection({
             id: z.string().optional(),
         };
     },
-    transform: transformMDX,
+    transform: transformMDX as any,
 });
 
 const myNotes = defineCollection({
@@ -87,7 +87,7 @@ const myNotes = defineCollection({
     directory: "content",
     include: "myNotes/**/*.mdx",
     schema: (z) => utilFields(z as any),
-    transform: transformMDX,
+    transform: transformMDX as any,
 });
 
 const demos = defineCollection({
@@ -95,7 +95,7 @@ const demos = defineCollection({
     directory: "content",
     include: "demos/**/*.mdx",
     schema: (z) => utilFields(z as any),
-    transform: transformMDX,
+    transform: transformMDX as any,
 });
 
 const brandDocs = defineCollection({
@@ -103,7 +103,7 @@ const brandDocs = defineCollection({
     directory: "content",
     include: "brand/**/*.mdx",
     schema: (z) => utilFields(z as any),
-    transform: transformMDX,
+    transform: transformMDX as any,
 });
 
 export default defineConfig({

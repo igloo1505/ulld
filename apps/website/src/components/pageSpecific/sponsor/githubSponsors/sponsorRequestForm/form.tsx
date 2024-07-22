@@ -2,6 +2,7 @@
 import { useForm, zodResolver } from "@ulld/full-form/form";
 import React from "react";
 import {
+    businessContactFormDefaultValues,
     BusinessInterestData,
     businessInterestFormSchema,
     contactPurposes,
@@ -20,20 +21,24 @@ import { LogoAsText } from "#/components/general/logoAsText";
 const BusinessInterestForm = () => {
     const form = useForm<BusinessInterestData>({
         resolver: zodResolver(businessInterestFormSchema),
+        defaultValues: businessContactFormDefaultValues
     });
-    const {toast} = useToast()
+    const { toast } = useToast();
 
     const handleSubmit = async (vals: ValidatedBusinessInterest) => {
         let res = await client.contacts.submitBusinessRequest.mutate(vals);
-        if(res.contactName){
+        if (res.contactName) {
+            form.reset(businessContactFormDefaultValues);
             toast({
                 title: "Amazing!",
-                description: <div>
-                    I'll get back to you as soon as I can. Thank you for supporting <LogoAsText fontSize={13} />.
-                </div>
-            })
+                description: (
+                    <div>
+                        I'll get back to you as soon as I can. Thank you for supporting{" "}
+                        <LogoAsText fontSize={13} />.
+                    </div>
+                ),
+            });
         }
-        form.reset()
     };
 
     return (
@@ -95,20 +100,10 @@ const BusinessInterestForm = () => {
                     <TextInput
                         name="email"
                         label="Email"
-                        classes={
-                            {
-                                /* formItem: "flex-grow" */
-                            }
-                        }
                     />
                     <TextInput
                         name="phone"
                         label="Phone"
-                        classes={
-                            {
-                                /* formItem: "flex-grow" */
-                            }
-                        }
                     />
                 </div>
                 <div className={"w-full flex flex-row justify-end items-center"}>

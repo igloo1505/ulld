@@ -3,6 +3,8 @@ import Link from "next/link";
 import clsx from "clsx";
 import { NavbarButton, NavbarButtonClick } from "#/state/initialState/core";
 import { navbarButtonClasses } from "../navbar/navbarButtonGroup";
+import store from "#/state/store"
+import { closeDrawer } from "#/state/slices/core";
 
 interface MainNavigationDrawerButtonGroupProps {
     buttons: (NavbarButton | NavbarButtonClick)[];
@@ -22,9 +24,14 @@ const MainNavigationDrawerButtonGroup = ({
     hide,
     className,
 }: MainNavigationDrawerButtonGroupProps) => {
+
     useEffect(() => {
         window.dispatchEvent(new CustomEvent("main-drawer-opened"));
     }, []);
+
+    const closeDrawerOnClick = () => {
+           store.dispatch(closeDrawer())
+        }
 
     return (
         <div
@@ -54,7 +61,10 @@ const MainNavigationDrawerButtonGroup = ({
                         className={clsx(
                             "w-full px-4 py-3 cursor-pointer hover:bg-secondary hover:text-secondary-foreground transition-colors duration-300",
                         )}
-                        onClick={a.onClick}
+                        onClick={(e) => {
+                            closeDrawerOnClick()
+                            a.onClick()
+                        }}
                         key={a.id}
                     >
                         {a.label}
@@ -67,8 +77,9 @@ const MainNavigationDrawerButtonGroup = ({
                     "w-full px-4 py-3 cursor-pointer hover:bg-secondary hover:text-secondary-foreground transition-colors duration-300",
                 )}
                 href={"/sponsor"}
+                onClick={closeDrawerOnClick}
             >
-                Donate
+                Sponsor
             </Link>
         </div>
     );

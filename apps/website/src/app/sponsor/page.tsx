@@ -1,10 +1,15 @@
 import GithubSponsorList from "#/components/pageSpecific/sponsor/githubSponsors/list";
 import SponsorshipRequestForm from "#/components/pageSpecific/sponsor/githubSponsors/sponsorRequestForm/main";
+import NavbarBlogButton from "#/components/utility/navbarButtons/blog";
+import NavbarConfigureButton from "#/components/utility/navbarButtons/configure";
 import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
 import React from "react";
 
 const SponsorULLDPage = () => {
     return (
+        <>
+            <NavbarConfigureButton />
+            <NavbarBlogButton />
         <div
             className={
                 "w-full h-full min-h-screen flex flex-col justify-start items-center pt-[96px]"
@@ -30,6 +35,7 @@ const SponsorULLDPage = () => {
                 <SponsorshipRequestForm />
             </div>
         </div>
+        </>
     );
 };
 

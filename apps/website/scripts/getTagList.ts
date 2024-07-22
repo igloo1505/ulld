@@ -1,5 +1,4 @@
 // #!/usr/bin/env tsx
-// import { getAllBlogPages } from "../src/fumaDocs/utils/getConcatenatedPages"
 import fs from "fs";
 import path from "path";
 import { allBlogs, allMyNotes } from "content-collections";
@@ -11,9 +10,12 @@ export const getTagList = () => {
             encoding: "utf-8",
         }),
     );
-    let allDocuments: { tags?: string[], category?: string }[] = [...allBlogs, ...allMyNotes];
+    let allDocuments: { tags?: string[]; category?: string }[] = [
+        ...allBlogs,
+        ...allMyNotes,
+    ] as { tags?: string[]; category?: string }[];
     let tagItems: string[] = [];
-    let categories: string[] = []
+    let categories: string[] = [];
     allDocuments.forEach((a) => {
         if ("tags" in a && Array.isArray(a.tags)) {
             a.tags?.forEach((t: string) => {
@@ -22,8 +24,10 @@ export const getTagList = () => {
                 }
             });
         }
-        if("category" in a && a.category){
-            categories.push(a.category)
+        if ("category" in a && a.category) {
+            if (!categories.includes(a.category)) {
+                categories.push(a.category);
+            }
         }
     });
     let newData: typeof data = {
@@ -39,7 +43,7 @@ export const getTagList = () => {
             }
             return 0;
         }) as any,
-        categories
+        categories: categories,
     };
     fs.writeFileSync(targetPath, JSON.stringify(newData, null, 4), {
         encoding: "utf-8",

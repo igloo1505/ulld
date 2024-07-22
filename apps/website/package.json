@@ -11,6 +11,7 @@
     "start": "next start",
     "generateDocs": "tsx --env-file=./.env.local --tsconfig=./tsxConfig.json ./src/buildScripts/generateDocs.ts ",
     "db:migrate": "dotenv -e .env.local -- prisma migrate dev --schema=./src/prisma/schema.prisma",
+    "db:migrateRemote": "dotenv -e .env.production -- prisma migrate dev --schema=./src/prisma/schema.prisma",
     "db:generate": "dotenv -e .env.local -- prisma generate --schema=./src/prisma/schema.prisma",
     "migrate:reset": "node ../../node_modules/dotenv-cli/cli.js -e ./website/.env.local -- prisma migrate reset --schema ./src/prisma/schema.prisma",
     "db:seed": "node ../../node_modules/dotenv-cli/cli.js -e ./website/.env.local -- prisma db seed",
