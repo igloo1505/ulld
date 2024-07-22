@@ -1,27 +1,26 @@
 "use client";
 import React, { useRef } from "react";
-import { BlogSearchParams } from "#/app/blog/page";
 import { getAllBlogPages } from "#/fumaDocs/utils/getConcatenatedPages";
 import BlogPostSummaryCard from "../blogSummaryCard/main";
+import { useSearchParams } from "next/navigation";
 
 interface BlogPostListProps {
-    searchParams: BlogSearchParams;
 }
 
 const itemsPerPage = 10;
 
-const getBlogPostListItems = (searchParams: BlogSearchParams) => {
+const getBlogPostListItems = (category?: string | null, tags: string[] = [], page: number = 1) => {
     let items = getAllBlogPages();
-    if (searchParams.category) {
+    if (category) {
         items = items.filter(
-            (f) => f.data.category && f.data.category === searchParams.category,
+            (f) => f.data.category && f.data.category === category,
         );
     }
-    let page = searchParams.page || 1;
-    if (typeof page !== "number") {
-        page = parseInt(page);
+    if(tags && tags.length){
+        items = items.filter((item) => {
+            return Boolean(item.data.tags && item.data.tags.some((t) => tags.includes(t)))
+        })
     }
-
     let startIndex = (page - 1) * itemsPerPage;
     return {
         items: items.slice(startIndex, startIndex + itemsPerPage).map((x) => {
@@ -38,15 +37,26 @@ const getBlogPostListItems = (searchParams: BlogSearchParams) => {
     };
 };
 
-const BlogPostList = ({ searchParams }: BlogPostListProps) => {
+const BlogPostList = ({ }: BlogPostListProps) => {
     const ref = useRef<HTMLDivElement>(null!);
+    const sp = useSearchParams()
+    let page: string | number | undefined | null = sp.get("page")
+    if(typeof page === "string"){
+        page = parseInt(page)
+    }
+    let category = sp.get("category")
+    let tags = sp.getAll("tags")
     const { items, currentPage, showPagination } =
-        getBlogPostListItems(searchParams);
+        getBlogPostListItems(category, tags, page || undefined);
 
     return (
         <div
             ref={ref}
-            className={"w-full flex flex-col justify-start items-center space-y-6 py-6 px-6"}
+            className={"w-full flex flex-col justify-start items-center space-y-6 py-6 px-6 lgr:place-self-start"}
+            style={{
+                gridColumn: "blogList",
+                gridRow: "main"
+            }}
         >
             {items
                 .sort((a, b) => b.itemDate.valueOf() - a.itemDate.valueOf())

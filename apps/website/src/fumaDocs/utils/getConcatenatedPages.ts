@@ -20,11 +20,11 @@ export const getAllMdx = () => {
 
 
 export const getAllBlogPages = (): PageType[] => {
-    let data = blogPages()
+    let data = blogPages() as PageType[]
     let other = myNotesPages()
     for (const k of other) {
-       if("blog" in k && k.blog){
-            data.push(k)
+       if("blog" in k.data && k.data.blog){
+            data.push(k as PageType)
         } 
     }
     return data as PageType[]

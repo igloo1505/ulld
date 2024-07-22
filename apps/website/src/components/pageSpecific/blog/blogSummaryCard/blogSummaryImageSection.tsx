@@ -1,15 +1,17 @@
 import { PageType } from "#/types/general";
-import React from "react";
+import React, { CSSProperties } from "react";
 import Image from "next/image";
 import BlogSummaryEquation from "./equation";
 import IconImage from "./icon";
 import { ValidIconName } from "@ulld/icons";
+import staticData from "#/staticData/mdxData.json"
 
 interface BlogSummaryImageSectionProps {
     item: PageType;
 }
 
 const BlogSummaryImageSection = ({ item }: BlogSummaryImageSectionProps) => {
+    let imageStyles = item.data.id ? staticData.imageStyles[item.data.id as keyof typeof staticData.imageStyles] || {} : {}
     if (item.data.images) {
         return (
             <Image
@@ -21,6 +23,7 @@ const BlogSummaryImageSection = ({ item }: BlogSummaryImageSectionProps) => {
                 className={
                     "w-full h-full lg:max-h-full lg:h-full object-cover rounded-[20px]"
                 }
+                style={imageStyles as CSSProperties || {}}
                 width={400}
                 height={400}
             />

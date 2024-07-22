@@ -43,7 +43,7 @@ export const getTagList = () => {
             }
             return 0;
         }) as any,
-        categories: categories,
+        categories: categories.sort((a, b) => a < b ? -1 : 1),
     };
     fs.writeFileSync(targetPath, JSON.stringify(newData, null, 4), {
         encoding: "utf-8",

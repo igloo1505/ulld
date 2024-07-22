@@ -1,6 +1,5 @@
 import React from "react";
 import TagList from "./tagList";
-import { XIcon } from "lucide-react";
 import BlogCategoryList from "./categoryList";
 import { Separator } from "@ulld/tailwind/separator";
 
@@ -8,7 +7,13 @@ import { Separator } from "@ulld/tailwind/separator";
 /* TODO: Add click outside listener conditional on blog entry page... not blog list page. */
 const BlogSideBar = () => {
     return (
-        <div className={"w-full md:sticky md:top-0 h-screen-noNav py-4 px-2"}>
+        <div 
+            className={"w-full h-fit md:top-0 lgr:sticky lgr:h-screen-noNav lgr:place-self-start py-4 px-2"}
+            style={{
+                gridColumn: "blogSidebar",
+                gridRow: "main"
+            }}
+        >
             <BlogCategoryList />
             <Separator className={"my-4"} />
             <TagList />
