@@ -111,7 +111,7 @@ const NoteTypeModal = ({ }: NoteTypeModalProps) => {
                 }
             }}
         >
-            <DialogContent className={"lg:w-fit lg:max-w-[90vw]"}>
+            <DialogContent className={"lg:w-fit lg:max-w-[90vw] lg:min-w-[calc(100vw-4rem)] lgr:min-w-[1024px]"}>
                 <DialogHeader>
                     <DialogTitle>Add a new note type</DialogTitle>
                     <DialogDescription>
