@@ -33,8 +33,8 @@ const getPagination = (
 ): PaginationButtonData[] => {
     let _items = Array(d.totalItems).fill(0).map((_, i) => i)
     let itemsData: PaginationButtonData[] = [];
-    const maxPage = Math.floor(d.totalItems / d.perPage);
-    if (d.currentPage >= d.maxButtons / 2) {
+    const maxPage = Math.ceil(d.totalItems / d.perPage);
+    if ((d.currentPage >= d.maxButtons / 2) && maxPage > d.maxButtons) {
         itemsData.push({
             pageNumber: 1,
             href: formatHref(1),
@@ -42,7 +42,7 @@ const getPagination = (
             active: d.currentPage === 1
         });
     }
-    const includeRightArrow = d.currentPage <= maxPage - d.maxButtons / 2;
+    const includeRightArrow = (d.currentPage <= maxPage - d.maxButtons / 2 && maxPage > d.maxButtons);
     const overlapBackwards = Math.floor(maxPage - (d.currentPage + ((d.maxButtons - itemsData.length - 1) / 2)))
     const overlapForwards = Math.floor((d.currentPage - ((d.maxButtons - itemsData.length - 1) / 2)))
     if (includeRightArrow) {
@@ -61,7 +61,7 @@ const getPagination = (
     } else {
         itemsData = [
             ...itemsData,
-            ..._items.slice(Math.max(itemsData.length, overlapBackwards < 0 ? d.currentPage - ((d.maxButtons - itemsData.length) / 2 - overlapBackwards) : d.currentPage - (d.maxButtons - itemsData.length) / 2), Math.min(maxPage, overlapForwards < 0 ? d.currentPage + ((d.maxButtons - itemsData.length) / 2 + overlapForwards) : d.currentPage + ((d.maxButtons - itemsData.length) / 2))).map((n) => ({ pageNumber: n + 1, href: formatHref(n + 1), active: n + 1 === d.currentPage })),
+            ..._items.slice(Math.max(0, itemsData.length, overlapBackwards < 0 ? d.currentPage - ((d.maxButtons - itemsData.length) / 2 - overlapBackwards) : d.currentPage - (d.maxButtons - itemsData.length) / 2), Math.min(maxPage, includeRightArrow ? d.currentPage + ((d.maxButtons - itemsData.length) / 2 + overlapForwards) : d.currentPage + ((d.maxButtons - itemsData.length) / 2))).map((n) => ({ pageNumber: n + 1, href: formatHref(n + 1), active: n + 1 === d.currentPage })),
         ]
     }
     return itemsData;

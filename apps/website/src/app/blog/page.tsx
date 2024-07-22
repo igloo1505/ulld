@@ -16,8 +16,9 @@ interface BlogPageProps {
 const BlogPage = ({ searchParams }: BlogPageProps) => {
     return (
         <div
+            id="blog-page-container"
             className={
-                "w-full bg-background flex flex-col justify-start items-center mt-[76px]"
+                "group/blog-page w-full bg-background flex flex-col justify-start items-center mt-[76px]"
             }
         >
             <div
@@ -29,7 +30,8 @@ const BlogPage = ({ searchParams }: BlogPageProps) => {
                     gridTemplateRows: "[main] 1fr",
                 }}
             >
-                <BlogSideBar />
+                <BlogSideBar 
+                />
                 <MathjaxProvider>
                     <BlogPostList />
                 </MathjaxProvider>

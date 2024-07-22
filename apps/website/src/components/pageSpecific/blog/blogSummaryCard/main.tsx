@@ -27,9 +27,9 @@ const BlogPostSummaryCard = ({ item }: BlogPostSummaryCardProps) => {
 
     return (
         <div
-            className={"w-full grid grid-cols-[200px_1fr] gap-x-6 place-items-center"}
+            className={"w-full flex flex-col sm:grid sm:grid-cols-[200px_1fr] gap-x-6 gap-y-4 place-items-center"}
         >
-            <div className={"w-[200px] h-[200px] rounded-[20px] overflow-hidden"}>
+            <div className={"w-full h-auto sm:w-[200px] sm:h-[200px] rounded-[20px] overflow-hidden"}>
                 <BlogSummaryImageSection item={item} />
             </div>
             <div className={"w-full flex flex-col gap-2 justify-center items-start"}>

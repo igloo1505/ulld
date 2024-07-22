@@ -1,20 +1,15 @@
 {
-    "imageStyles": {
-        "onTheGravitationalNatureOfTime": {
-            "objectPosition": "right"
-        }
-    },
-    "tags": [
-        "Gravity",
-        "On the gravitational nature of time",
-        "plugin",
-        "Relativity",
-        "Time"
-    ],
-    "categories": [
-        "About ULLD",
-        "Developments",
-        "Physics",
-        "Tutorials"
-    ]
+  "imageStyles": {
+    "onTheGravitationalNatureOfTime": {
+      "objectPosition": "right"
+    }
+  },
+  "tags": [
+    "Gravity",
+    "On the gravitational nature of time",
+    "plugin",
+    "Relativity",
+    "Time"
+  ],
+  "categories": ["About ULLD", "Developments", "Physics", "Tutorials"]
 }

@@ -8,14 +8,18 @@ import { Separator } from "@ulld/tailwind/separator";
 const BlogSideBar = () => {
     return (
         <div 
-            className={"w-full h-fit md:top-0 lgr:sticky lgr:h-screen-noNav lgr:place-self-start py-4 px-2"}
+            className={"w-full h-fit md:top-0 lgr:sticky lgr:h-screen-noNav lgr:place-self-start pt-16 lgr:py-4 pb-6 px-2 group-[.hideBlogSep]/blog-page:pt-8 group-[.hideBlogSep]/blog-page:pb-0"}
             style={{
                 gridColumn: "blogSidebar",
                 gridRow: "main"
             }}
         >
-            <BlogCategoryList />
-            <Separator className={"my-4"} />
+            <BlogCategoryList
+            />
+            <Separator
+                id={"blog-sidebar-separator"}
+                className={"my-4 group-[.hideBlogSep]/blog-page:opacity-0 group-[.hideBlogSep]/blog-page:my-2"}
+            />
             <TagList />
         </div>
     );

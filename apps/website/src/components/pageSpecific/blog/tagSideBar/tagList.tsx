@@ -26,8 +26,10 @@ const TagList = ({ }: TagListProps) => {
 
     return (
         <>
-            <SidebarSectionTitle>Tags</SidebarSectionTitle>
-            <BlogTagSelectInput className={"md:hidden"} />
+            <SidebarSectionTitle className={"hidden md:inline-block"}>Tags</SidebarSectionTitle>
+            <BlogTagSelectInput 
+                className={"md:hidden"}
+            />
             <div
                 className={
                     "hidden md:flex flex-row justify-start items-center gap-2 flex-wrap"

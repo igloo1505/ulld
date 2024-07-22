@@ -13,7 +13,7 @@ import {
     SelectContent,
     SelectItem,
 } from "@ulld/tailwind/select";
-import React, { ReactNode, useMemo } from "react";
+import React, { CSSProperties, ForwardedRef, ReactNode, RefObject, useMemo } from "react";
 import { FieldValues, useFormContext } from "react-hook-form";
 import { BaseInputProps } from "../../types/fullFormInputProps";
 
@@ -27,6 +27,12 @@ export interface SelectInputProps<T extends FieldValues>
     extends BaseInputProps<T, "formItem" | "selectTrigger"> {
     placeholder?: string;
     options: SelectOption[]
+    styles?: {
+        formItem?: CSSProperties
+    }
+    refs?: {
+        formItem?: RefObject<HTMLDivElement> | ForwardedRef<HTMLDivElement>
+    }
 }
 
 export const SelectInput = <T extends FieldValues>({
@@ -36,6 +42,8 @@ export const SelectInput = <T extends FieldValues>({
     options,
     placeholder = "Select",
     classes = {},
+    styles = {},
+    refs = {},
 }: SelectInputProps<T>) => {
     const form = useFormContext<T>();
     const optionValues = useMemo(() => options.map((o) => o.value), [options])
@@ -45,7 +53,11 @@ export const SelectInput = <T extends FieldValues>({
             name={name}
             render={({ field }) => {
                 return (
-                    <FormItem className={classes.formItem}>
+                    <FormItem 
+                        className={classes.formItem}
+                        style={styles.formItem}
+                        ref={refs.formItem}
+                    >
                         {label && <FormLabel>{label}</FormLabel>}
                         <Select
                             onValueChange={(newVal) => {

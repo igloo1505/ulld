@@ -38,6 +38,7 @@ const BlogTagSelectInput = ({className}: TagSelectInputProps) => {
                 classes={{
                     formItem: className
                 }}
+                placeholder="Tags"
             />
         </Form>
     );
