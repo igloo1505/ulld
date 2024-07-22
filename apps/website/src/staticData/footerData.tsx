@@ -1,6 +1,8 @@
 import { LogoAsText } from "#/components/general/logoAsText"
 import { FooterBannerProps } from "#/components/layouts/footer/footerBanner"
 import { LinkGroupItems } from "#/components/layouts/footer/linkGroup"
+import { showContactMeModal } from "#/state/slices/interactions"
+import store from "#/state/store"
 import staticContent from "staticContent"
 
 const links = staticContent.links
@@ -52,7 +54,11 @@ export const footerLinks: Record<FooterLinkKeys, LinkGroupItems> & {banners?: Fo
             label: "Patreon"
         },
         {
-            href: links.contactMe,
+            onClick: () => {
+                store.dispatch(showContactMeModal(true))
+            },
+            href: "",
+            noLink: true,
             label: "Contact Me"
         },
     ]

@@ -13,10 +13,14 @@ const slice = createSlice({
         }>) {
             state.modals[action.payload.key] = action.payload.value
         },
+        showContactMeModal(state, action: PayloadAction<boolean | undefined>) {
+            console.log("action: ", action)
+            state.modals.contactMe = typeof action.payload === "boolean" ? action.payload : true
+        }
     }
 })
 
 
-export const { sm } = slice.actions
+export const { sm, showContactMeModal } = slice.actions
 export default slice.reducer
 

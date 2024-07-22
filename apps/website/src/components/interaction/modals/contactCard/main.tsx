@@ -1,59 +1,88 @@
-import { Button } from "@ulld/tailwind/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@ulld/tailwind/card";
+"use client";
 import { Label } from "@ulld/tailwind/label";
 import React from "react";
 import CopyTextContainer from "../../copyTextContainer/main";
 import staticContent from "staticContent";
-import { router } from "@ulld/api";
-import ClientButtonBack from "../../clientButtons/back";
+import { PatreonIcon } from "@ulld/icons/patreon";
+import GithubIcon from "@ulld/icons/github";
+import {
+    Dialog,
+    DialogHeader,
+    DialogTitle,
+    DialogDescription,
+    DialogContent,
+    DialogFooter,
+    DialogPortal,
+} from "@ulld/tailwind/dialog";
+
+import store, { RootState } from "#/state/store";
+import { connect } from "react-redux";
+import { showContactMeModal } from "#/state/slices/interactions";
+
+const connector = connect((state: RootState, props: any) => ({
+    open: state.interactions.modals.contactMe,
+    props: props,
+}));
 
 interface ContactMeCardProps {
-  isModal?: boolean;
+    isModal?: boolean;
+    open: boolean;
 }
 
-const ContactMeCard = ({ isModal }: ContactMeCardProps) => {
-  return (
-    <Card className="w-[350px]">
-      <CardHeader>
-        <CardTitle>Contact Me</CardTitle>
-        <CardDescription>
-          I will do my best to respond to all emails.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="contact-email">Email</Label>
-              <CopyTextContainer
-                id="contact-email"
-                toastDescription={
-                  "The email has been copied to your clipboard."
+const ContactMeDialog = connector(({ open }: ContactMeCardProps) => {
+    console.log("open: ", open);
+    /* if (!open) { */
+    /*     return null; */
+    /* } */
+    return (
+        <Dialog
+            open={open}
+            onOpenChange={(o) => {
+                if (!o) {
+                    store.dispatch(showContactMeModal(false));
                 }
-                className={"text-sm"}
-              >
-                {staticContent.contact.email}
-              </CopyTextContainer>
-            </div>
-          </div>
-        </form>
-      </CardContent>
-      {isModal && (
-        <CardFooter>
-          <ClientButtonBack />
-        </CardFooter>
-      )}
-    </Card>
-  );
-};
+            }}
+        >
+            <DialogPortal>
+                <DialogContent className={"w-[350px]"}>
+                    <DialogHeader>
+                        <DialogTitle>Contact Me</DialogTitle>
+                        <DialogDescription>
+                            I will do my best to respond to all emails.
+                        </DialogDescription>
+                    </DialogHeader>
+                    <form>
+                        <div className="grid w-full items-center gap-4">
+                            <div className="flex flex-col space-y-1.5">
+                                <Label htmlFor="contact-email">Email</Label>
+                                <CopyTextContainer
+                                    id="contact-email"
+                                    toastDescription={
+                                        "My email has been copied to your clipboard."
+                                    }
+                                    className={"text-sm"}
+                                >
+                                    {staticContent.contact.email}
+                                </CopyTextContainer>
+                            </div>
+                        </div>
+                    </form>
+                    <DialogFooter
+                        className={"flex flex-row justify-end items-center gap-4"}
+                    >
+                        <a href={staticContent.links.fund.patreon}>
+                            <PatreonIcon className={"w-6 h-6 fill-foreground"} />
+                        </a>
+                        <a href={staticContent.links.fund.github}>
+                            <GithubIcon className={"w-6 h-6"} />
+                        </a>
+                    </DialogFooter>
+                </DialogContent>
+            </DialogPortal>
+        </Dialog>
+    );
+});
 
-ContactMeCard.displayName = "ContactMeCard";
+ContactMeDialog.displayName = "ContactMeDialog";
 
-export default ContactMeCard;
+export default ContactMeDialog;
