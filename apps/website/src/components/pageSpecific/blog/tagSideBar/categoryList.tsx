@@ -7,6 +7,7 @@ import SidebarSectionTitle from "./sectionTitle";
 import { CheckIcon } from "lucide-react";
 import clsx from "clsx";
 import BlogCategoryMobileSelect from "./categorySelect";
+import SelectWithHref, { SelectOptionWithHref } from "#/components/utility/ui/selectWithHref";
 
 const BlogCategoryList = () => {
     const [collapseToDropdown, setCollapseToDropdown] = useState<boolean | null>(null);
@@ -26,7 +27,6 @@ const BlogCategoryList = () => {
     let activeCategory = currentSearchParams.get("category");
 
     const handleCollapse = () => {
-        console.log("totalCategoryWidth: ", totalCategoryWidth)
         setCollapseToDropdown(
             window.innerWidth < 768 && totalCategoryWidth >= window.innerWidth,
         );
@@ -52,9 +52,17 @@ const BlogCategoryList = () => {
         return isActive ? "" : `?${sp.toString()}`;
     };
 
-    const handleCatChange = (c: string) => {
-        router.push(`/blog${getCategorySearchParams(c)}`);
-    };
+
+    let items = useMemo(() => {
+        return staticData.categories.map((t): SelectOptionWithHref => {
+            return {
+                value: t,
+                label: t,
+                href: `/blog${getCategorySearchParams(t)}`,
+                active: activeCategory === t
+            };
+        });
+    }, [activeCategory]);
 
     if(typeof collapseToDropdown !== "boolean"){
         return null
@@ -66,9 +74,9 @@ const BlogCategoryList = () => {
                 Categories
             </SidebarSectionTitle>
             {collapseToDropdown ? (
-                <BlogCategoryMobileSelect
-                    ref={selectRef}
-                    onCategoryChange={handleCatChange}
+                <SelectWithHref
+                    items={items}
+                    placeholder="Categories"
                 />
             ) : (
                 <div

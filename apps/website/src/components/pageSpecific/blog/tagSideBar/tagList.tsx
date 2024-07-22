@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import staticData from "#/staticData/mdxData.json";
 import SidebarSectionTitle from "./sectionTitle";
@@ -24,11 +24,16 @@ const TagList = ({ }: TagListProps) => {
     let extraTags = tags.length - maxTagItems;
     let cat = currentSearchParams.get("category");
 
+
     return (
         <>
             <SidebarSectionTitle className={"hidden md:inline-block"}>Tags</SidebarSectionTitle>
             <BlogTagSelectInput 
-                className={"md:hidden"}
+                classes={{
+                    container: "md:hidden",
+                    trigger: "md:hidden"
+                }}
+                activeTags={activeTags}
             />
             <div
                 className={

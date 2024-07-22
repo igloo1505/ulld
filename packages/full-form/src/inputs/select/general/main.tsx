@@ -27,6 +27,7 @@ export interface SelectInputProps<T extends FieldValues>
     extends BaseInputProps<T, "formItem" | "selectTrigger"> {
     placeholder?: string;
     options: SelectOption[]
+    onClick?: (item: SelectOption) => void;
     styles?: {
         formItem?: CSSProperties
     }
@@ -40,6 +41,7 @@ export const SelectInput = <T extends FieldValues>({
     label,
     name,
     options,
+    onClick,
     placeholder = "Select",
     classes = {},
     styles = {},
@@ -75,7 +77,17 @@ export const SelectInput = <T extends FieldValues>({
                             <SelectContent>
                                 {options.map((o) => {
                                     return (
-                                        <SelectItem key={o.value} value={o.value}>
+                                        <SelectItem 
+                                            key={o.value}
+                                            value={o.value}
+                                            onClick={() => {
+                                                console.log(`Clicking`)
+                                                if(onClick){
+                                                    console.log(`Clicking`)
+                                                    onClick(o)
+                                                }
+                                            }}
+                                        >
                                             {o.label}
                                         </SelectItem>
                                     );

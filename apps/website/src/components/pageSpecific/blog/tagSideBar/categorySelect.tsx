@@ -1,9 +1,10 @@
-import React, { CSSProperties, ForwardedRef, forwardRef } from "react";
+import React, { CSSProperties, ForwardedRef, forwardRef, useEffect } from "react";
 import { Form } from "@ulld/tailwind/form";
 import { useForm, zodResolver } from "@ulld/full-form/form";
 import { z } from "zod";
 import staticData from "#/staticData/mdxData.json";
 import { SelectInput } from "@ulld/full-form/select";
+import { usePathname, useSearchParams } from "next/navigation";
 
 interface BlogCategoryMobileSelectProps {
     className?: string;
@@ -37,6 +38,12 @@ const BlogCategoryMobileSelect = forwardRef(
                         value: c,
                         label: c,
                     }))}
+                    onClick={(item) => {
+                        onCategoryChange(item.value)
+                        if(item.value === form.getValues("category")){
+                            form.setValue("category", "")
+                        }
+                    }}
                     classes={{
                         formItem: className,
                     }}
