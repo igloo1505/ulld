@@ -32,21 +32,24 @@ const MainNavigationDrawer = connector(
     ({ buttons, drawer }: MainNavigationDrawerProps) => {
         let vp = useViewport();
         return (
-            <Drawer 
+            <Drawer
                 open={drawer.open}
                 onOpenChange={(newOpen) => {
-                    if(!newOpen){
-                        store.dispatch(closeDrawer())
+                    if (!newOpen) {
+                        store.dispatch(closeDrawer());
                     }
                 }}
             >
-                    <DrawerContent>
-                        <DrawerHeader>
+                <DrawerContent className={"focus-visible:outline-none"}>
+                    <DrawerHeader>
                         {drawer.title && <DrawerTitle>{drawer.title}</DrawerTitle>}
-                            <DrawerDescription>{staticContent.description}</DrawerDescription>
-                        </DrawerHeader>
-                        <MainNavigationDrawerButtonGroup hide={!vp || vp.window.width >= drawer.breakpoint} buttons={buttons} />
-                    </DrawerContent>
+                        <DrawerDescription>{staticContent.description}</DrawerDescription>
+                    </DrawerHeader>
+                    <MainNavigationDrawerButtonGroup
+                        hide={!vp || vp.window.width >= drawer.breakpoint}
+                        buttons={buttons}
+                    />
+                </DrawerContent>
             </Drawer>
         );
     },

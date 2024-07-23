@@ -2,19 +2,16 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import staticData from "#/staticData/mdxData.json";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import SidebarSectionTitle from "./sectionTitle";
 import { CheckIcon } from "lucide-react";
 import clsx from "clsx";
-import BlogCategoryMobileSelect from "./categorySelect";
 import SelectWithHref, { SelectOptionWithHref } from "#/components/utility/ui/selectWithHref";
 
 const BlogCategoryList = () => {
     const [collapseToDropdown, setCollapseToDropdown] = useState<boolean | null>(null);
     let currentSearchParams = useSearchParams();
     const ref = useRef<HTMLDivElement>(null!);
-    const router = useRouter();
-    const selectRef = useRef<HTMLDivElement>(null!);
     let totalCategoryWidth = useMemo(() => {
         return (
             staticData.categories.map((t) => t.length).reduce((a, b) => a + b) * 8 +

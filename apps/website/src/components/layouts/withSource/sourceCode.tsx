@@ -83,12 +83,13 @@ const SourceCode = forwardRef(
         return (
             <>
                 <NavbarButtonPortal>
-                    <button
+                    <a
+                        role="button"
                         className={navbarButtonClasses}
                         onClick={() => setTheme({ ...theme, open: true })}
                     >
                         Theme
-                    </button>
+                    </a>
                 </NavbarButtonPortal>
                 <ShikiThemeSelect
                     {...theme}

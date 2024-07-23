@@ -13,7 +13,6 @@ interface MainNavigationDrawerButtonGroupProps {
 }
 
 declare global {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
     interface WindowEventMap {
         "main-drawer-opened": CustomEvent;
     }
@@ -41,8 +40,9 @@ const MainNavigationDrawerButtonGroup = ({
                 className,
             )}
             id="navbar-btn-container-mobile"
+            onClick={closeDrawerOnClick}
         >
-            {buttons.map((a, i) => {
+            {buttons.map((a) => {
                 if ("href" in a) {
                     return (
                         <Link

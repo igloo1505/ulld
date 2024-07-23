@@ -14,8 +14,7 @@ const BlogSideBar = () => {
                 gridRow: "main"
             }}
         >
-            <BlogCategoryList
-            />
+            <BlogCategoryList />
             <Separator
                 id={"blog-sidebar-separator"}
                 className={"my-4 group-[.hideBlogSep]/blog-page:opacity-0 group-[.hideBlogSep]/blog-page:my-2"}
