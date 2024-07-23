@@ -16,6 +16,7 @@ export * from "./sheetDesc";
 export * from "./sheetPortal";
 export * from "./sheetFooter"
 
+
 interface MobileSheetProps {
     open: boolean;
     children: ReactNode;
@@ -28,13 +29,14 @@ interface MobileSheetProps {
     };
 }
 
+
 const _MobileSheet = ({
     open,
     children,
     className,
     onOpenChange,
     classes,
-    dragCloseVelocity=80
+    dragCloseVelocity = 80
 }: MobileSheetProps) => {
     const [locked, setLocked] = useLockBodyScroll(open);
     const state = useMobileSheetContext();
