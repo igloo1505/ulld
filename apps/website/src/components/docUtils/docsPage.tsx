@@ -2,7 +2,7 @@ import { cn } from "@ulld/utilities/cn";
 import { PageType } from "#/types/general";
 import { MDXContent } from "@content-collections/mdx/react";
 import "fumadocs-ui/twoslash.css";
-import { DocsBody, DocsPage } from "fumadocs-ui/page";
+import { DocsBody, DocsPage, DocsPageProps } from "fumadocs-ui/page";
 import React, { ComponentProps, ReactNode } from "react";
 import TypeTable from "./typeTable";
 import ApplyMathjaxBandaid from "../utility/applyMathjaxBandaid";
@@ -21,6 +21,8 @@ import { getRandomId } from "@ulld/utilities/identity";
 import { WithRequired } from "@ulld/utilities/types";
 import { NoteStateObserver } from "@ulld/state/observers/noteState";
 import { getLatexTocEntries } from "#/fumaDocs/utils/getLatexTocEntries";
+import Link from "next/link";
+import { buttonVariants } from "@ulld/tailwind/button";
 
 interface DocsPageComponentProps {
     page: PageType;
@@ -30,6 +32,20 @@ interface DocsPageComponentProps {
     className?: string;
 }
 
+const TocSourceFooterButton = ({ noteId }: { noteId?: string }) => {
+    if (!noteId) {
+        return null;
+    }
+
+    return (
+        <Link
+            className={cn("", buttonVariants({ variant: "outline" }))}
+            href={`/withSource?id=${noteId}`}
+        >
+            Source
+        </Link>
+    );
+};
 
 const DocsPageInternal = ({
     page,
@@ -109,11 +125,14 @@ const DocsPageComponent = (props: DocsPageComponentProps) => {
 
     return (
         <MathjaxProvider>
-            <DocsPage toc={newEntries} full={props.page.data.full}>
-                <DocsBody
-                    id={id}
-                    className={cn("@container/mdx mdx", props.className)}
-                >
+            <DocsPage
+                toc={newEntries}
+                tableOfContent={{
+                    footer: <TocSourceFooterButton noteId={props.page.data.id} />,
+                }}
+                full={props.page.data.full}
+            >
+                <DocsBody id={id} className={cn("@container/mdx mdx", props.className)}>
                     <DocsPageInternal {...props} id={id} />
                 </DocsBody>
             </DocsPage>
