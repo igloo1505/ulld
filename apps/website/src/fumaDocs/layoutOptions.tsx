@@ -11,7 +11,7 @@ export const baseOptions: BaseLayoutProps = {
             </span>
         ),
         url: "/",
-        transparentMode: "top"
+        transparentMode: "top",
     },
     links: [
         {
@@ -47,7 +47,6 @@ export const baseOptions: BaseLayoutProps = {
     ],
     githubUrl: appData.projectRepo.url,
 };
-
 
 export const docsLayoutOptions: DocsLayoutProps = {
     ...baseOptions,
