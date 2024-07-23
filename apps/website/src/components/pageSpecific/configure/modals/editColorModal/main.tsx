@@ -87,7 +87,7 @@ const EditColorModal = () => {
                     footer: "w-full flex flex-row justify-end items-center"
                 }
             }}
-            breakpoint={1024}
+            breakpoint={768}
             title={editColorModal}
             desc={
                 <>

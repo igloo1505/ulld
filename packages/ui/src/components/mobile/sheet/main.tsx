@@ -81,7 +81,7 @@ const _MobileSheet = ({
             <MobileSheetBackdrop className={classes?.backdrop} />
             <motion.div
                 className={cn(
-                    "fixed bottom-0 w-screen bg-background z-50",
+                    "fixed bottom-0 w-screen bg-background z-[100] max-h-screen flex flex-col",
                     className,
                 )}
                 initial={"hidden"}

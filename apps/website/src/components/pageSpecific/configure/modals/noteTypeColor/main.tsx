@@ -16,9 +16,9 @@ import { docTypeUISchema } from "@ulld/configschema/zod/documentConfigSchema";
 import { useNoteTypeFormState } from "../../dataDisplay/noteTypes/useNoteTypeFormState";
 import ThemeColors from "./themeColors";
 import deepmerge from "deepmerge";
+import { MobileSheetDesktopDialog } from "@ulld/ui/responsive/DialogMobileSheet";
 
-
-type StyleType = NoteTypeOutput["UI"]["styles"]
+type StyleType = NoteTypeOutput["UI"]["styles"];
 
 const NoteTypeColorModal = () => {
     const {
@@ -36,15 +36,13 @@ const NoteTypeColorModal = () => {
 
     useEffect(() => {
         if (editingItem) {
-            let style: StyleType =
-                form.getValues("styles") ||
-                ({} as StyleType);
+            let style: StyleType = form.getValues("styles") || ({} as StyleType);
             let editingStyle = editingItem?.UI?.styles;
             if (editingStyle) {
                 for (const k in editingStyle) {
                     let value = editingStyle[k as keyof StyleType];
-                    if(k && value !== undefined) {
-                        style[k as keyof StyleType] = value as any
+                    if (k && value !== undefined) {
+                        style[k as keyof StyleType] = value as any;
                     }
                 }
             }
@@ -60,6 +58,49 @@ const NoteTypeColorModal = () => {
             close();
         }
     };
+
+    return (
+        <MobileSheetDesktopDialog
+            open={open}
+            breakpoint={1240}
+            onOpenChange={(newOpen) => {
+                if (!newOpen) {
+                    close();
+                }
+            }}
+            footer={
+                <>
+                    <Button type="submit">Save</Button>
+                </>
+            }
+            title={"Extend the default UI for this note type."}
+            desc={
+                <>
+                    Some themes, extensions and layouts may use colors unique to a
+                    specific note type to help with searchability and{" "}
+                    <span className={"italic"}>at-a-glance</span> referencing. Your app
+                    will not break if these are not included, but it's a good idea to get
+                    the most from your initial configuration.
+                </>
+            }
+        >
+            <Form {...form}>
+                <form
+                    className={"flex flex-col justify-center items-start gap-6"}
+                    onSubmit={form.handleSubmit(appendItem)}
+                >
+                    <div
+                        className={
+                            "w-full space-y-6 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-8 lg:mt-6"
+                        }
+                    >
+                        <ThemeColors theme="dark" />
+                        <ThemeColors theme="light" />
+                    </div>
+                </form>
+            </Form>
+        </MobileSheetDesktopDialog>
+    );
 
     return (
         <Dialog

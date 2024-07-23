@@ -12,7 +12,7 @@ export const MobileSheetHeader = ({ children }: MobileSheetHeaderProps) => {
         <div className={"w-full relative p-4 sm:px-8 select-none"}>
             <div className={"h-4 w-full flex flex-row justify-center items-center"}>
                 <div
-                    className={"cursor-pointer w-[120px] h-2 rounded-full bg-secondary"}
+                    className={"cursor-pointer w-[120px] h-2 rounded-full bg-secondary mb-4"}
                     style={{
                         touchAction: "none",
                     }}

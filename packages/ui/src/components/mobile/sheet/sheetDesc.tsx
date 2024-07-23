@@ -1,3 +1,4 @@
+import cn from '@ulld/utilities/cn'
 import React, { ReactNode } from 'react'
 
 
@@ -7,9 +8,9 @@ interface MobileSheetDescProps {
     className?: string
 }
 
-export const MobileSheetDesc = (props: MobileSheetDescProps) => {
+export const MobileSheetDesc = ({children, className}: MobileSheetDescProps) => {
 return (
-    <div></div>
+    <div className={cn("text-sm text-muted-foreground", className)}>{children}</div>
 )
 }
 
