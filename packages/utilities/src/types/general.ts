@@ -41,3 +41,5 @@ export type SearchAllSearchType = "searchAll" | "byTag" | "byEquation" | "bySequ
 export type OnlyChildren = {
     children: ReactNode
 }
+
+export type DeviceType = "mobile" | "tablet" | "mobileOnly" | "macOS" | "smartTv" | "iOS" | "android" | "desktop"

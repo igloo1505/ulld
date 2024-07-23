@@ -86,7 +86,8 @@
     "./getPluginConfig": "./src/utils/baseAppUtils/getPluginConfig.ts",
     "./componentDocsPathUtils": "./src/utils/baseAppUtils/componentDocPathUtils.ts",
     "./providers-mathjax": "./src/providers/mathjax.tsx",
-    "./transformExportString": "./src/utils/build/transformExportString.ts"
+    "./transformExportString": "./src/utils/build/transformExportString.ts",
+    "./validateDeviceType": "./src/utils/deviceDetect.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",

@@ -1,7 +1,7 @@
 import "#/styles/mdx.scss";
 import "@ulld/tailwind/websiteStyles.scss";
 import "#/styles/globals.scss";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import React from "react";
 import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI";
@@ -69,12 +69,23 @@ const appFont = localFont({
 const metaDataDesc =
     "Uh Little Less Dum is a forever free, perpetually open source academic note taking app built by a former software engineer for his own pursuit of a theory of quantum gravity.";
 
+
+export const viewport: Viewport = {
+    themeColor: "#333",
+    colorScheme: "dark",
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1
+}
+
 /* PRIORITY: Handle this much better and apply throughout the app. Use this source here: https://nextjs.org/docs/app/api-reference/functions/generate-metadata#category */
 export const metadata: Metadata = {
+    metadataBase: new URL("https://uhlittlelessdum.com"),
     title: "Uh Little Less Dum",
     description: metaDataDesc,
     category: "technology",
     creator: "Andrew C. Iglinski",
+    publisher: "Andrew C. Iglinski",
     applicationName: "Uh Little Less Dum",
     authors: [
         {
@@ -97,9 +108,10 @@ export const metadata: Metadata = {
         "research",
         "markdown",
         "mdx",
+        "STEM",
+        "gravity",
+        "relativity"
     ],
-    themeColor: "#333333",
-    colorScheme: "dark",
     robots: {
         index: true,
         follow: true,
@@ -129,10 +141,9 @@ export const metadata: Metadata = {
         images: staticContent.links.media.screenshots.hero,
     },
     appleWebApp: {
-        capable: true,
         title: "Uh Little Less Dum",
         startupImage: staticContent.links.media.logo,
-        statusBarStyle: "black",
+        statusBarStyle: "black-translucent",
     },
 };
 
@@ -194,11 +205,6 @@ const RootLayout = async (props: {
                 <link rel="shortcut icon" href="/icons/favicon.ico" />
                 <meta name="msapplication-TileColor" content="#2b5797" />
                 <meta name="msapplication-config" content="/icons/browserconfig.xml" />
-                <meta name="theme-color" content="#333333" />
-                <meta
-                    name="keywords"
-                    content="note taking, academic, plot, math, physics, STEM, quantum gravity, relativity, time, theory"
-                />
             </head>
             <body
                 className={clsx(
