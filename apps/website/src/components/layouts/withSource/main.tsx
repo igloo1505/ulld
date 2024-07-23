@@ -110,8 +110,14 @@ const SideBySideWithSource = ({ mdx, children }: SideBySideWithSourceProps) => {
                     maxWidth={sourceWidth}
                 />
             </ResizablePanel>
-            <ResizableHandle withHandle />
-            <ResizablePanel defaultSize={50}>
+            <ResizableHandle
+                withHandle
+                className={"hidden md:flex"}
+            />
+            <ResizablePanel
+                defaultSize={50}
+                className={"hidden md:flex"}
+            >
                 <CodeOutput ref={outputContainer} data-name={names.output}>
                     <MathjaxProvider>
                         {children}

@@ -102,7 +102,7 @@ const SourceCode = forwardRef(
                 />
                 <motion.div
                     className={
-                        "w-full max-w-full h-full max-h-full overflow-y-auto block not-prose [&_pre]:max-w-full py-6 pr-4 pl-6 text-sm [&_code]:max-w-full [&_code]:min-w-full [&_code]:whitespace-break-spaces [&_.line]:min-h-4 [&_code]:!bg-background no-scrollbar"
+                        "w-full max-w-full h-full max-h-full overflow-y-auto block not-prose [&_pre]:max-w-full [&_pre]:py-6 [&_pre]:pr-4 [&_pre]:pl-6 text-sm [&_code]:max-w-full [&_code]:min-w-full [&_code]:whitespace-break-spaces [&_code]:break-words [&_.line]:min-h-4 no-scrollbar [&_pre]:overflow-x-auto"
                     }
                     dangerouslySetInnerHTML={source ? { __html: source } : undefined}
                     {...props}

@@ -66,9 +66,23 @@ header#nd-subnav {
 
 mjx-container[jax="CHTML"][display="true"] {
   font-size: 1.15rem;
+  overflow-x: auto;
   mjx-labels {
     mjx-itable {
       font-size: 1rem !important;
+    }
+  }
+}
+
+.prose {
+  mjx-container[jax="CHTML"][display="true"] {
+    font-size: 1.15rem;
+    overflow-x: auto;
+    min-width: 0px !important;
+    mjx-labels {
+      mjx-itable {
+        font-size: 1rem !important;
+      }
     }
   }
 }
