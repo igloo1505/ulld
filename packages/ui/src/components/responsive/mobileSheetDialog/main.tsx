@@ -16,7 +16,11 @@ export interface MobileSheetDesktopDialogProps {
     breakpoint: number | DeviceType | DeviceType[];
     classes?: {
         dialog?: {
-            container?: string;
+            content?: string;
+            header?: string;
+            title?: string;
+            desc?: string;
+            footer?: string;
         };
         sheet?: {
             container?: string

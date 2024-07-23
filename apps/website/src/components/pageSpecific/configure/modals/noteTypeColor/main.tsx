@@ -68,6 +68,11 @@ const NoteTypeColorModal = () => {
                     close();
                 }
             }}
+            classes={{
+                dialog: {
+                    content: "@container/editColorModal w-[min(960px,90vw)] max-w-[min(960px,90vw)]"
+                }
+            }}
             footer={
                 <>
                     <Button type="submit">Save</Button>

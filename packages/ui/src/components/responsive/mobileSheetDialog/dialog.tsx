@@ -19,20 +19,31 @@ export const DialogMobileSheet = ({
     desc,
     title,
     footer,
+    classes,
 }: DialogMobileSheetProps) => {
     return (
         <Dialog open={Boolean(open)} onOpenChange={onOpenChange}>
-            <DialogContent
-                className={
-                    "@container/editColorModal w-[min(768px,90vw)] max-w-[min(768px,90vw)]"
-                }
+            <DialogContent 
+                className={classes?.dialog?.content}
             >
-                <DialogHeader>
-                    {title && <DialogTitle>{title}</DialogTitle>}
-                    {desc && <DialogDescription>{desc}</DialogDescription>}
+                <DialogHeader className={classes?.dialog?.header}>
+                    {title && (
+                        <DialogTitle className={classes?.dialog?.title}>
+                            {title}
+                        </DialogTitle>
+                    )}
+                    {desc && (
+                        <DialogDescription className={classes?.dialog?.desc}>
+                            {desc}
+                        </DialogDescription>
+                    )}
                 </DialogHeader>
                 {children}
-                {footer && <DialogFooter>{footer}</DialogFooter>}
+                {footer && (
+                    <DialogFooter className={classes?.dialog?.footer}>
+                        {footer}
+                    </DialogFooter>
+                )}
             </DialogContent>
         </Dialog>
     );
