@@ -10,5 +10,5 @@ class Vector:
    deltas: npt.ArrayLike[float] = field(default_factory: [1, 0, 0])
 
    def dot(self, v: Vector):
-       return self.deltas * v.deltas
+       return np.sum(self.deltas * v.deltas)
 `

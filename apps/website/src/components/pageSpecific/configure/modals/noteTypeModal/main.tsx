@@ -96,7 +96,6 @@ const NoteTypeModal = ({ }: NoteTypeModalProps) => {
         } else {
             onAccept(values);
         }
-        console.log("resetting form ");
         reset();
         close();
     };
@@ -127,7 +126,7 @@ const NoteTypeModal = ({ }: NoteTypeModalProps) => {
                     >
                         <div
                             className={
-                                "space-y-6 lg:flex lg:flex-row lg:justify-center lg:items-start lg:gap-6"
+                                "space-y-6 lg:flex lg:flex-row lg:justify-center lg:items-start lg:gap-6 w-full"
                             }
                         >
                             <div

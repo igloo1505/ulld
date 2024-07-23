@@ -3,11 +3,9 @@ import { notFound } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import DatabaseMarkdown from './database/remoteMarkdown'
 import { serverClient } from '@ulld/api/serverClient'
-import PageContentContainer from '../../layouts/contentContainer'
+import { PageContentContainer } from '../../layouts/contentContainer'
 import { ParsableExtensions } from '@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions'
 import { NotePageProps } from '../../../utilityFunctions/formatting/formatNoteProps'
-
-
 
 
 interface DatbaseNoteProps extends NotePageProps {
@@ -18,7 +16,6 @@ interface DatbaseNoteProps extends NotePageProps {
 }
 
 const DatabaseNote = async (props: DatbaseNoteProps) => {
-    console.log("props: ", props)
     let nt = props.noteType
     if (!nt) {
         let { markdown, notebook } = await serverClient.search.findUnknownDBNoteTypeFromRootRelativePath(props.rootRelativePath)

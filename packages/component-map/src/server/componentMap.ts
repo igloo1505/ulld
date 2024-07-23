@@ -34,7 +34,10 @@ export const components: MDXComponents = {
 }
 
 
-export const getComponentMap = (content: string, opts?: ConditionalComponentProps) => {
+export const getComponentMap = (content?: string, opts?: ConditionalComponentProps) => {
+    if(!content){
+        return {}
+    }
      if (opts?.requiredOnly) {
         return components satisfies MDXComponents
      }

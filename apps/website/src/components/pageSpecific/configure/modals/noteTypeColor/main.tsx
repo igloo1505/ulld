@@ -70,7 +70,7 @@ const NoteTypeColorModal = () => {
                 }
             }}
         >
-            <DialogContent className={"lg:w-fit lg:max-w-[90vw]"}>
+            <DialogContent className={"w-max max-w-[min(90vw,1240px)]"}>
                 <DialogHeader>
                     <DialogTitle>Extend the default UI for this note type.</DialogTitle>
                     <DialogDescription>

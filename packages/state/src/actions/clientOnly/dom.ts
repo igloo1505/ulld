@@ -32,7 +32,7 @@ export const setCanBookmarkState = (canBookmark: boolean) => {
     document.body.classList[canBookmark ? "add" : "remove"]("canBookmark");
 };
 
-export const setQuickLinkHtmlId = (id?: string) =>
+export const setQuickLinkHtmlId = (id?: string | null) =>
     id
         ? htmlEm()?.setAttribute("data-quickLinkId", id)
         : htmlEm()?.removeAttribute("data-quickLinkId");

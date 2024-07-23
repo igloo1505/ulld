@@ -6,6 +6,7 @@ import appConfig from "appConfig";
 import buildData from "buildData"
 import { notFound } from "next/navigation";
 import { IndividualNoteSwitch } from "@ulld/ui/individualNoteSwitch";
+import { unifiedMdxParser } from "#/methods/parsers/mdxParser"
 
 export const dynamic = "force-dynamic";
 
@@ -29,7 +30,10 @@ const NotePage = async ({ params, searchParams }: PageProps) => {
         appConfig as AppConfigSchemaOutput,
         buildData as BuildStaticDataOutput
     );
-    return <IndividualNoteSwitch {...props} />;
+    return <IndividualNoteSwitch
+        {...props}
+        mdxParser={unifiedMdxParser}
+    />;
 };
 
 NotePage.displayName = `NotePage-${categoryId}`;

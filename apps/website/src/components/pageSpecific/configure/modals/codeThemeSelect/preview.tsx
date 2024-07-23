@@ -5,7 +5,6 @@ import { useShikiParse } from "@ulld/hooks/useShikiParse";
 import { defaultThemes } from "@ulld/configschema/zod/codeConfig";
 import clsx from "clsx";
 import { useResponsiveCode } from "@ulld/hooks/useResponsiveCode";
-import { CodeBlock, CodeBlockProps } from "fumadocs-ui/components/codeblock";
 
 interface CodeThemeModalPreviewProps {
     content: string;

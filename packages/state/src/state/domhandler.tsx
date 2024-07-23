@@ -9,9 +9,9 @@ import {useUlldStore} from "@ulld/hooks/useUlldStore"
 
 export interface ClientsideDomEventsProps {
     bookmarked: boolean
-    noteId?: number
+    noteId?: number | null
     fs: boolean
-    noteQuickLinkId?: string
+    noteQuickLinkId?: string | null
 }
 
 

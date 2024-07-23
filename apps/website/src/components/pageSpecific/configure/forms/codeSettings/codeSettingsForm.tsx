@@ -41,7 +41,7 @@ const CodeSettingsFormContent = (props: CodeSettingsFormContentProps) => {
             <CheckboxInput<AppConfigSchemaType>
                 name="code.editor.useVimMode"
                 label="Use Vim keybindings"
-                desc="Some sensible, common keymap settings are applied by default. An update in the very near future will extend the configuration schema to support use defined keymaps."
+                desc="Some sensible, common keymap settings are applied by default. An update in the very near future will extend the configuration schema to support user defined keymaps."
             />
             <MonacoLanguageSelect<AppConfigSchemaType>
                 name="code.editor.defaultLangauge"

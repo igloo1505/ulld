@@ -5,6 +5,7 @@ import { LazyMdx } from '../../lazyMdx'
 import { NoteDetailsSheet } from '../../../toc/noteDetailsSheet'
 import { MarkdownFileExtensions } from '@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions'
 import { NotePageProps } from '../../../../utilityFunctions/formatting/formatNoteProps'
+import { UnifiedMdxParser } from '@ulld/utilities/types'
 
 
 
@@ -13,6 +14,7 @@ interface FileSystemMdProps extends NotePageProps {
     absolutePath: string
     rootRelativePath: string
     extension: MarkdownFileExtensions
+    mdxParser: UnifiedMdxParser
 }
 
 
@@ -27,7 +29,9 @@ const FileSystemMarkdown = async (props: FileSystemMdProps) => {
                 markdown={data}
                 slug={props.slug}
                 docType={props.docType}
+                rootRelativePath={props.rootRelativePath}
                 fs={true}
+                mdxParser={props.mdxParser}
             />
             {data && <ReduxProvider>
                 <NoteDetailsSheet

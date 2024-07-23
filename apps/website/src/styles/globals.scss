@@ -78,7 +78,9 @@ mjx-container[jax="CHTML"][display="true"] {
   mjx-container[jax="CHTML"][display="true"] {
     font-size: 1.15rem;
     overflow-x: auto;
+    overflow-y: hidden;
     min-width: 0px !important;
+    min-height: fit-content;
     mjx-labels {
       mjx-itable {
         font-size: 1rem !important;

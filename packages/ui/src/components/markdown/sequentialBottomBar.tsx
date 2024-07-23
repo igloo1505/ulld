@@ -4,24 +4,21 @@ import React from 'react'
 import { buttonVariants } from '@ulld/tailwind/button'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@ulld/tailwind/tooltip'
 import { serverClient } from '@ulld/api/serverClient'
-import { MathDisplaySERVER } from '../math/equation/mathDisplay_server'
+import { MdxContentSERVER } from '@ulld/render/mdx/server'
 
 
 
 interface SequentialNoteBottomBarProps {
-    sequentialIndex?: number
-    sequentialId?: string
+    sequentialIndex?: number | null
+    sequentialId?: string | null
 }
 
 
 export const SequentialNoteBottomBar = async ({ sequentialId, sequentialIndex }: SequentialNoteBottomBarProps) => {
     if (!sequentialId || typeof sequentialIndex !== "number") return null
     let noteList = await serverClient.search.getSequentialIdListByKey(sequentialId)
-    console.log("noteList: ", noteList)
     let params = new URLSearchParams()
-    params.set("sequentialId", sequentialId)
     const thisIndex = noteList.map((n) => n.sequentialIndex).indexOf(sequentialIndex)
-    console.log("thisIndex: ", thisIndex)
 
 
     return (
@@ -36,9 +33,9 @@ export const SequentialNoteBottomBar = async ({ sequentialId, sequentialIndex }:
                             >Back</Link>
                         </TooltipTrigger>
                         <TooltipContent>
-                            <MathDisplaySERVER
+                            <MdxContentSERVER
                                 content={noteList[thisIndex - 1].title}
-                                element="div"
+                                inline
                             />
                         </TooltipContent>
                     </Tooltip>}
@@ -56,9 +53,9 @@ export const SequentialNoteBottomBar = async ({ sequentialId, sequentialIndex }:
                             >Next</Link>
                         </TooltipTrigger>
                         <TooltipContent>
-                            <MathDisplaySERVER
+                            <MdxContentSERVER
                                 content={noteList[thisIndex + 1].title}
-                                element="div"
+                                inline
                             />
                         </TooltipContent>
                     </Tooltip>}

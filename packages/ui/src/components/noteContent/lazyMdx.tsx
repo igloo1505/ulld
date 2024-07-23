@@ -13,37 +13,45 @@ import rehypeVideo from 'rehype-video';
 /* import mdxMermaid from 'mdx-mermaid' */
 import clsx from 'clsx'
 import { ImmediateNoteContentContainer } from './immediateNoteContainer'
-import {ClientsideDomEventsProps, ClientsideNoteEvents } from "@ulld/state/state/domhandler"
-import { getComponentMap } from '../markdown/componentMap'
+import { ClientsideNoteEvents } from "@ulld/state/state/domhandler"
+import { getComponentMap } from '@ulld/component-map/server'
 import { MdxCitations, zodCitationObject } from '../markdown/citations'
 import { SequentialNoteBottomBar } from '../markdown/sequentialBottomBar'
 import { CalendarAndDateManager } from '@ulld/api/classes/data/calendarAndDate'
 import { MdxNoteWithAll } from '@ulld/api/trpcTypes/main'
 import { DocTypes } from '@ulld/configschema/configUtilityTypes/docTypes'
-import { ParsedAppConfig } from '@ulld/configschema/types'
 import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
 import { FrontMatterType } from '@ulld/state/classes/frontMatter/zodFrontMatterObject'
 import { mathOptions } from '@ulld/utilities/defaults/markdownUniversalOptions'
 import { MdxNote } from '@ulld/api/classes/prismaMdxRelations/mdxNote'
 import { getClassesFromFrontMatter } from '../../actions/universal/getClassesFromFrontMatter'
+import { AppConfigSchemaOutput } from '@ulld/types'
+import { UnifiedMdxParser } from '@ulld/utilities/types'
 
 
 interface LazyMdxProps {
     markdown?: string
     returnedNote?: MdxNoteWithAll
-    docType: DocTypes
+    docType: string | DocTypes
     slug: string
     fs: boolean
-    _config?: ParsedAppConfig
+    _config?: AppConfigSchemaOutput
+    rootRelativePath: string
+    mdxParser: UnifiedMdxParser
 }
 
 
-export const LazyMdx = async ({ markdown, fs, returnedNote, slug, docType, _config }: LazyMdxProps) => {
+export const LazyMdx = async ({ markdown, fs, returnedNote, slug, docType, _config, rootRelativePath }: LazyMdxProps) => {
     if (!markdown && !returnedNote) {
         return null
     }
     const config = _config || getInternalConfig()
-    let note = !markdown && returnedNote ? MdxNote.fromPrisma(returnedNote) : await MdxNote.fromMdxString({ content: markdown as string, urlSlug: slug, docType, getBookmarkState: true })
+    /* RESUME: Come back here and add the mdxParser function here. Make sure all props are being passed in correctly, and this should map through all provided parsers automatically. */
+    /* TODO: Now that everything is being handled in a way that is more cohesive, merge the zod object being used inside of the fromMdxString method with the related trpc method that returns the object. Bind them as closely and as type safe as possible to make room for future changes. */
+    let note = !markdown && returnedNote ? MdxNote.fromPrisma(returnedNote) : await MdxNote.fromMdxString({ raw: markdown as string, rootRelativePath: rootRelativePath }, {
+        getBookmarkState: true
+    })
+
     const mdxProps: MDXRemoteProps = {
         source: note.formatted as string,
         options: {
@@ -99,7 +107,7 @@ export const LazyMdx = async ({ markdown, fs, returnedNote, slug, docType, _conf
             },
             parseFrontmatter: true
         },
-        components: getComponentMap(note.formatted || note.raw)
+        components: getComponentMap(note.formatted || note.raw as string) || []
     }
 
 
@@ -110,7 +118,7 @@ export const LazyMdx = async ({ markdown, fs, returnedNote, slug, docType, _conf
 
     return (
         <div
-            className={clsx("mdx relative group/mdxNote", getClassesFromFrontMatter(note.frontMatter), note.floatImages && "floatImages")}
+            className={clsx("mdx relative group/mdxNote", getClassesFromFrontMatter(note.frontMatter as Partial<FrontMatterType>), note.floatImages && "floatImages")}
             id="noteContainer"
         >
             {note.firstSync && <div className={"w-fit absolute top-0 right-0 text-sm text-gray-700 dark:text-gray-400 text-right"}>{CalendarAndDateManager.formatDate(note.firstSync)}</div>}

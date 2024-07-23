@@ -1,9 +1,10 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import FileSystemMarkdown from './filesystem/fileSystemMarkdown';
-import PageContentContainer from '../../layouts/contentContainer';
+import { PageContentContainer } from '../../layouts/contentContainer';
 import { ParsableExtensions } from '@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions';
 import { NotePageProps } from '../../../utilityFunctions/formatting/formatNoteProps';
+import { UnifiedMdxParser } from '@ulld/utilities/types';
 
 
 interface FileSystemNoteProps extends NotePageProps {
@@ -11,6 +12,7 @@ interface FileSystemNoteProps extends NotePageProps {
     rootRelativeWithExtension: string
     absolutePath: string
     rootRelativePath: string
+    mdxParser: UnifiedMdxParser
 }
 
 
@@ -21,6 +23,7 @@ const FileSystemNote = (props: FileSystemNoteProps) => {
                 <FileSystemMarkdown
                     {...props}
                     extension={props.noteType}
+
                 />
             </PageContentContainer>
         )
