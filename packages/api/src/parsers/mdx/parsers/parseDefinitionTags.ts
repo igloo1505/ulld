@@ -72,8 +72,8 @@ export const parseDefinitionTags: UnifiedMdxParser<
     } while (m);
     return {
         content: c,
-        frontMatter: {
-            ...data.frontMatter,
+        data: {
+            ...data.data,
             definitions: results.map(
                 (d) =>
                     new Definition({

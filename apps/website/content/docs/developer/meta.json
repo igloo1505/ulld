@@ -5,6 +5,7 @@
     "index",
     "important",
     "events",
+    "parsingFunctions",
     "functionalUtilities",
     "styleUtilities",
     "..."

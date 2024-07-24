@@ -27,8 +27,8 @@ export const parseQuickLinks: UnifiedMdxParser<ExtendedFrontMatter> = async (
     } while (m);
     return {
         content: c,
-        frontMatter: {
-            ...data.frontMatter,
+        data: {
+            ...data.data,
             parsedLinks: links,
         },
     };

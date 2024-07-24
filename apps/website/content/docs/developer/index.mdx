@@ -10,7 +10,7 @@ index: true
 
 - **[Embeddable Components](#devDocs-embeddable-components):** Components that can be embedded in the user's mdx content.
 - **[Slot Components](#devDocs-slot-components):** Components that override specific component slots in the user's compiled application.
-- **[Parsing Functions](#devDocs-parsing-functions):** Functions that partially parse mdx content _before_ it is rendered to React, adding the ability to create new syntaxes unique to your specific plugin.
+- **[Parsing Functions](/docs/developer/parsingFunctions):** Functions that partially parse mdx content _before_ it is rendered to React, adding the ability to create new syntaxes unique to your specific plugin.
 
 
 ## Developer Config Schema
@@ -214,9 +214,8 @@ Since a user will likely include other plugins along side yours, it is important
 
 All mdx content will always be wrapped in a `@container/mdx` class applied through the `@tailwindcss/container-queries` tailwind plugin, and it is heavily suggested that you rely upon this class for most responsiveness issues and not the viewport or parent directly, unless your component triggers something absolutely positioned like modal.
 
-## Parsing Functions [#devDocs-parsing-functions]
 
-Documentation in progress
+
 
 ---
 

@@ -4,7 +4,7 @@ import { applyRecursiveMdxParsers } from "@ulld/api/applyRecursiveMdxParser";
 
 
 const mathParsers: UnifiedMdxParser = async (data) => {
-    return applyRecursiveMdxParsers(data, [parseMathTags]);
+    return await applyRecursiveMdxParsers(data, [parseMathTags]);
 }
 
 

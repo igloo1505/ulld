@@ -52,8 +52,8 @@ export const parseTags: UnifiedMdxParser<ExtendedFrontMatter> = async (
 
     return {
         content: c,
-        frontMatter: {
-            ...data.frontMatter,
+        data: {
+            ...data.data,
             parsedTags: results.map((t) => new Tag(tagZodObject.parse(t))),
         },
     };

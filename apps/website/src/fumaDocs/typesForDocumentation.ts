@@ -40,3 +40,12 @@ export type {
     HighlightProps,
     AdmonitionProps
 } from "@ulld/embeddable-components/propTypes";
+
+export type {
+    FrontMatterType
+} from "@ulld/types"
+
+export type {
+    UnifiedMdxParser,
+    UnifiedMdxParserParams
+} from "@ulld/api/types"

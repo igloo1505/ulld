@@ -3,5 +3,5 @@ import { parseMdxCitations } from "./parseCitations";
 import { applyRecursiveMdxParsers } from "@ulld/api/applyRecursiveMdxParser";
 
 export const bibMdxParser: UnifiedMdxParser = async (data) => {
-    return applyRecursiveMdxParsers(data, [parseMdxCitations]);
+    return await applyRecursiveMdxParsers(data, [parseMdxCitations]);
 };

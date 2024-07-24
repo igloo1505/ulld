@@ -1,0 +1,126 @@
+---
+title: Parsing Functions
+---
+
+
+<LogoAsText /> exposes a parsing method for various different file formats, _before_ they are rendered to React. This gives you, the developer, the opportunity to modify the content of a user's note before it is displayed. Any modification to the user's note at this stage will not be reflected in the user's database or in the file content directly, but will instead be injected during the rendering process.
+
+
+<Hint note>
+Currently, only the `.mdx` parser is enabled throughout the compiled application, but support for parsing tabular file types is on the way shortly.
+</Hint>
+
+This gives you the opportunity to add unique syntax to a specific file type, or to conditionally parse an entire `.mdx` file to a single component or layout based on the note's [front matter](/docs/user/frontMatter).
+
+Like other <LogoAsText /> export fields, the parsing function must be the default export from the file with which it is included, and that export must match an export field in your plugin's `package.json` file. You're permitted at most 1 async function per file type, but there is a `applyRecursiveMdxParsers` utility method exported from `@ulld/api/applyRecursiveMdxParser`. With this utility method, you can apply multiple parsing functions easily as:
+
+```tsx title="src/parser.ts"
+const coreMdxParser: UnifiedMdxParser = async (data) => {
+  return await applyRecursiveMdxParsers(data, [
+        parseDefinitionTags,
+        parseTags,
+        parseVideoTimeStampLinks,
+        parseQuickLinks
+    ]);
+};
+
+export default coreMdxParser;
+```
+
+
+## File Type Parsers
+
+There is a `UnifiedParserOfType` type exported from `@ulld/api/types` that accepts and `ParserKey` as it's first generic parameter, and an optional object as it's second parameter. The second parameter is an optional object that can be used to extend a note's front matter or to gather data which can then be used within your components.
+
+All file type parsers will be passed an object which they can append data any data they require to, and this data will be exposed to all nested components of that given note via the `useFrontMatter` hook exported from `@ulld/hooks/useFrontMatter`. For `.mdx` files this object will be initially populated with the note's front matter, but this object may be initially empty for other file types.
+
+<Admonition title="Important" type="warn" >
+  Make ***sure*** to use unique keys, and ideally nest your data within an object at a unique key, perhaps even a `uuid` so that it is not overwritten by other plugins, and so that you don't overwrite the data that other plugins rely on.
+</Admonition>
+
+
+
+
+### Mdx
+
+The `.mdx` file type parsing function is of type `UnifiedMdxParser`, exported from `@ulld/api/types`. Like all parsing functions, this function is asynchronous and must return an object with two keys:
+
+```ts
+Promise<{
+    content: string
+    data: object // FrontMatter type for mdx files
+}>
+```
+
+<Hint note>
+    The `content` field will be of another type for other file types as <LogoAsText fontSize={13}/> continues to grow, but the data field will always be of an extensible object.
+</Hint>
+
+Keep in mind, because this parsing is occuring just before the file's content is passed to React, you can generate React component syntax directly in the user's note. However, be _sure_ to only include internal <LogoAsText /> components or components provided by your own plugin to be sure that you are not generating a component that the application of the end user doesn't have provide.
+
+#### Parameters
+
+#### Properties
+
+```json doc-gen:file
+{
+    "file": "./content/embeddedDocs/generated/unifiedMdxParserParams.txt",
+    "codeblock": {
+        "lang": "ts",
+         "meta": "title=\"@ulld/api/types\""
+    }
+}
+```
+
+#### Example
+
+```tsx
+export const parseMathTags: UnifiedMdxParser = async (data) => {
+    let results: string[] = [];
+    const regex = /\[eq:(?<equationId>[\w|\d]+)\]/gm;
+    let c = data.content;
+    let m;
+    do {
+        m = regex.exec(c);
+        if (
+            m &&
+            m.groups?.equationId &&
+            m.groups?.equationId.trim() !== "" &&
+            m.groups.equationId !== "\n"
+        ) {
+            let _link = `<EquationTag equationId="${m.groups.equationId}" />`;
+            c = replaceRecursively(
+                c,
+                new RegExp(`\\[eq:${m.groups.equationId}\\]`, "gm"),
+                _link,
+            );
+            results.push(m.groups.value);
+        }
+    } while (m);
+    return {
+        content: c,
+    };
+};
+
+```
+
+And then this parser can be added to a single parsing function for the given file type:
+
+```tsx title="src/parsers/mdx.ts"
+import { parseMathTags } from "./mathTagParser";
+
+interface MyAdditionalFrontMatterData {
+    ...
+}
+
+const mathParsers: UnifiedMdxParser<MyAdditionalFrontMatterData> = async (data) => {
+    return await applyRecursiveMdxParsers(data, [parseMathTags]);
+}
+
+
+export default mathParsers
+```
+
+<Admonition title="React Components" type="example" dropdown open>
+   Be sure to make any of your own components that you create through a parser function available during the note's render by adding an `embeddable` field with a `regexToInclude` field that matches the syntax that you generated.
+</Admonition>

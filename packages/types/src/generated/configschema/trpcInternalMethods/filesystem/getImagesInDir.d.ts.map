@@ -1,1 +1,0 @@
-{"version":3,"file":"getImagesInDir.d.ts","sourceRoot":"","sources":["../../../../../../api/src/trpcInternalMethods/filesystem/getImagesInDir.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,eAAe,EAAE,MAAM,0BAA0B,CAAA;AAM1D,eAAO,MAAM,cAAc,+BAAsC;IAAE,IAAI,EAAE,MAAM,CAAC;IAAC,SAAS,CAAC,EAAE,OAAO,CAAA;CAAE,YAAY,eAAe,sBAiBhI,CAAA"}

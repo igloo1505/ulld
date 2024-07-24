@@ -75,8 +75,8 @@ export const parseMdxCitations: UnifiedMdxParser<ExtendedFrontMatter> = async (
         .map((c) => c.id);
     return {
         content: c,
-        frontMatter: {
-            ...data.frontMatter,
+        data: {
+            ...data.data,
             citations: foundCitations,
             citationsListOrder,
         },

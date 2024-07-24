@@ -8,6 +8,7 @@
     ],
     "exports": {
         "./useActiveNoteId": "./src/useActiveNoteId.ts",
+        "./useFrontMatter": "./src/useNotesFrontMatter.ts",
         "./useCounter": "./src/useCounter.ts",
         "./usePosition": "./src/usePosition.ts",
         "./useMdxFile": "./src/useMdxFile.ts",
