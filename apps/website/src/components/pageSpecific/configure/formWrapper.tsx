@@ -95,8 +95,8 @@ const ConfigureFormWrapper = ({ children }: ConfigureFormWrapperProps) => {
         let values = appConfigSchema.safeParse(form.getValues())
         console.log("values: ", values)
         if(values.success){
-        let fileData = createFile(values.data as AppConfigSchemaOutput)
-        console.log("fileData: ", fileData)
+        createFile(values.data as AppConfigSchemaOutput)
+            router.push('/sponsor/afterConfigDownload')
         }
     };
 

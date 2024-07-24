@@ -15,7 +15,7 @@
         // "src/**/*.tsx"
     ],
     "compilerOptions": {
-        "declarationDir": "../types/src/generated/configschema",
+        "declarationDir": "../types/src/generated/api",
         "emitDeclarationOnly": true,
         "outDir": "./dist",
         "moduleResolution": "Bundler",

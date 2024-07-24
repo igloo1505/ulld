@@ -1,20 +1,20 @@
 "use client"
 import { XIcon } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-import React from 'react'
+import React, { ComponentPropsWithoutRef } from 'react'
 
 
 
-interface ClientSideXIconProps {
+interface ClientSideXIconProps extends ComponentPropsWithoutRef<typeof XIcon> {
     className?: string
     backOnClick?: boolean
 }
 
-export const ClientSideXIcon = ({ className, backOnClick }: ClientSideXIconProps) => {
+export const ClientSideXIcon = ({ backOnClick, ...props }: ClientSideXIconProps) => {
     const router = useRouter()
     return (
         <XIcon
-            className={className}
+            {...props}
             onClick={() => backOnClick && router.back()}
         />
     )
