@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 import { ParserKey, PluginEventsConfig } from "@ulld/types";
-import { PathKeys, MethodListPathKeys } from "@ulld/utilities/types";
+import { PathKeys, MethodListPathKeys, pathKeys } from "@ulld/utilities/types";
 import { removeLeadingDotSlash } from "../utils/removeLeadingDotSlash";
 
 
@@ -29,6 +29,8 @@ export class TargetPaths
     onBuildMethodList: string
     methods: string;
     mdxParserList: string;
+    tempTargetPaths: string;
+    tempBuildFiles: string;
     constructor(
         public targetDir: string,
         public isLocalDev: boolean,
@@ -51,6 +53,8 @@ export class TargetPaths
         this.methods = path.join(targetDir, "src/methods");
         this.mdxParserList = path.join(targetDir, "src/methods/parsers/parserLists/mdx.ts")
         this.onBuildMethodList = path.join(targetDir, "buildUtils/__TEMP__/onBuildMethodList.ts")
+        this.tempTargetPaths = path.join(targetDir, "buildUtils/__TEMP__/buildTargetPaths.json")
+        this.tempBuildFiles = path.join(targetDir, "buildUtils/__TEMP__/")
         this.onBackupMethodList = path.join(
             this.methods,
             "events/methodLists/backup.ts",
@@ -112,5 +116,12 @@ export class TargetPaths
             page: path.join(dirPath, "page.tsx"),
             individualNotePage: path.join(dirPath, "[...slug]", "page.tsx")
         }
+    }
+    toJson(){
+        let data: Record<PathKeys, string> = {} as Record<PathKeys, string>
+        for (const k of pathKeys) {
+            data[k] = this[k]
+        }
+        return data
     }
 }

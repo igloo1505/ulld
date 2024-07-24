@@ -1,11 +1,11 @@
 import React from 'react'
-import FullScreenNavigationItem, { NavItem } from './fullScreenNavigationItem'
+import FullScreenNavigationItem  from './fullScreenNavigationItem'
 import FullScreenGroupHeading from './fullScreenGroupHeading'
-
+import { FullScreenNavItem } from '@ulld/types'
 
 
 interface FullScreenNavigationGroupProps {
-    links: NavItem[]
+    links: FullScreenNavItem[]
     backOnClick?: boolean
     label: string
 }

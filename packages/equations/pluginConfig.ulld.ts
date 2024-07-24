@@ -8,6 +8,10 @@ const pluginConfig: DeveloperConfigInput<"math"> = {
     pluginName: "@ulld/equations",
     slot: "math",
     label: "Math",
+    events: {
+        onBackup: "./onBackup",
+        onRestore: "./onRestore"
+    },
     parsers: {
         mdx: {
             export: "./parser"

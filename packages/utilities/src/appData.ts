@@ -31,5 +31,7 @@ export const appData: UlldAppData = {
     pathsToCopyForDocumentation: [
         "packages/api/src/individualTypesForDocumentation/**",
     ],
-    includeInTypes: ["@ulld/configschema"],
+    includeInTypes: [
+        "@ulld/configschema"
+    ],
 };

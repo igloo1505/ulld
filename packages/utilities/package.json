@@ -8,7 +8,9 @@
     ],
     "exports": {
         "./types": "./src/types/main.ts",
+        "./utilNavLinks": "./src/navigation/utilityNavLinks.ts",
         "./getPathnameFromHeaders": "./src/utils/getPathnameFromHeaders.ts",
+        "./glob": "./src/classes/glob/main.ts",
         "./getMarkdownHeadings": "./src/additionalParsers/mdx/getContentHeadings.ts",
         "./additionalSources": "./src/utils/build/additionalSourceFileStructure.ts",
         "./paths": "./src/classes/urlManager.ts",
@@ -87,7 +89,8 @@
         "./componentDocsPathUtils": "./src/utils/baseAppUtils/componentDocPathUtils.ts",
         "./providers-mathjax": "./src/providers/mathjax.tsx",
         "./transformExportString": "./src/utils/build/transformExportString.ts",
-        "./validateDeviceType": "./src/utils/deviceDetect.ts"
+        "./validateDeviceType": "./src/utils/deviceDetect.ts",
+        "./downloadFile": "./src/utils/downloadFile.ts"
     },
     "scripts": {
         "dev": "echo 'Add dev script here'",
@@ -127,15 +130,16 @@
         "@ulld/database": "workspace:*",
         "@ulld/math": "workspace:*",
         "@ulld/tailwind": "workspace:*",
+        "better-react-mathjax": "^2.0.3",
         "dayjs": "^1.11.10",
         "next": "^14.2.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "zod": "^3.22.4",
-        "better-react-mathjax": "^2.0.3"
+        "zod": "^3.22.4"
     },
     "packageManager": "pnpm@9.0.4",
     "dependencies": {
+        "gray-matter": "^4.0.3",
         "monaco-editor": "0.49.0"
     },
     "publishConfig": {

@@ -1,15 +1,17 @@
 import { getRepoPaths, readJsonData } from "./getRepoPaths";
 
+
+interface ComponentData {
+    slot: string;
+    subSlot: string;
+    type: "page" | "component" | "embeddable";
+}
+
+
 export const getFlattenedComponents = () => {
     const paths = getRepoPaths();
     const slotMap = readJsonData(paths.slotMap);
     const buildData = readJsonData(paths.buildData);
-
-    interface ComponentData {
-        slot: string;
-        subSlot: string;
-        type: "page" | "component" | "embeddable";
-    }
 
     let components: ComponentData[] = [];
 

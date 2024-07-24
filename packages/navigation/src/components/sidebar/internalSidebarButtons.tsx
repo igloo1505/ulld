@@ -4,8 +4,9 @@ import {
     toggleDarkMode,
     setPreferFs,
 } from "@ulld/state/actions/clientOnly/general";
-import { syncRootDirectory } from "@ulld/api/actions/syncing";
+import { backupData, syncRootDirectory } from "@ulld/api/actions/syncing";
 import { toggleBookmark } from "@ulld/api/actions/clientOnly/bookmarking";
+import { ValidIconName } from "@ulld/icons";
 
 export type SidebarLinkWithPosition = {
     position: "top" | "bottom"
@@ -66,5 +67,11 @@ export const internalLinks = {
         onClick: () => toggleBookmark(),
         label: "Bookmark",
         position: "top"
+    } satisfies SidebarLinkWithPosition,
+    backup: {
+        icon: "database-backup",
+        onClick: backupData,
+        label: "Backup",
+        position: "bottom"
     } satisfies SidebarLinkWithPosition
 };

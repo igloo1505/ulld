@@ -1,1 +1,2 @@
-export * from "./taskManager"
+export * from "./taskManager";
+export * from "./supportedFileTypes"

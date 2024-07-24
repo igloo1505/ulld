@@ -6,9 +6,9 @@ import { toggleToolTips } from "@ulld/state/actions/clientOnly/dom";
 import { setPreferFs, toggleDarkMode, toggleAllJupyterFolds, enterIdSelectMode, toggleEquationSelectMode } from "@ulld/state/actions/clientOnly/general";
 import { showToast } from "@ulld/state/slices/ui";
 import { Route } from "next";
-import { utilityNavLinks } from "../../menus/fullScreenNavigationMenu/fullScreenNavigationMenu";
 import { CommandPaletteItemProps } from "../commandItem";
 import { pages, textSearchPages } from "../commandPaletteUtilities";
+import {utilityNavLinks} from "@ulld/utilities/utilNavLinks"
 
 export const filterItems: string[] = [
     "snippets",

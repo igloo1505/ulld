@@ -70,14 +70,14 @@
                 "tags": [],
                 "slot": "SnippetList",
                 "export": "snippetList",
-                "componentId": "1f57a633-e78e-4b3c-85a9-77c46713e00d"
+                "componentId": "9b8f1f4a-adea-43a0-9954-3d663a87cd2c"
             },
             {
                 "componentName": "SnippetFilter",
                 "tags": [],
                 "slot": "SnippetFilter",
                 "export": "snippetFilter",
-                "componentId": "1f57a633-e78e-4b3c-85a9-77c46713e00d"
+                "componentId": "9b8f1f4a-adea-43a0-9954-3d663a87cd2c"
             }
         ],
         "parsers": {},

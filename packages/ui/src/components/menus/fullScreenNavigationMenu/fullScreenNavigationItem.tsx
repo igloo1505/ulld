@@ -1,21 +1,13 @@
 "use client"
 import React from 'react'
-import { Route } from 'next'
 import Link from 'next/link'
 import { Badge } from '@ulld/tailwind/badge'
 import { makeHref, withForwardSlash } from '@ulld/utilities/fsUtils'
+import { FullScreenNavItem } from '@ulld/types'
 
-
-
-export interface NavItem {
-    label: string
-    totalNotes?: number
-    url: Route
-    forceLink?: boolean
-}
 
 interface FullScreenNavigationItemProps {
-    item: NavItem
+    item: FullScreenNavItem
     backOnClick?: boolean
 }
 

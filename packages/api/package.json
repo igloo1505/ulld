@@ -283,6 +283,7 @@
     "dependencies": {
         "@jest/globals": "29.7.0",
         "@types/jest": "29.5.11",
+        "axios": "1.6.7",
         "fuse.js": "7.0.0",
         "react-device-detect": "2.2.3",
         "trpc-openapi": "1.2.0"

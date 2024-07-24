@@ -82,6 +82,7 @@ export const navigationConfigSchema = z
         settings: linkLocationSchema.optional(),
         equationsLink: linkLocationSchema.optional(),
         snippetsLink: linkLocationSchema.optional().default("sidebar"),
+        backupData: linkLocationSchema.optional(),
         navbarLinks: z
             .union([
                 z.string().describe("A document type id"),
@@ -118,4 +119,4 @@ export const navigationConfigSchema = z
     .default({});
 
 
-export type InternalNavigationKeys = keyof Pick<z.output<typeof navigationConfigSchema>, "bookmarkLink" | "syncLink" | "fileSystemToggle" | "darkmodeToggle" | "settings" | "equationsLink" | "snippetsLink" >
+export type InternalNavigationKeys = keyof Pick<z.output<typeof navigationConfigSchema>, "bookmarkLink" | "syncLink" | "fileSystemToggle" | "darkmodeToggle" | "settings" | "equationsLink" | "snippetsLink" | "backupData">

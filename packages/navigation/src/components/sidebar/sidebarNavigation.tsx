@@ -27,7 +27,8 @@ const internalLinkMap: Record<
     snippetsLink: "snippets",
     syncLink: "sync",
     fileSystemToggle: "preferFileSystemToggle",
-    bookmarkLink: "bookmark"
+    bookmarkLink: "bookmark",
+    backupData: "backup"
 };
 
 const PermanentSidebar = ({

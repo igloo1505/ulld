@@ -1,10 +1,8 @@
-import { z } from "zod";
+import { OnSyncOptions } from "@ulld/types";
+import { z, ZodType } from "zod";
 
-export const syncOptionsSchema = z.object({
-    offline: z.boolean().optional(),
+export const syncOptionsSchema: ZodType<OnSyncOptions> = z.object({
+    offline: z.boolean(),
     removeIfNotInFs: z.boolean().optional().nullable(),
     cleanBeforeSync: z.boolean().optional()
-})
-
-
-export type SyncOptions = z.infer<typeof syncOptionsSchema>
+});

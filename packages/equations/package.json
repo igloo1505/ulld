@@ -11,7 +11,9 @@
         "./addEquationPage": "./src/ulld_app/equations/add/page.tsx",
         "./equationDetailsPage": "./src/ulld_app/equations/details/[equationId]/page.tsx",
         "./equationsPage": "./src/ulld_app/equations/page.tsx",
-        "./parser": "./src/parsers/main.tsx"
+        "./parser": "./src/parsers/main.tsx",
+        "./onBackup": "./src/events/onBackup/hook.ts",
+        "./onRestore": "./src/events/onRestore/hook.ts"
     },
     "scripts": {
         "appendRouter": "ts-node ./node_modules/@ulld/developer-cli/bin/run.js appendRouter /src/lib/equationsRouter.ts equations",
@@ -108,7 +110,10 @@
                 "exportsPageProps": true
             }
         ],
-        "events": {},
+        "events": {
+            "onBackup": "./onBackup",
+            "onRestore": "./onRestore"
+        },
         "navigationLinks": [
             {
                 "label": "Equations",

@@ -1,10 +1,22 @@
-import cp from "child_process";
+import cp, { ExecException } from "child_process";
 import chalk from "chalk";
+import { PackageManagers } from "../../types";
 
 type LogLevel = "normal" | "verbose" | "debug";
 
+type ExecLogger = (error: ExecException | null, stdout: string | Buffer, stderr: string | Buffer) => void
 
-export class ShellManager {
+interface ExecLoggerImplementation {
+execLogger: ExecLogger
+    }
+
+const packageManagerExecution: Record<PackageManagers, string> = {
+    npm: "npm run",
+    yarn: "yarn run",
+    pnpm: "pnpm run"
+}
+
+export class ShellManager implements ExecLoggerImplementation {
     logLevel: LogLevel = "normal"
     private logLevelOrder: LogLevel[] = ["normal", "verbose", "debug"];
     constructor() {
@@ -56,9 +68,15 @@ export class ShellManager {
         }
         this.tempFiles = this.tempFiles.slice(0, this.tempFiles.length - 1);
     }
-
-    // TODO: Handle this and route all shell commands through here
-    async exec(val: string, cwd?: string) {
-        cp.execSync(val, { cwd, stdio: "inherit" });
+    private execLogger(error: ExecException | null, stdout: string | Buffer, stderr: string | Buffer){
+    }
+    execAsync(val: string, cwd?: string, logger?: ExecLogger){
+       return cp.exec(val, {cwd}, logger || this.execLogger) 
+    }
+    exec(val: string, cwd?: string) {
+        return cp.execSync(val, { cwd, stdio: "inherit" });
+    }
+    execPackageJsonScript(pkgManager: PackageManagers, script: string, cwd?: string){
+         return this.exec(`${packageManagerExecution[pkgManager]} ${script}`, cwd)
     }
 }

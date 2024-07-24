@@ -36,7 +36,10 @@
             "exportsPageProps": true
         }
     ],
-    "events": {},
+    "events": {
+        "onBackup": "./onBackup",
+        "onRestore": "./onRestore"
+    },
     "navigationLinks": [
         {
             "label": "Equations",

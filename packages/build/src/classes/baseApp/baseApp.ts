@@ -15,6 +15,7 @@ import { AdditionalSources } from "../additionalSources";
 import { BuildStaticData } from "./buildStaticData";
 import { parserKeyList } from "@ulld/configschema/developer";
 import { ParserKey } from "@ulld/types";
+import { BuildCleanup } from "./cleanup";
 
 interface ParserFunctionData {
     importName: string;
@@ -25,11 +26,13 @@ export class BaseApp extends ShellManager {
     paths: TargetPaths;
     slotMap: SlotMapInternalType;
     buildStaticData: BuildStaticData;
+    buildCleanup: BuildCleanup
     constructor(public build: UlldBuildProcess) {
         super();
         this.paths = build.paths;
         this.slotMap = sm as SlotMapInternalType;
         this.buildStaticData = new BuildStaticData(this.paths, this.build);
+        this.buildCleanup = new BuildCleanup(this.paths, this.build.packageManager)
     }
     writeFile(location: PathKeys, content: string) {
         return fs.writeFileSync(this.paths[location], content, {
@@ -39,11 +42,14 @@ export class BaseApp extends ShellManager {
     generate() {
         // this.createComponentMap(this.build.plugins)
         // this.applySlots()
+        // this.writeTemporaryTargetPaths()
         // this.createEventFunctions()
         // this.writeNoteTypePages()
         // this.writePluginSettingPages();
         // this.copyAdditionalSources()
         // this.writeUnifiedParsingFunctions();
+        // this.writeBuildStaticData()
+        // this.onBuild();
     }
     createComponentMap(plugins: UlldPlugin[]) {
         this.log(`Generating component map...`);
@@ -59,6 +65,11 @@ export class BaseApp extends ShellManager {
         for (const k of flattenedMap) {
             k.data.writeToFile();
         }
+    }
+    writeTemporaryTargetPaths(){
+        let file = FileManager.fromAbsolutePath(this.paths.tempTargetPaths, this.paths, false)
+        let content = JSON.stringify(this.paths.toJson())
+        file.writeContent(content)
     }
     createEventFunctions() {
         let pluginsWithEventMethods = this.build.plugins.filter((f) =>
@@ -149,5 +160,12 @@ export default unifiedParserList
                 f.writeContent(fileContent);
             }
         }
+    }
+    // RESUME: Come back and finish this up. This should be almost enough to generate the base app and start working from there!
+    writeBuildStaticData(){
+
+    }
+    onBuild(){
+        this.buildCleanup.runCleanup()
     }
 }

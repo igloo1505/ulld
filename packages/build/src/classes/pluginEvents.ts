@@ -28,4 +28,10 @@ export class PluginEvents {
     getMethodAsString(k: EventMethodKey){
         return `${this.importNames[k]}`
     }
+    getOutputMethod(k: EventMethodKey){
+        return `{
+    func: ${this.importNames[k]},
+    pluginId: "${this.pluginName}"
+}`
+    }
 }

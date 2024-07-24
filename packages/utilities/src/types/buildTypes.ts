@@ -5,26 +5,32 @@ export type MethodListPathKeys =
     | "onBuildMethodList"
     | "onSyncMethodList";
 
-export type PathKeys =
-    | "public"
-    | "styles"
-    | "packageJson"
-    | "app"
-    | "projectRoot"
-    | "componentDocumentation"
-    | "fullComponentDocumentation"
-    | "node_modules"
-    | "shortComponentDocumentation"
-    | "src"
-    | "appDir"
-    | "public"
-    | "nextConfig"
-    | "tailwind"
-    | "ulldBuildData"
-    | "appConfig"
-    | "methods"
-    | "mdxParserList"
-    | "componentMap";
+
+export const pathKeys = [
+     "public",
+     "styles",
+     "packageJson",
+     "app",
+     "projectRoot",
+     "componentDocumentation",
+     "fullComponentDocumentation",
+     "node_modules",
+     "shortComponentDocumentation",
+     "src",
+     "appDir",
+     "public",
+     "nextConfig",
+     "tailwind",
+     "ulldBuildData",
+     "appConfig",
+     "methods",
+     "tempTargetPaths",
+     "mdxParserList",
+     "componentMap",
+    "tempBuildFiles"
+] as const
+
+export type PathKeys = typeof pathKeys[number]
 
 export type PathMap = {
     /** The public directory. content here is available at the `/` url. */

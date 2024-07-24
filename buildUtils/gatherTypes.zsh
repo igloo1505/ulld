@@ -1,5 +1,7 @@
 #!/bin/zsh
-zsh $ULLD_DEV_ROOT/buildUtils/clearGeneratedTypes.zsh
+zsh $ULLD_DEV_ROOT/buildUtils/types/clearGeneratedTypes.zsh
+echo "Copying prisma types"
+tsx $ULLD_DEV_ROOT/buildUtils/types/copyPrismaTypes.ts
 echo "setting monorepo type config scripts"
 tsx $ULLD_DEV_ROOT/buildUtils/setMonorepoTypeConfigAndScripts.ts
 echo "gathering types"
