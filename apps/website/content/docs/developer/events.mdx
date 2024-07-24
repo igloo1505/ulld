@@ -34,14 +34,14 @@ The above approach will ensure type safety across the different methods, as the 
 
 The intended function of these events are as follows:
 
-1. `onBackup`
-    - All generated returned from this function will be serialized using **superjson** and stored in a local json file.
-2. `onRestore`
-    - This is the other half of `onBackup`. This method will be given the same data that was provided returned by the `onBackup` method, and it is up to you the developer to store it in their database (make sure to check that you are not storing duplicates) and generate any necessary changes that their data might indicate.
-3. `onBuild`
-    - This method is called once during the build process, after the core of the build is in place. This method receives 3 arguments, an object containing a set of paths as the `PathMap` type[^4], their validated `AppConfigSchemaOutput`[^2], and their generated `BuildStaticDataOutput`[^3]. These paths will be the absolute path to various directories and files in that user's new application. This is your opportunity to copy over any data you might need to their public folder, generate a static json file, or create a `scss` file base on their configuration file. Keep in mind, static json files can be changed after app is compiled, but those changes will ***not*** be reflected in the user's application until their app is rebuilt. It is only realistic to create file content directly in the user's file system if that content will not change over the period with which they user their application.
-4. `onSync`
-   - This method is likely the most important of the currently available methods. This method will be given an array of `MdxNote` classes and expect you, the developer, to gather whatever information is needed and store it in that user's database.
+1. `onBackup`  
+    All generated returned from this function will be serialized using **superjson** and stored in a local json file.
+2. `onRestore`  
+    This is the other half of `onBackup`. This method will be given the same data that was provided returned by the `onBackup` method, and it is up to you the developer to store it in their database (make sure to check that you are not storing duplicates) and generate any necessary changes that their data might indicate.
+3. `onBuild`  
+    This method is called once during the build process, after the core of the build is in place. This method receives 3 arguments, an object containing a set of paths as the `PathMap` type[^4], their validated `AppConfigSchemaOutput`[^2], and their generated `BuildStaticDataOutput`[^3]. These paths will be the absolute path to various directories and files in that user's new application. This is your opportunity to copy over any data you might need to their public folder, generate a static json file, or create a `scss` file base on their configuration file. Keep in mind, static json files can be changed after app is compiled, but those changes will ***not*** be reflected in the user's application until their app is rebuilt. It is only realistic to create file content directly in the user's file system if that content will not change over the period with which they user their application.
+4. `onSync`  
+    This method is likely the most important of the currently available methods. This method will be given an array of `MdxNote` classes and expect you, the developer, to gather whatever information is needed and store it in that user's database.
 
 
 [^1]: This means that objects like `Date`, `RegExp`, `Map`, `Set` and even `Error` classes are supported, but functions are not.
