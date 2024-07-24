@@ -34,7 +34,6 @@ export class NoteBase {
         let urlSplit = _url.split("?")[0]
         return `${urlSplit || _url}${subPath}` as Route
     }
-
     async parseQuickLinks(content: string) {
         let reg = /\[(?<label>[^\]]*)\]\(note:(?<content>[\w|\-|\d]*)#?(?<id>[\w|\-|\d]*)\)/gm
         let c = content
@@ -78,91 +77,22 @@ export class NoteBase {
         // }
         return c
     }
-    formatTag(s: string) {
-        return `<a className="queryLink queryTag" href="/searchAll?tags=${s}">#${s}</a>`
-    }
-    formatCitation(s: string, index: number) {
-        return `<span style={{
-width: "0.5rem",
-height: "100%",
-position: "relative"
-}}><a href='#bib-${s}' className="citation citationAnchor" id="cit-${s}-idx-${index}">${index + 1}</a></span>`
-    }
-    formatVideoTimestampLink(m: RegExpExecArray) {
-        const videoId = m.groups?.videoId
-        const time = m.groups?.time
-        if (!m || !videoId || !time) {
-            return ""
-        }
-        const params = new URLSearchParams()
-        params.set("vid", videoId)
-        params.set("t", time)
-        return `<VideoTimestampLink className="timestamp-link" role="button" videoId="${videoId}" timeStamp="${time}" >${m.groups?.label || m.groups?.time || ""}</VideoTimestampLink>`
-    }
-    parseVideoTimeLinks(content: string) {
-        let regex = /\[(?<label>[^\]]*)\]\(videoLink\/(?<videoId>[^\/]*)\/(?<time>[\d|:]*)\)/gm
-        let c = content
-        let m;
-        do {
-            m = regex.exec(c)
-            if (m && m.groups?.label && m.groups?.videoId && m.groups?.time) {
-                c = `${c.slice(0, m.index)}${this.formatVideoTimestampLink(m)}${c.slice(m.index + m[0].length, c.length)}`
-            }
-        } while (m);
-        return {
-            content: c,
-        }
-    }
-    parseTags(content: string) {
-        const regex = /\[#(?<value>[\w|\d|\.|\-|_|\+|\=|\$|\!|\%|\*|\&]*)\]/gm
-        let results: string[] = []
-        let c = content
-        let m;
-        do {
-            m = regex.exec(c);
-            if (m && m.groups?.value && m.groups?.value.trim() !== "" && m.groups.value !== "\n") {
-                let _link = this.formatTag(m.groups.value)
-                // c = `${c.slice(0, m.index)}${_link}${c.slice(m.index + m[0].length, c.length)}`
-                c = replaceRecursively(c, new RegExp(`\\[#${m.groups.value}\\]`, "gm"), _link)
-                results.push(m.groups.value)
-            }
-        } while (m);
-        let reg2 = /<TagBar>(?<content>[\w|\s|\d|\-|.]*)<\/TagBar>/gm
-        let l;
-        do {
-            m = reg2.exec(c);
-            let _results = m?.groups?.content.split(" ")
-            if (_results) {
-                for (const r of _results) {
-                    let rt = r.trim()
-                    if (rt.length !== 0 && rt !== "\n") {
-                        results.push(rt)
-                        // results = results.concat(m.groups.content.split(" "))
-                    }
-                }
-            }
-        } while (l);
-        return {
-            content: c,
-            results: results
-        }
-    }
-    parseEquationTags(content: string) {
-        let results: string[] = []
-        const regex = /\[eq:(?<equationId>[\w|\d]+)\]/gm
-        let c = content
-        let m;
-        do {
-            m = regex.exec(c);
-            if (m && m.groups?.equationId && m.groups?.equationId.trim() !== "" && m.groups.equationId !== "\n") {
-                let _link = `<EquationTag equationId="${m.groups.equationId}" />`
-                // c = `${c.slice(0, m.index)}${_link}${c.slice(m.index + m[0].length, c.length)}`
-                c = replaceRecursively(c, new RegExp(`\\[eq:${m.groups.equationId}\\]`, "gm"), _link)
-                results.push(m.groups.value)
-            }
-        } while (m);
-        return c
-    }
+    // parseEquationTags(content: string) {
+    //     let results: string[] = []
+    //     const regex = /\[eq:(?<equationId>[\w|\d]+)\]/gm
+    //     let c = content
+    //     let m;
+    //     do {
+    //         m = regex.exec(c);
+    //         if (m && m.groups?.equationId && m.groups?.equationId.trim() !== "" && m.groups.equationId !== "\n") {
+    //             let _link = `<EquationTag equationId="${m.groups.equationId}" />`
+    //             // c = `${c.slice(0, m.index)}${_link}${c.slice(m.index + m[0].length, c.length)}`
+    //             c = replaceRecursively(c, new RegExp(`\\[eq:${m.groups.equationId}\\]`, "gm"), _link)
+    //             results.push(m.groups.value)
+    //         }
+    //     } while (m);
+    //     return c
+    // }
     getEquationIds(content?: string | null) {
         if(!content) return [] as string[]
         const regex = /<Equation\s+.*id={?"(?<equationId>\S*)"}?.*>/gm

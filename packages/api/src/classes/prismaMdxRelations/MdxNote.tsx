@@ -26,14 +26,13 @@ import {
     mdxNoteZodObject,
     mdxNoteWithParsedLatex,
 } from "../../schemas/search/parsing";
-import type { serverClient } from "../../trpc/serverClient";
+import { serverClient } from "../../trpc/serverClient";
 import { AutoSettingWithRegex } from "../../trpc/types.d";
 import { ValueSearchTableItem } from "../../trpcTypes/valueTableSearch";
 import { universalStringToMathjax } from "@ulld/parsers/universalStringToMdx";
 import { getFlatAutoSettings } from "../../trpcInternalMethods/settings/autoSettings/getFlattenedAutoSettings";
 import { globDoesMatch } from "../../trpcInternalMethods/settings/autoSettings/globDoesMatch";
 import { replaceRecursively } from "@ulld/utilities/utils/general";
-import { ZodFrontMatterOutput } from "@ulld/state/classes/frontMatter/zodFrontMatterObject";
 import { convertGithubUrlToRawContentUrl } from "@ulld/state/formatting/general";
 import {
     FromMdxStringOpts,
@@ -54,6 +53,8 @@ import {
 } from "./schemas/general";
 import { ActiveParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
 import { mdxNoteSummaryWithMdxTransforms } from "./schemas/withMdxTransforms";
+import { UnifiedMdxParser, UnifiedMdxParserParams } from "../../types";
+import { FrontMatterType } from "@ulld/types";
 
 /* TODO: Create a field saving the components to include for each note based on a regex test ahead of time so this query doesn't need to be ran on each load. Make this optional in the appConfig */
 
@@ -84,18 +85,6 @@ export type FromMdxStringParams =
         getBookmarkState?: boolean;
     };
 
-interface TableStyles {
-    fullWidth?: boolean;
-    text?: "base" | "lg" | "xl" | "small";
-    math?: "base" | "lg" | "xl" | "small";
-    tableCenter?: boolean;
-    textCenter?: boolean;
-    headingCenter?: boolean;
-    expand?: boolean;
-    float?: "right" | "left";
-    noMax?: boolean;
-}
-
 export interface InternalMdxNote extends Omit<PrismaMdxNote, "id"> {
     id?: number;
     tags: string[];
@@ -103,6 +92,9 @@ export interface InternalMdxNote extends Omit<PrismaMdxNote, "id"> {
     subjects: string[];
     topics: string[];
 }
+
+export type MdxNoteParseParams = Pick<UnifiedMdxParserParams, "appConfig" | "docTypeData"> & { parser: UnifiedMdxParser }
+
 
 const boolOrTrue = (a: boolean | undefined) => {
     return typeof a === "boolean" ? a : true;
@@ -133,7 +125,7 @@ export class MdxNote extends MdxNoteProtocol {
     sequentialKey?: string | null;
     rootRelativePath?: string | null;
     sequentialIndex?: number | null;
-    frontMatter?: ZodFrontMatterOutput | null;
+    frontMatter?: FrontMatterType | null;
     remoteUrl?: string | null;
     trackRemote: boolean = true;
     noLog: boolean = true;
@@ -207,76 +199,6 @@ export class MdxNote extends MdxNoteProtocol {
     async zodParse() {
         return await mdxNoteWithParsedLatex.parseAsync(this);
     }
-    async getDatabaseCitation(id: string[]) {
-        const query = await getUniversalQuery("getBibCitation", "bibliography");
-        const citations = await query(id);
-        return citations as Awaited<
-            ReturnType<(typeof serverClient)["bibliography"]["getBibCitation"]>
-        >;
-    }
-    async parseCitations<T extends string | undefined>(
-        content?: T,
-    ): Promise<T extends string ? string : string | undefined> {
-        const regex = /\[@(?<value>[\w|\d|\.|\-|_|\+|\=|\$|\!|\%|\*|\&]*)\]/gm;
-        let results: { value: string; length: number; index: number }[] = [];
-        let c = content || this.formatted || this.raw;
-        if (!c)
-            return undefined as unknown as T extends string
-                ? string
-                : string | undefined;
-        let m;
-        do {
-            m = regex.exec(c);
-            if (m && m.groups?.value) {
-                results.push({
-                    value: m.groups.value,
-                    index: m.index,
-                    length: m[0].length,
-                });
-            }
-        } while (m);
-        let fr: { htmlCitation: string; id: string; pageIndex: number }[] = [];
-        const rList = results.map((r) => r.value.toLowerCase());
-        const citations = await this.getDatabaseCitation(rList);
-        for (const k of citations) {
-            const rIndex = rList.indexOf(k.id.toLowerCase());
-            const result = results.at(rIndex);
-            if (result) {
-                let _link = this.formatCitation(k.id, rIndex);
-                c = replaceRecursively(
-                    c,
-                    new RegExp(`\\[@${result.value}\\]`, "gmi"),
-                    _link,
-                );
-                if (k.htmlCitation) {
-                    fr.push({
-                        htmlCitation: k.htmlCitation,
-                        id: k.id,
-                        pageIndex: rIndex,
-                    });
-                } else {
-                    console.log(`No htmlCitation found for ${k.id}`);
-                }
-            }
-        }
-        this.citations = this.citations.concat(
-            fr.map(
-                (c) =>
-                    new BibEntry(
-                        bibEntryPropsSchema.parse({
-                            htmlCitation: c?.htmlCitation,
-                            id: c.id,
-                        }),
-                        c.pageIndex,
-                    ),
-            ),
-        );
-        this.citationsListOrder = this.citations
-            .sort((a: any, b: any) => a.tempPageIndex - b.tempPageIndex)
-            .map((c) => c.id);
-        this.formatted = c;
-        return c as string;
-    }
     log(val: string | object) {
         if (this.noLog) {
             return;
@@ -301,15 +223,6 @@ export class MdxNote extends MdxNoteProtocol {
             ...(this.title && { title: this.title }),
             ...(this.raw && { content: this.raw }),
         };
-    }
-
-    async parseLatexTitle() {
-        if (!this.title) return;
-        const di = this.title.indexOf("$");
-        if (di === -1 || di === this.title.lastIndexOf("$")) return;
-        /* BUG: This will need to be changed to use only svg output unless styles are appended. Check where this is used to make sure styles aren't being appended for no reason. */
-        let _title = await universalStringToMathjax(this.title, { inline: true });
-        this.latexTitle = typeof _title === "string" ? _title : _title.content;
     }
 
     canSave() {
@@ -506,31 +419,6 @@ ${m.groups.content}
             }
         } while (m);
     }
-    _parseTags<T extends string | undefined>(
-        content?: T,
-    ): string {
-        this.log(`_parseTags: ${this.title}`);
-        let l = content || this.formatted || this.raw;
-        if (!l) return ""
-        let res = this.parseTags(l);
-        this.formatted = res.content;
-        this.tags = this.tags.concat(
-            res.results.map((t) => new Tag(tagZodObject.parse(t))),
-        );
-        let newContent = res.content || l
-        this.formatted = newContent
-        return newContent
-    }
-    _parseVideoTimeLinks<T extends string | undefined>(
-        content?: T,
-    ): T extends string ? string : string | undefined {
-        this.log(`_parseVideoTimelinks: ${this.title}`);
-        let l = content || this.formatted || this.raw;
-        if (!l) return undefined as T extends string ? string : string | undefined;
-        let res = this.parseVideoTimeLinks(l);
-        this.formatted = res.content;
-        return res.content || (content as string);
-    }
     async _parseQuickLinks<T extends string | undefined>(
         content?: T,
     ): Promise<T extends string ? string : string | undefined> {
@@ -543,55 +431,43 @@ ${m.groups.content}
         let res = await this.parseQuickLinks(l);
         this.formatted = res.content;
         this.outgoingQuickLinks = this.outgoingQuickLinks.concat(res.links);
-        return res.content || l 
+        return res.content || l;
     }
-    static async parseMdxString(content: string, opts: ParseMdxStringProps = {}) {
+    static async parseMdxString(
+        content: string,
+        opts: ParseMdxStringProps = {},
+        parserParams: MdxNoteParseParams
+    ) {
         let parsedNoteProps = mdxNoteFromStringPropsSchema.parse({ raw: content });
-        console.log("parsedNoteProps: ", parsedNoteProps)
         let nt = new MdxNote(parsedNoteProps);
-        console.log("opts: ", opts)
-        if(opts?.bareAss){
-           return nt.parseBareAss()
-        }
-        return await nt.parse()
+        /* if(opts?.bareAss){ */
+        /*    return nt.parseBareAss() */
+        /* } */
+        return await nt.parse(parserParams);
     }
-    parseBareAss(){
+    /* TODO: Actually apply the new parser now, once everything is moved over to the package based parser approach. */
+    async parse(
+        params: MdxNoteParseParams,
+    ) {
         let c = this.formatted || this.raw;
-        if (!c) return ""
-        let formatted = this.parseLinkShortcuts(c);
-        this.formatted = this.parseEquationTags(formatted);
-        let { content, definitions } = this.parseDefinitionTags(this.formatted);
-        this.formatted = content;
-        this.formatted = this._parseTags();
-        return this.formatted as string
-    }
-    async parse() {
-        let c = this.formatted || this.raw;
-        if (!c) return ""
-        let formatted = this.parseLinkShortcuts(c);
-        this.formatted = this.parseEquationTags(formatted);
-        let { content, definitions } = this.parseDefinitionTags(this.formatted);
-        this.formatted = content;
-        if (definitions && definitions.length > 0) {
-            this.definitions = definitions.map(
-                (d) =>
-                    new Definition({
-                        id: d.id,
-                        content: d.content,
-                        label: d.label,
-                        mdxNoteId: this.id,
-                    }),
-            );
+        if (!c) return "";
+        let res = await params.parser({
+            content: c,
+            serverClient: serverClient,
+            appConfig: params.appConfig,
+            docTypeData: params.docTypeData,
+            frontMatter: this.frontMatter ? this.frontMatter : {} as Partial<FrontMatterType>,
+            db: {
+                noteId: this.id,
+            },
+        });
+        this.formatted = res.content;
+        if (res.frontMatter) {
+            this.frontMatter = res.frontMatter;
         }
-        this._parseTags();
-        this._parseVideoTimeLinks();
+        /* this.formatted = this.parseEquationTags(formatted); // Math package */
         this.equationIds = this.getEquationIds(this.formatted || this.raw);
-        await this.parseCitations();
-        await this._parseQuickLinks();
-        if (!this.isProtected) {
-            await this.parseLatexTitle();
-        }
-        return this.formatted
+        return this.formatted;
     }
 
     citationIdList() {
@@ -616,7 +492,6 @@ ${m.groups.content}
         });
         this.citations = citations;
     }
-
     toValueSearchTableItem(): ValueSearchTableItem {
         return {
             href: this.href || "",
@@ -628,7 +503,6 @@ ${m.groups.content}
             lastSync: ensureDate<null>(this.lastSync, "null"),
         } satisfies ValueSearchTableItem;
     }
-
     async populateFromRemote() {
         if (!this.remoteUrl) return;
         let url = this.remoteUrl;
@@ -650,6 +524,7 @@ ${m.groups.content}
     static async fromMdxString(
         props: MdxNoteFromStringInput,
         _opts: FromMdxStringOpts = {},
+        parseParams: MdxNoteParseParams
     ): Promise<MdxNote> {
         const parsed = mdxNoteFromStringPropsSchema.parse(props);
         const opts = fromMdxStringOptSchema.parse(_opts);
@@ -668,7 +543,7 @@ ${m.groups.content}
             );
             note.bookmarked = isBookmarked;
         }
-        await note.parse();
+        await note.parse(parseParams);
         return note;
     }
 

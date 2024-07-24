@@ -181,10 +181,10 @@
                 "tags": [],
                 "slot": "SettingsPageContainer",
                 "export": "settingPageWrapper",
-                "componentId": "3d671927-4243-4f0f-b268-ea26b5536ca5"
+                "componentId": "3496546c-0bb1-4be2-bee8-067b88373adc"
             }
         ],
-        "parsers": [],
+        "parsers": {},
         "pages": [],
         "events": {},
         "navigationLinks": [],

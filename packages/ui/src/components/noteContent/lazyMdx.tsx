@@ -21,12 +21,10 @@ import { CalendarAndDateManager } from '@ulld/api/classes/data/calendarAndDate'
 import { MdxNoteWithAll } from '@ulld/api/trpcTypes/main'
 import { DocTypes } from '@ulld/configschema/configUtilityTypes/docTypes'
 import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
-import { FrontMatterType } from '@ulld/state/classes/frontMatter/zodFrontMatterObject'
 import { mathOptions } from '@ulld/utilities/defaults/markdownUniversalOptions'
-import { MdxNote } from '@ulld/api/classes/prismaMdxRelations/mdxNote'
+import { MdxNote, MdxNoteParseParams } from '@ulld/api/classes/prismaMdxRelations/mdxNote'
 import { getClassesFromFrontMatter } from '../../actions/universal/getClassesFromFrontMatter'
-import { AppConfigSchemaOutput } from '@ulld/types'
-import { UnifiedMdxParser } from '@ulld/utilities/types'
+import { AppConfigSchemaOutput, FrontMatterType } from '@ulld/types'
 
 
 interface LazyMdxProps {
@@ -37,11 +35,11 @@ interface LazyMdxProps {
     fs: boolean
     _config?: AppConfigSchemaOutput
     rootRelativePath: string
-    mdxParser: UnifiedMdxParser
+    mdxParser: MdxNoteParseParams
 }
 
 
-export const LazyMdx = async ({ markdown, fs, returnedNote, slug, docType, _config, rootRelativePath }: LazyMdxProps) => {
+export const LazyMdx = async ({ markdown, fs, returnedNote, slug, docType, _config, rootRelativePath, mdxParser }: LazyMdxProps) => {
     if (!markdown && !returnedNote) {
         return null
     }
@@ -50,7 +48,7 @@ export const LazyMdx = async ({ markdown, fs, returnedNote, slug, docType, _conf
     /* TODO: Now that everything is being handled in a way that is more cohesive, merge the zod object being used inside of the fromMdxString method with the related trpc method that returns the object. Bind them as closely and as type safe as possible to make room for future changes. */
     let note = !markdown && returnedNote ? MdxNote.fromPrisma(returnedNote) : await MdxNote.fromMdxString({ raw: markdown as string, rootRelativePath: rootRelativePath }, {
         getBookmarkState: true
-    })
+    }, mdxParser)
 
     const mdxProps: MDXRemoteProps = {
         source: note.formatted as string,

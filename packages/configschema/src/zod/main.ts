@@ -35,11 +35,10 @@ export const zodRegexField = z
     ])
     .array();
 
-
 const pluginItemSchema = z.object({
     name: z.string(),
     version: z.string().default("latest"),
-    parserIndex: z.number().min(0).default(50)
+    parserIndex: z.number().min(0).default(50),
 });
 
 export const zodRegexFieldTransform = (b: z.input<typeof zodRegexField>) => {
@@ -191,11 +190,26 @@ export const appConfigSchema = z.object({
         ])
         .transform((a) => {
             let items = Array.isArray(a) ? a : [a];
-            return items.map((s) =>
-                typeof s === "string" ? { name: s, version: "latest" } : s,
-            );
+            let names: string[] = [];
+            let newItems = items.map((s) => {
+                names.push(typeof s === "string" ? s : s.name);
+                return typeof s === "string" ? { name: s, version: "latest" } : s;
+            });
+            if (!names.includes("@ulld/api")) {
+                newItems.push({
+                    name: "@ulld/api",
+                    version: "latest",
+                });
+            }
+            return newItems;
         })
-        .default([]),
+        .default([
+            {
+                name: "@ulld/api",
+                parserIndex: 0,
+                version: "latest",
+            },
+        ]),
 });
 
 export type AppConfigSchemaInput = z.input<typeof appConfigSchema>;

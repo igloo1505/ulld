@@ -9,17 +9,17 @@
             "tags": [],
             "slot": "SnippetList",
             "export": "snippetList",
-            "componentId": "4a91a8a0-dd35-442e-b93a-def30dc671a8"
+            "componentId": "1f57a633-e78e-4b3c-85a9-77c46713e00d"
         },
         {
             "componentName": "SnippetFilter",
             "tags": [],
             "slot": "SnippetFilter",
             "export": "snippetFilter",
-            "componentId": "4a91a8a0-dd35-442e-b93a-def30dc671a8"
+            "componentId": "1f57a633-e78e-4b3c-85a9-77c46713e00d"
         }
     ],
-    "parsers": [],
+    "parsers": {},
     "pages": [
         {
             "slot": "AddSnippetPage",

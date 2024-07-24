@@ -14,6 +14,8 @@
         "./types": "./src/types.ts",
         "./toBytes": "./src/bytes/toBytes.ts",
         "./fromBytes": "./src/bytes/fromBytes.ts",
+        "./applyRecursiveMdxParser": "./src/utils/applyRecursiveParser.ts",
+        "./generalPrismaSchemas": "./src/classes/prismaMdxRelations/schemas/general.ts",
         "./classes/prismaHealthRelations/Diet": "./src/classes/prismaHealthRelations/Diet.ts",
         "./classes/specificNoteQuery/specificNoteQueryManager": "./src/classes/specificNoteQuery/specificNoteQueryManager.ts",
         "./classes/specificNoteQuery/documentConfigMap": "./src/classes/specificNoteQuery/documentConfigMap.ts",
@@ -148,14 +150,16 @@
         "./trpcInternalMethods/syncing/mdx/saveMdxNote": "./src/trpcInternalMethods/syncing/mdx/saveMdxNote.ts",
         "./trpcInternalMethods/syncing/mdx/updateMdx": "./src/trpcInternalMethods/syncing/mdx/updateMdx.ts",
         "./trpcInternalMethods/syncing/mdx/syncMdx": "./src/trpcInternalMethods/syncing/mdx/syncMdx.ts",
-        "./trpcInternalMethods/syncing/config/syncConfig": "./src/trpcInternalMethods/syncing/config/syncConfig.ts"
+        "./trpcInternalMethods/syncing/config/syncConfig": "./src/trpcInternalMethods/syncing/config/syncConfig.ts",
+        "./coreParser": "./src/parsers/mdx/main.tsx"
     },
     "scripts": {
         "dev": "echo 'Add dev script here'",
         "build": "echo 'Add dev build here'",
         "test": "jest --experimental-vm-modules",
         "test:watch": "jest --watchAll",
-        "lint": "echo 'Add lint script here'"
+        "lint": "echo 'Add lint script here'",
+        "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
     },
     "peerDependencies": {
         "@citation-js/plugin-bibtex": "^0.7.8",
@@ -284,5 +288,23 @@
     },
     "publishConfig": {
         "access": "public"
+    },
+    "ulld-plugin-id": "df72f1bf-622d-4e1b-91b8-19b14d198e7b",
+    "ulld-pluginConfig": {
+        "pluginName": "@ulld/api",
+        "label": "ULLD Core",
+        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself.",
+        "components": [],
+        "parsers": {
+            "mdx": {
+                "export": "coreParser",
+                "conditions": {}
+            }
+        },
+        "pages": [],
+        "events": {},
+        "navigationLinks": [],
+        "commandPalette": [],
+        "tailwind": {}
     }
 }

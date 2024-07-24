@@ -76,10 +76,10 @@
                 "tags": [],
                 "slot": "commandPalette",
                 "export": "commandPalette",
-                "componentId": "7a55b219-207c-4546-a694-064fffe66bfc"
+                "componentId": "c25970c9-884b-4f89-9141-2059aa09f54d"
             }
         ],
-        "parsers": [],
+        "parsers": {},
         "pages": [],
         "events": {},
         "navigationLinks": [],

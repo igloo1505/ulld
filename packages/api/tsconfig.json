@@ -5,11 +5,11 @@
         "moduleResolution": "bundler",
         "outDir": "dist",
         "jsx": "react-jsx",
-        "paths": {
-            "#/*": [
-                "./src/*"
-            ]
-        },
+        // "paths": {
+        //     "#/*": [
+        //         "./src/*"
+        //     ]
+        // },
         "esModuleInterop": true,
         "resolveJsonModule": true,
         // "declarationMap": true,

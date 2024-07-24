@@ -369,5 +369,11 @@
     "meta": {
         "title": "Uh Little Less Dum"
     },
-    "plugins": []
+    "plugins": [
+        {
+            "name": "@ulld/api",
+            "version": "latest",
+            "parserIndex": 0
+        }
+    ]
 }

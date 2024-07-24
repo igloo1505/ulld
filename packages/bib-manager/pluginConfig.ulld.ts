@@ -9,17 +9,22 @@ const pluginConfig: DeveloperConfigInput<"bibliography"> = {
     slot: "bibliography",
     label: "Bibliography",
     pages: [],
+    parsers: {
+        mdx: {
+            export: "./parser",
+        },
+    },
     components: [
         {
             componentName: "BibManagerPage",
             slot: "BibliographyPage",
-            export: "./bibliographyPage"
+            export: "./bibliographyPage",
         },
         {
             componentName: "BibEntryDetails",
             slot: "BibEntryDetails",
-            export: "./bibEntryDetails"
-        }
+            export: "./bibEntryDetails",
+        },
     ],
     navigationLinks: [
         {

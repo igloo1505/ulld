@@ -1,17 +1,18 @@
 import type { CreateRouterInner, ProcedureRouterRecord } from "@trpc/server";
-import { trpcRoot, router } from "./trpc";
+import { trpcRoot, router, UlldRouterType } from "./trpc";
 import { _appRouter } from "./main";
 import { httpBatchLink } from "./batchLink";
 import superjson from "superjson";
 
 
-type AcceptedRouterTypes =
-    | Record<string, ReturnType<typeof router>>
+export type AcceptedRouterTypes =
+    | ProcedureRouterRecord
     | Record<string, CreateRouterInner<typeof trpcRoot._config, any>>
-    | ProcedureRouterRecord;
+    | Record<string, ReturnType<UlldRouterType>>
 
-export const extendServerClient = <T extends AcceptedRouterTypes>(
-    routerExtension: T,
+
+export const extendServerClient = (
+    routerExtension: AcceptedRouterTypes
 ) => {
     const appRouter = router({
         ...routerExtension,

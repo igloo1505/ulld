@@ -13,6 +13,13 @@ import { FileManager } from "../baseClasses/fileManager";
 import { PathKeys } from "@ulld/utilities/types";
 import { AdditionalSources } from "../additionalSources";
 import { BuildStaticData } from "./buildStaticData";
+import { parserKeyList } from "@ulld/configschema/developer";
+import { ParserKey } from "@ulld/types";
+
+interface ParserFunctionData {
+    importName: string;
+    importString: string;
+}
 
 export class BaseApp extends ShellManager {
     paths: TargetPaths;
@@ -36,6 +43,7 @@ export class BaseApp extends ShellManager {
         // this.writeNoteTypePages()
         // this.writePluginSettingPages();
         // this.copyAdditionalSources()
+        // this.writeUnifiedParsingFunctions();
     }
     createComponentMap(plugins: UlldPlugin[]) {
         this.log(`Generating component map...`);
@@ -100,6 +108,45 @@ export class BaseApp extends ShellManager {
                 this.buildStaticData.settingPageData.push(
                     p.settingsPage.settingsPageData,
                 );
+            }
+        }
+    }
+    writeUnifiedParsingFunctions() {
+        let parserData: Record<ParserKey, ParserFunctionData[]> = {
+            mdx: [],
+        };
+        let pluginsWithParsingFunctions = this.build.plugins.filter((f) =>
+            Boolean(f.parsers && f.parsers.length),
+        );
+        let idx = 1;
+        for (const parserKey of parserKeyList) {
+            for (const plugin of pluginsWithParsingFunctions) {
+                let data = plugin.parsers.find((p) => p.parserType === parserKey);
+                if (data) {
+                    data.applyIndex(idx);
+                    idx += 1;
+                    parserData[parserKey].push({
+                        importName: data.importName,
+                        importString: data.getImportString(),
+                    });
+                }
+            }
+        }
+        for (const k in parserData) {
+            let items = parserData[k as keyof typeof parserData];
+            if (items.length) {
+                let fileContent = `import { UnifiedParserOfType } from "@ulld/api/types";
+${items.map((x) => x.importString).join("\n")}
+
+const unifiedParserList: UnifiedParserOfType<"${k}">[] = [
+${items.map((x) => `    ${x.importName}`).join(",\n")}
+]
+
+export default unifiedParserList
+`;
+                let targetPath = this.paths.getParserListOutputPath(k as ParserKey);
+                let f = FileManager.fromAbsolutePath(targetPath, this.paths, false);
+                f.writeContent(fileContent);
             }
         }
     }

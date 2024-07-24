@@ -9,6 +9,10 @@
         "jest**",
          "src/__scripts__/**"
     ],
+    "include": [
+        "**/*.ts",
+        "**/*.tsx"
+    ],
     "compilerOptions": {
         "declarationDir": "../types/src/generated/configschema",
         "outDir": "./dist",

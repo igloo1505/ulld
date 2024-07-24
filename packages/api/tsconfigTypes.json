@@ -1,0 +1,25 @@
+{
+    "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
+    "extends": "@ulld/typescript-config/generateTypes.json",
+    "exclude": [
+        "node_modules",
+        "dist",
+        ".turbo",
+        "src/**/*.test.ts",
+        "jest**",
+         "src/__scripts__/**"
+    ],
+    "files": [
+        "src/trpc/trpc.ts",
+        "src/trpc/serverClient.ts"
+        // "src/**/*.tsx"
+    ],
+    "compilerOptions": {
+        "declarationDir": "../types/src/generated/configschema",
+        "emitDeclarationOnly": true,
+        "outDir": "./dist",
+        "moduleResolution": "Bundler",
+        "baseUrl": ".",
+        "rootDir": "./src"
+    }
+}

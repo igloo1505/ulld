@@ -1,12 +1,6 @@
-import { WithFSSearchParams, AppConfigSchemaOutput } from "@ulld/types";
-import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
+import { WithFSSearchParams } from "@ulld/types";
 import React from "react";
-import { SpecificNoteQueryManager } from "@ulld/api/classes/specificNoteQuery/specificNoteQueryManager";
-import appConfig from "appConfig";
-import buildData from "buildData"
-import { notFound } from "next/navigation";
-import { IndividualNoteSwitch } from "@ulld/ui/individualNoteSwitch";
-import { unifiedMdxParser } from "#/methods/parsers/mdxParser"
+import NoteSwitchInternalWrapper from "#/components/notePageComponents/noteSwitchWrapper";
 
 export const dynamic = "force-dynamic";
 
@@ -18,21 +12,10 @@ interface PageProps extends WithFSSearchParams {
     };
 }
 
-const NotePage = async ({ params, searchParams }: PageProps) => {
-    const docTypeData = appConfig.noteTypes.find((n) => n.id === categoryId);
-    if (!docTypeData) {
-        return notFound();
-    }
-    const props = await SpecificNoteQueryManager.formatNoteProps(
-        docTypeData.id,
-        params,
-        searchParams,
-        appConfig as AppConfigSchemaOutput,
-        buildData as BuildStaticDataOutput
-    );
-    return <IndividualNoteSwitch
+const NotePage = async (props: PageProps) => {
+    return <NoteSwitchInternalWrapper
         {...props}
-        mdxParser={unifiedMdxParser}
+        categoryId={categoryId}
     />;
 };
 

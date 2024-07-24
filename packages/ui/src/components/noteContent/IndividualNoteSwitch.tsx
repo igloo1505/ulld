@@ -4,12 +4,10 @@ import { NotePageProps } from '../../utilityFunctions/formatting/formatNoteProps
 import ResetPathDependentComponents from '../landing/hero/util/resetPathDependentComponents'
 import DatabaseNote from './noteWrappers/DatabaseNote'
 import FsNote from './noteWrappers/FsNote'
-import { UnifiedMdxParser } from '@ulld/utilities/types'
+import { UnifiedMdxParser } from '@ulld/api/types'
 
 
-export const IndividualNoteSwitch = async (props: NotePageProps & {
-    mdxParser: UnifiedMdxParser
-}) => {
+export const IndividualNoteSwitch = async (props: NotePageProps) => {
     const { noteProps } = props
     serverLogger.info(noteProps, { label: "Note Props", component: "IndividualNoteSwitch" })
 

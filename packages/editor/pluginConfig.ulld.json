@@ -4,7 +4,7 @@
     "pluginId": "500e04c0-0ff4-4c3e-9579-1754703c862d",
     "slot": "editor",
     "components": [],
-    "parsers": [],
+    "parsers": {},
     "pages": [
         {
             "slot": "EditorModalPage",

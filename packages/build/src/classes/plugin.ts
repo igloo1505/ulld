@@ -1,5 +1,5 @@
 import { PackageJsonType } from "@ulld/developer-schemas/fullPackageJson";
-import { DeveloperConfigOutput } from "@ulld/configschema/developer";
+import { DeveloperConfigOutput, ParserKey } from "@ulld/configschema/developer";
 import path from "path";
 import fs from "fs";
 import {
@@ -16,7 +16,6 @@ import { ShellManager } from "./baseClasses/shell";
 import { PackageJson } from "./baseClasses/pkgJson";
 import { PluginSettingsPage } from "./pluginSettingsPage";
 
-
 export class UlldPlugin extends ShellManager {
     pluginConfig: DeveloperConfigOutput | "Unusable" = "Unusable";
     inConfigAsSlot: boolean = false;
@@ -24,7 +23,7 @@ export class UlldPlugin extends ShellManager {
     hasConfig: boolean = false;
     slot?: PluginSlot;
     components: PluginComponent[] = [];
-    parsers: PluginParser[] = [];
+    parsers: PluginParser<any>[] = [];
     pages: PluginPage[] = [];
     events?: PluginEvents;
     targetDir: string;
@@ -67,7 +66,11 @@ export class UlldPlugin extends ShellManager {
             fs.readFileSync(configPath, { encoding: "utf-8" }),
         ) as DeveloperConfigOutput;
         if ((this.pluginConfig as any) !== "Unusable") {
-            this.events = new PluginEvents(this.pluginConfig?.events || {}, paths, this.name);
+            this.events = new PluginEvents(
+                this.pluginConfig?.events || {},
+                paths,
+                this.name,
+            );
             this.components = this.pluginConfig.components.map(
                 (f) =>
                     new PluginComponent(
@@ -88,9 +91,11 @@ export class UlldPlugin extends ShellManager {
                     this.paths,
                 );
             }
-            this.parsers = this.pluginConfig.parsers.map(
-                (f) => new PluginParser(f, this.paths),
-            );
+            if (this.pluginConfig.parsers) {
+                for (const parserKey in this.pluginConfig.parsers) {
+                    this.parsers.push(new PluginParser(parserKey as ParserKey, this.pluginConfig, this.paths));
+                }
+            }
             this.pages = this.pluginConfig.pages.map(
                 (p, i) =>
                     new PluginPage(
@@ -104,10 +109,7 @@ export class UlldPlugin extends ShellManager {
             );
         }
         if (this.pluginConfig.settings) {
-            this.settingsPage = new PluginSettingsPage(
-                this.paths,
-                this.pluginConfig
-            );
+            this.settingsPage = new PluginSettingsPage(this.paths, this.pluginConfig);
         }
         this.embeddables = this.getEmbeddables();
     }

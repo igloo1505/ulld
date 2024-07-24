@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { InternalDeveloperConfigInput as DCI, InternalDeveloperConfigInputWithoutGeneric } from "./types/developerConfig";
 import { PluginSlotKey } from "./slotMapType";
+export { parserKeyList } from "./parserSchema";
 export declare const _developerConfigSchema: z.ZodObject<{
     pluginName: z.ZodString;
     label: z.ZodString;
@@ -82,7 +83,13 @@ export declare const _developerConfigSchema: z.ZodObject<{
         fullDocsExport?: string | undefined;
         componentId?: string | undefined;
     }>, "many">>;
-    parsers: z.ZodDefault<z.ZodArray<z.ZodType<import("./types/parserConfig").ParserConfig, z.ZodTypeDef, import("./types/parserConfig").ParserConfig>, "many">>;
+    parsers: z.ZodDefault<z.ZodObject<{
+        mdx: z.ZodOptional<z.ZodType<import("./types/parserConfig").ParserConfig, z.ZodTypeDef, import("./types/parserConfig").ParserConfig>>;
+    }, "strip", z.ZodTypeAny, {
+        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+    }, {
+        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+    }>>;
     additionalImports: z.ZodOptional<z.ZodType<import("./types/additionalImportsConfig").AdditionalImportsConfig, z.ZodTypeDef, import("./types/additionalImportsConfig").AdditionalImportsConfig>>;
     trpc: z.ZodOptional<z.ZodType<import("./types/trpcConfig").TrpcConfig, z.ZodTypeDef, import("./types/trpcConfig").TrpcConfig>>;
     settings: z.ZodOptional<z.ZodType<import("./types/pluginSettingsConfig").PluginSettingsConfig, z.ZodTypeDef, import("./types/pluginSettingsConfig").PluginSettingsConfig>>;
@@ -188,7 +195,9 @@ export declare const _developerConfigSchema: z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
-    parsers: import("./types/parserConfig").ParserConfig[];
+    parsers: {
+        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+    };
     events: import("./types/pluginEventsConfig").PluginEventsConfig;
     slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
@@ -215,7 +224,9 @@ export declare const _developerConfigSchema: z.ZodObject<{
         fullDocsExport?: string | undefined;
         componentId?: string | undefined;
     }[] | undefined;
-    parsers?: import("./types/parserConfig").ParserConfig[] | undefined;
+    parsers?: {
+        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+    } | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
     settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
@@ -325,7 +336,13 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         fullDocsExport?: string | undefined;
         componentId?: string | undefined;
     }>, "many">>;
-    parsers: z.ZodDefault<z.ZodArray<z.ZodType<import("./types/parserConfig").ParserConfig, z.ZodTypeDef, import("./types/parserConfig").ParserConfig>, "many">>;
+    parsers: z.ZodDefault<z.ZodObject<{
+        mdx: z.ZodOptional<z.ZodType<import("./types/parserConfig").ParserConfig, z.ZodTypeDef, import("./types/parserConfig").ParserConfig>>;
+    }, "strip", z.ZodTypeAny, {
+        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+    }, {
+        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+    }>>;
     additionalImports: z.ZodOptional<z.ZodType<import("./types/additionalImportsConfig").AdditionalImportsConfig, z.ZodTypeDef, import("./types/additionalImportsConfig").AdditionalImportsConfig>>;
     trpc: z.ZodOptional<z.ZodType<import("./types/trpcConfig").TrpcConfig, z.ZodTypeDef, import("./types/trpcConfig").TrpcConfig>>;
     settings: z.ZodOptional<z.ZodType<import("./types/pluginSettingsConfig").PluginSettingsConfig, z.ZodTypeDef, import("./types/pluginSettingsConfig").PluginSettingsConfig>>;
@@ -431,7 +448,9 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
-    parsers: import("./types/parserConfig").ParserConfig[];
+    parsers: {
+        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+    };
     events: import("./types/pluginEventsConfig").PluginEventsConfig;
     slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
@@ -458,7 +477,9 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         fullDocsExport?: string | undefined;
         componentId?: string | undefined;
     }[] | undefined;
-    parsers?: import("./types/parserConfig").ParserConfig[] | undefined;
+    parsers?: {
+        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+    } | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
     settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
@@ -526,7 +547,9 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
-    parsers: import("./types/parserConfig").ParserConfig[];
+    parsers: {
+        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+    };
     events: import("./types/pluginEventsConfig").PluginEventsConfig;
     slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
@@ -553,7 +576,9 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         fullDocsExport?: string | undefined;
         componentId?: string | undefined;
     }[] | undefined;
-    parsers?: import("./types/parserConfig").ParserConfig[] | undefined;
+    parsers?: {
+        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+    } | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
     settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
@@ -724,7 +749,13 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<{
     }>]>, "many">>;
     tailwind: z.ZodDefault<z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>>;
     slot: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"snippets">, z.ZodLiteral<"math">, z.ZodLiteral<"editor">, z.ZodLiteral<"UI">, z.ZodLiteral<"bibliography">, z.ZodLiteral<"taskManager">, z.ZodLiteral<"pdf">, z.ZodLiteral<"navigation">, z.ZodLiteral<"dashboard">, z.ZodLiteral<"form">, z.ZodLiteral<"commandPalette">]>>;
-    parsers: z.ZodDefault<z.ZodArray<z.ZodType<import("./types/parserConfig").ParserConfig, z.ZodTypeDef, import("./types/parserConfig").ParserConfig>, "many">>;
+    parsers: z.ZodDefault<z.ZodObject<{
+        mdx: z.ZodOptional<z.ZodType<import("./types/parserConfig").ParserConfig, z.ZodTypeDef, import("./types/parserConfig").ParserConfig>>;
+    }, "strip", z.ZodTypeAny, {
+        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+    }, {
+        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+    }>>;
     additionalImports: z.ZodOptional<z.ZodType<import("./types/additionalImportsConfig").AdditionalImportsConfig, z.ZodTypeDef, import("./types/additionalImportsConfig").AdditionalImportsConfig>>;
     trpc: z.ZodOptional<z.ZodType<import("./types/trpcConfig").TrpcConfig, z.ZodTypeDef, import("./types/trpcConfig").TrpcConfig>>;
     events: z.ZodDefault<z.ZodType<import("./types/pluginEventsConfig").PluginEventsConfig, z.ZodTypeDef, import("./types/pluginEventsConfig").PluginEventsConfig>>;
@@ -769,7 +800,9 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
-    parsers: import("./types/parserConfig").ParserConfig[];
+    parsers: {
+        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+    };
     events: import("./types/pluginEventsConfig").PluginEventsConfig;
     settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
     slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
@@ -820,7 +853,9 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<{
     })[] | undefined;
     tailwind?: {} | undefined;
     slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
-    parsers?: import("./types/parserConfig").ParserConfig[] | undefined;
+    parsers?: {
+        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+    } | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
     events?: import("./types/pluginEventsConfig").PluginEventsConfig | undefined;
@@ -828,4 +863,5 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<{
 export type DeveloperConfigOutput = z.output<typeof developerConfigSchema>;
 export type DeveloperConfigInput<T extends PluginSlotKey | undefined = undefined> = DCI<T>;
 export type DeveloperConfigInputWithoutGeneric = InternalDeveloperConfigInputWithoutGeneric;
+export type ParserKey = keyof DeveloperConfigOutput["parsers"];
 //# sourceMappingURL=main.d.ts.map

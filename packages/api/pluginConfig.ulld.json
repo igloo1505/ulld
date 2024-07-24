@@ -1,0 +1,17 @@
+{
+    "pluginName": "@ulld/api",
+    "label": "ULLD Core",
+    "pluginId": "df72f1bf-622d-4e1b-91b8-19b14d198e7b",
+    "components": [],
+    "parsers": {
+        "mdx": {
+            "export": "coreParser",
+            "conditions": {}
+        }
+    },
+    "pages": [],
+    "events": {},
+    "navigationLinks": [],
+    "commandPalette": [],
+    "tailwind": {}
+}

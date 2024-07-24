@@ -53,14 +53,19 @@ export class FileManager extends ShellManager {
     }
     writeContent(content?: string) {
         let newContent = content || this.content;
-        console.log("newContent: ", newContent)
         if (!newContent) {
             return this.logDebug(
                 `Not writing file content to ${this.subPath}. No content was read from file and none was provided.`,
             );
         }
         if (this.DO_NOT_WRITE_FILE_CONTENT) {
-            this.log(newContent);
+            this.log(`
+--- Begin File ---
+
+${newContent}
+
+--- End File ---
+`);
         } else {
             this.mkdirIfNotExists()
             this.logVerbose(`Writing content to ${this.path}`);

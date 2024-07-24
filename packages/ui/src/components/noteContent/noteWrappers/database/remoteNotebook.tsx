@@ -12,7 +12,6 @@ interface RemoteNotebookProps extends NotePageProps {
 }
 
 const DatabaseNotebook = async (props: RemoteNotebookProps) => {
-    console.log(`database notebook`)
     const nb = await serverClient.ipynb.getDatabaseNotebook({
         rootRelativePath: props.rootRelativePath
     })

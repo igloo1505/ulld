@@ -15,10 +15,10 @@
                     "label": "Pdf"
                 }
             ],
-            "componentId": "edeba802-1131-4bd6-a622-68549425d341"
+            "componentId": "b17ab0bd-3cec-43c3-8745-a5a67dcee707"
         }
     ],
-    "parsers": [],
+    "parsers": {},
     "pages": [
         {
             "slot": "FullPdf",

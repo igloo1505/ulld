@@ -9,17 +9,22 @@
             "tags": [],
             "slot": "BibliographyPage",
             "export": "bibliographyPage",
-            "componentId": "10bb9eb9-2bcc-41f2-a45a-d23e412b5dc9"
+            "componentId": "191975a3-d40c-486a-8c9b-90d03acf4e06"
         },
         {
             "componentName": "BibEntryDetails",
             "tags": [],
             "slot": "BibEntryDetails",
             "export": "bibEntryDetails",
-            "componentId": "10bb9eb9-2bcc-41f2-a45a-d23e412b5dc9"
+            "componentId": "191975a3-d40c-486a-8c9b-90d03acf4e06"
         }
     ],
-    "parsers": [],
+    "parsers": {
+        "mdx": {
+            "export": "parser",
+            "conditions": {}
+        }
+    },
     "pages": [],
     "events": {},
     "navigationLinks": [

@@ -128,7 +128,7 @@
         "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself.",
         "slot": "editor",
         "components": [],
-        "parsers": [],
+        "parsers": {},
         "pages": [
             {
                 "slot": "EditorModalPage",

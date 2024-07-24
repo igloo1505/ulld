@@ -1,5 +1,6 @@
 import { zodOptBool, zodOptStr, zodOptNum } from '@ulld/utilities/schemas/utility'
-import { z } from 'zod'
+import { z, ZodTypeAny } from 'zod'
+import {FrontMatterType} from "@ulld/types"
 
 
 const zodFMTextStyle = z.enum([
@@ -19,7 +20,7 @@ const zodTableStylesObject = z.object({
 })
 
 
-const fields = {
+const fields: Record<keyof FrontMatterType<{}>, ZodTypeAny> = {
     title: z.string().nullish(),
     created: zodOptStr,
     updated: zodOptStr,
@@ -29,20 +30,17 @@ const fields = {
     tags: z.union([z.string(), z.string().array(), z.number(), z.number().array()]).transform((a) => Array.isArray(a) ? a.map((l) => String(l)) : [String(a)]).default([]),
     importantValues: z.number().array().optional().nullable(),
     id: zodOptStr,
-    protected: z.boolean().default(false),
+    // protected: z.boolean().default(false),
     sequential: zodOptNum,
     sequentialKey: zodOptStr,
-    float: z.boolean().default(false),
     tableStyles: zodTableStylesObject.optional(),
-    remote: z.object({
-        url: zodOptStr,
-        track: zodOptBool(true)
-    }).nullish()
+    // remote: z.object({
+    //     url: zodOptStr,
+    //     track: zodOptBool(true)
+    // }).nullish()
 }
 
 export const zodFrontMatterObject = z.object(fields)
-
-export type FrontMatterType = z.infer<typeof zodFrontMatterObject>
 
 
 export type ZodFrontMatterInput = z.input<typeof zodFrontMatterObject>

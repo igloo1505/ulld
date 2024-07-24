@@ -59,10 +59,10 @@
                 "tags": [],
                 "slot": "LandingPage",
                 "export": "beta",
-                "componentId": "2b09c0cd-fcce-4814-9c66-ea02cb4bc4d5"
+                "componentId": "b09a533d-f7f0-4dd8-aa04-4bd61f91039e"
             }
         ],
-        "parsers": [],
+        "parsers": {},
         "pages": [],
         "events": {},
         "navigationLinks": [],

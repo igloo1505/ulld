@@ -8,6 +8,11 @@ const pluginConfig: DeveloperConfigInput<"math"> = {
     pluginName: "@ulld/equations",
     slot: "math",
     label: "Math",
+    parsers: {
+        mdx: {
+            export: "./parser"
+        }
+    },
     pages: [
         {
             export: "./equationModal",

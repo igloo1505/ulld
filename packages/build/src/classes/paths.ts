@@ -1,6 +1,6 @@
 import path from "path";
 import fs from "fs";
-import { PluginEventsConfig } from "@ulld/types";
+import { ParserKey, PluginEventsConfig } from "@ulld/types";
 import { PathKeys, MethodListPathKeys } from "@ulld/utilities/types";
 import { removeLeadingDotSlash } from "../utils/removeLeadingDotSlash";
 
@@ -28,6 +28,7 @@ export class TargetPaths
     onSyncMethodList: string;
     onBuildMethodList: string
     methods: string;
+    mdxParserList: string;
     constructor(
         public targetDir: string,
         public isLocalDev: boolean,
@@ -48,6 +49,7 @@ export class TargetPaths
         this.appConfig = path.join(targetDir, "appConfig.ulld.json");
         this.componentMap = path.join(targetDir, "src/internal/componentMap.ts");
         this.methods = path.join(targetDir, "src/methods");
+        this.mdxParserList = path.join(targetDir, "src/methods/parsers/parserLists/mdx.ts")
         this.onBuildMethodList = path.join(targetDir, "buildUtils/__TEMP__/onBuildMethodList.ts")
         this.onBackupMethodList = path.join(
             this.methods,
@@ -78,6 +80,9 @@ export class TargetPaths
         this.public = path.join(targetDir, "public");
         this.styles = path.join(targetDir, "src/styles");
         this.packageJson = path.join(targetDir, "package.json");
+    }
+    getParserListOutputPath(parserKey: ParserKey){
+        return this[`${parserKey}ParserList`]
     }
     targetDirExists(): boolean {
         return fs.existsSync(this.targetDir);

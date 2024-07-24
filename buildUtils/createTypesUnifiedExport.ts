@@ -97,7 +97,6 @@ const gatherPaths = (data: (typeof targetPaths)[number]) => {
     let exclude = data.exclude || [];
     let extraPaths = data.extraPaths || ([] as string[]);
     exclude.push(data.outputPath.replace(`${data.path}/`, ""));
-    console.log("exclude: ", exclude);
     let _paths = globSync("**/*.ts", {
         cwd: data.path,
     }).filter((f) => !exclude.includes(f));

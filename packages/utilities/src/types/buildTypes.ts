@@ -1,4 +1,4 @@
-export * from "./baseApp/main"
+export * from "./baseApp/main";
 export type MethodListPathKeys =
     | "onBackupMethodList"
     | "onRestoreMethodList"
@@ -23,9 +23,8 @@ export type PathKeys =
     | "ulldBuildData"
     | "appConfig"
     | "methods"
+    | "mdxParserList"
     | "componentMap";
-
-
 
 export type PathMap = {
     /** The public directory. content here is available at the `/` url. */
@@ -62,7 +61,8 @@ export type PathMap = {
     methods: string;
     /** An automatically generated file that exposes all embeddable plugins to the end user. */
     componentMap: string;
+    /** An internal output file for all mdx parser functions that are combined into a single sync function dynamicaly. */
+    mdxParserList: string;
 };
-
 
 export type TargetPathKeys = keyof PathMap | MethodListPathKeys;

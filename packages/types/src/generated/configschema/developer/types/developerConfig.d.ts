@@ -13,7 +13,9 @@ export type InternalDeveloperConfigInput<T extends PluginSlotKey | undefined = u
     label?: string;
     slot?: keyof typeof slots;
     components?: ComponentConfig<T>[];
-    parsers?: ParserConfig[];
+    parsers?: {
+        mdx?: ParserConfig;
+    };
     additionalImports?: AdditionalImportsConfig;
     trpc?: TrpcConfig;
     settings?: PluginSettingsConfig;

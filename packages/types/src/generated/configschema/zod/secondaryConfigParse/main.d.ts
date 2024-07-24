@@ -851,30 +851,42 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
     plugins: z.ZodDefault<z.ZodEffects<z.ZodUnion<[z.ZodObject<{
         name: z.ZodString;
         version: z.ZodDefault<z.ZodString>;
+        parserIndex: z.ZodDefault<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
         name: string;
         version: string;
+        parserIndex: number;
     }, {
         name: string;
         version?: string | undefined;
+        parserIndex?: number | undefined;
     }>, z.ZodArray<z.ZodObject<{
         name: z.ZodString;
         version: z.ZodDefault<z.ZodString>;
+        parserIndex: z.ZodDefault<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
         name: string;
         version: string;
+        parserIndex: number;
     }, {
         name: string;
         version?: string | undefined;
-    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>, {
+        parserIndex?: number | undefined;
+    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>, ({
         name: string;
         version: string;
-    }[], string | string[] | {
+        parserIndex: number;
+    } | {
+        name: string;
+        version: string;
+    })[], string | string[] | {
         name: string;
         version?: string | undefined;
+        parserIndex?: number | undefined;
     } | {
         name: string;
         version?: string | undefined;
+        parserIndex?: number | undefined;
     }[]>>;
     jupyter: z.ZodObject<{
         execute: z.ZodDefault<z.ZodBoolean>;
@@ -1388,10 +1400,14 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         title: string;
         desc?: string | undefined;
     };
-    plugins: {
+    plugins: ({
         name: string;
         version: string;
-    }[];
+        parserIndex: number;
+    } | {
+        name: string;
+        version: string;
+    })[];
     cslPath?: string | undefined;
     features?: {
         pages: {
@@ -1657,9 +1673,11 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
     plugins?: string | string[] | {
         name: string;
         version?: string | undefined;
+        parserIndex?: number | undefined;
     } | {
         name: string;
         version?: string | undefined;
+        parserIndex?: number | undefined;
     }[] | undefined;
 }>, {
     parsableExtensions: (".mdx" | ".ipynb" | ".md" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5")[];
@@ -1950,10 +1968,14 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         title: string;
         desc?: string | undefined;
     };
-    plugins: {
+    plugins: ({
         name: string;
         version: string;
-    }[];
+        parserIndex: number;
+    } | {
+        name: string;
+        version: string;
+    })[];
     cslPath?: string | undefined;
     features?: {
         pages: {
@@ -2219,9 +2241,11 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
     plugins?: string | string[] | {
         name: string;
         version?: string | undefined;
+        parserIndex?: number | undefined;
     } | {
         name: string;
         version?: string | undefined;
+        parserIndex?: number | undefined;
     }[] | undefined;
 }>;
 //# sourceMappingURL=main.d.ts.map

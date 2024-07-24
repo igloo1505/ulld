@@ -10,7 +10,8 @@
         "./equationModal": "./src/ulld_app/equations/@modal/(.)equations/details/[equationId]/page.tsx",
         "./addEquationPage": "./src/ulld_app/equations/add/page.tsx",
         "./equationDetailsPage": "./src/ulld_app/equations/details/[equationId]/page.tsx",
-        "./equationsPage": "./src/ulld_app/equations/page.tsx"
+        "./equationsPage": "./src/ulld_app/equations/page.tsx",
+        "./parser": "./src/parsers/main.tsx"
     },
     "scripts": {
         "appendRouter": "ts-node ./node_modules/@ulld/developer-cli/bin/run.js appendRouter /src/lib/equationsRouter.ts equations",
@@ -75,7 +76,12 @@
         "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself.",
         "slot": "math",
         "components": [],
-        "parsers": [],
+        "parsers": {
+            "mdx": {
+                "export": "parser",
+                "conditions": {}
+            }
+        },
         "pages": [
             {
                 "targetUrl": "@modal/(.)equations/details/[equationId]",
