@@ -6,11 +6,11 @@ import simpleGit, {
     SimpleGitProgressEvent,
 } from "simple-git";
 import { MultiBar, SingleBar } from "cli-progress";
-import path from 'path'
+import path from "path";
 
 export class GitManager extends ShellManager {
     status: "notSent" | "pending" | "success" | "fail" = "notSent";
-    showProgress: boolean = false
+    showProgress: boolean = false;
     constructor(public targetDirectory: string) {
         super();
     }
@@ -50,9 +50,8 @@ export class GitManager extends ShellManager {
         };
         const git: SimpleGit = simpleGit(options);
         await git.pull({
-            "-C": this.targetDirectory
-            }
-        )
+            "-C": this.targetDirectory,
+        });
         // await git.pull(
         //     appData.templateRepo.url,
         //     `${this.targetDirectory}/ulldApp`,
@@ -86,7 +85,7 @@ export class GitManager extends ShellManager {
             appData.templateRepo.url,
             `${this.targetDirectory}/ulldApp`,
             {
-                // "-b": "main",
+                // "-b": appData.templateRepo.branch,
             },
             (err, data) => {
                 if (err) {
@@ -94,17 +93,15 @@ export class GitManager extends ShellManager {
                 }
                 console.log(data);
             },
-        )
+        );
         await git.raw(
-            "remote",
-            "rename",
-            "origin",
-            "ulld",
             "-C",
-            path.join(this.targetDirectory, appData.templateRepo.buildDirName)
-        )
-        // await git.addRemote("ulld", appData.templateRepo.url)
-        console.log("Down here? ")
+            path.join(this.targetDirectory, appData.templateRepo.buildDirName),
+            "remote",
+            "add",
+            "ulld",
+            appData.templateRepo.url,
+        );
         this.status = "success";
         return true;
     }

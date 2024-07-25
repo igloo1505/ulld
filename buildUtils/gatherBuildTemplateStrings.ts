@@ -7,7 +7,6 @@ const outputPath = path.join(
     "../packages/build/src/utils/templateStringData.json",
 );
 
-
 const templateKeyTypePath = path.join(
     __dirname,
     "../packages/build/src/utils/templateKeys.ts",
@@ -18,6 +17,21 @@ const templateStringDir = path.join(
     "../packages/build/src/fileContent",
 );
 
+const prismaSchemaPath = path.join(
+    __dirname,
+    "../packages/database/src/prisma/schema.prisma",
+);
+
+let prismaSchemaContent = fs.readFileSync(prismaSchemaPath, {
+    encoding: "utf-8",
+});
+
+fs.writeFileSync(
+    path.join(templateStringDir, "prismaSchema.txt"),
+    prismaSchemaContent,
+    { encoding: "utf-8" },
+);
+
 const files = globSync("**", {
     cwd: templateStringDir,
 });
@@ -26,7 +40,7 @@ interface TemplateFileData {
     id: string;
     path: string;
     variables: string[];
-    typeName: string
+    typeName: string;
 }
 
 let data: TemplateFileData[] = [];
@@ -47,22 +61,23 @@ const getVariables = (fp: string) => {
 };
 
 for (const f of files) {
+    console.log(`Gathering template file ${f}`)
     let absPath = path.join(templateStringDir, f);
     if (!fs.statSync(absPath).isDirectory()) {
-        let id = f.slice(f.lastIndexOf(path.sep) + 1, f.lastIndexOf("."))
+        let id = f.slice(f.lastIndexOf(path.sep) + 1, f.lastIndexOf("."));
         data.push({
             path: f,
             id: id,
             variables: getVariables(absPath),
-            typeName: `${id[0].toUpperCase()}${id.slice(1)}`
+            typeName: `${id[0].toUpperCase()}${id.slice(1)}`,
         });
     }
 }
 
 let templateKeyString = `
-export type TemplateStringId = ${data.map((d) => `"${d.id}"`).join("|")}
+export type TemplateStringId = ${data.map((d) => `"${d.id}"`).join(" | ")}
 
-${data.map((t) => `export type ${t.typeName} = ${t.variables.map((l) => `"${l}"`).join(" | ")}`).join("\n")}
+${data.map((t) => `export type ${t.typeName} = ${t.variables.length === 0 ? ['never'] : t.variables.map((l) => `"${l}"`).join(" | ")}`).join("\n")}
 
 type TemplateStringMap = {
 ${data.map((t) => `    ${t.id}: ${t.typeName}`).join(";\n")}
@@ -71,15 +86,9 @@ ${data.map((t) => `    ${t.id}: ${t.typeName}`).join(";\n")}
 export type TemplateStringVariables<T extends keyof TemplateStringMap> = TemplateStringMap[T]
 
 export type TemplateStringVariableRecord<T extends keyof TemplateStringMap> = Record<TemplateStringVariables<T>, string>
-`
+`;
 
-
-
-fs.writeFileSync(
-    templateKeyTypePath,
-    templateKeyString,
-    { encoding: "utf-8" },
-);
+fs.writeFileSync(templateKeyTypePath, templateKeyString, { encoding: "utf-8" });
 
 fs.writeFileSync(
     outputPath,

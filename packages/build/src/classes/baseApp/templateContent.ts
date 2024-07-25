@@ -12,6 +12,10 @@ export class TemplateContent extends FileManager {
     }
     appendImport(importString: string){
         let importLines = this.getImportLines()
+        let _importString = importString.trim()
+        if(importLines.some((s) => s.content === _importString)){
+            return
+        }
         let lastImportLine = importLines[importLines.length - 1]
         importLines.push({
             content: importString,

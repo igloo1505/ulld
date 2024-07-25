@@ -28,6 +28,8 @@ export const pathKeys = [
      "mdxParserList",
      "componentMap",
     "unifiedUserDefinedScss",
+    "gitignore",
+    "prismaSchema",
     "userDefinedStyles",
     "tempBuildFiles"
 ] as const
@@ -73,4 +75,4 @@ export type PathMap = {
     mdxParserList: string;
 };
 
-export type TargetPathKeys = keyof PathMap | MethodListPathKeys;
+export type TargetPathKeys = keyof PathMap | MethodListPathKeys | PathKeys

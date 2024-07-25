@@ -50,7 +50,12 @@ export class UlldPlugin extends ShellManager {
             path.join(this.packageRoot, "package.json"),
         );
         if (!fs.existsSync(configPath)) {
+            this.logVerbose(`Could not find plugin config for ${this.name}`);
             if (!this.packageJson.exists()) {
+                this.logDebug(`
+No package.json file found for package ${this.name}. 
+Attempted to find one at ${configPath}
+`);
                 this.noConfigError();
                 return;
             }
@@ -60,6 +65,8 @@ export class UlldPlugin extends ShellManager {
                 return;
             }
             this.pluginConfig = pkgJsonConfig;
+        } else {
+            this.logDebug(`Found plugin config for ${this.name}`);
         }
         this.hasConfig = true;
         this.pluginConfig = JSON.parse(
@@ -93,7 +100,13 @@ export class UlldPlugin extends ShellManager {
             }
             if (this.pluginConfig.parsers) {
                 for (const parserKey in this.pluginConfig.parsers) {
-                    this.parsers.push(new PluginParser(parserKey as ParserKey, this.pluginConfig, this.paths));
+                    this.parsers.push(
+                        new PluginParser(
+                            parserKey as ParserKey,
+                            this.pluginConfig,
+                            this.paths,
+                        ),
+                    );
                 }
             }
             this.pages = this.pluginConfig.pages.map(

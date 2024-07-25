@@ -31,15 +31,21 @@ export class TargetPackageJson extends PackageJson {
 
     // ULLD_BUILD_PROCESS: Need to handle this.
     // TODO: Need to handle this. Can't do shit without wifi right now.
-    async installDependencies() {
+    async installDependencies(forceLocalSource?: boolean) {
         let manager = await this.promptForPackageManager();
         if (!manager) {
-            console.log(`Could not find a preferred package manager. Exiting.`)
-            process.exit(1)
+            console.log(`Could not find a preferred package manager. Exiting.`);
+            process.exit(1);
+        }
+        if (forceLocalSource) {
+            this.logDebug(`Applying local sources for development build.`)
+            this.exec(
+                `tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/setClonedBaseAppInternalDepLocations.ts toLocal`,
+            );
         }
         this.log(`Downloading dependencies with ${manager}`);
-        this.log(`This might take a minute... Now's the time to get some coffee.`)
+        this.log(`This might take a minute... Now's the time to get some coffee.`);
         this.exec(`${manager} install`, this.targetDir);
-        this.log(`Whew! Installed everything we need to wrap this up...`)
+        this.log(`Whew! Installed everything we need to wrap this up...`);
     }
 }

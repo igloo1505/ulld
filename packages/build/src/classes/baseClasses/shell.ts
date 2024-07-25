@@ -6,17 +6,13 @@ type LogLevel = "normal" | "verbose" | "debug";
 
 type ExecLogger = (error: ExecException | null, stdout: string | Buffer, stderr: string | Buffer) => void
 
-interface ExecLoggerImplementation {
-execLogger: ExecLogger
-    }
-
 const packageManagerExecution: Record<PackageManagers, string> = {
     npm: "npm run",
     yarn: "yarn run",
     pnpm: "pnpm run"
 }
 
-export class ShellManager implements ExecLoggerImplementation {
+export class ShellManager {
     logLevel: LogLevel = "normal"
     private logLevelOrder: LogLevel[] = ["normal", "verbose", "debug"];
     constructor() {

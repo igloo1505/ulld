@@ -111,8 +111,8 @@
             }
         ],
         "events": {
-            "onBackup": "./onBackup",
-            "onRestore": "./onRestore"
+            "onBackup": "onBackup",
+            "onRestore": "onRestore"
         },
         "navigationLinks": [
             {

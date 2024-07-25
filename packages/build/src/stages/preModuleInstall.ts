@@ -4,5 +4,5 @@ import { getDevData } from "../utils/getDevData";
 
 export const installDependencies = async (build: UlldBuildProcess, options: OptionValues) => {
        let d = getDevData()
-        !d.workingOffline && await build.packageJson.installDependencies(); //beta
+        !d.workingOffline && await build.packageJson.installDependencies(options.forceLocalSource); //beta
 }

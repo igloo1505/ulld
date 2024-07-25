@@ -2,6 +2,12 @@
     "basePath": "/Users/bigsexy/Desktop/current/ulld/packages/build/src/fileContent",
     "data": [
         {
+            "path": "prismaSchema.txt",
+            "id": "prismaSchema",
+            "variables": [],
+            "typeName": "PrismaSchema"
+        },
+        {
             "path": "settings/settingsPage.txt",
             "id": "settingsPage",
             "variables": [
@@ -26,6 +32,12 @@
                 "CATEGORY_ID"
             ],
             "typeName": "IndividualNotePage"
+        },
+        {
+            "path": "generalFiles/gitignore.txt",
+            "id": "gitignore",
+            "variables": [],
+            "typeName": "Gitignore"
         }
     ]
 }

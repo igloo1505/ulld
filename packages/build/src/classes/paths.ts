@@ -5,7 +5,6 @@ import { removeLeadingDotSlash } from "../utils/removeLeadingDotSlash";
 import { ParserKey } from "@ulld/configschema/developer";
 import { PluginEventsConfig } from "@ulld/configschema/developerTypes";
 
-
 export class TargetPaths
     implements Record<PathKeys | MethodListPathKeys, string> {
     public: string;
@@ -27,22 +26,25 @@ export class TargetPaths
     onBackupMethodList: string;
     onRestoreMethodList: string;
     onSyncMethodList: string;
-    onBuildMethodList: string
+    onBuildMethodList: string;
     methods: string;
     mdxParserList: string;
     tempTargetPaths: string;
     tempBuildFiles: string;
     userDefinedStyles: string;
-    unifiedUserDefinedScss: string
+    unifiedUserDefinedScss: string;
+    prismaSchema: string;
+    gitignore: string;
     constructor(
         public targetDir: string,
         public isLocalDev: boolean,
     ) {
         this.public = path.join(targetDir, "public");
         this.node_modules = path.join(targetDir, "node_modules");
+        this.gitignore = path.join(targetDir, ".gitignore");
         this.styles = path.join(targetDir, "src", "styles");
-        this.unifiedUserDefinedScss = path.join(this.styles, "index.scss")
-        this.userDefinedStyles = path.join(this.styles, "userProvided")
+        this.unifiedUserDefinedScss = path.join(this.styles, "index.scss");
+        this.userDefinedStyles = path.join(this.styles, "userProvided");
         this.app = path.join(targetDir, "src", "app");
         this.projectRoot = targetDir;
         this.packageJson = path.join(targetDir, "package.json");
@@ -54,15 +56,25 @@ export class TargetPaths
         this.tailwind = path.join(targetDir, "tailwind.config.ts");
         this.ulldBuildData = path.join(targetDir, "ulldBuildData.json");
         this.appConfig = path.join(targetDir, "appConfig.ulld.json");
+        this.prismaSchema = path.join(targetDir, "src/database/schema.prisma");
         this.componentMap = path.join(targetDir, "src/internal/componentMap.ts");
         this.methods = path.join(targetDir, "src/methods");
-        this.mdxParserList = path.join(targetDir, "src/methods/parsers/parserLists/mdx.ts")
-        this.onBuildMethodList = path.join(targetDir, "buildUtils/__TEMP__/onBuildMethodList.ts")
-        this.tempTargetPaths = path.join(targetDir, "buildUtils/__TEMP__/buildTargetPaths.json")
-        this.tempBuildFiles = path.join(targetDir, "buildUtils/__TEMP__/")
+        this.mdxParserList = path.join(
+            targetDir,
+            "src/methods/parsers/parserLists/mdx.ts",
+        );
+        this.onBuildMethodList = path.join(
+            targetDir,
+            "buildUtils/__TEMP__/onBuildMethodList.ts",
+        );
+        this.tempTargetPaths = path.join(
+            targetDir,
+            "buildUtils/__TEMP__/buildTargetPaths.json",
+        );
+        this.tempBuildFiles = path.join(targetDir, "buildUtils/__TEMP__/");
         this.onBackupMethodList = path.join(
             this.methods,
-            "events/methodLists/backup.ts",
+            "events/methodLists/backupMethods.ts",
         );
         this.onRestoreMethodList = path.join(
             this.methods,
@@ -90,8 +102,8 @@ export class TargetPaths
         this.styles = path.join(targetDir, "src/styles");
         this.packageJson = path.join(targetDir, "package.json");
     }
-    getParserListOutputPath(parserKey: ParserKey){
-        return this[`${parserKey}ParserList`]
+    getParserListOutputPath(parserKey: ParserKey) {
+        return this[`${parserKey}ParserList`];
     }
     targetDirExists(): boolean {
         return fs.existsSync(this.targetDir);
@@ -105,28 +117,28 @@ export class TargetPaths
     exists(_key: PathKeys) {
         return fs.existsSync(this[_key]);
     }
-    getEventMethodListPath(type: keyof PluginEventsConfig){
-         return this[`${type}MethodList`]
+    getEventMethodListPath(type: keyof PluginEventsConfig) {
+        return this[`${type}MethodList`];
     }
     fromRootRelativeToAbsolute(rootRelativePath: string) {
         return path.join(this.targetDir, rootRelativePath);
     }
-    makeSubPath(absolutePath: string){
-        return absolutePath.replace(`${this.projectRoot}/`, "")
+    makeSubPath(absolutePath: string) {
+        return absolutePath.replace(`${this.projectRoot}/`, "");
     }
-    getNoteTypePathsFromTargetUrl(url: string){
-        let items = removeLeadingDotSlash(url).split(path.sep)
-        let dirPath = this.joinPath("appDir", ...items)
+    getNoteTypePathsFromTargetUrl(url: string) {
+        let items = removeLeadingDotSlash(url).split(path.sep);
+        let dirPath = this.joinPath("appDir", ...items);
         return {
             page: path.join(dirPath, "page.tsx"),
-            individualNotePage: path.join(dirPath, "[...slug]", "page.tsx")
-        }
+            individualNotePage: path.join(dirPath, "[...slug]", "page.tsx"),
+        };
     }
-    toJson(){
-        let data: Record<PathKeys, string> = {} as Record<PathKeys, string>
+    toJson() {
+        let data: Record<PathKeys, string> = {} as Record<PathKeys, string>;
         for (const k of pathKeys) {
-            data[k] = this[k]
+            data[k] = this[k];
         }
-        return data
+        return data;
     }
 }

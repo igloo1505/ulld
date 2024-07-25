@@ -3,6 +3,8 @@ Clear test build | trash /Users/bigsexy/Desktop/current/ulldApp
 Copy backup build to correct location | cp -r /Users/bigsexy/Desktop/current/ulldAppBackup/ /Users/bigsexy/Desktop/current/ulldApp
 Run build cli | tsx /Users/bigsexy/Desktop/current/ulld/packages/build/src/main.ts 
 Inspect build cli | tsx --inspect /Users/bigsexy/Desktop/current/ulld/packages/build/src/main.ts
+Run build cli with local | tsx /Users/bigsexy/Desktop/current/ulld/packages/build/src/main.ts --use-local
+Run build cli and apply local sources | tsx /Users/bigsexy/Desktop/current/ulld/packages/build/src/main.ts --force-local-source
 Copy app config for build script | tsx /Users/bigsexy/Desktop/current/ulld/packages/build/src/devScripts/copyAppConfig.ts
 Update React and Next | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/updateReactAndNext.zsh
 Generate unified theme | tsx /Users/bigsexy/Desktop/current/ulld/packages/tailwindAndShad/src/scripts/generateUnifiedTheme.ts

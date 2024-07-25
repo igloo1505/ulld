@@ -26,17 +26,23 @@ import { modifyNameRandomly } from "../utils/randomization";
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
 import { BuildStaticDataInput } from "@ulld/configschema/buildTypes";
 import { AdditionalSources } from "./additionalSources";
+import { EnvManager } from "./envManager";
+import { BuildHealthCheck } from "./healthCheck";
+import { DatabaseBuildManager } from "./databaseManager";
 
 type PluginSlotKey = keyof SlotMap;
 
 export class UlldBuildProcess extends Prompter {
     plugins: UlldPlugin[] = [];
     noteTypes: NoteType[] = [];
+    env: EnvManager
+    health: BuildHealthCheck
     appConfig: UlldAppConfigManager;
     paths: TargetPaths;
     applicationDir: string;
     packageJson: TargetPackageJson;
     isLocalDev: boolean;
+    db: DatabaseBuildManager
     packageManager: PackageManagers = "pnpm";
     slotConflicts: SlotConflict[] = [];
     pageConflicts: PageConflict[] = [];
@@ -44,6 +50,7 @@ export class UlldBuildProcess extends Prompter {
     componentImportMap: Record<string, boolean> = {};
     constructor(public targetDir: string) {
         super(targetDir);
+        this.env = new EnvManager()
         this.git = new GitManager(targetDir);
         this.isLocalDev = process.env.LOCAL_DEVELOPMENT === "true";
         this.applicationDir = path.join(
@@ -51,6 +58,8 @@ export class UlldBuildProcess extends Prompter {
             appData.templateRepo.buildDirName,
         );
         this.paths = new TargetPaths(this.applicationDir, this.isLocalDev);
+        this.health = new BuildHealthCheck(this.paths)
+        this.db = new DatabaseBuildManager(this.paths, this.env, this.health)
         this.packageJson = new TargetPackageJson(
             this.applicationDir,
             this.isLocalDev,

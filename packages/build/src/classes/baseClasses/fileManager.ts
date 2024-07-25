@@ -15,7 +15,7 @@ export class FileManager extends ShellManager {
     asJson: boolean;
     path: string;
     dirname: string;
-    DO_NOT_WRITE_FILE_CONTENT = true;
+    DO_NOT_WRITE_FILE_CONTENT = process.env.ULLD_INTERNAL_DEVELOPMENT;
     constructor(
         public subPath: string,
         public paths: TargetPaths,
@@ -45,9 +45,7 @@ export class FileManager extends ShellManager {
         this.dirname = this.getDirname(isDir)
     }
     mkdirIfNotExists() {
-        console.log("this.dirname: ", this.dirname)
         if (!fs.existsSync(this.dirname)) {
-            console.log(`Making dir...`)
             fs.mkdirSync(this.dirname, { recursive: true });
         }
     }
@@ -125,8 +123,9 @@ ${newContent}
         let lines = this.getLines();
         let lineData: LineItem[] = [];
         lines.forEach((l, i) => {
-            if (l.trim().startsWith("import")) {
-                lineData.push({ content: l, index: i });
+            let trimmed = l.trim()
+            if (trimmed.startsWith("import")) {
+                lineData.push({ content: trimmed, index: i });
             }
         });
         return lineData;

@@ -6,6 +6,7 @@ import chalk from "chalk";
 import { prompt } from "enquirer";
 import fs from 'fs'
 import { UlldBuildProcess } from "../classes/build";
+import { EnvManager } from "../classes/envManager";
 
 export const verifyDirectory = async (forceCurrentDir: boolean) => {
     const currentDir = getCurrentDir();

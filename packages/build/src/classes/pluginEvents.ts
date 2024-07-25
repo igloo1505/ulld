@@ -2,8 +2,9 @@ import { DeveloperConfigOutput } from "@ulld/configschema/developer";
 import { TargetPaths } from "./paths";
 import { DeveloperConfigInput } from "@ulld/types";
 import { EventMethodKey } from "../types";
+import { ShellManager } from "./baseClasses/shell";
 
-export class PluginEvents {
+export class PluginEvents extends ShellManager {
     hasEvents: boolean = false
     importNames: NonNullable<DeveloperConfigInput["events"]> = {
         onSync: "onSyncMethod_",
@@ -12,9 +13,11 @@ export class PluginEvents {
         onRestore: "onRestoreMethod_",
     }
     constructor(public data: DeveloperConfigOutput["events"], public paths: TargetPaths, public pluginName: string){
+        super()
         this.hasEvents = Object.keys(data).length > 0
     }
     applyIndex(index: number){
+        this.logDebug(`Applying index ${index} to ${this.pluginName} events`)
         for (const k in this.importNames) {
             this.importNames[k as EventMethodKey] = `${this.importNames[k as EventMethodKey]}${index}`
         }

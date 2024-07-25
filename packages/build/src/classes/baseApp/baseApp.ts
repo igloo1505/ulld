@@ -15,6 +15,7 @@ import { AdditionalSources } from "../additionalSources";
 import { BuildStaticData } from "./buildStaticData";
 import { ParserKey, parserKeyList } from "@ulld/configschema/developer";
 import { BuildCleanup } from "./cleanup";
+import { TemplateFile } from "../templateFile";
 
 interface ParserFunctionData {
     importName: string;
@@ -39,17 +40,30 @@ export class BaseApp extends ShellManager {
         });
     }
     generate() {
+        this.logVerbose("Creating component map...")
         this.createComponentMap(this.build.plugins)
+        this.logVerbose("Applying componet slots...")
         this.applySlots()
+        this.logVerbose("Writing temporary target paths...")
         this.writeTemporaryTargetPaths()
+        this.logVerbose("Generating unified event methods...")
         this.createEventFunctions()
+        this.logVerbose("Generating note type paths...")
         this.writeNoteTypePages()
+        this.logVerbose("Generating plugin setting pages...")
         this.writePluginSettingPages();
+        this.logVerbose("Copying additional sources...")
         this.copyAdditionalSources()
+        this.logVerbose("Gathering parsers...")
         this.writeUnifiedParsingFunctions();
+        this.logVerbose("Writing static build data...")
         this.buildStaticData.writeOutput()
+        this.logVerbose("Copying component documentation...")
         this.copyComponentDocs()
-        // this.onBuild();
+        this.logVerbose("Generating database schema...")
+        this.writePrismaSchema()
+        this.logVerbose("Wrapping up build...")
+        this.onBuild()
     }
     createComponentMap(plugins: UlldPlugin[]) {
         this.log(`Generating component map...`);
@@ -87,21 +101,27 @@ export class BaseApp extends ShellManager {
                 f.events?.hasEventType(k as EventMethodKey),
             );
             let content = getEventMethodListContent(
-                filteredPlugins,
+                filteredPlugins || [],
                 k as EventMethodKey,
             );
             const file = FileManager.fromPathKey(
                 `${k as EventMethodKey}MethodList`,
                 this.paths,
             );
-            file.content = content;
-            file.writeContent();
+            console.log("file: ", file)
+            file.writeContent(content);
         }
     }
     writeNoteTypePages() {
         for (const n of this.build.noteTypes) {
             n.writePage();
         }
+    }
+    writePrismaSchema(){
+        let tm = new TemplateFile("prismaSchema")
+        let content = tm.getNewContent({})
+        let outputFile = FileManager.fromPathKey("prismaSchema", this.paths)
+        outputFile.writeContent(content)
     }
     copyAdditionalSources() {
         let additionalSources = new AdditionalSources(this.paths);
@@ -170,10 +190,19 @@ export default unifiedParserList
             }
         }
     }
-    // onBuild(){
-    //     this.buildCleanup.runCleanup()
-    // }
+    writeGitIgnore(){
+        let tf = new TemplateFile("gitignore")
+        let templateString = tf.getNewContent({})
+        let f = new FileManager(".gitignore", this.paths, false)
+        f.writeContent(templateString)
+
+    }
+    onBuild(){
+        this.writeGitIgnore()
+        this.build.db.generate(this.build.appConfig, this.build.packageManager)
+    }
     cleanUp(){
+        this.logVerbose("Just cleaning things up a bit...")
         this.buildCleanup.runCleanup()
     }
 }

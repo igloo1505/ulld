@@ -357,7 +357,7 @@
     },
     "build": {
         "database": {
-            "type": "SQLite",
+            "type": "postgres",
             "postgres": {
                 "port": 5432,
                 "dbName": "ulld"

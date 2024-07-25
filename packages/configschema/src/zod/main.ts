@@ -215,3 +215,5 @@ export const appConfigSchema = z.object({
 export type AppConfigSchemaInput = z.input<typeof appConfigSchema>;
 export type AppConfigSchemaOutput = z.output<typeof appConfigSchema>;
 export type AppConfigSchemaType = z.infer<typeof appConfigSchema>;
+
+export type SupportedDatabaseType = AppConfigSchemaOutput["build"]["database"]["type"]
