@@ -143,6 +143,9 @@ export const writePluginConfig = (
         shouldWrite,
         data: newData,
     } = getPluginId(pkgData, appendToPackageJson ? config : undefined);
+    if(!newData.files || !newData.files.includes("pluginConfig.ulld.json")){
+        newData.files = newData.files ? [...newData.files, "pluginConfig.ulld.json"] : ["pluginConfig.ulld.json"]
+    }
     if (shouldWrite) {
         writeModifiedPackageJson(packageFilePath, newData);
     }

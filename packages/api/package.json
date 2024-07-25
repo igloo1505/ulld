@@ -4,7 +4,8 @@
     "private": false,
     "files": [
         "src",
-        "dist"
+        "dist",
+        "pluginConfig.ulld.json"
     ],
     "types": "./src/moduleTypes.d.ts",
     "exports": {

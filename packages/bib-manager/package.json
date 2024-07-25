@@ -57,7 +57,9 @@
     "publishConfig": {
         "access": "public"
     },
-    "files": [],
+    "files": [
+        "pluginConfig.ulld.json"
+    ],
     "ulld-pluginConfig": {
         "pluginName": "@ulld/bib-manager",
         "label": "Bibliography",
@@ -69,14 +71,14 @@
                 "tags": [],
                 "slot": "BibliographyPage",
                 "export": "bibliographyPage",
-                "componentId": "0487f1ad-134b-4007-804b-6e3cace58f5c"
+                "componentId": "7398b523-4862-4655-87f0-decdb64b7611"
             },
             {
                 "componentName": "BibEntryDetails",
                 "tags": [],
                 "slot": "BibEntryDetails",
                 "export": "bibEntryDetails",
-                "componentId": "0487f1ad-134b-4007-804b-6e3cace58f5c"
+                "componentId": "7398b523-4862-4655-87f0-decdb64b7611"
             }
         ],
         "parsers": {

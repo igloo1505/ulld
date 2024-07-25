@@ -3,16 +3,11 @@
   "globalDependencies": ["**/.env.*local"],
   "globalEnv": [".env.local", "ENABLE_EXPERIMENTAL_COREPACK=1"],
   "tasks": {
-    "gatherTypes": {
-      "cache": false,
-      "env": [".env.local"]
-    },
     "prepareWeb": {
       "env": [".env.local"]
     },
     "generatePluginConfig": {
       "cache": false,
-      "dependsOn": ["^gatherTypes"],
       "env": [".env.local"]
     },
     "writePluginConfig": {

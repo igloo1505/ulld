@@ -169,7 +169,9 @@
     "publishConfig": {
         "access": "public"
     },
-    "files": [],
+    "files": [
+        "pluginConfig.ulld.json"
+    ],
     "ulld-pluginConfig": {
         "pluginName": "@ulld/full-form",
         "label": "Form",
@@ -181,7 +183,7 @@
                 "tags": [],
                 "slot": "SettingsPageContainer",
                 "export": "settingPageWrapper",
-                "componentId": "47056ab5-01b9-460a-b759-ebf979cbeef3"
+                "componentId": "5def9a52-c8e9-4a68-8225-b9e1c30e1187"
             }
         ],
         "parsers": {},
