@@ -1,5 +1,48 @@
 # @ulld/build-sandbox
 
+## 0.0.8
+
+### Patch Changes
+
+- 609abeb: Add missing plugin configs.
+- Updated dependencies [609abeb]
+  - @ulld/command-palette@0.0.8
+  - @ulld/landing-layouts@0.0.8
+  - @ulld/task-manager@0.0.8
+  - @ulld/bib-manager@0.0.8
+  - @ulld/navigation@0.0.8
+  - @ulld/developer@0.0.8
+  - @ulld/full-form@0.0.8
+  - @ulld/snippets@0.0.8
+  - @ulld/api@0.0.8
+  - @ulld/pdf@0.0.8
+  - @ulld/ui@0.0.8
+  - @ulld/base-configs@0.0.8
+  - @ulld/calendar@0.0.8
+  - @ulld/component-map@0.0.8
+  - @ulld/config@0.0.8
+  - @ulld/typescript-config@0.0.7
+  - @ulld/configschema@0.0.8
+  - @ulld/database@0.0.8
+  - @ulld/default-image-map@0.0.8
+  - @ulld/developer-cli@0.0.8
+  - @ulld/diagram@0.0.8
+  - @ulld/editor@0.0.8
+  - @ulld/embeddable-components@0.0.8
+  - @ulld/equations@0.0.8
+  - @ulld/hooks@0.0.8
+  - @ulld/icons@0.0.8
+  - @ulld/journal@0.0.8
+  - @ulld/logger@0.0.8
+  - @ulld/notebook@0.0.8
+  - @ulld/parsers@0.0.8
+  - @ulld/plot@0.0.8
+  - @ulld/render@0.0.8
+  - @ulld/state@0.0.8
+  - @ulld/tailwind@0.0.8
+  - @ulld/utilities@0.0.8
+  - @ulld/whiteboard@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes

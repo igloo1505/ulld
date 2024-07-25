@@ -1,5 +1,22 @@
 # @ulld/plot
 
+## 0.0.8
+
+### Patch Changes
+
+- 609abeb: Add missing plugin configs.
+- Updated dependencies [609abeb]
+  - @ulld/developer@0.0.8
+  - @ulld/full-form@0.0.8
+  - @ulld/api@0.0.8
+  - @ulld/ui@0.0.8
+  - @ulld/configschema@0.0.8
+  - @ulld/hooks@0.0.8
+  - @ulld/logger@0.0.8
+  - @ulld/state@0.0.8
+  - @ulld/tailwind@0.0.8
+  - @ulld/utilities@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes

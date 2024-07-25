@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.8
+
+### Patch Changes
+
+- 609abeb: Add missing plugin configs.
+- Updated dependencies [609abeb]
+  - @ulld/api@0.0.8
+  - @ulld/component-map@0.0.8
+  - @ulld/configschema@0.0.8
+  - @ulld/database@0.0.8
+  - @ulld/parsers@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes

@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.8
+
+### Patch Changes
+
+- 609abeb: Add missing plugin configs.
+- Updated dependencies [609abeb]
+  - @ulld/task-manager@0.0.8
+  - @ulld/bib-manager@0.0.8
+  - @ulld/navigation@0.0.8
+  - @ulld/full-form@0.0.8
+  - @ulld/snippets@0.0.8
+  - @ulld/pdf@0.0.8
+  - @ulld/calendar@0.0.8
+  - @ulld/default-image-map@0.0.8
+  - @ulld/diagram@0.0.8
+  - @ulld/editor@0.0.8
+  - @ulld/embeddable-components@0.0.8
+  - @ulld/equations@0.0.8
+  - @ulld/journal@0.0.8
+  - @ulld/notebook@0.0.8
+  - @ulld/plot@0.0.8
+  - @ulld/tailwind@0.0.8
+  - @ulld/whiteboard@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes

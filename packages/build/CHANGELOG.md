@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.8
+
+### Patch Changes
+
+- 609abeb: Add missing plugin configs.
+- Updated dependencies [609abeb]
+  - @ulld/base-configs@0.0.8
+  - @ulld/configschema@0.0.8
+  - @ulld/developer-schemas@0.0.8
+  - @ulld/utilities@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes
