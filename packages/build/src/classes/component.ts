@@ -19,6 +19,7 @@ export class PluginComponent extends ShellManager {
   slotKey?: PluginSlotKey;
   pluginName: string;
   formattedExport: string;
+  formattedImportName: string;
   formattedComponentName: string;
   haveModifiedImportName: boolean = false;
   formattedPluginName: string;
@@ -50,6 +51,7 @@ export class PluginComponent extends ShellManager {
     }
     this.pluginName = props.pluginName;
     this.formattedExport = `${this.pluginName}/${this.data.export}`;
+    this.formattedImportName = encodeURI(this.data.componentName);
     this.formattedComponentName = encodeURI(this.data.componentName);
     this.formattedPluginName = encodeURI(this.pluginName);
     this.initialComponentImport = `${this.data.componentName}`;
@@ -85,7 +87,7 @@ export class PluginComponent extends ShellManager {
       this.data.embeddable?.map((e) => e.regexToInclude) || [];
     let data: NonNullable<BuildStaticDataInput["componentDocs"]>[number] = {
       pluginName: this.pluginName,
-      componentName: this.formattedComponentName,
+      componentName: this.formattedImportName,
       embeddableSyntax: embeddableSyntax,
       componentId: this.data.componentId,
       urls: {

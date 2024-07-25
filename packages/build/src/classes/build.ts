@@ -25,6 +25,7 @@ import { slotMapIsFull } from "../utils/slotMapIsFull";
 import { modifyNameRandomly } from "../utils/randomization";
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
 import { BuildStaticDataInput } from "@ulld/configschema/buildTypes";
+import { AdditionalSources } from "./additionalSources";
 
 type PluginSlotKey = keyof SlotMap;
 
@@ -50,15 +51,18 @@ export class UlldBuildProcess extends Prompter {
             appData.templateRepo.buildDirName,
         );
         this.paths = new TargetPaths(this.applicationDir, this.isLocalDev);
-        this.appConfig = new UlldAppConfigManager(
-            this.applicationDir,
-            this.isLocalDev,
-            this.paths
-        );
         this.packageJson = new TargetPackageJson(
             this.applicationDir,
             this.isLocalDev,
         );
+        let additionalSources = new AdditionalSources(this.paths)
+        let globalAppConfig = additionalSources.getAppConfig()
+        this.appConfig = globalAppConfig || new UlldAppConfigManager(
+            this.applicationDir,
+            this.isLocalDev,
+            this.paths
+        );
+        this.appConfig.gather();
         this.gatherSlotConflicts();
         this.gatherPageConflicts();
         this.noteTypes = this.appConfig.getNoteTypes()
@@ -72,11 +76,11 @@ export class UlldBuildProcess extends Prompter {
         return false;
     }
     private validateImportName(plugin: PluginComponent | PluginPage): void {
-        if (plugin.formattedComponentName in this.componentImportMap) {
-            plugin.formattedComponentName = modifyNameRandomly(plugin.formattedComponentName, plugin.haveModifiedImportName);
+        if (plugin.formattedImportName in this.componentImportMap) {
+            plugin.formattedImportName = modifyNameRandomly(plugin.formattedImportName, plugin.haveModifiedImportName);
             return this.validateImportName(plugin);
         } else {
-            this.componentImportMap[plugin.formattedComponentName] = true;
+            this.componentImportMap[plugin.formattedImportName] = true;
         }
     }
     validateImportNames() {

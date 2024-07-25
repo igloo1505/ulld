@@ -6,6 +6,7 @@ import simpleGit, {
     SimpleGitProgressEvent,
 } from "simple-git";
 import { MultiBar, SingleBar } from "cli-progress";
+import path from 'path'
 
 export class GitManager extends ShellManager {
     status: "notSent" | "pending" | "success" | "fail" = "notSent";
@@ -48,19 +49,23 @@ export class GitManager extends ShellManager {
             progress: this.showProgress ? this.progress : undefined,
         };
         const git: SimpleGit = simpleGit(options);
-        await git.clone(
-            appData.templateRepo.url,
-            `${this.targetDirectory}/ulldApp`,
-            {
-                // "-b": "main",
-            },
-            (err, data) => {
-                if (err) {
-                    console.error(err);
-                }
-                console.log(data);
-            },
-        );
+        await git.pull({
+            "-C": this.targetDirectory
+            }
+        )
+        // await git.pull(
+        //     appData.templateRepo.url,
+        //     `${this.targetDirectory}/ulldApp`,
+        //     {
+        //         // "-b": "main",
+        //     },
+        //     (err, data) => {
+        //         if (err) {
+        //             console.error(err);
+        //         }
+        //         console.log(data);
+        //     },
+        // );
         this.status = "success";
         return true;
     }
@@ -89,7 +94,17 @@ export class GitManager extends ShellManager {
                 }
                 console.log(data);
             },
-        );
+        )
+        await git.raw(
+            "remote",
+            "rename",
+            "origin",
+            "ulld",
+            "-C",
+            path.join(this.targetDirectory, appData.templateRepo.buildDirName)
+        )
+        // await git.addRemote("ulld", appData.templateRepo.url)
+        console.log("Down here? ")
         this.status = "success";
         return true;
     }

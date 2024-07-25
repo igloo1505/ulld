@@ -9,6 +9,7 @@ import fs from "fs";
 import path from "path";
 import { FileManager } from "./baseClasses/fileManager";
 import { UlldGlob } from "@ulld/utilities/glob";
+import { UlldAppConfigManager } from "./appConfig";
 
 interface FoundItem extends FileItemWithRootGlob {
   filePath: string;
@@ -38,6 +39,23 @@ export class AdditionalSources {
     this.sourcesDir = process.env.ULLD_ADDITIONAL_SOURCES;
     this.hasContent = Boolean(this.sourcesDir);
     this.allowedRootDirItems = getFlattenedFileItems();
+  }
+  getAppConfig() {
+    if (!this.hasContent || !this.sourcesDir) {
+      return;
+    }
+    let file = FileManager.fromAbsolutePath(
+      path.join(this.sourcesDir, "appConfig.ulld.json"),
+      this.paths,
+      false,
+    );
+    if (file.exists()) {
+      return new UlldAppConfigManager(
+        this.paths.projectRoot,
+        false,
+        this.paths,
+      );
+    }
   }
   private validateSearch(search: string): {
     search: string;
@@ -136,12 +154,18 @@ export class AdditionalSources {
   private generateIndexScssFile() {
     let glob = new UlldGlob(this.paths.userDefinedStyles);
     let files = glob.glob("**/*.scss");
-    let importString = files.map((f) => {
-      let s = path.relative(this.paths.unifiedUserDefinedScss, f);
-      return `@use "${s.slice(0, s.lastIndexOf("."))}";`
-    }).join("\n")
-    let outputFile = FileManager.fromAbsolutePath(this.paths.unifiedUserDefinedScss, this.paths, false)
-    outputFile.writeContent(importString)
+    let importString = files
+      .map((f) => {
+        let s = path.relative(this.paths.unifiedUserDefinedScss, f);
+        return `@use "${s.slice(0, s.lastIndexOf("."))}";`;
+      })
+      .join("\n");
+    let outputFile = FileManager.fromAbsolutePath(
+      this.paths.unifiedUserDefinedScss,
+      this.paths,
+      false,
+    );
+    outputFile.writeContent(importString);
   }
   write() {
     if (!this.sourcesDir) {
@@ -154,6 +178,6 @@ export class AdditionalSources {
         this.copyPath(itemData);
       }
     }
-    this.generateIndexScssFile()
+    this.generateIndexScssFile();
   }
 }

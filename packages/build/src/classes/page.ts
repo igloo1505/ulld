@@ -1,6 +1,4 @@
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
-import { capitalize } from "@ulld/utilities/stringUtils";
-import path from "path";
 import { TargetPaths } from "./paths";
 import { ShellManager } from "./baseClasses/shell";
 import { SlotDataType } from "@ulld/utilities/types";
@@ -16,6 +14,7 @@ import { PluginAdditionalPage } from "./pluginAdditionalPage";
 export class PluginPage extends ShellManager {
     shouldUse: boolean = true;
     importName: string = "GeneratedPageComponent";
+    formattedImportName: string = "GeneratedPageComponent";
     slotData?: SlotDataType;
     targetUrl: string;
     targetFile: string;
