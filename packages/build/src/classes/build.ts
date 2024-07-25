@@ -9,7 +9,7 @@ import { prompt } from "enquirer";
 import { appData } from "@ulld/utilities/appData";
 import terminalLink from "terminal-link";
 import { log } from "console";
-import { DocPaths, PackageManagers } from "../types";
+import { PackageManagers } from "../types";
 import { Prompter } from "./prompter";
 import { SubSlot } from "./subslot";
 import { PluginSlot } from "./slot";
@@ -24,7 +24,7 @@ import { generateSlotMapOfType } from "../utils/slotMapUtils";
 import { slotMapIsFull } from "../utils/slotMapIsFull";
 import { modifyNameRandomly } from "../utils/randomization";
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
-import { PluginSettingsPage } from "./pluginSettingsPage";
+import { BuildStaticDataInput } from "@ulld/configschema/buildTypes";
 
 type PluginSlotKey = keyof SlotMap;
 
@@ -72,11 +72,11 @@ export class UlldBuildProcess extends Prompter {
         return false;
     }
     private validateImportName(plugin: PluginComponent | PluginPage): void {
-        if (plugin.formattedComponentImport in this.componentImportMap) {
-            plugin.formattedComponentImport = modifyNameRandomly(plugin.formattedComponentImport, plugin.haveModifiedImportName);
+        if (plugin.formattedComponentName in this.componentImportMap) {
+            plugin.formattedComponentName = modifyNameRandomly(plugin.formattedComponentName, plugin.haveModifiedImportName);
             return this.validateImportName(plugin);
         } else {
-            this.componentImportMap[plugin.formattedComponentImport] = true;
+            this.componentImportMap[plugin.formattedComponentName] = true;
         }
     }
     validateImportNames() {
@@ -218,12 +218,26 @@ and continue when that file is in place.`,
             );
         }
     }
-    getFlatComponentDocs() {
-        let docs: DocPaths[] = [];
+    getFlatComponentDocs(): BuildStaticDataInput["componentDocs"] {
+        let docs: BuildStaticDataInput["componentDocs"] = [];
         for (const k of this.plugins) {
             for (const p of k.components) {
                 if (p.hasDocsData) {
-                    docs.push(p.docPaths);
+                    docs.push({
+                        pluginName: p.pluginName,
+                        componentName: p.data.componentName,
+                        componentId: p.data.componentId,
+                        tags: p.data.tags,
+                        embeddableSyntax: p.data.embeddable?.map((e) => e.regexToInclude) || [],
+                        urls: {
+                            short: p.data.docsExport ? `/componentDocs/${encodeURI(p.pluginName)}/${encodeURI(p.data.componentName)}?full=false` : undefined,
+                            full: p.data.fullDocsExport ? `/componentDocs/${encodeURI(p.pluginName)}/${encodeURI(p.data.componentName)}?full=true` : undefined
+                        },
+                        filePaths: {
+                            short: p.getOutputFilePath("short"),
+                            full: p.getOutputFilePath("full"),
+                        }
+                    })
                 }
             }
         }
@@ -239,10 +253,10 @@ and continue when that file is in place.`,
         return data;
     }
     getFlatPluginSettingPages() {
-        let data: PluginSettingsPage[] = [];
+        let data: BuildStaticDataInput["settingPages"] = [];
         for (const k of this.plugins) {
             if (k.settingsPage) {
-                data.push(k.settingsPage);
+                data.push(k.settingsPage.settingsPageData);
             }
         }
         return data;

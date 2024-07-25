@@ -1,8 +1,9 @@
 import path from "path";
 import fs from "fs";
-import { ParserKey, PluginEventsConfig } from "@ulld/types";
 import { PathKeys, MethodListPathKeys, pathKeys } from "@ulld/utilities/types";
 import { removeLeadingDotSlash } from "../utils/removeLeadingDotSlash";
+import { ParserKey } from "@ulld/configschema/developer";
+import { PluginEventsConfig } from "@ulld/configschema/developerTypes";
 
 
 export class TargetPaths
@@ -31,6 +32,8 @@ export class TargetPaths
     mdxParserList: string;
     tempTargetPaths: string;
     tempBuildFiles: string;
+    userDefinedStyles: string;
+    unifiedUserDefinedScss: string
     constructor(
         public targetDir: string,
         public isLocalDev: boolean,
@@ -38,6 +41,8 @@ export class TargetPaths
         this.public = path.join(targetDir, "public");
         this.node_modules = path.join(targetDir, "node_modules");
         this.styles = path.join(targetDir, "src", "styles");
+        this.unifiedUserDefinedScss = path.join(this.styles, "index.scss")
+        this.userDefinedStyles = path.join(this.styles, "userProvided")
         this.app = path.join(targetDir, "src", "app");
         this.projectRoot = targetDir;
         this.packageJson = path.join(targetDir, "package.json");

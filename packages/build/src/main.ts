@@ -24,6 +24,7 @@ const options = program.opts();
         await stages.cleanAfterConflictResolution(build, options)
         await stages.prepareToGenerate(build, options)
         let baseApp = await stages.generate(build, options)
+        baseApp.cleanUp()
     } catch (err) {
         if (!err) {
             log(`No worries. We can handle this later.`);

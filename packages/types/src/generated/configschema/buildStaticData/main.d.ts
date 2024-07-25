@@ -69,7 +69,6 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
         }>;
         tags: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
         componentId: z.ZodString;
-        pluginId: z.ZodString;
     }, "strip", z.ZodTypeAny, {
         tags: string[];
         pluginName: string;
@@ -80,7 +79,6 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
             full?: string | undefined;
         };
         componentId: string;
-        pluginId: string;
     }, {
         pluginName: string;
         componentName: string;
@@ -90,7 +88,6 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
             full?: string | undefined;
         };
         componentId: string;
-        pluginId: string;
         tags?: string[] | undefined;
     }>, "many">>;
 }, "strip", z.ZodTypeAny, {
@@ -122,7 +119,6 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
             full?: string | undefined;
         };
         componentId: string;
-        pluginId: string;
     }[];
 }, {
     fsRoot: string;
@@ -148,7 +144,6 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
             full?: string | undefined;
         };
         componentId: string;
-        pluginId: string;
         tags?: string[] | undefined;
     }[] | undefined;
 }>, {
@@ -228,7 +223,6 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
             full?: string | undefined;
         };
         componentId: string;
-        pluginId: string;
     }[];
 }, {
     fsRoot: string;
@@ -254,7 +248,6 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
             full?: string | undefined;
         };
         componentId: string;
-        pluginId: string;
         tags?: string[] | undefined;
     }[] | undefined;
 }>;

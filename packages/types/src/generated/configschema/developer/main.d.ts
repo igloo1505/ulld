@@ -158,7 +158,6 @@ export declare const _developerConfigSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     label: string;
     pluginName: string;
-    pluginId: string;
     components: {
         tags: string[];
         componentName: string;
@@ -195,6 +194,7 @@ export declare const _developerConfigSchema: z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
+    pluginId: string;
     parsers: {
         mdx?: import("./types/parserConfig").ParserConfig | undefined;
     };
@@ -411,7 +411,6 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     label: string;
     pluginName: string;
-    pluginId: string;
     components: {
         tags: string[];
         componentName: string;
@@ -448,6 +447,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
+    pluginId: string;
     parsers: {
         mdx?: import("./types/parserConfig").ParserConfig | undefined;
     };
@@ -510,7 +510,6 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
 }>, {
     label: string;
     pluginName: string;
-    pluginId: string;
     components: {
         tags: string[];
         componentName: string;
@@ -547,6 +546,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
+    pluginId: string;
     parsers: {
         mdx?: import("./types/parserConfig").ParserConfig | undefined;
     };
@@ -763,7 +763,6 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     label: string;
     pluginName: string;
-    pluginId: string;
     components: {
         tags: string[];
         componentName: string;
@@ -800,6 +799,7 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
+    pluginId: string;
     parsers: {
         mdx?: import("./types/parserConfig").ParserConfig | undefined;
     };

@@ -13,8 +13,7 @@ import { FileManager } from "../baseClasses/fileManager";
 import { PathKeys } from "@ulld/utilities/types";
 import { AdditionalSources } from "../additionalSources";
 import { BuildStaticData } from "./buildStaticData";
-import { parserKeyList } from "@ulld/configschema/developer";
-import { ParserKey } from "@ulld/types";
+import { ParserKey, parserKeyList } from "@ulld/configschema/developer";
 import { BuildCleanup } from "./cleanup";
 
 interface ParserFunctionData {
@@ -40,15 +39,16 @@ export class BaseApp extends ShellManager {
         });
     }
     generate() {
-        // this.createComponentMap(this.build.plugins)
-        // this.applySlots()
-        // this.writeTemporaryTargetPaths()
-        // this.createEventFunctions()
-        // this.writeNoteTypePages()
-        // this.writePluginSettingPages();
-        // this.copyAdditionalSources()
-        // this.writeUnifiedParsingFunctions();
-        // this.writeBuildStaticData()
+        this.createComponentMap(this.build.plugins)
+        this.applySlots()
+        this.writeTemporaryTargetPaths()
+        this.createEventFunctions()
+        this.writeNoteTypePages()
+        this.writePluginSettingPages();
+        this.copyAdditionalSources()
+        this.writeUnifiedParsingFunctions();
+        this.buildStaticData.writeOutput()
+        this.copyComponentDocs()
         // this.onBuild();
     }
     createComponentMap(plugins: UlldPlugin[]) {
@@ -161,11 +161,19 @@ export default unifiedParserList
             }
         }
     }
-    // RESUME: Come back and finish this up. This should be almost enough to generate the base app and start working from there!
-    writeBuildStaticData(){
-
+    copyComponentDocs(){
+        for (const k of this.build.plugins) {
+            for (const comp of k.components) {
+                if(comp.hasDocsData){
+                    comp.copyDocsData()
+                }
+            }
+        }
     }
-    onBuild(){
+    // onBuild(){
+    //     this.buildCleanup.runCleanup()
+    // }
+    cleanUp(){
         this.buildCleanup.runCleanup()
     }
 }

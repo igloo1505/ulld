@@ -1,5 +1,6 @@
-import { DeveloperConfigInput, PluginSlotKey } from "@ulld/types";
 import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
+import { DeveloperConfigInput } from "@ulld/configschema/developer";
+import { PluginSlotKey } from "@ulld/configschema/developerTypes";
 
 export type PackageManagers = "pnpm" | "npm" | "yarn";
 
@@ -7,6 +8,7 @@ export interface ComponentDocsData {
     outputFilePath: string;
     filePath: string;
     export: string;
+    href: string
 }
 
 export interface DocPaths {

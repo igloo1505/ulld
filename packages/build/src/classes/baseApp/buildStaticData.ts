@@ -1,6 +1,7 @@
 import { BuildStaticDataInput, BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
 import { UlldBuildProcess } from "../build";
 import { TargetPaths } from "../paths";
+import { FileManager } from "../baseClasses/fileManager";
 
 type HasSetKey = "settingsData"
 
@@ -18,14 +19,21 @@ export class BuildStaticData {
     hasSetAll(){
         return Object.values(this.hasSet).every((a) => a)
     }
-    getData(){
+    getData(): BuildStaticDataInput {
         if(!this.build.appConfig.config?.fsRoot){
             throw new Error(`Cannot generate build output. No fsRoot property was defined in your configuration file.`)
         }
-        let data: BuildStaticDataInput = {
+        let data: Required<BuildStaticDataInput> = {
             fsRoot: this.build.appConfig.config.fsRoot,
             navigationLinks: this.build.getFlatNavigationLinks(),
-            // componentDocs: this.build.getFlatComponentDocs()
+            componentDocs: this.build.getFlatComponentDocs(),
+            settingPages: this.build.getFlatPluginSettingPages()
         }
+        return data
+    }
+    writeOutput(){
+        let data = this.getData()
+        let outputFile = FileManager.fromAbsolutePath(this.paths.joinPath("projectRoot", "ulldBuildData.json"), this.paths, false)
+        outputFile.writeContent(JSON.stringify(data, null, 4))
     }
 }

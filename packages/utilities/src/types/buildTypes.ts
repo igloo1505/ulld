@@ -27,6 +27,8 @@ export const pathKeys = [
      "tempTargetPaths",
      "mdxParserList",
      "componentMap",
+    "unifiedUserDefinedScss",
+    "userDefinedStyles",
     "tempBuildFiles"
 ] as const
 

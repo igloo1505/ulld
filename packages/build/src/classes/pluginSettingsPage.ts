@@ -25,10 +25,10 @@ export class PluginSettingsPage extends ShellManager {
         this.hasContent = Boolean(this.settingsConfig)
         this.outputData = this.getOutputPath()
         this.settingsPageData = {
-            pluginName: this.pluginConfig.pluginName,
-            href: this.outputData.url,
+            title: this.pluginConfig.settings!.title,
             subtitle: this.pluginConfig.settings!.subtitle,
-            title: this.pluginConfig.settings!.title
+            href: this.outputData.url,
+            pluginName: this.pluginConfig.pluginName,
         }
     }
     private validatePluginName(){

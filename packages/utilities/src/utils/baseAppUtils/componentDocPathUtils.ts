@@ -57,7 +57,7 @@ export const getComponentDocsContentFromItem = async (
     full: boolean = false,
 ) => {
     let path = docItemToComponentDocsFilePath(item, full);
-    if (!path) {
+    if (!path || !fs.existsSync(path)) {
         return;
     }
     return await fs.promises.readFile(path, { encoding: "utf-8" });
@@ -73,15 +73,19 @@ export const getItemsByQuery = (
 
 export const getPluginDocContentByIds = async (
     buildData: BuildStaticDataOutput,
-    pluginId: string,
-    componentId: string,
+    pluginName: string,
+    componentName: string,
     full: boolean = false,
+    permitOppositeOfFullIfNotFound: boolean = true
 ) => {
     let item = buildData.componentDocs.find((x) =>
-        Boolean(x.pluginId === pluginId && x.componentId === componentId),
+        Boolean(x.pluginName === pluginName && x.componentName === componentName),
     );
     if(item) {
         let content = await getComponentDocsContentFromItem(item, full)
+        if(!content && permitOppositeOfFullIfNotFound){
+            content = await getComponentDocsContentFromItem(item, !full)
+        }
         return {
             item,
             content

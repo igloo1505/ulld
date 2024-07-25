@@ -15,7 +15,6 @@ export declare const componentDocumentationSchema: z.ZodObject<{
     }>;
     tags: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
     componentId: z.ZodString;
-    pluginId: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     tags: string[];
     pluginName: string;
@@ -26,7 +25,6 @@ export declare const componentDocumentationSchema: z.ZodObject<{
         full?: string | undefined;
     };
     componentId: string;
-    pluginId: string;
 }, {
     pluginName: string;
     componentName: string;
@@ -36,7 +34,6 @@ export declare const componentDocumentationSchema: z.ZodObject<{
         full?: string | undefined;
     };
     componentId: string;
-    pluginId: string;
     tags?: string[] | undefined;
 }>;
 //# sourceMappingURL=componentDocumentation.d.ts.map
