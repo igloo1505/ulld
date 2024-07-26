@@ -14,7 +14,6 @@ import {
   TextAreaCodeEditor,
 } from "@ulld/editor/textAreaEditor";
 import { useEventListener } from "@ulld/hooks/useEventListener";
-import { DevTool } from "@hookform/devtools";
 
 
 declare global {
@@ -42,7 +41,6 @@ export const CodeInput = <T extends FieldValues>(
         document?.getElementById(textAreaId)?.focus()
     })
   return (
-        <>
     <FormField
       control={form.control}
       name={props.name}
@@ -66,8 +64,6 @@ export const CodeInput = <T extends FieldValues>(
         </FormItem>
       )}
      />
-        <DevTool control={form.control}/>
-    </>
   );
 };
 
