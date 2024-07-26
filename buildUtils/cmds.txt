@@ -37,3 +37,4 @@ Gather build template string data | tsx /Users/bigsexy/Desktop/current/ulld/buil
 Build website locally | pnpm turbo buildLocal --log-order=stream --filter @ulld/website
 Prepare Web Commit | zsh /Users/bigsexy/Desktop/current/ulld/apps/website/scripts/prepareToCommit.zsh
 Write current package versions to static data | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/versioning/writeCurrentPackageVersions.ts
+Version everything | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/versioning/versionEverything.zsh

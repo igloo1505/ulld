@@ -1,6 +1,6 @@
 import { ParserKey } from "@ulld/configschema/developer";
 import { FrontMatterType } from "@ulld/types";
-import { UnifiedMdxParserParams } from "./individualTypesForDocumentation/parser/unifiedMdxParserParams";
+import { UnifiedMdxParserParams } from "../individualTypesForDocumentation/parser/unifiedMdxParserParams";
 import { serverClient } from "../trpc/serverClient"
 
 

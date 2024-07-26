@@ -41,6 +41,10 @@ export const _developerConfigSchema = z.object({
     navigationLinks: navigationLinkSchema.array().default([]),
     commandPalette: pluginCommandPaletteSchema.default([]),
     tailwind: tailwindPluginConfig.default({}),
+    styles: z.object({
+        root: z.string().optional().describe("Optional export of a scss file that should be imported to all pages."),
+        mdx: z.string().optional().describe("Optional export of a scss file that should be imported to pages with mdx content only."),
+    }).default({})
 });
 
 export const developerConfigSchema = _developerConfigSchema.transform(

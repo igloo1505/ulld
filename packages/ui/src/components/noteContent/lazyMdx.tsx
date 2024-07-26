@@ -24,7 +24,8 @@ import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
 import { mathOptions } from '@ulld/utilities/defaults/markdownUniversalOptions'
 import { MdxNote, MdxNoteParseParams } from '@ulld/api/classes/prismaMdxRelations/mdxNote'
 import { getClassesFromFrontMatter } from '../../actions/universal/getClassesFromFrontMatter'
-import { AppConfigSchemaOutput, FrontMatterType } from '@ulld/types'
+import {  FrontMatterType } from '@ulld/types'
+import { AppConfigSchemaOutput } from '@ulld/configschema/types'
 
 
 interface LazyMdxProps {

@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { TOCProvider } from "fumadocs-core/toc";
 import TocItemInternal from "./tocItem";

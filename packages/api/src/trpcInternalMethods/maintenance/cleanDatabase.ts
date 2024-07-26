@@ -1,5 +1,5 @@
 import { prisma } from "@ulld/database/db"
-import { Prisma } from "@ulld/database/internalDatabaseTypes"
+import type { Prisma } from "@ulld/database/internalDatabaseTypes"
 import { databaseCleanValidityCheck } from "./databaseCleanValidityCheck"
 
 

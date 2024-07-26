@@ -10,7 +10,7 @@ tsx $ULLD_DEV_ROOT/buildUtils/types/copyPrismaTypes.ts
 echo "setting monorepo type config scripts"
 tsx $ULLD_DEV_ROOT/buildUtils/setMonorepoTypeConfigAndScripts.ts
 echo "gathering configschema types"
-tsc --project $ULLD_DEV_ROOT/packages/configschema/tsconfigTypes.json --emitDeclarationOnly
+pnpm tsc --project $ULLD_DEV_ROOT/packages/configschema/tsconfigTypes.json --emitDeclarationOnly
 echo "Creating unified types export"
 tsx $ULLD_DEV_ROOT/buildUtils/createTypesUnifiedExport.ts
 echo "Copying files for documentation"

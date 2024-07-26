@@ -286,23 +286,22 @@ export const mdxNotePropsSchema = z
             raw: a.raw || a.content,
             importantValues: fm.importantValues || [],
             frontMatter: fm,
-            floatImages: fm.float,
-            isProtected: fm.protected || a.isProtected,
+            // floatImages: fm.float,
             quickLinkId: fm.id || a.quickLinkId,
             sequentialKey: fm.sequentialKey || a.sequentialKey,
             sequentialIndex: fm.sequential || a.sequentialIndex,
-            remoteUrl: fm.remote?.url || a.remoteUrl,
-            trackRemote: fm.remote?.track || a.trackRemote,
+            // remoteUrl: fm.remote?.url || a.remoteUrl,
+            // trackRemote: fm.remote?.track || a.trackRemote,
             topics: fm.topics
-                ? [...a.topics, ...fm.topics.map((l) => new Topic({ value: l }))]
+                ? [...a.topics, ...fm.topics.map((l: string) => new Topic({ value: l }))]
                 : ([] as Topic[]),
             subjects: fm.subjects
-                ? [...a.subjects, ...fm.subjects.map((l) => new Subject({ value: l }))]
+                ? [...a.subjects, ...fm.subjects.map((l: string) => new Subject({ value: l }))]
                 : ([] as Subject[]),
             tags: fm.tags
                 ? [
                     ...a.tags,
-                    ...fm.tags.map((l) => new Tag({ value: l, kanbanId: null })),
+                    ...fm.tags.map((l: string) => new Tag({ value: l, kanbanId: null })),
                 ]
                 : ([] as Tag[]),
             firstSync: fm.created ? new Date(fm.created) : a.firstSync,

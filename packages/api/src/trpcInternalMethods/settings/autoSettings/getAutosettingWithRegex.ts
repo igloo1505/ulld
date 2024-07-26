@@ -6,6 +6,7 @@ import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { ParsedAppConfig } from "@ulld/configschema/types"
 import { AutoSettingType } from "@ulld/utilities/types";
 import { AutoSettingWithRegex } from "../../../trpc/types";
+import { PrismaClient } from "@ulld/types"
 
 
 export const getConfigAutoSettings = (_config?: ParsedAppConfig) => {
@@ -40,7 +41,7 @@ export const getConfigAutoSettings = (_config?: ParsedAppConfig) => {
     return d
 }
 
-export const getAutoSettingsWithRegex = async (type?: autoSetting): Promise<AutoSettingWithRegex[]> => {
+export const getAutoSettingsWithRegex = async (prisma: PrismaClient, type?: autoSetting): Promise<AutoSettingWithRegex[]> => {
     let c = getConfigAutoSettings()
     const pushIfNotIncluded = (a: AutoSettingType) => {
         if (!c.some((l) => autoSettingEquality(l, a))) {
@@ -48,7 +49,7 @@ export const getAutoSettingsWithRegex = async (type?: autoSetting): Promise<Auto
         }
     }
 
-    let db = await getDbAutoSettings(type)
+    let db = await getDbAutoSettings(prisma, type)
 
     db.forEach((k) => pushIfNotIncluded(k))
 

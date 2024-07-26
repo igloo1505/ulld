@@ -1,5 +1,6 @@
-import { AppConfigSchemaOutput, FrontMatterType } from "@ulld/types";
+import { FrontMatterType } from "@ulld/types";
 import { serverClient } from "../../trpc/serverClient";
+import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 
 export interface UnifiedMdxParserParams {
     content: string;
