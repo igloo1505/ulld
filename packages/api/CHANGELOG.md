@@ -1,5 +1,22 @@
 # @ulld/api
 
+## 0.0.15
+
+### Patch Changes
+
+- Update misaligned imports.
+- Updated dependencies
+  - @ulld/base-configs@0.0.14
+  - @ulld/config@0.0.14
+  - @ulld/configschema@0.0.15
+  - @ulld/database@0.0.14
+  - @ulld/developer@0.0.15
+  - @ulld/logger@0.0.14
+  - @ulld/parsers@0.0.15
+  - @ulld/state@0.0.15
+  - @ulld/tailwind@0.0.14
+  - @ulld/utilities@0.0.15
+
 ## 0.0.14
 
 ### Patch Changes

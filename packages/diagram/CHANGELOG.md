@@ -1,5 +1,17 @@
 # @ulld/diagram
 
+## 0.0.15
+
+### Patch Changes
+
+- Update misaligned imports.
+- Updated dependencies
+  - @ulld/api@0.0.15
+  - @ulld/typescript-config@0.0.13
+  - @ulld/developer@0.0.15
+  - @ulld/state@0.0.15
+  - @ulld/tailwind@0.0.14
+
 ## 0.0.14
 
 ### Patch Changes

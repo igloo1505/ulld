@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.15
+
+### Patch Changes
+
+- Update misaligned imports.
+- Updated dependencies
+  - @ulld/api@0.0.15
+  - @ulld/bib-manager@0.0.15
+  - @ulld/calendar@0.0.15
+  - @ulld/configschema@0.0.15
+  - @ulld/database@0.0.14
+  - @ulld/developer@0.0.15
+  - @ulld/diagram@0.0.15
+  - @ulld/editor@0.0.15
+  - @ulld/equations@0.0.15
+  - @ulld/hooks@0.0.15
+  - @ulld/logger@0.0.14
+  - @ulld/parsers@0.0.15
+  - @ulld/render@0.0.15
+  - @ulld/snippets@0.0.15
+  - @ulld/state@0.0.15
+  - @ulld/tailwind@0.0.14
+  - @ulld/task-manager@0.0.15
+  - @ulld/ui@0.0.15
+  - @ulld/utilities@0.0.15
+  - @ulld/whiteboard@0.0.15
+
 ## 0.0.14
 
 ### Patch Changes

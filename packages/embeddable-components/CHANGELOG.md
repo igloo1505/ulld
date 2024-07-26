@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.15
+
+### Patch Changes
+
+- Update misaligned imports.
+- Updated dependencies
+  - @ulld/api@0.0.15
+  - @ulld/component-configs@0.0.15
+  - @ulld/configschema@0.0.15
+  - @ulld/default-image-map@0.0.15
+  - @ulld/hooks@0.0.15
+  - @ulld/icons@0.0.15
+  - @ulld/render@0.0.15
+  - @ulld/state@0.0.15
+  - @ulld/tailwind@0.0.14
+  - @ulld/utilities@0.0.15
+
 ## 0.0.14
 
 ### Patch Changes

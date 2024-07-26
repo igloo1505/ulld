@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.15
+
+### Patch Changes
+
+- Update misaligned imports.
+- Updated dependencies
+  - @ulld/developer@0.0.15
+  - @ulld/developer-schemas@0.0.14
+
 ## 0.0.14
 
 ### Patch Changes

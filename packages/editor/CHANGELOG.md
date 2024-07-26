@@ -1,5 +1,21 @@
 # @ulld/editor
 
+## 0.0.15
+
+### Patch Changes
+
+- Update misaligned imports.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.13
+  - @ulld/configschema@0.0.15
+  - @ulld/developer@0.0.15
+  - @ulld/hooks@0.0.15
+  - @ulld/parsers@0.0.15
+  - @ulld/state@0.0.15
+  - @ulld/tailwind@0.0.14
+  - @ulld/ui@0.0.15
+  - @ulld/utilities@0.0.15
+
 ## 0.0.14
 
 ### Patch Changes

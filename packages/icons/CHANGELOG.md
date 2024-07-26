@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.15
+
+### Patch Changes
+
+- Update misaligned imports.
+- Updated dependencies
+  - @ulld/hooks@0.0.15
+  - @ulld/tailwind@0.0.14
+  - @ulld/utilities@0.0.15
+
 ## 0.0.14
 
 ### Patch Changes

@@ -1,5 +1,29 @@
 # @ulld/developer-template
 
+## 0.0.15
+
+### Patch Changes
+
+- Update misaligned imports.
+- Updated dependencies
+  - @ulld/api@0.0.15
+  - @ulld/base-configs@0.0.14
+  - @ulld/config@0.0.14
+  - @ulld/eslint-config@0.0.14
+  - @ulld/typescript-config@0.0.13
+  - @ulld/configschema@0.0.15
+  - @ulld/database@0.0.14
+  - @ulld/developer@0.0.15
+  - @ulld/hooks@0.0.15
+  - @ulld/icons@0.0.15
+  - @ulld/jest-presets@0.0.14
+  - @ulld/logger@0.0.14
+  - @ulld/parsers@0.0.15
+  - @ulld/state@0.0.15
+  - @ulld/tailwind@0.0.14
+  - @ulld/ui@0.0.15
+  - @ulld/utilities@0.0.15
+
 ## 0.0.14
 
 ### Patch Changes

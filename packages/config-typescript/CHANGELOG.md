@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.13
+
+### Patch Changes
+
+- Update misaligned imports.
+
 ## 0.0.12
 
 ### Patch Changes

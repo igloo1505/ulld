@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.15
+
+### Patch Changes
+
+- Update misaligned imports.
+- Updated dependencies
+  - @ulld/configschema@0.0.15
+  - @ulld/database@0.0.14
+  - @ulld/developer@0.0.15
+  - @ulld/utilities@0.0.15
+
 ## 0.0.14
 
 ### Patch Changes

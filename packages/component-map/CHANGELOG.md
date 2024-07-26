@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.15
+
+### Patch Changes
+
+- Update misaligned imports.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.15
+  - @ulld/calendar@0.0.15
+  - @ulld/default-image-map@0.0.15
+  - @ulld/diagram@0.0.15
+  - @ulld/editor@0.0.15
+  - @ulld/embeddable-components@0.0.15
+  - @ulld/equations@0.0.15
+  - @ulld/full-form@0.0.15
+  - @ulld/journal@0.0.15
+  - @ulld/navigation@0.0.15
+  - @ulld/notebook@0.0.15
+  - @ulld/pdf@0.0.15
+  - @ulld/plot@0.0.15
+  - @ulld/snippets@0.0.15
+  - @ulld/tailwind@0.0.14
+  - @ulld/task-manager@0.0.15
+  - @ulld/whiteboard@0.0.15
+
 ## 0.0.14
 
 ### Patch Changes
