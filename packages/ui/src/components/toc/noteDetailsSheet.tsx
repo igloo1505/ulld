@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { RootState, store } from '@ulld/state/store';
+import store, { RootState } from '@ulld/state/store';
 import { connect } from 'react-redux';
 import PanelToc from './toc';
 import { SheetContent, SheetHeader, SheetTitle, SheetDescription, Sheet } from '@ulld/tailwind/sheet';

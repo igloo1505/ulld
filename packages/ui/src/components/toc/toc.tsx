@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { initialState } from '@ulld/state/initialState';
 import { setTocPanelContent } from '@ulld/state/actions/clientOnly/general';
 import { showNoteSheet } from '@ulld/state/slices/ui';
-import { store, RootState } from '@ulld/state/store';
+import store, { RootState } from '@ulld/state/store';
 
 
 

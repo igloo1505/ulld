@@ -6,7 +6,7 @@ import {
     ContextMenuTrigger,
 } from "@ulld/tailwind/context-menu"
 import { BundledTheme } from 'shiki'
-import { availableShikiThemes } from '@ulld/configschema/zod/codeConfig'
+import { availableShikiThemes } from '@ulld/configschema/codeThemeSchemas'
 
 
 interface CodeThemeContextMenuProps {

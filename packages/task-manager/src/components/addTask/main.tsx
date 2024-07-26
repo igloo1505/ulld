@@ -9,7 +9,7 @@ import { TextInput } from '@ulld/full-form/textInput'
 import { SelectInput } from '@ulld/full-form/select'
 import { TaggableComboBox } from '@ulld/full-form/taggableCombobox'
 import { DialogWithForm } from '@ulld/ui/dialogWithForm'
-import { ToDoListStatus } from '@ulld/types'
+import { ToDoListStatus } from '@ulld/types/enums'
 import { client } from '@ulld/api/client'
 import { ToDoListAddTaskSchema, todoListAddTaskSchema } from '@ulld/api/plugins/native/todo/zod/general'
 import { AddTaskProps } from "../../types";
@@ -21,7 +21,7 @@ const ToDoListAddTaskModal = ({ isModal, lists, searchParams: sp }: AddTaskProps
     const form = useForm<ToDoListAddTaskSchema>({
         resolver: zodResolver(todoListAddTaskSchema),
         defaultValues: {
-            status: ToDoListStatus.ToDo
+            status: "ToDo"
         }
     })
 

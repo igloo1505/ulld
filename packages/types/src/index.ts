@@ -1,2 +1,2 @@
-export * from "./generated/index"
-export * from "./manualTypes/index"
+export type * from "./generated/index"
+export type * from "./manualTypes/index"

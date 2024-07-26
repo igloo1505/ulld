@@ -63,4 +63,3 @@ export const getBibFilename = async (input?: number) => {
 
 
 
-export type BibWithEntries = Prisma.PromiseReturnType<typeof getBibWithEntries>
