@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.14
+
+### Patch Changes
+
+- Fix issue created by the build script.
+- Updated dependencies
+  - @ulld/hooks@0.0.14
+  - @ulld/tailwind@0.0.13
+  - @ulld/utilities@0.0.14
+
 ## 0.0.13
 
 ### Patch Changes

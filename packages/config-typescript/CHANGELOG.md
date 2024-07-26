@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.12
+
+### Patch Changes
+
+- Fix issue created by the build script.
+
 ## 0.0.11
 
 ### Patch Changes

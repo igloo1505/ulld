@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.14
+
+### Patch Changes
+
+- Fix issue created by the build script.
+- Updated dependencies
+  - @ulld/developer@0.0.14
+
 ## 0.0.13
 
 ### Patch Changes

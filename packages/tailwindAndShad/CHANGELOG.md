@@ -1,5 +1,11 @@
 # @ulld/tailwind
 
+## 0.0.13
+
+### Patch Changes
+
+- Fix issue created by the build script.
+
 ## 0.0.12
 
 ### Patch Changes

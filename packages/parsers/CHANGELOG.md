@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.14
+
+### Patch Changes
+
+- Fix issue created by the build script.
+- Updated dependencies
+  - @ulld/configschema@0.0.14
+  - @ulld/database@0.0.13
+  - @ulld/developer@0.0.14
+  - @ulld/utilities@0.0.14
+
 ## 0.0.13
 
 ### Patch Changes

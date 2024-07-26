@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.14
+
+### Patch Changes
+
+- Fix issue created by the build script.
+- Updated dependencies
+  - @ulld/database@0.0.13
+  - @ulld/math@0.0.14
+  - @ulld/tailwind@0.0.13
+
 ## 0.0.13
 
 ### Patch Changes

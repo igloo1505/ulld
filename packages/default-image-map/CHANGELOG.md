@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.14
+
+### Patch Changes
+
+- Fix issue created by the build script.
+- Updated dependencies
+  - @ulld/config@0.0.13
+  - @ulld/eslint-config@0.0.13
+  - @ulld/typescript-config@0.0.12
+  - @ulld/configschema@0.0.14
+  - @ulld/logger@0.0.13
+  - @ulld/tailwind@0.0.13
+  - @ulld/utilities@0.0.14
+
 ## 0.0.13
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.14
+
+### Patch Changes
+
+- Fix issue created by the build script.
+- Updated dependencies
+  - @ulld/config@0.0.13
+  - @ulld/eslint-config@0.0.13
+  - @ulld/typescript-config@0.0.12
+  - @ulld/configschema@0.0.14
+  - @ulld/database@0.0.13
+  - @ulld/logger@0.0.13
+
 ## 0.0.13
 
 ### Patch Changes

@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.14
+
+### Patch Changes
+
+- Fix issue created by the build script.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.14
+  - @ulld/calendar@0.0.14
+  - @ulld/default-image-map@0.0.14
+  - @ulld/diagram@0.0.14
+  - @ulld/editor@0.0.14
+  - @ulld/embeddable-components@0.0.14
+  - @ulld/equations@0.0.14
+  - @ulld/full-form@0.0.14
+  - @ulld/journal@0.0.14
+  - @ulld/navigation@0.0.14
+  - @ulld/notebook@0.0.14
+  - @ulld/pdf@0.0.14
+  - @ulld/plot@0.0.14
+  - @ulld/snippets@0.0.14
+  - @ulld/tailwind@0.0.13
+  - @ulld/task-manager@0.0.14
+  - @ulld/whiteboard@0.0.14
+
 ## 0.0.13
 
 ### Patch Changes

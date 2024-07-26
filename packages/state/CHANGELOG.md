@@ -1,5 +1,21 @@
 # @ulld/state
 
+## 0.0.14
+
+### Patch Changes
+
+- Fix issue created by the build script.
+- Updated dependencies
+  - @ulld/base-configs@0.0.13
+  - @ulld/config@0.0.13
+  - @ulld/configschema@0.0.14
+  - @ulld/database@0.0.13
+  - @ulld/developer@0.0.14
+  - @ulld/hooks@0.0.14
+  - @ulld/parsers@0.0.14
+  - @ulld/tailwind@0.0.13
+  - @ulld/utilities@0.0.14
+
 ## 0.0.13
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.14
+
+### Patch Changes
+
+- Fix issue created by the build script.
+- Updated dependencies
+  - @ulld/developer@0.0.14
+  - @ulld/developer-schemas@0.0.13
+
 ## 0.0.13
 
 ### Patch Changes

@@ -1,5 +1,5 @@
 {
-    "version": "0.0.12",
+    "version": "0.0.13",
     "name": "@ulld/config",
     "private": false,
     "main": "./src/index.ts",
