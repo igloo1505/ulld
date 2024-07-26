@@ -1,13 +1,13 @@
 import {FileData} from "./main"
 import fs from 'fs'
 
-export class JsonFile extends FileData {
+export class JsonFile<T extends object> extends FileData {
     constructor(public path: string){
         super(path, false)
     }
-    getContent(){
+    getJsonContent(): T {
         this.throwIfNotExists()
-        return JSON.parse(super.getContent())
+        return JSON.parse(this.getContent())
     }
     writeContent(content?: string | object): void {
          let newContent = content || this.content

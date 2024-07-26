@@ -17,7 +17,7 @@ for (const pkg of p.packages) {
 let f = new JsonFile(path.join(__dirname, "../../packages/utilities/src/utils/buildStaticData.json"))
 
 
-let content = f.getContent()
+let content = f.getJsonContent()
 
 
 content["currentPackageVersions"] = items

@@ -75,6 +75,15 @@ export const propColorSchemaTransform = <T extends PropColorInput>(a: T, default
     }
 }
 
+export const getColorPropsData = <T extends PropColorInput>(a: T, defaultColor: keyof typeof colorPropSchemaMap) => {
+    let newData = propColorSchemaTransform(a, defaultColor)
+    return {
+        color: newData.color,
+        contrast: newData.contrastColor
+    }
+}
+
+
 
 export type PropColorSchemaOutput = z.output<typeof propColorSchema>
 export type PropColorSchemaInput = z.input<typeof propColorSchema>

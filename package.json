@@ -91,6 +91,14 @@
   ],
   "funding": [
     {
+      "type": "paypal",
+      "url": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/uhlittlelessdum/about"
+    },
+    {
       "type": "GitHub Sponsors",
       "url": "https://github.com/igloo1505/ulld"
     }

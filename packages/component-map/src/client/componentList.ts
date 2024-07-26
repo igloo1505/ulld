@@ -56,7 +56,7 @@ const Color = dynamic(() => import("@ulld/embeddable-components/components/clien
 const ColorChip = dynamic(() => import("@ulld/embeddable-components/components/client/colorChip").then((a) => a.ColorChip))
 const TagBar = dynamic(() => import("@ulld/embeddable-components/components/client/tagBar").then((a) => a.TagBar))
 // TODO: Come back and add a better implementation of the client side whiteboard. This will work for now, just to get the website up, but push it all to the client and handle state that way when you have time.
-const Whiteboard = dynamic(() => import("@ulld/whiteboard/local").then((a) => a.WhiteboardLocal))
+// const Whiteboard = dynamic(() => import("@ulld/whiteboard/local").then((a) => a.WhiteboardLocal))
 
 export type EmbeddableClientComponents = typeof Admonition | typeof TabGroup | typeof Tab | typeof Grid | typeof GridItem | typeof Video | typeof ModelView | typeof Card | typeof Highlight | typeof Underline | typeof Small | typeof Large | typeof Centered | typeof Lead | typeof VSpace | typeof EqRef | typeof EquationTag | typeof Color | typeof Boxed | typeof ColorChip | typeof EmbeddedImage | typeof TagBar
 // export type EmbeddableClientComponents = any

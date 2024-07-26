@@ -2,6 +2,7 @@ import { BuildStaticDataInput, BuildStaticDataOutput } from "@ulld/configschema/
 import { UlldBuildProcess } from "../build";
 import { TargetPaths } from "../paths";
 import { FileManager } from "../baseClasses/fileManager";
+import buildData from "@ulld/utilities/buildStaticData"
 
 type HasSetKey = "settingsData"
 
@@ -9,10 +10,15 @@ type HasSetBuildStaticData = Record<HasSetKey, boolean>
 
 export class BuildStaticData {
     settingPageData: BuildStaticDataOutput["settingPages"] = []
+    transpilePackages: string[] = []
     hasSet: HasSetBuildStaticData = {
         settingsData: false
+    } 
+    constructor(public paths: TargetPaths, public build: UlldBuildProcess){
+        for (const internalPackageName in buildData.currentPackageVersions) {
+            this.transpilePackages.push(internalPackageName)
+        }
     }
-    constructor(public paths: TargetPaths, public build: UlldBuildProcess){}
     setHasSetData(k: HasSetKey, value: boolean = true){
         this.hasSet[k] = value
     }
@@ -23,13 +29,19 @@ export class BuildStaticData {
         if(!this.build.appConfig.config?.fsRoot){
             throw new Error(`Cannot generate build output. No fsRoot property was defined in your configuration file.`)
         }
+        let toTranspile = this.build.getPackagesToTranspile()
+        for (const item of toTranspile) {
+            if(!this.transpilePackages.includes(item)){
+                this.transpilePackages.push(item)
+            }
+        }
         // Weird typing to make sure all keys are implemented.
         let data: {[K in keyof BuildStaticDataInput]: BuildStaticDataInput[K]} = {
             fsRoot: this.build.appConfig.config.fsRoot,
             navigationLinks: this.build.getFlatNavigationLinks(),
             componentDocs: this.build.getFlatComponentDocs(),
             settingPages: this.build.getFlatPluginSettingPages(),
-            transpilePackages: this.build.getPackagesToTranspile(),
+            transpilePackages: this.transpilePackages,
             tailwindSources: this.build.getTailwindSources()
         }
         return data

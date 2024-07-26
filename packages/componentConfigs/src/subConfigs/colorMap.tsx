@@ -8,7 +8,7 @@ type ColorPrefix = "text" | "bg" | "text-decoration" | "border" | "divide" | "ou
 /* TODO: Come back and finish the rest of these colors when back on wifi. Set **everything** to css variables so they can be overridden by the user more easily. */
 
 /* BUILD PROCESS: Move this to part of the user config and set these values as the defaults. Allow them to be overriden by the user that way, and then generate css based on that zod object. Doing this with tailwind will cause far too many issues. */
-
+/* TODO: Delete this. Moved to the configschema */
 export const colorPropSchemaMap: ColorRecord = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

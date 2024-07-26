@@ -20,3 +20,7 @@ export type AppConfigGroup = {
     build: BuildStaticDataOutput,
     app: AppConfigSchemaOutput
 }
+
+export type DefaultColorKey = keyof AppConfigSchemaOutput["UI"]["colors"]
+
+export type ColorBooleanRecord = Record<DefaultColorKey, boolean>
