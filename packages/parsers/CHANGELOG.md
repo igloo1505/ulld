@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.12
+
+### Patch Changes
+
+- Update file source paths. Build script modified the files path in the form package, causing the build to fail.
+- Updated dependencies
+  - @ulld/configschema@0.0.12
+  - @ulld/database@0.0.11
+  - @ulld/developer@0.0.12
+  - @ulld/utilities@0.0.12
+
 ## 0.0.11
 
 ### Patch Changes

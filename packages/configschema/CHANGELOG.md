@@ -1,5 +1,17 @@
 # @ulld/configschema
 
+## 0.0.12
+
+### Patch Changes
+
+- Update file source paths. Build script modified the files path in the form package, causing the build to fail.
+- Updated dependencies
+  - @ulld/base-configs@0.0.11
+  - @ulld/developer-schemas@0.0.11
+  - @ulld/icons@0.0.12
+  - @ulld/tailwind@0.0.11
+  - @ulld/utilities@0.0.12
+
 ## 0.0.11
 
 ### Patch Changes

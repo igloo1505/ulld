@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.12
+
+### Patch Changes
+
+- Update file source paths. Build script modified the files path in the form package, causing the build to fail.
+- Updated dependencies
+  - @ulld/full-form@0.0.12
+  - @ulld/bib-manager@0.0.12
+  - @ulld/calendar@0.0.12
+  - @ulld/default-image-map@0.0.12
+  - @ulld/diagram@0.0.12
+  - @ulld/editor@0.0.12
+  - @ulld/embeddable-components@0.0.12
+  - @ulld/equations@0.0.12
+  - @ulld/journal@0.0.12
+  - @ulld/navigation@0.0.12
+  - @ulld/notebook@0.0.12
+  - @ulld/pdf@0.0.12
+  - @ulld/plot@0.0.12
+  - @ulld/snippets@0.0.12
+  - @ulld/tailwind@0.0.11
+  - @ulld/task-manager@0.0.12
+  - @ulld/whiteboard@0.0.12
+
 ## 0.0.11
 
 ### Patch Changes

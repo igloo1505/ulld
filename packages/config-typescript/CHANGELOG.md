@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.10
+
+### Patch Changes
+
+- Update file source paths. Build script modified the files path in the form package, causing the build to fail.
+
 ## 0.0.9
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.12
+
+### Patch Changes
+
+- Update file source paths. Build script modified the files path in the form package, causing the build to fail.
+- Updated dependencies
+  - @ulld/config@0.0.11
+  - @ulld/eslint-config@0.0.11
+  - @ulld/typescript-config@0.0.10
+  - @ulld/configschema@0.0.12
+  - @ulld/logger@0.0.11
+  - @ulld/tailwind@0.0.11
+  - @ulld/utilities@0.0.12
+
 ## 0.0.11
 
 ### Patch Changes

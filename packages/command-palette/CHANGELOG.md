@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.12
+
+### Patch Changes
+
+- Update file source paths. Build script modified the files path in the form package, causing the build to fail.
+- Updated dependencies
+  - @ulld/api@0.0.12
+  - @ulld/bib-manager@0.0.12
+  - @ulld/calendar@0.0.12
+  - @ulld/configschema@0.0.12
+  - @ulld/database@0.0.11
+  - @ulld/developer@0.0.12
+  - @ulld/diagram@0.0.12
+  - @ulld/editor@0.0.12
+  - @ulld/equations@0.0.12
+  - @ulld/hooks@0.0.12
+  - @ulld/logger@0.0.11
+  - @ulld/parsers@0.0.12
+  - @ulld/render@0.0.12
+  - @ulld/snippets@0.0.12
+  - @ulld/state@0.0.12
+  - @ulld/tailwind@0.0.11
+  - @ulld/task-manager@0.0.12
+  - @ulld/ui@0.0.12
+  - @ulld/utilities@0.0.12
+  - @ulld/whiteboard@0.0.12
+
 ## 0.0.11
 
 ### Patch Changes
