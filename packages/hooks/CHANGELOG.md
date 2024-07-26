@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.11
+
+### Patch Changes
+
+- Update remote to fix some misaligned imports mostly.
+- Updated dependencies
+  - @ulld/api@0.0.11
+  - @ulld/component-map@0.0.11
+  - @ulld/configschema@0.0.11
+  - @ulld/database@0.0.10
+  - @ulld/parsers@0.0.11
+
 ## 0.0.10
 
 ### Patch Changes

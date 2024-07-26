@@ -1,5 +1,27 @@
 # @ulld/landing-layouts
 
+## 0.0.11
+
+### Patch Changes
+
+- Update remote to fix some misaligned imports mostly.
+- Updated dependencies
+  - @ulld/api@0.0.11
+  - @ulld/bib-manager@0.0.11
+  - @ulld/calendar@0.0.11
+  - @ulld/eslint-config@0.0.10
+  - @ulld/typescript-config@0.0.9
+  - @ulld/configschema@0.0.11
+  - @ulld/developer@0.0.11
+  - @ulld/hooks@0.0.11
+  - @ulld/journal@0.0.11
+  - @ulld/navigation@0.0.11
+  - @ulld/state@0.0.11
+  - @ulld/tailwind@0.0.10
+  - @ulld/ui@0.0.11
+  - @ulld/utilities@0.0.11
+  - @ulld/whiteboard@0.0.11
+
 ## 0.0.10
 
 ### Patch Changes

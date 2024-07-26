@@ -1,5 +1,11 @@
 # @repo/jest-presets
 
+## 0.0.10
+
+### Patch Changes
+
+- Update remote to fix some misaligned imports mostly.
+
 ## 0.0.9
 
 ### Patch Changes

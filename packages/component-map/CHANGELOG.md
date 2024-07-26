@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.11
+
+### Patch Changes
+
+- Update remote to fix some misaligned imports mostly.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.11
+  - @ulld/calendar@0.0.11
+  - @ulld/default-image-map@0.0.11
+  - @ulld/diagram@0.0.11
+  - @ulld/editor@0.0.11
+  - @ulld/embeddable-components@0.0.11
+  - @ulld/equations@0.0.11
+  - @ulld/full-form@0.0.11
+  - @ulld/journal@0.0.11
+  - @ulld/navigation@0.0.11
+  - @ulld/notebook@0.0.11
+  - @ulld/pdf@0.0.11
+  - @ulld/plot@0.0.11
+  - @ulld/snippets@0.0.11
+  - @ulld/tailwind@0.0.10
+  - @ulld/task-manager@0.0.11
+  - @ulld/whiteboard@0.0.11
+
 ## 0.0.10
 
 ### Patch Changes

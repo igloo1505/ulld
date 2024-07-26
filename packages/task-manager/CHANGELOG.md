@@ -1,5 +1,31 @@
 # @ulld/task-manager
 
+## 0.0.11
+
+### Patch Changes
+
+- Update remote to fix some misaligned imports mostly.
+- Updated dependencies
+  - @ulld/api@0.0.11
+  - @ulld/calendar@0.0.11
+  - @ulld/eslint-config@0.0.10
+  - @ulld/typescript-config@0.0.9
+  - @ulld/configschema@0.0.11
+  - @ulld/developer@0.0.11
+  - @ulld/diagram@0.0.11
+  - @ulld/editor@0.0.11
+  - @ulld/full-form@0.0.11
+  - @ulld/hooks@0.0.11
+  - @ulld/icons@0.0.11
+  - @ulld/jest-presets@0.0.10
+  - @ulld/parsers@0.0.11
+  - @ulld/render@0.0.11
+  - @ulld/state@0.0.11
+  - @ulld/tailwind@0.0.10
+  - @ulld/ui@0.0.11
+  - @ulld/utilities@0.0.11
+  - @ulld/whiteboard@0.0.11
+
 ## 0.0.10
 
 ### Patch Changes

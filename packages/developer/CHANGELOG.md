@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.11
+
+### Patch Changes
+
+- Update remote to fix some misaligned imports mostly.
+- Updated dependencies
+  - @ulld/config@0.0.10
+  - @ulld/eslint-config@0.0.10
+  - @ulld/typescript-config@0.0.9
+  - @ulld/configschema@0.0.11
+  - @ulld/database@0.0.10
+  - @ulld/logger@0.0.10
+
 ## 0.0.10
 
 ### Patch Changes

@@ -1,7 +1,7 @@
 {
     "name": "@ulld/eslint-config",
     "license": "MIT",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "private": false,
     "devDependencies": {
         "@vercel/style-guide": "^5.1.0",

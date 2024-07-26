@@ -1,5 +1,26 @@
 # @ulld/chat
 
+## 0.0.11
+
+### Patch Changes
+
+- Update remote to fix some misaligned imports mostly.
+- Updated dependencies
+  - @ulld/api@0.0.11
+  - @ulld/calendar@0.0.11
+  - @ulld/eslint-config@0.0.10
+  - @ulld/typescript-config@0.0.9
+  - @ulld/configschema@0.0.11
+  - @ulld/full-form@0.0.11
+  - @ulld/hooks@0.0.11
+  - @ulld/icons@0.0.11
+  - @ulld/jest-presets@0.0.10
+  - @ulld/logger@0.0.10
+  - @ulld/state@0.0.11
+  - @ulld/tailwind@0.0.10
+  - @ulld/ui@0.0.11
+  - @ulld/utilities@0.0.11
+
 ## 0.0.10
 
 ### Patch Changes

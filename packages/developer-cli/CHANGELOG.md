@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.11
+
+### Patch Changes
+
+- Update remote to fix some misaligned imports mostly.
+- Updated dependencies
+  - @ulld/developer@0.0.11
+  - @ulld/developer-schemas@0.0.10
+
 ## 0.0.10
 
 ### Patch Changes

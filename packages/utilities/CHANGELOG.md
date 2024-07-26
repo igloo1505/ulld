@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.11
+
+### Patch Changes
+
+- Update remote to fix some misaligned imports mostly.
+- Updated dependencies
+  - @ulld/database@0.0.10
+  - @ulld/math@0.0.11
+  - @ulld/tailwind@0.0.10
+
 ## 0.0.10
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.11
+
+### Patch Changes
+
+- Update remote to fix some misaligned imports mostly.
+- Updated dependencies
+  - @ulld/hooks@0.0.11
+  - @ulld/tailwind@0.0.10
+  - @ulld/utilities@0.0.11
+
 ## 0.0.10
 
 ### Patch Changes

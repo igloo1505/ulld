@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.10
+
+### Patch Changes
+
+- Update remote to fix some misaligned imports mostly.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.9
+
 ## 0.0.9
 
 ### Patch Changes
