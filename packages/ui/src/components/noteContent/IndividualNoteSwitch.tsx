@@ -4,7 +4,6 @@ import { NotePageProps } from '../../utilityFunctions/formatting/formatNoteProps
 import ResetPathDependentComponents from '../landing/hero/util/resetPathDependentComponents'
 import DatabaseNote from './noteWrappers/DatabaseNote'
 import FsNote from './noteWrappers/FsNote'
-import { UnifiedMdxParser } from '@ulld/api/types'
 
 
 export const IndividualNoteSwitch = async (props: NotePageProps) => {
