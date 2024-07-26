@@ -1,6 +1,6 @@
 import React from 'react'
-import { MdxLivePreviewPanel } from '../../../mdxContent/mdxPreviewPanel';
 import { EditorWithPreview, EditorWithPreviewProps } from '../../editorWithPreview/editorWithPreview';
+import { MdxLivePreviewPanel } from '@ulld/render/mdxPreviewPanel';
 
 
 

@@ -1,5 +1,5 @@
 {
-    "version": "0.0.8",
+    "version": "0.0.9",
     "name": "@ulld/pdf",
     "private": false,
     "scripts": {
@@ -35,12 +35,11 @@
         "@ulld/whiteboard": "workspace:*",
         "next": "^14.2.3",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "dependencies": {
+        "react-dom": "^18.2.0",
         "@react-pdf/renderer": "3.3.8",
         "react-pdf": "7.7.1"
     },
+    "dependencies": {},
     "devDependencies": {
         "@ulld/configschema": "workspace:*",
         "@ulld/developer": "workspace:*",

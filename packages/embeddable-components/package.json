@@ -1,5 +1,5 @@
 {
-    "version": "0.0.8",
+    "version": "0.0.9",
     "name": "@ulld/embeddable-components",
     "private": false,
     "scripts": {
@@ -88,9 +88,7 @@
         "@ulld/state": "workspace:*",
         "@ulld/tailwind": "workspace:*",
         "@ulld/utilities": "workspace:*",
-        "react-spinners": "^0.13.8"
-    },
-    "dependencies": {
+        "react-spinners": "^0.13.8",
         "@google/model-viewer": "3.5.0",
         "better-react-mathjax": "2.0.3",
         "clsx": "2.1.1",
@@ -100,6 +98,7 @@
         "react-dom": "18.2.0",
         "three": "0.163.0"
     },
+    "dependencies": {},
     "devDependencies": {
         "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*",

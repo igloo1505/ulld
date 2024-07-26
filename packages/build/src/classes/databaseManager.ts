@@ -30,6 +30,7 @@ If this fails or you're new to the terminal, add a ULLD_ADDITIONAL_SOURCES envir
 See the docs ${terminalLink("here", "https://uhlittlelessdum.com/blog/tutorials/settingUpYourFirstApp")} for more info
 `);
         } else {
+            this.logVerbose("Generating database schema.");
             this.execPackageJsonScript(
                 pkgManager,
                 "db:generate",

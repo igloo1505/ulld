@@ -5,14 +5,12 @@ import { Command } from 'cmdk'
 import CommandPaletteItem from '../commandItem'
 import { Route } from 'next'
 import { pages } from '../commandPaletteUtilities'
-import type { serverClient } from '@ulld/api/serverClient'
-import type {commandPaletteRouter} from "../../lib/commandPaletteRouter"
-import { MdxContentCLIENT } from '@ulld/ui/mdxDisplayCLIENT'
+import { MdxContentCLIENT } from '@ulld/render/mdx'
+import { DefinitionSearchResult } from '@ulld/api/types'
 
 
 
-export type D = Awaited<ReturnType<typeof commandPaletteRouter.getDefinitions>>
-export type DefCmdItem = (D[number] & { value: string, label: string })
+export type DefCmdItem = (DefinitionSearchResult[number] & { value: string, label: string })
 
 interface DefinitionSearchCommandGroupProps {
     activePage?: pages

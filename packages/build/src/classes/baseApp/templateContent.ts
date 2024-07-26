@@ -1,10 +1,28 @@
+import { makeValidId } from "@ulld/utilities/identity";
 import { FileManager } from "../baseClasses/fileManager";
 import { TargetPaths } from "../paths";
+import { SlotDataType } from "@ulld/utilities/types";
 
 export class TemplateContent extends FileManager {
     replaceMeRegex: RegExp = /REPLACEME(\<[^\>]*>)?/gm
     constructor(public subPath: string, public paths: TargetPaths){
         super(subPath, paths)
+    }
+    getPropsName(componentName: string){
+        let validID = makeValidId(componentName)
+        return `${validID[0].toUpperCase()}${validID.slice(1)}`
+    }
+    appendExportedType(componentName: string, exportedType: string) {
+        let re = /^interface\s+TemporaryComponentProps\s*\{/gm
+        let propsName = this.getPropsName(componentName)
+        let lines = this.getLines().map((l) => {
+            let t = l.trim()
+            if(re.test(t)){
+                return `interface ${propsName} extends ${exportedType} {}`
+            }
+            return l.replaceAll("TemporaryComponentProps", propsName)
+        })
+        this.content = lines.join("\n")
     }
     removeREPLACEMEImport(){
        let re = /^import\s+REPLACEME/
@@ -26,5 +44,15 @@ export class TemplateContent extends FileManager {
     }
     replaceREPLACEME(componentName: string){
         this.content = this.content?.replaceAll(this.replaceMeRegex, componentName)
+    }
+    generate(componentImport: string, formattedExport: string, itemData: SlotDataType, exportedProps?: string){
+        this.throwIfNotExists()
+        if(exportedProps){
+            this.appendExportedType(componentImport, exportedProps)
+        }
+        this.removeREPLACEMEImport()
+        this.appendImport(`import ${componentImport} from "${formattedExport}"`)
+        this.replaceREPLACEME(componentImport)
+        this.writeContent()
     }
 }

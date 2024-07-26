@@ -1,5 +1,41 @@
 # @ulld/build-sandbox
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/bib-manager@0.0.9
+  - @ulld/api@0.0.9
+  - @ulld/command-palette@0.0.9
+  - @ulld/component-map@0.0.9
+  - @ulld/landing-layouts@0.0.9
+  - @ulld/diagram@0.0.9
+  - @ulld/embeddable-components@0.0.9
+  - @ulld/equations@0.0.9
+  - @ulld/full-form@0.0.9
+  - @ulld/hooks@0.0.9
+  - @ulld/journal@0.0.9
+  - @ulld/navigation@0.0.9
+  - @ulld/notebook@0.0.9
+  - @ulld/pdf@0.0.9
+  - @ulld/plot@0.0.9
+  - @ulld/render@0.0.9
+  - @ulld/snippets@0.0.9
+  - @ulld/task-manager@0.0.9
+  - @ulld/ui@0.0.9
+  - @ulld/whiteboard@0.0.9
+  - @ulld/editor@0.0.9
+  - @ulld/icons@0.0.9
+  - @ulld/state@0.0.9
+  - @ulld/configschema@0.0.9
+  - @ulld/utilities@0.0.9
+  - @ulld/default-image-map@0.0.9
+  - @ulld/developer@0.0.9
+  - @ulld/parsers@0.0.9
+  - @ulld/calendar@0.0.9
+  - @ulld/developer-cli@0.0.9
+
 ## 0.0.8
 
 ### Patch Changes

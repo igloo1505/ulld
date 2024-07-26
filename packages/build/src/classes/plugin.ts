@@ -27,8 +27,9 @@ export class UlldPlugin extends ShellManager {
     pages: PluginPage[] = [];
     events?: PluginEvents;
     targetDir: string;
-    packageJson: PackageJson;
+    packageJson?: PackageJson;
     settingsPage?: PluginSettingsPage;
+    includeInTailwindSources: boolean = false;
     embeddables?: (NonNullable<
         (typeof this.components)[number]["data"]["embeddable"]
     >[number] & {
@@ -44,11 +45,19 @@ export class UlldPlugin extends ShellManager {
         super();
         this.targetDir = paths.targetDir;
         this.packageRoot = path.join(this.targetDir, "node_modules", this.name);
+        this.gatherConfig(true);
+    }
+    gatherConfig(noError?: boolean) {
         let configPath = path.join(this.packageRoot, "pluginConfig.ulld.json");
+        this.logDebug(`Looking for ${this.name} config at ${configPath}`);
         this.packageJson = new PackageJson(
             this.paths.projectRoot,
             path.join(this.packageRoot, "package.json"),
         );
+        if (!this.packageJson) {
+            this.noPackageJsonError(noError);
+            return;
+        }
         if (!fs.existsSync(configPath)) {
             this.logVerbose(`Could not find plugin config for ${this.name}`);
             if (!this.packageJson.exists()) {
@@ -56,17 +65,18 @@ export class UlldPlugin extends ShellManager {
 No package.json file found for package ${this.name}. 
 Attempted to find one at ${configPath}
 `);
-                this.noConfigError();
+                this.noConfigError(noError);
                 return;
             }
             let pkgJsonConfig = this.packageJson.getPluginConfig();
             if (!pkgJsonConfig) {
-                this.noConfigError();
+                this.logDebug(`No package.json content found for ${this.name}`);
+                this.noConfigError(noError);
                 return;
             }
             this.pluginConfig = pkgJsonConfig;
         } else {
-            this.logDebug(`Found plugin config for ${this.name}`);
+            this.logVerbose(`Found plugin config for ${this.name}`);
         }
         this.hasConfig = true;
         this.pluginConfig = JSON.parse(
@@ -75,7 +85,7 @@ Attempted to find one at ${configPath}
         if ((this.pluginConfig as any) !== "Unusable") {
             this.events = new PluginEvents(
                 this.pluginConfig?.events || {},
-                paths,
+                this.paths,
                 this.name,
             );
             this.components = this.pluginConfig.components.map(
@@ -87,7 +97,7 @@ Attempted to find one at ${configPath}
                             pluginName: this.name,
                         },
                         this.paths,
-                        this.packageJson,
+                        this.packageJson!,
                     ),
             );
             if (this.pluginConfig?.slot) {
@@ -125,9 +135,22 @@ Attempted to find one at ${configPath}
             this.settingsPage = new PluginSettingsPage(this.paths, this.pluginConfig);
         }
         this.embeddables = this.getEmbeddables();
+        this.includeInTailwindSources = [
+            this.embeddables,
+            this.pages,
+            this.components,
+        ].some((x) => Boolean(x && x.length));
     }
-    noConfigError() {
+    noPackageJsonError(noError?: boolean) {
         this.hasConfig = false;
+        if (noError) return;
+        this.logError(
+            `No package.json was found for the ${this.name} plugin. This plugin will be overridden.`,
+        );
+    }
+    noConfigError(noError?: boolean) {
+        this.hasConfig = false;
+        if (noError) return;
         this.log(
             `No plugin configuration was found for the ${this.name} plugin. This plugin will be overridden.`,
         );

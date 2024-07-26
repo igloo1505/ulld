@@ -1,5 +1,18 @@
 # @ulld/full-form
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/api@0.0.9
+  - @ulld/hooks@0.0.9
+  - @ulld/editor@0.0.9
+  - @ulld/icons@0.0.9
+  - @ulld/state@0.0.9
+  - @ulld/configschema@0.0.9
+  - @ulld/utilities@0.0.9
+
 ## 0.0.8
 
 ### Patch Changes

@@ -26,6 +26,8 @@ export const buildStaticDataSchema = z.object({
     ]),
     settingPages: settingsPageOutputSchema.array().default([]),
     componentDocs: componentDocumentationSchema.array().default([]),
+    transpilePackages: z.string().array().default([]),
+    tailwindSources: z.string().array().default([])
 }).transform((a) => {
     return {
         ...a,

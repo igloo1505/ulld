@@ -1,5 +1,9 @@
-// import { serverLogger } from "@ulld/logger/server";
+import { MDXComponents } from "mdx/types";
 import dynamic from "next/dynamic";
+import { EmbeddableClientComponents, conditionalClientComponents } from "../client/componentList";
+import { AdditionalComponentType, AdditionalComponents, ConditionalComponentProps, ConditionalComponentQuery } from "../types";
+import { conditionallyAddComponent } from "../utils";
+import { conditionalServerComponents } from "./componentList";
 const Admonition = dynamic(() => import("@ulld/embeddable-components/components/server/admonition").then((a) => a.Admonition))
 const ErrorMargin = dynamic(() => import("@ulld/embeddable-components/academic/error").then((a) => a.ErrorMargin))
 const Abstract = dynamic(() => import("@ulld/embeddable-components/academic/abstract").then((a) => a.Abstract))
@@ -58,34 +62,16 @@ const TableFit = dynamic(() => import("@ulld/embeddable-components/format/tableF
 
 type EmbeddableServerComponents = typeof Admonition | typeof ErrorMargin | typeof Abstract
 
-interface ConditionalComponentQuery {
-    regex: RegExp,
-    component: EmbeddableServerComponents,
-    label: string
-}
 
-export interface ConditionalComponentProps {
-    all?: boolean
-    noMermaid?: boolean
-    requiredOnly?: boolean
-}
 
-export const getConditionalComponents = (content: string, opts: ConditionalComponentProps, isServer: boolean = true) => {
-    const conditionalComponents: ConditionalComponentQuery[] = [
-        { regex: new RegExp(`<Admonition`), component: Admonition, label: "Admonition" },
-        // Academic components
-        {regex: new RegExp("<ErrorMargin"), component: ErrorMargin, label: "ErrorMargin"},
-        {regex: new RegExp("<Abstract"), component: Abstract, label: "Abstract"},
-        {regex: new RegExp("<TableFit"), component: TableFit, label: "TableFit"},
-    ]
-    let components: { [k: string]: ConditionalComponentQuery['component'] } = {}
-    for (const k of conditionalComponents) {
-        const hasComponent = k.regex.test(content)
-        if (opts.all || hasComponent) {
-            if (!(opts.noMermaid && k.label === "Mermaid")) {
-                components[k.label] = k.component
-            }
-        }
+export const getConditionalServerComponents = <J extends AdditionalComponentType>(content: string, opts: ConditionalComponentProps, extraComponents: AdditionalComponents<J> = []) => {
+    let components: { [k: string]: ConditionalComponentQuery<EmbeddableClientComponents & J>['component'] } = {}
+    for (const k of conditionalServerComponents) {
+        conditionallyAddComponent(k, content, opts, components)
     }
-    return components
+    for (const k of extraComponents) {
+        conditionallyAddComponent(k, content, opts, components)
+    }
+    return components satisfies MDXComponents
 }
+

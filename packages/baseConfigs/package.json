@@ -19,13 +19,13 @@
         "@ulld/types": "workspace:*",
         "next": "^14.2.3"
     },
-    "dependencies": {
-        "react": "18.2.0",
-        "react-dom": "18.2.0"
-    },
+    "dependencies": {},
     "publishConfig": {
         "access": "public"
     },
     "files": [],
-    "peerDependencies": {}
+    "peerDependencies": {
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    }
 }

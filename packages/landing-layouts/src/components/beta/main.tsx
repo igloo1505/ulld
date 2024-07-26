@@ -1,7 +1,8 @@
 import React, { Suspense } from "react";
 import { RandomBackground } from "@ulld/ui/randomBackground";
-import { FullScreenNavigationMenu } from "@ulld/ui/fullScreenNav";
+import FullScreenNavigationMenu from "@ulld/navigation/fullScreenNav";
 import { BetaLandingPageSearchInput } from "./searchInput";
+import NavigationMenu from "./navigationMenu";
 
 
 interface BasicLandingLayoutProps {
@@ -27,7 +28,7 @@ const BasicLandingLayout = (props: BasicLandingLayoutProps) => {
                     }
                 >
                     <Suspense>
-                        <FullScreenNavigationMenu />
+                        <NavigationMenu />
                     </Suspense>
                 </section>
             </div>

@@ -22,7 +22,7 @@ const IS_SERVER = typeof window === 'undefined'
 
 export function useLocalStorage<T>(
   key: string,
-  initialValue: T | (() => T),
+  initialValue: T | (() => T) = undefined as T,
   options: UseLocalStorageOptions<T> = {},
 ): [T, Dispatch<SetStateAction<T>>] {
   const { initializeWithValue = true } = options

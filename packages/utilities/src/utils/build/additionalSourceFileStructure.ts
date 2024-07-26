@@ -66,6 +66,12 @@ export const fileItems: Record<FileItemKey, FileItemWithRootGlob[]> = {
             getOutputPath: () => "appConfig.ulld.json",
         },
         {
+            subPath: ".env",
+            globPath: ".env",
+            rootGlob: ".env",
+            getOutputPath: () => ".env.local",
+        },
+        {
             subPath: "favicon.{ico,png,jpg}",
             rootGlob: "favicon.{ico,png,jpg}",
             getOutputPath: (filePath) => `public/${filePath}`,

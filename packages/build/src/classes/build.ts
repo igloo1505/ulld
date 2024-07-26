@@ -29,6 +29,7 @@ import { AdditionalSources } from "./additionalSources";
 import { EnvManager } from "./envManager";
 import { BuildHealthCheck } from "./healthCheck";
 import { DatabaseBuildManager } from "./databaseManager";
+import { BuildOptionsType } from "../utils/options";
 
 type PluginSlotKey = keyof SlotMap;
 
@@ -48,9 +49,9 @@ export class UlldBuildProcess extends Prompter {
     pageConflicts: PageConflict[] = [];
     git: GitManager;
     componentImportMap: Record<string, boolean> = {};
+    alreadyProvidedPackageManager: boolean = false
     constructor(public targetDir: string) {
         super(targetDir);
-        this.env = new EnvManager()
         this.git = new GitManager(targetDir);
         this.isLocalDev = process.env.LOCAL_DEVELOPMENT === "true";
         this.applicationDir = path.join(
@@ -58,7 +59,8 @@ export class UlldBuildProcess extends Prompter {
             appData.templateRepo.buildDirName,
         );
         this.paths = new TargetPaths(this.applicationDir, this.isLocalDev);
-        this.health = new BuildHealthCheck(this.paths)
+        this.env = new EnvManager(this.paths)
+        this.health = new BuildHealthCheck(this.paths, this.env)
         this.db = new DatabaseBuildManager(this.paths, this.env, this.health)
         this.packageJson = new TargetPackageJson(
             this.applicationDir,
@@ -101,15 +103,17 @@ export class UlldBuildProcess extends Prompter {
             `Gathering ${chalk.hex("#0ba5e9")("U")}LLD plugins from your appConfig...`,
         );
         if (!this.appConfig.config) {
+            this.logError("No appConfig was found. Can not continue.")
             throw new Error(
                 `No app configuration was found during the gatherPlugins phase.`,
             );
         }
         let newPlugins: UlldPlugin[] = [];
         let fromConfigPlugins =
-            this.appConfig.config?.plugins.map(
+            this.appConfig.config?.plugins?.map(
                 (c) => new UlldPlugin(this.paths, c.name, c.version),
             ) || ([] as UlldPlugin[]);
+        this.logVerbose(`Found ${fromConfigPlugins.length} plugins in your config.`)
         for (const k in this.appConfig.config.slots) {
             let newSlot =
                 this.appConfig.config.slots[
@@ -217,6 +221,20 @@ and continue when that file is in place.`,
             if (pageMap[l].length > 1) {
                 this.pageConflicts.push(new PageConflict(l, pageMap[l]));
             }
+        }
+    }
+    applyPackageManagerOptions(opts: BuildOptionsType){
+        if(opts.npm){
+            this.packageManager = "npm"
+            this.alreadyProvidedPackageManager = true
+        }
+        if(opts.pnpm){
+            this.packageManager = "pnpm"
+            this.alreadyProvidedPackageManager = true
+        }
+        if(opts.yarn){
+            this.packageManager = "yarn"
+            this.alreadyProvidedPackageManager = true
         }
     }
     async resolvePageConflicts() {
@@ -446,7 +464,19 @@ ${fullSlotMap.missingItems.map((k, i) => `${i + 1}. ${k.slot} -> ${k.subSlot}`).
     }
     async applyPages() {
         for await (const k of this.plugins) {
-            await k.applyPages();
+            this.logError(`Attempting to apply extra pages. This method is not yet handled.`)
+            // await k.applyPages();
         }
+    }
+    getTailwindSources(): string[] {
+        return this.plugins.filter((f) => f.includeInTailwindSources).map((p) => `./node_modules/${p.name}/src/**/*.{js,ts,jsx,tsx,mdx}`)
+    }
+    revalidatePluginConfigs() {
+        for (const plugin of this.plugins) {
+            plugin.gatherConfig()
+        }
+    }
+    getPackagesToTranspile(): string[]{
+        return this.plugins.map((p) => p.name)
     }
 }

@@ -1,5 +1,5 @@
 {
-    "version": "0.0.8",
+    "version": "0.0.9",
     "$schema": "./node_modules/@ulld/developer-schemas/src/static/ulldPackageJson.schema.json",
     "name": "@ulld/math",
     "private": false,
@@ -23,7 +23,15 @@
         "@ulld/hooks": "workspace:*",
         "@ulld/icons": "workspace:*",
         "@ulld/state": "workspace:*",
-        "@ulld/utilities": "workspace:*"
+        "@ulld/utilities": "workspace:*",
+        "@mathigon/fermat": "1.1.18",
+        "complex.js": "2.1.1",
+        "fraction.js": "4.3.7",
+        "mathjs": "12.4.0",
+        "mz-math": "3.0.26",
+        "numbers": "0.7.0",
+        "numeric": "1.2.6",
+        "quaternion": "1.5.1"
     },
     "devDependencies": {
         "@ulld/jest-presets": "workspace:*",
@@ -38,14 +46,5 @@
     "publishConfig": {
         "access": "public"
     },
-    "dependencies": {
-        "@mathigon/fermat": "1.1.18",
-        "complex.js": "2.1.1",
-        "fraction.js": "4.3.7",
-        "mathjs": "12.4.0",
-        "mz-math": "3.0.26",
-        "numbers": "0.7.0",
-        "numeric": "1.2.6",
-        "quaternion": "1.5.1"
-    }
+    "dependencies": {}
 }

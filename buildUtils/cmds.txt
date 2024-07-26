@@ -27,6 +27,7 @@ Set cloned base internal dependencies to remote source | tsx /Users/bigsexy/Desk
 Generate Default Configs | tsx /Users/bigsexy/Desktop/current/ulld/packages/configschema/src/__scripts__/generateDefaultConfig.ts
 Sync base cloned app with local dependencies | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/syncBaseAppWithLocal.zsh
 Gather Types | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/gatherTypes.zsh
+Gather API types | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/types/gather/gatherApiTypes.ts
 Create unified types export | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/createTypesUnifiedExport.ts
 Clear generated types | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/clearGeneratedTypes.zsh
 Generate Required Embeddable Slots | tsx /Users/bigsexy/Desktop/current/ulld/packages/configschema/src/__scripts__/generateRequiredEmeddableSlots.ts
@@ -34,3 +35,4 @@ Generate plugin configs | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/gen
 Gather build template string data | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/gatherBuildTemplateStrings.ts
 Build website locally | pnpm turbo buildLocal --log-order=stream --filter @ulld/website
 Prepare Web Commit | zsh /Users/bigsexy/Desktop/current/ulld/apps/website/scripts/prepareToCommit.zsh
+Write current package versions to static data | tsx buildUtils/versioning/writeCurrentPackageVersions.ts

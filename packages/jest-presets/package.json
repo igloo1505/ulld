@@ -9,9 +9,7 @@
         "./node": "./jest/node/jest-preset.js",
         "./browser": "./jest/browser/jest-preset.js"
     },
-    "dependencies": {
-        "ts-jest": "29.1.1"
-    },
+    "dependencies": {},
     "devDependencies": {
         "jest-environment-jsdom": "^29.7.0",
         "@ulld/types": "workspace:*"
@@ -19,6 +17,8 @@
     "publishConfig": {
         "access": "public"
     },
-    "peerDependencies": {},
+    "peerDependencies": {
+        "ts-jest": "29.1.1"
+    },
     "files": []
 }

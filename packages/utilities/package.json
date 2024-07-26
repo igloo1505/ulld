@@ -1,5 +1,5 @@
 {
-    "version": "0.0.8",
+    "version": "0.0.9",
     "name": "@ulld/utilities",
     "private": false,
     "files": [
@@ -90,7 +90,10 @@
         "./providers-mathjax": "./src/providers/mathjax.tsx",
         "./transformExportString": "./src/utils/build/transformExportString.ts",
         "./validateDeviceType": "./src/utils/deviceDetect.ts",
-        "./downloadFile": "./src/utils/downloadFile.ts"
+        "./downloadFile": "./src/utils/downloadFile.ts",
+        "./jsonFileClass": "./src/classes/file/jsonFile.ts",
+        "./fileClass": "./src/classes/file/main.ts",
+        "./mdxFile": "./src/classes/file/mdxFile.ts"
     },
     "scripts": {
         "dev": "echo 'Add dev script here'",
@@ -135,13 +138,12 @@
         "next": "^14.2.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "zod": "^3.22.4"
-    },
-    "packageManager": "pnpm@9.0.4",
-    "dependencies": {
+        "zod": "^3.22.4",
         "gray-matter": "^4.0.3",
         "monaco-editor": "0.49.0"
     },
+    "packageManager": "pnpm@9.0.4",
+    "dependencies": {},
     "publishConfig": {
         "access": "public"
     }

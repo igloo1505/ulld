@@ -44,6 +44,21 @@ const throwIfLocalSource = () => {
     });
 };
 
+const throwIfNotTestRoot = (dir: string) => {
+       let testRoot = process.env.ULLD_TEST_ROOT 
+    if(!testRoot){
+        throw new Error(`No test root env variable was found.`)
+    }
+    if(testRoot !== dir) {
+ throw new Erro(`Dir is not test root. Found:
+
+testRoot: ${testRoot}
+
+cwd: ${dir}
+`)
+    }
+    }
+
 if (args[0] === "toLocal") {
     setPackagesToLocalSource();
 }
@@ -55,3 +70,9 @@ if (args[0] === "toRemote") {
 if (args[0] === "check") {
     throwIfLocalSource();
 }
+
+
+if (args[0] === "checkDirectory") {
+    throwIfNotTestRoot(args[1]);
+}
+

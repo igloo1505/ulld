@@ -24,15 +24,14 @@
         "postinstall": "echo 'figure out how to run prisma generate --schema=./src/prisma/schema.prisma'",
         "db:generateTargetProjectSchema": "prisma generate --schema ./src/prisma/schema.prisma"
     },
-    "dependencies": {
+    "dependencies": {},
+    "peerDependencies": {
+        "@ulld/typescript-config": "workspace:*",
+        "prisma": "5.17.0",
         "@prisma/client": "5.17.0",
         "next": "14.2.3",
         "react": "18.2.0",
         "react-dom": "18.2.0"
-    },
-    "peerDependencies": {
-        "@ulld/typescript-config": "workspace:*",
-        "prisma": "latest"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
@@ -41,6 +40,6 @@
     "devDependencies": {
         "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
-        "prisma": "latest"
+        "prisma": "5.17.0"
     }
 }

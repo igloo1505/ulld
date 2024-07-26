@@ -62,7 +62,7 @@ export interface DictionaryItemProps {
     content?: string;
 }
 
-export interface DictionaryLetterList {
+export interface DictionaryLetterListProps {
     children: ReactNode;
     letter: LetterType;
     currentPage?: LetterType;

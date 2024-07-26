@@ -33,7 +33,7 @@ const ToDoListPrioritySelect = <T extends FieldValues, L extends string>({ name,
                 options={priorityStrings.map((s) => ({
                     value: s,
                     label: s
-                })}
+                }))}
                 placeholder={"Priority"}
                 classes={{
                     formItem: "max-h-[30vh] overflow-y-auto no-scrollbar"

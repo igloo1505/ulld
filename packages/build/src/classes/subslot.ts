@@ -7,7 +7,7 @@ import { TargetPaths } from "./paths"
 export class SubSlot {
     shouldUse: boolean = true
     itemData: SlotDataType
-    constructor(public pluginName: string, public parentSlot: PluginSlotKey, public subSlot: AnySubSlotKey, public paths: TargetPaths){
+    constructor(public pluginName: string, public parentSlot: PluginSlotKey, public subSlot: AnySubSlotKey, public paths: TargetPaths, public exportedPropsName?: string){
         let item = slotMapData[parentSlot as keyof typeof slotMapData][subSlot as keyof typeof slotMapData[keyof typeof slotMapData]] as SlotDataType
         if(!item){
             throw new Error(`Can not find the target file for the ${parentSlot} -> ${subSlot} slot.`)
@@ -19,9 +19,6 @@ export class SubSlot {
     }
     writeToFile(formattedExport: string, componentImport: string){
         let target = new TemplateContent(this.itemData.path, this.paths)
-        target.throwIfNotExists()
-        target.appendImport(`import ${componentImport} from "${formattedExport}"`)
-        target.replaceREPLACEME(componentImport)
-        target.writeContent()
+        target.generate(componentImport, formattedExport, this.itemData, this.exportedPropsName)
     }
 }

@@ -1,5 +1,13 @@
 # @ulld/build
 
+## 0.0.9
+
+### Patch Changes
+
+- Update mistmatched dependencies
+  - @ulld/configschema@0.0.9
+  - @ulld/utilities@0.0.9
+
 ## 0.0.8
 
 ### Patch Changes

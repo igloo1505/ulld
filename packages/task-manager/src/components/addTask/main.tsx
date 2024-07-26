@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { zodResolver, useForm } from '@ulld/full-form/form'

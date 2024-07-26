@@ -1,5 +1,5 @@
 {
-    "version": "0.0.8",
+    "version": "0.0.9",
     "name": "@ulld/icons",
     "private": false,
     "scripts": {
@@ -46,7 +46,9 @@
         "lucide-react": "^0.344.0",
         "next": "^14.2.3",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "@tabler/icons-react": "3.5.0",
+        "react-icons": "5.0.1"
     },
     "devDependencies": {
         "@ulld/types": "workspace:*",
@@ -58,10 +60,7 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
-    "dependencies": {
-        "@tabler/icons-react": "3.5.0",
-        "react-icons": "5.0.1"
-    },
+    "dependencies": {},
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"

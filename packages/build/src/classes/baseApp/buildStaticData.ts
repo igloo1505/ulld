@@ -23,11 +23,14 @@ export class BuildStaticData {
         if(!this.build.appConfig.config?.fsRoot){
             throw new Error(`Cannot generate build output. No fsRoot property was defined in your configuration file.`)
         }
-        let data: Required<BuildStaticDataInput> = {
+        // Weird typing to make sure all keys are implemented.
+        let data: {[K in keyof BuildStaticDataInput]: BuildStaticDataInput[K]} = {
             fsRoot: this.build.appConfig.config.fsRoot,
             navigationLinks: this.build.getFlatNavigationLinks(),
             componentDocs: this.build.getFlatComponentDocs(),
-            settingPages: this.build.getFlatPluginSettingPages()
+            settingPages: this.build.getFlatPluginSettingPages(),
+            transpilePackages: this.build.getPackagesToTranspile(),
+            tailwindSources: this.build.getTailwindSources()
         }
         return data
     }

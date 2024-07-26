@@ -1,5 +1,22 @@
 # @ulld/landing-layouts
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/bib-manager@0.0.9
+  - @ulld/api@0.0.9
+  - @ulld/hooks@0.0.9
+  - @ulld/journal@0.0.9
+  - @ulld/ui@0.0.9
+  - @ulld/whiteboard@0.0.9
+  - @ulld/state@0.0.9
+  - @ulld/configschema@0.0.9
+  - @ulld/utilities@0.0.9
+  - @ulld/developer@0.0.9
+  - @ulld/calendar@0.0.9
+
 ## 0.0.8
 
 ### Patch Changes

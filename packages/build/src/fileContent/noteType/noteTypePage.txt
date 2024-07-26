@@ -4,7 +4,6 @@ import { NoteFilter } from "@ulld/api/classes/search/noteFilter";
 import { NoteTypePageProps } from "@ulld/utilities/types";
 import appConfig from "appConfig";
 import NotePageWrapperTemplate from "#/components/notePageComponents/pageContainer";
-import { NotePageWrapperProps } from "@ulld/ui/types";
 import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 import NoteSummaryItem from "#/components/slots/search/items/noteSummary";
 import NotesSearchResultsListComponent from "#/components/slots/search/lists/noteSearchResultsList";
@@ -13,7 +12,6 @@ import { paginateTemplateString } from "@ulld/utilities/paginationUtils";
 import { searchAllParamsToSearchParamsClass } from "@ulld/utilities/searchUtils";
 import NoteTypeSecondaryFilterTemplate from "#/components/notePageComponents/secondaryNoteTypeFilter";
 import { notFound } from "next/navigation";
-
 
 const categoryId: string = "<<CATEGORY_ID>>";
 
@@ -34,12 +32,12 @@ const MathPage = async (props: NoteTypePageProps) => {
     return (
         <NotePageWrapperTemplate
             {...props}
-            docTypeData={docTypeData as NotePageWrapperProps["docTypeData"]}
+            docTypeData={docTypeData as AppConfigSchemaOutput["noteTypes"][number]}
         >
             <NoteTypeSecondaryFilterTemplate 
                 {...props}
                 data={secondaryData}
-                noteType={docTypeData as NotePageWrapperProps["docTypeData"]}
+                noteType={docTypeData as AppConfigSchemaOutput["noteTypes"][number]}
             />
             <NoteTypeSearchResultList
                 notes={

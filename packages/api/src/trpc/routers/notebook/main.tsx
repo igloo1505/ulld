@@ -1,14 +1,7 @@
-import { z } from "zod"
-import { publicProcedure, router } from "../trpc"
-import fs from 'fs'
-import { prisma } from "@ulld/database/db"
-import { getRemoteIpynbFromPathname } from "../../trpcInternalMethods/notes/ipynb/main"
-import {getRootRelativePathsOfFiletype} from "../../trpcInternalMethods/filesystem/getRootRelativePathsOfFiletype"
+import { publicProcedure, router } from "../../trpc";
 
 
-
-
-export const ipynbRouter = router({
+export const notebookRouter = router({
     getRemoteIpynbFromPathname: publicProcedure.input(z.string()).query(async (opts) => {
         return await getRemoteIpynbFromPathname(opts.input)
     }),

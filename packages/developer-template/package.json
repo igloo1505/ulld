@@ -1,5 +1,5 @@
 {
-    "version": "0.0.8",
+    "version": "0.0.9",
     "name": "@ulld/developer-template",
     "private": true,
     "scripts": {
@@ -28,7 +28,12 @@
         "@ulld/ui": "workspace:*",
         "@ulld/utilities": "workspace:*",
         "file-loader": "^6.2.0",
-        "raw-loader": "^4.0.2"
+        "raw-loader": "^4.0.2",
+        "@mdx-js/mdx": "3.0.1",
+        "mathjax-full": "3.2.2",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
     },
     "devDependencies": {
         "@mdx-js/react": "^3.0.1",
@@ -54,13 +59,7 @@
             "pluginManager": "src/pluginManager.ts"
         }
     },
-    "dependencies": {
-        "@mdx-js/mdx": "3.0.1",
-        "mathjax-full": "3.2.2",
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0"
-    },
+    "dependencies": {},
     "packageManager": "pnpm@9.0.4",
     "files": [
         "pluginConfig.ulld.json"

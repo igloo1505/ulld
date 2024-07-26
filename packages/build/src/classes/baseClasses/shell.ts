@@ -4,19 +4,26 @@ import { PackageManagers } from "../../types";
 
 type LogLevel = "normal" | "verbose" | "debug";
 
-type ExecLogger = (error: ExecException | null, stdout: string | Buffer, stderr: string | Buffer) => void
+type ExecLogger = (
+    error: ExecException | null,
+    stdout: string | Buffer,
+    stderr: string | Buffer,
+) => void;
 
 const packageManagerExecution: Record<PackageManagers, string> = {
     npm: "npm run",
     yarn: "yarn run",
-    pnpm: "pnpm run"
-}
+    pnpm: "pnpm run",
+};
 
 export class ShellManager {
-    logLevel: LogLevel = "normal"
+    logLevel: LogLevel = "normal";
     private logLevelOrder: LogLevel[] = ["normal", "verbose", "debug"];
     constructor() {
-        if (process.env.ULLD_LOG_LEVEL && this.logLevelOrder.includes(process.env.ULLD_LOG_LEVEL as any)) {
+        if (
+            process.env.ULLD_LOG_LEVEL &&
+            this.logLevelOrder.includes(process.env.ULLD_LOG_LEVEL as any)
+        ) {
             this.logLevel = process.env.ULLD_LOG_LEVEL as LogLevel;
         }
     }
@@ -30,7 +37,7 @@ export class ShellManager {
     }
 
     logFixme(val: any, ...vals: any) {
-        console.log(chalk.bgBlueBright.whiteBright(val, ...vals))
+        console.log(chalk.bgBlue.whiteBright(val, ...vals));
     }
 
     log(val: any, ...vals: any) {
@@ -45,6 +52,20 @@ export class ShellManager {
     logVerbose(val: any, ...vals: any) {
         if (!this.shouldLog("verbose")) return;
         console.log(val, ...vals);
+    }
+
+    logError(val: any, ...vals: any) {
+        console.error(val, ...vals);
+    }
+    logWarn(val: any, ...vals: any) {
+        console.warn(val, ...vals);
+    }
+
+    logTable(val: any, ...vals: any) {
+        console.table(val, ...vals);
+    }
+    logTrace(val: any, ...vals: any) {
+        console.trace(val, ...vals);
     }
 
     ulld() {
@@ -64,15 +85,30 @@ export class ShellManager {
         }
         this.tempFiles = this.tempFiles.slice(0, this.tempFiles.length - 1);
     }
-    private execLogger(error: ExecException | null, stdout: string | Buffer, stderr: string | Buffer){
-    }
-    execAsync(val: string, cwd?: string, logger?: ExecLogger){
-       return cp.exec(val, {cwd}, logger || this.execLogger) 
+    private execLogger(
+        error: ExecException | null,
+        stdout: string | Buffer,
+        stderr: string | Buffer,
+    ) { }
+    execAsync(val: string, cwd?: string, logger?: ExecLogger) {
+        return cp.exec(val, { cwd }, logger || this.execLogger);
     }
     exec(val: string, cwd?: string) {
         return cp.execSync(val, { cwd, stdio: "inherit" });
     }
-    execPackageJsonScript(pkgManager: PackageManagers, script: string, cwd?: string){
-         return this.exec(`${packageManagerExecution[pkgManager]} ${script}`, cwd)
+    execPackageJsonScriptAsync(
+        pkgManager: PackageManagers,
+        script: string,
+        cwd?: string,
+        logger?: ExecLogger
+    ) {
+        return this.execAsync(`${packageManagerExecution[pkgManager]} ${script}`, cwd, logger);
+    }
+    execPackageJsonScript(
+        pkgManager: PackageManagers,
+        script: string,
+        cwd?: string,
+    ) {
+        return this.exec(`${packageManagerExecution[pkgManager]} ${script}`, cwd);
     }
 }

@@ -148,6 +148,20 @@ export class PackageManager {
             encoding: "utf-8",
         });
     }
+    movePackageToPeer(packageName: string, excludeMonorepoPackages: string[] = []) {
+        let _excludeMonorepoPackages = [...excludeMonorepoPackages, "@ulld/website"]
+        for (const pkg of this.packages) {
+            pkg.deps = pkg.deps.map((d) => {
+                if(!_excludeMonorepoPackages.includes(d.name) && d.type === "dependencies"){
+                     return {
+                     ...d,
+                         type: "peerDependencies"
+                     }
+                }
+                return d
+            })
+        }
+    }
     getRootRelativePath(p: string) {
         return `${this.root}/${p.startsWith("/") ? p.slice(1, p.length) : p}`;
     }
@@ -338,9 +352,9 @@ pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${package
                 } catch (err) {
                     this.packagePublishedMap[k] = false;
                     if (k !== "@ulld/types") {
-                    console.log(
-                        `${k} not found in npm repository. Removing from all internal packages.`,
-                    );
+                        console.log(
+                            `${k} not found in npm repository. Removing from all internal packages.`,
+                        );
                         removeDepNames.push(k);
                     }
                 }
@@ -438,6 +452,18 @@ pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${package
             }
         }
     }
+    setPackageVersion(packageName: string, version: string) {
+        for (const pkg of this.packages) {
+            pkg.deps = pkg.deps.map((a) => {
+                return a.name === packageName
+                    ? {
+                        ...a,
+                        version: version,
+                    }
+                    : a;
+            });
+        }
+    }
     applyPluginConfigToFiles() {
         console.log(`Applying plugin config files to package.json files property.`);
         for (const k of this.packages) {
@@ -500,4 +526,3 @@ pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${package
         }
     }
 }
-

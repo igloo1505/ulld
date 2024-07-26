@@ -36,7 +36,7 @@ const AutoSettingFormModal = ({ editing, open, setOpen, appendSetting }: AutoSet
             title: "Success",
             description: `The automatic ${data.type} has been saved.`
         })
-        if (edit) {
+        if (editing) {
             router.push(`/settings/autoSettings`)
         }
         form.reset()

@@ -4,7 +4,7 @@ import { getDbAutoSettings } from "./getDbAutosetting"
 import globToRegExp from "glob-to-regexp"
 import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { ParsedAppConfig } from "@ulld/configschema/types"
-import { AutoSettingType } from "../../../trpc/routers/sync";
+import { AutoSettingType } from "@ulld/utilities/types";
 import { AutoSettingWithRegex } from "../../../trpc/types";
 
 

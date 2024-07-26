@@ -5,6 +5,7 @@ import { TargetPaths } from "./paths";
 import dotenv from "dotenv";
 import fs from "fs";
 import path from "path";
+import { FileManager } from "./baseClasses/fileManager";
 
 type SupportedEnvVariableId =
     | "postgresUri"
@@ -48,7 +49,7 @@ export class EnvManager extends ShellManager {
     globalEnvParedFileData?: object;
     globalEnvPath?: string;
     glovalEnvFileExists: boolean = false;
-    constructor() {
+    constructor(public paths: TargetPaths) {
         super();
         let additionalSources = this.getEnvItemById("additionalSources");
         if (additionalSources.value) {
@@ -91,6 +92,29 @@ export class EnvManager extends ShellManager {
                 }
             })
         }
+    }
+    toJson(){
+      let d: Record<string, string> = { } 
+        for (const variable of this.envItems) {
+            if(variable.value){
+            d[variable.variable] = variable.value as string
+            }
+        }
+        return d
+    }
+    writeEnvLocal(){
+        let target = FileManager.fromPathKey("envLocal", this.paths)
+        let json = this.toJson()
+        let exists = target.exists()
+        let data = exists ? {
+        ...json,
+        ...dotenv.parse(target.getContent())
+        } : json
+        let asString = ""
+        for (const n in data) {
+            asString += `${n}="${data[n]}"`
+        }
+        target.writeContent(asString)
     }
     getEnvItemById(id: SupportedEnvVariableId) {
         let item = this.envItems.find((f) => f.id === id);

@@ -1,5 +1,5 @@
 {
-    "version": "0.0.8",
+    "version": "0.0.9",
     "name": "@ulld/website",
     "private": true,
     "scripts": {
@@ -22,7 +22,28 @@
         "generateWebTags": "tsx --tsconfig ./tsconfig.json ./scripts/getTagList.ts",
         "prepareWeb": "zsh ./scripts/prepareToCommit.zsh"
     },
-    "dependencies": {
+    "dependencies": {},
+    "devDependencies": {
+        "@shikijs/transformers": "^1.6.4",
+        "@shikijs/twoslash": "^1.5.2",
+        "@tailwindcss/forms": "^0.5.7",
+        "@tailwindcss/typography": "^0.5.13",
+        "@types/jest": "^29.5.11",
+        "@types/mathjax": "^0.0.40",
+        "@ulld/eslint-config": "workspace:^",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "@vercel/node": "^3.1.4",
+        "globby": "^14.0.1",
+        "sass": "^1.77.8",
+        "prisma": "5.17.0",
+        "tailwindcss": "^3.4.1",
+        "tsx": "^4.10.4",
+        "twoslash": "^0.2.6"
+    },
+    "packageManager": "pnpm@9.0.4",
+    "files": [],
+    "peerDependencies": {
         "@content-collections/core": "^0.6.0",
         "@content-collections/mdx": "^0.1.3",
         "@content-collections/next": "^0.2.0",
@@ -36,8 +57,8 @@
         "@napi-rs/canvas": "^0.1.52",
         "@next/mdx": "^14.2.3",
         "@next/third-parties": "^14.2.3",
-        "@prisma/client": "^5.17.0",
-        "@prisma/nextjs-monorepo-workaround-plugin": "^5.15.1",
+        "@prisma/client": "5.17.0",
+        "@prisma/nextjs-monorepo-workaround-plugin": "5.17.0",
         "@react-spring/three": "^9.7.3",
         "@react-spring/web": "^9.7.3",
         "@react-three/drei": "^9.105.6",
@@ -119,26 +140,5 @@
         "stripe": "^15.6.0",
         "three": "^0.163.0",
         "three-noise": "^1.1.2"
-    },
-    "devDependencies": {
-        "@shikijs/transformers": "^1.6.4",
-        "@shikijs/twoslash": "^1.5.2",
-        "@tailwindcss/forms": "^0.5.7",
-        "@tailwindcss/typography": "^0.5.13",
-        "@types/jest": "^29.5.11",
-        "@types/mathjax": "^0.0.40",
-        "@ulld/eslint-config": "workspace:^",
-        "@ulld/jest-presets": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "@vercel/node": "^3.1.4",
-        "globby": "^14.0.1",
-        "sass": "^1.77.8",
-        "prisma": "^5.17.0",
-        "tailwindcss": "^3.4.1",
-        "tsx": "^4.10.4",
-        "twoslash": "^0.2.6"
-    },
-    "packageManager": "pnpm@9.0.4",
-    "files": [],
-    "peerDependencies": {}
+    }
 }

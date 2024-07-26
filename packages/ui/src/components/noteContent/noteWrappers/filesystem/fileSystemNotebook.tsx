@@ -3,9 +3,10 @@ import React from 'react'
 import { cookies } from 'next/headers'
 import { serverClient } from '@ulld/api/serverClient'
 import { NotePageProps } from '../../../../utilityFunctions/formatting/formatNoteProps'
+import { NotebookProps } from '@ulld/notebook/types'
 
 
-interface FileSystemNotebookProps extends NotePageProps {
+interface FileSystemNotebookProps extends NotePageProps, NotebookProps {
     rootRelativeWithExtension: string
     absolutePath: string
     rootRelativePath: string
@@ -14,17 +15,16 @@ interface FileSystemNotebookProps extends NotePageProps {
 
 /* /* NOTE: Might not want to return it as a blob or utf string if it's going to be directly interacting with the ipy kernel. */
 const FileSystemNotebook = async (props: FileSystemNotebookProps) => {
-    console.log("props: ", props)
-    let data = await serverClient.ipynb.getFsIpynb({ absolutePath: props.absolutePath })
-    const Notebook = dynamic(() => import("../../../jupyter/notebooks/notebook"), { ssr: false })
+    let data = await serverClient.notebook.getFsIpynb({ absolutePath: props.absolutePath })
+    const Notebook = dynamic(() => import("@ulld/notebook/notebook"), { ssr: false })
     const darkMode = cookies().has("darkMode")
 
     return (
         <Notebook
-            path={props.rootRelativeWithExtension}
+            rootRelativePath={props.rootRelativeWithExtension}
             content={data}
             prefer="fs"
-            darkMode={darkMode}
+            initialDarkMode={darkMode}
         />
     )
 }

@@ -42,7 +42,7 @@ export class BaseApp extends ShellManager {
     generate() {
         this.logVerbose("Creating component map...")
         this.createComponentMap(this.build.plugins)
-        this.logVerbose("Applying componet slots...")
+        this.logVerbose("Applying component slots...")
         this.applySlots()
         this.logVerbose("Writing temporary target paths...")
         this.writeTemporaryTargetPaths()
@@ -73,7 +73,6 @@ export class BaseApp extends ShellManager {
         this.log("wrote embeddable component map successfully!");
     }
     applySlots() {
-        this.logVerbose(`applying slots...`);
         const componentSlotMap = this.build.getComponentSlotMap();
         let flattenedMap = flattenSlotMap(componentSlotMap);
         for (const k of flattenedMap) {
@@ -195,10 +194,10 @@ export default unifiedParserList
         let templateString = tf.getNewContent({})
         let f = new FileManager(".gitignore", this.paths, false)
         f.writeContent(templateString)
-
     }
     onBuild(){
         this.writeGitIgnore()
+        this.build.env.writeEnvLocal()
         this.build.db.generate(this.build.appConfig, this.build.packageManager)
     }
     cleanUp(){

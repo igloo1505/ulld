@@ -35,7 +35,6 @@ const FullScreenNavigationMenu = ({
     noteTypes,
 }: FullScreenNavigationMenuProps) => {
 
-
     return (
         <div
             className={

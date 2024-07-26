@@ -46,6 +46,7 @@ export class PluginComponent extends ShellManager {
                 props.parentSlot,
                 data.slot as AnySubSlotKey,
                 this.paths,
+                this.data.exportedPropsName
             );
             this.subSlotKey = data.slot as AnySubSlotKey;
         }

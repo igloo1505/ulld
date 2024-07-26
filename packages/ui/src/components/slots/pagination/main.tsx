@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useMemo, useState } from 'react'
 import { PaginationProps } from '../../../types/general'
 import { parsePaginationTemplateString } from "@ulld/utilities/paginationUtils"

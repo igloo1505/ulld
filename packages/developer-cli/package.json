@@ -1,5 +1,5 @@
 {
-    "version": "0.0.8",
+    "version": "0.0.9",
     "name": "@ulld/developer-cli",
     "private": false,
     "exports": "./lib/index.js",
@@ -60,7 +60,12 @@
         "unexpected": "^13.2.1",
         "zocker": "^1.4.1"
     },
-    "dependencies": {
+    "dependencies": {},
+    "packageManager": "pnpm@9.0.4",
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {
         "@inquirer/prompts": "5.0.1",
         "@oclif/core": "3.26.2",
         "@oclif/plugin-autocomplete": "3.0.13",
@@ -78,10 +83,5 @@
         "react-dom": "18.2.0",
         "terminal-link": "3.0.0",
         "ts-import": "5.0.0-beta.0"
-    },
-    "packageManager": "pnpm@9.0.4",
-    "publishConfig": {
-        "access": "public"
-    },
-    "peerDependencies": {}
+    }
 }

@@ -61,6 +61,7 @@ export const componentConfigSchema = z
             .describe(
                 "This can be an array to apply aliases to the same component. The component won't be imported twice.",
             ),
+        exportedPropsName: z.string().optional(),
         docsExport: z
             .string()
             .optional()

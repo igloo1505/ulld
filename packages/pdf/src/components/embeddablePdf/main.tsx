@@ -6,7 +6,7 @@ import TocContainer from '../fullPdf/TocContainer'
 import { pdfStateClasses } from '../../types'
 
 
-interface MdxPdfViewerProps {
+export interface MdxPdfViewerProps {
     file: string
     page?: number
     hideToc?: boolean

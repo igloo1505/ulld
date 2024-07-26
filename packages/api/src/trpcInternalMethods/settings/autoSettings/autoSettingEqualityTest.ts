@@ -1,4 +1,4 @@
-import { AutoSettingType } from "../../../trpc/routers/sync"
+import { AutoSettingType } from "@ulld/utilities/types";
 
 
 export const autoSettingEquality = (a: AutoSettingType, b: AutoSettingType) => {

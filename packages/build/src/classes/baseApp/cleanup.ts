@@ -24,8 +24,19 @@ export class BuildCleanup extends ShellManager {
     private runOnBuild(){
         this.execPackageJsonScript(this.pkgManager, "runOnBuild", this.paths.projectRoot)
     }
+    private removePreCommitHooks(){
+        let commitHookRoot = this.paths.joinPath("projectRoot", ".commitHooks")
+        let files = globSync("**", {
+            cwd: commitHookRoot
+        }).map((f) => path.join(commitHookRoot, f))
+        for (const f of files) {
+            fs.rmSync(f)
+        }
+        fs.rmdirSync(commitHookRoot)
+    }
     runCleanup(){
         this.runOnBuild()
         this.removeTempBuildDir()
+        this.removePreCommitHooks()
     }
 }

@@ -1,6 +1,5 @@
-import { AnySubSlotKey } from "@ulld/configschema/developerTypes";
+import { AnySubSlotKey, PluginSlotKey } from "@ulld/configschema/developerTypes";
 import { SlotMapOfType } from "@ulld/configschema/types";
-import { PluginSlotKey } from "@ulld/types";
 import fullSlotMap from "@ulld/utilities/slotMap.json"
 
 export const walkSlotMap = <T extends unknown, J extends unknown>(

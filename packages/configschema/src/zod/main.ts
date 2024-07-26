@@ -23,6 +23,7 @@ import {
 } from "@ulld/utilities/fsUtils";
 import { buildOnlySchema } from "./build/main";
 import { appMetaSchema } from "./meta";
+import staticBuildData from "@ulld/utilities/buildStaticData"
 
 export const zodRegexField = z
     .union([
@@ -207,7 +208,7 @@ export const appConfigSchema = z.object({
             {
                 name: "@ulld/api",
                 parserIndex: 0,
-                version: "latest",
+                version: staticBuildData.currentPackageVersions["@ulld/api"],
             },
         ]),
 });

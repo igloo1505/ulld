@@ -6,10 +6,10 @@ import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/
 import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes"
 import { WithFSSearchParams } from "@ulld/state/searchParamSchemas/utilities/formatSearchAllParams"
 import { ensureAbsolute } from "@ulld/utilities/utils/fsUtils"
-import { getPathnameFromHeaders } from "#/trpcInternalMethods/filesystem/getPathnameFromHeaders";
 import { SearchAllParams } from "@ulld/utilities/types"
 import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
+import { getPathnameFromHeaders } from "../../trpcInternalMethods/filesystem/getPathnameFromHeaders";
 
 
 type NotePropertiesOutput = ({

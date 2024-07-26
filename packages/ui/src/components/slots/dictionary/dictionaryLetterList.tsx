@@ -1,8 +1,7 @@
-import { DictionaryLetterList } from "../../../types/general";
+import { DictionaryLetterListProps } from "../../../types/general";
 import React from "react";
-import { Step } from "fumadocs-ui/components/steps";
+/* import { Step } from "fumadocs-ui/components/steps"; */
 
-interface DictionaryLetterListProps extends DictionaryLetterList { }
 
 const DictionaryLetterListComponent = ({letter, children}: DictionaryLetterListProps) => {
     return <div className={"grid grid-cols-[auto_1fr]"}>

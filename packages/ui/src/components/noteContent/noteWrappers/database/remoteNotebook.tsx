@@ -12,20 +12,20 @@ interface RemoteNotebookProps extends NotePageProps {
 }
 
 const DatabaseNotebook = async (props: RemoteNotebookProps) => {
-    const nb = await serverClient.ipynb.getDatabaseNotebook({
+    const nb = await serverClient.notebook.getDatabaseNotebook({
         rootRelativePath: props.rootRelativePath
     })
 
     let content = nb?.raw ? nb.raw.toString() : undefined
 
-    const Notebook = dynamic(() => import("../../../jupyter/notebooks/notebook"), { ssr: false })
+    const Notebook = dynamic(() => import("@ulld/notebook/notebook"), { ssr: false })
     const darkMode = cookies().has("darkMode")
 
     return (
         <Notebook
             content={content}
-            path={props.rootRelativeWithExtension}
-            darkMode={darkMode}
+            rootRelativePath={props.rootRelativeWithExtension}
+            initialDarkMode={darkMode}
             prefer={nb ? "db" : "fs"}
         />
     )

@@ -3,11 +3,11 @@ import React, { useEffect } from 'react'
 import CommandPaletteItem from '../commandItem'
 import { Command } from 'cmdk'
 import { pages } from '../commandPaletteUtilities'
-import { MdxContentCLIENT } from '@ulld/ui/mdxDisplayCLIENT'
-import type {commandPaletteRouter} from "../../lib/commandPaletteRouter"
-type E = Awaited<ReturnType<typeof commandPaletteRouter.equationSearch>>
+import { MdxContentCLIENT } from '@ulld/render/mdx'
+import { EquationSearchResult } from '@ulld/api/types'
 
-export type EquationCmdItem = E[number] & { value: string }
+
+export type EquationCmdItem = EquationSearchResult[number] & { value: string }
 
 interface EquationSearchCommandGroupProps {
     activePage?: pages

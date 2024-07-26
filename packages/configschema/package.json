@@ -1,5 +1,5 @@
 {
-    "version": "0.0.8",
+    "version": "0.0.9",
     "name": "@ulld/configschema",
     "private": false,
     "main": "./src/types.ts",
@@ -73,19 +73,7 @@
         "lint": "echo 'Add lint script here'",
         "gatherTypes": "tsc --project ./tsconfigTypes.json --emitDeclarationOnly"
     },
-    "dependencies": {
-        "@ulld/base-configs": "workspace:*",
-        "@ulld/developer-schemas": "workspace:*",
-        "@ulld/icons": "workspace:*",
-        "@ulld/tailwind": "workspace:*",
-        "@ulld/utilities": "workspace:*",
-        "dayjs": "1.11.11",
-        "glob-to-regexp": "0.4.1",
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "shiki": "1.1.7"
-    },
+    "dependencies": {},
     "devDependencies": {
         "@testing-library/cypress": "^10.0.1",
         "@testing-library/dom": "^9.3.4",
@@ -111,7 +99,18 @@
         "zod-to-json-schema": "^3.22.4"
     },
     "peerDependencies": {
-        "zod": "^3.22.4"
+        "zod": "^3.22.4",
+        "@ulld/base-configs": "workspace:*",
+        "@ulld/developer-schemas": "workspace:*",
+        "@ulld/icons": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/utilities": "workspace:*",
+        "dayjs": "1.11.11",
+        "glob-to-regexp": "0.4.1",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "shiki": "1.1.7"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {

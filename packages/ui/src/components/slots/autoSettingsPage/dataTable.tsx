@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useMemo, useState } from 'react'
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuCheckboxItem } from '@ulld/tailwind/dropdown-menu'
 import { Popover, PopoverTrigger, PopoverContent } from '@ulld/tailwind/popover'

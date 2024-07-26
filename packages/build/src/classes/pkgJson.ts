@@ -31,8 +31,8 @@ export class TargetPackageJson extends PackageJson {
 
     // ULLD_BUILD_PROCESS: Need to handle this.
     // TODO: Need to handle this. Can't do shit without wifi right now.
-    async installDependencies(forceLocalSource?: boolean) {
-        let manager = await this.promptForPackageManager();
+    async installDependencies(forceLocalSource?: boolean, providedPackageManager?: PackageManagers) {
+        let manager = providedPackageManager ? providedPackageManager : await this.promptForPackageManager();
         if (!manager) {
             console.log(`Could not find a preferred package manager. Exiting.`);
             process.exit(1);
@@ -40,7 +40,7 @@ export class TargetPackageJson extends PackageJson {
         if (forceLocalSource) {
             this.logDebug(`Applying local sources for development build.`)
             this.exec(
-                `tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/setClonedBaseAppInternalDepLocations.ts toLocal`,
+                `ULLD_TEST_ROOT="${this.targetDir}" tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/setClonedBaseAppInternalDepLocations.ts toLocal`,
             );
         }
         this.log(`Downloading dependencies with ${manager}`);

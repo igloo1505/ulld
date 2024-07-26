@@ -1,365 +1,365 @@
 {
-    "snippets": {
-        "SnippetListPage": {
-            "path": "src/corePages/snippets/pageWrapper.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "SnippetsPageProps"
-        },
-        "AddSnippetPage": {
-            "path": "src/corePages/snippets/add.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "AddSnippetPageProps"
-        },
-        "SnippetList": {
-            "path": "src/components/slots/snippets/snippetList.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "SnippetListProps"
-        },
-        "SnippetFilter": {
-            "path": "src/components/slots/snippets/snippetFilter.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "SnippetFilterProps"
-        }
+  "snippets": {
+    "SnippetListPage": {
+      "path": "src/corePages/snippets/pageWrapper.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "SnippetsPageProps"
     },
-    "math": {
-        "EquationDetailsModalPage": {
-            "path": "src/corePages/modal/equationDetails.tsx",
-            "clientOnly": true,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "EquationDetailModalPageProps"
-        },
-        "EquationsPage": {
-            "path": "src/corePages/equations/list.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "EquationsPageProps"
-        },
-        "EquationDetailsPage": {
-            "path": "src/corePages/equations/details.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "EquationDetailModalPageProps"
-        },
-        "AddEquationPage": {
-            "path": "src/corePages/equations/add.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "AddEquationsPageProps"
-        }
+    "AddSnippetPage": {
+      "path": "src/corePages/snippets/add.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "AddSnippetPageProps"
     },
-    "editor": {
-        "EditorModalPage": {
-            "path": "src/corePages/modal/editor.tsx",
-            "clientOnly": true,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "MonacoPageParams"
-        },
-        "MdxEditorPage": {
-            "path": "src/corePages/editor/mdxEditor.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "EditorPageContentProps"
-        },
-        "LatexEditorPage": {
-            "path": "src/corePages/editor/latexEditor.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "EditorPageContentProps"
-        },
-        "EditorPage": {
-            "path": "src/corePages/editor/editor.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "MonacoPageParams"
-        }
+    "SnippetList": {
+      "path": "src/components/slots/snippets/snippetList.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "SnippetListProps"
     },
-    "UI": {
-        "ComponentDocsListPage": {
-            "path": "src/corePages/componentDocs/componentDocsListPage.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "ComponentDocsListPageProps"
-        },
-        "Pagination": {
-            "path": "src/components/slots/ui/pagination.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "PaginationProps"
-        },
-        "logo": {
-            "path": "src/components/slots/ui/logo.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "HTMLProps<HTMLOrSVGElement>"
-        },
-        "loadingIndicator": {
-            "path": "src/components/slots/ui/loadingIndicator.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "LoadingIndicatorProps"
-        },
-        "confirmationModal": {
-            "path": "src/components/slots/ui/confirmationModal.tsx",
-            "clientOnly": true,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "ConfirmationModalProps"
-        },
-        "ComponentDocumentationPageWrapper": {
-            "path": "src/components/slots/ui/componentDocumentationPageWrapper.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "ComponentDocWrapperProps"
-        },
-        "AutoSettingsTable": {
-            "path": "src/components/slots/ui/autoSettingTable.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "AutoSettingsTableProps"
-        },
-        "AutoSettingFormModal": {
-            "path": "src/components/slots/ui/autoSettingFormModal.tsx",
-            "clientOnly": true,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "AutoSettingFormModalProps"
-        },
-        "SearchResultsPage": {
-            "path": "src/components/slots/search/searchResults.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "SearchResultsPageProps"
-        },
-        "BookmarksPage": {
-            "path": "src/components/slots/search/bookmarksPage.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "BookmarksResultsPageProps"
-        },
-        "NotesSearchResultsList": {
-            "path": "src/components/slots/search/lists/noteSearchResultsList.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "NotesSearchResultsListProps"
-        },
-        "NoteSummarySearchResult": {
-            "path": "src/components/slots/search/items/noteSummary.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "NoteSummaryProps"
-        },
-        "DictionaryLetterList": {
-            "path": "src/components/slots/dictionary/dictionaryLetterList.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "DictionaryLetterList"
-        },
-        "DictionaryPageItem": {
-            "path": "src/components/slots/dictionary/dictionaryItem.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "DictionaryItemProps"
-        },
-        "NoteTypeSecondaryFilter": {
-            "path": "src/components/notePageComponents/secondaryNoteTypeFilter.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "NoteTypeSecondaryFilterProps"
-        },
-        "NoteTypeSearchResultList": {
-            "path": "src/components/notePageComponents/searchResultList.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "generatedPage",
-            "propsExtends": "NoteTypeSearchResultListProps"
-        },
-        "MdxNoteContainer": {
-            "path": "src/components/notePageComponents/pageContainer.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "generatedPage",
-            "propsExtends": "NotePageWrapperProps"
-        }
-    },
-    "bibliography": {
-        "BibliographyPage": {
-            "path": "src/corePages/bibliography/bibliography.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "BibliographyPageProps"
-        },
-        "BibEntryDetails": {
-            "path": "src/components/slots/bibliography/bibEntryDetailsSheet.tsx",
-            "clientOnly": true,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "BibEntryDetailsProps"
-        }
-    },
-    "taskManager": {
-        "TaskManagerPage": {
-            "path": "src/components/slots/taskManager/taskManagerPage.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "TaskManagerPageProps"
-        },
-        "TaskDetails": {
-            "path": "src/components/slots/taskManager/taskDetail.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "TaskDetailsProps"
-        },
-        "AddTask": {
-            "path": "src/components/slots/taskManager/addTask.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "AddTaskProps"
-        },
-        "AddTaskList": {
-            "path": "src/components/slots/taskManager/addList.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "AddTaskListProps"
-        },
-        "TaskListSearchResultList": {
-            "path": "src/components/slots/search/lists/taskListSearchResults.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "TaskListSearchResultsListProps"
-        },
-        "TaskListSearchResult": {
-            "path": "src/components/slots/search/items/taskListSearchResult.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "TaskListSearchResultProps"
-        }
-    },
-    "pdf": {
-        "FullPdf": {
-            "path": "src/components/slots/pdf/pdfFull.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "FullPdfProps"
-        },
-        "EmbeddablePdf": {
-            "path": "src/components/requiredEmbeddableComponents/pdf.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "embeddable",
-            "propsExtends": "EmbeddablePdfProps",
-            "embeddables": [
-                {
-                    "regexToInclude": "<Pdf",
-                    "label": "Pdf"
-                }
-            ]
-        }
-    },
-    "navigation": {
-        "secondary": {
-            "path": "src/components/slots/navigation/secondaryNavigation.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "SecondaryNavigationProps"
-        },
-        "navbar": {
-            "path": "src/components/slots/navigation/navbar.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "NavbarComponentProps"
-        },
-        "MultiPageSidebar": {
-            "path": "src/components/slots/navigation/multipageSidebar.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "MultipageSidebarProps"
-        },
-        "MdxNoteToc": {
-            "path": "src/components/slots/navigation/mdxNoteToc.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "MdxNoteTocProps"
-        },
-        "FullScreenNavigationMenu": {
-            "path": "src/components/slots/navigation/fullScreenNavigationMenu.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "FullScreenNavProps"
-        },
-        "Footer": {
-            "path": "src/components/slots/navigation/footer.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "FooterProps"
-        }
-    },
-    "dashboard": {
-        "LandingPage": {
-            "path": "src/components/slots/landingPage/main.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "page",
-            "propsExtends": "LandingPageProps"
-        }
-    },
-    "form": {
-        "SettingsPageContainer": {
-            "path": "src/components/slots/form/settingsPageContainer.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "SettingsPageContainerProps"
-        }
-    },
-    "commandPalette": {
-        "commandPalette": {
-            "path": "src/components/slots/commandPalette/main.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component"
-        }
+    "SnippetFilter": {
+      "path": "src/components/slots/snippets/snippetFilter.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "SnippetFilterProps"
     }
+  },
+  "math": {
+    "EquationDetailsModalPage": {
+      "path": "src/corePages/modal/equationDetails.tsx",
+      "clientOnly": true,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "EquationDetailModalPageProps"
+    },
+    "EquationsPage": {
+      "path": "src/corePages/equations/list.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "EquationsPageProps"
+    },
+    "EquationDetailsPage": {
+      "path": "src/corePages/equations/details.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "EquationDetailModalPageProps"
+    },
+    "AddEquationPage": {
+      "path": "src/corePages/equations/add.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "AddEquationsPageProps"
+    }
+  },
+  "editor": {
+    "EditorModalPage": {
+      "path": "src/corePages/modal/editor.tsx",
+      "clientOnly": true,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "MonacoPageParams"
+    },
+    "MdxEditorPage": {
+      "path": "src/corePages/editor/mdxEditor.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "EditorPageContentProps"
+    },
+    "LatexEditorPage": {
+      "path": "src/corePages/editor/latexEditor.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "EditorPageContentProps"
+    },
+    "EditorPage": {
+      "path": "src/corePages/editor/editor.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "MonacoPageParams"
+    }
+  },
+  "UI": {
+    "ComponentDocsListPage": {
+      "path": "src/corePages/componentDocs/componentDocsListPage.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "ComponentDocsListPageProps"
+    },
+    "Pagination": {
+      "path": "src/components/slots/ui/pagination.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "PaginationProps"
+    },
+    "logo": {
+      "path": "src/components/slots/ui/logo.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "HTMLProps<HTMLOrSVGElement>"
+    },
+    "loadingIndicator": {
+      "path": "src/components/slots/ui/loadingIndicator.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "LoadingIndicatorProps"
+    },
+    "confirmationModal": {
+      "path": "src/components/slots/ui/confirmationModal.tsx",
+      "clientOnly": true,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "ConfirmationModalProps"
+    },
+    "ComponentDocumentationPageWrapper": {
+      "path": "src/components/slots/ui/componentDocumentationPageWrapper.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "ComponentDocWrapperProps"
+    },
+    "AutoSettingsTable": {
+      "path": "src/components/slots/ui/autoSettingTable.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "AutoSettingsTableProps"
+    },
+    "AutoSettingFormModal": {
+      "path": "src/components/slots/ui/autoSettingFormModal.tsx",
+      "clientOnly": true,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "AutoSettingFormModalProps"
+    },
+    "SearchResultsPage": {
+      "path": "src/components/slots/search/searchResults.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "SearchResultsPageProps"
+    },
+    "BookmarksPage": {
+      "path": "src/components/slots/search/bookmarksPage.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "BookmarksResultsPageProps"
+    },
+    "NotesSearchResultsList": {
+      "path": "src/components/slots/search/lists/noteSearchResultsList.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "NotesSearchResultsListProps"
+    },
+    "NoteSummarySearchResult": {
+      "path": "src/components/slots/search/items/noteSummary.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "NoteSummaryProps"
+    },
+    "DictionaryLetterList": {
+      "path": "src/components/slots/dictionary/dictionaryLetterList.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "DictionaryLetterListProps"
+    },
+    "DictionaryPageItem": {
+      "path": "src/components/slots/dictionary/dictionaryItem.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "DictionaryItemProps"
+    },
+    "NoteTypeSecondaryFilter": {
+      "path": "src/components/notePageComponents/secondaryNoteTypeFilter.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "NoteTypeSecondaryFilterProps"
+    },
+    "NoteTypeSearchResultList": {
+      "path": "src/components/notePageComponents/searchResultList.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "generatedPage",
+      "propsExtends": "NoteTypeSearchResultListProps"
+    },
+    "MdxNoteContainer": {
+      "path": "src/components/notePageComponents/pageContainer.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "generatedPage",
+      "propsExtends": "NotePageWrapperProps"
+    }
+  },
+  "bibliography": {
+    "BibliographyPage": {
+      "path": "src/corePages/bibliography/bibliography.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "BibliographyPageProps"
+    },
+    "BibEntryDetails": {
+      "path": "src/components/slots/bibliography/bibEntryDetailsSheet.tsx",
+      "clientOnly": true,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "BibEntryDetailsProps"
+    }
+  },
+  "taskManager": {
+    "TaskManagerPage": {
+      "path": "src/components/slots/taskManager/taskManagerPage.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "TaskManagerPageProps"
+    },
+    "TaskDetails": {
+      "path": "src/components/slots/taskManager/taskDetail.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "TaskDetailsProps"
+    },
+    "AddTask": {
+      "path": "src/components/slots/taskManager/addTask.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "AddTaskProps"
+    },
+    "AddTaskList": {
+      "path": "src/components/slots/taskManager/addList.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "AddTaskListProps"
+    },
+    "TaskListSearchResultList": {
+      "path": "src/components/slots/search/lists/taskListSearchResults.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "TaskListSearchResultsListProps"
+    },
+    "TaskListSearchResult": {
+      "path": "src/components/slots/search/items/taskListSearchResult.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "TaskListSearchResultProps"
+    }
+  },
+  "pdf": {
+    "FullPdf": {
+      "path": "src/components/slots/pdf/pdfFull.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "FullPdfProps"
+    },
+    "EmbeddablePdf": {
+      "path": "src/components/requiredEmbeddableComponents/pdf.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "embeddable",
+      "propsExtends": "EmbeddablePdfProps",
+      "embeddables": [
+        {
+          "regexToInclude": "<Pdf",
+          "label": "Pdf"
+        }
+      ]
+    }
+  },
+  "navigation": {
+    "secondary": {
+      "path": "src/components/slots/navigation/secondaryNavigation.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "SecondaryNavigationProps"
+    },
+    "navbar": {
+      "path": "src/components/slots/navigation/navbar.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "NavbarComponentProps"
+    },
+    "MultiPageSidebar": {
+      "path": "src/components/slots/navigation/multipageSidebar.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "MultipageSidebarProps"
+    },
+    "MdxNoteToc": {
+      "path": "src/components/slots/navigation/mdxNoteToc.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "MdxNoteTocProps"
+    },
+    "FullScreenNavigationMenu": {
+      "path": "src/components/slots/navigation/fullScreenNavigationMenu.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "FullScreenNavProps"
+    },
+    "Footer": {
+      "path": "src/components/slots/navigation/footer.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "FooterProps"
+    }
+  },
+  "dashboard": {
+    "LandingPage": {
+      "path": "src/components/slots/landingPage/main.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "page",
+      "propsExtends": "LandingPageProps"
+    }
+  },
+  "form": {
+    "SettingsPageContainer": {
+      "path": "src/components/slots/form/settingsPageContainer.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component",
+      "propsExtends": "SettingsPageContainerProps"
+    }
+  },
+  "commandPalette": {
+    "commandPalette": {
+      "path": "src/components/slots/commandPalette/main.tsx",
+      "clientOnly": false,
+      "inReduxProvider": false,
+      "type": "component"
+    }
+  }
 }

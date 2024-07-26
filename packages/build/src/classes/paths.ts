@@ -35,6 +35,7 @@ export class TargetPaths
     unifiedUserDefinedScss: string;
     prismaSchema: string;
     gitignore: string;
+    envLocal: string
     constructor(
         public targetDir: string,
         public isLocalDev: boolean,
@@ -46,6 +47,7 @@ export class TargetPaths
         this.unifiedUserDefinedScss = path.join(this.styles, "index.scss");
         this.userDefinedStyles = path.join(this.styles, "userProvided");
         this.app = path.join(targetDir, "src", "app");
+        this.envLocal = path.join(targetDir, ".env.local")
         this.projectRoot = targetDir;
         this.packageJson = path.join(targetDir, "package.json");
         this.packageJson = path.join(targetDir, "package.json");

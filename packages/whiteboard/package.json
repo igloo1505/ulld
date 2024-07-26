@@ -1,5 +1,5 @@
 {
-    "version": "0.0.8",
+    "version": "0.0.9",
     "name": "@ulld/whiteboard",
     "private": false,
     "scripts": {
@@ -28,7 +28,9 @@
         "y-indexeddb": "^9.0.12",
         "y-webrtc": "^10.3.0",
         "y-websocket": "^2.0.2",
-        "yjs": "^13.6.14"
+        "yjs": "^13.6.14",
+        "@excalidraw/excalidraw": "0.17.3",
+        "sass": "1.74.1"
     },
     "devDependencies": {
         "@ulld/jest-presets": "workspace:*",
@@ -43,10 +45,7 @@
         "y-websocket": "^2.0.2",
         "yjs": "^13.6.14"
     },
-    "dependencies": {
-        "@excalidraw/excalidraw": "0.17.3",
-        "sass": "1.74.1"
-    },
+    "dependencies": {},
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"

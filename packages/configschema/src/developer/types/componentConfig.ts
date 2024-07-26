@@ -9,4 +9,5 @@ export type ComponentConfig<T extends PluginSlotKey | undefined = undefined> = {
     embeddable?: EmbeddableConfig | EmbeddableConfig[]
     docsExport?: string
     fullDocsExport?: string
+    exportedPropsName?: string
 };

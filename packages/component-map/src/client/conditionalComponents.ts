@@ -1,16 +1,9 @@
-import { AdditionalComponentType, AdditionalComponents, ConditionalComponentQuery } from "../types";
+import { AdditionalComponentType, AdditionalComponents, ConditionalComponentProps, ConditionalComponentQuery } from "../types";
 import { EmbeddableClientComponents, conditionalClientComponents } from "./componentList";
 import { conditionallyAddComponent } from "../utils";
 import { MDXComponents } from "mdx/types";
 
 
-export interface ConditionalComponentProps {
-    all?: boolean
-    noMermaid?: boolean
-    requiredOnly?: boolean
-    noDefaults?: boolean
-    avoidKeys?: string[]
-}
 
 
 export const getConditionalClientComponents = <J extends AdditionalComponentType>(content: string, opts: ConditionalComponentProps, extraComponents: AdditionalComponents<J> = []) => {

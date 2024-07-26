@@ -3,6 +3,7 @@ import { syncRouter } from "./routers/sync";
 import { autoSettingRouter } from "./routers/autoSettings";
 import { advancedSearchRouter } from "./routers/search";
 // import { healthRouter } from "./routers/health/healthRouter";
+import { notebookRouter } from "./routers/notebook/main.tsx"
 import { parsingProcedure } from "./routers/parsing";
 import { settingsRouter } from "./routers/settings";
 import { mdxNoteActionsRouter } from "./routers/mdxNote";
@@ -34,7 +35,7 @@ export const _appRouter = {
     parse: parsingProcedure,
     settings: settingsRouter,
     mdx: mdxNoteActionsRouter,
-    // ipynb: ipynbRouter,
+    notebook: notebookRouter,
     snippets: snippetRouter,
     fsUtils: fsUtilRouter,
     readingList: readingListRouter,
