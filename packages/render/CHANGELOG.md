@@ -1,5 +1,20 @@
 # @ulld/render
 
+## 0.0.10
+
+### Patch Changes
+
+- Update dependency versions, moved a bunch of stuff to peer dependencies to avoid version conflicts, fixed a bunch of errors mostly around client side / server side issues, and adjusted a few misaligned imports.
+- Updated dependencies
+  - @ulld/api@0.0.10
+  - @ulld/component-map@0.0.10
+  - @ulld/config@0.0.9
+  - @ulld/typescript-config@0.0.8
+  - @ulld/configschema@0.0.10
+  - @ulld/hooks@0.0.10
+  - @ulld/jest-presets@0.0.9
+  - @ulld/utilities@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes

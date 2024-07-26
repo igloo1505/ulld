@@ -1,5 +1,48 @@
 # @ulld/build-sandbox
 
+## 0.0.10
+
+### Patch Changes
+
+- Update dependency versions, moved a bunch of stuff to peer dependencies to avoid version conflicts, fixed a bunch of errors mostly around client side / server side issues, and adjusted a few misaligned imports.
+- Updated dependencies
+  - @ulld/api@0.0.10
+  - @ulld/base-configs@0.0.9
+  - @ulld/bib-manager@0.0.10
+  - @ulld/calendar@0.0.10
+  - @ulld/command-palette@0.0.10
+  - @ulld/component-map@0.0.10
+  - @ulld/config@0.0.9
+  - @ulld/typescript-config@0.0.8
+  - @ulld/configschema@0.0.10
+  - @ulld/database@0.0.9
+  - @ulld/default-image-map@0.0.10
+  - @ulld/developer@0.0.10
+  - @ulld/developer-cli@0.0.10
+  - @ulld/diagram@0.0.10
+  - @ulld/editor@0.0.10
+  - @ulld/embeddable-components@0.0.10
+  - @ulld/equations@0.0.10
+  - @ulld/full-form@0.0.10
+  - @ulld/hooks@0.0.10
+  - @ulld/icons@0.0.10
+  - @ulld/journal@0.0.10
+  - @ulld/landing-layouts@0.0.10
+  - @ulld/logger@0.0.9
+  - @ulld/navigation@0.0.10
+  - @ulld/notebook@0.0.10
+  - @ulld/parsers@0.0.10
+  - @ulld/pdf@0.0.10
+  - @ulld/plot@0.0.10
+  - @ulld/render@0.0.10
+  - @ulld/snippets@0.0.10
+  - @ulld/state@0.0.10
+  - @ulld/tailwind@0.0.9
+  - @ulld/task-manager@0.0.10
+  - @ulld/ui@0.0.10
+  - @ulld/utilities@0.0.10
+  - @ulld/whiteboard@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes

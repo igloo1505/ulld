@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.10
+
+### Patch Changes
+
+- Update dependency versions, moved a bunch of stuff to peer dependencies to avoid version conflicts, fixed a bunch of errors mostly around client side / server side issues, and adjusted a few misaligned imports.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.10
+  - @ulld/calendar@0.0.10
+  - @ulld/default-image-map@0.0.10
+  - @ulld/diagram@0.0.10
+  - @ulld/editor@0.0.10
+  - @ulld/embeddable-components@0.0.10
+  - @ulld/equations@0.0.10
+  - @ulld/full-form@0.0.10
+  - @ulld/journal@0.0.10
+  - @ulld/navigation@0.0.10
+  - @ulld/notebook@0.0.10
+  - @ulld/pdf@0.0.10
+  - @ulld/plot@0.0.10
+  - @ulld/snippets@0.0.10
+  - @ulld/tailwind@0.0.9
+  - @ulld/task-manager@0.0.10
+  - @ulld/whiteboard@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes

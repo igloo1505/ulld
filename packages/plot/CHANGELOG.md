@@ -1,5 +1,22 @@
 # @ulld/plot
 
+## 0.0.10
+
+### Patch Changes
+
+- Update dependency versions, moved a bunch of stuff to peer dependencies to avoid version conflicts, fixed a bunch of errors mostly around client side / server side issues, and adjusted a few misaligned imports.
+- Updated dependencies
+  - @ulld/api@0.0.10
+  - @ulld/configschema@0.0.10
+  - @ulld/developer@0.0.10
+  - @ulld/full-form@0.0.10
+  - @ulld/hooks@0.0.10
+  - @ulld/logger@0.0.9
+  - @ulld/state@0.0.10
+  - @ulld/tailwind@0.0.9
+  - @ulld/ui@0.0.10
+  - @ulld/utilities@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes

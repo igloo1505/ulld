@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.10
+
+### Patch Changes
+
+- Update dependency versions, moved a bunch of stuff to peer dependencies to avoid version conflicts, fixed a bunch of errors mostly around client side / server side issues, and adjusted a few misaligned imports.
+- Updated dependencies
+  - @ulld/base-configs@0.0.9
+  - @ulld/configschema@0.0.10
+  - @ulld/developer-schemas@0.0.9
+  - @ulld/utilities@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.10
+
+### Patch Changes
+
+- Update dependency versions, moved a bunch of stuff to peer dependencies to avoid version conflicts, fixed a bunch of errors mostly around client side / server side issues, and adjusted a few misaligned imports.
+- Updated dependencies
+  - @ulld/developer@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes
