@@ -1,5 +1,48 @@
 # @ulld/build-sandbox
 
+## 0.0.13
+
+### Patch Changes
+
+- Update missing source paths.
+- Updated dependencies
+  - @ulld/api@0.0.13
+  - @ulld/base-configs@0.0.12
+  - @ulld/bib-manager@0.0.13
+  - @ulld/calendar@0.0.13
+  - @ulld/command-palette@0.0.13
+  - @ulld/component-map@0.0.13
+  - @ulld/config@0.0.12
+  - @ulld/typescript-config@0.0.11
+  - @ulld/configschema@0.0.13
+  - @ulld/database@0.0.12
+  - @ulld/default-image-map@0.0.13
+  - @ulld/developer@0.0.13
+  - @ulld/developer-cli@0.0.13
+  - @ulld/diagram@0.0.13
+  - @ulld/editor@0.0.13
+  - @ulld/embeddable-components@0.0.13
+  - @ulld/equations@0.0.13
+  - @ulld/full-form@0.0.13
+  - @ulld/hooks@0.0.13
+  - @ulld/icons@0.0.13
+  - @ulld/journal@0.0.13
+  - @ulld/landing-layouts@0.0.13
+  - @ulld/logger@0.0.12
+  - @ulld/navigation@0.0.13
+  - @ulld/notebook@0.0.13
+  - @ulld/parsers@0.0.13
+  - @ulld/pdf@0.0.13
+  - @ulld/plot@0.0.13
+  - @ulld/render@0.0.13
+  - @ulld/snippets@0.0.13
+  - @ulld/state@0.0.13
+  - @ulld/tailwind@0.0.12
+  - @ulld/task-manager@0.0.13
+  - @ulld/ui@0.0.13
+  - @ulld/utilities@0.0.13
+  - @ulld/whiteboard@0.0.13
+
 ## 0.0.12
 
 ### Patch Changes

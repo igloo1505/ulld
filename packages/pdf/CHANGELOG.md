@@ -1,5 +1,24 @@
 # @ulld/pdf
 
+## 0.0.13
+
+### Patch Changes
+
+- Update missing source paths.
+- Updated dependencies
+  - @ulld/api@0.0.13
+  - @ulld/eslint-config@0.0.12
+  - @ulld/configschema@0.0.13
+  - @ulld/developer@0.0.13
+  - @ulld/hooks@0.0.13
+  - @ulld/icons@0.0.13
+  - @ulld/jest-presets@0.0.12
+  - @ulld/state@0.0.13
+  - @ulld/tailwind@0.0.12
+  - @ulld/ui@0.0.13
+  - @ulld/utilities@0.0.13
+  - @ulld/whiteboard@0.0.13
+
 ## 0.0.12
 
 ### Patch Changes

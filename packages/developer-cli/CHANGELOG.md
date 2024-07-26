@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.13
+
+### Patch Changes
+
+- Update missing source paths.
+- Updated dependencies
+  - @ulld/developer@0.0.13
+  - @ulld/developer-schemas@0.0.12
+
 ## 0.0.12
 
 ### Patch Changes

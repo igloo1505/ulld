@@ -1,5 +1,27 @@
 # @ulld/ui
 
+## 0.0.13
+
+### Patch Changes
+
+- Update missing source paths.
+- Updated dependencies
+  - @ulld/api@0.0.13
+  - @ulld/component-map@0.0.13
+  - @ulld/config@0.0.12
+  - @ulld/configschema@0.0.13
+  - @ulld/editor@0.0.13
+  - @ulld/embeddable-components@0.0.13
+  - @ulld/full-form@0.0.13
+  - @ulld/hooks@0.0.13
+  - @ulld/icons@0.0.13
+  - @ulld/logger@0.0.12
+  - @ulld/notebook@0.0.13
+  - @ulld/render@0.0.13
+  - @ulld/state@0.0.13
+  - @ulld/tailwind@0.0.12
+  - @ulld/utilities@0.0.13
+
 ## 0.0.12
 
 ### Patch Changes

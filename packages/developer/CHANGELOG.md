@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.13
+
+### Patch Changes
+
+- Update missing source paths.
+- Updated dependencies
+  - @ulld/config@0.0.12
+  - @ulld/eslint-config@0.0.12
+  - @ulld/typescript-config@0.0.11
+  - @ulld/configschema@0.0.13
+  - @ulld/database@0.0.12
+  - @ulld/logger@0.0.12
+
 ## 0.0.12
 
 ### Patch Changes

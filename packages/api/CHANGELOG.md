@@ -1,5 +1,22 @@
 # @ulld/api
 
+## 0.0.13
+
+### Patch Changes
+
+- Update missing source paths.
+- Updated dependencies
+  - @ulld/base-configs@0.0.12
+  - @ulld/config@0.0.12
+  - @ulld/configschema@0.0.13
+  - @ulld/database@0.0.12
+  - @ulld/developer@0.0.13
+  - @ulld/logger@0.0.12
+  - @ulld/parsers@0.0.13
+  - @ulld/state@0.0.13
+  - @ulld/tailwind@0.0.12
+  - @ulld/utilities@0.0.13
+
 ## 0.0.12
 
 ### Patch Changes

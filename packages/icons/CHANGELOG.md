@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.13
+
+### Patch Changes
+
+- Update missing source paths.
+- Updated dependencies
+  - @ulld/hooks@0.0.13
+  - @ulld/tailwind@0.0.12
+  - @ulld/utilities@0.0.13
+
 ## 0.0.12
 
 ### Patch Changes

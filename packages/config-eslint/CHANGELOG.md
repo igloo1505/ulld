@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.12
+
+### Patch Changes
+
+- Update missing source paths.
+
 ## 0.0.11
 
 ### Patch Changes

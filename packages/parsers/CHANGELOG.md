@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.13
+
+### Patch Changes
+
+- Update missing source paths.
+- Updated dependencies
+  - @ulld/configschema@0.0.13
+  - @ulld/database@0.0.12
+  - @ulld/developer@0.0.13
+  - @ulld/utilities@0.0.13
+
 ## 0.0.12
 
 ### Patch Changes

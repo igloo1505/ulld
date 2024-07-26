@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.13
+
+### Patch Changes
+
+- Update missing source paths.
+- Updated dependencies
+  - @ulld/database@0.0.12
+  - @ulld/math@0.0.13
+  - @ulld/tailwind@0.0.12
+
 ## 0.0.12
 
 ### Patch Changes

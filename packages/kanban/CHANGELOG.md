@@ -1,5 +1,19 @@
 # @ulld/kanban
 
+## 0.0.13
+
+### Patch Changes
+
+- Update missing source paths.
+- Updated dependencies
+  - @ulld/api@0.0.13
+  - @ulld/typescript-config@0.0.11
+  - @ulld/developer@0.0.13
+  - @ulld/jest-presets@0.0.12
+  - @ulld/logger@0.0.12
+  - @ulld/state@0.0.13
+  - @ulld/tailwind@0.0.12
+
 ## 0.0.12
 
 ### Patch Changes
