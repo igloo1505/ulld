@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.17
+
+### Patch Changes
+
+- Fix a bunch of misaligned references.
+- Updated dependencies
+  - @ulld/developer@0.0.17
+  - @ulld/developer-schemas@0.0.16
+
 ## 0.0.16
 
 ### Patch Changes

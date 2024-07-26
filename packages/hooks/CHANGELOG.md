@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.17
+
+### Patch Changes
+
+- Fix a bunch of misaligned references.
+- Updated dependencies
+  - @ulld/api@0.0.17
+  - @ulld/component-map@0.0.17
+  - @ulld/configschema@0.0.17
+  - @ulld/database@0.0.16
+  - @ulld/parsers@0.0.17
+
 ## 0.0.16
 
 ### Patch Changes

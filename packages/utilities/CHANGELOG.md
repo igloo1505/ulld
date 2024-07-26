@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.17
+
+### Patch Changes
+
+- Fix a bunch of misaligned references.
+- Updated dependencies
+  - @ulld/database@0.0.16
+  - @ulld/math@0.0.17
+  - @ulld/tailwind@0.0.16
+
 ## 0.0.16
 
 ### Patch Changes

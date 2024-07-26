@@ -1,5 +1,27 @@
 # @ulld/landing-layouts
 
+## 0.0.17
+
+### Patch Changes
+
+- Fix a bunch of misaligned references.
+- Updated dependencies
+  - @ulld/api@0.0.17
+  - @ulld/bib-manager@0.0.17
+  - @ulld/calendar@0.0.17
+  - @ulld/eslint-config@0.0.16
+  - @ulld/typescript-config@0.0.15
+  - @ulld/configschema@0.0.17
+  - @ulld/developer@0.0.17
+  - @ulld/hooks@0.0.17
+  - @ulld/journal@0.0.17
+  - @ulld/navigation@0.0.17
+  - @ulld/state@0.0.17
+  - @ulld/tailwind@0.0.16
+  - @ulld/ui@0.0.17
+  - @ulld/utilities@0.0.17
+  - @ulld/whiteboard@0.0.17
+
 ## 0.0.16
 
 ### Patch Changes

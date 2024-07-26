@@ -1,5 +1,27 @@
 # @ulld/equations
 
+## 0.0.17
+
+### Patch Changes
+
+- Fix a bunch of misaligned references.
+- Updated dependencies
+  - @ulld/api@0.0.17
+  - @ulld/configschema@0.0.17
+  - @ulld/database@0.0.16
+  - @ulld/developer@0.0.17
+  - @ulld/developer-schemas@0.0.16
+  - @ulld/editor@0.0.17
+  - @ulld/embeddable-components@0.0.17
+  - @ulld/full-form@0.0.17
+  - @ulld/hooks@0.0.17
+  - @ulld/parsers@0.0.17
+  - @ulld/render@0.0.17
+  - @ulld/state@0.0.17
+  - @ulld/tailwind@0.0.16
+  - @ulld/ui@0.0.17
+  - @ulld/utilities@0.0.17
+
 ## 0.0.16
 
 ### Patch Changes

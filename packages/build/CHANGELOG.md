@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.17
+
+### Patch Changes
+
+- Fix a bunch of misaligned references.
+- Updated dependencies
+  - @ulld/base-configs@0.0.16
+  - @ulld/configschema@0.0.17
+  - @ulld/developer-schemas@0.0.16
+  - @ulld/utilities@0.0.17
+
 ## 0.0.16
 
 ### Patch Changes

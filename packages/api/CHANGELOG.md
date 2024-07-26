@@ -1,5 +1,22 @@
 # @ulld/api
 
+## 0.0.17
+
+### Patch Changes
+
+- Fix a bunch of misaligned references.
+- Updated dependencies
+  - @ulld/base-configs@0.0.16
+  - @ulld/config@0.0.16
+  - @ulld/configschema@0.0.17
+  - @ulld/database@0.0.16
+  - @ulld/developer@0.0.17
+  - @ulld/logger@0.0.16
+  - @ulld/parsers@0.0.17
+  - @ulld/state@0.0.17
+  - @ulld/tailwind@0.0.16
+  - @ulld/utilities@0.0.17
+
 ## 0.0.16
 
 ### Patch Changes

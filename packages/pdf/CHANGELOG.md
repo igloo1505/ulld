@@ -1,5 +1,24 @@
 # @ulld/pdf
 
+## 0.0.17
+
+### Patch Changes
+
+- Fix a bunch of misaligned references.
+- Updated dependencies
+  - @ulld/api@0.0.17
+  - @ulld/eslint-config@0.0.16
+  - @ulld/configschema@0.0.17
+  - @ulld/developer@0.0.17
+  - @ulld/hooks@0.0.17
+  - @ulld/icons@0.0.17
+  - @ulld/jest-presets@0.0.16
+  - @ulld/state@0.0.17
+  - @ulld/tailwind@0.0.16
+  - @ulld/ui@0.0.17
+  - @ulld/utilities@0.0.17
+  - @ulld/whiteboard@0.0.17
+
 ## 0.0.16
 
 ### Patch Changes

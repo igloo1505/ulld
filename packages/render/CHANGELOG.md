@@ -1,5 +1,20 @@
 # @ulld/render
 
+## 0.0.17
+
+### Patch Changes
+
+- Fix a bunch of misaligned references.
+- Updated dependencies
+  - @ulld/api@0.0.17
+  - @ulld/component-map@0.0.17
+  - @ulld/config@0.0.16
+  - @ulld/typescript-config@0.0.15
+  - @ulld/configschema@0.0.17
+  - @ulld/hooks@0.0.17
+  - @ulld/jest-presets@0.0.16
+  - @ulld/utilities@0.0.17
+
 ## 0.0.16
 
 ### Patch Changes

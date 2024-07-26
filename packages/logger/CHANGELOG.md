@@ -1,5 +1,11 @@
 # @ulld/logger
 
+## 0.0.16
+
+### Patch Changes
+
+- Fix a bunch of misaligned references.
+
 ## 0.0.15
 
 ### Patch Changes

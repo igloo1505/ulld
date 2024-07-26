@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.16
+
+### Patch Changes
+
+- Fix a bunch of misaligned references.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.15
+
 ## 0.0.15
 
 ### Patch Changes

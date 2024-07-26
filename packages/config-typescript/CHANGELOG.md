@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.15
+
+### Patch Changes
+
+- Fix a bunch of misaligned references.
+
 ## 0.0.14
 
 ### Patch Changes

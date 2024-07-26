@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.17
+
+### Patch Changes
+
+- Fix a bunch of misaligned references.
+- Updated dependencies
+  - @ulld/hooks@0.0.17
+  - @ulld/tailwind@0.0.16
+  - @ulld/utilities@0.0.17
+
 ## 0.0.16
 
 ### Patch Changes

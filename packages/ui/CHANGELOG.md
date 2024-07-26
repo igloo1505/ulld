@@ -1,5 +1,27 @@
 # @ulld/ui
 
+## 0.0.17
+
+### Patch Changes
+
+- Fix a bunch of misaligned references.
+- Updated dependencies
+  - @ulld/api@0.0.17
+  - @ulld/component-map@0.0.17
+  - @ulld/config@0.0.16
+  - @ulld/configschema@0.0.17
+  - @ulld/editor@0.0.17
+  - @ulld/embeddable-components@0.0.17
+  - @ulld/full-form@0.0.17
+  - @ulld/hooks@0.0.17
+  - @ulld/icons@0.0.17
+  - @ulld/logger@0.0.16
+  - @ulld/notebook@0.0.17
+  - @ulld/render@0.0.17
+  - @ulld/state@0.0.17
+  - @ulld/tailwind@0.0.16
+  - @ulld/utilities@0.0.17
+
 ## 0.0.16
 
 ### Patch Changes

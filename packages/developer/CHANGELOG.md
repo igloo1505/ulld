@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.17
+
+### Patch Changes
+
+- Fix a bunch of misaligned references.
+- Updated dependencies
+  - @ulld/config@0.0.16
+  - @ulld/eslint-config@0.0.16
+  - @ulld/typescript-config@0.0.15
+  - @ulld/configschema@0.0.17
+  - @ulld/database@0.0.16
+  - @ulld/logger@0.0.16
+
 ## 0.0.16
 
 ### Patch Changes
