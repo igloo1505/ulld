@@ -1,5 +1,4 @@
-import { autoSetting } from "@ulld/database/internalDatabaseTypes"
-import { PrismaClient } from "@ulld/types"
+import type { PrismaClient, autoSetting } from "@ulld/types"
 
 
 

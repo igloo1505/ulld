@@ -1,23 +1,19 @@
-import { autoSetting } from "@ulld/database/internalDatabaseTypes"
 import { autoSettingEquality } from "./autoSettingEqualityTest"
 import { getDbAutoSettings } from "./getDbAutosetting"
 import globToRegExp from "glob-to-regexp"
-import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
-import { ParsedAppConfig } from "@ulld/configschema/types"
+import { AppConfigSchemaOutput } from "@ulld/configschema/types"
 import { AutoSettingType } from "@ulld/utilities/types";
 import { AutoSettingWithRegex } from "../../../trpc/types";
-import { PrismaClient } from "@ulld/types"
+import type { PrismaClient, autoSetting } from "@ulld/types"
 
 
-export const getConfigAutoSettings = (_config?: ParsedAppConfig) => {
-    const config = _config || getInternalConfig()
+export const getConfigAutoSettings = (config: AppConfigSchemaOutput) => {
     let d: { glob: string, value: string, type: autoSetting, id?: number }[] = []
-    if (!config) return d
     if (config.autoTag) {
         d = d.concat(config.autoTag.map((t) => ({
             glob: t.path,
             value: t.tag,
-            type: autoSetting.tag,
+            type: "tag",
             id: undefined
         })))
     }
@@ -26,7 +22,7 @@ export const getConfigAutoSettings = (_config?: ParsedAppConfig) => {
         d = d.concat(config.autoSubject.map((t) => ({
             glob: t.path,
             value: t.subject,
-            type: autoSetting.subject,
+            type: "subject",
             id: undefined
         })))
     }
@@ -34,15 +30,15 @@ export const getConfigAutoSettings = (_config?: ParsedAppConfig) => {
         d = d.concat(config.autoTopic.map((t) => ({
             glob: t.path,
             value: t.topic,
-            type: autoSetting.topic,
+            type: "topic",
             id: undefined
         })))
     }
     return d
 }
 
-export const getAutoSettingsWithRegex = async (prisma: PrismaClient, type?: autoSetting): Promise<AutoSettingWithRegex[]> => {
-    let c = getConfigAutoSettings()
+export const getAutoSettingsWithRegex = async (prisma: PrismaClient, appConfig: AppConfigSchemaOutput, type?: autoSetting): Promise<AutoSettingWithRegex[]> => {
+    let c = getConfigAutoSettings(appConfig)
     const pushIfNotIncluded = (a: AutoSettingType) => {
         if (!c.some((l) => autoSettingEquality(l, a))) {
             c.push(a)

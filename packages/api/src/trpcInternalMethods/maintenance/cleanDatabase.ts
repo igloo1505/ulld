@@ -1,6 +1,5 @@
-import { prisma } from "@ulld/database/db"
-import type { Prisma } from "@ulld/database/internalDatabaseTypes"
 import { databaseCleanValidityCheck } from "./databaseCleanValidityCheck"
+import { PrismaClient, Prisma } from "@ulld/types"
 
 
 
@@ -10,7 +9,7 @@ type TBase = {
     name?: string
 }
 
-export const cleanDatabase = async () => {
+export const cleanDatabase = async (prisma: PrismaClient) => {
     const deleteAllOf: (Prisma.TypeMap["meta"]["modelProps"])[] = [
         "sequentialNoteList", "definition"
     ]

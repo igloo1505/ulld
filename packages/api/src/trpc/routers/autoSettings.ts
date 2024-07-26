@@ -7,32 +7,35 @@ import { AutoPropertyFormSchema } from "../../schemas/formTrpcRelationships/auto
 import {syncAutoSettings} from "../../trpcInternalMethods/settings/autoSettings/syncAutoSettings"
 import {getAutoSettingsWithRegex, getConfigAutoSettings} from "../../trpcInternalMethods/settings/autoSettings/getAutosettingWithRegex"
 import {getDbAutoSettings } from "../../trpcInternalMethods/settings/autoSettings/getDbAutosetting"
-
+import {readAppConfig} from "@ulld/developer/readAppConfig"
 
 
 export const autoSettingRouter = router({
     setAutoSettingsFromConfig: publicProcedure.mutation(async () => {
-        return await syncAutoSettings()
+        let config = await readAppConfig()
+        return await syncAutoSettings(prisma, config)
     }),
     getAutoSettings: publicProcedure.input(z.object({
         type: z.nativeEnum(autoSetting).optional(),
         withRegex: z.boolean().default(true)
     })).query(async (opts) => {
 
+        let appConfig = await readAppConfig()
         const autoSettingIsSame = (a: AutoSettingType, b: AutoSettingType) => {
             return a.type === b.type && a.glob === b.glob && a.value === b.value
         }
         if (opts.input.withRegex) {
-            return await getAutoSettingsWithRegex(opts.input.type)
+            return await getAutoSettingsWithRegex(prisma, appConfig, opts.input.type)
+
         }
         if (!opts.input.withRegex) {
-            let d: { id?: number, glob: string, value: string, type: autoSetting }[] = getConfigAutoSettings()
+            let d: { id?: number, glob: string, value: string, type: autoSetting }[] = getConfigAutoSettings(appConfig)
             const pushIfNotIncluded = (a: AutoSettingType) => {
                 if (!d.some((l) => autoSettingIsSame(l, a))) {
                     d.push(a)
                 }
             }
-            let db = await getDbAutoSettings(opts.input.type)
+            let db = await getDbAutoSettings(prisma, opts.input.type)
             db.forEach((k) => pushIfNotIncluded(k))
             return d
         }

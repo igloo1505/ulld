@@ -1,4 +1,5 @@
-import { UnifiedMdxParserParams, UnifiedMdxParser } from "../types"
+import { UnifiedMdxParserParams } from "../individualTypesForDocumentation/parser/unifiedMdxParserParams"
+import { UnifiedMdxParser } from "../types"
 
 export const applyRecursiveMdxParsers = async (data: UnifiedMdxParserParams, parsers: UnifiedMdxParser[]) => {
     let content = data.content

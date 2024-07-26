@@ -1,10 +1,11 @@
 import { PrismaClient } from "@ulld/types"
 import { getConfigAutoSettings } from "./getAutosettingWithRegex"
+import { AppConfigSchemaOutput } from "@ulld/configschema/types"
 
 
 
-export const syncAutoSettings = async (prisma: PrismaClient) => {
-    let d = getConfigAutoSettings()
+export const syncAutoSettings = async (prisma: PrismaClient, appConfig: AppConfigSchemaOutput) => {
+    let d = getConfigAutoSettings(appConfig)
     for await (const k of d) {
         let as = await prisma.autoSetting.findFirst({
             where: {
