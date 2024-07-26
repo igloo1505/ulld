@@ -20,5 +20,7 @@
     "peerDependencies": {
         "ts-jest": "29.1.1"
     },
-    "files": []
+    "files": [
+        "src"
+    ]
 }

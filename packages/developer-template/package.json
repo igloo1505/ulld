@@ -62,6 +62,7 @@
     "dependencies": {},
     "packageManager": "pnpm@9.0.4",
     "files": [
-        "pluginConfig.ulld.json"
+        "pluginConfig.ulld.json",
+        "src"
     ]
 }

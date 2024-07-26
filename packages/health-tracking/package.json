@@ -37,5 +37,7 @@
         "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*"
     },
-    "files": []
+    "files": [
+        "src"
+    ]
 }

@@ -35,6 +35,8 @@
     "publishConfig": {
         "access": "public"
     },
-    "files": [],
+    "files": [
+        "src"
+    ],
     "dependencies": {}
 }

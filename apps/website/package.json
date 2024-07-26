@@ -42,7 +42,9 @@
         "twoslash": "^0.2.6"
     },
     "packageManager": "pnpm@9.0.4",
-    "files": [],
+    "files": [
+        "src"
+    ],
     "peerDependencies": {
         "@content-collections/core": "^0.6.0",
         "@content-collections/mdx": "^0.1.3",

@@ -1,57 +1,57 @@
 {
-  "version": "0.0.13",
-  "name": "@ulld/whiteboard",
-  "private": false,
-  "files": [
-    "src"
-  ],
-  "scripts": {
-    "dev": "next dev",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'"
-  },
-  "types": "./src/types.ts",
-  "exports": {
-    ".": "./src/components/whiteboard/main.tsx",
-    "./local": "./src/components/whiteboard/local.tsx"
-  },
-  "peerDependencies": {
-    "@ulld/api": "workspace:*",
-    "@ulld/developer": "workspace:*",
-    "@ulld/hooks": "workspace:*",
-    "@ulld/jest-presets": "workspace:*",
-    "@ulld/logger": "workspace:*",
-    "@ulld/state": "workspace:*",
-    "@ulld/tailwind": "workspace:*",
-    "@ulld/typescript-config": "workspace:*",
-    "@ulld/utilities": "workspace:*",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tldraw": "^2.0.2",
-    "y-indexeddb": "^9.0.12",
-    "y-webrtc": "^10.3.0",
-    "y-websocket": "^2.0.2",
-    "yjs": "^13.6.14",
-    "@excalidraw/excalidraw": "0.17.3",
-    "sass": "1.74.1"
-  },
-  "devDependencies": {
-    "@ulld/jest-presets": "workspace:*",
-    "@ulld/types": "workspace:*",
-    "@ulld/typescript-config": "workspace:*",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tldraw": "^2.0.2",
-    "y-indexeddb": "^9.0.12",
-    "y-webrtc": "^10.3.0",
-    "y-websocket": "^2.0.2",
-    "yjs": "^13.6.14"
-  },
-  "dependencies": {},
-  "packageManager": "pnpm@9.0.4",
-  "publishConfig": {
-    "access": "public"
-  }
+    "version": "0.0.13",
+    "name": "@ulld/whiteboard",
+    "private": false,
+    "files": [
+        "src"
+    ],
+    "scripts": {
+        "dev": "next dev",
+        "test": "echo 'Add test script here'",
+        "lint": "echo 'Add lint script here'"
+    },
+    "types": "./src/types.ts",
+    "exports": {
+        ".": "./src/components/whiteboard/main.tsx",
+        "./local": "./src/components/whiteboard/local.tsx"
+    },
+    "peerDependencies": {
+        "@ulld/api": "workspace:*",
+        "@ulld/developer": "workspace:*",
+        "@ulld/hooks": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/logger": "workspace:*",
+        "@ulld/state": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/utilities": "workspace:*",
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "tldraw": "^2.0.2",
+        "y-indexeddb": "^9.0.12",
+        "y-webrtc": "^10.3.0",
+        "y-websocket": "^2.0.2",
+        "yjs": "^13.6.14",
+        "@excalidraw/excalidraw": "0.17.3",
+        "sass": "1.74.1"
+    },
+    "devDependencies": {
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "tldraw": "^2.0.2",
+        "y-indexeddb": "^9.0.12",
+        "y-webrtc": "^10.3.0",
+        "y-websocket": "^2.0.2",
+        "yjs": "^13.6.14"
+    },
+    "dependencies": {},
+    "packageManager": "pnpm@9.0.4",
+    "publishConfig": {
+        "access": "public"
+    }
 }

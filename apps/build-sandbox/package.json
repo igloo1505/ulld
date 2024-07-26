@@ -24,7 +24,9 @@
     "devDependencies": {
         "@ulld/types": "workspace:*"
     },
-    "files": [],
+    "files": [
+        "src"
+    ],
     "peerDependencies": {
         "@ulld/api": "workspace:*",
         "@ulld/base-configs": "workspace:*",

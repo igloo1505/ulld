@@ -148,18 +148,27 @@ export class PackageManager {
             encoding: "utf-8",
         });
     }
-    movePackageToPeer(packageName: string, excludeMonorepoPackages: string[] = []) {
-        let _excludeMonorepoPackages = [...excludeMonorepoPackages, "@ulld/website"]
+    movePackageToPeer(
+        packageName: string,
+        excludeMonorepoPackages: string[] = [],
+    ) {
+        let _excludeMonorepoPackages = [
+            ...excludeMonorepoPackages,
+            "@ulld/website",
+        ];
         for (const pkg of this.packages) {
             pkg.deps = pkg.deps.map((d) => {
-                if(!_excludeMonorepoPackages.includes(d.name) && d.type === "dependencies"){
-                     return {
-                     ...d,
-                         type: "peerDependencies"
-                     }
+                if (
+                    !_excludeMonorepoPackages.includes(d.name) &&
+                    d.type === "dependencies"
+                ) {
+                    return {
+                        ...d,
+                        type: "peerDependencies",
+                    };
                 }
-                return d
-            })
+                return d;
+            });
         }
     }
     getRootRelativePath(p: string) {
@@ -472,6 +481,10 @@ pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${package
                 "./pluginConfig.ulld.json",
             );
             let existingFiles = k.content.files || [];
+            if (!existingFiles.includes("src")) {
+                console.log(`Adding src directory to file paths in ${k.name}`);
+                existingFiles.push("src");
+            }
             if (fs.existsSync(packageConfigPath)) {
                 k.content.files = existingFiles.includes("pluginConfig.ulld.json")
                     ? existingFiles
@@ -526,3 +539,7 @@ pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${package
         }
     }
 }
+
+let p = new PackageManager();
+
+p.applyPluginConfigToFiles();
