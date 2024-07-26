@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.15
+
+### Patch Changes
+
+- Update sync method.
+
 ## 0.0.14
 
 ### Patch Changes

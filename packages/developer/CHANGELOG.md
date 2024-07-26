@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.16
+
+### Patch Changes
+
+- Update sync method.
+- Updated dependencies
+  - @ulld/config@0.0.15
+  - @ulld/eslint-config@0.0.15
+  - @ulld/typescript-config@0.0.14
+  - @ulld/configschema@0.0.16
+  - @ulld/database@0.0.15
+  - @ulld/logger@0.0.15
+
 ## 0.0.15
 
 ### Patch Changes

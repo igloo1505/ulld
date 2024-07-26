@@ -1,5 +1,48 @@
 # @ulld/build-sandbox
 
+## 0.0.16
+
+### Patch Changes
+
+- Update sync method.
+- Updated dependencies
+  - @ulld/api@0.0.16
+  - @ulld/base-configs@0.0.15
+  - @ulld/bib-manager@0.0.16
+  - @ulld/calendar@0.0.16
+  - @ulld/command-palette@0.0.16
+  - @ulld/component-map@0.0.16
+  - @ulld/config@0.0.15
+  - @ulld/typescript-config@0.0.14
+  - @ulld/configschema@0.0.16
+  - @ulld/database@0.0.15
+  - @ulld/default-image-map@0.0.16
+  - @ulld/developer@0.0.16
+  - @ulld/developer-cli@0.0.16
+  - @ulld/diagram@0.0.16
+  - @ulld/editor@0.0.16
+  - @ulld/embeddable-components@0.0.16
+  - @ulld/equations@0.0.16
+  - @ulld/full-form@0.0.16
+  - @ulld/hooks@0.0.16
+  - @ulld/icons@0.0.16
+  - @ulld/journal@0.0.16
+  - @ulld/landing-layouts@0.0.16
+  - @ulld/logger@0.0.15
+  - @ulld/navigation@0.0.16
+  - @ulld/notebook@0.0.16
+  - @ulld/parsers@0.0.16
+  - @ulld/pdf@0.0.16
+  - @ulld/plot@0.0.16
+  - @ulld/render@0.0.16
+  - @ulld/snippets@0.0.16
+  - @ulld/state@0.0.16
+  - @ulld/tailwind@0.0.15
+  - @ulld/task-manager@0.0.16
+  - @ulld/ui@0.0.16
+  - @ulld/utilities@0.0.16
+  - @ulld/whiteboard@0.0.16
+
 ## 0.0.15
 
 ### Patch Changes

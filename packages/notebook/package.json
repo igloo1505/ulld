@@ -1,5 +1,5 @@
 {
-    "version": "0.0.15",
+    "version": "0.0.16",
     "name": "@ulld/notebook",
     "private": false,
     "types": "./src/types.ts",

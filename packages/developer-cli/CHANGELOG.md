@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.16
+
+### Patch Changes
+
+- Update sync method.
+- Updated dependencies
+  - @ulld/developer@0.0.16
+  - @ulld/developer-schemas@0.0.15
+
 ## 0.0.15
 
 ### Patch Changes

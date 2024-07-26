@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.14
+
+### Patch Changes
+
+- Update sync method.
+
 ## 0.0.13
 
 ### Patch Changes

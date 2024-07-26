@@ -1,5 +1,21 @@
 # @ulld/state
 
+## 0.0.16
+
+### Patch Changes
+
+- Update sync method.
+- Updated dependencies
+  - @ulld/base-configs@0.0.15
+  - @ulld/config@0.0.15
+  - @ulld/configschema@0.0.16
+  - @ulld/database@0.0.15
+  - @ulld/developer@0.0.16
+  - @ulld/hooks@0.0.16
+  - @ulld/parsers@0.0.16
+  - @ulld/tailwind@0.0.15
+  - @ulld/utilities@0.0.16
+
 ## 0.0.15
 
 ### Patch Changes

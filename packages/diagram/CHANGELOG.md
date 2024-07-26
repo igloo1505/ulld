@@ -1,5 +1,17 @@
 # @ulld/diagram
 
+## 0.0.16
+
+### Patch Changes
+
+- Update sync method.
+- Updated dependencies
+  - @ulld/api@0.0.16
+  - @ulld/typescript-config@0.0.14
+  - @ulld/developer@0.0.16
+  - @ulld/state@0.0.16
+  - @ulld/tailwind@0.0.15
+
 ## 0.0.15
 
 ### Patch Changes

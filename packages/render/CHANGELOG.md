@@ -1,5 +1,20 @@
 # @ulld/render
 
+## 0.0.16
+
+### Patch Changes
+
+- Update sync method.
+- Updated dependencies
+  - @ulld/api@0.0.16
+  - @ulld/component-map@0.0.16
+  - @ulld/config@0.0.15
+  - @ulld/typescript-config@0.0.14
+  - @ulld/configschema@0.0.16
+  - @ulld/hooks@0.0.16
+  - @ulld/jest-presets@0.0.15
+  - @ulld/utilities@0.0.16
+
 ## 0.0.15
 
 ### Patch Changes

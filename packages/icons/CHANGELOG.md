@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.16
+
+### Patch Changes
+
+- Update sync method.
+- Updated dependencies
+  - @ulld/hooks@0.0.16
+  - @ulld/tailwind@0.0.15
+  - @ulld/utilities@0.0.16
+
 ## 0.0.15
 
 ### Patch Changes

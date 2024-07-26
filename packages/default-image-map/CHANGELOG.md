@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.16
+
+### Patch Changes
+
+- Update sync method.
+- Updated dependencies
+  - @ulld/config@0.0.15
+  - @ulld/eslint-config@0.0.15
+  - @ulld/typescript-config@0.0.14
+  - @ulld/configschema@0.0.16
+  - @ulld/logger@0.0.15
+  - @ulld/tailwind@0.0.15
+  - @ulld/utilities@0.0.16
+
 ## 0.0.15
 
 ### Patch Changes

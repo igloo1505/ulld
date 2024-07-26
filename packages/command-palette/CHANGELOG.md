@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.16
+
+### Patch Changes
+
+- Update sync method.
+- Updated dependencies
+  - @ulld/api@0.0.16
+  - @ulld/bib-manager@0.0.16
+  - @ulld/calendar@0.0.16
+  - @ulld/configschema@0.0.16
+  - @ulld/database@0.0.15
+  - @ulld/developer@0.0.16
+  - @ulld/diagram@0.0.16
+  - @ulld/editor@0.0.16
+  - @ulld/equations@0.0.16
+  - @ulld/hooks@0.0.16
+  - @ulld/logger@0.0.15
+  - @ulld/parsers@0.0.16
+  - @ulld/render@0.0.16
+  - @ulld/snippets@0.0.16
+  - @ulld/state@0.0.16
+  - @ulld/tailwind@0.0.15
+  - @ulld/task-manager@0.0.16
+  - @ulld/ui@0.0.16
+  - @ulld/utilities@0.0.16
+  - @ulld/whiteboard@0.0.16
+
 ## 0.0.15
 
 ### Patch Changes

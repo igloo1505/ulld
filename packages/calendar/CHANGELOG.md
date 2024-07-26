@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.16
+
+### Patch Changes
+
+- Update sync method.
+- Updated dependencies
+  - @ulld/developer@0.0.16
+
 ## 0.0.15
 
 ### Patch Changes

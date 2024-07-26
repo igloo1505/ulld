@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.15
+
+### Patch Changes
+
+- Update sync method.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.14
+
 ## 0.0.14
 
 ### Patch Changes
