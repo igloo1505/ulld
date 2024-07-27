@@ -62,7 +62,7 @@ export class UlldPlugin extends ShellManager {
         }
         if (!fs.existsSync(configPath)) {
             this.logVerbose(`Could not find plugin config for ${this.name}`);
-            if (!this.packageJson.exists()) {
+            if (!this.packageJson.exists() && !noError) {
                 this.logDebug(`
 No package.json file found for package ${this.name}. 
 Attempted to find one at ${configPath}

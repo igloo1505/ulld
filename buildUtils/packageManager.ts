@@ -556,10 +556,3 @@ ${deps.map((d) => `    ${d.type}`).join("\n")}
         }
     }
 }
-
-let p = new PackageManager();
-
-p.removeWebsite()
-
-p.printDependencyDetails("@prisma/client");
-process.exit();

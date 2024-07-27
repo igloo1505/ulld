@@ -6,7 +6,7 @@ import { autoWrapMath } from "@ulld/utilities/latexUtils"
 import { getMdxClassnames } from './getMdxClassnames';
 
 
-interface MdxContentClientSideProps extends MdxContentSERVERProps {
+interface MdxContentClientSideProps extends Omit<MdxContentSERVERProps, "appConfig"> {
     stylesId?: string
     applyUserStyles?: boolean
     debounceTimeout?: number

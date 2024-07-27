@@ -50,9 +50,9 @@ export class UlldBuildProcess extends Prompter {
     git: GitManager;
     componentImportMap: Record<string, boolean> = {};
     alreadyProvidedPackageManager: boolean = false
-    constructor(public targetDir: string) {
+    constructor(public targetDir: string, public branch: string = "main") {
         super(targetDir);
-        this.git = new GitManager(targetDir);
+        this.git = new GitManager(targetDir, this.branch);
         this.isLocalDev = process.env.LOCAL_DEVELOPMENT === "true";
         this.applicationDir = path.join(
             targetDir,

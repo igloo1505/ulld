@@ -58,14 +58,14 @@ export interface PaginationProps {
 }
 
 export interface DictionaryItemProps {
-    label?: string;
-    content?: string;
+    label?: string | null;
+    content?: string | null;
 }
 
 export interface DictionaryLetterListProps {
     children: ReactNode;
     letter: LetterType;
-    currentPage?: LetterType;
+    currentPage?: number
 }
 
 export interface NoteSummaryProps {

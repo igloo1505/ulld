@@ -1,7 +1,7 @@
 import { program } from "commander";
 import { log } from "console";
 import { stages } from "./stages/main";
-import { optionMap } from "./utils/options";
+import { optionMap, stringOptionMap } from "./utils/options";
 
 program
     .option(optionMap.here)
@@ -9,7 +9,8 @@ program
     .option(optionMap.forceLocalSource)
     .option(optionMap.pnpm)
     .option(optionMap.npm)
-    .option(optionMap.yarn);
+    .option(optionMap.yarn)
+    .option(stringOptionMap.branch, "Branch to clone", "main")
 // option("--noPlugins")
 // .option("--from-install")
 
@@ -34,7 +35,7 @@ const avoidIfInOpts = ({ opts, other }: AvoidConfig): boolean => {
 
 (async () => {
     try {
-        let build = await stages.verifyDirectory(options.here);
+        let build = await stages.verifyDirectory(options);
         build.applyPackageManagerOptions(options);
         if (avoidIfInOpts({ opts: ["useLocal"] })) {
             build.logDebug(`creating base project`);

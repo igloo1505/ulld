@@ -18,3 +18,4 @@ export const getDirectoryCompletionFromString = (val: string = "/") => {
     const value = fs.readdirSync(v).map((f) => path.join(v, f)).filter((f) => Boolean(fs.lstatSync(f).isDirectory() && f.includes(val)))
     return isDirectory ? [v, ...value] : value
 }
+

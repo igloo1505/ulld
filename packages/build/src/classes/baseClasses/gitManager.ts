@@ -7,11 +7,12 @@ import simpleGit, {
 } from "simple-git";
 import { MultiBar, SingleBar } from "cli-progress";
 import path from "path";
+import { BranchValue } from "../../utils/options";
 
 export class GitManager extends ShellManager {
     status: "notSent" | "pending" | "success" | "fail" = "notSent";
     showProgress: boolean = false;
-    constructor(public targetDirectory: string) {
+    constructor(public targetDirectory: string, public branch: BranchValue) {
         super();
     }
     progress({ method, stage, progress, ...props }: SimpleGitProgressEvent) {
@@ -85,7 +86,7 @@ export class GitManager extends ShellManager {
             appData.templateRepo.url,
             `${this.targetDirectory}/ulldApp`,
             {
-                // "-b": appData.templateRepo.branch,
+                "--branch": this.branch,
             },
             (err, data) => {
                 if (err) {

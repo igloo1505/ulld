@@ -10,5 +10,19 @@ export const optionMap = {
     yarn: "--yarn",
 } as const;
 
+export const branchOptions = {
+    main: "main",
+    staticPrisma: "staticPrismaSchema",
+    reactLatest: "updateReactAndNext"
+}
 
-export type BuildOptionsType = {[K in keyof typeof optionMap]?: boolean}
+export const branchOptionValues = Object.values(branchOptions)
+
+export const stringOptionMap = {
+    branch: "-b, --branch [branchName]"
+}
+
+
+export type BuildOptionsType = {[K in keyof typeof optionMap]?: boolean} & {[J in keyof typeof stringOptionMap]?: string | true}
+
+export type BranchValue = typeof branchOptionValues[number]

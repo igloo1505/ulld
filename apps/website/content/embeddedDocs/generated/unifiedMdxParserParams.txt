@@ -4,10 +4,5 @@ export interface UnifiedMdxParserParams {
     data: Partial<FrontMatterType>
     appConfig: AppConfigSchemaOutput
     serverClient: typeof serverClient // Trpc router
-    db: {
-        // Will only be undefined or null
-        // if reading from a remote source
-        // or before sync.
-        noteId?: number | null
-    }
+    db: MdxDetailsReturnType
 }

@@ -6,13 +6,15 @@ import chalk from "chalk";
 import { prompt } from "enquirer";
 import fs from 'fs'
 import { UlldBuildProcess } from "../classes/build";
-import { EnvManager } from "../classes/envManager";
+import { BuildOptionsType } from "../utils/options";
+import { getBranchSelection } from "./selectBranch";
 
-export const verifyDirectory = async (forceCurrentDir: boolean) => {
+export const verifyDirectory = async (opts: BuildOptionsType) => {
     const currentDir = getCurrentDir();
+    let branch = typeof opts.branch === "undefined" ? "main" : typeof opts.branch === "string" ? opts.branch : await getBranchSelection()
 
-    if (forceCurrentDir) {
-        return new UlldBuildProcess(currentDir);
+    if (opts.here) {
+        return new UlldBuildProcess(currentDir, branch);
     }
 
     let useCurrentDir = await prompt({
@@ -24,7 +26,7 @@ Is this where you'd like to build ${chalk.hex("#0ba5e9")("U")}LLD?`,
         initial: true,
     });
     if ("useCurrentDir" in useCurrentDir && useCurrentDir.useCurrentDir) {
-        return new UlldBuildProcess(currentDir);
+        return new UlldBuildProcess(currentDir, branch);
     }
 
 
@@ -49,5 +51,5 @@ Is this where you'd like to build ${chalk.hex("#0ba5e9")("U")}LLD?`,
             console.log(`You need to specify a directory to continue.`);
             process.exit(1);
     }
-    return new UlldBuildProcess(newPath.path)
+    return new UlldBuildProcess(newPath.path, branch)
 };

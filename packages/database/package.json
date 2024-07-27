@@ -21,14 +21,17 @@
     "db:seed": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma db seed",
     "db:push": "prisma db push --skip-generate",
     "prisma:studio": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma studio --schema ./src/prisma/schema.prisma",
-    "postinstall": "echo 'figure out how to run prisma generate --schema=./src/prisma/schema.prisma'",
-    "db:generateTargetProjectSchema": "prisma generate --schema ./src/prisma/schema.prisma"
+    "postinstall": "prisma generate --schema=./src/prisma/schema.prisma",
+    "db:generateTargetProjectSchema": "prisma generate",
+    "generate": "prisma generate",
+    "prebuild": "pnpm run generate",
+    "predev": "pnpm run generate"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@prisma/client": "5.17.0"
+  },
   "peerDependencies": {
     "@ulld/typescript-config": "workspace:*",
-    "prisma": "5.17.0",
-    "@prisma/client": "5.17.0",
     "next": "14.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -39,6 +42,7 @@
   },
   "devDependencies": {
     "@ulld/types": "workspace:*",
+    "prisma": "5.17.0",
     "@ulld/typescript-config": "workspace:*"
   }
 }

@@ -1,4 +1,3 @@
-import { serverClient } from '@ulld/api/serverClient';
 import { autoWrapMath } from '@ulld/utilities/latexUtils';
 import React from 'react'
 import MdxContentPreCompiled from './mdxContentPreCompiled';
@@ -6,6 +5,7 @@ import { getMdxClassnames } from './getMdxClassnames';
 import { parseMdxString } from "@ulld/parsers/mdx";
 import { AdditionalComponents } from '@ulld/component-map/types';
 import { AppConfigSchemaOutput } from '@ulld/configschema/types';
+import { readAppConfig } from '@ulld/developer/readAppConfig';
 
 
 export interface MdxContentSERVERProps {
@@ -23,7 +23,7 @@ export interface MdxContentSERVERProps {
     live?: boolean // Might not be using this. Double check later.
     applyMathContextMenu?: boolean
     components?: AdditionalComponents
-    appConfig: AppConfigSchemaOutput
+    appConfig?: AppConfigSchemaOutput
 }
 
 
@@ -38,6 +38,7 @@ const parseProps = (p: MdxContentSERVERProps) => {
 }
 
 export const MdxContentSERVER = async (_props: MdxContentSERVERProps) => {
+    let appConfig = _props.appConfig || await readAppConfig()
     const props = parseProps(_props)
     let compiled = await parseMdxString({
         content: props.content,

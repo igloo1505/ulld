@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 cd $ULLD_DEV_ROOT
+zsh $ULLD_DEV_ROOT/buildUtils/gatherTypes.zsh
 git add .
 git commit -m "Pre patch bump commit"
 pnpm changeset
