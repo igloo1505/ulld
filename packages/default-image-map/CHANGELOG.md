@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.20
+
+### Patch Changes
+
+- Broken prisma script.
+- Updated dependencies
+  - @ulld/config@0.0.19
+  - @ulld/eslint-config@0.0.19
+  - @ulld/typescript-config@0.0.18
+  - @ulld/configschema@0.0.20
+  - @ulld/logger@0.0.19
+  - @ulld/tailwind@0.0.19
+  - @ulld/utilities@0.0.20
+
 ## 0.0.19
 
 ### Patch Changes

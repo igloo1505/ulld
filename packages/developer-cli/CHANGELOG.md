@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.20
+
+### Patch Changes
+
+- Broken prisma script.
+- Updated dependencies
+  - @ulld/developer@0.0.20
+  - @ulld/developer-schemas@0.0.19
+
 ## 0.0.19
 
 ### Patch Changes

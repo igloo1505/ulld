@@ -1,5 +1,19 @@
 # @ulld/math
 
+## 0.0.20
+
+### Patch Changes
+
+- Broken prisma script.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.19
+  - @ulld/typescript-config@0.0.18
+  - @ulld/configschema@0.0.20
+  - @ulld/hooks@0.0.20
+  - @ulld/icons@0.0.20
+  - @ulld/state@0.0.20
+  - @ulld/utilities@0.0.20
+
 ## 0.0.19
 
 ### Patch Changes

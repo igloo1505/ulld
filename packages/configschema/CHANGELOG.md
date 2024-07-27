@@ -1,5 +1,17 @@
 # @ulld/configschema
 
+## 0.0.20
+
+### Patch Changes
+
+- Broken prisma script.
+- Updated dependencies
+  - @ulld/base-configs@0.0.19
+  - @ulld/developer-schemas@0.0.19
+  - @ulld/icons@0.0.20
+  - @ulld/tailwind@0.0.19
+  - @ulld/utilities@0.0.20
+
 ## 0.0.19
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/diagram
 
+## 0.0.20
+
+### Patch Changes
+
+- Broken prisma script.
+- Updated dependencies
+  - @ulld/api@0.0.20
+  - @ulld/typescript-config@0.0.18
+  - @ulld/developer@0.0.20
+  - @ulld/state@0.0.20
+  - @ulld/tailwind@0.0.19
+
 ## 0.0.19
 
 ### Patch Changes

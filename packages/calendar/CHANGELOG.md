@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.20
+
+### Patch Changes
+
+- Broken prisma script.
+- Updated dependencies
+  - @ulld/developer@0.0.20
+
 ## 0.0.19
 
 ### Patch Changes

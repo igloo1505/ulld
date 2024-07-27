@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.19
+
+### Patch Changes
+
+- Broken prisma script.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.18
+
 ## 0.0.18
 
 ### Patch Changes

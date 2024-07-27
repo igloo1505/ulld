@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.20
+
+### Patch Changes
+
+- Broken prisma script.
+- Updated dependencies
+  - @ulld/api@0.0.20
+  - @ulld/component-map@0.0.20
+  - @ulld/configschema@0.0.20
+  - @ulld/database@0.0.19
+  - @ulld/parsers@0.0.20
+
 ## 0.0.19
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.20
+
+### Patch Changes
+
+- Broken prisma script.
+- Updated dependencies
+  - @ulld/database@0.0.19
+  - @ulld/math@0.0.20
+  - @ulld/tailwind@0.0.19
+
 ## 0.0.19
 
 ### Patch Changes

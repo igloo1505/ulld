@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.18
+
+### Patch Changes
+
+- Broken prisma script.
+
 ## 0.0.17
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.20
+
+### Patch Changes
+
+- Broken prisma script.
+- Updated dependencies
+  - @ulld/config@0.0.19
+  - @ulld/eslint-config@0.0.19
+  - @ulld/typescript-config@0.0.18
+  - @ulld/configschema@0.0.20
+  - @ulld/database@0.0.19
+  - @ulld/logger@0.0.19
+
 ## 0.0.19
 
 ### Patch Changes

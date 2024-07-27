@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.20
+
+### Patch Changes
+
+- Broken prisma script.
+- Updated dependencies
+  - @ulld/configschema@0.0.20
+  - @ulld/database@0.0.19
+  - @ulld/developer@0.0.20
+  - @ulld/utilities@0.0.20
+
 ## 0.0.19
 
 ### Patch Changes

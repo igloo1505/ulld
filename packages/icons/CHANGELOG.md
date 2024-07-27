@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.20
+
+### Patch Changes
+
+- Broken prisma script.
+- Updated dependencies
+  - @ulld/hooks@0.0.20
+  - @ulld/tailwind@0.0.19
+  - @ulld/utilities@0.0.20
+
 ## 0.0.19
 
 ### Patch Changes

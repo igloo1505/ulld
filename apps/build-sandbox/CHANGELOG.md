@@ -1,5 +1,48 @@
 # @ulld/build-sandbox
 
+## 0.0.20
+
+### Patch Changes
+
+- Broken prisma script.
+- Updated dependencies
+  - @ulld/api@0.0.20
+  - @ulld/base-configs@0.0.19
+  - @ulld/bib-manager@0.0.20
+  - @ulld/calendar@0.0.20
+  - @ulld/command-palette@0.0.20
+  - @ulld/component-map@0.0.20
+  - @ulld/config@0.0.19
+  - @ulld/typescript-config@0.0.18
+  - @ulld/configschema@0.0.20
+  - @ulld/database@0.0.19
+  - @ulld/default-image-map@0.0.20
+  - @ulld/developer@0.0.20
+  - @ulld/developer-cli@0.0.20
+  - @ulld/diagram@0.0.20
+  - @ulld/editor@0.0.20
+  - @ulld/embeddable-components@0.0.20
+  - @ulld/equations@0.0.20
+  - @ulld/full-form@0.0.20
+  - @ulld/hooks@0.0.20
+  - @ulld/icons@0.0.20
+  - @ulld/journal@0.0.20
+  - @ulld/landing-layouts@0.0.20
+  - @ulld/logger@0.0.19
+  - @ulld/navigation@0.0.20
+  - @ulld/notebook@0.0.20
+  - @ulld/parsers@0.0.20
+  - @ulld/pdf@0.0.20
+  - @ulld/plot@0.0.20
+  - @ulld/render@0.0.20
+  - @ulld/snippets@0.0.20
+  - @ulld/state@0.0.20
+  - @ulld/tailwind@0.0.19
+  - @ulld/task-manager@0.0.20
+  - @ulld/ui@0.0.20
+  - @ulld/utilities@0.0.20
+  - @ulld/whiteboard@0.0.20
+
 ## 0.0.19
 
 ### Patch Changes

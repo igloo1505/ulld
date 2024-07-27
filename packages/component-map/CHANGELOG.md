@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.20
+
+### Patch Changes
+
+- Broken prisma script.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.20
+  - @ulld/calendar@0.0.20
+  - @ulld/default-image-map@0.0.20
+  - @ulld/diagram@0.0.20
+  - @ulld/editor@0.0.20
+  - @ulld/embeddable-components@0.0.20
+  - @ulld/equations@0.0.20
+  - @ulld/full-form@0.0.20
+  - @ulld/journal@0.0.20
+  - @ulld/navigation@0.0.20
+  - @ulld/notebook@0.0.20
+  - @ulld/pdf@0.0.20
+  - @ulld/plot@0.0.20
+  - @ulld/snippets@0.0.20
+  - @ulld/tailwind@0.0.19
+  - @ulld/task-manager@0.0.20
+  - @ulld/whiteboard@0.0.20
+
 ## 0.0.19
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.20
+
+### Patch Changes
+
+- Broken prisma script.
+- Updated dependencies
+  - @ulld/api@0.0.20
+  - @ulld/component-configs@0.0.20
+  - @ulld/configschema@0.0.20
+  - @ulld/default-image-map@0.0.20
+  - @ulld/hooks@0.0.20
+  - @ulld/icons@0.0.20
+  - @ulld/render@0.0.20
+  - @ulld/state@0.0.20
+  - @ulld/tailwind@0.0.19
+  - @ulld/utilities@0.0.20
+
 ## 0.0.19
 
 ### Patch Changes
