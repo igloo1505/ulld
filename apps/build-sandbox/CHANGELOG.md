@@ -1,5 +1,48 @@
 # @ulld/build-sandbox
 
+## 0.0.18
+
+### Patch Changes
+
+- Removed next-mdx-remote entirely. Now using mdx package directly.
+- Updated dependencies
+  - @ulld/api@0.0.18
+  - @ulld/base-configs@0.0.17
+  - @ulld/bib-manager@0.0.18
+  - @ulld/calendar@0.0.18
+  - @ulld/command-palette@0.0.18
+  - @ulld/component-map@0.0.18
+  - @ulld/config@0.0.17
+  - @ulld/typescript-config@0.0.16
+  - @ulld/configschema@0.0.18
+  - @ulld/database@0.0.17
+  - @ulld/default-image-map@0.0.18
+  - @ulld/developer@0.0.18
+  - @ulld/developer-cli@0.0.18
+  - @ulld/diagram@0.0.18
+  - @ulld/editor@0.0.18
+  - @ulld/embeddable-components@0.0.18
+  - @ulld/equations@0.0.18
+  - @ulld/full-form@0.0.18
+  - @ulld/hooks@0.0.18
+  - @ulld/icons@0.0.18
+  - @ulld/journal@0.0.18
+  - @ulld/landing-layouts@0.0.18
+  - @ulld/logger@0.0.17
+  - @ulld/navigation@0.0.18
+  - @ulld/notebook@0.0.18
+  - @ulld/parsers@0.0.18
+  - @ulld/pdf@0.0.18
+  - @ulld/plot@0.0.18
+  - @ulld/render@0.0.18
+  - @ulld/snippets@0.0.18
+  - @ulld/state@0.0.18
+  - @ulld/tailwind@0.0.17
+  - @ulld/task-manager@0.0.18
+  - @ulld/ui@0.0.18
+  - @ulld/utilities@0.0.18
+  - @ulld/whiteboard@0.0.18
+
 ## 0.0.17
 
 ### Patch Changes

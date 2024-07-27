@@ -1,5 +1,21 @@
 # @ulld/render
 
+## 0.0.18
+
+### Patch Changes
+
+- Removed next-mdx-remote entirely. Now using mdx package directly.
+- Updated dependencies
+  - @ulld/api@0.0.18
+  - @ulld/component-map@0.0.18
+  - @ulld/config@0.0.17
+  - @ulld/typescript-config@0.0.16
+  - @ulld/configschema@0.0.18
+  - @ulld/hooks@0.0.18
+  - @ulld/jest-presets@0.0.17
+  - @ulld/parsers@0.0.18
+  - @ulld/utilities@0.0.18
+
 ## 0.0.17
 
 ### Patch Changes

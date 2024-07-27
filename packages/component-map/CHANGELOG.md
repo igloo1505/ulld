@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.18
+
+### Patch Changes
+
+- Removed next-mdx-remote entirely. Now using mdx package directly.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.18
+  - @ulld/calendar@0.0.18
+  - @ulld/default-image-map@0.0.18
+  - @ulld/diagram@0.0.18
+  - @ulld/editor@0.0.18
+  - @ulld/embeddable-components@0.0.18
+  - @ulld/equations@0.0.18
+  - @ulld/full-form@0.0.18
+  - @ulld/journal@0.0.18
+  - @ulld/navigation@0.0.18
+  - @ulld/notebook@0.0.18
+  - @ulld/pdf@0.0.18
+  - @ulld/plot@0.0.18
+  - @ulld/snippets@0.0.18
+  - @ulld/tailwind@0.0.17
+  - @ulld/task-manager@0.0.18
+  - @ulld/whiteboard@0.0.18
+
 ## 0.0.17
 
 ### Patch Changes

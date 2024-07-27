@@ -1,5 +1,27 @@
 # @ulld/ui
 
+## 0.0.18
+
+### Patch Changes
+
+- Removed next-mdx-remote entirely. Now using mdx package directly.
+- Updated dependencies
+  - @ulld/api@0.0.18
+  - @ulld/component-map@0.0.18
+  - @ulld/config@0.0.17
+  - @ulld/configschema@0.0.18
+  - @ulld/editor@0.0.18
+  - @ulld/embeddable-components@0.0.18
+  - @ulld/full-form@0.0.18
+  - @ulld/hooks@0.0.18
+  - @ulld/icons@0.0.18
+  - @ulld/logger@0.0.17
+  - @ulld/notebook@0.0.18
+  - @ulld/render@0.0.18
+  - @ulld/state@0.0.18
+  - @ulld/tailwind@0.0.17
+  - @ulld/utilities@0.0.18
+
 ## 0.0.17
 
 ### Patch Changes

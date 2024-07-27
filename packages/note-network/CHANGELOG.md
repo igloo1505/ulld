@@ -1,5 +1,20 @@
 # @ulld/note-network
 
+## 0.0.18
+
+### Patch Changes
+
+- Removed next-mdx-remote entirely. Now using mdx package directly.
+- Updated dependencies
+  - @ulld/api@0.0.18
+  - @ulld/typescript-config@0.0.16
+  - @ulld/configschema@0.0.18
+  - @ulld/developer@0.0.18
+  - @ulld/jest-presets@0.0.17
+  - @ulld/logger@0.0.17
+  - @ulld/tailwind@0.0.17
+  - @ulld/utilities@0.0.18
+
 ## 0.0.17
 
 ### Patch Changes

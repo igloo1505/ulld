@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.18
+
+### Patch Changes
+
+- Removed next-mdx-remote entirely. Now using mdx package directly.
+- Updated dependencies
+  - @ulld/database@0.0.17
+  - @ulld/math@0.0.18
+  - @ulld/tailwind@0.0.17
+
 ## 0.0.17
 
 ### Patch Changes

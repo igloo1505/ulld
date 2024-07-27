@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.18
+
+### Patch Changes
+
+- Removed next-mdx-remote entirely. Now using mdx package directly.
+- Updated dependencies
+  - @ulld/developer@0.0.18
+
 ## 0.0.17
 
 ### Patch Changes

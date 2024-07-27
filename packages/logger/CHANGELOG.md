@@ -1,5 +1,11 @@
 # @ulld/logger
 
+## 0.0.17
+
+### Patch Changes
+
+- Removed next-mdx-remote entirely. Now using mdx package directly.
+
 ## 0.0.16
 
 ### Patch Changes

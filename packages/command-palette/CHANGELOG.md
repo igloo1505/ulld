@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.18
+
+### Patch Changes
+
+- Removed next-mdx-remote entirely. Now using mdx package directly.
+- Updated dependencies
+  - @ulld/api@0.0.18
+  - @ulld/bib-manager@0.0.18
+  - @ulld/calendar@0.0.18
+  - @ulld/configschema@0.0.18
+  - @ulld/database@0.0.17
+  - @ulld/developer@0.0.18
+  - @ulld/diagram@0.0.18
+  - @ulld/editor@0.0.18
+  - @ulld/equations@0.0.18
+  - @ulld/hooks@0.0.18
+  - @ulld/logger@0.0.17
+  - @ulld/parsers@0.0.18
+  - @ulld/render@0.0.18
+  - @ulld/snippets@0.0.18
+  - @ulld/state@0.0.18
+  - @ulld/tailwind@0.0.17
+  - @ulld/task-manager@0.0.18
+  - @ulld/ui@0.0.18
+  - @ulld/utilities@0.0.18
+  - @ulld/whiteboard@0.0.18
+
 ## 0.0.17
 
 ### Patch Changes

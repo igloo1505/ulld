@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.17
+
+### Patch Changes
+
+- Removed next-mdx-remote entirely. Now using mdx package directly.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.16
+
 ## 0.0.16
 
 ### Patch Changes

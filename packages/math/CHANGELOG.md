@@ -1,5 +1,19 @@
 # @ulld/math
 
+## 0.0.18
+
+### Patch Changes
+
+- Removed next-mdx-remote entirely. Now using mdx package directly.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.17
+  - @ulld/typescript-config@0.0.16
+  - @ulld/configschema@0.0.18
+  - @ulld/hooks@0.0.18
+  - @ulld/icons@0.0.18
+  - @ulld/state@0.0.18
+  - @ulld/utilities@0.0.18
+
 ## 0.0.17
 
 ### Patch Changes

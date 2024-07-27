@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.18
+
+### Patch Changes
+
+- Removed next-mdx-remote entirely. Now using mdx package directly.
+- Updated dependencies
+  - @ulld/developer@0.0.18
+  - @ulld/developer-schemas@0.0.17
+
 ## 0.0.17
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.18
+
+### Patch Changes
+
+- Removed next-mdx-remote entirely. Now using mdx package directly.
+- Updated dependencies
+  - @ulld/api@0.0.18
+  - @ulld/component-map@0.0.18
+  - @ulld/configschema@0.0.18
+  - @ulld/database@0.0.17
+  - @ulld/parsers@0.0.18
+
 ## 0.0.17
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.18
+
+### Patch Changes
+
+- Removed next-mdx-remote entirely. Now using mdx package directly.
+- Updated dependencies
+  - @ulld/hooks@0.0.18
+  - @ulld/tailwind@0.0.17
+  - @ulld/utilities@0.0.18
+
 ## 0.0.17
 
 ### Patch Changes

@@ -1,5 +1,23 @@
 # @ulld/full-form
 
+## 0.0.18
+
+### Patch Changes
+
+- Removed next-mdx-remote entirely. Now using mdx package directly.
+- Updated dependencies
+  - @ulld/api@0.0.18
+  - @ulld/typescript-config@0.0.16
+  - @ulld/configschema@0.0.18
+  - @ulld/database@0.0.17
+  - @ulld/editor@0.0.18
+  - @ulld/hooks@0.0.18
+  - @ulld/icons@0.0.18
+  - @ulld/jest-presets@0.0.17
+  - @ulld/state@0.0.18
+  - @ulld/tailwind@0.0.17
+  - @ulld/utilities@0.0.18
+
 ## 0.0.17
 
 ### Patch Changes
