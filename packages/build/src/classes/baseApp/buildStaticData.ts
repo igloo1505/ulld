@@ -31,7 +31,8 @@ export class BuildStaticData {
         }
         let toTranspile = this.build.getPackagesToTranspile()
         for (const item of toTranspile) {
-            if(!this.transpilePackages.includes(item)){
+            // TODO: Handle this better it this is the source of the build issue by creating a list of separate packages and apps, not just a single list.
+            if(!this.transpilePackages.includes(item) && !(item.includes("sandbox") || item.includes("website"))){
                 this.transpilePackages.push(item)
             }
         }

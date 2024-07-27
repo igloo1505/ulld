@@ -329,7 +329,7 @@
     "plugins": [
         {
             "name": "@ulld/api",
-            "version": "latest",
+            "version": "0.0.15",
             "parserIndex": 0
         }
     ]

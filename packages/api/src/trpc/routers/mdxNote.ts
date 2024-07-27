@@ -2,15 +2,9 @@ import { z } from "zod";
 import { publicProcedure, router } from "../trpc";
 import { markdownExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
 import { prisma } from "@ulld/database/db";
-import {
-    getRemoteMdx,
-} from "../../trpcInternalMethods/notes/mdx/getRemoteMdx";
-import {
-    getRemoteMdxFromPathname,
-} from "../../trpcInternalMethods/notes/mdx/getRemoteMdxFromPathname";
-import {
-    getFsMdx,
-} from "../../trpcInternalMethods/filesystem/fsnotes";
+import { getRemoteMdx } from "../../trpcInternalMethods/notes/mdx/getRemoteMdx";
+import { getRemoteMdxFromPathname } from "../../trpcInternalMethods/notes/mdx/getRemoteMdxFromPathname";
+import { getFsMdx } from "../../trpcInternalMethods/filesystem/fsnotes";
 import { makeArrayTransform } from "@ulld/utilities/schemas/transforms";
 import { parseMdxString } from "@ulld/parsers/mdx";
 import { parseMdxProps } from "@ulld/utilities/schemas/mdx/parseMdxStringProps";
@@ -18,7 +12,6 @@ import { parseMdxProps } from "@ulld/utilities/schemas/mdx/parseMdxStringProps";
 const idOrIdArray = z
     .union([z.number().int(), z.number().int().array()])
     .transform(makeArrayTransform);
-
 
 export const mdxNoteActionsRouter = router({
     deleteNoteById: publicProcedure
@@ -49,7 +42,7 @@ export const mdxNoteActionsRouter = router({
             });
             return Boolean(note?.bookmarked !== newNote.bookmarked);
         }),
-    getRemoteMdx: publicProcedure.input(z.string()).query(async (opts) => {
+    getDatabaseMdx: publicProcedure.input(z.string()).query(async (opts) => {
         return getRemoteMdx(opts.input);
     }),
     getRemoteMdxFromPathname: publicProcedure
@@ -59,14 +52,42 @@ export const mdxNoteActionsRouter = router({
         }),
     getFsMdx: publicProcedure
         .input(
-            z.object({ rootRelativePath: z.string(), extension: markdownExtensions, useProcessRoot: z.boolean().default(false) }),
+            z.object({
+                rootRelativePath: z.string(),
+                extension: markdownExtensions,
+                useProcessRoot: z.boolean().default(false),
+            }),
         )
-        .query(async (opts) => {
-            return getFsMdx(opts.input.rootRelativePath, opts.input.extension, null, opts.input.useProcessRoot);
+        .query(async ({ input }) => {
+            let content = await getFsMdx(
+                input.rootRelativePath,
+                input.extension,
+                null,
+                input.useProcessRoot,
+            );
+            let noteDetails = await prisma.mdxNote.findFirst({
+                where: {
+                    rootRelativePath: input.rootRelativePath,
+                },
+                select: {
+                    bookmarked: true,
+                    quickLink: true,
+                    id: true,
+                    sequentialKey: true,
+                    sequentialIndex: true,
+                    firstSync: true,
+                    lastSync: true
+                },
+            });
+            return {
+                content: content,
+                details: noteDetails,
+            };
         }),
     parseMdxString: publicProcedure
         .input(parseMdxProps)
         .mutation(async ({ input }) => {
-            return await parseMdxString(input);
+             throw new Error(`This method should be removed and replaced with the parseMdxString method exported from @ulld/parsers. This backend method can not accept user defined components.`)
+            // return await parseMdxString(input);
         }),
 });

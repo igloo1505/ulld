@@ -243,6 +243,9 @@ export class PackageManager {
             fs.rmSync(p);
         }
     }
+    removeWebsite() {
+        this.packages = this.packages.filter((f) => f.name !== "@ulld/websiite");
+    }
     writeUpdateReactScript(
         reactVersion: string = "latest",
         nextVersion: string = "latest",
@@ -407,6 +410,20 @@ pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${package
     findByDependency(name: string) {
         return this.packages.filter((a) => a.deps.find((b) => b.name === name));
     }
+    printDependencyDetails(name: string) {
+        let packages = this.findByDependency(name);
+        for (const p of packages) {
+            let deps = p.deps.filter((d) => d.name === name);
+            console.log(`
+---
+package: ${p.name}
+occurances: ${deps.length}
+types: 
+${deps.map((d) => `    ${d.type}`).join("\n")}
+---
+`);
+        }
+    }
     findByRegex(regexString: string): { package: string; deps: string[] }[] {
         let regex = new RegExp(regexString, "gmi");
         return this.packages
@@ -542,4 +559,7 @@ pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${package
 
 let p = new PackageManager();
 
-p.applyPluginConfigToFiles();
+p.removeWebsite()
+
+p.printDependencyDetails("@prisma/client");
+process.exit();

@@ -1,12 +1,11 @@
 import React from 'react'
 import { notFound } from 'next/navigation'
 import dynamic from 'next/dynamic'
-import DatabaseMarkdown from './database/remoteMarkdown'
 import { serverClient } from '@ulld/api/serverClient'
 import { PageContentContainer } from '../../layouts/contentContainer'
 import { ParsableExtensions } from '@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions'
 import { NotePageProps } from '../../../utilityFunctions/formatting/formatNoteProps'
-
+import DatabaseMdxPage from '../mdx/database'
 
 interface DatbaseNoteProps extends NotePageProps {
     noteType?: ParsableExtensions | null
@@ -28,7 +27,7 @@ const DatabaseNote = async (props: DatbaseNoteProps) => {
     if (nt === ".mdx" || nt === ".md") {
         return (
             <PageContentContainer canBookmark>
-                <DatabaseMarkdown
+                <DatabaseMdxPage
                     {...props}
                 />
             </PageContentContainer>

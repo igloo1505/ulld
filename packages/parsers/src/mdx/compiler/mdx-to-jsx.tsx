@@ -1,11 +1,9 @@
 import { compile } from "@mdx-js/mdx";
-import { z } from "zod";
 import { CompileOptions } from "@mdx-js/mdx";
 import {
     MermaidConfigType,
     mermaidTheme,
 } from "@ulld/utilities/defaults/defaultMermaidConfig";
-import { parseMdxProps } from "@ulld/utilities/schemas/mdx/parseMdxStringProps";
 import { mathOptions } from "@ulld/utilities/defaults/markdownUniversalOptions";
 import remarkMath from "remark-math";
 import remarkGfm from "remark-gfm";
@@ -16,8 +14,7 @@ import emoji from "remark-emoji";
 /* import toc from "@jsdevtools/rehype-toc" */
 import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
-import { getUlldConfig } from "@ulld/developer/getConfig";
-import { ParsedAppConfig } from "@ulld/configschema/types";
+import { AppConfigSchemaOutput, ParsedAppConfig } from "@ulld/configschema/types";
 
 export const mermaidConfig: MermaidConfigType = {
     output: "svg",
@@ -29,7 +26,7 @@ export const mermaidConfig: MermaidConfigType = {
 };
 
 const rehypePlugins = (
-    config?: ParsedAppConfig,
+    config?: AppConfigSchemaOutput,
 ): CompileOptions["rehypePlugins"] => {
     return [
         /* TODO: Add an embeded video component for this rehypeVideo that then utilizes the existing video element. */
@@ -75,7 +72,7 @@ const rehypePlugins = (
     ];
 };
 const remarkPlugins = (
-    config?: ParsedAppConfig,
+    config?: AppConfigSchemaOutput,
 ): CompileOptions["remarkPlugins"] => {
     return [
         remarkMath, 
@@ -88,15 +85,19 @@ const remarkPlugins = (
 
 export const parseMdxString = async ({
     content,
-}: z.input<typeof parseMdxProps>) => {
-    const config = getUlldConfig();
+    appConfig
+}: {
+        content: string
+        appConfig: AppConfigSchemaOutput
+    }) => {
     let res = await compile(content, {
         outputFormat: "function-body",
-        remarkPlugins: remarkPlugins(config),
-        rehypePlugins: rehypePlugins(config),
+        remarkPlugins: remarkPlugins(appConfig),
+        rehypePlugins: rehypePlugins(appConfig),
         development: process.env.NODE_ENV === "development",
         /* baseUrl: import.meta.url */
     });
-    return String(res)
-    /* return String(res).replaceAll(/classname/g, "className") */
+    /* return String(res) */
+    return String(res).replaceAll(/classname/g, "className")
 };
+

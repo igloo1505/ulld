@@ -60,6 +60,7 @@ export class BaseApp extends ShellManager {
         this.buildStaticData.writeOutput()
         this.logVerbose("Copying component documentation...")
         this.copyComponentDocs()
+        this.copyPluginDocs()
         this.logVerbose("Generating database schema...")
         this.writePrismaSchema()
         this.logVerbose("Wrapping up build...")
@@ -186,6 +187,13 @@ export default unifiedParserList
                 if(comp.hasDocsData){
                     comp.copyDocsData()
                 }
+            }
+        }
+    }
+    copyPluginDocs() {
+        for (const k of this.build.plugins) {
+            if(k.hasDocumentation){
+                k.copyDocumentation()
             }
         }
     }

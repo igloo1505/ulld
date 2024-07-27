@@ -3,10 +3,13 @@ import { ChartConfig } from "../../../lib/shad/shadChart";
 import { XYPlotProps } from "../../../types";
 
 export class ShadChartConfigManager {
-    constructor(public props: XYPlotProps) { }
+    data: ChartConfig = {}
+    constructor(public props: XYPlotProps) {
+        this.data = this.getChartConfig()
+    }
     getChartConfig(): ChartConfig {
         let config: ChartConfig = {};
-        for (const item of this.props.data) {
+        this.props.data.forEach((item, i) => {
             config[`${item.id}`] = {
                 label: item.label,
                 icon:
@@ -18,9 +21,13 @@ export class ShadChartConfigManager {
                             />
                         )
                         : item.icon,
-                ...getThemeData(item),
+                color: item.color || this.getIndexedColor(i)
             };
-        }
+        })
         return config;
+    }
+    getIndexedColor(idx: number){
+        /* TODO: Return an acutal indexed color here. */
+        return "hsl(var(--primary))"
     }
 }

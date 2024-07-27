@@ -5,6 +5,8 @@ import { LazyMdx } from '../../lazyMdx'
 import { NoteDetailsSheet } from '../../../toc/noteDetailsSheet'
 import { MarkdownFileExtensions } from '@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions'
 import { NotePageProps } from '../../../../utilityFunctions/formatting/formatNoteProps'
+import FileSystemMdxPage from "@ulld/ui/fileSystemMdxPage"
+import { AppConfigSchemaOutput } from '@ulld/configschema/types'
 
 
 
@@ -13,30 +15,14 @@ interface FileSystemMdProps extends NotePageProps {
     absolutePath: string
     rootRelativePath: string
     extension: MarkdownFileExtensions
+    appConfig: AppConfigSchemaOutput
 }
 
-
 const FileSystemMarkdown = async (props: FileSystemMdProps) => {
-    let data = await serverClient.mdx.getFsMdx({
-        rootRelativePath: props.rootRelativePath,
-        extension: props.extension
-    })
     return (
-        <>
-            <LazyMdx
-                markdown={data}
-                slug={props.slug}
-                docType={props.docType}
-                rootRelativePath={props.rootRelativePath}
-                fs={true}
-                mdxParser={props.parsers.mdx}
+            <FileSystemMdxPage 
+                {...props}
             />
-            {data && <ReduxProvider>
-                <NoteDetailsSheet
-                    noteId={props.slug}
-                />
-            </ReduxProvider>}
-        </>
     )
 }
 

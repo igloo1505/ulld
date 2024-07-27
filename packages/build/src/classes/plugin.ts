@@ -15,6 +15,7 @@ import { TargetPaths } from "./paths";
 import { ShellManager } from "./baseClasses/shell";
 import { PackageJson } from "./baseClasses/pkgJson";
 import { PluginSettingsPage } from "./pluginSettingsPage";
+import { Path } from "./utilityClasses/Path";
 
 export class UlldPlugin extends ShellManager {
     pluginConfig: DeveloperConfigOutput | "Unusable" = "Unusable";
@@ -30,6 +31,7 @@ export class UlldPlugin extends ShellManager {
     packageJson?: PackageJson;
     settingsPage?: PluginSettingsPage;
     includeInTailwindSources: boolean = false;
+    hasDocumentation: boolean = false;
     embeddables?: (NonNullable<
         (typeof this.components)[number]["data"]["embeddable"]
     >[number] & {
@@ -134,6 +136,7 @@ Attempted to find one at ${configPath}
         if (this.pluginConfig.settings) {
             this.settingsPage = new PluginSettingsPage(this.paths, this.pluginConfig);
         }
+        this.hasDocumentation = Boolean(this.pluginConfig.documentation);
         this.embeddables = this.getEmbeddables();
         this.includeInTailwindSources = [
             this.embeddables,
@@ -232,6 +235,32 @@ Attempted to find one at ${configPath}
     }
     isValid() {
         return this.hasConfig;
+    }
+    copyDocumentation() {
+        if (
+            !this.pluginConfig ||
+            this.pluginConfig === "Unusable" ||
+            !this.pluginConfig.documentation ||
+            !this.packageJson
+        ) {
+            return;
+        }
+        let exportPath = this.pluginConfig.documentation as string;
+        if (!exportPath) {
+            return undefined;
+        }
+        let subPath = this.packageJson.getSubPathByExport(exportPath);
+        if (!subPath) {
+            return undefined;
+        }
+        let inputPathString = this.paths.getPathInNodeModule(this.name, subPath);
+        let inputPath = new Path(inputPathString);
+        let outputPath = new Path(
+            this.paths.joinPath("pluginDocumentation", `${encodeURI(this.name)}.mdx`),
+        );
+        if (inputPath.getExists()) {
+            inputPath.copyContentTo(outputPath);
+        }
     }
     applyDependency(pkg: PackageJsonType): {
         pkg: PackageJsonType;

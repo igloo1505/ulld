@@ -36,6 +36,7 @@ export class TargetPaths
     prismaSchema: string;
     gitignore: string;
     envLocal: string
+    pluginDocumentation: string
     constructor(
         public targetDir: string,
         public isLocalDev: boolean,
@@ -90,6 +91,7 @@ export class TargetPaths
             targetDir,
             "generatedMarkdown/componentDocs",
         );
+        this.pluginDocumentation = path.join(targetDir, "generatedMarkdown/pluginDocs")
         this.fullComponentDocumentation = path.join(
             this.componentDocumentation,
             "full",

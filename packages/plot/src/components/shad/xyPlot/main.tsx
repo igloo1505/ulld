@@ -1,19 +1,17 @@
 import React from "react";
 import { XYPlotProps } from "./types";
-import { BarChart, Bar } from "recharts";
 import {
     ChartContainer,
-    ChartTooltip,
-    ChartTooltipContent,
 } from "../../../lib/shad/shadChart";
-import { getShadChartXYConfig } from "../../../lib/shad/getShadChartXYConfig";
+import { XYDataHandler } from "../../../classes/twoD/XYDataHandler";
+import BarTrace from "./traces/barTrace";
 
 
 const XYPlot = (props: XYPlotProps) => {
-    let config = getShadChartXYConfig(props);
+    let data = new XYDataHandler(props)
     return (
         <ChartContainer
-            config={config}
+            config={data.chartConfig.data}
             className={"w-full"}
             style={{
                 minHeight:
@@ -22,10 +20,9 @@ const XYPlot = (props: XYPlotProps) => {
                         : props.minHeight,
             }}
         >
-            <BarChart data={data}>
-                <Bar dataKey="value" />
-                <ChartTooltip content={<ChartTooltipContent />} />
-            </BarChart>
+            <BarTrace 
+               data={data.flattenedData}
+            />
         </ChartContainer>
     );
 };

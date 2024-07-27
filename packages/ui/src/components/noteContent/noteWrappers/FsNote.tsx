@@ -1,9 +1,9 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-import FileSystemMarkdown from './filesystem/fileSystemMarkdown';
 import { PageContentContainer } from '../../layouts/contentContainer';
 import { ParsableExtensions } from '@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions';
 import { NotePageProps } from '../../../utilityFunctions/formatting/formatNoteProps';
+import FileSystemMdxPage from "@ulld/ui/fileSystemMdxPage"
 
 
 interface FileSystemNoteProps extends NotePageProps {
@@ -18,7 +18,7 @@ const FileSystemNote = (props: FileSystemNoteProps) => {
     if (props.noteType === ".mdx") {
         return (
             <PageContentContainer canBookmark>
-                <FileSystemMarkdown
+                <FileSystemMdxPage
                     {...props}
                     extension={props.noteType}
 
@@ -29,7 +29,7 @@ const FileSystemNote = (props: FileSystemNoteProps) => {
     if (props.noteType === ".md") {
         return (
             <PageContentContainer canBookmark>
-                <FileSystemMarkdown
+                <FileSystemMdxPage
                     {...props}
                     extension={props.noteType}
                 />
@@ -40,9 +40,10 @@ const FileSystemNote = (props: FileSystemNoteProps) => {
         const FileSystemNotebook = dynamic(() => import('./filesystem/fileSystemNotebook'), { ssr: false })
         return (
             <PageContentContainer notebook canBookmark>
-                <FileSystemNotebook
-                    {...props}
-                />
+                FIX ME
+                {/* <FileSystemNotebook */}
+                {/*     {...props} */}
+                {/* /> */}
             </PageContentContainer>
         )
     }

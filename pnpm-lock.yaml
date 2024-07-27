@@ -392,11 +392,11 @@ importers:
         specifier: ^0.1.52
         version: 0.1.53
       '@next/mdx':
-        specifier: ^14.2.3
-        version: 14.2.5(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.2.0))
+        specifier: 14.2.3
+        version: 14.2.3(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.2.0))
       '@next/third-parties':
-        specifier: ^14.2.3
-        version: 14.2.5(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react@18.2.0)
+        specifier: 14.2.3
+        version: 14.2.3(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react@18.2.0)
       '@prisma/client':
         specifier: 5.17.0
         version: 5.17.0(prisma@5.17.0)
@@ -575,7 +575,7 @@ importers:
         specifier: ^7.1.0
         version: 7.1.0(monaco-editor@0.49.0)(webpack@5.93.0(@swc/core@1.7.2)(esbuild@0.20.2))
       next:
-        specifier: ^14.2.3
+        specifier: 14.2.3
         version: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
       next-seo:
         specifier: ^6.5.0
@@ -3674,6 +3674,9 @@ importers:
       '@ulld/hooks':
         specifier: workspace:*
         version: link:../hooks
+      '@ulld/parsers':
+        specifier: workspace:*
+        version: link:../parsers
       '@ulld/utilities':
         specifier: workspace:*
         version: link:../utilities
@@ -7577,8 +7580,8 @@ packages:
   '@next/env@14.2.3':
     resolution: {integrity: sha512-W7fd7IbkfmeeY2gXrzJYDx8D2lWKbVoTIj1o1ScPHNzvp30s1AuoEFSdr39bC5sjxJaxTtq3OTCZboNp0lNWHA==}
 
-  '@next/mdx@14.2.5':
-    resolution: {integrity: sha512-AROhSdXQg0/jt55iqxVSJqp9oaCyXwRe44/I17c77gDshZ6ex7VKBZDH0GljaxZ0Y4mScYUbFJJEh42Xw4X4Dg==}
+  '@next/mdx@14.2.3':
+    resolution: {integrity: sha512-oVz7BWpoLQ9dKvCKxPIX9X6BILPTrpTJnYDn2lAsZvK7J9Ela6xNm57vNwgZ8q7xw1THSDdSlbPNgIalM7U/+A==}
     peerDependencies:
       '@mdx-js/loader': '>=0.15.0'
       '@mdx-js/react': '>=0.15.0'
@@ -7642,8 +7645,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@next/third-parties@14.2.5':
-    resolution: {integrity: sha512-PDRJm8RZ3rnGNporHKjcdCeZqoW8iJ5uP0clo1Z08TqJiQzuntJ66zrGYCJyqTakx62UJNOp73YsQCFo6kbYYg==}
+  '@next/third-parties@14.2.3':
+    resolution: {integrity: sha512-j4E2xBSsEZq4VX2pVm3LpGltSwCxETic6glJWfHyYQvpoMdplCAYrQKpF+E9Gg3jfsrfmRAIdTE11m+biBCx1Q==}
     peerDependencies:
       next: ^13.0.0 || ^14.0.0
       react: ^18.2.0
@@ -23835,7 +23838,7 @@ snapshots:
 
   '@next/env@14.2.3': {}
 
-  '@next/mdx@14.2.5(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.2.0))':
+  '@next/mdx@14.2.3(@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.2.0))':
     dependencies:
       source-map: 0.7.4
     optionalDependencies:
@@ -23868,7 +23871,7 @@ snapshots:
   '@next/swc-win32-x64-msvc@14.2.3':
     optional: true
 
-  '@next/third-parties@14.2.5(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react@18.2.0)':
+  '@next/third-parties@14.2.3(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react@18.2.0)':
     dependencies:
       next: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
       react: 18.2.0

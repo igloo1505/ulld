@@ -3,6 +3,9 @@ import { autoWrapMath } from '@ulld/utilities/latexUtils';
 import React from 'react'
 import MdxContentPreCompiled from './mdxContentPreCompiled';
 import { getMdxClassnames } from './getMdxClassnames';
+import { parseMdxString } from "@ulld/parsers/mdx";
+import { AdditionalComponents } from '@ulld/component-map/types';
+import { AppConfigSchemaOutput } from '@ulld/configschema/types';
 
 
 export interface MdxContentSERVERProps {
@@ -19,6 +22,8 @@ export interface MdxContentSERVERProps {
     xl?: boolean
     live?: boolean // Might not be using this. Double check later.
     applyMathContextMenu?: boolean
+    components?: AdditionalComponents
+    appConfig: AppConfigSchemaOutput
 }
 
 
@@ -34,10 +39,10 @@ const parseProps = (p: MdxContentSERVERProps) => {
 
 export const MdxContentSERVER = async (_props: MdxContentSERVERProps) => {
     const props = parseProps(_props)
-    const compiled = await serverClient.mdx.parseMdxString({
+    let compiled = await parseMdxString({
         content: props.content,
-        display: props.displayType
-    })  
+        appConfig: props.appConfig
+    })
     const classNames = getMdxClassnames(_props)
     return (
         <MdxContentPreCompiled 
@@ -45,6 +50,7 @@ export const MdxContentSERVER = async (_props: MdxContentSERVERProps) => {
             raw={props.content}
             className={classNames}
             applyMathContextMenu={(props.autoWrap && props.isMathOnly) || props.applyMathContextMenu}
+            components={_props.components}
         />
     )
 }

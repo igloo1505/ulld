@@ -6,7 +6,7 @@ import DatabaseNote from './noteWrappers/DatabaseNote'
 import FsNote from './noteWrappers/FsNote'
 
 
-export const IndividualNoteSwitch = async (props: NotePageProps) => {
+export const IndividualNoteSwitch = async (props: Omit<NotePageProps, "noteType" | "rootRelativeWithExtension" | "absolutePath" | "rootRelativePath">) => {
     const { noteProps } = props
     serverLogger.info(noteProps, { label: "Note Props", component: "IndividualNoteSwitch" })
 

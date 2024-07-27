@@ -31,6 +31,7 @@ export const pathKeys = [
     "gitignore",
     "prismaSchema",
     "userDefinedStyles",
+    "pluginDocumentation",
     "tempBuildFiles",
 ] as const;
 
