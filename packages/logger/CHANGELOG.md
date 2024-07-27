@@ -1,5 +1,11 @@
 # @ulld/logger
 
+## 0.0.18
+
+### Patch Changes
+
+- Update prisma export.
+
 ## 0.0.17
 
 ### Patch Changes

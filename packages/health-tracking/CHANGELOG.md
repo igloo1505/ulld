@@ -1,5 +1,25 @@
 # @ulld/health-tracking
 
+## 0.0.19
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/api@0.0.19
+  - @ulld/eslint-config@0.0.18
+  - @ulld/typescript-config@0.0.17
+  - @ulld/configschema@0.0.19
+  - @ulld/developer@0.0.19
+  - @ulld/hooks@0.0.19
+  - @ulld/jest-presets@0.0.18
+  - @ulld/logger@0.0.18
+  - @ulld/plot@0.0.19
+  - @ulld/state@0.0.19
+  - @ulld/tailwind@0.0.18
+  - @ulld/ui@0.0.19
+  - @ulld/utilities@0.0.19
+
 ## 0.0.18
 
 ### Patch Changes

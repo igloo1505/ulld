@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.19
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/base-configs@0.0.18
+  - @ulld/configschema@0.0.19
+  - @ulld/developer-schemas@0.0.18
+  - @ulld/utilities@0.0.19
+
 ## 0.0.18
 
 ### Patch Changes

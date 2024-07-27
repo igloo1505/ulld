@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.19
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/developer@0.0.19
+  - @ulld/developer-schemas@0.0.18
+
 ## 0.0.18
 
 ### Patch Changes

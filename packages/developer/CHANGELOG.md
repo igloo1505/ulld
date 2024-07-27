@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.19
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/config@0.0.18
+  - @ulld/eslint-config@0.0.18
+  - @ulld/typescript-config@0.0.17
+  - @ulld/configschema@0.0.19
+  - @ulld/database@0.0.18
+  - @ulld/logger@0.0.18
+
 ## 0.0.18
 
 ### Patch Changes

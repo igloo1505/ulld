@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.19
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/api@0.0.19
+  - @ulld/bib-manager@0.0.19
+  - @ulld/calendar@0.0.19
+  - @ulld/configschema@0.0.19
+  - @ulld/database@0.0.18
+  - @ulld/developer@0.0.19
+  - @ulld/diagram@0.0.19
+  - @ulld/editor@0.0.19
+  - @ulld/equations@0.0.19
+  - @ulld/hooks@0.0.19
+  - @ulld/logger@0.0.18
+  - @ulld/parsers@0.0.19
+  - @ulld/render@0.0.19
+  - @ulld/snippets@0.0.19
+  - @ulld/state@0.0.19
+  - @ulld/tailwind@0.0.18
+  - @ulld/task-manager@0.0.19
+  - @ulld/ui@0.0.19
+  - @ulld/utilities@0.0.19
+  - @ulld/whiteboard@0.0.19
+
 ## 0.0.18
 
 ### Patch Changes

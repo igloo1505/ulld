@@ -1,5 +1,24 @@
 # @ulld/pdf
 
+## 0.0.19
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/api@0.0.19
+  - @ulld/eslint-config@0.0.18
+  - @ulld/configschema@0.0.19
+  - @ulld/developer@0.0.19
+  - @ulld/hooks@0.0.19
+  - @ulld/icons@0.0.19
+  - @ulld/jest-presets@0.0.18
+  - @ulld/state@0.0.19
+  - @ulld/tailwind@0.0.18
+  - @ulld/ui@0.0.19
+  - @ulld/utilities@0.0.19
+  - @ulld/whiteboard@0.0.19
+
 ## 0.0.18
 
 ### Patch Changes

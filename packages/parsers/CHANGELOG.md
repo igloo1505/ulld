@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.19
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/configschema@0.0.19
+  - @ulld/database@0.0.18
+  - @ulld/developer@0.0.19
+  - @ulld/utilities@0.0.19
+
 ## 0.0.18
 
 ### Patch Changes

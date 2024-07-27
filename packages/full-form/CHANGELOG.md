@@ -1,5 +1,23 @@
 # @ulld/full-form
 
+## 0.0.19
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/api@0.0.19
+  - @ulld/typescript-config@0.0.17
+  - @ulld/configschema@0.0.19
+  - @ulld/database@0.0.18
+  - @ulld/editor@0.0.19
+  - @ulld/hooks@0.0.19
+  - @ulld/icons@0.0.19
+  - @ulld/jest-presets@0.0.18
+  - @ulld/state@0.0.19
+  - @ulld/tailwind@0.0.18
+  - @ulld/utilities@0.0.19
+
 ## 0.0.18
 
 ### Patch Changes

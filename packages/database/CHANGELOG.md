@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.18
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.17
+
 ## 0.0.17
 
 ### Patch Changes

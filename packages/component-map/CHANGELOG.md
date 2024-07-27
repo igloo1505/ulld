@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.19
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.19
+  - @ulld/calendar@0.0.19
+  - @ulld/default-image-map@0.0.19
+  - @ulld/diagram@0.0.19
+  - @ulld/editor@0.0.19
+  - @ulld/embeddable-components@0.0.19
+  - @ulld/equations@0.0.19
+  - @ulld/full-form@0.0.19
+  - @ulld/journal@0.0.19
+  - @ulld/navigation@0.0.19
+  - @ulld/notebook@0.0.19
+  - @ulld/pdf@0.0.19
+  - @ulld/plot@0.0.19
+  - @ulld/snippets@0.0.19
+  - @ulld/tailwind@0.0.18
+  - @ulld/task-manager@0.0.19
+  - @ulld/whiteboard@0.0.19
+
 ## 0.0.18
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.19
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/config@0.0.18
+  - @ulld/eslint-config@0.0.18
+  - @ulld/typescript-config@0.0.17
+  - @ulld/configschema@0.0.19
+  - @ulld/logger@0.0.18
+  - @ulld/tailwind@0.0.18
+  - @ulld/utilities@0.0.19
+
 ## 0.0.18
 
 ### Patch Changes

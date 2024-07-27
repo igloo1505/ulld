@@ -1,5 +1,19 @@
 # @ulld/math
 
+## 0.0.19
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.18
+  - @ulld/typescript-config@0.0.17
+  - @ulld/configschema@0.0.19
+  - @ulld/hooks@0.0.19
+  - @ulld/icons@0.0.19
+  - @ulld/state@0.0.19
+  - @ulld/utilities@0.0.19
+
 ## 0.0.18
 
 ### Patch Changes

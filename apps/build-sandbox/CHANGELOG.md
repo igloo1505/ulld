@@ -1,5 +1,48 @@
 # @ulld/build-sandbox
 
+## 0.0.19
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/api@0.0.19
+  - @ulld/base-configs@0.0.18
+  - @ulld/bib-manager@0.0.19
+  - @ulld/calendar@0.0.19
+  - @ulld/command-palette@0.0.19
+  - @ulld/component-map@0.0.19
+  - @ulld/config@0.0.18
+  - @ulld/typescript-config@0.0.17
+  - @ulld/configschema@0.0.19
+  - @ulld/database@0.0.18
+  - @ulld/default-image-map@0.0.19
+  - @ulld/developer@0.0.19
+  - @ulld/developer-cli@0.0.19
+  - @ulld/diagram@0.0.19
+  - @ulld/editor@0.0.19
+  - @ulld/embeddable-components@0.0.19
+  - @ulld/equations@0.0.19
+  - @ulld/full-form@0.0.19
+  - @ulld/hooks@0.0.19
+  - @ulld/icons@0.0.19
+  - @ulld/journal@0.0.19
+  - @ulld/landing-layouts@0.0.19
+  - @ulld/logger@0.0.18
+  - @ulld/navigation@0.0.19
+  - @ulld/notebook@0.0.19
+  - @ulld/parsers@0.0.19
+  - @ulld/pdf@0.0.19
+  - @ulld/plot@0.0.19
+  - @ulld/render@0.0.19
+  - @ulld/snippets@0.0.19
+  - @ulld/state@0.0.19
+  - @ulld/tailwind@0.0.18
+  - @ulld/task-manager@0.0.19
+  - @ulld/ui@0.0.19
+  - @ulld/utilities@0.0.19
+  - @ulld/whiteboard@0.0.19
+
 ## 0.0.18
 
 ### Patch Changes

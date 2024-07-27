@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.19
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/database@0.0.18
+  - @ulld/math@0.0.19
+  - @ulld/tailwind@0.0.18
+
 ## 0.0.18
 
 ### Patch Changes

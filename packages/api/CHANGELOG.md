@@ -1,5 +1,22 @@
 # @ulld/api
 
+## 0.0.19
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/base-configs@0.0.18
+  - @ulld/config@0.0.18
+  - @ulld/configschema@0.0.19
+  - @ulld/database@0.0.18
+  - @ulld/developer@0.0.19
+  - @ulld/logger@0.0.18
+  - @ulld/parsers@0.0.19
+  - @ulld/state@0.0.19
+  - @ulld/tailwind@0.0.18
+  - @ulld/utilities@0.0.19
+
 ## 0.0.18
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.19
+
+### Patch Changes
+
+- Update prisma export.
+- Updated dependencies
+  - @ulld/hooks@0.0.19
+  - @ulld/tailwind@0.0.18
+  - @ulld/utilities@0.0.19
+
 ## 0.0.18
 
 ### Patch Changes
