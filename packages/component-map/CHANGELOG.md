@@ -1,5 +1,30 @@
 # @ulld/component-map
 
+## 0.0.27
+
+### Patch Changes
+
+- Moved all references to prisma to referring to the internal DB package
+  directly.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.27
+  - @ulld/calendar@0.0.27
+  - @ulld/default-image-map@0.0.27
+  - @ulld/diagram@0.0.27
+  - @ulld/editor@0.0.27
+  - @ulld/embeddable-components@0.0.27
+  - @ulld/equations@0.0.27
+  - @ulld/full-form@0.0.27
+  - @ulld/journal@0.0.27
+  - @ulld/navigation@0.0.27
+  - @ulld/notebook@0.0.27
+  - @ulld/pdf@0.0.27
+  - @ulld/plot@0.0.27
+  - @ulld/snippets@0.0.27
+  - @ulld/tailwind@0.0.24
+  - @ulld/task-manager@0.0.27
+  - @ulld/whiteboard@0.0.27
+
 ## 0.0.26
 
 ### Patch Changes

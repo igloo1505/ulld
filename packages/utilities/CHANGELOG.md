@@ -1,5 +1,16 @@
 # @ulld/utilities
 
+## 0.0.27
+
+### Patch Changes
+
+- Moved all references to prisma to referring to the internal DB package
+  directly.
+- Updated dependencies
+  - @ulld/database@0.0.26
+  - @ulld/math@0.0.27
+  - @ulld/tailwind@0.0.24
+
 ## 0.0.26
 
 ### Patch Changes

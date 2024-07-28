@@ -1,5 +1,20 @@
 # @ulld/math
 
+## 0.0.27
+
+### Patch Changes
+
+- Moved all references to prisma to referring to the internal DB package
+  directly.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.24
+  - @ulld/typescript-config@0.0.23
+  - @ulld/configschema@0.0.27
+  - @ulld/hooks@0.0.27
+  - @ulld/icons@0.0.27
+  - @ulld/state@0.0.27
+  - @ulld/utilities@0.0.27
+
 ## 0.0.26
 
 ### Patch Changes

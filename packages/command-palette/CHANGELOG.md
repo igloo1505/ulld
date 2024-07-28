@@ -1,5 +1,33 @@
 # @ulld/command-palette
 
+## 0.0.27
+
+### Patch Changes
+
+- Moved all references to prisma to referring to the internal DB package
+  directly.
+- Updated dependencies
+  - @ulld/api@0.0.27
+  - @ulld/bib-manager@0.0.27
+  - @ulld/calendar@0.0.27
+  - @ulld/configschema@0.0.27
+  - @ulld/database@0.0.26
+  - @ulld/developer@0.0.27
+  - @ulld/diagram@0.0.27
+  - @ulld/editor@0.0.27
+  - @ulld/equations@0.0.27
+  - @ulld/hooks@0.0.27
+  - @ulld/logger@0.0.24
+  - @ulld/parsers@0.0.27
+  - @ulld/render@0.0.27
+  - @ulld/snippets@0.0.27
+  - @ulld/state@0.0.27
+  - @ulld/tailwind@0.0.24
+  - @ulld/task-manager@0.0.27
+  - @ulld/ui@0.0.27
+  - @ulld/utilities@0.0.27
+  - @ulld/whiteboard@0.0.27
+
 ## 0.0.26
 
 ### Patch Changes

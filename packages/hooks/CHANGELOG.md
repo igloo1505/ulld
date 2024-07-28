@@ -1,5 +1,18 @@
 # @ulld/hooks
 
+## 0.0.27
+
+### Patch Changes
+
+- Moved all references to prisma to referring to the internal DB package
+  directly.
+- Updated dependencies
+  - @ulld/api@0.0.27
+  - @ulld/component-map@0.0.27
+  - @ulld/configschema@0.0.27
+  - @ulld/database@0.0.26
+  - @ulld/parsers@0.0.27
+
 ## 0.0.26
 
 ### Patch Changes

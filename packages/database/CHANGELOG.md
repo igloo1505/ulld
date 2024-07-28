@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.26
+
+### Patch Changes
+
+- Moved all references to prisma to referring to the internal DB package
+  directly.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.23
+
 ## 0.0.25
 
 ### Patch Changes

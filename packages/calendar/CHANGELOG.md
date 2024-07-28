@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.27
+
+### Patch Changes
+
+- Moved all references to prisma to referring to the internal DB package
+  directly.
+- Updated dependencies
+  - @ulld/developer@0.0.27
+
 ## 0.0.26
 
 ### Patch Changes

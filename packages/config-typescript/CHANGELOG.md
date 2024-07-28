@@ -1,5 +1,12 @@
 # @repo/typescript-config
 
+## 0.0.23
+
+### Patch Changes
+
+- Moved all references to prisma to referring to the internal DB package
+  directly.
+
 ## 0.0.22
 
 ### Patch Changes
