@@ -10,10 +10,10 @@ export type AcceptedRouterTypes =
     | Record<string, CreateRouterInner<typeof trpcRoot._config, any>>
     | Record<string, ReturnType<UlldRouterType>>
 
-
-export const extendServerClient = (
-    routerExtension: AcceptedRouterTypes
+export const extendServerClient = <T extends AcceptedRouterTypes>(
+    routerExtension: T,
 ) => {
+
     const appRouter = router({
         ...routerExtension,
         ..._appRouter,

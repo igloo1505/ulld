@@ -3,7 +3,7 @@ import {
     Tag,
     Topic,
     Prisma,
-} from "@ulld/database/internalDatabaseTypes";
+} from "@ulld/database";
 import { publicProcedure, router } from "../../trpc";
 import { z } from "zod";
 import { TaskListIds } from "@ulld/utilities/types/todos";
@@ -170,7 +170,6 @@ export const toDoRouter = router({
                     },
                 });
             }
-
             return await prisma.toDoList.findMany({
                 where: {
                     AND: filters,

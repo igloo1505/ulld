@@ -55,6 +55,9 @@ export interface AddTaskProps {
 
 export type AddTaskListProps = Pick<AddTaskProps, "isModal"> & {
     editing?: Awaited<ReturnType<typeof serverClient.toDo.getToDoListById>>;
+    searchParams: {
+        editing?: string
+    }
 };
 
 type TaskListDataReturnType = Awaited<

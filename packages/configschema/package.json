@@ -105,6 +105,7 @@
         "@ulld/icons": "workspace:*",
         "@ulld/tailwind": "workspace:*",
         "@ulld/utilities": "workspace:*",
+        "@ulld/database": "workspace:*",
         "dayjs": "1.11.11",
         "glob-to-regexp": "0.4.1",
         "next": "14.2.3",

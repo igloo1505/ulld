@@ -12,7 +12,6 @@
         "@mdx-js/react": "^3.0.1",
         "@ulld/api": "workspace:*",
         "@ulld/base-configs": "workspace:*",
-        "@ulld/config": "workspace:*",
         "@ulld/configschema": "workspace:*",
         "@ulld/database": "workspace:*",
         "@ulld/developer": "workspace:*",

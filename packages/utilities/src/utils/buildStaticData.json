@@ -456,7 +456,6 @@
         "@ulld/configschema": "0.0.20",
         "@ulld/typescript-config": "0.0.18",
         "@ulld/eslint-config": "0.0.19",
-        "@ulld/config": "0.0.19",
         "@ulld/component-configs": "0.0.20",
         "@ulld/component-map": "0.0.20",
         "@ulld/command-palette": "0.0.20",

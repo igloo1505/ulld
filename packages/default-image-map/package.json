@@ -281,7 +281,6 @@
         "./autumn": "./src/imageMap/autumn.tsx"
     },
     "peerDependencies": {
-        "@ulld/config": "workspace:*",
         "@ulld/configschema": "workspace:*",
         "@ulld/eslint-config": "workspace:*",
         "@ulld/logger": "workspace:*",

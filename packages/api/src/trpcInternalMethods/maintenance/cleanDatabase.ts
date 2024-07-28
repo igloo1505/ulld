@@ -1,5 +1,5 @@
 import { databaseCleanValidityCheck } from "./databaseCleanValidityCheck"
-import { PrismaClient, Prisma } from "@ulld/types"
+import { PrismaClient, Prisma } from "@ulld/database"
 
 
 

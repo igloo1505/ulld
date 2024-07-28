@@ -1,9 +1,12 @@
 import fs from "fs";
-// import { Prisma } from "@ulld/database/internalDatabaseTypes";
 import { saveMdxNote } from "./saveMdxNote";
 import { updateMdxNote } from "./updateMdx";
-import { MdxNote, MdxNoteParseParams } from "../../../classes/prismaMdxRelations/MdxNote";
-import { OnSyncOptions, PrismaClient, Prisma } from "@ulld/types";
+import {
+    MdxNote,
+    MdxNoteParseParams,
+} from "../../../classes/prismaMdxRelations/MdxNote";
+import { OnSyncOptions } from "@ulld/types";
+import { PrismaClient, Prisma } from "@ulld/database";
 import { AutoSettingWithRegex } from "../../../trpc/types";
 import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
@@ -11,14 +14,14 @@ import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
 import { UnifiedMdxParser } from "../../../types";
 
 export interface SyncMdxProps {
-    file: string,
-    dir: string,
-    autoSettings: AutoSettingWithRegex[],
-    opts: Partial<OnSyncOptions>,
-    appConfig: AppConfigSchemaOutput,
-    buildData: BuildStaticDataOutput,
-    unifiedMdxParser: UnifiedMdxParser,
-    prisma: PrismaClient
+    file: string;
+    dir: string;
+    autoSettings: AutoSettingWithRegex[];
+    opts: Partial<OnSyncOptions>;
+    appConfig: AppConfigSchemaOutput;
+    buildData: BuildStaticDataOutput;
+    unifiedMdxParser: UnifiedMdxParser;
+    prisma: PrismaClient;
 }
 
 export const syncMdx = async ({
@@ -36,12 +39,12 @@ export const syncMdx = async ({
     console.log(`Syncing note with filepath: ${file.split(dir)[1]}`);
     let mdxNoteParserParams: MdxNoteParseParams = {
         appConfig,
-        parser: unifiedMdxParser
-    }
+        parser: unifiedMdxParser,
+    };
     let note = await MdxNote.fromMdxString(
         { raw: s, rootRelativePath: file.split(dir)[1] },
         { getBookmarkState: true },
-        mdxNoteParserParams
+        mdxNoteParserParams,
     );
 
     await note.parse(mdxNoteParserParams);

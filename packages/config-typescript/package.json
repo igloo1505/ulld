@@ -1,17 +1,19 @@
 {
-    "name": "@ulld/typescript-config",
-    "version": "0.0.18",
-    "private": false,
-    "license": "MIT",
-    "publishConfig": {
-        "access": "public"
-    },
-    "peerDependencies": {},
-    "devDependencies": {
-        "@ulld/types": "workspace:*"
-    },
-    "dependencies": {},
-    "files": [
-        "src"
-    ]
+  "name": "@ulld/typescript-config",
+  "version": "0.0.18",
+  "private": false,
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "nextjs.json",
+    "targetApp.json",
+    "src"
+  ],
+  "peerDependencies": {},
+  "devDependencies": {
+    "@ulld/types": "workspace:*"
+  },
+  "dependencies": {}
 }

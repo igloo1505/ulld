@@ -28,7 +28,6 @@
         "@react-three/fiber": "^8.15.19",
         "@ulld/api": "workspace:*",
         "@ulld/component-map": "workspace:*",
-        "@ulld/config": "workspace:*",
         "@ulld/configschema": "workspace:*",
         "@ulld/hooks": "workspace:*",
         "@ulld/jest-presets": "workspace:*",

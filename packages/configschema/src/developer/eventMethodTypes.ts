@@ -3,7 +3,7 @@ import { AppConfigSchemaOutput } from "../zod/main";
 import { BuildStaticDataOutput } from "../buildStaticData/types";
 import { PluginEventsConfig } from "./types/pluginEventsConfig";
 import type { AutoSettingWithRegex, OnSyncOptions } from "@ulld/types";
-import type { PrismaClient} from "@ulld/types/db"
+import type { PrismaClient} from "@ulld/database"
 import type { UlldGlob } from "@ulld/utilities/glob";
 
 export type EventMethods<T extends object> = {

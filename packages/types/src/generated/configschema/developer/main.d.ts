@@ -213,10 +213,10 @@ export declare const _developerConfigSchema: z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
-    pluginId: string;
     parsers: {
         mdx?: import("./types/parserConfig").ParserConfig | undefined;
     };
+    pluginId: string;
     events: import("./types/pluginEventsConfig").PluginEventsConfig;
     slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
@@ -492,10 +492,10 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
-    pluginId: string;
     parsers: {
         mdx?: import("./types/parserConfig").ParserConfig | undefined;
     };
+    pluginId: string;
     events: import("./types/pluginEventsConfig").PluginEventsConfig;
     slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
@@ -603,10 +603,10 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
-    pluginId: string;
     parsers: {
         mdx?: import("./types/parserConfig").ParserConfig | undefined;
     };
+    pluginId: string;
     events: import("./types/pluginEventsConfig").PluginEventsConfig;
     slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
@@ -825,7 +825,6 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
     }>]>, "many">>;
     tailwind: z.ZodDefault<z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>>;
-    slot: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"snippets">, z.ZodLiteral<"math">, z.ZodLiteral<"editor">, z.ZodLiteral<"UI">, z.ZodLiteral<"bibliography">, z.ZodLiteral<"taskManager">, z.ZodLiteral<"pdf">, z.ZodLiteral<"navigation">, z.ZodLiteral<"dashboard">, z.ZodLiteral<"form">, z.ZodLiteral<"commandPalette">]>>;
     parsers: z.ZodDefault<z.ZodObject<{
         mdx: z.ZodOptional<z.ZodType<import("./types/parserConfig").ParserConfig, z.ZodTypeDef, import("./types/parserConfig").ParserConfig>>;
     }, "strip", z.ZodTypeAny, {
@@ -833,6 +832,7 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<{
     }, {
         mdx?: import("./types/parserConfig").ParserConfig | undefined;
     }>>;
+    slot: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"snippets">, z.ZodLiteral<"math">, z.ZodLiteral<"editor">, z.ZodLiteral<"UI">, z.ZodLiteral<"bibliography">, z.ZodLiteral<"taskManager">, z.ZodLiteral<"pdf">, z.ZodLiteral<"navigation">, z.ZodLiteral<"dashboard">, z.ZodLiteral<"form">, z.ZodLiteral<"commandPalette">]>>;
     additionalImports: z.ZodOptional<z.ZodType<import("./types/additionalImportsConfig").AdditionalImportsConfig, z.ZodTypeDef, import("./types/additionalImportsConfig").AdditionalImportsConfig>>;
     trpc: z.ZodOptional<z.ZodType<import("./types/trpcConfig").TrpcConfig, z.ZodTypeDef, import("./types/trpcConfig").TrpcConfig>>;
     events: z.ZodDefault<z.ZodType<import("./types/pluginEventsConfig").PluginEventsConfig, z.ZodTypeDef, import("./types/pluginEventsConfig").PluginEventsConfig>>;
@@ -882,10 +882,10 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
-    pluginId: string;
     parsers: {
         mdx?: import("./types/parserConfig").ParserConfig | undefined;
     };
+    pluginId: string;
     events: import("./types/pluginEventsConfig").PluginEventsConfig;
     settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
     slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
@@ -941,10 +941,10 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
     })[] | undefined;
     tailwind?: {} | undefined;
-    slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
     parsers?: {
         mdx?: import("./types/parserConfig").ParserConfig | undefined;
     } | undefined;
+    slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
     additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
     events?: import("./types/pluginEventsConfig").PluginEventsConfig | undefined;
