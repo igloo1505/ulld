@@ -17,6 +17,7 @@
         "./mdx/server": "./src/mdx/mdxContentSERVER.tsx",
         "./mdx/client": "./src/mdx/mdxContentCLIENT.tsx",
         "./mdx/preCompiled": "./src/mdx/mdxContentPreCompiled.tsx",
+        "./mdx/fileSystemServer": "./src/mdx/mdxFileSystemSERVER.tsx",
         "./mdxPreviewPanel": "./src/mdx/mdxPreviewPanel.tsx",
         "./3d/threeJsCanvas": "./src/3d/ThreeCanvas.tsx"
     },

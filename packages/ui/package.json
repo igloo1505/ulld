@@ -58,7 +58,9 @@
         "./noteTypeResultList": "./src/components/slots/noteTypeSearchResultList/main.tsx",
         "./mdxPageContainer": "./src/components/slots/noteTypePageWrapper/main.tsx",
         "./mobile/sheet": "./src/components/mobile/sheet/main.tsx",
-        "./responsive/DialogMobileSheet": "./src/components/responsive/mobileSheetDialog/main.tsx"
+        "./responsive/DialogMobileSheet": "./src/components/responsive/mobileSheetDialog/main.tsx",
+        "./fileSystemMdxPage": "./src/components/noteContent/mdx/fileSystem.tsx",
+        "./databaseMdxPage": "./src/components/noteContent/mdx/database.tsx"
     },
     "scripts": {
         "build": "echo 'add build:internal script here'",

@@ -39,5 +39,9 @@
         "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*"
     },
-    "files": []
+    "files": [],
+    "exports": {
+        "./types": "./src/types.ts",
+        "./notebook": "./src/components/notebook/main.tsx"
+    }
 }

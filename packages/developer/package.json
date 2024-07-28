@@ -6,8 +6,6 @@
         "src"
     ],
     "exports": {
-        "./pluginConfig": "./src/baseClasses/pluginConfig.ts",
-        "./embeddableConfig": "./src/baseClasses/embeddableComponentConfig.ts",
         "./utils": "./src/utilityMethods/main.ts",
         "./getConfig": "./src/utilityMethods/getConfig.ts",
         "./globalStatePortal": "./src/components/globalStatePortal.tsx",

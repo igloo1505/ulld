@@ -14,7 +14,8 @@
     ],
     "exports": {
         "./extendedMath": "./src/Math.ts",
-        "./plotMathHandler": "./src/plotMathHandler.ts"
+        "./plotMathHandler": "./src/plotMathHandler.ts",
+        "./list": "./src/utilityObjects/list.ts"
     },
     "peerDependencies": {
         "@ulld/configschema": "workspace:*",

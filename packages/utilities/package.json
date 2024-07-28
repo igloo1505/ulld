@@ -90,7 +90,10 @@
         "./providers-mathjax": "./src/providers/mathjax.tsx",
         "./transformExportString": "./src/utils/build/transformExportString.ts",
         "./validateDeviceType": "./src/utils/deviceDetect.ts",
-        "./downloadFile": "./src/utils/downloadFile.ts"
+        "./downloadFile": "./src/utils/downloadFile.ts",
+        "./jsonFileClass": "./src/classes/file/jsonFile.ts",
+        "./fileClass": "./src/classes/file/main.ts",
+        "./mdxFile": "./src/classes/file/mdxFile.ts"
     },
     "scripts": {
         "dev": "echo 'Add dev script here'",
