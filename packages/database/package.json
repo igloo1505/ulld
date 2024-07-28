@@ -27,6 +27,9 @@
         "prebuild": "pnpm run generate",
         "predev": "pnpm run generate"
     },
+    "prisma": {
+        "schema": "prisma/schema.prisma"
+    },
     "dependencies": {
         "@prisma/client": "5.17.0",
         "next": "14.2.3",
