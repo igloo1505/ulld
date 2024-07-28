@@ -1,5 +1,20 @@
 # @ulld/note-network
 
+## 0.0.22
+
+### Patch Changes
+
+- Update react version and lift to monorepo root.
+- Updated dependencies
+  - @ulld/api@0.0.22
+  - @ulld/typescript-config@0.0.20
+  - @ulld/configschema@0.0.22
+  - @ulld/developer@0.0.22
+  - @ulld/jest-presets@0.0.21
+  - @ulld/logger@0.0.21
+  - @ulld/tailwind@0.0.21
+  - @ulld/utilities@0.0.22
+
 ## 0.0.21
 
 ### Patch Changes

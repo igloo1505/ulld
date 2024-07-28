@@ -1,5 +1,26 @@
 # @ulld/ui
 
+## 0.0.22
+
+### Patch Changes
+
+- Update react version and lift to monorepo root.
+- Updated dependencies
+  - @ulld/api@0.0.22
+  - @ulld/component-map@0.0.22
+  - @ulld/configschema@0.0.22
+  - @ulld/editor@0.0.22
+  - @ulld/embeddable-components@0.0.22
+  - @ulld/full-form@0.0.22
+  - @ulld/hooks@0.0.22
+  - @ulld/icons@0.0.22
+  - @ulld/logger@0.0.21
+  - @ulld/notebook@0.0.22
+  - @ulld/render@0.0.22
+  - @ulld/state@0.0.22
+  - @ulld/tailwind@0.0.21
+  - @ulld/utilities@0.0.22
+
 ## 0.0.21
 
 ### Patch Changes

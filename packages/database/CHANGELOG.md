@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.21
+
+### Patch Changes
+
+- Update react version and lift to monorepo root.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.20
+
 ## 0.0.20
 
 ### Patch Changes

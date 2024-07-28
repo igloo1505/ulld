@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.22
+
+### Patch Changes
+
+- Update react version and lift to monorepo root.
+- Updated dependencies
+  - @ulld/configschema@0.0.22
+  - @ulld/database@0.0.21
+  - @ulld/developer@0.0.22
+  - @ulld/utilities@0.0.22
+
 ## 0.0.21
 
 ### Patch Changes

@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.22
+
+### Patch Changes
+
+- Update react version and lift to monorepo root.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.22
+  - @ulld/calendar@0.0.22
+  - @ulld/default-image-map@0.0.22
+  - @ulld/diagram@0.0.22
+  - @ulld/editor@0.0.22
+  - @ulld/embeddable-components@0.0.22
+  - @ulld/equations@0.0.22
+  - @ulld/full-form@0.0.22
+  - @ulld/journal@0.0.22
+  - @ulld/navigation@0.0.22
+  - @ulld/notebook@0.0.22
+  - @ulld/pdf@0.0.22
+  - @ulld/plot@0.0.22
+  - @ulld/snippets@0.0.22
+  - @ulld/tailwind@0.0.21
+  - @ulld/task-manager@0.0.22
+  - @ulld/whiteboard@0.0.22
+
 ## 0.0.21
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @ulld/math
 
+## 0.0.22
+
+### Patch Changes
+
+- Update react version and lift to monorepo root.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.21
+  - @ulld/typescript-config@0.0.20
+  - @ulld/configschema@0.0.22
+  - @ulld/hooks@0.0.22
+  - @ulld/icons@0.0.22
+  - @ulld/state@0.0.22
+  - @ulld/utilities@0.0.22
+
 ## 0.0.21
 
 ### Patch Changes

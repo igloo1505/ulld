@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.22
+
+### Patch Changes
+
+- Update react version and lift to monorepo root.
+- Updated dependencies
+  - @ulld/developer@0.0.22
+  - @ulld/developer-schemas@0.0.21
+
 ## 0.0.21
 
 ### Patch Changes

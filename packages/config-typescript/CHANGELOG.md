@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.20
+
+### Patch Changes
+
+- Update react version and lift to monorepo root.
+
 ## 0.0.19
 
 ### Patch Changes

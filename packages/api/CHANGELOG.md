@@ -1,5 +1,21 @@
 # @ulld/api
 
+## 0.0.22
+
+### Patch Changes
+
+- Update react version and lift to monorepo root.
+- Updated dependencies
+  - @ulld/base-configs@0.0.21
+  - @ulld/configschema@0.0.22
+  - @ulld/database@0.0.21
+  - @ulld/developer@0.0.22
+  - @ulld/logger@0.0.21
+  - @ulld/parsers@0.0.22
+  - @ulld/state@0.0.22
+  - @ulld/tailwind@0.0.21
+  - @ulld/utilities@0.0.22
+
 ## 0.0.21
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.22
+
+### Patch Changes
+
+- Update react version and lift to monorepo root.
+- Updated dependencies
+  - @ulld/api@0.0.22
+  - @ulld/component-map@0.0.22
+  - @ulld/configschema@0.0.22
+  - @ulld/database@0.0.21
+  - @ulld/parsers@0.0.22
+
 ## 0.0.21
 
 ### Patch Changes
