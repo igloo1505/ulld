@@ -466,7 +466,6 @@
         "@ulld/base-configs": "0.0.19",
         "@ulld/api": "0.0.20",
         "@ulld/website": "0.0.20",
-        "@ulld/sandbox": "0.0.20",
-        "@ulld/build-sandbox": "0.0.20"
+        "@ulld/sandbox": "0.0.20"
     }
 }
