@@ -1,5 +1,5 @@
 import { client } from "@ulld/api/client";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const gatherOptions = async (_type: "tag" | "topic" | "subject") => {
     let opts = await client.search.getUniqueTagTopicAndSubjects.query(_type);
@@ -9,7 +9,7 @@ const gatherOptions = async (_type: "tag" | "topic" | "subject") => {
 export const useExistingTags = () => {
     const [options, setOptions] = useState<string[]>([]);
     const getItems = async () => {
-        let opts = gatherOptions("tag");
+        let opts = await gatherOptions("tag");
         setOptions(opts);
     };
     useEffect(() => {
@@ -21,7 +21,7 @@ export const useExistingTags = () => {
 export const useExistingSubjects = () => {
     const [options, setOptions] = useState<string[]>([]);
     const getItems = async () => {
-        let opts = gatherOptions("subject");
+        let opts = await gatherOptions("subject");
         setOptions(opts);
     };
     useEffect(() => {
@@ -33,7 +33,7 @@ export const useExistingSubjects = () => {
 export const useExistingTopics = () => {
     const [options, setOptions] = useState<string[]>([]);
     const getItems = async () => {
-        let opts = gatherOptions("topic");
+        let opts = await gatherOptions("topic");
         setOptions(opts);
     };
     useEffect(() => {

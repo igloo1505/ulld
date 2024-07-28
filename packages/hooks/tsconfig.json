@@ -1,6 +1,21 @@
-{
-    "extends": "@ulld/typescript-config/nextjs.json",
+{ 
+    "$schema": "https://json.schemastore.org/tsconfig.json",
+      "extends": "@ulld/typescript-config/nextjs.json",
+    "include": [
+        "./**/*.ts",
+        "./**/*.tsx"
+    ],
+    "exclude": [
+        "dist",
+        "build",
+        "node_modules"
+    ],
     "compilerOptions": {
-       "types": ["node", "react", "mdx", "mathjax"]
+        "rootDir": ".",
+        "moduleResolution": "Bundler",
+        "jsx": "react-jsx",
+        "esModuleInterop": true,
+        "resolveJsonModule": true
     }
 }
+

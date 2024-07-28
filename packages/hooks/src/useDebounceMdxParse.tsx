@@ -6,11 +6,13 @@ import * as runtime from "react/jsx-runtime";
 import * as devRuntime from "react/jsx-dev-runtime";
 import { MDXComponents, MDXContent, MDXModule } from "mdx/types";
 import {
-    MdxNote,
     ParseMdxStringProps,
 } from "@ulld/api/classes/prismaMdxRelations/mdxNote";
 import { getComponentMap } from "@ulld/component-map/client";
 import { useMathjaxBandaid } from "./useMathjaxBandaid";
+import {parseMdxString} from "@ulld/parsers"
+import { useAppConfig } from "./useAppConfig";
+
 
 
 const Content = ({
@@ -39,9 +41,10 @@ export const useDebounceMdxParse = (
     const [value, setValue] = useState<string>(initialValue);
     const [mdxModule, setMdxModule] = useState<MDXModule | null>(null);
     const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
+    const [appConfig] = useAppConfig()
 
     const handleParse = async (_value: string) => {
-        let initiallyParsed = await MdxNote.parseMdxString(_value, opts);
+        let initiallyParsed = await parseMdxString({content: _value, appConfig});
         let compiled = await client.mdx.parseMdxString.mutate({
             content: initiallyParsed,
             ...opts,
