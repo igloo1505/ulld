@@ -49,8 +49,6 @@
         "next": "14.2.3",
         "prisma": "5.17.0",
         "raw-loader": "4.0.2",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
         "react-hook-form": "7.51.3",
         "react-mathquill": "1.0.3",
         "react-query-kit": "1.4.8",

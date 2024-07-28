@@ -30,9 +30,7 @@
         "raw-loader": "^4.0.2",
         "@mdx-js/mdx": "3.0.1",
         "mathjax-full": "3.2.2",
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0"
+        "next": "14.2.3"
     },
     "devDependencies": {
         "@mdx-js/react": "^3.0.1",

@@ -1,5 +1,6 @@
 import { z } from "zod"
 import type { equationSearchParamsSchema } from "./corePageUtils/zod"
+import editorLanguages from "../monaco/languages"
 
 export type EquationDetailModalPageProps = {
     isModal?: boolean
@@ -23,5 +24,9 @@ export interface AddEquationsPageProps {
 export interface EditorPageContentProps {
     params: {
         uniqueContentId: string
+    }
+    searchParams: {
+        useExistingValue?: string
+        language?: typeof editorLanguages[number]
     }
 }

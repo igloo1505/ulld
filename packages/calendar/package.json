@@ -11,20 +11,20 @@
     "exports": {
         "./types": "./src/types.ts"
     },
-    "dependencies": {},
+    "dependencies": {
+        "googleapis": "^105.0.0"
+    },
     "devDependencies": {
         "@ulld/types": "workspace:*",
         "dayjs": "^1.11.10",
         "use-lilius": "^2.0.5"
     },
     "peerDependencies": {
-        "dayjs": "^1.11.10",
-        "use-lilius": "^2.0.5",
         "@ulld/developer": "workspace:*",
+        "dayjs": "^1.11.10",
         "ical.js": "2.0.0",
         "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0"
+        "use-lilius": "^2.0.5"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {

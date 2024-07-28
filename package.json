@@ -19,7 +19,22 @@
     "typedoc": "typedoc",
     "ci:publish": "pnpm publish -r --no-git-checks"
   },
+  "dependencies": {
+    "@changesets/cli": "2.27.5",
+    "@manypkg/cli": "0.21.4",
+    "deepmerge": "4.3.1",
+    "framer-motion": "11.1.7",
+    "glob": "10.3.15",
+    "serialize-javascript": "^6.0.2",
+    "tinycolor2": "1.6.0",
+    "tsup": "8.0.1",
+    "zod": "3.22.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
   "devDependencies": {
+    "@types/react": "~18.2.79",
+    "@types/react-dom": "~18.2.25",
     "@svgr/rollup": "^8.1.0",
     "@types/mdx": "^2.0.13",
     "@types/npm-registry-fetch": "^8.0.7",
@@ -38,8 +53,6 @@
     "typescript": "^5.5.2",
     "typescript-plugin-css-modules": "^5.1.0",
     "zod-to-ts": "^1.2.0",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
     "@ulld/utilities": "workspace:*"
   },
   "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74",
@@ -62,19 +75,12 @@
     "overrides": {
       "unified": "^11.0.5",
       "mapbox-gl": "^1.13.3",
-      "typescript": "^5.5.2"
+      "typescript": "^5.5.2",
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "@types/react": "~18.2.79",
+      "@types/react-dom": "~18.2.25"
     }
-  },
-  "dependencies": {
-    "@changesets/cli": "2.27.5",
-    "@manypkg/cli": "0.21.4",
-    "deepmerge": "4.3.1",
-    "framer-motion": "11.1.7",
-    "glob": "10.3.15",
-    "serialize-javascript": "^6.0.2",
-    "tinycolor2": "1.6.0",
-    "tsup": "8.0.1",
-    "zod": "3.22.4"
   },
   "keywords": [
     "markdown",

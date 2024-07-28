@@ -128,7 +128,7 @@ export class EnvManager extends ShellManager {
             : json;
         let asString = "";
         for (const n in data) {
-            asString += `${n}="${data[n]}"`;
+            asString += `${n}="${data[n]}"\n`;
         }
         target.writeContent(asString);
     }

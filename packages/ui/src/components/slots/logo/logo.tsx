@@ -5,7 +5,6 @@ interface LogoProps extends HTMLProps<HTMLOrSVGElement> { }
 
 const Logo = (props: LogoProps) => {
     return (
-        /* @ts-ignore */
         <AnimatedUlldLogo
             {...props as BaseProps}
             delay={3}

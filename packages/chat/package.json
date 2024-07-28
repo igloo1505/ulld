@@ -29,8 +29,6 @@
         "bufferutil": "4.0.8",
         "discord.js": "14.14.1",
         "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
         "utf-8-validate": "6.0.3",
         "zlib-sync": "0.1.9"
     },

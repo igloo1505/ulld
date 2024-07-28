@@ -514,6 +514,11 @@ ${deps.map((d) => `    ${d.type}`).join("\n")}
         }
         this.writeModified(true);
     }
+    static withoutWebsite(){
+       let p = new PackageManager()
+       p.removeWebsite()
+       return p
+    }
     processArgs(args: string[]) {
         console.log(
             `Processing args: \n${args.map((a, i) => `${i + 1}. ${a}`).join("\n")}`,

@@ -1,12 +1,11 @@
 import React, { Suspense } from "react";
 import { RandomBackground } from "@ulld/ui/randomBackground";
-import FullScreenNavigationMenu from "@ulld/navigation/fullScreenNav";
 import { BetaLandingPageSearchInput } from "./searchInput";
 import NavigationMenu from "./navigationMenu";
+import { LandingPageProps } from "#/types";
 
 
-interface BasicLandingLayoutProps {
-    searchParams?: object
+interface BasicLandingLayoutProps extends LandingPageProps {
 }
 
 

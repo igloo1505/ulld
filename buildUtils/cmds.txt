@@ -38,3 +38,4 @@ Build website locally | pnpm turbo buildLocal --log-order=stream --filter @ulld/
 Prepare Web Commit | zsh /Users/bigsexy/Desktop/current/ulld/apps/website/scripts/prepareToCommit.zsh
 Write current package versions to static data | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/versioning/writeCurrentPackageVersions.ts
 Version everything | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/versioning/versionEverything.zsh
+Run when back online file and clear | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/network/whenWhenOnlineScript.zsh
