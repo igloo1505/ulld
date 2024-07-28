@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.9
+
+### Patch Changes
+
+- Lord I hope these package.json files are back in working order.
+- Updated dependencies
+  - @ulld/api@0.0.9
+  - @ulld/component-configs@0.0.9
+  - @ulld/configschema@0.0.9
+  - @ulld/default-image-map@0.0.9
+  - @ulld/hooks@0.0.9
+  - @ulld/icons@0.0.9
+  - @ulld/render@0.0.9
+  - @ulld/state@0.0.9
+  - @ulld/tailwind@0.0.9
+  - @ulld/utilities@0.0.9
+
 ## 0.0.22
 
 ### Patch Changes

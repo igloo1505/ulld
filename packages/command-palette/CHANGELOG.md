@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.9
+
+### Patch Changes
+
+- Lord I hope these package.json files are back in working order.
+- Updated dependencies
+  - @ulld/api@0.0.9
+  - @ulld/bib-manager@0.0.9
+  - @ulld/calendar@0.0.9
+  - @ulld/configschema@0.0.9
+  - @ulld/database@0.0.9
+  - @ulld/developer@0.0.9
+  - @ulld/diagram@0.0.9
+  - @ulld/editor@0.0.9
+  - @ulld/equations@0.0.9
+  - @ulld/hooks@0.0.9
+  - @ulld/logger@0.0.9
+  - @ulld/parsers@0.0.9
+  - @ulld/render@0.0.9
+  - @ulld/snippets@0.0.9
+  - @ulld/state@0.0.9
+  - @ulld/tailwind@0.0.9
+  - @ulld/task-manager@0.0.9
+  - @ulld/ui@0.0.9
+  - @ulld/utilities@0.0.9
+  - @ulld/whiteboard@0.0.9
+
 ## 0.0.22
 
 ### Patch Changes

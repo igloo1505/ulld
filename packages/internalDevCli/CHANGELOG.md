@@ -1,5 +1,11 @@
 # @ulld/internal-dev-cli
 
+## 0.0.9
+
+### Patch Changes
+
+- Lord I hope these package.json files are back in working order.
+
 ## 0.0.21
 
 ### Patch Changes

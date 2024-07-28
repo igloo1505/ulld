@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.9
+
+### Patch Changes
+
+- Lord I hope these package.json files are back in working order.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.9
+  - @ulld/typescript-config@0.0.8
+  - @ulld/configschema@0.0.9
+  - @ulld/database@0.0.9
+  - @ulld/logger@0.0.9
+
 ## 0.0.22
 
 ### Patch Changes

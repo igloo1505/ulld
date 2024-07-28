@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.9
+
+### Patch Changes
+
+- Lord I hope these package.json files are back in working order.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.8
+
 ## 0.0.21
 
 ### Patch Changes

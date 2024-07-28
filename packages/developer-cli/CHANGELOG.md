@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.9
+
+### Patch Changes
+
+- Lord I hope these package.json files are back in working order.
+- Updated dependencies
+  - @ulld/developer@0.0.9
+  - @ulld/developer-schemas@0.0.9
+
 ## 0.0.22
 
 ### Patch Changes

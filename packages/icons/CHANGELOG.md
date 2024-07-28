@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.9
+
+### Patch Changes
+
+- Lord I hope these package.json files are back in working order.
+- Updated dependencies
+  - @ulld/hooks@0.0.9
+  - @ulld/tailwind@0.0.9
+  - @ulld/utilities@0.0.9
+
 ## 0.0.22
 
 ### Patch Changes
