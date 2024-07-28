@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { Prisma } from '@prisma/client'
+import { Prisma } from '@ulld/database'
 import { UseFormReturn } from 'react-hook-form'
 import clsx from 'clsx'
 import { CodeHighlightContainer } from '../../code/syntaxHighlighting/codeHighlightContainer'

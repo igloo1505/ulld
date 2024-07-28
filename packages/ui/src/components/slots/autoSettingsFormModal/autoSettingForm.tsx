@@ -3,7 +3,7 @@ import {  Input} from '@ulld/tailwind/input';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@ulld/tailwind/form';
 import React from 'react'
 import { UseFormReturn } from 'react-hook-form';
-import { autoSetting } from '@prisma/client';
+import { autoSetting } from '@ulld/database';
 
 
 

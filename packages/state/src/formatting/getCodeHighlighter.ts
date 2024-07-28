@@ -1,4 +1,4 @@
-import { Technologies } from "@prisma/client"
+import { Technologies } from "@ulld/database"
 import { BuiltinLanguage } from "shiki"
 
 

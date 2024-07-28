@@ -39,7 +39,7 @@
     },
     "peerDependencies": {
         "@ulld/typescript-config": "workspace:*",
-        "prisma": "latest"
+        "prisma": "5.17.0"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
@@ -48,6 +48,6 @@
     "devDependencies": {
         "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
-        "prisma": "latest"
+        "prisma": "5.17.0"
     }
 }

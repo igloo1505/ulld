@@ -1,5 +1,5 @@
 "use client"
-import { ToDoListStatus } from '@prisma/client';
+import { ToDoListStatus } from '@ulld/database';
 import { Column, ColumnFiltersState } from '@tanstack/react-table';
 import React from 'react'
 import { FieldValues, Path } from 'react-hook-form';

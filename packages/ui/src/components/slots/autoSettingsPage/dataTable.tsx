@@ -13,7 +13,7 @@ import { Label } from '@ulld/tailwind/label'
 import { AutoSettingType } from '@ulld/utilities/types'
 import { useRouter } from 'next/navigation'
 import { getAutoSettingColumnDef } from './getColumnDef'
-import { autoSetting } from '@prisma/client'
+import { autoSetting } from '@ulld/database'
 
 
 interface AutoSettingDataTableProps {

@@ -1,4 +1,4 @@
-import { TERTIARY_TOGGLE } from "@prisma/client"
+import { TERTIARY_TOGGLE } from "@ulld/database"
 import { z } from "zod"
 
 export const zodTertiaryToggleSchema = z.nativeEnum(TERTIARY_TOGGLE)

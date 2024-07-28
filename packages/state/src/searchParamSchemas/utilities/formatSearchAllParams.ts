@@ -1,4 +1,4 @@
-import { autoSetting } from "@prisma/client"
+import { autoSetting } from "@ulld/database"
 import {Route} from "next"
 import { SearchAllParams } from "@ulld/utilities/types"
 

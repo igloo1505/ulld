@@ -19,7 +19,7 @@ import {
     TableHeader,
     TableRow,
 } from "@ulld/tailwind/table"
-import { type BibEntry, Prisma } from '@prisma/client'
+import { type BibEntry, Prisma } from '@ulld/database'
 import { useRouter } from 'next/navigation'
 import { Input } from '@ulld/tailwind/input'
 import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from '@ulld/tailwind/dropdown-menu'

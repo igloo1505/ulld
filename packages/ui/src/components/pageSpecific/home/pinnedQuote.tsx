@@ -1,5 +1,5 @@
 import React from 'react'
-import { Quote } from '@prisma/client';
+import { Quote } from '@ulld/database';
 import clsx from 'clsx';
 
 

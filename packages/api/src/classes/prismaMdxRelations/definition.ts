@@ -1,5 +1,5 @@
 import { DefinitionProtocol } from "./protocols/definition";
-import type { Prisma, Definition as PrismaDefinition } from "@prisma/client"
+import type { Prisma, Definition as PrismaDefinition } from "@ulld/database"
 import { MdxNote } from "./MdxNote";
 import { DefinitionZodObjectOutput, definitionZodObject } from "./schemas/definitionSchema";
 

@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client"
+import { Prisma } from "@ulld/database"
 import { z } from "zod"
 import { publicProcedure, router } from "../trpc"
 import { prisma } from "@ulld/database/db"

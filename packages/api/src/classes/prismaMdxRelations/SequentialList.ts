@@ -1,6 +1,6 @@
 import { IpynbNote } from "./IpynbNote";
 import { MdxNote } from "./MdxNote";
-import { Prisma } from '@prisma/client'
+import { Prisma } from '@ulld/database'
 import { SequentialListProtocol } from "./protocols/sequentialList";
 import { mdxNoteArrayToConnectOrCreate } from "./utilities/conversionUtilities";
 

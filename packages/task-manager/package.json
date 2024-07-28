@@ -1,130 +1,131 @@
 {
-    "version": "0.0.26",
-    "name": "@ulld/task-manager",
-    "private": false,
-    "scripts": {
-        "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
-        "build": "echo 'Add build script here'",
-        "test": "echo 'Add test script here'",
-        "lint": "echo 'Add lint script here'",
-        "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
-    },
-    "exports": {
-        "./types": "./src/types.ts",
-        "./taskDetails": "./src/components/taskDetailModal/main.tsx",
-        "./addTask": "./src/components/addTask/main.tsx",
-        "./taskListSearchResults": "./src/components/taskListSearchResultList/main.tsx",
-        "./addTaskList": "./src/components/addTaskListModal/main.tsx",
-        "./taskManagerPage": "./src/components/taskManagerPage/main.tsx",
-        "./taskListSearchResult": "./src/components/TaskListSearchResults/main.tsx"
-    },
-    "peerDependencies": {
-        "@ulld/api": "workspace:*",
-        "@ulld/calendar": "workspace:*",
-        "@ulld/configschema": "workspace:*",
-        "@ulld/developer": "workspace:*",
-        "@ulld/diagram": "workspace:*",
-        "@ulld/editor": "workspace:*",
-        "@ulld/eslint-config": "workspace:*",
-        "@ulld/full-form": "workspace:*",
-        "@ulld/hooks": "workspace:*",
-        "@ulld/icons": "workspace:*",
-        "@ulld/jest-presets": "workspace:*",
-        "@ulld/parsers": "workspace:*",
-        "@ulld/render": "workspace:*",
-        "@ulld/state": "workspace:*",
-        "@ulld/tailwind": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "@ulld/ui": "workspace:*",
-        "@ulld/utilities": "workspace:*",
-        "@ulld/whiteboard": "workspace:*",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "devDependencies": {
-        "@ulld/eslint-config": "workspace:*",
-        "@ulld/jest-presets": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "packageManager": "pnpm@9.0.4",
-    "publishConfig": {
-        "access": "public"
-    },
-    "files": [
-        "pluginConfig.ulld.json",
-        "src"
+  "version": "0.0.26",
+  "name": "@ulld/task-manager",
+  "private": false,
+  "scripts": {
+    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
+    "build": "echo 'Add build script here'",
+    "test": "echo 'Add test script here'",
+    "lint": "echo 'Add lint script here'",
+    "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
+  },
+  "exports": {
+    "./types": "./src/types.ts",
+    "./taskDetails": "./src/components/taskDetailModal/main.tsx",
+    "./addTask": "./src/components/addTask/main.tsx",
+    "./taskListSearchResults": "./src/components/taskListSearchResultList/main.tsx",
+    "./addTaskList": "./src/components/addTaskListModal/main.tsx",
+    "./taskManagerPage": "./src/components/taskManagerPage/main.tsx",
+    "./taskListSearchResult": "./src/components/TaskListSearchResults/main.tsx"
+  },
+  "peerDependencies": {
+    "@ulld/api": "workspace:*",
+    "@ulld/calendar": "workspace:*",
+    "@ulld/configschema": "workspace:*",
+    "@ulld/developer": "workspace:*",
+    "@ulld/diagram": "workspace:*",
+    "@ulld/editor": "workspace:*",
+    "@ulld/eslint-config": "workspace:*",
+    "@ulld/full-form": "workspace:*",
+    "@ulld/hooks": "workspace:*",
+    "@ulld/icons": "workspace:*",
+    "@ulld/jest-presets": "workspace:*",
+    "@ulld/parsers": "workspace:*",
+    "@ulld/render": "workspace:*",
+    "@ulld/state": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
+    "@ulld/typescript-config": "workspace:*",
+    "@ulld/ui": "workspace:*",
+    "@ulld/utilities": "workspace:*",
+    "@ulld/whiteboard": "workspace:*",
+    "@ulld/database": "workspace:*",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@ulld/eslint-config": "workspace:*",
+    "@ulld/jest-presets": "workspace:*",
+    "@ulld/types": "workspace:*",
+    "@ulld/typescript-config": "workspace:*",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "packageManager": "pnpm@9.0.4",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "pluginConfig.ulld.json",
+    "src"
+  ],
+  "ulld-pluginConfig": {
+    "pluginName": "@ulld/task-manager",
+    "label": "Task Manager",
+    "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself.",
+    "slot": "taskManager",
+    "components": [
+      {
+        "componentName": "TaskDetails",
+        "tags": [],
+        "slot": "TaskDetails",
+        "export": "taskDetails",
+        "componentId": "9094c415-7fb6-496f-958a-4e8b04ce9aca"
+      },
+      {
+        "componentName": "AddTaskModal",
+        "tags": [],
+        "slot": "AddTask",
+        "export": "addTask",
+        "componentId": "9094c415-7fb6-496f-958a-4e8b04ce9aca"
+      },
+      {
+        "componentName": "TaskListResultList",
+        "tags": [],
+        "slot": "TaskListSearchResultList",
+        "export": "taskListSearchResults",
+        "componentId": "9094c415-7fb6-496f-958a-4e8b04ce9aca"
+      },
+      {
+        "componentName": "AddTaskList",
+        "tags": [],
+        "slot": "AddTaskList",
+        "export": "addTaskList",
+        "componentId": "9094c415-7fb6-496f-958a-4e8b04ce9aca"
+      },
+      {
+        "componentName": "TaskListSearchResult",
+        "tags": [],
+        "slot": "TaskListSearchResult",
+        "export": "taskListSearchResult",
+        "componentId": "9094c415-7fb6-496f-958a-4e8b04ce9aca"
+      }
     ],
-    "ulld-pluginConfig": {
-        "pluginName": "@ulld/task-manager",
-        "label": "Task Manager",
-        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself.",
-        "slot": "taskManager",
-        "components": [
-            {
-                "componentName": "TaskDetails",
-                "tags": [],
-                "slot": "TaskDetails",
-                "export": "taskDetails",
-                "componentId": "9094c415-7fb6-496f-958a-4e8b04ce9aca"
-            },
-            {
-                "componentName": "AddTaskModal",
-                "tags": [],
-                "slot": "AddTask",
-                "export": "addTask",
-                "componentId": "9094c415-7fb6-496f-958a-4e8b04ce9aca"
-            },
-            {
-                "componentName": "TaskListResultList",
-                "tags": [],
-                "slot": "TaskListSearchResultList",
-                "export": "taskListSearchResults",
-                "componentId": "9094c415-7fb6-496f-958a-4e8b04ce9aca"
-            },
-            {
-                "componentName": "AddTaskList",
-                "tags": [],
-                "slot": "AddTaskList",
-                "export": "addTaskList",
-                "componentId": "9094c415-7fb6-496f-958a-4e8b04ce9aca"
-            },
-            {
-                "componentName": "TaskListSearchResult",
-                "tags": [],
-                "slot": "TaskListSearchResult",
-                "export": "taskListSearchResult",
-                "componentId": "9094c415-7fb6-496f-958a-4e8b04ce9aca"
-            }
-        ],
-        "parsers": {},
-        "pages": [
-            {
-                "slot": "TaskManagerPage",
-                "export": "taskManagerPage",
-                "exportsPageProps": true
-            }
-        ],
-        "events": {},
-        "navigationLinks": [
-            {
-                "label": "Create To Do list",
-                "href": "/todo/add/list",
-                "category": "general"
-            },
-            {
-                "label": "To Do's",
-                "href": "/todo",
-                "category": "general"
-            }
-        ],
-        "commandPalette": [],
-        "tailwind": {}
-    },
-    "dependencies": {},
-    "ulld-plugin-id": "9a2f4468-9240-49ed-be6e-8a105d16bea5"
+    "parsers": {},
+    "pages": [
+      {
+        "slot": "TaskManagerPage",
+        "export": "taskManagerPage",
+        "exportsPageProps": true
+      }
+    ],
+    "events": {},
+    "navigationLinks": [
+      {
+        "label": "Create To Do list",
+        "href": "/todo/add/list",
+        "category": "general"
+      },
+      {
+        "label": "To Do's",
+        "href": "/todo",
+        "category": "general"
+      }
+    ],
+    "commandPalette": [],
+    "tailwind": {}
+  },
+  "dependencies": {},
+  "ulld-plugin-id": "9a2f4468-9240-49ed-be6e-8a105d16bea5"
 }
