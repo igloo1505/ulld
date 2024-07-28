@@ -1,7 +1,21 @@
 {
-  "extends": "@ulld/typescript-config/nextjs.json",
-  "compilerOptions": {
-    "moduleResolution": "bundler",
-    "jsx": "preserve"
-  }
+    "$schema": "https://json.schemastore.org/tsconfig.json",
+    "extends": "@ulld/typescript-config/nextjs.json",
+    "include": [
+        "./**/*.ts",
+        "./**/*.tsx"
+    ],
+    "exclude": [
+        "dist",
+        "build",
+        "src/app/**",
+        "node_modules"
+    ],
+    "compilerOptions": {
+        "rootDir": ".",
+        "moduleResolution": "Bundler",
+        "jsx": "react-jsx",
+        "esModuleInterop": true,
+        "resolveJsonModule": true
+    }
 }

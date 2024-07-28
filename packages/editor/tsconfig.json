@@ -1,15 +1,21 @@
 {
-  "compilerOptions": {
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "preserveWatchOutput": true,
-    "skipLibCheck": true,
-    "noEmit": true,
-    "strict": true,
-    "jsx": "preserve"
-  },
-  "exclude": ["node_modules"]
+    "$schema": "https://json.schemastore.org/tsconfig.json",
+    "extends": "@ulld/typescript-config/nextjs.json",
+    "include": [
+        "./**/*.ts",
+        "./**/*.tsx"
+    ],
+    "exclude": [
+        "dist",
+        "build",
+        "src/app/**",
+        "node_modules"
+    ],
+    "compilerOptions": {
+        "rootDir": ".",
+        "moduleResolution": "Bundler",
+        "jsx": "react-jsx",
+        "esModuleInterop": true,
+        "resolveJsonModule": true
+    }
 }

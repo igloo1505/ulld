@@ -64,7 +64,6 @@ export const commandPaletteRouter = router({
             }
         })
         let parsed = definitionZodObject.array().parse(definitions)
-        // TODO: Compile mdx here with a server-side only method to speed up client side rendering.
         return parsed
     }),
     getCommandPaletteData: publicProcedure.query(async () => {
