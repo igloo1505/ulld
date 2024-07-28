@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.26
+
+### Patch Changes
+
+- Doing everything twice after reverting parts of the package.json files
+  in almost all internal packages.
+- Updated dependencies
+  - @ulld/developer@0.0.26
+  - @ulld/developer-schemas@0.0.23
+
 ## 0.0.25
 
 ### Patch Changes

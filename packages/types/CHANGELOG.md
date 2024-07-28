@@ -1,5 +1,12 @@
 # @ulld/types
 
+## 0.0.23
+
+### Patch Changes
+
+- Doing everything twice after reverting parts of the package.json files
+  in almost all internal packages.
+
 ## 0.0.22
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.25
+
+### Patch Changes
+
+- Doing everything twice after reverting parts of the package.json files
+  in almost all internal packages.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.22
+
 ## 0.0.24
 
 ### Patch Changes

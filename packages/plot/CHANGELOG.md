@@ -1,5 +1,23 @@
 # @ulld/plot
 
+## 0.0.26
+
+### Patch Changes
+
+- Doing everything twice after reverting parts of the package.json files
+  in almost all internal packages.
+- Updated dependencies
+  - @ulld/api@0.0.26
+  - @ulld/configschema@0.0.26
+  - @ulld/developer@0.0.26
+  - @ulld/full-form@0.0.26
+  - @ulld/hooks@0.0.26
+  - @ulld/logger@0.0.23
+  - @ulld/state@0.0.26
+  - @ulld/tailwind@0.0.23
+  - @ulld/ui@0.0.26
+  - @ulld/utilities@0.0.26
+
 ## 0.0.25
 
 ### Patch Changes

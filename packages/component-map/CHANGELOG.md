@@ -1,5 +1,30 @@
 # @ulld/component-map
 
+## 0.0.26
+
+### Patch Changes
+
+- Doing everything twice after reverting parts of the package.json files
+  in almost all internal packages.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.26
+  - @ulld/calendar@0.0.26
+  - @ulld/default-image-map@0.0.26
+  - @ulld/diagram@0.0.26
+  - @ulld/editor@0.0.26
+  - @ulld/embeddable-components@0.0.26
+  - @ulld/equations@0.0.26
+  - @ulld/full-form@0.0.26
+  - @ulld/journal@0.0.26
+  - @ulld/navigation@0.0.26
+  - @ulld/notebook@0.0.26
+  - @ulld/pdf@0.0.26
+  - @ulld/plot@0.0.26
+  - @ulld/snippets@0.0.26
+  - @ulld/tailwind@0.0.23
+  - @ulld/task-manager@0.0.26
+  - @ulld/whiteboard@0.0.26
+
 ## 0.0.25
 
 ### Patch Changes
