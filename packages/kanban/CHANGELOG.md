@@ -1,5 +1,21 @@
 # @ulld/kanban
 
+## 0.0.21
+
+### Patch Changes
+
+- 06a2aa9: Patch bump, resolved a ton of TS errors in most of the core packages.
+- Patch bump after cleaning all TS errors in most core internal packages.
+- Updated dependencies [06a2aa9]
+- Updated dependencies
+  - @ulld/api@0.0.21
+  - @ulld/typescript-config@0.0.19
+  - @ulld/developer@0.0.21
+  - @ulld/jest-presets@0.0.20
+  - @ulld/logger@0.0.20
+  - @ulld/state@0.0.21
+  - @ulld/tailwind@0.0.20
+
 ## 0.0.20
 
 ### Patch Changes

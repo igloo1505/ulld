@@ -1,5 +1,28 @@
 # @ulld/ui
 
+## 0.0.21
+
+### Patch Changes
+
+- 06a2aa9: Patch bump, resolved a ton of TS errors in most of the core packages.
+- Patch bump after cleaning all TS errors in most core internal packages.
+- Updated dependencies [06a2aa9]
+- Updated dependencies
+  - @ulld/api@0.0.21
+  - @ulld/component-map@0.0.21
+  - @ulld/configschema@0.0.21
+  - @ulld/editor@0.0.21
+  - @ulld/embeddable-components@0.0.21
+  - @ulld/full-form@0.0.21
+  - @ulld/hooks@0.0.21
+  - @ulld/icons@0.0.21
+  - @ulld/logger@0.0.20
+  - @ulld/notebook@0.0.21
+  - @ulld/render@0.0.21
+  - @ulld/state@0.0.21
+  - @ulld/tailwind@0.0.20
+  - @ulld/utilities@0.0.21
+
 ## 0.0.20
 
 ### Patch Changes

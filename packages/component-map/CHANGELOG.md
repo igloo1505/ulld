@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.21
+
+### Patch Changes
+
+- 06a2aa9: Patch bump, resolved a ton of TS errors in most of the core packages.
+- Patch bump after cleaning all TS errors in most core internal packages.
+- Updated dependencies [06a2aa9]
+- Updated dependencies
+  - @ulld/bib-manager@0.0.21
+  - @ulld/calendar@0.0.21
+  - @ulld/default-image-map@0.0.21
+  - @ulld/diagram@0.0.21
+  - @ulld/editor@0.0.21
+  - @ulld/embeddable-components@0.0.21
+  - @ulld/equations@0.0.21
+  - @ulld/full-form@0.0.21
+  - @ulld/journal@0.0.21
+  - @ulld/navigation@0.0.21
+  - @ulld/notebook@0.0.21
+  - @ulld/pdf@0.0.21
+  - @ulld/plot@0.0.21
+  - @ulld/snippets@0.0.21
+  - @ulld/tailwind@0.0.20
+  - @ulld/task-manager@0.0.21
+  - @ulld/whiteboard@0.0.21
+
 ## 0.0.20
 
 ### Patch Changes

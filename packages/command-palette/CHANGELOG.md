@@ -1,5 +1,34 @@
 # @ulld/command-palette
 
+## 0.0.21
+
+### Patch Changes
+
+- 06a2aa9: Patch bump, resolved a ton of TS errors in most of the core packages.
+- Patch bump after cleaning all TS errors in most core internal packages.
+- Updated dependencies [06a2aa9]
+- Updated dependencies
+  - @ulld/api@0.0.21
+  - @ulld/bib-manager@0.0.21
+  - @ulld/calendar@0.0.21
+  - @ulld/configschema@0.0.21
+  - @ulld/database@0.0.20
+  - @ulld/developer@0.0.21
+  - @ulld/diagram@0.0.21
+  - @ulld/editor@0.0.21
+  - @ulld/equations@0.0.21
+  - @ulld/hooks@0.0.21
+  - @ulld/logger@0.0.20
+  - @ulld/parsers@0.0.21
+  - @ulld/render@0.0.21
+  - @ulld/snippets@0.0.21
+  - @ulld/state@0.0.21
+  - @ulld/tailwind@0.0.20
+  - @ulld/task-manager@0.0.21
+  - @ulld/ui@0.0.21
+  - @ulld/utilities@0.0.21
+  - @ulld/whiteboard@0.0.21
+
 ## 0.0.20
 
 ### Patch Changes

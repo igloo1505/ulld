@@ -1,5 +1,19 @@
 # @ulld/hooks
 
+## 0.0.21
+
+### Patch Changes
+
+- 06a2aa9: Patch bump, resolved a ton of TS errors in most of the core packages.
+- Patch bump after cleaning all TS errors in most core internal packages.
+- Updated dependencies [06a2aa9]
+- Updated dependencies
+  - @ulld/api@0.0.21
+  - @ulld/component-map@0.0.21
+  - @ulld/configschema@0.0.21
+  - @ulld/database@0.0.20
+  - @ulld/parsers@0.0.21
+
 ## 0.0.20
 
 ### Patch Changes
