@@ -1,5 +1,13 @@
 # @ulld/kanban
 
+## 0.0.25
+
+### Patch Changes
+
+- @ulld/api@0.0.25
+- @ulld/developer@0.0.25
+- @ulld/state@0.0.25
+
 ## 0.0.24
 
 ### Patch Changes

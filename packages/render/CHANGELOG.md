@@ -1,5 +1,15 @@
 # @ulld/render
 
+## 0.0.25
+
+### Patch Changes
+
+- @ulld/api@0.0.25
+- @ulld/hooks@0.0.25
+- @ulld/utilities@0.0.25
+- @ulld/component-map@0.0.25
+- @ulld/configschema@0.0.25
+
 ## 0.0.24
 
 ### Patch Changes

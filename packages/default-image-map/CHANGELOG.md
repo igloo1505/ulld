@@ -1,5 +1,12 @@
 # @ulld/default-image-map
 
+## 0.0.25
+
+### Patch Changes
+
+- @ulld/utilities@0.0.25
+- @ulld/configschema@0.0.25
+
 ## 0.0.24
 
 ### Patch Changes

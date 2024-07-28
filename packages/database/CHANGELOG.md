@@ -1,5 +1,12 @@
 # @ulld/database
 
+## 0.0.24
+
+### Patch Changes
+
+- Update missing file path that was fixed, but then broken again when had
+  to revert package.json files.
+
 ## 0.0.23
 
 ### Patch Changes

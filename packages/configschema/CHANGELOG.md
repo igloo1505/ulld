@@ -1,5 +1,12 @@
 # @ulld/configschema
 
+## 0.0.25
+
+### Patch Changes
+
+- @ulld/utilities@0.0.25
+- @ulld/icons@0.0.25
+
 ## 0.0.24
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @ulld/hooks
 
+## 0.0.25
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/database@0.0.24
+  - @ulld/api@0.0.25
+  - @ulld/parsers@0.0.25
+  - @ulld/component-map@0.0.25
+  - @ulld/configschema@0.0.25
+
 ## 0.0.24
 
 ### Patch Changes
