@@ -329,7 +329,6 @@ export class BibEntry {
     return <div key={`cit-${this.id}`}>{this.title}</div>;
   }
   static fromPrisma(item: Omit<PrismaBibEntry, "added"> & {added?: Date | string}): BibEntry {
-    this.prismaEntry = item
     let parsed = bibEntryPropsSchema.parse(item);
     return new BibEntry(parsed);
   }

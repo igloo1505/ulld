@@ -85,6 +85,9 @@
     "academic",
     "STEM"
   ],
+  "prisma": {
+    "schema": "packages/database/prisma/schema.prisma"
+  },
   "author": "Andrew Mueller <aiglinski414@gmail.com> (https://uhlittlelessdum.com)",
   "contributors": [
     "Andrew Mueller <aiglinski414@gmail.com> (https://uhlittlelessdum.com)"

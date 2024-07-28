@@ -29,10 +29,8 @@ import {
 import { serverClient } from "../../trpc/serverClient";
 import { AutoSettingWithRegex } from "../../trpc/types.d";
 import { ValueSearchTableItem } from "../../trpcTypes/valueTableSearch";
-import { universalStringToMathjax } from "@ulld/parsers/universalStringToMdx";
 import { getFlatAutoSettings } from "../../trpcInternalMethods/settings/autoSettings/getFlattenedAutoSettings";
 import { globDoesMatch } from "../../trpcInternalMethods/settings/autoSettings/globDoesMatch";
-import { replaceRecursively } from "@ulld/utilities/utils/general";
 import { convertGithubUrlToRawContentUrl } from "@ulld/state/formatting/general";
 import {
   FromMdxStringOpts,
@@ -44,7 +42,6 @@ import {
   MdxNotePropsOutput,
   MdxNoteSummaryInput,
   MdxNoteSummaryOutput,
-  bibEntryPropsSchema,
   fromMdxStringOptSchema,
   mdxNoteFromStringPropsSchema,
   mdxNoteIntriguingValSummaryPropsSchema,
@@ -105,7 +102,7 @@ const boolOrTrue = (a: boolean | undefined) => {
 
 /* RESUME: Come back and parse ```mermaid syntax and replace with the appropriate params. */
 export class MdxNote extends MdxNoteProtocol {
-  id: number | undefined | null;
+  id: number | undefined | null = -1;
   title?: string | undefined | null;
   latexTitle?: string | null;
   summary?: string | null;
@@ -456,12 +453,18 @@ ${m.groups.content}
       content: c,
       serverClient: serverClient,
       appConfig: params.appConfig,
-      docTypeData: params.docTypeData,
+      docTypeData: params.docTypeData!,
       data: this.frontMatter
         ? this.frontMatter
         : ({} as Partial<FrontMatterType>),
       db: {
-        noteId: this.id,
+        id: typeof this.id === "number" ? this.id : -1,
+        firstSync: this.firstSync || new Date("1-1-1970"),
+        lastSync: this.lastSync || new Date("1-1-1970"),
+        bookmarked: this.bookmarked,
+        sequentialKey: typeof this.sequentialKey === "undefined" ? null : this.sequentialKey,
+        sequentialIndex: typeof this.sequentialIndex === "undefined" ? null : this.sequentialIndex,
+        quickLink: this.quickLinkId || null
       },
     });
     this.formatted = res.content;

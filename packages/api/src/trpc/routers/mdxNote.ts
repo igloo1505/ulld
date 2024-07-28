@@ -3,7 +3,7 @@ import { publicProcedure, router } from "../trpc";
 import { markdownExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
 import { prisma } from "@ulld/database/db";
 import { getRemoteMdx } from "../../trpcInternalMethods/notes/mdx/getRemoteMdx";
-import { getRemoteMdxFromPathname } from "../../trpcInternalMethods/notes/mdx/getRemoteMdxFromPathname";
+import { getDatabaseMdxFromPathname } from "../../trpcInternalMethods/notes/mdx/getDatabaseMdxFromPathname";
 import { getFsMdx } from "../../trpcInternalMethods/filesystem/fsnotes";
 import { makeArrayTransform } from "@ulld/utilities/schemas/transforms";
 import { parseMdxString } from "@ulld/parsers/mdx";
@@ -45,10 +45,10 @@ export const mdxNoteActionsRouter = router({
     getDatabaseMdx: publicProcedure.input(z.string()).query(async (opts) => {
         return getRemoteMdx(opts.input);
     }),
-    getRemoteMdxFromPathname: publicProcedure
+    getDatabaseMdxFromPathname: publicProcedure
         .input(z.string())
         .query(async (opts) => {
-            return await getRemoteMdxFromPathname(opts.input);
+            return await getDatabaseMdxFromPathname(opts.input);
         }),
     getFsMdx: publicProcedure
         .input(

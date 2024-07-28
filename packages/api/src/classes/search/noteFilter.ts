@@ -1,5 +1,4 @@
 import { Topic, Subject } from "@ulld/database/internalDatabaseTypes";
-import { getDocumentTypeConfig } from "@ulld/configschema/configUtilityTypes/general";
 import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes";
 import { prisma } from "@ulld/database/db";
 import type { SerializeMdxConfig } from "@ulld/parsers/mdx/types";
@@ -13,11 +12,8 @@ import {
 } from "../../schemas/search/parsing";
 import { MdxNoteSummaryOutputWithMdxTransforms } from "../prismaMdxRelations/schemas/withMdxTransforms";
 import type {
-  MdxNoteOrderByWithRelationInput,
-  MdxNoteWhereInput,
-  MdxNoteFindManyArgs,
-  MdxNoteSelect,
-} from "@ulld/database/internalDatabaseTypes";
+    Prisma
+} from "@ulld/database";
 import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 
 type SortedResult = MdxNote & { sortRank?: number };
@@ -55,11 +51,13 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
   skip: number = 0;
   remote: boolean = true;
   secondaryData: {
-    topics: Topic[];
-    subjects: Subject[];
+    topics: string[];
+    subjects: string[];
+    tags: string[];
   } = {
     topics: [],
     subjects: [],
+    tags: [],
   };
   constructor(
     public type: string | "all",
@@ -277,7 +275,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
           },
         },
       }),
-    } satisfies MdxNoteWhereInput;
+    } satisfies Prisma.MdxNoteWhereInput;
   }
   async toValueSearchTable(config: AppConfigSchemaOutput) {
     await this.getResultsBeforeParse(config);
@@ -356,7 +354,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
           id: true,
         },
       },
-    } satisfies MdxNoteSelect;
+    } satisfies Prisma.MdxNoteSelect;
   }
   paginationInput() {
     return {
@@ -368,9 +366,9 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
     return [
       { bookmarked: "desc" },
       { firstSync: "desc" },
-    ] satisfies MdxNoteOrderByWithRelationInput[];
+    ] satisfies Prisma.MdxNoteOrderByWithRelationInput[];
   }
-  async getCountFromWhereInput(whereInput: NonNullable<MdxNoteWhereInput>) {
+  async getCountFromWhereInput(whereInput: NonNullable<Prisma.MdxNoteWhereInput>) {
     return await prisma.mdxNote.count({
       where: whereInput,
     });
@@ -391,7 +389,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
         sequentialIndex: "asc",
       },
       ...this.paginationInput(),
-    } satisfies MdxNoteFindManyArgs;
+    } satisfies Prisma.MdxNoteFindManyArgs;
     let notes = await prisma.mdxNote.findMany(fields);
     let count = await this.getCountFromWhereInput(fields.where);
     this.preParseNotes = notes ? notes.map((n) => MdxNote.asSummary(n)) : [];
@@ -407,7 +405,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
         select: this.defaultSelectInput(),
         orderBy: this.defaultOrderBy(),
         ...this.paginationInput(),
-      } satisfies MdxNoteFindManyArgs;
+      } satisfies Prisma.MdxNoteFindManyArgs;
       let notes = await prisma.mdxNote.findMany(queryObject);
       let totalFound = await prisma.mdxNote.count({
         where: queryObject.where,
@@ -434,7 +432,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
       firstSync: true,
       noteType: true,
       importantValues: true,
-    } satisfies MdxNoteSelect;
+    } satisfies Prisma.MdxNoteSelect;
   }
   intriguingValueWhereInput(config: AppConfigSchemaOutput) {
     return {
@@ -442,7 +440,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
       importantValues: {
         isEmpty: false,
       },
-    } satisfies MdxNoteWhereInput;
+    } satisfies Prisma.MdxNoteWhereInput;
   }
   async intriguingValueSearch(config: AppConfigSchemaOutput) {
     let notes = await prisma.mdxNote.findMany({

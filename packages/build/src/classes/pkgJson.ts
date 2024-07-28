@@ -18,8 +18,9 @@ export class TargetPackageJson extends PackageJson {
     constructor(
         public targetDir: string,
         public isLocalDev: boolean,
+        public baseAppGitBranch: string
     ) {
-        super(targetDir);
+        super(targetDir, undefined, baseAppGitBranch);
     }
     includesUlldDependencies(): boolean {
         if (!this.data) {

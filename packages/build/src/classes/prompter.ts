@@ -4,10 +4,11 @@ import { SlotConflict } from "./slotConflict";
 import { PageConflict } from "./pageConflict";
 import { GitManager } from "./baseClasses/gitManager";
 import { TargetPaths } from "./paths";
+import { BranchValue } from "../utils/options";
 
 export class Prompter extends GitManager {
-    constructor(targetDirectory: string) {
-        super(targetDirectory);
+    constructor(targetDirectory: string, gitBranch: BranchValue) {
+        super(targetDirectory, gitBranch);
     }
     async confirmContinueWithInvalidPlugins(
         invalidPlugins: UlldPlugin[],

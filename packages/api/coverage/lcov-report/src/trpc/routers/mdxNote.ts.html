@@ -216,7 +216,7 @@ import {<span class="cstat-no" title="statement not covered" ><span class="fstat
 } fr<span class="cstat-no" title="statement not covered" >om "../../trpcInternalMethods/notes/mdx/getRemoteMdx";</span>
 import {
     getRemoteMdxFr<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >om</span>Pathname,</span>
-} <span class="cstat-no" title="statement not covered" >from "../../trpcInternalMethods/notes/mdx/getRemoteMdxFromPathname";</span>
+} <span class="cstat-no" title="statement not covered" >from "../../trpcInternalMethods/notes/mdx/getDatabaseMdxFromPathname";</span>
 impo<span class="cstat-no" title="statement not covered" >rt {</span>
     ge<span class="cstat-no" title="statement not covered" >tFsMdx,</span>
 } from "<span class="cstat-no" title="statement not covered" >../../trpcInternalMethods/<span class="fstat-no" title="function not covered" >fi</span>lesy<span class="cstat-no" title="statement not covered" >stem/fsnot</span>es";</span>
@@ -261,10 +261,10 @@ export const mdxN<span class="cstat-no" title="statement not covered" >oteAction
     getRemoteMdx: publicProcedure.input(z.string()).query(async (opts) =&gt; {
         return getRemoteMdx(opts.input);
     }),
-    getRemoteMdxFromPathname: publicProcedure
+    getDatabaseMdxFromPathname: publicProcedure
         .input(z.string())
 <span class="cstat-no" title="statement not covered" >        .query(async (opts) =&gt; {</span>
-            return await getRemoteMdxFromPathname(opts.input);
+            return await getDatabaseMdxFromPathname(opts.input);
         }),<span class="fstat-no" title="function not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    getFsMdx: publicProcedure</span>
         .input(

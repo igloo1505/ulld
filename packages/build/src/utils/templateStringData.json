@@ -17,6 +17,18 @@
             "typeName": "SettingsPage"
         },
         {
+            "path": "prisma/clientGenerators/sqliteClientGenerator.txt",
+            "id": "sqliteClientGenerator",
+            "variables": [],
+            "typeName": "SqliteClientGenerator"
+        },
+        {
+            "path": "prisma/clientGenerators/postgresClientGenerator.txt",
+            "id": "postgresClientGenerator",
+            "variables": [],
+            "typeName": "PostgresClientGenerator"
+        },
+        {
             "path": "noteType/noteTypePage.txt",
             "id": "noteTypePage",
             "variables": [

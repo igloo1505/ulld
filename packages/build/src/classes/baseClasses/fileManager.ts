@@ -15,7 +15,7 @@ export class FileManager extends ShellManager {
     asJson: boolean;
     path: string;
     dirname: string;
-    DO_NOT_WRITE_FILE_CONTENT = process.env.ULLD_INTERNAL_DEVELOPMENT;
+    DO_NOT_WRITE_FILE_CONTENT: boolean = process.env.ULLD_INTERNAL_DEVELOPMENT === "true";
     constructor(
         public subPath: string,
         public paths: TargetPaths,

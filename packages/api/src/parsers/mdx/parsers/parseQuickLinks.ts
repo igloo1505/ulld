@@ -29,7 +29,7 @@ export const parseQuickLinks: UnifiedMdxParser<ExtendedFrontMatter> = async (
         content: c,
         data: {
             ...data.data,
-            parsedLinks: links,
+            links: links,
         },
     };
 };

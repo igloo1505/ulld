@@ -42,7 +42,8 @@ export class UlldPlugin extends ShellManager {
     constructor(
         public paths: TargetPaths,
         public name: string,
-        public version?: string,
+        public version: string = "latest",
+        public baseAppGitBranch: string
     ) {
         super();
         this.targetDir = paths.targetDir;
@@ -55,6 +56,7 @@ export class UlldPlugin extends ShellManager {
         this.packageJson = new PackageJson(
             this.paths.projectRoot,
             path.join(this.packageRoot, "package.json"),
+            this.baseAppGitBranch
         );
         if (!this.packageJson) {
             this.noPackageJsonError(noError);

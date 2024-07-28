@@ -17,9 +17,10 @@ export class PackageJson extends Prompter {
   path: string;
   constructor(
     public applicationDir: string,
-    targetDir?: string,
+    targetDir: string | undefined,
+    gitBranch: string
   ) {
-    super(applicationDir);
+    super(applicationDir, gitBranch);
     this.path = path.join(targetDir || applicationDir, "package.json");
   }
   gather() {

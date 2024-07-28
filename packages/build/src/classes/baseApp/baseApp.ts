@@ -118,10 +118,7 @@ export class BaseApp extends ShellManager {
         }
     }
     writePrismaSchema(){
-        let tm = new TemplateFile("prismaSchema")
-        let content = tm.getNewContent({})
-        let outputFile = FileManager.fromPathKey("prismaSchema", this.paths)
-        outputFile.writeContent(content)
+        this.build.db.writePrismaSchema()
     }
     copyAdditionalSources() {
         let additionalSources = new AdditionalSources(this.paths);

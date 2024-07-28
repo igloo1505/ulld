@@ -164,7 +164,7 @@ const equationsRouter = router({
                 }
             })
         }
-        let _orderBy: Prisma.EquationOrderByWithRelationAndSearchRelevanceInput[] = []
+        let _orderBy: Prisma.EquationOrderByWithRelationInput[] = []
         input.orderBy === "title" && (_orderBy.push({ title: input.sortDir || "desc" }))
         input.orderBy === "createdAt" && (_orderBy.push({ createdAt: input.sortDir || "desc" }))
         let equations = await prisma.equation.findMany({

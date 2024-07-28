@@ -6,9 +6,9 @@ import { PrismaMdxRelationshipProtocol } from "../type";
 import { Prisma } from "@ulld/database/internalDatabaseTypes"
 
 
-export type IpynbPrismaReturnType = Awaited<ReturnType<typeof serverClient["ipynb"]["getPrismaIpynb"]>>
+export type IpynbPrismaReturnType = Awaited<ReturnType<typeof serverClient["notebook"]["getPrismaIpynb"]>>
 
-export type IypnbFsReturnType = Awaited<ReturnType<typeof serverClient["ipynb"]["getFsIpynb"]>>
+export type IypnbFsReturnType = Awaited<ReturnType<typeof serverClient["notebook"]["getFsIpynb"]>>
 
 export abstract class IpynbProtocol extends NoteBase implements PrismaMdxRelationshipProtocol<Prisma.IpynbDelegate> {
     constructor(rootRelativePath: string, extension: ParsableExtensions = ".ipynb") {

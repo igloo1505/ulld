@@ -19,12 +19,28 @@ const templateStringDir = path.join(
 
 const prismaSchemaPath = path.join(
     __dirname,
-    "../packages/database/src/prisma/schema.prisma",
+    "../packages/database/prisma/schema.prisma",
 );
 
 let prismaSchemaContent = fs.readFileSync(prismaSchemaPath, {
     encoding: "utf-8",
 });
+
+// let cutIndex = -1;
+
+// let prismaLines = prismaSchemaContent
+//     .split("\n")
+//     .map((l, i) => ({ content: l, index: i }));
+
+// for (const l of prismaLines) {
+//     if (cutIndex < 0 && l.content.includes("<<BEGIN-CUT>>")) {
+//         cutIndex = l.index;
+//     }
+// }
+
+// if (cutIndex >= 0) {
+//     prismaSchemaContent = prismaLines.slice(cutIndex + 1).map((l) => l.content).join("\n");
+// }
 
 fs.writeFileSync(
     path.join(templateStringDir, "prismaSchema.txt"),
@@ -61,7 +77,7 @@ const getVariables = (fp: string) => {
 };
 
 for (const f of files) {
-    console.log(`Gathering template file ${f}`)
+    console.log(`Gathering template file ${f}`);
     let absPath = path.join(templateStringDir, f);
     if (!fs.statSync(absPath).isDirectory()) {
         let id = f.slice(f.lastIndexOf(path.sep) + 1, f.lastIndexOf("."));
@@ -77,7 +93,7 @@ for (const f of files) {
 let templateKeyString = `
 export type TemplateStringId = ${data.map((d) => `"${d.id}"`).join(" | ")}
 
-${data.map((t) => `export type ${t.typeName} = ${t.variables.length === 0 ? ['never'] : t.variables.map((l) => `"${l}"`).join(" | ")}`).join("\n")}
+${data.map((t) => `export type ${t.typeName} = ${t.variables.length === 0 ? ["never"] : t.variables.map((l) => `"${l}"`).join(" | ")}`).join("\n")}
 
 type TemplateStringMap = {
 ${data.map((t) => `    ${t.id}: ${t.typeName}`).join(";\n")}

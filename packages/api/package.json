@@ -129,7 +129,7 @@
         "./trpcInternalMethods/filesystem/getImagesInDir": "./src/trpcInternalMethods/filesystem/getImagesInDir.ts",
         "./trpcInternalMethods/qaItem/saveQaItem": "./src/trpcInternalMethods/qaItem/saveQaItem.ts",
         "./trpcInternalMethods/notes/mdx/getRemoteMdx": "./src/trpcInternalMethods/notes/mdx/getRemoteMdx.ts",
-        "./trpcInternalMethods/notes/mdx/getRemoteMdxFromPathname": "./src/trpcInternalMethods/notes/mdx/getRemoteMdxFromPathname.ts",
+        "./trpcInternalMethods/notes/mdx/getDatabaseMdxFromPathname": "./src/trpcInternalMethods/notes/mdx/getDatabaseMdxFromPathname.ts",
         "./trpcInternalMethods/notes/ipynb/main": "./src/trpcInternalMethods/notes/ipynb/main.ts",
         "./trpcInternalMethods/bib/syncBib": "./src/trpcInternalMethods/bib/syncBib.ts",
         "./trpcInternalMethods/bib/main": "./src/trpcInternalMethods/bib/main.ts",

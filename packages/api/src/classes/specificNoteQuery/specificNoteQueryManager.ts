@@ -49,7 +49,7 @@ export class SpecificNoteQueryManager {
     alwaysPreferFs: boolean
     fsRoot: string
     filetypeSpecificAppendices: BuildStaticDataOutput["filetypeSpecificAppendices"]
-    constructor(props: NotePropsBeforeRun, docType: DocTypes | string, filetype?: ParsableExtensions, pathname?: string | null, appConfig: AppConfigSchemaOutput, buildData: BuildStaticDataOutput) {
+    constructor(props: NotePropsBeforeRun, docType: DocTypes | string, filetype: ParsableExtensions | undefined = undefined, pathname: string | null, appConfig: AppConfigSchemaOutput, buildData: BuildStaticDataOutput) {
         this.docType = docType
         this.filetypeSpecificAppendices = buildData.filetypeSpecificAppendices
         // const internalConfig = getInternalConfig()

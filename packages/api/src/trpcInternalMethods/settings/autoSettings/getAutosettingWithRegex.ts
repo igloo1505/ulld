@@ -4,7 +4,7 @@ import globToRegExp from "glob-to-regexp"
 import { AppConfigSchemaOutput } from "@ulld/configschema/types"
 import { AutoSettingType } from "@ulld/utilities/types";
 import { AutoSettingWithRegex } from "../../../trpc/types";
-import type { PrismaClient, autoSetting } from "@ulld/types"
+import type { PrismaClient, autoSetting } from "@ulld/database"
 
 
 export const getConfigAutoSettings = (config: AppConfigSchemaOutput) => {

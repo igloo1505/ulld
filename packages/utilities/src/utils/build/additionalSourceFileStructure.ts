@@ -103,7 +103,7 @@ export const additionalFilePaths: FilePathItem = {
 export const getFlattenedFileItems = () => {
     let data: FileItemWithRootGlob[] = [];
     for (const k in fileItems) {
-        data = data.concat(fileItems[k]);
+        data = data.concat(fileItems[k as keyof typeof fileItems]);
     }
     return data;
 };

@@ -1,6 +1,6 @@
 import { HealthReport } from '@ulld/database/internalDatabaseTypes'
 import { z } from 'zod'
-import { serverClient } from '../../../trpc/serverClient'
+import type { serverClient } from '../../../trpc/serverClient'
 
 export interface DateInput {
     month: number
@@ -28,8 +28,9 @@ export const healthDashboardFormSchema = z.object({
 export type HealthDashboardSearchForm = z.infer<typeof healthDashboardFormSchema>
 export type HealthDashboardSearchParams = z.infer<typeof healthDashboardSchema>
 
+type HealthDashboardReportData = any
 
-export type HealthDashboardReportData = Awaited<ReturnType<typeof serverClient.health.reports.getDashboardData>>
+// export type HealthDashboardReportData = Awaited<ReturnType<typeof serverClient.health.reports.getDashboardData>>
 
 
 export const healthReportFieldNameDisplayMap: { [k in keyof HealthReport]: string } = {

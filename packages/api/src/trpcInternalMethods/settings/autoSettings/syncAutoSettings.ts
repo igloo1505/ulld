@@ -1,4 +1,4 @@
-import { PrismaClient } from "@ulld/types"
+import { PrismaClient } from "@ulld/database"
 import { getConfigAutoSettings } from "./getAutosettingWithRegex"
 import { AppConfigSchemaOutput } from "@ulld/configschema/types"
 

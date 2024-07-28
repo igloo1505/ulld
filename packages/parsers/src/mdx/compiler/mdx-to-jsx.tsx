@@ -14,7 +14,7 @@ import emoji from "remark-emoji";
 /* import toc from "@jsdevtools/rehype-toc" */
 import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
-import { AppConfigSchemaOutput, ParsedAppConfig } from "@ulld/configschema/types";
+import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 
 export const mermaidConfig: MermaidConfigType = {
     output: "svg",
@@ -26,7 +26,7 @@ export const mermaidConfig: MermaidConfigType = {
 };
 
 const rehypePlugins = (
-    config?: AppConfigSchemaOutput,
+    config?: Partial<AppConfigSchemaOutput>,
 ): CompileOptions["rehypePlugins"] => {
     return [
         /* TODO: Add an embeded video component for this rehypeVideo that then utilizes the existing video element. */
@@ -72,7 +72,7 @@ const rehypePlugins = (
     ];
 };
 const remarkPlugins = (
-    config?: AppConfigSchemaOutput,
+    /* config?: AppConfigSchemaOutput, */
 ): CompileOptions["remarkPlugins"] => {
     return [
         remarkMath, 
@@ -88,11 +88,11 @@ export const parseMdxString = async ({
     appConfig
 }: {
         content: string
-        appConfig: AppConfigSchemaOutput
+        appConfig?: Partial<AppConfigSchemaOutput>
     }) => {
     let res = await compile(content, {
         outputFormat: "function-body",
-        remarkPlugins: remarkPlugins(appConfig),
+        remarkPlugins: remarkPlugins(),
         rehypePlugins: rehypePlugins(appConfig),
         development: process.env.NODE_ENV === "development",
         /* baseUrl: import.meta.url */

@@ -20,3 +20,5 @@ public/workbox**
 *storybook.log
 /apps/storybook/storybook-static
 slotExistsMap.json
+
+WHEN_RETURN_TO_ONLINE.zsh

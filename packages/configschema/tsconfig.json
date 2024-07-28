@@ -1,26 +1,13 @@
 {
-    "$schema": "https://json.schemastore.org/tsconfig",
+        "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
+
     "extends": "@ulld/typescript-config/nextjs.json",
     "include": [
         "./src/**/*.ts",
         "./src/**/*.tsx",
         "./modules.d.ts"
-    ]
-    // "exclude": [
-    //     "dist",
-    //     "build",
-    //     "node_modules"
-    // ],
-    // "compilerOptions": {
-    //     "lib": [
-    //         "dom",
-    //         "ES2015"
-    //     ],
-    //     "types": [
-    //         "jest",
-    //         "node"
-    //     ],
-    //     "esModuleInterop": true,
-    //     "resolveJsonModule": true
-    // }
+    ],
+    "compilerOptions": {
+        "jsx": "react-jsx"
+    }
 }

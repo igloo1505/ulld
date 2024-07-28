@@ -4,7 +4,7 @@ import { UnifiedMdxParserParams } from "../individualTypesForDocumentation/parse
 import { serverClient } from "../trpc/serverClient"
 
 
-export type MdxNoteWithAll = Awaited<ReturnType<typeof serverClient.mdx.getRemoteMdx | typeof serverClient.mdx.getRemoteMdxFromPathname>>
+export type MdxNoteWithAll = Awaited<ReturnType<typeof serverClient.mdx.getDatabaseMdx | typeof serverClient.mdx.getDatabaseMdxFromPathname>>
 export type ReadingListReturned = Awaited<ReturnType<typeof serverClient.readingList.getReadingListContent>>
 export type CitationGroupReturned = Awaited<ReturnType<typeof serverClient.bibliography.getCitationGroup>>
 export type BibEntryReturned = Awaited<ReturnType<typeof serverClient.bibliography.getBibEntry>>

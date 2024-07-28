@@ -5,14 +5,23 @@ import { ShellManager } from "./baseClasses/shell";
 import terminalLink from "terminal-link";
 import { UlldAppConfigManager } from "./appConfig";
 import { PackageManagers } from "../types";
+import { FileManager } from "./baseClasses/fileManager";
+import { TemplateFile } from "./templateFile";
 
 export class DatabaseBuildManager extends ShellManager {
+    dbType: "postgres" | "sqlite" = "postgres"
     constructor(
         public paths: TargetPaths,
         public env: EnvManager,
         public health: BuildHealthCheck,
     ) {
         super();
+    }
+    writePrismaSchema(){
+        let tm = new TemplateFile("prismaSchema")
+        let content = tm.getNewContent({})
+        let outputFile = FileManager.fromPathKey("prismaSchema", this.paths)
+        outputFile.writeContent(content)
     }
     generate(appConfig: UlldAppConfigManager, pkgManager: PackageManagers) {
         if (!appConfig.config) {

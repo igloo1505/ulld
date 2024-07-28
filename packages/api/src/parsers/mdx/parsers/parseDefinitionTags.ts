@@ -80,7 +80,7 @@ export const parseDefinitionTags: UnifiedMdxParser<
                         id: d.id,
                         content: d.content,
                         label: d.label,
-                        mdxNoteId: data.db.noteId,
+                        mdxNoteId: data.db?.id,
                     }),
             ),
         },

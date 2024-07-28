@@ -1,42 +1,59 @@
 import { PackageManagers } from "../../types";
 import { ShellManager } from "../baseClasses/shell";
 import { TargetPaths } from "../paths";
-import fs from 'fs'
+import fs from "fs";
 import { globSync } from "glob";
-import path from 'path'
+import path from "path";
 
 export class BuildCleanup extends ShellManager {
-    constructor(public paths: TargetPaths, public pkgManager: PackageManagers){
-        super()
+    cleanupPaths: string[] = [".pre-commit-config.yaml"];
+    constructor(
+        public paths: TargetPaths,
+        public pkgManager: PackageManagers,
+    ) {
+        super();
     }
-    private removeTempBuildDir(){
+    private removeTempBuildDir() {
         let filePaths = globSync("**", {
-            cwd: this.paths.tempBuildFiles
-        }).map((p) => path.join(this.paths.tempBuildFiles, p))
+            cwd: this.paths.tempBuildFiles,
+        }).map((p) => path.join(this.paths.tempBuildFiles, p));
         for (const f of filePaths) {
-           fs.rmSync(f, {
+            fs.rmSync(f, {
                 force: true,
-                recursive: true
-            }) 
+                recursive: true,
+            });
         }
-        fs.rmdirSync(this.paths.tempBuildFiles)
+        fs.rmdirSync(this.paths.tempBuildFiles);
     }
-    private runOnBuild(){
-        this.execPackageJsonScript(this.pkgManager, "runOnBuild", this.paths.projectRoot)
+    private runOnBuild() {
+        this.execPackageJsonScript(
+            this.pkgManager,
+            "runOnBuild",
+            this.paths.projectRoot,
+        );
     }
-    private removePreCommitHooks(){
-        let commitHookRoot = this.paths.joinPath("projectRoot", ".commitHooks")
+    private removePreCommitHooks() {
+        let commitHookRoot = this.paths.joinPath("projectRoot", ".commitHooks");
         let files = globSync("**", {
-            cwd: commitHookRoot
-        }).map((f) => path.join(commitHookRoot, f))
+            cwd: commitHookRoot,
+        }).map((f) => path.join(commitHookRoot, f));
         for (const f of files) {
-            fs.rmSync(f)
+            fs.rmSync(f);
         }
-        fs.rmdirSync(commitHookRoot)
+        fs.rmdirSync(commitHookRoot);
     }
-    runCleanup(){
-        this.runOnBuild()
-        this.removeTempBuildDir()
-        this.removePreCommitHooks()
+    private removeCleanupPaths(){
+        for (const p of this.cleanupPaths) {
+            let _path = this.paths.joinPath("projectRoot", p)
+            if(fs.existsSync(_path)){
+                fs.rmSync(_path)
+            }
+        }
+    }
+    runCleanup() {
+        this.runOnBuild();
+        this.removeTempBuildDir();
+        this.removePreCommitHooks();
+        this.removeCleanupPaths();
     }
 }

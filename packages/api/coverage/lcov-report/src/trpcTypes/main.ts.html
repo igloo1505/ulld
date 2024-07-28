@@ -87,7 +87,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { serverC<span class="cstat-no" title="statement not covered" >lient } from "../trpc/</span>serverClient"
 <span class="cstat-no" title="statement not covered" ></span>
-export type MdxNoteWithA<span class="cstat-no" title="statement not covered" >ll = Awaited&lt;ReturnType&lt;typ</span>eof serverClient.mdx.getRemoteMdx | typeof serverClient.mdx.getRemoteMdxFromPathname&gt;&gt;
+export type MdxNoteWithA<span class="cstat-no" title="statement not covered" >ll = Awaited&lt;ReturnType&lt;typ</span>eof serverClient.mdx.getRemoteMdx | typeof serverClient.mdx.getDatabaseMdxFromPathname&gt;&gt;
 export type Reading<span class="cstat-no" title="statement not covered" >ListReturned = Awaited&lt;ReturnTyp</span>e&lt;typeof serverClient.readingList.getReadingListContent&gt;&gt;
 export type Citati<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >on</span>GroupReturned = Awaited&lt;ReturnType&lt;typeof serverClient.bibliography.getCitationGroup&gt;&gt;</span>
 ex<span class="cstat-no" title="statement not covered" >port type BibEntryReturned = Awaited&lt;ReturnType&lt;typeof serverClient.bibliography.getBibEntry&gt;&gt;</span>

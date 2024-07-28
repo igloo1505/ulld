@@ -8,6 +8,9 @@
         "test": "echo 'Add test script here'",
         "lint": "echo 'Add lint script here'"
     },
+    "exports": {
+        "./types": "./src/types.ts"
+    },
     "dependencies": {},
     "devDependencies": {
         "@ulld/types": "workspace:*",

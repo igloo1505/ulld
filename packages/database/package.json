@@ -3,9 +3,9 @@
     "name": "@ulld/database",
     "private": false,
     "exports": {
-        ".": "./src/internalDatabaseTypes.d.ts",
-        "./prisma": "./src/internalDatabaseTypes.d.ts",
-        "./internalDatabaseTypes": "./src/internalDatabaseTypes.ts",
+        ".": "./src/db/main.ts",
+        "./prisma": "./src/db/main.ts",
+        "./internalDatabaseTypes": "./src/db/main.ts",
         "./db": "./src/db/main.ts"
     },
     "files": [

@@ -22,6 +22,10 @@
       "cache": false,
       "env": [".env.local"]
     },
+    "generate": {
+      "cache": false,
+      "env": [".env.local"]
+    },
     "db:push": {
       "cache": false
     },

@@ -51,7 +51,7 @@ export class UlldBuildProcess extends Prompter {
     componentImportMap: Record<string, boolean> = {};
     alreadyProvidedPackageManager: boolean = false
     constructor(public targetDir: string, public branch: string = "main") {
-        super(targetDir);
+        super(targetDir, branch);
         this.git = new GitManager(targetDir, this.branch);
         this.isLocalDev = process.env.LOCAL_DEVELOPMENT === "true";
         this.applicationDir = path.join(
@@ -65,6 +65,7 @@ export class UlldBuildProcess extends Prompter {
         this.packageJson = new TargetPackageJson(
             this.applicationDir,
             this.isLocalDev,
+            this.branch
         );
         let additionalSources = new AdditionalSources(this.paths)
         let globalAppConfig = additionalSources.getAppConfig()
@@ -111,7 +112,7 @@ export class UlldBuildProcess extends Prompter {
         let newPlugins: UlldPlugin[] = [];
         let fromConfigPlugins =
             this.appConfig.config?.plugins?.map(
-                (c) => new UlldPlugin(this.paths, c.name, c.version),
+                (c) => new UlldPlugin(this.paths, c.name, c.version, this.branch),
             ) || ([] as UlldPlugin[]);
         this.logVerbose(`Found ${fromConfigPlugins.length} plugins in your config.`)
         for (const k in this.appConfig.config.slots) {
@@ -121,7 +122,7 @@ export class UlldBuildProcess extends Prompter {
                 ];
             if (Array.isArray(newSlot)) {
                 for (const l of newSlot) {
-                    newPlugins.push(new UlldPlugin(this.paths, l.name, l.version));
+                    newPlugins.push(new UlldPlugin(this.paths, l.name, l.version, this.branch));
                 }
             } else {
                 this.logDebug(`Found a slot that was not added to plugins:
@@ -392,7 +393,7 @@ and continue when that file is in place.`,
                 for (const slotItem of itemData) {
                     if (!currentPluginNames.includes(slotItem.name)) {
                         this.plugins.push(
-                            new UlldPlugin(this.paths, slotItem.name, slotItem.version),
+                            new UlldPlugin(this.paths, slotItem.name, slotItem.version, this.branch),
                         );
                         currentPluginNames.push(slotItem.name);
                     }
