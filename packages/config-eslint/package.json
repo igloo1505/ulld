@@ -17,5 +17,7 @@
     },
     "peerDependencies": {},
     "dependencies": {},
-    "files": []
+    "files": [
+        "src"
+    ]
 }

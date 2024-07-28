@@ -20,5 +20,7 @@
         "access": "public"
     },
     "peerDependencies": {},
-    "files": []
+    "files": [
+        "src"
+    ]
 }

@@ -28,7 +28,9 @@
     "publishConfig": {
         "access": "public"
     },
-    "files": [],
+    "files": [
+        "src"
+    ],
     "exports": {
         "./types": "./src/types.ts"
     }

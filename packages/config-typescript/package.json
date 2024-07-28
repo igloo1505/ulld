@@ -11,5 +11,7 @@
         "@ulld/types": "workspace:*"
     },
     "dependencies": {},
-    "files": []
+    "files": [
+        "src"
+    ]
 }

@@ -57,7 +57,8 @@
         "access": "public"
     },
     "files": [
-        "pluginConfig.ulld.json"
+        "pluginConfig.ulld.json",
+        "src"
     ],
     "ulld-pluginConfig": {
         "pluginName": "@ulld/snippets",

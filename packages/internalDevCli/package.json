@@ -15,7 +15,8 @@
     "files": [
         "/bin",
         "/dist",
-        "/oclif.manifest.json"
+        "/oclif.manifest.json",
+        "src"
     ],
     "oclif": {
         "bin": "mr",

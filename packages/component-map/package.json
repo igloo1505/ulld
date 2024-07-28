@@ -10,7 +10,8 @@
     },
     "types": "src/index.ts",
     "files": [
-        "./src/**"
+        "./src/**",
+        "src"
     ],
     "exports": {
         "./server": "./src/server/componentMap.ts",
