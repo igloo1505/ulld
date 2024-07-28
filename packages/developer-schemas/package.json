@@ -1,5 +1,5 @@
 {
-    "version": "0.0.21",
+    "version": "0.0.8",
     "name": "@ulld/developer-schemas",
     "private": false,
     "scripts": {
@@ -15,7 +15,12 @@
         "./pluginConfig": "./src/pluginConfigSchema.ts",
         "./fullPackageJson": "./src/packageJson.ts"
     },
-    "dependencies": {},
+    "dependencies": {
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "zod": "3.22.4"
+    },
     "packageManager": "pnpm@9.0.4",
     "devDependencies": {
         "@ulld/types": "workspace:*",
@@ -25,8 +30,5 @@
     "publishConfig": {
         "access": "public"
     },
-    "peerDependencies": {
-        "next": "14.2.3",
-        "zod": "3.22.4"
-    }
+    "peerDependencies": {}
 }

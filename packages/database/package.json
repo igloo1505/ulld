@@ -1,16 +1,15 @@
 {
-    "version": "0.0.21",
+    "version": "0.0.8",
     "name": "@ulld/database",
     "private": false,
     "exports": {
-        ".": "./src/db/main.ts",
-        "./prisma": "./src/db/main.ts",
-        "./internalDatabaseTypes": "./src/db/main.ts",
+        ".": "./src/internalDatabaseTypes.d.ts",
+        "./prisma": "./src/internalDatabaseTypes.d.ts",
+        "./internalDatabaseTypes": "./src/internalDatabaseTypes.ts",
         "./db": "./src/db/main.ts"
     },
     "files": [
-        "src",
-        "prisma"
+        "src"
     ],
     "scripts": {
         "dev": "echo 'Add dev script here'",
@@ -22,18 +21,18 @@
         "db:seed": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma db seed",
         "db:push": "prisma db push --skip-generate",
         "prisma:studio": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma studio --schema ./src/prisma/schema.prisma",
-        "db:generateTargetProjectSchema": "pnpm run generate",
-        "generate": "prisma generate",
-        "postinstall": "pnpm run generate",
-        "prebuild": "pnpm run generate",
-        "predev": "pnpm run generate"
+        "postinstall": "echo 'figure out how to run prisma generate --schema=./src/prisma/schema.prisma'",
+        "db:generateTargetProjectSchema": "prisma generate --schema ./src/prisma/schema.prisma"
     },
     "dependencies": {
-        "@prisma/client": "5.17.0"
+        "@prisma/client": "5.17.0",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
     },
     "peerDependencies": {
         "@ulld/typescript-config": "workspace:*",
-        "next": "14.2.3"
+        "prisma": "latest"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
@@ -41,7 +40,7 @@
     },
     "devDependencies": {
         "@ulld/types": "workspace:*",
-        "prisma": "5.17.0",
-        "@ulld/typescript-config": "workspace:*"
+        "@ulld/typescript-config": "workspace:*",
+        "prisma": "latest"
     }
 }

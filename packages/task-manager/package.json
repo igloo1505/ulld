@@ -1,5 +1,5 @@
 {
-    "version": "0.0.22",
+    "version": "0.0.8",
     "name": "@ulld/task-manager",
     "private": false,
     "scripts": {
@@ -38,22 +38,25 @@
         "@ulld/ui": "workspace:*",
         "@ulld/utilities": "workspace:*",
         "@ulld/whiteboard": "workspace:*",
-        "next": "^14.2.3"
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
     },
     "devDependencies": {
         "@ulld/eslint-config": "workspace:*",
         "@ulld/jest-presets": "workspace:*",
         "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
-        "next": "^14.2.3"
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"
     },
     "files": [
-        "pluginConfig.ulld.json",
-        "src"
+        "pluginConfig.ulld.json"
     ],
     "ulld-pluginConfig": {
         "pluginName": "@ulld/task-manager",
@@ -66,35 +69,35 @@
                 "tags": [],
                 "slot": "TaskDetails",
                 "export": "taskDetails",
-                "componentId": "3682ed61-9f73-48c4-9b6f-af03dd29123d"
+                "componentId": "9094c415-7fb6-496f-958a-4e8b04ce9aca"
             },
             {
                 "componentName": "AddTaskModal",
                 "tags": [],
                 "slot": "AddTask",
                 "export": "addTask",
-                "componentId": "3682ed61-9f73-48c4-9b6f-af03dd29123d"
+                "componentId": "9094c415-7fb6-496f-958a-4e8b04ce9aca"
             },
             {
                 "componentName": "TaskListResultList",
                 "tags": [],
                 "slot": "TaskListSearchResultList",
                 "export": "taskListSearchResults",
-                "componentId": "3682ed61-9f73-48c4-9b6f-af03dd29123d"
+                "componentId": "9094c415-7fb6-496f-958a-4e8b04ce9aca"
             },
             {
                 "componentName": "AddTaskList",
                 "tags": [],
                 "slot": "AddTaskList",
                 "export": "addTaskList",
-                "componentId": "3682ed61-9f73-48c4-9b6f-af03dd29123d"
+                "componentId": "9094c415-7fb6-496f-958a-4e8b04ce9aca"
             },
             {
                 "componentName": "TaskListSearchResult",
                 "tags": [],
                 "slot": "TaskListSearchResult",
                 "export": "taskListSearchResult",
-                "componentId": "3682ed61-9f73-48c4-9b6f-af03dd29123d"
+                "componentId": "9094c415-7fb6-496f-958a-4e8b04ce9aca"
             }
         ],
         "parsers": {},

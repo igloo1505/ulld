@@ -1,5 +1,5 @@
 {
-    "version": "0.0.22",
+    "version": "0.0.8",
     "name": "@ulld/calendar",
     "private": false,
     "scripts": {
@@ -8,11 +8,12 @@
         "test": "echo 'Add test script here'",
         "lint": "echo 'Add lint script here'"
     },
-    "exports": {
-        "./types": "./src/types.ts"
-    },
     "dependencies": {
-        "googleapis": "^105.0.0"
+        "@ulld/developer": "workspace:*",
+        "ical.js": "2.0.0",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
     },
     "devDependencies": {
         "@ulld/types": "workspace:*",
@@ -20,17 +21,12 @@
         "use-lilius": "^2.0.5"
     },
     "peerDependencies": {
-        "@ulld/developer": "workspace:*",
         "dayjs": "^1.11.10",
-        "ical.js": "2.0.0",
-        "next": "14.2.3",
         "use-lilius": "^2.0.5"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"
     },
-    "files": [
-        "src"
-    ]
+    "files": []
 }

@@ -1,5 +1,5 @@
 {
-    "version": "0.0.22",
+    "version": "0.0.8",
     "name": "@ulld/health-tracking",
     "private": true,
     "scripts": {
@@ -21,10 +21,13 @@
         "@ulld/tailwind": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
         "@ulld/ui": "workspace:*",
-        "@ulld/utilities": "workspace:*",
-        "next": "14.2.3"
+        "@ulld/utilities": "workspace:*"
     },
-    "dependencies": {},
+    "dependencies": {
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"
@@ -35,7 +38,5 @@
         "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*"
     },
-    "files": [
-        "src"
-    ]
+    "files": []
 }

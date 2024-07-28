@@ -1,5 +1,5 @@
 {
-    "version": "0.0.21",
+    "version": "0.0.8",
     "name": "@ulld/internal-dev-cli",
     "private": false,
     "type": "module",
@@ -15,8 +15,7 @@
     "files": [
         "/bin",
         "/dist",
-        "/oclif.manifest.json",
-        "src"
+        "/oclif.manifest.json"
     ],
     "oclif": {
         "bin": "mr",
@@ -66,12 +65,7 @@
         "unexpected": "^13.2.1",
         "zocker": "^1.4.1"
     },
-    "dependencies": {},
-    "packageManager": "pnpm@9.0.4",
-    "publishConfig": {
-        "access": "public"
-    },
-    "peerDependencies": {
+    "dependencies": {
         "@citation-js/plugin-bibtex": "0.7.8",
         "@citation-js/plugin-csl": "0.7.6",
         "@inquirer/prompts": "5.0.1",
@@ -89,7 +83,14 @@
         "handlebars": "4.7.8",
         "json-schema-to-ts": "3.0.1",
         "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
         "terminal-link": "3.0.0",
         "ts-import": "5.0.0-beta.0"
-    }
+    },
+    "packageManager": "pnpm@9.0.4",
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {}
 }

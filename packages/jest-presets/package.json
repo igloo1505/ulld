@@ -1,6 +1,6 @@
 {
     "name": "@ulld/jest-presets",
-    "version": "0.0.21",
+    "version": "0.0.8",
     "private": false,
     "license": "MIT",
     "exports": {
@@ -9,18 +9,16 @@
         "./node": "./jest/node/jest-preset.js",
         "./browser": "./jest/browser/jest-preset.js"
     },
-    "dependencies": {},
+    "dependencies": {
+        "ts-jest": "29.1.1"
+    },
     "devDependencies": {
-        "jest-environment-jsdom": "^29.7.0",
-        "@ulld/types": "workspace:*"
+        "@ulld/types": "workspace:*",
+        "jest-environment-jsdom": "^29.7.0"
     },
     "publishConfig": {
         "access": "public"
     },
-    "peerDependencies": {
-        "ts-jest": "29.1.1"
-    },
-    "files": [
-        "src"
-    ]
+    "peerDependencies": {},
+    "files": []
 }

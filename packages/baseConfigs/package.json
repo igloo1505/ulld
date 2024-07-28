@@ -1,5 +1,5 @@
 {
-    "version": "0.0.21",
+    "version": "0.0.8",
     "name": "@ulld/base-configs",
     "private": false,
     "main": "./src/index.ts",
@@ -19,12 +19,13 @@
         "@ulld/types": "workspace:*",
         "next": "^14.2.3"
     },
-    "dependencies": {},
+    "dependencies": {
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
     "publishConfig": {
         "access": "public"
     },
-    "files": [
-        "src"
-    ],
+    "files": [],
     "peerDependencies": {}
 }

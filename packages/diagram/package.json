@@ -1,5 +1,5 @@
 {
-    "version": "0.0.22",
+    "version": "0.0.8",
     "name": "@ulld/diagram",
     "private": false,
     "scripts": {
@@ -18,8 +18,7 @@
         "y-indexeddb": "^9.0.12",
         "y-webrtc": "^10.3.0",
         "y-websocket": "^2.0.2",
-        "yjs": "^13.6.14",
-        "next": "14.2.3"
+        "yjs": "^13.6.14"
     },
     "devDependencies": {
         "@ulld/types": "workspace:*",
@@ -30,12 +29,14 @@
         "y-websocket": "^2.0.2",
         "yjs": "^13.6.14"
     },
-    "dependencies": {},
+    "dependencies": {
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"
     },
-    "files": [
-        "src"
-    ]
+    "files": []
 }

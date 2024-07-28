@@ -246,6 +246,25 @@ export class PackageManager {
     removeWebsite() {
         this.packages = this.packages.filter((f) => f.name !== "@ulld/websiite");
     }
+    addPeerDepsToDevDeps(devToPeer: boolean = false) {
+        for (const p of this.packages) {
+            let deps = p.deps;
+            for (const d of p.deps) {
+                if (
+                    d.type === "peerDependencies" &&
+                    !p.deps.some((x) =>
+                        Boolean(x.name === d.name && x.type === "devDependencies"),
+                    )
+                ) {
+                    deps.push({
+                        ...d,
+                        type: "devDependencies",
+                    });
+                }
+            }
+            p.deps = deps;
+        }
+    }
     writeUpdateReactScript(
         reactVersion: string = "latest",
         nextVersion: string = "latest",
@@ -310,6 +329,7 @@ pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${package
         this.rm(this.getRootRelativePath("pnpm-lock.yaml"));
     }
     writeModified(all: boolean = false, dry: boolean = false) {
+    this.sortDependencies()
         let p = all ? this.packages : this.packages.filter((a) => a.modified);
         p.forEach((item) => {
             let data = { ...item };
@@ -406,6 +426,11 @@ pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${package
     }
     depsByName(monoRepoPackageName: string) {
         return this.packages.find((a) => a.name === monoRepoPackageName)?.deps;
+    }
+    sortDependencies(){
+      for (const p of this.packages) {
+          p.deps = p.deps.sort((a, b) => a.name < b.name ? -1 : 1)
+      }
     }
     findByDependency(name: string) {
         return this.packages.filter((a) => a.deps.find((b) => b.name === name));
@@ -514,10 +539,10 @@ ${deps.map((d) => `    ${d.type}`).join("\n")}
         }
         this.writeModified(true);
     }
-    static withoutWebsite(){
-       let p = new PackageManager()
-       p.removeWebsite()
-       return p
+    static withoutWebsite() {
+        let p = new PackageManager();
+        p.removeWebsite();
+        return p;
     }
     processArgs(args: string[]) {
         console.log(

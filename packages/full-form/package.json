@@ -1,11 +1,7 @@
 {
-    "version": "0.0.22",
+    "version": "0.0.8",
     "name": "@ulld/full-form",
     "private": false,
-    "files": [
-        "pluginConfig.ulld.json",
-        "src"
-    ],
     "scripts": {
         "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
         "build": "echo 'Add build script here'",
@@ -79,11 +75,13 @@
         "next": "14.2.3",
         "node-latex": "^3.1.0",
         "paginator": "^1.0.0",
+        "react": "18.2.0",
         "react-datepicker": "^4.25.0",
         "react-day-picker": "^8.10.0",
         "react-device-detect": "^2.2.3",
         "react-dnd": "^16.0.1",
         "react-dnd-html5-backend": "^16.0.1",
+        "react-dom": "^18.2.0",
         "react-dropzone": "^14.2.3",
         "react-hook-form": "^7.51.0",
         "react-mathquill": "^1.0.3",
@@ -96,17 +94,7 @@
         "tailwind-merge": "^1.14.0",
         "tailwindcss-animate": "^1.0.7",
         "tailwindcss-debug-screens": "^2.2.1",
-        "zod": "^3.22.4",
-        "@floating-ui/react": "0.26.13",
-        "better-react-mathjax": "2.0.3",
-        "framer-motion": "11.1.7",
-        "fuse.js": "7.0.0",
-        "monaco-editor": "0.49.0",
-        "rc-tree": "5.8.5",
-        "react-color": "2.19.3",
-        "react-colorful": "5.6.1",
-        "react-time-picker": "6.6.0",
-        "tinycolor2": "1.6.0"
+        "zod": "^3.22.4"
     },
     "packageManager": "pnpm@9.0.4",
     "devDependencies": {
@@ -119,6 +107,7 @@
         "@testing-library/react": "^14.2.2",
         "@testing-library/user-event": "^14.5.2",
         "@types/glob-to-regexp": "^0.4.4",
+        "@ulld/developer": "workspace:*",
         "@ulld/jest-presets": "workspace:*",
         "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
@@ -138,11 +127,13 @@
         "next": "14.2.3",
         "node-latex": "^3.1.0",
         "paginator": "^1.0.0",
+        "react": "18.2.0",
         "react-datepicker": "^4.25.0",
         "react-day-picker": "^8.10.0",
         "react-device-detect": "^2.2.3",
         "react-dnd": "^16.0.1",
         "react-dnd-html5-backend": "^16.0.1",
+        "react-dom": "^18.2.0",
         "react-dropzone": "^14.2.3",
         "react-hook-form": "^7.51.0",
         "react-mathquill": "^1.0.3",
@@ -161,13 +152,26 @@
         "tailwindcss-animate": "^1.0.7",
         "tailwindcss-debug-screens": "^2.2.1",
         "ts-jest": "^29.1.2",
-        "zod": "^3.22.4",
-        "@ulld/developer": "workspace:*"
+        "zod": "^3.22.4"
     },
-    "dependencies": {},
+    "dependencies": {
+        "@floating-ui/react": "0.26.13",
+        "better-react-mathjax": "2.0.3",
+        "framer-motion": "11.1.7",
+        "fuse.js": "7.0.0",
+        "monaco-editor": "0.49.0",
+        "rc-tree": "5.8.5",
+        "react-color": "2.19.3",
+        "react-colorful": "5.6.1",
+        "react-time-picker": "6.6.0",
+        "tinycolor2": "1.6.0"
+    },
     "publishConfig": {
         "access": "public"
     },
+    "files": [
+        "pluginConfig.ulld.json"
+    ],
     "ulld-pluginConfig": {
         "pluginName": "@ulld/full-form",
         "label": "Form",
@@ -179,7 +183,7 @@
                 "tags": [],
                 "slot": "SettingsPageContainer",
                 "export": "settingPageWrapper",
-                "componentId": "510cead4-4812-4be4-bd01-e4fe5af9b995"
+                "componentId": "5def9a52-c8e9-4a68-8225-b9e1c30e1187"
             }
         ],
         "parsers": {},

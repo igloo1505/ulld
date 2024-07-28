@@ -1,5 +1,5 @@
 {
-    "version": "0.0.22",
+    "version": "0.0.8",
     "name": "@ulld/render",
     "private": false,
     "scripts": {
@@ -17,7 +17,6 @@
         "./mdx/server": "./src/mdx/mdxContentSERVER.tsx",
         "./mdx/client": "./src/mdx/mdxContentCLIENT.tsx",
         "./mdx/preCompiled": "./src/mdx/mdxContentPreCompiled.tsx",
-        "./mdx/fileSystemServer": "./src/mdx/mdxFileSystemSERVER.tsx",
         "./mdxPreviewPanel": "./src/mdx/mdxPreviewPanel.tsx",
         "./3d/threeJsCanvas": "./src/3d/ThreeCanvas.tsx"
     },
@@ -33,9 +32,9 @@
         "@ulld/jest-presets": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
         "@ulld/utilities": "workspace:*",
-        "@ulld/parsers": "workspace:*",
-        "@ulld/developer": "workspace:*",
         "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
         "three": "^0.163.0"
     },
     "devDependencies": {
@@ -48,6 +47,8 @@
         "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
         "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
         "three": "^0.163.0",
         "typescript": "^5.4.5"
     },

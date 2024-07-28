@@ -1,5 +1,5 @@
 {
-    "version": "0.0.22",
+    "version": "0.0.8",
     "name": "@ulld/chat",
     "private": true,
     "scripts": {
@@ -22,17 +22,20 @@
         "@ulld/tailwind": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
         "@ulld/ui": "workspace:*",
-        "@ulld/utilities": "workspace:*",
+        "@ulld/utilities": "workspace:*"
+    },
+    "dependencies": {
         "@discordjs/next": "0.1.1-dev.1673526225-a580768.0",
         "@discordjs/rest": "2.2.0",
         "@discordjs/voice": "0.16.1",
         "bufferutil": "4.0.8",
         "discord.js": "14.14.1",
         "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
         "utf-8-validate": "6.0.3",
         "zlib-sync": "0.1.9"
     },
-    "dependencies": {},
     "devDependencies": {
         "@slack/types": "^2.11.0",
         "@ulld/eslint-config": "workspace:*",
@@ -44,7 +47,5 @@
     "publishConfig": {
         "access": "public"
     },
-    "files": [
-        "src"
-    ]
+    "files": []
 }

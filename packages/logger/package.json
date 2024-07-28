@@ -1,11 +1,8 @@
 {
-    "version": "0.0.21",
+    "version": "0.0.8",
     "name": "@ulld/logger",
     "private": false,
-    "types": "./src/types.ts",
-    "files": [
-        "src"
-    ],
+    "types": "./src/index.ts",
     "exports": {
         "./server": "./src/server/logger.ts",
         "./client": "./src/client/logger.ts"
@@ -16,7 +13,17 @@
         "test": "echo 'Add test script here'",
         "lint": "echo 'Add lint script here'"
     },
-    "dependencies": {},
+    "dependencies": {
+        "chalk": "5.3.0",
+        "cli-highlight": "^2.1.11",
+        "colors": "1.4.0",
+        "dayjs": "1.11.11",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "tslog": "^4.9.3",
+        "zod": "3.22.4"
+    },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"
@@ -24,13 +31,6 @@
     "devDependencies": {
         "@ulld/types": "workspace:*"
     },
-    "peerDependencies": {
-        "chalk": "5.3.0",
-        "cli-highlight": "^2.1.11",
-        "colors": "1.4.0",
-        "dayjs": "1.11.11",
-        "next": "14.2.3",
-        "tslog": "^4.9.3",
-        "zod": "3.22.4"
-    }
+    "files": [],
+    "peerDependencies": {}
 }

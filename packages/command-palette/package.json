@@ -1,5 +1,5 @@
 {
-    "version": "0.0.22",
+    "version": "0.0.8",
     "name": "@ulld/command-palette",
     "private": false,
     "scripts": {
@@ -43,6 +43,8 @@
         "fumadocs-ui": "^12.3.5",
         "lucide-react": "latest",
         "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
         "tinykeys": "^2.1.0",
         "zod": "^3.22.2"
     },
@@ -54,6 +56,8 @@
         "cmdk": "^0.2.0",
         "lucide-react": "latest",
         "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
         "tinykeys": "^2.1.0",
         "zod": "^3.22.2"
     },
@@ -72,7 +76,7 @@
                 "tags": [],
                 "slot": "commandPalette",
                 "export": "commandPalette",
-                "componentId": "87faa5ec-b86c-4685-a4bc-9847bb912b33"
+                "componentId": "6d1916a6-c8fc-4732-a762-e48d24d087aa"
             }
         ],
         "parsers": {},

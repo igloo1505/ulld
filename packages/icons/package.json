@@ -1,5 +1,5 @@
 {
-    "version": "0.0.22",
+    "version": "0.0.8",
     "name": "@ulld/icons",
     "private": false,
     "scripts": {
@@ -45,8 +45,8 @@
         "framer-motion": "^11.1.7",
         "lucide-react": "^0.344.0",
         "next": "^14.2.3",
-        "@tabler/icons-react": "3.5.0",
-        "react-icons": "5.0.1"
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
     },
     "devDependencies": {
         "@ulld/types": "workspace:*",
@@ -54,9 +54,14 @@
         "clsx": "^2.1.0",
         "framer-motion": "^11.1.7",
         "lucide-react": "^0.344.0",
-        "next": "^14.2.3"
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
     },
-    "dependencies": {},
+    "dependencies": {
+        "@tabler/icons-react": "3.5.0",
+        "react-icons": "5.0.1"
+    },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"

@@ -1,11 +1,13 @@
 {
-    "version": "0.0.22",
+    "version": "0.0.8",
     "name": "@ulld/developer",
     "private": false,
     "files": [
         "src"
     ],
     "exports": {
+        "./pluginConfig": "./src/baseClasses/pluginConfig.ts",
+        "./embeddableConfig": "./src/baseClasses/embeddableComponentConfig.ts",
         "./utils": "./src/utilityMethods/main.ts",
         "./getConfig": "./src/utilityMethods/getConfig.ts",
         "./globalStatePortal": "./src/components/globalStatePortal.tsx",
@@ -26,11 +28,14 @@
         "@ulld/database": "workspace:*",
         "@ulld/eslint-config": "workspace:*",
         "@ulld/logger": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
+        "@ulld/typescript-config": "workspace:*"
+    },
+    "dependencies": {
         "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
         "trpc-openapi": "1.2.0"
     },
-    "dependencies": {},
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {
         "access": "public"

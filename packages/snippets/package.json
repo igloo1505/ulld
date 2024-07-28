@@ -1,5 +1,5 @@
 {
-    "version": "0.0.22",
+    "version": "0.0.8",
     "name": "@ulld/snippets",
     "private": false,
     "scripts": {
@@ -35,25 +35,29 @@
         "@ulld/ui": "workspace:*",
         "@ulld/utilities": "workspace:*",
         "next": "^14.2.3",
-        "fumadocs-core": "^12.3.5",
-        "fumadocs-ui": "^12.3.5",
-        "monaco-editor": "0.49.0"
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
     },
     "devDependencies": {
         "@ulld/eslint-config": "workspace:*",
         "@ulld/jest-presets": "workspace:*",
         "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
-        "next": "^14.2.3"
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
     },
     "packageManager": "pnpm@9.0.4",
-    "dependencies": {},
+    "dependencies": {
+        "fumadocs-core": "^12.3.5",
+        "fumadocs-ui": "^12.3.5",
+        "monaco-editor": "0.49.0"
+    },
     "publishConfig": {
         "access": "public"
     },
     "files": [
-        "pluginConfig.ulld.json",
-        "src"
+        "pluginConfig.ulld.json"
     ],
     "ulld-pluginConfig": {
         "pluginName": "@ulld/snippets",
@@ -66,14 +70,14 @@
                 "tags": [],
                 "slot": "SnippetList",
                 "export": "snippetList",
-                "componentId": "b924162e-5d0d-4b40-a02c-86bdf581dcc2"
+                "componentId": "e0788967-680f-4497-a6d4-104d5418215d"
             },
             {
                 "componentName": "SnippetFilter",
                 "tags": [],
                 "slot": "SnippetFilter",
                 "export": "snippetFilter",
-                "componentId": "b924162e-5d0d-4b40-a02c-86bdf581dcc2"
+                "componentId": "e0788967-680f-4497-a6d4-104d5418215d"
             }
         ],
         "parsers": {},

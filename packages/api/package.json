@@ -1,5 +1,5 @@
 {
-    "version": "0.0.22",
+    "version": "0.0.8",
     "name": "@ulld/api",
     "private": false,
     "files": [
@@ -21,7 +21,7 @@
         "./classes/specificNoteQuery/specificNoteQueryManager": "./src/classes/specificNoteQuery/specificNoteQueryManager.ts",
         "./classes/specificNoteQuery/documentConfigMap": "./src/classes/specificNoteQuery/documentConfigMap.ts",
         "./classes/prismaMdxRelations/tag": "./src/classes/prismaMdxRelations/tag.ts",
-        "./classes/prismaMdxRelations/Bib": "./src/classes/prismaMdxRelations/Bib.tsx",
+        "./classes/prismaMdxRelations/Bib": "./src/classes/prismaMdxRelations/Bib.ts",
         "./classes/prismaMdxRelations/bibEntry": "./src/classes/prismaMdxRelations/BibEntry.tsx",
         "./classes/prismaMdxRelations/readingList": "./src/classes/prismaMdxRelations/readingList.ts",
         "./classes/prismaMdxRelations/topic": "./src/classes/prismaMdxRelations/topic.ts",
@@ -129,7 +129,7 @@
         "./trpcInternalMethods/filesystem/getImagesInDir": "./src/trpcInternalMethods/filesystem/getImagesInDir.ts",
         "./trpcInternalMethods/qaItem/saveQaItem": "./src/trpcInternalMethods/qaItem/saveQaItem.ts",
         "./trpcInternalMethods/notes/mdx/getRemoteMdx": "./src/trpcInternalMethods/notes/mdx/getRemoteMdx.ts",
-        "./trpcInternalMethods/notes/mdx/getDatabaseMdxFromPathname": "./src/trpcInternalMethods/notes/mdx/getDatabaseMdxFromPathname.ts",
+        "./trpcInternalMethods/notes/mdx/getRemoteMdxFromPathname": "./src/trpcInternalMethods/notes/mdx/getRemoteMdxFromPathname.ts",
         "./trpcInternalMethods/notes/ipynb/main": "./src/trpcInternalMethods/notes/ipynb/main.ts",
         "./trpcInternalMethods/bib/syncBib": "./src/trpcInternalMethods/bib/syncBib.ts",
         "./trpcInternalMethods/bib/main": "./src/trpcInternalMethods/bib/main.ts",
@@ -167,8 +167,7 @@
         "@citation-js/plugin-bibtex": "^0.7.8",
         "@citation-js/plugin-csl": "^0.7.6",
         "@neplex/vectorizer": "^0.0.4",
-        "@prisma/client": "5.17.0",
-        "prisma": "5.17.0",
+        "@prisma/client": "latest",
         "@reduxjs/toolkit": "^1.9.5",
         "@tanstack/react-query": "^4.33.0",
         "@tanstack/react-query-persist-client": "^4.33.0",
@@ -198,6 +197,8 @@
         "nodejs-polars": "^0.10.0",
         "npyjs": "^0.6.0",
         "pickleparser": "^0.2.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
         "react-query-kit": "^1.4.8",
         "react-redux": "^8.1.2",
         "redux-persist": "^6.0.0",
@@ -205,13 +206,7 @@
         "rehype-pretty-code": "^0.13.0",
         "server-only": "^0.0.1",
         "superjson": "^2.2.1",
-        "zod": "^3.22.4",
-        "@jest/globals": "29.7.0",
-        "@types/jest": "29.5.11",
-        "axios": "1.6.7",
-        "fuse.js": "7.0.0",
-        "react-device-detect": "2.2.3",
-        "trpc-openapi": "1.2.0"
+        "zod": "^3.22.4"
     },
     "devDependencies": {
         "@babel/core": "^7.24.0",
@@ -221,6 +216,7 @@
         "@citation-js/plugin-csl": "^0.7.6",
         "@inrupt/jest-jsdom-polyfills": "^3.2.1",
         "@neplex/vectorizer": "^0.0.4",
+        "@prisma/client": "latest",
         "@reduxjs/toolkit": "^1.9.5",
         "@tanstack/react-query": "^4.33.0",
         "@tanstack/react-query-persist-client": "^4.33.0",
@@ -264,6 +260,9 @@
         "nodejs-polars": "^0.10.0",
         "npyjs": "^0.6.0",
         "pickleparser": "^0.2.1",
+        "prisma": "^5.15.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
         "react-query-kit": "^1.4.8",
         "react-redux": "^8.1.2",
         "react-test-renderer": "^18.2.0",
@@ -281,7 +280,14 @@
         "zod": "^3.22.4"
     },
     "packageManager": "pnpm@9.0.4",
-    "dependencies": {},
+    "dependencies": {
+        "@jest/globals": "29.7.0",
+        "@types/jest": "29.5.11",
+        "axios": "1.6.7",
+        "fuse.js": "7.0.0",
+        "react-device-detect": "2.2.3",
+        "trpc-openapi": "1.2.0"
+    },
     "publishConfig": {
         "access": "public"
     },
