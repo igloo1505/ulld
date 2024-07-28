@@ -1,12 +1,15 @@
 "use client"
 import { useEffect } from "react"
 import { usePathname } from "next/navigation"
-import { RootState, store, setConfigState, setLocalSettings, setDarkmode, showNoteSheet } from "."
 import { connect } from "react-redux"
 import { StatePassedToClient } from "./types/general"
-import { resize } from "../listeners/resize"
+/* import { resize } from "../listeners/resize" */
 import { keyDown } from "../listeners/keydown"
 import { setInitialBrowserProps } from "../actions/clientOnly/dom"
+import { setConfigState } from "./slices/config"
+import { setLocalSettings } from "./slices/settings"
+import { setDarkmode, showNoteSheet } from "./slices/ui"
+import store, { RootState } from "./store"
 
 
 
@@ -26,12 +29,12 @@ interface ListenerType {
 }
 
 const listenerMap: ListenerType[] = [
-    {
-        event: "resize",
-        function: resize,
-        target: "window",
-        call: true,
-    },
+    /* { */
+    /*     event: "resize", */
+    /*     function: resize, */
+    /*     target: "window", */
+    /*     call: true, */
+    /* }, */
     {
         event: "keydown",
         function: keyDown,
@@ -61,7 +64,7 @@ const Observers = connector(({ settings, darkMode, noteSheetOpen, config }: Stat
             return console.log("No settings object returned from postgres")
         }
         if (settings) {
-            store.dispatch(setLocalSettings(settings))
+            store.dispatch(setLocalSettings(settings as any))
         }
         /* TODO: Find that bulk dispatch function and use it throught the app in places like this to hopefully slightly increase this dreadful performance. */
         store.dispatch(setDarkmode(darkMode))

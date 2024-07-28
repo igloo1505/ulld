@@ -25,11 +25,11 @@ export const ClientsideNoteEvents = ({ bookmarked, fs, noteId: _noteId, noteQuic
 
 
     const checkFsNoteId = async (_id: number) => {
-        store.dispatch(setCurrentNoteData({
+        store?.dispatch(setCurrentNoteData({
             id: _id,
             currentToc: getHeadingHierarchy()
         }))
-        store.dispatch(setCurrentNoteId(_id))
+        store?.dispatch(setCurrentNoteId(_id))
     }
 
 
@@ -37,7 +37,7 @@ export const ClientsideNoteEvents = ({ bookmarked, fs, noteId: _noteId, noteQuic
         indicateBookmarked(bookmarked || false)
         if (_noteId) {
             setNoteId(_noteId)
-            store.dispatch(setCurrentNoteData({
+            store?.dispatch(setCurrentNoteData({
                 id: _noteId,
                 currentToc: getHeadingHierarchy()
             }))

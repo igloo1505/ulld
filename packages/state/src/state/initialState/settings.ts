@@ -3,7 +3,7 @@ import { ParsedSettings, settingSchema } from '@ulld/parsers/settings/settingsPa
 export type LocalSettingsType = Omit<ParsedSettings, "id" | "lastSync" | "firstSync"> & { id?: number }
 
 
-export const defaultSettingsState: ParsedSettings = settingSchema.parse({
+export const defaultSettingsState: ParsedSettings & any = settingSchema.parse({
     id: 1,
     title: "Uh Little Less Dum",
 })

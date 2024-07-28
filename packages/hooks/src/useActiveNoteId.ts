@@ -1,6 +1,6 @@
 import { useLocalStorage } from "./useLocalStorage"
 
-export const useActiveNoteId = (initialNoteId: number) => {
+export const useActiveNoteId = (initialNoteId?: number | null) => {
     const [id, setId] = useLocalStorage("active-note-id", initialNoteId as number | undefined)
 
     const clearId = () => {

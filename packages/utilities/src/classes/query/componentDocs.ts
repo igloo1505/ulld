@@ -37,7 +37,7 @@ export class ComponentDocsQuery {
         item: QueryItem,
         query: ComponentDocsQueryParams,
     ): boolean {
-        return query.pluginId ? item.pluginId === query.pluginId : true
+        return query.pluginId ? item.pluginName === query.pluginId : true
     }
     private itemMatchesQuery(
         item: QueryItem,

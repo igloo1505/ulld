@@ -12,7 +12,7 @@ const slice = createSlice({
         setAllowTooltips(state, action: PayloadAction<boolean>) {
             state.tooltips = action.payload
         },
-        setLocalSettings(state, action: PayloadAction<ParsedSettings>) {
+        setLocalSettings(state, action: PayloadAction<ParsedSettings | object>) {
             // state = action.payload
             state = { ...action.payload }
         },

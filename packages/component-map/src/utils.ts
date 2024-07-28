@@ -1,5 +1,4 @@
-import { ConditionalComponentQuery } from "./types"
-import { ConditionalComponentProps } from "./client/conditionalComponents"
+import { ConditionalComponentProps, ConditionalComponentQuery } from "./types"
 import { ComponentType } from "react"
 import { MDXComponents } from "mdx/types"
 

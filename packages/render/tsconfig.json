@@ -1,6 +1,19 @@
 {
     "extends": "@ulld/typescript-config/nextjs.json",
     "compilerOptions": {
-        "moduleResolution": "bundler"
+        "types": ["@testing-library/jest-dom", "jest-environment-jsdom"],
+        "moduleResolution": "bundler",
+        "rootDir": ".",
+        "outDir": "dist",
+        "jsx": "react-jsx",
+        // "paths": {
+        //     "#/*": [
+        //         "./src/*"
+        //     ]
+        // },
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        // "declarationMap": true,
+        "noEmit": true
     }
 }

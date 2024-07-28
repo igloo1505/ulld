@@ -1,5 +1,5 @@
 
-export const getResursiveValue = (a: any, keys: string[]) => {
+export const getResursiveValue = (a: any, keys: string[]): any => {
     if (keys.length > 1) {
         return getResursiveValue(a[keys[0]], keys.slice(1));
     }
