@@ -1,5 +1,13 @@
 # @ulld/diagram
 
+## 0.0.24
+
+### Patch Changes
+
+- @ulld/api@0.0.24
+- @ulld/developer@0.0.24
+- @ulld/state@0.0.24
+
 ## 0.0.23
 
 ### Patch Changes

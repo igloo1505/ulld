@@ -1,5 +1,12 @@
 # @ulld/icons
 
+## 0.0.24
+
+### Patch Changes
+
+- @ulld/hooks@0.0.24
+- @ulld/utilities@0.0.24
+
 ## 0.0.23
 
 ### Patch Changes

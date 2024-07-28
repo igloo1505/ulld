@@ -1,5 +1,14 @@
 # @ulld/utilities
 
+## 0.0.24
+
+### Patch Changes
+
+- Updated dependencies [0176763]
+- Updated dependencies
+  - @ulld/database@0.0.23
+  - @ulld/math@0.0.24
+
 ## 0.0.23
 
 ### Patch Changes

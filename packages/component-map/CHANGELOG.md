@@ -1,5 +1,26 @@
 # @ulld/component-map
 
+## 0.0.24
+
+### Patch Changes
+
+- @ulld/bib-manager@0.0.24
+- @ulld/equations@0.0.24
+- @ulld/full-form@0.0.24
+- @ulld/snippets@0.0.24
+- @ulld/diagram@0.0.24
+- @ulld/embeddable-components@0.0.24
+- @ulld/journal@0.0.24
+- @ulld/navigation@0.0.24
+- @ulld/notebook@0.0.24
+- @ulld/pdf@0.0.24
+- @ulld/plot@0.0.24
+- @ulld/task-manager@0.0.24
+- @ulld/whiteboard@0.0.24
+- @ulld/calendar@0.0.24
+- @ulld/editor@0.0.24
+- @ulld/default-image-map@0.0.24
+
 ## 0.0.23
 
 ### Patch Changes

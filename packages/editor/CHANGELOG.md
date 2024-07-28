@@ -1,5 +1,17 @@
 # @ulld/editor
 
+## 0.0.24
+
+### Patch Changes
+
+- @ulld/developer@0.0.24
+- @ulld/hooks@0.0.24
+- @ulld/parsers@0.0.24
+- @ulld/state@0.0.24
+- @ulld/utilities@0.0.24
+- @ulld/ui@0.0.24
+- @ulld/configschema@0.0.24
+
 ## 0.0.23
 
 ### Patch Changes

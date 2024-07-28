@@ -1,5 +1,12 @@
 # @ulld/database
 
+## 0.0.23
+
+### Patch Changes
+
+- 0176763: Update misaligned generate script.
+- Update misaligned generate script.
+
 ## 0.0.22
 
 ### Patch Changes
