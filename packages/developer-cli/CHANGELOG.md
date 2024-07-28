@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.23
+
+### Patch Changes
+
+- Fixing mismatched version after reverting package.json files that blew up while working on the build process.
+- Updated dependencies
+  - @ulld/developer@0.0.23
+  - @ulld/developer-schemas@0.0.22
+
 ## 0.0.9
 
 ### Patch Changes

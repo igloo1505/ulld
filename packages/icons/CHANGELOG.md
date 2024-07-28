@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.23
+
+### Patch Changes
+
+- Fixing mismatched version after reverting package.json files that blew up while working on the build process.
+- Updated dependencies
+  - @ulld/hooks@0.0.23
+  - @ulld/tailwind@0.0.22
+  - @ulld/utilities@0.0.23
+
 ## 0.0.9
 
 ### Patch Changes

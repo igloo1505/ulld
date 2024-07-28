@@ -1,5 +1,11 @@
 # @ulld/baseConfigs
 
+## 0.0.22
+
+### Patch Changes
+
+- Fixing mismatched version after reverting package.json files that blew up while working on the build process.
+
 ## 0.0.9
 
 ### Patch Changes

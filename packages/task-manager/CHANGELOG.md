@@ -1,5 +1,31 @@
 # @ulld/task-manager
 
+## 0.0.23
+
+### Patch Changes
+
+- Fixing mismatched version after reverting package.json files that blew up while working on the build process.
+- Updated dependencies
+  - @ulld/api@0.0.23
+  - @ulld/calendar@0.0.23
+  - @ulld/eslint-config@0.0.22
+  - @ulld/typescript-config@0.0.21
+  - @ulld/configschema@0.0.23
+  - @ulld/developer@0.0.23
+  - @ulld/diagram@0.0.23
+  - @ulld/editor@0.0.23
+  - @ulld/full-form@0.0.23
+  - @ulld/hooks@0.0.23
+  - @ulld/icons@0.0.23
+  - @ulld/jest-presets@0.0.22
+  - @ulld/parsers@0.0.23
+  - @ulld/render@0.0.23
+  - @ulld/state@0.0.23
+  - @ulld/tailwind@0.0.22
+  - @ulld/ui@0.0.23
+  - @ulld/utilities@0.0.23
+  - @ulld/whiteboard@0.0.23
+
 ## 0.0.9
 
 ### Patch Changes

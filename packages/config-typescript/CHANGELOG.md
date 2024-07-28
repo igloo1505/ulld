@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.21
+
+### Patch Changes
+
+- Fixing mismatched version after reverting package.json files that blew up while working on the build process.
+
 ## 0.0.8
 
 ### Patch Changes

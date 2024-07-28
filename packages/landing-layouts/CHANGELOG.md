@@ -1,5 +1,26 @@
 # @ulld/landing-layouts
 
+## 0.0.23
+
+### Patch Changes
+
+- Fixing mismatched version after reverting package.json files that blew up while working on the build process.
+- Updated dependencies
+  - @ulld/api@0.0.23
+  - @ulld/bib-manager@0.0.23
+  - @ulld/calendar@0.0.23
+  - @ulld/eslint-config@0.0.22
+  - @ulld/typescript-config@0.0.21
+  - @ulld/configschema@0.0.23
+  - @ulld/developer@0.0.23
+  - @ulld/hooks@0.0.23
+  - @ulld/journal@0.0.23
+  - @ulld/state@0.0.23
+  - @ulld/tailwind@0.0.22
+  - @ulld/ui@0.0.23
+  - @ulld/utilities@0.0.23
+  - @ulld/whiteboard@0.0.23
+
 ## 0.0.9
 
 ### Patch Changes
