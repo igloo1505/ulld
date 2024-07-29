@@ -2,6 +2,7 @@ import { z } from "zod";
 import { InternalDeveloperConfigInput as DCI, InternalDeveloperConfigInputWithoutGeneric } from "./types/developerConfig";
 import { PluginSlotKey } from "./slotMapType";
 export { parserKeyList } from "./parserSchema";
+export declare const defaultPluginId = "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.";
 export declare const _developerConfigSchema: z.ZodObject<{
     pluginName: z.ZodString;
     label: z.ZodString;
