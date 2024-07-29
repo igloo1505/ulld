@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.26
+
+### Patch Changes
+
+- Much plugin config generation script.
+
 ## 0.0.25
 
 ### Patch Changes

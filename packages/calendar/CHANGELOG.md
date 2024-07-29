@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.30
+
+### Patch Changes
+
+- Much plugin config generation script.
+- Updated dependencies
+  - @ulld/developer@0.0.30
+
 ## 0.0.29
 
 ### Patch Changes

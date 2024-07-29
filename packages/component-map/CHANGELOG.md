@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.30
+
+### Patch Changes
+
+- Much plugin config generation script.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.30
+  - @ulld/calendar@0.0.30
+  - @ulld/default-image-map@0.0.30
+  - @ulld/diagram@0.0.30
+  - @ulld/editor@0.0.30
+  - @ulld/embeddable-components@0.0.30
+  - @ulld/equations@0.0.30
+  - @ulld/full-form@0.0.30
+  - @ulld/journal@0.0.30
+  - @ulld/navigation@0.0.30
+  - @ulld/notebook@0.0.30
+  - @ulld/pdf@0.0.30
+  - @ulld/plot@0.0.30
+  - @ulld/snippets@0.0.30
+  - @ulld/tailwind@0.0.27
+  - @ulld/task-manager@0.0.30
+  - @ulld/whiteboard@0.0.30
+
 ## 0.0.29
 
 ### Patch Changes

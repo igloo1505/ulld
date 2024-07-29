@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.30
+
+### Patch Changes
+
+- Much plugin config generation script.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.27
+  - @ulld/typescript-config@0.0.26
+  - @ulld/configschema@0.0.30
+  - @ulld/database@0.0.29
+  - @ulld/logger@0.0.27
+
 ## 0.0.29
 
 ### Patch Changes

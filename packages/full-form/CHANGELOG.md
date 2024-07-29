@@ -1,5 +1,23 @@
 # @ulld/full-form
 
+## 0.0.30
+
+### Patch Changes
+
+- Much plugin config generation script.
+- Updated dependencies
+  - @ulld/api@0.0.30
+  - @ulld/typescript-config@0.0.26
+  - @ulld/configschema@0.0.30
+  - @ulld/database@0.0.29
+  - @ulld/editor@0.0.30
+  - @ulld/hooks@0.0.30
+  - @ulld/icons@0.0.30
+  - @ulld/jest-presets@0.0.27
+  - @ulld/state@0.0.30
+  - @ulld/tailwind@0.0.27
+  - @ulld/utilities@0.0.30
+
 ## 0.0.29
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @ulld/state
 
+## 0.0.30
+
+### Patch Changes
+
+- Much plugin config generation script.
+- Updated dependencies
+  - @ulld/base-configs@0.0.27
+  - @ulld/configschema@0.0.30
+  - @ulld/database@0.0.29
+  - @ulld/developer@0.0.30
+  - @ulld/hooks@0.0.30
+  - @ulld/parsers@0.0.30
+  - @ulld/tailwind@0.0.27
+  - @ulld/utilities@0.0.30
+
 ## 0.0.29
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @ulld/internal-dev-cli
 
+## 0.0.27
+
+### Patch Changes
+
+- Much plugin config generation script.
+
 ## 0.0.26
 
 ### Patch Changes

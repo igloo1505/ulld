@@ -1,5 +1,24 @@
 # @ulld/pdf
 
+## 0.0.30
+
+### Patch Changes
+
+- Much plugin config generation script.
+- Updated dependencies
+  - @ulld/api@0.0.30
+  - @ulld/eslint-config@0.0.27
+  - @ulld/configschema@0.0.30
+  - @ulld/developer@0.0.30
+  - @ulld/hooks@0.0.30
+  - @ulld/icons@0.0.30
+  - @ulld/jest-presets@0.0.27
+  - @ulld/state@0.0.30
+  - @ulld/tailwind@0.0.27
+  - @ulld/ui@0.0.30
+  - @ulld/utilities@0.0.30
+  - @ulld/whiteboard@0.0.30
+
 ## 0.0.29
 
 ### Patch Changes

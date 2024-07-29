@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.30
+
+### Patch Changes
+
+- Much plugin config generation script.
+- Updated dependencies
+  - @ulld/api@0.0.30
+  - @ulld/component-map@0.0.30
+  - @ulld/configschema@0.0.30
+  - @ulld/database@0.0.29
+  - @ulld/parsers@0.0.30
+
 ## 0.0.29
 
 ### Patch Changes

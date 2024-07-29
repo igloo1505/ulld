@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.30
+
+### Patch Changes
+
+- Much plugin config generation script.
+- Updated dependencies
+  - @ulld/database@0.0.29
+  - @ulld/math@0.0.30
+  - @ulld/tailwind@0.0.27
+
 ## 0.0.29
 
 ### Patch Changes

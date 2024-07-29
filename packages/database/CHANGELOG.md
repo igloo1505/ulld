@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.29
+
+### Patch Changes
+
+- Much plugin config generation script.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.26
+
 ## 0.0.28
 
 ### Patch Changes

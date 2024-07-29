@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.30
+
+### Patch Changes
+
+- Much plugin config generation script.
+- Updated dependencies
+  - @ulld/hooks@0.0.30
+  - @ulld/tailwind@0.0.27
+  - @ulld/utilities@0.0.30
+
 ## 0.0.29
 
 ### Patch Changes

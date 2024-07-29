@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.30
+
+### Patch Changes
+
+- Much plugin config generation script.
+- Updated dependencies
+  - @ulld/developer@0.0.30
+  - @ulld/developer-schemas@0.0.27
+
 ## 0.0.29
 
 ### Patch Changes

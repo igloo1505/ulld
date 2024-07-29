@@ -1,5 +1,22 @@
 # @ulld/plot
 
+## 0.0.30
+
+### Patch Changes
+
+- Much plugin config generation script.
+- Updated dependencies
+  - @ulld/api@0.0.30
+  - @ulld/configschema@0.0.30
+  - @ulld/developer@0.0.30
+  - @ulld/full-form@0.0.30
+  - @ulld/hooks@0.0.30
+  - @ulld/logger@0.0.27
+  - @ulld/state@0.0.30
+  - @ulld/tailwind@0.0.27
+  - @ulld/ui@0.0.30
+  - @ulld/utilities@0.0.30
+
 ## 0.0.29
 
 ### Patch Changes
