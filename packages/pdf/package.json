@@ -64,7 +64,6 @@
             {
                 "componentName": "EmbeddablePdf",
                 "tags": [],
-                "slot": "EmbeddablePdf",
                 "export": "embeddablePdf",
                 "embeddable": [
                     {
@@ -73,7 +72,7 @@
                     }
                 ],
                 "exportedPropsName": "EmbeddablePdfProps",
-                "componentId": "23cea7c5-4b2f-4f86-9fad-72f5c3af587c"
+                "componentId": "e20c022a-3a51-49b4-a549-7daccf44d39c"
             }
         ],
         "parsers": {},
