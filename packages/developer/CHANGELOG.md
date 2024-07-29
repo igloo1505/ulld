@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.31
+
+### Patch Changes
+
+- Broken plugin slot after deleted a slot and didn't remove it from the
+  slotMap.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.28
+  - @ulld/typescript-config@0.0.27
+  - @ulld/configschema@0.0.31
+  - @ulld/database@0.0.30
+  - @ulld/logger@0.0.28
+
 ## 0.0.30
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @ulld/developer-schemas
 
+## 0.0.28
+
+### Patch Changes
+
+- Broken plugin slot after deleted a slot and didn't remove it from the
+  slotMap.
+
 ## 0.0.27
 
 ### Patch Changes

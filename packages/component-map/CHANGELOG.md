@@ -1,5 +1,30 @@
 # @ulld/component-map
 
+## 0.0.31
+
+### Patch Changes
+
+- Broken plugin slot after deleted a slot and didn't remove it from the
+  slotMap.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.31
+  - @ulld/calendar@0.0.31
+  - @ulld/default-image-map@0.0.31
+  - @ulld/diagram@0.0.31
+  - @ulld/editor@0.0.31
+  - @ulld/embeddable-components@0.0.31
+  - @ulld/equations@0.0.31
+  - @ulld/full-form@0.0.31
+  - @ulld/journal@0.0.31
+  - @ulld/navigation@0.0.31
+  - @ulld/notebook@0.0.31
+  - @ulld/pdf@0.0.31
+  - @ulld/plot@0.0.31
+  - @ulld/snippets@0.0.31
+  - @ulld/tailwind@0.0.28
+  - @ulld/task-manager@0.0.31
+  - @ulld/whiteboard@0.0.31
+
 ## 0.0.30
 
 ### Patch Changes

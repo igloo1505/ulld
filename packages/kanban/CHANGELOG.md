@@ -1,5 +1,20 @@
 # @ulld/kanban
 
+## 0.0.31
+
+### Patch Changes
+
+- Broken plugin slot after deleted a slot and didn't remove it from the
+  slotMap.
+- Updated dependencies
+  - @ulld/api@0.0.31
+  - @ulld/typescript-config@0.0.27
+  - @ulld/developer@0.0.31
+  - @ulld/jest-presets@0.0.28
+  - @ulld/logger@0.0.28
+  - @ulld/state@0.0.31
+  - @ulld/tailwind@0.0.28
+
 ## 0.0.30
 
 ### Patch Changes

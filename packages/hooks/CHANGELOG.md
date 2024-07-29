@@ -1,5 +1,18 @@
 # @ulld/hooks
 
+## 0.0.31
+
+### Patch Changes
+
+- Broken plugin slot after deleted a slot and didn't remove it from the
+  slotMap.
+- Updated dependencies
+  - @ulld/api@0.0.31
+  - @ulld/component-map@0.0.31
+  - @ulld/configschema@0.0.31
+  - @ulld/database@0.0.30
+  - @ulld/parsers@0.0.31
+
 ## 0.0.30
 
 ### Patch Changes

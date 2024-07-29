@@ -1,5 +1,17 @@
 # @ulld/parsers
 
+## 0.0.31
+
+### Patch Changes
+
+- Broken plugin slot after deleted a slot and didn't remove it from the
+  slotMap.
+- Updated dependencies
+  - @ulld/configschema@0.0.31
+  - @ulld/database@0.0.30
+  - @ulld/developer@0.0.31
+  - @ulld/utilities@0.0.31
+
 ## 0.0.30
 
 ### Patch Changes

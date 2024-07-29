@@ -1,5 +1,27 @@
 # @ulld/chat
 
+## 0.0.31
+
+### Patch Changes
+
+- Broken plugin slot after deleted a slot and didn't remove it from the
+  slotMap.
+- Updated dependencies
+  - @ulld/api@0.0.31
+  - @ulld/calendar@0.0.31
+  - @ulld/eslint-config@0.0.28
+  - @ulld/typescript-config@0.0.27
+  - @ulld/configschema@0.0.31
+  - @ulld/full-form@0.0.31
+  - @ulld/hooks@0.0.31
+  - @ulld/icons@0.0.31
+  - @ulld/jest-presets@0.0.28
+  - @ulld/logger@0.0.28
+  - @ulld/state@0.0.31
+  - @ulld/tailwind@0.0.28
+  - @ulld/ui@0.0.31
+  - @ulld/utilities@0.0.31
+
 ## 0.0.30
 
 ### Patch Changes

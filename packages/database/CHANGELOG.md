@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.30
+
+### Patch Changes
+
+- Broken plugin slot after deleted a slot and didn't remove it from the
+  slotMap.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.27
+
 ## 0.0.29
 
 ### Patch Changes

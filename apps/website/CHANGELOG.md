@@ -1,5 +1,34 @@
 # @ulld/website
 
+## 0.0.31
+
+### Patch Changes
+
+- Broken plugin slot after deleted a slot and didn't remove it from the
+  slotMap.
+- Updated dependencies
+  - @ulld/api@0.0.31
+  - @ulld/base-configs@0.0.28
+  - @ulld/calendar@0.0.31
+  - @ulld/component-map@0.0.31
+  - @ulld/configschema@0.0.31
+  - @ulld/database@0.0.30
+  - @ulld/diagram@0.0.31
+  - @ulld/editor@0.0.31
+  - @ulld/embeddable-components@0.0.31
+  - @ulld/full-form@0.0.31
+  - @ulld/hooks@0.0.31
+  - @ulld/icons@0.0.31
+  - @ulld/logger@0.0.28
+  - @ulld/parsers@0.0.31
+  - @ulld/render@0.0.31
+  - @ulld/state@0.0.31
+  - @ulld/tailwind@0.0.28
+  - @ulld/types@0.0.28
+  - @ulld/ui@0.0.31
+  - @ulld/utilities@0.0.31
+  - @ulld/whiteboard@0.0.31
+
 ## 0.0.30
 
 ### Patch Changes
