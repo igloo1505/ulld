@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.31
+
+### Patch Changes
+
+- Need to come up with a much better deployement script. This is a
+  nightmare always forgetting to run specific scripts first.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.28
+
 ## 0.0.30
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @ulld/render
 
+## 0.0.32
+
+### Patch Changes
+
+- Need to come up with a much better deployement script. This is a
+  nightmare always forgetting to run specific scripts first.
+- Updated dependencies
+  - @ulld/api@0.0.32
+  - @ulld/component-map@0.0.32
+  - @ulld/typescript-config@0.0.28
+  - @ulld/configschema@0.0.32
+  - @ulld/hooks@0.0.32
+  - @ulld/jest-presets@0.0.29
+  - @ulld/utilities@0.0.32
+
 ## 0.0.31
 
 ### Patch Changes

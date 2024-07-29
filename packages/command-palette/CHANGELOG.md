@@ -1,5 +1,33 @@
 # @ulld/command-palette
 
+## 0.0.32
+
+### Patch Changes
+
+- Need to come up with a much better deployement script. This is a
+  nightmare always forgetting to run specific scripts first.
+- Updated dependencies
+  - @ulld/api@0.0.32
+  - @ulld/bib-manager@0.0.32
+  - @ulld/calendar@0.0.32
+  - @ulld/configschema@0.0.32
+  - @ulld/database@0.0.31
+  - @ulld/developer@0.0.32
+  - @ulld/diagram@0.0.32
+  - @ulld/editor@0.0.32
+  - @ulld/equations@0.0.32
+  - @ulld/hooks@0.0.32
+  - @ulld/logger@0.0.29
+  - @ulld/parsers@0.0.32
+  - @ulld/render@0.0.32
+  - @ulld/snippets@0.0.32
+  - @ulld/state@0.0.32
+  - @ulld/tailwind@0.0.29
+  - @ulld/task-manager@0.0.32
+  - @ulld/ui@0.0.32
+  - @ulld/utilities@0.0.32
+  - @ulld/whiteboard@0.0.32
+
 ## 0.0.31
 
 ### Patch Changes

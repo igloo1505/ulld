@@ -1,5 +1,16 @@
 # @ulld/utilities
 
+## 0.0.32
+
+### Patch Changes
+
+- Need to come up with a much better deployement script. This is a
+  nightmare always forgetting to run specific scripts first.
+- Updated dependencies
+  - @ulld/database@0.0.31
+  - @ulld/math@0.0.32
+  - @ulld/tailwind@0.0.29
+
 ## 0.0.31
 
 ### Patch Changes

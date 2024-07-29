@@ -1,5 +1,17 @@
 # @ulld/build
 
+## 0.0.32
+
+### Patch Changes
+
+- Need to come up with a much better deployement script. This is a
+  nightmare always forgetting to run specific scripts first.
+- Updated dependencies
+  - @ulld/base-configs@0.0.29
+  - @ulld/configschema@0.0.32
+  - @ulld/developer-schemas@0.0.29
+  - @ulld/utilities@0.0.32
+
 ## 0.0.31
 
 ### Patch Changes

@@ -1,5 +1,30 @@
 # @ulld/component-map
 
+## 0.0.32
+
+### Patch Changes
+
+- Need to come up with a much better deployement script. This is a
+  nightmare always forgetting to run specific scripts first.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.32
+  - @ulld/calendar@0.0.32
+  - @ulld/default-image-map@0.0.32
+  - @ulld/diagram@0.0.32
+  - @ulld/editor@0.0.32
+  - @ulld/embeddable-components@0.0.32
+  - @ulld/equations@0.0.32
+  - @ulld/full-form@0.0.32
+  - @ulld/journal@0.0.32
+  - @ulld/navigation@0.0.32
+  - @ulld/notebook@0.0.32
+  - @ulld/pdf@0.0.32
+  - @ulld/plot@0.0.32
+  - @ulld/snippets@0.0.32
+  - @ulld/tailwind@0.0.29
+  - @ulld/task-manager@0.0.32
+  - @ulld/whiteboard@0.0.32
+
 ## 0.0.31
 
 ### Patch Changes

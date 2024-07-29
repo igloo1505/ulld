@@ -1,5 +1,12 @@
 # @repo/typescript-config
 
+## 0.0.28
+
+### Patch Changes
+
+- Need to come up with a much better deployement script. This is a
+  nightmare always forgetting to run specific scripts first.
+
 ## 0.0.27
 
 ### Patch Changes

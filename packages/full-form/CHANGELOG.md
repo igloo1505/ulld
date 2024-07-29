@@ -1,5 +1,24 @@
 # @ulld/full-form
 
+## 0.0.32
+
+### Patch Changes
+
+- Need to come up with a much better deployement script. This is a
+  nightmare always forgetting to run specific scripts first.
+- Updated dependencies
+  - @ulld/api@0.0.32
+  - @ulld/typescript-config@0.0.28
+  - @ulld/configschema@0.0.32
+  - @ulld/database@0.0.31
+  - @ulld/editor@0.0.32
+  - @ulld/hooks@0.0.32
+  - @ulld/icons@0.0.32
+  - @ulld/jest-presets@0.0.29
+  - @ulld/state@0.0.32
+  - @ulld/tailwind@0.0.29
+  - @ulld/utilities@0.0.32
+
 ## 0.0.31
 
 ### Patch Changes

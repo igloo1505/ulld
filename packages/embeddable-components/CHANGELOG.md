@@ -1,5 +1,23 @@
 # @ulld/embeddable-components
 
+## 0.0.32
+
+### Patch Changes
+
+- Need to come up with a much better deployement script. This is a
+  nightmare always forgetting to run specific scripts first.
+- Updated dependencies
+  - @ulld/api@0.0.32
+  - @ulld/component-configs@0.0.32
+  - @ulld/configschema@0.0.32
+  - @ulld/default-image-map@0.0.32
+  - @ulld/hooks@0.0.32
+  - @ulld/icons@0.0.32
+  - @ulld/render@0.0.32
+  - @ulld/state@0.0.32
+  - @ulld/tailwind@0.0.29
+  - @ulld/utilities@0.0.32
+
 ## 0.0.31
 
 ### Patch Changes

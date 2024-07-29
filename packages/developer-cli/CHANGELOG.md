@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.32
+
+### Patch Changes
+
+- Need to come up with a much better deployement script. This is a
+  nightmare always forgetting to run specific scripts first.
+- Updated dependencies
+  - @ulld/developer@0.0.32
+  - @ulld/developer-schemas@0.0.29
+
 ## 0.0.31
 
 ### Patch Changes
