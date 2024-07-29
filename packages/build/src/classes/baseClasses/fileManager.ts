@@ -21,7 +21,7 @@ export class FileManager extends ShellManager {
         public paths: TargetPaths,
         isDir?: boolean
     ) {
-        super();
+        super();  
         this.path = path.join(paths.projectRoot, subPath);
         this.dirname = this.getDirname(isDir)
         this.asJson = this.subPath.endsWith(".json");
@@ -50,6 +50,7 @@ export class FileManager extends ShellManager {
         }
     }
     writeContent(content?: string) {
+        console.log(`Writing content to ${this.subPath}`)
         let newContent = content || this.content;
         if (!newContent) {
             return this.logDebug(
@@ -76,6 +77,7 @@ ${newContent}
     throwIfNotExists() {
         let exists = this.exists();
         if (!exists) {
+            this.logError(`No file exists at ${this.subPath}. Aborting.`)
             throw new Error(`No file exists at ${this.subPath}. Aborting.`);
         }
     }

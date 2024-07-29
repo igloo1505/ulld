@@ -47,6 +47,7 @@ export class TemplateContent extends FileManager {
     }
     generate(componentImport: string, formattedExport: string, itemData: SlotDataType, exportedProps?: string){
         this.throwIfNotExists()
+        console.log(`Did not throw...`)
         if(exportedProps){
             this.appendExportedType(componentImport, exportedProps)
         }

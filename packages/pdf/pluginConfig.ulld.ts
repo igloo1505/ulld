@@ -18,7 +18,6 @@ const pluginConfig: DeveloperConfigInput<"pdf"> = {
     components: [
         {
             componentName: "EmbeddablePdf",
-            slot: "EmbeddablePdf",
             export: "./embeddablePdf",
             exportedPropsName: "EmbeddablePdfProps",
             embeddable: [

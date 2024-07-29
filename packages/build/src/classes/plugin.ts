@@ -57,16 +57,17 @@ export class UlldPlugin extends ShellManager {
         let configFile = new JsonFile<DeveloperConfigOutput>(configPath);
         let pkgJsonFile = new JsonFile<{
             "ulld-pluginConfig": DeveloperConfigOutput;
-        }>(configPath);
-        let pkgContent = pkgJsonFile.getJsonContent();
-        if (!pkgJsonFile.exists()) {
+        }>(path.join(path.join(this.packageRoot, "package.json")));
+        let pkgExists = pkgJsonFile.exists()
+        let pkgContent = pkgExists ? pkgJsonFile.getJsonContent() : {}
+        if (!pkgExists && !noError) {
             throw new Error(
-                `Could not locate package.json file for the ${this.name} plugin. This is likely an error in the build process, not the plugin.`,
+                `Could not locate package.json file for the ${this.name} plugin. This is likely an error in the build process, not the plugin.`
             );
         }
         this.packageJson = new PackageJson(
             this.paths.projectRoot,
-            path.join(this.packageRoot, "package.json"),
+            pkgJsonFile.path,
             this.baseAppGitBranch,
         );
         let foundConfig = false;
@@ -76,7 +77,7 @@ export class UlldPlugin extends ShellManager {
             this.hasConfig = true
         } else {
                 if ("ulld-pluginConfig" in pkgContent) {
-                    this.pluginConfig = pkgContent["ulld-pluginConfig"];
+                    this.pluginConfig = (pkgContent as any)["ulld-pluginConfig"];
                     foundConfig = true;
                     this.hasConfig = true
                 }

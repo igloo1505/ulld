@@ -78,10 +78,7 @@ export const taskManagerSubkeySchema = z.union([
 ])
 
 
-export const pdfSubkeySchema = z.union([
-    z.literal("FullPdf"),
-    z.literal("EmbeddablePdf"),
-])
+export const pdfSubkeySchema = z.literal("FullPdf")
 
 
 export const navigationSubkeySchema = z.union([
