@@ -27,7 +27,7 @@ const FileSystemMdxPage = async (props: FileSystemMdxProps) => {
         serverClient: serverClient,
         appConfig: props.parsers.mdx.appConfig,
         db: fileContent.details,
-        docTypeData: props.parsers.mdx.docTypeData
+        docTypeData: props.parsers.mdx.docTypeData || {}
     })
 
 return (

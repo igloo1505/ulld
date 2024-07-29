@@ -1,11 +1,10 @@
 import { z } from "zod";
-import { zodMdxFieldSchemaOptional } from "@ulld/parsers/latex/zodLatexFieldSchema"
 
 
 export const dictionaryDefinitionReturnType = z.object({
     id: z.string(),
-    label: zodMdxFieldSchemaOptional,
-    content: zodMdxFieldSchemaOptional,
+    label: z.string().optional(),
+    content: z.string().optional(),
     mdxNoteId: z.number().nullable()
 })
 

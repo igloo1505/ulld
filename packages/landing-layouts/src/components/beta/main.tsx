@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
-import { RandomBackground } from "@ulld/ui/randomBackground";
+/* import { RandomBackground } from "@ulld/ui/randomBackground"; */
 import { BetaLandingPageSearchInput } from "./searchInput";
 import NavigationMenu from "./navigationMenu";
-import { LandingPageProps } from "#/types";
+import { LandingPageProps } from "../../types";
 
 
 interface BasicLandingLayoutProps extends LandingPageProps {
@@ -12,7 +12,7 @@ interface BasicLandingLayoutProps extends LandingPageProps {
 const BasicLandingLayout = (props: BasicLandingLayoutProps) => {
     return (
         <div className={"w-full h-fit"}>
-            <RandomBackground />
+            {/* <RandomBackground /> */}
             <div className={"scroll-snap-container"}>
                 <section
                     className={
@@ -26,9 +26,7 @@ const BasicLandingLayout = (props: BasicLandingLayoutProps) => {
                         "min-h-screen relative bg-background w-full flex flex-col justify-center items-center pt-8"
                     }
                 >
-                    <Suspense>
                         <NavigationMenu />
-                    </Suspense>
                 </section>
             </div>
         </div>

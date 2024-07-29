@@ -1,4 +1,4 @@
-import { prisma } from "@ulld/database/db";
+import { prisma } from "@ulld/database";
 import { defaultFindRemoteMdxArgs } from "@ulld/utilities/defaults/prisma/notes";
 
 export const getRemoteMdx = async (rootRelativePath: string) => {

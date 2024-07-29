@@ -1,13 +1,13 @@
 import { serverLogger } from "@ulld/logger/server"
 import { MdxNote } from "../../../classes/prismaMdxRelations/MdxNote"
 import { prisma } from "@ulld/database/db"
-import { ParsedAppConfig } from "@ulld/configschema/types"
+import { AppConfigSchemaOutput } from "@ulld/configschema/types"
 import { AutoSettingWithRegex } from "../../../trpc/types"
 
 
 
 
-export const updateMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRegex[] = [], config: ParsedAppConfig) => {
+export const updateMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRegex[] = [], config: AppConfigSchemaOutput) => {
     serverLogger.info(`Updating ${note.title}`)
     let upsertArgs = note.upsertArgs(autoSettings, config)
     if (!upsertArgs) return

@@ -10,12 +10,8 @@ import { Tag } from '@ulld/api/classes/prismaMdxRelations/tag';
 import { client } from '@ulld/api/client';
 import { DynamicIcon } from '@ulld/icons';
 import { onEnter } from '@ulld/state/listeners/keydown';
+import { BibEntryDetailsProps } from '../../../types';
 
-
-interface BibliographySheetProps {
-    item?: BibEntry
-    close: () => void
-}
 
 
 type EntryValue = string | number | Date | boolean | undefined | null
@@ -33,7 +29,7 @@ const BibEntryValue = ({ _key, value }: { _key: string, value: EntryValue }) => 
 
 
 
-const BibliographySheet = ({ item, close }: BibliographySheetProps) => {
+const BibliographySheet = ({ item, close }: BibEntryDetailsProps) => {
     const [tagInputValue, setTagInputValue] = useState("")
     const [data, setData] = useState<BibEntrySummarySheetOutput | undefined>(undefined)
     const [tags, setTags] = useState(item?.tags)

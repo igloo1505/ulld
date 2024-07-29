@@ -17,6 +17,9 @@ const DatabaseNotebook = async (props: RemoteNotebookProps) => {
     })
 
     let content = nb?.raw ? nb.raw.toString() : undefined
+    if(!content){
+        return null
+    }
 
     const Notebook = dynamic(() => import("@ulld/notebook/notebook"), { ssr: false })
     const darkMode = cookies().has("darkMode")

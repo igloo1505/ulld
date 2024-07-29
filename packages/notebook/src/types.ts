@@ -1,6 +1,6 @@
 export interface NotebookProps {
     rootRelativePath: string;
     prefer?: "fs" | "db";
-    content: object;
+    content: object | string;
     initialDarkMode?: boolean
 }

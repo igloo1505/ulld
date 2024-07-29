@@ -8,7 +8,7 @@ type BibliographyPageSearchParams = {};
 
 
 export interface BibEntryDetailsProps {
-    item?: BibEntry;
+    item?: BibEntry | false;
     close: () => void
 }
 

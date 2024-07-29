@@ -15,7 +15,7 @@ import {
   topicZodObject,
 } from "@ulld/configschema/configUtilityTypes/docTypes";
 import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
-import { ParsedAppConfig } from "@ulld/configschema/types";
+import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import { getNoteTypeFromPath } from "@ulld/configschema/configUtilityTypes/general";
 import { SequentialList } from "./SequentialList";
 import { Definition } from "./definition";
@@ -92,7 +92,7 @@ export interface InternalMdxNote extends Omit<PrismaMdxNote, "id"> {
 
 export type MdxNoteParseParams = {
   appConfig: UnifiedMdxParserParams["appConfig"];
-  docTypeData?: UnifiedMdxParserParams["docTypeData"];
+  docTypeData: UnifiedMdxParserParams["docTypeData"] | {};
   parser: UnifiedMdxParser;
 };
 
@@ -234,7 +234,7 @@ export class MdxNote extends MdxNoteProtocol {
 
   createInput(
     autoSettings: AutoSettingWithRegex[] = [],
-    config: ParsedAppConfig,
+    config: AppConfigSchemaOutput,
   ): Prisma.MdxNoteCreateInput | undefined {
     this.checkAutoProperties(autoSettings, config);
     if (!this.canSave()) return undefined;
@@ -329,7 +329,7 @@ export class MdxNote extends MdxNoteProtocol {
 
   createArgs(
     autoSettings: AutoSettingWithRegex[] = [],
-    config: ParsedAppConfig,
+    config: AppConfigSchemaOutput,
   ) {
     let ci = this.createInput(autoSettings, config);
     if (ci && ci !== undefined) {
@@ -344,7 +344,7 @@ export class MdxNote extends MdxNoteProtocol {
 
   connectOrCreateArgs(
     autoSettings: AutoSettingWithRegex[] = [],
-    config: ParsedAppConfig,
+    config: AppConfigSchemaOutput,
   ) {
     let ci = this.createInput(autoSettings, config);
     if (ci) {
@@ -360,7 +360,7 @@ export class MdxNote extends MdxNoteProtocol {
 
   upsertArgs(
     autoSettings: AutoSettingWithRegex[] = [],
-    config: ParsedAppConfig,
+    config: AppConfigSchemaOutput,
   ) {
     const ci = this.createInput(autoSettings || [], config);
     if (ci) {
@@ -377,7 +377,7 @@ export class MdxNote extends MdxNoteProtocol {
   }
   checkAutoProperties(
     autoSettings: AutoSettingWithRegex[] = [],
-    config: ParsedAppConfig,
+    config: AppConfigSchemaOutput,
   ) {
     if (!this.rootRelativePath) return;
     let autoSets = getFlatAutoSettings(autoSettings);
@@ -518,7 +518,7 @@ ${m.groups.content}
     this.raw = res.data;
   }
 
-  setNoteType(config?: ParsedAppConfig) {
+  setNoteType(config?: AppConfigSchemaOutput) {
     if (!this.rootRelativePath) return;
     let nt = getNoteTypeFromPath(this.rootRelativePath as string, config);
     if (typeof nt === "object" && "docType" in nt) {

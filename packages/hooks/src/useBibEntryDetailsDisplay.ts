@@ -27,5 +27,5 @@ export const useBibEntryDetailsDisplay = () => {
         setItem(false);
     };
 
-    return [item, setItem, close];
+    return [item, setItem, close] as [BibEntry | false, (newItem: BibEntry | false) => void, () => void]
 };

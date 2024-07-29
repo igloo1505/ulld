@@ -10,6 +10,7 @@
     },
     "dependencies": {
         "@ulld/developer": "workspace:*",
+        "googleapis": "^140.0.1",
         "ical.js": "2.0.0",
         "next": "14.2.3",
         "react": "18.2.0",

@@ -1,11 +1,11 @@
 import React from 'react'
 import { notFound } from 'next/navigation'
-import dynamic from 'next/dynamic'
 import { serverClient } from '@ulld/api/serverClient'
 import { PageContentContainer } from '../../layouts/contentContainer'
 import { ParsableExtensions } from '@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions'
 import { NotePageProps } from '../../../utilityFunctions/formatting/formatNoteProps'
 import DatabaseMdxPage from '../mdx/database'
+import DatabaseNotebook from './database/remoteNotebook';
 
 interface DatbaseNoteProps extends NotePageProps {
     noteType?: ParsableExtensions | null
@@ -35,7 +35,6 @@ const DatabaseNote = async (props: DatbaseNoteProps) => {
     }
 
     if (nt === ".ipynb") {
-        const DatabaseNotebook = dynamic(() => import('./database/remoteNotebook'), { ssr: false })
         return <PageContentContainer notebook canBookmark>
             <DatabaseNotebook
                 {...props}

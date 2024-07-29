@@ -15,8 +15,8 @@ import Link from 'next/link'
 import { client } from '@ulld/api/client'
 import { ParsedAppConfig } from '@ulld/configschema/types'
 import {  getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
-import { store } from '@ulld/state/store'
 import { showToast } from '@ulld/state/slices/ui'
+import { useUlldStore } from '@ulld/hooks/useUlldStore'
 
 
 
@@ -41,6 +41,7 @@ const convertNotebookPaths = async (p: string[], _config?: ParsedAppConfig) => {
 const NotebooksTable = ({ notebooks, hrefMap }: NotebooksTableProps) => {
     const router = useRouter()
     const [sorting, setSorting] = useState<SortingState>([])
+    const store = useUlldStore()
     const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(
         []
     )

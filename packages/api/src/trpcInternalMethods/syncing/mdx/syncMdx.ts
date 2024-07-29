@@ -8,10 +8,9 @@ import {
 import { OnSyncOptions } from "@ulld/types";
 import { PrismaClient, Prisma } from "@ulld/database";
 import { AutoSettingWithRegex } from "../../../trpc/types";
-import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
-import { UnifiedMdxParser } from "../../../types";
+import { UnifiedMdxParser, UnifiedMdxParserParams } from "../../../types";
 
 export interface SyncMdxProps {
     file: string;
@@ -22,6 +21,7 @@ export interface SyncMdxProps {
     buildData: BuildStaticDataOutput;
     unifiedMdxParser: UnifiedMdxParser;
     prisma: PrismaClient;
+    docTypeData: UnifiedMdxParserParams["docTypeData"]
 }
 
 export const syncMdx = async ({
@@ -33,13 +33,14 @@ export const syncMdx = async ({
     buildData,
     unifiedMdxParser,
     prisma,
+    docTypeData
 }: SyncMdxProps) => {
-    const config = getInternalConfig();
+    const config = appConfig
     let s = fs.readFileSync(file, { encoding: "utf-8" });
-    console.log(`Syncing note with filepath: ${file.split(dir)[1]}`);
     let mdxNoteParserParams: MdxNoteParseParams = {
         appConfig,
         parser: unifiedMdxParser,
+        docTypeData
     };
     let note = await MdxNote.fromMdxString(
         { raw: s, rootRelativePath: file.split(dir)[1] },

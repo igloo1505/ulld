@@ -37,7 +37,7 @@ const FileSystemNote = (props: FileSystemNoteProps) => {
         )
     }
     if (props.noteType === ".ipynb") {
-        const FileSystemNotebook = dynamic(() => import('./filesystem/fileSystemNotebook'), { ssr: false })
+        /* const FileSystemNotebook = dynamic(() => import('./filesystem/fileSystemNotebook'), { ssr: false }) */
         return (
             <PageContentContainer notebook canBookmark>
                 FIX ME

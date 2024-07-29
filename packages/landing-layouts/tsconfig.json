@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json.schemastore.org/tsconfig",
+    "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
     "extends": "@ulld/typescript-config/nextjs.json",
     "compilerOptions": {
         "baseUrl": ".",
@@ -11,9 +11,6 @@
             "mathjax"
         ],
         "paths": {
-            "#/*": [
-                "./src/*"
-            ],
             "contentlayer/generated": [
                 "./.contentlayer/generated"
             ],

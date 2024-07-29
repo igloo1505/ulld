@@ -1,4 +1,4 @@
-import { ParsedAppConfig } from "@ulld/configschema/types"
+import { AppConfigSchemaOutput } from "@ulld/configschema/types"
 import { serverLogger } from "@ulld/logger/server"
 import { AutoSettingWithRegex } from "../../../trpc/types"
 import { MdxNote } from "../../../classes/prismaMdxRelations/MdxNote"
@@ -9,7 +9,7 @@ import { prisma } from "@ulld/database/db"
 
 
 
-export const saveMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRegex[] = [], config: ParsedAppConfig) => {
+export const saveMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRegex[] = [], config: AppConfigSchemaOutput) => {
     serverLogger.info(`Creating note: ${note.title}`)
     if (!note.title) {
         serverLogger.info(`No Note Title Found: ${JSON.stringify(note, null, 4)}`)

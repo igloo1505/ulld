@@ -330,7 +330,7 @@ model MdxNote {
     toDo               ToDo[]
     firstSync          DateTime            @default(now())
     lastSync           DateTime            @updatedAt
-    lastAccess         DateTime?
+    lastAccess         DateTime?           @default(now())
 }
 
 model Ipynb {
