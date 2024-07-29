@@ -9,7 +9,7 @@
             "tags": [],
             "slot": "commandPalette",
             "export": "commandPalette",
-            "componentId": "87faa5ec-b86c-4685-a4bc-9847bb912b33"
+            "componentId": "d74b66b6-19e3-480d-97e2-0f712a77f046"
         }
     ],
     "parsers": {},
@@ -17,5 +17,6 @@
     "events": {},
     "navigationLinks": [],
     "commandPalette": [],
-    "tailwind": {}
+    "tailwind": {},
+    "styles": {}
 }

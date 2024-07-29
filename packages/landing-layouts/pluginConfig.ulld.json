@@ -9,7 +9,7 @@
             "tags": [],
             "slot": "LandingPage",
             "export": "beta",
-            "componentId": "157ce1da-84c5-48cf-8847-4addaff82de0"
+            "componentId": "77be0269-aea0-4280-a122-27259c5511b4"
         }
     ],
     "parsers": {},
@@ -17,5 +17,6 @@
     "events": {},
     "navigationLinks": [],
     "commandPalette": [],
-    "tailwind": {}
+    "tailwind": {},
+    "styles": {}
 }

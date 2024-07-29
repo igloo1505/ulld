@@ -9,14 +9,14 @@
             "tags": [],
             "slot": "BibliographyPage",
             "export": "bibliographyPage",
-            "componentId": "433b0c8e-d49f-43d1-ab4b-04dcf82054f4"
+            "componentId": "0a00dc2e-7aae-443b-abfb-bb3639ed8143"
         },
         {
             "componentName": "BibEntryDetails",
             "tags": [],
             "slot": "BibEntryDetails",
             "export": "bibEntryDetails",
-            "componentId": "433b0c8e-d49f-43d1-ab4b-04dcf82054f4"
+            "componentId": "0a00dc2e-7aae-443b-abfb-bb3639ed8143"
         }
     ],
     "parsers": {
@@ -35,5 +35,6 @@
         }
     ],
     "commandPalette": [],
-    "tailwind": {}
+    "tailwind": {},
+    "styles": {}
 }

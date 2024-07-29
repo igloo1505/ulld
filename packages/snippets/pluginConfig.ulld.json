@@ -9,14 +9,14 @@
             "tags": [],
             "slot": "SnippetList",
             "export": "snippetList",
-            "componentId": "b924162e-5d0d-4b40-a02c-86bdf581dcc2"
+            "componentId": "b9b83d96-9664-471f-8cf1-26b9296f0eb3"
         },
         {
             "componentName": "SnippetFilter",
             "tags": [],
             "slot": "SnippetFilter",
             "export": "snippetFilter",
-            "componentId": "b924162e-5d0d-4b40-a02c-86bdf581dcc2"
+            "componentId": "b9b83d96-9664-471f-8cf1-26b9296f0eb3"
         }
     ],
     "parsers": {},
@@ -46,5 +46,6 @@
         }
     ],
     "commandPalette": [],
-    "tailwind": {}
+    "tailwind": {},
+    "styles": {}
 }

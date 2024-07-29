@@ -16,6 +16,7 @@ import { ShellManager } from "./baseClasses/shell";
 import { PackageJson } from "./baseClasses/pkgJson";
 import { PluginSettingsPage } from "./pluginSettingsPage";
 import { Path } from "./utilityClasses/Path";
+import { JsonFile } from "@ulld/utilities/jsonFileClass";
 
 export class UlldPlugin extends ShellManager {
     pluginConfig: DeveloperConfigOutput | "Unusable" = "Unusable";
@@ -43,7 +44,7 @@ export class UlldPlugin extends ShellManager {
         public paths: TargetPaths,
         public name: string,
         public version: string = "latest",
-        public baseAppGitBranch: string
+        public baseAppGitBranch: string,
     ) {
         super();
         this.targetDir = paths.targetDir;
@@ -53,42 +54,43 @@ export class UlldPlugin extends ShellManager {
     gatherConfig(noError?: boolean) {
         let configPath = path.join(this.packageRoot, "pluginConfig.ulld.json");
         this.logDebug(`Looking for ${this.name} config at ${configPath}`);
+        let configFile = new JsonFile<DeveloperConfigOutput>(configPath);
+        let pkgJsonFile = new JsonFile<{
+            "ulld-pluginConfig": DeveloperConfigOutput;
+        }>(configPath);
+        let pkgContent = pkgJsonFile.getJsonContent();
+        if (!pkgJsonFile.exists()) {
+            throw new Error(
+                `Could not locate package.json file for the ${this.name} plugin. This is likely an error in the build process, not the plugin.`,
+            );
+        }
         this.packageJson = new PackageJson(
             this.paths.projectRoot,
             path.join(this.packageRoot, "package.json"),
-            this.baseAppGitBranch
+            this.baseAppGitBranch,
         );
+        let foundConfig = false;
+        if (configFile.exists()) {
+            this.pluginConfig = configFile.getJsonContent();
+            foundConfig = true;
+            this.hasConfig = true
+        } else {
+                if ("ulld-pluginConfig" in pkgContent) {
+                    this.pluginConfig = pkgContent["ulld-pluginConfig"];
+                    foundConfig = true;
+                    this.hasConfig = true
+                }
+        }
         if (!this.packageJson) {
             this.noPackageJsonError(noError);
             return;
         }
-        if (!fs.existsSync(configPath)) {
-            this.logVerbose(`Could not find plugin config for ${this.name}`);
-            if (!this.packageJson.exists() && !noError) {
-                this.logDebug(`
-No package.json file found for package ${this.name}. 
-Attempted to find one at ${configPath}
-`);
-                this.noConfigError(noError);
-                return;
-            }
-            let pkgJsonConfig = this.packageJson.getPluginConfig();
-            if (!pkgJsonConfig) {
-                this.logDebug(`No package.json content found for ${this.name}`);
-                this.noConfigError(noError);
-                return;
-            }
-            this.pluginConfig = pkgJsonConfig;
-        } else {
-            this.logVerbose(`Found plugin config for ${this.name}`);
+        if(this.pluginConfig === "Unusable") {
+            return
         }
-        this.hasConfig = true;
-        this.pluginConfig = JSON.parse(
-            fs.readFileSync(configPath, { encoding: "utf-8" }),
-        ) as DeveloperConfigOutput;
         if ((this.pluginConfig as any) !== "Unusable") {
             this.events = new PluginEvents(
-                this.pluginConfig?.events || {},
+                this.pluginConfig.events || {},
                 this.paths,
                 this.name,
             );

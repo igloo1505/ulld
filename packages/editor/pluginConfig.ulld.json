@@ -30,5 +30,6 @@
     "events": {},
     "navigationLinks": [],
     "commandPalette": [],
-    "tailwind": {}
+    "tailwind": {},
+    "styles": {}
 }

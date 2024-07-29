@@ -76,6 +76,7 @@ export class BaseApp extends ShellManager {
     applySlots() {
         const componentSlotMap = this.build.getComponentSlotMap();
         let flattenedMap = flattenSlotMap(componentSlotMap);
+        console.log("flattenedMap: ", flattenedMap)
         for (const k of flattenedMap) {
             k.data.writeToFile();
         }

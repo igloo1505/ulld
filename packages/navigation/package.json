@@ -67,7 +67,7 @@
     "ulld-pluginConfig": {
         "pluginName": "@ulld/navigation",
         "label": "Navigation",
-        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself.",
+        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.",
         "slot": "navigation",
         "components": [
             {
@@ -75,42 +75,42 @@
                 "tags": [],
                 "slot": "navbar",
                 "export": "navbar",
-                "componentId": "9f281b90-1c4c-43c6-9c54-4ef8995836f7"
+                "componentId": "9d63aef1-2440-4ed0-909c-441d04dbb5b4"
             },
             {
                 "componentName": "SidebarNavigation",
                 "tags": [],
                 "slot": "secondary",
                 "export": "sidebar",
-                "componentId": "9f281b90-1c4c-43c6-9c54-4ef8995836f7"
+                "componentId": "9d63aef1-2440-4ed0-909c-441d04dbb5b4"
             },
             {
                 "componentName": "MultiPageSidebar",
                 "tags": [],
                 "slot": "MultiPageSidebar",
                 "export": "multiPageSidebar",
-                "componentId": "9f281b90-1c4c-43c6-9c54-4ef8995836f7"
+                "componentId": "9d63aef1-2440-4ed0-909c-441d04dbb5b4"
             },
             {
                 "componentName": "FullScreenNavigation",
                 "tags": [],
                 "slot": "FullScreenNavigationMenu",
                 "export": "fullScreenNav",
-                "componentId": "9f281b90-1c4c-43c6-9c54-4ef8995836f7"
+                "componentId": "9d63aef1-2440-4ed0-909c-441d04dbb5b4"
             },
             {
                 "componentName": "FooterComponent",
                 "tags": [],
                 "slot": "Footer",
                 "export": "footerSlotComponent",
-                "componentId": "9f281b90-1c4c-43c6-9c54-4ef8995836f7"
+                "componentId": "9d63aef1-2440-4ed0-909c-441d04dbb5b4"
             },
             {
                 "componentName": "MdxNoteToc",
                 "tags": [],
                 "slot": "MdxNoteToc",
                 "export": "mdxNoteToc",
-                "componentId": "9f281b90-1c4c-43c6-9c54-4ef8995836f7"
+                "componentId": "9d63aef1-2440-4ed0-909c-441d04dbb5b4"
             }
         ],
         "parsers": {},
@@ -118,7 +118,8 @@
         "events": {},
         "navigationLinks": [],
         "commandPalette": [],
-        "tailwind": {}
+        "tailwind": {},
+        "styles": {}
     },
     "ulld-plugin-id": "e4d6f387-ee3a-4565-b0e9-1b145687b11c"
 }

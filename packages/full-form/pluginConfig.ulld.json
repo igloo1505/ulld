@@ -9,7 +9,7 @@
             "tags": [],
             "slot": "SettingsPageContainer",
             "export": "settingPageWrapper",
-            "componentId": "510cead4-4812-4be4-bd01-e4fe5af9b995"
+            "componentId": "b492a15d-838d-4b68-81f9-af51d54cc973"
         }
     ],
     "parsers": {},
@@ -17,5 +17,6 @@
     "events": {},
     "navigationLinks": [],
     "commandPalette": [],
-    "tailwind": {}
+    "tailwind": {},
+    "styles": {}
 }

@@ -1,7 +1,7 @@
 import {FileData} from "./main"
 import fs from 'fs'
 
-export class JsonFile<T extends object> extends FileData {
+export class JsonFile<T extends object = {}> extends FileData {
     constructor(public path: string){
         super(path, false)
     }

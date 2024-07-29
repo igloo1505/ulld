@@ -63,7 +63,7 @@
     "ulld-pluginConfig": {
         "pluginName": "@ulld/snippets",
         "label": "Snippets",
-        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself.",
+        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.",
         "slot": "snippets",
         "components": [
             {
@@ -71,14 +71,14 @@
                 "tags": [],
                 "slot": "SnippetList",
                 "export": "snippetList",
-                "componentId": "e0788967-680f-4497-a6d4-104d5418215d"
+                "componentId": "b9b83d96-9664-471f-8cf1-26b9296f0eb3"
             },
             {
                 "componentName": "SnippetFilter",
                 "tags": [],
                 "slot": "SnippetFilter",
                 "export": "snippetFilter",
-                "componentId": "e0788967-680f-4497-a6d4-104d5418215d"
+                "componentId": "b9b83d96-9664-471f-8cf1-26b9296f0eb3"
             }
         ],
         "parsers": {},
@@ -108,7 +108,8 @@
             }
         ],
         "commandPalette": [],
-        "tailwind": {}
+        "tailwind": {},
+        "styles": {}
     },
     "ulld-plugin-id": "6308e2a5-6859-45fa-86bc-ef3efe550061"
 }

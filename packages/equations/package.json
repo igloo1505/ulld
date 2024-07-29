@@ -75,7 +75,7 @@
     "ulld-pluginConfig": {
         "pluginName": "@ulld/equations",
         "label": "Math",
-        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself.",
+        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.",
         "slot": "math",
         "components": [],
         "parsers": {
@@ -111,8 +111,8 @@
             }
         ],
         "events": {
-            "onBackup": "./onBackup",
-            "onRestore": "./onRestore"
+            "onBackup": "onBackup",
+            "onRestore": "onRestore"
         },
         "navigationLinks": [
             {
@@ -127,7 +127,8 @@
             }
         ],
         "commandPalette": [],
-        "tailwind": {}
+        "tailwind": {},
+        "styles": {}
     },
     "ulld-plugin-id": "6e475731-b787-46d4-9ef1-fee1548eb30e"
 }

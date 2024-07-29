@@ -295,7 +295,7 @@
     "ulld-pluginConfig": {
         "pluginName": "@ulld/api",
         "label": "ULLD Core",
-        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself.",
+        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.",
         "components": [],
         "parsers": {
             "mdx": {
@@ -307,6 +307,7 @@
         "events": {},
         "navigationLinks": [],
         "commandPalette": [],
-        "tailwind": {}
+        "tailwind": {},
+        "styles": {}
     }
 }

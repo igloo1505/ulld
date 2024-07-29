@@ -176,7 +176,7 @@
     "ulld-pluginConfig": {
         "pluginName": "@ulld/full-form",
         "label": "Form",
-        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself.",
+        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.",
         "slot": "form",
         "components": [
             {
@@ -184,7 +184,7 @@
                 "tags": [],
                 "slot": "SettingsPageContainer",
                 "export": "settingPageWrapper",
-                "componentId": "5def9a52-c8e9-4a68-8225-b9e1c30e1187"
+                "componentId": "b492a15d-838d-4b68-81f9-af51d54cc973"
             }
         ],
         "parsers": {},
@@ -192,7 +192,8 @@
         "events": {},
         "navigationLinks": [],
         "commandPalette": [],
-        "tailwind": {}
+        "tailwind": {},
+        "styles": {}
     },
     "ulld-plugin-id": "9cc833c0-4464-4d89-a7d8-4fd0ff539c15"
 }
