@@ -1,5 +1,17 @@
 # @ulld/state
 
+## 0.0.33
+
+### Patch Changes
+
+- @ulld/configschema@0.0.33
+- @ulld/database@0.0.32
+- @ulld/developer@0.0.33
+- @ulld/hooks@0.0.33
+- @ulld/parsers@0.0.33
+- @ulld/tailwind@0.0.29
+- @ulld/utilities@0.0.33
+
 ## 0.0.32
 
 ### Patch Changes

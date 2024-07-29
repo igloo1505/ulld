@@ -1,5 +1,17 @@
 # @ulld/math
 
+## 0.0.33
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/typescript-config@0.0.29
+  - @ulld/configschema@0.0.33
+  - @ulld/hooks@0.0.33
+  - @ulld/icons@0.0.33
+  - @ulld/state@0.0.33
+  - @ulld/utilities@0.0.33
+
 ## 0.0.32
 
 ### Patch Changes

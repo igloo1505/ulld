@@ -1,5 +1,13 @@
 # @ulld/utilities
 
+## 0.0.33
+
+### Patch Changes
+
+- @ulld/database@0.0.32
+- @ulld/math@0.0.33
+- @ulld/tailwind@0.0.29
+
 ## 0.0.32
 
 ### Patch Changes

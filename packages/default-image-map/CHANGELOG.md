@@ -1,5 +1,15 @@
 # @ulld/default-image-map
 
+## 0.0.33
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/typescript-config@0.0.29
+  - @ulld/configschema@0.0.33
+  - @ulld/tailwind@0.0.29
+  - @ulld/utilities@0.0.33
+
 ## 0.0.32
 
 ### Patch Changes

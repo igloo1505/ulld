@@ -1,5 +1,22 @@
 # @ulld/chat
 
+## 0.0.33
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/typescript-config@0.0.29
+  - @ulld/api@0.0.33
+  - @ulld/configschema@0.0.33
+  - @ulld/full-form@0.0.33
+  - @ulld/hooks@0.0.33
+  - @ulld/icons@0.0.33
+  - @ulld/state@0.0.33
+  - @ulld/tailwind@0.0.29
+  - @ulld/ui@0.0.33
+  - @ulld/utilities@0.0.33
+  - @ulld/calendar@0.0.33
+
 ## 0.0.32
 
 ### Patch Changes
