@@ -1,6 +1,6 @@
 export interface UnifiedMdxParserParams {
     content: string;
-    docTypeData: AppConfigSchemaOutput["noteTypes"][number];
+    docTypeData: AppConfigSchemaOutput["noteTypes"][number] | {};
     data: Partial<FrontMatterType>
     appConfig: AppConfigSchemaOutput
     serverClient: typeof serverClient // Trpc router
