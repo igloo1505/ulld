@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.29
+
+### Patch Changes
+
+- Update database build script.
+- Updated dependencies
+  - @ulld/developer@0.0.29
+  - @ulld/developer-schemas@0.0.26
+
 ## 0.0.28
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @ulld/component-configs
 
+## 0.0.29
+
+### Patch Changes
+
+- Update database build script.
+- Updated dependencies
+  - @ulld/api@0.0.29
+  - @ulld/typescript-config@0.0.25
+  - @ulld/configschema@0.0.29
+  - @ulld/developer@0.0.29
+  - @ulld/hooks@0.0.29
+  - @ulld/state@0.0.29
+  - @ulld/tailwind@0.0.26
+  - @ulld/ui@0.0.29
+  - @ulld/utilities@0.0.29
+
 ## 0.0.28
 
 ### Patch Changes

@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.29
+
+### Patch Changes
+
+- Update database build script.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.29
+  - @ulld/calendar@0.0.29
+  - @ulld/default-image-map@0.0.29
+  - @ulld/diagram@0.0.29
+  - @ulld/editor@0.0.29
+  - @ulld/embeddable-components@0.0.29
+  - @ulld/equations@0.0.29
+  - @ulld/full-form@0.0.29
+  - @ulld/journal@0.0.29
+  - @ulld/navigation@0.0.29
+  - @ulld/notebook@0.0.29
+  - @ulld/pdf@0.0.29
+  - @ulld/plot@0.0.29
+  - @ulld/snippets@0.0.29
+  - @ulld/tailwind@0.0.26
+  - @ulld/task-manager@0.0.29
+  - @ulld/whiteboard@0.0.29
+
 ## 0.0.28
 
 ### Patch Changes

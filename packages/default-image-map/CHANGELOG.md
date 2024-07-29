@@ -1,5 +1,18 @@
 # @ulld/default-image-map
 
+## 0.0.29
+
+### Patch Changes
+
+- Update database build script.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.26
+  - @ulld/typescript-config@0.0.25
+  - @ulld/configschema@0.0.29
+  - @ulld/logger@0.0.26
+  - @ulld/tailwind@0.0.26
+  - @ulld/utilities@0.0.29
+
 ## 0.0.28
 
 ### Patch Changes

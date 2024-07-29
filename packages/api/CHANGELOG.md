@@ -1,5 +1,21 @@
 # @ulld/api
 
+## 0.0.29
+
+### Patch Changes
+
+- Update database build script.
+- Updated dependencies
+  - @ulld/base-configs@0.0.26
+  - @ulld/configschema@0.0.29
+  - @ulld/database@0.0.28
+  - @ulld/developer@0.0.29
+  - @ulld/logger@0.0.26
+  - @ulld/parsers@0.0.29
+  - @ulld/state@0.0.29
+  - @ulld/tailwind@0.0.26
+  - @ulld/utilities@0.0.29
+
 ## 0.0.28
 
 ### Patch Changes

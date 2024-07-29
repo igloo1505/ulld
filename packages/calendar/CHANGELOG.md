@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.29
+
+### Patch Changes
+
+- Update database build script.
+- Updated dependencies
+  - @ulld/developer@0.0.29
+
 ## 0.0.28
 
 ### Patch Changes

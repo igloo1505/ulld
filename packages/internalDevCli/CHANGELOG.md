@@ -1,5 +1,11 @@
 # @ulld/internal-dev-cli
 
+## 0.0.26
+
+### Patch Changes
+
+- Update database build script.
+
 ## 0.0.25
 
 ### Patch Changes

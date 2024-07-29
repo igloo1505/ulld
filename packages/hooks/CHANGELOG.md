@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.29
+
+### Patch Changes
+
+- Update database build script.
+- Updated dependencies
+  - @ulld/api@0.0.29
+  - @ulld/component-map@0.0.29
+  - @ulld/configschema@0.0.29
+  - @ulld/database@0.0.28
+  - @ulld/parsers@0.0.29
+
 ## 0.0.28
 
 ### Patch Changes

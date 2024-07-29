@@ -1,5 +1,19 @@
 # @ulld/kanban
 
+## 0.0.29
+
+### Patch Changes
+
+- Update database build script.
+- Updated dependencies
+  - @ulld/api@0.0.29
+  - @ulld/typescript-config@0.0.25
+  - @ulld/developer@0.0.29
+  - @ulld/jest-presets@0.0.26
+  - @ulld/logger@0.0.26
+  - @ulld/state@0.0.29
+  - @ulld/tailwind@0.0.26
+
 ## 0.0.28
 
 ### Patch Changes

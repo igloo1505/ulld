@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.29
+
+### Patch Changes
+
+- Update database build script.
+- Updated dependencies
+  - @ulld/api@0.0.29
+  - @ulld/component-configs@0.0.29
+  - @ulld/configschema@0.0.29
+  - @ulld/default-image-map@0.0.29
+  - @ulld/hooks@0.0.29
+  - @ulld/icons@0.0.29
+  - @ulld/render@0.0.29
+  - @ulld/state@0.0.29
+  - @ulld/tailwind@0.0.26
+  - @ulld/utilities@0.0.29
+
 ## 0.0.28
 
 ### Patch Changes

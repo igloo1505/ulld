@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.28
+
+### Patch Changes
+
+- Update database build script.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.25
+
 ## 0.0.27
 
 ### Patch Changes

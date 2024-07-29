@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.29
+
+### Patch Changes
+
+- Update database build script.
+- Updated dependencies
+  - @ulld/configschema@0.0.29
+  - @ulld/database@0.0.28
+  - @ulld/developer@0.0.29
+  - @ulld/utilities@0.0.29
+
 ## 0.0.28
 
 ### Patch Changes
