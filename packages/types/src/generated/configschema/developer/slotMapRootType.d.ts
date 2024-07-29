@@ -50,7 +50,6 @@ export interface SlotMap {
     };
     "pdf": {
         FullPdf: string;
-        EmbeddablePdf: string;
     };
     "navigation": {
         secondary: string;

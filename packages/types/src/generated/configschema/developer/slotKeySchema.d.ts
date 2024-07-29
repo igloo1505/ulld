@@ -6,7 +6,7 @@ export declare const editorSubkeySchema: z.ZodUnion<[z.ZodLiteral<"EditorModalPa
 export declare const UISubkeySchema: z.ZodUnion<[z.ZodLiteral<"ComponentDocsListPage">, z.ZodLiteral<"Pagination">, z.ZodLiteral<"logo">, z.ZodLiteral<"loadingIndicator">, z.ZodLiteral<"confirmationModal">, z.ZodLiteral<"ComponentDocumentationPageWrapper">, z.ZodLiteral<"AutoSettingsTable">, z.ZodLiteral<"AutoSettingFormModal">, z.ZodLiteral<"SearchResultsPage">, z.ZodLiteral<"BookmarksPage">, z.ZodLiteral<"NotesSearchResultsList">, z.ZodLiteral<"NoteSummarySearchResult">, z.ZodLiteral<"DictionaryLetterList">, z.ZodLiteral<"DictionaryPageItem">, z.ZodLiteral<"NoteTypeSecondaryFilter">, z.ZodLiteral<"NoteTypeSearchResultList">, z.ZodLiteral<"MdxNoteContainer">]>;
 export declare const bibliographySubkeySchema: z.ZodUnion<[z.ZodLiteral<"BibliographyPage">, z.ZodLiteral<"BibEntryDetails">]>;
 export declare const taskManagerSubkeySchema: z.ZodUnion<[z.ZodLiteral<"TaskManagerPage">, z.ZodLiteral<"TaskDetails">, z.ZodLiteral<"AddTask">, z.ZodLiteral<"AddTaskList">, z.ZodLiteral<"TaskListSearchResultList">, z.ZodLiteral<"TaskListSearchResult">]>;
-export declare const pdfSubkeySchema: z.ZodUnion<[z.ZodLiteral<"FullPdf">, z.ZodLiteral<"EmbeddablePdf">]>;
+export declare const pdfSubkeySchema: z.ZodLiteral<"FullPdf">;
 export declare const navigationSubkeySchema: z.ZodUnion<[z.ZodLiteral<"secondary">, z.ZodLiteral<"navbar">, z.ZodLiteral<"MultiPageSidebar">, z.ZodLiteral<"MdxNoteToc">, z.ZodLiteral<"FullScreenNavigationMenu">, z.ZodLiteral<"Footer">]>;
 export declare const dashboardSubkeySchema: z.ZodLiteral<"LandingPage">;
 export declare const formSubkeySchema: z.ZodLiteral<"SettingsPageContainer">;
