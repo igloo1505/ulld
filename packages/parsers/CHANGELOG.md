@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.28
+
+### Patch Changes
+
+- Fixed a few TS errors that result as part of the build process.
+- Updated dependencies
+  - @ulld/configschema@0.0.28
+  - @ulld/database@0.0.27
+  - @ulld/developer@0.0.28
+  - @ulld/utilities@0.0.28
+
 ## 0.0.27
 
 ### Patch Changes

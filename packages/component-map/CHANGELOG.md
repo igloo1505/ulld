@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.28
+
+### Patch Changes
+
+- Fixed a few TS errors that result as part of the build process.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.28
+  - @ulld/calendar@0.0.28
+  - @ulld/default-image-map@0.0.28
+  - @ulld/diagram@0.0.28
+  - @ulld/editor@0.0.28
+  - @ulld/embeddable-components@0.0.28
+  - @ulld/equations@0.0.28
+  - @ulld/full-form@0.0.28
+  - @ulld/journal@0.0.28
+  - @ulld/navigation@0.0.28
+  - @ulld/notebook@0.0.28
+  - @ulld/pdf@0.0.28
+  - @ulld/plot@0.0.28
+  - @ulld/snippets@0.0.28
+  - @ulld/tailwind@0.0.25
+  - @ulld/task-manager@0.0.28
+  - @ulld/whiteboard@0.0.28
+
 ## 0.0.27
 
 ### Patch Changes

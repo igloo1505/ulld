@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.27
+
+### Patch Changes
+
+- Fixed a few TS errors that result as part of the build process.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.24
+
 ## 0.0.26
 
 ### Patch Changes

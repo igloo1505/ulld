@@ -1,5 +1,19 @@
 # @ulld/kanban
 
+## 0.0.28
+
+### Patch Changes
+
+- Fixed a few TS errors that result as part of the build process.
+- Updated dependencies
+  - @ulld/api@0.0.28
+  - @ulld/typescript-config@0.0.24
+  - @ulld/developer@0.0.28
+  - @ulld/jest-presets@0.0.25
+  - @ulld/logger@0.0.25
+  - @ulld/state@0.0.28
+  - @ulld/tailwind@0.0.25
+
 ## 0.0.27
 
 ### Patch Changes

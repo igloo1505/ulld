@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.25
+
+### Patch Changes
+
+- Fixed a few TS errors that result as part of the build process.
+
 ## 0.0.24
 
 ### Patch Changes

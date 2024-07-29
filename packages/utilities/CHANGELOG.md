@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.28
+
+### Patch Changes
+
+- Fixed a few TS errors that result as part of the build process.
+- Updated dependencies
+  - @ulld/database@0.0.27
+  - @ulld/math@0.0.28
+  - @ulld/tailwind@0.0.25
+
 ## 0.0.27
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.28
+
+### Patch Changes
+
+- Fixed a few TS errors that result as part of the build process.
+- Updated dependencies
+  - @ulld/base-configs@0.0.25
+  - @ulld/configschema@0.0.28
+  - @ulld/developer-schemas@0.0.25
+  - @ulld/utilities@0.0.28
+
 ## 0.0.27
 
 ### Patch Changes
