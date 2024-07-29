@@ -68,7 +68,7 @@
     "ulld-pluginConfig": {
         "pluginName": "@ulld/command-palette",
         "label": "Command Palette",
-        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.",
+        "pluginId": "c15f7126-d201-442f-801b-baa70b80e265",
         "slot": "commandPalette",
         "components": [
             {
@@ -76,7 +76,7 @@
                 "tags": [],
                 "slot": "commandPalette",
                 "export": "commandPalette",
-                "componentId": "d74b66b6-19e3-480d-97e2-0f712a77f046"
+                "componentId": "76838114-6027-41c9-bf09-afb79634c7d4"
             }
         ],
         "parsers": {},

@@ -325,7 +325,7 @@
     "ulld-pluginConfig": {
         "pluginName": "@ulld/ui",
         "label": "UI",
-        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.",
+        "pluginId": "3f660baf-0f58-4994-b09a-f26c7866547a",
         "slot": "UI",
         "components": [
             {
@@ -333,105 +333,105 @@
                 "tags": [],
                 "slot": "Pagination",
                 "export": "paginationGroup",
-                "componentId": "db9c2336-67da-4ebc-830c-5d5a50c2504d"
+                "componentId": "06808b87-ab8b-46ad-a574-6e404e0d528b"
             },
             {
                 "componentName": "ConfirmationModal",
                 "tags": [],
                 "slot": "confirmationModal",
                 "export": "confirmationModal",
-                "componentId": "db9c2336-67da-4ebc-830c-5d5a50c2504d"
+                "componentId": "06808b87-ab8b-46ad-a574-6e404e0d528b"
             },
             {
                 "componentName": "DictionaryPageItem",
                 "tags": [],
                 "slot": "DictionaryPageItem",
                 "export": "dictionaryItemEntry",
-                "componentId": "db9c2336-67da-4ebc-830c-5d5a50c2504d"
+                "componentId": "06808b87-ab8b-46ad-a574-6e404e0d528b"
             },
             {
                 "componentName": "DictionaryLetterList",
                 "tags": [],
                 "slot": "DictionaryLetterList",
                 "export": "dictionaryLetterList",
-                "componentId": "db9c2336-67da-4ebc-830c-5d5a50c2504d"
+                "componentId": "06808b87-ab8b-46ad-a574-6e404e0d528b"
             },
             {
                 "componentName": "Logo",
                 "tags": [],
                 "slot": "logo",
                 "export": "defaultLogo",
-                "componentId": "db9c2336-67da-4ebc-830c-5d5a50c2504d"
+                "componentId": "06808b87-ab8b-46ad-a574-6e404e0d528b"
             },
             {
                 "componentName": "NoteSummaryCard",
                 "tags": [],
                 "slot": "NoteSummarySearchResult",
                 "export": "noteSummarySearchResult",
-                "componentId": "db9c2336-67da-4ebc-830c-5d5a50c2504d"
+                "componentId": "06808b87-ab8b-46ad-a574-6e404e0d528b"
             },
             {
                 "componentName": "AutoSettingsPage",
                 "tags": [],
                 "slot": "AutoSettingsTable",
                 "export": "autoSettingsPage",
-                "componentId": "db9c2336-67da-4ebc-830c-5d5a50c2504d"
+                "componentId": "06808b87-ab8b-46ad-a574-6e404e0d528b"
             },
             {
                 "componentName": "AutoSettingFormModal",
                 "tags": [],
                 "slot": "AutoSettingFormModal",
                 "export": "autoSettingFormModal",
-                "componentId": "db9c2336-67da-4ebc-830c-5d5a50c2504d"
+                "componentId": "06808b87-ab8b-46ad-a574-6e404e0d528b"
             },
             {
                 "componentName": "NotesSearchResultsList",
                 "tags": [],
                 "slot": "NotesSearchResultsList",
                 "export": "notesSearchResultsList",
-                "componentId": "db9c2336-67da-4ebc-830c-5d5a50c2504d"
+                "componentId": "06808b87-ab8b-46ad-a574-6e404e0d528b"
             },
             {
                 "componentName": "LoadingIndicator",
                 "tags": [],
                 "slot": "loadingIndicator",
                 "export": "loadingIndicator",
-                "componentId": "db9c2336-67da-4ebc-830c-5d5a50c2504d"
+                "componentId": "06808b87-ab8b-46ad-a574-6e404e0d528b"
             },
             {
                 "componentName": "ComponentDocsListPage",
                 "tags": [],
                 "slot": "ComponentDocsListPage",
                 "export": "componentDocsListPage",
-                "componentId": "db9c2336-67da-4ebc-830c-5d5a50c2504d"
+                "componentId": "06808b87-ab8b-46ad-a574-6e404e0d528b"
             },
             {
                 "componentName": "NoteTypeSecondaryFilter",
                 "tags": [],
                 "slot": "NoteTypeSecondaryFilter",
                 "export": "noteTypeSecondaryFilter",
-                "componentId": "db9c2336-67da-4ebc-830c-5d5a50c2504d"
+                "componentId": "06808b87-ab8b-46ad-a574-6e404e0d528b"
             },
             {
                 "componentName": "ComponentDocsPageNoteWrapper",
                 "tags": [],
                 "slot": "ComponentDocumentationPageWrapper",
                 "export": "componentDocsPageWrapper",
-                "componentId": "db9c2336-67da-4ebc-830c-5d5a50c2504d"
+                "componentId": "06808b87-ab8b-46ad-a574-6e404e0d528b"
             },
             {
                 "componentName": "NoteTypeSearchResultList",
                 "tags": [],
                 "slot": "NoteTypeSearchResultList",
                 "export": "noteTypeResultList",
-                "componentId": "db9c2336-67da-4ebc-830c-5d5a50c2504d"
+                "componentId": "06808b87-ab8b-46ad-a574-6e404e0d528b"
             },
             {
                 "componentName": "NotePageWrapper",
                 "tags": [],
                 "slot": "MdxNoteContainer",
                 "export": "mdxPageContainer",
-                "componentId": "db9c2336-67da-4ebc-830c-5d5a50c2504d"
+                "componentId": "06808b87-ab8b-46ad-a574-6e404e0d528b"
             }
         ],
         "parsers": {},

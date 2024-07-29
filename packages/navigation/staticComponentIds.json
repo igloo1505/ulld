@@ -1,8 +1,9 @@
 {
-    "Navbar": "9d63aef1-2440-4ed0-909c-441d04dbb5b4",
-    "SidebarNavigation": "9d63aef1-2440-4ed0-909c-441d04dbb5b4",
-    "MultiPageSidebar": "9d63aef1-2440-4ed0-909c-441d04dbb5b4",
-    "FullScreenNavigation": "9d63aef1-2440-4ed0-909c-441d04dbb5b4",
-    "FooterComponent": "9d63aef1-2440-4ed0-909c-441d04dbb5b4",
-    "MdxNoteToc": "9d63aef1-2440-4ed0-909c-441d04dbb5b4"
+    "Navbar": "51f738b1-4ee6-4203-ade0-f3ef28f96553",
+    "SidebarNavigation": "51f738b1-4ee6-4203-ade0-f3ef28f96553",
+    "MultiPageSidebar": "51f738b1-4ee6-4203-ade0-f3ef28f96553",
+    "FullScreenNavigation": "51f738b1-4ee6-4203-ade0-f3ef28f96553",
+    "FooterComponent": "51f738b1-4ee6-4203-ade0-f3ef28f96553",
+    "MdxNoteToc": "51f738b1-4ee6-4203-ade0-f3ef28f96553",
+    "pluginId": "392606c3-abda-456c-a331-cf8566ff83e3"
 }

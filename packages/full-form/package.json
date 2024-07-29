@@ -176,7 +176,7 @@
     "ulld-pluginConfig": {
         "pluginName": "@ulld/full-form",
         "label": "Form",
-        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.",
+        "pluginId": "b8bb77f3-72d6-4779-8c70-b0415423c484",
         "slot": "form",
         "components": [
             {
@@ -184,7 +184,7 @@
                 "tags": [],
                 "slot": "SettingsPageContainer",
                 "export": "settingPageWrapper",
-                "componentId": "b492a15d-838d-4b68-81f9-af51d54cc973"
+                "componentId": "c558c0ca-f950-4bd6-81d5-81dbcdbab478"
             }
         ],
         "parsers": {},

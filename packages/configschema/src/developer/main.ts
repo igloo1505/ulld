@@ -18,7 +18,7 @@ import { tailwindPluginConfig } from "./tailwind";
 export { parserKeyList } from "./parserSchema";
 import { transformExportStringOptional } from "@ulld/utilities/transformExportString";
 
-const defaultPluginId =
+export const defaultPluginId =
     "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.";
 
 // WARN: Removed this type checking for now as the output value was returning the input type with too many optionals.

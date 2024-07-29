@@ -1,7 +1,7 @@
 {
     "pluginName": "@ulld/snippets",
     "label": "Snippets",
-    "pluginId": "6308e2a5-6859-45fa-86bc-ef3efe550061",
+    "pluginId": "eb850f52-7dd1-483d-b66b-5c4f65522585",
     "slot": "snippets",
     "components": [
         {
@@ -9,14 +9,14 @@
             "tags": [],
             "slot": "SnippetList",
             "export": "snippetList",
-            "componentId": "b9b83d96-9664-471f-8cf1-26b9296f0eb3"
+            "componentId": "b86e4c30-764b-4eca-bfcb-c4f5b0ddfd2d"
         },
         {
             "componentName": "SnippetFilter",
             "tags": [],
             "slot": "SnippetFilter",
             "export": "snippetFilter",
-            "componentId": "b9b83d96-9664-471f-8cf1-26b9296f0eb3"
+            "componentId": "b86e4c30-764b-4eca-bfcb-c4f5b0ddfd2d"
         }
     ],
     "parsers": {},

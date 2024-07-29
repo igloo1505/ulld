@@ -5,20 +5,21 @@ import path from "path";
 import { randomUUID } from "crypto";
 import { transformExportString } from "@ulld/utilities/transformExportString";
 import staticBuildData from "@ulld/utilities/buildStaticData";
+import { defaultPluginId } from "@ulld/configschema/developer";
 
 export class WritePluginConfigHandler {
     idFile: JsonFile<Record<string, string>>;
     pkgJson: JsonFile<PackageJsonType>;
     idMap: Record<string, string>;
     pkgJsonContent: PackageJsonType;
-    pluginFile: JsonFile
+    pluginFile: JsonFile;
     constructor(
         public config: DeveloperConfigOutput,
         public dir: string,
         public appendToPkgJson: boolean | "both" = "both",
         public provideOwnPluginId: boolean = false,
     ) {
-        this.pluginFile = new JsonFile(path.join(dir, "pluginConfig.ulld.json"))
+        this.pluginFile = new JsonFile(path.join(dir, "pluginConfig.ulld.json"));
         this.idFile = new JsonFile(path.join(dir, "staticComponentIds.json"));
         if (this.idFile.exists()) {
             this.idMap = this.idFile.getJsonContent();
@@ -76,12 +77,17 @@ export class WritePluginConfigHandler {
                 this.idMap[c.componentName] = newId;
             }
         }
-        if (!this.config.pluginId) {
-            this.idMap.pluginId = randomUUID();
+        if ("pluginId" in this.idMap) {
+            this.config.pluginId = this.idMap.pluginId;
         } else {
-            this.idMap.pluginId = this.config.pluginId;
+            if (!this.config.pluginId || this.config.pluginId === defaultPluginId) {
+                console.log(`Overwriting plugin id`);
+                this.idMap.pluginId = randomUUID();
+            } else {
+                this.idMap.pluginId = this.config.pluginId;
+            }
+            this.config.pluginId = this.idMap.pluginId;
         }
-        this.config.pluginId = this.idMap.pluginId;
         this.config.components = this.config.components.map((c) => {
             if (c.componentName in this.idMap) {
                 c.componentId = this.idMap[c.componentName];
@@ -89,14 +95,17 @@ export class WritePluginConfigHandler {
             return c;
         });
     }
-    private validatePackageJsonContent(){
-    if (!this.pkgJsonContent.files || !this.pkgJsonContent.files.includes("pluginConfig.ulld.json")) {
-        this.pkgJsonContent.files = this.pkgJsonContent.files
-            ? [...this.pkgJsonContent.files, "pluginConfig.ulld.json"]
-            : ["pluginConfig.ulld.json", "src"];
+    private validatePackageJsonContent() {
+        if (
+            !this.pkgJsonContent.files ||
+            !this.pkgJsonContent.files.includes("pluginConfig.ulld.json")
+        ) {
+            this.pkgJsonContent.files = this.pkgJsonContent.files
+                ? [...this.pkgJsonContent.files, "pluginConfig.ulld.json"]
+                : ["pluginConfig.ulld.json", "src"];
+        }
     }
-    }
-    writeModified() {
+    private writeModified() {
         this.idFile.writeContent(this.idMap);
         this.pkgJson.writeContent(
             this.appendToPkgJson
@@ -106,8 +115,10 @@ export class WritePluginConfigHandler {
                 }
                 : this.pkgJsonContent,
         );
-        this.pluginFile.writeContent(this.config)
-        console.log(`Wrote plugin config for ${this.config.pluginName} successfully.`)
+        this.pluginFile.writeContent(this.config);
+        console.log(
+            `Wrote plugin config for ${this.config.pluginName} successfully.`,
+        );
     }
     generate() {
         this.applyComponentIds();

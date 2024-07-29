@@ -1,7 +1,7 @@
 {
     "pluginName": "@ulld/bib-manager",
     "label": "Bibliography",
-    "pluginId": "5c8198c7-027a-4719-80bd-5ea7283be9dd",
+    "pluginId": "0ba3812d-d088-474f-81e2-ec9c0f343c2a",
     "slot": "bibliography",
     "components": [
         {
@@ -9,14 +9,14 @@
             "tags": [],
             "slot": "BibliographyPage",
             "export": "bibliographyPage",
-            "componentId": "0a00dc2e-7aae-443b-abfb-bb3639ed8143"
+            "componentId": "307d34ca-e22e-4b96-ac1e-fe9c6ac1c88f"
         },
         {
             "componentName": "BibEntryDetails",
             "tags": [],
             "slot": "BibEntryDetails",
             "export": "bibEntryDetails",
-            "componentId": "0a00dc2e-7aae-443b-abfb-bb3639ed8143"
+            "componentId": "307d34ca-e22e-4b96-ac1e-fe9c6ac1c88f"
         }
     ],
     "parsers": {

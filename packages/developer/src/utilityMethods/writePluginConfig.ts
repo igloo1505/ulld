@@ -11,5 +11,5 @@ export const writePluginConfig = (
     questionablyDontOverwritePluginId: boolean = false,
 ) => {
    let configHandler = new WritePluginConfigHandler(config, directory, appendToPackageJson, questionablyDontOverwritePluginId)
-    configHandler.writeModified()
+    configHandler.generate()
 };

@@ -125,7 +125,7 @@
     "ulld-pluginConfig": {
         "pluginName": "@ulld/snippets",
         "label": "Editor",
-        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.",
+        "pluginId": "aae82ba5-5795-4050-80de-614fdd73eff5",
         "slot": "editor",
         "components": [],
         "parsers": {},

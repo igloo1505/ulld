@@ -63,7 +63,7 @@
     "ulld-pluginConfig": {
         "pluginName": "@ulld/task-manager",
         "label": "Task Manager",
-        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.",
+        "pluginId": "b1b3248e-6242-4ecf-95b5-0d878abd5f73",
         "slot": "taskManager",
         "components": [
             {
@@ -71,35 +71,35 @@
                 "tags": [],
                 "slot": "TaskDetails",
                 "export": "taskDetails",
-                "componentId": "edac2276-d6c0-472c-bc12-3692dc84fa83"
+                "componentId": "3a9deb39-4d6e-4d43-b7bd-d9926e21d7a2"
             },
             {
                 "componentName": "AddTaskModal",
                 "tags": [],
                 "slot": "AddTask",
                 "export": "addTask",
-                "componentId": "edac2276-d6c0-472c-bc12-3692dc84fa83"
+                "componentId": "3a9deb39-4d6e-4d43-b7bd-d9926e21d7a2"
             },
             {
                 "componentName": "TaskListResultList",
                 "tags": [],
                 "slot": "TaskListSearchResultList",
                 "export": "taskListSearchResults",
-                "componentId": "edac2276-d6c0-472c-bc12-3692dc84fa83"
+                "componentId": "3a9deb39-4d6e-4d43-b7bd-d9926e21d7a2"
             },
             {
                 "componentName": "AddTaskList",
                 "tags": [],
                 "slot": "AddTaskList",
                 "export": "addTaskList",
-                "componentId": "edac2276-d6c0-472c-bc12-3692dc84fa83"
+                "componentId": "3a9deb39-4d6e-4d43-b7bd-d9926e21d7a2"
             },
             {
                 "componentName": "TaskListSearchResult",
                 "tags": [],
                 "slot": "TaskListSearchResult",
                 "export": "taskListSearchResult",
-                "componentId": "edac2276-d6c0-472c-bc12-3692dc84fa83"
+                "componentId": "3a9deb39-4d6e-4d43-b7bd-d9926e21d7a2"
             }
         ],
         "parsers": {},

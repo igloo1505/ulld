@@ -75,7 +75,7 @@
     "ulld-pluginConfig": {
         "pluginName": "@ulld/equations",
         "label": "Math",
-        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.",
+        "pluginId": "61a78d89-12e3-464a-9608-95b77e659d4e",
         "slot": "math",
         "components": [],
         "parsers": {

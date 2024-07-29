@@ -51,7 +51,7 @@
     "ulld-pluginConfig": {
         "pluginName": "@ulld/landing-layouts",
         "label": "Dashboards",
-        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.",
+        "pluginId": "b0aa216a-0976-4d30-a589-5df59dc277a0",
         "slot": "dashboard",
         "components": [
             {
@@ -59,7 +59,7 @@
                 "tags": [],
                 "slot": "LandingPage",
                 "export": "beta",
-                "componentId": "77be0269-aea0-4280-a122-27259c5511b4"
+                "componentId": "4be95cb3-9a0b-4c8e-88bc-6824fb9240c7"
             }
         ],
         "parsers": {},

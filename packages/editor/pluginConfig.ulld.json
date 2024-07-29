@@ -1,7 +1,7 @@
 {
     "pluginName": "@ulld/snippets",
     "label": "Editor",
-    "pluginId": "500e04c0-0ff4-4c3e-9579-1754703c862d",
+    "pluginId": "aae82ba5-5795-4050-80de-614fdd73eff5",
     "slot": "editor",
     "components": [],
     "parsers": {},

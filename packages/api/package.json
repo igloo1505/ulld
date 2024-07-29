@@ -295,7 +295,7 @@
     "ulld-pluginConfig": {
         "pluginName": "@ulld/api",
         "label": "ULLD Core",
-        "pluginId": "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.",
+        "pluginId": "8c789df9-9d98-4cf2-8081-abd92e591c99",
         "components": [],
         "parsers": {
             "mdx": {

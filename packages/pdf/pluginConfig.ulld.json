@@ -1,7 +1,7 @@
 {
     "pluginName": "@ulld/pdf",
     "label": "Pdf",
-    "pluginId": "c521f76c-55f1-4898-a950-57107253044d",
+    "pluginId": "090f401f-9797-48a4-8d9a-927242599b58",
     "slot": "pdf",
     "components": [
         {
@@ -16,7 +16,7 @@
                 }
             ],
             "exportedPropsName": "EmbeddablePdfProps",
-            "componentId": "5a3b1825-fc3a-4ab0-99ea-b9ea955ef5d5"
+            "componentId": "23cea7c5-4b2f-4f86-9fad-72f5c3af587c"
         }
     ],
     "parsers": {},
