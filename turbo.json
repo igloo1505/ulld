@@ -22,7 +22,7 @@
       "cache": false,
       "env": [".env.local"]
     },
-    "generate": {
+    "generateDatabase": {
       "cache": false,
       "env": [".env.local"]
     },

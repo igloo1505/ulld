@@ -195,6 +195,7 @@ export default unifiedParserList
         }
     }
     writeGitIgnore(){
+        this.logVerbose("Writing .gitignore file...")
         let tf = new TemplateFile("gitignore")
         let templateString = tf.getNewContent({})
         let f = new FileManager(".gitignore", this.paths, false)

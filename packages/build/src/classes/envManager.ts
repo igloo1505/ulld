@@ -117,6 +117,7 @@ export class EnvManager extends ShellManager {
         return d;
     }
     writeEnvLocal() {
+        this.logVerbose("Writing env file...")
         let target = FileManager.fromPathKey("envLocal", this.paths);
         let json = this.toJson();
         let exists = target.exists();
