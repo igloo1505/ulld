@@ -1,45 +1,24 @@
 "use client";
 import { useToast } from "@ulld/tailwind/use-toast";
-import { UseFormReturn } from "@ulld/full-form/form";
+import { FieldValues, UseFormReturn } from "@ulld/full-form/form";
 import { CodeInput } from "@ulld/full-form/codeTextArea";
 import { client } from "@ulld/api/client";
 import { ShikiLanguageSelect } from "@ulld/full-form/selectShikiLanguage";
 import { Form } from "@ulld/tailwind/form";
 import { TextAreaInput } from "@ulld/full-form/textArea";
 import { TextInputWithBadgeList } from "@ulld/full-form/textInputWithBadgeList";
-import { Prisma } from "@ulld/database";
 import { Button } from "@ulld/tailwind/button";
-import { ShikiLanguage } from "@ulld/utilities/shikiLanguages";
 
-
-
-type FormType = UseFormReturn<
-    Required<Prisma.SnippetCreateInput> & {
-        keywordInput?: string | undefined;
-        id?: number;
-    },
-    any,
-    undefined
->;
-
-
-type SnippetWithStrictLanguage = {
-    language: ShikiLanguage
-} & Omit<Required<Prisma.SnippetCreateInput> & {
-    keywordInput?: string | undefined;
-    id?: number;
-}, "language">
-
-interface AddSnippetFormProps {
-    form: FormType;
+interface AddSnippetFormProps<T extends FieldValues> {
+    form: UseFormReturn<T>
 }
 
-const AddSnippetForm = ({ form }: AddSnippetFormProps) => {
+const AddSnippetForm = <T extends FieldValues>({ form }: AddSnippetFormProps<T>) => {
     const { toast } = useToast();
     const handleSubmit = async () => {
         let data = form.getValues();
         delete data.keywordInput;
-        let success = await client.snippets.saveSnippet.mutate(data as SnippetWithStrictLanguage);
+        let success = await client.snippets.saveSnippet.mutate(data as any);
         if (success) {
             if (data.id) {
                 /* router. */
