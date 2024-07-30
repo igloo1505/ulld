@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.39
+
+### Patch Changes
+
+- Update landing page layout slot.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.39
+  - @ulld/calendar@0.0.39
+  - @ulld/default-image-map@0.0.39
+  - @ulld/diagram@0.0.39
+  - @ulld/editor@0.0.39
+  - @ulld/embeddable-components@0.0.39
+  - @ulld/equations@0.0.39
+  - @ulld/full-form@0.0.39
+  - @ulld/journal@0.0.39
+  - @ulld/navigation@0.0.39
+  - @ulld/notebook@0.0.39
+  - @ulld/pdf@0.0.39
+  - @ulld/plot@0.0.39
+  - @ulld/snippets@0.0.39
+  - @ulld/tailwind@0.0.35
+  - @ulld/task-manager@0.0.39
+  - @ulld/whiteboard@0.0.39
+
 ## 0.0.38
 
 ### Patch Changes

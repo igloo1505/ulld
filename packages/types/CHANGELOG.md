@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.35
+
+### Patch Changes
+
+- Update landing page layout slot.
+
 ## 0.0.34
 
 ### Patch Changes

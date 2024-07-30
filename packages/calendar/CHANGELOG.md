@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.39
+
+### Patch Changes
+
+- Update landing page layout slot.
+- Updated dependencies
+  - @ulld/developer@0.0.39
+
 ## 0.0.38
 
 ### Patch Changes

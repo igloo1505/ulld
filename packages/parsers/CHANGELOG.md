@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.39
+
+### Patch Changes
+
+- Update landing page layout slot.
+- Updated dependencies
+  - @ulld/configschema@0.0.39
+  - @ulld/database@0.0.38
+  - @ulld/developer@0.0.39
+  - @ulld/utilities@0.0.39
+
 ## 0.0.38
 
 ### Patch Changes

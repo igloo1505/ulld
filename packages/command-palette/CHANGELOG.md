@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.39
+
+### Patch Changes
+
+- Update landing page layout slot.
+- Updated dependencies
+  - @ulld/api@0.0.39
+  - @ulld/bib-manager@0.0.39
+  - @ulld/calendar@0.0.39
+  - @ulld/configschema@0.0.39
+  - @ulld/database@0.0.38
+  - @ulld/developer@0.0.39
+  - @ulld/diagram@0.0.39
+  - @ulld/editor@0.0.39
+  - @ulld/equations@0.0.39
+  - @ulld/hooks@0.0.39
+  - @ulld/logger@0.0.35
+  - @ulld/parsers@0.0.39
+  - @ulld/render@0.0.39
+  - @ulld/snippets@0.0.39
+  - @ulld/state@0.0.39
+  - @ulld/tailwind@0.0.35
+  - @ulld/task-manager@0.0.39
+  - @ulld/ui@0.0.39
+  - @ulld/utilities@0.0.39
+  - @ulld/whiteboard@0.0.39
+
 ## 0.0.38
 
 ### Patch Changes

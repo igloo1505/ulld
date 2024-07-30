@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.38
+
+### Patch Changes
+
+- Update landing page layout slot.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.35
+
 ## 0.0.37
 
 ### Patch Changes

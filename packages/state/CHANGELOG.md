@@ -1,5 +1,20 @@
 # @ulld/state
 
+## 0.0.39
+
+### Patch Changes
+
+- Update landing page layout slot.
+- Updated dependencies
+  - @ulld/base-configs@0.0.35
+  - @ulld/configschema@0.0.39
+  - @ulld/database@0.0.38
+  - @ulld/developer@0.0.39
+  - @ulld/hooks@0.0.39
+  - @ulld/parsers@0.0.39
+  - @ulld/tailwind@0.0.35
+  - @ulld/utilities@0.0.39
+
 ## 0.0.38
 
 ### Patch Changes

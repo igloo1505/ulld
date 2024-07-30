@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.39
+
+### Patch Changes
+
+- Update landing page layout slot.
+- Updated dependencies
+  - @ulld/api@0.0.39
+  - @ulld/component-map@0.0.39
+  - @ulld/configschema@0.0.39
+  - @ulld/database@0.0.38
+  - @ulld/parsers@0.0.39
+
 ## 0.0.38
 
 ### Patch Changes

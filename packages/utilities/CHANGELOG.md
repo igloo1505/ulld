@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.39
+
+### Patch Changes
+
+- Update landing page layout slot.
+- Updated dependencies
+  - @ulld/database@0.0.38
+  - @ulld/math@0.0.39
+  - @ulld/tailwind@0.0.35
+
 ## 0.0.38
 
 ### Patch Changes

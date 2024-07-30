@@ -1,5 +1,20 @@
 # @ulld/note-network
 
+## 0.0.39
+
+### Patch Changes
+
+- Update landing page layout slot.
+- Updated dependencies
+  - @ulld/api@0.0.39
+  - @ulld/typescript-config@0.0.35
+  - @ulld/configschema@0.0.39
+  - @ulld/developer@0.0.39
+  - @ulld/jest-presets@0.0.35
+  - @ulld/logger@0.0.35
+  - @ulld/tailwind@0.0.35
+  - @ulld/utilities@0.0.39
+
 ## 0.0.38
 
 ### Patch Changes

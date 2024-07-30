@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.39
+
+### Patch Changes
+
+- Update landing page layout slot.
+- Updated dependencies
+  - @ulld/developer@0.0.39
+  - @ulld/developer-schemas@0.0.35
+
 ## 0.0.38
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.39
+
+### Patch Changes
+
+- Update landing page layout slot.
+- Updated dependencies
+  - @ulld/api@0.0.39
+  - @ulld/component-configs@0.0.39
+  - @ulld/configschema@0.0.39
+  - @ulld/default-image-map@0.0.39
+  - @ulld/hooks@0.0.39
+  - @ulld/icons@0.0.39
+  - @ulld/render@0.0.39
+  - @ulld/state@0.0.39
+  - @ulld/tailwind@0.0.35
+  - @ulld/utilities@0.0.39
+
 ## 0.0.38
 
 ### Patch Changes

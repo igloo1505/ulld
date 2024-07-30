@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.39
+
+### Patch Changes
+
+- Update landing page layout slot.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.35
+  - @ulld/typescript-config@0.0.35
+  - @ulld/configschema@0.0.39
+  - @ulld/database@0.0.38
+  - @ulld/logger@0.0.35
+
 ## 0.0.38
 
 ### Patch Changes

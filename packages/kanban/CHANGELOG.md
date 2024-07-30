@@ -1,5 +1,19 @@
 # @ulld/kanban
 
+## 0.0.39
+
+### Patch Changes
+
+- Update landing page layout slot.
+- Updated dependencies
+  - @ulld/api@0.0.39
+  - @ulld/typescript-config@0.0.35
+  - @ulld/developer@0.0.39
+  - @ulld/jest-presets@0.0.35
+  - @ulld/logger@0.0.35
+  - @ulld/state@0.0.39
+  - @ulld/tailwind@0.0.35
+
 ## 0.0.38
 
 ### Patch Changes

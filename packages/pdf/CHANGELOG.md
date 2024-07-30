@@ -1,5 +1,24 @@
 # @ulld/pdf
 
+## 0.0.39
+
+### Patch Changes
+
+- Update landing page layout slot.
+- Updated dependencies
+  - @ulld/api@0.0.39
+  - @ulld/eslint-config@0.0.35
+  - @ulld/configschema@0.0.39
+  - @ulld/developer@0.0.39
+  - @ulld/hooks@0.0.39
+  - @ulld/icons@0.0.39
+  - @ulld/jest-presets@0.0.35
+  - @ulld/state@0.0.39
+  - @ulld/tailwind@0.0.35
+  - @ulld/ui@0.0.39
+  - @ulld/utilities@0.0.39
+  - @ulld/whiteboard@0.0.39
+
 ## 0.0.38
 
 ### Patch Changes
