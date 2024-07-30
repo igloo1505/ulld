@@ -25,9 +25,9 @@
         "db:generateTargetProjectSchema": "run generateTargetDatabase",
         "generateTargetDatabase": "prisma generate",
         "migrateTargetDatabase": "dotenv -e .env.local -- prisma migrate dev",
-        "postinstall": "dotenv -e .env.local -- prisma migrate dev && pnpm run generateTargetDatabase",
-        "prebuild": "run generateTargetDatabase",
-        "predev": "run generateTargetDatabase"
+        "postinstall": "prisma generate",
+        "prebuild": "dotenv -e .env.local -- prisma migrate dev",
+        "predev": "dotenv -e .env.local -- prisma migrate dev"
     },
     "prisma": {
         "schema": "prisma/schema.prisma"

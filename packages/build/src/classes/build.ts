@@ -114,7 +114,7 @@ export class UlldBuildProcess extends Prompter {
             this.appConfig.config?.plugins?.map(
                 (c) => new UlldPlugin(this.paths, c.name, c.version, this.branch),
             ) || ([] as UlldPlugin[]);
-        this.logVerbose(`Found ${fromConfigPlugins.length} plugins in your config.`)
+        this.logVerbose(`Found ${fromConfigPlugins.length} plugin${fromConfigPlugins.length > 1 ? "s" : ""} in your config.`)
         for (const k in this.appConfig.config.slots) {
             let newSlot =
                 this.appConfig.config.slots[
