@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.37
+
+### Patch Changes
+
+- Fix missing files after trying to clean things up while offline.
+- Updated dependencies
+  - @ulld/developer@0.0.37
+
 ## 0.0.36
 
 ### Patch Changes

@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.37
+
+### Patch Changes
+
+- Fix missing files after trying to clean things up while offline.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.37
+  - @ulld/calendar@0.0.37
+  - @ulld/default-image-map@0.0.37
+  - @ulld/diagram@0.0.37
+  - @ulld/editor@0.0.37
+  - @ulld/embeddable-components@0.0.37
+  - @ulld/equations@0.0.37
+  - @ulld/full-form@0.0.37
+  - @ulld/journal@0.0.37
+  - @ulld/navigation@0.0.37
+  - @ulld/notebook@0.0.37
+  - @ulld/pdf@0.0.37
+  - @ulld/plot@0.0.37
+  - @ulld/snippets@0.0.37
+  - @ulld/tailwind@0.0.33
+  - @ulld/task-manager@0.0.37
+  - @ulld/whiteboard@0.0.37
+
 ## 0.0.36
 
 ### Patch Changes

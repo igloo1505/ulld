@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.37
+
+### Patch Changes
+
+- Fix missing files after trying to clean things up while offline.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.33
+  - @ulld/typescript-config@0.0.33
+  - @ulld/configschema@0.0.37
+  - @ulld/database@0.0.36
+  - @ulld/logger@0.0.33
+
 ## 0.0.36
 
 ### Patch Changes

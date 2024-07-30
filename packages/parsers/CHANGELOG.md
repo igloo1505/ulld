@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.37
+
+### Patch Changes
+
+- Fix missing files after trying to clean things up while offline.
+- Updated dependencies
+  - @ulld/configschema@0.0.37
+  - @ulld/database@0.0.36
+  - @ulld/developer@0.0.37
+  - @ulld/utilities@0.0.37
+
 ## 0.0.36
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.36
+
+### Patch Changes
+
+- Fix missing files after trying to clean things up while offline.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.33
+
 ## 0.0.35
 
 ### Patch Changes

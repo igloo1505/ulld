@@ -1,5 +1,19 @@
 # @ulld/render
 
+## 0.0.37
+
+### Patch Changes
+
+- Fix missing files after trying to clean things up while offline.
+- Updated dependencies
+  - @ulld/api@0.0.37
+  - @ulld/component-map@0.0.37
+  - @ulld/typescript-config@0.0.33
+  - @ulld/configschema@0.0.37
+  - @ulld/hooks@0.0.37
+  - @ulld/jest-presets@0.0.33
+  - @ulld/utilities@0.0.37
+
 ## 0.0.36
 
 ### Patch Changes

@@ -1,5 +1,26 @@
 # @ulld/ui
 
+## 0.0.37
+
+### Patch Changes
+
+- Fix missing files after trying to clean things up while offline.
+- Updated dependencies
+  - @ulld/api@0.0.37
+  - @ulld/component-map@0.0.37
+  - @ulld/configschema@0.0.37
+  - @ulld/database@0.0.36
+  - @ulld/editor@0.0.37
+  - @ulld/embeddable-components@0.0.37
+  - @ulld/full-form@0.0.37
+  - @ulld/hooks@0.0.37
+  - @ulld/icons@0.0.37
+  - @ulld/logger@0.0.33
+  - @ulld/render@0.0.37
+  - @ulld/state@0.0.37
+  - @ulld/tailwind@0.0.33
+  - @ulld/utilities@0.0.37
+
 ## 0.0.36
 
 ### Patch Changes

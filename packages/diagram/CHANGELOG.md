@@ -1,5 +1,17 @@
 # @ulld/diagram
 
+## 0.0.37
+
+### Patch Changes
+
+- Fix missing files after trying to clean things up while offline.
+- Updated dependencies
+  - @ulld/api@0.0.37
+  - @ulld/typescript-config@0.0.33
+  - @ulld/developer@0.0.37
+  - @ulld/state@0.0.37
+  - @ulld/tailwind@0.0.33
+
 ## 0.0.36
 
 ### Patch Changes

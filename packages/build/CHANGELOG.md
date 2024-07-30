@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.37
+
+### Patch Changes
+
+- Fix missing files after trying to clean things up while offline.
+- Updated dependencies
+  - @ulld/base-configs@0.0.33
+  - @ulld/configschema@0.0.37
+  - @ulld/developer-schemas@0.0.33
+  - @ulld/utilities@0.0.37
+
 ## 0.0.36
 
 ### Patch Changes

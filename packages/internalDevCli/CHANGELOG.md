@@ -1,5 +1,11 @@
 # @ulld/internal-dev-cli
 
+## 0.0.33
+
+### Patch Changes
+
+- Fix missing files after trying to clean things up while offline.
+
 ## 0.0.32
 
 ### Patch Changes

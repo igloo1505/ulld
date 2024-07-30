@@ -1,5 +1,28 @@
 # @ulld/developer-template
 
+## 0.0.37
+
+### Patch Changes
+
+- Fix missing files after trying to clean things up while offline.
+- Updated dependencies
+  - @ulld/api@0.0.37
+  - @ulld/base-configs@0.0.33
+  - @ulld/eslint-config@0.0.33
+  - @ulld/typescript-config@0.0.33
+  - @ulld/configschema@0.0.37
+  - @ulld/database@0.0.36
+  - @ulld/developer@0.0.37
+  - @ulld/hooks@0.0.37
+  - @ulld/icons@0.0.37
+  - @ulld/jest-presets@0.0.33
+  - @ulld/logger@0.0.33
+  - @ulld/parsers@0.0.37
+  - @ulld/state@0.0.37
+  - @ulld/tailwind@0.0.33
+  - @ulld/ui@0.0.37
+  - @ulld/utilities@0.0.37
+
 ## 0.0.36
 
 ### Patch Changes

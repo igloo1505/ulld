@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.37
+
+### Patch Changes
+
+- Fix missing files after trying to clean things up while offline.
+- Updated dependencies
+  - @ulld/database@0.0.36
+  - @ulld/math@0.0.37
+  - @ulld/tailwind@0.0.33
+
 ## 0.0.36
 
 ### Patch Changes
