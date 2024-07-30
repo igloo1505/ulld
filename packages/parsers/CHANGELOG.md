@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.36
+
+### Patch Changes
+
+- Broken database script again...
+- Updated dependencies
+  - @ulld/configschema@0.0.36
+  - @ulld/database@0.0.35
+  - @ulld/developer@0.0.36
+  - @ulld/utilities@0.0.36
+
 ## 0.0.35
 
 ### Patch Changes

@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.36
+
+### Patch Changes
+
+- Broken database script again...
+- Updated dependencies
+  - @ulld/api@0.0.36
+  - @ulld/bib-manager@0.0.36
+  - @ulld/calendar@0.0.36
+  - @ulld/configschema@0.0.36
+  - @ulld/database@0.0.35
+  - @ulld/developer@0.0.36
+  - @ulld/diagram@0.0.36
+  - @ulld/editor@0.0.36
+  - @ulld/equations@0.0.36
+  - @ulld/hooks@0.0.36
+  - @ulld/logger@0.0.32
+  - @ulld/parsers@0.0.36
+  - @ulld/render@0.0.36
+  - @ulld/snippets@0.0.36
+  - @ulld/state@0.0.36
+  - @ulld/tailwind@0.0.32
+  - @ulld/task-manager@0.0.36
+  - @ulld/ui@0.0.36
+  - @ulld/utilities@0.0.36
+  - @ulld/whiteboard@0.0.36
+
 ## 0.0.35
 
 ### Patch Changes

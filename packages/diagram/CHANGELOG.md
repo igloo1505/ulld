@@ -1,5 +1,17 @@
 # @ulld/diagram
 
+## 0.0.36
+
+### Patch Changes
+
+- Broken database script again...
+- Updated dependencies
+  - @ulld/api@0.0.36
+  - @ulld/typescript-config@0.0.32
+  - @ulld/developer@0.0.36
+  - @ulld/state@0.0.36
+  - @ulld/tailwind@0.0.32
+
 ## 0.0.35
 
 ### Patch Changes

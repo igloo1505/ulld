@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.36
+
+### Patch Changes
+
+- Broken database script again...
+- Updated dependencies
+  - @ulld/developer@0.0.36
+
 ## 0.0.35
 
 ### Patch Changes

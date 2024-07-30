@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.36
+
+### Patch Changes
+
+- Broken database script again...
+- Updated dependencies
+  - @ulld/database@0.0.35
+  - @ulld/math@0.0.36
+  - @ulld/tailwind@0.0.32
+
 ## 0.0.35
 
 ### Patch Changes

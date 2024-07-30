@@ -1,5 +1,33 @@
 # @ulld/website
 
+## 0.0.36
+
+### Patch Changes
+
+- Broken database script again...
+- Updated dependencies
+  - @ulld/api@0.0.36
+  - @ulld/base-configs@0.0.32
+  - @ulld/calendar@0.0.36
+  - @ulld/component-map@0.0.36
+  - @ulld/configschema@0.0.36
+  - @ulld/database@0.0.35
+  - @ulld/diagram@0.0.36
+  - @ulld/editor@0.0.36
+  - @ulld/embeddable-components@0.0.36
+  - @ulld/full-form@0.0.36
+  - @ulld/hooks@0.0.36
+  - @ulld/icons@0.0.36
+  - @ulld/logger@0.0.32
+  - @ulld/parsers@0.0.36
+  - @ulld/render@0.0.36
+  - @ulld/state@0.0.36
+  - @ulld/tailwind@0.0.32
+  - @ulld/types@0.0.32
+  - @ulld/ui@0.0.36
+  - @ulld/utilities@0.0.36
+  - @ulld/whiteboard@0.0.36
+
 ## 0.0.35
 
 ### Patch Changes

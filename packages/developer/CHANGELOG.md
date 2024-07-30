@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.36
+
+### Patch Changes
+
+- Broken database script again...
+- Updated dependencies
+  - @ulld/eslint-config@0.0.32
+  - @ulld/typescript-config@0.0.32
+  - @ulld/configschema@0.0.36
+  - @ulld/database@0.0.35
+  - @ulld/logger@0.0.32
+
 ## 0.0.35
 
 ### Patch Changes

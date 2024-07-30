@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.36
+
+### Patch Changes
+
+- Broken database script again...
+- Updated dependencies
+  - @ulld/api@0.0.36
+  - @ulld/component-map@0.0.36
+  - @ulld/configschema@0.0.36
+  - @ulld/database@0.0.35
+  - @ulld/parsers@0.0.36
+
 ## 0.0.35
 
 ### Patch Changes

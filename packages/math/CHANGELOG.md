@@ -1,5 +1,19 @@
 # @ulld/math
 
+## 0.0.36
+
+### Patch Changes
+
+- Broken database script again...
+- Updated dependencies
+  - @ulld/eslint-config@0.0.32
+  - @ulld/typescript-config@0.0.32
+  - @ulld/configschema@0.0.36
+  - @ulld/hooks@0.0.36
+  - @ulld/icons@0.0.36
+  - @ulld/state@0.0.36
+  - @ulld/utilities@0.0.36
+
 ## 0.0.35
 
 ### Patch Changes

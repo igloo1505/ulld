@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.32
+
+### Patch Changes
+
+- Broken database script again...
+
 ## 0.0.31
 
 ### Patch Changes
