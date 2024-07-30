@@ -72,14 +72,14 @@
                 "tags": [],
                 "slot": "BibliographyPage",
                 "export": "bibliographyPage",
-                "componentId": "c90619e5-f129-471f-af94-9c468d2aaf3f"
+                "componentId": "174d66ac-7f55-4ac4-8797-101179a9ccfc"
             },
             {
                 "componentName": "BibEntryDetails",
                 "tags": [],
                 "slot": "BibEntryDetails",
                 "export": "bibEntryDetails",
-                "componentId": "c90619e5-f129-471f-af94-9c468d2aaf3f"
+                "componentId": "174d66ac-7f55-4ac4-8797-101179a9ccfc"
             }
         ],
         "parsers": {

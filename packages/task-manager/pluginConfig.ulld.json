@@ -9,35 +9,35 @@
             "tags": [],
             "slot": "TaskDetails",
             "export": "taskDetails",
-            "componentId": "b9928700-586d-4aa4-a762-df69e947ee72"
+            "componentId": "db11ee38-29b2-475c-ae66-c6c7a750ae59"
         },
         {
             "componentName": "AddTaskModal",
             "tags": [],
             "slot": "AddTask",
             "export": "addTask",
-            "componentId": "b9928700-586d-4aa4-a762-df69e947ee72"
+            "componentId": "db11ee38-29b2-475c-ae66-c6c7a750ae59"
         },
         {
             "componentName": "TaskListResultList",
             "tags": [],
             "slot": "TaskListSearchResultList",
             "export": "taskListSearchResults",
-            "componentId": "b9928700-586d-4aa4-a762-df69e947ee72"
+            "componentId": "db11ee38-29b2-475c-ae66-c6c7a750ae59"
         },
         {
             "componentName": "AddTaskList",
             "tags": [],
             "slot": "AddTaskList",
             "export": "addTaskList",
-            "componentId": "b9928700-586d-4aa4-a762-df69e947ee72"
+            "componentId": "db11ee38-29b2-475c-ae66-c6c7a750ae59"
         },
         {
             "componentName": "TaskListSearchResult",
             "tags": [],
             "slot": "TaskListSearchResult",
             "export": "taskListSearchResult",
-            "componentId": "b9928700-586d-4aa4-a762-df69e947ee72"
+            "componentId": "db11ee38-29b2-475c-ae66-c6c7a750ae59"
         }
     ],
     "parsers": {},

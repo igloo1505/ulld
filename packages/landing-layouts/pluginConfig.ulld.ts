@@ -11,9 +11,9 @@ const ulldPluginConfig: DeveloperConfigInput<"dashboard"> = {
     label: "Dashboards",
     components: [
         {
-            componentName: "LandingPageBetaRelease",
+            componentName: "ModularDashboard",
             slot: "LandingPage",
-            export: "./beta"
+            export: "./modularDashboard"
         },
     ],
 };

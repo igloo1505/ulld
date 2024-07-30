@@ -73,12 +73,13 @@ const Navbar = ({ navConfig: nav, noteTypes, logo: Logo }: NavbarProps) => {
         >
             <div className="pl-4 py-3 md:pl-6 mx-0 px-8 flex w-screen min-w-screen">
                 <div className="flex items-center justify-between">
-                    <Link href="/">
-                        <Logo
-                            width={300}
-                            height={300}
+                    <Link 
+                        href="/"
+                            /* width={300} */
+                            /* height={300} */
                             className={"h-[calc(var(--nav-height)*0.7)] w-auto"}
-                        />
+                    >
+                        {Logo}
                     </Link>
                 </div>
                 <div

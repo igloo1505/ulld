@@ -333,105 +333,105 @@
                 "tags": [],
                 "slot": "Pagination",
                 "export": "paginationGroup",
-                "componentId": "e2a30332-f64e-4639-bc96-c78042417208"
+                "componentId": "3f00378c-ba05-4d67-9189-77c7711038b5"
             },
             {
                 "componentName": "ConfirmationModal",
                 "tags": [],
                 "slot": "confirmationModal",
                 "export": "confirmationModal",
-                "componentId": "e2a30332-f64e-4639-bc96-c78042417208"
+                "componentId": "3f00378c-ba05-4d67-9189-77c7711038b5"
             },
             {
                 "componentName": "DictionaryPageItem",
                 "tags": [],
                 "slot": "DictionaryPageItem",
                 "export": "dictionaryItemEntry",
-                "componentId": "e2a30332-f64e-4639-bc96-c78042417208"
+                "componentId": "3f00378c-ba05-4d67-9189-77c7711038b5"
             },
             {
                 "componentName": "DictionaryLetterList",
                 "tags": [],
                 "slot": "DictionaryLetterList",
                 "export": "dictionaryLetterList",
-                "componentId": "e2a30332-f64e-4639-bc96-c78042417208"
+                "componentId": "3f00378c-ba05-4d67-9189-77c7711038b5"
             },
             {
                 "componentName": "Logo",
                 "tags": [],
                 "slot": "logo",
                 "export": "defaultLogo",
-                "componentId": "e2a30332-f64e-4639-bc96-c78042417208"
+                "componentId": "3f00378c-ba05-4d67-9189-77c7711038b5"
             },
             {
                 "componentName": "NoteSummaryCard",
                 "tags": [],
                 "slot": "NoteSummarySearchResult",
                 "export": "noteSummarySearchResult",
-                "componentId": "e2a30332-f64e-4639-bc96-c78042417208"
+                "componentId": "3f00378c-ba05-4d67-9189-77c7711038b5"
             },
             {
                 "componentName": "AutoSettingsPage",
                 "tags": [],
                 "slot": "AutoSettingsTable",
                 "export": "autoSettingsPage",
-                "componentId": "e2a30332-f64e-4639-bc96-c78042417208"
+                "componentId": "3f00378c-ba05-4d67-9189-77c7711038b5"
             },
             {
                 "componentName": "AutoSettingFormModal",
                 "tags": [],
                 "slot": "AutoSettingFormModal",
                 "export": "autoSettingFormModal",
-                "componentId": "e2a30332-f64e-4639-bc96-c78042417208"
+                "componentId": "3f00378c-ba05-4d67-9189-77c7711038b5"
             },
             {
                 "componentName": "NotesSearchResultsList",
                 "tags": [],
                 "slot": "NotesSearchResultsList",
                 "export": "notesSearchResultsList",
-                "componentId": "e2a30332-f64e-4639-bc96-c78042417208"
+                "componentId": "3f00378c-ba05-4d67-9189-77c7711038b5"
             },
             {
                 "componentName": "LoadingIndicator",
                 "tags": [],
                 "slot": "loadingIndicator",
                 "export": "loadingIndicator",
-                "componentId": "e2a30332-f64e-4639-bc96-c78042417208"
+                "componentId": "3f00378c-ba05-4d67-9189-77c7711038b5"
             },
             {
                 "componentName": "ComponentDocsListPage",
                 "tags": [],
                 "slot": "ComponentDocsListPage",
                 "export": "componentDocsListPage",
-                "componentId": "e2a30332-f64e-4639-bc96-c78042417208"
+                "componentId": "3f00378c-ba05-4d67-9189-77c7711038b5"
             },
             {
                 "componentName": "NoteTypeSecondaryFilter",
                 "tags": [],
                 "slot": "NoteTypeSecondaryFilter",
                 "export": "noteTypeSecondaryFilter",
-                "componentId": "e2a30332-f64e-4639-bc96-c78042417208"
+                "componentId": "3f00378c-ba05-4d67-9189-77c7711038b5"
             },
             {
                 "componentName": "ComponentDocsPageNoteWrapper",
                 "tags": [],
                 "slot": "ComponentDocumentationPageWrapper",
                 "export": "componentDocsPageWrapper",
-                "componentId": "e2a30332-f64e-4639-bc96-c78042417208"
+                "componentId": "3f00378c-ba05-4d67-9189-77c7711038b5"
             },
             {
                 "componentName": "NoteTypeSearchResultList",
                 "tags": [],
                 "slot": "NoteTypeSearchResultList",
                 "export": "noteTypeResultList",
-                "componentId": "e2a30332-f64e-4639-bc96-c78042417208"
+                "componentId": "3f00378c-ba05-4d67-9189-77c7711038b5"
             },
             {
                 "componentName": "NotePageWrapper",
                 "tags": [],
                 "slot": "MdxNoteContainer",
                 "export": "mdxPageContainer",
-                "componentId": "e2a30332-f64e-4639-bc96-c78042417208"
+                "componentId": "3f00378c-ba05-4d67-9189-77c7711038b5"
             }
         ],
         "parsers": {},

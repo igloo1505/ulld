@@ -15,6 +15,7 @@
     ],
     "exports": {
         "./beta": "./src/components/beta/main.tsx",
+        "./modularDashboard": "./src/components/modularDashboard/main.tsx",
         "./types": "./src/types.ts"
     },
     "peerDependencies": {
@@ -59,11 +60,11 @@
         "slot": "dashboard",
         "components": [
             {
-                "componentName": "LandingPageBetaRelease",
+                "componentName": "ModularDashboard",
                 "tags": [],
                 "slot": "LandingPage",
-                "export": "beta",
-                "componentId": "e27e6741-13c3-4f22-8daf-7f8a743ee74b"
+                "export": "modularDashboard",
+                "componentId": "c3b73aed-8f8c-4fd9-9abb-3f8c53c3d818"
             }
         ],
         "parsers": {},
