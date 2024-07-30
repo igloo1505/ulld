@@ -31,7 +31,8 @@ const ComponentDocsSummaryItem = ({ item }: ComponentDocsSummaryItemProps) => {
                 ))}
             </div>
             <CardFooter>
-                <Link href={item.slugs.full || item.slugs.short!}>View</Link>
+                <Link
+                    href={item.urls.full || item.urls.short!}>View</Link>
             </CardFooter>
         </Card>
     );

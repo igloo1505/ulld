@@ -244,7 +244,9 @@ const shikiLanguageList = [
     "vy",
     "文言",
     "wl",
-    "yml",
+    "yml"
 ] as const;
 
-export default shikiLanguageList;
+export type ShikiLanguage = typeof shikiLanguageList[number]
+
+export default shikiLanguageList

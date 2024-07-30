@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import clsx from "clsx";
 import { RootState } from "@ulld/state/store";
-import { confirmationFunctions } from "./confirmationModalConfig";
+import {useConfirmationConfig} from "@ulld/hooks/useConfirmation"
 import {
     Dialog,
     DialogContent,
@@ -14,7 +14,7 @@ import {
 } from "@ulld/tailwind/dialog";
 import { Button } from "@ulld/tailwind/button";
 import { useToast } from "@ulld/tailwind/use-toast";
-import { ConfirmationModalConfig } from "@ulld/state/actions/confirmation/confirmationModalConfig";
+import { ConfirmationModalConfig } from "@ulld/utilities/types"
 import { showConfirmationModal } from "@ulld/state/slices/ui";
 import { useUlldStore } from "@ulld/hooks/useUlldStore";
 import { ConfirmationModalProps } from "../../../types/general";
@@ -39,8 +39,9 @@ declare global {
     }
 }
 
-const ConfirmationModal = connector(({ config }: ConfirmationModalProps) => {
+const ConfirmationModal = connector((props: ConfirmationModalProps) => {
     const { toast } = useToast();
+    const config = useConfirmationConfig()
     const store = useUlldStore();
     const closeModal = () => store?.dispatch(showConfirmationModal(false));
 
@@ -67,9 +68,36 @@ const ConfirmationModal = connector(({ config }: ConfirmationModalProps) => {
                         <DialogDescription>{config.body}</DialogDescription>
                     </DialogHeader>
                     <DialogFooter>
+                        {config.showDenyButton && (
                         <Button
                             onClick={() => {
-                                confirmationFunctions[config.onConfirm](config);
+                                if (config.toast) {
+                                    toast(config.toast);
+                                }
+                                if (config.domId) {
+                                    document.getElementById(config.domId)?.remove();
+                                }
+                                if (config.onConfirmCallback) {
+                                    config.onConfirmCallback(config);
+                                }
+                                window.dispatchEvent(
+                                    new CustomEvent("confirmation-denied", {
+                                        detail: { confirmationId: config.primaryId },
+                                    }),
+                                );
+                                closeModal();
+                            }}
+                            variant={config.buttonVariant || undefined}
+                            className={clsx(
+                                config.buttonVariant === "destructive" &&
+                                "focus-visible:ring-destructive",
+                            )}
+                        >
+                            Decline
+                        </Button>
+                        )}
+                        <Button
+                            onClick={() => {
                                 if (config.toast) {
                                     toast(config.toast);
                                 }

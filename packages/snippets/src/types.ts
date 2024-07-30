@@ -28,3 +28,7 @@ export interface SnippetsPageProps {
     filter: ReactNode
     list: ReactNode
 }
+
+export interface SnippetListInternalProps {
+    snippets: ValidatedSnippet[]
+}

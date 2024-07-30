@@ -1,6 +1,5 @@
 import React from 'react'
-
-
+import ModularDashboard from 'src/components/modularDashboard/main';
 
 interface SanboxPageProps {
 
@@ -8,7 +7,9 @@ interface SanboxPageProps {
 
 const SanboxPage = (props: SanboxPageProps) => {
 return (
-    <div></div>
+        <div>
+            <ModularDashboard />
+        </div>
 )
 }
 

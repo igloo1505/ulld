@@ -1,7 +1,15 @@
+import { HTMLProps } from "react"
+
 type XYPlotType = "line" | "bar"
 
 export type XYPlotDataItem = {
     x: number[]
     y: number[]
     type: XYPlotType
+}
+
+
+export interface BaseCardProps {
+    cardProps?: Omit<HTMLProps<HTMLDivElement>, "className">
+    className?: string
 }

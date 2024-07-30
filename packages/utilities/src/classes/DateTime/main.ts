@@ -21,8 +21,8 @@ export class DateTime {
     withoutSuffix: boolean = false;
     timezone: string;
     flat: boolean = false;
-    constructor(t: Date | string, public config: AppConfigSchemaOutput) {
-        this.timezone = config.dateHandling.defaultTimeZone || this.getTimezone();
+    constructor(t: Date | string, public config?: AppConfigSchemaOutput) {
+        this.timezone = config?.dateHandling.defaultTimeZone || this.getTimezone();
         if (this.timezone) {
             dayjs.tz.setDefault(this.timezone)
         }

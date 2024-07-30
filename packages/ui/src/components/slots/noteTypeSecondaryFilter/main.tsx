@@ -1,13 +1,29 @@
-import React from 'react'
-import { NoteTypeSecondaryFilterProps } from '../../../types/general';
-import clsx from 'clsx'
-import TaggableList from './taggableList';
-import { ArrayUtilities } from '@ulld/utilities/arrayUtilities';
+import React from "react";
+import { NoteTypeSecondaryFilterProps } from "../../../types/general";
+import clsx from "clsx";
+import TaggableList from "./taggableList";
+import { ArrayUtilities } from "@ulld/utilities/arrayUtilities";
 
-const NoteTypeSecondaryFilter = ({data, noteType, searchParams: sp}: NoteTypeSecondaryFilterProps) => {
-return (
-        <div className={clsx("w-full h-fit", Boolean(data.topics.length > 0 || data.subjects.length > 0 || data.tags.length > 0) && "mb-3")}>
-            <TaggableList 
+const NoteTypeSecondaryFilter = ({
+    data,
+    noteType,
+    searchParams: sp,
+}: NoteTypeSecondaryFilterProps) => {
+    if (!noteType) {
+        return null;
+    }
+    return (
+        <div
+            className={clsx(
+                "w-full h-fit",
+                Boolean(
+                    data.topics.length > 0 ||
+                    data.subjects.length > 0 ||
+                    data.tags.length > 0,
+                ) && "mb-3",
+            )}
+        >
+            <TaggableList
                 type="subject"
                 label={noteType.subjectLabel}
                 items={data.subjects}
@@ -15,7 +31,7 @@ return (
                 searchParams={sp}
                 noteType={noteType}
             />
-            <TaggableList 
+            <TaggableList
                 type="topic"
                 label={noteType.topicLabel}
                 items={data.topics}
@@ -23,7 +39,7 @@ return (
                 searchParams={sp}
                 noteType={noteType}
             />
-            <TaggableList 
+            <TaggableList
                 type="tag"
                 label={"Tags"}
                 items={data.tags}
@@ -32,11 +48,9 @@ return (
                 noteType={noteType}
             />
         </div>
-)
-}
+    );
+};
 
-
-NoteTypeSecondaryFilter.displayName = "NoteTypeSecondaryFilter"
-
+NoteTypeSecondaryFilter.displayName = "NoteTypeSecondaryFilter";
 
 export default NoteTypeSecondaryFilter;

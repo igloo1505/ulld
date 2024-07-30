@@ -1,10 +1,9 @@
-import { Technologies } from "@ulld/database/internalDatabaseTypes";
 import { z } from "zod";
-
+import shikiLanguages from "@ulld/utilities/shikiLanguages";
 
 export const snippetFilterSchema = z
     .object({
-        language: z.nativeEnum(Technologies).optional(),
+        language: z.enum(shikiLanguages).optional(),
         query: z.string().optional()
     })
 

@@ -9,7 +9,6 @@ import { StarFilledIcon } from "@radix-ui/react-icons";
 import { client } from "@ulld/api/client";
 import { ToDoListStatus } from "@ulld/database/internalDatabaseTypes";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import Link from "next/link";
 import { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "@ulld/tailwind/checkbox";
 import { DataTableColumnHeader } from "./columnHeader";
@@ -17,8 +16,11 @@ import { ToDoListDataTablePriorityCell } from "./priorityCell";
 import { DataTableRowActions } from "./rowActions";
 import { EditableDataTableDateCell } from "./editDateCell";
 import { ToDoListDataTableStatusCell } from "./statusCell";
+import { MdxContentCLIENT } from "@ulld/render/mdx";
+import { ToDoListDataTableListNameCell } from "./nameCell";
 import { toast } from "@ulld/tailwind/use-toast";
 import dayjs from "dayjs";
+import { ArrayUtilities } from "@ulld/utilities/arrayUtilities";
 
 export const getTaskListColumnDef = (
     items: TaskManagerTableProps["items"],
@@ -82,9 +84,11 @@ export const getTaskListColumnDef = (
             maxSize: 250,
             cell: ({ row }) => (
                 <ToDoListDataTableListNameCell
-                    optionClasses="whitespace-nowrap"
+                    classes={{option: "whitespace-nowrap"}}
                     row={row}
                     lists={lists}
+                    name="listNames"
+                    label="List"
                     onChange={async (newListId) => {
                         let _id = row.getValue(tableIds.id) as string | number;
                         const tskId = typeof _id === "number" ? _id : parseInt(_id);
@@ -234,7 +238,7 @@ export const getTaskListColumnDef = (
                             if (res) {
                                 setItems(
                                     items.map((i) =>
-                                        i.id === row.getValue(ids.id)
+                                        i.id === row.getValue(tableIds.id)
                                             ? {
                                                 ...i,
                                                 status: status.value,
@@ -312,7 +316,7 @@ export const getTaskListColumnDef = (
                             listId: newList.id,
                         });
                         if (res) {
-                            replaceSelfInArray<(typeof items)[number], number>(
+                            ArrayUtilities.replaceSelfInArray<(typeof items)[number], number>(
                                 items,
                                 favoriteId,
                                 (a) => a.id,
@@ -335,7 +339,7 @@ export const getTaskListColumnDef = (
                             shouldBookmark,
                         });
                         if (res) {
-                            replaceSelfInArray<(typeof items)[number], number>(
+                            ArrayUtilities.replaceSelfInArray<(typeof items)[number], number>(
                                 items,
                                 favoriteId,
                                 (a) => a.id,

@@ -53,25 +53,6 @@ model Tag {
     todoList     ToDoList[]
 }
 
-enum Technologies {
-    python
-    javascript
-    lua
-    typescript
-    css
-    scss
-    react
-    prisma
-    tailwind
-    node
-    bash
-    zsh
-    bibtex
-    latex
-    json
-    applescript
-    swift
-}
 
 model Quote {
     body      String   @id @unique
@@ -188,7 +169,7 @@ model Snippet {
     content     String
     description String
     keywords    String[]
-    language    Technologies
+    language    String
 }
 
 model RelatedValues {
@@ -355,6 +336,7 @@ model Ipynb {
     firstSync          DateTime            @default(now())
     lastSync           DateTime            @updatedAt
     readingList        ReadingList[]
+    lastAccess         DateTime?           @default(now())
 }
 
 model ToDoList {

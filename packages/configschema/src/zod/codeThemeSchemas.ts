@@ -1,4 +1,5 @@
-import { z } from "zod";
+import {z} from 'zod';
+
 
 export const availableShikiThemes = [
     "andromeeda",
@@ -40,8 +41,10 @@ export const availableShikiThemes = [
     "vesper",
     "vitesse-black",
     "vitesse-dark",
-    "vitesse-light",
+    "vitesse-light"
 ] as const;
+
+export type ShikiTheme = typeof availableShikiThemes[number]
 
 export const shikiThemeValidator = z.union([
     z.literal("andromeeda"),
@@ -83,5 +86,5 @@ export const shikiThemeValidator = z.union([
     z.literal("vesper"),
     z.literal("vitesse-black"),
     z.literal("vitesse-dark"),
-    z.literal("vitesse-light"),
+    z.literal("vitesse-light")
 ]);

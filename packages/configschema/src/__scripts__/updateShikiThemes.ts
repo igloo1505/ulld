@@ -24,19 +24,22 @@ const s = `import {z} from 'zod';
 
 
 export const availableShikiThemes = [
-${quotedThemes.join(",\n")}
+${quotedThemes.map((x) => `    ${x}`).join(",\n")}
 ] as const;
 
+export type ShikiTheme = typeof availableShikiThemes[number]
 
 export const shikiThemeValidator = z.union([
-${quotedThemes.map((t) => `z.literal(${t})`).join(",\n")}
+${quotedThemes.map((t) => `    z.literal(${t})`).join(",\n")}
 ]);
 `
 
 
 const shikiLanguageFileContent = `const shikiLanguageList = [
-${Object.keys(bundledLanguages).map((p) => `"${p}"`).join(",\n")}
+${Object.keys(bundledLanguages).map((p) => `    "${p}"`).join(",\n")}
 ] as const;
+
+export type ShikiLanguage = typeof shikiLanguageList[number]
 
 export default shikiLanguageList`
 

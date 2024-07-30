@@ -4,7 +4,7 @@ import {
     ContextMenu,
     ContextMenuContent,
     ContextMenuItem,
-    ContextMenuPortal,
+    /* ContextMenuPortal, */
     ContextMenuTrigger,
 } from "@ulld/tailwind/context-menu";
 import { client } from "@ulld/api/client";
@@ -31,7 +31,7 @@ const getContextItems = (
     const contextItems: ContextMenuItem<number | undefined>[] = [
         {
             label: "Delete",
-            id: item.id,
+            id: item.id || undefined,
             onClick: async () => {
                 if (item.id) {
                     client.mdx.deleteNoteById.mutate(item.id);
@@ -41,7 +41,7 @@ const getContextItems = (
 
         {
             label: item.bookmarked ? "Remove Bookmark" : "Bookmark",
-            id: item.id,
+            id: item.id || undefined,
             onClick: async () => {
                 if (item.id) {
                     client.mdx.toggleBookmarkedById.mutate(item.id);

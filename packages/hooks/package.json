@@ -59,7 +59,8 @@
         "./useAppSettings": "./src/useAppSettings.ts",
         "./useBibEntryDetails": "./src/useBibEntryDetailsDisplay.ts",
         "./useExistingTaggables": "./src/useExistingTaggables.ts",
-        "./useBuildStaticData": "./src/useBuildStaticData.ts"
+        "./useBuildStaticData": "./src/useBuildStaticData.ts",
+        "./useConfirmation": "./src/useConfirmation.ts"
     },
     "scripts": {
         "dev": "echo 'Add dev script here'",

@@ -29,6 +29,8 @@ export interface ConfirmationModalConfig {
     onConfirmCallback?: (c: ConfirmationModalConfig) => void
     buttonVariant?: "outline" | "destructive" | "secondary" | "ghost" | "link"
     onConfirm: string
+    /** Without this, the confirmation-denied event will never fire and the modal will close quietly. */
+    showDenyButton?: boolean
     toast?: {
         title: string
         description?: string

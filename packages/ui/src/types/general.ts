@@ -29,7 +29,6 @@ export interface UISearchParams {
 }
 
 export interface ConfirmationModalProps {
-    config: ConfirmationModalConfig | false;
 }
 
 export interface ChildrenOnly {
@@ -106,7 +105,7 @@ export interface NotePageWrapperProps extends NoteTypePageProps {
 }
 
 export interface NoteTypeSecondaryFilterProps extends NoteTypePageProps {
-    noteType?: AppConfigSchemaOutput["noteTypes"][number];
+    noteType: AppConfigSchemaOutput["noteTypes"][number];
     data: Awaited<
         ReturnType<InstanceType<typeof NoteFilter>["getQuerySecondaryData"]>
     >;

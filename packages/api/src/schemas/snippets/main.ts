@@ -1,6 +1,5 @@
-import { z } from 'zod'
-import { Prisma, Technologies } from "@ulld/database/internalDatabaseTypes"
-
+import { z } from "zod";
+import shikiLanguages from "@ulld/utilities/shikiLanguages";
 
 export const SnippetCreatekeywordsInputObjectSchema = z
     .object({
@@ -8,9 +7,7 @@ export const SnippetCreatekeywordsInputObjectSchema = z
     })
     .strict();
 
-
-export const TechnologiesSchema = z.nativeEnum(Technologies);
-
+export const TechnologiesSchema = z.enum(shikiLanguages);
 
 export const SnippetCreateInputObjectSchema = z
     .object({
@@ -23,6 +20,6 @@ export const SnippetCreateInputObjectSchema = z
             ])
             .optional(),
         language: z.lazy(() => TechnologiesSchema),
-        id: z.number().int().optional()
+        id: z.number().int().optional(),
     })
     .strict();

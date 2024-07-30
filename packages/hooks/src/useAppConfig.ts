@@ -1,5 +1,5 @@
 "use client"
-import type { AppConfigSchemaOutput } from "@ulld/configschema/zod/main"
+import type { AppConfigSchemaOutput } from "@ulld/configschema/types"
 import { useLocalStorage } from "./useLocalStorage"
 
 export const useAppConfig = (initialConfig?: AppConfigSchemaOutput) => {

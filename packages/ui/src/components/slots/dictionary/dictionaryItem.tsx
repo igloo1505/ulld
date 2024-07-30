@@ -5,7 +5,7 @@ import { useDebounceMdxParse } from "@ulld/hooks/useDebounceMdxParse";
 interface DictionaryItemEntryProps extends DictionaryItemProps { }
 
 const DictionaryItemEntry = ({ content, label }: DictionaryItemEntryProps) => {
-    const { Component } = useDebounceMdxParse(content, 250, {
+    const { Component } = useDebounceMdxParse(content || "", 250, {
         parseDefinitions: false
     });
     return (

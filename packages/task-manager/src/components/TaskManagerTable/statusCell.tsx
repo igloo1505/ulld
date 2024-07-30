@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Button } from '@ulld/tailwind/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@ulld/tailwind/popover';
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@ulld/tailwind/command';
-import { statuses } from './staticData';
+import { taskStatuses } from './staticData';
 import { ToDoListStatus } from "@ulld/database/internalDatabaseTypes";
 
 
@@ -36,7 +36,7 @@ export const ToDoListDataTableStatusCell = (props: ToDoListDataTableStatusCellPr
                     <CommandList>
                         <CommandEmpty>No results found.</CommandEmpty>
                         <CommandGroup>
-                            {statuses.map((o) => {
+                            {taskStatuses.map((o) => {
                                 return <CommandItem aria-current={props.value === o.value}
                                     value={o.value}
                                     onSelect={(val) => {

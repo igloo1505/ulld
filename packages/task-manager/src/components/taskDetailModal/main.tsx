@@ -17,6 +17,7 @@ import { Button } from "@ulld/tailwind/button";
 import { cn } from "@ulld/utilities/cn";
 import { DateTime } from "@ulld/utilities/dateTime";
 import { RouteModalBackButton } from "@ulld/ui/routeModalBackground";
+import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 
 interface CardDescItemProps {
     itemKey: string;

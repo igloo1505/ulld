@@ -7,7 +7,7 @@ import {Button} from "@ulld/tailwind/button"
 import {DeleteModalTriggerButton} from "@ulld/ui/deleteModalTriggerButton"
 import { copyStringToClipboard } from "@ulld/utilities/actions/copyStringToClipboard";
 import { ValidatedSnippet } from '../../schemas'
-
+import { ShikiLanguage } from "@ulld/utilities/shikiLanguages"
 
 interface SnippetListItemPropsInternal {
     item: ValidatedSnippet
@@ -47,7 +47,7 @@ const SnippetListItem = ({ item }: SnippetListItemPropsInternal) => {
                 return p.toString()
             }
             )()}`}><Badge >{k}</Badge></Link>)}</div>
-            <CodeHighlightContainer className={"max-h-[max(70vh,600px)] [&_code]:!text-[12px]"} language={item.language}>
+            <CodeHighlightContainer className={"max-h-[max(70vh,600px)] [&_code]:!text-[12px]"} language={item.language as ShikiLanguage}>
                 {item.content}
             </CodeHighlightContainer>
         <div className={"flex flex-row justify-end items-center gap-4"}>

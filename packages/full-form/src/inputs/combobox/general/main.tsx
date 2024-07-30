@@ -19,7 +19,6 @@ import {
 import {
     Popover,
     PopoverTrigger,
-    PopoverContent,
     PopoverContentNoPortal,
 } from "@ulld/tailwind/popover";
 import cn from "@ulld/utilities/cn";
@@ -31,7 +30,7 @@ export interface Option<J extends string | number> {
     value: J;
 }
 
-interface ComboboxInputProps<T extends FieldValues, J extends string | number> {
+export interface ComboboxInputProps<T extends FieldValues, J extends string | number> {
     options: Option<J>[];
     name: Path<T>;
     label: ReactNode;
@@ -44,6 +43,7 @@ interface ComboboxInputProps<T extends FieldValues, J extends string | number> {
         button?: string;
         popoverContent?: string;
         commandList?: string
+        option?: string
     };
 }
 
@@ -102,7 +102,9 @@ export const ComboboxInput = <
                                                 <CommandItem
                                                     value={item.label}
                                                     key={item.value}
+                                                    className={classes.option}
                                                     onSelect={() => {
+
                                                         form.setValue(
                                                             name,
                                                             item.value as PathValue<T, Path<T>>,

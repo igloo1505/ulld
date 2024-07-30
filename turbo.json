@@ -22,7 +22,11 @@
       "cache": false,
       "env": [".env.local"]
     },
-    "generateDatabase": {
+    "generateTargetDatabase": {
+      "cache": false,
+      "env": [".env.local"]
+    },
+    "migrateTargetDatabase": {
       "cache": false,
       "env": [".env.local"]
     },
