@@ -1,5 +1,21 @@
 # @ulld/api
 
+## 0.0.34
+
+### Patch Changes
+
+- Fix some more TS errors that result as part of the build script.
+- Updated dependencies
+  - @ulld/base-configs@0.0.30
+  - @ulld/configschema@0.0.34
+  - @ulld/database@0.0.33
+  - @ulld/developer@0.0.34
+  - @ulld/logger@0.0.30
+  - @ulld/parsers@0.0.34
+  - @ulld/state@0.0.34
+  - @ulld/tailwind@0.0.30
+  - @ulld/utilities@0.0.34
+
 ## 0.0.33
 
 ### Patch Changes

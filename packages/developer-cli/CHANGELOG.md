@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.34
+
+### Patch Changes
+
+- Fix some more TS errors that result as part of the build script.
+- Updated dependencies
+  - @ulld/developer@0.0.34
+  - @ulld/developer-schemas@0.0.30
+
 ## 0.0.33
 
 ### Patch Changes

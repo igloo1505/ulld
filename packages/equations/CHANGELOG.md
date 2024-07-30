@@ -1,5 +1,27 @@
 # @ulld/equations
 
+## 0.0.34
+
+### Patch Changes
+
+- Fix some more TS errors that result as part of the build script.
+- Updated dependencies
+  - @ulld/api@0.0.34
+  - @ulld/configschema@0.0.34
+  - @ulld/database@0.0.33
+  - @ulld/developer@0.0.34
+  - @ulld/developer-schemas@0.0.30
+  - @ulld/editor@0.0.34
+  - @ulld/embeddable-components@0.0.34
+  - @ulld/full-form@0.0.34
+  - @ulld/hooks@0.0.34
+  - @ulld/parsers@0.0.34
+  - @ulld/render@0.0.34
+  - @ulld/state@0.0.34
+  - @ulld/tailwind@0.0.30
+  - @ulld/ui@0.0.34
+  - @ulld/utilities@0.0.34
+
 ## 0.0.33
 
 ### Patch Changes

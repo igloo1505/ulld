@@ -1,5 +1,11 @@
 # @ulld/tailwind
 
+## 0.0.30
+
+### Patch Changes
+
+- Fix some more TS errors that result as part of the build script.
+
 ## 0.0.29
 
 ### Patch Changes
