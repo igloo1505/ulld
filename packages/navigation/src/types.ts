@@ -1,13 +1,13 @@
 import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 import { NavigationLink } from "@ulld/configschema/buildTypes";
-import { FC, HTMLProps } from "react";
+import { FC, HTMLProps, ReactNode } from "react";
 import { ValidIconName } from "@ulld/icons";
 export type { MdxNoteTocProps } from "@ulld/ui/types";
 
 export interface NavbarComponentProps {
     noteTypes: AppConfigSchemaOutput["noteTypes"];
     navConfig: AppConfigSchemaOutput["navigation"];
-    logo: FC<HTMLProps<HTMLOrSVGElement>>;
+    logo: ReactNode;
 }
 
 export interface FullScreenNavProps

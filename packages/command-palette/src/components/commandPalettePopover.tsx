@@ -17,7 +17,7 @@ const shouldIgnoreKeymap = (e: KeyboardEvent<unknown>): boolean => {
 }
 
 
-const CommandPalettePopover = ({ }: CommandPalettePopoverProps) => {
+const CommandPalettePopover = ({appConfig }: CommandPalettePopoverProps) => {
     const [loading, setLoading] = useState(false)
     const [open, setOpen] = useState(false)
     const [search, setSearch] = useState('')
@@ -92,6 +92,7 @@ const CommandPalettePopover = ({ }: CommandPalettePopoverProps) => {
                 search={search}
                 setSearch={setSearch}
                 page={page}
+                appConfig={appConfig}
             />
         </Command.Dialog>
     )

@@ -11,7 +11,6 @@ export const whiteboardRouter = router({
       }),
     )
     .mutation(async ({ input: { id, ..._input } }) => {
-      console.log(`In Router: `, _input)
       const data = new Buffer(_input.data, "utf-8");
       return await prisma.whiteboard.upsert({
         where: {

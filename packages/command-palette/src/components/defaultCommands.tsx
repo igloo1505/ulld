@@ -4,9 +4,8 @@ import CommandPaletteItem from './commandItem'
 import { Command } from "cmdk"
 import { useRouter } from 'next/navigation'
 import { pages, textSearchPages } from './commandPaletteUtilities'
-import { defaultCommandList } from './commandLists/default'
 import { getSearchAllUrl } from '@ulld/state/searchParamSchemas/utilities/formatSearchAllParams'
-
+import { getDefaultCommandList } from './commandLists/default'
 
 
 interface DefaultCommandPaletteItemsProps {
@@ -14,12 +13,13 @@ interface DefaultCommandPaletteItemsProps {
     activePage?: pages
     close: () => void
     search: string
+    defaultCommands: ReturnType<typeof getDefaultCommandList>
 }
 
 
 
 
-const DefaultCommandPaletteItems = ({ setPage, close, activePage, search }: DefaultCommandPaletteItemsProps) => {
+const DefaultCommandPaletteItems = ({ setPage, close, activePage, search, defaultCommands }: DefaultCommandPaletteItemsProps) => {
     const router = useRouter()
 
     const textSearchFuncMap: { [k in textSearchPages]: (v: string) => void } = {
@@ -37,7 +37,7 @@ const DefaultCommandPaletteItems = ({ setPage, close, activePage, search }: Defa
 
     return (
         <Command.Group heading="General">
-            {defaultCommandList.map((d, i) => {
+            {defaultCommands.map((d, i) => {
                 return <CommandPaletteItem
                     key={`cmd-${i}`}
                     activePage={activePage}

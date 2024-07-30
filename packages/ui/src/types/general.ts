@@ -8,8 +8,9 @@ import {
 } from "@ulld/utilities/types";
 import { ComponentType, FC, ReactNode } from "react";
 import { NoteFilter } from "@ulld/api/classes/search/noteFilter";
-import { AppConfigSchemaOutput, BuildStaticDataOutput } from "@ulld/types";
 import { ComponentDocsQueryParams } from "@ulld/utilities/types";
+import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
+import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 
 
 export interface MdxNoteTocProps {
@@ -29,6 +30,7 @@ export interface UISearchParams {
 }
 
 export interface ConfirmationModalProps {
+    appConfig: AppConfigSchemaOutput
 }
 
 export interface ChildrenOnly {

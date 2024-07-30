@@ -4,14 +4,11 @@ import "#/styles/globals.scss"
 import "#/styles/mdx.scss"
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
-/* import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig' */
-/* import {AppConfigSchemaOutput } from "@ulld/configschema/zod/main" */
 import React from 'react'
 /* import { RequireJsLoader } from "@ulld/utilities/loaders" */
 import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI"
 import { Toaster } from "@ulld/tailwind/toaster"
 import { fontSans } from "@ulld/tailwind/defaultFont"
-import config from "#/appConfig.ulld.json"
 /* import "shiki/themes/dracula.mjs" */
 
 

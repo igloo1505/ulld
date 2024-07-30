@@ -1,9 +1,9 @@
 import { UniqueTaggables } from "@ulld/utilities/types";
 import { ReactNode } from "react";
 import { ToDoSearchParams, TodoTaskOutput } from "@ulld/parsers/plugins/todos";
-import { serverClient } from "@ulld/api/serverClient";
+import type { serverClient } from "@ulld/api/serverClient";
 import { Table } from "@tanstack/react-table";
-import { Path } from "react-hook-form";
+import { Path } from "@ulld/full-form/form";
 
 export interface TaskListIds {
     label: string;

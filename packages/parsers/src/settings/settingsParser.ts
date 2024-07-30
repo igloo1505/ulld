@@ -17,7 +17,7 @@ export const settingSchema = z.object({
     cleanOnSync: z.boolean().default(false),
     firstSync: dateToString,
     lastSync: dateToString,
-})
+}).default({})
 
 export type ParsedSettings = z.output<typeof settingSchema>
 export type AppSettings = z.output<typeof settingSchema>
