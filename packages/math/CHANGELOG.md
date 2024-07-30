@@ -1,5 +1,19 @@
 # @ulld/math
 
+## 0.0.35
+
+### Patch Changes
+
+- Fix broken database generation script.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.31
+  - @ulld/typescript-config@0.0.31
+  - @ulld/configschema@0.0.35
+  - @ulld/hooks@0.0.35
+  - @ulld/icons@0.0.35
+  - @ulld/state@0.0.35
+  - @ulld/utilities@0.0.35
+
 ## 0.0.34
 
 ### Patch Changes

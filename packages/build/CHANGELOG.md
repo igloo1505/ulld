@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.35
+
+### Patch Changes
+
+- Fix broken database generation script.
+- Updated dependencies
+  - @ulld/base-configs@0.0.31
+  - @ulld/configschema@0.0.35
+  - @ulld/developer-schemas@0.0.31
+  - @ulld/utilities@0.0.35
+
 ## 0.0.34
 
 ### Patch Changes

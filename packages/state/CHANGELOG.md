@@ -1,5 +1,20 @@
 # @ulld/state
 
+## 0.0.35
+
+### Patch Changes
+
+- Fix broken database generation script.
+- Updated dependencies
+  - @ulld/base-configs@0.0.31
+  - @ulld/configschema@0.0.35
+  - @ulld/database@0.0.34
+  - @ulld/developer@0.0.35
+  - @ulld/hooks@0.0.35
+  - @ulld/parsers@0.0.35
+  - @ulld/tailwind@0.0.31
+  - @ulld/utilities@0.0.35
+
 ## 0.0.34
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.34
+
+### Patch Changes
+
+- Fix broken database generation script.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.31
+
 ## 0.0.33
 
 ### Patch Changes

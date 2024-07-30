@@ -1,5 +1,11 @@
 # @repo/jest-presets
 
+## 0.0.31
+
+### Patch Changes
+
+- Fix broken database generation script.
+
 ## 0.0.30
 
 ### Patch Changes

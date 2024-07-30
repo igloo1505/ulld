@@ -1,5 +1,27 @@
 # @ulld/equations
 
+## 0.0.35
+
+### Patch Changes
+
+- Fix broken database generation script.
+- Updated dependencies
+  - @ulld/api@0.0.35
+  - @ulld/configschema@0.0.35
+  - @ulld/database@0.0.34
+  - @ulld/developer@0.0.35
+  - @ulld/developer-schemas@0.0.31
+  - @ulld/editor@0.0.35
+  - @ulld/embeddable-components@0.0.35
+  - @ulld/full-form@0.0.35
+  - @ulld/hooks@0.0.35
+  - @ulld/parsers@0.0.35
+  - @ulld/render@0.0.35
+  - @ulld/state@0.0.35
+  - @ulld/tailwind@0.0.31
+  - @ulld/ui@0.0.35
+  - @ulld/utilities@0.0.35
+
 ## 0.0.34
 
 ### Patch Changes

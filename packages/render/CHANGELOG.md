@@ -1,5 +1,19 @@
 # @ulld/render
 
+## 0.0.35
+
+### Patch Changes
+
+- Fix broken database generation script.
+- Updated dependencies
+  - @ulld/api@0.0.35
+  - @ulld/component-map@0.0.35
+  - @ulld/typescript-config@0.0.31
+  - @ulld/configschema@0.0.35
+  - @ulld/hooks@0.0.35
+  - @ulld/jest-presets@0.0.31
+  - @ulld/utilities@0.0.35
+
 ## 0.0.34
 
 ### Patch Changes

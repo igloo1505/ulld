@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.35
+
+### Patch Changes
+
+- Fix broken database generation script.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.35
+  - @ulld/calendar@0.0.35
+  - @ulld/default-image-map@0.0.35
+  - @ulld/diagram@0.0.35
+  - @ulld/editor@0.0.35
+  - @ulld/embeddable-components@0.0.35
+  - @ulld/equations@0.0.35
+  - @ulld/full-form@0.0.35
+  - @ulld/journal@0.0.35
+  - @ulld/navigation@0.0.35
+  - @ulld/notebook@0.0.35
+  - @ulld/pdf@0.0.35
+  - @ulld/plot@0.0.35
+  - @ulld/snippets@0.0.35
+  - @ulld/tailwind@0.0.31
+  - @ulld/task-manager@0.0.35
+  - @ulld/whiteboard@0.0.35
+
 ## 0.0.34
 
 ### Patch Changes

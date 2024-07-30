@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.35
+
+### Patch Changes
+
+- Fix broken database generation script.
+- Updated dependencies
+  - @ulld/api@0.0.35
+  - @ulld/component-map@0.0.35
+  - @ulld/configschema@0.0.35
+  - @ulld/database@0.0.34
+  - @ulld/parsers@0.0.35
+
 ## 0.0.34
 
 ### Patch Changes

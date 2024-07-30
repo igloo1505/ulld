@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.35
+
+### Patch Changes
+
+- Fix broken database generation script.
+- Updated dependencies
+  - @ulld/configschema@0.0.35
+  - @ulld/database@0.0.34
+  - @ulld/developer@0.0.35
+  - @ulld/utilities@0.0.35
+
 ## 0.0.34
 
 ### Patch Changes
