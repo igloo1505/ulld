@@ -1,5 +1,17 @@
 # @ulld/configschema
 
+## 0.0.38
+
+### Patch Changes
+
+- Removed some old functions that have been replaced but not implemented everywhere.
+- Updated dependencies
+  - @ulld/base-configs@0.0.34
+  - @ulld/developer-schemas@0.0.34
+  - @ulld/icons@0.0.38
+  - @ulld/tailwind@0.0.34
+  - @ulld/utilities@0.0.38
+
 ## 0.0.37
 
 ### Patch Changes

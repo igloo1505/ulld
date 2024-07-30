@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.38
+
+### Patch Changes
+
+- Removed some old functions that have been replaced but not implemented everywhere.
+- Updated dependencies
+  - @ulld/database@0.0.37
+  - @ulld/math@0.0.38
+  - @ulld/tailwind@0.0.34
+
 ## 0.0.37
 
 ### Patch Changes

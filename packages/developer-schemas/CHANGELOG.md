@@ -1,5 +1,11 @@
 # @ulld/developer-schemas
 
+## 0.0.34
+
+### Patch Changes
+
+- Removed some old functions that have been replaced but not implemented everywhere.
+
 ## 0.0.33
 
 ### Patch Changes

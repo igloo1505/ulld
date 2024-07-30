@@ -1,5 +1,19 @@
 # @ulld/kanban
 
+## 0.0.38
+
+### Patch Changes
+
+- Removed some old functions that have been replaced but not implemented everywhere.
+- Updated dependencies
+  - @ulld/api@0.0.38
+  - @ulld/typescript-config@0.0.34
+  - @ulld/developer@0.0.38
+  - @ulld/jest-presets@0.0.34
+  - @ulld/logger@0.0.34
+  - @ulld/state@0.0.38
+  - @ulld/tailwind@0.0.34
+
 ## 0.0.37
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @ulld/math
 
+## 0.0.38
+
+### Patch Changes
+
+- Removed some old functions that have been replaced but not implemented everywhere.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.34
+  - @ulld/typescript-config@0.0.34
+  - @ulld/configschema@0.0.38
+  - @ulld/hooks@0.0.38
+  - @ulld/icons@0.0.38
+  - @ulld/state@0.0.38
+  - @ulld/utilities@0.0.38
+
 ## 0.0.37
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.37
+
+### Patch Changes
+
+- Removed some old functions that have been replaced but not implemented everywhere.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.34
+
 ## 0.0.36
 
 ### Patch Changes

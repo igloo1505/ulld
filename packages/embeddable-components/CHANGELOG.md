@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.38
+
+### Patch Changes
+
+- Removed some old functions that have been replaced but not implemented everywhere.
+- Updated dependencies
+  - @ulld/api@0.0.38
+  - @ulld/component-configs@0.0.38
+  - @ulld/configschema@0.0.38
+  - @ulld/default-image-map@0.0.38
+  - @ulld/hooks@0.0.38
+  - @ulld/icons@0.0.38
+  - @ulld/render@0.0.38
+  - @ulld/state@0.0.38
+  - @ulld/tailwind@0.0.34
+  - @ulld/utilities@0.0.38
+
 ## 0.0.37
 
 ### Patch Changes

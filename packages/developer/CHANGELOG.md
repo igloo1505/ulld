@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.38
+
+### Patch Changes
+
+- Removed some old functions that have been replaced but not implemented everywhere.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.34
+  - @ulld/typescript-config@0.0.34
+  - @ulld/configschema@0.0.38
+  - @ulld/database@0.0.37
+  - @ulld/logger@0.0.34
+
 ## 0.0.37
 
 ### Patch Changes

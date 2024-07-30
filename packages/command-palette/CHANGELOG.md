@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.38
+
+### Patch Changes
+
+- Removed some old functions that have been replaced but not implemented everywhere.
+- Updated dependencies
+  - @ulld/api@0.0.38
+  - @ulld/bib-manager@0.0.38
+  - @ulld/calendar@0.0.38
+  - @ulld/configschema@0.0.38
+  - @ulld/database@0.0.37
+  - @ulld/developer@0.0.38
+  - @ulld/diagram@0.0.38
+  - @ulld/editor@0.0.38
+  - @ulld/equations@0.0.38
+  - @ulld/hooks@0.0.38
+  - @ulld/logger@0.0.34
+  - @ulld/parsers@0.0.38
+  - @ulld/render@0.0.38
+  - @ulld/snippets@0.0.38
+  - @ulld/state@0.0.38
+  - @ulld/tailwind@0.0.34
+  - @ulld/task-manager@0.0.38
+  - @ulld/ui@0.0.38
+  - @ulld/utilities@0.0.38
+  - @ulld/whiteboard@0.0.38
+
 ## 0.0.37
 
 ### Patch Changes

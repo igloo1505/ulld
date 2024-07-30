@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.38
+
+### Patch Changes
+
+- Removed some old functions that have been replaced but not implemented everywhere.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.38
+  - @ulld/calendar@0.0.38
+  - @ulld/default-image-map@0.0.38
+  - @ulld/diagram@0.0.38
+  - @ulld/editor@0.0.38
+  - @ulld/embeddable-components@0.0.38
+  - @ulld/equations@0.0.38
+  - @ulld/full-form@0.0.38
+  - @ulld/journal@0.0.38
+  - @ulld/navigation@0.0.38
+  - @ulld/notebook@0.0.38
+  - @ulld/pdf@0.0.38
+  - @ulld/plot@0.0.38
+  - @ulld/snippets@0.0.38
+  - @ulld/tailwind@0.0.34
+  - @ulld/task-manager@0.0.38
+  - @ulld/whiteboard@0.0.38
+
 ## 0.0.37
 
 ### Patch Changes

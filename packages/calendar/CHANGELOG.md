@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.38
+
+### Patch Changes
+
+- Removed some old functions that have been replaced but not implemented everywhere.
+- Updated dependencies
+  - @ulld/developer@0.0.38
+
 ## 0.0.37
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.38
+
+### Patch Changes
+
+- Removed some old functions that have been replaced but not implemented everywhere.
+- Updated dependencies
+  - @ulld/configschema@0.0.38
+  - @ulld/database@0.0.37
+  - @ulld/developer@0.0.38
+  - @ulld/utilities@0.0.38
+
 ## 0.0.37
 
 ### Patch Changes
