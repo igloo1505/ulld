@@ -406,6 +406,7 @@ model ToDo {
     child           ToDo[]         @relation("ParentChildTask")
     ToDoList        ToDoList?      @relation(fields: [toDoListId], references: [id])
     toDoListId      Int?
+    completedOn     DateTime?
 }
 
 model KanBanCard {

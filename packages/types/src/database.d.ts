@@ -31310,6 +31310,7 @@ export namespace Prisma {
     status: $Enums.ToDoListStatus | null
     priority: number | null
     toDoListId: number | null
+    completedOn: Date | null
   }
 
   export type ToDoMaxAggregateOutputType = {
@@ -31324,6 +31325,7 @@ export namespace Prisma {
     status: $Enums.ToDoListStatus | null
     priority: number | null
     toDoListId: number | null
+    completedOn: Date | null
   }
 
   export type ToDoCountAggregateOutputType = {
@@ -31338,6 +31340,7 @@ export namespace Prisma {
     status: number
     priority: number
     toDoListId: number
+    completedOn: number
     _all: number
   }
 
@@ -31368,6 +31371,7 @@ export namespace Prisma {
     status?: true
     priority?: true
     toDoListId?: true
+    completedOn?: true
   }
 
   export type ToDoMaxAggregateInputType = {
@@ -31382,6 +31386,7 @@ export namespace Prisma {
     status?: true
     priority?: true
     toDoListId?: true
+    completedOn?: true
   }
 
   export type ToDoCountAggregateInputType = {
@@ -31396,6 +31401,7 @@ export namespace Prisma {
     status?: true
     priority?: true
     toDoListId?: true
+    completedOn?: true
     _all?: true
   }
 
@@ -31497,6 +31503,7 @@ export namespace Prisma {
     status: $Enums.ToDoListStatus
     priority: number
     toDoListId: number | null
+    completedOn: Date | null
     _count: ToDoCountAggregateOutputType | null
     _avg: ToDoAvgAggregateOutputType | null
     _sum: ToDoSumAggregateOutputType | null
@@ -31530,6 +31537,7 @@ export namespace Prisma {
     status?: boolean
     priority?: boolean
     toDoListId?: boolean
+    completedOn?: boolean
     associatedNotes?: boolean | ToDo$associatedNotesArgs<ExtArgs>
     tags?: boolean | ToDo$tagsArgs<ExtArgs>
     topics?: boolean | ToDo$topicsArgs<ExtArgs>
@@ -31552,6 +31560,7 @@ export namespace Prisma {
     status?: boolean
     priority?: boolean
     toDoListId?: boolean
+    completedOn?: boolean
     parent?: boolean | ToDo$parentArgs<ExtArgs>
     ToDoList?: boolean | ToDo$ToDoListArgs<ExtArgs>
   }, ExtArgs["result"]["toDo"]>
@@ -31568,6 +31577,7 @@ export namespace Prisma {
     status?: boolean
     priority?: boolean
     toDoListId?: boolean
+    completedOn?: boolean
   }
 
   export type ToDoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -31608,6 +31618,7 @@ export namespace Prisma {
       status: $Enums.ToDoListStatus
       priority: number
       toDoListId: number | null
+      completedOn: Date | null
     }, ExtArgs["result"]["toDo"]>
     composites: {}
   }
@@ -32019,6 +32030,7 @@ export namespace Prisma {
     readonly status: FieldRef<"ToDo", 'ToDoListStatus'>
     readonly priority: FieldRef<"ToDo", 'Int'>
     readonly toDoListId: FieldRef<"ToDo", 'Int'>
+    readonly completedOn: FieldRef<"ToDo", 'DateTime'>
   }
     
 
@@ -45973,7 +45985,8 @@ export namespace Prisma {
     bookmarked: 'bookmarked',
     status: 'status',
     priority: 'priority',
-    toDoListId: 'toDoListId'
+    toDoListId: 'toDoListId',
+    completedOn: 'completedOn'
   };
 
   export type ToDoScalarFieldEnum = (typeof ToDoScalarFieldEnum)[keyof typeof ToDoScalarFieldEnum]
@@ -48640,6 +48653,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFilter<"ToDo"> | $Enums.ToDoListStatus
     priority?: IntFilter<"ToDo"> | number
     toDoListId?: IntNullableFilter<"ToDo"> | number | null
+    completedOn?: DateTimeNullableFilter<"ToDo"> | Date | string | null
     associatedNotes?: MdxNoteListRelationFilter
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
@@ -48661,6 +48675,7 @@ export namespace Prisma {
     status?: SortOrder
     priority?: SortOrder
     toDoListId?: SortOrderInput | SortOrder
+    completedOn?: SortOrderInput | SortOrder
     associatedNotes?: MdxNoteOrderByRelationAggregateInput
     tags?: TagOrderByRelationAggregateInput
     topics?: TopicOrderByRelationAggregateInput
@@ -48686,6 +48701,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFilter<"ToDo"> | $Enums.ToDoListStatus
     priority?: IntFilter<"ToDo"> | number
     toDoListId?: IntNullableFilter<"ToDo"> | number | null
+    completedOn?: DateTimeNullableFilter<"ToDo"> | Date | string | null
     associatedNotes?: MdxNoteListRelationFilter
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
@@ -48707,6 +48723,7 @@ export namespace Prisma {
     status?: SortOrder
     priority?: SortOrder
     toDoListId?: SortOrderInput | SortOrder
+    completedOn?: SortOrderInput | SortOrder
     _count?: ToDoCountOrderByAggregateInput
     _avg?: ToDoAvgOrderByAggregateInput
     _max?: ToDoMaxOrderByAggregateInput
@@ -48729,6 +48746,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusWithAggregatesFilter<"ToDo"> | $Enums.ToDoListStatus
     priority?: IntWithAggregatesFilter<"ToDo"> | number
     toDoListId?: IntNullableWithAggregatesFilter<"ToDo"> | number | null
+    completedOn?: DateTimeNullableWithAggregatesFilter<"ToDo"> | Date | string | null
   }
 
   export type KanBanCardWhereInput = {
@@ -51745,6 +51763,7 @@ export namespace Prisma {
     bookmarked?: boolean
     status?: $Enums.ToDoListStatus
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
     tags?: TagCreateNestedManyWithoutToDoInput
     topics?: TopicCreateNestedManyWithoutToDoInput
@@ -51766,6 +51785,7 @@ export namespace Prisma {
     status?: $Enums.ToDoListStatus
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteUncheckedCreateNestedManyWithoutToDoInput
     tags?: TagUncheckedCreateNestedManyWithoutToDoInput
     topics?: TopicUncheckedCreateNestedManyWithoutToDoInput
@@ -51782,6 +51802,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
     tags?: TagUpdateManyWithoutToDoNestedInput
     topics?: TopicUpdateManyWithoutToDoNestedInput
@@ -51803,6 +51824,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUncheckedUpdateManyWithoutToDoNestedInput
     tags?: TagUncheckedUpdateManyWithoutToDoNestedInput
     topics?: TopicUncheckedUpdateManyWithoutToDoNestedInput
@@ -51822,6 +51844,7 @@ export namespace Prisma {
     status?: $Enums.ToDoListStatus
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
   }
 
   export type ToDoUpdateManyMutationInput = {
@@ -51833,6 +51856,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ToDoUncheckedUpdateManyInput = {
@@ -51847,6 +51871,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type KanBanCardCreateInput = {
@@ -54534,6 +54559,7 @@ export namespace Prisma {
     status?: SortOrder
     priority?: SortOrder
     toDoListId?: SortOrder
+    completedOn?: SortOrder
   }
 
   export type ToDoAvgOrderByAggregateInput = {
@@ -54555,6 +54581,7 @@ export namespace Prisma {
     status?: SortOrder
     priority?: SortOrder
     toDoListId?: SortOrder
+    completedOn?: SortOrder
   }
 
   export type ToDoMinOrderByAggregateInput = {
@@ -54569,6 +54596,7 @@ export namespace Prisma {
     status?: SortOrder
     priority?: SortOrder
     toDoListId?: SortOrder
+    completedOn?: SortOrder
   }
 
   export type ToDoSumOrderByAggregateInput = {
@@ -59715,6 +59743,7 @@ export namespace Prisma {
     bookmarked?: boolean
     status?: $Enums.ToDoListStatus
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
     tags?: TagCreateNestedManyWithoutToDoInput
     topics?: TopicCreateNestedManyWithoutToDoInput
@@ -59735,6 +59764,7 @@ export namespace Prisma {
     status?: $Enums.ToDoListStatus
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteUncheckedCreateNestedManyWithoutToDoInput
     tags?: TagUncheckedCreateNestedManyWithoutToDoInput
     topics?: TopicUncheckedCreateNestedManyWithoutToDoInput
@@ -60125,6 +60155,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFilter<"ToDo"> | $Enums.ToDoListStatus
     priority?: IntFilter<"ToDo"> | number
     toDoListId?: IntNullableFilter<"ToDo"> | number | null
+    completedOn?: DateTimeNullableFilter<"ToDo"> | Date | string | null
   }
 
   export type BibEntryUpsertWithWhereUniqueWithoutSubjectsInput = {
@@ -60417,6 +60448,7 @@ export namespace Prisma {
     bookmarked?: boolean
     status?: $Enums.ToDoListStatus
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
     tags?: TagCreateNestedManyWithoutToDoInput
     subjects?: SubjectCreateNestedManyWithoutToDoInput
@@ -60437,6 +60469,7 @@ export namespace Prisma {
     status?: $Enums.ToDoListStatus
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteUncheckedCreateNestedManyWithoutToDoInput
     tags?: TagUncheckedCreateNestedManyWithoutToDoInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutToDoInput
@@ -61146,6 +61179,7 @@ export namespace Prisma {
     bookmarked?: boolean
     status?: $Enums.ToDoListStatus
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
     topics?: TopicCreateNestedManyWithoutToDoInput
     subjects?: SubjectCreateNestedManyWithoutToDoInput
@@ -61166,6 +61200,7 @@ export namespace Prisma {
     status?: $Enums.ToDoListStatus
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteUncheckedCreateNestedManyWithoutToDoInput
     topics?: TopicUncheckedCreateNestedManyWithoutToDoInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutToDoInput
@@ -63751,6 +63786,7 @@ export namespace Prisma {
     bookmarked?: boolean
     status?: $Enums.ToDoListStatus
     priority?: number
+    completedOn?: Date | string | null
     tags?: TagCreateNestedManyWithoutToDoInput
     topics?: TopicCreateNestedManyWithoutToDoInput
     subjects?: SubjectCreateNestedManyWithoutToDoInput
@@ -63771,6 +63807,7 @@ export namespace Prisma {
     status?: $Enums.ToDoListStatus
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
     tags?: TagUncheckedCreateNestedManyWithoutToDoInput
     topics?: TopicUncheckedCreateNestedManyWithoutToDoInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutToDoInput
@@ -64300,6 +64337,7 @@ export namespace Prisma {
     bookmarked?: boolean
     status?: $Enums.ToDoListStatus
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
     tags?: TagCreateNestedManyWithoutToDoInput
     topics?: TopicCreateNestedManyWithoutToDoInput
@@ -64319,6 +64357,7 @@ export namespace Prisma {
     bookmarked?: boolean
     status?: $Enums.ToDoListStatus
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteUncheckedCreateNestedManyWithoutToDoInput
     tags?: TagUncheckedCreateNestedManyWithoutToDoInput
     topics?: TopicUncheckedCreateNestedManyWithoutToDoInput
@@ -64681,6 +64720,7 @@ export namespace Prisma {
     bookmarked?: boolean
     status?: $Enums.ToDoListStatus
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
     tags?: TagCreateNestedManyWithoutToDoInput
     topics?: TopicCreateNestedManyWithoutToDoInput
@@ -64701,6 +64741,7 @@ export namespace Prisma {
     status?: $Enums.ToDoListStatus
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteUncheckedCreateNestedManyWithoutToDoInput
     tags?: TagUncheckedCreateNestedManyWithoutToDoInput
     topics?: TopicUncheckedCreateNestedManyWithoutToDoInput
@@ -64721,6 +64762,7 @@ export namespace Prisma {
     bookmarked?: boolean
     status?: $Enums.ToDoListStatus
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
     tags?: TagCreateNestedManyWithoutToDoInput
     topics?: TopicCreateNestedManyWithoutToDoInput
@@ -64740,6 +64782,7 @@ export namespace Prisma {
     status?: $Enums.ToDoListStatus
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteUncheckedCreateNestedManyWithoutToDoInput
     tags?: TagUncheckedCreateNestedManyWithoutToDoInput
     topics?: TopicUncheckedCreateNestedManyWithoutToDoInput
@@ -64867,6 +64910,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
     tags?: TagUpdateManyWithoutToDoNestedInput
     topics?: TopicUpdateManyWithoutToDoNestedInput
@@ -64887,6 +64931,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUncheckedUpdateManyWithoutToDoNestedInput
     tags?: TagUncheckedUpdateManyWithoutToDoNestedInput
     topics?: TopicUncheckedUpdateManyWithoutToDoNestedInput
@@ -66212,6 +66257,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
     tags?: TagUpdateManyWithoutToDoNestedInput
     topics?: TopicUpdateManyWithoutToDoNestedInput
@@ -66232,6 +66278,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUncheckedUpdateManyWithoutToDoNestedInput
     tags?: TagUncheckedUpdateManyWithoutToDoNestedInput
     topics?: TopicUncheckedUpdateManyWithoutToDoNestedInput
@@ -66250,6 +66297,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type BibEntryUpdateWithoutSubjectsInput = {
@@ -66689,6 +66737,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
     tags?: TagUpdateManyWithoutToDoNestedInput
     subjects?: SubjectUpdateManyWithoutToDoNestedInput
@@ -66709,6 +66758,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUncheckedUpdateManyWithoutToDoNestedInput
     tags?: TagUncheckedUpdateManyWithoutToDoNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutToDoNestedInput
@@ -66727,6 +66777,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ToDoListUpdateWithoutTopicsInput = {
@@ -67394,6 +67445,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
     topics?: TopicUpdateManyWithoutToDoNestedInput
     subjects?: SubjectUpdateManyWithoutToDoNestedInput
@@ -67414,6 +67466,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUncheckedUpdateManyWithoutToDoNestedInput
     topics?: TopicUncheckedUpdateManyWithoutToDoNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutToDoNestedInput
@@ -67432,6 +67485,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ToDoListUpdateWithoutTagsInput = {
@@ -69551,6 +69605,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     tags?: TagUpdateManyWithoutToDoNestedInput
     topics?: TopicUpdateManyWithoutToDoNestedInput
     subjects?: SubjectUpdateManyWithoutToDoNestedInput
@@ -69571,6 +69626,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     tags?: TagUncheckedUpdateManyWithoutToDoNestedInput
     topics?: TopicUncheckedUpdateManyWithoutToDoNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutToDoNestedInput
@@ -69589,6 +69645,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type TagUpdateWithoutIpynbNotesInput = {
@@ -69882,6 +69939,7 @@ export namespace Prisma {
     bookmarked?: boolean
     status?: $Enums.ToDoListStatus
     priority?: number
+    completedOn?: Date | string | null
   }
 
   export type ToDoUpdateWithoutToDoListInput = {
@@ -69893,6 +69951,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
     tags?: TagUpdateManyWithoutToDoNestedInput
     topics?: TopicUpdateManyWithoutToDoNestedInput
@@ -69912,6 +69971,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUncheckedUpdateManyWithoutToDoNestedInput
     tags?: TagUncheckedUpdateManyWithoutToDoNestedInput
     topics?: TopicUncheckedUpdateManyWithoutToDoNestedInput
@@ -69930,6 +69990,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type TagUpdateWithoutTodoListInput = {
@@ -70048,6 +70109,7 @@ export namespace Prisma {
     status?: $Enums.ToDoListStatus
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
   }
 
   export type MdxNoteUpdateWithoutToDoInput = {
@@ -70261,6 +70323,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
     tags?: TagUpdateManyWithoutToDoNestedInput
     topics?: TopicUpdateManyWithoutToDoNestedInput
@@ -70280,6 +70343,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUncheckedUpdateManyWithoutToDoNestedInput
     tags?: TagUncheckedUpdateManyWithoutToDoNestedInput
     topics?: TopicUncheckedUpdateManyWithoutToDoNestedInput
@@ -70298,6 +70362,7 @@ export namespace Prisma {
     status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type KanBanCardCreateManyKanBanListInput = {
