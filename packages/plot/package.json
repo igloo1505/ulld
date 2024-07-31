@@ -9,6 +9,7 @@
         "lint": "echo 'Add lint script here'"
     },
     "exports": {
+        "./types": "./src/types.ts",
         "./single/donut": "./src/components/shad/singleComponentPlots/donutPlot/main.tsx"
     },
     "peerDependencies": {

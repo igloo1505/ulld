@@ -5,9 +5,9 @@ import {
     ModularDashboardData,
 } from "../../../../../../src/types";
 import { DonutChart } from "@ulld/plot/single/donut";
-import { ChartConfig } from "node_modules/@ulld/plot/src/lib/shad/shadChart";
 import { clamp } from "@ulld/utilities/general";
 import FormattedDonutLabel from "./formattedLabel";
+import { ChartConfig } from "@ulld/plot/types";
 
 interface NotesByCategoryDonutCardProps extends BaseCardProps {
     notes: (ModularDashboardData["lastAccessNotes"][number] & {

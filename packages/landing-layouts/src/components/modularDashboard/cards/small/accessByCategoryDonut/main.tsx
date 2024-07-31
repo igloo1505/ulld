@@ -1,10 +1,9 @@
 "use client";
 import { DonutChart } from "@ulld/plot/single/donut";
 import React, { useMemo, useState } from "react";
-import CardContainer from "src/components/modularDashboard/util/cardContainer";
 import FormattedDonutLabel from "../notesByCategoryDonut/formattedLabel";
 import { clamp } from "@ulld/utilities/general";
-import { ChartConfig } from "node_modules/@ulld/plot/src/lib/shad/shadChart";
+import { ChartConfig } from "@ulld/plot/types";
 import { BaseCardProps, ModularDashboardData } from "src/types";
 import {
     DateTime,
@@ -12,7 +11,8 @@ import {
     TimePeriodOption,
 } from "@ulld/utilities/dateTime";
 import { useIsomorphicLayoutEffect } from "@ulld/hooks/useIsomorphicEffect";
-import TimePeriodToggle from "src/components/modularDashboard/util/timePeriodToggle/main";
+import TimePeriodToggle from "../../../util/timePeriodToggle/main";
+import CardContainer from "../../../util/cardContainer";
 
 interface AccessByCategoryDonutProps extends BaseCardProps {
     notes: (ModularDashboardData["lastAccessNotes"][number] & {

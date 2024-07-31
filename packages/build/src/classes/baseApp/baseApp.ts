@@ -24,6 +24,8 @@ interface ParserFunctionData {
     importString: string;
 }
 
+
+
 export class BaseApp extends ShellManager {
     paths: TargetPaths;
     slotMap: SlotMapInternalType;
@@ -214,6 +216,8 @@ export default unifiedParserList
         this.build.db.generate(this.build.appConfig, this.build.packageManager);
     }
     private copyMathjax() {
+        this.log("Copy mathjax has not yet been handled. Ran into issues with symbolic links. Will handle later.")
+        return
         let targetDir = this.paths.joinPath(
             "projectRoot",
             "node_modules",
@@ -223,14 +227,21 @@ export default unifiedParserList
         let outputDir = this.paths.joinPath("public", "mathjax");
         let subPaths = globSync("**", {
             cwd: targetDir,
+            realpath: true
         });
+        debugger
         if (!fs.existsSync(targetDir)) {
             this.logError(
                 `Could not find mathjax directory in order to copy it to the public directory. This might need to be done manually.`,
             );
         } else {
             for (const f of subPaths) {
-                fs.copyFileSync(path.join(targetDir, f), path.join(outputDir, f));
+                let sourceFilePath = path.join(targetDir, f)
+                if(fs.existsSync(sourceFilePath)){
+                fs.copyFileSync(sourceFilePath, path.join(outputDir, f), fs.constants.COPYFILE_FICLONE)
+                } else {
+                    this.logError(`Could not copy mathjax file. Couldn't find it at ${sourceFilePath}`)
+                }
             }
         }
     }

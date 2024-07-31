@@ -1,8 +1,8 @@
 import React from "react";
 import CardContainer from "../../util/cardContainer";
-import { BaseCardProps } from "src/types";
 import CardLabelText from "../../util/cardLabel";
 import DateGapLabel from "../../util/dateTillNowLabel";
+import { BaseCardProps } from "../../types";
 
 interface TotalNotesCardProps extends BaseCardProps {
     totalNotes: number;

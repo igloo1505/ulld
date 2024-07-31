@@ -1,6 +1,5 @@
-import { XYPlotProps, XYPropsReturnType } from "../../types";
-import { getTwoDData } from "../data/getTwoDData";
-import { ChartConfig } from "./shadChart";
+import { ChartConfig, XYPlotProps, XYPropsReturnType } from "../../types";
+/* import { getTwoDData } from "../data/getTwoDData"; */
 import { DynamicIcon, ValidIconName } from '@ulld/icons';
 
 type ColorThemeProps = {} & (
@@ -13,7 +12,7 @@ const getThemeData = (item: XYPlotProps["data"][number]): ColorThemeProps => {
     if (typeof item.color === "object") {
         return {
             theme: {
-                light: item.color.light || item.color.dark || "hsl(var(--primary))",
+                light: item.color?.light || item.color?.dark || "hsl(var(--primary))",
                 dark: item.color.dark || item.color.light || "hsl(var(--primary))",
             }
         } satisfies ColorThemeProps
@@ -38,6 +37,7 @@ export const getShadChartXYConfig = (props: XYPlotProps): XYPropsReturnType => {
     }
     return {
         config:config, 
-        data: getTwoDData(props)
+        data: [] as any
+        /* data: getTwoDData(props) */
     }
 }
