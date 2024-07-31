@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.39
+
+### Patch Changes
+
+- Update to add utility methods that gather an overview of the user's app to the trpc router.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.36
+
 ## 0.0.38
 
 ### Patch Changes

@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.40
+
+### Patch Changes
+
+- Update to add utility methods that gather an overview of the user's app to the trpc router.
+- Updated dependencies
+  - @ulld/api@0.0.40
+  - @ulld/bib-manager@0.0.40
+  - @ulld/calendar@0.0.40
+  - @ulld/configschema@0.0.40
+  - @ulld/database@0.0.39
+  - @ulld/developer@0.0.40
+  - @ulld/diagram@0.0.40
+  - @ulld/editor@0.0.40
+  - @ulld/equations@0.0.40
+  - @ulld/hooks@0.0.40
+  - @ulld/logger@0.0.36
+  - @ulld/parsers@0.0.40
+  - @ulld/render@0.0.40
+  - @ulld/snippets@0.0.40
+  - @ulld/state@0.0.40
+  - @ulld/tailwind@0.0.36
+  - @ulld/task-manager@0.0.40
+  - @ulld/ui@0.0.40
+  - @ulld/utilities@0.0.40
+  - @ulld/whiteboard@0.0.40
+
 ## 0.0.39
 
 ### Patch Changes

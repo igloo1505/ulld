@@ -1,5 +1,11 @@
 # @repo/jest-presets
 
+## 0.0.36
+
+### Patch Changes
+
+- Update to add utility methods that gather an overview of the user's app to the trpc router.
+
 ## 0.0.35
 
 ### Patch Changes

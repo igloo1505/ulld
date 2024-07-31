@@ -1,6 +1,6 @@
 {
     "name": "@ulld/jest-presets",
-    "version": "0.0.35",
+    "version": "0.0.36",
     "private": false,
     "license": "MIT",
     "exports": {

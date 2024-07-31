@@ -1,5 +1,19 @@
 # @ulld/kanban
 
+## 0.0.40
+
+### Patch Changes
+
+- Update to add utility methods that gather an overview of the user's app to the trpc router.
+- Updated dependencies
+  - @ulld/api@0.0.40
+  - @ulld/typescript-config@0.0.36
+  - @ulld/developer@0.0.40
+  - @ulld/jest-presets@0.0.36
+  - @ulld/logger@0.0.36
+  - @ulld/state@0.0.40
+  - @ulld/tailwind@0.0.36
+
 ## 0.0.39
 
 ### Patch Changes

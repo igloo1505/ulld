@@ -1,5 +1,27 @@
 # @ulld/bib-manager
 
+## 0.0.40
+
+### Patch Changes
+
+- Update to add utility methods that gather an overview of the user's app to the trpc router.
+- Updated dependencies
+  - @ulld/api@0.0.40
+  - @ulld/eslint-config@0.0.36
+  - @ulld/typescript-config@0.0.36
+  - @ulld/configschema@0.0.40
+  - @ulld/database@0.0.39
+  - @ulld/developer@0.0.40
+  - @ulld/editor@0.0.40
+  - @ulld/full-form@0.0.40
+  - @ulld/hooks@0.0.40
+  - @ulld/icons@0.0.40
+  - @ulld/jest-presets@0.0.36
+  - @ulld/state@0.0.40
+  - @ulld/tailwind@0.0.36
+  - @ulld/ui@0.0.40
+  - @ulld/utilities@0.0.40
+
 ## 0.0.39
 
 ### Patch Changes

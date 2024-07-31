@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.40
+
+### Patch Changes
+
+- Update to add utility methods that gather an overview of the user's app to the trpc router.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.40
+  - @ulld/calendar@0.0.40
+  - @ulld/default-image-map@0.0.40
+  - @ulld/diagram@0.0.40
+  - @ulld/editor@0.0.40
+  - @ulld/embeddable-components@0.0.40
+  - @ulld/equations@0.0.40
+  - @ulld/full-form@0.0.40
+  - @ulld/journal@0.0.40
+  - @ulld/navigation@0.0.40
+  - @ulld/notebook@0.0.40
+  - @ulld/pdf@0.0.40
+  - @ulld/plot@0.0.40
+  - @ulld/snippets@0.0.40
+  - @ulld/tailwind@0.0.36
+  - @ulld/task-manager@0.0.40
+  - @ulld/whiteboard@0.0.40
+
 ## 0.0.39
 
 ### Patch Changes
