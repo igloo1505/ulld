@@ -14,6 +14,17 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.extend(advancedFormat);
 
+export const timePeriodOptions = [
+    "30 Days",
+    "60 Days",
+    "90 Days",
+    "6 Months",
+    "Previous Year",
+    "Year to Date"
+] as const
+
+export type TimePeriodOption = typeof timePeriodOptions[number]
+
 
 export class DateTime {
     t: Date;
@@ -66,7 +77,7 @@ export class DateTime {
 
     diffAsDuration(t: Date = new Date()) {
         return dayjs.duration(this.secondDifference(t), "seconds");
-    }
+    } 
 
     formatTimeDiff(duration?: duration.Duration, t: Date = new Date()) {
         let dur = duration || this.diffAsDuration(t);
@@ -142,6 +153,18 @@ export class DateTime {
         return dayjs().get('day')
     }
 
+    static filterByDateRange<T extends unknown>( items: T[], getDate: (item: T) => Date, start: Date | string, end?: Date | string){
+        let returnItems: T[] = []
+        let startValue = (typeof start === "string" ? new Date(start) : start).valueOf()
+        let endValue = (typeof end === "undefined" ? new Date() : typeof end === "string" ? new Date(end) : end).valueOf()
+        for (const k of items) {
+            let val = getDate(k).valueOf()
+            if(val >= startValue && val <= endValue){
+                returnItems.push(k)
+            }
+        }
+        return returnItems
+    }
     static formatDate(d: Date | string | number, withTime?: boolean) {
         const formatStr = withTime ? "MMM Do YYYY [at] h:mm a" : "MMM Do YYYY"
         return dayjs(d).format(formatStr)
@@ -179,6 +202,27 @@ export class DateTime {
             minutes: min,
             seconds: sec
         }
+    }
+    static getTimePeriod(opt: TimePeriodOption){
+        let timePeriodRecord: Record<TimePeriodOption, number | ((d: Date) => number)> = {
+            "30 Days": 2592000000, // 60 * 60 * 24 * 30 * 1000
+            "60 Days": 2592000000 * 2,
+            "90 Days": 2592000000 * 3,
+            "Previous Year": 31536000000, // 60 * 60 * 24 * 365 * 1000
+            "6 Months": 31536000000 / 2,
+            "Year to Date": (d) => d.valueOf() - new Date(`1/1/${d.getFullYear()}`).valueOf()
+        }
+        let f = timePeriodRecord[opt]
+        let _now = new Date()
+        if(typeof f === "function"){
+            return new Date(_now.valueOf() - f(_now))
+        } else {
+            return new Date(_now.valueOf() - f)
+        }
+    }
+    static thirtyDaysAgo(){
+        let n = 2592000000 // 60 * 60 * 24 * 30 * 1000
+        return new Date(new Date().valueOf() - n)
     }
 }
 

@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+echo "Setting template string data"
+tsx $ULLD_DEV_ROOT/buildUtils/gatherBuildTemplateStrings.ts
 echo "Gathering api types"
 tsx $ULLD_DEV_ROOT/buildUtils/types/gather/gatherApiTypes.ts
 echo "Writing current package versions to static data"

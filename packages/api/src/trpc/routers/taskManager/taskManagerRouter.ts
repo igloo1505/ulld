@@ -130,6 +130,7 @@ export const toDoRouter = router({
                 },
                 data: {
                     status: input.status,
+                    completedOn: input.status === "Done" ? new Date() : null
                 },
             });
         }),
@@ -418,7 +419,19 @@ export const toDoRouter = router({
             take: 1,
         });
     }),
-
+    markCompleted: publicProcedure.input(z.object({taskIds: z.number().array()})).mutation(async ({input}) => {
+        await prisma.toDo.updateMany({
+            where: {
+                id: {
+                    in: input.taskIds
+                }
+            },
+            data: {
+                status: "Done",
+                completedOn: new Date()
+            }
+        })
+    }),
     archiveTasks: publicProcedure
         .input(z.number().int().array())
         .mutation(async ({ input }) => {

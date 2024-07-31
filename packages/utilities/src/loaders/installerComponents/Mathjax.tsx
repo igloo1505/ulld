@@ -8,7 +8,7 @@ export const MathjaxSvgLoader = () => {
     return (
         <Script
             id="mathjax-script"
-            src="/utils/tex-mml-svg.js"
+            src="/mathjax/tex-mml-svg.js"
             strategy="lazyOnload"
         />
     );
@@ -19,7 +19,7 @@ export const MathjaxChtmlLoader = () => {
     return (
         <Script
             id="mathjax-chtml-loader"
-            src="/utils/tex-chtml.js"
+            src="/mathjax/tex-chtml.js"
             strategy="beforeInteractive"
         />
     );

@@ -1,9 +1,5 @@
-import fs from "fs";
-import path from "path";
 import { PackageJsonType } from "@ulld/developer-schemas/fullPackageJson";
 import { PackageManagers } from "../types";
-import { ShellManager } from "./baseClasses/shell";
-import { Prompter } from "./prompter";
 import { PackageJson } from "./baseClasses/pkgJson";
 
 const installScripts: {

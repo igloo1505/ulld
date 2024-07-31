@@ -136,7 +136,7 @@ ${JSON.stringify(k, null, 4)}
             this.log(k.name);
         }
         this.applyPluginsToPackageJson();
-        this.packageJson.write();
+        this.packageJson.write(this.packageManager);
     }
     applyPluginsToPackageJson() {
         this.log(

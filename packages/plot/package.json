@@ -8,6 +8,9 @@
         "test": "echo 'Add test script here'",
         "lint": "echo 'Add lint script here'"
     },
+    "exports": {
+        "./single/donut": "./src/components/shad/singleComponentPlots/donutPlot/main.tsx"
+    },
     "peerDependencies": {
         "@ulld/api": "workspace:*",
         "@ulld/configschema": "workspace:*",

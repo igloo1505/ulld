@@ -1,6 +1,7 @@
 import { UlldPlugin } from "../plugin";
 import { getComponentMapContent } from "./fileContent/componentMap";
 import fs from "fs";
+import path from "path";
 import { ShellManager } from "../baseClasses/shell";
 import { UlldBuildProcess } from "../build";
 import { SlotMapInternalType } from "@ulld/configschema/types";
@@ -16,6 +17,7 @@ import { BuildStaticData } from "./buildStaticData";
 import { ParserKey, parserKeyList } from "@ulld/configschema/developer";
 import { BuildCleanup } from "./cleanup";
 import { TemplateFile } from "../templateFile";
+import { globSync } from "glob";
 
 interface ParserFunctionData {
     importName: string;
@@ -26,13 +28,13 @@ export class BaseApp extends ShellManager {
     paths: TargetPaths;
     slotMap: SlotMapInternalType;
     buildStaticData: BuildStaticData;
-    buildCleanup: BuildCleanup
+    buildCleanup: BuildCleanup;
     constructor(public build: UlldBuildProcess) {
         super();
         this.paths = build.paths;
         this.slotMap = sm as SlotMapInternalType;
         this.buildStaticData = new BuildStaticData(this.paths, this.build);
-        this.buildCleanup = new BuildCleanup(this.paths, this.build.packageManager)
+        this.buildCleanup = new BuildCleanup(this.paths, this.build.packageManager);
     }
     writeFile(location: PathKeys, content: string) {
         return fs.writeFileSync(this.paths[location], content, {
@@ -40,31 +42,33 @@ export class BaseApp extends ShellManager {
         });
     }
     generate() {
-        this.logVerbose("Creating component map...")
-        this.createComponentMap(this.build.plugins)
-        this.logVerbose("Applying component slots...")
-        this.applySlots()
-        this.logVerbose("Writing temporary target paths...")
-        this.writeTemporaryTargetPaths()
-        this.logVerbose("Generating unified event methods...")
-        this.createEventFunctions()
-        this.logVerbose("Generating note type paths...")
-        this.writeNoteTypePages()
-        this.logVerbose("Generating plugin setting pages...")
+        this.logVerbose("Creating component map...");
+        this.createComponentMap(this.build.plugins);
+        this.logVerbose("Copying mathjax files to public directory...")
+        this.copyMathjax()
+        this.logVerbose("Applying component slots...");
+        this.applySlots();
+        this.logVerbose("Writing temporary target paths...");
+        this.writeTemporaryTargetPaths();
+        this.logVerbose("Generating unified event methods...");
+        this.createEventFunctions();
+        this.logVerbose("Generating note type paths...");
+        this.writeNoteTypePages();
+        this.logVerbose("Generating plugin setting pages...");
         this.writePluginSettingPages();
-        this.logVerbose("Copying additional sources...")
-        this.copyAdditionalSources()
-        this.logVerbose("Gathering parsers...")
+        this.logVerbose("Copying additional sources...");
+        this.copyAdditionalSources();
+        this.logVerbose("Gathering parsers...");
         this.writeUnifiedParsingFunctions();
-        this.logVerbose("Writing static build data...")
-        this.buildStaticData.writeOutput()
-        this.logVerbose("Copying component documentation...")
-        this.copyComponentDocs()
-        this.copyPluginDocs()
-        this.logVerbose("Generating database schema...")
-        this.writePrismaSchema()
-        this.logVerbose("Wrapping up build...")
-        this.onBuild()
+        this.logVerbose("Writing static build data...");
+        this.buildStaticData.writeOutput();
+        this.logVerbose("Copying component documentation...");
+        this.copyComponentDocs();
+        this.copyPluginDocs();
+        this.logVerbose("Generating database schema...");
+        this.writePrismaSchema();
+        this.logVerbose("Wrapping up build...");
+        this.onBuild();
     }
     createComponentMap(plugins: UlldPlugin[]) {
         this.log(`Generating component map...`);
@@ -80,10 +84,14 @@ export class BaseApp extends ShellManager {
             k.data.writeToFile();
         }
     }
-    writeTemporaryTargetPaths(){
-        let file = FileManager.fromAbsolutePath(this.paths.tempTargetPaths, this.paths, false)
-        let content = JSON.stringify(this.paths.toJson())
-        file.writeContent(content)
+    writeTemporaryTargetPaths() {
+        let file = FileManager.fromAbsolutePath(
+            this.paths.tempTargetPaths,
+            this.paths,
+            false,
+        );
+        let content = JSON.stringify(this.paths.toJson());
+        file.writeContent(content);
     }
     createEventFunctions() {
         let pluginsWithEventMethods = this.build.plugins.filter((f) =>
@@ -116,8 +124,8 @@ export class BaseApp extends ShellManager {
             n.writePage();
         }
     }
-    writePrismaSchema(){
-        this.build.db.writePrismaSchema()
+    writePrismaSchema() {
+        this.build.db.writePrismaSchema();
     }
     copyAdditionalSources() {
         let additionalSources = new AdditionalSources(this.paths);
@@ -177,36 +185,57 @@ export default unifiedParserList
             }
         }
     }
-    copyComponentDocs(){
+    copyComponentDocs() {
         for (const k of this.build.plugins) {
             for (const comp of k.components) {
-                if(comp.hasDocsData){
-                    comp.copyDocsData()
+                if (comp.hasDocsData) {
+                    comp.copyDocsData();
                 }
             }
         }
     }
     copyPluginDocs() {
         for (const k of this.build.plugins) {
-            if(k.hasDocumentation){
-                k.copyDocumentation()
+            if (k.hasDocumentation) {
+                k.copyDocumentation();
             }
         }
     }
-    writeGitIgnore(){
-        this.logVerbose("Writing .gitignore file...")
-        let tf = new TemplateFile("gitignore")
-        let templateString = tf.getNewContent({})
-        let f = new FileManager(".gitignore", this.paths, false)
-        f.writeContent(templateString)
+    writeGitIgnore() {
+        this.logVerbose("Writing .gitignore file...");
+        let tf = new TemplateFile("gitignore");
+        let templateString = tf.getNewContent({});
+        let f = new FileManager(".gitignore", this.paths, false);
+        f.writeContent(templateString);
     }
-    onBuild(){
-        this.writeGitIgnore()
-        this.build.env.writeEnvLocal()
-        this.build.db.generate(this.build.appConfig, this.build.packageManager)
+    onBuild() {
+        this.writeGitIgnore();
+        this.build.env.writeEnvLocal();
+        this.build.db.generate(this.build.appConfig, this.build.packageManager);
     }
-    cleanUp(){
-        this.logVerbose("Just cleaning things up a bit...")
-        this.buildCleanup.runCleanup()
+    private copyMathjax() {
+        let targetDir = this.paths.joinPath(
+            "projectRoot",
+            "node_modules",
+            "mathjax-full",
+            "es5",
+        );
+        let outputDir = this.paths.joinPath("public", "mathjax");
+        let subPaths = globSync("**", {
+            cwd: targetDir,
+        });
+        if (!fs.existsSync(targetDir)) {
+            this.logError(
+                `Could not find mathjax directory in order to copy it to the public directory. This might need to be done manually.`,
+            );
+        } else {
+            for (const f of subPaths) {
+                fs.copyFileSync(path.join(targetDir, f), path.join(outputDir, f));
+            }
+        }
+    }
+    cleanUp() {
+        this.logVerbose("Just cleaning things up a bit...");
+        this.buildCleanup.runCleanup();
     }
 }

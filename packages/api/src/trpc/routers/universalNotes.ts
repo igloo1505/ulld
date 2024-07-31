@@ -80,7 +80,8 @@ export const universalNoteRouter = router({
                 firstSync: true,
                 lastSync: true,
                 lastAccess: true,
-                noteType: true
+                noteType: true,
+                href: true
             },
             orderBy: {
                 firstSync: "asc",
@@ -93,6 +94,7 @@ export const universalNoteRouter = router({
                 lastSync: true,
                 firstSync: true,
                 lastAccess: true,
+                href: true
             },
             orderBy: {
                 firstSync: "asc",

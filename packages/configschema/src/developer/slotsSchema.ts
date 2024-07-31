@@ -1,5 +1,6 @@
 import { z, ZodTypeAny } from "zod";
 import { SlotMap } from "./slotMapRootType";
+import buildStaticData from "@ulld/utilities/buildStaticData"
 
 export const configPluginSchema = z.object({
     name: z.string(),
@@ -9,7 +10,7 @@ export const configPluginSchema = z.object({
 
 const pluginConfigTransform = (val: string | z.input<typeof configPluginSchema> | string[] | z.input<typeof configPluginSchema>[]): z.output<typeof configPluginSchema>[] => {
        let vals = Array.isArray(val) ? val : [val]
-       return vals.map((v) => typeof v === "string" ? {name: v, version: "latest"} : configPluginSchema.parse(v))
+       return vals.map((v) => typeof v === "string" ? {name: v, version: v in buildStaticData.currentPackageVersions ? buildStaticData.currentPackageVersions[v as keyof typeof buildStaticData.currentPackageVersions] :"latest"} : configPluginSchema.parse(v))
 }
 
 

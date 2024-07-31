@@ -1,11 +1,12 @@
 import clsx from 'clsx'
 import "../styles/tailwindInit.scss"
-/* import "@ulld/tailwind/defaultStyles.scss" */
-import "@ulld/tailwind/websiteStyles.scss";
+import "@ulld/tailwind/defaultStyles.scss"
+/* import "@ulld/tailwind/websiteStyles.scss"; */
 import type { Metadata } from 'next'
 import React from 'react'
 import localFont from "next/font/local";
 import { fontSans } from "@ulld/tailwind/defaultFont";
+import MathjaxProvider from "@ulld/utilities/providers-mathjax"
 
 
 export const metadata: Metadata = {
@@ -90,7 +91,9 @@ const RootLayout = async (props: {
                     preferFs && "preferFs")}
                 id={`Ulld-body-root`}
             >
+                <MathjaxProvider>
                 {props.children}
+                </MathjaxProvider>
             </body>
         </html>
     )

@@ -23,6 +23,8 @@ model Subject {
     toDo         ToDo[]
     bibEntries   BibEntry[]
     equations    Equation[]
+    createdAt    DateTime       @default(now())
+    lastAccess   DateTime?      @default(now())
 }
 
 model Topic {
@@ -37,6 +39,8 @@ model Topic {
     todoList     ToDoList[]
     bibEntries   BibEntry[]
     equations    Equation[]
+    createdAt    DateTime       @default(now())
+    lastAccess   DateTime?      @default(now())
 }
 
 model Tag {
@@ -51,8 +55,9 @@ model Tag {
     Kanban       Kanban?        @relation(fields: [kanbanId], references: [id])
     kanbanId     Int?
     todoList     ToDoList[]
+    createdAt    DateTime       @default(now())
+    lastAccess   DateTime?      @default(now())
 }
-
 
 model Quote {
     body      String   @id @unique
@@ -143,6 +148,8 @@ model BibEntry {
     MdxNotes       MdxNote[]
     ipynbNotes     Ipynb[]
     readingList    ReadingList[]
+    createdAt      DateTime         @default(now())
+    lastAccess     DateTime?        @default(now())
 }
 
 model CitationsGroup {
@@ -165,11 +172,12 @@ model GoogleCalendarAuth {
 }
 
 model Snippet {
-    id          Int          @id @default(autoincrement())
+    id          Int      @id @default(autoincrement())
     content     String
     description String
     keywords    String[]
     language    String
+    createdAt   DateTime @default(now())
 }
 
 model RelatedValues {
@@ -196,15 +204,18 @@ model Equation {
     subjects       Subject[]
     createdAt      DateTime        @default(now())
     mdxNotes       MdxNote[]
+    lastAccess     DateTime?       @default(now())
 }
 
 model Definition {
-    id                String   @id @unique
+    id                String    @id @unique
     label             String?
     content           String?
     alphabeticalLabel String?
-    mdxNote           MdxNote? @relation(fields: [mdxNoteId], references: [id])
+    mdxNote           MdxNote?  @relation(fields: [mdxNoteId], references: [id])
     mdxNoteId         Int?
+    createdAt         DateTime  @default(now())
+    lastAccess        DateTime? @default(now())
 }
 
 enum ImageAlignment {
@@ -224,6 +235,7 @@ model Settings {
     landingImageAlign     ImageAlignment @default(center)
     lockedLandingImage    String?
     cleanOnSync           Boolean        @default(false)
+    plotTheme             String?
     firstSync             DateTime       @default(now())
     lastSync              DateTime       @default(now()) @updatedAt
 }
@@ -348,6 +360,7 @@ model ToDoList {
     subjects   Subject[]
     createdAt  DateTime  @default(now())
     lastUpdate DateTime  @updatedAt
+    lastAccess DateTime? @default(now())
 }
 
 enum ToDoListStatus {
@@ -393,6 +406,7 @@ model ToDo {
     child           ToDo[]         @relation("ParentChildTask")
     ToDoList        ToDoList?      @relation(fields: [toDoListId], references: [id])
     toDoListId      Int?
+    completedOn     DateTime?
 }
 
 model KanBanCard {
