@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.41
+
+### Patch Changes
+
+- Fix import issues in the dashboard component.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.41
+  - @ulld/calendar@0.0.41
+  - @ulld/default-image-map@0.0.41
+  - @ulld/diagram@0.0.41
+  - @ulld/editor@0.0.41
+  - @ulld/embeddable-components@0.0.41
+  - @ulld/equations@0.0.41
+  - @ulld/full-form@0.0.41
+  - @ulld/journal@0.0.41
+  - @ulld/navigation@0.0.41
+  - @ulld/notebook@0.0.41
+  - @ulld/pdf@0.0.41
+  - @ulld/plot@0.0.41
+  - @ulld/snippets@0.0.41
+  - @ulld/tailwind@0.0.37
+  - @ulld/task-manager@0.0.41
+  - @ulld/whiteboard@0.0.41
+
 ## 0.0.40
 
 ### Patch Changes

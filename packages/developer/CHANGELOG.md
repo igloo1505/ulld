@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.41
+
+### Patch Changes
+
+- Fix import issues in the dashboard component.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.37
+  - @ulld/typescript-config@0.0.37
+  - @ulld/configschema@0.0.41
+  - @ulld/database@0.0.40
+  - @ulld/logger@0.0.37
+
 ## 0.0.40
 
 ### Patch Changes

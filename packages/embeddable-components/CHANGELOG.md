@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.41
+
+### Patch Changes
+
+- Fix import issues in the dashboard component.
+- Updated dependencies
+  - @ulld/api@0.0.41
+  - @ulld/component-configs@0.0.41
+  - @ulld/configschema@0.0.41
+  - @ulld/default-image-map@0.0.41
+  - @ulld/hooks@0.0.41
+  - @ulld/icons@0.0.41
+  - @ulld/render@0.0.41
+  - @ulld/state@0.0.41
+  - @ulld/tailwind@0.0.37
+  - @ulld/utilities@0.0.41
+
 ## 0.0.40
 
 ### Patch Changes

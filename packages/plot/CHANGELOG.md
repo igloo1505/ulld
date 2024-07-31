@@ -1,5 +1,22 @@
 # @ulld/plot
 
+## 0.0.41
+
+### Patch Changes
+
+- Fix import issues in the dashboard component.
+- Updated dependencies
+  - @ulld/api@0.0.41
+  - @ulld/configschema@0.0.41
+  - @ulld/developer@0.0.41
+  - @ulld/full-form@0.0.41
+  - @ulld/hooks@0.0.41
+  - @ulld/logger@0.0.37
+  - @ulld/state@0.0.41
+  - @ulld/tailwind@0.0.37
+  - @ulld/ui@0.0.41
+  - @ulld/utilities@0.0.41
+
 ## 0.0.40
 
 ### Patch Changes

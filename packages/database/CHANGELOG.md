@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.40
+
+### Patch Changes
+
+- Fix import issues in the dashboard component.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.37
+
 ## 0.0.39
 
 ### Patch Changes

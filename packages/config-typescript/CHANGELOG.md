@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.37
+
+### Patch Changes
+
+- Fix import issues in the dashboard component.
+
 ## 0.0.36
 
 ### Patch Changes

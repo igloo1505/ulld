@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.41
+
+### Patch Changes
+
+- Fix import issues in the dashboard component.
+- Updated dependencies
+  - @ulld/developer@0.0.41
+  - @ulld/developer-schemas@0.0.37
+
 ## 0.0.40
 
 ### Patch Changes

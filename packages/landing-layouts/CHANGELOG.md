@@ -1,5 +1,28 @@
 # @ulld/landing-layouts
 
+## 0.0.41
+
+### Patch Changes
+
+- Fix import issues in the dashboard component.
+- Updated dependencies
+  - @ulld/api@0.0.41
+  - @ulld/bib-manager@0.0.41
+  - @ulld/calendar@0.0.41
+  - @ulld/eslint-config@0.0.37
+  - @ulld/typescript-config@0.0.37
+  - @ulld/configschema@0.0.41
+  - @ulld/developer@0.0.41
+  - @ulld/hooks@0.0.41
+  - @ulld/icons@0.0.41
+  - @ulld/journal@0.0.41
+  - @ulld/plot@0.0.41
+  - @ulld/state@0.0.41
+  - @ulld/tailwind@0.0.37
+  - @ulld/ui@0.0.41
+  - @ulld/utilities@0.0.41
+  - @ulld/whiteboard@0.0.41
+
 ## 0.0.40
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.41
+
+### Patch Changes
+
+- Fix import issues in the dashboard component.
+- Updated dependencies
+  - @ulld/hooks@0.0.41
+  - @ulld/tailwind@0.0.37
+  - @ulld/utilities@0.0.41
+
 ## 0.0.40
 
 ### Patch Changes

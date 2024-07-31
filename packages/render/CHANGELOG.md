@@ -1,5 +1,19 @@
 # @ulld/render
 
+## 0.0.41
+
+### Patch Changes
+
+- Fix import issues in the dashboard component.
+- Updated dependencies
+  - @ulld/api@0.0.41
+  - @ulld/component-map@0.0.41
+  - @ulld/typescript-config@0.0.37
+  - @ulld/configschema@0.0.41
+  - @ulld/hooks@0.0.41
+  - @ulld/jest-presets@0.0.37
+  - @ulld/utilities@0.0.41
+
 ## 0.0.40
 
 ### Patch Changes

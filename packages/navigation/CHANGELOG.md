@@ -1,5 +1,24 @@
 # @ulld/navigation
 
+## 0.0.41
+
+### Patch Changes
+
+- Fix import issues in the dashboard component.
+- Updated dependencies
+  - @ulld/api@0.0.41
+  - @ulld/eslint-config@0.0.37
+  - @ulld/typescript-config@0.0.37
+  - @ulld/configschema@0.0.41
+  - @ulld/developer@0.0.41
+  - @ulld/developer-schemas@0.0.37
+  - @ulld/hooks@0.0.41
+  - @ulld/icons@0.0.41
+  - @ulld/state@0.0.41
+  - @ulld/tailwind@0.0.37
+  - @ulld/ui@0.0.41
+  - @ulld/utilities@0.0.41
+
 ## 0.0.40
 
 ### Patch Changes

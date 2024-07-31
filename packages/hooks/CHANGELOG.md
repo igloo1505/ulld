@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.41
+
+### Patch Changes
+
+- Fix import issues in the dashboard component.
+- Updated dependencies
+  - @ulld/api@0.0.41
+  - @ulld/component-map@0.0.41
+  - @ulld/configschema@0.0.41
+  - @ulld/database@0.0.40
+  - @ulld/parsers@0.0.41
+
 ## 0.0.40
 
 ### Patch Changes
