@@ -1,53 +1,59 @@
 import { TimePeriodOption } from "@ulld/utilities/dateTime";
 import React, { useState } from "react";
 import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@ulld/tailwind/dropdown-menu";
+    Popover,
+    PopoverTrigger,
+    PopoverContent,
+} from "@ulld/tailwind/popover";
 import { timePeriodOptions } from "../utilityFunctions";
-import { DynamicIcon } from "@ulld/icons";
+import { Clock1Icon } from "lucide-react";
+import { RadioGroup, RadioGroupItem } from "@ulld/tailwind/radio-group"
+import { Label } from "@ulld/tailwind/label"
 
 interface TimePeriodToggleProps {
     value: TimePeriodOption;
     onChange: (period: TimePeriodOption) => void;
 }
 
-const TimePeriodToggle = ({ onChange }: TimePeriodToggleProps) => {
-    const [open, setOpen] = useState(true);
+const TimePeriodToggle = ({ onChange, value }: TimePeriodToggleProps) => {
+    const [open, setOpen] = useState(false);
     return (
-        <div className={"absolute top-4 right-4"}>
-            <DropdownMenu
+        <div
+            className={"h-6 w-full flex flex-row justify-end items-center z-[9999]"}
+        >
+            <Popover
                 open={open}
-                onOpenChange={(newOpen) => {
+                onOpenChange={(newOpen: boolean) => {
                     if (!newOpen) {
-                        setOpen(false);
+                        setOpen(false)
                     }
                 }}
+                modal={true}
             >
-                <DropdownMenuTrigger asChild>
-                    <DynamicIcon
-                        name="clock-1"
+                <PopoverTrigger asChild>
+                    <Clock1Icon
                         className={"cursor-pointer text-muted-foreground w-3 h-3"}
                         onClick={() => setOpen(true)}
                     />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                    {timePeriodOptions.map((t) => {
-                        return (
-                            <DropdownMenuItem
-                                key={t}
-                                /* className={itemClasses} */
-                                role="button"
-                                onClick={() => onChange(t)}
-                            >
-                                <span>{t}</span>
-                            </DropdownMenuItem>
-                        );
-                    })}
-                </DropdownMenuContent>
-            </DropdownMenu>
+                </PopoverTrigger>
+                <PopoverContent>
+                    <RadioGroup
+                        defaultValue={value}
+                        value={value}
+                        onValueChange={onChange}
+                    >
+                        {timePeriodOptions.map((t) => {
+                            return (
+                                <div className="flex items-center space-x-2">
+                                    <RadioGroupItem
+                                        value={t} id="r1" />
+                                    <Label htmlFor="r1">{t}</Label>
+                                </div>
+                            );
+                        })}
+                </RadioGroup>
+            </PopoverContent>
+        </Popover>
         </div>
     );
 };

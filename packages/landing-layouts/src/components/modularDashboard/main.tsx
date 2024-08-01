@@ -24,31 +24,27 @@ const ModularDashboard = async (props: ModularDashboardProps) => {
     });
 
     const initialTaskData = await serverClient.toDo.getTasksByCompletionDate({
-        start: new Date("1/1/1970")
-    })
+        start: new Date("1/1/1970"),
+    });
 
+    const taskLists = await serverClient.toDo.getTaskLists();
+    const overdueTaskCount = await serverClient.toDo.getOverdueTaskCount();
 
     return (
-        <div
-            className={cn(
-                "my-4 px-4 md:px-8 w-full h-screen min-h-fit grid grid-rows-[calc(50vh-32px)_calc(25vh-32px)_calc(25vh-32px)] gap-4",
-            )}
-        >
-            <div
-                className={"w-full h-full grid grid-cols-[3fr_1fr] gap-4"}
-            >
+        <div className={cn("py-4 px-4 lg:py-8 md:px-8 w-full h-screen flex flex-col gap-4")}>
+            <div className={"w-full grid grid-cols-[3fr_1fr] gap-4 h-[calc(40%-1rem)]"}>
                 <MainTasklistPlot
                     initialData={initialTaskData}
                     totalNotes={data.lastAccessNotes.length}
+                    taskLists={taskLists}
+                    overdueTaskCount={overdueTaskCount}
                 />
-                <PlaceholderCard 
-                    label="Tag list"
-                />
+                <PlaceholderCard label="Tag list" />
             </div>
-                <RecentlyAccessNotesList 
-                notes={data.lastAccessNotes}
-            />
-            <div className={"grid grid-cols-3 gap-4 h-full"}>
+            <div className={"w-full h-[calc(33%-1rem)]"}>
+                <RecentlyAccessNotesList notes={data.lastAccessNotes} />
+            </div>
+            <div className={"flex flex-row justify-between gap-4 h-[calc(33%-1rem)]"}>
                 <NotesByCategoryDonutCard
                     className={""}
                     colors={categoryColors}
@@ -67,7 +63,7 @@ const ModularDashboard = async (props: ModularDashboardProps) => {
                 <TotalNotesCard
                     totalNotes={data.totalNotes.total}
                     earliestSync={data.overallFirstSync}
-                    className={""}
+                    className={"w-1/3"}
                 />
             </div>
         </div>

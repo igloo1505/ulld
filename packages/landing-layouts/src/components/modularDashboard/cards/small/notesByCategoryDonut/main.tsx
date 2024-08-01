@@ -8,6 +8,7 @@ import { DonutChart } from "@ulld/plot/single/donut";
 import { clamp } from "@ulld/utilities/general";
 import FormattedDonutLabel from "./formattedLabel";
 import { ChartConfig } from "@ulld/plot/types";
+import CardMutedDesc from "../../../util/cardMutedDesc";
 
 interface NotesByCategoryDonutCardProps extends BaseCardProps {
     notes: (ModularDashboardData["lastAccessNotes"][number] & {
@@ -50,16 +51,18 @@ const NotesByCategoryDonutCard = ({
     }, [notes]);
 
     return (
-        <CardContainer {...props} className={"min-h-[200px] max-h-full"}>
+        <CardContainer {...props} className={"h-full w-1/3"}>
+            <CardMutedDesc>
+              Notes by category
+            </CardMutedDesc>
             <DonutChart
-                className={"w-full h-full m-8"}
+                className={"w-full h-full"}
                 chartData={data.chartData}
                 chartConfig={data.chartConfig}
                 dataKey="notes"
                 nameKey="category"
                 total={data.total}
                 totalLabel="Mdx Notes"
-                externalLabel={FormattedDonutLabel}
             />
         </CardContainer>
     );

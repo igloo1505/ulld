@@ -17,3 +17,5 @@ export interface BaseCardProps {
 }
 
 export type ModularDashboardData = Awaited<ReturnType<typeof serverClient.universalNotes.getUserOverview>>
+
+export type TaskListsData = Awaited<ReturnType<typeof serverClient.toDo.getTaskLists>>

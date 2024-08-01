@@ -329,7 +329,7 @@ pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${package
         this.rm(this.getRootRelativePath("pnpm-lock.yaml"));
     }
     writeModified(all: boolean = false, dry: boolean = false) {
-    this.sortDependencies()
+        this.sortDependencies();
         let p = all ? this.packages : this.packages.filter((a) => a.modified);
         p.forEach((item) => {
             let data = { ...item };
@@ -427,10 +427,10 @@ pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${package
     depsByName(monoRepoPackageName: string) {
         return this.packages.find((a) => a.name === monoRepoPackageName)?.deps;
     }
-    sortDependencies(){
-      for (const p of this.packages) {
-          p.deps = p.deps.sort((a, b) => a.name < b.name ? -1 : 1)
-      }
+    sortDependencies() {
+        for (const p of this.packages) {
+            p.deps = p.deps.sort((a, b) => (a.name < b.name ? -1 : 1));
+        }
     }
     findByDependency(name: string) {
         return this.packages.filter((a) => a.deps.find((b) => b.name === name));
@@ -527,14 +527,16 @@ ${deps.map((d) => `    ${d.type}`).join("\n")}
                 console.log(`Adding src directory to file paths in ${k.name}`);
                 existingFiles.push("src");
             }
-            if (fs.existsSync(packageConfigPath)) {
-                k.content.files = existingFiles.includes("pluginConfig.ulld.json")
-                    ? existingFiles
-                    : [...existingFiles, "pluginConfig.ulld.json"];
-            } else {
-                k.content.files = existingFiles.filter(
-                    (f) => f !== "pluginConfig.ulld.json",
-                );
+            if (!packageConfigPath.includes("eslint")) {
+                if (fs.existsSync(packageConfigPath)) {
+                    k.content.files = existingFiles.includes("pluginConfig.ulld.json")
+                        ? existingFiles
+                        : [...existingFiles, "pluginConfig.ulld.json"];
+                } else {
+                    k.content.files = existingFiles.filter(
+                        (f) => f !== "pluginConfig.ulld.json",
+                    );
+                }
             }
         }
         this.writeModified(true);

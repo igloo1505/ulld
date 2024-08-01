@@ -1,4 +1,4 @@
-import { Subject, Tag, Topic, Prisma } from "@ulld/database";
+import { Subject, Tag, Topic, Prisma, prisma } from "@ulld/database";
 import { publicProcedure, router } from "../../trpc";
 import { z } from "zod";
 import { TaskListIds } from "@ulld/utilities/types/todos";
@@ -7,7 +7,6 @@ import {
     addTodoListSchema,
     todoListAddTaskSchemaTrpc,
 } from "../../../plugins/native/todo/zod/general";
-import { prisma } from "@ulld/database/db";
 import {
     getToDoSearchParams,
     getParsedToDoSearchParams,
@@ -228,6 +227,42 @@ export const toDoRouter = router({
                 },
             });
         }),
+    getOverdueTaskCount: publicProcedure.query(async () => {
+        return await prisma.toDo.count({
+            where: {
+                AND: [
+                    {
+                        status: {
+                            notIn: ["Done"],
+                        },
+                    },
+                    {
+                        dueAt: {
+                            lt: new Date(),
+                        },
+                    },
+                ],
+            },
+        });
+    }),
+    getOverdueTasks: publicProcedure.query(async () => {
+        return await prisma.toDo.findMany({
+            where: {
+                AND: [
+                    {
+                        status: {
+                            notIn: ["Done"],
+                        },
+                    },
+                    {
+                        dueAt: {
+                            lt: new Date(),
+                        },
+                    },
+                ],
+            },
+        });
+    }),
     setToDoDueDate: publicProcedure
         .input(todoStatusDueAtSchema)
         .mutation(async ({ input }) => {
@@ -372,6 +407,7 @@ export const toDoRouter = router({
                             dueAt: data.dueAt ? new Date(data.dueAt) : undefined,
                         },
                     },
+                    lastUpdate: new Date(),
                 },
             });
         }),
@@ -417,7 +453,7 @@ export const toDoRouter = router({
     markCompleted: publicProcedure
         .input(z.object({ taskIds: z.number().array() }))
         .mutation(async ({ input }) => {
-            await prisma.toDo.updateMany({
+            let res = await prisma.toDo.updateMany({
                 where: {
                     id: {
                         in: input.taskIds,
@@ -426,6 +462,20 @@ export const toDoRouter = router({
                 data: {
                     status: "Done",
                     completedOn: new Date(),
+                },
+            });
+            await prisma.toDoList.updateMany({
+                where: {
+                    tasks: {
+                        some: {
+                            id: {
+                                in: input.taskIds,
+                            },
+                        },
+                    },
+                },
+                data: {
+                    lastUpdate: new Date(),
                 },
             });
         }),
@@ -443,12 +493,26 @@ export const toDoRouter = router({
                 },
             });
         }),
+    getTaskLists: publicProcedure.query(async () => {
+        return await prisma.toDoList.findMany({
+            select: {
+                id: true,
+                label: true,
+                lastUpdate: true,
+            },
+            orderBy: {
+                lastUpdate: "desc",
+            },
+        });
+    }),
     getTasksByCompletionDate: publicProcedure
         .input(
-            z.object({
-                start: z.coerce.date().optional(),
-                stop: z.coerce.date().default(new Date()),
-            }).default({}),
+            z
+                .object({
+                    start: z.coerce.date().optional(),
+                    stop: z.coerce.date().default(new Date()),
+                })
+                .default({}),
         )
         .query(async ({ input }) => {
             let tasks = [];

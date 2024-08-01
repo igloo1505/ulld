@@ -45,6 +45,7 @@ const TimePeriodButtonGroup = ({
         return (
           <a
             role="button"
+            key={`time-period-btn-${o.value}`}
             className={cn(
               "text-sm w-full h-full flex justify-center items-center border rounded-[20px] py-2 px-3 transition-colors duration-200",
               active === o.value

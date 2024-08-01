@@ -15,6 +15,7 @@ import TimePeriodToggle from "../../../util/timePeriodToggle/main";
 import CardContainer from "../../../util/cardContainer";
 import CardLabelText from "../../../util/cardLabel";
 import CardMutedDesc from "../../../util/cardMutedDesc";
+import { useLocalStorage } from "@ulld/hooks/useLocalStorage";
 
 interface AccessByCategoryDonutProps extends BaseCardProps {
     notes: (ModularDashboardData["lastAccessNotes"][number] & {
@@ -30,7 +31,7 @@ const AccessByCategoryDonut = ({
     firstSync,
     ...props
 }: AccessByCategoryDonutProps) => {
-    const [timePeriod, setTimePeriod] = useState<TimePeriodOption>("30 Days");
+    let [timePeriod, setTimePeriod] = useLocalStorage<TimePeriodOption>("ulld-dashboard-cat-by-access", "30 Days")
     const [items, setFilteredItems] = useState<
         AccessByCategoryDonutProps["notes"]
     >([]);
@@ -71,20 +72,17 @@ const AccessByCategoryDonut = ({
     }, [items]);
 
     return (
-        <CardContainer {...props} className={"min-h-[200px] max-h-full"}>
-            <CardMutedDesc>
-              Recently accessed notes 
-            </CardMutedDesc>
+        <CardContainer {...props} className={"w-1/3 max-h-full justify-start"}>
+            <CardMutedDesc>Recently accessed notes</CardMutedDesc>
             <TimePeriodToggle value={timePeriod} onChange={setTimePeriod} />
             <DonutChart
-                className={"w-full h-full m-8"}
+                className={"h-full w-full -mt-6"}
                 chartData={data.chartData}
                 chartConfig={data.chartConfig}
                 dataKey="notes"
                 nameKey="category"
                 total={data.total}
                 totalLabel={timePeriod}
-                externalLabel={FormattedDonutLabel}
             />
         </CardContainer>
     );

@@ -3,7 +3,7 @@ import staticContent from "staticContent"
 
 
 const getRoute = (subPath: string) => {
-    return `${staticContent.links.home}${subPath.startsWith("/") ? "" : "/"}${subPath}`
+    return `${staticContent.links.home}${Boolean(subPath.startsWith("/") || subPath.length === 0) ? "" : "/"}${subPath}`
         
     }
  
@@ -35,41 +35,64 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: getRoute("/configure"),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.4,
+    },
+    {
+      url: getRoute("/contactMe"),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.4,
+    },
+    {
       url: getRoute("/corePlugins"),
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.4,
     },
+{
+      url: getRoute("/demos"),
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.8,
+    },
     {
       url: getRoute("/docs"),
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.6,
-    },
-    {
-      url: getRoute(staticContent.links.demos.myNotes),
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1,
+      priority: 0.7,
     },
     {
       url: getRoute("/featureRequest"),
       lastModified: new Date(),
       changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: getRoute("/imageGallery"),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
       priority: 0.4,
     },
-
+    {
+      url: getRoute("/myWork"),
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 1,
+    },
     {
       url: getRoute("/source"),
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.4,
+      priority: 0.3,
     },
     {
       url: getRoute("/sponsor"),
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.7,
     },
     {
       url: getRoute("/story"),
@@ -81,7 +104,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: getRoute("/withSource"),
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.5,
+      priority: 0.3,
     },
   ]
 }
