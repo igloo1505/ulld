@@ -47,8 +47,11 @@ const TimePeriodButtonGroup = ({
             role="button"
             className={cn(
               "text-sm w-full h-full flex justify-center items-center border rounded-[20px] py-2 px-3 transition-colors duration-200",
-              active === o.value ? "border-primary" : " hover:bg-secondary hover:text-secondary-foreground"
+              active === o.value
+                ? "border-primary"
+                : " hover:bg-secondary hover:text-secondary-foreground",
             )}
+            onClick={() => onChange(o.value)}
           >
             {o.label}
           </a>
