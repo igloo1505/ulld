@@ -1,9 +1,9 @@
 "use client";
 import axios from "axios";
-import { ThemeOptions } from "@ulld/tailwind/themeUtils";
+import { UlldColorTheme, UlldPlotTheme } from "@ulld/utilities/types";
+import { getHtmlElementAttribute } from "@ulld/utilities/utils-dom";
 
-// TODO: Come back here and handle this asap. Would be a huge value add.
-export const changeTheme = async (newTheme: ThemeOptions) => {
+export const changeTheme = async (newTheme: UlldColorTheme) => {
     let res = await axios.post("/api/settings/handleTheme", { theme: newTheme });
     let success = Boolean(res.data?.success);
     if (success) {
@@ -13,12 +13,21 @@ export const changeTheme = async (newTheme: ThemeOptions) => {
     return success;
 };
 
-export const getThemeCLIENT = (): ThemeOptions => {
-    let t: ThemeOptions | undefined | null = window.localStorage.getItem(
+export const changePlotTheme = async (newTheme: UlldPlotTheme) => {
+    let res = await axios.post("/api/settings/handlePlotTheme", { theme: newTheme });
+    let success = Boolean(res.data?.success);
+    if (success) {
+        window.localStorage.setItem("ulld-plot-theme", newTheme);
+    }
+    return success;
+};
+
+export const getThemeCLIENT = (): UlldColorTheme => {
+    let t: UlldColorTheme | undefined | null = window.localStorage.getItem(
         "ulld-theme",
-    ) as ThemeOptions | undefined;
+    ) as UlldColorTheme | undefined;
     if (!t) {
-        t = document.querySelector("html")?.getAttribute("data-ulld-theme") as ThemeOptions
+        t = getHtmlElementAttribute("data-ulld-theme") as UlldColorTheme;
     }
     if (!t) {
         changeTheme("violet");

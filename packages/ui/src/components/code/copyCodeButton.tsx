@@ -1,12 +1,12 @@
 import React from "react";
 import { CopyIcon } from "lucide-react";
-import { Technologies } from "@ulld/database/internalDatabaseTypes";
 import { copyStringToClipboard } from "@ulld/utilities/copyStringToClipboard";
 import { useToast } from "@ulld/tailwind/use-toast";
+import { ShikiLanguage } from "@ulld/utilities/shikiLanguages";
 
 
 interface CopyCodeButtonProps {
-  language: Technologies;
+  language: ShikiLanguage
   content: string;
 }
 

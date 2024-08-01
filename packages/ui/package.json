@@ -69,7 +69,7 @@
         "genDeclaration": "tsc --emitDeclarationOnly --declaration",
         "dev": "tsup src/index.ts --format esm --watch --dts --external react",
         "typecheck": "tsc --noEmit",
-        "lint": "tsc",
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
         "test": "echo 'add jest here once tests have been created'",
         "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
     },
@@ -210,6 +210,7 @@
         "winston": "3.12.0",
         "xmlhttprequest": "1.8.0",
         "zod": "3.22.4",
+        "@ulld/parsers": "workspace:*",
         "zod-config": "0.0.2"
     },
     "devDependencies": {
@@ -312,6 +313,7 @@
         "@ulld/component-map": "workspace:*",
         "@ulld/database": "workspace:*",
         "@ulld/render": "workspace:*",
+        "@ulld/parsers": "workspace:*",
         "next": "^14.2.3",
         "next-mdx-remote": "^5.0.0",
         "react": "^18.2.0",

@@ -7,7 +7,6 @@ import { setDarkmode, showToast, clearEmbededPanelStateByPath } from "../../stat
 import { setTocContent } from "../../state/slices/functionality"
 import { copyStringToClipboard } from "@ulld/utilities/actions/copyStringToClipboard"
 import { ToastConfigType } from "@ulld/utilities/types/toastConfig"
-import {ThemeOptions} from "@ulld/tailwind/themeUtils"
 
 
 export const toggleSidebar = () => document.body.classList.toggle("sidebarOpenPermanent")
@@ -19,7 +18,7 @@ export const toggleDarkMode = async () => {
     const darkMode = html?.classList.contains("dark")
     const newDarkMode = !darkMode
     if (html) {
-        html.classList.toggle("dark")
+        html.classList.toggle(newDarkMode ? "dark" : "light")
         html.setAttribute("data-color-mode", newDarkMode ? "dark" : "light")
     }
     window.ulldStore?.dispatch(setDarkmode(newDarkMode))

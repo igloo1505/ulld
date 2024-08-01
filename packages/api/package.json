@@ -159,7 +159,7 @@
         "build": "echo 'Add dev build here'",
         "test": "jest --experimental-vm-modules",
         "test:watch": "jest --watchAll",
-        "lint": "echo 'Add lint script here'",
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
         "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
         "brokenGatherTypes": "tsc --project ./tsconfigTypes.json --emitDeclarationOnly"
     },

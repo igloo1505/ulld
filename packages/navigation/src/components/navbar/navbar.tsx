@@ -77,7 +77,7 @@ const Navbar = ({ navConfig: nav, noteTypes, logo: Logo }: NavbarProps) => {
                         href="/"
                             /* width={300} */
                             /* height={300} */
-                            className={"h-[calc(var(--nav-height)*0.7)] w-auto"}
+                            className={"h-[calc(var(--nav-height)*0.7)] w-[80px]"}
                     >
                         {Logo}
                     </Link>

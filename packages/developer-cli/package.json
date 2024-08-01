@@ -37,7 +37,7 @@
         "dev": "node ./bin/dev.js",
         "build": "rm -rf ./dist && tsc -b",
         "test": "jest",
-        "lint": "eslint . --ext .ts"
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json"
     },
     "devDependencies": {
         "@oclif/prettier-config": "^0.2.1",

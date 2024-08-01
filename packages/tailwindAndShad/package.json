@@ -341,5 +341,8 @@
     "publishConfig": {
         "access": "public"
     },
-    "dependencies": {}
+    "dependencies": {},
+    "scripts": {
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json"
+    }
 }

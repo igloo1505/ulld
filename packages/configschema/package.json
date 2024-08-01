@@ -70,7 +70,7 @@
         "generateSlotMap": "tsx src/__scripts__/generateSlotMap.ts",
         "buildLocal": "tsx ./src/__scripts__/updateShikiThemes.ts && tsx ./src/defaults/generateDefaultConfig.ts && tsx src/__scripts__/generateSlotMap.ts",
         "test": "echo 'Add test script here'",
-        "lint": "echo 'Add lint script here'",
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
         "gatherTypes": "tsc --project ./tsconfigTypes.json --emitDeclarationOnly"
     },
     "dependencies": {

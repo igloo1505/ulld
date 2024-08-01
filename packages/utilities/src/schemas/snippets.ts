@@ -1,12 +1,12 @@
-import { Technologies } from "@ulld/database/internalDatabaseTypes"
 import { z } from "zod"
+import shikiLanguageList, { ShikiLanguage } from "../shiki/languageList"
 
 export const snippetValidator = z.object({
     id: z.number().int(),
     content: z.string(),
     description: z.string(),
     keywords: z.string().array().default([]),
-    language: z.nativeEnum(Technologies)
+    language: z.enum(shikiLanguageList)
 })
 
 
@@ -15,6 +15,6 @@ export type SnippetListItemProps = z.output<typeof snippetValidator>
 
 
 export interface SnippetFilterParams {
-    language?: Technologies
+    language?: ShikiLanguage 
     query?: string
 }

@@ -7,7 +7,7 @@ import { prisma } from '@ulld/database/db'
 import FileInputList from '../../../inputs/fileList'
 import { CalendarAndDateManager } from '@ulld/api/classes/data/calendarAndDate'
 import { BibCore } from '@ulld/api/classes/prismaMdxRelations/Bib'
-import { BibWithEntries } from '@ulld/api/trpcInternalMethods/bib/main'
+import { BibWithEntries } from '@ulld/api/types'
 
 
 export interface BibStatusProps {

@@ -16,7 +16,7 @@
         "dev": "echo 'Add dev script here'",
         "build": "echo 'Add build script here'",
         "test": "echo 'Add test script here'",
-        "lint": "echo 'Add lint script here'",
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
         "db:migrateTargetProjectSchema": "dotenv -e /Users/bigsexy/Desktop/current/ulld/.env.local -- prisma migrate dev --schema ./prisma/schema.prisma",
         "migrate:reset": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma migrate reset --schema ./src/prisma/schema.prisma",
         "db:seed": "node ../../node_modules/dotenv-cli/cli.js -e .env.local -- prisma db seed",

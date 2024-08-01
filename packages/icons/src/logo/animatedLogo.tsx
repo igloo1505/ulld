@@ -16,6 +16,7 @@ export interface BaseProps extends React.ComponentProps<typeof motion.svg> {
     suffix?: string;
     suffixDelay?: number;
     noAnimate?: boolean
+    brandColor?: boolean
 }
 
 export type AnimatedUlldLogoProps =
@@ -109,6 +110,7 @@ const MainLogo = forwardRef(
         {
             shouldShow,
             speed,
+            brandColor,
             ...props
         }: AnimatedUlldLogoProps & { shouldShow: boolean },
         ref: ForwardedRef<SVGSVGElement>,
@@ -165,7 +167,7 @@ const MainLogo = forwardRef(
                         <motion.path
                             d="M67.3056 15.6927L66.0902 143.268"
                             fill="none"
-                            stroke="hsl(var(--primary))"
+                            stroke={brandColor ? "#0ba5e9" : "hsl(var(--primary))"}
                             strokeLinecap="butt"
                             strokeLinejoin="round"
                             strokeWidth="16"
@@ -178,7 +180,7 @@ const MainLogo = forwardRef(
                         <motion.path
                             d="M25.7161 15.6927L24.5007 143.268"
                             fill="none"
-                            stroke="hsl(var(--primary))"
+                            stroke={brandColor ? "#0ba5e9" : "hsl(var(--primary))"}
                             strokeLinecap="butt"
                             strokeLinejoin="round"
                             strokeWidth="16"
@@ -188,7 +190,7 @@ const MainLogo = forwardRef(
                         <motion.path
                             d="M66.0902 143.268C66.0902 154.619 56.7801 163.821 45.2955 163.821C33.8109 163.821 24.5007 154.619 24.5007 143.268"
                             fill="none"
-                            stroke="hsl(var(--primary))"
+                            stroke={brandColor ? "#0ba5e9" : "hsl(var(--primary))"}
                             strokeLinecap="butt"
                             strokeLinejoin="round"
                             strokeWidth="16"

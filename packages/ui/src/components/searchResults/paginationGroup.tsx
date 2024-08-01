@@ -4,7 +4,8 @@ import React from 'react'
 import ReactPaginate from 'react-paginate'
 import "./paginationStyles.scss"
 import { useRouter, useSearchParams } from 'next/navigation'
-import { SearchAllParams, formatSearchAllParams } from '@ulld/state/searchParamSchemas/utilities/formatSearchAllParams'
+import {formatSearchAllParams } from '@ulld/state/searchParamSchemas/utilities/formatSearchAllParams'
+import { SearchAllParams } from '@ulld/types'
 
 
 type NumStr = number | string

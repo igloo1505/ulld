@@ -18,8 +18,7 @@ import {
 } from "@ulld/tailwind/select";
 import { useToast } from "@ulld/tailwind/use-toast";
 import { Button } from "@ulld/tailwind/button";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm, zodResolver } from "@ulld/full-form/form";
 import { z } from "zod";
 import deepEql from "deep-eql";
 import BibSettingsSection, {

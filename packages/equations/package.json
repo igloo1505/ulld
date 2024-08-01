@@ -22,7 +22,7 @@
         "writePluginConfig": "dotenv -e ../../.env.local -- tsx ./pluginConfig.ulld.ts",
         "build": "echo 'Add build script here'",
         "test": "echo 'Add test script here'",
-        "lint": "echo 'Add lint script here'",
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
         "copyRouter": "rm -rf ./node_modules/@ulld/api && mkdir ./node_modules/@ulld/api && cp -r /Users/bigsexy/Desktop/currentProjects/ulld/packages/api/ ./node_modules/@ulld/api",
         "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
     },

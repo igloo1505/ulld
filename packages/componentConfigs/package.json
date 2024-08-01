@@ -4,7 +4,8 @@
     "private": false,
     "scripts": {
         "build": "tsx ./src/scripts/build/main.ts",
-        "writeImports": "tsx ./src/scripts/writeImports.ts"
+        "writeImports": "tsx ./src/scripts/writeImports.ts",
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json"
     },
     "files": [
         "src"

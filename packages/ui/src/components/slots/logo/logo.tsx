@@ -10,6 +10,7 @@ const Logo = (props: LogoProps) => {
             delay={3}
             show={true}
             speed={3}
+            brandColor
         />
     );
 };

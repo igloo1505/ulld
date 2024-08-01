@@ -22,6 +22,7 @@ const ModularDashboard = async (props: ModularDashboardProps) => {
         categoryColors[t] = `hsl(var(--chart-${clampMaxPlotColors(i)}))`;
     });
 
+
     return (
         <div
             className={cn(

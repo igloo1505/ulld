@@ -1,6 +1,6 @@
 import { UlldPlugin } from "../plugin";
 import { getComponentMapContent } from "./fileContent/componentMap";
-import fs from "fs";
+import fs from "fs-extra";
 import path from "path";
 import { ShellManager } from "../baseClasses/shell";
 import { UlldBuildProcess } from "../build";

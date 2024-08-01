@@ -54,7 +54,7 @@ export interface TaggableComboBoxProps<
 
 const combineIfUnique = (base: string[], other: string[]) => {
     let b = base;
-    other.forEach((o) => {
+    other?.forEach((o) => {
         if (!b.includes(o)) {
             b.push(o);
         }
