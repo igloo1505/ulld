@@ -77,6 +77,7 @@ const RootLayout = async (props: {
     return (
         <html
             lang="en"
+            data-ulld-theme="ulld"
             className={clsx(
                 "group/html overflow-x-hidden max-w-screen min-h-screen js-focus-visible dark border-border min-scrollbar bg-background",
                 appFont.variable,

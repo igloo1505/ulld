@@ -5,10 +5,10 @@ import {
     PopoverTrigger,
     PopoverContent,
 } from "@ulld/tailwind/popover";
-import { timePeriodOptions } from "../utilityFunctions";
+import { timePeriodOptions } from "@ulld/utilities/dateTime";
 import { Clock1Icon } from "lucide-react";
-import { RadioGroup, RadioGroupItem } from "@ulld/tailwind/radio-group"
-import { Label } from "@ulld/tailwind/label"
+import { RadioGroup, RadioGroupItem } from "@ulld/tailwind/radio-group";
+import { Label } from "@ulld/tailwind/label";
 
 interface TimePeriodToggleProps {
     value: TimePeriodOption;
@@ -18,14 +18,11 @@ interface TimePeriodToggleProps {
 const TimePeriodToggle = ({ onChange, value }: TimePeriodToggleProps) => {
     const [open, setOpen] = useState(false);
     return (
-        <div
-            className={"h-6 w-full flex flex-row justify-end items-center z-[9999]"}
-        >
             <Popover
                 open={open}
                 onOpenChange={(newOpen: boolean) => {
                     if (!newOpen) {
-                        setOpen(false)
+                        setOpen(false);
                     }
                 }}
                 modal={true}
@@ -44,17 +41,18 @@ const TimePeriodToggle = ({ onChange, value }: TimePeriodToggleProps) => {
                     >
                         {timePeriodOptions.map((t) => {
                             return (
-                                <div className="flex items-center space-x-2">
-                                    <RadioGroupItem
-                                        value={t} id="r1" />
+                                <div
+                                    key={`timePeriod-toggle-${t}`}
+                                    className="flex items-center space-x-2"
+                                >
+                                    <RadioGroupItem value={t} id="r1" />
                                     <Label htmlFor="r1">{t}</Label>
                                 </div>
                             );
                         })}
-                </RadioGroup>
-            </PopoverContent>
-        </Popover>
-        </div>
+                    </RadioGroup>
+                </PopoverContent>
+            </Popover>
     );
 };
 

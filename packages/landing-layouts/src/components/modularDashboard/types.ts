@@ -1,6 +1,10 @@
 import type { serverClient } from "@ulld/api/serverClient"
 import { HTMLProps } from "react"
 
+export const mainPlotTypes = [
+  "Notes",
+  "Tasks"
+] as const
 
 type XYPlotType = "line" | "bar"
 
@@ -19,3 +23,12 @@ export interface BaseCardProps {
 export type ModularDashboardData = Awaited<ReturnType<typeof serverClient.universalNotes.getUserOverview>>
 
 export type TaskListsData = Awaited<ReturnType<typeof serverClient.toDo.getTaskLists>>
+
+
+export type MainPlotFilterType = typeof mainPlotTypes[number]
+
+export type NoteFilterType = "lastAccess"
+
+export type TasksByCompletion = Awaited<
+        ReturnType<typeof serverClient.toDo.getTasksByCompletionDate>
+    >

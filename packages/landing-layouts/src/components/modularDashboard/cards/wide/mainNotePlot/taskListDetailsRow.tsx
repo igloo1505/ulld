@@ -3,6 +3,7 @@ import TimePeriodButtonGroup, {
     TimePeriodButtonGroupProps,
 } from "./timePeriodButtons";
 import TaskDetailHeaderItem from "./taskDetailHeaderItem";
+import TaskListDetailsTopRightCard from "./taskListCardDetailsTopRight";
 
 interface TaskListCardDetailsProps extends TimePeriodButtonGroupProps {
     totalNotes: number;
@@ -19,11 +20,14 @@ const TaskListCardDetails = ({
             <div className={"w-full flex flex-col justify-between items-start"}>
                 <div className={"flex flex-row justify-start items-center space-x-3"}>
                     <TaskDetailHeaderItem label="Total Notes" content={totalNotes} />
-                    <TaskDetailHeaderItem label="Overdue Tasks" content={overdueTaskCount} />
+                    <TaskDetailHeaderItem
+                        label="Overdue Tasks"
+                        content={overdueTaskCount}
+                    />
                 </div>
                 <TimePeriodButtonGroup {...props} />
             </div>
-            <div>Some other stuff</div>
+            <TaskListDetailsTopRightCard />
         </div>
     );
 };

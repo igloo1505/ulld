@@ -1,18 +1,18 @@
 "use client";
-import { serverClient } from "@ulld/api/serverClient";
-import { TimePeriodOption } from "@ulld/utilities/dateTime";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CardContainer from "../../../util/cardContainer";
 import TaskListCardDetails from "./taskListDetailsRow";
-import { TaskListsData } from "../../../types";
+import { ModularDashboardData, TaskListsData, TasksByCompletion } from "../../../types";
+import MainCardPlot from "./plot";
+import { useDashboardContext, useDashboardDispatch } from "./provider";
 
-interface MainTasklistPlotProps {
-    initialData: Awaited<
-        ReturnType<typeof serverClient.toDo.getTasksByCompletionDate>
-    >;
+
+export interface MainTasklistPlotProps {
+    initialData: TasksByCompletion;
     totalNotes: number;
     taskLists: TaskListsData;
     overdueTaskCount?: number | null;
+    notes: ModularDashboardData["lastAccessNotes"]
 }
 
 const MainTasklistPlot = ({
@@ -20,19 +20,32 @@ const MainTasklistPlot = ({
     totalNotes,
     taskLists,
     overdueTaskCount,
+    notes
 }: MainTasklistPlotProps) => {
-    const [timePeriod, setTimePeriod] = useState<TimePeriodOption>("All Time");
+    const state = useDashboardContext()
+    const dispatch = useDashboardDispatch()
+    console.log("state: ", state)
+    useEffect(() => {
+        if(!state.notes.length && notes.length){
+            dispatch({
+                type: "setAllNotes",
+                payload: {
+                    notes: notes,
+                    filteredNotes: notes
+                }
+            })
+        }
+    }, [notes])
     return (
         <CardContainer
             className={"w-full h-full flex flex-col justify-center items-center"}
         >
             <TaskListCardDetails
                 totalNotes={totalNotes}
-                active={timePeriod}
-                onChange={setTimePeriod}
                 overdueTaskCount={overdueTaskCount}
             />
-            <div className={"flex-grow"}>Plot goes here</div>
+                <MainCardPlot
+            />
         </CardContainer>
     );
 };

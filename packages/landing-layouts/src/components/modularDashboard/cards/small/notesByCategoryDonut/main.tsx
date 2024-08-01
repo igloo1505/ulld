@@ -51,12 +51,12 @@ const NotesByCategoryDonutCard = ({
     }, [notes]);
 
     return (
-        <CardContainer {...props} className={"h-full w-1/3"}>
+        <CardContainer {...props} className={"w-1/3 max-h-full justify-start"}>
             <CardMutedDesc>
               Notes by category
             </CardMutedDesc>
             <DonutChart
-                className={"w-full h-full"}
+                className={"w-full h-full pb-4"}
                 chartData={data.chartData}
                 chartConfig={data.chartConfig}
                 dataKey="notes"
