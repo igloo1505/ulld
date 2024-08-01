@@ -176,3 +176,4 @@ export const documentTypeConfigSchema = documentTypeConfigSchemaBase
     });
 
 export type DocumentTypeConfig = z.output<typeof documentTypeConfigSchema>;
+export type DocumentTypeConfigInput = z.input<typeof documentTypeConfigSchema>;

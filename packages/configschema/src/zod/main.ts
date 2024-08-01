@@ -24,6 +24,7 @@ import {
 import { buildOnlySchema } from "./build/main";
 import { appMetaSchema } from "./meta";
 import staticBuildData from "@ulld/utilities/buildStaticData"
+import { defaultNoteTypes } from "./defaults/defaultNoteTypes";
 
 export const zodRegexField = z
     .union([
@@ -120,7 +121,17 @@ export const appConfigSchema = z.object({
         ]),
     noteTypes: documentTypeConfigSchema
         .array()
-        .default([])
+        .default(defaultNoteTypes)
+        .transform((x) => {
+        let ids = x.map((l) => l.id)
+        let data = x
+        for (const defaultNoteType of defaultNoteTypes) {
+           if(!ids.includes(defaultNoteType.id!)){
+                data.push(documentTypeConfigSchema.parse(defaultNoteType))
+            }
+        }
+        return data
+    })
         .describe(
             "This is the main location to describe the structure of your notes. Break up your note directory into as many categories as you like, but this app is designed to allow for increasingly refined searching and filtering. Categories of 'math', 'physics' and 'chemistry' would likely fit most users better than 'calc1', 'calc2', 'linearAlgebra', etc. For use cases such as those, please look at the 'autoTag', 'autoSubject', and 'autoTopic' feature.",
         ),
