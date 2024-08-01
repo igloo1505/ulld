@@ -36,7 +36,7 @@ const MathjaxProvider = ({ children, className }: MathjaxProviderProps) => {
             src={
                 process.env.NODE_ENV === "production"
                     ? "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
-                    : "/mathjax/tex-chtml.js"
+                    : "/utils/tex-chtml.js"
             }
             onLoad={() => {
                 window.dispatchEvent(new CustomEvent("mathjax-loaded"));

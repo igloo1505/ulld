@@ -2,8 +2,8 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 import { Config } from "tailwindcss/types/config";
 
 export const tailwindConfig: Config = {
-    // darkMode: ["class"],
-    darkMode: ["variant", "&:not(.light *)"],
+    darkMode: ["class"],
+    // darkMode: ["variant", "&:not(.light *)"],
     // darkMode: [
     //     "variant",
     //     [
@@ -18,7 +18,6 @@ export const tailwindConfig: Config = {
         "./app/**/*.{ts,tsx}",
         "./src/**/*.{ts,tsx}",
     ],
-    safelist: ["border"],
     theme: {
         container: {
             center: true,
@@ -97,66 +96,6 @@ export const tailwindConfig: Config = {
                     "700": "#0369A1",
                     "800": "#075985",
                     "900": "#1E3A8A",
-                },
-                Cheatsheet: {
-                    dark_bg: "#a3e635",
-                    dark_fg: "#fff",
-                    bg: "#bef264",
-                    fg: "#030712",
-                },
-                Doc: {
-                    dark_bg: "#facc15",
-                    dark_fg: "#000",
-                    bg: "#facc15",
-                    fg: "#000",
-                },
-                Guide: {
-                    dark_bg: "#ec4899",
-                    dark_fg: "#000",
-                    bg: "#ec4899",
-                    fg: "#000",
-                },
-                Journal: {
-                    dark_bg: "#e11d48",
-                    dark_fg: "#fff",
-                    bg: "##f43f5e",
-                    fg: "#000",
-                },
-                PhysicsNote: {
-                    dark_bg: "#2dd4bf",
-                    dark_fg: "#111827",
-                    bg: "#2dd4bf",
-                    fg: "#111827",
-                },
-                QuickNote: {
-                    dark_bg: "#6366f1",
-                    dark_fg: "#fff",
-                    bg: "#6366f1",
-                    fg: "#111827",
-                },
-                QuickThought: {
-                    dark_bg: "#8b5cf6",
-                    dark_fg: "#111827",
-                    bg: "#8b5cf6",
-                    fg: "#111827",
-                },
-                Recipe: {
-                    dark_bg: "#d946ef",
-                    dark_fg: "#111827",
-                    bg: "#d946ef",
-                    fg: "#111827",
-                },
-                Reference: {
-                    dark_bg: "#0ea5e9",
-                    dark_fg: "#fff",
-                    bg: "#0ea5e9",
-                    fg: "#111827",
-                },
-                Tech: {
-                    dark_bg: "#8b5cf6",
-                    dark_fg: "#111827",
-                    bg: "#8b5cf6",
-                    fg: "#111827",
                 },
             },
             borderRadius: {

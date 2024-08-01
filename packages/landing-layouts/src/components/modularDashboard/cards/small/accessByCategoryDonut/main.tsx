@@ -13,6 +13,8 @@ import {
 import { useIsomorphicLayoutEffect } from "@ulld/hooks/useIsomorphicEffect";
 import TimePeriodToggle from "../../../util/timePeriodToggle/main";
 import CardContainer from "../../../util/cardContainer";
+import CardLabelText from "../../../util/cardLabel";
+import CardMutedDesc from "../../../util/cardMutedDesc";
 
 interface AccessByCategoryDonutProps extends BaseCardProps {
     notes: (ModularDashboardData["lastAccessNotes"][number] & {
@@ -70,6 +72,9 @@ const AccessByCategoryDonut = ({
 
     return (
         <CardContainer {...props} className={"min-h-[200px] max-h-full"}>
+            <CardMutedDesc>
+              Recently accessed notes 
+            </CardMutedDesc>
             <TimePeriodToggle value={timePeriod} onChange={setTimePeriod} />
             <DonutChart
                 className={"w-full h-full m-8"}

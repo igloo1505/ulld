@@ -15,7 +15,7 @@ const RecentlyAccessNotesList = ({
 }: RecentlyAccessNotesListProps) => {
     let items = useMemo(() => notes.slice(0, 50), [notes]);
     return (
-        <CardContainer {...props} className={"w-full justify-start max-h-[max(80vh)]"}>
+        <CardContainer {...props} className={"w-full justify-start max-h-[max(80vh) flex-grow]"}>
             <CardLabelText className={"my-4"}>Recently Accessed</CardLabelText>
             <ScrollArea className={"w-full"}>
                 {items.map((x, i) => {

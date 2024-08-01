@@ -46,9 +46,10 @@ const PermanentSidebar = ({
 
     return (
         <aside
-            className={
-                "fixed flex flex-col gap-6 items-center w-16 h-screen py-8 overflow-y-auto bg-primary text-primary-content border-r rtl:border-l rtl:border-r-0 dark:bg-gray-950 border-blue-300 dark:border-gray-700 top-0 left-0 -translate-x-full opacity-100 data-sidebar:translate-x-0 data-sidebar:opacity-100 z-[11] dark:text-gray-200"
-            }
+            /* className={ */
+                /* "fixed flex flex-col gap-6 items-center w-16 h-screen py-8 overflow-y-auto bg-primary text-primary-content border-r rtl:border-l rtl:border-r-0 dark:bg-gray-950 border-blue-300 dark:border-gray-700 top-0 left-0 -translate-x-full opacity-100 data-sidebar:translate-x-0 data-sidebar:opacity-100 z-[11] dark:text-gray-200" */
+            /* } */
+            className={"fixed flex flex-col gap-6 items-center w-16 h-screen py-8 overflow-y-auto bg-primary dark:bg-card text-primary-foreground dark:text-card-foreground border-r rtl:border-l rtl:border-r-0 top-0 left-0 -translate-x-full data-sidebar:translate-x-0 z-[11]"}
             id="sidebar-panel"
         >
             <nav className="flex flex-col flex-1 space-y-6">

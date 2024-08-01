@@ -46,8 +46,9 @@ export class BaseApp extends ShellManager {
     generate() {
         this.logVerbose("Creating component map...");
         this.createComponentMap(this.build.plugins);
-        this.logVerbose("Copying mathjax files to public directory...")
-        this.copyMathjax()
+        // NOTE: Do not copy for now. THe mathjax/node version issue seems to have been resolved and the mathjax files that were copied were causing issues with better-react-mathjax.
+        // this.logVerbose("Copying mathjax files to public directory...")
+        // this.copyMathjax()
         this.logVerbose("Applying component slots...");
         this.applySlots();
         this.logVerbose("Writing temporary target paths...");

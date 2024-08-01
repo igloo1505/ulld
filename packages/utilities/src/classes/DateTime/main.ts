@@ -15,12 +15,15 @@ dayjs.extend(timezone);
 dayjs.extend(advancedFormat);
 
 export const timePeriodOptions = [
+    "24 hours",
+    "1 week",
     "30 Days",
     "60 Days",
     "90 Days",
     "6 Months",
     "Previous Year",
-    "Year to Date"
+    "Year to Date",
+    "All Time"
 ] as const
 
 export type TimePeriodOption = typeof timePeriodOptions[number]
@@ -205,12 +208,15 @@ export class DateTime {
     }
     static getTimePeriod(opt: TimePeriodOption){
         let timePeriodRecord: Record<TimePeriodOption, number | ((d: Date) => number)> = {
+            "24 hours": 86400000,
+            "1 week": 604800000,
             "30 Days": 2592000000, // 60 * 60 * 24 * 30 * 1000
-            "60 Days": 2592000000 * 2,
-            "90 Days": 2592000000 * 3,
+            "60 Days": 5184000000,
+            "90 Days": 7776000000,
             "Previous Year": 31536000000, // 60 * 60 * 24 * 365 * 1000
-            "6 Months": 31536000000 / 2,
-            "Year to Date": (d) => d.valueOf() - new Date(`1/1/${d.getFullYear()}`).valueOf()
+            "6 Months": 15768000000,
+            "Year to Date": (d) => d.valueOf() - new Date(`1/1/${d.getFullYear()}`).valueOf(),
+            "All Time": (d) => d.valueOf() - new Date(`1/1/1970`).valueOf()
         }
         let f = timePeriodRecord[opt]
         let _now = new Date()

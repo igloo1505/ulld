@@ -8,6 +8,7 @@ import NotesByCategoryDonutCard from "./cards/small/notesByCategoryDonut/main";
 import AccessByCategoryDonut from "./cards/small/accessByCategoryDonut/main";
 import { clampMaxPlotColors } from "./util/utilityFunctions";
 import RecentlyAccessNotesList from "./cards/tall/recentlyAccessNotesList/main";
+import MainTasklistPlot from "./cards/wide/mainNotePlot/main";
 
 interface ModularDashboardProps {
     searchParams?: object;
@@ -22,51 +23,52 @@ const ModularDashboard = async (props: ModularDashboardProps) => {
         categoryColors[t] = `hsl(var(--chart-${clampMaxPlotColors(i)}))`;
     });
 
+    const initialTaskData = await serverClient.toDo.getTasksByCompletionDate({
+        start: new Date("1/1/1970")
+    })
+
 
     return (
         <div
             className={cn(
-                "py-4 px-4 md:px-8 w-full h-fit min-h-screen grid grid-cols-[1fr_3fr] grid-rows-1 gap-4",
+                "my-4 px-4 md:px-8 w-full h-screen min-h-fit grid grid-rows-[calc(50vh-32px)_calc(25vh-32px)_calc(25vh-32px)] gap-4",
             )}
         >
             <div
-                className={"w-full h-full grid grid-cols-1 gap-4 grid-rows-[250px_1fr]"}
+                className={"w-full h-full grid grid-cols-[3fr_1fr] gap-4"}
             >
+                <MainTasklistPlot
+                    initialData={initialTaskData}
+                    totalNotes={data.lastAccessNotes.length}
+                />
+                <PlaceholderCard 
+                    label="Tag list"
+                />
+            </div>
+                <RecentlyAccessNotesList 
+                notes={data.lastAccessNotes}
+            />
+            <div className={"grid grid-cols-3 gap-4 h-full"}>
+                <NotesByCategoryDonutCard
+                    className={""}
+                    colors={categoryColors}
+                    notes={
+                        data.lastAccessNotes.filter((x) => x.type === "mdxNote") as any
+                    }
+                />
+                <AccessByCategoryDonut
+                    className={""}
+                    colors={categoryColors}
+                    notes={
+                        data.lastAccessNotes.filter((x) => x.type === "mdxNote") as any
+                    }
+                    firstSync={data.overallFirstSync}
+                />
                 <TotalNotesCard
                     totalNotes={data.totalNotes.total}
                     earliestSync={data.overallFirstSync}
                     className={""}
                 />
-                <RecentlyAccessNotesList notes={data.lastAccessNotes} />
-            </div>
-            <div className={"w-full flex flex-col gap-4"}>
-                <div className={"grid grid-cols-2 h-[250px] gap-4"}>
-                    <PlaceholderCard className={""} label="Wide plot 1" />
-                    <PlaceholderCard className={""} label="Wide plot 2" />
-                </div>
-                <div className={"grid grid-cols-3 gap-4 h-[40vh]"}>
-                    <NotesByCategoryDonutCard
-                        className={""}
-                        colors={categoryColors}
-                        notes={
-                            data.lastAccessNotes.filter((x) => x.type === "mdxNote") as any
-                        }
-                    />
-                    <AccessByCategoryDonut
-                        className={""}
-                        colors={categoryColors}
-                        notes={
-                            data.lastAccessNotes.filter((x) => x.type === "mdxNote") as any
-                        }
-                        firstSync={data.overallFirstSync}
-                    />
-                    <PlaceholderCard className={""} />
-                </div>
-                <div className={"grid grid-cols-3 gap-4 h-[40vh]"}>
-                    <PlaceholderCard className={""} />
-                    <PlaceholderCard className={""} />
-                    <PlaceholderCard className={""} />
-                </div>
             </div>
         </div>
     );

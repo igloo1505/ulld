@@ -448,7 +448,7 @@ export const toDoRouter = router({
             z.object({
                 start: z.coerce.date().optional(),
                 stop: z.coerce.date().default(new Date()),
-            }),
+            }).default({}),
         )
         .query(async ({ input }) => {
             let tasks = [];
