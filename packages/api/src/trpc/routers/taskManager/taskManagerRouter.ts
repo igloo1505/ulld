@@ -565,6 +565,7 @@ export const toDoRouter = router({
                 completedOn: true,
                 createdAt: true,
                 status: true,
+                dueAt: true,
                 toDoListId: true,
             },
         });

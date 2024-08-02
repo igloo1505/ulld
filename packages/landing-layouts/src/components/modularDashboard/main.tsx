@@ -14,7 +14,7 @@ import { DashboardProvider } from "./util/provider";
 
 const ModularDashboard = async () => {
     /* let data = await serverClient.universalNotes.getUserOverview(); */
-    let data = getModularDashboardTestData();
+    let data = getModularDashboardTestData(800);
     let categoryColors: Record<string, string> = {};
 
     data.uniqueNoteTypes.forEach((t, i) => {

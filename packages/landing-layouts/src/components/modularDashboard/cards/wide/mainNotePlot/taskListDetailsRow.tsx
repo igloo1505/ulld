@@ -15,7 +15,7 @@ const TaskListCardDetails = ({
         <div className={"w-full grid grid-cols-2 p-4"}>
             <div className={"w-full flex flex-col justify-between items-start"}>
                 <div className={"flex flex-row justify-start items-center space-x-4"}>
-                    <TaskDetailHeaderItem label="Total Notes" content={state.totalNotes?.mdx || 0} />
+                    <TaskDetailHeaderItem label="Total Notes" content={state.filteredNotes.length || 0} />
                     <TaskDetailHeaderItem
                         label="Overdue Tasks"
                         content={state.overdueCount || 0}

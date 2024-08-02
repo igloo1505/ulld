@@ -1,7 +1,15 @@
 "use client";
 
 import { TrendingUp } from "lucide-react";
-import { Bar, BarChart, CartesianGrid, LabelList, XAxis } from "recharts";
+import {
+    Bar,
+    BarChart,
+    BarProps as BP,
+    CartesianGrid,
+    LabelList,
+    XAxis,
+    YAxis,
+} from "recharts";
 import {
     ChartContainer,
     ChartTooltip,
@@ -11,6 +19,7 @@ import { ChartConfig } from "../../../../types";
 import { LabelPosition } from "recharts/types/component/Label";
 import { Margin } from "recharts/types/util/types";
 import { Formatter } from "recharts/types/component/DefaultTooltipContent";
+import { ComponentProps } from "react";
 /* const chartData = [ */
 /*   { month: "January", desktop: 186 }, */
 /*   { month: "February", desktop: 305 }, */
@@ -27,13 +36,13 @@ import { Formatter } from "recharts/types/component/DefaultTooltipContent";
 /*   }, */
 /* } satisfies ChartConfig */
 
-interface BarProps<T extends object> {
+interface BarProps<T extends object> extends Omit<BP, "dataKey" | "ref"> {
     dataKey: keyof T;
     fill?: string;
     foreground?: string;
     labelPosition?: LabelPosition;
     radius?: number;
-    label?: boolean
+    label?: boolean;
 }
 
 export interface BarPlotProps<T extends object> {
@@ -43,7 +52,8 @@ export interface BarPlotProps<T extends object> {
     xAxis?: keyof T;
     margin?: Margin;
     className?: string;
-    tooltipFormatter?: Formatter<any, any>
+    yAxis?: ComponentProps<typeof YAxis> | string | boolean;
+    tooltipFormatter?: Formatter<any, any>;
 }
 
 export const BarPlot = <T extends object>({
@@ -51,9 +61,10 @@ export const BarPlot = <T extends object>({
     chartConfig,
     bars,
     xAxis,
+    yAxis,
     margin,
     className,
-    tooltipFormatter
+    tooltipFormatter,
 }: BarPlotProps<T>) => {
     return (
         <ChartContainer config={chartConfig} className={className}>
@@ -72,30 +83,43 @@ export const BarPlot = <T extends object>({
                         tickLine={false}
                         tickMargin={10}
                         axisLine={false}
-                        /* tickFormatter={(value) => value?.slice(0, 3)} */
+                    /* tickFormatter={(value) => value?.slice(0, 3)} */
+                    />
+                )}
+                {yAxis && (
+                    <YAxis
+                        dataKey={typeof yAxis === "string" ? yAxis : undefined}
+                        tickLine={false}
+                        tickMargin={10}
+                        axisLine={false}
+                        {...(typeof yAxis === "object" ? yAxis : {})}
+                    /* tickFormatter={(value) => value?.slice(0, 3)} */
                     />
                 )}
                 <ChartTooltip
                     cursor={false}
-                    content={<ChartTooltipContent
-                    hideLabel
-                    formatter={tooltipFormatter}
-                />}
+                    content={
+                        <ChartTooltipContent hideLabel formatter={tooltipFormatter} />
+                    }
                 />
                 {bars.map((b) => {
+                    const { labelPosition, foreground } = b;
                     return (
                         <Bar
                             key={`bar-plot-${b.dataKey as string}`}
-                            dataKey={b.dataKey as string}
                             fill={b.fill}
                             radius={b.radius || 8}
+                            {...b}
+                            dataKey={b.dataKey as string}
                         >
-                            {b.label !== false && <LabelList
-                                position={b.labelPosition || "top"}
-                                offset={12}
-                                className={b.foreground || "fill-foreground"}
-                                fontSize={12}
-                            />}
+                            {b.label !== false && (
+                                <LabelList
+                                    position={labelPosition || "top"}
+                                    offset={12}
+                                    className={foreground || "fill-foreground"}
+                                    fontSize={12}
+                                />
+                            )}
                         </Bar>
                     );
                 })}

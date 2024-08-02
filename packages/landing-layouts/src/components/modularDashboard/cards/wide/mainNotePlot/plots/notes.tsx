@@ -3,15 +3,17 @@ import { BarPlot } from "@ulld/plot/single/bar";
 import { ChartConfig } from "@ulld/plot/types";
 import { DateTime } from "@ulld/utilities/dateTime";
 import { useDashboardContext } from "../../../../util/provider";
+import { cn } from "@ulld/utilities/cn";
 
-/* PRIORITY: Make this plot stacked. It's currently showing one of each for each day, which makes zero sense on the user's end. */
 
 const NotesPlot = () => {
   const { filteredNotes: notes, timePeriod } = useDashboardContext();
   const is24 = timePeriod === "24 hours";
   const chartData = useMemo(() => {
-    let data: { date: string | Date; mdx: number, notebook: number }[] = [];
-    let byDay = is24 ? DateTime.groupByHour(notes, (n) => n.firstSync) : DateTime.groupByDay(notes, (n) => n.firstSync)
+    let data: { date: string | Date; mdx: number; notebook: number }[] = [];
+    let byDay = is24
+      ? DateTime.groupByHour(notes, (n) => n.firstSync)
+      : DateTime.groupByDay(notes, (n) => n.firstSync);
     for (const d in byDay) {
       data.push({
         date: d,
@@ -50,22 +52,37 @@ const NotesPlot = () => {
       chartData={chartData.chartData}
       chartConfig={chartData.chartConfig}
       className={"w-full h-full"}
+      yAxis={true}
       tooltipFormatter={(...data) => {
-        let idx = data[3]
+        let idx = data[3];
         if ("date" in data[4]) {
           return (
             <>
-            {idx === 0 && (
-            <div className={"border-b"}>
-              {is24
-                ? `${format24HourString(data[4].date as string)}`
-                : DateTime.formatDate(data[4].date as string)}
-            </div>
-            )}
-            <div className={"w-full flex flex-row justify-between items-start"}>
-                <div>{data[1] === "mdx" ? "Mdx" : "Notebooks"}</div>
-                <div className={"ml-auto"}>{data[4][data[1] as any] as string}</div>
-            </div>
+              {idx === 0 && (
+                <div className={"border-b"}>
+                  {is24
+                    ? `${format24HourString(data[4].date as string)}`
+                    : DateTime.formatDate(data[4].date as string)}
+                </div>
+              )}
+              <div
+                className={"w-full flex flex-row justify-between items-start"}
+              >
+                <div className={"flex flex-row justify-start items-start gap-2"}>
+                  <div
+                    className={cn(
+                      "w-2 h-4 rounded-lg",
+                      data[1] === "mdx"
+                        ? "bg-[hsl(var(--chart-1))]"
+                        : "bg-[hsl(var(--chart-2))]",
+                    )}
+                  />
+                  <div>{data[1] === "mdx" ? "Mdx" : "Notebooks"}</div>
+                </div>
+                <div className={"ml-auto"}>
+                  {data[4][data[1] as any] as string}
+                </div>
+              </div>
             </>
           );
         }
@@ -75,6 +92,7 @@ const NotesPlot = () => {
         {
           dataKey: "mdx",
           fill: "hsl(var(--chart-1))",
+          stackId: "a",
           foreground: "hsl(var(--chart-1))",
           label: false,
         },
@@ -82,6 +100,7 @@ const NotesPlot = () => {
           dataKey: "notebook",
           fill: "hsl(var(--chart-2))",
           foreground: "hsl(var(--chart-2))",
+          stackId: "a",
           label: false,
         },
       ]}
