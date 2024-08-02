@@ -547,4 +547,47 @@ export const toDoRouter = router({
                 });
             }
         }),
+    getTaskManagerOverview: publicProcedure.query(async () => {
+        let taskLists = await prisma.toDoList.findMany({
+            select: {
+                id: true,
+                label: true,
+                createdAt: true,
+                _count: true,
+            },
+            orderBy: {
+                createdAt: "desc",
+            },
+        });
+        let tasks = await prisma.toDo.findMany({
+            select: {
+                id: true,
+                completedOn: true,
+                createdAt: true,
+                status: true,
+                toDoListId: true,
+            },
+        });
+        let overdueCount = await prisma.toDo.count({
+            where: {
+                AND: [
+                    {
+                        completedOn: {
+                            lte: new Date(),
+                        },
+                    },
+                    {
+                        status: {
+                            not: "Done",
+                        },
+                    },
+                ],
+            },
+        });
+        return {
+            tasks,
+            taskLists,
+            overdueCount,
+        };
+    }),
 });

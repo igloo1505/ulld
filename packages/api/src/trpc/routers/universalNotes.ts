@@ -1,6 +1,6 @@
 import { publicProcedure, router } from "../trpc";
 import { z } from "zod";
-import { prisma } from "@ulld/database/db";
+import { prisma } from "@ulld/database";
 import { getFsNote } from "../../trpcInternalMethods/filesystem/fsnotes";
 
 export const universalNoteRouter = router({
@@ -113,11 +113,11 @@ export const universalNoteRouter = router({
         let combinedNotes = [
             ...notes.map((n) => ({
                 ...n,
-                type: "mdxNote",
+                type: "mdxNote" as "mdxNote",
             })),
             ...notebooks.map((x) => ({
                 ...x,
-                type: "notebook",
+                type: "notebook" as "notebook",
             })),
         ].sort((a, b) => a.lastSync < b.lastSync ? -1 : 1)
 

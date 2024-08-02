@@ -183,8 +183,8 @@ export class DateTime {
         }
         return returnItems;
     }
-    static formatDate(d: Date | string | number, withTime?: boolean) {
-        const formatStr = withTime ? "MMM Do YYYY [at] h:mm a" : "MMM Do YYYY";
+    static formatDate(d: Date | string | number, withTime?: boolean, formatString?: string) {
+        const formatStr = formatString ? formatString : withTime ? "MMM Do YYYY [at] h:mm a" : "MMM Do YYYY";
         return dayjs(d).format(formatStr);
     }
     static formattedQuantityToString(d: {
@@ -269,6 +269,24 @@ export class DateTime {
             let d = getDate(k);
             if (d) {
                 let s = DateTime.consistentlyFormatDay(d);
+                if (!(s in days)) {
+                    days[s] = [];
+                }
+                days[s].push(k);
+            }
+        }
+        return days;
+    }
+    static groupByHour<J extends unknown>(
+        items: J[],
+        getDate: ((item: J) => Date | null),
+    ) {
+        let days: Record<string, J[]> = {};
+        for (const k of items) {
+            let d = getDate(k);
+            if (d) {
+                let v = dayjs(d)
+                let s = v.format("HH")
                 if (!(s in days)) {
                     days[s] = [];
                 }

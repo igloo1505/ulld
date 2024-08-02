@@ -2,15 +2,10 @@ import { useLocalStorage } from "@ulld/hooks/useLocalStorage";
 import React, { useEffect, useState } from "react";
 import { MainPlotFilterType, mainPlotTypes } from "../../../types";
 import cn from "@ulld/utilities/cn";
+import ClockDisplay from "./clockDisplay";
 
-interface TaskListDetailsTopRightCardProps { }
-
-/* const filterLabelMap: Record<MainPlotFilterType, string> = { */
-/*      */
-/* }; */
 
 const TaskListDetailsTopRightCard = (
-    props: TaskListDetailsTopRightCardProps,
 ) => {
     const [plotFilterType, setPlotFilterType] =
         useLocalStorage<MainPlotFilterType>("ulld-dashboard-main-plot-filter");
@@ -22,8 +17,8 @@ const TaskListDetailsTopRightCard = (
 
     return (
         <div className={"w-full flex flex-col justify-center items-center"}>
-            <div className={"flex-grow"}>Some top stuff</div>
-            <div className={"w-full flex flex-row justify-start items-center"}>
+            <div className={"flex-grow"}><ClockDisplay /></div>
+            <div className={"w-full flex flex-row justify-end items-center"}>
                 <div
                     className={"grid gap-4"}
                     style={{

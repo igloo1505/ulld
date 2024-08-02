@@ -1,6 +1,7 @@
 import { DateTime, TimePeriodOption } from "@ulld/utilities/dateTime";
 import { clamp } from "@ulld/utilities/general";
 import dayjs from "dayjs";
+import { DashboardState } from "./provider";
 
 export const getDateToNowString = (
     _start: string | Date,
@@ -41,3 +42,17 @@ export const filterItemsByTimePeriod = <T extends unknown>(
         DateTime.getTimePeriod(period),
     );
 };
+
+export const sortNotesByType = (notes: DashboardState["notes"]) => {
+    let items: {
+        mdx: typeof notes,
+        notebook: typeof notes
+    } = {
+        mdx: [],
+        notebook: []
+    }
+    for (const item of notes) {
+        items[item.type === "notebook" ? "notebook" : "mdx"].push(item)
+    }
+    return items
+}

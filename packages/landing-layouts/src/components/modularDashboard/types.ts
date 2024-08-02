@@ -32,3 +32,5 @@ export type NoteFilterType = "lastAccess"
 export type TasksByCompletion = Awaited<
         ReturnType<typeof serverClient.toDo.getTasksByCompletionDate>
     >
+
+export type TaskManagerOverview = Awaited<ReturnType<typeof serverClient.toDo.getTaskManagerOverview>>

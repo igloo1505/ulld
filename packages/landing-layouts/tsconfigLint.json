@@ -3,10 +3,6 @@
     "extends": "@ulld/typescript-config/nextjs.json",
     "compilerOptions": {
         "rootDir": ".",
-        "types": [
-            "@testing-library/jest-dom",
-            "jest-environment-jsdom"
-        ],
         "moduleResolution": "bundler",
         "outDir": "dist",
         "jsx": "react-jsx",

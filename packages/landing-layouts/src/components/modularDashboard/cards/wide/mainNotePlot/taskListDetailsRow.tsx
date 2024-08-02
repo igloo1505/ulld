@@ -4,25 +4,21 @@ import TimePeriodButtonGroup, {
 } from "./timePeriodButtons";
 import TaskDetailHeaderItem from "./taskDetailHeaderItem";
 import TaskListDetailsTopRightCard from "./taskListCardDetailsTopRight";
+import { useDashboardContext } from "../../../util/provider";
 
-interface TaskListCardDetailsProps extends TimePeriodButtonGroupProps {
-    totalNotes: number;
-    overdueTaskCount?: number | null;
-}
-
+interface TaskListCardDetailsProps extends TimePeriodButtonGroupProps { }
 const TaskListCardDetails = ({
-    totalNotes,
-    overdueTaskCount = 0,
     ...props
 }: TaskListCardDetailsProps) => {
+    const state = useDashboardContext()
     return (
         <div className={"w-full grid grid-cols-2 p-4"}>
             <div className={"w-full flex flex-col justify-between items-start"}>
-                <div className={"flex flex-row justify-start items-center space-x-3"}>
-                    <TaskDetailHeaderItem label="Total Notes" content={totalNotes} />
+                <div className={"flex flex-row justify-start items-center space-x-4"}>
+                    <TaskDetailHeaderItem label="Total Notes" content={state.totalNotes?.mdx || 0} />
                     <TaskDetailHeaderItem
                         label="Overdue Tasks"
-                        content={overdueTaskCount}
+                        content={state.overdueCount || 0}
                     />
                 </div>
                 <TimePeriodButtonGroup {...props} />

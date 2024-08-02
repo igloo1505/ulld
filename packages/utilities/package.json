@@ -8,6 +8,7 @@
   ],
   "exports": {
     "./types": "./src/types/main.ts",
+    "./testDataHelpers": "./src/testDataHelpers/main.ts",
     "./utilNavLinks": "./src/navigation/utilityNavLinks.ts",
     "./getPathnameFromHeaders": "./src/utils/getPathnameFromHeaders.ts",
     "./glob": "./src/classes/glob/main.ts",

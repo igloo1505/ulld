@@ -1,10 +1,7 @@
 import React from "react";
-import { MainPlotFilterType } from "../../../types";
-import { useLocalStorage } from "@ulld/hooks/useLocalStorage";
-import NotesPlot, { NotesPlotProps } from "./plots/notes";
-import { localStorageKeys } from "../../../util/staticData";
+import NotesPlot from "./plots/notes";
 
-interface MainCardPlotProps extends NotesPlotProps {
+interface MainCardPlotProps {
     /* filterType:  */
 }
 

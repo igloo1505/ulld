@@ -24,7 +24,7 @@ model Subject {
     bibEntries   BibEntry[]
     equations    Equation[]
     createdAt    DateTime       @default(now())
-    lastAccess   DateTime?      @default(now())
+    lastAccess   DateTime      @default(now())
 }
 
 model Topic {
@@ -40,7 +40,7 @@ model Topic {
     bibEntries   BibEntry[]
     equations    Equation[]
     createdAt    DateTime       @default(now())
-    lastAccess   DateTime?      @default(now())
+    lastAccess   DateTime      @default(now())
 }
 
 model Tag {
@@ -56,7 +56,7 @@ model Tag {
     kanbanId     Int?
     todoList     ToDoList[]
     createdAt    DateTime       @default(now())
-    lastAccess   DateTime?      @default(now())
+    lastAccess   DateTime      @default(now())
 }
 
 model Quote {
@@ -149,7 +149,7 @@ model BibEntry {
     ipynbNotes     Ipynb[]
     readingList    ReadingList[]
     createdAt      DateTime         @default(now())
-    lastAccess     DateTime?        @default(now())
+    lastAccess     DateTime        @default(now())
 }
 
 model CitationsGroup {
@@ -204,7 +204,7 @@ model Equation {
     subjects       Subject[]
     createdAt      DateTime        @default(now())
     mdxNotes       MdxNote[]
-    lastAccess     DateTime?       @default(now())
+    lastAccess     DateTime       @default(now())
 }
 
 model Definition {
@@ -215,7 +215,7 @@ model Definition {
     mdxNote           MdxNote?  @relation(fields: [mdxNoteId], references: [id])
     mdxNoteId         Int?
     createdAt         DateTime  @default(now())
-    lastAccess        DateTime? @default(now())
+    lastAccess        DateTime @default(now())
 }
 
 enum ImageAlignment {
@@ -323,7 +323,7 @@ model MdxNote {
     toDo               ToDo[]
     firstSync          DateTime            @default(now())
     lastSync           DateTime            @updatedAt
-    lastAccess         DateTime?           @default(now())
+    lastAccess         DateTime           @default(now())
 }
 
 model Ipynb {
@@ -348,7 +348,7 @@ model Ipynb {
     firstSync          DateTime            @default(now())
     lastSync           DateTime            @updatedAt
     readingList        ReadingList[]
-    lastAccess         DateTime?           @default(now())
+    lastAccess         DateTime           @default(now())
 }
 
 model ToDoList {
@@ -360,7 +360,7 @@ model ToDoList {
     subjects   Subject[]
     createdAt  DateTime  @default(now())
     lastUpdate DateTime  @updatedAt
-    lastAccess DateTime? @default(now())
+    lastAccess DateTime @default(now())
 }
 
 enum ToDoListStatus {
