@@ -1,5 +1,4 @@
 import { DateTime, TimePeriodOption } from "@ulld/utilities/dateTime";
-import { clamp } from "@ulld/utilities/general";
 import dayjs from "dayjs";
 import { DashboardState } from "./provider";
 
@@ -18,10 +17,6 @@ export const getDateToNowString = (
     return allTime ? `All Time (${baseString})` : baseString;
 };
 
-export const clampMaxPlotColors = (index: number) => {
-    return clamp(index, [1, 5]);
-};
-
 export const filterItemsByTimePeriod = <T extends unknown>(
     items: T[],
     period: TimePeriodOption,
@@ -31,8 +26,8 @@ export const filterItemsByTimePeriod = <T extends unknown>(
         items,
         (n) => {
             let val = getItem(n);
-            if(!val){
-                val = "1/1/1970"
+            if (!val) {
+                val = "1/1/1970";
             }
             if (typeof val === "string") {
                 val = new Date(val);
@@ -45,14 +40,27 @@ export const filterItemsByTimePeriod = <T extends unknown>(
 
 export const sortNotesByType = (notes: DashboardState["notes"]) => {
     let items: {
-        mdx: typeof notes,
-        notebook: typeof notes
+        mdx: typeof notes;
+        notebook: typeof notes;
     } = {
         mdx: [],
-        notebook: []
-    }
+        notebook: [],
+    };
     for (const item of notes) {
-        items[item.type === "notebook" ? "notebook" : "mdx"].push(item)
+        items[item.type === "notebook" ? "notebook" : "mdx"].push(item);
     }
-    return items
-}
+    return items;
+};
+
+export const format24HourString = (val: string) => {
+    let n = parseInt(val);
+    if (typeof n === "number" && !Number.isNaN(n)) {
+        if (n < 12) {
+            return `${n} AM`;
+        } else {
+            let _n = n - 12;
+            return `${_n === 0 ? 12 : _n} PM`;
+        }
+    }
+    return null;
+};

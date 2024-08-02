@@ -42,6 +42,7 @@ export interface WithFSSearchParams {
 
 
 
+// PRIORITY: Delete this fucking thing immediately. It does almost nothing, and there's a much better equivalent function called searchAllParamsToSearchParamsClass in the utilities package.
 const getSearchAllParams = (params: SearchAllParams) => {
     let query = new URLSearchParams()
     if (params.query) {

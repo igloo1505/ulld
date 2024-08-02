@@ -1,15 +1,14 @@
 "use client";
-
 import * as React from "react";
-/* import { TrendingUp } from "lucide-react"; */
-import { Label, Pie, PieChart } from "recharts";
+import { Cell, Label, Pie, PieChart } from "recharts";
 import {
-    ChartConfig,
     ChartContainer,
     ChartTooltip,
     ChartTooltipContent,
 } from "../../../../lib/shad/shadChart";
 import cn from "@ulld/utilities/cn";
+import { ChartConfig } from "../../../../types";
+import { useRouter } from "next/navigation";
 
 export interface DonutChartProps {
     chartConfig: ChartConfig;
@@ -17,36 +16,10 @@ export interface DonutChartProps {
     dataKey: string;
     nameKey: string;
     className?: string;
-    total: number | string
-    totalLabel: React.ReactNode
-    externalLabel?: boolean | React.FC
+    total: number | string;
+    totalLabel: React.ReactNode;
+    externalLabel?: boolean | React.FC;
 }
-
-const chartConfig = {
-    visitors: {
-        label: "Visitors",
-    },
-    chrome: {
-        label: "Chrome",
-        color: "hsl(var(--chart-1))",
-    },
-    safari: {
-        label: "Safari",
-        color: "hsl(var(--chart-2))",
-    },
-    firefox: {
-        label: "Firefox",
-        color: "hsl(var(--chart-3))",
-    },
-    edge: {
-        label: "Edge",
-        color: "hsl(var(--chart-4))",
-    },
-    other: {
-        label: "Other",
-        color: "hsl(var(--chart-5))",
-    },
-} satisfies ChartConfig;
 
 export const DonutChart = ({
     chartConfig,
@@ -56,11 +29,15 @@ export const DonutChart = ({
     className,
     total,
     totalLabel,
-    externalLabel
+    externalLabel,
 }: DonutChartProps) => {
-    /* const totalVisitors = React.useMemo(() => { */
-    /*     return chartData.reduce((acc, curr) => acc + curr.visitors, 0); */
-    /* }, []); */
+    const router = useRouter();
+    const handleClick = (href?: string) => {
+        if (!href) {
+            return;
+        }
+        router.push(href);
+    };
 
     return (
         <ChartContainer
@@ -80,6 +57,15 @@ export const DonutChart = ({
                     strokeWidth={5}
                     label={externalLabel}
                 >
+                    {chartData.map((x, i) => {
+                        return (
+                            <Cell
+                                key={`donut-cell-${i}`}
+                                className={x.href ? "cursor-pointer" : undefined}
+                                onClick={() => handleClick(x.href)}
+                            />
+                        );
+                    })}
                     <Label
                         content={({ viewBox }) => {
                             if (viewBox && "cx" in viewBox && "cy" in viewBox) {

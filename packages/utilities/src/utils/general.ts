@@ -12,9 +12,6 @@ export const replaceRecursively = (value: string, replace: string | RegExp, repl
 }
 
 
-export const clamp = (index: number, range: [number, number]) => {
-    if(index >= range[0] && index <= range[1]){
-        return index
+export const clampInArray = <T extends unknown>(index: number, arr: T[]) => {
+       return arr[index % arr.length]
     }
-    return range[0] + index % range[1]
-}

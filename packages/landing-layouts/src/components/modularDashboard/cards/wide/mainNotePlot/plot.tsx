@@ -1,17 +1,20 @@
 import React from "react";
 import NotesPlot from "./plots/notes";
+import { useDashboardContext } from "../../../util/provider";
+import TaskListCompletionPlot from "./plots/tasks";
 
 interface MainCardPlotProps {
-    /* filterType:  */
+  /* filterType:  */
 }
 
 const MainCardPlot = ({}: MainCardPlotProps) => {
-
-    return (
-        <div className={"w-full flex-grow h-[150px]"}>
-            <NotesPlot />
-        </div>
-    );
+  const { plotFilterType } = useDashboardContext();
+  return (
+    <div className={"w-full flex-grow h-[150px]"}>
+       { plotFilterType === "Notes" && <NotesPlot /> }
+       { plotFilterType === "Tasks" && <TaskListCompletionPlot /> }
+    </div>
+  );
 };
 
 MainCardPlot.displayName = "MainCardPlot";

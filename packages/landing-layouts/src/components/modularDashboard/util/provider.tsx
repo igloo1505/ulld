@@ -3,6 +3,7 @@ import { ReactNode, createContext, useReducer, useContext } from "react";
 import { TimePeriodOption } from "@ulld/utilities/dateTime";
 import DashboardInnerProvider from "./innerProvider";
 import {
+    MainPlotFilterType,
   ModularDashboardData,
   NoteFilterType,
   TaskManagerOverview,
@@ -12,7 +13,7 @@ export interface DashboardState extends Omit<TaskManagerOverview, "overdueCount"
   notes: ModularDashboardData["lastAccessNotes"];
   filteredNotes: ModularDashboardData["lastAccessNotes"];
   filterType: NoteFilterType;
-  plotFilterType?: string;
+  plotFilterType?: MainPlotFilterType
   totalNotes?: {
         mdx: number
         notebook: number

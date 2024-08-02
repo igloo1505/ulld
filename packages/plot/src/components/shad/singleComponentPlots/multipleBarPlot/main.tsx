@@ -11,11 +11,11 @@ import {
   CardTitle,
 } from "@ulld/tailwind/card"
 import {
-  ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from "../../../../lib/shad/shadChart"
+import { ChartConfig } from "../../../../types"
 
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },

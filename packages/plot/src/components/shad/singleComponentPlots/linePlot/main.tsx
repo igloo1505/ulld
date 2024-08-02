@@ -1,86 +1,97 @@
-"use client"
+"use client";
 
-import { TrendingUp } from "lucide-react"
-import { CartesianGrid, Line, LineChart, XAxis } from "recharts"
-
+import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@ulld/tailwind/card"
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "../../../../lib/shad/shadChart"
-const chartData = [
-  { month: "January", desktop: 186 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
-]
+    ChartContainer,
+    ChartTooltip,
+    ChartTooltipContent,
+} from "../../../../lib/shad/shadChart";
+import { ChartConfig } from "../../../../types";
+import { ComponentPropsWithoutRef } from "react";
+import { Margin } from "recharts/types/util/types";
+import { Formatter } from "recharts/types/component/DefaultTooltipContent";
+import XYAxis, { XYAxisProps } from "../utilityComponents/xyAxis";
 
-const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "hsl(var(--chart-1))",
-  },
-} satisfies ChartConfig
-
-export function Component() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Line Chart</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <ChartContainer config={chartConfig}>
-          <LineChart
-            accessibilityLayer
-            data={chartData}
-            margin={{
-              left: 12,
-              right: 12,
-            }}
-          >
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="month"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              tickFormatter={(value) => value.slice(0, 3)}
-            />
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent hideLabel />}
-            />
-            <Line
-              dataKey="desktop"
-              type="natural"
-              stroke="var(--color-desktop)"
-              strokeWidth={2}
-              dot={false}
-            />
-          </LineChart>
-        </ChartContainer>
-      </CardContent>
-      <CardFooter className="flex-col items-start gap-2 text-sm">
-        <div className="flex gap-2 font-medium leading-none">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-        </div>
-        <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
-        </div>
-      </CardFooter>
-    </Card>
-  )
+export interface LintPlotProps<T extends object>
+    extends Omit<ComponentPropsWithoutRef<typeof LineChart>, "margin">,
+    XYAxisProps<T> {
+    chartConfig: ChartConfig;
+    chartData: T[];
+    margin?: Margin;
+    tooltipFormatter?: Formatter<any, any>;
+    lines: (Omit<ComponentPropsWithoutRef<typeof Line>, "dataKey"> & {
+        dataKey: keyof T;
+    })[];
+    container: Omit<
+        ComponentPropsWithoutRef<typeof ChartContainer>,
+        "config" | "children"
+    >;
 }
 
+export const LinePlot = <T extends object>({
+    chartConfig,
+    lines,
+    tooltipFormatter,
+    chartData,
+    xAxis,
+    yAxis,
+    margin,
+    container,
+    ...props
+}: LintPlotProps<T>) => {
+    return (
+        <ChartContainer {...container} config={chartConfig}>
+            <LineChart
+                {...props}
+                accessibilityLayer
+                data={chartData}
+                margin={{
+                    left: 12,
+                    right: 12,
+                    ...margin,
+                }}
+            >
+                <CartesianGrid vertical={false} />
+                {xAxis && (
+                    <XAxis
+                        dataKey={typeof xAxis === "string" ? xAxis : undefined}
+                        tickLine={false}
+                        tickMargin={10}
+                        axisLine={false}
+                        {...(typeof xAxis === "object" ? xAxis : {})}
+                    /* tickFormatter={(value) => value?.slice(0, 3)} */
+                    />
+                )}
+                {yAxis && (
+                    <YAxis
+                        dataKey={typeof yAxis === "string" ? yAxis : undefined}
+                        tickLine={false}
+                        tickMargin={10}
+                        axisLine={false}
+                        {...(typeof yAxis === "object" ? yAxis : {})}
+                    /* tickFormatter={(value) => value?.slice(0, 3)} */
+                    />
+                )}
+                <ChartTooltip
+                    cursor={false}
+                    content={
+                        <ChartTooltipContent hideLabel formatter={tooltipFormatter} />
+                    }
+                />
+                {lines.map(({ dataKey, ...x }) => {
+                    return (
+                        <Line
+                            key={dataKey as string}
+                            dataKey={dataKey as string}
+                            type="natural"
+                            stroke="var(--chart-1)"
+                            strokeWidth={2}
+                            dot={false}
+                            {...x}
+                        />
+                    );
+                })}
+            </LineChart>
+        </ChartContainer>
+    );
+};

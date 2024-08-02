@@ -12,7 +12,8 @@
     "./types": "./src/types.ts",
     "./single/donut": "./src/components/shad/singleComponentPlots/donutPlot/main.tsx",
     "./single/area": "./src/components/shad/singleComponentPlots/areaPlot/main.tsx",
-    "./single/bar": "./src/components/shad/singleComponentPlots/barPlot/main.tsx"
+    "./single/bar": "./src/components/shad/singleComponentPlots/barPlot/main.tsx",
+    "./single/line": "./src/components/shad/singleComponentPlots/linePlot/main.tsx"
   },
   "peerDependencies": {
     "@ulld/api": "workspace:*",

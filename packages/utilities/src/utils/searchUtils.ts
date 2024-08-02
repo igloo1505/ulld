@@ -19,7 +19,7 @@ export const getSearchType = (sp: SearchAllParams): SearchAllSearchType => {
 };
 
 export const searchAllParamsToSearchParamsClass = (
-    sp?: Partial<SearchAllParams & any>,
+    sp?: Partial<SearchAllParams>,
 ): URLSearchParams => {
     let data = new URLSearchParams();
     if(!sp){

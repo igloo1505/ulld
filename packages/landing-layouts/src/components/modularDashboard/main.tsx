@@ -6,22 +6,23 @@ import PlaceholderCard from "./cards/placeholder";
 import { getModularDashboardTestData, getTaskManagerOverviewTestData } from "../../test/generateTestData";
 import NotesByCategoryDonutCard from "./cards/small/notesByCategoryDonut/main";
 import AccessByCategoryDonut from "./cards/small/accessByCategoryDonut/main";
-import { clampMaxPlotColors } from "./util/utilityFunctions";
 import RecentlyAccessNotesList from "./cards/tall/recentlyAccessNotesList/main";
 import MainTasklistPlot from "./cards/wide/mainNotePlot/main";
 import { DashboardProvider } from "./util/provider";
+import { clampInColorArray } from "./util/staticData";
 
 
 const ModularDashboard = async () => {
     /* let data = await serverClient.universalNotes.getUserOverview(); */
-    let data = getModularDashboardTestData(800);
+    /* const initialTaskData = await serverClient.toDo.getTaskManagerOverview() */
+
+    let data = getModularDashboardTestData();
     let categoryColors: Record<string, string> = {};
 
     data.uniqueNoteTypes.forEach((t, i) => {
-        categoryColors[t] = `hsl(var(--chart-${clampMaxPlotColors(i)}))`;
+        categoryColors[t] = clampInColorArray(i);
     });
 
-    /* const initialTaskData = await serverClient.toDo.getTaskManagerOverview() */
     let initialTaskData = getTaskManagerOverviewTestData()
 
     return (

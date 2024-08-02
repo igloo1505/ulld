@@ -4,6 +4,7 @@ import { ChartConfig } from "@ulld/plot/types";
 import { DateTime } from "@ulld/utilities/dateTime";
 import { useDashboardContext } from "../../../../util/provider";
 import { cn } from "@ulld/utilities/cn";
+import { format24HourString } from "../../../../util/utilityFunctions";
 
 
 const NotesPlot = () => {
@@ -34,18 +35,6 @@ const NotesPlot = () => {
     };
   }, [notes]);
 
-  const format24HourString = (val: string) => {
-    let n = parseInt(val);
-    if (typeof n === "number" && !Number.isNaN(n)) {
-      if (n < 12) {
-        return `${n} AM`;
-      } else {
-        let _n = n - 12;
-        return `${_n === 0 ? 12 : _n} PM`;
-      }
-    }
-    return null;
-  };
 
   return (
     <BarPlot

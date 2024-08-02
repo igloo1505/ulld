@@ -13,11 +13,11 @@ import {
   CardTitle,
 } from "@ulld/tailwind/card"
 import {
-  ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from "../../../../lib/shad/shadChart"
+import { ChartConfig } from "../../../../types"
 const chartData = [
   { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
   { browser: "safari", visitors: 200, fill: "var(--color-safari)" },

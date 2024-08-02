@@ -1,6 +1,4 @@
 "use client";
-
-import { TrendingUp } from "lucide-react";
 import {
     Bar,
     BarChart,
@@ -20,21 +18,7 @@ import { LabelPosition } from "recharts/types/component/Label";
 import { Margin } from "recharts/types/util/types";
 import { Formatter } from "recharts/types/component/DefaultTooltipContent";
 import { ComponentProps } from "react";
-/* const chartData = [ */
-/*   { month: "January", desktop: 186 }, */
-/*   { month: "February", desktop: 305 }, */
-/*   { month: "March", desktop: 237 }, */
-/*   { month: "April", desktop: 73 }, */
-/*   { month: "May", desktop: 209 }, */
-/*   { month: "June", desktop: 214 }, */
-/* ] */
-
-/* const chartConfig = { */
-/*   desktop: { */
-/*     label: "Desktop", */
-/*     color: "hsl(var(--chart-1))", */
-/*   }, */
-/* } satisfies ChartConfig */
+import XYAxis from "../utilityComponents/xyAxis";
 
 interface BarProps<T extends object> extends Omit<BP, "dataKey" | "ref"> {
     dataKey: keyof T;
@@ -49,10 +33,10 @@ export interface BarPlotProps<T extends object> {
     chartData: T[];
     chartConfig: ChartConfig;
     bars: BarProps<T>[];
-    xAxis?: keyof T;
     margin?: Margin;
     className?: string;
-    yAxis?: ComponentProps<typeof YAxis> | string | boolean;
+    xAxis?: ComponentProps<typeof XAxis> | keyof T | boolean;
+    yAxis?: ComponentProps<typeof YAxis> | keyof T | boolean;
     tooltipFormatter?: Formatter<any, any>;
 }
 
@@ -79,10 +63,11 @@ export const BarPlot = <T extends object>({
                 <CartesianGrid vertical={false} />
                 {xAxis && (
                     <XAxis
-                        dataKey={xAxis as string}
+                        dataKey={typeof xAxis === "string" ? xAxis : undefined}
                         tickLine={false}
                         tickMargin={10}
                         axisLine={false}
+                        {...(typeof xAxis === "object" ? xAxis : {})}
                     /* tickFormatter={(value) => value?.slice(0, 3)} */
                     />
                 )}
