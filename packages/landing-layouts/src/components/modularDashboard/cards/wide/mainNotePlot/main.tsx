@@ -4,14 +4,11 @@ import CardContainer from "../../../util/cardContainer";
 import TaskListCardDetails from "./taskListDetailsRow";
 import MainCardPlot from "./plot";
 
-export interface MainTasklistPlotProps {
-}
 
-const MainTasklistPlot = (props: MainTasklistPlotProps) => {
-
+const MainCard = () => {
     return (
         <CardContainer
-            className={"w-full h-full flex flex-col justify-center items-center"}
+            className={"w-2/3 flex-grow h-full flex flex-col justify-center items-center"}
         >
             <TaskListCardDetails />
             <MainCardPlot />
@@ -19,6 +16,6 @@ const MainTasklistPlot = (props: MainTasklistPlotProps) => {
     );
 };
 
-MainTasklistPlot.displayName = "MainTasklistPlot";
+MainCard.displayName = "MainTasklistPlot";
 
-export default MainTasklistPlot;
+export default MainCard;

@@ -12,7 +12,7 @@ const RecentlyAccessNotesList = () => {
   let items = useMemo(() => notes.slice(0, 50), [notes]);
   return (
     <CardContainer
-      className={"w-full justify-start max-h-[max(80vh) flex-grow]"}
+      className={"w-full justify-start"}
     >
       <CardLabelText className={"my-4"}>Recently Accessed</CardLabelText>
       <ScrollArea className={"w-full"}>

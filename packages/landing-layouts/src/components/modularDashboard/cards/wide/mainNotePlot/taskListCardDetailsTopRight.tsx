@@ -15,7 +15,7 @@ const TaskListDetailsTopRightCard = (
 
     return (
         <div className={"w-full flex flex-col justify-center items-center"}>
-            <div className={"flex-grow flex flex-col items-end w-full text-sm text-muted-foreground"}><ClockDisplay /></div>
+            <div className={"flex-grow flex flex-col items-end w-full text-[10px] lg:text-sm text-muted-foreground"}><ClockDisplay /></div>
             <div className={"w-full flex flex-row justify-end items-center"}>
                 <div
                     className={"grid gap-4"}

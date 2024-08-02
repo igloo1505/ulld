@@ -4,12 +4,10 @@ import React, { useMemo } from "react";
 import { ChartConfig } from "@ulld/plot/types";
 import { BaseCardProps } from "src/types";
 import { TimePeriodOption } from "@ulld/utilities/dateTime";
-import TimePeriodToggle from "../../../util/timePeriodToggle/main";
 import CardContainer from "../../../util/cardContainer";
 import CardMutedDesc from "../../../util/cardMutedDesc";
 import { useLocalStorage } from "@ulld/hooks/useLocalStorage";
 import { useDashboardContext } from "../../../util/provider";
-import { getSearchAllUrl } from "@ulld/state/searchParamSchemas/utilities/formatSearchAllParams";
 
 interface AccessByCategoryDonutProps extends BaseCardProps {
     colors: Record<string, string>;
@@ -56,14 +54,7 @@ const AccessByCategoryDonut = ({
 
     return (
         <CardContainer {...props} className={"w-1/3 max-h-full justify-start"}>
-            <CardMutedDesc
-                right={
-                    <TimePeriodToggle
-                        value={timePeriod || _timePeriod}
-                        onChange={setTimePeriod}
-                    />
-                }
-            >
+            <CardMutedDesc>
                 New notes by format
             </CardMutedDesc>
             <DonutChart

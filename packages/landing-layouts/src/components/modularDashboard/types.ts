@@ -34,3 +34,12 @@ export type TasksByCompletion = Awaited<
     >
 
 export type TaskManagerOverview = Awaited<ReturnType<typeof serverClient.toDo.getTaskManagerOverview>>
+
+
+export type TaggableData = {
+    tags: string[];
+    topics: string[];
+    subjects: string[];
+}
+
+export type TaggableFilterType = keyof TaggableData

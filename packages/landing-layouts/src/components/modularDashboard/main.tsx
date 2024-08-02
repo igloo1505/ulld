@@ -2,28 +2,36 @@ import { serverClient } from "@ulld/api/serverClient";
 import React from "react";
 import { cn } from "@ulld/utilities/cn";
 import TotalNotesCard from "./cards/small/totalNotes";
-import PlaceholderCard from "./cards/placeholder";
-import { getModularDashboardTestData, getTaskManagerOverviewTestData } from "../../test/generateTestData";
+import {
+    getModularDashboardTestData,
+    getTaggableTestData,
+    getTaskManagerOverviewTestData,
+} from "../../test/generateTestData";
 import NotesByCategoryDonutCard from "./cards/small/notesByCategoryDonut/main";
 import AccessByCategoryDonut from "./cards/small/accessByCategoryDonut/main";
 import RecentlyAccessNotesList from "./cards/tall/recentlyAccessNotesList/main";
-import MainTasklistPlot from "./cards/wide/mainNotePlot/main";
+import MainCard from "./cards/wide/mainNotePlot/main";
 import { DashboardProvider } from "./util/provider";
 import { clampInColorArray } from "./util/staticData";
-
+import TagListCard from "./cards/tall/tagList/main";
 
 const ModularDashboard = async () => {
     /* let data = await serverClient.universalNotes.getUserOverview(); */
     /* const initialTaskData = await serverClient.toDo.getTaskManagerOverview() */
+    /* let taggables = await serverClient.search.getUniqueTagTopicAndSubjects() */
+    
 
+    let taggables = getTaggableTestData(300)
     let data = getModularDashboardTestData();
-    let categoryColors: Record<string, string> = {};
+    let initialTaskData = getTaskManagerOverviewTestData();
 
+
+
+    let categoryColors: Record<string, string> = {};
     data.uniqueNoteTypes.forEach((t, i) => {
         categoryColors[t] = clampInColorArray(i);
     });
 
-    let initialTaskData = getTaskManagerOverviewTestData()
 
     return (
         <DashboardProvider
@@ -39,11 +47,10 @@ const ModularDashboard = async () => {
                 )}
             >
                 <div
-                    className={"w-full grid grid-cols-[3fr_1fr] gap-4 h-[calc(40%-1rem)]"}
+                    className={"flex flex-row justify-between gap-4 w-full h-[calc(40%-1rem)] max-h-[calc(40%-1rem)]"}
                 >
-                    <MainTasklistPlot
-                    />
-                    <PlaceholderCard label="Tag list" />
+                    <MainCard />
+                    <TagListCard taggables={taggables} />
                 </div>
                 <div className={"w-full h-[calc(33%-1rem)]"}>
                     <RecentlyAccessNotesList />
@@ -51,17 +58,9 @@ const ModularDashboard = async () => {
                 <div
                     className={"flex flex-row justify-between gap-4 h-[calc(33%-1rem)]"}
                 >
-                    <NotesByCategoryDonutCard
-                        className={""}
-                        colors={categoryColors}
-                    />
-                    <AccessByCategoryDonut
-                        className={""}
-                        colors={categoryColors}
-                    />
-                    <TotalNotesCard
-                        className={"w-1/3"}
-                    />
+                    <NotesByCategoryDonutCard className={""} colors={categoryColors} />
+                    <AccessByCategoryDonut className={""} colors={categoryColors} />
+                    <TotalNotesCard className={"w-1/3"} />
                 </div>
             </div>
         </DashboardProvider>
