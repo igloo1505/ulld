@@ -1,4 +1,5 @@
 "use client";
+import React, { ComponentProps } from "react";
 import {
     Bar,
     BarChart,
@@ -17,8 +18,6 @@ import { ChartConfig } from "../../../../types";
 import { LabelPosition } from "recharts/types/component/Label";
 import { Margin } from "recharts/types/util/types";
 import { Formatter } from "recharts/types/component/DefaultTooltipContent";
-import { ComponentProps } from "react";
-import XYAxis from "../utilityComponents/xyAxis";
 
 interface BarProps<T extends object> extends Omit<BP, "dataKey" | "ref"> {
     dataKey: keyof T;

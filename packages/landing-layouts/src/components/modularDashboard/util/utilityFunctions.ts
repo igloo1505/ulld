@@ -1,6 +1,6 @@
 import { DateTime, TimePeriodOption } from "@ulld/utilities/dateTime";
 import dayjs from "dayjs";
-import { DashboardState } from "./provider";
+import type { DashboardState } from "./provider";
 
 export const getDateToNowString = (
     _start: string | Date,

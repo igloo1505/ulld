@@ -1,14 +1,11 @@
 import React from "react";
 import { XYPlotProps } from "./types";
-import {
-    ChartContainer,
-} from "../../../lib/shad/shadChart";
+import { ChartContainer } from "../../../lib/shad/shadChart";
 import { XYDataHandler } from "../../../classes/twoD/XYDataHandler";
 import BarTrace from "./traces/barTrace";
 
-
 const XYPlot = (props: XYPlotProps) => {
-    let data = new XYDataHandler(props)
+    let data = new XYDataHandler(props);
     return (
         <ChartContainer
             config={data.chartConfig.data}
@@ -21,7 +18,8 @@ const XYPlot = (props: XYPlotProps) => {
             }}
         >
             <BarTrace 
-               data={data.flattenedData}
+                data={data.flattenedData}
+                traces={[]}
             />
         </ChartContainer>
     );

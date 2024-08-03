@@ -8,19 +8,19 @@ type ColorThemeProps = {} & (
   )
 
 
-const getThemeData = (item: XYPlotProps["data"][number]): ColorThemeProps => {
-    if (typeof item.color === "object") {
-        return {
-            theme: {
-                light: item.color?.light || item.color?.dark || "hsl(var(--primary))",
-                dark: item.color.dark || item.color.light || "hsl(var(--primary))",
-            }
-        } satisfies ColorThemeProps
-    }
-    return {
-        color: item.color || "hsl(var(--primary))"
-    } satisfies ColorThemeProps
-}
+/* const getThemeData = (item: XYPlotProps["data"][number]): ColorThemeProps => { */
+/*     if (typeof item.color === "object") { */
+/*         return { */
+/*             theme: { */
+/*                 light: item.color?.light || item.color?.dark || "hsl(var(--primary))", */
+/*                 dark: item.color?.dark || item.color?.light || "hsl(var(--primary))", */
+/*             } */
+/*         } satisfies ColorThemeProps */
+/*     } */
+/*     return { */
+/*         color: item.color || "hsl(var(--primary))" */
+/*     } satisfies ColorThemeProps */
+/* } */
 
 
 export const getShadChartXYConfig = (props: XYPlotProps): XYPropsReturnType => {
@@ -32,7 +32,7 @@ export const getShadChartXYConfig = (props: XYPlotProps): XYPropsReturnType => {
                 {...props as any}
                 name={item.icon as ValidIconName}
             /> : item.icon,
-            ...getThemeData(item)
+            /* ...getThemeData(item) */
         }
     }
     return {

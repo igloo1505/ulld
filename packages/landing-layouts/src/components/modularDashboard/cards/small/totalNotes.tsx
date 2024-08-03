@@ -7,50 +7,59 @@ import { BaseCardProps } from "../../types";
 import { useDashboardContext } from "../../util/provider";
 import cn from "@ulld/utilities/cn";
 
-interface TotalNotesCardProps extends BaseCardProps {}
+interface TotalNotesCardProps extends BaseCardProps { }
 
 const testEarliestSync = "2/15/21";
 
 const SubItem = ({
-  label,
-  children,
+    label,
+    children,
 }: {
-  label: ReactNode;
-  children: ReactNode;
+    label: ReactNode;
+    children: ReactNode;
 }) => {
-  return (
-    <div>
-      <div className={"text-muted-foreground"}>{label}</div>
-      <div className={"text-xl font-semibold"}>{children}</div>
-    </div>
-  );
+    return (
+        <div>
+            <div className={"text-muted-foreground"}>{label}</div>
+            <div className={"text-xl font-semibold"}>{children}</div>
+        </div>
+    );
 };
 
 const TotalNotesCard = ({ cardProps, className }: TotalNotesCardProps) => {
-  const state = useDashboardContext();
-  return (
-    <CardContainer {...cardProps} className={cn("w-full @[768px]/dashboard:w-[calc(50%-0.5rem)] h-[290px] @[920px]/body:w-[calc(33%-0.66rem)] @[768px]/dashboard:h-auto", className)}>
-      <DateGapLabel
-        start={
-          process.env.NODE_ENV === "development"
-            ? testEarliestSync
-            : state.overallFirstSync
-        }
-      />
-      <div
-        className={
-          "w-full h-full flex flex-col justify-center items-center gap-4"
-        }
-      >
-        <CardLabelText>Total Notes</CardLabelText>
-                <div className={"flex flex-row justify-center items-start gap-8 w-full max-w-[400px]"}>
-                    
-        <SubItem label="Mdx">{state.totalNotes?.mdx || 0}</SubItem>
-        <SubItem label="Notebooks">{state.totalNotes?.notebook || 0}</SubItem>
+    const state = useDashboardContext();
+    return (
+        <CardContainer
+            {...cardProps}
+            className={cn(
+                "w-full @[768px]/dashboard:w-[calc(50%-0.5rem)] h-[290px] @[920px]/body:w-[calc(33%-0.66rem)] @[768px]/dashboard:h-auto",
+                className,
+            )}
+        >
+            <DateGapLabel
+                start={
+                    process.env.NODE_ENV === "development"
+                        ? testEarliestSync
+                        : state.overallFirstSync
+                }
+            />
+            <div
+                className={
+                    "w-full h-full flex flex-col justify-center items-center gap-4"
+                }
+            >
+                <CardLabelText>Total Notes</CardLabelText>
+                <div
+                    className={
+                        "flex flex-row justify-center items-start gap-8 w-full max-w-[400px]"
+                    }
+                >
+                    <SubItem label="Mdx">{state.totalNotes?.mdx || 0}</SubItem>
+                    <SubItem label="Notebooks">{state.totalNotes?.notebook || 0}</SubItem>
                 </div>
-      </div>
-    </CardContainer>
-  );
+            </div>
+        </CardContainer>
+    );
 };
 
 TotalNotesCard.displayName = "TotalNotesCard";

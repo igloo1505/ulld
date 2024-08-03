@@ -1,5 +1,5 @@
 "use client";
-
+import React, { ComponentPropsWithoutRef } from "react";
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
 import {
     ChartContainer,
@@ -7,10 +7,9 @@ import {
     ChartTooltipContent,
 } from "../../../../lib/shad/shadChart";
 import { ChartConfig } from "../../../../types";
-import { ComponentPropsWithoutRef } from "react";
 import { Margin } from "recharts/types/util/types";
 import { Formatter } from "recharts/types/component/DefaultTooltipContent";
-import XYAxis, { XYAxisProps } from "../utilityComponents/xyAxis";
+import { type XYAxisProps } from "../utilityComponents/xyAxis";
 
 export interface LintPlotProps<T extends object>
     extends Omit<ComponentPropsWithoutRef<typeof LineChart>, "margin">,

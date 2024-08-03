@@ -1,7 +1,7 @@
-import { ComponentType } from "react";
+import type { ComponentType } from "react";
 import { ValidIconName } from "@ulld/icons";
-import { ChartConfig } from "../../../lib/shad/shadChart";
 import { WithRequired } from "@ulld/utilities/types";
+import { ChartConfig } from "../../../types";
 
 export type XYPlotType = "line" | "bar" | "scatter";
 

@@ -1,6 +1,5 @@
 import { ValidIconName, DynamicIcon } from "@ulld/icons";
-import { ChartConfig } from "../../../lib/shad/shadChart";
-import { XYPlotProps } from "../../../types";
+import { ChartConfig, XYPlotProps } from "../../../types";
 
 export class ShadChartConfigManager {
     data: ChartConfig = {}

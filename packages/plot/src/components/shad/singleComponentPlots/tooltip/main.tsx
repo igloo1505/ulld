@@ -1,20 +1,12 @@
 "use client"
-
 import { Bar, BarChart, XAxis } from "recharts"
-
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@ulld/tailwind/card"
-import {
-  ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from "../../../../lib/shad/shadChart"
+import { ChartConfig } from "../../../../types"
+
 const chartData = [
   { date: "2024-07-15", running: 450, swimming: 300 },
   { date: "2024-07-16", running: 380, swimming: 420 },
@@ -37,14 +29,6 @@ const chartConfig = {
 
 export function Component() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Tooltip - Advanced</CardTitle>
-        <CardDescription>
-          Tooltip with custom formatter and total.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
         <ChartContainer config={chartConfig}>
           <BarChart accessibilityLayer data={chartData}>
             <XAxis
@@ -114,7 +98,5 @@ export function Component() {
             />
           </BarChart>
         </ChartContainer>
-      </CardContent>
-    </Card>
   )
 }

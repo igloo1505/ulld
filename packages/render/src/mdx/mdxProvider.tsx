@@ -1,6 +1,6 @@
 import { MDXProvider } from "@mdx-js/react"
+import { getComponentMap } from "@ulld/component-map/client"
 import React from 'react'
-import { getComponentMap } from "../markdown/componentMap"
 
 
 

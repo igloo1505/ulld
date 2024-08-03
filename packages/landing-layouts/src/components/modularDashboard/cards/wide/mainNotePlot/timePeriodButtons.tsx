@@ -1,9 +1,8 @@
 import cn from "@ulld/utilities/cn";
 import { TimePeriodOption } from "@ulld/utilities/dateTime";
-import React, { useEffect } from "react";
+import React from "react";
 import {
     useDashboardContext,
-    useDashboardDispatch,
 } from "../../../util/provider";
 import { useLocalStorage } from "@ulld/hooks/useLocalStorage";
 

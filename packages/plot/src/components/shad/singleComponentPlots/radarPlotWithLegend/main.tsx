@@ -1,8 +1,6 @@
 "use client"
-
 import { TrendingUp } from "lucide-react"
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts"
-
 import {
   Card,
   CardContent,
@@ -12,13 +10,17 @@ import {
   CardTitle,
 } from "@ulld/tailwind/card"
 import {
-  ChartConfig,
   ChartContainer,
   ChartLegend,
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
 } from "../../../../lib/shad/shadChart"
+import { ChartConfig } from "../../../../types"
+
+
+
+
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },
   { month: "February", desktop: 305, mobile: 200 },

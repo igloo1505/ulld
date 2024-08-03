@@ -1,8 +1,6 @@
 "use client"
-
 import { TrendingUp } from "lucide-react"
-import { CartesianGrid, LabelList, Line, LineChart, XAxis } from "recharts"
-
+import { CartesianGrid, LabelList, Line, LineChart } from "recharts"
 import {
   Card,
   CardContent,
@@ -12,11 +10,12 @@ import {
   CardTitle,
 } from "@ulld/tailwind/card"
 import {
-  ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from "../../../../lib/shad/shadChart"
+import { ChartConfig } from "../../../../types"
+
 const chartData = [
   { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
   { browser: "safari", visitors: 200, fill: "var(--color-safari)" },

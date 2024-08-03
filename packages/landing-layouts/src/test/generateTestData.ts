@@ -1,10 +1,10 @@
-import { serverClient } from "@ulld/api/serverClient";
+import type { serverClient } from "@ulld/api/serverClient";
 import { TaggableData, TaskManagerOverview } from "../types";
 import {
     getRandomLoremString,
     TestDateHelper,
 } from "@ulld/utilities/testDataHelpers";
-import { ToDoListStatus } from "@ulld/types/enums";
+import { ToDoListStatus } from "@ulld/types";
 
 type ModularDashboardData = Awaited<
     ReturnType<typeof serverClient.universalNotes.getUserOverview>
@@ -14,13 +14,14 @@ let thatDay = new Date("2/15/21").valueOf();
 
 let dateDiff = new Date().valueOf() - thatDay;
 
+let _now = new Date().valueOf();
+
 const getLastAccessNote = (
     i: number,
     firstSync: Date,
     categories: string[],
 ): ModularDashboardData["lastAccessNotes"][number] => {
     let firstSyncVal = firstSync.valueOf();
-    let _now = new Date().valueOf();
     let diff = _now - firstSyncVal;
     let noteCreated = new Date(firstSyncVal + Math.floor(Math.random() * diff));
     let createdDiff = _now - noteCreated.valueOf();
@@ -75,7 +76,7 @@ const getTaskManagerSampleData = (
         id: i + 1,
         label: getRandomLoremString(Math.floor(Math.random() * 8), false),
         createdAt: new Date(thatDay + Math.floor(Math.random() * dateDiff)),
-        count: {} as any,
+        _count: {} as any,
    };
 };
 
@@ -90,11 +91,11 @@ const getSampleTask = (
             : null;
 
     let otherStatusOpts: ToDoListStatus[] = [
-        ToDoListStatus.ToDo,
-        ToDoListStatus.Backlog,
-        ToDoListStatus.Future,
-        ToDoListStatus.Cancelled,
-        ToDoListStatus.In_Progress,
+        "ToDo",
+        "Backlog",
+        "Future",
+        "Cancelled",
+        "In_Progress",
     ];
 
     return {
@@ -104,8 +105,9 @@ const getSampleTask = (
         createdAt: TestDateHelper.randomDateBeforeNow(
             completedOn || new Date(thatDay),
         ),
+        dueAt: Math.random() >= 0.5 ? new Date(_now + Math.random() * 86400 * 30) : null,
         status: completedOn
-            ? ToDoListStatus.Done
+            ? "Done"
             : otherStatusOpts[Math.floor(Math.random() * otherStatusOpts.length)],
     };
 };
@@ -139,3 +141,4 @@ export const getTaggableTestData = (nRandomizer: number = 200): TaggableData => 
         ),
     };
 };
+

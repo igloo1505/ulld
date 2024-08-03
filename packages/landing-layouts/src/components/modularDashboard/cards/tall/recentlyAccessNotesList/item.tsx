@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import { ModularDashboardData } from "src/types";
 import { MathJax } from "better-react-mathjax";
 import Link from "next/link";
+import { ModularDashboardData } from "../../../types";
 
 interface RecentlyAccessedNoteItemProps {
     item: ModularDashboardData["lastAccessNotes"][number];

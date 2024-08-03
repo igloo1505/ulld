@@ -1,5 +1,5 @@
-import { serverClient } from "@ulld/api/serverClient";
 import React from "react";
+/* import { serverClient } from "@ulld/api/serverClient"; */
 import { cn } from "@ulld/utilities/cn";
 import TotalNotesCard from "./cards/small/totalNotes";
 import {
@@ -14,19 +14,22 @@ import MainCard from "./cards/wide/mainNotePlot/main";
 import { DashboardProvider } from "./util/provider";
 import { clampInColorArray } from "./util/staticData";
 import TagListCard from "./cards/tall/tagList/main";
+import { TaggableData } from "./types";
 
 const tagListTopBreakpoint = 920
+
+let taggables = getTaggableTestData(300)
+let data = getModularDashboardTestData();
+let initialTaskData = getTaskManagerOverviewTestData();
+
 
 const ModularDashboard = async () => {
     /* let data = await serverClient.universalNotes.getUserOverview(); */
     /* const initialTaskData = await serverClient.toDo.getTaskManagerOverview() */
-    /* let taggables = await serverClient.search.getUniqueTagTopicAndSubjects() */
+    /* let taggables = await serverClient.search.getUniqueTagTopicAndSubjects() as TaggableData */
 
     
 
-    let taggables = getTaggableTestData(300)
-    let data = getModularDashboardTestData();
-    let initialTaskData = getTaskManagerOverviewTestData();
 
 
     let categoryColors: Record<string, string> = {};

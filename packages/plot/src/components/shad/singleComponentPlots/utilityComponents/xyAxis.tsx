@@ -1,3 +1,4 @@
+"use client"
 import React, { ComponentPropsWithoutRef } from "react";
 import { XAxis, YAxis } from "recharts";
 

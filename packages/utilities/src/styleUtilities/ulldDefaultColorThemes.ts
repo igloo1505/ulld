@@ -1,7 +1,7 @@
-import { plotColors } from "./plotColors"
+import { plotColors } from "./plotColors";
 
 export const ulldDefaultColorThemes = [
-"blue",
+    "blue",
     "gray",
     "green",
     "neutral",
@@ -12,10 +12,10 @@ export const ulldDefaultColorThemes = [
     "stone",
     "violet",
     "yellow",
-    "zinc"
-] as const
-
+    "zinc",
+    "ulld",
+] as const;
 
 export const ulldDefaultPlotThemes: (keyof typeof plotColors)[] = [
-    ...Object.keys(plotColors) as (keyof typeof plotColors)[],
-] as const
+    ...(Object.keys(plotColors) as (keyof typeof plotColors)[]),
+] as const;
