@@ -1,7 +1,7 @@
 "use client"
+import React from 'react'
 import { MonacoPageParams, EditorLayout } from "../types"
 import dynamic from "next/dynamic"
-import React from 'react'
 const CodeEditor = dynamic(() => import("../monaco").then((a) => a.CodeEditor), { ssr: false })
 
 
