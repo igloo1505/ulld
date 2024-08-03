@@ -1,59 +1,59 @@
 {
-  "version": "0.0.41",
-  "name": "@ulld/plot",
-  "private": false,
-  "scripts": {
-    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
-    "build": "echo 'Add build script here'",
-    "test": "echo 'Add test script here'",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json"
-  },
-  "exports": {
-    "./types": "./src/types.ts",
-    "./single/donut": "./src/components/shad/singleComponentPlots/donutPlot/main.tsx",
-    "./single/area": "./src/components/shad/singleComponentPlots/areaPlot/main.tsx",
-    "./single/bar": "./src/components/shad/singleComponentPlots/barPlot/main.tsx",
-    "./single/line": "./src/components/shad/singleComponentPlots/linePlot/main.tsx"
-  },
-  "peerDependencies": {
-    "@ulld/api": "workspace:*",
-    "@ulld/configschema": "workspace:*",
-    "@ulld/developer": "workspace:*",
-    "@ulld/full-form": "workspace:*",
-    "@ulld/hooks": "workspace:*",
-    "@ulld/logger": "workspace:*",
-    "@ulld/state": "workspace:*",
-    "@ulld/tailwind": "workspace:*",
-    "@ulld/ui": "workspace:*",
-    "@ulld/utilities": "workspace:*",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@ulld/eslint-config": "workspace:*",
-    "@ulld/jest-presets": "workspace:*",
-    "@ulld/types": "workspace:*",
-    "@ulld/typescript-config": "workspace:*",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "dependencies": {
-    "colormap": "2.3.2",
-    "echarts": "5.5.0",
-    "jsxgraph": "1.8.0",
-    "plotly.js": "2.30.0",
-    "plotly.js-dist": "2.31.1",
-    "react-plotly.js": "2.6.0",
-    "recharts": "2.12.2",
-    "zod": "3.22.4"
-  },
-  "packageManager": "pnpm@9.0.4",
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "src"
-  ]
+    "version": "0.0.41",
+    "name": "@ulld/plot",
+    "private": false,
+    "scripts": {
+        "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
+        "build": "echo 'Add build script here'",
+        "test": "echo 'Add test script here'",
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json"
+    },
+    "exports": {
+        "./types": "./src/types.ts",
+        "./single/donut": "./src/components/shad/singleComponentPlots/donutPlot/main.tsx",
+        "./single/area": "./src/components/shad/singleComponentPlots/areaPlot/main.tsx",
+        "./single/bar": "./src/components/shad/singleComponentPlots/barPlot/main.tsx",
+        "./single/line": "./src/components/shad/singleComponentPlots/linePlot/main.tsx"
+    },
+    "peerDependencies": {
+        "@ulld/api": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/developer": "workspace:*",
+        "@ulld/full-form": "workspace:*",
+        "@ulld/hooks": "workspace:*",
+        "@ulld/logger": "workspace:*",
+        "@ulld/state": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/ui": "workspace:*",
+        "@ulld/utilities": "workspace:*",
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "dependencies": {
+        "colormap": "2.3.2",
+        "echarts": "5.5.0",
+        "jsxgraph": "1.8.0",
+        "plotly.js": "2.30.0",
+        "plotly.js-dist": "2.31.1",
+        "react-plotly.js": "2.6.0",
+        "recharts": "2.12.2",
+        "zod": "3.22.4"
+    },
+    "packageManager": "pnpm@9.0.4",
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "src"
+    ]
 }

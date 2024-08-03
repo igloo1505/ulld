@@ -5631,7 +5631,7 @@ export namespace Prisma {
     value: string
     kanbanId: number | null
     createdAt: Date
-    lastAccess: Date | null
+    lastAccess: Date
     _count: SubjectCountAggregateOutputType | null
     _avg: SubjectAvgAggregateOutputType | null
     _sum: SubjectSumAggregateOutputType | null
@@ -5718,7 +5718,7 @@ export namespace Prisma {
       value: string
       kanbanId: number | null
       createdAt: Date
-      lastAccess: Date | null
+      lastAccess: Date
     }, ExtArgs["result"]["subject"]>
     composites: {}
   }
@@ -6795,7 +6795,7 @@ export namespace Prisma {
     value: string
     kanbanId: number | null
     createdAt: Date
-    lastAccess: Date | null
+    lastAccess: Date
     _count: TopicCountAggregateOutputType | null
     _avg: TopicAvgAggregateOutputType | null
     _sum: TopicSumAggregateOutputType | null
@@ -6882,7 +6882,7 @@ export namespace Prisma {
       value: string
       kanbanId: number | null
       createdAt: Date
-      lastAccess: Date | null
+      lastAccess: Date
     }, ExtArgs["result"]["topic"]>
     composites: {}
   }
@@ -7959,7 +7959,7 @@ export namespace Prisma {
     value: string
     kanbanId: number | null
     createdAt: Date
-    lastAccess: Date | null
+    lastAccess: Date
     _count: TagCountAggregateOutputType | null
     _avg: TagAvgAggregateOutputType | null
     _sum: TagSumAggregateOutputType | null
@@ -8046,7 +8046,7 @@ export namespace Prisma {
       value: string
       kanbanId: number | null
       createdAt: Date
-      lastAccess: Date | null
+      lastAccess: Date
     }, ExtArgs["result"]["tag"]>
     composites: {}
   }
@@ -13000,7 +13000,7 @@ export namespace Prisma {
     copyright: string | null
     added: Date
     createdAt: Date
-    lastAccess: Date | null
+    lastAccess: Date
     _count: BibEntryCountAggregateOutputType | null
     _avg: BibEntryAvgAggregateOutputType | null
     _sum: BibEntrySumAggregateOutputType | null
@@ -13240,7 +13240,7 @@ export namespace Prisma {
       copyright: string | null
       added: Date
       createdAt: Date
-      lastAccess: Date | null
+      lastAccess: Date
     }, ExtArgs["result"]["bibEntry"]>
     composites: {}
   }
@@ -19020,7 +19020,7 @@ export namespace Prisma {
     variables: string[]
     keywords: string[]
     createdAt: Date
-    lastAccess: Date | null
+    lastAccess: Date
     _count: EquationCountAggregateOutputType | null
     _avg: EquationAvgAggregateOutputType | null
     _sum: EquationSumAggregateOutputType | null
@@ -19120,7 +19120,7 @@ export namespace Prisma {
       variables: string[]
       keywords: string[]
       createdAt: Date
-      lastAccess: Date | null
+      lastAccess: Date
     }, ExtArgs["result"]["equation"]>
     composites: {}
   }
@@ -20142,7 +20142,7 @@ export namespace Prisma {
     alphabeticalLabel: string | null
     mdxNoteId: number | null
     createdAt: Date
-    lastAccess: Date | null
+    lastAccess: Date
     _count: DefinitionCountAggregateOutputType | null
     _avg: DefinitionAvgAggregateOutputType | null
     _sum: DefinitionSumAggregateOutputType | null
@@ -20215,7 +20215,7 @@ export namespace Prisma {
       alphabeticalLabel: string | null
       mdxNoteId: number | null
       createdAt: Date
-      lastAccess: Date | null
+      lastAccess: Date
     }, ExtArgs["result"]["definition"]>
     composites: {}
   }
@@ -27880,7 +27880,7 @@ export namespace Prisma {
     bookmarked: boolean
     firstSync: Date
     lastSync: Date
-    lastAccess: Date | null
+    lastAccess: Date
     _count: MdxNoteCountAggregateOutputType | null
     _avg: MdxNoteAvgAggregateOutputType | null
     _sum: MdxNoteSumAggregateOutputType | null
@@ -28051,7 +28051,7 @@ export namespace Prisma {
       bookmarked: boolean
       firstSync: Date
       lastSync: Date
-      lastAccess: Date | null
+      lastAccess: Date
     }, ExtArgs["result"]["mdxNote"]>
     composites: {}
   }
@@ -29229,7 +29229,7 @@ export namespace Prisma {
     bookmarked: boolean
     firstSync: Date
     lastSync: Date
-    lastAccess: Date | null
+    lastAccess: Date
     _count: IpynbCountAggregateOutputType | null
     _avg: IpynbAvgAggregateOutputType | null
     _sum: IpynbSumAggregateOutputType | null
@@ -29355,7 +29355,7 @@ export namespace Prisma {
       bookmarked: boolean
       firstSync: Date
       lastSync: Date
-      lastAccess: Date | null
+      lastAccess: Date
     }, ExtArgs["result"]["ipynb"]>
     composites: {}
   }
@@ -30388,7 +30388,7 @@ export namespace Prisma {
     label: string
     createdAt: Date
     lastUpdate: Date
-    lastAccess: Date | null
+    lastAccess: Date
     _count: ToDoListCountAggregateOutputType | null
     _avg: ToDoListAvgAggregateOutputType | null
     _sum: ToDoListSumAggregateOutputType | null
@@ -30461,7 +30461,7 @@ export namespace Prisma {
       label: string
       createdAt: Date
       lastUpdate: Date
-      lastAccess: Date | null
+      lastAccess: Date
     }, ExtArgs["result"]["toDoList"]>
     composites: {}
   }
@@ -46765,7 +46765,7 @@ export namespace Prisma {
     value?: StringFilter<"Subject"> | string
     kanbanId?: IntNullableFilter<"Subject"> | number | null
     createdAt?: DateTimeFilter<"Subject"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Subject"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Subject"> | Date | string
     MdxNotes?: MdxNoteListRelationFilter
     IpynbNotes?: IpynbListRelationFilter
     QaPair?: QAPairListRelationFilter
@@ -46781,7 +46781,7 @@ export namespace Prisma {
     value?: SortOrder
     kanbanId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     MdxNotes?: MdxNoteOrderByRelationAggregateInput
     IpynbNotes?: IpynbOrderByRelationAggregateInput
     QaPair?: QAPairOrderByRelationAggregateInput
@@ -46801,7 +46801,7 @@ export namespace Prisma {
     NOT?: SubjectWhereInput | SubjectWhereInput[]
     kanbanId?: IntNullableFilter<"Subject"> | number | null
     createdAt?: DateTimeFilter<"Subject"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Subject"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Subject"> | Date | string
     MdxNotes?: MdxNoteListRelationFilter
     IpynbNotes?: IpynbListRelationFilter
     QaPair?: QAPairListRelationFilter
@@ -46817,7 +46817,7 @@ export namespace Prisma {
     value?: SortOrder
     kanbanId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     _count?: SubjectCountOrderByAggregateInput
     _avg?: SubjectAvgOrderByAggregateInput
     _max?: SubjectMaxOrderByAggregateInput
@@ -46832,7 +46832,7 @@ export namespace Prisma {
     value?: StringWithAggregatesFilter<"Subject"> | string
     kanbanId?: IntNullableWithAggregatesFilter<"Subject"> | number | null
     createdAt?: DateTimeWithAggregatesFilter<"Subject"> | Date | string
-    lastAccess?: DateTimeNullableWithAggregatesFilter<"Subject"> | Date | string | null
+    lastAccess?: DateTimeWithAggregatesFilter<"Subject"> | Date | string
   }
 
   export type TopicWhereInput = {
@@ -46842,7 +46842,7 @@ export namespace Prisma {
     value?: StringFilter<"Topic"> | string
     kanbanId?: IntNullableFilter<"Topic"> | number | null
     createdAt?: DateTimeFilter<"Topic"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Topic"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Topic"> | Date | string
     MdxNotes?: MdxNoteListRelationFilter
     ipynbNotes?: IpynbListRelationFilter
     QAPair?: QAPairListRelationFilter
@@ -46858,7 +46858,7 @@ export namespace Prisma {
     value?: SortOrder
     kanbanId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     MdxNotes?: MdxNoteOrderByRelationAggregateInput
     ipynbNotes?: IpynbOrderByRelationAggregateInput
     QAPair?: QAPairOrderByRelationAggregateInput
@@ -46878,7 +46878,7 @@ export namespace Prisma {
     NOT?: TopicWhereInput | TopicWhereInput[]
     kanbanId?: IntNullableFilter<"Topic"> | number | null
     createdAt?: DateTimeFilter<"Topic"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Topic"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Topic"> | Date | string
     MdxNotes?: MdxNoteListRelationFilter
     ipynbNotes?: IpynbListRelationFilter
     QAPair?: QAPairListRelationFilter
@@ -46894,7 +46894,7 @@ export namespace Prisma {
     value?: SortOrder
     kanbanId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     _count?: TopicCountOrderByAggregateInput
     _avg?: TopicAvgOrderByAggregateInput
     _max?: TopicMaxOrderByAggregateInput
@@ -46909,7 +46909,7 @@ export namespace Prisma {
     value?: StringWithAggregatesFilter<"Topic"> | string
     kanbanId?: IntNullableWithAggregatesFilter<"Topic"> | number | null
     createdAt?: DateTimeWithAggregatesFilter<"Topic"> | Date | string
-    lastAccess?: DateTimeNullableWithAggregatesFilter<"Topic"> | Date | string | null
+    lastAccess?: DateTimeWithAggregatesFilter<"Topic"> | Date | string
   }
 
   export type TagWhereInput = {
@@ -46919,7 +46919,7 @@ export namespace Prisma {
     value?: StringFilter<"Tag"> | string
     kanbanId?: IntNullableFilter<"Tag"> | number | null
     createdAt?: DateTimeFilter<"Tag"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Tag"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Tag"> | Date | string
     MdxNotes?: MdxNoteListRelationFilter
     bibEntries?: BibEntryListRelationFilter
     ipynbNotes?: IpynbListRelationFilter
@@ -46935,7 +46935,7 @@ export namespace Prisma {
     value?: SortOrder
     kanbanId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     MdxNotes?: MdxNoteOrderByRelationAggregateInput
     bibEntries?: BibEntryOrderByRelationAggregateInput
     ipynbNotes?: IpynbOrderByRelationAggregateInput
@@ -46955,7 +46955,7 @@ export namespace Prisma {
     NOT?: TagWhereInput | TagWhereInput[]
     kanbanId?: IntNullableFilter<"Tag"> | number | null
     createdAt?: DateTimeFilter<"Tag"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Tag"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Tag"> | Date | string
     MdxNotes?: MdxNoteListRelationFilter
     bibEntries?: BibEntryListRelationFilter
     ipynbNotes?: IpynbListRelationFilter
@@ -46971,7 +46971,7 @@ export namespace Prisma {
     value?: SortOrder
     kanbanId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     _count?: TagCountOrderByAggregateInput
     _avg?: TagAvgOrderByAggregateInput
     _max?: TagMaxOrderByAggregateInput
@@ -46986,7 +46986,7 @@ export namespace Prisma {
     value?: StringWithAggregatesFilter<"Tag"> | string
     kanbanId?: IntNullableWithAggregatesFilter<"Tag"> | number | null
     createdAt?: DateTimeWithAggregatesFilter<"Tag"> | Date | string
-    lastAccess?: DateTimeNullableWithAggregatesFilter<"Tag"> | Date | string | null
+    lastAccess?: DateTimeWithAggregatesFilter<"Tag"> | Date | string
   }
 
   export type QuoteWhereInput = {
@@ -47233,7 +47233,7 @@ export namespace Prisma {
     copyright?: StringNullableFilter<"BibEntry"> | string | null
     added?: DateTimeFilter<"BibEntry"> | Date | string
     createdAt?: DateTimeFilter<"BibEntry"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"BibEntry"> | Date | string | null
+    lastAccess?: DateTimeFilter<"BibEntry"> | Date | string
     Bib?: XOR<BibNullableRelationFilter, BibWhereInput> | null
     citationGroups?: CitationsGroupListRelationFilter
     tags?: TagListRelationFilter
@@ -47287,7 +47287,7 @@ export namespace Prisma {
     copyright?: SortOrderInput | SortOrder
     added?: SortOrder
     createdAt?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     Bib?: BibOrderByWithRelationInput
     citationGroups?: CitationsGroupOrderByRelationAggregateInput
     tags?: TagOrderByRelationAggregateInput
@@ -47345,7 +47345,7 @@ export namespace Prisma {
     copyright?: StringNullableFilter<"BibEntry"> | string | null
     added?: DateTimeFilter<"BibEntry"> | Date | string
     createdAt?: DateTimeFilter<"BibEntry"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"BibEntry"> | Date | string | null
+    lastAccess?: DateTimeFilter<"BibEntry"> | Date | string
     Bib?: XOR<BibNullableRelationFilter, BibWhereInput> | null
     citationGroups?: CitationsGroupListRelationFilter
     tags?: TagListRelationFilter
@@ -47399,7 +47399,7 @@ export namespace Prisma {
     copyright?: SortOrderInput | SortOrder
     added?: SortOrder
     createdAt?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     _count?: BibEntryCountOrderByAggregateInput
     _avg?: BibEntryAvgOrderByAggregateInput
     _max?: BibEntryMaxOrderByAggregateInput
@@ -47453,7 +47453,7 @@ export namespace Prisma {
     copyright?: StringNullableWithAggregatesFilter<"BibEntry"> | string | null
     added?: DateTimeWithAggregatesFilter<"BibEntry"> | Date | string
     createdAt?: DateTimeWithAggregatesFilter<"BibEntry"> | Date | string
-    lastAccess?: DateTimeNullableWithAggregatesFilter<"BibEntry"> | Date | string | null
+    lastAccess?: DateTimeWithAggregatesFilter<"BibEntry"> | Date | string
   }
 
   export type CitationsGroupWhereInput = {
@@ -47716,7 +47716,7 @@ export namespace Prisma {
     variables?: StringNullableListFilter<"Equation">
     keywords?: StringNullableListFilter<"Equation">
     createdAt?: DateTimeFilter<"Equation"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Equation"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Equation"> | Date | string
     relatedValues?: RelatedValuesListRelationFilter
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
@@ -47735,7 +47735,7 @@ export namespace Prisma {
     variables?: SortOrder
     keywords?: SortOrder
     createdAt?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     relatedValues?: RelatedValuesOrderByRelationAggregateInput
     tags?: TagOrderByRelationAggregateInput
     topics?: TopicOrderByRelationAggregateInput
@@ -47758,7 +47758,7 @@ export namespace Prisma {
     variables?: StringNullableListFilter<"Equation">
     keywords?: StringNullableListFilter<"Equation">
     createdAt?: DateTimeFilter<"Equation"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Equation"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Equation"> | Date | string
     relatedValues?: RelatedValuesListRelationFilter
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
@@ -47777,7 +47777,7 @@ export namespace Prisma {
     variables?: SortOrder
     keywords?: SortOrder
     createdAt?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     _count?: EquationCountOrderByAggregateInput
     _avg?: EquationAvgOrderByAggregateInput
     _max?: EquationMaxOrderByAggregateInput
@@ -47799,7 +47799,7 @@ export namespace Prisma {
     variables?: StringNullableListFilter<"Equation">
     keywords?: StringNullableListFilter<"Equation">
     createdAt?: DateTimeWithAggregatesFilter<"Equation"> | Date | string
-    lastAccess?: DateTimeNullableWithAggregatesFilter<"Equation"> | Date | string | null
+    lastAccess?: DateTimeWithAggregatesFilter<"Equation"> | Date | string
   }
 
   export type DefinitionWhereInput = {
@@ -47812,7 +47812,7 @@ export namespace Prisma {
     alphabeticalLabel?: StringNullableFilter<"Definition"> | string | null
     mdxNoteId?: IntNullableFilter<"Definition"> | number | null
     createdAt?: DateTimeFilter<"Definition"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Definition"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Definition"> | Date | string
     mdxNote?: XOR<MdxNoteNullableRelationFilter, MdxNoteWhereInput> | null
   }
 
@@ -47823,7 +47823,7 @@ export namespace Prisma {
     alphabeticalLabel?: SortOrderInput | SortOrder
     mdxNoteId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     mdxNote?: MdxNoteOrderByWithRelationInput
     _relevance?: DefinitionOrderByRelevanceInput
   }
@@ -47838,7 +47838,7 @@ export namespace Prisma {
     alphabeticalLabel?: StringNullableFilter<"Definition"> | string | null
     mdxNoteId?: IntNullableFilter<"Definition"> | number | null
     createdAt?: DateTimeFilter<"Definition"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Definition"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Definition"> | Date | string
     mdxNote?: XOR<MdxNoteNullableRelationFilter, MdxNoteWhereInput> | null
   }, "id" | "id">
 
@@ -47849,7 +47849,7 @@ export namespace Prisma {
     alphabeticalLabel?: SortOrderInput | SortOrder
     mdxNoteId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     _count?: DefinitionCountOrderByAggregateInput
     _avg?: DefinitionAvgOrderByAggregateInput
     _max?: DefinitionMaxOrderByAggregateInput
@@ -47867,7 +47867,7 @@ export namespace Prisma {
     alphabeticalLabel?: StringNullableWithAggregatesFilter<"Definition"> | string | null
     mdxNoteId?: IntNullableWithAggregatesFilter<"Definition"> | number | null
     createdAt?: DateTimeWithAggregatesFilter<"Definition"> | Date | string
-    lastAccess?: DateTimeNullableWithAggregatesFilter<"Definition"> | Date | string | null
+    lastAccess?: DateTimeWithAggregatesFilter<"Definition"> | Date | string
   }
 
   export type SettingsWhereInput = {
@@ -48289,7 +48289,7 @@ export namespace Prisma {
     bookmarked?: BoolFilter<"MdxNote"> | boolean
     firstSync?: DateTimeFilter<"MdxNote"> | Date | string
     lastSync?: DateTimeFilter<"MdxNote"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"MdxNote"> | Date | string | null
+    lastAccess?: DateTimeFilter<"MdxNote"> | Date | string
     topics?: TopicListRelationFilter
     subjects?: SubjectListRelationFilter
     tags?: TagListRelationFilter
@@ -48326,7 +48326,7 @@ export namespace Prisma {
     bookmarked?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     topics?: TopicOrderByRelationAggregateInput
     subjects?: SubjectOrderByRelationAggregateInput
     tags?: TagOrderByRelationAggregateInput
@@ -48367,7 +48367,7 @@ export namespace Prisma {
     bookmarked?: BoolFilter<"MdxNote"> | boolean
     firstSync?: DateTimeFilter<"MdxNote"> | Date | string
     lastSync?: DateTimeFilter<"MdxNote"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"MdxNote"> | Date | string | null
+    lastAccess?: DateTimeFilter<"MdxNote"> | Date | string
     topics?: TopicListRelationFilter
     subjects?: SubjectListRelationFilter
     tags?: TagListRelationFilter
@@ -48404,7 +48404,7 @@ export namespace Prisma {
     bookmarked?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     _count?: MdxNoteCountOrderByAggregateInput
     _avg?: MdxNoteAvgOrderByAggregateInput
     _max?: MdxNoteMaxOrderByAggregateInput
@@ -48440,7 +48440,7 @@ export namespace Prisma {
     bookmarked?: BoolWithAggregatesFilter<"MdxNote"> | boolean
     firstSync?: DateTimeWithAggregatesFilter<"MdxNote"> | Date | string
     lastSync?: DateTimeWithAggregatesFilter<"MdxNote"> | Date | string
-    lastAccess?: DateTimeNullableWithAggregatesFilter<"MdxNote"> | Date | string | null
+    lastAccess?: DateTimeWithAggregatesFilter<"MdxNote"> | Date | string
   }
 
   export type IpynbWhereInput = {
@@ -48462,7 +48462,7 @@ export namespace Prisma {
     bookmarked?: BoolFilter<"Ipynb"> | boolean
     firstSync?: DateTimeFilter<"Ipynb"> | Date | string
     lastSync?: DateTimeFilter<"Ipynb"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Ipynb"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Ipynb"> | Date | string
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
     subjects?: SubjectListRelationFilter
@@ -48487,7 +48487,7 @@ export namespace Prisma {
     bookmarked?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     tags?: TagOrderByRelationAggregateInput
     topics?: TopicOrderByRelationAggregateInput
     subjects?: SubjectOrderByRelationAggregateInput
@@ -48516,7 +48516,7 @@ export namespace Prisma {
     bookmarked?: BoolFilter<"Ipynb"> | boolean
     firstSync?: DateTimeFilter<"Ipynb"> | Date | string
     lastSync?: DateTimeFilter<"Ipynb"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Ipynb"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Ipynb"> | Date | string
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
     subjects?: SubjectListRelationFilter
@@ -48541,7 +48541,7 @@ export namespace Prisma {
     bookmarked?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     _count?: IpynbCountOrderByAggregateInput
     _avg?: IpynbAvgOrderByAggregateInput
     _max?: IpynbMaxOrderByAggregateInput
@@ -48568,7 +48568,7 @@ export namespace Prisma {
     bookmarked?: BoolWithAggregatesFilter<"Ipynb"> | boolean
     firstSync?: DateTimeWithAggregatesFilter<"Ipynb"> | Date | string
     lastSync?: DateTimeWithAggregatesFilter<"Ipynb"> | Date | string
-    lastAccess?: DateTimeNullableWithAggregatesFilter<"Ipynb"> | Date | string | null
+    lastAccess?: DateTimeWithAggregatesFilter<"Ipynb"> | Date | string
   }
 
   export type ToDoListWhereInput = {
@@ -48579,7 +48579,7 @@ export namespace Prisma {
     label?: StringFilter<"ToDoList"> | string
     createdAt?: DateTimeFilter<"ToDoList"> | Date | string
     lastUpdate?: DateTimeFilter<"ToDoList"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"ToDoList"> | Date | string | null
+    lastAccess?: DateTimeFilter<"ToDoList"> | Date | string
     tasks?: ToDoListRelationFilter
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
@@ -48591,7 +48591,7 @@ export namespace Prisma {
     label?: SortOrder
     createdAt?: SortOrder
     lastUpdate?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     tasks?: ToDoOrderByRelationAggregateInput
     tags?: TagOrderByRelationAggregateInput
     topics?: TopicOrderByRelationAggregateInput
@@ -48607,7 +48607,7 @@ export namespace Prisma {
     label?: StringFilter<"ToDoList"> | string
     createdAt?: DateTimeFilter<"ToDoList"> | Date | string
     lastUpdate?: DateTimeFilter<"ToDoList"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"ToDoList"> | Date | string | null
+    lastAccess?: DateTimeFilter<"ToDoList"> | Date | string
     tasks?: ToDoListRelationFilter
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
@@ -48619,7 +48619,7 @@ export namespace Prisma {
     label?: SortOrder
     createdAt?: SortOrder
     lastUpdate?: SortOrder
-    lastAccess?: SortOrderInput | SortOrder
+    lastAccess?: SortOrder
     _count?: ToDoListCountOrderByAggregateInput
     _avg?: ToDoListAvgOrderByAggregateInput
     _max?: ToDoListMaxOrderByAggregateInput
@@ -48635,7 +48635,7 @@ export namespace Prisma {
     label?: StringWithAggregatesFilter<"ToDoList"> | string
     createdAt?: DateTimeWithAggregatesFilter<"ToDoList"> | Date | string
     lastUpdate?: DateTimeWithAggregatesFilter<"ToDoList"> | Date | string
-    lastAccess?: DateTimeNullableWithAggregatesFilter<"ToDoList"> | Date | string | null
+    lastAccess?: DateTimeWithAggregatesFilter<"ToDoList"> | Date | string
   }
 
   export type ToDoWhereInput = {
@@ -49699,7 +49699,7 @@ export namespace Prisma {
   export type SubjectCreateInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
@@ -49715,7 +49715,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
@@ -49729,7 +49729,7 @@ export namespace Prisma {
   export type SubjectUpdateInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
@@ -49745,7 +49745,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -49760,26 +49760,26 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type SubjectUpdateManyMutationInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUncheckedUpdateManyInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicCreateInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
@@ -49795,7 +49795,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
@@ -49809,7 +49809,7 @@ export namespace Prisma {
   export type TopicUpdateInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
@@ -49825,7 +49825,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
@@ -49840,26 +49840,26 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type TopicUpdateManyMutationInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUncheckedUpdateManyInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TagCreateInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
@@ -49875,7 +49875,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
@@ -49889,7 +49889,7 @@ export namespace Prisma {
   export type TagUpdateInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
@@ -49905,7 +49905,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
@@ -49920,20 +49920,20 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type TagUpdateManyMutationInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TagUncheckedUpdateManyInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type QuoteCreateInput = {
@@ -50176,7 +50176,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     Bib?: BibCreateNestedOneWithoutEntriesInput
     citationGroups?: CitationsGroupCreateNestedManyWithoutEntriesInput
     tags?: TagCreateNestedManyWithoutBibEntriesInput
@@ -50230,7 +50230,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     citationGroups?: CitationsGroupUncheckedCreateNestedManyWithoutEntriesInput
     tags?: TagUncheckedCreateNestedManyWithoutBibEntriesInput
     topics?: TopicUncheckedCreateNestedManyWithoutBibEntriesInput
@@ -50282,7 +50282,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     Bib?: BibUpdateOneWithoutEntriesNestedInput
     citationGroups?: CitationsGroupUpdateManyWithoutEntriesNestedInput
     tags?: TagUpdateManyWithoutBibEntriesNestedInput
@@ -50336,7 +50336,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     citationGroups?: CitationsGroupUncheckedUpdateManyWithoutEntriesNestedInput
     tags?: TagUncheckedUpdateManyWithoutBibEntriesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutBibEntriesNestedInput
@@ -50389,7 +50389,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type BibEntryUpdateManyMutationInput = {
@@ -50434,7 +50434,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BibEntryUncheckedUpdateManyInput = {
@@ -50480,7 +50480,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CitationsGroupCreateInput = {
@@ -50730,7 +50730,7 @@ export namespace Prisma {
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesCreateNestedManyWithoutEquationsInput
     tags?: TagCreateNestedManyWithoutEquationsInput
     topics?: TopicCreateNestedManyWithoutEquationsInput
@@ -50749,7 +50749,7 @@ export namespace Prisma {
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesUncheckedCreateNestedManyWithoutEquationsInput
     tags?: TagUncheckedCreateNestedManyWithoutEquationsInput
     topics?: TopicUncheckedCreateNestedManyWithoutEquationsInput
@@ -50767,7 +50767,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUpdateManyWithoutEquationsNestedInput
     tags?: TagUpdateManyWithoutEquationsNestedInput
     topics?: TopicUpdateManyWithoutEquationsNestedInput
@@ -50786,7 +50786,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUncheckedUpdateManyWithoutEquationsNestedInput
     tags?: TagUncheckedUpdateManyWithoutEquationsNestedInput
     topics?: TopicUncheckedUpdateManyWithoutEquationsNestedInput
@@ -50805,7 +50805,7 @@ export namespace Prisma {
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type EquationUpdateManyMutationInput = {
@@ -50818,7 +50818,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EquationUncheckedUpdateManyInput = {
@@ -50832,7 +50832,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DefinitionCreateInput = {
@@ -50841,7 +50841,7 @@ export namespace Prisma {
     content?: string | null
     alphabeticalLabel?: string | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     mdxNote?: MdxNoteCreateNestedOneWithoutDefinitionsInput
   }
 
@@ -50852,7 +50852,7 @@ export namespace Prisma {
     alphabeticalLabel?: string | null
     mdxNoteId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type DefinitionUpdateInput = {
@@ -50861,7 +50861,7 @@ export namespace Prisma {
     content?: NullableStringFieldUpdateOperationsInput | string | null
     alphabeticalLabel?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     mdxNote?: MdxNoteUpdateOneWithoutDefinitionsNestedInput
   }
 
@@ -50872,7 +50872,7 @@ export namespace Prisma {
     alphabeticalLabel?: NullableStringFieldUpdateOperationsInput | string | null
     mdxNoteId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DefinitionCreateManyInput = {
@@ -50882,7 +50882,7 @@ export namespace Prisma {
     alphabeticalLabel?: string | null
     mdxNoteId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type DefinitionUpdateManyMutationInput = {
@@ -50891,7 +50891,7 @@ export namespace Prisma {
     content?: NullableStringFieldUpdateOperationsInput | string | null
     alphabeticalLabel?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DefinitionUncheckedUpdateManyInput = {
@@ -50901,7 +50901,7 @@ export namespace Prisma {
     alphabeticalLabel?: NullableStringFieldUpdateOperationsInput | string | null
     mdxNoteId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SettingsCreateInput = {
@@ -51335,7 +51335,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
@@ -51372,7 +51372,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -51406,7 +51406,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
@@ -51443,7 +51443,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -51479,7 +51479,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type MdxNoteUpdateManyMutationInput = {
@@ -51505,7 +51505,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MdxNoteUncheckedUpdateManyInput = {
@@ -51533,7 +51533,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IpynbCreateInput = {
@@ -51550,7 +51550,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectCreateNestedManyWithoutIpynbNotesInput
@@ -51575,7 +51575,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicUncheckedCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutIpynbNotesInput
@@ -51597,7 +51597,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUpdateManyWithoutIpynbNotesNestedInput
@@ -51622,7 +51622,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutIpynbNotesNestedInput
@@ -51646,7 +51646,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type IpynbUpdateManyMutationInput = {
@@ -51663,7 +51663,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IpynbUncheckedUpdateManyInput = {
@@ -51682,14 +51682,14 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoListCreateInput = {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tasks?: ToDoCreateNestedManyWithoutToDoListInput
     tags?: TagCreateNestedManyWithoutTodoListInput
     topics?: TopicCreateNestedManyWithoutTodoListInput
@@ -51701,7 +51701,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tasks?: ToDoUncheckedCreateNestedManyWithoutToDoListInput
     tags?: TagUncheckedCreateNestedManyWithoutTodoListInput
     topics?: TopicUncheckedCreateNestedManyWithoutTodoListInput
@@ -51712,7 +51712,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUpdateManyWithoutToDoListNestedInput
     tags?: TagUpdateManyWithoutTodoListNestedInput
     topics?: TopicUpdateManyWithoutTodoListNestedInput
@@ -51724,7 +51724,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUncheckedUpdateManyWithoutToDoListNestedInput
     tags?: TagUncheckedUpdateManyWithoutTodoListNestedInput
     topics?: TopicUncheckedUpdateManyWithoutTodoListNestedInput
@@ -51736,14 +51736,14 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type ToDoListUpdateManyMutationInput = {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoListUncheckedUpdateManyInput = {
@@ -51751,7 +51751,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoCreateInput = {
@@ -52908,17 +52908,6 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type DateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
   export type MdxNoteListRelationFilter = {
     every?: MdxNoteWhereInput
     some?: MdxNoteWhereInput
@@ -53091,20 +53080,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
-  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type TopicOrderByRelevanceInput = {
@@ -54517,6 +54492,17 @@ export namespace Prisma {
     id?: SortOrder
   }
 
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type EnumTaskCategoryNullableFilter<$PrismaModel = never> = {
     equals?: $Enums.TaskCategory | EnumTaskCategoryFieldRefInput<$PrismaModel> | null
     in?: $Enums.TaskCategory[] | ListEnumTaskCategoryFieldRefInput<$PrismaModel> | null
@@ -54604,6 +54590,20 @@ export namespace Prisma {
     parentId?: SortOrder
     priority?: SortOrder
     toDoListId?: SortOrder
+  }
+
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type EnumTaskCategoryNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -55525,10 +55525,6 @@ export namespace Prisma {
 
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
-  }
-
-  export type NullableDateTimeFieldUpdateOperationsInput = {
-    set?: Date | string | null
   }
 
   export type MdxNoteUpdateManyWithoutSubjectsNestedInput = {
@@ -58403,6 +58399,10 @@ export namespace Prisma {
     connect?: ToDoWhereUniqueInput | ToDoWhereUniqueInput[]
   }
 
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
+  }
+
   export type NullableEnumTaskCategoryFieldUpdateOperationsInput = {
     set?: $Enums.TaskCategory | null
   }
@@ -59125,17 +59125,6 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -59204,20 +59193,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
-  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type NestedStringNullableFilter<$PrismaModel = never> = {
@@ -59433,6 +59408,17 @@ export namespace Prisma {
     _max?: NestedFloatNullableFilter<$PrismaModel>
   }
 
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type NestedEnumTaskCategoryNullableFilter<$PrismaModel = never> = {
     equals?: $Enums.TaskCategory | EnumTaskCategoryFieldRefInput<$PrismaModel> | null
     in?: $Enums.TaskCategory[] | ListEnumTaskCategoryFieldRefInput<$PrismaModel> | null
@@ -59445,6 +59431,20 @@ export namespace Prisma {
     in?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
     notIn?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumToDoListStatusFilter<$PrismaModel> | $Enums.ToDoListStatus
+  }
+
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type NestedEnumTaskCategoryNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -59524,7 +59524,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
     citations?: BibEntryCreateNestedManyWithoutMdxNotesInput
@@ -59560,7 +59560,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
     citations?: BibEntryUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -59589,7 +59589,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicCreateNestedManyWithoutIpynbNotesInput
     citations?: BibEntryCreateNestedManyWithoutIpynbNotesInput
@@ -59613,7 +59613,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicUncheckedCreateNestedManyWithoutIpynbNotesInput
     citations?: BibEntryUncheckedCreateNestedManyWithoutIpynbNotesInput
@@ -59712,7 +59712,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tasks?: ToDoCreateNestedManyWithoutToDoListInput
     tags?: TagCreateNestedManyWithoutTodoListInput
     topics?: TopicCreateNestedManyWithoutTodoListInput
@@ -59723,7 +59723,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tasks?: ToDoUncheckedCreateNestedManyWithoutToDoListInput
     tags?: TagUncheckedCreateNestedManyWithoutTodoListInput
     topics?: TopicUncheckedCreateNestedManyWithoutTodoListInput
@@ -59818,7 +59818,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     Bib?: BibCreateNestedOneWithoutEntriesInput
     citationGroups?: CitationsGroupCreateNestedManyWithoutEntriesInput
     tags?: TagCreateNestedManyWithoutBibEntriesInput
@@ -59871,7 +59871,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     citationGroups?: CitationsGroupUncheckedCreateNestedManyWithoutEntriesInput
     tags?: TagUncheckedCreateNestedManyWithoutBibEntriesInput
     topics?: TopicUncheckedCreateNestedManyWithoutBibEntriesInput
@@ -59895,7 +59895,7 @@ export namespace Prisma {
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesCreateNestedManyWithoutEquationsInput
     tags?: TagCreateNestedManyWithoutEquationsInput
     topics?: TopicCreateNestedManyWithoutEquationsInput
@@ -59913,7 +59913,7 @@ export namespace Prisma {
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesUncheckedCreateNestedManyWithoutEquationsInput
     tags?: TagUncheckedCreateNestedManyWithoutEquationsInput
     topics?: TopicUncheckedCreateNestedManyWithoutEquationsInput
@@ -59969,7 +59969,7 @@ export namespace Prisma {
     bookmarked?: BoolFilter<"MdxNote"> | boolean
     firstSync?: DateTimeFilter<"MdxNote"> | Date | string
     lastSync?: DateTimeFilter<"MdxNote"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"MdxNote"> | Date | string | null
+    lastAccess?: DateTimeFilter<"MdxNote"> | Date | string
   }
 
   export type IpynbUpsertWithWhereUniqueWithoutSubjectsInput = {
@@ -60007,7 +60007,7 @@ export namespace Prisma {
     bookmarked?: BoolFilter<"Ipynb"> | boolean
     firstSync?: DateTimeFilter<"Ipynb"> | Date | string
     lastSync?: DateTimeFilter<"Ipynb"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Ipynb"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Ipynb"> | Date | string
   }
 
   export type QAPairUpsertWithWhereUniqueWithoutSubjectsInput = {
@@ -60121,7 +60121,7 @@ export namespace Prisma {
     label?: StringFilter<"ToDoList"> | string
     createdAt?: DateTimeFilter<"ToDoList"> | Date | string
     lastUpdate?: DateTimeFilter<"ToDoList"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"ToDoList"> | Date | string | null
+    lastAccess?: DateTimeFilter<"ToDoList"> | Date | string
   }
 
   export type ToDoUpsertWithWhereUniqueWithoutSubjectsInput = {
@@ -60220,7 +60220,7 @@ export namespace Prisma {
     copyright?: StringNullableFilter<"BibEntry"> | string | null
     added?: DateTimeFilter<"BibEntry"> | Date | string
     createdAt?: DateTimeFilter<"BibEntry"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"BibEntry"> | Date | string | null
+    lastAccess?: DateTimeFilter<"BibEntry"> | Date | string
   }
 
   export type EquationUpsertWithWhereUniqueWithoutSubjectsInput = {
@@ -60253,7 +60253,7 @@ export namespace Prisma {
     variables?: StringNullableListFilter<"Equation">
     keywords?: StringNullableListFilter<"Equation">
     createdAt?: DateTimeFilter<"Equation"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Equation"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Equation"> | Date | string
   }
 
   export type MdxNoteCreateWithoutTopicsInput = {
@@ -60279,7 +60279,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
     citations?: BibEntryCreateNestedManyWithoutMdxNotesInput
@@ -60315,7 +60315,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
     citations?: BibEntryUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -60344,7 +60344,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectCreateNestedManyWithoutIpynbNotesInput
     citations?: BibEntryCreateNestedManyWithoutIpynbNotesInput
@@ -60368,7 +60368,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutIpynbNotesInput
     citations?: BibEntryUncheckedCreateNestedManyWithoutIpynbNotesInput
@@ -60509,7 +60509,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tasks?: ToDoCreateNestedManyWithoutToDoListInput
     tags?: TagCreateNestedManyWithoutTodoListInput
     subjects?: SubjectCreateNestedManyWithoutTodoListInput
@@ -60520,7 +60520,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tasks?: ToDoUncheckedCreateNestedManyWithoutToDoListInput
     tags?: TagUncheckedCreateNestedManyWithoutTodoListInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutTodoListInput
@@ -60573,7 +60573,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     Bib?: BibCreateNestedOneWithoutEntriesInput
     citationGroups?: CitationsGroupCreateNestedManyWithoutEntriesInput
     tags?: TagCreateNestedManyWithoutBibEntriesInput
@@ -60626,7 +60626,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     citationGroups?: CitationsGroupUncheckedCreateNestedManyWithoutEntriesInput
     tags?: TagUncheckedCreateNestedManyWithoutBibEntriesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutBibEntriesInput
@@ -60650,7 +60650,7 @@ export namespace Prisma {
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesCreateNestedManyWithoutEquationsInput
     tags?: TagCreateNestedManyWithoutEquationsInput
     subjects?: SubjectCreateNestedManyWithoutEquationsInput
@@ -60668,7 +60668,7 @@ export namespace Prisma {
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesUncheckedCreateNestedManyWithoutEquationsInput
     tags?: TagUncheckedCreateNestedManyWithoutEquationsInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutEquationsInput
@@ -60861,7 +60861,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     citations?: BibEntryCreateNestedManyWithoutMdxNotesInput
@@ -60897,7 +60897,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     citations?: BibEntryUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -60954,7 +60954,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     Bib?: BibCreateNestedOneWithoutEntriesInput
     citationGroups?: CitationsGroupCreateNestedManyWithoutEntriesInput
     topics?: TopicCreateNestedManyWithoutBibEntriesInput
@@ -61007,7 +61007,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     citationGroups?: CitationsGroupUncheckedCreateNestedManyWithoutEntriesInput
     topics?: TopicUncheckedCreateNestedManyWithoutBibEntriesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutBibEntriesInput
@@ -61035,7 +61035,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectCreateNestedManyWithoutIpynbNotesInput
     citations?: BibEntryCreateNestedManyWithoutIpynbNotesInput
@@ -61059,7 +61059,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutIpynbNotesInput
     citations?: BibEntryUncheckedCreateNestedManyWithoutIpynbNotesInput
@@ -61140,7 +61140,7 @@ export namespace Prisma {
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesCreateNestedManyWithoutEquationsInput
     topics?: TopicCreateNestedManyWithoutEquationsInput
     subjects?: SubjectCreateNestedManyWithoutEquationsInput
@@ -61158,7 +61158,7 @@ export namespace Prisma {
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesUncheckedCreateNestedManyWithoutEquationsInput
     topics?: TopicUncheckedCreateNestedManyWithoutEquationsInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutEquationsInput
@@ -61240,7 +61240,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tasks?: ToDoCreateNestedManyWithoutToDoListInput
     topics?: TopicCreateNestedManyWithoutTodoListInput
     subjects?: SubjectCreateNestedManyWithoutTodoListInput
@@ -61251,7 +61251,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tasks?: ToDoUncheckedCreateNestedManyWithoutToDoListInput
     topics?: TopicUncheckedCreateNestedManyWithoutTodoListInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutTodoListInput
@@ -61462,7 +61462,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     Bib?: BibCreateNestedOneWithoutEntriesInput
     citationGroups?: CitationsGroupCreateNestedManyWithoutEntriesInput
     tags?: TagCreateNestedManyWithoutBibEntriesInput
@@ -61515,7 +61515,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     citationGroups?: CitationsGroupUncheckedCreateNestedManyWithoutEntriesInput
     tags?: TagUncheckedCreateNestedManyWithoutBibEntriesInput
     topics?: TopicUncheckedCreateNestedManyWithoutBibEntriesInput
@@ -61552,7 +61552,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
@@ -61588,7 +61588,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -61617,7 +61617,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectCreateNestedManyWithoutIpynbNotesInput
@@ -61641,7 +61641,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicUncheckedCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutIpynbNotesInput
@@ -61738,7 +61738,7 @@ export namespace Prisma {
   export type TagCreateWithoutBibEntriesInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
     QAPair?: QAPairCreateNestedManyWithoutTagsInput
@@ -61753,7 +61753,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTagsInput
@@ -61771,7 +61771,7 @@ export namespace Prisma {
   export type TopicCreateWithoutBibEntriesInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
@@ -61786,7 +61786,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
@@ -61804,7 +61804,7 @@ export namespace Prisma {
   export type SubjectCreateWithoutBibEntriesInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
@@ -61819,7 +61819,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
@@ -61857,7 +61857,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
@@ -61893,7 +61893,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -61922,7 +61922,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectCreateNestedManyWithoutIpynbNotesInput
@@ -61946,7 +61946,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicUncheckedCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutIpynbNotesInput
@@ -62053,7 +62053,7 @@ export namespace Prisma {
     value?: StringFilter<"Tag"> | string
     kanbanId?: IntNullableFilter<"Tag"> | number | null
     createdAt?: DateTimeFilter<"Tag"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Tag"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Tag"> | Date | string
   }
 
   export type TopicUpsertWithWhereUniqueWithoutBibEntriesInput = {
@@ -62079,7 +62079,7 @@ export namespace Prisma {
     value?: StringFilter<"Topic"> | string
     kanbanId?: IntNullableFilter<"Topic"> | number | null
     createdAt?: DateTimeFilter<"Topic"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Topic"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Topic"> | Date | string
   }
 
   export type SubjectUpsertWithWhereUniqueWithoutBibEntriesInput = {
@@ -62105,7 +62105,7 @@ export namespace Prisma {
     value?: StringFilter<"Subject"> | string
     kanbanId?: IntNullableFilter<"Subject"> | number | null
     createdAt?: DateTimeFilter<"Subject"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Subject"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Subject"> | Date | string
   }
 
   export type MdxNoteUpsertWithWhereUniqueWithoutCitationsInput = {
@@ -62208,7 +62208,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     Bib?: BibCreateNestedOneWithoutEntriesInput
     tags?: TagCreateNestedManyWithoutBibEntriesInput
     topics?: TopicCreateNestedManyWithoutBibEntriesInput
@@ -62261,7 +62261,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutBibEntriesInput
     topics?: TopicUncheckedCreateNestedManyWithoutBibEntriesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutBibEntriesInput
@@ -62333,7 +62333,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     citationGroups?: CitationsGroupCreateNestedManyWithoutEntriesInput
     tags?: TagCreateNestedManyWithoutBibEntriesInput
     topics?: TopicCreateNestedManyWithoutBibEntriesInput
@@ -62385,7 +62385,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     citationGroups?: CitationsGroupUncheckedCreateNestedManyWithoutEntriesInput
     tags?: TagUncheckedCreateNestedManyWithoutBibEntriesInput
     topics?: TopicUncheckedCreateNestedManyWithoutBibEntriesInput
@@ -62431,7 +62431,7 @@ export namespace Prisma {
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutEquationsInput
     topics?: TopicCreateNestedManyWithoutEquationsInput
     subjects?: SubjectCreateNestedManyWithoutEquationsInput
@@ -62449,7 +62449,7 @@ export namespace Prisma {
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutEquationsInput
     topics?: TopicUncheckedCreateNestedManyWithoutEquationsInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutEquationsInput
@@ -62498,7 +62498,7 @@ export namespace Prisma {
   export type TagCreateWithoutEquationsInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
@@ -62513,7 +62513,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
@@ -62531,7 +62531,7 @@ export namespace Prisma {
   export type TopicCreateWithoutEquationsInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
@@ -62546,7 +62546,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
@@ -62564,7 +62564,7 @@ export namespace Prisma {
   export type SubjectCreateWithoutEquationsInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
@@ -62579,7 +62579,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
@@ -62617,7 +62617,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
@@ -62653,7 +62653,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -62781,7 +62781,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
@@ -62817,7 +62817,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -62866,7 +62866,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
@@ -62902,7 +62902,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -62915,7 +62915,7 @@ export namespace Prisma {
   export type TagCreateWithoutQAPairInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
@@ -62930,7 +62930,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
@@ -62948,7 +62948,7 @@ export namespace Prisma {
   export type TopicCreateWithoutQAPairInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     practiceExam?: PracticeExamCreateNestedManyWithoutTopicsInput
@@ -62963,7 +62963,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     practiceExam?: PracticeExamUncheckedCreateNestedManyWithoutTopicsInput
@@ -62981,7 +62981,7 @@ export namespace Prisma {
   export type SubjectCreateWithoutQaPairInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     practiceExam?: PracticeExamCreateNestedManyWithoutSubjectsInput
@@ -62996,7 +62996,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     practiceExam?: PracticeExamUncheckedCreateNestedManyWithoutSubjectsInput
@@ -63106,7 +63106,7 @@ export namespace Prisma {
   export type TopicCreateWithoutPracticeExamInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
@@ -63121,7 +63121,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
@@ -63139,7 +63139,7 @@ export namespace Prisma {
   export type TagCreateWithoutPracticeExamInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
@@ -63154,7 +63154,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
@@ -63172,7 +63172,7 @@ export namespace Prisma {
   export type SubjectCreateWithoutPracticeExamInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
@@ -63187,7 +63187,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
@@ -63320,7 +63320,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
@@ -63355,7 +63355,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -63390,7 +63390,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectCreateNestedManyWithoutIpynbNotesInput
@@ -63413,7 +63413,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicUncheckedCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutIpynbNotesInput
@@ -63466,7 +63466,7 @@ export namespace Prisma {
   export type TopicCreateWithoutMdxNotesInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
     practiceExam?: PracticeExamCreateNestedManyWithoutTopicsInput
@@ -63481,7 +63481,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
     practiceExam?: PracticeExamUncheckedCreateNestedManyWithoutTopicsInput
@@ -63499,7 +63499,7 @@ export namespace Prisma {
   export type SubjectCreateWithoutMdxNotesInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
     practiceExam?: PracticeExamCreateNestedManyWithoutSubjectsInput
@@ -63514,7 +63514,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
     practiceExam?: PracticeExamUncheckedCreateNestedManyWithoutSubjectsInput
@@ -63532,7 +63532,7 @@ export namespace Prisma {
   export type TagCreateWithoutMdxNotesInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
     QAPair?: QAPairCreateNestedManyWithoutTagsInput
@@ -63547,7 +63547,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTagsInput
@@ -63604,7 +63604,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     Bib?: BibCreateNestedOneWithoutEntriesInput
     citationGroups?: CitationsGroupCreateNestedManyWithoutEntriesInput
     tags?: TagCreateNestedManyWithoutBibEntriesInput
@@ -63657,7 +63657,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     citationGroups?: CitationsGroupUncheckedCreateNestedManyWithoutEntriesInput
     tags?: TagUncheckedCreateNestedManyWithoutBibEntriesInput
     topics?: TopicUncheckedCreateNestedManyWithoutBibEntriesInput
@@ -63719,7 +63719,7 @@ export namespace Prisma {
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesCreateNestedManyWithoutEquationsInput
     tags?: TagCreateNestedManyWithoutEquationsInput
     topics?: TopicCreateNestedManyWithoutEquationsInput
@@ -63737,7 +63737,7 @@ export namespace Prisma {
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesUncheckedCreateNestedManyWithoutEquationsInput
     tags?: TagUncheckedCreateNestedManyWithoutEquationsInput
     topics?: TopicUncheckedCreateNestedManyWithoutEquationsInput
@@ -63755,7 +63755,7 @@ export namespace Prisma {
     content?: string | null
     alphabeticalLabel?: string | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type DefinitionUncheckedCreateWithoutMdxNoteInput = {
@@ -63764,7 +63764,7 @@ export namespace Prisma {
     content?: string | null
     alphabeticalLabel?: string | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type DefinitionCreateOrConnectWithoutMdxNoteInput = {
@@ -63962,7 +63962,7 @@ export namespace Prisma {
     alphabeticalLabel?: StringNullableFilter<"Definition"> | string | null
     mdxNoteId?: IntNullableFilter<"Definition"> | number | null
     createdAt?: DateTimeFilter<"Definition"> | Date | string
-    lastAccess?: DateTimeNullableFilter<"Definition"> | Date | string | null
+    lastAccess?: DateTimeFilter<"Definition"> | Date | string
   }
 
   export type ToDoUpsertWithWhereUniqueWithoutAssociatedNotesInput = {
@@ -63984,7 +63984,7 @@ export namespace Prisma {
   export type TagCreateWithoutIpynbNotesInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     QAPair?: QAPairCreateNestedManyWithoutTagsInput
@@ -63999,7 +63999,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTagsInput
@@ -64017,7 +64017,7 @@ export namespace Prisma {
   export type TopicCreateWithoutIpynbNotesInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
     practiceExam?: PracticeExamCreateNestedManyWithoutTopicsInput
@@ -64032,7 +64032,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
     practiceExam?: PracticeExamUncheckedCreateNestedManyWithoutTopicsInput
@@ -64050,7 +64050,7 @@ export namespace Prisma {
   export type SubjectCreateWithoutIpynbNotesInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
     practiceExam?: PracticeExamCreateNestedManyWithoutSubjectsInput
@@ -64065,7 +64065,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
     practiceExam?: PracticeExamUncheckedCreateNestedManyWithoutSubjectsInput
@@ -64122,7 +64122,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     Bib?: BibCreateNestedOneWithoutEntriesInput
     citationGroups?: CitationsGroupCreateNestedManyWithoutEntriesInput
     tags?: TagCreateNestedManyWithoutBibEntriesInput
@@ -64175,7 +64175,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     citationGroups?: CitationsGroupUncheckedCreateNestedManyWithoutEntriesInput
     tags?: TagUncheckedCreateNestedManyWithoutBibEntriesInput
     topics?: TopicUncheckedCreateNestedManyWithoutBibEntriesInput
@@ -64378,7 +64378,7 @@ export namespace Prisma {
   export type TagCreateWithoutTodoListInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
@@ -64393,7 +64393,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
@@ -64411,7 +64411,7 @@ export namespace Prisma {
   export type TopicCreateWithoutTodoListInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
@@ -64426,7 +64426,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
@@ -64444,7 +64444,7 @@ export namespace Prisma {
   export type SubjectCreateWithoutTodoListInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
@@ -64459,7 +64459,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
@@ -64561,7 +64561,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
@@ -64597,7 +64597,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -64615,7 +64615,7 @@ export namespace Prisma {
   export type TagCreateWithoutToDoInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
@@ -64630,7 +64630,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
@@ -64648,7 +64648,7 @@ export namespace Prisma {
   export type TopicCreateWithoutToDoInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
@@ -64663,7 +64663,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
@@ -64681,7 +64681,7 @@ export namespace Prisma {
   export type SubjectCreateWithoutToDoInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
@@ -64696,7 +64696,7 @@ export namespace Prisma {
     value: string
     kanbanId?: number | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
@@ -64804,7 +64804,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutTodoListInput
     topics?: TopicCreateNestedManyWithoutTodoListInput
     subjects?: SubjectCreateNestedManyWithoutTodoListInput
@@ -64815,7 +64815,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutTodoListInput
     topics?: TopicUncheckedCreateNestedManyWithoutTodoListInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutTodoListInput
@@ -64969,7 +64969,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutTodoListNestedInput
     topics?: TopicUpdateManyWithoutTodoListNestedInput
     subjects?: SubjectUpdateManyWithoutTodoListNestedInput
@@ -64980,7 +64980,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutTodoListNestedInput
     topics?: TopicUncheckedUpdateManyWithoutTodoListNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutTodoListNestedInput
@@ -65158,7 +65158,7 @@ export namespace Prisma {
   export type TagCreateWithoutKanbanInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
@@ -65172,7 +65172,7 @@ export namespace Prisma {
   export type TagUncheckedCreateWithoutKanbanInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
@@ -65196,7 +65196,7 @@ export namespace Prisma {
   export type SubjectCreateWithoutKanbanInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
@@ -65210,7 +65210,7 @@ export namespace Prisma {
   export type SubjectUncheckedCreateWithoutKanbanInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
@@ -65234,7 +65234,7 @@ export namespace Prisma {
   export type TopicCreateWithoutKanbanInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
@@ -65248,7 +65248,7 @@ export namespace Prisma {
   export type TopicUncheckedCreateWithoutKanbanInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
@@ -66013,7 +66013,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
     citations?: BibEntryUpdateManyWithoutMdxNotesNestedInput
@@ -66049,7 +66049,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
     citations?: BibEntryUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -66084,7 +66084,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IpynbUpdateWithoutSubjectsInput = {
@@ -66101,7 +66101,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUpdateManyWithoutIpynbNotesNestedInput
     citations?: BibEntryUpdateManyWithoutIpynbNotesNestedInput
@@ -66125,7 +66125,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutIpynbNotesNestedInput
     citations?: BibEntryUncheckedUpdateManyWithoutIpynbNotesNestedInput
@@ -66148,7 +66148,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type QAPairUpdateWithoutSubjectsInput = {
@@ -66223,7 +66223,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUpdateManyWithoutToDoListNestedInput
     tags?: TagUpdateManyWithoutTodoListNestedInput
     topics?: TopicUpdateManyWithoutTodoListNestedInput
@@ -66234,7 +66234,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUncheckedUpdateManyWithoutToDoListNestedInput
     tags?: TagUncheckedUpdateManyWithoutTodoListNestedInput
     topics?: TopicUncheckedUpdateManyWithoutTodoListNestedInput
@@ -66245,7 +66245,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoUpdateWithoutSubjectsInput = {
@@ -66342,7 +66342,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     Bib?: BibUpdateOneWithoutEntriesNestedInput
     citationGroups?: CitationsGroupUpdateManyWithoutEntriesNestedInput
     tags?: TagUpdateManyWithoutBibEntriesNestedInput
@@ -66395,7 +66395,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     citationGroups?: CitationsGroupUncheckedUpdateManyWithoutEntriesNestedInput
     tags?: TagUncheckedUpdateManyWithoutBibEntriesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutBibEntriesNestedInput
@@ -66447,7 +66447,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EquationUpdateWithoutSubjectsInput = {
@@ -66460,7 +66460,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUpdateManyWithoutEquationsNestedInput
     tags?: TagUpdateManyWithoutEquationsNestedInput
     topics?: TopicUpdateManyWithoutEquationsNestedInput
@@ -66478,7 +66478,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUncheckedUpdateManyWithoutEquationsNestedInput
     tags?: TagUncheckedUpdateManyWithoutEquationsNestedInput
     topics?: TopicUncheckedUpdateManyWithoutEquationsNestedInput
@@ -66496,7 +66496,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MdxNoteUpdateWithoutTopicsInput = {
@@ -66522,7 +66522,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
     citations?: BibEntryUpdateManyWithoutMdxNotesNestedInput
@@ -66558,7 +66558,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
     citations?: BibEntryUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -66593,7 +66593,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IpynbUpdateWithoutTopicsInput = {
@@ -66610,7 +66610,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUpdateManyWithoutIpynbNotesNestedInput
     citations?: BibEntryUpdateManyWithoutIpynbNotesNestedInput
@@ -66634,7 +66634,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutIpynbNotesNestedInput
     citations?: BibEntryUncheckedUpdateManyWithoutIpynbNotesNestedInput
@@ -66657,7 +66657,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type QAPairUpdateWithoutTopicsInput = {
@@ -66784,7 +66784,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUpdateManyWithoutToDoListNestedInput
     tags?: TagUpdateManyWithoutTodoListNestedInput
     subjects?: SubjectUpdateManyWithoutTodoListNestedInput
@@ -66795,7 +66795,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUncheckedUpdateManyWithoutToDoListNestedInput
     tags?: TagUncheckedUpdateManyWithoutTodoListNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutTodoListNestedInput
@@ -66806,7 +66806,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BibEntryUpdateWithoutTopicsInput = {
@@ -66851,7 +66851,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     Bib?: BibUpdateOneWithoutEntriesNestedInput
     citationGroups?: CitationsGroupUpdateManyWithoutEntriesNestedInput
     tags?: TagUpdateManyWithoutBibEntriesNestedInput
@@ -66904,7 +66904,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     citationGroups?: CitationsGroupUncheckedUpdateManyWithoutEntriesNestedInput
     tags?: TagUncheckedUpdateManyWithoutBibEntriesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutBibEntriesNestedInput
@@ -66956,7 +66956,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EquationUpdateWithoutTopicsInput = {
@@ -66969,7 +66969,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUpdateManyWithoutEquationsNestedInput
     tags?: TagUpdateManyWithoutEquationsNestedInput
     subjects?: SubjectUpdateManyWithoutEquationsNestedInput
@@ -66987,7 +66987,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUncheckedUpdateManyWithoutEquationsNestedInput
     tags?: TagUncheckedUpdateManyWithoutEquationsNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutEquationsNestedInput
@@ -67005,7 +67005,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MdxNoteUpdateWithoutTagsInput = {
@@ -67031,7 +67031,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     citations?: BibEntryUpdateManyWithoutMdxNotesNestedInput
@@ -67067,7 +67067,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     citations?: BibEntryUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -67102,7 +67102,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BibEntryUpdateWithoutTagsInput = {
@@ -67147,7 +67147,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     Bib?: BibUpdateOneWithoutEntriesNestedInput
     citationGroups?: CitationsGroupUpdateManyWithoutEntriesNestedInput
     topics?: TopicUpdateManyWithoutBibEntriesNestedInput
@@ -67200,7 +67200,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     citationGroups?: CitationsGroupUncheckedUpdateManyWithoutEntriesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutBibEntriesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutBibEntriesNestedInput
@@ -67252,7 +67252,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IpynbUpdateWithoutTagsInput = {
@@ -67269,7 +67269,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUpdateManyWithoutIpynbNotesNestedInput
     citations?: BibEntryUpdateManyWithoutIpynbNotesNestedInput
@@ -67293,7 +67293,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutIpynbNotesNestedInput
     citations?: BibEntryUncheckedUpdateManyWithoutIpynbNotesNestedInput
@@ -67316,7 +67316,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type QAPairUpdateWithoutTagsInput = {
@@ -67397,7 +67397,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUpdateManyWithoutEquationsNestedInput
     topics?: TopicUpdateManyWithoutEquationsNestedInput
     subjects?: SubjectUpdateManyWithoutEquationsNestedInput
@@ -67415,7 +67415,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUncheckedUpdateManyWithoutEquationsNestedInput
     topics?: TopicUncheckedUpdateManyWithoutEquationsNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutEquationsNestedInput
@@ -67433,7 +67433,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoUpdateWithoutTagsInput = {
@@ -67492,7 +67492,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUpdateManyWithoutToDoListNestedInput
     topics?: TopicUpdateManyWithoutTodoListNestedInput
     subjects?: SubjectUpdateManyWithoutTodoListNestedInput
@@ -67503,7 +67503,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUncheckedUpdateManyWithoutToDoListNestedInput
     topics?: TopicUncheckedUpdateManyWithoutTodoListNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutTodoListNestedInput
@@ -67514,7 +67514,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BibEntryUpdateWithoutReadingListInput = {
@@ -67559,7 +67559,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     Bib?: BibUpdateOneWithoutEntriesNestedInput
     citationGroups?: CitationsGroupUpdateManyWithoutEntriesNestedInput
     tags?: TagUpdateManyWithoutBibEntriesNestedInput
@@ -67612,7 +67612,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     citationGroups?: CitationsGroupUncheckedUpdateManyWithoutEntriesNestedInput
     tags?: TagUncheckedUpdateManyWithoutBibEntriesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutBibEntriesNestedInput
@@ -67664,7 +67664,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MdxNoteUpdateWithoutReadingListInput = {
@@ -67690,7 +67690,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
@@ -67726,7 +67726,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -67761,7 +67761,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IpynbUpdateWithoutReadingListInput = {
@@ -67778,7 +67778,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUpdateManyWithoutIpynbNotesNestedInput
@@ -67802,7 +67802,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutIpynbNotesNestedInput
@@ -67825,7 +67825,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CitationsGroupUpdateWithoutEntriesInput = {
@@ -67846,7 +67846,7 @@ export namespace Prisma {
   export type TagUpdateWithoutBibEntriesInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
     QAPair?: QAPairUpdateManyWithoutTagsNestedInput
@@ -67861,7 +67861,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTagsNestedInput
@@ -67875,13 +67875,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUpdateWithoutBibEntriesInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
@@ -67896,7 +67896,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
@@ -67910,13 +67910,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutBibEntriesInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
@@ -67931,7 +67931,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -67945,7 +67945,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MdxNoteUpdateWithoutCitationsInput = {
@@ -67971,7 +67971,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
@@ -68007,7 +68007,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -68042,7 +68042,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IpynbUpdateWithoutCitationsInput = {
@@ -68059,7 +68059,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUpdateManyWithoutIpynbNotesNestedInput
@@ -68083,7 +68083,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutIpynbNotesNestedInput
@@ -68106,7 +68106,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ReadingListUpdateWithoutBibEntriesInput = {
@@ -68176,7 +68176,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     Bib?: BibUpdateOneWithoutEntriesNestedInput
     tags?: TagUpdateManyWithoutBibEntriesNestedInput
     topics?: TopicUpdateManyWithoutBibEntriesNestedInput
@@ -68229,7 +68229,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutBibEntriesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutBibEntriesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutBibEntriesNestedInput
@@ -68281,7 +68281,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BibEntryCreateManyBibInput = {
@@ -68326,7 +68326,7 @@ export namespace Prisma {
     copyright?: string | null
     added?: Date | string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type BibEntryUpdateWithoutBibInput = {
@@ -68371,7 +68371,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     citationGroups?: CitationsGroupUpdateManyWithoutEntriesNestedInput
     tags?: TagUpdateManyWithoutBibEntriesNestedInput
     topics?: TopicUpdateManyWithoutBibEntriesNestedInput
@@ -68423,7 +68423,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     citationGroups?: CitationsGroupUncheckedUpdateManyWithoutEntriesNestedInput
     tags?: TagUncheckedUpdateManyWithoutBibEntriesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutBibEntriesNestedInput
@@ -68475,7 +68475,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EquationUpdateWithoutRelatedValuesInput = {
@@ -68488,7 +68488,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutEquationsNestedInput
     topics?: TopicUpdateManyWithoutEquationsNestedInput
     subjects?: SubjectUpdateManyWithoutEquationsNestedInput
@@ -68506,7 +68506,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutEquationsNestedInput
     topics?: TopicUncheckedUpdateManyWithoutEquationsNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutEquationsNestedInput
@@ -68524,7 +68524,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type RelatedValuesUpdateWithoutEquationsInput = {
@@ -68550,7 +68550,7 @@ export namespace Prisma {
   export type TagUpdateWithoutEquationsInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
@@ -68565,7 +68565,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
@@ -68579,13 +68579,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUpdateWithoutEquationsInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
@@ -68600,7 +68600,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
@@ -68614,13 +68614,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutEquationsInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
@@ -68635,7 +68635,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -68649,7 +68649,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MdxNoteUpdateWithoutEquationsInput = {
@@ -68675,7 +68675,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
@@ -68711,7 +68711,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -68746,13 +68746,13 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TagUpdateWithoutQAPairInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
@@ -68767,7 +68767,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
@@ -68781,13 +68781,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUpdateWithoutQAPairInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     practiceExam?: PracticeExamUpdateManyWithoutTopicsNestedInput
@@ -68802,7 +68802,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     practiceExam?: PracticeExamUncheckedUpdateManyWithoutTopicsNestedInput
@@ -68816,13 +68816,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutQaPairInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     practiceExam?: PracticeExamUpdateManyWithoutSubjectsNestedInput
@@ -68837,7 +68837,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     practiceExam?: PracticeExamUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -68851,7 +68851,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type PracticeExamUpdateWithoutQuestionsInput = {
@@ -68889,7 +68889,7 @@ export namespace Prisma {
   export type TopicUpdateWithoutPracticeExamInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
@@ -68904,7 +68904,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
@@ -68918,13 +68918,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TagUpdateWithoutPracticeExamInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
@@ -68939,7 +68939,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
@@ -68953,13 +68953,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutPracticeExamInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
@@ -68974,7 +68974,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -68988,7 +68988,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type QAPairUpdateWithoutPracticeExamInput = {
@@ -69051,7 +69051,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type IpynbCreateManySequentialListInput = {
@@ -69069,7 +69069,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type MdxNoteUpdateWithoutSequentialListInput = {
@@ -69095,7 +69095,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
@@ -69130,7 +69130,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -69165,7 +69165,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IpynbUpdateWithoutSequentialListInput = {
@@ -69182,7 +69182,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUpdateManyWithoutIpynbNotesNestedInput
@@ -69205,7 +69205,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutIpynbNotesNestedInput
@@ -69228,7 +69228,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DefinitionCreateManyMdxNoteInput = {
@@ -69237,13 +69237,13 @@ export namespace Prisma {
     content?: string | null
     alphabeticalLabel?: string | null
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type TopicUpdateWithoutMdxNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
     practiceExam?: PracticeExamUpdateManyWithoutTopicsNestedInput
@@ -69258,7 +69258,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
     practiceExam?: PracticeExamUncheckedUpdateManyWithoutTopicsNestedInput
@@ -69272,13 +69272,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutMdxNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
     practiceExam?: PracticeExamUpdateManyWithoutSubjectsNestedInput
@@ -69293,7 +69293,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
     practiceExam?: PracticeExamUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -69307,13 +69307,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TagUpdateWithoutMdxNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
     QAPair?: QAPairUpdateManyWithoutTagsNestedInput
@@ -69328,7 +69328,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTagsNestedInput
@@ -69342,7 +69342,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BibEntryUpdateWithoutMdxNotesInput = {
@@ -69387,7 +69387,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     Bib?: BibUpdateOneWithoutEntriesNestedInput
     citationGroups?: CitationsGroupUpdateManyWithoutEntriesNestedInput
     tags?: TagUpdateManyWithoutBibEntriesNestedInput
@@ -69440,7 +69440,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     citationGroups?: CitationsGroupUncheckedUpdateManyWithoutEntriesNestedInput
     tags?: TagUncheckedUpdateManyWithoutBibEntriesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutBibEntriesNestedInput
@@ -69492,7 +69492,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ReadingListUpdateWithoutMdxNotesInput = {
@@ -69530,7 +69530,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUpdateManyWithoutEquationsNestedInput
     tags?: TagUpdateManyWithoutEquationsNestedInput
     topics?: TopicUpdateManyWithoutEquationsNestedInput
@@ -69548,7 +69548,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUncheckedUpdateManyWithoutEquationsNestedInput
     tags?: TagUncheckedUpdateManyWithoutEquationsNestedInput
     topics?: TopicUncheckedUpdateManyWithoutEquationsNestedInput
@@ -69566,7 +69566,7 @@ export namespace Prisma {
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DefinitionUpdateWithoutMdxNoteInput = {
@@ -69575,7 +69575,7 @@ export namespace Prisma {
     content?: NullableStringFieldUpdateOperationsInput | string | null
     alphabeticalLabel?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DefinitionUncheckedUpdateWithoutMdxNoteInput = {
@@ -69584,7 +69584,7 @@ export namespace Prisma {
     content?: NullableStringFieldUpdateOperationsInput | string | null
     alphabeticalLabel?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DefinitionUncheckedUpdateManyWithoutMdxNoteInput = {
@@ -69593,7 +69593,7 @@ export namespace Prisma {
     content?: NullableStringFieldUpdateOperationsInput | string | null
     alphabeticalLabel?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoUpdateWithoutAssociatedNotesInput = {
@@ -69651,7 +69651,7 @@ export namespace Prisma {
   export type TagUpdateWithoutIpynbNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     QAPair?: QAPairUpdateManyWithoutTagsNestedInput
@@ -69666,7 +69666,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTagsNestedInput
@@ -69680,13 +69680,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUpdateWithoutIpynbNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
     practiceExam?: PracticeExamUpdateManyWithoutTopicsNestedInput
@@ -69701,7 +69701,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
     practiceExam?: PracticeExamUncheckedUpdateManyWithoutTopicsNestedInput
@@ -69715,13 +69715,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutIpynbNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
     practiceExam?: PracticeExamUpdateManyWithoutSubjectsNestedInput
@@ -69736,7 +69736,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
     practiceExam?: PracticeExamUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -69750,7 +69750,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BibEntryUpdateWithoutIpynbNotesInput = {
@@ -69795,7 +69795,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     Bib?: BibUpdateOneWithoutEntriesNestedInput
     citationGroups?: CitationsGroupUpdateManyWithoutEntriesNestedInput
     tags?: TagUpdateManyWithoutBibEntriesNestedInput
@@ -69848,7 +69848,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     citationGroups?: CitationsGroupUncheckedUpdateManyWithoutEntriesNestedInput
     tags?: TagUncheckedUpdateManyWithoutBibEntriesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutBibEntriesNestedInput
@@ -69900,7 +69900,7 @@ export namespace Prisma {
     copyright?: NullableStringFieldUpdateOperationsInput | string | null
     added?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ReadingListUpdateWithoutIpynbNotesInput = {
@@ -69996,7 +69996,7 @@ export namespace Prisma {
   export type TagUpdateWithoutTodoListInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
@@ -70011,7 +70011,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
@@ -70025,13 +70025,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUpdateWithoutTodoListInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
@@ -70046,7 +70046,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
@@ -70060,13 +70060,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutTodoListInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
@@ -70081,7 +70081,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -70095,7 +70095,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoCreateManyParentInput = {
@@ -70135,7 +70135,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
@@ -70171,7 +70171,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -70206,13 +70206,13 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TagUpdateWithoutToDoInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
@@ -70227,7 +70227,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
@@ -70241,13 +70241,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUpdateWithoutToDoInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
@@ -70262,7 +70262,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
@@ -70276,13 +70276,13 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutToDoInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
@@ -70297,7 +70297,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -70311,7 +70311,7 @@ export namespace Prisma {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoUpdateWithoutParentInput = {
@@ -70401,19 +70401,19 @@ export namespace Prisma {
   export type TagCreateManyKanbanInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type SubjectCreateManyKanbanInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type TopicCreateManyKanbanInput = {
     value: string
     createdAt?: Date | string
-    lastAccess?: Date | string | null
+    lastAccess?: Date | string
   }
 
   export type KanBanListUpdateWithoutKanbanInput = {
@@ -70438,7 +70438,7 @@ export namespace Prisma {
   export type TagUpdateWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
@@ -70452,7 +70452,7 @@ export namespace Prisma {
   export type TagUncheckedUpdateWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
@@ -70466,13 +70466,13 @@ export namespace Prisma {
   export type TagUncheckedUpdateManyWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
@@ -70486,7 +70486,7 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -70500,13 +70500,13 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateManyWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUpdateWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
@@ -70520,7 +70520,7 @@ export namespace Prisma {
   export type TopicUncheckedUpdateWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
@@ -70534,7 +70534,7 @@ export namespace Prisma {
   export type TopicUncheckedUpdateManyWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    lastAccess?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TimePeriodCreateManyDietInput = {

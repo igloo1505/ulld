@@ -35,6 +35,7 @@ export type * from "./configschema/zod/jupyter/jupyterReact.d.ts";
 export type * from "./configschema/zod/jupyter/jupyterNotebook.d.ts";
 export type * from "./configschema/zod/features/main.d.ts";
 export type * from "./configschema/zod/defaults/general.d.ts";
+export type * from "./configschema/zod/defaults/defaultNoteTypes.d.ts";
 export type * from "./configschema/zod/database/main.d.ts";
 export type * from "./configschema/zod/credentials/main.d.ts";
 export type * from "./configschema/zod/build/main.d.ts";

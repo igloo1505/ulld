@@ -411,4 +411,5 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
     inNavbar?: boolean | undefined;
 }>;
 export type DocumentTypeConfig = z.output<typeof documentTypeConfigSchema>;
+export type DocumentTypeConfigInput = z.input<typeof documentTypeConfigSchema>;
 //# sourceMappingURL=documentConfigSchema.d.ts.map

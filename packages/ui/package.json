@@ -128,6 +128,7 @@
         "@ulld/hooks": "workspace:*",
         "@ulld/icons": "workspace:*",
         "@ulld/logger": "workspace:*",
+        "@ulld/parsers": "workspace:*",
         "@ulld/render": "workspace:*",
         "@ulld/state": "workspace:*",
         "@ulld/tailwind": "workspace:*",
@@ -210,7 +211,6 @@
         "winston": "3.12.0",
         "xmlhttprequest": "1.8.0",
         "zod": "3.22.4",
-        "@ulld/parsers": "workspace:*",
         "zod-config": "0.0.2"
     },
     "devDependencies": {
@@ -312,8 +312,8 @@
         "@trpc/server": "^10.38.0",
         "@ulld/component-map": "workspace:*",
         "@ulld/database": "workspace:*",
-        "@ulld/render": "workspace:*",
         "@ulld/parsers": "workspace:*",
+        "@ulld/render": "workspace:*",
         "next": "^14.2.3",
         "next-mdx-remote": "^5.0.0",
         "react": "^18.2.0",
