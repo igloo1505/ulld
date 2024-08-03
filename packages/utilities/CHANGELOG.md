@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.48
+
+### Patch Changes
+
+- Removing broken paths.
+- Updated dependencies
+  - @ulld/database@0.0.45
+  - @ulld/math@0.0.48
+  - @ulld/tailwind@0.0.42
+
 ## 0.0.47
 
 ### Patch Changes

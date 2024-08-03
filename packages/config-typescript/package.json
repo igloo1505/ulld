@@ -1,6 +1,6 @@
 {
     "name": "@ulld/typescript-config",
-    "version": "0.0.41",
+    "version": "0.0.42",
     "private": false,
     "license": "MIT",
     "publishConfig": {

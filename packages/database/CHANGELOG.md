@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.45
+
+### Patch Changes
+
+- Removing broken paths.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.42
+
 ## 0.0.44
 
 ### Patch Changes

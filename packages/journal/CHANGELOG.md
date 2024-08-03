@@ -1,5 +1,21 @@
 # @ulld/journal
 
+## 0.0.48
+
+### Patch Changes
+
+- Removing broken paths.
+- Updated dependencies
+  - @ulld/api@0.0.48
+  - @ulld/typescript-config@0.0.42
+  - @ulld/configschema@0.0.48
+  - @ulld/developer@0.0.48
+  - @ulld/hooks@0.0.48
+  - @ulld/state@0.0.48
+  - @ulld/tailwind@0.0.42
+  - @ulld/ui@0.0.48
+  - @ulld/utilities@0.0.48
+
 ## 0.0.47
 
 ### Patch Changes

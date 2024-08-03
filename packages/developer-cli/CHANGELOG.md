@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.48
+
+### Patch Changes
+
+- Removing broken paths.
+- Updated dependencies
+  - @ulld/developer@0.0.48
+  - @ulld/developer-schemas@0.0.42
+
 ## 0.0.47
 
 ### Patch Changes

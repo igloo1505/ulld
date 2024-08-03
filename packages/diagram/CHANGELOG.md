@@ -1,5 +1,17 @@
 # @ulld/diagram
 
+## 0.0.48
+
+### Patch Changes
+
+- Removing broken paths.
+- Updated dependencies
+  - @ulld/api@0.0.48
+  - @ulld/typescript-config@0.0.42
+  - @ulld/developer@0.0.48
+  - @ulld/state@0.0.48
+  - @ulld/tailwind@0.0.42
+
 ## 0.0.47
 
 ### Patch Changes

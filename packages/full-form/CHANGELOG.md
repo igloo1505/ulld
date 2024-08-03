@@ -1,5 +1,23 @@
 # @ulld/full-form
 
+## 0.0.48
+
+### Patch Changes
+
+- Removing broken paths.
+- Updated dependencies
+  - @ulld/api@0.0.48
+  - @ulld/typescript-config@0.0.42
+  - @ulld/configschema@0.0.48
+  - @ulld/database@0.0.45
+  - @ulld/editor@0.0.48
+  - @ulld/hooks@0.0.48
+  - @ulld/icons@0.0.48
+  - @ulld/jest-presets@0.0.42
+  - @ulld/state@0.0.48
+  - @ulld/tailwind@0.0.42
+  - @ulld/utilities@0.0.48
+
 ## 0.0.47
 
 ### Patch Changes

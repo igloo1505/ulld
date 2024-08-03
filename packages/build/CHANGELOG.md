@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.48
+
+### Patch Changes
+
+- Removing broken paths.
+- Updated dependencies
+  - @ulld/base-configs@0.0.42
+  - @ulld/configschema@0.0.48
+  - @ulld/developer-schemas@0.0.42
+  - @ulld/utilities@0.0.48
+
 ## 0.0.47
 
 ### Patch Changes

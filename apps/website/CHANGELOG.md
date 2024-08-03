@@ -1,5 +1,33 @@
 # @ulld/website
 
+## 0.0.48
+
+### Patch Changes
+
+- Removing broken paths.
+- Updated dependencies
+  - @ulld/api@0.0.48
+  - @ulld/base-configs@0.0.42
+  - @ulld/calendar@0.0.48
+  - @ulld/component-map@0.0.48
+  - @ulld/configschema@0.0.48
+  - @ulld/database@0.0.45
+  - @ulld/diagram@0.0.48
+  - @ulld/editor@0.0.48
+  - @ulld/embeddable-components@0.0.48
+  - @ulld/full-form@0.0.48
+  - @ulld/hooks@0.0.48
+  - @ulld/icons@0.0.48
+  - @ulld/logger@0.0.42
+  - @ulld/parsers@0.0.48
+  - @ulld/render@0.0.48
+  - @ulld/state@0.0.48
+  - @ulld/tailwind@0.0.42
+  - @ulld/types@0.0.42
+  - @ulld/ui@0.0.48
+  - @ulld/utilities@0.0.48
+  - @ulld/whiteboard@0.0.48
+
 ## 0.0.47
 
 ### Patch Changes

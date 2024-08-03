@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.48
+
+### Patch Changes
+
+- Removing broken paths.
+- Updated dependencies
+  - @ulld/api@0.0.48
+  - @ulld/component-map@0.0.48
+  - @ulld/configschema@0.0.48
+  - @ulld/database@0.0.45
+  - @ulld/parsers@0.0.48
+
 ## 0.0.47
 
 ### Patch Changes

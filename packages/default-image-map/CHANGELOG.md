@@ -1,5 +1,18 @@
 # @ulld/default-image-map
 
+## 0.0.48
+
+### Patch Changes
+
+- Removing broken paths.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.44
+  - @ulld/typescript-config@0.0.42
+  - @ulld/configschema@0.0.48
+  - @ulld/logger@0.0.42
+  - @ulld/tailwind@0.0.42
+  - @ulld/utilities@0.0.48
+
 ## 0.0.47
 
 ### Patch Changes

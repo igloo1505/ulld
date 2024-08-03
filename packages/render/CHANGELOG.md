@@ -1,5 +1,19 @@
 # @ulld/render
 
+## 0.0.48
+
+### Patch Changes
+
+- Removing broken paths.
+- Updated dependencies
+  - @ulld/api@0.0.48
+  - @ulld/component-map@0.0.48
+  - @ulld/typescript-config@0.0.42
+  - @ulld/configschema@0.0.48
+  - @ulld/hooks@0.0.48
+  - @ulld/jest-presets@0.0.42
+  - @ulld/utilities@0.0.48
+
 ## 0.0.47
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.48
+
+### Patch Changes
+
+- Removing broken paths.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.44
+  - @ulld/typescript-config@0.0.42
+  - @ulld/configschema@0.0.48
+  - @ulld/database@0.0.45
+  - @ulld/logger@0.0.42
+
 ## 0.0.47
 
 ### Patch Changes

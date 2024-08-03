@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.48
+
+### Patch Changes
+
+- Removing broken paths.
+- Updated dependencies
+  - @ulld/api@0.0.48
+  - @ulld/component-configs@0.0.48
+  - @ulld/configschema@0.0.48
+  - @ulld/default-image-map@0.0.48
+  - @ulld/hooks@0.0.48
+  - @ulld/icons@0.0.48
+  - @ulld/render@0.0.48
+  - @ulld/state@0.0.48
+  - @ulld/tailwind@0.0.42
+  - @ulld/utilities@0.0.48
+
 ## 0.0.47
 
 ### Patch Changes

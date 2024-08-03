@@ -1,5 +1,18 @@
 # @ulld/math
 
+## 0.0.48
+
+### Patch Changes
+
+- Removing broken paths.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.42
+  - @ulld/configschema@0.0.48
+  - @ulld/hooks@0.0.48
+  - @ulld/icons@0.0.48
+  - @ulld/state@0.0.48
+  - @ulld/utilities@0.0.48
+
 ## 0.0.47
 
 ### Patch Changes

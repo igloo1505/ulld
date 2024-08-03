@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.44
+
+### Patch Changes
+
+- Removing broken paths.
+
 ## 0.0.43
 
 ### Patch Changes
