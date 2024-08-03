@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.39
+
+### Patch Changes
+
+- Package version mismatches.
+
 ## 0.0.38
 
 ### Patch Changes

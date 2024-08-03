@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.45
+
+### Patch Changes
+
+- Package version mismatches.
+- Updated dependencies
+  - @ulld/database@0.0.42
+  - @ulld/math@0.0.45
+  - @ulld/tailwind@0.0.39
+
 ## 0.0.44
 
 ### Patch Changes

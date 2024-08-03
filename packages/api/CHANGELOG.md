@@ -1,5 +1,21 @@
 # @ulld/api
 
+## 0.0.45
+
+### Patch Changes
+
+- Package version mismatches.
+- Updated dependencies
+  - @ulld/base-configs@0.0.39
+  - @ulld/configschema@0.0.45
+  - @ulld/database@0.0.42
+  - @ulld/developer@0.0.45
+  - @ulld/logger@0.0.39
+  - @ulld/parsers@0.0.45
+  - @ulld/state@0.0.45
+  - @ulld/tailwind@0.0.39
+  - @ulld/utilities@0.0.45
+
 ## 0.0.44
 
 ### Patch Changes

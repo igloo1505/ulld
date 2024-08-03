@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.45
+
+### Patch Changes
+
+- Package version mismatches.
+- Updated dependencies
+  - @ulld/hooks@0.0.45
+  - @ulld/tailwind@0.0.39
+  - @ulld/utilities@0.0.45
+
 ## 0.0.44
 
 ### Patch Changes

@@ -1,5 +1,23 @@
 # @ulld/full-form
 
+## 0.0.45
+
+### Patch Changes
+
+- Package version mismatches.
+- Updated dependencies
+  - @ulld/api@0.0.45
+  - @ulld/typescript-config@0.0.39
+  - @ulld/configschema@0.0.45
+  - @ulld/database@0.0.42
+  - @ulld/editor@0.0.45
+  - @ulld/hooks@0.0.45
+  - @ulld/icons@0.0.45
+  - @ulld/jest-presets@0.0.39
+  - @ulld/state@0.0.45
+  - @ulld/tailwind@0.0.39
+  - @ulld/utilities@0.0.45
+
 ## 0.0.44
 
 ### Patch Changes

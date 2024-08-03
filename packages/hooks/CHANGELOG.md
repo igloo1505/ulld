@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.45
+
+### Patch Changes
+
+- Package version mismatches.
+- Updated dependencies
+  - @ulld/api@0.0.45
+  - @ulld/component-map@0.0.45
+  - @ulld/configschema@0.0.45
+  - @ulld/database@0.0.42
+  - @ulld/parsers@0.0.45
+
 ## 0.0.44
 
 ### Patch Changes

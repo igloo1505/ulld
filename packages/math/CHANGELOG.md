@@ -1,5 +1,18 @@
 # @ulld/math
 
+## 0.0.45
+
+### Patch Changes
+
+- Package version mismatches.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.39
+  - @ulld/configschema@0.0.45
+  - @ulld/hooks@0.0.45
+  - @ulld/icons@0.0.45
+  - @ulld/state@0.0.45
+  - @ulld/utilities@0.0.45
+
 ## 0.0.44
 
 ### Patch Changes

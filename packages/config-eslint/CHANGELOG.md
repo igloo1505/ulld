@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.41
+
+### Patch Changes
+
+- Package version mismatches.
+
 ## 0.0.40
 
 ### Patch Changes

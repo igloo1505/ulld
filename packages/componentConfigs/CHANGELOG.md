@@ -1,5 +1,21 @@
 # @ulld/component-configs
 
+## 0.0.45
+
+### Patch Changes
+
+- Package version mismatches.
+- Updated dependencies
+  - @ulld/api@0.0.45
+  - @ulld/typescript-config@0.0.39
+  - @ulld/configschema@0.0.45
+  - @ulld/developer@0.0.45
+  - @ulld/hooks@0.0.45
+  - @ulld/state@0.0.45
+  - @ulld/tailwind@0.0.39
+  - @ulld/ui@0.0.45
+  - @ulld/utilities@0.0.45
+
 ## 0.0.44
 
 ### Patch Changes

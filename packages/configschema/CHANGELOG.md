@@ -1,5 +1,17 @@
 # @ulld/configschema
 
+## 0.0.45
+
+### Patch Changes
+
+- Package version mismatches.
+- Updated dependencies
+  - @ulld/base-configs@0.0.39
+  - @ulld/developer-schemas@0.0.39
+  - @ulld/icons@0.0.45
+  - @ulld/tailwind@0.0.39
+  - @ulld/utilities@0.0.45
+
 ## 0.0.44
 
 ### Patch Changes

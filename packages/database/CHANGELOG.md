@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.42
+
+### Patch Changes
+
+- Package version mismatches.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.39
+
 ## 0.0.41
 
 ### Patch Changes

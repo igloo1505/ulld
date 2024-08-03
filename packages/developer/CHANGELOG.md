@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.45
+
+### Patch Changes
+
+- Package version mismatches.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.41
+  - @ulld/typescript-config@0.0.39
+  - @ulld/configschema@0.0.45
+  - @ulld/database@0.0.42
+  - @ulld/logger@0.0.39
+
 ## 0.0.44
 
 ### Patch Changes

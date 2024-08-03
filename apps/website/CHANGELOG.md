@@ -1,5 +1,33 @@
 # @ulld/website
 
+## 0.0.45
+
+### Patch Changes
+
+- Package version mismatches.
+- Updated dependencies
+  - @ulld/api@0.0.45
+  - @ulld/base-configs@0.0.39
+  - @ulld/calendar@0.0.45
+  - @ulld/component-map@0.0.45
+  - @ulld/configschema@0.0.45
+  - @ulld/database@0.0.42
+  - @ulld/diagram@0.0.45
+  - @ulld/editor@0.0.45
+  - @ulld/embeddable-components@0.0.45
+  - @ulld/full-form@0.0.45
+  - @ulld/hooks@0.0.45
+  - @ulld/icons@0.0.45
+  - @ulld/logger@0.0.39
+  - @ulld/parsers@0.0.45
+  - @ulld/render@0.0.45
+  - @ulld/state@0.0.45
+  - @ulld/tailwind@0.0.39
+  - @ulld/types@0.0.39
+  - @ulld/ui@0.0.45
+  - @ulld/utilities@0.0.45
+  - @ulld/whiteboard@0.0.45
+
 ## 0.0.44
 
 ### Patch Changes

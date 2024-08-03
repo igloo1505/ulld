@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.45
+
+### Patch Changes
+
+- Package version mismatches.
+- Updated dependencies
+  - @ulld/api@0.0.45
+  - @ulld/component-configs@0.0.45
+  - @ulld/configschema@0.0.45
+  - @ulld/default-image-map@0.0.45
+  - @ulld/hooks@0.0.45
+  - @ulld/icons@0.0.45
+  - @ulld/render@0.0.45
+  - @ulld/state@0.0.45
+  - @ulld/tailwind@0.0.39
+  - @ulld/utilities@0.0.45
+
 ## 0.0.44
 
 ### Patch Changes
