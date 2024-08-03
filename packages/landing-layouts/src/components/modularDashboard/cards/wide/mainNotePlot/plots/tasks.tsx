@@ -77,7 +77,7 @@ const TaskListCompletionPlot = (props: TaskListCompletionPlotProps) => {
                 className: "w-full h-full max-h-full",
             }}
             yAxis={{
-                minTickGap: 1
+                allowDecimals: false
             }}
             tooltipFormatter={(value, valueKey, data, idx, payload) => {
                 if ("date" in payload) {

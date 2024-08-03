@@ -87,7 +87,7 @@ const RootLayout = async (props: {
             <head>
             </head>
             <body
-                className={clsx("group/body dark",
+                className={clsx("group/body @container/body dark",
                     fontSans.variable,
                     preferFs && "preferFs")}
                 id={`Ulld-body-root`}

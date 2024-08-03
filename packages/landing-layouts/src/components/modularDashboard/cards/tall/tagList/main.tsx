@@ -7,18 +7,32 @@ import Link from "next/link";
 import { searchAllParamsToSearchParamsClass } from "@ulld/utilities/searchUtils";
 import { capitalize } from "@ulld/utilities/stringUtils";
 import TaggableTypeToggle from "../../../util/taggableTypeToggle/main";
+import cn from "@ulld/utilities/cn";
+import { useBreakPoints } from "@ulld/hooks/useBreakpoints";
 
 interface TagListCardProps {
     taggables: TaggableData;
-    cardClasses?: string;
+    className?: string;
+    showKey: "tagsOnTop" | "tagsOnBottom"
+    breakPoint: number
+    defaultShow?: boolean
 }
 
-const TagListCard = ({ taggables, cardClasses }: TagListCardProps) => {
+const TagListCard = ({ taggables, className, showKey, breakPoint, defaultShow }: TagListCardProps) => {
     const [dataType, setDataType] = useState<keyof TaggableData>("tags");
+    
+    const breakPointData = useBreakPoints({
+        tagList: breakPoint
+    })
+
+    if((breakPointData === null && !defaultShow) || (breakPointData?.tagList && showKey === "tagsOnBottom") || (!breakPointData?.tagList && showKey === "tagsOnTop")){
+        return null
+    }
+
 
     return (
         <CardContainer
-            className={"justify-start w-1/3 max-w-[300px] min-w-[250px] py-4"}
+            className={cn("justify-start w-full @[768px]/dashboard:w-[calc(50%-1rem)] @[920px]/dashboard:max-w-[300px] @[920px]/dashboard:min-w-[250px] pt-4", className)}
         >
             <TaggableTypeToggle
                 options={Object.keys(taggables) as TaggableFilterType[]}
@@ -30,11 +44,12 @@ const TagListCard = ({ taggables, cardClasses }: TagListCardProps) => {
             >
                 <div className={""}>{capitalize(dataType)}</div>
             </TaggableTypeToggle>
-            <ScrollArea className={"w-full"}>
+            <ScrollArea className={"w-full h-[min(50vh,250px)]"}>
                 <ul className={"flex flex-col"}>
-                    {taggables[dataType].map((t) => {
+                    {taggables[dataType].map((t, i) => {
                         return (
                             <Link
+                                key={`tag-item-${t}-${i}`}
                                 role="listitem"
                                 href={`/searchAll?${searchAllParamsToSearchParamsClass({
                                     [dataType]: [t],

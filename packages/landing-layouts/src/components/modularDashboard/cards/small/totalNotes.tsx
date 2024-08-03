@@ -5,6 +5,7 @@ import CardLabelText from "../../util/cardLabel";
 import DateGapLabel from "../../util/dateTillNowLabel";
 import { BaseCardProps } from "../../types";
 import { useDashboardContext } from "../../util/provider";
+import cn from "@ulld/utilities/cn";
 
 interface TotalNotesCardProps extends BaseCardProps {}
 
@@ -28,7 +29,7 @@ const SubItem = ({
 const TotalNotesCard = ({ cardProps, className }: TotalNotesCardProps) => {
   const state = useDashboardContext();
   return (
-    <CardContainer {...cardProps} className={className}>
+    <CardContainer {...cardProps} className={cn("w-full @[768px]/dashboard:w-[calc(50%-1rem)] h-[290px] @[920px]/dashboard:w-[calc(33%-1rem)] @[768px]/dashboard:h-auto", className)}>
       <DateGapLabel
         start={
           process.env.NODE_ENV === "development"

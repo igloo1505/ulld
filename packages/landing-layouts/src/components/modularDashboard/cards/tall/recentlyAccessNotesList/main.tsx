@@ -15,7 +15,7 @@ const RecentlyAccessNotesList = () => {
       className={"w-full justify-start"}
     >
       <CardLabelText className={"my-4"}>Recently Accessed</CardLabelText>
-      <ScrollArea className={"w-full"}>
+      <ScrollArea className={"w-full h-[min(250px,70vh)]"}>
         {items.map((x, i) => {
           return <RecentlyAccessedNoteItem item={x} key={`recent-note-${i}`} />;
         })}
