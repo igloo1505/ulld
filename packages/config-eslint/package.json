@@ -1,34 +1,34 @@
 {
-  "name": "@ulld/eslint-config",
-  "license": "MIT",
-  "version": "0.0.41",
-  "private": false,
-  "exports": {
-    "./next.js": "./next.js",
-    "./react.js": "./react.js",
-    "./remix.js": "./remix.js",
-    "./server.js": "./server.js"
-  },
-  "devDependencies": {
-    "@vercel/style-guide": "^5.1.0",
-    "eslint-config-turbo": "^1.11.3",
-    "eslint-plugin-mdx": "^2.3.2",
-    "eslint-plugin-only-warn": "^1.1.0",
-    "eslint-plugin-storybook": "^0.6.15",
-    "eslint-plugin-tsdoc": "^0.2.17"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "peerDependencies": {},
-  "dependencies": {},
-  "files": [
-    "src",
-    "index.js",
-    "next.js",
-    "react.js",
-    "remix.js",
-    "server.js"
-  ],
-  "packageManager": "pnpm@9.4.0"
+    "name": "@ulld/eslint-config",
+    "license": "MIT",
+    "version": "0.0.41",
+    "private": false,
+    "exports": {
+        "./next.js": "./next.js",
+        "./react.js": "./react.js",
+        "./remix.js": "./remix.js",
+        "./server.js": "./server.js"
+    },
+    "devDependencies": {
+        "@vercel/style-guide": "^5.1.0",
+        "eslint-config-turbo": "^1.11.3",
+        "eslint-plugin-mdx": "^2.3.2",
+        "eslint-plugin-only-warn": "^1.1.0",
+        "eslint-plugin-storybook": "^0.6.15",
+        "eslint-plugin-tsdoc": "^0.2.17"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {},
+    "dependencies": {},
+    "files": [
+        "src",
+        "index.js",
+        "next.js",
+        "react.js",
+        "remix.js",
+        "server.js"
+    ],
+    "packageManager": "pnpm@9.4.0"
 }
