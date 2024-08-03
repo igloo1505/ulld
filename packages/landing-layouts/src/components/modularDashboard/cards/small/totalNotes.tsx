@@ -29,7 +29,7 @@ const SubItem = ({
 const TotalNotesCard = ({ cardProps, className }: TotalNotesCardProps) => {
   const state = useDashboardContext();
   return (
-    <CardContainer {...cardProps} className={cn("w-full @[768px]/dashboard:w-[calc(50%-1rem)] h-[290px] @[920px]/dashboard:w-[calc(33%-1rem)] @[768px]/dashboard:h-auto", className)}>
+    <CardContainer {...cardProps} className={cn("w-full @[768px]/dashboard:w-[calc(50%-0.5rem)] h-[290px] @[920px]/body:w-[calc(33%-0.66rem)] @[768px]/dashboard:h-auto", className)}>
       <DateGapLabel
         start={
           process.env.NODE_ENV === "development"

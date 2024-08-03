@@ -53,7 +53,7 @@ const AccessByCategoryDonut = ({
     }, [items]);
 
     return (
-        <CardContainer {...props} className={"w-full h-[min(80vh,250px)] @[768px]/dashboard:w-[calc(50%-1rem)] @[920px]/dashboard:w-[calc(33%-1rem)] @[920px]/dashboard:h-auto max-h-full justify-start"}>
+        <CardContainer {...props} className={"w-full h-[min(80vh,250px)] @[768px]/dashboard:w-[calc(50%-0.5rem)] @[920px]/body:w-[calc(33%-0.66rem)] @[920px]/dashboard:h-auto max-h-full justify-start"}>
             <CardMutedDesc>
                 New notes by format
             </CardMutedDesc>

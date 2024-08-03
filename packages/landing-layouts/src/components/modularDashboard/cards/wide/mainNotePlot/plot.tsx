@@ -10,7 +10,7 @@ interface MainCardPlotProps {
 const MainCardPlot = ({}: MainCardPlotProps) => {
   const { plotFilterType } = useDashboardContext();
   return (
-    <div className={"w-full flex-grow h-[150px]"}>
+    <div className={"w-full flex-grow h-[150px] pr-2 pb-2"}>
        { plotFilterType === "Notes" && <NotesPlot /> }
        { plotFilterType === "Tasks" && <TaskListCompletionPlot /> }
     </div>

@@ -1,67 +1,59 @@
-import { Label } from "@ulld/tailwind/label";
+import React, { ReactNode } from "react";
 import {
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
-} from "@ulld/tailwind/popover";
-import { RadioGroup, RadioGroupItem } from "@ulld/tailwind/radio-group";
-import { ListFilterIcon } from "lucide-react";
-import React, { ComponentPropsWithoutRef, ReactNode, useState } from "react";
+    DropdownMenu,
+    DropdownMenuContentNoPortal,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@ulld/tailwind/dropdown-menu";
 import { TaggableFilterType } from "../../types";
+import { ListFilterIcon } from "lucide-react";
+import { capitalize } from "@ulld/utilities/stringUtils";
 
 interface TaggableTypeToggleProps {
     value: TaggableFilterType;
     onChange: (period: TaggableFilterType) => void;
     options: TaggableFilterType[];
     children?: ReactNode;
-    popover?: ComponentPropsWithoutRef<typeof PopoverTrigger>
+    isTop?: boolean
 }
 
 const TaggableTypeToggle = ({
     value,
     onChange,
     options,
-    popover,
     children,
+    isTop
 }: TaggableTypeToggleProps) => {
-    const [open, setOpen] = useState(false);
     return (
-        <Popover
-            open={open}
-            onOpenChange={(newOpen: boolean) => {
-                if (!newOpen) {
-                    setOpen(false);
-                }
-            }}
-            modal={true}
+        <DropdownMenu
+            key={`${isTop ? "top" : "bottom"}-dashboard-dropdown`}
+            modal={false}
         >
-            <PopoverTrigger
-                {...popover}
-            >
-                <>
-                {children}
-                <ListFilterIcon
-                    className={"cursor-pointer text-muted-foreground w-3 h-3"}
-                    onClick={() => setOpen(true)}
-                />
-                </>
-            </PopoverTrigger>
-            <PopoverContent>
-                <RadioGroup defaultValue={value} value={value} onValueChange={onChange}>
+            <DropdownMenuTrigger asChild>
+                <div className={"flex flex-row justify-center items-center gap-2"}>
+                    {children}
+                    <ListFilterIcon
+                        className={"cursor-pointer text-muted-foreground w-3 h-3"}
+                    />
+                </div>
+            </DropdownMenuTrigger>
+                <DropdownMenuContentNoPortal className="w-56">
+                    <DropdownMenuLabel>Taggable</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
                     {options.map((t) => {
                         return (
-                            <div
-                                key={`timePeriod-toggle-${t}`}
-                                className="flex items-center space-x-2"
+                            <DropdownMenuItem
+                                onClick={() => onChange(t)}
+                                key={`taggable-item-${t}-${isTop ? "top" : "bottom"}`}
                             >
-                                <RadioGroupItem value={t} id="r1" />
-                                <Label htmlFor="r1">{t}</Label>
-                            </div>
+                                <span>{capitalize(t)}</span>
+                            </DropdownMenuItem>
                         );
                     })}
-                </RadioGroup>
-            </PopoverContent>
-        </Popover>
+                </DropdownMenuContentNoPortal>
+        </DropdownMenu>
     );
 };
 

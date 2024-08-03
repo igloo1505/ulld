@@ -12,7 +12,7 @@ const TaskListCardDetails = ({
 }: TaskListCardDetailsProps) => {
     const state = useDashboardContext()
     return (
-        <div className={"w-full grid grid-cols-2 p-4"}>
+        <div className={"w-full flex flex-col-reverse @[520px]/dashboard:grid @[520px]/dashboard:grid-cols-2 p-4"}>
             <div className={"w-full flex flex-col justify-between items-start"}>
                 <div className={"flex flex-row justify-start items-center space-x-4"}>
                     <TaskDetailHeaderItem label="Total Notes" content={state.filteredNotes.length || 0} />

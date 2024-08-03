@@ -45,7 +45,7 @@ const ModularDashboard = async () => {
         >
             <div
                 className={cn(
-                    "@container/dashboard py-4 px-4 lg:py-8 md:px-8 w-full h-fit @[920px]/body:h-screen flex flex-col gap-4",
+                    "@container/dashboard py-4 px-4 lg:py-8 md:px-8 w-full h-fit @[920px]/body:h-screen min-h-fit flex flex-col gap-4",
                 )}
             >
                 <div

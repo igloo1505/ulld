@@ -56,7 +56,7 @@ const NotesByCategoryDonutCard = ({
     }, [notes]);
 
     return (
-        <CardContainer {...props} className={"w-full h-[min(80vh,250px)] @[768px]/dashboard:w-[calc(50%-1rem)] @[920px]/dashboard:w-[calc(33%-1rem)] max-h-full justify-start"}>
+        <CardContainer {...props} className={"w-full h-[min(80vh,250px)] @[920px]/body:w-[calc(33%-0.66rem)] @[768px]/dashboard:w-[calc(50%-0.5rem)] max-h-full justify-start"}>
             <CardMutedDesc>Notes by category</CardMutedDesc>
             <DonutChart
                 className={"w-full h-full pb-4"}

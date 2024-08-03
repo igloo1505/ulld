@@ -32,15 +32,13 @@ const TagListCard = ({ taggables, className, showKey, breakPoint, defaultShow }:
 
     return (
         <CardContainer
-            className={cn("justify-start w-full @[768px]/dashboard:w-[calc(50%-1rem)] @[920px]/dashboard:max-w-[300px] @[920px]/dashboard:min-w-[250px] pt-4", className)}
+            className={cn("justify-start w-full @[768px]/dashboard:w-[calc(50%-0.5rem)] @[920px]/dashboard:max-w-[300px] @[920px]/dashboard:min-w-[250px] pt-4", className)}
         >
             <TaggableTypeToggle
                 options={Object.keys(taggables) as TaggableFilterType[]}
                 value={dataType}
                 onChange={setDataType}
-                popover={{
-                    className: "w-fit flex flex-row justify-center items-center gap-2"
-                }}
+                isTop={defaultShow}
             >
                 <div className={""}>{capitalize(dataType)}</div>
             </TaggableTypeToggle>
