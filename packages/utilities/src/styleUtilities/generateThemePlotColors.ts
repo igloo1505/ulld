@@ -1,22 +1,28 @@
 import path from "path";
 import { globSync } from "glob";
 import { JsonFile } from "../classes/file/jsonFile";
+import fs from "fs"
 import coloringPalette, {
     ColorFormat,
 } from "coloring-palette";
 import { ThemeColorGradientRecord, UlldColorTheme } from "../types/colors";
 
-const flattenColorPalette = (c: string, format: ColorFormat = "hsv") => {
+const formatHslString = (s: string) => {
+       return s.replace("hsl(", "").replace(")", "").split(",").map((s) => s.trim()).join(" ")
+       
+        
+    }
+
+const flattenColorPalette = (c: string, format: ColorFormat = "hsl") => {
     let lightData = coloringPalette(c, format);
     let items: { color: string; foreground: string }[] = [];
     for (const item in lightData) {
         items.push({
-            color: lightData[item as keyof typeof lightData].color as string,
-            foreground: lightData[item as keyof typeof lightData]
-                .contrastText as string,
+            color: formatHslString(lightData[item as keyof typeof lightData].color as string),
+            foreground: formatHslString(lightData[item as keyof typeof lightData]
+                .contrastText as string),
         });
     }
-    console.log("items: ", items);
     return items;
 };
 

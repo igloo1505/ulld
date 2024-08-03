@@ -2,1416 +2,1416 @@
   "zinc": {
     "light": [
       {
-        "color": "hsv(240, 100%, 74%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "240 100% 37%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(240, 4%, 73%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "240 5% 72%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(240, 6%, 70%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "240 7% 68%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(239, 8%, 65%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "239 7% 62%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(238, 11%, 57%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "238 7% 54%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(240, 11%, 11%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "240 6% 10%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(236, 12%, 39%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "236 6% 37%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(235, 12%, 28%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "235 6% 26%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(235, 12%, 18%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "235 6% 17%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(234, 12%, 7%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "234 6% 7%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(242, 8%, 77%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "242 11% 74%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(242, 11%, 76%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "242 15% 71%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(240, 15%, 64%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "240 12% 60%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(239, 14%, 34%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "239 7% 32%",
+        "foreground": "0 0% 100%"
       }
     ],
     "dark": [
       {
-        "color": "hsv(0, 0%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 99%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 99%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 97%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 97%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 94%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 94%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 91%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 91%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 98%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 98%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 81%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 81%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 76%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 76%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 71%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 71%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 65%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 65%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 100%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 100%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 100%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 93%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 93%",
+        "foreground": "0 0% 0%"
       }
     ]
   },
   "yellow": {
     "light": [
       {
-        "color": "hsv(48, 9%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "48 82% 95%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(48, 27%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "48 93% 86%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(48, 46%, 97%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "48 88% 75%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(47, 66%, 94%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "47 84% 63%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(46, 83%, 91%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "46 81% 53%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(48, 92%, 98%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "48 96% 53%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(44, 96%, 81%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "44 92% 42%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(43, 98%, 76%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "43 96% 39%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(43, 99%, 71%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "43 98% 36%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(42, 99%, 65%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "42 98% 33%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(50, 54%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "50 100% 74%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(50, 84%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "50 100% 59%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(48, 100%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "48 100% 50%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(47, 100%, 93%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "47 100% 47%",
+        "foreground": "0 0% 0%"
       }
     ],
     "dark": [
       {
-        "color": "hsv(48, 9%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "48 82% 95%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(48, 27%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "48 93% 86%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(48, 46%, 97%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "48 88% 75%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(47, 66%, 94%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "47 84% 63%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(46, 83%, 91%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "46 81% 53%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(48, 92%, 98%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "48 96% 53%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(44, 96%, 81%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "44 92% 42%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(43, 98%, 76%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "43 96% 39%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(43, 99%, 71%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "43 98% 36%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(42, 99%, 65%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "42 98% 33%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(50, 54%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "50 100% 74%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(50, 84%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "50 100% 59%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(48, 100%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "48 100% 50%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(47, 100%, 93%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "47 100% 47%",
+        "foreground": "0 0% 0%"
       }
     ]
   },
   "violet": {
     "light": [
       {
-        "color": "hsv(262, 8%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "262 80% 95%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(262, 23%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "262 92% 88%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(262, 38%, 97%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "262 86% 79%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(261, 55%, 94%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "261 81% 68%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(260, 69%, 90%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "260 76% 59%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(262, 76%, 93%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "262 83% 58%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(258, 80%, 79%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "258 67% 47%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(257, 81%, 73%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "257 68% 43%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(257, 82%, 67%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "257 69% 40%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(256, 82%, 61%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "256 69% 36%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(264, 46%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "264 100% 78%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(264, 69%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "264 100% 66%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(262, 95%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "262 100% 53%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(261, 97%, 90%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "261 94% 46%",
+        "foreground": "0 0% 100%"
       }
     ],
     "dark": [
       {
-        "color": "hsv(263, 8%, 97%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "263 56% 93%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(263, 24%, 97%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "263 80% 85%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(263, 41%, 95%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "263 80% 76%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(262, 59%, 91%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "262 75% 64%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(261, 74%, 87%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "261 71% 55%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(263, 82%, 85%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "263 70% 50%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(259, 86%, 76%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "259 75% 43%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(258, 87%, 69%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "258 77% 39%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(258, 88%, 63%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "258 79% 35%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(257, 88%, 56%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "257 79% 31%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(265, 48%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "265 100% 75%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(265, 75%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "265 100% 63%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(263, 100%, 98%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "263 100% 49%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(262, 100%, 85%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "262 100% 42%",
+        "foreground": "0 0% 100%"
       }
     ]
   },
   "stone": {
     "light": [
       {
-        "color": "hsv(24, 2%, 74%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "24 3% 73%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(24, 6%, 73%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "24 8% 71%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(24, 9%, 70%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "24 10% 67%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(23, 13%, 65%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "23 11% 61%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(22, 16%, 57%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "22 10% 52%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(24, 18%, 11%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "24 10% 10%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(20, 19%, 39%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "20 10% 35%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(19, 19%, 28%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "19 10% 25%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(19, 19%, 18%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "19 10% 16%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(18, 19%, 7%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "18 10% 6%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(26, 12%, 77%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "26 17% 72%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(26, 16%, 76%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "26 21% 69%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(24, 22%, 64%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "24 17% 57%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(23, 23%, 34%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "23 12% 30%",
+        "foreground": "0 0% 100%"
       }
     ],
     "dark": [
       {
-        "color": "hsv(0, 0%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 99%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 99%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 97%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 97%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 94%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 94%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 91%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 91%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(60, 0%, 98%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "60 9% 98%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 81%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 81%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 76%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 76%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 71%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 71%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 65%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 65%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 100%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 100%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 100%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 93%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 93%",
+        "foreground": "0 0% 0%"
       }
     ]
   },
   "slate": {
     "light": [
       {
-        "color": "hsv(222, 6%, 78%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "222 10% 76%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(222, 18%, 77%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "222 23% 70%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(222, 32%, 74%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "222 31% 62%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(221, 46%, 69%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "221 34% 53%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(220, 58%, 61%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "220 41% 43%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(222, 64%, 17%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "222 47% 11%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(218, 67%, 43%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "218 50% 29%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(217, 69%, 32%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "217 53% 21%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(217, 69%, 22%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "217 53% 14%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(216, 69%, 11%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "216 53% 7%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(224, 36%, 81%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "224 43% 66%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(224, 58%, 80%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "224 53% 57%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(222, 79%, 69%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "222 66% 41%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(221, 83%, 39%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "221 71% 23%",
+        "foreground": "0 0% 100%"
       }
     ],
     "dark": [
       {
-        "color": "hsv(0, 0%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 100%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(210, 100%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "210 100% 50%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(210, 100%, 98%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "210 100% 49%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(209, 2%, 95%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "209 16% 94%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(208, 2%, 92%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "208 10% 91%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(210, 2%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "210 40% 98%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(206, 2%, 82%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "206 4% 81%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(205, 2%, 76%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "205 3% 75%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(205, 2%, 71%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "205 2% 70%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(204, 2%, 65%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "204 2% 64%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(212, 100%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "212 100% 50%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(212, 100%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "212 100% 50%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(210, 3%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "210 100% 99%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(209, 2%, 93%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "209 14% 92%",
+        "foreground": "0 0% 0%"
       }
     ]
   },
   "rose": {
     "light": [
       {
-        "color": "hsv(347, 9%, 98%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "347 69% 94%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(347, 26%, 98%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "347 86% 85%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(347, 44%, 96%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "347 84% 75%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(346, 63%, 93%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "346 81% 64%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(345, 79%, 88%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "345 74% 53%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(347, 87%, 88%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "347 77% 50%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(343, 91%, 77%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "343 83% 42%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(342, 93%, 71%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "342 87% 38%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(342, 94%, 65%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "342 89% 34%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(341, 94%, 58%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "341 89% 31%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(349, 52%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "349 100% 74%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(349, 80%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "349 100% 60%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(347, 100%, 99%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "347 100% 50%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(346, 100%, 87%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "346 100% 44%",
+        "foreground": "0 0% 100%"
       }
     ],
     "dark": [
       {
-        "color": "hsv(347, 9%, 98%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "347 69% 94%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(347, 26%, 98%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "347 86% 85%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(347, 44%, 96%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "347 84% 75%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(346, 63%, 93%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "346 81% 64%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(345, 79%, 88%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "345 74% 53%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(347, 87%, 88%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "347 77% 50%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(343, 91%, 77%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "343 83% 42%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(342, 93%, 71%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "342 87% 38%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(342, 94%, 65%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "342 89% 34%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(341, 94%, 58%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "341 89% 31%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(349, 52%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "349 100% 74%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(349, 80%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "349 100% 60%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(347, 100%, 99%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "347 100% 50%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(346, 100%, 87%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "346 100% 44%",
+        "foreground": "0 0% 100%"
       }
     ]
   },
   "red": {
     "light": [
       {
-        "color": "hsv(0, 8%, 97%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 56% 93%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 24%, 97%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 80% 85%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 41%, 95%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 80% 76%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(359, 60%, 92%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "359 78% 64%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(358, 75%, 87%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "358 72% 54%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(0, 83%, 86%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "0 72% 51%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(356, 87%, 76%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "356 77% 43%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(355, 88%, 70%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "355 79% 39%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(355, 89%, 64%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "355 80% 36%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(354, 89%, 57%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "354 80% 32%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(2, 48%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "2 100% 75%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(2, 75%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "2 100% 63%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(0, 100%, 98%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "0 100% 49%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(359, 100%, 86%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "359 100% 43%",
+        "foreground": "0 0% 100%"
       }
     ],
     "dark": [
       {
-        "color": "hsv(0, 8%, 97%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 56% 93%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 24%, 97%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 80% 85%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 41%, 95%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 80% 76%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(359, 60%, 92%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "359 78% 64%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(358, 75%, 87%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "358 72% 54%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(0, 83%, 86%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "0 72% 51%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(356, 87%, 76%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "356 77% 43%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(355, 88%, 70%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "355 79% 39%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(355, 89%, 64%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "355 80% 36%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(354, 89%, 57%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "354 80% 32%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(2, 48%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "2 100% 75%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(2, 75%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "2 100% 63%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(0, 100%, 98%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "0 100% 49%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(359, 100%, 86%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "359 100% 43%",
+        "foreground": "0 0% 100%"
       }
     ]
   },
   "orange": {
     "light": [
       {
-        "color": "hsv(25, 9%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "25 82% 95%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(25, 27%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "25 93% 86%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(25, 46%, 97%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "25 88% 75%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(24, 66%, 94%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "24 84% 63%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(23, 83%, 91%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "23 81% 53%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(25, 91%, 98%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "25 95% 53%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(21, 96%, 81%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "21 92% 42%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(20, 98%, 75%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "20 96% 38%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(20, 99%, 70%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "20 98% 35%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(19, 99%, 64%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "19 98% 32%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(27, 54%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "27 100% 74%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(27, 84%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "27 100% 59%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(25, 100%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "25 100% 50%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(24, 100%, 92%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "24 100% 46%",
+        "foreground": "0 0% 100%"
       }
     ],
     "dark": [
       {
-        "color": "hsv(20, 9%, 98%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "20 69% 94%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(20, 27%, 98%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "20 87% 85%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(20, 46%, 96%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "20 85% 74%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(19, 67%, 93%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "19 82% 62%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(18, 84%, 89%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "18 77% 52%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(20, 95%, 92%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "20 90% 48%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(16, 97%, 79%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "16 94% 41%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(15, 99%, 73%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "15 98% 37%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(15, 100%, 67%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "15 100% 34%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(14, 100%, 61%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "14 100% 31%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(22, 54%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "22 100% 73%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(22, 84%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "22 100% 58%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(20, 100%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "20 100% 50%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(19, 100%, 90%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "19 100% 45%",
+        "foreground": "0 0% 100%"
       }
     ]
   },
   "neutral": {
     "light": [
       {
-        "color": "hsv(0, 0%, 73%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 73%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 72%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 72%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 69%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 69%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 64%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 64%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 56%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "0 0% 56%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(0, 0%, 9%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "0 0% 9%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(0, 0%, 38%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "0 0% 38%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(0, 0%, 27%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "0 0% 27%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(0, 0%, 17%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "0 0% 17%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(0, 0%, 6%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "0 0% 6%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(0, 0%, 76%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 76%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 75%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 75%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 63%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 63%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 33%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "0 0% 33%",
+        "foreground": "0 0% 100%"
       }
     ],
     "dark": [
       {
-        "color": "hsv(0, 0%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 99%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 99%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 97%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 97%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 94%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 94%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 91%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 91%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 98%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 98%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 81%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 81%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 76%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 76%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 71%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 71%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 65%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 65%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 100%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 100%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 100%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(0, 0%, 93%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 93%",
+        "foreground": "0 0% 0%"
       }
     ]
   },
   "green": {
     "light": [
       {
-        "color": "hsv(142, 9%, 93%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "142 37% 89%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(142, 25%, 93%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "142 62% 81%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(142, 43%, 90%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "142 66% 71%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(141, 63%, 86%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "141 66% 59%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(140, 78%, 80%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "140 64% 49%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(142, 86%, 64%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "142 76% 36%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(138, 90%, 66%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "138 82% 36%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(137, 92%, 58%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "137 85% 31%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(137, 93%, 50%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "137 87% 27%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(136, 93%, 42%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "136 87% 22%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(144, 50%, 98%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "144 91% 73%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(144, 78%, 97%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "144 93% 60%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(142, 100%, 90%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "142 100% 45%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(141, 100%, 71%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "141 100% 35%",
+        "foreground": "0 0% 100%"
       }
     ],
     "dark": [
       {
-        "color": "hsv(142, 8%, 96%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "142 49% 92%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(142, 24%, 96%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "142 74% 84%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(142, 41%, 94%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "142 76% 75%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(141, 60%, 90%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "141 73% 63%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(140, 75%, 85%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "140 68% 53%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(142, 83%, 77%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "142 71% 45%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(138, 87%, 72%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "138 77% 41%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(137, 88%, 66%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "137 79% 37%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(137, 89%, 58%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "137 80% 32%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(136, 89%, 51%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "136 80% 28%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(144, 48%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "144 100% 75%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(144, 75%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "144 100% 63%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(142, 100%, 96%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "142 100% 48%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(141, 100%, 81%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "141 100% 41%",
+        "foreground": "0 0% 0%"
       }
     ]
   },
   "gray": {
     "light": [
       {
-        "color": "hsv(221, 6%, 78%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "221 10% 76%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(221, 17%, 77%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "221 22% 70%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(221, 29%, 74%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "221 29% 63%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(220, 41%, 68%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "220 30% 54%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(219, 52%, 61%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "219 35% 45%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(221, 56%, 15%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "221 39% 11%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(217, 60%, 42%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "217 43% 29%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(216, 61%, 32%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "216 44% 22%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(216, 61%, 21%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "216 44% 15%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(215, 61%, 10%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "215 44% 7%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(223, 34%, 81%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "223 41% 67%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(223, 53%, 80%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "223 51% 59%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(221, 71%, 69%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "221 55% 44%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(220, 73%, 39%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "220 58% 25%",
+        "foreground": "0 0% 100%"
       }
     ],
     "dark": [
       {
-        "color": "hsv(0, 0%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "0 0% 100%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(210, 100%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "210 100% 50%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(210, 100%, 98%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "210 100% 49%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(209, 100%, 95%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "209 100% 48%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(208, 100%, 92%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "208 100% 46%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(210, 1%, 98%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "210 20% 98%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(206, 100%, 82%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "206 100% 41%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(205, 100%, 76%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "205 100% 38%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(205, 100%, 71%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "205 100% 36%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(204, 100%, 65%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "204 100% 33%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(212, 100%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "212 100% 50%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(212, 100%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "212 100% 50%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(210, 100%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "210 100% 50%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(209, 100%, 93%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "209 100% 47%",
+        "foreground": "0 0% 100%"
       }
     ]
   },
   "blue": {
     "light": [
       {
-        "color": "hsv(221, 8%, 98%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "221 66% 94%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(221, 24%, 98%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "221 85% 86%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(221, 42%, 96%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "221 83% 76%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(220, 61%, 93%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "220 80% 65%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(219, 77%, 89%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "219 76% 55%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(221, 84%, 92%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "221 83% 53%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(217, 89%, 79%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "217 80% 44%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(216, 90%, 73%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "216 82% 40%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(216, 91%, 67%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "216 83% 37%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(215, 91%, 61%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "215 83% 33%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(223, 48%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "223 100% 76%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(223, 76%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "223 100% 62%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(221, 100%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "221 100% 50%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(220, 100%, 90%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "220 100% 45%",
+        "foreground": "0 0% 100%"
       }
     ],
     "dark": [
       {
-        "color": "hsv(217, 8%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "217 80% 95%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(217, 23%, 99%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "217 92% 88%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(217, 38%, 97%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "217 86% 79%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(216, 55%, 94%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "216 81% 68%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(215, 69%, 91%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "215 78% 60%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(217, 76%, 96%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "217 91% 60%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(213, 80%, 81%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "213 67% 49%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(212, 81%, 75%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "212 68% 45%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(212, 82%, 70%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "212 69% 41%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(211, 82%, 64%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "211 69% 38%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(219, 46%, 100%)",
-        "foreground": "hsv(0, 0%, 0%)"
+        "color": "219 100% 78%",
+        "foreground": "0 0% 0%"
       },
       {
-        "color": "hsv(219, 69%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "219 100% 66%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(217, 95%, 100%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "217 100% 53%",
+        "foreground": "0 0% 100%"
       },
       {
-        "color": "hsv(216, 97%, 92%)",
-        "foreground": "hsv(0, 0%, 100%)"
+        "color": "216 94% 48%",
+        "foreground": "0 0% 100%"
       }
     ]
   }
