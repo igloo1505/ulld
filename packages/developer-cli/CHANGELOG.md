@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.42
+
+### Patch Changes
+
+- Wrap up the dashboard component and attempt to finalize build script.
+- Updated dependencies
+  - @ulld/developer@0.0.42
+  - @ulld/developer-schemas@0.0.38
+
 ## 0.0.41
 
 ### Patch Changes

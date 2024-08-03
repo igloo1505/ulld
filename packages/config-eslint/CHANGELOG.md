@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.38
+
+### Patch Changes
+
+- Wrap up the dashboard component and attempt to finalize build script.
+
 ## 0.0.37
 
 ### Patch Changes

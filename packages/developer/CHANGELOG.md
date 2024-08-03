@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.42
+
+### Patch Changes
+
+- Wrap up the dashboard component and attempt to finalize build script.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.38
+  - @ulld/typescript-config@0.0.38
+  - @ulld/configschema@0.0.42
+  - @ulld/database@0.0.41
+  - @ulld/logger@0.0.38
+
 ## 0.0.41
 
 ### Patch Changes

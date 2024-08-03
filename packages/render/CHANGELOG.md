@@ -1,5 +1,19 @@
 # @ulld/render
 
+## 0.0.42
+
+### Patch Changes
+
+- Wrap up the dashboard component and attempt to finalize build script.
+- Updated dependencies
+  - @ulld/api@0.0.42
+  - @ulld/component-map@0.0.42
+  - @ulld/typescript-config@0.0.38
+  - @ulld/configschema@0.0.42
+  - @ulld/hooks@0.0.42
+  - @ulld/jest-presets@0.0.38
+  - @ulld/utilities@0.0.42
+
 ## 0.0.41
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.41
+
+### Patch Changes
+
+- Wrap up the dashboard component and attempt to finalize build script.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.38
+
 ## 0.0.40
 
 ### Patch Changes

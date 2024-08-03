@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.42
+
+### Patch Changes
+
+- Wrap up the dashboard component and attempt to finalize build script.
+- Updated dependencies
+  - @ulld/developer@0.0.42
+
 ## 0.0.41
 
 ### Patch Changes

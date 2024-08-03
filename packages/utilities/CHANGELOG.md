@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.42
+
+### Patch Changes
+
+- Wrap up the dashboard component and attempt to finalize build script.
+- Updated dependencies
+  - @ulld/database@0.0.41
+  - @ulld/math@0.0.42
+  - @ulld/tailwind@0.0.38
+
 ## 0.0.41
 
 ### Patch Changes

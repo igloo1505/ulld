@@ -1,5 +1,24 @@
 # @ulld/notebook
 
+## 0.0.42
+
+### Patch Changes
+
+- Wrap up the dashboard component and attempt to finalize build script.
+- Updated dependencies
+  - @ulld/api@0.0.42
+  - @ulld/eslint-config@0.0.38
+  - @ulld/typescript-config@0.0.38
+  - @ulld/configschema@0.0.42
+  - @ulld/developer@0.0.42
+  - @ulld/editor@0.0.42
+  - @ulld/hooks@0.0.42
+  - @ulld/jest-presets@0.0.38
+  - @ulld/state@0.0.42
+  - @ulld/tailwind@0.0.38
+  - @ulld/ui@0.0.42
+  - @ulld/utilities@0.0.42
+
 ## 0.0.41
 
 ### Patch Changes
