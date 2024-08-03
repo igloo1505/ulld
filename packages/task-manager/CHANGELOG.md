@@ -1,5 +1,27 @@
 # @ulld/task-manager
 
+## 0.0.44
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/eslint-config@0.0.40
+  - @ulld/developer@0.0.44
+  - @ulld/ui@0.0.44
+  - @ulld/api@0.0.44
+  - @ulld/calendar@0.0.44
+  - @ulld/diagram@0.0.44
+  - @ulld/editor@0.0.44
+  - @ulld/full-form@0.0.44
+  - @ulld/parsers@0.0.44
+  - @ulld/state@0.0.44
+  - @ulld/whiteboard@0.0.44
+  - @ulld/utilities@0.0.44
+  - @ulld/hooks@0.0.44
+  - @ulld/render@0.0.44
+  - @ulld/configschema@0.0.44
+  - @ulld/icons@0.0.44
+
 ## 0.0.43
 
 ### Patch Changes

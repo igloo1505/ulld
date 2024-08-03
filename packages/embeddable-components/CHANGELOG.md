@@ -1,5 +1,19 @@
 # @ulld/embeddable-components
 
+## 0.0.44
+
+### Patch Changes
+
+- @ulld/default-image-map@0.0.44
+- @ulld/api@0.0.44
+- @ulld/component-configs@0.0.44
+- @ulld/state@0.0.44
+- @ulld/utilities@0.0.44
+- @ulld/hooks@0.0.44
+- @ulld/render@0.0.44
+- @ulld/configschema@0.0.44
+- @ulld/icons@0.0.44
+
 ## 0.0.43
 
 ### Patch Changes

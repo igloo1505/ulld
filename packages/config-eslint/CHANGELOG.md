@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.40
+
+### Patch Changes
+
+- Update to match package versions.
+
 ## 0.0.39
 
 ### Patch Changes

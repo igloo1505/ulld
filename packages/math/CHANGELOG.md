@@ -1,5 +1,17 @@
 # @ulld/math
 
+## 0.0.44
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/eslint-config@0.0.40
+  - @ulld/state@0.0.44
+  - @ulld/utilities@0.0.44
+  - @ulld/hooks@0.0.44
+  - @ulld/configschema@0.0.44
+  - @ulld/icons@0.0.44
+
 ## 0.0.43
 
 ### Patch Changes

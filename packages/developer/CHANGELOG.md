@@ -1,5 +1,13 @@
 # @ulld/developer
 
+## 0.0.44
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/eslint-config@0.0.40
+  - @ulld/configschema@0.0.44
+
 ## 0.0.43
 
 ### Patch Changes
