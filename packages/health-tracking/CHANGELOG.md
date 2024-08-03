@@ -1,5 +1,25 @@
 # @ulld/health-tracking
 
+## 0.0.46
+
+### Patch Changes
+
+- Broke-d the versioning by accidentally marking the eslint package
+  private.
+- Updated dependencies
+  - @ulld/api@0.0.46
+  - @ulld/typescript-config@0.0.40
+  - @ulld/configschema@0.0.46
+  - @ulld/developer@0.0.46
+  - @ulld/hooks@0.0.46
+  - @ulld/jest-presets@0.0.40
+  - @ulld/logger@0.0.40
+  - @ulld/plot@0.0.46
+  - @ulld/state@0.0.46
+  - @ulld/tailwind@0.0.40
+  - @ulld/ui@0.0.46
+  - @ulld/utilities@0.0.46
+
 ## 0.0.45
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.43
+
+### Patch Changes
+
+- Broke-d the versioning by accidentally marking the eslint package
+  private.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.40
+
 ## 0.0.42
 
 ### Patch Changes

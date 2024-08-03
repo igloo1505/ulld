@@ -1,5 +1,12 @@
 # @ulld/tailwind
 
+## 0.0.40
+
+### Patch Changes
+
+- Broke-d the versioning by accidentally marking the eslint package
+  private.
+
 ## 0.0.39
 
 ### Patch Changes

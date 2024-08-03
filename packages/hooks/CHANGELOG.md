@@ -1,5 +1,18 @@
 # @ulld/hooks
 
+## 0.0.46
+
+### Patch Changes
+
+- Broke-d the versioning by accidentally marking the eslint package
+  private.
+- Updated dependencies
+  - @ulld/api@0.0.46
+  - @ulld/component-map@0.0.46
+  - @ulld/configschema@0.0.46
+  - @ulld/database@0.0.43
+  - @ulld/parsers@0.0.46
+
 ## 0.0.45
 
 ### Patch Changes

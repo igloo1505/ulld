@@ -1,5 +1,5 @@
 {
-    "version": "0.0.45",
+    "version": "0.0.46",
     "$schema": "./node_modules/@ulld/developer-schemas/src/static/ulldPackageJson.schema.json",
     "name": "@ulld/math",
     "private": false,

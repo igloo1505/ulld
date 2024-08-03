@@ -1,5 +1,16 @@
 # @ulld/icons
 
+## 0.0.46
+
+### Patch Changes
+
+- Broke-d the versioning by accidentally marking the eslint package
+  private.
+- Updated dependencies
+  - @ulld/hooks@0.0.46
+  - @ulld/tailwind@0.0.40
+  - @ulld/utilities@0.0.46
+
 ## 0.0.45
 
 ### Patch Changes

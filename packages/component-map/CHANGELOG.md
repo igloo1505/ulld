@@ -1,5 +1,30 @@
 # @ulld/component-map
 
+## 0.0.46
+
+### Patch Changes
+
+- Broke-d the versioning by accidentally marking the eslint package
+  private.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.46
+  - @ulld/calendar@0.0.46
+  - @ulld/default-image-map@0.0.46
+  - @ulld/diagram@0.0.46
+  - @ulld/editor@0.0.46
+  - @ulld/embeddable-components@0.0.46
+  - @ulld/equations@0.0.46
+  - @ulld/full-form@0.0.46
+  - @ulld/journal@0.0.46
+  - @ulld/navigation@0.0.46
+  - @ulld/notebook@0.0.46
+  - @ulld/pdf@0.0.46
+  - @ulld/plot@0.0.46
+  - @ulld/snippets@0.0.46
+  - @ulld/tailwind@0.0.40
+  - @ulld/task-manager@0.0.46
+  - @ulld/whiteboard@0.0.46
+
 ## 0.0.45
 
 ### Patch Changes

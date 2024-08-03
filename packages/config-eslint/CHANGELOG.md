@@ -1,5 +1,12 @@
 # @repo/eslint-config
 
+## 0.0.42
+
+### Patch Changes
+
+- Broke-d the versioning by accidentally marking the eslint package
+  private.
+
 ## 0.0.41
 
 ### Patch Changes
