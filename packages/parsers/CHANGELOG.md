@@ -1,5 +1,13 @@
 # @ulld/parsers
 
+## 0.0.43
+
+### Patch Changes
+
+- @ulld/developer@0.0.43
+- @ulld/utilities@0.0.43
+- @ulld/configschema@0.0.43
+
 ## 0.0.42
 
 ### Patch Changes

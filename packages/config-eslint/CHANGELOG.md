@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.39
+
+### Patch Changes
+
+- Missing packages from last push.
+
 ## 0.0.38
 
 ### Patch Changes

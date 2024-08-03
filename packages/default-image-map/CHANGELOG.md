@@ -1,5 +1,14 @@
 # @ulld/default-image-map
 
+## 0.0.43
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/eslint-config@0.0.39
+  - @ulld/utilities@0.0.43
+  - @ulld/configschema@0.0.43
+
 ## 0.0.42
 
 ### Patch Changes

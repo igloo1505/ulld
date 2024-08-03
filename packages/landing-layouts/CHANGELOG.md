@@ -1,5 +1,25 @@
 # @ulld/landing-layouts
 
+## 0.0.43
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/eslint-config@0.0.39
+  - @ulld/bib-manager@0.0.43
+  - @ulld/developer@0.0.43
+  - @ulld/plot@0.0.43
+  - @ulld/ui@0.0.43
+  - @ulld/api@0.0.43
+  - @ulld/calendar@0.0.43
+  - @ulld/journal@0.0.43
+  - @ulld/state@0.0.43
+  - @ulld/whiteboard@0.0.43
+  - @ulld/utilities@0.0.43
+  - @ulld/hooks@0.0.43
+  - @ulld/configschema@0.0.43
+  - @ulld/icons@0.0.43
+
 ## 0.0.42
 
 ### Patch Changes

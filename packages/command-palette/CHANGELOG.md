@@ -1,5 +1,28 @@
 # @ulld/command-palette
 
+## 0.0.43
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/equations@0.0.43
+  - @ulld/bib-manager@0.0.43
+  - @ulld/developer@0.0.43
+  - @ulld/snippets@0.0.43
+  - @ulld/task-manager@0.0.43
+  - @ulld/ui@0.0.43
+  - @ulld/api@0.0.43
+  - @ulld/calendar@0.0.43
+  - @ulld/diagram@0.0.43
+  - @ulld/editor@0.0.43
+  - @ulld/parsers@0.0.43
+  - @ulld/state@0.0.43
+  - @ulld/whiteboard@0.0.43
+  - @ulld/utilities@0.0.43
+  - @ulld/hooks@0.0.43
+  - @ulld/render@0.0.43
+  - @ulld/configschema@0.0.43
+
 ## 0.0.42
 
 ### Patch Changes
