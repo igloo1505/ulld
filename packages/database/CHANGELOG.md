@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.44
+
+### Patch Changes
+
+- Left over development files leaked into the build and are causing build issues. They don't affect anything, but still need to be handled.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.41
+
 ## 0.0.43
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @ulld/default-image-map
 
+## 0.0.47
+
+### Patch Changes
+
+- Left over development files leaked into the build and are causing build issues. They don't affect anything, but still need to be handled.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.43
+  - @ulld/typescript-config@0.0.41
+  - @ulld/configschema@0.0.47
+  - @ulld/logger@0.0.41
+  - @ulld/tailwind@0.0.41
+  - @ulld/utilities@0.0.47
+
 ## 0.0.46
 
 ### Patch Changes

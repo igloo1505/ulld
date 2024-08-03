@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.47
+
+### Patch Changes
+
+- Left over development files leaked into the build and are causing build issues. They don't affect anything, but still need to be handled.
+- Updated dependencies
+  - @ulld/api@0.0.47
+  - @ulld/component-configs@0.0.47
+  - @ulld/configschema@0.0.47
+  - @ulld/default-image-map@0.0.47
+  - @ulld/hooks@0.0.47
+  - @ulld/icons@0.0.47
+  - @ulld/render@0.0.47
+  - @ulld/state@0.0.47
+  - @ulld/tailwind@0.0.41
+  - @ulld/utilities@0.0.47
+
 ## 0.0.46
 
 ### Patch Changes

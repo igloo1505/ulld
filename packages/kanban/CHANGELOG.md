@@ -1,5 +1,19 @@
 # @ulld/kanban
 
+## 0.0.47
+
+### Patch Changes
+
+- Left over development files leaked into the build and are causing build issues. They don't affect anything, but still need to be handled.
+- Updated dependencies
+  - @ulld/api@0.0.47
+  - @ulld/typescript-config@0.0.41
+  - @ulld/developer@0.0.47
+  - @ulld/jest-presets@0.0.41
+  - @ulld/logger@0.0.41
+  - @ulld/state@0.0.47
+  - @ulld/tailwind@0.0.41
+
 ## 0.0.46
 
 ### Patch Changes

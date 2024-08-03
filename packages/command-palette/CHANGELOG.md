@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.47
+
+### Patch Changes
+
+- Left over development files leaked into the build and are causing build issues. They don't affect anything, but still need to be handled.
+- Updated dependencies
+  - @ulld/api@0.0.47
+  - @ulld/bib-manager@0.0.47
+  - @ulld/calendar@0.0.47
+  - @ulld/configschema@0.0.47
+  - @ulld/database@0.0.44
+  - @ulld/developer@0.0.47
+  - @ulld/diagram@0.0.47
+  - @ulld/editor@0.0.47
+  - @ulld/equations@0.0.47
+  - @ulld/hooks@0.0.47
+  - @ulld/logger@0.0.41
+  - @ulld/parsers@0.0.47
+  - @ulld/render@0.0.47
+  - @ulld/snippets@0.0.47
+  - @ulld/state@0.0.47
+  - @ulld/tailwind@0.0.41
+  - @ulld/task-manager@0.0.47
+  - @ulld/ui@0.0.47
+  - @ulld/utilities@0.0.47
+  - @ulld/whiteboard@0.0.47
+
 ## 0.0.46
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.43
+
+### Patch Changes
+
+- Left over development files leaked into the build and are causing build issues. They don't affect anything, but still need to be handled.
+
 ## 0.0.42
 
 ### Patch Changes

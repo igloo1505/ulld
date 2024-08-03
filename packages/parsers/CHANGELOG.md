@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.47
+
+### Patch Changes
+
+- Left over development files leaked into the build and are causing build issues. They don't affect anything, but still need to be handled.
+- Updated dependencies
+  - @ulld/configschema@0.0.47
+  - @ulld/database@0.0.44
+  - @ulld/developer@0.0.47
+  - @ulld/utilities@0.0.47
+
 ## 0.0.46
 
 ### Patch Changes

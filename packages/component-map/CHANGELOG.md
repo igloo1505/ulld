@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.47
+
+### Patch Changes
+
+- Left over development files leaked into the build and are causing build issues. They don't affect anything, but still need to be handled.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.47
+  - @ulld/calendar@0.0.47
+  - @ulld/default-image-map@0.0.47
+  - @ulld/diagram@0.0.47
+  - @ulld/editor@0.0.47
+  - @ulld/embeddable-components@0.0.47
+  - @ulld/equations@0.0.47
+  - @ulld/full-form@0.0.47
+  - @ulld/journal@0.0.47
+  - @ulld/navigation@0.0.47
+  - @ulld/notebook@0.0.47
+  - @ulld/pdf@0.0.47
+  - @ulld/plot@0.0.47
+  - @ulld/snippets@0.0.47
+  - @ulld/tailwind@0.0.41
+  - @ulld/task-manager@0.0.47
+  - @ulld/whiteboard@0.0.47
+
 ## 0.0.46
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/configschema
 
+## 0.0.47
+
+### Patch Changes
+
+- Left over development files leaked into the build and are causing build issues. They don't affect anything, but still need to be handled.
+- Updated dependencies
+  - @ulld/base-configs@0.0.41
+  - @ulld/developer-schemas@0.0.41
+  - @ulld/icons@0.0.47
+  - @ulld/tailwind@0.0.41
+  - @ulld/utilities@0.0.47
+
 ## 0.0.46
 
 ### Patch Changes
