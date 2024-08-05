@@ -8,15 +8,16 @@ import { useDashboardContext } from "../../../util/provider";
 
 const TaskListDetailsTopRightCard = (
 ) => {
+
     const [_plotFilterType, setPlotFilterType] =
         useLocalStorage<MainPlotFilterType>("ulld-dashboard-main-plot-filter");
 
     const {plotFilterType} = useDashboardContext()
 
     return (
-        <div className={"mb-4 w-full flex flex-row-reverse xss:flex-col xss:mb-0 justify-center items-center"}>
+        <div className={"mb-4 w-full flex flex-row-reverse min-[650px]:flex-col min-[650px]:mb-0 justify-center items-center min-[650px]:items-end min-[650px]:justify-between"}>
             <div className={"flex-grow flex flex-col items-end w-full text-[10px] lg:text-sm text-muted-foreground"}><ClockDisplay /></div>
-            <div className={"w-fit xss:w-full flex flex-row justify-end items-center"}>
+            <div className={"w-fit min-[650px]:w-full flex flex-row justify-end items-center"}>
                 <div
                     className={"grid gap-4"}
                     style={{

@@ -11,7 +11,7 @@ import { clampInColorArray } from "./util/staticData";
 import TagListCard from "./cards/tall/tagList/main";
 import { TaggableData } from "./types";
 
-const tagListTopBreakpoint = 920
+const tagListTopBreakpoint = 980
 
 
 const dashboardId = "ulld-dashboard-container"
@@ -47,7 +47,7 @@ const ModularDashboard = async () => {
                 id={dashboardId}
             >
                 <div
-                    className={"grid grid-cols-1 extraMedium:grid-cols-[1fr_auto] gap-4 w-full md:h-[calc(40vh-1rem)] min-h-0"}
+                    className={"grid grid-cols-1 extraMedium:grid-cols-[1fr_auto] gap-4 w-full md:h-[calc(40vh-1rem)] min-h-[350px] max-h-[calc(40vh-1rem)]"}
                 >
                     <MainCard
                         className={"max-h-full"}
@@ -75,7 +75,7 @@ const ModularDashboard = async () => {
                         showKey="tagsOnBottom"
                         breakPoint={tagListTopBreakpoint}
                         containerId={dashboardId}
-                        className={"w-full h-[min(80vh,250px)] max-w-full md:h-full"}
+                        className={"!w-full h-[min(80vh,250px)] max-w-full md:h-full"}
                     />
                     <TotalNotesCard />
                 </div>

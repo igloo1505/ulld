@@ -5,7 +5,7 @@ import { z } from "zod";
 import {useForm, zodResolver} from "@ulld/full-form/form"
 import AddSnippetForm from "../components/forPages/addSnippet/addSnippetForm"
 import AddSnippetDisplay from "../components/forPages/addSnippet/addSnippetDisplay"
-import shikiLanguages from "@ulld/utilities/shikiLanguages"
+import shikiLanguages, { ShikiLanguage } from "@ulld/utilities/shikiLanguages"
  
 
 export interface PageProps extends AddSnippetPageProps { }
@@ -39,7 +39,7 @@ const AddSnippetPage = ({editing: item}: PageProps) => {
             description: item?.description || "",
             keywords: item?.keywords || [],
             keywordInput: "",
-            language: item?.language ? item.language : "typescript",
+            language: item?.language ? item.language as ShikiLanguage : "typescript",
             ...(item?.id && { id: item.id })
         },
     })

@@ -1,7 +1,6 @@
-
-"juse client"
-import { Input } from '@ulld/tailwind/input'
+"use client"
 import React from 'react'
+import { Input } from '@ulld/tailwind/input'
 import { SnippetFilterParams } from '../../types'
 import { useRouter } from 'next/navigation'
 

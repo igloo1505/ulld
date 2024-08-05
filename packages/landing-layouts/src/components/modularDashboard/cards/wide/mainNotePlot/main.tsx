@@ -13,7 +13,7 @@ const MainCard = ({ className }: Props) => {
     return (
         <CardContainer
             className={cn(
-                "w-full h-full flex flex-col justify-center items-center",
+                "w-full min-[650px]:h-full flex flex-col justify-center items-center",
                 className,
             )}
         >
