@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.49
+
+### Patch Changes
+
+- Update dashboard mostly.
+- Updated dependencies
+  - @ulld/api@0.0.49
+  - @ulld/bib-manager@0.0.49
+  - @ulld/calendar@0.0.49
+  - @ulld/configschema@0.0.49
+  - @ulld/database@0.0.46
+  - @ulld/developer@0.0.49
+  - @ulld/diagram@0.0.49
+  - @ulld/editor@0.0.49
+  - @ulld/equations@0.0.49
+  - @ulld/hooks@0.0.49
+  - @ulld/logger@0.0.43
+  - @ulld/parsers@0.0.49
+  - @ulld/render@0.0.49
+  - @ulld/snippets@0.0.49
+  - @ulld/state@0.0.49
+  - @ulld/tailwind@0.0.43
+  - @ulld/task-manager@0.0.49
+  - @ulld/ui@0.0.49
+  - @ulld/utilities@0.0.49
+  - @ulld/whiteboard@0.0.49
+
 ## 0.0.48
 
 ### Patch Changes

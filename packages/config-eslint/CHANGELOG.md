@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.45
+
+### Patch Changes
+
+- Update dashboard mostly.
+
 ## 0.0.44
 
 ### Patch Changes

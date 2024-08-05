@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.49
+
+### Patch Changes
+
+- Update dashboard mostly.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.45
+  - @ulld/typescript-config@0.0.43
+  - @ulld/configschema@0.0.49
+  - @ulld/database@0.0.46
+  - @ulld/logger@0.0.43
+
 ## 0.0.48
 
 ### Patch Changes

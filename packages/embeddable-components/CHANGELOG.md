@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.49
+
+### Patch Changes
+
+- Update dashboard mostly.
+- Updated dependencies
+  - @ulld/api@0.0.49
+  - @ulld/component-configs@0.0.49
+  - @ulld/configschema@0.0.49
+  - @ulld/default-image-map@0.0.49
+  - @ulld/hooks@0.0.49
+  - @ulld/icons@0.0.49
+  - @ulld/render@0.0.49
+  - @ulld/state@0.0.49
+  - @ulld/tailwind@0.0.43
+  - @ulld/utilities@0.0.49
+
 ## 0.0.48
 
 ### Patch Changes

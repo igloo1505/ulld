@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.49
+
+### Patch Changes
+
+- Update dashboard mostly.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.49
+  - @ulld/calendar@0.0.49
+  - @ulld/default-image-map@0.0.49
+  - @ulld/diagram@0.0.49
+  - @ulld/editor@0.0.49
+  - @ulld/embeddable-components@0.0.49
+  - @ulld/equations@0.0.49
+  - @ulld/full-form@0.0.49
+  - @ulld/journal@0.0.49
+  - @ulld/navigation@0.0.49
+  - @ulld/notebook@0.0.49
+  - @ulld/pdf@0.0.49
+  - @ulld/plot@0.0.49
+  - @ulld/snippets@0.0.49
+  - @ulld/tailwind@0.0.43
+  - @ulld/task-manager@0.0.49
+  - @ulld/whiteboard@0.0.49
+
 ## 0.0.48
 
 ### Patch Changes

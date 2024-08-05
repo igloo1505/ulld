@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.49
+
+### Patch Changes
+
+- Update dashboard mostly.
+- Updated dependencies
+  - @ulld/hooks@0.0.49
+  - @ulld/tailwind@0.0.43
+  - @ulld/utilities@0.0.49
+
 ## 0.0.48
 
 ### Patch Changes

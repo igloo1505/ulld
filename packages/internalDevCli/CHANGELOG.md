@@ -1,5 +1,11 @@
 # @ulld/internal-dev-cli
 
+## 0.0.43
+
+### Patch Changes
+
+- Update dashboard mostly.
+
 ## 0.0.42
 
 ### Patch Changes

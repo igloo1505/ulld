@@ -1,5 +1,20 @@
 # @ulld/state
 
+## 0.0.49
+
+### Patch Changes
+
+- Update dashboard mostly.
+- Updated dependencies
+  - @ulld/base-configs@0.0.43
+  - @ulld/configschema@0.0.49
+  - @ulld/database@0.0.46
+  - @ulld/developer@0.0.49
+  - @ulld/hooks@0.0.49
+  - @ulld/parsers@0.0.49
+  - @ulld/tailwind@0.0.43
+  - @ulld/utilities@0.0.49
+
 ## 0.0.48
 
 ### Patch Changes

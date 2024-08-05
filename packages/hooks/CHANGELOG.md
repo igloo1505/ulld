@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.49
+
+### Patch Changes
+
+- Update dashboard mostly.
+- Updated dependencies
+  - @ulld/api@0.0.49
+  - @ulld/component-map@0.0.49
+  - @ulld/configschema@0.0.49
+  - @ulld/database@0.0.46
+  - @ulld/parsers@0.0.49
+
 ## 0.0.48
 
 ### Patch Changes

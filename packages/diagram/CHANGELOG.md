@@ -1,5 +1,17 @@
 # @ulld/diagram
 
+## 0.0.49
+
+### Patch Changes
+
+- Update dashboard mostly.
+- Updated dependencies
+  - @ulld/api@0.0.49
+  - @ulld/typescript-config@0.0.43
+  - @ulld/developer@0.0.49
+  - @ulld/state@0.0.49
+  - @ulld/tailwind@0.0.43
+
 ## 0.0.48
 
 ### Patch Changes

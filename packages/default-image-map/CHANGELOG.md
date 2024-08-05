@@ -1,5 +1,18 @@
 # @ulld/default-image-map
 
+## 0.0.49
+
+### Patch Changes
+
+- Update dashboard mostly.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.45
+  - @ulld/typescript-config@0.0.43
+  - @ulld/configschema@0.0.49
+  - @ulld/logger@0.0.43
+  - @ulld/tailwind@0.0.43
+  - @ulld/utilities@0.0.49
+
 ## 0.0.48
 
 ### Patch Changes

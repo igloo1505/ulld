@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.49
+
+### Patch Changes
+
+- Update dashboard mostly.
+- Updated dependencies
+  - @ulld/developer@0.0.49
+  - @ulld/developer-schemas@0.0.43
+
 ## 0.0.48
 
 ### Patch Changes
