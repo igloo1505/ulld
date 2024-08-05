@@ -8,30 +8,39 @@ import { SearchIcon, BookmarkIcon } from "lucide-react";
 import { toggleBookmark } from "@ulld/api/actions/clientOnly/bookmarking";
 import { useEventListener } from "@ulld/hooks/useEventListener";
 import { NavbarComponentProps } from "../../types";
+import { isAborted } from "zod";
 
 const NavShowBreakpoint = 20;
 
-
-interface NavbarProps extends NavbarComponentProps {
-}
+interface NavbarProps extends NavbarComponentProps { }
 
 declare global {
     // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
     interface WindowEventMap {
-        "set-note-id": CustomEvent<{noteId: number | false}>;
+        "set-note-id": CustomEvent<{ noteId: number | false }>;
     }
 }
 
-const showButtonTypes: NavbarComponentProps["navConfig"]["bookmarkLink"][] = ["both", "navbar"]
-
+const showButtonTypes: NavbarComponentProps["navConfig"]["bookmarkLink"][] = [
+    "both",
+    "navbar",
+];
 
 const Navbar = ({ navConfig: nav, noteTypes, logo: Logo }: NavbarProps) => {
     const pathname = usePathname();
     const [show, setShow] = useState(pathname !== "/");
-    const [isAbsolute, setIsAbsolute] = useState(false);
-    const [noteId, setNoteId] = useState<number | undefined>(undefined)
+    const [noteId, setNoteId] = useState<number | undefined>(undefined);
+    const [isAbsolute, setIsAbsolute] = useState(pathname === "/");
 
-    useEventListener("set-note-id", (e) => setNoteId(e.detail.noteId === false ? undefined : e.detail.noteId))
+    useEffect(() => {
+      setIsAbsolute(pathname === "/")
+
+    }, [pathname])
+    
+
+    useEventListener("set-note-id", (e) =>
+        setNoteId(e.detail.noteId === false ? undefined : e.detail.noteId),
+    );
 
     const hoverListener = (e: MouseEvent) => {
         if (pathname !== "/") {
@@ -47,37 +56,32 @@ const Navbar = ({ navConfig: nav, noteTypes, logo: Logo }: NavbarProps) => {
     };
 
     useEffect(() => {
-        setIsAbsolute(pathname === "/");
-        if (pathname === "/") {
-            window.addEventListener("mousemove", hoverListener);
-        } else {
-            setShow(true);
-        }
+        window.addEventListener("mousemove", hoverListener);
         return () => window.removeEventListener("mousemove", hoverListener);
     }, [pathname]);
 
-
-    const btns = noteTypes.filter((a) => a.inNavbar)
-    const btns2 = noteTypes.sort((a, b) => a.matchWeight - b.matchWeight).slice(0, 3 - btns.length)
-    const buttons = [...btns, ...btns2]
-
+    const btns = noteTypes.filter((a) => a.inNavbar);
+    const btns2 = noteTypes
+        .sort((a, b) => a.matchWeight - b.matchWeight)
+        .slice(0, 3 - btns.length);
+    const buttons = [...btns, ...btns2];
 
     return (
         <nav
             className={clsx(
-                "relative z-10 bg-gray-50 shadow dark:bg-gray-950 h-[--nav-height] flex justify-center items-center border-b dark:border-b-gray-800 w-screen sidebarAdjust border-opacity-50",
+                "z-10 bg-gray-50 shadow dark:bg-gray-950 h-[--nav-height] flex justify-center items-center border-b dark:border-b-gray-800 w-screen sidebarAdjust border-opacity-50 focus-within:translate-y-[0px]",
                 show ? "translate-y-[0px]" : "translate-y-[-100%]",
-                isAbsolute && "absolute left-0 top-[-100%]",
+                isAbsolute ? "absolute" : "relative"
             )}
             id="top-navbar"
         >
             <div className="pl-4 py-3 md:pl-6 mx-0 px-8 flex w-screen min-w-screen">
                 <div className="flex items-center justify-between">
-                    <Link 
+                    <Link
                         href="/"
-                            /* width={300} */
-                            /* height={300} */
-                            className={"h-[calc(var(--nav-height)*0.7)] w-[80px]"}
+                        /* width={300} */
+                        /* height={300} */
+                        className={"h-[calc(var(--nav-height)*0.7)] w-[80px]"}
                     >
                         {Logo}
                     </Link>
@@ -107,14 +111,16 @@ const Navbar = ({ navConfig: nav, noteTypes, logo: Logo }: NavbarProps) => {
                     <div
                         className={"flex flex-row gap-2 justify-center items-center w-fit"}
                     >
-                        {showButtonTypes.includes(nav.bookmarkLink) && <Link
-                            href="/bookmarks"
-                            className={
-                                "px-2.5 py-2 navbtn transform mx-2 hidden sm:flex lg:hidden"
-                            }
-                        >
-                            Bookmarks
-                        </Link>}
+                        {showButtonTypes.includes(nav.bookmarkLink) && (
+                            <Link
+                                href="/bookmarks"
+                                className={
+                                    "px-2.5 py-2 navbtn transform mx-2 hidden sm:flex lg:hidden"
+                                }
+                            >
+                                Bookmarks
+                            </Link>
+                        )}
                         <div className="relative mt-0 w-[225px]">
                             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                                 <SearchIcon className={"w-5 h-5 text-gray-400"} />
@@ -148,4 +154,4 @@ const Navbar = ({ navConfig: nav, noteTypes, logo: Logo }: NavbarProps) => {
     );
 };
 
-export default Navbar
+export default Navbar;

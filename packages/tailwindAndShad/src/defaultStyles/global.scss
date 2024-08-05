@@ -1,13 +1,8 @@
 @tailwind components;
 
-.test {
-  border: 1px solid red;
-}
-
 body {
   min-height: 100vh;
   height: fit-content;
-  // font-family: var(--font-sans);
 }
 
 :root {

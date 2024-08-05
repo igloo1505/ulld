@@ -8,13 +8,17 @@ import CardContainer from "../../../util/cardContainer";
 import CardMutedDesc from "../../../util/cardMutedDesc";
 import { useLocalStorage } from "@ulld/hooks/useLocalStorage";
 import { useDashboardContext } from "../../../util/provider";
+import { cn } from "@ulld/utilities/cn";
+
 
 interface AccessByCategoryDonutProps extends BaseCardProps {
     colors: Record<string, string>;
+    className?: string
 }
 
 const AccessByCategoryDonut = ({
     colors,
+    className,
     ...props
 }: AccessByCategoryDonutProps) => {
     let [_timePeriod, setTimePeriod] = useLocalStorage<TimePeriodOption>(
@@ -53,7 +57,7 @@ const AccessByCategoryDonut = ({
     }, [items]);
 
     return (
-        <CardContainer {...props} className={"w-full h-[min(80vh,250px)] @[768px]/dashboard:w-[calc(50%-0.5rem)] @[920px]/body:w-[calc(33%-0.66rem)] @[920px]/dashboard:h-auto max-h-full justify-start"}>
+        <CardContainer {...props} className={cn("w-full h-[min(80vh,250px)] md:min-h-[250px] md:h-full justify-start", className)}>
             <CardMutedDesc>
                 New notes by format
             </CardMutedDesc>

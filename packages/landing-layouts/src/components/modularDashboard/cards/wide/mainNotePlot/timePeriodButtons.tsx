@@ -40,7 +40,7 @@ const TimePeriodButtonGroup = ({ }: TimePeriodButtonGroupProps) => {
     return (
         <div
             className={
-                "flex flex-row justify-start items-center flex-wrap @[340px]/dashboard:grid gap-4 @[340px]/dashboard:max-h-10"
+                "flex flex-row justify-start items-center flex-wrap xxxxxs:grid gap-4 xxxxxs:max-h-10"
             }
             style={{
                 gridTemplateColumns: `repeat(${options.length}, 1fr)`,
@@ -52,7 +52,7 @@ const TimePeriodButtonGroup = ({ }: TimePeriodButtonGroupProps) => {
                         role="button"
                         key={`time-period-btn-${o.value}`}
                         className={cn(
-                            "text-sm w-fit @[340px]/dashboard:w-full h-full flex justify-center items-center border rounded-[20px] py-2 px-3 transition-colors duration-200",
+                            "text-sm w-fit xxxxxs:w-full h-full flex justify-center items-center border rounded-[20px] py-2 px-3 transition-colors duration-200",
                             timePeriod === o.value
                                 ? "border-primary"
                                 : " hover:bg-secondary hover:text-secondary-foreground",

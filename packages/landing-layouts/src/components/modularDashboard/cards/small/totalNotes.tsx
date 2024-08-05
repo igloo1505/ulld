@@ -32,7 +32,7 @@ const TotalNotesCard = ({ cardProps, className }: TotalNotesCardProps) => {
         <CardContainer
             {...cardProps}
             className={cn(
-                "w-full @[768px]/dashboard:w-[calc(50%-0.5rem)] h-[290px] @[920px]/body:w-[calc(33%-0.66rem)] @[768px]/dashboard:h-auto",
+                "w-full h-full py-4",
                 className,
             )}
         >

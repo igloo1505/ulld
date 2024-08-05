@@ -43,7 +43,7 @@ const getLastAccessNote = (
     };
 };
 
-export const getModularDashboardTestData = (
+export const getModularDashboardTestDataInternal = (
     nNotesRandomizer: number = 200,
 ): ModularDashboardData => {
     let categories =
@@ -77,7 +77,7 @@ const getTaskManagerSampleData = (
         label: getRandomLoremString(Math.floor(Math.random() * 8), false),
         createdAt: new Date(thatDay + Math.floor(Math.random() * dateDiff)),
         _count: {} as any,
-   };
+    };
 };
 
 const getSampleTask = (
@@ -105,7 +105,8 @@ const getSampleTask = (
         createdAt: TestDateHelper.randomDateBeforeNow(
             completedOn || new Date(thatDay),
         ),
-        dueAt: Math.random() >= 0.5 ? new Date(_now + Math.random() * 86400 * 30) : null,
+        dueAt:
+            Math.random() >= 0.5 ? new Date(_now + Math.random() * 86400 * 30) : null,
         status: completedOn
             ? "Done"
             : otherStatusOpts[Math.floor(Math.random() * otherStatusOpts.length)],
@@ -131,7 +132,9 @@ export const getTaskManagerOverviewTestData = (
     };
 };
 
-export const getTaggableTestData = (nRandomizer: number = 200): TaggableData => {
+export const getTaggableTestData = (
+    nRandomizer: number = 200,
+): TaggableData => {
     return {
         tags: getRandomLoremString(Math.floor(nRandomizer * Math.random()), true),
         topics: getRandomLoremString(Math.floor(nRandomizer * Math.random()), true),
@@ -142,3 +145,20 @@ export const getTaggableTestData = (nRandomizer: number = 200): TaggableData => 
     };
 };
 
+export const getModularDashboardTestData = (
+    nRandomizer: number = 300,
+    nGroups: number = 8,
+) => {
+    let taggables = getTaggableTestData(nRandomizer);
+    let data = getModularDashboardTestDataInternal();
+    let initialTaskData = getTaskManagerOverviewTestData(
+        nRandomizer * 4,
+        30,
+        nGroups,
+    );
+    return {
+        taggables,
+        data,
+        initialTaskData,
+    };
+};

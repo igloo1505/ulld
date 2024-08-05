@@ -1,12 +1,7 @@
 import React from "react";
-/* import { serverClient } from "@ulld/api/serverClient"; */
+import { serverClient } from "@ulld/api/serverClient";
 import { cn } from "@ulld/utilities/cn";
 import TotalNotesCard from "./cards/small/totalNotes";
-import {
-    getModularDashboardTestData,
-    getTaggableTestData,
-    getTaskManagerOverviewTestData,
-} from "../../test/generateTestData";
 import NotesByCategoryDonutCard from "./cards/small/notesByCategoryDonut/main";
 import AccessByCategoryDonut from "./cards/small/accessByCategoryDonut/main";
 import RecentlyAccessNotesList from "./cards/tall/recentlyAccessNotesList/main";
@@ -18,17 +13,16 @@ import { TaggableData } from "./types";
 
 const tagListTopBreakpoint = 920
 
-let taggables = getTaggableTestData(300)
-let data = getModularDashboardTestData();
-let initialTaskData = getTaskManagerOverviewTestData();
 
+const dashboardId = "ulld-dashboard-container"
 
 const ModularDashboard = async () => {
-    /* let data = await serverClient.universalNotes.getUserOverview(); */
-    /* const initialTaskData = await serverClient.toDo.getTaskManagerOverview() */
-    /* let taggables = await serverClient.search.getUniqueTagTopicAndSubjects() as TaggableData */
-
     
+    let data = await serverClient.universalNotes.getUserOverview();
+
+    const initialTaskData = await serverClient.toDo.getTaskManagerOverview()
+
+    let taggables = await serverClient.search.getUniqueTagTopicAndSubjects() as TaggableData
 
 
 
@@ -48,25 +42,31 @@ const ModularDashboard = async () => {
         >
             <div
                 className={cn(
-                    "@container/dashboard py-4 px-4 lg:py-8 md:px-8 w-full h-fit @[920px]/body:h-screen min-h-fit flex flex-col gap-4",
+                    "@container/dashboard py-4 px-4 lg:py-8 md:px-8 w-full h-fit min-h-fit flex flex-col gap-4 extraMedium:max-h-screen",
                 )}
+                id={dashboardId}
             >
                 <div
-                    className={"flex flex-row justify-between gap-4 w-full h-[calc(40%-1rem)] max-h-[calc(40%-1rem)]"}
+                    className={"grid grid-cols-1 extraMedium:grid-cols-[1fr_auto] gap-4 w-full md:h-[calc(40vh-1rem)] min-h-0"}
                 >
-                    <MainCard />
+                    <MainCard
+                        className={"max-h-full"}
+                    />
                     <TagListCard
                         taggables={taggables}
                         showKey="tagsOnTop"
                         breakPoint={tagListTopBreakpoint}
                         defaultShow
+                        containerId={dashboardId}
+                        className={"h-full w-[300px]"}
                     />
                 </div>
-                <div className={"w-full h-[calc(33%-1rem)]"}>
+                <div className={"w-full h-[calc(33%-1rem)] extraMedium:h-[calc(33vh-1rem)]"}>
                     <RecentlyAccessNotesList />
                 </div>
                 <div
-                    className={"flex flex-row flex-wrap justify-center gap-4 h-[calc(33%-1rem)]"}
+                    className={"flex flex-col justify-center items-center md:grid grid-cols-2 grid-rows-2 extraMedium:grid-cols-[1fr_1fr_1fr] extraMedium:grid-rows-1 gap-4 h-[calc(33%-1rem)]"}
+                    
                 >
                     <NotesByCategoryDonutCard className={""} colors={categoryColors} />
                     <AccessByCategoryDonut className={""} colors={categoryColors} />
@@ -74,6 +74,8 @@ const ModularDashboard = async () => {
                         taggables={taggables}
                         showKey="tagsOnBottom"
                         breakPoint={tagListTopBreakpoint}
+                        containerId={dashboardId}
+                        className={"w-full h-[min(80vh,250px)] max-w-full md:h-full"}
                     />
                     <TotalNotesCard />
                 </div>

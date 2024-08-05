@@ -16,14 +16,15 @@ interface TagListCardProps {
     showKey: "tagsOnTop" | "tagsOnBottom"
     breakPoint: number
     defaultShow?: boolean
+    containerId: string
 }
 
-const TagListCard = ({ taggables, className, showKey, breakPoint, defaultShow }: TagListCardProps) => {
+const TagListCard = ({ taggables, className, showKey, breakPoint, defaultShow, containerId }: TagListCardProps) => {
     const [dataType, setDataType] = useState<keyof TaggableData>("tags");
     
     const breakPointData = useBreakPoints({
         tagList: breakPoint
-    })
+    }, "minWidth", {containerId})
 
     if((breakPointData === null && !defaultShow) || (breakPointData?.tagList && showKey === "tagsOnBottom") || (!breakPointData?.tagList && showKey === "tagsOnTop")){
         return null
@@ -32,7 +33,7 @@ const TagListCard = ({ taggables, className, showKey, breakPoint, defaultShow }:
 
     return (
         <CardContainer
-            className={cn("justify-start w-full @[768px]/dashboard:w-[calc(50%-0.5rem)] @[920px]/dashboard:max-w-[300px] @[920px]/dashboard:min-w-[250px] pt-4", className)}
+            className={cn("justify-start w-full md:w-[calc(50%-0.5rem)] extraMedium:max-w-[300px] extraMedium:min-w-[250px] pt-4", className)}
         >
             <TaggableTypeToggle
                 options={Object.keys(taggables) as TaggableFilterType[]}

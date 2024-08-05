@@ -2,8 +2,13 @@
 import axios from "axios";
 import { UlldColorTheme, UlldPlotTheme } from "@ulld/utilities/types";
 import { getHtmlElementAttribute } from "@ulld/utilities/utils-dom";
+import { ulldDefaultColorThemes } from "@ulld/utilities/defaultColorThemeList";
 
 export const changeTheme = async (newTheme: UlldColorTheme) => {
+    console.log("newTheme: ", newTheme)
+    if(!ulldDefaultColorThemes.includes(newTheme)){
+        newTheme = "ulld"
+    }
     let res = await axios.post("/api/settings/handleTheme", { theme: newTheme });
     let success = Boolean(res.data?.success);
     if (success) {

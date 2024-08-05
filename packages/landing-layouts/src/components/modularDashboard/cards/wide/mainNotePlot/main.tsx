@@ -3,12 +3,19 @@ import React from "react";
 import CardContainer from "../../../util/cardContainer";
 import TaskListCardDetails from "./taskListDetailsRow";
 import MainCardPlot from "./plot";
+import cn from "@ulld/utilities/cn";
 
+interface Props {
+    className?: string;
+}
 
-const MainCard = () => {
+const MainCard = ({ className }: Props) => {
     return (
         <CardContainer
-            className={"w-2/3 flex-grow h-full flex flex-col justify-center items-center"}
+            className={cn(
+                "w-full h-full flex flex-col justify-center items-center",
+                className,
+            )}
         >
             <TaskListCardDetails />
             <MainCardPlot />

@@ -14,9 +14,9 @@ const TaskListDetailsTopRightCard = (
     const {plotFilterType} = useDashboardContext()
 
     return (
-        <div className={"mb-4 w-full flex flex-row-reverse @[520px]/dashboard:flex-col @[520px]/dashboard:mb-0 justify-center items-center"}>
+        <div className={"mb-4 w-full flex flex-row-reverse xss:flex-col xss:mb-0 justify-center items-center"}>
             <div className={"flex-grow flex flex-col items-end w-full text-[10px] lg:text-sm text-muted-foreground"}><ClockDisplay /></div>
-            <div className={"w-fit @[520px]/dashboard:w-full flex flex-row justify-end items-center"}>
+            <div className={"w-fit xss:w-full flex flex-row justify-end items-center"}>
                 <div
                     className={"grid gap-4"}
                     style={{
