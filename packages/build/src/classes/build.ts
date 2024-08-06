@@ -30,27 +30,31 @@ import { EnvManager } from "./envManager";
 import { BuildHealthCheck } from "./healthCheck";
 import { DatabaseBuildManager } from "./databaseManager";
 import { BuildOptionsType } from "../utils/options";
+import staticData from "../../staticDevelopmentData.json"
 
 type PluginSlotKey = keyof SlotMap;
 
 export class UlldBuildProcess extends Prompter {
     plugins: UlldPlugin[] = [];
     noteTypes: NoteType[] = [];
-    env: EnvManager
-    health: BuildHealthCheck
+    env: EnvManager;
+    health: BuildHealthCheck;
     appConfig: UlldAppConfigManager;
     paths: TargetPaths;
     applicationDir: string;
     packageJson: TargetPackageJson;
     isLocalDev: boolean;
-    db: DatabaseBuildManager
+    db: DatabaseBuildManager;
     packageManager: PackageManagers = "pnpm";
     slotConflicts: SlotConflict[] = [];
     pageConflicts: PageConflict[] = [];
     git: GitManager;
     componentImportMap: Record<string, boolean> = {};
-    alreadyProvidedPackageManager: boolean = false
-    constructor(public targetDir: string, public branch: string = "main") {
+    alreadyProvidedPackageManager: boolean = false;
+    constructor(
+        public targetDir: string,
+        public branch: string = "main",
+    ) {
         super(targetDir, branch);
         this.git = new GitManager(targetDir, this.branch);
         this.isLocalDev = process.env.LOCAL_DEVELOPMENT === "true";
@@ -59,25 +63,27 @@ export class UlldBuildProcess extends Prompter {
             appData.templateRepo.buildDirName,
         );
         this.paths = new TargetPaths(this.applicationDir, this.isLocalDev);
-        this.env = new EnvManager(this.paths)
-        this.health = new BuildHealthCheck(this.paths, this.env)
-        this.db = new DatabaseBuildManager(this.paths, this.env, this.health)
+        this.env = new EnvManager(this.paths);
+        this.health = new BuildHealthCheck(this.paths, this.env);
+        this.db = new DatabaseBuildManager(this.paths, this.env, this.health);
         this.packageJson = new TargetPackageJson(
             this.applicationDir,
             this.isLocalDev,
-            this.branch
+            this.branch,
         );
-        let additionalSources = new AdditionalSources(this.paths)
-        let globalAppConfig = additionalSources.getAppConfig()
-        this.appConfig = globalAppConfig || new UlldAppConfigManager(
-            this.applicationDir,
-            this.isLocalDev,
-            this.paths
-        );
+        let additionalSources = new AdditionalSources(this.paths);
+        let globalAppConfig = additionalSources.getAppConfig();
+        this.appConfig =
+            globalAppConfig ||
+            new UlldAppConfigManager(
+                this.applicationDir,
+                this.isLocalDev,
+                this.paths,
+            );
         this.appConfig.gather();
         this.gatherSlotConflicts();
         this.gatherPageConflicts();
-        this.noteTypes = this.appConfig.getNoteTypes()
+        this.noteTypes = this.appConfig.getNoteTypes();
     }
     /** Returns true if a project exists at the targetDir and if that project is a ULLD app. */
     projectExists() {
@@ -89,7 +95,10 @@ export class UlldBuildProcess extends Prompter {
     }
     private validateImportName(plugin: PluginComponent | PluginPage): void {
         if (plugin.formattedImportName in this.componentImportMap) {
-            plugin.formattedImportName = modifyNameRandomly(plugin.formattedImportName, plugin.haveModifiedImportName);
+            plugin.formattedImportName = modifyNameRandomly(
+                plugin.formattedImportName,
+                plugin.haveModifiedImportName,
+            );
             return this.validateImportName(plugin);
         } else {
             this.componentImportMap[plugin.formattedImportName] = true;
@@ -104,7 +113,7 @@ export class UlldBuildProcess extends Prompter {
             `Gathering ${chalk.hex("#0ba5e9")("U")}LLD plugins from your appConfig...`,
         );
         if (!this.appConfig.config) {
-            this.logError("No appConfig was found. Can not continue.")
+            this.logError("No appConfig was found. Can not continue.");
             throw new Error(
                 `No app configuration was found during the gatherPlugins phase.`,
             );
@@ -114,7 +123,9 @@ export class UlldBuildProcess extends Prompter {
             this.appConfig.config?.plugins?.map(
                 (c) => new UlldPlugin(this.paths, c.name, c.version, this.branch),
             ) || ([] as UlldPlugin[]);
-        this.logVerbose(`Found ${fromConfigPlugins.length} plugin${fromConfigPlugins.length > 1 ? "s" : ""} in your config.`)
+        this.logVerbose(
+            `Found ${fromConfigPlugins.length} plugin${fromConfigPlugins.length > 1 ? "s" : ""} in your config.`,
+        );
         for (const k in this.appConfig.config.slots) {
             let newSlot =
                 this.appConfig.config.slots[
@@ -122,7 +133,9 @@ export class UlldBuildProcess extends Prompter {
                 ];
             if (Array.isArray(newSlot)) {
                 for (const l of newSlot) {
-                    newPlugins.push(new UlldPlugin(this.paths, l.name, l.version, this.branch));
+                    newPlugins.push(
+                        new UlldPlugin(this.paths, l.name, l.version, this.branch),
+                    );
                 }
             } else {
                 this.logDebug(`Found a slot that was not added to plugins:
@@ -224,18 +237,18 @@ and continue when that file is in place.`,
             }
         }
     }
-    applyPackageManagerOptions(opts: BuildOptionsType){
-        if(opts.npm){
-            this.packageManager = "npm"
-            this.alreadyProvidedPackageManager = true
+    applyPackageManagerOptions(opts: BuildOptionsType) {
+        if (opts.npm) {
+            this.packageManager = "npm";
+            this.alreadyProvidedPackageManager = true;
         }
-        if(opts.pnpm){
-            this.packageManager = "pnpm"
-            this.alreadyProvidedPackageManager = true
+        if (opts.pnpm) {
+            this.packageManager = "pnpm";
+            this.alreadyProvidedPackageManager = true;
         }
-        if(opts.yarn){
-            this.packageManager = "yarn"
-            this.alreadyProvidedPackageManager = true
+        if (opts.yarn) {
+            this.packageManager = "yarn";
+            this.alreadyProvidedPackageManager = true;
         }
     }
     async resolvePageConflicts() {
@@ -260,16 +273,21 @@ and continue when that file is in place.`,
                         componentName: p.data.componentName,
                         componentId: p.data.componentId,
                         tags: p.data.tags,
-                        embeddableSyntax: p.data.embeddable?.map((e) => e.regexToInclude) || [],
+                        embeddableSyntax:
+                            p.data.embeddable?.map((e) => e.regexToInclude) || [],
                         urls: {
-                            short: p.data.docsExport ? `/componentDocs/${encodeURI(p.pluginName)}/${encodeURI(p.data.componentName)}?full=false` : undefined,
-                            full: p.data.fullDocsExport ? `/componentDocs/${encodeURI(p.pluginName)}/${encodeURI(p.data.componentName)}?full=true` : undefined
+                            short: p.data.docsExport
+                                ? `/componentDocs/${encodeURI(p.pluginName)}/${encodeURI(p.data.componentName)}?full=false`
+                                : undefined,
+                            full: p.data.fullDocsExport
+                                ? `/componentDocs/${encodeURI(p.pluginName)}/${encodeURI(p.data.componentName)}?full=true`
+                                : undefined,
                         },
                         filePaths: {
                             short: p.getOutputFilePath("short"),
                             full: p.getOutputFilePath("full"),
-                        }
-                    })
+                        },
+                    });
                 }
             }
         }
@@ -393,7 +411,12 @@ and continue when that file is in place.`,
                 for (const slotItem of itemData) {
                     if (!currentPluginNames.includes(slotItem.name)) {
                         this.plugins.push(
-                            new UlldPlugin(this.paths, slotItem.name, slotItem.version, this.branch),
+                            new UlldPlugin(
+                                this.paths,
+                                slotItem.name,
+                                slotItem.version,
+                                this.branch,
+                            ),
                         );
                         currentPluginNames.push(slotItem.name);
                     }
@@ -465,19 +488,26 @@ ${fullSlotMap.missingItems.map((k, i) => `${i + 1}. ${k.slot} -> ${k.subSlot}`).
     }
     async applyPages() {
         for await (const k of this.plugins) {
-            this.logError(`Attempting to apply extra pages. This method is not yet handled.`)
+            this.logError(
+                `Attempting to apply extra pages. This method is not yet handled.`,
+            );
             // await k.applyPages();
         }
     }
     getTailwindSources(): string[] {
-        return this.plugins.filter((f) => f.includeInTailwindSources).map((p) => `./node_modules/${p.name}/src/**/*.{js,ts,jsx,tsx,mdx}`)
+        return [
+            ...staticData.alwaysIncludedTailwindSources,
+            ...this.plugins
+                .filter((f) => f.includeInTailwindSources)
+                .map((p) => `./node_modules/${p.name}/src/**/*.{js,ts,jsx,tsx,mdx}`),
+        ];
     }
     revalidatePluginConfigs() {
         for (const plugin of this.plugins) {
-            plugin.gatherConfig()
+            plugin.gatherConfig();
         }
     }
-    getPackagesToTranspile(): string[]{
-        return this.plugins.map((p) => p.name)
+    getPackagesToTranspile(): string[] {
+        return this.plugins.map((p) => p.name);
     }
 }

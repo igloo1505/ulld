@@ -1,4 +1,7 @@
 {
   "workingOffline": false,
-  "includeInTailwindSources": ["@ulld/plot"]
+  "includeInTailwindSources": ["@ulld/plot"],
+  "alwaysIncludedTailwindSources": [
+    "./node_modules/@ulld/plot/src/**/*.{js,ts,jsx,tsx,mdx}"
+  ]
 }
