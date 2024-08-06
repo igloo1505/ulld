@@ -2,7 +2,7 @@ import React, { MouseEvent } from 'react'
 import { AddEquationFormType } from './types'
 import { TaggableComboBox } from '@ulld/full-form/taggableCombobox'
 import { SideFormContainer } from '@ulld/full-form/layout/sidePanel/multiStepContainer'
-import { TextInputWithBadgeList, TextInputWithBadgeListProps } from '@ulld/full-form/textInputWithBadgeList'
+import { TextInputWithBadgeList } from '@ulld/full-form/textInputWithBadgeList'
 
 
 interface AddEquationFormThreeProps {

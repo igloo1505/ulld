@@ -1,4 +1,4 @@
-import { prisma } from "@ulld/database/db";
+import { prisma } from "@ulld/database";
 
 export const getUniqueTags = async (): Promise<string[]> => {
     let data = await prisma.tag.findMany({

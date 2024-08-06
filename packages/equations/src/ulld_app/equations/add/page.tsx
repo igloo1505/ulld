@@ -1,5 +1,4 @@
 import React from 'react'
-import { PageContentContainer } from '@ulld/ui/pageContentContainer'
 import { serverClient } from '@ulld/api/serverClient'
 import AddEquationFormWrapper, { EditEquationItem } from '../../../components//addEquationFormWrapper'
 

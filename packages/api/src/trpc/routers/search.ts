@@ -11,8 +11,6 @@ import {
     getUniqueSubjects,
     getUniqueTopics,
 } from "../../trpcInternalMethods/taggable/getUniqueTaggables";
-import { Prisma } from "@ulld/database/internalDatabaseTypes";
-// import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 
 export const advancedSearchRouter = router({
     getNoteHrefFromDefinitionId: publicProcedure

@@ -1,4 +1,4 @@
-import { KeyboardEventHandler, KeyboardEvent as KeyboardEventReact, useCallback } from "react"
+import { KeyboardEventHandler, KeyboardEvent as KeyboardEventReact } from "react"
 import { copyStringToClipboard } from "@ulld/utilities/actions/copyStringToClipboard"
 import { toggleSidebar } from "../actions/clientOnly/general"
 
