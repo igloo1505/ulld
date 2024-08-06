@@ -1,0 +1,26 @@
+{
+    "pluginName": "@ulld/plot",
+    "label": "Plot",
+    "pluginId": "698b0bba-c107-4b03-b837-49e85608a8e5",
+    "components": [
+        {
+            "componentName": "LinePlot",
+            "tags": [],
+            "export": "single/line",
+            "embeddable": [
+                {
+                    "regexToInclude": "<LinePlot",
+                    "label": "LinePlot"
+                }
+            ],
+            "componentId": "d4915c80-7a3c-46fe-b382-af626e24c97c"
+        }
+    ],
+    "parsers": {},
+    "pages": [],
+    "events": {},
+    "navigationLinks": [],
+    "commandPalette": [],
+    "tailwind": {},
+    "styles": {}
+}

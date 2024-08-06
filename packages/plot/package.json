@@ -6,7 +6,8 @@
         "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
         "build": "echo 'Add build script here'",
         "test": "echo 'Add test script here'",
-        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json"
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+        "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
     },
     "exports": {
         "./types": "./src/types.ts",
@@ -54,6 +55,33 @@
         "access": "public"
     },
     "files": [
-        "src"
-    ]
+        "src",
+        "pluginConfig.ulld.json"
+    ],
+    "ulld-pluginConfig": {
+        "pluginName": "@ulld/plot",
+        "label": "Plot",
+        "pluginId": "698b0bba-c107-4b03-b837-49e85608a8e5",
+        "components": [
+            {
+                "componentName": "LinePlot",
+                "tags": [],
+                "export": "single/line",
+                "embeddable": [
+                    {
+                        "regexToInclude": "<LinePlot",
+                        "label": "LinePlot"
+                    }
+                ],
+                "componentId": "d4915c80-7a3c-46fe-b382-af626e24c97c"
+            }
+        ],
+        "parsers": {},
+        "pages": [],
+        "events": {},
+        "navigationLinks": [],
+        "commandPalette": [],
+        "tailwind": {},
+        "styles": {}
+    }
 }

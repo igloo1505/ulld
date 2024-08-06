@@ -9,14 +9,14 @@
             "tags": [],
             "slot": "BibliographyPage",
             "export": "bibliographyPage",
-            "componentId": "174d66ac-7f55-4ac4-8797-101179a9ccfc"
+            "componentId": "d82faac6-c123-47e6-b7fc-50a874bb0e56"
         },
         {
             "componentName": "BibEntryDetails",
             "tags": [],
             "slot": "BibEntryDetails",
             "export": "bibEntryDetails",
-            "componentId": "174d66ac-7f55-4ac4-8797-101179a9ccfc"
+            "componentId": "d82faac6-c123-47e6-b7fc-50a874bb0e56"
         }
     ],
     "parsers": {
