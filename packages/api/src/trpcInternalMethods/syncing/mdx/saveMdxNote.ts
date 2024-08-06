@@ -6,15 +6,16 @@ import { prisma } from "@ulld/database/db"
 
 
 
-
-
-
 export const saveMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRegex[] = [], config: AppConfigSchemaOutput) => {
     serverLogger.info(`Creating note: ${note.title}`)
     if (!note.title) {
         serverLogger.info(`No Note Title Found: ${JSON.stringify(note, null, 4)}`)
     }
+
     const createArgs = note.createArgs(autoSettings, config)
+
+    console.log("createArgs: ", createArgs)
+
     if (!createArgs) return
     let saved = await prisma.mdxNote.create(createArgs)
     if (note.definitions?.length > 0) {

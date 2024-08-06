@@ -60,6 +60,27 @@
             "inSidebar": false,
             "inNavbar": false,
             "url": "/math"
+        },
+        {
+            "id": "dailyNote",
+            "matchWeight": 50,
+            "fs": "/dailyNotes",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Daily Notes",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "ulld",
+            "inSidebar": false,
+            "inNavbar": false,
+            "url": "/dailyNote"
         }
     ],
     "bibPath": "/citations.bib",
@@ -291,67 +312,67 @@
         "navigation": [
             {
                 "name": "@ulld/navigation",
-                "version": "latest"
+                "version": "0.0.48"
             }
         ],
         "bibliography": [
             {
                 "name": "@ulld/bib-manager",
-                "version": "latest"
+                "version": "0.0.48"
             }
         ],
         "commandPalette": [
             {
                 "name": "@ulld/command-palette",
-                "version": "latest"
+                "version": "0.0.48"
             }
         ],
         "editor": [
             {
                 "name": "@ulld/editor",
-                "version": "latest"
+                "version": "0.0.48"
             }
         ],
         "math": [
             {
                 "name": "@ulld/equations",
-                "version": "latest"
+                "version": "0.0.48"
             }
         ],
         "form": [
             {
                 "name": "@ulld/full-form",
-                "version": "latest"
+                "version": "0.0.48"
             }
         ],
         "dashboard": [
             {
                 "name": "@ulld/landing-layouts",
-                "version": "latest"
+                "version": "0.0.48"
             }
         ],
         "pdf": [
             {
                 "name": "@ulld/pdf",
-                "version": "latest"
+                "version": "0.0.48"
             }
         ],
         "snippets": [
             {
                 "name": "@ulld/snippets",
-                "version": "latest"
+                "version": "0.0.48"
             }
         ],
         "taskManager": [
             {
                 "name": "@ulld/task-manager",
-                "version": "latest"
+                "version": "0.0.48"
             }
         ],
         "UI": [
             {
                 "name": "@ulld/ui",
-                "version": "latest"
+                "version": "0.0.48"
             }
         ]
     },
@@ -372,7 +393,7 @@
     "plugins": [
         {
             "name": "@ulld/api",
-            "version": "0.0.15",
+            "version": "0.0.48",
             "parserIndex": 0
         }
     ]

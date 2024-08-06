@@ -3,6 +3,7 @@ import type { Route } from "next";
 import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
 import { replaceRecursively } from "@ulld/utilities/utils/general";
 import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
+import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 
 
 export class NoteBase {
@@ -14,8 +15,8 @@ export class NoteBase {
     }
 
     // PRIORITY: Come back and handle this. Issue's popping up in the lawyerVid nested directory, but likely will creep up elsewhere if not resolved.
-    getHref(): Route | undefined {
-        let t = getNoteTypeFromPath(this.rootRelativePath)
+    getHref(noteTypeData: AppConfigSchemaOutput["noteTypes"][number] | "RemoteNote"): Route | undefined {
+        let t = noteTypeData
         if (!t) {
             console.log(`No note href could be found for a note at path ${this.rootRelativePath}`)
             return

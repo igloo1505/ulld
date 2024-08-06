@@ -41,6 +41,7 @@ const NotesByCategoryDonutCard = ({
                 category: k,
                 notes: byNoteType[k],
                 fill: k in colors ? colors[k] : clampInColorArray(i),
+                stroke: "none",
                 href: `/searchAll?${sp.toString()}`,
             };
         });

@@ -3,6 +3,8 @@
 body {
   min-height: 100vh;
   height: fit-content;
+  overscroll-behavior-y: none;
+  text-rendering: optimizeLegibility;
 }
 
 :root {

@@ -4,16 +4,17 @@ import axios from "axios";
 import { OnBackupReturnData, OnRestoreReturnData } from "@ulld/types";
 import { downloadFile } from "@ulld/utilities/downloadFile";
 import { ToastConfigType } from "@ulld/utilities/types";
-
+import { toast } from "@ulld/tailwind/use-toast";
 
 const showToast = (config: ToastConfigType, store?: ToolkitStore) => {
-    let s = store ? store : ((window as any).ulldStore as ToolkitStore);
-    s.dispatch(
-        _showToast(config),
-    );
-}
+    console.log("toastConfig: ", config)
+    // let s = store ? store : ((window as any).ulldStore as ToolkitStore);
+    // console.log("s: ", s);
+    // if (!s) return;
+    toast(config);
+};
 
-export const syncRootDirectory = async (store?: ToolkitStore) => {
+export const syncRootDirectory = async () => {
     let res = await axios.post("/api/events/onSync", {
         offline: !navigator.onLine,
         // TODO: Actually enable these options through something like a 'hard' sync or the like.
@@ -21,10 +22,12 @@ export const syncRootDirectory = async (store?: ToolkitStore) => {
         cleanBeforeSync: false,
     });
     if (res.data?.success) {
-        showToast({
-            title: "Success",
-            description: "File system was synced with database.",
-        }, store)
+        showToast(
+            {
+                title: "Success",
+                description: "File system was synced with database.",
+            },
+        );
     }
     return true;
 };
@@ -38,20 +41,26 @@ export const backupData = async (store?: ToolkitStore) => {
         if (res.data?.success) {
             showToast({
                 title: "Uh Oh",
-                description: "Something went wrong. If this issue persists, please submit an issue on Github.",
-            })
+                description:
+                    "Something went wrong. If this issue persists, please submit an issue on Github.",
+            });
         }
     }
 };
 
-
-export const restoreData = async (data: Record<string, any>, store?: ToolkitStore) => {
-    let res = await axios.post("/api/events/onRestore", data)
-    let resData = res.data as OnRestoreReturnData
+export const restoreData = async (
+    data: Record<string, any>,
+    store?: ToolkitStore,
+) => {
+    let res = await axios.post("/api/events/onRestore", data);
+    let resData = res.data as OnRestoreReturnData;
     if (resData.success) {
-        showToast({
-            title: "Success",
-            description: "Your data was restored successfully."
-        }, store)
+        showToast(
+            {
+                title: "Success",
+                description: "Your data was restored successfully.",
+            },
+            store,
+        );
     }
-}
+};

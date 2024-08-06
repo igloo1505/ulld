@@ -10,6 +10,7 @@ import { DashboardProvider } from "./util/provider";
 import { clampInColorArray } from "./util/staticData";
 import TagListCard from "./cards/tall/tagList/main";
 import { TaggableData } from "./types";
+import { cookies } from "next/headers";
 
 const tagListTopBreakpoint = 980
 
@@ -17,14 +18,13 @@ const tagListTopBreakpoint = 980
 const dashboardId = "ulld-dashboard-container"
 
 const ModularDashboard = async () => {
+    const cookieJar = cookies()
     
     let data = await serverClient.universalNotes.getUserOverview();
 
     const initialTaskData = await serverClient.toDo.getTaskManagerOverview()
 
     let taggables = await serverClient.search.getUniqueTagTopicAndSubjects() as TaggableData
-
-
 
     let categoryColors: Record<string, string> = {};
     data.uniqueNoteTypes.forEach((t, i) => {
@@ -39,10 +39,11 @@ const ModularDashboard = async () => {
             }}
             initialModularData={data}
             initialTaskData={initialTaskData}
+            online={cookieJar.get("onlineStatus")?.value === "online"}
         >
             <div
                 className={cn(
-                    "@container/dashboard py-4 px-4 lg:py-8 md:px-8 w-full h-fit min-h-fit flex flex-col gap-4 extraMedium:max-h-screen",
+                    "@container/dashboard bg-background py-4 px-4 lg:py-8 md:px-8 w-full h-fit min-h-fit flex flex-col gap-4",
                 )}
                 id={dashboardId}
             >

@@ -20,7 +20,7 @@ export type FrontMatterType<T extends unknown = {}> = {
     subjects?: string | string[] | null
     topics?: string | string[] | null
     tags?: string | string[] | null
-    importantValues?: string | null
+    importantValues?: number[] | null
     id?: string | null
     sequential?: number
     sequentialKey?: string

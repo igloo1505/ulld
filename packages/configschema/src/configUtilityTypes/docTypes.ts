@@ -3,6 +3,7 @@ import { zodDocTypeInput } from "../zod/documentConfigSchema";
 import { internalDocTypes } from "../zod/internalDocumentTypes";
 
 export type DocTypes =
+    | string
     | z.output<typeof zodDocTypeInput>
     | z.output<typeof internalDocTypes>;
 
@@ -14,17 +15,15 @@ export const subjectZodObject = z.object({
 });
 
 const _tagZodObject = z.object({
-        value: z.string(),
-        kanbanId: z.union([z.number().int(), z.null(), z.undefined()]).default(null),
-    })
+    value: z.string(),
+    kanbanId: z.union([z.number().int(), z.null(), z.undefined()]).optional(),
+});
 
 export const tagZodObject = z.union([
     _tagZodObject,
-    z.string().transform((a) => _tagZodObject.parse({value: a}))
-])
+    z.string().transform((a) => _tagZodObject.parse({ value: a })),
+]);
 
-
-
-export type TopicZodOutput = z.output<typeof topicZodObject>
-export type SubjectZodOutput = z.output<typeof subjectZodObject>
-export type TagZodOutput = z.output<typeof tagZodObject>
+export type TopicZodOutput = z.output<typeof topicZodObject>;
+export type SubjectZodOutput = z.output<typeof subjectZodObject>;
+export type TagZodOutput = z.output<typeof tagZodObject>;

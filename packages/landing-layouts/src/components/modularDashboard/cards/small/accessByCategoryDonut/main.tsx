@@ -39,6 +39,7 @@ const AccessByCategoryDonut = ({
             category: k,
             notes: byNoteType[k],
             fill: `hsl(var(--chart-${i + 1}))`,
+            stroke: "none"
         }));
 
         let chartConfig: ChartConfig = {};

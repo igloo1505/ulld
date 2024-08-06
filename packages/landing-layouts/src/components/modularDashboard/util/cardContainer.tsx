@@ -10,7 +10,7 @@ const CardContainer = forwardRef(({ children, ...props }: CardContainerProps, re
         <div
             {...props}
             className={cn(
-                "w-full relative border border-border rounded h-full flex flex-col justify-center items-center",
+                "w-full bg-card relative border border-border rounded h-full flex flex-col justify-center items-center",
                 props.className,
             )}
             ref={ref}

@@ -8,7 +8,7 @@ export class Tag {
     value: string
     constructor(props: TagZodOutput) {
         this.value = props.value
-        this.kanbanId = props.kanbanId
+        this.kanbanId = props.kanbanId || null
     }
     toPlainObject() {
         return {

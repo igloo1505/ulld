@@ -1,5 +1,3 @@
-import { BundledTheme } from "shiki";
-
 export const shikiThemeWithType = [
     {
         id: "andromeeda",

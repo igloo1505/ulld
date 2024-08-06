@@ -75,6 +75,7 @@ export const DonutChart = ({
                                         y={viewBox.cy}
                                         textAnchor="middle"
                                         dominantBaseline="middle"
+                                        className={"text-foreground"}
                                     >
                                         <tspan
                                             x={viewBox.cx}

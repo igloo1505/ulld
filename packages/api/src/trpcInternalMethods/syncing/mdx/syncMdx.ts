@@ -10,18 +10,19 @@ import { PrismaClient, Prisma } from "@ulld/database";
 import { AutoSettingWithRegex } from "../../../trpc/types";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
-import { UnifiedMdxParser, UnifiedMdxParserParams } from "../../../types";
+import { UnifiedMdxParser } from "../../../types";
 
 export interface SyncMdxProps {
     file: string;
     dir: string;
+    bookmarked: boolean
     autoSettings: AutoSettingWithRegex[];
     opts: Partial<OnSyncOptions>;
     appConfig: AppConfigSchemaOutput;
     buildData: BuildStaticDataOutput;
     unifiedMdxParser: UnifiedMdxParser;
     prisma: PrismaClient;
-    docTypeData: UnifiedMdxParserParams["docTypeData"]
+    docTypeData: AppConfigSchemaOutput["noteTypes"][number]
 }
 
 export const syncMdx = async ({
@@ -33,22 +34,23 @@ export const syncMdx = async ({
     buildData,
     unifiedMdxParser,
     prisma,
+    bookmarked,
     docTypeData
 }: SyncMdxProps) => {
-    const config = appConfig
-    let s = fs.readFileSync(file, { encoding: "utf-8" });
+    let fileContent = await fs.promises.readFile(file, { encoding: "utf-8" });
+    console.info(`Saving ${file}`)
     let mdxNoteParserParams: MdxNoteParseParams = {
         appConfig,
         parser: unifiedMdxParser,
         docTypeData
     };
+    let rootRelativePath = file.split(dir)[1]
     let note = await MdxNote.fromMdxString(
-        { raw: s, rootRelativePath: file.split(dir)[1] },
-        { getBookmarkState: true },
+        { raw: fileContent, rootRelativePath: rootRelativePath, bookmarked, docTypeData },
+        { },
         mdxNoteParserParams,
     );
 
-    await note.parse(mdxNoteParserParams);
     if (note.remoteUrl && note.trackRemote && opts?.offline !== false) {
         // There has to be a better way of doing this without parsing this twice, but the downside of parsing front matter separately every single time for the <1% of notes that are likely to be remote might be much worse.
         await note.populateFromRemote();
@@ -66,14 +68,14 @@ export const syncMdx = async ({
 
     let exists = await prisma.mdxNote.findFirst(checkExistsArgs);
     if (exists && note.rootRelativePath !== exists.rootRelativePath) {
-        note.setNoteType();
+        note.setNoteType(docTypeData);
         note.rootRelativePath = exists.rootRelativePath;
     }
 
     if (exists !== null) {
         note.id = exists.id;
-        return updateMdxNote(note, autoSettings, config);
+        return updateMdxNote(note, autoSettings, appConfig);
     } else {
-        return saveMdxNote(note, autoSettings, config);
+        return saveMdxNote(note, autoSettings, appConfig);
     }
 };

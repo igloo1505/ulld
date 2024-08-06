@@ -9,7 +9,10 @@ import { Topic } from "../topic";
 import { Subject } from "../subject";
 import { Tag } from "../tag";
 import matter from "gray-matter";
-import { zodDocTypeInput } from "@ulld/configschema/zod/documentConfigSchema";
+import {
+    documentTypeConfigSchema,
+    zodDocTypeInput,
+} from "@ulld/configschema/zod/documentConfigSchema";
 import { BibEntry } from "../BibEntry";
 import { BibCore } from "../Bib";
 import { ReadingList } from "../readingList";
@@ -293,15 +296,23 @@ export const mdxNotePropsSchema = z
             // remoteUrl: fm.remote?.url || a.remoteUrl,
             // trackRemote: fm.remote?.track || a.trackRemote,
             topics: fm.topics
-                ? [...a.topics, ...fm.topics.map((l: string) => new Topic({ value: l }))]
+                ? [
+                    ...a.topics,
+                    ...fm.topics.map((l: string) => new Topic({ value: l })),
+                ]
                 : ([] as Topic[]),
             subjects: fm.subjects
-                ? [...a.subjects, ...fm.subjects.map((l: string) => new Subject({ value: l }))]
+                ? [
+                    ...a.subjects,
+                    ...fm.subjects.map((l: string) => new Subject({ value: l })),
+                ]
                 : ([] as Subject[]),
             tags: fm.tags
                 ? [
                     ...a.tags,
-                    ...fm.tags.map((l: string) => new Tag({ value: l, kanbanId: null })),
+                    ...fm.tags.map(
+                        (l: string) => new Tag({ value: l, kanbanId: null }),
+                    ),
                 ]
                 : ([] as Tag[]),
             firstSync: fm.created ? new Date(fm.created) : a.firstSync,
@@ -349,7 +360,7 @@ export const mdxNoteSummaryPropSchema = mdxNotePropsSchema
 
 export const fromMdxStringOptSchema = z
     .object({
-        getBookmarkState: z.boolean().default(false),
+        noteTypeId: z.string().optional(),
     })
     .default({});
 
@@ -358,7 +369,13 @@ export const mdxNoteFromStringPropsSchema = mdxNotePropsSchema
     .pick({
         raw: true,
         rootRelativePath: true,
-    });
+        bookmarked: true,
+    })
+    .merge(
+        z.object({
+            docTypeData: documentTypeConfigSchema,
+        }),
+    );
 
 export const mdxNoteIntriguingValSummaryPropsSchema = mdxNotePropsSchema
     .innerType()
