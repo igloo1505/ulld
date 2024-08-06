@@ -16,11 +16,9 @@ import {
 } from "@ulld/configschema/configUtilityTypes/docTypes";
 import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
-import { getNoteTypeFromPath } from "@ulld/configschema/configUtilityTypes/general";
 import { SequentialList } from "./SequentialList";
 import { Definition } from "./definition";
 import { ensureDate } from "../data/calendarAndDate";
-import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
 import {
     MdxNotePlainObject,
     mdxNoteZodObject,
@@ -235,12 +233,6 @@ export class MdxNote extends MdxNoteProtocol {
     }
 
     canSave() {
-        console.log(
-            "this.title, this.rootRelativePath, this.raw: ",
-            this.title,
-            this.rootRelativePath,
-            Boolean(this.raw),
-        );
         if (!this.title) return false;
         if (!this.rootRelativePath) return false;
         if (!this.raw) return false;
@@ -261,7 +253,6 @@ export class MdxNote extends MdxNoteProtocol {
         }
         this.checkAutoProperties(autoSettings, config);
         if (!this.canSave()) {
-            console.log(`Returning undefined because canSave returned false.`);
             return undefined;
         }
         let docTypeData = this.docTypeData
@@ -495,6 +486,9 @@ ${m.groups.content}
         }
         let res = grayMatter(this.raw);
         let data = res.data as Partial<FrontMatterType>;
+        this.applyParsedFrontMatter(data)
+    }
+    applyParsedFrontMatter(data: FrontMatterType & Record<string, any>, setFrontMatterProperty: boolean = false){
         if (data.title) {
             this.title = data.title;
         }
@@ -520,6 +514,9 @@ ${m.groups.content}
         /* data.remoteUrl && (this.remoteUrl = data.remoteUrl); */
         data.importantValues && (this.importantValues = data.importantValues);
         this.haveSetFrontMatter = true;
+        if(setFrontMatterProperty){
+            this.frontMatter = data
+        }
     }
     /* TODO: Actually apply the new parser now, once everything is moved over to the package based parser approach. */
     async parse(params: MdxNoteParseParams) {
@@ -552,7 +549,9 @@ ${m.groups.content}
         });
         this.formatted = res.content;
         if (res.data) {
-            this.frontMatter = res.data;
+            console.log(`Applying parsed front matter`)
+            console.log("res.data: ", res.data)
+            this.applyParsedFrontMatter(res.data, true)
         }
         /* this.formatted = this.parseEquationTags(formatted); // Math package */
         this.equationIds = this.getEquationIds(this.formatted || this.raw);
