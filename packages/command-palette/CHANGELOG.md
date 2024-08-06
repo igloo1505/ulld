@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.51
+
+### Patch Changes
+
+- Update equations package to address layout issues.
+- Updated dependencies
+  - @ulld/api@0.0.51
+  - @ulld/bib-manager@0.0.51
+  - @ulld/calendar@0.0.51
+  - @ulld/configschema@0.0.51
+  - @ulld/database@0.0.48
+  - @ulld/developer@0.0.51
+  - @ulld/diagram@0.0.51
+  - @ulld/editor@0.0.51
+  - @ulld/equations@0.0.51
+  - @ulld/hooks@0.0.51
+  - @ulld/logger@0.0.45
+  - @ulld/parsers@0.0.51
+  - @ulld/render@0.0.51
+  - @ulld/snippets@0.0.51
+  - @ulld/state@0.0.51
+  - @ulld/tailwind@0.0.45
+  - @ulld/task-manager@0.0.51
+  - @ulld/ui@0.0.51
+  - @ulld/utilities@0.0.51
+  - @ulld/whiteboard@0.0.51
+
 ## 0.0.50
 
 ### Patch Changes

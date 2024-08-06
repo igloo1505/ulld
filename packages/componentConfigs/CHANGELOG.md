@@ -1,5 +1,21 @@
 # @ulld/component-configs
 
+## 0.0.51
+
+### Patch Changes
+
+- Update equations package to address layout issues.
+- Updated dependencies
+  - @ulld/api@0.0.51
+  - @ulld/typescript-config@0.0.45
+  - @ulld/configschema@0.0.51
+  - @ulld/developer@0.0.51
+  - @ulld/hooks@0.0.51
+  - @ulld/state@0.0.51
+  - @ulld/tailwind@0.0.45
+  - @ulld/ui@0.0.51
+  - @ulld/utilities@0.0.51
+
 ## 0.0.50
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.51
+
+### Patch Changes
+
+- Update equations package to address layout issues.
+- Updated dependencies
+  - @ulld/api@0.0.51
+  - @ulld/component-map@0.0.51
+  - @ulld/configschema@0.0.51
+  - @ulld/database@0.0.48
+  - @ulld/parsers@0.0.51
+
 ## 0.0.50
 
 ### Patch Changes

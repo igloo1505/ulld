@@ -1,5 +1,19 @@
 # @ulld/render
 
+## 0.0.51
+
+### Patch Changes
+
+- Update equations package to address layout issues.
+- Updated dependencies
+  - @ulld/api@0.0.51
+  - @ulld/component-map@0.0.51
+  - @ulld/typescript-config@0.0.45
+  - @ulld/configschema@0.0.51
+  - @ulld/hooks@0.0.51
+  - @ulld/jest-presets@0.0.45
+  - @ulld/utilities@0.0.51
+
 ## 0.0.50
 
 ### Patch Changes

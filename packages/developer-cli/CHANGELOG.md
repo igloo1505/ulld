@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.51
+
+### Patch Changes
+
+- Update equations package to address layout issues.
+- Updated dependencies
+  - @ulld/developer@0.0.51
+  - @ulld/developer-schemas@0.0.45
+
 ## 0.0.50
 
 ### Patch Changes

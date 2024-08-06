@@ -1,5 +1,21 @@
 # @ulld/api
 
+## 0.0.51
+
+### Patch Changes
+
+- Update equations package to address layout issues.
+- Updated dependencies
+  - @ulld/base-configs@0.0.45
+  - @ulld/configschema@0.0.51
+  - @ulld/database@0.0.48
+  - @ulld/developer@0.0.51
+  - @ulld/logger@0.0.45
+  - @ulld/parsers@0.0.51
+  - @ulld/state@0.0.51
+  - @ulld/tailwind@0.0.45
+  - @ulld/utilities@0.0.51
+
 ## 0.0.50
 
 ### Patch Changes

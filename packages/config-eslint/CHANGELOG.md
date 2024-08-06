@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.47
+
+### Patch Changes
+
+- Update equations package to address layout issues.
+
 ## 0.0.46
 
 ### Patch Changes

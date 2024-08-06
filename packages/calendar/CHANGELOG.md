@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.51
+
+### Patch Changes
+
+- Update equations package to address layout issues.
+- Updated dependencies
+  - @ulld/developer@0.0.51
+
 ## 0.0.50
 
 ### Patch Changes

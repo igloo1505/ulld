@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.51
+
+### Patch Changes
+
+- Update equations package to address layout issues.
+- Updated dependencies
+  - @ulld/api@0.0.51
+  - @ulld/component-configs@0.0.51
+  - @ulld/configschema@0.0.51
+  - @ulld/default-image-map@0.0.51
+  - @ulld/hooks@0.0.51
+  - @ulld/icons@0.0.51
+  - @ulld/render@0.0.51
+  - @ulld/state@0.0.51
+  - @ulld/tailwind@0.0.45
+  - @ulld/utilities@0.0.51
+
 ## 0.0.50
 
 ### Patch Changes
