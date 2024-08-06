@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.52
+
+### Patch Changes
+
+- Fix issue with trpc missing routes.
+- Updated dependencies
+  - @ulld/api@0.0.52
+  - @ulld/bib-manager@0.0.52
+  - @ulld/calendar@0.0.52
+  - @ulld/configschema@0.0.52
+  - @ulld/database@0.0.49
+  - @ulld/developer@0.0.52
+  - @ulld/diagram@0.0.52
+  - @ulld/editor@0.0.52
+  - @ulld/equations@0.0.52
+  - @ulld/hooks@0.0.52
+  - @ulld/logger@0.0.46
+  - @ulld/parsers@0.0.52
+  - @ulld/render@0.0.52
+  - @ulld/snippets@0.0.52
+  - @ulld/state@0.0.52
+  - @ulld/tailwind@0.0.46
+  - @ulld/task-manager@0.0.52
+  - @ulld/ui@0.0.52
+  - @ulld/utilities@0.0.52
+  - @ulld/whiteboard@0.0.52
+
 ## 0.0.51
 
 ### Patch Changes

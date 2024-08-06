@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.52
+
+### Patch Changes
+
+- Fix issue with trpc missing routes.
+- Updated dependencies
+  - @ulld/configschema@0.0.52
+  - @ulld/database@0.0.49
+  - @ulld/developer@0.0.52
+  - @ulld/utilities@0.0.52
+
 ## 0.0.51
 
 ### Patch Changes

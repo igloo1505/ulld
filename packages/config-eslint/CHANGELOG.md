@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.48
+
+### Patch Changes
+
+- Fix issue with trpc missing routes.
+
 ## 0.0.47
 
 ### Patch Changes

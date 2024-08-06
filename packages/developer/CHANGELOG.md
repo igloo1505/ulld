@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.52
+
+### Patch Changes
+
+- Fix issue with trpc missing routes.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.48
+  - @ulld/typescript-config@0.0.46
+  - @ulld/configschema@0.0.52
+  - @ulld/database@0.0.49
+  - @ulld/logger@0.0.46
+
 ## 0.0.51
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @repo/jest-presets
 
+## 0.0.46
+
+### Patch Changes
+
+- Fix issue with trpc missing routes.
+
 ## 0.0.45
 
 ### Patch Changes

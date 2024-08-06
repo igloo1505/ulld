@@ -1,5 +1,24 @@
 # @ulld/health-tracking
 
+## 0.0.52
+
+### Patch Changes
+
+- Fix issue with trpc missing routes.
+- Updated dependencies
+  - @ulld/api@0.0.52
+  - @ulld/typescript-config@0.0.46
+  - @ulld/configschema@0.0.52
+  - @ulld/developer@0.0.52
+  - @ulld/hooks@0.0.52
+  - @ulld/jest-presets@0.0.46
+  - @ulld/logger@0.0.46
+  - @ulld/plot@0.0.52
+  - @ulld/state@0.0.52
+  - @ulld/tailwind@0.0.46
+  - @ulld/ui@0.0.52
+  - @ulld/utilities@0.0.52
+
 ## 0.0.51
 
 ### Patch Changes

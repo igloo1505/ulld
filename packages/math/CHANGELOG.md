@@ -1,5 +1,18 @@
 # @ulld/math
 
+## 0.0.52
+
+### Patch Changes
+
+- Fix issue with trpc missing routes.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.46
+  - @ulld/configschema@0.0.52
+  - @ulld/hooks@0.0.52
+  - @ulld/icons@0.0.52
+  - @ulld/state@0.0.52
+  - @ulld/utilities@0.0.52
+
 ## 0.0.51
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/configschema
 
+## 0.0.52
+
+### Patch Changes
+
+- Fix issue with trpc missing routes.
+- Updated dependencies
+  - @ulld/base-configs@0.0.46
+  - @ulld/developer-schemas@0.0.46
+  - @ulld/icons@0.0.52
+  - @ulld/tailwind@0.0.46
+  - @ulld/utilities@0.0.52
+
 ## 0.0.51
 
 ### Patch Changes

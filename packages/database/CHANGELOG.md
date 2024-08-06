@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.49
+
+### Patch Changes
+
+- Fix issue with trpc missing routes.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.46
+
 ## 0.0.48
 
 ### Patch Changes

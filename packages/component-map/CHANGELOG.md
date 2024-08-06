@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.52
+
+### Patch Changes
+
+- Fix issue with trpc missing routes.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.52
+  - @ulld/calendar@0.0.52
+  - @ulld/default-image-map@0.0.52
+  - @ulld/diagram@0.0.52
+  - @ulld/editor@0.0.52
+  - @ulld/embeddable-components@0.0.52
+  - @ulld/equations@0.0.52
+  - @ulld/full-form@0.0.52
+  - @ulld/journal@0.0.52
+  - @ulld/navigation@0.0.52
+  - @ulld/notebook@0.0.52
+  - @ulld/pdf@0.0.52
+  - @ulld/plot@0.0.52
+  - @ulld/snippets@0.0.52
+  - @ulld/tailwind@0.0.46
+  - @ulld/task-manager@0.0.52
+  - @ulld/whiteboard@0.0.52
+
 ## 0.0.51
 
 ### Patch Changes

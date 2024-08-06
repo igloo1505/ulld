@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.52
+
+### Patch Changes
+
+- Fix issue with trpc missing routes.
+- Updated dependencies
+  - @ulld/database@0.0.49
+  - @ulld/math@0.0.52
+  - @ulld/tailwind@0.0.46
+
 ## 0.0.51
 
 ### Patch Changes

@@ -1,5 +1,27 @@
 # @ulld/landing-layouts
 
+## 0.0.52
+
+### Patch Changes
+
+- Fix issue with trpc missing routes.
+- Updated dependencies
+  - @ulld/api@0.0.52
+  - @ulld/bib-manager@0.0.52
+  - @ulld/calendar@0.0.52
+  - @ulld/typescript-config@0.0.46
+  - @ulld/configschema@0.0.52
+  - @ulld/developer@0.0.52
+  - @ulld/hooks@0.0.52
+  - @ulld/icons@0.0.52
+  - @ulld/journal@0.0.52
+  - @ulld/plot@0.0.52
+  - @ulld/state@0.0.52
+  - @ulld/tailwind@0.0.46
+  - @ulld/ui@0.0.52
+  - @ulld/utilities@0.0.52
+  - @ulld/whiteboard@0.0.52
+
 ## 0.0.51
 
 ### Patch Changes

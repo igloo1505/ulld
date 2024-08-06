@@ -1,5 +1,18 @@
 # @ulld/default-image-map
 
+## 0.0.52
+
+### Patch Changes
+
+- Fix issue with trpc missing routes.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.48
+  - @ulld/typescript-config@0.0.46
+  - @ulld/configschema@0.0.52
+  - @ulld/logger@0.0.46
+  - @ulld/tailwind@0.0.46
+  - @ulld/utilities@0.0.52
+
 ## 0.0.51
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.52
+
+### Patch Changes
+
+- Fix issue with trpc missing routes.
+- Updated dependencies
+  - @ulld/developer@0.0.52
+
 ## 0.0.51
 
 ### Patch Changes
