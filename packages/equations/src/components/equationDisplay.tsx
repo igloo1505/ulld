@@ -20,6 +20,7 @@ interface EquationDisplayProps {
 
 export const EquationDisplay = ({ equation, className, noDefaultClasses, bareAss }: EquationDisplayProps) => {
     const { toast } = useToast()
+    console.log("equation: ", equation)
     const id = equation.id && equation.id >= 0 ? `equation-${equation.id}` : "addEquation_Equation"
 
     const copyIdToClipboard = async () => {

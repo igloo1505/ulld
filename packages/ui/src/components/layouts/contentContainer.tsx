@@ -66,7 +66,6 @@ export const PageContentContainer = ({ children, containerId, notebook, classNam
                 {anyCenter && children}
                 {!anyCenter && <div className={clsx("px-8 md:px-16 w-full min-h-full relative pb-6", className_lastChild && className_lastChild)}>{children}</div>}
             </div>
-            <Footer />
         </main>
     )
 }

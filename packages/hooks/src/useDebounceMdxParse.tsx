@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState, Fragment, useRef } from "react";
 import { run } from "@mdx-js/mdx";
-import { client } from "@ulld/api/client";
+/* import { client } from "@ulld/api/client"; */
 import * as runtime from "react/jsx-runtime";
 import * as devRuntime from "react/jsx-dev-runtime";
 import { MDXComponents, MDXContent, MDXModule } from "mdx/types";
@@ -44,11 +44,11 @@ export const useDebounceMdxParse = (
     const [appConfig] = useAppConfig()
 
     const handleParse = async (_value: string) => {
-        let initiallyParsed = await parseMdxString({content: _value, appConfig});
-        let compiled = await client.mdx.parseMdxString.mutate({
-            content: initiallyParsed,
-            ...opts,
-        });
+        let compiled = await parseMdxString({content: _value, appConfig});
+        /* let compiled = await client.mdx.parseMdxString.mutate({ */
+        /*     content: initiallyParsed, */
+        /*     ...opts, */
+        /* }); */
         const res = await run(compiled, {
             Fragment: Fragment,
             jsx: runtime.jsx as any,
