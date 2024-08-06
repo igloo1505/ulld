@@ -17,8 +17,6 @@ interface AddEquationFormWrapperProps {
 }
 
 
-
-
 /* TODO: Come back and add dynamic math input here as well. Package is listed in NotesAppToDo.mdx */
 
 const AddEquationFormWrapper = ({ edit }: AddEquationFormWrapperProps) => {

@@ -42,16 +42,10 @@ export class ThemeFile {
     }
     getUnifiedContent() {
         return `html[data-ulld-theme="${this.name}"] {
-@layer base {
-body,
-.light,
-.light * {${this.lightContent()}
-}
-.dark {
-   &:not(.light *) {
+${this.lightContent()}
+.dark:not(.light *),
+&.dark {
        ${this.darkContent()}
-   }
-}
 }
 }
 `

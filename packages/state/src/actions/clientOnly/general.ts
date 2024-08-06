@@ -23,8 +23,7 @@ export const toggleDarkMode = async () => {
   if (html) {
     // consolidate all of these monstrosities into a single html attribute or class. Especially now since moving away from jupyter-react.
     let newDarkmodeString = newDarkMode ? "dark" : "light";
-    // html.classList.toggle("dark")
-    document.body.classList.toggle("dark");
+    html.classList.toggle("dark")
     html.setAttribute("data-color-mode", newDarkmodeString);
     html.setAttribute("data-theme", newDarkmodeString);
   }
