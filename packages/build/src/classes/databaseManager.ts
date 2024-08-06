@@ -42,7 +42,7 @@ See the docs ${terminalLink("here", "https://uhlittlelessdum.com/blog/tutorials/
             this.logVerbose("Generating database schema.");
             this.execPackageJsonScript(
                 pkgManager,
-                "db:migrate",
+                "db:generate",
                 this.paths.projectRoot,
             );
         }

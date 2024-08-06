@@ -90,7 +90,7 @@ const Footer = ({ logo: Logo }: FooterProps) => {
                     </div>
                 </div>
                 <div>
-                    <p className="text-center text-gray-500 dark:text-gray-400 mt-2">{`© Uh Little Less Dum ${new Date().getFullYear()} - All rights reserved, but do your thang`}</p>
+                    <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-2">{`© Uh Little Less Dum ${new Date().getFullYear()} - All rights reserved, but do your thang`}</p>
                 </div>
             </div>
         </footer>

@@ -46,6 +46,7 @@ const AddEquationForm = ({ form }: AddEquationFormProps) => {
         e.stopPropagation()
         e.preventDefault()
         let vals = form.getValues()
+        console.log("vals: ", vals)
         let res = await client.equations.addEquation.mutate(vals)
         toast({
             title: "Success",

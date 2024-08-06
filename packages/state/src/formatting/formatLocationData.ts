@@ -2,10 +2,9 @@ import { prisma } from "@ulld/database/db";
 import { NoteTypeOverview, locationDataItem } from "./formatLocationDataZodSchema"
 import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes"
 import { DocumentTypeConfig } from "@ulld/configschema/zod/documentConfigSchema";
-import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
-import { ParsedAppConfig } from '@ulld/configschema/types'
-
+import { AppConfigSchemaOutput } from '@ulld/configschema/types'
 export type NoteTypeOverviewList = { [k in keyof DocTypes | "Dream"]: NoteTypeOverview }
+import { readAppConfig } from '@ulld/developer/readAppConfig';
 
 
 export type NoteTypeOverviewTemp = ({
@@ -17,8 +16,8 @@ export type NoteTypeOverviewTemp = ({
     lastSync: number
 }) & DocumentTypeConfig
 
-export const formatLocationData = async (_config?: ParsedAppConfig): Promise<NoteTypeOverview[]> => {
-    const config = _config || getInternalConfig(_config)
+export const formatLocationData = async (_config?: AppConfigSchemaOutput): Promise<NoteTypeOverview[]> => {
+    const config = _config || await readAppConfig()
     let bookmarks = 0
 
     const notes = await prisma.mdxNote.findMany({
@@ -35,7 +34,7 @@ export const formatLocationData = async (_config?: ParsedAppConfig): Promise<Not
     } as {
             [k in DocTypes]: NoteTypeOverviewTemp
         }
-    config.noteTypes.forEach((n) => {
+    config.noteTypes?.forEach((n) => {
         map[n.docType as DocTypes] = {
             ...n,
             notes: [],

@@ -1,7 +1,6 @@
 import { PackageJsonType } from "@ulld/developer-schemas/fullPackageJson";
 import { DeveloperConfigOutput, ParserKey } from "@ulld/configschema/developer";
 import path from "path";
-import fs from "fs";
 import {
     AnySubSlotKey,
     PluginSlotKey,
@@ -17,6 +16,7 @@ import { PackageJson } from "./baseClasses/pkgJson";
 import { PluginSettingsPage } from "./pluginSettingsPage";
 import { Path } from "./utilityClasses/Path";
 import { JsonFile } from "@ulld/utilities/jsonFileClass";
+import devData from "../../staticDevelopmentData.json"
 
 export class UlldPlugin extends ShellManager {
     pluginConfig: DeveloperConfigOutput | "Unusable" = "Unusable";
@@ -143,7 +143,7 @@ export class UlldPlugin extends ShellManager {
         }
         this.hasDocumentation = Boolean(this.pluginConfig.documentation);
         this.embeddables = this.getEmbeddables();
-        this.includeInTailwindSources = [
+        this.includeInTailwindSources = devData.includeInTailwindSources.includes(this.name) || [
             this.embeddables,
             this.pages,
             this.components,

@@ -14,12 +14,11 @@ interface EquationDisplayProps {
     equation: NonNullable<EditEquationItem> | AddEquationInterface
     className?: string
     noDefaultClasses?: boolean
-    latexAlreadyParsed?: boolean
     bareAss?: boolean
 
 }
 
-export const EquationDisplay = ({ equation, className, noDefaultClasses, latexAlreadyParsed, bareAss }: EquationDisplayProps) => {
+export const EquationDisplay = ({ equation, className, noDefaultClasses, bareAss }: EquationDisplayProps) => {
     const { toast } = useToast()
     const id = equation.id && equation.id >= 0 ? `equation-${equation.id}` : "addEquation_Equation"
 
@@ -38,7 +37,11 @@ export const EquationDisplay = ({ equation, className, noDefaultClasses, latexAl
         >
             <CardHeader>
                 <CardTitle>
-                    <MdxContentCLIENT content={equation.title} inline stylesId={`${id}-title`} />
+                    <MdxContentCLIENT
+                        content={equation.title}
+                        inline
+                        stylesId={`${id}-title`}
+                    />
                 </CardTitle>
                 {equation.desc && <CardDescription>
                     <MdxContentCLIENT applyUserStyles small content={equation.desc} />

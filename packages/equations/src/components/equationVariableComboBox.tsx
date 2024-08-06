@@ -69,7 +69,7 @@ const EquationVariableComboBox = ({
             </PopoverTrigger>
             <PopoverContent className="w-[200px] p-0">
               <Command>
-                <CommandInput placeholder="Search language..." />
+                <CommandInput placeholder="Search variables..." />
                 <CommandEmpty>No variables found.</CommandEmpty>
                 <CommandGroup>
                   {vars.map((t) => (

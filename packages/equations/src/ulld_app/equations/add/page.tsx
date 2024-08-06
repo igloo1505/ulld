@@ -22,9 +22,7 @@ const AddEquationPage = async ({ searchParams: { edit } }: PageProps) => {
     }
 
     return (
-        <PageContentContainer>
-            <AddEquationFormWrapper edit={editItem} />
-        </PageContentContainer>
+        <AddEquationFormWrapper edit={editItem} />
     )
 }
 

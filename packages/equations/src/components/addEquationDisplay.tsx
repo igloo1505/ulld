@@ -18,7 +18,8 @@ const AddEquationDisplay = ({ form }: AddEquationDisplayProps) => {
                 equation={{
                     id: -1,
                     ...formData,
-                }} />
+                }}
+        />
     )
 }
 

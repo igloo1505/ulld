@@ -213,6 +213,12 @@ export const appConfigSchema = z.object({
                     version: "latest",
                 });
             }
+            if (!names.includes("@ulld/plot")) {
+                newItems.push({
+                    name: "@ulld/plot",
+                    version: staticBuildData.currentPackageVersions["@ulld/plot"],
+                });
+            }
             return newItems;
         })
         .default([
@@ -220,6 +226,11 @@ export const appConfigSchema = z.object({
                 name: "@ulld/api",
                 parserIndex: 0,
                 version: staticBuildData.currentPackageVersions["@ulld/api"],
+            },
+            {
+                name: "@ulld/plot",
+                parserIndex: 0,
+                version: staticBuildData.currentPackageVersions["@ulld/plot"],
             },
         ]),
 });

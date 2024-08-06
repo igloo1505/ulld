@@ -1,3 +1,4 @@
 {
-  "workingOffline": false
+  "workingOffline": false,
+  "includeInTailwindSources": ["@ulld/plot"]
 }
