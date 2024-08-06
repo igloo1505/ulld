@@ -1,5 +1,11 @@
 # @repo/jest-presets
 
+## 0.0.44
+
+### Patch Changes
+
+- Update dashboard and included @ulld/plot in the tailwind config sources.
+
 ## 0.0.43
 
 ### Patch Changes

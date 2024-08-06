@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.50
+
+### Patch Changes
+
+- Update dashboard and included @ulld/plot in the tailwind config sources.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.50
+  - @ulld/calendar@0.0.50
+  - @ulld/default-image-map@0.0.50
+  - @ulld/diagram@0.0.50
+  - @ulld/editor@0.0.50
+  - @ulld/embeddable-components@0.0.50
+  - @ulld/equations@0.0.50
+  - @ulld/full-form@0.0.50
+  - @ulld/journal@0.0.50
+  - @ulld/navigation@0.0.50
+  - @ulld/notebook@0.0.50
+  - @ulld/pdf@0.0.50
+  - @ulld/plot@0.0.50
+  - @ulld/snippets@0.0.50
+  - @ulld/tailwind@0.0.44
+  - @ulld/task-manager@0.0.50
+  - @ulld/whiteboard@0.0.50
+
 ## 0.0.49
 
 ### Patch Changes

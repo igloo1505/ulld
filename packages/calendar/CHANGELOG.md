@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.50
+
+### Patch Changes
+
+- Update dashboard and included @ulld/plot in the tailwind config sources.
+- Updated dependencies
+  - @ulld/developer@0.0.50
+
 ## 0.0.49
 
 ### Patch Changes

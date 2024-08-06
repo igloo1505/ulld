@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.50
+
+### Patch Changes
+
+- Update dashboard and included @ulld/plot in the tailwind config sources.
+- Updated dependencies
+  - @ulld/api@0.0.50
+  - @ulld/bib-manager@0.0.50
+  - @ulld/calendar@0.0.50
+  - @ulld/configschema@0.0.50
+  - @ulld/database@0.0.47
+  - @ulld/developer@0.0.50
+  - @ulld/diagram@0.0.50
+  - @ulld/editor@0.0.50
+  - @ulld/equations@0.0.50
+  - @ulld/hooks@0.0.50
+  - @ulld/logger@0.0.44
+  - @ulld/parsers@0.0.50
+  - @ulld/render@0.0.50
+  - @ulld/snippets@0.0.50
+  - @ulld/state@0.0.50
+  - @ulld/tailwind@0.0.44
+  - @ulld/task-manager@0.0.50
+  - @ulld/ui@0.0.50
+  - @ulld/utilities@0.0.50
+  - @ulld/whiteboard@0.0.50
+
 ## 0.0.49
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.50
+
+### Patch Changes
+
+- Update dashboard and included @ulld/plot in the tailwind config sources.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.46
+  - @ulld/typescript-config@0.0.44
+  - @ulld/configschema@0.0.50
+  - @ulld/database@0.0.47
+  - @ulld/logger@0.0.44
+
 ## 0.0.49
 
 ### Patch Changes

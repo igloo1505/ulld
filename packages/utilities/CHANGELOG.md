@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.50
+
+### Patch Changes
+
+- Update dashboard and included @ulld/plot in the tailwind config sources.
+- Updated dependencies
+  - @ulld/database@0.0.47
+  - @ulld/math@0.0.50
+  - @ulld/tailwind@0.0.44
+
 ## 0.0.49
 
 ### Patch Changes

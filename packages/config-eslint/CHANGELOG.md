@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.46
+
+### Patch Changes
+
+- Update dashboard and included @ulld/plot in the tailwind config sources.
+
 ## 0.0.45
 
 ### Patch Changes

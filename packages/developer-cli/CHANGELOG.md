@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.50
+
+### Patch Changes
+
+- Update dashboard and included @ulld/plot in the tailwind config sources.
+- Updated dependencies
+  - @ulld/developer@0.0.50
+  - @ulld/developer-schemas@0.0.44
+
 ## 0.0.49
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.50
+
+### Patch Changes
+
+- Update dashboard and included @ulld/plot in the tailwind config sources.
+- Updated dependencies
+  - @ulld/api@0.0.50
+  - @ulld/component-map@0.0.50
+  - @ulld/configschema@0.0.50
+  - @ulld/database@0.0.47
+  - @ulld/parsers@0.0.50
+
 ## 0.0.49
 
 ### Patch Changes
