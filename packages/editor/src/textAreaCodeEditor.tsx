@@ -39,17 +39,14 @@ export const TextAreaCodeEditor = ({ value = "", onChange, initialValueSource = 
     useEffect(() => {
         if(!isInitial) return
         if(initialValueSource === "storage"){
-            console.log(`useInitialLocalStorage`, internalValue)
             onChange && onChange(internalValue)
         } else {
-            console.log(`dont useInitialLocalStorage`)
             setInternalValue(value)
         }
         setIsInitial(false)
     }, [])
 
     useEffect(() => {
-        console.log("internalValue: ", internalValue)
        onChange && onChange(internalValue) 
     }, [internalValue])
 

@@ -41,6 +41,7 @@ export interface TextInputWithBadgeListProps<
     };
 }
 
+
 export const TextInputWithBadgeList = <T extends FieldValues>({
     desc,
     label,
@@ -64,6 +65,7 @@ export const TextInputWithBadgeList = <T extends FieldValues>({
             "If you include a noSpaces, maxLength or minLength property, you must also include an onValdiationError property to handle the errors.",
         );
     }
+
     const validate = (value: string) => {
         if (noSpaces && value.indexOf(" ") !== -1) {
             if (!onValidationError) return;
@@ -79,6 +81,7 @@ export const TextInputWithBadgeList = <T extends FieldValues>({
         }
         return true;
     };
+
     return (
         <FormField
             control={form.control}
@@ -115,7 +118,7 @@ export const TextInputWithBadgeList = <T extends FieldValues>({
                     </FormControl>
                     {desc && <FormDescription>{desc}</FormDescription>}
                     <FormMessage />
-                    {Array.isArray(values) && values.length > 0 && (
+                    {(Array.isArray(values) && values.length > 0) && (
                         <div
                             className={
                                 "max-w-full flex flex-row gap-2 justify-start items-center flex-wrap pt-4"
@@ -147,6 +150,7 @@ export const TextInputWithBadgeList = <T extends FieldValues>({
             )}
         />
     );
+
 };
 
 TextInputWithBadgeList.displayName = "TextInputWithBadgeList";

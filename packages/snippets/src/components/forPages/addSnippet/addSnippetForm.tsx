@@ -15,6 +15,7 @@ interface AddSnippetFormProps<T extends FieldValues> {
 
 const AddSnippetForm = <T extends FieldValues>({ form }: AddSnippetFormProps<T>) => {
     const { toast } = useToast();
+
     const handleSubmit = async () => {
         let data = form.getValues();
         delete data.keywordInput;

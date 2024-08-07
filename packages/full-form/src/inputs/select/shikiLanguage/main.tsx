@@ -1,3 +1,4 @@
+"use client"
 import {
     FormField,
     FormItem,
@@ -40,7 +41,9 @@ export const ShikiLanguageSelect = <T extends FieldValues>({
     placeholder = "Select a language",
     classes = {},
 }: ShikiLanguageSelectProps<T>) => {
+
     const form = useFormContext<T>();
+
     return (
         <FormField
             control={form.control}

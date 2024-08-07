@@ -5,7 +5,7 @@ import { cn } from "@ulld/utilities/cn";
 
 interface SnippetListProps extends SnippetListInternalProps { }
 
-const SnippetList = ({ snippets }: SnippetListProps) => {
+const SnippetList = ({ snippets = [] }: SnippetListProps) => {
     return (
         <div
             className={

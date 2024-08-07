@@ -495,7 +495,7 @@ ${fullSlotMap.missingItems.map((k, i) => `${i + 1}. ${k.slot} -> ${k.subSlot}`).
         }
     }
     getTailwindSources(): string[] {
-        let items = staticData.alwaysIncludedTailwindSources
+        let items = staticData.alwaysIncludedTailwindSources as string[]
         let additionalItems = this.plugins
                 .filter((f) => f.includeInTailwindSources)
                 .map((p) => `./node_modules/${p.name}/src/**/*.{js,ts,jsx,tsx,mdx}`)

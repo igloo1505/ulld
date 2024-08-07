@@ -1,3 +1,4 @@
+"use client"
 import {
   FormField,
   FormItem,
@@ -35,11 +36,14 @@ interface CodeTextAreaProps<T extends FieldValues, H extends HTMLElement>
 export const CodeInput = <T extends FieldValues>(
   props: CodeTextAreaProps<T, HTMLTextAreaElement>,
 ) => {
+
     const textAreaId = makeValidId(props.localStorageKey.slice(0, 12))
+
     const form = useFormContext<T>();
         useEventListener("ulld-editor-close", () => {
         document?.getElementById(textAreaId)?.focus()
     })
+
   return (
     <FormField
       control={form.control}
@@ -65,6 +69,7 @@ export const CodeInput = <T extends FieldValues>(
       )}
      />
   );
+
 };
 
 CodeInput.displayName = "CodeTextArea";
