@@ -1,5 +1,24 @@
 # @ulld/pdf
 
+## 0.0.55
+
+### Patch Changes
+
+- Fix some task-manager UI issues, and added a method to remove image background to the trpc router.
+- Updated dependencies
+  - @ulld/api@0.0.55
+  - @ulld/eslint-config@0.0.51
+  - @ulld/configschema@0.0.55
+  - @ulld/developer@0.0.55
+  - @ulld/hooks@0.0.55
+  - @ulld/icons@0.0.55
+  - @ulld/jest-presets@0.0.49
+  - @ulld/state@0.0.55
+  - @ulld/tailwind@0.0.49
+  - @ulld/ui@0.0.55
+  - @ulld/utilities@0.0.55
+  - @ulld/whiteboard@0.0.55
+
 ## 0.0.54
 
 ### Patch Changes

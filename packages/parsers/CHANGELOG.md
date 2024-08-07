@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.55
+
+### Patch Changes
+
+- Fix some task-manager UI issues, and added a method to remove image background to the trpc router.
+- Updated dependencies
+  - @ulld/configschema@0.0.55
+  - @ulld/database@0.0.52
+  - @ulld/developer@0.0.55
+  - @ulld/utilities@0.0.55
+
 ## 0.0.54
 
 ### Patch Changes

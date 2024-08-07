@@ -1,5 +1,19 @@
 # @ulld/render
 
+## 0.0.55
+
+### Patch Changes
+
+- Fix some task-manager UI issues, and added a method to remove image background to the trpc router.
+- Updated dependencies
+  - @ulld/api@0.0.55
+  - @ulld/component-map@0.0.55
+  - @ulld/typescript-config@0.0.49
+  - @ulld/configschema@0.0.55
+  - @ulld/hooks@0.0.55
+  - @ulld/jest-presets@0.0.49
+  - @ulld/utilities@0.0.55
+
 ## 0.0.54
 
 ### Patch Changes

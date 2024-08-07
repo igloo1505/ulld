@@ -1,5 +1,11 @@
 # @ulld/internal-dev-cli
 
+## 0.0.49
+
+### Patch Changes
+
+- Fix some task-manager UI issues, and added a method to remove image background to the trpc router.
+
 ## 0.0.48
 
 ### Patch Changes

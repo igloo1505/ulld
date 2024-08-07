@@ -1,7 +1,7 @@
 {
     "name": "@ulld/eslint-config",
     "license": "MIT",
-    "version": "0.0.50",
+    "version": "0.0.51",
     "private": false,
     "exports": {
         "./next.js": "./next.js",

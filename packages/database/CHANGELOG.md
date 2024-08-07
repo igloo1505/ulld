@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.52
+
+### Patch Changes
+
+- Fix some task-manager UI issues, and added a method to remove image background to the trpc router.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.49
+
 ## 0.0.51
 
 ### Patch Changes

@@ -1,5 +1,5 @@
 {
-    "version": "0.0.48",
+    "version": "0.0.49",
     "name": "@ulld/logger",
     "private": false,
     "types": "./src/index.ts",

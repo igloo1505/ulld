@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.51
+
+### Patch Changes
+
+- Fix some task-manager UI issues, and added a method to remove image background to the trpc router.
+
 ## 0.0.50
 
 ### Patch Changes
