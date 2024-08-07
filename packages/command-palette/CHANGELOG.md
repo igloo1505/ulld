@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.54
+
+### Patch Changes
+
+- Broken build. Attempting to resolve with a new build from remote. The issue might be a result of a dependency relying on a database client that it can't find.
+- Updated dependencies
+  - @ulld/api@0.0.54
+  - @ulld/bib-manager@0.0.54
+  - @ulld/calendar@0.0.54
+  - @ulld/configschema@0.0.54
+  - @ulld/database@0.0.51
+  - @ulld/developer@0.0.54
+  - @ulld/diagram@0.0.54
+  - @ulld/editor@0.0.54
+  - @ulld/equations@0.0.54
+  - @ulld/hooks@0.0.54
+  - @ulld/logger@0.0.48
+  - @ulld/parsers@0.0.54
+  - @ulld/render@0.0.54
+  - @ulld/snippets@0.0.54
+  - @ulld/state@0.0.54
+  - @ulld/tailwind@0.0.48
+  - @ulld/task-manager@0.0.54
+  - @ulld/ui@0.0.54
+  - @ulld/utilities@0.0.54
+  - @ulld/whiteboard@0.0.54
+
 ## 0.0.53
 
 ### Patch Changes

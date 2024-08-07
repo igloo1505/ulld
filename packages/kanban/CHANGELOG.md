@@ -1,5 +1,19 @@
 # @ulld/kanban
 
+## 0.0.54
+
+### Patch Changes
+
+- Broken build. Attempting to resolve with a new build from remote. The issue might be a result of a dependency relying on a database client that it can't find.
+- Updated dependencies
+  - @ulld/api@0.0.54
+  - @ulld/typescript-config@0.0.48
+  - @ulld/developer@0.0.54
+  - @ulld/jest-presets@0.0.48
+  - @ulld/logger@0.0.48
+  - @ulld/state@0.0.54
+  - @ulld/tailwind@0.0.48
+
 ## 0.0.53
 
 ### Patch Changes

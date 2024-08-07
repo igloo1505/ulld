@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.54
+
+### Patch Changes
+
+- Broken build. Attempting to resolve with a new build from remote. The issue might be a result of a dependency relying on a database client that it can't find.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.54
+  - @ulld/calendar@0.0.54
+  - @ulld/default-image-map@0.0.54
+  - @ulld/diagram@0.0.54
+  - @ulld/editor@0.0.54
+  - @ulld/embeddable-components@0.0.54
+  - @ulld/equations@0.0.54
+  - @ulld/full-form@0.0.54
+  - @ulld/journal@0.0.54
+  - @ulld/navigation@0.0.54
+  - @ulld/notebook@0.0.54
+  - @ulld/pdf@0.0.54
+  - @ulld/plot@0.0.54
+  - @ulld/snippets@0.0.54
+  - @ulld/tailwind@0.0.48
+  - @ulld/task-manager@0.0.54
+  - @ulld/whiteboard@0.0.54
+
 ## 0.0.53
 
 ### Patch Changes

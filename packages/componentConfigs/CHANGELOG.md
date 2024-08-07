@@ -1,5 +1,21 @@
 # @ulld/component-configs
 
+## 0.0.54
+
+### Patch Changes
+
+- Broken build. Attempting to resolve with a new build from remote. The issue might be a result of a dependency relying on a database client that it can't find.
+- Updated dependencies
+  - @ulld/api@0.0.54
+  - @ulld/typescript-config@0.0.48
+  - @ulld/configschema@0.0.54
+  - @ulld/developer@0.0.54
+  - @ulld/hooks@0.0.54
+  - @ulld/state@0.0.54
+  - @ulld/tailwind@0.0.48
+  - @ulld/ui@0.0.54
+  - @ulld/utilities@0.0.54
+
 ## 0.0.53
 
 ### Patch Changes

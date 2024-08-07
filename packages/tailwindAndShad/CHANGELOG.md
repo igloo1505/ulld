@@ -1,5 +1,11 @@
 # @ulld/tailwind
 
+## 0.0.48
+
+### Patch Changes
+
+- Broken build. Attempting to resolve with a new build from remote. The issue might be a result of a dependency relying on a database client that it can't find.
+
 ## 0.0.47
 
 ### Patch Changes
