@@ -2,7 +2,7 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@ulld/tailwind/select'
 import {SnippetFilterParams} from "../../types"
 import shikiLanguageList from '@ulld/utilities/shikiLanguages'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 
 interface SnippetLanguageSelectProps {

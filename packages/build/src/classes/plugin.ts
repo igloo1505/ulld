@@ -143,11 +143,11 @@ export class UlldPlugin extends ShellManager {
         }
         this.hasDocumentation = Boolean(this.pluginConfig.documentation);
         this.embeddables = this.getEmbeddables();
-        this.includeInTailwindSources = devData.includeInTailwindSources.includes(this.name) || [
+        this.includeInTailwindSources = this.name.startsWith("@ulld") ? false : (devData.includeInTailwindSources.includes(this.name) || [
             this.embeddables,
             this.pages,
             this.components,
-        ].some((x) => Boolean(x && x.length));
+        ].some((x) => Boolean(x && x.length)));
     }
     noPackageJsonError(noError?: boolean) {
         this.hasConfig = false;

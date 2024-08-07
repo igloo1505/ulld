@@ -19,7 +19,7 @@ const SnippetFilterInput = ({ params }: { params: SnippetFilterParams }) => {
 
     return (
         <Input
-            className={"min-w-1/3 sm:min-w-[200px]"}
+            className={"min-w-1/3 sm:min-w-[200px] md:min-w-[300px]"}
             placeholder="Search..." value={params.query || ""}
             onChange={(e) => getSearchParams(e.target.value)}
         />
