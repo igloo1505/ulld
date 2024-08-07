@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.50
+
+### Patch Changes
+
+- Removed imgly for now to address build issue at a later date. Super promising, but there are more important things to focus on for now.
+
 ## 0.0.49
 
 ### Patch Changes

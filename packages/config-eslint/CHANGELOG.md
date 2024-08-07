@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.52
+
+### Patch Changes
+
+- Removed imgly for now to address build issue at a later date. Super promising, but there are more important things to focus on for now.
+
 ## 0.0.51
 
 ### Patch Changes

@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.56
+
+### Patch Changes
+
+- Removed imgly for now to address build issue at a later date. Super promising, but there are more important things to focus on for now.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.56
+  - @ulld/calendar@0.0.56
+  - @ulld/default-image-map@0.0.56
+  - @ulld/diagram@0.0.56
+  - @ulld/editor@0.0.56
+  - @ulld/embeddable-components@0.0.56
+  - @ulld/equations@0.0.56
+  - @ulld/full-form@0.0.56
+  - @ulld/journal@0.0.56
+  - @ulld/navigation@0.0.56
+  - @ulld/notebook@0.0.56
+  - @ulld/pdf@0.0.56
+  - @ulld/plot@0.0.56
+  - @ulld/snippets@0.0.56
+  - @ulld/tailwind@0.0.50
+  - @ulld/task-manager@0.0.56
+  - @ulld/whiteboard@0.0.56
+
 ## 0.0.55
 
 ### Patch Changes

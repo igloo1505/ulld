@@ -1,5 +1,18 @@
 # @ulld/default-image-map
 
+## 0.0.56
+
+### Patch Changes
+
+- Removed imgly for now to address build issue at a later date. Super promising, but there are more important things to focus on for now.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.52
+  - @ulld/typescript-config@0.0.50
+  - @ulld/configschema@0.0.56
+  - @ulld/logger@0.0.50
+  - @ulld/tailwind@0.0.50
+  - @ulld/utilities@0.0.56
+
 ## 0.0.55
 
 ### Patch Changes

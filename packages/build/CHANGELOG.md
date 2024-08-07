@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.56
+
+### Patch Changes
+
+- Removed imgly for now to address build issue at a later date. Super promising, but there are more important things to focus on for now.
+- Updated dependencies
+  - @ulld/base-configs@0.0.50
+  - @ulld/configschema@0.0.56
+  - @ulld/developer-schemas@0.0.50
+  - @ulld/utilities@0.0.56
+
 ## 0.0.55
 
 ### Patch Changes

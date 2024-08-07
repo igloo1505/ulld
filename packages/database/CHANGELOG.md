@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.53
+
+### Patch Changes
+
+- Removed imgly for now to address build issue at a later date. Super promising, but there are more important things to focus on for now.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.50
+
 ## 0.0.52
 
 ### Patch Changes

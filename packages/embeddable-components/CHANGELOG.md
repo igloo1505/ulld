@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.56
+
+### Patch Changes
+
+- Removed imgly for now to address build issue at a later date. Super promising, but there are more important things to focus on for now.
+- Updated dependencies
+  - @ulld/api@0.0.56
+  - @ulld/component-configs@0.0.56
+  - @ulld/configschema@0.0.56
+  - @ulld/default-image-map@0.0.56
+  - @ulld/hooks@0.0.56
+  - @ulld/icons@0.0.56
+  - @ulld/render@0.0.56
+  - @ulld/state@0.0.56
+  - @ulld/tailwind@0.0.50
+  - @ulld/utilities@0.0.56
+
 ## 0.0.55
 
 ### Patch Changes

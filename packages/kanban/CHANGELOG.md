@@ -1,5 +1,19 @@
 # @ulld/kanban
 
+## 0.0.56
+
+### Patch Changes
+
+- Removed imgly for now to address build issue at a later date. Super promising, but there are more important things to focus on for now.
+- Updated dependencies
+  - @ulld/api@0.0.56
+  - @ulld/typescript-config@0.0.50
+  - @ulld/developer@0.0.56
+  - @ulld/jest-presets@0.0.50
+  - @ulld/logger@0.0.50
+  - @ulld/state@0.0.56
+  - @ulld/tailwind@0.0.50
+
 ## 0.0.55
 
 ### Patch Changes
