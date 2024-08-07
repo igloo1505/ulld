@@ -1,6 +1,6 @@
 import { FileData } from "../main";
 import fs from "fs";
-import { removeBackground, Config } from "@imgly/background-removal-node";
+// import { removeBackground, Config } from "@imgly/background-removal-node";
 import { z } from "zod";
 
 export const removeBackgroundConfigSchema = z
@@ -44,15 +44,16 @@ export class ImageFile extends FileData {
         return `data:image/png;base64,${data.toString("base64")}`;
     }
     async removeBackground(config: z.infer<typeof removeBackgroundConfigSchema>) {
-        let imgSource = await this.getImageSource();
-        const blob = await removeBackground(imgSource, {
-            model: config.model,
-            output: {
-                format: `image/${config.output}`,
-                quality: config.quality
-            }
-        });
-        const buffer = Buffer.from(await blob.arrayBuffer());
-        this.data = buffer;
+        console.error(`Disabled removeBackground for now to address buidl errors later.`)
+        // let imgSource = await this.getImageSource();
+        // const blob = await removeBackground(imgSource, {
+        //     model: config.model,
+        //     output: {
+        //         format: `image/${config.output}`,
+        //         quality: config.quality
+        //     }
+        // });
+        // const buffer = Buffer.from(await blob.arrayBuffer());
+        // this.data = buffer;
     }
 }

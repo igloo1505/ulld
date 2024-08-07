@@ -278,7 +278,6 @@
     },
     "packageManager": "pnpm@9.0.4",
     "dependencies": {
-        "@imgly/background-removal-node": "^1.4.5",
         "@jest/globals": "29.7.0",
         "@types/jest": "29.5.11",
         "axios": "1.6.7",

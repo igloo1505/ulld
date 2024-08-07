@@ -150,7 +150,6 @@
     },
     "packageManager": "pnpm@9.0.4",
     "dependencies": {
-        "@imgly/background-removal-node": "^1.4.5",
         "color-scheme": "^1.0.1",
         "coloring-palette": "^1.0.0",
         "gray-matter": "^4.0.3",
