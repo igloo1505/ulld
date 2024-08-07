@@ -1,5 +1,17 @@
 # @ulld/configschema
 
+## 0.0.53
+
+### Patch Changes
+
+- Update dashboard and equations page to fix minor style issues.
+- Updated dependencies
+  - @ulld/base-configs@0.0.47
+  - @ulld/developer-schemas@0.0.47
+  - @ulld/icons@0.0.53
+  - @ulld/tailwind@0.0.47
+  - @ulld/utilities@0.0.53
+
 ## 0.0.52
 
 ### Patch Changes

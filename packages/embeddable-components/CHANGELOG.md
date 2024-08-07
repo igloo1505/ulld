@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.53
+
+### Patch Changes
+
+- Update dashboard and equations page to fix minor style issues.
+- Updated dependencies
+  - @ulld/api@0.0.53
+  - @ulld/component-configs@0.0.53
+  - @ulld/configschema@0.0.53
+  - @ulld/default-image-map@0.0.53
+  - @ulld/hooks@0.0.53
+  - @ulld/icons@0.0.53
+  - @ulld/render@0.0.53
+  - @ulld/state@0.0.53
+  - @ulld/tailwind@0.0.47
+  - @ulld/utilities@0.0.53
+
 ## 0.0.52
 
 ### Patch Changes

@@ -1,5 +1,26 @@
 # @ulld/bib-manager
 
+## 0.0.53
+
+### Patch Changes
+
+- Update dashboard and equations page to fix minor style issues.
+- Updated dependencies
+  - @ulld/api@0.0.53
+  - @ulld/typescript-config@0.0.47
+  - @ulld/configschema@0.0.53
+  - @ulld/database@0.0.50
+  - @ulld/developer@0.0.53
+  - @ulld/editor@0.0.53
+  - @ulld/full-form@0.0.53
+  - @ulld/hooks@0.0.53
+  - @ulld/icons@0.0.53
+  - @ulld/jest-presets@0.0.47
+  - @ulld/state@0.0.53
+  - @ulld/tailwind@0.0.47
+  - @ulld/ui@0.0.53
+  - @ulld/utilities@0.0.53
+
 ## 0.0.52
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.53
+
+### Patch Changes
+
+- Update dashboard and equations page to fix minor style issues.
+- Updated dependencies
+  - @ulld/configschema@0.0.53
+  - @ulld/database@0.0.50
+  - @ulld/developer@0.0.53
+  - @ulld/utilities@0.0.53
+
 ## 0.0.52
 
 ### Patch Changes

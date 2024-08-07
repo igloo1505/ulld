@@ -1,5 +1,20 @@
 # @ulld/note-network
 
+## 0.0.53
+
+### Patch Changes
+
+- Update dashboard and equations page to fix minor style issues.
+- Updated dependencies
+  - @ulld/api@0.0.53
+  - @ulld/typescript-config@0.0.47
+  - @ulld/configschema@0.0.53
+  - @ulld/developer@0.0.53
+  - @ulld/jest-presets@0.0.47
+  - @ulld/logger@0.0.47
+  - @ulld/tailwind@0.0.47
+  - @ulld/utilities@0.0.53
+
 ## 0.0.52
 
 ### Patch Changes

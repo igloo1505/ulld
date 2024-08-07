@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.50
+
+### Patch Changes
+
+- Update dashboard and equations page to fix minor style issues.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.47
+
 ## 0.0.49
 
 ### Patch Changes

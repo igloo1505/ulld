@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.49
+
+### Patch Changes
+
+- Update dashboard and equations page to fix minor style issues.
+
 ## 0.0.48
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.47
+
+### Patch Changes
+
+- Update dashboard and equations page to fix minor style issues.
+
 ## 0.0.46
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.53
+
+### Patch Changes
+
+- Update dashboard and equations page to fix minor style issues.
+- Updated dependencies
+  - @ulld/database@0.0.50
+  - @ulld/math@0.0.53
+  - @ulld/tailwind@0.0.47
+
 ## 0.0.52
 
 ### Patch Changes
