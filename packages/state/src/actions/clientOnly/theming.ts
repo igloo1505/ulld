@@ -5,7 +5,6 @@ import { getHtmlElementAttribute } from "@ulld/utilities/utils-dom";
 import { ulldDefaultColorThemes } from "@ulld/utilities/defaultColorThemeList";
 
 export const changeTheme = async (newTheme: UlldColorTheme) => {
-    console.log("newTheme: ", newTheme)
     if(!ulldDefaultColorThemes.includes(newTheme)){
         newTheme = "ulld"
     }

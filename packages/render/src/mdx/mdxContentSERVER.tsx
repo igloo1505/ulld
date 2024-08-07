@@ -14,6 +14,7 @@ export interface MdxContentSERVERProps {
     inline?: boolean
     parentId?: string
     className?: string
+    hideMathjaxLabels?: boolean
     isMathOnly?: boolean
     autoWrap?: boolean
     display?: boolean

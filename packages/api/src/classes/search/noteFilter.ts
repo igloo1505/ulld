@@ -419,8 +419,8 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
   async getResults(config: AppConfigSchemaOutput) {
     const { notes, totalFound } = await this.getResultsBeforeParse(config);
     this.totalFound = totalFound;
-    const v = notes[0] as WithDocType<(typeof notes)[0]>;
     this.preParseNotes = notes.map((n) => MdxNote.asSummary(n)) as MdxNote[];
+    return await this.formatSummary()
   }
   intriguingValueSelectInput() {
     return {

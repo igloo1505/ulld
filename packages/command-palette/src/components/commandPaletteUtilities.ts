@@ -1,3 +1,5 @@
+import { ulldDefaultColorThemes } from "@ulld/utilities/defaultColorThemeList"
+
 export enum pages {
     searchEquations = "searchEquations",
     searchDefinitions = "searchDefinitions",
@@ -6,6 +8,7 @@ export enum pages {
     searchSubjects = "searchSubjects",
     fullTextSearch = "fullTextSearch",
     searchByValue = "searchByValue",
+    switchTheme = "switchTheme",
     searchToDoLists = "searchToDoLists"
 }
 
@@ -36,5 +39,3 @@ export const mathPanelPages: pages[] = [
 export const mdxPanelPages: pages[] = [
     pages.searchDefinitions
 ]
-
-

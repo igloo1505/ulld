@@ -24,10 +24,10 @@ export const EquationDetailDisplay = ({
   return (
     <div
       className={
-        "relative w-fit h-fit max-w-[83.3%] grid grid-cols-1 lg:grid-cols-[1fr_minmax(150px,250px)] px-4 py-3 rounded-lg gap-x-8 m-8 bg-card border text-card-foreground"
+        "relative w-fit h-fit max-w-[calc(100vw-2rem)] grid grid-cols-1 lg:grid-cols-[1fr_minmax(150px,250px)] px-4 py-3 rounded-lg gap-x-8 m-8 bg-card border text-card-foreground"
       }
     >
-      <div className={"w-full h-full flex flex-col justify-start items-start"}>
+      <div className={"w-full h-full flex flex-col justify-start items-start min-w-[250px] sm:min-w-[300px]"}>
         <H3>
           <MdxContentSERVER
             content={item.title}

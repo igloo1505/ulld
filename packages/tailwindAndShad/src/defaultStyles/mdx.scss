@@ -234,6 +234,14 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
   margin-right: 0.25rem;
 }
 
+.hideMathjaxEquationLabels {
+  mjx-math[display="true"] {
+    mjx-labels {
+      display: none !important;
+    }
+  }
+}
+
 .compactMdx .math.math-display {
   width: 100%;
   & .MathJax {

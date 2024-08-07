@@ -42,7 +42,6 @@ const EquationSearchCommandGroup = ({ activePage, equationSearchCommands, close,
                         stylesId={`equation-${eq.id}`}
                         content={eq.title}
                         inline
-                        autoWrap
                     />
                 </CommandPaletteItem>
             })}

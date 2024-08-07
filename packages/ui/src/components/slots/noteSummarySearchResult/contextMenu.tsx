@@ -16,6 +16,7 @@ interface ThemedSummaryCardContextMenuProps {
     cardId: string;
     item: NoteSummaryProps["item"];
     children: ReactNode;
+    className?: string
 }
 
 interface ContextMenuItem<T extends string | number | undefined> {
@@ -70,6 +71,7 @@ const ThemedSummaryCardContextMenu = ({
     cardId,
     item,
     children,
+    className
 }: ThemedSummaryCardContextMenuProps) => {
     const [target, setTarget] = useState<HTMLElement | null>(null);
     const { toast: _toast } = useToast();
@@ -88,7 +90,9 @@ const ThemedSummaryCardContextMenu = ({
 
     return (
         <ContextMenu>
-            <ContextMenuTrigger>{children}</ContextMenuTrigger>
+            <ContextMenuTrigger
+            className={className}
+        >{children}</ContextMenuTrigger>
             <ContextMenuContent>
                 {contextItems.map((l) => {
                     return (

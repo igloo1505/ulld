@@ -337,7 +337,7 @@ export const mdxNoteSummaryPropSchema = mdxNotePropsSchema
         lastSync: true,
         tags: true,
         rootRelativePath: true,
-        summary: true,
+        // summary: true,
         href: true,
         firstSync: true,
         sequentialIndex: true,

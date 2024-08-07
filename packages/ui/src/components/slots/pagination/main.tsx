@@ -87,7 +87,7 @@ const PaginationGroup = (props: PaginationGroupProps) => {
     }, [])
 
     return (
-        <div className={"flex flex-row justify-center items-center gap-4 w-full flex-wrap"}>{data.map((d) => <Link
+        <div className={"flex flex-row justify-center items-center gap-4 w-full flex-wrap px-3 py-1 my-6 sm:mt-8 md:mt-12"}>{data.map((d) => <Link
             href={d.href}
             key={`pagination-button-${d.pageNumber}`}
             className={cn(buttonVariants({variant: d.active ? "outline" : "ghost", size: "icon"}))}

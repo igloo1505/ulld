@@ -34,7 +34,10 @@ const DefaultNoteSummaryCard = ({
     );
 
     return (
-        <Card id={cardId}>
+        <Card
+            id={cardId}
+            className={"w-full lg:h-full"}
+        >
             <CardHeader
                 className={clsx(Boolean(item?.summary || hasFooterContent) && "pb-4")}
             >
@@ -72,7 +75,7 @@ const DefaultNoteSummaryCard = ({
                     <MdxContentSERVER inline content={item.summary} />
                 </CardContent>
             )}
-            {item.tags.length && (
+            {Boolean(item.tags.length) && (
                 <CardFooter
                     className={"flex flex-col justify-center items-start gap-2"}
                 >

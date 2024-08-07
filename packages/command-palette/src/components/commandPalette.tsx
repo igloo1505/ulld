@@ -26,6 +26,8 @@ import { makeValidId } from "@ulld/utilities/identity";
 import { MdxContentCLIENT } from "@ulld/render/mdx/client";
 import { getDefaultCommandList } from "./commandLists/default";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
+import { ulldDefaultColorThemes } from "@ulld/utilities/defaultColorThemeList";
+import SwitchThemeCommandGroup from "./groups/themeSearchCommandGroup";
 
 interface CommandPaletteProps {
     open: boolean;
@@ -214,6 +216,20 @@ const CommandPalette = ({
                 newIdx = curIdx === defaultCommandList.length - 1 ? 0 : curIdx + 1;
             }
             return defaultCommandList[newIdx].value;
+        },
+        switchTheme: (dir) => {
+            let curIdx = ulldDefaultColorThemes.indexOf(valueRef.current as any);
+            const tcur = typeof curIdx;
+            if (tcur === "undefined" || tcur !== "number") {
+                return undefined;
+            }
+            let newIdx: number = curIdx;
+            if (dir === "prev") {
+                newIdx = curIdx === 0 ? defaultCommandList.length - 1 : curIdx - 1;
+            } else {
+                newIdx = curIdx === defaultCommandList.length - 1 ? 0 : curIdx + 1;
+            }
+            return ulldDefaultColorThemes[newIdx];
         },
         searchEquations: (dir) => {
             let curIdx = equationSearchCommandsRef.current
@@ -485,6 +501,11 @@ const CommandPalette = ({
                             close={close}
                             setLoading={setLoading}
                         />
+                        <SwitchThemeCommandGroup 
+                            activePage={_page}
+                            close={close}
+                            setLoading={setLoading}
+                        />
                         <SubjectSearchCommandGroup
                             activePage={_page}
                             subjectSearchCommands={subjectSearchCommands}
@@ -517,6 +538,7 @@ const CommandPalette = ({
                             autoWrap
                             isMathOnly
                             display
+                            hideMathjaxLabels
                             content={eq.content}
                             className={cn(value === eq.value ? "inline-block" : "hidden")}
                         />

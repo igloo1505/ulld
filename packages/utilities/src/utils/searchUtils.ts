@@ -1,5 +1,6 @@
 import { LetterType, SearchAllSearchType } from "../types/general";
 import { SearchAllParams } from "../types/pageParams";
+import { ArrayUtilities } from "./arrayUtilities";
 
 export const getFirstLetterWithLatex = (value: string): LetterType => {
     return value.replaceAll(/\\|\:|\-|\=|\_/gm, "")[0] as LetterType;
@@ -32,7 +33,7 @@ export const searchAllParamsToSearchParamsClass = (
         data.set("page", sp.page);
     }
     if (sp.tags) {
-        for (const t of sp.tags) {
+        for (const t of ArrayUtilities.beArray(sp.tags)) {
             data.append("tag", t);
         }
     }
@@ -43,12 +44,12 @@ export const searchAllParamsToSearchParamsClass = (
         data.set("remote", "true");
     }
     if (sp.topics) {
-        for (const t of sp.topics) {
+        for (const t of ArrayUtilities.beArray(sp.topics)) {
             data.append("topic", t);
         }
     }
     if (sp.subjects) {
-        for (const t of sp.subjects) {
+        for (const t of ArrayUtilities.beArray(sp.subjects)) {
             data.append("subjects", t);
         }
     }
@@ -56,17 +57,17 @@ export const searchAllParamsToSearchParamsClass = (
         data.set("perPage", sp.perPage);
     }
     if (sp.tagRegex) {
-        for (const t of sp.tagRegex) {
+        for (const t of ArrayUtilities.beArray(sp.tagRegex)) {
             data.append("tagRegex", t.source);
         }
     }
     if (sp.citations) {
-        for (const c of sp.citations) {
+        for (const c of ArrayUtilities.beArray(sp.citations)) {
             data.append("citations", c);
         }
     }
     if (sp.categories) {
-        for (const t of sp.categories) {
+        for (const t of ArrayUtilities.beArray(sp.categories)) {
             data.append("categories", t);
         }
     }

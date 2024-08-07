@@ -114,6 +114,11 @@ export const getDefaultCommandList = (
         },
         {
             isParent: true,
+            label: "Switch Theme",
+            value: pages.switchTheme,
+        },
+        {
+            isParent: true,
             label: "Search Tags",
             value: pages.searchTags,
         },

@@ -12,6 +12,7 @@ const NoteSummaryWrapper = (props: NoteSummaryProps) => {
         <ThemedSummaryCardContextMenu 
             cardId={cardId}
             item={props.item} 
+            className={"w-full lg:h-full"}
         >
             <DefaultNoteSummaryCard {...props} cardId={cardId} />
         </ThemedSummaryCardContextMenu>
