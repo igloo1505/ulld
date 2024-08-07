@@ -105,7 +105,7 @@ const AddTaskListModal = ({
             onSubmit={handleSubmit}
             withButtons={false}
         >
-            <div className={"w-full flex flex-col justify-center items-center md:justify-around md:items-center md:flex-row"}>
+            <div className={"w-full flex flex-col justify-center items-center md:justify-around md:items-center md:flex-row gap-4"}>
                 {taggableProps.map((p) => {
                     return <TaggableComboBox multiple {...p} />;
                 })}

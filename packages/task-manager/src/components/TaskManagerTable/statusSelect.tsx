@@ -1,7 +1,7 @@
 "use client"
+import React from 'react'
 import { ToDoListStatus } from '@ulld/database';
 import { Column, ColumnFiltersState } from '@tanstack/react-table';
-import React from 'react'
 import { FieldValues, Path } from 'react-hook-form';
 import { FullDataTableDropdownCheckboxListInput } from './filterDropdownCheckboxListInput';
 import { replaceRecursively } from "@ulld/utilities/utils/general";
@@ -38,7 +38,7 @@ const ToDoListStatusSelect = <T extends FieldValues>(props: ToDoListStatusSelect
         <FullDataTableDropdownCheckboxListInput
             {...props as any}
             options={Object.keys(ToDoListStatus).map((k) => ({
-                label: replaceRecursively(k, "_", " "),
+                label: k === "ToDo" ? "To Do" : replaceRecursively(k, "_", " "),
                 name: k as NonNullable<Path<T>>
             }))}
             toggle={(name: string) => {

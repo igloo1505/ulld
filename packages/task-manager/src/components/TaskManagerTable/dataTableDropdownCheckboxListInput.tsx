@@ -91,7 +91,6 @@ export const DataTableDropdownCheckboxListInput = <T extends unknown>({ label, s
                                     toggle={toggle}
                                     isSelected={Boolean(option.active)}
                                 />
-
                             })}
                             <AddItemDropdownButton
                                 label="Add List"

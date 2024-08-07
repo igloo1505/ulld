@@ -48,7 +48,6 @@ export const DialogWithForm = <T extends FieldValues>({
     withButtons,
 }: DialogWithFormProps<T>) => {
     const router = useRouter();
-    console.log("isModal: ", isModal);
     return (
         <Dialog
             open={open}

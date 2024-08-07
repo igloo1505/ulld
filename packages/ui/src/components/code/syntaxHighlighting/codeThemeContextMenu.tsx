@@ -12,12 +12,15 @@ import { availableShikiThemes } from '@ulld/configschema/codeThemeSchemas'
 interface CodeThemeContextMenuProps {
     children: React.ReactNode
     onThemeChange: (s: BundledTheme) => void
+    className?: string
 }
 
-const CodeThemeContextMenu = ({ children, onThemeChange }: CodeThemeContextMenuProps) => {
+const CodeThemeContextMenu = ({ children, onThemeChange, className }: CodeThemeContextMenuProps) => {
     return (
-        <ContextMenu >
-            <ContextMenuTrigger>{children}</ContextMenuTrigger>
+        <ContextMenu>
+            <ContextMenuTrigger
+                className={className}
+            >{children}</ContextMenuTrigger>
             <ContextMenuContent
                 className={"max-h-[300px] overflow-y-auto no-scrollbar"}>
                 {availableShikiThemes.map((s) => {

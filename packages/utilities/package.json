@@ -94,6 +94,7 @@
         "./validateDeviceType": "./src/utils/deviceDetect.ts",
         "./downloadFile": "./src/utils/downloadFile.ts",
         "./jsonFileClass": "./src/classes/file/jsonFile.ts",
+        "./imageFile": "./src/classes/file/media/imageFile.ts",
         "./fileClass": "./src/classes/file/main.ts",
         "./mdxFile": "./src/classes/file/mdxFile.ts",
         "./defaultColorThemeList": "./src/styleUtilities/ulldDefaultColorThemes.ts",
@@ -149,6 +150,7 @@
     },
     "packageManager": "pnpm@9.0.4",
     "dependencies": {
+        "@imgly/background-removal-node": "^1.4.5",
         "color-scheme": "^1.0.1",
         "coloring-palette": "^1.0.0",
         "gray-matter": "^4.0.3",

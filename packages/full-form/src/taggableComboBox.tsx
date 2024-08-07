@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect, useRef } from "react";
 import {
     FieldValues,
@@ -54,7 +55,7 @@ export interface TaggableComboBoxProps<
 
 const combineIfUnique = (base: string[], other: string[]) => {
     let b = base;
-    other?.forEach((o) => {
+    ((other && other.length) ? other : []).forEach((o) => {
         if (!b.includes(o)) {
             b.push(o);
         }
@@ -93,7 +94,7 @@ export const TaggableComboBox = <T extends FieldValues>({
     const formValues = form.watch(name)
 
     useEffect(() => {
-       setOptions(combineIfUnique(options, formValues))
+       setOptions(combineIfUnique(options, formValues || []))
     }, [formValues])
 
 

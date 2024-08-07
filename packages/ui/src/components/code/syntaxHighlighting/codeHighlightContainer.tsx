@@ -48,42 +48,42 @@ const CHC = connector(
     }) => {
         if (!children || typeof children !== "string" || children.trim() === "")
             return null;
-        const [theme, _setTheme] = useState<string | null | undefined>(undefined);
-        const [html, setHtml] = useState<string | null>(null);
-        const { toast } = useToast();
-        const setTheme = (t: string) => {
-            _setTheme(t);
+        const [theme, _settheme] = usestate<string | null | undefined>(undefined);
+        const [html, sethtml] = usestate<string | null>(null);
+        const { toast } = usetoast();
+        const settheme = (t: string) => {
+            _settheme(t);
         };
 
-        const getTheme = (themeOverride: string | undefined | null) => {
-            if (themeOverride) return themeOverride;
-            if (darkMode && configTheme?.dark) {
-                return configTheme.dark;
+        const gettheme = (themeoverride: string | undefined | null) => {
+            if (themeoverride) return themeoverride;
+            if (darkmode && configtheme?.dark) {
+                return configtheme.dark;
             }
-            if (!darkMode && configTheme?.light) {
-                return configTheme.light;
+            if (!darkmode && configtheme?.light) {
+                return configtheme.light;
             }
-            return tertiaryTheme;
+            return tertiarytheme;
         };
 
-        useEffect(() => {
-            setTheme(getTheme(_theme));
-        }, [darkMode]);
+        useeffect(() => {
+            settheme(gettheme(_theme));
+        }, [darkmode]);
 
-        const highlightCode = async (l: typeof language, t: typeof theme) => {
-            const _html = await codeToHtml(children, {
+        const highlightcode = async (l: typeof language, t: typeof theme) => {
+            const _html = await codetohtml(children, {
                 lang: l,
-                theme: getTheme(t),
+                theme: gettheme(t),
             });
-            setHtml(_html);
+            sethtml(_html);
         };
 
-        useEffect(() => {
-            highlightCode(language, theme);
+        useeffect(() => {
+            highlightcode(language, theme);
         }, [language, minimal, theme]);
 
-        const copyCode = async () => {
-            await copyStringToClipboard(children);
+        const copycode = async () => {
+            await copystringtoclipboard(children);
             toast({
                 title: "Success",
                 description: `The ${language} code has been copied to your clipboard.`,
@@ -91,39 +91,42 @@ const CHC = connector(
         };
 
         return (
-            <CodeThemeContextMenu onThemeChange={setTheme}>
+            <codethemecontextmenu
+                onthemechange={settheme}
+                classname={"w-full min-w-full max-w-full"}
+            >
                 <div
-                    className={clsx(
-                        "w-fit h-fit relative group/codeHighlight no-scrollbar max-w-full overflow-auto",
-                        className,
+                    classname={clsx(
+                        "w-full h-fit relative group/codehighlight no-scrollbar max-w-full overflow-auto",
+                        classname,
                     )}
                 >
                     <a
                         role="button"
-                        onClick={copyCode}
-                        className={
-                            "absolute top-2 right-2 p-2 hidden bg-primary text-primary-foreground rounded group-hover/codeHighlight:flex flex-col justify-center items-center"
+                        onclick={copycode}
+                        classname={
+                            "absolute top-2 right-2 p-2 hidden bg-primary text-primary-foreground rounded group-hover/codehighlight:flex flex-col justify-center items-center"
                         }
                     >
-                        <CopyIcon className={"w-3 h-3"} />
+                        <copyicon classname={"w-3 h-3"} />
                     </a>
                     {html ? (
                         <div
-                            className={clsx(
-                                "overflow-auto max-w-fit w-fit max-h-full min-w-min [&>pre]:w-fit [&>pre]:border [&>pre]:text-[12px]",
+                            classname={clsx(
+                                "overflow-auto max-w-full w-full max-h-full min-w-full [&>pre]:w-full [&>pre]:border [&>pre]:text-[12px]",
                                 children.length > 0 && "[&>pre]:p-4",
                             )}
-                            dangerouslySetInnerHTML={{
+                            dangerouslysetinnerhtml={{
                                 __html: html,
                             }}
                         ></div>
                     ) : (
-                        <EmbeddedLoadingIndicator
-                            className={"max-w-[150px] max-h-[150px]"}
+                        <embeddedloadingindicator
+                            classname={"max-w-[150px] max-h-[150px]"}
                         />
                     )}
                 </div>
-            </CodeThemeContextMenu>
+            </codethemecontextmenu>
         );
     },
 );
