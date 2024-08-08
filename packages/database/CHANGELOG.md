@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.58
+
+### Patch Changes
+
+- Moved shiki to dynamic import to resolve issue with Shiki and Next 14.2.x
+- Updated dependencies
+  - @ulld/typescript-config@0.0.55
+
 ## 0.0.57
 
 ### Patch Changes

@@ -1,5 +1,27 @@
 # @ulld/developer-template
 
+## 0.0.61
+
+### Patch Changes
+
+- Moved shiki to dynamic import to resolve issue with Shiki and Next 14.2.x
+- Updated dependencies
+  - @ulld/api@0.0.61
+  - @ulld/base-configs@0.0.55
+  - @ulld/typescript-config@0.0.55
+  - @ulld/configschema@0.0.61
+  - @ulld/database@0.0.58
+  - @ulld/developer@0.0.61
+  - @ulld/hooks@0.0.61
+  - @ulld/icons@0.0.61
+  - @ulld/jest-presets@0.0.55
+  - @ulld/logger@0.0.55
+  - @ulld/parsers@0.0.61
+  - @ulld/state@0.0.61
+  - @ulld/tailwind@0.0.55
+  - @ulld/ui@0.0.61
+  - @ulld/utilities@0.0.61
+
 ## 0.0.60
 
 ### Patch Changes

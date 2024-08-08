@@ -1,5 +1,11 @@
 # @ulld/logger
 
+## 0.0.55
+
+### Patch Changes
+
+- Moved shiki to dynamic import to resolve issue with Shiki and Next 14.2.x
+
 ## 0.0.54
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.57
+
+### Patch Changes
+
+- Moved shiki to dynamic import to resolve issue with Shiki and Next 14.2.x
+
 ## 0.0.56
 
 ### Patch Changes

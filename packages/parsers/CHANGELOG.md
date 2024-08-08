@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.61
+
+### Patch Changes
+
+- Moved shiki to dynamic import to resolve issue with Shiki and Next 14.2.x
+- Updated dependencies
+  - @ulld/configschema@0.0.61
+  - @ulld/database@0.0.58
+  - @ulld/developer@0.0.61
+  - @ulld/utilities@0.0.61
+
 ## 0.0.60
 
 ### Patch Changes

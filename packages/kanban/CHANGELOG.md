@@ -1,5 +1,19 @@
 # @ulld/kanban
 
+## 0.0.61
+
+### Patch Changes
+
+- Moved shiki to dynamic import to resolve issue with Shiki and Next 14.2.x
+- Updated dependencies
+  - @ulld/api@0.0.61
+  - @ulld/typescript-config@0.0.55
+  - @ulld/developer@0.0.61
+  - @ulld/jest-presets@0.0.55
+  - @ulld/logger@0.0.55
+  - @ulld/state@0.0.61
+  - @ulld/tailwind@0.0.55
+
 ## 0.0.60
 
 ### Patch Changes

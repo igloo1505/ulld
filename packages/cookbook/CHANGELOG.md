@@ -1,5 +1,24 @@
 # @ulld/cookbook
 
+## 0.0.61
+
+### Patch Changes
+
+- Moved shiki to dynamic import to resolve issue with Shiki and Next 14.2.x
+- Updated dependencies
+  - @ulld/api@0.0.61
+  - @ulld/calendar@0.0.61
+  - @ulld/typescript-config@0.0.55
+  - @ulld/configschema@0.0.61
+  - @ulld/developer@0.0.61
+  - @ulld/full-form@0.0.61
+  - @ulld/hooks@0.0.61
+  - @ulld/logger@0.0.55
+  - @ulld/state@0.0.61
+  - @ulld/tailwind@0.0.55
+  - @ulld/ui@0.0.61
+  - @ulld/utilities@0.0.61
+
 ## 0.0.60
 
 ### Patch Changes

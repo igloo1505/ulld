@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.61
+
+### Patch Changes
+
+- Moved shiki to dynamic import to resolve issue with Shiki and Next 14.2.x
+- Updated dependencies
+  - @ulld/database@0.0.58
+  - @ulld/math@0.0.61
+  - @ulld/tailwind@0.0.55
+
 ## 0.0.60
 
 ### Patch Changes
