@@ -1,6 +1,6 @@
 "use client";
 import type { BundledLanguage, BundledTheme, CodeToHastOptions } from "shiki";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import clsx from "clsx";
 import { CopyIcon } from "lucide-react";
 import { connect } from "react-redux";
@@ -48,13 +48,24 @@ const CHC = connector(
     }) => {
         const [theme, _setTheme] = useState<string | null | undefined>(undefined);
         const [html, setHtml] = useState<string>("");
-        const [codeToHtml, setCodeToHtml] = useState<
+        const [haveShiki, setHaveShiki] = useState(false);
+        const codeToHtml = useRef<
             | ((
                 code: string,
                 options: CodeToHastOptions<BundledLanguage, BundledTheme>,
             ) => Promise<string>)
             | null
         >(null);
+
+        const setCodeToHtml = (
+            f: (
+                code: string,
+                options: CodeToHastOptions<BundledLanguage, BundledTheme>,
+            ) => Promise<string>,
+        ) => {
+            setHaveShiki(true);
+            codeToHtml.current = f;
+        };
 
         const { toast } = useToast();
 
@@ -79,9 +90,7 @@ const CHC = connector(
         };
 
         useEffect(() => {
-            if (!codeToHtml) {
-                gatherHighlighter();
-            }
+            gatherHighlighter();
         }, []);
 
         useEffect(() => {
@@ -89,10 +98,10 @@ const CHC = connector(
         }, [darkMode]);
 
         const highlightCode = async (l: typeof language, t: typeof theme) => {
-            if (!codeToHtml) {
+            if (!codeToHtml.current) {
                 return;
             }
-            const _html = await codeToHtml(children, {
+            const _html = await codeToHtml.current(children, {
                 lang: l,
                 theme: getTheme(t),
             });
@@ -100,8 +109,10 @@ const CHC = connector(
         };
 
         useEffect(() => {
-            highlightCode(language, theme);
-        }, [language, minimal, theme, codeToHtml]);
+            if (haveShiki || codeToHtml.current) {
+                highlightCode(language, theme);
+            }
+        }, [language, minimal, theme, haveShiki]);
 
         const copyCode = async () => {
             await copyStringToClipboard(children);
