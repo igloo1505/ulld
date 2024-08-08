@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.58
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+- Updated dependencies
+  - @ulld/base-configs@0.0.52
+  - @ulld/configschema@0.0.58
+  - @ulld/developer-schemas@0.0.52
+  - @ulld/utilities@0.0.58
+
 ## 0.0.57
 
 ### Patch Changes

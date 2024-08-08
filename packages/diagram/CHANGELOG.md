@@ -1,5 +1,17 @@
 # @ulld/diagram
 
+## 0.0.58
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+- Updated dependencies
+  - @ulld/api@0.0.58
+  - @ulld/typescript-config@0.0.52
+  - @ulld/developer@0.0.58
+  - @ulld/state@0.0.58
+  - @ulld/tailwind@0.0.52
+
 ## 0.0.57
 
 ### Patch Changes

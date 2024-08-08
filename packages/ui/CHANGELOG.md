@@ -1,5 +1,27 @@
 # @ulld/ui
 
+## 0.0.58
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+- Updated dependencies
+  - @ulld/api@0.0.58
+  - @ulld/component-map@0.0.58
+  - @ulld/configschema@0.0.58
+  - @ulld/database@0.0.55
+  - @ulld/editor@0.0.58
+  - @ulld/embeddable-components@0.0.58
+  - @ulld/full-form@0.0.58
+  - @ulld/hooks@0.0.58
+  - @ulld/icons@0.0.58
+  - @ulld/logger@0.0.52
+  - @ulld/parsers@0.0.58
+  - @ulld/render@0.0.58
+  - @ulld/state@0.0.58
+  - @ulld/tailwind@0.0.52
+  - @ulld/utilities@0.0.58
+
 ## 0.0.57
 
 ### Patch Changes

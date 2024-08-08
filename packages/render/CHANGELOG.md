@@ -1,5 +1,19 @@
 # @ulld/render
 
+## 0.0.58
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+- Updated dependencies
+  - @ulld/api@0.0.58
+  - @ulld/component-map@0.0.58
+  - @ulld/typescript-config@0.0.52
+  - @ulld/configschema@0.0.58
+  - @ulld/hooks@0.0.58
+  - @ulld/jest-presets@0.0.52
+  - @ulld/utilities@0.0.58
+
 ## 0.0.57
 
 ### Patch Changes

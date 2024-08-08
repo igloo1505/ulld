@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.58
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+- Updated dependencies
+  - @ulld/configschema@0.0.58
+  - @ulld/database@0.0.55
+  - @ulld/developer@0.0.58
+  - @ulld/utilities@0.0.58
+
 ## 0.0.57
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.58
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.54
+  - @ulld/typescript-config@0.0.52
+  - @ulld/configschema@0.0.58
+  - @ulld/database@0.0.55
+  - @ulld/logger@0.0.52
+
 ## 0.0.57
 
 ### Patch Changes

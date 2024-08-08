@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.58
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.58
+  - @ulld/calendar@0.0.58
+  - @ulld/default-image-map@0.0.58
+  - @ulld/diagram@0.0.58
+  - @ulld/editor@0.0.58
+  - @ulld/embeddable-components@0.0.58
+  - @ulld/equations@0.0.58
+  - @ulld/full-form@0.0.58
+  - @ulld/journal@0.0.58
+  - @ulld/navigation@0.0.58
+  - @ulld/notebook@0.0.58
+  - @ulld/pdf@0.0.58
+  - @ulld/plot@0.0.58
+  - @ulld/snippets@0.0.58
+  - @ulld/tailwind@0.0.52
+  - @ulld/task-manager@0.0.58
+  - @ulld/whiteboard@0.0.58
+
 ## 0.0.57
 
 ### Patch Changes

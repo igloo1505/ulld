@@ -1,5 +1,11 @@
 # @ulld/internal-dev-cli
 
+## 0.0.52
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+
 ## 0.0.51
 
 ### Patch Changes
