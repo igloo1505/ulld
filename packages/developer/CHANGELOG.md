@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.62
+
+### Patch Changes
+
+- Broken snippets package due to some build script issue converting an entire file to lower case.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.58
+  - @ulld/typescript-config@0.0.56
+  - @ulld/configschema@0.0.62
+  - @ulld/database@0.0.59
+  - @ulld/logger@0.0.56
+
 ## 0.0.61
 
 ### Patch Changes

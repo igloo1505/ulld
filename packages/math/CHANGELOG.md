@@ -1,5 +1,18 @@
 # @ulld/math
 
+## 0.0.62
+
+### Patch Changes
+
+- Broken snippets package due to some build script issue converting an entire file to lower case.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.56
+  - @ulld/configschema@0.0.62
+  - @ulld/hooks@0.0.62
+  - @ulld/icons@0.0.62
+  - @ulld/state@0.0.62
+  - @ulld/utilities@0.0.62
+
 ## 0.0.61
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.58
+
+### Patch Changes
+
+- Broken snippets package due to some build script issue converting an entire file to lower case.
+
 ## 0.0.57
 
 ### Patch Changes

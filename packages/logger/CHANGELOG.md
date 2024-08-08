@@ -1,5 +1,11 @@
 # @ulld/logger
 
+## 0.0.56
+
+### Patch Changes
+
+- Broken snippets package due to some build script issue converting an entire file to lower case.
+
 ## 0.0.55
 
 ### Patch Changes

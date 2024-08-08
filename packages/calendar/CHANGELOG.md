@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.62
+
+### Patch Changes
+
+- Broken snippets package due to some build script issue converting an entire file to lower case.
+- Updated dependencies
+  - @ulld/developer@0.0.62
+
 ## 0.0.61
 
 ### Patch Changes
