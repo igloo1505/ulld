@@ -109,7 +109,6 @@ const personalConfig: AppConfigSchemaInput = {
             label: "Recipes",
             icon: "egg",
         },
-
         {
             fs: "references",
             id: "references",
@@ -146,10 +145,7 @@ const configs: { path: string; config: AppConfigSchemaOutput }[] = [
         config: appConfigSchema.parse(personalConfig),
     },
     {
-        path: path.join(
-            __dirname,
-            "/Users/bigsexy/dev-utils/ulld/appConfig.ulld.json",
-        ),
+        path: "/Users/bigsexy/dev-utils/ulld/appConfig.ulld.json",
         config: appConfigSchema.parse(personalConfig),
     },
 ];

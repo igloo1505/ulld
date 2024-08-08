@@ -138,7 +138,10 @@ export class PackageManager {
     }
     setNewClonedAppInternalPackages(items: ClonedBaseAppInternalDep[]) {
         for (const item of items) {
-            this.testRootPackageJson[item.type][item.name] = item.version;
+            if(!this.testRootPackageJson[item.type]){
+                this.testRootPackageJson[item.type] = {}
+            }
+            (this.testRootPackageJson[item.type] as any)[item.name] = item.version;
         }
         this.writeClonedAppPackageJson();
     }
@@ -217,7 +220,7 @@ export class PackageManager {
         });
         return packages;
     }
-    getDependencies(content: string) {
+    getDependencies(content: PackageJsonType) {
         let deps: Dependency[] = [];
         for (const k of dependencyTypes) {
             let o = content[k];
@@ -334,7 +337,7 @@ pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${package
         p.forEach((item) => {
             let data = { ...item };
             for (const k of dependencyTypes) {
-                let f = {};
+                let f: Record<string, string> = {};
                 for (const t of data.deps.filter((a) => a.type === k)) {
                     f[t.name] = t.version;
                 }
@@ -347,7 +350,7 @@ pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${package
             }
         });
     }
-    replaceContentByName(name: string, content: object) {
+    replaceContentByName(name: string, content: PackageJsonType) {
         this.packages = this.packages.map((a) =>
             a.name === name ? { ...a, content: content, modified: true } : a,
         );
@@ -368,7 +371,10 @@ pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${package
             const match = a.deps.filter((b) => b.name === name);
             let content = a.content;
             match.forEach((u) => {
-                content[u.type][name] = version;
+                if(!content[u.type]){
+                    content[u.type] = {}
+                }
+                (content[u.type] as any)[name] = version;
             });
             this.replaceContentByName(a.name, content);
         });
