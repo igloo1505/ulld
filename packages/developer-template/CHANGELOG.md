@@ -1,5 +1,27 @@
 # @ulld/developer-template
 
+## 0.0.57
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+- Updated dependencies
+  - @ulld/api@0.0.57
+  - @ulld/base-configs@0.0.51
+  - @ulld/typescript-config@0.0.51
+  - @ulld/configschema@0.0.57
+  - @ulld/database@0.0.54
+  - @ulld/developer@0.0.57
+  - @ulld/hooks@0.0.57
+  - @ulld/icons@0.0.57
+  - @ulld/jest-presets@0.0.51
+  - @ulld/logger@0.0.51
+  - @ulld/parsers@0.0.57
+  - @ulld/state@0.0.57
+  - @ulld/tailwind@0.0.51
+  - @ulld/ui@0.0.57
+  - @ulld/utilities@0.0.57
+
 ## 0.0.56
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.54
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.51
+
 ## 0.0.53
 
 ### Patch Changes

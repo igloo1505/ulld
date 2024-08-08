@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.53
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+
 ## 0.0.52
 
 ### Patch Changes

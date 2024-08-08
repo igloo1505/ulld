@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.57
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+- Updated dependencies
+  - @ulld/database@0.0.54
+  - @ulld/math@0.0.57
+  - @ulld/tailwind@0.0.51
+
 ## 0.0.56
 
 ### Patch Changes

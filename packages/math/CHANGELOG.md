@@ -1,5 +1,18 @@
 # @ulld/math
 
+## 0.0.57
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.51
+  - @ulld/configschema@0.0.57
+  - @ulld/hooks@0.0.57
+  - @ulld/icons@0.0.57
+  - @ulld/state@0.0.57
+  - @ulld/utilities@0.0.57
+
 ## 0.0.56
 
 ### Patch Changes

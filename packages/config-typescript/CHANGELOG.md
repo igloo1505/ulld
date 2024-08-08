@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.51
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+
 ## 0.0.50
 
 ### Patch Changes

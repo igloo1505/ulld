@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.57
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+- Updated dependencies
+  - @ulld/developer@0.0.57
+  - @ulld/developer-schemas@0.0.51
+
 ## 0.0.56
 
 ### Patch Changes

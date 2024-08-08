@@ -1,5 +1,18 @@
 # @ulld/default-image-map
 
+## 0.0.57
+
+### Patch Changes
+
+- Update after resolving issues last night while not on wifi.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.53
+  - @ulld/typescript-config@0.0.51
+  - @ulld/configschema@0.0.57
+  - @ulld/logger@0.0.51
+  - @ulld/tailwind@0.0.51
+  - @ulld/utilities@0.0.57
+
 ## 0.0.56
 
 ### Patch Changes
