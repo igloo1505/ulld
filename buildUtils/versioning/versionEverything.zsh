@@ -16,3 +16,5 @@ git -C $ULLD_TEST_ROOT add .
 git -C $ULLD_TEST_ROOT commit -m "Automatically changed versions to match patch bump"
 git -C $ULLD_TEST_ROOT push
 pnpm changeset publish
+echo "Recreating default configs"
+tsx $ULLD_DEV_ROOT/packages/configschema/src/__scripts__/generateDefaultConfig.ts

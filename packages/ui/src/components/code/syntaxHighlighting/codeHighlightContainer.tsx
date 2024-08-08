@@ -1,5 +1,5 @@
 "use client";
-import { BundledLanguage, codeToHtml } from "shiki";
+import type { BundledLanguage } from "shiki";
 import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import { CopyIcon } from "lucide-react";
@@ -46,87 +46,113 @@ const CHC = connector(
         configTheme: ParsedAppConfig["code"]["theme"] | undefined;
         darkMode: boolean;
     }) => {
-        if (!children || typeof children !== "string" || children.trim() === "")
-            return null;
-        const [theme, _settheme] = usestate<string | null | undefined>(undefined);
-        const [html, sethtml] = usestate<string | null>(null);
-        const { toast } = usetoast();
-        const settheme = (t: string) => {
+        const [ theme, _setTheme ] = useState<string | null | undefined>(undefined);
+        const [ html, setHtml ] = useState<string | null>(null);
+        const [ codeToHtml, setCodeToHtml ] = useState(null)
+
+        const { toast } = useToast();
+
+
+        const setTheme = (t: string) => {
             _settheme(t);
         };
 
-        const gettheme = (themeoverride: string | undefined | null) => {
+        const getTheme = (themeoverride: string | undefined | null) => {
             if (themeoverride) return themeoverride;
-            if (darkmode && configtheme?.dark) {
-                return configtheme.dark;
+            if (darkMode && configTheme?.dark) {
+                return configTheme.dark;
             }
-            if (!darkmode && configtheme?.light) {
-                return configtheme.light;
+            if (!darkMode && configTheme?.light) {
+                return configTheme.light;
             }
-            return tertiarytheme;
+            return tertiaryTheme;
         };
 
-        useeffect(() => {
-            settheme(gettheme(_theme));
-        }, [darkmode]);
+        const gatherHighlighter = async () => {    
+            if(!codeToHtml){
+                let _codeToHtml = await import("shiki").then((x) => x.codeToHtml)
+                setCodeToHtml(_codeToHtml)
+            }
+        }
 
-        const highlightcode = async (l: typeof language, t: typeof theme) => {
-            const _html = await codetohtml(children, {
+        useEffect(() => {
+            if(!codeToHtml){
+                gatherHighlighter()
+            }
+        }, [])
+
+
+        useEffect(() => {
+            setTheme(getTheme(_theme));
+        }, [darkMode]);
+
+
+        const highlightCode = async (l: typeof language, t: typeof theme) => {
+            const _html = await codeToHtml(children, {
                 lang: l,
-                theme: gettheme(t),
+                theme: getTheme(t),
             });
-            sethtml(_html);
+            setHtml(_html);
         };
 
-        useeffect(() => {
-            highlightcode(language, theme);
-        }, [language, minimal, theme]);
 
-        const copycode = async () => {
-            await copystringtoclipboard(children);
+        useEffect(() => {
+            if(!codeToHtml) {
+                return
+            }
+            highlightCode(language, theme);
+        }, [language, minimal, theme, codeToHtml]);
+
+
+        const copyCode = async () => {
+            await copyStringToClipboard(children);
             toast({
                 title: "Success",
                 description: `The ${language} code has been copied to your clipboard.`,
             });
         };
 
+        if (!children || typeof children !== "string" || children.trim() === "") {
+            return null;
+        }
+
         return (
-            <codethemecontextmenu
-                onthemechange={settheme}
-                classname={"w-full min-w-full max-w-full"}
+            <CodeThemeContextMenu
+                onThemeChange={setTheme}
+                className={"w-full min-w-full max-w-full"}
             >
                 <div
-                    classname={clsx(
+                    className={clsx(
                         "w-full h-fit relative group/codehighlight no-scrollbar max-w-full overflow-auto",
-                        classname,
+                        className,
                     )}
                 >
                     <a
                         role="button"
-                        onclick={copycode}
-                        classname={
+                        onclick={copyCode}
+                        className={
                             "absolute top-2 right-2 p-2 hidden bg-primary text-primary-foreground rounded group-hover/codehighlight:flex flex-col justify-center items-center"
                         }
                     >
-                        <copyicon classname={"w-3 h-3"} />
+                        <CopyIcon className={"w-3 h-3"} />
                     </a>
                     {html ? (
                         <div
-                            classname={clsx(
+                            className={clsx(
                                 "overflow-auto max-w-full w-full max-h-full min-w-full [&>pre]:w-full [&>pre]:border [&>pre]:text-[12px]",
                                 children.length > 0 && "[&>pre]:p-4",
                             )}
-                            dangerouslysetinnerhtml={{
+                            dangerouslySetInnerHtml={{
                                 __html: html,
                             }}
                         ></div>
                     ) : (
-                        <embeddedloadingindicator
-                            classname={"max-w-[150px] max-h-[150px]"}
+                        <EmbeddedLoadingIndicator
+                            className={"max-w-[150px] max-h-[150px]"}
                         />
                     )}
                 </div>
-            </codethemecontextmenu>
+            </CodeThemeContextMenu>
         );
     },
 );

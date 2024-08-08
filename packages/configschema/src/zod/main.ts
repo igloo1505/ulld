@@ -207,18 +207,6 @@ export const appConfigSchema = z.object({
                 names.push(typeof s === "string" ? s : s.name);
                 return typeof s === "string" ? { name: s, version: "latest" } : s;
             });
-            if (!names.includes("@ulld/api")) {
-                newItems.push({
-                    name: "@ulld/api",
-                    version: "latest",
-                });
-            }
-            if (!names.includes("@ulld/plot")) {
-                newItems.push({
-                    name: "@ulld/plot",
-                    version: staticBuildData.currentPackageVersions["@ulld/plot"],
-                });
-            }
             return newItems;
         })
         .default([
