@@ -10,6 +10,7 @@ export interface Props<T extends unknown> extends DataTableBaseProps<T> {
     columnFilters: ColumnFiltersState;
     setColumnFilters: (filters: ColumnFiltersState) => void;
     searchParams: ToDoSearchParams;
+    hideAddListButton?: boolean
 }
 
 export const FullDataTableDropdownCheckboxListInput = <T extends unknown>(

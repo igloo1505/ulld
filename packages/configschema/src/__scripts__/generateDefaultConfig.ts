@@ -41,6 +41,11 @@ const physicsMathConfig: AppConfigSchemaInput = {
 
 const personalConfig: AppConfigSchemaInput = {
     fsRoot: "/Users/bigsexy/Desktop/notes/content",
+    code: {
+        editor: {
+            useVimMode: true,
+        },
+    },
     noteTypes: [
         {
             fs: "physics",
@@ -137,6 +142,13 @@ const configs: { path: string; config: AppConfigSchemaOutput }[] = [
         path: path.join(
             __dirname,
             "../defaults/generatedDefaultConfigs/personal/appConfig.ulld.json",
+        ),
+        config: appConfigSchema.parse(personalConfig),
+    },
+    {
+        path: path.join(
+            __dirname,
+            "/Users/bigsexy/dev-utils/ulld/appConfig.ulld.json",
         ),
         config: appConfigSchema.parse(personalConfig),
     },

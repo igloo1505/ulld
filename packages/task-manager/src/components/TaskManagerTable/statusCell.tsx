@@ -3,7 +3,8 @@ import { Button } from '@ulld/tailwind/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@ulld/tailwind/popover';
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@ulld/tailwind/command';
 import { taskStatuses } from './staticData';
-import { ToDoListStatus } from "@ulld/database/internalDatabaseTypes";
+import { ToDoListStatus } from "@ulld/utilities/toDoStatusData";
+
 
 
 interface ToDoListDataTableStatusCellProps {

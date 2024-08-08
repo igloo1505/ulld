@@ -1,11 +1,16 @@
 {
-  "extends": "@ulld/typescript-config/nextjs.json",
-  "include": ["./*/**.ts", "./*/**.tsx"],
-  "exclude": ["dist", "build", "node_modules"],
-  "compilerOptions": {
-    "moduleResolution": "bundler",
-    "jsx": "react-jsx",
-    "esModuleInterop": true,
-    "resolveJsonModule": true
-  }
+    "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
+    "extends": "@ulld/typescript-config/nextjs.json",
+    "compilerOptions": {
+        "moduleResolution": "bundler",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "incremental": true
+    },
+    "include": [
+        "next-env.d.ts",
+        ".next/types/**/*.ts",
+        "./**/*.ts",
+        "./**/*.tsx"
+    ]
 }

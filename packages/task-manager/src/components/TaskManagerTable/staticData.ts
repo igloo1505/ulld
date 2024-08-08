@@ -6,7 +6,7 @@ import {
     StopwatchIcon,
     LapTimerIcon,
 } from "@radix-ui/react-icons";
-import { ToDoListStatus } from "@ulld/database/internalDatabaseTypes";
+import { ToDoListStatus } from "@ulld/utilities/toDoStatusData";
 
 export const priorityStrings = [
     "0",
@@ -41,6 +41,19 @@ export const tableIds: Record<string, string> = {
     dueAt: "dueAt",
     todoListLabel: "todoListLabel",
 };
+
+
+export const headerStylesMap: { [k in keyof typeof tableIds]: string } = {
+    actions: "",
+    id: "",
+    bookmarked: "",
+    select: "",
+    priority: "",
+    task: "w-full",
+    status: "w-full pl-8",
+    dueAt: "",
+    todoListLabel: ""
+}
 
 
 export const stylesMap: { [k in keyof typeof tableIds]: string } = {

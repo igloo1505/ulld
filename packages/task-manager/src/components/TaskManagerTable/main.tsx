@@ -34,7 +34,7 @@ import {
   TodoFilterFormSchema,
   todoFilterFormSchema,
 } from "@ulld/api/plugins/native/todo/zod/general";
-import { initialTableVisibility, stylesMap, tableIds } from "./staticData";
+import { headerStylesMap, initialTableVisibility, stylesMap, tableIds } from "./staticData";
 import { SubComponentHandler } from "./subComponentHandler";
 import { DataTablePagination } from "./tablePagination";
 import { ToDoListDeleteButton } from "./deleteButton";
@@ -291,7 +291,7 @@ const TaskManagerTable = ({
                   return (
                     <TableHead
                       key={header.id}
-                      className={stylesMap[header.column.id]}
+                      className={headerStylesMap[header.column.id]}
                       /* style={{ */
                       /*     width: `calc(var(--header-${header?.id}-size) * ${sizeScalar}px)`, */
                       /* }} */

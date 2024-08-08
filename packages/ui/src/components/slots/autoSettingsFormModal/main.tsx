@@ -13,7 +13,7 @@ import React from "react";
 import { z } from "zod";
 import { zodResolver, useForm } from "@ulld/full-form/form";
 import AutoSettingForm from "./autoSettingForm";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { client } from "@ulld/api/client";
 import { AutoPropertyFormSchema } from "@ulld/api/schemas/formTrpcRelationships/autoPropertyFormSchema";
 import { AutoSettingFormModalProps } from "../../../types/general";

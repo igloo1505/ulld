@@ -18,9 +18,9 @@ import { BibCore } from "../Bib";
 import { ReadingList } from "../readingList";
 import { CitationGroup } from "../CitationGroup";
 import { withForwardSlash } from "@ulld/utilities/fsUtils";
+import { toDoItemStatuses } from "@ulld/utilities/toDoStatusData";
 import {
     TaskCategory,
-    ToDoListStatus,
 } from "@ulld/database/internalDatabaseTypes";
 
 export const taggableFields = z.object({
@@ -216,7 +216,7 @@ export const todoTaskZodObject = z.object({
     parentId: z.number().int().nullish(),
     category: z.nativeEnum(TaskCategory),
     bookmarked: z.boolean().default(false),
-    status: z.nativeEnum(ToDoListStatus),
+    status: z.enum(toDoItemStatuses),
     priority: z.number().min(0).max(10),
     parent: z.any().nullish().default(null),
     child: z.any().nullish().default(null),

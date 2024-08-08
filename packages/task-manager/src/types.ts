@@ -84,6 +84,7 @@ export interface DataTableDropdownCheckboxListInputProps<T extends unknown> exte
     clear?: () => void
     searchParams: ToDoSearchParams
     icon?: React.FC<{ className?: string }>
+    hideAddListButton?: boolean
 }
 
 

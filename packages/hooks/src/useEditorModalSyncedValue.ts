@@ -4,10 +4,10 @@ import { useLocalStorage } from "./useLocalStorage";
 export interface EditorModalSyncValueOpts {
     initialValueSource?: "storage" | "value";
 }
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import {
-    getEditorUrl,
     EditorModalConfig,
+    getEditorUrl,
 } from "@ulld/utilities/pathUtilsClientSide";
 
 export const useEditorModalSyncedValue = (
@@ -30,8 +30,12 @@ export const useEditorModalSyncedValue = (
         onChange && onChange(internalValue);
     }, [internalValue]);
 
-    const showEditorModal = (modalConfig: EditorModalConfig) => {
-        router.push(getEditorUrl(modalConfig));
+    const showEditorModal = (modalConfig: Omit<EditorModalConfig, "contentId">) => {
+        router.push(getEditorUrl({
+            ...modalConfig,
+            language: modalConfig.language || "mdx",
+            contentId: localStorageKey
+        }));
     };
 
     useEffect(() => {
@@ -47,6 +51,6 @@ export const useEditorModalSyncedValue = (
     return [internalValue, setInternalValue, showEditorModal] as [
         string,
         (s: string) => void,
-        (config: EditorModalConfig) => void,
+        (config: Omit<EditorModalConfig, "contentId">) => void,
     ];
 };

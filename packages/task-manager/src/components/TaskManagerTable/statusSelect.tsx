@@ -1,10 +1,9 @@
 "use client"
 import React from 'react'
-import { ToDoListStatus } from '@ulld/database';
+import { toDoItemStatusData } from "@ulld/utilities/toDoStatusData";
 import { Column, ColumnFiltersState } from '@tanstack/react-table';
 import { FieldValues, Path } from 'react-hook-form';
 import { FullDataTableDropdownCheckboxListInput } from './filterDropdownCheckboxListInput';
-import { replaceRecursively } from "@ulld/utilities/utils/general";
 import { DataTableDropdownCheckboxListInputProps } from '../../types';
 
 type FullFormTagSubjectTopicComboBoxProps<T extends FieldValues, H extends HTMLElement> =  any
@@ -37,10 +36,7 @@ const ToDoListStatusSelect = <T extends FieldValues>(props: ToDoListStatusSelect
     return (
         <FullDataTableDropdownCheckboxListInput
             {...props as any}
-            options={Object.keys(ToDoListStatus).map((k) => ({
-                label: k === "ToDo" ? "To Do" : replaceRecursively(k, "_", " "),
-                name: k as NonNullable<Path<T>>
-            }))}
+            options={toDoItemStatusData}
             toggle={(name: string) => {
                 let isActive = props.columnFilters.map((f) => f.value).includes(name)
                 const defVal = {

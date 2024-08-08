@@ -1,0 +1,22 @@
+import React from 'react'
+import TaskDetailComponent from "../components/taskDetailModal/main"
+import { serverClient } from '@ulld/api/serverClient'
+
+interface TestPageProps {
+
+}
+
+const taskId = 1
+
+const TestPage = async (props: TestPageProps) => {
+
+    return (
+        <div>Test page here</div>
+    )
+}
+
+
+TestPage.displayName = "TestPage"
+
+
+export default TestPage;

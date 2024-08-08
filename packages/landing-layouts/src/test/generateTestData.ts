@@ -4,7 +4,7 @@ import {
     getRandomLoremString,
     TestDateHelper,
 } from "@ulld/utilities/testDataHelpers";
-import { ToDoListStatus } from "@ulld/types";
+import { ToDoListStatus } from "@ulld/utilities/toDoStatusData";
 
 type ModularDashboardData = Awaited<
     ReturnType<typeof serverClient.universalNotes.getUserOverview>

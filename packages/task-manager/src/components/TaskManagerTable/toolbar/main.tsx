@@ -131,6 +131,7 @@ export const ToDoListTableToolBar = <T extends FieldValues>({
                         selectedIds={selectedIds}
                         table={table}
                         columnFilters={columnFilters}
+                        hideAddListButton
                         setColumnFilters={setColumnFilters}
                     />
                 </FullFormProvider>

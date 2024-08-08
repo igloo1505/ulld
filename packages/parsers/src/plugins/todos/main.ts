@@ -1,9 +1,10 @@
 import { z } from 'zod'
-import { Prisma, TaskCategory, ToDoListStatus } from "@ulld/database/internalDatabaseTypes"
+import { Prisma, TaskCategory } from "@ulld/database/internalDatabaseTypes"
 import { prisma } from "@ulld/database/db"
 import dayjs from 'dayjs'
 import { topicZodObject, subjectZodObject, tagZodObject } from '@ulld/configschema/configUtilityTypes/docTypes'
 import { zodCoerceToDate, zodOptBool, zodOptNum } from '@ulld/utilities/schemas/utility'
+import { toDoItemStatuses } from "@ulld/utilities/toDoStatusData";
 
 
 
@@ -100,7 +101,10 @@ export const todoZodFormSchema = todoZodFormUniversalSchema.merge(todoZodFormSch
 export type ToDoZodSchema = z.infer<typeof todoZodFormSchema>
 
 const taskIds = z.number().array()
-const status = z.nativeEnum(ToDoListStatus)
+const status = z.union([
+    z.enum(toDoItemStatuses), 
+    z.string()
+])
 const priority = z.number().int().min(0).max(10)
 
 export const todoPriorityChangeSchema = z.object({
@@ -135,8 +139,9 @@ export const todoTaskSchema = z.object({
     parentId: zodOptNum,
     category: z.nativeEnum(TaskCategory).optional().nullable(),
     bookmarked: zodOptBool(false),
-    status: z.nativeEnum(ToDoListStatus),
+    status,
     priority: z.coerce.number().int(),
+    completedOn: zodCoerceToDate(true),
     toDoListId: zodOptNum
 })
 

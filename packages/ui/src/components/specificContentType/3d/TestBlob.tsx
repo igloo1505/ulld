@@ -1,7 +1,6 @@
 import { useCursor, Line, MeshDistortMaterial } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useRouter } from 'next/navigation'
-import router from 'next/router'
 import { Mesh } from 'pixi.js'
 import React, { useMemo, useRef, useState } from 'react'
 import THREE, { EllipseCurve, Group } from 'three'
@@ -14,6 +13,7 @@ interface ThreejsTestBlobProps {
 
 const ThreejsTestBlob = ({ route = '/', ...props }) => {
     const [hovered, hover] = useState(false)
+    const router = useRouter()
     const mesh = useRef<Group>(null!)
     useCursor(hovered)
     const points = useMemo(() => new EllipseCurve(0, 0, 3, 1.15, 0, 2 * Math.PI, false, 0).getPoints(100), [])

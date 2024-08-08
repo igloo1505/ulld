@@ -36,7 +36,7 @@ const DropdownCheckboxItem = ({ item, toggle, isSelected }: DropdownCheckboxItem
 }
 
 
-export const DataTableDropdownCheckboxListInput = <T extends unknown>({ label, selectedIds, options, toggle, placeholder, searchParams, clear, icon: Icon }: DataTableDropdownCheckboxListInputProps<T>) => {
+export const DataTableDropdownCheckboxListInput = <T extends unknown>({ label, selectedIds, options, toggle, placeholder, searchParams, clear, hideAddListButton, icon: Icon }: DataTableDropdownCheckboxListInputProps<T>) => {
     return (
         <Popover>
             <PopoverTrigger asChild>
@@ -92,10 +92,10 @@ export const DataTableDropdownCheckboxListInput = <T extends unknown>({ label, s
                                     isSelected={Boolean(option.active)}
                                 />
                             })}
-                            <AddItemDropdownButton
+                                {!hideAddListButton && <AddItemDropdownButton
                                 label="Add List"
                                 href={"/todo/add/list"}
-                            />
+                            />}
                         </CommandGroup>
                         {selectedIds?.length > 0 && clear && (
                             <>

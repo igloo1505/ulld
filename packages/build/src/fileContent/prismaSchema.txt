@@ -24,7 +24,7 @@ model Subject {
     bibEntries   BibEntry[]
     equations    Equation[]
     createdAt    DateTime       @default(now())
-    lastAccess   DateTime      @default(now())
+    lastAccess   DateTime       @default(now())
 }
 
 model Topic {
@@ -40,7 +40,7 @@ model Topic {
     bibEntries   BibEntry[]
     equations    Equation[]
     createdAt    DateTime       @default(now())
-    lastAccess   DateTime      @default(now())
+    lastAccess   DateTime       @default(now())
 }
 
 model Tag {
@@ -56,7 +56,7 @@ model Tag {
     kanbanId     Int?
     todoList     ToDoList[]
     createdAt    DateTime       @default(now())
-    lastAccess   DateTime      @default(now())
+    lastAccess   DateTime       @default(now())
 }
 
 model Quote {
@@ -149,7 +149,7 @@ model BibEntry {
     ipynbNotes     Ipynb[]
     readingList    ReadingList[]
     createdAt      DateTime         @default(now())
-    lastAccess     DateTime        @default(now())
+    lastAccess     DateTime         @default(now())
 }
 
 model CitationsGroup {
@@ -204,17 +204,17 @@ model Equation {
     subjects       Subject[]
     createdAt      DateTime        @default(now())
     mdxNotes       MdxNote[]
-    lastAccess     DateTime       @default(now())
+    lastAccess     DateTime        @default(now())
 }
 
 model Definition {
-    id                String    @id @unique
+    id                String   @id @unique
     label             String?
     content           String?
     alphabeticalLabel String?
-    mdxNote           MdxNote?  @relation(fields: [mdxNoteId], references: [id])
+    mdxNote           MdxNote? @relation(fields: [mdxNoteId], references: [id])
     mdxNoteId         Int?
-    createdAt         DateTime  @default(now())
+    createdAt         DateTime @default(now())
     lastAccess        DateTime @default(now())
 }
 
@@ -236,6 +236,7 @@ model Settings {
     lockedLandingImage    String?
     cleanOnSync           Boolean        @default(false)
     plotTheme             String?
+    pluginSettings        Json
     firstSync             DateTime       @default(now())
     lastSync              DateTime       @default(now()) @updatedAt
 }
@@ -323,7 +324,7 @@ model MdxNote {
     toDo               ToDo[]
     firstSync          DateTime            @default(now())
     lastSync           DateTime            @updatedAt
-    lastAccess         DateTime           @default(now())
+    lastAccess         DateTime            @default(now())
 }
 
 model Ipynb {
@@ -348,7 +349,7 @@ model Ipynb {
     firstSync          DateTime            @default(now())
     lastSync           DateTime            @updatedAt
     readingList        ReadingList[]
-    lastAccess         DateTime           @default(now())
+    lastAccess         DateTime            @default(now())
 }
 
 model ToDoList {
@@ -360,16 +361,7 @@ model ToDoList {
     subjects   Subject[]
     createdAt  DateTime  @default(now())
     lastUpdate DateTime  @updatedAt
-    lastAccess DateTime @default(now())
-}
-
-enum ToDoListStatus {
-    ToDo
-    In_Progress
-    Backlog
-    Cancelled
-    Done
-    Future
+    lastAccess DateTime  @default(now())
 }
 
 enum TaskCategory {
@@ -388,8 +380,8 @@ enum TaskCategory {
 }
 
 model ToDo {
-    id              Int            @id @unique @default(autoincrement())
-    createdAt       DateTime       @default(now())
+    id              Int           @id @unique @default(autoincrement())
+    createdAt       DateTime      @default(now())
     task            String
     dueAt           DateTime?
     details         String?
@@ -399,12 +391,12 @@ model ToDo {
     subjects        Subject[]
     parentId        Int?
     category        TaskCategory?
-    bookmarked      Boolean        @default(false)
-    status          ToDoListStatus @default(ToDo)
-    priority        Int            @default(5)
-    parent          ToDo?          @relation("ParentChildTask", fields: [parentId], references: [id])
-    child           ToDo[]         @relation("ParentChildTask")
-    ToDoList        ToDoList?      @relation(fields: [toDoListId], references: [id])
+    bookmarked      Boolean       @default(false)
+    status          String        @default("ToDo")
+    priority        Int           @default(5)
+    parent          ToDo?         @relation("ParentChildTask", fields: [parentId], references: [id])
+    child           ToDo[]        @relation("ParentChildTask")
+    ToDoList        ToDoList?     @relation(fields: [toDoListId], references: [id])
     toDoListId      Int?
     completedOn     DateTime?
 }

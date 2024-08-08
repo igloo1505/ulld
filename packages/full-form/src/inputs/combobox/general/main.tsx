@@ -1,3 +1,4 @@
+"use client"
 import React, { ReactNode, useState } from "react";
 import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
 import {
@@ -82,10 +83,12 @@ export const ComboboxInput = <
                                             classes.button,
                                         )}
                                     >
+                                        <div className={"flex-grow text-left"}>
                                         {field.value
                                             ? options.find((item) => item.value === field.value)
                                                 ?.label
                                             : placeholder}
+                                        </div>
                                         <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                     </Button>
                                 </FormControl>

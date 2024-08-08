@@ -3,6 +3,7 @@ import fs from "fs";
 // import { removeBackground, Config } from "@imgly/background-removal-node";
 import { z } from "zod";
 
+// TODO: Add this removeBackground image or the default exported function back into the app. Will likely have to copy the wasm and onnx files to the public directory as described in their docs [here](https://www.npmjs.com/package/@imgly/background-removal-node)
 export const removeBackgroundConfigSchema = z
     .object({
         output: z

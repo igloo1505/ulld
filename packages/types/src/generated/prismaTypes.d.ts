@@ -251,18 +251,6 @@ export const TaskCategory: {
 export type TaskCategory = (typeof TaskCategory)[keyof typeof TaskCategory]
 
 
-export const ToDoListStatus: {
-  ToDo: 'ToDo',
-  In_Progress: 'In_Progress',
-  Backlog: 'Backlog',
-  Cancelled: 'Cancelled',
-  Done: 'Done',
-  Future: 'Future'
-};
-
-export type ToDoListStatus = (typeof ToDoListStatus)[keyof typeof ToDoListStatus]
-
-
 export const TERTIARY_TOGGLE: {
   on: 'on',
   off: 'off',
@@ -319,10 +307,6 @@ export const ImageAlignment: typeof $Enums.ImageAlignment
 export type TaskCategory = $Enums.TaskCategory
 
 export const TaskCategory: typeof $Enums.TaskCategory
-
-export type ToDoListStatus = $Enums.ToDoListStatus
-
-export const ToDoListStatus: typeof $Enums.ToDoListStatus
 
 export type TERTIARY_TOGGLE = $Enums.TERTIARY_TOGGLE
 
@@ -21022,6 +21006,7 @@ export namespace Prisma {
     lockedLandingImage: number
     cleanOnSync: number
     plotTheme: number
+    pluginSettings: number
     firstSync: number
     lastSync: number
     _all: number
@@ -21074,6 +21059,7 @@ export namespace Prisma {
     lockedLandingImage?: true
     cleanOnSync?: true
     plotTheme?: true
+    pluginSettings?: true
     firstSync?: true
     lastSync?: true
     _all?: true
@@ -21175,6 +21161,7 @@ export namespace Prisma {
     lockedLandingImage: string | null
     cleanOnSync: boolean
     plotTheme: string | null
+    pluginSettings: JsonValue
     firstSync: Date
     lastSync: Date
     _count: SettingsCountAggregateOutputType | null
@@ -21208,6 +21195,7 @@ export namespace Prisma {
     lockedLandingImage?: boolean
     cleanOnSync?: boolean
     plotTheme?: boolean
+    pluginSettings?: boolean
     firstSync?: boolean
     lastSync?: boolean
   }, ExtArgs["result"]["settings"]>
@@ -21222,6 +21210,7 @@ export namespace Prisma {
     lockedLandingImage?: boolean
     cleanOnSync?: boolean
     plotTheme?: boolean
+    pluginSettings?: boolean
     firstSync?: boolean
     lastSync?: boolean
   }, ExtArgs["result"]["settings"]>
@@ -21236,6 +21225,7 @@ export namespace Prisma {
     lockedLandingImage?: boolean
     cleanOnSync?: boolean
     plotTheme?: boolean
+    pluginSettings?: boolean
     firstSync?: boolean
     lastSync?: boolean
   }
@@ -21254,6 +21244,7 @@ export namespace Prisma {
       lockedLandingImage: string | null
       cleanOnSync: boolean
       plotTheme: string | null
+      pluginSettings: Prisma.JsonValue
       firstSync: Date
       lastSync: Date
     }, ExtArgs["result"]["settings"]>
@@ -21658,6 +21649,7 @@ export namespace Prisma {
     readonly lockedLandingImage: FieldRef<"Settings", 'String'>
     readonly cleanOnSync: FieldRef<"Settings", 'Boolean'>
     readonly plotTheme: FieldRef<"Settings", 'String'>
+    readonly pluginSettings: FieldRef<"Settings", 'Json'>
     readonly firstSync: FieldRef<"Settings", 'DateTime'>
     readonly lastSync: FieldRef<"Settings", 'DateTime'>
   }
@@ -21830,7 +21822,7 @@ export namespace Prisma {
     /**
      * The data needed to create a Settings.
      */
-    data?: XOR<SettingsCreateInput, SettingsUncheckedCreateInput>
+    data: XOR<SettingsCreateInput, SettingsUncheckedCreateInput>
   }
 
   /**
@@ -31307,7 +31299,7 @@ export namespace Prisma {
     parentId: number | null
     category: $Enums.TaskCategory | null
     bookmarked: boolean | null
-    status: $Enums.ToDoListStatus | null
+    status: string | null
     priority: number | null
     toDoListId: number | null
     completedOn: Date | null
@@ -31322,7 +31314,7 @@ export namespace Prisma {
     parentId: number | null
     category: $Enums.TaskCategory | null
     bookmarked: boolean | null
-    status: $Enums.ToDoListStatus | null
+    status: string | null
     priority: number | null
     toDoListId: number | null
     completedOn: Date | null
@@ -31500,7 +31492,7 @@ export namespace Prisma {
     parentId: number | null
     category: $Enums.TaskCategory | null
     bookmarked: boolean
-    status: $Enums.ToDoListStatus
+    status: string
     priority: number
     toDoListId: number | null
     completedOn: Date | null
@@ -31615,7 +31607,7 @@ export namespace Prisma {
       parentId: number | null
       category: $Enums.TaskCategory | null
       bookmarked: boolean
-      status: $Enums.ToDoListStatus
+      status: string
       priority: number
       toDoListId: number | null
       completedOn: Date | null
@@ -32027,7 +32019,7 @@ export namespace Prisma {
     readonly parentId: FieldRef<"ToDo", 'Int'>
     readonly category: FieldRef<"ToDo", 'TaskCategory'>
     readonly bookmarked: FieldRef<"ToDo", 'Boolean'>
-    readonly status: FieldRef<"ToDo", 'ToDoListStatus'>
+    readonly status: FieldRef<"ToDo", 'String'>
     readonly priority: FieldRef<"ToDo", 'Int'>
     readonly toDoListId: FieldRef<"ToDo", 'Int'>
     readonly completedOn: FieldRef<"ToDo", 'DateTime'>
@@ -45846,6 +45838,7 @@ export namespace Prisma {
     lockedLandingImage: 'lockedLandingImage',
     cleanOnSync: 'cleanOnSync',
     plotTheme: 'plotTheme',
+    pluginSettings: 'pluginSettings',
     firstSync: 'firstSync',
     lastSync: 'lastSync'
   };
@@ -46462,7 +46455,8 @@ export namespace Prisma {
 
   export const ToDoOrderByRelevanceFieldEnum: {
     task: 'task',
-    details: 'details'
+    details: 'details',
+    status: 'status'
   };
 
   export type ToDoOrderByRelevanceFieldEnum = (typeof ToDoOrderByRelevanceFieldEnum)[keyof typeof ToDoOrderByRelevanceFieldEnum]
@@ -46696,20 +46690,6 @@ export namespace Prisma {
    * Reference to a field of type 'TaskCategory[]'
    */
   export type ListEnumTaskCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TaskCategory[]'>
-    
-
-
-  /**
-   * Reference to a field of type 'ToDoListStatus'
-   */
-  export type EnumToDoListStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ToDoListStatus'>
-    
-
-
-  /**
-   * Reference to a field of type 'ToDoListStatus[]'
-   */
-  export type ListEnumToDoListStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ToDoListStatus[]'>
     
 
 
@@ -47883,6 +47863,7 @@ export namespace Prisma {
     lockedLandingImage?: StringNullableFilter<"Settings"> | string | null
     cleanOnSync?: BoolFilter<"Settings"> | boolean
     plotTheme?: StringNullableFilter<"Settings"> | string | null
+    pluginSettings?: JsonFilter<"Settings">
     firstSync?: DateTimeFilter<"Settings"> | Date | string
     lastSync?: DateTimeFilter<"Settings"> | Date | string
   }
@@ -47897,6 +47878,7 @@ export namespace Prisma {
     lockedLandingImage?: SortOrderInput | SortOrder
     cleanOnSync?: SortOrder
     plotTheme?: SortOrderInput | SortOrder
+    pluginSettings?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
     _relevance?: SettingsOrderByRelevanceInput
@@ -47915,6 +47897,7 @@ export namespace Prisma {
     lockedLandingImage?: StringNullableFilter<"Settings"> | string | null
     cleanOnSync?: BoolFilter<"Settings"> | boolean
     plotTheme?: StringNullableFilter<"Settings"> | string | null
+    pluginSettings?: JsonFilter<"Settings">
     firstSync?: DateTimeFilter<"Settings"> | Date | string
     lastSync?: DateTimeFilter<"Settings"> | Date | string
   }, "id">
@@ -47929,6 +47912,7 @@ export namespace Prisma {
     lockedLandingImage?: SortOrderInput | SortOrder
     cleanOnSync?: SortOrder
     plotTheme?: SortOrderInput | SortOrder
+    pluginSettings?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
     _count?: SettingsCountOrderByAggregateInput
@@ -47951,6 +47935,7 @@ export namespace Prisma {
     lockedLandingImage?: StringNullableWithAggregatesFilter<"Settings"> | string | null
     cleanOnSync?: BoolWithAggregatesFilter<"Settings"> | boolean
     plotTheme?: StringNullableWithAggregatesFilter<"Settings"> | string | null
+    pluginSettings?: JsonWithAggregatesFilter<"Settings">
     firstSync?: DateTimeWithAggregatesFilter<"Settings"> | Date | string
     lastSync?: DateTimeWithAggregatesFilter<"Settings"> | Date | string
   }
@@ -48650,7 +48635,7 @@ export namespace Prisma {
     parentId?: IntNullableFilter<"ToDo"> | number | null
     category?: EnumTaskCategoryNullableFilter<"ToDo"> | $Enums.TaskCategory | null
     bookmarked?: BoolFilter<"ToDo"> | boolean
-    status?: EnumToDoListStatusFilter<"ToDo"> | $Enums.ToDoListStatus
+    status?: StringFilter<"ToDo"> | string
     priority?: IntFilter<"ToDo"> | number
     toDoListId?: IntNullableFilter<"ToDo"> | number | null
     completedOn?: DateTimeNullableFilter<"ToDo"> | Date | string | null
@@ -48698,7 +48683,7 @@ export namespace Prisma {
     parentId?: IntNullableFilter<"ToDo"> | number | null
     category?: EnumTaskCategoryNullableFilter<"ToDo"> | $Enums.TaskCategory | null
     bookmarked?: BoolFilter<"ToDo"> | boolean
-    status?: EnumToDoListStatusFilter<"ToDo"> | $Enums.ToDoListStatus
+    status?: StringFilter<"ToDo"> | string
     priority?: IntFilter<"ToDo"> | number
     toDoListId?: IntNullableFilter<"ToDo"> | number | null
     completedOn?: DateTimeNullableFilter<"ToDo"> | Date | string | null
@@ -48743,7 +48728,7 @@ export namespace Prisma {
     parentId?: IntNullableWithAggregatesFilter<"ToDo"> | number | null
     category?: EnumTaskCategoryNullableWithAggregatesFilter<"ToDo"> | $Enums.TaskCategory | null
     bookmarked?: BoolWithAggregatesFilter<"ToDo"> | boolean
-    status?: EnumToDoListStatusWithAggregatesFilter<"ToDo"> | $Enums.ToDoListStatus
+    status?: StringWithAggregatesFilter<"ToDo"> | string
     priority?: IntWithAggregatesFilter<"ToDo"> | number
     toDoListId?: IntNullableWithAggregatesFilter<"ToDo"> | number | null
     completedOn?: DateTimeNullableWithAggregatesFilter<"ToDo"> | Date | string | null
@@ -50914,6 +50899,7 @@ export namespace Prisma {
     lockedLandingImage?: string | null
     cleanOnSync?: boolean
     plotTheme?: string | null
+    pluginSettings: JsonNullValueInput | InputJsonValue
     firstSync?: Date | string
     lastSync?: Date | string
   }
@@ -50928,6 +50914,7 @@ export namespace Prisma {
     lockedLandingImage?: string | null
     cleanOnSync?: boolean
     plotTheme?: string | null
+    pluginSettings: JsonNullValueInput | InputJsonValue
     firstSync?: Date | string
     lastSync?: Date | string
   }
@@ -50942,6 +50929,7 @@ export namespace Prisma {
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
     plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
+    pluginSettings?: JsonNullValueInput | InputJsonValue
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50956,6 +50944,7 @@ export namespace Prisma {
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
     plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
+    pluginSettings?: JsonNullValueInput | InputJsonValue
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50970,6 +50959,7 @@ export namespace Prisma {
     lockedLandingImage?: string | null
     cleanOnSync?: boolean
     plotTheme?: string | null
+    pluginSettings: JsonNullValueInput | InputJsonValue
     firstSync?: Date | string
     lastSync?: Date | string
   }
@@ -50984,6 +50974,7 @@ export namespace Prisma {
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
     plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
+    pluginSettings?: JsonNullValueInput | InputJsonValue
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50998,6 +50989,7 @@ export namespace Prisma {
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
     plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
+    pluginSettings?: JsonNullValueInput | InputJsonValue
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51761,7 +51753,7 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
@@ -51782,7 +51774,7 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
     completedOn?: Date | string | null
@@ -51800,7 +51792,7 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
@@ -51821,7 +51813,7 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -51841,7 +51833,7 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
     completedOn?: Date | string | null
@@ -51854,7 +51846,7 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
@@ -51868,7 +51860,7 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -53986,6 +53978,7 @@ export namespace Prisma {
     lockedLandingImage?: SortOrder
     cleanOnSync?: SortOrder
     plotTheme?: SortOrder
+    pluginSettings?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
   }
@@ -54510,13 +54503,6 @@ export namespace Prisma {
     not?: NestedEnumTaskCategoryNullableFilter<$PrismaModel> | $Enums.TaskCategory | null
   }
 
-  export type EnumToDoListStatusFilter<$PrismaModel = never> = {
-    equals?: $Enums.ToDoListStatus | EnumToDoListStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    notIn?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    not?: NestedEnumToDoListStatusFilter<$PrismaModel> | $Enums.ToDoListStatus
-  }
-
   export type ToDoNullableRelationFilter = {
     is?: ToDoWhereInput | null
     isNot?: ToDoWhereInput | null
@@ -54614,16 +54600,6 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedEnumTaskCategoryNullableFilter<$PrismaModel>
     _max?: NestedEnumTaskCategoryNullableFilter<$PrismaModel>
-  }
-
-  export type EnumToDoListStatusWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.ToDoListStatus | EnumToDoListStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    notIn?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    not?: NestedEnumToDoListStatusWithAggregatesFilter<$PrismaModel> | $Enums.ToDoListStatus
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumToDoListStatusFilter<$PrismaModel>
-    _max?: NestedEnumToDoListStatusFilter<$PrismaModel>
   }
 
   export type KanBanListNullableRelationFilter = {
@@ -58407,10 +58383,6 @@ export namespace Prisma {
     set?: $Enums.TaskCategory | null
   }
 
-  export type EnumToDoListStatusFieldUpdateOperationsInput = {
-    set?: $Enums.ToDoListStatus
-  }
-
   export type MdxNoteUpdateManyWithoutToDoNestedInput = {
     create?: XOR<MdxNoteCreateWithoutToDoInput, MdxNoteUncheckedCreateWithoutToDoInput> | MdxNoteCreateWithoutToDoInput[] | MdxNoteUncheckedCreateWithoutToDoInput[]
     connectOrCreate?: MdxNoteCreateOrConnectWithoutToDoInput | MdxNoteCreateOrConnectWithoutToDoInput[]
@@ -59426,13 +59398,6 @@ export namespace Prisma {
     not?: NestedEnumTaskCategoryNullableFilter<$PrismaModel> | $Enums.TaskCategory | null
   }
 
-  export type NestedEnumToDoListStatusFilter<$PrismaModel = never> = {
-    equals?: $Enums.ToDoListStatus | EnumToDoListStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    notIn?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    not?: NestedEnumToDoListStatusFilter<$PrismaModel> | $Enums.ToDoListStatus
-  }
-
   export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
@@ -59455,16 +59420,6 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedEnumTaskCategoryNullableFilter<$PrismaModel>
     _max?: NestedEnumTaskCategoryNullableFilter<$PrismaModel>
-  }
-
-  export type NestedEnumToDoListStatusWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.ToDoListStatus | EnumToDoListStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    notIn?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    not?: NestedEnumToDoListStatusWithAggregatesFilter<$PrismaModel> | $Enums.ToDoListStatus
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumToDoListStatusFilter<$PrismaModel>
-    _max?: NestedEnumToDoListStatusFilter<$PrismaModel>
   }
 
   export type NestedEnumTERTIARY_TOGGLEFilter<$PrismaModel = never> = {
@@ -59741,7 +59696,7 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
@@ -59761,7 +59716,7 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
     completedOn?: Date | string | null
@@ -60152,7 +60107,7 @@ export namespace Prisma {
     parentId?: IntNullableFilter<"ToDo"> | number | null
     category?: EnumTaskCategoryNullableFilter<"ToDo"> | $Enums.TaskCategory | null
     bookmarked?: BoolFilter<"ToDo"> | boolean
-    status?: EnumToDoListStatusFilter<"ToDo"> | $Enums.ToDoListStatus
+    status?: StringFilter<"ToDo"> | string
     priority?: IntFilter<"ToDo"> | number
     toDoListId?: IntNullableFilter<"ToDo"> | number | null
     completedOn?: DateTimeNullableFilter<"ToDo"> | Date | string | null
@@ -60446,7 +60401,7 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
@@ -60466,7 +60421,7 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
     completedOn?: Date | string | null
@@ -61177,7 +61132,7 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
@@ -61197,7 +61152,7 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
     completedOn?: Date | string | null
@@ -63784,7 +63739,7 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     completedOn?: Date | string | null
     tags?: TagCreateNestedManyWithoutToDoInput
@@ -63804,7 +63759,7 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
     completedOn?: Date | string | null
@@ -64335,7 +64290,7 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
@@ -64355,7 +64310,7 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     completedOn?: Date | string | null
     associatedNotes?: MdxNoteUncheckedCreateNestedManyWithoutToDoInput
@@ -64718,7 +64673,7 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
@@ -64738,7 +64693,7 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
     completedOn?: Date | string | null
@@ -64760,7 +64715,7 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
@@ -64779,7 +64734,7 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
     completedOn?: Date | string | null
@@ -64908,7 +64863,7 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
@@ -64928,7 +64883,7 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -66255,7 +66210,7 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
@@ -66275,7 +66230,7 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -66294,7 +66249,7 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -66735,7 +66690,7 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
@@ -66755,7 +66710,7 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -66774,7 +66729,7 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -67443,7 +67398,7 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
@@ -67463,7 +67418,7 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -67482,7 +67437,7 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -69603,7 +69558,7 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     tags?: TagUpdateManyWithoutToDoNestedInput
@@ -69623,7 +69578,7 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -69642,7 +69597,7 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -69937,7 +69892,7 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     completedOn?: Date | string | null
   }
@@ -69949,7 +69904,7 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
@@ -69969,7 +69924,7 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUncheckedUpdateManyWithoutToDoNestedInput
@@ -69988,7 +69943,7 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
@@ -70106,7 +70061,7 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
     completedOn?: Date | string | null
@@ -70321,7 +70276,7 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
@@ -70340,7 +70295,7 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -70359,7 +70314,7 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
     completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null

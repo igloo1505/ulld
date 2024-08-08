@@ -7,6 +7,7 @@
         "src"
     ],
     "exports": {
+        "./usePluginSettings": "./src/usePluginSettings.ts",
         "./useBreakpoints": "./src/useBreakpoints.ts",
         "./useActiveNoteId": "./src/useActiveNoteId.ts",
         "./useFrontMatter": "./src/useNotesFrontMatter.ts",

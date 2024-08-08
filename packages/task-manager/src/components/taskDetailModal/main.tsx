@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import {
     Card,
     CardDescription,
@@ -6,44 +7,57 @@ import {
     CardHeader,
     CardTitle,
 } from "@ulld/tailwind/card";
-import { CheckIcon } from "lucide-react";
 import { useEditorModalSyncedValue } from "@ulld/hooks/useEditorModalSyncedValue";
 import { useAppConfig } from "@ulld/hooks/useAppConfig";
 import { MdxContentCLIENT } from "@ulld/render/mdx/client";
-import { Label } from "@ulld/tailwind/label";
 import { TaskDetailsProps } from "../../types";
-import { redirect } from "next/navigation";
 import { Button } from "@ulld/tailwind/button";
 import { cn } from "@ulld/utilities/cn";
 import { DateTime } from "@ulld/utilities/dateTime";
 import { RouteModalBackButton } from "@ulld/ui/routeModalBackground";
-import { AppConfigSchemaOutput } from "@ulld/configschema/types";
+import AnimatedCheckbox from "@ulld/ui/animatedCheckbox";
+import { client } from "@ulld/api/client";
+import { useDebounceCallback } from "@ulld/hooks/useDebounceCallback";
 
-interface CardDescItemProps {
-    itemKey: string;
-    children: React.ReactNode;
-}
-
-const CardDescriptionItem = ({ itemKey, children }: CardDescItemProps) => {
-    const id = `item-${itemKey.replaceAll(" ", "")}`;
-    return (
-        <div className={"space-y-2 text-muted-foreground"}>
-            <Label htmlFor={id}>{itemKey}</Label>
-            <div id={id} className={""}>
-                {children}
-            </div>
-        </div>
+const TaskDetailComponent = ({ data, isModal }: TaskDetailsProps) => {
+    const [task, _setTask] = useState<TaskDetailsProps["data"]>(data);
+    const [revertStatus, setRevertStatus] = useState(
+        !task.status
+            ? ("ToDo" as "ToDo")
+            : task.status === "Done"
+                ? ("ToDo" as "ToDo")
+                : task.status,
     );
-};
 
-/* PRIORITY: Come back and actually sync the updated note here once everything is building properly. */
-const TaskDetailComponent = ({ data: task, isModal }: TaskDetailsProps) => {
     const [internalNote, setInternalNote, showMdxModal] =
-        useEditorModalSyncedValue(`task-note-${task?.id || "-1"}`, task?.details || "");
+        useEditorModalSyncedValue(
+            `task-note-${task?.id || "-1"}`,
+            task?.details || "",
+        );
 
-    if (!task) {
-        return redirect("/todo");
-    }
+    const setTask = async (newData: TaskDetailsProps["data"]) => {
+        let res = await client.toDo.updateTask.mutate(newData);
+        if (res) {
+            _setTask(data);
+        }
+    };
+
+    const debouncedUpdateTaskDetails = useDebounceCallback(
+        (newData: TaskDetailsProps["data"]) => {
+            setTask(newData);
+        },
+        1000,
+        {
+            leading: true,
+        },
+    );
+
+    useEffect(() => {
+        debouncedUpdateTaskDetails({
+            ...task,
+            details: internalNote,
+        });
+    }, [internalNote]);
 
     const ids = {
         title: `${task.id}-title`,
@@ -54,6 +68,20 @@ const TaskDetailComponent = ({ data: task, isModal }: TaskDetailsProps) => {
     const isComplete = task.status === "Done";
     const hasNote = Boolean(task.details);
 
+    const handleToggleComplete = async () => {
+        let newData =
+            task.status === "Done"
+                ? {
+                    ...task,
+                    status: revertStatus,
+                }
+                : {
+                    ...task,
+                    status: "Done" as "Done",
+                };
+        setTask(newData);
+    };
+
     return (
         <Card className={"max-w-[min(768px,90vw)]"}>
             <CardHeader>
@@ -61,11 +89,7 @@ const TaskDetailComponent = ({ data: task, isModal }: TaskDetailsProps) => {
                     <MdxContentCLIENT inline content={task.task} />
                 </CardTitle>
                 <CardDescription>
-                    {task.dueAt && (
-                        <CardDescriptionItem itemKey={"Due"}>
-                            {new DateTime(task.dueAt, appConfig).formatDate()}
-                        </CardDescriptionItem>
-                    )}
+                    {new DateTime(task.dueAt, appConfig as any).formatDate()}
                 </CardDescription>
             </CardHeader>
             <div
@@ -78,15 +102,27 @@ const TaskDetailComponent = ({ data: task, isModal }: TaskDetailsProps) => {
                 {task.details ? (
                     <MdxContentCLIENT content={task.details} />
                 ) : (
-                    <Button id={ids.addNoteBtn} variant="secondary">
+                    <Button
+                        id={ids.addNoteBtn}
+                        variant="secondary"
+                        onClick={() =>
+                            showMdxModal({
+                                language: "mdx",
+                            })
+                        }
+                    >
                         Add Note
                     </Button>
                 )}
             </div>
             <CardFooter className={"flex flex-row justify-end items-center gap-6"}>
-                <Button size="icon" variant={isComplete ? undefined : "destructive"}>
-                    <CheckIcon className={"w-4 h-4"} />
-                </Button>
+                <AnimatedCheckbox
+                    checked={isComplete}
+                    classes={{
+                        outerContainer: "w-4 h-4",
+                    }}
+                    onClick={handleToggleComplete}
+                />
                 {isModal && <RouteModalBackButton />}
             </CardFooter>
         </Card>

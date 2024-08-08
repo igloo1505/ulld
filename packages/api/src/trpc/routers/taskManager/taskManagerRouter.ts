@@ -6,6 +6,7 @@ import { ArrayUtilities } from "@ulld/utilities/utils/arrayUtilities";
 import {
     addTodoListSchema,
     todoListAddTaskSchemaTrpc,
+    updateTaskSchema,
 } from "../../../plugins/native/todo/zod/general";
 import {
     getToDoSearchParams,
@@ -392,10 +393,8 @@ export const toDoRouter = router({
     createNewToDo: publicProcedure
         .input(todoListAddTaskSchemaTrpc)
         .mutation(async ({ input }) => {
-            const { listId } = input;
-            const data = todoListAddTaskSchemaTrpc.parse(
-                input,
-            ) as Prisma.ToDoCreateWithoutToDoListInput;
+            const data = todoListAddTaskSchemaTrpc.parse(input);
+            const { listId, ...parsedData } = data;
             return await prisma.toDoList.update({
                 where: {
                     id: listId,
@@ -403,7 +402,7 @@ export const toDoRouter = router({
                 data: {
                     tasks: {
                         create: {
-                            ...data,
+                            ...parsedData,
                             dueAt: data.dueAt ? new Date(data.dueAt) : undefined,
                         },
                     },
@@ -478,6 +477,37 @@ export const toDoRouter = router({
                     lastUpdate: new Date(),
                 },
             });
+        }),
+    updateTask: publicProcedure
+        .input(updateTaskSchema)
+        .mutation(async ({ input }) => {
+            const data = updateTaskSchema.parse(input);
+            let res = await prisma.toDo.update({
+                where: {
+                    id: data.id,
+                },
+                data: {
+                    ...data,
+                },
+                select: {
+                    ToDoList: {
+                        select: {
+                            id: true,
+                        },
+                    },
+                },
+            });
+            if (res.ToDoList?.id) {
+                await prisma.toDoList.update({
+                    where: {
+                        id: res.ToDoList.id,
+                    },
+                    data: {
+                        lastAccess: new Date(),
+                    },
+                });
+            }
+            return res;
         }),
     archiveTasks: publicProcedure
         .input(z.number().int().array())

@@ -49,6 +49,7 @@
         "./utils/pathUtilsClientSide": "./src/utils/pathUtilsClientSide.ts",
         "./utils/fsUtils": "./src/utils/fsUtils.ts",
         "./utils-dom": "./src/utils/domUtils/main.ts",
+        "./toDoStatusData": "./src/schemas/todoItemStatus.ts",
         "./schemas/snippets": "./src/schemas/snippets.ts",
         "./schemas/utility": "./src/schemas/utility.ts",
         "./schemas/transforms": "./src/schemas/transforms.ts",
