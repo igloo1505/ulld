@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.60
+
+### Patch Changes
+
+- Broken build script causing mismatched versions in some packages.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.60
+  - @ulld/calendar@0.0.60
+  - @ulld/default-image-map@0.0.60
+  - @ulld/diagram@0.0.60
+  - @ulld/editor@0.0.60
+  - @ulld/embeddable-components@0.0.60
+  - @ulld/equations@0.0.60
+  - @ulld/full-form@0.0.60
+  - @ulld/journal@0.0.60
+  - @ulld/navigation@0.0.60
+  - @ulld/notebook@0.0.60
+  - @ulld/pdf@0.0.60
+  - @ulld/plot@0.0.60
+  - @ulld/snippets@0.0.60
+  - @ulld/tailwind@0.0.54
+  - @ulld/task-manager@0.0.60
+  - @ulld/whiteboard@0.0.60
+
 ## 0.0.59
 
 ### Patch Changes

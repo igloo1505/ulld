@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.60
+
+### Patch Changes
+
+- Broken build script causing mismatched versions in some packages.
+- Updated dependencies
+  - @ulld/database@0.0.57
+  - @ulld/math@0.0.60
+  - @ulld/tailwind@0.0.54
+
 ## 0.0.59
 
 ### Patch Changes

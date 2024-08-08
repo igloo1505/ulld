@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.57
+
+### Patch Changes
+
+- Broken build script causing mismatched versions in some packages.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.54
+
 ## 0.0.56
 
 ### Patch Changes

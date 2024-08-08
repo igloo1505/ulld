@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.60
+
+### Patch Changes
+
+- Broken build script causing mismatched versions in some packages.
+- Updated dependencies
+  - @ulld/base-configs@0.0.54
+  - @ulld/configschema@0.0.60
+  - @ulld/developer-schemas@0.0.54
+  - @ulld/utilities@0.0.60
+
 ## 0.0.59
 
 ### Patch Changes

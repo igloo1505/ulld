@@ -1,5 +1,11 @@
 # @ulld/developer-schemas
 
+## 0.0.54
+
+### Patch Changes
+
+- Broken build script causing mismatched versions in some packages.
+
 ## 0.0.53
 
 ### Patch Changes

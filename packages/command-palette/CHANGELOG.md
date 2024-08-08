@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.60
+
+### Patch Changes
+
+- Broken build script causing mismatched versions in some packages.
+- Updated dependencies
+  - @ulld/api@0.0.60
+  - @ulld/bib-manager@0.0.60
+  - @ulld/calendar@0.0.60
+  - @ulld/configschema@0.0.60
+  - @ulld/database@0.0.57
+  - @ulld/developer@0.0.60
+  - @ulld/diagram@0.0.60
+  - @ulld/editor@0.0.60
+  - @ulld/equations@0.0.60
+  - @ulld/hooks@0.0.60
+  - @ulld/logger@0.0.54
+  - @ulld/parsers@0.0.60
+  - @ulld/render@0.0.60
+  - @ulld/snippets@0.0.60
+  - @ulld/state@0.0.60
+  - @ulld/tailwind@0.0.54
+  - @ulld/task-manager@0.0.60
+  - @ulld/ui@0.0.60
+  - @ulld/utilities@0.0.60
+  - @ulld/whiteboard@0.0.60
+
 ## 0.0.59
 
 ### Patch Changes

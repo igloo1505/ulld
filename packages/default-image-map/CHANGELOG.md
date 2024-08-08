@@ -1,5 +1,18 @@
 # @ulld/default-image-map
 
+## 0.0.60
+
+### Patch Changes
+
+- Broken build script causing mismatched versions in some packages.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.56
+  - @ulld/typescript-config@0.0.54
+  - @ulld/configschema@0.0.60
+  - @ulld/logger@0.0.54
+  - @ulld/tailwind@0.0.54
+  - @ulld/utilities@0.0.60
+
 ## 0.0.59
 
 ### Patch Changes

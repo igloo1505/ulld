@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.56
+
+### Patch Changes
+
+- Broken build script causing mismatched versions in some packages.
+
 ## 0.0.55
 
 ### Patch Changes

@@ -1,5 +1,23 @@
 # @ulld/full-form
 
+## 0.0.60
+
+### Patch Changes
+
+- Broken build script causing mismatched versions in some packages.
+- Updated dependencies
+  - @ulld/api@0.0.60
+  - @ulld/typescript-config@0.0.54
+  - @ulld/configschema@0.0.60
+  - @ulld/database@0.0.57
+  - @ulld/editor@0.0.60
+  - @ulld/hooks@0.0.60
+  - @ulld/icons@0.0.60
+  - @ulld/jest-presets@0.0.54
+  - @ulld/state@0.0.60
+  - @ulld/tailwind@0.0.54
+  - @ulld/utilities@0.0.60
+
 ## 0.0.59
 
 ### Patch Changes

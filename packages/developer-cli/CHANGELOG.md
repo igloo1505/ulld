@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.60
+
+### Patch Changes
+
+- Broken build script causing mismatched versions in some packages.
+- Updated dependencies
+  - @ulld/developer@0.0.60
+  - @ulld/developer-schemas@0.0.54
+
 ## 0.0.59
 
 ### Patch Changes
