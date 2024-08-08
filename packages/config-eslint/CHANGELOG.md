@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.59
+
+### Patch Changes
+
+- Push before working offline again.
+
 ## 0.0.58
 
 ### Patch Changes

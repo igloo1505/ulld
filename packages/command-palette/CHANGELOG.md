@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.63
+
+### Patch Changes
+
+- Push before working offline again.
+- Updated dependencies
+  - @ulld/api@0.0.63
+  - @ulld/bib-manager@0.0.63
+  - @ulld/calendar@0.0.63
+  - @ulld/configschema@0.0.63
+  - @ulld/database@0.0.60
+  - @ulld/developer@0.0.63
+  - @ulld/diagram@0.0.63
+  - @ulld/editor@0.0.63
+  - @ulld/equations@0.0.63
+  - @ulld/hooks@0.0.63
+  - @ulld/logger@0.0.57
+  - @ulld/parsers@0.0.63
+  - @ulld/render@0.0.63
+  - @ulld/snippets@0.0.63
+  - @ulld/state@0.0.63
+  - @ulld/tailwind@0.0.57
+  - @ulld/task-manager@0.0.63
+  - @ulld/ui@0.0.63
+  - @ulld/utilities@0.0.63
+  - @ulld/whiteboard@0.0.63
+
 ## 0.0.62
 
 ### Patch Changes

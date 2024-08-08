@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.63
+
+### Patch Changes
+
+- Push before working offline again.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.63
+  - @ulld/calendar@0.0.63
+  - @ulld/default-image-map@0.0.63
+  - @ulld/diagram@0.0.63
+  - @ulld/editor@0.0.63
+  - @ulld/embeddable-components@0.0.63
+  - @ulld/equations@0.0.63
+  - @ulld/full-form@0.0.63
+  - @ulld/journal@0.0.63
+  - @ulld/navigation@0.0.63
+  - @ulld/notebook@0.0.63
+  - @ulld/pdf@0.0.63
+  - @ulld/plot@0.0.63
+  - @ulld/snippets@0.0.63
+  - @ulld/tailwind@0.0.57
+  - @ulld/task-manager@0.0.63
+  - @ulld/whiteboard@0.0.63
+
 ## 0.0.62
 
 ### Patch Changes

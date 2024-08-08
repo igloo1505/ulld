@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.63
+
+### Patch Changes
+
+- Push before working offline again.
+- Updated dependencies
+  - @ulld/hooks@0.0.63
+  - @ulld/tailwind@0.0.57
+  - @ulld/utilities@0.0.63
+
 ## 0.0.62
 
 ### Patch Changes

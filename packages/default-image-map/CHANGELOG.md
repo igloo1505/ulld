@@ -1,5 +1,18 @@
 # @ulld/default-image-map
 
+## 0.0.63
+
+### Patch Changes
+
+- Push before working offline again.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.59
+  - @ulld/typescript-config@0.0.57
+  - @ulld/configschema@0.0.63
+  - @ulld/logger@0.0.57
+  - @ulld/tailwind@0.0.57
+  - @ulld/utilities@0.0.63
+
 ## 0.0.62
 
 ### Patch Changes
