@@ -1,5 +1,5 @@
 "use client";
-import type { BundledLanguage } from "shiki";
+import type { BundledLanguage, BundledTheme, CodeToHastOptions } from "shiki";
 import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import { CopyIcon } from "lucide-react";
@@ -36,7 +36,7 @@ const tertiaryTheme = "material-theme-ocean";
 const CHC = connector(
     ({
         children,
-        language,
+        language = "python",
         className,
         minimal,
         theme: _theme,
@@ -48,13 +48,13 @@ const CHC = connector(
     }) => {
         const [ theme, _setTheme ] = useState<string | null | undefined>(undefined);
         const [ html, setHtml ] = useState<string | null>(null);
-        const [ codeToHtml, setCodeToHtml ] = useState(null)
+        const [ codeToHtml, setCodeToHtml ] = useState<((code: string, options: CodeToHastOptions<BundledLanguage, BundledTheme>) => Promise<string>) | null>(null)
 
         const { toast } = useToast();
 
 
         const setTheme = (t: string) => {
-            _settheme(t);
+            _setTheme(t);
         };
 
         const getTheme = (themeoverride: string | undefined | null) => {
@@ -88,6 +88,9 @@ const CHC = connector(
 
 
         const highlightCode = async (l: typeof language, t: typeof theme) => {
+            if(!codeToHtml){
+                return
+            }
             const _html = await codeToHtml(children, {
                 lang: l,
                 theme: getTheme(t),
@@ -129,7 +132,7 @@ const CHC = connector(
                 >
                     <a
                         role="button"
-                        onclick={copyCode}
+                        onClick={copyCode}
                         className={
                             "absolute top-2 right-2 p-2 hidden bg-primary text-primary-foreground rounded group-hover/codehighlight:flex flex-col justify-center items-center"
                         }
@@ -142,7 +145,7 @@ const CHC = connector(
                                 "overflow-auto max-w-full w-full max-h-full min-w-full [&>pre]:w-full [&>pre]:border [&>pre]:text-[12px]",
                                 children.length > 0 && "[&>pre]:p-4",
                             )}
-                            dangerouslySetInnerHtml={{
+                            dangerouslySetInnerHTML={{
                                 __html: html,
                             }}
                         ></div>
