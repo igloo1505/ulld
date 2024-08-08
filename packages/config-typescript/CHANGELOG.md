@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.0.53
+
+### Patch Changes
+
+- Missing dependencies came out of nowhere...
+
 ## 0.0.52
 
 ### Patch Changes

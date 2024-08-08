@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.59
+
+### Patch Changes
+
+- Missing dependencies came out of nowhere...
+- Updated dependencies
+  - @ulld/api@0.0.59
+  - @ulld/bib-manager@0.0.59
+  - @ulld/calendar@0.0.59
+  - @ulld/configschema@0.0.59
+  - @ulld/database@0.0.56
+  - @ulld/developer@0.0.59
+  - @ulld/diagram@0.0.59
+  - @ulld/editor@0.0.59
+  - @ulld/equations@0.0.59
+  - @ulld/hooks@0.0.59
+  - @ulld/logger@0.0.53
+  - @ulld/parsers@0.0.59
+  - @ulld/render@0.0.59
+  - @ulld/snippets@0.0.59
+  - @ulld/state@0.0.59
+  - @ulld/tailwind@0.0.53
+  - @ulld/task-manager@0.0.59
+  - @ulld/ui@0.0.59
+  - @ulld/utilities@0.0.59
+  - @ulld/whiteboard@0.0.59
+
 ## 0.0.58
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @ulld/note-network
 
+## 0.0.59
+
+### Patch Changes
+
+- Missing dependencies came out of nowhere...
+- Updated dependencies
+  - @ulld/api@0.0.59
+  - @ulld/typescript-config@0.0.53
+  - @ulld/configschema@0.0.59
+  - @ulld/developer@0.0.59
+  - @ulld/jest-presets@0.0.53
+  - @ulld/logger@0.0.53
+  - @ulld/tailwind@0.0.53
+  - @ulld/utilities@0.0.59
+
 ## 0.0.58
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.59
+
+### Patch Changes
+
+- Missing dependencies came out of nowhere...
+- Updated dependencies
+  - @ulld/eslint-config@0.0.55
+  - @ulld/typescript-config@0.0.53
+  - @ulld/configschema@0.0.59
+  - @ulld/database@0.0.56
+  - @ulld/logger@0.0.53
+
 ## 0.0.58
 
 ### Patch Changes

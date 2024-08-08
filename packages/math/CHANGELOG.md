@@ -1,5 +1,18 @@
 # @ulld/math
 
+## 0.0.59
+
+### Patch Changes
+
+- Missing dependencies came out of nowhere...
+- Updated dependencies
+  - @ulld/typescript-config@0.0.53
+  - @ulld/configschema@0.0.59
+  - @ulld/hooks@0.0.59
+  - @ulld/icons@0.0.59
+  - @ulld/state@0.0.59
+  - @ulld/utilities@0.0.59
+
 ## 0.0.58
 
 ### Patch Changes

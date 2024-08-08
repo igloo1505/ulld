@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.59
+
+### Patch Changes
+
+- Missing dependencies came out of nowhere...
+- Updated dependencies
+  - @ulld/database@0.0.56
+  - @ulld/math@0.0.59
+  - @ulld/tailwind@0.0.53
+
 ## 0.0.58
 
 ### Patch Changes

@@ -1,5 +1,24 @@
 # @ulld/pdf
 
+## 0.0.59
+
+### Patch Changes
+
+- Missing dependencies came out of nowhere...
+- Updated dependencies
+  - @ulld/api@0.0.59
+  - @ulld/eslint-config@0.0.55
+  - @ulld/configschema@0.0.59
+  - @ulld/developer@0.0.59
+  - @ulld/hooks@0.0.59
+  - @ulld/icons@0.0.59
+  - @ulld/jest-presets@0.0.53
+  - @ulld/state@0.0.59
+  - @ulld/tailwind@0.0.53
+  - @ulld/ui@0.0.59
+  - @ulld/utilities@0.0.59
+  - @ulld/whiteboard@0.0.59
+
 ## 0.0.58
 
 ### Patch Changes

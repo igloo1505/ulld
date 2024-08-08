@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.55
+
+### Patch Changes
+
+- Missing dependencies came out of nowhere...
+
 ## 0.0.54
 
 ### Patch Changes
