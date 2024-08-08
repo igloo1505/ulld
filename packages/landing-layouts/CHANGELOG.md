@@ -1,5 +1,27 @@
 # @ulld/landing-layouts
 
+## 0.0.64
+
+### Patch Changes
+
+- Update the way shiki is handled to improve reliability.
+- Updated dependencies
+  - @ulld/api@0.0.64
+  - @ulld/bib-manager@0.0.64
+  - @ulld/calendar@0.0.64
+  - @ulld/typescript-config@0.0.58
+  - @ulld/configschema@0.0.64
+  - @ulld/developer@0.0.64
+  - @ulld/hooks@0.0.64
+  - @ulld/icons@0.0.64
+  - @ulld/journal@0.0.64
+  - @ulld/plot@0.0.64
+  - @ulld/state@0.0.64
+  - @ulld/tailwind@0.0.58
+  - @ulld/ui@0.0.64
+  - @ulld/utilities@0.0.64
+  - @ulld/whiteboard@0.0.64
+
 ## 0.0.63
 
 ### Patch Changes

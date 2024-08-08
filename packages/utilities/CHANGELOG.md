@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.64
+
+### Patch Changes
+
+- Update the way shiki is handled to improve reliability.
+- Updated dependencies
+  - @ulld/database@0.0.61
+  - @ulld/math@0.0.64
+  - @ulld/tailwind@0.0.58
+
 ## 0.0.63
 
 ### Patch Changes

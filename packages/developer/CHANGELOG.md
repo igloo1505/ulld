@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.64
+
+### Patch Changes
+
+- Update the way shiki is handled to improve reliability.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.60
+  - @ulld/typescript-config@0.0.58
+  - @ulld/configschema@0.0.64
+  - @ulld/database@0.0.61
+  - @ulld/logger@0.0.58
+
 ## 0.0.63
 
 ### Patch Changes

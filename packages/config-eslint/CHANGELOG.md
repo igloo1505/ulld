@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.60
+
+### Patch Changes
+
+- Update the way shiki is handled to improve reliability.
+
 ## 0.0.59
 
 ### Patch Changes

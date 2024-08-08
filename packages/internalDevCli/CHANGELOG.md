@@ -1,5 +1,11 @@
 # @ulld/internal-dev-cli
 
+## 0.0.58
+
+### Patch Changes
+
+- Update the way shiki is handled to improve reliability.
+
 ## 0.0.57
 
 ### Patch Changes

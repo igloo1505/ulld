@@ -1,5 +1,20 @@
 # @ulld/state
 
+## 0.0.64
+
+### Patch Changes
+
+- Update the way shiki is handled to improve reliability.
+- Updated dependencies
+  - @ulld/base-configs@0.0.58
+  - @ulld/configschema@0.0.64
+  - @ulld/database@0.0.61
+  - @ulld/developer@0.0.64
+  - @ulld/hooks@0.0.64
+  - @ulld/parsers@0.0.64
+  - @ulld/tailwind@0.0.58
+  - @ulld/utilities@0.0.64
+
 ## 0.0.63
 
 ### Patch Changes

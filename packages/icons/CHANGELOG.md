@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.64
+
+### Patch Changes
+
+- Update the way shiki is handled to improve reliability.
+- Updated dependencies
+  - @ulld/hooks@0.0.64
+  - @ulld/tailwind@0.0.58
+  - @ulld/utilities@0.0.64
+
 ## 0.0.63
 
 ### Patch Changes

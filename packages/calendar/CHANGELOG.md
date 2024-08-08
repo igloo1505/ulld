@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.64
+
+### Patch Changes
+
+- Update the way shiki is handled to improve reliability.
+- Updated dependencies
+  - @ulld/developer@0.0.64
+
 ## 0.0.63
 
 ### Patch Changes

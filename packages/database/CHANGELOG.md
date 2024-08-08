@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.61
+
+### Patch Changes
+
+- Update the way shiki is handled to improve reliability.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.58
+
 ## 0.0.60
 
 ### Patch Changes

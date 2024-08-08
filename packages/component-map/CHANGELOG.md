@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.64
+
+### Patch Changes
+
+- Update the way shiki is handled to improve reliability.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.64
+  - @ulld/calendar@0.0.64
+  - @ulld/default-image-map@0.0.64
+  - @ulld/diagram@0.0.64
+  - @ulld/editor@0.0.64
+  - @ulld/embeddable-components@0.0.64
+  - @ulld/equations@0.0.64
+  - @ulld/full-form@0.0.64
+  - @ulld/journal@0.0.64
+  - @ulld/navigation@0.0.64
+  - @ulld/notebook@0.0.64
+  - @ulld/pdf@0.0.64
+  - @ulld/plot@0.0.64
+  - @ulld/snippets@0.0.64
+  - @ulld/tailwind@0.0.58
+  - @ulld/task-manager@0.0.64
+  - @ulld/whiteboard@0.0.64
+
 ## 0.0.63
 
 ### Patch Changes
