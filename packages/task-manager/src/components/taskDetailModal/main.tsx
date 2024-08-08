@@ -7,6 +7,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@ulld/tailwind/card";
+import { ModalPageContainer } from "@ulld/ui/modalPage";
 import { useEditorModalSyncedValue } from "@ulld/hooks/useEditorModalSyncedValue";
 import { useAppConfig } from "@ulld/hooks/useAppConfig";
 import { MdxContentCLIENT } from "@ulld/render/mdx/client";
@@ -19,7 +20,7 @@ import AnimatedCheckbox from "@ulld/ui/animatedCheckbox";
 import { client } from "@ulld/api/client";
 import { useDebounceCallback } from "@ulld/hooks/useDebounceCallback";
 
-const TaskDetailComponent = ({ data, isModal }: TaskDetailsProps) => {
+const TaskDetailComponentInner = ({ data, isModal }: TaskDetailsProps) => {
     const [task, _setTask] = useState<TaskDetailsProps["data"]>(data);
     const [revertStatus, setRevertStatus] = useState(
         !task.status
@@ -126,6 +127,25 @@ const TaskDetailComponent = ({ data, isModal }: TaskDetailsProps) => {
                 {isModal && <RouteModalBackButton />}
             </CardFooter>
         </Card>
+    );
+};
+
+const TaskDetailComponent = (props: TaskDetailsProps) => {
+    if (props.isModal) {
+        return (
+            <ModalPageContainer>
+                <TaskDetailComponentInner {...props} />
+            </ModalPageContainer>
+        );
+    }
+    return (
+        <div
+            className={
+                "w-full h-full flex flex-col justify-center items-center p-8 md:px-16"
+            }
+        >
+            <TaskDetailComponentInner {...props} />
+        </div>
     );
 };
 

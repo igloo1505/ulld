@@ -1,11 +1,10 @@
 "use client";
-import React from 'react'
-import { useEffect, useState } from "react";
+import React from "react";
+import { useEffect } from "react";
 import { useToast } from "@ulld/tailwind/use-toast";
 import { useForm, zodResolver } from "@ulld/full-form/form";
 import { client } from "@ulld/api/client";
 import Link from "next/link";
-/* import { TagTopicSubjectList } from "@ulld/api/schemas/taggable/tagTopicSubjectList"; */
 import { Button } from "@ulld/tailwind/button";
 import {
     addTodoListSchema,
@@ -21,6 +20,9 @@ import {
 } from "@ulld/full-form/taggableCombobox";
 import { TextInput } from "@ulld/full-form/textInput";
 import { z } from "zod";
+import { Route } from "next";
+import { useRouter } from "next/navigation";
+import { taskManagerErrorRecord } from "@ulld/utilities/error-taskManager";
 
 const emptyTaggableData = {
     tags: [],
@@ -35,25 +37,24 @@ const taggableProps: TaggableComboBoxProps<
         {
             name: "tags",
             label: "Tags",
-            type: "tag"
+            type: "tag",
         },
         {
             name: "topics",
             label: "Topics",
-            type: "topic"
+            type: "topic",
         },
         {
             name: "subjects",
             label: "Subjects",
-            type: "subject"
+            type: "subject",
         },
     ];
 
-const AddTaskListModal = ({
-    isModal,
-    editing,
-}: AddTaskListProps) => {
+const AddTaskListModal = ({ isModal, editing }: AddTaskListProps) => {
     const { toast } = useToast();
+
+    const router = useRouter();
 
     const form = useForm<AddToDoListSchema>({
         resolver: zodResolver(addTodoListSchema),
@@ -64,17 +65,29 @@ const AddTaskListModal = ({
     });
 
     useEffect(() => {
-        if(editing){
-            form.setValue("label", editing.label)
-            form.setValue("topics", editing.topics.map((f) => f.value))
-            form.setValue("tags", editing.tags.map((f) => f.value))
-            form.setValue("subjects", editing.subjects.map((f) => f.value))
+        if (editing) {
+            form.setValue("label", editing.label);
+            form.setValue(
+                "topics",
+                editing.topics.map((f) => f.value),
+            );
+            form.setValue(
+                "tags",
+                editing.tags.map((f) => f.value),
+            );
+            form.setValue(
+                "subjects",
+                editing.subjects.map((f) => f.value),
+            );
         }
-    }, [editing])
+    }, [editing]);
 
     const handleSubmit = async (data: AddToDoListSchema) => {
         let res = await client.toDo.createNewTodoList.mutate(data);
-        if (res) {
+        if (!res) return;
+        if ("errorKey" in res) {
+            toast(taskManagerErrorRecord[res.errorKey]);
+        } else {
             toast({
                 title: "Success",
                 description: (
@@ -84,15 +97,18 @@ const AddTaskListModal = ({
                         </div>
                         <Link
                             className={"font-semibold linkColor"}
-                            href={`/todo?${formatSearchAllParams<ToDoSearchParams>({
-                                listNames: [data.label],
-                            })}`}
+                            href={
+                                `/todo?${formatSearchAllParams<ToDoSearchParams>({
+                                    listNames: [data.label],
+                                })}` as Route
+                            }
                         >
                             {data.label}
                         </Link>
                     </div>
                 ),
             });
+            router.back();
         }
     };
 
@@ -105,7 +121,11 @@ const AddTaskListModal = ({
             onSubmit={handleSubmit}
             withButtons={false}
         >
-            <div className={"w-full flex flex-col justify-center items-center md:justify-around md:items-center md:flex-row gap-4"}>
+            <div
+                className={
+                    "w-full flex flex-col justify-center items-center md:justify-around md:items-center md:flex-row gap-4"
+                }
+            >
                 {taggableProps.map((p) => {
                     return <TaggableComboBox multiple {...p} />;
                 })}

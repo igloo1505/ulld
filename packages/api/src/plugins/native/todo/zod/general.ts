@@ -8,7 +8,7 @@ const priority = z.coerce.number().int().min(0).max(10).default(5);
 const dueAt = dateZodProperty.optional().nullable();
 const category = z.nativeEnum(TaskCategory).optional().nullable();
 
-const status = z.enum(toDoItemStatuses).default("ToDo");
+const status = z.string().default("ToDo");
 
 export const addTodoListSchema = z
     .object({

@@ -34,6 +34,7 @@ const defaultInitialValues: DashboardState = {
     noteTypes: [],
     tasks: [],
     filterType: "lastAccess",
+    plotFilterType: "Notes"
 };
 
 export const DashboardContext =

@@ -9,6 +9,10 @@ import {
     updateTaskSchema,
 } from "../../../plugins/native/todo/zod/general";
 import {
+    ErrorResponse,
+    TaskManagerErrorKeys,
+} from "@ulld/utilities/error-taskManager";
+import {
     getToDoSearchParams,
     getParsedToDoSearchParams,
     todoStatusChangeSchema,
@@ -366,6 +370,16 @@ export const toDoRouter = router({
     createNewTodoList: publicProcedure
         .input(addTodoListSchema)
         .mutation(async ({ input }) => {
+            let exists = await prisma.toDoList.findFirst({
+                where: {
+                    label: input.label,
+                },
+            });
+            if (exists) {
+                return {
+                    errorKey: "toDoListExists",
+                } satisfies ErrorResponse;
+            }
             return await prisma.toDoList.create({
                 data: {
                     label: input.label,

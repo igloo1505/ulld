@@ -36,7 +36,6 @@ export const fsUtilRouter = router({
       }),
     )
     .query(async (opts) => {
-        console.log("opts: ", opts)
       const _root = opts.input.useProcessRoot
         ? process.cwd()
         : getInternalConfig().fsRoot;

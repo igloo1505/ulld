@@ -24,7 +24,6 @@ export const snippetRouter = router({
   getSnippets: publicProcedure
     .input(snippetFilterSchema)
     .query(async (opts) => {
-        console.log("opts: ", opts)
       return await prisma.snippet.findMany({
         where: {
           language: opts.input.language || undefined,

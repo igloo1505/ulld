@@ -9,7 +9,7 @@ import { ensureAbsolute } from "@ulld/utilities/utils/fsUtils"
 import { SearchAllParams } from "@ulld/utilities/types"
 import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
-import { getPathnameFromHeaders } from "../../trpcInternalMethods/filesystem/getPathnameFromHeaders";
+import { getPathnameFromHeaders } from "@ulld/utilities/getPathnameFromHeaders";
 
 
 type NotePropertiesOutput = ({

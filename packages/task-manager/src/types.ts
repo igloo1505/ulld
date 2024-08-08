@@ -5,6 +5,7 @@ import type { serverClient } from "@ulld/api/serverClient";
 import { Table } from "@tanstack/react-table";
 import { Path } from "@ulld/full-form/form";
 
+
 export interface TaskListIds {
     label: string;
     id: number;
@@ -99,4 +100,12 @@ export interface TaskListSearchResultProps {
     item: Awaited<ReturnType<typeof serverClient.toDo.findListsByTaggables>>[number]
     totalFound: number
     // data: // get this type
+}
+
+
+declare global {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+    interface WindowEventMap {
+        "add-new-task": CustomEvent<TodoTaskOutput>;
+    }
 }

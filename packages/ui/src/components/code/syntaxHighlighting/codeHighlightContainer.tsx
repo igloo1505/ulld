@@ -46,12 +46,17 @@ const CHC = connector(
         configTheme: ParsedAppConfig["code"]["theme"] | undefined;
         darkMode: boolean;
     }) => {
-        const [ theme, _setTheme ] = useState<string | null | undefined>(undefined);
-        const [ html, setHtml ] = useState<string | null>(null);
-        const [ codeToHtml, setCodeToHtml ] = useState<((code: string, options: CodeToHastOptions<BundledLanguage, BundledTheme>) => Promise<string>) | null>(null)
+        const [theme, _setTheme] = useState<string | null | undefined>(undefined);
+        const [html, setHtml] = useState<string>("");
+        const [codeToHtml, setCodeToHtml] = useState<
+            | ((
+                code: string,
+                options: CodeToHastOptions<BundledLanguage, BundledTheme>,
+            ) => Promise<string>)
+            | null
+        >(null);
 
         const { toast } = useToast();
-
 
         const setTheme = (t: string) => {
             _setTheme(t);
@@ -68,28 +73,24 @@ const CHC = connector(
             return tertiaryTheme;
         };
 
-        const gatherHighlighter = async () => {    
-            if(!codeToHtml){
-                let _codeToHtml = await import("shiki").then((x) => x.codeToHtml)
-                setCodeToHtml(_codeToHtml)
-            }
-        }
+        const gatherHighlighter = async () => {
+            let _codeToHtml = await import("shiki").then((x) => x.codeToHtml);
+            setCodeToHtml(_codeToHtml);
+        };
 
         useEffect(() => {
-            if(!codeToHtml){
-                gatherHighlighter()
+            if (!codeToHtml) {
+                gatherHighlighter();
             }
-        }, [])
-
+        }, []);
 
         useEffect(() => {
             setTheme(getTheme(_theme));
         }, [darkMode]);
 
-
         const highlightCode = async (l: typeof language, t: typeof theme) => {
-            if(!codeToHtml){
-                return
+            if (!codeToHtml) {
+                return;
             }
             const _html = await codeToHtml(children, {
                 lang: l,
@@ -98,14 +99,9 @@ const CHC = connector(
             setHtml(_html);
         };
 
-
         useEffect(() => {
-            if(!codeToHtml) {
-                return
-            }
             highlightCode(language, theme);
         }, [language, minimal, theme, codeToHtml]);
-
 
         const copyCode = async () => {
             await copyStringToClipboard(children);
@@ -114,10 +110,6 @@ const CHC = connector(
                 description: `The ${language} code has been copied to your clipboard.`,
             });
         };
-
-        if (!children || typeof children !== "string" || children.trim() === "") {
-            return null;
-        }
 
         return (
             <CodeThemeContextMenu

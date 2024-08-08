@@ -6,7 +6,9 @@ import TaskDetailHeaderItem from "./taskDetailHeaderItem";
 import TaskListDetailsTopRightCard from "./taskListCardDetailsTopRight";
 import { useDashboardContext } from "../../../util/provider";
 
+
 interface TaskListCardDetailsProps extends TimePeriodButtonGroupProps { }
+
 const TaskListCardDetails = ({
     ...props
 }: TaskListCardDetailsProps) => {

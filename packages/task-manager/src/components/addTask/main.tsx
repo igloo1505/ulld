@@ -65,12 +65,16 @@ const ToDoListAddTaskModal = ({
                 title: "Success",
                 description: `This task has been added to ${data.listName}`,
             });
+            window.dispatchEvent(new CustomEvent("add-new-task", {
+                detail: data
+            }))
             if (isModal) {
                 router.back();
             } else {
                 form.reset();
             }
         }
+
     };
 
     return (
@@ -134,7 +138,8 @@ const ToDoListAddTaskModal = ({
                     name="dueAt"
                     label="Due"
                     buttonClasses="!w-full"
-                    withTime={false}
+                    withTimeDisplay={false}
+                    timePosition="popover-top"
                 />
                 <div className={"w-full flex flex-row justify-end items-end h-full"}>
                     <Button
