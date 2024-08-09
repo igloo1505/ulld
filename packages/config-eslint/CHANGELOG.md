@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.61
+
+### Patch Changes
+
+- Some minor fixes reworking of the build script to work with new tailwind sources collection in the generated app.
+
 ## 0.0.60
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @ulld/baseConfigs
 
+## 0.0.59
+
+### Patch Changes
+
+- Some minor fixes reworking of the build script to work with new tailwind sources collection in the generated app.
+
 ## 0.0.58
 
 ### Patch Changes

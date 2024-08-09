@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.65
+
+### Patch Changes
+
+- Some minor fixes reworking of the build script to work with new tailwind sources collection in the generated app.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.61
+  - @ulld/typescript-config@0.0.59
+  - @ulld/configschema@0.0.65
+  - @ulld/database@0.0.62
+  - @ulld/logger@0.0.59
+
 ## 0.0.64
 
 ### Patch Changes

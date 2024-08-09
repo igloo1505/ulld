@@ -1,5 +1,27 @@
 # @ulld/landing-layouts
 
+## 0.0.65
+
+### Patch Changes
+
+- Some minor fixes reworking of the build script to work with new tailwind sources collection in the generated app.
+- Updated dependencies
+  - @ulld/api@0.0.65
+  - @ulld/bib-manager@0.0.65
+  - @ulld/calendar@0.0.65
+  - @ulld/typescript-config@0.0.59
+  - @ulld/configschema@0.0.65
+  - @ulld/developer@0.0.65
+  - @ulld/hooks@0.0.65
+  - @ulld/icons@0.0.65
+  - @ulld/journal@0.0.65
+  - @ulld/plot@0.0.65
+  - @ulld/state@0.0.65
+  - @ulld/tailwind@0.0.59
+  - @ulld/ui@0.0.65
+  - @ulld/utilities@0.0.65
+  - @ulld/whiteboard@0.0.65
+
 ## 0.0.64
 
 ### Patch Changes

@@ -522,67 +522,67 @@
         "navigation": [
             {
                 "name": "@ulld/navigation",
-                "version": "0.0.64"
+                "version": "0.0.65"
             }
         ],
         "bibliography": [
             {
                 "name": "@ulld/bib-manager",
-                "version": "0.0.64"
+                "version": "0.0.65"
             }
         ],
         "commandPalette": [
             {
                 "name": "@ulld/command-palette",
-                "version": "0.0.64"
+                "version": "0.0.65"
             }
         ],
         "editor": [
             {
                 "name": "@ulld/editor",
-                "version": "0.0.64"
+                "version": "0.0.65"
             }
         ],
         "math": [
             {
                 "name": "@ulld/equations",
-                "version": "0.0.64"
+                "version": "0.0.65"
             }
         ],
         "form": [
             {
                 "name": "@ulld/full-form",
-                "version": "0.0.64"
+                "version": "0.0.65"
             }
         ],
         "dashboard": [
             {
                 "name": "@ulld/landing-layouts",
-                "version": "0.0.64"
+                "version": "0.0.65"
             }
         ],
         "pdf": [
             {
                 "name": "@ulld/pdf",
-                "version": "0.0.64"
+                "version": "0.0.65"
             }
         ],
         "snippets": [
             {
                 "name": "@ulld/snippets",
-                "version": "0.0.64"
+                "version": "0.0.65"
             }
         ],
         "taskManager": [
             {
                 "name": "@ulld/task-manager",
-                "version": "0.0.64"
+                "version": "0.0.65"
             }
         ],
         "UI": [
             {
                 "name": "@ulld/ui",
-                "version": "0.0.64"
+                "version": "0.0.65"
             }
         ]
     },
@@ -603,12 +603,12 @@
     "plugins": [
         {
             "name": "@ulld/api",
-            "version": "0.0.64",
+            "version": "0.0.65",
             "parserIndex": 0
         },
         {
             "name": "@ulld/plot",
-            "version": "0.0.64",
+            "version": "0.0.65",
             "parserIndex": 0
         }
     ]

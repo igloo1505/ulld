@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.62
+
+### Patch Changes
+
+- Some minor fixes reworking of the build script to work with new tailwind sources collection in the generated app.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.59
+
 ## 0.0.61
 
 ### Patch Changes

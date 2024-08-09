@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.65
+
+### Patch Changes
+
+- Some minor fixes reworking of the build script to work with new tailwind sources collection in the generated app.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.65
+  - @ulld/calendar@0.0.65
+  - @ulld/default-image-map@0.0.65
+  - @ulld/diagram@0.0.65
+  - @ulld/editor@0.0.65
+  - @ulld/embeddable-components@0.0.65
+  - @ulld/equations@0.0.65
+  - @ulld/full-form@0.0.65
+  - @ulld/journal@0.0.65
+  - @ulld/navigation@0.0.65
+  - @ulld/notebook@0.0.65
+  - @ulld/pdf@0.0.65
+  - @ulld/plot@0.0.65
+  - @ulld/snippets@0.0.65
+  - @ulld/tailwind@0.0.59
+  - @ulld/task-manager@0.0.65
+  - @ulld/whiteboard@0.0.65
+
 ## 0.0.64
 
 ### Patch Changes

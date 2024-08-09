@@ -1,5 +1,20 @@
 # @ulld/note-network
 
+## 0.0.65
+
+### Patch Changes
+
+- Some minor fixes reworking of the build script to work with new tailwind sources collection in the generated app.
+- Updated dependencies
+  - @ulld/api@0.0.65
+  - @ulld/typescript-config@0.0.59
+  - @ulld/configschema@0.0.65
+  - @ulld/developer@0.0.65
+  - @ulld/jest-presets@0.0.59
+  - @ulld/logger@0.0.59
+  - @ulld/tailwind@0.0.59
+  - @ulld/utilities@0.0.65
+
 ## 0.0.64
 
 ### Patch Changes

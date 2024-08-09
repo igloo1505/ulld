@@ -1,5 +1,19 @@
 # @ulld/render
 
+## 0.0.65
+
+### Patch Changes
+
+- Some minor fixes reworking of the build script to work with new tailwind sources collection in the generated app.
+- Updated dependencies
+  - @ulld/api@0.0.65
+  - @ulld/component-map@0.0.65
+  - @ulld/typescript-config@0.0.59
+  - @ulld/configschema@0.0.65
+  - @ulld/hooks@0.0.65
+  - @ulld/jest-presets@0.0.59
+  - @ulld/utilities@0.0.65
+
 ## 0.0.64
 
 ### Patch Changes

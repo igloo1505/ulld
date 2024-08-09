@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.65
+
+### Patch Changes
+
+- Some minor fixes reworking of the build script to work with new tailwind sources collection in the generated app.
+- Updated dependencies
+  - @ulld/api@0.0.65
+  - @ulld/bib-manager@0.0.65
+  - @ulld/calendar@0.0.65
+  - @ulld/configschema@0.0.65
+  - @ulld/database@0.0.62
+  - @ulld/developer@0.0.65
+  - @ulld/diagram@0.0.65
+  - @ulld/editor@0.0.65
+  - @ulld/equations@0.0.65
+  - @ulld/hooks@0.0.65
+  - @ulld/logger@0.0.59
+  - @ulld/parsers@0.0.65
+  - @ulld/render@0.0.65
+  - @ulld/snippets@0.0.65
+  - @ulld/state@0.0.65
+  - @ulld/tailwind@0.0.59
+  - @ulld/task-manager@0.0.65
+  - @ulld/ui@0.0.65
+  - @ulld/utilities@0.0.65
+  - @ulld/whiteboard@0.0.65
+
 ## 0.0.64
 
 ### Patch Changes
