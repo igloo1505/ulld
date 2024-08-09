@@ -70,8 +70,6 @@ export class ArrayUtilities {
             /// @ts-ignore
             a = a.map((s) => s.toLowerCase());
         }
-        console.log("a: ", a);
-        console.log("b: ", b);
         for (var i = 0; i < b.length; i++) {
             /// @ts-ignore
             if (a.indexOf(caseInsensitive ? b[i].toLowerCase() : b[i]) >= 0)
@@ -194,6 +192,9 @@ export class ArrayUtilities {
             }
         }
         return items
+    }
+
+    static sliceAroundIndex<T>(data: T[], targetIndex: number, maxItems: number) {
     }
 
 }

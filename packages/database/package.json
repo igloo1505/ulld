@@ -21,15 +21,15 @@
         "migrate:reset": "dotenv -e .env.local -- prisma migrate reset",
         "db:push": "prisma db push --skip-generate",
         "db:generateInternalDevelopment": "prisma generate",
-        "db:generate": "prisma generate --generator client --generator json",
-        "db:migrate": "prisma generate --generator client --generator json",
+        "db:generate": "prisma generate",
+        "db:migrate": "prisma generate",
         "prisma:studio": "dotenv -e .env.local -- prisma studio",
         "db:generateTargetProjectSchema": "run generateTargetDatabase",
         "generateTargetDatabase": "prisma generate",
         "migrateTargetDatabase": "dotenv -e .env.local -- prisma migrate dev",
-        "postinstall": "prisma generate --generator client --generator json",
-        "prebuild": "prisma generate --generator client --generator json",
-        "predev": "prisma generate --generator client --generator json"
+        "postinstall": "prisma generate",
+        "prebuild": "prisma generate",
+        "predev": "prisma generate"
     },
     "prisma": {
         "schema": "prisma/schema.prisma"
