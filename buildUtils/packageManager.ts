@@ -4,6 +4,7 @@ import path from "path";
 import rl from "readline";
 import npmFetch from "npm-registry-fetch";
 import { PackageJsonType } from "@ulld/utilities/packageJsonType";
+import { JsonFile } from "@ulld/utilities/jsonFileClass";
 
 interface Dependency {
     name: string;
@@ -116,6 +117,27 @@ export class PackageManager {
         }
         return JSON.parse(fs.readFileSync(p, { encoding: "utf-8" }));
     }
+    getAppDependenciesFromPackageJsonPath(pkgPath: string) {
+        let f = new JsonFile(pkgPath)
+        if(!f.exists()){
+            console.error(`Cannot find file ${pkgPath} in PackageManager#getAppDependenciesFromPackageJsonPath method. Cannot continue.`)
+            process.exit(1)
+        }
+        let content = f.getJsonContent() as PackageJsonType
+        let deps: ClonedBaseAppInternalDep[] = [];
+        for (const depType of depTypes) {
+            for (const dep in content[depType]) {
+                if (dep.startsWith("@ulld")) {
+                    deps.push({
+                        name: dep,
+                        type: depType,
+                        version: content[depType][dep],
+                    });
+                }
+            }
+        }
+        return { deps, file: f };
+    }
     getClonedBaseAppInternalPackages(): ClonedBaseAppInternalDep[] {
         let deps: ClonedBaseAppInternalDep[] = [];
         for (const depType of depTypes) {
@@ -130,6 +152,15 @@ export class PackageManager {
             }
         }
         return deps;
+    }
+    setDependencySourcesOfPackageJson(f: PackageJsonType, items: ClonedBaseAppInternalDep[]) {
+        for (const item of items) {
+            if (!f[item.type]) {
+                f[item.type] = {};
+            }
+            (f[item.type] as any)[item.name] = item.version;
+        }
+        return f
     }
     setNewClonedAppInternalPackages(items: ClonedBaseAppInternalDep[]) {
         for (const item of items) {
