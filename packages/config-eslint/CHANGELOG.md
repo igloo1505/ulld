@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.62
+
+### Patch Changes
+
+- Fix some small tweaks, but mostly fix issue with the build script to incorporate new generators.
+
 ## 0.0.61
 
 ### Patch Changes

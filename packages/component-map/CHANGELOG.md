@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.66
+
+### Patch Changes
+
+- Fix some small tweaks, but mostly fix issue with the build script to incorporate new generators.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.66
+  - @ulld/calendar@0.0.66
+  - @ulld/default-image-map@0.0.66
+  - @ulld/diagram@0.0.66
+  - @ulld/editor@0.0.66
+  - @ulld/embeddable-components@0.0.66
+  - @ulld/equations@0.0.66
+  - @ulld/full-form@0.0.66
+  - @ulld/journal@0.0.66
+  - @ulld/navigation@0.0.66
+  - @ulld/notebook@0.0.66
+  - @ulld/pdf@0.0.66
+  - @ulld/plot@0.0.66
+  - @ulld/snippets@0.0.66
+  - @ulld/tailwind@0.0.60
+  - @ulld/task-manager@0.0.66
+  - @ulld/whiteboard@0.0.66
+
 ## 0.0.65
 
 ### Patch Changes

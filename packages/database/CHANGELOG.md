@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.63
+
+### Patch Changes
+
+- Fix some small tweaks, but mostly fix issue with the build script to incorporate new generators.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.60
+
 ## 0.0.62
 
 ### Patch Changes

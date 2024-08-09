@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.66
+
+### Patch Changes
+
+- Fix some small tweaks, but mostly fix issue with the build script to incorporate new generators.
+- Updated dependencies
+  - @ulld/database@0.0.63
+  - @ulld/math@0.0.66
+  - @ulld/tailwind@0.0.60
+
 ## 0.0.65
 
 ### Patch Changes

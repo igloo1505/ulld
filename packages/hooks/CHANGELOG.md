@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.66
+
+### Patch Changes
+
+- Fix some small tweaks, but mostly fix issue with the build script to incorporate new generators.
+- Updated dependencies
+  - @ulld/api@0.0.66
+  - @ulld/component-map@0.0.66
+  - @ulld/configschema@0.0.66
+  - @ulld/database@0.0.63
+  - @ulld/parsers@0.0.66
+
 ## 0.0.65
 
 ### Patch Changes

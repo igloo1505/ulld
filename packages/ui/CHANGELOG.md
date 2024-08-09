@@ -1,5 +1,27 @@
 # @ulld/ui
 
+## 0.0.66
+
+### Patch Changes
+
+- Fix some small tweaks, but mostly fix issue with the build script to incorporate new generators.
+- Updated dependencies
+  - @ulld/api@0.0.66
+  - @ulld/component-map@0.0.66
+  - @ulld/configschema@0.0.66
+  - @ulld/database@0.0.63
+  - @ulld/editor@0.0.66
+  - @ulld/embeddable-components@0.0.66
+  - @ulld/full-form@0.0.66
+  - @ulld/hooks@0.0.66
+  - @ulld/icons@0.0.66
+  - @ulld/logger@0.0.60
+  - @ulld/parsers@0.0.66
+  - @ulld/render@0.0.66
+  - @ulld/state@0.0.66
+  - @ulld/tailwind@0.0.60
+  - @ulld/utilities@0.0.66
+
 ## 0.0.65
 
 ### Patch Changes

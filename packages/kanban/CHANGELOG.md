@@ -1,5 +1,19 @@
 # @ulld/kanban
 
+## 0.0.66
+
+### Patch Changes
+
+- Fix some small tweaks, but mostly fix issue with the build script to incorporate new generators.
+- Updated dependencies
+  - @ulld/api@0.0.66
+  - @ulld/typescript-config@0.0.60
+  - @ulld/developer@0.0.66
+  - @ulld/jest-presets@0.0.60
+  - @ulld/logger@0.0.60
+  - @ulld/state@0.0.66
+  - @ulld/tailwind@0.0.60
+
 ## 0.0.65
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.66
+
+### Patch Changes
+
+- Fix some small tweaks, but mostly fix issue with the build script to incorporate new generators.
+- Updated dependencies
+  - @ulld/developer@0.0.66
+
 ## 0.0.65
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.66
+
+### Patch Changes
+
+- Fix some small tweaks, but mostly fix issue with the build script to incorporate new generators.
+- Updated dependencies
+  - @ulld/api@0.0.66
+  - @ulld/component-configs@0.0.66
+  - @ulld/configschema@0.0.66
+  - @ulld/default-image-map@0.0.66
+  - @ulld/hooks@0.0.66
+  - @ulld/icons@0.0.66
+  - @ulld/render@0.0.66
+  - @ulld/state@0.0.66
+  - @ulld/tailwind@0.0.60
+  - @ulld/utilities@0.0.66
+
 ## 0.0.65
 
 ### Patch Changes

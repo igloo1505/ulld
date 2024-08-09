@@ -1,5 +1,27 @@
 # @ulld/equations
 
+## 0.0.66
+
+### Patch Changes
+
+- Fix some small tweaks, but mostly fix issue with the build script to incorporate new generators.
+- Updated dependencies
+  - @ulld/api@0.0.66
+  - @ulld/configschema@0.0.66
+  - @ulld/database@0.0.63
+  - @ulld/developer@0.0.66
+  - @ulld/developer-schemas@0.0.60
+  - @ulld/editor@0.0.66
+  - @ulld/embeddable-components@0.0.66
+  - @ulld/full-form@0.0.66
+  - @ulld/hooks@0.0.66
+  - @ulld/parsers@0.0.66
+  - @ulld/render@0.0.66
+  - @ulld/state@0.0.66
+  - @ulld/tailwind@0.0.60
+  - @ulld/ui@0.0.66
+  - @ulld/utilities@0.0.66
+
 ## 0.0.65
 
 ### Patch Changes

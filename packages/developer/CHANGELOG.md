@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.66
+
+### Patch Changes
+
+- Fix some small tweaks, but mostly fix issue with the build script to incorporate new generators.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.62
+  - @ulld/typescript-config@0.0.60
+  - @ulld/configschema@0.0.66
+  - @ulld/database@0.0.63
+  - @ulld/logger@0.0.60
+
 ## 0.0.65
 
 ### Patch Changes

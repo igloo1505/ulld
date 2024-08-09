@@ -1,5 +1,11 @@
 # @ulld/internal-dev-cli
 
+## 0.0.60
+
+### Patch Changes
+
+- Fix some small tweaks, but mostly fix issue with the build script to incorporate new generators.
+
 ## 0.0.59
 
 ### Patch Changes

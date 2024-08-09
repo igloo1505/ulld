@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.66
+
+### Patch Changes
+
+- Fix some small tweaks, but mostly fix issue with the build script to incorporate new generators.
+- Updated dependencies
+  - @ulld/developer@0.0.66
+  - @ulld/developer-schemas@0.0.60
+
 ## 0.0.65
 
 ### Patch Changes

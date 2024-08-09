@@ -1,5 +1,17 @@
 # @ulld/configschema
 
+## 0.0.66
+
+### Patch Changes
+
+- Fix some small tweaks, but mostly fix issue with the build script to incorporate new generators.
+- Updated dependencies
+  - @ulld/base-configs@0.0.60
+  - @ulld/developer-schemas@0.0.60
+  - @ulld/icons@0.0.66
+  - @ulld/tailwind@0.0.60
+  - @ulld/utilities@0.0.66
+
 ## 0.0.65
 
 ### Patch Changes

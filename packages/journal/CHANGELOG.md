@@ -1,5 +1,21 @@
 # @ulld/journal
 
+## 0.0.66
+
+### Patch Changes
+
+- Fix some small tweaks, but mostly fix issue with the build script to incorporate new generators.
+- Updated dependencies
+  - @ulld/api@0.0.66
+  - @ulld/typescript-config@0.0.60
+  - @ulld/configschema@0.0.66
+  - @ulld/developer@0.0.66
+  - @ulld/hooks@0.0.66
+  - @ulld/state@0.0.66
+  - @ulld/tailwind@0.0.60
+  - @ulld/ui@0.0.66
+  - @ulld/utilities@0.0.66
+
 ## 0.0.65
 
 ### Patch Changes
