@@ -1,5 +1,22 @@
 # @ulld/embeddable-components
 
+## 0.0.67
+
+### Patch Changes
+
+- Had to add database dev dependencies to regular dependencies to avoid build issues in the target app.
+- Updated dependencies
+  - @ulld/api@0.0.67
+  - @ulld/component-configs@0.0.67
+  - @ulld/configschema@0.0.67
+  - @ulld/default-image-map@0.0.67
+  - @ulld/hooks@0.0.67
+  - @ulld/icons@0.0.67
+  - @ulld/render@0.0.67
+  - @ulld/state@0.0.67
+  - @ulld/tailwind@0.0.61
+  - @ulld/utilities@0.0.67
+
 ## 0.0.66
 
 ### Patch Changes

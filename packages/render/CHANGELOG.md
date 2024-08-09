@@ -1,5 +1,19 @@
 # @ulld/render
 
+## 0.0.67
+
+### Patch Changes
+
+- Had to add database dev dependencies to regular dependencies to avoid build issues in the target app.
+- Updated dependencies
+  - @ulld/api@0.0.67
+  - @ulld/component-map@0.0.67
+  - @ulld/typescript-config@0.0.61
+  - @ulld/configschema@0.0.67
+  - @ulld/hooks@0.0.67
+  - @ulld/jest-presets@0.0.61
+  - @ulld/utilities@0.0.67
+
 ## 0.0.66
 
 ### Patch Changes

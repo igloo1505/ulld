@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.64
+
+### Patch Changes
+
+- Had to add database dev dependencies to regular dependencies to avoid build issues in the target app.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.61
+
 ## 0.0.63
 
 ### Patch Changes

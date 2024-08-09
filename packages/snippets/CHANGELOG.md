@@ -1,5 +1,28 @@
 # @ulld/snippets
 
+## 0.0.67
+
+### Patch Changes
+
+- Had to add database dev dependencies to regular dependencies to avoid build issues in the target app.
+- Updated dependencies
+  - @ulld/api@0.0.67
+  - @ulld/eslint-config@0.0.63
+  - @ulld/typescript-config@0.0.61
+  - @ulld/configschema@0.0.67
+  - @ulld/database@0.0.64
+  - @ulld/developer@0.0.67
+  - @ulld/editor@0.0.67
+  - @ulld/full-form@0.0.67
+  - @ulld/hooks@0.0.67
+  - @ulld/jest-presets@0.0.61
+  - @ulld/parsers@0.0.67
+  - @ulld/render@0.0.67
+  - @ulld/state@0.0.67
+  - @ulld/tailwind@0.0.61
+  - @ulld/ui@0.0.67
+  - @ulld/utilities@0.0.67
+
 ## 0.0.66
 
 ### Patch Changes

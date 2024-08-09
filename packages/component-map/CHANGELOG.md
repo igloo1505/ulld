@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.67
+
+### Patch Changes
+
+- Had to add database dev dependencies to regular dependencies to avoid build issues in the target app.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.67
+  - @ulld/calendar@0.0.67
+  - @ulld/default-image-map@0.0.67
+  - @ulld/diagram@0.0.67
+  - @ulld/editor@0.0.67
+  - @ulld/embeddable-components@0.0.67
+  - @ulld/equations@0.0.67
+  - @ulld/full-form@0.0.67
+  - @ulld/journal@0.0.67
+  - @ulld/navigation@0.0.67
+  - @ulld/notebook@0.0.67
+  - @ulld/pdf@0.0.67
+  - @ulld/plot@0.0.67
+  - @ulld/snippets@0.0.67
+  - @ulld/tailwind@0.0.61
+  - @ulld/task-manager@0.0.67
+  - @ulld/whiteboard@0.0.67
+
 ## 0.0.66
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @ulld/state
 
+## 0.0.67
+
+### Patch Changes
+
+- Had to add database dev dependencies to regular dependencies to avoid build issues in the target app.
+- Updated dependencies
+  - @ulld/base-configs@0.0.61
+  - @ulld/configschema@0.0.67
+  - @ulld/database@0.0.64
+  - @ulld/developer@0.0.67
+  - @ulld/hooks@0.0.67
+  - @ulld/parsers@0.0.67
+  - @ulld/tailwind@0.0.61
+  - @ulld/utilities@0.0.67
+
 ## 0.0.66
 
 ### Patch Changes

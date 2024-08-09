@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.67
+
+### Patch Changes
+
+- Had to add database dev dependencies to regular dependencies to avoid build issues in the target app.
+- Updated dependencies
+  - @ulld/developer@0.0.67
+  - @ulld/developer-schemas@0.0.61
+
 ## 0.0.66
 
 ### Patch Changes
