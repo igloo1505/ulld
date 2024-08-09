@@ -170,6 +170,9 @@ export const toDoRouter = router({
                     },
                 });
             }
+            if(filters.length === 0) {
+                return []
+            }
             return await prisma.toDoList.findMany({
                 where: {
                     AND: filters,

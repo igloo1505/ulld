@@ -9,8 +9,6 @@ interface FileDetails {
     outputPath: (rootDir: string) => string;
 }
 
-const additionalGitIgnore = ["src/app", "src/styles", "assets/"];
-
 const files: FileDetails[] = [
     {
         inputPath: path.join(__dirname, "next.config.txt"),
@@ -47,13 +45,25 @@ const files: FileDetails[] = [
     },
 ];
 
-
 let p = new PackageManager();
 
 const readLine = rl.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
+
+const concatLinesAndWrite = (file: FileData, additionalLines: string[]) => {
+    let lines: string[] = [];
+    if (file.exists()) {
+        lines = file.getContent().split("\n");
+    }
+    for (const l of additionalLines) {
+        if (!lines.includes(l)) {
+            lines.push(l);
+        }
+    }
+    file.writeContent(lines.join("\n"));
+};
 
 readLine.question("Which package? ", (packageName) => {
     let packageObject = p.packages.find((p) => p.name === packageName.trim());
@@ -65,21 +75,22 @@ readLine.question("Which package? ", (packageName) => {
     for (const f of files) {
         let inputFile = new FileData(f.inputPath, false);
         let outputFile = new FileData(f.outputPath(rootPath), false);
-        outputFile.mkdirIfNotExists();
-        let inputContent = inputFile.getContent();
-        outputFile.writeContent(inputContent);
-    }
-    let gitIgnoreFile = new FileData(path.join(rootPath, ".gitignore"));
-    let gitIgnoreLines: string[] = [];
-    if (gitIgnoreFile.exists()) {
-        gitIgnoreLines = gitIgnoreFile.getContent().split("\n");
-    }
-    for (const l of additionalGitIgnore) {
-        if (!gitIgnoreLines.includes(l)) {
-            gitIgnoreLines.push(l);
+        if (!outputFile.exists()) {
+            outputFile.mkdirIfNotExists();
+            let inputContent = inputFile.getContent();
+            outputFile.writeContent(inputContent);
         }
     }
-    gitIgnoreFile.writeContent(gitIgnoreLines.join("\n"));
+
+    concatLinesAndWrite(new FileData(path.join(rootPath, ".gitignore")), [
+        "assets/",
+    ]);
+    concatLinesAndWrite(new FileData(path.join(rootPath, ".npmIgnore")), [
+        "src/app",
+        "src/styles",
+        "assets/",
+    ]);
+
     let assetsInputPath = path.join(
         path.dirname(p.packages.find((x) => x.name === "@ulld/website")!.path),
         "src/assets/appFont",

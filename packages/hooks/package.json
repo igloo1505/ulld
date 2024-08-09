@@ -46,6 +46,7 @@
         "./useViewport": "./src/useViewport.ts",
         "./useLockScroll": "./src/useLockScroll.ts",
         "./useIsClient": "./src/useIsClient.ts",
+        "./useIsClientCallback": "./src/useIsClientCallback.ts",
         "./useTraceUpdate": "./src/useTraceUpdate.ts",
         "./useEventListener": "./src/useEventListener.ts",
         "./useMathjaxBandaid": "./src/useMathjaxBandaid.ts",

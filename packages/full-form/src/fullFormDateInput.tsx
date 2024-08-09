@@ -25,6 +25,8 @@ import TimeInput, {
     TimeInputProps,
 } from "./inputs/dateTime/INTERNAL_timeInput";
 import cn from "@ulld/utilities/cn";
+import { isSafari as _isSafari } from "react-device-detect";
+import { useIsClientCallback } from "@ulld/hooks/useIsClientCallback";
 dayjs.extend(advancedFormat);
 
 type TimePositionOptions =
@@ -41,9 +43,10 @@ interface FullFormDateInputProps<T extends FieldValues, H extends HTMLElement>
     buttonClasses?: string;
     timeProps?: Omit<TimeInputProps, "value" | "onChange">;
     timePosition?: TimePositionOptions;
+    timePositionSafariFallback?: Omit<TimePositionOptions, "button-side-by-side">;
     classes?: {
-        timeSideBySideContainer?: string
-    }
+        timeSideBySideContainer?: string;
+    };
 }
 
 const DateInputInternal = <T extends FieldValues>({
@@ -147,6 +150,9 @@ const DateInputInternal = <T extends FieldValues>({
                                 <TimeInput
                                     {...timeProps}
                                     value={form.watch(name)}
+                                    classes={{
+                                        container: "w-fit px-2 pb-2",
+                                    }}
                                     onChange={(newVal) =>
                                         form.setValue(name, newVal as PathValue<T, Path<T>>)
                                     }
@@ -165,11 +171,26 @@ const DateInputInternal = <T extends FieldValues>({
 export const DateInput = <T extends FieldValues>(
     props: FullFormDateInputProps<T, HTMLInputElement>,
 ) => {
+    const [isSafari, setIsSafari] = useState<boolean | undefined>(undefined);
+
+    useIsClientCallback(() => {
+        setIsSafari(_isSafari);
+    });
+
     const form = useFormContext<T>();
 
-    if (props.timePosition === "button-side-by-side") {
+    if (isSafari === undefined) {
+        return null;
+    }
+
+    if (props.timePosition === "button-side-by-side" && !isSafari) {
         return (
-            <div className={cn("w-fit flex flex-row justify-start items-end gap-4", props?.classes?.timeSideBySideContainer)}>
+            <div
+                className={cn(
+                    "w-fit flex flex-row justify-start items-end gap-4",
+                    props?.classes?.timeSideBySideContainer,
+                )}
+            >
                 <DateInputInternal {...props} />
                 <TimeInput
                     {...props.timeProps}
@@ -181,7 +202,18 @@ export const DateInput = <T extends FieldValues>(
             </div>
         );
     }
-    return <DateInputInternal {...props} />
+
+    return (
+        <DateInputInternal
+            {...props}
+            timePosition={
+                props.timePosition === "button-side-by-side" && isSafari
+                    ? (props.timePositionSafariFallback as TimePositionOptions) ||
+                    ("popover-bottom" as "popver-bottom")
+                    : props.timePosition
+            }
+        />
+    );
 };
 
 DateInput.displayName = "DateInput";

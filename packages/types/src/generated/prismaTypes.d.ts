@@ -1,3 +1,190 @@
+// This file was overwritten by prisma-json-types-generator
+// Report any issues to https://github.com/arthurfiorette/prisma-json-types-generator
+
+declare global {
+  namespace PrismaJson {
+    // This namespace will always be empty. Definitions should be done by
+    // you manually, and merged automatically by typescript. Make sure that
+    // your declaration merging file is included in your tsconfig.json
+    //
+    // Learn more: https://github.com/arthurfiorette/prisma-json-types-generator/issues/143
+    // Declaration Merging: https://www.typescriptlang.org/docs/handbook/declaration-merging.html
+  }
+}
+
+/** A filter to be used against nullable List types. */
+export type NullableListFilter<T> = {
+  equals?: T | T[] | null;
+  has?: T | null;
+  hasEvery?: T[];
+  hasSome?: T[];
+  isEmpty?: boolean;
+};
+
+/** A type to determine how to update a json field */
+export type UpdateInput<T> = T extends object
+  ? { [P in keyof T]?: UpdateInput<T[P]> }
+  : T;
+
+/** A type to determine how to update a json[] field */
+export type UpdateManyInput<T> = T | T[] | { set?: T[]; push?: T | T[] };
+
+/** A type to determine how to create a json[] input */
+export type CreateManyInput<T> = T | T[] | { set?: T[] };
+
+/**
+ * A typed version of NestedStringFilter, allowing narrowing of string types to
+ * discriminated unions.
+ */
+export type TypedNestedStringFilter<S extends string> =
+  //@ts-ignore - When Prisma.StringFilter is not present, this type is not used
+  Prisma.StringFilter & {
+    equals?: S;
+    in?: S[];
+    notIn?: S[];
+    not?: TypedNestedStringFilter<S> | S;
+  };
+
+/**
+ * A typed version of StringFilter, allowing narrowing of string types to discriminated
+ * unions.
+ */
+export type TypedStringFilter<S extends string> =
+  //@ts-ignore - When Prisma.StringFilter is not present, this type is not used
+  Prisma.StringFilter & {
+    equals?: S;
+    in?: S[];
+    notIn?: S[];
+    not?: TypedNestedStringFilter<S> | S;
+  };
+
+/**
+ * A typed version of NestedStringNullableFilter, allowing narrowing of string types to
+ * discriminated unions.
+ */
+export type TypedNestedStringNullableFilter<S extends string> =
+  //@ts-ignore - When Prisma.StringNullableFilter is not present, this type is not used
+  Prisma.StringNullableFilter & {
+    equals?: S | null;
+    in?: S[] | null;
+    notIn?: S[] | null;
+    not?: TypedNestedStringNullableFilter<S> | S | null;
+  };
+
+/**
+ * A typed version of StringNullableFilter, allowing narrowing of string types to
+ * discriminated unions.
+ */
+export type TypedStringNullableFilter<S extends string> =
+  //@ts-ignore - When Prisma.StringNullableFilter is not present, this type is not used
+  Prisma.StringNullableFilter & {
+    equals?: S | null;
+    in?: S[] | null;
+    notIn?: S[] | null;
+    not?: TypedNestedStringNullableFilter<S> | S | null;
+  };
+
+/**
+ * A typed version of NestedStringWithAggregatesFilter, allowing narrowing of string types
+ * to discriminated unions.
+ */
+export type TypedNestedStringWithAggregatesFilter<S extends string> =
+  //@ts-ignore - When Prisma.NestedStringWithAggregatesFilter is not present, this type is not used
+  Prisma.NestedStringWithAggregatesFilter & {
+    equals?: S;
+    in?: S[];
+    notIn?: S[];
+    not?: TypedNestedStringWithAggregatesFilter<S> | S;
+  };
+
+/**
+ * A typed version of StringWithAggregatesFilter, allowing narrowing of string types to
+ * discriminated unions.
+ */
+export type TypedStringWithAggregatesFilter<S extends string> =
+  //@ts-ignore - When Prisma.StringWithAggregatesFilter is not present, this type is not used
+  Prisma.StringWithAggregatesFilter & {
+    equals?: S;
+    in?: S[];
+    notIn?: S[];
+    not?: TypedNestedStringWithAggregatesFilter<S> | S;
+  };
+
+/**
+ * A typed version of NestedStringNullableWithAggregatesFilter, allowing narrowing of
+ * string types to discriminated unions.
+ */
+export type TypedNestedStringNullableWithAggregatesFilter<S extends string> =
+  //@ts-ignore - When Prisma.NestedStringNullableWithAggregatesFilter is not present, this type is not used
+  Prisma.NestedStringNullableWithAggregatesFilter & {
+    equals?: S | null;
+    in?: S[] | null;
+    notIn?: S[] | null;
+    not?: TypedNestedStringNullableWithAggregatesFilter<S> | S | null;
+  };
+
+/**
+ * A typed version of StringNullableWithAggregatesFilter, allowing narrowing of string
+ * types to discriminated unions.
+ */
+export type TypedStringNullableWithAggregatesFilter<S extends string> =
+  //@ts-ignore - When Prisma.StringNullableWithAggregatesFilter is not present, this type is not used
+  Prisma.StringNullableWithAggregatesFilter & {
+    equals?: S | null;
+    in?: S[] | null;
+    notIn?: S[] | null;
+    not?: TypedNestedStringNullableWithAggregatesFilter<S> | S | null;
+  };
+
+/**
+ * A typed version of StringFieldUpdateOperationsInput, allowing narrowing of string types
+ * to discriminated unions.
+ */
+export type TypedStringFieldUpdateOperationsInput<S extends string> =
+  //@ts-ignore - When Prisma.StringFieldUpdateOperationsInput is not present, this type is not used
+  Prisma.StringFieldUpdateOperationsInput & {
+    set?: S;
+  };
+
+/**
+ * A typed version of NullableStringFieldUpdateOperationsInput, allowing narrowing of
+ * string types to discriminated unions.
+ */
+export type TypedNullableStringFieldUpdateOperationsInput<S extends string> =
+  //@ts-ignore - When Prisma.NullableStringFieldUpdateOperationsInput is not present, this type is not used
+  Prisma.NullableStringFieldUpdateOperationsInput & {
+    set?: S | null;
+  };
+
+/**
+ * A typed version of StringNullableListFilter, allowing narrowing of string types to
+ * discriminated unions.
+ */
+export type TypedStringNullableListFilter<S extends string> =
+  //@ts-ignore - When Prisma.StringNullableListFilter is not present, this type is not used
+  Prisma.StringNullableListFilter & {
+    equals?: S[] | null;
+    has?: S | null;
+    hasEvery?: S[];
+    hasSome?: S[];
+  };
+
+/**
+ * A typed version of the input type to update a string[] field, allowing narrowing of
+ * string types to discriminated unions.
+ */
+export type UpdateStringArrayInput<S extends string> = {
+  set?: S[];
+  push?: S | S[];
+};
+
+/**
+ * A typed version of the input type to create a string[] field, allowing narrowing of
+ * string types to discriminated unions.
+ */
+export type CreateStringArrayInput<S extends string> = {
+  set?: S[];
+};
 
 /**
  * Client
@@ -17995,7 +18182,7 @@ export namespace Prisma {
 
   export type RelatedValuesGroupByOutputType = {
     id: number
-    input: JsonValue
+    input: unknown
     output: number
     equationId: number[]
     _count: RelatedValuesCountAggregateOutputType | null
@@ -18055,7 +18242,7 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      input: Prisma.JsonValue
+      input: unknown
       output: number
       equationId: number[]
     }, ExtArgs["result"]["relatedValues"]>
@@ -19000,7 +19187,7 @@ export namespace Prisma {
     desc: string | null
     content: string
     asPython: string | null
-    variableLegend: JsonValue | null
+    variableLegend: unknown
     variables: string[]
     keywords: string[]
     createdAt: Date
@@ -19100,7 +19287,7 @@ export namespace Prisma {
       desc: string | null
       content: string
       asPython: string | null
-      variableLegend: Prisma.JsonValue | null
+      variableLegend: unknown
       variables: string[]
       keywords: string[]
       createdAt: Date
@@ -21161,7 +21348,7 @@ export namespace Prisma {
     lockedLandingImage: string | null
     cleanOnSync: boolean
     plotTheme: string | null
-    pluginSettings: JsonValue
+    pluginSettings: PrismaJson.PluginSettiingsRecord
     firstSync: Date
     lastSync: Date
     _count: SettingsCountAggregateOutputType | null
@@ -21244,7 +21431,10 @@ export namespace Prisma {
       lockedLandingImage: string | null
       cleanOnSync: boolean
       plotTheme: string | null
-      pluginSettings: Prisma.JsonValue
+      /**
+       * [PluginSettiingsRecord]
+       */
+      pluginSettings: PrismaJson.PluginSettiingsRecord
       firstSync: Date
       lastSync: Date
     }, ExtArgs["result"]["settings"]>
@@ -21822,7 +22012,7 @@ export namespace Prisma {
     /**
      * The data needed to create a Settings.
      */
-    data: XOR<SettingsCreateInput, SettingsUncheckedCreateInput>
+    data?: XOR<SettingsCreateInput, SettingsUncheckedCreateInput>
   }
 
   /**
@@ -46181,14 +46371,6 @@ export namespace Prisma {
   export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
-  export const NullableJsonNullValueInput: {
-    DbNull: typeof DbNull,
-    JsonNull: typeof JsonNull
-  };
-
-  export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
-
-
   export const QueryMode: {
     default: 'default',
     insensitive: 'insensitive'
@@ -47692,7 +47874,7 @@ export namespace Prisma {
     desc?: StringNullableFilter<"Equation"> | string | null
     content?: StringFilter<"Equation"> | string
     asPython?: StringNullableFilter<"Equation"> | string | null
-    variableLegend?: JsonNullableFilter<"Equation">
+    variableLegend?: JsonFilter<"Equation">
     variables?: StringNullableListFilter<"Equation">
     keywords?: StringNullableListFilter<"Equation">
     createdAt?: DateTimeFilter<"Equation"> | Date | string
@@ -47711,7 +47893,7 @@ export namespace Prisma {
     desc?: SortOrderInput | SortOrder
     content?: SortOrder
     asPython?: SortOrderInput | SortOrder
-    variableLegend?: SortOrderInput | SortOrder
+    variableLegend?: SortOrder
     variables?: SortOrder
     keywords?: SortOrder
     createdAt?: SortOrder
@@ -47734,7 +47916,7 @@ export namespace Prisma {
     desc?: StringNullableFilter<"Equation"> | string | null
     content?: StringFilter<"Equation"> | string
     asPython?: StringNullableFilter<"Equation"> | string | null
-    variableLegend?: JsonNullableFilter<"Equation">
+    variableLegend?: JsonFilter<"Equation">
     variables?: StringNullableListFilter<"Equation">
     keywords?: StringNullableListFilter<"Equation">
     createdAt?: DateTimeFilter<"Equation"> | Date | string
@@ -47753,7 +47935,7 @@ export namespace Prisma {
     desc?: SortOrderInput | SortOrder
     content?: SortOrder
     asPython?: SortOrderInput | SortOrder
-    variableLegend?: SortOrderInput | SortOrder
+    variableLegend?: SortOrder
     variables?: SortOrder
     keywords?: SortOrder
     createdAt?: SortOrder
@@ -47775,7 +47957,7 @@ export namespace Prisma {
     desc?: StringNullableWithAggregatesFilter<"Equation"> | string | null
     content?: StringWithAggregatesFilter<"Equation"> | string
     asPython?: StringNullableWithAggregatesFilter<"Equation"> | string | null
-    variableLegend?: JsonNullableWithAggregatesFilter<"Equation">
+    variableLegend?: JsonWithAggregatesFilter<"Equation">
     variables?: StringNullableListFilter<"Equation">
     keywords?: StringNullableListFilter<"Equation">
     createdAt?: DateTimeWithAggregatesFilter<"Equation"> | Date | string
@@ -50656,7 +50838,7 @@ export namespace Prisma {
   }
 
   export type RelatedValuesCreateInput = {
-    input: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output: number
     equationId?: RelatedValuesCreateequationIdInput | number[]
     equations?: EquationCreateNestedManyWithoutRelatedValuesInput
@@ -50664,14 +50846,14 @@ export namespace Prisma {
 
   export type RelatedValuesUncheckedCreateInput = {
     id?: number
-    input: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output: number
     equationId?: RelatedValuesCreateequationIdInput | number[]
     equations?: EquationUncheckedCreateNestedManyWithoutRelatedValuesInput
   }
 
   export type RelatedValuesUpdateInput = {
-    input?: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output?: FloatFieldUpdateOperationsInput | number
     equationId?: RelatedValuesUpdateequationIdInput | number[]
     equations?: EquationUpdateManyWithoutRelatedValuesNestedInput
@@ -50679,7 +50861,7 @@ export namespace Prisma {
 
   export type RelatedValuesUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    input?: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output?: FloatFieldUpdateOperationsInput | number
     equationId?: RelatedValuesUpdateequationIdInput | number[]
     equations?: EquationUncheckedUpdateManyWithoutRelatedValuesNestedInput
@@ -50687,20 +50869,20 @@ export namespace Prisma {
 
   export type RelatedValuesCreateManyInput = {
     id?: number
-    input: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output: number
     equationId?: RelatedValuesCreateequationIdInput | number[]
   }
 
   export type RelatedValuesUpdateManyMutationInput = {
-    input?: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output?: FloatFieldUpdateOperationsInput | number
     equationId?: RelatedValuesUpdateequationIdInput | number[]
   }
 
   export type RelatedValuesUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    input?: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output?: FloatFieldUpdateOperationsInput | number
     equationId?: RelatedValuesUpdateequationIdInput | number[]
   }
@@ -50711,7 +50893,7 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
@@ -50730,7 +50912,7 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
@@ -50748,7 +50930,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -50767,7 +50949,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -50786,7 +50968,7 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
@@ -50799,7 +50981,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -50813,7 +50995,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -50899,7 +51081,7 @@ export namespace Prisma {
     lockedLandingImage?: string | null
     cleanOnSync?: boolean
     plotTheme?: string | null
-    pluginSettings: JsonNullValueInput | InputJsonValue
+    pluginSettings?: PrismaJson.PluginSettiingsRecord
     firstSync?: Date | string
     lastSync?: Date | string
   }
@@ -50914,7 +51096,7 @@ export namespace Prisma {
     lockedLandingImage?: string | null
     cleanOnSync?: boolean
     plotTheme?: string | null
-    pluginSettings: JsonNullValueInput | InputJsonValue
+    pluginSettings?: PrismaJson.PluginSettiingsRecord
     firstSync?: Date | string
     lastSync?: Date | string
   }
@@ -50929,7 +51111,7 @@ export namespace Prisma {
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
     plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
-    pluginSettings?: JsonNullValueInput | InputJsonValue
+    pluginSettings?: PrismaJson.PluginSettiingsRecord
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50944,7 +51126,7 @@ export namespace Prisma {
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
     plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
-    pluginSettings?: JsonNullValueInput | InputJsonValue
+    pluginSettings?: PrismaJson.PluginSettiingsRecord
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50959,7 +51141,7 @@ export namespace Prisma {
     lockedLandingImage?: string | null
     cleanOnSync?: boolean
     plotTheme?: string | null
-    pluginSettings: JsonNullValueInput | InputJsonValue
+    pluginSettings?: PrismaJson.PluginSettiingsRecord
     firstSync?: Date | string
     lastSync?: Date | string
   }
@@ -50974,7 +51156,7 @@ export namespace Prisma {
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
     plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
-    pluginSettings?: JsonNullValueInput | InputJsonValue
+    pluginSettings?: PrismaJson.PluginSettiingsRecord
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50989,7 +51171,7 @@ export namespace Prisma {
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
     plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
-    pluginSettings?: JsonNullValueInput | InputJsonValue
+    pluginSettings?: PrismaJson.PluginSettiingsRecord
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -53798,28 +53980,6 @@ export namespace Prisma {
     _min?: NestedFloatFilter<$PrismaModel>
     _max?: NestedFloatFilter<$PrismaModel>
   }
-  export type JsonNullableFilter<$PrismaModel = never> = 
-    | PatchUndefined<
-        Either<Required<JsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonNullableFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>
-
-  export type JsonNullableFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string[]
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-  }
 
   export type RelatedValuesListRelationFilter = {
     every?: RelatedValuesWhereInput
@@ -53879,31 +54039,6 @@ export namespace Prisma {
 
   export type EquationSumOrderByAggregateInput = {
     id?: SortOrder
-  }
-  export type JsonNullableWithAggregatesFilter<$PrismaModel = never> = 
-    | PatchUndefined<
-        Either<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
-
-  export type JsonNullableWithAggregatesFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string[]
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedJsonNullableFilter<$PrismaModel>
-    _max?: NestedJsonNullableFilter<$PrismaModel>
   }
 
   export type MdxNoteNullableRelationFilter = {
@@ -59294,28 +59429,6 @@ export namespace Prisma {
     _min?: NestedFloatFilter<$PrismaModel>
     _max?: NestedFloatFilter<$PrismaModel>
   }
-  export type NestedJsonNullableFilter<$PrismaModel = never> = 
-    | PatchUndefined<
-        Either<Required<NestedJsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>,
-        Required<NestedJsonNullableFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>
-
-  export type NestedJsonNullableFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string[]
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-  }
 
   export type NestedEnumImageAlignmentFilter<$PrismaModel = never> = {
     equals?: $Enums.ImageAlignment | EnumImageAlignmentFieldRefInput<$PrismaModel>
@@ -59846,7 +59959,7 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
@@ -59864,7 +59977,7 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
@@ -60204,7 +60317,7 @@ export namespace Prisma {
     desc?: StringNullableFilter<"Equation"> | string | null
     content?: StringFilter<"Equation"> | string
     asPython?: StringNullableFilter<"Equation"> | string | null
-    variableLegend?: JsonNullableFilter<"Equation">
+    variableLegend?: JsonFilter<"Equation">
     variables?: StringNullableListFilter<"Equation">
     keywords?: StringNullableListFilter<"Equation">
     createdAt?: DateTimeFilter<"Equation"> | Date | string
@@ -60601,7 +60714,7 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
@@ -60619,7 +60732,7 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
@@ -61091,7 +61204,7 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
@@ -61109,7 +61222,7 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
@@ -62382,7 +62495,7 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
@@ -62400,7 +62513,7 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
@@ -62433,14 +62546,14 @@ export namespace Prisma {
   }
 
   export type RelatedValuesCreateWithoutEquationsInput = {
-    input: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output: number
     equationId?: RelatedValuesCreateequationIdInput | number[]
   }
 
   export type RelatedValuesUncheckedCreateWithoutEquationsInput = {
     id?: number
-    input: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output: number
     equationId?: RelatedValuesCreateequationIdInput | number[]
   }
@@ -63670,7 +63783,7 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
@@ -63688,7 +63801,7 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
@@ -66411,7 +66524,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -66429,7 +66542,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -66447,7 +66560,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: JsonNullValueInput | InputJsonValue
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -66920,7 +67033,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -66938,7 +67051,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -66956,7 +67069,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: JsonNullValueInput | InputJsonValue
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -67348,7 +67461,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -67366,7 +67479,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -67384,7 +67497,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: JsonNullValueInput | InputJsonValue
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -68439,7 +68552,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -68457,7 +68570,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -68475,7 +68588,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: JsonNullValueInput | InputJsonValue
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -68483,14 +68596,14 @@ export namespace Prisma {
   }
 
   export type RelatedValuesUpdateWithoutEquationsInput = {
-    input?: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output?: FloatFieldUpdateOperationsInput | number
     equationId?: RelatedValuesUpdateequationIdInput | number[]
   }
 
   export type RelatedValuesUncheckedUpdateWithoutEquationsInput = {
     id?: IntFieldUpdateOperationsInput | number
-    input?: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output?: FloatFieldUpdateOperationsInput | number
     equationId?: RelatedValuesUpdateequationIdInput | number[]
   }
@@ -69481,7 +69594,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -69499,7 +69612,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -69517,7 +69630,7 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: JsonNullValueInput | InputJsonValue
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string

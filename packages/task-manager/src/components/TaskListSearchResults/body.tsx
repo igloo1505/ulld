@@ -5,6 +5,7 @@ import {  buttonVariants } from "@ulld/tailwind/button";
 import Link from "next/link";
 import { Paths } from "@ulld/utilities/paths";
 import { cn } from "@ulld/utilities/cn";
+import { Route } from "next";
 
 interface TaskListSearchResultBodyProps {
     listId: number;
@@ -24,14 +25,14 @@ export const TaskListSearchResultBody = ({
     }, []);
 
     return (
-        <div className={"w-full flex flex-row justify-end items-center gap-4"}>
+        <div className={"w-full flex flex-row justify-end items-center gap-4 p-4"}>
             {overdue && (
                 <div
                     className={cn(buttonVariants({ variant: "destructive" }), "cursor-default")}
                 >{`${overdue} overdue`}</div>
             )}
             <Link
-                href={Paths.getTaskListPath(listId)}
+                href={Paths.getTaskListPath(listId) as Route}
                 className={buttonVariants({ variant: "secondary" })}
             >
                 View List

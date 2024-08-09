@@ -71,6 +71,7 @@ export interface TaskManagerPageProps extends TaskListDataReturnType {
 
 export interface TaskListSearchResultsListProps {
     children: ReactNode;
+    resultCount: number
 }
 
 export interface TaskListSearchResultsListProps {

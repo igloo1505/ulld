@@ -12,7 +12,8 @@ interface DateTimeInputTestPageProps {
 }
 
 const testSchema = z.object({
-    date: z.date()
+    date: z.date(),
+    date2: z.date(),
 })
 
 const DateTimeInputTestPage = (props: DateTimeInputTestPageProps) => {
@@ -26,7 +27,12 @@ const DateTimeInputTestPage = (props: DateTimeInputTestPageProps) => {
                     name="date"
                     timePosition='button-side-by-side'
                     timeProps={{
-                        hideLabel: true
+                    }}
+                />
+                <DateInput
+                    name="date2"
+                    timePosition='popover-bottom'
+                    timeProps={{
                     }}
                 />
             </Form>
