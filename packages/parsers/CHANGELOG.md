@@ -1,5 +1,16 @@
 # @ulld/parsers
 
+## 0.0.68
+
+### Patch Changes
+
+- Going back on the individual prisma generator approach for now. It's failing to run in the generated app, even when the dependencies are specified as regular runtime dependencies and not dev-dependencies.
+- Updated dependencies
+  - @ulld/configschema@0.0.68
+  - @ulld/database@0.0.65
+  - @ulld/developer@0.0.68
+  - @ulld/utilities@0.0.68
+
 ## 0.0.67
 
 ### Patch Changes

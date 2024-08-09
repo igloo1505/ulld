@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.65
+
+### Patch Changes
+
+- Going back on the individual prisma generator approach for now. It's failing to run in the generated app, even when the dependencies are specified as regular runtime dependencies and not dev-dependencies.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.62
+
 ## 0.0.64
 
 ### Patch Changes

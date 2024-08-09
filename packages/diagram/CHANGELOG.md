@@ -1,5 +1,17 @@
 # @ulld/diagram
 
+## 0.0.68
+
+### Patch Changes
+
+- Going back on the individual prisma generator approach for now. It's failing to run in the generated app, even when the dependencies are specified as regular runtime dependencies and not dev-dependencies.
+- Updated dependencies
+  - @ulld/api@0.0.68
+  - @ulld/typescript-config@0.0.62
+  - @ulld/developer@0.0.68
+  - @ulld/state@0.0.68
+  - @ulld/tailwind@0.0.62
+
 ## 0.0.67
 
 ### Patch Changes

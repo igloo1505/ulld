@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.68
+
+### Patch Changes
+
+- Going back on the individual prisma generator approach for now. It's failing to run in the generated app, even when the dependencies are specified as regular runtime dependencies and not dev-dependencies.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.68
+  - @ulld/calendar@0.0.68
+  - @ulld/default-image-map@0.0.68
+  - @ulld/diagram@0.0.68
+  - @ulld/editor@0.0.68
+  - @ulld/embeddable-components@0.0.68
+  - @ulld/equations@0.0.68
+  - @ulld/full-form@0.0.68
+  - @ulld/journal@0.0.68
+  - @ulld/navigation@0.0.68
+  - @ulld/notebook@0.0.68
+  - @ulld/pdf@0.0.68
+  - @ulld/plot@0.0.68
+  - @ulld/snippets@0.0.68
+  - @ulld/tailwind@0.0.62
+  - @ulld/task-manager@0.0.68
+  - @ulld/whiteboard@0.0.68
+
 ## 0.0.67
 
 ### Patch Changes

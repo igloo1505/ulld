@@ -1,5 +1,17 @@
 # @ulld/hooks
 
+## 0.0.68
+
+### Patch Changes
+
+- Going back on the individual prisma generator approach for now. It's failing to run in the generated app, even when the dependencies are specified as regular runtime dependencies and not dev-dependencies.
+- Updated dependencies
+  - @ulld/api@0.0.68
+  - @ulld/component-map@0.0.68
+  - @ulld/configschema@0.0.68
+  - @ulld/database@0.0.65
+  - @ulld/parsers@0.0.68
+
 ## 0.0.67
 
 ### Patch Changes

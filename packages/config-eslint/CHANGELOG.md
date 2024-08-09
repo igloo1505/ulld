@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.64
+
+### Patch Changes
+
+- Going back on the individual prisma generator approach for now. It's failing to run in the generated app, even when the dependencies are specified as regular runtime dependencies and not dev-dependencies.
+
 ## 0.0.63
 
 ### Patch Changes
