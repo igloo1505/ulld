@@ -31,6 +31,8 @@ import { BuildHealthCheck } from "./healthCheck";
 import { DatabaseBuildManager } from "./databaseManager";
 import { BuildOptionsType } from "../utils/options";
 import staticData from "../../staticDevelopmentData.json"
+import buildUtilityData from "@ulld/utilities/buildStaticData"
+import { getInternalTailwindSources } from "../utils/getInternalTailwindSources";
 
 type PluginSlotKey = keyof SlotMap;
 
@@ -489,13 +491,13 @@ ${fullSlotMap.missingItems.map((k, i) => `${i + 1}. ${k.slot} -> ${k.subSlot}`).
     async applyPages() {
         for await (const k of this.plugins) {
             this.logError(
-                `Attempting to apply extra pages. This method is not yet handled.`,
+                `Attempting to apply extra pages. This method is not yet handled. If you are a user, send me a strongly worded email about this...`,
             );
             // await k.applyPages();
         }
     }
     getTailwindSources(): string[] {
-        let items = staticData.alwaysIncludedTailwindSources as string[]
+        let items = getInternalTailwindSources()
         let additionalItems = this.plugins
                 .filter((f) => f.includeInTailwindSources)
                 .map((p) => `./node_modules/${p.name}/src/**/*.{js,ts,jsx,tsx,mdx}`)

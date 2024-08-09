@@ -26,25 +26,22 @@ let prismaSchemaContent = fs.readFileSync(prismaSchemaPath, {
     encoding: "utf-8",
 });
 
-// let cutIndex = -1;
+let cutIndex = -1;
 
-// let prismaLines = prismaSchemaContent
-//     .split("\n")
-//     .map((l, i) => ({ content: l, index: i }));
+let prismaLines = prismaSchemaContent.split("\n");
 
-// for (const l of prismaLines) {
-//     if (cutIndex < 0 && l.content.includes("<<BEGIN-CUT>>")) {
-//         cutIndex = l.index;
-//     }
-// }
+prismaLines.forEach((l, i) => {
+    if (l.includes("CUT-HERE")) {
+        cutIndex = i;
+    }
+});
 
-// if (cutIndex >= 0) {
-//     prismaSchemaContent = prismaLines.slice(cutIndex + 1).map((l) => l.content).join("\n");
-// }
+let newPrismaContent = cutIndex >= 0 ? prismaLines.slice(0, cutIndex).join("\n") : prismaSchemaContent
+
 
 fs.writeFileSync(
     path.join(templateStringDir, "prismaSchema.txt"),
-    prismaSchemaContent,
+    newPrismaContent,
     { encoding: "utf-8" },
 );
 

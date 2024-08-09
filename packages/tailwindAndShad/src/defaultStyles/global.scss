@@ -243,9 +243,9 @@ div.jp-WindowedPanel-outer::-webkit-scrollbar {
 div[cmdk-list],
 div.jp-WindowedPanel-outer {
   -ms-overflow-style: none;
-  /* IE and Edge */
+  /* /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
+  /* /* Firefox */
   border-width: 1px;
   border-top-width: 0px;
 }

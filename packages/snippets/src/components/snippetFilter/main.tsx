@@ -17,7 +17,7 @@ const SnippetFilter = (props: SnippetFilterProps) => {
     query: params.get("query") as SnippetFilterParams["query"],
   };
   return (
-    <div className={"w-full h-fit flex flex-row justify-between items-center px-8 md:px-16 pt-8 mb-4"}>
+    <div className={"w-full h-fit flex flex-row justify-between items-center pt-8 mb-4"}>
       <div
         className={
           "w-fit h-full flex flex-row justify-start items-center gap-4"

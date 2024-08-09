@@ -1,6 +1,6 @@
 @tailwind base;
 @tailwind components;
-@tailwing utilities;
+@tailwind utilities;
 
 @layer base {
   html[data-ulld-theme="zinc"] {
@@ -563,6 +563,7 @@
       --general-link-color: #1e90ff;
     }
   }
+
   html[data-ulld-theme="green"] {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -732,11 +733,10 @@
   }
 
   * {
-    @apply border-border;
+    @apply border-border text-foreground;
   }
 
   body {
-    @apply bg-background text-foreground;
-    @apply font-sans;
+    @apply bg-background text-foreground font-sans;
   }
 }

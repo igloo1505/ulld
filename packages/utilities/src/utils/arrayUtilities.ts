@@ -182,4 +182,18 @@ export class ArrayUtilities {
     static beArray<T extends unknown>(val: T | T[]): T[] {
         return Array.isArray(val) ? val : [val]
     }
+    static concatWithoutDuplicates<T extends unknown>(initial: T[], additional: T[], comparer?: (a: T, b: T) => boolean): T[] {
+        let items = initial
+        for (const item of additional) {
+            if(comparer && !items.some((x) => comparer(x, item))){
+                items.push(item)
+            } else {
+                if(!items.includes(item)){
+                    items.push(item)
+                }
+            }
+        }
+        return items
+    }
+
 }

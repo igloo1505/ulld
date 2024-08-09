@@ -54,11 +54,6 @@ const glob = () =>
         cwd: process.env.ULLD_DEV_ROOT,
     }).map((p) => path.join(process.env.ULLD_DEV_ROOT!, p));
 
-const readLine = rl.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
-
 class PluginConfig {
     path: string;
     data?: object;
@@ -138,8 +133,8 @@ export class PackageManager {
     }
     setNewClonedAppInternalPackages(items: ClonedBaseAppInternalDep[]) {
         for (const item of items) {
-            if(!this.testRootPackageJson[item.type]){
-                this.testRootPackageJson[item.type] = {}
+            if (!this.testRootPackageJson[item.type]) {
+                this.testRootPackageJson[item.type] = {};
             }
             (this.testRootPackageJson[item.type] as any)[item.name] = item.version;
         }
@@ -371,8 +366,8 @@ pnpm add @types/react@${reactVersion} @types/react-dom@${reactVersion} ${package
             const match = a.deps.filter((b) => b.name === name);
             let content = a.content;
             match.forEach((u) => {
-                if(!content[u.type]){
-                    content[u.type] = {}
+                if (!content[u.type]) {
+                    content[u.type] = {};
                 }
                 (content[u.type] as any)[name] = version;
             });
@@ -553,6 +548,10 @@ ${deps.map((d) => `    ${d.type}`).join("\n")}
         return p;
     }
     processArgs(args: string[]) {
+        const readLine = rl.createInterface({
+            input: process.stdin,
+            output: process.stdout,
+        });
         console.log(
             `Processing args: \n${args.map((a, i) => `${i + 1}. ${a}`).join("\n")}`,
         );

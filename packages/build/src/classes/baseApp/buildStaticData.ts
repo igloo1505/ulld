@@ -3,6 +3,7 @@ import { UlldBuildProcess } from "../build";
 import { TargetPaths } from "../paths";
 import { FileManager } from "../baseClasses/fileManager";
 import buildData from "@ulld/utilities/buildStaticData"
+import { ArrayUtilities } from "@ulld/utilities/arrayUtilities";
 
 type HasSetKey = "settingsData"
 
@@ -10,14 +11,11 @@ type HasSetBuildStaticData = Record<HasSetKey, boolean>
 
 export class BuildStaticData {
     settingPageData: BuildStaticDataOutput["settingPages"] = []
-    transpilePackages: string[] = []
+    transpilePackages: string[] = buildData.internalPackageNames
     hasSet: HasSetBuildStaticData = {
         settingsData: false
     } 
     constructor(public paths: TargetPaths, public build: UlldBuildProcess){
-        for (const internalPackageName in buildData.currentPackageVersions) {
-            this.transpilePackages.push(internalPackageName)
-        }
     }
     setHasSetData(k: HasSetKey, value: boolean = true){
         this.hasSet[k] = value
@@ -30,9 +28,10 @@ export class BuildStaticData {
             throw new Error(`Cannot generate build output. No fsRoot property was defined in your configuration file.`)
         }
         let toTranspile = this.build.getPackagesToTranspile()
+        this.transpilePackages = ArrayUtilities.concatWithoutDuplicates(this.transpilePackages, toTranspile)
         for (const item of toTranspile) {
             // TODO: Handle this better it this is the source of the build issue by creating a list of separate packages and apps, not just a single list.
-            if(!this.transpilePackages.includes(item) && !(item.includes("sandbox") || item.includes("website"))){
+            if(!this.transpilePackages.includes(item) && (!(item.includes("sandbox") || item.includes("website")))){
                 this.transpilePackages.push(item)
             }
         }

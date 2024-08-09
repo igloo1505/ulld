@@ -1,5 +1,6 @@
 {
   "workingOffline": false,
   "includeInTailwindSources": ["@ulld/plot"],
-  "alwaysIncludedTailwindSources": []
+  "alwaysIncludedTailwindSources": [],
+  "excludeFromInternalTailwindSources": []
 }

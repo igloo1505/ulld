@@ -11,9 +11,9 @@ import { prisma } from '@ulld/database/db'
 
 
 
-export const syncBib = async (bibId?: number) => {
+export const syncBib = async (bibId: number = 1) => {
     const internalConfig = getInternalConfig()
-    const BIBID = bibId || 1
+    const BIBID = bibId
     const bibpath = internalConfig.bibPath
     const p = path.join(internalConfig.fsRoot, bibpath)
     const content = fs.readFileSync(p, { encoding: "utf-8" })

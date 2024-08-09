@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import {
     FormField,
@@ -23,6 +24,7 @@ import advancedFormat from "dayjs/plugin/advancedFormat";
 import TimeInput, {
     TimeInputProps,
 } from "./inputs/dateTime/INTERNAL_timeInput";
+import cn from "@ulld/utilities/cn";
 dayjs.extend(advancedFormat);
 
 type TimePositionOptions =
@@ -39,9 +41,12 @@ interface FullFormDateInputProps<T extends FieldValues, H extends HTMLElement>
     buttonClasses?: string;
     timeProps?: Omit<TimeInputProps, "value" | "onChange">;
     timePosition?: TimePositionOptions;
+    classes?: {
+        timeSideBySideContainer?: string
+    }
 }
 
-export const DateInput = <T extends FieldValues>({
+const DateInputInternal = <T extends FieldValues>({
     name,
     dateFilter,
     buttonClasses,
@@ -65,7 +70,11 @@ export const DateInput = <T extends FieldValues>({
     const getDisplayValue = (v: string | Date | undefined | null) => {
         let d = dayjs(v);
         if (d.isValid()) {
-            let x = d.format(Boolean(withTimeDisplay || timePosition) ? "MM/DD/YY [at] HH:mm a" : "MMM Do, YYYY");
+            let x = d.format(
+                Boolean(withTimeDisplay || timePosition)
+                    ? "MM/DD/YY [at] hh:mm a"
+                    : "MMM Do, YYYY",
+            );
             Array.from(["at 00:00 am", "at 00:00 pm"]).forEach((ending: string) => {
                 x = replaceEndings(x, ending);
             });
@@ -75,93 +84,104 @@ export const DateInput = <T extends FieldValues>({
     };
 
     return (
-        <>
-            <FormField
-                control={form.control}
-                name={name}
-                render={({ field }) => (
-                    <FormItem className="flex flex-col">
-                        {label && <FormLabel>{label}</FormLabel>}
-                        <Popover open={open} onOpenChange={setOpen}>
-                            <PopoverTrigger asChild>
-                                <FormControl>
-                                    <Button
-                                        variant={"outline"}
-                                        aria-expanded={open}
-                                        className={clsx(
-                                            "w-[240px] min-w-fit max-w-full pl-3 text-left font-normal",
-                                            !field.value && "text-muted-foreground",
-                                            buttonClasses,
-                                        )}
-                                    >
-                                        {getDisplayValue(field.value)}
-                                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                                    </Button>
-                                </FormControl>
-                            </PopoverTrigger>
-                            <PopoverContent className="w-auto p-0" align="start">
-                                {timePosition === "popover-top" && (
-                                    <TimeInput
-                                        {...timeProps}
-                                        value={form.watch(name)}
-                                        onChange={(newVal) =>
-                                            form.setValue(name, newVal as PathValue<T, Path<T>>)
-                                        }
-                                    />
-                                )}
-                                <Calendar
-                                    mode={_mode}
-                                    selected={field.value}
-                                    onSelect={(val: any) => {
-                                        _mode === "single" && setOpen(false);
-                                        let nv = onChangeValueConverter
-                                            ? onChangeValueConverter(val)
-                                            : val;
-                                        if (nv !== "abortChange") {
-                                            field.onChange(nv);
-                                        }
-                                    }}
-                                    disabled={(date) => {
-                                        if (dateFilter === "pastOnly") {
-                                            return Boolean(
-                                                date > new Date() || date < new Date("1900-01-01"),
-                                            );
-                                        } else if (dateFilter === "futureOnly") {
-                                            return date < new Date();
-                                        } else if (typeof dateFilter === "function") {
-                                            return dateFilter(date);
-                                        }
-                                        return false;
-                                    }}
-                                    initialFocus
+        <FormField
+            control={form.control}
+            name={name}
+            render={({ field }) => (
+                <FormItem className="flex flex-col">
+                    {label && <FormLabel>{label}</FormLabel>}
+                    <Popover open={open} onOpenChange={setOpen}>
+                        <PopoverTrigger asChild>
+                            <FormControl>
+                                <Button
+                                    variant={"outline"}
+                                    aria-expanded={open}
+                                    className={clsx(
+                                        "w-[240px] min-w-fit max-w-full pl-3 text-left font-normal",
+                                        !field.value && "text-muted-foreground",
+                                        buttonClasses,
+                                    )}
+                                >
+                                    {getDisplayValue(field.value)}
+                                    <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                                </Button>
+                            </FormControl>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0" align="start">
+                            {timePosition === "popover-top" && (
+                                <TimeInput
+                                    {...timeProps}
+                                    value={form.watch(name)}
+                                    onChange={(newVal) =>
+                                        form.setValue(name, newVal as PathValue<T, Path<T>>)
+                                    }
                                 />
-                                {timePosition === "popover-bottom" && (
-                                    <TimeInput
-                                        {...timeProps}
-                                        value={form.watch(name)}
-                                        onChange={(newVal) =>
-                                            form.setValue(name, newVal as PathValue<T, Path<T>>)
-                                        }
-                                    />
-                                )}
-                            </PopoverContent>
-                        </Popover>
-                        {desc && <FormDescription>{desc}</FormDescription>}
-                        <FormMessage />
-                    </FormItem>
-                )}
-            />
-            {timePosition === "button-side-by-side" && (
+                            )}
+                            <Calendar
+                                mode={_mode}
+                                selected={field.value}
+                                onSelect={(val: any) => {
+                                    _mode === "single" && setOpen(false);
+                                    let nv = onChangeValueConverter
+                                        ? onChangeValueConverter(val)
+                                        : val;
+                                    if (nv !== "abortChange") {
+                                        field.onChange(nv);
+                                    }
+                                }}
+                                disabled={(date) => {
+                                    if (dateFilter === "pastOnly") {
+                                        return Boolean(
+                                            date > new Date() || date < new Date("1900-01-01"),
+                                        );
+                                    } else if (dateFilter === "futureOnly") {
+                                        return date < new Date();
+                                    } else if (typeof dateFilter === "function") {
+                                        return dateFilter(date);
+                                    }
+                                    return false;
+                                }}
+                                initialFocus
+                            />
+                            {timePosition === "popover-bottom" && (
+                                <TimeInput
+                                    {...timeProps}
+                                    value={form.watch(name)}
+                                    onChange={(newVal) =>
+                                        form.setValue(name, newVal as PathValue<T, Path<T>>)
+                                    }
+                                />
+                            )}
+                        </PopoverContent>
+                    </Popover>
+                    {desc && <FormDescription>{desc}</FormDescription>}
+                    <FormMessage />
+                </FormItem>
+            )}
+        />
+    );
+};
+
+export const DateInput = <T extends FieldValues>(
+    props: FullFormDateInputProps<T, HTMLInputElement>,
+) => {
+    const form = useFormContext<T>();
+
+    if (props.timePosition === "button-side-by-side") {
+        return (
+            <div className={cn("w-fit flex flex-row justify-start items-end gap-4", props?.classes?.timeSideBySideContainer)}>
+                <DateInputInternal {...props} />
                 <TimeInput
-                    {...timeProps}
-                    value={form.watch(name)}
+                    {...props.timeProps}
+                    value={form.watch(props.name)}
                     onChange={(newVal) =>
-                        form.setValue(name, newVal as PathValue<T, Path<T>>)
+                        form.setValue(props.name, newVal as PathValue<T, Path<T>>)
                     }
                 />
-            )}
-        </>
-    );
+            </div>
+        );
+    }
+    return <DateInputInternal {...props} />
 };
 
 DateInput.displayName = "DateInput";

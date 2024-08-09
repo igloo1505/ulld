@@ -14,7 +14,7 @@ const _files = globSync(
 
 let s = `@tailwind base;
 @tailwind components;
-@tailwing utilities;
+@tailwind utilities;
 
 @layer base {
 `;
@@ -29,8 +29,7 @@ s += `
     }
 
     body {
-      @apply bg-background text-foreground;
-      @apply font-sans;
+      @apply bg-background text-foreground font-sans;
     }
   }
 `

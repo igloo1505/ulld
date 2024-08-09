@@ -3,7 +3,7 @@ import { Card } from "@ulld/tailwind/card";
 import { MdxContentCLIENT } from "@ulld/render/mdx/client";
 import { Badge } from "@ulld/tailwind/badge";
 import Link from "next/link";
-import { Button, buttonVariants } from "@ulld/tailwind/button";
+import { buttonVariants } from "@ulld/tailwind/button";
 import { DeleteModalTriggerButton } from "@ulld/ui/deleteModalTriggerButton";
 import { ValidatedSnippet } from "../../schemas";
 import { ShikiLanguage } from "@ulld/utilities/shikiLanguages";
@@ -16,26 +16,25 @@ interface SnippetListItemPropsInternal {
 const SnippetListItem = ({ item }: SnippetListItemPropsInternal) => {
     return (
         <Card className={"w-full h-fit flex flex-col p-4 gap-3"}>
-            <div className={"w-full h-fit grid grid-cols-[1fr_2rem]"}>
-                <div className={"w-full text-lg font-semibold"}>
+            <div className={"relative w-full h-fit pr-8"}>
+                <div className={"w-full text-lg font-semibold h-fit"}>
                     <MdxContentCLIENT content={item.description} bareAss />
                 </div>
-                <div className={"w-full h-full grid place-items-center"}>
-                    <DeleteModalTriggerButton
-                        config={{
-                            primaryId: item.id,
-                            title: "Delete Snippet",
-                            body: "Are you sure you want to delete this snippet? This cannot be undone.",
-                            buttonVariant: "destructive",
-                            onConfirm: "deleteSnippet",
-                            buttonText: "Delete",
-                            toast: {
-                                title: "Success",
-                                description: "This snippet has been deleted successfully.",
-                            },
-                        }}
-                    />
-                </div>
+                <DeleteModalTriggerButton
+                    className={"absolute top-4 right-4"}
+                    config={{
+                        primaryId: item.id,
+                        title: "Delete Snippet",
+                        body: "Are you sure you want to delete this snippet? This cannot be undone.",
+                        buttonVariant: "destructive",
+                        onConfirm: "deleteSnippet",
+                        buttonText: "Delete",
+                        toast: {
+                            title: "Success",
+                            description: "This snippet has been deleted successfully.",
+                        },
+                    }}
+                />
             </div>
             <div className={"flex flex-row justify-start items-center gap-3"}>
                 {item.keywords.map((k, i) => (
@@ -64,7 +63,10 @@ const SnippetListItem = ({ item }: SnippetListItemPropsInternal) => {
                 >
                     Edit
                 </Link>
-                <CopyContentButton content={item.content}>Copy</CopyContentButton>
+                <CopyContentButton 
+                    content={item.content}
+                    language={item.language}
+                >Copy</CopyContentButton>
             </div>
         </Card>
     );
