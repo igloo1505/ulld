@@ -20,13 +20,13 @@ declare global {
 
 export const useBibEntryDetailsDisplay = () => {
     const [item, setItem] = useState<BibEntry | false>(false);
-    const [loading, _setLoading] = useState(false)
+    const [loading, _setLoading] = useState(false);
     const isLoading = useRef<boolean>(false);
 
     const setLoading = (l: boolean) => {
-           _setLoading(l) 
-        isLoading.current = l
-        }
+        _setLoading(l);
+        isLoading.current = l;
+    };
 
     useEventListener("show-bib-entry-details", (e) => {
         if (e.detail.entry) {
@@ -38,10 +38,12 @@ export const useBibEntryDetailsDisplay = () => {
 
     const gatherById = async (id: string) => {
         if (isLoading.current) return;
-        setLoading(true)
+        setLoading(true);
         let res = await client.bibliography.getBibEntry.query(id);
-        setItem(res);
-        setLoading(false)
+        if (res) {
+            setItem(BibEntry.fromPrisma(res));
+        }
+        setLoading(false);
     };
 
     useEventListener("show-bib-entry-details-by-id", (e) => {
@@ -56,6 +58,6 @@ export const useBibEntryDetailsDisplay = () => {
         BibEntry | false,
         (newItem: BibEntry | false) => void,
         () => void,
-        boolean
+        boolean,
     ];
 };

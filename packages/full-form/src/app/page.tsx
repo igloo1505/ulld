@@ -10,7 +10,11 @@ const testPages: LocalDevelopmentItem[] = [
     {
         href: "/dateTimeInput",
         label: "Date Time Input"
-    }
+    },
+    {
+        href: "/filePathInput",
+        label: "File Path Input"
+    },
 ]
 
 const TestPage = async (props: TestPageProps) => {

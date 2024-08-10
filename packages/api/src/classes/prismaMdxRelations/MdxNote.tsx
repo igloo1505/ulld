@@ -24,8 +24,7 @@ import {
     mdxNoteZodObject,
     mdxNoteWithParsedLatex,
 } from "../../schemas/search/parsing";
-import { serverClient } from "../../trpc/serverClient";
-import { AutoSettingWithRegex } from "../../trpc/types.d";
+import type { AutoSettingWithRegex } from "../../trpc/types.d";
 import { ValueSearchTableItem } from "../../trpcTypes/valueTableSearch";
 import { ArrayUtilities } from "@ulld/utilities/arrayUtilities";
 import { getFlatAutoSettings } from "../../trpcInternalMethods/settings/autoSettings/getFlattenedAutoSettings";
@@ -524,6 +523,7 @@ ${m.groups.content}
         if (!this.haveSetFrontMatter) {
             this.applyStandardFrontMatter();
         }
+        let serverClient = await import("../../trpc/serverClient").then((x) => x.serverClient)
         let res = await params.parser({
             content: c,
             serverClient: serverClient,

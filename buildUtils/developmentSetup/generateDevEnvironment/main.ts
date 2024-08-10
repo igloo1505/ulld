@@ -84,6 +84,7 @@ readLine.question("Which package? ", (packageName) => {
 
     concatLinesAndWrite(new FileData(path.join(rootPath, ".gitignore")), [
         "assets/",
+        "appConfig.ulld.json",
     ]);
     concatLinesAndWrite(new FileData(path.join(rootPath, ".npmIgnore")), [
         "src/app",

@@ -88,13 +88,7 @@ const BibliographyPageClient = ({
             {hasSetData ? (
                 <BibTable
                     bibEntries={tableItems}
-                    setActiveItem={(id: string) => {
-                        if (!bib) return;
-                        let selected = bib.findEntryById(id);
-                        if (selected && selected.prismaEntry) {
-                            showBibEntryDetails(selected.prismaEntry);
-                        }
-                    }}
+                    bib={bib}
                 />
             ) : (
                 <>{loadingIndicator}</>

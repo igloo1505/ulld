@@ -2,8 +2,15 @@ import React from "react";
 import type { z } from 'zod'
 
 
+export type PropertiesOfType<T, K> = {
+    [J in keyof T]: T[J] extends K ? T[J] : never
+}
+
 export type WithRequired<T, K extends keyof T> = T & { [P in K]-?: T[P] }
 
+export type WithOptional<T, K extends keyof T> = T & { [P in K]?: T[P] }
+
+export type MakeNullish<T> = T & { [P in keyof PropertiesOfType<T, null | undefined>]?: T[P] | null }
 
 export type ExpandRecursively<T> = T extends object
     ? T extends infer O ? { [K in keyof O]: ExpandRecursively<O[K]> } : never

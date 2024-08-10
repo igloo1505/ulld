@@ -1,6 +1,6 @@
-"use client"
-import React, { useMemo, useState } from 'react'
-import { getColumnDef } from './bibTableColumns'
+"use client";
+import React, { useMemo, useState } from "react";
+import { getColumnDef } from "./bibTableColumns";
 import {
     ColumnFiltersState,
     SortingState,
@@ -10,7 +10,7 @@ import {
     getPaginationRowModel,
     getSortedRowModel,
     useReactTable,
-} from "@tanstack/react-table"
+} from "@tanstack/react-table";
 import {
     Table,
     TableBody,
@@ -18,52 +18,68 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@ulld/tailwind/table"
-import { type BibEntry, Prisma } from '@ulld/database'
-import { useRouter } from 'next/navigation'
-import { Input } from '@ulld/tailwind/input'
-import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from '@ulld/tailwind/dropdown-menu'
-import { ChevronDown } from 'lucide-react'
-import { Button } from '@ulld/tailwind/button'
-import clsx from 'clsx'
-import { BibEntryDataTableOutput } from '@ulld/api/classes/prismaMdxRelations/bibEntry'
+} from "@ulld/tailwind/table";
+import { type BibEntry, Prisma } from "@ulld/database";
+import { useRouter } from "next/navigation";
+import { Input } from "@ulld/tailwind/input";
+import {
+    DropdownMenu,
+    DropdownMenuCheckboxItem,
+    DropdownMenuContent,
+    DropdownMenuTrigger,
+} from "@ulld/tailwind/dropdown-menu";
+import { ChevronDown } from "lucide-react";
+import { Button } from "@ulld/tailwind/button";
+import clsx from "clsx";
+import { BibEntryDataTableOutput } from "@ulld/api/classes/prismaMdxRelations/bibEntry";
+import {
+    showBibEntryDetails,
+    ShowBibEntryDetailsProps,
+} from "../../../utils/showBibEntryDetails";
+import { BibCore } from "@ulld/api/classes/prismaMdxRelations/Bib";
 
 interface BibTableProps {
-    bibEntries: BibEntryDataTableOutput[]
-    setActiveItem: (id: string) => void
+    bibEntries: BibEntryDataTableOutput[];
+    bib?: BibCore | null;
 }
-
 
 const initiallyShow: (keyof BibEntry)[] = [
     "title",
     "author",
     "journal",
-    "added"
-]
+    "added",
+];
 
-const BibTable = ({ bibEntries, setActiveItem }: BibTableProps) => {
-    const router = useRouter()
-    const [sorting, setSorting] = useState<SortingState>([])
-    const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(
-        []
-    )
-    const [filterKey, setFilterKey] = useState<"Author" | "Title">("Title")
-    const [rowSelection, setRowSelection] = useState({})
+const BibTable = ({ bibEntries, bib }: BibTableProps) => {
+    const router = useRouter();
+    const [sorting, setSorting] = useState<SortingState>([]);
+    const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+    const [filterKey, setFilterKey] = useState<"Author" | "Title">("Title");
+    const [rowSelection, setRowSelection] = useState({});
     const initialVisibility = useMemo(() => {
-        let d: { [k in keyof typeof Prisma.BibEntryScalarFieldEnum]?: boolean } = {}
+        let d: { [k in keyof typeof Prisma.BibEntryScalarFieldEnum]?: boolean } =
+            {};
         Object.keys(Prisma.BibEntryScalarFieldEnum).forEach((k) => {
-            if (initiallyShow.includes(k as keyof typeof Prisma.BibEntryScalarFieldEnum)) {
-                d[k as keyof typeof d] = true
+            if (
+                initiallyShow.includes(k as keyof typeof Prisma.BibEntryScalarFieldEnum)
+            ) {
+                d[k as keyof typeof d] = true;
             } else {
-                d[k as keyof typeof d] = false
+                d[k as keyof typeof d] = false;
             }
+        });
+        return d;
+    }, []);
+    const [visibilityState, setVisibilityState] =
+        useState<Record<string, boolean>>(initialVisibility);
+    const columns = useMemo(() => getColumnDef(router), []);
 
-        })
-        return d
-    }, [])
-    const [visibilityState, setVisibilityState] = useState<Record<string, boolean>>(initialVisibility)
-    const columns = useMemo(() => getColumnDef(router), [])
-
+    const setActiveItem = (id: string) => {
+        let entry = bib?.findEntryById(id);
+        if (entry) {
+            showBibEntryDetails(entry as ShowBibEntryDetailsProps);
+        }
+    };
 
     const table = useReactTable<BibEntryDataTableOutput>({
         data: bibEntries,
@@ -85,39 +101,62 @@ const BibTable = ({ bibEntries, setActiveItem }: BibTableProps) => {
         /* debugTable: true, */
         /* debugHeaders: true, */
         /* debugColumns: true, */
-    })
-
+    });
 
     const handleDeleteBibItem = () => {
-        window.alert("handleDeleteBibItem has not yet been implemented")
-    }
+        window.alert("handleDeleteBibItem has not yet been implemented");
+    };
 
     return (
         <div className="rounded-md border mt-8">
             <div className="flex items-center p-4">
                 <Input
                     placeholder={`Filter ${filterKey.toLowerCase()}...`}
-                    value={(table.getColumn(filterKey.toLowerCase())?.getFilterValue() as string) ?? ""}
+                    value={
+                        (table
+                            .getColumn(filterKey.toLowerCase())
+                            ?.getFilterValue() as string) ?? ""
+                    }
                     onChange={(event) =>
-                        table.getColumn(filterKey.toLowerCase())?.setFilterValue(event.target.value)
+                        table
+                            .getColumn(filterKey.toLowerCase())
+                            ?.setFilterValue(event.target.value)
                     }
                     className="max-w-sm"
                 />
                 <div className={"flex flex-row justify-center items-center mx-4"}>
                     <div className={"grid grid-cols-[1fr_1fr] space-x-2 "}>
-                        <Button onClick={() => setFilterKey("Title")} disabled={filterKey === "Title"}>Title</Button>
-                        <Button onClick={() => setFilterKey("Author")} disabled={filterKey === "Author"} className={clsx(filterKey === "Author" && "disabled")}>Author</Button>
+                        <Button
+                            onClick={() => setFilterKey("Title")}
+                            disabled={filterKey === "Title"}
+                        >
+                            Title
+                        </Button>
+                        <Button
+                            onClick={() => setFilterKey("Author")}
+                            disabled={filterKey === "Author"}
+                            className={clsx(filterKey === "Author" && "disabled")}
+                        >
+                            Author
+                        </Button>
                     </div>
-
                     <Button
                         variant="ghost"
                         /// @ts-ignore
-                        className={clsx("hidden", Boolean(table.getColumn("title")?.getFilterValue()?.length > 0 || table.getColumn("author")?.getFilterValue()?.length > 0) && "inline-block ml-2")}
+                        className={clsx(
+                            "hidden",
+                            Boolean(
+                                table.getColumn("title")?.getFilterValue()?.length > 0 ||
+                                table.getColumn("author")?.getFilterValue()?.length > 0,
+                            ) && "inline-block ml-2",
+                        )}
                         onClick={() => {
-                            table.getColumn("title")?.setFilterValue("")
-                            table.getColumn("author")?.setFilterValue("")
+                            table.getColumn("title")?.setFilterValue("");
+                            table.getColumn("author")?.setFilterValue("");
                         }}
-                    >Clear</Button>
+                    >
+                        Clear
+                    </Button>
                 </div>
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -141,7 +180,7 @@ const BibTable = ({ bibEntries, setActiveItem }: BibTableProps) => {
                                     >
                                         {column.id}
                                     </DropdownMenuCheckboxItem>
-                                )
+                                );
                             })}
                     </DropdownMenuContent>
                 </DropdownMenu>
@@ -157,10 +196,10 @@ const BibTable = ({ bibEntries, setActiveItem }: BibTableProps) => {
                                             ? null
                                             : flexRender(
                                                 header.column.columnDef.header,
-                                                header.getContext()
+                                                header.getContext(),
                                             )}
                                     </TableHead>
-                                )
+                                );
                             })}
                         </TableRow>
                     ))}
@@ -199,7 +238,11 @@ const BibTable = ({ bibEntries, setActiveItem }: BibTableProps) => {
                         variant="destructive"
                         size="sm"
                         onClick={handleDeleteBibItem}
-                        className={clsx("hidden", table.getFilteredSelectedRowModel().rows.length > 0 && "inline-block")}
+                        className={clsx(
+                            "hidden",
+                            table.getFilteredSelectedRowModel().rows.length > 0 &&
+                            "inline-block",
+                        )}
                     >
                         Delete
                     </Button>
@@ -222,11 +265,9 @@ const BibTable = ({ bibEntries, setActiveItem }: BibTableProps) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-
-BibTable.displayName = "BibTable"
-
+BibTable.displayName = "BibTable";
 
 export default BibTable;

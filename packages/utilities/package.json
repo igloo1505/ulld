@@ -8,6 +8,7 @@
   ],
   "exports": {
     "./types": "./src/types/main.ts",
+    "./filePathSchemas": "./src/schemas/filePath/index.ts",
     "./errorNotifications": "./src/errorHandling/main.ts",
     "./testDataHelpers": "./src/testDataHelpers/main.ts",
     "./localDevelopmentMenu": "./src/components/localDevelopment/localDevelopmentMenu.tsx",
