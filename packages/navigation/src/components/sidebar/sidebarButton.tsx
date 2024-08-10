@@ -18,13 +18,13 @@ export const SidebarButton = ({ item }: SidebarButtonProps) => {
     return (
       <a
         onClick={item.onClick}
-        className={"cursor-pointer p-1.5 focus:outline-none rounded-lg transitionc-colors duration-200 bg-primary dark:bg-card hover:bg-primary/60 hover:dark:bg-muted"}
+        className={"cursor-pointer p-1.5 focus:outline-none rounded-lg transition-colors duration-200 bg-primary text-primary-foreground stroke-primary-foreground dark:bg-card hover:bg-muted/20 hover:dark:bg-muted"}
       >
         {typeof item?.icon === "string" && (
-          <DynamicIcon className={"w-6 h-6"} name={item.icon} />
+          <DynamicIcon className={"w-6 h-6 text-primary-foreground dark:text-card-foreground stroke-primary-foreground dark:stroke-card-foreground"} name={item.icon} />
         )}
         {Icon && typeof item.icon !== "string" && (
-          <Icon className={"w-6 h-6"} />
+          <Icon className={"w-6 h-6 text-primary-foreground dark:text-card-foreground stroke-primary-foreground dark:stroke-card-foreground"} />
         )}
       </a>
     );
@@ -35,12 +35,12 @@ export const SidebarButton = ({ item }: SidebarButtonProps) => {
   return (
     <Link
       href={item.href}
-        className={"cursor-pointer p-1.5 focus:outline-none rounded-lg transitionc-colors duration-200 bg-primary dark:bg-card hover:bg-primary/60 hover:dark:bg-muted"}
+        className={"cursor-pointer p-1.5 focus:outline-none rounded-lg transition-colors duration-200 bg-primary text-primary-foreground dark:bg-card hover:bg-muted/20 hover:dark:bg-muted"}
     >
       {typeof item?.icon === "string" && (
-        <DynamicIcon className={"w-6 h-6"} name={item.icon} />
+        <DynamicIcon className={"w-6 h-6 text-primary-foreground dark:text-card-foreground stroke-primary-foreground dark:stroke-card-foreground"} name={item.icon} />
       )}
-      {Icon && typeof item.icon !== "string" && <Icon className={"w-6 h-6"} />}
+      {Icon && typeof item.icon !== "string" && <Icon className={"w-6 h-6 text-primary-foreground dark:text-card-foreground stroke-primary-foreground dark:stroke-card-foreground"} />}
     </Link>
   );
 };

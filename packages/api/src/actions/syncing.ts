@@ -5,6 +5,7 @@ import { OnBackupReturnData, OnRestoreReturnData } from "@ulld/types";
 import { downloadFile } from "@ulld/utilities/downloadFile";
 import { ToastConfigType } from "@ulld/utilities/types";
 import { toast } from "@ulld/tailwind/use-toast";
+import { errorToastRecord } from "@ulld/utilities/errorNotifications"
 
 const showToast = (config: ToastConfigType, store?: ToolkitStore) => {
     console.log("toastConfig: ", config)
@@ -21,7 +22,11 @@ export const syncRootDirectory = async () => {
         removeIfNotInFs: false,
         cleanBeforeSync: false,
     });
-    if (res.data?.success) {
+    if(res.data?.errorNotifications && res.data?.errorNotifications?.length){
+        for (const err of res.data.errorNotifications) {
+            showToast(errorToastRecord[err.errorKey as keyof typeof errorToastRecord])
+        }
+    } else if (res.data?.success) {
         showToast(
             {
                 title: "Success",

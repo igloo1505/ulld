@@ -4,10 +4,10 @@ import { MdxContentCLIENT } from "@ulld/render/mdx/client";
 import { Badge } from "@ulld/tailwind/badge";
 import Link from "next/link";
 import { buttonVariants } from "@ulld/tailwind/button";
-import { DeleteModalTriggerButton } from "@ulld/ui/deleteModalTriggerButton";
 import { ValidatedSnippet } from "../../schemas";
 import { ShikiLanguage } from "@ulld/utilities/shikiLanguages";
 import CopyContentButton from "./copyContentButton";
+import DeleteSnippetButton from "./deleteItemButton"
 
 interface SnippetListItemPropsInternal {
     item: ValidatedSnippet;
@@ -20,21 +20,7 @@ const SnippetListItem = ({ item }: SnippetListItemPropsInternal) => {
                 <div className={"w-full text-lg font-semibold h-fit"}>
                     <MdxContentCLIENT content={item.description} bareAss />
                 </div>
-                <DeleteModalTriggerButton
-                    className={"absolute top-4 right-4"}
-                    config={{
-                        primaryId: item.id,
-                        title: "Delete Snippet",
-                        body: "Are you sure you want to delete this snippet? This cannot be undone.",
-                        buttonVariant: "destructive",
-                        onConfirm: "deleteSnippet",
-                        buttonText: "Delete",
-                        toast: {
-                            title: "Success",
-                            description: "This snippet has been deleted successfully.",
-                        },
-                    }}
-                />
+            <DeleteSnippetButton itemId={item.id} />
             </div>
             <div className={"flex flex-row justify-start items-center gap-3"}>
                 {item.keywords.map((k, i) => (

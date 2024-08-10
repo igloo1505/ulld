@@ -195,6 +195,22 @@ export class ArrayUtilities {
     }
 
     static sliceAroundIndex<T>(data: T[], targetIndex: number, maxItems: number) {
+        let items: T[] = [data[targetIndex]]
+        let i = 1
+        let shouldRun = true
+        do {
+           if(items.length <= targetIndex + i) {
+                items.push(data[targetIndex + i])
+            } 
+            if((items.length < maxItems) && (targetIndex - i >= 0)){
+                items.push(data[targetIndex - i])
+            }
+            if(items.length < maxItems && (i + 1 + targetIndex < data.length || targetIndex - (i + 1) > 0)){
+                i++
+            } else {
+                shouldRun = false
+            }
+        } while (shouldRun);
+        return items
     }
-
 }

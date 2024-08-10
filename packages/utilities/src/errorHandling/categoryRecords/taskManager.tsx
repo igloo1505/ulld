@@ -1,10 +1,6 @@
-import { ToastConfigType } from "../types/toastConfig";
+import { ToastConfigType } from "../../types/toastConfig";
 
 export type TaskManagerErrorKeys = "toDoListExists"
-
-export type ErrorResponse = {
-    errorKey: TaskManagerErrorKeys
-}
 
 
 export const taskManagerErrorRecord: {[k in TaskManagerErrorKeys]: ToastConfigType} 

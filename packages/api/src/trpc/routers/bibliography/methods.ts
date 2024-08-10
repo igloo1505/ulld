@@ -1,7 +1,7 @@
 import { prisma } from "@ulld/database/db"
 import type { Prisma } from "@ulld/database/internalDatabaseTypes"
 
-export const getBibWithEntries = async (bibId?: number) => {
+export const getBibWithEntries = async (bibId: number = 1) => {
     let res1 = await prisma.bib.findFirst({
         ...(bibId && {
             where: {

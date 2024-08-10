@@ -1,9 +1,10 @@
 "use client"
-import { ConfirmationModalConfig } from '@ulld/state/actions/confirmation/confirmationModalConfig'
+import React from 'react'
+import { ConfirmationModalConfig } from "@ulld/utilities/types";
 import { showConfirmationModal } from '@ulld/state/slices/ui'
 import clsx from 'clsx'
 import { XIcon } from 'lucide-react'
-import React from 'react'
+import { useConfirmation } from "@ulld/hooks/useConfirmation"
 
 
 
@@ -12,10 +13,15 @@ interface DeleteModalTriggerButtonProps {
     className?: string
 }
 
+
+/* TODO: Remove all references to this component everywhere. This will no longer function. */
 export const DeleteModalTriggerButton = ({ className, config }: DeleteModalTriggerButtonProps) => {
 
+    const confirm = useConfirmation(config)
+
     const showDeleteModal = () => {
-        window.ulldStore.dispatch(showConfirmationModal(config))
+        confirm.
+        /* window.ulldStore.dispatch(showConfirmationModal(config)) */
     }
 
     return (

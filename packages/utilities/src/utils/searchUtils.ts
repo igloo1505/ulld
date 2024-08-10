@@ -23,8 +23,8 @@ export const searchAllParamsToSearchParamsClass = (
     sp?: Partial<SearchAllParams>,
 ): URLSearchParams => {
     let data = new URLSearchParams();
-    if(!sp){
-        return data
+    if (!sp) {
+        return data;
     }
     if (sp.query) {
         data.set("query", sp.query);
@@ -86,4 +86,14 @@ export const getTaggablesFromSearchAllParams = (sp: SearchAllParams) => {
         topics: sp.topics || ([] as string[]),
         subjects: sp.subjects || ([] as string[]),
     };
+};
+
+export const clearNullSearchParams = (p: URLSearchParams) => {
+    for (const k of p.keys()) {
+        let val = p.get(k);
+        if (!val) {
+            p.delete(k);
+        }
+    }
+    return p;
 };

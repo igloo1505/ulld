@@ -360,7 +360,6 @@ export class MdxNote extends MdxNoteProtocol {
         noteTypeId?: string,
     ) {
         let ci = this.createInput(autoSettings, config, noteTypeId);
-        console.log("ci: ", ci);
         if (ci && ci !== undefined) {
             let d: Prisma.MdxNoteCreateArgs = {
                 data: ci as Prisma.MdxNoteCreateInput,
@@ -550,7 +549,7 @@ ${m.groups.content}
         this.formatted = res.content;
         if (res.data) {
             console.log(`Applying parsed front matter`)
-            console.log("res.data: ", res.data)
+            /* console.log("res.data: ", res.data) */
             this.applyParsedFrontMatter(res.data, true)
         }
         /* this.formatted = this.parseEquationTags(formatted); // Math package */

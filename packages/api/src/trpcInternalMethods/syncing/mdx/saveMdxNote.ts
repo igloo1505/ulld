@@ -14,8 +14,6 @@ export const saveMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRe
 
     const createArgs = note.createArgs(autoSettings, config)
 
-    console.log("createArgs: ", createArgs)
-
     if (!createArgs) return
     let saved = await prisma.mdxNote.create(createArgs)
     if (note.definitions?.length > 0) {

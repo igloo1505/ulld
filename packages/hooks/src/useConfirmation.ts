@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { ConfirmationModalConfig } from "@ulld/utilities/types";
 import { useEventListener } from "@ulld/hooks/useEventListener";
-import { useUlldStore } from "@ulld/hooks/useUlldStore";
 import { getRandomId } from "@ulld/utilities/identity";
 
 type S = "pending" | "denied" | "accepted" | "waiting";
@@ -44,7 +43,6 @@ export const useConfirmation = (config: ConfirmationModalConfig) => {
         config.primaryId || `confirmation-${getRandomId()}`,
     );
 
-    useEffect(() => { }, [modalOpen]);
 
     useEventListener("confirmation-accept", (e) => {
         if (e.detail.confirmationId === confirmationId) {

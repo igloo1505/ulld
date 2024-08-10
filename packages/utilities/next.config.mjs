@@ -1,3 +1,4 @@
+import nextPwa from "@ducanh2912/next-pwa";
 import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
 
 const isDevelopment = process.env.NODE_ENV === "development";
@@ -9,41 +10,39 @@ const monacoRules = [
     },
 ];
 
+const withPWA = nextPwa({
+    dest: "public",
+    ...(process.env.PRODUCTION_LOCAL && {
+        workboxOptions: {
+            mode: "production",
+        },
+    }),
+});
+
 /** @type {import('next').NextConfig} */
-export default {
-    reactStrictMode: false,
+const config = withPWA({
+    typescript: {
+        ignoreBuildErrors: true, // FOR DEVELOPMENT ONLY
+    },
     eslint: {
         dirs: ["src"]
     },
+    reactStrictMode: false,
     transpilePackages: [
-        "react-resizable-panels",
-        "three-stdlib",
         "three",
-        "@ulld/api",
-        "@ulld/calendar",
-        "@ulld/configschema",
-        "@ulld/database",
-        "@ulld/developer",
-        "@ulld/diagram",
+        "react-three-fiber",
+        "drei",
+        "glsify",
+        "monaco-editor",
         "@ulld/editor",
-        "@ulld/eslint-config",
-        "@ulld/full-form",
-        "@ulld/hooks",
-        "@ulld/icons",
-        "@ulld/jest-presets",
-        "@ulld/parsers",
-        "@ulld/render",
-        "@ulld/state",
         "@ulld/tailwind",
-        "@ulld/typescript-config",
-        "@ulld/ui",
-        "@ulld/utilities",
-        "@ulld/whiteboard",
+        "@ulld/full-form",
     ],
     experimental: {
-        typedRoutes: true,
+        // typedRoutes: true,
         esmExternals: "loose",
         optimizePackageImports: ["lucide-react", "katex"],
+        // serverComponentsExternalPackages: ['@ulld/editor'],
         // mdxRs: true,
     },
     onDemandEntries: {
@@ -53,25 +52,20 @@ export default {
     poweredByHeader: false,
     webpack: (config, ctx) => {
         config.cache = false;
-        // const opt = config.module.rules.find(f => f.loader && f.loader.includes("node_modules/babel-loader"))
-        // if (opt) {
-        //     // opt.options.plugins = []
-        //     // PRIORITY: Come back here and leave the option as it's default but adjust the 'test' method to exclude node_modules/monaco-editor to allow the editor to import css files without blowing up the already monstorously large build.
-        // }
         if (!ctx.isServer) {
             // run only for client side
             config.plugins.push(
                 new MonacoEditorWebpackPlugin({
                     // available options are documented at https://github.com/microsoft/monaco-editor/blob/main/webpack-plugin/README.md#options
-                    languages: [
-                        "json",
-                        "typescript",
-                        "html",
-                        "css",
-                        "python",
-                        "markdown",
-                        "yaml",
-                    ],
+                    // languages: [
+                    //     'json',
+                    //     'typescript',
+                    //     'html',
+                    //     'css',
+                    //     'python',
+                    //     'markdown',
+                    //     'yaml'
+                    // ],
                     filename: "static/[name].worker.js",
                 }),
             );
@@ -120,4 +114,8 @@ export default {
         });
         return config;
     },
-};
+});
+
+console.log("config: ", config);
+
+export default config;
