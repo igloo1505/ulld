@@ -2,7 +2,7 @@ import { InternalAppName } from "@ulld/types";
 
 export interface FundingItem {
     pkgJsonType: string;
-    websiteKey: string
+    websiteKey: string;
     url: string;
 }
 
@@ -14,6 +14,9 @@ interface UlldAppData {
         buildDirName: string;
     };
     funding: FundingItem[];
+    buildDefaults: {
+        bibFilePath: string;
+    };
     pathsToCopyForDocumentation: string[];
     projectRepo: {
         url: string;
@@ -25,6 +28,9 @@ interface UlldAppData {
 
 export const appData: UlldAppData = {
     isLocalDev: true,
+    buildDefaults: {
+        bibFilePath: "./citations.bib",
+    },
     templateRepo: {
         url: "https://github.com/igloo1505/ulldApp.git",
         branch: "main",

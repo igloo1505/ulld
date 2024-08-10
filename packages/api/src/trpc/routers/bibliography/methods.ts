@@ -1,8 +1,7 @@
 import { prisma } from "@ulld/database/db"
-import type { Prisma } from "@ulld/database/internalDatabaseTypes"
 
 export const getBibWithEntries = async (bibId: number = 1) => {
-    let res1 = await prisma.bib.findFirst({
+    return await prisma.bib.findFirst({
         ...(bibId && {
             where: {
                 id: bibId
@@ -16,6 +15,7 @@ export const getBibWithEntries = async (bibId: number = 1) => {
                     MdxNotes: {
                         select: {
                             title: true,
+                            id: true,
                             href: true,
                         }
                     }
@@ -23,7 +23,6 @@ export const getBibWithEntries = async (bibId: number = 1) => {
             }
         }
     })
-    return res1
 }
 
 

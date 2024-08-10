@@ -24,20 +24,12 @@ export const syncBib = async (bibId: number = 1) => {
         } satisfies ErrorResponse<"bibManager">
     }
     const content = f.getContent()
-    // RESUME: Fix this. The issue seems to be within the parseBibFile and BibEntry.fromFsList methods. Check to make sure they're returning and receiving the proper data.
     const parsed = parseBibFile(content)
-    console.log("parsed: ", parsed)
-    console.log("Object.keys(parsed): ", Object.keys(parsed))
-    console.log("parsed.entries_raw: ", parsed.entries_raw)
     const entries = BibEntry.fromFsList(parsed.entries_raw)
-    console.log("entries.length: ", entries.length)
     const { citations, userDefined } = getFormattedCslCitation(content, appConfig)
     const ids = citations.getIds()
-    console.log("citations: ", citations)
-    console.log("keyof citations: ", Object.keys(citations))
     const lower = ids.map((l: string) => l.toLowerCase())
     let connectOrCreateEntries: Prisma.BibEntryCreateOrConnectWithoutBibInput[] = []
-    console.log("entries.length: ", entries.length)
     for (const entry of entries) {
         const _args = entry.connectOrCreateArgs(ids, lower)
         _args.create.htmlCitation = citations.format('bibliography', {
@@ -47,7 +39,7 @@ export const syncBib = async (bibId: number = 1) => {
         })
         connectOrCreateEntries.push(_args)
     }
-    await prisma.bib.upsert({
+    return await prisma.bib.upsert({
         where: {
             id: BIBID
         },
@@ -55,13 +47,18 @@ export const syncBib = async (bibId: number = 1) => {
             filename: bibpath,
             entries: {
                 connectOrCreate: connectOrCreateEntries
-            }
+            },
+            lastSync: new Date()
         },
         update: {
             filename: bibpath,
             entries: {
                 connectOrCreate: connectOrCreateEntries
-            }
+            },
+            lastSync: new Date()
+        },
+        include: {
+            entries: true
         }
     })
 }

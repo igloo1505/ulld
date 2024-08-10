@@ -20,6 +20,7 @@ import { CitationGroup } from "../CitationGroup";
 import { withForwardSlash } from "@ulld/utilities/fsUtils";
 import { toDoItemStatuses } from "@ulld/utilities/toDoStatusData";
 import { TaskCategory } from "@ulld/database/internalDatabaseTypes";
+import { appData } from "@ulld/utilities/appData";
 
 export const taggableFields = z.object({
     topics: topicZodObject
@@ -47,11 +48,11 @@ export const bibCoreSchema = z.object({
         .union([z.string().datetime(), z.date()])
         .nullish()
         .transform((a) => (typeof a === "string" ? new Date(a) : a)),
-    lastSync: z
+    lastAccess: z
         .union([z.string().datetime(), z.date()])
         .nullish()
         .transform((a) => (typeof a === "string" ? new Date(a) : a)),
-    filename: z.string().default("citations.bib"),
+    filename: z.string().default(appData.buildDefaults.bibFilePath),
     id: z.number().int().default(1),
     entries: z.any().array().default([]),
 });
@@ -63,8 +64,8 @@ export const readingListZodObject = z.object({
     name: z.string(),
     description: z.string().nullable(),
     bibEntries: z.any().array(),
-    mdxNotes: z.any().array(),
-    ipynbNotes: z.any().array(),
+    mdxNotes: z.any().array().default([]),
+    ipynbNotes: z.any().array().default([]),
     createdAt: z
         .union([z.string().datetime(), z.date()])
         .nullish()
@@ -75,7 +76,7 @@ export const readingListZodObject = z.object({
         .union([z.string().datetime(), z.date()])
         .nullish()
         .transform((a) =>
-            typeof a === "string" ? new Date(a) : a instanceof Date ? a : new Date(),
+            typeof a === "string" ? new Date(a) : a instanceof Date ? a : undefined,
         ),
 });
 
@@ -91,9 +92,16 @@ export const citationGroupSchema = z.object({
 export type CitationGroupPropsInput = z.input<typeof citationGroupSchema>;
 export type CitationGroupPropsOutput = z.output<typeof citationGroupSchema>;
 
+export const bibEntryTransform = (x: any) => {
+    return {
+        ...x,
+        BibId: x.BibId === 1 && x.Bib ? x.Bib.id : x.BibId,
+    };
+};
+
 export const bibEntryPropsSchema = z
     .object({
-        Bib: bibCoreSchema.transform((a) => new BibCore(a)),
+        Bib: bibCoreSchema.optional().transform((a) => new BibCore(a)),
         BibId: z.number().int().default(1),
         readingList: readingListZodObject
             .array()
@@ -153,6 +161,27 @@ export const bibEntryPropsSchema = z
         read: z.boolean().default(false),
         OwnWork: z.boolean().default(false),
         ColleaguesWork: z.boolean().default(false),
+        MdxNotes: z.any().array().nullish(),
+        createdAt: z
+            .union([z.string().datetime(), z.date(), z.string()])
+            .nullish()
+            .transform((a) =>
+                typeof a === "string"
+                    ? new Date(a)
+                    : a instanceof Date
+                        ? a
+                        : new Date(),
+            ),
+        lastAccess: z
+            .union([z.string().datetime(), z.date(), z.string()])
+            .nullish()
+            .transform((a) =>
+                typeof a === "string"
+                    ? new Date(a)
+                    : a instanceof Date
+                        ? a
+                        : new Date(),
+            ),
         citationGroups: citationGroupSchema
             .array()
             .default([])
@@ -168,7 +197,8 @@ export const bibEntryPropsSchema = z
                         : new Date(),
             ),
     })
-    .catchall(z.string());
+    .catchall(z.string())
+    .transform(bibEntryTransform);
 
 export const sequentialListPropsSchema = z.object({
     sequentialKey: z.string(),

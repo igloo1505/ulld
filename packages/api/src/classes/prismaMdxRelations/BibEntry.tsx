@@ -17,6 +17,10 @@ import Link from "next/link";
 import { BibEntryReturned } from "../../trpcTypes/main";
 import { Topic } from "./topic";
 import { Subject } from "./subject";
+import type { serverClient } from "../../trpc/serverClient";
+
+
+type FromPrismaEntry = Awaited<ReturnType<typeof serverClient.bibliography.getBibEntry>> | Awaited<ReturnType<typeof serverClient.bibliography.getBib>>["entries"] | Awaited<ReturnType<typeof serverClient.bibliography.syncBib>>["entries"]
 
 export type BibEntryPrismaAcceptedTypes =
     | BibEntry
@@ -205,6 +209,58 @@ export class BibEntry {
             id: this.id,
         };
     }
+    connectOrCreateArgsIfExists(){
+        return {
+            where: this.whereUniqueInput(),
+            create: {
+                id: this.id,
+                ...(Boolean(this.readingList) && {
+                    readingList: {
+                        connectOrCreate: this.readingList?.map((r) =>
+                            r.connectOrCreateArgs(),
+                        ),
+                    }
+                }),
+                OwnWork: this.OwnWork,
+                ColleaguesWork: this.ColleaguesWork,
+                read: this.read || false,
+                PdfPath: this.PdfPath,
+                address: this.address,
+                annote: this.annote,
+                author: this.author,
+                booktitle: this.booktitle,
+                chapter: this.chapter,
+                crossref: this.crossref,
+                doi: this.doi,
+                edition: this.edition,
+                editor: this.editor,
+                email: this.email,
+                howpublished: this.howpublished,
+                institution: this.institution,
+                journal: this.journal,
+                month: this.month,
+                note: this.note,
+                number: this.number,
+                organization: this.organization,
+                pages: this.pages,
+                publisher: this.publisher,
+                school: this.school,
+                series: this.series,
+                title: this.title,
+                volume: this.volume,
+                type: this.type,
+                year: this.year,
+                numpages: this.numpages,
+                url: this.url,
+                issue: this.issue,
+                issn: this.issn,
+                abstract: this.abstract,
+                urldate: this.urldate,
+                keywords: this.keywords,
+                copyright: this.copyright,
+            },
+        } satisfies Prisma.BibEntryCreateOrConnectWithoutBibInput;
+    }
     connectOrCreateArgs(
         bibFileIds: string[],
         lowerCaseBibFileIds: string[],
@@ -379,7 +435,7 @@ export class BibEntry {
         return <div key={`cit-${this.id}`}>{this.title}</div>;
     }
     static fromPrisma(
-        item: Omit<PrismaBibEntry, "added"> & { added?: Date | string },
+        item: FromPrismaEntry,
     ): BibEntry {
         let parsed = bibEntryPropsSchema.parse(item);
         return new BibEntry(parsed);

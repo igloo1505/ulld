@@ -98,8 +98,6 @@ export const getColumnDef = (router: ReturnType<typeof useRouter>): ColumnDef<Bi
             id: "actions",
             enableHiding: false,
             cell: ({ row }) => {
-                const payment = row.original
-
                 return (
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>

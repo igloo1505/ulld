@@ -4,13 +4,13 @@ import type {
     Prisma,
     Bib as PrismaBib,
 } from "@ulld/database/internalDatabaseTypes";
-import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
-import { ParsedAppConfig } from "@ulld/configschema/types";
+import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import {
     BibPropsOutput,
     bibCoreSchema,
     bibEntryPropsSchema,
+    bibEntryTransform,
 } from "./schemas/general";
 
 interface IsbnQueryParams { }
@@ -19,15 +19,18 @@ export class BibCore {
     entries: BibEntry[] = [];
     id: number = 1;
     filename: string = "citations.bib";
-    lastSync: Date | undefined | null = undefined;
+    lastAccess: Date | undefined | null = undefined;
     firstSync: Date | undefined | null = undefined;
     constructor(props?: BibPropsOutput) {
         if (props) {
             this.firstSync = props.firstSync;
-            this.lastSync = props.lastSync;
+            this.lastAccess = props.lastAccess;
             this.filename = props.filename;
             this.id = props.id;
             this.entries = bibEntryPropsSchema
+                .innerType()
+                .partial()
+                .transform(bibEntryTransform)
                 .array()
                 .parse(props.entries)
                 .map((a) => new BibEntry(a));
@@ -49,7 +52,7 @@ export class BibCore {
         return {
             id: this.id || 1,
             entries: {
-                connectOrCreate: this.entries.map((e) => e.connectOrCreateArgs(true)),
+                connectOrCreate: this.entries.map((e) => e.connectOrCreateArgsIfExists()).filter((x) => Boolean(x.where.id)),
             },
             filename: this.filename,
         };
@@ -159,12 +162,11 @@ export class BibCore {
     sortEntriesByDate() {
         // TODO: Handle this. Don't return anything but sort entries in place
     }
-    static fromPrisma(item: PrismaBib, _config?: ParsedAppConfig): BibCore {
+    static fromPrisma(item: PrismaBib, config: AppConfigSchemaOutput): BibCore {
         if (!item) {
-            const config = _config || getInternalConfig();
             return new BibCore({
                 id: 1,
-                filename: config.bibPath || "citations.bib",
+                filename: config.bibPath,
                 entries: [],
             });
         }

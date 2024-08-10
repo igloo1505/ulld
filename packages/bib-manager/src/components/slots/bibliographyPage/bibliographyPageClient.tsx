@@ -12,6 +12,8 @@ import { BibliographyPageProps } from "../../../types";
 import { Button } from "@ulld/tailwind/button";
 import { showBibEntryDetails } from "../../../utils/showBibEntryDetails";
 import BibTable from "./bibTable";
+import { useAppConfig } from "@ulld/hooks/useAppConfig";
+import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 
 interface BibPageInternalProps
     extends Omit<
@@ -25,8 +27,8 @@ const BibliographyPageClient = ({
     databaseBib: prismaBib,
     loadingIndicator,
 }: BibPageInternalProps) => {
-
-    const [hasSetData, setHasSetData] = useState(false)
+    const [hasSetData, setHasSetData] = useState(false);
+    const [appConfig] = useAppConfig();
 
     const [tableItems, setTableItems] = useState<BibEntryDataTableOutput[]>([]);
 
@@ -34,26 +36,29 @@ const BibliographyPageClient = ({
 
     const { toast } = useToast();
 
-    const _setBibItems = async () => {
+    const _setBibItems = async (ac: AppConfigSchemaOutput) => {
         if (prismaBib) {
-            let _bib = BibCore.fromPrisma(prismaBib);
+            let _bib = BibCore.fromPrisma(prismaBib, ac);
             setTableItems(_bib.toDataTable());
             setBib(_bib);
+            setHasSetData(true);
         }
-        setHasSetData(true)
     };
 
     useEffect(() => {
-        _setBibItems();
-    }, []);
+        if (appConfig && !hasSetData) {
+            _setBibItems(appConfig);
+        }
+    }, [appConfig, prismaBib]);
 
     const syncBib = async () => {
         if (!bib) return;
         await bib.readFile();
-        let newBib = await client.bibliography.syncBibServerSide.mutate(
-            bib?.id || undefined,
-        );
-        if (newBib) {
+        let newBib = await client.bibliography.syncBib.mutate({
+            bibId: bib?.id || undefined,
+        });
+        if (newBib && !("errorKey" in newBib)) {
+            console.log(`Parsing newBib.entries...`)
             const newEntries = newBib.entries.map((e) =>
                 BibEntry.fromPrisma({
                     ...e,
