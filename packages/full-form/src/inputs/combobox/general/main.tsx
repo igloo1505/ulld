@@ -1,5 +1,5 @@
 "use client"
-import React, { ReactNode, useState } from "react";
+import React, { CSSProperties, ReactNode, useState } from "react";
 import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
 import {
     FormField,
@@ -39,6 +39,7 @@ export interface ComboboxInputProps<T extends FieldValues, J extends string | nu
     placeholder?: ReactNode;
     inputPlaceholder?: string;
     notFoundText?: ReactNode;
+    onOpenChange?: (isOpen: boolean) => void
     classes?: {
         formItem?: string;
         button?: string;
@@ -46,6 +47,12 @@ export interface ComboboxInputProps<T extends FieldValues, J extends string | nu
         commandList?: string
         option?: string
     };
+    ids?: {
+        popoverContent?: string
+    }
+    styles?: {
+        popoverContent?: CSSProperties
+    }
 }
 
 export const ComboboxInput = <
@@ -59,7 +66,10 @@ export const ComboboxInput = <
     inputPlaceholder = "Search...",
     classes = {},
     notFoundText = "Nothing found",
+    styles,
     options,
+    ids,
+    onOpenChange
 }: ComboboxInputProps<T, J>) => {
     const form = useFormContext<T>();
     const [open, setOpen] = useState(false);
@@ -71,7 +81,12 @@ export const ComboboxInput = <
                 return (
                     <FormItem className={cn("flex flex-col", classes.formItem)}>
                         <FormLabel>{label}</FormLabel>
-                        <Popover open={open} onOpenChange={setOpen}>
+                        <Popover open={open} onOpenChange={(newOpen) => {
+                                if(onOpenChange){
+                                    onOpenChange(newOpen)
+                                }
+                                setOpen(newOpen)
+                            }}>
                             <PopoverTrigger asChild>
                                 <FormControl>
                                     <Button
@@ -95,6 +110,8 @@ export const ComboboxInput = <
                             </PopoverTrigger>
                             <PopoverContentNoPortal
                                 className={cn("w-[200px] p-0", classes.popoverContent)}
+                                style={styles?.popoverContent}
+                                id={ids?.popoverContent}
                             >
                                 <Command>
                                     <CommandInput placeholder={inputPlaceholder} />

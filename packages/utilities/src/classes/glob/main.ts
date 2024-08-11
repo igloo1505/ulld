@@ -6,10 +6,11 @@ import path from "path";
 export class UlldGlob {
     constructor(public fsRoot: string) { }
     /** Returns paths as absolute paths */
-    glob(pattern: string) {
+    glob(pattern: string, ignore: string[] = ["**node_modules**"], includeDirs: boolean = true) {
         return globSync(pattern, {
             cwd: this.fsRoot,
-            ignore: ["**node_modules**"],
+            ignore: ignore,
+            nodir: !includeDirs
         }).map((f) => path.join(this.fsRoot, f))
     }
     filePathsOfType(fileType: SupportedFileType) {

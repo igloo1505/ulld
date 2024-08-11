@@ -26,6 +26,22 @@ export default router({
         if (!file) return;
         return await fs.promises.readFile(file, { encoding: "utf-8" });
     }),
+    setBibEntryPdfPath: publicProcedure.input(z.object({
+        bibEntryId: z.string(),
+        pdfPath: z.union([
+            z.string(),
+            z.null()
+        ])
+    })).mutation(async ({input}) => {
+        return await prisma.bibEntry.update({
+            where: {
+                id: input.bibEntryId
+            },
+            data: {
+                PdfPath: input.pdfPath
+            }
+        })
+    }),
     getBib: publicProcedure.input(z.number().int()).query(async (opts) => {
         return await prisma.bib.findFirst({
             where: {

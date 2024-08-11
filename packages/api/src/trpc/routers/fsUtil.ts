@@ -6,7 +6,6 @@ import {
     currentParsableExtensions,
     ParsableExtensions,
 } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
-import { glob } from "glob";
 import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { getRootRelativePathSchema } from "../../schemas/filesystem/rootRelativePathSchema";
 import { getRootRelativePathsOfFiletype } from "../../trpcInternalMethods/filesystem/getRootRelativePathsOfFiletype";
@@ -37,7 +36,7 @@ export const fsUtilRouter = router({
         .input(filePathGlobPropsSchema)
         .query(async ({ input }) => {
             let appConfig = await readAppConfig();
-            console.log("appConfig: ", appConfig);
+            let glob = await import("glob").then((x) => x.glob)
             let res = await glob(input.glob, {
                 cwd: appConfig.fsRoot,
                 ignore: input.ignore || undefined,
