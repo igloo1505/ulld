@@ -13,14 +13,18 @@ import { formatSearchAllParams } from "@ulld/state/searchParamSchemas/utilities/
 import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
 import { replaceRecursively } from "@ulld/utilities/utils/general";
 import { ParsedBibEntryProps, bibEntryPropsSchema } from "./schemas/general";
-import Link from "next/link";
-import { BibEntryReturned } from "../../trpcTypes/main";
 import { Topic } from "./topic";
 import { Subject } from "./subject";
 import type { serverClient } from "../../trpc/serverClient";
+import Link from "next/link";
+import { BibEntryReturned } from "../../types";
+import { z } from "zod";
 
-
-type FromPrismaEntry = Awaited<ReturnType<typeof serverClient.bibliography.getBibEntry>> | Awaited<ReturnType<typeof serverClient.bibliography.getBib>>["entries"] | Awaited<ReturnType<typeof serverClient.bibliography.syncBib>>["entries"]
+export type FromPrismaEntry =
+    | Awaited<ReturnType<typeof serverClient.bibliography.getBibEntry>>
+    | NonNullable<
+        Awaited<ReturnType<typeof serverClient.bibliography.getBib>>
+    >["entries"];
 
 export type BibEntryPrismaAcceptedTypes =
     | BibEntry
@@ -40,7 +44,7 @@ export interface BibEntryDataTableOutput {
     title: string;
     author: string;
     read: boolean;
-    added?: Date;
+    createdAt?: Date;
 }
 
 export class BibEntry {
@@ -88,7 +92,8 @@ export class BibEntry {
     urldate?: string | null;
     keywords?: string | null;
     copyright?: string | null;
-    added: Date | string = new Date();
+    createdAt: Date | string = new Date();
+    lastAccess: Date | string = new Date();
     citationGroups: CitationGroup[] = [];
     tags: Tag[] = [];
     topics: Topic[] = [];
@@ -140,11 +145,16 @@ export class BibEntry {
         this.read = props.read;
         this.OwnWork = props.OwnWork;
         this.ColleaguesWork = props.ColleaguesWork;
-        this.added = props.added;
-        this.id = props.id;
+        this.createdAt = props.createdAt;
+        this.lastAccess = props.lastAccess;
         this.citationGroups = props.citationGroups;
         this.tempPageIndex =
             typeof tempPageIndex === "number" ? tempPageIndex : undefined;
+    }
+    getIdInBibFile(bibFileIds: string[], lowercaseBibFileIds: string[]) {
+        let s = bibFileIds[lowercaseBibFileIds.indexOf(this.id.toLowerCase())];
+        console.log("id lowercased: ", s);
+        return s;
     }
     toPlainObject() {
         return {
@@ -201,25 +211,25 @@ export class BibEntry {
     }
     whereUniqueInput(): Prisma.BibEntryWhereUniqueInput {
         return {
-            id: this.id,
+            id: this.id.toLowerCase(),
         };
     }
     whereInput(): Prisma.BibEntryWhereInput {
         return {
-            id: this.id,
+            id: this.id.toLowerCase(),
         };
     }
-    connectOrCreateArgsIfExists(){
+    connectOrCreateArgsIfExists() {
         return {
             where: this.whereUniqueInput(),
             create: {
-                id: this.id,
+                id: this.id.toLowerCase(),
                 ...(Boolean(this.readingList) && {
                     readingList: {
                         connectOrCreate: this.readingList?.map((r) =>
                             r.connectOrCreateArgs(),
                         ),
-                    }
+                    },
                 }),
                 OwnWork: this.OwnWork,
                 ColleaguesWork: this.ColleaguesWork,
@@ -261,21 +271,17 @@ export class BibEntry {
             },
         } satisfies Prisma.BibEntryCreateOrConnectWithoutBibInput;
     }
-    connectOrCreateArgs(
-        bibFileIds: string[],
-        lowerCaseBibFileIds: string[],
-    ): Prisma.BibEntryCreateOrConnectWithoutBibInput {
-        const _id = bibFileIds[lowerCaseBibFileIds.indexOf(this.id)];
+    connectOrCreateArgs(): Prisma.BibEntryCreateOrConnectWithoutBibInput {
         let d: Prisma.BibEntryCreateOrConnectWithoutBibInput = {
             where: this.whereUniqueInput(),
             create: {
-                id: _id,
+                id: this.id.toLowerCase(),
                 ...(Boolean(this.readingList) && {
                     readingList: {
                         connectOrCreate: this.readingList?.map((r) =>
                             r.connectOrCreateArgs(),
                         ),
-                    }
+                    },
                 }),
                 OwnWork: this.OwnWork,
                 ColleaguesWork: this.ColleaguesWork,
@@ -316,11 +322,11 @@ export class BibEntry {
                 copyright: this.copyright,
             },
         };
-        return d
+        return d;
     }
     createInput(noBibId: boolean = false): Prisma.BibEntryCreateInput {
         let d: Prisma.BibEntryCreateInput = {
-            id: this.id,
+            id: this.id.toLowerCase(),
             ...(this.Bib && {
                 Bib: {
                     connectOrCreate: this.Bib.connectOrCreateArgs(),
@@ -403,7 +409,10 @@ export class BibEntry {
             title: this.title || "--",
             author: this.author || "--",
             read: this.read || false,
-            added: this.added instanceof Date ? this.added : new Date(this.added),
+            createdAt:
+                this.createdAt instanceof Date
+                    ? this.createdAt
+                    : new Date(this.createdAt),
         };
     }
 
@@ -419,10 +428,10 @@ export class BibEntry {
             );
             return (
                 <Link
-                    href={`/searchAll?${formatSearchAllParams({ citations: [this.id] })}`}
+                    href={`/searchAll?${formatSearchAllParams({ citations: [this.id.toLowerCase()] })}`}
                 >
                     <div
-                        id={`bib-${this.id}`}
+                        id={`bib-${this.id.toLowerCase()}`}
                         className={
                             "flex flex-row justify-start items-start gap-4 text-sm text-gray-600 dark:text-gray-400"
                         }
@@ -434,9 +443,7 @@ export class BibEntry {
         }
         return <div key={`cit-${this.id}`}>{this.title}</div>;
     }
-    static fromPrisma(
-        item: FromPrismaEntry,
-    ): BibEntry {
+    static fromPrisma(item: z.infer<typeof bibEntryPropsSchema>): BibEntry {
         let parsed = bibEntryPropsSchema.parse(item);
         return new BibEntry(parsed);
     }
@@ -447,7 +454,7 @@ export class BibEntry {
     ): BibEntry {
         let d: BibEntryProps = {
             htmlCitation,
-            id: item._id
+            id: item._id,
         } as BibEntryProps;
         for (const k in item.fields) {
             let v = item.getFieldAsString(k);
@@ -459,7 +466,7 @@ export class BibEntry {
             ...d,
             type: item.type,
             Bib: bib,
-            BibId: bib.id
+            BibId: bib.id,
         });
         let entry = new BibEntry(props);
         if (!entry.htmlCitation && htmlCitation) {
@@ -477,7 +484,7 @@ export class BibEntry {
         return null;
     }
     static fromFsList(items: BibFilePresenter["entries_raw"]): BibEntry[] {
-        let bib = new BibCore()
+        let bib = new BibCore();
         return items.map((item) => BibEntry.fromFs(item, bib));
     }
     static fromList(

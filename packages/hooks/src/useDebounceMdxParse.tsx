@@ -1,19 +1,14 @@
 "use client";
 import { useEffect, useState, Fragment, useRef } from "react";
 import { run } from "@mdx-js/mdx";
-/* import { client } from "@ulld/api/client"; */
 import * as runtime from "react/jsx-runtime";
 import * as devRuntime from "react/jsx-dev-runtime";
 import { MDXComponents, MDXContent, MDXModule } from "mdx/types";
-import {
-    ParseMdxStringProps,
-} from "@ulld/api/classes/prismaMdxRelations/mdxNote";
+import { ParseMdxStringProps } from "@ulld/api/classes/prismaMdxRelations/mdxNote";
 import { getComponentMap } from "@ulld/component-map/client";
 import { useMathjaxBandaid } from "./useMathjaxBandaid";
-import {parseMdxString} from "@ulld/parsers"
+import { parseMdxString } from "@ulld/parsers";
 import { useAppConfig } from "./useAppConfig";
-
-
 
 const Content = ({
     MdxContentComponent,
@@ -41,14 +36,10 @@ export const useDebounceMdxParse = (
     const [value, setValue] = useState<string>(initialValue);
     const [mdxModule, setMdxModule] = useState<MDXModule | null>(null);
     const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
-    const [appConfig] = useAppConfig()
+    const [appConfig] = useAppConfig();
 
     const handleParse = async (_value: string) => {
-        let compiled = await parseMdxString({content: _value, appConfig});
-        /* let compiled = await client.mdx.parseMdxString.mutate({ */
-        /*     content: initiallyParsed, */
-        /*     ...opts, */
-        /* }); */
+        let compiled = await parseMdxString({ content: _value, appConfig });
         const res = await run(compiled, {
             Fragment: Fragment,
             jsx: runtime.jsx as any,
@@ -81,6 +72,6 @@ export const useDebounceMdxParse = (
         value,
         setValue,
         Component,
-        isReady: Boolean(mdxModule) 
+        isReady: Boolean(mdxModule),
     };
 };

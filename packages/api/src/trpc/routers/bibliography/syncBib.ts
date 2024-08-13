@@ -14,7 +14,6 @@ import { ErrorResponse } from '@ulld/utilities/errorNotifications'
 
 export const syncBib = async (bibId: number = 1) => {
     const appConfig = await readAppConfig()
-    const BIBID = bibId
     const bibpath = appConfig.bibPath
     const f = new FileData(path.join(appConfig.fsRoot, bibpath))
     if(!f.exists()){
@@ -27,21 +26,21 @@ export const syncBib = async (bibId: number = 1) => {
     const parsed = parseBibFile(content)
     const entries = BibEntry.fromFsList(parsed.entries_raw)
     const { citations, userDefined } = getFormattedCslCitation(content, appConfig)
-    const ids = citations.getIds()
-    const lower = ids.map((l: string) => l.toLowerCase())
     let connectOrCreateEntries: Prisma.BibEntryCreateOrConnectWithoutBibInput[] = []
+    const ids = citations.getIds() as string[]
+    const lowerCaseIds = ids.map((x) => x.toLowerCase())
     for (const entry of entries) {
-        const _args = entry.connectOrCreateArgs(ids, lower)
+        const _args = entry.connectOrCreateArgs()
         _args.create.htmlCitation = citations.format('bibliography', {
             format: 'html',
             template: userDefined ? "user-defined" : 'apa',
-            entry: _args.create.id
+            entry: entry.getIdInBibFile(ids, lowerCaseIds)
         })
         connectOrCreateEntries.push(_args)
     }
     return await prisma.bib.upsert({
         where: {
-            id: BIBID
+            id: bibId 
         },
         create: {
             filename: bibpath,
@@ -58,7 +57,19 @@ export const syncBib = async (bibId: number = 1) => {
             lastSync: new Date()
         },
         include: {
-            entries: true
+            entries: {
+                include: {
+                    tags: true,
+                    citationGroups: true,
+                    MdxNotes: {
+                        select: {
+                            title: true,
+                            id: true,
+                            href: true,
+                        }
+                    }
+                }
+            }
         }
     })
 }

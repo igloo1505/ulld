@@ -24,12 +24,21 @@ declare global {
 }
 
 
-export const useFilePathInputModal = (id: string | number, initialValue?: string) => {
+export const useFilePathInputModal = (id: string | number, initialValue?: string | null) => {
     const [value, setValue] = useState(initialValue)
+    const [isInitialValue, setIsInitialValue] = useState(true)
+
+    useEventListener("path-input-value-update", (e) => {
+        if(e.detail.inputId === id){
+            setIsInitialValue(false)
+            setValue(e.detail.value)
+        }
+    })
 
     return {
         value,
         setValue,
+        isInitialValue,
         show: (config: FilePathInputModalConfig | null) => window.dispatchEvent(new CustomEvent("show-file-path-input-modal", {
             detail: {
                 config: config,

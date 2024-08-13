@@ -33,6 +33,7 @@ export default router({
             z.null()
         ])
     })).mutation(async ({input}) => {
+        console.log("input: ", input)
         return await prisma.bibEntry.update({
             where: {
                 id: input.bibEntryId
@@ -77,6 +78,7 @@ export default router({
                 select: {
                     id: true,
                     htmlCitation: true,
+                    type: true
                 },
                 distinct: ["id"],
             });

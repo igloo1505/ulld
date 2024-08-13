@@ -8,12 +8,12 @@ import {
 } from "@ulld/tailwind/context-menu";
 
 interface PdfPathComponentProps {
-    showPathModal: () => void;
+    show: () => void;
     pdfPath: string;
 }
 
 const PdfPathComponent = ({
-    showPathModal,
+    show,
     pdfPath,
 }: PdfPathComponentProps) => {
     return (
@@ -37,8 +37,8 @@ const PdfPathComponent = ({
                 </Link>
             </ContextMenuTrigger>
             <ContextMenuContent>
-                <ContextMenuItem inset onClick={showPathModal}>
-                    {"Edit"}
+                <ContextMenuItem inset onClick={show}>
+                    Edit
                 </ContextMenuItem>
             </ContextMenuContent>
         </ContextMenu>

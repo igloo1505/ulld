@@ -39,6 +39,7 @@ const BibliographyPageClient = ({
     const _setBibItems = async (ac: AppConfigSchemaOutput) => {
         if (prismaBib) {
             let _bib = BibCore.fromPrisma(prismaBib, ac);
+            console.log("_bib: ", _bib)
             setTableItems(_bib.toDataTable());
             setBib(_bib);
             setHasSetData(true);
@@ -58,13 +59,9 @@ const BibliographyPageClient = ({
             bibId: bib?.id || undefined,
         });
         if (newBib && !("errorKey" in newBib)) {
-            console.log(`Parsing newBib.entries...`)
             const newEntries = newBib.entries.map((e) =>
-                BibEntry.fromPrisma({
-                    ...e,
-                    createdAt: e.createdAt ? new Date(e.createdAt) : new Date(),
-                    lastAccess: e.lastAccess ? new Date(e.lastAccess) : new Date(),
-                }).toDataTable(),
+                /* TODO: Come back and handle this. Haven't tested this method yet in production because the bib syncs as part of the onSync route, but should still make sure this is enabled. */
+                BibEntry.fromPrisma(e).toDataTable(),
             );
             setTableItems(newEntries);
             toast({

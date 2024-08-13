@@ -1,19 +1,22 @@
 "use client";
-import React from "react";
+import React, { ReactNode } from "react";
 import {
     FilePathInputProps,
     FilePathInput,
 } from "@ulld/full-form/filePathInput";
 import { FieldValues } from "react-hook-form";
 import { z } from "zod";
-import { DialogWithForm } from "../utils/dialogWithForm";
+import { DialogWithForm, DialogWithFormProps } from "../utils/dialogWithForm";
 import { Button } from "@ulld/tailwind/button";
 import { useForm, zodResolver } from "@ulld/full-form/form";
 import { useFilePathInputModalState } from "@ulld/hooks/useFilePathInputModal";
 
 interface FilePathInputModalProps<T extends FieldValues>
-    extends FilePathInputProps<T> { 
+    extends Omit<FilePathInputProps<T>, "name" | "classes"> { 
     inputId: string | number
+    title: Required<ReactNode>
+    classes?: DialogWithFormProps<T>["classes"]
+    comboboxClasses?: FilePathInputProps<T>["classes"]
 }
 
 const filePathSchema = z.object({
@@ -40,6 +43,8 @@ export const FilePathInputModal = (
         return null;
     }
 
+    const { classes, comboboxClasses, ...additionalProps } = props
+
     return (
         <DialogWithForm
             open={Boolean(config)}
@@ -50,12 +55,14 @@ export const FilePathInputModal = (
             }}
             form={form}
             isModal={true}
-            title="Create a new To-Do list"
+            title={props.title}
             onSubmit={handleSubmit}
             withButtons={false}
+            classes={classes}
         >
             <FilePathInput
                 {...config}
+                classes={comboboxClasses}
                 name="filePath"
             />
             <div className={"w-full flex flex-row justify-end items-center px-4"}>

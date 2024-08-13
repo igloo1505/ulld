@@ -1,5 +1,4 @@
 "use client";
-import axios from "axios";
 import { htmlEm } from "../actions/clientOnly/dom";
 import { useEffect } from "react";
 
@@ -13,9 +12,12 @@ export const OnlineStatusObserver = ({ignoreOnlineStatus}: OnlineStatusObserverP
         if(ignoreOnlineStatus) {
             return
         }
-        await axios.post("/api/utils/getOnlineStatusCookie", {
-            online,
-        });
+        await fetch("/api/utils/getOnlineStatusCookie", {
+            method: "POST",
+            body: JSON.stringify({
+                online: online
+            })
+        })
     };
     const setStatus = () => {
         htmlEm()?.classList[navigator?.onLine ? "remove" : "add"]("isOffline");

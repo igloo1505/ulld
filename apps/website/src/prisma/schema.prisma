@@ -200,7 +200,6 @@ model BibEntry {
     urldate        String?
     keywords       String?
     copyright      String?
-    added          DateTime         @default(now())
     citationGroups CitationsGroup[]
     tags           Tag[]
     topics         Topic[]
@@ -208,6 +207,8 @@ model BibEntry {
     MdxNotes       MdxNote[]
     ipynbNotes     Ipynb[]
     readingList    ReadingList[]
+    createdAt      DateTime         @default(now())
+    lastAccess     DateTime         @default(now())
 }
 
 model CitationsGroup {

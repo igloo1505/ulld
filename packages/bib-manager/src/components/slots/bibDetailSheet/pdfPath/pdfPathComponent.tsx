@@ -1,29 +1,52 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import PdfPathComponent from "./pathComponent";
 import PdfPathTriggerButton from "./input";
 import { FilePathInputModal } from "@ulld/ui/filePathInputModal";
+import { useFilePathInputModal } from "@ulld/hooks/useFilePathInputModal";
+import { client } from "@ulld/api/client";
 
 interface BibSheetPdfPathComponentProps {
     inputId: string;
     itemId: string;
+    initialValue?: string | null;
 }
 
 const BibSheetPdfPathComponent = ({
     inputId,
     itemId,
+    initialValue,
 }: BibSheetPdfPathComponentProps) => {
-    const { value, show: showFilePathModal } = useFilePathInputModal(
-        pdfPathId,
-        "pdfPath" in item ? item.pdfPath : null,
+
+    const { value, isInitialValue, show: showFilePathModal } = useFilePathInputModal(
+        inputId,
+        initialValue,
     );
 
-    const handlePathUpdate = (newPath: string) => {
-        console.log("newPath: ", newPath);
+    const updating = useRef(false)
+
+    const handlePathUpdate = async (newPath: string | null) => {
+        if(updating.current) {
+            return
+        }
+        console.log("newPath: ", newPath)
+        updating.current = true
+        let res = await client.bibliography.setBibEntryPdfPath.mutate({
+            bibEntryId: itemId,
+            pdfPath: newPath,
+        });
+        if (res) {
+            showFilePathModal(null);
+        }
+        updating.current = false
     };
 
     useEffect(() => {
-        handlePathUpdate(value);
-    }, [value]);
+        if (value !== undefined && !isInitialValue) {
+            handlePathUpdate(value);
+        }
+    }, [value, isInitialValue]);
+
     const showPdfPathModal = () => {
         showFilePathModal({
             glob: "**/*.pdf",
@@ -33,8 +56,19 @@ const BibSheetPdfPathComponent = ({
 
     return (
         <>
-            <FilePathInputModal id={pdfPathId} />
-            <div className={"cursor-pointer w-full text-sm"}>
+            <FilePathInputModal
+                inputId={inputId}
+                label="Pdf Path"
+                title="Select a Pdf path"
+                classes={{
+                    container: "w-fit max-w-[90vw] min-w-fit",
+                }}
+                comboboxClasses={{
+                    button: "w-fit max-w-[85vw] min-w-[300px]",
+                    popoverContent: "min-w-[300px] w-fit max-w-[calc(100vw-2rem)]"
+                }}
+            />
+            <div className={"cursor-pointer w-full text-sm max-w-full overflow-x-auto pb-2"}>
                 {value ? (
                     <PdfPathComponent pdfPath={value} show={showPdfPathModal} />
                 ) : (

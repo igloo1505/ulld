@@ -35,32 +35,33 @@ const BibEntryValue = ({
 };
 
 const BibliographySheet = ({ }: BibEntryDetailsProps) => {
-    const [item, setItem, close, loading] = useBibEntryDetailsDisplay();
+    const [item, setItem, close, loading] =
+        useBibEntryDetailsDisplay();
     const { toast } = useToast();
-    const pdfPathId = (typeof item === "object" && "id" in item) ? `bib-sheet-file-path-${item.id}` : "bib-sheet-file-path"
+    const pdfPathId =
+        typeof item === "object" && "id" in item
+            ? `bib-sheet-file-path-${item.id}`
+            : "bib-sheet-file-path";
     const [data, setData] = useState<BibEntrySummarySheetOutput | undefined>(
         undefined,
     );
     const [tags, setTags] = useState<string[]>(
-        typeof item === "object" && "tags" in item
+        (typeof item === "object" && "tags" in item)
             ? item.tags.map((t) => t.value)
             : [],
     );
-    const [setPdfPath, setSetPdfPath] = useState<string | undefined>(undefined);
     const ref = useRef<HTMLDivElement>(null!);
     const titleId = useId();
+    
 
     const setSheet = (_item: typeof item) => {
         if (!_item) return;
         setData(_item.toSummarySheet());
+        setTags((typeof item === "object" && "tags" in item)
+            ? item.tags.map((t) => t.value)
+            : [])
     };
 
-    const submitPdfPath = async () => {
-        if (!item) return;
-        item.PdfPath = setPdfPath;
-        await client.bibliography.bibEntryUpsert.mutate(item.upsertArgs());
-        setSetPdfPath(undefined);
-    };
 
     const removeTag = async (t: string) => {
         if (!item) return;
@@ -71,19 +72,16 @@ const BibliographySheet = ({ }: BibEntryDetailsProps) => {
         setTags(tags?.filter((_t) => _t !== t) || []);
     };
 
+
     useEffect(() => {
         setSheet(item);
     }, [item]);
 
-    const toPdf = () => {
-        if (!item || !item?.PdfPath) return;
-        let params = new URLSearchParams();
-        params.set("file", item.PdfPath);
-    };
 
     if (!item) {
         return null;
     }
+
 
     const copyHtmlCitation = (e: MouseEvent<HTMLDivElement>) => {
         let textContent = e.currentTarget.textContent;
@@ -98,94 +96,89 @@ const BibliographySheet = ({ }: BibEntryDetailsProps) => {
         );
     };
 
-
     return (
-        <>
-            <Sheet
-                open={Boolean(item)}
-                onOpenChange={(newOpen: boolean) => {
-                    if (!newOpen) {
-                        setSetPdfPath(undefined);
-                        close();
+        <Sheet
+            open={Boolean(item)}
+            onOpenChange={(newOpen: boolean) => {
+                if (!newOpen) {
+                    close();
+                }
+            }}
+        >
+            <SheetContent className={"h-full grid grid-rows-[auto_1fr]"}>
+                <SheetHeader id={titleId}>
+                    <SheetTitle>Details</SheetTitle>
+                    {item?.htmlCitation && (
+                        <SheetDescription>
+                            <div
+                                dangerouslySetInnerHTML={{ __html: item?.htmlCitation || "" }}
+                                onClick={copyHtmlCitation}
+                                className={
+                                    "[&_.csl-entry]:text-sm [&_.csl-entry]:text-muted-foreground cursor-pointer"
+                                }
+                            />
+                        </SheetDescription>
+                    )}
+                </SheetHeader>
+                <div
+                    className={
+                        "my-4 w-full h-full flex flex-col flex-grow justify-start items-center gap4 overflow-y-auto"
                     }
-                }}
-            >
-                <SheetContent className={"h-full grid grid-rows-[auto_1fr]"}>
-                    <SheetHeader id={titleId}>
-                        <SheetTitle>Details</SheetTitle>
-                        {item?.htmlCitation && (
-                            <SheetDescription>
-                                <div
-                                    dangerouslySetInnerHTML={{ __html: item?.htmlCitation || "" }}
-                                    onClick={copyHtmlCitation}
-                                    className={"text-sm text-muted-foreground cursor-pointer"}
-                                />
-                            </SheetDescription>
+                    ref={ref}
+                >
+                    <div
+                        className={"w-full flex flex-col justify-center items-center gap-4"}
+                    >
+                        {data && (
+                            <div className={"flex flex-col justify-start items-start gap-1"}>
+                                {Object.keys(data).map((k: string, i: number) => {
+                                    if (k === "tags") return null;
+                                    return (
+                                        <BibEntryValue
+                                            _key={k}
+                                            value={data[k as keyof Omit<typeof data, "tags">]}
+                                            key={`bib-value-${i}`}
+                                        />
+                                    );
+                                })}
+                            </div>
                         )}
-                    </SheetHeader>
+                    </div>
                     <div
                         className={
-                            "my-4 w-full h-full flex flex-col flex-grow justify-start items-center gap4 overflow-y-auto"
+                            "w-full h-fit flex flex-col justify-center items-center gap-4 px-4 my-4"
                         }
-                        ref={ref}
                     >
-                        <div
-                            className={
-                                "w-full flex flex-col justify-center items-center gap-4"
-                            }
-                        >
-                            {data && (
-                                <div
-                                    className={"flex flex-col justify-start items-start gap-1"}
-                                >
-                                    {Object.keys(data).map((k: string, i: number) => {
-                                        if (k === "tags") return null;
-                                        return (
-                                            <BibEntryValue
-                                                _key={k}
-                                                value={data[k as keyof Omit<typeof data, "tags">]}
-                                                key={`bib-value-${i}`}
-                                            />
-                                        );
-                                    })}
-                                </div>
-                            )}
-                        </div>
-                        <div
-                            className={
-                                "w-full h-fit flex flex-col justify-center items-center gap-4 px-4 my-4"
-                            }
-                        >
-                            {tags && (
-                                <div
-                                    className={
-                                        "w-full flex flex-row justify-start items-start gap-2 flex-wrap"
-                                    }
-                                >
-                                    {tags.map((t) => (
-                                        <Badge
-                                            className={"cursor-pointer"}
-                                            onClick={() => removeTag(t)}
-                                            key={`tag-${t}`}
-                                        >
-                                            {t}
-                                        </Badge>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-                        <BibSheetTagInput
-                            appendTag={(t) => setTags([...tags, t])}
-                            itemId={item.id}
-                        />
+                        {Boolean(tags && tags.length) && (
+                            <div
+                                className={
+                                    "w-full flex flex-row justify-start items-start gap-2 flex-wrap"
+                                }
+                            >
+                                {tags.map((t) => (
+                                    <Badge
+                                        className={"cursor-pointer"}
+                                        onClick={() => removeTag(t)}
+                                        key={`tag-${t}`}
+                                    >
+                                        {t}
+                                    </Badge>
+                                ))}
+                            </div>
+                        )}
                     </div>
-                    <BibSheetPdfPathComponent 
-                        inputId={pdfPathId}
+                    <BibSheetTagInput
+                        appendTag={(t) => setTags([...tags, t])}
                         itemId={item.id}
                     />
-                </SheetContent>
-            </Sheet>
-        </>
+                </div>
+                <BibSheetPdfPathComponent
+                    inputId={pdfPathId}
+                    itemId={item.id}
+                    initialValue={item.PdfPath}
+                />
+            </SheetContent>
+        </Sheet>
     );
 };
 

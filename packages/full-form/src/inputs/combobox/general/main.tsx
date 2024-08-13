@@ -52,6 +52,7 @@ export interface ComboboxInputProps<T extends FieldValues, J extends string | nu
     }
     styles?: {
         popoverContent?: CSSProperties
+        button?: CSSProperties
     }
 }
 
@@ -97,6 +98,7 @@ export const ComboboxInput = <
                                             !field.value && "text-muted-foreground",
                                             classes.button,
                                         )}
+                                        style={styles?.button}
                                     >
                                         <div className={"flex-grow text-left"}>
                                         {field.value

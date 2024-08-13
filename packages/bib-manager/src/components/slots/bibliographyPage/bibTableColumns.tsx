@@ -78,7 +78,7 @@ export const getColumnDef = (router: ReturnType<typeof useRouter>): ColumnDef<Bi
             cell: ({ row }) => <div>{row.getValue("author")}</div>,
         },
         {
-            accessorKey: "added",
+            accessorKey: "createdAt",
             header: ({ column }) => {
                 return (
                     <Button
@@ -90,7 +90,7 @@ export const getColumnDef = (router: ReturnType<typeof useRouter>): ColumnDef<Bi
                     </Button>
                 )
             },
-            cell: ({ row }) => <div className={"min-w-[120px]"}>{dayjs(row.getValue("added")).format("M-DD-YY")}</div>,
+            cell: ({ row }) => <div className={"min-w-[120px]"}>{dayjs(row.getValue("createdAt")).format("M/DD/YY")}</div>,
             /* minSize: 120, */
             /* size: 120 */
         },

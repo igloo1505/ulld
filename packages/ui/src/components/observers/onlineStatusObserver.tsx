@@ -1,15 +1,16 @@
 "use client"
 import { htmlEm } from '@ulld/state/actions/clientOnly/dom'
-import axios from 'axios'
 import { useEffect } from 'react'
-
 
 
 const OnlineStatusObserver = () => {
 
     const setOnlineStatusCookie = async (online: boolean) => {
-        await axios.post("/api/utils/getOnlineStatusCookie", {
-            online
+        await fetch("/api/utils/getOnlineStatusCookie", {
+            method: "POST",
+            body: JSON.stringify({
+                online: online
+            })
         })
     }
 

@@ -78,7 +78,7 @@ const remarkPlugins = (
         remarkMath, 
         /* @ts-ignore */
         remarkGfm as any,
-        [emoji as any, {}]
+        emoji as any
     ];
 };
 
@@ -97,7 +97,6 @@ export const parseMdxString = async ({
         development: process.env.NODE_ENV === "development",
         /* baseUrl: import.meta.url */
     });
-    /* return String(res) */
-    return String(res).replaceAll(/classname/g, "className")
+    return res.toString().replaceAll(/classname/g, "className")
 };
 

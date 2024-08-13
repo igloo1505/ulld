@@ -118,12 +118,12 @@ const TaskListCompletionPlot = (props: TaskListCompletionPlotProps) => {
             lines={[
                 {
                     dataKey: "completedOn",
-                    stroke: "hsl(var(--chart-1))",
+                    stroke: "hsl(var(--primary)/0.5)",
                     label: false,
                 },
                 {
                     dataKey: "createdOn",
-                    stroke: "hsl(var(--chart-2))",
+                    stroke: "hsl(var(--primary))",
                     label: false,
                 },
             ]}

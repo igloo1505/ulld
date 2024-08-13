@@ -161,7 +161,6 @@ model BibEntry {
     urldate        String?
     keywords       String?
     copyright      String?
-    added          DateTime         @default(now())
     citationGroups CitationsGroup[]
     tags           Tag[]
     topics         Topic[]

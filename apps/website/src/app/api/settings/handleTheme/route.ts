@@ -22,7 +22,6 @@ router
             const theme = body.theme as ThemeOptions || "violet"
             const res = new NextResponse(JSON.stringify({success: true}));
             await setThemeCookie(res.cookies, theme)
-            console.log("res: ", res)
             return res
         } catch(err) {
             console.error(err)

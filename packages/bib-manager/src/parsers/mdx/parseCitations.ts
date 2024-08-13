@@ -1,6 +1,9 @@
 import { BibEntry } from "@ulld/api/classes/prismaMdxRelations/bibEntry";
 import { UnifiedMdxParser } from "@ulld/api/types";
-import { bibEntryPropsSchema } from "@ulld/api/generalPrismaSchemas";
+import {
+    bibEntryPropsSchema,
+    bibEntryTransform,
+} from "@ulld/api/generalPrismaSchemas";
 import { replaceRecursively } from "@ulld/utilities/general";
 
 const formatCitation = (s: string, index: number) => {
@@ -34,7 +37,12 @@ export const parseMdxCitations: UnifiedMdxParser<ExtendedFrontMatter> = async (
             });
         }
     } while (m);
-    let fr: { htmlCitation: string; id: string; pageIndex: number }[] = [];
+    let fr: {
+        htmlCitation: string;
+        id: string;
+        pageIndex: number;
+        type: string | null;
+    }[] = [];
     const rList = results.map((r) => r.value.toLowerCase());
     let citations = await data.serverClient.bibliography.getBibCitation(rList);
     for (const k of citations) {
@@ -52,6 +60,7 @@ export const parseMdxCitations: UnifiedMdxParser<ExtendedFrontMatter> = async (
                     htmlCitation: k.htmlCitation,
                     id: k.id,
                     pageIndex: rIndex,
+                    type: k.type,
                 });
             } else {
                 console.log(`No htmlCitation found for ${k.id}`);
@@ -62,10 +71,17 @@ export const parseMdxCitations: UnifiedMdxParser<ExtendedFrontMatter> = async (
         fr.map(
             (c) =>
                 new BibEntry(
-                    bibEntryPropsSchema.parse({
-                        htmlCitation: c?.htmlCitation,
-                        id: c.id,
-                    }),
+                    bibEntryPropsSchema
+                        .innerType()
+                        .partial({
+                            type: true,
+                        })
+                        .transform(bibEntryTransform)
+                        .parse({
+                            htmlCitation: c?.htmlCitation,
+                            id: c.id,
+                            type: c.type,
+                        }),
                     c.pageIndex,
                 ),
         ),

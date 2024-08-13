@@ -1,49 +1,66 @@
 import { showToast as _showToast } from "@ulld/state/state/slices/ui";
 import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
-import axios from "axios";
 import { OnBackupReturnData, OnRestoreReturnData } from "@ulld/types";
 import { downloadFile } from "@ulld/utilities/downloadFile";
 import { ToastConfigType } from "@ulld/utilities/types";
 import { toast } from "@ulld/tailwind/use-toast";
-import { errorToastRecord } from "@ulld/utilities/errorNotifications"
+import { errorToastRecord } from "@ulld/utilities/errorNotifications";
 
 const showToast = (config: ToastConfigType, store?: ToolkitStore) => {
-    console.log("toastConfig: ", config)
     // let s = store ? store : ((window as any).ulldStore as ToolkitStore);
     // console.log("s: ", s);
     // if (!s) return;
     toast(config);
 };
 
+
+const fetchWrapper = async (path: string, opts: RequestInit) => {
+    let r = await fetch(path, opts);
+    let body = await r.json();
+    return body;
+};
+
 export const syncRootDirectory = async () => {
-    let res = await axios.post("/api/events/onSync", {
-        offline: !navigator.onLine,
-        // TODO: Actually enable these options through something like a 'hard' sync or the like.
-        removeIfNotInFs: false,
-        cleanBeforeSync: false,
+    let res = await fetch("/api/events/onSync", {
+        method: "POST",
+        body: JSON.stringify({
+            offline: !navigator.onLine,
+            // TODO: Actually enable these options through something like a 'hard' sync or the like.
+            removeIfNotInFs: false,
+            cleanBeforeSync: false,
+        }),
     });
-    if(res.data?.errorNotifications && res.data?.errorNotifications?.length){
-        for (const err of res.data.errorNotifications) {
-            showToast(errorToastRecord[err.errorKey as keyof typeof errorToastRecord])
+    let resBody = await res.json();
+    console.log("res: ", res);
+    // let res = await axios.post(getDevPath("/api/events/onSync"), {
+    //     offline: !navigator.onLine,
+    //     // TODO: Actually enable these options through something like a 'hard' sync or the like.
+    //     removeIfNotInFs: false,
+    //     cleanBeforeSync: false,
+    // });
+    if (resBody?.errorNotifications && resBody?.errorNotifications?.length) {
+        for (const err of resBody.errorNotifications) {
+            showToast(
+                errorToastRecord[err.errorKey as keyof typeof errorToastRecord],
+            );
         }
-    } else if (res.data?.success) {
-        showToast(
-            {
-                title: "Success",
-                description: "File system was synced with database.",
-            },
-        );
+    } else if (resBody.success) {
+        showToast({
+            title: "Success",
+            description: "File system was synced with database.",
+        });
     }
     return true;
 };
 
 export const backupData = async (store?: ToolkitStore) => {
-    let res = await axios.get("/api/events/onBackup");
-    let data = res.data as OnBackupReturnData;
-    if (data.success && data.backupData) {
+    let data = await fetchWrapper("/api/events/onBackup", {
+        method: "GET"
+    })
+    if (data?.success && data?.backupData) {
         downloadFile(data.backupData, "ulldBackup.json");
     } else {
-        if (res.data?.success) {
+        if (data?.success) {
             showToast({
                 title: "Uh Oh",
                 description:
@@ -57,8 +74,9 @@ export const restoreData = async (
     data: Record<string, any>,
     store?: ToolkitStore,
 ) => {
-    let res = await axios.post("/api/events/onRestore", data);
-    let resData = res.data as OnRestoreReturnData;
+    let resData = await fetchWrapper("/api/events/onRestore", {
+        body: JSON.stringify(data)
+    })
     if (resData.success) {
         showToast(
             {

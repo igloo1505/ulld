@@ -82,16 +82,16 @@ const NotesPlot = () => {
             bars={[
                 {
                     dataKey: "mdx",
-                    fill: "hsl(var(--chart-1))",
+                    fill: "hsl(var(--primary))",
                     stackId: "a",
-                    foreground: "hsl(var(--chart-1))",
+                    foreground: "hsl(var(--primary))",
                     label: false,
                     radius: 4
                 },
                 {
                     dataKey: "notebook",
-                    fill: "hsl(var(--chart-2))",
-                    foreground: "hsl(var(--chart-2))",
+                    fill: "hsl(var(--primary)/0.5)",
+                    foreground: "hsl(var(--primary)/0.5)",
                     stackId: "a",
                     label: false,
                     radius: 4

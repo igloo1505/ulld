@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { ReactNode } from "react";
 import {
     FieldValues,
     SubmitHandler,
@@ -17,12 +17,13 @@ import {
 } from "@ulld/tailwind/dialog";
 import { buttonVariants } from "@ulld/tailwind/button";
 import { Form } from "@ulld/tailwind/form";
+import cn from "@ulld/utilities/cn";
 
-interface DialogWithFormProps<T extends FieldValues> {
+export interface DialogWithFormProps<T extends FieldValues> {
     form: UseFormReturn<T>;
     open: boolean;
-    title: string;
-    desc?: string;
+    title: ReactNode;
+    desc?: ReactNode;
     onSubmit: SubmitHandler<T>;
     children: React.ReactNode;
     btnLabel?: string;
@@ -31,6 +32,14 @@ interface DialogWithFormProps<T extends FieldValues> {
     isModal?: boolean;
     grow?: boolean;
     withButtons?: boolean;
+    classes?: {
+        container?: string
+        innerContainer?: string
+        title?: string
+        body?: string
+        description?: string
+        footer?: string
+    }
 }
 
 export const DialogWithForm = <T extends FieldValues>({
@@ -46,6 +55,7 @@ export const DialogWithForm = <T extends FieldValues>({
     btnLabel,
     className,
     withButtons,
+    classes={}
 }: DialogWithFormProps<T>) => {
     const router = useRouter();
     return (
@@ -62,16 +72,17 @@ export const DialogWithForm = <T extends FieldValues>({
             }
         >
             <DialogContent
-                className={clsx(
+                className={cn(
                     "max-w-[90vw] mdlg:max-w-screen-md",
                     !grow && "w-fit md:w-fit",
+                    classes.container
                 )}
             >
                 <DialogHeader>
-                    <DialogTitle>{title}</DialogTitle>
-                    {desc && <DialogDescription>{desc}</DialogDescription>}
+                    <DialogTitle className={classes.title}>{title}</DialogTitle>
+                    {desc && <DialogDescription className={classes.description}>{desc}</DialogDescription>}
                 </DialogHeader>
-                <div className="w-full h-fit py-4">
+                <div className={cn("w-full h-fit py-4", classes.innerContainer)}>
                     <Form {...form}>
                         <form className={clsx("space-y-6 w-full", className)}>
                             {children}
@@ -79,7 +90,7 @@ export const DialogWithForm = <T extends FieldValues>({
                     </Form>
                 </div>
                 {withButtons !== false && (
-                    <DialogFooter>
+                    <DialogFooter className={classes.footer}>
                         <a
                             role="button"
                             className={buttonVariants()}

@@ -21,7 +21,7 @@ interface ReasonToUseULLD {
 const reasons: ReasonToUseULLD[] = [
     {
         content:
-            "Markdown is simple enough for anybody to learn in 15 minutes, but too simple on it's own to accomodate the needs of more advanced user's. Extending markdown with the equally simple syntax of JSX extends takes the use cases for markdown to another dimension.",
+            "Markdown is simple enough for anybody to learn in 15 minutes, but too simple on it's own to accomodate the needs of more advanced users. Extending markdown with the equally simple syntax of JSX takes the use cases for markdown to another dimension.",
     },
     {
         content: (

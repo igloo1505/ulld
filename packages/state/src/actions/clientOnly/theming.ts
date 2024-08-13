@@ -1,5 +1,4 @@
 "use client";
-import axios from "axios";
 import { UlldColorTheme, UlldPlotTheme } from "@ulld/utilities/types";
 import { getHtmlElementAttribute } from "@ulld/utilities/utils-dom";
 import { ulldDefaultColorThemes } from "@ulld/utilities/defaultColorThemeList";
@@ -8,8 +7,15 @@ export const changeTheme = async (newTheme: UlldColorTheme) => {
     if(!ulldDefaultColorThemes.includes(newTheme)){
         newTheme = "ulld"
     }
-    let res = await axios.post("/api/settings/handleTheme", { theme: newTheme });
-    let success = Boolean(res.data?.success);
+    let r = await fetch("/api/settings/handleTheme", {
+        method: "POST",
+        body: JSON.stringify({
+            theme: newTheme
+        })
+    })
+    let res = await r.json()
+    // let res = await axios.post("/api/settings/handleTheme", { theme: newTheme });
+    let success = Boolean(res?.success);
     if (success) {
         window.localStorage.setItem("ulld-theme", newTheme);
         document.querySelector("html")?.setAttribute("data-ulld-theme", newTheme);
@@ -18,8 +24,14 @@ export const changeTheme = async (newTheme: UlldColorTheme) => {
 };
 
 export const changePlotTheme = async (newTheme: UlldPlotTheme) => {
-    let res = await axios.post("/api/settings/handlePlotTheme", { theme: newTheme });
-    let success = Boolean(res.data?.success);
+    let r = await fetch("/api/settings/handlePlotTheme", {
+        method: "POST",
+        body: JSON.stringify({
+            theme: newTheme
+        })
+    })
+    let res = await r.json()
+    let success = Boolean(res?.success);
     if (success) {
         window.localStorage.setItem("ulld-plot-theme", newTheme);
     }

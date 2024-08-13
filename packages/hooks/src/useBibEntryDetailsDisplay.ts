@@ -1,19 +1,18 @@
 import { useRef, useState } from "react";
 import { useEventListener } from "./useEventListener";
-import type { BibEntry as PrismaBibEntry } from "@ulld/database/internalDatabaseTypes";
-import { BibEntry } from "@ulld/api/classes/prismaMdxRelations/bibEntry";
+import type { BibEntry as PrismaBibEntry } from "@ulld/database";
+import { BibEntry, BibEntryDataTableOutput } from "@ulld/api/classes/prismaMdxRelations/bibEntry";
 import { client } from "@ulld/api/client";
 
 interface EventProps {
-    entry: PrismaBibEntry | false;
+    entry: PrismaBibEntry | BibEntry | false;
 }
+
 declare global {
     // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
     interface WindowEventMap {
         "show-bib-entry-details": CustomEvent<EventProps>;
-    }
-
-    interface WindowEventMap {
+        "update-bib-entry-table-entry": CustomEvent<Partial<BibEntryDataTableOutput>>
         "show-bib-entry-details-by-id": CustomEvent<{ id: string }>;
     }
 }
@@ -30,7 +29,7 @@ export const useBibEntryDetailsDisplay = () => {
 
     useEventListener("show-bib-entry-details", (e) => {
         if (e.detail.entry) {
-            setItem(BibEntry.fromPrisma(e.detail.entry));
+            setItem(e.detail.entry instanceof BibEntry ? e.detail.entry : BibEntry.fromPrisma(e.detail.entry as PrismaBibEntry));
         } else {
             setItem(false);
         }
@@ -41,7 +40,11 @@ export const useBibEntryDetailsDisplay = () => {
         setLoading(true);
         let res = await client.bibliography.getBibEntry.query(id);
         if (res) {
-            setItem(BibEntry.fromPrisma(res));
+            setItem(res instanceof BibEntry ? res : BibEntry.fromPrisma({
+                ...res as PrismaBibEntry,
+                createdAt: typeof res.createdAt === "string" ? new Date(res.createdAt) : res.createdAt,
+                lastAccess: typeof res.lastAccess === "string" ? new Date(res.lastAccess) : res.lastAccess,
+            }));
         }
         setLoading(false);
     };
@@ -54,10 +57,19 @@ export const useBibEntryDetailsDisplay = () => {
         setItem(false);
     };
 
-    return [item, setItem, close, loading] as [
+    const updateBibEntry = (d: Partial<BibEntryDataTableOutput>) => {
+        window.dispatchEvent(
+            new CustomEvent("update-bib-entry-table-entry", {
+                detail: d,
+            }),
+        );
+    };
+
+    return [item, setItem, close, loading, updateBibEntry] as [
         BibEntry | false,
         (newItem: BibEntry | false) => void,
         () => void,
         boolean,
+        typeof updateBibEntry,
     ];
 };

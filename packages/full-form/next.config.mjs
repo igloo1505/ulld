@@ -38,7 +38,7 @@ export default {
         "@ulld/whiteboard",
     ],
     experimental: {
-        typedRoutes: true,
+        // typedRoutes: true,
         esmExternals: "loose",
         optimizePackageImports: ["lucide-react", "katex"],
         // mdxRs: true,

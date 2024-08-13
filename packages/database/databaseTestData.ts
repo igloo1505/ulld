@@ -159,7 +159,6 @@ export function fakeBibEntryComplete() {
     urldate: undefined,
     keywords: undefined,
     copyright: undefined,
-    added: new Date(),
     createdAt: new Date(),
     lastAccess: new Date(),
   };

@@ -37,6 +37,7 @@ import {
     ShowBibEntryDetailsProps,
 } from "../../../utils/showBibEntryDetails";
 import { BibCore } from "@ulld/api/classes/prismaMdxRelations/Bib";
+import { useEventListener } from "@ulld/hooks/useEventListener";
 
 interface BibTableProps {
     bibEntries: BibEntryDataTableOutput[];
@@ -47,11 +48,12 @@ const initiallyShow: (keyof BibEntry)[] = [
     "title",
     "author",
     "journal",
-    "added",
+    "createdAt",
 ];
 
-const BibTable = ({ bibEntries, bib }: BibTableProps) => {
+const BibTable = ({ bibEntries: _bibEntries, bib }: BibTableProps) => {
     const router = useRouter();
+    const [bibEntries, setBibEntries] = useState(_bibEntries);
     const [sorting, setSorting] = useState<SortingState>([]);
     const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
     const [filterKey, setFilterKey] = useState<"Author" | "Title">("Title");
@@ -73,6 +75,19 @@ const BibTable = ({ bibEntries, bib }: BibTableProps) => {
     const [visibilityState, setVisibilityState] =
         useState<Record<string, boolean>>(initialVisibility);
     const columns = useMemo(() => getColumnDef(router), []);
+
+    useEventListener("update-bib-entry-table-entry", (e) => {
+        setBibEntries(
+            bibEntries.map((x) =>
+                x.id === e.detail.id
+                    ? {
+                        ...x,
+                        ...e.detail,
+                    }
+                    : x,
+            ),
+        );
+    });
 
     const setActiveItem = (id: string) => {
         let entry = bib?.findEntryById(id);
@@ -146,8 +161,8 @@ const BibTable = ({ bibEntries, bib }: BibTableProps) => {
                         className={clsx(
                             "hidden",
                             Boolean(
-                                table.getColumn("title")?.getFilterValue()?.length > 0 ||
-                                table.getColumn("author")?.getFilterValue()?.length > 0,
+                                (table.getColumn("title")?.getFilterValue() as string[])?.length > 0 ||
+                                (table.getColumn("author")?.getFilterValue() as string[])?.length > 0,
                             ) && "inline-block ml-2",
                         )}
                         onClick={() => {
