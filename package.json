@@ -114,6 +114,7 @@
   "devDependencies": {
     "@types/eslint": "^9.6.0",
     "eslint": "^8.57.0",
+    "server-only": "^0.0.1",
     "typescript-eslint": "^8.0.0"
   }
 }

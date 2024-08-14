@@ -30,9 +30,13 @@ export const toggleDarkMode = async () => {
         html.setAttribute("data-theme", newDarkmodeString);
     }
     window.ulldStore?.dispatch(setDarkmode(newDarkMode));
-    await axios.post("/api/settings/toggleDarkmodeCookie", {
-        darkmode: newDarkMode ? "darkMode" : "noDarkMode",
-    });
+
+    await fetch("/api/settings/toggleDarkmodeCookie", {
+        method: "POST",
+        body: JSON.stringify({
+            darkmode: newDarkMode ? "darkMode" : "noDarkMode",
+        })
+    })
 };
 
 export const setTocPanelContent = (noteId: string | number) => {

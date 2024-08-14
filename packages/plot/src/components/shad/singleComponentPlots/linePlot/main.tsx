@@ -27,7 +27,7 @@ export interface LintPlotProps<T extends object>
     >;
 }
 
-export const LinePlot = <T extends object>({
+const LinePlot = <T extends object>({
     chartConfig,
     lines,
     tooltipFormatter,
@@ -94,3 +94,6 @@ export const LinePlot = <T extends object>({
         </ChartContainer>
     );
 };
+
+
+export default LinePlot

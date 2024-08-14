@@ -12,13 +12,13 @@ const optionsSchema = z.object({
 export class logger {
     constructor(){}
     static info(value: any, opts?: z.input<typeof optionsSchema>){
-        console.log("value: ", value)
+        console.log(value)
     }
     static verbose(value: any, opts?: z.input<typeof optionsSchema>){
-        console.log("value: ", value)
+        console.log(value)
     }
     static debug(value: any, opts?: z.input<typeof optionsSchema>){
-        console.log("value: ", value)
+        console.log(value)
     }
     static logSyntax(value: any, language: string){
         console.log(highlight(value, {language, ignoreIllegals: true }))

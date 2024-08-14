@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { BarPlot } from "@ulld/plot/single/bar";
+import BarPlot from "@ulld/plot/single/bar";
 import { ChartConfig } from "@ulld/plot/types";
 import { DateTime } from "@ulld/utilities/dateTime";
 import { useDashboardContext } from "../../../../util/provider";

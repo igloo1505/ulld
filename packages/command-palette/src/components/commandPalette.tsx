@@ -477,9 +477,9 @@ const CommandPalette = ({
                 <div className={"cmdItemsPanel"}>
                     <div className={"cmdListLeft"}>
                         {!loading && (
-                            <Command.Empty>Mother F#(&er. Nothing was found.</Command.Empty>
+                            <Command.Empty>Nothing was found.</Command.Empty>
                         )}
-                        {loading && <Command.Loading>Ah shit. Hang on…</Command.Loading>}
+                        {loading && <Command.Loading>Loading…</Command.Loading>}
                         <DefaultCommandPaletteItems
                             setPage={setPage}
                             activePage={_page}

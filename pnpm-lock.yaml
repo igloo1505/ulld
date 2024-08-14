@@ -123,6 +123,9 @@ importers:
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
+      server-only:
+        specifier: ^0.0.1
+        version: 0.0.1
       typescript-eslint:
         specifier: ^8.0.0
         version: 8.0.0(eslint@8.57.0)(typescript@5.5.4)
@@ -734,10 +737,10 @@ importers:
     dependencies:
       '@citation-js/plugin-bibtex':
         specifier: 0.7.8
-        version: 0.7.8(@citation-js/core@0.7.6(encoding@0.1.13))
+        version: 0.7.8(@citation-js/core@0.7.14(encoding@0.1.13))
       '@citation-js/plugin-csl':
         specifier: 0.7.6
-        version: 0.7.6(@citation-js/core@0.7.6(encoding@0.1.13))
+        version: 0.7.6(@citation-js/core@0.7.14(encoding@0.1.13))
       '@ulld/api':
         specifier: workspace:*
         version: link:../api
@@ -1450,6 +1453,9 @@ importers:
       prisma:
         specifier: 5.17.0
         version: 5.17.0
+      zod-prisma-types:
+        specifier: ^3.1.8
+        version: 3.1.8
 
   packages/default-image-map:
     dependencies:
@@ -2413,8 +2419,8 @@ importers:
         specifier: 7.51.3
         version: 7.51.3(react@18.2.0)
       shiki:
-        specifier: 1.1.7
-        version: 1.1.7
+        specifier: 1.12.0
+        version: 1.12.0
     devDependencies:
       '@mdx-js/mdx':
         specifier: 3.0.1
@@ -3143,10 +3149,10 @@ importers:
     dependencies:
       '@citation-js/plugin-bibtex':
         specifier: 0.7.8
-        version: 0.7.8(@citation-js/core@0.7.14(encoding@0.1.13))
+        version: 0.7.8(@citation-js/core@0.7.6(encoding@0.1.13))
       '@citation-js/plugin-csl':
         specifier: 0.7.6
-        version: 0.7.6(@citation-js/core@0.7.14(encoding@0.1.13))
+        version: 0.7.6(@citation-js/core@0.7.6(encoding@0.1.13))
       '@ulld/configschema':
         specifier: workspace:*
         version: link:../configschema
@@ -3162,6 +3168,9 @@ importers:
       citation-js:
         specifier: 0.7.8
         version: 0.7.8(encoding@0.1.13)
+      fumadocs-core:
+        specifier: ^13.1.0
+        version: 13.1.0(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -4291,8 +4300,8 @@ importers:
         specifier: 0.33.2
         version: 0.33.2
       shiki:
-        specifier: 1.1.7
-        version: 1.1.7
+        specifier: 1.12.0
+        version: 1.12.0
       style-loader:
         specifier: 3.3.4
         version: 3.3.4(webpack@5.93.0(@swc/core@1.7.3(@swc/helpers@0.5.12))(esbuild@0.21.5))
@@ -4694,6 +4703,9 @@ importers:
       rtl-simple-queries:
         specifier: ^1.0.1
         version: 1.0.1(@testing-library/react@14.3.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      shiki:
+        specifier: 1.12.0
+        version: 1.12.0
       supertest:
         specifier: ^6.3.4
         version: 6.3.4
@@ -12106,6 +12118,9 @@ packages:
   code-block-writer@10.1.1:
     resolution: {integrity: sha512-67ueh2IRGst/51p0n6FvPrnRjAGHY5F8xdjkgrYE7DDzpJe6qA07RYQ9VcoUeo5ATOjSOiWpSL3SWBRRbempMw==}
 
+  code-block-writer@12.0.0:
+    resolution: {integrity: sha512-q4dMFMlXtKR3XNBHyMHt/3pwYNA69EDk00lloMOaaUMKPUXBw6lpXtbu3MMVG6/uOihGnRDOlkyqsONEUj60+w==}
+
   codemirror-spell-checker@1.1.2:
     resolution: {integrity: sha512-2Tl6n0v+GJRsC9K3MLCdLaMOmvWL0uukajNJseorZJsslaxZyZMgENocPU8R0DyoTAiKsyqiemSOZo7kjGV0LQ==}
 
@@ -14248,6 +14263,13 @@ packages:
 
   fumadocs-core@12.5.6:
     resolution: {integrity: sha512-sKbVq+Yrf7uLZD/pHojLGwClRxuOyjR1NaIlm/cO9dCaEO6n568NTom/2rEn+jyhII+LbGTJqfIJmktBW6rgNA==}
+    peerDependencies:
+      next: '>= 14.1.0'
+      react: 18.2.0
+      react-dom: 18.2.0
+
+  fumadocs-core@13.1.0:
+    resolution: {integrity: sha512-3slE62xnO5VS1Xw3ajfyhepNIwfymO3FkjW1E4f+wfR5zSx3ljCib+yRMTC3wEp3S4rNzq65cp+FcAkb57OO6A==}
     peerDependencies:
       next: '>= 14.1.0'
       react: 18.2.0
@@ -21794,6 +21816,10 @@ packages:
     peerDependenciesMeta:
       dotenv:
         optional: true
+
+  zod-prisma-types@3.1.8:
+    resolution: {integrity: sha512-5oe0ays3ur4u2GtuUqlhgCraKBcsuMaMI8o7VMV4YAnFeOuVid7K2zGvjI19V0ue9PeNF2ICyVREQVohaQm5dw==}
+    hasBin: true
 
   zod-to-json-schema@3.23.2:
     resolution: {integrity: sha512-uSt90Gzc/tUfyNqxnjlfBs8W6WSGpNBv0rVsNxP/BVSMHMKGdthPYff4xtCHYloJGM0CFxFsb3NbC0eqPhfImw==}
@@ -30642,6 +30668,8 @@ snapshots:
 
   code-block-writer@10.1.1: {}
 
+  code-block-writer@12.0.0: {}
+
   codemirror-spell-checker@1.1.2:
     dependencies:
       typo-js: 1.2.4
@@ -33299,6 +33327,30 @@ snapshots:
       github-slugger: 2.0.0
       negotiator: 0.6.3
       next: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
+      npm-to-yarn: 2.2.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-remove-scroll: 2.5.10(@types/react@18.2.79)(react@18.2.0)
+      remark: 15.0.1
+      remark-gfm: 4.0.0
+      remark-mdx: 3.0.1
+      scroll-into-view-if-needed: 3.1.0
+      shiki: 1.12.0
+      swr: 2.2.5(react@18.2.0)
+      unist-util-visit: 5.0.0
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
+  fumadocs-core@13.1.0(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      '@formatjs/intl-localematcher': 0.5.4
+      '@shikijs/rehype': 1.12.0
+      '@shikijs/transformers': 1.12.0
+      flexsearch: 0.7.21
+      github-slugger: 2.0.0
+      negotiator: 0.6.3
+      next: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1)
       npm-to-yarn: 2.2.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -43321,6 +43373,13 @@ snapshots:
       zod: 3.22.4
     optionalDependencies:
       dotenv: 16.4.5
+
+  zod-prisma-types@3.1.8:
+    dependencies:
+      '@prisma/generator-helper': 5.18.0
+      code-block-writer: 12.0.0
+      lodash: 4.17.21
+      zod: 3.23.8
 
   zod-to-json-schema@3.23.2(zod@3.22.4):
     dependencies:

@@ -14,7 +14,6 @@ export const changeTheme = async (newTheme: UlldColorTheme) => {
         })
     })
     let res = await r.json()
-    // let res = await axios.post("/api/settings/handleTheme", { theme: newTheme });
     let success = Boolean(res?.success);
     if (success) {
         window.localStorage.setItem("ulld-theme", newTheme);

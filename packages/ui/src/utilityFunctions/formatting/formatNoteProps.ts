@@ -7,4 +7,7 @@ export type NotePageProps = Awaited<ReturnType<typeof SpecificNoteQueryManager.f
         mdx: MdxNoteParseParams
     }
     embeddableComponents: AdditionalComponents
+    rootRelativePath: string
+    rootRelativeWithExtension?: string
+    absolutePath?: string
 }

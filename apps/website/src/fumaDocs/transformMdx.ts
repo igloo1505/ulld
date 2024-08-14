@@ -15,7 +15,6 @@ import rehypeImgSize from "rehype-img-size";
 // t.transformMDX
 // import rehypeVideo from "rehype-video";
 import { compileMDX as baseCompileMDX } from "@content-collections/mdx";
-// import rehypeMathjax from "rehype-mathjax/chtml.js";
 import remarkEmoji from "remark-emoji";
 import { Document, Context } from "@content-collections/core";
 import remarkMath from "remark-math";

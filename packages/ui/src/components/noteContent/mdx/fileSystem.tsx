@@ -17,7 +17,7 @@ interface FileSystemMdxProps extends NotePageProps {
 
 const FileSystemMdxPage = async (props: FileSystemMdxProps) => {
     let fileContent = await serverClient.mdx.getFsMdx({
-        rootRelativePath: props.rootRelativePath,
+        rootRelativePath: props.rootRelativeWithExtension,
         extension: props.extension || ".mdx"
     })
     let frontMatter = grayMatter(fileContent.content)

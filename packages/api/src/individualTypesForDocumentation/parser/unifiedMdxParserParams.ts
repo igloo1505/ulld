@@ -2,7 +2,6 @@ import { FrontMatterType } from "@ulld/types";
 import { serverClient } from "../../trpc/serverClient";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import { MdxDetailsReturnType } from "../../types";
-import path from 'path'
 
 export interface UnifiedMdxParserParams {
     content: string;
@@ -12,5 +11,3 @@ export interface UnifiedMdxParserParams {
     serverClient: typeof serverClient // Trpc router
     db: MdxDetailsReturnType
 }
-
-

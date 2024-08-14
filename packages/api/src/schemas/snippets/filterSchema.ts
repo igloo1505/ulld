@@ -1,9 +1,14 @@
 import { z } from "zod";
-import shikiLanguages from "@ulld/utilities/shikiLanguages";
+import { bundledLanguages } from "shiki"
 
 export const snippetFilterSchema = z
     .object({
-        language: z.enum(shikiLanguages).optional(),
+        language: z.string().optional().refine((x) => {
+        if(typeof x === "string" && !Object.keys(bundledLanguages).includes(x)){
+            return false
+        }
+        return true
+    }),
         query: z.string().optional()
     })
 

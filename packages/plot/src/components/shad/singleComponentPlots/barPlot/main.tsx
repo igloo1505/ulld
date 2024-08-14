@@ -39,7 +39,7 @@ export interface BarPlotProps<T extends object> {
     tooltipFormatter?: Formatter<any, any>;
 }
 
-export const BarPlot = <T extends object>({
+const BarPlot = <T extends object>({
     chartData,
     chartConfig,
     bars,
@@ -111,3 +111,5 @@ export const BarPlot = <T extends object>({
         </ChartContainer>
     );
 };
+
+export default BarPlot;

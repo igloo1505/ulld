@@ -31,7 +31,6 @@ export const syncRootDirectory = async () => {
         }),
     });
     let resBody = await res.json();
-    console.log("res: ", res);
     // let res = await axios.post(getDevPath("/api/events/onSync"), {
     //     offline: !navigator.onLine,
     //     // TODO: Actually enable these options through something like a 'hard' sync or the like.

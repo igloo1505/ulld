@@ -41,7 +41,7 @@ export const MdxContentPreCompiled = ({
             const res = await run(_content, {
                 ...runtime,
                 ...devRuntime,
-                baseUrl: import.meta.url,
+                /* baseUrl: import.meta.url, */ // just disabled. This might be the cause of the not found component if it should actually exist.
             });
             if (res && "default" in res) {
                 setMdxModule(res);
@@ -60,6 +60,7 @@ export const MdxContentPreCompiled = ({
 
     const Component =
         mdxModule && "default" in mdxModule ? mdxModule.default : Fragment;
+    /* RESUME: Fix this immediately. Cannot pass components into a client component. Need to find a way to render mdx on the server directly to html. */
     const _components = getComponentMap(raw, options, components);
 
     return (

@@ -5,6 +5,12 @@ import {
     mermaidTheme,
 } from "@ulld/utilities/defaults/defaultMermaidConfig";
 import { mathOptions } from "@ulld/utilities/defaults/markdownUniversalOptions";
+import {
+    rehypeCode,
+    rehypeCodeDefaultOptions,
+    remarkHeading,
+    remarkStructure,
+} from "fumadocs-core/mdx-plugins";
 import remarkMath from "remark-math";
 import remarkGfm from "remark-gfm";
 import rehypeMathjax from "rehype-mathjax/chtml";
@@ -76,6 +82,8 @@ const remarkPlugins = (
 ): CompileOptions["remarkPlugins"] => {
     return [
         remarkMath, 
+        remarkHeading,
+        remarkStructure,
         /* @ts-ignore */
         remarkGfm as any,
         emoji as any

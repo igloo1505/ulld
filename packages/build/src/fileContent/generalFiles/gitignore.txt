@@ -2,3 +2,5 @@ node_modules
 src/database/generated
 .next
 .env**
+src/databaseTestData.ts
+src/src/databaseTestData.ts

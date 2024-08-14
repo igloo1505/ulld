@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import clsx from "clsx";
 import { ImmediateNoteContentContainer } from "../immediateNoteContainer";
 import { ClientsideNoteEvents } from "@ulld/state/state/domhandler";
-import { MdxCitations, zodCitationObject } from "../../markdown/citations";
+import { MdxCitations } from "../../markdown/citations";
 import { SequentialNoteBottomBar } from "../../markdown/sequentialBottomBar";
 import { CalendarAndDateManager } from "@ulld/api/classes/data/calendarAndDate";
 import { getClassesFromFrontMatter } from "../../../actions/universal/getClassesFromFrontMatter";
@@ -26,7 +26,7 @@ const IndividualNoteContainer = ({
         <div
             className={clsx(
                 "mdx relative group/mdxNote",
-                getClassesFromFrontMatter(parsedData as Partial<FrontMatterType>),
+                parsedData && getClassesFromFrontMatter(parsedData as Partial<FrontMatterType>),
             )}
             id="noteContainer"
         >
@@ -47,11 +47,7 @@ const IndividualNoteContainer = ({
                 fs={type === "fs"}
             />
             <MdxCitations
-                citations={
-                    parsedData?.citations
-                        ? zodCitationObject.array().parse(parsedData.citations)
-                        : []
-                }
+                citations={parsedData.citations ? parsedData.citations : []}
             />
             <SequentialNoteBottomBar
                 sequentialIndex={details?.sequentialIndex}

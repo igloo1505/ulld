@@ -8,6 +8,8 @@
   ],
   "exports": {
     "./types": "./src/types/main.ts",
+    "./getGlobServerSide": "./src/utils/glob/getGlobServerSide.ts",
+    "./fetchWrapper": "./src/utils/fetchWrapper.ts",
     "./filePathSchemas": "./src/schemas/filePath/index.ts",
     "./errorNotifications": "./src/errorHandling/main.ts",
     "./testDataHelpers": "./src/testDataHelpers/main.ts",
@@ -106,7 +108,8 @@
     "./generateThemeBasedPlotColors": "./src/styleUtilities/generateThemePlotColors.ts",
     "./themeColorGradients": "./src/styleUtilities/themeColorGradients.json",
     "./streamFile": "./src/utils/media/streamFile.ts",
-    "./mdxParserUtils": "./src/parsingUtilities/mdx/getNoteTypeDataFromPath.ts"
+    "./mdxParserUtils": "./src/parsingUtilities/mdx/getNoteTypeDataFromPath.ts",
+    "./fsRootGlob": "./src/utils/fsRootGlob.ts"
   },
   "scripts": {
     "dev": "echo 'Add dev script here'",
@@ -136,6 +139,7 @@
     "react-test-renderer": "^18.2.0",
     "rehype-mathjax": "^6.0.0",
     "rtl-simple-queries": "^1.0.1",
+    "shiki": "1.12.0",
     "supertest": "^6.3.4",
     "supertest-session": "^5.0.1",
     "ts-jest": "^29.1.2",

@@ -8,15 +8,5 @@ export const getRemoteMdx = async (rootRelativePath: string) => {
         },
         ...defaultFindRemoteMdxArgs,
     });
-    if (note) {
-        prisma.mdxNote.update({
-            where: {
-                id: note.id,
-            },
-            data: {
-                lastAccess: new Date(),
-            },
-        });
-    }
     return note;
 };

@@ -7,52 +7,70 @@ import { FrontMatterType } from "@ulld/types";
 import IndividualNoteContainer from "./individualNoteContainer";
 import grayMatter from "gray-matter";
 import { notFound } from "next/navigation";
+import serverLogger from "@ulld/logger/server";
 
 interface DatabaseMdxPageProps extends NotePageProps {
-    embeddableComponents: AdditionalComponents;
-    rootRelativePath: string;
-    extension?: ".mdx" | ".md";
+  embeddableComponents: AdditionalComponents;
+  rootRelativePath: string;
+  extension?: ".mdx" | ".md";
 }
 
 const DatabaseMdxPage = async (props: DatabaseMdxPageProps) => {
-    let item = await serverClient.mdx.getDatabaseMdx(props.rootRelativePath);
-    if (!item) {
-        return notFound();
-    }
-    let frontMatter = grayMatter(item.content);
+  let item = await serverClient.mdx.getDatabaseMdx(
+    props.noteProps.rootRelativePathWithExtension ||
+      `${props.noteProps.rootRelativePath}.mdx`,
+  );
+  if (!item) {
+    return notFound();
+  }
+  serverLogger.verbose(item, {
+    label: "item",
+    component: "DatabaseMdxPage",
+    disable: true
+  });
 
-    let details: ComponentProps<typeof IndividualNoteContainer>["details"] = {
-        bookmarked: item?.bookmarked,
-        quickLink: item.quickLink,
-        id: item.id,
-        sequentialKey: item.sequentialKey,
-        sequentialIndex: item.sequentialIndex,
-        firstSync: item.firstSync,
-        lastSync: item.lastSync,
-    };
+  let frontMatter = grayMatter(item.content);
 
-    let parsedData = await props.parsers.mdx.parser({
-        content: item.content,
-        data: frontMatter as Partial<FrontMatterType>,
-        serverClient: serverClient,
-        appConfig: props.parsers.mdx.appConfig,
-        db: details,
-        docTypeData: props.parsers.mdx.docTypeData,
-    });
+  let details: ComponentProps<typeof IndividualNoteContainer>["details"] = {
+    bookmarked: item?.bookmarked,
+    quickLink: item.quickLink ? item.quickLink : undefined,
+    id: item.id,
+    sequentialKey: item.sequentialKey ? item.sequentialKey : undefined,
+    sequentialIndex: item.sequentialIndex ? item.sequentialIndex : undefined,
+    firstSync: item.firstSync.toString(),
+    lastSync: item.lastSync.toString(),
+  };
 
-    return (
-        <IndividualNoteContainer
-            parsedData={parsedData.data || frontMatter}
-            type="fs"
-            details={details}
-        >
-            <MdxContentSERVER
-                content={frontMatter.content}
-                components={props.embeddableComponents}
-                appConfig={props.parsers.mdx.appConfig}
-            />
-        </IndividualNoteContainer>
-    );
+  let parsedData = await props.parsers.mdx.parser({
+      content: frontMatter.content,
+      data: frontMatter as Partial<FrontMatterType>,
+      serverClient: serverClient,
+      appConfig: props.parsers.mdx.appConfig,
+      db: details,
+      docTypeData: props.parsers.mdx.docTypeData,
+    })
+    console.log("parsedData: ", parsedData)
+
+  /* serverLogger.verbose(parsedData, { */
+  /*   label: "Parsed Data", */
+  /*   component: "DatabaseMdxPage", */
+  /*   contentSyntaxType: "json", */
+  /*   disable: true */
+  /* }); */
+
+  return (
+    <IndividualNoteContainer
+      parsedData={parsedData.data || frontMatter}
+      type="fs"
+      details={details}
+    >
+      <MdxContentSERVER
+        content={parsedData?.content || frontMatter.content}
+        components={props.embeddableComponents}
+        appConfig={props.parsers.mdx.appConfig}
+      />
+    </IndividualNoteContainer>
+  );
 };
 
 DatabaseMdxPage.displayName = "DatabaseMdxPage";

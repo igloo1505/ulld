@@ -1,4 +1,4 @@
-import { LinePlot } from "@ulld/plot/single/line";
+import  LinePlot from "@ulld/plot/single/line";
 import { ChartConfig } from "@ulld/plot/types";
 import { DateTime } from "@ulld/utilities/dateTime";
 import React, { useMemo } from "react";

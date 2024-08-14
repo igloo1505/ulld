@@ -1,17 +1,11 @@
 import React from 'react'
-import {z} from 'zod'
-
-
-/* TODO: Move this to a parent package and pass the type down. */
-export const zodCitationObject = z.object({
-
-}).transform((a) => "")
 
 interface MdxCitationsProps {
-    citations: z.output<typeof zodCitationObject>[]
+    citations: string[]
 }
 
 export const MdxCitations = ({ citations }: MdxCitationsProps) => {
+    console.log("citations: ", citations)
     if (citations.length === 0) return null
     return (
         <div className={"w-full"}>

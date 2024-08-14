@@ -8,6 +8,7 @@
   ],
   "exports": {
     "./usePluginSettings": "./src/usePluginSettings.ts",
+    "./useCodeHighlighter": "./src/useCodeHighlighter.ts",
     "./useFilePathInputModal": "./src/useFilePathInputModal.ts",
     "./useBreakpoints": "./src/useBreakpoints.ts",
     "./useActiveNoteId": "./src/useActiveNoteId.ts",
@@ -75,7 +76,7 @@
   },
   "dependencies": {
     "react-hook-form": "7.51.3",
-    "shiki": "1.1.7"
+    "shiki": "1.12.0"
   },
   "devDependencies": {
     "@mdx-js/mdx": "3.0.1",

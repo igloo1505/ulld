@@ -1,6 +1,6 @@
+import React from 'react'
 import { Route } from 'next'
 import Link from 'next/link'
-import React from 'react'
 import { buttonVariants } from '@ulld/tailwind/button'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@ulld/tailwind/tooltip'
 import { serverClient } from '@ulld/api/serverClient'

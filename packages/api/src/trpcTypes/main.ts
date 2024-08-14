@@ -14,7 +14,7 @@ export type MdxNoteSummary = Awaited<ReturnType<typeof serverClient.universalNot
 
 export type RetrievedSettings = Awaited<ReturnType<typeof serverClient.settings.getSettings>>
 
-type MdxParserReturnType<T extends unknown = {}> = {
+export type MdxParserReturnType<T extends unknown = {}> = {
   content: string;
   data?: FrontMatterType & T;
 };

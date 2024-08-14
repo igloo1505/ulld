@@ -1,42 +1,36 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
 import { PageContentContainer } from '../../layouts/contentContainer';
-import { ParsableExtensions } from '@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions';
 import { NotePageProps } from '../../../utilityFunctions/formatting/formatNoteProps';
 import FileSystemMdxPage from "@ulld/ui/fileSystemMdxPage"
 
 
 interface FileSystemNoteProps extends NotePageProps {
-    noteType: ParsableExtensions
-    rootRelativeWithExtension: string
-    absolutePath: string
-    rootRelativePath: string
 }
 
 
 const FileSystemNote = (props: FileSystemNoteProps) => {
-    if (props.noteType === ".mdx") {
+    if (props.noteProps.format === ".mdx") {
         return (
             <PageContentContainer canBookmark>
                 <FileSystemMdxPage
                     {...props}
-                    extension={props.noteType}
+                    extension={props.noteProps.format}
 
                 />
             </PageContentContainer>
         )
     }
-    if (props.noteType === ".md") {
+    if (props.noteProps.format === ".md") {
         return (
             <PageContentContainer canBookmark>
                 <FileSystemMdxPage
                     {...props}
-                    extension={props.noteType}
+                    extension={props.noteProps.format}
                 />
             </PageContentContainer>
         )
     }
-    if (props.noteType === ".ipynb") {
+    if (props.noteProps.format === ".ipynb") {
         /* const FileSystemNotebook = dynamic(() => import('./filesystem/fileSystemNotebook'), { ssr: false }) */
         return (
             <PageContentContainer notebook canBookmark>
