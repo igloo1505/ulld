@@ -25,7 +25,8 @@
     "./citations/formatCsl": "./src/citations/formatCsl.ts",
     "./mathjaxBandaid": "./src/mdx/compiler/mdxClassnameBandaid.tsx",
     "./applyMathjaxBandaid": "./src/mdx/compiler/applyMathjaxBandaid.ts",
-    "./taggables": "./src/general/taggables.ts"
+    "./taggables": "./src/general/taggables.ts",
+    "./serverMdxToHtml": "./src/mdx/compiler/mdx-to-html.tsx"
   },
   "files": [
     "dist",
@@ -44,6 +45,7 @@
     "@ulld/database": "workspace:*",
     "@ulld/developer": "workspace:*",
     "@ulld/utilities": "workspace:*",
+    "@ulld/component-map": "workspace:*",
     "citation-js": "0.7.8",
     "mathjax-full": "3.2.2",
     "node-latex": "3.1.0",

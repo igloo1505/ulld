@@ -740,3 +740,9 @@
     @apply bg-background text-foreground font-sans;
   }
 }
+
+@layer components {
+  .prose-all {
+    @apply prose dark:prose-invert prose-a:text-link;
+  }
+}

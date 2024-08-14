@@ -737,10 +737,10 @@ importers:
     dependencies:
       '@citation-js/plugin-bibtex':
         specifier: 0.7.8
-        version: 0.7.8(@citation-js/core@0.7.14(encoding@0.1.13))
+        version: 0.7.8(@citation-js/core@0.7.6(encoding@0.1.13))
       '@citation-js/plugin-csl':
         specifier: 0.7.6
-        version: 0.7.6(@citation-js/core@0.7.14(encoding@0.1.13))
+        version: 0.7.6(@citation-js/core@0.7.6(encoding@0.1.13))
       '@ulld/api':
         specifier: workspace:*
         version: link:../api
@@ -3149,10 +3149,13 @@ importers:
     dependencies:
       '@citation-js/plugin-bibtex':
         specifier: 0.7.8
-        version: 0.7.8(@citation-js/core@0.7.6(encoding@0.1.13))
+        version: 0.7.8(@citation-js/core@0.7.14(encoding@0.1.13))
       '@citation-js/plugin-csl':
         specifier: 0.7.6
-        version: 0.7.6(@citation-js/core@0.7.6(encoding@0.1.13))
+        version: 0.7.6(@citation-js/core@0.7.14(encoding@0.1.13))
+      '@ulld/component-map':
+        specifier: workspace:*
+        version: link:../component-map
       '@ulld/configschema':
         specifier: workspace:*
         version: link:../configschema
@@ -3168,9 +3171,6 @@ importers:
       citation-js:
         specifier: 0.7.8
         version: 0.7.8(encoding@0.1.13)
-      fumadocs-core:
-        specifier: ^13.1.0
-        version: 13.1.0(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       mathjax-full:
         specifier: 3.2.2
         version: 3.2.2
@@ -3453,9 +3453,15 @@ importers:
       '@ulld/hooks':
         specifier: workspace:*
         version: link:../hooks
+      '@ulld/parsers':
+        specifier: workspace:*
+        version: link:../parsers
       '@ulld/utilities':
         specifier: workspace:*
         version: link:../utilities
+      gray-matter:
+        specifier: ^4.0.3
+        version: 4.0.3
     devDependencies:
       '@mdx-js/mdx':
         specifier: 3.0.1
@@ -14263,13 +14269,6 @@ packages:
 
   fumadocs-core@12.5.6:
     resolution: {integrity: sha512-sKbVq+Yrf7uLZD/pHojLGwClRxuOyjR1NaIlm/cO9dCaEO6n568NTom/2rEn+jyhII+LbGTJqfIJmktBW6rgNA==}
-    peerDependencies:
-      next: '>= 14.1.0'
-      react: 18.2.0
-      react-dom: 18.2.0
-
-  fumadocs-core@13.1.0:
-    resolution: {integrity: sha512-3slE62xnO5VS1Xw3ajfyhepNIwfymO3FkjW1E4f+wfR5zSx3ljCib+yRMTC3wEp3S4rNzq65cp+FcAkb57OO6A==}
     peerDependencies:
       next: '>= 14.1.0'
       react: 18.2.0
@@ -33327,30 +33326,6 @@ snapshots:
       github-slugger: 2.0.0
       negotiator: 0.6.3
       next: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
-      npm-to-yarn: 2.2.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-remove-scroll: 2.5.10(@types/react@18.2.79)(react@18.2.0)
-      remark: 15.0.1
-      remark-gfm: 4.0.0
-      remark-mdx: 3.0.1
-      scroll-into-view-if-needed: 3.1.0
-      shiki: 1.12.0
-      swr: 2.2.5(react@18.2.0)
-      unist-util-visit: 5.0.0
-    transitivePeerDependencies:
-      - '@types/react'
-      - supports-color
-
-  fumadocs-core@13.1.0(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
-    dependencies:
-      '@formatjs/intl-localematcher': 0.5.4
-      '@shikijs/rehype': 1.12.0
-      '@shikijs/transformers': 1.12.0
-      flexsearch: 0.7.21
-      github-slugger: 2.0.0
-      negotiator: 0.6.3
-      next: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1)
       npm-to-yarn: 2.2.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)

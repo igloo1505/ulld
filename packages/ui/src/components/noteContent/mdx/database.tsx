@@ -2,75 +2,79 @@ import React, { ComponentProps } from "react";
 import { NotePageProps } from "../../../utilityFunctions/formatting/formatNoteProps";
 import { AdditionalComponents } from "@ulld/component-map/types";
 import { serverClient } from "@ulld/api/serverClient";
-import { MdxContentSERVER } from "@ulld/render/mdx/server";
 import { FrontMatterType } from "@ulld/types";
 import IndividualNoteContainer from "./individualNoteContainer";
+import { MdxContentRSC } from "@ulld/render/mdx/rsc";
 import grayMatter from "gray-matter";
 import { notFound } from "next/navigation";
 import serverLogger from "@ulld/logger/server";
 
 interface DatabaseMdxPageProps extends NotePageProps {
-  embeddableComponents: AdditionalComponents;
-  rootRelativePath: string;
-  extension?: ".mdx" | ".md";
+    embeddableComponents: AdditionalComponents;
+    rootRelativePath: string;
+    extension?: ".mdx" | ".md";
 }
 
 const DatabaseMdxPage = async (props: DatabaseMdxPageProps) => {
-  let item = await serverClient.mdx.getDatabaseMdx(
-    props.noteProps.rootRelativePathWithExtension ||
-      `${props.noteProps.rootRelativePath}.mdx`,
-  );
-  if (!item) {
-    return notFound();
-  }
-  serverLogger.verbose(item, {
-    label: "item",
-    component: "DatabaseMdxPage",
-    disable: true
-  });
 
-  let frontMatter = grayMatter(item.content);
+    let item = await serverClient.mdx.getDatabaseMdx(
+        props.noteProps.rootRelativePathWithExtension ||
+        `${props.noteProps.rootRelativePath}.mdx`,
+    );
 
-  let details: ComponentProps<typeof IndividualNoteContainer>["details"] = {
-    bookmarked: item?.bookmarked,
-    quickLink: item.quickLink ? item.quickLink : undefined,
-    id: item.id,
-    sequentialKey: item.sequentialKey ? item.sequentialKey : undefined,
-    sequentialIndex: item.sequentialIndex ? item.sequentialIndex : undefined,
-    firstSync: item.firstSync.toString(),
-    lastSync: item.lastSync.toString(),
-  };
+    if (!item) {
+        return notFound();
+    }
 
-  let parsedData = await props.parsers.mdx.parser({
-      content: frontMatter.content,
-      data: frontMatter as Partial<FrontMatterType>,
-      serverClient: serverClient,
-      appConfig: props.parsers.mdx.appConfig,
-      db: details,
-      docTypeData: props.parsers.mdx.docTypeData,
-    })
-    console.log("parsedData: ", parsedData)
+    serverLogger.verbose(item, {
+        label: "item",
+        component: "DatabaseMdxPage",
+        disable: true,
+    });
 
-  /* serverLogger.verbose(parsedData, { */
-  /*   label: "Parsed Data", */
-  /*   component: "DatabaseMdxPage", */
-  /*   contentSyntaxType: "json", */
-  /*   disable: true */
-  /* }); */
+    let frontMatter = grayMatter(item.content);
 
-  return (
-    <IndividualNoteContainer
-      parsedData={parsedData.data || frontMatter}
-      type="fs"
-      details={details}
-    >
-      <MdxContentSERVER
-        content={parsedData?.content || frontMatter.content}
-        components={props.embeddableComponents}
-        appConfig={props.parsers.mdx.appConfig}
-      />
-    </IndividualNoteContainer>
-  );
+    let details: ComponentProps<typeof IndividualNoteContainer>["details"] = {
+        bookmarked: item?.bookmarked,
+        quickLink: item.quickLink ? item.quickLink : undefined,
+        id: item.id,
+        sequentialKey: item.sequentialKey ? item.sequentialKey : undefined,
+        sequentialIndex: item.sequentialIndex ? item.sequentialIndex : undefined,
+        firstSync: item.firstSync.toString(),
+        lastSync: item.lastSync.toString(),
+    };
+
+    let parsedData = await props.parsers.mdx.parser({
+        content: frontMatter.content,
+        data: frontMatter as Partial<FrontMatterType>,
+        serverClient: serverClient,
+        appConfig: props.parsers.mdx.appConfig,
+        db: details,
+        docTypeData: props.parsers.mdx.docTypeData,
+    });
+
+    console.log("parsedData: ", parsedData);
+
+    /* serverLogger.verbose(parsedData, { */
+    /*   label: "Parsed Data", */
+    /*   component: "DatabaseMdxPage", */
+    /*   contentSyntaxType: "json", */
+    /*   disable: true */
+    /* }); */
+
+    return (
+        <IndividualNoteContainer
+            parsedData={parsedData.data || frontMatter}
+            type="fs"
+            details={details}
+        >
+            <MdxContentRSC 
+                content={parsedData?.content || frontMatter.content}
+                components={props.embeddableComponents}
+                appConfig={props.parsers.mdx.appConfig}
+            />
+        </IndividualNoteContainer>
+    );
 };
 
 DatabaseMdxPage.displayName = "DatabaseMdxPage";

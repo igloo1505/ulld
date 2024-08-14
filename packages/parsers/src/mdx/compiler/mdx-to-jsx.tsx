@@ -105,6 +105,6 @@ export const parseMdxString = async ({
         development: process.env.NODE_ENV === "development",
         /* baseUrl: import.meta.url */
     });
-    return res.toString().replaceAll(/classname/g, "className")
+    return String(res).replaceAll(/classname/g, "className")
 };
 

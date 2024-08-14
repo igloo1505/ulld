@@ -15,7 +15,7 @@ import { CopyContextMenu } from "@ulld/utilities/components/copyContextMenu"
 import { MDXModule } from "mdx/types";
 import { AdditionalComponents, ConditionalComponentProps } from "@ulld/component-map/types";
 
-interface MdxContentPreCompiledProps {
+export interface MdxContentPreCompiledProps {
     className?: string;
     content: string;
     raw: string;

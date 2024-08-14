@@ -1,6 +1,5 @@
 import { ComponentType } from "react";
 
-// TODO: Remove references to this. Moved this to the types package.
 export interface ConditionalComponentQuery<T = ComponentType<any>> {
     regex: RegExp,
     component: T,

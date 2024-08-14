@@ -12,5 +12,6 @@ export const mainUIConfigSchema = z
         media: mediaConfigSchema,
         colors: colorsConfigSchema,
         theme: themeSchema.default("ulld"),
+        autoApplyMdxTitles: z.boolean().default(true)
     })
     .default({});
