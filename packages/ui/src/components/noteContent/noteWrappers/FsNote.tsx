@@ -1,34 +1,27 @@
-import React from 'react'
-import { PageContentContainer } from '../../layouts/contentContainer';
-import { NotePageProps } from '../../../utilityFunctions/formatting/formatNoteProps';
-import FileSystemMdxPage from "@ulld/ui/fileSystemMdxPage"
+import React from "react";
+import { PageContentContainer } from "../../layouts/contentContainer";
+import { NotePageProps } from "../../../utilityFunctions/formatting/formatNoteProps";
+import FileSystemMdxPage from "@ulld/ui/fileSystemMdxPage";
+import MathjaxProvider from "@ulld/utilities/providers-mathjax";
 
-
-interface FileSystemNoteProps extends NotePageProps {
-}
-
+interface FileSystemNoteProps extends NotePageProps { }
 
 const FileSystemNote = (props: FileSystemNoteProps) => {
     if (props.noteProps.format === ".mdx") {
         return (
             <PageContentContainer canBookmark>
-                <FileSystemMdxPage
-                    {...props}
-                    extension={props.noteProps.format}
-
-                />
+                <MathjaxProvider>
+                    <FileSystemMdxPage {...props} extension={props.noteProps.format} />
+                </MathjaxProvider>
             </PageContentContainer>
-        )
+        );
     }
     if (props.noteProps.format === ".md") {
         return (
             <PageContentContainer canBookmark>
-                <FileSystemMdxPage
-                    {...props}
-                    extension={props.noteProps.format}
-                />
+                <FileSystemMdxPage {...props} extension={props.noteProps.format} />
             </PageContentContainer>
-        )
+        );
     }
     if (props.noteProps.format === ".ipynb") {
         /* const FileSystemNotebook = dynamic(() => import('./filesystem/fileSystemNotebook'), { ssr: false }) */
@@ -39,13 +32,11 @@ const FileSystemNote = (props: FileSystemNoteProps) => {
                 {/*     {...props} */}
                 {/* /> */}
             </PageContentContainer>
-        )
+        );
     }
-    return null
-}
+    return null;
+};
 
-
-FileSystemNote.displayName = "FileSystemNote"
-
+FileSystemNote.displayName = "FileSystemNote";
 
 export default FileSystemNote;

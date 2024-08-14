@@ -4,7 +4,7 @@ import {
 } from "../client/componentList";
 import { ConditionalComponentQuery } from "../types";
 import dynamic from "next/dynamic";
-// const Admonition = dynamic(() => import("@ulld/embeddable-components/components/server/admonition").then((a) => a.Admonition))
+const Admonition = dynamic(() => import("@ulld/embeddable-components/components/server/admonition").then((a) => a.Admonition))
 // const ErrorMargin = dynamic(() => import("@ulld/embeddable-components/academic/error").then((a) => a.ErrorMargin))
 // const Abstract = dynamic(() => import("@ulld/embeddable-components/academic/abstract").then((a) => a.Abstract))
 // const TableFit = dynamic(() => import("@ulld/embeddable-components/format/tableFit").then((a) => a.TableFit))
@@ -32,7 +32,6 @@ import dynamic from "next/dynamic";
 // const Highlight = dynamic(() => import("./emeddedComponents/Hl"))
 // const Underline = dynamic(() => import("./emeddedComponents/Underline"))
 // const Tooltip = dynamic(() => import("./emeddedComponents/TT"))
-// const DivElement = dynamic(() => import("./Div"))
 // const Small = dynamic(() => import("./emeddedComponents/text/small"))
 // const Large = dynamic(() => import("./emeddedComponents/text/large"))
 // const Centered = dynamic(() => import("./emeddedComponents/text/centeredText"))
@@ -59,6 +58,20 @@ import dynamic from "next/dynamic";
 // const Tikz = dynamic(() => import("./emeddedComponents/tikz"))
 // const Color = dynamic(() => import("./emeddedComponents/Color"))
 
+const clientComponents = conditionalClientComponents
+const clientOverrides: typeof conditionalClientComponents = [
+        { regex: new RegExp(`<Admonition`), component: Admonition, label: "Admonition" },
+]
 
-export const conditionalServerComponents: ConditionalComponentQuery<EmbeddableClientComponents>[] =
-    [...conditionalClientComponents];
+let clientOverrideNames = clientOverrides.map((x) => x.label)
+
+let filtered = clientComponents.filter((x) => clientOverrideNames.includes(x.label))
+
+for (const k of filtered) {
+   console.log(`Remove the ${k.label} component from the client component list being provided to the server components to avoid uneccessary load weight.`) 
+}
+
+let serverComponents = clientComponents.map((x) => clientOverrideNames.includes(x.label) ? clientOverrides.find((j) => j.label === x.label) : x)
+
+
+export const conditionalServerComponents: ConditionalComponentQuery<EmbeddableClientComponents>[] = serverComponents as any;

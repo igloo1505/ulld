@@ -6,7 +6,6 @@ import { getComponentMap } from "@ulld/component-map/server";
 import { ConditionalComponentProps } from "@ulld/component-map/types";
 import { AdditionalComponents } from "@ulld/component-map/types";
 
-
 interface MdxToHtmlProps {
     rawContent: string;
     appConfig: AppConfigSchemaOutput;
@@ -14,12 +13,11 @@ interface MdxToHtmlProps {
     componentOpts?: ConditionalComponentProps;
 }
 
-
 export const mdxToHtml = async ({
     rawContent,
     appConfig,
     components = [],
-    componentOpts
+    componentOpts,
 }: MdxToHtmlProps) => {
     let frontMatter = grayMatter(rawContent);
     let parsedContent = await parseMdxString({
@@ -28,7 +26,6 @@ export const mdxToHtml = async ({
     });
 
     const _components = getComponentMap(rawContent, componentOpts, components);
-
 
     const fullScope = Object.assign(
         {

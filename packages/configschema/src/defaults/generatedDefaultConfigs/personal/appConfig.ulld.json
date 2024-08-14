@@ -316,6 +316,19 @@
         "editor": {
             "defaultLangauge": "python",
             "useVimMode": true
+        },
+        "syntaxHighlighting": {
+            "transformers": {
+                "regexHighlight": true,
+                "lineHighlight": true,
+                "lineFocus": false,
+                "lineErrorLevel": false,
+                "lineDiff": false
+            },
+            "defaultLanguage": {
+                "inline": "zsh",
+                "block": "python"
+            }
         }
     },
     "math": {
@@ -478,7 +491,8 @@
                 "light": "hsl(var(--secondary))"
             }
         },
-        "theme": "ulld"
+        "theme": "ulld",
+        "autoApplyMdxTitles": true
     },
     "database": {
         "storeFormatted": true,

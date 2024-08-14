@@ -26,7 +26,7 @@ const Title = dynamic(() => import("@ulld/embeddable-components/components/clien
 const Highlight = dynamic(() => import("@ulld/embeddable-components/components/client/hl").then((a) => a.Highlight))
 const Underline = dynamic(() => import("@ulld/embeddable-components/components/client/ul").then((a) => a.Underline))
 // const Tooltip = dynamic(() => import("./emeddedComponents/TT"))
-// const DivElement = dynamic(() => import("./Div"))
+const DivElement = dynamic(() => import("@ulld/embeddable-components/components/div").then((x) => x.DivElement))
 const Small = dynamic(() => import("@ulld/embeddable-components/components/client/text/small").then((a) => a.Small))
 const Large = dynamic(() => import("@ulld/embeddable-components/components/client/text/large").then((a) => a.Large))
 const Centered = dynamic(() => import("@ulld/embeddable-components/components/client/text/centered").then((a) => a.CenteredText))
@@ -77,6 +77,7 @@ export const conditionalClientComponents: ConditionalComponentQuery<EmbeddableCl
         { regex: new RegExp(`<Center`), component: Centered, label: "Center" },
         { regex: new RegExp(`<Boxed`), component: Boxed, label: "Boxed" },
         { regex: new RegExp(`<TagBar`), component: TagBar, label: "TagBar" },
+        { regex: new RegExp(`<Div`), component: DivElement, label: "Div" },
      
         // Text Styling Components
         { regex: new RegExp(`<Small`), component: Small, label: "Small" },

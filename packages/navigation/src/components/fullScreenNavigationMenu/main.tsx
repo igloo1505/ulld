@@ -38,7 +38,7 @@ const FullScreenNavigationMenu = ({
     return (
         <div
             className={
-                "w-full bg-background min-h-screen pb-8 pt-4 px-[8%] flex flex-col justify-start items-start gap-3 md:gap-6 relative"
+                "w-full bg-background min-h-screen pb-8 pt-4 px-[8%] flex flex-col lg:flex-row justify-start items-start gap-3 md:gap-6 relative"
             }
         >
             {isModal && (
@@ -49,7 +49,7 @@ const FullScreenNavigationMenu = ({
             )}
             <div
                 className={
-                    "w-full flex flex-col justify-start items-start gap-3 md:grid md:grid-cols-[1fr_1fr] md:gap-6"
+                    "w-full flex flex-col justify-start items-start gap-3 md:gap-6"
                 }
             >
                 <FullScreenNavigationGroup
@@ -58,17 +58,18 @@ const FullScreenNavigationMenu = ({
                         label: p.label,
                         url: p.url,
                         id: p.id,
+                        icon: p.icon
                     }))}
                     label="Notes"
                 />
             </div>
             <div
                 className={
-                    "w-full flex flex-col justify-start items-start gap-3 md:grid"
+                    "w-full flex flex-col justify-start items-start gap-3 md:gap-6"
                 }
-                style={{
-                    gridTemplateColumns: `repeat(${items.length}, 1fr)`,
-                }}
+                /* style={{ */
+                /*     gridTemplateColumns: `repeat(${items.length}, 1fr)`, */
+                /* }} */
             >
                 <FullScreenNavigationGroup
                     key={`left-over-2`}

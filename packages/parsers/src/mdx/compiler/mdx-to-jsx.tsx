@@ -83,7 +83,11 @@ const rehypePlugins = async (
                 onVisitHighlightedWord(node: any) {
                     node.properties.className = ["word--highlighted"];
                 },
-                transformers: shikiTransformers
+                transformers: shikiTransformers,
+                defaultLang: {
+                    block: config?.code.syntaxHighlighting.defaultLanguage.block,
+                    inline: config?.code.syntaxHighlighting.defaultLanguage.inline
+                }
             },
         ],
         [

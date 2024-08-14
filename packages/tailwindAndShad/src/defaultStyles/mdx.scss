@@ -64,7 +64,7 @@ html.dark {
 
 span[data-rehype-pretty-code-figure] {
   code {
-    /* padding: 0.2rem 0.3rem; */
+    padding: 0.2rem 0.3rem;
     border-radius: 6px;
     &::before {
       content: "" !important;
@@ -423,6 +423,11 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
     ol {
       font-size: 0.875rem;
     }
+  }
+  mjx-container[jax="CHTML"][display="true"] {
+    min-width: 0px !important;
+    max-width: 100%;
+    overflow-x: auto;
   }
 }
 

@@ -1,6 +1,6 @@
 "use client";
-import { cn } from "@ulld/utilities/cn";
 import React, { HTMLProps } from "react";
+import { cn } from "@ulld/utilities/cn";
 import { AdmonitionType } from "@ulld/utilities/admonition/types";
 import { useMathjaxDynamicParse } from "@ulld/hooks/useMathjaxDynamicParse";
 import { useMemoizedIcon } from "../../../hooks/useMemoizedIcon";
