@@ -31,6 +31,15 @@ const code_config_schema = z.object({
             light: "material-theme-lighter",
         }),
     editor: monacoEditorConfigSchema,
+    syntaxHighlighting: z.object({
+        transformers: z.object({
+            regexHighlight: z.boolean().describe("shiki#transformerMetaWordHighlight").default(true),
+            lineHighlight: z.boolean().describe("shiki#transformerMetaHighlight").default(true),
+            lineFocus: z.boolean().describe("shiki#transformerNotationFocus").default(false),
+            lineErrorLevel: z.boolean().describe("shiki#transformerNotationErrorLevel").default(false),
+            lineDiff: z.boolean().describe("shiki#transformerNotationDiff").default(false)
+        }).default({})
+    }).default({})
 });
 
 export const codeConfigSchema = code_config_schema.default({});

@@ -41,11 +41,12 @@
   "dependencies": {
     "@citation-js/plugin-bibtex": "0.7.8",
     "@citation-js/plugin-csl": "0.7.6",
+    "@shikijs/transformers": "^1.6.4",
+    "@ulld/component-map": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/database": "workspace:*",
     "@ulld/developer": "workspace:*",
     "@ulld/utilities": "workspace:*",
-    "@ulld/component-map": "workspace:*",
     "citation-js": "0.7.8",
     "mathjax-full": "3.2.2",
     "node-latex": "3.1.0",

@@ -6,8 +6,6 @@ import {
 } from "@ulld/utilities/defaults/defaultMermaidConfig";
 import { mathOptions } from "@ulld/utilities/defaults/markdownUniversalOptions";
 import {
-    rehypeCode,
-    rehypeCodeDefaultOptions,
     remarkHeading,
     remarkStructure,
 } from "fumadocs-core/mdx-plugins";
@@ -21,6 +19,7 @@ import emoji from "remark-emoji";
 import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
+import { highlightTransformerMap } from "../utils/highlightTransformerMap";
 
 export const mermaidConfig: MermaidConfigType = {
     output: "svg",
@@ -31,9 +30,30 @@ export const mermaidConfig: MermaidConfigType = {
     },
 };
 
-const rehypePlugins = (
-    config?: Partial<AppConfigSchemaOutput>,
-): CompileOptions["rehypePlugins"] => {
+const getShikiTransformers = async (config?: AppConfigSchemaOutput) => {
+    let x: any[] = []
+    let transformerData = config?.code.syntaxHighlighting.transformers
+    if(!transformerData){
+        let wordHighlight = await import("@shikijs/transformers").then((x) => x.transformerMetaWordHighlight)
+        let lineHighlight = await import("@shikijs/transformers").then((x) => x.transformerMetaHighlight)
+        return [
+            wordHighlight,
+            lineHighlight
+        ]
+    }
+    for (const k in transformerData) {
+       if(transformerData[k as keyof typeof transformerData]){
+            let transformerItem = await import("@shikijs/transformers").then((x) => x[highlightTransformerMap[k as keyof typeof highlightTransformerMap]])
+            x.push(transformerItem)
+        } 
+    }
+    return x
+}
+
+const rehypePlugins = async (
+    config?: AppConfigSchemaOutput,
+): Promise<CompileOptions["rehypePlugins"]> => {
+    let shikiTransformers = await getShikiTransformers(config)
     return [
         /* TODO: Add an embeded video component for this rehypeVideo that then utilizes the existing video element. */
         [
@@ -47,7 +67,7 @@ const rehypePlugins = (
         [
             rehypePrettyCode as any,
             {
-                keepBackground: false,
+                keepBackground: true,
                 theme: {
                     light: config?.code?.theme?.light || "material-theme-lighter",
                     dark: config?.code?.theme?.dark || "dracula",
@@ -63,6 +83,7 @@ const rehypePlugins = (
                 onVisitHighlightedWord(node: any) {
                     node.properties.className = ["word--highlighted"];
                 },
+                transformers: shikiTransformers
             },
         ],
         [
@@ -77,11 +98,12 @@ const rehypePlugins = (
         rehypeSlug,
     ];
 };
+
 const remarkPlugins = (
     /* config?: AppConfigSchemaOutput, */
 ): CompileOptions["remarkPlugins"] => {
     return [
-        remarkMath, 
+        remarkMath,
         remarkHeading,
         remarkStructure,
         /* @ts-ignore */
@@ -95,13 +117,14 @@ export const parseMdxString = async ({
     content,
     appConfig
 }: {
-        content: string
-        appConfig?: Partial<AppConfigSchemaOutput>
-    }) => {
+    content: string
+    appConfig: AppConfigSchemaOutput
+}) => {
+    let _rehypePlugins = await rehypePlugins(appConfig)
     let res = await compile(content, {
         outputFormat: "function-body",
         remarkPlugins: remarkPlugins(),
-        rehypePlugins: rehypePlugins(appConfig),
+        rehypePlugins: _rehypePlugins,
         development: process.env.NODE_ENV === "development",
         /* baseUrl: import.meta.url */
     });

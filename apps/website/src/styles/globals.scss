@@ -96,4 +96,10 @@ mjx-container[jax="CHTML"][display="true"] {
       margin-right: 0.25rem;
     }
   }
+
+  span[data-rehype-pretty-code-figure] {
+    code {
+      background-color: #282a36;
+    }
+  }
 }

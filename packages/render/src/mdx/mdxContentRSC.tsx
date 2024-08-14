@@ -43,7 +43,9 @@ export const MdxContentRSC = async ({
     components = [],
     ..._props
 }: MdxContentRSCProps) => {
+
     let appConfig = _props.appConfig || (await readAppConfig());
+
     const props = parseProps(_props);
 
     let data = await mdxToHtml({

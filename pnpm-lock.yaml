@@ -737,10 +737,10 @@ importers:
     dependencies:
       '@citation-js/plugin-bibtex':
         specifier: 0.7.8
-        version: 0.7.8(@citation-js/core@0.7.6(encoding@0.1.13))
+        version: 0.7.8(@citation-js/core@0.7.14(encoding@0.1.13))
       '@citation-js/plugin-csl':
         specifier: 0.7.6
-        version: 0.7.6(@citation-js/core@0.7.6(encoding@0.1.13))
+        version: 0.7.6(@citation-js/core@0.7.14(encoding@0.1.13))
       '@ulld/api':
         specifier: workspace:*
         version: link:../api
@@ -3149,10 +3149,13 @@ importers:
     dependencies:
       '@citation-js/plugin-bibtex':
         specifier: 0.7.8
-        version: 0.7.8(@citation-js/core@0.7.14(encoding@0.1.13))
+        version: 0.7.8(@citation-js/core@0.7.6(encoding@0.1.13))
       '@citation-js/plugin-csl':
         specifier: 0.7.6
-        version: 0.7.6(@citation-js/core@0.7.14(encoding@0.1.13))
+        version: 0.7.6(@citation-js/core@0.7.6(encoding@0.1.13))
+      '@shikijs/transformers':
+        specifier: ^1.6.4
+        version: 1.12.0
       '@ulld/component-map':
         specifier: workspace:*
         version: link:../component-map

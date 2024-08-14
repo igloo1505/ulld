@@ -35,10 +35,36 @@ p code {
   }
 }
 
+/* WARN: This might be a cause of issues with the website if code highlighting in that app suddenly breaks. If that works fine, delete this comment. Otherwise, apply this conditionally to the generated app. */
+*[data-rehype-pretty-code-figure] {
+  code {
+    font-size: 13px;
+    span {
+      color: var(--shiki-light) !important;
+      background-color: var(--shiki-light-bg) !important;
+      font-style: var(--shiki-light-font-style) !important;
+      font-weight: var(--shiki-light-font-weight) !important;
+      text-decoration: var(--shiki-light-text-decoration) !important;
+    }
+  }
+}
+
+html.dark {
+  *[data-rehype-pretty-code-figure] {
+    code,
+    code span {
+      color: var(--shiki-dark) !important;
+      background-color: var(--shiki-dark-bg) !important;
+      font-style: var(--shiki-dark-font-style) !important;
+      font-weight: var(--shiki-dark-font-weight) !important;
+      text-decoration: var(--shiki-dark-text-decoration) !important;
+    }
+  }
+}
+
 span[data-rehype-pretty-code-figure] {
   code {
-    background-color: #282a36;
-    padding: 0.2rem 0.3rem;
+    /* padding: 0.2rem 0.3rem; */
     border-radius: 6px;
     &::before {
       content: "" !important;
