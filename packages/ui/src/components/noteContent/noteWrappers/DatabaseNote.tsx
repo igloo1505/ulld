@@ -13,13 +13,13 @@ interface DatbaseNoteProps extends NotePageProps {
     NoteDetailSheet: ProvidedNoteDetailSheet
 }
 
-const DatabaseNote = async ({NoteDetailSheet, ...props}: DatbaseNoteProps) => {
+const DatabaseNote = async (props: DatbaseNoteProps) => {
     let nt = props.noteProps.format;
+
     if ([".mdx", ".md"].includes(nt)) {
         return (
             <PageContentContainer canBookmark>
                 <DatabaseMdxPage {...props} />
-                <NoteDetailSheet format="mdx" />
             </PageContentContainer>
         );
     }
@@ -33,7 +33,6 @@ const DatabaseNote = async ({NoteDetailSheet, ...props}: DatbaseNoteProps) => {
                         props.rootRelativeWithExtension || `${props.rootRelativePath}.ipynb`
                     }
                 />
-                <NoteDetailSheet format="notebook" />
             </PageContentContainer>
         );
     }

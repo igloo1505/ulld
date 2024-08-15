@@ -5,10 +5,10 @@ import {
     TOCItemType,
 } from "@ulld/utilities/getTocFromContent";
 
-interface NoteDetailSheetEvent {
-    title: string;
-    tags: string[];
-    quickLinkId?: string;
+export interface NoteDetailSheetEvent {
+    // title: string;
+    // tags: string[];
+    // quickLinkId?: string;
     headings: TOCItemType[];
 }
 

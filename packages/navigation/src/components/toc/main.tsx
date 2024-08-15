@@ -1,8 +1,10 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useEffect, useMemo, useState } from "react";
 import { TOCProvider } from "fumadocs-core/toc";
-import TocItemInternal from "./tocItem";
-import { useNoteDetailSheet } from "@ulld/hooks/useNoteDetailSheet";
+import {
+  showNoteDetailSheet,
+  useNoteDetailSheet,
+} from "@ulld/hooks/useNoteDetailSheet";
 import {
   Sheet,
   SheetClose,
@@ -11,29 +13,62 @@ import {
   SheetFooter,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
 } from "@ulld/tailwind/sheet";
+import { NoteDetailSheetProps } from "../../types";
+/* @ts-ignore */
+import { tinykeys } from "tinykeys";
+import {
+  getTocFromContent,
+  TOCItemType,
+} from "@ulld/utilities/getTocFromContent";
+import TocHeadingItem from "./headingItem";
 
+const NoteDetailsSheet = ({
+  rawContent,
+  format,
+  noteProps,
+  docTypeData,
+}: NoteDetailSheetProps) => {
+  const [open, setOpen] = useState(false);
 
-const NoteDetailsSheet = (props: NoteDetailSheetProps) => {
-  const [details, close] = useNoteDetailSheet();
+  const [headings, setHeadings] = useState<null | TOCItemType[]>(null);
 
-  if (!details) {
+  const gatherHeadings = async (_content: string) => {
+    let h = await getTocFromContent(_content);
+    setHeadings(h);
+  };
+
+  useEffect(() => {
+        if(rawContent){
+            gatherHeadings(rawContent);
+        } else {
+            setHeadings(null)
+        }
+  }, [rawContent]);
+
+  useEffect(() => {
+    tinykeys(window, {
+      "Meta+Shift+K": () => {
+        setOpen(true);
+      },
+    });
+  }, []);
+
+  if (!headings) {
     return null;
   }
 
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Table of Contents</SheetTitle>
         </SheetHeader>
-        <div className="space-y-2"></div>
-        {/* <SheetFooter> */}
-        {/*   <SheetClose asChild> */}
-        {/*     <Button type="submit">Save changes</Button> */}
-        {/*   </SheetClose> */}
-        {/* </SheetFooter> */}
+        <div className="toc-disable-highlights flex flex-col justify-start items-start gap-2 my-4">
+          {headings.map((x) => {
+            return <TocHeadingItem key={x.url} {...x} close={() => setOpen(false)} />;
+          })}
+        </div>
       </SheetContent>
     </Sheet>
   );

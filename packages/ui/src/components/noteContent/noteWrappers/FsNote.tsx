@@ -9,13 +9,12 @@ interface FileSystemNoteProps extends NotePageProps {
     NoteDetailSheet: ProvidedNoteDetailSheet
 }
 
-const FileSystemNote = ({NoteDetailSheet, ...props}: FileSystemNoteProps) => {
+const FileSystemNote = (props: FileSystemNoteProps) => {
     if (props.noteProps.format === ".mdx") {
         return (
             <PageContentContainer canBookmark>
                 <MathjaxProvider>
-                    <FileSystemMdxPage {...props} extension={props.noteProps.format} />
-                   <NoteDetailSheet format="mdx" />
+                    <FileSystemMdxPage {...props} extension={".mdx"} />
                 </MathjaxProvider>
             </PageContentContainer>
         );
@@ -23,8 +22,7 @@ const FileSystemNote = ({NoteDetailSheet, ...props}: FileSystemNoteProps) => {
     if (props.noteProps.format === ".md") {
         return (
             <PageContentContainer canBookmark>
-                <FileSystemMdxPage {...props} extension={props.noteProps.format} />
-                   <NoteDetailSheet format="mdx" />
+                <FileSystemMdxPage {...props} extension={".md"} />
             </PageContentContainer>
         );
     }

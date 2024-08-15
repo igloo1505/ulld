@@ -34,6 +34,7 @@
     "@ulld/tailwind": "workspace:*",
     "@ulld/typescript-config": "workspace:*",
     "@ulld/utilities": "workspace:*",
+    "@ulld/render": "workspace:*",
     "next": "^14.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -58,7 +59,8 @@
   "dependencies": {
     "autoprefixer": "10.4.18",
     "fuse.js": "7.0.0",
-    "postcss": "8.4.35"
+    "postcss": "8.4.35",
+    "tinykeys": "^2.1.0"
   },
   "publishConfig": {
     "access": "public"
@@ -74,42 +76,42 @@
         "tags": [],
         "slot": "navbar",
         "export": "navbar",
-        "componentId": "4863df69-1f83-43ae-b313-f50a88453fef"
+        "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
       },
       {
         "componentName": "SidebarNavigation",
         "tags": [],
         "slot": "secondary",
         "export": "sidebar",
-        "componentId": "4863df69-1f83-43ae-b313-f50a88453fef"
+        "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
       },
       {
         "componentName": "MultiPageSidebar",
         "tags": [],
         "slot": "MultiPageSidebar",
         "export": "multiPageSidebar",
-        "componentId": "4863df69-1f83-43ae-b313-f50a88453fef"
+        "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
       },
       {
         "componentName": "FullScreenNavigation",
         "tags": [],
         "slot": "FullScreenNavigationMenu",
         "export": "fullScreenNav",
-        "componentId": "4863df69-1f83-43ae-b313-f50a88453fef"
+        "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
       },
       {
         "componentName": "FooterComponent",
         "tags": [],
         "slot": "Footer",
         "export": "footerSlotComponent",
-        "componentId": "4863df69-1f83-43ae-b313-f50a88453fef"
+        "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
       },
       {
-        "componentName": "MdxNoteToc",
+        "componentName": "NoteDetailPopover",
         "tags": [],
-        "slot": "MdxNoteToc",
-        "export": "mdxNoteToc",
-        "componentId": "4863df69-1f83-43ae-b313-f50a88453fef"
+        "slot": "NoteDetailSheet",
+        "export": "noteDetailPopover",
+        "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
       }
     ],
     "parsers": {},

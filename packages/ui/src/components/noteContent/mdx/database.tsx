@@ -8,15 +8,19 @@ import { MdxContentRSC } from "@ulld/render/mdx/rsc";
 import grayMatter from "gray-matter";
 import { notFound } from "next/navigation";
 import serverLogger from "@ulld/logger/server";
+import { ProvidedNoteDetailSheet } from "../../../types/general";
 
 interface DatabaseMdxPageProps extends NotePageProps {
     embeddableComponents: AdditionalComponents;
     rootRelativePath: string;
     extension?: ".mdx" | ".md";
+    NoteDetailSheet: ProvidedNoteDetailSheet;
 }
 
-const DatabaseMdxPage = async (props: DatabaseMdxPageProps) => {
-
+const DatabaseMdxPage = async ({
+    NoteDetailSheet,
+    ...props
+}: DatabaseMdxPageProps) => {
     let item = await serverClient.mdx.getDatabaseMdx(
         props.noteProps.rootRelativePathWithExtension ||
         `${props.noteProps.rootRelativePath}.mdx`,
@@ -25,12 +29,6 @@ const DatabaseMdxPage = async (props: DatabaseMdxPageProps) => {
     if (!item) {
         return notFound();
     }
-
-    serverLogger.verbose(item, {
-        label: "item",
-        component: "DatabaseMdxPage",
-        disable: true,
-    });
 
     let frontMatter = grayMatter(item.content);
 
@@ -53,27 +51,30 @@ const DatabaseMdxPage = async (props: DatabaseMdxPageProps) => {
         docTypeData: props.parsers.mdx.docTypeData,
     });
 
-    console.log("parsedData: ", parsedData);
-
-    /* serverLogger.verbose(parsedData, { */
-    /*   label: "Parsed Data", */
-    /*   component: "DatabaseMdxPage", */
-    /*   contentSyntaxType: "json", */
-    /*   disable: true */
-    /* }); */
+    serverLogger.debug(parsedData, {
+        label: "Parsed Data",
+        component: "DatabaseMdxPage",
+        contentSyntaxType: "json",
+    });
 
     return (
-        <IndividualNoteContainer
-            parsedData={parsedData.data || frontMatter}
-            type="fs"
-            details={details}
-        >
-            <MdxContentRSC 
-                content={parsedData?.content || frontMatter.content}
-                components={props.embeddableComponents}
-                appConfig={props.parsers.mdx.appConfig}
+        <>
+            <NoteDetailSheet
+                format="mdx"
+                rawContent={parsedData?.content || frontMatter.content}
             />
-        </IndividualNoteContainer>
+            <IndividualNoteContainer
+                parsedData={parsedData.data || frontMatter}
+                type="fs"
+                details={details}
+            >
+                <MdxContentRSC
+                    content={parsedData?.content || frontMatter.content}
+                    components={props.embeddableComponents}
+                    appConfig={props.parsers.mdx.appConfig}
+                />
+            </IndividualNoteContainer>
+        </>
     );
 };
 

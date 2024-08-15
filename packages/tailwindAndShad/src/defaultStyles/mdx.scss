@@ -552,3 +552,20 @@ dl.definitionAnchor {
     padding-right: 0px;
   }
 }
+
+.toc-disable-highlights {
+  text-decoration: none !important;
+  font-weight: 400 !important;
+  font-style: inherit !important;
+  .highlight-background {
+    background-color: hsl(var(--background)) !important;
+    * {
+      background-color: hsl(var(--background)) !important;
+    }
+  }
+  * {
+    text-decoration: none !important;
+    font-weight: 400 !important;
+    font-style: inherit !important;
+  }
+}

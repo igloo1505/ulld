@@ -48,7 +48,7 @@ export const Highlight = (
             >
                 <span
                     className={clsx(
-                        "px-1 rounded-md",
+                        "px-1 rounded-md highlight-background highlight-text",
                         (p.faint || p.light) && "bg-opacity-50",
                         p.muted && "text-muted-foreground",
                         p.className,
@@ -69,7 +69,7 @@ export const Highlight = (
         <span
             {...p}
             className={clsx(
-                "px-1 rounded-md",
+                "px-1 rounded-md highlight-background highlight-text",
                 (p.faint || p.light) && "bg-opacity-50",
                 p.muted && "text-muted-foreground",
                 p.className,
