@@ -28,7 +28,7 @@ export const defaultDocsSidebarLinks: BaseLayoutProps["links"] = [
     },
     {
         text: "Sponsor",
-        url: "/sponsor/newSponsors",
+        url: "/sponsor",
         active: "nested-url",
     },
 ];

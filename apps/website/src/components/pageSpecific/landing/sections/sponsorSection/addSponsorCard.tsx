@@ -21,7 +21,7 @@ const AddSponsorCard = () => {
       }
       title="Add your company"
       desc="This is a sample sponsor card. Replace one of these cards with your logo and a link to your site by clicking below."
-      href="/sponsor/newSponsors"
+      href="/sponsor"
     />
   );
 };
