@@ -1,3 +1,4 @@
+"use client"
 import { useToast} from '@ulld/tailwind/use-toast'
 import {  Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@ulld/tailwind/card'
 import { Button } from '@ulld/tailwind/button'
@@ -20,7 +21,6 @@ interface EquationDisplayProps {
 
 export const EquationDisplay = ({ equation, className, noDefaultClasses, bareAss }: EquationDisplayProps) => {
     const { toast } = useToast()
-    console.log("equation: ", equation)
     const id = equation.id && equation.id >= 0 ? `equation-${equation.id}` : "addEquation_Equation"
 
     const copyIdToClipboard = async () => {

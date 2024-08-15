@@ -27,7 +27,6 @@
     "./codeHighlightContainer": "./src/components/code/syntaxHighlighting/codeHighlightContainer.tsx",
     "./copyContextMenu": "./src/components/landing/hero/util/copyContextMenu.tsx",
     "./stringBadgeList": "./src/components/inputs/stringBadgeList.tsx",
-    "./deleteModalTriggerButton": "./src/components/inputs/deleteModalTriggerButton.tsx",
     "./getConditionalComponents/client": "./src/components/markdown/getConditionalClientComponents.ts",
     "./autoWrapCode": "./src/components/layouts/wrappingCode.tsx",
     "./randomBackground": "./src/components/landing/hero/randomBackground.tsx",
@@ -57,7 +56,8 @@
     "./fileSystemMdxPage": "./src/components/noteContent/mdx/fileSystem.tsx",
     "./databaseMdxPage": "./src/components/noteContent/mdx/database.tsx",
     "./animatedCheckbox": "./src/components/animated/checkbox/main.tsx",
-    "./filePathInputModal": "./src/components/modals/filePathInputModal/main.tsx"
+    "./filePathInputModal": "./src/components/modals/filePathInputModal/main.tsx",
+    "./pageContainer": "./src/components/layouts/pageContentContainer.tsx"
   },
   "scripts": {
     "build": "echo 'add build:internal script here'",
@@ -130,6 +130,7 @@
     "@ulld/state": "workspace:*",
     "@ulld/tailwind": "workspace:*",
     "@ulld/utilities": "workspace:*",
+    "@ulld/navigation": "workspace:*",
     "axios": "1.6.7",
     "babel-loader": "9.1.3",
     "babel-plugin-transform-remove-imports": "1.7.1",

@@ -1,9 +1,10 @@
 import { serverLogger } from "@ulld/logger/server";
-import React from "react";
+import React, { ComponentType } from "react";
 import { NotePageProps } from "../../utilityFunctions/formatting/formatNoteProps";
 import ResetPathDependentComponents from "../landing/hero/util/resetPathDependentComponents";
 import DatabaseNote from "./noteWrappers/DatabaseNote";
 import FsNote from "./noteWrappers/FsNote";
+import { NoteDetailSheetProps } from '@ulld/navigation/types';
 
 export const IndividualNoteSwitch = async (
     props: Omit<
@@ -12,7 +13,9 @@ export const IndividualNoteSwitch = async (
         | "rootRelativeWithExtension"
         | "absolutePath"
         | "rootRelativePath"
-    >,
+    > & {
+        NoteDetailSheet: ComponentType<Omit<NoteDetailSheetProps, "docTypeData" | "noteProps">>
+    }
 ) => {
     const { noteProps } = props;
     serverLogger.info(noteProps, {

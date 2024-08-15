@@ -20,7 +20,7 @@ const Navbar = () => {
         <div
             id="main-navbar-container"
             className={
-                "absolute bg-background z-[5] top-0 left-0 right-0 w-full flex flex-row justify-between items-center h-20 px-6"
+                "absolute bg-background z-[11] top-0 left-0 right-0 w-full flex flex-row justify-between items-center h-20 px-6"
             }
         >
             <div className={"w-fit h-full flex flex-row justify-start items-center"}>

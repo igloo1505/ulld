@@ -1,6 +1,5 @@
 import {
     AutoSettingType,
-    ConfirmationModalConfig,
     ContentHeading,
     LetterType,
     NoteTypePageProps,
@@ -11,12 +10,8 @@ import { NoteFilter } from "@ulld/api/classes/search/noteFilter";
 import { ComponentDocsQueryParams } from "@ulld/utilities/types";
 import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
+import { NoteDetailSheetProps } from "@ulld/navigation/types";
 
-
-export interface MdxNoteTocProps {
-    headings: ContentHeading[];
-    footer?: ReactNode;
-}
 
 export interface ToastConfigType {
     destructive?: boolean;
@@ -103,7 +98,7 @@ export type NoteTypeSearchResultListProps = Pick<
 export interface NotePageWrapperProps extends NoteTypePageProps {
     children: ReactNode;
     docTypeData?: AppConfigSchemaOutput["noteTypes"][number];
-    toc: ComponentType<MdxNoteTocProps>
+    toc: ComponentType<NoteDetailSheetProps>
 }
 
 export interface NoteTypeSecondaryFilterProps extends NoteTypePageProps {
@@ -123,5 +118,10 @@ export interface ComponentDocWrapperProps {
     headings: ContentHeading[];
     item: BuildStaticDataOutput["componentDocs"][number];
     children: ReactNode;
-    toc: ComponentType<MdxNoteTocProps>;
+    toc: ComponentType<NoteDetailSheetProps>;
 }
+
+
+export type ProvidedNoteDetailSheet = ComponentType<Omit<NoteDetailSheetProps, "docTypeData" | "noteProps">>
+
+

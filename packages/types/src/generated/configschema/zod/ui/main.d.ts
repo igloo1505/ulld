@@ -71,6 +71,7 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
         light?: string | undefined;
     } | null | undefined>>>;
     theme: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"blue">, z.ZodLiteral<"gray">, z.ZodLiteral<"green">, z.ZodLiteral<"neutral">, z.ZodLiteral<"orange">, z.ZodLiteral<"red">, z.ZodLiteral<"rose">, z.ZodLiteral<"slate">, z.ZodLiteral<"stone">, z.ZodLiteral<"violet">, z.ZodLiteral<"yellow">, z.ZodLiteral<"zinc">, z.ZodLiteral<"ulld">]>>;
+    autoApplyMdxTitles: z.ZodDefault<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
     table: {
         maxHeight: string;
@@ -97,6 +98,7 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
         dark?: string | undefined;
         light?: string | undefined;
     } | undefined>;
+    autoApplyMdxTitles: boolean;
 }, {
     table?: {
         maxHeight?: string | number | undefined;
@@ -119,5 +121,6 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
         light?: string | undefined;
     } | null | undefined> | undefined;
     theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
+    autoApplyMdxTitles?: boolean | undefined;
 }>>;
 //# sourceMappingURL=main.d.ts.map

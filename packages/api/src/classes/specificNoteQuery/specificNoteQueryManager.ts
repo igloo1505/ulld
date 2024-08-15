@@ -10,21 +10,8 @@ import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
 import { getPathnameFromHeaders } from "@ulld/utilities/getPathnameFromHeaders";
 import { FsRootGlob } from "@ulld/utilities/fsRootGlob"
 import { supportedFileTypes } from "@ulld/types/enums";
+import { NotePropertiesOutput } from "@ulld/types";
 
-
-type NotePropertiesOutput = ({
-    useFs: true
-    format: ParsableExtensions
-    rootRelativePath: string
-    rootRelativePathWithExtension: string
-    absolutePath: string
-}) | ({
-    useFs: false
-    format: ParsableExtensions
-    rootRelativePath: string
-    rootRelativePathWithExtension?: string
-    absolutePath?: string
-})
 
 type NotePropsBeforeRun = {
     slug: string;

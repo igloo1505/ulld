@@ -1,5 +1,5 @@
 "use client"
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useMemo, useState} from 'react'
 import type { MdxContentSERVERProps } from './mdxContentSERVER'
 import { useDebounceMdxParse } from '@ulld/hooks/useDebounceMdxParse'
 import { autoWrapMath } from "@ulld/utilities/latexUtils"
@@ -14,7 +14,10 @@ interface MdxContentClientSideProps extends Omit<MdxContentSERVERProps, "appConf
 }
 
 export const MdxContentCLIENT = (props: MdxContentClientSideProps) => {
-    const {value, setValue, Component, isReady } = useDebounceMdxParse(props.content, props.debounceTimeout || 350, {
+
+    let memoizedValue = useMemo(() => props.content, [props.content])
+
+    const {value, setValue, Component, isReady } = useDebounceMdxParse(memoizedValue, props.debounceTimeout || 350, {
         bareAss: props.bareAss === false ? false : true
     })
     const [hasSetReady, setHasSetReady] = useState(false)

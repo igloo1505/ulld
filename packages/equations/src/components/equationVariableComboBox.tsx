@@ -71,7 +71,7 @@ const EquationVariableComboBox = ({
               <Command>
                 <CommandInput placeholder="Search variables..." />
                 <CommandEmpty>No variables found.</CommandEmpty>
-                <CommandGroup>
+                <CommandGroup className={vars.length ? "" : "py-0"}>
                   {vars.map((t) => (
                     <CommandItem
                       value={t}
@@ -95,7 +95,6 @@ const EquationVariableComboBox = ({
               </Command>
             </PopoverContent>
           </Popover>
-          <FormDescription>Filter equations by variables</FormDescription>
           <FormMessage />
         </FormItem>
       )}

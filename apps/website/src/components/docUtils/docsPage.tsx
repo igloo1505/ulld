@@ -2,7 +2,7 @@ import { cn } from "@ulld/utilities/cn";
 import { PageType } from "#/types/general";
 import { MDXContent } from "@content-collections/mdx/react";
 import "fumadocs-ui/twoslash.css";
-import { DocsBody, DocsPage, DocsPageProps } from "fumadocs-ui/page";
+import { DocsBody, DocsPage } from "fumadocs-ui/page";
 import React, { ComponentProps, ReactNode } from "react";
 import TypeTable from "./typeTable";
 import ApplyMathjaxBandaid from "../utility/applyMathjaxBandaid";

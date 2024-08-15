@@ -53,9 +53,9 @@ export interface SlotMap {
     }, 
     "navigation": {
         secondary: string,
+        NoteDetailSheet: string,
         navbar: string,
         MultiPageSidebar: string,
-        MdxNoteToc: string,
         FullScreenNavigationMenu: string,
         Footer: string,
     }, 

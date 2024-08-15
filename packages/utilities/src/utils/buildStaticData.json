@@ -46,8 +46,8 @@
         "SettingsPageContainerProps": "@ulld/full-form/types",
         "ComponentDocsListPageProps": "@ulld/ui/types",
         "ComponentDocWrapperProps": "@ulld/ui/types",
-        "MdxNoteTocProps": "FIX ME",
-        "DictionaryLetterListProps": "FIX ME"
+        "DictionaryLetterListProps": "@ulld/ui/types",
+        "NoteDetailSheetProps": "@ulld/navigation/types"
     },
     "protectedPaths": [
         {
@@ -254,6 +254,7 @@
     "reservedPublicDirs": [
         "utils",
         "scripts",
+        "mathjax",
         "highlighting",
         "font"
     ],

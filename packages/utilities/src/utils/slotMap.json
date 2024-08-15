@@ -287,6 +287,13 @@
             "type": "component",
             "propsExtends": "SecondaryNavigationProps"
         },
+        "NoteDetailSheet": {
+            "path": "src/components/slots/navigation/noteDetailSheet.tsx",
+            "clientOnly": false,
+            "inReduxProvider": false,
+            "type": "component",
+            "propsExtends": "NoteDetailSheetProps"
+        },
         "navbar": {
             "path": "src/components/slots/navigation/navbar.tsx",
             "clientOnly": false,
@@ -300,13 +307,6 @@
             "inReduxProvider": false,
             "type": "component",
             "propsExtends": "MultipageSidebarProps"
-        },
-        "MdxNoteToc": {
-            "path": "src/components/slots/navigation/mdxNoteToc.tsx",
-            "clientOnly": false,
-            "inReduxProvider": false,
-            "type": "component",
-            "propsExtends": "MdxNoteTocProps"
         },
         "FullScreenNavigationMenu": {
             "path": "src/components/slots/navigation/fullScreenNavigationMenu.tsx",

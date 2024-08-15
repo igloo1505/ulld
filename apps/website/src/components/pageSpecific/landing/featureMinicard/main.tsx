@@ -86,7 +86,7 @@ const MiniFeatureCard = ({
                     >
                         <Plus
                             className={
-                                "text-muted/50 w-4 h-4 group-hover/scrollIcon:text-foreground"
+                                "stroke-muted/50 w-4 h-4 group-hover/scrollIcon:stroke-foreground"
                             }
                         />
                     </Link>

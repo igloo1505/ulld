@@ -83,9 +83,9 @@ export const pdfSubkeySchema = z.literal("FullPdf")
 
 export const navigationSubkeySchema = z.union([
     z.literal("secondary"),
+    z.literal("NoteDetailSheet"),
     z.literal("navbar"),
     z.literal("MultiPageSidebar"),
-    z.literal("MdxNoteToc"),
     z.literal("FullScreenNavigationMenu"),
     z.literal("Footer"),
 ])

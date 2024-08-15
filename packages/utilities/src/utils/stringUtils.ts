@@ -1,3 +1,4 @@
+import { getAllRegexMatches } from "./getAllRegexMatches";
 
 export const capitalize = (val: string) =>
     `${val[0].toUpperCase()}${val.slice(1)}`;
@@ -24,4 +25,24 @@ export const pathHasExtension = (path: string) => {
 
 export const applyFileSuffix = (path: string, extension: `.${string}`) => {
     return pathHasExtension(path) ? path : `${path}${extension}`;
+};
+
+
+export const removeMathDollarSigns = (_s: string) => {
+    let s = _s.trim();
+    if (
+        s.startsWith("$$") &&
+        s.endsWith("$$") &&
+        getAllRegexMatches(s, /\$\$/gm).length === 2
+    ) {
+        return s.replaceAll("$$", "").trim()
+    }
+    if(
+        s.startsWith("$") &&
+        s.endsWith("$") &&
+        getAllRegexMatches(s, /\$/gm).length === 2
+    ) {
+        return s.replaceAll("$", "").trim()
+    }
+    return s
 };

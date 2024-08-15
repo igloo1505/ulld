@@ -70,6 +70,7 @@ export const MdxContentPreCompiled = ({
                     <CopyContextMenu
                         btnLabel="Copy Latex"
                         content={raw}
+                        removeMathWrapper
                     >
                         <Component components={_components} />
                     </CopyContextMenu>

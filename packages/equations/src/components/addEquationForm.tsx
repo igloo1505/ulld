@@ -1,3 +1,4 @@
+"use client"
 import React, { MouseEvent, useState } from "react";
 import { AddEquationFormType } from "./types";
 import { AddEquationFormOne } from "./addEquationPanel1";

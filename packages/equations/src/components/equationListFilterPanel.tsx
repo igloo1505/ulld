@@ -79,7 +79,7 @@ const EquationFilterPanel = ({ tags, searchParams, variables }: EquationFilterPa
     return (
         <div className={"w-fit h-fit bg-card text-card-foreground px-5 py-3 rounded-lg border shadow-md"}>
             <Form {...form}>
-                <form className="flex flex-col lgr:flex-row justify-center items-start lgr:justify-between lgr:items-center gap-4">
+                <form className="flex flex-col lgr:flex-row justify-center items-start lgr:justify-between lgr:items-start gap-4">
                     <FormField
                         control={form.control}
                         name="query"
@@ -92,7 +92,7 @@ const EquationFilterPanel = ({ tags, searchParams, variables }: EquationFilterPa
                                     <Input placeholder="search..." {...field} />
                                 </FormControl>
                                 <FormDescription>
-                                    Search based on a case insensitive text regex.
+                                    Search based on a case insensitive regex.
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>

@@ -47,7 +47,7 @@ const EquationTagComboBox = ({ form, tags, toggle }: EquationTagComboBoxProps) =
                             <Command>
                                 <CommandInput placeholder="Search..." />
                                 <CommandEmpty>No tags found.</CommandEmpty>
-                                <CommandGroup>
+                                <CommandGroup className={tags.length ? "" : "py-0"}>
                                     {tags.map((t) => (
                                         <CommandItem
                                             value={t.value}
@@ -71,9 +71,6 @@ const EquationTagComboBox = ({ form, tags, toggle }: EquationTagComboBoxProps) =
                             </Command>
                         </PopoverContent>
                     </Popover>
-                    <FormDescription>
-                        Filter equations by tag
-                    </FormDescription>
                     <FormMessage />
                 </FormItem>
             )}

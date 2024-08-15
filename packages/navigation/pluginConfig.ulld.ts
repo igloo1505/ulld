@@ -36,9 +36,9 @@ const pluginConfig: DeveloperConfigInput<"navigation"> = {
             export: "./footerSlotComponent",
         },
         {
-            componentName: "MdxNoteToc",
-            slot: "MdxNoteToc",
-            export: "./mdxNoteToc"
+            componentName: "NoteDetailPopover",
+            slot: "NoteDetailSheet",
+            export: "./noteDetailPopover"
         }
     ],
 };

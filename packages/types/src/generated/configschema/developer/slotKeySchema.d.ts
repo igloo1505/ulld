@@ -7,7 +7,7 @@ export declare const UISubkeySchema: z.ZodUnion<[z.ZodLiteral<"ComponentDocsList
 export declare const bibliographySubkeySchema: z.ZodUnion<[z.ZodLiteral<"BibliographyPage">, z.ZodLiteral<"BibEntryDetails">]>;
 export declare const taskManagerSubkeySchema: z.ZodUnion<[z.ZodLiteral<"TaskManagerPage">, z.ZodLiteral<"TaskDetails">, z.ZodLiteral<"AddTask">, z.ZodLiteral<"AddTaskList">, z.ZodLiteral<"TaskListSearchResultList">, z.ZodLiteral<"TaskListSearchResult">]>;
 export declare const pdfSubkeySchema: z.ZodLiteral<"FullPdf">;
-export declare const navigationSubkeySchema: z.ZodUnion<[z.ZodLiteral<"secondary">, z.ZodLiteral<"navbar">, z.ZodLiteral<"MultiPageSidebar">, z.ZodLiteral<"MdxNoteToc">, z.ZodLiteral<"FullScreenNavigationMenu">, z.ZodLiteral<"Footer">]>;
+export declare const navigationSubkeySchema: z.ZodUnion<[z.ZodLiteral<"secondary">, z.ZodLiteral<"NoteDetailSheet">, z.ZodLiteral<"navbar">, z.ZodLiteral<"MultiPageSidebar">, z.ZodLiteral<"FullScreenNavigationMenu">, z.ZodLiteral<"Footer">]>;
 export declare const dashboardSubkeySchema: z.ZodLiteral<"LandingPage">;
 export declare const formSubkeySchema: z.ZodLiteral<"SettingsPageContainer">;
 export declare const commandPaletteSubkeySchema: z.ZodLiteral<"commandPalette">;

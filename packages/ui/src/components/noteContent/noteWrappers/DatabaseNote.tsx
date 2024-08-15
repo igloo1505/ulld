@@ -4,19 +4,22 @@ import { NotePageProps } from "../../../utilityFunctions/formatting/formatNotePr
 import DatabaseMdxPage from "../mdx/database";
 import DatabaseNotebook from "./database/remoteNotebook";
 import { appData } from "@ulld/utilities/appData";
+import { ProvidedNoteDetailSheet } from "../../../types/general";
 
 interface DatbaseNoteProps extends NotePageProps {
     rootRelativePath: string;
     rootRelativeWithExtension?: string;
     absolutePath?: string;
+    NoteDetailSheet: ProvidedNoteDetailSheet
 }
 
-const DatabaseNote = async (props: DatbaseNoteProps) => {
+const DatabaseNote = async ({NoteDetailSheet, ...props}: DatbaseNoteProps) => {
     let nt = props.noteProps.format;
     if ([".mdx", ".md"].includes(nt)) {
         return (
             <PageContentContainer canBookmark>
                 <DatabaseMdxPage {...props} />
+                <NoteDetailSheet format="mdx" />
             </PageContentContainer>
         );
     }
@@ -30,6 +33,7 @@ const DatabaseNote = async (props: DatbaseNoteProps) => {
                         props.rootRelativeWithExtension || `${props.rootRelativePath}.ipynb`
                     }
                 />
+                <NoteDetailSheet format="notebook" />
             </PageContentContainer>
         );
     }

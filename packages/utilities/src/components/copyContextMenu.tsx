@@ -2,6 +2,8 @@
 import { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem } from '@ulld/tailwind/context-menu'
 import { copyStringToClipboard } from '@ulld/utilities/copyStringToClipboard'
 import React from 'react'
+import { removeMathDollarSigns } from '../utils/stringUtils'
+import { cn } from '../utils/cn'
 
 
 
@@ -10,9 +12,13 @@ interface CopyContextMenuProps {
     content: string
     btnLabel?: string
     extraMenuItems?: React.FC<{}>
+    removeMathWrapper?: boolean
+    classes?: {
+        menuContent?: string
+    }
 }
 
-export const CopyContextMenu = ({ children, content, btnLabel, extraMenuItems }: CopyContextMenuProps) => {
+export const CopyContextMenu = ({ children, removeMathWrapper, content, btnLabel, extraMenuItems, classes = {} }: CopyContextMenuProps) => {
     const ExtraMenuItems = extraMenuItems
     return (
         <ContextMenu>
@@ -20,11 +26,11 @@ export const CopyContextMenu = ({ children, content, btnLabel, extraMenuItems }:
                 {children}
             </ContextMenuTrigger>
             <ContextMenuContent
-                className="w-64"
+                className={cn("w-64", classes.menuContent)}
             >
                 <ContextMenuItem
                     inset
-                    onClick={async () => copyStringToClipboard(content)}
+                    onClick={async () => copyStringToClipboard(removeMathWrapper ? removeMathDollarSigns(content) : content)}
                 >
                     {btnLabel || "Copy latex"}
                 </ContextMenuItem>

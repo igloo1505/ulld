@@ -24,6 +24,7 @@ export class PluginPage extends ShellManager {
     subSlot?: SubSlot
     initialComponentImport: string
     additionalPage?: PluginAdditionalPage
+    allowImportPageProps: boolean = false
     constructor(
         public data: DeveloperConfigOutput["pages"][number],
         public pluginName: string,
@@ -61,7 +62,7 @@ export class PluginPage extends ShellManager {
         return "PageComponent"
     }
     getImportString() {
-        return `import ${this.importName}${this.data.exportsPageProps ? ", { PageProps }" : ""} from "${this.pluginName}/${this.data.export}";`;
+        return `import ${this.importName}${(this.data.exportsPageProps && this.allowImportPageProps) ? ", { PageProps }" : ""} from "${this.pluginName}/${this.data.export}";`;
     }
     throwTargetPathNotFound() {
         throw new Error(

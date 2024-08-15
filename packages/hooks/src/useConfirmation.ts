@@ -36,23 +36,33 @@ export const useConfirmationConfig = (confirmationId?: string | number) => {
     return config;
 };
 
-export const useConfirmation = (config: ConfirmationModalConfig) => {
+export const useConfirmation = (
+    config: ConfirmationModalConfig & {
+        onConfirm?: () => void;
+        onReject?: () => void;
+    },
+) => {
     const [modalOpen, setModalOpen] = useState<string | number | boolean>(false);
     const [status, setStatus] = useState<S>("waiting");
     const [confirmationId, setConfirmationId] = useState(
         config.primaryId || `confirmation-${getRandomId()}`,
     );
 
-
     useEventListener("confirmation-accept", (e) => {
         if (e.detail.confirmationId === confirmationId) {
             setStatus("accepted");
+            if (config.onConfirm) {
+                config.onConfirm();
+            }
         }
     });
 
     useEventListener("confirmation-denied", (e) => {
         if (e.detail.confirmationId === confirmationId) {
             setStatus("denied");
+            if (config.onReject) {
+                config.onReject();
+            }
         }
     });
 
@@ -60,16 +70,16 @@ export const useConfirmation = (config: ConfirmationModalConfig) => {
         confirmationId: string | number,
         config?: ConfirmationModalConfig | null | false,
     ) => {
-        if(confirmationId){
-            setConfirmationId(confirmationId)
+        if (confirmationId) {
+            setConfirmationId(confirmationId);
         }
         if (config) {
             window.dispatchEvent(
                 new CustomEvent("show-confirmation-dialog", {
                     detail: {
                         config: config,
-                        confirmationId: confirmationId
-                    }
+                        confirmationId: confirmationId,
+                    },
                 }),
             );
         } else {

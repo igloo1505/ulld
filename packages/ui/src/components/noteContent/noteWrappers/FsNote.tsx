@@ -3,15 +3,19 @@ import { PageContentContainer } from "../../layouts/contentContainer";
 import { NotePageProps } from "../../../utilityFunctions/formatting/formatNoteProps";
 import FileSystemMdxPage from "@ulld/ui/fileSystemMdxPage";
 import MathjaxProvider from "@ulld/utilities/providers-mathjax";
+import { ProvidedNoteDetailSheet } from "../../../types/general";
 
-interface FileSystemNoteProps extends NotePageProps { }
+interface FileSystemNoteProps extends NotePageProps { 
+    NoteDetailSheet: ProvidedNoteDetailSheet
+}
 
-const FileSystemNote = (props: FileSystemNoteProps) => {
+const FileSystemNote = ({NoteDetailSheet, ...props}: FileSystemNoteProps) => {
     if (props.noteProps.format === ".mdx") {
         return (
             <PageContentContainer canBookmark>
                 <MathjaxProvider>
                     <FileSystemMdxPage {...props} extension={props.noteProps.format} />
+                   <NoteDetailSheet format="mdx" />
                 </MathjaxProvider>
             </PageContentContainer>
         );
@@ -20,6 +24,7 @@ const FileSystemNote = (props: FileSystemNoteProps) => {
         return (
             <PageContentContainer canBookmark>
                 <FileSystemMdxPage {...props} extension={props.noteProps.format} />
+                   <NoteDetailSheet format="mdx" />
             </PageContentContainer>
         );
     }
@@ -31,6 +36,7 @@ const FileSystemNote = (props: FileSystemNoteProps) => {
                 {/* <FileSystemNotebook */}
                 {/*     {...props} */}
                 {/* /> */}
+                   {/* <NoteDetailSheet format="notebook" /> */}
             </PageContentContainer>
         );
     }

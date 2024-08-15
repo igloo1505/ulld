@@ -6,7 +6,7 @@ generator client {
 
 generator custom_generator {
     provider = "prisma-generator-fake-data"
-    output   = "../src/databaseTestData.ts"
+    output   = "../databaseTestData.ts"
 }
 
 generator json {
@@ -14,6 +14,25 @@ generator json {
     namespace = "PrismaJson"
     // clientOutput = "<finds it automatically>"
     // (./ -> relative to schema, or an importable path to require() it)
+}
+
+generator zod {
+    provider                         = "zod-prisma-types"
+    output                           = "../src/zod" // default is ./generated/zod
+    useMultipleFiles                 = true // default is false
+    writeBarrelFiles                 = true // default is true
+    createInputTypes                 = true // default is true
+    createModelTypes                 = true // default is true
+    addInputTypeValidation           = true // default is true
+    addIncludeType                   = true // default is true
+    addSelectType                    = true // default is true
+    validateWhereUniqueInput         = true // default is true
+    createOptionalDefaultValuesTypes = false // default is false
+    createRelationValuesTypes        = true // default is false
+    createPartialTypes               = true // default is false
+    useDefaultValidators             = true // default is true
+    coerceDate                       = true // default is true
+    writeNullishInModelTypes         = false // default is false
 }
 
 datasource db {
@@ -152,7 +171,6 @@ model BibEntry {
     urldate        String?
     keywords       String?
     copyright      String?
-    added          DateTime         @default(now())
     citationGroups CitationsGroup[]
     tags           Tag[]
     topics         Topic[]

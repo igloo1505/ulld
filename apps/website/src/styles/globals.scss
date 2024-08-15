@@ -103,3 +103,9 @@ mjx-container[jax="CHTML"][display="true"] {
     }
   }
 }
+
+a[data-active="true"] {
+  mjx-container {
+    color: hsl(var(--primary));
+  }
+}

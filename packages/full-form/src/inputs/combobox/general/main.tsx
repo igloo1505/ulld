@@ -119,7 +119,7 @@ export const ComboboxInput = <
                                     <CommandInput placeholder={inputPlaceholder} />
                                     <CommandList className={cn("listyList", classes.commandList)}>
                                         <CommandEmpty>{notFoundText}</CommandEmpty>
-                                        <CommandGroup className={""}>
+                                        <CommandGroup className={options.length === 0 ? "py-0" : undefined}>
                                             {options.map((item) => (
                                                 <CommandItem
                                                     value={item.label}

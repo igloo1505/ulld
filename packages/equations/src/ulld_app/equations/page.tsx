@@ -2,7 +2,7 @@ import EquationFilterPanel from '../../components/equationListFilterPanel'
 import EquationListItem from '../../components/equationListItem'
 import { EquationSearchParamsInput, equationSearchParamsSchema } from '../../components/utils'
 import { buttonVariants } from '@ulld/tailwind/button'
-import { PageContentContainer } from '@ulld/ui/pageContentContainer'
+import PageContainer from '@ulld/ui/pageContainer'
 import { serverClient } from '@ulld/api/serverClient'
 import clsx from 'clsx'
 import Link from 'next/link'
@@ -20,7 +20,8 @@ const EquationsPage = async ({ searchParams }: PageProps) => {
 
 
     return (
-        <PageContentContainer>
+        <PageContainer
+        >
             <Link
                 href="/equations/add"
                 className={clsx("absolute top-0 right-12", buttonVariants({}))}
@@ -32,7 +33,7 @@ const EquationsPage = async ({ searchParams }: PageProps) => {
                         tags={data.tags.map((t) => ({ value: t }))}
                         variables={data.variables}
                     />
-                    <ul className={"w-fit min-w-[83.333%] grid grid-cols-1 lg:grid-cols-2 gap-3 mt-6"}>
+                    <ul className={"w-full flex flex-col lg:flex-row gap-3 mt-6"}>
                         {data.equations.map((eq) => {
                             return <EquationListItem
                                 key={`eq-${eq.id}`}
@@ -42,7 +43,7 @@ const EquationsPage = async ({ searchParams }: PageProps) => {
                     </ul>
                 </div>
             </div>
-        </PageContentContainer>
+        </PageContainer>
     )
 }
 

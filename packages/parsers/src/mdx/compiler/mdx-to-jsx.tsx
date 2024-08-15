@@ -122,7 +122,7 @@ export const parseMdxString = async ({
     appConfig
 }: {
     content: string
-    appConfig: AppConfigSchemaOutput
+    appConfig?: AppConfigSchemaOutput
 }) => {
     let _rehypePlugins = await rehypePlugins(appConfig)
     let res = await compile(content, {

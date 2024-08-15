@@ -136,6 +136,14 @@ body {
     scrollbar-width: none;
     /* Firefox */
   }
+
+  .pageMargins {
+    @apply px-8 md:px-16 w-full min-h-full relative py-6;
+  }
+
+  .pageCenterContent {
+    @apply flex flex-col justify-center items-center gap-6;
+  }
 }
 
 .no-scrollbar-all {
