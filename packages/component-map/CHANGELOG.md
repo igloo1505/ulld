@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.69
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.69
+  - @ulld/calendar@0.0.69
+  - @ulld/default-image-map@0.0.69
+  - @ulld/diagram@0.0.69
+  - @ulld/editor@0.0.69
+  - @ulld/embeddable-components@0.0.69
+  - @ulld/equations@0.0.69
+  - @ulld/full-form@0.0.69
+  - @ulld/journal@0.0.69
+  - @ulld/navigation@0.0.69
+  - @ulld/notebook@0.0.69
+  - @ulld/pdf@0.0.69
+  - @ulld/plot@0.0.69
+  - @ulld/snippets@0.0.69
+  - @ulld/tailwind@0.0.63
+  - @ulld/task-manager@0.0.69
+  - @ulld/whiteboard@0.0.69
+
 ## 0.0.68
 
 ### Patch Changes

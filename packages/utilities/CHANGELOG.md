@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.69
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+- Updated dependencies
+  - @ulld/database@0.0.66
+  - @ulld/math@0.0.69
+  - @ulld/tailwind@0.0.63
+
 ## 0.0.68
 
 ### Patch Changes

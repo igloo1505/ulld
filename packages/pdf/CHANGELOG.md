@@ -1,5 +1,24 @@
 # @ulld/pdf
 
+## 0.0.69
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+- Updated dependencies
+  - @ulld/api@0.0.69
+  - @ulld/eslint-config@0.0.65
+  - @ulld/configschema@0.0.69
+  - @ulld/developer@0.0.69
+  - @ulld/hooks@0.0.69
+  - @ulld/icons@0.0.69
+  - @ulld/jest-presets@0.0.63
+  - @ulld/state@0.0.69
+  - @ulld/tailwind@0.0.63
+  - @ulld/ui@0.0.69
+  - @ulld/utilities@0.0.69
+  - @ulld/whiteboard@0.0.69
+
 ## 0.0.68
 
 ### Patch Changes

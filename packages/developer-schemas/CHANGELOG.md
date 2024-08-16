@@ -1,5 +1,11 @@
 # @ulld/developer-schemas
 
+## 0.0.63
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+
 ## 0.0.62
 
 ### Patch Changes

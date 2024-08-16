@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.66
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.63
+
 ## 0.0.65
 
 ### Patch Changes

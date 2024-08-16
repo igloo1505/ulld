@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.69
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+- Updated dependencies
+  - @ulld/base-configs@0.0.63
+  - @ulld/configschema@0.0.69
+  - @ulld/developer-schemas@0.0.63
+  - @ulld/utilities@0.0.69
+
 ## 0.0.68
 
 ### Patch Changes

@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.69
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+- Updated dependencies
+  - @ulld/api@0.0.69
+  - @ulld/bib-manager@0.0.69
+  - @ulld/calendar@0.0.69
+  - @ulld/configschema@0.0.69
+  - @ulld/database@0.0.66
+  - @ulld/developer@0.0.69
+  - @ulld/diagram@0.0.69
+  - @ulld/editor@0.0.69
+  - @ulld/equations@0.0.69
+  - @ulld/hooks@0.0.69
+  - @ulld/logger@0.0.63
+  - @ulld/parsers@0.0.69
+  - @ulld/render@0.0.69
+  - @ulld/snippets@0.0.69
+  - @ulld/state@0.0.69
+  - @ulld/tailwind@0.0.63
+  - @ulld/task-manager@0.0.69
+  - @ulld/ui@0.0.69
+  - @ulld/utilities@0.0.69
+  - @ulld/whiteboard@0.0.69
+
 ## 0.0.68
 
 ### Patch Changes

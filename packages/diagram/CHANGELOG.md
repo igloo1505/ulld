@@ -1,5 +1,17 @@
 # @ulld/diagram
 
+## 0.0.69
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+- Updated dependencies
+  - @ulld/api@0.0.69
+  - @ulld/typescript-config@0.0.63
+  - @ulld/developer@0.0.69
+  - @ulld/state@0.0.69
+  - @ulld/tailwind@0.0.63
+
 ## 0.0.68
 
 ### Patch Changes

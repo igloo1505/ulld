@@ -1,5 +1,24 @@
 # @ulld/navigation
 
+## 0.0.69
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+- Updated dependencies
+  - @ulld/api@0.0.69
+  - @ulld/eslint-config@0.0.65
+  - @ulld/typescript-config@0.0.63
+  - @ulld/configschema@0.0.69
+  - @ulld/developer@0.0.69
+  - @ulld/developer-schemas@0.0.63
+  - @ulld/hooks@0.0.69
+  - @ulld/icons@0.0.69
+  - @ulld/render@0.0.69
+  - @ulld/state@0.0.69
+  - @ulld/tailwind@0.0.63
+  - @ulld/utilities@0.0.69
+
 ## 0.0.68
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @ulld/default-image-map
 
+## 0.0.69
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.65
+  - @ulld/typescript-config@0.0.63
+  - @ulld/configschema@0.0.69
+  - @ulld/logger@0.0.63
+  - @ulld/tailwind@0.0.63
+  - @ulld/utilities@0.0.69
+
 ## 0.0.68
 
 ### Patch Changes

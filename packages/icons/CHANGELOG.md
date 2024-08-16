@@ -1,5 +1,15 @@
 # @ulld/icons
 
+## 0.0.69
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+- Updated dependencies
+  - @ulld/hooks@0.0.69
+  - @ulld/tailwind@0.0.63
+  - @ulld/utilities@0.0.69
+
 ## 0.0.68
 
 ### Patch Changes

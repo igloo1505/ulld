@@ -1,5 +1,17 @@
 # @ulld/parsers
 
+## 0.0.69
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+- Updated dependencies
+  - @ulld/component-map@0.0.69
+  - @ulld/configschema@0.0.69
+  - @ulld/database@0.0.66
+  - @ulld/developer@0.0.69
+  - @ulld/utilities@0.0.69
+
 ## 0.0.68
 
 ### Patch Changes

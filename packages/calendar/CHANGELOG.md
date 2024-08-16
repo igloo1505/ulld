@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.69
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+- Updated dependencies
+  - @ulld/developer@0.0.69
+
 ## 0.0.68
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ulld/developer-cli
 
+## 0.0.69
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+- Updated dependencies
+  - @ulld/developer@0.0.69
+  - @ulld/developer-schemas@0.0.63
+
 ## 0.0.68
 
 ### Patch Changes

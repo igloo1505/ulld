@@ -1,5 +1,18 @@
 # @ulld/math
 
+## 0.0.69
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.63
+  - @ulld/configschema@0.0.69
+  - @ulld/hooks@0.0.69
+  - @ulld/icons@0.0.69
+  - @ulld/state@0.0.69
+  - @ulld/utilities@0.0.69
+
 ## 0.0.68
 
 ### Patch Changes

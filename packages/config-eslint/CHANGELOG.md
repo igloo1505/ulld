@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.65
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+
 ## 0.0.64
 
 ### Patch Changes

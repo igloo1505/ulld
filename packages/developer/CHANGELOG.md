@@ -1,5 +1,17 @@
 # @ulld/developer
 
+## 0.0.69
+
+### Patch Changes
+
+- A lot of progress towards build completeness.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.65
+  - @ulld/typescript-config@0.0.63
+  - @ulld/configschema@0.0.69
+  - @ulld/database@0.0.66
+  - @ulld/logger@0.0.63
+
 ## 0.0.68
 
 ### Patch Changes
