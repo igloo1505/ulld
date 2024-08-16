@@ -17,6 +17,7 @@ export interface LintPlotProps<T extends object>
     chartConfig: ChartConfig;
     chartData: T[];
     margin?: Margin;
+    grid?: boolean
     tooltipFormatter?: Formatter<any, any>;
     lines: (Omit<ComponentPropsWithoutRef<typeof Line>, "dataKey"> & {
         dataKey: keyof T;
@@ -36,6 +37,7 @@ const LinePlot = <T extends object>({
     yAxis,
     margin,
     container,
+    grid = false,
     ...props
 }: LintPlotProps<T>) => {
     return (
@@ -50,7 +52,7 @@ const LinePlot = <T extends object>({
                     ...margin,
                 }}
             >
-                <CartesianGrid vertical={false} />
+                {grid && <CartesianGrid vertical={false} />}
                 {xAxis && (
                     <XAxis
                         dataKey={typeof xAxis === "string" ? xAxis : undefined}

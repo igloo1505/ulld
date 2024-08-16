@@ -39,9 +39,9 @@ const NotesPlot = () => {
             chartData={chartData.chartData}
             chartConfig={chartData.chartConfig}
             className={"w-full h-full"}
-            yAxis={{
-                allowDecimals: false
-            }}
+            /* yAxis={{ */
+            /*     allowDecimals: false */
+            /* }} */
             tooltipFormatter={(...data) => {
                 let idx = data[3];
                 if ("date" in data[4]) {
@@ -60,14 +60,14 @@ const NotesPlot = () => {
                                 <div
                                     className={"flex flex-row justify-start items-start gap-2"}
                                 >
-                                    <div
-                                        className={cn(
-                                            "w-2 h-4 rounded-lg",
-                                            data[1] === "mdx"
-                                                ? "bg-[hsl(var(--chart-1))]"
-                                                : "bg-[hsl(var(--chart-2))]",
-                                        )}
-                                    />
+                                    {/* <div */}
+                                    {/*     className={cn( */}
+                                    {/*         "w-2 h-4 rounded-lg", */}
+                                    {/*         data[1] === "mdx" */}
+                                    {/*             ? "bg-[hsl(var(--chart-1))]" */}
+                                    {/*             : "bg-[hsl(var(--chart-2))]", */}
+                                    {/*     )} */}
+                                    {/* /> */}
                                     <div>{data[1] === "mdx" ? "Mdx" : "Notebooks"}</div>
                                 </div>
                                 <div className={"ml-auto"}>

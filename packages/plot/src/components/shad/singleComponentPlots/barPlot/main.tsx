@@ -34,6 +34,7 @@ export interface BarPlotProps<T extends object> {
     bars: BarProps<T>[];
     margin?: Margin;
     className?: string;
+    grid?: boolean
     xAxis?: ComponentProps<typeof XAxis> | keyof T | boolean;
     yAxis?: ComponentProps<typeof YAxis> | keyof T | boolean;
     tooltipFormatter?: Formatter<any, any>;
@@ -47,6 +48,7 @@ const BarPlot = <T extends object>({
     yAxis,
     margin,
     className,
+    grid = false,
     tooltipFormatter,
 }: BarPlotProps<T>) => {
     return (
@@ -59,7 +61,7 @@ const BarPlot = <T extends object>({
                     ...margin,
                 }}
             >
-                <CartesianGrid vertical={false} />
+                {grid && <CartesianGrid vertical={false} />}
                 {xAxis && (
                     <XAxis
                         dataKey={typeof xAxis === "string" ? xAxis : undefined}

@@ -3,7 +3,6 @@ import fs from 'fs'
 
 export class JsonFile<T extends object = {}> extends FileData {
     constructor(public path: string){
-        console.log(`Path in jsonFile ${path}`)
         super(path, false)
     }
     getJsonContent(): T {

@@ -76,9 +76,9 @@ const TaskListCompletionPlot = (props: TaskListCompletionPlotProps) => {
             container={{
                 className: "w-full h-full max-h-full",
             }}
-            yAxis={{
-                allowDecimals: false
-            }}
+            /* yAxis={{ */
+            /*     allowDecimals: false */
+            /* }} */
             tooltipFormatter={(value, valueKey, data, idx, payload) => {
                 if ("date" in payload) {
                     return (
@@ -96,14 +96,14 @@ const TaskListCompletionPlot = (props: TaskListCompletionPlotProps) => {
                                 <div
                                     className={"flex flex-row justify-start items-start gap-2"}
                                 >
-                                    <div
-                                        className={cn(
-                                            "w-2 h-4 rounded-lg",
-                                        )}
-                                        style={{
-                                            backgroundColor: clampInColorArray(idx)
-                                        }}
-                                    />
+                                    {/* <div */}
+                                    {/*     className={cn( */}
+                                    {/*         "w-2 h-4 rounded-lg", */}
+                                    {/*     )} */}
+                                    {/*     style={{ */}
+                                    {/*         backgroundColor: clampInColorArray(idx) */}
+                                    {/*     }} */}
+                                    {/* /> */}
                                     <div>{valueKey === "completedOn" ? "Completed" : "Created"}</div>
                                 </div>
                                 <div className={"ml-auto"}>
@@ -118,7 +118,7 @@ const TaskListCompletionPlot = (props: TaskListCompletionPlotProps) => {
             lines={[
                 {
                     dataKey: "completedOn",
-                    stroke: "hsl(var(--primary)/0.5)",
+                    stroke: "hsl(var(--primary)/0.35)",
                     label: false,
                 },
                 {

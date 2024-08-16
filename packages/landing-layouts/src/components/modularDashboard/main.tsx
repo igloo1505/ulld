@@ -12,25 +12,24 @@ import TagListCard from "./cards/tall/tagList/main";
 import { TaggableData } from "./types";
 import { cookies } from "next/headers";
 
-const tagListTopBreakpoint = 980
+const tagListTopBreakpoint = 980;
 
-
-const dashboardId = "ulld-dashboard-container"
+const dashboardId = "ulld-dashboard-container";
 
 const ModularDashboard = async () => {
-    const cookieJar = cookies()
-    
+    const cookieJar = cookies();
+
     let data = await serverClient.universalNotes.getUserOverview();
 
-    const initialTaskData = await serverClient.toDo.getTaskManagerOverview()
+    const initialTaskData = await serverClient.toDo.getTaskManagerOverview();
 
-    let taggables = await serverClient.search.getUniqueTagTopicAndSubjects() as TaggableData
+    let taggables =
+        (await serverClient.search.getUniqueTagTopicAndSubjects()) as TaggableData;
 
     let categoryColors: Record<string, string> = {};
     data.uniqueNoteTypes.forEach((t, i) => {
         categoryColors[t] = clampInColorArray(i);
     });
-
 
     return (
         <DashboardProvider
@@ -48,11 +47,11 @@ const ModularDashboard = async () => {
                 id={dashboardId}
             >
                 <div
-                    className={"grid grid-cols-1 extraMedium:grid-cols-[1fr_auto] gap-4 w-full md:h-[calc(40vh-1rem)] min-h-[350px] max-h-[calc(40vh-1rem)]"}
+                    className={
+                        "grid grid-cols-1 extraMedium:grid-cols-[1fr_auto] gap-4 w-full md:h-[calc(40vh-1rem)] min-h-[350px] max-h-[calc(40vh-1rem)]"
+                    }
                 >
-                    <MainCard
-                        className={"max-h-full"}
-                    />
+                    <MainCard className={"max-h-full"} />
                     <TagListCard
                         taggables={taggables}
                         showKey="tagsOnTop"
@@ -62,12 +61,15 @@ const ModularDashboard = async () => {
                         className={"h-full w-[300px]"}
                     />
                 </div>
-                <div className={"w-full h-[calc(33%-1rem)] extraMedium:h-[calc(33vh-1rem)]"}>
-                    <RecentlyAccessNotesList />
-                </div>
+                <RecentlyAccessNotesList
+                    className={
+                        "w-full h-[calc(33%-1rem)] extraMedium:h-[calc(33vh-1rem)]"
+                    }
+                />
                 <div
-                    className={"flex flex-col justify-center items-center md:grid grid-cols-2 grid-rows-2 extraMedium:grid-cols-[1fr_1fr_1fr] extraMedium:grid-rows-1 gap-4 h-[calc(33%-1rem)]"}
-                    
+                    className={
+                        "flex flex-col justify-center items-center md:grid grid-cols-2 grid-rows-2 extraMedium:grid-cols-[1fr_1fr_1fr] extraMedium:grid-rows-1 gap-4 h-[calc(33%-1rem)]"
+                    }
                 >
                     <NotesByCategoryDonutCard className={""} colors={categoryColors} />
                     <AccessByCategoryDonut className={""} colors={categoryColors} />

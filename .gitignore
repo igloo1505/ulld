@@ -16,6 +16,7 @@ apps/ulld-storybook/storybook-static
 .contentlayer
 public/sw**
 public/workbox**
+buildUtils/baseAppData.json
 
 *storybook.log
 /apps/storybook/storybook-static
