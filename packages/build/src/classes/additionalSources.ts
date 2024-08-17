@@ -1,15 +1,15 @@
-import { TargetPaths } from "./paths";
+import { TargetPaths } from "./paths.js";
 import {
   FileItemWithRootGlob,
   getFlattenedFileItems,
 } from "@ulld/utilities/additionalSources";
 import { globSync } from "glob";
-import buildData from "@ulld/utilities/buildStaticData";
+import buildData from "@ulld/utilities/buildStaticData.json" with {type: 'json'};
 import fs from "fs";
 import path from "path";
-import { FileManager } from "./baseClasses/fileManager";
+import { FileManager } from "./baseClasses/fileManager.js";
 import { UlldGlob } from "@ulld/utilities/glob";
-import { UlldAppConfigManager } from "./appConfig";
+import { UlldAppConfigManager } from "./appConfig.js";
 
 interface FoundItem extends FileItemWithRootGlob {
   filePath: string;

@@ -424,11 +424,19 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
       font-size: 0.875rem;
     }
   }
-  mjx-container[jax="CHTML"][display="true"] {
-    min-width: 0px !important;
-    max-width: 100%;
-    overflow-x: auto;
-    font-size: 1.25rem;
+  mjx-container {
+    &[jax="CHTML"][display="true"] {
+      min-width: 0px !important;
+      max-width: 100%;
+      overflow-x: auto;
+      font-size: 1.25rem;
+    }
+    mjx-mtext {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-end;
+    }
   }
 }
 

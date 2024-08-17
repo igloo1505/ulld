@@ -1,7 +1,19 @@
 {
     "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
     "extends": "@ulld/typescript-config/nextjs.json",
+    "exclude": [
+        "dist",
+        "rollup.config.mjs",
+        "next.config.mjs",
+        "jest.config.js"
+    ],
     "compilerOptions": {
-        "baseUrl": "."
+        "allowImportingTsExtensions": false,
+        "declaration": true,
+        "declarationMap": true,
+        "baseUrl": ".",
+        "rootDir": "src",
+        "outDir": "dist",
+        "noEmit": false
     }
 }

@@ -4,8 +4,8 @@ import { buildTestData } from "./testData";
 
 describe("TargetPackageJson", function () {
     it("properly sets isLocalDev", function () {
-        let beTrue = new TargetPackageJson(buildTestData.targetDirectory, true);
-        let beFalse = new TargetPackageJson(buildTestData.targetDirectory, false);
+        let beTrue = new TargetPackageJson(buildTestData.targetDirectory, true, "main", {});
+        let beFalse = new TargetPackageJson(buildTestData.targetDirectory, false, "main", {});
         assert(beTrue.isLocalDev === true, "Sets isLocalDev to be true correctly.")
         assert(beFalse.isLocalDev === false, "Sets isLocalDev to be false correctly.")
     });

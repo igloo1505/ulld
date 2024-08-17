@@ -1,0 +1,21 @@
+{
+  "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "module": "ES2020",
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true,
+    "target": "es2022",
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "types": ["mocha", "chai", "node"]
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
+  "exclude": ["src/__test__/**"],
+  "esModuleInterop": true,
+  "ts-node": {
+    "esm": true
+  }
+}

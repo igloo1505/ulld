@@ -14,4 +14,4 @@ export const replaceRecursively = (value: string, replace: string | RegExp, repl
 
 export const clampInArray = <T extends unknown>(index: number, arr: T[]) => {
        return arr[index % arr.length]
-    }
+}

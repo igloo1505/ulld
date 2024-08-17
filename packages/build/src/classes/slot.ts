@@ -1,7 +1,7 @@
 import { AnySubSlotKey, PluginSlotKey } from "@ulld/configschema/developerTypes";
-import { PluginComponent } from "./component";
-import slotMap from "@ulld/utilities/slotMap.json"
-import { TargetPaths } from "./paths";
+import slotMap from "@ulld/utilities/slotMap.json" with { type: 'json' };
+import { PluginComponent } from "./component.js";
+import { TargetPaths } from "./paths.js";
 
 type SlotRecord = {[K in AnySubSlotKey]?: PluginComponent}
 

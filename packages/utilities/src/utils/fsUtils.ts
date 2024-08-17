@@ -17,7 +17,10 @@ export const makeHref = (s: string) => {
     if (/^http(s?):\/\//gm.test(s)) {
         return s;
     }
-    let isHttps = window.location.href.startsWith("http")
+    if(typeof window === "undefined"){
+        return s
+    }
+    let isHttps = window?.location?.href.startsWith("http")
         ? window.location.href.startsWith("https")
         : process.env.NEXT_PUBLIC_PRODUCTION_REMOTE;
     return `${isHttps ? "https" : "http"}://${s}`;

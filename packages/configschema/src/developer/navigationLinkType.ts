@@ -1,4 +1,4 @@
-import { AllDynamicIconNames } from "@ulld/icons";
+import type { AllDynamicIconNames } from "@ulld/icons";
 import { z } from 'zod'
 
 export const navigationLinkCategory = z.union([

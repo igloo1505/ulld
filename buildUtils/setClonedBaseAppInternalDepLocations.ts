@@ -1,8 +1,17 @@
 import path from "path";
 import { PackageManager } from "./packageManager";
+import { FileData } from "@ulld/utilities/fileClass";
 const args = process.argv.slice(2);
 
 const p = new PackageManager();
+
+const getTestRoot = () => { 
+let testRoot = process.env.ULLD_TEST_ROOT;
+if (!testRoot) {
+    throw new Error(`No test root env variable was found.`);
+}
+    return testRoot
+    }
 
 const setPackagesToLocalSource = () => {
     const deps = p.getClonedBaseAppInternalPackages();
@@ -32,6 +41,23 @@ const setPackagesToMostRecentRemote = () => {
     process.exit(0);
 };
 
+const throwIfLocalSourceInPnpmLockFile = () => {
+    let testRoot = getTestRoot()
+    let lockFile = new FileData(path.join(testRoot, "pnpm-lock.yaml"));
+    if (!lockFile.exists()) {
+        console.error(`No lock file exists. Cannot commit.`);
+        throw new Error("");
+    } else {
+        let content = lockFile.getContent();
+        if (content.includes("/Users/bigsexy")) {
+            console.error(
+                `Lock file contains references to local source files. Cannot commit`,
+            );
+            throw new Error("Lock file contains references to local source files.");
+        }
+    }
+};
+
 const throwIfLocalSource = () => {
     const deps = p.getClonedBaseAppInternalPackages();
     deps.map((d) => {
@@ -45,22 +71,18 @@ const throwIfLocalSource = () => {
 };
 
 const throwIfNotTestRoot = (dir: string) => {
-       let testRoot = process.env.ULLD_TEST_ROOT 
-    console.log("dir: ", dir)
-    console.log("testRoot: ", testRoot)
-    if(!testRoot){
-        throw new Error(`No test root env variable was found.`)
-    }
-    if(testRoot !== dir) {
- throw new Error(`Dir is not test root. Found:
+    let testRoot = getTestRoot()
+    console.log("dir: ", dir);
+    if (testRoot !== dir) {
+        throw new Error(`Dir is not test root. Found:
 
 testRoot: ${testRoot}
 
 cwd: ${dir}
-`)
+`);
     }
-    process.exit()
-    }
+    process.exit();
+};
 
 if (args[0] === "toLocal") {
     setPackagesToLocalSource();
@@ -71,11 +93,10 @@ if (args[0] === "toRemote") {
 }
 
 if (args[0] === "check") {
+    throwIfLocalSourceInPnpmLockFile();
     throwIfLocalSource();
 }
-
 
 if (args[0] === "checkDirectory") {
     throwIfNotTestRoot(args[1]);
 }
-

@@ -1,5 +1,5 @@
 import { appData } from "@ulld/utilities/appData";
-import { ShellManager } from "./shell";
+import { ShellManager } from "./shell.js";
 import simpleGit, {
     SimpleGitOptions,
     SimpleGit,
@@ -7,13 +7,31 @@ import simpleGit, {
 } from "simple-git";
 import { MultiBar, SingleBar } from "cli-progress";
 import path from "path";
-import { BranchValue } from "../../utils/options";
+import { BranchValue, BuildOptionsType } from "../../utils/options.js";
 
 export class GitManager extends ShellManager {
     status: "notSent" | "pending" | "success" | "fail" = "notSent";
     showProgress: boolean = false;
-    constructor(public targetDirectory: string, public branch: BranchValue) {
+    baseOptions: Partial<SimpleGitOptions> = {
+            binary: "git",
+            maxConcurrentProcesses: 10,
+            trimmed: false,
+            // progress: this.showProgress ? this.progress : this.simpleProgress,
+            // timeout: {
+            //     block: 5000,
+            //     stdOut: true, // default behaviour, resets the 2s timer every time data arrives on stdOut
+            //     stdErr: false, // custom behaviour, ignore the progress events being written to stdErr
+            // },
+    };
+    constructor(
+        public targetDirectory: string,
+        public branch: BranchValue,
+        public cliOptions: BuildOptionsType
+    ) {
         super();
+        // if(cliOptions.maxConcurrent && ["string", "number"].includes(typeof cliOptions.maxConcurrent)){
+        //     this.baseOptions.maxConcurrentProcesses = parseInt(cliOptions.maxConcurrent as string)
+        // }
     }
     progress({ method, stage, progress, ...props }: SimpleGitProgressEvent) {
         let bars: MultiBar | null = null;
@@ -38,18 +56,21 @@ export class GitManager extends ShellManager {
             receivingBar?.update(progress);
         }
     }
+    simpleProgress({ method, stage, progress }: any) {
+        console.log(`git.${method} ${stage} stage ${progress}% complete`);
+    }
+    getOptions(opts: Partial<SimpleGitOptions>): Partial<SimpleGitOptions> {
+        return {
+            ...this.baseOptions,
+            ...opts
+        } satisfies Partial<SimpleGitOptions>
+    }
     async gitPull() {
         this.log(
             `It looks like a ${this.ulld()} project already exists in this directory. Let's just try to update it.`,
         );
         this.status = "pending";
-        const options: Partial<SimpleGitOptions> = {
-            binary: "git",
-            maxConcurrentProcesses: 10,
-            trimmed: false,
-            progress: this.showProgress ? this.progress : undefined,
-        };
-        const git: SimpleGit = simpleGit(options);
+        const git: SimpleGit = simpleGit(this.baseOptions);
         await git.pull({
             "-C": this.targetDirectory,
         });
@@ -75,13 +96,13 @@ export class GitManager extends ShellManager {
             `Great! Give me a second to clone the ${this.ulld()} code base onto your machine. This might take a minute or two.`,
         );
         this.status = "pending";
-        const options: Partial<SimpleGitOptions> = {
-            binary: "git",
-            maxConcurrentProcesses: 10,
-            trimmed: false,
-            progress: this.showProgress ? this.progress : undefined,
-        };
-        const git: SimpleGit = simpleGit(options);
+        // const options: Partial<SimpleGitOptions> = {
+        //     binary: "git",
+        //     maxConcurrentProcesses: 10,
+        //     trimmed: false,
+        //     progress: this.showProgress ? this.progress : undefined,
+        // };
+        const git: SimpleGit = simpleGit(this.baseOptions);
         await git.clone(
             appData.templateRepo.url,
             `${this.targetDirectory}/ulldApp`,

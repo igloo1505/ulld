@@ -2,10 +2,10 @@ import {
     AnySubSlotKey,
     PluginSlotKey,
 } from "@ulld/configschema/developerTypes";
-import slotMapData from "@ulld/utilities/slotMap.json";
+import slotMapData from "@ulld/utilities/slotMap.json" with { type: 'json' };
 import { SlotDataType } from "@ulld/utilities/types";
-import { TemplateContent } from "./baseApp/templateContent";
-import { TargetPaths } from "./paths";
+import { TemplateContent } from "./baseApp/templateContent.js";
+import { TargetPaths } from "./paths.js";
 
 export class SubSlot {
     shouldUse: boolean = true;

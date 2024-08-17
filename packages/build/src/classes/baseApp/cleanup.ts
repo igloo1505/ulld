@@ -1,6 +1,6 @@
-import { PackageManagers } from "../../types";
-import { ShellManager } from "../baseClasses/shell";
-import { TargetPaths } from "../paths";
+import { PackageManagers } from "../../types.js";
+import { ShellManager } from "../baseClasses/shell.js";
+import { TargetPaths } from "../paths.js";
 import fs from "fs";
 import { globSync } from "glob";
 import path from "path";

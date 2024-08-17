@@ -1,4 +1,11 @@
+// import { Option } from "commander";
 
+// TODO: Enable options this way to make other options more accessible.
+// const opts = [
+//    new Option("--use-local", "Use local sources for internal development").hideHelp(),
+//     new Option("--here", "Skip location selection and use cwd."),
+//     new Option("--no-install", "Skip dependency installation and retry build.")
+// ] as const
 
 export const optionMap = {
     useLocal: "--use-local",
@@ -19,7 +26,8 @@ export const branchOptions = {
 export const branchOptionValues = Object.values(branchOptions)
 
 export const stringOptionMap = {
-    branch: "-b, --branch [branchName]"
+    branch: "-b, --branch [branchName]",
+    maxConcurrent: "-m, --maxConcurrent [maxConcurrent]"
 }
 
 

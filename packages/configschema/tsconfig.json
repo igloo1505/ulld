@@ -8,12 +8,18 @@
     "exclude": [
         "dist",
         "build",
-        "node_modules"
+        "node_modules",
+        "src/__scripts__"
     ],
     "compilerOptions": {
-        "rootDir": ".",
+        "rootDir": "src",
+        "outDir": "dist",
+        "noEmit": false,
         "moduleResolution": "Bundler",
         "jsx": "react-jsx",
+        "allowImportingTsExtensions": false,
+        "declaration": true,
+        "declarationMap": true,
         "esModuleInterop": true,
         "resolveJsonModule": true
     }

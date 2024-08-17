@@ -1,20 +1,17 @@
-import {
-    getCurrentDir,
-    getDirectoryCompletionFromString,
-} from "../utils/locationUtils";
 import chalk from "chalk";
 import { prompt } from "enquirer";
 import fs from 'fs'
-import { UlldBuildProcess } from "../classes/build";
-import { BuildOptionsType } from "../utils/options";
-import { getBranchSelection } from "./selectBranch";
+import { UlldBuildProcess } from "../classes/build.js";
+import { getCurrentDir, getDirectoryCompletionFromString } from "../utils/locationUtils.js";
+import { BuildOptionsType } from "../utils/options.js";
+import { getBranchSelection } from "./selectBranch.js";
 
-export const verifyDirectory = async (opts: BuildOptionsType) => {
+export const verifyDirectory = async (opts: BuildOptionsType = {}) => {
     const currentDir = getCurrentDir();
     let branch = typeof opts.branch === "undefined" ? "main" : typeof opts.branch === "string" ? opts.branch : await getBranchSelection()
 
     if (opts.here) {
-        return new UlldBuildProcess(currentDir, branch);
+        return new UlldBuildProcess(currentDir, branch, opts);
     }
 
     let useCurrentDir = await prompt({
@@ -26,7 +23,7 @@ Is this where you'd like to build ${chalk.hex("#0ba5e9")("U")}LLD?`,
         initial: true,
     });
     if ("useCurrentDir" in useCurrentDir && useCurrentDir.useCurrentDir) {
-        return new UlldBuildProcess(currentDir, branch);
+        return new UlldBuildProcess(currentDir, branch, opts);
     }
 
 
@@ -51,5 +48,5 @@ Is this where you'd like to build ${chalk.hex("#0ba5e9")("U")}LLD?`,
             console.log(`You need to specify a directory to continue.`);
             process.exit(1);
     }
-    return new UlldBuildProcess(newPath.path, branch)
+    return new UlldBuildProcess(newPath.path, branch, opts)
 };

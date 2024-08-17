@@ -1,4 +1,6 @@
-import { ParsableExtensions } from "../../generated/configschema/zod/secondaryConfigParse/getParsableExtensions";
+
+
+type ParsableExtensions = ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5"
 
 export type NotePropertiesOutput = ({
     useFs: true

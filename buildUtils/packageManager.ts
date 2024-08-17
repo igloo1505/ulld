@@ -118,12 +118,14 @@ export class PackageManager {
         return JSON.parse(fs.readFileSync(p, { encoding: "utf-8" }));
     }
     getAppDependenciesFromPackageJsonPath(pkgPath: string) {
-        let f = new JsonFile(pkgPath)
-        if(!f.exists()){
-            console.error(`Cannot find file ${pkgPath} in PackageManager#getAppDependenciesFromPackageJsonPath method. Cannot continue.`)
-            process.exit(1)
+        let f = new JsonFile(pkgPath);
+        if (!f.exists()) {
+            console.error(
+                `Cannot find file ${pkgPath} in PackageManager#getAppDependenciesFromPackageJsonPath method. Cannot continue.`,
+            );
+            process.exit(1);
         }
-        let content = f.getJsonContent() as PackageJsonType
+        let content = f.getJsonContent() as PackageJsonType;
         let deps: ClonedBaseAppInternalDep[] = [];
         for (const depType of depTypes) {
             for (const dep in content[depType]) {
@@ -153,14 +155,17 @@ export class PackageManager {
         }
         return deps;
     }
-    setDependencySourcesOfPackageJson(f: PackageJsonType, items: ClonedBaseAppInternalDep[]) {
+    setDependencySourcesOfPackageJson(
+        f: PackageJsonType,
+        items: ClonedBaseAppInternalDep[],
+    ) {
         for (const item of items) {
             if (!f[item.type]) {
                 f[item.type] = {};
             }
             (f[item.type] as any)[item.name] = item.version;
         }
-        return f
+        return f;
     }
     setNewClonedAppInternalPackages(items: ClonedBaseAppInternalDep[]) {
         for (const item of items) {
@@ -245,6 +250,28 @@ export class PackageManager {
             }
         });
         return packages;
+    }
+    findCircularDependencies() {
+        for (const p of this.packages) {
+            for (const sp of p.deps) {
+                if (sp.name.startsWith("@ulld")) {
+                    let subPackage = this.packages.find((x) => x.name === sp.name);
+                    if (!subPackage) {
+                        console.log(
+                            `No package found for ${sp.name} while checking for circular dependencies.`,
+                        );
+                    } else {
+                        for (const sd of subPackage?.deps) {
+                            if (sd.name === p.name) {
+                                console.log(
+                                    `Circular dependency between ${sd.name} and ${p.name}`,
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     getDependencies(content: PackageJsonType) {
         let deps: Dependency[] = [];
@@ -620,6 +647,10 @@ ${deps.map((d) => `    ${d.type}`).join("\n")}
         }
         if (args[0] === "applyPluginConfigToPackageJsonFiles") {
             this.applyPluginConfigToFiles();
+            process.exit();
+        }
+        if (args[0] === "findCircularDependencies") {
+            this.findCircularDependencies();
             process.exit();
         }
     }

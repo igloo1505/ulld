@@ -266,7 +266,7 @@ model Settings {
     lockedLandingImage    String?
     cleanOnSync           Boolean        @default(false)
     plotTheme             String?
-    /// [PluginSettiingsRecord]
+    /// [PluginSettingsRecord]
     pluginSettings        Json           @default("{}")
     firstSync             DateTime       @default(now())
     lastSync              DateTime       @default(now()) @updatedAt

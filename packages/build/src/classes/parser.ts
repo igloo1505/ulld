@@ -1,5 +1,5 @@
 import { DeveloperConfigOutput, ParserKey } from "@ulld/configschema/developer";
-import { TargetPaths } from "./paths";
+import { TargetPaths } from "./paths.js";
 
 export class PluginParser<T extends ParserKey> {
     parserConfig: DeveloperConfigOutput["parsers"][T]

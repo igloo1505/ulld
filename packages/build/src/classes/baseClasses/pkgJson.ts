@@ -1,10 +1,11 @@
 import { PackageJsonType } from "@ulld/developer-schemas/fullPackageJson";
-import { Prompter } from "../prompter";
 import path from "path";
-import fs from "fs";
+import fs, { write } from "fs";
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
 import { transformExportString } from "@ulld/utilities/transformExportString";
-import { PackageManagers } from "../../types";
+import { PackageManagers } from "../../types.js";
+import { BuildOptionsType } from "../../utils/options.js";
+import { Prompter } from "../prompter.js";
 
 interface ExportItem {
     export: string;
@@ -20,8 +21,9 @@ export class PackageJson extends Prompter {
         public applicationDir: string,
         targetDir: string | undefined,
         gitBranch: string,
+        cliOptions: BuildOptionsType
     ) {
-        super(applicationDir, gitBranch);
+        super(applicationDir, gitBranch, cliOptions);
         this.path = path.join(targetDir || applicationDir, "package.json");
     }
     applyScript(newScript: Record<string, string>) {

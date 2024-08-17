@@ -1,6 +1,6 @@
 import { makeValidId } from "@ulld/utilities/identity";
-import { FileManager } from "../baseClasses/fileManager";
-import { TargetPaths } from "../paths";
+import { FileManager } from "../baseClasses/fileManager.js";
+import { TargetPaths } from "../paths.js";
 import { SlotDataType } from "@ulld/utilities/types";
 
 export class TemplateContent extends FileManager {

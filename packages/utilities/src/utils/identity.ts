@@ -12,12 +12,10 @@ export const getRandomId = (_length: number = 16) => {
 
 
 
-export const makeValidId = (id: string) => {
-    let s = replaceRecursively(id, " ", "")
-    s = replaceRecursively(id, /([^\w]|\d)/gm, "")
-    return s
+export const makeValidId = (id: string = "") => {
+    return id.replaceAll(" ", "").replaceAll(/([^\w]|\d)/gm, "")
 }
 
-export const makeValidIdOnlyLetters = (id: string) => {
+export const makeValidIdOnlyLetters = (id: string = "") => {
     return id.replaceAll(/[^\w]/gmi, "")
 }

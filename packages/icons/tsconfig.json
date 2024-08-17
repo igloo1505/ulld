@@ -1,6 +1,6 @@
 {
     "$schema": "https://json.schemastore.org/tsconfig.json",
-      "extends": "@ulld/typescript-config/nextjs.json",
+    "extends": "@ulld/typescript-config/nextjs.json",
     "include": [
         "./**/*.ts",
         "./**/*.tsx"
@@ -8,14 +8,17 @@
     "exclude": [
         "dist",
         "build",
-        "node_modules"
+        "node_modules",
+        "react-app-env-d.ts"
     ],
     "compilerOptions": {
-        "rootDir": ".",
+        "rootDir": "src",
         "moduleResolution": "Bundler",
+        "outDir": "dist",
         "jsx": "react-jsx",
         "esModuleInterop": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "noEmit": false,
+        "emitDeclarationOnly": true
     }
 }
-

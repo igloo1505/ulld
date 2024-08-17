@@ -1,5 +1,5 @@
 import path from "path";
-import { WithRequired } from "../../types/utilityTypes";
+import type { WithRequired } from "../../types/utilityTypes";
 
 export type FilePathItem = {
     subPath: string;
@@ -78,6 +78,7 @@ export const fileItems: Record<FileItemKey, FileItemWithRootGlob[]> = {
         },
     ],
 };
+
 
 export const additionalFilePaths: FilePathItem = {
     subPath: "/",

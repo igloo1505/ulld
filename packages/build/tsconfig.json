@@ -1,20 +1,23 @@
 {
     "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
     "compilerOptions": {
+        "noEmitOnError": false, 
         "declaration": true,
-        "module": "ES2020",
+        "module": "NodeNext",
         "outDir": "dist",
         "rootDir": "src",
         "strict": true,
         "target": "es2022",
-        "moduleResolution": "Bundler",
+        "moduleResolution": "NodeNext",
         "esModuleInterop": true,
+        "types": [ "mocha", "chai", "node" ],
         "jsx": "preserve",
-        "types": [
-            "mocha",
-            "chai",
-            "node"
-        ]
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true
+        // "lib": [
+        //     "ES2023",
+        //     "DOM"
+        // ],
     },
     "include": [
         "./src/**/*.ts",

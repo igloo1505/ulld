@@ -1,6 +1,6 @@
 import cp, { ExecException } from "child_process";
 import chalk from "chalk";
-import { PackageManagers } from "../../types";
+import { PackageManagers } from "../../types.js";
 
 type LogLevel = "normal" | "verbose" | "debug";
 

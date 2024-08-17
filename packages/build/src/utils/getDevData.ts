@@ -1,3 +1,3 @@
-import devData from "../../staticDevelopmentData.json"
+var devData = require("../../staticDevelopmentData.json")
 
 export const getDevData = () => devData

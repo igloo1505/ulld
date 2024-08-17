@@ -3,7 +3,7 @@ import { navigationLinkSchema } from "../developer/navigationLink";
 import { settingsPageOutputSchema } from "./settingsPage";
 import { ValidIconName } from "@ulld/icons";
 import { componentDocumentationSchema } from "./componentDocumentation";
-import buildData from "@ulld/utilities/buildStaticData"
+import buildData from "@ulld/utilities/buildStaticData.json"
 import { replaceRecursively } from "@ulld/utilities/general";
 
 const getFileTypeAppendices = (parsableExtensions: string[]) => {

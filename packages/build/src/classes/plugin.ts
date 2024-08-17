@@ -5,18 +5,18 @@ import {
     AnySubSlotKey,
     PluginSlotKey,
 } from "@ulld/configschema/developerTypes";
-import { PluginSlot } from "./slot";
-import { PluginComponent } from "./component";
-import { PluginPage } from "./page";
-import { PluginParser } from "./parser";
-import { PluginEvents } from "./pluginEvents";
-import { TargetPaths } from "./paths";
-import { ShellManager } from "./baseClasses/shell";
-import { PackageJson } from "./baseClasses/pkgJson";
-import { PluginSettingsPage } from "./pluginSettingsPage";
-import { Path } from "./utilityClasses/Path";
 import { JsonFile } from "@ulld/utilities/jsonFileClass";
-import devData from "../../staticDevelopmentData.json"
+import devData from "../../staticDevelopmentData.json" with { type: "json" };
+import { PackageJson } from "./baseClasses/pkgJson.js";
+import { ShellManager } from "./baseClasses/shell.js";
+import { PluginComponent } from "./component.js";
+import { PluginPage } from "./page.js";
+import { PluginParser } from "./parser.js";
+import { TargetPaths } from "./paths.js";
+import { PluginEvents } from "./pluginEvents.js";
+import { PluginSettingsPage } from "./pluginSettingsPage.js";
+import { PluginSlot } from "./slot.js";
+import { Path } from "./utilityClasses/Path.js";
 
 export class UlldPlugin extends ShellManager {
     pluginConfig: DeveloperConfigOutput | "Unusable" = "Unusable";
@@ -45,6 +45,7 @@ export class UlldPlugin extends ShellManager {
         public name: string,
         public version: string = "latest",
         public baseAppGitBranch: string,
+        // public cliOptions: BuildOptionsType
     ) {
         super();
         this.targetDir = paths.targetDir;
@@ -69,6 +70,8 @@ export class UlldPlugin extends ShellManager {
             this.paths.projectRoot,
             pkgJsonFile.path,
             this.baseAppGitBranch,
+            {}
+            /* this.cliOptions */
         );
         let foundConfig = false;
         if (configFile.exists()) {
