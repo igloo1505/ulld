@@ -1,5 +1,13 @@
 # @ulld/database
 
+## 0.0.67
+
+### Patch Changes
+
+- Remove dist dirs trying to resolve build heap memory issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.64
+
 ## 0.0.66
 
 ### Patch Changes

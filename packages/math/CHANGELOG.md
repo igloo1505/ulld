@@ -1,5 +1,18 @@
 # @ulld/math
 
+## 0.0.70
+
+### Patch Changes
+
+- Remove dist dirs trying to resolve build heap memory issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.64
+  - @ulld/configschema@0.0.70
+  - @ulld/hooks@0.0.70
+  - @ulld/icons@0.0.70
+  - @ulld/state@0.0.70
+  - @ulld/utilities@0.0.70
+
 ## 0.0.69
 
 ### Patch Changes

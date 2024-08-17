@@ -1,5 +1,28 @@
 # @ulld/snippets
 
+## 0.0.70
+
+### Patch Changes
+
+- Remove dist dirs trying to resolve build heap memory issue.
+- Updated dependencies
+  - @ulld/api@0.0.70
+  - @ulld/eslint-config@0.0.66
+  - @ulld/typescript-config@0.0.64
+  - @ulld/configschema@0.0.70
+  - @ulld/database@0.0.67
+  - @ulld/developer@0.0.70
+  - @ulld/editor@0.0.70
+  - @ulld/full-form@0.0.70
+  - @ulld/hooks@0.0.70
+  - @ulld/jest-presets@0.0.64
+  - @ulld/parsers@0.0.70
+  - @ulld/render@0.0.70
+  - @ulld/state@0.0.70
+  - @ulld/tailwind@0.0.64
+  - @ulld/ui@0.0.70
+  - @ulld/utilities@0.0.70
+
 ## 0.0.69
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/parsers
 
+## 0.0.70
+
+### Patch Changes
+
+- Remove dist dirs trying to resolve build heap memory issue.
+- Updated dependencies
+  - @ulld/component-map@0.0.70
+  - @ulld/configschema@0.0.70
+  - @ulld/database@0.0.67
+  - @ulld/developer@0.0.70
+  - @ulld/utilities@0.0.70
+
 ## 0.0.69
 
 ### Patch Changes

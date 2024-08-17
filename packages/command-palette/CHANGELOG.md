@@ -1,5 +1,32 @@
 # @ulld/command-palette
 
+## 0.0.70
+
+### Patch Changes
+
+- Remove dist dirs trying to resolve build heap memory issue.
+- Updated dependencies
+  - @ulld/api@0.0.70
+  - @ulld/bib-manager@0.0.70
+  - @ulld/calendar@0.0.70
+  - @ulld/configschema@0.0.70
+  - @ulld/database@0.0.67
+  - @ulld/developer@0.0.70
+  - @ulld/diagram@0.0.70
+  - @ulld/editor@0.0.70
+  - @ulld/equations@0.0.70
+  - @ulld/hooks@0.0.70
+  - @ulld/logger@0.0.64
+  - @ulld/parsers@0.0.70
+  - @ulld/render@0.0.70
+  - @ulld/snippets@0.0.70
+  - @ulld/state@0.0.70
+  - @ulld/tailwind@0.0.64
+  - @ulld/task-manager@0.0.70
+  - @ulld/ui@0.0.70
+  - @ulld/utilities@0.0.70
+  - @ulld/whiteboard@0.0.70
+
 ## 0.0.69
 
 ### Patch Changes

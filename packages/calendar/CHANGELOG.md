@@ -1,5 +1,13 @@
 # @ulld/calendar
 
+## 0.0.70
+
+### Patch Changes
+
+- Remove dist dirs trying to resolve build heap memory issue.
+- Updated dependencies
+  - @ulld/developer@0.0.70
+
 ## 0.0.69
 
 ### Patch Changes

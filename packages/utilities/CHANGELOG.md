@@ -1,5 +1,15 @@
 # @ulld/utilities
 
+## 0.0.70
+
+### Patch Changes
+
+- Remove dist dirs trying to resolve build heap memory issue.
+- Updated dependencies
+  - @ulld/database@0.0.67
+  - @ulld/math@0.0.70
+  - @ulld/tailwind@0.0.64
+
 ## 0.0.69
 
 ### Patch Changes

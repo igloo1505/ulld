@@ -1,5 +1,11 @@
 # @ulld/baseConfigs
 
+## 0.0.64
+
+### Patch Changes
+
+- Remove dist dirs trying to resolve build heap memory issue.
+
 ## 0.0.63
 
 ### Patch Changes

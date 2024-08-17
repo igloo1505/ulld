@@ -1,5 +1,29 @@
 # @ulld/component-map
 
+## 0.0.70
+
+### Patch Changes
+
+- Remove dist dirs trying to resolve build heap memory issue.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.70
+  - @ulld/calendar@0.0.70
+  - @ulld/default-image-map@0.0.70
+  - @ulld/diagram@0.0.70
+  - @ulld/editor@0.0.70
+  - @ulld/embeddable-components@0.0.70
+  - @ulld/equations@0.0.70
+  - @ulld/full-form@0.0.70
+  - @ulld/journal@0.0.70
+  - @ulld/navigation@0.0.70
+  - @ulld/notebook@0.0.70
+  - @ulld/pdf@0.0.70
+  - @ulld/plot@0.0.70
+  - @ulld/snippets@0.0.70
+  - @ulld/tailwind@0.0.64
+  - @ulld/task-manager@0.0.70
+  - @ulld/whiteboard@0.0.70
+
 ## 0.0.69
 
 ### Patch Changes

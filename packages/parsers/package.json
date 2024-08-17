@@ -1,6 +1,6 @@
 {
     "name": "@ulld/parsers",
-    "version": "0.0.69",
+    "version": "0.0.70",
     "private": false,
     "exports": {
         ".": "./src/mdx/compiler/mdx-to-jsx.tsx",

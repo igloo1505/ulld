@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.66
+
+### Patch Changes
+
+- Remove dist dirs trying to resolve build heap memory issue.
+
 ## 0.0.65
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @ulld/default-image-map
 
+## 0.0.70
+
+### Patch Changes
+
+- Remove dist dirs trying to resolve build heap memory issue.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.66
+  - @ulld/typescript-config@0.0.64
+  - @ulld/configschema@0.0.70
+  - @ulld/logger@0.0.64
+  - @ulld/tailwind@0.0.64
+  - @ulld/utilities@0.0.70
+
 ## 0.0.69
 
 ### Patch Changes
