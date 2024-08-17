@@ -29,6 +29,12 @@
             "typeName": "PostgresClientGenerator"
         },
         {
+            "path": "npmrc/pnpm.txt",
+            "id": "pnpm",
+            "variables": [],
+            "typeName": "Pnpm"
+        },
+        {
             "path": "noteType/noteTypePage.txt",
             "id": "noteTypePage",
             "variables": [
