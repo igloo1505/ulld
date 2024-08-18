@@ -1,5 +1,5 @@
 public-hoist-pattern[]=*prisma*
-dedupe-peer-dependents=false
-auto-install-peers=false
+dedupe-peer-dependents=true
+auto-install-peers=true
 legacy-peer-deps=true
 node-linker=hoisted

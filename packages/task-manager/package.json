@@ -18,6 +18,12 @@
         "./taskManagerPage": "./src/components/taskManagerPage/main.tsx",
         "./taskListSearchResult": "./src/components/TaskListSearchResults/main.tsx"
     },
+    "dependencies": {
+        "eslint-config-next": "14.2.5",
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
     "peerDependencies": {
         "@ulld/api": "workspace:*",
         "@ulld/calendar": "workspace:*",
@@ -125,11 +131,5 @@
         "tailwind": {},
         "styles": {}
     },
-    "ulld-plugin-id": "9a2f4468-9240-49ed-be6e-8a105d16bea5",
-    "dependencies": {
-        "eslint-config-next": "14.2.5",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    }
+    "ulld-plugin-id": "9a2f4468-9240-49ed-be6e-8a105d16bea5"
 }

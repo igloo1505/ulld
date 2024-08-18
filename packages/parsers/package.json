@@ -2,6 +2,9 @@
     "name": "@ulld/parsers",
     "version": "0.0.74",
     "private": false,
+    "files": [
+        "src"
+    ],
     "exports": {
         ".": "./src/mdx/compiler/mdx-to-jsx.tsx",
         "./serializeMdxContent": "./src/mdx/compiler/mdx-to-jsx.tsx",
@@ -28,10 +31,6 @@
         "./taggables": "./src/general/taggables.ts",
         "./serverMdxToHtml": "./src/mdx/compiler/mdx-to-html.tsx"
     },
-    "files": [
-        "dist",
-        "src"
-    ],
     "scripts": {
         "dev": "echo 'Add dev script here'",
         "build": "echo 'Add build script here'",

@@ -4,6 +4,13 @@ import { PathKeys, MethodListPathKeys, pathKeys } from "@ulld/utilities/types";
 import { removeLeadingDotSlash } from "../utils/removeLeadingDotSlash";
 import { ParserKey } from "@ulld/configschema/developer";
 import { PluginEventsConfig } from "@ulld/configschema/developerTypes";
+import xdgAppPaths from 'xdg-app-paths';
+import type { DirOptions, Options, XDGAppPaths } from 'xdg-app-paths';
+
+let xdgOpts: Options = {
+    name: "ulld",
+    suffix: "noteTaking"
+}
 
 export class TargetPaths
     implements Record<PathKeys | MethodListPathKeys, string> {
@@ -37,10 +44,13 @@ export class TargetPaths
     gitignore: string;
     envLocal: string
     pluginDocumentation: string
+    xdgPaths: XDGAppPaths
     constructor(
         public targetDir: string,
         public isLocalDev: boolean,
     ) {
+        this.xdgPaths = xdgAppPaths()
+        console.log("this.xdgPaths: ", this.xdgPaths)
         this.public = path.join(targetDir, "public");
         this.node_modules = path.join(targetDir, "node_modules");
         this.gitignore = path.join(targetDir, ".gitignore");

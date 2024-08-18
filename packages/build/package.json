@@ -36,7 +36,8 @@
         "prompts": "2.4.2",
         "simple-git": "3.25.0",
         "terminal-link": "3.0.0",
-        "tsx": "4.15.6"
+        "tsx": "4.15.6",
+        "xdg-app-paths": "^8.3.0"
     },
     "devDependencies": {
         "@commander-js/extra-typings": "^12.1.0",

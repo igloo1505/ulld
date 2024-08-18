@@ -1,4 +1,5 @@
 import { getAllRegexMatches } from "./getAllRegexMatches";
+import distance from "jaro-winkler"
 
 export const capitalize = (val: string) =>
     `${val[0].toUpperCase()}${val.slice(1)}`;
@@ -46,3 +47,19 @@ export const removeMathDollarSigns = (_s: string) => {
     }
     return s
 };
+
+
+export const sortStringsBySimilarity = (searchString: string, opts: string[], caseSensitive: boolean = false) => {
+    return opts.map((x) => ({
+        /* @ts-ignore */
+        similarity: distance(searchString, x, {
+            caseSensitive
+        }),
+        value: x
+    })).sort((a, b) => a.similarity < b.similarity ? 1 : a.similarity > b.similarity ? -1 : 0)
+}
+
+
+export const getMostSimilarString = (searchString: string, opts: string[], caseSensitive: boolean = false) => {
+       return sortStringsBySimilarity(searchString, opts, caseSensitive)[0].value
+}

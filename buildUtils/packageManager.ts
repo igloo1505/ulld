@@ -710,23 +710,23 @@ ${deps.map((d) => `    ${d.type}`).join("\n")}
 
 
 
-let p = new PackageManager()
-p.removeWebsite()
+// let p = new PackageManager()
+// p.removeWebsite()
 
-let outputFile = new JsonFile<PackageJsonType>("/Users/bigsexy/Desktop/current/ulldSandbox/ulldApp/package.json")
+// let outputFile = new JsonFile<PackageJsonType>("/Users/bigsexy/Desktop/current/ulldSandbox/ulldApp/package.json")
 
-let outputContent = p.applyInternalDepsToPackageJson(outputFile, [
-    "@ulld/notebook",
-    "@ulld/note-network",
-    "@ulld/eslint-config",
-    "@ulld/jest-presets",
-    "@ulld/chat",
-    "@ulld/health-tracking",
-    "@ulld/internal-dev-cli",
-    "@ulld/cookbook",
-    "@ulld/diagram",
-])
+// let outputContent = p.applyInternalDepsToPackageJson(outputFile, [
+//     "@ulld/notebook",
+//     "@ulld/note-network",
+//     "@ulld/eslint-config",
+//     "@ulld/jest-presets",
+//     "@ulld/chat",
+//     "@ulld/health-tracking",
+//     "@ulld/internal-dev-cli",
+//     "@ulld/cookbook",
+//     "@ulld/diagram",
+// ])
 
-outputFile.writeContent(outputContent)
+// outputFile.writeContent(outputContent)
 
-console.log(outputContent)
+// console.log(outputContent)
