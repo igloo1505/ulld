@@ -36,6 +36,7 @@ export class FileData {
             console.error(
                 `Could not get dirname. Path likely does not exist at ${this.path}`,
             );
+            return this.path
         }
     }
     mkdirIfNotExists() {
