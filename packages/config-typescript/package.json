@@ -6,13 +6,11 @@
     "publishConfig": {
         "access": "public"
     },
-    "peerDependencies": {},
-    "devDependencies": {
+    "peerDependencies": {
         "@ulld/types": "workspace:*"
     },
-    "dependencies": {
-        "@ulld/types": "workspace:*"
-    },
+    "devDependencies": {},
+    "dependencies": {},
     "files": [
         "src",
         "react-app.json",

@@ -20,11 +20,6 @@
         "@types/inquirer": "^9.0.7",
         "@types/node": "^20.11.24",
         "@types/prompts": "^2.4.9",
-        "@ulld/base-configs": "workspace:*",
-        "@ulld/configschema": "workspace:*",
-        "@ulld/developer-schemas": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/utilities": "workspace:*",
         "ansi-colors": "4.1.3",
         "chalk": "5.3.0",
         "cli-progress": "3.12.0",
@@ -49,11 +44,6 @@
         "@types/inquirer": "^9.0.7",
         "@types/node": "^20.11.24",
         "@types/prompts": "^2.4.9",
-        "@ulld/base-configs": "workspace:*",
-        "@ulld/configschema": "workspace:*",
-        "@ulld/developer-schemas": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/utilities": "workspace:*",
         "ansi-colors": "4.1.3",
         "chalk": "5.3.0",
         "cli-progress": "3.12.0",
@@ -76,5 +66,11 @@
         "access": "public"
     },
     "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {}
+    "peerDependencies": {
+        "@ulld/base-configs": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/developer-schemas": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/utilities": "workspace:*"
+    }
 }

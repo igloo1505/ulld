@@ -49,13 +49,6 @@
         "@testing-library/jest-dom": "^6.4.2",
         "@testing-library/react": "^14.2.2",
         "@testing-library/user-event": "^14.5.2",
-        "@ulld/component-map": "workspace:*",
-        "@ulld/configschema": "workspace:*",
-        "@ulld/database": "workspace:*",
-        "@ulld/developer": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:^",
-        "@ulld/utilities": "workspace:*",
         "chai": "^5.1.0",
         "citation-js": "0.7.8",
         "cypress": "^13.7.1",
@@ -99,13 +92,6 @@
         "@testing-library/jest-dom": "^6.4.2",
         "@testing-library/react": "^14.2.2",
         "@testing-library/user-event": "^14.5.2",
-        "@ulld/component-map": "workspace:*",
-        "@ulld/configschema": "workspace:*",
-        "@ulld/database": "workspace:*",
-        "@ulld/developer": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:^",
-        "@ulld/utilities": "workspace:*",
         "chai": "^5.1.0",
         "citation-js": "0.7.8",
         "cypress": "^13.7.1",
@@ -142,5 +128,13 @@
     "publishConfig": {
         "access": "public"
     },
-    "peerDependencies": {}
+    "peerDependencies": {
+        "@ulld/component-map": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/database": "workspace:*",
+        "@ulld/developer": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:^",
+        "@ulld/utilities": "workspace:*"
+    }
 }

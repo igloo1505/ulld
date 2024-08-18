@@ -52,9 +52,6 @@
         "@types/jest": "^29.5.11",
         "@types/mocha": "^10.0.6",
         "@types/node": "^20.11.24",
-        "@ulld/developer": "workspace:*",
-        "@ulld/developer-schemas": "workspace:*",
-        "@ulld/types": "workspace:*",
         "chai": "^4.4.1",
         "cli-table3": "0.6.4",
         "deepmerge": "4.3.1",
@@ -91,9 +88,6 @@
         "@types/jest": "^29.5.11",
         "@types/mocha": "^10.0.6",
         "@types/node": "^20.11.24",
-        "@ulld/developer": "workspace:*",
-        "@ulld/developer-schemas": "workspace:*",
-        "@ulld/types": "workspace:*",
         "chai": "^4.4.1",
         "cli-table3": "0.6.4",
         "deepmerge": "4.3.1",
@@ -121,5 +115,9 @@
     "publishConfig": {
         "access": "public"
     },
-    "peerDependencies": {}
+    "peerDependencies": {
+        "@ulld/developer": "workspace:*",
+        "@ulld/developer-schemas": "workspace:*",
+        "@ulld/types": "workspace:*"
+    }
 }

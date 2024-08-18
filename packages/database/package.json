@@ -40,8 +40,6 @@
     },
     "dependencies": {
         "@prisma/client": "5.17.0",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
         "next": "14.2.3",
         "prisma": "5.17.0",
         "prisma-generator-fake-data": "^0.14.2",
@@ -51,6 +49,7 @@
         "zod-prisma-types": "^3.1.8"
     },
     "peerDependencies": {
+        "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
         "prisma": "5.17.0"
     },
@@ -60,8 +59,6 @@
     },
     "devDependencies": {
         "@prisma/client": "5.17.0",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
         "next": "14.2.3",
         "prisma": "5.17.0",
         "prisma-generator-fake-data": "^0.14.2",

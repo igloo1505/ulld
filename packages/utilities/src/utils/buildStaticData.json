@@ -420,7 +420,7 @@
     "currentPackageVersions": {
         "@ulld/whiteboard": "0.0.72",
         "@ulld/utilities": "0.0.72",
-        "@ulld/ui": "0.0.72",
+        "@ulld/ui": "0.0.70",
         "@ulld/types": "0.0.66",
         "@ulld/task-manager": "0.0.72",
         "@ulld/tailwind": "0.0.66",
