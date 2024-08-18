@@ -5,6 +5,7 @@ import rl from "readline";
 import npmFetch from "npm-registry-fetch";
 import { PackageJsonType } from "@ulld/utilities/packageJsonType";
 import { JsonFile } from "@ulld/utilities/jsonFileClass";
+import { InternalAppName } from "../packages/types/src/internalAppNames";
 
 interface Dependency {
     name: string;
@@ -611,6 +612,20 @@ ${deps.map((d) => `    ${d.type}`).join("\n")}
             });
         }
     }
+    applyInternalDepsToPackageJson(p: JsonFile<PackageJsonType>, excludePackages: InternalAppName[] = []){
+        let data = p.getJsonContent()
+        let exclude: InternalAppName[] = ["@ulld/website", ...excludePackages]
+        for (const pkg of this.packages) {
+            if(!exclude.includes(pkg.name as any) && pkg.content.version){
+                if(!(pkg.name in data.dependencies)){
+                    console.log(`Adding ${pkg.name} to package.json dependencies.`)
+                }
+                data.dependencies[pkg.name] = pkg.content.version
+            }
+        }
+        p.content = JSON.stringify(data, null, 2)
+        return data
+    }
     applyPluginConfigToFiles() {
         console.log(`Applying plugin config files to package.json files property.`);
         for (const k of this.packages) {
@@ -692,3 +707,26 @@ ${deps.map((d) => `    ${d.type}`).join("\n")}
         }
     }
 }
+
+
+
+let p = new PackageManager()
+p.removeWebsite()
+
+let outputFile = new JsonFile<PackageJsonType>("/Users/bigsexy/Desktop/current/ulldSandbox/ulldApp/package.json")
+
+let outputContent = p.applyInternalDepsToPackageJson(outputFile, [
+    "@ulld/notebook",
+    "@ulld/note-network",
+    "@ulld/eslint-config",
+    "@ulld/jest-presets",
+    "@ulld/chat",
+    "@ulld/health-tracking",
+    "@ulld/internal-dev-cli",
+    "@ulld/cookbook",
+    "@ulld/diagram",
+])
+
+outputFile.writeContent(outputContent)
+
+console.log(outputContent)
