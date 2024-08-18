@@ -1,5 +1,17 @@
 # @ulld/utilities
 
+## 0.0.74
+
+### Patch Changes
+
+- Fix broken imports created when build blew up.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.68
+  - @ulld/database@0.0.71
+  - @ulld/math@0.0.74
+  - @ulld/tailwind@0.0.68
+  - @ulld/types@0.0.68
+
 ## 0.0.73
 
 ### Patch Changes

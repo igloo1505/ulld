@@ -1,5 +1,14 @@
 # @ulld/tailwind
 
+## 0.0.68
+
+### Patch Changes
+
+- Fix broken imports created when build blew up.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.68
+  - @ulld/types@0.0.68
+
 ## 0.0.67
 
 ### Patch Changes

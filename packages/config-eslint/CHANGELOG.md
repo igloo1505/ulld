@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.70
+
+### Patch Changes
+
+- Fix broken imports created when build blew up.
+
 ## 0.0.69
 
 ### Patch Changes

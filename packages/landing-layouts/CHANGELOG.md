@@ -1,5 +1,29 @@
 # @ulld/landing-layouts
 
+## 0.0.74
+
+### Patch Changes
+
+- Fix broken imports created when build blew up.
+- Updated dependencies
+  - @ulld/api@0.0.74
+  - @ulld/bib-manager@0.0.74
+  - @ulld/calendar@0.0.74
+  - @ulld/eslint-config@0.0.70
+  - @ulld/typescript-config@0.0.68
+  - @ulld/configschema@0.0.74
+  - @ulld/developer@0.0.74
+  - @ulld/hooks@0.0.74
+  - @ulld/icons@0.0.74
+  - @ulld/journal@0.0.74
+  - @ulld/plot@0.0.74
+  - @ulld/state@0.0.74
+  - @ulld/tailwind@0.0.68
+  - @ulld/types@0.0.68
+  - @ulld/ui@0.0.72
+  - @ulld/utilities@0.0.74
+  - @ulld/whiteboard@0.0.74
+
 ## 0.0.73
 
 ### Patch Changes

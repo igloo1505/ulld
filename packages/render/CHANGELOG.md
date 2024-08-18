@@ -1,5 +1,21 @@
 # @ulld/render
 
+## 0.0.74
+
+### Patch Changes
+
+- Fix broken imports created when build blew up.
+- Updated dependencies
+  - @ulld/api@0.0.74
+  - @ulld/component-map@0.0.74
+  - @ulld/typescript-config@0.0.68
+  - @ulld/configschema@0.0.74
+  - @ulld/hooks@0.0.74
+  - @ulld/jest-presets@0.0.68
+  - @ulld/parsers@0.0.74
+  - @ulld/types@0.0.68
+  - @ulld/utilities@0.0.74
+
 ## 0.0.73
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.74
+
+### Patch Changes
+
+- Fix broken imports created when build blew up.
+- Updated dependencies
+  - @ulld/developer@0.0.74
+  - @ulld/developer-schemas@0.0.68
+  - @ulld/types@0.0.68
+
 ## 0.0.73
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @ulld/diagram
 
+## 0.0.74
+
+### Patch Changes
+
+- Fix broken imports created when build blew up.
+- Updated dependencies
+  - @ulld/api@0.0.74
+  - @ulld/typescript-config@0.0.68
+  - @ulld/developer@0.0.74
+  - @ulld/state@0.0.74
+  - @ulld/tailwind@0.0.68
+  - @ulld/types@0.0.68
+
 ## 0.0.73
 
 ### Patch Changes

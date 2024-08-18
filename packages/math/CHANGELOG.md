@@ -1,5 +1,20 @@
 # @ulld/math
 
+## 0.0.74
+
+### Patch Changes
+
+- Fix broken imports created when build blew up.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.68
+  - @ulld/configschema@0.0.74
+  - @ulld/hooks@0.0.74
+  - @ulld/icons@0.0.74
+  - @ulld/jest-presets@0.0.68
+  - @ulld/state@0.0.74
+  - @ulld/types@0.0.68
+  - @ulld/utilities@0.0.74
+
 ## 0.0.73
 
 ### Patch Changes

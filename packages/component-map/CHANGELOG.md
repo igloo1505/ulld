@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.74
+
+### Patch Changes
+
+- Fix broken imports created when build blew up.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.74
+  - @ulld/calendar@0.0.74
+  - @ulld/typescript-config@0.0.68
+  - @ulld/default-image-map@0.0.74
+  - @ulld/diagram@0.0.74
+  - @ulld/editor@0.0.74
+  - @ulld/embeddable-components@0.0.74
+  - @ulld/equations@0.0.74
+  - @ulld/full-form@0.0.74
+  - @ulld/journal@0.0.74
+  - @ulld/navigation@0.0.74
+  - @ulld/notebook@0.0.74
+  - @ulld/pdf@0.0.74
+  - @ulld/plot@0.0.74
+  - @ulld/snippets@0.0.74
+  - @ulld/tailwind@0.0.68
+  - @ulld/task-manager@0.0.74
+  - @ulld/types@0.0.68
+  - @ulld/whiteboard@0.0.74
+
 ## 0.0.73
 
 ### Patch Changes

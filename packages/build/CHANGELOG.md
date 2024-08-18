@@ -1,5 +1,17 @@
 # @ulld/build
 
+## 0.0.74
+
+### Patch Changes
+
+- Fix broken imports created when build blew up.
+- Updated dependencies
+  - @ulld/base-configs@0.0.68
+  - @ulld/configschema@0.0.74
+  - @ulld/developer-schemas@0.0.68
+  - @ulld/types@0.0.68
+  - @ulld/utilities@0.0.74
+
 ## 0.0.73
 
 ### Patch Changes

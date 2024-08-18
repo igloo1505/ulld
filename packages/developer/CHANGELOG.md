@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.74
+
+### Patch Changes
+
+- Fix broken imports created when build blew up.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.70
+  - @ulld/typescript-config@0.0.68
+  - @ulld/configschema@0.0.74
+  - @ulld/database@0.0.71
+  - @ulld/logger@0.0.68
+  - @ulld/types@0.0.68
+
 ## 0.0.73
 
 ### Patch Changes
