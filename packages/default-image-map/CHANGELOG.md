@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.73
+
+### Patch Changes
+
+- Moved most or all of internal deps to peer to try and resolve circular deps issue.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.69
+  - @ulld/typescript-config@0.0.67
+  - @ulld/configschema@0.0.73
+  - @ulld/logger@0.0.67
+  - @ulld/tailwind@0.0.67
+  - @ulld/types@0.0.67
+  - @ulld/utilities@0.0.73
+
 ## 0.0.72
 
 ### Patch Changes

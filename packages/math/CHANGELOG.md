@@ -1,5 +1,20 @@
 # @ulld/math
 
+## 0.0.73
+
+### Patch Changes
+
+- Moved most or all of internal deps to peer to try and resolve circular deps issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.67
+  - @ulld/configschema@0.0.73
+  - @ulld/hooks@0.0.73
+  - @ulld/icons@0.0.73
+  - @ulld/jest-presets@0.0.67
+  - @ulld/state@0.0.73
+  - @ulld/types@0.0.67
+  - @ulld/utilities@0.0.73
+
 ## 0.0.72
 
 ### Patch Changes

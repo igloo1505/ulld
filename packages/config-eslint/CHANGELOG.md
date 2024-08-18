@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.69
+
+### Patch Changes
+
+- Moved most or all of internal deps to peer to try and resolve circular deps issue.
+
 ## 0.0.68
 
 ### Patch Changes

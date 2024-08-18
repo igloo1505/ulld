@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.73
+
+### Patch Changes
+
+- Moved most or all of internal deps to peer to try and resolve circular deps issue.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.73
+  - @ulld/calendar@0.0.73
+  - @ulld/typescript-config@0.0.67
+  - @ulld/default-image-map@0.0.73
+  - @ulld/diagram@0.0.73
+  - @ulld/editor@0.0.73
+  - @ulld/embeddable-components@0.0.73
+  - @ulld/equations@0.0.73
+  - @ulld/full-form@0.0.73
+  - @ulld/journal@0.0.73
+  - @ulld/navigation@0.0.73
+  - @ulld/notebook@0.0.73
+  - @ulld/pdf@0.0.73
+  - @ulld/plot@0.0.73
+  - @ulld/snippets@0.0.73
+  - @ulld/tailwind@0.0.67
+  - @ulld/task-manager@0.0.73
+  - @ulld/types@0.0.67
+  - @ulld/whiteboard@0.0.73
+
 ## 0.0.72
 
 ### Patch Changes

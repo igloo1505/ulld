@@ -1,5 +1,22 @@
 # @ulld/state
 
+## 0.0.73
+
+### Patch Changes
+
+- Moved most or all of internal deps to peer to try and resolve circular deps issue.
+- Updated dependencies
+  - @ulld/base-configs@0.0.67
+  - @ulld/typescript-config@0.0.67
+  - @ulld/configschema@0.0.73
+  - @ulld/database@0.0.70
+  - @ulld/developer@0.0.73
+  - @ulld/hooks@0.0.73
+  - @ulld/parsers@0.0.73
+  - @ulld/tailwind@0.0.67
+  - @ulld/types@0.0.67
+  - @ulld/utilities@0.0.73
+
 ## 0.0.72
 
 ### Patch Changes

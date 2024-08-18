@@ -1,5 +1,33 @@
 # @ulld/ui
 
+## 0.0.71
+
+### Patch Changes
+
+- Moved most or all of internal deps to peer to try and resolve circular deps issue.
+- Updated dependencies
+  - @ulld/api@0.0.73
+  - @ulld/component-map@0.0.73
+  - @ulld/eslint-config@0.0.69
+  - @ulld/typescript-config@0.0.67
+  - @ulld/configschema@0.0.73
+  - @ulld/database@0.0.70
+  - @ulld/developer@0.0.73
+  - @ulld/editor@0.0.73
+  - @ulld/embeddable-components@0.0.73
+  - @ulld/full-form@0.0.73
+  - @ulld/hooks@0.0.73
+  - @ulld/icons@0.0.73
+  - @ulld/jest-presets@0.0.67
+  - @ulld/logger@0.0.67
+  - @ulld/navigation@0.0.73
+  - @ulld/parsers@0.0.73
+  - @ulld/render@0.0.73
+  - @ulld/state@0.0.73
+  - @ulld/tailwind@0.0.67
+  - @ulld/types@0.0.67
+  - @ulld/utilities@0.0.73
+
 ## 0.0.72
 
 ### Patch Changes

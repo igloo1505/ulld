@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.73
+
+### Patch Changes
+
+- Moved most or all of internal deps to peer to try and resolve circular deps issue.
+- Updated dependencies
+  - @ulld/developer@0.0.73
+  - @ulld/developer-schemas@0.0.67
+  - @ulld/types@0.0.67
+
 ## 0.0.72
 
 ### Patch Changes
