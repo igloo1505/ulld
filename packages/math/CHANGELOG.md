@@ -1,5 +1,20 @@
 # @ulld/math
 
+## 0.0.72
+
+### Patch Changes
+
+- Remove @ulld/notebook from all. Seems to be causing memory issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.66
+  - @ulld/configschema@0.0.72
+  - @ulld/hooks@0.0.72
+  - @ulld/icons@0.0.72
+  - @ulld/jest-presets@0.0.66
+  - @ulld/state@0.0.72
+  - @ulld/types@0.0.66
+  - @ulld/utilities@0.0.72
+
 ## 0.0.71
 
 ### Patch Changes

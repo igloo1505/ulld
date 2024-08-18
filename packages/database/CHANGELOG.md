@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.69
+
+### Patch Changes
+
+- Remove @ulld/notebook from all. Seems to be causing memory issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.66
+  - @ulld/types@0.0.66
+
 ## 0.0.68
 
 ### Patch Changes

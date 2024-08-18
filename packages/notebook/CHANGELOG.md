@@ -1,5 +1,25 @@
 # @ulld/notebook
 
+## 0.0.72
+
+### Patch Changes
+
+- Remove @ulld/notebook from all. Seems to be causing memory issue.
+- Updated dependencies
+  - @ulld/api@0.0.72
+  - @ulld/eslint-config@0.0.68
+  - @ulld/typescript-config@0.0.66
+  - @ulld/configschema@0.0.72
+  - @ulld/developer@0.0.72
+  - @ulld/editor@0.0.72
+  - @ulld/hooks@0.0.72
+  - @ulld/jest-presets@0.0.66
+  - @ulld/state@0.0.72
+  - @ulld/tailwind@0.0.66
+  - @ulld/types@0.0.66
+  - @ulld/ui@0.0.72
+  - @ulld/utilities@0.0.72
+
 ## 0.0.71
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @ulld/parsers
 
+## 0.0.72
+
+### Patch Changes
+
+- Remove @ulld/notebook from all. Seems to be causing memory issue.
+- Updated dependencies
+  - @ulld/component-map@0.0.72
+  - @ulld/typescript-config@0.0.66
+  - @ulld/configschema@0.0.72
+  - @ulld/database@0.0.69
+  - @ulld/developer@0.0.72
+  - @ulld/types@0.0.66
+  - @ulld/utilities@0.0.72
+
 ## 0.0.71
 
 ### Patch Changes

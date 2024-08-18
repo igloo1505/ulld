@@ -1,5 +1,21 @@
 # @ulld/render
 
+## 0.0.72
+
+### Patch Changes
+
+- Remove @ulld/notebook from all. Seems to be causing memory issue.
+- Updated dependencies
+  - @ulld/api@0.0.72
+  - @ulld/component-map@0.0.72
+  - @ulld/typescript-config@0.0.66
+  - @ulld/configschema@0.0.72
+  - @ulld/hooks@0.0.72
+  - @ulld/jest-presets@0.0.66
+  - @ulld/parsers@0.0.72
+  - @ulld/types@0.0.66
+  - @ulld/utilities@0.0.72
+
 ## 0.0.71
 
 ### Patch Changes

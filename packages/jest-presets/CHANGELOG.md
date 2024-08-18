@@ -1,5 +1,13 @@
 # @repo/jest-presets
 
+## 0.0.66
+
+### Patch Changes
+
+- Remove @ulld/notebook from all. Seems to be causing memory issue.
+- Updated dependencies
+  - @ulld/types@0.0.66
+
 ## 0.0.65
 
 ### Patch Changes

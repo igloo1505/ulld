@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.72
+
+### Patch Changes
+
+- Remove @ulld/notebook from all. Seems to be causing memory issue.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.72
+  - @ulld/calendar@0.0.72
+  - @ulld/typescript-config@0.0.66
+  - @ulld/default-image-map@0.0.72
+  - @ulld/diagram@0.0.72
+  - @ulld/editor@0.0.72
+  - @ulld/embeddable-components@0.0.72
+  - @ulld/equations@0.0.72
+  - @ulld/full-form@0.0.72
+  - @ulld/journal@0.0.72
+  - @ulld/navigation@0.0.72
+  - @ulld/notebook@0.0.72
+  - @ulld/pdf@0.0.72
+  - @ulld/plot@0.0.72
+  - @ulld/snippets@0.0.72
+  - @ulld/tailwind@0.0.66
+  - @ulld/task-manager@0.0.72
+  - @ulld/types@0.0.66
+  - @ulld/whiteboard@0.0.72
+
 ## 0.0.71
 
 ### Patch Changes
