@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.75
+
+### Patch Changes
+
+- Update missing or misaligned dependencies to work with new pnpm build process.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.71
+  - @ulld/typescript-config@0.0.69
+  - @ulld/configschema@0.0.75
+  - @ulld/logger@0.0.69
+  - @ulld/tailwind@0.0.69
+  - @ulld/types@0.0.69
+  - @ulld/utilities@0.0.75
+
 ## 0.0.74
 
 ### Patch Changes

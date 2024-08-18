@@ -1,5 +1,18 @@
 # @ulld/diagram
 
+## 0.0.75
+
+### Patch Changes
+
+- Update missing or misaligned dependencies to work with new pnpm build process.
+- Updated dependencies
+  - @ulld/api@0.0.75
+  - @ulld/typescript-config@0.0.69
+  - @ulld/developer@0.0.75
+  - @ulld/state@0.0.75
+  - @ulld/tailwind@0.0.69
+  - @ulld/types@0.0.69
+
 ## 0.0.74
 
 ### Patch Changes

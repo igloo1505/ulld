@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.72
+
+### Patch Changes
+
+- Update missing or misaligned dependencies to work with new pnpm build process.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.69
+  - @ulld/types@0.0.69
+
 ## 0.0.71
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.75
+
+### Patch Changes
+
+- Update missing or misaligned dependencies to work with new pnpm build process.
+- Updated dependencies
+  - @ulld/developer@0.0.75
+  - @ulld/types@0.0.69
+
 ## 0.0.74
 
 ### Patch Changes

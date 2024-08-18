@@ -1,5 +1,13 @@
 # @ulld/internal-dev-cli
 
+## 0.0.69
+
+### Patch Changes
+
+- Update missing or misaligned dependencies to work with new pnpm build process.
+- Updated dependencies
+  - @ulld/types@0.0.69
+
 ## 0.0.68
 
 ### Patch Changes

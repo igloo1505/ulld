@@ -1,5 +1,20 @@
 # @ulld/math
 
+## 0.0.75
+
+### Patch Changes
+
+- Update missing or misaligned dependencies to work with new pnpm build process.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.69
+  - @ulld/configschema@0.0.75
+  - @ulld/hooks@0.0.75
+  - @ulld/icons@0.0.75
+  - @ulld/jest-presets@0.0.69
+  - @ulld/state@0.0.75
+  - @ulld/types@0.0.69
+  - @ulld/utilities@0.0.75
+
 ## 0.0.74
 
 ### Patch Changes

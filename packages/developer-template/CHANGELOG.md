@@ -1,5 +1,29 @@
 # @ulld/developer-template
 
+## 0.0.75
+
+### Patch Changes
+
+- Update missing or misaligned dependencies to work with new pnpm build process.
+- Updated dependencies
+  - @ulld/api@0.0.75
+  - @ulld/base-configs@0.0.69
+  - @ulld/eslint-config@0.0.71
+  - @ulld/typescript-config@0.0.69
+  - @ulld/configschema@0.0.75
+  - @ulld/database@0.0.72
+  - @ulld/developer@0.0.75
+  - @ulld/hooks@0.0.75
+  - @ulld/icons@0.0.75
+  - @ulld/jest-presets@0.0.69
+  - @ulld/logger@0.0.69
+  - @ulld/parsers@0.0.75
+  - @ulld/state@0.0.75
+  - @ulld/tailwind@0.0.69
+  - @ulld/types@0.0.69
+  - @ulld/ui@0.0.73
+  - @ulld/utilities@0.0.75
+
 ## 0.0.74
 
 ### Patch Changes

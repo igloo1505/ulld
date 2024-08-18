@@ -1,5 +1,19 @@
 # @ulld/parsers
 
+## 0.0.75
+
+### Patch Changes
+
+- Update missing or misaligned dependencies to work with new pnpm build process.
+- Updated dependencies
+  - @ulld/component-map@0.0.75
+  - @ulld/typescript-config@0.0.69
+  - @ulld/configschema@0.0.75
+  - @ulld/database@0.0.72
+  - @ulld/developer@0.0.75
+  - @ulld/types@0.0.69
+  - @ulld/utilities@0.0.75
+
 ## 0.0.74
 
 ### Patch Changes

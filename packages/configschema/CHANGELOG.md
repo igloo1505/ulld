@@ -1,5 +1,19 @@
 # @ulld/configschema
 
+## 0.0.75
+
+### Patch Changes
+
+- Update missing or misaligned dependencies to work with new pnpm build process.
+- Updated dependencies
+  - @ulld/base-configs@0.0.69
+  - @ulld/typescript-config@0.0.69
+  - @ulld/developer-schemas@0.0.69
+  - @ulld/icons@0.0.75
+  - @ulld/tailwind@0.0.69
+  - @ulld/types@0.0.69
+  - @ulld/utilities@0.0.75
+
 ## 0.0.74
 
 ### Patch Changes

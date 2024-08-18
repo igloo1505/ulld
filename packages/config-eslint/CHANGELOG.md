@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.71
+
+### Patch Changes
+
+- Update missing or misaligned dependencies to work with new pnpm build process.
+
 ## 0.0.70
 
 ### Patch Changes
