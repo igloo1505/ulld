@@ -23,8 +23,16 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
+        "@ulld/api": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/developer": "workspace:*",
+        "@ulld/hooks": "workspace:*",
+        "@ulld/state": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
         "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
+        "@ulld/ui": "workspace:*",
+        "@ulld/utilities": "workspace:*",
         "next": "^14.2.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
@@ -36,5 +44,19 @@
     "files": [
         "src"
     ],
-    "dependencies": {}
+    "dependencies": {
+        "@ulld/api": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/developer": "workspace:*",
+        "@ulld/hooks": "workspace:*",
+        "@ulld/state": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/ui": "workspace:*",
+        "@ulld/utilities": "workspace:*",
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    }
 }

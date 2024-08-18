@@ -1,7 +1,7 @@
 import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
-import { FileManager } from "./baseClasses/fileManager.js";
-import { TargetPaths } from "./paths.js";
-import { TemplateFile } from "./templateFile.js";
+import { TargetPaths } from "./paths";
+import { TemplateFile } from "./templateFile";
+import { FileManager } from "./baseClasses/fileManager";
 
 export class NoteType {
     noteTargetPaths: ReturnType<InstanceType<typeof TargetPaths>["getNoteTypePathsFromTargetUrl"]>

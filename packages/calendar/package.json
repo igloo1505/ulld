@@ -10,19 +10,27 @@
     },
     "dependencies": {
         "@ulld/developer": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "dayjs": "^1.11.10",
         "googleapis": "^140.0.1",
         "ical.js": "2.0.0",
         "next": "14.2.3",
         "react": "18.2.0",
-        "react-dom": "18.2.0"
+        "react-dom": "18.2.0",
+        "use-lilius": "^2.0.5"
     },
     "devDependencies": {
+        "@ulld/developer": "workspace:*",
         "@ulld/types": "workspace:*",
         "dayjs": "^1.11.10",
+        "googleapis": "^140.0.1",
+        "ical.js": "2.0.0",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
         "use-lilius": "^2.0.5"
     },
     "peerDependencies": {
-        "dayjs": "^1.11.10",
         "use-lilius": "^2.0.5"
     },
     "packageManager": "pnpm@9.0.4",

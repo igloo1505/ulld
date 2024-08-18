@@ -1,4 +1,4 @@
-import { UlldPlugin } from "../../plugin.js";
+import { UlldPlugin } from "../../plugin";
 
 // TODO: Create a generated name in the embeddable class itself to use throughout the build process for consistency and stability. Don't generate one here.
 const getImportsForPlugin = (

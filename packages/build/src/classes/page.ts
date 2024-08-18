@@ -1,15 +1,15 @@
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
+import { TargetPaths } from "./paths";
+import { ShellManager } from "./baseClasses/shell";
 import { SlotDataType } from "@ulld/utilities/types";
-import slotStaticData from "@ulld/utilities/slotMap.json" with { type: 'json' };
+import slotStaticData from "@ulld/utilities/slotMap.json";
 import {
     AnySubSlotKey,
     PluginSlotKey,
 } from "@ulld/configschema/developerTypes";
-import buildData from "@ulld/utilities/buildStaticData.json" with { type: "json" };
-import { ShellManager } from "./baseClasses/shell.js";
-import { TargetPaths } from "./paths.js";
-import { PluginAdditionalPage } from "./pluginAdditionalPage.js";
-import { SubSlot } from "./subslot.js";
+import buildData from "@ulld/utilities/buildStaticData";
+import { SubSlot } from "./subslot";
+import { PluginAdditionalPage } from "./pluginAdditionalPage";
 
 export class PluginPage extends ShellManager {
     shouldUse: boolean = true;
@@ -19,12 +19,12 @@ export class PluginPage extends ShellManager {
     targetUrl: string;
     targetFile: string;
     formattedComponentImport: string;
-    formattedExport: string;
+    formattedExport: string
     haveModifiedImportName: boolean = false;
-    subSlot?: SubSlot;
-    initialComponentImport: string;
-    additionalPage?: PluginAdditionalPage;
-    allowImportPageProps: boolean = false;
+    subSlot?: SubSlot
+    initialComponentImport: string
+    additionalPage?: PluginAdditionalPage
+    allowImportPageProps: boolean = false
     constructor(
         public data: DeveloperConfigOutput["pages"][number],
         public pluginName: string,
@@ -40,39 +40,29 @@ export class PluginPage extends ShellManager {
                 data.slot as keyof (typeof slotStaticData)[typeof parentSlotKey]
                 ];
         }
-        if (this.parentSlotKey && this.subSlotKey) {
-            this.subSlot = new SubSlot(
-                this.pluginName,
-                this.parentSlotKey,
-                this.subSlotKey,
-                this.paths,
-            );
+        if(this.parentSlotKey && this.subSlotKey){
+            this.subSlot = new SubSlot(this.pluginName, this.parentSlotKey, this.subSlotKey, this.paths)
         } else {
-            this.additionalPage = new PluginAdditionalPage(
-                this.pluginName,
-                this.parentSlotKey,
-                this.subSlotKey,
-                this.paths,
-            );
+            this.additionalPage = new PluginAdditionalPage(this.pluginName, this.parentSlotKey, this.subSlotKey, this.paths)
         }
-        this.formattedExport = `${this.pluginName}/${this.data.export}`;
+        this.formattedExport = `${this.pluginName}/${this.data.export}`
         this.formattedComponentImport = this.getFormattedComponentImport();
-        this.initialComponentImport = this.formattedComponentImport;
+        this.initialComponentImport = this.formattedComponentImport
         this.targetUrl = this.getTargetUrl();
         let targetFile = this.getTargetFile();
-        if (!targetFile) {
-            this.throwTargetPathNotFound();
+        if(!targetFile){
+            this.throwTargetPathNotFound()
         }
-        this.targetFile = targetFile as string;
+        this.targetFile = targetFile as string
     }
     cancel() {
         this.shouldUse = false;
     }
-    getFormattedComponentImport() {
-        return "PageComponent";
+    getFormattedComponentImport(){
+        return "PageComponent"
     }
     getImportString() {
-        return `import ${this.importName}${this.data.exportsPageProps && this.allowImportPageProps ? ", { PageProps }" : ""} from "${this.pluginName}/${this.data.export}";`;
+        return `import ${this.importName}${(this.data.exportsPageProps && this.allowImportPageProps) ? ", { PageProps }" : ""} from "${this.pluginName}/${this.data.export}";`;
     }
     throwTargetPathNotFound() {
         throw new Error(
@@ -101,9 +91,7 @@ export class PluginPage extends ShellManager {
     }
     logWriteToFile() {
         if (this.parentSlotKey && this.subSlotKey) {
-            this.logVerbose(
-                `Writing ${this.parentSlotKey} -> ${this.subSlotKey} to file.`,
-            );
+            this.logVerbose(`Writing ${this.parentSlotKey} -> ${this.subSlotKey} to file.`);
         } else {
             this.logVerbose(
                 `Writing component from ${this.formattedExport} to file.`,
@@ -118,17 +106,11 @@ export class PluginPage extends ShellManager {
             );
         }
         if (this.subSlot) {
-            this.logWriteToFile();
-            this.subSlot.writeToFile(
-                this.formattedExport,
-                this.formattedComponentImport,
-            );
-        } else if (this.additionalPage) {
-            this.logWriteToFile();
-            this.additionalPage.writeToFile(
-                this.formattedExport,
-                this.formattedComponentImport,
-            );
+            this.logWriteToFile()
+            this.subSlot.writeToFile(this.formattedExport, this.formattedComponentImport);
+        } else if(this.additionalPage) {
+            this.logWriteToFile()
+            this.additionalPage.writeToFile(this.formattedExport, this.formattedComponentImport);
         }
     }
 }

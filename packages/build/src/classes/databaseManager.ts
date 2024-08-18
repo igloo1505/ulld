@@ -1,12 +1,12 @@
+import { EnvManager } from "./envManager";
+import { BuildHealthCheck } from "./healthCheck";
+import { TargetPaths } from "./paths";
+import { ShellManager } from "./baseClasses/shell";
 import terminalLink from "terminal-link";
-import { PackageManagers } from "../types.js";
-import { UlldAppConfigManager } from "./appConfig.js";
-import { FileManager } from "./baseClasses/fileManager.js";
-import { ShellManager } from "./baseClasses/shell.js";
-import { EnvManager } from "./envManager.js";
-import { BuildHealthCheck } from "./healthCheck.js";
-import { TargetPaths } from "./paths.js";
-import { TemplateFile } from "./templateFile.js";
+import { UlldAppConfigManager } from "./appConfig";
+import { PackageManagers } from "../types";
+import { FileManager } from "./baseClasses/fileManager";
+import { TemplateFile } from "./templateFile";
 
 export class DatabaseBuildManager extends ShellManager {
     dbType: "postgres" | "sqlite" = "postgres"

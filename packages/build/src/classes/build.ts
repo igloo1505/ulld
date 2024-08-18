@@ -1,37 +1,38 @@
 import chalk from "chalk";
+import { UlldAppConfigManager } from "./appConfig";
+import { NoteType } from "./noteType";
+import { TargetPaths } from "./paths";
+import { TargetPackageJson } from "./pkgJson";
+import { UlldPlugin } from "./plugin";
 import path from "path";
 import { prompt } from "enquirer";
 import { appData } from "@ulld/utilities/appData";
 import terminalLink from "terminal-link";
 import { log } from "console";
+import { PackageManagers } from "../types";
+import { Prompter } from "./prompter";
+import { SubSlot } from "./subslot";
+import { PluginSlot } from "./slot";
+import { SlotConflict } from "./slotConflict";
 import { SlotMap } from "@ulld/configschema/developerTypes";
+import { PluginPage } from "./page";
+import { PageConflict } from "./pageConflict";
+import { GitManager } from "./baseClasses/gitManager";
+import { PluginComponent } from "./component";
 import { SlotMapOfType } from "@ulld/configschema/types";
+import { generateSlotMapOfType } from "../utils/slotMapUtils";
+import { slotMapIsFull } from "../utils/slotMapIsFull";
+import { modifyNameRandomly } from "../utils/randomization";
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
 import { BuildStaticDataInput } from "@ulld/configschema/buildTypes";
+import { AdditionalSources } from "./additionalSources";
+import { EnvManager } from "./envManager";
+import { BuildHealthCheck } from "./healthCheck";
+import { DatabaseBuildManager } from "./databaseManager";
+import { BuildOptionsType } from "../utils/options";
 import staticData from "../../staticDevelopmentData.json"
-import { UlldAppConfigManager } from "./appConfig.js";
-import { NoteType } from "./noteType.js";
-import { TargetPaths } from "./paths.js";
-import { TargetPackageJson } from "./pkgJson.js";
-import { UlldPlugin } from "./plugin.js";
-import { PackageManagers } from "../types.js";
-import { getInternalTailwindSources } from "../utils/getInternalTailwindSources.js";
-import { BuildOptionsType } from "../utils/options.js";
-import { modifyNameRandomly } from "../utils/randomization.js";
-import { slotMapIsFull } from "../utils/slotMapIsFull.js";
-import { generateSlotMapOfType } from "../utils/slotMapUtils.js";
-import { AdditionalSources } from "./additionalSources.js";
-import { GitManager } from "./baseClasses/gitManager.js";
-import { PluginComponent } from "./component.js";
-import { DatabaseBuildManager } from "./databaseManager.js";
-import { EnvManager } from "./envManager.js";
-import { BuildHealthCheck } from "./healthCheck.js";
-import { PluginPage } from "./page.js";
-import { PageConflict } from "./pageConflict.js";
-import { Prompter } from "./prompter.js";
-import { PluginSlot } from "./slot.js";
-import { SlotConflict } from "./slotConflict.js";
-import { SubSlot } from "./subslot.js";
+import buildUtilityData from "@ulld/utilities/buildStaticData"
+import { getInternalTailwindSources } from "../utils/getInternalTailwindSources";
 
 type PluginSlotKey = keyof SlotMap;
 
@@ -55,10 +56,9 @@ export class UlldBuildProcess extends Prompter {
     constructor(
         public targetDir: string,
         public branch: string = "main",
-        public cliOptions: BuildOptionsType
     ) {
-        super(targetDir, branch, cliOptions);
-        this.git = new GitManager(targetDir, this.branch, cliOptions);
+        super(targetDir, branch);
+        this.git = new GitManager(targetDir, this.branch);
         this.isLocalDev = process.env.LOCAL_DEVELOPMENT === "true";
         this.applicationDir = path.join(
             targetDir,
@@ -72,7 +72,6 @@ export class UlldBuildProcess extends Prompter {
             this.applicationDir,
             this.isLocalDev,
             this.branch,
-            this.cliOptions
         );
         let additionalSources = new AdditionalSources(this.paths);
         let globalAppConfig = additionalSources.getAppConfig();

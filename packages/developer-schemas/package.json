@@ -16,15 +16,22 @@
         "./fullPackageJson": "./src/packageJson.ts"
     },
     "dependencies": {
+        "@ulld/types": "workspace:*",
         "next": "14.2.3",
         "react": "18.2.0",
         "react-dom": "18.2.0",
-        "zod": "3.22.4"
+        "tsx": "^4.15.6",
+        "zod": "3.22.4",
+        "zod-to-json-schema": "^3.22.4"
     },
     "packageManager": "pnpm@9.0.4",
     "devDependencies": {
         "@ulld/types": "workspace:*",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
         "tsx": "^4.15.6",
+        "zod": "3.22.4",
         "zod-to-json-schema": "^3.22.4"
     },
     "publishConfig": {

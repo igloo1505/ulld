@@ -1,16 +1,5 @@
 # @ulld/build
 
-## 0.0.70
-
-### Patch Changes
-
-- Remove dist dirs trying to resolve build heap memory issue.
-- Updated dependencies
-  - @ulld/base-configs@0.0.64
-  - @ulld/configschema@0.0.70
-  - @ulld/developer-schemas@0.0.64
-  - @ulld/utilities@0.0.70
-
 ## 0.0.69
 
 ### Patch Changes

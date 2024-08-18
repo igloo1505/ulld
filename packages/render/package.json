@@ -23,10 +23,6 @@
         "./3d/threeJsCanvas": "./src/3d/ThreeCanvas.tsx"
     },
     "peerDependencies": {
-        "@mdx-js/mdx": "3.0.1",
-        "@mdx-js/react": "^3.0.1",
-        "@react-three/drei": "^9.99.7",
-        "@react-three/fiber": "^8.15.19",
         "@ulld/api": "workspace:*",
         "@ulld/component-map": "workspace:*",
         "@ulld/configschema": "workspace:*",
@@ -37,8 +33,7 @@
         "@ulld/utilities": "workspace:*",
         "next": "^14.2.3",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "three": "^0.163.0"
+        "react-dom": "^18.2.0"
     },
     "devDependencies": {
         "@mdx-js/mdx": "3.0.1",
@@ -46,9 +41,16 @@
         "@react-three/drei": "^9.99.7",
         "@react-three/fiber": "^8.15.19",
         "@types/mdx": "^2.0.11",
+        "@ulld/api": "workspace:*",
+        "@ulld/component-map": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/hooks": "workspace:*",
         "@ulld/jest-presets": "workspace:*",
+        "@ulld/parsers": "workspace:*",
         "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
+        "@ulld/utilities": "workspace:*",
+        "gray-matter": "^4.0.3",
         "next": "^14.2.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -60,6 +62,25 @@
         "access": "public"
     },
     "dependencies": {
-        "gray-matter": "^4.0.3"
+        "@mdx-js/mdx": "3.0.1",
+        "@mdx-js/react": "^3.0.1",
+        "@react-three/drei": "^9.99.7",
+        "@react-three/fiber": "^8.15.19",
+        "@types/mdx": "^2.0.11",
+        "@ulld/api": "workspace:*",
+        "@ulld/component-map": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/hooks": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/parsers": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/utilities": "workspace:*",
+        "gray-matter": "^4.0.3",
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "three": "^0.163.0",
+        "typescript": "^5.4.5"
     }
 }

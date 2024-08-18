@@ -1,9 +1,9 @@
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
+import { TargetPaths } from "./paths";
+import { ShellManager } from "./baseClasses/shell";
 import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
-import { FileManager } from "./baseClasses/fileManager.js";
-import { ShellManager } from "./baseClasses/shell.js";
-import { TargetPaths } from "./paths.js";
-import { TemplateFile } from "./templateFile.js";
+import { TemplateFile } from "./templateFile";
+import { FileManager } from "./baseClasses/fileManager";
 
 interface OutputData {
         filePath: string

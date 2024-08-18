@@ -1,4 +1,5 @@
 import fs from 'fs'
+import path from 'path'
 
 
 const data = fs.readFileSync("/Users/bigsexy/Desktop/current/ulld/packages/configschema/src/defaults/generatedDefaultConfigs/base.json", {encoding: "utf-8"})

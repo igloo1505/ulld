@@ -1,6 +1,6 @@
-import { PackageManagers } from "../types.js";
-import { BuildOptionsType } from "../utils/options.js";
-import { PackageJson } from "./baseClasses/pkgJson.js";
+import { PackageJsonType } from "@ulld/developer-schemas/fullPackageJson";
+import { PackageManagers } from "../types";
+import { PackageJson } from "./baseClasses/pkgJson";
 
 const installScripts: {
     [k in PackageManagers]: string;
@@ -14,10 +14,9 @@ export class TargetPackageJson extends PackageJson {
     constructor(
         public targetDir: string,
         public isLocalDev: boolean,
-        public baseAppGitBranch: string,
-        cliOptions: BuildOptionsType
+        public baseAppGitBranch: string
     ) {
-        super(targetDir, undefined, baseAppGitBranch, cliOptions);
+        super(targetDir, undefined, baseAppGitBranch);
     }
     includesUlldDependencies(): boolean {
         if (!this.data) {

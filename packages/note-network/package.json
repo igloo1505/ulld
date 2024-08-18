@@ -19,20 +19,39 @@
         "@ulld/utilities": "workspace:*",
         "next": "^14.2.3",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "reagraph": "^4.15.26"
+        "react-dom": "^18.2.0"
     },
     "devDependencies": {
+        "3d-force-graph": "1.73.3",
+        "@ulld/api": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/developer": "workspace:*",
         "@ulld/jest-presets": "workspace:*",
+        "@ulld/logger": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
         "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
+        "@ulld/utilities": "workspace:*",
         "next": "^14.2.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "reagraph": "^4.15.26"
     },
     "dependencies": {
-        "3d-force-graph": "1.73.3"
+        "3d-force-graph": "1.73.3",
+        "@ulld/api": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/developer": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/logger": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/utilities": "workspace:*",
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "reagraph": "^4.15.26"
     },
     "packageManager": "pnpm@9.0.4",
     "publishConfig": {

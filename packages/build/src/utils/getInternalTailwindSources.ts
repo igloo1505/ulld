@@ -1,5 +1,5 @@
-import staticData from "../../staticDevelopmentData.json" with {type: 'json'};
-import buildUtilityData from "@ulld/utilities/buildStaticData.json" with {type: 'json'};
+import staticData from "../../staticDevelopmentData.json";
+import buildUtilityData from "@ulld/utilities/buildStaticData";
 
 export const getInternalTailwindSources = () => {
     let items = staticData.alwaysIncludedTailwindSources as string[];

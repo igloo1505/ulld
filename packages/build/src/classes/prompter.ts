@@ -1,13 +1,14 @@
+import { UlldPlugin } from "./plugin";
 import { prompt } from "enquirer";
-import { BranchValue, BuildOptionsType } from "../utils/options.js";
-import { GitManager } from "./baseClasses/gitManager.js";
-import { PageConflict } from "./pageConflict.js";
-import { UlldPlugin } from "./plugin.js";
-import { SlotConflict } from "./slotConflict.js";
+import { SlotConflict } from "./slotConflict";
+import { PageConflict } from "./pageConflict";
+import { GitManager } from "./baseClasses/gitManager";
+import { TargetPaths } from "./paths";
+import { BranchValue } from "../utils/options";
 
 export class Prompter extends GitManager {
-    constructor(targetDirectory: string, gitBranch: BranchValue, cliOptions: BuildOptionsType) {
-        super(targetDirectory, gitBranch, cliOptions);
+    constructor(targetDirectory: string, gitBranch: BranchValue) {
+        super(targetDirectory, gitBranch);
     }
     async confirmContinueWithInvalidPlugins(
         invalidPlugins: UlldPlugin[],

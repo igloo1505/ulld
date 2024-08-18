@@ -1,33 +1,42 @@
-import fs from 'fs'
-import path from 'path'
+import fs from "fs";
+import path from "path";
 
 export class FileData {
-    dirname: string
-    content?: string
-    constructor(public path: string, public _isDir?: boolean){
-        this.dirname = this.getDirname(_isDir)
+    dirname: string;
+    content?: string;
+    constructor(
+        public path: string,
+        public _isDir?: boolean,
+    ) {
+        this.dirname = this.getDirname(_isDir);
     }
-    getFileName(){
-        let s = path.basename(this.path).split(".")
-        return s[0]
+    getFileName() {
+        let s = path.basename(this.path).split(".");
+        return s[0];
     }
-    getExtension(){
-        let s = path.basename(this.path).split(".")
-        return `.${s[s.length - 1]}`
+    getExtension() {
+        let s = path.basename(this.path).split(".");
+        return `.${s[s.length - 1]}`;
     }
-    getStat(){
-        return fs.statSync(this.path)
+    getStat() {
+        return fs.statSync(this.path);
     }
-    isDir(){
-       let s = this.getStat() 
-        return Boolean(s?.isDirectory())
+    isDir() {
+        let s = this.getStat();
+        return Boolean(s?.isDirectory());
     }
-    getDirname(isDir?: boolean){
-        let _isDir = typeof isDir === "boolean" ? isDir : this.isDir()
-        if(_isDir){
-            return this.path
-        } 
-        return path.dirname(this.path)
+    getDirname(isDir?: boolean) {
+        let _isDir = typeof isDir === "boolean" ? isDir : this.isDir();
+        if (_isDir) {
+            return this.path;
+        }
+        try {
+            return path.dirname(this.path);
+        } catch (err) {
+            console.error(
+                `Could not get dirname. Path likely does not exist at ${this.path}`,
+            );
+        }
     }
     mkdirIfNotExists() {
         if (!fs.existsSync(this.dirname)) {
@@ -52,7 +61,7 @@ export class FileData {
     }
     getImportLines() {
         let lines = this.getLines();
-        let lineData: {content: string, index: number}[] = [];
+        let lineData: { content: string; index: number }[] = [];
         lines.forEach((l, i) => {
             if (l.trim().startsWith("import")) {
                 lineData.push({ content: l, index: i });
@@ -71,10 +80,10 @@ export class FileData {
     }
     writeContent(content?: string) {
         let newContent = content || this.content;
-        if(!newContent){
-            return console.error("Could not write file content as none was found.")
+        if (!newContent) {
+            return console.error("Could not write file content as none was found.");
         }
-            this.mkdirIfNotExists()
-            fs.writeFileSync(this.path, newContent, { encoding: "utf-8" });
+        this.mkdirIfNotExists();
+        fs.writeFileSync(this.path, newContent, { encoding: "utf-8" });
     }
 }

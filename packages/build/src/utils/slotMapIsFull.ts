@@ -1,6 +1,7 @@
 import { SlotMapOfType } from "@ulld/configschema/types";
-import { AnySubSlotKey, PluginSlotKey } from "@ulld/configschema/developerTypes";
-import { forceFullSlotMap, walkSlotMap, flattenSlotMap } from "./slotMapUtils.js";
+import { flattenSlotMap, forceFullSlotMap, walkSlotMap } from "./slotMapUtils";
+import { PluginSlotKey } from "@ulld/types";
+import { AnySubSlotKey } from "@ulld/configschema/developerTypes";
 
 interface MissingItem {
     slot: PluginSlotKey;

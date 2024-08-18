@@ -1,5 +1,5 @@
 import { OptionValues } from "commander";
-import { UlldBuildProcess } from "../classes/build.js";
+import { UlldBuildProcess } from "../classes/build";
 
 export const resolveConflicts = async (build: UlldBuildProcess, options: OptionValues) => {
         await build.resolveSlotConflicts(); // beta

@@ -10,7 +10,9 @@
     "devDependencies": {
         "@ulld/types": "workspace:*"
     },
-    "dependencies": {},
+    "dependencies": {
+        "@ulld/types": "workspace:*"
+    },
     "files": [
         "src",
         "react-app.json",

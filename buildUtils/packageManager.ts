@@ -155,6 +155,43 @@ export class PackageManager {
         }
         return deps;
     }
+    private __removeDepFromPeer(
+        name: string | string[],
+        replaceWith: "dependencies" | "devDependencies" = "devDependencies",
+    ) {
+        let names = Array.isArray(name) ? name : [name];
+        for (const p of this.packages) {
+            let deps: typeof p.deps = p.deps.filter((n) => !(names.includes(n.name) && n.type === "peerDependencies"))
+            for (const l of p.deps) {
+                if (!(l.type === "peerDependencies" && names.includes(p.name))) {
+                    let otherDep = p.deps.find(
+                        (x) => x.name === l.name && x.type === replaceWith,
+                    );
+                    if (!otherDep) {
+                        deps.push({
+                            ...l,
+                            type: replaceWith,
+                        });
+                    }
+                }
+            }
+            console.log("deps: ", deps)
+            p.deps = deps;
+        }
+    }
+    removeDepFromPeer(
+        moveToDevDependency: string | string[],
+        moveToNormalDependency: string | string[],
+        dontReplace: string[] = [],
+    ) {
+        for (const d of dontReplace) {
+            this.removePackageFromAll(d);
+        }
+        this.__removeDepFromPeer(moveToDevDependency, "devDependencies");
+        this.__removeDepFromPeer(moveToNormalDependency, "dependencies");
+        console.log("here?: ")
+        this.writeModified(true);
+    }
     setDependencySourcesOfPackageJson(
         f: PackageJsonType,
         items: ClonedBaseAppInternalDep[],

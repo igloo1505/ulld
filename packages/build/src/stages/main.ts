@@ -1,11 +1,11 @@
-import { cleanAfterConflictResolution } from "./cleanAfterConflictResolution.js";
-import { createBaseProject } from "./createBaseProject.js";
-import { gatherAppConfig } from "./gatherConfig.js";
-import { generate } from "./generate.js";
-import { installDependencies } from "./preModuleInstall.js";
-import { prepareToGenerate } from "./prepareToGenerate.js";
-import { resolveConflicts } from "./resolveConflicts.js";
-import { verifyDirectory } from "./verifyDirectory.js";
+import { cleanAfterConflictResolution } from "./cleanAfterConflictResolution";
+import { createBaseProject } from "./createBaseProject";
+import { gatherAppConfig } from "./gatherConfig";
+import { generate } from "./generate";
+import { installDependencies } from "./preModuleInstall";
+import { prepareToGenerate } from "./prepareToGenerate";
+import { resolveConflicts } from "./resolveConflicts";
+import { verifyDirectory } from "./verifyDirectory";
 
 export const stages = {
     verifyDirectory,
@@ -15,5 +15,5 @@ export const stages = {
     resolveConflicts,
     cleanAfterConflictResolution,
     prepareToGenerate,
-    generate,
+    generate
 }

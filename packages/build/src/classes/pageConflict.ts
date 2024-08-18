@@ -1,5 +1,5 @@
-import { ConflictBaseClass } from "./baseClasses/conflict.js";
-import { PluginPage } from "./page.js";
+import { ConflictBaseClass } from "./baseClasses/conflict";
+import { PluginPage } from "./page";
 
 export class PageConflict extends ConflictBaseClass {
     constructor(public targetPath: string, public plugins: PluginPage[]){

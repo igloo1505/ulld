@@ -1,9 +1,9 @@
 import path from "path";
 import fs from "fs";
 import { PathKeys, MethodListPathKeys, pathKeys } from "@ulld/utilities/types";
+import { removeLeadingDotSlash } from "../utils/removeLeadingDotSlash";
 import { ParserKey } from "@ulld/configschema/developer";
 import { PluginEventsConfig } from "@ulld/configschema/developerTypes";
-import { removeLeadingDotSlash } from "../utils/removeLeadingDotSlash.js";
 
 export class TargetPaths
     implements Record<PathKeys | MethodListPathKeys, string> {

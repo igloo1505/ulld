@@ -1,7 +1,10 @@
+import {
+    TemplateStringId,
+    TemplateStringVariableRecord,
+} from "../utils/templateKeys";
 import templateData from "../utils/templateStringData.json";
 import path from "path";
 import fs from "fs";
-import { TemplateStringId, TemplateStringVariableRecord } from "../utils/templateKeys.js";
 
 export class TemplateFile<T extends TemplateStringId> {
     absPath: string;

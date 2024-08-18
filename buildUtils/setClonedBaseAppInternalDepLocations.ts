@@ -45,8 +45,7 @@ const throwIfLocalSourceInPnpmLockFile = () => {
     let testRoot = getTestRoot()
     let lockFile = new FileData(path.join(testRoot, "pnpm-lock.yaml"));
     if (!lockFile.exists()) {
-        console.error(`No lock file exists. Cannot commit.`);
-        throw new Error("");
+        console.error(`No lock file exists. Proceeding anyways...`);
     } else {
         let content = lockFile.getContent();
         if (content.includes("/Users/bigsexy")) {

@@ -26,11 +26,24 @@
         "@ulld/utilities": "workspace:*"
     },
     "devDependencies": {
+        "@mathigon/fermat": "1.1.18",
         "@tailwindcss/container-queries": "^0.1.1",
         "@tailwindcss/forms": "^0.5.7",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/hooks": "workspace:*",
+        "@ulld/icons": "workspace:*",
         "@ulld/jest-presets": "workspace:*",
+        "@ulld/state": "workspace:*",
         "@ulld/types": "workspace:*",
         "@ulld/typescript-config": "workspace:*",
+        "@ulld/utilities": "workspace:*",
+        "complex.js": "2.1.1",
+        "fraction.js": "4.3.7",
+        "mathjs": "12.4.0",
+        "mz-math": "3.0.26",
+        "numbers": "0.7.0",
+        "numeric": "1.2.6",
+        "quaternion": "1.5.1",
         "typescript": "^5.4.5"
     },
     "packageManager": "pnpm@9.0.4",
@@ -39,12 +52,23 @@
     },
     "dependencies": {
         "@mathigon/fermat": "1.1.18",
+        "@tailwindcss/container-queries": "^0.1.1",
+        "@tailwindcss/forms": "^0.5.7",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/hooks": "workspace:*",
+        "@ulld/icons": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/state": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/utilities": "workspace:*",
         "complex.js": "2.1.1",
         "fraction.js": "4.3.7",
         "mathjs": "12.4.0",
         "mz-math": "3.0.26",
         "numbers": "0.7.0",
         "numeric": "1.2.6",
-        "quaternion": "1.5.1"
+        "quaternion": "1.5.1",
+        "typescript": "^5.4.5"
     }
 }
