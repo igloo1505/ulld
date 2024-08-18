@@ -21,16 +21,19 @@ const DatabaseNotebook = async (props: RemoteNotebookProps) => {
         return null
     }
 
-    const Notebook = dynamic(() => import("@ulld/notebook/notebook"), { ssr: false })
     const darkMode = cookies().has("darkMode")
 
+    /* const Notebook = dynamic(() => import("@ulld/notebook/notebook"), { ssr: false }) */
+        /* <Notebook */
+        /*     content={content} */
+        /*     rootRelativePath={props.rootRelativeWithExtension} */
+        /*     initialDarkMode={darkMode} */
+        /*     prefer={nb ? "db" : "fs"} */
+        /* /> */
     return (
-        <Notebook
-            content={content}
-            rootRelativePath={props.rootRelativeWithExtension}
-            initialDarkMode={darkMode}
-            prefer={nb ? "db" : "fs"}
-        />
+        <div>
+            Fix this
+        </div>
     )
 
 }

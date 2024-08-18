@@ -29,7 +29,6 @@
         "@ulld/full-form": "workspace:*",
         "@ulld/journal": "workspace:*",
         "@ulld/navigation": "workspace:*",
-        "@ulld/notebook": "workspace:*",
         "@ulld/pdf": "workspace:*",
         "@ulld/plot": "workspace:*",
         "@ulld/snippets": "workspace:*",
