@@ -1,5 +1,12 @@
 # @repo/eslint-config
 
+## 0.0.67
+
+### Patch Changes
+
+- Move most peerDeps to normal.
+  Pnpm was reaching the heap limit, and the issue appeared to revolve around peerDeps. There's no guarantee that this will work, but it's worth a shot.
+
 ## 0.0.66
 
 ### Patch Changes

@@ -1,5 +1,27 @@
 # @ulld/cookbook
 
+## 0.0.71
+
+### Patch Changes
+
+- Move most peerDeps to normal.
+  Pnpm was reaching the heap limit, and the issue appeared to revolve around peerDeps. There's no guarantee that this will work, but it's worth a shot.
+- Updated dependencies
+  - @ulld/api@0.0.71
+  - @ulld/calendar@0.0.71
+  - @ulld/eslint-config@0.0.67
+  - @ulld/typescript-config@0.0.65
+  - @ulld/configschema@0.0.71
+  - @ulld/developer@0.0.71
+  - @ulld/full-form@0.0.71
+  - @ulld/hooks@0.0.71
+  - @ulld/logger@0.0.65
+  - @ulld/state@0.0.71
+  - @ulld/tailwind@0.0.65
+  - @ulld/types@0.0.65
+  - @ulld/ui@0.0.71
+  - @ulld/utilities@0.0.71
+
 ## 0.0.70
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ulld/baseConfigs
 
+## 0.0.65
+
+### Patch Changes
+
+- Move most peerDeps to normal.
+  Pnpm was reaching the heap limit, and the issue appeared to revolve around peerDeps. There's no guarantee that this will work, but it's worth a shot.
+- Updated dependencies
+  - @ulld/types@0.0.65
+
 ## 0.0.64
 
 ### Patch Changes

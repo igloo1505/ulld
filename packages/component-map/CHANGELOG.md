@@ -1,5 +1,32 @@
 # @ulld/component-map
 
+## 0.0.71
+
+### Patch Changes
+
+- Move most peerDeps to normal.
+  Pnpm was reaching the heap limit, and the issue appeared to revolve around peerDeps. There's no guarantee that this will work, but it's worth a shot.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.71
+  - @ulld/calendar@0.0.71
+  - @ulld/typescript-config@0.0.65
+  - @ulld/default-image-map@0.0.71
+  - @ulld/diagram@0.0.71
+  - @ulld/editor@0.0.71
+  - @ulld/embeddable-components@0.0.71
+  - @ulld/equations@0.0.71
+  - @ulld/full-form@0.0.71
+  - @ulld/journal@0.0.71
+  - @ulld/navigation@0.0.71
+  - @ulld/notebook@0.0.71
+  - @ulld/pdf@0.0.71
+  - @ulld/plot@0.0.71
+  - @ulld/snippets@0.0.71
+  - @ulld/tailwind@0.0.65
+  - @ulld/task-manager@0.0.71
+  - @ulld/types@0.0.65
+  - @ulld/whiteboard@0.0.71
+
 ## 0.0.70
 
 ### Patch Changes
