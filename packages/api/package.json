@@ -283,7 +283,6 @@
         "bibtex": "^0.9.0",
         "chai": "^5.1.0",
         "citation-js": "^0.7.8",
-        "core": "link:@types/@citation-js/core",
         "cypress": "^13.7.1",
         "deepmerge": "^4.3.1",
         "esbuild": "^0.20.2",

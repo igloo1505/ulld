@@ -43,7 +43,6 @@
         "@citation-js/plugin-bibtex": "0.7.8",
         "@citation-js/plugin-csl": "0.7.6",
         "citation-js": "0.7.8",
-        "core": "link:@types/@citation-js/core",
         "fumadocs-core": "^12.3.5",
         "fumadocs-ui": "^12.3.5",
         "next": "^14.2.3",
