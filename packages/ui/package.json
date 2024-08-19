@@ -85,7 +85,7 @@
         "@ffmpeg-installer/ffmpeg": "1.1.0",
         "@fortune-sheet/react": "0.19.2",
         "@google/model-viewer": "3.5.0",
-        "@headlessui/react": "1.7.18",
+        "@headlessui/react": "2.1.2",
         "@hookform/devtools": "^4.3.1",
         "@hookform/resolvers": "3.6.0",
         "@jsdevtools/rehype-toc": "3.0.2",

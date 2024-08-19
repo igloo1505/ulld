@@ -50,7 +50,6 @@ export class TargetPaths
         public isLocalDev: boolean,
     ) {
         this.xdgPaths = xdgAppPaths()
-        console.log("this.xdgPaths: ", this.xdgPaths)
         this.public = path.join(targetDir, "public");
         this.node_modules = path.join(targetDir, "node_modules");
         this.gitignore = path.join(targetDir, ".gitignore");
