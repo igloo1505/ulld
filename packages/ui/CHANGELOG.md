@@ -1,5 +1,33 @@
 # @ulld/ui
 
+## 0.0.76
+
+### Patch Changes
+
+- Revert approach to bib parsing.
+- Updated dependencies
+  - @ulld/api@0.0.78
+  - @ulld/component-map@0.0.78
+  - @ulld/eslint-config@0.0.74
+  - @ulld/typescript-config@0.0.72
+  - @ulld/configschema@0.0.78
+  - @ulld/database@0.0.75
+  - @ulld/developer@0.0.78
+  - @ulld/editor@0.0.78
+  - @ulld/embeddable-components@0.0.78
+  - @ulld/full-form@0.0.78
+  - @ulld/hooks@0.0.78
+  - @ulld/icons@0.0.78
+  - @ulld/jest-presets@0.0.72
+  - @ulld/logger@0.0.72
+  - @ulld/navigation@0.0.78
+  - @ulld/parsers@0.0.78
+  - @ulld/render@0.0.78
+  - @ulld/state@0.0.78
+  - @ulld/tailwind@0.0.72
+  - @ulld/types@0.0.72
+  - @ulld/utilities@0.0.78
+
 ## 0.0.75
 
 ### Patch Changes

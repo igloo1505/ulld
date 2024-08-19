@@ -1,5 +1,24 @@
 # @ulld/embeddable-components
 
+## 0.0.78
+
+### Patch Changes
+
+- Revert approach to bib parsing.
+- Updated dependencies
+  - @ulld/api@0.0.78
+  - @ulld/component-configs@0.0.78
+  - @ulld/typescript-config@0.0.72
+  - @ulld/configschema@0.0.78
+  - @ulld/default-image-map@0.0.78
+  - @ulld/hooks@0.0.78
+  - @ulld/icons@0.0.78
+  - @ulld/render@0.0.78
+  - @ulld/state@0.0.78
+  - @ulld/tailwind@0.0.72
+  - @ulld/types@0.0.72
+  - @ulld/utilities@0.0.78
+
 ## 0.0.77
 
 ### Patch Changes

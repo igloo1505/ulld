@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.78
+
+### Patch Changes
+
+- Revert approach to bib parsing.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.78
+  - @ulld/calendar@0.0.78
+  - @ulld/typescript-config@0.0.72
+  - @ulld/default-image-map@0.0.78
+  - @ulld/diagram@0.0.78
+  - @ulld/editor@0.0.78
+  - @ulld/embeddable-components@0.0.78
+  - @ulld/equations@0.0.78
+  - @ulld/full-form@0.0.78
+  - @ulld/journal@0.0.78
+  - @ulld/navigation@0.0.78
+  - @ulld/notebook@0.0.78
+  - @ulld/pdf@0.0.78
+  - @ulld/plot@0.0.78
+  - @ulld/snippets@0.0.78
+  - @ulld/tailwind@0.0.72
+  - @ulld/task-manager@0.0.78
+  - @ulld/types@0.0.72
+  - @ulld/whiteboard@0.0.78
+
 ## 0.0.77
 
 ### Patch Changes

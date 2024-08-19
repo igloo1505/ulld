@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.74
+
+### Patch Changes
+
+- Revert approach to bib parsing.
+
 ## 0.0.73
 
 ### Patch Changes

@@ -1,5 +1,36 @@
 # @ulld/command-palette
 
+## 0.0.78
+
+### Patch Changes
+
+- Revert approach to bib parsing.
+- Updated dependencies
+  - @ulld/api@0.0.78
+  - @ulld/bib-manager@0.0.78
+  - @ulld/calendar@0.0.78
+  - @ulld/eslint-config@0.0.74
+  - @ulld/typescript-config@0.0.72
+  - @ulld/configschema@0.0.78
+  - @ulld/database@0.0.75
+  - @ulld/developer@0.0.78
+  - @ulld/diagram@0.0.78
+  - @ulld/editor@0.0.78
+  - @ulld/equations@0.0.78
+  - @ulld/hooks@0.0.78
+  - @ulld/jest-presets@0.0.72
+  - @ulld/logger@0.0.72
+  - @ulld/parsers@0.0.78
+  - @ulld/render@0.0.78
+  - @ulld/snippets@0.0.78
+  - @ulld/state@0.0.78
+  - @ulld/tailwind@0.0.72
+  - @ulld/task-manager@0.0.78
+  - @ulld/types@0.0.72
+  - @ulld/ui@0.0.76
+  - @ulld/utilities@0.0.78
+  - @ulld/whiteboard@0.0.78
+
 ## 0.0.77
 
 ### Patch Changes

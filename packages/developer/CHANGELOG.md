@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.78
+
+### Patch Changes
+
+- Revert approach to bib parsing.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.74
+  - @ulld/typescript-config@0.0.72
+  - @ulld/configschema@0.0.78
+  - @ulld/database@0.0.75
+  - @ulld/logger@0.0.72
+  - @ulld/types@0.0.72
+
 ## 0.0.77
 
 ### Patch Changes

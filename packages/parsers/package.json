@@ -1,6 +1,6 @@
 {
     "name": "@ulld/parsers",
-    "version": "0.0.77",
+    "version": "0.0.78",
     "private": false,
     "files": [
         "src"

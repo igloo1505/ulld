@@ -1,5 +1,14 @@
 # @ulld/tailwind
 
+## 0.0.72
+
+### Patch Changes
+
+- Revert approach to bib parsing.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.72
+  - @ulld/types@0.0.72
+
 ## 0.0.71
 
 ### Patch Changes

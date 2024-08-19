@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.78
+
+### Patch Changes
+
+- Revert approach to bib parsing.
+- Updated dependencies
+  - @ulld/developer@0.0.78
+  - @ulld/developer-schemas@0.0.72
+  - @ulld/types@0.0.72
+
 ## 0.0.77
 
 ### Patch Changes

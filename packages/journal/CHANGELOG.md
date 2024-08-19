@@ -1,5 +1,22 @@
 # @ulld/journal
 
+## 0.0.78
+
+### Patch Changes
+
+- Revert approach to bib parsing.
+- Updated dependencies
+  - @ulld/api@0.0.78
+  - @ulld/typescript-config@0.0.72
+  - @ulld/configschema@0.0.78
+  - @ulld/developer@0.0.78
+  - @ulld/hooks@0.0.78
+  - @ulld/state@0.0.78
+  - @ulld/tailwind@0.0.72
+  - @ulld/types@0.0.72
+  - @ulld/ui@0.0.76
+  - @ulld/utilities@0.0.78
+
 ## 0.0.77
 
 ### Patch Changes

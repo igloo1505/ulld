@@ -1,5 +1,20 @@
 # @ulld/hooks
 
+## 0.0.78
+
+### Patch Changes
+
+- Revert approach to bib parsing.
+- Updated dependencies
+  - @ulld/api@0.0.78
+  - @ulld/component-map@0.0.78
+  - @ulld/typescript-config@0.0.72
+  - @ulld/configschema@0.0.78
+  - @ulld/database@0.0.75
+  - @ulld/parsers@0.0.78
+  - @ulld/types@0.0.72
+  - @ulld/utilities@0.0.78
+
 ## 0.0.77
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/icons
 
+## 0.0.78
+
+### Patch Changes
+
+- Revert approach to bib parsing.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.72
+  - @ulld/hooks@0.0.78
+  - @ulld/tailwind@0.0.72
+  - @ulld/types@0.0.72
+  - @ulld/utilities@0.0.78
+
 ## 0.0.77
 
 ### Patch Changes
