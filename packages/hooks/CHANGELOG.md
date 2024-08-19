@@ -1,5 +1,20 @@
 # @ulld/hooks
 
+## 0.0.79
+
+### Patch Changes
+
+- iUpdate suddenly missing package version.
+- Updated dependencies
+  - @ulld/api@0.0.79
+  - @ulld/component-map@0.0.79
+  - @ulld/typescript-config@0.0.73
+  - @ulld/configschema@0.0.79
+  - @ulld/database@0.0.76
+  - @ulld/parsers@0.0.79
+  - @ulld/types@0.0.73
+  - @ulld/utilities@0.0.79
+
 ## 0.0.78
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.75
+
+### Patch Changes
+
+- iUpdate suddenly missing package version.
+
 ## 0.0.74
 
 ### Patch Changes

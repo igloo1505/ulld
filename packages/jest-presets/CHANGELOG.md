@@ -1,5 +1,13 @@
 # @repo/jest-presets
 
+## 0.0.73
+
+### Patch Changes
+
+- iUpdate suddenly missing package version.
+- Updated dependencies
+  - @ulld/types@0.0.73
+
 ## 0.0.72
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ulld/tailwind
 
+## 0.0.73
+
+### Patch Changes
+
+- iUpdate suddenly missing package version.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.73
+  - @ulld/types@0.0.73
+
 ## 0.0.72
 
 ### Patch Changes

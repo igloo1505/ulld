@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.79
+
+### Patch Changes
+
+- iUpdate suddenly missing package version.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.79
+  - @ulld/calendar@0.0.79
+  - @ulld/typescript-config@0.0.73
+  - @ulld/default-image-map@0.0.79
+  - @ulld/diagram@0.0.79
+  - @ulld/editor@0.0.79
+  - @ulld/embeddable-components@0.0.79
+  - @ulld/equations@0.0.79
+  - @ulld/full-form@0.0.79
+  - @ulld/journal@0.0.79
+  - @ulld/navigation@0.0.79
+  - @ulld/notebook@0.0.79
+  - @ulld/pdf@0.0.79
+  - @ulld/plot@0.0.79
+  - @ulld/snippets@0.0.79
+  - @ulld/tailwind@0.0.73
+  - @ulld/task-manager@0.0.79
+  - @ulld/types@0.0.73
+  - @ulld/whiteboard@0.0.79
+
 ## 0.0.78
 
 ### Patch Changes

@@ -1,5 +1,29 @@
 # @ulld/landing-layouts
 
+## 0.0.79
+
+### Patch Changes
+
+- iUpdate suddenly missing package version.
+- Updated dependencies
+  - @ulld/api@0.0.79
+  - @ulld/bib-manager@0.0.79
+  - @ulld/calendar@0.0.79
+  - @ulld/eslint-config@0.0.75
+  - @ulld/typescript-config@0.0.73
+  - @ulld/configschema@0.0.79
+  - @ulld/developer@0.0.79
+  - @ulld/hooks@0.0.79
+  - @ulld/icons@0.0.79
+  - @ulld/journal@0.0.79
+  - @ulld/plot@0.0.79
+  - @ulld/state@0.0.79
+  - @ulld/tailwind@0.0.73
+  - @ulld/types@0.0.73
+  - @ulld/ui@0.0.77
+  - @ulld/utilities@0.0.79
+  - @ulld/whiteboard@0.0.79
+
 ## 0.0.78
 
 ### Patch Changes

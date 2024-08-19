@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.79
+
+### Patch Changes
+
+- iUpdate suddenly missing package version.
+- Updated dependencies
+  - @ulld/developer@0.0.79
+  - @ulld/developer-schemas@0.0.73
+  - @ulld/types@0.0.73
+
 ## 0.0.78
 
 ### Patch Changes
