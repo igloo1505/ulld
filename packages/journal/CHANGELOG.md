@@ -1,5 +1,22 @@
 # @ulld/journal
 
+## 0.0.80
+
+### Patch Changes
+
+- Small tweak to bib parsing.
+- Updated dependencies
+  - @ulld/api@0.0.80
+  - @ulld/typescript-config@0.0.74
+  - @ulld/configschema@0.0.80
+  - @ulld/developer@0.0.80
+  - @ulld/hooks@0.0.80
+  - @ulld/state@0.0.80
+  - @ulld/tailwind@0.0.74
+  - @ulld/types@0.0.74
+  - @ulld/ui@0.0.78
+  - @ulld/utilities@0.0.80
+
 ## 0.0.79
 
 ### Patch Changes

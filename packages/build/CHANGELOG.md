@@ -1,5 +1,17 @@
 # @ulld/build
 
+## 0.0.80
+
+### Patch Changes
+
+- Small tweak to bib parsing.
+- Updated dependencies
+  - @ulld/base-configs@0.0.74
+  - @ulld/configschema@0.0.80
+  - @ulld/developer-schemas@0.0.74
+  - @ulld/types@0.0.74
+  - @ulld/utilities@0.0.80
+
 ## 0.0.79
 
 ### Patch Changes

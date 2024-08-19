@@ -1,70 +1,70 @@
 {
-    "version": "0.0.76",
-    "name": "@ulld/database",
-    "private": false,
-    "types": "./src/db/main.ts",
-    "exports": {
-        ".": "./src/db/main.ts",
-        "./prisma": "./src/db/main.ts",
-        "./internalDatabaseTypes": "./src/db/main.ts",
-        "./db": "./src/db/main.ts",
-        "./modelSchemas": "./src/zod/index.ts",
-        "./inputSchemas": "./src/zod/inputTypeSchemas/index.ts",
-        "./outputSchemas": "./src/zod/outputTypeSchemas/index.ts"
-    },
-    "files": [
-        "src",
-        "prisma"
-    ],
-    "scripts": {
-        "dev": "echo 'Add dev script here'",
-        "build": "echo 'Add build script here'",
-        "test": "echo 'Add test script here'",
-        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-        "db:migrateTargetProjectSchema": "dotenv -e /Users/bigsexy/Desktop/current/ulld/.env.local -- prisma migrate dev --schema ./prisma/schema.prisma",
-        "migrate:reset": "dotenv -e .env.local -- prisma migrate reset",
-        "db:push": "prisma db push --skip-generate",
-        "db:generateInternalDevelopment": "prisma generate",
-        "db:generate": "prisma generate",
-        "db:migrate": "prisma generate",
-        "prisma:studio": "dotenv -e .env.local -- prisma studio",
-        "db:generateTargetProjectSchema": "run generateTargetDatabase",
-        "generateTargetDatabase": "prisma generate",
-        "migrateTargetDatabase": "dotenv -e .env.local -- prisma migrate dev",
-        "postinstall": "prisma generate",
-        "prebuild": "prisma generate",
-        "predev": "prisma generate"
-    },
-    "prisma": {
-        "schema": "prisma/schema.prisma"
-    },
-    "dependencies": {
-        "@prisma/client": "5.17.0",
-        "next": "14.2.3",
-        "prisma": "5.17.0",
-        "prisma-generator-fake-data": "^0.14.2",
-        "prisma-json-types-generator": "^3.0.4",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "zod-prisma-types": "^3.1.8"
-    },
-    "peerDependencies": {
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "prisma": "5.17.0"
-    },
-    "packageManager": "pnpm@9.0.4",
-    "publishConfig": {
-        "access": "public"
-    },
-    "devDependencies": {
-        "@prisma/client": "5.17.0",
-        "next": "14.2.3",
-        "prisma": "5.17.0",
-        "prisma-generator-fake-data": "^0.14.2",
-        "prisma-json-types-generator": "^3.0.4",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "zod-prisma-types": "^3.1.8"
-    }
+  "name": "@ulld/database",
+  "version": "0.0.77",
+  "dependencies": {
+    "@prisma/client": "5.17.0",
+    "next": "14.2.3",
+    "prisma": "5.17.0",
+    "prisma-generator-fake-data": "^0.14.2",
+    "prisma-json-types-generator": "^3.0.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "zod-prisma-types": "^3.1.8"
+  },
+  "devDependencies": {
+    "@prisma/client": "5.17.0",
+    "next": "14.2.3",
+    "prisma": "5.17.0",
+    "prisma-generator-fake-data": "^0.14.2",
+    "prisma-json-types-generator": "^3.0.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "zod-prisma-types": "^3.1.8"
+  },
+  "exports": {
+    ".": "./src/db/main.ts",
+    "./prisma": "./src/db/main.ts",
+    "./internalDatabaseTypes": "./src/db/main.ts",
+    "./db": "./src/db/main.ts",
+    "./modelSchemas": "./src/zod/index.ts",
+    "./inputSchemas": "./src/zod/inputTypeSchemas/index.ts",
+    "./outputSchemas": "./src/zod/outputTypeSchemas/index.ts"
+  },
+  "files": [
+    "src",
+    "prisma"
+  ],
+  "packageManager": "pnpm@9.0.4",
+  "peerDependencies": {
+    "@ulld/types": "workspace:*",
+    "@ulld/typescript-config": "workspace:*",
+    "prisma": "5.17.0"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "echo 'Add build script here'",
+    "db:generate": "prisma generate",
+    "db:generateInternalDevelopment": "prisma generate",
+    "db:generateTargetProjectSchema": "run generateTargetDatabase",
+    "db:migrate": "prisma generate",
+    "db:migrateTargetProjectSchema": "dotenv -e /Users/bigsexy/Desktop/current/ulld/.env.local -- prisma migrate dev --schema ./prisma/schema.prisma",
+    "db:push": "prisma db push --skip-generate",
+    "dev": "echo 'Add dev script here'",
+    "generateTargetDatabase": "prisma generate",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "migrate:reset": "dotenv -e .env.local -- prisma migrate reset",
+    "migrateTargetDatabase": "dotenv -e .env.local -- prisma migrate dev",
+    "postinstall": "prisma generate",
+    "prebuild": "prisma generate",
+    "predev": "prisma generate",
+    "prisma:studio": "dotenv -e .env.local -- prisma studio",
+    "test": "echo 'Add test script here'"
+  },
+  "types": "./src/db/main.ts"
 }

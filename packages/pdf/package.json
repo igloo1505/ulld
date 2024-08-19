@@ -1,92 +1,92 @@
 {
-    "version": "0.0.79",
-    "name": "@ulld/pdf",
-    "private": false,
-    "scripts": {
-        "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
-        "build": "echo 'Add build script here'",
-        "test": "echo 'Add test script here'",
-        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-        "generatePluginConfig": "tsx ./pluginConfig.ulld.ts"
-    },
-    "files": [
-        "src",
-        "pluginConfig.ulld.json"
+  "name": "@ulld/pdf",
+  "version": "0.0.80",
+  "dependencies": {
+    "@react-pdf/renderer": "3.3.8",
+    "@recogito/recogito-react-pdf": "^0.8.8",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-pdf": "7.7.1"
+  },
+  "devDependencies": {
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "exports": {
+    "./types": "./src/types.ts",
+    "./embeddablePdf": "./src/components/embeddablePdf/main.tsx",
+    "./fullPdf": "./src/components/fullPdf/PdfPageWrapper.tsx"
+  },
+  "files": [
+    "src",
+    "pluginConfig.ulld.json"
+  ],
+  "packageManager": "pnpm@9.0.4",
+  "peerDependencies": {
+    "@ulld/api": "workspace:*",
+    "@ulld/configschema": "workspace:*",
+    "@ulld/developer": "workspace:*",
+    "@ulld/eslint-config": "workspace:*",
+    "@ulld/hooks": "workspace:*",
+    "@ulld/icons": "workspace:*",
+    "@ulld/jest-presets": "workspace:*",
+    "@ulld/state": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
+    "@ulld/types": "workspace:*",
+    "@ulld/typescript-config": "workspace:*",
+    "@ulld/ui": "workspace:*",
+    "@ulld/utilities": "workspace:*",
+    "@ulld/whiteboard": "workspace:*",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "echo 'Add build script here'",
+    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
+    "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "echo 'Add test script here'"
+  },
+  "types": "./src/types.ts",
+  "ulld-pluginConfig": {
+    "pluginName": "@ulld/pdf",
+    "label": "Pdf",
+    "pluginId": "090f401f-9797-48a4-8d9a-927242599b58",
+    "slot": "pdf",
+    "components": [
+      {
+        "componentName": "EmbeddablePdf",
+        "tags": [],
+        "export": "embeddablePdf",
+        "embeddable": [
+          {
+            "regexToInclude": "<Pdf",
+            "label": "Pdf"
+          }
+        ],
+        "exportedPropsName": "EmbeddablePdfProps",
+        "componentId": "7091641d-b940-40e4-8c5d-b24397813799"
+      }
     ],
-    "types": "./src/types.ts",
-    "exports": {
-        "./types": "./src/types.ts",
-        "./embeddablePdf": "./src/components/embeddablePdf/main.tsx",
-        "./fullPdf": "./src/components/fullPdf/PdfPageWrapper.tsx"
-    },
-    "peerDependencies": {
-        "@ulld/api": "workspace:*",
-        "@ulld/configschema": "workspace:*",
-        "@ulld/developer": "workspace:*",
-        "@ulld/eslint-config": "workspace:*",
-        "@ulld/hooks": "workspace:*",
-        "@ulld/icons": "workspace:*",
-        "@ulld/jest-presets": "workspace:*",
-        "@ulld/state": "workspace:*",
-        "@ulld/tailwind": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "@ulld/ui": "workspace:*",
-        "@ulld/utilities": "workspace:*",
-        "@ulld/whiteboard": "workspace:*",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "dependencies": {
-        "@react-pdf/renderer": "3.3.8",
-        "@recogito/recogito-react-pdf": "^0.8.8",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-pdf": "7.7.1"
-    },
-    "devDependencies": {
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "packageManager": "pnpm@9.0.4",
-    "publishConfig": {
-        "access": "public"
-    },
-    "ulld-pluginConfig": {
-        "pluginName": "@ulld/pdf",
-        "label": "Pdf",
-        "pluginId": "090f401f-9797-48a4-8d9a-927242599b58",
-        "slot": "pdf",
-        "components": [
-            {
-                "componentName": "EmbeddablePdf",
-                "tags": [],
-                "export": "embeddablePdf",
-                "embeddable": [
-                    {
-                        "regexToInclude": "<Pdf",
-                        "label": "Pdf"
-                    }
-                ],
-                "exportedPropsName": "EmbeddablePdfProps",
-                "componentId": "7091641d-b940-40e4-8c5d-b24397813799"
-            }
-        ],
-        "parsers": {},
-        "pages": [
-            {
-                "slot": "FullPdf",
-                "export": "fullPdf",
-                "exportsPageProps": true
-            }
-        ],
-        "events": {},
-        "navigationLinks": [],
-        "commandPalette": [],
-        "tailwind": {},
-        "styles": {}
-    }
+    "parsers": {},
+    "pages": [
+      {
+        "slot": "FullPdf",
+        "export": "fullPdf",
+        "exportsPageProps": true
+      }
+    ],
+    "events": {},
+    "navigationLinks": [],
+    "commandPalette": [],
+    "tailwind": {},
+    "styles": {}
+  }
 }

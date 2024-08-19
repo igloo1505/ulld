@@ -1,5 +1,13 @@
 # @ulld/developer-schemas
 
+## 0.0.74
+
+### Patch Changes
+
+- Small tweak to bib parsing.
+- Updated dependencies
+  - @ulld/types@0.0.74
+
 ## 0.0.73
 
 ### Patch Changes

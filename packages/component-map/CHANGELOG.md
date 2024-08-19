@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.80
+
+### Patch Changes
+
+- Small tweak to bib parsing.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.80
+  - @ulld/calendar@0.0.80
+  - @ulld/typescript-config@0.0.74
+  - @ulld/default-image-map@0.0.80
+  - @ulld/diagram@0.0.80
+  - @ulld/editor@0.0.80
+  - @ulld/embeddable-components@0.0.80
+  - @ulld/equations@0.0.80
+  - @ulld/full-form@0.0.80
+  - @ulld/journal@0.0.80
+  - @ulld/navigation@0.0.80
+  - @ulld/notebook@0.0.80
+  - @ulld/pdf@0.0.80
+  - @ulld/plot@0.0.80
+  - @ulld/snippets@0.0.80
+  - @ulld/tailwind@0.0.74
+  - @ulld/task-manager@0.0.80
+  - @ulld/types@0.0.74
+  - @ulld/whiteboard@0.0.80
+
 ## 0.0.79
 
 ### Patch Changes

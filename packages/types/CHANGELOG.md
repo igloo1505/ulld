@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.74
+
+### Patch Changes
+
+- Small tweak to bib parsing.
+
 ## 0.0.73
 
 ### Patch Changes

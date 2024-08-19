@@ -1,5 +1,20 @@
 # @ulld/math
 
+## 0.0.80
+
+### Patch Changes
+
+- Small tweak to bib parsing.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.74
+  - @ulld/configschema@0.0.80
+  - @ulld/hooks@0.0.80
+  - @ulld/icons@0.0.80
+  - @ulld/jest-presets@0.0.74
+  - @ulld/state@0.0.80
+  - @ulld/types@0.0.74
+  - @ulld/utilities@0.0.80
+
 ## 0.0.79
 
 ### Patch Changes

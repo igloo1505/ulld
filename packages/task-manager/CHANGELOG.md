@@ -1,5 +1,33 @@
 # @ulld/task-manager
 
+## 0.0.80
+
+### Patch Changes
+
+- Small tweak to bib parsing.
+- Updated dependencies
+  - @ulld/api@0.0.80
+  - @ulld/calendar@0.0.80
+  - @ulld/eslint-config@0.0.76
+  - @ulld/typescript-config@0.0.74
+  - @ulld/configschema@0.0.80
+  - @ulld/database@0.0.77
+  - @ulld/developer@0.0.80
+  - @ulld/diagram@0.0.80
+  - @ulld/editor@0.0.80
+  - @ulld/full-form@0.0.80
+  - @ulld/hooks@0.0.80
+  - @ulld/icons@0.0.80
+  - @ulld/jest-presets@0.0.74
+  - @ulld/parsers@0.0.80
+  - @ulld/render@0.0.80
+  - @ulld/state@0.0.80
+  - @ulld/tailwind@0.0.74
+  - @ulld/types@0.0.74
+  - @ulld/ui@0.0.78
+  - @ulld/utilities@0.0.80
+  - @ulld/whiteboard@0.0.80
+
 ## 0.0.79
 
 ### Patch Changes

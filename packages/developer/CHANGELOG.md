@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.80
+
+### Patch Changes
+
+- Small tweak to bib parsing.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.76
+  - @ulld/typescript-config@0.0.74
+  - @ulld/configschema@0.0.80
+  - @ulld/database@0.0.77
+  - @ulld/logger@0.0.74
+  - @ulld/types@0.0.74
+
 ## 0.0.79
 
 ### Patch Changes

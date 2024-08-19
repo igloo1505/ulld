@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.76
+
+### Patch Changes
+
+- Small tweak to bib parsing.
+
 ## 0.0.75
 
 ### Patch Changes

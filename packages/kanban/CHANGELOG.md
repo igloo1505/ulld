@@ -1,5 +1,20 @@
 # @ulld/kanban
 
+## 0.0.80
+
+### Patch Changes
+
+- Small tweak to bib parsing.
+- Updated dependencies
+  - @ulld/api@0.0.80
+  - @ulld/typescript-config@0.0.74
+  - @ulld/developer@0.0.80
+  - @ulld/jest-presets@0.0.74
+  - @ulld/logger@0.0.74
+  - @ulld/state@0.0.80
+  - @ulld/tailwind@0.0.74
+  - @ulld/types@0.0.74
+
 ## 0.0.79
 
 ### Patch Changes

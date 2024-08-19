@@ -1,24 +1,9 @@
 {
-  "private": true,
   "name": "ulld",
-  "scripts": {
-    "build": "turbo build",
-    "clean": "turbo clean",
-    "dev": "turbo dev",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "turbo lint",
-    "typecheck": "turbo typecheck",
-    "update-ulldBase": "git subtree push --prefix=apps/base/ ulldBase main",
-    "publish-packages": "changeset version && changeset publish",
-    "publish-packages-full": "turbo run build lint test && changeset version && changeset publish",
-    "test": "turbo test",
-    "test:watch": "turbo test:watch",
-    "postinstall": "echo 'manypkg check'",
-    "forcePackgeMatch": "manypkg fix",
-    "checkPackages": "manypkg check",
-    "typedoc": "typedoc",
-    "ci:publish": "pnpm publish -r --no-git-checks"
-  },
+  "author": "Andrew Mueller <aiglinski414@gmail.com> (https://uhlittlelessdum.com)",
+  "contributors": [
+    "Andrew Mueller <aiglinski414@gmail.com> (https://uhlittlelessdum.com)"
+  ],
   "dependencies": {
     "@changesets/cli": "2.27.5",
     "@manypkg/cli": "0.21.4",
@@ -54,10 +39,41 @@
     "zod": "3.22.4",
     "zod-to-ts": "^1.2.0"
   },
-  "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74",
+  "devDependencies": {
+    "@types/eslint": "^9.6.0",
+    "eslint": "^8.57.0",
+    "lucide-react": "^0.428.0",
+    "server-only": "^0.0.1",
+    "syncpack": "^12.4.0",
+    "typescript-eslint": "^8.0.0"
+  },
   "engines": {
     "node": ">=20"
   },
+  "funding": [
+    {
+      "type": "paypal",
+      "url": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/uhlittlelessdum/about"
+    },
+    {
+      "type": "GitHub Sponsors",
+      "url": "https://github.com/igloo1505/ulld"
+    }
+  ],
+  "keywords": [
+    "academic",
+    "markdown",
+    "math",
+    "mdx",
+    "note taking",
+    "research",
+    "STEM"
+  ],
+  "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74",
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [
@@ -81,42 +97,26 @@
       "@types/react-dom": "~18.2.25"
     }
   },
-  "keywords": [
-    "markdown",
-    "note taking",
-    "mdx",
-    "math",
-    "research",
-    "academic",
-    "STEM"
-  ],
   "prisma": {
     "schema": "packages/database/prisma/schema.prisma"
   },
-  "author": "Andrew Mueller <aiglinski414@gmail.com> (https://uhlittlelessdum.com)",
-  "contributors": [
-    "Andrew Mueller <aiglinski414@gmail.com> (https://uhlittlelessdum.com)"
-  ],
-  "funding": [
-    {
-      "type": "paypal",
-      "url": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU"
-    },
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/uhlittlelessdum/about"
-    },
-    {
-      "type": "GitHub Sponsors",
-      "url": "https://github.com/igloo1505/ulld"
-    }
-  ],
-  "devDependencies": {
-    "@types/eslint": "^9.6.0",
-    "eslint": "^8.57.0",
-    "lucide-react": "^0.428.0",
-    "server-only": "^0.0.1",
-    "syncpack": "^12.4.0",
-    "typescript-eslint": "^8.0.0"
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "checkPackages": "manypkg check",
+    "ci:publish": "pnpm publish -r --no-git-checks",
+    "clean": "turbo clean",
+    "dev": "turbo dev",
+    "forcePackgeMatch": "manypkg fix",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo lint",
+    "postinstall": "echo 'manypkg check'",
+    "publish-packages": "changeset version && changeset publish",
+    "publish-packages-full": "turbo run build lint test && changeset version && changeset publish",
+    "test": "turbo test",
+    "test:watch": "turbo test:watch",
+    "typecheck": "turbo typecheck",
+    "typedoc": "typedoc",
+    "update-ulldBase": "git subtree push --prefix=apps/base/ ulldBase main"
   }
 }

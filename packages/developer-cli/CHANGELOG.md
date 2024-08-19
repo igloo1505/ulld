@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.80
+
+### Patch Changes
+
+- Small tweak to bib parsing.
+- Updated dependencies
+  - @ulld/developer@0.0.80
+  - @ulld/developer-schemas@0.0.74
+  - @ulld/types@0.0.74
+
 ## 0.0.79
 
 ### Patch Changes

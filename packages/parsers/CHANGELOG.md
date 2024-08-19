@@ -1,5 +1,19 @@
 # @ulld/parsers
 
+## 0.0.80
+
+### Patch Changes
+
+- Small tweak to bib parsing.
+- Updated dependencies
+  - @ulld/component-map@0.0.80
+  - @ulld/typescript-config@0.0.74
+  - @ulld/configschema@0.0.80
+  - @ulld/database@0.0.77
+  - @ulld/developer@0.0.80
+  - @ulld/types@0.0.74
+  - @ulld/utilities@0.0.80
+
 ## 0.0.79
 
 ### Patch Changes

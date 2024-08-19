@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.77
+
+### Patch Changes
+
+- Small tweak to bib parsing.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.74
+  - @ulld/types@0.0.74
+
 ## 0.0.76
 
 ### Patch Changes
