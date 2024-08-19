@@ -116,6 +116,7 @@ export class SpecificNoteQueryManager {
 
 
     getFormatFromPath(p: string){
+        console.log("path in getFormatFromPath: ", p)
         let f = p.slice(p.lastIndexOf(".") + 1)
         return supportedFileTypes.includes(f as any) ? `.${f}` as ParsableExtensions : undefined
     }
@@ -123,11 +124,11 @@ export class SpecificNoteQueryManager {
     async run(): Promise<NotePropertiesOutput> {
         let existsMap = await this.checkTypesExist()
         let ftMatch = existsMap[0]
-        let format = this.getFormatFromPath(ftMatch) || ".mdx"
+        let format = this.getFormatFromPath(ftMatch)
         if (ftMatch && this.preferFs) {
             return {
                 useFs: true,
-                format: format,
+                format: (format || ".mdx") as ParsableExtensions,
                 rootRelativePathWithExtension: ftMatch,
                 rootRelativePath: this.fsPath,
                 absolutePath: ensureAbsolute(ftMatch, this.fsRoot)
@@ -135,7 +136,7 @@ export class SpecificNoteQueryManager {
         }
         return {
             useFs: false,
-            format: format,
+            format: (format || ".mdx") as ParsableExtensions,
             rootRelativePath: this.fsPath,
             rootRelativePathWithExtension: ftMatch ? ftMatch : undefined,
             absolutePath: ftMatch ? ensureAbsolute(ftMatch, this.fsRoot) : undefined

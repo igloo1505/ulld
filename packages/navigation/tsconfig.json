@@ -1,21 +1,24 @@
 {
-    "$schema": "https://json.schemastore.org/tsconfig.json",
-    "extends": "@ulld/typescript-config/nextjs.json",
-    "include": [
-        "./**/*.ts",
-        "./**/*.tsx"
-    ],
-    "exclude": [
-        "dist",
-        "build",
-        "src/app/**",
-        "node_modules"
-    ],
-    "compilerOptions": {
-        "rootDir": ".",
-        "moduleResolution": "Bundler",
-        "jsx": "react-jsx",
-        "esModuleInterop": true,
-        "resolveJsonModule": true
-    }
+  "$schema": "https://json.schemastore.org/tsconfig.json",
+  "extends": "@ulld/typescript-config/nextjs.json",
+  "include": [
+    "./**/*.ts",
+    "./**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "dist",
+    "build",
+    "src/app/**",
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "rootDir": ".",
+    "moduleResolution": "Bundler",
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "incremental": true,
+    "strictNullChecks": true
+  }
 }

@@ -1,4 +1,3 @@
-import { PackageJsonType } from "@ulld/developer-schemas/fullPackageJson";
 import { PackageManagers } from "../types";
 import { PackageJson } from "./baseClasses/pkgJson";
 
@@ -24,6 +23,10 @@ export class TargetPackageJson extends PackageJson {
         }
         let deps = Object.keys(this.data.dependencies);
         return deps.filter((a) => a.startsWith("@ulld")).length > 0;
+    }
+
+    write(p: PackageManagers){
+        super.write(p)
     }
 
     // ULLD_BUILD_PROCESS: Need to handle this.

@@ -153,7 +153,6 @@ export class BibEntry {
     }
     getIdInBibFile(bibFileIds: string[], lowercaseBibFileIds: string[]) {
         let s = bibFileIds[lowercaseBibFileIds.indexOf(this.id.toLowerCase())];
-        console.log("id lowercased: ", s);
         return s;
     }
     toPlainObject() {

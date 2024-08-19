@@ -8,7 +8,8 @@ export const markdownExtensions = z.union([
 ])
 
 export const defaultParsableFileExtensions = z.union([
-    markdownExtensions,
+    z.literal(".mdx"),
+    z.literal(".md"),
     z.literal(".ipynb"),
 ])
 

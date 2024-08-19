@@ -8,8 +8,10 @@ export const colors = {
         "#AA3377",
         "#BBBBBB",
     ],
-    highContrast: ["#004488", "#DDAA33", "#BB5566"],
-    highVis: ["#0d49fb", "#e6091c", "#26eb47", "#8936df", "#fec32d", "#25d7fd"],
+    dutch_field: ["#e60049", "#0bb4ff", "#50e991", "#e6d800", "#9b19f5", "#ffa300", "#dc0ab4", "#b3d4ff", "#00bfa0"],
+    high_contrast: ["#004488", "#DDAA33", "#BB5566"],
+    high_vis: ["#0d49fb", "#e6091c", "#26eb47", "#8936df", "#fec32d", "#25d7fd"],
+    blues: ["#0000b3", "#0010d9", "#0020ff", "#0040ff", "#0060ff", "#0080ff", "#009fff", "#00bfff", "#00ffff"],
     light: [
         "#77AADD",
         "#EE8866",
@@ -33,6 +35,8 @@ export const colors = {
         "#AA4499",
         "#DDDDDD",
     ],
+    retro_metro: ["#ea5545", "#f46a9b", "#ef9b20", "#edbf33", "#ede15b", "#bdcf32", "#87bc45", "#27aeef", "#b33dc6"],
+    spring_pastels: ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"],
     retro: [
         '#4165c0',
         '#e770a2',
