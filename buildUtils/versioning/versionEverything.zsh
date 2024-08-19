@@ -10,6 +10,7 @@ pnpm changeset version
 tsx $ULLD_DEV_ROOT/buildUtils/versioning/writeCurrentPackageVersions.ts
 echo "Recreating default configs"
 tsx $ULLD_DEV_ROOT/packages/configschema/src/__scripts__/generateDefaultConfig.ts
+pnpm syncpack format
 git add .
 git commit
 git push
