@@ -18,13 +18,21 @@ const config = {
             dependencies: ["@ulld/**"],
             dependencyTypes: ["!peer"],
             isBanned: true,
-            packages: [
-                "!@ulld/website"
-            ],
+            packages: ["!@ulld/website"],
             label: "Internal packages should only be under peerDependencies",
+        },
+        {
+            dependencies: [
+                "citation-js",
+                "@citation-js/plugin-csl",
+                "@citation-js/plugin-bibtex",
+            ],
+            packages: ["**"],
+            pinVersion: "0.7.8",
         },
     ],
 };
+
 
 /* @ts-ignore */
 module.exports = config;
