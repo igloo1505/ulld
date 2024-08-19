@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.82
+
+### Patch Changes
+
+- More changes to version mismatches.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.82
+  - @ulld/calendar@0.0.82
+  - @ulld/typescript-config@0.0.76
+  - @ulld/default-image-map@0.0.82
+  - @ulld/diagram@0.0.82
+  - @ulld/editor@0.0.82
+  - @ulld/embeddable-components@0.0.82
+  - @ulld/equations@0.0.82
+  - @ulld/full-form@0.0.82
+  - @ulld/journal@0.0.82
+  - @ulld/navigation@0.0.82
+  - @ulld/notebook@0.0.82
+  - @ulld/pdf@0.0.82
+  - @ulld/plot@0.0.82
+  - @ulld/snippets@0.0.82
+  - @ulld/tailwind@0.0.76
+  - @ulld/task-manager@0.0.82
+  - @ulld/types@0.0.76
+  - @ulld/whiteboard@0.0.82
+
 ## 0.0.81
 
 ### Patch Changes

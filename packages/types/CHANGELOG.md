@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.76
+
+### Patch Changes
+
+- More changes to version mismatches.
+
 ## 0.0.75
 
 ### Patch Changes

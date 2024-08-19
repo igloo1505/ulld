@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.82
+
+### Patch Changes
+
+- More changes to version mismatches.
+- Updated dependencies
+  - @ulld/developer@0.0.82
+  - @ulld/types@0.0.76
+
 ## 0.0.81
 
 ### Patch Changes

@@ -1,5 +1,30 @@
 # @ulld/equations
 
+## 0.0.82
+
+### Patch Changes
+
+- More changes to version mismatches.
+- Updated dependencies
+  - @ulld/api@0.0.82
+  - @ulld/typescript-config@0.0.76
+  - @ulld/configschema@0.0.82
+  - @ulld/database@0.0.79
+  - @ulld/developer@0.0.82
+  - @ulld/developer-schemas@0.0.76
+  - @ulld/editor@0.0.82
+  - @ulld/embeddable-components@0.0.82
+  - @ulld/full-form@0.0.82
+  - @ulld/hooks@0.0.82
+  - @ulld/jest-presets@0.0.76
+  - @ulld/parsers@0.0.82
+  - @ulld/render@0.0.82
+  - @ulld/state@0.0.82
+  - @ulld/tailwind@0.0.76
+  - @ulld/types@0.0.76
+  - @ulld/ui@0.0.80
+  - @ulld/utilities@0.0.82
+
 ## 0.0.81
 
 ### Patch Changes

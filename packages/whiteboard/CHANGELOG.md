@@ -1,5 +1,22 @@
 # @ulld/whiteboard
 
+## 0.0.82
+
+### Patch Changes
+
+- More changes to version mismatches.
+- Updated dependencies
+  - @ulld/api@0.0.82
+  - @ulld/typescript-config@0.0.76
+  - @ulld/developer@0.0.82
+  - @ulld/hooks@0.0.82
+  - @ulld/jest-presets@0.0.76
+  - @ulld/logger@0.0.76
+  - @ulld/state@0.0.82
+  - @ulld/tailwind@0.0.76
+  - @ulld/types@0.0.76
+  - @ulld/utilities@0.0.82
+
 ## 0.0.81
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.82
+
+### Patch Changes
+
+- More changes to version mismatches.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.78
+  - @ulld/typescript-config@0.0.76
+  - @ulld/configschema@0.0.82
+  - @ulld/logger@0.0.76
+  - @ulld/tailwind@0.0.76
+  - @ulld/types@0.0.76
+  - @ulld/utilities@0.0.82
+
 ## 0.0.81
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @ulld/hooks
 
+## 0.0.82
+
+### Patch Changes
+
+- More changes to version mismatches.
+- Updated dependencies
+  - @ulld/api@0.0.82
+  - @ulld/component-map@0.0.82
+  - @ulld/typescript-config@0.0.76
+  - @ulld/configschema@0.0.82
+  - @ulld/database@0.0.79
+  - @ulld/parsers@0.0.82
+  - @ulld/types@0.0.76
+  - @ulld/utilities@0.0.82
+
 ## 0.0.81
 
 ### Patch Changes
