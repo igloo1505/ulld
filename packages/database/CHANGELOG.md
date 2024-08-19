@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.73
+
+### Patch Changes
+
+- Updates to dependencies to allow new pnpm install strategy.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.70
+  - @ulld/types@0.0.70
+
 ## 0.0.72
 
 ### Patch Changes

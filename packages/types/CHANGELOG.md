@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.70
+
+### Patch Changes
+
+- Updates to dependencies to allow new pnpm install strategy.
+
 ## 0.0.69
 
 ### Patch Changes

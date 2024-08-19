@@ -1,5 +1,33 @@
 # @ulld/ui
 
+## 0.0.74
+
+### Patch Changes
+
+- Updates to dependencies to allow new pnpm install strategy.
+- Updated dependencies
+  - @ulld/api@0.0.76
+  - @ulld/component-map@0.0.76
+  - @ulld/eslint-config@0.0.72
+  - @ulld/typescript-config@0.0.70
+  - @ulld/configschema@0.0.76
+  - @ulld/database@0.0.73
+  - @ulld/developer@0.0.76
+  - @ulld/editor@0.0.76
+  - @ulld/embeddable-components@0.0.76
+  - @ulld/full-form@0.0.76
+  - @ulld/hooks@0.0.76
+  - @ulld/icons@0.0.76
+  - @ulld/jest-presets@0.0.70
+  - @ulld/logger@0.0.70
+  - @ulld/navigation@0.0.76
+  - @ulld/parsers@0.0.76
+  - @ulld/render@0.0.76
+  - @ulld/state@0.0.76
+  - @ulld/tailwind@0.0.70
+  - @ulld/types@0.0.70
+  - @ulld/utilities@0.0.76
+
 ## 0.0.73
 
 ### Patch Changes

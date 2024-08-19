@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.76
+
+### Patch Changes
+
+- Updates to dependencies to allow new pnpm install strategy.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.72
+  - @ulld/typescript-config@0.0.70
+  - @ulld/configschema@0.0.76
+  - @ulld/database@0.0.73
+  - @ulld/logger@0.0.70
+  - @ulld/types@0.0.70
+
 ## 0.0.75
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/icons
 
+## 0.0.76
+
+### Patch Changes
+
+- Updates to dependencies to allow new pnpm install strategy.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.70
+  - @ulld/hooks@0.0.76
+  - @ulld/tailwind@0.0.70
+  - @ulld/types@0.0.70
+  - @ulld/utilities@0.0.76
+
 ## 0.0.75
 
 ### Patch Changes

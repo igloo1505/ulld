@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.76
+
+### Patch Changes
+
+- Updates to dependencies to allow new pnpm install strategy.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.76
+  - @ulld/calendar@0.0.76
+  - @ulld/typescript-config@0.0.70
+  - @ulld/default-image-map@0.0.76
+  - @ulld/diagram@0.0.76
+  - @ulld/editor@0.0.76
+  - @ulld/embeddable-components@0.0.76
+  - @ulld/equations@0.0.76
+  - @ulld/full-form@0.0.76
+  - @ulld/journal@0.0.76
+  - @ulld/navigation@0.0.76
+  - @ulld/notebook@0.0.76
+  - @ulld/pdf@0.0.76
+  - @ulld/plot@0.0.76
+  - @ulld/snippets@0.0.76
+  - @ulld/tailwind@0.0.70
+  - @ulld/task-manager@0.0.76
+  - @ulld/types@0.0.70
+  - @ulld/whiteboard@0.0.76
+
 ## 0.0.75
 
 ### Patch Changes

@@ -1,5 +1,24 @@
 # @ulld/api
 
+## 0.0.76
+
+### Patch Changes
+
+- Updates to dependencies to allow new pnpm install strategy.
+- Updated dependencies
+  - @ulld/base-configs@0.0.70
+  - @ulld/typescript-config@0.0.70
+  - @ulld/configschema@0.0.76
+  - @ulld/database@0.0.73
+  - @ulld/developer@0.0.76
+  - @ulld/jest-presets@0.0.70
+  - @ulld/logger@0.0.70
+  - @ulld/parsers@0.0.76
+  - @ulld/state@0.0.76
+  - @ulld/tailwind@0.0.70
+  - @ulld/types@0.0.70
+  - @ulld/utilities@0.0.76
+
 ## 0.0.75
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.72
+
+### Patch Changes
+
+- Updates to dependencies to allow new pnpm install strategy.
+
 ## 0.0.71
 
 ### Patch Changes

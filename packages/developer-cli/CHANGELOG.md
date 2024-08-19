@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.76
+
+### Patch Changes
+
+- Updates to dependencies to allow new pnpm install strategy.
+- Updated dependencies
+  - @ulld/developer@0.0.76
+  - @ulld/developer-schemas@0.0.70
+  - @ulld/types@0.0.70
+
 ## 0.0.75
 
 ### Patch Changes

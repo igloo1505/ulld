@@ -1,5 +1,29 @@
 # @ulld/landing-layouts
 
+## 0.0.76
+
+### Patch Changes
+
+- Updates to dependencies to allow new pnpm install strategy.
+- Updated dependencies
+  - @ulld/api@0.0.76
+  - @ulld/bib-manager@0.0.76
+  - @ulld/calendar@0.0.76
+  - @ulld/eslint-config@0.0.72
+  - @ulld/typescript-config@0.0.70
+  - @ulld/configschema@0.0.76
+  - @ulld/developer@0.0.76
+  - @ulld/hooks@0.0.76
+  - @ulld/icons@0.0.76
+  - @ulld/journal@0.0.76
+  - @ulld/plot@0.0.76
+  - @ulld/state@0.0.76
+  - @ulld/tailwind@0.0.70
+  - @ulld/types@0.0.70
+  - @ulld/ui@0.0.74
+  - @ulld/utilities@0.0.76
+  - @ulld/whiteboard@0.0.76
+
 ## 0.0.75
 
 ### Patch Changes
