@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.81
+
+### Patch Changes
+
+- Update mismatched citation-js packages, attempting to resolve build issue.
+- Updated dependencies
+  - @ulld/developer@0.0.81
+  - @ulld/developer-schemas@0.0.75
+  - @ulld/types@0.0.75
+
 ## 0.0.80
 
 ### Patch Changes

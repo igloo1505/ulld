@@ -1,5 +1,24 @@
 # @ulld/api
 
+## 0.0.81
+
+### Patch Changes
+
+- Update mismatched citation-js packages, attempting to resolve build issue.
+- Updated dependencies
+  - @ulld/base-configs@0.0.75
+  - @ulld/typescript-config@0.0.75
+  - @ulld/configschema@0.0.81
+  - @ulld/database@0.0.78
+  - @ulld/developer@0.0.81
+  - @ulld/jest-presets@0.0.75
+  - @ulld/logger@0.0.75
+  - @ulld/parsers@0.0.81
+  - @ulld/state@0.0.81
+  - @ulld/tailwind@0.0.75
+  - @ulld/types@0.0.75
+  - @ulld/utilities@0.0.81
+
 ## 0.0.80
 
 ### Patch Changes

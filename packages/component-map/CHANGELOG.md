@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.81
+
+### Patch Changes
+
+- Update mismatched citation-js packages, attempting to resolve build issue.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.81
+  - @ulld/calendar@0.0.81
+  - @ulld/typescript-config@0.0.75
+  - @ulld/default-image-map@0.0.81
+  - @ulld/diagram@0.0.81
+  - @ulld/editor@0.0.81
+  - @ulld/embeddable-components@0.0.81
+  - @ulld/equations@0.0.81
+  - @ulld/full-form@0.0.81
+  - @ulld/journal@0.0.81
+  - @ulld/navigation@0.0.81
+  - @ulld/notebook@0.0.81
+  - @ulld/pdf@0.0.81
+  - @ulld/plot@0.0.81
+  - @ulld/snippets@0.0.81
+  - @ulld/tailwind@0.0.75
+  - @ulld/task-manager@0.0.81
+  - @ulld/types@0.0.75
+  - @ulld/whiteboard@0.0.81
+
 ## 0.0.80
 
 ### Patch Changes

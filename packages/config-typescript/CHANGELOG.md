@@ -1,5 +1,13 @@
 # @repo/typescript-config
 
+## 0.0.75
+
+### Patch Changes
+
+- Update mismatched citation-js packages, attempting to resolve build issue.
+- Updated dependencies
+  - @ulld/types@0.0.75
+
 ## 0.0.74
 
 ### Patch Changes

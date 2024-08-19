@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.77
+
+### Patch Changes
+
+- Update mismatched citation-js packages, attempting to resolve build issue.
+
 ## 0.0.76
 
 ### Patch Changes

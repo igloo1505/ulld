@@ -1,5 +1,26 @@
 # @ulld/cookbook
 
+## 0.0.81
+
+### Patch Changes
+
+- Update mismatched citation-js packages, attempting to resolve build issue.
+- Updated dependencies
+  - @ulld/api@0.0.81
+  - @ulld/calendar@0.0.81
+  - @ulld/eslint-config@0.0.77
+  - @ulld/typescript-config@0.0.75
+  - @ulld/configschema@0.0.81
+  - @ulld/developer@0.0.81
+  - @ulld/full-form@0.0.81
+  - @ulld/hooks@0.0.81
+  - @ulld/logger@0.0.75
+  - @ulld/state@0.0.81
+  - @ulld/tailwind@0.0.75
+  - @ulld/types@0.0.75
+  - @ulld/ui@0.0.79
+  - @ulld/utilities@0.0.81
+
 ## 0.0.80
 
 ### Patch Changes

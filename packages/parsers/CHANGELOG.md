@@ -1,5 +1,19 @@
 # @ulld/parsers
 
+## 0.0.81
+
+### Patch Changes
+
+- Update mismatched citation-js packages, attempting to resolve build issue.
+- Updated dependencies
+  - @ulld/component-map@0.0.81
+  - @ulld/typescript-config@0.0.75
+  - @ulld/configschema@0.0.81
+  - @ulld/database@0.0.78
+  - @ulld/developer@0.0.81
+  - @ulld/types@0.0.75
+  - @ulld/utilities@0.0.81
+
 ## 0.0.80
 
 ### Patch Changes

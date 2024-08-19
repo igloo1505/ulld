@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.78
+
+### Patch Changes
+
+- Update mismatched citation-js packages, attempting to resolve build issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.75
+  - @ulld/types@0.0.75
+
 ## 0.0.77
 
 ### Patch Changes
