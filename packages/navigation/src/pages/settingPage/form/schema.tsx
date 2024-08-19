@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const navigationLinkSchema = z.object({
+export const navigationLinkSchema = z.object({
     label: z.string().max(12),
     href: z.string().url()
 })

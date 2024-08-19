@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode } from "react";
+import React, { FC, ReactNode } from "react";
 import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
 import { BaseInputProps } from "../../types/fullFormInputProps";
 import { Reorder } from "framer-motion";
@@ -7,19 +7,30 @@ import ReorderItemWithTrigger from "./reorderItemWithTrigger";
 import cn from "@ulld/utilities/cn";
 import { FormDescription, FormLabel } from "@ulld/tailwind/form";
 
+
+interface ReorderItemWrapperProps<J extends FieldValues, T extends Path<J>> {
+    children: ReactNode
+    idx: number
+    item: PathValue<J, T>[number]
+}
+
 interface ReorderStringInputProps<
     T extends FieldValues,
     ItemType extends unknown,
+    N extends Path<T>
 > extends BaseInputProps<T, "item" | "list" | "dragHandle"> {
     getLabel?: (item: ItemType) => ReactNode;
     getValue?: (item: ItemType) => number | string;
     as?: "ol" | "ul";
     dragHandle?: boolean;
+    name: N
+    itemWrapper?: FC<ReorderItemWrapperProps<T, N>>
 }
 
 export const ReorderStringInput = <
     T extends FieldValues,
     ItemType extends unknown,
+    N extends Path<T>
 >({
     name,
     getLabel,
@@ -29,7 +40,8 @@ export const ReorderStringInput = <
     dragHandle,
     label,
     desc,
-}: ReorderStringInputProps<T, ItemType>) => {
+    itemWrapper: ItemWrapper
+}: ReorderStringInputProps<T, ItemType, N>) => {
     const form = useFormContext<T>();
     const items: ItemType[] = form.getValues(name);
     if (
@@ -54,7 +66,7 @@ export const ReorderStringInput = <
                 className={cn("w-fit min-w-fit", classes.list)}
                 as={as}
             >
-                {items.map((item) => {
+                {items.map((item, i) => {
                     const value = getValue ? getValue(item) : item;
                     const label = getLabel ? getLabel(item) : (item as ReactNode);
                     if (dragHandle) {
@@ -75,7 +87,7 @@ export const ReorderStringInput = <
                             key={value as string | number}
                             value={item}
                         >
-                            {label}
+                            {ItemWrapper ? <ItemWrapper item={item} idx={i}>{label}</ItemWrapper> : label}
                         </Reorder.Item>
                     );
                 })}

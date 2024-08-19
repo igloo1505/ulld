@@ -123,6 +123,7 @@ export class SpecificNoteQueryManager {
 
     async run(): Promise<NotePropertiesOutput> {
         let existsMap = await this.checkTypesExist()
+        console.log("existsMap: ", existsMap)
         let ftMatch = existsMap[0]
         let format = this.getFormatFromPath(ftMatch)
         if (ftMatch && this.preferFs) {

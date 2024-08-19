@@ -4,6 +4,7 @@ import "@citation-js/plugin-bibtex";
 import fs from "fs";
 import path from "path";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
+import { FileData } from "@ulld/utilities/fileClass";
 
 export const getFormattedCslCitation = (
     content: string,
@@ -11,14 +12,14 @@ export const getFormattedCslCitation = (
 ) => {
     let useUserDefined = false;
     if (appConfig.cslPath) {
-        const content = fs.readFileSync(
-            path.join(appConfig.fsRoot, appConfig.cslPath),
-            { encoding: "utf-8" },
-        );
-        if (content) {
-            let config = Cite.plugins.config.get("csl");
-            useUserDefined = true;
-            config.templates.add("user-defined", content);
+        let f = new FileData(path.join(appConfig.fsRoot, appConfig.cslPath));
+        if (f.exists()) {
+            const cslFileContent = f.getContent();
+            if (cslFileContent) {
+                let config = Cite.plugins.config.get("csl");
+                useUserDefined = true;
+                config.templates.add("user-defined", cslFileContent);
+            }
         }
     }
     let citations = new Cite(content);

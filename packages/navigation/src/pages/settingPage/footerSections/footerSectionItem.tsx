@@ -3,6 +3,7 @@ import { NavigationFormSettingSchema } from "../form/schema";
 import FooterSectionItemLink from "./footerSectionItemLink";
 import { PlusIcon, XIcon } from "lucide-react";
 import { useFormContext } from "@ulld/full-form/form";
+import { ReorderStringInput } from "@ulld/full-form/reorder";
 import {
     ContextMenu,
     ContextMenuTrigger,
@@ -10,6 +11,7 @@ import {
     ContextMenuItem,
 } from "@ulld/tailwind/context-menu";
 import { useNavigationSettingsDispatch } from "../context";
+import FooterSectionLinkList from "./footerSectionLinkList";
 
 interface FooterSectionProps {
     item: NavigationFormSettingSchema["footerSections"][number];
@@ -18,6 +20,7 @@ interface FooterSectionProps {
 
 interface AddItemButtonProps {
     disabled: boolean;
+    sectionIndex: number
 }
 
 interface FooterSectionLabelProps {
@@ -25,13 +28,20 @@ interface FooterSectionLabelProps {
     idx: number;
 }
 
-const AddItemButton = ({ disabled }: AddItemButtonProps) => {
+const AddItemButton = ({ disabled, sectionIndex }: AddItemButtonProps) => {
+    const dispatch = useNavigationSettingsDispatch()
     return (
         <button
             disabled={disabled}
             className={
-                "w-full text-sm hover:bg-muted/40 p-2 rounded transition-colors duration-200"
+                "w-full text-sm hover:bg-muted/40 p-2 rounded transition-colors duration-200 mt-2"
             }
+            onClick={() => {
+                dispatch({
+                    type: "addFooterItemLink",
+                    payload: sectionIndex
+                })
+            }}
         >
             <PlusIcon className={"w-4 h-4 inline-block mr-2"} />
             <div className={"inline-block"}>Add Link</div>
@@ -87,10 +97,13 @@ const FooterSection = ({ item, idx }: FooterSectionProps) => {
             </div>
             <div className={"w-full flex flex-col justify-center items-center"}>
                 <>
-                    {item.items.map((x, i) => {
-                        return <FooterSectionItemLink key={`${x.href}-${i}`} data={x} />;
-                    })}
-                    <AddItemButton disabled={item.items.length >= 5} />
+                    <FooterSectionLinkList items={item.items} sectionIndex={idx} />
+                    {item.items.length < 5 && (
+                        <AddItemButton
+                                sectionIndex={idx}
+                                disabled={item.items.length >= 5}
+                            />
+                    )}
                 </>
             </div>
         </div>

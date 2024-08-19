@@ -43,7 +43,7 @@ const FooterSectionForm = (props: FooterSectionFormProps) => {
                     Add
                 </Button>
             </div>
-            <FooterSectionList />
+            {secs.length ? <FooterSectionList /> : <div className={"px-8 md:px-16 min-h-[200px] py-20 flex flex-col justify-center items-center text-xl text-muted-foreground"}>You don't have any footer sections yet.</div>}
         </div>
     );
 };

@@ -21,6 +21,9 @@ const DatabaseMdxPage = async ({
     NoteDetailSheet,
     ...props
 }: DatabaseMdxPageProps) => {
+
+    console.log(`DatabaseMdxPage`)
+
     let item = await serverClient.mdx.getDatabaseMdx(
         props.noteProps.rootRelativePathWithExtension ||
         `${props.noteProps.rootRelativePath}.mdx`,

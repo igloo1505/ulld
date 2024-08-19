@@ -1,6 +1,6 @@
 
 
-export type ParsableExtensions = ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".mdx" | ".mdx" | ".ipynb"
+export type ParsableExtensions = ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md" | ".mdx" | ".ipynb"
 
 export type NotePropertiesOutput = ({
     useFs: true
