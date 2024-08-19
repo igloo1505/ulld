@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.71
+
+### Patch Changes
+
+- Update trying to address bib sync issue in production.
+
 ## 0.0.70
 
 ### Patch Changes

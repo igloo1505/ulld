@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.77
+
+### Patch Changes
+
+- Update trying to address bib sync issue in production.
+- Updated dependencies
+  - @ulld/developer@0.0.77
+  - @ulld/types@0.0.71
+
 ## 0.0.76
 
 ### Patch Changes

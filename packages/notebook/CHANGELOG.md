@@ -1,5 +1,25 @@
 # @ulld/notebook
 
+## 0.0.77
+
+### Patch Changes
+
+- Update trying to address bib sync issue in production.
+- Updated dependencies
+  - @ulld/api@0.0.77
+  - @ulld/eslint-config@0.0.73
+  - @ulld/typescript-config@0.0.71
+  - @ulld/configschema@0.0.77
+  - @ulld/developer@0.0.77
+  - @ulld/editor@0.0.77
+  - @ulld/hooks@0.0.77
+  - @ulld/jest-presets@0.0.71
+  - @ulld/state@0.0.77
+  - @ulld/tailwind@0.0.71
+  - @ulld/types@0.0.71
+  - @ulld/ui@0.0.75
+  - @ulld/utilities@0.0.77
+
 ## 0.0.76
 
 ### Patch Changes

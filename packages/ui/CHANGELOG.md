@@ -1,5 +1,33 @@
 # @ulld/ui
 
+## 0.0.75
+
+### Patch Changes
+
+- Update trying to address bib sync issue in production.
+- Updated dependencies
+  - @ulld/api@0.0.77
+  - @ulld/component-map@0.0.77
+  - @ulld/eslint-config@0.0.73
+  - @ulld/typescript-config@0.0.71
+  - @ulld/configschema@0.0.77
+  - @ulld/database@0.0.74
+  - @ulld/developer@0.0.77
+  - @ulld/editor@0.0.77
+  - @ulld/embeddable-components@0.0.77
+  - @ulld/full-form@0.0.77
+  - @ulld/hooks@0.0.77
+  - @ulld/icons@0.0.77
+  - @ulld/jest-presets@0.0.71
+  - @ulld/logger@0.0.71
+  - @ulld/navigation@0.0.77
+  - @ulld/parsers@0.0.77
+  - @ulld/render@0.0.77
+  - @ulld/state@0.0.77
+  - @ulld/tailwind@0.0.71
+  - @ulld/types@0.0.71
+  - @ulld/utilities@0.0.77
+
 ## 0.0.74
 
 ### Patch Changes

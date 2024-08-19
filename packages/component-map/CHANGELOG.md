@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.77
+
+### Patch Changes
+
+- Update trying to address bib sync issue in production.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.77
+  - @ulld/calendar@0.0.77
+  - @ulld/typescript-config@0.0.71
+  - @ulld/default-image-map@0.0.77
+  - @ulld/diagram@0.0.77
+  - @ulld/editor@0.0.77
+  - @ulld/embeddable-components@0.0.77
+  - @ulld/equations@0.0.77
+  - @ulld/full-form@0.0.77
+  - @ulld/journal@0.0.77
+  - @ulld/navigation@0.0.77
+  - @ulld/notebook@0.0.77
+  - @ulld/pdf@0.0.77
+  - @ulld/plot@0.0.77
+  - @ulld/snippets@0.0.77
+  - @ulld/tailwind@0.0.71
+  - @ulld/task-manager@0.0.77
+  - @ulld/types@0.0.71
+  - @ulld/whiteboard@0.0.77
+
 ## 0.0.76
 
 ### Patch Changes

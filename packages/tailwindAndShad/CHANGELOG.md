@@ -1,5 +1,14 @@
 # @ulld/tailwind
 
+## 0.0.71
+
+### Patch Changes
+
+- Update trying to address bib sync issue in production.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.71
+  - @ulld/types@0.0.71
+
 ## 0.0.70
 
 ### Patch Changes

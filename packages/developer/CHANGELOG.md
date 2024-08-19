@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.77
+
+### Patch Changes
+
+- Update trying to address bib sync issue in production.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.73
+  - @ulld/typescript-config@0.0.71
+  - @ulld/configschema@0.0.77
+  - @ulld/database@0.0.74
+  - @ulld/logger@0.0.71
+  - @ulld/types@0.0.71
+
 ## 0.0.76
 
 ### Patch Changes

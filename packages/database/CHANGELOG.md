@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.74
+
+### Patch Changes
+
+- Update trying to address bib sync issue in production.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.71
+  - @ulld/types@0.0.71
+
 ## 0.0.73
 
 ### Patch Changes

@@ -1,5 +1,24 @@
 # @ulld/api
 
+## 0.0.77
+
+### Patch Changes
+
+- Update trying to address bib sync issue in production.
+- Updated dependencies
+  - @ulld/base-configs@0.0.71
+  - @ulld/typescript-config@0.0.71
+  - @ulld/configschema@0.0.77
+  - @ulld/database@0.0.74
+  - @ulld/developer@0.0.77
+  - @ulld/jest-presets@0.0.71
+  - @ulld/logger@0.0.71
+  - @ulld/parsers@0.0.77
+  - @ulld/state@0.0.77
+  - @ulld/tailwind@0.0.71
+  - @ulld/types@0.0.71
+  - @ulld/utilities@0.0.77
+
 ## 0.0.76
 
 ### Patch Changes

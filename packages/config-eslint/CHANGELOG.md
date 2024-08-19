@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.73
+
+### Patch Changes
+
+- Update trying to address bib sync issue in production.
+
 ## 0.0.72
 
 ### Patch Changes

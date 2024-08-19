@@ -1,5 +1,13 @@
 # @ulld/developer-schemas
 
+## 0.0.71
+
+### Patch Changes
+
+- Update trying to address bib sync issue in production.
+- Updated dependencies
+  - @ulld/types@0.0.71
+
 ## 0.0.70
 
 ### Patch Changes

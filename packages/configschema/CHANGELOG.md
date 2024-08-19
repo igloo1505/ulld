@@ -1,5 +1,19 @@
 # @ulld/configschema
 
+## 0.0.77
+
+### Patch Changes
+
+- Update trying to address bib sync issue in production.
+- Updated dependencies
+  - @ulld/base-configs@0.0.71
+  - @ulld/typescript-config@0.0.71
+  - @ulld/developer-schemas@0.0.71
+  - @ulld/icons@0.0.77
+  - @ulld/tailwind@0.0.71
+  - @ulld/types@0.0.71
+  - @ulld/utilities@0.0.77
+
 ## 0.0.76
 
 ### Patch Changes
