@@ -1,5 +1,13 @@
 # @ulld/internal-dev-cli
 
+## 0.0.79
+
+### Patch Changes
+
+- Update citation-js versions again.
+- Updated dependencies
+  - @ulld/types@0.0.79
+
 ## 0.0.78
 
 ### Patch Changes

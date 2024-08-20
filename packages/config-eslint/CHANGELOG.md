@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.81
+
+### Patch Changes
+
+- Update citation-js versions again.
+
 ## 0.0.80
 
 ### Patch Changes

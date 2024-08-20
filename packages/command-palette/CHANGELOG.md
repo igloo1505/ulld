@@ -1,5 +1,36 @@
 # @ulld/command-palette
 
+## 0.0.85
+
+### Patch Changes
+
+- Update citation-js versions again.
+- Updated dependencies
+  - @ulld/api@0.0.85
+  - @ulld/bib-manager@0.0.85
+  - @ulld/calendar@0.0.85
+  - @ulld/eslint-config@0.0.81
+  - @ulld/typescript-config@0.0.79
+  - @ulld/configschema@0.0.85
+  - @ulld/database@0.0.82
+  - @ulld/developer@0.0.85
+  - @ulld/diagram@0.0.85
+  - @ulld/editor@0.0.85
+  - @ulld/equations@0.0.85
+  - @ulld/hooks@0.0.85
+  - @ulld/jest-presets@0.0.79
+  - @ulld/logger@0.0.79
+  - @ulld/parsers@0.0.85
+  - @ulld/render@0.0.85
+  - @ulld/snippets@0.0.85
+  - @ulld/state@0.0.85
+  - @ulld/tailwind@0.0.79
+  - @ulld/task-manager@0.0.85
+  - @ulld/types@0.0.79
+  - @ulld/ui@0.0.83
+  - @ulld/utilities@0.0.85
+  - @ulld/whiteboard@0.0.85
+
 ## 0.0.84
 
 ### Patch Changes

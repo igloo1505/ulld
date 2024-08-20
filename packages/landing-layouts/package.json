@@ -1,96 +1,96 @@
 {
-    "name": "@ulld/landing-layouts",
-    "version": "0.0.84",
-    "dependencies": {
-        "@tailwindcss/forms": "^0.5.7",
-        "@tailwindcss/typography": "^0.5.13",
-        "@types/eslint": "^9.6.0",
-        "better-react-mathjax": "2.0.3",
-        "eslint": "^9.0.0",
-        "lucide-react": "*",
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "sass": "^1.77.8",
-        "tailwindcss": "^3.4.1"
-    },
-    "devDependencies": {
-        "@tailwindcss/forms": "^0.5.7",
-        "@tailwindcss/typography": "^0.5.13",
-        "@types/eslint": "^9.6.0",
-        "better-react-mathjax": "^2.0.3",
-        "eslint": "^9.0.0",
-        "lucide-react": "^0.344.0",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "sass": "^1.77.8",
-        "tailwindcss": "^3.4.1"
-    },
-    "exports": {
-        "./beta": "./src/components/beta/main.tsx",
-        "./modularDashboard": "./src/components/modularDashboard/main.tsx",
-        "./types": "./src/types.ts"
-    },
-    "files": [
-        "src",
-        "pluginConfig.ulld.json"
+  "name": "@ulld/landing-layouts",
+  "version": "0.0.85",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/eslint": "^9.6.0",
+    "better-react-mathjax": "2.0.3",
+    "eslint": "^9.0.0",
+    "lucide-react": "*",
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.77.8",
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/eslint": "^9.6.0",
+    "better-react-mathjax": "^2.0.3",
+    "eslint": "^9.0.0",
+    "lucide-react": "^0.344.0",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.77.8",
+    "tailwindcss": "^3.4.1"
+  },
+  "exports": {
+    "./beta": "./src/components/beta/main.tsx",
+    "./modularDashboard": "./src/components/modularDashboard/main.tsx",
+    "./types": "./src/types.ts"
+  },
+  "files": [
+    "src",
+    "pluginConfig.ulld.json"
+  ],
+  "packageManager": "pnpm@9.0.4",
+  "peerDependencies": {
+    "@ulld/api": "workspace:*",
+    "@ulld/bib-manager": "workspace:*",
+    "@ulld/calendar": "workspace:*",
+    "@ulld/configschema": "workspace:*",
+    "@ulld/developer": "workspace:*",
+    "@ulld/eslint-config": "workspace:*",
+    "@ulld/hooks": "workspace:*",
+    "@ulld/icons": "workspace:*",
+    "@ulld/journal": "workspace:*",
+    "@ulld/plot": "workspace:*",
+    "@ulld/state": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
+    "@ulld/types": "workspace:*",
+    "@ulld/typescript-config": "workspace:*",
+    "@ulld/ui": "workspace:*",
+    "@ulld/utilities": "workspace:*",
+    "@ulld/whiteboard": "workspace:*",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "echo 'Add build script here'",
+    "dev": "next dev",
+    "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "echo 'Add test script here'"
+  },
+  "ulld-plugin-id": "c620fd84-e33f-40d0-a345-b863ee6b4a13",
+  "ulld-pluginConfig": {
+    "pluginName": "@ulld/landing-layouts",
+    "label": "Dashboards",
+    "pluginId": "b0aa216a-0976-4d30-a589-5df59dc277a0",
+    "slot": "dashboard",
+    "components": [
+      {
+        "componentName": "ModularDashboard",
+        "tags": [],
+        "slot": "LandingPage",
+        "export": "modularDashboard",
+        "componentId": "5fc8d128-482d-4656-8b44-f11cd35ba363"
+      }
     ],
-    "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {
-        "@ulld/api": "workspace:*",
-        "@ulld/bib-manager": "workspace:*",
-        "@ulld/calendar": "workspace:*",
-        "@ulld/configschema": "workspace:*",
-        "@ulld/developer": "workspace:*",
-        "@ulld/eslint-config": "workspace:*",
-        "@ulld/hooks": "workspace:*",
-        "@ulld/icons": "workspace:*",
-        "@ulld/journal": "workspace:*",
-        "@ulld/plot": "workspace:*",
-        "@ulld/state": "workspace:*",
-        "@ulld/tailwind": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "@ulld/ui": "workspace:*",
-        "@ulld/utilities": "workspace:*",
-        "@ulld/whiteboard": "workspace:*",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
-    "scripts": {
-        "build": "echo 'Add build script here'",
-        "dev": "next dev",
-        "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
-        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-        "test": "echo 'Add test script here'"
-    },
-    "ulld-plugin-id": "c620fd84-e33f-40d0-a345-b863ee6b4a13",
-    "ulld-pluginConfig": {
-        "pluginName": "@ulld/landing-layouts",
-        "label": "Dashboards",
-        "pluginId": "b0aa216a-0976-4d30-a589-5df59dc277a0",
-        "slot": "dashboard",
-        "components": [
-            {
-                "componentName": "ModularDashboard",
-                "tags": [],
-                "slot": "LandingPage",
-                "export": "modularDashboard",
-                "componentId": "5fc8d128-482d-4656-8b44-f11cd35ba363"
-            }
-        ],
-        "parsers": {},
-        "pages": [],
-        "events": {},
-        "navigationLinks": [],
-        "commandPalette": [],
-        "tailwind": {},
-        "styles": {}
-    }
+    "parsers": {},
+    "pages": [],
+    "events": {},
+    "navigationLinks": [],
+    "commandPalette": [],
+    "tailwind": {},
+    "styles": {}
+  }
 }

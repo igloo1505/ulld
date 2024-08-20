@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.79
+
+### Patch Changes
+
+- Update citation-js versions again.
+
 ## 0.0.78
 
 ### Patch Changes

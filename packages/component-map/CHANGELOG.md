@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.85
+
+### Patch Changes
+
+- Update citation-js versions again.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.85
+  - @ulld/calendar@0.0.85
+  - @ulld/typescript-config@0.0.79
+  - @ulld/default-image-map@0.0.85
+  - @ulld/diagram@0.0.85
+  - @ulld/editor@0.0.85
+  - @ulld/embeddable-components@0.0.85
+  - @ulld/equations@0.0.85
+  - @ulld/full-form@0.0.85
+  - @ulld/journal@0.0.85
+  - @ulld/navigation@0.0.85
+  - @ulld/notebook@0.0.85
+  - @ulld/pdf@0.0.85
+  - @ulld/plot@0.0.85
+  - @ulld/snippets@0.0.85
+  - @ulld/tailwind@0.0.79
+  - @ulld/task-manager@0.0.85
+  - @ulld/types@0.0.79
+  - @ulld/whiteboard@0.0.85
+
 ## 0.0.84
 
 ### Patch Changes

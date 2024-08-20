@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.85
+
+### Patch Changes
+
+- Update citation-js versions again.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.81
+  - @ulld/typescript-config@0.0.79
+  - @ulld/configschema@0.0.85
+  - @ulld/database@0.0.82
+  - @ulld/logger@0.0.79
+  - @ulld/types@0.0.79
+
 ## 0.0.84
 
 ### Patch Changes

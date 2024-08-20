@@ -1,48 +1,48 @@
 {
-    "name": "@ulld/developer",
-    "version": "0.0.84",
-    "dependencies": {
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "trpc-openapi": "1.2.0"
-    },
-    "devDependencies": {
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "trpc-openapi": "1.2.0"
-    },
-    "exports": {
-        "./utils": "./src/utilityMethods/main.ts",
-        "./getConfig": "./src/utilityMethods/getConfig.ts",
-        "./globalStatePortal": "./src/components/globalStatePortal.tsx",
-        "./navbarPortal": "./src/components/navbarPortal.tsx",
-        "./sidebarPortal": "./src/components/sidebarPortal.tsx",
-        "./writePluginConfig": "./src/utilityMethods/writePluginConfig.ts",
-        "./readAppConfig": "./src/utilityMethods/readAppConfig.ts",
-        "./readBuildData": "./src/utilityMethods/readBuildData.ts"
-    },
-    "files": [
-        "src"
-    ],
-    "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {
-        "@ulld/configschema": "workspace:*",
-        "@ulld/database": "workspace:*",
-        "@ulld/eslint-config": "workspace:*",
-        "@ulld/logger": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:*"
-    },
-    "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
-    "scripts": {
-        "buildInternal": "echo 'Add build script here'",
-        "dev": "echo 'Add dev script here'",
-        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-        "test": "echo 'Add test script here'"
-    }
+  "name": "@ulld/developer",
+  "version": "0.0.85",
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "trpc-openapi": "1.2.0"
+  },
+  "devDependencies": {
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "trpc-openapi": "1.2.0"
+  },
+  "exports": {
+    "./utils": "./src/utilityMethods/main.ts",
+    "./getConfig": "./src/utilityMethods/getConfig.ts",
+    "./globalStatePortal": "./src/components/globalStatePortal.tsx",
+    "./navbarPortal": "./src/components/navbarPortal.tsx",
+    "./sidebarPortal": "./src/components/sidebarPortal.tsx",
+    "./writePluginConfig": "./src/utilityMethods/writePluginConfig.ts",
+    "./readAppConfig": "./src/utilityMethods/readAppConfig.ts",
+    "./readBuildData": "./src/utilityMethods/readBuildData.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "packageManager": "pnpm@9.0.4",
+  "peerDependencies": {
+    "@ulld/configschema": "workspace:*",
+    "@ulld/database": "workspace:*",
+    "@ulld/eslint-config": "workspace:*",
+    "@ulld/logger": "workspace:*",
+    "@ulld/types": "workspace:*",
+    "@ulld/typescript-config": "workspace:*"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "buildInternal": "echo 'Add build script here'",
+    "dev": "echo 'Add dev script here'",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "echo 'Add test script here'"
+  }
 }

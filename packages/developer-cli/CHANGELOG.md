@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.85
+
+### Patch Changes
+
+- Update citation-js versions again.
+- Updated dependencies
+  - @ulld/developer@0.0.85
+  - @ulld/developer-schemas@0.0.79
+  - @ulld/types@0.0.79
+
 ## 0.0.84
 
 ### Patch Changes

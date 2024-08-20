@@ -1,5 +1,25 @@
 # @ulld/full-form
 
+## 0.0.85
+
+### Patch Changes
+
+- Update citation-js versions again.
+- Updated dependencies
+  - @ulld/api@0.0.85
+  - @ulld/typescript-config@0.0.79
+  - @ulld/configschema@0.0.85
+  - @ulld/database@0.0.82
+  - @ulld/developer@0.0.85
+  - @ulld/editor@0.0.85
+  - @ulld/hooks@0.0.85
+  - @ulld/icons@0.0.85
+  - @ulld/jest-presets@0.0.79
+  - @ulld/state@0.0.85
+  - @ulld/tailwind@0.0.79
+  - @ulld/types@0.0.79
+  - @ulld/utilities@0.0.85
+
 ## 0.0.84
 
 ### Patch Changes

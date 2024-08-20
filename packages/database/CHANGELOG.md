@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.82
+
+### Patch Changes
+
+- Update citation-js versions again.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.79
+  - @ulld/types@0.0.79
+
 ## 0.0.81
 
 ### Patch Changes
