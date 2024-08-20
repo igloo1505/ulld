@@ -1,5 +1,17 @@
 # @ulld/utilities
 
+## 0.0.84
+
+### Patch Changes
+
+- Revert citation-js versions to latest.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.78
+  - @ulld/database@0.0.81
+  - @ulld/math@0.0.84
+  - @ulld/tailwind@0.0.78
+  - @ulld/types@0.0.78
+
 ## 0.0.83
 
 ### Patch Changes

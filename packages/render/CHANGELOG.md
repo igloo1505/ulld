@@ -1,5 +1,21 @@
 # @ulld/render
 
+## 0.0.84
+
+### Patch Changes
+
+- Revert citation-js versions to latest.
+- Updated dependencies
+  - @ulld/api@0.0.84
+  - @ulld/component-map@0.0.84
+  - @ulld/typescript-config@0.0.78
+  - @ulld/configschema@0.0.84
+  - @ulld/hooks@0.0.84
+  - @ulld/jest-presets@0.0.78
+  - @ulld/parsers@0.0.84
+  - @ulld/types@0.0.78
+  - @ulld/utilities@0.0.84
+
 ## 0.0.83
 
 ### Patch Changes

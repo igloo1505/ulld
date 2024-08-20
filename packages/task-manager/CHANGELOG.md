@@ -1,5 +1,33 @@
 # @ulld/task-manager
 
+## 0.0.84
+
+### Patch Changes
+
+- Revert citation-js versions to latest.
+- Updated dependencies
+  - @ulld/api@0.0.84
+  - @ulld/calendar@0.0.84
+  - @ulld/eslint-config@0.0.80
+  - @ulld/typescript-config@0.0.78
+  - @ulld/configschema@0.0.84
+  - @ulld/database@0.0.81
+  - @ulld/developer@0.0.84
+  - @ulld/diagram@0.0.84
+  - @ulld/editor@0.0.84
+  - @ulld/full-form@0.0.84
+  - @ulld/hooks@0.0.84
+  - @ulld/icons@0.0.84
+  - @ulld/jest-presets@0.0.78
+  - @ulld/parsers@0.0.84
+  - @ulld/render@0.0.84
+  - @ulld/state@0.0.84
+  - @ulld/tailwind@0.0.78
+  - @ulld/types@0.0.78
+  - @ulld/ui@0.0.82
+  - @ulld/utilities@0.0.84
+  - @ulld/whiteboard@0.0.84
+
 ## 0.0.83
 
 ### Patch Changes

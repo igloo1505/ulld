@@ -1,5 +1,19 @@
 # @ulld/parsers
 
+## 0.0.84
+
+### Patch Changes
+
+- Revert citation-js versions to latest.
+- Updated dependencies
+  - @ulld/component-map@0.0.84
+  - @ulld/typescript-config@0.0.78
+  - @ulld/configschema@0.0.84
+  - @ulld/database@0.0.81
+  - @ulld/developer@0.0.84
+  - @ulld/types@0.0.78
+  - @ulld/utilities@0.0.84
+
 ## 0.0.83
 
 ### Patch Changes

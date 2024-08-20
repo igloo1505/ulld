@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.84
+
+### Patch Changes
+
+- Revert citation-js versions to latest.
+- Updated dependencies
+  - @ulld/developer@0.0.84
+  - @ulld/types@0.0.78
+
 ## 0.0.83
 
 ### Patch Changes
