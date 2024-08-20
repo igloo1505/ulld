@@ -28,7 +28,7 @@ const config = {
                 "@citation-js/plugin-bibtex",
             ],
             packages: ["**"],
-            pinVersion: "0.7.14",
+            pinVersion: "0.6.8",
         },
         {
             dependencyTypes: [
