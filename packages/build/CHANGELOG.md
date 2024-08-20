@@ -1,5 +1,17 @@
 # @ulld/build
 
+## 0.0.83
+
+### Patch Changes
+
+- Revert citation-js versions to match original app.
+- Updated dependencies
+  - @ulld/base-configs@0.0.77
+  - @ulld/configschema@0.0.83
+  - @ulld/developer-schemas@0.0.77
+  - @ulld/types@0.0.77
+  - @ulld/utilities@0.0.83
+
 ## 0.0.82
 
 ### Patch Changes

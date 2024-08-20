@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.83
+
+### Patch Changes
+
+- Revert citation-js versions to match original app.
+- Updated dependencies
+  - @ulld/developer@0.0.83
+  - @ulld/types@0.0.77
+
 ## 0.0.82
 
 ### Patch Changes

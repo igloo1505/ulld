@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.83
+
+### Patch Changes
+
+- Revert citation-js versions to match original app.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.79
+  - @ulld/typescript-config@0.0.77
+  - @ulld/configschema@0.0.83
+  - @ulld/database@0.0.80
+  - @ulld/logger@0.0.77
+  - @ulld/types@0.0.77
+
 ## 0.0.82
 
 ### Patch Changes

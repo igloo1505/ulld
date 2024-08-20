@@ -1,5 +1,21 @@
 # @ulld/note-network
 
+## 0.0.83
+
+### Patch Changes
+
+- Revert citation-js versions to match original app.
+- Updated dependencies
+  - @ulld/api@0.0.83
+  - @ulld/typescript-config@0.0.77
+  - @ulld/configschema@0.0.83
+  - @ulld/developer@0.0.83
+  - @ulld/jest-presets@0.0.77
+  - @ulld/logger@0.0.77
+  - @ulld/tailwind@0.0.77
+  - @ulld/types@0.0.77
+  - @ulld/utilities@0.0.83
+
 ## 0.0.82
 
 ### Patch Changes

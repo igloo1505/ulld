@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.83
+
+### Patch Changes
+
+- Revert citation-js versions to match original app.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.83
+  - @ulld/calendar@0.0.83
+  - @ulld/typescript-config@0.0.77
+  - @ulld/default-image-map@0.0.83
+  - @ulld/diagram@0.0.83
+  - @ulld/editor@0.0.83
+  - @ulld/embeddable-components@0.0.83
+  - @ulld/equations@0.0.83
+  - @ulld/full-form@0.0.83
+  - @ulld/journal@0.0.83
+  - @ulld/navigation@0.0.83
+  - @ulld/notebook@0.0.83
+  - @ulld/pdf@0.0.83
+  - @ulld/plot@0.0.83
+  - @ulld/snippets@0.0.83
+  - @ulld/tailwind@0.0.77
+  - @ulld/task-manager@0.0.83
+  - @ulld/types@0.0.77
+  - @ulld/whiteboard@0.0.83
+
 ## 0.0.82
 
 ### Patch Changes

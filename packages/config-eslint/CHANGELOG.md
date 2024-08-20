@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.79
+
+### Patch Changes
+
+- Revert citation-js versions to match original app.
+
 ## 0.0.78
 
 ### Patch Changes

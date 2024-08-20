@@ -1,5 +1,24 @@
 # @ulld/embeddable-components
 
+## 0.0.83
+
+### Patch Changes
+
+- Revert citation-js versions to match original app.
+- Updated dependencies
+  - @ulld/api@0.0.83
+  - @ulld/component-configs@0.0.83
+  - @ulld/typescript-config@0.0.77
+  - @ulld/configschema@0.0.83
+  - @ulld/default-image-map@0.0.83
+  - @ulld/hooks@0.0.83
+  - @ulld/icons@0.0.83
+  - @ulld/render@0.0.83
+  - @ulld/state@0.0.83
+  - @ulld/tailwind@0.0.77
+  - @ulld/types@0.0.77
+  - @ulld/utilities@0.0.83
+
 ## 0.0.82
 
 ### Patch Changes

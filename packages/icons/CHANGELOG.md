@@ -1,5 +1,17 @@
 # @ulld/icons
 
+## 0.0.83
+
+### Patch Changes
+
+- Revert citation-js versions to match original app.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.77
+  - @ulld/hooks@0.0.83
+  - @ulld/tailwind@0.0.77
+  - @ulld/types@0.0.77
+  - @ulld/utilities@0.0.83
+
 ## 0.0.82
 
 ### Patch Changes

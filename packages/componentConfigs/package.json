@@ -1,46 +1,46 @@
 {
-    "name": "@ulld/component-configs",
-    "version": "0.0.82",
-    "dependencies": {
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0"
-    },
-    "devDependencies": {
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "exports": {
-        "./underline": "./src/components/underline.tsx",
-        "./colors": "./src/subConfigs/colors.tsx"
-    },
-    "files": [
-        "src"
-    ],
-    "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {
-        "@ulld/api": "workspace:*",
-        "@ulld/configschema": "workspace:*",
-        "@ulld/developer": "workspace:*",
-        "@ulld/hooks": "workspace:*",
-        "@ulld/state": "workspace:*",
-        "@ulld/tailwind": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "@ulld/ui": "workspace:*",
-        "@ulld/utilities": "workspace:*",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
-    "scripts": {
-        "build": "tsx ./src/scripts/build/main.ts",
-        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-        "writeImports": "tsx ./src/scripts/writeImports.ts"
-    }
+  "name": "@ulld/component-configs",
+  "version": "0.0.83",
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "exports": {
+    "./underline": "./src/components/underline.tsx",
+    "./colors": "./src/subConfigs/colors.tsx"
+  },
+  "files": [
+    "src"
+  ],
+  "packageManager": "pnpm@9.0.4",
+  "peerDependencies": {
+    "@ulld/api": "workspace:*",
+    "@ulld/configschema": "workspace:*",
+    "@ulld/developer": "workspace:*",
+    "@ulld/hooks": "workspace:*",
+    "@ulld/state": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
+    "@ulld/types": "workspace:*",
+    "@ulld/typescript-config": "workspace:*",
+    "@ulld/ui": "workspace:*",
+    "@ulld/utilities": "workspace:*",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsx ./src/scripts/build/main.ts",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "writeImports": "tsx ./src/scripts/writeImports.ts"
+  }
 }

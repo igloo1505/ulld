@@ -1,5 +1,30 @@
 # @ulld/equations
 
+## 0.0.83
+
+### Patch Changes
+
+- Revert citation-js versions to match original app.
+- Updated dependencies
+  - @ulld/api@0.0.83
+  - @ulld/typescript-config@0.0.77
+  - @ulld/configschema@0.0.83
+  - @ulld/database@0.0.80
+  - @ulld/developer@0.0.83
+  - @ulld/developer-schemas@0.0.77
+  - @ulld/editor@0.0.83
+  - @ulld/embeddable-components@0.0.83
+  - @ulld/full-form@0.0.83
+  - @ulld/hooks@0.0.83
+  - @ulld/jest-presets@0.0.77
+  - @ulld/parsers@0.0.83
+  - @ulld/render@0.0.83
+  - @ulld/state@0.0.83
+  - @ulld/tailwind@0.0.77
+  - @ulld/types@0.0.77
+  - @ulld/ui@0.0.81
+  - @ulld/utilities@0.0.83
+
 ## 0.0.82
 
 ### Patch Changes
