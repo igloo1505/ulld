@@ -30,6 +30,43 @@ const config = {
             packages: ["**"],
             pinVersion: "0.7.14",
         },
+        {
+            dependencyTypes: [
+                "dev"
+            ],
+            dependencies: [
+                "@types/react-dom"
+            ],
+            pinVersion: "18.2.25"
+        },
+        {
+            dependencyTypes: [
+                "dev"
+            ],
+            dependencies: [
+                "@types/react"
+            ],
+            pinVersion: "18.2.79"
+        },
+        {
+            dependencies: [
+                "react",
+                "react-dom"
+            ],
+            packages: [
+                "!@ulld/website"
+            ],
+            pinVersion: "18.2.0"
+        },
+        {
+            dependencies: [
+                "next",
+            ],
+            packages: [
+                "!@ulld/website"
+            ],
+            pinVersion: "14.2.3"
+        },
     ],
 };
 

@@ -30,7 +30,9 @@ const FooterSectionItemLink = ({
                     className={"w-full h-full flex flex-col justify-center items-start"}
                 >
                     <Trash2Icon
-                        className={"w-3 h-3 text-red-500 dark:text-red-400 place-self-start"}
+                        className={
+                            "w-3 h-3 text-red-500 dark:text-red-400 place-self-start"
+                        }
                     />
                 </div>
                 <div className={"w-full"}>{item.label}</div>

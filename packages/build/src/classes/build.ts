@@ -30,8 +30,6 @@ import { EnvManager } from "./envManager";
 import { BuildHealthCheck } from "./healthCheck";
 import { DatabaseBuildManager } from "./databaseManager";
 import { BuildOptionsType } from "../utils/options";
-import staticData from "../../staticDevelopmentData.json"
-import buildUtilityData from "@ulld/utilities/buildStaticData"
 import { getInternalTailwindSources } from "../utils/getInternalTailwindSources";
 
 type PluginSlotKey = keyof SlotMap;

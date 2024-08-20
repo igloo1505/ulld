@@ -1,8 +1,6 @@
 {
   "name": "@ulld/typescript-config",
   "version": "0.0.76",
-  "dependencies": {},
-  "devDependencies": {},
   "files": [
     "src",
     "react-app.json",

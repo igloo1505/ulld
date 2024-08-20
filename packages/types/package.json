@@ -1,8 +1,6 @@
 {
   "name": "@ulld/types",
   "version": "0.0.76",
-  "dependencies": {},
-  "devDependencies": {},
   "exports": {
     ".": "./src/index.ts",
     "./": "./src/index.ts",
@@ -16,7 +14,6 @@
   "license": "MIT",
   "main": "src/index.ts",
   "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {},
   "private": false,
   "publishConfig": {
     "access": "public"

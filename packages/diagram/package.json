@@ -5,7 +5,7 @@
     "next": "14.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "reactflow": "^11.10.4",
+    "reactflow": "11.10.4",
     "y-indexeddb": "^9.0.12",
     "y-webrtc": "^10.3.0",
     "y-websocket": "^2.0.2",
