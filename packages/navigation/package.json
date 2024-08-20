@@ -1,138 +1,138 @@
 {
-  "name": "@ulld/navigation",
-  "version": "0.0.84",
-  "dependencies": {
-    "@tailwindcss/container-queries": "^0.1.1",
-    "@tailwindcss/forms": "^0.5.7",
-    "autoprefixer": "10.4.18",
-    "fuse.js": "7.0.0",
-    "next": "14.2.3",
-    "postcss": "8.4.35",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sass": "^1.74.1",
-    "tailwind-merge": "^1.14.0",
-    "tailwindcss": "^3.4.1",
-    "tailwindcss-animate": "^1.0.7",
-    "tinykeys": "^2.1.0",
-    "typescript": "^5.4.5"
-  },
-  "devDependencies": {
-    "@tailwindcss/container-queries": "^0.1.1",
-    "@tailwindcss/forms": "^0.5.7",
-    "autoprefixer": "10.4.18",
-    "fuse.js": "7.0.0",
-    "next": "^14.2.3",
-    "postcss": "8.4.35",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sass": "^1.74.1",
-    "tailwind-merge": "^1.14.0",
-    "tailwindcss": "^3.4.1",
-    "tailwindcss-animate": "^1.0.7",
-    "tinykeys": "^2.1.0",
-    "typescript": "^5.4.5"
-  },
-  "exports": {
-    "./types": "./src/types.ts",
-    "./navbar": "./src/components/navbar/navbar.tsx",
-    "./sidebar": "./src/components/sidebar/sidebarNavigation.tsx",
-    "./multiPageSidebar": "./src/components/multipageSidebar/main.tsx",
-    "./fullScreenNav": "./src/components/fullScreenNavigationMenu/main.tsx",
-    "./footerSlotComponent": "./src/components/footer/main.tsx",
-    "./noteDetailPopover": "./src/components/toc/main.tsx"
-  },
-  "files": [
-    "src",
-    "pluginConfig.ulld.json"
-  ],
-  "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {
-    "@ulld/api": "workspace:*",
-    "@ulld/configschema": "workspace:*",
-    "@ulld/developer": "workspace:*",
-    "@ulld/developer-schemas": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
-    "@ulld/full-form": "workspace:*",
-    "@ulld/hooks": "workspace:*",
-    "@ulld/icons": "workspace:*",
-    "@ulld/jest-presets": "workspace:*",
-    "@ulld/render": "workspace:*",
-    "@ulld/state": "workspace:*",
-    "@ulld/tailwind": "workspace:*",
-    "@ulld/types": "workspace:*",
-    "@ulld/typescript-config": "workspace:*",
-    "@ulld/utilities": "workspace:*",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "echo 'Add build script here'",
-    "dev": "next dev",
-    "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'Add test script here'"
-  },
-  "ulld-pluginConfig": {
-    "pluginName": "@ulld/navigation",
-    "label": "Navigation",
-    "pluginId": "392606c3-abda-456c-a331-cf8566ff83e3",
-    "slot": "navigation",
-    "components": [
-      {
-        "componentName": "Navbar",
-        "tags": [],
-        "slot": "navbar",
-        "export": "navbar",
-        "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
-      },
-      {
-        "componentName": "SidebarNavigation",
-        "tags": [],
-        "slot": "secondary",
-        "export": "sidebar",
-        "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
-      },
-      {
-        "componentName": "MultiPageSidebar",
-        "tags": [],
-        "slot": "MultiPageSidebar",
-        "export": "multiPageSidebar",
-        "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
-      },
-      {
-        "componentName": "FullScreenNavigation",
-        "tags": [],
-        "slot": "FullScreenNavigationMenu",
-        "export": "fullScreenNav",
-        "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
-      },
-      {
-        "componentName": "FooterComponent",
-        "tags": [],
-        "slot": "Footer",
-        "export": "footerSlotComponent",
-        "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
-      },
-      {
-        "componentName": "NoteDetailPopover",
-        "tags": [],
-        "slot": "NoteDetailSheet",
-        "export": "noteDetailPopover",
-        "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
-      }
+    "name": "@ulld/navigation",
+    "version": "0.0.84",
+    "dependencies": {
+        "@tailwindcss/container-queries": "^0.1.1",
+        "@tailwindcss/forms": "^0.5.7",
+        "autoprefixer": "10.4.18",
+        "fuse.js": "7.0.0",
+        "next": "14.2.3",
+        "postcss": "8.4.35",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "sass": "^1.74.1",
+        "tailwind-merge": "^1.14.0",
+        "tailwindcss": "^3.4.1",
+        "tailwindcss-animate": "^1.0.7",
+        "tinykeys": "^2.1.0",
+        "typescript": "^5.4.5"
+    },
+    "devDependencies": {
+        "@tailwindcss/container-queries": "^0.1.1",
+        "@tailwindcss/forms": "^0.5.7",
+        "autoprefixer": "10.4.18",
+        "fuse.js": "7.0.0",
+        "next": "^14.2.3",
+        "postcss": "8.4.35",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "sass": "^1.74.1",
+        "tailwind-merge": "^1.14.0",
+        "tailwindcss": "^3.4.1",
+        "tailwindcss-animate": "^1.0.7",
+        "tinykeys": "^2.1.0",
+        "typescript": "^5.4.5"
+    },
+    "exports": {
+        "./types": "./src/types.ts",
+        "./navbar": "./src/components/navbar/navbar.tsx",
+        "./sidebar": "./src/components/sidebar/sidebarNavigation.tsx",
+        "./multiPageSidebar": "./src/components/multipageSidebar/main.tsx",
+        "./fullScreenNav": "./src/components/fullScreenNavigationMenu/main.tsx",
+        "./footerSlotComponent": "./src/components/footer/main.tsx",
+        "./noteDetailPopover": "./src/components/toc/main.tsx"
+    },
+    "files": [
+        "src",
+        "pluginConfig.ulld.json"
     ],
-    "parsers": {},
-    "pages": [],
-    "events": {},
-    "navigationLinks": [],
-    "commandPalette": [],
-    "tailwind": {},
-    "styles": {}
-  }
+    "packageManager": "pnpm@9.0.4",
+    "peerDependencies": {
+        "@ulld/api": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/developer": "workspace:*",
+        "@ulld/developer-schemas": "workspace:*",
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/full-form": "workspace:*",
+        "@ulld/hooks": "workspace:*",
+        "@ulld/icons": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/render": "workspace:*",
+        "@ulld/state": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/utilities": "workspace:*",
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "echo 'Add build script here'",
+        "dev": "next dev",
+        "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+        "test": "echo 'Add test script here'"
+    },
+    "ulld-pluginConfig": {
+        "pluginName": "@ulld/navigation",
+        "label": "Navigation",
+        "pluginId": "392606c3-abda-456c-a331-cf8566ff83e3",
+        "slot": "navigation",
+        "components": [
+            {
+                "componentName": "Navbar",
+                "tags": [],
+                "slot": "navbar",
+                "export": "navbar",
+                "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
+            },
+            {
+                "componentName": "SidebarNavigation",
+                "tags": [],
+                "slot": "secondary",
+                "export": "sidebar",
+                "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
+            },
+            {
+                "componentName": "MultiPageSidebar",
+                "tags": [],
+                "slot": "MultiPageSidebar",
+                "export": "multiPageSidebar",
+                "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
+            },
+            {
+                "componentName": "FullScreenNavigation",
+                "tags": [],
+                "slot": "FullScreenNavigationMenu",
+                "export": "fullScreenNav",
+                "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
+            },
+            {
+                "componentName": "FooterComponent",
+                "tags": [],
+                "slot": "Footer",
+                "export": "footerSlotComponent",
+                "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
+            },
+            {
+                "componentName": "NoteDetailPopover",
+                "tags": [],
+                "slot": "NoteDetailSheet",
+                "export": "noteDetailPopover",
+                "componentId": "8ba46659-c7a9-4bd7-971c-0ef4129e3632"
+            }
+        ],
+        "parsers": {},
+        "pages": [],
+        "events": {},
+        "navigationLinks": [],
+        "commandPalette": [],
+        "tailwind": {},
+        "styles": {}
+    }
 }

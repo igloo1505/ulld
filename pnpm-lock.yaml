@@ -483,9 +483,6 @@ importers:
       '@babel/preset-typescript':
         specifier: ^7.23.3
         version: 7.24.7(@babel/core@7.24.9)
-      '@citation-js/core':
-        specifier: 0.7.14
-        version: 0.7.14(encoding@0.1.13)
       '@citation-js/plugin-bibtex':
         specifier: 0.7.14
         version: 0.7.14(@citation-js/core@0.7.14(encoding@0.1.13))
@@ -592,8 +589,8 @@ importers:
         specifier: ^5.1.0
         version: 5.1.1
       citation-js:
-        specifier: 0.7.14
-        version: 0.7.14(encoding@0.1.13)
+        specifier: 0.7.15
+        version: 0.7.15(encoding@0.1.13)
       cypress:
         specifier: ^13.7.1
         version: 13.13.1
@@ -738,9 +735,6 @@ importers:
 
   packages/bib-manager:
     dependencies:
-      '@citation-js/core':
-        specifier: 0.7.14
-        version: 0.7.14(encoding@0.1.13)
       '@citation-js/plugin-bibtex':
         specifier: 0.7.14
         version: 0.7.14(@citation-js/core@0.7.14(encoding@0.1.13))
@@ -796,8 +790,8 @@ importers:
         specifier: workspace:*
         version: link:../utilities
       citation-js:
-        specifier: 0.7.14
-        version: 0.7.14(encoding@0.1.13)
+        specifier: 0.7.15
+        version: 0.7.15(encoding@0.1.13)
       fumadocs-core:
         specifier: ^12.3.5
         version: 12.5.6(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -2594,8 +2588,8 @@ importers:
         specifier: ^4.4.1
         version: 4.5.0
       citation-js:
-        specifier: 0.7.14
-        version: 0.7.14(encoding@0.1.13)
+        specifier: 0.7.15
+        version: 0.7.15(encoding@0.1.13)
       cli-table3:
         specifier: 0.6.4
         version: 0.6.4
@@ -3191,8 +3185,8 @@ importers:
         specifier: ^5.1.0
         version: 5.1.1
       citation-js:
-        specifier: 0.7.14
-        version: 0.7.14(encoding@0.1.13)
+        specifier: 0.7.15
+        version: 0.7.15(encoding@0.1.13)
       cypress:
         specifier: ^13.7.1
         version: 13.13.1
@@ -5540,8 +5534,8 @@ packages:
     resolution: {integrity: sha512-YstAqNb0MCN8PjdLCDfRsBcGVRN41f3vgLvaI0IrIcBp4AqILRSS0DeWNGkicC+f/zRIPJLc+9RURVSepwvfBw==}
     hasBin: true
 
-  '@citation-js/cli@0.7.14':
-    resolution: {integrity: sha512-l6KXXfa/I8TFHhG0Tn0C5zb3r53MTGsyL4+da57jr5rdTUo+MSs6oyLWy2S4iW+BCjJOPJuILy1sj5FQqzozuQ==}
+  '@citation-js/cli@0.7.15':
+    resolution: {integrity: sha512-J/6DyxoZeVQm82PSX02VL8UzKBqum0NR9T6wsy1x5n9X9znOfErHMMUbyIfkaoQIfZDV+QhBjJJpyER6ozMDIw==}
     engines: {node: '>=16.0.0'}
     hasBin: true
 
@@ -5587,8 +5581,8 @@ packages:
     peerDependencies:
       '@citation-js/core': ^0.7.0
 
-  '@citation-js/plugin-wikidata@0.7.14':
-    resolution: {integrity: sha512-WF2PvRTjuzQJjpSnxOpId/ZQBdlIaLL/Mr/+Bo8GgfYqJEhmnG7Xtk8gcbANbgoL+tp+cc1rDtH1MAoV1aWx4Q==}
+  '@citation-js/plugin-wikidata@0.7.15':
+    resolution: {integrity: sha512-QGYA9Mu/28B0LcQEpeAqtILE8+JmiVQux4lzysu/TWMl45b4AVW2ajfQIAwMNf455GERwUwD+P6oafDrqpLQFA==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@citation-js/core': ^0.7.0
@@ -11692,8 +11686,8 @@ packages:
     resolution: {integrity: sha512-TdHqgGf9odd8SXNuxtUBVx8Nv+qZOejE6qyqiy5NtbYYQOeFa6zmHkxlPzmaLxWWHsU6nJmB7AETdVPi+2NBUg==}
     engines: {node: '>=8'}
 
-  citation-js@0.7.14:
-    resolution: {integrity: sha512-lIebDVYX87j8QO/XfZ90gjK/+4l+RqnW6CjsXCob7ZQ5Tntkut2SacGrilLt3IaIebdlVanfNO+r7ocQbc53UA==}
+  citation-js@0.7.15:
+    resolution: {integrity: sha512-JbxF/7A5gc8qUR4v2jaUzpUZthnIj/cGHQq4uY3hZk8LDUPJ1Kv8QKU0fl+wkO5WfdJWlKaTDqaOE5znzIrO/w==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -21222,11 +21216,6 @@ packages:
     resolution: {integrity: sha512-1NjMnfNQ4OaLh0dFAeTMvV3vGAq6HXsNKGfYUJYOVyBPGBDMunlY3QZ8+72hLV5FiKmc6Bzg1xbI0jCHfHmIew==}
     engines: {node: '>= 10.0.0'}
 
-  wikidata-sdk@8.1.1:
-    resolution: {integrity: sha512-KOUhJtpCHg32k/tz7pFj/BaqiYAvYGz4sGzcT15t120832WtfNTGCSeohmln40/JOjpxzfzud/6q2x6Q0Ji5hg==}
-    engines: {node: '>= 6.4'}
-    deprecated: wikidata-sdk has been renamed wikibase-sdk
-
   wildcard@2.0.1:
     resolution: {integrity: sha512-CC1bOL87PIWSBhDcTrdeLo6eGT7mCFtrg0uIJtqJUFyK+eJnzl8A1niH56uu7KMa5XFrtiV+AQuHO3n7DsHnLQ==}
 
@@ -22673,7 +22662,7 @@ snapshots:
     dependencies:
       commander: 2.20.3
 
-  '@citation-js/cli@0.7.14(encoding@0.1.13)':
+  '@citation-js/cli@0.7.15(encoding@0.1.13)':
     dependencies:
       '@citation-js/core': 0.7.14(encoding@0.1.13)
       '@citation-js/plugin-bibjson': 0.7.14(@citation-js/core@0.7.14(encoding@0.1.13))
@@ -22681,7 +22670,7 @@ snapshots:
       '@citation-js/plugin-csl': 0.7.14(@citation-js/core@0.7.14(encoding@0.1.13))
       '@citation-js/plugin-doi': 0.7.14(@citation-js/core@0.7.14(encoding@0.1.13))
       '@citation-js/plugin-ris': 0.7.14(@citation-js/core@0.7.14(encoding@0.1.13))
-      '@citation-js/plugin-wikidata': 0.7.14(@citation-js/core@0.7.14(encoding@0.1.13))
+      '@citation-js/plugin-wikidata': 0.7.15(@citation-js/core@0.7.14(encoding@0.1.13))
       commander: 11.1.0
     transitivePeerDependencies:
       - encoding
@@ -22729,12 +22718,12 @@ snapshots:
       '@citation-js/date': 0.5.1
       '@citation-js/name': 0.4.2
 
-  '@citation-js/plugin-wikidata@0.7.14(@citation-js/core@0.7.14(encoding@0.1.13))':
+  '@citation-js/plugin-wikidata@0.7.15(@citation-js/core@0.7.14(encoding@0.1.13))':
     dependencies:
       '@citation-js/core': 0.7.14(encoding@0.1.13)
       '@citation-js/date': 0.5.1
       '@citation-js/name': 0.4.2
-      wikidata-sdk: 8.1.1
+      wikibase-sdk: 8.1.1
 
   '@cnakazawa/watch@1.0.4':
     dependencies:
@@ -29849,9 +29838,9 @@ snapshots:
 
   ci-info@4.0.0: {}
 
-  citation-js@0.7.14(encoding@0.1.13):
+  citation-js@0.7.15(encoding@0.1.13):
     dependencies:
-      '@citation-js/cli': 0.7.14(encoding@0.1.13)
+      '@citation-js/cli': 0.7.15(encoding@0.1.13)
       '@citation-js/core': 0.7.14(encoding@0.1.13)
       '@citation-js/date': 0.5.1
       '@citation-js/name': 0.4.2
@@ -29860,7 +29849,7 @@ snapshots:
       '@citation-js/plugin-csl': 0.7.14(@citation-js/core@0.7.14(encoding@0.1.13))
       '@citation-js/plugin-doi': 0.7.14(@citation-js/core@0.7.14(encoding@0.1.13))
       '@citation-js/plugin-ris': 0.7.14(@citation-js/core@0.7.14(encoding@0.1.13))
-      '@citation-js/plugin-wikidata': 0.7.14(@citation-js/core@0.7.14(encoding@0.1.13))
+      '@citation-js/plugin-wikidata': 0.7.15(@citation-js/core@0.7.14(encoding@0.1.13))
       citeproc: 2.4.63
     transitivePeerDependencies:
       - encoding
@@ -42298,10 +42287,6 @@ snapshots:
       string-width: 4.2.3
 
   wikibase-sdk@8.1.1: {}
-
-  wikidata-sdk@8.1.1:
-    dependencies:
-      wikibase-sdk: 8.1.1
 
   wildcard@2.0.1: {}
 

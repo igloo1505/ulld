@@ -8,7 +8,7 @@ const config = {
         {
             label: "use exact version numbers in production",
             packages: ["**"],
-            dependencyTypes: ["prod", "dev"],
+            dependencyTypes: ["prod", "dev", "peer"],
             dependencies: ["**"],
             range: "",
         },
@@ -22,54 +22,39 @@ const config = {
             label: "Internal packages should only be under peerDependencies",
         },
         {
-            dependencies: [
-                "citation-js",
-                "@citation-js/plugin-csl",
-                "@citation-js/plugin-bibtex",
-            ],
+            dependencies: ["@citation-js/plugin-csl", "@citation-js/plugin-bibtex"],
             packages: ["**"],
+            dependencyTypes: ["dev", "peer", "prod"],
             pinVersion: "0.7.14",
         },
         {
-            dependencyTypes: [
-                "dev"
-            ],
-            dependencies: [
-                "@types/react-dom"
-            ],
-            pinVersion: "18.2.25"
+            dependencies: ["citation-js"],
+            packages: ["**"],
+            dependencyTypes: ["dev", "peer", "prod"],
+            pinVersion: "0.7.15",
         },
         {
-            dependencyTypes: [
-                "dev"
-            ],
-            dependencies: [
-                "@types/react"
-            ],
-            pinVersion: "18.2.79"
+            dependencyTypes: ["dev"],
+            dependencies: ["@types/react-dom"],
+            pinVersion: "18.2.25",
         },
         {
-            dependencies: [
-                "react",
-                "react-dom"
-            ],
-            packages: [
-                "!@ulld/website"
-            ],
-            pinVersion: "18.2.0"
+            dependencyTypes: ["dev"],
+            dependencies: ["@types/react"],
+            pinVersion: "18.2.79",
         },
         {
-            dependencies: [
-                "next",
-            ],
-            packages: [
-                "!@ulld/website"
-            ],
-            pinVersion: "14.2.3"
+            dependencies: ["react", "react-dom"],
+            packages: ["!@ulld/website"],
+            pinVersion: "18.2.0",
+        },
+        {
+            dependencies: ["next"],
+            packages: ["!@ulld/website"],
+            pinVersion: "14.2.3",
         },
     ],
 };
-
 
 /* @ts-ignore */
 module.exports = config;

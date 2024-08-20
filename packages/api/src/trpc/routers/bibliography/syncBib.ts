@@ -1,5 +1,3 @@
-import '@citation-js/plugin-csl'
-import '@citation-js/plugin-bibtex'
 import { parseBibFile } from 'bibtex'
 import path from 'path'
 import { Prisma } from "@ulld/database"
