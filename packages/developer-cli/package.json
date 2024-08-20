@@ -1,123 +1,123 @@
 {
-  "name": "@ulld/developer-cli",
-  "version": "0.0.83",
-  "bin": {
-    "ulld-dev": "./bin/run.js"
-  },
-  "dependencies": {
-    "@inquirer/prompts": "5.0.1",
-    "@oclif/core": "3.26.2",
-    "@oclif/plugin-autocomplete": "3.0.13",
-    "@oclif/plugin-commands": "3.2.2",
-    "@oclif/plugin-help": "6.0.20",
-    "@oclif/plugin-plugins": "5.0.7",
-    "@oclif/prettier-config": "^0.2.1",
-    "@oclif/test": "^3.2.8",
-    "@types/chai": "^4.3.14",
-    "@types/jest": "^29.5.11",
-    "@types/mocha": "^10.0.6",
-    "@types/node": "^20.11.24",
-    "chai": "^4.4.1",
-    "cli-table3": "0.6.4",
-    "deepmerge": "4.3.1",
-    "eslint": "^9.0.0",
-    "eslint-config-oclif": "^5.1.1",
-    "eslint-config-oclif-typescript": "^3.1.4",
-    "eslint-config-prettier": "^9.1.0",
-    "handlebars": "4.7.8",
-    "json-schema-to-ts": "3.0.1",
-    "mocha": "^10.3.0",
-    "next": "14.2.3",
-    "nyc": "^15.1.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "shx": "^0.3.4",
-    "terminal-link": "3.0.0",
-    "ts-import": "5.0.0-beta.0",
-    "ts-jest": "^29.1.2",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.4.4",
-    "unexpected": "^13.2.1",
-    "zocker": "^1.4.1"
-  },
-  "devDependencies": {
-    "@inquirer/prompts": "5.0.1",
-    "@oclif/core": "3.26.2",
-    "@oclif/plugin-autocomplete": "3.0.13",
-    "@oclif/plugin-commands": "3.2.2",
-    "@oclif/plugin-help": "6.0.20",
-    "@oclif/plugin-plugins": "5.0.7",
-    "@oclif/prettier-config": "^0.2.1",
-    "@oclif/test": "^3.2.8",
-    "@types/chai": "^4.3.14",
-    "@types/jest": "^29.5.11",
-    "@types/mocha": "^10.0.6",
-    "@types/node": "^20.11.24",
-    "chai": "^4.4.1",
-    "cli-table3": "0.6.4",
-    "deepmerge": "4.3.1",
-    "eslint": "^9.0.0",
-    "eslint-config-oclif": "^5.1.1",
-    "eslint-config-oclif-typescript": "^3.1.4",
-    "eslint-config-prettier": "^9.1.0",
-    "handlebars": "4.7.8",
-    "json-schema-to-ts": "3.0.1",
-    "mocha": "^10.3.0",
-    "next": "14.2.3",
-    "nyc": "^15.1.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "shx": "^0.3.4",
-    "terminal-link": "3.0.0",
-    "ts-import": "5.0.0-beta.0",
-    "ts-jest": "^29.1.2",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.4.4",
-    "unexpected": "^13.2.1",
-    "zocker": "^1.4.1"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "exports": "./lib/index.js",
-  "files": [
-    "/bin",
-    "/dist",
-    "/oclif.manifest.json",
-    "src"
-  ],
-  "oclif": {
-    "bin": "ulld-dev",
-    "dirname": "ulld-dev",
-    "commands": "./dist/commands",
-    "plugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-plugins",
-      "@oclif/plugin-commands",
-      "@oclif/plugin-autocomplete"
+    "name": "@ulld/developer-cli",
+    "version": "0.0.83",
+    "bin": {
+        "ulld-dev": "./bin/run.js"
+    },
+    "dependencies": {
+        "@inquirer/prompts": "5.0.1",
+        "@oclif/core": "3.26.2",
+        "@oclif/plugin-autocomplete": "3.0.13",
+        "@oclif/plugin-commands": "3.2.2",
+        "@oclif/plugin-help": "6.0.20",
+        "@oclif/plugin-plugins": "5.0.7",
+        "@oclif/prettier-config": "^0.2.1",
+        "@oclif/test": "^3.2.8",
+        "@types/chai": "^4.3.14",
+        "@types/jest": "^29.5.11",
+        "@types/mocha": "^10.0.6",
+        "@types/node": "^20.11.24",
+        "chai": "^4.4.1",
+        "cli-table3": "0.6.4",
+        "deepmerge": "4.3.1",
+        "eslint": "^9.0.0",
+        "eslint-config-oclif": "^5.1.1",
+        "eslint-config-oclif-typescript": "^3.1.4",
+        "eslint-config-prettier": "^9.1.0",
+        "handlebars": "4.7.8",
+        "json-schema-to-ts": "3.0.1",
+        "mocha": "^10.3.0",
+        "next": "14.2.3",
+        "nyc": "^15.1.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "shx": "^0.3.4",
+        "terminal-link": "3.0.0",
+        "ts-import": "5.0.0-beta.0",
+        "ts-jest": "^29.1.2",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.4.4",
+        "unexpected": "^13.2.1",
+        "zocker": "^1.4.1"
+    },
+    "devDependencies": {
+        "@inquirer/prompts": "5.0.1",
+        "@oclif/core": "3.26.2",
+        "@oclif/plugin-autocomplete": "3.0.13",
+        "@oclif/plugin-commands": "3.2.2",
+        "@oclif/plugin-help": "6.0.20",
+        "@oclif/plugin-plugins": "5.0.7",
+        "@oclif/prettier-config": "^0.2.1",
+        "@oclif/test": "^3.2.8",
+        "@types/chai": "^4.3.14",
+        "@types/jest": "^29.5.11",
+        "@types/mocha": "^10.0.6",
+        "@types/node": "^20.11.24",
+        "chai": "^4.4.1",
+        "cli-table3": "0.6.4",
+        "deepmerge": "4.3.1",
+        "eslint": "^9.0.0",
+        "eslint-config-oclif": "^5.1.1",
+        "eslint-config-oclif-typescript": "^3.1.4",
+        "eslint-config-prettier": "^9.1.0",
+        "handlebars": "4.7.8",
+        "json-schema-to-ts": "3.0.1",
+        "mocha": "^10.3.0",
+        "next": "14.2.3",
+        "nyc": "^15.1.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "shx": "^0.3.4",
+        "terminal-link": "3.0.0",
+        "ts-import": "5.0.0-beta.0",
+        "ts-jest": "^29.1.2",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.4.4",
+        "unexpected": "^13.2.1",
+        "zocker": "^1.4.1"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "exports": "./lib/index.js",
+    "files": [
+        "/bin",
+        "/dist",
+        "/oclif.manifest.json",
+        "src"
     ],
-    "topicSeparator": " ",
-    "topics": {
-      "appendRouter": {
-        "description": "Append trpc router while in development"
-      }
-    }
-  },
-  "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {
-    "@ulld/developer": "workspace:*",
-    "@ulld/developer-schemas": "workspace:*",
-    "@ulld/types": "workspace:*"
-  },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "rm -rf ./dist && tsc -b",
-    "dev": "node ./bin/dev.js",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "jest"
-  },
-  "types": "dist/index.d.ts"
+    "oclif": {
+        "bin": "ulld-dev",
+        "dirname": "ulld-dev",
+        "commands": "./dist/commands",
+        "plugins": [
+            "@oclif/plugin-help",
+            "@oclif/plugin-plugins",
+            "@oclif/plugin-commands",
+            "@oclif/plugin-autocomplete"
+        ],
+        "topicSeparator": " ",
+        "topics": {
+            "appendRouter": {
+                "description": "Append trpc router while in development"
+            }
+        }
+    },
+    "packageManager": "pnpm@9.0.4",
+    "peerDependencies": {
+        "@ulld/developer": "workspace:*",
+        "@ulld/developer-schemas": "workspace:*",
+        "@ulld/types": "workspace:*"
+    },
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "rm -rf ./dist && tsc -b",
+        "dev": "node ./bin/dev.js",
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+        "test": "jest"
+    },
+    "types": "dist/index.d.ts"
 }

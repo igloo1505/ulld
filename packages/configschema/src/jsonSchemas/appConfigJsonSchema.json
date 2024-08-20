@@ -4031,12 +4031,12 @@
             {
               "name": "@ulld/api",
               "parserIndex": 0,
-              "version": "0.0.82"
+              "version": "0.0.83"
             },
             {
               "name": "@ulld/plot",
               "parserIndex": 0,
-              "version": "0.0.82"
+              "version": "0.0.83"
             }
           ]
         }
