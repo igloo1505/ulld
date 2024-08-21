@@ -9,15 +9,15 @@ export const getFormattedCslCitation = (
     content: string,
     appConfig: AppConfigSchemaOutput,
 ) => {
-    let useUserDefined = false;
+    let shouldUseUserDefined = false;
     if (appConfig.cslPath) {
         let f = new FileData(path.join(appConfig.fsRoot, appConfig.cslPath), false);
         if (f.exists()) {
             const cslFileContent = f.getContent();
             if (cslFileContent) {
-                let config = Cite.plugins.config.get("csl");
+                let config = Cite.plugins.config.get("@csl");
                 if(config){
-                    useUserDefined = true;
+                    shouldUseUserDefined = true;
                     config?.templates.add("user-defined", cslFileContent);
                 } else {
                     console.error("Could not gather csl config. Cannot parse citations with user provided csl format.")
@@ -26,5 +26,5 @@ export const getFormattedCslCitation = (
         }
     }
     let citations = new Cite(content);
-    return { citations, userDefined: useUserDefined };
+    return { citations, userDefined: shouldUseUserDefined };
 };
