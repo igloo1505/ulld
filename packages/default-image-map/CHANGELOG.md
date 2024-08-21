@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.86
+
+### Patch Changes
+
+- Hopefully fixed issue with citation-js and citeproc.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.82
+  - @ulld/typescript-config@0.0.80
+  - @ulld/configschema@0.0.86
+  - @ulld/logger@0.0.80
+  - @ulld/tailwind@0.0.80
+  - @ulld/types@0.0.80
+  - @ulld/utilities@0.0.86
+
 ## 0.0.85
 
 ### Patch Changes

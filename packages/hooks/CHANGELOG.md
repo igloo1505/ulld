@@ -1,5 +1,20 @@
 # @ulld/hooks
 
+## 0.0.86
+
+### Patch Changes
+
+- Hopefully fixed issue with citation-js and citeproc.
+- Updated dependencies
+  - @ulld/api@0.0.86
+  - @ulld/component-map@0.0.86
+  - @ulld/typescript-config@0.0.80
+  - @ulld/configschema@0.0.86
+  - @ulld/database@0.0.83
+  - @ulld/parsers@0.0.86
+  - @ulld/types@0.0.80
+  - @ulld/utilities@0.0.86
+
 ## 0.0.85
 
 ### Patch Changes

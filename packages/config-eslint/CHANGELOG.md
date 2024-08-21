@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.82
+
+### Patch Changes
+
+- Hopefully fixed issue with citation-js and citeproc.
+
 ## 0.0.81
 
 ### Patch Changes

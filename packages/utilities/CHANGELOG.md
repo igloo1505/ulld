@@ -1,5 +1,17 @@
 # @ulld/utilities
 
+## 0.0.86
+
+### Patch Changes
+
+- Hopefully fixed issue with citation-js and citeproc.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.80
+  - @ulld/database@0.0.83
+  - @ulld/math@0.0.86
+  - @ulld/tailwind@0.0.80
+  - @ulld/types@0.0.80
+
 ## 0.0.85
 
 ### Patch Changes

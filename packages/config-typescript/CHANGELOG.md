@@ -1,5 +1,13 @@
 # @repo/typescript-config
 
+## 0.0.80
+
+### Patch Changes
+
+- Hopefully fixed issue with citation-js and citeproc.
+- Updated dependencies
+  - @ulld/types@0.0.80
+
 ## 0.0.79
 
 ### Patch Changes

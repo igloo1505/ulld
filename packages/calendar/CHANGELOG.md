@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.86
+
+### Patch Changes
+
+- Hopefully fixed issue with citation-js and citeproc.
+- Updated dependencies
+  - @ulld/developer@0.0.86
+  - @ulld/types@0.0.80
+
 ## 0.0.85
 
 ### Patch Changes

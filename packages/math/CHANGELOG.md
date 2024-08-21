@@ -1,5 +1,20 @@
 # @ulld/math
 
+## 0.0.86
+
+### Patch Changes
+
+- Hopefully fixed issue with citation-js and citeproc.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.80
+  - @ulld/configschema@0.0.86
+  - @ulld/hooks@0.0.86
+  - @ulld/icons@0.0.86
+  - @ulld/jest-presets@0.0.80
+  - @ulld/state@0.0.86
+  - @ulld/types@0.0.80
+  - @ulld/utilities@0.0.86
+
 ## 0.0.85
 
 ### Patch Changes
