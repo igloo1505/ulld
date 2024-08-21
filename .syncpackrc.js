@@ -3,12 +3,20 @@
 /** @type {import("syncpack").RcFile} */
 const config = {
     sortPackages: true,
-    dependencyTypes: ["prod"],
+    dependencyTypes: [
+        "prod",
+        "dev",
+        "peer"
+    ],
     semverGroups: [
         {
             label: "use exact version numbers in production",
             packages: ["**"],
-            dependencyTypes: ["prod", "dev", "peer"],
+            dependencyTypes: [
+                "prod",
+                "dev",
+                "peer"
+            ],
             dependencies: ["**"],
             range: "",
         },
@@ -53,6 +61,11 @@ const config = {
             packages: ["!@ulld/website"],
             pinVersion: "14.2.3",
         },
+        {
+            dependencies: ["gray-matter"],
+            packages: ["**"],
+            pinVersion: "^4.0.3"
+        }
     ],
 };
 

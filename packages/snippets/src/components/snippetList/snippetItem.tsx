@@ -1,3 +1,4 @@
+import React from "react"
 import { CodeHighlightContainer } from "@ulld/ui/codeHighlightContainer";
 import { Card } from "@ulld/tailwind/card";
 import { MdxContentCLIENT } from "@ulld/render/mdx/client";

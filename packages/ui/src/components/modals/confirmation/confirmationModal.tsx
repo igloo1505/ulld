@@ -21,10 +21,10 @@ import { ConfirmationModalProps } from "../../../types/general";
 
 export type { ConfirmationModalConfig };
 
-const connector = connect((state: RootState, props: any) => ({
-    config: state.UI.modals.confirmationModal,
-    props: props,
-}));
+/* const connector = connect((state: RootState, props: any) => ({ */
+/*     config: state.UI.modals.confirmationModal, */
+/*     props: props, */
+/* })); */
 
 
 interface EventProps {
@@ -39,11 +39,11 @@ declare global {
     }
 }
 
-const ConfirmationModal = connector((props: ConfirmationModalProps) => {
-    const { toast } = useToast();
-    const config = useConfirmationConfig()
-    const store = useUlldStore();
-    const closeModal = () => store?.dispatch(showConfirmationModal(false));
+const ConfirmationModal = (props: ConfirmationModalProps) => {
+    const [ config, onConfirm, onDeny, closeModal ] = useConfirmationConfig()
+    console.log("config: ", config)
+    /* const store = useUlldStore(); */
+    /* const closeModal = () => store?.dispatch(showConfirmationModal(false)); */
 
     return (
         <Dialog
@@ -52,11 +52,12 @@ const ConfirmationModal = connector((props: ConfirmationModalProps) => {
                 if (!open) {
                     closeModal();
                     if(config){
-                    window.dispatchEvent(
-                        new CustomEvent("confirmation-denied", {
-                            detail: { confirmationId: config.primaryId },
-                        }),
-                    );
+                        onDeny()
+                    /* window.dispatchEvent( */
+                    /*     new CustomEvent("confirmation-denied", { */
+                    /*         detail: { confirmationId: config.primaryId }, */
+                    /*     }), */
+                    /* ); */
                     }
                 }
             }}
@@ -71,21 +72,22 @@ const ConfirmationModal = connector((props: ConfirmationModalProps) => {
                         {config.showDenyButton && (
                         <Button
                             onClick={() => {
-                                if (config.toast) {
-                                    toast(config.toast);
-                                }
+                                /* if (config.toast) { */
+                                /*     toast(config.toast); */
+                                /* } */
                                 if (config.domId) {
                                     document.getElementById(config.domId)?.remove();
                                 }
-                                if (config.onConfirmCallback) {
-                                    config.onConfirmCallback(config);
-                                }
-                                window.dispatchEvent(
-                                    new CustomEvent("confirmation-denied", {
-                                        detail: { confirmationId: config.primaryId },
-                                    }),
-                                );
-                                closeModal();
+                                /* if (config.onConfirmCallback) { */
+                                /*     config.onConfirmCallback(config); */
+                                /* } */
+                                /* window.dispatchEvent( */
+                                /*     new CustomEvent("confirmation-denied", { */
+                                /*         detail: { confirmationId: config.primaryId }, */
+                                /*     }), */
+                                /* ); */
+                                onDeny()
+                                /* closeModal(); */
                             }}
                             variant={config.buttonVariant || undefined}
                             className={clsx(
@@ -98,21 +100,22 @@ const ConfirmationModal = connector((props: ConfirmationModalProps) => {
                         )}
                         <Button
                             onClick={() => {
-                                if (config.toast) {
-                                    toast(config.toast);
-                                }
+                                /* if (config.toast) { */
+                                /*     toast(config.toast); */
+                                /* } */
                                 if (config.domId) {
                                     document.getElementById(config.domId)?.remove();
                                 }
-                                if (config.onConfirmCallback) {
-                                    config.onConfirmCallback(config);
-                                }
-                                window.dispatchEvent(
-                                    new CustomEvent("confirmation-accept", {
-                                        detail: { confirmationId: config.primaryId },
-                                    }),
-                                );
-                                closeModal();
+                                onConfirm()
+                                /* if (config.onConfirmCallback) { */
+                                /*     config.onConfirmCallback(config); */
+                                /* } */
+                                /* window.dispatchEvent( */
+                                /*     new CustomEvent("confirmation-accept", { */
+                                /*         detail: { confirmationId: config.primaryId }, */
+                                /*     }), */
+                                /* ); */
+                                /* closeModal(); */
                             }}
                             variant={config.buttonVariant || undefined}
                             className={clsx(
@@ -127,7 +130,7 @@ const ConfirmationModal = connector((props: ConfirmationModalProps) => {
             )}
         </Dialog>
     );
-});
+};
 
 ConfirmationModal.displayName = "ConfirmationModal";
 

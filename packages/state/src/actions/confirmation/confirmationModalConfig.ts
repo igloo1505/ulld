@@ -5,7 +5,6 @@ export interface ConfirmationModalConfig {
     buttonText?: string
     primaryId?: string | number | null
     domId?: string
-    onConfirmCallback?: (c: ConfirmationModalConfig) => void
     buttonVariant?: "outline" | "destructive" | "secondary" | "ghost" | "link"
     onConfirm: string
     toast?: {

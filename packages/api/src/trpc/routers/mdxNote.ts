@@ -7,6 +7,7 @@ import { getDatabaseMdxFromPathname } from "../../trpcInternalMethods/notes/mdx/
 import { getFsMdx } from "../../trpcInternalMethods/filesystem/fsnotes";
 import { makeArrayTransform } from "@ulld/utilities/schemas/transforms";
 import { parseMdxProps } from "@ulld/utilities/schemas/mdx/parseMdxStringProps";
+import { readAppConfig } from "@ulld/developer/readAppConfig";
 
 const idOrIdArray = z
     .union([z.number().int(), z.number().int().array()])
@@ -58,10 +59,11 @@ export const mdxNoteActionsRouter = router({
             }),
         )
         .query(async ({ input }) => {
+            let appConfig = await readAppConfig()
             let content = await getFsMdx(
                 input.rootRelativePath,
                 input.extension,
-                null,
+                appConfig,
                 input.useProcessRoot,
             );
             let noteDetails = await prisma.mdxNote.findFirst({

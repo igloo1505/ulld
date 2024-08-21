@@ -2,14 +2,14 @@
 import path from 'path'
 import fs from 'fs'
 import {checkExistsOfAllParsableTypes} from "../filesystem/fsUtils"
-import { ParsedAppConfig } from "@ulld/configschema/types"
-import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig"
 import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions"
+import { readAppConfig } from '@ulld/developer/readAppConfig'
+import { AppConfigSchemaOutput } from '@ulld/configschema/types'
 
 
 
-export const getFsMdx = async (rootRelativePath: string, ext: ".mdx" | ".md" = ".mdx", _config: ParsedAppConfig | undefined | null = null, useProcessRoot: boolean = false) => {
-    const fsRoot = useProcessRoot ? process.cwd() : (_config || getInternalConfig()).fsRoot
+export const getFsMdx = async (rootRelativePath: string, ext: ".mdx" | ".md" = ".mdx", _config: AppConfigSchemaOutput | undefined | null = null, useProcessRoot: boolean = false) => {
+    const fsRoot = useProcessRoot ? process.cwd() : (_config || await readAppConfig()).fsRoot
     let _path = path.join(fsRoot, rootRelativePath.endsWith(ext) ? rootRelativePath : `${rootRelativePath}${ext}`)
     // if (!fs.existsSync(_path)) {
     // NOTE: Turned off for now. It's working as is. Might be an issue for people on Linux systems though with the ability to create multiple files with only a difference in casing.
@@ -20,8 +20,8 @@ export const getFsMdx = async (rootRelativePath: string, ext: ".mdx" | ".md" = "
 }
 
 
-export const getFsIpynb = async (rootRelativePath: string, _config?: ParsedAppConfig) => {
-    const config = _config || getInternalConfig()
+export const getFsIpynb = async (rootRelativePath: string, _config?: AppConfigSchemaOutput) => {
+    const config = _config || await readAppConfig()
     let _path = path.join(config.fsRoot, rootRelativePath.endsWith(".ipynb") ? rootRelativePath : `${rootRelativePath}.ipynb`)
     return await fs.promises.readFile(_path, { encoding: "utf-8" })
 }
@@ -51,6 +51,5 @@ export const getFsNote = async (rootRelativePath: string, knownType?: ParsableEx
                 format: d.format as ParsableExtensions
             }
         }
-
     }
 }

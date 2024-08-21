@@ -431,11 +431,13 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
       overflow-x: auto;
       font-size: 1.25rem;
     }
-    mjx-mtext {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: flex-end;
+    :not(mjx-labels) {
+      mjx-mtext {
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: end;
+      }
     }
   }
 }

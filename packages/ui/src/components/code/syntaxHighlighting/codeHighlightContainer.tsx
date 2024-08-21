@@ -30,7 +30,6 @@ const connector = connect((state: RootState, props: any) => ({
 
 const tertiaryTheme = "material-theme-ocean";
 
-// TODO: Add a context menu that allows the switchin of themes dynamically.
 const CHC = connector(
     ({
         children,
@@ -98,7 +97,7 @@ const CHC = connector(
             >
                 <div
                     className={clsx(
-                        "w-full h-fit relative group/codehighlight no-scrollbar max-w-full overflow-auto",
+                        "w-full h-fit relative group/codehighlight no-scrollbar max-w-full",
                         className,
                     )}
                 >
@@ -106,7 +105,7 @@ const CHC = connector(
                         role="button"
                         onClick={copyCode}
                         className={
-                            "absolute top-2 right-2 p-2 hidden bg-primary text-primary-foreground rounded group-hover/codehighlight:flex flex-col justify-center items-center"
+                            "z-10 absolute top-2 right-2 p-2 hidden bg-primary text-primary-foreground rounded group-hover/codehighlight:flex flex-col justify-center items-center"
                         }
                     >
                         <CopyIcon className={"w-3 h-3"} />
@@ -114,8 +113,8 @@ const CHC = connector(
                     {(typeof html === "string" && !loading) ? (
                         <div
                             className={clsx(
-                                "overflow-auto max-w-full w-full max-h-full min-w-full [&>pre]:w-full [&>pre]:border [&>pre]:text-[12px]",
-                                children.length > 0 && "[&>pre]:p-4",
+                                "overflow-auto max-w-full w-full max-h-full min-w-full [&>pre]:w-full [&>pre]:border [&>pre]:text-[12px] [&>pre]:overflow-auto",
+                                children.length > 0 && "[&_.line]:px-4 [&>pre]:py-4",
                             )}
                             dangerouslySetInnerHTML={{
                                 __html: html,

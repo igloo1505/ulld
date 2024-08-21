@@ -21,6 +21,7 @@ import rehypeVideo from "rehype-video";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import { highlightTransformerMap } from "../utils/highlightTransformerMap";
 
+
 export const mermaidConfig: MermaidConfigType = {
     output: "svg",
     /* theme: { light: 'dark', dark: 'dark' }, */

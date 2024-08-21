@@ -92,7 +92,9 @@ export const transformMDX: typeof F.transformMDX = (document: Document, context:
                                 },
                             },
                         ],
-                        [rehypeImgSize, { dir: "./public" }],
+                        [
+                            rehypeImgSize, { dir: "./public" }
+                        ],
                     ],
                 },
             );
