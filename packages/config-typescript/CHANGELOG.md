@@ -1,5 +1,13 @@
 # @repo/typescript-config
 
+## 0.0.81
+
+### Patch Changes
+
+- Resolved issue with remarkGfm and misaligned generated paths.
+- Updated dependencies
+  - @ulld/types@0.0.81
+
 ## 0.0.80
 
 ### Patch Changes

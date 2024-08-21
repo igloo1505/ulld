@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.81
+
+### Patch Changes
+
+- Resolved issue with remarkGfm and misaligned generated paths.
+
 ## 0.0.80
 
 ### Patch Changes

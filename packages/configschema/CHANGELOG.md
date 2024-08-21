@@ -1,5 +1,19 @@
 # @ulld/configschema
 
+## 0.0.87
+
+### Patch Changes
+
+- Resolved issue with remarkGfm and misaligned generated paths.
+- Updated dependencies
+  - @ulld/base-configs@0.0.81
+  - @ulld/typescript-config@0.0.81
+  - @ulld/developer-schemas@0.0.81
+  - @ulld/icons@0.0.87
+  - @ulld/tailwind@0.0.81
+  - @ulld/types@0.0.81
+  - @ulld/utilities@0.0.87
+
 ## 0.0.86
 
 ### Patch Changes

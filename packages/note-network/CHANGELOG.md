@@ -1,5 +1,21 @@
 # @ulld/note-network
 
+## 0.0.87
+
+### Patch Changes
+
+- Resolved issue with remarkGfm and misaligned generated paths.
+- Updated dependencies
+  - @ulld/api@0.0.87
+  - @ulld/typescript-config@0.0.81
+  - @ulld/configschema@0.0.87
+  - @ulld/developer@0.0.87
+  - @ulld/jest-presets@0.0.81
+  - @ulld/logger@0.0.81
+  - @ulld/tailwind@0.0.81
+  - @ulld/types@0.0.81
+  - @ulld/utilities@0.0.87
+
 ## 0.0.86
 
 ### Patch Changes

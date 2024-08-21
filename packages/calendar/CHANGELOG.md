@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.87
+
+### Patch Changes
+
+- Resolved issue with remarkGfm and misaligned generated paths.
+- Updated dependencies
+  - @ulld/developer@0.0.87
+  - @ulld/types@0.0.81
+
 ## 0.0.86
 
 ### Patch Changes

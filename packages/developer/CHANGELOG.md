@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.87
+
+### Patch Changes
+
+- Resolved issue with remarkGfm and misaligned generated paths.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.83
+  - @ulld/typescript-config@0.0.81
+  - @ulld/configschema@0.0.87
+  - @ulld/database@0.0.84
+  - @ulld/logger@0.0.81
+  - @ulld/types@0.0.81
+
 ## 0.0.86
 
 ### Patch Changes

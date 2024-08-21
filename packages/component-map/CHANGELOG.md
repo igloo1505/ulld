@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.87
+
+### Patch Changes
+
+- Resolved issue with remarkGfm and misaligned generated paths.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.87
+  - @ulld/calendar@0.0.87
+  - @ulld/typescript-config@0.0.81
+  - @ulld/default-image-map@0.0.87
+  - @ulld/diagram@0.0.87
+  - @ulld/editor@0.0.87
+  - @ulld/embeddable-components@0.0.87
+  - @ulld/equations@0.0.87
+  - @ulld/full-form@0.0.87
+  - @ulld/journal@0.0.87
+  - @ulld/navigation@0.0.87
+  - @ulld/notebook@0.0.87
+  - @ulld/pdf@0.0.87
+  - @ulld/plot@0.0.87
+  - @ulld/snippets@0.0.87
+  - @ulld/tailwind@0.0.81
+  - @ulld/task-manager@0.0.87
+  - @ulld/types@0.0.81
+  - @ulld/whiteboard@0.0.87
+
 ## 0.0.86
 
 ### Patch Changes

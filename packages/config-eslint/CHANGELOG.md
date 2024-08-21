@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.83
+
+### Patch Changes
+
+- Resolved issue with remarkGfm and misaligned generated paths.
+
 ## 0.0.82
 
 ### Patch Changes

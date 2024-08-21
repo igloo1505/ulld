@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.84
+
+### Patch Changes
+
+- Resolved issue with remarkGfm and misaligned generated paths.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.81
+  - @ulld/types@0.0.81
+
 ## 0.0.83
 
 ### Patch Changes
