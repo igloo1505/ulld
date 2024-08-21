@@ -14,6 +14,7 @@ import { UnifiedMdxParser } from "../../../types";
 
 export interface SyncMdxProps {
     file: string;
+    rootRelativePath: string;
     dir: string;
     bookmarked: boolean
     autoSettings: AutoSettingWithRegex[];
@@ -35,6 +36,7 @@ export const syncMdx = async ({
     unifiedMdxParser,
     prisma,
     bookmarked,
+    rootRelativePath,
     docTypeData
 }: SyncMdxProps) => {
     let fileContent = await fs.promises.readFile(file, { encoding: "utf-8" });
@@ -44,7 +46,6 @@ export const syncMdx = async ({
         parser: unifiedMdxParser,
         docTypeData
     };
-    let rootRelativePath = file.split(dir)[1]
     let note = await MdxNote.fromMdxString(
         { raw: fileContent, rootRelativePath: rootRelativePath, bookmarked, docTypeData },
         { },

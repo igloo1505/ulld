@@ -8,9 +8,9 @@ import { mathOptions } from "@ulld/utilities/defaults/markdownUniversalOptions";
 import {
     remarkHeading,
     remarkStructure,
+    remarkGfm
 } from "fumadocs-core/mdx-plugins";
 import remarkMath from "remark-math";
-import remarkGfm from "remark-gfm";
 import rehypeMathjax from "rehype-mathjax/chtml";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";

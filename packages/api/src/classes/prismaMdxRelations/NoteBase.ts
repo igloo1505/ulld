@@ -4,6 +4,7 @@ import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
 import { replaceRecursively } from "@ulld/utilities/utils/general";
 import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
+import { withForwardSlash } from "@ulld/utilities/fsUtils";
 
 
 export class NoteBase {
@@ -26,9 +27,9 @@ export class NoteBase {
             return
         }
         let rootRelativePath = this.rootRelativePath as string
-        const _fs = t.fs as string
+        const _fs = withForwardSlash(t.fs) as string
         const _url = t.url as string
-        let subPath = rootRelativePath.startsWith(_fs) ? rootRelativePath.slice(_fs.length, rootRelativePath.length) : rootRelativePath.split(_fs)[1]
+        let subPath = rootRelativePath.startsWith(_fs) ? rootRelativePath.slice(_fs.length, rootRelativePath.length) : rootRelativePath.slice(rootRelativePath.indexOf(_fs) + _fs.length)
         if (subPath.endsWith(this.ftExtension)) {
             subPath = subPath.slice(0, subPath.length - this.ftExtension.length)
         }

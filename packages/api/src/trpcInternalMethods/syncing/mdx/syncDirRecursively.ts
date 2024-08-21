@@ -59,6 +59,7 @@ export const syncDirRecursively = async (props: UniversalMdxProps) => {
                     file: absPath,
                     dir: props.appConfig.fsRoot,
                     docTypeData,
+                    rootRelativePath,
                     bookmarked: Boolean(allNotes.find((x) => x.rootRelativePath === rootRelativePath)?.bookmarked)
                 });
             }
