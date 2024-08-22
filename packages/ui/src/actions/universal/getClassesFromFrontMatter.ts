@@ -1,4 +1,4 @@
-import { FrontMatterType } from "@ulld/types"
+import type { FrontMatterType } from "@ulld/types"
 
 
 export const getClassesFromFrontMatter = (d?: Partial<FrontMatterType>): string => {

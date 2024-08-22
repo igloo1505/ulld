@@ -16,7 +16,6 @@ export interface ClientsideDomEventsProps {
 
 
 export const ClientsideNoteEvents = ({ bookmarked, fs, noteId: _noteId, noteQuickLinkId }: ClientsideDomEventsProps) => {
-    console.log("ClientsideNoteEvents")
     const [noteId, setNoteId, clearId] = useActiveNoteId(_noteId)
     const store = useUlldStore()
 
@@ -26,7 +25,6 @@ export const ClientsideNoteEvents = ({ bookmarked, fs, noteId: _noteId, noteQuic
 
 
     const checkFsNoteId = async (_id: number) => {
-        console.log("checkFsNoteId")
         store?.dispatch(setCurrentNoteData({
             id: _id,
             currentToc: getHeadingHierarchy()
@@ -36,7 +34,6 @@ export const ClientsideNoteEvents = ({ bookmarked, fs, noteId: _noteId, noteQuic
 
 
     useEffect(() => {
-        console.log("useEffect ClientsideNoteEvents")
         indicateBookmarked(bookmarked || false)
         if (_noteId) {
             setNoteId(_noteId)

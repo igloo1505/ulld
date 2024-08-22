@@ -22,6 +22,7 @@ const IndividualNoteContainer = ({
     parsedData,
     details,
 }: IndividualNoteContainerProps) => {
+    console.log("details: ", details)
     return (
         <div
             className={clsx(

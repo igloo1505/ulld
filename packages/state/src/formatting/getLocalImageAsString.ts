@@ -1,10 +1,9 @@
-import fs from 'fs'
-import {makeAbsolute} from "@ulld/utilities/pathUtilsClientSide"
-
-
-
+import fs from "fs";
+import { makeAbsolute } from "@ulld/utilities/pathUtilsClientSide";
 
 export const imageToBase64Url = async (p: string, fsRoot: string) => {
-    let bitmap = await fs.promises.readFile(makeAbsolute(p, fsRoot));
-    return new Buffer(bitmap).toString('base64');
-}
+    let absPath = makeAbsolute(p, fsRoot)
+    console.log("absPath: ", absPath)
+    let bitmap = await fs.promises.readFile(absPath);
+    return new Buffer(bitmap).toString("base64");
+};

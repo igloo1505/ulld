@@ -2,7 +2,6 @@ import React, {
     DetailedHTMLProps,
     ReactNode,
     TableHTMLAttributes,
-    useId,
 } from "react";
 import { TableProps } from "./tableProps";
 import {
@@ -15,7 +14,8 @@ import {
 } from "@ulld/tailwind/table";
 import clsx from "clsx";
 import "./tableStyles.scss";
-import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
+import { readAppConfig } from "@ulld/developer/readAppConfig";
+import { getRandomId } from "@ulld/utilities/identity";
 /* import { removeEmptyChildren } from "@ulld/utilities/removeEmptyChildren"; */
 
 interface TheadProps {
@@ -105,9 +105,9 @@ export type TableWrapperProps = DetailedHTMLProps<
 >;
 
 /* TODO: Handle this more like the bibliography data table. If not entirely as a datatable, at least add pagination and search functionality. */
-const InternalTable = (props: TableWrapperProps) => {
-    const id = useId();
-    const config = getInternalConfig();
+const InternalTable = async (props: TableWrapperProps) => {
+    const id = getRandomId();
+    const config = await readAppConfig();
     /* const children = removeEmptyChildren(props.children || []); */
     const children = props.children
     return (

@@ -12,7 +12,6 @@ interface NoteContentObserverProps {
 
 /* WARNING: This is almost sure to not work properly. Still needs a lot of refinement and like 5 mins of testing once this unbelievably awful dev server is in better shape. */
 const NoteContentObserver = ({ id }: NoteContentObserverProps) => {
-    console.log(`NoteContentObserver`)
     const [mutObserver, setMutObserver] = useState<null | MutationObserver>(null)
     const pathname = usePathname()
     const disconnectObserver = (ob?: MutationObserver | null) => {

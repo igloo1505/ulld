@@ -1,4 +1,5 @@
 "use client";
+import React from "react"
 import "./initPdf";
 import "react-pdf/dist/Page/TextLayer.css";
 import "react-pdf/dist/Page/AnnotationLayer.css";
@@ -14,6 +15,7 @@ import { Button } from "@ulld/tailwind/button";
 import { pdfStateClasses } from "../../types";
 import { DynamicIcon } from "@ulld/icons";
 import { PdfManager, TextRendererType } from "@ulld/state/classes/pdfManager";
+
 export const options = {
     standardFontDataUrl: "/standard_fonts/",
 };
