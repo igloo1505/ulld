@@ -161,6 +161,69 @@ body {
 
 .min-scrollbar {
   scrollbar-width: thin;
+  scrollbar-color: white #778899;
+
+  @supports (scrollbar-width: auto) {
+    * {
+      scrollbar-width: thin;
+    }
+  }
+
+  @supports selector(::-webkit-scrollbar) {
+    & *::-webkit-scrollbar {
+      background-color: hsl(var(--muted));
+      width: 2px;
+      height: 6px;
+    }
+
+    & *::-webkit-scrollbar-thumb {
+      background-color: hsl(var(--background));
+    }
+
+    &.scrollbarMuted {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--muted));
+      }
+
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
+    }
+
+    &.scrollbarMutedForeground {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--muted-foreground));
+      }
+
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
+    }
+
+    &.scrollbarPrimary {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--primary));
+      }
+
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
+    }
+
+    &.scrollbarForeground {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--foreground));
+      }
+
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
+    }
+  }
+}
+
+.dark .min-scrollbar {
+  scrollbar-width: thin;
   scrollbar-color: #1f2937 black;
 
   @supports (scrollbar-width: auto) {

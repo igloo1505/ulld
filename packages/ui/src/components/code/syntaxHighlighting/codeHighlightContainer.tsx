@@ -12,6 +12,7 @@ import { copyStringToClipboard } from "@ulld/utilities/copyStringToClipboard";
 import { ParsedAppConfig } from "@ulld/configschema/types";
 import { ReduxProvider } from "@ulld/state/wrappers/ReduxProvider";
 import { EmbeddedLoadingIndicator } from "@ulld/embeddable-components/components/loadingIndicator";
+import { useAppConfig } from "@ulld/hooks/useAppConfig";
 
 
 interface CodeHighlightContainerProps {
@@ -30,27 +31,24 @@ const connector = connect((state: RootState, props: any) => ({
 
 const tertiaryTheme = "material-theme-ocean";
 
-const CHC = connector(
+const CHC =
     ({
         children,
         language = "python",
         className,
         theme: _theme,
-        configTheme,
-        darkMode,
         minimal
-    }: CodeHighlightContainerProps & {
-        configTheme: ParsedAppConfig["code"]["theme"] | undefined;
-        darkMode: boolean;
-    }) => {
+    }: CodeHighlightContainerProps) => {
+        const [appConfig] = useAppConfig()
 
-        const getTheme = (themeoverride: BundledTheme | undefined | null) => {
+        const getTheme = (themeoverride: BundledTheme | undefined | null, themeType: "dark" | "light") => {
             if (themeoverride) return themeoverride as BundledTheme;
-            if (darkMode && configTheme?.dark) {
-                return configTheme.dark as BundledTheme;
+            let configTheme = appConfig?.code.theme
+            if (themeType === "dark" && configTheme?.dark) {
+                return configTheme.dark;
             }
-            if (!darkMode && configTheme?.light) {
-                return configTheme.light as BundledTheme;
+            if (themeType === "light" && configTheme?.light) {
+                return configTheme.light;
             }
             return tertiaryTheme as BundledTheme;
         };
@@ -61,18 +59,18 @@ const CHC = connector(
             minimal,
             lang: language,
             themes: {
-                dark: getTheme(_theme),
-                light: getTheme(_theme)
+                dark: getTheme(_theme, "dark"),
+                light: getTheme(_theme, "light")
             },
             code: children
         });
 
         useEffect(() => {
             setThemes({
-                dark: getTheme(_theme),
-                light: getTheme(_theme)
+                dark: getTheme(_theme, "dark"),
+                light: getTheme(_theme, "light")
             })
-        }, [_theme]);
+        }, [_theme, appConfig]);
 
         useEffect(() => {
             setLanguage(language)
@@ -113,7 +111,7 @@ const CHC = connector(
                     {(typeof html === "string" && !loading) ? (
                         <div
                             className={clsx(
-                                "overflow-auto max-w-full w-full max-h-full min-w-full [&>pre]:w-full [&>pre]:border [&>pre]:text-[12px] [&>pre]:overflow-auto",
+                                "overflow-auto max-w-full w-full max-h-full min-w-full [&>pre]:w-full [&>pre]:border [&>pre]:text-[12px] [&>pre]:overflow-auto no-overscroll-x",
                                 children.length > 0 && "[&_.line]:px-4 [&>pre]:py-4",
                             )}
                             dangerouslySetInnerHTML={{
@@ -128,8 +126,7 @@ const CHC = connector(
                 </div>
             </CodeThemeContextMenu>
         );
-    },
-);
+    };
 
 export const CodeHighlightContainer = (props: CodeHighlightContainerProps) => {
     return (
