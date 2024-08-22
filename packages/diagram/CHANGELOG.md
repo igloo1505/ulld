@@ -1,5 +1,18 @@
 # @ulld/diagram
 
+## 0.0.88
+
+### Patch Changes
+
+- Fix code related UI issues and the confirmation modal flow.
+- Updated dependencies
+  - @ulld/api@0.0.88
+  - @ulld/typescript-config@0.0.82
+  - @ulld/developer@0.0.88
+  - @ulld/state@0.0.88
+  - @ulld/tailwind@0.0.82
+  - @ulld/types@0.0.82
+
 ## 0.0.87
 
 ### Patch Changes

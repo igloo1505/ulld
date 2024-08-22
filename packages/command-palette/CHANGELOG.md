@@ -1,5 +1,36 @@
 # @ulld/command-palette
 
+## 0.0.88
+
+### Patch Changes
+
+- Fix code related UI issues and the confirmation modal flow.
+- Updated dependencies
+  - @ulld/api@0.0.88
+  - @ulld/bib-manager@0.0.88
+  - @ulld/calendar@0.0.88
+  - @ulld/eslint-config@0.0.84
+  - @ulld/typescript-config@0.0.82
+  - @ulld/configschema@0.0.88
+  - @ulld/database@0.0.85
+  - @ulld/developer@0.0.88
+  - @ulld/diagram@0.0.88
+  - @ulld/editor@0.0.88
+  - @ulld/equations@0.0.88
+  - @ulld/hooks@0.0.88
+  - @ulld/jest-presets@0.0.82
+  - @ulld/logger@0.0.82
+  - @ulld/parsers@0.0.88
+  - @ulld/render@0.0.88
+  - @ulld/snippets@0.0.88
+  - @ulld/state@0.0.88
+  - @ulld/tailwind@0.0.82
+  - @ulld/task-manager@0.0.88
+  - @ulld/types@0.0.82
+  - @ulld/ui@0.0.86
+  - @ulld/utilities@0.0.88
+  - @ulld/whiteboard@0.0.88
+
 ## 0.0.87
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.82
+
+### Patch Changes
+
+- Fix code related UI issues and the confirmation modal flow.
+
 ## 0.0.81
 
 ### Patch Changes

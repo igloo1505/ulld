@@ -1,5 +1,17 @@
 # @ulld/build
 
+## 0.0.88
+
+### Patch Changes
+
+- Fix code related UI issues and the confirmation modal flow.
+- Updated dependencies
+  - @ulld/base-configs@0.0.82
+  - @ulld/configschema@0.0.88
+  - @ulld/developer-schemas@0.0.82
+  - @ulld/types@0.0.82
+  - @ulld/utilities@0.0.88
+
 ## 0.0.87
 
 ### Patch Changes

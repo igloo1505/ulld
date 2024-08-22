@@ -1,5 +1,20 @@
 # @ulld/math
 
+## 0.0.88
+
+### Patch Changes
+
+- Fix code related UI issues and the confirmation modal flow.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.82
+  - @ulld/configschema@0.0.88
+  - @ulld/hooks@0.0.88
+  - @ulld/icons@0.0.88
+  - @ulld/jest-presets@0.0.82
+  - @ulld/state@0.0.88
+  - @ulld/types@0.0.82
+  - @ulld/utilities@0.0.88
+
 ## 0.0.87
 
 ### Patch Changes

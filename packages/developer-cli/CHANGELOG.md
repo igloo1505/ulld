@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.88
+
+### Patch Changes
+
+- Fix code related UI issues and the confirmation modal flow.
+- Updated dependencies
+  - @ulld/developer@0.0.88
+  - @ulld/developer-schemas@0.0.82
+  - @ulld/types@0.0.82
+
 ## 0.0.87
 
 ### Patch Changes

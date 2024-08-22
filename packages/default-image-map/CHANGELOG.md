@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.88
+
+### Patch Changes
+
+- Fix code related UI issues and the confirmation modal flow.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.84
+  - @ulld/typescript-config@0.0.82
+  - @ulld/configschema@0.0.88
+  - @ulld/logger@0.0.82
+  - @ulld/tailwind@0.0.82
+  - @ulld/types@0.0.82
+  - @ulld/utilities@0.0.88
+
 ## 0.0.87
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.85
+
+### Patch Changes
+
+- Fix code related UI issues and the confirmation modal flow.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.82
+  - @ulld/types@0.0.82
+
 ## 0.0.84
 
 ### Patch Changes

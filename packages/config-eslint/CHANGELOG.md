@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.84
+
+### Patch Changes
+
+- Fix code related UI issues and the confirmation modal flow.
+
 ## 0.0.83
 
 ### Patch Changes

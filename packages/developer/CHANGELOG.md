@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.88
+
+### Patch Changes
+
+- Fix code related UI issues and the confirmation modal flow.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.84
+  - @ulld/typescript-config@0.0.82
+  - @ulld/configschema@0.0.88
+  - @ulld/database@0.0.85
+  - @ulld/logger@0.0.82
+  - @ulld/types@0.0.82
+
 ## 0.0.87
 
 ### Patch Changes
