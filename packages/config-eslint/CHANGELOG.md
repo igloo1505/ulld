@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.85
+
+### Patch Changes
+
+- Fix parsing issue.
+
 ## 0.0.84
 
 ### Patch Changes

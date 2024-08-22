@@ -1,5 +1,13 @@
 # @repo/jest-presets
 
+## 0.0.83
+
+### Patch Changes
+
+- Fix parsing issue.
+- Updated dependencies
+  - @ulld/types@0.0.83
+
 ## 0.0.82
 
 ### Patch Changes

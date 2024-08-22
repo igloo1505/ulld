@@ -1,5 +1,14 @@
 # @ulld/tailwind
 
+## 0.0.83
+
+### Patch Changes
+
+- Fix parsing issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.83
+  - @ulld/types@0.0.83
+
 ## 0.0.82
 
 ### Patch Changes

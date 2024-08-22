@@ -1,5 +1,20 @@
 # @ulld/kanban
 
+## 0.0.89
+
+### Patch Changes
+
+- Fix parsing issue.
+- Updated dependencies
+  - @ulld/api@0.0.89
+  - @ulld/typescript-config@0.0.83
+  - @ulld/developer@0.0.89
+  - @ulld/jest-presets@0.0.83
+  - @ulld/logger@0.0.83
+  - @ulld/state@0.0.89
+  - @ulld/tailwind@0.0.83
+  - @ulld/types@0.0.83
+
 ## 0.0.88
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.86
+
+### Patch Changes
+
+- Fix parsing issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.83
+  - @ulld/types@0.0.83
+
 ## 0.0.85
 
 ### Patch Changes

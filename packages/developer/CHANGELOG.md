@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.89
+
+### Patch Changes
+
+- Fix parsing issue.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.85
+  - @ulld/typescript-config@0.0.83
+  - @ulld/configschema@0.0.89
+  - @ulld/database@0.0.86
+  - @ulld/logger@0.0.83
+  - @ulld/types@0.0.83
+
 ## 0.0.88
 
 ### Patch Changes

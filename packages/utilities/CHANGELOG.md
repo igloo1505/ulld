@@ -1,5 +1,17 @@
 # @ulld/utilities
 
+## 0.0.89
+
+### Patch Changes
+
+- Fix parsing issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.83
+  - @ulld/database@0.0.86
+  - @ulld/math@0.0.89
+  - @ulld/tailwind@0.0.83
+  - @ulld/types@0.0.83
+
 ## 0.0.88
 
 ### Patch Changes

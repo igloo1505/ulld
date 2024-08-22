@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.89
+
+### Patch Changes
+
+- Fix parsing issue.
+- Updated dependencies
+  - @ulld/developer@0.0.89
+  - @ulld/developer-schemas@0.0.83
+  - @ulld/types@0.0.83
+
 ## 0.0.88
 
 ### Patch Changes

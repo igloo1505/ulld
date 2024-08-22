@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.89
+
+### Patch Changes
+
+- Fix parsing issue.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.85
+  - @ulld/typescript-config@0.0.83
+  - @ulld/configschema@0.0.89
+  - @ulld/logger@0.0.83
+  - @ulld/tailwind@0.0.83
+  - @ulld/types@0.0.83
+  - @ulld/utilities@0.0.89
+
 ## 0.0.88
 
 ### Patch Changes

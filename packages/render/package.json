@@ -1,69 +1,69 @@
 {
-    "name": "@ulld/render",
-    "version": "0.0.88",
-    "dependencies": {
-        "@mdx-js/mdx": "3.0.1",
-        "@mdx-js/react": "3.0.1",
-        "@react-three/drei": "9.105.6",
-        "@react-three/fiber": "8.16.3",
-        "@types/mdx": "^2.0.11",
-        "gray-matter": "^4.0.3",
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "three": "^0.163.0",
-        "typescript": "^5.4.5"
-    },
-    "devDependencies": {
-        "@mdx-js/mdx": "3.0.1",
-        "@mdx-js/react": "^3.0.1",
-        "@react-three/drei": "^9.99.7",
-        "@react-three/fiber": "^8.15.19",
-        "@types/mdx": "^2.0.11",
-        "gray-matter": "^4.0.3",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "three": "^0.163.0",
-        "typescript": "^5.4.5"
-    },
-    "exports": {
-        "./mdx": "./src/mdx/mdxContentCLIENT.tsx",
-        "./mdx/server": "./src/mdx/mdxContentSERVER.tsx",
-        "./mdx/client": "./src/mdx/mdxContentCLIENT.tsx",
-        "./mdx/preCompiled": "./src/mdx/mdxContentPreCompiled.tsx",
-        "./mdx/fileSystemServer": "./src/mdx/mdxFileSystemSERVER.tsx",
-        "./mdx/rsc": "./src/mdx/mdxContentRSC.tsx",
-        "./mdxPreviewPanel": "./src/mdx/mdxPreviewPanel.tsx",
-        "./3d/threeJsCanvas": "./src/3d/ThreeCanvas.tsx"
-    },
-    "files": [
-        "src"
-    ],
-    "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {
-        "@ulld/api": "workspace:*",
-        "@ulld/component-map": "workspace:*",
-        "@ulld/configschema": "workspace:*",
-        "@ulld/hooks": "workspace:*",
-        "@ulld/jest-presets": "workspace:*",
-        "@ulld/parsers": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "@ulld/utilities": "workspace:*",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
-    "scripts": {
-        "build": "echo 'Add build script here'",
-        "dev": "echo 'Add dev script here'",
-        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-        "test": "echo 'Add test script here'"
-    },
-    "types": "./src/index.ts"
+  "name": "@ulld/render",
+  "version": "0.0.89",
+  "dependencies": {
+    "@mdx-js/mdx": "3.0.1",
+    "@mdx-js/react": "3.0.1",
+    "@react-three/drei": "9.105.6",
+    "@react-three/fiber": "8.16.3",
+    "@types/mdx": "^2.0.11",
+    "gray-matter": "^4.0.3",
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "three": "^0.163.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@mdx-js/mdx": "3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@react-three/drei": "^9.99.7",
+    "@react-three/fiber": "^8.15.19",
+    "@types/mdx": "^2.0.11",
+    "gray-matter": "^4.0.3",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.163.0",
+    "typescript": "^5.4.5"
+  },
+  "exports": {
+    "./mdx": "./src/mdx/mdxContentCLIENT.tsx",
+    "./mdx/server": "./src/mdx/mdxContentSERVER.tsx",
+    "./mdx/client": "./src/mdx/mdxContentCLIENT.tsx",
+    "./mdx/preCompiled": "./src/mdx/mdxContentPreCompiled.tsx",
+    "./mdx/fileSystemServer": "./src/mdx/mdxFileSystemSERVER.tsx",
+    "./mdx/rsc": "./src/mdx/mdxContentRSC.tsx",
+    "./mdxPreviewPanel": "./src/mdx/mdxPreviewPanel.tsx",
+    "./3d/threeJsCanvas": "./src/3d/ThreeCanvas.tsx"
+  },
+  "files": [
+    "src"
+  ],
+  "packageManager": "pnpm@9.0.4",
+  "peerDependencies": {
+    "@ulld/api": "workspace:*",
+    "@ulld/component-map": "workspace:*",
+    "@ulld/configschema": "workspace:*",
+    "@ulld/hooks": "workspace:*",
+    "@ulld/jest-presets": "workspace:*",
+    "@ulld/parsers": "workspace:*",
+    "@ulld/types": "workspace:*",
+    "@ulld/typescript-config": "workspace:*",
+    "@ulld/utilities": "workspace:*",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "echo 'Add build script here'",
+    "dev": "echo 'Add dev script here'",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "echo 'Add test script here'"
+  },
+  "types": "./src/index.ts"
 }

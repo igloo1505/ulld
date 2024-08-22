@@ -1,5 +1,20 @@
 # @ulld/math
 
+## 0.0.89
+
+### Patch Changes
+
+- Fix parsing issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.83
+  - @ulld/configschema@0.0.89
+  - @ulld/hooks@0.0.89
+  - @ulld/icons@0.0.89
+  - @ulld/jest-presets@0.0.83
+  - @ulld/state@0.0.89
+  - @ulld/types@0.0.83
+  - @ulld/utilities@0.0.89
+
 ## 0.0.88
 
 ### Patch Changes

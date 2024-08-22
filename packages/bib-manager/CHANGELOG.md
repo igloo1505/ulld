@@ -1,5 +1,28 @@
 # @ulld/bib-manager
 
+## 0.0.89
+
+### Patch Changes
+
+- Fix parsing issue.
+- Updated dependencies
+  - @ulld/api@0.0.89
+  - @ulld/eslint-config@0.0.85
+  - @ulld/typescript-config@0.0.83
+  - @ulld/configschema@0.0.89
+  - @ulld/database@0.0.86
+  - @ulld/developer@0.0.89
+  - @ulld/editor@0.0.89
+  - @ulld/full-form@0.0.89
+  - @ulld/hooks@0.0.89
+  - @ulld/icons@0.0.89
+  - @ulld/jest-presets@0.0.83
+  - @ulld/state@0.0.89
+  - @ulld/tailwind@0.0.83
+  - @ulld/types@0.0.83
+  - @ulld/ui@0.0.87
+  - @ulld/utilities@0.0.89
+
 ## 0.0.88
 
 ### Patch Changes

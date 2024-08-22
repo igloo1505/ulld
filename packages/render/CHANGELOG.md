@@ -1,5 +1,21 @@
 # @ulld/render
 
+## 0.0.89
+
+### Patch Changes
+
+- Fix parsing issue.
+- Updated dependencies
+  - @ulld/api@0.0.89
+  - @ulld/component-map@0.0.89
+  - @ulld/typescript-config@0.0.83
+  - @ulld/configschema@0.0.89
+  - @ulld/hooks@0.0.89
+  - @ulld/jest-presets@0.0.83
+  - @ulld/parsers@0.0.89
+  - @ulld/types@0.0.83
+  - @ulld/utilities@0.0.89
+
 ## 0.0.88
 
 ### Patch Changes
