@@ -457,14 +457,14 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
       max-width: 100%;
       overflow-x: auto;
       font-size: 1.25rem;
+      margin: 0px !important;
+      padding: 1rem 0.5rem;
     }
-    :not(mjx-labels) {
-      mjx-mtext {
-        display: inline-flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: end;
-      }
+    mjx-mtext:not(mjx-labels mjx-mtext) {
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: end;
     }
   }
 }

@@ -1,9 +1,9 @@
-import clsx from "clsx";
 import React, { HTMLProps } from "react";
 import { ComposedTooltip } from "./composedTooltip";
 import { componentConfig } from "@ulld/component-configs/underline";
 import { WithTooltipWrapper } from "./props/withTooltipWrapperProps";
 import { HighlightProps } from "./HlProps";
+import cn from "@ulld/utilities/cn";
 
 const ttIsLink = (t: string) => {
     return Boolean(/^(\/|http|www|\#)/gm.test(t));
@@ -47,8 +47,8 @@ export const Highlight = (
                 }
             >
                 <span
-                    className={clsx(
-                        "px-1 rounded-md highlight-background highlight-text",
+                    className={cn(
+                        "px-1 rounded-md highlight-background highlight-text [&_*]:text-inherit [&_*]:bg-inherit",
                         (p.faint || p.light) && "bg-opacity-50",
                         p.muted && "text-muted-foreground",
                         p.className,
@@ -57,8 +57,8 @@ export const Highlight = (
                     {...p}
                     style={{
                         ...props.css,
-                        backgroundColor: props.color,
-                        color: props.contrastColor,
+                        backgroundColor: `${props.color} !important`,
+                        color: `${props.contrastColor} !important`,
                         ...p.style,
                     }}
                 />
@@ -68,16 +68,16 @@ export const Highlight = (
     return (
         <span
             {...p}
-            className={clsx(
-                "px-1 rounded-md highlight-background highlight-text",
+            className={cn(
+                "px-1 rounded-md highlight-background highlight-text [&_*]:text-inherit [&_*]:bg-inherit",
                 (p.faint || p.light) && "bg-opacity-50",
                 p.muted && "text-muted-foreground",
                 p.className,
             )}
             style={{
                 ...props.css,
-                backgroundColor: props.color,
-                color: props.contrastColor,
+                backgroundColor: `${props.color} !important`,
+                color: `${props.contrastColor} !important`,
                 ...p.style,
             }}
         />

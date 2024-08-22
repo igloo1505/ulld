@@ -50,6 +50,8 @@ export const parseTags: UnifiedMdxParser<ExtendedFrontMatter> = async (
         }
     } while (l);
 
+    console.log("c: ", c)
+
     return {
         content: c,
         data: {

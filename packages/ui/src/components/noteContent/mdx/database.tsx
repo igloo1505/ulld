@@ -22,12 +22,11 @@ const DatabaseMdxPage = async ({
     ...props
 }: DatabaseMdxPageProps) => {
 
-    console.log(`DatabaseMdxPage`)
-
     let item = await serverClient.mdx.getDatabaseMdx(
         props.noteProps.rootRelativePathWithExtension ||
         `${props.noteProps.rootRelativePath}.mdx`,
     );
+
 
     if (!item) {
         return notFound();

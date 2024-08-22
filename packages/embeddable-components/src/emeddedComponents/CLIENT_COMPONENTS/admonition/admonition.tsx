@@ -1,5 +1,4 @@
 "use client";
-import clsx from "clsx";
 import React from "react";
 import { AdmonitionProps } from "@ulld/utilities/admonition/types";
 import { stringToConsistentId } from "@ulld/state/formatting/general";
@@ -7,6 +6,7 @@ import { AdmonitionTitle } from "./admonitionTitle";
 import { getRandomId } from "@ulld/utilities/identity";
 import AdmonitionTitleNode from "./admonitionTitleNode";
 import FoldingAdmonition from "../../FoldingAdmonition";
+import cn from "@ulld/utilities/cn";
 
 
 export const Admonition = (props: AdmonitionProps) => {
@@ -37,7 +37,7 @@ export const Admonition = (props: AdmonitionProps) => {
             /*     sidebar && "w-full my-3 @[1024px]/mdx:w-1/3 @[1024px]/mdx:float-right @[1024px]/mdx:ml-4" , */
             /* )} */
 
-            className={clsx(`rounded-lg  my-4 admonition ${type || "note"} overflow-hidden group/fold h-fit`, !dropdown && "open", type || "note", dropdown && "foldable", sidebar && "w-full @[1024px]/mdx:w-[33%] @[1024px]/mdx:float-right @[1024px]/mdx:ml-4")}
+            className={cn(`rounded-lg my-4 admonition overflow-hidden group/fold h-fit`, !dropdown && "open", type || "note", dropdown && "foldable", sidebar && "w-full @[1024px]/mdx:w-[33%] @[1024px]/mdx:float-right @[1024px]/mdx:ml-4")}
             id={id}
         >
             {typeof title === "string" ? (
@@ -58,7 +58,7 @@ export const Admonition = (props: AdmonitionProps) => {
                 />
             )}
             <div
-                className={clsx(
+                className={cn(
                     "prose dark:prose-invert p-4 body w-full min-w-full h-auto bg-gray-100 dark:bg-gray-800",
                     type === "plain" && "bg-transparent dark:bg-transparent",
                 )}
@@ -67,7 +67,7 @@ export const Admonition = (props: AdmonitionProps) => {
             </div>
             {footer && (
                 <div
-                    className={clsx(
+                    className={cn(
                         "w-full py-3 px-3 text-sm text-muted-foreground bg-muted",
                     )}
                 >

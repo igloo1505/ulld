@@ -14,7 +14,7 @@ export const ImmediateNoteContentContainer = ({
     return (
         <>
             <NoteContentObserver id={id} />
-            <div className={"note-base-layout py-8 space-y-2 md:space-y-3"} id={id}>
+            <div className={"note-base-layout @container/mdx py-8 space-y-2 md:space-y-3"} id={id}>
                 {children ? children : <></>}
             </div>
         </>

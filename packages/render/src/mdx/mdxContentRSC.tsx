@@ -39,12 +39,11 @@ const parseProps = (p: Omit<MdxContentRSCProps, "MdxContentRenderer">) => {
     };
 };
 
+
 export const MdxContentRSC = async ({
     components = [],
     ..._props
 }: MdxContentRSCProps) => {
-
-    console.log(`MdxContentRSC`)
 
     let appConfig = _props.appConfig || (await readAppConfig());
 
@@ -65,9 +64,9 @@ export const MdxContentRSC = async ({
     const classNames = getMdxClassnames(_props);
 
     return (
-        <div className={cn("w-full min-h-fit prose-all", classNames)}>
+        <div className={cn("w-full min-h-fit prose-all @container/mdx", classNames)}>
             {autoApplyTitle && data.frontMatter?.title && (
-                <div className={"text-xl w-full text-ce"}>{data.frontMatter.title}</div>
+                <div className={"text-xl w-full text-center"}>{data.frontMatter.title}</div>
             )}
             {data.content}
         </div>
