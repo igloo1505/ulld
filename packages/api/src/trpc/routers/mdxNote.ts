@@ -87,8 +87,8 @@ export const mdxNoteActionsRouter = router({
                     quickLink: noteDetails.quickLink || undefined,
                     sequentialKey: noteDetails.sequentialKey || undefined,
                     sequentialIndex: noteDetails.sequentialIndex || undefined,
-                    firstSync: noteDetails.firstSync?.toString() as string,
-                    lastSync: noteDetails.lastSync?.toString() as string,
+                    firstSync: noteDetails.firstSync?.toString() as string | Date,
+                    lastSync: noteDetails.lastSync?.toString() as string | Date,
                 } : undefined,
             };
         }),

@@ -274,7 +274,7 @@ export class MdxNote extends MdxNoteProtocol {
             let d: Prisma.MdxNoteCreateInput = {
                 rootRelativePath: this.rootRelativePath as string,
                 noteType: this.noteType,
-                content: this.raw as string,
+                content: this.formatted || this.raw as string,
                 title: this.title as string,
                 summary: this.summary,
                 imageSrc: this.imageSrc,
@@ -537,13 +537,9 @@ ${m.groups.content}
                 firstSync: this.firstSync || new Date("1-1-1970"),
                 lastSync: this.lastSync || new Date("1-1-1970"),
                 bookmarked: this.bookmarked,
-                sequentialKey:
-                    typeof this.sequentialKey === "undefined" ? null : this.sequentialKey,
-                sequentialIndex:
-                    typeof this.sequentialIndex === "undefined"
-                        ? null
-                        : this.sequentialIndex,
-                quickLink: this.quickLinkId || null,
+                sequentialKey: this.sequentialKey || undefined,
+                sequentialIndex: this.sequentialIndex || undefined,
+                quickLink: this.quickLinkId || undefined,
             },
         });
         this.formatted = res.content;

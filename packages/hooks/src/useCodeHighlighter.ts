@@ -51,6 +51,7 @@ export const useCodeHighlighter = ({
                         light: themes,
                     }
                     : themes,
+            defaultColor: false
         });
         setValue(val);
         setLoading(false);

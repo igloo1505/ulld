@@ -2,11 +2,14 @@ import { syncMdx, SyncMdxProps } from "./syncMdx";
 import { globSync } from "glob";
 import { prisma } from "@ulld/database";
 import path from "path";
-import {sortNoteTypeDataForParsing, getNoteTypeDataFromPath} from "@ulld/utilities/mdxParserUtils"
+import {
+    sortNoteTypeDataForParsing,
+    getNoteTypeDataFromPath,
+} from "@ulld/utilities/mdxParserUtils";
 
 export type UniversalMdxProps = Omit<
     SyncMdxProps,
-    "file" | "dir" | "docTypeData" | "bookmarked"
+    "file" | "dir" | "docTypeData" | "bookmarked" | "rootRelativePath"
 >;
 
 export const syncDirRecursively = async (props: UniversalMdxProps) => {
@@ -15,8 +18,8 @@ export const syncDirRecursively = async (props: UniversalMdxProps) => {
             rootRelativePath: true,
             id: true,
             noteType: true,
-            bookmarked: true
-        }
+            bookmarked: true,
+        },
     });
 
     allNotes = allNotes.sort(
@@ -39,12 +42,16 @@ export const syncDirRecursively = async (props: UniversalMdxProps) => {
         existingNotePaths = an.map((n) => n.rootRelativePath);
     }
 
-    let noteTypeIds = sortNoteTypeDataForParsing(props.appConfig)
+    let noteTypeIds = sortNoteTypeDataForParsing(props.appConfig);
 
     for await (const rootRelativePath of filePaths) {
         const absPath = path.join(props.appConfig.fsRoot, rootRelativePath);
 
-        let docTypeData = getNoteTypeDataFromPath(rootRelativePath, props.appConfig, noteTypeIds);
+        let docTypeData = getNoteTypeDataFromPath(
+            rootRelativePath,
+            props.appConfig,
+            noteTypeIds,
+        );
 
         if (!docTypeData) {
             console.error(`Can not save ${absPath}. No document type was found.`);
@@ -60,7 +67,10 @@ export const syncDirRecursively = async (props: UniversalMdxProps) => {
                     dir: props.appConfig.fsRoot,
                     docTypeData,
                     rootRelativePath,
-                    bookmarked: Boolean(allNotes.find((x) => x.rootRelativePath === rootRelativePath)?.bookmarked)
+                    bookmarked: Boolean(
+                        allNotes.find((x) => x.rootRelativePath === rootRelativePath)
+                            ?.bookmarked,
+                    ),
                 });
             }
         }
