@@ -52,7 +52,9 @@ const LinePlot = <T extends object>({
                     ...margin,
                 }}
             >
-                {grid && <CartesianGrid vertical={false} />}
+                {grid && <CartesianGrid 
+                    vertical={false}
+                />}
                 {xAxis && (
                     <XAxis
                         dataKey={typeof xAxis === "string" ? xAxis : undefined}

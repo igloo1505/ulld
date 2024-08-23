@@ -1,4 +1,4 @@
-export const colors = {
+export const plotThemeData = {
     bright: [
         "#4477AA",
         "#EE6677",
@@ -64,3 +64,23 @@ export const colors = {
         '#BBBBBB'
     ]
 };
+
+
+export const plotThemes = [
+    "bright",
+    "dutch_field",
+    "high_contrast",
+    "high_vis",
+    "blues",
+    "light",
+    "muted",
+    "retro_metro",
+    "spring_pastels",
+    "retro",
+    "std",
+    "vibrant",
+    "high vis",
+    "high contrast",
+    "retro metro",
+    "spring pastels",
+] as const

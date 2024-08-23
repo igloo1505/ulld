@@ -17,11 +17,9 @@ export const applyRecursiveMdxParsers = async (
                 data: fm
             });
         if (res.content) {
-            console.log("res.content: ", res.content)
             content = res.content;
         }
         if (res.data) {
-            console.log("res.data: ", res.data)
             fm = {
                 ...fm,
                 ...res.data,

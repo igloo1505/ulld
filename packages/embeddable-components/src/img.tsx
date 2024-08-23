@@ -18,7 +18,6 @@ export const isRemote = (p: string, imageRemoteTest?: RegExp[]) => {
 export const ImgComponent = async (
     props: ImgHTMLAttributes<HTMLImageElement>,
 ) => {
-    console.log("props: ", props);
     const config = await readAppConfig();
     let internalProps: ImgHTMLAttributes<HTMLImageElement> = {
         className:
@@ -28,7 +27,9 @@ export const ImgComponent = async (
         internalProps.title = props.title;
     }
     if (!props.src) return;
+    console.log("props: ", props);
     let remote = isRemote(props.src, config.UI.media.imageRemoteTest);
+    console.log("remote: ", remote);
     let src: string | undefined = undefined;
     if (!remote) {
         if (props.src.startsWith("imageMap-")) {
@@ -49,22 +50,35 @@ export const ImgComponent = async (
                 </div>
             );
         } else {
-            console.log(`Getting src as base64 string.`)
-            src = await imageToBase64Url(props.src, config.fsRoot);
+            console.log(`Getting src as base64 string.`);
+            let baseString = await imageToBase64Url(props.src, config.fsRoot);
+            if(!baseString){
+                return null
+            } else {
+                src = baseString
+            }
+            return (
+                // eslint-disable-next-line
+                <img
+                    src={`data:image/${fileExtension(props.src)};base64, ${src}`}
+                    alt={props.alt || "Embedded Mdx Image"}
+                    className={internalProps.className}
+                />
+            );
         }
     }
 
-    if (!remote) {
-        if (!src) return null;
-        return (
-            // eslint-disable-next-line
-            <img
-                src={`data:image/${fileExtension(props.src)};base64, ${src}`}
-                alt={props.alt || "Embedded Mdx Image"}
-                className={internalProps.className}
-            />
-        );
-    }
+    /* if (!remote) { */
+    /*     if (!src) return null; */
+    /*     return ( */
+    /*         // eslint-disable-next-line */
+    /*         <img */
+    /*             src={`data:image/${fileExtension(props.src)};base64, ${src}`} */
+    /*             alt={props.alt || "Embedded Mdx Image"} */
+    /*             className={internalProps.className} */
+    /*         /> */
+    /*     ); */
+    /* } */
 
     return (
         <Image

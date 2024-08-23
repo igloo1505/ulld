@@ -10,6 +10,7 @@ import {
     remarkStructure,
     remarkGfm
 } from "fumadocs-core/mdx-plugins";
+/* import rehypeImgSize from "rehype-img-size"; */
 import remarkMath from "remark-math";
 import rehypeMathjax from "rehype-mathjax/chtml";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -101,6 +102,10 @@ const rehypePlugins = async (
             },
         ],
         rehypeSlug,
+        /* [ */
+        /*     rehypeImgSize, */
+        /*     { dir: "" } */
+        /* ], */
     ];
 };
 

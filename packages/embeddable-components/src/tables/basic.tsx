@@ -1,6 +1,5 @@
 import React, {
     DetailedHTMLProps,
-    ReactNode,
     TableHTMLAttributes,
 } from "react";
 import { TableProps } from "./tableProps";
@@ -116,8 +115,8 @@ const InternalTable = async (props: TableWrapperProps) => {
                 "!mb-8 internalTable no-scrollbar not-prose [&_code]:bg-secondary [&_code]:font-code [&_code]:px-2 [&_code]:py-1 [&_code]:rounded-[3px]"
             }
             style={{
-                ...(config.UI?.table?.maxHeight && {
-                    maxHeight: config.UI.table.maxHeight,
+                ...(config?.UI?.table?.maxHeight && {
+                    maxHeight: config?.UI.table.maxHeight,
                     overflowY: "auto",
                 }),
             }}

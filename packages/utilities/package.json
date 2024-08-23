@@ -112,6 +112,7 @@
     "./arrayUtilities": "./src/utils/arrayUtilities.ts",
     "./latexUtils": "./src/utils/latexUtils.ts",
     "./pathUtilsClientSide": "./src/utils/pathUtilsClientSide.ts",
+    "./pathUtilsServerSide": "./src/utils/pathUtilsServer.ts",
     "./fsUtils": "./src/utils/fsUtils.ts",
     "./utils/general": "./src/utils/general.ts",
     "./utils/identity": "./src/utils/identity.ts",

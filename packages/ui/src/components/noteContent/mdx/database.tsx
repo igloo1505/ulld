@@ -46,7 +46,7 @@ const DatabaseMdxPage = async ({
 
     let parsedData = await props.parsers.mdx.parser({
         content: frontMatter.content,
-        data: frontMatter as Partial<FrontMatterType>,
+        data: frontMatter.data as Partial<FrontMatterType>,
         serverClient: serverClient,
         appConfig: props.parsers.mdx.appConfig,
         db: details,
