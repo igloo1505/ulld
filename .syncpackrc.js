@@ -65,7 +65,17 @@ const config = {
             dependencies: ["gray-matter"],
             packages: ["**"],
             pinVersion: "^4.0.3"
-        }
+        },
+        {
+            dependencies: ["react-pdf"],
+            packages: ["**"],
+            pinVersion: "7.7.1"
+        },
+        {
+            dependencies: ["@react-pdf/renderer"],
+            packages: ["**"],
+            pinVersion: "3.3.8"
+        },
     ],
 };
 
