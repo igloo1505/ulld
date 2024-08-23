@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.87
+
+### Patch Changes
+
+- Update after working offline, with missing installs.
+
 ## 0.0.86
 
 ### Patch Changes

@@ -1,5 +1,33 @@
 # @ulld/task-manager
 
+## 0.0.91
+
+### Patch Changes
+
+- Update after working offline, with missing installs.
+- Updated dependencies
+  - @ulld/api@0.0.91
+  - @ulld/calendar@0.0.91
+  - @ulld/eslint-config@0.0.87
+  - @ulld/typescript-config@0.0.85
+  - @ulld/configschema@0.0.91
+  - @ulld/database@0.0.88
+  - @ulld/developer@0.0.91
+  - @ulld/diagram@0.0.91
+  - @ulld/editor@0.0.91
+  - @ulld/full-form@0.0.91
+  - @ulld/hooks@0.0.91
+  - @ulld/icons@0.0.91
+  - @ulld/jest-presets@0.0.85
+  - @ulld/parsers@0.0.91
+  - @ulld/render@0.0.91
+  - @ulld/state@0.0.91
+  - @ulld/tailwind@0.0.85
+  - @ulld/types@0.0.85
+  - @ulld/ui@0.0.89
+  - @ulld/utilities@0.0.91
+  - @ulld/whiteboard@0.0.91
+
 ## 0.0.90
 
 ### Patch Changes

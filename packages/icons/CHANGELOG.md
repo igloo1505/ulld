@@ -1,5 +1,17 @@
 # @ulld/icons
 
+## 0.0.91
+
+### Patch Changes
+
+- Update after working offline, with missing installs.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.85
+  - @ulld/hooks@0.0.91
+  - @ulld/tailwind@0.0.85
+  - @ulld/types@0.0.85
+  - @ulld/utilities@0.0.91
+
 ## 0.0.90
 
 ### Patch Changes

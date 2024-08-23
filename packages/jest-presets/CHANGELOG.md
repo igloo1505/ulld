@@ -1,5 +1,13 @@
 # @repo/jest-presets
 
+## 0.0.85
+
+### Patch Changes
+
+- Update after working offline, with missing installs.
+- Updated dependencies
+  - @ulld/types@0.0.85
+
 ## 0.0.84
 
 ### Patch Changes

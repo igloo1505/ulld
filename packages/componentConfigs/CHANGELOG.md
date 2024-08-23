@@ -1,5 +1,22 @@
 # @ulld/component-configs
 
+## 0.0.91
+
+### Patch Changes
+
+- Update after working offline, with missing installs.
+- Updated dependencies
+  - @ulld/api@0.0.91
+  - @ulld/typescript-config@0.0.85
+  - @ulld/configschema@0.0.91
+  - @ulld/developer@0.0.91
+  - @ulld/hooks@0.0.91
+  - @ulld/state@0.0.91
+  - @ulld/tailwind@0.0.85
+  - @ulld/types@0.0.85
+  - @ulld/ui@0.0.89
+  - @ulld/utilities@0.0.91
+
 ## 0.0.90
 
 ### Patch Changes

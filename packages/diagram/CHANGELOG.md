@@ -1,5 +1,18 @@
 # @ulld/diagram
 
+## 0.0.91
+
+### Patch Changes
+
+- Update after working offline, with missing installs.
+- Updated dependencies
+  - @ulld/api@0.0.91
+  - @ulld/typescript-config@0.0.85
+  - @ulld/developer@0.0.91
+  - @ulld/state@0.0.91
+  - @ulld/tailwind@0.0.85
+  - @ulld/types@0.0.85
+
 ## 0.0.90
 
 ### Patch Changes
