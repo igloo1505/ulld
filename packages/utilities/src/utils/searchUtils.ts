@@ -34,7 +34,7 @@ export const searchAllParamsToSearchParamsClass = (
     }
     if (sp.tags) {
         for (const t of ArrayUtilities.beArray(sp.tags)) {
-            data.append("tag", t);
+            data.append("tags", t);
         }
     }
     if (sp.take) {
@@ -45,7 +45,7 @@ export const searchAllParamsToSearchParamsClass = (
     }
     if (sp.topics) {
         for (const t of ArrayUtilities.beArray(sp.topics)) {
-            data.append("topic", t);
+            data.append("topics", t);
         }
     }
     if (sp.subjects) {

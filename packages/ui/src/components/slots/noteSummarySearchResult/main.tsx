@@ -8,6 +8,7 @@ import { getRandomId } from "@ulld/utilities/identity";
 
 const NoteSummaryWrapper = (props: NoteSummaryProps) => {
     const cardId = getRandomId(12);
+    console.log("props: ", props)
     return (
         <ThemedSummaryCardContextMenu 
             cardId={cardId}

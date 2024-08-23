@@ -173,7 +173,7 @@ export const toDoRouter = router({
             if(filters.length === 0) {
                 return []
             }
-            return await prisma.toDoList.findMany({
+            let res = await prisma.toDoList.findMany({
                 where: {
                     AND: filters,
                 },
@@ -202,6 +202,19 @@ export const toDoRouter = router({
                     },
                 },
             });
+           return res.map((x) => {
+            return {
+                ...x,
+                createdAt: x.createdAt instanceof Date ? x.createdAt.toUTCString() : x.createdAt,
+                tasks: x.tasks.map((t) => {
+                    return {
+                        ...t,
+                        dueAt: t.dueAt instanceof Date ? t.dueAt.toUTCString() : t.dueAt,
+                        createdAt: t.createdAt instanceof Date ? t.createdAt.toUTCString() : t.createdAt
+                    }
+                })
+            }
+        })
         }),
     getOverdueTasksByListId: publicProcedure
         .input(z.number())

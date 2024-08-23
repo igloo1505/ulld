@@ -59,7 +59,7 @@ const DefaultNoteSummaryCard = ({
                     </Link>
                 </CardTitle>
                 {item?.firstSync && (
-                    <CardDescription>
+                    <CardDescription className={"text-sm"}>
                         {DateTime.formatDate(item.firstSync)}
                     </CardDescription>
                 )}
