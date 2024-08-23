@@ -181,7 +181,8 @@
     "./mdxParserUtils": "./src/parsingUtilities/mdx/getNoteTypeDataFromPath.ts",
     "./fsRootGlob": "./src/utils/fsRootGlob.ts",
     "./settingPageSection": "./src/components/settingPageUtils/settingPageSection.tsx",
-    "./settingPageContainer": "./src/components/settingPageUtils/settingPageContainer.tsx"
+    "./settingPageContainer": "./src/components/settingPageUtils/settingPageContainer.tsx",
+    "./disableBookmark": "./src/components/disableBookmark.tsx"
   },
   "files": [
     "src"

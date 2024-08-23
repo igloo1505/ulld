@@ -427,14 +427,15 @@ export class BibEntry {
             );
             return (
                 <Link
+                    key={`citation-entry-${this.id}`}
                     href={`/searchAll?${formatSearchAllParams({ citations: [this.id.toLowerCase()] })}`}
+                    className={"indent-4 text-foreground/60 hover:text-foreground transition-colors duration-200"}
+                    id={`bib-${this.id.toLowerCase()}`}
                 >
                     <div
-                        id={`bib-${this.id.toLowerCase()}`}
                         className={
-                            "flex flex-row justify-start items-start gap-4 text-sm text-gray-600 dark:text-gray-400"
+                            "flex flex-row justify-start items-start gap-4 text-sm"
                         }
-                        key={`cit-${this.id}`}
                         dangerouslySetInnerHTML={{ __html: htmlContent }}
                     />
                 </Link>

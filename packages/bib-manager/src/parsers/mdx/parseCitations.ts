@@ -7,11 +7,7 @@ import {
 import { replaceRecursively } from "@ulld/utilities/general";
 
 const formatCitation = (s: string, index: number) => {
-    return `<span style={{
-width: "0.5rem",
-height: "100%",
-position: "relative"
-}}><a href='#bib-${s}' className="citation citationAnchor" id="cit-${s}-idx-${index}">${index + 1}</a></span>`;
+    return `<sup><a href='#bib-${s.toLowerCase()}' className="citation citationAnchor" id="cit-${s}-idx-${index}">${index + 1}</a></sup>`;
 };
 
 interface ExtendedFrontMatter {

@@ -21,7 +21,7 @@ const SnippetLanguageSelect = ({ params }: SnippetLanguageSelectProps) => {
     const router = useRouter();
 
     const handleSelectChange = (value: string) => {
-        if (value === "all") {
+        if (value.toLowerCase() === "all") {
             return router.push(`/snippets`);
         }
         let p = params

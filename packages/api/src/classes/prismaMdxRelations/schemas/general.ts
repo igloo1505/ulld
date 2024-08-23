@@ -121,8 +121,8 @@ export const bibEntryPropsSchema = z
             .array()
             .default([])
             .transform((a) => a.map((b) => new Tag(b))),
-        type: z.string(),
         id: z.string().toLowerCase(),
+        type: z.string().nullish(),
         htmlCitation: z.string().nullish(),
         PdfPath: z.string().nullish(),
         address: z.string().nullish(),

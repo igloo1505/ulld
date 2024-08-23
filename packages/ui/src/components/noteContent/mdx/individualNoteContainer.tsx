@@ -8,12 +8,17 @@ import { CalendarAndDateManager } from "@ulld/api/classes/data/calendarAndDate";
 import { getClassesFromFrontMatter } from "../../../actions/universal/getClassesFromFrontMatter";
 import { FrontMatterType } from "@ulld/types";
 import { MdxDetailsReturnType } from "@ulld/api/types";
+import type { serverClient } from "@ulld/api/serverClient";
 
 interface IndividualNoteContainerProps {
     children: ReactNode;
     type: "fs" | "database";
     parsedData: FrontMatterType & any;
     details: MdxDetailsReturnType;
+    citations?: NonNullable<
+        Awaited<ReturnType<typeof serverClient.mdx.getDatabaseMdx>>
+    >["citations"];
+    citationOrderList: string[]
 }
 
 const IndividualNoteContainer = ({
@@ -21,6 +26,8 @@ const IndividualNoteContainer = ({
     children,
     parsedData,
     details,
+    citations = [],
+    citationOrderList
 }: IndividualNoteContainerProps) => {
     return (
         <div
@@ -47,7 +54,8 @@ const IndividualNoteContainer = ({
                 fs={type === "fs"}
             />
             <MdxCitations
-                citations={parsedData.citations ? parsedData.citations : []}
+                citations={citations}
+                citationOrderList={citationOrderList || []}
             />
             <SequentialNoteBottomBar
                 sequentialIndex={details?.sequentialIndex}

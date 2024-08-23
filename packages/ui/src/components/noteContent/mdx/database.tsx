@@ -27,6 +27,8 @@ const DatabaseMdxPage = async ({
         `${props.noteProps.rootRelativePath}.mdx`,
     );
 
+    console.log("item: ", item)
+
 
     if (!item) {
         return notFound();
@@ -69,6 +71,8 @@ const DatabaseMdxPage = async ({
                 parsedData={parsedData.data || frontMatter}
                 type="fs"
                 details={details}
+                citations={item.citations}
+                citationOrderList={item.citationsListOrder}
             >
                 <MdxContentRSC
                     content={parsedData?.content || frontMatter.content}

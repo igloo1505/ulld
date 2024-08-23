@@ -9,7 +9,6 @@ export const getLatexTocEntries = (
     toc: TOCItemType[] = [],
     content: string,
 ) => { 
-    console.log(`getLatexTocEntries`)
     let titles = content.split("\n").filter((f) => f.trim().startsWith("#"));
     let t: TOCItemType[]  = [];
     if (toc.length !== titles.length) {
@@ -35,7 +34,6 @@ export const getLatexTocEntries = (
 
 
 export const getTocFromContent = async (content: string) => {
-    console.log(`getTocFromContent`)
     let tocItems = await getTableOfContents(content)
     return getLatexTocEntries(
         tocItems,

@@ -1,4 +1,4 @@
-import type { AllDynamicIconNames } from "@ulld/icons";
+import type { ValidIconName } from "@ulld/icons";
 import { z } from 'zod'
 
 export const navigationLinkCategory = z.union([
@@ -28,6 +28,6 @@ export type NavigationLinkCategory = z.input<typeof navigationLinkCategory>
 export type NavigationLinkType = {
     label: string;
     href: string;
-    icon?: AllDynamicIconNames;
+    icon?: ValidIconName;
     category?: NavigationLinkCategory
 };

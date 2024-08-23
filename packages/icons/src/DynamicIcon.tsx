@@ -129,13 +129,13 @@ const iconNameMap: {
     fitness: "dumbbell",
     focus: "glasses",
     idea: "lightbulb",
-    important: "alert-circle",
+    important: "circle-alert",
     journal: "pencil-line",
-    latex: "function-square",
+    latex: "square-function",
     math: "sigma",
     paperPdf: "file-text",
     physics: "atom",
-    physicsData: "bar-chart-big",
+    physicsData: "chart-bar-big",
     quicknote: "sticky-note",
     readingList: "book-open-check",
     recipe: "utensils",
@@ -153,18 +153,18 @@ const iconNameMap: {
     info: "info",
     note: "pen",
     tip: "hand",
-    faq: "help-circle",
+    faq: "circle-help",
     abstract: "scroll-text",
     todo: "list-todo",
     success: "thumbs-up",
-    warn: "alert-triangle",
+    warn: "triangle-alert",
     fail: "thumbs-down",
     example: "microscope",
     quote: "quote",
     cite: "book-marked",
     equation: "variable",
     definition: "book",
-    practice: "line-chart",
+    practice: "chart-line",
 };
 
 export type ValidIconName =
@@ -184,7 +184,6 @@ interface IconProps extends LucideProps {
     onLoad?: () => void
 }
 
-const DynamicIconComponent = ({ name, ...props }: IconProps) => { };
 
 export const DynamicIcon = (props: IconProps) => {
     const { name } = props;
