@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.90
+
+### Patch Changes
+
+- Update after working offline.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.86
+  - @ulld/typescript-config@0.0.84
+  - @ulld/configschema@0.0.90
+  - @ulld/database@0.0.87
+  - @ulld/logger@0.0.84
+  - @ulld/types@0.0.84
+
 ## 0.0.89
 
 ### Patch Changes

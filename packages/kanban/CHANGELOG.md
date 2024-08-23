@@ -1,5 +1,20 @@
 # @ulld/kanban
 
+## 0.0.90
+
+### Patch Changes
+
+- Update after working offline.
+- Updated dependencies
+  - @ulld/api@0.0.90
+  - @ulld/typescript-config@0.0.84
+  - @ulld/developer@0.0.90
+  - @ulld/jest-presets@0.0.84
+  - @ulld/logger@0.0.84
+  - @ulld/state@0.0.90
+  - @ulld/tailwind@0.0.84
+  - @ulld/types@0.0.84
+
 ## 0.0.89
 
 ### Patch Changes

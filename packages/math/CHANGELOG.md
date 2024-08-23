@@ -1,5 +1,20 @@
 # @ulld/math
 
+## 0.0.90
+
+### Patch Changes
+
+- Update after working offline.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.84
+  - @ulld/configschema@0.0.90
+  - @ulld/hooks@0.0.90
+  - @ulld/icons@0.0.90
+  - @ulld/jest-presets@0.0.84
+  - @ulld/state@0.0.90
+  - @ulld/types@0.0.84
+  - @ulld/utilities@0.0.90
+
 ## 0.0.89
 
 ### Patch Changes

@@ -1,37 +1,37 @@
 {
-    "name": "@ulld/base-configs",
-    "version": "0.0.83",
-    "dependencies": {
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0"
-    },
-    "devDependencies": {
-        "next": "^14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0"
-    },
-    "exports": {
-        ".": "./src/index.ts",
-        "./beta": "./src/validConfig.ts"
-    },
-    "files": [
-        "src"
-    ],
-    "main": "./src/index.ts",
-    "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {
-        "@ulld/types": "workspace:*"
-    },
-    "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
-    "scripts": {
-        "build": "echo 'Add build script here'",
-        "dev": "echo 'Add dev script here'",
-        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-        "test": "echo 'Add test script here'"
-    },
-    "types": "./src/index.ts"
+  "name": "@ulld/base-configs",
+  "version": "0.0.84",
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "next": "^14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./beta": "./src/validConfig.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "main": "./src/index.ts",
+  "packageManager": "pnpm@9.0.4",
+  "peerDependencies": {
+    "@ulld/types": "workspace:*"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "echo 'Add build script here'",
+    "dev": "echo 'Add dev script here'",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "echo 'Add test script here'"
+  },
+  "types": "./src/index.ts"
 }

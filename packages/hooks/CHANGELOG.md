@@ -1,5 +1,20 @@
 # @ulld/hooks
 
+## 0.0.90
+
+### Patch Changes
+
+- Update after working offline.
+- Updated dependencies
+  - @ulld/api@0.0.90
+  - @ulld/component-map@0.0.90
+  - @ulld/typescript-config@0.0.84
+  - @ulld/configschema@0.0.90
+  - @ulld/database@0.0.87
+  - @ulld/parsers@0.0.90
+  - @ulld/types@0.0.84
+  - @ulld/utilities@0.0.90
+
 ## 0.0.89
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/utilities
 
+## 0.0.90
+
+### Patch Changes
+
+- Update after working offline.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.84
+  - @ulld/database@0.0.87
+  - @ulld/math@0.0.90
+  - @ulld/tailwind@0.0.84
+  - @ulld/types@0.0.84
+
 ## 0.0.89
 
 ### Patch Changes
