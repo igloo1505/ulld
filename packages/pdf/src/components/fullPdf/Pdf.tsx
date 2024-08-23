@@ -1,5 +1,5 @@
 "use client";
-import React from "react"
+import React from "react";
 import "./initPdf";
 import "react-pdf/dist/Page/TextLayer.css";
 import "react-pdf/dist/Page/AnnotationLayer.css";
@@ -15,7 +15,9 @@ import { Button } from "@ulld/tailwind/button";
 import { pdfStateClasses } from "../../types";
 import { DynamicIcon } from "@ulld/icons";
 import { PdfManager, TextRendererType } from "@ulld/state/classes/pdfManager";
-
+import { AppConfigSchemaOutput } from "@ulld/configschema/types";
+import { usePdfFileBlob } from "./usePdfFileBlob";
+import { useInitialRender} from "@ulld/hooks/useInitialRender"
 export const options = {
     standardFontDataUrl: "/standard_fonts/",
 };
@@ -36,6 +38,7 @@ interface Props {
     allowToc: boolean;
     noResponsive?: boolean;
     onPageLoad?: () => void;
+    appConfig: AppConfigSchemaOutput;
 }
 
 export const PdfViewer = ({
@@ -52,17 +55,19 @@ export const PdfViewer = ({
     setViewState,
     tocContainerRef,
     canvasRef,
+    appConfig,
 }: Props) => {
-    const [fileBlob, setFileBlob] = useState<any | null>(null);
     const [numPages, setNumPages] = useState<number>(null as unknown as number);
     const [pageNumber, setPageNumber] = useState(forcePage || 1);
     const [width, setWidth] = useState(768);
+    const [fileBlob, setFilePath] = usePdfFileBlob(file, canvasRef, appConfig);
+    const initialRender = useInitialRender()
 
-    const setFile = async () => {
-        const manager = new PdfManager(file);
-        let response = await manager.getFile();
-        setFileBlob(response.data);
-    };
+    useEffect(() => {
+        if(!initialRender){
+            setFilePath(file)
+        }
+    }, [file])
 
     const handleWidth = () => {
         if (typeof window === "undefined" || noResponsive) return;
@@ -80,12 +85,6 @@ export const PdfViewer = ({
         if (typeof window === "undefined") return;
         window.addEventListener("resize", handleWidth);
         return () => window.removeEventListener("resize", handleWidth);
-    }, []);
-
-    useEffect(() => {
-        if (!fileBlob) {
-            setFile();
-        }
     }, []);
 
     function onDocumentLoadSuccess({ numPages, ...data }: { numPages: number }) {
@@ -123,7 +122,6 @@ export const PdfViewer = ({
     };
 
     const handleGridClick: DocumentProps["onItemClick"] = (item) => {
-        console.log("handleGridClick");
         setPageNumber(item.pageNumber);
         setViewState && setViewState("withNavigation");
     };

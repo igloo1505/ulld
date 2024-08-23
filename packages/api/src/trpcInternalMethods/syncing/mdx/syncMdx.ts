@@ -40,7 +40,6 @@ export const syncMdx = async ({
     docTypeData
 }: SyncMdxProps) => {
     let fileContent = await fs.promises.readFile(file, { encoding: "utf-8" });
-    console.info(`Saving ${file}`)
     let mdxNoteParserParams: MdxNoteParseParams = {
         appConfig,
         parser: unifiedMdxParser,

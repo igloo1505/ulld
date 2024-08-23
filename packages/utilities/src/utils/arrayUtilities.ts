@@ -213,4 +213,7 @@ export class ArrayUtilities {
         } while (shouldRun);
         return items
     }
+    static clampInArray<T extends unknown>(arr: T[], index: number): T {
+        return index >= arr.length ? arr[index % arr.length] : arr[index]
+    }
 }

@@ -1,4 +1,5 @@
 import { FilePathProp } from "@ulld/utilities/types";
+import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 
 export type PdfPageSearchParams = {
     file: string;
@@ -16,4 +17,5 @@ export const pdfStateClasses = {
 export interface FullPdfProps<T extends object = {}> {
     file: FilePathProp;
     searchParams: PdfPageSearchParams & T;
+    appConfig: AppConfigSchemaOutput;
 }

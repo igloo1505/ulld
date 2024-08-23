@@ -516,7 +516,6 @@ ${m.groups.content}
             this.frontMatter = data
         }
     }
-    /* TODO: Actually apply the new parser now, once everything is moved over to the package based parser approach. */
     async parse(params: MdxNoteParseParams) {
         let c = this.formatted || this.raw;
         if (!c) return "";
@@ -545,7 +544,6 @@ ${m.groups.content}
         this.formatted = res.content;
         if (res.data) {
             console.log(`Applying parsed front matter`)
-            /* console.log("res.data: ", res.data) */
             this.applyParsedFrontMatter(res.data, true)
         }
         /* this.formatted = this.parseEquationTags(formatted); // Math package */

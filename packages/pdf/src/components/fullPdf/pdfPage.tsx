@@ -33,8 +33,6 @@ const PdfPage = ({ pageNum, pageWidth, forcePage, textRenderer, onLoad, canvasRe
 
     const singlePage = typeof forcePage !== "undefined"
 
-    console.log("pageWidth: ", pageWidth)
-
     return (
         <>
             <Page

@@ -16,7 +16,6 @@ import { htmlEm } from "@ulld/state/actions/clientOnly/dom";
 import { FullPdfProps, pdfStateClasses } from "../../types";
 type WithoutLoading = Omit<typeof pdfStateClasses, "loading">;
 
-
 const nameMap: Record<keyof WithoutLoading, string> = {
     annotating: "Annotate",
     allPages: "View All",
@@ -24,7 +23,6 @@ const nameMap: Record<keyof WithoutLoading, string> = {
     withNavigation: "Single Page",
     asGrid: "Grid",
 };
-
 
 interface ButtonProps {
     stateClass: keyof WithoutLoading;
@@ -56,7 +54,7 @@ const getClasses = (classes: PdfClassKey[]) => {
     return classes.map((c) => pdfStateClasses[c]).join(" ");
 };
 
-const PdfPageWrapper = ({ file }: FullPdfProps) => {
+const PdfPageWrapper = ({ file, appConfig }: FullPdfProps) => {
     const [pdfViewState, setPdfViewState] = useState<PdfClassKey[]>([
         "withNavigation",
     ]);
@@ -109,7 +107,10 @@ const PdfPageWrapper = ({ file }: FullPdfProps) => {
         return () => window.removeEventListener("resize", matchHeight);
     }, []);
 
-    const manager = useMemo(() => new PdfManager(file.rootRelativePath, canvasRef), []);
+    const manager = useMemo(
+        () => new PdfManager(file.rootRelativePath, canvasRef, appConfig),
+        [],
+    );
 
     const resetSelections = () => {
         manager.selectedText = [];
@@ -155,10 +156,12 @@ const PdfPageWrapper = ({ file }: FullPdfProps) => {
                         noResponsive
                         allowToc={true}
                         canvasRef={canvasRef}
+                        appConfig={appConfig}
                         textRenderer={annotationRenderer}
                         file={file.rootRelativePath}
                         tocContainerRef={tocContainerRef}
                         viewState={pdfViewState}
+                        manager={manager}
                         setViewState={handleStateChange}
                     />
                 </div>

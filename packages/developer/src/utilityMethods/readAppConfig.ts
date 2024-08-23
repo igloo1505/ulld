@@ -16,3 +16,19 @@ export const readAppConfig = async () => {
         throw new Error("Unable to read appConfig in readAppConfig method.")
     }
 };
+
+
+export const readAppConfigSync = () => {
+    let _path = Boolean(
+        process.env.USE_ULLD_TEST_APP_CONFIG && process.env.ULLD_ADDITIONAL_SOURCES,
+    )
+        ? path.join(process.env.ULLD_ADDITIONAL_SOURCES!, "appConfig.ulld.json")
+        : path.join(process.cwd(), "appConfig.ulld.json");
+    try {
+        let res = fs.readFileSync(_path, { encoding: "utf-8" });
+        return JSON.parse(res) as AppConfigSchemaOutput;
+    } catch (err) {
+        console.error("Error in readAppConfigSync: ", err);
+        throw new Error("Unable to read appConfig in readAppConfig method.")
+    }
+}

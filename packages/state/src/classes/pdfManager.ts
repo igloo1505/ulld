@@ -1,8 +1,8 @@
-import { ParsedAppConfig } from "@ulld/configschema/types";
-import {  getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
+import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import axios from 'axios'
 import { PageProps } from "react-pdf";
 import { replaceRecursively } from "@ulld/utilities/utils/general";
+import { readAppConfigSync } from "@ulld/developer/readAppConfig";
 
 
 export type TextItemType = {
@@ -14,7 +14,6 @@ export type TextItemType = {
 export type TextRendererType = PageProps['customTextRenderer']
 
 
-// HACK: Needed to remove from PdfManager class to avoid 'this' being interpreted as the window object.
 
 export class PdfManager {
     file?: string
@@ -22,10 +21,10 @@ export class PdfManager {
     lastQueryIndex: number = 0
     pdfGroupRef?: React.RefObject<HTMLDivElement>
     canvasRect?: DOMRect
-    constructor(public rootRelativePath?: string, public canvasRef?: React.RefObject<HTMLCanvasElement>, _config?: ParsedAppConfig) {
-        const internalConfig = _config || getInternalConfig()
-        if (this.rootRelativePath && this.rootRelativePath?.indexOf(internalConfig.fsRoot) !== -1) {
-            this.rootRelativePath = this.rootRelativePath.split(internalConfig.fsRoot)[1]
+    constructor(public rootRelativePath: string | undefined, public canvasRef: React.RefObject<HTMLCanvasElement> | undefined, _config: AppConfigSchemaOutput | undefined) {
+        const appConfig = _config ? _config : readAppConfigSync()
+        if (this.rootRelativePath && this.rootRelativePath?.indexOf(appConfig.fsRoot) !== -1) {
+            this.rootRelativePath = this.rootRelativePath.split(appConfig.fsRoot)[1]
         }
         let _s = this.rootRelativePath ? this.rootRelativePath.split("/") : undefined
         this.file = _s?.at(-1) || undefined

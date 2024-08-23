@@ -26,6 +26,7 @@ export class NumericList {
                 d.push(shouldSubtract ? prv! - delta : prv! + delta);
             }
         } while (d[d.length - 1] < b);
+        return new NumericList(d)
     }
     private applyOperation(
         n: number | NumericList | number[],
