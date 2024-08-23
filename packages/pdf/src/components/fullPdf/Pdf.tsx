@@ -14,7 +14,7 @@ import { ChevronRight } from "lucide-react";
 import { Button } from "@ulld/tailwind/button";
 import { pdfStateClasses } from "../../types";
 import { DynamicIcon } from "@ulld/icons";
-import { PdfManager, TextRendererType } from "@ulld/state/classes/pdfManager";
+import { TextRendererType } from "@ulld/state/classes/pdfManager";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import { usePdfFileBlob } from "./usePdfFileBlob";
 import { useInitialRender} from "@ulld/hooks/useInitialRender"
@@ -152,7 +152,7 @@ export const PdfViewer = ({
                             >
                                 <DynamicIcon
                                     name={"paperPdf"}
-                                    className={"bg-primary text-primary-content m-2"}
+                                    className={"bg-primary text-primary-foreground m-2"}
                                 />
                             </Link>
                         )}
@@ -191,7 +191,7 @@ export const PdfViewer = ({
                     {!forcePage && (
                         <div
                             className={
-                                "flex-col justify-center items-center gap-2 hidden group-[.pdf-with-navigation]/pdfContainer:flex group-[.pdf-annotating]/pdfContainer:flex"
+                                "flex-col justify-center items-center gap-2 hidden group-[.pdf-with-navigation]/pdfContainer:flex group-[.pdf-annotating]/pdfContainer:flex mb-4 mt-2"
                             }
                         >
                             <p>

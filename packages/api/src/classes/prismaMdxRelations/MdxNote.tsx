@@ -52,6 +52,7 @@ import { mdxNoteSummaryWithMdxTransforms } from "./schemas/withMdxTransforms";
 import { UnifiedMdxParser, UnifiedMdxParserParams } from "../../types";
 import { FrontMatterType } from "@ulld/types";
 import { getNoteTypeDataFromPath } from "@ulld/utilities/mdxParserUtils";
+import { serverClient } from "../../trpc/serverClient";
 
 /* TODO: Create a field saving the components to include for each note based on a regex test ahead of time so this query doesn't need to be ran on each load. Make this optional in the appConfig */
 
@@ -243,11 +244,11 @@ export class MdxNote extends MdxNoteProtocol {
         config: AppConfigSchemaOutput,
         noteTypeId?: string,
     ): Prisma.MdxNoteCreateInput | undefined {
-        if(!this.noteType){
-            if(noteTypeId){
-                this.noteType = noteTypeId
-            } else if(this.docTypeData) {
-                this.noteType = this.docTypeData.docType || this.docTypeData.id
+        if (!this.noteType) {
+            if (noteTypeId) {
+                this.noteType = noteTypeId;
+            } else if (this.docTypeData) {
+                this.noteType = this.docTypeData.docType || this.docTypeData.id;
             }
         }
         this.checkAutoProperties(autoSettings, config);
@@ -274,7 +275,7 @@ export class MdxNote extends MdxNoteProtocol {
             let d: Prisma.MdxNoteCreateInput = {
                 rootRelativePath: this.rootRelativePath as string,
                 noteType: this.noteType,
-                content: this.formatted || this.raw as string,
+                content: this.formatted || (this.raw as string),
                 title: this.title as string,
                 summary: this.summary,
                 imageSrc: this.imageSrc,
@@ -359,6 +360,7 @@ export class MdxNote extends MdxNoteProtocol {
         noteTypeId?: string,
     ) {
         let ci = this.createInput(autoSettings, config, noteTypeId);
+        console.log("createInput: ", ci);
         if (ci && ci !== undefined) {
             let d: Prisma.MdxNoteCreateArgs = {
                 data: ci as Prisma.MdxNoteCreateInput,
@@ -472,7 +474,7 @@ ${m.groups.content}
         /* } */
         return await nt.parse(parserParams);
     }
-    applyStandardFrontMatter(applyIfAlreadySet: boolean = false) {
+    async applyStandardFrontMatter(applyIfAlreadySet: boolean = false) {
         if (!this.raw) {
             console.error(
                 `Could not parse front matter in the applyStandardFrontMatter MdxNote method. No content was found.`,
@@ -484,9 +486,13 @@ ${m.groups.content}
         }
         let res = grayMatter(this.raw);
         let data = res.data as Partial<FrontMatterType>;
-        this.applyParsedFrontMatter(data)
+        await this.applyParsedFrontMatter(data, true);
     }
-    applyParsedFrontMatter(data: FrontMatterType & Record<string, any>, setFrontMatterProperty: boolean = false){
+    async applyParsedFrontMatter(
+        data: FrontMatterType & Record<string, any>,
+        setFrontMatterProperty: boolean = false,
+    ) {
+        console.log("frontMatter data: ", data);
         if (data.title) {
             this.title = data.title;
         }
@@ -495,34 +501,82 @@ ${m.groups.content}
         }
         data.tags &&
             (this.tags = this.tags.concat(
-                ArrayUtilities.beArray(data.tags).map((t) => new Tag({ value: t })),
+                ArrayUtilities.beArray(data.tags).map((t) =>
+                    typeof t === "string" ? new Tag({ value: t }) : (t as Tag),
+                ),
             ));
         data.topics &&
             (this.topics = this.topics.concat(
-                ArrayUtilities.beArray(data.topics).map((t) => new Topic({ value: t })),
+                ArrayUtilities.beArray(data.topics).map((t) =>
+                    typeof t === "string" ? new Topic({ value: t }) : (t as Topic),
+                ),
             ));
         data.subjects &&
             (this.subjects = this.subjects.concat(
-                ArrayUtilities.beArray(data.subjects).map(
-                    (t) => new Subject({ value: t }),
+                ArrayUtilities.beArray(data.subjects).map((t) =>
+                    typeof t === "string" ? new Subject({ value: t }) : (t as Subject),
                 ),
             ));
+        let existingCitationIds = this.citations.map((x) => x.id);
+        if (data.citations && data.citations?.length) {
+            for await (const citation of data.citations as BibEntry[]) {
+                if (!existingCitationIds.includes(citation.id)) {
+                    this.citations.push(citation);
+                }
+            }
+        }
+        if (
+            data.citationsListOrder &&
+            data.citationsListOrder.length === this.citations.length
+        ) {
+            this.citationsListOrder = data.citationsListOrder;
+        } else {
+            this.citationsListOrder = this.citations
+                .sort((a: any, b: any) => a.tempPageIndex - b.tempPageIndex)
+                .map((c) => c.id);
+        }
+        if (data.equationIds && data.equationIds?.length) {
+            for (const k of data.equationIds as string[]) {
+                if (!this.equationIds.includes(k)) {
+                    this.equationIds.push(k);
+                }
+            }
+        }
+        if (data.definitions && data.definitions.length) {
+            let existingDefinitionLabels = this.definitions.map((x) => x.label);
+            for (const d of data.definitions as Definition[]) {
+                if (!existingDefinitionLabels.includes(d.label)) {
+                    this.definitions.push(d);
+                }
+            }
+        }
+        if (data.outgoingQuickLinks && data.outgoingQuickLinks.length) {
+            this.outgoingQuickLinks = ArrayUtilities.concatWithOptionalArray(
+                this.outgoingQuickLinks,
+                data.outgoingQuickLinks as string[],
+            );
+        }
+        if (data.equationIds && data.equationIds.length) {
+            this.equationIds = this.equationIds.concat(data.equationIds);
+        }
         data.sequentialKey && (this.sequentialKey = data.sequentialKey);
         data.sequential && (this.sequentialIndex = data.sequential);
         /* data.remoteUrl && (this.remoteUrl = data.remoteUrl); */
         data.importantValues && (this.importantValues = data.importantValues);
         this.haveSetFrontMatter = true;
-        if(setFrontMatterProperty){
-            this.frontMatter = data
+        if (setFrontMatterProperty) {
+            this.frontMatter = data;
         }
     }
     async parse(params: MdxNoteParseParams) {
         let c = this.formatted || this.raw;
         if (!c) return "";
         if (!this.haveSetFrontMatter) {
-            this.applyStandardFrontMatter();
+            await this.applyStandardFrontMatter();
         }
-        let serverClient = await import("../../trpc/serverClient").then((x) => x.serverClient)
+        let serverClient = await import("../../trpc/serverClient").then(
+            (x) => x.serverClient,
+        );
         let res = await params.parser({
             content: c,
             serverClient: serverClient,
@@ -543,11 +597,11 @@ ${m.groups.content}
         });
         this.formatted = res.content;
         if (res.data) {
-            console.log(`Applying parsed front matter`)
-            this.applyParsedFrontMatter(res.data, true)
+            console.log(`Applying parsed front matter`);
+            await this.applyParsedFrontMatter(res.data, true);
         }
         /* this.formatted = this.parseEquationTags(formatted); // Math package */
-        this.equationIds = this.getEquationIds(this.formatted || this.raw);
+        /* this.equationIds = this.getEquationIds(this.formatted || this.raw); */
         return this.formatted;
     }
 

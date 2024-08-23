@@ -1,10 +1,8 @@
 import { UnifiedMdxParser } from "../../../types";
-import { tagZodObject } from "@ulld/configschema/configUtilityTypes/docTypes";
-import { Tag } from "../../../classes/prismaMdxRelations/tag";
 import { replaceRecursively } from "@ulld/utilities/general";
 
 interface ExtendedFrontMatter {
-    parsedTags: Tag[]
+    tags: string[]
 }
 
 const formatTag = (s: string) => {
@@ -50,13 +48,12 @@ export const parseTags: UnifiedMdxParser<ExtendedFrontMatter> = async (
         }
     } while (l);
 
-    console.log("c: ", c)
 
     return {
         content: c,
         data: {
             ...data.data,
-            parsedTags: results.map((t) => new Tag(tagZodObject.parse(t))),
+            tags: [...(data.data?.tags || []), ...results],
         },
     };
 };

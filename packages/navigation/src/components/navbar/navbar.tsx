@@ -6,20 +6,12 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { SearchIcon, BookmarkIcon } from "lucide-react";
 import { toggleBookmark } from "@ulld/api/actions/clientOnly/bookmarking";
-import { useEventListener } from "@ulld/hooks/useEventListener";
 import { NavbarComponentProps } from "../../types";
-import { isAborted } from "zod";
+import { useActiveNoteIdValue } from "@ulld/hooks/useActiveNoteId";
 
 const NavShowBreakpoint = 20;
 
 interface NavbarProps extends NavbarComponentProps { }
-
-declare global {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
-    interface WindowEventMap {
-        "set-note-id": CustomEvent<{ noteId: number | false }>;
-    }
-}
 
 const showButtonTypes: NavbarComponentProps["navConfig"]["bookmarkLink"][] = [
     "both",
@@ -29,18 +21,12 @@ const showButtonTypes: NavbarComponentProps["navConfig"]["bookmarkLink"][] = [
 const Navbar = ({ navConfig: nav, noteTypes, logo: Logo }: NavbarProps) => {
     const pathname = usePathname();
     const [show, setShow] = useState(pathname !== "/");
-    const [noteId, setNoteId] = useState<number | undefined>(undefined);
+    const activeNoteId  = useActiveNoteIdValue();
     const [isAbsolute, setIsAbsolute] = useState(pathname === "/");
 
     useEffect(() => {
-      setIsAbsolute(pathname === "/")
-
-    }, [pathname])
-    
-
-    useEventListener("set-note-id", (e) =>
-        setNoteId(e.detail.noteId === false ? undefined : e.detail.noteId),
-    );
+        setIsAbsolute(pathname === "/");
+    }, [pathname]);
 
     const hoverListener = (e: MouseEvent) => {
         if (pathname !== "/") {
@@ -71,7 +57,7 @@ const Navbar = ({ navConfig: nav, noteTypes, logo: Logo }: NavbarProps) => {
             className={clsx(
                 "z-10 bg-gray-50 shadow dark:bg-gray-950 h-[--nav-height] flex justify-center items-center border-b dark:border-b-gray-800 w-screen sidebarAdjust border-opacity-50 focus-within:translate-y-[0px]",
                 show ? "translate-y-[0px]" : "translate-y-[-100%]",
-                isAbsolute ? "absolute" : "relative"
+                isAbsolute ? "absolute" : "relative",
             )}
             id="top-navbar"
         >
@@ -129,7 +115,7 @@ const Navbar = ({ navConfig: nav, noteTypes, logo: Logo }: NavbarProps) => {
                         </div>
                         <a
                             role="button"
-                            onClick={() => toggleBookmark(noteId)}
+                            onClick={() => toggleBookmark(activeNoteId.current)}
                             className={
                                 "bookmark-indicator ml-4 group-[.isBookmarked]/body:bg-primary text-primary-foreground rounded-lg p-1"
                             }

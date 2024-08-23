@@ -1,7 +1,8 @@
+import { ArrayUtilities } from "@ulld/utilities/arrayUtilities";
 import { UnifiedMdxParser } from "../../../types";
 
 interface ExtendedFrontMatter {
-    links: string[];
+    outgoingQuickLinks: string[];
 }
 
 export const parseQuickLinks: UnifiedMdxParser<ExtendedFrontMatter> = async (
@@ -30,7 +31,7 @@ export const parseQuickLinks: UnifiedMdxParser<ExtendedFrontMatter> = async (
         content: c,
         data: {
             ...data.data,
-            links: links,
+            outgoingQuickLinks: ArrayUtilities.concatWithOptionalArray((data.data as any)?.outgoingQuickLinks as string[], links)
         },
     };
 };

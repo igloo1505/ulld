@@ -15,7 +15,6 @@ import { UnifiedMdxParser } from "../../../types";
 export interface SyncMdxProps {
     file: string;
     rootRelativePath: string;
-    dir: string;
     bookmarked: boolean
     autoSettings: AutoSettingWithRegex[];
     opts: Partial<OnSyncOptions>;
@@ -28,7 +27,6 @@ export interface SyncMdxProps {
 
 export const syncMdx = async ({
     file,
-    dir,
     autoSettings,
     opts,
     appConfig,

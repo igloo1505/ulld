@@ -474,7 +474,7 @@ export class BibEntry {
         return entry;
     }
     static async fromId(id: string): Promise<BibEntry | null> {
-        const query = await getUniversalQuery("getBibEntry");
+        const query = await getUniversalQuery("getBibEntry", "bibliography");
         let entry: BibEntryReturned = await query(id);
         if (entry) {
             /* let props = bibEntryPropsSchema.parse(entry) as ParsedBibEntryProps */

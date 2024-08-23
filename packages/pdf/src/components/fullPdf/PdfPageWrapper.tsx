@@ -31,19 +31,16 @@ interface ButtonProps {
 }
 
 const PdfStateButton = ({ stateClass, setState, activeState }: ButtonProps) => {
-    const isActive = () => {
-        return activeState.indexOf(stateClass) >= 0;
-    };
+    let isActive = useMemo(() => activeState.indexOf(stateClass) >= 0, [activeState, stateClass])
     return (
         <Button
             className={clsx(
                 stateClass === "toc" &&
                 "group-[.pdf-view-state-asGrid]/pdfPageWrapper:hidden group-[.pdf-view-state-allPages]/pdfPageWrapper:hidden group-[.pdf-view-state-annotating]/pdfPageWrapper:hidden",
-                isActive()
-                    ? "bg-muted text-muted-foreground"
-                    : "bg-primary text-primary-foreground",
+                isActive && "text-muted-foreground"
             )}
             onClick={() => setState(stateClass)}
+            variant={isActive ? "outline" : undefined}
         >
             {nameMap[stateClass]}
         </Button>
@@ -161,7 +158,6 @@ const PdfPageWrapper = ({ file, appConfig }: FullPdfProps) => {
                         file={file.rootRelativePath}
                         tocContainerRef={tocContainerRef}
                         viewState={pdfViewState}
-                        manager={manager}
                         setViewState={handleStateChange}
                     />
                 </div>

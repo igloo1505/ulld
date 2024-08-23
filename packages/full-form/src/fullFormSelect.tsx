@@ -54,11 +54,9 @@ export const SelectInput = <T extends FieldValues, L extends string>({
         if (!val || val === "") return;
         if (multiple) {
             const currentValues = makeArrayTransform(form.getValues(name));
-            console.log("currentValues: ", currentValues);
             const newValue = currentValues.includes(val)
                 ? currentValues.filter((a) => a !== val)
                 : [...currentValues, val];
-            console.log("newValue: ", newValue);
             return form.setValue(name, newValue as PathValue<T, Path<T>>);
         } else {
             form.setValue(name, val as PathValue<T, Path<T>>);

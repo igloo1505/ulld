@@ -8,7 +8,7 @@ import { AutoSettingWithRegex } from "../../../trpc/types"
 
 
 export const updateMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRegex[] = [], config: AppConfigSchemaOutput) => {
-    serverLogger.info(`Updating ${note.title}`)
+    // serverLogger.verbose(`Updating ${note.title}`)
     let upsertArgs = note.upsertArgs(autoSettings, config)
     if (!upsertArgs) return
     let updated = await prisma.mdxNote.upsert(upsertArgs)

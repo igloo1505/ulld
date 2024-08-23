@@ -26,6 +26,10 @@ export const parseMathTags: UnifiedMdxParser = async (data) => {
     } while (m);
     return {
         content: c,
+        data: {
+            ...data.data,
+            equationIds: results
+        }
     };
 };
 

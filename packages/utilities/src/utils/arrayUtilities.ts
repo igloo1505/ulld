@@ -216,4 +216,7 @@ export class ArrayUtilities {
     static clampInArray<T extends unknown>(arr: T[], index: number): T {
         return index >= arr.length ? arr[index % arr.length] : arr[index]
     }
+    static concatWithOptionalArray<T extends unknown>(arr: T[] | undefined | null, newArray: T[]): T[] {
+        return (arr || [] as T[]).concat(newArray)
+    }
 }

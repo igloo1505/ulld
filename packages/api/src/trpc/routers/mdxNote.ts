@@ -28,13 +28,26 @@ export const mdxNoteActionsRouter = router({
     toggleBookmarkedById: publicProcedure
         .input(z.number().int())
         .mutation(async (opts) => {
-            let note = await prisma.mdxNote.findFirst({ where: { id: opts.input } });
+            let note = await prisma.mdxNote.findFirst({
+                where: {
+                    id: opts.input,
+                },
+                select: {
+                    bookmarked: true,
+                },
+            });
+            if (!note) {
+                console.error(
+                    `Could not find note to toggle bookmark state for note id ${opts.input}`,
+                );
+                return false;
+            }
             let newNote = await prisma.mdxNote.update({
                 where: {
                     id: opts.input,
                 },
                 data: {
-                    bookmarked: !note?.bookmarked,
+                    bookmarked: !Boolean(note?.bookmarked),
                 },
                 select: {
                     bookmarked: true,
@@ -59,7 +72,7 @@ export const mdxNoteActionsRouter = router({
             }),
         )
         .query(async ({ input }) => {
-            let appConfig = await readAppConfig()
+            let appConfig = await readAppConfig();
             let content = await getFsMdx(
                 input.rootRelativePath,
                 input.extension,
@@ -82,14 +95,16 @@ export const mdxNoteActionsRouter = router({
             });
             return {
                 content: content,
-                details: noteDetails ? {
-                    ...noteDetails,
-                    quickLink: noteDetails.quickLink || undefined,
-                    sequentialKey: noteDetails.sequentialKey || undefined,
-                    sequentialIndex: noteDetails.sequentialIndex || undefined,
-                    firstSync: noteDetails.firstSync?.toString() as string | Date,
-                    lastSync: noteDetails.lastSync?.toString() as string | Date,
-                } : undefined,
+                details: noteDetails
+                    ? {
+                        ...noteDetails,
+                        quickLink: noteDetails.quickLink || undefined,
+                        sequentialKey: noteDetails.sequentialKey || undefined,
+                        sequentialIndex: noteDetails.sequentialIndex || undefined,
+                        firstSync: noteDetails.firstSync?.toString() as string | Date,
+                        lastSync: noteDetails.lastSync?.toString() as string | Date,
+                    }
+                    : undefined,
             };
         }),
     setMdxAccessed: publicProcedure

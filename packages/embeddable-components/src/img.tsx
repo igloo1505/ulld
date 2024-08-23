@@ -21,15 +21,13 @@ export const ImgComponent = async (
     const config = await readAppConfig();
     let internalProps: ImgHTMLAttributes<HTMLImageElement> = {
         className:
-            "h-auto w-full max-h-screen max-w-full md:w-fit md:max-w-[768px] sm:max-h-[60vh] max-h-[90vh] object-contain m-4 group-[.floatImages]/mdxNote:float-right",
+            "h-auto w-full max-h-screen max-w-full min-h-[350px] md:w-fit md:max-w-[768px] sm:max-h-[60vh] max-h-[90vh] object-contain m-4 group-[.floatImages]/mdxNote:float-right",
     };
     if (props.title) {
         internalProps.title = props.title;
     }
     if (!props.src) return;
-    console.log("props: ", props);
     let remote = isRemote(props.src, config.UI.media.imageRemoteTest);
-    console.log("remote: ", remote);
     let src: string | undefined = undefined;
     if (!remote) {
         if (props.src.startsWith("imageMap-")) {

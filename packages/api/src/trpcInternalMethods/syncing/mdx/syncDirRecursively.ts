@@ -64,7 +64,6 @@ export const syncDirRecursively = async (props: UniversalMdxProps) => {
                 await syncMdx({
                     ...props,
                     file: absPath,
-                    dir: props.appConfig.fsRoot,
                     docTypeData,
                     rootRelativePath,
                     bookmarked: Boolean(
@@ -75,7 +74,9 @@ export const syncDirRecursively = async (props: UniversalMdxProps) => {
             }
         }
     }
+
     existingNotePaths = existingNotePaths.filter((f) => f);
+
     if (props.opts.removeIfNotInFs && existingNotePaths.length > 0) {
         for await (const k of existingNotePaths as string[]) {
             await props.prisma.mdxNote.delete({
