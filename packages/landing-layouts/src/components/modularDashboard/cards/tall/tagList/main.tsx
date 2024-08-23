@@ -43,7 +43,7 @@ const TagListCard = ({ taggables, className, showKey, breakPoint, defaultShow, c
             >
                 <div className={""}>{capitalize(dataType)}</div>
             </TaggableTypeToggle>
-            <ScrollArea className={"w-full h-[min(50vh,250px)]"}>
+            <ScrollArea className={"w-full h-[min(50vh,250px)] flex-grow"}>
                 <ul className={"flex flex-col"}>
                     {taggables[dataType].map((t, i) => {
                         return (
