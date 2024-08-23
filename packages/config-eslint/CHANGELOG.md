@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.88
+
+### Patch Changes
+
+- Handle tag issue in search result list, fix some search filter issues and fix pagination display issue.
+
 ## 0.0.87
 
 ### Patch Changes

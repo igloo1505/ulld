@@ -1,5 +1,19 @@
 # @ulld/parsers
 
+## 0.0.92
+
+### Patch Changes
+
+- Handle tag issue in search result list, fix some search filter issues and fix pagination display issue.
+- Updated dependencies
+  - @ulld/component-map@0.0.92
+  - @ulld/typescript-config@0.0.86
+  - @ulld/configschema@0.0.92
+  - @ulld/database@0.0.89
+  - @ulld/developer@0.0.92
+  - @ulld/types@0.0.86
+  - @ulld/utilities@0.0.92
+
 ## 0.0.91
 
 ### Patch Changes

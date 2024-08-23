@@ -1,5 +1,14 @@
 # @ulld/tailwind
 
+## 0.0.86
+
+### Patch Changes
+
+- Handle tag issue in search result list, fix some search filter issues and fix pagination display issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.86
+  - @ulld/types@0.0.86
+
 ## 0.0.85
 
 ### Patch Changes

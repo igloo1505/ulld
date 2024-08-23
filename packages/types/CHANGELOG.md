@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.86
+
+### Patch Changes
+
+- Handle tag issue in search result list, fix some search filter issues and fix pagination display issue.
+
 ## 0.0.85
 
 ### Patch Changes

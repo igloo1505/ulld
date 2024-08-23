@@ -1,5 +1,26 @@
 # @ulld/pdf
 
+## 0.0.92
+
+### Patch Changes
+
+- Handle tag issue in search result list, fix some search filter issues and fix pagination display issue.
+- Updated dependencies
+  - @ulld/api@0.0.92
+  - @ulld/eslint-config@0.0.88
+  - @ulld/typescript-config@0.0.86
+  - @ulld/configschema@0.0.92
+  - @ulld/developer@0.0.92
+  - @ulld/hooks@0.0.92
+  - @ulld/icons@0.0.92
+  - @ulld/jest-presets@0.0.86
+  - @ulld/state@0.0.92
+  - @ulld/tailwind@0.0.86
+  - @ulld/types@0.0.86
+  - @ulld/ui@0.0.90
+  - @ulld/utilities@0.0.92
+  - @ulld/whiteboard@0.0.92
+
 ## 0.0.91
 
 ### Patch Changes

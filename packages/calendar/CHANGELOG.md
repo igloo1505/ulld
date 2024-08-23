@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.92
+
+### Patch Changes
+
+- Handle tag issue in search result list, fix some search filter issues and fix pagination display issue.
+- Updated dependencies
+  - @ulld/developer@0.0.92
+  - @ulld/types@0.0.86
+
 ## 0.0.91
 
 ### Patch Changes
