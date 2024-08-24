@@ -1,31 +1,31 @@
 {
-  "name": "@ulld/types",
-  "version": "0.0.86",
-  "dependencies": {},
-  "devDependencies": {},
-  "exports": {
-    ".": "./src/index.ts",
-    "./": "./src/index.ts",
-    "./types": "./src/index.ts",
-    "./db": "./src/database.d.ts",
-    "./enums": "./src/enums/index.ts"
-  },
-  "files": [
-    "src"
-  ],
-  "license": "MIT",
-  "main": "src/index.ts",
-  "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {},
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "echo 'Add lint build here'",
-    "dev": "echo 'Add dev script here'",
-    "lint": "echo 'Add lint script here'",
-    "test": "echo 'Add test script here'"
-  },
-  "types": "src/index.ts"
+    "name": "@ulld/types",
+    "version": "0.0.86",
+    "dependencies": {},
+    "devDependencies": {},
+    "exports": {
+        ".": "./src/index.ts",
+        "./": "./src/index.ts",
+        "./types": "./src/index.ts",
+        "./db": "./src/database.d.ts",
+        "./enums": "./src/enums/index.ts"
+    },
+    "files": [
+        "src"
+    ],
+    "license": "MIT",
+    "main": "src/index.ts",
+    "packageManager": "pnpm@9.0.4",
+    "peerDependencies": {},
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "echo 'Add lint build here'",
+        "dev": "echo 'Add dev script here'",
+        "lint": "echo 'Add lint script here'",
+        "test": "echo 'Add test script here'"
+    },
+    "types": "src/index.ts"
 }

@@ -2901,6 +2901,13 @@
             "latexFontUrl": {
               "type": "string",
               "description": "URL of the latex font to be used. This should be left to it's default value unless an additional collection of .woff files are included in the build.additionalPublicResources field."
+            },
+            "constants": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "number"
+              },
+              "default": {}
             }
           },
           "additionalProperties": false,
@@ -4031,12 +4038,12 @@
             {
               "name": "@ulld/api",
               "parserIndex": 0,
-              "version": "0.0.91"
+              "version": "0.0.92"
             },
             {
               "name": "@ulld/plot",
               "parserIndex": 0,
-              "version": "0.0.91"
+              "version": "0.0.92"
             }
           ]
         }

@@ -1,9 +1,9 @@
 import { ArrayUtilities } from "@ulld/utilities/arrayUtilities";
 import { ChartConfigType, StoredPlotData, XYPlotItem } from "../types";
 import { plotThemeData } from "../../../../colors";
-import { StoredLinePlot } from "./schemas";
+import { StoredBarPlot, StoredLinePlot } from "./schemas";
 
-export const getLabelFromPlotItem = (d: Omit<XYPlotItem, "f"> | StoredLinePlot | StoredBarPloStoredBarPlot) => {
+export const getLabelFromPlotItem = (d: Omit<XYPlotItem, "f"> | StoredLinePlot | StoredBarPlot) => {
     return d.id ? d.id : typeof d.label === "string" ? d.label : d.label.label;
 };
 
