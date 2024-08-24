@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.93
+
+### Patch Changes
+
+- Update after working offline.
+- Updated dependencies
+  - @ulld/developer@0.0.93
+  - @ulld/types@0.0.87
+
 ## 0.0.92
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ulld/internal-dev-cli
 
+## 0.0.87
+
+### Patch Changes
+
+- Update after working offline.
+- Updated dependencies
+  - @ulld/types@0.0.87
+
 ## 0.0.86
 
 ### Patch Changes
