@@ -1,4 +1,5 @@
 import type data from "./constants.json"
+import type { ExtendedMath } from "./Math"
 export type UserProvidedConstant = {
     name: string
     value: number
@@ -13,3 +14,5 @@ export type ConstantVariable = {
 
 export type PosThree = [number, number, number]
 export type PosFour = [number, number, number]
+
+export type ExtendedMathType = typeof ExtendedMath

@@ -1,5 +1,6 @@
 import React from 'react'
 import LocalDevelopmentPageWrapper from "@ulld/utilities/localDevelopmentPageWrapper"
+import LinePlotEmbeddableDemo from '../../demos/embeddable/linePlot/main'
 
 
 interface EmbeddableLinePlotDemoPageProps {
@@ -9,7 +10,7 @@ interface EmbeddableLinePlotDemoPageProps {
 const EmbeddableLinePlotDemoPage = (props: EmbeddableLinePlotDemoPageProps) => {
 return (
         <LocalDevelopmentPageWrapper>
-            test
+            <LinePlotEmbeddableDemo />
         </LocalDevelopmentPageWrapper>
 )
 }

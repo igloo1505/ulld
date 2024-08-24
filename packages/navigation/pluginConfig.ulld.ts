@@ -3,7 +3,6 @@ import {
     developerConfigSchema,
 } from "@ulld/configschema/developer";
 import { writePluginConfig } from "@ulld/developer/writePluginConfig";
-import { AllDynamicIconNames } from "@ulld/icons";
 
 const pluginConfig: DeveloperConfigInput<"navigation"> = {
     pluginName: "@ulld/navigation",

@@ -1,22 +1,24 @@
 "use client";
 import { ReactNode, createContext, useReducer, useContext } from "react";
-import { XYPlotItem } from "./types";
+import { PlotThemeKey, XYPlotItem } from "./types";
+import { ExtendedMath } from "@ulld/math/extendedMath";
+import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 
 export interface XYPlotState {
-    plotItems: XYPlotItem[];
-    numericalData: Record<string, number>[];
+    theme: PlotThemeKey
+    plotId: string
 }
 
 const defaultInitialValues: XYPlotState = {
-    plotItems: [],
-    numericalData: [],
+    theme: "retro_metro",
+    plotId: null!
 };
 
 export const XYPlotContext = createContext<XYPlotState>(defaultInitialValues);
 
 type XYPlotContextActions = {
-    type: "toggleSidebar";
-    payload?: undefined | null;
+    type: "appendPlotItem";
+    payload: XYPlotItem;
 };
 
 export const XYPlotDispatchContext = createContext<
@@ -31,12 +33,6 @@ export const XYPlotContextReducer = (
     action: XYPlotContextActions,
 ): XYPlotState => {
     switch (action.type) {
-        /* case 'xxx': { */
-        /*     return { */
-        /*         ...state, */
-        /*         someProperty: true, */
-        /*     } */
-        /* } */
         default: {
             return state;
         }
@@ -57,7 +53,7 @@ export const XYPlotProvider = ({
     const [state, dispatch] = useReducer(
         XYPlotContextReducer,
         initialValues
-            ? { ...initialValues, ...defaultInitialValues }
+            ? {  ...defaultInitialValues, ...initialValues }
             : defaultInitialValues,
     );
 

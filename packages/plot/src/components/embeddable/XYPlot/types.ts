@@ -6,7 +6,9 @@ import type {
 } from "react";
 import type { ChartContainer } from "../../../lib/shad/shadChart";
 import type { plotThemeData } from "../../../colors";
-import type { XYFunctionArg, ParsedLineProps, ParsedBarProps } from "./utils/schemas";
+import type { XYFunctionArg, ParsedLineProps, ParsedBarProps, ParsedXYPlotProps, StoredLinePlot, StoredBarPlot } from "./utils/schemas";
+
+export type UserDefinedConstants = Record<string, number>
 
 export type ChartConfigType = ComponentPropsWithoutRef<
     typeof ChartContainer
@@ -15,7 +17,7 @@ export type ChartConfigType = ComponentPropsWithoutRef<
 export type ChartChildren = ReactNode &
     ReactElement<any, string | JSXElementConstructor<any>>;
 
-export type ChartThemeKey = keyof typeof plotThemeData;
+export type PlotThemeKey = keyof typeof plotThemeData;
 
 type PlotAdditionalProps = {
     index: number;
@@ -27,12 +29,18 @@ export type LineTraceFormattedProps = PlotAdditionalProps & ParsedLineProps;
 export type BarTraceFormattedProps = PlotAdditionalProps & ParsedBarProps;
 
 export type XYPlotItem =
-    | (LineTraceFormattedProps & { traceType: "line" })
-    | (BarTraceFormattedProps & { traceType: "bar" });
+    | (StoredLinePlot & { traceType: "line" })
+    | (StoredBarPlot & { traceType: "bar" });
+
 
 export type CalculatedPlotParams = {
     index: number;
-    theme: ChartThemeKey;
-    x: number[];
+    theme: PlotThemeKey;
     functionArg: XYFunctionArg;
 };
+
+
+export type StoredPlotData = {
+    plotId: string
+    plotItems: Omit<XYPlotItem, "f">[]
+} & ParsedXYPlotProps

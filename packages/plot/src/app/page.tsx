@@ -6,7 +6,12 @@ interface TestPageProps {
 
 }
 
-const testPages: LocalDevelopmentItem[] = []
+const testPages: LocalDevelopmentItem[] = [
+    {
+        label: "Line Plot",
+        href: "/linePlot"
+    }
+]
 
 const TestPage = async (props: TestPageProps) => {
 
