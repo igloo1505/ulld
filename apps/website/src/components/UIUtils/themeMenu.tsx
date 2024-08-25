@@ -6,6 +6,13 @@ import {
     DrawerHeader,
     DrawerTitle,
 } from "@ulld/tailwind/drawer";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@ulld/tailwind/select";
 import React, { useState } from "react";
 import { defaultSupportedThemes } from "@ulld/tailwind/defaultThemes";
 import MainNavigationDrawerButtonGroup from "../layouts/drawer/buttonGroup";
@@ -58,6 +65,7 @@ const ThemeMenuDrawer = ({ open, close }: ThemeMenuProps) => {
                     </DrawerDescription>
                 </DrawerHeader>
                 <MainNavigationDrawerButtonGroup
+                    noExtraLinks
                     hide={false}
                     className={"pb-4"}
                     buttons={defaultSupportedThemes
@@ -86,21 +94,38 @@ const ThemeMenuDrawer = ({ open, close }: ThemeMenuProps) => {
 };
 
 const ThemeMenuModal = ({ open, close }: ThemeMenuProps) => {
-    const handleOpenChange = (isOpen: boolean) => {
-        if (!isOpen) {
-            close();
-        }
-    };
+
     return (
-        <ShikiThemeSelect
-            {...theme}
+        <Select
             open={open}
-            onOpenChange={handleOpenChange}
-            onChange={(newValue) => {
-                setTheme(newValue)
-                close()
+            onOpenChange={(newOpen) => {
+                if(!newOpen){
+                    close()
+                }
             }}
-        />
+            /* value={field.value} */
+            onValueChange={(newTheme) => {
+                setTheme(newTheme);
+                close();
+            }}
+        >
+            <SelectContent>
+                {defaultSupportedThemes.map((o) => {
+                    return (
+                        <SelectItem
+                            key={o}
+                            value={o}
+                            onClick={() => {
+                                setTheme(o);
+                                close();
+                            }}
+                        >
+                            {o}
+                        </SelectItem>
+                    );
+                })}
+            </SelectContent>
+        </Select>
     );
 };
 

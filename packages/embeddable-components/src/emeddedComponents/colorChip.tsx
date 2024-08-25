@@ -1,9 +1,12 @@
-import React, { HTMLProps } from "react";
+"use client";
+import React, { HTMLProps, useMemo } from "react";
 import clsx from "clsx";
 import {
     getColorPropsData,
     PropColorInput,
 } from "@ulld/component-configs/colors";
+import { useAppConfig } from "@ulld/hooks/useAppConfig";
+import { useClientDarkMode } from "@ulld/hooks/useClientDarkMode";
 
 interface ColorChipProps
     extends Omit<HTMLProps<HTMLSpanElement>, "background" | "popover">,
@@ -23,8 +26,25 @@ export const ColorChip = ({
     ...props
 }: ColorChipProps) => {
     const colorData = getColorPropsData(props, "primary");
-    let colorValue = color ? color : colorData.color;
-    let {popover, ...otherProps} = props
+    let colorString = color ? color : colorData.color;
+    let { popover, ...otherProps } = props;
+    const [appConfig] = useAppConfig();
+    const darkMode = useClientDarkMode();
+
+    const colorValue = useMemo(() => {
+        if (!appConfig) {
+            return colorString;
+        }
+        return colorString in appConfig.UI.colors
+            ? appConfig.UI.colors[colorString]?.[darkMode ? "dark" : "light"] ||
+            appConfig.UI.colors[colorString]?.[darkMode ? "light" : "dark"]
+            : colorString;
+    }, [darkMode, appConfig]);
+
+    if (!appConfig || !colorValue) {
+        return null;
+    }
+
     return (
         <span
             {...otherProps}

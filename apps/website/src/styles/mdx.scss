@@ -275,6 +275,7 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
     max-width: 100%;
     min-width: 0px !important;
     overflow-x: auto;
+
     mjx-table,
     mjx-mtable,
     mjx-itable {
@@ -658,11 +659,27 @@ div[data-radix-popper-content-wrapper] {
 
 .steps {
   margin-top: 2rem;
+
   .step {
     margin-top: 1.5rem;
   }
+
   h3 {
     margin-top: 0px !important;
     padding-top: 0px !important;
+  }
+}
+
+[data-noteId="colorPropsDocs"] {
+  .internalTable {
+    width: 100%;
+
+    & > div {
+      width: 100%;
+
+      & > table {
+        width: 100%;
+      }
+    }
   }
 }

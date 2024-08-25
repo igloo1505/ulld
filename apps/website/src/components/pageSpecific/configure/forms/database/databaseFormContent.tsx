@@ -2,7 +2,6 @@
 import React from "react";
 import FormSectionHeading from "../../formUtils/formSectionHeading";
 import { CheckboxOneFromGroup } from "@ulld/full-form/checkboxOneFromGroup";
-import { ULLDSupportedDatabases } from "node_modules/@ulld/configschema/src/zod/build/database/database";
 import { AppConfigSchemaType } from "@ulld/configschema/zod/main";
 import { AnimatePresence } from "framer-motion";
 import { PostgresSpecificConfigurationForm } from "./databaseSpecificConfigurationForms/postgres";
@@ -25,17 +24,17 @@ export const DatabaseConfigureFormContent = () => {
       />
       <CheckboxOneFromGroup<AppConfigSchemaType>
         options={[
-          { label: "SQLite", value: ULLDSupportedDatabases.sqlite },
-          { label: "Postgres", value: ULLDSupportedDatabases.postgres },
+          { label: "SQLite", value: "sqlite" },
+          { label: "Postgres", value: "postgres" },
         ]}
         name="build.database.type"
         label="Type"
       />
       <AnimatePresence initial={false} mode="wait">
-        {databaseType === ULLDSupportedDatabases.postgres && (
+        {databaseType === "postgres" && (
           <PostgresSpecificConfigurationForm key="postgres-form" />
         )}
-        {databaseType === ULLDSupportedDatabases.sqlite && (
+        {databaseType === "sqlite" && (
           <SQLiteSpecificConfigurationForm key="sqlite-form" />
         )}
       </AnimatePresence>

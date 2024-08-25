@@ -1,27 +1,21 @@
+import React from "react";
 import DocsPageComponent from "#/components/docUtils/docsPage";
 import { getPageById } from "#/fumaDocs/utils/getPageById";
 import { PageType } from "#/types/general";
-import React from "react";
 import { getPages } from "sources/demos";
 
-interface MyNotesPageProps {
-    searchParams: {
-        id?: string;
-    };
-}
 
-const MyNotesPage = ({ searchParams }: MyNotesPageProps) => {
-    const docHomeId = searchParams.id || "demosHome";
+const DemosPage = () => {
 
-    let page = getPageById(getPages() as PageType[], docHomeId);
+    let page = getPageById(getPages() as PageType[], "demosHome");
 
     if (!page) {
-        throw new Error("No navigation demo found");
+        throw new Error("No demo home page found");
     }
 
-    return <DocsPageComponent page={page} id={docHomeId} />;
+    return <DocsPageComponent page={page} />;
 };
 
-MyNotesPage.displayName = "MyNotesPage";
+DemosPage.displayName = "DemosPage";
 
-export default MyNotesPage;
+export default DemosPage;

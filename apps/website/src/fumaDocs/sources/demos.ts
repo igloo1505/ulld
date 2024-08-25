@@ -1,13 +1,12 @@
-import { allDemos } from "content-collections";
-import { InferMetaType, InferPageType, loader, LoaderOptions } from "fumadocs-core/source";
+import { InferMetaType, InferPageType, loader } from "fumadocs-core/source";
+import { allDemos, allMetas } from "content-collections";
+import { createMDXSource } from "@fumadocs/content-collections";
 
 
 const data = loader({
     rootDir: "demos",
     baseUrl: "/demos",
-    source: {
-        files: allDemos.map((v) => ({ type: "page", data: v, path: v._meta.filePath })),
-    },
+    source: createMDXSource(allDemos as any, allMetas),
 });
 
 export const {

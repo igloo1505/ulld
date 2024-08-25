@@ -26,6 +26,7 @@ The following syntaxes are enabled by default.
 
 Many of the included example url's use a `/some/note/here#withAPoundSymbol` syntax. The value following the `#` symbol can be any id on that page. While many components will generate their own id's, they're very likely to be dynamically generated and be useless for navigating after a page reloads. You can however override these dynamically generated id's as most components will accept an `id` property, and they can be applied to any header with the following syntax:
 
+
 ```mdx
 ---
 title: My Note
@@ -33,7 +34,7 @@ id: mySpecialNote
 ---
 ... 
 
-## This is some header [#my-header-id]
+ ## This is some header [#my-header-id]
 ```
 
 Now you can navigate to the page with the id of `mySpecialNote` using the link syntax described [below](#note-id-link-syntax). You can also link directly to another element on the same page by forgoing the first bit of the URL as I just did above where I used `[below](#note-id-link-syntax){:mdx}` to link to the next section. 

@@ -1,6 +1,6 @@
 import React, { HTMLProps } from "react";
 import { ComposedTooltip } from "./composedTooltip";
-import { componentConfig } from "@ulld/component-configs/underline";
+import { componentConfig } from "@ulld/component-configs/highlight";
 import { WithTooltipWrapper } from "./props/withTooltipWrapperProps";
 import { HighlightProps } from "./HlProps";
 import cn from "@ulld/utilities/cn";
@@ -47,6 +47,7 @@ export const Highlight = (
                 }
             >
                 <span
+                    {...p}
                     className={cn(
                         "px-1 rounded-md highlight-background highlight-text [&_*]:text-inherit [&_*]:bg-inherit",
                         (p.faint || p.light) && "bg-opacity-50",
@@ -54,11 +55,8 @@ export const Highlight = (
                         p.className,
                         /* Boolean(props.light || props.faint || props.muted) && "bg-opacity-60 hl-faint" */
                     )}
-                    {...p}
                     style={{
                         ...props.css,
-                        backgroundColor: `${props.color} !important`,
-                        color: `${props.contrastColor} !important`,
                         ...p.style,
                     }}
                 />
@@ -76,8 +74,6 @@ export const Highlight = (
             )}
             style={{
                 ...props.css,
-                backgroundColor: `${props.color} !important`,
-                color: `${props.contrastColor} !important`,
                 ...p.style,
             }}
         />

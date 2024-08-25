@@ -103,7 +103,7 @@
     "./configUtilityTypes/docTypes": "./dist/configUtilityTypes/docTypes.js",
     "./evaluateConfig": "./dist/evaluate/main.js",
     "./evaluateConfigTypes": "./dist/evaluate/types.js",
-    "./defaultConfigBase": "./dist/defaults/generatedDefaultConfigs/base.json",
+    "./defaultConfigBase": "./src/defaults/generatedDefaultConfigs/base.json",
     "./codeThemeSchemas": "./dist/zod/codeThemeSchemas.js",
     "./defaultColorMap": "./dist/zod/ui/defaultColorMap.js",
     "./slotsSchema": "./dist/developer/slotsSchema.js",

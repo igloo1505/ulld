@@ -6,6 +6,7 @@ import React from "react";
 
 const DocsHomePage = () => {
     let page = getPageById(getPages() as PageType[], "onTheGravitationalNatureOfTime")
+
     if (!page) {
         throw new Error(
             "Could not find the paper that inspired this f-cking fiasco.",

@@ -10,6 +10,7 @@ interface MainNavigationDrawerButtonGroupProps {
     buttons: (NavbarButton | NavbarButtonClick)[];
     hide: boolean;
     className?: string;
+    noExtraLinks?: boolean
 }
 
 declare global {
@@ -22,6 +23,7 @@ const MainNavigationDrawerButtonGroup = ({
     buttons,
     hide,
     className,
+    noExtraLinks
 }: MainNavigationDrawerButtonGroupProps) => {
 
     useEffect(() => {
@@ -71,7 +73,7 @@ const MainNavigationDrawerButtonGroup = ({
                     </a>
                 );
             })}
-            <Link
+            {!noExtraLinks && <Link
                 className={clsx(
                     navbarButtonClasses,
                     "w-full px-4 py-3 cursor-pointer hover:bg-secondary hover:text-secondary-foreground transition-colors duration-300",
@@ -80,7 +82,7 @@ const MainNavigationDrawerButtonGroup = ({
                 onClick={closeDrawerOnClick}
             >
                 Sponsor
-            </Link>
+            </Link>}
         </div>
     );
 };

@@ -33,24 +33,6 @@ export default function Layout({ children }: { children: ReactNode }) {
                 footerProps: {
                     className: "[&_.lucide-sun]:hidden [&_.lucide-moon]:hidden"
                 },
-                /* banner: ( */
-                /*     <RootToggle */
-                /*         options={[ */
-                /*             { */
-                /*                 title: "User", */
-                /*                 description: "User Documentation", */
-                /*                 url: "/docs/user", */
-                /*                 icon: <UserIcon />, */
-                /*             }, */
-                /*             { */
-                /*                 title: "Developer", */
-                /*                 description: "Developer Documentation", */
-                /*                 url: "/docs/developer", */
-                /*                 icon: <TerminalIcon />, */
-                /*             }, */
-                /*         ]} */
-                /*     /> */
-                /* ), */
             }}
         >
             {children}
