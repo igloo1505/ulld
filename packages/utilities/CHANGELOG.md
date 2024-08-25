@@ -1,5 +1,17 @@
 # @ulld/utilities
 
+## 0.0.95
+
+### Patch Changes
+
+- Update misaligned imports after compiling utilities package.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.89
+  - @ulld/database@0.0.92
+  - @ulld/math@0.0.95
+  - @ulld/tailwind@0.0.89
+  - @ulld/types@0.0.89
+
 ## 0.0.94
 
 ### Patch Changes

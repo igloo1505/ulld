@@ -1,5 +1,18 @@
 # @ulld/diagram
 
+## 0.0.95
+
+### Patch Changes
+
+- Update misaligned imports after compiling utilities package.
+- Updated dependencies
+  - @ulld/api@0.0.95
+  - @ulld/typescript-config@0.0.89
+  - @ulld/developer@0.0.95
+  - @ulld/state@0.0.95
+  - @ulld/tailwind@0.0.89
+  - @ulld/types@0.0.89
+
 ## 0.0.94
 
 ### Patch Changes

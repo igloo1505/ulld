@@ -1,5 +1,33 @@
 # @ulld/ui
 
+## 0.0.93
+
+### Patch Changes
+
+- Update misaligned imports after compiling utilities package.
+- Updated dependencies
+  - @ulld/api@0.0.95
+  - @ulld/component-map@0.0.95
+  - @ulld/eslint-config@0.0.91
+  - @ulld/typescript-config@0.0.89
+  - @ulld/configschema@0.0.95
+  - @ulld/database@0.0.92
+  - @ulld/developer@0.0.95
+  - @ulld/editor@0.0.95
+  - @ulld/embeddable-components@0.0.95
+  - @ulld/full-form@0.0.95
+  - @ulld/hooks@0.0.95
+  - @ulld/icons@0.0.95
+  - @ulld/jest-presets@0.0.89
+  - @ulld/logger@0.0.89
+  - @ulld/navigation@0.0.95
+  - @ulld/parsers@0.0.95
+  - @ulld/render@0.0.95
+  - @ulld/state@0.0.95
+  - @ulld/tailwind@0.0.89
+  - @ulld/types@0.0.89
+  - @ulld/utilities@0.0.95
+
 ## 0.0.92
 
 ### Patch Changes

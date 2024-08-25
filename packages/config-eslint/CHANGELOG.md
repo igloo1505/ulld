@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.91
+
+### Patch Changes
+
+- Update misaligned imports after compiling utilities package.
+
 ## 0.0.90
 
 ### Patch Changes

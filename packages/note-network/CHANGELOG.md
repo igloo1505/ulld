@@ -1,5 +1,21 @@
 # @ulld/note-network
 
+## 0.0.95
+
+### Patch Changes
+
+- Update misaligned imports after compiling utilities package.
+- Updated dependencies
+  - @ulld/api@0.0.95
+  - @ulld/typescript-config@0.0.89
+  - @ulld/configschema@0.0.95
+  - @ulld/developer@0.0.95
+  - @ulld/jest-presets@0.0.89
+  - @ulld/logger@0.0.89
+  - @ulld/tailwind@0.0.89
+  - @ulld/types@0.0.89
+  - @ulld/utilities@0.0.95
+
 ## 0.0.94
 
 ### Patch Changes

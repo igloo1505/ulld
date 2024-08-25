@@ -1,5 +1,14 @@
 # @ulld/tailwind
 
+## 0.0.89
+
+### Patch Changes
+
+- Update misaligned imports after compiling utilities package.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.89
+  - @ulld/types@0.0.89
+
 ## 0.0.88
 
 ### Patch Changes

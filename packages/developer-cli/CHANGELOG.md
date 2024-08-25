@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.95
+
+### Patch Changes
+
+- Update misaligned imports after compiling utilities package.
+- Updated dependencies
+  - @ulld/developer@0.0.95
+  - @ulld/developer-schemas@0.0.89
+  - @ulld/types@0.0.89
+
 ## 0.0.94
 
 ### Patch Changes

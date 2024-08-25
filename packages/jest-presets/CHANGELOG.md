@@ -1,5 +1,13 @@
 # @repo/jest-presets
 
+## 0.0.89
+
+### Patch Changes
+
+- Update misaligned imports after compiling utilities package.
+- Updated dependencies
+  - @ulld/types@0.0.89
+
 ## 0.0.88
 
 ### Patch Changes
