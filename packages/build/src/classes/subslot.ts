@@ -1,11 +1,11 @@
-import {
+import type {
     AnySubSlotKey,
     PluginSlotKey,
 } from "@ulld/configschema/developerTypes";
-import slotMapData from "@ulld/utilities/slotMap.json";
-import { SlotDataType } from "@ulld/utilities/types";
-import { TemplateContent } from "./baseApp/templateContent";
-import { TargetPaths } from "./paths";
+import slotMapData from "@ulld/utilities/slotMap.json" with { type: "json" };
+import type { SlotDataType } from "@ulld/utilities/types";
+import { TemplateContent } from "./baseApp/templateContent.js";
+import { TargetPaths } from "./paths.js";
 
 export class SubSlot {
     shouldUse: boolean = true;
@@ -31,8 +31,8 @@ export class SubSlot {
         this.shouldUse = false;
     }
     writeToFile(formattedExport: string, componentImport: string) {
-        if(/pdf/gmi.test(formattedExport)){
-            console.log(`This is pdf related...`)
+        if (/pdf/gim.test(formattedExport)) {
+            console.log(`This is pdf related...`);
         }
         let target = new TemplateContent(this.itemData.path, this.paths);
         target.generate(

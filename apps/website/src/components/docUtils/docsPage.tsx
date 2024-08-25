@@ -10,7 +10,7 @@ import MathjaxProvider from "#/components/utility/providers/mathjax";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { serverComponentMap } from "#/mdx/serverComponentMap";
 import { getComponentMap } from "@ulld/component-map/client";
-import { Tabs } from "fumadocs-ui/components/tabs";
+/* import { Tabs, Tab } from "fumadocs-ui/components/tabs"; */
 import {
     CodeBlockProps,
     CodeBlock,

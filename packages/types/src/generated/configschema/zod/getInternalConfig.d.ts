@@ -1,9 +1,9 @@
 import type { InternalDocumentConfigType } from "./internalDocumentTypes";
 import type { AppConfigSchemaOutput } from "./main";
-import { ParsableExtensions } from "./secondaryConfigParse/getParsableExtensions";
+import { ParsableExtensionsSchema } from "./secondaryConfigParse/getParsableExtensions";
 interface ExtraConfig {
-    parsableExtensions: ParsableExtensions[];
-    filetypeSpecificAppendices: Record<ParsableExtensions, string>;
+    parsableExtensions: ParsableExtensionsSchema[];
+    filetypeSpecificAppendices: Record<ParsableExtensionsSchema, string>;
     internalDocumentTypes: InternalDocumentConfigType[];
     fileTypes: {
         image: string[];

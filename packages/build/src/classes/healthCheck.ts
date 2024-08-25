@@ -1,7 +1,7 @@
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
-import { ShellManager } from "./baseClasses/shell";
-import { EnvManager } from "./envManager";
-import { TargetPaths } from "./paths";
+import { ShellManager } from "./baseClasses/shell.js";
+import { EnvManager } from "./envManager.js";
+import { TargetPaths } from "./paths.js";
 
 export class BuildHealthCheck extends ShellManager{
     constructor(public paths: TargetPaths, public env: EnvManager){

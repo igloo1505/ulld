@@ -1,5 +1,7 @@
-import { branchOptionValues, BranchValue } from "../utils/options"
-import { prompt } from "enquirer";
+import { branchOptionValues, BranchValue } from "../utils/options.js"
+import enq from "enquirer";
+
+const { prompt } = enq;
 
 export const getBranchSelection = async (): Promise<BranchValue> => {
     let res = await prompt({

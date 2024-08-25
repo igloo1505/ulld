@@ -37,6 +37,7 @@ const tailwindCfg: Config = {
         './node_modules/fumadocs-ui/dist/**/*.js',
         '../../node_modules/fumadocs-ui/dist/**/*.js',
         "./src/**/*.{js,ts,jsx,tsx,mdx}",
+        "./content/**/*.mdx",
     ],
     theme: {
         extend: {

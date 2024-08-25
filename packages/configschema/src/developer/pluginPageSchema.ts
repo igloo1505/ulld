@@ -1,5 +1,5 @@
 import {z} from 'zod'
-import { transformExportString } from './transforms'
+import { transformExportString } from './transforms.js'
 
 
 export const pluginAdditionalPageSchema = z.object({

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { transformExportString } from "./transforms";
+import { transformExportString } from "./transforms.js";
 import { randomUUID } from "node:crypto";
 
 const defaultUUID = randomUUID()

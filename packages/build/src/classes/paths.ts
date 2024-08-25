@@ -1,11 +1,12 @@
 import path from "path";
 import fs from "fs";
-import { PathKeys, MethodListPathKeys, pathKeys } from "@ulld/utilities/types";
-import { removeLeadingDotSlash } from "../utils/removeLeadingDotSlash";
-import { ParserKey } from "@ulld/configschema/developer";
-import { PluginEventsConfig } from "@ulld/configschema/developerTypes";
+import type { PathKeys, MethodListPathKeys } from "@ulld/utilities/types";
+import { pathKeys} from "@ulld/utilities/buildUtils"
+import { removeLeadingDotSlash } from "../utils/removeLeadingDotSlash.js";
+import type { ParserKey } from "@ulld/configschema/developer";
+import type { PluginEventsConfig } from "@ulld/configschema/developerTypes";
 import xdgAppPaths from 'xdg-app-paths';
-import type { DirOptions, Options, XDGAppPaths } from 'xdg-app-paths';
+import type { Options, XDGAppPaths } from 'xdg-app-paths';
 
 let xdgOpts: Options = {
     name: "ulld",
@@ -49,7 +50,7 @@ export class TargetPaths
         public targetDir: string,
         public isLocalDev: boolean,
     ) {
-        this.xdgPaths = xdgAppPaths()
+        this.xdgPaths = (xdgAppPaths as any)()
         this.public = path.join(targetDir, "public");
         this.node_modules = path.join(targetDir, "node_modules");
         this.gitignore = path.join(targetDir, ".gitignore");

@@ -1,6 +1,10 @@
 {
   "name": "@ulld/build",
   "version": "0.0.93",
+  "type": "module",
+  "bin": {
+    "ulldBuild": "./dist/main.js"
+  },
   "dependencies": {
     "@commander-js/extra-typings": "^12.1.0",
     "@types/fs-extra": "^11.0.4",
@@ -54,11 +58,10 @@
     "./classes/packageJson": "./src/classes/pkgJson.ts"
   },
   "files": [
-    "src"
+    "dist"
   ],
   "packageManager": "pnpm@9.0.4",
   "peerDependencies": {
-    "@ulld/base-configs": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/developer-schemas": "workspace:*",
     "@ulld/types": "workspace:*",

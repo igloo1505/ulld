@@ -1,10 +1,10 @@
 import { SupportedDatabaseType } from "@ulld/configschema/types";
-import { ShellManager } from "./baseClasses/shell";
-import { TargetPaths } from "./paths";
 import dotenv from "dotenv";
 import fs from "fs";
 import path from "path";
-import { FileManager } from "./baseClasses/fileManager";
+import { ShellManager } from "./baseClasses/shell.js";
+import { TargetPaths } from "./paths.js";
+import { FileManager } from "./baseClasses/fileManager.js";
 
 type SupportedEnvVariableId =
     | "postgresUri"

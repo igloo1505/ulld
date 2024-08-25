@@ -186,7 +186,7 @@ interface IconProps extends LucideProps {
 
 
 export const DynamicIcon = (props: IconProps) => {
-    const { name } = props;
+    const name = String(props.name)
     let iconType: "logo" | "lucide" | null = null;
     if (logoIconNames.includes(name as (typeof logoIconNames)[number])) {
         iconType = "logo";

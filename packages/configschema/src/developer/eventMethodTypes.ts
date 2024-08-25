@@ -1,7 +1,7 @@
 import { PathKeys } from "@ulld/utilities/types";
-import { AppConfigSchemaOutput } from "../zod/main";
-import { BuildStaticDataOutput } from "../buildStaticData/types";
-import { PluginEventsConfig } from "./types/pluginEventsConfig";
+import { AppConfigSchemaOutput } from "../zod/main.js";
+import { BuildStaticDataOutput } from "../buildStaticData/types.js";
+import { PluginEventsConfig } from "./types/pluginEventsConfig.js";
 import type { AutoSettingWithRegex, OnSyncOptions } from "@ulld/types";
 import type { PrismaClient} from "@ulld/database"
 import type { UlldGlob } from "@ulld/utilities/glob";

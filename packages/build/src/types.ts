@@ -25,3 +25,11 @@ export type EventMethodKey = keyof NonNullable<DeveloperConfigInput["events"]>;
 
 export type SettingPageOutputData =
     BuildStaticDataOutput["settingPages"][number];
+
+
+declare global {
+  namespace PrismaJson {
+    // you can use classes, interfaces, types, etc.
+    type PluginSettingsRecord = Record<string, Record<string, any>>
+  }
+}

@@ -1,10 +1,11 @@
-import { UlldPlugin } from "./plugin";
-import { prompt } from "enquirer";
-import { SlotConflict } from "./slotConflict";
-import { PageConflict } from "./pageConflict";
-import { GitManager } from "./baseClasses/gitManager";
-import { TargetPaths } from "./paths";
-import { BranchValue } from "../utils/options";
+import { UlldPlugin } from "./plugin.js";
+import enq from "enquirer";
+import { SlotConflict } from "./slotConflict.js";
+import { PageConflict } from "./pageConflict.js";
+import { GitManager } from "./baseClasses/gitManager.js";
+import { BranchValue } from "../utils/options.js";
+
+const { prompt } = enq;
 
 export class Prompter extends GitManager {
     constructor(targetDirectory: string, gitBranch: BranchValue) {

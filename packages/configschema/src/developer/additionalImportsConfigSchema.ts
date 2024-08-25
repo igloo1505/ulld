@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { transformExportStringArray } from "./transforms";
-import { AdditionalImportsConfig } from "./types/additionalImportsConfig";
+import { transformExportStringArray } from "./transforms.js";
+import { AdditionalImportsConfig } from "./types/additionalImportsConfig.js";
 
 export const additionalImportsConfigSchema: z.ZodType<AdditionalImportsConfig> =
     z.object({

@@ -1,6 +1,7 @@
 {
   "name": "@ulld/icons",
   "version": "0.0.93",
+  "type": "module",
   "dependencies": {
     "@tabler/icons-react": "3.5.0",
     "clsx": "^2.1.0",

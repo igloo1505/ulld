@@ -54,7 +54,7 @@ export const Tab = (props: TabProps) => {
                 <CardContent className="space-y-2 prose">
                     <div
                         className={
-                            "w-full h-full flex flex-col justify-center items-center p-4 tabContent"
+                            "w-full h-full flex flex-col justify-center items-center p-4 tabContent [&_code]:text-sm"
                         }
                         id={id}
                     >

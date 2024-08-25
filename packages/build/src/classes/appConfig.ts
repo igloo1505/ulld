@@ -1,12 +1,14 @@
 import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 import fs from "fs";
 import path from "path";
-import { prompt } from "enquirer";
-import { NoteType } from "./noteType";
+import enq from "enquirer";
+import { NoteType } from "./noteType.js";
 import { log } from "console";
-import { ShellManager } from "./baseClasses/shell";
+import { ShellManager } from "./baseClasses/shell.js";
 import chalk from "chalk";
-import { TargetPaths } from "./paths";
+import { TargetPaths } from "./paths.js";
+
+const { prompt } = enq;
 
 interface PathItem {
   path: string;

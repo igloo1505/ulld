@@ -655,3 +655,14 @@ div[data-radix-popper-content-wrapper] {
     text-decoration: none !important;
   }
 }
+
+.steps {
+  margin-top: 2rem;
+  .step {
+    margin-top: 1.5rem;
+  }
+  h3 {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+  }
+}

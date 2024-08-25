@@ -1,13 +1,15 @@
 import {
     getCurrentDir,
     getDirectoryCompletionFromString,
-} from "../utils/locationUtils";
+} from "../utils/locationUtils.js";
 import chalk from "chalk";
-import { prompt } from "enquirer";
+import enq from "enquirer";
 import fs from 'fs'
-import { UlldBuildProcess } from "../classes/build";
-import { BuildOptionsType } from "../utils/options";
-import { getBranchSelection } from "./selectBranch";
+import { UlldBuildProcess } from "../classes/build.js";
+import { BuildOptionsType } from "../utils/options.js";
+import { getBranchSelection } from "./selectBranch.js";
+
+const { prompt } = enq;
 
 export const verifyDirectory = async (opts: BuildOptionsType) => {
     const currentDir = getCurrentDir();

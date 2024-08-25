@@ -1,19 +1,29 @@
 {
     "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
+    "extends": "@ulld/typescript-config/base.json",
     "compilerOptions": {
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "noEmitOnError": false,
         "declaration": true,
-        "module": "ES2020",
+        "declarationMap": true,
+        "allowJs": true,
         "outDir": "dist",
         "rootDir": "src",
         "strict": true,
-        "target": "es2022",
+        "noEmit": false,
+        "module": "ESNext",
+        "target": "ESNext",
         "moduleResolution": "Bundler",
+        "resolveJsonModule": true,
         "esModuleInterop": true,
-        "jsx": "preserve",
-        "types": [
-            "mocha",
-            "chai",
-            "node"
+        "allowImportingTsExtensions": false,
+        "jsx": "react",
+        "lib": [
+            "ESNext"
         ]
     },
     "include": [
@@ -23,7 +33,6 @@
     "exclude": [
         "src/__test__/**"
     ],
-    "esModuleInterop": true,
     "ts-node": {
         "esm": true
     }

@@ -1,6 +1,7 @@
 {
   "name": "@ulld/internal-dev-cli",
   "version": "0.0.87",
+  "types": "dist/index.d.ts",
   "bin": {
     "mr": "./bin/run.js"
   },
@@ -129,7 +130,5 @@
     "dev": "node ./bin/dev.js",
     "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
     "test": "jest"
-  },
-  "type": "module",
-  "types": "dist/index.d.ts"
+  }
 }

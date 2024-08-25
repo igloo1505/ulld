@@ -25,70 +25,143 @@ index: true
 
 ## Where to go from here
 
-<Admonition title="New Build Process" type="info" dropdown open>
- It was originally my plan to release the core of the app with a build process that was more suited for users with a modest amount of developer experience, and work on a more complete build script after <LogoAsText /> was publically available. I've since abandoned that approach, and a much more complete build script will be released at the same time as the <LogoAsText /> beta.
+<Admonition title="New Build Process" type="info" dropdown>
+ It was originally my plan to release the core of the app with a build process that was more suited for users with a modest amount of developer experience, and work on a more complete build script after <LogoAsText /> was publicly available. I've since abandoned that approach, and a much more complete build script will be released at the same time as the <LogoAsText /> beta.
 
 These more complicated docs are for the original approach. Much simpler documentation will be up by the end of July. 
 </Admonition>
 
-#### 1. Review
+<Steps>
+    <Step>
 
-If you are unfamiliar with **JSX** syntax, review the [Intro to jsx](/docs/user/introToJsx) article.
+### Review
 
-#### 2. Configure
-Configure your application using either the configuration form [here](/configure), or by writing your own [`appConfig.ulld.json`](#write-own-config)
+If you are unfamiliar with **JSX** syntax, review the [Intro to jsx](/docs/user/introToJsx) article. **JSX** is an incredibly simple syntax that allows you to insert complete React components directly in your markdown notes, and is at the core of <LogoAsText /> functionality..
 
-#### 3. Setup your computer
+    </Step>
+
+    <Step>
+
+### Configure
+
+    Configure your application using either the configuration form [here](/configure), or by writing your own [`appConfig.ulld.json`](#write-own-config)
+
+    </Step>
+
+    <Step>
+
+### Setup your computer
+
 If you do not have **Node.js** installed, install the specific _stable_ build for your operating system by clicking [here](https://nodejs.org)[^1] <LogoAsText /> works as an entire full-stack application, all on your own computer. This means that a locally running server is required, and for that, <LogoAsText /> uses **Node.js**. Because of the safety limitations inside of browsers and their intentional lack of access to the file system, any application of this type would not be able to function without a locally running server.
 
-#### 4. Create a copy of <LogoAsText/> on your own machine.
+##### Package Managers
+<Small muted noMargin>Use pnpm for now.</Small>
 
-While an installer completely independent of **Git** is in the works, for now, the main <LogoAsText /> repo must be cloned using **Git**. Install **Git** by following the instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), and then use:
+Package managers are pieces of software that make it much easier to install, locate and update packages for a given environment. For Node, there are three popular package managers.
+
+When you install Node, you'll automatically install a package manager called `npm` as well. There are two other popular alternatives to `npm` that do exactly the same thing in a _usually_ more efficient manner, `pnpm` and `yarn`. <Ul yellow>Eventually</Ul>, <LogoAsText /> will support all three package managers. The code is in place, but as of now, the only package manager that has been thoroughly tested is `pnpm`.
+
+If you do are starting from an environment without Node or a Node package manager installed, the easiest way to accomplish this is to download Node, and use `npm` to install `pnpm` by running the following command in your terminal.
+
+```zsh
+npm install --global pnpm
+```
+
+You will now have access to the `pnpm` command directly, which the <LogoAsText /> cli will use to install dependencies needed to complete the build of your application based on your configuration file.
+
+    </Step>
+
+    <Step>
+
+### Tell <LogoAsText fontSize={18} /> where to find the configuration file.
+
+This can be done in 1 of 2 ways, but please, use the first method unless you have good reason to use the second.
+
+First, you can create a directory anywhere on your computer that follows the file structure described [here](/docs/user/extendingTheBuild), and point to that directory with an env variable `ULLD_ADDITIONAL_RESOURCES`. 
+
+On a mac, that would look like this:
+
+```zsh title="~/.zshrc"
+export ULLD_ADDITIONAL_RESOURCES="/path/to/my/directory"
+```
+
+And on windows, you'll have to follow the docs [here](https://learn.microsoft.com/en-us/powershell/scripting/learn/shell/creating-profiles?view=powershell-7.4). This method will allow the core app files to exist separately from the compiled app, ensuring that they remain available during rebuilds and updates.
+
+Alternatively, you can run the build cli and wait for it to pause when it can't find the `appConfig.ulld.json` file. If the cli cannot find the configuration file, it will pause and give the opportunity to drop the `appConfig.ulld.json` file into the directory that the cli creates. 
+
+The downside to this approach however, is that this configuration file will be overwritten if it is not saved elsewhere when the app is updated or rebuilt.
+
+    </Step>
+    <Step>
+### Configure Postgres [#get-started-postgres]
+
+<LogoAsText /> will eventually support two different databases; **SQLite** and **Postgres**. Postgres is strongly preferred for performance reasons, but both Postgres and SQLite offer their own unique advantages. For now however, only **Postgres** is officially supported. Unfortunately, **Postgres** requires some additional setup by you, the user. If you intend to store your data on your own machine, as most users will, you'll need to install the postgres server on your machine as well.
+
+To install postgres, visit their installer page [here](https://www.postgresql.org/download/). 
+
+After installing postgres, you'll need to create a database specifically for <LogoAsText />. This can be done through the command line using the `createdb` command as documented [here](https://www.postgresql.org/docs/current/tutorial-createdb.html), or through a graphical interface like the free and open source **pgAdmin** tool available for download [here](https://www.pgadmin.org/download/).
+
+You will need to provide <LogoAsText /> with two environment variables used to provide a connection url for your database, `ULLD_POSTGRES_URL` and `ULLD_POSTGRES_URL_NON_POOLING`. While they both are required, when using a local postgres instance these will most likely have the same value. 
+
+Unlike the `ULLD_ADDITIONAL_RESOURCES` environment variable, these variables will most likely be specific to your application. To create env variables that are applied specifically to your generated application, you can create a file called `.env` (notice the leading period) in the root of the directory pointed to by your `ULLD_ADDITIONAL_RESOURCES` variable.
+
+If you use the **pgAdmin** tool, you'll be able to find the connection url directly through their interface. If you create your database through the cli however, you'll need to format your own connection url using the format documented [here](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING). 
+
+When this is all put together, you'll have something like this:
 
 
-<CodeBlock
-    lang={"zsh"}
-    content={"git clone !!link:links.repo.clone.https!!"}
-/>
+```zsh title="~/.zshrc"
+export ULLD_ADDITIONAL_RESOURCES="/path/to/my/directory"
+```
 
-The above command will create a new directory with the <LogoAsText /> code base inside of it. Make sure to run this command from _1 step above_ where you want the project to go. The project does <Hl style={{color: "white !important"}} red>not</Hl> need to be in the same directory as your notes. Feel free to burry it somewhere out of the way, as once it's configured, it will mostly run on it's own.  
+```json title="/path/to/my/directory/appConfig.ulld.json"
+{
+    "fsRoot": "/path/to/my/notes/directory",
+    ...
+}
+```
+
+```zsh title="/path/to/my/directory/.env"
+ULLD_POSTGRES_URL="postgresql://myUserName:somePassword@localhost:5432/myUlldDatabaseName"
+ULLD_POSTGRES_URL_NON_POOLING="postgresql://myUserName:somePassword@localhost:5432/myUlldDatabaseName"
+```
+
+Whew... I know that's a lot, but you're all set to generate you're now all set to generate your application.
+    </Step>
+
+    <Step>
+The last step of this process will be handled almost entirely by the <LogoAsText /> cli. All you need to do is install it, using `npm`, `pnpm`, or `yarn`.
+
+<TabGroup>
+    <Tab label="npm">
+        `npm install --global @ulld/build`
+    </Tab>
+
+    <Tab label="pnpm">
+        `pnpm add --global @ulld/build`
+    </Tab>
+
+    <Tab label="yarn">
+        `yarn install @ulld/build`
+    </Tab>
+</TabGroup>
+
+Once you've installed the build cli using the command above, you can execute the build using the `ulldBuild` command.
+
+**Note:** If you are executing this command against a new database, you'll want to include the `ulldBuild --genDatabase` flag. This will format your database to match the <LogoAsText /> data structure. Be careful however to not include this flag against future builds using the same database, as it may modify the database in a manner that is not recoverable.
+
+    </Step>
+
+</Steps>
+
 
 If you're unsure of how to find the folder you would like to place the project in from within the terminal, do a quick Google search for 'changing directories' on your specific operating system. On a mac, you can also right click on the folder in Finder, and select `Services > New Terminal Tab at Folder`. Remember to select the folder that the project should be _inside of_. Do not create a folder specifically for <LogoAsText />, as `git clone...` will take care of that for you.
-
-
-#### 5. Tell <LogoAsText fontSize={18} /> where to find the configuration file.
-
-This can be done in 1 of 2 ways. 
-
-1. You can simply plop the `appConfig.ulld.json` file you either created yourself or downloaded from the [configuration form](/configure) directly inside of the <LogoAsText /> folder you just created when you cloned the project in the step above. 
-2. You can set an environment variable for your specific terminal called `ULLD_APP_CONFIG` that is set to the path of wherever it is that you would like to keep your configuration file. This serves two purposes. First, many people with a complicated computer workflow prefer to keep all of their configuration files in a single location so they can back them up with ease. Second, while the app itself will mostly run on it's own after it's initially configured, as new features come around or your use case evolves, you can more easily use your existing configuration file as a baseline for generating a new configuration file that meets your needs, without having to dig too deeply. This includes adding plugins as <LogoAsText /> builds a community of developers.
-
-
-
-#### 6. Optional: Configure Postgres [#get-started-postgres]
-
-<LogoAsText /> supports two different databases; **SQLite** and **Postgres**. Postgres is strongly prefered for performance reasons, but both Postgres and SQLite offer their own unique advantages. 
-
-##### SQLite
-<Small noMargin muted>Default</Small>
-
-First, since SQLite does not require a running server instance, it requires almost no setup at all. You do however need to download the binary available <StaticLink link="links.docs.external.SQLiteDownload">here</StaticLink>. SQLite simply creates a file within your application and that file alone functions as a database. This means that you can backup your SQLite database on any platform that allows general purpose data. If you choose to, you can simply copy this file to a thumb drive, an external hard drive, or send it to a third party service like iCloud Drive or Google Drive. SQLite is the default for it's ease of use, but Postgres is preferred for users that are comfortable setting up the database themselves.
-
-##### Postgres
-
-Postgres offer's some significant advantages over SQLite. First, the performance of Postgres is likely to exceed that of SQLite. The greater advantage however, is the ability use a remote instance of Postgres _as a database_. While SQLite offers the ability to more easily store the SQLite file on almost any storage platform, it does not function _as_ a database on those platforms, and won't function as a database again until it is once again somewhere where <LogoAsText /> can find it. Postgres however has countless options for remote hosting of databases. As <LogoAsText /> continues to grow to soon include a native mobile application and the ability to publish all or a subset of your notes online, Postgres will be a requirement for these remote features to function. This is due to the fact that <LogoAsText /> relies on data from the database to handle searching, generating links, generating plot data and more. There are options for SQLite remote hosting, and <LogoAsText /> may possibly grow to permit other ***relational*** databases, but Postgres is usually the most affordable remotely hosted database available. 
-
-If you do choose to go with Postgres, you can find the current downloads [here](https://www.postgresql.org/download/), or through an operating system specific package manager like [HomeBrew](https://brew.sh) for mac.
-
-<Hint>
-    If you already have postgres configured on your machine, create a new postgres database and provide that connection URL to your `appConfig.ulld.json` file. If you do not, SQLite will be almost equivalent for now, apart from a possible small performance hit. As <LogoAsText fontSize={13} /> continues to grow and adds the ability to access your notes remotely, either on your own device or hosted online publicly, <LogoAsText fontSize={13} /> will provide the necessary features to easily move from SQLite to Postgres without losing any data.
-</Hint>
 
 
 
 #### 7. Tell <LogoAsText fontSize={18} /> to build itself.
 
-Lastly, you'll need to run 2 commands inside of the folder you just created by cloning the respository. Follow the same technique you used to find the directory you used to first clone the repository, except this time, go ***into*** the `ulld` directory itself.
+Lastly, you'll need to run 2 commands inside of the folder you just created by cloning the repository. Follow the same technique you used to find the directory you used to first clone the repository, except this time, go ***into*** the `ulld` directory itself.
 
 
 <Hint>

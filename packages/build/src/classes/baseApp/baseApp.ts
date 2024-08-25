@@ -1,23 +1,23 @@
-import { UlldPlugin } from "../plugin";
-import { getComponentMapContent } from "./fileContent/componentMap";
 import fs from "fs-extra";
 import path from "path";
-import { ShellManager } from "../baseClasses/shell";
-import { UlldBuildProcess } from "../build";
 import { SlotMapInternalType } from "@ulld/configschema/types";
-import sm from "@ulld/utilities/slotMap.json";
-import { flattenSlotMap } from "../../utils/slotMapUtils";
-import { TargetPaths } from "../paths";
-import { EventMethodKey } from "../../types";
-import { getEventMethodListContent } from "./fileContent/eventMethodList";
-import { FileManager } from "../baseClasses/fileManager";
-import { PathKeys } from "@ulld/utilities/types";
-import { AdditionalSources } from "../additionalSources";
-import { BuildStaticData } from "./buildStaticData";
+import sm from "@ulld/utilities/slotMap.json"  with {type: "json"};
+import type { PathKeys } from "@ulld/utilities/types";
 import { ParserKey, parserKeyList } from "@ulld/configschema/developer";
-import { BuildCleanup } from "./cleanup";
-import { TemplateFile } from "../templateFile";
 import { globSync } from "glob";
+import { EventMethodKey } from "../../types.js";
+import { flattenSlotMap } from "../../utils/slotMapUtils.js";
+import { AdditionalSources } from "../additionalSources.js";
+import { FileManager } from "../baseClasses/fileManager.js";
+import { ShellManager } from "../baseClasses/shell.js";
+import { UlldBuildProcess } from "../build.js";
+import { TargetPaths } from "../paths.js";
+import { UlldPlugin } from "../plugin.js";
+import { TemplateFile } from "../templateFile.js";
+import { BuildStaticData } from "./buildStaticData.js";
+import { BuildCleanup } from "./cleanup.js";
+import { getComponentMapContent } from "./fileContent/componentMap.js";
+import { getEventMethodListContent } from "./fileContent/eventMethodList.js";
 
 interface ParserFunctionData {
     importName: string;

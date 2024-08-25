@@ -1,7 +1,7 @@
 import { makeValidId } from "@ulld/utilities/identity";
-import { FileManager } from "../baseClasses/fileManager";
-import { TargetPaths } from "../paths";
-import { SlotDataType } from "@ulld/utilities/types";
+import type { SlotDataType } from "@ulld/utilities/types";
+import { FileManager } from "../baseClasses/fileManager.js";
+import { TargetPaths } from "../paths.js";
 
 export class TemplateContent extends FileManager {
     replaceMeRegex: RegExp = /REPLACEME(\<[^\>]*>)?/gm

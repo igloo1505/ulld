@@ -1,22 +1,22 @@
-import {FileData} from "./main"
-import fs from 'fs'
+import { FileData } from "./main.js";
+import fs from "fs";
 
 export class JsonFile<T extends object = {}> extends FileData {
-    constructor(public path: string){
-        super(path, false)
+    constructor(public path: string) {
+        super(path, false);
     }
     getJsonContent(): T {
-        this.throwIfNotExists()
-        return JSON.parse(this.getContent())
+        this.throwIfNotExists();
+        return JSON.parse(this.getContent());
     }
     writeContent(content?: string | object): void {
-         let newContent = content || this.content
-        if(!newContent){
-            throw new Error(`Cannot write content. No content was found.`)
+        let newContent = content || this.content;
+        if (!newContent) {
+            throw new Error(`Cannot write content. No content was found.`);
         }
-        if(typeof newContent === "object"){
-            newContent = JSON.stringify(newContent, null, 4)
+        if (typeof newContent === "object") {
+            newContent = JSON.stringify(newContent, null, 4);
         }
-        fs.writeFileSync(this.path, newContent, {encoding: "utf-8"})
+        fs.writeFileSync(this.path, newContent, { encoding: "utf-8" });
     }
 }

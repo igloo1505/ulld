@@ -1,3 +1,4 @@
+import React from "react"
 import MathjaxLoader from "./Mathjax"
 import RequireJsLoader from "./RequireJsLoader"
 import SvgLatexLoader from "./SvgLatexLoader"

@@ -1,14 +1,14 @@
 import { applySearchParamConfigOverride } from "./applySearchParamOverride"
 import type { InternalDocumentConfigType } from "./internalDocumentTypes"
 import type { AppConfigSchemaOutput } from "./main"
-import { ParsableExtensions, getFileTypeAppendices, getParsableExtensions } from "./secondaryConfigParse/getParsableExtensions"
+import { ParsableExtensionsSchema, getFileTypeAppendices, getParsableExtensions } from "./secondaryConfigParse/getParsableExtensions"
 
 
 
 // TODO: Turn this extraconfig into a zod object, or if it's going to be truly constant cast to a more typesafe return value below
 interface ExtraConfig {
-    parsableExtensions: ParsableExtensions[]
-    filetypeSpecificAppendices: Record<ParsableExtensions, string>
+    parsableExtensions: ParsableExtensionsSchema[]
+    filetypeSpecificAppendices: Record<ParsableExtensionsSchema, string>
     internalDocumentTypes: InternalDocumentConfigType[]
     fileTypes: {
         image: string[]

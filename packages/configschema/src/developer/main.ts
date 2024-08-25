@@ -1,21 +1,21 @@
 import { z } from "zod";
-import { componentConfigSchema } from "./componentSchema";
-import { pluginParserMap } from "./parserSchema";
-import { pluginSettingsSchema } from "./pluginSettingsSchema";
-import { pluginAdditionalPageSchema } from "./pluginPageSchema";
-import { pluginEventsSchema } from "./pluginEventsSchema";
+import { componentConfigSchema } from "./componentSchema.js";
+import { pluginParserMap } from "./parserSchema.js";
+import { pluginSettingsSchema } from "./pluginSettingsSchema.js";
+import { pluginAdditionalPageSchema } from "./pluginPageSchema.js";
+import { pluginEventsSchema } from "./pluginEventsSchema.js";
 import {
     InternalDeveloperConfigInput as DCI,
     InternalDeveloperConfigInputWithoutGeneric,
-} from "./types/developerConfig";
-import { slotKeySchema } from "./slotKeySchema";
-import { trpcConfigSchema } from "./trpcConfigSchema";
-import { additionalImportsConfigSchema } from "./additionalImportsConfigSchema";
-import { PluginSlotKey } from "./slotMapType";
-import { navigationLinkSchema } from "./navigationLink";
-import { pluginCommandPaletteSchema } from "./commandPalette";
-import { tailwindPluginConfig } from "./tailwind";
-export { parserKeyList } from "./parserSchema";
+} from "./types/developerConfig.js";
+import { slotKeySchema } from "./slotKeySchema.js";
+import { trpcConfigSchema } from "./trpcConfigSchema.js";
+import { additionalImportsConfigSchema } from "./additionalImportsConfigSchema.js";
+import { PluginSlotKey } from "./slotMapType.js";
+import { navigationLinkSchema } from "./navigationLink.js";
+import { pluginCommandPaletteSchema } from "./commandPalette.js";
+import { tailwindPluginConfig } from "./tailwind.js";
+export { parserKeyList } from "./parserSchema.js";
 import { transformExportStringOptional } from "@ulld/utilities/transformExportString";
 
 export const defaultPluginId =

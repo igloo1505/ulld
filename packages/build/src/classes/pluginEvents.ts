@@ -1,8 +1,7 @@
-import { DeveloperConfigOutput } from "@ulld/configschema/developer";
-import { TargetPaths } from "./paths";
-import { DeveloperConfigInput } from "@ulld/types";
-import { EventMethodKey } from "../types";
-import { ShellManager } from "./baseClasses/shell";
+import { DeveloperConfigInput, DeveloperConfigOutput } from "@ulld/configschema/developer";
+import { TargetPaths } from "./paths.js";
+import { EventMethodKey } from "../types.js";
+import { ShellManager } from "./baseClasses/shell.js";
 
 export class PluginEvents extends ShellManager {
     hasEvents: boolean = false

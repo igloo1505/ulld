@@ -38,7 +38,7 @@ export const allParsableFileExtensionSchema = z.union([
 ])
 
 
-export type ParsableExtensions = z.input<typeof defaultParsableFileExtensions> | z.input<typeof parsableFileExtensions>
+export type ParsableExtensionsSchema = z.input<typeof defaultParsableFileExtensions> | z.input<typeof parsableFileExtensions>
 
 export type MarkdownFileExtensions = z.input<typeof markdownExtensions>
 
@@ -56,7 +56,7 @@ export const getParsableExtensions = (config: AppConfigSchemaOutput): (z.input<t
 }
 
 export const getFileTypeAppendices = (parsableExtensions: ReturnType<typeof getParsableExtensions>) => {
-    let ext: Record<ParsableExtensions, string> = {} as Record<ParsableExtensions, string>
+    let ext: Record<ParsableExtensionsSchema, string> = {} as Record<ParsableExtensionsSchema, string>
     for (const k of parsableExtensions) {
         ext[k] = replaceRecursively(k, /\./gmi, "")
     }

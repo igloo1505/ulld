@@ -5,18 +5,18 @@ import {
     AnySubSlotKey,
     PluginSlotKey,
 } from "@ulld/configschema/developerTypes";
-import { PluginSlot } from "./slot";
-import { PluginComponent } from "./component";
-import { PluginPage } from "./page";
-import { PluginParser } from "./parser";
-import { PluginEvents } from "./pluginEvents";
-import { TargetPaths } from "./paths";
-import { ShellManager } from "./baseClasses/shell";
-import { PackageJson } from "./baseClasses/pkgJson";
-import { PluginSettingsPage } from "./pluginSettingsPage";
-import { Path } from "./utilityClasses/Path";
+import { PluginSlot } from "./slot.js";
+import { PluginComponent } from "./component.js";
+import { PluginPage } from "./page.js";
+import { PluginParser } from "./parser.js";
+import { PluginEvents } from "./pluginEvents.js";
+import { TargetPaths } from "./paths.js";
+import { ShellManager } from "./baseClasses/shell.js";
+import { PackageJson } from "./baseClasses/pkgJson.js";
+import { PluginSettingsPage } from "./pluginSettingsPage.js";
+import { Path } from "./utilityClasses/Path.js";
 import { JsonFile } from "@ulld/utilities/jsonFileClass";
-import devData from "../../staticDevelopmentData.json"
+import devData from "../../staticDevelopmentData.json"  with {type: "json"};
 
 export class UlldPlugin extends ShellManager {
     pluginConfig: DeveloperConfigOutput | "Unusable" = "Unusable";

@@ -1,7 +1,7 @@
 import { program } from "commander";
 import { log } from "console";
-import { stages } from "./stages/main";
-import { optionMap, stringOptionMap } from "./utils/options";
+import { stages } from "./stages/main.js";
+import { optionMap, stringOptionMap } from "./utils/options.js";
 
 program
     .option(optionMap.here)

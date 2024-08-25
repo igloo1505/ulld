@@ -1,6 +1,6 @@
 import { FileData } from "@ulld/utilities/fileClass";
-import { PackageManagers } from "../types";
-import { TargetPaths } from "./paths";
+import { PackageManagers } from "../types.js";
+import { TargetPaths } from "./paths.js";
 import path from 'path'
 
 export class PackageManager {

@@ -16,7 +16,7 @@ const FileGroup = ({
     const [open, setOpen] = useState(defaultOpen)
     return (
         <Folder
-            name={item.subPath}
+            name={item.subPath === "unreserved-public-dir" ? "<Any Unreserved Directory>" : item.subPath}
             defaultOpen={defaultOpen}
             /* @ts-ignore */
             open={open}
@@ -40,7 +40,7 @@ const FileGroup = ({
                         return <FileGroup item={d} defaultOpen={false} />;
                     } else {
                         return <File
-                            name={d.subPath}
+                            name={d.subPath === "unreserved-public-dir" ? "<Any Unreserved Directory>" : d.subPath}
                             onClick={(e) => {
                                 e.stopPropagation()
                                 e.preventDefault()

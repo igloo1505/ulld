@@ -1,9 +1,9 @@
 import { BuildStaticDataInput, BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
-import { UlldBuildProcess } from "../build";
-import { TargetPaths } from "../paths";
-import { FileManager } from "../baseClasses/fileManager";
-import buildData from "@ulld/utilities/buildStaticData"
 import { ArrayUtilities } from "@ulld/utilities/arrayUtilities";
+import { FileManager } from "../baseClasses/fileManager.js";
+import { UlldBuildProcess } from "../build.js";
+import { TargetPaths } from "../paths.js";
+import buildData from "@ulld/utilities/buildStaticData.json"  with {type: "json"};
 
 type HasSetKey = "settingsData"
 

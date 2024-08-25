@@ -1,39 +1,11 @@
+import type { pathKeys } from "../staticAppProperties/buildUtils/main";
+
 export * from "./baseApp/main";
 export type MethodListPathKeys =
     | "onBackupMethodList"
     | "onRestoreMethodList"
     | "onBuildMethodList"
     | "onSyncMethodList";
-
-export const pathKeys = [
-    "public",
-    "styles",
-    "packageJson",
-    "app",
-    "envLocal",
-    "projectRoot",
-    "componentDocumentation",
-    "fullComponentDocumentation",
-    "node_modules",
-    "shortComponentDocumentation",
-    "src",
-    "appDir",
-    "public",
-    "nextConfig",
-    "tailwind",
-    "ulldBuildData",
-    "appConfig",
-    "methods",
-    "tempTargetPaths",
-    "mdxParserList",
-    "componentMap",
-    "unifiedUserDefinedScss",
-    "gitignore",
-    "prismaSchema",
-    "userDefinedStyles",
-    "pluginDocumentation",
-    "tempBuildFiles",
-] as const;
 
 export type PathKeys = (typeof pathKeys)[number];
 

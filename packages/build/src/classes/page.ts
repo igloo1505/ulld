@@ -1,15 +1,15 @@
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
-import { TargetPaths } from "./paths";
-import { ShellManager } from "./baseClasses/shell";
+import { TargetPaths } from "./paths.js";
+import { ShellManager } from "./baseClasses/shell.js";
 import { SlotDataType } from "@ulld/utilities/types";
-import slotStaticData from "@ulld/utilities/slotMap.json";
+import slotStaticData from "@ulld/utilities/slotMap.json"  with {type: "json"};
 import {
     AnySubSlotKey,
     PluginSlotKey,
 } from "@ulld/configschema/developerTypes";
-import buildData from "@ulld/utilities/buildStaticData";
-import { SubSlot } from "./subslot";
-import { PluginAdditionalPage } from "./pluginAdditionalPage";
+import buildData from "@ulld/utilities/buildStaticData.json"  with {type: "json"};
+import { SubSlot } from "./subslot.js";
+import { PluginAdditionalPage } from "./pluginAdditionalPage.js";
 
 export class PluginPage extends ShellManager {
     shouldUse: boolean = true;

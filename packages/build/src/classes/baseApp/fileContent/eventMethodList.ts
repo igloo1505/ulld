@@ -1,6 +1,6 @@
-import { EventMethodKey } from "../../../types";
-import { ShellManager } from "../../baseClasses/shell";
-import { UlldPlugin } from "../../plugin";
+import { EventMethodKey } from "../../../types.js"
+import { ShellManager } from "../../baseClasses/shell.js"
+import { UlldPlugin } from "../../plugin.js"
 
 export const getEventMethodListContent = (plugins: UlldPlugin[], eventType: EventMethodKey): string => {
     let sh = new ShellManager()

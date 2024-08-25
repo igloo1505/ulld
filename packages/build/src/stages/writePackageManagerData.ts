@@ -1,6 +1,6 @@
-import { PackageManager } from "../classes/packageManager";
-import { TargetPaths } from "../classes/paths";
-import { PackageManagers } from "../types";
+import { PackageManager } from "../classes/packageManager.js";
+import { TargetPaths } from "../classes/paths.js";
+import { PackageManagers } from "../types.js";
 
 export const writePackageManagerData = (paths: TargetPaths, type: PackageManagers) => {
     let p = new PackageManager(paths, type)

@@ -1,15 +1,15 @@
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
-import { SubSlot } from "./subslot";
+import { SubSlot } from "./subslot.js";
 import {
     AnySubSlotKey,
     PluginSlotKey,
 } from "@ulld/configschema/developerTypes";
-import { ShellManager } from "./baseClasses/shell";
-import { TargetPaths } from "./paths";
-import { PackageJson } from "./baseClasses/pkgJson";
+import { ShellManager } from "./baseClasses/shell.js";
+import { TargetPaths } from "./paths.js";
+import { PackageJson } from "./baseClasses/pkgJson.js";
 import fs from "fs";
-import { Path } from "./utilityClasses/Path";
-import { PluginComponentProps } from "../types";
+import { Path } from "./utilityClasses/Path.js";
+import { PluginComponentProps } from "../types.js";
 import { BuildStaticDataInput } from "@ulld/configschema/buildTypes";
 import { makeValidId } from "@ulld/utilities/identity";
 

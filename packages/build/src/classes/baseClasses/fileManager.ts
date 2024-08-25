@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
-import { ShellManager } from "./shell";
-import { TargetPaths } from "../paths";
-import { TargetPathKeys } from "@ulld/utilities/types";
+import type { TargetPathKeys } from "@ulld/utilities/types";
+import { TargetPaths } from "../paths.js";
+import { ShellManager } from "./shell.js";
 
 interface LineItem {
     content: string;

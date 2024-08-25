@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { PluginEventsConfig } from "./types/pluginEventsConfig";
+import { PluginEventsConfig } from "./types/pluginEventsConfig.js";
 import { transformExportStringOptional } from "@ulld/utilities/transformExportString";
 
 export const pluginEventsSchema: z.ZodType<PluginEventsConfig> = z.object({

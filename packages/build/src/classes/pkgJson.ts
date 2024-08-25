@@ -1,13 +1,6 @@
-import { PackageManagers } from "../types";
-import { PackageJson } from "./baseClasses/pkgJson";
+import { PackageManagers } from "../types.js";
+import { PackageJson } from "./baseClasses/pkgJson.js";
 
-const installScripts: {
-    [k in PackageManagers]: string;
-} = {
-    pnpm: "pnpm install",
-    npm: "npm install", // Double check this. Not too sure if this will work.
-    yarn: "yarn install", // Almost surely wrong. Figure this out when back on wifi and able to reinstall yarn and figure out this f---king pnpm issue.
-};
 
 export class TargetPackageJson extends PackageJson {
     constructor(

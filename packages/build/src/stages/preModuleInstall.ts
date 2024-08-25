@@ -1,7 +1,7 @@
 import { OptionValues } from "commander";
-import { UlldBuildProcess } from "../classes/build";
-import { getDevData } from "../utils/getDevData";
-import { writePackageManagerData } from "./writePackageManagerData";
+import { UlldBuildProcess } from "../classes/build.js";
+import { getDevData } from "../utils/getDevData.js";
+import { writePackageManagerData } from "./writePackageManagerData.js";
 
 export const installDependencies = async (build: UlldBuildProcess, options: OptionValues) => {
        let d = getDevData()

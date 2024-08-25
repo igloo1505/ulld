@@ -1,10 +1,12 @@
 import { PackageJsonType } from "@ulld/developer-schemas/fullPackageJson";
-import { Prompter } from "../prompter";
 import path from "path";
 import fs from "fs";
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
 import { transformExportString } from "@ulld/utilities/transformExportString";
-import { PackageManagers } from "../../types";
+import { PackageManagers } from "../../types.js";
+import { Prompter } from "../prompter.js";
+
+
 
 interface ExportItem {
     export: string;

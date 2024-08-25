@@ -1,5 +1,5 @@
 import {z} from 'zod'
-import { navigationLinkCategory } from './navigationLinkType'
+import { navigationLinkCategory } from './navigationLinkType.js'
 
 
 export const navigationLinkSchema = z.object({

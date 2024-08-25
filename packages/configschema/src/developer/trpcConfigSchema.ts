@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { TrpcConfig } from "./types/trpcConfig";
+import { TrpcConfig } from "./types/trpcConfig.js";
 
 export const trpcConfigSchema: z.ZodType<TrpcConfig> = z.object({
     routerName: z.string(),
