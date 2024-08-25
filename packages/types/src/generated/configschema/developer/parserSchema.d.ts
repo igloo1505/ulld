@@ -1,5 +1,5 @@
 import { z, ZodOptional, ZodType } from "zod";
-import { ParserConfig } from "./types/parserConfig";
+import { ParserConfig } from "./types/parserConfig.js";
 export declare const parserKeyList: readonly ["mdx"];
 export declare const parserExtensionSchema: z.ZodType<ParserConfig>;
 type ParserRecord = Record<(typeof parserKeyList)[number], ZodOptional<ZodType<ParserConfig, z.ZodTypeDef, ParserConfig>>>;

@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { InternalDeveloperConfigInput as DCI, InternalDeveloperConfigInputWithoutGeneric } from "./types/developerConfig";
-import { PluginSlotKey } from "./slotMapType";
-export { parserKeyList } from "./parserSchema";
+import { InternalDeveloperConfigInput as DCI, InternalDeveloperConfigInputWithoutGeneric } from "./types/developerConfig.js";
+import { PluginSlotKey } from "./slotMapType.js";
+export { parserKeyList } from "./parserSchema.js";
 export declare const defaultPluginId = "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten.";
 export declare const _developerConfigSchema: z.ZodObject<{
     pluginName: z.ZodString;
@@ -88,15 +88,15 @@ export declare const _developerConfigSchema: z.ZodObject<{
         componentId?: string | undefined;
     }>, "many">>;
     parsers: z.ZodDefault<z.ZodObject<{
-        mdx: z.ZodOptional<z.ZodType<import("./types/parserConfig").ParserConfig, z.ZodTypeDef, import("./types/parserConfig").ParserConfig>>;
+        mdx: z.ZodOptional<z.ZodType<import("./types/parserConfig.js").ParserConfig, z.ZodTypeDef, import("./types/parserConfig.js").ParserConfig>>;
     }, "strip", z.ZodTypeAny, {
-        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     }, {
-        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     }>>;
-    additionalImports: z.ZodOptional<z.ZodType<import("./types/additionalImportsConfig").AdditionalImportsConfig, z.ZodTypeDef, import("./types/additionalImportsConfig").AdditionalImportsConfig>>;
-    trpc: z.ZodOptional<z.ZodType<import("./types/trpcConfig").TrpcConfig, z.ZodTypeDef, import("./types/trpcConfig").TrpcConfig>>;
-    settings: z.ZodOptional<z.ZodType<import("./types/pluginSettingsConfig").PluginSettingsConfig, z.ZodTypeDef, import("./types/pluginSettingsConfig").PluginSettingsConfig>>;
+    additionalImports: z.ZodOptional<z.ZodType<import("./types/additionalImportsConfig.js").AdditionalImportsConfig, z.ZodTypeDef, import("./types/additionalImportsConfig.js").AdditionalImportsConfig>>;
+    trpc: z.ZodOptional<z.ZodType<import("./types/trpcConfig.js").TrpcConfig, z.ZodTypeDef, import("./types/trpcConfig.js").TrpcConfig>>;
+    settings: z.ZodOptional<z.ZodType<import("./types/pluginSettingsConfig.js").PluginSettingsConfig, z.ZodTypeDef, import("./types/pluginSettingsConfig.js").PluginSettingsConfig>>;
     pages: z.ZodDefault<z.ZodArray<z.ZodObject<{
         targetUrl: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
         slot: z.ZodOptional<z.ZodString>;
@@ -113,7 +113,7 @@ export declare const _developerConfigSchema: z.ZodObject<{
         slot?: string | undefined;
         exportsPageProps?: boolean | undefined;
     }>, "many">>;
-    events: z.ZodDefault<z.ZodType<import("./types/pluginEventsConfig").PluginEventsConfig, z.ZodTypeDef, import("./types/pluginEventsConfig").PluginEventsConfig>>;
+    events: z.ZodDefault<z.ZodType<import("./types/pluginEventsConfig.js").PluginEventsConfig, z.ZodTypeDef, import("./types/pluginEventsConfig.js").PluginEventsConfig>>;
     navigationLinks: z.ZodDefault<z.ZodArray<z.ZodObject<{
         label: z.ZodString;
         href: z.ZodString;
@@ -215,14 +215,14 @@ export declare const _developerConfigSchema: z.ZodObject<{
     })[];
     tailwind: {};
     parsers: {
-        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     };
     pluginId: string;
-    events: import("./types/pluginEventsConfig").PluginEventsConfig;
+    events: import("./types/pluginEventsConfig.js").PluginEventsConfig;
     slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
-    additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
-    settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
     documentation?: string | undefined;
 }, {
     label: string;
@@ -247,18 +247,18 @@ export declare const _developerConfigSchema: z.ZodObject<{
         componentId?: string | undefined;
     }[] | undefined;
     parsers?: {
-        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     } | undefined;
-    additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
-    settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
     pages?: {
         export: string;
         targetUrl?: string | undefined;
         slot?: string | undefined;
         exportsPageProps?: boolean | undefined;
     }[] | undefined;
-    events?: import("./types/pluginEventsConfig").PluginEventsConfig | undefined;
+    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig | undefined;
     navigationLinks?: {
         href: string;
         label: string;
@@ -367,15 +367,15 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         componentId?: string | undefined;
     }>, "many">>;
     parsers: z.ZodDefault<z.ZodObject<{
-        mdx: z.ZodOptional<z.ZodType<import("./types/parserConfig").ParserConfig, z.ZodTypeDef, import("./types/parserConfig").ParserConfig>>;
+        mdx: z.ZodOptional<z.ZodType<import("./types/parserConfig.js").ParserConfig, z.ZodTypeDef, import("./types/parserConfig.js").ParserConfig>>;
     }, "strip", z.ZodTypeAny, {
-        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     }, {
-        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     }>>;
-    additionalImports: z.ZodOptional<z.ZodType<import("./types/additionalImportsConfig").AdditionalImportsConfig, z.ZodTypeDef, import("./types/additionalImportsConfig").AdditionalImportsConfig>>;
-    trpc: z.ZodOptional<z.ZodType<import("./types/trpcConfig").TrpcConfig, z.ZodTypeDef, import("./types/trpcConfig").TrpcConfig>>;
-    settings: z.ZodOptional<z.ZodType<import("./types/pluginSettingsConfig").PluginSettingsConfig, z.ZodTypeDef, import("./types/pluginSettingsConfig").PluginSettingsConfig>>;
+    additionalImports: z.ZodOptional<z.ZodType<import("./types/additionalImportsConfig.js").AdditionalImportsConfig, z.ZodTypeDef, import("./types/additionalImportsConfig.js").AdditionalImportsConfig>>;
+    trpc: z.ZodOptional<z.ZodType<import("./types/trpcConfig.js").TrpcConfig, z.ZodTypeDef, import("./types/trpcConfig.js").TrpcConfig>>;
+    settings: z.ZodOptional<z.ZodType<import("./types/pluginSettingsConfig.js").PluginSettingsConfig, z.ZodTypeDef, import("./types/pluginSettingsConfig.js").PluginSettingsConfig>>;
     pages: z.ZodDefault<z.ZodArray<z.ZodObject<{
         targetUrl: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
         slot: z.ZodOptional<z.ZodString>;
@@ -392,7 +392,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         slot?: string | undefined;
         exportsPageProps?: boolean | undefined;
     }>, "many">>;
-    events: z.ZodDefault<z.ZodType<import("./types/pluginEventsConfig").PluginEventsConfig, z.ZodTypeDef, import("./types/pluginEventsConfig").PluginEventsConfig>>;
+    events: z.ZodDefault<z.ZodType<import("./types/pluginEventsConfig.js").PluginEventsConfig, z.ZodTypeDef, import("./types/pluginEventsConfig.js").PluginEventsConfig>>;
     navigationLinks: z.ZodDefault<z.ZodArray<z.ZodObject<{
         label: z.ZodString;
         href: z.ZodString;
@@ -494,14 +494,14 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     })[];
     tailwind: {};
     parsers: {
-        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     };
     pluginId: string;
-    events: import("./types/pluginEventsConfig").PluginEventsConfig;
+    events: import("./types/pluginEventsConfig.js").PluginEventsConfig;
     slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
-    additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
-    settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
     documentation?: string | undefined;
 }, {
     label: string;
@@ -526,18 +526,18 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         componentId?: string | undefined;
     }[] | undefined;
     parsers?: {
-        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     } | undefined;
-    additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
-    settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
     pages?: {
         export: string;
         targetUrl?: string | undefined;
         slot?: string | undefined;
         exportsPageProps?: boolean | undefined;
     }[] | undefined;
-    events?: import("./types/pluginEventsConfig").PluginEventsConfig | undefined;
+    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig | undefined;
     navigationLinks?: {
         href: string;
         label: string;
@@ -605,14 +605,14 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     })[];
     tailwind: {};
     parsers: {
-        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     };
     pluginId: string;
-    events: import("./types/pluginEventsConfig").PluginEventsConfig;
+    events: import("./types/pluginEventsConfig.js").PluginEventsConfig;
     slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
-    additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
-    settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
     documentation?: string | undefined;
 }, {
     label: string;
@@ -637,18 +637,18 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         componentId?: string | undefined;
     }[] | undefined;
     parsers?: {
-        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     } | undefined;
-    additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
-    settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
     pages?: {
         export: string;
         targetUrl?: string | undefined;
         slot?: string | undefined;
         exportsPageProps?: boolean | undefined;
     }[] | undefined;
-    events?: import("./types/pluginEventsConfig").PluginEventsConfig | undefined;
+    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig | undefined;
     navigationLinks?: {
         href: string;
         label: string;
@@ -673,7 +673,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     } | undefined;
 }>;
 export declare const internalBuildDeveloperConfigSchema: z.ZodObject<{
-    settings: z.ZodOptional<z.ZodType<import("./types/pluginSettingsConfig").PluginSettingsConfig, z.ZodTypeDef, import("./types/pluginSettingsConfig").PluginSettingsConfig>>;
+    settings: z.ZodOptional<z.ZodType<import("./types/pluginSettingsConfig.js").PluginSettingsConfig, z.ZodTypeDef, import("./types/pluginSettingsConfig.js").PluginSettingsConfig>>;
     label: z.ZodString;
     pluginName: z.ZodString;
     components: z.ZodDefault<z.ZodArray<z.ZodObject<{
@@ -827,16 +827,16 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<{
     }>]>, "many">>;
     tailwind: z.ZodDefault<z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>>;
     parsers: z.ZodDefault<z.ZodObject<{
-        mdx: z.ZodOptional<z.ZodType<import("./types/parserConfig").ParserConfig, z.ZodTypeDef, import("./types/parserConfig").ParserConfig>>;
+        mdx: z.ZodOptional<z.ZodType<import("./types/parserConfig.js").ParserConfig, z.ZodTypeDef, import("./types/parserConfig.js").ParserConfig>>;
     }, "strip", z.ZodTypeAny, {
-        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     }, {
-        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     }>>;
     slot: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"snippets">, z.ZodLiteral<"math">, z.ZodLiteral<"editor">, z.ZodLiteral<"UI">, z.ZodLiteral<"bibliography">, z.ZodLiteral<"taskManager">, z.ZodLiteral<"pdf">, z.ZodLiteral<"navigation">, z.ZodLiteral<"dashboard">, z.ZodLiteral<"form">, z.ZodLiteral<"commandPalette">]>>;
-    additionalImports: z.ZodOptional<z.ZodType<import("./types/additionalImportsConfig").AdditionalImportsConfig, z.ZodTypeDef, import("./types/additionalImportsConfig").AdditionalImportsConfig>>;
-    trpc: z.ZodOptional<z.ZodType<import("./types/trpcConfig").TrpcConfig, z.ZodTypeDef, import("./types/trpcConfig").TrpcConfig>>;
-    events: z.ZodDefault<z.ZodType<import("./types/pluginEventsConfig").PluginEventsConfig, z.ZodTypeDef, import("./types/pluginEventsConfig").PluginEventsConfig>>;
+    additionalImports: z.ZodOptional<z.ZodType<import("./types/additionalImportsConfig.js").AdditionalImportsConfig, z.ZodTypeDef, import("./types/additionalImportsConfig.js").AdditionalImportsConfig>>;
+    trpc: z.ZodOptional<z.ZodType<import("./types/trpcConfig.js").TrpcConfig, z.ZodTypeDef, import("./types/trpcConfig.js").TrpcConfig>>;
+    events: z.ZodDefault<z.ZodType<import("./types/pluginEventsConfig.js").PluginEventsConfig, z.ZodTypeDef, import("./types/pluginEventsConfig.js").PluginEventsConfig>>;
     documentation: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
     pluginId: z.ZodEffects<z.ZodString, string, string>;
 }, "strip", z.ZodTypeAny, {
@@ -884,20 +884,20 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<{
     })[];
     tailwind: {};
     parsers: {
-        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     };
     pluginId: string;
-    events: import("./types/pluginEventsConfig").PluginEventsConfig;
-    settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
+    events: import("./types/pluginEventsConfig.js").PluginEventsConfig;
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
     slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
-    additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
     documentation?: string | undefined;
 }, {
     label: string;
     pluginName: string;
     pluginId: string;
-    settings?: import("./types/pluginSettingsConfig").PluginSettingsConfig | undefined;
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
     components?: {
         componentName: string;
         export: string;
@@ -943,12 +943,12 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<{
     })[] | undefined;
     tailwind?: {} | undefined;
     parsers?: {
-        mdx?: import("./types/parserConfig").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     } | undefined;
     slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
-    additionalImports?: import("./types/additionalImportsConfig").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig").TrpcConfig | undefined;
-    events?: import("./types/pluginEventsConfig").PluginEventsConfig | undefined;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
+    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig | undefined;
     documentation?: string | undefined;
 }>;
 export type DeveloperConfigOutput = z.output<typeof developerConfigSchema>;

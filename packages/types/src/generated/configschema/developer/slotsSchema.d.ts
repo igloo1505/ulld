@@ -1,5 +1,5 @@
 import { z, ZodTypeAny } from "zod";
-import { SlotMap } from "./slotMapRootType";
+import { SlotMap } from "./slotMapRootType.js";
 export declare const configPluginSchema: z.ZodEffects<z.ZodObject<{
     name: z.ZodString;
     version: z.ZodDefault<z.ZodString>;
