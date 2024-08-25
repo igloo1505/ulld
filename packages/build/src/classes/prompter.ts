@@ -5,8 +5,6 @@ import { PageConflict } from "./pageConflict.js";
 import { GitManager } from "./baseClasses/gitManager.js";
 import { BranchValue } from "../utils/options.js";
 
-const { prompt } = enq;
-
 export class Prompter extends GitManager {
     constructor(targetDirectory: string, gitBranch: BranchValue) {
         super(targetDirectory, gitBranch);
@@ -20,7 +18,7 @@ export class Prompter extends GitManager {
         for (const k of invalidPlugins) {
             console.log(k.name);
         }
-        let response = await prompt({
+        let response = await enq.prompt({
             type: "confirm",
             message: "Would you like to continue?",
             name: "shouldContinue",
@@ -32,7 +30,7 @@ export class Prompter extends GitManager {
     }
     async getPagePreferences(pageConflicts: PageConflict[]){
         let opts = pageConflicts.map((s) => s.getSurveyPromptData());
-        const response: Record<string, string> = await prompt(opts);
+        const response: Record<string, string> = await enq.prompt(opts);
         for (const k of pageConflicts) {
             if (k.surveyKey in response) {
                 k.resolveSlotConflict(response[k.surveyKey]);
@@ -41,7 +39,7 @@ export class Prompter extends GitManager {
     }
     async getSlotPreferences(slotConflicts: SlotConflict[]) {
         let opts = slotConflicts.map((s) => s.getSurveyPromptData());
-        const response: Record<string, string> = await prompt(opts);
+        const response: Record<string, string> = await enq.prompt(opts);
         for (const k of slotConflicts) {
             if (k.surveyKey in response) {
                 k.resolveSlotConflict(response[k.surveyKey]);
@@ -49,7 +47,7 @@ export class Prompter extends GitManager {
         }
     }
     async promptForPackageManager() {
-        let response = await prompt({
+        let response = await enq.prompt({
             type: "select",
             name: "packageManager",
             message: "Which package manager are you using?",

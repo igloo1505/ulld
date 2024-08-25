@@ -1,9 +1,10 @@
 import { appData } from "@ulld/utilities/appData";
-import simpleGit, {
+import type {
     SimpleGitOptions,
     SimpleGit,
     SimpleGitProgressEvent,
 } from "simple-git";
+import * as simpleGit from "simple-git"
 import { MultiBar, SingleBar } from "cli-progress";
 import path from "path";
 import { BranchValue } from "../../utils/options.js";
@@ -49,7 +50,7 @@ export class GitManager extends ShellManager {
             trimmed: false,
             progress: this.showProgress ? this.progress : undefined,
         };
-        const git: SimpleGit = (simpleGit as any)(options);
+        const git: SimpleGit = simpleGit.default(options);
         await git.pull({
             "-C": this.targetDirectory,
         });
@@ -81,7 +82,7 @@ export class GitManager extends ShellManager {
             trimmed: false,
             progress: this.showProgress ? this.progress : undefined,
         };
-        const git: SimpleGit = (simpleGit as any)(options);
+        const git: SimpleGit = simpleGit.default(options);
         await git.clone(
             appData.templateRepo.url,
             `${this.targetDirectory}/ulldApp`,
