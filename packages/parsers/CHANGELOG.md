@@ -1,5 +1,19 @@
 # @ulld/parsers
 
+## 0.0.94
+
+### Patch Changes
+
+- Push after working offline.
+- Updated dependencies
+  - @ulld/component-map@0.0.94
+  - @ulld/typescript-config@0.0.88
+  - @ulld/configschema@0.0.94
+  - @ulld/database@0.0.91
+  - @ulld/developer@0.0.94
+  - @ulld/types@0.0.88
+  - @ulld/utilities@0.0.94
+
 ## 0.0.93
 
 ### Patch Changes

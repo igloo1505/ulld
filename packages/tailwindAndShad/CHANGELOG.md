@@ -1,5 +1,14 @@
 # @ulld/tailwind
 
+## 0.0.88
+
+### Patch Changes
+
+- Push after working offline.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.88
+  - @ulld/types@0.0.88
+
 ## 0.0.87
 
 ### Patch Changes
