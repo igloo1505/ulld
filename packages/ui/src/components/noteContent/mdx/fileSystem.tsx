@@ -25,26 +25,33 @@ const FileSystemMdxPage = async ({
             `${props.rootRelativePath}${props.extension || ".mdx"}`,
         extension: props.extension || ".mdx",
     });
+
     let frontMatter = grayMatter(fileContent.content);
+
     let parsedData = await props.parsers.mdx.parser({
-        content: fileContent.content,
-        data: frontMatter as Partial<FrontMatterType>,
+        content: frontMatter.content,
+        data: frontMatter.data as Partial<FrontMatterType>,
         serverClient: serverClient,
         appConfig: props.parsers.mdx.appConfig,
         db: fileContent.details,
-        docTypeData: props.parsers.mdx.docTypeData || {},
+        docTypeData: props.parsers.mdx.docTypeData,
     });
 
     return (
         <>
-            <NoteDetailSheet format="mdx" rawContent={frontMatter.content} />
+            <NoteDetailSheet
+                format="mdx"
+                rawContent={parsedData?.content || frontMatter.content}
+            />
             <IndividualNoteContainer
                 parsedData={parsedData.data || frontMatter}
                 type="fs"
                 details={fileContent.details}
+                citations={(parsedData.data as any)?.citations || []}
+                citationOrderList={(parsedData.data as any)?.citationsListOrder || []}
             >
                 <MdxContentSERVER
-                    content={frontMatter.content}
+                    content={parsedData?.content || frontMatter.content}
                     components={props.embeddableComponents}
                     appConfig={props.parsers.mdx.appConfig}
                 />

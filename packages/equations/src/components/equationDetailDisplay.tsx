@@ -18,16 +18,20 @@ export const EquationDetailDisplay = ({
   equation: item,
   isModal = false,
 }: EquationDetailDisplayProps) => {
+
   if (!item) return null;
+
   const params = new URLSearchParams();
+
   params.set("equationId", item.equationId || `${item.id}`);
+
   return (
     <div
       className={
-        "relative w-fit h-fit max-w-[calc(100vw-2rem)] grid grid-cols-1 lg:grid-cols-[1fr_minmax(150px,250px)] px-4 py-3 rounded-lg gap-x-8 m-8 bg-card border text-card-foreground"
+        "relative w-fit h-fit max-w-[calc(100vw-2rem)] lg:min-w-[640px] flex flex-col lg:flex-row lg:gap-4 px-4 py-3 rounded-lg gap-x-8 m-8 bg-card border text-card-foreground"
       }
     >
-      <div className={"w-full h-full flex flex-col justify-start items-start min-w-[250px] sm:min-w-[300px]"}>
+      <div className={"w-full h-fit flex flex-col justify-start items-center lg:items-start min-w-[min(300px,80vw)] sm:min-w-[300px]"}>
         <H3>
           <MdxContentSERVER
             content={item.title}
@@ -46,7 +50,7 @@ export const EquationDetailDisplay = ({
           large
           content={item.content}
           className={
-            "text-xl my-4 w-full flex-grow flex flex-col justify-center items-center flex-wrap"
+            "text-xl my-4 w-full flex flex-col justify-center items-center flex-wrap"
           }
         />
         {item.asPython && (
@@ -59,14 +63,14 @@ export const EquationDetailDisplay = ({
         )}
       </div>
       <div
-        className={"w-full flex flex-col justify-center items-start gap-2 mt-2"}
+        className={"w-full lg:max-w-[250px] flex flex-col justify-between items-start gap-2"}
       >
         {Boolean(item.tags.length) && (
           <>
             <div className={"text-sm"}>Tags</div>
             <div
               className={
-                "flex flex-row justify-start items-center gap-2 flex-wrap"
+                "w-full flex flex-row justify-center lg:justify-start items-center gap-2 flex-wrap"
               }
             >
               {item.tags.map((t) => {
@@ -88,7 +92,7 @@ export const EquationDetailDisplay = ({
             <div className={"text-sm mt-3"}>Variables</div>
             <div
               className={
-                "flex flex-row justify-start items-center gap-2 flex-wrap"
+                "w-full flex flex-row justify-center lg:justify-start items-center gap-2 flex-wrap"
               }
             >
               {item.variables.map((t) => {

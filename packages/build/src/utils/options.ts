@@ -8,6 +8,7 @@ export const optionMap = {
     npm: "--npm",
     pnpm: "--pnpm",
     yarn: "--yarn",
+    genDatabase: "--genDatabase"
 } as const;
 
 export const branchOptions = {

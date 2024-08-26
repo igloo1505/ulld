@@ -1,7 +1,7 @@
 import fs from "fs-extra";
 import path from "path";
 import { SlotMapInternalType } from "@ulld/configschema/types";
-import sm from "@ulld/utilities/slotMap.json"  with {type: "json"};
+import sm from "@ulld/utilities/slotMap.json" with { type: "json" };
 import type { PathKeys } from "@ulld/utilities/types";
 import { ParserKey, parserKeyList } from "@ulld/configschema/developer";
 import { globSync } from "glob";
@@ -18,20 +18,22 @@ import { BuildStaticData } from "./buildStaticData.js";
 import { BuildCleanup } from "./cleanup.js";
 import { getComponentMapContent } from "./fileContent/componentMap.js";
 import { getEventMethodListContent } from "./fileContent/eventMethodList.js";
+import { BuildOptionsType } from "../../utils/options.js";
 
 interface ParserFunctionData {
     importName: string;
     importString: string;
 }
 
-
-
 export class BaseApp extends ShellManager {
     paths: TargetPaths;
     slotMap: SlotMapInternalType;
     buildStaticData: BuildStaticData;
     buildCleanup: BuildCleanup;
-    constructor(public build: UlldBuildProcess) {
+    constructor(
+        public build: UlldBuildProcess,
+        public options: BuildOptionsType,
+    ) {
         super();
         this.paths = build.paths;
         this.slotMap = sm as SlotMapInternalType;
@@ -214,11 +216,23 @@ export default unifiedParserList
     onBuild() {
         this.writeGitIgnore();
         this.build.env.writeEnvLocal();
-        this.build.db.generate(this.build.appConfig, this.build.packageManager);
+        this.build.db.generate(
+            this.build.appConfig,
+            this.build.packageManager,
+            this.options.genDatabase,
+        );
+        this.log("Almost done! Running the last phase of the build script.")
+        this.execPackageJsonScript(
+            this.build.packageManager,
+            "build",
+            this.paths.projectRoot,
+        );
     }
     private copyMathjax() {
-        this.log("Copy mathjax has not yet been handled. Ran into issues with symbolic links. Will handle later.")
-        return
+        this.log(
+            "Copy mathjax has not yet been handled. Ran into issues with symbolic links. Will handle later.",
+        );
+        return;
         let targetDir = this.paths.joinPath(
             "projectRoot",
             "node_modules",
@@ -228,20 +242,26 @@ export default unifiedParserList
         let outputDir = this.paths.joinPath("public", "mathjax");
         let subPaths = globSync("**", {
             cwd: targetDir,
-            realpath: true
+            realpath: true,
         });
-        debugger
+        debugger;
         if (!fs.existsSync(targetDir)) {
             this.logError(
                 `Could not find mathjax directory in order to copy it to the public directory. This might need to be done manually.`,
             );
         } else {
             for (const f of subPaths) {
-                let sourceFilePath = path.join(targetDir, f)
-                if(fs.existsSync(sourceFilePath)){
-                fs.copyFileSync(sourceFilePath, path.join(outputDir, f), fs.constants.COPYFILE_FICLONE)
+                let sourceFilePath = path.join(targetDir, f);
+                if (fs.existsSync(sourceFilePath)) {
+                    fs.copyFileSync(
+                        sourceFilePath,
+                        path.join(outputDir, f),
+                        fs.constants.COPYFILE_FICLONE,
+                    );
                 } else {
-                    this.logError(`Could not copy mathjax file. Couldn't find it at ${sourceFilePath}`)
+                    this.logError(
+                        `Could not copy mathjax file. Couldn't find it at ${sourceFilePath}`,
+                    );
                 }
             }
         }

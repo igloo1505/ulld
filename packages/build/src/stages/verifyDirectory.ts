@@ -22,8 +22,7 @@ export const verifyDirectory = async (opts: BuildOptionsType) => {
     let useCurrentDir = await prompt({
         type: "confirm",
         name: "useCurrentDir",
-        message: `
-You're currently in the ${currentDir} directory.
+        message: `You're currently in the ${currentDir} directory.
 Is this where you'd like to build ${chalk.hex("#0ba5e9")("U")}LLD?`,
         initial: true,
     });

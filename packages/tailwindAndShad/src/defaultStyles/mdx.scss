@@ -460,11 +460,13 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
       margin: 0px !important;
       padding: 1rem 0.5rem;
     }
-    mjx-mtext:not(mjx-labels mjx-mtext) {
-      display: inline-flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: end;
+    mjx-script {
+      mjx-mtext {
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: end;
+      }
     }
   }
 }

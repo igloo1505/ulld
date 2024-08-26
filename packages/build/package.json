@@ -71,7 +71,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "echo 'Add build script here'",
+    "build": "pnpm tsc && tsx ./onBuild.ts",
     "dev": "echo 'Add dev script here'",
     "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
     "test": "jest"

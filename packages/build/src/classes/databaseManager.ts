@@ -9,7 +9,7 @@ import { FileManager } from "./baseClasses/fileManager.js";
 import { TemplateFile } from "./templateFile.js";
 
 export class DatabaseBuildManager extends ShellManager {
-    dbType: "postgres" | "sqlite" = "postgres"
+    dbType: "postgres" | "sqlite" = "postgres";
     constructor(
         public paths: TargetPaths,
         public env: EnvManager,
@@ -17,13 +17,17 @@ export class DatabaseBuildManager extends ShellManager {
     ) {
         super();
     }
-    writePrismaSchema(){
-        let tm = new TemplateFile("prismaSchema")
-        let content = tm.getNewContent({})
-        let outputFile = FileManager.fromPathKey("prismaSchema", this.paths)
-        outputFile.writeContent(content)
+    writePrismaSchema() {
+        let tm = new TemplateFile("prismaSchema");
+        let content = tm.getNewContent({});
+        let outputFile = FileManager.fromPathKey("prismaSchema", this.paths);
+        outputFile.writeContent(content);
     }
-    generate(appConfig: UlldAppConfigManager, pkgManager: PackageManagers) {
+    generate(
+        appConfig: UlldAppConfigManager,
+        pkgManager: PackageManagers,
+        migrateDatabase: boolean = false,
+    ) {
         if (!appConfig.config) {
             throw new Error(`No appConfig found while generating database.`);
         }
@@ -40,6 +44,13 @@ See the docs ${terminalLink("here", "https://uhlittlelessdum.com/blog/tutorials/
 `);
         } else {
             this.logVerbose("Generating database schema.");
+            if (migrateDatabase) {
+                this.execPackageJsonScript(
+                    pkgManager,
+                    "db:migrate",
+                    this.paths.projectRoot,
+                );
+            }
             this.execPackageJsonScript(
                 pkgManager,
                 "db:generate",

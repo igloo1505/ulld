@@ -4,6 +4,7 @@
   "pages": [
     "index",
     "introToJsx",
+    "tips",
     "frontMatter",
     "syntax",
     "jupyterIntegration",

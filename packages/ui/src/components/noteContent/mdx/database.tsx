@@ -69,7 +69,7 @@ const DatabaseMdxPage = async ({
             />
             <IndividualNoteContainer
                 parsedData={parsedData.data || frontMatter}
-                type="fs"
+                type="database"
                 details={details}
                 citations={item.citations}
                 citationOrderList={item.citationsListOrder}

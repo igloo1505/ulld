@@ -1,10 +1,87 @@
 ---
-title: Plans for Uh Little Less Dum
-created: 5-20-24
+title: The early beta release of ULLD
+created: 8-25-24
 id: plansForUlld
 description: "The plans for Uh Little Less Dum, where the project currently sits, and how you, the user, can help determine what happens next."
 images: [ startupPlanning.jpg ]
 category: Developments
 ---
 
-<ComingSoon />
+## Why it's being released early
+
+Ok, we're getting close. Close on two fronts really. I'm both very excited about the way <LogoAsText /> is coming together, and hesitant to release it in this state because of how close several other features are to being ready for release as well.
+
+Unfortunately, the time I'm able to wait on the release of <LogoAsText /> while I finalize these other features is also rapidly closing in. I've been living in my car for more than 2 years while I worked on a new model of gravity, and in turn, the development of <LogoAsText />. My car is _barely_ hanging on, my shoes are held together by half an inch of stitching on each side, and I've had the same 0.24$ in my bank account for 4+ months.
+
+
+## The state of <LogoAsText fontSize={24} />
+
+While <LogoAsText /> is coming along nicely and in a very usable state, the following issues are likely to affect many initial users.
+
+### Settings
+
+<Hint estimatedTime>
+1 day of active development
+</Hint>
+
+The <LogoAsText /> build script will generate setting pages for each plugin, if that plugin defines one in their configuration. Since all internally developed packages apart from the 2-3 core packages are just plugins themselves, some of these packages will likewise provide their own settings page. 
+
+Perhaps the most prominently missing settings page will be from the navigation package. Once enabled, this settings page will allow you, the user, to customize your navigation bar, the sidebar, and the optional footer from directly within your application.  
+
+This page is about half done, and could be completed and completely integrated in an afternoon under normal circumstances. However, since I'm stuck rationing my battery usage most of the time, I've decided to release <LogoAsText /> before the internally developed setting pages are ready. These pages will be ready within the coming days, so be sure to update your application frequently.
+
+
+### Plotting
+
+
+<Hint estimatedTime>
+3 days of active development
+</Hint>
+
+I'm about half way through migrating the plotting setup I used for my own app to a <LogoAsText /> plugin. While most of the code is in place, I'm hoping to simplify the usage of this package by consolidating many of the component's properties. To avoid user's creating notes using a plotting package that will change and make those notes obsolete, I've decided to not include these components in the initial beta.
+
+Taking the plotting package from it's current state to release ready would be a 1-2 day task under normal circumstances, but working without WiFi or a power outlet in 90 degree heat extends that almost indefinitely.
+
+### Jupyter Integration
+
+<Hint estimatedTime>
+A few weeks of active development
+</Hint>
+
+Integrating Jupyter directly with my own rendition of <LogoAsText /> was a huge part of what differentiated this app from other note taking options. There is a more detailed description of why I've decided to move away from the third party package that provided my initial Jupyter integration and develop my own available [here](/docs/user/jupyterIntegration), but creating an internally developed Jupyter integration is my first priority apart from the 2 _almost-done_ features mentioned above.
+
+### Third Party Integrations
+
+There are several third party integrations that I included in my own app that haven't yet included in <LogoAsText /> as it's being released. These features are pretty much entirely in place, but haven't yet been integrated in the build script. This is mostly a matter of just having other features in place to where this becomes a priority, and wouldn't be too time consuming. Google calendar integration for one, was left to the end mostly because I assumed that it would be applicable to fewer users than features like the bibliography manager or the plotting package.
+
+Unless user feedback indicates otherwise, I will likely leave these integrations aside until the Jupyter integration is stable.
+
+### Documentation
+
+As you've likely noticed, there is some pretty significant improvements needed to the <LogoAsText /> documentation. This comes down almost entirely to the fact that I'm stuck rationing my battery usage, and have strategically dedicated that precious wattage to improving the functionality of <LogoAsText />.
+
+
+## Summary
+
+There are several other features that are _almost_ done, but I'm to the point that I can no longer hold onto this app until it's perfect. There's a Kanban package that can be wrapped up in a couple days once the features mentioned above are in place, as well as a side-by-side live editing page with a fully integrated IDE that's done, just not yet connected to other points within the app to make it accessible.
+
+> I hope everyone enjoys <LogoAsText /> in it's current state, but most of all, I'd like to encourage those that try it to stick around and update their application frequently, especially over the coming weeks. It's hard to be proud of something when you know it's incomplete, but I truly believe that <LogoAsText /> is just months away from being the most powerful, all-inclusive academic tool available.
+
+
+### Shameless Plug
+
+I realize this website is riddled with pleas for sponsorship and support, but if you can, please consider supporting the development of <LogoAsText />. I didn't build this app to become rich... I mean, I haven't been able to afford to wash my clothes with actual soap in more than half a year, obviously money isn't my motivation, but being able to find a stable work environment would allow me to take <LogoAsText /> truly to the next level.[^1]
+
+If you find that <LogoAsText /> shows potential or if you want to support the development of additional features, you can find links to the <LogoAsText /> Patreon account on the sponsor page [here](/sponsor), sponsor <LogoAsText /> through Github via the link in the footer, or through PayPal by scanning the QR code below.  
+
+While it is not discussed here directly, the release of <LogoAsText /> as a public app was motivated heavily by a desire to encourage and facilitate education. In that regard, there are several packages that were set aside briefly which will help make <LogoAsText /> a useful tool directly in the classroom.
+
+<Center>
+    <PayPalQR
+        fill="hsl(var(--foreground))"
+        size={120}
+    />
+</Center>
+
+
+[^1]: Some soap would be pretty sick too though.

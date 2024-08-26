@@ -6,7 +6,7 @@ export const generate = async (
     build: UlldBuildProcess,
     options: OptionValues,
 ) => {
-    let baseApp = new BaseApp(build);
+    let baseApp = new BaseApp(build, options);
     baseApp.generate();
     return baseApp;
 };

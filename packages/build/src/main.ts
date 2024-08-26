@@ -10,6 +10,7 @@ program
     .option(optionMap.pnpm)
     .option(optionMap.npm)
     .option(optionMap.yarn)
+    .option(optionMap.genDatabase)
     .option(stringOptionMap.branch, "Branch to clone", "main")
 // option("--noPlugins")
 // .option("--from-install")

@@ -1,6 +1,31 @@
 ---
 title: Jupyter Integration
 id: jupyterIntegrationDocs
-created: 7-20-24
+created: 8-25-24
 ---
 
+Jupyter is a phenomenal tool for anybody working or studying in any STEM related field, and played a reasonable role in my own academic pursuits. If you are a young student, I would encourage you to explore Jupyter and the tools it can provide for your specific field.  
+
+Unfortunately, the package that was providing much of the Jupyter integration for my personal rendition of <LogoAsText /> falls short in a few important areas. 
+
+First, it uses a different editor than the one included elsewhere in <LogoAsText />. This makes it impossible to provide a set of options and settings that can be applied to both the Jupyter editor and the editor available elsewhere in the app. 
+
+Second, the package is a fair bit out of date, and would cause conflicts with other <LogoAsText /> dependencies that are more actively maintained.
+
+
+## Upcoming Jupyter Features
+
+Because of the issues mentioned above, the decision was made to not include the Jupyter integration that I used in my own app <Ul primary>***initially***</Ul>. The original Jupyter integration functioned reasonably well, but also had several noticeable bugs producing sometimes unpredictable layout and color issues.
+
+### Timeline 
+
+Integrating Jupyter into <LogoAsText /> is among my top priorities following the initial beta. If it weren't for my current living situation and the incredible limitation that creates towards being productive, I would create an internally developed Jupyter integration before the release of <LogoAsText />. However, given my current situation, I'm not left with much choice other than to release a half-complete app and hope that you, the user, will take my word that a Jupyter integration will be available within the coming weeks.
+
+The Jupyter related features will include:
+
+- Individual Jupyter cells embeddable directly in mdx notes.
+- Full Jupyter notebooks being editable within a separate page.
+- A Jupyter console that can be embedded directly within mdx notes.
+- Integration of all search related features with Jupyter notebooks. This includes the ability to add tags, topics, and subjects, as well as the ability to search notebooks by text and the inclusion of notebooks within all <LogoAsText /> search results.
+
+If you can, please consider helping speed up this process by supporting the development of <LogoAsText /> by clicking [here](/sponsor). As you can imagine, having access to a power outlet and an internet connection would be quite a game changer... like Jamie Tart going back to Richmond.
