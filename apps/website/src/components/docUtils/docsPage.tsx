@@ -125,7 +125,7 @@ const DocsPageComponent = (props: DocsPageComponentProps) => {
 
   let params = {
     id: id,
-    ...(props.page.data?.id && { "data-noteId": props.page.data.id }),
+    ...(props.page.data?.id && { "data-noteid": props.page.data.id }),
   };
 
   return (
