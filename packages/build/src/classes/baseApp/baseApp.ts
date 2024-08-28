@@ -72,6 +72,7 @@ export class BaseApp extends ShellManager {
         this.copyPluginDocs();
         this.logVerbose("Generating database schema...");
         this.writePrismaSchema();
+        this.runOnBuild();
         this.logVerbose("Wrapping up build...");
         this.onBuild();
     }
@@ -265,6 +266,14 @@ export default unifiedParserList
                 }
             }
         }
+    }
+
+    private runOnBuild() {
+        this.execPackageJsonScript(
+            this.build.packageManager,
+            "runOnBuild",
+            this.paths.projectRoot,
+        );
     }
     cleanUp() {
         this.logVerbose("Just cleaning things up a bit...");

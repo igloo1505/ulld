@@ -25,13 +25,6 @@ export class BuildCleanup extends ShellManager {
         }
         fs.rmdirSync(this.paths.tempBuildFiles);
     }
-    private runOnBuild() {
-        this.execPackageJsonScript(
-            this.pkgManager,
-            "runOnBuild",
-            this.paths.projectRoot,
-        );
-    }
     private removePreCommitHooks() {
         let commitHookRoot = this.paths.joinPath("projectRoot", ".commitHooks");
         let files = globSync("**", {
@@ -51,7 +44,6 @@ export class BuildCleanup extends ShellManager {
         }
     }
     runCleanup() {
-        this.runOnBuild();
         this.removeTempBuildDir();
         this.removePreCommitHooks();
         this.removeCleanupPaths();

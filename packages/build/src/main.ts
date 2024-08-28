@@ -67,6 +67,7 @@ const avoidIfInOpts = ({ opts, other }: AvoidConfig): boolean => {
             let baseApp = await stages.generate(build, options);
             baseApp.cleanUp();
         }
+        console.log(`That's it! You're all set to run your app. Checkout the docs for more information.`)
     } catch (err) {
         if (!err) {
             log(`No worries. We can handle this later.`);

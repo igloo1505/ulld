@@ -826,9 +826,6 @@ importers:
       '@types/prompts':
         specifier: ^2.4.9
         version: 2.4.9
-      '@ulld/base-configs':
-        specifier: workspace:*
-        version: link:../baseConfigs
       '@ulld/configschema':
         specifier: workspace:*
         version: link:../configschema
@@ -1092,7 +1089,7 @@ importers:
         version: 12.5.6(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       lucide-react:
         specifier: latest
-        version: 0.429.0(react@18.2.0)
+        version: 0.436.0(react@18.2.0)
       next:
         specifier: 14.2.3
         version: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
@@ -13996,7 +13993,7 @@ packages:
   fumadocs-core@12.5.6:
     resolution: {integrity: sha512-sKbVq+Yrf7uLZD/pHojLGwClRxuOyjR1NaIlm/cO9dCaEO6n568NTom/2rEn+jyhII+LbGTJqfIJmktBW6rgNA==}
     peerDependencies:
-      next: '>= 14.1.0'
+      next: 14.2.5
       react: 18.2.0
       react-dom: 18.2.0
 
@@ -15984,8 +15981,8 @@ packages:
     peerDependencies:
       react: 18.2.0
 
-  lucide-react@0.429.0:
-    resolution: {integrity: sha512-548DahFy7Ey+0OPlOyZ6ipnbGJzewv8gq2DxDrnAzWZ4RN4+3XyIwQXhD4AQvuREFjS1EnbAgOMaYB0VQyaK1g==}
+  lucide-react@0.436.0:
+    resolution: {integrity: sha512-N292bIxoqm1aObAg0MzFtvhYwgQE6qnIOWx/GLj5ONgcTPH6N0fD9bVq/GfdeC9ZORBXozt/XeEKDpiB3x3vlQ==}
     peerDependencies:
       react: 18.2.0
 
@@ -35426,7 +35423,7 @@ snapshots:
     dependencies:
       react: 18.2.0
 
-  lucide-react@0.429.0(react@18.2.0):
+  lucide-react@0.436.0(react@18.2.0):
     dependencies:
       react: 18.2.0
 
