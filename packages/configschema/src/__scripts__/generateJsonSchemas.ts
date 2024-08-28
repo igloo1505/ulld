@@ -29,5 +29,5 @@ let items = [
 ]
 
 for (const f of items) {
-    fs.writeFileSync(path.join(__dirname, `../jsonSchemas/${f.file}`), JSON.stringify(f.schema, null, 2))
+    fs.writeFileSync(path.join(import.meta.dirname, `../jsonSchemas/${f.file}`), JSON.stringify(f.schema, null, 2))
 }
