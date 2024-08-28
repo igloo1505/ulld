@@ -98,7 +98,7 @@ const EquationFilterPanel = ({ tags, searchParams, variables }: EquationFilterPa
                             </FormItem>
                         )}
                     />
-                    <div className={"flex flex-row justify-start items-start gap-4 mt-3"}>
+                    <div className={"w-full grid grid-cols-2 lg:flex lg:w-fit flex-row justify-start items-start gap-4 mt-3"}>
                         <EquationTagComboBox
                             form={form}
                             tags={tags}
@@ -137,7 +137,7 @@ const EquationFilterPanel = ({ tags, searchParams, variables }: EquationFilterPa
                         form.setValue("variables", form.getValues("variables")?.filter((_v, idx) => idx !== i) || [])
                     }}
                 />
-                <div className={"flex flex-row justify-end items-center mt-3 gap-4"}>
+                <div className={"flex flex-row justify-end items-center mt-4 gap-4"}>
                     {formHasData && <Link
                         onClick={() => form.reset()}
                         className={buttonVariants({ variant: "destructive" })} href="/equations">Clear</Link>}

@@ -1,31 +1,57 @@
-import React from 'react'
-import { Button} from '@ulld/tailwind/button'
-import {  Command, CommandEmpty, CommandGroup, CommandInput, CommandItem} from '@ulld/tailwind/command'
-import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@ulld/tailwind/form'
-import {  Popover, PopoverContent, PopoverTrigger } from '@ulld/tailwind/popover'
-import { UseFormReturn } from 'react-hook-form'
-import { CheckIcon, ChevronsUpDown } from 'lucide-react'
-import { cn } from '@ulld/utilities/cn'
-
-
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import { Button } from "@ulld/tailwind/button";
+import {
+    Command,
+    CommandEmpty,
+    CommandGroup,
+    CommandInput,
+    CommandItem,
+} from "@ulld/tailwind/command";
+import {
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "@ulld/tailwind/form";
+import {
+    Popover,
+    PopoverContentNoPortal,
+    PopoverTrigger,
+} from "@ulld/tailwind/popover";
+import { UseFormReturn } from "react-hook-form";
+import { CheckIcon, ChevronsUpDown } from "lucide-react";
+import { cn } from "@ulld/utilities/cn";
 
 interface EquationTagComboBoxProps {
-    form: UseFormReturn<{
-        query?: string | undefined;
-        tags?: string[] | undefined;
-        variables?: string[] | undefined;
-    }, any, undefined>
-    tags: { value: string }[]
-    toggle: (t: string) => void
+    form: UseFormReturn<
+        {
+            query?: string | undefined;
+            tags?: string[] | undefined;
+            variables?: string[] | undefined;
+        },
+        any,
+        undefined
+    >;
+    tags: { value: string }[];
+    toggle: (t: string) => void;
 }
 
-const EquationTagComboBox = ({ form, tags, toggle }: EquationTagComboBoxProps) => {
+const EquationTagComboBox = ({
+    form,
+    tags,
+    toggle,
+}: EquationTagComboBoxProps) => {
+    /* const [emWidth, setEmWidth] = useState(0); */
+    const ref = useRef<HTMLDivElement>(null!);
+
     return (
         <FormField
             control={form.control}
             name="tags"
             render={({ field }) => (
-                <FormItem className="flex flex-col">
+                <FormItem className="flex flex-col w-full lg:w-fit" ref={ref}>
                     <FormLabel className={""}>Tags</FormLabel>
                     <Popover>
                         <PopoverTrigger asChild>
@@ -34,8 +60,8 @@ const EquationTagComboBox = ({ form, tags, toggle }: EquationTagComboBoxProps) =
                                     variant="outline"
                                     role="combobox"
                                     className={cn(
-                                        "w-[200px] justify-between mt-2",
-                                        !field.value && "text-muted-foreground"
+                                        "w-full lg:w-[200px] justify-between mt-2",
+                                        !field.value && "text-muted-foreground",
                                     )}
                                 >
                                     Filter by tags
@@ -43,17 +69,23 @@ const EquationTagComboBox = ({ form, tags, toggle }: EquationTagComboBoxProps) =
                                 </Button>
                             </FormControl>
                         </PopoverTrigger>
-                        <PopoverContent className="w-[200px] p-0">
+                        <PopoverContentNoPortal
+                            className="w-[200px] p-0"
+                        >
                             <Command>
                                 <CommandInput placeholder="Search..." />
                                 <CommandEmpty>No tags found.</CommandEmpty>
-                                <CommandGroup className={tags.length ? "" : "py-0"}>
+                                <CommandGroup
+                                    className={
+                                        tags.length ? "max-h-[250px] overflow-y-auto" : "py-0"
+                                    }
+                                >
                                     {tags.map((t) => (
                                         <CommandItem
                                             value={t.value}
                                             key={t.value}
                                             onSelect={() => {
-                                                toggle(t.value)
+                                                toggle(t.value);
                                             }}
                                         >
                                             <CheckIcon
@@ -61,7 +93,7 @@ const EquationTagComboBox = ({ form, tags, toggle }: EquationTagComboBoxProps) =
                                                     "mr-2 h-4 w-4",
                                                     field.value?.includes(t.value)
                                                         ? "opacity-100"
-                                                        : "opacity-0"
+                                                        : "opacity-0",
                                                 )}
                                             />
                                             {t.value}
@@ -69,17 +101,15 @@ const EquationTagComboBox = ({ form, tags, toggle }: EquationTagComboBoxProps) =
                                     ))}
                                 </CommandGroup>
                             </Command>
-                        </PopoverContent>
+                        </PopoverContentNoPortal>
                     </Popover>
                     <FormMessage />
                 </FormItem>
             )}
         />
-    )
-}
+    );
+};
 
-
-EquationTagComboBox.displayName = "EquationTagComboBox"
-
+EquationTagComboBox.displayName = "EquationTagComboBox";
 
 export default EquationTagComboBox;

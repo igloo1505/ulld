@@ -23,7 +23,7 @@ import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import { highlightTransformerMap } from "../utils/highlightTransformerMap";
 
 export interface ParseMdxStringOptions {
-    mathLabels?: "all" | "ams" | false
+    mathLabels?: typeof mathOptions["tex"]["tags"]
 }
 
 
@@ -74,7 +74,7 @@ const rehypePlugins = async (
             ...mathOptions,
             tex: {
                 ...mathOptions.tex,
-                tags: typeof opts?.mathLabels === "undefined" ? mathOptions.tex.tags : opts.mathLabels
+                tags: opts?.mathLabels || mathOptions.tex.tags
             }
         }],
         [

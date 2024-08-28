@@ -28,7 +28,7 @@ const EquationListItem = ({ equation }: EquationListItemProps) => {
                 />
             </H4>
             <div
-                className={"w-full h-full flex flex-col flex-grow justify-center items-center my-6"}
+                className={"w-full max-w-full h-full flex flex-col flex-grow justify-center items-center my-6 overflow-x-auto min-scrollbar"}
             >
                 <MdxContentSERVER
                     isMathOnly
@@ -38,7 +38,7 @@ const EquationListItem = ({ equation }: EquationListItemProps) => {
                     content={equation.content}
                     className={"mx-6"}
                     parserOpts={{
-                        mathLabels: false
+                        mathLabels: "none"
                     }}
                 />
             </div>
