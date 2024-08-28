@@ -68,7 +68,7 @@ const config = withContentCollections(
             "@ulld/state",
             "@ulld/tailwind",
             "@ulld/ui",
-            "@ulld/utilities",
+            // "@ulld/utilities",
             "@ulld/whiteboard",
         ],
         experimental: {

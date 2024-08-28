@@ -1,4 +1,4 @@
-import { filePathGlobPropsSchema } from "../schemas/filePath";
+import { filePathGlobPropsSchema } from "../schemas/filePath/filePathInput";
 import { z } from "zod";
 import axios from "axios";
 

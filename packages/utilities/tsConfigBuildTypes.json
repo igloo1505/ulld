@@ -1,0 +1,23 @@
+{
+  "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".turbo",
+    "src/**/*.test.ts",
+    "jest**",
+    "src/__scripts__/**",
+    "tsup.config.ts"
+  ],
+  "include": ["src"],
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    "baseUrl": "."
+  }
+}

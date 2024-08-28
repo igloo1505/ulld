@@ -1,5 +1,5 @@
 import { SupportedFileType, supportedFileTypes } from "@ulld/types/enums"
-import { filePathGlobPropsSchema } from "../schemas/filePath"
+import { filePathGlobPropsSchema } from "../schemas/filePath/filePathInput"
 import { z } from 'zod'
 import { ArrayUtilities } from "./arrayUtilities"
 import { AppConfigSchemaOutput } from "@ulld/types"

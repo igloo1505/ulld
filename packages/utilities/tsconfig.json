@@ -30,7 +30,8 @@
         "__scripts__",
         "rollup.config.mjs",
         "next.config.mjs",
-        "jest.config.js"
+        "jest.config.js",
+        "tsup.config.ts"
     ],
     "include": [
         "./src/**/*.ts",

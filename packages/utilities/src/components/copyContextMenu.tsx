@@ -1,6 +1,6 @@
 "use client"
 import { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem } from '@ulld/tailwind/context-menu'
-import { copyStringToClipboard } from '@ulld/utilities/copyStringToClipboard'
+import { copyStringToClipboard } from '../actions/copyStringToClipboard'
 import React from 'react'
 import { removeMathDollarSigns } from '../utils/stringUtils'
 import { cn } from '../utils/cn'

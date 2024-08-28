@@ -71,9 +71,13 @@ export function generateMetadata({ params }: { params: { slug?: string[] } }) {
         }
         notFound();
     }
+    let x: Metadata = {}
 
-    return {
-        title: page.data?.title,
-        description: page.data?.description,
-    } satisfies Metadata;
+    if(page?.data?.title){
+        x.title = page.data.title
+    }
+    if(page.data?.description){
+        x.description = page.data.description
+    }
+    return x
 }
