@@ -132,7 +132,7 @@
     "./schemas/mdx/parseMdxStringSchema": "./dist/schemas/mdx/parseMdxStringSchema.js",
     "./schemas/mdx/parseMdxStringProps": "./dist/schemas/mdx/parseMdxStringProps.js",
     "./defaults/markdownUniversalOptions": "./dist/defaults/markdownUniversalOptions.js",
-    "./defaults/markdown.json": "./dist/defaults/markdownOptions.json",
+    "./defaults/markdown.json": "./src/defaults/markdownOptions.json",
     "./defaults/defaultMermaidConfig": "./dist/defaults/defaultMermaidConfig.js",
     "./defaults/forms/healthReport": "./dist/defaults/forms/healthReport.js",
     "./defaults/prisma/commonZodFields": "./dist/defaults/prisma/commonZodFields.js",
@@ -160,10 +160,10 @@
     "./stringUtils": "./dist/utils/stringUtils.js",
     "./numberUtils": "./dist/utils/numberUtils.js",
     "./regexUtils": "./dist/utils/regexUtils.js",
-    "./slotMap.json": "./dist/utils/slotMap.json",
+    "./slotMap.json": "./src/utils/slotMap.json",
     "./corePageProps": "./dist/types/corePageProps.js",
-    "./buildStaticData": "./dist/utils/buildStaticData.json",
-    "./buildStaticData.json": "./dist/utils/buildStaticData.json",
+    "./buildStaticData": "./src/utils/buildStaticData.json",
+    "./buildStaticData.json": "./src/utils/buildStaticData.json",
     "./dateTime": "./dist/classes/DateTime/main.js",
     "./getPluginConfig": "./dist/utils/baseAppUtils/getPluginConfig.js",
     "./componentDocsPathUtils": "./dist/utils/baseAppUtils/componentDocPathUtils.js",
@@ -177,7 +177,7 @@
     "./mdxFile": "./dist/classes/file/mdxFile.js",
     "./defaultColorThemeList": "./dist/styleUtilities/ulldDefaultColorThemes.js",
     "./generateThemeBasedPlotColors": "./dist/styleUtilities/generateThemePlotColors.js",
-    "./themeColorGradients": "./dist/styleUtilities/themeColorGradients.json",
+    "./themeColorGradients": "./src/styleUtilities/themeColorGradients.json",
     "./streamFile": "./dist/utils/media/streamFile.js",
     "./mdxParserUtils": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.js",
     "./fsRootGlob": "./dist/utils/fsRootGlob.js",
@@ -186,7 +186,8 @@
     "./disableBookmark": "./dist/components/disableBookmark.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "packageManager": "pnpm@9.0.4",
   "peerDependencies": {
