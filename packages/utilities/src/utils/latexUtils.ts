@@ -25,7 +25,8 @@ export const stringHasMdx = (s?: string) => {
 
 export const autoWrapMath = (math: string, display: boolean = true) => {
     const s = display ? "$$" : "$"
-    if (math.indexOf(s) === -1) {
+    let _idx = math.indexOf(s)
+    if ((_idx === -1) || (_idx === math.lastIndexOf(s))) {
         return `${s}
 ${math}
 ${s}`

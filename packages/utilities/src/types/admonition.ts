@@ -50,4 +50,6 @@ export interface AdmonitionProps {
     id?: string
     /** Whether or not to parse the title and footer. This is primarily for debugging during development, but is available to end users in case of any unknown issues that might arise. */
     noParse?: boolean
+    /** Override the Icon for the specific type property with a valid icon name. */
+    icon?: string
 }

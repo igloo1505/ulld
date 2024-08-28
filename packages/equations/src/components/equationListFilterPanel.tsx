@@ -77,7 +77,7 @@ const EquationFilterPanel = ({ tags, searchParams, variables }: EquationFilterPa
     }
 
     return (
-        <div className={"w-fit h-fit bg-card text-card-foreground px-5 py-3 rounded-lg border shadow-md"}>
+        <div className={"w-full lg:w-fit h-fit bg-card text-card-foreground px-5 py-3 rounded-lg border shadow-md"}>
             <Form {...form}>
                 <form className="flex flex-col lgr:flex-row justify-center items-start lgr:justify-between lgr:items-start gap-4">
                     <FormField

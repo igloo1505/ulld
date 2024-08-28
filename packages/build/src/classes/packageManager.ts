@@ -10,7 +10,7 @@ export class PackageManager {
     }
     private writeNpmrc(){
         let contentPath = path.join(import.meta.dirname, `../fileContent/npmrc/${this.type}.txt`)
-        let f = new FileData(contentPath)
+        let f = new FileData(contentPath, false)
         if(f.exists()){
             let content = f.getContent()
             if(!content) return

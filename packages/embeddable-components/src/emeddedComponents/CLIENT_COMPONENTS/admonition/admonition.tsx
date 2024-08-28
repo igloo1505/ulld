@@ -47,6 +47,7 @@ export const Admonition = (props: AdmonitionProps) => {
                     dropdown={props.dropdown}
                     groupId={id}
                     titleBold={props.titleBold}
+                    icon={props.icon}
                 />
             ) : (
                 <AdmonitionTitleNode
@@ -55,6 +56,7 @@ export const Admonition = (props: AdmonitionProps) => {
                     dropdown={props.dropdown}
                     groupId={id}
                     titleBold={props.titleBold}
+                    icon={props.icon}
                 />
             )}
             <div

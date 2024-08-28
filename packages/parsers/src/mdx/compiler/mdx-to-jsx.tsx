@@ -22,6 +22,10 @@ import rehypeVideo from "rehype-video";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import { highlightTransformerMap } from "../utils/highlightTransformerMap";
 
+export interface ParseMdxStringOptions {
+    mathLabels?: "all" | "ams" | false
+}
+
 
 export const mermaidConfig: MermaidConfigType = {
     output: "svg",
@@ -54,6 +58,7 @@ const getShikiTransformers = async (config?: AppConfigSchemaOutput) => {
 
 const rehypePlugins = async (
     config?: AppConfigSchemaOutput,
+    opts?: ParseMdxStringOptions
 ): Promise<CompileOptions["rehypePlugins"]> => {
     let shikiTransformers = await getShikiTransformers(config)
     return [
@@ -65,7 +70,13 @@ const rehypePlugins = async (
                 details: false,
             },
         ],
-        [rehypeMathjax as any, mathOptions],
+        [rehypeMathjax as any, {
+            ...mathOptions,
+            tex: {
+                ...mathOptions.tex,
+                tags: typeof opts?.mathLabels === "undefined" ? mathOptions.tex.tags : opts.mathLabels
+            }
+        }],
         [
             rehypePrettyCode as any,
             {
@@ -125,12 +136,14 @@ const remarkPlugins = (
 
 export const parseMdxString = async ({
     content,
-    appConfig
+    appConfig,
+    opts = {}
 }: {
     content: string
     appConfig?: AppConfigSchemaOutput
+    opts?: ParseMdxStringOptions
 }) => {
-    let _rehypePlugins = await rehypePlugins(appConfig)
+    let _rehypePlugins = await rehypePlugins(appConfig, opts)
     let res = await compile(content, {
         outputFormat: "function-body",
         remarkPlugins: remarkPlugins(),

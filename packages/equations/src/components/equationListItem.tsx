@@ -14,7 +14,7 @@ const EquationListItem = ({ equation }: EquationListItemProps) => {
     return (
         <li
             className={
-                "w-full lg:w-1/2 h-full min-w-[min(400px,90vw)] rounded-lg border px-4 py-3 flex flex-col justify-center items-center shadow-md hover:shadow-sm transition-shadow duration-300 relative"
+                "w-full h-full min-w-[min(400px,90vw)] rounded-lg border px-4 py-3 flex flex-col justify-center items-center shadow-md hover:shadow-sm transition-shadow duration-300 relative"
             }
         >
             <H4 className={"pr-4 w-full"}>
@@ -34,8 +34,12 @@ const EquationListItem = ({ equation }: EquationListItemProps) => {
                     isMathOnly
                     autoWrap
                     large
+                    display
                     content={equation.content}
                     className={"mx-6"}
+                    parserOpts={{
+                        mathLabels: false
+                    }}
                 />
             </div>
             <div className={"mt-3 w-full flex flex-row justify-end items-center"}>

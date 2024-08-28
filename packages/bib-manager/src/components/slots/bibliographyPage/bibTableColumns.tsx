@@ -109,7 +109,9 @@ export const getColumnDef = (router: ReturnType<typeof useRouter>): ColumnDef<Bi
                         <DropdownMenuContent align="end">
                             <DropdownMenuLabel>Actions</DropdownMenuLabel>
                             <DropdownMenuItem
-                                onClick={() => {
+                                onClick={(e) => {
+                                    e.preventDefault()
+                                    e.stopPropagation()
                                     let params = new URLSearchParams()
                                     let id = row.getValue("id")
                                     console.log("id: ", id)
@@ -122,7 +124,9 @@ export const getColumnDef = (router: ReturnType<typeof useRouter>): ColumnDef<Bi
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem
-                                onClick={() => {
+                                onClick={(e) => {
+                                    e.preventDefault()
+                                    e.stopPropagation()
                                     window.navigator.clipboard.writeText(row.getValue("id"))
                                     store.dispatch(showToast({
                                         title: "Success",
@@ -143,12 +147,11 @@ export const getColumnDef = (router: ReturnType<typeof useRouter>): ColumnDef<Bi
 }
 
 
-const setTitle = () => {
-    let em = document.getElementById("refs")
-    if (em && em.classList.contains("references")) {
-        let h = document.createElement("h3")
-        h.innerHTML = "References"
-        em.insertBefore(h, em.childNodes.item(0))
-    }
-}
-
+/* const setTitle = () => { */
+/*     let em = document.getElementById("refs") */
+/*     if (em && em.classList.contains("references")) { */
+/*         let h = document.createElement("h3") */
+/*         h.innerHTML = "References" */
+/*         em.insertBefore(h, em.childNodes.item(0)) */
+/*     } */
+/* } */

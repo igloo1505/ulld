@@ -1,88 +1,90 @@
 {
-    "subtitle": "Your forever free, perpetually open source note taking framework built to quantize gravity.",
-    "subtitleBroken": [
-        "Your forever free, perpetually open source note taking",
-        "framework built to quantize gravity."
-    ],
-    "description": [],
-    "forceProduction": false,
-    "manifest": {
-        "themeColor": "#000",
-        "creator": "Andrew Iglinski"
+  "subtitle": "Your forever free, perpetually open source note taking framework built to quantize gravity.",
+  "subtitleBroken": [
+    "Your forever free, perpetually open source note taking",
+    "framework built to quantize gravity."
+  ],
+  "description": [],
+  "forceProduction": false,
+  "manifest": {
+    "themeColor": "#000",
+    "creator": "Andrew Iglinski"
+  },
+  "blog": {
+    "defaultAuthor": "Andrew Iglinski",
+    "publisherName": "Uh Little Less Dum"
+  },
+  "social": {
+    "twitter": {
+      "handle": "@uhLittleLessDum"
+    }
+  },
+  "docIds": {
+    "user": {
+      "componentsHome": "user-components-home",
+      "emojiTable": "user-emoji-table"
+    }
+  },
+  "links": {
+    "home": "https://uhlittlelessdum.com",
+    "contactMe": "/contactMe",
+    "repo": {
+      "home": "https://github.com/igloo1505/ulld",
+      "clone": {
+        "https": "https://github.com/igloo1505/ulld.git",
+        "ssh": "git@github.com:igloo1505/ulld.git"
+      }
     },
-    "blog": {
-        "defaultAuthor": "Andrew Iglinski",
-        "publisherName": "Uh Little Less Dum"
+    "media": {
+      "logo": "https://uhlittlelessdum.com/icons/android-chrome-512x512.png",
+      "screenshots": {
+        "hero": "https://uhlittlelessdum.com/assets/images/screenshots/hero.png"
+      }
+    },
+    "fund": {
+      "paypalDonate": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU",
+      "patreon": "https://www.patreon.com/uhlittlelessdum/about",
+      "github": "https://github.com/igloo1505/ulld"
     },
     "social": {
-        "twitter": {
-            "handle": "@uhLittleLessDum"
-        }
+      "github": "https://github.com/igloo1505/ulld",
+      "twitter": "https://x.com/uhlittlelessdum",
+      "discord": "https://discord.gg/FUA88wwqUM"
     },
-    "docIds": {
-        "user": {
-            "componentsHome": "user-components-home",
-            "emojiTable": "user-emoji-table"
-        }
+    "blog": {
+      "whyILeftWork": "/blog/Ulld/whyILeftWork",
+      "ulldPreBetaLaunch": "/blog/Ulld/ulldPreBetaLaunch"
     },
-    "links": {
-        "home": "https://uhlittlelessdum.com",
-        "contactMe": "/contactMe",
-        "repo": {
-            "home": "https://github.com/igloo1505/ulld",
-            "clone": {
-                "https": "https://github.com/igloo1505/ulld.git",
-                "ssh": "git@github.com:igloo1505/ulld.git"
-            }
-        },
-        "media": {
-            "logo": "https://uhlittlelessdum.com/icons/android-chrome-512x512.png",
-            "screenshots": {
-                "hero": "https://uhlittlelessdum.com/assets/images/screenshots/hero.png"
-            }
-        },
-        "fund": {
-            "paypalDonate": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU",
-            "patreon": "https://www.patreon.com/uhlittlelessdum/about",
-            "github": "https://github.com/igloo1505/ulld"
-        },
-        "social": {
-            "github": "https://github.com/igloo1505/ulld"
-        },
-        "blog": {
-            "whyILeftWork": "/blog/Ulld/whyILeftWork",
-            "plansForUlld": "/blog/Ulld/plansForUlld"
-        },
-        "demos": {
-            "main": "/demos",
-            "myNotes": "/myWork/onTheGravitationalNatureOfTime",
-            "plots": "/demos/plots",
-            "layouts": "/demos/layouts",
-            "media": "/demos/media",
-            "navigation": "/demos/navigation"
-        },
-        "docs": {
-            "getStarted": "/docs/user",
-            "external": {
-                "jupyter": "jupyter-notebook.readthedocs.io",
-                "shad": "FIX ME",
-                "shadThemes": "FIX ME",
-                "python": "docs.python.org",
-                "cslRepo": "https://github.com/citation-style-language/styles",
-                "monaco": "https://microsoft.github.io/monaco-editor",
-                "SQLiteDownload": "https://sqlite.org/download.html"
-            },
-            "internal": {
-                "home": "/docs",
-                "organization": "/docs/user",
-                "developerHome": "/docs/developer",
-                "teachers": "/docs/teachers",
-                "inputs": "/docs/developer",
-                "users": "/docs/user"
-            }
-        }
+    "demos": {
+      "main": "/demos",
+      "myNotes": "/myWork/onTheGravitationalNatureOfTime",
+      "plots": "/demos/plots",
+      "layouts": "/demos/layouts",
+      "media": "/demos/media",
+      "navigation": "/demos/navigation"
     },
-    "contact": {
-        "email": "aiglinski414@gmail.com"
+    "docs": {
+      "getStarted": "/docs/user",
+      "external": {
+        "jupyter": "jupyter-notebook.readthedocs.io",
+        "shad": "FIX ME",
+        "shadThemes": "FIX ME",
+        "python": "docs.python.org",
+        "cslRepo": "https://github.com/citation-style-language/styles",
+        "monaco": "https://microsoft.github.io/monaco-editor",
+        "SQLiteDownload": "https://sqlite.org/download.html"
+      },
+      "internal": {
+        "home": "/docs",
+        "organization": "/docs/user",
+        "developerHome": "/docs/developer",
+        "teachers": "/docs/teachers",
+        "inputs": "/docs/developer",
+        "users": "/docs/user"
+      }
     }
+  },
+  "contact": {
+    "email": "aiglinski414@gmail.com"
+  }
 }

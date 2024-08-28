@@ -7,29 +7,26 @@ index: true
 
 <LogoAsText /> functions primarily as an ecosystem of note taking and academic focused React components and a build script to generate a complete web application using all of the most modern technologies, customized to your own configuration. 
 
-<Admonition title="Installation" type="important" dropdown>
-    The installation process described here only needs to be undertaken once. Once your app is built, future builds can be configured from this initial build using the existing configuration file. You do not need to reinstall everything from scratch or run the build script every time your notes change. Once your application is compiled, simply creating new files of the file types that are supported by <LogoAsText /> inside of the directory you've added to your <LogoAsText /> configuration file will update your notes automatically, and clicking a single **sync** button available from anywhere within your app will update your database to include your new notes in seconds.
+### About the installation
+The installation process described here only needs to be undertaken once. Once your app is built, future builds can be configured from this initial build using the existing configuration file. You do not need to reinstall everything from scratch or run the build script every time your notes change. Once your application is compiled, simply creating new files of the file types that are supported by <LogoAsText /> inside of the directory you've added to your <LogoAsText /> configuration file will update your notes automatically, and clicking a single **sync** button available from anywhere within your app will update your database to include your new notes in seconds.
 
-    My own workflow related to <LogoAsText /> went like this:
-    1. Create a new file of whichever <LogoAsText /> supported file type I needed.
-    2. Click the `sync` button initially so <LogoAsText /> can add that note to the search results.
-    3. Navigate to that note, and simply refresh the browser every time I wanted to view an updated version of my note. Because <LogoAsText /> does not pull any data from remote sources, this refresh should be almost instant. To follow changes to the note on your file system closely, make sure to turn on the **Prefer File System** option from the command palette from within your app for this rapid updating to take effect. This is off by default for a small boost to performance, but turning this option on will tell <LogoAsText /> to avoid the database for everything that doesn't absolutely require interaction with the database, and will instead choose to read directly from your file system.
+My own workflow related to <LogoAsText /> went like this:
+1. Create a new file of whichever <LogoAsText /> supported file type I needed.
+2. Click the `sync` button initially so <LogoAsText /> can add that note to the search results.
+3. Navigate to that note, and simply refresh the browser every time I wanted to view an updated version of my note. Because <LogoAsText /> does not pull any data from remote sources, this refresh should be almost instant. To follow changes to the note on your file system closely, make sure to turn on the **Prefer File System** option from the command palette from within your app for this rapid updating to take effect. This is off by default for a small boost to performance, but turning this option on will tell <LogoAsText /> to avoid the database for everything that doesn't absolutely require interaction with the database, and will instead choose to read directly from your file system.
 
-    While it's a good practice to sync your notes often, even the **sync** button really only _needs_ to be used everytime a note is added; not when a note is changed.
+While it's a good practice to sync your notes often, even the **sync** button really only _needs_ to be used everytime a note is added; not when a note is changed.
+
+### Environment
+For now, <LogoAsText /> runs only in the browser with an accompanying **Node** back end. In time, a companion mobile application will be released for both Android and iOS, and if user's collectively determine that a native desktop app is preferable, a native desktop application as well.
+
+
+## Installing <LogoAsText fontSize={24} />
+
+<Admonition title="The Build Process" type="info">
+This build process will remain under active development. With time, there will likely be an option for installing <LogoAsText /> via a single container that will house all of the necessary steps described here. That however, would not be without it's own drawbacks, so the build cli will be updated regularly. Make sure to update the `@ulld/build` package regularly, ideally before every update of <LogoAsText /> itself.
 </Admonition>
 
-<Admonition title="Environment" type="info" sidebar>
- For now, <LogoAsText /> runs only in the browser with an accompanying **Node** back end. In time, a companion mobile application will be released for both Android and iOS, and if user's collectively determine that a native desktop app is preferable, a native desktop application as well.
-</Admonition>
-
-
-## Where to go from here
-
-<Admonition title="New Build Process" type="info" dropdown>
- It was originally my plan to release the core of the app with a build process that was more suited for users with a modest amount of developer experience, and work on a more complete build script after <LogoAsText /> was publicly available. I've since abandoned that approach, and a much more complete build script will be released at the same time as the <LogoAsText /> beta.
-
-These more complicated docs are for the original approach. Much simpler documentation will be up by the end of July. 
-</Admonition>
 
 <Steps>
     <Step>
@@ -166,13 +163,13 @@ You can now run your project with:
 
 <TabGroup labels={["npm", "pnpm", "alias"]}>
     <Tab label="npm">
-        `npm run start`
+        `npm run start --prefix ./ulldApp`
     </Tab>
     <Tab label="pnpm">
-        `pnpm start`
+        `pnpm start --dir ./ulldApp`
     </Tab>
     <Tab label="yarn">
-        `yarn start`
+        `yarn --cwd ./ulldApp/ start`
     </Tab>
 </TabGroup>
 

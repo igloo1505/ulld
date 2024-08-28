@@ -6,6 +6,7 @@ import { useMathjaxDynamicParse } from "@ulld/hooks/useMathjaxDynamicParse";
 import { useMemoizedIcon } from "../../../hooks/useMemoizedIcon";
 import { ChevronDown } from "lucide-react";
 import { MathJax } from "better-react-mathjax";
+import { ValidIconName } from "@ulld/icons";
 
 export interface AdmonitionTitleProps extends HTMLProps<HTMLDivElement> {
     title: string;
@@ -13,6 +14,7 @@ export interface AdmonitionTitleProps extends HTMLProps<HTMLDivElement> {
     dropdown?: boolean;
     groupId: string;
     titleBold?: boolean;
+    icon?: ValidIconName
 }
 
 export const AdmonitionTitle = ({
@@ -25,7 +27,7 @@ export const AdmonitionTitle = ({
 }: AdmonitionTitleProps) => {
     useMathjaxDynamicParse(title);
 
-    const icon = useMemoizedIcon(admonitionType, "w-4 h-4");
+    const icon = useMemoizedIcon(props.icon || admonitionType, "w-4 h-4");
 
     return (
         <div

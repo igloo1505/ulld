@@ -24,16 +24,16 @@ const EquationsPage = async ({ searchParams }: PageProps) => {
         >
             <Link
                 href="/equations/add"
-                className={clsx("absolute top-0 right-12", buttonVariants({}))}
+                className={clsx("absolute top-4 right-12", buttonVariants({}))}
             >Add</Link>
-            <div className={"w-full h-full flex flex-col justify-center items-center"}>
+            <div className={"w-full h-full flex flex-col justify-center items-center mt-12"}>
                 <div className={"w-full h-fit min-h-full flex flex-col justify-start items-center"}>
                     <EquationFilterPanel
                         searchParams={searchParams}
                         tags={data.tags.map((t) => ({ value: t }))}
                         variables={data.variables}
                     />
-                    <ul className={"w-full flex flex-col lg:flex-row gap-3 mt-6"}>
+                    <ul className={"w-full flex flex-col lg:grid lg:grid-cols-2 gap-3 mt-6"}>
                         {data.equations.map((eq) => {
                             return <EquationListItem
                                 key={`eq-${eq.id}`}

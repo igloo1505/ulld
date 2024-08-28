@@ -26,7 +26,7 @@ const AdmonitionTitleNode = ({
     ...props
 }: AdmonitionTitleNodeProps) => {
     useMathjaxDynamicParse(title);
-    const icon = useMemoizedIcon(admonitionType, "w-4 h-4")
+    const icon = useMemoizedIcon(props.icon || admonitionType, "w-4 h-4")
 
     return (
         <div

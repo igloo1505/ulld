@@ -50,7 +50,7 @@ const PreBetaAlertDialog = () => {
                         Under normal circumstances, this website would remain down while it's under active development. Because of some <span className={"italic"}>less common</span> circumstances, I've decided to host this website publicly before it's ready for public use. Feel free to explore, but expect quite a bit of the intended functionality to be non-functional for now. This website should be complete by the beginning of June, and <LogoAsText fontSize={13}/> will be ready for public use by mid-summer.
                         </div>
                         <div className={"mt-2"}>
-                    You can learn more about the motivation and plans for <LogoAsText fontSize={13} /> <a href={staticContent.links.blog.plansForUlld} className={"text-link"}>here</a>.
+                    You can learn more about the motivation and plans for <LogoAsText fontSize={13} /> <a href={staticContent.links.blog.ulldPreBetaLaunch} className={"text-link"}>here</a>.
                         </div>
                     </AlertDialogDescription>
                 </AlertDialogHeader>

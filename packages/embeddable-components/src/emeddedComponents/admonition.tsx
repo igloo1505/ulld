@@ -31,7 +31,7 @@ export const Admonition = async (props: AdmonitionProps) => {
         >
             {Boolean(title || dropdown) && <div className={cn("title text-lg px-4 py-2 rounded-tl-lg rounded-tr-lg  relative z-[10] grid place-items-center not-prose", dropdown ? "grid-cols-[1fr_2rem]" : "grid-cols-1")}>
                 <div className={"w-full flex flex-row flex-nowrap gap-2 justify-center items-center"}>
-                    {Boolean(type && type !== "plain") && <DynamicIcon className={"w-4 h-4"} name={type as AdmonitionType} />}
+                    {(Boolean(type && type !== "plain") || props.icon) && <DynamicIcon className={"w-4 h-4"} name={props.icon || type as AdmonitionType} />}
                     {typeof props.title === "string" ? <MdxContentSERVER 
                         content={props.title}
                         className={"admonition-title flex flex-row flex-wrap flex-grow font-bold tracking-wide inlineMath"}

@@ -1,7 +1,7 @@
 ---
 title: The early beta release of ULLD
 created: 8-25-24
-id: plansForUlld
+id: ulldPreBetaLaunch
 description: "The plans for Uh Little Less Dum, where the project currently sits, and how you, the user, can help determine what happens next."
 images: [ startupPlanning.jpg ]
 category: Developments
@@ -9,16 +9,24 @@ category: Developments
 
 ## Why it's being released early
 
+> I will do my best to be available as often as I can while <LogoAsText /> rolls out at the newly created <StaticLink link="links.social.discord">Discord server</StaticLink>, but keep in mind that I'm working without an internet connection for most of the day.
+
 Ok, we're getting close. Close on two fronts really. I'm both very excited about the way <LogoAsText /> is coming together, and hesitant to release it in this state because of how close several other features are to being ready for release as well.
 
 Unfortunately, the time I'm able to wait on the release of <LogoAsText /> while I finalize these other features is also rapidly closing in. I've been living in my car for more than 2 years while I worked on a new model of gravity, and in turn, the development of <LogoAsText />. My car is _barely_ hanging on, my shoes are held together by half an inch of stitching on each side, and I've had the same 0.24$ in my bank account for 4+ months.
+
+<Admonition title="Your feedback" type="info" dropdown open>
+While I would love everyone's feedback and encourage all user's to join the newly created <LogoAsText /> Discord server [here](https://discord.gg/FUA88wwqUM), please hold off on bug reports that aren't related to the build process for now.  
+
+In the future, bug reports should be submitted on Github <StaticLink link="links.social.github">here</StaticLink>, but until <LogoAsText /> is out of beta, please reserve those bug reports for the build process alone.
+</Admonition>
 
 
 ## The state of <LogoAsText fontSize={24} />
 
 While <LogoAsText /> is coming along nicely and in a very usable state, the following issues are likely to affect many initial users.
 
-### Settings
+### Setting Pages
 
 <Hint estimatedTime>
 1 day of active development
@@ -31,7 +39,7 @@ Perhaps the most prominently missing settings page will be from the navigation p
 This page is about half done, and could be completed and completely integrated in an afternoon under normal circumstances. However, since I'm stuck rationing my battery usage most of the time, I've decided to release <LogoAsText /> before the internally developed setting pages are ready. If the temperature permits and my car hangs on, these pages will be ready within the coming days, so be sure to update your application frequently.
 
 
-### Plotting
+### Plotting Components
 
 
 <Hint estimatedTime>
@@ -61,6 +69,28 @@ Unless user feedback indicates otherwise, I will likely leave these integrations
 As you've likely noticed, there is some pretty significant improvements needed to the <LogoAsText /> documentation. This comes down almost entirely to the fact that I'm stuck rationing my battery usage, and have strategically dedicated that precious wattage to improving the functionality of <LogoAsText />.
 
 
+### Whiteboard
+
+There is a whiteboard component that is available now, but I've recently decided to use a different whiteboard package as <LogoAsText /> progresses. For that reason, I'm not including the existing whiteboard component in this very early release so there isn't an issue with user's notes in the future being unable to load their whiteboard content from their database, as the data structure of the existing package and the package that will be used moving forward are incompatible. 
+
+
+### Other Known Issues
+
+While most of the app apart from what is described above is reliable, there are some components that should not be relied upon just let. First, the pdf annotation tab will likely run into syncing issues, and an improved pdf annotation workflow is on the way. Embedding pdf's, linking bibliography entries to pdf's, and the pdf viewer page are all completely functional, apart from the 'annotate' tab on the pdf specific page.
+
+There are several other inputs that will be extended using the internal Monaco editor. Currently, the math input and code block input are capable of opening a full screen editor for more easily providing content that doesn't easily fit into a text input.
+
+On the Monaco editor note, vim mode is not currently implemented from the `appConfig.ulld.json` file. It works flawlessly in my personal build, and this is just a matter of connecting the dots. By the time you're reading this, there's a good chance this issue is already resolved.
+
+#### Windows Users
+
+Since <LogoAsText /> was originally built as a tool for my own personal use, I built it around my own workflow which used a Unix file system. While migrating this app to a publicly available tool I did my best to resolve all of the places that address the file system directly in a manner that would accommodate both the Unix file system that's used by both Mac and Linux, as well as the Windows system. 
+
+As I do not have access to a windows machine with which I can test the compiled application, it's entirely possible that references to the file system that use a Unix specific syntax still exist.
+
+If you have issues with any of the <LogoAsText /> functionality apart from the issues that are currently expected described here, please submit an issue on <StaticLink link="links.social.github">Github</StaticLink> and optionally reach out on the Discord server <StaticLink link="links.social.discord">here</StaticLink>.
+
+
 ## Summary
 
 There are several other features that are _almost_ done, but I'm to the point that I can no longer hold onto this app until it's perfect. There's a Kanban package that can be wrapped up in a couple days once the features mentioned above are in place, as well as a side-by-side live editing page with a fully integrated IDE that's done, just not yet connected to other points within the app to make it accessible.
@@ -84,6 +114,12 @@ While it is not discussed here directly, the release of <LogoAsText /> as a publ
         size={120}
     />
 </Center>
+
+<Admonition title="How you can help" type="info" icon="handshake">
+- Spread the word about <LogoAsText /> on your socials! I've created a [Discord server](https://discord.gg/FUA88wwqUM) and a [Twitter account](https://x.com/uhlittlelessdum), but if you're active on social media, help other people discover <LogoAsText /> for themselves.
+- If you know someone that works in education, especially in STEM, mention <LogoAsText /> to them. Currently, <LogoAsText /> functions mostly as a tool for individuals, but after wrapping up the plotting components and the Jupyter integration, building features focused around functionality directly in the classroom will be up next.
+- Obviously, if you can, and only if you can, please consider supporting the development of <LogoAsText /> through the shameless plug above.
+</Admonition>
 
 
 [^1]: Some soap would be pretty sick too though.
