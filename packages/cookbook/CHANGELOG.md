@@ -1,5 +1,26 @@
 # @ulld/cookbook
 
+## 0.0.96
+
+### Patch Changes
+
+- Getting ready for super-pre beta release.
+- Updated dependencies
+  - @ulld/api@0.0.96
+  - @ulld/calendar@0.0.96
+  - @ulld/eslint-config@0.0.92
+  - @ulld/typescript-config@0.0.90
+  - @ulld/configschema@0.0.96
+  - @ulld/developer@0.0.96
+  - @ulld/full-form@0.0.96
+  - @ulld/hooks@0.0.96
+  - @ulld/logger@0.0.90
+  - @ulld/state@0.0.96
+  - @ulld/tailwind@0.0.90
+  - @ulld/types@0.0.90
+  - @ulld/ui@0.0.94
+  - @ulld/utilities@0.0.96
+
 ## 0.0.95
 
 ### Patch Changes

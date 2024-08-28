@@ -1,5 +1,36 @@
 # @ulld/command-palette
 
+## 0.0.96
+
+### Patch Changes
+
+- Getting ready for super-pre beta release.
+- Updated dependencies
+  - @ulld/api@0.0.96
+  - @ulld/bib-manager@0.0.96
+  - @ulld/calendar@0.0.96
+  - @ulld/eslint-config@0.0.92
+  - @ulld/typescript-config@0.0.90
+  - @ulld/configschema@0.0.96
+  - @ulld/database@0.0.93
+  - @ulld/developer@0.0.96
+  - @ulld/diagram@0.0.96
+  - @ulld/editor@0.0.96
+  - @ulld/equations@0.0.96
+  - @ulld/hooks@0.0.96
+  - @ulld/jest-presets@0.0.90
+  - @ulld/logger@0.0.90
+  - @ulld/parsers@0.0.96
+  - @ulld/render@0.0.96
+  - @ulld/snippets@0.0.96
+  - @ulld/state@0.0.96
+  - @ulld/tailwind@0.0.90
+  - @ulld/task-manager@0.0.96
+  - @ulld/types@0.0.90
+  - @ulld/ui@0.0.94
+  - @ulld/utilities@0.0.96
+  - @ulld/whiteboard@0.0.96
+
 ## 0.0.95
 
 ### Patch Changes

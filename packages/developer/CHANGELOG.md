@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.96
+
+### Patch Changes
+
+- Getting ready for super-pre beta release.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.92
+  - @ulld/typescript-config@0.0.90
+  - @ulld/configschema@0.0.96
+  - @ulld/database@0.0.93
+  - @ulld/logger@0.0.90
+  - @ulld/types@0.0.90
+
 ## 0.0.95
 
 ### Patch Changes

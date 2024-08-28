@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.96
+
+### Patch Changes
+
+- Getting ready for super-pre beta release.
+- Updated dependencies
+  - @ulld/configschema@0.0.96
+  - @ulld/developer-schemas@0.0.90
+  - @ulld/types@0.0.90
+  - @ulld/utilities@0.0.96
+
 ## 0.0.95
 
 ### Patch Changes

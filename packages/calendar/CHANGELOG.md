@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.96
+
+### Patch Changes
+
+- Getting ready for super-pre beta release.
+- Updated dependencies
+  - @ulld/developer@0.0.96
+  - @ulld/types@0.0.90
+
 ## 0.0.95
 
 ### Patch Changes

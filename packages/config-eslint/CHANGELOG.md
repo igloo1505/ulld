@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.92
+
+### Patch Changes
+
+- Getting ready for super-pre beta release.
+
 ## 0.0.91
 
 ### Patch Changes

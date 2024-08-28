@@ -1,5 +1,17 @@
 # @ulld/utilities
 
+## 0.0.96
+
+### Patch Changes
+
+- Getting ready for super-pre beta release.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.90
+  - @ulld/database@0.0.93
+  - @ulld/math@0.0.96
+  - @ulld/tailwind@0.0.90
+  - @ulld/types@0.0.90
+
 ## 0.0.95
 
 ### Patch Changes

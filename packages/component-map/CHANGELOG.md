@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.96
+
+### Patch Changes
+
+- Getting ready for super-pre beta release.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.96
+  - @ulld/calendar@0.0.96
+  - @ulld/typescript-config@0.0.90
+  - @ulld/default-image-map@0.0.96
+  - @ulld/diagram@0.0.96
+  - @ulld/editor@0.0.96
+  - @ulld/embeddable-components@0.0.96
+  - @ulld/equations@0.0.96
+  - @ulld/full-form@0.0.96
+  - @ulld/journal@0.0.96
+  - @ulld/navigation@0.0.96
+  - @ulld/notebook@0.0.96
+  - @ulld/pdf@0.0.96
+  - @ulld/plot@0.0.96
+  - @ulld/snippets@0.0.96
+  - @ulld/tailwind@0.0.90
+  - @ulld/task-manager@0.0.96
+  - @ulld/types@0.0.90
+  - @ulld/whiteboard@0.0.96
+
 ## 0.0.95
 
 ### Patch Changes
