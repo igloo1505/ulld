@@ -1,5 +1,22 @@
 # @ulld/component-configs
 
+## 0.0.99
+
+### Patch Changes
+
+- Broke everything just to fix it again.
+- Updated dependencies
+  - @ulld/api@0.0.99
+  - @ulld/typescript-config@0.0.93
+  - @ulld/configschema@0.0.99
+  - @ulld/developer@0.0.99
+  - @ulld/hooks@0.0.99
+  - @ulld/state@0.0.99
+  - @ulld/tailwind@0.0.93
+  - @ulld/types@0.0.93
+  - @ulld/ui@0.0.97
+  - @ulld/utilities@0.0.99
+
 ## 0.0.98
 
 ### Patch Changes

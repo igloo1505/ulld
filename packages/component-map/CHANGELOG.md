@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.99
+
+### Patch Changes
+
+- Broke everything just to fix it again.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.99
+  - @ulld/calendar@0.0.99
+  - @ulld/typescript-config@0.0.93
+  - @ulld/default-image-map@0.0.99
+  - @ulld/diagram@0.0.99
+  - @ulld/editor@0.0.99
+  - @ulld/embeddable-components@0.0.99
+  - @ulld/equations@0.0.99
+  - @ulld/full-form@0.0.99
+  - @ulld/journal@0.0.99
+  - @ulld/navigation@0.0.99
+  - @ulld/notebook@0.0.99
+  - @ulld/pdf@0.0.99
+  - @ulld/plot@0.0.99
+  - @ulld/snippets@0.0.99
+  - @ulld/tailwind@0.0.93
+  - @ulld/task-manager@0.0.99
+  - @ulld/types@0.0.93
+  - @ulld/whiteboard@0.0.99
+
 ## 0.0.98
 
 ### Patch Changes

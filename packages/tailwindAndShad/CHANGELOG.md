@@ -1,5 +1,14 @@
 # @ulld/tailwind
 
+## 0.0.93
+
+### Patch Changes
+
+- Broke everything just to fix it again.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.93
+  - @ulld/types@0.0.93
+
 ## 0.0.92
 
 ### Patch Changes

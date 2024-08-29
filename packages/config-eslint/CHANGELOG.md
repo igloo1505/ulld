@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.95
+
+### Patch Changes
+
+- Broke everything just to fix it again.
+
 ## 0.0.94
 
 ### Patch Changes

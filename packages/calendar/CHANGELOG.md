@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.99
+
+### Patch Changes
+
+- Broke everything just to fix it again.
+- Updated dependencies
+  - @ulld/developer@0.0.99
+  - @ulld/types@0.0.93
+
 ## 0.0.98
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @repo/jest-presets
 
+## 0.0.93
+
+### Patch Changes
+
+- Broke everything just to fix it again.
+- Updated dependencies
+  - @ulld/types@0.0.93
+
 ## 0.0.92
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.96
+
+### Patch Changes
+
+- Broke everything just to fix it again.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.93
+  - @ulld/types@0.0.93
+
 ## 0.0.95
 
 ### Patch Changes

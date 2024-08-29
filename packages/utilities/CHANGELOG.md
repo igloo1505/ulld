@@ -1,5 +1,17 @@
 # @ulld/utilities
 
+## 0.0.99
+
+### Patch Changes
+
+- Broke everything just to fix it again.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.93
+  - @ulld/database@0.0.96
+  - @ulld/math@0.0.99
+  - @ulld/tailwind@0.0.93
+  - @ulld/types@0.0.93
+
 ## 0.0.98
 
 ### Patch Changes
