@@ -1,5 +1,20 @@
 # @ulld/kanban
 
+## 0.0.100
+
+### Patch Changes
+
+- Fix misaligned bin path.
+- Updated dependencies
+  - @ulld/api@0.0.100
+  - @ulld/typescript-config@0.0.94
+  - @ulld/developer@0.0.100
+  - @ulld/jest-presets@0.0.94
+  - @ulld/logger@0.0.94
+  - @ulld/state@0.0.100
+  - @ulld/tailwind@0.0.94
+  - @ulld/types@0.0.94
+
 ## 0.0.99
 
 ### Patch Changes

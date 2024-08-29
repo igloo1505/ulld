@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.94
+
+### Patch Changes
+
+- Fix misaligned bin path.
+
 ## 0.0.93
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @ulld/state
 
+## 0.0.100
+
+### Patch Changes
+
+- Fix misaligned bin path.
+- Updated dependencies
+  - @ulld/base-configs@0.0.94
+  - @ulld/typescript-config@0.0.94
+  - @ulld/configschema@0.0.100
+  - @ulld/database@0.0.97
+  - @ulld/developer@0.0.100
+  - @ulld/hooks@0.0.100
+  - @ulld/parsers@0.0.100
+  - @ulld/tailwind@0.0.94
+  - @ulld/types@0.0.94
+  - @ulld/utilities@0.0.100
+
 ## 0.0.99
 
 ### Patch Changes

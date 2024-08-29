@@ -1,5 +1,25 @@
 # @ulld/embeddable-components
 
+## 0.0.100
+
+### Patch Changes
+
+- Fix misaligned bin path.
+- Updated dependencies
+  - @ulld/api@0.0.100
+  - @ulld/component-configs@0.0.100
+  - @ulld/typescript-config@0.0.94
+  - @ulld/configschema@0.0.100
+  - @ulld/default-image-map@0.0.100
+  - @ulld/developer@0.0.100
+  - @ulld/hooks@0.0.100
+  - @ulld/icons@0.0.100
+  - @ulld/render@0.0.100
+  - @ulld/state@0.0.100
+  - @ulld/tailwind@0.0.94
+  - @ulld/types@0.0.94
+  - @ulld/utilities@0.0.100
+
 ## 0.0.99
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.97
+
+### Patch Changes
+
+- Fix misaligned bin path.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.94
+  - @ulld/types@0.0.94
+
 ## 0.0.96
 
 ### Patch Changes

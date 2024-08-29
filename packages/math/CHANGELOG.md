@@ -1,5 +1,20 @@
 # @ulld/math
 
+## 0.0.100
+
+### Patch Changes
+
+- Fix misaligned bin path.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.94
+  - @ulld/configschema@0.0.100
+  - @ulld/hooks@0.0.100
+  - @ulld/icons@0.0.100
+  - @ulld/jest-presets@0.0.94
+  - @ulld/state@0.0.100
+  - @ulld/types@0.0.94
+  - @ulld/utilities@0.0.100
+
 ## 0.0.99
 
 ### Patch Changes

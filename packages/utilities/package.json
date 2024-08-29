@@ -1,622 +1,622 @@
 {
-    "name": "@ulld/utilities",
-    "version": "0.0.99",
-    "dependencies": {
-        "@tanstack/react-table": "8.13.2",
-        "@testing-library/cypress": "^10.0.1",
-        "@testing-library/dom": "^9.3.4",
-        "@testing-library/jest-dom": "^6.4.2",
-        "@testing-library/react": "14.2.2",
-        "@testing-library/user-event": "^14.5.2",
-        "better-react-mathjax": "2.0.3",
-        "chai": "^5.1.0",
-        "color-scheme": "^1.0.1",
-        "coloring-palette": "^1.0.0",
-        "cypress": "^13.7.1",
-        "dayjs": "^1.11.10",
-        "eslint-plugin-jest-dom": "^5.2.0",
-        "eslint-plugin-testing-library": "^6.2.0",
-        "fumadocs-core": "^13.2.2",
-        "gray-matter": "^4.0.3",
-        "jaro-winkler": "^0.2.8",
-        "jest": "^29.7.0",
-        "jest-environment-jsdom": "^29.7.0",
-        "mocha": "^10.3.0",
-        "monaco-editor": "0.49.0",
-        "next": "14.2.3",
-        "nice-color-palettes": "^3.0.0",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "react-test-renderer": "18.2.0",
-        "rehype-mathjax": "^6.0.0",
-        "rtl-simple-queries": "^1.0.1",
-        "shiki": "1.12.0",
-        "supertest": "^6.3.4",
-        "supertest-session": "^5.0.1",
-        "tinycolor2": "1.6.0",
-        "ts-jest": "^29.1.2",
-        "zod": "^3.22.4"
+  "name": "@ulld/utilities",
+  "version": "0.0.100",
+  "dependencies": {
+    "@tanstack/react-table": "8.13.2",
+    "@testing-library/cypress": "^10.0.1",
+    "@testing-library/dom": "^9.3.4",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "14.2.2",
+    "@testing-library/user-event": "^14.5.2",
+    "better-react-mathjax": "2.0.3",
+    "chai": "^5.1.0",
+    "color-scheme": "^1.0.1",
+    "coloring-palette": "^1.0.0",
+    "cypress": "^13.7.1",
+    "dayjs": "^1.11.10",
+    "eslint-plugin-jest-dom": "^5.2.0",
+    "eslint-plugin-testing-library": "^6.2.0",
+    "fumadocs-core": "^13.2.2",
+    "gray-matter": "^4.0.3",
+    "jaro-winkler": "^0.2.8",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "mocha": "^10.3.0",
+    "monaco-editor": "0.49.0",
+    "next": "14.2.3",
+    "nice-color-palettes": "^3.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-test-renderer": "18.2.0",
+    "rehype-mathjax": "^6.0.0",
+    "rtl-simple-queries": "^1.0.1",
+    "shiki": "1.12.0",
+    "supertest": "^6.3.4",
+    "supertest-session": "^5.0.1",
+    "tinycolor2": "1.6.0",
+    "ts-jest": "^29.1.2",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@tanstack/react-table": "^8.13.2",
+    "@testing-library/cypress": "^10.0.1",
+    "@testing-library/dom": "^9.3.4",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.2",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/jaro-winkler": "^0.2.3",
+    "better-react-mathjax": "^2.0.3",
+    "chai": "^5.1.0",
+    "color-scheme": "^1.0.1",
+    "coloring-palette": "^1.0.0",
+    "cypress": "^13.7.1",
+    "dayjs": "^1.11.10",
+    "eslint-plugin-jest-dom": "^5.2.0",
+    "eslint-plugin-testing-library": "^6.2.0",
+    "fumadocs-core": "^13.2.2",
+    "gray-matter": "^4.0.3",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "mocha": "^10.3.0",
+    "monaco-editor": "0.49.0",
+    "next": "^14.2.3",
+    "nice-color-palettes": "^3.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-test-renderer": "^18.2.0",
+    "rehype-mathjax": "^6.0.0",
+    "rtl-simple-queries": "^1.0.1",
+    "shiki": "1.12.0",
+    "supertest": "^6.3.4",
+    "supertest-session": "^5.0.1",
+    "tinycolor2": "1.6.0",
+    "ts-jest": "^29.1.2",
+    "zod": "^3.22.4"
+  },
+  "exports": {
+    "./types": "./dist/types/main.d.ts",
+    "./buildUtils": {
+      "types": "./dist/staticAppProperties/buildUtils/main.d.ts",
+      "import": "./dist/staticAppProperties/buildUtils/main.esm.js",
+      "require": "./dist/staticAppProperties/buildUtils/main.cjs.js"
     },
-    "devDependencies": {
-        "@tanstack/react-table": "^8.13.2",
-        "@testing-library/cypress": "^10.0.1",
-        "@testing-library/dom": "^9.3.4",
-        "@testing-library/jest-dom": "^6.4.2",
-        "@testing-library/react": "^14.2.2",
-        "@testing-library/user-event": "^14.5.2",
-        "@types/jaro-winkler": "^0.2.3",
-        "better-react-mathjax": "^2.0.3",
-        "chai": "^5.1.0",
-        "color-scheme": "^1.0.1",
-        "coloring-palette": "^1.0.0",
-        "cypress": "^13.7.1",
-        "dayjs": "^1.11.10",
-        "eslint-plugin-jest-dom": "^5.2.0",
-        "eslint-plugin-testing-library": "^6.2.0",
-        "fumadocs-core": "^13.2.2",
-        "gray-matter": "^4.0.3",
-        "jest": "^29.7.0",
-        "jest-environment-jsdom": "^29.7.0",
-        "mocha": "^10.3.0",
-        "monaco-editor": "0.49.0",
-        "next": "^14.2.3",
-        "nice-color-palettes": "^3.0.0",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-test-renderer": "^18.2.0",
-        "rehype-mathjax": "^6.0.0",
-        "rtl-simple-queries": "^1.0.1",
-        "shiki": "1.12.0",
-        "supertest": "^6.3.4",
-        "supertest-session": "^5.0.1",
-        "tinycolor2": "1.6.0",
-        "ts-jest": "^29.1.2",
-        "zod": "^3.22.4"
+    "./getGlobServerSide": {
+      "types": "./dist/utils/glob/getGlobServerSide.d.ts",
+      "import": "./dist/utils/glob/getGlobServerSide.esm.js",
+      "require": "./dist/utils/glob/getGlobServerSide.cjs.js"
     },
-    "exports": {
-        "./types": "./dist/types/main.d.ts",
-        "./buildUtils": {
-            "types": "./dist/staticAppProperties/buildUtils/main.d.ts",
-            "import": "./dist/staticAppProperties/buildUtils/main.esm.js",
-            "require": "./dist/staticAppProperties/buildUtils/main.cjs.js"
-        },
-        "./getGlobServerSide": {
-            "types": "./dist/utils/glob/getGlobServerSide.d.ts",
-            "import": "./dist/utils/glob/getGlobServerSide.esm.js",
-            "require": "./dist/utils/glob/getGlobServerSide.cjs.js"
-        },
-        "./fetchWrapper": {
-            "types": "./dist/utils/fetchWrapper.d.ts",
-            "import": "./dist/utils/fetchWrapper.esm.js",
-            "require": "./dist/utils/fetchWrapper.cjs.js"
-        },
-        "./filePathSchemas": {
-            "types": "./dist/schemas/filePath/index.d.ts",
-            "import": "./dist/schemas/filePath/index.esm.js",
-            "require": "./dist/schemas/filePath/index.cjs.js"
-        },
-        "./errorNotifications": {
-            "types": "./dist/errorHandling/main.d.ts",
-            "import": "./dist/errorHandling/main.esm.js",
-            "require": "./dist/errorHandling/main.cjs.js"
-        },
-        "./testDataHelpers": {
-            "types": "./dist/testDataHelpers/main.d.ts",
-            "import": "./dist/testDataHelpers/main.esm.js",
-            "require": "./dist/testDataHelpers/main.cjs.js"
-        },
-        "./localDevelopmentMenu": {
-            "types": "./dist/components/localDevelopment/localDevelopmentMenu.d.ts",
-            "import": "./dist/components/localDevelopment/localDevelopmentMenu.esm.js",
-            "require": "./dist/components/localDevelopment/localDevelopmentMenu.cjs.js"
-        },
-        "./localDevelopmentPageWrapper": {
-            "types": "./dist/components/localDevelopment/localDevelopmentPageWrapper.d.ts",
-            "import": "./dist/components/localDevelopment/localDevelopmentPageWrapper.esm.js",
-            "require": "./dist/components/localDevelopment/localDevelopmentPageWrapper.cjs.js"
-        },
-        "./utilNavLinks": {
-            "types": "./dist/navigation/utilityNavLinks.d.ts",
-            "import": "./dist/navigation/utilityNavLinks.esm.js",
-            "require": "./dist/navigation/utilityNavLinks.cjs.js"
-        },
-        "./getPathnameFromHeaders": {
-            "types": "./dist/utils/getPathnameFromHeaders.d.ts",
-            "import": "./dist/utils/getPathnameFromHeaders.esm.js",
-            "require": "./dist/utils/getPathnameFromHeaders.cjs.js"
-        },
-        "./glob": {
-            "types": "./dist/classes/glob/main.d.ts",
-            "import": "./dist/classes/glob/main.esm.js",
-            "require": "./dist/classes/glob/main.cjs.js"
-        },
-        "./getMarkdownHeadings": {
-            "types": "./dist/additionalParsers/mdx/getContentHeadings.d.ts",
-            "import": "./dist/additionalParsers/mdx/getContentHeadings.esm.js",
-            "require": "./dist/additionalParsers/mdx/getContentHeadings.cjs.js"
-        },
-        "./additionalSources": {
-            "types": "./dist/utils/build/additionalSourceFileStructure.d.ts",
-            "import": "./dist/utils/build/additionalSourceFileStructure.esm.js",
-            "require": "./dist/utils/build/additionalSourceFileStructure.cjs.js"
-        },
-        "./paths": {
-            "types": "./dist/classes/urlManager.d.ts",
-            "import": "./dist/classes/urlManager.esm.js",
-            "require": "./dist/classes/urlManager.cjs.js"
-        },
-        "./packageJsonType": {
-            "types": "./dist/types/packageJson/packageJsonType.d.ts",
-            "import": "./dist/types/packageJson/packageJsonType.esm.js",
-            "require": "./dist/types/packageJson/packageJsonType.cjs.js"
-        },
-        "./paginationUtils": {
-            "types": "./dist/utils/paginationUtils.d.ts",
-            "import": "./dist/utils/paginationUtils.esm.js",
-            "require": "./dist/utils/paginationUtils.cjs.js"
-        },
-        "./objectUtils": {
-            "types": "./dist/utils/objectUtils.d.ts",
-            "import": "./dist/utils/objectUtils.esm.js",
-            "require": "./dist/utils/objectUtils.cjs.js"
-        },
-        "./filePathUtils": {
-            "types": "./dist/utils/filePathUtils.d.ts",
-            "import": "./dist/utils/filePathUtils.esm.js",
-            "require": "./dist/utils/filePathUtils.cjs.js"
-        },
-        "./searchUtils": {
-            "types": "./dist/utils/searchUtils.d.ts",
-            "import": "./dist/utils/searchUtils.esm.js",
-            "require": "./dist/utils/searchUtils.cjs.js"
-        },
-        "./sortUtils": {
-            "types": "./dist/utils/sortUtils.d.ts",
-            "import": "./dist/utils/sortUtils.esm.js",
-            "require": "./dist/utils/sortUtils.cjs.js"
-        },
-        "./admonition/types": "./dist/types/admonition.d.ts",
-        "./components/copyContextMenu": {
-            "types": "./dist/components/copyContextMenu.d.ts",
-            "import": "./dist/components/copyContextMenu.esm.js",
-            "require": "./dist/components/copyContextMenu.cjs.js"
-        },
-        "./booleanAndEqualities/arrayTruthy": {
-            "types": "./dist/booleanAndEqualities/arrayTruthy.d.ts",
-            "import": "./dist/booleanAndEqualities/arrayTruthy.esm.js",
-            "require": "./dist/booleanAndEqualities/arrayTruthy.cjs.js"
-        },
-        "./shadColorMap": {
-            "types": "./dist/utils/shadColorMap.d.ts",
-            "import": "./dist/utils/shadColorMap.esm.js",
-            "require": "./dist/utils/shadColorMap.cjs.js"
-        },
-        "./types/navigation": {
-            "types": "./dist/types/navigation.d.ts",
-            "import": "./dist/types/navigation.esm.js",
-            "require": "./dist/types/navigation.cjs.js"
-        },
-        "./types/utilityTypes": {
-            "types": "./dist/types/utilityTypes.d.ts",
-            "import": "./dist/types/utilityTypes.esm.js",
-            "require": "./dist/types/utilityTypes.cjs.js"
-        },
-        "./types/toastConfig": {
-            "types": "./dist/types/toastConfig.d.ts",
-            "import": "./dist/types/toastConfig.esm.js",
-            "require": "./dist/types/toastConfig.cjs.js"
-        },
-        "./types/todos": {
-            "types": "./dist/types/todos.d.ts",
-            "import": "./dist/types/todos.esm.js",
-            "require": "./dist/types/todos.cjs.js"
-        },
-        "./types/embeddedImageProps": {
-            "types": "./dist/types/embeddedImageProps.d.ts",
-            "import": "./dist/types/embeddedImageProps.esm.js",
-            "require": "./dist/types/embeddedImageProps.cjs.js"
-        },
-        "./staticAppProperties/main": {
-            "types": "./dist/staticAppProperties/main.d.ts",
-            "import": "./dist/staticAppProperties/main.esm.js",
-            "require": "./dist/staticAppProperties/main.cjs.js"
-        },
-        "./general": {
-            "types": "./dist/utils/general.d.ts",
-            "import": "./dist/utils/general.esm.js",
-            "require": "./dist/utils/general.cjs.js"
-        },
-        "./identity": {
-            "types": "./dist/utils/identity.d.ts",
-            "import": "./dist/utils/identity.esm.js",
-            "require": "./dist/utils/identity.cjs.js"
-        },
-        "./dates": {
-            "types": "./dist/utils/dates.d.ts",
-            "import": "./dist/utils/dates.esm.js",
-            "require": "./dist/utils/dates.cjs.js"
-        },
-        "./cn": {
-            "types": "./dist/utils/cn.d.ts",
-            "import": "./dist/utils/cn.esm.js",
-            "require": "./dist/utils/cn.cjs.js"
-        },
-        "./cors": {
-            "types": "./dist/utils/cors.d.ts",
-            "import": "./dist/utils/cors.esm.js",
-            "require": "./dist/utils/cors.cjs.js"
-        },
-        "./arrayUtilities": {
-            "types": "./dist/utils/arrayUtilities.d.ts",
-            "import": "./dist/utils/arrayUtilities.esm.js",
-            "require": "./dist/utils/arrayUtilities.cjs.js"
-        },
-        "./latexUtils": {
-            "types": "./dist/utils/latexUtils.d.ts",
-            "import": "./dist/utils/latexUtils.esm.js",
-            "require": "./dist/utils/latexUtils.cjs.js"
-        },
-        "./pathUtilsClientSide": {
-            "types": "./dist/utils/pathUtilsClientSide.d.ts",
-            "import": "./dist/utils/pathUtilsClientSide.esm.js",
-            "require": "./dist/utils/pathUtilsClientSide.cjs.js"
-        },
-        "./pathUtilsServerSide": {
-            "types": "./dist/utils/pathUtilsServer.d.ts",
-            "import": "./dist/utils/pathUtilsServer.esm.js",
-            "require": "./dist/utils/pathUtilsServer.cjs.js"
-        },
-        "./fsUtils": {
-            "types": "./dist/utils/fsUtils.d.ts",
-            "import": "./dist/utils/fsUtils.esm.js",
-            "require": "./dist/utils/fsUtils.cjs.js"
-        },
-        "./utils/general": {
-            "types": "./dist/utils/general.d.ts",
-            "import": "./dist/utils/general.esm.js",
-            "require": "./dist/utils/general.cjs.js"
-        },
-        "./utils/identity": {
-            "types": "./dist/utils/identity.d.ts",
-            "import": "./dist/utils/identity.esm.js",
-            "require": "./dist/utils/identity.cjs.js"
-        },
-        "./utils/dates": {
-            "types": "./dist/utils/dates.d.ts",
-            "import": "./dist/utils/dates.esm.js",
-            "require": "./dist/utils/dates.cjs.js"
-        },
-        "./utils/cn": {
-            "types": "./dist/utils/cn.d.ts",
-            "import": "./dist/utils/cn.esm.js",
-            "require": "./dist/utils/cn.cjs.js"
-        },
-        "./utils/arrayUtilities": {
-            "types": "./dist/utils/arrayUtilities.d.ts",
-            "import": "./dist/utils/arrayUtilities.esm.js",
-            "require": "./dist/utils/arrayUtilities.cjs.js"
-        },
-        "./utils/latexUtils": {
-            "types": "./dist/utils/latexUtils.d.ts",
-            "import": "./dist/utils/latexUtils.esm.js",
-            "require": "./dist/utils/latexUtils.cjs.js"
-        },
-        "./utils/pathUtilsClientSide": {
-            "types": "./dist/utils/pathUtilsClientSide.d.ts",
-            "import": "./dist/utils/pathUtilsClientSide.esm.js",
-            "require": "./dist/utils/pathUtilsClientSide.cjs.js"
-        },
-        "./utils/fsUtils": {
-            "types": "./dist/utils/fsUtils.d.ts",
-            "import": "./dist/utils/fsUtils.esm.js",
-            "require": "./dist/utils/fsUtils.cjs.js"
-        },
-        "./utils-dom": {
-            "types": "./dist/utils/domUtils/main.d.ts",
-            "import": "./dist/utils/domUtils/main.esm.js",
-            "require": "./dist/utils/domUtils/main.cjs.js"
-        },
-        "./toDoStatusData": {
-            "types": "./dist/schemas/todoItemStatus.d.ts",
-            "import": "./dist/schemas/todoItemStatus.esm.js",
-            "require": "./dist/schemas/todoItemStatus.cjs.js"
-        },
-        "./schemas/snippets": {
-            "types": "./dist/schemas/snippets.d.ts",
-            "import": "./dist/schemas/snippets.esm.js",
-            "require": "./dist/schemas/snippets.cjs.js"
-        },
-        "./schemas/utility": {
-            "types": "./dist/schemas/utility.d.ts",
-            "import": "./dist/schemas/utility.esm.js",
-            "require": "./dist/schemas/utility.cjs.js"
-        },
-        "./schemas/transforms": {
-            "types": "./dist/schemas/transforms.d.ts",
-            "import": "./dist/schemas/transforms.esm.js",
-            "require": "./dist/schemas/transforms.cjs.js"
-        },
-        "./schemas/code/technologiesNameMap": "./dist/schemas/code/technologiesNameMap.js",
-        "./schemas/mdx/parseMdxStringSchema": {
-            "types": "./dist/schemas/mdx/parseMdxStringSchema.d.ts",
-            "import": "./dist/schemas/mdx/parseMdxStringSchema.esm.js",
-            "require": "./dist/schemas/mdx/parseMdxStringSchema.cjs.js"
-        },
-        "./schemas/mdx/parseMdxStringProps": {
-            "types": "./dist/schemas/mdx/parseMdxStringProps.d.ts",
-            "import": "./dist/schemas/mdx/parseMdxStringProps.esm.js",
-            "require": "./dist/schemas/mdx/parseMdxStringProps.cjs.js"
-        },
-        "./defaults/markdownUniversalOptions": {
-            "types": "./dist/defaults/markdownUniversalOptions.d.ts",
-            "import": "./dist/defaults/markdownUniversalOptions.esm.js",
-            "require": "./dist/defaults/markdownUniversalOptions.cjs.js"
-        },
-        "./defaults/markdown.json": "./src/defaults/markdownOptions.json",
-        "./defaults/defaultMermaidConfig": {
-            "types": "./dist/defaults/defaultMermaidConfig.d.ts",
-            "import": "./dist/defaults/defaultMermaidConfig.esm.js",
-            "require": "./dist/defaults/defaultMermaidConfig.cjs.js"
-        },
-        "./defaults/forms/healthReport": {
-            "types": "./dist/defaults/forms/healthReport.d.ts",
-            "import": "./dist/defaults/forms/healthReport.esm.js",
-            "require": "./dist/defaults/forms/healthReport.cjs.js"
-        },
-        "./defaults/prisma/commonZodFields": {
-            "types": "./dist/defaults/prisma/commonZodFields.d.ts",
-            "import": "./dist/defaults/prisma/commonZodFields.esm.js",
-            "require": "./dist/defaults/prisma/commonZodFields.cjs.js"
-        },
-        "./defaults/prisma/notes": {
-            "types": "./dist/defaults/prisma/notes.d.ts",
-            "import": "./dist/defaults/prisma/notes.esm.js",
-            "require": "./dist/defaults/prisma/notes.cjs.js"
-        },
-        "./getTocFromContent": {
-            "types": "./dist/navigation/getTocFromContent.d.ts",
-            "import": "./dist/navigation/getTocFromContent.esm.js",
-            "require": "./dist/navigation/getTocFromContent.cjs.js"
-        },
-        "./actions/copyStringToClipboard": {
-            "types": "./dist/actions/copyStringToClipboard.d.ts",
-            "import": "./dist/actions/copyStringToClipboard.esm.js",
-            "require": "./dist/actions/copyStringToClipboard.cjs.js"
-        },
-        "./copyStringToClipboard": {
-            "types": "./dist/actions/copyStringToClipboard.d.ts",
-            "import": "./dist/actions/copyStringToClipboard.esm.js",
-            "require": "./dist/actions/copyStringToClipboard.cjs.js"
-        },
-        "./loaders/requireJS/requirejs": {
-            "types": "./dist/loaders/requireJS/requirejs.d.ts",
-            "import": "./dist/loaders/requireJS/requirejs.esm.js",
-            "require": "./dist/loaders/requireJS/requirejs.cjs.js"
-        },
-        "./isLocal": {
-            "types": "./dist/utils/isLocal.d.ts",
-            "import": "./dist/utils/isLocal.esm.js",
-            "require": "./dist/utils/isLocal.cjs.js"
-        },
-        "./initialLoader": {
-            "types": "./dist/loaders/installerComponents/initialLoader.d.ts",
-            "import": "./dist/loaders/installerComponents/initialLoader.esm.js",
-            "require": "./dist/loaders/installerComponents/initialLoader.cjs.js"
-        },
-        "./tikzLoader": {
-            "types": "./dist/loaders/installerComponents/TikzLoader.d.ts",
-            "import": "./dist/loaders/installerComponents/TikzLoader.esm.js",
-            "require": "./dist/loaders/installerComponents/TikzLoader.cjs.js"
-        },
-        "./autoWrapMathSchemas": {
-            "types": "./dist/schemas/autoWrapMathSchema.d.ts",
-            "import": "./dist/schemas/autoWrapMathSchema.esm.js",
-            "require": "./dist/schemas/autoWrapMathSchema.cjs.js"
-        },
-        "./getDarkMode": {
-            "types": "./dist/utils/getDarkMode.d.ts",
-            "import": "./dist/utils/getDarkMode.esm.js",
-            "require": "./dist/utils/getDarkMode.cjs.js"
-        },
-        "./internalDevTypes": {
-            "types": "./dist/internalDevTypes/main.d.ts",
-            "import": "./dist/internalDevTypes/main.esm.js",
-            "require": "./dist/internalDevTypes/main.cjs.js"
-        },
-        "./monacoLanguages": {
-            "types": "./dist/monaco/languages.d.ts",
-            "import": "./dist/monaco/languages.esm.js",
-            "require": "./dist/monaco/languages.cjs.js"
-        },
-        "./shikiLanguages": {
-            "types": "./dist/shiki/languageList.d.ts",
-            "import": "./dist/shiki/languageList.esm.js",
-            "require": "./dist/shiki/languageList.cjs.js"
-        },
-        "./shikiThemes": {
-            "types": "./dist/shiki/themeList.d.ts",
-            "import": "./dist/shiki/themeList.esm.js",
-            "require": "./dist/shiki/themeList.cjs.js"
-        },
-        "./getAssumedDimensions": {
-            "types": "./dist/utils/getAssumedDimensions.d.ts",
-            "import": "./dist/utils/getAssumedDimensions.esm.js",
-            "require": "./dist/utils/getAssumedDimensions.cjs.js"
-        },
-        "./removeEmptyChildren": {
-            "types": "./dist/utils/removeEmptyChildren.d.ts",
-            "import": "./dist/utils/removeEmptyChildren.esm.js",
-            "require": "./dist/utils/removeEmptyChildren.cjs.js"
-        },
-        "./getAllRegexMatches": {
-            "types": "./dist/utils/getAllRegexMatches.d.ts",
-            "import": "./dist/utils/getAllRegexMatches.esm.js",
-            "require": "./dist/utils/getAllRegexMatches.cjs.js"
-        },
-        "./replaceContentByMatch": {
-            "types": "./dist/utils/replaceContentByRegexMatch.d.ts",
-            "import": "./dist/utils/replaceContentByRegexMatch.esm.js",
-            "require": "./dist/utils/replaceContentByRegexMatch.cjs.js"
-        },
-        "./convertColorString": {
-            "types": "./dist/utils/colors/convertColorString.d.ts",
-            "import": "./dist/utils/colors/convertColorString.esm.js",
-            "require": "./dist/utils/colors/convertColorString.cjs.js"
-        },
-        "./appData": {
-            "types": "./dist/appData.d.ts",
-            "import": "./dist/appData.esm.js",
-            "require": "./dist/appData.cjs.js"
-        },
-        "./listUtils": {
-            "types": "./dist/utils/listUtils.d.ts",
-            "import": "./dist/utils/listUtils.esm.js",
-            "require": "./dist/utils/listUtils.cjs.js"
-        },
-        "./stringUtils": {
-            "types": "./dist/utils/stringUtils.d.ts",
-            "import": "./dist/utils/stringUtils.esm.js",
-            "require": "./dist/utils/stringUtils.cjs.js"
-        },
-        "./numberUtils": {
-            "types": "./dist/utils/numberUtils.d.ts",
-            "import": "./dist/utils/numberUtils.esm.js",
-            "require": "./dist/utils/numberUtils.cjs.js"
-        },
-        "./regexUtils": {
-            "types": "./dist/utils/regexUtils.d.ts",
-            "import": "./dist/utils/regexUtils.esm.js",
-            "require": "./dist/utils/regexUtils.cjs.js"
-        },
-        "./slotMap.json": "./src/utils/slotMap.json",
-        "./corePageProps": {
-            "types": "./dist/types/corePageProps.d.ts",
-            "import": "./dist/types/corePageProps.esm.js",
-            "require": "./dist/types/corePageProps.cjs.js"
-        },
-        "./buildStaticData": "./src/utils/buildStaticData.json",
-        "./buildStaticData.json": "./src/utils/buildStaticData.json",
-        "./dateTime": {
-            "types": "./dist/classes/DateTime/main.d.ts",
-            "import": "./dist/classes/DateTime/main.esm.js",
-            "require": "./dist/classes/DateTime/main.cjs.js"
-        },
-        "./getPluginConfig": {
-            "types": "./dist/utils/baseAppUtils/getPluginConfig.d.ts",
-            "import": "./dist/utils/baseAppUtils/getPluginConfig.esm.js",
-            "require": "./dist/utils/baseAppUtils/getPluginConfig.cjs.js"
-        },
-        "./componentDocsPathUtils": {
-            "types": "./dist/utils/baseAppUtils/componentDocPathUtils.d.ts",
-            "import": "./dist/utils/baseAppUtils/componentDocPathUtils.esm.js",
-            "require": "./dist/utils/baseAppUtils/componentDocPathUtils.cjs.js"
-        },
-        "./providers-mathjax": {
-            "types": "./dist/providers/mathjax.d.ts",
-            "import": "./dist/providers/mathjax.esm.js",
-            "require": "./dist/providers/mathjax.cjs.js"
-        },
-        "./transformExportString": {
-            "types": "./dist/utils/build/transformExportString.d.ts",
-            "import": "./dist/utils/build/transformExportString.esm.js",
-            "require": "./dist/utils/build/transformExportString.cjs.js"
-        },
-        "./validateDeviceType": {
-            "types": "./dist/utils/deviceDetect.d.ts",
-            "import": "./dist/utils/deviceDetect.esm.js",
-            "require": "./dist/utils/deviceDetect.cjs.js"
-        },
-        "./downloadFile": {
-            "types": "./dist/utils/downloadFile.d.ts",
-            "import": "./dist/utils/downloadFile.esm.js",
-            "require": "./dist/utils/downloadFile.cjs.js"
-        },
-        "./jsonFileClass": {
-            "types": "./dist/classes/file/jsonFile.d.ts",
-            "import": "./dist/classes/file/jsonFile.esm.js",
-            "require": "./dist/classes/file/jsonFile.cjs.js"
-        },
-        "./imageFile": {
-            "types": "./dist/classes/file/media/imageFile.d.ts",
-            "import": "./dist/classes/file/media/imageFile.esm.js",
-            "require": "./dist/classes/file/media/imageFile.cjs.js"
-        },
-        "./fileClass": {
-            "types": "./dist/classes/file/main.d.ts",
-            "import": "./dist/classes/file/main.esm.js",
-            "require": "./dist/classes/file/main.cjs.js"
-        },
-        "./mdxFile": {
-            "types": "./dist/classes/file/mdxFile.d.ts",
-            "import": "./dist/classes/file/mdxFile.esm.js",
-            "require": "./dist/classes/file/mdxFile.cjs.js"
-        },
-        "./defaultColorThemeList": {
-            "types": "./dist/styleUtilities/ulldDefaultColorThemes.d.ts",
-            "import": "./dist/styleUtilities/ulldDefaultColorThemes.esm.js",
-            "require": "./dist/styleUtilities/ulldDefaultColorThemes.cjs.js"
-        },
-        "./generateThemeBasedPlotColors": {
-            "types": "./dist/styleUtilities/generateThemePlotColors.d.ts",
-            "import": "./dist/styleUtilities/generateThemePlotColors.esm.js",
-            "require": "./dist/styleUtilities/generateThemePlotColors.cjs.js"
-        },
-        "./themeColorGradients": "./src/styleUtilities/themeColorGradients.json",
-        "./streamFile": {
-            "types": "./dist/utils/media/streamFile.d.ts",
-            "import": "./dist/utils/media/streamFile.esm.js",
-            "require": "./dist/utils/media/streamFile.cjs.js"
-        },
-        "./mdxParserUtils": {
-            "types": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.d.ts",
-            "import": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.esm.js",
-            "require": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.cjs.js"
-        },
-        "./fsRootGlob": {
-            "types": "./dist/utils/fsRootGlob.d.ts",
-            "import": "./dist/utils/fsRootGlob.esm.js",
-            "require": "./dist/utils/fsRootGlob.cjs.js"
-        },
-        "./settingPageSection": {
-            "types": "./dist/components/settingPageUtils/settingPageSection.d.ts",
-            "import": "./dist/components/settingPageUtils/settingPageSection.esm.js",
-            "require": "./dist/components/settingPageUtils/settingPageSection.cjs.js"
-        },
-        "./settingPageContainer": {
-            "types": "./dist/components/settingPageUtils/settingPageContainer.d.ts",
-            "import": "./dist/components/settingPageUtils/settingPageContainer.esm.js",
-            "require": "./dist/components/settingPageUtils/settingPageContainer.cjs.js"
-        },
-        "./disableBookmark": {
-            "types": "./dist/components/disableBookmark.d.ts",
-            "import": "./dist/components/disableBookmark.esm.js",
-            "require": "./dist/components/disableBookmark.cjs.js"
-        }
+    "./fetchWrapper": {
+      "types": "./dist/utils/fetchWrapper.d.ts",
+      "import": "./dist/utils/fetchWrapper.esm.js",
+      "require": "./dist/utils/fetchWrapper.cjs.js"
     },
-    "files": [
-        "dist",
-        "src"
-    ],
-    "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {
-        "@ulld/database": "workspace:*",
-        "@ulld/math": "workspace:*",
-        "@ulld/tailwind": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+    "./filePathSchemas": {
+      "types": "./dist/schemas/filePath/index.d.ts",
+      "import": "./dist/schemas/filePath/index.esm.js",
+      "require": "./dist/schemas/filePath/index.cjs.js"
     },
-    "private": false,
-    "publishConfig": {
-        "access": "public"
+    "./errorNotifications": {
+      "types": "./dist/errorHandling/main.d.ts",
+      "import": "./dist/errorHandling/main.esm.js",
+      "require": "./dist/errorHandling/main.cjs.js"
     },
-    "scripts": {
-        "build": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && NODE_OPTIONS='--max-old-space-size=16384' tsup",
-        "dev": "echo 'Add dev script here'",
-        "test": "echo 'Add test script here'"
+    "./testDataHelpers": {
+      "types": "./dist/testDataHelpers/main.d.ts",
+      "import": "./dist/testDataHelpers/main.esm.js",
+      "require": "./dist/testDataHelpers/main.cjs.js"
     },
-    "type": "module",
-    "types": "./dist/types/main.d.ts"
+    "./localDevelopmentMenu": {
+      "types": "./dist/components/localDevelopment/localDevelopmentMenu.d.ts",
+      "import": "./dist/components/localDevelopment/localDevelopmentMenu.esm.js",
+      "require": "./dist/components/localDevelopment/localDevelopmentMenu.cjs.js"
+    },
+    "./localDevelopmentPageWrapper": {
+      "types": "./dist/components/localDevelopment/localDevelopmentPageWrapper.d.ts",
+      "import": "./dist/components/localDevelopment/localDevelopmentPageWrapper.esm.js",
+      "require": "./dist/components/localDevelopment/localDevelopmentPageWrapper.cjs.js"
+    },
+    "./utilNavLinks": {
+      "types": "./dist/navigation/utilityNavLinks.d.ts",
+      "import": "./dist/navigation/utilityNavLinks.esm.js",
+      "require": "./dist/navigation/utilityNavLinks.cjs.js"
+    },
+    "./getPathnameFromHeaders": {
+      "types": "./dist/utils/getPathnameFromHeaders.d.ts",
+      "import": "./dist/utils/getPathnameFromHeaders.esm.js",
+      "require": "./dist/utils/getPathnameFromHeaders.cjs.js"
+    },
+    "./glob": {
+      "types": "./dist/classes/glob/main.d.ts",
+      "import": "./dist/classes/glob/main.esm.js",
+      "require": "./dist/classes/glob/main.cjs.js"
+    },
+    "./getMarkdownHeadings": {
+      "types": "./dist/additionalParsers/mdx/getContentHeadings.d.ts",
+      "import": "./dist/additionalParsers/mdx/getContentHeadings.esm.js",
+      "require": "./dist/additionalParsers/mdx/getContentHeadings.cjs.js"
+    },
+    "./additionalSources": {
+      "types": "./dist/utils/build/additionalSourceFileStructure.d.ts",
+      "import": "./dist/utils/build/additionalSourceFileStructure.esm.js",
+      "require": "./dist/utils/build/additionalSourceFileStructure.cjs.js"
+    },
+    "./paths": {
+      "types": "./dist/classes/urlManager.d.ts",
+      "import": "./dist/classes/urlManager.esm.js",
+      "require": "./dist/classes/urlManager.cjs.js"
+    },
+    "./packageJsonType": {
+      "types": "./dist/types/packageJson/packageJsonType.d.ts",
+      "import": "./dist/types/packageJson/packageJsonType.esm.js",
+      "require": "./dist/types/packageJson/packageJsonType.cjs.js"
+    },
+    "./paginationUtils": {
+      "types": "./dist/utils/paginationUtils.d.ts",
+      "import": "./dist/utils/paginationUtils.esm.js",
+      "require": "./dist/utils/paginationUtils.cjs.js"
+    },
+    "./objectUtils": {
+      "types": "./dist/utils/objectUtils.d.ts",
+      "import": "./dist/utils/objectUtils.esm.js",
+      "require": "./dist/utils/objectUtils.cjs.js"
+    },
+    "./filePathUtils": {
+      "types": "./dist/utils/filePathUtils.d.ts",
+      "import": "./dist/utils/filePathUtils.esm.js",
+      "require": "./dist/utils/filePathUtils.cjs.js"
+    },
+    "./searchUtils": {
+      "types": "./dist/utils/searchUtils.d.ts",
+      "import": "./dist/utils/searchUtils.esm.js",
+      "require": "./dist/utils/searchUtils.cjs.js"
+    },
+    "./sortUtils": {
+      "types": "./dist/utils/sortUtils.d.ts",
+      "import": "./dist/utils/sortUtils.esm.js",
+      "require": "./dist/utils/sortUtils.cjs.js"
+    },
+    "./admonition/types": "./dist/types/admonition.d.ts",
+    "./components/copyContextMenu": {
+      "types": "./dist/components/copyContextMenu.d.ts",
+      "import": "./dist/components/copyContextMenu.esm.js",
+      "require": "./dist/components/copyContextMenu.cjs.js"
+    },
+    "./booleanAndEqualities/arrayTruthy": {
+      "types": "./dist/booleanAndEqualities/arrayTruthy.d.ts",
+      "import": "./dist/booleanAndEqualities/arrayTruthy.esm.js",
+      "require": "./dist/booleanAndEqualities/arrayTruthy.cjs.js"
+    },
+    "./shadColorMap": {
+      "types": "./dist/utils/shadColorMap.d.ts",
+      "import": "./dist/utils/shadColorMap.esm.js",
+      "require": "./dist/utils/shadColorMap.cjs.js"
+    },
+    "./types/navigation": {
+      "types": "./dist/types/navigation.d.ts",
+      "import": "./dist/types/navigation.esm.js",
+      "require": "./dist/types/navigation.cjs.js"
+    },
+    "./types/utilityTypes": {
+      "types": "./dist/types/utilityTypes.d.ts",
+      "import": "./dist/types/utilityTypes.esm.js",
+      "require": "./dist/types/utilityTypes.cjs.js"
+    },
+    "./types/toastConfig": {
+      "types": "./dist/types/toastConfig.d.ts",
+      "import": "./dist/types/toastConfig.esm.js",
+      "require": "./dist/types/toastConfig.cjs.js"
+    },
+    "./types/todos": {
+      "types": "./dist/types/todos.d.ts",
+      "import": "./dist/types/todos.esm.js",
+      "require": "./dist/types/todos.cjs.js"
+    },
+    "./types/embeddedImageProps": {
+      "types": "./dist/types/embeddedImageProps.d.ts",
+      "import": "./dist/types/embeddedImageProps.esm.js",
+      "require": "./dist/types/embeddedImageProps.cjs.js"
+    },
+    "./staticAppProperties/main": {
+      "types": "./dist/staticAppProperties/main.d.ts",
+      "import": "./dist/staticAppProperties/main.esm.js",
+      "require": "./dist/staticAppProperties/main.cjs.js"
+    },
+    "./general": {
+      "types": "./dist/utils/general.d.ts",
+      "import": "./dist/utils/general.esm.js",
+      "require": "./dist/utils/general.cjs.js"
+    },
+    "./identity": {
+      "types": "./dist/utils/identity.d.ts",
+      "import": "./dist/utils/identity.esm.js",
+      "require": "./dist/utils/identity.cjs.js"
+    },
+    "./dates": {
+      "types": "./dist/utils/dates.d.ts",
+      "import": "./dist/utils/dates.esm.js",
+      "require": "./dist/utils/dates.cjs.js"
+    },
+    "./cn": {
+      "types": "./dist/utils/cn.d.ts",
+      "import": "./dist/utils/cn.esm.js",
+      "require": "./dist/utils/cn.cjs.js"
+    },
+    "./cors": {
+      "types": "./dist/utils/cors.d.ts",
+      "import": "./dist/utils/cors.esm.js",
+      "require": "./dist/utils/cors.cjs.js"
+    },
+    "./arrayUtilities": {
+      "types": "./dist/utils/arrayUtilities.d.ts",
+      "import": "./dist/utils/arrayUtilities.esm.js",
+      "require": "./dist/utils/arrayUtilities.cjs.js"
+    },
+    "./latexUtils": {
+      "types": "./dist/utils/latexUtils.d.ts",
+      "import": "./dist/utils/latexUtils.esm.js",
+      "require": "./dist/utils/latexUtils.cjs.js"
+    },
+    "./pathUtilsClientSide": {
+      "types": "./dist/utils/pathUtilsClientSide.d.ts",
+      "import": "./dist/utils/pathUtilsClientSide.esm.js",
+      "require": "./dist/utils/pathUtilsClientSide.cjs.js"
+    },
+    "./pathUtilsServerSide": {
+      "types": "./dist/utils/pathUtilsServer.d.ts",
+      "import": "./dist/utils/pathUtilsServer.esm.js",
+      "require": "./dist/utils/pathUtilsServer.cjs.js"
+    },
+    "./fsUtils": {
+      "types": "./dist/utils/fsUtils.d.ts",
+      "import": "./dist/utils/fsUtils.esm.js",
+      "require": "./dist/utils/fsUtils.cjs.js"
+    },
+    "./utils/general": {
+      "types": "./dist/utils/general.d.ts",
+      "import": "./dist/utils/general.esm.js",
+      "require": "./dist/utils/general.cjs.js"
+    },
+    "./utils/identity": {
+      "types": "./dist/utils/identity.d.ts",
+      "import": "./dist/utils/identity.esm.js",
+      "require": "./dist/utils/identity.cjs.js"
+    },
+    "./utils/dates": {
+      "types": "./dist/utils/dates.d.ts",
+      "import": "./dist/utils/dates.esm.js",
+      "require": "./dist/utils/dates.cjs.js"
+    },
+    "./utils/cn": {
+      "types": "./dist/utils/cn.d.ts",
+      "import": "./dist/utils/cn.esm.js",
+      "require": "./dist/utils/cn.cjs.js"
+    },
+    "./utils/arrayUtilities": {
+      "types": "./dist/utils/arrayUtilities.d.ts",
+      "import": "./dist/utils/arrayUtilities.esm.js",
+      "require": "./dist/utils/arrayUtilities.cjs.js"
+    },
+    "./utils/latexUtils": {
+      "types": "./dist/utils/latexUtils.d.ts",
+      "import": "./dist/utils/latexUtils.esm.js",
+      "require": "./dist/utils/latexUtils.cjs.js"
+    },
+    "./utils/pathUtilsClientSide": {
+      "types": "./dist/utils/pathUtilsClientSide.d.ts",
+      "import": "./dist/utils/pathUtilsClientSide.esm.js",
+      "require": "./dist/utils/pathUtilsClientSide.cjs.js"
+    },
+    "./utils/fsUtils": {
+      "types": "./dist/utils/fsUtils.d.ts",
+      "import": "./dist/utils/fsUtils.esm.js",
+      "require": "./dist/utils/fsUtils.cjs.js"
+    },
+    "./utils-dom": {
+      "types": "./dist/utils/domUtils/main.d.ts",
+      "import": "./dist/utils/domUtils/main.esm.js",
+      "require": "./dist/utils/domUtils/main.cjs.js"
+    },
+    "./toDoStatusData": {
+      "types": "./dist/schemas/todoItemStatus.d.ts",
+      "import": "./dist/schemas/todoItemStatus.esm.js",
+      "require": "./dist/schemas/todoItemStatus.cjs.js"
+    },
+    "./schemas/snippets": {
+      "types": "./dist/schemas/snippets.d.ts",
+      "import": "./dist/schemas/snippets.esm.js",
+      "require": "./dist/schemas/snippets.cjs.js"
+    },
+    "./schemas/utility": {
+      "types": "./dist/schemas/utility.d.ts",
+      "import": "./dist/schemas/utility.esm.js",
+      "require": "./dist/schemas/utility.cjs.js"
+    },
+    "./schemas/transforms": {
+      "types": "./dist/schemas/transforms.d.ts",
+      "import": "./dist/schemas/transforms.esm.js",
+      "require": "./dist/schemas/transforms.cjs.js"
+    },
+    "./schemas/code/technologiesNameMap": "./dist/schemas/code/technologiesNameMap.js",
+    "./schemas/mdx/parseMdxStringSchema": {
+      "types": "./dist/schemas/mdx/parseMdxStringSchema.d.ts",
+      "import": "./dist/schemas/mdx/parseMdxStringSchema.esm.js",
+      "require": "./dist/schemas/mdx/parseMdxStringSchema.cjs.js"
+    },
+    "./schemas/mdx/parseMdxStringProps": {
+      "types": "./dist/schemas/mdx/parseMdxStringProps.d.ts",
+      "import": "./dist/schemas/mdx/parseMdxStringProps.esm.js",
+      "require": "./dist/schemas/mdx/parseMdxStringProps.cjs.js"
+    },
+    "./defaults/markdownUniversalOptions": {
+      "types": "./dist/defaults/markdownUniversalOptions.d.ts",
+      "import": "./dist/defaults/markdownUniversalOptions.esm.js",
+      "require": "./dist/defaults/markdownUniversalOptions.cjs.js"
+    },
+    "./defaults/markdown.json": "./src/defaults/markdownOptions.json",
+    "./defaults/defaultMermaidConfig": {
+      "types": "./dist/defaults/defaultMermaidConfig.d.ts",
+      "import": "./dist/defaults/defaultMermaidConfig.esm.js",
+      "require": "./dist/defaults/defaultMermaidConfig.cjs.js"
+    },
+    "./defaults/forms/healthReport": {
+      "types": "./dist/defaults/forms/healthReport.d.ts",
+      "import": "./dist/defaults/forms/healthReport.esm.js",
+      "require": "./dist/defaults/forms/healthReport.cjs.js"
+    },
+    "./defaults/prisma/commonZodFields": {
+      "types": "./dist/defaults/prisma/commonZodFields.d.ts",
+      "import": "./dist/defaults/prisma/commonZodFields.esm.js",
+      "require": "./dist/defaults/prisma/commonZodFields.cjs.js"
+    },
+    "./defaults/prisma/notes": {
+      "types": "./dist/defaults/prisma/notes.d.ts",
+      "import": "./dist/defaults/prisma/notes.esm.js",
+      "require": "./dist/defaults/prisma/notes.cjs.js"
+    },
+    "./getTocFromContent": {
+      "types": "./dist/navigation/getTocFromContent.d.ts",
+      "import": "./dist/navigation/getTocFromContent.esm.js",
+      "require": "./dist/navigation/getTocFromContent.cjs.js"
+    },
+    "./actions/copyStringToClipboard": {
+      "types": "./dist/actions/copyStringToClipboard.d.ts",
+      "import": "./dist/actions/copyStringToClipboard.esm.js",
+      "require": "./dist/actions/copyStringToClipboard.cjs.js"
+    },
+    "./copyStringToClipboard": {
+      "types": "./dist/actions/copyStringToClipboard.d.ts",
+      "import": "./dist/actions/copyStringToClipboard.esm.js",
+      "require": "./dist/actions/copyStringToClipboard.cjs.js"
+    },
+    "./loaders/requireJS/requirejs": {
+      "types": "./dist/loaders/requireJS/requirejs.d.ts",
+      "import": "./dist/loaders/requireJS/requirejs.esm.js",
+      "require": "./dist/loaders/requireJS/requirejs.cjs.js"
+    },
+    "./isLocal": {
+      "types": "./dist/utils/isLocal.d.ts",
+      "import": "./dist/utils/isLocal.esm.js",
+      "require": "./dist/utils/isLocal.cjs.js"
+    },
+    "./initialLoader": {
+      "types": "./dist/loaders/installerComponents/initialLoader.d.ts",
+      "import": "./dist/loaders/installerComponents/initialLoader.esm.js",
+      "require": "./dist/loaders/installerComponents/initialLoader.cjs.js"
+    },
+    "./tikzLoader": {
+      "types": "./dist/loaders/installerComponents/TikzLoader.d.ts",
+      "import": "./dist/loaders/installerComponents/TikzLoader.esm.js",
+      "require": "./dist/loaders/installerComponents/TikzLoader.cjs.js"
+    },
+    "./autoWrapMathSchemas": {
+      "types": "./dist/schemas/autoWrapMathSchema.d.ts",
+      "import": "./dist/schemas/autoWrapMathSchema.esm.js",
+      "require": "./dist/schemas/autoWrapMathSchema.cjs.js"
+    },
+    "./getDarkMode": {
+      "types": "./dist/utils/getDarkMode.d.ts",
+      "import": "./dist/utils/getDarkMode.esm.js",
+      "require": "./dist/utils/getDarkMode.cjs.js"
+    },
+    "./internalDevTypes": {
+      "types": "./dist/internalDevTypes/main.d.ts",
+      "import": "./dist/internalDevTypes/main.esm.js",
+      "require": "./dist/internalDevTypes/main.cjs.js"
+    },
+    "./monacoLanguages": {
+      "types": "./dist/monaco/languages.d.ts",
+      "import": "./dist/monaco/languages.esm.js",
+      "require": "./dist/monaco/languages.cjs.js"
+    },
+    "./shikiLanguages": {
+      "types": "./dist/shiki/languageList.d.ts",
+      "import": "./dist/shiki/languageList.esm.js",
+      "require": "./dist/shiki/languageList.cjs.js"
+    },
+    "./shikiThemes": {
+      "types": "./dist/shiki/themeList.d.ts",
+      "import": "./dist/shiki/themeList.esm.js",
+      "require": "./dist/shiki/themeList.cjs.js"
+    },
+    "./getAssumedDimensions": {
+      "types": "./dist/utils/getAssumedDimensions.d.ts",
+      "import": "./dist/utils/getAssumedDimensions.esm.js",
+      "require": "./dist/utils/getAssumedDimensions.cjs.js"
+    },
+    "./removeEmptyChildren": {
+      "types": "./dist/utils/removeEmptyChildren.d.ts",
+      "import": "./dist/utils/removeEmptyChildren.esm.js",
+      "require": "./dist/utils/removeEmptyChildren.cjs.js"
+    },
+    "./getAllRegexMatches": {
+      "types": "./dist/utils/getAllRegexMatches.d.ts",
+      "import": "./dist/utils/getAllRegexMatches.esm.js",
+      "require": "./dist/utils/getAllRegexMatches.cjs.js"
+    },
+    "./replaceContentByMatch": {
+      "types": "./dist/utils/replaceContentByRegexMatch.d.ts",
+      "import": "./dist/utils/replaceContentByRegexMatch.esm.js",
+      "require": "./dist/utils/replaceContentByRegexMatch.cjs.js"
+    },
+    "./convertColorString": {
+      "types": "./dist/utils/colors/convertColorString.d.ts",
+      "import": "./dist/utils/colors/convertColorString.esm.js",
+      "require": "./dist/utils/colors/convertColorString.cjs.js"
+    },
+    "./appData": {
+      "types": "./dist/appData.d.ts",
+      "import": "./dist/appData.esm.js",
+      "require": "./dist/appData.cjs.js"
+    },
+    "./listUtils": {
+      "types": "./dist/utils/listUtils.d.ts",
+      "import": "./dist/utils/listUtils.esm.js",
+      "require": "./dist/utils/listUtils.cjs.js"
+    },
+    "./stringUtils": {
+      "types": "./dist/utils/stringUtils.d.ts",
+      "import": "./dist/utils/stringUtils.esm.js",
+      "require": "./dist/utils/stringUtils.cjs.js"
+    },
+    "./numberUtils": {
+      "types": "./dist/utils/numberUtils.d.ts",
+      "import": "./dist/utils/numberUtils.esm.js",
+      "require": "./dist/utils/numberUtils.cjs.js"
+    },
+    "./regexUtils": {
+      "types": "./dist/utils/regexUtils.d.ts",
+      "import": "./dist/utils/regexUtils.esm.js",
+      "require": "./dist/utils/regexUtils.cjs.js"
+    },
+    "./slotMap.json": "./src/utils/slotMap.json",
+    "./corePageProps": {
+      "types": "./dist/types/corePageProps.d.ts",
+      "import": "./dist/types/corePageProps.esm.js",
+      "require": "./dist/types/corePageProps.cjs.js"
+    },
+    "./buildStaticData": "./src/utils/buildStaticData.json",
+    "./buildStaticData.json": "./src/utils/buildStaticData.json",
+    "./dateTime": {
+      "types": "./dist/classes/DateTime/main.d.ts",
+      "import": "./dist/classes/DateTime/main.esm.js",
+      "require": "./dist/classes/DateTime/main.cjs.js"
+    },
+    "./getPluginConfig": {
+      "types": "./dist/utils/baseAppUtils/getPluginConfig.d.ts",
+      "import": "./dist/utils/baseAppUtils/getPluginConfig.esm.js",
+      "require": "./dist/utils/baseAppUtils/getPluginConfig.cjs.js"
+    },
+    "./componentDocsPathUtils": {
+      "types": "./dist/utils/baseAppUtils/componentDocPathUtils.d.ts",
+      "import": "./dist/utils/baseAppUtils/componentDocPathUtils.esm.js",
+      "require": "./dist/utils/baseAppUtils/componentDocPathUtils.cjs.js"
+    },
+    "./providers-mathjax": {
+      "types": "./dist/providers/mathjax.d.ts",
+      "import": "./dist/providers/mathjax.esm.js",
+      "require": "./dist/providers/mathjax.cjs.js"
+    },
+    "./transformExportString": {
+      "types": "./dist/utils/build/transformExportString.d.ts",
+      "import": "./dist/utils/build/transformExportString.esm.js",
+      "require": "./dist/utils/build/transformExportString.cjs.js"
+    },
+    "./validateDeviceType": {
+      "types": "./dist/utils/deviceDetect.d.ts",
+      "import": "./dist/utils/deviceDetect.esm.js",
+      "require": "./dist/utils/deviceDetect.cjs.js"
+    },
+    "./downloadFile": {
+      "types": "./dist/utils/downloadFile.d.ts",
+      "import": "./dist/utils/downloadFile.esm.js",
+      "require": "./dist/utils/downloadFile.cjs.js"
+    },
+    "./jsonFileClass": {
+      "types": "./dist/classes/file/jsonFile.d.ts",
+      "import": "./dist/classes/file/jsonFile.esm.js",
+      "require": "./dist/classes/file/jsonFile.cjs.js"
+    },
+    "./imageFile": {
+      "types": "./dist/classes/file/media/imageFile.d.ts",
+      "import": "./dist/classes/file/media/imageFile.esm.js",
+      "require": "./dist/classes/file/media/imageFile.cjs.js"
+    },
+    "./fileClass": {
+      "types": "./dist/classes/file/main.d.ts",
+      "import": "./dist/classes/file/main.esm.js",
+      "require": "./dist/classes/file/main.cjs.js"
+    },
+    "./mdxFile": {
+      "types": "./dist/classes/file/mdxFile.d.ts",
+      "import": "./dist/classes/file/mdxFile.esm.js",
+      "require": "./dist/classes/file/mdxFile.cjs.js"
+    },
+    "./defaultColorThemeList": {
+      "types": "./dist/styleUtilities/ulldDefaultColorThemes.d.ts",
+      "import": "./dist/styleUtilities/ulldDefaultColorThemes.esm.js",
+      "require": "./dist/styleUtilities/ulldDefaultColorThemes.cjs.js"
+    },
+    "./generateThemeBasedPlotColors": {
+      "types": "./dist/styleUtilities/generateThemePlotColors.d.ts",
+      "import": "./dist/styleUtilities/generateThemePlotColors.esm.js",
+      "require": "./dist/styleUtilities/generateThemePlotColors.cjs.js"
+    },
+    "./themeColorGradients": "./src/styleUtilities/themeColorGradients.json",
+    "./streamFile": {
+      "types": "./dist/utils/media/streamFile.d.ts",
+      "import": "./dist/utils/media/streamFile.esm.js",
+      "require": "./dist/utils/media/streamFile.cjs.js"
+    },
+    "./mdxParserUtils": {
+      "types": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.d.ts",
+      "import": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.esm.js",
+      "require": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.cjs.js"
+    },
+    "./fsRootGlob": {
+      "types": "./dist/utils/fsRootGlob.d.ts",
+      "import": "./dist/utils/fsRootGlob.esm.js",
+      "require": "./dist/utils/fsRootGlob.cjs.js"
+    },
+    "./settingPageSection": {
+      "types": "./dist/components/settingPageUtils/settingPageSection.d.ts",
+      "import": "./dist/components/settingPageUtils/settingPageSection.esm.js",
+      "require": "./dist/components/settingPageUtils/settingPageSection.cjs.js"
+    },
+    "./settingPageContainer": {
+      "types": "./dist/components/settingPageUtils/settingPageContainer.d.ts",
+      "import": "./dist/components/settingPageUtils/settingPageContainer.esm.js",
+      "require": "./dist/components/settingPageUtils/settingPageContainer.cjs.js"
+    },
+    "./disableBookmark": {
+      "types": "./dist/components/disableBookmark.d.ts",
+      "import": "./dist/components/disableBookmark.esm.js",
+      "require": "./dist/components/disableBookmark.cjs.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "packageManager": "pnpm@9.0.4",
+  "peerDependencies": {
+    "@ulld/database": "workspace:*",
+    "@ulld/math": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
+    "@ulld/types": "workspace:*",
+    "@ulld/typescript-config": "workspace:*",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && NODE_OPTIONS='--max-old-space-size=16384' tsup",
+    "dev": "echo 'Add dev script here'",
+    "test": "echo 'Add test script here'"
+  },
+  "type": "module",
+  "types": "./dist/types/main.d.ts"
 }

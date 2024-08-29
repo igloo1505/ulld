@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.96
+
+### Patch Changes
+
+- Fix misaligned bin path.
+
 ## 0.0.95
 
 ### Patch Changes

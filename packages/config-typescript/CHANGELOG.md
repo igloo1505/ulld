@@ -1,5 +1,13 @@
 # @repo/typescript-config
 
+## 0.0.94
+
+### Patch Changes
+
+- Fix misaligned bin path.
+- Updated dependencies
+  - @ulld/types@0.0.94
+
 ## 0.0.93
 
 ### Patch Changes

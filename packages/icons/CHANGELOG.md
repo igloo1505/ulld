@@ -1,5 +1,17 @@
 # @ulld/icons
 
+## 0.0.100
+
+### Patch Changes
+
+- Fix misaligned bin path.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.94
+  - @ulld/hooks@0.0.100
+  - @ulld/tailwind@0.0.94
+  - @ulld/types@0.0.94
+  - @ulld/utilities@0.0.100
+
 ## 0.0.99
 
 ### Patch Changes
