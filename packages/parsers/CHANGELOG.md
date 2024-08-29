@@ -1,5 +1,19 @@
 # @ulld/parsers
 
+## 0.0.97
+
+### Patch Changes
+
+- Update build script for super-pre-beta release.
+- Updated dependencies
+  - @ulld/component-map@0.0.97
+  - @ulld/typescript-config@0.0.91
+  - @ulld/configschema@0.0.97
+  - @ulld/database@0.0.94
+  - @ulld/developer@0.0.97
+  - @ulld/types@0.0.91
+  - @ulld/utilities@0.0.97
+
 ## 0.0.96
 
 ### Patch Changes

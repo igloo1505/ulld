@@ -1,5 +1,28 @@
 # @ulld/bib-manager
 
+## 0.0.97
+
+### Patch Changes
+
+- Update build script for super-pre-beta release.
+- Updated dependencies
+  - @ulld/api@0.0.97
+  - @ulld/eslint-config@0.0.93
+  - @ulld/typescript-config@0.0.91
+  - @ulld/configschema@0.0.97
+  - @ulld/database@0.0.94
+  - @ulld/developer@0.0.97
+  - @ulld/editor@0.0.97
+  - @ulld/full-form@0.0.97
+  - @ulld/hooks@0.0.97
+  - @ulld/icons@0.0.97
+  - @ulld/jest-presets@0.0.91
+  - @ulld/state@0.0.97
+  - @ulld/tailwind@0.0.91
+  - @ulld/types@0.0.91
+  - @ulld/ui@0.0.95
+  - @ulld/utilities@0.0.97
+
 ## 0.0.96
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.97
+
+### Patch Changes
+
+- Update build script for super-pre-beta release.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.93
+  - @ulld/typescript-config@0.0.91
+  - @ulld/configschema@0.0.97
+  - @ulld/logger@0.0.91
+  - @ulld/tailwind@0.0.91
+  - @ulld/types@0.0.91
+  - @ulld/utilities@0.0.97
+
 ## 0.0.96
 
 ### Patch Changes

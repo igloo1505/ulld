@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.97
+
+### Patch Changes
+
+- Update build script for super-pre-beta release.
+- Updated dependencies
+  - @ulld/developer@0.0.97
+  - @ulld/developer-schemas@0.0.91
+  - @ulld/types@0.0.91
+
 ## 0.0.96
 
 ### Patch Changes

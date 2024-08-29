@@ -1,5 +1,13 @@
 # @ulld/developer-schemas
 
+## 0.0.91
+
+### Patch Changes
+
+- Update build script for super-pre-beta release.
+- Updated dependencies
+  - @ulld/types@0.0.91
+
 ## 0.0.90
 
 ### Patch Changes

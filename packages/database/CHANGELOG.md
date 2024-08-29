@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.94
+
+### Patch Changes
+
+- Update build script for super-pre-beta release.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.91
+  - @ulld/types@0.0.91
+
 ## 0.0.93
 
 ### Patch Changes

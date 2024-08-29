@@ -1,5 +1,19 @@
 # @ulld/configschema
 
+## 0.0.97
+
+### Patch Changes
+
+- Update build script for super-pre-beta release.
+- Updated dependencies
+  - @ulld/base-configs@0.0.91
+  - @ulld/typescript-config@0.0.91
+  - @ulld/developer-schemas@0.0.91
+  - @ulld/icons@0.0.97
+  - @ulld/tailwind@0.0.91
+  - @ulld/types@0.0.91
+  - @ulld/utilities@0.0.97
+
 ## 0.0.96
 
 ### Patch Changes

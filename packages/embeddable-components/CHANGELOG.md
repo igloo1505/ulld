@@ -1,5 +1,25 @@
 # @ulld/embeddable-components
 
+## 0.0.97
+
+### Patch Changes
+
+- Update build script for super-pre-beta release.
+- Updated dependencies
+  - @ulld/api@0.0.97
+  - @ulld/component-configs@0.0.97
+  - @ulld/typescript-config@0.0.91
+  - @ulld/configschema@0.0.97
+  - @ulld/default-image-map@0.0.97
+  - @ulld/developer@0.0.97
+  - @ulld/hooks@0.0.97
+  - @ulld/icons@0.0.97
+  - @ulld/render@0.0.97
+  - @ulld/state@0.0.97
+  - @ulld/tailwind@0.0.91
+  - @ulld/types@0.0.91
+  - @ulld/utilities@0.0.97
+
 ## 0.0.96
 
 ### Patch Changes

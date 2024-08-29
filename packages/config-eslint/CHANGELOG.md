@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.93
+
+### Patch Changes
+
+- Update build script for super-pre-beta release.
+
 ## 0.0.92
 
 ### Patch Changes

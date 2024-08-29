@@ -1,60 +1,60 @@
 {
-    "name": "@ulld/math",
-    "version": "0.0.96",
-    "$schema": "./node_modules/@ulld/developer-schemas/src/static/ulldPackageJson.schema.json",
-    "dependencies": {
-        "@mathigon/fermat": "1.1.18",
-        "@tailwindcss/container-queries": "^0.1.1",
-        "@tailwindcss/forms": "^0.5.7",
-        "complex.js": "2.1.1",
-        "fraction.js": "4.3.7",
-        "mathjs": "12.4.0",
-        "mz-math": "3.0.26",
-        "numbers": "0.7.0",
-        "numeric": "1.2.6",
-        "quaternion": "1.5.1",
-        "typescript": "^5.4.5"
-    },
-    "devDependencies": {
-        "@mathigon/fermat": "1.1.18",
-        "@tailwindcss/container-queries": "^0.1.1",
-        "@tailwindcss/forms": "^0.5.7",
-        "complex.js": "2.1.1",
-        "fraction.js": "4.3.7",
-        "mathjs": "12.4.0",
-        "mz-math": "3.0.26",
-        "numbers": "0.7.0",
-        "numeric": "1.2.6",
-        "quaternion": "1.5.1",
-        "typescript": "^5.4.5"
-    },
-    "exports": {
-        "./extendedMath": "./src/Math.ts",
-        "./plotMathHandler": "./src/plotMathHandler.ts",
-        "./list": "./src/utilityObjects/list.ts"
-    },
-    "files": [
-        "src"
-    ],
-    "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {
-        "@ulld/configschema": "workspace:*",
-        "@ulld/hooks": "workspace:*",
-        "@ulld/icons": "workspace:*",
-        "@ulld/jest-presets": "workspace:*",
-        "@ulld/state": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "@ulld/utilities": "workspace:*"
-    },
-    "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
-    "scripts": {
-        "build": "echo 'Add build script here'",
-        "dev": "echo 'Add dev script here'",
-        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-        "test": "echo 'Add test script here'"
-    }
+  "name": "@ulld/math",
+  "version": "0.0.97",
+  "$schema": "./node_modules/@ulld/developer-schemas/src/static/ulldPackageJson.schema.json",
+  "dependencies": {
+    "@mathigon/fermat": "1.1.18",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.7",
+    "complex.js": "2.1.1",
+    "fraction.js": "4.3.7",
+    "mathjs": "12.4.0",
+    "mz-math": "3.0.26",
+    "numbers": "0.7.0",
+    "numeric": "1.2.6",
+    "quaternion": "1.5.1",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@mathigon/fermat": "1.1.18",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.7",
+    "complex.js": "2.1.1",
+    "fraction.js": "4.3.7",
+    "mathjs": "12.4.0",
+    "mz-math": "3.0.26",
+    "numbers": "0.7.0",
+    "numeric": "1.2.6",
+    "quaternion": "1.5.1",
+    "typescript": "^5.4.5"
+  },
+  "exports": {
+    "./extendedMath": "./src/Math.ts",
+    "./plotMathHandler": "./src/plotMathHandler.ts",
+    "./list": "./src/utilityObjects/list.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "packageManager": "pnpm@9.0.4",
+  "peerDependencies": {
+    "@ulld/configschema": "workspace:*",
+    "@ulld/hooks": "workspace:*",
+    "@ulld/icons": "workspace:*",
+    "@ulld/jest-presets": "workspace:*",
+    "@ulld/state": "workspace:*",
+    "@ulld/types": "workspace:*",
+    "@ulld/typescript-config": "workspace:*",
+    "@ulld/utilities": "workspace:*"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "echo 'Add build script here'",
+    "dev": "echo 'Add dev script here'",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "echo 'Add test script here'"
+  }
 }
