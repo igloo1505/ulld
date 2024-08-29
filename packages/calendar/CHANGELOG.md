@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.98
+
+### Patch Changes
+
+- Improve build script and fix issue with use client directives in utilities build output.
+- Updated dependencies
+  - @ulld/developer@0.0.98
+  - @ulld/types@0.0.92
+
 ## 0.0.97
 
 ### Patch Changes

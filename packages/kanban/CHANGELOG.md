@@ -1,5 +1,20 @@
 # @ulld/kanban
 
+## 0.0.98
+
+### Patch Changes
+
+- Improve build script and fix issue with use client directives in utilities build output.
+- Updated dependencies
+  - @ulld/api@0.0.98
+  - @ulld/typescript-config@0.0.92
+  - @ulld/developer@0.0.98
+  - @ulld/jest-presets@0.0.92
+  - @ulld/logger@0.0.92
+  - @ulld/state@0.0.98
+  - @ulld/tailwind@0.0.92
+  - @ulld/types@0.0.92
+
 ## 0.0.97
 
 ### Patch Changes

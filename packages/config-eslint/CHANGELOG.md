@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.94
+
+### Patch Changes
+
+- Improve build script and fix issue with use client directives in utilities build output.
+
 ## 0.0.93
 
 ### Patch Changes

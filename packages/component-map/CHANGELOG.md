@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.98
+
+### Patch Changes
+
+- Improve build script and fix issue with use client directives in utilities build output.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.98
+  - @ulld/calendar@0.0.98
+  - @ulld/typescript-config@0.0.92
+  - @ulld/default-image-map@0.0.98
+  - @ulld/diagram@0.0.98
+  - @ulld/editor@0.0.98
+  - @ulld/embeddable-components@0.0.98
+  - @ulld/equations@0.0.98
+  - @ulld/full-form@0.0.98
+  - @ulld/journal@0.0.98
+  - @ulld/navigation@0.0.98
+  - @ulld/notebook@0.0.98
+  - @ulld/pdf@0.0.98
+  - @ulld/plot@0.0.98
+  - @ulld/snippets@0.0.98
+  - @ulld/tailwind@0.0.92
+  - @ulld/task-manager@0.0.98
+  - @ulld/types@0.0.92
+  - @ulld/whiteboard@0.0.98
+
 ## 0.0.97
 
 ### Patch Changes

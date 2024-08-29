@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.98
+
+### Patch Changes
+
+- Improve build script and fix issue with use client directives in utilities build output.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.94
+  - @ulld/typescript-config@0.0.92
+  - @ulld/configschema@0.0.98
+  - @ulld/database@0.0.95
+  - @ulld/logger@0.0.92
+  - @ulld/types@0.0.92
+
 ## 0.0.97
 
 ### Patch Changes

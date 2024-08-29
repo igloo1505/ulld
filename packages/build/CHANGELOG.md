@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.98
+
+### Patch Changes
+
+- Improve build script and fix issue with use client directives in utilities build output.
+- Updated dependencies
+  - @ulld/configschema@0.0.98
+  - @ulld/developer-schemas@0.0.92
+  - @ulld/types@0.0.92
+  - @ulld/utilities@0.0.98
+
 ## 0.0.97
 
 ### Patch Changes

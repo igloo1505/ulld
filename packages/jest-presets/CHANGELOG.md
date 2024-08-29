@@ -1,5 +1,13 @@
 # @repo/jest-presets
 
+## 0.0.92
+
+### Patch Changes
+
+- Improve build script and fix issue with use client directives in utilities build output.
+- Updated dependencies
+  - @ulld/types@0.0.92
+
 ## 0.0.91
 
 ### Patch Changes

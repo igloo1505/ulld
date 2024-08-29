@@ -1,5 +1,22 @@
 # @ulld/state
 
+## 0.0.98
+
+### Patch Changes
+
+- Improve build script and fix issue with use client directives in utilities build output.
+- Updated dependencies
+  - @ulld/base-configs@0.0.92
+  - @ulld/typescript-config@0.0.92
+  - @ulld/configschema@0.0.98
+  - @ulld/database@0.0.95
+  - @ulld/developer@0.0.98
+  - @ulld/hooks@0.0.98
+  - @ulld/parsers@0.0.98
+  - @ulld/tailwind@0.0.92
+  - @ulld/types@0.0.92
+  - @ulld/utilities@0.0.98
+
 ## 0.0.97
 
 ### Patch Changes
