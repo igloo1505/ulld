@@ -2,6 +2,7 @@
     "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
     "extends": "@ulld/typescript-config/nextjs.json",
     "compilerOptions": {
+        "noEmitOnError": false,
         "rootDir": "src",
         "outDir": "dist",
         "emitDeclarationOnly": true,

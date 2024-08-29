@@ -7,6 +7,7 @@ import { getRandomId } from "@ulld/utilities/identity";
 import AdmonitionTitleNode from "./admonitionTitleNode";
 import FoldingAdmonition from "../../FoldingAdmonition";
 import cn from "@ulld/utilities/cn";
+import { ValidIconName } from "@ulld/icons";
 
 
 export const Admonition = (props: AdmonitionProps) => {
@@ -47,7 +48,7 @@ export const Admonition = (props: AdmonitionProps) => {
                     dropdown={props.dropdown}
                     groupId={id}
                     titleBold={props.titleBold}
-                    icon={props.icon}
+                    icon={props.icon as ValidIconName}
                 />
             ) : (
                 <AdmonitionTitleNode
@@ -56,7 +57,7 @@ export const Admonition = (props: AdmonitionProps) => {
                     dropdown={props.dropdown}
                     groupId={id}
                     titleBold={props.titleBold}
-                    icon={props.icon}
+                    icon={props.icon as ValidIconName}
                 />
             )}
             <div

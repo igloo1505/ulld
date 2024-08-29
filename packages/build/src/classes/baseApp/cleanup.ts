@@ -1,9 +1,11 @@
 import fs from "fs";
 import { globSync } from "glob";
 import path from "path";
-import { PackageManagers } from "../../types.js";
+import { BuildOutputData, PackageManagers } from "../../types.js";
 import { ShellManager } from "../baseClasses/shell.js";
 import { TargetPaths } from "../paths.js";
+import { FileData } from "@ulld/utilities/fileClass";
+import { JsonFile } from "@ulld/utilities/jsonFileClass";
 
 export class BuildCleanup extends ShellManager {
     cleanupPaths: string[] = [".pre-commit-config.yaml"];
@@ -43,9 +45,17 @@ export class BuildCleanup extends ShellManager {
             }
         }
     }
+    private setBuildOutputPath(){
+        let f = new JsonFile<BuildOutputData>(path.join(import.meta.dirname, "../../run/buildDataOutput.json"))
+        let data = f.getJsonContent()
+        data.buildOutputPath = this.paths.targetDir
+        f.writeContent(data)
+        this.log("Set output path successfully. You can now run Ulld from anywhere using the ulldRun command.")
+    }
     runCleanup() {
         this.removeTempBuildDir();
         this.removePreCommitHooks();
         this.removeCleanupPaths();
+        this.setBuildOutputPath();
     }
 }

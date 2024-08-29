@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "@types/eslint": "^9.6.0",
+    "esbuild-plugin-preserve-directives": "^0.0.8",
     "eslint": "^8.57.0",
     "lucide-react": "^0.428.0",
     "server-only": "^0.0.1",

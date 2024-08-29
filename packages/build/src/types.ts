@@ -33,3 +33,8 @@ declare global {
     type PluginSettingsRecord = Record<string, Record<string, any>>
   }
 }
+
+
+export interface BuildOutputData {
+    buildOutputPath: string;
+}

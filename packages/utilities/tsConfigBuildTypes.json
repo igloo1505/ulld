@@ -12,6 +12,7 @@
   ],
   "include": ["src"],
   "compilerOptions": {
+    "noEmitOnError": false,
     "declaration": true,
     "emitDeclarationOnly": true,
     "outDir": "dist",
