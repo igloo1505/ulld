@@ -4,29 +4,26 @@ import { detect } from "detect-package-manager";
 import { BuildOutputData, PackageManagers } from "../types";
 import shell from "shelljs";
 
-
-let b: BuildOutputData = JSON.parse(
-    fs.readFileSync(path.join(import.meta.dirname, "buildDataOutput.json"), {
-        encoding: "utf-8",
-    }),
-);
-
-if (b.buildOutputPath === "not-applied") {
-    console.error(
-        `Cannot run ulld. It does not appear to have been built successfully.`,
-    );
-    process.exit(1);
-}
-
 const commands: Record<PackageManagers, string> = {
     npm: "npm run ulldStart",
     pnpm: "pnpm ulldStart",
     yarn: "yarn run ulldStart",
 };
 
-
 (async () => {
+    
+    let b: BuildOutputData = JSON.parse(
+        fs.readFileSync(path.join(__dirname, "buildDataOutput.json"), {
+            encoding: "utf-8",
+        }),
+    );
 
+    if (b.buildOutputPath === "not-applied") {
+        console.error(
+            `Cannot run ulld. It does not appear to have been built successfully.`,
+        );
+        process.exit(1);
+    }
     let pm = await detect({
         cwd: b.buildOutputPath,
     });
@@ -41,4 +38,5 @@ const commands: Record<PackageManagers, string> = {
     shell.exec(cmd, {
         cwd: b.buildOutputPath,
     });
+
 })();

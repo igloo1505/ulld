@@ -39,12 +39,19 @@
     "zod-to-ts": "^1.2.0"
   },
   "devDependencies": {
+    "@microsoft/api-extractor": "^7.47.7",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@tsconfig/next": "2.0.1",
+    "@tsconfig/node20": "^20.1.4",
+    "@tsconfig/recommended": "^1.0.7",
     "@types/eslint": "^9.6.0",
     "esbuild-plugin-preserve-directives": "^0.0.8",
     "eslint": "^8.57.0",
     "lucide-react": "^0.428.0",
     "server-only": "^0.0.1",
     "syncpack": "^12.4.0",
+    "tsconfig": "^7.0.0",
     "tsup": "8.0.1",
     "typescript-eslint": "^8.0.0"
   },

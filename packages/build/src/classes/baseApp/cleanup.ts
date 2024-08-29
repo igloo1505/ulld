@@ -46,7 +46,7 @@ export class BuildCleanup extends ShellManager {
         }
     }
     private setBuildOutputPath(){
-        let f = new JsonFile<BuildOutputData>(path.join(import.meta.dirname, "../../run/buildDataOutput.json"))
+        let f = new JsonFile<BuildOutputData>(path.join(__dirname, "../../run/buildDataOutput.json"))
         let data = f.getJsonContent()
         data.buildOutputPath = this.paths.targetDir
         f.writeContent(data)

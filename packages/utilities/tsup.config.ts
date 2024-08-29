@@ -1,7 +1,7 @@
 import path from "path";
 import { defineConfig, Options, NormalizedOptions } from "tsup";
 import { preserveDirectivesPlugin } from "esbuild-plugin-preserve-directives";
-import { globSync } from "glob";
+import glob from "glob";
 import fs from "fs";
 // import { globSync } from "glob";
 
@@ -34,7 +34,7 @@ ${content}`,
 };
 
 const prependDirectives = async () => {
-    let files = globSync("**/*.{tsx,ts}", {
+    let files = glob.globSync("**/*.{tsx,ts}", {
         cwd: path.join(import.meta.dirname, "src"),
         nodir: true,
         absolute: true,

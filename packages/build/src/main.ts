@@ -1,7 +1,7 @@
 import { program } from "commander";
 import { log } from "console";
 import { stages } from "./stages/main.js";
-import { optionMap, stringOptionMap } from "./utils/options.js";
+import { BuildOptionsType, optionMap, stringOptionMap } from "./utils/options.js";
 
 program
     .option(optionMap.here)
@@ -22,9 +22,10 @@ const options = program.opts();
 interface AvoidConfig {
     opts?: (keyof typeof optionMap)[];
     other?: boolean[];
+    options: BuildOptionsType
 }
 
-const avoidIfInOpts = ({ opts, other }: AvoidConfig): boolean => {
+const avoidIfInOpts = ({ opts, other, options }: AvoidConfig): boolean => {
     if (other && other.length && other.some((x) => x)) {
         return false;
     }
@@ -34,36 +35,38 @@ const avoidIfInOpts = ({ opts, other }: AvoidConfig): boolean => {
     return !opts.some((x) => options[x]);
 };
 
+
 (async () => {
+    
     try {
         let build = await stages.verifyDirectory(options);
         build.applyPackageManagerOptions(options);
-        if (avoidIfInOpts({ opts: ["useLocal"] })) {
+        if (avoidIfInOpts({ opts: ["useLocal"], options })) {
             build.logDebug(`creating base project`);
             await stages.createBaseProject(build, options);
         }
-        if (avoidIfInOpts({ opts: [] })) {
+        if (avoidIfInOpts({ opts: [], options })) {
             build.logDebug(`gatherAppConfig`);
             await stages.gatherAppConfig(build, options);
         }
-        if (avoidIfInOpts({ opts: ["noInstall"] })) {
+        if (avoidIfInOpts({ opts: ["noInstall"], options })) {
             build.logDebug(`installDependencies`);
             await stages.installDependencies(build, options);
         }
-        if (avoidIfInOpts({ opts: [] })) {
+        if (avoidIfInOpts({ opts: [], options })) {
             build.logDebug(`resolveConflicts`);
             await stages.resolveConflicts(build, options);
         }
-        if (avoidIfInOpts({ opts: [] })) {
+        if (avoidIfInOpts({ opts: [], options })) {
             build.logDebug("cleanAfterConflictResolution");
             await stages.cleanAfterConflictResolution(build, options);
         }
-        if (avoidIfInOpts({ opts: [] })) {
+        if (avoidIfInOpts({ opts: [], options })) {
             build.logDebug("prepareToGenerate");
             await stages.prepareToGenerate(build, options);
         }
 
-        if (avoidIfInOpts({ opts: [] })) {
+        if (avoidIfInOpts({ opts: [], options })) {
             let baseApp = await stages.generate(build, options);
             baseApp.cleanUp();
         }
@@ -73,4 +76,5 @@ const avoidIfInOpts = ({ opts, other }: AvoidConfig): boolean => {
             log(`No worries. We can handle this later.`);
         }
     }
+
 })();
