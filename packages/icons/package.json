@@ -1,75 +1,75 @@
 {
-  "name": "@ulld/icons",
-  "version": "0.0.99",
-  "dependencies": {
-    "@tabler/icons-react": "3.5.0",
-    "clsx": "^2.1.0",
-    "framer-motion": "^11.1.7",
-    "lucide-react": "*",
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-icons": "5.0.1"
-  },
-  "devDependencies": {
-    "@tabler/icons-react": "3.5.0",
-    "clsx": "^2.1.0",
-    "framer-motion": "^11.1.7",
-    "lucide-react": "^0.344.0",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "5.0.1"
-  },
-  "exports": {
-    ".": "./src/DynamicIcon.tsx",
-    "./dynamic": "./src/DynamicIcon.tsx",
-    "./css": "./src/logoIcons/css.tsx",
-    "./github": "./src/logoIcons/github.tsx",
-    "./jupyter": "./src/logoIcons/jupyter.tsx",
-    "./kotlin": "./src/logoIcons/kotlin.tsx",
-    "./markdown": "./src/logoIcons/markdown.tsx",
-    "./node": "./src/logoIcons/node.tsx",
-    "./npm": "./src/logoIcons/npm.tsx",
-    "./python": "./src/logoIcons/python.tsx",
-    "./react": "./src/logoIcons/react.tsx",
-    "./swift": "./src/logoIcons/swift.tsx",
-    "./vercel": "./src/logoIcons/vercel.tsx",
-    "./youtube": "./src/logoIcons/youtube.tsx",
-    "./paypal": "./src/logoIcons/paypal.tsx",
-    "./patreon": "./src/logoIcons/patreon.tsx",
-    "./ulld": "./src/logo/ulldLogo.tsx",
-    "./ulld-animated": "./src/logo/animatedLogo.tsx",
-    "./clientX": "./src/clientSideUtilityComponents/xIcon.tsx",
-    "./names": "./src/allIconNames.ts"
-  },
-  "files": [
-    "src"
-  ],
-  "main": "./src/DynamicIcon.tsx",
-  "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {
-    "@ulld/hooks": "workspace:*",
-    "@ulld/tailwind": "workspace:*",
-    "@ulld/types": "workspace:*",
-    "@ulld/typescript-config": "workspace:*",
-    "@ulld/utilities": "workspace:*",
-    "framer-motion": "^11.1.7",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "echo 'Add build script here'",
-    "buildLocal": "tsx ./src/scripts/gatherNames.ts",
-    "dev": "echo 'Add dev script here'",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'Add test script here'"
-  },
-  "type": "module",
-  "types": "./src/types.ts"
+    "name": "@ulld/icons",
+    "version": "0.0.99",
+    "dependencies": {
+        "@tabler/icons-react": "3.5.0",
+        "clsx": "^2.1.0",
+        "framer-motion": "^11.1.7",
+        "lucide-react": "*",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-icons": "5.0.1"
+    },
+    "devDependencies": {
+        "@tabler/icons-react": "3.5.0",
+        "clsx": "^2.1.0",
+        "framer-motion": "^11.1.7",
+        "lucide-react": "^0.344.0",
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-icons": "5.0.1"
+    },
+    "exports": {
+        ".": "./src/DynamicIcon.tsx",
+        "./dynamic": "./src/DynamicIcon.tsx",
+        "./css": "./src/logoIcons/css.tsx",
+        "./github": "./src/logoIcons/github.tsx",
+        "./jupyter": "./src/logoIcons/jupyter.tsx",
+        "./kotlin": "./src/logoIcons/kotlin.tsx",
+        "./markdown": "./src/logoIcons/markdown.tsx",
+        "./node": "./src/logoIcons/node.tsx",
+        "./npm": "./src/logoIcons/npm.tsx",
+        "./python": "./src/logoIcons/python.tsx",
+        "./react": "./src/logoIcons/react.tsx",
+        "./swift": "./src/logoIcons/swift.tsx",
+        "./vercel": "./src/logoIcons/vercel.tsx",
+        "./youtube": "./src/logoIcons/youtube.tsx",
+        "./paypal": "./src/logoIcons/paypal.tsx",
+        "./patreon": "./src/logoIcons/patreon.tsx",
+        "./ulld": "./src/logo/ulldLogo.tsx",
+        "./ulld-animated": "./src/logo/animatedLogo.tsx",
+        "./clientX": "./src/clientSideUtilityComponents/xIcon.tsx",
+        "./names": "./src/allIconNames.ts"
+    },
+    "files": [
+        "src"
+    ],
+    "main": "./src/DynamicIcon.tsx",
+    "packageManager": "pnpm@9.0.4",
+    "peerDependencies": {
+        "@ulld/hooks": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/utilities": "workspace:*",
+        "framer-motion": "^11.1.7",
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "echo 'Add build script here'",
+        "buildLocal": "tsx ./src/scripts/gatherNames.ts",
+        "dev": "echo 'Add dev script here'",
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+        "test": "echo 'Add test script here'"
+    },
+    "type": "module",
+    "types": "./src/types.ts"
 }
