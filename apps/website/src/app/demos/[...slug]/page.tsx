@@ -24,17 +24,7 @@ interface DocOutput {
     };
 }
 
-const redirectMap: Record<string, string> = {
-};
 
-/* const getPageInternal = ({ */
-/*     params, */
-/*     searchParams, */
-/* }: PageProps): PageType | undefined => { */
-/*     return searchParams && searchParams.id */
-/*         ? getPageById(getPages() as PageType[], searchParams.id) */
-/*         : (getPage(params.slug) as PageType | undefined); */
-/* }; */
 
 export default function Page({ params, searchParams }: PageProps) {
     const page: PageType | undefined = getPage(params.slug) as
@@ -42,11 +32,7 @@ export default function Page({ params, searchParams }: PageProps) {
         | undefined;
 
     if (!page) {
-        let _slugPath = params.slug?.join("/");
-        if (_slugPath && _slugPath in redirectMap) {
-            return redirect(redirectMap[_slugPath]);
-        }
-        notFound();
+        return notFound();
     }
 
     return (
@@ -62,15 +48,13 @@ export function generateStaticParams() {
 
 
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
+
     const page: DocOutput = getPage(params.slug) as unknown as DocOutput;
 
     if (!page) {
-        let _slugPath = params.slug?.join("/");
-        if (_slugPath && _slugPath in redirectMap) {
-            return redirect(redirectMap[_slugPath]);
-        }
-        notFound();
+        return notFound();
     }
+
     let x: Metadata = {}
 
     if(page?.data?.title){
@@ -79,5 +63,6 @@ export function generateMetadata({ params }: { params: { slug?: string[] } }) {
     if(page.data?.description){
         x.description = page.data.description
     }
+
     return x
 }

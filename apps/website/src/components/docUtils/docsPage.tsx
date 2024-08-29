@@ -23,6 +23,7 @@ import { NoteStateObserver } from "@ulld/state/observers/noteState";
 import { getLatexTocEntries } from "#/fumaDocs/utils/getLatexTocEntries";
 import Link from "next/link";
 import { buttonVariants } from "@ulld/tailwind/button";
+import Citations from "#/components/academic/citations"
 
 interface DocsPageComponentProps {
   page: PageType;
@@ -100,6 +101,7 @@ const DocsPageInternal = ({
         </h1>
       )}
       <MDXContent code={page.data.body} components={components as any} />
+      {page.data.id && <Citations noteId={page.data.id} />}
       <ApplyMathjaxBandaid container={id} />
     </>
   );

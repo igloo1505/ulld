@@ -43,6 +43,11 @@
         "htmlCitation": "<div class=\"csl-bib-body\">\n  <div data-csl-entry-id=\"IvesStillwell\" class=\"csl-entry\">Ives, H. E., &#38; Stilwell, G. R. (1938). An Experimental Study of the Rate of a Moving Atomic Clock. <i>J. Opt. Soc. Am.</i>, <i>28</i>(7), 215–226. https://doi.org/10.1364/JOSA.28.000215</div>\n</div>",
         "id": "ivesstillwell",
         "pageIndex": 3
+      },
+      {
+        "htmlCitation": "<div class=\"csl-bib-body\">\n  <div data-csl-entry-id=\"IvesStillwell\" class=\"csl-entry\">Born, Max (1909). Die Theorie des starren Elektrons in der Kinematic des Relativitatsprinzips. <i>Annalen der Physik</i>, <i>335</i>(11), 1-56. https://zenodo.org/record/1424151</div>\n</div>",
+        "id": "bornGravityChargedParticleParadox",
+        "pageIndex": 3
       }
     ]
   }

@@ -56,7 +56,7 @@ export function generateMetadata({ params }: { params: { slug?: string[] } }) {
         if(_slugPath && _slugPath in redirectMap){
             return redirect(redirectMap[_slugPath])
         }
-        notFound();
+        return notFound();
     }
 
     return {
