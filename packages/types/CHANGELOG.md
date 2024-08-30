@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.95
+
+### Patch Changes
+
+- Move cli to oclif.
+
 ## 0.0.94
 
 ### Patch Changes

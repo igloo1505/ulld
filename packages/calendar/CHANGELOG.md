@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.101
+
+### Patch Changes
+
+- Move cli to oclif.
+- Updated dependencies
+  - @ulld/developer@0.0.101
+  - @ulld/types@0.0.95
+
 ## 0.0.100
 
 ### Patch Changes

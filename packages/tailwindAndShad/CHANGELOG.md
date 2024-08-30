@@ -1,5 +1,14 @@
 # @ulld/tailwind
 
+## 0.0.95
+
+### Patch Changes
+
+- Move cli to oclif.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.95
+  - @ulld/types@0.0.95
+
 ## 0.0.94
 
 ### Patch Changes

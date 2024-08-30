@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.101
+
+### Patch Changes
+
+- Move cli to oclif.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.97
+  - @ulld/typescript-config@0.0.95
+  - @ulld/configschema@0.0.101
+  - @ulld/logger@0.0.95
+  - @ulld/tailwind@0.0.95
+  - @ulld/types@0.0.95
+  - @ulld/utilities@0.0.101
+
 ## 0.0.100
 
 ### Patch Changes

@@ -1,5 +1,27 @@
 # @ulld/navigation
 
+## 0.0.101
+
+### Patch Changes
+
+- Move cli to oclif.
+- Updated dependencies
+  - @ulld/api@0.0.101
+  - @ulld/eslint-config@0.0.97
+  - @ulld/typescript-config@0.0.95
+  - @ulld/configschema@0.0.101
+  - @ulld/developer@0.0.101
+  - @ulld/developer-schemas@0.0.95
+  - @ulld/full-form@0.0.101
+  - @ulld/hooks@0.0.101
+  - @ulld/icons@0.0.101
+  - @ulld/jest-presets@0.0.95
+  - @ulld/render@0.0.101
+  - @ulld/state@0.0.101
+  - @ulld/tailwind@0.0.95
+  - @ulld/types@0.0.95
+  - @ulld/utilities@0.0.101
+
 ## 0.0.100
 
 ### Patch Changes

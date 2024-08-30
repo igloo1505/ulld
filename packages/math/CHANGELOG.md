@@ -1,5 +1,20 @@
 # @ulld/math
 
+## 0.0.101
+
+### Patch Changes
+
+- Move cli to oclif.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.95
+  - @ulld/configschema@0.0.101
+  - @ulld/hooks@0.0.101
+  - @ulld/icons@0.0.101
+  - @ulld/jest-presets@0.0.95
+  - @ulld/state@0.0.101
+  - @ulld/types@0.0.95
+  - @ulld/utilities@0.0.101
+
 ## 0.0.100
 
 ### Patch Changes

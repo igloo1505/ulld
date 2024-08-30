@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.98
+
+### Patch Changes
+
+- Move cli to oclif.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.95
+  - @ulld/types@0.0.95
+
 ## 0.0.97
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @ulld/diagram
 
+## 0.0.101
+
+### Patch Changes
+
+- Move cli to oclif.
+- Updated dependencies
+  - @ulld/api@0.0.101
+  - @ulld/typescript-config@0.0.95
+  - @ulld/developer@0.0.101
+  - @ulld/state@0.0.101
+  - @ulld/tailwind@0.0.95
+  - @ulld/types@0.0.95
+
 ## 0.0.100
 
 ### Patch Changes

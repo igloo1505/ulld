@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.101
+
+### Patch Changes
+
+- Move cli to oclif.
+- Updated dependencies
+  - @ulld/configschema@0.0.101
+  - @ulld/developer-schemas@0.0.95
+  - @ulld/types@0.0.95
+  - @ulld/utilities@0.0.101
+
 ## 0.0.100
 
 ### Patch Changes

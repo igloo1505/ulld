@@ -1,5 +1,19 @@
 # @ulld/parsers
 
+## 0.0.101
+
+### Patch Changes
+
+- Move cli to oclif.
+- Updated dependencies
+  - @ulld/component-map@0.0.101
+  - @ulld/typescript-config@0.0.95
+  - @ulld/configschema@0.0.101
+  - @ulld/database@0.0.98
+  - @ulld/developer@0.0.101
+  - @ulld/types@0.0.95
+  - @ulld/utilities@0.0.101
+
 ## 0.0.100
 
 ### Patch Changes

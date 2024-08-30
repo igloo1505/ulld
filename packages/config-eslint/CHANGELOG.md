@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.97
+
+### Patch Changes
+
+- Move cli to oclif.
+
 ## 0.0.96
 
 ### Patch Changes
