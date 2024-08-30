@@ -88,7 +88,8 @@
     "three": "^0.163.0",
     "three-noise": "^1.1.2",
     "tsx": "^4.10.4",
-    "twoslash": "^0.2.6"
+    "twoslash": "^0.2.6",
+    "unicode-emoji-json": "^0.6.0"
   },
   "devDependencies": {
     "@content-collections/core": "^0.6.0",
