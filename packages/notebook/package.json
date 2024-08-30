@@ -1,51 +1,51 @@
 {
-  "name": "@ulld/notebook",
-  "version": "0.0.100",
-  "dependencies": {
-    "@jupyterlab/services": "^7.2.4",
-    "monaco-editor": "0.49.0",
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "@jupyterlab/services": "^7.2.4",
-    "monaco-editor": "0.49.0",
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "exports": {
-    "./types": "./src/types.ts",
-    "./notebook": "./src/components/notebook/main.tsx"
-  },
-  "files": [
-    "src"
-  ],
-  "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {
-    "@ulld/api": "workspace:*",
-    "@ulld/configschema": "workspace:*",
-    "@ulld/developer": "workspace:*",
-    "@ulld/editor": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
-    "@ulld/hooks": "workspace:*",
-    "@ulld/jest-presets": "workspace:*",
-    "@ulld/state": "workspace:*",
-    "@ulld/tailwind": "workspace:*",
-    "@ulld/types": "workspace:*",
-    "@ulld/typescript-config": "workspace:*",
-    "@ulld/ui": "workspace:*",
-    "@ulld/utilities": "workspace:*"
-  },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "echo 'Add build script here'",
-    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'Add test script here'"
-  }
+    "name": "@ulld/notebook",
+    "version": "0.0.100",
+    "dependencies": {
+        "@jupyterlab/services": "^7.2.4",
+        "monaco-editor": "0.49.0",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "devDependencies": {
+        "@jupyterlab/services": "^7.2.4",
+        "monaco-editor": "0.49.0",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "exports": {
+        "./types": "./src/types.ts",
+        "./notebook": "./src/components/notebook/main.tsx"
+    },
+    "files": [
+        "src"
+    ],
+    "packageManager": "pnpm@9.0.4",
+    "peerDependencies": {
+        "@ulld/api": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/developer": "workspace:*",
+        "@ulld/editor": "workspace:*",
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/hooks": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/state": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/ui": "workspace:*",
+        "@ulld/utilities": "workspace:*"
+    },
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "echo 'Add build script here'",
+        "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+        "test": "echo 'Add test script here'"
+    }
 }

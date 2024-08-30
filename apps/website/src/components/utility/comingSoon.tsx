@@ -26,7 +26,7 @@ const ComingSoon = (props: ComingSoonProps) => {
                 You can contribute to this process by helping the developer of{" "}
                 <LogoAsText /> afford a place to live so he can wrap this project up by
                 clicking{" "}
-                <a className={"text-link"} href={staticContent.links.fund.paypalDonate}>
+                <a className={"!text-link"} href={staticContent.links.fund.paypalDonate}>
                     here
                 </a> or scanning the QR code below.
             </Paragraph>

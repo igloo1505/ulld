@@ -916,12 +916,18 @@ importers:
       dum:
         specifier: ^1.0.0
         version: 1.0.0
+      edit-string:
+        specifier: ^1.1.6
+        version: 1.1.6
       enquirer:
         specifier: 2.4.1
         version: 2.4.1
       fs-extra:
         specifier: ^11.2.0
         version: 11.2.0
+      github-url-to-object:
+        specifier: ^4.0.6
+        version: 4.0.6
       inquirer:
         specifier: 9.2.23
         version: 9.2.23
@@ -965,6 +971,9 @@ importers:
         specifier: ^8.3.0
         version: 8.3.0
     devDependencies:
+      '@types/node-notifier':
+        specifier: ^8.0.5
+        version: 8.0.5
       '@types/shelljs':
         specifier: ^0.8.15
         version: 0.8.15
@@ -10462,6 +10471,9 @@ packages:
   '@types/node-forge@1.3.11':
     resolution: {integrity: sha512-FQx220y22OKNTqaByeBGqHWYz4cl94tpcxeFdvBo3wjG6XPBuZ0BNgNZRV5J5TFmmcsJ4IzsLkmGRiQbnYsBEQ==}
 
+  '@types/node-notifier@8.0.5':
+    resolution: {integrity: sha512-LX7+8MtTsv6szumAp6WOy87nqMEdGhhry/Qfprjm1Ma6REjVzeF7SCyvPtp5RaF6IkXCS9V4ra8g5fwvf2ZAYg==}
+
   '@types/node@11.15.54':
     resolution: {integrity: sha512-1RWYiq+5UfozGsU6MwJyFX6BtktcT10XRjvcAQmskCtMcW3tPske88lM/nHv7BQG1w9KBXI1zPGuu5PnNCX14g==}
 
@@ -13107,6 +13119,9 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
+  edit-string@1.1.6:
+    resolution: {integrity: sha512-5exs8DjgXtq4uQdyB9HmMoln64Kuy4Ilx0AJIDgmX65AjL2KnKkhn6ZlzSY7AJTXWGAvFT3Yu0kQRz6D8b3ObQ==}
+
   editorconfig@1.0.4:
     resolution: {integrity: sha512-L9Qe08KWTlqYMVvMcTIvMAdl1cDUubzRNYL+WfA4bLDMHe4nemKkpmYzkznE1FwLKu0EEmy6obgQKzMJrg4x9Q==}
     engines: {node: '>=14'}
@@ -13836,6 +13851,10 @@ packages:
   exec-sh@0.3.6:
     resolution: {integrity: sha512-nQn+hI3yp+oD0huYhKwvYI32+JFeq+XkNcD1GAo3Y/MjxsfVGmrrzrnzjWiNY6f+pUCP440fThsFh5gZrRAU/w==}
 
+  execa@0.10.0:
+    resolution: {integrity: sha512-7XOMnz8Ynx1gGo/3hyV9loYNPWM94jG3+3T3Y8tsfSstFmETmENCMU/A/zj8Lyaj1lkgEepKepvd6240tBRvlw==}
+    engines: {node: '>=4'}
+
   execa@1.0.0:
     resolution: {integrity: sha512-adbxcyWV46qiHyvSp50TKt05tB4tK3HcmF7/nxfAdhnox83seTDbwnaqKO4sXRy7roHAIFqJP/Rw/AuEbX61LA==}
     engines: {node: '>=6'}
@@ -14377,6 +14396,10 @@ packages:
     resolution: {integrity: sha512-dVKBjfWisLAicarI2Sf+JuBE/DghV4UzNAVe9yhEJuzeREd3JhOTE9cUaJTeSa77fsbQUK3pcOpJfM59+VKZaA==}
     engines: {node: '>=12'}
 
+  get-stream@3.0.0:
+    resolution: {integrity: sha512-GlhdIUuVakc8SJ6kK0zAFbiGzRFzNnY4jUuEbV9UROo4Y+0Ny4fjvcZFVTeDA4odpFyOQzaw6hXukJSq/f28sQ==}
+    engines: {node: '>=4'}
+
   get-stream@4.1.0:
     resolution: {integrity: sha512-GMat4EJ5161kIy2HevLlr4luNjBgvmj413KaQA7jt4V8B4RDsfpHk7WQ9GVqfYyyx8OS/L66Kox+rJRNklLK7w==}
     engines: {node: '>=6'}
@@ -14422,6 +14445,9 @@ packages:
 
   github-slugger@2.0.0:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
+
+  github-url-to-object@4.0.6:
+    resolution: {integrity: sha512-NaqbYHMUAlPcmWFdrAB7bcxrNIiiJWJe8s/2+iOc9vlcHlwHqSGrPk+Yi3nu6ebTwgsZEa7igz+NH2vEq3gYwQ==}
 
   gl-mat4@1.2.0:
     resolution: {integrity: sha512-sT5C0pwB1/e9G9AvAoLsoaJtbMGjfd/jfxo8jMCKqYYEnjZuFvqV5rehqar0538EmssjdDeiEWnKyBSTw7quoA==}
@@ -28874,6 +28900,10 @@ snapshots:
     dependencies:
       '@types/node': 20.14.13
 
+  '@types/node-notifier@8.0.5':
+    dependencies:
+      '@types/node': 20.14.13
+
   '@types/node@11.15.54': {}
 
   '@types/node@12.20.55': {}
@@ -31862,6 +31892,16 @@ snapshots:
       signal-exit: 4.0.2
       time-span: 4.0.0
 
+  edit-string@1.1.6:
+    dependencies:
+      debug: 3.2.7(supports-color@8.1.1)
+      execa: 0.10.0
+      lodash: 4.17.21
+      tmp: 0.0.33
+      tslib: 1.14.1
+    transitivePeerDependencies:
+      - supports-color
+
   editorconfig@1.0.4:
     dependencies:
       '@one-ini/wasm': 0.1.1
@@ -32902,6 +32942,16 @@ snapshots:
 
   exec-sh@0.3.6: {}
 
+  execa@0.10.0:
+    dependencies:
+      cross-spawn: 6.0.5
+      get-stream: 3.0.0
+      is-stream: 1.1.0
+      npm-run-path: 2.0.2
+      p-finally: 1.0.0
+      signal-exit: 3.0.7
+      strip-eof: 1.0.0
+
   execa@1.0.0:
     dependencies:
       cross-spawn: 6.0.5
@@ -33750,6 +33800,8 @@ snapshots:
 
   get-stdin@9.0.0: {}
 
+  get-stream@3.0.0: {}
+
   get-stream@4.1.0:
     dependencies:
       pump: 3.0.0
@@ -33798,6 +33850,10 @@ snapshots:
   git-hooks-list@3.1.0: {}
 
   github-slugger@2.0.0: {}
+
+  github-url-to-object@4.0.6:
+    dependencies:
+      is-url: 1.2.4
 
   gl-mat4@1.2.0: {}
 

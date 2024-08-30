@@ -2,8 +2,8 @@ import fs from "fs";
 import path from "path";
 
 const pathsToPrepend = [
-    "dist/main.js",
-    "dist/run/main.js"
+    // "dist/main.js",
+    // "dist/run/main.js"
 ];
 
 const prependShebang = (_p: string) => {
