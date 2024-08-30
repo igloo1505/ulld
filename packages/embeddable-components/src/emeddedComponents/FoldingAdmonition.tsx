@@ -5,6 +5,7 @@ import { AdmonitionProps } from "@ulld/utilities/admonition/types";
 import { AdmonitionTitle } from "./CLIENT_COMPONENTS/admonition/admonitionTitle";
 import AdmonitionTitleNode from "./CLIENT_COMPONENTS/admonition/admonitionTitleNode";
 import { motion } from "framer-motion";
+import { MdxContentCLIENT } from "@ulld/render/mdx";
 
 interface FoldingAdmonitionProps extends AdmonitionProps {
     open?: boolean;
@@ -85,7 +86,7 @@ const FoldingAdmonition = ({
                         "w-full py-3 px-3 text-sm text-muted-foreground bg-muted",
                     )}
                 >
-                    {footer}
+                    {typeof footer === "string" ? <MdxContentCLIENT content={footer} /> : footer}
                 </div>
             )}
         </div>

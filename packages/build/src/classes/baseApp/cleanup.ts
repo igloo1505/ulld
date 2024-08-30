@@ -4,7 +4,6 @@ import path from "path";
 import { BuildOutputData, PackageManagers } from "../../types.js";
 import { ShellManager } from "../baseClasses/shell.js";
 import { TargetPaths } from "../paths.js";
-import { FileData } from "@ulld/utilities/fileClass";
 import { JsonFile } from "@ulld/utilities/jsonFileClass";
 
 export class BuildCleanup extends ShellManager {
@@ -45,10 +44,16 @@ export class BuildCleanup extends ShellManager {
             }
         }
     }
+    getBuildOutputConfig(): BuildOutputData {
+        return {
+            buildOutputPath: this.paths.projectRoot
+        }
+    }
+
     private setBuildOutputPath(){
-        let f = new JsonFile<BuildOutputData>(path.join(__dirname, "../../run/buildDataOutput.json"))
-        let data = f.getJsonContent()
-        data.buildOutputPath = this.paths.targetDir
+        let configPath = this.paths.xdgPaths.config()
+        let f = new JsonFile(path.join(configPath, "buildData.json"))
+        let data = this.getBuildOutputConfig()
         f.writeContent(data)
         this.log("Set output path successfully. You can now run Ulld from anywhere using the ulldRun command.")
     }

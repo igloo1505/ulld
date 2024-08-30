@@ -1,4 +1,4 @@
-import { AppConfigSchemaOutput } from "@ulld/configschema/types";
+import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 import { ShellManager } from "./baseClasses/shell.js";
 import { EnvManager } from "./envManager.js";
 import { TargetPaths } from "./paths.js";

@@ -4,11 +4,12 @@ import type {
     SimpleGit,
     SimpleGitProgressEvent,
 } from "simple-git";
-import * as simpleGit from "simple-git"
+import simpleGit from "simple-git"
 import { MultiBar, SingleBar } from "cli-progress";
 import path from "path";
 import { BranchValue } from "../../utils/options.js";
 import { ShellManager } from "./shell.js";
+
 
 export class GitManager extends ShellManager {
     status: "notSent" | "pending" | "success" | "fail" = "notSent";

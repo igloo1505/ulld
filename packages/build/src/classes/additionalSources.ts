@@ -1,6 +1,6 @@
 import { TargetPaths } from "./paths.js";
 import {
-  FileItemWithRootGlob,
+  type FileItemWithRootGlob,
   getFlattenedFileItems,
 } from "@ulld/utilities/additionalSources";
 import { globSync } from "glob";
@@ -23,6 +23,7 @@ interface FoundDirContent extends FileItemWithRootGlob {
 }
 
 type FoundVal = FoundItem | FoundDirContent;
+
 type ItemData = {
   /** Absolute path */
   input: string;
@@ -132,7 +133,7 @@ export class AdditionalSources {
     for (const d of items) {
       itemData.push({
         input: path.join(this.sourcesDir!, d),
-        output: path.join(this.paths.projectRoot, item.getOutputPath(d)),
+        output: path.join(this.paths.projectRoot, (item as any).getOutputPath(d)),
       });
     }
     return itemData;

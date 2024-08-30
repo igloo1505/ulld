@@ -3,6 +3,7 @@ import { SupportedFileType } from "@ulld/types/enums";
 import { FileData } from "../file/main.js";
 import path from "path";
 
+
 export class UlldGlob {
     constructor(public fsRoot: string) { }
     /** Returns paths as absolute paths */

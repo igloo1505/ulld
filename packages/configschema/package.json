@@ -106,11 +106,18 @@
     "./defaultColorMap": "./dist/zod/ui/defaultColorMap.js",
     "./slotsSchema": "./dist/developer/slotsSchema.js",
     "./slotMapRootType": "./dist/developer/slotMapRootType.js",
+    "./slotMapType": "./dist/developer/slotMapType.js",
+    "./slotMapInternalType": "./dist/developer/slotMapInternalType.js",
     "./developerComponentSchema": "./dist/developer/componentSchema.js",
-    "./developer": "./dist/developer/main.js",
-    "./developerTypes": "./dist/developer/types/main.js",
+    "./developer": {
+      "import": "./dist/developer/main.js",
+      "require": "./dist/developer/main.js",
+      "types": "./dist/developer/types/main.d.ts"
+    },
+    "./developerTypes": "./dist/developer/types/main.d.ts",
     "./buildTypes": "./dist/buildStaticData/types.js",
-    "./baseAppSlot": "./dist/baseApp/slot.js"
+    "./baseAppSlot": "./dist/baseApp/slot.js",
+    "./pluginEventsConfig": "./dist/developer/types/pluginEventsConfig.js"
   },
   "files": [
     "src",
@@ -142,5 +149,5 @@
     "updateJsonSchemas": "tsx src/__scripts__/updateJsonSchema.ts"
   },
   "type": "module",
-  "types": "./dist/types.d.ts"
+  "types": "dist"
 }

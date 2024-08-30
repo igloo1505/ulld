@@ -12,6 +12,7 @@ index: true
 </Admonition>
 
 ### About the installation
+
 The installation process described here only needs to be undertaken once. Once your app is built, future builds can be configured from this initial build using the existing configuration file. You do not need to reinstall everything from scratch or run the build script every time your notes change. Once your application is compiled, simply creating new files of the file types that are supported by <LogoAsText /> inside of the directory you've added to your <LogoAsText /> configuration file will update your notes automatically, and clicking a single **sync** button available from anywhere within your app will update your database to include your new notes in seconds.
 
 My own workflow related to <LogoAsText /> went like this:
@@ -47,6 +48,22 @@ If you are unfamiliar with **JSX** syntax, review the [Intro to jsx](/docs/user/
 
     Configure your application using either the configuration form [here](/configure), or by writing your own [`appConfig.ulld.json`](#write-own-config)
 
+<Admonition title="Important" type="warn" dropdown open footer={
+`There are some useful cli commands that can help with this process documented [here](/docs/user/cli).`
+}>
+The online configuration form will handle all of the core options of your `appConfig.ulld.json` file, but it does not cover everything. There are many more options that can be set for a more refined application using the types exported from the `@ulld/configschema` package, but there is one value that you <Hl yellow>absolutely must</Hl> set on your own: `fsRoot`.
+
+The `fsRoot` field is a single field of type `string` at the base of your `appConfig.ulld.json` file that points to a directory anywhere on your computer that houses all of your notes. This must be set before the build takes place to properly gather information about your file system. This directory is really the only directory you'll have to interact with once your app is compiled until you choose to update or rebuild your application. All of your mdx, notebook, bib and other content files should go in this directory.
+
+The `appConfig.ulld.json` file also accepts `bibPath` and `cslPath` fields, which can be used to point to a `.bib` and `.csl` file with a path that is ***relative*** to the `fsRoot` path. The `bibPath` field defaults to `/citations.bib` and the `cslPath` field is optional. 
+
+If you have a `citations.bib` file inside of the directory pointed to by your `ULLD_ADDITIONAL_SOURCES` variable, a file and path will be automatically generated for you.
+
+There is a repository of every csl format you could ever want available <StaticLink link="links.docs.external.cslRepo">here</StaticLink>. Any of those files be placed in the root of your `ULLD_ADDITIONAL_SOURCES` directory with any file name, as long as it ends with a `.csl` extension. If that file is present, you can ignore this field as a path and file will be automatically generated for you.
+
+
+</Admonition>
+
     </Step>
 
     <Step>
@@ -56,7 +73,7 @@ If you are unfamiliar with **JSX** syntax, review the [Intro to jsx](/docs/user/
 If you do not have **Node.js** installed, install the specific _stable_ build for your operating system by clicking [here](https://nodejs.org)[^1] <LogoAsText /> works as an entire full-stack application, all on your own computer. This means that a locally running server is required, and for that, <LogoAsText /> uses **Node.js**. Because of the safety limitations within browsers and their intentional lack of access to the file system, any application of this type would not be able to function without a locally running server.
 
 ##### Package Managers
-<Small muted noMargin>Use pnpm for now.</Small>
+<Small muted noMargin><span className="font-bold text-primary">TLDR:</span> Use pnpm for now.</Small>
 
 Package managers are pieces of software that make it much easier to install, locate and update packages for a given environment. For Node, there are three popular package managers.
 
@@ -76,14 +93,14 @@ You will now have access to the `pnpm` command directly, which the <LogoAsText /
 
 ### Tell <LogoAsText fontSize={18} /> where to find the configuration file.
 
-This can be done in 1 of 2 ways, but please, use the first method unless you have good reason to use the second.
+This can be done in 1 of 2 ways, but please make things easy on yourself and use the first method unless you have good reason to use the second.
 
-First, you can create a directory anywhere on your computer that follows the file structure described [here](/docs/user/extendingTheBuild), and point to that directory with an env variable `ULLD_ADDITIONAL_RESOURCES`. 
+First, you can create a directory anywhere on your computer that follows the file structure described [here](/docs/user/extendingTheBuild), and point to that directory with an env variable `ULLD_ADDITIONAL_SOURCES`. 
 
 On a mac, that would look like this:
 
 ```zsh title="~/.zshrc"
-export ULLD_ADDITIONAL_RESOURCES="/path/to/my/directory"
+export ULLD_ADDITIONAL_SOURCES="/path/to/my/directory"
 ```
 
 And on windows, you'll have to follow the docs [here](https://learn.microsoft.com/en-us/powershell/scripting/learn/shell/creating-profiles?view=powershell-7.4). This approach will allow the core app files to exist separately from the compiled app, ensuring that they remain available during rebuilds and updates.
@@ -104,7 +121,7 @@ After installing postgres, you'll need to create a database specifically for <Lo
 
 You will need to provide <LogoAsText /> with two environment variables used to provide a connection url for your database, `ULLD_POSTGRES_URL` and `ULLD_POSTGRES_URL_NON_POOLING`. While they both are required, when using a local postgres instance these will most likely have the same value. 
 
-Unlike the `ULLD_ADDITIONAL_RESOURCES` environment variable, these variables will most likely be specific to your application. To create env variables that are applied specifically to your generated application, you can create a file called `.env` (notice the leading period) in the root of the directory pointed to by your `ULLD_ADDITIONAL_RESOURCES` variable.
+Unlike the `ULLD_ADDITIONAL_SOURCES` environment variable, these variables will most likely be specific to your application. To create env variables that are applied specifically to your generated application, you can create a file called `.env` (notice the leading period) in the root of the directory pointed to by your `ULLD_ADDITIONAL_SOURCES` variable.
 
 If you use the **pgAdmin** tool, you'll be able to find the connection url directly through their interface. If you create your database through the cli however, you'll need to format your own connection url using the format documented [here](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING). 
 
@@ -112,7 +129,7 @@ When this is all put together, you'll have something like this:
 
 
 ```zsh title="~/.zshrc"
-export ULLD_ADDITIONAL_RESOURCES="/path/to/my/directory"
+export ULLD_ADDITIONAL_SOURCES="/path/to/my/directory"
 ```
 
 ```json title="/path/to/my/directory/appConfig.ulld.json"
@@ -147,7 +164,9 @@ The last step of this process will be handled almost entirely by the <LogoAsText
     </Tab>
 </TabGroup>
 
-Once you've installed the build cli using the command above, you can execute the build using the `ulldBuild` command.
+Once you've installed the build cli using the command above you'll have access to the `ulld` command. For right now the `@ulld/build` package exposes only two commands, `build` and `run`, which can be executed as `ulld build` and `ulld run`.
+
+For more information and to see the available options, use the `ulld` command without any other arguments. You can also see more detailed help for any command with the `ulld help <cmd>`, or in practice, `ulld help build` or `ulld help run`.
 
 **Note:** If you are executing this command against a new database, you'll want to include the `ulldBuild --genDatabase` flag. This will format your database to match the <LogoAsText /> data structure. Be careful however to not include this flag against future builds using the same database, as it may modify the database in a manner that is not recoverable.
 
@@ -161,25 +180,12 @@ If you are unsure of how to find the folder you would like to place the project 
 
 ## That's It!
 
-I know that's a lot more complicated than installing a regular application, but building the app in this format will allow it to grow endlessly, as the learning curve for developers to contribute to <LogoAsText /> is near zero.
+I know that's a lot more complicated than installing a regular application, but building the app in this format will allow <LogoAsText /> to grow endlessly, as the learning curve for developers to contribute is near zero.
 
-You can now run your project with:
-
-<TabGroup labels={["npm", "pnpm", "alias"]}>
-    <Tab label="npm">
-        `npm run start --prefix ./ulldApp`
-    </Tab>
-    <Tab label="pnpm">
-        `pnpm start --dir ./ulldApp`
-    </Tab>
-    <Tab label="yarn">
-        `yarn --cwd ./ulldApp/ start`
-    </Tab>
-</TabGroup>
+You can now run your project with `ulld run`. 
 
 <Hint note>
-        The start commands above require that you be in the same directory as your compiled application. To make this more convenient, you can create an alias in the same file that you created your `ULLD_ADDITIONAL_RESOURCES` variable, if you decided to use that approach. On a mac, that would look like this:  
-
+    For those with development experience, note that the `ulld run` command is just a utility to execute the `start` script in the compiled app's `package.json` file from any directory.
 </Hint>
 
 ```zsh
@@ -202,7 +208,7 @@ import path from 'path'
 import {appConfigSchema, AppConfigSchemaInput} from "@ulld/configschema/zod/main"
 
 // TODO: Change this to wherever you are storing the application or to 
-// where your ULLD_ADDITIONAL_RESOURCES variable points to.
+// where your ULLD_ADDITIONAL_SOURCES variable points to.
 const target = "/Users/bigsexy/ulld/appConfig.schema.json" 
 
 const myConfig: AppConfigSchemaInput = {

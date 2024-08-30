@@ -1,7 +1,7 @@
 import path from "path";
 import { defineConfig, Options, NormalizedOptions } from "tsup";
 import { preserveDirectivesPlugin } from "esbuild-plugin-preserve-directives";
-import glob from "glob";
+import { globSync } from "glob";
 import fs from "fs";
 // import { globSync } from "glob";
 
@@ -34,15 +34,15 @@ ${content}`,
 };
 
 const prependDirectives = async () => {
-    let files = glob.globSync("**/*.{tsx,ts}", {
+    let files = globSync("**/*.{tsx,ts}", {
         cwd: path.join(import.meta.dirname, "src"),
         nodir: true,
         absolute: true,
     });
     files.forEach((f) => {
         let distPaths = {
-            cjs: f.replace("/src/", "/dist/").replace(/\.tsx?/, ".cjs.js"),
-            esm: f.replace("/src/", "/dist/").replace(/\.tsx?/, ".esm.js"),
+            cjs: f.replace("/src/", "/dist/").replace(/\.tsx?/, ".js"),
+            esm: f.replace("/src/", "/dist/").replace(/\.tsx?/, ".cjs"),
         };
         if (!fs.existsSync(distPaths.cjs)) {
             console.error(`Could not find dist path ${distPaths.cjs}`);
@@ -87,11 +87,11 @@ export default defineConfig((options) => {
         //     "react",
         // ],
         tsconfig: path.resolve(__dirname, "tsconfig.json"),
-        outExtension: ({ format }) => {
-            return {
-                js: `.${format}.js`,
-            };
-        },
+        // outExtension: ({ format }) => {
+        //     return {
+        //         js: `.${format}.js`,
+        //     };
+        // },
         esbuildPlugins: [
             preserveDirectivesPlugin({
                 directives: ["use client", "use strict"],

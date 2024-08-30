@@ -3,12 +3,12 @@
 export const optionMap = {
     useLocal: "--use-local",
     here: "--here",
-    noInstall: "--no-install",
     forceLocalSource: "--force-local-source",
     npm: "--npm",
     pnpm: "--pnpm",
     yarn: "--yarn",
-    genDatabase: "--genDatabase"
+    genDatabase: "--genDatabase",
+    clean: "--clean"
 } as const;
 
 export const branchOptions = {

@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
-import type { TargetPathKeys } from "@ulld/utilities/types";
 import { TargetPaths } from "../paths.js";
 import { ShellManager } from "./shell.js";
+import type { TargetPathKeys } from "@ulld/utilities/buildTypes";
 
 interface LineItem {
     content: string;
@@ -133,7 +133,7 @@ ${newContent}
         return lineData;
     }
     static fromPathKey(pathKey: TargetPathKeys, paths: TargetPaths) {
-        const path = paths[pathKey];
+        const path = paths[pathKey as keyof typeof paths] as string;
         return new FileManager(paths.makeSubPath(path), paths);
     }
     static fromAbsolutePath(path: string, paths: TargetPaths, isDir?: boolean) {

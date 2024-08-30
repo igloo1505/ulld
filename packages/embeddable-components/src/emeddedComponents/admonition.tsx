@@ -53,7 +53,7 @@ export const Admonition = async (props: AdmonitionProps) => {
                         "w-full py-3 px-3 text-sm text-muted-foreground bg-muted",
                     )}
                 >
-                    {footer}
+                    {typeof footer === "string" ? <MdxContentSERVER content={footer} /> : footer}
                 </div>
             )}
         </div>

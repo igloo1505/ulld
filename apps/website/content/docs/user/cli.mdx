@@ -1,0 +1,58 @@
+---
+title: CLI
+id: cliDocs
+created: 8-29-24
+---
+
+
+The `@ulld/build` package contains the primary cli used to generate a complete <LogoAsText /> application. In most cases, apart from Node and Postgres, that is all you will need to install to generate your application, as everything else will be installed automatically.
+
+
+## Commands
+
+### build
+
+This is the core build command that will generate a complete <LogoAsText /> application. To learn more about this command and the options that it accepts, run 
+
+```zsh
+ulld help build
+```
+
+Or to build your application, run 
+
+```zsh
+ulld build
+```
+
+If you are running this against a ***new*** database, use the `genDatabase` flag to properly format your database. Be _very_ careful to not run this against an existing database, as it may make some or all of the existing data unusable.
+
+To build your application while formatting an _empty_ database, run
+
+```zsh
+ulld build --genDatabase
+```
+
+### run
+
+This is a utility method to execute the `start` script inside of your generated app's `package.json` file from any directory. You can easily replace this command with an alias of your own executing this same script.
+
+### setJsonSchema
+
+If you chose to generate your app using the `ULLD_ADDITIONAL_SOURCES` environment variable (you should have), this command will set a `$schema` path in the `appConfig.ulld.json` file inside of this directory to a local file path to enable autocompletion inside of most IDEs.
+
+If you are new to editing these types of files, VS Code from Microsoft is a great free, very powerful IDE that can do wonders to help you more quickly and reliably edit pretty much every file type you'll use while working with <LogoAsText />.
+
+
+---
+
+
+### Utility Commands
+
+| Command | Description |
+| ------- | ----------- |
+| `command` | List all available commands |
+| `version` | Show current version of cli |
+| `update` | Update cli, not the compiled application. |
+| `autocomplete` | Generate autocompletion for the <LogoAsText fontSize={13} /> cli. |
+| `help <command>` | Show more detailed help information and available options for any command. |
+

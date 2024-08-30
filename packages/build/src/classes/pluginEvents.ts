@@ -22,10 +22,10 @@ export class PluginEvents extends ShellManager {
         }
     }
     hasEventType(k: EventMethodKey){
-        return Boolean(this.data[k])
+        return Boolean(k in this.data)
     }
     getEventImport(k: EventMethodKey){
-        return `import ${this.importNames[k]} from "${this.pluginName}/${this.data[k]}";`
+        return `import ${this.importNames[k]} from "${this.pluginName}/${this.data[k as keyof typeof this.data]}";`
     }
     getMethodAsString(k: EventMethodKey){
         return `${this.importNames[k]}`

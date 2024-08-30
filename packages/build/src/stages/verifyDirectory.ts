@@ -5,15 +5,31 @@ import {
 import chalk from "chalk";
 import enq from "enquirer";
 import fs from 'fs'
+import path from 'path'
 import { UlldBuildProcess } from "../classes/build.js";
 import { BuildOptionsType } from "../utils/options.js";
-import { getBranchSelection } from "./selectBranch.js";
+import { getBuildDataOutputPath } from "../utils/getXdgPaths.js";
+import { JsonFile } from "@ulld/utilities/jsonFileClass";
+import { BuildOutputData } from "../types.js";
+import shellJs from "shelljs"
+// import { getBranchSelection } from "./selectBranch.js";
 
 const { prompt } = enq;
 
-export const verifyDirectory = async (opts: BuildOptionsType) => {
+export const verifyDirectory = async (opts: BuildOptionsType, branch: string = "main") => {
     const currentDir = getCurrentDir();
-    let branch = typeof opts.branch === "undefined" ? "main" : typeof opts.branch === "string" ? opts.branch : await getBranchSelection()
+
+    if(opts.clean){
+        let buildOutputPath = getBuildDataOutputPath()
+        let f = new JsonFile<BuildOutputData>(buildOutputPath)
+        if(f.exists()){
+            let content = f.getJsonContent()
+            if(content.buildOutputPath){
+                shellJs.rm("-f -R", content.buildOutputPath)
+                return new UlldBuildProcess(content.buildOutputPath.endsWith("/ulldApp") ? path.dirname(content.buildOutputPath) : content.buildOutputPath, branch)
+            }
+        }
+    }
 
     if (opts.here) {
         return new UlldBuildProcess(currentDir, branch);

@@ -8,6 +8,7 @@ import AdmonitionTitleNode from "./admonitionTitleNode";
 import FoldingAdmonition from "../../FoldingAdmonition";
 import cn from "@ulld/utilities/cn";
 import { ValidIconName } from "@ulld/icons";
+import { MdxContentCLIENT } from "@ulld/render/mdx";
 
 
 export const Admonition = (props: AdmonitionProps) => {
@@ -26,6 +27,8 @@ export const Admonition = (props: AdmonitionProps) => {
     }
 
     const { children, type, title, dropdown, sidebar, footer } = props;
+
+    console.log("typeof footer: ", typeof footer)
 
     return (
         <div
@@ -74,7 +77,7 @@ export const Admonition = (props: AdmonitionProps) => {
                         "w-full py-3 px-3 text-sm text-muted-foreground bg-muted",
                     )}
                 >
-                    {footer}
+                    {typeof footer === "string" ? <MdxContentCLIENT content={footer} /> : footer}
                 </div>
             )}
         </div>

@@ -23,6 +23,8 @@ export const defaultPluginId =
 
 // WARN: Removed this type checking for now as the output value was returning the input type with too many optionals.
 // export const developerConfigSchema: z.ZodType<DeveloperConfigInput> = z
+
+
 export const _developerConfigSchema = z.object({
     pluginName: z.string(),
     label: z

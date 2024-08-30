@@ -1,6 +1,7 @@
 import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
-import { DeveloperConfigInput } from "@ulld/configschema/developer";
-import { PluginSlotKey } from "@ulld/configschema/developerTypes";
+import type { DeveloperConfigOutput } from "@ulld/configschema/developer";
+// import { PluginSlotKey } from "../../configschema/dist/developer/slotMapType.js";
+import { PluginSlotKey } from "@ulld/configschema/slotMapType";
 
 export type PackageManagers = "pnpm" | "npm" | "yarn";
 
@@ -21,7 +22,7 @@ export interface PluginComponentProps {
     parentSlot?: PluginSlotKey;
 }
 
-export type EventMethodKey = keyof NonNullable<DeveloperConfigInput["events"]>;
+export type EventMethodKey = keyof NonNullable<DeveloperConfigOutput["events"]>;
 
 export type SettingPageOutputData =
     BuildStaticDataOutput["settingPages"][number];
@@ -37,4 +38,9 @@ declare global {
 
 export interface BuildOutputData {
     buildOutputPath: string;
+}
+
+
+export interface BuildConfig {
+   branch: string
 }

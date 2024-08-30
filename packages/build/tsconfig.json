@@ -1,29 +1,24 @@
 {
     "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
-    "extends": "@ulld/typescript-config/base.json",
     "compilerOptions": {
-        "plugins": [
-            {
-                "name": "next"
-            }
-        ],
-        "noEmitOnError": false,
         "declaration": true,
-        "declarationMap": true,
-        "allowJs": true,
+        "module": "NodeNext",
         "outDir": "dist",
         "rootDir": "src",
         "strict": true,
-        "noEmit": false,
-        "module": "ESNext",
-        "target": "ESNext",
-        "moduleResolution": "Bundler",
-        "resolveJsonModule": true,
+        "allowJs": true,
+        "target": "es2022",
+        "moduleResolution": "NodeNext",
         "esModuleInterop": true,
-        "allowImportingTsExtensions": false,
-        "jsx": "react",
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "strictNullChecks": true,
+        "preserveConstEnums": true,
         "lib": [
-            "ESNext"
+            "dom",
+            "dom.iterable",
+            "esnext"
         ]
     },
     "include": [
@@ -33,6 +28,7 @@
     "exclude": [
         "src/__test__/**"
     ],
+    "esModuleInterop": true,
     "ts-node": {
         "esm": true
     }

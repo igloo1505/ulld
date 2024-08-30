@@ -9,8 +9,6 @@ import enq from "enquirer";
 import { appData } from "@ulld/utilities/appData";
 import terminalLink from "terminal-link";
 import { log } from "console";
-import { SlotMap } from "@ulld/configschema/developerTypes";
-import { SlotMapOfType } from "@ulld/configschema/types";
 import { DeveloperConfigOutput } from "@ulld/configschema/developer";
 import { BuildStaticDataInput } from "@ulld/configschema/buildTypes";
 import { PackageManagers } from "../types.js";
@@ -31,6 +29,8 @@ import { BuildHealthCheck } from "./healthCheck.js";
 import { DatabaseBuildManager } from "./databaseManager.js";
 import { BuildOptionsType } from "../utils/options.js";
 import { getInternalTailwindSources } from "../utils/getInternalTailwindSources.js";
+import { SlotMap } from "@ulld/configschema/slotMapRootType";
+import type { SlotMapOfType } from "@ulld/configschema/slotMapInternalType";
 
 const { prompt } = enq;
 
@@ -497,16 +497,16 @@ ${fullSlotMap.missingItems.map((k, i) => `${i + 1}. ${k.slot} -> ${k.subSlot}`).
         }
     }
     getTailwindSources(): string[] {
-        let items = getInternalTailwindSources()
+        let items = getInternalTailwindSources();
         let additionalItems = this.plugins
-                .filter((f) => f.includeInTailwindSources)
-                .map((p) => `./node_modules/${p.name}/src/**/*.{js,ts,jsx,tsx,mdx}`)
+            .filter((f) => f.includeInTailwindSources)
+            .map((p) => `./node_modules/${p.name}/src/**/*.{js,ts,jsx,tsx,mdx}`);
         for (const k of additionalItems) {
-            if(!items.includes(k)){
-                items.push(k)
+            if (!items.includes(k)) {
+                items.push(k);
             }
         }
-        return items
+        return items;
     }
     revalidatePluginConfigs() {
         for (const plugin of this.plugins) {

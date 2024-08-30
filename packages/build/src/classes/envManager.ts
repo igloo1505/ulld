@@ -1,10 +1,13 @@
-import { SupportedDatabaseType } from "@ulld/configschema/types";
 import dotenv from "dotenv";
 import fs from "fs";
 import path from "path";
 import { ShellManager } from "./baseClasses/shell.js";
 import { TargetPaths } from "./paths.js";
 import { FileManager } from "./baseClasses/fileManager.js";
+import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
+
+
+type SupportedDatabaseType = AppConfigSchemaOutput["build"]["database"]["type"]
 
 type SupportedEnvVariableId =
     | "postgresUri"

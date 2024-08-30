@@ -1,20 +1,16 @@
 import path from "path";
 import fs from "fs";
-import type { PathKeys, MethodListPathKeys } from "@ulld/utilities/types";
 import { pathKeys} from "@ulld/utilities/buildUtils"
 import { removeLeadingDotSlash } from "../utils/removeLeadingDotSlash.js";
 import type { ParserKey } from "@ulld/configschema/developer";
-import type { PluginEventsConfig } from "@ulld/configschema/developerTypes";
 import xdgAppPaths from 'xdg-app-paths';
 import type { Options, XDGAppPaths } from 'xdg-app-paths';
-
-let xdgOpts: Options = {
-    name: "ulld",
-    suffix: "noteTaking"
-}
+import {MethodListPathKeys, PathKeys} from "@ulld/utilities/buildTypes"
+import { PluginEventsConfig } from "@ulld/configschema/pluginEventsConfig";
+import { xdgOpts } from "../utils/getXdgPaths.js";
 
 export class TargetPaths
-    implements Record<PathKeys | MethodListPathKeys, string> {
+    implements Record<typeof pathKeys[number] | MethodListPathKeys, string> {
     public: string;
     styles: string;
     packageJson: string;
@@ -50,7 +46,7 @@ export class TargetPaths
         public targetDir: string,
         public isLocalDev: boolean,
     ) {
-        this.xdgPaths = (xdgAppPaths as any)()
+        this.xdgPaths = (xdgAppPaths as any)(xdgOpts)
         this.public = path.join(targetDir, "public");
         this.node_modules = path.join(targetDir, "node_modules");
         this.gitignore = path.join(targetDir, ".gitignore");
@@ -125,10 +121,10 @@ export class TargetPaths
     getPathInNodeModule(packageName: string, subPath: string) {
         return this.joinPath("node_modules", `${packageName}/${subPath}`);
     }
-    joinPath(pathKey: PathKeys, ...joinWith: string[]) {
+    joinPath(pathKey: typeof pathKeys[number], ...joinWith: string[]) {
         return path.join(this[pathKey], ...joinWith);
     }
-    exists(_key: PathKeys) {
+    exists(_key: typeof pathKeys[number]) {
         return fs.existsSync(this[_key]);
     }
     getEventMethodListPath(type: keyof PluginEventsConfig) {

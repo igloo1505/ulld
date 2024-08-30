@@ -1,10 +1,6 @@
 import { PackageJsonType } from "@ulld/developer-schemas/fullPackageJson";
 import { DeveloperConfigOutput, ParserKey } from "@ulld/configschema/developer";
 import path from "path";
-import {
-    AnySubSlotKey,
-    PluginSlotKey,
-} from "@ulld/configschema/developerTypes";
 import { PluginSlot } from "./slot.js";
 import { PluginComponent } from "./component.js";
 import { PluginPage } from "./page.js";
@@ -17,6 +13,7 @@ import { PluginSettingsPage } from "./pluginSettingsPage.js";
 import { Path } from "./utilityClasses/Path.js";
 import { JsonFile } from "@ulld/utilities/jsonFileClass";
 import devData from "../../staticDevelopmentData.json"  with {type: "json"};
+import { AnySubSlotKey, PluginSlotKey } from "@ulld/configschema/slotMapType";
 
 export class UlldPlugin extends ShellManager {
     pluginConfig: DeveloperConfigOutput | "Unusable" = "Unusable";

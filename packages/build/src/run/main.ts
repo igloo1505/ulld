@@ -1,8 +1,9 @@
 import fs from "fs";
 import path from "path";
 import { detect } from "detect-package-manager";
-import { BuildOutputData, PackageManagers } from "../types";
+import type { BuildOutputData, PackageManagers } from "../types.js";
 import shell from "shelljs";
+import { getBuildDataOutputPath, getXdgPaths } from "../utils/getXdgPaths.js";
 
 const commands: Record<PackageManagers, string> = {
     npm: "npm run ulldStart",
@@ -10,20 +11,26 @@ const commands: Record<PackageManagers, string> = {
     yarn: "yarn run ulldStart",
 };
 
-(async () => {
-    
+export const runUlldApplication = async () => {
+    let buildDataPath = getBuildDataOutputPath()
+    if(!fs.existsSync(buildDataPath)){
+        console.error(`Cannot run ulld application. The automatically generated build data file cannot be found. You'll have to run ULLD manually.`)
+        process.exit(1)
+    }
+
     let b: BuildOutputData = JSON.parse(
-        fs.readFileSync(path.join(__dirname, "buildDataOutput.json"), {
+        fs.readFileSync(buildDataPath, {
             encoding: "utf-8",
         }),
     );
 
-    if (b.buildOutputPath === "not-applied") {
+    if (!b.buildOutputPath) {
         console.error(
-            `Cannot run ulld. It does not appear to have been built successfully.`,
+            `Build data file is improperly formatted. You'll have to run ULLD manually.`,
         );
         process.exit(1);
     }
+
     let pm = await detect({
         cwd: b.buildOutputPath,
     });
@@ -37,6 +44,9 @@ const commands: Record<PackageManagers, string> = {
 
     shell.exec(cmd, {
         cwd: b.buildOutputPath,
+        async: true
+    }, (code, stdout, stderr) => {
+        console.log(stdout)
     });
 
-})();
+}
