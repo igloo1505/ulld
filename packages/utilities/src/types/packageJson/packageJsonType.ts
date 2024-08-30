@@ -1,6 +1,12 @@
 import { z } from "zod";
 import { licenseUnion } from "./licenseUnion";
 
+const exportFieldObject = z.object({
+    types: z.string().optional(),
+    import: z.string().optional(),
+    require: z.string().optional(),
+})
+
 export const ulldCompletePackageJsonSchema = z.object({
     name: z
         .string()
@@ -9,7 +15,7 @@ export const ulldCompletePackageJsonSchema = z.object({
             return a.toLowerCase() === a;
         }),
     version: z.string().optional().default("0.0.0"),
-    exports: z.record(z.string(), z.string()).optional(),
+    exports: z.record(z.string(), z.string().or(exportFieldObject)).optional(),
     files: z.string().array().optional().default(["src"]),
     dependencies: z.record(z.string(), z.string()),
     packageManager: z.string().optional().default("pnpm@8.1.1"),

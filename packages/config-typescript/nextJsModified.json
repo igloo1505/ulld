@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Next.js",
+  "display": "Next.js Modified",
   "extends": "./base.json",
   "exclude": ["node_modules", "dist", ".turbo", "src/**/*.test.ts"],
   "compilerOptions": {
@@ -8,12 +8,12 @@
     "allowJs": true,
     "declaration": false,
     "declarationMap": false,
-    "incremental": true,
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "noEmit": true,
     "resolveJsonModule": true,
-    "target": "es5"
+    "target": "ES2020",
+    "types": ["jest", "node", "mdx"]
   }
 }

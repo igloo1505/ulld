@@ -35,14 +35,14 @@ ${content}`,
 
 const prependDirectives = async () => {
     let files = globSync("**/*.{tsx,ts}", {
-        cwd: path.join(import.meta.dirname, "src"),
+        cwd: path.join(__dirname, "src"),
         nodir: true,
         absolute: true,
     });
     files.forEach((f) => {
         let distPaths = {
             cjs: f.replace("/src/", "/dist/").replace(/\.tsx?/, ".js"),
-            esm: f.replace("/src/", "/dist/").replace(/\.tsx?/, ".cjs"),
+            esm: f.replace("/src/", "/dist/").replace(/\.tsx?/, ".mjs"),
         };
         if (!fs.existsSync(distPaths.cjs)) {
             console.error(`Could not find dist path ${distPaths.cjs}`);
@@ -69,36 +69,38 @@ export default defineConfig((options) => {
     console.log("options: ", options);
     return {
         entry: ["src/**/*.ts", "src/**/*.tsx"],
-        platform: "neutral",
-        splitting: true,
+        // platform: "neutral",
+        // splitting: true,
         sourcemap: true,
-        clean: false,
-        metafile: true,
+        // clean: false,
+        // metafile: true,
         // cjsInterop: true,
-        // dts: true,
-        target: "es2021",
+        dts: true,
+        // target: "es2021",
         format: ["esm", "cjs"],
         // minify: true,
-        bundle: true,
-        treeshake: "recommended",
-        shims: true,
-        skipNodeModulesBundle: true,
-        // external: [
-        //     "react",
-        // ],
+        // bundle: true,
+        // treeshake: "recommended",
+        // shims: true,
+        // skipNodeModulesBundle: true,
+        external: [
+            "react",
+        ],
+        dts: true,
         tsconfig: path.resolve(__dirname, "tsconfig.json"),
         // outExtension: ({ format }) => {
         //     return {
         //         js: `.${format}.js`,
         //     };
         // },
-        esbuildPlugins: [
-            preserveDirectivesPlugin({
-                directives: ["use client", "use strict"],
-                include: /\.(js|ts|jsx|tsx)$/,
-                exclude: /node_modules/,
-            }),
-        ],
+        // esbuildPlugins: [
+        //     preserveDirectivesPlugin({
+        //         directives: ["use client", "use strict"],
+        //         include: /\.(js|ts|jsx|tsx)$/,
+        //         exclude: /node_modules/,
+        //     }),
+        // ],
         onSuccess: prependDirectives,
+        ...options
     };
 });

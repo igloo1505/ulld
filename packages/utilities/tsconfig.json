@@ -2,15 +2,15 @@
     "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
     "extends": "@ulld/typescript-config/nextjs.json",
     "compilerOptions": {
-        "noEmitOnError": false,
         "rootDir": "src",
         "outDir": "dist",
-        "emitDeclarationOnly": true,
+        // "emitDeclarationOnly": true,
+        // "module": "ESNext",
+        "target": "ES2021",
+        // "moduleResolution": "Bundler",
         "noEmit": false,
-        "module": "ESNext",
-        "target": "ESNext",
-        "moduleResolution": "Bundler",
-        "jsx": "react",
+        "incremental": false,
+        "jsx": "preserve",
         "isolatedModules": true,
         "allowImportingTsExtensions": false,
         "declaration": true,
@@ -19,6 +19,7 @@
         "resolveJsonModule": true
     },
     "exclude": [
+        "dist",
         "./dist",
         "./dist/**",
         "__scripts__",
@@ -30,6 +31,9 @@
     "include": [
         "./src/**/*.ts",
         "./src/**/*.tsx",
-        "./src/**/*.json"
+        "./src/**/*.json",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.json"
     ]
 }

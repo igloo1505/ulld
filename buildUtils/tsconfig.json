@@ -2,8 +2,12 @@
     "extends": "../packages/config-typescript/base.json",
     "$schema": "https://json.schemastore.org/tsconfig",
     "exclude": [""],
+    "files": [
+        "packagingUtilities/main.ts"
+    ],
     "compilerOptions": {
         "outDir": "dist",
+        "outFile": "bundled/buildUtils.js",
         "jsx": "react-jsx",
         "module": "ESNext",
         "moduleResolution": "Bundler",

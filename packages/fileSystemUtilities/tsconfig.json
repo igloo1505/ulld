@@ -1,0 +1,28 @@
+{ 
+    "$schema": "https://json.schemastore.org/tsconfig.json",
+      "extends": "@ulld/typescript-config/nextjs.json",
+    "include": [
+        "./**/*.ts",
+        "./**/*.tsx"
+    ],
+    "exclude": [
+        "dist",
+        "build",
+        "node_modules",
+        "src/__scripts__"
+    ],
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "dist",
+        "noEmit": false,
+        "moduleResolution": "Bundler",
+        "target": "ESNext",
+        "jsx": "react-jsx",
+        "allowImportingTsExtensions": false,
+        "declaration": true,
+        "declarationMap": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true
+    }
+}
+

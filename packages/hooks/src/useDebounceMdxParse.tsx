@@ -3,7 +3,7 @@ import { useEffect, useState, Fragment, useRef } from "react";
 import { run } from "@mdx-js/mdx";
 import * as runtime from "react/jsx-runtime";
 import * as devRuntime from "react/jsx-dev-runtime";
-import { MDXComponents, MDXContent, MDXModule } from "mdx/types";
+import type { MDXComponents, MDXContent, MDXModule } from "mdx/types";
 import { ParseMdxStringProps } from "@ulld/api/classes/prismaMdxRelations/mdxNote";
 import { getComponentMap } from "@ulld/component-map/client";
 import { useMathjaxBandaid } from "./useMathjaxBandaid";
