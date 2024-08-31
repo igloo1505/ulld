@@ -2,7 +2,7 @@
 import path from 'path'
 import fs from 'fs'
 import {checkExistsOfAllParsableTypes} from "../filesystem/fsUtils"
-import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions"
+import { ParsableExtensionsSchema } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions"
 import { readAppConfig } from '@ulld/developer/readAppConfig'
 import { AppConfigSchemaOutput } from '@ulld/configschema/types'
 
@@ -26,7 +26,7 @@ export const getFsIpynb = async (rootRelativePath: string, _config?: AppConfigSc
     return await fs.promises.readFile(_path, { encoding: "utf-8" })
 }
 
-export const getFsNote = async (rootRelativePath: string, knownType?: ParsableExtensions) => {
+export const getFsNote = async (rootRelativePath: string, knownType?: ParsableExtensionsSchema) => {
     let p: string | null | undefined = null
     if (knownType === ".mdx") {
         let d = await getFsMdx(rootRelativePath)
@@ -48,7 +48,7 @@ export const getFsNote = async (rootRelativePath: string, knownType?: ParsableEx
             let res = await fs.promises.readFile(d.path, { encoding: "utf-8" })
             return {
                 content: res,
-                format: d.format as ParsableExtensions
+                format: d.format as ParsableExtensionsSchema
             }
         }
     }

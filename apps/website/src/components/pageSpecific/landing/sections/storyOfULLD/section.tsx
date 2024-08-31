@@ -4,6 +4,7 @@ import MDXArticle from "#/components/layouts/mdxArticle";
 import { getPages } from "sources/brand";
 import { getPageById } from "#/fumaDocs/utils/getPageById";
 import StoryOfUlldHeading from "./storyOfUlldHeading";
+import { PageType } from "../../../../../types/general";
 
 
 
@@ -12,14 +13,10 @@ interface StoryOfUlldSectionProps {
 
 
 export const StoryOfUlldSection = ({}: StoryOfUlldSectionProps) => {
-    const content = getPageById(getPages(), "storyOfULLD")
+    const content = getPageById(getPages() as PageType[], "storyOfULLD")
     if(!content){
         throw new Error("No storyOfUlld article found.")
     }
-    /* const vp = useViewport(); */
-    /* RESUME: Come back here and move this to a single internal hook to populate all of the components as needed. */
-    /* const ref = useRef<HTMLDivElement>(null!); */
-    /* const inView = useInView(ref, { margin: "-20%" }); */
     return (
         <div
             className={clsx(

@@ -14,7 +14,7 @@ export const allMiniFeatures: MiniFeature[] = [
     {
         title: "Interactive Plotting",
         desc: <div>With support for multiple plotting libraries on day 1, you can visualize your data with only <span className={"font-bold"}>MDX</span>. Familiar with <a href={staticData.links.docs.external.python} className={"font-bold text-link"}>Python</a>? Embed <a href={staticData.links.docs.external.jupyter} className={"font-bold text-link"}>Jupyter</a> cells directly in your notes and create your own visualizations.</div>,
-        icon: "line-chart",
+        icon: "chart-line",
         featureKey: "plotting"
     },
     {

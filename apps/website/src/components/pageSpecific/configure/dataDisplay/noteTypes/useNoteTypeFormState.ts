@@ -5,6 +5,7 @@ import {
 } from "./noteTypeFormContext";
 import { useFormContext } from "@ulld/full-form/form";
 import { ConfigurationFormType, NoteTypeInput } from "../../staticData";
+import { z } from "zod";
 import { documentTypeConfigSchema } from "@ulld/configschema/zod/documentConfigSchema";
 
 type EditingItem = NoteTypeInput & { index: number };
@@ -18,8 +19,8 @@ export const useNoteTypeFormState = () => {
     const noteTypes = form.watch("noteTypes");
 
     const getItemByIndex = (index: number) => {
-           return noteTypes[index] 
-    }
+        return noteTypes[index];
+    };
 
     return {
         isEditing,
@@ -51,12 +52,25 @@ export const useNoteTypeFormState = () => {
                 values.map((a, i) => (i === editing.index ? data : a)) as any,
             );
         },
-        setShowColorModal: (index: number) => dispatch({type: "showColorModal", payload: {...getItemByIndex(index), index}}),
-        setShowKeywordModal: (index: number) => dispatch({type: "showKeywordModal", payload: {...getItemByIndex(index), index}}),
-        setShowMatchPriorityModal: (index: number) => dispatch({type: "showMatchPriority", payload: {...getItemByIndex(index), index}}),
+        setShowColorModal: (index: number) =>
+            dispatch({
+                type: "showColorModal",
+                payload: { ...getItemByIndex(index), index },
+            }),
+        setShowKeywordModal: (index: number) =>
+            dispatch({
+                type: "showKeywordModal",
+                payload: { ...getItemByIndex(index), index },
+            }),
+        setShowMatchPriorityModal: (index: number) =>
+            dispatch({
+                type: "showMatchPriority",
+                payload: { ...getItemByIndex(index), index },
+            }),
         closeColorModal: () => dispatch({ type: "closeColorModal" }),
         closeKeywordModal: () => dispatch({ type: "closeKeywordModal" }),
-        closeMatchPriorityModal: () => dispatch({ type: "closeMatchPriorityModal" }),
+        closeMatchPriorityModal: () =>
+            dispatch({ type: "closeMatchPriorityModal" }),
         removeItem: (index: number) => {
             let values = form.getValues("noteTypes");
             if (!values) return;
@@ -68,13 +82,18 @@ export const useNoteTypeFormState = () => {
         appendNoteType: (value: NoteTypeInput) => {
             let parsedValues = documentTypeConfigSchema.safeParse(value);
             let currentValues = form.getValues("noteTypes") || [];
-            if (parsedValues.error) {
+            if ("error" in parsedValues && parsedValues.error) {
                 console.error(
                     "An error occurred in NoteTypesForm in the appendNoteType function.",
                 );
             }
-            if (parsedValues.data) {
+            if ("data" in parsedValues && parsedValues.data) {
                 form.setValue("noteTypes", [...currentValues, parsedValues.data]);
+            } else if (!("error" in parsedValues)) {
+                form.setValue("noteTypes", [
+                    ...currentValues,
+                    parsedValues as unknown as z.output<typeof documentTypeConfigSchema>,
+                ]);
             }
         },
     };

@@ -12,7 +12,7 @@ import { getComponentMap } from "@ulld/component-map/client";
 import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
 import { useIsomorphicLayoutEffect } from "@ulld/hooks/useIsomorphicEffect";
 import { CopyContextMenu } from "@ulld/utilities/components/copyContextMenu"
-import { MDXModule } from "mdx/types";
+import type { MDXModule } from "mdx/types";
 import { AdditionalComponents, ConditionalComponentProps } from "@ulld/component-map/types";
 
 export interface MdxContentPreCompiledProps {

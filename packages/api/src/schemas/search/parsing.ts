@@ -127,7 +127,7 @@ const mdxNoteFields = {
     importantValues: z.number().array().default([]),
     saveFormatted: zodOptBool(true),
     imageSrc: zodOptStr
-} satisfies ZodMdxNoteFieldsType
+} satisfies Omit<ZodMdxNoteFieldsType, "haveSetFrontMatter">
 
 
 export const mdxNoteZodObject = z.object(mdxNoteFields)

@@ -1,6 +1,6 @@
-{ 
+{
     "$schema": "https://json.schemastore.org/tsconfig.json",
-      "extends": "@ulld/typescript-config/nextjs.json",
+    "extends": "@ulld/typescript-config/nextjs.json",
     "include": [
         "./**/*.ts",
         "./**/*.tsx"
@@ -17,5 +17,4 @@
         "esModuleInterop": true,
         "resolveJsonModule": true
     }
-
 }

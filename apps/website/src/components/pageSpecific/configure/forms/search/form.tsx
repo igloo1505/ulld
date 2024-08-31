@@ -11,7 +11,8 @@ export const SearchConfigurationForm = (
     <div className={"w-full space-y-6"}>
       <ReorderStringInput<
         AppConfigSchemaType,
-        AppConfigSchemaType["fileTypePriority"][number]
+        AppConfigSchemaType["fileTypePriority"][number],
+        "fileTypePriority"
       >
         label="Search Priority"
         desc="Reorder these file types from the highest priority to the lowest. This will only affect the way file name conflicts are handled."

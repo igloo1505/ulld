@@ -73,17 +73,14 @@ export const MailingListSignupCard = ({
                             className={"w-full"}
                             name="first"
                             label="First Name"
-                            form={form}
                         />
                         <HighlightedTextInput
                             className={"w-full"}
                             name="last"
                             label="Last Name"
-                            form={form}
                         />
                     </div>
                     <HighlightedTextInput
-                        form={form}
                         label="Email"
                         name="email"
                         type="email"

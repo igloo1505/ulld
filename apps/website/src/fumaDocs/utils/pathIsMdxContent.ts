@@ -1,4 +1,4 @@
-export const mdxContentPaths = ["/docs", "/blog", "/myWork"];
+export const mdxContentPaths = ["/docs", "/blog", "/myWork", "/demos"];
 
 export const pathIsMdxContent = (pathname: string) => {
     return mdxContentPaths.some((f) => pathname.startsWith(f));

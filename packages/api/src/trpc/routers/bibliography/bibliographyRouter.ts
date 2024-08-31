@@ -6,6 +6,7 @@ import { prisma } from "@ulld/database/db";
 import { bibItemTagParser } from "./bibItemTagParser";
 import { getBibWithEntries, getBibFilename } from "./methods";
 import { syncBib } from "./syncBib";
+import { readAppConfig } from "@ulld/developer/readAppConfig";
 
 export default router({
     getPrismaBib: publicProcedure.query(async () => {
@@ -14,12 +15,14 @@ export default router({
     syncBib: publicProcedure.input(z.object({
         bibId: z.number().int().default(1)
     })).mutation(async ({input}) => {
-        return await syncBib(input.bibId)
+        let appConfig = await readAppConfig()
+        return await syncBib(appConfig, input.bibId)
     }),
     syncBibServerSide: publicProcedure
         .input(z.number().int().optional())
         .mutation(async (opts) => {
-            return await syncBib(opts.input);
+            let appConfig = await readAppConfig()
+            return await syncBib(appConfig, opts.input);
         }),
     readBibFromFileSystem: publicProcedure.query(async () => {
         const file = getInternalConfig().bibPath;
@@ -103,7 +106,7 @@ export default router({
                         bibEntries: {
                             select: {
                                 title: true,
-                                added: true,
+                                createdAt: true,
                                 id: true,
                             },
                         },

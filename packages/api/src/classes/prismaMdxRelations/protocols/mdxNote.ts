@@ -4,12 +4,12 @@ import type { MdxNote } from "../MdxNote";
 import { NoteBase } from "../NoteBase";
 import type { PrismaMdxRelationshipProtocol } from "../type";
 import type { Prisma, MdxNote as PrismaMdxNote } from "@ulld/database/internalDatabaseTypes"
-import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
+import { ParsableExtensionsSchema } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
 
 
 
 export abstract class MdxNoteProtocol extends NoteBase implements PrismaMdxRelationshipProtocol<Prisma.MdxNoteDelegate>  {
-    constructor(rootRelativePath: string | undefined | null, extension: ParsableExtensions = ".mdx") {
+    constructor(rootRelativePath: string | undefined | null, extension: ParsableExtensionsSchema = ".mdx") {
         super(rootRelativePath, extension)
     }
     abstract createArgs(autoSettings: AutoSettingWithRegex[], config: ParsedAppConfig): Prisma.MdxNoteCreateArgs | undefined

@@ -4,7 +4,9 @@ import staticContent from "staticContent";
 import clsx from 'clsx'
 import PayPalLinkQr from "../brand/sponsor/paypalLinkSvg";
 
-interface ComingSoonProps { }
+interface ComingSoonProps { 
+    iconSize?: number
+}
 
 const Paragraph = ({ children, className }: { children: ReactNode, className?: string }) => {
     return (
@@ -14,7 +16,9 @@ const Paragraph = ({ children, className }: { children: ReactNode, className?: s
     );
 };
 
-const ComingSoon = (props: ComingSoonProps) => {
+const ComingSoon = ({
+    iconSize = 80
+}: ComingSoonProps) => {
     return (
         <div
             className={
@@ -30,9 +34,9 @@ const ComingSoon = (props: ComingSoonProps) => {
                     here
                 </a> or scanning the QR code below.
             </Paragraph>
-            <Paragraph className={"text-muted-foreground text-sm"}>The guy's <span className={"italic"}>literally</span> homeless.</Paragraph>
+            <Paragraph className={"text-muted-foreground text-sm"}>The guy's <span className={"italic"}>super</span> homeless.</Paragraph>
             <PayPalLinkQr
-                size={80}
+                size={iconSize}
                 fill="hsl(var(--foreground))"
             />
         </div>

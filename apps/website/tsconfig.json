@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json.schemastore.org/tsconfig",
+    "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
     "extends": "@ulld/typescript-config/nextjs.json",
     "compilerOptions": {
         "baseUrl": ".",
@@ -30,9 +30,8 @@
                 "./src/fumaDocs/sources/main.ts"
             ]
         },
-        "allowJs": true,
-        "esModuleInterop": true,
-        "incremental": true
+        "incremental": true,
+        "resolveJsonModule": true
     },
     "include": [
         "next-env.d.ts",

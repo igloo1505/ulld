@@ -2,7 +2,7 @@ import { getNoteTypeFromPath } from "@ulld/configschema/configUtilityTypes/gener
 import type { Route } from "next";
 import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
 import { replaceRecursively } from "@ulld/utilities/utils/general";
-import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
+import { ParsableExtensionsSchema } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import { withForwardSlash } from "@ulld/utilities/fsUtils";
 
@@ -10,7 +10,7 @@ import { withForwardSlash } from "@ulld/utilities/fsUtils";
 export class NoteBase {
     rootRelativePath?: string | null
     ftExtension: string
-    constructor(rootRelativePath?: string | null, extension: ParsableExtensions = ".mdx") {
+    constructor(rootRelativePath?: string | null, extension: ParsableExtensionsSchema = ".mdx") {
         this.rootRelativePath = rootRelativePath
         this.ftExtension = extension
     }

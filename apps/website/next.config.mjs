@@ -38,7 +38,7 @@ const config = withContentCollections(
     withPWA({
         typescript: {
             ignoreBuildErrors: true, // HACK: For development only.
-            tsconfigPath: "./tsconfig.json",
+            tsconfigPath: "tsconfig.json",
         },
         reactStrictMode: false,
         transpilePackages: [
@@ -68,7 +68,7 @@ const config = withContentCollections(
             "@ulld/state",
             "@ulld/tailwind",
             "@ulld/ui",
-            // "@ulld/utilities",
+            "@ulld/utilities",
             "@ulld/whiteboard",
         ],
         experimental: {

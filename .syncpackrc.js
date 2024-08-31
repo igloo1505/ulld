@@ -76,6 +76,61 @@ const config = {
             packages: ["**"],
             pinVersion: "3.3.8"
         },
+        {
+            dependencies: ["zod"],
+            packages: ["**"],
+            pinVersion: "latest"
+        },
+
+        {
+            dependencies: ["shiki"],
+            packages: ["**"],
+            pinVersion: "1.1.7"
+        },
+
+        {
+            dependencies: ["@shikijs/transformers"],
+            packages: ["**"],
+            pinVersion: "1.6.4"
+        },
+
+        {
+            dependencies: ["@shikijs/twoslash"],
+            packages: ["**"],
+            pinVersion: "1.5.2"
+        },
+
+        {
+            dependencies: ["lucide-react"],
+            packages: ["**"],
+            pinVersion: "0.344.0"
+        },
+        // PRIORITY: Look up the most recent versions of these fumadocs dependencies and adjust these.
+        {
+            dependencies: ["@fumadocs-core"],
+            packages: ["**"],
+            pinVersion: "13.3.5"
+        },
+        {
+            dependencies: ["@fumadocs-docgen"],
+            packages: ["**"],
+            pinVersion: "1.0.2"
+        },
+        {
+            dependencies: ["@fumadocs-twoslash"],
+            packages: ["**"],
+            pinVersion: "1.1.0"
+        },
+        {
+            dependencies: ["@fumadocs-typescript"],
+            packages: ["**"],
+            pinVersion: "2.0.1"
+        },
+        {
+            dependencies: ["@fumadocs-ui"],
+            packages: ["**"],
+            pinVersion: "12.3.5"
+        },
     ],
 };
 

@@ -3,7 +3,7 @@ import { publicProcedure, router } from "../trpc";
 import fs from "fs";
 import {
     currentParsableExtensions,
-    ParsableExtensions,
+    ParsableExtensionsSchema,
 } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
 import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { getRootRelativePathSchema } from "../../schemas/filesystem/rootRelativePathSchema";
@@ -18,7 +18,7 @@ export const fsUtilRouter = router({
             return (await checkParsableFiletypesAtPath(
                 opts.input,
                 getInternalConfig().fsRoot,
-            )) as { [k in ParsableExtensions]: boolean };
+            )) as { [k in ParsableExtensionsSchema]: boolean };
         }),
     getAllRootRelativePathsOfFiletype: publicProcedure
         .input(currentParsableExtensions)

@@ -7,7 +7,7 @@
         // "emitDeclarationOnly": true,
         // "module": "ESNext",
         "target": "ES2021",
-        // "moduleResolution": "Bundler",
+        "moduleResolution": "Bundler",
         "noEmit": false,
         "incremental": false,
         "jsx": "preserve",
