@@ -1,9 +1,14 @@
-import { BaseLayoutProps } from "fumadocs-ui/layout";
+import { BaseLayoutProps } from "../../types/general";
 
 export const defaultDocsSidebarLinks: BaseLayoutProps["links"] = [
     {
         text: "Home",
         url: "/",
+        active: "nested-url",
+    },
+    {
+        text: "Docs",
+        url: "/docs/user",
         active: "nested-url",
     },
     {

@@ -38,7 +38,7 @@ const TocSourceFooterButton = ({ noteId }: { noteId?: string }) => {
 
     return (
         <Link
-            className={cn("", buttonVariants({ variant: "outline" }))}
+            className={buttonVariants({ variant: "outline" })}
             href={`/withSource?id=${noteId}`}
         >
             Source
@@ -87,7 +87,7 @@ const DocsPageInternal = ({
                     {page.data.title}
                 </h1>
             )}
-                {page.data.description && <p className={"text-sm mb-8"}>{page.data.description}</p>}
+                {page.data.description && <p className={cn("text-sm mb-8 text-muted-foreground", page.data.titleCent && "w-full text-center")}>{page.data.description}</p>}
             <MDXContent code={page.data.body} components={components as any} />
             <ApplyMathjaxBandaid container={id} />
         </>

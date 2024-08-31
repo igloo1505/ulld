@@ -6,10 +6,13 @@ import {
     DrawerHeader,
     DrawerTitle,
 } from "@ulld/tailwind/drawer";
+import { useMediaQuery } from "react-responsive";
 import {
     Select,
     SelectContent,
+    SelectGroup,
     SelectItem,
+    SelectLabel,
     SelectTrigger,
     SelectValue,
 } from "@ulld/tailwind/select";
@@ -17,13 +20,17 @@ import React, { useState } from "react";
 import { defaultSupportedThemes } from "@ulld/tailwind/defaultThemes";
 import MainNavigationDrawerButtonGroup from "../layouts/drawer/buttonGroup";
 import staticData from "staticContent";
-import { useViewport } from "@ulld/hooks/useViewport";
 import { setTheme } from "#/state/actions/dom";
 import { useEventListener } from "@ulld/hooks/useEventListener";
 import { LogoAsText } from "../general/logoAsText";
 import { NavbarButton, NavbarButtonClick } from "#/state/initialState/core";
-import ShikiThemeSelect from "#/components/modals/shikiTheme";
-import theme from "tailwindcss/defaultTheme";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+} from "@ulld/tailwind/dialog";
 
 interface ThemeMenuProps {
     open: boolean;
@@ -94,46 +101,76 @@ const ThemeMenuDrawer = ({ open, close }: ThemeMenuProps) => {
 };
 
 const ThemeMenuModal = ({ open, close }: ThemeMenuProps) => {
-
     return (
-        <Select
+        <Dialog
             open={open}
             onOpenChange={(newOpen) => {
-                if(!newOpen){
-                    close()
+                if (!newOpen) {
+                    close();
                 }
             }}
-            /* value={field.value} */
-            onValueChange={(newTheme) => {
-                setTheme(newTheme);
-                close();
-            }}
         >
-            <SelectContent>
-                {defaultSupportedThemes.map((o) => {
-                    return (
-                        <SelectItem
-                            key={o}
-                            value={o}
-                            onClick={() => {
-                                setTheme(o);
-                                close();
-                            }}
-                        >
-                            {o}
-                        </SelectItem>
-                    );
-                })}
-            </SelectContent>
-        </Select>
+            <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                    <DialogTitle>Change Theme</DialogTitle>
+                    <DialogDescription>
+                        Change the theme on the website to one of the default supported
+                        themes. Note however, that this website was not designed to support
+                        these themes the way the compiled app was.
+                    </DialogDescription>
+                </DialogHeader>
+                <div className="p-8 flex flex-col justify-center items-center">
+                    <Select
+                        onValueChange={(newTheme) => {
+                            setTheme(newTheme);
+                            close();
+                        }}
+                    >
+                        <SelectTrigger className="w-[300px]">
+                            <SelectValue placeholder="Select a theme" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectGroup>
+                                <SelectLabel>Themes</SelectLabel>
+                                {defaultSupportedThemes.map((o) => {
+                                    return (
+                                        <SelectItem
+                                            key={o}
+                                            value={o}
+                                            onClick={() => {
+                                                setTheme(o);
+                                                close();
+                                            }}
+                                        >
+                                            {o}
+                                        </SelectItem>
+                                    );
+                                })}
+                                        <SelectItem
+                                            key={"ulld"}
+                                            value={"ulld"}
+                                            onClick={() => {
+                                                setTheme("ulld");
+                                                close();
+                                            }}
+                                        >
+                                            Ulld
+                                        </SelectItem>
+                            </SelectGroup>
+                        </SelectContent>
+                    </Select>
+                </div>
+            </DialogContent>
+        </Dialog>
     );
 };
 
 const ThemeMenu = () => {
     const [open, setOpen] = useState(false);
-    const vp = useViewport();
+    const isModal = useMediaQuery({ minWidth: breakpoint });
     useEventListener("show-theme-modal", () => setOpen(true));
-    return Boolean(vp && vp.window.width > breakpoint) ? (
+
+    return isModal ? (
         <ThemeMenuModal open={open} close={() => setOpen(false)} />
     ) : (
         <ThemeMenuDrawer open={open} close={() => setOpen(false)} />

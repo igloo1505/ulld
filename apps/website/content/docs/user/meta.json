@@ -2,6 +2,7 @@
   "title": "User",
   "root": true,
   "pages": [
+    "index",
     "introToJsx",
     "tips",
     "cli",

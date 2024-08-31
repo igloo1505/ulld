@@ -2,6 +2,7 @@
   "title": "Developer",
   "root": true,
   "pages": [
+    "index",
     "important",
     "events",
     "parsingFunctions",

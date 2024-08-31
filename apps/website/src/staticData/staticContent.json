@@ -57,7 +57,7 @@
     },
     "demos": {
       "main": "/demos",
-      "myNotes": "/myWork/onTheGravitationalNatureOfTime",
+      "myNotes": "/myWork",
       "plots": "/demos/plots",
       "layouts": "/demos/layouts",
       "media": "/demos/media",

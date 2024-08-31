@@ -1,5 +1,7 @@
 import type { getPage } from "#/fumaDocs/sources/main";
+import { DocsLayout } from "fumadocs-ui/layout";
 import { DocsPageProps } from "fumadocs-ui/page";
+import { ComponentPropsWithoutRef } from "react";
 
 type TocType = DocsPageProps["toc"];
 
@@ -43,3 +45,6 @@ export type PageType = {
         category?: string;
     };
 } & ReturnType<typeof getPage>;
+
+
+export type BaseLayoutProps = ComponentPropsWithoutRef<typeof DocsLayout>
