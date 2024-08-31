@@ -87,7 +87,7 @@ const DocsPageInternal = ({
                     {page.data.title}
                 </h1>
             )}
-          <DocsDescription>{page.data.description}</DocsDescription>
+                {page.data.description && <DocsDescription>{page.data.description}</DocsDescription>}
             <MDXContent code={page.data.body} components={components as any} />
             <ApplyMathjaxBandaid container={id} />
         </>

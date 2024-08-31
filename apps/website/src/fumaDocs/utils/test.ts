@@ -5,11 +5,11 @@ export const getLatexTocEntries = (
     toc: DocsPageProps["toc"] = [],
     content: string,
 ) => {
-    let titles = content.split("\n").filter((f) => f.trim().startsWith("#"));
+    let titles = content.split("\n").filter((f) => f.startsWith("#"));
     let t: DocsPageProps["toc"] = [];
     if (toc.length !== titles.length) {
         console.error(
-            `Found different lengths for the toc. Fumadocs found ${toc.length} entries, and you found ${titles.length}.`,
+            `Found different lengths for the toc. Fumadocs found ${toc.length} entries, and you found ${titles.length} for titles ${titles.join("\n")}`,
         );
     }
     toc.forEach((entry, i) => {
