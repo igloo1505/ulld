@@ -24,6 +24,7 @@ const utilFields = (z: typeof _zod) => {
         id: z.string().optional(),
         titleCenter: z.boolean().default(false),
         noTitle: z.boolean().default(false),
+        hideDescription: z.boolean().default(false),
         category: z.string().optional(),
     } as any;
 };
