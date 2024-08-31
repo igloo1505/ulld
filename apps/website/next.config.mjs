@@ -32,10 +32,11 @@ const withPWA = nextPwa({
     }),
 });
 
-
-/** @type {import('next').NextConfig} */
-const config = withContentCollections(
-    withPWA({
+// @ts-check
+/**
+* @type {import('next').NextConfig}
+*/
+const configData = {
         typescript: {
             ignoreBuildErrors: true, // HACK: For development only.
             tsconfigPath: "tsconfig.json",
@@ -47,6 +48,7 @@ const config = withContentCollections(
             "drei",
             "glsify",
             "monaco-editor",
+            "shiki",
             "@ulld/api",
             "@ulld/base-configs",
             "@ulld/calendar",
@@ -158,7 +160,11 @@ const config = withContentCollections(
             });
             return config;
         },
-    }),
+}
+
+
+const config = withContentCollections(
+    withPWA(configData),
 );
 
 // Make sure the top level wrapper is from content-collection. That wrapper returns a promise and other wrappers won't accept it.

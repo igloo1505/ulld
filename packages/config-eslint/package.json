@@ -33,7 +33,6 @@
   ],
   "license": "MIT",
   "packageManager": "pnpm@9.4.0",
-  "peerDependencies": {},
   "private": false,
   "publishConfig": {
     "access": "public"

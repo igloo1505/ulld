@@ -188,7 +188,7 @@ importers:
         version: 10.2.7(@types/babel__core@7.20.5)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(webpack@5.93.0(@swc/core@1.7.3(@swc/helpers@0.5.12))(esbuild@0.20.2))
       '@fumadocs/content-collections':
         specifier: 1.0.3
-        version: 1.0.3(@content-collections/core@0.6.4(typescript@5.5.4))(@content-collections/mdx@0.1.3(@content-collections/core@0.6.4(typescript@5.5.4))(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(fumadocs-core@12.4.2(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
+        version: 1.0.3(@content-collections/core@0.6.4(typescript@5.5.4))(@content-collections/mdx@0.1.3(@content-collections/core@0.6.4(typescript@5.5.4))(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(fumadocs-core@13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       '@google/model-viewer':
         specifier: ^3.4.0
         version: 3.5.0(three@0.163.0)
@@ -252,15 +252,6 @@ importers:
       '@tailwindcss/typography':
         specifier: ^0.5.13
         version: 0.5.13(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4)))
-      '@types/jest':
-        specifier: ^29.5.11
-        version: 29.5.12
-      '@types/mathjax':
-        specifier: ^0.0.40
-        version: 0.0.40
-      '@types/three':
-        specifier: ^0.162.0
-        version: 0.162.0
       '@ulld/api':
         specifier: workspace:*
         version: link:../../packages/api
@@ -361,20 +352,20 @@ importers:
         specifier: ^6.2.0
         version: 6.2.0(webpack@5.93.0(@swc/core@1.7.3(@swc/helpers@0.5.12))(esbuild@0.20.2))
       fumadocs-core:
-        specifier: 12.4.2
-        version: 12.4.2(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 13.4.1
+        version: 13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       fumadocs-docgen:
-        specifier: ^1.0.2
+        specifier: 1.1.0
         version: 1.1.0(typescript@5.5.4)
       fumadocs-twoslash:
-        specifier: ^1.1.0
-        version: 1.1.1(fumadocs-ui@12.4.2(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4))))(shiki@1.12.0)(typescript@5.5.4)
+        specifier: 1.1.2
+        version: 1.1.2(fumadocs-ui@13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4))))(shiki@1.12.0)(typescript@5.5.4)
       fumadocs-typescript:
-        specifier: ^2.0.1
+        specifier: 2.0.1
         version: 2.0.1(typescript@5.5.4)
       fumadocs-ui:
-        specifier: 12.4.2
-        version: 12.4.2(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4)))
+        specifier: 13.4.1
+        version: 13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4)))
       fuse.js:
         specifier: ^7.0.0
         version: 7.0.0
@@ -397,8 +388,8 @@ importers:
         specifier: ^0.9.35
         version: 0.9.35(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       lucide-react:
-        specifier: '*'
-        version: 0.428.0(react@18.2.0)
+        specifier: ^0.344.0
+        version: 0.344.0(react@18.2.0)
       maath:
         specifier: ^0.10.7
         version: 0.10.8(@types/three@0.162.0)(three@0.163.0)
@@ -507,6 +498,16 @@ importers:
       unicode-emoji-json:
         specifier: ^0.6.0
         version: 0.6.0
+    devDependencies:
+      '@types/jest':
+        specifier: ^29.5.11
+        version: 29.5.12
+      '@types/mathjax':
+        specifier: ^0.0.40
+        version: 0.0.40
+      '@types/three':
+        specifier: ^0.162.0
+        version: 0.162.0
 
   packages/api:
     dependencies:
@@ -830,11 +831,11 @@ importers:
         specifier: 0.7.15
         version: 0.7.15(encoding@0.1.13)
       fumadocs-core:
-        specifier: ^12.3.5
-        version: 12.5.6(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 13.4.1
+        version: 13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       fumadocs-ui:
-        specifier: ^12.3.5
-        version: 12.5.6(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 13.4.1
+        version: 13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       next:
         specifier: 14.2.3
         version: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
@@ -1182,14 +1183,14 @@ importers:
         specifier: ^0.2.0
         version: 0.2.1(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       fumadocs-core:
-        specifier: ^12.3.5
-        version: 12.5.6(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 13.4.1
+        version: 13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       fumadocs-ui:
-        specifier: ^12.3.5
-        version: 12.5.6(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 13.4.1
+        version: 13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       lucide-react:
         specifier: latest
-        version: 0.436.0(react@18.2.0)
+        version: 0.437.0(react@18.2.0)
       next:
         specifier: 14.2.3
         version: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
@@ -2303,15 +2304,9 @@ importers:
       better-react-mathjax:
         specifier: 2.0.3
         version: 2.0.3(react@18.2.0)
-      chai:
-        specifier: ^5.1.0
-        version: 5.1.1
       clsx:
         specifier: ^2.1.0
         version: 2.1.1
-      cypress:
-        specifier: ^13.7.1
-        version: 13.13.1
       dayjs:
         specifier: ^1.11.10
         version: 1.11.12
@@ -2345,9 +2340,6 @@ importers:
       mathjax:
         specifier: ^3.2.2
         version: 3.2.2
-      mocha:
-        specifier: ^10.3.0
-        version: 10.7.0
       monaco-editor:
         specifier: 0.49.0
         version: 0.49.0
@@ -2444,9 +2436,6 @@ importers:
       tinycolor2:
         specifier: 1.6.0
         version: 1.6.0
-      ts-jest:
-        specifier: ^29.1.2
-        version: 29.2.3(@babel/core@7.24.9)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.9))(esbuild@0.21.5)(jest@29.7.0(@types/node@22.5.1)(babel-plugin-macros@3.1.0)(node-notifier@10.0.1)(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@22.5.1)(typescript@5.5.4)))(typescript@5.5.4)
       zod:
         specifier: ^3.22.4
         version: 3.22.4
@@ -2466,6 +2455,18 @@ importers:
       '@testing-library/user-event':
         specifier: ^14.5.2
         version: 14.5.2(@testing-library/dom@9.3.4)
+      chai:
+        specifier: ^5.1.0
+        version: 5.1.1
+      cypress:
+        specifier: ^13.7.1
+        version: 13.13.1
+      mocha:
+        specifier: ^10.3.0
+        version: 10.7.0
+      ts-jest:
+        specifier: ^29.1.2
+        version: 29.2.3(@babel/core@7.24.9)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.9))(esbuild@0.21.5)(jest@29.7.0(@types/node@22.5.1)(babel-plugin-macros@3.1.0)(node-notifier@10.0.1)(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@22.5.1)(typescript@5.5.4)))(typescript@5.5.4)
 
   packages/health-tracking:
     dependencies:
@@ -3576,9 +3577,6 @@ importers:
       '@react-three/fiber':
         specifier: 8.16.3
         version: 8.16.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.163.0)
-      '@types/mdx':
-        specifier: ^2.0.11
-        version: 2.0.13
       '@ulld/api':
         specifier: workspace:*
         version: link:../api
@@ -3624,6 +3622,10 @@ importers:
       typescript:
         specifier: ^5.5.2
         version: 5.5.4
+    devDependencies:
+      '@types/mdx':
+        specifier: ^2.0.11
+        version: 2.0.13
 
   packages/snippets:
     dependencies:
@@ -3679,11 +3681,11 @@ importers:
         specifier: workspace:*
         version: link:../utilities
       fumadocs-core:
-        specifier: ^12.3.5
-        version: 12.5.6(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 13.4.1
+        version: 13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       fumadocs-ui:
-        specifier: ^12.3.5
-        version: 12.5.6(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 13.4.1
+        version: 13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       monaco-editor:
         specifier: 0.49.0
         version: 0.49.0
@@ -4471,11 +4473,11 @@ importers:
         specifier: 2.1.2
         version: 2.1.2
       fumadocs-core:
-        specifier: ^12.3.5
-        version: 12.5.6(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 13.4.1
+        version: 13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       fumadocs-ui:
-        specifier: ^12.3.5
-        version: 12.5.6(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@20.14.13)(typescript@5.5.4)))
+        specifier: 13.4.1
+        version: 13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@20.14.13)(typescript@5.5.4)))
       glob-to-regexp:
         specifier: 0.4.1
         version: 0.4.1
@@ -4737,21 +4739,6 @@ importers:
       '@tanstack/react-table':
         specifier: 8.13.2
         version: 8.13.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@testing-library/cypress':
-        specifier: ^10.0.1
-        version: 10.0.2(cypress@13.13.1)
-      '@testing-library/dom':
-        specifier: ^9.3.4
-        version: 9.3.4
-      '@testing-library/jest-dom':
-        specifier: ^6.4.2
-        version: 6.4.8
-      '@testing-library/react':
-        specifier: 14.2.2
-        version: 14.2.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@testing-library/user-event':
-        specifier: ^14.5.2
-        version: 14.5.2(@testing-library/dom@9.3.4)
       '@ulld/database':
         specifier: workspace:*
         version: link:../database
@@ -4770,84 +4757,39 @@ importers:
       better-react-mathjax:
         specifier: 2.0.3
         version: 2.0.3(react@18.2.0)
-      chai:
-        specifier: ^5.1.0
-        version: 5.1.1
       color-scheme:
         specifier: ^1.0.1
         version: 1.0.1
       coloring-palette:
         specifier: ^1.0.0
         version: 1.0.0
-      cypress:
-        specifier: ^13.7.1
-        version: 13.13.1
       dayjs:
         specifier: ^1.11.10
         version: 1.11.12
-      eslint-plugin-jest-dom:
-        specifier: ^5.2.0
-        version: 5.4.0(@testing-library/dom@9.3.4)(eslint@9.8.0)
-      eslint-plugin-testing-library:
-        specifier: ^6.2.0
-        version: 6.2.2(eslint@9.8.0)(typescript@5.5.4)
       fumadocs-core:
-        specifier: ^13.2.2
-        version: 13.2.2(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 13.4.1
+        version: 13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
       jaro-winkler:
         specifier: ^0.2.8
         version: 0.2.8
-      jest:
-        specifier: ^29.7.0
-        version: 29.7.0(@types/node@22.5.1)(babel-plugin-macros@3.1.0)(node-notifier@10.0.1)(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@22.5.1)(typescript@5.5.4))
-      jest-environment-jsdom:
-        specifier: ^29.7.0
-        version: 29.7.0(bufferutil@4.0.8)(canvas@2.11.2)(utf-8-validate@6.0.3)
-      mocha:
-        specifier: ^10.3.0
-        version: 10.7.0
       monaco-editor:
         specifier: 0.49.0
         version: 0.49.0
-      next:
-        specifier: 14.2.3
-        version: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
       nice-color-palettes:
         specifier: ^3.0.0
         version: 3.0.0
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-test-renderer:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
       rehype-mathjax:
         specifier: ^6.0.0
         version: 6.0.0(bufferutil@4.0.8)(canvas@2.11.2)(utf-8-validate@6.0.3)
-      rtl-simple-queries:
-        specifier: ^1.0.1
-        version: 1.0.1(@testing-library/react@14.2.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       shiki:
         specifier: 1.12.0
         version: 1.12.0
-      supertest:
-        specifier: ^6.3.4
-        version: 6.3.4
-      supertest-session:
-        specifier: ^5.0.1
-        version: 5.0.1(supertest@6.3.4)
       tinycolor2:
         specifier: 1.6.0
         version: 1.6.0
-      ts-jest:
-        specifier: ^29.1.2
-        version: 29.2.3(@babel/core@7.24.9)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.9))(esbuild@0.21.5)(jest@29.7.0(@types/node@22.5.1)(babel-plugin-macros@3.1.0)(node-notifier@10.0.1)(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@22.5.1)(typescript@5.5.4)))(typescript@5.5.4)
       zod:
         specifier: ^3.22.4
         version: 3.22.4
@@ -4864,9 +4806,57 @@ importers:
       '@rollup/plugin-typescript':
         specifier: ^11.1.6
         version: 11.1.6(rollup@4.21.2)(tslib@2.6.3)(typescript@5.5.4)
+      '@testing-library/cypress':
+        specifier: ^10.0.1
+        version: 10.0.2(cypress@13.13.1)
+      '@testing-library/dom':
+        specifier: ^9.3.4
+        version: 9.3.4
+      '@testing-library/jest-dom':
+        specifier: ^6.4.2
+        version: 6.4.8
+      '@testing-library/react':
+        specifier: ^14.2.2
+        version: 14.2.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@testing-library/user-event':
+        specifier: ^14.5.2
+        version: 14.5.2(@testing-library/dom@9.3.4)
       '@types/jaro-winkler':
         specifier: ^0.2.3
         version: 0.2.3
+      chai:
+        specifier: ^5.1.0
+        version: 5.1.1
+      cypress:
+        specifier: ^13.7.1
+        version: 13.13.1
+      eslint-plugin-jest-dom:
+        specifier: ^5.2.0
+        version: 5.4.0(@testing-library/dom@9.3.4)(eslint@9.8.0)
+      eslint-plugin-testing-library:
+        specifier: ^6.2.0
+        version: 6.2.2(eslint@9.8.0)(typescript@5.5.4)
+      jest:
+        specifier: ^29.7.0
+        version: 29.7.0(@types/node@22.5.1)(babel-plugin-macros@3.1.0)(node-notifier@10.0.1)(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@22.5.1)(typescript@5.5.4))
+      jest-environment-jsdom:
+        specifier: ^29.7.0
+        version: 29.7.0(bufferutil@4.0.8)(canvas@2.11.2)(utf-8-validate@6.0.3)
+      mocha:
+        specifier: ^10.3.0
+        version: 10.7.0
+      next:
+        specifier: ^14.2.3
+        version: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-test-renderer:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
       rollup:
         specifier: ^4.21.2
         version: 4.21.2
@@ -4879,6 +4869,18 @@ importers:
       rollup-plugin-visualizer:
         specifier: ^5.12.0
         version: 5.12.0(rollup@4.21.2)
+      rtl-simple-queries:
+        specifier: ^1.0.1
+        version: 1.0.1(@testing-library/react@14.2.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      supertest:
+        specifier: ^6.3.4
+        version: 6.3.4
+      supertest-session:
+        specifier: ^5.0.1
+        version: 5.0.1(supertest@6.3.4)
+      ts-jest:
+        specifier: ^29.1.2
+        version: 29.2.3(@babel/core@7.24.9)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.9))(esbuild@0.21.5)(jest@29.7.0(@types/node@22.5.1)(babel-plugin-macros@3.1.0)(node-notifier@10.0.1)(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@22.5.1)(typescript@5.5.4)))(typescript@5.5.4)
 
   packages/whiteboard:
     dependencies:
@@ -9873,6 +9875,9 @@ packages:
   '@shikijs/core@1.13.0':
     resolution: {integrity: sha512-Mj5NVfbAXcD1GnwOTSPl8hBn/T8UDpfFQTptp+p41n/CbUcJtOq98WaRD7Lz3hCglYotUTHUWtzu3JhK6XlkAA==}
 
+  '@shikijs/core@1.15.1':
+    resolution: {integrity: sha512-DwkQTDNlhr7PwZMJswdvWIKts+2mqjIn8txByr88fhBRBtUSsIQR43RRoATjRrbeu4hyNTSTMBdxgp/vlxnxvA==}
+
   '@shikijs/rehype@1.12.0':
     resolution: {integrity: sha512-DX42LdI9OB/0X5euLjRJfgoYZukqGn1GBkgiyvQkv4bHDCST0BzQMcdL80erp5as9R6bp7+2/cKlA+TmQTySbQ==}
 
@@ -9887,6 +9892,9 @@ packages:
 
   '@shikijs/twoslash@1.12.0':
     resolution: {integrity: sha512-SX0NpsTYnO26mpWCu2asByzgWnlMP5NPzrhYNGyqS/AQI14sM1AL3/Egc3F2x5u2wa7I9IyokViXOiaPNL46+Q==}
+
+  '@shikijs/twoslash@1.15.1':
+    resolution: {integrity: sha512-mk+Z1qZrFrkpajTveDEx6Kz28OGFre3S1OlRt9mUt1aGaWG16WwgCY/OherQ5ZVY4i7c/f1fThe6vKL7hRjNdA==}
 
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
@@ -10149,6 +10157,11 @@ packages:
     resolution: {integrity: sha512-ADGcJ8dX21dVVHIwTRgzrcunY6YY9uSlAHHGVKvkA+vLc5qLwEszvKts40lx7z0qc4clpjclwLeK5rVCV2P/uw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
+
+  '@tailwindcss/typography@0.5.15':
+    resolution: {integrity: sha512-AqhlCXl+8grUz8uqExv5OTtgpjuVIwFTSXTrh8y9/pw6q2ek7fJ+Y8ZEVw7EB2DCcuCOtEjf9w3+J3rzts01uA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20'
 
   '@tanstack/eslint-plugin-query@4.38.0':
     resolution: {integrity: sha512-KmcrnjTQzONBqxNWSVKyPNi5tLq0URvIiWThE9HIK5qePGtB0VqoHfOsn4nuGJD268xDNDpFQjQiko9mMa5iLQ==}
@@ -14513,22 +14526,8 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  fumadocs-core@12.4.2:
-    resolution: {integrity: sha512-TeR9Ay3cbCryfUOLiA/hYP11E6tz3IdkrwHl08P1djbNe6BM4UJRnpi6KDEKJB0x8KbAzqDddfhb8uyIObcqlA==}
-    peerDependencies:
-      next: '>= 14.1.0'
-      react: 18.2.0
-      react-dom: 18.2.0
-
-  fumadocs-core@12.5.6:
-    resolution: {integrity: sha512-sKbVq+Yrf7uLZD/pHojLGwClRxuOyjR1NaIlm/cO9dCaEO6n568NTom/2rEn+jyhII+LbGTJqfIJmktBW6rgNA==}
-    peerDependencies:
-      next: '>= 14.1.0'
-      react: 18.2.0
-      react-dom: 18.2.0
-
-  fumadocs-core@13.2.2:
-    resolution: {integrity: sha512-qG31vguI8vc4ZY+L5lnWNchZi6HfKnZ7/NBAQEFM2vezsl1jSc7bKLa874scTWwQlCYUzthmRkJapRG/tESFMw==}
+  fumadocs-core@13.4.1:
+    resolution: {integrity: sha512-0Lr1rrBXaA1in4HpzDNARxOwnJbYWsbeyah9vaRQliM7H3jaDHSERt5D9K8qcWRv8X+qQy2WTOlUwBDPjdwRPQ==}
     peerDependencies:
       next: '>= 14.1.0'
       react: 18.2.0
@@ -14537,8 +14536,8 @@ packages:
   fumadocs-docgen@1.1.0:
     resolution: {integrity: sha512-476elxwVBUnZV9LeTomGS0Tt37gNI7IRfLHl0V8sWBzEowgQ63f9sVFWFwQljoVKYTCIPP5ic5k/XVW0LkGMhw==}
 
-  fumadocs-twoslash@1.1.1:
-    resolution: {integrity: sha512-wUJmB5nny6EqlM7w2UHxVAZMDnegrOxW2gs9Vk6R1nR9kg9zHJ5zGBRf+mSpV6LYu6g5hWCiDC/8PHrLpo0ZUw==}
+  fumadocs-twoslash@1.1.2:
+    resolution: {integrity: sha512-uXfkFhyL5bLMWLW739ILyfUVquoltY97qGJg68yEhTMpVAi9RyjeXSow4toFF84yFZgnFdkVwgv2zdTSmoi5KA==}
     peerDependencies:
       fumadocs-ui: 13.x.x
       shiki: 1.x.x
@@ -14548,15 +14547,8 @@ packages:
     peerDependencies:
       typescript: ^5.5.2
 
-  fumadocs-ui@12.4.2:
-    resolution: {integrity: sha512-KEfB2QEmOdBy5PlzCrS8Wtp+ilZYR5NFNMLcmxL5tq6erdAwYUHDZkL18TpBw7j5yZ9YbC2buIMdEG6tuNTfiQ==}
-    peerDependencies:
-      next: '>= 14.1.0'
-      react: 18.2.0
-      react-dom: 18.2.0
-
-  fumadocs-ui@12.5.6:
-    resolution: {integrity: sha512-8kYsrSCbRuo2rS09xTAb5HejtH8QDsSlqWGC8k+D9GI4WdAW7kAQCg6k9idnhhP/nq3QOsyMtvpoUGkje91bpQ==}
+  fumadocs-ui@13.4.1:
+    resolution: {integrity: sha512-n/MbnvwkuR+e7uL8SXZqZFwzzyoG7oEb6EblDxbja5vQKhgBoux45Xo9ldZP7Btwo7/2QzE+As1vATpK8x5QHA==}
     peerDependencies:
       next: '>= 14.1.0'
       react: 18.2.0
@@ -16562,13 +16554,8 @@ packages:
   ltgt@2.2.1:
     resolution: {integrity: sha512-AI2r85+4MquTw9ZYqabu4nMwy9Oftlfa/e/52t9IjtfG+mGBbTNdAoZ3RQKLHR6r0wQnwZnPIEh/Ya6XTWAKNA==}
 
-  lucide-react@0.400.0:
-    resolution: {integrity: sha512-rpp7pFHh3Xd93KHixNgB0SqThMHpYNzsGUu69UaQbSZ75Q/J3m5t6EhKyMT3m4w2WOxmJ2mY0tD3vebnXqQryQ==}
-    peerDependencies:
-      react: 18.2.0
-
-  lucide-react@0.414.0:
-    resolution: {integrity: sha512-Krr/MHg9AWoJc52qx8hyJ64X9++JNfS1wjaJviLM1EP/68VNB7Tv0VMldLCB1aUe6Ka9QxURPhQm/eB6cqOM3A==}
+  lucide-react@0.344.0:
+    resolution: {integrity: sha512-6YyBnn91GB45VuVT96bYCOKElbJzUHqp65vX8cDcu55MQL9T969v4dhGClpljamuI/+KMO9P6w9Acq1CVQGvIQ==}
     peerDependencies:
       react: 18.2.0
 
@@ -16577,8 +16564,8 @@ packages:
     peerDependencies:
       react: 18.2.0
 
-  lucide-react@0.436.0:
-    resolution: {integrity: sha512-N292bIxoqm1aObAg0MzFtvhYwgQE6qnIOWx/GLj5ONgcTPH6N0fD9bVq/GfdeC9ZORBXozt/XeEKDpiB3x3vlQ==}
+  lucide-react@0.437.0:
+    resolution: {integrity: sha512-RXQq6tnm1FlXDUtOwLaoXET2TOEGpQULrQlPOjGHgIVsPhicHNat9sWF33OAe2UCLMFiWF1oL+FtAg43BqVY4Q==}
     peerDependencies:
       react: 18.2.0
 
@@ -17689,6 +17676,10 @@ packages:
 
   npm-to-yarn@2.2.1:
     resolution: {integrity: sha512-O/j/ROyX0KGLG7O6Ieut/seQ0oiTpHF2tXAcFbpdTLQFiaNtkyTXXocM1fwpaa60dg1qpWj0nHlbNhx6qwuENQ==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  npm-to-yarn@3.0.0:
+    resolution: {integrity: sha512-76YnmsbfrYp0tMsWxM0RNX0Vs+x8JxpJGu6B/jDn4lW8+laiTcKmKi9MeMh4UikO4RkJ1oqURoDy9bXJmMXS6A==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
   npm@10.5.0:
@@ -20652,8 +20643,8 @@ packages:
   tailwind-merge@1.14.0:
     resolution: {integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==}
 
-  tailwind-merge@2.4.0:
-    resolution: {integrity: sha512-49AwoOQNKdqKPd9CViyH5wJoSKsCDjUlzL8DxuGp3P1FsGY36NJDAa18jLZcaHAUUuTj+JB8IAo8zWgBNvBF7A==}
+  tailwind-merge@2.5.2:
+    resolution: {integrity: sha512-kjEBm+pvD+6eAwzJL2Bi+02/9LFLal1Gs61+QB7HvTfQQ0aXwC5LGT8PEt1gS0CWKktKe6ysPTAy3cBC5MeiIg==}
 
   tailwindcss-animate@1.0.7:
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
@@ -24558,11 +24549,11 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@fumadocs/content-collections@1.0.3(@content-collections/core@0.6.4(typescript@5.5.4))(@content-collections/mdx@0.1.3(@content-collections/core@0.6.4(typescript@5.5.4))(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(fumadocs-core@12.4.2(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
+  '@fumadocs/content-collections@1.0.3(@content-collections/core@0.6.4(typescript@5.5.4))(@content-collections/mdx@0.1.3(@content-collections/core@0.6.4(typescript@5.5.4))(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(fumadocs-core@13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
     dependencies:
       '@content-collections/core': 0.6.4(typescript@5.5.4)
       '@content-collections/mdx': 0.1.3(@content-collections/core@0.6.4(typescript@5.5.4))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      fumadocs-core: 12.4.2(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      fumadocs-core: 13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       rehype-img-size: 1.0.1
 
   '@google/model-viewer@3.5.0(three@0.163.0)':
@@ -28446,6 +28437,10 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.4
 
+  '@shikijs/core@1.15.1':
+    dependencies:
+      '@types/hast': 3.0.4
+
   '@shikijs/rehype@1.12.0':
     dependencies:
       '@shikijs/transformers': 1.12.0
@@ -28475,6 +28470,14 @@ snapshots:
   '@shikijs/twoslash@1.12.0(typescript@5.5.4)':
     dependencies:
       '@shikijs/core': 1.12.0
+      twoslash: 0.2.9(typescript@5.5.4)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+
+  '@shikijs/twoslash@1.15.1(typescript@5.5.4)':
+    dependencies:
+      '@shikijs/core': 1.15.1
       twoslash: 0.2.9(typescript@5.5.4)
     transitivePeerDependencies:
       - supports-color
@@ -28754,14 +28757,6 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4))
 
-  '@tailwindcss/typography@0.5.13(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@20.14.13)(typescript@5.5.4)))':
-    dependencies:
-      lodash.castarray: 4.4.0
-      lodash.isplainobject: 4.0.6
-      lodash.merge: 4.6.2
-      postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@20.14.13)(typescript@5.5.4))
-
   '@tailwindcss/typography@0.5.13(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@22.5.1)(typescript@5.5.4)))':
     dependencies:
       lodash.castarray: 4.4.0
@@ -28769,6 +28764,22 @@ snapshots:
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@22.5.1)(typescript@5.5.4))
+
+  '@tailwindcss/typography@0.5.15(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4)))':
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      postcss-selector-parser: 6.0.10
+      tailwindcss: 3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4))
+
+  '@tailwindcss/typography@0.5.15(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@20.14.13)(typescript@5.5.4)))':
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      postcss-selector-parser: 6.0.10
+      tailwindcss: 3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@20.14.13)(typescript@5.5.4))
 
   '@tanstack/eslint-plugin-query@4.38.0(eslint@9.8.0)':
     dependencies:
@@ -34058,40 +34069,17 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  fumadocs-core@12.4.2(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  fumadocs-core@13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@formatjs/intl-localematcher': 0.5.4
-      '@shikijs/rehype': 1.12.0
-      '@shikijs/transformers': 1.12.0
+      '@shikijs/rehype': 1.13.0
+      '@shikijs/transformers': 1.13.0
       flexsearch: 0.7.21
       github-slugger: 2.0.0
-      negotiator: 0.6.3
-      next: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
-      npm-to-yarn: 2.2.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-remove-scroll: 2.5.10(@types/react@18.2.79)(react@18.2.0)
-      remark: 15.0.1
-      remark-gfm: 4.0.0
-      remark-mdx: 3.0.1
-      scroll-into-view-if-needed: 3.1.0
-      shiki: 1.12.0
-      swr: 2.2.5(react@18.2.0)
-      unist-util-visit: 5.0.0
-    transitivePeerDependencies:
-      - '@types/react'
-      - supports-color
-
-  fumadocs-core@12.5.6(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
-    dependencies:
-      '@formatjs/intl-localematcher': 0.5.4
-      '@shikijs/rehype': 1.12.0
-      '@shikijs/transformers': 1.12.0
-      flexsearch: 0.7.21
-      github-slugger: 2.0.0
+      image-size: 1.1.1
       negotiator: 0.6.3
       next: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1)
-      npm-to-yarn: 2.2.1
+      npm-to-yarn: 3.0.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-remove-scroll: 2.5.10(@types/react@18.2.79)(react@18.2.0)
@@ -34099,38 +34087,14 @@ snapshots:
       remark-gfm: 4.0.0
       remark-mdx: 3.0.1
       scroll-into-view-if-needed: 3.1.0
-      shiki: 1.12.0
+      shiki: 1.13.0
       swr: 2.2.5(react@18.2.0)
       unist-util-visit: 5.0.0
     transitivePeerDependencies:
       - '@types/react'
       - supports-color
 
-  fumadocs-core@12.5.6(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
-    dependencies:
-      '@formatjs/intl-localematcher': 0.5.4
-      '@shikijs/rehype': 1.12.0
-      '@shikijs/transformers': 1.12.0
-      flexsearch: 0.7.21
-      github-slugger: 2.0.0
-      negotiator: 0.6.3
-      next: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
-      npm-to-yarn: 2.2.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-remove-scroll: 2.5.10(@types/react@18.2.79)(react@18.2.0)
-      remark: 15.0.1
-      remark-gfm: 4.0.0
-      remark-mdx: 3.0.1
-      scroll-into-view-if-needed: 3.1.0
-      shiki: 1.12.0
-      swr: 2.2.5(react@18.2.0)
-      unist-util-visit: 5.0.0
-    transitivePeerDependencies:
-      - '@types/react'
-      - supports-color
-
-  fumadocs-core@13.2.2(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  fumadocs-core@13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@formatjs/intl-localematcher': 0.5.4
       '@shikijs/rehype': 1.13.0
@@ -34140,7 +34104,7 @@ snapshots:
       image-size: 1.1.1
       negotiator: 0.6.3
       next: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
-      npm-to-yarn: 2.2.1
+      npm-to-yarn: 3.0.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-remove-scroll: 2.5.10(@types/react@18.2.79)(react@18.2.0)
@@ -34166,10 +34130,10 @@ snapshots:
       - supports-color
       - typescript
 
-  fumadocs-twoslash@1.1.1(fumadocs-ui@12.4.2(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4))))(shiki@1.12.0)(typescript@5.5.4):
+  fumadocs-twoslash@1.1.2(fumadocs-ui@13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4))))(shiki@1.12.0)(typescript@5.5.4):
     dependencies:
-      '@shikijs/twoslash': 1.12.0(typescript@5.5.4)
-      fumadocs-ui: 12.4.2(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4)))
+      '@shikijs/twoslash': 1.15.1(typescript@5.5.4)
+      fumadocs-ui: 13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4)))
       mdast-util-from-markdown: 2.0.1
       mdast-util-gfm: 3.0.0
       mdast-util-to-hast: 13.2.0
@@ -34189,7 +34153,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  fumadocs-ui@12.4.2(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4))):
+  fumadocs-ui@13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@20.14.13)(typescript@5.5.4))):
     dependencies:
       '@radix-ui/react-accordion': 1.2.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@radix-ui/react-collapsible': 1.1.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -34198,51 +34162,25 @@ snapshots:
       '@radix-ui/react-popover': 1.1.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@radix-ui/react-scroll-area': 1.1.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@radix-ui/react-tabs': 1.1.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@tailwindcss/typography': 0.5.13(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4)))
+      '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@20.14.13)(typescript@5.5.4)))
       class-variance-authority: 0.7.0
       cmdk: 1.0.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      fumadocs-core: 12.4.2(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      lucide-react: 0.400.0(react@18.2.0)
-      next: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
-      next-themes: 0.3.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-medium-image-zoom: 5.2.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      tailwind-merge: 2.4.0
-    transitivePeerDependencies:
-      - '@types/react'
-      - '@types/react-dom'
-      - supports-color
-      - tailwindcss
-
-  fumadocs-ui@12.5.6(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@20.14.13)(typescript@5.5.4))):
-    dependencies:
-      '@radix-ui/react-accordion': 1.2.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@radix-ui/react-collapsible': 1.1.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@radix-ui/react-dialog': 1.1.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@radix-ui/react-direction': 1.1.0(@types/react@18.2.79)(react@18.2.0)
-      '@radix-ui/react-popover': 1.1.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@radix-ui/react-scroll-area': 1.1.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@radix-ui/react-tabs': 1.1.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@tailwindcss/typography': 0.5.13(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@20.14.13)(typescript@5.5.4)))
-      class-variance-authority: 0.7.0
-      cmdk: 1.0.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      fumadocs-core: 12.5.6(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      lucide-react: 0.414.0(react@18.2.0)
+      fumadocs-core: 13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      lucide-react: 0.428.0(react@18.2.0)
       next: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1)
       next-themes: 0.3.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-medium-image-zoom: 5.2.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       swr: 2.2.5(react@18.2.0)
-      tailwind-merge: 2.4.0
+      tailwind-merge: 2.5.2
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
       - supports-color
       - tailwindcss
 
-  fumadocs-ui@12.5.6(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  fumadocs-ui@13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@radix-ui/react-accordion': 1.2.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@radix-ui/react-collapsible': 1.1.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -34251,18 +34189,45 @@ snapshots:
       '@radix-ui/react-popover': 1.1.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@radix-ui/react-scroll-area': 1.1.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@radix-ui/react-tabs': 1.1.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@tailwindcss/typography': 0.5.13(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@20.14.13)(typescript@5.5.4)))
+      '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@20.14.13)(typescript@5.5.4)))
       class-variance-authority: 0.7.0
       cmdk: 1.0.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      fumadocs-core: 12.5.6(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      lucide-react: 0.414.0(react@18.2.0)
+      fumadocs-core: 13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      lucide-react: 0.428.0(react@18.2.0)
       next: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
       next-themes: 0.3.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-medium-image-zoom: 5.2.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       swr: 2.2.5(react@18.2.0)
-      tailwind-merge: 2.4.0
+      tailwind-merge: 2.5.2
+    transitivePeerDependencies:
+      - '@types/react'
+      - '@types/react-dom'
+      - supports-color
+      - tailwindcss
+
+  fumadocs-ui@13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4))):
+    dependencies:
+      '@radix-ui/react-accordion': 1.2.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@radix-ui/react-collapsible': 1.1.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@radix-ui/react-dialog': 1.1.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@radix-ui/react-direction': 1.1.0(@types/react@18.2.79)(react@18.2.0)
+      '@radix-ui/react-popover': 1.1.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@radix-ui/react-scroll-area': 1.1.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@radix-ui/react-tabs': 1.1.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4)))
+      class-variance-authority: 0.7.0
+      cmdk: 1.0.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      fumadocs-core: 13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      lucide-react: 0.428.0(react@18.2.0)
+      next: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
+      next-themes: 0.3.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-medium-image-zoom: 5.2.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      swr: 2.2.5(react@18.2.0)
+      tailwind-merge: 2.5.2
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
@@ -37018,11 +36983,7 @@ snapshots:
   ltgt@2.2.1:
     optional: true
 
-  lucide-react@0.400.0(react@18.2.0):
-    dependencies:
-      react: 18.2.0
-
-  lucide-react@0.414.0(react@18.2.0):
+  lucide-react@0.344.0(react@18.2.0):
     dependencies:
       react: 18.2.0
 
@@ -37030,7 +36991,7 @@ snapshots:
     dependencies:
       react: 18.2.0
 
-  lucide-react@0.436.0(react@18.2.0):
+  lucide-react@0.437.0(react@18.2.0):
     dependencies:
       react: 18.2.0
 
@@ -38750,6 +38711,8 @@ snapshots:
       path-key: 4.0.0
 
   npm-to-yarn@2.2.1: {}
+
+  npm-to-yarn@3.0.0: {}
 
   npm@10.5.0: {}
 
@@ -42336,7 +42299,7 @@ snapshots:
 
   tailwind-merge@1.14.0: {}
 
-  tailwind-merge@2.4.0: {}
+  tailwind-merge@2.5.2: {}
 
   tailwindcss-animate@1.0.7(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@20.14.13)(typescript@5.5.4))):
     dependencies:

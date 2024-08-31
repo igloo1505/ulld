@@ -4,7 +4,6 @@ import { notFound, redirect } from "next/navigation";
 import { PageType } from "#/types/general";
 import DocsPageComponent from "#/components/docUtils/docsPage";
 
-
 const docsBodyId = "ulld-documentation-container";
 
 interface DocOutput {
@@ -18,29 +17,25 @@ interface DocOutput {
     };
 }
 
-
-
 const redirectMap: Record<string, string> = {
-    "user/components": "/docs/user/components/Academic/abstract"
-}
+    "user/components": "/docs/user/components/Academic/abstract",
+};
 
 export default function Page({ params }: { params: { slug?: string[] } }) {
-    const page: PageType | undefined = getPage(params.slug) as PageType | undefined
+    const page: PageType | undefined = getPage(params.slug) as
+        | PageType
+        | undefined;
 
     if (!page) {
-        let _slugPath = params.slug?.join("/")
-        if(_slugPath && _slugPath in redirectMap){
-            return redirect(redirectMap[_slugPath])
+        let _slugPath = params.slug?.join("/");
+        if (_slugPath && _slugPath in redirectMap) {
+            return redirect(redirectMap[_slugPath]);
         }
         notFound();
     }
 
-
-    return (
-        <DocsPageComponent page={page} id={docsBodyId} />
-    )
+    return <DocsPageComponent page={page} id={docsBodyId} />;
 }
-
 
 export function generateStaticParams() {
     return getPages().map((page) => ({
@@ -52,9 +47,9 @@ export function generateMetadata({ params }: { params: { slug?: string[] } }) {
     const page: DocOutput = getPage(params.slug) as unknown as DocOutput;
 
     if (!page) {
-        let _slugPath = params.slug?.join("/")
-        if(_slugPath && _slugPath in redirectMap){
-            return redirect(redirectMap[_slugPath])
+        let _slugPath = params.slug?.join("/");
+        if (_slugPath && _slugPath in redirectMap) {
+            return redirect(redirectMap[_slugPath]);
         }
         return notFound();
     }

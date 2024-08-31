@@ -105,31 +105,51 @@ const config = {
             packages: ["**"],
             pinVersion: "0.344.0"
         },
-        // PRIORITY: Look up the most recent versions of these fumadocs dependencies and adjust these.
+
         {
-            dependencies: ["@fumadocs-core"],
+            dependencies: ["tsx"],
             packages: ["**"],
-            pinVersion: "13.3.5"
+            pinVersion: "latest"
+        },
+
+        {
+            dependencies: ["gray-matter"],
+            packages: ["**"],
+            pinVersion: "latest"
+        },
+
+        {
+            dependencies: [
+                "@mdx-js/react",
+                "@mdx-js/mdx",
+            ],
+            packages: ["**"],
+            pinVersion: "3.0.1"
         },
         {
-            dependencies: ["@fumadocs-docgen"],
+            dependencies: ["fumadocs-core"],
             packages: ["**"],
-            pinVersion: "1.0.2"
+            pinVersion: "13.4.1"
         },
         {
-            dependencies: ["@fumadocs-twoslash"],
+            dependencies: ["fumadocs-docgen"],
             packages: ["**"],
             pinVersion: "1.1.0"
         },
         {
-            dependencies: ["@fumadocs-typescript"],
+            dependencies: ["fumadocs-twoslash"],
+            packages: ["**"],
+            pinVersion: "1.1.2"
+        },
+        {
+            dependencies: ["fumadocs-typescript"],
             packages: ["**"],
             pinVersion: "2.0.1"
         },
         {
-            dependencies: ["@fumadocs-ui"],
+            dependencies: ["fumadocs-ui"],
             packages: ["**"],
-            pinVersion: "12.3.5"
+            pinVersion: "13.4.1"
         },
     ],
 };

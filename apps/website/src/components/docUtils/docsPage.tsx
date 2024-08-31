@@ -2,8 +2,8 @@ import { cn } from "@ulld/utilities/cn";
 import { PageType } from "#/types/general";
 import { MDXContent } from "@content-collections/mdx/react";
 import "fumadocs-ui/twoslash.css";
-import { DocsBody, DocsPage } from "fumadocs-ui/page";
-import React, { ComponentProps, ReactNode } from "react";
+import { DocsBody, DocsDescription, DocsPage } from "fumadocs-ui/page";
+import React, { ComponentProps } from "react";
 import TypeTable from "./typeTable";
 import ApplyMathjaxBandaid from "../utility/applyMathjaxBandaid";
 import MathjaxProvider from "#/components/utility/providers/mathjax";
@@ -87,6 +87,7 @@ const DocsPageInternal = ({
                     {page.data.title}
                 </h1>
             )}
+          <DocsDescription>{page.data.description}</DocsDescription>
             <MDXContent code={page.data.body} components={components as any} />
             <ApplyMathjaxBandaid container={id} />
         </>

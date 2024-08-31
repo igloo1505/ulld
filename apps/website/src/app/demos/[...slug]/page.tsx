@@ -27,6 +27,7 @@ interface DocOutput {
 
 
 export default function Page({ params, searchParams }: PageProps) {
+    console.log("params in demos: ", params)
     const page: PageType | undefined = getPage(params.slug) as
         | PageType
         | undefined;
@@ -41,6 +42,8 @@ export default function Page({ params, searchParams }: PageProps) {
 }
 
 export function generateStaticParams() {
+    const pages = getPages()
+    console.log("pages in demos: ", pages)
     return getPages().map((page) => ({
         slug: page.slugs,
     }));
@@ -48,21 +51,12 @@ export function generateStaticParams() {
 
 
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
-
     const page: DocOutput = getPage(params.slug) as unknown as DocOutput;
-
     if (!page) {
         return notFound();
     }
-
-    let x: Metadata = {}
-
-    if(page?.data?.title){
-        x.title = page.data.title
-    }
-    if(page.data?.description){
-        x.description = page.data.description
-    }
-
-    return x
+    return {
+        title: page.data.title,
+        description: page.data.description,
+    } satisfies Metadata;
 }

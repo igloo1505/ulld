@@ -43,6 +43,11 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
+    console.log("params: ", params)
+    if (!params.slug) {
+        params.slug = ["/"]
+    }
+
     const page: DocOutput = getPage(params.slug) as unknown as DocOutput;
 
     if (!page) {
