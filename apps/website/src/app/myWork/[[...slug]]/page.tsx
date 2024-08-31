@@ -1,6 +1,6 @@
 import { getPage, getPages } from "sources/myNotes";
 import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { PageType } from "#/types/general";
 import DocsPageComponent from "#/components/docUtils/docsPage";
 
@@ -16,9 +16,6 @@ interface DocOutput {
         description?: string;
     };
 }
-const redirectMap: Record<string, string> = {
-    "user/components": "/docs/user/components/Academic/abstract",
-};
 
 export default function Page({ params }: { params: { slug?: string[] } }) {
     const page: PageType | undefined = getPage(params.slug) as
@@ -26,10 +23,6 @@ export default function Page({ params }: { params: { slug?: string[] } }) {
         | undefined;
 
     if (!page) {
-        let _slugPath = params.slug?.join("/");
-        if (_slugPath && _slugPath in redirectMap) {
-            return redirect(redirectMap[_slugPath]);
-        }
         notFound();
     }
 
@@ -43,18 +36,10 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
-    console.log("params: ", params)
-    if (!params.slug) {
-        params.slug = ["/"]
-    }
 
     const page: DocOutput = getPage(params.slug) as unknown as DocOutput;
 
     if (!page) {
-        let _slugPath = params.slug?.join("/");
-        if (_slugPath && _slugPath in redirectMap) {
-            return redirect(redirectMap[_slugPath]);
-        }
         notFound();
     }
 

@@ -1,8 +1,7 @@
 import { getPage, getPages } from "sources/demos";
 import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { PageType } from "#/types/general";
-import { getPageById } from "#/fumaDocs/utils/getPageById";
 import DocsPageComponent from "#/components/docUtils/docsPage";
 
 const docsBodyId = "ulld-demo-container";
@@ -27,7 +26,6 @@ interface DocOutput {
 
 
 export default function Page({ params, searchParams }: PageProps) {
-    console.log("params in demos: ", params)
     const page: PageType | undefined = getPage(params.slug) as
         | PageType
         | undefined;
@@ -42,8 +40,6 @@ export default function Page({ params, searchParams }: PageProps) {
 }
 
 export function generateStaticParams() {
-    const pages = getPages()
-    console.log("pages in demos: ", pages)
     return getPages().map((page) => ({
         slug: page.slugs,
     }));

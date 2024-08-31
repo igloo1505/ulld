@@ -1,21 +1,22 @@
-import { allMyNotes } from "content-collections";
+import { createMDXSource } from "@fumadocs/content-collections";
+import { allMetas, allMyNotes } from "content-collections";
 import {
     InferMetaType,
     InferPageType,
     loader,
-    LoaderOptions,
 } from "fumadocs-core/source";
 
 const data = loader({
     rootDir: "myNotes",
     baseUrl: "/myWork",
-    source: {
-        files: allMyNotes.map((v) => ({
-            type: "page",
-            data: v,
-            path: v._meta.filePath,
-        })),
-    },
+    source: createMDXSource(allMyNotes as any, allMetas),
+    // source: {
+    //     files: allMyNotes.map((v) => ({
+    //         type: "page",
+    //         data: v,
+    //         path: v._meta.filePath,
+    //     })),
+    // },
 });
 
 export const {

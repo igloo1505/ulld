@@ -87,7 +87,7 @@ const DocsPageInternal = ({
                     {page.data.title}
                 </h1>
             )}
-                {page.data.description && <p className={cn("text-sm mb-8 text-muted-foreground", page.data.titleCent && "w-full text-center")}>{page.data.description}</p>}
+                {page.data.description && <p className={cn("text-sm mb-8 text-muted-foreground", page.data.titleCenter && "w-full text-center")}>{page.data.description}</p>}
             <MDXContent code={page.data.body} components={components as any} />
             <ApplyMathjaxBandaid container={id} />
         </>

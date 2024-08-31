@@ -28,7 +28,6 @@ export const Admonition = (props: AdmonitionProps) => {
 
     const { children, type, title, dropdown, sidebar, footer } = props;
 
-    console.log("typeof footer: ", typeof footer)
 
     return (
         <div
