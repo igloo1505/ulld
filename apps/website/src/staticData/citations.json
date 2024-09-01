@@ -17,7 +17,13 @@
     ]
   },
   "whyILeftWork": {
-    "citations": []
+    "citations": [
+      {
+        "htmlCitation": "<div class=\"csl-bib-body\"> <div data-csl-entry-id=\"Einstein_equivelance_principle\" class=\"csl-entry\">Einstein, Albert, “On the relativity principle and the conclusions drawn from it,” The Collected Papers of Albert Einstein. Vol. 2 : The Swiss Years: Writings, 1900–1909, (1989).</div> </div>",
+        "id": "Einstein_equivelance_principle",
+        "pageIndex": 0
+      }
+    ]
   },
   "plansForUlld": {
     "citations": []

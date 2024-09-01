@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --loader ts-node/esm
 
 import { execute } from "@oclif/core";
 

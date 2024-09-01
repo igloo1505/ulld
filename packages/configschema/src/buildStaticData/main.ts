@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { navigationLinkSchema } from "../developer/navigationLink";
 import { settingsPageOutputSchema } from "./settingsPage";
-import { ValidIconName } from "@ulld/icons";
+import type { ValidIconName } from "@ulld/icons";
 import { componentDocumentationSchema } from "./componentDocumentation";
 import buildData from "@ulld/utilities/buildStaticData.json"
 import { replaceRecursively } from "@ulld/utilities/general";

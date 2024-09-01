@@ -63,11 +63,13 @@
   },
   "exports": {
     "./types": "./src/types/main.ts",
+    "./buildTypes": "./src/types/buildTypes.ts",
     "./getGlobServerSide": "./src/utils/glob/getGlobServerSide.ts",
     "./fetchWrapper": "./src/utils/fetchWrapper.ts",
     "./filePathSchemas": "./src/schemas/filePath/index.ts",
     "./errorNotifications": "./src/errorHandling/main.ts",
     "./testDataHelpers": "./src/testDataHelpers/main.ts",
+    "./slotDataType": "./src/types/slotDataType.ts",
     "./localDevelopmentMenu": "./src/components/localDevelopment/localDevelopmentMenu.tsx",
     "./localDevelopmentPageWrapper": "./src/components/localDevelopment/localDevelopmentPageWrapper.tsx",
     "./utilNavLinks": "./src/navigation/utilityNavLinks.ts",
@@ -168,7 +170,9 @@
     "./mdxParserUtils": "./src/parsingUtilities/mdx/getNoteTypeDataFromPath.ts",
     "./fsRootGlob": "./src/utils/fsRootGlob.ts",
     "./settingPageSection": "./src/components/settingPageUtils/settingPageSection.tsx",
-    "./settingPageContainer": "./src/components/settingPageUtils/settingPageContainer.tsx"
+    "./settingPageContainer": "./src/components/settingPageUtils/settingPageContainer.tsx",
+    "./responsiveUtilityComponents": "./src/components/responsiveUtils/main.tsx",
+    "./buildUtils": "./src/staticAppProperties/buildUtils/main.ts"
   },
   "files": [
     "src"

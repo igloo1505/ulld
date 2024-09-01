@@ -70,6 +70,5 @@
     "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
     "test": "echo 'Add test script here'"
   },
-  "type": "module",
   "types": "./src/types.ts"
 }

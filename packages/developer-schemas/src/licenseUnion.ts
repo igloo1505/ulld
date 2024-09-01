@@ -304,7 +304,7 @@ export const licenseUnion = z.union([
     z.literal('IEC-Code-Components-EULA'),
     z.literal('IJG'),
     z.literal('IJG-short'),
-    z.literal('ImageMagick'),
+    // z.literal('ImageMagick'),
     z.literal('iMatix'),
     z.literal('Imlib2'),
     z.literal('Info-ZIP'),
