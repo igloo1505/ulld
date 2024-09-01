@@ -2,8 +2,18 @@
   "name": "@ulld/build",
   "version": "0.0.101",
   "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
   "bin": {
     "ulld": "./bin/run.js"
+  },
+  "scripts": {
+    "build": "pnpm tsc && tsx ./onBuild.ts",
+    "buildTest": "tsup",
+    "dev": "echo 'Add dev script here'",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "jest"
   },
   "dependencies": {},
   "devDependencies": {
@@ -53,10 +63,44 @@
     "terminal-link": "3.0.0",
     "ts-node": "^10.9.2",
     "which-pm": "^3.0.0",
-    "xdg-app-paths": "^8.3.0"
+    "xdg-app-paths": "^8.3.0",
+    "@ulld/configschema": "workspace:*",
+    "@ulld/developer-schemas": "workspace:*",
+    "@ulld/types": "workspace:*",
+    "@ulld/utilities": "workspace:*"
   },
+  "peerDependencies": {},
   "exports": {
-    "./classes/packageJson": "./src/classes/pkgJson.ts"
+    "./classes/packageJson": {
+      "require": {
+        "default": "./dist/classes/pkgJson.cjs",
+        "types": "./dist/classes/pkgJson.d.cts"
+      },
+      "import": {
+        "types": "./dist/classes/pkgJson.d.mts",
+        "default": "./dist/classes/pkgJson.mjs"
+      }
+    },
+    "./run/main": {
+      "require": {
+        "default": "./dist/run/main.cjs",
+        "types": "./dist/run/main.d.cts"
+      },
+      "import": {
+        "types": "./dist/run/main.d.mts",
+        "default": "./dist/run/main.mjs"
+      }
+    },
+    "./main": {
+      "require": {
+        "default": "./dist/main.cjs",
+        "types": "./dist/main.d.cts"
+      },
+      "import": {
+        "types": "./dist/main.d.mts",
+        "default": "./dist/main.mjs"
+      }
+    }
   },
   "files": [
     "dist",
@@ -99,21 +143,8 @@
     }
   },
   "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {
-    "@ulld/configschema": "workspace:*",
-    "@ulld/developer-schemas": "workspace:*",
-    "@ulld/types": "workspace:*",
-    "@ulld/utilities": "workspace:*"
-  },
   "private": false,
   "publishConfig": {
     "access": "public"
-  },
-  "scripts": {
-    "build": "pnpm tsc && tsx ./onBuild.ts",
-    "buildTest": "tsup",
-    "dev": "echo 'Add dev script here'",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "jest"
   }
 }
