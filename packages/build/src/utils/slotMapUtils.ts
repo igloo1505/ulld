@@ -1,4 +1,4 @@
-import fullSlotMap from "@ulld/utilities/slotMap.json";
+import fullSlotMap from "@ulld/utilities/slotMap.json"  with {type: "json"};
 import type {SlotMapOfType} from "@ulld/configschema/slotMapInternalType"
 import type { AnySubSlotKey, PluginSlotKey } from "@ulld/configschema/slotMapType";
 

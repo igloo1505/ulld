@@ -4,7 +4,7 @@ import {
   getFlattenedFileItems,
 } from "@ulld/utilities/additionalSources";
 import { globSync } from "glob";
-import buildData from "@ulld/utilities/buildStaticData.json";
+import buildData from "@ulld/utilities/buildStaticData.json" with {type: "json"};
 import fs from "fs";
 import path from "path";
 import { FileManager } from "./baseClasses/fileManager.js";

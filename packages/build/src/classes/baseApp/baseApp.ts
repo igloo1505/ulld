@@ -1,6 +1,6 @@
 import fs from "fs-extra";
 import path from "path";
-import sm from "@ulld/utilities/slotMap.json";
+import sm from "@ulld/utilities/slotMap.json" with { type: "json" };
 import { ParserKey, parserKeyList } from "@ulld/configschema/developer";
 import { globSync } from "glob";
 import { EventMethodKey } from "../../types.js";

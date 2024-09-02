@@ -51,7 +51,7 @@ export class GitManager extends ShellManager {
             trimmed: false,
             progress: this.showProgress ? this.progress : undefined,
         };
-        const git: SimpleGit = (simpleGit as any)(options);
+        const git: SimpleGit = simpleGit.default(options);
         await git.pull({
             "-C": this.targetDirectory,
         });
@@ -83,7 +83,6 @@ export class GitManager extends ShellManager {
             trimmed: false,
             progress: this.showProgress ? this.progress : undefined,
         };
-        console.log("simpleGit: ", simpleGit)
         const git: SimpleGit = (simpleGit as any)(options);
         await git.clone(
             appData.templateRepo.url,

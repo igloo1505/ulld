@@ -1,29 +1,33 @@
 import path from "path";
 import { defineConfig, Options, NormalizedOptions } from "tsup";
-// import { preserveDirectivesPlugin } from "esbuild-plugin-preserve-directives";
-// import { globSync } from "glob";
-// import fs from "fs";
+import { preserveDirectivesPlugin } from "esbuild-plugin-preserve-directives";
+import glob from "glob";
+import fs from "fs";
 
-const entryPoints = ["src/main.ts", "src/run/main.ts"];
+const entryPoints = ["src/register.js", "src/run/register.js"];
 
 export default defineConfig((options) => {
+    console.log("options: ", options);
     return {
         entry: entryPoints,
+        platform: "node",
+        splitting: true,
         sourcemap: true,
-        clean: true,
-        splitting: false,
-        // outDir: "dist",
-        format: [
-            // "cjs",
-            "esm"
-        ],
-        // treeshake: "safest",
-        // shims: true,
+        clean: false,
+        metafile: true,
+        cjsInterop: true,
+        // dts: true,
+        target: "es2021",
+        format: ["cjs", "esm"],
+        // minify: true,
+        bundle: true,
+        treeshake: "recommended",
+        shims: true,
         // skipNodeModulesBundle: true,
         // external: [
         //     "react",
         // ],
-        tsconfig: path.resolve(__dirname, "tsconfig.json"),
+        tsconfig: path.resolve(__dirname, "tsConfigBuildTest.json"),
     };
 });
 

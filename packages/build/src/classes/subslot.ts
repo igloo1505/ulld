@@ -1,7 +1,7 @@
-import slotMapData from "@ulld/utilities/slotMap.json";
+import slotMapData from "@ulld/utilities/slotMap.json" with { type: "json" };
 import { TemplateContent } from "./baseApp/templateContent.js";
 import { TargetPaths } from "./paths.js";
-import type { AnySubSlotKey, PluginSlotKey } from "@ulld/configschema/slotMapType";
+import { AnySubSlotKey, PluginSlotKey } from "@ulld/configschema/slotMapType";
 import type { SlotDataType } from "@ulld/utilities/slotDataType";
 
 export class SubSlot {

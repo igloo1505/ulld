@@ -15,7 +15,6 @@
         "isolatedModules": true,
         "strictNullChecks": true,
         "preserveConstEnums": true,
-        "jsx": "react",
         "lib": [
             "dom",
             "dom.iterable",

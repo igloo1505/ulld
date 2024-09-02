@@ -8,7 +8,7 @@ import { Path } from "./utilityClasses/Path.js";
 import { PluginComponentProps } from "../types.js";
 import { BuildStaticDataInput } from "@ulld/configschema/buildTypes";
 import { makeValidId } from "@ulld/utilities/identity";
-import type { AnySubSlotKey, PluginSlotKey } from "@ulld/configschema/slotMapType";
+import { AnySubSlotKey, PluginSlotKey } from "@ulld/configschema/slotMapType";
 
 export class PluginComponent extends ShellManager {
     subSlot?: SubSlot;

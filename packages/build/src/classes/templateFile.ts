@@ -2,7 +2,7 @@ import {
     TemplateStringId,
     TemplateStringVariableRecord,
 } from "../utils/templateKeys.js";
-import templateData from "../utils/templateStringData.json";
+import templateData from "../utils/templateStringData.json"  with {type: "json"};
 import path from "path";
 import fs from "fs";
 

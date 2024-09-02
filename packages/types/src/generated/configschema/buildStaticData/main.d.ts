@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { ValidIconName } from "@ulld/icons";
+import type { ValidIconName } from "@ulld/icons";
 export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
     fsRoot: z.ZodString;
     navigationLinks: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodObject<{
