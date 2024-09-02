@@ -1,5 +1,13 @@
 # @ulld/internal-dev-cli
 
+## 0.0.96
+
+### Patch Changes
+
+- Bump to try build with transpiled utilities and configschema packages.
+- Updated dependencies
+  - @ulld/types@0.0.96
+
 ## 0.0.95
 
 ### Patch Changes

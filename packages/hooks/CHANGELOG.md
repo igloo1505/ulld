@@ -1,5 +1,20 @@
 # @ulld/hooks
 
+## 0.0.102
+
+### Patch Changes
+
+- Bump to try build with transpiled utilities and configschema packages.
+- Updated dependencies
+  - @ulld/api@0.0.102
+  - @ulld/component-map@0.0.102
+  - @ulld/typescript-config@0.0.96
+  - @ulld/configschema@0.0.102
+  - @ulld/database@0.0.99
+  - @ulld/parsers@0.0.102
+  - @ulld/types@0.0.96
+  - @ulld/utilities@0.0.102
+
 ## 0.0.101
 
 ### Patch Changes

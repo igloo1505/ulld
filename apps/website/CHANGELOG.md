@@ -1,5 +1,36 @@
 # @ulld/website
 
+## 0.0.102
+
+### Patch Changes
+
+- Bump to try build with transpiled utilities and configschema packages.
+- Updated dependencies
+  - @ulld/api@0.0.102
+  - @ulld/base-configs@0.0.96
+  - @ulld/calendar@0.0.102
+  - @ulld/component-map@0.0.102
+  - @ulld/eslint-config@0.0.98
+  - @ulld/typescript-config@0.0.96
+  - @ulld/configschema@0.0.102
+  - @ulld/database@0.0.99
+  - @ulld/diagram@0.0.102
+  - @ulld/editor@0.0.102
+  - @ulld/embeddable-components@0.0.102
+  - @ulld/full-form@0.0.102
+  - @ulld/hooks@0.0.102
+  - @ulld/icons@0.0.102
+  - @ulld/jest-presets@0.0.96
+  - @ulld/logger@0.0.96
+  - @ulld/parsers@0.0.102
+  - @ulld/render@0.0.102
+  - @ulld/state@0.0.102
+  - @ulld/tailwind@0.0.96
+  - @ulld/types@0.0.96
+  - @ulld/ui@0.0.100
+  - @ulld/utilities@0.0.102
+  - @ulld/whiteboard@0.0.102
+
 ## 0.0.101
 
 ### Patch Changes

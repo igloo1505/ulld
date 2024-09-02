@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.98
+
+### Patch Changes
+
+- Bump to try build with transpiled utilities and configschema packages.
+
 ## 0.0.97
 
 ### Patch Changes

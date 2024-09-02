@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.99
+
+### Patch Changes
+
+- Bump to try build with transpiled utilities and configschema packages.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.96
+  - @ulld/types@0.0.96
+
 ## 0.0.98
 
 ### Patch Changes

@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.102
+
+### Patch Changes
+
+- Bump to try build with transpiled utilities and configschema packages.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.102
+  - @ulld/calendar@0.0.102
+  - @ulld/typescript-config@0.0.96
+  - @ulld/default-image-map@0.0.102
+  - @ulld/diagram@0.0.102
+  - @ulld/editor@0.0.102
+  - @ulld/embeddable-components@0.0.102
+  - @ulld/equations@0.0.102
+  - @ulld/full-form@0.0.102
+  - @ulld/journal@0.0.102
+  - @ulld/navigation@0.0.102
+  - @ulld/notebook@0.0.102
+  - @ulld/pdf@0.0.102
+  - @ulld/plot@0.0.102
+  - @ulld/snippets@0.0.102
+  - @ulld/tailwind@0.0.96
+  - @ulld/task-manager@0.0.102
+  - @ulld/types@0.0.96
+  - @ulld/whiteboard@0.0.102
+
 ## 0.0.101
 
 ### Patch Changes

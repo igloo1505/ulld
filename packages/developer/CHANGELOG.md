@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.102
+
+### Patch Changes
+
+- Bump to try build with transpiled utilities and configschema packages.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.98
+  - @ulld/typescript-config@0.0.96
+  - @ulld/configschema@0.0.102
+  - @ulld/database@0.0.99
+  - @ulld/logger@0.0.96
+  - @ulld/types@0.0.96
+
 ## 0.0.101
 
 ### Patch Changes

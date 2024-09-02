@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.101
+
+### Patch Changes
+
+- Bump to try build with transpiled utilities and configschema packages.
+- Updated dependencies
+  - @ulld/configschema@0.0.102
+  - @ulld/developer-schemas@0.0.96
+  - @ulld/types@0.0.96
+  - @ulld/utilities@0.0.102
+
 ## 0.0.100
 
 ### Patch Changes

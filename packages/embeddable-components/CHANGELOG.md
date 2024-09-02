@@ -1,5 +1,25 @@
 # @ulld/embeddable-components
 
+## 0.0.102
+
+### Patch Changes
+
+- Bump to try build with transpiled utilities and configschema packages.
+- Updated dependencies
+  - @ulld/api@0.0.102
+  - @ulld/component-configs@0.0.102
+  - @ulld/typescript-config@0.0.96
+  - @ulld/configschema@0.0.102
+  - @ulld/default-image-map@0.0.102
+  - @ulld/developer@0.0.102
+  - @ulld/hooks@0.0.102
+  - @ulld/icons@0.0.102
+  - @ulld/render@0.0.102
+  - @ulld/state@0.0.102
+  - @ulld/tailwind@0.0.96
+  - @ulld/types@0.0.96
+  - @ulld/utilities@0.0.102
+
 ## 0.0.101
 
 ### Patch Changes

@@ -4,7 +4,6 @@
   "contributors": [
     "Andrew Mueller <aiglinski414@gmail.com> (https://uhlittlelessdum.com)"
   ],
-  "homepage": "https://uhlittlelessdum.com",
   "dependencies": {
     "@changesets/cli": "2.27.5",
     "@manypkg/cli": "0.21.4",
@@ -14,8 +13,8 @@
     "@types/react": "18.2.79",
     "@types/react-dom": "18.2.25",
     "@types/tinycolor2": "^1.4.6",
-    "@ulld/utilities": "workspace:*",
     "@ulld/fileSystemUtils": "workspace:*",
+    "@ulld/utilities": "workspace:*",
     "autoprefixer": "^10.4.18",
     "deepmerge": "4.3.1",
     "dotenv-cli": "latest",
@@ -76,6 +75,7 @@
       "url": "https://github.com/igloo1505/ulld"
     }
   ],
+  "homepage": "https://uhlittlelessdum.com",
   "keywords": [
     "academic",
     "markdown",
