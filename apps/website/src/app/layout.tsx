@@ -205,18 +205,6 @@ const RootLayout = async (props: {
                 <link rel="shortcut icon" href="/icons/favicon.ico" />
                 <meta name="msapplication-TileColor" content="#2b5797" />
                 <meta name="msapplication-config" content="/icons/browserconfig.xml" />
-                <script
-                    async
-                    src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
-                />
-                <script>
-                    {`window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
-`}
-                </script>
             </head>
             <body
                 className={clsx(
