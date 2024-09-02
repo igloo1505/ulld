@@ -847,7 +847,7 @@ importers:
         version: 18.2.0(react@18.2.0)
 
   packages/build:
-    devDependencies:
+    dependencies:
       '@antfu/install-pkg':
         specifier: ^0.4.1
         version: 0.4.1
@@ -875,24 +875,6 @@ importers:
       '@oclif/plugin-warn-if-update-available':
         specifier: ^3.1.13
         version: 3.1.13
-      '@types/fs-extra':
-        specifier: ^11.0.4
-        version: 11.0.4
-      '@types/inquirer':
-        specifier: ^9.0.7
-        version: 9.0.7
-      '@types/node':
-        specifier: ^20.11.24
-        version: 20.14.13
-      '@types/node-notifier':
-        specifier: ^8.0.5
-        version: 8.0.5
-      '@types/prompts':
-        specifier: ^2.4.9
-        version: 2.4.9
-      '@types/shelljs':
-        specifier: ^0.8.15
-        version: 0.8.15
       '@ulld/configschema':
         specifier: workspace:*
         version: link:../configschema
@@ -926,9 +908,6 @@ importers:
       commander:
         specifier: 12.1.0
         version: 12.1.0
-      debug:
-        specifier: ^4.3.6
-        version: 4.3.6(supports-color@8.1.1)
       detect-package-manager:
         specifier: ^3.0.2
         version: 3.0.2
@@ -944,12 +923,6 @@ importers:
       enquirer:
         specifier: 2.4.1
         version: 2.4.1
-      eslint-config-oclif:
-        specifier: ^5.1.1
-        version: 5.2.0(eslint@9.8.0)
-      eslint-config-oclif-typescript:
-        specifier: ^3.1.4
-        version: 3.1.8(eslint@9.8.0)(typescript@5.5.4)
       fs-extra:
         specifier: ^11.2.0
         version: 11.2.0
@@ -992,15 +965,43 @@ importers:
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@20.14.13)(typescript@5.5.4)
-      tsx:
-        specifier: 4.15.6
-        version: 4.15.6
       which-pm:
         specifier: ^3.0.0
         version: 3.0.0
       xdg-app-paths:
         specifier: ^8.3.0
         version: 8.3.0
+    devDependencies:
+      '@types/fs-extra':
+        specifier: ^11.0.4
+        version: 11.0.4
+      '@types/inquirer':
+        specifier: ^9.0.7
+        version: 9.0.7
+      '@types/node':
+        specifier: ^20.11.24
+        version: 20.14.13
+      '@types/node-notifier':
+        specifier: ^8.0.5
+        version: 8.0.5
+      '@types/prompts':
+        specifier: ^2.4.9
+        version: 2.4.9
+      '@types/shelljs':
+        specifier: ^0.8.15
+        version: 0.8.15
+      debug:
+        specifier: ^4.3.6
+        version: 4.3.6(supports-color@8.1.1)
+      eslint-config-oclif:
+        specifier: ^5.1.1
+        version: 5.2.0(eslint@9.8.0)
+      eslint-config-oclif-typescript:
+        specifier: ^3.1.4
+        version: 3.1.8(eslint@9.8.0)(typescript@5.5.4)
+      tsx:
+        specifier: 4.15.6
+        version: 4.15.6
 
   packages/calendar:
     dependencies:

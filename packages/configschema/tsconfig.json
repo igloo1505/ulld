@@ -1,5 +1,5 @@
 { 
-    "$schema": "https://json.schemastore.org/tsconfig.json",
+    "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
       "extends": "@ulld/typescript-config/nextjs.json",
     "include": [
         "./**/*.ts",
@@ -15,7 +15,9 @@
         "rootDir": "src",
         "outDir": "dist",
         "noEmit": false,
-        "moduleResolution": "Bundler",
+        "moduleResolution": "NodeNext",
+        // "declarationDir": "types",
+        "module": "NodeNext",
         "jsx": "react-jsx",
         "allowImportingTsExtensions": false,
         "declaration": true,

@@ -1,6 +1,6 @@
 import { SubSlot } from "./subslot.js";
 import { ConflictBaseClass } from "./baseClasses/conflict.js";
-import { PluginSlotKey } from "@ulld/configschema/slotMapType";
+import type { PluginSlotKey } from "@ulld/configschema/slotMapType";
 
 
 export class SlotConflict extends ConflictBaseClass {

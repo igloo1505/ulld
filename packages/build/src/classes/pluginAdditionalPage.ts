@@ -1,6 +1,6 @@
 import { TargetPaths } from "./paths.js";
 import { ShellManager } from "./baseClasses/shell.js";
-import { AnySubSlotKey, PluginSlotKey } from "@ulld/configschema/slotMapType";
+import type { AnySubSlotKey, PluginSlotKey } from "@ulld/configschema/slotMapType";
 
 export class PluginAdditionalPage extends ShellManager {
     constructor(

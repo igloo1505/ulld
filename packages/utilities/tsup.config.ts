@@ -1,6 +1,6 @@
 import path from "path";
 import { defineConfig, Options, NormalizedOptions } from "tsup";
-import { preserveDirectivesPlugin } from "esbuild-plugin-preserve-directives";
+// import { preserveDirectivesPlugin } from "esbuild-plugin-preserve-directives";
 import { globSync } from "glob";
 import fs from "fs";
 // import { globSync } from "glob";
@@ -41,8 +41,8 @@ const prependDirectives = async () => {
     });
     files.forEach((f) => {
         let distPaths = {
-            cjs: f.replace("/src/", "/dist/").replace(/\.tsx?/, ".js"),
-            esm: f.replace("/src/", "/dist/").replace(/\.tsx?/, ".mjs"),
+            cjs: f.replace("/src/", "/dist/").replace(/\.tsx?/, ".cjs"),
+            esm: f.replace("/src/", "/dist/").replace(/\.tsx?/, ".js"),
         };
         if (!fs.existsSync(distPaths.cjs)) {
             console.error(`Could not find dist path ${distPaths.cjs}`);
@@ -66,33 +66,31 @@ const prependDirectives = async () => {
 };
 
 export default defineConfig((options) => {
-    console.log("options: ", options);
     return {
         entry: ["src/**/*.ts", "src/**/*.tsx"],
-        // platform: "neutral",
+        platform: "neutral",
         // splitting: true,
         sourcemap: true,
-        // clean: false,
-        // metafile: true,
-        // cjsInterop: true,
-        dts: true,
+        clean: false,
+        metafile: true,
+        cjsInterop: true,
+        // dts: true,
         // target: "es2021",
         format: ["esm", "cjs"],
         // minify: true,
-        // bundle: true,
-        // treeshake: "recommended",
-        // shims: true,
-        // skipNodeModulesBundle: true,
-        external: [
-            "react",
-        ],
-        dts: true,
+        bundle: true,
+        treeshake: "recommended",
+        shims: true,
+        skipNodeModulesBundle: true,
+        // external: [
+        //     "react",
+        // ],
         tsconfig: path.resolve(__dirname, "tsconfig.json"),
-        // outExtension: ({ format }) => {
-        //     return {
-        //         js: `.${format}.js`,
-        //     };
-        // },
+        outExtension: ({ format }) => {
+            return {
+                js: `.${format === "esm" ? "js" : "cjs"}`,
+            };
+        },
         // esbuildPlugins: [
         //     preserveDirectivesPlugin({
         //         directives: ["use client", "use strict"],
@@ -101,6 +99,5 @@ export default defineConfig((options) => {
         //     }),
         // ],
         onSuccess: prependDirectives,
-        ...options
     };
 });

@@ -1,7 +1,6 @@
 import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
 import type { DeveloperConfigOutput } from "@ulld/configschema/developer";
-// import { PluginSlotKey } from "../../configschema/dist/developer/slotMapType.js";
-import { PluginSlotKey } from "@ulld/configschema/slotMapType";
+import type { PluginSlotKey } from "@ulld/configschema/slotMapType";
 
 export type PackageManagers = "pnpm" | "npm" | "yarn";
 

@@ -12,8 +12,11 @@ export default defineConfig((options) => {
         sourcemap: true,
         clean: true,
         splitting: false,
-        outDir: "dist",
-        format: ["cjs", "esm"],
+        // outDir: "dist",
+        format: [
+            // "cjs",
+            "esm"
+        ],
         // treeshake: "safest",
         // shims: true,
         // skipNodeModulesBundle: true,

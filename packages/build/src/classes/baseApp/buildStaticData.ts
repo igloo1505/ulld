@@ -3,7 +3,7 @@ import { ArrayUtilities } from "@ulld/utilities/arrayUtilities";
 import { FileManager } from "../baseClasses/fileManager.js";
 import { UlldBuildProcess } from "../build.js";
 import { TargetPaths } from "../paths.js";
-import buildData from "@ulld/utilities/buildStaticData.json"  with {type: "json"};
+import buildData from "@ulld/utilities/buildStaticData.json";
 
 type HasSetKey = "settingsData"
 

@@ -2,9 +2,6 @@
   "name": "@ulld/build",
   "version": "0.0.101",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
   "bin": {
     "ulld": "./bin/run.js"
   },
@@ -15,18 +12,7 @@
     "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
     "test": "jest"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "@types/fs-extra": "^11.0.4",
-    "@types/inquirer": "^9.0.7",
-    "@types/node": "^20.11.24",
-    "@types/node-notifier": "^8.0.5",
-    "@types/prompts": "^2.4.9",
-    "@types/shelljs": "^0.8.15",
-    "debug": "^4.3.6",
-    "eslint-config-oclif": "^5.1.1",
-    "eslint-config-oclif-typescript": "^3.1.4",
-    "tsx": "4.15.6",
+  "dependencies": {
     "@antfu/install-pkg": "^0.4.1",
     "@commander-js/extra-typings": "^12.1.0",
     "@oclif/core": "3.26.2",
@@ -69,38 +55,21 @@
     "@ulld/types": "workspace:*",
     "@ulld/utilities": "workspace:*"
   },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.11.24",
+    "@types/node-notifier": "^8.0.5",
+    "@types/prompts": "^2.4.9",
+    "@types/shelljs": "^0.8.15",
+    "debug": "^4.3.6",
+    "eslint-config-oclif": "^5.1.1",
+    "eslint-config-oclif-typescript": "^3.1.4",
+    "tsx": "4.15.6"
+  },
   "peerDependencies": {},
   "exports": {
-    "./classes/packageJson": {
-      "require": {
-        "default": "./dist/classes/pkgJson.cjs",
-        "types": "./dist/classes/pkgJson.d.cts"
-      },
-      "import": {
-        "types": "./dist/classes/pkgJson.d.mts",
-        "default": "./dist/classes/pkgJson.mjs"
-      }
-    },
-    "./run/main": {
-      "require": {
-        "default": "./dist/run/main.cjs",
-        "types": "./dist/run/main.d.cts"
-      },
-      "import": {
-        "types": "./dist/run/main.d.mts",
-        "default": "./dist/run/main.mjs"
-      }
-    },
-    "./main": {
-      "require": {
-        "default": "./dist/main.cjs",
-        "types": "./dist/main.d.cts"
-      },
-      "import": {
-        "types": "./dist/main.d.mts",
-        "default": "./dist/main.mjs"
-      }
-    }
+    "./classes/packageJson": "./src/classes/pkgJson.ts"
   },
   "files": [
     "dist",

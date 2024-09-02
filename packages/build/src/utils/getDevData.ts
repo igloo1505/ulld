@@ -1,3 +1,3 @@
-import devData from "../../staticDevelopmentData.json"  with {type: "json"};
+import devData from "../../staticDevelopmentData.json";
 
 export const getDevData = () => devData
