@@ -8,11 +8,11 @@ import path from "path";
 
 
 const targetPath = path.join(
-    import.meta.dirname,
+    __dirname,
     "../defaults/generatedDefaultConfigs/base.json",
 );
 const physicsMathPath = path.join(
-    import.meta.dirname,
+    __dirname,
     "../defaults/generatedDefaultConfigs/physicsMath.json",
 );
 const baseTargetPath =
@@ -140,7 +140,7 @@ const configs: { path: string; config: AppConfigSchemaOutput }[] = [
     },
     {
         path: path.join(
-            import.meta.dirname,
+            __dirname,
             "../defaults/generatedDefaultConfigs/personal/appConfig.ulld.json",
         ),
         config: appConfigSchema.parse(personalConfig),

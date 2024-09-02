@@ -20,8 +20,12 @@
     "./path": "./src/classes/path/main.ts"
   },
   "files": [
-    "dist",
     "src"
   ],
-  "peerDependencies": {}
+  "peerDependencies": {},
+  "packageManager": "pnpm@9.0.4",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  }
 }
