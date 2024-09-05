@@ -1,0 +1,48 @@
+{
+    "pluginName": "@ulld/notebook",
+    "label": "Notebook",
+    "pluginId": "e3b4a72c-ba55-417b-9e68-ecd14e06c949",
+    "components": [
+        {
+            "componentName": "JupyterContextProvider",
+            "tags": [],
+            "export": "contextProvider",
+            "componentId": "9f78d9f7-4490-467b-b9f7-4e3f707ed452"
+        },
+        {
+            "componentName": "JupyterCell",
+            "tags": [],
+            "export": "cell",
+            "embeddable": [
+                {
+                    "regexToInclude": "<Cell",
+                    "label": "Cell"
+                },
+                {
+                    "regexToInclude": "<JupyterCell",
+                    "label": "JupyterCell"
+                }
+            ],
+            "componentId": "9f78d9f7-4490-467b-b9f7-4e3f707ed452"
+        },
+        {
+            "componentName": "JupyterNotebook",
+            "tags": [],
+            "export": "notebook",
+            "embeddable": [
+                {
+                    "regexToInclude": "<Notebook",
+                    "label": "Notebook"
+                }
+            ],
+            "componentId": "9f78d9f7-4490-467b-b9f7-4e3f707ed452"
+        }
+    ],
+    "parsers": {},
+    "pages": [],
+    "events": {},
+    "navigationLinks": [],
+    "commandPalette": [],
+    "tailwind": {},
+    "styles": {}
+}

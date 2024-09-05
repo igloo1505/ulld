@@ -1,0 +1,21 @@
+{
+    "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
+    "extends": "@ulld/typescript-config/nextjs.json",
+    "include": [
+        "./src/**/*.ts",
+        "./src/**/*.tsx",
+        "./pluginConfig.ulld.ts"
+    ],
+    "exclude": [
+        "dist",
+        "build",
+        "node_modules"
+    ],
+    "compilerOptions": {
+        "rootDir": ".",
+        "moduleResolution": "Bundler",
+        "jsx": "react-jsx",
+        "esModuleInterop": true,
+        "resolveJsonModule": true
+    }
+}
