@@ -3,6 +3,7 @@
   "version": "0.0.102",
   "dependencies": {
     "@tanstack/react-table": "8.13.2",
+    "axios-endpoints": "^1.0.3",
     "better-react-mathjax": "2.0.3",
     "color-scheme": "^1.0.1",
     "coloring-palette": "^1.0.0",
