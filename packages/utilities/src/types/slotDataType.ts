@@ -1,18 +1,17 @@
-import propsExtends from "../utils/buildStaticData.json"
+import propsExtends from "../utils/buildStaticData.json" with { type: "json" };
 
 export const slotTypes = [
     "page",
     "component",
     "modalPage",
     "embeddable",
-    "generatedPage"
-] as const
-
+    "generatedPage",
+] as const;
 
 export interface SlotDataType {
-    path: string
-    clientOnly?: boolean
-    inReduxProvider?: boolean
-    type?: typeof slotTypes[number]
-    propsExtends?: keyof typeof propsExtends["propsExtendsMap"]
+    path: string;
+    clientOnly?: boolean;
+    inReduxProvider?: boolean;
+    type?: (typeof slotTypes)[number];
+    propsExtends?: keyof (typeof propsExtends)["propsExtendsMap"];
 }

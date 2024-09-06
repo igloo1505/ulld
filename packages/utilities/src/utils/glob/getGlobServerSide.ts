@@ -3,8 +3,8 @@ import { glob } from "glob";
 import { z } from "zod";
 import fs from "fs";
 import path from "path";
-import { filePathGlobPropsSchema } from "../../schemas/filePath/filePathInput";
-import { withForwardSlash } from "../fsUtils";
+import { filePathGlobPropsSchema } from "../../schemas/filePath/filePathInput.js";
+import { withForwardSlash } from "../fsUtils.js";
 
 export type GlobInput = z.input<typeof filePathGlobPropsSchema>;
 

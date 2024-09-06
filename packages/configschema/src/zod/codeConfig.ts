@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { monacoEditorConfigSchema } from "./codeEditorConfig";
-import { shikiThemeValidator } from "./codeThemeSchemas";
+import { monacoEditorConfigSchema } from "./codeEditorConfig.js";
+import { shikiThemeValidator } from "./codeThemeSchemas.js";
 import shikiLanguages from "@ulld/utilities/shikiLanguages";
 
 export const defaultThemes: {

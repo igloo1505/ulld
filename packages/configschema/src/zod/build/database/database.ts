@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { postgresConfigSchema } from "./postgres";
+import { postgresConfigSchema } from "./postgres.js";
 
 export const ulldSupportedDatabases = [
     "postgres",

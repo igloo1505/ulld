@@ -1,4 +1,4 @@
-import { getAllRegexMatches } from "./getAllRegexMatches";
+import { getAllRegexMatches } from "./getAllRegexMatches.js";
 import distance from "jaro-winkler"
 
 export const capitalize = (val: string) =>

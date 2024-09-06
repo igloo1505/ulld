@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { AppConfigSchemaOutput } from "../main";
-import { nbConvertTemplateOptions } from "../jupyter/nbconvert";
-import { shikiThemeValidator } from "../codeThemeSchemas";
+import { AppConfigSchemaOutput } from "../main.js";
+import { nbConvertTemplateOptions } from "../jupyter/nbconvert.js";
+import { shikiThemeValidator } from "../codeThemeSchemas.js";
 
 // TODO: Create more thorough documentation on the available searchParm overrides.
 const fields = {

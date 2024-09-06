@@ -48,6 +48,7 @@ const SelectWithHref = ({
                 {items.map((t) => {
                     return (
                     <SelectWithHrefItem
+                            key={t.value}
                             close={() => setOpen(false)}
                             item={t}
                             className={classes.item}

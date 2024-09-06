@@ -1,3 +1,6 @@
+export type ContainerSize = "base" | "sm" | "md" | "lg"
+
+
 /**
  * A grid can be used to align content into a symmetrical grid of user defined sizes and dimensions.
  * <Hint>Try combining the Grid component with multiple Card components for lists of content that is too complex to fit in an actual list.</Hint>
@@ -6,9 +9,9 @@
  */
 export interface GridProps {
     /** Number of columns in the grid */
-    columns?: number;
+    columns?: number | Record<ContainerSize, number>;
     /** Alias for columns */
-    cols?: number;
+    cols?: number | Record<ContainerSize, number>;
     /** The minimum width in pixels for each column. This will create an auto-scaling grid, with the most columns capable of fitting horizontally for this given piexel width. This is ideal for grid styling, as it will scale appropriately for all window sizes. */
     minMax?: number;
     /** The grid content takes several child components, ideal of type GridItem */

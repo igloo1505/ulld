@@ -1,5 +1,5 @@
 import tinycolor from "tinycolor2";
-import { AvailableColorStringFormats } from "../../types/colors";
+import { AvailableColorStringFormats } from "../../types/colors.js";
 
 export const convertColorString = (
     value: string,

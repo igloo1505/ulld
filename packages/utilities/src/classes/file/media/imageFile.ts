@@ -1,4 +1,4 @@
-import { FileData } from "../main";
+import { FileData } from "../main.js";
 import fs from "fs";
 // import { removeBackground, Config } from "@imgly/background-removal-node";
 import { z } from "zod";

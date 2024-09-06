@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { ArrayUtilities } from "../../utils/arrayUtilities";
+import { ArrayUtilities } from "../../utils/arrayUtilities.js";
 
 export const paginationProps = z.object({
     page: z.number().int().default(1),

@@ -1,7 +1,7 @@
-export * from "./types"
-export * from "./categoryRecords/taskManager"
-import { bibManagerErrorRecord } from "./categoryRecords/bibManager"
-import { taskManagerErrorRecord } from "./categoryRecords/taskManager"
+export * from "./types.js"
+export * from "./categoryRecords/taskManager.js"
+import { bibManagerErrorRecord } from "./categoryRecords/bibManager.js"
+import { taskManagerErrorRecord } from "./categoryRecords/taskManager.js"
 
 export const errorToastRecord = {
     ...taskManagerErrorRecord,

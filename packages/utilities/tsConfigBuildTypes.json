@@ -17,7 +17,7 @@
     "emitDeclarationOnly": true,
     "outDir": "dist",
     "rootDir": "src",
-    "module": "ES2022",
+    "module": "ESNext",
     "moduleResolution": "Bundler",
     "baseUrl": "."
   }

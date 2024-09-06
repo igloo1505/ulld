@@ -9,7 +9,8 @@
         "dist",
         "build",
         "node_modules",
-        "src/__scripts__"
+        "src/__scripts__",
+        "tsup.config.ts"
     ],
     "compilerOptions": {
         "rootDir": "src",
@@ -23,7 +24,8 @@
         "declaration": true,
         "declarationMap": true,
         "esModuleInterop": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true
     }
 }
 

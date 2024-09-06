@@ -1,10 +1,10 @@
 import { SupportedFileType, supportedFileTypes } from "@ulld/types/enums"
-import { filePathGlobPropsSchema } from "../schemas/filePath/filePathInput"
+import { filePathGlobPropsSchema } from "../schemas/filePath/filePathInput.js"
 import { z } from 'zod'
-import { ArrayUtilities } from "./arrayUtilities"
+import { ArrayUtilities } from "./arrayUtilities.js"
 import { AppConfigSchemaOutput } from "@ulld/types"
 import "server-only"
-import { getGlobServerSide } from "./glob/getGlobServerSide"
+import { getGlobServerSide } from "./glob/getGlobServerSide.js"
 
 interface FsRootGlobProps {
     path: string

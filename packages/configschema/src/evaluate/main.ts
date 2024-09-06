@@ -1,6 +1,6 @@
-import { AppConfigSchemaType } from "../zod/main";
-import { EvalFunction, EvaluationErrors } from "./types";
-import noteTypes from "./evaluations/noteTypes"
+import { AppConfigSchemaType } from "../zod/main.js";
+import { EvalFunction, EvaluationErrors } from "./types.js";
+import noteTypes from "./evaluations/noteTypes.js";
 
 const evaluations: EvalFunction[] = [
   noteTypes

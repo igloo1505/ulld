@@ -122,7 +122,8 @@
     "./useBibEntryDetails": "./src/useBibEntryDetailsDisplay.ts",
     "./useExistingTaggables": "./src/useExistingTaggables.ts",
     "./useBuildStaticData": "./src/useBuildStaticData.ts",
-    "./useConfirmation": "./src/useConfirmation.ts"
+    "./useConfirmation": "./src/useConfirmation.ts",
+    "./useMultipleBreakpoints": "./src/useMultipleBreakpoints.ts"
   },
   "files": [
     "src"

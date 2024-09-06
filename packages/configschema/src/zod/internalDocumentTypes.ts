@@ -1,5 +1,5 @@
 import { Route } from "next";
-import { documentTypeConfigSchemaBase } from "./documentConfigSchema";
+import { documentTypeConfigSchemaBase } from "./documentConfigSchema.js";
 import { z } from 'zod'
 
 // TODO: This zod object needs to be updated to include the rest of these internal types.

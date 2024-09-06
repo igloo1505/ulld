@@ -1,7 +1,7 @@
 import React from "react"
-import MathjaxLoader from "./Mathjax"
-import RequireJsLoader from "./RequireJsLoader"
-import SvgLatexLoader from "./SvgLatexLoader"
+import MathjaxLoader from "./Mathjax.js"
+import RequireJsLoader from "./RequireJsLoader.js"
+import SvgLatexLoader from "./SvgLatexLoader.js"
 /* import TikzLoader from "./TikzLoader" */
 
 export type MathJaxLoaders = "svg" | "chtml" | "config"

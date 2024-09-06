@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { licenseUnion } from "./licenseUnion";
+import { licenseUnion } from "./licenseUnion.js";
 
 const exportFieldObject = z.object({
     types: z.string().optional(),

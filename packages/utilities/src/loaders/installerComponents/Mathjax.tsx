@@ -1,7 +1,7 @@
 "use client";
 import React from 'react'
 import Script, { ScriptProps } from "next/script";
-import { MathJaxLoaders } from "./initialLoader";
+import { MathJaxLoaders } from "./initialLoader.js";
 
 export const MathjaxSvgLoader = () => {
     console.log(`Loading Mathjax Svg`);

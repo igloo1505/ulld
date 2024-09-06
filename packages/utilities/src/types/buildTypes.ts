@@ -1,6 +1,6 @@
-import type { pathKeys } from "../staticAppProperties/buildUtils/main";
+import type { pathKeys } from "../staticAppProperties/buildUtils/main.js";
+export * from "./baseApp/main.js";
 
-export * from "./baseApp/main";
 export type MethodListPathKeys =
     | "onBackupMethodList"
     | "onRestoreMethodList"

@@ -1,1 +1,1 @@
-export * from "./componentDocsQuery"
+export * from "./componentDocsQuery.js"

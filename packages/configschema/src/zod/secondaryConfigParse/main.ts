@@ -1,9 +1,9 @@
 import { z } from "zod";
-import { appConfigSchema } from "../main";
-import { jupyterConfigSchemaOutput } from "../jupyter/main";
-import { codeConfigSchemaOutput } from "../codeConfig";
-import { getFileTypeAppendices, getParsableExtensions } from "./getParsableExtensions";
-import { internalDocumentTypeConfigSchema, internalDocumentTypes } from "../internalDocumentTypes";
+import { appConfigSchema } from "../main.js";
+import { jupyterConfigSchemaOutput } from "../jupyter/main.js";
+import { codeConfigSchemaOutput } from "../codeConfig.js";
+import { getFileTypeAppendices, getParsableExtensions } from "./getParsableExtensions.js";
+import { internalDocumentTypeConfigSchema, internalDocumentTypes } from "../internalDocumentTypes.js";
 
 
 

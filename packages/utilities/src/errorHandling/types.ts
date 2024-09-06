@@ -1,5 +1,5 @@
-import { BibManagerErrorKeys } from "./categoryRecords/bibManager"
-import { TaskManagerErrorKeys } from "./categoryRecords/taskManager"
+import { BibManagerErrorKeys } from "./categoryRecords/bibManager.js"
+import { TaskManagerErrorKeys } from "./categoryRecords/taskManager.js"
 
 
 type ErrorKeyRecord = {

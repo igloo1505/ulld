@@ -1,1 +1,1 @@
-export * from "./getNoteTypeDataFromPath"
+export * from "./getNoteTypeDataFromPath.js"

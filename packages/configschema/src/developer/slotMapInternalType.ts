@@ -1,5 +1,5 @@
-import { SlotDataType } from "@ulld/utilities/types";
-import { SlotMap } from "./slotMapRootType.js";
+import type { SlotDataType } from "@ulld/utilities/types";
+import type { SlotMap } from "./slotMapRootType.js";
 
 export type SlotMapInternalType = {
     [K in keyof SlotMap]: {

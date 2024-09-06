@@ -1,4 +1,4 @@
-import { plotColors } from "./plotColors";
+import { plotColors } from "./plotColors.js";
 
 export const ulldDefaultColorThemes = [
     "blue",

@@ -1,0 +1,27 @@
+{
+  "aliases": "none",
+  "bin": "blueBright",
+  "command": "blueBright",
+  "commandSummary": "none",
+  "dollarSign": "green",
+  "flag": "green",
+  "flagDefaultValue": "blueBright",
+  "flagOptions": "blueBright",
+  "flagRequired": "red",
+  "flagSeparator": "none",
+  "sectionDescription": "none",
+  "sectionHeader": "blue",
+  "topic": "blueBright",
+  "version": "none",
+  "json": {
+    "brace": "whiteBright",
+    "bracket": "whiteBright",
+    "colon": "none",
+    "comma": "green",
+    "key": "blueBright",
+    "string": "greenBright",
+    "number": "blue",
+    "boolean": "redBright",
+    "null": "blackBright"
+  }
+}

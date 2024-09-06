@@ -4,10 +4,11 @@ import { runUlldBuild } from "../main.js";
 
 export default class BuildUlldApp extends Command {
     static state: "beta";
-    // static summary = "Builds a complete ULLD app from scratch.";
+    static summary = "Builds a complete ULLD app from scratch.";
     static description = "Builds a complete ULLD app from scratch.";
     static help = `This command builds a complete ULLD application from scratch. If you're trying to rebuild an existing app, use the *rebuild* command.`;
     static strict = false;
+    static aliases: string[] = ["compile"];
     static flags = {
         useLocal: Flags.boolean({
             hidden: true,

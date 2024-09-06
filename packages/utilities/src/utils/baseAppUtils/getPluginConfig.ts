@@ -1,5 +1,5 @@
 import { AppConfigSchemaOutput } from "@ulld/types";
-import {getAllPlugins} from "./getAllPlugins"
+import {getAllPlugins} from "./getAllPlugins.js"
 
 export const getPluginConfig = ({pluginName, appConfig}: {
     appConfig: AppConfigSchemaOutput,

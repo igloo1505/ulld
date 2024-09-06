@@ -7,7 +7,7 @@ export const xdgOpts: Options = {
 };
 
 export const getXdgPaths = () => {
-    return xdgAppPaths.default(xdgOpts);
+    return xdgAppPaths(xdgOpts);
 };
 
 export const getBuildDataOutputPath = () => {

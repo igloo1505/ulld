@@ -1,5 +1,5 @@
 import {z} from 'zod'
-import { autoWrapMath } from '../utils/latexUtils'
+import { autoWrapMath } from '../utils/latexUtils.js'
 
 
 export const autoWrapMathInlineField = z.string().transform((data: string) => autoWrapMath(data, false))

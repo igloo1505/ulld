@@ -1,4 +1,4 @@
-import { DocumentTypeConfigInput } from "../documentConfigSchema";
+import { DocumentTypeConfigInput } from "../documentConfigSchema.js";
 
 export const defaultNoteTypes: DocumentTypeConfigInput[] = [
     {

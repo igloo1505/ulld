@@ -3,8 +3,8 @@
     "extends": "../tsconfig",
     "compilerOptions": {
         "noEmit": true,
-        "module": "CommonJS",
-        "moduleResolution": "Bundler",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
         "esModuleInterop": true
     },
     "references": [

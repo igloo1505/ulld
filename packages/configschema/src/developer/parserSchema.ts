@@ -1,6 +1,6 @@
 import { z, ZodOptional, ZodType } from "zod";
 import { ParserConfig } from "./types/parserConfig.js";
-import { transformExportString } from "./transforms.js";
+import { transformExportString } from "@ulld/utilities/transformExportString";
 
 export const parserKeyList = ["mdx"] as const;
 

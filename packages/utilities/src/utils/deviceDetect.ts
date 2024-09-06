@@ -1,5 +1,5 @@
-import { DeviceType } from "../types/general";
-import { ArrayUtilities } from "./arrayUtilities";
+import { DeviceType } from "../types/general.js";
+import { ArrayUtilities } from "./arrayUtilities.js";
 import {
     isMobile,
     isTablet,

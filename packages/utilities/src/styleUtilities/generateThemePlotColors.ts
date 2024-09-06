@@ -1,11 +1,11 @@
 import path from "path";
 import { globSync } from "glob";
-import { JsonFile } from "../classes/file/jsonFile";
+import { JsonFile } from "../classes/file/jsonFile.js";
 import fs from "fs"
 import coloringPalette, {
     ColorFormat,
 } from "coloring-palette";
-import { ThemeColorGradientRecord, UlldColorTheme } from "../types/colors";
+import { ThemeColorGradientRecord, UlldColorTheme } from "../types/colors.js";
 
 const formatHslString = (s: string) => {
        return s.replace("hsl(", "").replace(")", "").split(",").map((s) => s.trim()).join(" ")
@@ -14,6 +14,7 @@ const formatHslString = (s: string) => {
     }
 
 const flattenColorPalette = (c: string, format: ColorFormat = "hsl") => {
+    // TODO: Might need to remove this being called as the default function
     let lightData = coloringPalette(c, format);
     let items: { color: string; foreground: string }[] = [];
     for (const item in lightData) {

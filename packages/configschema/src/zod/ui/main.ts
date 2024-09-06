@@ -1,8 +1,8 @@
 import { z } from "zod";
-import { tableUIConfigSchema } from "./tableConfig";
-import { textConfigSchema } from "./textConfig";
-import { mediaConfigSchema } from "./mediaConfig";
-import { colorsConfigSchema } from "./colorsConfig";
+import { tableUIConfigSchema } from "./tableConfig.js";
+import { textConfigSchema } from "./textConfig.js";
+import { mediaConfigSchema } from "./mediaConfig.js";
+import { colorsConfigSchema } from "./colorsConfig.js";
 import { themeSchema } from "@ulld/tailwind/themeUtils";
 
 export const mainUIConfigSchema = z

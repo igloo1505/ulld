@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { databaseBuildSchema } from "./database/database";
-import { additionalUserContent } from "./additional/additionalUserContent";
+import { databaseBuildSchema } from "./database/database.js";
+import { additionalUserContent } from "./additional/additionalUserContent.js";
 
 export const buildOnlySchema = z
     .object({

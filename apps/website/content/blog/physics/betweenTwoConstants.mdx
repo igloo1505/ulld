@@ -1,0 +1,142 @@
+---
+title: Between two constants
+created: 9-5-24
+id: betweenTwoConstants
+description: "While Einstein formed the justification for his theories of relativity on the constant nature of the speed of light, as Maxwell's equations seem to imply that the speed of light is formed from other apparent constants, the fine structure constant tells a different story."
+images: ["chalkboardPhysics.jpg"]
+category: Physics
+---
+
+To examine the roll that the speed of light plays in other apparent constants, let us first conduct a quick review.
+
+## Quick Review
+
+Recall that Maxwell formulated a set of 4 equations that seem to perfectly describe the interactions between the electromagnetic field and charged particles. Those equations are given by:
+
+<Grid cols={{
+    base: 1,
+    sm: 2
+}}>
+    <GridItem>
+$$
+\begin{align}
+\nabla \cdot B = 0 
+\end{align}
+$$
+    </GridItem>
+    <GridItem>
+$$
+\begin{align}
+\nabla \cdot E = \rho
+\end{align}
+$$
+
+    </GridItem>
+    <GridItem>
+$$
+\begin{align}
+\nabla \times E - \frac{\partial B}{\partial t} = 0 
+\end{align}
+$$
+    </GridItem>
+    <GridItem>
+$$
+\begin{align}
+\nabla \times B + \frac{\partial E}{\partial t} = j
+\end{align}
+$$
+    </GridItem>
+</Grid>
+
+
+
+Using these equations to describe a propagating plane wave yields $c = \frac{1}{\sqrt{\mu_0 \epsilon_0}}$, where $\mu_0$ and $\epsilon_0$ are scalar quantities inherent to the magnetic and electric forces respectively.
+
+
+The fine structure constant appears often throughout physics as a truly dimensionless scalar. This quantity is among the most intriguing and arguably mysterious values in all of physics, and is given by:
+
+$$
+\begin{align}
+\alpha = \frac{e^{2}}{4 \pi \epsilon_0 \hbar c} \approx \frac{1}{137}
+\end{align}
+$$
+
+
+## The Conundrum
+
+Let's break down these apparent constants a little further by their constituents. The speed of light, $c$ can be described by just two other apparent constants, $\mu_0$ which scales the _magnitude_ of the magnetic component of the Lorentz force, and by $\epsilon_0$, which scales the magnitude of the _electric_ component of the Lorentz force.
+
+The fine structure constant $\alpha$ on the other hand is composed of not only $\epsilon_0$ and $c$,  making it dependent upon all components of $c$, but is also dependent upon the electron charge $e$ and $\hbar$: a unit of ***distance***.
+
+All is well so far, but _hold on_... how can a time dependent quantity be constant _between_ a pair of arbitrary reference frames in relative motion, if time itself dilates between those same two reference frames? By that symmetry alone, if a magnitude is equivalent ***in*** each reference frame, it must be proportionally dilated ***between*** reference frames.
+
+
+## Consistency _between_ reference frames
+
+Einstein famously had his breakthrough eureka moment while allegedly aboard a train as he imagined how the clock behind him would appear if the speed of light is truly constant, and if the magnitude of the speed of light were on a human scale. He reached a conclusion that day that would forever change our understanding of the Universe. The subsequent papers did indeed propel our understanding of the cosmos generations forward, but follow up work has either failed to remedy or led us directly to objects of infinite density, excess galactic rotation curves, dark energy that is yet unaccounted for, and geodesics that lead seemingly nowhere.
+
+What if theoretical physics has been in such a rut not because we have yet to properly understand how a string vibrates across dimensions that we have never measured or detected, but because of a roadblock that we have created for ourselves?
+
+Let's consider for a moment the reference frame of an observer in relative motion, $S^{\prime}$, and allow that the $S^{\prime}$ reference frame is moving at $v^{\prime} = c \sqrt{\frac{5}{9}}$ so that $\gamma = 1.5$.
+
+If $t^{\prime} = 1.5 t$, how can it be that $c$, $\frac{dx}{dt}$ in the $S$ frame of reference is of equal magnitude to $c$ in the $S^{\prime}$ frame? Current remedies to this dilemma involve the use of a tertiary measure of time, _proper time_, but does this concept alone not describe the dilation of time as a mere observation, and not an actual dilation of time? This would be conceptually similar to the way we interpret wave length dilation in which an observer experiences a very real Newtonian Doppler shift, yet there exists an additional relativistic Doppler shift which we also observe. While both forms of Doppler shift are in some sense _real_, only one follows from a directly observable mechanism.
+
+
+## The Fine Structure of the Universe
+
+The dilemma described above, in which an entire theory uses as it's basis the consistency of a specific quantity, only to result in the disproving of the constant nature of that quantity lends two questions:
+
+1. If $c$ is constant ***in*** each reference frame, yet it is formed from a ratio dependent on a dilating variable, does this imply that $c$ is not constant ***between*** reference frames?
+2. If $c$ _does_ dilate ***between*** reference frames, what does this imply about our existing electromagnetic model?
+
+To be short, the answer to the first question I argue, is **yes**. A very resounding **yes**.
+
+The answer to the second question is more nuanced, and in many ways still a mystery. If we return to the fine structure constant $\alpha$, we should acknowledge that $\hbar$ is a measure of distance. Circumference or distance as applied to a propagating wave one might argue in the bar-ed form, but distance none the less. This gives a means to apply the observationally confirmed relativistic dilation to a specific quantity, $h$. If $\alpha$ is to remain constant, $c$ must dilate inversely proportional to $h$. Since $\gamma$, in the model being proposed results in the further dilation of space, where $\xi$ represents the spatial density
+
+$$
+\begin{align}
+ \Delta \xi = \frac{1}{dh} = \frac{1}{\gamma}
+\end{align}
+$$
+
+We might then postulate that $h$ acts not as a unit of length, but as a _ratio_ of lengths; describing the number of some quantity $h$ contained in a given $\mathbb{R}^{3}_\tau$ [space](/blog/physics/problemsResolvedByTheory#charged-particle-gravitational-accel). This gives $\hbar \to \hbar / \gamma$ and $c \to c \gamma$
+
+$$
+\begin{align}
+\alpha^{\prime} = \frac{e^{2}}{4 \pi \epsilon_0} \frac{\cancel{\gamma}}{\hbar} \frac{1}{c \cancel{\gamma}} \equiv \alpha
+\end{align}
+$$
+
+This not only provides a fine structure constant which remains completely equivalent[^1], but describes a mechanism under which the speed of light may be equivalent _in_ each reference frame, yet be dilated _between_ reference frames.
+
+There is no need to adjust Einstein's equations for relativistic motion, as this constant nature is already implied by their formulation.
+
+
+## Where to go from here?
+
+Binding gravity with electromagnetism has long been the holy grail of theoretical physics, and for good reason. Needless to say, it's still a work in progress. One phenomenon that does provide an interesting point of attack is the divergence of the magnetic field described in equation 1.  
+
+If gravity is indeed a result of this relativistic spatial dilation as described by the equivalence principle, and the divergence of the magnetic field in a reference frame at relative rest is 0, the divergence in a reference frame in relative motion must scale proportionally to $\gamma$. This is all well and good, and is in fact closely related to Einstein's contribution to magnet theory, in which he describes how a magnetic field in one reference frame becomes an electric field in another.
+
+What is far more interesting is the fact that while $\nabla \cdot B = 0$ in the frame at relative rest, $g \neq 0$, and therefore $\gamma \neq 0$. If electromagnetism is to fit closely within this model of relativity, $\nabla \cdot B$ should not be $0$, but equal to a time dependent determinant:
+
+$$
+\begin{align}
+ \nabla \cdot B = \left|\begin{array}{ccc}
+    \gamma & 0 & 0 \\
+     0 & \gamma & 0 \\
+     0 & 0 & \gamma
+    \end{array}\right| dt
+\end{align}
+$$
+
+As a vector field's curl is so closely related to the mathematics of a determinant, how can this be bound with the rest of Maxwell's equations to produce a _truly_ unified electromagnetic field? One that can potentially provide a root mechanism for this dilation of space and potentially allow us to make use of this spatial dilation all around us, providing what could be the biggest leap forward in clean energy production humanity has ever seen?
+
+### We're close
+
+We're getting close. _Very, *very*_ close. I would, and in some ways already have bet my life on the belief that we will see one of the largest technological leaps in human history within the next 50 years, perhaps on par with the wheel. Under normal circumstances I would lock myself in my apartment and focus on this alone. Unfortunately my circumstances are far from normal, and I don't have an apartment, or even a place to live. It's now early fall, and having recently lost the car that I was sleeping in, I'm left with no recourse other than to publish my ideas and progress before I'm able to see them to fruition, before winter arrives and I'm unable to make any progress at all.
+
+If you would like to help change that situation, in turn allowing me more time to focus on this work, see the sponsor page [here](/sponsor) or use the 'Contact Me' link in the footer to reach out to me directly.
+
+
+[^1]: Equivalent and of equal magnitude both _in_ each reference frame, and _between_ reference frames.

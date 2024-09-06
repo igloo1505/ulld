@@ -1,4 +1,4 @@
-import { ulldDefaultColorThemes, ulldDefaultPlotThemes } from "../styleUtilities/ulldDefaultColorThemes"
+import { ulldDefaultColorThemes, ulldDefaultPlotThemes } from "../styleUtilities/ulldDefaultColorThemes.js"
 
 export type AvailableColorStringFormats = "hex" | "hsl" | "hsv" | "rgb"
 

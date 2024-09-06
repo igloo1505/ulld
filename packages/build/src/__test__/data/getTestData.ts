@@ -6,7 +6,7 @@ import { UlldPlugin } from "../../classes/plugin";
 import { PluginSlot } from "../../classes/slot";
 import { PluginSlotKey } from "@ulld/configschema/developerTypes";
 import { PluginPage } from "../../classes/page";
-import testData from "./testData.json"
+import testData from "./testData.json" with {type: "json"};
 import { TargetPaths } from "../../classes/paths";
 
 let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";

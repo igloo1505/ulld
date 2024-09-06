@@ -1,4 +1,4 @@
-import { ConfigColorKey } from "./colorsConfig";
+import { ConfigColorKey } from "./colorsConfig.js";
 
 export const defaultUlldColorMap: {
     [k in ConfigColorKey]: string | { dark: string; light: string };

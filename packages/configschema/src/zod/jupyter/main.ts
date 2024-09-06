@@ -2,10 +2,10 @@ import { z } from "zod";
 import {
     jupyterReactConfigSchema,
     jupyterReactConfigSchemaOutput,
-} from "./jupyterReact";
-import { jupyterNotebookPropsSchema } from "./jupyterNotebook";
-import { nbConvertConfigSchema } from "./nbconvert";
-import d from "../../defaults/generalDefaults.json";
+} from "./jupyterReact.js";
+import { jupyterNotebookPropsSchema } from "./jupyterNotebook.js";
+import { nbConvertConfigSchema } from "./nbconvert.js";
+import d from "../../defaults/generalDefaults.json" with { type: "json" };
 
 export const jupyterConfigSchema = z.object({
     execute: z
@@ -50,23 +50,25 @@ export const jupyterConfigSchema = z.object({
     jupyterReactProps: jupyterReactConfigSchema,
     nbConvert: nbConvertConfigSchema.default({}),
     jupyterNotebookProps: jupyterNotebookPropsSchema,
-    cellInputWrappers: z.record(
-        z.string(),
-        z.string().transform((s) => {
-            let lines = s.split("\n");
-            let inputIndex = lines.findIndex((x) => x.includes("<<Cell-Input>>"));
-            if (inputIndex < 0) {
+    cellInputWrappers: z
+        .record(
+            z.string(),
+            z.string().transform((s) => {
+                let lines = s.split("\n");
+                let inputIndex = lines.findIndex((x) => x.includes("<<Cell-Input>>"));
+                if (inputIndex < 0) {
+                    return {
+                        prefix: `${s}\n`,
+                        suffix: "",
+                    };
+                }
                 return {
-                    prefix: `${s}\n`,
-                    suffix: "",
+                    prefix: `${lines.slice(0, inputIndex).join("\n")}\n`,
+                    suffix: `\n${lines.slice(inputIndex + 1)}`,
                 };
-            }
-            return {
-                prefix: `${lines.slice(0, inputIndex).join("\n")}\n`,
-                suffix: `\n${lines.slice(inputIndex + 1)}`,
-            };
-        }),
-    ),
+            }),
+        )
+        .default({}),
 });
 
 export const jupyterConfigSchemaOutput = jupyterConfigSchema.merge(

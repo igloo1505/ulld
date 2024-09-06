@@ -1,4 +1,4 @@
-import { DateTime } from "../classes/DateTime/main";
+import { DateTime } from "../classes/DateTime/main.js";
 
 const makeDate = (s: string | Date) => {
     return typeof s === "string" ? new Date(s) : s;

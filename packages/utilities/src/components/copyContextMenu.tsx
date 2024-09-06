@@ -1,9 +1,9 @@
 "use client"
 import { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem } from '@ulld/tailwind/context-menu'
-import { copyStringToClipboard } from '../actions/copyStringToClipboard'
 import React from 'react'
-import { removeMathDollarSigns } from '../utils/stringUtils'
-import { cn } from '../utils/cn'
+import { copyStringToClipboard } from '../actions/copyStringToClipboard.js'
+import { removeMathDollarSigns } from '../utils/stringUtils.js'
+import { cn } from '../utils/cn.js'
 
 
 

@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { slotKeySchema } from "../developer/slotKeySchema";
-import { embeddableConfigSchema } from "../developer/componentSchema";
+import { slotKeySchema } from "../developer/slotKeySchema.js";
+import { embeddableConfigSchema } from "../developer/componentSchema.js";
 
 export const baseAppSlot = z.object({
     parentSlot: slotKeySchema,

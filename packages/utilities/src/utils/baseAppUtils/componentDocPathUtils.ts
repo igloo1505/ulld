@@ -1,8 +1,8 @@
 import path from "path";
 import { BuildStaticDataOutput } from "@ulld/types";
 import fs from "fs";
-import { ComponentDocsQueryParams } from "../../types/baseApp/componentDocsQuery";
-import { ComponentDocsQuery } from "../../classes/query/componentDocs";
+import { ComponentDocsQueryParams } from "../../types/baseApp/componentDocsQuery.js";
+import { ComponentDocsQuery } from "../../classes/query/componentDocs.js";
 
 export const componentDocsPathFromPluginComponent = (
     pluginName: string,

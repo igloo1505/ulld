@@ -1,6 +1,6 @@
 import { z } from "zod"
-import type { equationSearchParamsSchema } from "./corePageUtils/zod"
-import editorLanguages from "../monaco/languages"
+import type { equationSearchParamsSchema } from "./corePageUtils/zod.js"
+import editorLanguages from "../monaco/languages.js"
 
 export type EquationDetailModalPageProps = {
     isModal?: boolean

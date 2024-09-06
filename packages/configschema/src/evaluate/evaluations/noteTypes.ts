@@ -1,7 +1,7 @@
-import { DocumentTypeConfig } from "../../zod/documentConfigSchema";
-import { AppConfigSchemaOutput } from "../../zod/main";
-import { ConfigEvaluationError, EvaluationErrors } from "../types";
-import {arrayHasDuplicates} from "../utils"
+import { DocumentTypeConfig } from "../../zod/documentConfigSchema.js";
+import { AppConfigSchemaOutput } from "../../zod/main.js";
+import { ConfigEvaluationError, EvaluationErrors } from "../types.js";
+import {arrayHasDuplicates} from "../utils.js"
 
 
 const overlappingDocumentTypes = (noteTypes: DocumentTypeConfig[]): ConfigEvaluationError | void  => {

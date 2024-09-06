@@ -1,6 +1,6 @@
 import { z, ZodTypeAny } from "zod";
 import { SlotMap } from "./slotMapRootType.js";
-import buildStaticData from "@ulld/utilities/buildStaticData";
+import buildStaticData from "@ulld/utilities/buildStaticData.json" with {type: "json"};
 
 export const configPluginSchema = z
     .object({

@@ -1,11 +1,11 @@
 import { z } from "zod";
-import { zodWithForwardSlashTransform } from "./configUtilitySchemas";
+import { zodWithForwardSlashTransform } from "./configUtilitySchemas.js";
 import { withForwardSlash } from "@ulld/utilities/utils/fsUtils";
 import {
     makeValidId,
     makeValidIdOnlyLetters,
 } from "@ulld/utilities/utils/identity";
-import { iconNameField } from "./navigationConfig";
+import { iconNameField } from "./navigationConfig.js";
 
 const parsableSearchParam = z.union([
     z.string(),

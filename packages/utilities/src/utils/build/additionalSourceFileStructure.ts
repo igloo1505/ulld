@@ -1,5 +1,5 @@
 import path from "path";
-import type { WithRequired } from "../../types/utilityTypes";
+import type { WithRequired } from "../../types/utilityTypes.js";
 
 export type FilePathItem = {
     subPath: string;

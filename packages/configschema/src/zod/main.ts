@@ -1,30 +1,30 @@
 import { z } from "zod";
-import { performanceConfigSchema } from "./performanceConfig";
-import { terminalConfigSchema } from "./terminalConfig";
-import { documentTypeConfigSchema } from "./documentConfigSchema";
-import { zodPathGlobTransform } from "./configUtilitySchemas";
-import { dateParseConfigSchema } from "./dateParseConfig";
-import { codeConfigSchema } from "./codeConfig";
-import { navigationConfigSchema } from "./navigationConfig";
-import { mainUIConfigSchema } from "./ui/main";
-import { databaseConfigSchema } from "./database/main";
-import { mathConfigSchema } from "./math/main";
-import { jupyterConfigSchema } from "./jupyter/main";
-import { plotConfigSchema } from "./plot/main";
-import { credentialsConfigSchema } from "./credentials/main";
-import { defaultIgnoreFilePaths } from "./defaults/general";
-import { slashesTransform } from "./transforms/general";
-import { allParsableFileExtensionSchema } from "./secondaryConfigParse/getParsableExtensions";
-import { featuresConfigSchema } from "./features/main";
+import { performanceConfigSchema } from "./performanceConfig.js";
+import { terminalConfigSchema } from "./terminalConfig.js";
+import { documentTypeConfigSchema } from "./documentConfigSchema.js";
+import { zodPathGlobTransform } from "./configUtilitySchemas.js";
+import { dateParseConfigSchema } from "./dateParseConfig.js";
+import { codeConfigSchema } from "./codeConfig.js";
+import { navigationConfigSchema } from "./navigationConfig.js";
+import { mainUIConfigSchema } from "./ui/main.js";
+import { databaseConfigSchema } from "./database/main.js";
+import { mathConfigSchema } from "./math/main.js";
+import { jupyterConfigSchema } from "./jupyter/main.js";
+import { plotConfigSchema } from "./plot/main.js";
+import { credentialsConfigSchema } from "./credentials/main.js";
+import { defaultIgnoreFilePaths } from "./defaults/general.js";
+import { slashesTransform } from "./transforms/general.js";
+import { allParsableFileExtensionSchema } from "./secondaryConfigParse/getParsableExtensions.js";
+import { featuresConfigSchema } from "./features/main.js";
 import { pluginSlotSchema } from "@ulld/configschema/slotsSchema";
 import {
     withForwardSlash,
     withForwardSlashOptional,
 } from "@ulld/utilities/fsUtils";
-import { buildOnlySchema } from "./build/main";
-import { appMetaSchema } from "./meta";
-import staticBuildData from "@ulld/utilities/buildStaticData";
-import { defaultNoteTypes } from "./defaults/defaultNoteTypes";
+import { buildOnlySchema } from "./build/main.js";
+import { appMetaSchema } from "./meta.js";
+import staticBuildData from "@ulld/utilities/buildStaticData.json" with {type: "json"};
+import { defaultNoteTypes } from "./defaults/defaultNoteTypes.js";
 
 export const zodRegexField = z
     .union([

@@ -1,4 +1,4 @@
-import slots from "@ulld/utilities/slotMap.json"
+import slots from "@ulld/utilities/slotMap.json" with {type: "json"}
 
 
 export type PluginSlotObject = {

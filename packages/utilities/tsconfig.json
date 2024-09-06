@@ -5,18 +5,19 @@
         "rootDir": "src",
         "outDir": "dist",
         // "emitDeclarationOnly": true,
-        // "module": "ESNext",
+        "module": "ESNext",
         "target": "ES2021",
-        "moduleResolution": "Bundler",
+        // "moduleResolution": "NodeNext",
         "noEmit": false,
         "incremental": false,
-        "jsx": "preserve",
+        "jsx": "react",
         "isolatedModules": true,
         "allowImportingTsExtensions": false,
         "declaration": true,
         "declarationMap": true,
         "esModuleInterop": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true
     },
     "exclude": [
         "dist",

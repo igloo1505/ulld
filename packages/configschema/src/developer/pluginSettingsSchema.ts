@@ -1,7 +1,5 @@
 import { z } from "zod";
-import {
-    transformExportString,
-} from "./transforms.js";
+import { transformExportString } from "@ulld/utilities/transformExportString";
 import { PluginSettingsConfig } from "./types/pluginSettingsConfig.js";
 
 export const pluginSettingsSchema: z.ZodType<PluginSettingsConfig> = z.object({

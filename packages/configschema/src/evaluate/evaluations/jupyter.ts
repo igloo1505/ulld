@@ -1,5 +1,5 @@
-import { AppConfigSchemaOutput } from "../../zod/main";
-import { ConfigEvaluationError, EvaluationErrors } from "../types";
+import { AppConfigSchemaOutput } from "../../zod/main.js";
+import { ConfigEvaluationError, EvaluationErrors } from "../types.js";
 
 type PartialConfig = any
 

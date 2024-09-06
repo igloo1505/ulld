@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { transformExportStringArray } from "./transforms.js";
+import { transformExportStringArray } from "@ulld/utilities/transformExportString";
 import { AdditionalImportsConfig } from "./types/additionalImportsConfig.js";
 
 export const additionalImportsConfigSchema: z.ZodType<AdditionalImportsConfig> =

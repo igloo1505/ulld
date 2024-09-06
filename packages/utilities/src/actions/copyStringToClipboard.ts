@@ -1,4 +1,4 @@
-import { ToastConfigType } from "../types/toastConfig";
+import { ToastConfigType } from "../types/toastConfig.js";
 
 
 export const copyStringToClipboard = async (

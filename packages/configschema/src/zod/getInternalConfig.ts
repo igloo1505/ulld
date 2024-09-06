@@ -1,7 +1,7 @@
-import { applySearchParamConfigOverride } from "./applySearchParamOverride"
-import type { InternalDocumentConfigType } from "./internalDocumentTypes"
-import type { AppConfigSchemaOutput } from "./main"
-import { ParsableExtensionsSchema, getFileTypeAppendices, getParsableExtensions } from "./secondaryConfigParse/getParsableExtensions"
+import { applySearchParamConfigOverride } from "./applySearchParamOverride.js"
+import type { InternalDocumentConfigType } from "./internalDocumentTypes.js"
+import type { AppConfigSchemaOutput } from "./main.js"
+import { ParsableExtensionsSchema, getFileTypeAppendices, getParsableExtensions } from "./secondaryConfigParse/getParsableExtensions.js"
 
 
 

@@ -1,6 +1,11 @@
-#!/usr/bin/env -S node --loader ts-node/esm --disable-warning=ExperimentalWarning
+#!/usr/bin/env ts-node
 
-// eslint-disable-next-line n/shebang
-import { execute } from "@oclif/core";
+async function main() {
+  const { settings } = await import('@oclif/core/settings');
+  const { execute } = await import('@oclif/core/execute');
 
-await execute({ development: true, dir: import.meta.url });
+  settings.performanceEnabled = true;
+  await execute({ development: true, dir: import.meta.url });
+}
+
+await main();

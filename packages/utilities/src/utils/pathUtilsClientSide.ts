@@ -1,5 +1,5 @@
-import { withForwardSlash } from "./fsUtils";
-import monacoLanguages from "../monaco/languages";
+import { withForwardSlash } from "./fsUtils.js";
+import monacoLanguages from "../monaco/languages.js";
 
 export interface EditorModalConfig {
     language?: (typeof monacoLanguages)[number] | "mdx";

@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { DocumentTypeConfig } from "../zod/documentConfigSchema";
+import { DocumentTypeConfig } from "../zod/documentConfigSchema.js";
 
 export const readDocumentTypes = () => {
     const f = path.join(process.cwd(), "appConfig.ulld.json");

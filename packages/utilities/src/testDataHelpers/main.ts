@@ -1,2 +1,2 @@
-export * from "./getRandomLoremString"
-export * from "./testDateHelper"
+export * from "./getRandomLoremString.js"
+export * from "./testDateHelper.js"

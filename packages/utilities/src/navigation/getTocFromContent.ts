@@ -1,5 +1,5 @@
 import { getTableOfContents, TOCItemType } from 'fumadocs-core/server';
-import { parseMarkdownTitle } from '../additionalParsers/mdx/getContentHeadings';
+import { parseMarkdownTitle } from '../additionalParsers/mdx/getContentHeadings.js';
 
 
 export type { TOCItemType }

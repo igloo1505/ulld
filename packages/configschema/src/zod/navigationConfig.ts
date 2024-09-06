@@ -2,7 +2,7 @@ import { z } from "zod";
 import {
     ValidIconName,
 } from "@ulld/icons/dynamic";
-import { DocumentTypeConfig } from "./documentConfigSchema";
+import { DocumentTypeConfig } from "./documentConfigSchema.js";
 import allIcons from "@ulld/icons/names"
 
 // PRIORITY: Parsing the user's app config needs to write the document types to the file first, and then reparse everything else afterwards so they are accessible. It's not ideal, but it can be reworked once the entire build process is in place.

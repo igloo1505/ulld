@@ -1,4 +1,4 @@
-import { AppConfigSchemaInput, appConfigSchema } from "./main";
+import { AppConfigSchemaInput, appConfigSchema } from "./main.js";
 import fs from 'fs'
 import path from 'path'
 import { zodToJsonSchema } from "zod-to-json-schema";

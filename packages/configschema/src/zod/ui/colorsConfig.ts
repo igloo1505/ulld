@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { defaultUlldColorMap } from "./defaultColorMap";
+import { defaultUlldColorMap } from "./defaultColorMap.js";
 import { convertColorString } from "@ulld/utilities/convertColorString";
 
 const colorTransformOptional = (val?: string | null) => val ? convertColorString(val) : undefined;

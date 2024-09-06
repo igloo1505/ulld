@@ -1,6 +1,6 @@
-import { LetterType, SearchAllSearchType } from "../types/general";
-import { SearchAllParams } from "../types/pageParams";
-import { ArrayUtilities } from "./arrayUtilities";
+import { LetterType, SearchAllSearchType } from "../types/general.js";
+import { SearchAllParams } from "../types/pageParams.js";
+import { ArrayUtilities } from "./arrayUtilities.js";
 
 export const getFirstLetterWithLatex = (value: string): LetterType => {
     return value.replaceAll(/\\|\:|\-|\=|\_/gm, "")[0] as LetterType;

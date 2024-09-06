@@ -1,11 +1,11 @@
 import {
     DocumentTypeConfig,
     documentTypeConfigSchema,
-} from "../zod/documentConfigSchema";
-import { getInternalConfig } from "../zod/getInternalConfig";
-import { AppConfigSchemaOutput } from "../zod/main";
-import { DocTypes } from "./docTypes";
-import { WithFs } from "../types";
+} from "../zod/documentConfigSchema.js";
+import { getInternalConfig } from "../zod/getInternalConfig.js";
+import { AppConfigSchemaOutput } from "../zod/main.js";
+import { DocTypes } from "./docTypes.js";
+import { WithFs } from "../types.js";
 
 export const getDocumentTypeConfig = (
     docType: string | DocumentTypeConfig,

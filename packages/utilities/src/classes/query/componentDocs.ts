@@ -1,5 +1,5 @@
 import { BuildStaticDataOutput } from "@ulld/types";
-import { ComponentDocsQueryParams } from "../../types/baseApp/componentDocsQuery";
+import { ComponentDocsQueryParams } from "../../types/baseApp/componentDocsQuery.js";
 type QueryItem = BuildStaticDataOutput["componentDocs"][number];
 
 export class ComponentDocsQuery {

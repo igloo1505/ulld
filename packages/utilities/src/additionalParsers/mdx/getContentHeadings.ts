@@ -1,4 +1,4 @@
-import { ContentHeading } from "../../types/mdxStructure";
+import { ContentHeading } from "../../types/mdxStructure.js";
 
 const removeIdSyntax = (s: string) => {
     if (s.includes("[#") && s.endsWith("]")) {

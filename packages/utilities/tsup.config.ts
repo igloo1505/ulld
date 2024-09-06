@@ -3,6 +3,7 @@ import { defineConfig, Options, NormalizedOptions } from "tsup";
 // import { preserveDirectivesPlugin } from "esbuild-plugin-preserve-directives";
 import { globSync } from "glob";
 import fs from "fs";
+import { copyJsonFilesToDist } from "./src/utils/build/copyJsonFilesToDist";
 // import { globSync } from "glob";
 
 // let entries = globSync("./src/**/*.{ts,tsx}", {
@@ -63,6 +64,7 @@ const prependDirectives = async () => {
             prependUseClient(distPaths.esm);
         }
     });
+    copyJsonFilesToDist(__dirname);
 };
 
 export default defineConfig((options) => {
@@ -82,14 +84,15 @@ export default defineConfig((options) => {
         treeshake: "recommended",
         shims: true,
         skipNodeModulesBundle: true,
-        // external: [
-        //     "react",
-        // ],
+        external: ["react"],
         tsconfig: path.resolve(__dirname, "tsconfig.json"),
         outExtension: ({ format }) => {
             return {
                 js: `.${format === "esm" ? "js" : "cjs"}`,
             };
+        },
+        esbuildOptions(options, context) {
+            options.ignoreAnnotations = false;
         },
         // esbuildPlugins: [
         //     preserveDirectivesPlugin({

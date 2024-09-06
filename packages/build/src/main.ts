@@ -1,7 +1,14 @@
 import { log } from "console";
-import { stages } from "./stages/main.js";
 import { BuildOptionsType, optionMap } from "./utils/options.js";
 import { BuildConfig } from "./types.js";
+import { cleanAfterConflictResolution } from "./stages/cleanAfterConflictResolution.js";
+import { createBaseProject } from "./stages/createBaseProject.js";
+import { gatherAppConfig } from "./stages/gatherConfig.js";
+import { generate } from "./stages/generate.js";
+import { installDependencies } from "./stages/preModuleInstall.js";
+import { prepareToGenerate } from "./stages/prepareToGenerate.js";
+import { resolveConflicts } from "./stages/resolveConflicts.js";
+import { verifyDirectory } from "./stages/verifyDirectory.js";
 import notifier from "node-notifier"
 import path from 'path'
 
@@ -26,23 +33,23 @@ export const runUlldBuild = async (
     buildParams: BuildConfig,
 ) => {
     try {
-        let build = await stages.verifyDirectory(options, buildParams.branch);
+        let build = await verifyDirectory(options, buildParams.branch);
         build.applyPackageManagerOptions(options);
         build.logDebug(`creating base project`);
-        await stages.createBaseProject(build, options);
+        await createBaseProject(build, options);
         build.logDebug(`gatherAppConfig`);
-        await stages.gatherAppConfig(build, options);
+        await gatherAppConfig(build, options);
         build.logDebug(`installDependencies`);
-        await stages.installDependencies(build, options);
+        await installDependencies(build, options);
         build.logDebug(`resolveConflicts`);
-        await stages.resolveConflicts(build, options);
+        await resolveConflicts(build, options);
         build.logDebug("cleanAfterConflictResolution");
-        await stages.cleanAfterConflictResolution(build, options);
+        await cleanAfterConflictResolution(build, options);
         build.logDebug("prepareToGenerate");
-        await stages.prepareToGenerate(build, options);
+        await prepareToGenerate(build, options);
 
         if (avoidIfInOpts({ opts: [], options })) {
-            let baseApp = await stages.generate(build, options);
+            let baseApp = await generate(build, options);
             baseApp.cleanUp();
         }
         notifier.notify({

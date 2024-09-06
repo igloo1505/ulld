@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { logLevelSchema } from './configUtilitySchemas'
+import { logLevelSchema } from './configUtilitySchemas.js'
 
 
 export const terminalConfigSchema = z.object({

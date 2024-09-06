@@ -1,5 +1,5 @@
-import { FilePathProp } from "../types/main";
 import path from "path";
+import { FilePathProp } from "../types/corePageUtils/commonPagePropTypes.js";
 
 export const getFilePathProp = (
     pathValue: string,

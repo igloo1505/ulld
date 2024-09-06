@@ -1,5 +1,5 @@
 import { z } from "zod"
-import shikiLanguageList, { ShikiLanguage } from "../shiki/languageList"
+import shikiLanguageList, { ShikiLanguage } from "../shiki/languageList.js"
 
 export const snippetValidator = z.object({
     id: z.number().int(),

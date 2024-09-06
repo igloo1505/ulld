@@ -1,1 +1,1 @@
-export * from "./filePathInput"
+export * from "./filePathInput.js"

@@ -1,2 +1,2 @@
-export { getAllRegexMatches } from "./getAllRegexMatches";
-export { replaceContentByMatch } from "./replaceContentByRegexMatch";
+export { getAllRegexMatches } from "./getAllRegexMatches.js";
+export { replaceContentByMatch } from "./replaceContentByRegexMatch.js";

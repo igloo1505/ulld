@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { zodPathStringField } from "../configUtilitySchemas";
+import { zodPathStringField } from "../configUtilitySchemas.js";
 
 
 export const mathConfigSchema = z.object({

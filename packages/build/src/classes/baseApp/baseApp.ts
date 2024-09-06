@@ -2,7 +2,6 @@ import fs from "fs-extra";
 import path from "path";
 import sm from "@ulld/utilities/slotMap.json" with { type: "json" };
 import { ParserKey, parserKeyList } from "@ulld/configschema/developer";
-import { globSync } from "glob";
 import { EventMethodKey } from "../../types.js";
 import { flattenSlotMap } from "../../utils/slotMapUtils.js";
 import { AdditionalSources } from "../additionalSources.js";
@@ -18,7 +17,7 @@ import { getComponentMapContent } from "./fileContent/componentMap.js";
 import { getEventMethodListContent } from "./fileContent/eventMethodList.js";
 import { BuildOptionsType } from "../../utils/options.js";
 import type { pathKeys} from "@ulld/utilities/buildUtils"
-import { SlotMapInternalType } from "@ulld/configschema/slotMapInternalType";
+// import { SlotMapInternalType } from "@ulld/configschema/slotMapInternalType";
 
 interface ParserFunctionData {
     importName: string;
@@ -27,7 +26,7 @@ interface ParserFunctionData {
 
 export class BaseApp extends ShellManager {
     paths: TargetPaths;
-    slotMap: SlotMapInternalType;
+    slotMap: any; // SlotMapInternalType, but causes build error. Need to fix while on wifi.
     buildStaticData: BuildStaticData;
     buildCleanup: BuildCleanup;
     constructor(
@@ -36,7 +35,7 @@ export class BaseApp extends ShellManager {
     ) {
         super();
         this.paths = build.paths;
-        this.slotMap = sm as SlotMapInternalType;
+        this.slotMap = sm as any;
         this.buildStaticData = new BuildStaticData(this.paths, this.build);
         this.buildCleanup = new BuildCleanup(this.paths, this.build.packageManager);
     }

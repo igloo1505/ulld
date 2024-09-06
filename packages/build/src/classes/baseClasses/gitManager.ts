@@ -51,7 +51,7 @@ export class GitManager extends ShellManager {
             trimmed: false,
             progress: this.showProgress ? this.progress : undefined,
         };
-        const git: SimpleGit = simpleGit.default(options);
+        const git: SimpleGit = simpleGit(options);
         await git.pull({
             "-C": this.targetDirectory,
         });
