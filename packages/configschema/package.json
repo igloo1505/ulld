@@ -347,6 +347,7 @@
   },
   "scripts": {
     "build": "pnpm tsup",
+    "buildNode": "pnpm tsup-node",
     "buildLocal": "tsx ./src/__scripts__/updateShikiThemes.ts && tsx ./src/defaults/generateDefaultConfig.ts && tsx src/__scripts__/generateSlotMap.ts",
     "dev": "echo 'Add dev script here'",
     "gatherTypes": "tsc --project ./tsconfigTypes.json --emitDeclarationOnly",
