@@ -7,73 +7,89 @@ import ResumeSkillsGroup from "../../components/resume/skills/skillGroup";
 import PersonalInterestItem from "../../components/resume/personalInterestItem";
 import ResumeGridColoumnWrapper from "../../components/resume/gridColWrapper";
 import ResumeColumnZipper from "../../components/resume/resumeZipper";
+import ResumeProjectItem from "../../components/resume/resumeProjectItem";
 
-interface ResumePageProps { }
+interface ResumePageProps {}
 
 const ResumePage = (props: ResumePageProps) => {
-    const data = getResumeData();
-    return (
-        <div
-            className={
-                "w-full flex flex-col justify-start items-center min-h-screen-noNav mt-[80px]"
-            }
-        >
-            <div
-                className={"w-full max-w-[min(1080px,calc(100vw-3rem))] py-8 space-y-6"}
+  const data = getResumeData();
+  return (
+    <div
+      className={
+        "w-full flex flex-col justify-start items-center min-h-screen-noNav mt-[80px]"
+      }
+    >
+      <div
+        className={"w-full max-w-[min(1080px,calc(100vw-3rem))] py-8 space-y-6"}
+      >
+        <ResumeHeader
+          avatar={data.avatar}
+          dob={data.dob}
+          email={data.email}
+          homepage={data.homepage}
+          github={data.github}
+          linkedIn={data.linkedIn}
+        />
+        <ResumeIntro intro={data.intro} />
+        <div className={"grid grid-cols-[1fr_8px_1fr] w-full"}>
+          <ResumeGridColoumnWrapper>
+            <ResumeSection
+              label="Projects"
+              dir="right"
+              desc={data.projectsDesc}
+              descDelay={0.35}
             >
-                <ResumeHeader
-                    avatar={data.avatar}
-                    dob={data.dob}
-                    email={data.email}
-                    homepage={data.homepage}
-                    github={data.github}
-                    linkedIn={data.linkedIn}
-                />
-                <ResumeIntro intro={data.intro} />
-                <div className={"grid grid-cols-[1fr_8px_1fr] w-full"}>
-                    <ResumeGridColoumnWrapper>
-                        <ResumeSection label="Projects" dir="right">
-                            Projects here
-                        </ResumeSection>
-                    </ResumeGridColoumnWrapper>
-                    <ResumeColumnZipper />
-                    <ResumeGridColoumnWrapper>
-                        <ResumeSection
-                            label={"Skills & Languages"}
-                            dir="left"
-                            className={"space-y-6"}
-                        >
-                            {Object.keys(data.skills).map((k) => {
-                                return (
-                                    <ResumeSkillsGroup
-                                        dir="left"
-                                        label={k}
-                                        data={data.skills[k as keyof typeof data.skills]}
-                                    />
-                                );
-                            })}
-                        </ResumeSection>
-                        <ResumeSection
-                            label={"Personal Interests"}
-                            dir="left"
-                            className={
-                                "flex flex-row justify-start items-start flex-wrap gap-4"
-                            }
-                        >
-                            {data.personalInterests.map((k) => {
-                                return (
-                                    <PersonalInterestItem
-                                        key={`personal-interest-${k}`}
-                                        value={k}
-                                    />
-                                );
-                            })}
-                        </ResumeSection>
-                    </ResumeGridColoumnWrapper>
-                </div>
-            </div>
+              {data.projects.map((p, i) => {
+                return (
+                  <ResumeProjectItem
+                    index={i}
+                    initialDelay={0.5 + i * 0.2}
+                    item={p}
+                    dir="right"
+                  />
+                );
+              })}
+            </ResumeSection>
+          </ResumeGridColoumnWrapper>
+          <ResumeColumnZipper />
+          <ResumeGridColoumnWrapper>
+            <ResumeSection
+              label={"Skills & Languages"}
+              dir="left"
+              className={"space-y-6"}
+            >
+              {Object.keys(data.skills).map((k, i) => {
+                return (
+                  <ResumeSkillsGroup
+                    dir="left"
+                    label={k}
+                    data={data.skills[k as keyof typeof data.skills]}
+                    initialDelay={0.5 * (i + 1)}
+                  />
+                );
+              })}
+            </ResumeSection>
+            <ResumeSection
+              label={"Personal Interests"}
+              dir="left"
+              className={
+                "flex flex-row justify-start items-start flex-wrap gap-4"
+              }
+            >
+              {data.personalInterests.map((k) => {
+                return (
+                  <PersonalInterestItem
+                    key={`personal-interest-${k}`}
+                    value={k}
+                  />
+                );
+              })}
+            </ResumeSection>
+          </ResumeGridColoumnWrapper>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 ResumePage.displayName = "ResumePage";

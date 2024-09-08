@@ -17,13 +17,16 @@ const ResumeColumnZipper = () => {
                     return (
                         <motion.div
                             key={`center-dot-${i}`}
-                            className={"w-1 h-1 bg-muted rounded-full"}
+                            className={"w-1 h-1 rounded-full"}
                             initial={{
-                                opacity: 0
+                                backgroundColor: "#020817"
                             }}
                             animate={{
-                                opacity: 1,
-                                /* backgroundColor: "hsl(var(--primary))", */
+                                backgroundColor: ["#020817", "#0ba5e9", "#1e293b"],
+                                transition: {
+                                    delay: 1.25 + i * 0.05,
+                                    duration: 1
+                                }
                             }}
                         />
                     );

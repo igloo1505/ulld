@@ -98,6 +98,7 @@ const resumeData: ResumeDataInput = {
         "Reading Greek mythology to my puppy",
         "Math... <span class='italic'>I know</span>",
     ],
+    projectsDesc: "Due to my current living situation, much of my more meaningful previous work is no longer hosted. I can provide links to the repo's or video demonstrations on request.",
     projects: [],
     workHistory: []
 };

@@ -2,18 +2,23 @@ import React, { ReactNode } from "react";
 import ResumeSectionLabel from "./sectionLabel";
 import clsx from "clsx";
 import { cn } from "@ulld/utilities/cn";
+import ResumeSectionDescription from "./sectionDescription";
 
 interface ResumeSectionProps {
     label: ReactNode;
     dir: "left" | "right";
     children: ReactNode;
     className?: string;
+    desc?: string
+    descDelay?: number
 }
 
 const ResumeSection = ({
     label,
     dir,
     children,
+    desc,
+    descDelay=0,
     className,
 }: ResumeSectionProps) => {
     return (
@@ -26,6 +31,11 @@ const ResumeSection = ({
             >
                 <ResumeSectionLabel dir={dir}>{label}</ResumeSectionLabel>
             </div>
+            {desc && <ResumeSectionDescription 
+                    desc={desc}
+                    dir={dir}
+                    delay={descDelay}
+                />}
             <div className={cn("w-full", className)}>{children}</div>
         </div>
     );

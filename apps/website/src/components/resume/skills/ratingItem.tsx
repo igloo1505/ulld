@@ -7,14 +7,15 @@ interface ResumeSkillRatingItemProps {
     rating: number;
     index: number
     initialDelay?: number
+    delayScalar: number
 }
 
-const delayScalar = 0.025
 
 const ResumeSkillRatingItem = ({
     label,
     index,
     rating,
+    delayScalar,
     initialDelay = 0
 }: ResumeSkillRatingItemProps) => {
     return (
