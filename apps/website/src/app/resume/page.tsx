@@ -8,6 +8,7 @@ import PersonalInterestItem from "../../components/resume/personalInterestItem";
 import ResumeGridColoumnWrapper from "../../components/resume/gridColWrapper";
 import ResumeColumnZipper from "../../components/resume/resumeZipper";
 import ResumeProjectItem from "../../components/resume/resumeProjectItem";
+import WorkHistoryItem from "../../components/resume/workHistoryItem";
 
 interface ResumePageProps {}
 
@@ -31,13 +32,14 @@ const ResumePage = (props: ResumePageProps) => {
           linkedIn={data.linkedIn}
         />
         <ResumeIntro intro={data.intro} />
-        <div className={"grid grid-cols-[1fr_8px_1fr] w-full"}>
+        <div className={"flex flex-col justify-start items-center min-[740px]:grid grid-cols-[1fr_8px_1fr] w-full"}>
           <ResumeGridColoumnWrapper>
             <ResumeSection
               label="Projects"
               dir="right"
               desc={data.projectsDesc}
               descDelay={0.35}
+              arrowDelay={1.5}
             >
               {data.projects.map((p, i) => {
                 return (
@@ -50,13 +52,30 @@ const ResumePage = (props: ResumePageProps) => {
                 );
               })}
             </ResumeSection>
+            <ResumeSection
+              label="Work History"
+              dir="right"
+              className={"space-y-6"}
+              arrowDelay={2}
+            >
+              {data.workHistory.map((p, i) => {
+                return (
+                  <WorkHistoryItem
+                    initialDelay={0.65 + i * 0.2}
+                    item={p}
+                    dir="right"
+                  />
+                );
+              })}
+            </ResumeSection>
           </ResumeGridColoumnWrapper>
           <ResumeColumnZipper />
-          <ResumeGridColoumnWrapper>
+          <ResumeGridColoumnWrapper className={"max-[740px]:mt-6"}>
             <ResumeSection
               label={"Skills & Languages"}
               dir="left"
               className={"space-y-6"}
+              arrowDelay={1.75}
             >
               {Object.keys(data.skills).map((k, i) => {
                 return (
@@ -75,6 +94,7 @@ const ResumePage = (props: ResumePageProps) => {
               className={
                 "flex flex-row justify-start items-start flex-wrap gap-4"
               }
+              arrowDelay={2.25}
             >
               {data.personalInterests.map((k) => {
                 return (

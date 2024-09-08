@@ -11,6 +11,7 @@ interface ResumeSectionProps {
     className?: string;
     desc?: string
     descDelay?: number
+    arrowDelay: number
 }
 
 const ResumeSection = ({
@@ -19,17 +20,18 @@ const ResumeSection = ({
     children,
     desc,
     descDelay=0,
+    arrowDelay = 0,
     className,
 }: ResumeSectionProps) => {
     return (
         <div className={"w-full px-4 space-y-6"}>
             <div
                 className={clsx(
-                    "flex flex-row",
-                    dir === "right" ? "justify-end pr-8" : "justify-start pl-8",
+                    "flex flex-row justify-start",
+                    dir === "right" ? "min-[740px]:justify-end min-[740px]:pr-8" : "min-[740px]:pl-8",
                 )}
             >
-                <ResumeSectionLabel dir={dir}>{label}</ResumeSectionLabel>
+                <ResumeSectionLabel delay={arrowDelay} dir={dir}>{label}</ResumeSectionLabel>
             </div>
             {desc && <ResumeSectionDescription 
                     desc={desc}

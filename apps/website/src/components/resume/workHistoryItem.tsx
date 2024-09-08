@@ -1,28 +1,23 @@
-"use client";
+"use client"
 import React from "react";
 import { ResumeData } from "../../app/resume/resumeData";
+import { DynamicIcon } from "@ulld/icons";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { DynamicIcon } from "@ulld/icons";
 
-interface ResumeProjectItemProps {
-  dir: "right" | "left";
-  item: ResumeData["projects"][number];
-  index: number;
+interface WorkHistoryItemProps {
   initialDelay: number;
+  item: ResumeData["workHistory"][number];
+  dir: "left" | "right";
 }
 
-const ResumeProjectItem = ({
-  dir,
-  item,
-  index,
-  initialDelay,
-}: ResumeProjectItemProps) => {
+const WorkHistoryItem = ({ initialDelay, item, dir }: WorkHistoryItemProps) => {
+
   const textClass = dir === "right" ? "min-[740px]:text-right" : "text-left";
 
   const x = dir === "right" ? 100 : -100;
 
-  return (
+    return (
     <div
       className={clsx(
         "w-full flex flex-col justify-center items-start",
@@ -46,7 +41,7 @@ const ResumeProjectItem = ({
         {item.title}
       </motion.h3>
       <motion.p
-        className={textClass}
+        className={clsx("text-sm", textClass)}
         initial={{
           x,
           opacity: 0,
@@ -61,9 +56,8 @@ const ResumeProjectItem = ({
       >
         {item.desc}
       </motion.p>
-      <motion.a
-        className={clsx("w-fit grid grid-cols-[1fr_32px] place-items-center")} 
-        href={item.repo}
+      <motion.div
+        className={clsx("w-fit text-sm text-muted-foreground grid grid-cols-[1fr_32px] place-items-center")} 
         initial={{
           x,
           opacity: 0,
@@ -76,13 +70,13 @@ const ResumeProjectItem = ({
           },
         }}
       >
-        <div className={clsx("w-full", textClass)}>{item.repo.startsWith("https://") ? item.repo.replace("https://", "") : item.repo}</div>
-        <DynamicIcon name="github" className={"h-4 w-4"} />
-      </motion.a>
+        <div className={clsx("w-full", textClass)}>{item.location}</div>
+        <DynamicIcon name="map-pin" className={"h-4 w-4"} />
+      </motion.div>
     </div>
-  );
+    )
 };
 
-ResumeProjectItem.displayName = "ResumeProjectItem";
+WorkHistoryItem.displayName = "WorkHistoryItem";
 
-export default ResumeProjectItem;
+export default WorkHistoryItem;

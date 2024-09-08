@@ -1,14 +1,16 @@
+import clsx from 'clsx'
 import React, { ReactNode } from 'react'
 
 
 
 interface ResumeGridColoumnWrapperProps {
  children: ReactNode
+    className?: string
 }
 
-const ResumeGridColoumnWrapper = ({children}: ResumeGridColoumnWrapperProps) => {
+const ResumeGridColoumnWrapper = ({children, className}: ResumeGridColoumnWrapperProps) => {
 return (
-    <div className={"w-full space-y-6"}>{children}</div>
+    <div className={clsx("w-full h-full space-y-6", className)}>{children}</div>
 )
 }
 

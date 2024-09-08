@@ -14,7 +14,7 @@ interface ResumeSectionDescriptionProps {
 const ResumeSectionDescription = ({desc, dir, delay}: ResumeSectionDescriptionProps) => {
 return (
     <motion.p
-            className={clsx("w-full text-sm text-muted-foreground", dir === "right" ? "text-right" : "text-left")}
+            className={clsx("w-full text-sm text-muted-foreground text-left", dir === "right" && "min-[740px]:text-right")}
             initial={{
                 opacity: 0,
                 x: dir === "right" ? 100 : -100

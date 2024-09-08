@@ -24,7 +24,7 @@ const ResumeSkillsGroup = ({
   return (
     <div
       className={clsx(
-        "w-full h-fit flex flex-col",
+        "@container/skillsGroup w-full h-fit flex flex-col",
         dir === "right" ? "items-end" : "items-start",
       )}
     >
@@ -49,7 +49,7 @@ const ResumeSkillsGroup = ({
           "w-full",
           isStringArray
             ? "flex flex-row justify-start items-start flex-wrap gap-x-4"
-            : "flex flex-col justify-start items-start min-[940px]:grid min-[940px]:grid-cols-2 gap-x-6",
+            : "flex flex-col justify-start items-start @[450px]/skillsGroup:grid @[450px]/skillsGroup:grid-cols-2 gap-x-6",
         )}
       >
         {isStringArray

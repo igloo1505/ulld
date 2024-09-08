@@ -8,7 +8,7 @@ const ResumeColumnZipper = () => {
     return (
         <div
             className={
-                "w-full min-h-full h-fit flex flex-col justify-around items-center gap-1"
+                "w-full min-h-full h-fit hidden min-[740px]:flex flex-col justify-around items-center gap-1"
             }
         >
             {Array(maxButtons)

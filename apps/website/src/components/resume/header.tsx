@@ -74,7 +74,7 @@ const ResumeHeader = ({
         >
             <div
                 className={
-                    "flex flex-row justify-center items-center w-fit gap-4 md:gap-6"
+                    "flex flex-col min-[450px]:flex-row justify-center items-center w-fit gap-4 md:gap-6"
                 }
             >
                 <div
@@ -110,9 +110,9 @@ const ResumeHeader = ({
                         }}
                     />
                 </div>
-                <div className={"flex-col justify-center items-start"}>
+                <div className={"flex-col justify-center items-center min-[450px]:items-start"}>
                     <motion.div
-                        className={"text-4xl font-semibold leading-none"}
+                        className={"text-4xl font-semibold leading-none text-center min-[450px]:text-left"}
                         initial={{
                             x: -100,
                             opacity: 0
@@ -126,7 +126,7 @@ const ResumeHeader = ({
                         }}
                     >Andrew</motion.div>
                     <motion.div
-                        className={"text-4xl font-semibold leading-none"}
+                        className={"text-4xl font-semibold leading-none text-center min-[450px]:text-left"}
                         initial={{
                             x: -100,
                             opacity: 0
@@ -140,7 +140,7 @@ const ResumeHeader = ({
                         }}
                     >Mueller</motion.div>
                     <motion.div
-                        className={"text-muted-foreground"}
+                        className={"text-muted-foreground text-center min-[450px]:text-left"}
                         initial={{
                             x: -100,
                             opacity: 0
