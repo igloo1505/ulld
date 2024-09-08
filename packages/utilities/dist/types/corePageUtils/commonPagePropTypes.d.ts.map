@@ -1,0 +1,1 @@
+{"version":3,"file":"commonPagePropTypes.d.ts","sourceRoot":"","sources":["../../../src/types/corePageUtils/commonPagePropTypes.ts"],"names":[],"mappings":"AAAA,MAAM,MAAM,eAAe,GAAG;IAC1B,IAAI,EAAE,MAAM,EAAE,CAAC;IACf,QAAQ,EAAE,MAAM,EAAE,CAAC;IACnB,MAAM,EAAE,MAAM,EAAE,CAAC;CACpB,CAAA;AAED,MAAM,MAAM,YAAY,GAAG;IACvB,gBAAgB,EAAE,MAAM,CAAA;IACxB,YAAY,EAAE,MAAM,CAAA;CACvB,CAAA"}

@@ -1,0 +1,2 @@
+export declare const replaceContentByMatch: (content: string, match: RegExpMatchArray, group: string, newContent: string | ((matchGroupValue: string) => string)) => string;
+//# sourceMappingURL=replaceContentByRegexMatch.d.ts.map

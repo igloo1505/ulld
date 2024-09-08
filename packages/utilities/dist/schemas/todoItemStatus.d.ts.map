@@ -1,0 +1,1 @@
+{"version":3,"file":"todoItemStatus.d.ts","sourceRoot":"","sources":["../../src/schemas/todoItemStatus.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,gBAAgB,4EAOnB,CAAC;AAEX,eAAO,MAAM,kBAAkB;;;GAK7B,CAAA;AAEF,MAAM,MAAM,cAAc,GAAG,CAAC,OAAO,gBAAgB,CAAC,CAAC,MAAM,CAAC,GAAG,MAAM,CAAC;AACxE,MAAM,MAAM,cAAc,GAAG,CAAC,OAAO,gBAAgB,CAAC,CAAC,MAAM,CAAC,GAAG,MAAM,CAAC"}

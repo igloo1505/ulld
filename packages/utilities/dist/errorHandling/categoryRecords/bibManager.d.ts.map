@@ -1,0 +1,1 @@
+{"version":3,"file":"bibManager.d.ts","sourceRoot":"","sources":["../../../src/errorHandling/categoryRecords/bibManager.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,4BAA4B,CAAC;AAE7D,MAAM,MAAM,mBAAmB,GAAG,yBAAyB,CAAA;AAG3D,eAAO,MAAM,qBAAqB,EAAE;KAAE,CAAC,IAAI,mBAAmB,GAAG,eAAe;CAM/E,CAAC"}

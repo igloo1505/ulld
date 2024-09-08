@@ -1,0 +1,32 @@
+export declare const healthReportFormDefaultValues: {
+    title: undefined;
+    summary: undefined;
+    overall: number;
+    skin: number;
+    bloat: number;
+    weight_feeling: number;
+    fullness: number;
+    weight: undefined;
+    cardiacCapacity: number;
+    jawLine: number;
+    joints: number;
+    flexibility: number;
+    anxiety: number;
+    anxiety_desc: undefined;
+    mood: number;
+    mood_desc: undefined;
+    sexDrive: number;
+    intruisiveThoughts: number;
+    caffeineIntake: number;
+    glutenIntake: number;
+    sugarIntake: number;
+    artificialSweetenerIntake: number;
+    artificalDyes: number;
+    sleepQuality: number;
+    sleepHours: undefined;
+    calorie_est: undefined;
+    times_meals_more_than_gap_apart: undefined;
+    estHoursInExcessFast: undefined;
+    created: undefined;
+};
+//# sourceMappingURL=healthReport.d.ts.map

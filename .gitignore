@@ -3,7 +3,7 @@ node_modules
 .turbo
 *.log
 .next
-dist
+# dist
 dist-ssr
 *.local
 .env

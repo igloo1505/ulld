@@ -1,0 +1,400 @@
+import "../chunk-7UBRHILH.js";
+
+// src/configJsonSchemas/pluginConfigJsonSchema.json
+var $ref = "#/definitions/ulldPluginConfig";
+var definitions = {
+  ulldPluginConfig: {
+    type: "object",
+    properties: {
+      pluginName: {
+        type: "string"
+      },
+      label: {
+        type: "string",
+        description: "For display purposes. Does not need to match npm the way pluginName does."
+      },
+      pluginId: {
+        type: "string",
+        default: "THIS IS AUTOMATICALLY GENERATED. Do not apply this key yourself. It will be overwritten."
+      },
+      slot: {
+        type: "string",
+        enum: [
+          "snippets",
+          "math",
+          "editor",
+          "UI",
+          "bibliography",
+          "taskManager",
+          "pdf",
+          "navigation",
+          "dashboard",
+          "form",
+          "commandPalette"
+        ]
+      },
+      components: {
+        type: "array",
+        items: {
+          type: "object",
+          properties: {
+            componentName: {
+              type: "string",
+              description: "Must start with a capital letter."
+            },
+            tags: {
+              type: "array",
+              items: {
+                type: "string"
+              },
+              description: "Help user's find your component both before they install it, and while searching for documentation.",
+              default: []
+            },
+            slot: {
+              type: "string",
+              description: "This only applys if the component is meant to override an existing slot. All 'slots' in the appConfigSchema exported from @ulld/configschema/main/zod at the slots key will have an accompanying 'subslot' schema exported from @ulld/configschema/subslots/<name of that slot>. This schema will be a record of a specific set of keys unique to that slot, and a path to a component. All of these paths are initially populated by internally developed components, but can be overridden if your plugin defines the initial slot at the developerConfigSchema.slot path, and then overrides one or more subslots unique to that slot. This componentConfigSchema.slot path will be that subslot if it applies. Most components that are embedded in a user's notes, and don't modify the app as a whole do not occupy slots."
+            },
+            export: {
+              type: "string",
+              description: "The path that this component is exported as in your package.json."
+            },
+            embeddable: {
+              anyOf: [
+                {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    properties: {
+                      regexToInclude: {
+                        type: "string",
+                        description: "String passed to new RegExp(<regexToInclude>) to determine if a component should be imported. The raw content of a mdx file will be tested using this regex, and imported if a match is found. Due to the nature of jsx, 99% of the time, the componentName property can be used with a prefix of < to give '<MyComponentName'"
+                      },
+                      label: {
+                        type: "string",
+                        description: "An object key that matches your regex. 99% of the time, this will just be the regexToInclude property without the leading '<'. It will default to that, but if your regexToInclude property is more specific and includes other special characters, you should provide this label yourself."
+                      }
+                    },
+                    required: [
+                      "regexToInclude"
+                    ],
+                    additionalProperties: false
+                  }
+                },
+                {
+                  $ref: "#/definitions/ulldPluginConfig/properties/components/items/properties/embeddable/anyOf/0/items"
+                }
+              ],
+              description: "This can be an array to apply aliases to the same component. The component won't be imported twice."
+            },
+            exportedPropsName: {
+              type: "string"
+            },
+            docsExport: {
+              type: "string",
+              description: "The package.json export that points to a .md or .mdx file that provides a quick reference for the component. This should be simple enough to be opened in the command palette in split view. If only docsExport or fullDocsExport is provided, this shorter docsExport is heavily preferred."
+            },
+            fullDocsExport: {
+              type: "string",
+              description: "Similar to docsExport, but will be shown when users redirect to an entire page. This markdown can be more complex and include examples, but the components used must only consist of core ULLD components and your plugin, since we don't know what plugins other user's will be using."
+            },
+            componentId: {
+              type: "string",
+              format: "uuid",
+              default: "ae3a49df-1c39-4077-b8fd-0217a78dce7d"
+            }
+          },
+          required: [
+            "componentName",
+            "export"
+          ],
+          additionalProperties: false
+        },
+        default: []
+      },
+      parsers: {
+        type: "object",
+        properties: {
+          mdx: {
+            type: "object",
+            properties: {
+              export: {
+                type: "string",
+                description: "The export in your package.json that exports the parser function. The parsing function must be the file's default export."
+              },
+              conditions: {
+                type: "object",
+                properties: {
+                  frontMatter: {
+                    type: "string"
+                  }
+                },
+                additionalProperties: false,
+                default: {}
+              }
+            },
+            required: [
+              "export"
+            ],
+            additionalProperties: false
+          }
+        },
+        additionalProperties: false,
+        default: {}
+      },
+      additionalImports: {
+        type: "object",
+        properties: {
+          root: {
+            type: "array",
+            items: {
+              type: "string"
+            },
+            default: [],
+            description: "Additional imports to add to the RootLayout. These will not be added to the dom, but may be used to import files that don't need to be executed like css or scss files. Must match export in package.json"
+          },
+          mdx: {
+            type: "array",
+            items: {
+              type: "string"
+            },
+            default: [],
+            description: "Similar to additionalImports.root, but only applied to pages with rendered mdx content."
+          }
+        },
+        additionalProperties: false
+      },
+      trpc: {
+        type: "object",
+        properties: {
+          routerName: {
+            type: "string"
+          },
+          routerExport: {
+            type: "string",
+            description: "The optional export path of a trpc router that will be appended to the main router at the devloperConfigSchema.trpc.routerName property."
+          }
+        },
+        required: [
+          "routerName",
+          "routerExport"
+        ],
+        additionalProperties: false
+      },
+      settings: {
+        type: "object",
+        properties: {
+          settingPageExport: {
+            type: "string",
+            description: "Export of a page that will be included in the user's settings page in it's own tab."
+          },
+          onSettingsSave: {
+            type: "string",
+            description: "The export of a function that handles the saving of your settings specific to your plugin, most likely using the DJT model."
+          },
+          title: {
+            type: "string",
+            description: "The label applied to the tab of the user's setting page for this plugins settings. Defaults to the developerConfigSchema.pluginName property."
+          },
+          subtitle: {
+            type: "string"
+          }
+        },
+        required: [
+          "settingPageExport",
+          "onSettingsSave"
+        ],
+        additionalProperties: false
+      },
+      pages: {
+        type: "array",
+        items: {
+          type: "object",
+          properties: {
+            targetUrl: {
+              type: "string",
+              description: "The target URL to place this page at. This is synonomous with a file path from the root of the app directory, including intercepted routes. An intercepted modal route for example should appear as `@modal/(.)myPath/...` even though `@modal` doesn't appear in the URL. This must be unique, as if it overwrites an existing route it will not be applied."
+            },
+            slot: {
+              type: "string",
+              description: "The optional slot key that matches a corresponding slot of type page."
+            },
+            export: {
+              type: "string",
+              description: "The export in your package.json that matches a single component that will act as this page. The component must be the default export, and will be passed all props that the page receives, like params and searchParams. This can include intercepted modal routes with the @modal/(.)... syntax, nested routes and parameter based routes with the [someParam] syntax."
+            },
+            exportsPageProps: {
+              type: "boolean",
+              default: false,
+              description: "Whether or not the file at the export field exports a type named PageProps to apply to the parent page properties. This type should include a params property and/or a searchParams property as they apply to the page itself. This is mostly for the sake of completeness, but can help other developers to work in a bug free environment if they choose to extend their own app."
+            }
+          },
+          required: [
+            "export"
+          ],
+          additionalProperties: false
+        },
+        default: []
+      },
+      events: {
+        type: "object",
+        properties: {
+          onBuild: {
+            type: "string",
+            description: "The package.json export of a function that will run once during the build process. This can be used for copying files over to the public directory, but most other copying of files can be handled by setting up the pluginConfig appropriately."
+          },
+          onSync: {
+            type: "string",
+            description: "The package.json export of a function that will run each time a user syncs their notes with their database."
+          },
+          onBackup: {
+            type: "string",
+            description: "The package.json export of a function that will run each time a user backs up their notes to a json file. This function should return a single json object."
+          },
+          onRestore: {
+            type: "string",
+            description: "The package.json export of a function that will be used to restore data from a previous backup. The argument will be an optional object of an identical type to what was stored using the onBackup event."
+          }
+        },
+        additionalProperties: false,
+        default: {}
+      },
+      navigationLinks: {
+        type: "array",
+        items: {
+          type: "object",
+          properties: {
+            label: {
+              type: "string"
+            },
+            href: {
+              type: "string"
+            },
+            icon: {
+              type: "string"
+            },
+            pluginName: {
+              type: "string"
+            },
+            category: {
+              type: "string",
+              enum: [
+                "math",
+                "snippets",
+                "code",
+                "AI",
+                "ML",
+                "writing",
+                "search",
+                "notebooks",
+                "database",
+                "work",
+                "school",
+                "organization",
+                "task-management",
+                "academic",
+                "research",
+                "project-planning",
+                "calendar",
+                "general"
+              ],
+              default: "general"
+            }
+          },
+          required: [
+            "label",
+            "href"
+          ],
+          additionalProperties: false
+        },
+        default: []
+      },
+      commandPalette: {
+        type: "array",
+        items: {
+          anyOf: [
+            {
+              type: "object",
+              properties: {
+                label: {
+                  type: "string"
+                }
+              },
+              required: [
+                "label"
+              ],
+              additionalProperties: false
+            },
+            {
+              type: "object",
+              properties: {
+                label: {
+                  $ref: "#/definitions/ulldPluginConfig/properties/commandPalette/items/anyOf/0/properties/label"
+                },
+                isAvailable: {
+                  $ref: "#/definitions/ulldPluginConfig/properties/commandPalette/items/anyOf/0/properties/isAvailable"
+                },
+                href: {
+                  anyOf: [
+                    {
+                      type: "string"
+                    }
+                  ]
+                }
+              },
+              required: [
+                "label",
+                "isAvailable",
+                "href"
+              ],
+              additionalProperties: false
+            }
+          ]
+        },
+        default: []
+      },
+      tailwind: {
+        type: "object",
+        properties: {},
+        additionalProperties: false,
+        default: {}
+      },
+      documentation: {
+        type: "string",
+        description: "An optional export of an mdx file that describes the use of your plugin."
+      },
+      styles: {
+        type: "object",
+        properties: {
+          root: {
+            type: "string",
+            description: "Optional export of a scss file that should be imported to all pages."
+          },
+          mdx: {
+            type: "string",
+            description: "Optional export of a scss file that should be imported to pages with mdx content only."
+          }
+        },
+        additionalProperties: false,
+        default: {}
+      }
+    },
+    required: [
+      "pluginName",
+      "label"
+    ],
+    additionalProperties: false
+  }
+};
+var $schema = "http://json-schema.org/draft-07/schema#";
+var pluginConfigJsonSchema_default = {
+  $ref,
+  definitions,
+  $schema
+};
+export {
+  $ref,
+  $schema,
+  pluginConfigJsonSchema_default as default,
+  definitions
+};
+//# sourceMappingURL=pluginConfigJsonSchema.js.map

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/developer/tailwind.ts"],"names":[],"mappings":";AAAA,SAAS,SAAS;AAEX,IAAM,uBAAuB,EAAE,OAAO,CAE7C,CAAC","sourcesContent":["import { z } from \"zod\";\n\nexport const tailwindPluginConfig = z.object({\n\n})\n"]}

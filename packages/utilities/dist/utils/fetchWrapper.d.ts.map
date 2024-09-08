@@ -1,0 +1,1 @@
+{"version":3,"file":"fetchWrapper.d.ts","sourceRoot":"","sources":["../../src/utils/fetchWrapper.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,WAAW,EAAE,MAAM,6CAA6C,CAAA;AAEzE,eAAO,MAAM,YAAY,SAAgB,MAAM,QAAQ,WAAW,GAAG;IACjE,IAAI,EAAE,MAAM,GAAG,MAAM,CAAA;CACxB,sBAMA,CAAA"}

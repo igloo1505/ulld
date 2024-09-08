@@ -1,0 +1,1 @@
+{"version":3,"file":"parseMdxStringProps.d.ts","sourceRoot":"","sources":["../../../src/schemas/mdx/parseMdxStringProps.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AAExB,eAAO,MAAM,aAAa;;;;;;;;;EAKxB,CAAC;AAEH,MAAM,MAAM,iBAAiB,GAAG,CAAC,CAAC,KAAK,CAAC,OAAO,aAAa,CAAC,CAAC;AAC9D,MAAM,MAAM,kBAAkB,GAAG,CAAC,CAAC,MAAM,CAAC,OAAO,aAAa,CAAC,CAAC"}

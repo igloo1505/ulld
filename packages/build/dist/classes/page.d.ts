@@ -1,0 +1,37 @@
+import { DeveloperConfigOutput } from "@ulld/configschema/developer";
+import { TargetPaths } from "./paths.js";
+import { ShellManager } from "./baseClasses/shell.js";
+import { SubSlot } from "./subslot.js";
+import { PluginAdditionalPage } from "./pluginAdditionalPage.js";
+import { SlotDataType } from "@ulld/utilities/slotDataType";
+import { AnySubSlotKey, PluginSlotKey } from "@ulld/configschema/slotMapType";
+export declare class PluginPage extends ShellManager {
+    data: DeveloperConfigOutput["pages"][number];
+    pluginName: string;
+    pageIndex: number;
+    paths: TargetPaths;
+    parentSlotKey?: PluginSlotKey | undefined;
+    subSlotKey?: AnySubSlotKey | undefined;
+    shouldUse: boolean;
+    importName: string;
+    formattedImportName: string;
+    slotData?: SlotDataType;
+    targetUrl: string;
+    targetFile: string;
+    formattedComponentImport: string;
+    formattedExport: string;
+    haveModifiedImportName: boolean;
+    subSlot?: SubSlot;
+    initialComponentImport: string;
+    additionalPage?: PluginAdditionalPage;
+    allowImportPageProps: boolean;
+    constructor(data: DeveloperConfigOutput["pages"][number], pluginName: string, pageIndex: number, paths: TargetPaths, parentSlotKey?: PluginSlotKey | undefined, subSlotKey?: AnySubSlotKey | undefined);
+    cancel(): void;
+    getFormattedComponentImport(): string;
+    getImportString(): string;
+    throwTargetPathNotFound(): void;
+    getTargetFile(): string | undefined;
+    getTargetUrl(): string;
+    logWriteToFile(): void;
+    writeToFile(): void;
+}

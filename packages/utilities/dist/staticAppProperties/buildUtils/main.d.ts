@@ -1,0 +1,2 @@
+export declare const pathKeys: readonly ["public", "styles", "packageJson", "app", "envLocal", "projectRoot", "componentDocumentation", "fullComponentDocumentation", "node_modules", "shortComponentDocumentation", "src", "appDir", "public", "nextConfig", "tailwind", "ulldBuildData", "appConfig", "methods", "tempTargetPaths", "mdxParserList", "componentMap", "unifiedUserDefinedScss", "gitignore", "prismaSchema", "userDefinedStyles", "pluginDocumentation", "tempBuildFiles"];
+//# sourceMappingURL=main.d.ts.map

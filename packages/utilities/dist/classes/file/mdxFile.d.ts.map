@@ -1,0 +1,1 @@
+{"version":3,"file":"mdxFile.d.ts","sourceRoot":"","sources":["../../../src/classes/file/mdxFile.ts"],"names":[],"mappings":"AAEA,OAAO,UAAU,MAAM,aAAa,CAAA;AACpC,OAAO,EAAE,QAAQ,EAAE,MAAM,QAAQ,CAAC;AAElC,qBAAa,OAAQ,SAAQ,QAAQ;IAEd,IAAI,EAAE,MAAM;IAD/B,WAAW,EAAE,OAAO,CAAA;gBACD,IAAI,EAAE,MAAM;IAG/B,gBAAgB;CAOnB"}

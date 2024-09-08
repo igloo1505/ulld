@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/utils/getDevData.ts"],"sourcesContent":["import devData from \"../../staticDevelopmentData.json\"  with {type: \"json\"};\n\nexport const getDevData = () => devData\n"],"mappings":";;;;;;;;AAAA;AAEO,IAAM,aAAa,MAAM;","names":[]}
