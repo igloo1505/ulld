@@ -1,7 +1,6 @@
 import {
   settingsPageOutputSchema
-} from "../chunk-3PWNN5LJ.js";
-import "../chunk-OJYONR4K.js";
+} from "../chunk-BOVJOOSV.js";
 export {
   settingsPageOutputSchema
 };

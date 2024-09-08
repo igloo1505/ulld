@@ -2,8 +2,8 @@
 
 require('../chunk-7ARU3YXQ.cjs');
 
-var o=e=>e.filter(r=>r!=="");
+var t=e=>e.filter(r=>r!=="");
 
-exports.removeEmptyChildren = o;
+exports.removeEmptyChildren = t;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=removeEmptyChildren.cjs.map

@@ -1,3 +1,2 @@
-import "../../chunk-5RKI2O7L.js";
-import "../../chunk-OJYONR4K.js";
+import "../../chunk-ZRFJKEPG.js";
 //# sourceMappingURL=pluginSlotConfig.js.map

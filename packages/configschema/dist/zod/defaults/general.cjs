@@ -1,7 +1,7 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkQDJ2YVFHcjs = require('../../chunk-QDJ2YVFH.cjs');
+var _chunkM677MBJMcjs = require('../../chunk-M677MBJM.cjs');
 
 
-exports.defaultIgnoreFilePaths = _chunkQDJ2YVFHcjs.defaultIgnoreFilePaths;
+exports.defaultIgnoreFilePaths = _chunkM677MBJMcjs.defaultIgnoreFilePaths;
 //# sourceMappingURL=general.cjs.map

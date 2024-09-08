@@ -1,8 +1,8 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkLKRJO5IZcjs = require('../chunk-LKRJO5IZ.cjs');
-require('../chunk-LAM7YAS5.cjs');
+var _chunk7FRG3H7Vcjs = require('../chunk-7FRG3H7V.cjs');
+require('../chunk-I7I3Z7IL.cjs');
 
 
-exports.navigationLinkSchema = _chunkLKRJO5IZcjs.navigationLinkSchema;
+exports.navigationLinkSchema = _chunk7FRG3H7Vcjs.navigationLinkSchema;
 //# sourceMappingURL=navigationLink.cjs.map

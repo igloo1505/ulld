@@ -11,7 +11,7 @@
 
 
 
-var _chunk4YLDBR2Icjs = require('../chunk-4YLDBR2I.cjs');
+var _chunkNHF4VEGDcjs = require('../chunk-NHF4VEGD.cjs');
 
 
 
@@ -25,5 +25,5 @@ var _chunk4YLDBR2Icjs = require('../chunk-4YLDBR2I.cjs');
 
 
 
-exports.UISubkeySchema = _chunk4YLDBR2Icjs.UISubkeySchema; exports.bibliographySubkeySchema = _chunk4YLDBR2Icjs.bibliographySubkeySchema; exports.commandPaletteSubkeySchema = _chunk4YLDBR2Icjs.commandPaletteSubkeySchema; exports.dashboardSubkeySchema = _chunk4YLDBR2Icjs.dashboardSubkeySchema; exports.editorSubkeySchema = _chunk4YLDBR2Icjs.editorSubkeySchema; exports.formSubkeySchema = _chunk4YLDBR2Icjs.formSubkeySchema; exports.mathSubkeySchema = _chunk4YLDBR2Icjs.mathSubkeySchema; exports.navigationSubkeySchema = _chunk4YLDBR2Icjs.navigationSubkeySchema; exports.pdfSubkeySchema = _chunk4YLDBR2Icjs.pdfSubkeySchema; exports.slotKeySchema = _chunk4YLDBR2Icjs.slotKeySchema; exports.snippetsSubkeySchema = _chunk4YLDBR2Icjs.snippetsSubkeySchema; exports.taskManagerSubkeySchema = _chunk4YLDBR2Icjs.taskManagerSubkeySchema;
+exports.UISubkeySchema = _chunkNHF4VEGDcjs.UISubkeySchema; exports.bibliographySubkeySchema = _chunkNHF4VEGDcjs.bibliographySubkeySchema; exports.commandPaletteSubkeySchema = _chunkNHF4VEGDcjs.commandPaletteSubkeySchema; exports.dashboardSubkeySchema = _chunkNHF4VEGDcjs.dashboardSubkeySchema; exports.editorSubkeySchema = _chunkNHF4VEGDcjs.editorSubkeySchema; exports.formSubkeySchema = _chunkNHF4VEGDcjs.formSubkeySchema; exports.mathSubkeySchema = _chunkNHF4VEGDcjs.mathSubkeySchema; exports.navigationSubkeySchema = _chunkNHF4VEGDcjs.navigationSubkeySchema; exports.pdfSubkeySchema = _chunkNHF4VEGDcjs.pdfSubkeySchema; exports.slotKeySchema = _chunkNHF4VEGDcjs.slotKeySchema; exports.snippetsSubkeySchema = _chunkNHF4VEGDcjs.snippetsSubkeySchema; exports.taskManagerSubkeySchema = _chunkNHF4VEGDcjs.taskManagerSubkeySchema;
 //# sourceMappingURL=slotKeySchema.cjs.map

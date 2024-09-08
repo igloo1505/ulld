@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk6S7UGUY6cjs = require('../../chunk-6S7UGUY6.cjs');
+var _chunk6LXZO67Tcjs = require('../../chunk-6LXZO67T.cjs');
 
 
 
-exports.fontConfigSchema = _chunk6S7UGUY6cjs.fontConfigSchema; exports.textConfigSchema = _chunk6S7UGUY6cjs.textConfigSchema;
+exports.fontConfigSchema = _chunk6LXZO67Tcjs.fontConfigSchema; exports.textConfigSchema = _chunk6LXZO67Tcjs.textConfigSchema;
 //# sourceMappingURL=textConfig.cjs.map

@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkD6WJIHZScjs = require('../chunk-D6WJIHZS.cjs');
+var _chunkCBXEQXAZcjs = require('../chunk-CBXEQXAZ.cjs');
 
 
 
-exports.componentConfigSchema = _chunkD6WJIHZScjs.componentConfigSchema; exports.embeddableConfigSchema = _chunkD6WJIHZScjs.embeddableConfigSchema;
+exports.componentConfigSchema = _chunkCBXEQXAZcjs.componentConfigSchema; exports.embeddableConfigSchema = _chunkCBXEQXAZcjs.embeddableConfigSchema;
 //# sourceMappingURL=componentSchema.cjs.map

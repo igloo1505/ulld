@@ -1,7 +1,7 @@
-import '../chunk-5WT32FJO.js';
+import '../chunk-GQSCBKA6.js';
 
-var n=async(e,t)=>await fetch(e,{...t,body:typeof t.body=="string"?t.body:JSON.stringify(t.body)});
+var r=async(e,t)=>await fetch(e,{...t,body:typeof t.body=="string"?t.body:JSON.stringify(t.body)});
 
-export { n as fetchWrapper };
+export { r as fetchWrapper };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=fetchWrapper.js.map

@@ -1,7 +1,7 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkIB3WFHXJcjs = require('../chunk-IB3WFHXJ.cjs');
+var _chunkF2EQTDOEcjs = require('../chunk-F2EQTDOE.cjs');
 
 
-exports.settingsPageOutputSchema = _chunkIB3WFHXJcjs.settingsPageOutputSchema;
+exports.settingsPageOutputSchema = _chunkF2EQTDOEcjs.settingsPageOutputSchema;
 //# sourceMappingURL=settingsPage.cjs.map

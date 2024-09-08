@@ -1,13 +1,13 @@
 'use strict';
 
-var chunk7OTSCMOU_cjs = require('../chunk-7OTSCMOU.cjs');
+var chunkBNLPLCBV_cjs = require('../chunk-BNLPLCBV.cjs');
 require('../chunk-7ARU3YXQ.cjs');
 
 
 
 Object.defineProperty(exports, "copyStringToClipboard", {
 	enumerable: true,
-	get: function () { return chunk7OTSCMOU_cjs.a; }
+	get: function () { return chunkBNLPLCBV_cjs.a; }
 });
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=copyStringToClipboard.cjs.map

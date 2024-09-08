@@ -1,7 +1,7 @@
-import '../../chunk-5WT32FJO.js';
+import '../../chunk-GQSCBKA6.js';
 
-var n=r=>{let t=r;return t.startsWith(".")&&(t=t.slice(1)),t.startsWith("/")&&(t=t.slice(1)),t},o=r=>r?n(r):void 0,e=r=>r.map(t=>n(t));
+var n=r=>{let t=r;return t.startsWith(".")&&(t=t.slice(1)),t.startsWith("/")&&(t=t.slice(1)),t},s=r=>r?n(r):void 0,i=r=>r.map(t=>n(t));
 
-export { n as transformExportString, e as transformExportStringArray, o as transformExportStringOptional };
+export { n as transformExportString, i as transformExportStringArray, s as transformExportStringOptional };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=transformExportString.js.map

@@ -1,7 +1,7 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunk7E5ND5RBcjs = require('../chunk-7E5ND5RB.cjs');
+var _chunk55E5WCQQcjs = require('../chunk-55E5WCQQ.cjs');
 
 
-exports.pluginSettingsSchema = _chunk7E5ND5RBcjs.pluginSettingsSchema;
+exports.pluginSettingsSchema = _chunk55E5WCQQcjs.pluginSettingsSchema;
 //# sourceMappingURL=pluginSettingsSchema.cjs.map

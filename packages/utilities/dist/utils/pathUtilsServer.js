@@ -1,8 +1,8 @@
-import '../chunk-5WT32FJO.js';
+import '../chunk-GQSCBKA6.js';
 import n from 'path';
 
-var s=(r,t)=>r.includes(t)?r:n.join(t,r);
+var i=(r,t)=>r.includes(t)?r:n.join(t,r);
 
-export { s as makeAbsolute };
+export { i as makeAbsolute };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=pathUtilsServer.js.map

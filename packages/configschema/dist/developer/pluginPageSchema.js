@@ -1,7 +1,6 @@
 import {
   pluginAdditionalPageSchema
-} from "../chunk-FPGXMUNM.js";
-import "../chunk-OJYONR4K.js";
+} from "../chunk-4LICLTEO.js";
 export {
   pluginAdditionalPageSchema
 };

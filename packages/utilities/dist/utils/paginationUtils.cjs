@@ -2,10 +2,10 @@
 
 require('../chunk-7ARU3YXQ.cjs');
 
-var e="<ULLDPAGE>",a=t=>t(e),i=(t,n)=>t.replace(encodeURI(e),`${n}`).replace(e,`${n}`);
+var e="<ULLDPAGE>",r=t=>t(e),a=(t,n)=>t.replace(encodeURI(e),`${n}`).replace(e,`${n}`);
 
-exports.getPaginationTemplateString = a;
+exports.getPaginationTemplateString = r;
 exports.paginateTemplateString = e;
-exports.parsePaginationTemplateString = i;
+exports.parsePaginationTemplateString = a;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=paginationUtils.cjs.map

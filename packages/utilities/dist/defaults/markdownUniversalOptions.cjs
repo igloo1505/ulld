@@ -1,11 +1,11 @@
 'use strict';
 
-var chunkGABX52UM_cjs = require('../chunk-GABX52UM.cjs');
+var chunkO3ZCHJHO_cjs = require('../chunk-O3ZCHJHO.cjs');
 require('../chunk-7ARU3YXQ.cjs');
 
-var s={tex:{tags:"all",useLabelIds:!0,processEscapes:!0,processEnvironments:!0},chtml:{fontURL:"/font/mathjax",adaptiveCSS:!0}},n={output:"svg",mermaid:{themeVariables:chunkGABX52UM_cjs.a.dark,theme:"base"}};
+var o={tex:{tags:"all",useLabelIds:!0,processEscapes:!0,processEnvironments:!0},chtml:{fontURL:"/font/mathjax",adaptiveCSS:!0}},s={output:"svg",mermaid:{themeVariables:chunkO3ZCHJHO_cjs.a.dark,theme:"base"}};
 
-exports.mathOptions = s;
-exports.mermaidConfig = n;
+exports.mathOptions = o;
+exports.mermaidConfig = s;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=markdownUniversalOptions.cjs.map

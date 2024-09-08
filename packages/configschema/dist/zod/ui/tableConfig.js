@@ -1,7 +1,6 @@
 import {
   tableUIConfigSchema
-} from "../../chunk-S27PH2PJ.js";
-import "../../chunk-OJYONR4K.js";
+} from "../../chunk-W52JW5S6.js";
 export {
   tableUIConfigSchema
 };

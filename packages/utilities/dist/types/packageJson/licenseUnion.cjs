@@ -1,13 +1,13 @@
 'use strict';
 
-var chunkYXVTUSVY_cjs = require('../../chunk-YXVTUSVY.cjs');
+var chunkFSIOZYY5_cjs = require('../../chunk-FSIOZYY5.cjs');
 require('../../chunk-7ARU3YXQ.cjs');
 
 
 
 Object.defineProperty(exports, "licenseUnion", {
 	enumerable: true,
-	get: function () { return chunkYXVTUSVY_cjs.a; }
+	get: function () { return chunkFSIOZYY5_cjs.a; }
 });
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=licenseUnion.cjs.map

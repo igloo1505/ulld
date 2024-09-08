@@ -1,8 +1,7 @@
 import {
   mathConfigSchema
-} from "../../chunk-4UV5WS6A.js";
-import "../../chunk-VHM7ROJU.js";
-import "../../chunk-OJYONR4K.js";
+} from "../../chunk-VDTKMESP.js";
+import "../../chunk-PESBV4SX.js";
 export {
   mathConfigSchema
 };

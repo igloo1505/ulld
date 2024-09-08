@@ -1,2 +1,2 @@
-"use strict";require('../../chunk-BKOGJDJQ.cjs');
+"use strict";require('../../chunk-QXLGCPWG.cjs');
 //# sourceMappingURL=pageConfig.cjs.map

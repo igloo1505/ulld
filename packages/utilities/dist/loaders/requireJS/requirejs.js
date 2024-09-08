@@ -1,4 +1,4 @@
-import '../../chunk-5WT32FJO.js';
+import '../../chunk-GQSCBKA6.js';
 import e from 'react';
 import s from 'next/script';
 

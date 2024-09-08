@@ -1,7 +1,6 @@
 import {
   tailwindPluginConfig
-} from "../chunk-DWAFWNH2.js";
-import "../chunk-OJYONR4K.js";
+} from "../chunk-LHSSV5Y2.js";
 export {
   tailwindPluginConfig
 };

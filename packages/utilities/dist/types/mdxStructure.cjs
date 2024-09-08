@@ -1,6 +1,6 @@
 'use strict';
 
-require('../chunk-34BQZR7Y.cjs');
+require('../chunk-ZG6EFTYL.cjs');
 
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=mdxStructure.cjs.map

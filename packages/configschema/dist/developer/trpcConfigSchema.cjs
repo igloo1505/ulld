@@ -1,7 +1,7 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkDGZ3LR7Wcjs = require('../chunk-DGZ3LR7W.cjs');
+var _chunkUW7M2UHZcjs = require('../chunk-UW7M2UHZ.cjs');
 
 
-exports.trpcConfigSchema = _chunkDGZ3LR7Wcjs.trpcConfigSchema;
+exports.trpcConfigSchema = _chunkUW7M2UHZcjs.trpcConfigSchema;
 //# sourceMappingURL=trpcConfigSchema.cjs.map

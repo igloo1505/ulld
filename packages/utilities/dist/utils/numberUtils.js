@@ -1,7 +1,7 @@
-import '../chunk-5WT32FJO.js';
+import '../chunk-GQSCBKA6.js';
 
-var b=e=>e.reduce((n,r)=>n+r),u=e=>typeof e=="number",m=(e,n)=>u(e)?e:n;
+var o=e=>e.reduce((n,r)=>n+r),u=e=>typeof e=="number",t=(e,n)=>u(e)?e:n;
 
-export { u as numberBool, m as numberOrDefault, b as sum };
+export { u as numberBool, t as numberOrDefault, o as sum };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=numberUtils.js.map

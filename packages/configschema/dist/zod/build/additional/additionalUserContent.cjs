@@ -1,7 +1,7 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkD3YJHT7Ocjs = require('../../../chunk-D3YJHT7O.cjs');
+var _chunkO2M57WJVcjs = require('../../../chunk-O2M57WJV.cjs');
 
 
-exports.additionalUserContent = _chunkD3YJHT7Ocjs.additionalUserContent;
+exports.additionalUserContent = _chunkO2M57WJVcjs.additionalUserContent;
 //# sourceMappingURL=additionalUserContent.cjs.map

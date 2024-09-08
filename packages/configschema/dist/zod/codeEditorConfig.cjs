@@ -1,7 +1,7 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkOFDQ7ET3cjs = require('../chunk-OFDQ7ET3.cjs');
+var _chunkJU76D7R4cjs = require('../chunk-JU76D7R4.cjs');
 
 
-exports.monacoEditorConfigSchema = _chunkOFDQ7ET3cjs.monacoEditorConfigSchema;
+exports.monacoEditorConfigSchema = _chunkJU76D7R4cjs.monacoEditorConfigSchema;
 //# sourceMappingURL=codeEditorConfig.cjs.map

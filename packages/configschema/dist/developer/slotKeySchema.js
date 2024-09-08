@@ -11,8 +11,7 @@ import {
   slotKeySchema,
   snippetsSubkeySchema,
   taskManagerSubkeySchema
-} from "../chunk-MGU6YS2N.js";
-import "../chunk-OJYONR4K.js";
+} from "../chunk-IWQ6HJEI.js";
 export {
   UISubkeySchema,
   bibliographySubkeySchema,

@@ -1,2 +1,2 @@
-"use strict";require('../../chunk-JPQQORZC.cjs');
+"use strict";require('../../chunk-INSEBLCD.cjs');
 //# sourceMappingURL=developerConfig.cjs.map

@@ -1,2 +1,2 @@
-"use strict";require('../../chunk-GE744XEI.cjs');
+"use strict";require('../../chunk-VNJAFEG7.cjs');
 //# sourceMappingURL=pluginSlotConfig.cjs.map

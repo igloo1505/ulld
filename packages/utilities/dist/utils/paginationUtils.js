@@ -1,7 +1,7 @@
-import '../chunk-5WT32FJO.js';
+import '../chunk-GQSCBKA6.js';
 
-var e="<ULLDPAGE>",i=t=>t(e),g=(t,n)=>t.replace(encodeURI(e),`${n}`).replace(e,`${n}`);
+var e="<ULLDPAGE>",r=t=>t(e),a=(t,n)=>t.replace(encodeURI(e),`${n}`).replace(e,`${n}`);
 
-export { i as getPaginationTemplateString, e as paginateTemplateString, g as parsePaginationTemplateString };
+export { r as getPaginationTemplateString, e as paginateTemplateString, a as parsePaginationTemplateString };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=paginationUtils.js.map

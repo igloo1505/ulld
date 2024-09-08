@@ -1,7 +1,7 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunk7SUMHZ73cjs = require('../../chunk-7SUMHZ73.cjs');
+var _chunkSAAJV3BHcjs = require('../../chunk-SAAJV3BH.cjs');
 
 
-exports.plotConfigSchema = _chunk7SUMHZ73cjs.plotConfigSchema;
+exports.plotConfigSchema = _chunkSAAJV3BHcjs.plotConfigSchema;
 //# sourceMappingURL=main.cjs.map

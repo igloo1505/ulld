@@ -3,30 +3,30 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var chunkVBEY2DWM_cjs = require('../../chunk-VBEY2DWM.cjs');
+var chunkQGT2HXFU_cjs = require('../../chunk-QGT2HXFU.cjs');
 require('../../chunk-7ARU3YXQ.cjs');
 
 
 
 Object.defineProperty(exports, "MathjaxChtmlLoader", {
 	enumerable: true,
-	get: function () { return chunkVBEY2DWM_cjs.b; }
+	get: function () { return chunkQGT2HXFU_cjs.b; }
 });
 Object.defineProperty(exports, "MathjaxConfigScript", {
 	enumerable: true,
-	get: function () { return chunkVBEY2DWM_cjs.c; }
+	get: function () { return chunkQGT2HXFU_cjs.c; }
 });
 Object.defineProperty(exports, "MathjaxLoader", {
 	enumerable: true,
-	get: function () { return chunkVBEY2DWM_cjs.d; }
+	get: function () { return chunkQGT2HXFU_cjs.d; }
 });
 Object.defineProperty(exports, "MathjaxSvgLoader", {
 	enumerable: true,
-	get: function () { return chunkVBEY2DWM_cjs.a; }
+	get: function () { return chunkQGT2HXFU_cjs.a; }
 });
 Object.defineProperty(exports, "default", {
 	enumerable: true,
-	get: function () { return chunkVBEY2DWM_cjs.e; }
+	get: function () { return chunkQGT2HXFU_cjs.e; }
 });
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=Mathjax.cjs.map

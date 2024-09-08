@@ -24,7 +24,7 @@ export default defineConfig((options) => {
         // minify: true,
         // bundle: true,
         // treeshake: "recommended",
-        shims: true,
+        shims: false,
         skipNodeModulesBundle: true,
         // external: ["react", "@ulld/**"],
         tsconfig: path.resolve(__dirname, "tsconfig.json"),

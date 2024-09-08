@@ -1,7 +1,7 @@
-import '../chunk-5WT32FJO.js';
+import '../chunk-GQSCBKA6.js';
 
-var m=e=>e.filter(r=>r!=="");
+var t=e=>e.filter(r=>r!=="");
 
-export { m as removeEmptyChildren };
+export { t as removeEmptyChildren };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=removeEmptyChildren.js.map

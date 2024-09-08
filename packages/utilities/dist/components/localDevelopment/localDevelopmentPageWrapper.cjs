@@ -7,9 +7,9 @@ function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
 
 var p__default = /*#__PURE__*/_interopDefault(p);
 
-var e=({children:a})=>p__default.default.createElement("div",{className:"w-full h-full min-h-screen flex flex-col justify-center items-center gap-6 p-8 md:px-16"},a);e.displayName="LocalDevelopmentPageWrapper";var t=e;
+var e=({children:a})=>p__default.default.createElement("div",{className:"w-full h-full min-h-screen flex flex-col justify-center items-center gap-6 p-8 md:px-16"},a);e.displayName="LocalDevelopmentPageWrapper";var o=e;
 
-module.exports = t;
+module.exports = o;
 //# sourceMappingURL=out.js.map
 
 module.exports = exports.default;

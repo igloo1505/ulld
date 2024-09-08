@@ -1,2 +1,2 @@
-"use strict";require('../../chunk-JSQWTNPF.cjs');
+"use strict";require('../../chunk-EFGZSPTC.cjs');
 //# sourceMappingURL=pluginSettingsConfig.cjs.map

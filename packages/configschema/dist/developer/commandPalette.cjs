@@ -1,7 +1,7 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkK6EJQRDHcjs = require('../chunk-K6EJQRDH.cjs');
+var _chunk72Y3KRUFcjs = require('../chunk-72Y3KRUF.cjs');
 
 
-exports.pluginCommandPaletteSchema = _chunkK6EJQRDHcjs.pluginCommandPaletteSchema;
+exports.pluginCommandPaletteSchema = _chunk72Y3KRUFcjs.pluginCommandPaletteSchema;
 //# sourceMappingURL=commandPalette.cjs.map

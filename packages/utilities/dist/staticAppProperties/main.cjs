@@ -2,8 +2,8 @@
 
 require('../chunk-7ARU3YXQ.cjs');
 
-var e="note-container-";
+var n="note-container-";
 
-exports.noteContainerPrefix = e;
+exports.noteContainerPrefix = n;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=main.cjs.map

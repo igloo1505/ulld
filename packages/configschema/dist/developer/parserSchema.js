@@ -2,8 +2,7 @@ import {
   parserExtensionSchema,
   parserKeyList,
   pluginParserMap
-} from "../chunk-EVFCGTTV.js";
-import "../chunk-OJYONR4K.js";
+} from "../chunk-Y53EGZC4.js";
 export {
   parserExtensionSchema,
   parserKeyList,

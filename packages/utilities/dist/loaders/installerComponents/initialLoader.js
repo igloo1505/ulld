@@ -1,11 +1,11 @@
-import { e } from '../../chunk-YJNR42C3.js';
-import { a } from '../../chunk-6JXSIYSX.js';
-import { a as a$1 } from '../../chunk-MW4FHHF7.js';
-import '../../chunk-5WT32FJO.js';
+import { e } from '../../chunk-PG2HPNSE.js';
+import { a } from '../../chunk-XCOBRWY3.js';
+import { a as a$1 } from '../../chunk-7MA5HM32.js';
+import '../../chunk-GQSCBKA6.js';
 import r from 'react';
 
-var s=({requireJs:t=!0,latex:i=!0,mathjax:p="all"})=>r.createElement(r.Fragment,null,t&&r.createElement(a,null),i&&r.createElement(a$1,null),r.createElement(e,{type:p}));
+var d=({requireJs:t=!0,latex:i=!0,mathjax:p="all"})=>r.createElement(r.Fragment,null,t&&r.createElement(a,null),i&&r.createElement(a$1,null),r.createElement(e,{type:p}));
 
-export { s as InitialLoader };
+export { d as InitialLoader };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=initialLoader.js.map

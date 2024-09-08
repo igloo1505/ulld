@@ -6,8 +6,7 @@ import {
   getParsableExtensions,
   markdownExtensions,
   parsableFileExtensions
-} from "../../chunk-UTZ6EIF3.js";
-import "../../chunk-OJYONR4K.js";
+} from "../../chunk-FHTQCW2Y.js";
 export {
   allParsableFileExtensionSchema,
   currentParsableExtensions,

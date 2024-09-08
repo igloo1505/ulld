@@ -1,7 +1,7 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkSZCKFMBXcjs = require('../../chunk-SZCKFMBX.cjs');
+var _chunkKZPTNHLCcjs = require('../../chunk-KZPTNHLC.cjs');
 
 
-exports.jupyterNotebookPropsSchema = _chunkSZCKFMBXcjs.jupyterNotebookPropsSchema;
+exports.jupyterNotebookPropsSchema = _chunkKZPTNHLCcjs.jupyterNotebookPropsSchema;
 //# sourceMappingURL=jupyterNotebook.cjs.map

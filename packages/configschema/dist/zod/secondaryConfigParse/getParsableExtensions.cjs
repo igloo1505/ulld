@@ -6,7 +6,7 @@
 
 
 
-var _chunk7YET3AMWcjs = require('../../chunk-7YET3AMW.cjs');
+var _chunkMQKT3OULcjs = require('../../chunk-MQKT3OUL.cjs');
 
 
 
@@ -15,5 +15,5 @@ var _chunk7YET3AMWcjs = require('../../chunk-7YET3AMW.cjs');
 
 
 
-exports.allParsableFileExtensionSchema = _chunk7YET3AMWcjs.allParsableFileExtensionSchema; exports.currentParsableExtensions = _chunk7YET3AMWcjs.currentParsableExtensions; exports.defaultParsableFileExtensions = _chunk7YET3AMWcjs.defaultParsableFileExtensions; exports.getFileTypeAppendices = _chunk7YET3AMWcjs.getFileTypeAppendices; exports.getParsableExtensions = _chunk7YET3AMWcjs.getParsableExtensions; exports.markdownExtensions = _chunk7YET3AMWcjs.markdownExtensions; exports.parsableFileExtensions = _chunk7YET3AMWcjs.parsableFileExtensions;
+exports.allParsableFileExtensionSchema = _chunkMQKT3OULcjs.allParsableFileExtensionSchema; exports.currentParsableExtensions = _chunkMQKT3OULcjs.currentParsableExtensions; exports.defaultParsableFileExtensions = _chunkMQKT3OULcjs.defaultParsableFileExtensions; exports.getFileTypeAppendices = _chunkMQKT3OULcjs.getFileTypeAppendices; exports.getParsableExtensions = _chunkMQKT3OULcjs.getParsableExtensions; exports.markdownExtensions = _chunkMQKT3OULcjs.markdownExtensions; exports.parsableFileExtensions = _chunkMQKT3OULcjs.parsableFileExtensions;
 //# sourceMappingURL=getParsableExtensions.cjs.map

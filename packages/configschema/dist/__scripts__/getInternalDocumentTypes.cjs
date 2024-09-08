@@ -1,11 +1,11 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkQBT5YUTDcjs = require('../chunk-QBT5YUTD.cjs');
-require('../chunk-6BGGFZLR.cjs');
-require('../chunk-VFA3NO2G.cjs');
-require('../chunk-GTFPLYO5.cjs');
-require('../chunk-3ZQ4RWTP.cjs');
+var _chunkOZKLL6UQcjs = require('../chunk-OZKLL6UQ.cjs');
+require('../chunk-OUH2VSTL.cjs');
+require('../chunk-ONQJX77B.cjs');
+require('../chunk-5DEJBS5Y.cjs');
+require('../chunk-XYNU2XEW.cjs');
 
 
-exports.getInternalDocumentTypes = _chunkQBT5YUTDcjs.getInternalDocumentTypes;
+exports.getInternalDocumentTypes = _chunkOZKLL6UQcjs.getInternalDocumentTypes;
 //# sourceMappingURL=getInternalDocumentTypes.cjs.map

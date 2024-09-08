@@ -1,13 +1,13 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkGH2B5B6Scjs = require('../chunk-GH2B5B6S.cjs');
-require('../chunk-D6WJIHZS.cjs');
-require('../chunk-4YLDBR2I.cjs');
+var _chunkL5J44XY7cjs = require('../chunk-L5J44XY7.cjs');
+require('../chunk-CBXEQXAZ.cjs');
+require('../chunk-NHF4VEGD.cjs');
 
 // src/baseApp/main.tsx
 var _zod = require('zod');
 var baseAppBuildData = _zod.z.object({
-  slots: _chunkGH2B5B6Scjs.baseAppSlot.array()
+  slots: _chunkL5J44XY7cjs.baseAppSlot.array()
 });
 
 

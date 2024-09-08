@@ -1,2 +1,2 @@
-"use strict";require('../../chunk-TWW2JDPI.cjs');
+"use strict";require('../../chunk-H5WVHFSE.cjs');
 //# sourceMappingURL=embeddableConfig.cjs.map

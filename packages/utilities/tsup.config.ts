@@ -82,7 +82,7 @@ export default defineConfig((options) => {
         // minify: true,
         // bundle: true,
         treeshake: true,
-        shims: true,
+        shims: false,
         minify: true,
         skipNodeModulesBundle: true,
         // external: ["react", "canvas", "@prisma/client", "prisma", "typescript", "jsdom", "react-dom"],

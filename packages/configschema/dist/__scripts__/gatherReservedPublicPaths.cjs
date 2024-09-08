@@ -1,7 +1,7 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunk5YKZFDITcjs = require('../chunk-5YKZFDIT.cjs');
+var _chunkBR2NCAJJcjs = require('../chunk-BR2NCAJJ.cjs');
 
 
-exports.gatherReservedPublicPaths = _chunk5YKZFDITcjs.gatherReservedPublicPaths;
+exports.gatherReservedPublicPaths = _chunkBR2NCAJJcjs.gatherReservedPublicPaths;
 //# sourceMappingURL=gatherReservedPublicPaths.cjs.map

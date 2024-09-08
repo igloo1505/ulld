@@ -1,8 +1,8 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkQVNJF4C2cjs = require('../chunk-QVNJF4C2.cjs');
-require('../chunk-GTFPLYO5.cjs');
+var _chunkPXSYJX6Wcjs = require('../chunk-PXSYJX6W.cjs');
+require('../chunk-5DEJBS5Y.cjs');
 
 
-exports.terminalConfigSchema = _chunkQVNJF4C2cjs.terminalConfigSchema;
+exports.terminalConfigSchema = _chunkPXSYJX6Wcjs.terminalConfigSchema;
 //# sourceMappingURL=terminalConfig.cjs.map

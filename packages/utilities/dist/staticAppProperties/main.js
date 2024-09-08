@@ -1,7 +1,7 @@
-import '../chunk-5WT32FJO.js';
+import '../chunk-GQSCBKA6.js';
 
-var o="note-container-";
+var n="note-container-";
 
-export { o as noteContainerPrefix };
+export { n as noteContainerPrefix };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=main.js.map

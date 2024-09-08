@@ -2,8 +2,8 @@
 
 require('../chunk-7ARU3YXQ.cjs');
 
-var n=r=>Array.isArray(r)?r:[r];
+var a=r=>Array.isArray(r)?r:[r];
 
-exports.makeArrayTransform = n;
+exports.makeArrayTransform = a;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=transforms.cjs.map

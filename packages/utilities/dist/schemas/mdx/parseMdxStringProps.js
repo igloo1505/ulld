@@ -1,8 +1,8 @@
-import '../../chunk-5WT32FJO.js';
+import '../../chunk-GQSCBKA6.js';
 import { z } from 'zod';
 
-var o=z.object({content:z.string(),display:z.union([z.literal("display"),z.literal("inline")]).default("display")});
+var e=z.object({content:z.string(),display:z.union([z.literal("display"),z.literal("inline")]).default("display")});
 
-export { o as parseMdxProps };
+export { e as parseMdxProps };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=parseMdxStringProps.js.map

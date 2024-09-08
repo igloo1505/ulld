@@ -1,7 +1,7 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunk4C2F7ODWcjs = require('../../chunk-4C2F7ODW.cjs');
+var _chunkMZET64JIcjs = require('../../chunk-MZET64JI.cjs');
 
 
-exports.defaultUlldColorMap = _chunk4C2F7ODWcjs.defaultUlldColorMap;
+exports.defaultUlldColorMap = _chunkMZET64JIcjs.defaultUlldColorMap;
 //# sourceMappingURL=defaultColorMap.cjs.map

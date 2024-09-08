@@ -2,10 +2,10 @@
 
 
 
-var _chunkGPDGG4H2cjs = require('../chunk-GPDGG4H2.cjs');
+var _chunk4FERMM63cjs = require('../chunk-4FERMM63.cjs');
 
 
 
 
-exports.parserExtensionSchema = _chunkGPDGG4H2cjs.parserExtensionSchema; exports.parserKeyList = _chunkGPDGG4H2cjs.parserKeyList; exports.pluginParserMap = _chunkGPDGG4H2cjs.pluginParserMap;
+exports.parserExtensionSchema = _chunk4FERMM63cjs.parserExtensionSchema; exports.parserKeyList = _chunk4FERMM63cjs.parserKeyList; exports.pluginParserMap = _chunk4FERMM63cjs.pluginParserMap;
 //# sourceMappingURL=parserSchema.cjs.map

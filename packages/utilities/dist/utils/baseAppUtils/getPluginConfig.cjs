@@ -1,10 +1,10 @@
 'use strict';
 
-var chunkDZIYNKO4_cjs = require('../../chunk-DZIYNKO4.cjs');
+var chunkD5JNDK3O_cjs = require('../../chunk-D5JNDK3O.cjs');
 require('../../chunk-7ARU3YXQ.cjs');
 
-var u=({pluginName:i,appConfig:n})=>chunkDZIYNKO4_cjs.a(n).find(t=>t.pluginName===i);
+var o=({pluginName:i,appConfig:n})=>chunkD5JNDK3O_cjs.a(n).find(t=>t.pluginName===i);
 
-exports.getPluginConfig = u;
+exports.getPluginConfig = o;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=getPluginConfig.cjs.map

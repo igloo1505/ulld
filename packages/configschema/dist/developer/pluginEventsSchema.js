@@ -1,7 +1,6 @@
 import {
   pluginEventsSchema
-} from "../chunk-X7LEJG3L.js";
-import "../chunk-OJYONR4K.js";
+} from "../chunk-TJBGOS5X.js";
 export {
   pluginEventsSchema
 };

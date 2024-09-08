@@ -1,17 +1,17 @@
 'use strict';
 
-var chunkXOCJ2MTY_cjs = require('../../chunk-XOCJ2MTY.cjs');
+var chunkKZ7C2TLD_cjs = require('../../chunk-KZ7C2TLD.cjs');
 require('../../chunk-7ARU3YXQ.cjs');
 
 
 
 Object.defineProperty(exports, "getNoteTypeDataFromPath", {
 	enumerable: true,
-	get: function () { return chunkXOCJ2MTY_cjs.b; }
+	get: function () { return chunkKZ7C2TLD_cjs.b; }
 });
 Object.defineProperty(exports, "sortNoteTypeDataForParsing", {
 	enumerable: true,
-	get: function () { return chunkXOCJ2MTY_cjs.a; }
+	get: function () { return chunkKZ7C2TLD_cjs.a; }
 });
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=main.cjs.map

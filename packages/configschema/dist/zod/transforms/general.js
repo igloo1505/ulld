@@ -1,7 +1,6 @@
 import {
   slashesTransform
-} from "../../chunk-I3NNDADD.js";
-import "../../chunk-OJYONR4K.js";
+} from "../../chunk-DGANN2EY.js";
 export {
   slashesTransform
 };

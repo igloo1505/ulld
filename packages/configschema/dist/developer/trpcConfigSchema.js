@@ -1,7 +1,6 @@
 import {
   trpcConfigSchema
-} from "../chunk-4WGUYJHO.js";
-import "../chunk-OJYONR4K.js";
+} from "../chunk-L4UFB4OO.js";
 export {
   trpcConfigSchema
 };

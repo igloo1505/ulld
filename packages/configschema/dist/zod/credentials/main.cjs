@@ -1,7 +1,7 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkGBCQBBTNcjs = require('../../chunk-GBCQBBTN.cjs');
+var _chunk46A3VLREcjs = require('../../chunk-46A3VLRE.cjs');
 
 
-exports.credentialsConfigSchema = _chunkGBCQBBTNcjs.credentialsConfigSchema;
+exports.credentialsConfigSchema = _chunk46A3VLREcjs.credentialsConfigSchema;
 //# sourceMappingURL=main.cjs.map

@@ -1,6 +1,6 @@
 'use strict';
 
-require('../chunk-UUYHYJZ4.cjs');
+require('../chunk-A5PUBGZE.cjs');
 
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=embeddedImageProps.cjs.map

@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkGH2B5B6Scjs = require('../chunk-GH2B5B6S.cjs');
-require('../chunk-D6WJIHZS.cjs');
-require('../chunk-4YLDBR2I.cjs');
+var _chunkL5J44XY7cjs = require('../chunk-L5J44XY7.cjs');
+require('../chunk-CBXEQXAZ.cjs');
+require('../chunk-NHF4VEGD.cjs');
 
 
-exports.baseAppSlot = _chunkGH2B5B6Scjs.baseAppSlot;
+exports.baseAppSlot = _chunkL5J44XY7cjs.baseAppSlot;
 //# sourceMappingURL=slot.cjs.map

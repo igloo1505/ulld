@@ -1,7 +1,6 @@
 import {
   performanceConfigSchema
-} from "../chunk-UG7I3UUK.js";
-import "../chunk-OJYONR4K.js";
+} from "../chunk-QY2CWEW7.js";
 export {
   performanceConfigSchema
 };

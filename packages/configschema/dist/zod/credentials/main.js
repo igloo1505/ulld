@@ -1,7 +1,6 @@
 import {
   credentialsConfigSchema
-} from "../../chunk-2KTSX4SR.js";
-import "../../chunk-OJYONR4K.js";
+} from "../../chunk-XVHSMXND.js";
 export {
   credentialsConfigSchema
 };

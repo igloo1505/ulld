@@ -1,2 +1,2 @@
-"use strict";require('../../chunk-XRK4NSB6.cjs');
+"use strict";require('../../chunk-ZDPXY5XU.cjs');
 //# sourceMappingURL=trpcConfig.cjs.map

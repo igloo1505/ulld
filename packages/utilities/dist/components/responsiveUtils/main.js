@@ -1,9 +1,9 @@
 "use client"
-import '../../chunk-5WT32FJO.js';
+import '../../chunk-GQSCBKA6.js';
 import { useMediaQuery } from 'react-responsive';
 
-var r=({children:e})=>useMediaQuery({minWidth:992})?e:null,c=({children:e})=>useMediaQuery({minWidth:768,maxWidth:991})?e:null,l=({children:e})=>useMediaQuery({maxWidth:767})?e:null,p=({children:e})=>useMediaQuery({minWidth:768})?e:null;
+var t=({children:e})=>useMediaQuery({minWidth:992})?e:null,i=({children:e})=>useMediaQuery({minWidth:768,maxWidth:991})?e:null,r=({children:e})=>useMediaQuery({maxWidth:767})?e:null,c=({children:e})=>useMediaQuery({minWidth:768})?e:null;
 
-export { r as ScreenDesktop, l as ScreenMobile, p as ScreenNotMobile, c as ScreenTablet };
+export { t as ScreenDesktop, r as ScreenMobile, c as ScreenNotMobile, i as ScreenTablet };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=main.js.map

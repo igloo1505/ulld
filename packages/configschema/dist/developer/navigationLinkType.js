@@ -1,7 +1,6 @@
 import {
   navigationLinkCategory
-} from "../chunk-GLXDRPPL.js";
-import "../chunk-OJYONR4K.js";
+} from "../chunk-NG6HCK6Y.js";
 export {
   navigationLinkCategory
 };

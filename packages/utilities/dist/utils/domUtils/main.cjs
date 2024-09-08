@@ -1,14 +1,14 @@
 'use strict';
 
-var chunkFQY44KTM_cjs = require('../../chunk-FQY44KTM.cjs');
+var chunkKH6GPW22_cjs = require('../../chunk-KH6GPW22.cjs');
 require('../../chunk-7ARU3YXQ.cjs');
 
-var o=t=>document.querySelector("html")?.getAttribute(t);
+var r=t=>document.querySelector("html")?.getAttribute(t);
 
 Object.defineProperty(exports, "getBodyClassesFromAppConfig", {
 	enumerable: true,
-	get: function () { return chunkFQY44KTM_cjs.a; }
+	get: function () { return chunkKH6GPW22_cjs.a; }
 });
-exports.getHtmlElementAttribute = o;
+exports.getHtmlElementAttribute = r;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=main.cjs.map

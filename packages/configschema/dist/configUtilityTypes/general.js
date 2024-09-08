@@ -1,17 +1,16 @@
 import {
   getInternalConfig
-} from "../chunk-FQMFJHFD.js";
-import "../chunk-3DFOTVSS.js";
-import "../chunk-Y66PE4PI.js";
-import "../chunk-UTZ6EIF3.js";
-import "../chunk-HM4XKJP6.js";
-import "../chunk-OEZ4UI6D.js";
+} from "../chunk-EI6LLQAJ.js";
+import "../chunk-454PT7HE.js";
+import "../chunk-GT6H4QSG.js";
+import "../chunk-FHTQCW2Y.js";
+import "../chunk-MJBK275F.js";
+import "../chunk-D57TGXVB.js";
 import {
   documentTypeConfigSchema
-} from "../chunk-Q45QUJC2.js";
-import "../chunk-VHM7ROJU.js";
-import "../chunk-FSIUFLEX.js";
-import "../chunk-OJYONR4K.js";
+} from "../chunk-GQ44M3IR.js";
+import "../chunk-PESBV4SX.js";
+import "../chunk-QZPOLBQN.js";
 
 // src/configUtilityTypes/general.ts
 var getDocumentTypeConfig = (docType, config) => {
