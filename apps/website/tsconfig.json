@@ -31,7 +31,8 @@
             ]
         },
         "incremental": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true
     },
     "include": [
         "next-env.d.ts",

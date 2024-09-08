@@ -334,7 +334,10 @@
       "import": "./dist/schemas/transforms.js",
       "require": "./dist/schemas/transforms.cjs"
     },
-    "./schemas/code/technologiesNameMap": "./dist/schemas/code/technologiesNameMap.js",
+    "./schemas/code/technologiesNameMap": {
+      "import": "./dist/schemas/code/technologiesNameMap.js",
+      "require": "./dist/schemas/code/technologiesNameMap.cjs"
+    },
     "./schemas/mdx/parseMdxStringSchema": {
       "types": "./dist/schemas/mdx/parseMdxStringSchema.d.ts",
       "import": "./dist/schemas/mdx/parseMdxStringSchema.js",
@@ -350,7 +353,10 @@
       "import": "./dist/defaults/markdownUniversalOptions.js",
       "require": "./dist/defaults/markdownUniversalOptions.cjs"
     },
-    "./defaults/markdown.json": "./dist/defaults/markdownOptions.json",
+    "./defaults/markdown.json": {
+      "import": "./dist/defaults/markdownOptions.json",
+      "require": "./dist/defaults/markdownOptions.json"
+    },
     "./defaults/defaultMermaidConfig": {
       "types": "./dist/defaults/defaultMermaidConfig.d.ts",
       "import": "./dist/defaults/defaultMermaidConfig.js",
