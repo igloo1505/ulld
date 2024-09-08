@@ -1,6 +1,7 @@
 import nextPwa from "@ducanh2912/next-pwa";
 import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
 import { withContentCollections } from "@content-collections/next";
+import path from 'path'
 
 // NOTE: For building on vercel: https://github.com/Automattic/node-canvas/issues/1779
 if (
@@ -86,7 +87,7 @@ const configData = {
         },
         outputFileTracingRoot: path.join(__dirname, "../../"),
         outputFileTracingExcludes: {
-            "*": ["node_modules/canvas"],
+            "*": ["node_modules/canvas", "**canvas**"],
         },
     },
     onDemandEntries: {
