@@ -1,8 +1,7 @@
-import fs from 'fs';
-import path from 'path';
-
 // src/__scripts__/gatherProtectedPaths.ts
-path.join(
+import fs from "fs";
+import path from "path";
+var targetPath = path.join(
   __dirname,
   "../../../utilities/src/utils/buildStaticData.json"
 );
@@ -49,6 +48,7 @@ var gatherProtectedPaths = (files, propsExtendsMap) => {
   return propsExtendsMap;
 };
 
-export { gatherProtectedPaths };
-//# sourceMappingURL=out.js.map
+export {
+  gatherProtectedPaths
+};
 //# sourceMappingURL=chunk-7WVAVGKR.js.map

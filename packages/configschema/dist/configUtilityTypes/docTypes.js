@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/configUtilityTypes/docTypes.ts
+import { z } from "zod";
 var topicZodObject = z.object({
   value: z.string()
 });
@@ -15,7 +14,9 @@ var tagZodObject = z.union([
   _tagZodObject,
   z.string().transform((a) => _tagZodObject.parse({ value: a }))
 ]);
-
-export { subjectZodObject, tagZodObject, topicZodObject };
-//# sourceMappingURL=out.js.map
+export {
+  subjectZodObject,
+  tagZodObject,
+  topicZodObject
+};
 //# sourceMappingURL=docTypes.js.map

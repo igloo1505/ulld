@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/zod/build/database/postgres.ts
+import { z } from "zod";
 var postgresConfigSchema = z.object({
   port: z.coerce.number().int().default(5432),
   dbName: z.string().default("ulld"),
@@ -19,6 +18,7 @@ var postgresConfigSchema = z.object({
   };
 });
 
-export { postgresConfigSchema };
-//# sourceMappingURL=out.js.map
+export {
+  postgresConfigSchema
+};
 //# sourceMappingURL=chunk-XXHV3QPY.js.map

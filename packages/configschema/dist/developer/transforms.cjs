@@ -1,14 +1,3 @@
-'use strict';
-
-var transformExportString = require('@ulld/utilities/transformExportString');
-
-
-
-Object.keys(transformExportString).forEach(function (k) {
-	if (k !== 'default' && !Object.prototype.hasOwnProperty.call(exports, k)) Object.defineProperty(exports, k, {
-		enumerable: true,
-		get: function () { return transformExportString[k]; }
-	});
-});
-//# sourceMappingURL=out.js.map
+"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _createStarExport(obj) { Object.keys(obj) .filter((key) => key !== "default" && key !== "__esModule") .forEach((key) => { if (exports.hasOwnProperty(key)) { return; } Object.defineProperty(exports, key, {enumerable: true, configurable: true, get: () => obj[key]}); }); }// src/developer/transforms.ts
+var _transformExportString = require('@ulld/utilities/transformExportString'); _createStarExport(_transformExportString);
 //# sourceMappingURL=transforms.cjs.map

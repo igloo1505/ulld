@@ -7,6 +7,7 @@ var defaultNoteTypes = [
   }
 ];
 
-export { defaultNoteTypes };
-//# sourceMappingURL=out.js.map
+export {
+  defaultNoteTypes
+};
 //# sourceMappingURL=chunk-HHE6N47D.js.map

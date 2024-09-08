@@ -1,3 +1,7 @@
-export { settingsPageOutputSchema } from '../chunk-BOVJOOSV.js';
-//# sourceMappingURL=out.js.map
+import {
+  settingsPageOutputSchema
+} from "../chunk-BOVJOOSV.js";
+export {
+  settingsPageOutputSchema
+};
 //# sourceMappingURL=settingsPage.js.map

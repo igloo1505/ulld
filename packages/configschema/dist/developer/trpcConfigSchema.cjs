@@ -1,15 +1,7 @@
-'use strict';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var zod = require('zod');
+var _chunkDGZ3LR7Wcjs = require('../chunk-DGZ3LR7W.cjs');
 
-// src/developer/trpcConfigSchema.ts
-var trpcConfigSchema = zod.z.object({
-  routerName: zod.z.string(),
-  routerExport: zod.z.string().describe(
-    "The optional export path of a trpc router that will be appended to the main router at the devloperConfigSchema.trpc.routerName property."
-  )
-});
 
-exports.trpcConfigSchema = trpcConfigSchema;
-//# sourceMappingURL=out.js.map
+exports.trpcConfigSchema = _chunkDGZ3LR7Wcjs.trpcConfigSchema;
 //# sourceMappingURL=trpcConfigSchema.cjs.map

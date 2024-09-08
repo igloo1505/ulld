@@ -1,7 +1,6 @@
-import { z } from 'zod';
-import allIcons from '@ulld/icons/names';
-
 // src/zod/navigationConfig.ts
+import { z } from "zod";
+import allIcons from "@ulld/icons/names";
 var defaultResultLengths = {
   categories: 12,
   equations: 10,
@@ -69,6 +68,8 @@ var navigationConfigSchema = z.object({
   )
 }).default({});
 
-export { iconNameField, navigationConfigSchema };
-//# sourceMappingURL=out.js.map
+export {
+  iconNameField,
+  navigationConfigSchema
+};
 //# sourceMappingURL=chunk-QZPOLBQN.js.map

@@ -1,14 +1,7 @@
-'use strict';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var zod = require('zod');
+var _chunkOFDQ7ET3cjs = require('../chunk-OFDQ7ET3.cjs');
 
-// src/zod/codeEditorConfig.ts
-var monacoSupportedLanguage = zod.z.string();
-var monacoEditorConfigSchema = zod.z.object({
-  defaultLangauge: monacoSupportedLanguage.default("python"),
-  useVimMode: zod.z.boolean().default(false)
-}).default({});
 
-exports.monacoEditorConfigSchema = monacoEditorConfigSchema;
-//# sourceMappingURL=out.js.map
+exports.monacoEditorConfigSchema = _chunkOFDQ7ET3cjs.monacoEditorConfigSchema;
 //# sourceMappingURL=codeEditorConfig.cjs.map

@@ -1,3 +1,2 @@
-import '../../chunk-6MXKNILB.js';
-//# sourceMappingURL=out.js.map
+import "../../chunk-6MXKNILB.js";
 //# sourceMappingURL=pluginSettingsConfig.js.map

@@ -1,7 +1,6 @@
-import { z } from 'zod';
-import { transformExportString } from '@ulld/utilities/transformExportString';
-
 // src/developer/pluginSettingsSchema.ts
+import { z } from "zod";
+import { transformExportString } from "@ulld/utilities/transformExportString";
 var pluginSettingsSchema = z.object({
   settingPageExport: z.string().describe(
     "Export of a page that will be included in the user's settings page in it's own tab."
@@ -13,6 +12,7 @@ var pluginSettingsSchema = z.object({
   subtitle: z.string().optional()
 });
 
-export { pluginSettingsSchema };
-//# sourceMappingURL=out.js.map
+export {
+  pluginSettingsSchema
+};
 //# sourceMappingURL=chunk-5D6ZTR4P.js.map

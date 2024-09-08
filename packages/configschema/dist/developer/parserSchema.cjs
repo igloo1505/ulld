@@ -1,24 +1,11 @@
-'use strict';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var zod = require('zod');
-var transformExportString = require('@ulld/utilities/transformExportString');
 
-// src/developer/parserSchema.ts
-var parserKeyList = ["mdx"];
-var parserExtensionSchema = zod.z.object({
-  export: zod.z.string().describe(
-    "The export in your package.json that exports the parser function. The parsing function must be the file's default export."
-  ).transform(transformExportString.transformExportString),
-  conditions: zod.z.object({
-    frontMatter: zod.z.string().optional()
-  }).default({})
-});
-var pluginParserMap = zod.z.object({
-  mdx: parserExtensionSchema.optional()
-});
 
-exports.parserExtensionSchema = parserExtensionSchema;
-exports.parserKeyList = parserKeyList;
-exports.pluginParserMap = pluginParserMap;
-//# sourceMappingURL=out.js.map
+var _chunkGPDGG4H2cjs = require('../chunk-GPDGG4H2.cjs');
+
+
+
+
+exports.parserExtensionSchema = _chunkGPDGG4H2cjs.parserExtensionSchema; exports.parserKeyList = _chunkGPDGG4H2cjs.parserKeyList; exports.pluginParserMap = _chunkGPDGG4H2cjs.pluginParserMap;
 //# sourceMappingURL=parserSchema.cjs.map

@@ -1,6 +1,9 @@
-import { postgresConfigSchema } from './chunk-XXHV3QPY.js';
-import { z } from 'zod';
+import {
+  postgresConfigSchema
+} from "./chunk-XXHV3QPY.js";
 
+// src/zod/build/database/database.ts
+import { z } from "zod";
 var ulldSupportedDatabases = [
   "postgres",
   "sqlite"
@@ -16,6 +19,8 @@ var databaseBuildSchema = z.object({
   }
 );
 
-export { databaseBuildSchema, ulldSupportedDatabases };
-//# sourceMappingURL=out.js.map
+export {
+  ulldSupportedDatabases,
+  databaseBuildSchema
+};
 //# sourceMappingURL=chunk-G7O7W64T.js.map

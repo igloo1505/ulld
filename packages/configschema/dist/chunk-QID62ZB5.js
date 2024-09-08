@@ -1,10 +1,17 @@
-import { componentDocumentationSchema } from './chunk-USB6ZCXJ.js';
-import { settingsPageOutputSchema } from './chunk-BOVJOOSV.js';
-import { navigationLinkSchema } from './chunk-MDQ3YTZZ.js';
-import { z } from 'zod';
-import buildData from '@ulld/utilities/buildStaticData.json';
-import { replaceRecursively } from '@ulld/utilities/general';
+import {
+  componentDocumentationSchema
+} from "./chunk-USB6ZCXJ.js";
+import {
+  settingsPageOutputSchema
+} from "./chunk-BOVJOOSV.js";
+import {
+  navigationLinkSchema
+} from "./chunk-MDQ3YTZZ.js";
 
+// src/buildStaticData/main.ts
+import { z } from "zod";
+import buildData from "@ulld/utilities/buildStaticData.json";
+import { replaceRecursively } from "@ulld/utilities/general";
 var getFileTypeAppendices = (parsableExtensions) => {
   let ext = {};
   for (const k of parsableExtensions) {
@@ -40,6 +47,7 @@ var buildStaticDataSchema = z.object({
   };
 });
 
-export { buildStaticDataSchema };
-//# sourceMappingURL=out.js.map
+export {
+  buildStaticDataSchema
+};
 //# sourceMappingURL=chunk-QID62ZB5.js.map

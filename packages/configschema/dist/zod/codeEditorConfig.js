@@ -1,3 +1,7 @@
-export { monacoEditorConfigSchema } from '../chunk-55HJPQBL.js';
-//# sourceMappingURL=out.js.map
+import {
+  monacoEditorConfigSchema
+} from "../chunk-55HJPQBL.js";
+export {
+  monacoEditorConfigSchema
+};
 //# sourceMappingURL=codeEditorConfig.js.map

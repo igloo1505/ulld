@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../../src/zod/defaults/general.ts"],"names":[],"mappings":";AAAO,IAAM,yBAAyB,CAAC,SAAS,UAAU,gBAAgB,SAAS,YAAY,aAAa,oBAAoB","sourcesContent":["export const defaultIgnoreFilePaths = [/\\.git/, /\\.next/, /node_modules/, /\\.env/, /\\.vscode/, /\\.package/, /.ipynb_checkpoints/]\n\n\n"]}
+{"version":3,"sources":[],"names":[],"mappings":""}

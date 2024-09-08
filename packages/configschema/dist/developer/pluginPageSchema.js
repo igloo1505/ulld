@@ -1,3 +1,7 @@
-export { pluginAdditionalPageSchema } from '../chunk-4LICLTEO.js';
-//# sourceMappingURL=out.js.map
+import {
+  pluginAdditionalPageSchema
+} from "../chunk-4LICLTEO.js";
+export {
+  pluginAdditionalPageSchema
+};
 //# sourceMappingURL=pluginPageSchema.js.map

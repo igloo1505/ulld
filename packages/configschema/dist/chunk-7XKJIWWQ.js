@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/zod/features/main.ts
+import { z } from "zod";
 var featuresConfigSchema = z.object({
   enabled: z.object({
     commandPalette: z.boolean().default(true).describe("Whether or not app should include the command palette feature. This is only made available for the rare instance of breaking bugs within the command palette."),
@@ -18,6 +17,7 @@ var featuresConfigSchema = z.object({
   })
 }).optional();
 
-export { featuresConfigSchema };
-//# sourceMappingURL=out.js.map
+export {
+  featuresConfigSchema
+};
 //# sourceMappingURL=chunk-7XKJIWWQ.js.map

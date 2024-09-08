@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/zod/jupyter/jupyterReact.ts
+import { z } from "zod";
 var serverUrlSchema = z.object({
   baseUrl: z.string().url().optional().describe("The url with which to reach the jupyter server. Under the majority of use cases these values should be left to autopopulate based on the jupyter.serverPort value. Applying your own serverUrl should be reserved for those with experience connecting to a remote jupyter instance."),
   wsUrl: z.string().url().optional().describe("The websocket url with which to reach the jupyter server. Under the majority of use cases these values should be left to autopopulate based on the jupyter.serverPort value. Applying your own serverUrl should be reserved for those with experience connecting to a remote jupyter instance.")
@@ -18,6 +17,8 @@ var jupyterReactConfigSchemaOutput = jupyter_rect_config_schema.merge(z.object({
   serverUrls: serverUrlSchema.required()
 }));
 
-export { jupyterReactConfigSchema, jupyterReactConfigSchemaOutput };
-//# sourceMappingURL=out.js.map
+export {
+  jupyterReactConfigSchema,
+  jupyterReactConfigSchemaOutput
+};
 //# sourceMappingURL=chunk-3NPPOQMS.js.map

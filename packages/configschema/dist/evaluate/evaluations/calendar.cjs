@@ -1,6 +1,4 @@
-'use strict';
-
-// src/evaluate/evaluations/calendar.ts
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});// src/evaluate/evaluations/calendar.ts
 var evaluations = [];
 var evaluateConfig = (config, _errors) => {
   let errors = _errors;
@@ -15,8 +13,8 @@ var evaluateConfig = (config, _errors) => {
 };
 var calendar_default = evaluateConfig;
 
-module.exports = calendar_default;
-//# sourceMappingURL=out.js.map
+
+exports.default = calendar_default;
 
 module.exports = exports.default;
 //# sourceMappingURL=calendar.cjs.map

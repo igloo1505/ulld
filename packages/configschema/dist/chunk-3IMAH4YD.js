@@ -1,8 +1,7 @@
-import path from 'path';
-import fs from 'fs';
-import { globSync } from 'glob';
-
 // src/__scripts__/gatherReservedPublicPaths.ts
+import path from "path";
+import fs from "fs";
+import { globSync } from "glob";
 var gatherReservedPublicPaths = (root = process.env.ULLD_TEST_ROOT) => {
   const publicDir = path.join(root, "public");
   const paths = globSync("*", {
@@ -11,6 +10,7 @@ var gatherReservedPublicPaths = (root = process.env.ULLD_TEST_ROOT) => {
   return paths;
 };
 
-export { gatherReservedPublicPaths };
-//# sourceMappingURL=out.js.map
+export {
+  gatherReservedPublicPaths
+};
 //# sourceMappingURL=chunk-3IMAH4YD.js.map

@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/developer/styleSchema.ts
+import { z } from "zod";
 var styleExtensionSchema = z.object({
   tailwindExport: z.string().describe(
     "The export in your package.json that matches your tailwindConfig.ts file."
@@ -12,7 +11,7 @@ var styleExtensionSchema = z.object({
     "This will disable the import of css files that pertain specifically to rendered mdx content."
   )
 });
-
-export { styleExtensionSchema };
-//# sourceMappingURL=out.js.map
+export {
+  styleExtensionSchema
+};
 //# sourceMappingURL=styleSchema.js.map

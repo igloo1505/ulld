@@ -12,7 +12,7 @@ var evaluateConfig = (config, _errors) => {
   return errors;
 };
 var jupyter_default = evaluateConfig;
-
-export { jupyter_default as default };
-//# sourceMappingURL=out.js.map
+export {
+  jupyter_default as default
+};
 //# sourceMappingURL=jupyter.js.map

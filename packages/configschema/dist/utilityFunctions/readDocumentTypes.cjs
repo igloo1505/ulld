@@ -1,22 +1,14 @@
-'use strict';
-
-var fs = require('fs');
-var path = require('path');
-
-function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
-
-var fs__default = /*#__PURE__*/_interopDefault(fs);
-var path__default = /*#__PURE__*/_interopDefault(path);
-
-// src/utilityFunctions/readDocumentTypes.ts
+"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }// src/utilityFunctions/readDocumentTypes.ts
+var _fs = require('fs'); var _fs2 = _interopRequireDefault(_fs);
+var _path = require('path'); var _path2 = _interopRequireDefault(_path);
 var readDocumentTypes = () => {
-  const f = path__default.default.join(process.cwd(), "appConfig.ulld.json");
-  if (!fs__default.default.existsSync(f))
+  const f = _path2.default.join(process.cwd(), "appConfig.ulld.json");
+  if (!_fs2.default.existsSync(f))
     return [];
-  const content = JSON.parse(fs__default.default.readFileSync(f, "utf-8"));
+  const content = JSON.parse(_fs2.default.readFileSync(f, "utf-8"));
   return "noteTypes" in content ? content.noteTypes : [];
 };
 
+
 exports.readDocumentTypes = readDocumentTypes;
-//# sourceMappingURL=out.js.map
 //# sourceMappingURL=readDocumentTypes.cjs.map

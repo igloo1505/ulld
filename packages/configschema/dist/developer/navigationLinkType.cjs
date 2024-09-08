@@ -1,29 +1,7 @@
-'use strict';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var zod = require('zod');
+var _chunkLAM7YAS5cjs = require('../chunk-LAM7YAS5.cjs');
 
-// src/developer/navigationLinkType.ts
-var navigationLinkCategory = zod.z.union([
-  zod.z.literal("math"),
-  zod.z.literal("snippets"),
-  zod.z.literal("code"),
-  zod.z.literal("AI"),
-  zod.z.literal("ML"),
-  zod.z.literal("writing"),
-  zod.z.literal("search"),
-  zod.z.literal("notebooks"),
-  zod.z.literal("database"),
-  zod.z.literal("work"),
-  zod.z.literal("school"),
-  zod.z.literal("organization"),
-  zod.z.literal("task-management"),
-  zod.z.literal("academic"),
-  zod.z.literal("research"),
-  zod.z.literal("project-planning"),
-  zod.z.literal("calendar"),
-  zod.z.literal("general")
-]);
 
-exports.navigationLinkCategory = navigationLinkCategory;
-//# sourceMappingURL=out.js.map
+exports.navigationLinkCategory = _chunkLAM7YAS5cjs.navigationLinkCategory;
 //# sourceMappingURL=navigationLinkType.cjs.map

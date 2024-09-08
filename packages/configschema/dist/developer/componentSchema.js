@@ -1,3 +1,9 @@
-export { componentConfigSchema, embeddableConfigSchema } from '../chunk-3H2DQBXI.js';
-//# sourceMappingURL=out.js.map
+import {
+  componentConfigSchema,
+  embeddableConfigSchema
+} from "../chunk-3H2DQBXI.js";
+export {
+  componentConfigSchema,
+  embeddableConfigSchema
+};
 //# sourceMappingURL=componentSchema.js.map

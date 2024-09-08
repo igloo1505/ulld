@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/zod/build/additional/additionalUserContent.ts
+import { z } from "zod";
 var validImageExtends = ["jpg", "jpeg", "svg", "png", "webp"];
 var validFaviconExtensions = ["ico", "png", "jpg", "svg"];
 var additionalUserContent = z.object({
@@ -31,6 +30,7 @@ ${validImageExtends.join("\n")}`
   ).optional()
 }).default({});
 
-export { additionalUserContent };
-//# sourceMappingURL=out.js.map
+export {
+  additionalUserContent
+};
 //# sourceMappingURL=chunk-E4C6G2BG.js.map

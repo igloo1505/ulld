@@ -65,6 +65,7 @@ var defaultUlldColorMap = {
   secondary: "hsl(var(--secondary))"
 };
 
-export { defaultUlldColorMap };
-//# sourceMappingURL=out.js.map
+export {
+  defaultUlldColorMap
+};
 //# sourceMappingURL=chunk-ENVRPPAG.js.map

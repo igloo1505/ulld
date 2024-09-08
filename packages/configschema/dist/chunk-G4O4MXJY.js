@@ -1,28 +1,72 @@
-import { featuresConfigSchema } from './chunk-7XKJIWWQ.js';
-import { defaultIgnoreFilePaths } from './chunk-5HJJIMHO.js';
-import { defaultNoteTypes } from './chunk-HHE6N47D.js';
-import { databaseConfigSchema } from './chunk-5LBDPOU3.js';
-import { credentialsConfigSchema } from './chunk-XVHSMXND.js';
-import { buildOnlySchema } from './chunk-W3Z5TGQR.js';
-import { plotConfigSchema } from './chunk-PR34AQNQ.js';
-import { mathConfigSchema } from './chunk-VDTKMESP.js';
-import { jupyterConfigSchema } from './chunk-3HPJIY3U.js';
-import { mainUIConfigSchema } from './chunk-D743FZ2Q.js';
-import { slashesTransform } from './chunk-DGANN2EY.js';
-import { allParsableFileExtensionSchema } from './chunk-FHTQCW2Y.js';
-import { dateParseConfigSchema } from './chunk-TNJIQDSN.js';
-import { codeConfigSchema } from './chunk-C7Q6EMMC.js';
-import { terminalConfigSchema } from './chunk-5VKVDMSO.js';
-import { performanceConfigSchema } from './chunk-QY2CWEW7.js';
-import { appMetaSchema } from './chunk-6VCBDKOB.js';
-import { documentTypeConfigSchema } from './chunk-GQ44M3IR.js';
-import { zodPathGlobTransform } from './chunk-PESBV4SX.js';
-import { navigationConfigSchema } from './chunk-QZPOLBQN.js';
-import { z } from 'zod';
-import { pluginSlotSchema } from '@ulld/configschema/slotsSchema';
-import { withForwardSlash, withForwardSlashOptional } from '@ulld/utilities/fsUtils';
-import staticBuildData from '@ulld/utilities/buildStaticData.json';
+import {
+  featuresConfigSchema
+} from "./chunk-7XKJIWWQ.js";
+import {
+  defaultIgnoreFilePaths
+} from "./chunk-5HJJIMHO.js";
+import {
+  defaultNoteTypes
+} from "./chunk-HHE6N47D.js";
+import {
+  databaseConfigSchema
+} from "./chunk-5LBDPOU3.js";
+import {
+  credentialsConfigSchema
+} from "./chunk-XVHSMXND.js";
+import {
+  buildOnlySchema
+} from "./chunk-W3Z5TGQR.js";
+import {
+  plotConfigSchema
+} from "./chunk-PR34AQNQ.js";
+import {
+  mathConfigSchema
+} from "./chunk-VDTKMESP.js";
+import {
+  jupyterConfigSchema
+} from "./chunk-3HPJIY3U.js";
+import {
+  mainUIConfigSchema
+} from "./chunk-D743FZ2Q.js";
+import {
+  slashesTransform
+} from "./chunk-DGANN2EY.js";
+import {
+  allParsableFileExtensionSchema
+} from "./chunk-FHTQCW2Y.js";
+import {
+  dateParseConfigSchema
+} from "./chunk-TNJIQDSN.js";
+import {
+  codeConfigSchema
+} from "./chunk-C7Q6EMMC.js";
+import {
+  terminalConfigSchema
+} from "./chunk-5VKVDMSO.js";
+import {
+  performanceConfigSchema
+} from "./chunk-QY2CWEW7.js";
+import {
+  appMetaSchema
+} from "./chunk-6VCBDKOB.js";
+import {
+  documentTypeConfigSchema
+} from "./chunk-GQ44M3IR.js";
+import {
+  zodPathGlobTransform
+} from "./chunk-PESBV4SX.js";
+import {
+  navigationConfigSchema
+} from "./chunk-QZPOLBQN.js";
 
+// src/zod/main.ts
+import { z } from "zod";
+import { pluginSlotSchema } from "@ulld/configschema/slotsSchema";
+import {
+  withForwardSlash,
+  withForwardSlashOptional
+} from "@ulld/utilities/fsUtils";
+import staticBuildData from "@ulld/utilities/buildStaticData.json";
 var zodRegexField = z.union([
   z.instanceof(RegExp),
   z.string(),
@@ -167,6 +211,10 @@ var appConfigSchemaTransform = (data) => {
   return data;
 };
 
-export { appConfigSchema, appConfigSchemaTransform, zodRegexField, zodRegexFieldTransform };
-//# sourceMappingURL=out.js.map
+export {
+  zodRegexField,
+  zodRegexFieldTransform,
+  appConfigSchema,
+  appConfigSchemaTransform
+};
 //# sourceMappingURL=chunk-G4O4MXJY.js.map

@@ -1,15 +1,7 @@
-'use strict';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var zod = require('zod');
+var _chunkIB3WFHXJcjs = require('../chunk-IB3WFHXJ.cjs');
 
-// src/buildStaticData/settingsPage.ts
-var settingsPageOutputSchema = zod.z.object({
-  title: zod.z.string().optional(),
-  subtitle: zod.z.string().optional(),
-  href: zod.z.string(),
-  pluginName: zod.z.string()
-});
 
-exports.settingsPageOutputSchema = settingsPageOutputSchema;
-//# sourceMappingURL=out.js.map
+exports.settingsPageOutputSchema = _chunkIB3WFHXJcjs.settingsPageOutputSchema;
 //# sourceMappingURL=settingsPage.cjs.map

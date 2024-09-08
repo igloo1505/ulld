@@ -1,7 +1,10 @@
-import { buildStaticDataSchema } from './chunk-QID62ZB5.js';
-import fs from 'fs';
-import path from 'path';
+import {
+  buildStaticDataSchema
+} from "./chunk-QID62ZB5.js";
 
+// src/__scripts__/getTestStaticBuildData.ts
+import fs from "fs";
+import path from "path";
 var writeTestStaticBuildData = (targetPath = process.env.ULLD_TEST_ROOT) => {
   let testData = {
     fsRoot: targetPath
@@ -14,6 +17,7 @@ var writeTestStaticBuildData = (targetPath = process.env.ULLD_TEST_ROOT) => {
   console.log(`Wrote ulldBuildData.json to ${target}`);
 };
 
-export { writeTestStaticBuildData };
-//# sourceMappingURL=out.js.map
+export {
+  writeTestStaticBuildData
+};
 //# sourceMappingURL=chunk-54ONVC2N.js.map

@@ -12,7 +12,7 @@ var evaluateConfig = (config, _errors) => {
   return errors;
 };
 var math_default = evaluateConfig;
-
-export { math_default as default };
-//# sourceMappingURL=out.js.map
+export {
+  math_default as default
+};
 //# sourceMappingURL=math.js.map

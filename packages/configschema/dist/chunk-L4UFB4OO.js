@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/developer/trpcConfigSchema.ts
+import { z } from "zod";
 var trpcConfigSchema = z.object({
   routerName: z.string(),
   routerExport: z.string().describe(
@@ -8,6 +7,7 @@ var trpcConfigSchema = z.object({
   )
 });
 
-export { trpcConfigSchema };
-//# sourceMappingURL=out.js.map
+export {
+  trpcConfigSchema
+};
 //# sourceMappingURL=chunk-L4UFB4OO.js.map

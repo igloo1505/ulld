@@ -1,7 +1,10 @@
-import { defaultUlldColorMap } from './chunk-ENVRPPAG.js';
-import { z } from 'zod';
-import { convertColorString } from '@ulld/utilities/convertColorString';
+import {
+  defaultUlldColorMap
+} from "./chunk-ENVRPPAG.js";
 
+// src/zod/ui/colorsConfig.ts
+import { z } from "zod";
+import { convertColorString } from "@ulld/utilities/convertColorString";
 var colorTransformOptional = (val) => val ? convertColorString(val) : void 0;
 var colorGroup = z.object({
   dark: z.string().optional().transform(colorTransformOptional),
@@ -27,7 +30,7 @@ var colorValue = z.union([
   }
   return a;
 });
-z.union([
+var configColors = z.union([
   z.literal("red"),
   z.literal("orange"),
   z.literal("amber"),
@@ -59,6 +62,8 @@ z.union([
 ]);
 var colorsConfigSchema = z.record(z.string(), colorValue).default(defaultUlldColorMap);
 
-export { colorGroup, colorsConfigSchema };
-//# sourceMappingURL=out.js.map
+export {
+  colorGroup,
+  colorsConfigSchema
+};
 //# sourceMappingURL=chunk-AY57AZMJ.js.map

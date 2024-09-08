@@ -1,3 +1,7 @@
-export { jupyterNotebookPropsSchema } from '../../chunk-O2LWYL2Z.js';
-//# sourceMappingURL=out.js.map
+import {
+  jupyterNotebookPropsSchema
+} from "../../chunk-O2LWYL2Z.js";
+export {
+  jupyterNotebookPropsSchema
+};
 //# sourceMappingURL=jupyterNotebook.js.map

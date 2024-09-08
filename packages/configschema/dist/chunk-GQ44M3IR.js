@@ -1,9 +1,17 @@
-import { zodWithForwardSlashTransform } from './chunk-PESBV4SX.js';
-import { iconNameField } from './chunk-QZPOLBQN.js';
-import { z } from 'zod';
-import { withForwardSlash } from '@ulld/utilities/utils/fsUtils';
-import { makeValidIdOnlyLetters, makeValidId } from '@ulld/utilities/utils/identity';
+import {
+  zodWithForwardSlashTransform
+} from "./chunk-PESBV4SX.js";
+import {
+  iconNameField
+} from "./chunk-QZPOLBQN.js";
 
+// src/zod/documentConfigSchema.ts
+import { z } from "zod";
+import { withForwardSlash } from "@ulld/utilities/utils/fsUtils";
+import {
+  makeValidId,
+  makeValidIdOnlyLetters
+} from "@ulld/utilities/utils/identity";
 var parsableSearchParam = z.union([
   z.string(),
   z.string().array(),
@@ -97,6 +105,10 @@ var documentTypeConfigSchema = documentTypeConfigSchemaBase.partial({
   };
 });
 
-export { docTypeUISchema, documentTypeConfigSchema, documentTypeConfigSchemaBase, zodDocTypeInput };
-//# sourceMappingURL=out.js.map
+export {
+  docTypeUISchema,
+  zodDocTypeInput,
+  documentTypeConfigSchemaBase,
+  documentTypeConfigSchema
+};
 //# sourceMappingURL=chunk-GQ44M3IR.js.map

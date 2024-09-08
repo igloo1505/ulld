@@ -1,4 +1,2 @@
-'use strict';
-
-//# sourceMappingURL=out.js.map
+"use strict";require('../../chunk-GE744XEI.cjs');
 //# sourceMappingURL=pluginSlotConfig.cjs.map

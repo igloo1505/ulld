@@ -1,3 +1,7 @@
-export { appMetaSchema } from '../chunk-6VCBDKOB.js';
-//# sourceMappingURL=out.js.map
+import {
+  appMetaSchema
+} from "../chunk-6VCBDKOB.js";
+export {
+  appMetaSchema
+};
 //# sourceMappingURL=meta.js.map

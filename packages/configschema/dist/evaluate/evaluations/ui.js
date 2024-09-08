@@ -12,7 +12,7 @@ var evaluateConfig = (config, _errors) => {
   return errors;
 };
 var ui_default = evaluateConfig;
-
-export { ui_default as default };
-//# sourceMappingURL=out.js.map
+export {
+  ui_default as default
+};
 //# sourceMappingURL=ui.js.map

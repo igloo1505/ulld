@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/developer/commandPalette.ts
+import { z } from "zod";
 var itemBase = z.object({
   label: z.string(),
   isAvailable: z.function().returns(z.boolean())
@@ -13,6 +12,7 @@ var pluginCommandPaletteSchema = z.union([
   })
 ]).array();
 
-export { pluginCommandPaletteSchema };
-//# sourceMappingURL=out.js.map
+export {
+  pluginCommandPaletteSchema
+};
 //# sourceMappingURL=chunk-OLT2PODD.js.map

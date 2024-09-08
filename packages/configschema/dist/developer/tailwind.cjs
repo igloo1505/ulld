@@ -1,10 +1,7 @@
-'use strict';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var zod = require('zod');
+var _chunkZDCYEFSGcjs = require('../chunk-ZDCYEFSG.cjs');
 
-// src/developer/tailwind.ts
-var tailwindPluginConfig = zod.z.object({});
 
-exports.tailwindPluginConfig = tailwindPluginConfig;
-//# sourceMappingURL=out.js.map
+exports.tailwindPluginConfig = _chunkZDCYEFSGcjs.tailwindPluginConfig;
 //# sourceMappingURL=tailwind.cjs.map

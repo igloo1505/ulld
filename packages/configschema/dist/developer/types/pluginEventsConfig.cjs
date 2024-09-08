@@ -1,4 +1,2 @@
-'use strict';
-
-//# sourceMappingURL=out.js.map
+"use strict";require('../../chunk-W4VQFLLY.cjs');
 //# sourceMappingURL=pluginEventsConfig.cjs.map

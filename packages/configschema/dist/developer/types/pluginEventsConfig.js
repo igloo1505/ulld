@@ -1,3 +1,2 @@
-import '../../chunk-ZMQQTOYV.js';
-//# sourceMappingURL=out.js.map
+import "../../chunk-ZMQQTOYV.js";
 //# sourceMappingURL=pluginEventsConfig.js.map

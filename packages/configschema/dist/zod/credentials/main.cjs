@@ -1,12 +1,7 @@
-'use strict';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var zod = require('zod');
+var _chunkGBCQBBTNcjs = require('../../chunk-GBCQBBTN.cjs');
 
-// src/zod/credentials/main.ts
-var credentialsConfigSchema = zod.z.object({
-  googleServiceAccountJsonPath: zod.z.string().optional().describe("Path to the service account credentials file to enable calendar integration.")
-}).default({});
 
-exports.credentialsConfigSchema = credentialsConfigSchema;
-//# sourceMappingURL=out.js.map
+exports.credentialsConfigSchema = _chunkGBCQBBTNcjs.credentialsConfigSchema;
 //# sourceMappingURL=main.cjs.map

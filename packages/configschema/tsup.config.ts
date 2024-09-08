@@ -13,7 +13,7 @@ export default defineConfig((options) => {
     return {
         entry: entries,
         platform: "neutral",
-        // splitting: true,
+        splitting: true,
         sourcemap: true,
         clean: false,
         metafile: true,
@@ -23,10 +23,10 @@ export default defineConfig((options) => {
         format: ["esm", "cjs"],
         // minify: true,
         bundle: true,
-        treeshake: "recommended",
+        // treeshake: "recommended",
         shims: true,
         skipNodeModulesBundle: true,
-        external: ["react", "@ulld/**"],
+        // external: ["react", "@ulld/**"],
         tsconfig: path.resolve(__dirname, "tsconfig.json"),
         outExtension: ({ format }) => {
             return {

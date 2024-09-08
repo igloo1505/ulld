@@ -1,3 +1,3 @@
-export * from '@ulld/utilities/transformExportString';
-//# sourceMappingURL=out.js.map
+// src/developer/transforms.ts
+export * from "@ulld/utilities/transformExportString";
 //# sourceMappingURL=transforms.js.map

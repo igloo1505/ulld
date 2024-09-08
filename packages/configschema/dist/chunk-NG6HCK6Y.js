@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/developer/navigationLinkType.ts
+import { z } from "zod";
 var navigationLinkCategory = z.union([
   z.literal("math"),
   z.literal("snippets"),
@@ -22,6 +21,7 @@ var navigationLinkCategory = z.union([
   z.literal("general")
 ]);
 
-export { navigationLinkCategory };
-//# sourceMappingURL=out.js.map
+export {
+  navigationLinkCategory
+};
 //# sourceMappingURL=chunk-NG6HCK6Y.js.map

@@ -1,5 +1,7 @@
-import { noteTypes_default } from '../chunk-6UJJ2ACA.js';
-import '../chunk-J2WVLQLN.js';
+import {
+  noteTypes_default
+} from "../chunk-6UJJ2ACA.js";
+import "../chunk-J2WVLQLN.js";
 
 // src/evaluate/main.ts
 var evaluations = [
@@ -13,7 +15,7 @@ var evaluateAppConfig = (appConfig) => {
   return errors;
 };
 var main_default = evaluateAppConfig;
-
-export { main_default as default };
-//# sourceMappingURL=out.js.map
+export {
+  main_default as default
+};
 //# sourceMappingURL=main.js.map

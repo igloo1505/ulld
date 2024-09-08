@@ -1,3 +1,9 @@
-export { iconNameField, navigationConfigSchema } from '../chunk-QZPOLBQN.js';
-//# sourceMappingURL=out.js.map
+import {
+  iconNameField,
+  navigationConfigSchema
+} from "../chunk-QZPOLBQN.js";
+export {
+  iconNameField,
+  navigationConfigSchema
+};
 //# sourceMappingURL=navigationConfig.js.map

@@ -1,23 +1,7 @@
-'use strict';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var path = require('path');
-var fs = require('fs');
-var glob = require('glob');
+var _chunk5YKZFDITcjs = require('../chunk-5YKZFDIT.cjs');
 
-function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
 
-var path__default = /*#__PURE__*/_interopDefault(path);
-var fs__default = /*#__PURE__*/_interopDefault(fs);
-
-// src/__scripts__/gatherReservedPublicPaths.ts
-var gatherReservedPublicPaths = (root = process.env.ULLD_TEST_ROOT) => {
-  const publicDir = path__default.default.join(root, "public");
-  const paths = glob.globSync("*", {
-    cwd: publicDir
-  }).filter((p) => fs__default.default.statSync(path__default.default.join(publicDir, p)).isDirectory());
-  return paths;
-};
-
-exports.gatherReservedPublicPaths = gatherReservedPublicPaths;
-//# sourceMappingURL=out.js.map
+exports.gatherReservedPublicPaths = _chunk5YKZFDITcjs.gatherReservedPublicPaths;
 //# sourceMappingURL=gatherReservedPublicPaths.cjs.map

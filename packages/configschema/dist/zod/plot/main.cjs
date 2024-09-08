@@ -1,36 +1,7 @@
-'use strict';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var zod = require('zod');
+var _chunk7SUMHZ73cjs = require('../../chunk-7SUMHZ73.cjs');
 
-// src/zod/plot/main.ts
-var colorList = zod.z.string().array().describe("An array of colors to cycle through for multiple plot paths.");
-var defaultColorList = [
-  "#e91e62",
-  "#9c27b0",
-  "#673ab6",
-  "#3f50b5",
-  "#f44336",
-  "#4caf4f",
-  "#00a8f4",
-  "#ff5721",
-  "#ffeb3a",
-  "#00bcd4",
-  "#cddc39"
-];
-var plotConfigSchema = zod.z.object({
-  plotColorList: zod.z.union([
-    colorList,
-    zod.z.object({
-      dark: colorList,
-      light: colorList
-    })
-  ]).default(defaultColorList),
-  plotColorCycleMethod: zod.z.union([
-    zod.z.literal("inOrder"),
-    zod.z.literal("random")
-  ]).default("inOrder")
-}).default({});
 
-exports.plotConfigSchema = plotConfigSchema;
-//# sourceMappingURL=out.js.map
+exports.plotConfigSchema = _chunk7SUMHZ73cjs.plotConfigSchema;
 //# sourceMappingURL=main.cjs.map

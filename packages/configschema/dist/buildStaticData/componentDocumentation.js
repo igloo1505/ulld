@@ -1,3 +1,7 @@
-export { componentDocumentationSchema } from '../chunk-USB6ZCXJ.js';
-//# sourceMappingURL=out.js.map
+import {
+  componentDocumentationSchema
+} from "../chunk-USB6ZCXJ.js";
+export {
+  componentDocumentationSchema
+};
 //# sourceMappingURL=componentDocumentation.js.map

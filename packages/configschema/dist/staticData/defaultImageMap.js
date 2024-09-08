@@ -265,7 +265,7 @@ var defaultImageMapNames = [
   "yacht",
   "autumn"
 ];
-
-export { defaultImageMapNames };
-//# sourceMappingURL=out.js.map
+export {
+  defaultImageMapNames
+};
 //# sourceMappingURL=defaultImageMap.js.map

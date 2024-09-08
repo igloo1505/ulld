@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/zod/jupyter/jupyterNotebook.ts
+import { z } from "zod";
 var ipyWidgetSchema = z.object({
   module: z.union([z.string(), z.record(z.string(), z.string())]),
   name: z.string(),
@@ -26,6 +25,7 @@ var jupyterNotebookPropsSchema = z.object({
   externalIPyWidgets: []
 });
 
-export { jupyterNotebookPropsSchema };
-//# sourceMappingURL=out.js.map
+export {
+  jupyterNotebookPropsSchema
+};
 //# sourceMappingURL=chunk-O2LWYL2Z.js.map

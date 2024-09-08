@@ -1,3 +1,2 @@
-import '../../chunk-2QPVJRIE.js';
-//# sourceMappingURL=out.js.map
+import "../../chunk-2QPVJRIE.js";
 //# sourceMappingURL=embeddableConfig.js.map

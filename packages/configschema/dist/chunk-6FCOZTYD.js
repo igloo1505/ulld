@@ -1,6 +1,9 @@
-import { documentTypeConfigSchemaBase } from './chunk-GQ44M3IR.js';
-import { z } from 'zod';
+import {
+  documentTypeConfigSchemaBase
+} from "./chunk-GQ44M3IR.js";
 
+// src/zod/internalDocumentTypes.ts
+import { z } from "zod";
 var internalDocTypes = z.union([
   z.literal("bookmarks"),
   z.literal("snippets")
@@ -64,6 +67,9 @@ var internalDocumentTypes = [
   }
 ];
 
-export { internalDocTypes, internalDocumentTypeConfigSchema, internalDocumentTypes };
-//# sourceMappingURL=out.js.map
+export {
+  internalDocTypes,
+  internalDocumentTypeConfigSchema,
+  internalDocumentTypes
+};
 //# sourceMappingURL=chunk-6FCOZTYD.js.map

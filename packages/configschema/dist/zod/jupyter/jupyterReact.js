@@ -1,3 +1,9 @@
-export { jupyterReactConfigSchema, jupyterReactConfigSchemaOutput } from '../../chunk-3NPPOQMS.js';
-//# sourceMappingURL=out.js.map
+import {
+  jupyterReactConfigSchema,
+  jupyterReactConfigSchemaOutput
+} from "../../chunk-3NPPOQMS.js";
+export {
+  jupyterReactConfigSchema,
+  jupyterReactConfigSchemaOutput
+};
 //# sourceMappingURL=jupyterReact.js.map

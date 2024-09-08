@@ -1,4 +1,6 @@
-import { arrayHasDuplicates } from './chunk-J2WVLQLN.js';
+import {
+  arrayHasDuplicates
+} from "./chunk-J2WVLQLN.js";
 
 // src/evaluate/evaluations/noteTypes.ts
 var overlappingDocumentTypes = (noteTypes) => {
@@ -28,6 +30,7 @@ var evaluateNoteTypes = (config, _errors) => {
 };
 var noteTypes_default = evaluateNoteTypes;
 
-export { noteTypes_default };
-//# sourceMappingURL=out.js.map
+export {
+  noteTypes_default
+};
 //# sourceMappingURL=chunk-6UJJ2ACA.js.map

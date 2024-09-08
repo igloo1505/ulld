@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/buildStaticData/componentDocumentation.ts
+import { z } from "zod";
 var componentDocumentationSchema = z.object({
   pluginName: z.string(),
   componentName: z.string(),
@@ -17,6 +16,7 @@ var componentDocumentationSchema = z.object({
   componentId: z.string()
 });
 
-export { componentDocumentationSchema };
-//# sourceMappingURL=out.js.map
+export {
+  componentDocumentationSchema
+};
 //# sourceMappingURL=chunk-USB6ZCXJ.js.map

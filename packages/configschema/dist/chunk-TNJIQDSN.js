@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/zod/dateParseConfig.ts
+import { z } from "zod";
 var defaultDateFormatConfig = {
   short: "MM/DD/YYYY",
   long: "MMM Do, YYYY",
@@ -33,6 +32,7 @@ var dateParseConfigSchema = z.object({
   defaultTimeDisplayType: "analog"
 });
 
-export { dateParseConfigSchema };
-//# sourceMappingURL=out.js.map
+export {
+  dateParseConfigSchema
+};
 //# sourceMappingURL=chunk-TNJIQDSN.js.map

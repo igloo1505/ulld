@@ -1,6 +1,5 @@
-import { setSlashes } from '@ulld/utilities/utils/fsUtils';
-
 // src/zod/transforms/general.ts
+import { setSlashes } from "@ulld/utilities/utils/fsUtils";
 var slashesTransform = (leadingSlash, trailingSlash = false) => {
   return (val) => setSlashes({
     value: val,
@@ -9,6 +8,7 @@ var slashesTransform = (leadingSlash, trailingSlash = false) => {
   });
 };
 
-export { slashesTransform };
-//# sourceMappingURL=out.js.map
+export {
+  slashesTransform
+};
 //# sourceMappingURL=chunk-DGANN2EY.js.map

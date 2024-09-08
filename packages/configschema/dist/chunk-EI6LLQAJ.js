@@ -1,5 +1,10 @@
-import { applySearchParamConfigOverride } from './chunk-454PT7HE.js';
-import { getFileTypeAppendices, getParsableExtensions } from './chunk-FHTQCW2Y.js';
+import {
+  applySearchParamConfigOverride
+} from "./chunk-454PT7HE.js";
+import {
+  getFileTypeAppendices,
+  getParsableExtensions
+} from "./chunk-FHTQCW2Y.js";
 
 // src/zod/getInternalConfig.ts
 var getInternalConfig = (appConfig, searchParams) => {
@@ -41,6 +46,7 @@ var getInternalConfig = (appConfig, searchParams) => {
   };
 };
 
-export { getInternalConfig };
-//# sourceMappingURL=out.js.map
+export {
+  getInternalConfig
+};
 //# sourceMappingURL=chunk-EI6LLQAJ.js.map

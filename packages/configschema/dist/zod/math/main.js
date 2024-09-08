@@ -1,4 +1,8 @@
-export { mathConfigSchema } from '../../chunk-VDTKMESP.js';
-import '../../chunk-PESBV4SX.js';
-//# sourceMappingURL=out.js.map
+import {
+  mathConfigSchema
+} from "../../chunk-VDTKMESP.js";
+import "../../chunk-PESBV4SX.js";
+export {
+  mathConfigSchema
+};
 //# sourceMappingURL=main.js.map

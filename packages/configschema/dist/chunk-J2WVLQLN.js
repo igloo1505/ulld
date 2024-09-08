@@ -12,6 +12,7 @@ var arrayHasDuplicates = (items, parseItem) => {
   return false;
 };
 
-export { arrayHasDuplicates };
-//# sourceMappingURL=out.js.map
+export {
+  arrayHasDuplicates
+};
 //# sourceMappingURL=chunk-J2WVLQLN.js.map

@@ -1,22 +1,8 @@
-'use strict';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var zod = require('zod');
-require('glob-to-regexp');
-require('@ulld/utilities/utils/fsUtils');
+var _chunkQVNJF4C2cjs = require('../chunk-QVNJF4C2.cjs');
+require('../chunk-GTFPLYO5.cjs');
 
-// src/zod/terminalConfig.ts
-var logLevelSchema = zod.z.union([
-  zod.z.literal("debug"),
-  zod.z.literal("verbose"),
-  zod.z.literal("info"),
-  zod.z.literal("none")
-]);
 
-// src/zod/terminalConfig.ts
-var terminalConfigSchema = zod.z.object({
-  logLevel: logLevelSchema.default("info")
-}).default({});
-
-exports.terminalConfigSchema = terminalConfigSchema;
-//# sourceMappingURL=out.js.map
+exports.terminalConfigSchema = _chunkQVNJF4C2cjs.terminalConfigSchema;
 //# sourceMappingURL=terminalConfig.cjs.map

@@ -1,22 +1,31 @@
-import { gatherReservedPublicPaths } from '../chunk-3IMAH4YD.js';
-import { gatherProtectedPaths } from '../chunk-7WVAVGKR.js';
-import { writeTestStaticBuildData } from '../chunk-54ONVC2N.js';
-import '../chunk-QID62ZB5.js';
-import '../chunk-USB6ZCXJ.js';
-import { getInternalDocumentTypes } from '../chunk-5PJZXRTW.js';
-import '../chunk-BOVJOOSV.js';
-import '../chunk-MDQ3YTZZ.js';
-import '../chunk-NG6HCK6Y.js';
-import '../chunk-6FCOZTYD.js';
-import '../chunk-GQ44M3IR.js';
-import '../chunk-PESBV4SX.js';
-import '../chunk-QZPOLBQN.js';
-import { globSync } from 'glob';
-import path from 'path';
-import fs from 'fs';
-import { capitalize } from '@ulld/utilities/stringUtils';
-import { slotTypes } from '@ulld/utilities/types';
+import {
+  gatherReservedPublicPaths
+} from "../chunk-3IMAH4YD.js";
+import {
+  gatherProtectedPaths
+} from "../chunk-7WVAVGKR.js";
+import {
+  writeTestStaticBuildData
+} from "../chunk-54ONVC2N.js";
+import "../chunk-QID62ZB5.js";
+import "../chunk-USB6ZCXJ.js";
+import {
+  getInternalDocumentTypes
+} from "../chunk-5PJZXRTW.js";
+import "../chunk-BOVJOOSV.js";
+import "../chunk-MDQ3YTZZ.js";
+import "../chunk-NG6HCK6Y.js";
+import "../chunk-6FCOZTYD.js";
+import "../chunk-GQ44M3IR.js";
+import "../chunk-PESBV4SX.js";
+import "../chunk-QZPOLBQN.js";
 
+// src/__scripts__/generateSlotMap.ts
+import { globSync } from "glob";
+import path from "path";
+import fs from "fs";
+import { capitalize } from "@ulld/utilities/stringUtils";
+import { slotTypes } from "@ulld/utilities/types";
 var testRoot = process.env.ULLD_TEST_ROOT;
 var buildDataPath = path.join(__dirname, "../../../utilities/src/utils/buildStaticData.json");
 var _propsExtendsMap = JSON.parse(fs.readFileSync(buildDataPath, { encoding: "utf-8" }));
@@ -132,6 +141,7 @@ export const slotKeySchema = z.union([
 `;
 var slotSubKeys = {};
 var subSlotsByKeys = {};
+var subslotSchemas = [];
 var addedParentSlots = [];
 var makeValidSymbol = (val) => {
   return val.replaceAll("-", "_").replaceAll(" ", "_");
@@ -145,6 +155,7 @@ for (const k of items) {
   if (!(k.parentSlot in slotSubKeys)) {
     subSlotsByKeys[k.parentSlot] = [];
     let name = `${k.parentSlot}SubkeySchema`;
+    subslotSchemas.push(name);
     slotSubKeys[k.parentSlot] = `
 export const ${makeValidSymbol(name)} = z.union([
 `;
@@ -216,5 +227,4 @@ fs.writeFileSync(
 );
 writeTestStaticBuildData();
 console.log(`Wrote slotMap to @ulld/utilities/slotMap.json`);
-//# sourceMappingURL=out.js.map
 //# sourceMappingURL=generateSlotMap.js.map

@@ -1,13 +1,7 @@
-'use strict';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var zod = require('zod');
+var _chunkLQE4Q3OFcjs = require('../chunk-LQE4Q3OF.cjs');
 
-// src/zod/meta.ts
-var appMetaSchema = zod.z.object({
-  title: zod.z.string().default("Uh Little Less Dum"),
-  desc: zod.z.string().optional()
-}).default({});
 
-exports.appMetaSchema = appMetaSchema;
-//# sourceMappingURL=out.js.map
+exports.appMetaSchema = _chunkLQE4Q3OFcjs.appMetaSchema;
 //# sourceMappingURL=meta.cjs.map

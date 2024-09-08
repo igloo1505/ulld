@@ -1,6 +1,4 @@
-'use strict';
-
-// src/evaluate/evaluations/ui.ts
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});// src/evaluate/evaluations/ui.ts
 var evaluations = [];
 var evaluateConfig = (config, _errors) => {
   let errors = _errors;
@@ -15,8 +13,8 @@ var evaluateConfig = (config, _errors) => {
 };
 var ui_default = evaluateConfig;
 
-module.exports = ui_default;
-//# sourceMappingURL=out.js.map
+
+exports.default = ui_default;
 
 module.exports = exports.default;
 //# sourceMappingURL=ui.cjs.map

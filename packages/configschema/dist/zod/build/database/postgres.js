@@ -1,3 +1,7 @@
-export { postgresConfigSchema } from '../../../chunk-XXHV3QPY.js';
-//# sourceMappingURL=out.js.map
+import {
+  postgresConfigSchema
+} from "../../../chunk-XXHV3QPY.js";
+export {
+  postgresConfigSchema
+};
 //# sourceMappingURL=postgres.js.map

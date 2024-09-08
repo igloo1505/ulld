@@ -1,7 +1,6 @@
-import fs from 'fs';
-import path from 'path';
-
 // src/utilityFunctions/readDocumentTypes.ts
+import fs from "fs";
+import path from "path";
 var readDocumentTypes = () => {
   const f = path.join(process.cwd(), "appConfig.ulld.json");
   if (!fs.existsSync(f))
@@ -9,7 +8,7 @@ var readDocumentTypes = () => {
   const content = JSON.parse(fs.readFileSync(f, "utf-8"));
   return "noteTypes" in content ? content.noteTypes : [];
 };
-
-export { readDocumentTypes };
-//# sourceMappingURL=out.js.map
+export {
+  readDocumentTypes
+};
 //# sourceMappingURL=readDocumentTypes.js.map

@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/zod/codeThemeSchemas.ts
+import { z } from "zod";
 var availableShikiThemes = [
   "andromeeda",
   "aurora-x",
@@ -86,6 +85,8 @@ var shikiThemeValidator = z.union([
   z.literal("vitesse-light")
 ]);
 
-export { availableShikiThemes, shikiThemeValidator };
-//# sourceMappingURL=out.js.map
+export {
+  availableShikiThemes,
+  shikiThemeValidator
+};
 //# sourceMappingURL=chunk-D57TGXVB.js.map

@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/buildStaticData/settingsPage.ts
+import { z } from "zod";
 var settingsPageOutputSchema = z.object({
   title: z.string().optional(),
   subtitle: z.string().optional(),
@@ -8,6 +7,7 @@ var settingsPageOutputSchema = z.object({
   pluginName: z.string()
 });
 
-export { settingsPageOutputSchema };
-//# sourceMappingURL=out.js.map
+export {
+  settingsPageOutputSchema
+};
 //# sourceMappingURL=chunk-BOVJOOSV.js.map

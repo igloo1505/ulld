@@ -1,3 +1,2 @@
-import '../../chunk-ZRFJKEPG.js';
-//# sourceMappingURL=out.js.map
+import "../../chunk-ZRFJKEPG.js";
 //# sourceMappingURL=pluginSlotConfig.js.map

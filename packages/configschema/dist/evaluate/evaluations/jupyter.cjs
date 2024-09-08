@@ -1,6 +1,4 @@
-'use strict';
-
-// src/evaluate/evaluations/jupyter.ts
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});// src/evaluate/evaluations/jupyter.ts
 var evaluations = [];
 var evaluateConfig = (config, _errors) => {
   let errors = _errors;
@@ -15,8 +13,8 @@ var evaluateConfig = (config, _errors) => {
 };
 var jupyter_default = evaluateConfig;
 
-module.exports = jupyter_default;
-//# sourceMappingURL=out.js.map
+
+exports.default = jupyter_default;
 
 module.exports = exports.default;
 //# sourceMappingURL=jupyter.cjs.map

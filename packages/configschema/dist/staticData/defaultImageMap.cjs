@@ -1,6 +1,4 @@
-'use strict';
-
-// src/staticData/defaultImageMap.ts
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});// src/staticData/defaultImageMap.ts
 var defaultImageMapNames = [
   "barbecue",
   "eatingTogether",
@@ -268,6 +266,6 @@ var defaultImageMapNames = [
   "autumn"
 ];
 
+
 exports.defaultImageMapNames = defaultImageMapNames;
-//# sourceMappingURL=out.js.map
 //# sourceMappingURL=defaultImageMap.cjs.map

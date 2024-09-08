@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/zod/plot/main.ts
+import { z } from "zod";
 var colorList = z.string().array().describe("An array of colors to cycle through for multiple plot paths.");
 var defaultColorList = [
   "#e91e62",
@@ -29,6 +28,7 @@ var plotConfigSchema = z.object({
   ]).default("inOrder")
 }).default({});
 
-export { plotConfigSchema };
-//# sourceMappingURL=out.js.map
+export {
+  plotConfigSchema
+};
 //# sourceMappingURL=chunk-PR34AQNQ.js.map

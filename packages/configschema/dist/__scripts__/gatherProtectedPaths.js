@@ -1,3 +1,7 @@
-export { gatherProtectedPaths } from '../chunk-7WVAVGKR.js';
-//# sourceMappingURL=out.js.map
+import {
+  gatherProtectedPaths
+} from "../chunk-7WVAVGKR.js";
+export {
+  gatherProtectedPaths
+};
 //# sourceMappingURL=gatherProtectedPaths.js.map

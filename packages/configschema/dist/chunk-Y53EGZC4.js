@@ -1,7 +1,6 @@
-import { z } from 'zod';
-import { transformExportString } from '@ulld/utilities/transformExportString';
-
 // src/developer/parserSchema.ts
+import { z } from "zod";
+import { transformExportString } from "@ulld/utilities/transformExportString";
 var parserKeyList = ["mdx"];
 var parserExtensionSchema = z.object({
   export: z.string().describe(
@@ -15,6 +14,9 @@ var pluginParserMap = z.object({
   mdx: parserExtensionSchema.optional()
 });
 
-export { parserExtensionSchema, parserKeyList, pluginParserMap };
-//# sourceMappingURL=out.js.map
+export {
+  parserKeyList,
+  parserExtensionSchema,
+  pluginParserMap
+};
 //# sourceMappingURL=chunk-Y53EGZC4.js.map

@@ -1,16 +1,7 @@
-'use strict';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var fsUtils = require('@ulld/utilities/utils/fsUtils');
+var _chunkMDJ5SJNCcjs = require('../../chunk-MDJ5SJNC.cjs');
 
-// src/zod/transforms/general.ts
-var slashesTransform = (leadingSlash, trailingSlash = false) => {
-  return (val) => fsUtils.setSlashes({
-    value: val,
-    leading: leadingSlash,
-    trailing: trailingSlash
-  });
-};
 
-exports.slashesTransform = slashesTransform;
-//# sourceMappingURL=out.js.map
+exports.slashesTransform = _chunkMDJ5SJNCcjs.slashesTransform;
 //# sourceMappingURL=general.cjs.map

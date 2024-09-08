@@ -1,94 +1,9 @@
-'use strict';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var zod = require('zod');
 
-// src/zod/codeThemeSchemas.ts
-var availableShikiThemes = [
-  "andromeeda",
-  "aurora-x",
-  "ayu-dark",
-  "catppuccin-frappe",
-  "catppuccin-latte",
-  "catppuccin-macchiato",
-  "catppuccin-mocha",
-  "dark-plus",
-  "dracula",
-  "dracula-soft",
-  "github-dark",
-  "github-dark-dimmed",
-  "github-light",
-  "light-plus",
-  "material-theme",
-  "material-theme-darker",
-  "material-theme-lighter",
-  "material-theme-ocean",
-  "material-theme-palenight",
-  "min-dark",
-  "min-light",
-  "monokai",
-  "night-owl",
-  "nord",
-  "one-dark-pro",
-  "poimandres",
-  "red",
-  "rose-pine",
-  "rose-pine-dawn",
-  "rose-pine-moon",
-  "slack-dark",
-  "slack-ochin",
-  "solarized-dark",
-  "solarized-light",
-  "synthwave-84",
-  "tokyo-night",
-  "vesper",
-  "vitesse-black",
-  "vitesse-dark",
-  "vitesse-light"
-];
-var shikiThemeValidator = zod.z.union([
-  zod.z.literal("andromeeda"),
-  zod.z.literal("aurora-x"),
-  zod.z.literal("ayu-dark"),
-  zod.z.literal("catppuccin-frappe"),
-  zod.z.literal("catppuccin-latte"),
-  zod.z.literal("catppuccin-macchiato"),
-  zod.z.literal("catppuccin-mocha"),
-  zod.z.literal("dark-plus"),
-  zod.z.literal("dracula"),
-  zod.z.literal("dracula-soft"),
-  zod.z.literal("github-dark"),
-  zod.z.literal("github-dark-dimmed"),
-  zod.z.literal("github-light"),
-  zod.z.literal("light-plus"),
-  zod.z.literal("material-theme"),
-  zod.z.literal("material-theme-darker"),
-  zod.z.literal("material-theme-lighter"),
-  zod.z.literal("material-theme-ocean"),
-  zod.z.literal("material-theme-palenight"),
-  zod.z.literal("min-dark"),
-  zod.z.literal("min-light"),
-  zod.z.literal("monokai"),
-  zod.z.literal("night-owl"),
-  zod.z.literal("nord"),
-  zod.z.literal("one-dark-pro"),
-  zod.z.literal("poimandres"),
-  zod.z.literal("red"),
-  zod.z.literal("rose-pine"),
-  zod.z.literal("rose-pine-dawn"),
-  zod.z.literal("rose-pine-moon"),
-  zod.z.literal("slack-dark"),
-  zod.z.literal("slack-ochin"),
-  zod.z.literal("solarized-dark"),
-  zod.z.literal("solarized-light"),
-  zod.z.literal("synthwave-84"),
-  zod.z.literal("tokyo-night"),
-  zod.z.literal("vesper"),
-  zod.z.literal("vitesse-black"),
-  zod.z.literal("vitesse-dark"),
-  zod.z.literal("vitesse-light")
-]);
+var _chunkCXDZSOSOcjs = require('../chunk-CXDZSOSO.cjs');
 
-exports.availableShikiThemes = availableShikiThemes;
-exports.shikiThemeValidator = shikiThemeValidator;
-//# sourceMappingURL=out.js.map
+
+
+exports.availableShikiThemes = _chunkCXDZSOSOcjs.availableShikiThemes; exports.shikiThemeValidator = _chunkCXDZSOSOcjs.shikiThemeValidator;
 //# sourceMappingURL=codeThemeSchemas.cjs.map

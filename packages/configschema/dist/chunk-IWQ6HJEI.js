@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/developer/slotKeySchema.ts
+import { z } from "zod";
 var slotKeySchema = z.union([
   z.literal("snippets"),
   z.literal("math"),
@@ -76,6 +75,18 @@ var dashboardSubkeySchema = z.literal("LandingPage");
 var formSubkeySchema = z.literal("SettingsPageContainer");
 var commandPaletteSubkeySchema = z.literal("commandPalette");
 
-export { UISubkeySchema, bibliographySubkeySchema, commandPaletteSubkeySchema, dashboardSubkeySchema, editorSubkeySchema, formSubkeySchema, mathSubkeySchema, navigationSubkeySchema, pdfSubkeySchema, slotKeySchema, snippetsSubkeySchema, taskManagerSubkeySchema };
-//# sourceMappingURL=out.js.map
+export {
+  slotKeySchema,
+  snippetsSubkeySchema,
+  mathSubkeySchema,
+  editorSubkeySchema,
+  UISubkeySchema,
+  bibliographySubkeySchema,
+  taskManagerSubkeySchema,
+  pdfSubkeySchema,
+  navigationSubkeySchema,
+  dashboardSubkeySchema,
+  formSubkeySchema,
+  commandPaletteSubkeySchema
+};
 //# sourceMappingURL=chunk-IWQ6HJEI.js.map

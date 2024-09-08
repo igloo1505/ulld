@@ -1,12 +1,16 @@
-import { getInternalConfig } from '../chunk-EI6LLQAJ.js';
-import '../chunk-454PT7HE.js';
-import '../chunk-GT6H4QSG.js';
-import '../chunk-FHTQCW2Y.js';
-import '../chunk-MJBK275F.js';
-import '../chunk-D57TGXVB.js';
-import { documentTypeConfigSchema } from '../chunk-GQ44M3IR.js';
-import '../chunk-PESBV4SX.js';
-import '../chunk-QZPOLBQN.js';
+import {
+  getInternalConfig
+} from "../chunk-EI6LLQAJ.js";
+import "../chunk-454PT7HE.js";
+import "../chunk-GT6H4QSG.js";
+import "../chunk-FHTQCW2Y.js";
+import "../chunk-MJBK275F.js";
+import "../chunk-D57TGXVB.js";
+import {
+  documentTypeConfigSchema
+} from "../chunk-GQ44M3IR.js";
+import "../chunk-PESBV4SX.js";
+import "../chunk-QZPOLBQN.js";
 
 // src/configUtilityTypes/general.ts
 var getDocumentTypeConfig = (docType, config) => {
@@ -28,7 +32,9 @@ var getRootRelativePath = (slug, docType, config) => {
   const _config = config || getInternalConfig();
   return `${_config.noteTypes?.find((t) => t.docType === docType)?.fs}/${slug}`;
 };
-
-export { getDocumentTypeConfig, getNoteTypeFromPath, getRootRelativePath };
-//# sourceMappingURL=out.js.map
+export {
+  getDocumentTypeConfig,
+  getNoteTypeFromPath,
+  getRootRelativePath
+};
 //# sourceMappingURL=general.js.map

@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 // src/zod/ui/textConfig.ts
+import { z } from "zod";
 var fontWeightSchema = z.union([
   z.literal("100"),
   z.literal("200"),
@@ -31,6 +30,8 @@ var textConfigSchema = z.object({
   ]).default("default").describe("An array of font config objects to be bundled during the build.")
 }).default({});
 
-export { fontConfigSchema, textConfigSchema };
-//# sourceMappingURL=out.js.map
+export {
+  fontConfigSchema,
+  textConfigSchema
+};
 //# sourceMappingURL=chunk-WYAPQU7P.js.map

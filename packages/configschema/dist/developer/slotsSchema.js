@@ -1,7 +1,6 @@
-import { z } from 'zod';
-import buildStaticData from '@ulld/utilities/buildStaticData.json';
-
 // src/developer/slotsSchema.ts
+import { z } from "zod";
+import buildStaticData from "@ulld/utilities/buildStaticData.json";
 var configPluginSchema = z.object({
   name: z.string(),
   version: z.string().default("latest")
@@ -126,7 +125,10 @@ var slotFields = {
 };
 var pluginSlotSchema = z.object(slotFields);
 var ulldSlots = Object.keys(slotFields);
-
-export { configPluginSchema, pluginSlotSchema, slotFields, ulldSlots };
-//# sourceMappingURL=out.js.map
+export {
+  configPluginSchema,
+  pluginSlotSchema,
+  slotFields,
+  ulldSlots
+};
 //# sourceMappingURL=slotsSchema.js.map

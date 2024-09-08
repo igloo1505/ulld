@@ -1,9 +1,8 @@
-import fs from 'fs';
-import path from 'path';
-import themes from '@ulld/utilities/shikiThemes';
-import { bundledThemes, bundledLanguages } from 'shiki';
-
 // src/__scripts__/updateShikiThemes.ts
+import fs from "fs";
+import path from "path";
+import themes from "@ulld/utilities/shikiThemes";
+import { bundledThemes, bundledLanguages } from "shiki";
 if (themes.length !== Object.keys(bundledThemes).length) {
   throw new Error(`Missing a theme most likely. Current theme list has ${themes.length} items, and the Shiki package exports ${Object.keys(bundledThemes).length} items.`);
 }
@@ -35,5 +34,4 @@ export type ShikiLanguage = typeof shikiLanguageList[number]
 export default shikiLanguageList`;
 fs.writeFileSync(targetFile, s, { encoding: "utf-8" });
 fs.writeFileSync(shikiLanguagePath, shikiLanguageFileContent, { encoding: "utf-8" });
-//# sourceMappingURL=out.js.map
 //# sourceMappingURL=updateShikiThemes.js.map

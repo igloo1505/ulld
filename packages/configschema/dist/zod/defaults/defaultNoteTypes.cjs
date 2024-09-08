@@ -1,14 +1,7 @@
-'use strict';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-// src/zod/defaults/defaultNoteTypes.ts
-var defaultNoteTypes = [
-  {
-    id: "dailyNote",
-    fs: "/dailyNotes",
-    label: "Daily Notes"
-  }
-];
+var _chunkIUNLIPLRcjs = require('../../chunk-IUNLIPLR.cjs');
 
-exports.defaultNoteTypes = defaultNoteTypes;
-//# sourceMappingURL=out.js.map
+
+exports.defaultNoteTypes = _chunkIUNLIPLRcjs.defaultNoteTypes;
 //# sourceMappingURL=defaultNoteTypes.cjs.map

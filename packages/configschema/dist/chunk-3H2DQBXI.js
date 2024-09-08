@@ -1,8 +1,7 @@
-import { z } from 'zod';
-import { transformExportString } from '@ulld/utilities/transformExportString';
-import { randomUUID } from 'node:crypto';
-
 // src/developer/componentSchema.ts
+import { z } from "zod";
+import { transformExportString } from "@ulld/utilities/transformExportString";
+import { randomUUID } from "node:crypto";
 var defaultUUID = randomUUID();
 var embeddableConfigSchema = z.object({
   regexToInclude: z.string().describe(
@@ -43,6 +42,8 @@ var componentConfigSchema = z.object({
   componentId: z.string().uuid("Your component id must be a UUID string.").default(defaultUUID)
 });
 
-export { componentConfigSchema, embeddableConfigSchema };
-//# sourceMappingURL=out.js.map
+export {
+  embeddableConfigSchema,
+  componentConfigSchema
+};
 //# sourceMappingURL=chunk-3H2DQBXI.js.map

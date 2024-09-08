@@ -12,7 +12,7 @@ var evaluateConfig = (config, _errors) => {
   return errors;
 };
 var calendar_default = evaluateConfig;
-
-export { calendar_default as default };
-//# sourceMappingURL=out.js.map
+export {
+  calendar_default as default
+};
 //# sourceMappingURL=calendar.js.map

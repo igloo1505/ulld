@@ -1,8 +1,7 @@
-'use strict';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-// src/zod/defaults/general.ts
-var defaultIgnoreFilePaths = [/\.git/, /\.next/, /node_modules/, /\.env/, /\.vscode/, /\.package/, /.ipynb_checkpoints/];
+var _chunkQDJ2YVFHcjs = require('../../chunk-QDJ2YVFH.cjs');
 
-exports.defaultIgnoreFilePaths = defaultIgnoreFilePaths;
-//# sourceMappingURL=out.js.map
+
+exports.defaultIgnoreFilePaths = _chunkQDJ2YVFHcjs.defaultIgnoreFilePaths;
 //# sourceMappingURL=general.cjs.map
