@@ -85,7 +85,7 @@ const configData = {
                 canvas: "./empty-module.ts",
             },
         },
-        outputFileTracingRoot: path.join(__dirname, "../../"),
+        outputFileTracingRoot: path.join(import.meta.dirname, "../../"),
         outputFileTracingExcludes: {
             "*": ["node_modules/canvas", "**canvas**"],
         },
