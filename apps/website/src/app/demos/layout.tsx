@@ -22,7 +22,6 @@ const baseOptions: BaseLayoutProps = {
 
 
 export default function Layout({ children }: { children: ReactNode }) {
-    console.log("pageTree: ", pageTree)
     return (
         <DocsLayout
             {...baseOptions}

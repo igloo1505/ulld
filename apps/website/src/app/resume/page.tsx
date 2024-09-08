@@ -32,7 +32,11 @@ const ResumePage = (props: ResumePageProps) => {
           linkedIn={data.linkedIn}
         />
         <ResumeIntro intro={data.intro} />
-        <div className={"flex flex-col justify-start items-center min-[740px]:grid grid-cols-[1fr_8px_1fr] w-full"}>
+        <div
+          className={
+            "flex flex-col justify-start items-center min-[740px]:grid grid-cols-[1fr_8px_1fr] w-full"
+          }
+        >
           <ResumeGridColoumnWrapper>
             <ResumeSection
               label="Projects"
@@ -44,6 +48,7 @@ const ResumePage = (props: ResumePageProps) => {
               {data.projects.map((p, i) => {
                 return (
                   <ResumeProjectItem
+                    key={`resume-project-${p.title}`}
                     index={i}
                     initialDelay={0.5 + i * 0.2}
                     item={p}
@@ -61,6 +66,7 @@ const ResumePage = (props: ResumePageProps) => {
               {data.workHistory.map((p, i) => {
                 return (
                   <WorkHistoryItem
+                    key={`work-history-${p.title}`}
                     initialDelay={0.65 + i * 0.2}
                     item={p}
                     dir="right"
@@ -80,6 +86,7 @@ const ResumePage = (props: ResumePageProps) => {
               {Object.keys(data.skills).map((k, i) => {
                 return (
                   <ResumeSkillsGroup
+                    key={`resume-skill-group-${k}`}
                     dir="left"
                     label={k}
                     data={data.skills[k as keyof typeof data.skills]}
