@@ -1,28 +1,12 @@
 'use strict';
 
-require('axios');
+var chunkRKGDRDFA_cjs = require('../chunk-RKGDRDFA.cjs');
+require('../chunk-7ARU3YXQ.cjs');
 
-// src/utils/fsUtils.ts
-var withForwardSlash = (p) => p.startsWith("/") ? p : `/${p}`;
+var a=(e,t)=>e.includes(t),s=(e,t)=>e.includes(t)?e:`${t}${chunkRKGDRDFA_cjs.a(e)}`,i=e=>{let t=new URLSearchParams;return t.set("language",e.language||"mdx"),e.useExistingValue&&t.set("useExistingValue","true"),`/editor/${encodeURI(e.contentId)}?${t.toString()}`};
 
-// src/utils/pathUtilsClientSide.ts
-var includesRoot = (p, fsRoot) => {
-  return p.includes(fsRoot);
-};
-var makeAbsolute = (p, fsRoot) => {
-  return p.includes(fsRoot) ? p : `${fsRoot}${withForwardSlash(p)}`;
-};
-var getEditorUrl = (config) => {
-  const sp = new URLSearchParams();
-  sp.set("language", config.language || "mdx");
-  if (config.useExistingValue) {
-    sp.set("useExistingValue", "true");
-  }
-  return `/editor/${encodeURI(config.contentId)}?${sp.toString()}`;
-};
-
-exports.getEditorUrl = getEditorUrl;
-exports.includesRoot = includesRoot;
-exports.makeAbsolute = makeAbsolute;
+exports.getEditorUrl = i;
+exports.includesRoot = a;
+exports.makeAbsolute = s;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=pathUtilsClientSide.cjs.map

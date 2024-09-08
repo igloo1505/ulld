@@ -1,10 +1,8 @@
-import '../chunk-F3FYYIAV.js';
-import path from 'path';
+import '../chunk-5WT32FJO.js';
+import n from 'path';
 
-var makeAbsolute = (p, fsRoot) => {
-  return p.includes(fsRoot) ? p : path.join(fsRoot, p);
-};
+var s=(r,t)=>r.includes(t)?r:n.join(t,r);
 
-export { makeAbsolute };
+export { s as makeAbsolute };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=pathUtilsServer.js.map

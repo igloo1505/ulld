@@ -1,6 +1,7 @@
 import {
   componentDocumentationSchema
-} from "../chunk-USB6ZCXJ.js";
+} from "../chunk-XDUNJMRA.js";
+import "../chunk-OJYONR4K.js";
 export {
   componentDocumentationSchema
 };

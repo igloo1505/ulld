@@ -1,20 +1,14 @@
 'use strict';
 
-var path = require('path');
+require('../chunk-7ARU3YXQ.cjs');
+var i = require('path');
 
 function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
 
-var path__default = /*#__PURE__*/_interopDefault(path);
+var i__default = /*#__PURE__*/_interopDefault(i);
 
-// src/utils/filePathUtils.ts
-var getFilePathProp = (pathValue, fsRoot) => {
-  const hasRoot = pathValue.includes(fsRoot);
-  return {
-    rootRelativePath: hasRoot ? pathValue.replace(fsRoot, "") : pathValue,
-    absolutePath: hasRoot ? pathValue : path__default.default.join(fsRoot, pathValue)
-  };
-};
+var n=(r,t)=>{let o=r.includes(t);return {rootRelativePath:o?r.replace(t,""):r,absolutePath:o?r:i__default.default.join(t,r)}};
 
-exports.getFilePathProp = getFilePathProp;
+exports.getFilePathProp = n;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=filePathUtils.cjs.map

@@ -1,32 +1,14 @@
 "use client"
-import { removeMathDollarSigns } from '../chunk-GDREHGTT.js';
-import '../chunk-DPAK46T2.js';
-import { cn } from '../chunk-OIBBGULW.js';
-import { copyStringToClipboard } from '../chunk-U3KDPO3O.js';
-import '../chunk-F3FYYIAV.js';
+import { f } from '../chunk-DCQ3RLGZ.js';
+import '../chunk-FCBFBI7J.js';
+import { a } from '../chunk-BA2FG32U.js';
+import { a as a$1 } from '../chunk-EL6YVLCZ.js';
+import '../chunk-5WT32FJO.js';
 import { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem } from '@ulld/tailwind/context-menu';
-import React from 'react';
+import e from 'react';
 
-var CopyContextMenu = ({ children, removeMathWrapper, content, btnLabel, extraMenuItems, classes = {} }) => {
-  const ExtraMenuItems = extraMenuItems;
-  return /* @__PURE__ */ React.createElement(ContextMenu, null, /* @__PURE__ */ React.createElement(ContextMenuTrigger, null, children), /* @__PURE__ */ React.createElement(
-    ContextMenuContent,
-    {
-      className: cn("w-64", classes.menuContent)
-    },
-    /* @__PURE__ */ React.createElement(
-      ContextMenuItem,
-      {
-        inset: true,
-        onClick: async () => copyStringToClipboard(removeMathWrapper ? removeMathDollarSigns(content) : content)
-      },
-      btnLabel || "Copy latex"
-    ),
-    ExtraMenuItems && /* @__PURE__ */ React.createElement(ExtraMenuItems, null)
-  ));
-};
-CopyContextMenu.displayName = "CopyContextMenu";
+var c=({children:m,removeMathWrapper:i,content:t,btnLabel:s,extraMenuItems:p,classes:u={}})=>{let n=p;return e.createElement(ContextMenu,null,e.createElement(ContextMenuTrigger,null,m),e.createElement(ContextMenuContent,{className:a("w-64",u.menuContent)},e.createElement(ContextMenuItem,{inset:!0,onClick:async()=>a$1(i?f(t):t)},s||"Copy latex"),n&&e.createElement(n,null)))};c.displayName="CopyContextMenu";
 
-export { CopyContextMenu };
+export { c as CopyContextMenu };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=copyContextMenu.js.map

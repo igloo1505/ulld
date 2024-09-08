@@ -1,23 +1,11 @@
 'use strict';
 
-// src/utils/identity.ts
-var idChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-var getRandomId = (_length = 16) => {
-  let s = `${idChars.charAt(Math.floor(Math.random() * 52))}`;
-  for (var i = 0; i < _length; i++) {
-    s += idChars.charAt(Math.floor(Math.random() * idChars.length));
-  }
-  return s;
-};
-var makeValidId = (id = "") => {
-  return id.replaceAll(" ", "").replaceAll(/([^\w]|\d)/gm, "");
-};
-var makeValidIdOnlyLetters = (id = "") => {
-  return id.replaceAll(/[^\w]/gmi, "");
-};
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.getRandomId = getRandomId;
-exports.makeValidId = makeValidId;
-exports.makeValidIdOnlyLetters = makeValidIdOnlyLetters;
+var t="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",n=(r=16)=>{let e=`${t.charAt(Math.floor(Math.random()*52))}`;for(var a=0;a<r;a++)e+=t.charAt(Math.floor(Math.random()*t.length));return e},o=(r="")=>r.replaceAll(" ","").replaceAll(/([^\w]|\d)/gm,""),d=(r="")=>r.replaceAll(/[^\w]/gmi,"");
+
+exports.getRandomId = n;
+exports.makeValidId = o;
+exports.makeValidIdOnlyLetters = d;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=identity.cjs.map

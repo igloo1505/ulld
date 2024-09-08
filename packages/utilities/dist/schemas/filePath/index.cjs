@@ -1,15 +1,13 @@
 'use strict';
 
-var zod = require('zod');
+var chunkF3SJ5IX7_cjs = require('../../chunk-F3SJ5IX7.cjs');
+require('../../chunk-7ARU3YXQ.cjs');
 
-// src/schemas/filePath/filePathInput.ts
-var filePathGlobPropsSchema = zod.z.object({
-  glob: zod.z.string().default("**/*").transform((x) => x.startsWith("/") ? x.slice(1) : x),
-  type: zod.z.union([zod.z.literal("dirs"), zod.z.literal("files"), zod.z.literal("dirsAndFiles")]).default("files"),
-  ignore: zod.z.union([zod.z.string(), zod.z.string().array()]).nullish(),
-  returnAs: zod.z.union([zod.z.literal("absolute"), zod.z.literal("rootRelative")]).default("absolute")
+
+
+Object.defineProperty(exports, "filePathGlobPropsSchema", {
+	enumerable: true,
+	get: function () { return chunkF3SJ5IX7_cjs.a; }
 });
-
-exports.filePathGlobPropsSchema = filePathGlobPropsSchema;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=index.cjs.map

@@ -1,22 +1,9 @@
 'use strict';
 
-// src/classes/urlManager.ts
-var Paths = class {
-  constructor() {
-  }
-  static getTaskListPath(idOrIds, showCompleted = false) {
-    const sp = new URLSearchParams();
-    let ids = Array.isArray(idOrIds) ? idOrIds : [idOrIds];
-    for (const d of ids) {
-      sp.append("listIds", `${d}`);
-    }
-    if (showCompleted) {
-      sp.set("showCompleted", "true");
-    }
-    return `/todo?${sp.toString()}`;
-  }
-};
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.Paths = Paths;
+var o=class{constructor(){}static getTaskListPath(t,r=!1){let e=new URLSearchParams,s=Array.isArray(t)?t:[t];for(let a of s)e.append("listIds",`${a}`);return r&&e.set("showCompleted","true"),`/todo?${e.toString()}`}};
+
+exports.Paths = o;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=urlManager.cjs.map

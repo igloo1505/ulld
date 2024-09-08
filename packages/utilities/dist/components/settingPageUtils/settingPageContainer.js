@@ -1,16 +1,9 @@
-import { cn } from '../../chunk-OIBBGULW.js';
-import '../../chunk-F3FYYIAV.js';
-import React from 'react';
+import { a } from '../../chunk-BA2FG32U.js';
+import '../../chunk-5WT32FJO.js';
+import n from 'react';
 
-var SettingPageContainer = ({
-  children,
-  title,
-  className
-}) => {
-  return /* @__PURE__ */ React.createElement("div", { className: cn("@container/settings-container space-y-6", className) }, title && /* @__PURE__ */ React.createElement("h1", { className: "text-4xl font-bold border-b rounded pb-4 w-fit sm:pr-8" }, title), children);
-};
-SettingPageContainer.displayName = "SettingPageContainer";
+var o=({children:r,title:e,className:a$1})=>n.createElement("div",{className:a("@container/settings-container space-y-6",a$1)},e&&n.createElement("h1",{className:"text-4xl font-bold border-b rounded pb-4 w-fit sm:pr-8"},e),r);o.displayName="SettingPageContainer";
 
-export { SettingPageContainer };
+export { o as SettingPageContainer };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=settingPageContainer.js.map

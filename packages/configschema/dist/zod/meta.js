@@ -1,6 +1,7 @@
 import {
   appMetaSchema
-} from "../chunk-6VCBDKOB.js";
+} from "../chunk-7OB2SMOT.js";
+import "../chunk-OJYONR4K.js";
 export {
   appMetaSchema
 };

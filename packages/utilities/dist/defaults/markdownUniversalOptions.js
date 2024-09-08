@@ -1,30 +1,8 @@
-import { mermaidTheme } from '../chunk-ANVX23WG.js';
-import '../chunk-F3FYYIAV.js';
+import { a } from '../chunk-C4YGARK5.js';
+import '../chunk-5WT32FJO.js';
 
-// src/defaults/markdownUniversalOptions.ts
-var mathOptions = {
-  tex: {
-    // packages: [],
-    tags: "all",
-    // "all" | "ams" (ams breaks EqRef component, unless can find other way to force label creation.),
-    useLabelIds: true,
-    processEscapes: true,
-    processEnvironments: true
-  },
-  chtml: {
-    fontURL: "/font/mathjax",
-    adaptiveCSS: true
-  }
-};
-var mermaidConfig = {
-  output: "svg",
-  /* theme: { light: 'dark', dark: 'dark' }, */
-  mermaid: {
-    themeVariables: mermaidTheme.dark,
-    theme: "base"
-  }
-};
+var n={tex:{tags:"all",useLabelIds:!0,processEscapes:!0,processEnvironments:!0},chtml:{fontURL:"/font/mathjax",adaptiveCSS:!0}},r={output:"svg",mermaid:{themeVariables:a.dark,theme:"base"}};
 
-export { mathOptions, mermaidConfig };
+export { n as mathOptions, r as mermaidConfig };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=markdownUniversalOptions.js.map

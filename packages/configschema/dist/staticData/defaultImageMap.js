@@ -1,3 +1,5 @@
+import "../chunk-OJYONR4K.js";
+
 // src/staticData/defaultImageMap.ts
 var defaultImageMapNames = [
   "barbecue",

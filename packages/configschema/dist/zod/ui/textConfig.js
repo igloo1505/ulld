@@ -1,7 +1,8 @@
 import {
   fontConfigSchema,
   textConfigSchema
-} from "../../chunk-WYAPQU7P.js";
+} from "../../chunk-HKGNT4FZ.js";
+import "../../chunk-OJYONR4K.js";
 export {
   fontConfigSchema,
   textConfigSchema

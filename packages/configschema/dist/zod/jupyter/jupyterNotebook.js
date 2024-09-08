@@ -1,6 +1,7 @@
 import {
   jupyterNotebookPropsSchema
-} from "../../chunk-O2LWYL2Z.js";
+} from "../../chunk-YIBETHKR.js";
+import "../../chunk-OJYONR4K.js";
 export {
   jupyterNotebookPropsSchema
 };

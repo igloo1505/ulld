@@ -1,12 +1,9 @@
-import { autoWrapMath } from '../chunk-JT776YC2.js';
-import '../chunk-F3FYYIAV.js';
+import { d } from '../chunk-4COXG7W4.js';
+import '../chunk-5WT32FJO.js';
 import { z } from 'zod';
 
-var autoWrapMathInlineField = z.string().transform((data) => autoWrapMath(data, false));
-var autoWrapMathDisplayField = z.string().transform((data) => autoWrapMath(data, true));
-var autoWrapMathInlineNullishField = z.string().transform((data) => data ? autoWrapMath(data, false) : data);
-var autoWrapMathDisplayNullishField = z.string().transform((data) => data ? autoWrapMath(data, true) : data);
+var l=z.string().transform(r=>d(r,!1)),a=z.string().transform(r=>d(r,!0)),p=z.string().transform(r=>r&&d(r,!1)),u=z.string().transform(r=>r&&d(r,!0));
 
-export { autoWrapMathDisplayField, autoWrapMathDisplayNullishField, autoWrapMathInlineField, autoWrapMathInlineNullishField };
+export { a as autoWrapMathDisplayField, u as autoWrapMathDisplayNullishField, l as autoWrapMathInlineField, p as autoWrapMathInlineNullishField };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=autoWrapMathSchema.js.map

@@ -1,28 +1,15 @@
 'use strict';
 
-var React = require('react');
-var clsx = require('clsx');
-var tailwindMerge = require('tailwind-merge');
+var chunk27YLNUZ3_cjs = require('../../chunk-27YLNUZ3.cjs');
+require('../../chunk-7ARU3YXQ.cjs');
+var n = require('react');
 
 function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
 
-var React__default = /*#__PURE__*/_interopDefault(React);
+var n__default = /*#__PURE__*/_interopDefault(n);
 
-// src/components/settingPageUtils/settingPageContainer.tsx
-function cn(...inputs) {
-  return tailwindMerge.twMerge(clsx.clsx(inputs));
-}
+var o=({children:r,title:e,className:a})=>n__default.default.createElement("div",{className:chunk27YLNUZ3_cjs.a("@container/settings-container space-y-6",a)},e&&n__default.default.createElement("h1",{className:"text-4xl font-bold border-b rounded pb-4 w-fit sm:pr-8"},e),r);o.displayName="SettingPageContainer";
 
-// src/components/settingPageUtils/settingPageContainer.tsx
-var SettingPageContainer = ({
-  children,
-  title,
-  className
-}) => {
-  return /* @__PURE__ */ React__default.default.createElement("div", { className: cn("@container/settings-container space-y-6", className) }, title && /* @__PURE__ */ React__default.default.createElement("h1", { className: "text-4xl font-bold border-b rounded pb-4 w-fit sm:pr-8" }, title), children);
-};
-SettingPageContainer.displayName = "SettingPageContainer";
-
-exports.SettingPageContainer = SettingPageContainer;
+exports.SettingPageContainer = o;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=settingPageContainer.cjs.map

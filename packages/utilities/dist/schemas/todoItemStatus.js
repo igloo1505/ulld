@@ -1,21 +1,7 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 
-// src/schemas/todoItemStatus.ts
-var toDoItemStatuses = [
-  "ToDo",
-  "In_Progress",
-  "Backlog",
-  "Cancelled",
-  "Done",
-  "Future"
-];
-var toDoItemStatusData = toDoItemStatuses.map((x) => {
-  return {
-    label: x === "ToDo" ? "To Do" : x.replaceAll("_", " "),
-    value: x
-  };
-});
+var o=["ToDo","In_Progress","Backlog","Cancelled","Done","Future"],a=o.map(t=>({label:t==="ToDo"?"To Do":t.replaceAll("_"," "),value:t}));
 
-export { toDoItemStatusData, toDoItemStatuses };
+export { a as toDoItemStatusData, o as toDoItemStatuses };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=todoItemStatus.js.map

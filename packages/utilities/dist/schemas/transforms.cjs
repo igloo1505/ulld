@@ -1,10 +1,9 @@
 'use strict';
 
-// src/schemas/transforms.ts
-var makeArrayTransform = (b) => {
-  return Array.isArray(b) ? b : [b];
-};
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.makeArrayTransform = makeArrayTransform;
+var n=r=>Array.isArray(r)?r:[r];
+
+exports.makeArrayTransform = n;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=transforms.cjs.map

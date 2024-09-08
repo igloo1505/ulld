@@ -1,35 +1,18 @@
 'use strict';
 
-// src/utils/getAllRegexMatches.ts
-var getAllRegexMatches = (content, regex) => {
-  let results = [];
-  let c = content;
-  let m;
-  do {
-    m = regex.exec(c);
-    if (m) {
-      results.push(m);
-    }
-  } while (m);
-  return results;
-};
+var chunkZP7BPD7Z_cjs = require('../chunk-ZP7BPD7Z.cjs');
+var chunkIQLKCCD5_cjs = require('../chunk-IQLKCCD5.cjs');
+require('../chunk-7ARU3YXQ.cjs');
 
-// src/utils/replaceContentByRegexMatch.ts
-var replaceContentByMatch = (content, match, group, newContent) => {
-  if (!match.groups) {
-    console.log(`No groups were found for match ${match}`);
-    return content;
-  }
-  let matchValue = match.groups?.[group];
-  console.log("match: ", match);
-  if (!matchValue) {
-    throw new Error(`An invalid match group was given to replaceContentByMatch. Looked for ${group} and found groups ${Object.keys(match.groups).join(", ")}`);
-  }
-  let c = content.replaceAll(match[0], typeof newContent === "string" ? newContent : newContent(matchValue));
-  return c;
-};
 
-exports.getAllRegexMatches = getAllRegexMatches;
-exports.replaceContentByMatch = replaceContentByMatch;
+
+Object.defineProperty(exports, "replaceContentByMatch", {
+	enumerable: true,
+	get: function () { return chunkZP7BPD7Z_cjs.a; }
+});
+Object.defineProperty(exports, "getAllRegexMatches", {
+	enumerable: true,
+	get: function () { return chunkIQLKCCD5_cjs.a; }
+});
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=regexUtils.cjs.map

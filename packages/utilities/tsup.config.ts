@@ -70,8 +70,8 @@ const prependDirectives = async () => {
 export default defineConfig((options) => {
     return {
         entry: ["src/**/*.ts", "src/**/*.tsx"],
-        platform: "neutral",
-        // splitting: true,
+        // platform: "neutral",
+        splitting: true,
         sourcemap: true,
         clean: false,
         metafile: true,
@@ -80,11 +80,12 @@ export default defineConfig((options) => {
         // target: "es2021",
         format: ["esm", "cjs"],
         // minify: true,
-        bundle: true,
-        treeshake: "recommended",
+        // bundle: true,
+        treeshake: true,
         shims: true,
+        minify: true,
         skipNodeModulesBundle: true,
-        external: ["react"],
+        // external: ["react", "canvas", "@prisma/client", "prisma", "typescript", "jsdom", "react-dom"],
         tsconfig: path.resolve(__dirname, "tsconfig.json"),
         outExtension: ({ format }) => {
             return {

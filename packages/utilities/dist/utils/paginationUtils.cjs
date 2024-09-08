@@ -1,14 +1,11 @@
 'use strict';
 
-// src/utils/paginationUtils.ts
-var paginateTemplateString = "<ULLDPAGE>";
-var getPaginationTemplateString = (cb) => cb(paginateTemplateString);
-var parsePaginationTemplateString = (templateString, pageNumber) => {
-  return templateString.replace(encodeURI(paginateTemplateString), `${pageNumber}`).replace(paginateTemplateString, `${pageNumber}`);
-};
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.getPaginationTemplateString = getPaginationTemplateString;
-exports.paginateTemplateString = paginateTemplateString;
-exports.parsePaginationTemplateString = parsePaginationTemplateString;
+var e="<ULLDPAGE>",a=t=>t(e),i=(t,n)=>t.replace(encodeURI(e),`${n}`).replace(e,`${n}`);
+
+exports.getPaginationTemplateString = a;
+exports.paginateTemplateString = e;
+exports.parsePaginationTemplateString = i;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=paginationUtils.cjs.map

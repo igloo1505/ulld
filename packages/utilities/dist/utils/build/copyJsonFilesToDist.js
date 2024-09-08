@@ -1,20 +1,10 @@
-import '../../chunk-F3FYYIAV.js';
+import '../../chunk-5WT32FJO.js';
 import { globSync } from 'glob';
-import fs from 'fs';
-import path from 'path';
+import c from 'fs';
+import n from 'path';
 
-var copyJsonFilesToDist = (cwd, glob = "src/**/*.json", files) => {
-  if (!files) {
-    files = globSync(glob, {
-      cwd,
-      nodir: true
-    });
-  }
-  for (const f of files) {
-    fs.cpSync(path.join(cwd, f), path.join(cwd, f.replace("src/", "dist/")));
-  }
-};
+var j=(o,i="src/**/*.json",r)=>{r||(r=globSync(i,{cwd:o,nodir:!0}));for(let t of r)c.cpSync(n.join(o,t),n.join(o,t.replace("src/","dist/")));};
 
-export { copyJsonFilesToDist };
+export { j as copyJsonFilesToDist };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=copyJsonFilesToDist.js.map

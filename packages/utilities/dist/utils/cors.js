@@ -1,22 +1,8 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 import { NextResponse } from 'next/server';
 
-var getCorsHeaders = (req, _status = 200) => {
-  const origin = req.headers.get("origin") || "*";
-  return {
-    status: _status,
-    headers: {
-      "Access-Control-Allow-Origin": origin,
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization"
-    }
-  };
-};
-var optionsMethodResponse = async (req, ctx) => {
-  return new NextResponse(null, getCorsHeaders(req));
-};
+var n=(e,t=200)=>{let o=e.headers.get("origin")||"*";return {status:t,headers:{"Access-Control-Allow-Origin":o,"Content-Type":"application/json","Access-Control-Allow-Methods":"GET, POST, PUT, DELETE, OPTIONS","Access-Control-Allow-Headers":"Content-Type, Authorization"}}},c=async(e,t)=>new NextResponse(null,n(e));
 
-export { getCorsHeaders, optionsMethodResponse };
+export { n as getCorsHeaders, c as optionsMethodResponse };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=cors.js.map

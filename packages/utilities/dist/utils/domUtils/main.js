@@ -1,11 +1,8 @@
-export { getBodyClassesFromAppConfig } from '../../chunk-UBOHD6SL.js';
-import '../../chunk-F3FYYIAV.js';
+export { a as getBodyClassesFromAppConfig } from '../../chunk-OYOC45SE.js';
+import '../../chunk-5WT32FJO.js';
 
-// src/utils/domUtils/main.ts
-var getHtmlElementAttribute = (attribute) => {
-  return document.querySelector("html")?.getAttribute(attribute);
-};
+var m=t=>document.querySelector("html")?.getAttribute(t);
 
-export { getHtmlElementAttribute };
+export { m as getHtmlElementAttribute };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=main.js.map

@@ -1,18 +1,11 @@
-import { RequireJsLoader_default } from '../../chunk-NVNJS4N6.js';
-import { SvgLatexLoader_default } from '../../chunk-6ULDQ2Q3.js';
-import { Mathjax_default } from '../../chunk-6ISTDGTB.js';
-import '../../chunk-F3FYYIAV.js';
-import React from 'react';
+import { e } from '../../chunk-YJNR42C3.js';
+import { a } from '../../chunk-6JXSIYSX.js';
+import { a as a$1 } from '../../chunk-MW4FHHF7.js';
+import '../../chunk-5WT32FJO.js';
+import r from 'react';
 
-var InitialLoader = ({ requireJs = true, latex = true, mathjax = "all" }) => {
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, requireJs && /* @__PURE__ */ React.createElement(RequireJsLoader_default, null), latex && /* @__PURE__ */ React.createElement(SvgLatexLoader_default, null), /* @__PURE__ */ React.createElement(
-    Mathjax_default,
-    {
-      type: mathjax
-    }
-  ));
-};
+var s=({requireJs:t=!0,latex:i=!0,mathjax:p="all"})=>r.createElement(r.Fragment,null,t&&r.createElement(a,null),i&&r.createElement(a$1,null),r.createElement(e,{type:p}));
 
-export { InitialLoader };
+export { s as InitialLoader };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=initialLoader.js.map

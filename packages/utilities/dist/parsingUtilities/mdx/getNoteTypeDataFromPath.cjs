@@ -1,19 +1,17 @@
 'use strict';
 
-// src/parsingUtilities/mdx/getNoteTypeDataFromPath.ts
-var sortNoteTypeDataForParsing = (appConfig) => {
-  return appConfig.noteTypes.sort((a, b) => b.fs.length - a.fs.length).map((s) => ({
-    ...s,
-    fs: s.fs.startsWith("/") ? s.fs.slice(1) : s.fs
-  }));
-};
-var getNoteTypeDataFromPath = (rootRelativePath, appConfig, preSortedNoteTypes) => {
-  let sorted = preSortedNoteTypes || sortNoteTypeDataForParsing(appConfig);
-  let docTypeData = sorted.find((f) => rootRelativePath.includes(f.fs));
-  return docTypeData;
-};
+var chunkXOCJ2MTY_cjs = require('../../chunk-XOCJ2MTY.cjs');
+require('../../chunk-7ARU3YXQ.cjs');
 
-exports.getNoteTypeDataFromPath = getNoteTypeDataFromPath;
-exports.sortNoteTypeDataForParsing = sortNoteTypeDataForParsing;
+
+
+Object.defineProperty(exports, "getNoteTypeDataFromPath", {
+	enumerable: true,
+	get: function () { return chunkXOCJ2MTY_cjs.b; }
+});
+Object.defineProperty(exports, "sortNoteTypeDataForParsing", {
+	enumerable: true,
+	get: function () { return chunkXOCJ2MTY_cjs.a; }
+});
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=getNoteTypeDataFromPath.cjs.map

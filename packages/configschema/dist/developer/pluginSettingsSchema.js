@@ -1,6 +1,7 @@
 import {
   pluginSettingsSchema
-} from "../chunk-5D6ZTR4P.js";
+} from "../chunk-3DBXBDVW.js";
+import "../chunk-OJYONR4K.js";
 export {
   pluginSettingsSchema
 };

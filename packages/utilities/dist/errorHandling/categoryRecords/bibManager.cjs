@@ -1,13 +1,13 @@
 'use strict';
 
-// src/errorHandling/categoryRecords/bibManager.tsx
-var bibManagerErrorRecord = {
-  bibPathFileDoesNotExist: {
-    title: "No bib file found.",
-    description: "The bibPath field in your appConfig.ulld.json points to a file that does not exist. Your bibliography cannot be synced."
-  }
-};
+var chunkTUZ3S2EP_cjs = require('../../chunk-TUZ3S2EP.cjs');
+require('../../chunk-7ARU3YXQ.cjs');
 
-exports.bibManagerErrorRecord = bibManagerErrorRecord;
+
+
+Object.defineProperty(exports, "bibManagerErrorRecord", {
+	enumerable: true,
+	get: function () { return chunkTUZ3S2EP_cjs.a; }
+});
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=bibManager.cjs.map

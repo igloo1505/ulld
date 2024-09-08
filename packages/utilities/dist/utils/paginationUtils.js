@@ -1,12 +1,7 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 
-// src/utils/paginationUtils.ts
-var paginateTemplateString = "<ULLDPAGE>";
-var getPaginationTemplateString = (cb) => cb(paginateTemplateString);
-var parsePaginationTemplateString = (templateString, pageNumber) => {
-  return templateString.replace(encodeURI(paginateTemplateString), `${pageNumber}`).replace(paginateTemplateString, `${pageNumber}`);
-};
+var e="<ULLDPAGE>",i=t=>t(e),g=(t,n)=>t.replace(encodeURI(e),`${n}`).replace(e,`${n}`);
 
-export { getPaginationTemplateString, paginateTemplateString, parsePaginationTemplateString };
+export { i as getPaginationTemplateString, e as paginateTemplateString, g as parsePaginationTemplateString };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=paginationUtils.js.map

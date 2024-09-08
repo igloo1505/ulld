@@ -2,16 +2,18 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var clsx = require('clsx');
-var tailwindMerge = require('tailwind-merge');
+var chunk27YLNUZ3_cjs = require('../chunk-27YLNUZ3.cjs');
+require('../chunk-7ARU3YXQ.cjs');
 
-// src/utils/cn.ts
-function cn(...inputs) {
-  return tailwindMerge.twMerge(clsx.clsx(inputs));
-}
-var cn_default = cn;
 
-exports.cn = cn;
-exports.default = cn_default;
+
+Object.defineProperty(exports, "cn", {
+	enumerable: true,
+	get: function () { return chunk27YLNUZ3_cjs.a; }
+});
+Object.defineProperty(exports, "default", {
+	enumerable: true,
+	get: function () { return chunk27YLNUZ3_cjs.b; }
+});
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=cn.cjs.map

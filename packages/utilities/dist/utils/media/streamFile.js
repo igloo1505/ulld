@@ -1,21 +1,8 @@
-import '../../chunk-F3FYYIAV.js';
-import fs from 'fs';
+import '../../chunk-5WT32FJO.js';
+import o from 'fs';
 
-var streamFile = (path, options) => {
-  const downloadStream = fs.createReadStream(path, options);
-  return new ReadableStream({
-    start(controller) {
-      downloadStream.on("data", (chunk) => controller.enqueue(new Uint8Array(chunk)));
-      downloadStream.on("end", () => controller.close());
-      downloadStream.on("error", (error) => controller.error(error));
-    },
-    cancel() {
-      downloadStream.destroy();
-    },
-    type: "bytes"
-  });
-};
+var d=(n,a)=>{let e=o.createReadStream(n,a);return new ReadableStream({start(r){e.on("data",t=>r.enqueue(new Uint8Array(t))),e.on("end",()=>r.close()),e.on("error",t=>r.error(t));},cancel(){e.destroy();},type:"bytes"})};
 
-export { streamFile };
+export { d as streamFile };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=streamFile.js.map

@@ -1,3 +1,7 @@
+import {
+  __dirname
+} from "../chunk-OJYONR4K.js";
+
 // src/__scripts__/updateShikiThemes.ts
 import fs from "fs";
 import path from "path";

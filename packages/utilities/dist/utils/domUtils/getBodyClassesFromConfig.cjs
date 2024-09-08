@@ -1,11 +1,13 @@
 'use strict';
 
-// src/utils/domUtils/getBodyClassesFromConfig.ts
-var getBodyClassesFromAppConfig = (config) => {
-  let x = [];
-  return x.join(" ");
-};
+var chunkFQY44KTM_cjs = require('../../chunk-FQY44KTM.cjs');
+require('../../chunk-7ARU3YXQ.cjs');
 
-exports.getBodyClassesFromAppConfig = getBodyClassesFromAppConfig;
+
+
+Object.defineProperty(exports, "getBodyClassesFromAppConfig", {
+	enumerable: true,
+	get: function () { return chunkFQY44KTM_cjs.a; }
+});
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=getBodyClassesFromConfig.cjs.map

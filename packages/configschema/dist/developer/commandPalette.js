@@ -1,6 +1,7 @@
 import {
   pluginCommandPaletteSchema
-} from "../chunk-OLT2PODD.js";
+} from "../chunk-KXLUK7UA.js";
+import "../chunk-OJYONR4K.js";
 export {
   pluginCommandPaletteSchema
 };

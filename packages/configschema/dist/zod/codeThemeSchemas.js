@@ -1,7 +1,8 @@
 import {
   availableShikiThemes,
   shikiThemeValidator
-} from "../chunk-D57TGXVB.js";
+} from "../chunk-OEZ4UI6D.js";
+import "../chunk-OJYONR4K.js";
 export {
   availableShikiThemes,
   shikiThemeValidator

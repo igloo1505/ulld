@@ -1,7 +1,8 @@
 import {
   jupyterReactConfigSchema,
   jupyterReactConfigSchemaOutput
-} from "../../chunk-3NPPOQMS.js";
+} from "../../chunk-OGYC5DCG.js";
+import "../../chunk-OJYONR4K.js";
 export {
   jupyterReactConfigSchema,
   jupyterReactConfigSchemaOutput

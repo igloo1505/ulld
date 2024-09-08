@@ -1,28 +1,16 @@
 'use strict';
 
-// src/errorHandling/categoryRecords/taskManager.tsx
-var taskManagerErrorRecord = {
-  toDoListExists: {
-    title: "Uh Oh",
-    description: "A to-do list with this name already exists."
-  }
-};
+var chunkTUZ3S2EP_cjs = require('../chunk-TUZ3S2EP.cjs');
+var chunkMW5WSWOY_cjs = require('../chunk-MW5WSWOY.cjs');
+require('../chunk-XKMFLEEM.cjs');
+require('../chunk-7ARU3YXQ.cjs');
 
-// src/errorHandling/categoryRecords/bibManager.tsx
-var bibManagerErrorRecord = {
-  bibPathFileDoesNotExist: {
-    title: "No bib file found.",
-    description: "The bibPath field in your appConfig.ulld.json points to a file that does not exist. Your bibliography cannot be synced."
-  }
-};
+var m={...chunkMW5WSWOY_cjs.a,...chunkTUZ3S2EP_cjs.a};
 
-// src/errorHandling/main.ts
-var errorToastRecord = {
-  ...taskManagerErrorRecord,
-  ...bibManagerErrorRecord
-};
-
-exports.errorToastRecord = errorToastRecord;
-exports.taskManagerErrorRecord = taskManagerErrorRecord;
+Object.defineProperty(exports, "taskManagerErrorRecord", {
+	enumerable: true,
+	get: function () { return chunkMW5WSWOY_cjs.a; }
+});
+exports.errorToastRecord = m;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=main.cjs.map

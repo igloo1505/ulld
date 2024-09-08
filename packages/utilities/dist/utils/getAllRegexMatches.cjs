@@ -1,19 +1,13 @@
 'use strict';
 
-// src/utils/getAllRegexMatches.ts
-var getAllRegexMatches = (content, regex) => {
-  let results = [];
-  let c = content;
-  let m;
-  do {
-    m = regex.exec(c);
-    if (m) {
-      results.push(m);
-    }
-  } while (m);
-  return results;
-};
+var chunkIQLKCCD5_cjs = require('../chunk-IQLKCCD5.cjs');
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.getAllRegexMatches = getAllRegexMatches;
+
+
+Object.defineProperty(exports, "getAllRegexMatches", {
+	enumerable: true,
+	get: function () { return chunkIQLKCCD5_cjs.a; }
+});
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=getAllRegexMatches.cjs.map

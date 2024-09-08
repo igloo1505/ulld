@@ -1,24 +1,27 @@
 import {
   gatherReservedPublicPaths
-} from "../chunk-3IMAH4YD.js";
+} from "../chunk-VYY3W7EC.js";
 import {
   gatherProtectedPaths
-} from "../chunk-7WVAVGKR.js";
+} from "../chunk-NZH3DRYL.js";
 import {
   writeTestStaticBuildData
-} from "../chunk-54ONVC2N.js";
-import "../chunk-QID62ZB5.js";
-import "../chunk-USB6ZCXJ.js";
+} from "../chunk-CNKXJVZ6.js";
+import "../chunk-5GBOZ6OT.js";
+import "../chunk-XDUNJMRA.js";
 import {
   getInternalDocumentTypes
-} from "../chunk-5PJZXRTW.js";
-import "../chunk-BOVJOOSV.js";
-import "../chunk-MDQ3YTZZ.js";
-import "../chunk-NG6HCK6Y.js";
-import "../chunk-6FCOZTYD.js";
-import "../chunk-GQ44M3IR.js";
-import "../chunk-PESBV4SX.js";
-import "../chunk-QZPOLBQN.js";
+} from "../chunk-OEBOJ7WX.js";
+import "../chunk-3PWNN5LJ.js";
+import "../chunk-HWZMF7B2.js";
+import "../chunk-GLXDRPPL.js";
+import "../chunk-T67JN632.js";
+import "../chunk-Q45QUJC2.js";
+import "../chunk-VHM7ROJU.js";
+import "../chunk-FSIUFLEX.js";
+import {
+  __dirname
+} from "../chunk-OJYONR4K.js";
 
 // src/__scripts__/generateSlotMap.ts
 import { globSync } from "glob";

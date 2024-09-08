@@ -1,16 +1,8 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 import { headers } from 'next/headers';
 
-var getPathnameFromHeaders = () => {
-  const headerList = headers();
-  let pathname = headerList.get("x-url");
-  let pindex = pathname?.indexOf("?");
-  if (pathname && pindex && pindex > -1) {
-    pathname = pathname.slice(0, pindex);
-  }
-  return pathname;
-};
+var d=()=>{let e=headers().get("x-url"),t=e?.indexOf("?");return e&&t&&t>-1&&(e=e.slice(0,t)),e};
 
-export { getPathnameFromHeaders };
+export { d as getPathnameFromHeaders };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=getPathnameFromHeaders.js.map

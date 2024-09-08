@@ -1,14 +1,7 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 
-// src/utils/getDarkMode.ts
-var getDarkMode = async () => {
-  if (typeof window !== "undefined") {
-    return Boolean(document.querySelector("html")?.classList.contains("dark"));
-  }
-  let { cookies } = await import('next/headers');
-  return cookies().has("darkMode");
-};
+var n=async()=>{if(typeof window<"u")return !!document.querySelector("html")?.classList.contains("dark");let{cookies:e}=await import('next/headers');return e().has("darkMode")};
 
-export { getDarkMode };
+export { n as getDarkMode };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=getDarkMode.js.map

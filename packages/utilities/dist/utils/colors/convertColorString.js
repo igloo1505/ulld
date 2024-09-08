@@ -1,24 +1,8 @@
-import '../../chunk-F3FYYIAV.js';
-import tinycolor from 'tinycolor2';
+import '../../chunk-5WT32FJO.js';
+import i from 'tinycolor2';
 
-var convertColorString = (value, format = "hsl") => {
-  if (value.indexOf("var") !== -1) {
-    return value;
-  }
-  if (format === "hsl") {
-    return tinycolor(value).toHslString();
-  }
-  if (format === "hex") {
-    return tinycolor(value).toHexString();
-  }
-  if (format === "hsv") {
-    return tinycolor(value).toHsvString();
-  }
-  if (format === "rgb") {
-    return tinycolor(value).toRgbString();
-  }
-};
+var s=(r,t="hsl")=>{if(r.indexOf("var")!==-1)return r;if(t==="hsl")return i(r).toHslString();if(t==="hex")return i(r).toHexString();if(t==="hsv")return i(r).toHsvString();if(t==="rgb")return i(r).toRgbString()};
 
-export { convertColorString };
+export { s as convertColorString };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=convertColorString.js.map

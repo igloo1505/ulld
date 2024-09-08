@@ -1,21 +1,7 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 
-// src/utils/identity.ts
-var idChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-var getRandomId = (_length = 16) => {
-  let s = `${idChars.charAt(Math.floor(Math.random() * 52))}`;
-  for (var i = 0; i < _length; i++) {
-    s += idChars.charAt(Math.floor(Math.random() * idChars.length));
-  }
-  return s;
-};
-var makeValidId = (id = "") => {
-  return id.replaceAll(" ", "").replaceAll(/([^\w]|\d)/gm, "");
-};
-var makeValidIdOnlyLetters = (id = "") => {
-  return id.replaceAll(/[^\w]/gmi, "");
-};
+var t="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",o=(r=16)=>{let e=`${t.charAt(Math.floor(Math.random()*52))}`;for(var a=0;a<r;a++)e+=t.charAt(Math.floor(Math.random()*t.length));return e},d=(r="")=>r.replaceAll(" ","").replaceAll(/([^\w]|\d)/gm,""),c=(r="")=>r.replaceAll(/[^\w]/gmi,"");
 
-export { getRandomId, makeValidId, makeValidIdOnlyLetters };
+export { o as getRandomId, d as makeValidId, c as makeValidIdOnlyLetters };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=identity.js.map

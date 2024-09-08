@@ -1,30 +1,14 @@
 'use strict';
 
+var chunkRFZI7GA2_cjs = require('../chunk-RFZI7GA2.cjs');
+require('../chunk-7ARU3YXQ.cjs');
 var zod = require('zod');
 
-// src/schemas/autoWrapMathSchema.ts
+var e=zod.z.string().transform(r=>chunkRFZI7GA2_cjs.d(r,!1)),l=zod.z.string().transform(r=>chunkRFZI7GA2_cjs.d(r,!0)),a=zod.z.string().transform(r=>r&&chunkRFZI7GA2_cjs.d(r,!1)),p=zod.z.string().transform(r=>r&&chunkRFZI7GA2_cjs.d(r,!0));
 
-// src/utils/latexUtils.ts
-var autoWrapMath = (math, display = true) => {
-  const s = display ? "$$" : "$";
-  let _idx = math.indexOf(s);
-  if (_idx === -1 || _idx === math.lastIndexOf(s)) {
-    return `${s}
-${math}
-${s}`;
-  }
-  return math;
-};
-
-// src/schemas/autoWrapMathSchema.ts
-var autoWrapMathInlineField = zod.z.string().transform((data) => autoWrapMath(data, false));
-var autoWrapMathDisplayField = zod.z.string().transform((data) => autoWrapMath(data, true));
-var autoWrapMathInlineNullishField = zod.z.string().transform((data) => data ? autoWrapMath(data, false) : data);
-var autoWrapMathDisplayNullishField = zod.z.string().transform((data) => data ? autoWrapMath(data, true) : data);
-
-exports.autoWrapMathDisplayField = autoWrapMathDisplayField;
-exports.autoWrapMathDisplayNullishField = autoWrapMathDisplayNullishField;
-exports.autoWrapMathInlineField = autoWrapMathInlineField;
-exports.autoWrapMathInlineNullishField = autoWrapMathInlineNullishField;
+exports.autoWrapMathDisplayField = l;
+exports.autoWrapMathDisplayNullishField = p;
+exports.autoWrapMathInlineField = e;
+exports.autoWrapMathInlineNullishField = a;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=autoWrapMathSchema.cjs.map

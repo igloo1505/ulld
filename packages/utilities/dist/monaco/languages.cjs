@@ -1,33 +1,10 @@
 'use strict';
 
-// src/monaco/languages.ts
-var limitedMonacoSupportedLanguages = [
-  "bat",
-  "coffee script",
-  "cpp",
-  "csharp",
-  "css",
-  "fsharp",
-  "go",
-  "ini",
-  "jade",
-  "javascript",
-  "json",
-  "less",
-  "lua",
-  "objective-c",
-  "powershell",
-  "python",
-  "r",
-  "ruby",
-  "scss",
-  "sql",
-  "swift",
-  "typescript"
-];
-var languages_default = limitedMonacoSupportedLanguages;
+require('../chunk-7ARU3YXQ.cjs');
 
-module.exports = languages_default;
+var s=["bat","coffee script","cpp","csharp","css","fsharp","go","ini","jade","javascript","json","less","lua","objective-c","powershell","python","r","ruby","scss","sql","swift","typescript"],t=s;
+
+module.exports = t;
 //# sourceMappingURL=out.js.map
 
 module.exports = exports.default;

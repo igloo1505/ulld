@@ -1,12 +1,6 @@
 'use strict';
 
-var zod = require('zod');
+require('../chunk-WVA4EUX7.cjs');
 
-// src/types/todos.ts
-zod.z.object({
-  label: zod.z.string(),
-  id: zod.z.number(),
-  active: zod.z.boolean().default(false)
-});
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=todos.cjs.map

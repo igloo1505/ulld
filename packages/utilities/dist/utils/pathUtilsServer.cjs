@@ -1,16 +1,14 @@
 'use strict';
 
-var path = require('path');
+require('../chunk-7ARU3YXQ.cjs');
+var n = require('path');
 
 function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
 
-var path__default = /*#__PURE__*/_interopDefault(path);
+var n__default = /*#__PURE__*/_interopDefault(n);
 
-// src/utils/pathUtilsServer.ts
-var makeAbsolute = (p, fsRoot) => {
-  return p.includes(fsRoot) ? p : path__default.default.join(fsRoot, p);
-};
+var o=(r,t)=>r.includes(t)?r:n__default.default.join(t,r);
 
-exports.makeAbsolute = makeAbsolute;
+exports.makeAbsolute = o;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=pathUtilsServer.cjs.map

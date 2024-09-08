@@ -1,7 +1,8 @@
 import {
   componentConfigSchema,
   embeddableConfigSchema
-} from "../chunk-3H2DQBXI.js";
+} from "../chunk-CFWZGS6F.js";
+import "../chunk-OJYONR4K.js";
 export {
   componentConfigSchema,
   embeddableConfigSchema

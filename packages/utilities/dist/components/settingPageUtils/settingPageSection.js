@@ -1,27 +1,9 @@
-import { cn } from '../../chunk-OIBBGULW.js';
-import '../../chunk-F3FYYIAV.js';
-import React from 'react';
+import { a as a$1 } from '../../chunk-BA2FG32U.js';
+import '../../chunk-5WT32FJO.js';
+import i from 'react';
 
-var SettingPageSection = ({
-  title,
-  desc,
-  children,
-  classes
-}) => {
-  return /* @__PURE__ */ React.createElement("div", { className: "settings-section w-full h-fit" }, /* @__PURE__ */ React.createElement(
-    "h2",
-    {
-      className: cn(
-        "text-2xl font-semibold",
-        !desc && "mb-4",
-        classes?.title
-      )
-    },
-    title
-  ), desc && /* @__PURE__ */ React.createElement("div", { className: cn("text-muted text-sm mb-4", classes?.desc) }, desc), children);
-};
-SettingPageSection.displayName = "SettingPageSection";
+var a=({title:n,desc:t,children:s,classes:o})=>i.createElement("div",{className:"settings-section w-full h-fit"},i.createElement("h2",{className:a$1("text-2xl font-semibold",!t&&"mb-4",o?.title)},n),t&&i.createElement("div",{className:a$1("text-muted text-sm mb-4",o?.desc)},t),s);a.displayName="SettingPageSection";
 
-export { SettingPageSection };
+export { a as SettingPageSection };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=settingPageSection.js.map

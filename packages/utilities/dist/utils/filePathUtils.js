@@ -1,14 +1,8 @@
-import '../chunk-F3FYYIAV.js';
-import path from 'path';
+import '../chunk-5WT32FJO.js';
+import i from 'path';
 
-var getFilePathProp = (pathValue, fsRoot) => {
-  const hasRoot = pathValue.includes(fsRoot);
-  return {
-    rootRelativePath: hasRoot ? pathValue.replace(fsRoot, "") : pathValue,
-    absolutePath: hasRoot ? pathValue : path.join(fsRoot, pathValue)
-  };
-};
+var s=(r,t)=>{let o=r.includes(t);return {rootRelativePath:o?r.replace(t,""):r,absolutePath:o?r:i.join(t,r)}};
 
-export { getFilePathProp };
+export { s as getFilePathProp };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=filePathUtils.js.map

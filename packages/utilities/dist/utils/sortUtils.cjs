@@ -1,10 +1,9 @@
 'use strict';
 
-// src/utils/sortUtils.ts
-var sortAlphabetical = (items, getProperty) => {
-  return items.sort((a, b) => getProperty ? getProperty(a) < getProperty(b) ? -1 : 1 : a < b ? -1 : 1);
-};
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.sortAlphabetical = sortAlphabetical;
+var T=(i,n)=>i.sort((s,t)=>n?n(s)<n(t)?-1:1:s<t?-1:1);
+
+exports.sortAlphabetical = T;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=sortUtils.cjs.map

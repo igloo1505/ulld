@@ -1,22 +1,11 @@
 'use strict';
 
-var Script = require('next/script');
-var React = require('react');
+var chunk45HC5GQK_cjs = require('../../chunk-45HC5GQK.cjs');
+require('../../chunk-7ARU3YXQ.cjs');
 
-function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
 
-var Script__default = /*#__PURE__*/_interopDefault(Script);
-var React__default = /*#__PURE__*/_interopDefault(React);
 
-// src/loaders/installerComponents/SvgLatexLoader.tsx
-var SvgLatexLoader = () => {
-  return /* @__PURE__ */ React__default.default.createElement(Script__default.default, { type: "module", id: "123" }, `import {LaTeXJSComponent} from "https://cdn.jsdelivr.net/npm/latex.js/dist/latex.mjs"
-                    customElements.define("latex-js", LaTeXJSComponent)`);
-};
-SvgLatexLoader.displayName = "SvgLatexLoader";
-var SvgLatexLoader_default = SvgLatexLoader;
-
-module.exports = SvgLatexLoader_default;
+module.exports = chunk45HC5GQK_cjs.a;
 //# sourceMappingURL=out.js.map
 
 module.exports = exports.default;

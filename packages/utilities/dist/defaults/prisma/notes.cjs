@@ -1,21 +1,9 @@
 'use strict';
 
-// src/defaults/prisma/notes.ts
-var defaultFindRemoteMdxArgs = {
-  include: {
-    tags: true,
-    subjects: true,
-    citations: {
-      select: {
-        id: true,
-        htmlCitation: true
-      }
-    },
-    definitions: true,
-    topics: true
-  }
-};
+require('../../chunk-7ARU3YXQ.cjs');
 
-exports.defaultFindRemoteMdxArgs = defaultFindRemoteMdxArgs;
+var e={include:{tags:!0,subjects:!0,citations:{select:{id:!0,htmlCitation:!0}},definitions:!0,topics:!0}};
+
+exports.defaultFindRemoteMdxArgs = e;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=notes.cjs.map

@@ -1,14 +1,9 @@
 'use strict';
 
-// src/utils/isLocal.ts
-var isLocal = (fsRoot) => {
-  if (typeof process !== "undefined" && typeof window === "undefined") {
-    return process.cwd() === fsRoot;
-  } else {
-    return window.location.host.includes("localhost");
-  }
-};
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.isLocal = isLocal;
+var n=e=>typeof process<"u"&&typeof window>"u"?process.cwd()===e:window.location.host.includes("localhost");
+
+exports.isLocal = n;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=isLocal.cjs.map

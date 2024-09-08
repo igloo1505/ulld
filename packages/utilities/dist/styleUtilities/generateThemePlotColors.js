@@ -1,82 +1,10 @@
-import { FileData } from '../chunk-IGUAPEDC.js';
-import { __publicField } from '../chunk-F3FYYIAV.js';
-import path from 'path';
+import { a } from '../chunk-FM4IUWAP.js';
+import { b, a as a$1 } from '../chunk-5WT32FJO.js';
+import m from 'path';
 import { globSync } from 'glob';
-import fs from 'fs';
-import coloringPalette from 'coloring-palette';
+import C from 'fs';
+import T from 'coloring-palette';
 
-var JsonFile = class extends FileData {
-  constructor(path2) {
-    super(path2, false);
-    __publicField(this, "path");
-    this.path = path2;
-  }
-  getJsonContent() {
-    this.throwIfNotExists();
-    return JSON.parse(this.getContent());
-  }
-  writeContent(content, indentation = 2) {
-    let newContent = content || this.content;
-    if (!newContent) {
-      throw new Error(`Cannot write content. No content was found.`);
-    }
-    if (typeof newContent === "object") {
-      newContent = JSON.stringify(newContent, null, indentation);
-    }
-    fs.writeFileSync(this.path, newContent, { encoding: "utf-8" });
-  }
-};
-var formatHslString = (s) => {
-  return s.replace("hsl(", "").replace(")", "").split(",").map((s2) => s2.trim()).join(" ");
-};
-var flattenColorPalette = (c, format = "hsl") => {
-  let lightData = coloringPalette(c, format);
-  let items = [];
-  for (const item in lightData) {
-    items.push({
-      color: formatHslString(lightData[item].color),
-      foreground: formatHslString(lightData[item].contrastText)
-    });
-  }
-  return items;
-};
-var generateThemePlotColors = () => {
-  let root = process.env.ULLD_DEV_ROOT;
-  if (!root) {
-    throw new Error(
-      `No dev root env variable found. Can not continue writing theme colors.`
-    );
-  }
-  const colorMapPath = path.join(
-    root,
-    "packages/tailwindAndShad/src/shad/defaultThemes/colorMaps"
-  );
-  let files = globSync("*.json", {
-    cwd: colorMapPath,
-    absolute: true
-  }).filter((p) => !p.includes("-raw")).map((p) => new JsonFile(p));
-  let colorData = {};
-  for (const file of files) {
-    let content = file.getJsonContent();
-    let primary = {
-      light: content.light.primary,
-      dark: content.dark.primary
-    };
-    let colorMap = {
-      light: flattenColorPalette(primary.light),
-      dark: flattenColorPalette(primary.dark)
-    };
-    let fn = file.getFileName();
-    colorData[fn] = colorMap;
-  }
-  fs.writeFileSync(
-    path.join(__dirname, "./themeColorGradients.json"),
-    JSON.stringify(colorData, null, 4),
-    {
-      encoding: "utf-8"
-    }
-  );
-};
-generateThemePlotColors();
+var i=class extends a{constructor(o){super(o,!1);a$1(this,"path");this.path=o;}getJsonContent(){return this.throwIfNotExists(),JSON.parse(this.getContent())}writeContent(o,e=2){let t=o||this.content;if(!t)throw new Error("Cannot write content. No content was found.");typeof t=="object"&&(t=JSON.stringify(t,null,e)),C.writeFileSync(this.path,t,{encoding:"utf-8"});}};var h=r=>r.replace("hsl(","").replace(")","").split(",").map(n=>n.trim()).join(" "),g=(r,n="hsl")=>{let o=T(r,n),e=[];for(let t in o)e.push({color:h(o[t].color),foreground:h(o[t].contrastText)});return e},k=()=>{let r=process.env.ULLD_DEV_ROOT;if(!r)throw new Error("No dev root env variable found. Can not continue writing theme colors.");let n=m.join(r,"packages/tailwindAndShad/src/shad/defaultThemes/colorMaps"),o=globSync("*.json",{cwd:n,absolute:!0}).filter(t=>!t.includes("-raw")).map(t=>new i(t)),e={};for(let t of o){let a=t.getJsonContent(),s={light:a.light.primary,dark:a.dark.primary},d={light:g(s.light),dark:g(s.dark)},p=t.getFileName();e[p]=d;}C.writeFileSync(m.join(b,"./themeColorGradients.json"),JSON.stringify(e,null,4),{encoding:"utf-8"});};k();
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=generateThemePlotColors.js.map

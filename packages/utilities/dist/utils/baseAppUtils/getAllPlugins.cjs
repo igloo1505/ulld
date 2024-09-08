@@ -1,14 +1,13 @@
 'use strict';
 
-// src/utils/baseAppUtils/getAllPlugins.ts
-var getAllPlugins = (appConfig) => {
-  let data = appConfig.plugins;
-  for (const k in appConfig.slots) {
-    data = data.concat(appConfig.slots[k]);
-  }
-  return data;
-};
+var chunkDZIYNKO4_cjs = require('../../chunk-DZIYNKO4.cjs');
+require('../../chunk-7ARU3YXQ.cjs');
 
-exports.getAllPlugins = getAllPlugins;
+
+
+Object.defineProperty(exports, "getAllPlugins", {
+	enumerable: true,
+	get: function () { return chunkDZIYNKO4_cjs.a; }
+});
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=getAllPlugins.cjs.map

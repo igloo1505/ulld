@@ -1,6 +1,7 @@
 import {
   defaultNoteTypes
-} from "../../chunk-HHE6N47D.js";
+} from "../../chunk-QQ2TG4KG.js";
+import "../../chunk-OJYONR4K.js";
 export {
   defaultNoteTypes
 };

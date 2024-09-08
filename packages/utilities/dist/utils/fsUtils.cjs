@@ -1,84 +1,73 @@
 'use strict';
 
-var axios = require('axios');
+var chunkRKGDRDFA_cjs = require('../chunk-RKGDRDFA.cjs');
+require('../chunk-7ARU3YXQ.cjs');
 
-function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
 
-var axios__default = /*#__PURE__*/_interopDefault(axios);
 
-// src/utils/fsUtils.ts
-var withForwardSlash = (p) => p.startsWith("/") ? p : `/${p}`;
-var withForwardSlashOptional = (p) => typeof p === "undefined" ? void 0 : withForwardSlash(p);
-var noTrailingSlash = (p) => p.endsWith("/") ? p.slice(0, p.length - 1) : p;
-var withTrailingSlash = (p) => p.endsWith("/") ? p : `${p}/`;
-var makeHref = (s) => {
-  if (/^http(s?):\/\//gm.test(s)) {
-    return s;
-  }
-  if (typeof window === "undefined") {
-    return s;
-  }
-  let isHttps = window?.location?.href.startsWith("http") ? window.location.href.startsWith("https") : process.env.NEXT_PUBLIC_PRODUCTION_REMOTE;
-  return `${isHttps ? "https" : "http"}://${s}`;
-};
-var noLeadingSlash = (p) => p.startsWith("/") ? p.slice(1, p.length) : p;
-var setSlashes = ({
-  value,
-  leading,
-  trailing
-}) => {
-  let v = value;
-  v = leading ? withForwardSlash(v) : noLeadingSlash(v);
-  v = trailing ? withTrailingSlash(v) : noTrailingSlash(v);
-  return v;
-};
-var parentDir = (p) => p.indexOf("/") >= 0 ? p.slice(0, p.lastIndexOf("/")) : p;
-var getFilenameFromString = (p) => p.indexOf("/") === -1 ? p : p.slice(p.lastIndexOf("/") + 1, p.length);
-var ensureRootRelative = (p, fsRoot) => withForwardSlash(p.indexOf(fsRoot) === -1 ? p : p.split(fsRoot)[1]);
-var ensureAbsolute = (p, fsRoot) => {
-  return p.includes(fsRoot) ? p : `${fsRoot}${setSlashes({ value: p, leading: true, trailing: false })}`;
-};
-var getParentDirAndFilename = (p, ensureRootRelativeParent = true, fsRoot) => {
-  return {
-    parent: ensureRootRelativeParent ? ensureRootRelative(parentDir(p), fsRoot) : parentDir(p),
-    filename: getFilenameFromString(p)
-  };
-};
-var fileExtension = (path) => {
-  return path.split(".").at(-1);
-};
-var replacePrefix = (content, regex, replaceWith = "") => {
-  return content.startsWith(regex) ? `${replaceWith}${content.split(regex)[1]}` : content;
-};
-var replaceAppendix = (content, regex, replaceWith = "") => {
-  return content.endsWith(regex) ? `${content.slice(0, content.length - regex.length)}${replaceWith}` : content;
-};
-var getFsRootGlob = async (props) => {
-  try {
-    let res = await axios__default.default.post("/api/glob", props);
-    if (res.data.filePaths) {
-      return res.data.filePaths;
-    }
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-exports.ensureAbsolute = ensureAbsolute;
-exports.ensureRootRelative = ensureRootRelative;
-exports.fileExtension = fileExtension;
-exports.getFilenameFromString = getFilenameFromString;
-exports.getFsRootGlob = getFsRootGlob;
-exports.getParentDirAndFilename = getParentDirAndFilename;
-exports.makeHref = makeHref;
-exports.noLeadingSlash = noLeadingSlash;
-exports.noTrailingSlash = noTrailingSlash;
-exports.parentDir = parentDir;
-exports.replaceAppendix = replaceAppendix;
-exports.replacePrefix = replacePrefix;
-exports.setSlashes = setSlashes;
-exports.withForwardSlash = withForwardSlash;
-exports.withForwardSlashOptional = withForwardSlashOptional;
-exports.withTrailingSlash = withTrailingSlash;
+Object.defineProperty(exports, "ensureAbsolute", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.k; }
+});
+Object.defineProperty(exports, "ensureRootRelative", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.j; }
+});
+Object.defineProperty(exports, "fileExtension", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.m; }
+});
+Object.defineProperty(exports, "getFilenameFromString", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.i; }
+});
+Object.defineProperty(exports, "getFsRootGlob", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.p; }
+});
+Object.defineProperty(exports, "getParentDirAndFilename", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.l; }
+});
+Object.defineProperty(exports, "makeHref", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.e; }
+});
+Object.defineProperty(exports, "noLeadingSlash", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.f; }
+});
+Object.defineProperty(exports, "noTrailingSlash", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.c; }
+});
+Object.defineProperty(exports, "parentDir", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.h; }
+});
+Object.defineProperty(exports, "replaceAppendix", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.o; }
+});
+Object.defineProperty(exports, "replacePrefix", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.n; }
+});
+Object.defineProperty(exports, "setSlashes", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.g; }
+});
+Object.defineProperty(exports, "withForwardSlash", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.a; }
+});
+Object.defineProperty(exports, "withForwardSlashOptional", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.b; }
+});
+Object.defineProperty(exports, "withTrailingSlash", {
+	enumerable: true,
+	get: function () { return chunkRKGDRDFA_cjs.d; }
+});
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=fsUtils.cjs.map

@@ -634,6 +634,7 @@
   },
   "scripts": {
     "build": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && tsup",
+    "buildNode": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && tsup-node",
     "dev": "echo 'Add dev script here'",
     "test": "echo 'Add test script here'"
   },

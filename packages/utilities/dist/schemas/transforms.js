@@ -1,10 +1,7 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 
-// src/schemas/transforms.ts
-var makeArrayTransform = (b) => {
-  return Array.isArray(b) ? b : [b];
-};
+var y=r=>Array.isArray(r)?r:[r];
 
-export { makeArrayTransform };
+export { y as makeArrayTransform };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=transforms.js.map

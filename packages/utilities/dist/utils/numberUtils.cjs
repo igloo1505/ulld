@@ -1,14 +1,11 @@
 'use strict';
 
-// src/utils/numberUtils.ts
-var sum = (values) => {
-  return values.reduce((a, b) => a + b);
-};
-var numberBool = (n) => typeof n === "number";
-var numberOrDefault = (n, defaultNumber) => numberBool(n) ? n : defaultNumber;
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.numberBool = numberBool;
-exports.numberOrDefault = numberOrDefault;
-exports.sum = sum;
+var t=e=>e.reduce((n,r)=>n+r),u=e=>typeof e=="number",b=(e,n)=>u(e)?e:n;
+
+exports.numberBool = u;
+exports.numberOrDefault = b;
+exports.sum = t;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=numberUtils.cjs.map

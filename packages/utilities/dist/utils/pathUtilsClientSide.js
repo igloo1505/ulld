@@ -1,22 +1,8 @@
-import { withForwardSlash } from '../chunk-JKM3T6TO.js';
-import '../chunk-F3FYYIAV.js';
+import { a } from '../chunk-LP3CV6WX.js';
+import '../chunk-5WT32FJO.js';
 
-// src/utils/pathUtilsClientSide.ts
-var includesRoot = (p, fsRoot) => {
-  return p.includes(fsRoot);
-};
-var makeAbsolute = (p, fsRoot) => {
-  return p.includes(fsRoot) ? p : `${fsRoot}${withForwardSlash(p)}`;
-};
-var getEditorUrl = (config) => {
-  const sp = new URLSearchParams();
-  sp.set("language", config.language || "mdx");
-  if (config.useExistingValue) {
-    sp.set("useExistingValue", "true");
-  }
-  return `/editor/${encodeURI(config.contentId)}?${sp.toString()}`;
-};
+var s=(e,t)=>e.includes(t),i=(e,t)=>e.includes(t)?e:`${t}${a(e)}`,g=e=>{let t=new URLSearchParams;return t.set("language",e.language||"mdx"),e.useExistingValue&&t.set("useExistingValue","true"),`/editor/${encodeURI(e.contentId)}?${t.toString()}`};
 
-export { getEditorUrl, includesRoot, makeAbsolute };
+export { g as getEditorUrl, s as includesRoot, i as makeAbsolute };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=pathUtilsClientSide.js.map

@@ -1,43 +1,25 @@
 'use strict';
 
-// src/utils/latexUtils.ts
-var stringHasPairedKeys = (s, k) => {
-  if (!s || typeof s !== "string")
-    return false;
-  let i = s.indexOf(k);
-  return i !== -1 && i !== s.lastIndexOf(k);
-};
-var stringHasLatex = (s) => {
-  if (!s || typeof s !== "string")
-    return false;
-  return stringHasPairedKeys(s, "$");
-};
-var stringHasMdx = (s) => {
-  if (!s)
-    return false;
-  if (s.includes("<") && s.includes(">"))
-    return true;
-  return [
-    "_",
-    "*",
-    "-",
-    "$"
-  ].some((k) => stringHasPairedKeys(s, k));
-};
-var autoWrapMath = (math, display = true) => {
-  const s = display ? "$$" : "$";
-  let _idx = math.indexOf(s);
-  if (_idx === -1 || _idx === math.lastIndexOf(s)) {
-    return `${s}
-${math}
-${s}`;
-  }
-  return math;
-};
+var chunkRFZI7GA2_cjs = require('../chunk-RFZI7GA2.cjs');
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.autoWrapMath = autoWrapMath;
-exports.stringHasLatex = stringHasLatex;
-exports.stringHasMdx = stringHasMdx;
-exports.stringHasPairedKeys = stringHasPairedKeys;
+
+
+Object.defineProperty(exports, "autoWrapMath", {
+	enumerable: true,
+	get: function () { return chunkRFZI7GA2_cjs.d; }
+});
+Object.defineProperty(exports, "stringHasLatex", {
+	enumerable: true,
+	get: function () { return chunkRFZI7GA2_cjs.b; }
+});
+Object.defineProperty(exports, "stringHasMdx", {
+	enumerable: true,
+	get: function () { return chunkRFZI7GA2_cjs.c; }
+});
+Object.defineProperty(exports, "stringHasPairedKeys", {
+	enumerable: true,
+	get: function () { return chunkRFZI7GA2_cjs.a; }
+});
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=latexUtils.cjs.map

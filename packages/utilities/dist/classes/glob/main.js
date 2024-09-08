@@ -1,28 +1,10 @@
-import { FileData } from '../../chunk-IGUAPEDC.js';
-import '../../chunk-F3FYYIAV.js';
+import { a } from '../../chunk-FM4IUWAP.js';
+import '../../chunk-5WT32FJO.js';
 import { globSync } from 'glob';
-import path from 'path';
+import r from 'path';
 
-var UlldGlob = class {
-  constructor(fsRoot) {
-    this.fsRoot = fsRoot;
-  }
-  /** Returns paths as absolute paths */
-  glob(pattern, ignore = ["**node_modules**"], includeDirs = true) {
-    return globSync(pattern, {
-      cwd: this.fsRoot,
-      ignore,
-      nodir: !includeDirs
-    }).map((f) => path.join(this.fsRoot, f));
-  }
-  filePathsOfType(fileType) {
-    return this.glob(`**/*.${fileType}`).map((f) => path.join(this.fsRoot, f));
-  }
-  filesOfType(fileType) {
-    return this.filePathsOfType(fileType).map((f) => new FileData(f));
-  }
-};
+var i=class{constructor(o){this.fsRoot=o;}glob(o,t=["**node_modules**"],p=!0){return globSync(o,{cwd:this.fsRoot,ignore:t,nodir:!p}).map(s=>r.join(this.fsRoot,s))}filePathsOfType(o){return this.glob(`**/*.${o}`).map(t=>r.join(this.fsRoot,t))}filesOfType(o){return this.filePathsOfType(o).map(t=>new a(t))}};
 
-export { UlldGlob };
+export { i as UlldGlob };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=main.js.map

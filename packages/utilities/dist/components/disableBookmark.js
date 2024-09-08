@@ -1,15 +1,9 @@
 "use client"
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 import { useEffect } from 'react';
 
-var DisableBookmark = () => {
-  useEffect(() => {
-    document.body.classList.remove("canBookmark");
-  }, []);
-  return null;
-};
-DisableBookmark.displayName = "DisableBookmark";
+var o=()=>(useEffect(()=>{document.body.classList.remove("canBookmark");},[]),null);o.displayName="DisableBookmark";
 
-export { DisableBookmark };
+export { o as DisableBookmark };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=disableBookmark.js.map

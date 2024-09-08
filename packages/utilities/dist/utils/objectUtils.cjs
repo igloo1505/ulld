@@ -1,21 +1,10 @@
 'use strict';
 
-// src/utils/objectUtils.ts
-var getResursiveValue = (a, keys) => {
-  if (keys.length > 1) {
-    return getResursiveValue(a[keys[0]], keys.slice(1));
-  }
-  return a[keys[0]];
-};
-var applyRecursiveValue = (a, keys, value) => {
-  let i;
-  for (i = 0; i < keys.length - 1; i++) {
-    a = a[keys[i]];
-  }
-  a[keys[i]] = value;
-};
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.applyRecursiveValue = applyRecursiveValue;
-exports.getResursiveValue = getResursiveValue;
+var i=(e,n)=>n.length>1?i(e[n[0]],n.slice(1)):e[n[0]],l=(e,n,t)=>{let r;for(r=0;r<n.length-1;r++)e=e[n[r]];e[n[r]]=t;};
+
+exports.applyRecursiveValue = l;
+exports.getResursiveValue = i;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=objectUtils.cjs.map

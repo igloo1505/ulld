@@ -1,11 +1,8 @@
-import { getAllPlugins } from '../../chunk-65NJLKUN.js';
-import '../../chunk-F3FYYIAV.js';
+import { a } from '../../chunk-TQNO7VAG.js';
+import '../../chunk-5WT32FJO.js';
 
-// src/utils/baseAppUtils/getPluginConfig.ts
-var getPluginConfig = ({ pluginName, appConfig }) => {
-  return getAllPlugins(appConfig).find((p) => p.pluginName === pluginName);
-};
+var e=({pluginName:i,appConfig:n})=>a(n).find(t=>t.pluginName===i);
 
-export { getPluginConfig };
+export { e as getPluginConfig };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=getPluginConfig.js.map

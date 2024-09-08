@@ -1,10 +1,7 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 
-// src/utils/removeEmptyChildren.ts
-var removeEmptyChildren = (children) => {
-  return children.filter((a) => a !== "");
-};
+var m=e=>e.filter(r=>r!=="");
 
-export { removeEmptyChildren };
+export { m as removeEmptyChildren };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=removeEmptyChildren.js.map

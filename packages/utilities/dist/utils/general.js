@@ -1,22 +1,7 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 
-// src/utils/general.ts
-var replaceRecursively = (value, replace, replaceWith = "") => {
-  if (typeof replace === "string") {
-    if (value.includes(replace)) {
-      return replaceRecursively(value.replace(replace, replaceWith), replace, replaceWith);
-    }
-    return value;
-  }
-  if (replace.test(value)) {
-    return replaceRecursively(value.replace(replace, replaceWith), replace, replaceWith);
-  }
-  return value;
-};
-var clampInArray = (index, arr) => {
-  return arr[index % arr.length];
-};
+var s=(t,n,r="")=>typeof n=="string"?t.includes(n)?s(t.replace(n,r),n,r):t:n.test(t)?s(t.replace(n,r),n,r):t,o=(t,n)=>n[t%n.length];
 
-export { clampInArray, replaceRecursively };
+export { o as clampInArray, s as replaceRecursively };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=general.js.map

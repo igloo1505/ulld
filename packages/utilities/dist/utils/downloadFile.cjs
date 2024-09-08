@@ -1,18 +1,9 @@
 'use strict';
 
-// src/utils/downloadFile.ts
-var downloadFile = (data, fileName = "appConfig.ulld.json") => {
-  let file = new File([data], fileName, { type: "application/json" });
-  let exportUrl = URL.createObjectURL(file);
-  const a = document.createElement("a");
-  a.href = exportUrl;
-  a.download = file.name;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(exportUrl);
-};
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.downloadFile = downloadFile;
+var c=(n,l="appConfig.ulld.json")=>{let o=new File([n],l,{type:"application/json"}),t=URL.createObjectURL(o),e=document.createElement("a");e.href=t,e.download=o.name,document.body.appendChild(e),e.click(),document.body.removeChild(e),URL.revokeObjectURL(t);};
+
+exports.downloadFile = c;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=downloadFile.cjs.map

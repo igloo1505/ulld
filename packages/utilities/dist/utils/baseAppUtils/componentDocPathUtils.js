@@ -1,71 +1,10 @@
-import { ComponentDocsQuery } from '../../chunk-NBNALFJ3.js';
-import '../../chunk-F3FYYIAV.js';
-import path from 'path';
-import fs from 'fs';
+import { a } from '../../chunk-MHC7BQZ2.js';
+import '../../chunk-5WT32FJO.js';
+import p from 'path';
+import c from 'fs';
 
-var componentDocsPathFromPluginComponent = (pluginName, componentName, full = false, projectRoot) => {
-  return path.join(
-    projectRoot || process.cwd(),
-    "generatedMarkdown",
-    "componentDocs",
-    full ? "full" : "short",
-    encodeURI(pluginName),
-    `${encodeURI(componentName)}.mdx`
-  );
-};
-var componentDocQueryObjectToUrl = (query) => {
-  let url = new URLSearchParams();
-  if (query.tag) {
-    (Array.isArray(query.tag) ? query.tag : [query.tag]).forEach((t) => url.append("tag", t));
-  }
-  if (query.full) {
-    url.set("full", "true");
-  }
-  if (query.query) {
-    url.set("query", query.query);
-  }
-  if (query.syntax) {
-    url.set("syntax", query.syntax);
-  }
-  if (query.pluginId) {
-    url.set("pluginId", query.pluginId);
-  }
-  return `/componentDocs?${url.toString()}`;
-};
-var docItemToComponentDocsFilePath = (item, full = false) => {
-  return componentDocsPathFromPluginComponent(
-    item.pluginName,
-    item.componentName,
-    full
-  );
-};
-var getComponentDocsContentFromItem = async (item, full = false) => {
-  let path2 = docItemToComponentDocsFilePath(item, full);
-  if (!path2 || !fs.existsSync(path2)) {
-    return;
-  }
-  return await fs.promises.readFile(path2, { encoding: "utf-8" });
-};
-var getItemsByQuery = (buildData, query) => {
-  let docQuery = new ComponentDocsQuery();
-  return docQuery.queryAll(buildData.componentDocs, query);
-};
-var getPluginDocContentByIds = async (buildData, pluginName, componentName, full = false, permitOppositeOfFullIfNotFound = true) => {
-  let item = buildData.componentDocs.find(
-    (x) => Boolean(x.pluginName === pluginName && x.componentName === componentName)
-  );
-  if (item) {
-    let content = await getComponentDocsContentFromItem(item, full);
-    if (!content && permitOppositeOfFullIfNotFound) {
-      content = await getComponentDocsContentFromItem(item, !full);
-    }
-    return {
-      item,
-      content
-    };
-  }
-};
+var u=(t,o,n=!1,a)=>p.join(a||process.cwd(),"generatedMarkdown","componentDocs",n?"full":"short",encodeURI(t),`${encodeURI(o)}.mdx`),x=t=>{let o=new URLSearchParams;return t.tag&&(Array.isArray(t.tag)?t.tag:[t.tag]).forEach(n=>o.append("tag",n)),t.full&&o.set("full","true"),t.query&&o.set("query",t.query),t.syntax&&o.set("syntax",t.syntax),t.pluginId&&o.set("pluginId",t.pluginId),`/componentDocs?${o.toString()}`},l=(t,o=!1)=>u(t.pluginName,t.componentName,o),i=async(t,o=!1)=>{let n=l(t,o);if(!(!n||!c.existsSync(n)))return await c.promises.readFile(n,{encoding:"utf-8"})},C=(t,o)=>new a().queryAll(t.componentDocs,o),I=async(t,o,n,a=!1,m=!0)=>{let r=t.componentDocs.find(e=>e.pluginName===o&&e.componentName===n);if(r){let e=await i(r,a);return !e&&m&&(e=await i(r,!a)),{item:r,content:e}}};
 
-export { componentDocQueryObjectToUrl, componentDocsPathFromPluginComponent, docItemToComponentDocsFilePath, getComponentDocsContentFromItem, getItemsByQuery, getPluginDocContentByIds };
+export { x as componentDocQueryObjectToUrl, u as componentDocsPathFromPluginComponent, l as docItemToComponentDocsFilePath, i as getComponentDocsContentFromItem, C as getItemsByQuery, I as getPluginDocContentByIds };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=componentDocPathUtils.js.map

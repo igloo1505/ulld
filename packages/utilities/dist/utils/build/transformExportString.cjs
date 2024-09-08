@@ -1,21 +1,11 @@
 'use strict';
 
-// src/utils/build/transformExportString.ts
-var transformExportString = (s) => {
-  let _s = s;
-  if (_s.startsWith(".")) {
-    _s = _s.slice(1);
-  }
-  if (_s.startsWith("/")) {
-    _s = _s.slice(1);
-  }
-  return _s;
-};
-var transformExportStringOptional = (val) => val ? transformExportString(val) : void 0;
-var transformExportStringArray = (s) => s.map((val) => transformExportString(val));
+require('../../chunk-7ARU3YXQ.cjs');
 
-exports.transformExportString = transformExportString;
-exports.transformExportStringArray = transformExportStringArray;
-exports.transformExportStringOptional = transformExportStringOptional;
+var n=r=>{let t=r;return t.startsWith(".")&&(t=t.slice(1)),t.startsWith("/")&&(t=t.slice(1)),t},i=r=>r?n(r):void 0,o=r=>r.map(t=>n(t));
+
+exports.transformExportString = n;
+exports.transformExportStringArray = o;
+exports.transformExportStringOptional = i;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=transformExportString.cjs.map

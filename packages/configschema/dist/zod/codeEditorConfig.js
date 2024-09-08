@@ -1,6 +1,7 @@
 import {
   monacoEditorConfigSchema
-} from "../chunk-55HJPQBL.js";
+} from "../chunk-57ZZZ55V.js";
+import "../chunk-OJYONR4K.js";
 export {
   monacoEditorConfigSchema
 };

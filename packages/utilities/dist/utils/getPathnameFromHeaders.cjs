@@ -1,18 +1,10 @@
 'use strict';
 
+require('../chunk-7ARU3YXQ.cjs');
 var headers = require('next/headers');
 
-// src/utils/getPathnameFromHeaders.ts
-var getPathnameFromHeaders = () => {
-  const headerList = headers.headers();
-  let pathname = headerList.get("x-url");
-  let pindex = pathname?.indexOf("?");
-  if (pathname && pindex && pindex > -1) {
-    pathname = pathname.slice(0, pindex);
-  }
-  return pathname;
-};
+var s=()=>{let e=headers.headers().get("x-url"),t=e?.indexOf("?");return e&&t&&t>-1&&(e=e.slice(0,t)),e};
 
-exports.getPathnameFromHeaders = getPathnameFromHeaders;
+exports.getPathnameFromHeaders = s;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=getPathnameFromHeaders.cjs.map

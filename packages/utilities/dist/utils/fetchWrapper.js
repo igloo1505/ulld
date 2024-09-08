@@ -1,16 +1,7 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 
-// src/utils/fetchWrapper.ts
-var fetchWrapper = async (path, opts) => {
-  return await fetch(
-    path,
-    {
-      ...opts,
-      body: typeof opts.body === "string" ? opts.body : JSON.stringify(opts.body)
-    }
-  );
-};
+var n=async(e,t)=>await fetch(e,{...t,body:typeof t.body=="string"?t.body:JSON.stringify(t.body)});
 
-export { fetchWrapper };
+export { n as fetchWrapper };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=fetchWrapper.js.map

@@ -1,8 +1,9 @@
 'use strict';
 
-// src/staticAppProperties/main.ts
-var noteContainerPrefix = "note-container-";
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.noteContainerPrefix = noteContainerPrefix;
+var e="note-container-";
+
+exports.noteContainerPrefix = e;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=main.cjs.map

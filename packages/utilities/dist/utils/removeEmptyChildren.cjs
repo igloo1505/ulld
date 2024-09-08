@@ -1,10 +1,9 @@
 'use strict';
 
-// src/utils/removeEmptyChildren.ts
-var removeEmptyChildren = (children) => {
-  return children.filter((a) => a !== "");
-};
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.removeEmptyChildren = removeEmptyChildren;
+var o=e=>e.filter(r=>r!=="");
+
+exports.removeEmptyChildren = o;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=removeEmptyChildren.cjs.map

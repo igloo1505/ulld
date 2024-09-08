@@ -1,8 +1,9 @@
 'use strict';
 
-// src/booleanAndEqualities/arrayTruthy.ts
-var arrayTruthy = (a, trueIfEmpty = false) => Boolean(Array.isArray(a) && trueIfEmpty ? true : a.length > 0);
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.arrayTruthy = arrayTruthy;
+var o=(r,a=!1)=>!!(Array.isArray(r)&&a||r.length>0);
+
+exports.arrayTruthy = o;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=arrayTruthy.cjs.map

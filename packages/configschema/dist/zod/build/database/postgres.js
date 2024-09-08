@@ -1,6 +1,7 @@
 import {
   postgresConfigSchema
-} from "../../../chunk-XXHV3QPY.js";
+} from "../../../chunk-3N3P3LRD.js";
+import "../../../chunk-OJYONR4K.js";
 export {
   postgresConfigSchema
 };

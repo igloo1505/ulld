@@ -1,19 +1,7 @@
-import '../../chunk-F3FYYIAV.js';
+import '../../chunk-5WT32FJO.js';
 
-// src/utils/build/transformExportString.ts
-var transformExportString = (s) => {
-  let _s = s;
-  if (_s.startsWith(".")) {
-    _s = _s.slice(1);
-  }
-  if (_s.startsWith("/")) {
-    _s = _s.slice(1);
-  }
-  return _s;
-};
-var transformExportStringOptional = (val) => val ? transformExportString(val) : void 0;
-var transformExportStringArray = (s) => s.map((val) => transformExportString(val));
+var n=r=>{let t=r;return t.startsWith(".")&&(t=t.slice(1)),t.startsWith("/")&&(t=t.slice(1)),t},o=r=>r?n(r):void 0,e=r=>r.map(t=>n(t));
 
-export { transformExportString, transformExportStringArray, transformExportStringOptional };
+export { n as transformExportString, e as transformExportStringArray, o as transformExportStringOptional };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=transformExportString.js.map

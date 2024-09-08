@@ -1,22 +1,10 @@
 'use strict';
 
-// src/schemas/todoItemStatus.ts
-var toDoItemStatuses = [
-  "ToDo",
-  "In_Progress",
-  "Backlog",
-  "Cancelled",
-  "Done",
-  "Future"
-];
-var toDoItemStatusData = toDoItemStatuses.map((x) => {
-  return {
-    label: x === "ToDo" ? "To Do" : x.replaceAll("_", " "),
-    value: x
-  };
-});
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.toDoItemStatusData = toDoItemStatusData;
-exports.toDoItemStatuses = toDoItemStatuses;
+var o=["ToDo","In_Progress","Backlog","Cancelled","Done","Future"],s=o.map(t=>({label:t==="ToDo"?"To Do":t.replaceAll("_"," "),value:t}));
+
+exports.toDoItemStatusData = s;
+exports.toDoItemStatuses = o;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=todoItemStatus.cjs.map

@@ -1,33 +1,9 @@
-import '../../chunk-F3FYYIAV.js';
-import React from 'react';
-import Link from 'next/link';
+import '../../chunk-5WT32FJO.js';
+import t from 'react';
+import n from 'next/link';
 
-var LocalDevelopmentMenu = ({ items }) => {
-  return /* @__PURE__ */ React.createElement(
-    "div",
-    {
-      className: "grid",
-      style: {
-        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))"
-      }
-    },
-    items.map(({ href, label, ...itemProps }) => {
-      return /* @__PURE__ */ React.createElement(
-        Link,
-        {
-          key: href,
-          href,
-          ...itemProps,
-          className: "w-full h-[80px] rounded-lg bg-primary text-primary-foreground text-xl flex flex-col justify-center items-center"
-        },
-        label
-      );
-    })
-  );
-};
-LocalDevelopmentMenu.displayName = "LocalDevelopmentMenu";
-var localDevelopmentMenu_default = LocalDevelopmentMenu;
+var r=({items:o})=>t.createElement("div",{className:"grid",style:{gridTemplateColumns:"repeat(auto-fit, minmax(300px, 1fr))"}},o.map(({href:e,label:l,...m})=>t.createElement(n,{key:e,href:e,...m,className:"w-full h-[80px] rounded-lg bg-primary text-primary-foreground text-xl flex flex-col justify-center items-center"},l)));r.displayName="LocalDevelopmentMenu";var u=r;
 
-export { localDevelopmentMenu_default as default };
+export { u as default };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=localDevelopmentMenu.js.map

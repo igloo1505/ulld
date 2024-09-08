@@ -1,15 +1,11 @@
-import { bibManagerErrorRecord } from '../chunk-CLC7VPGK.js';
-import { taskManagerErrorRecord } from '../chunk-CBRZS2HB.js';
-export { taskManagerErrorRecord } from '../chunk-CBRZS2HB.js';
-import '../chunk-WP27HNDK.js';
-import '../chunk-F3FYYIAV.js';
+import { a as a$1 } from '../chunk-RHZMEUMQ.js';
+import { a } from '../chunk-TRMO5J3T.js';
+export { a as taskManagerErrorRecord } from '../chunk-TRMO5J3T.js';
+import '../chunk-3OYFKO6C.js';
+import '../chunk-5WT32FJO.js';
 
-// src/errorHandling/main.ts
-var errorToastRecord = {
-  ...taskManagerErrorRecord,
-  ...bibManagerErrorRecord
-};
+var p={...a,...a$1};
 
-export { errorToastRecord };
+export { p as errorToastRecord };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=main.js.map

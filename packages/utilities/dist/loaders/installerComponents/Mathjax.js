@@ -1,5 +1,5 @@
 "use client"
-export { MathjaxChtmlLoader, MathjaxConfigScript, MathjaxLoader, MathjaxSvgLoader, Mathjax_default as default } from '../../chunk-6ISTDGTB.js';
-import '../../chunk-F3FYYIAV.js';
+export { b as MathjaxChtmlLoader, c as MathjaxConfigScript, d as MathjaxLoader, a as MathjaxSvgLoader, e as default } from '../../chunk-YJNR42C3.js';
+import '../../chunk-5WT32FJO.js';
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=Mathjax.js.map

@@ -1,6 +1,7 @@
 import {
   gatherReservedPublicPaths
-} from "../chunk-3IMAH4YD.js";
+} from "../chunk-VYY3W7EC.js";
+import "../chunk-OJYONR4K.js";
 export {
   gatherReservedPublicPaths
 };

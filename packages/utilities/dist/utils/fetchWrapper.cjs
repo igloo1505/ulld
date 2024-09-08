@@ -1,16 +1,9 @@
 'use strict';
 
-// src/utils/fetchWrapper.ts
-var fetchWrapper = async (path, opts) => {
-  return await fetch(
-    path,
-    {
-      ...opts,
-      body: typeof opts.body === "string" ? opts.body : JSON.stringify(opts.body)
-    }
-  );
-};
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.fetchWrapper = fetchWrapper;
+var i=async(e,t)=>await fetch(e,{...t,body:typeof t.body=="string"?t.body:JSON.stringify(t.body)});
+
+exports.fetchWrapper = i;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=fetchWrapper.cjs.map

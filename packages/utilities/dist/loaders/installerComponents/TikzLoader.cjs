@@ -1,28 +1,17 @@
 'use strict';
 
-var Script = require('next/script');
-var React = require('react');
+require('../../chunk-7ARU3YXQ.cjs');
+var s = require('next/script');
+var t = require('react');
 
 function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
 
-var Script__default = /*#__PURE__*/_interopDefault(Script);
-var React__default = /*#__PURE__*/_interopDefault(React);
+var s__default = /*#__PURE__*/_interopDefault(s);
+var t__default = /*#__PURE__*/_interopDefault(t);
 
-// src/loaders/installerComponents/TikzLoader.tsx
-var TikzLoader = () => {
-  return /* @__PURE__ */ React__default.default.createElement(React__default.default.Fragment, null, /* @__PURE__ */ React__default.default.createElement("link", { rel: "stylesheet", type: "text/css", href: "https://tikzjax.com/v1/fonts.css" }), /* @__PURE__ */ React__default.default.createElement(
-    Script__default.default,
-    {
-      src: "https://tikzjax.com/v1/tikzjax.js",
-      async: true,
-      strategy: "afterInteractive"
-    }
-  ));
-};
-TikzLoader.displayName = "TikzLoader";
-var TikzLoader_default = TikzLoader;
+var r=()=>t__default.default.createElement(t__default.default.Fragment,null,t__default.default.createElement("link",{rel:"stylesheet",type:"text/css",href:"https://tikzjax.com/v1/fonts.css"}),t__default.default.createElement(s__default.default,{src:"https://tikzjax.com/v1/tikzjax.js",async:!0,strategy:"afterInteractive"}));r.displayName="TikzLoader";var a=r;
 
-module.exports = TikzLoader_default;
+module.exports = a;
 //# sourceMappingURL=out.js.map
 
 module.exports = exports.default;

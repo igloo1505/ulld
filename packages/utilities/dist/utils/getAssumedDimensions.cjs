@@ -1,31 +1,9 @@
 'use strict';
 
-// src/utils/getAssumedDimensions.ts
-var getAssumedDimensions = ({
-  width,
-  height,
-  maxViewportWidth = 90,
-  maxViewportHeight = 70,
-  maxSource = "container",
-  includeMin = true
-}) => {
-  let data = {
-    maxWidth: "100%",
-    maxHeight: "100%"
-  };
-  if (width) {
-    data.width = width > 1 ? `min(${maxViewportWidth}${maxSource === "container" ? "%" : "vw"}, ${width}px)` : `${width}vw`;
-  }
-  if (height) {
-    data.height = height > 1 ? `min(${maxViewportHeight}${maxSource === "container" ? "%" : "vh"}, ${height}px)` : `${height}vh`;
-  }
-  if (includeMin) {
-    data.minWidth = data.width;
-    data.minHeight = data.height;
-  }
-  return data;
-};
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.getAssumedDimensions = getAssumedDimensions;
+var p=({width:i,height:n,maxViewportWidth:r=90,maxViewportHeight:o=70,maxSource:t="container",includeMin:m=!0})=>{let e={maxWidth:"100%",maxHeight:"100%"};return i&&(e.width=i>1?`min(${r}${t==="container"?"%":"vw"}, ${i}px)`:`${i}vw`),n&&(e.height=n>1?`min(${o}${t==="container"?"%":"vh"}, ${n}px)`:`${n}vh`),m&&(e.minWidth=e.width,e.minHeight=e.height),e};
+
+exports.getAssumedDimensions = p;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=getAssumedDimensions.cjs.map

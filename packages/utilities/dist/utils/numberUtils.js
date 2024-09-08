@@ -1,12 +1,7 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 
-// src/utils/numberUtils.ts
-var sum = (values) => {
-  return values.reduce((a, b) => a + b);
-};
-var numberBool = (n) => typeof n === "number";
-var numberOrDefault = (n, defaultNumber) => numberBool(n) ? n : defaultNumber;
+var b=e=>e.reduce((n,r)=>n+r),u=e=>typeof e=="number",m=(e,n)=>u(e)?e:n;
 
-export { numberBool, numberOrDefault, sum };
+export { u as numberBool, m as numberOrDefault, b as sum };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=numberUtils.js.map

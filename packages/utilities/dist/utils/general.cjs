@@ -1,23 +1,10 @@
 'use strict';
 
-// src/utils/general.ts
-var replaceRecursively = (value, replace, replaceWith = "") => {
-  if (typeof replace === "string") {
-    if (value.includes(replace)) {
-      return replaceRecursively(value.replace(replace, replaceWith), replace, replaceWith);
-    }
-    return value;
-  }
-  if (replace.test(value)) {
-    return replaceRecursively(value.replace(replace, replaceWith), replace, replaceWith);
-  }
-  return value;
-};
-var clampInArray = (index, arr) => {
-  return arr[index % arr.length];
-};
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.clampInArray = clampInArray;
-exports.replaceRecursively = replaceRecursively;
+var s=(t,n,r="")=>typeof n=="string"?t.includes(n)?s(t.replace(n,r),n,r):t:n.test(t)?s(t.replace(n,r),n,r):t,i=(t,n)=>n[t%n.length];
+
+exports.clampInArray = i;
+exports.replaceRecursively = s;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=general.cjs.map

@@ -1,21 +1,7 @@
-import '../../chunk-F3FYYIAV.js';
+import '../../chunk-5WT32FJO.js';
 
-// src/defaults/prisma/notes.ts
-var defaultFindRemoteMdxArgs = {
-  include: {
-    tags: true,
-    subjects: true,
-    citations: {
-      select: {
-        id: true,
-        htmlCitation: true
-      }
-    },
-    definitions: true,
-    topics: true
-  }
-};
+var i={include:{tags:!0,subjects:!0,citations:{select:{id:!0,htmlCitation:!0}},definitions:!0,topics:!0}};
 
-export { defaultFindRemoteMdxArgs };
+export { i as defaultFindRemoteMdxArgs };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=notes.js.map

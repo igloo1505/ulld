@@ -1,11 +1,8 @@
-import '../../chunk-F3FYYIAV.js';
+import '../../chunk-5WT32FJO.js';
 import { z } from 'zod';
 
-var parseMdxStringSchema = z.object({
-  content: z.string(),
-  display: z.union([z.literal("display"), z.literal("inline")])
-});
+var i=z.object({content:z.string(),display:z.union([z.literal("display"),z.literal("inline")])});
 
-export { parseMdxStringSchema };
+export { i as parseMdxStringSchema };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=parseMdxStringSchema.js.map

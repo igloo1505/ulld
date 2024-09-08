@@ -1,20 +1,13 @@
 'use strict';
 
-// src/utils/replaceContentByRegexMatch.ts
-var replaceContentByMatch = (content, match, group, newContent) => {
-  if (!match.groups) {
-    console.log(`No groups were found for match ${match}`);
-    return content;
-  }
-  let matchValue = match.groups?.[group];
-  console.log("match: ", match);
-  if (!matchValue) {
-    throw new Error(`An invalid match group was given to replaceContentByMatch. Looked for ${group} and found groups ${Object.keys(match.groups).join(", ")}`);
-  }
-  let c = content.replaceAll(match[0], typeof newContent === "string" ? newContent : newContent(matchValue));
-  return c;
-};
+var chunkZP7BPD7Z_cjs = require('../chunk-ZP7BPD7Z.cjs');
+require('../chunk-7ARU3YXQ.cjs');
 
-exports.replaceContentByMatch = replaceContentByMatch;
+
+
+Object.defineProperty(exports, "replaceContentByMatch", {
+	enumerable: true,
+	get: function () { return chunkZP7BPD7Z_cjs.a; }
+});
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=replaceContentByRegexMatch.cjs.map

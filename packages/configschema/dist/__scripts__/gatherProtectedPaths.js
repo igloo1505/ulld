@@ -1,6 +1,7 @@
 import {
   gatherProtectedPaths
-} from "../chunk-7WVAVGKR.js";
+} from "../chunk-NZH3DRYL.js";
+import "../chunk-OJYONR4K.js";
 export {
   gatherProtectedPaths
 };

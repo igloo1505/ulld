@@ -1,36 +1,7 @@
-import '../../chunk-F3FYYIAV.js';
+import '../../chunk-5WT32FJO.js';
 
-// src/staticAppProperties/buildUtils/main.ts
-var pathKeys = [
-  "public",
-  "styles",
-  "packageJson",
-  "app",
-  "envLocal",
-  "projectRoot",
-  "componentDocumentation",
-  "fullComponentDocumentation",
-  "node_modules",
-  "shortComponentDocumentation",
-  "src",
-  "appDir",
-  "public",
-  "nextConfig",
-  "tailwind",
-  "ulldBuildData",
-  "appConfig",
-  "methods",
-  "tempTargetPaths",
-  "mdxParserList",
-  "componentMap",
-  "unifiedUserDefinedScss",
-  "gitignore",
-  "prismaSchema",
-  "userDefinedStyles",
-  "pluginDocumentation",
-  "tempBuildFiles"
-];
+var t=["public","styles","packageJson","app","envLocal","projectRoot","componentDocumentation","fullComponentDocumentation","node_modules","shortComponentDocumentation","src","appDir","public","nextConfig","tailwind","ulldBuildData","appConfig","methods","tempTargetPaths","mdxParserList","componentMap","unifiedUserDefinedScss","gitignore","prismaSchema","userDefinedStyles","pluginDocumentation","tempBuildFiles"];
 
-export { pathKeys };
+export { t as pathKeys };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=main.js.map

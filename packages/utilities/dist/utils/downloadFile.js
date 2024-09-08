@@ -1,18 +1,7 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 
-// src/utils/downloadFile.ts
-var downloadFile = (data, fileName = "appConfig.ulld.json") => {
-  let file = new File([data], fileName, { type: "application/json" });
-  let exportUrl = URL.createObjectURL(file);
-  const a = document.createElement("a");
-  a.href = exportUrl;
-  a.download = file.name;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(exportUrl);
-};
+var a=(n,l="appConfig.ulld.json")=>{let o=new File([n],l,{type:"application/json"}),t=URL.createObjectURL(o),e=document.createElement("a");e.href=t,e.download=o.name,document.body.appendChild(e),e.click(),document.body.removeChild(e),URL.revokeObjectURL(t);};
 
-export { downloadFile };
+export { a as downloadFile };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=downloadFile.js.map

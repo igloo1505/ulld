@@ -1,20 +1,9 @@
-import '../../chunk-F3FYYIAV.js';
-import Script from 'next/script';
-import React from 'react';
+import '../../chunk-5WT32FJO.js';
+import s from 'next/script';
+import t from 'react';
 
-var TikzLoader = () => {
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("link", { rel: "stylesheet", type: "text/css", href: "https://tikzjax.com/v1/fonts.css" }), /* @__PURE__ */ React.createElement(
-    Script,
-    {
-      src: "https://tikzjax.com/v1/tikzjax.js",
-      async: true,
-      strategy: "afterInteractive"
-    }
-  ));
-};
-TikzLoader.displayName = "TikzLoader";
-var TikzLoader_default = TikzLoader;
+var r=()=>t.createElement(t.Fragment,null,t.createElement("link",{rel:"stylesheet",type:"text/css",href:"https://tikzjax.com/v1/fonts.css"}),t.createElement(s,{src:"https://tikzjax.com/v1/tikzjax.js",async:!0,strategy:"afterInteractive"}));r.displayName="TikzLoader";var p=r;
 
-export { TikzLoader_default as default };
+export { p as default };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=TikzLoader.js.map

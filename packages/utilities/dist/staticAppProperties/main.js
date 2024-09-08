@@ -1,8 +1,7 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 
-// src/staticAppProperties/main.ts
-var noteContainerPrefix = "note-container-";
+var o="note-container-";
 
-export { noteContainerPrefix };
+export { o as noteContainerPrefix };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=main.js.map

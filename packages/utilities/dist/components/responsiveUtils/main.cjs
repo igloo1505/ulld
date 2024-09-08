@@ -1,28 +1,14 @@
 "use client"
 'use strict';
 
+require('../../chunk-7ARU3YXQ.cjs');
 var reactResponsive = require('react-responsive');
 
-var ScreenDesktop = ({ children }) => {
-  const isDesktop = reactResponsive.useMediaQuery({ minWidth: 992 });
-  return isDesktop ? children : null;
-};
-var ScreenTablet = ({ children }) => {
-  const isTablet = reactResponsive.useMediaQuery({ minWidth: 768, maxWidth: 991 });
-  return isTablet ? children : null;
-};
-var ScreenMobile = ({ children }) => {
-  const isMobile = reactResponsive.useMediaQuery({ maxWidth: 767 });
-  return isMobile ? children : null;
-};
-var ScreenNotMobile = ({ children }) => {
-  const isNotMobile = reactResponsive.useMediaQuery({ minWidth: 768 });
-  return isNotMobile ? children : null;
-};
+var i=({children:e})=>reactResponsive.useMediaQuery({minWidth:992})?e:null,r=({children:e})=>reactResponsive.useMediaQuery({minWidth:768,maxWidth:991})?e:null,c=({children:e})=>reactResponsive.useMediaQuery({maxWidth:767})?e:null,l=({children:e})=>reactResponsive.useMediaQuery({minWidth:768})?e:null;
 
-exports.ScreenDesktop = ScreenDesktop;
-exports.ScreenMobile = ScreenMobile;
-exports.ScreenNotMobile = ScreenNotMobile;
-exports.ScreenTablet = ScreenTablet;
+exports.ScreenDesktop = i;
+exports.ScreenMobile = c;
+exports.ScreenNotMobile = l;
+exports.ScreenTablet = r;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=main.cjs.map

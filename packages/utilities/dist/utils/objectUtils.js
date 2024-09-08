@@ -1,20 +1,7 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 
-// src/utils/objectUtils.ts
-var getResursiveValue = (a, keys) => {
-  if (keys.length > 1) {
-    return getResursiveValue(a[keys[0]], keys.slice(1));
-  }
-  return a[keys[0]];
-};
-var applyRecursiveValue = (a, keys, value) => {
-  let i;
-  for (i = 0; i < keys.length - 1; i++) {
-    a = a[keys[i]];
-  }
-  a[keys[i]] = value;
-};
+var i=(e,n)=>n.length>1?i(e[n[0]],n.slice(1)):e[n[0]],g=(e,n,t)=>{let r;for(r=0;r<n.length-1;r++)e=e[n[r]];e[n[r]]=t;};
 
-export { applyRecursiveValue, getResursiveValue };
+export { g as applyRecursiveValue, i as getResursiveValue };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=objectUtils.js.map

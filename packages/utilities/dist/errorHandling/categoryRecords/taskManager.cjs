@@ -1,13 +1,13 @@
 'use strict';
 
-// src/errorHandling/categoryRecords/taskManager.tsx
-var taskManagerErrorRecord = {
-  toDoListExists: {
-    title: "Uh Oh",
-    description: "A to-do list with this name already exists."
-  }
-};
+var chunkMW5WSWOY_cjs = require('../../chunk-MW5WSWOY.cjs');
+require('../../chunk-7ARU3YXQ.cjs');
 
-exports.taskManagerErrorRecord = taskManagerErrorRecord;
+
+
+Object.defineProperty(exports, "taskManagerErrorRecord", {
+	enumerable: true,
+	get: function () { return chunkMW5WSWOY_cjs.a; }
+});
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=taskManager.cjs.map

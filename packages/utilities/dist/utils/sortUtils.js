@@ -1,10 +1,7 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 
-// src/utils/sortUtils.ts
-var sortAlphabetical = (items, getProperty) => {
-  return items.sort((a, b) => getProperty ? getProperty(a) < getProperty(b) ? -1 : 1 : a < b ? -1 : 1);
-};
+var a=(i,n)=>i.sort((s,t)=>n?n(s)<n(t)?-1:1:s<t?-1:1);
 
-export { sortAlphabetical };
+export { a as sortAlphabetical };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=sortUtils.js.map

@@ -1,28 +1,9 @@
-import { FileData } from '../../chunk-IGUAPEDC.js';
-import '../../chunk-F3FYYIAV.js';
-import fs from 'fs';
+import { a } from '../../chunk-FM4IUWAP.js';
+import '../../chunk-5WT32FJO.js';
+import i from 'fs';
 
-var JsonFile = class extends FileData {
-  constructor(path) {
-    super(path, false);
-    this.path = path;
-  }
-  getJsonContent() {
-    this.throwIfNotExists();
-    return JSON.parse(this.getContent());
-  }
-  writeContent(content, indentation = 2) {
-    let newContent = content || this.content;
-    if (!newContent) {
-      throw new Error(`Cannot write content. No content was found.`);
-    }
-    if (typeof newContent === "object") {
-      newContent = JSON.stringify(newContent, null, indentation);
-    }
-    fs.writeFileSync(this.path, newContent, { encoding: "utf-8" });
-  }
-};
+var o=class extends a{constructor(e){super(e,!1);this.path=e;}getJsonContent(){return this.throwIfNotExists(),JSON.parse(this.getContent())}writeContent(e,r=2){let t=e||this.content;if(!t)throw new Error("Cannot write content. No content was found.");typeof t=="object"&&(t=JSON.stringify(t,null,r)),i.writeFileSync(this.path,t,{encoding:"utf-8"});}};
 
-export { JsonFile };
+export { o as JsonFile };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=jsonFile.js.map

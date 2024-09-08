@@ -1,4 +1,4 @@
-export { languageList_default as default } from '../chunk-NO2ZLG2J.js';
-import '../chunk-F3FYYIAV.js';
+export { a as default } from '../chunk-MKDKLXNC.js';
+import '../chunk-5WT32FJO.js';
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=languageList.js.map

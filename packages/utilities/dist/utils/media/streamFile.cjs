@@ -1,27 +1,14 @@
 'use strict';
 
-var fs = require('fs');
+require('../../chunk-7ARU3YXQ.cjs');
+var o = require('fs');
 
 function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
 
-var fs__default = /*#__PURE__*/_interopDefault(fs);
+var o__default = /*#__PURE__*/_interopDefault(o);
 
-// src/utils/media/streamFile.ts
-var streamFile = (path, options) => {
-  const downloadStream = fs__default.default.createReadStream(path, options);
-  return new ReadableStream({
-    start(controller) {
-      downloadStream.on("data", (chunk) => controller.enqueue(new Uint8Array(chunk)));
-      downloadStream.on("end", () => controller.close());
-      downloadStream.on("error", (error) => controller.error(error));
-    },
-    cancel() {
-      downloadStream.destroy();
-    },
-    type: "bytes"
-  });
-};
+var p=(n,a)=>{let e=o__default.default.createReadStream(n,a);return new ReadableStream({start(r){e.on("data",t=>r.enqueue(new Uint8Array(t))),e.on("end",()=>r.close()),e.on("error",t=>r.error(t));},cancel(){e.destroy();},type:"bytes"})};
 
-exports.streamFile = streamFile;
+exports.streamFile = p;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=streamFile.cjs.map

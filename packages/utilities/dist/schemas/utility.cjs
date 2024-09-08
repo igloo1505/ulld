@@ -1,33 +1,18 @@
 'use strict';
 
-var dayjs = require('dayjs');
+require('../chunk-7ARU3YXQ.cjs');
+var r = require('dayjs');
 var zod = require('zod');
 
 function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
 
-var dayjs__default = /*#__PURE__*/_interopDefault(dayjs);
+var r__default = /*#__PURE__*/_interopDefault(r);
 
-// src/schemas/utility.ts
-var zodOptStr = zod.z.string().optional().nullable();
-var zodOptNum = zod.z.number().optional().nullable();
-var zodOptBool = (defVal) => zod.z.union([zod.z.boolean(), zod.z.string()]).optional().nullable().default(defVal).transform((a) => typeof a === "boolean" ? a : a === "true");
-var zodCoerceToDate = (optional = false, defaultReturn) => {
-  if (optional) {
-    return zod.z.union([zod.z.string().datetime(), zod.z.number(), zod.z.date()]).optional().nullable().transform((a) => {
-      if (dayjs__default.default(a).isValid()) {
-        return new Date(a);
-      }
-      return defaultReturn;
-    });
-  }
-  return zod.z.union([zod.z.string().datetime(), zod.z.number(), zod.z.date()]).transform((a) => {
-    return new Date(a);
-  });
-};
+var s=zod.z.string().optional().nullable(),u=zod.z.number().optional().nullable(),p=e=>zod.z.union([zod.z.boolean(),zod.z.string()]).optional().nullable().default(e).transform(o=>typeof o=="boolean"?o:o==="true"),m=(e=!1,o)=>e?zod.z.union([zod.z.string().datetime(),zod.z.number(),zod.z.date()]).optional().nullable().transform(n=>r__default.default(n).isValid()?new Date(n):o):zod.z.union([zod.z.string().datetime(),zod.z.number(),zod.z.date()]).transform(n=>new Date(n));
 
-exports.zodCoerceToDate = zodCoerceToDate;
-exports.zodOptBool = zodOptBool;
-exports.zodOptNum = zodOptNum;
-exports.zodOptStr = zodOptStr;
+exports.zodCoerceToDate = m;
+exports.zodOptBool = p;
+exports.zodOptNum = u;
+exports.zodOptStr = s;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=utility.cjs.map

@@ -1,27 +1,17 @@
 'use strict';
 
+require('../../chunk-7ARU3YXQ.cjs');
 var glob = require('glob');
-var fs = require('fs');
-var path = require('path');
+var c = require('fs');
+var n = require('path');
 
 function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
 
-var fs__default = /*#__PURE__*/_interopDefault(fs);
-var path__default = /*#__PURE__*/_interopDefault(path);
+var c__default = /*#__PURE__*/_interopDefault(c);
+var n__default = /*#__PURE__*/_interopDefault(n);
 
-// src/utils/build/copyJsonFilesToDist.ts
-var copyJsonFilesToDist = (cwd, glob$1 = "src/**/*.json", files) => {
-  if (!files) {
-    files = glob.globSync(glob$1, {
-      cwd,
-      nodir: true
-    });
-  }
-  for (const f of files) {
-    fs__default.default.cpSync(path__default.default.join(cwd, f), path__default.default.join(cwd, f.replace("src/", "dist/")));
-  }
-};
+var e=(o,i="src/**/*.json",r)=>{r||(r=glob.globSync(i,{cwd:o,nodir:!0}));for(let t of r)c__default.default.cpSync(n__default.default.join(o,t),n__default.default.join(o,t.replace("src/","dist/")));};
 
-exports.copyJsonFilesToDist = copyJsonFilesToDist;
+exports.copyJsonFilesToDist = e;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=copyJsonFilesToDist.cjs.map

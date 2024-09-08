@@ -1,67 +1,11 @@
 'use strict';
 
-// src/defaults/defaultMermaidConfig.ts
-var mermaidTheme = {
-  light: {
-    darkMode: false,
-    background: "#fff",
-    primaryColor: "#7c3aed",
-    primaryTextColor: "#f9fafb",
-    secondaryColor: "#2563eb",
-    secondaryTextColor: "#111827",
-    primaryBorderColor: "#e5e7eb",
-    secondaryBorderColor: "#e5e7eb",
-    noteBorderColor: "#e5e7eb",
-    tertiaryBorderColor: "#e5e7eb",
-    tertiaryColor: "#c026d3",
-    tertiaryTextColor: "#6b7280",
-    lineColor: "#6b7280",
-    noteBkgColor: "#f4f4f5",
-    noteTextColor: "#000000"
-  },
-  dark: {
-    darkMode: true,
-    background: "#000",
-    primaryColor: "#6d28d9",
-    primaryTextColor: "#f9fafb",
-    secondaryColor: "#1d4ed8",
-    secondaryTextColor: "#f9fafb",
-    primaryBorderColor: "#1f2937",
-    tertiaryBorderColor: "#1f2937",
-    secondaryBorderColor: "#1f2937",
-    tertiaryColor: "#a21caf",
-    tertiaryTextColor: "#9ca3af",
-    lineColor: "#9ca3af",
-    noteBkgColor: "#1b1917",
-    noteTextColor: "#000000"
-  }
-};
+var chunkGABX52UM_cjs = require('../chunk-GABX52UM.cjs');
+require('../chunk-7ARU3YXQ.cjs');
 
-// src/defaults/markdownUniversalOptions.ts
-var mathOptions = {
-  tex: {
-    // packages: [],
-    tags: "all",
-    // "all" | "ams" (ams breaks EqRef component, unless can find other way to force label creation.),
-    useLabelIds: true,
-    processEscapes: true,
-    processEnvironments: true
-  },
-  chtml: {
-    fontURL: "/font/mathjax",
-    adaptiveCSS: true
-  }
-};
-var mermaidConfig = {
-  output: "svg",
-  /* theme: { light: 'dark', dark: 'dark' }, */
-  mermaid: {
-    themeVariables: mermaidTheme.dark,
-    theme: "base"
-  }
-};
+var s={tex:{tags:"all",useLabelIds:!0,processEscapes:!0,processEnvironments:!0},chtml:{fontURL:"/font/mathjax",adaptiveCSS:!0}},n={output:"svg",mermaid:{themeVariables:chunkGABX52UM_cjs.a.dark,theme:"base"}};
 
-exports.mathOptions = mathOptions;
-exports.mermaidConfig = mermaidConfig;
+exports.mathOptions = s;
+exports.mermaidConfig = n;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=markdownUniversalOptions.cjs.map

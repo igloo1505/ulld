@@ -1,21 +1,9 @@
-import { FileData } from '../../chunk-HPC74VLS.js';
-import '../../chunk-F3FYYIAV.js';
-import grayMatter from 'gray-matter';
+import { a } from '../../chunk-GDV5RNLW.js';
+import '../../chunk-5WT32FJO.js';
+import e from 'gray-matter';
 
-var MdxFile = class extends FileData {
-  constructor(path) {
-    super(path);
-    this.path = path;
-  }
-  parseFrontMatter() {
-    let content = this.getContent();
-    let gm = grayMatter(content);
-    this.content = gm.content;
-    this.frontMatter = gm.data;
-    return gm;
-  }
-};
+var n=class extends a{constructor(t){super(t);this.path=t;}parseFrontMatter(){let t=this.getContent(),r=e(t);return this.content=r.content,this.frontMatter=r.data,r}};
 
-export { MdxFile };
+export { n as MdxFile };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=mdxFile.js.map

@@ -1,39 +1,13 @@
-import { getGlobServerSide } from '../chunk-ZWT5CRHM.js';
-import '../chunk-EXFWPJVA.js';
-import '../chunk-JKM3T6TO.js';
-import { ArrayUtilities } from '../chunk-JEBMZLDZ.js';
-import '../chunk-F3FYYIAV.js';
+import { a as a$1 } from '../chunk-XRVJUG2W.js';
+import '../chunk-4YXWFJAV.js';
+import '../chunk-LP3CV6WX.js';
+import { a } from '../chunk-QX24WZV2.js';
+import '../chunk-5WT32FJO.js';
 import { supportedFileTypes } from '@ulld/types/enums';
 import 'server-only';
 
-var FsRootGlob = class {
-  constructor(props) {
-    this.props = props;
-  }
-  formatFileTypeArrayGlobPattern(fts) {
-    return `{${fts.join(",")}}`;
-  }
-  getGlobPattern(defaultOpts) {
-    let fts = this.props.fileTypes ? ArrayUtilities.beArray(this.props.fileTypes) : supportedFileTypes;
-    return `${this.props.path}.${this.formatFileTypeArrayGlobPattern(fts)}`;
-  }
-  getFetchOpts(defaultOpts) {
-    return {
-      type: "files",
-      glob: this.getGlobPattern(),
-      ...defaultOpts
-    };
-  }
-  // TODO: Add method here to sort these results by the file types preffered order in the appConfig.
-  sortResults(vals) {
-    return vals;
-  }
-  async getFileMatches(appConfig, opts) {
-    let res = await getGlobServerSide(this.getFetchOpts(opts), appConfig);
-    return res ? this.sortResults(res) : [];
-  }
-};
+var i=class{constructor(t){this.props=t;}formatFileTypeArrayGlobPattern(t){return `{${t.join(",")}}`}getGlobPattern(t){let e=this.props.fileTypes?a.beArray(this.props.fileTypes):supportedFileTypes;return `${this.props.path}.${this.formatFileTypeArrayGlobPattern(e)}`}getFetchOpts(t){return {type:"files",glob:this.getGlobPattern(),...t}}sortResults(t){return t}async getFileMatches(t,e){let r=await a$1(this.getFetchOpts(e),t);return r?this.sortResults(r):[]}};
 
-export { FsRootGlob };
+export { i as FsRootGlob };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=fsRootGlob.js.map

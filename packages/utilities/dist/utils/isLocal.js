@@ -1,14 +1,7 @@
-import '../chunk-F3FYYIAV.js';
+import '../chunk-5WT32FJO.js';
 
-// src/utils/isLocal.ts
-var isLocal = (fsRoot) => {
-  if (typeof process !== "undefined" && typeof window === "undefined") {
-    return process.cwd() === fsRoot;
-  } else {
-    return window.location.host.includes("localhost");
-  }
-};
+var s=e=>typeof process<"u"&&typeof window>"u"?process.cwd()===e:window.location.host.includes("localhost");
 
-export { isLocal };
+export { s as isLocal };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=isLocal.js.map
