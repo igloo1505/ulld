@@ -127,7 +127,7 @@ const resumeData: ResumeDataInput = {
         },
         {
             title: "Aspiring astrophysicist",
-            desc: "While working as a freelancer, I would spend most of my free time between projects reading the latest cosmology research. Having previously studied physics, not computer science, I was drawn towards these deep questions regarding the way the Unviverse truly works. After coming across an assumption that was made in the early days of relativity that I felt I might be able to demonstrate as false, I left paid software work and began to focus solely on formalizing this relativistic geometry.",
+            desc: "While working as a freelancer, I would spend most of my free time between projects reading the latest cosmology research. Having previously studied physics, not computer science, I was drawn towards these deep questions regarding the way the Universe truly works. After coming across an assumption that was made in the early days of relativity that I felt I might be able to demonstrate as false, I left paid software work and began to focus solely on formalizing this new relativistic geometry.",
             location: "Remote",
             start: new Date("02/01/2022"),
         },

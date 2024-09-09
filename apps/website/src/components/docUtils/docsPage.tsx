@@ -54,6 +54,8 @@ const DocsPageInternal = ({
 }: WithRequired<DocsPageComponentProps, "id">) => {
     const rawContent = "content" in page.data ? page?.data.content : undefined;
 
+    /* TODO: Inject citations into note here. Don't bother with this half assed approach anymore just to avoid server time. */
+
     const filteredComponents = getComponentMap(
         rawContent || "",
         { avoidKeys: ["mark"] },
@@ -128,6 +130,7 @@ const DocsPageComponent = (props: DocsPageComponentProps) => {
             <DocsPage
                 toc={newEntries}
                 tableOfContent={{
+                    /* component: <Table */ // Replace table of contents with the fuma built component when on wifi and able to review docs.
                     footer: <TocSourceFooterButton noteId={props.page.data.id} />,
                 }}
                 full={props.page.data.full}

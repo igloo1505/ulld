@@ -1,11 +1,11 @@
-import { BaseLayoutProps, DocsLayout } from "fumadocs-ui/layout";
+import { DocsLayoutProps, DocsLayout } from "fumadocs-ui/layout";
 import type { ReactNode } from "react";
 import { pageTree } from "#/fumaDocs/sources/myNotes";
 import { AnimatedUlldLogo } from "@ulld/icons/ulld-animated";
 import { appData } from "@ulld/utilities/appData";
 import { sidebarLinksWithoutHref } from "#/fumaDocs/utils/sidebarLinks";
 
-const baseOptions: BaseLayoutProps = {
+const baseOptions: Omit<DocsLayoutProps, "tree"> = {
     nav: {
         title: (
             <span className={"h-12 w-16"}>
