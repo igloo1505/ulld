@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage{tikz,amsmath,siunitx}
+\usetikzlibrary{arrows,snakes,backgrounds,patterns,matrix,shapes,fit,calc,shadows,plotmarks}
+\usepackage[graphics,tightpage,active]{preview}
+\usepackage[dvipsnames]{xcolor}
+\PreviewEnvironment{tikzpicture}
+\PreviewEnvironment{equation}
+\PreviewEnvironment{equation*}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+\pagestyle{empty}
+\thispagestyle{empty}
+
+\definecolor{ulldBlue}{rgb}{0.11764706, 0.56470588, 1}
+
+\begin{document}
+\begin{tikzpicture}
+    \draw[fill=none, white](0,0) circle (1.0);
+     \draw[fill=white](0,0) circle (1 pt) node [above, white, yshift=2] {\tiny $d\phi$};
+     \draw[ulldBlue, dotted](0,0) -- (0.5,0.8660254037844387);
+     \draw[ulldBlue, dotted](0,0.8660254037844387) -- (0.5,0.8660254037844387);
+     \draw[ulldBlue, |-|](0,1.1) -- (0.5,1.1) node [above, midway, white] {\tiny $dR$};
+\end{tikzpicture}
+\end{document}

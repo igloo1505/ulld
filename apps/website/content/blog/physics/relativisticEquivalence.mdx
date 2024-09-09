@@ -1,0 +1,77 @@
+---
+title: Relativistic Symmetry
+created: 9-8-24
+id: onRelativisticEquivalence
+description: "Here we examine the symmetries that exist between the specialized and generalized theories of relativity, how they affect our experience on Earth, and how they relate to the model of relativistic spatial dilation."
+images: ["bulletCluster.jpg"]
+category: Physics
+---
+
+
+One mystery that has bothered me more than most was the manner in which the time dilation effects due to special relativity and general relativity are almost perfectly equivalent here on Earth. The centripetal force of the Earth's rotation is believed to be responsible for the Earth being not quite spherical, with a bulge forming near the equator. As the Earth spins, the excess time dilation at the equator due to the additional velocity created by the Earth's rotation, is almost perfectly offset by the excess gravity at Earth's poles which is a consequence of a slightly shorter radius.
+
+Surely there must be some physics at play here that binds the rotation of the Earth to it's radius and mass density, that's really not much in question. Perhaps more profoundly, _surely_ these to sources of time dilation must be ***the same***.
+
+We can start by analyzing this symmetry from the perspective of a single, simple equation:
+
+$$
+\begin{align}
+\frac{d \theta}{dt}R \approx c \frac{g}{R}
+\end{align}
+$$
+
+This is to say that $c \frac{g}{R}$ is almost precisely our rotational velocity at the equator. 
+
+Looking at this in the context of the model of relativistic spatial dilation, recall that $\delta$ can be made to apply as a scalar of $R$ by taking the average of it's integral. This gives:
+
+$$
+\begin{align}
+\frac{1}{R} \int_{0}^{R} 2 G \frac{M}{R^{3}} = R \left( 1 + \frac{g}{R} \right)
+\end{align}
+$$
+
+If we are not concerned with the _new_ radius, but only the change in radius, the $+ 1$ disappears which gives us a scalar of $R$, $\zeta$ such that $\zeta R = \Delta R = g$. 
+
+<Image
+    src="/assets/blog/sineIntegral.png"
+    right
+    md
+    id="sine-integral-img"
+    label
+    desc="Integral of sine"
+/>
+
+On the other side of this equation, we have the rotational velocity at the equator. If instead of a set of equations that apply uniquely to the Earth's equator, consider the following:
+
+$$
+\begin{align}
+ \int_0^{\pi / 2} \sin{\phi} R ~ d \phi = R
+\end{align}
+$$
+
+This is to say that the sine of the integral $\phi$ from the pole to the equator is $R$. This in turn allows that
+
+$$
+\begin{align}
+ \frac{d \theta}{dt} R = \frac{d \theta}{dt} \int_0^{\pi / 2} \sin{\phi} R ~ d \phi
+\end{align}
+$$
+
+Which when put together, gives
+
+$$
+\begin{align}
+\frac{d \theta}{dt} \int_0^{\pi / 2} \sin{\phi} R ~ d \phi = c \frac{1}{R} \int_0^{R} 2 G \frac{M}{R^{3}} = c \frac{g}{R}
+\end{align}
+$$
+
+## Interpretation
+
+This result can be viewed from several perspectives. First, $\frac{g}{R}$ acts like a scalar of distance as it's applied only to the shift in spatial density. When applied to $c$ however, this might be viewed as a scalar of $c$[^1], as $c$ would be inversely proportional to spatial density and scale proportionally to $R$. This dilation of $c$ is required to maintain the symmetries that have carried existing models of relativity this far, and is foundational to the concept of relativity itself.
+
+The left side of this equation is more physically obvious, but interesting none the less as we integrate not just over the rotational velocity, but of _all_ of the rotational velocities on the Earth's surface.
+
+Lastly, this relationship is ***time independent***. While $\frac{d \theta}{dt}$ is obviously time dependent, $\zeta$ represents a time dependent scalar of $R$ in the form of $\frac{dR}{dt}$. This allows the time dependence to offset, making this relationship completely time independent.
+
+
+[^1]: The principle that $c$ being equivalent _in_ each reference frame is not necessarily the same as $c$ being equivalent _between_ reference frames plays a significant role in the model of relativity being proposed. See [Between two constants](/blog/physics/betweenTwoConstants) and [Predictions and the theory of gravitational time](/blog/physics/problemsResolvedByTheory) for more.

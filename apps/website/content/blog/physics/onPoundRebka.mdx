@@ -1,0 +1,53 @@
+---
+title: On the Pound-Rebka results
+created: 9-8-24
+id: onThePoundRebkaResults
+description: "Just a short blog post demonstrating the consistency between the proposed model of relativistic spatial dilation and the results found by Pound and Rebka."
+images: ["bulletCluster.jpg"]
+category: Physics
+---
+
+
+Let's take a closer look at the results found by Pound and Rebka<span className="citationAnchor-container no-tooltip"><a href='#bib-pound_rebka' className="citation citationAnchor" id="cit-pound_rebka-idx-0">1</a></span> back in 1959. Recall that they conducted their experiment in a manner which allowed relative motion to precisely offset the gravitational Doppler shift over a height, $h$, which happened to be around $22$ meters. By separating the emitter from the receiver by this distance $h$ approximately inline with the Earth's radial vector at that position and moving the apparatus along this same radial vector they were able to pit Einstein's gravitational Doppler shift against his theory of relativistic motion.
+
+<Admonition title="Energy of light" type="info" sidebar>
+ Note that photon of light appears to have a very well defined energy, where $E \propto \lambda$. As light gains or loses energy as a consequence of it's motion through a gravitational field, it's wavelength $\lambda$ also shifts.
+</Admonition>
+
+They found a result of
+
+$$
+\begin{align}
+v \approx g \frac{h}{c} = g \Delta t
+\end{align}
+$$
+
+
+which follows with the equivalence principle preciously. If instead of accepting that light gains or loses energy depending upon it's path through a gravitational field, what if the light actually _is_ unaffected, but it is space that is in motion? 
+
+## In the context of relativistic spatial dilation
+
+Let's now consider this result on the context of the relativistic model that inspired the development of <LogoAsText />. Recall that the equivalence principle in this model is attributed to the dilation of space, integrated over the radial vector $R$. This radial vector $R$ however, would coincide with the Earth's surface at that position, which places the emitter at $R + h$.[^1]
+
+The integral to achieve the equivalence principle is simply the derivative of $g$, reintegrated over $R$. The advantage to this approach in other contexts was to permit the results to be used as a scalar by taking the average of that integral, producing a quantity that can be used in the same manner that $\gamma$ is used.
+
+In this case however, we want to find the integral over $R + h$. Because $h$ is so small in comparison to $M$ and $R$, the difference will be negligible. We can find that as
+
+$$
+\begin{align}
+\Delta h = \int_{0}^{R + h} 2 G \frac{M}{r^{3}} ~ dr ~ dt = G \frac{M}{\left( R_{0} + h \right)^{2}} ~ dt
+\end{align}
+$$
+
+This means that for every tiny shift in time, $dt$, the radius will lengthen by the formula given above. Because the Earth's surface in this model would be rising up to meet the photon as it moves towards the Earth's surface from the emitter at $h$, the Doppler shift measured would follow an identical mechanism to the Newtonian Doppler shift, which is preciously what we see as:
+
+$$
+\begin{align}
+\frac{h}{c} \int_{0}^{R + h} \left[ 2 G \frac{M}{r^{3}} \right] = dr ~ dt = g \frac{h}{c}
+\end{align}
+$$
+
+This leaves the energry state of light unchanged by gravity, creating a Doppler shift and shift in $\lambda$ due to the relative motion of the surface of Earth alone.
+
+
+[^1]: Due to my current living conditions I'm currently working offline, without access to the internet, and I don't have a copy of the paper on my computer currently. I can't recall if it was the emitter that was placed at $h$, or the receiver, but the principle remains. If I'm wrong, just stick a factor of $-1$ in here somewhere.

@@ -157,7 +157,7 @@ const ResumeHeader = ({
             </div>
             <div
                 className={
-                    "flex min-[640px]:grid min-[600px]:grid-cols-2 md:flex flex-col justify-center items-start gap-2 mt-6 md:mt-0"
+                    "flex min-[450px]:grid min-[450px]:grid-cols-2 md:flex flex-col justify-center items-start gap-2 mt-6 md:mt-0"
                 }
             >
                 <IconItem index={0} icon="cake" label={dayjs(dob).format("MM/DD/YYYY")} />

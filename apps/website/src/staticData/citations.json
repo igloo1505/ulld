@@ -28,6 +28,15 @@
   "plansForUlld": {
     "citations": []
   },
+  "onThePoundRebkaResults": {
+    "citations": [
+      {
+        "htmlCitation": "<div class=\"csl-bib-body\">\n  <div data-csl-entry-id=\"Pound_Rebka\" class=\"csl-entry\">R. V. Pound and G. A. Rebka, Jr. (1959). Gravitational Red-Shift in Nuclear Resonance. <i>Physical Review Letters</i>, <i>3</i>(9), 439–441.</div>\n</div>",
+        "id": "pound_rebka",
+        "pageIndex": 0
+      }
+    ]
+  },
   "predictionsAndTheTheoryOfGravitationalTime": {
     "citations": [
       {

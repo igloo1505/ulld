@@ -19,7 +19,7 @@ const workHistoryItemSchema = z.object({
     desc: z.string().max(500),
     start: z.coerce.date(),
     end: z.coerce.date().optional(),
-    location: z.string()
+    location: z.string(),
 });
 
 const skillsSchema = z.record(
@@ -48,14 +48,14 @@ const resumeDataSchema = z.object({
     skills: skillsSchema,
 });
 
-export type ResumeData = z.output<typeof resumeDataSchema>
+export type ResumeData = z.output<typeof resumeDataSchema>;
 
 export type ResumeDataInput = z.input<typeof resumeDataSchema>;
 
 // TODO: Come back and edit this properly.
 const resumeData: ResumeDataInput = {
     intro:
-        "I've worked with typescript, React and Node for almost a decade, and have several years of experience with Python as well. I also am proficient with Lua, and although I haven't used it in quite a while, I still enjoy working with Swift when I get the opportunity. I feel like I perform best when I’m challenged, and I would hope to find that in my next job as well. I majored in Physics at the University of Wisconsin-Milwaukee, and in February of 2022 I decided to take time away from my freelance work to write a paper regarding relativity and gravity. The results of that model turned out to be more consistent than I originally expected, producing at least 2 distinct, observable quantities that are unaccounted for by existing models of relativity, and I'm now hoping to return to full time work.",
+        "I've worked with typescript, React and Node for almost a decade, and have several years of experience with Python as well. I am also proficient with Lua, and although I haven't used it in quite a while, I still enjoy working with Swift when I get the opportunity. I feel like I perform best when I’m challenged, and I would hope to find that in my next job as well. I studied Physics at the University of Wisconsin-Milwaukee, and in February of 2022 I decided to take time away from my freelance work to write a paper regarding relativity and gravity. The results of the paper that I've spent the past 2+ years working on has turned out to be more physically consistent than I had even hoped, producing at least 2 distinct, observable quantities that are unaccounted for by existing models of relativity. With this chapter now behind me, I'm looking forward to returning to full time work.",
     skills: {
         "Frameworks, APIs and Libraries": {
             React: 10,
@@ -100,38 +100,40 @@ const resumeData: ResumeDataInput = {
         "Reading Greek mythology to my puppy",
         "Math... <span class='italic'>I know</span>",
     ],
-    projectsDesc: "Due to my current living situation, much of my more meaningful previous work is no longer hosted. I can provide links to the repo's or video demonstrations on request.",
+    projectsDesc:
+        "Due to my current living situation, much of my more meaningful previous work is no longer hosted. I can provide links to the repo's or video demonstrations on request.",
     projects: [
         {
             title: "Uh Little Less Dum",
-            "desc": "An open source academic note taking framework",
-            "repo": appData.projectRepo.url
-        }
+            desc: "An open source academic note taking framework",
+            repo: appData.projectRepo.url,
+            hostedSite: "https://uhlittlelessdum.com",
+        },
     ],
     workHistory: [
         {
-            "title": "Part-time freelance developer",
+            title: "Part-time freelance developer",
             desc: "While still working part-time in unrelated fields I was able to build my skills while accepting small to medium sized jobs on various online freelance platforms.",
             location: "Milwaukee & Remote",
             start: new Date("04/1/2015"),
-            end: new Date("07/01/2018")
+            end: new Date("07/01/2018"),
         },
         {
             title: "Full-time freelance developer",
             desc: "After building a strong enough reputation, and feeling confident enough in my own abilities I took the leap and decided to work as a full-time freelance developer.",
             location: "Remote",
             start: new Date("07/1/2018"),
-            end: new Date("02/01/2022")
+            end: new Date("02/01/2022"),
         },
         {
             title: "Aspiring astrophysicist",
-            desc: "While working as a freelancer, I would spend most of my free time between projects reading the latest cosmology research. Having previously studies physics, not computer science, I was drawn towards these deep questions regarding the way the Unviverse truly works. After coming across an assumption that was made in the early days of relativity that I felt I might be able to demonstrate as false, I left paid software work and began to focus solely on formalizing this relativistic geometry.",
+            desc: "While working as a freelancer, I would spend most of my free time between projects reading the latest cosmology research. Having previously studied physics, not computer science, I was drawn towards these deep questions regarding the way the Unviverse truly works. After coming across an assumption that was made in the early days of relativity that I felt I might be able to demonstrate as false, I left paid software work and began to focus solely on formalizing this relativistic geometry.",
             location: "Remote",
-            start: new Date("02/01/2022")
+            start: new Date("02/01/2022"),
         },
-    ]
+    ],
 };
 
-export const getResumeData = (): ResumeData  => {
-    return resumeDataSchema.parse(resumeData)
-}
+export const getResumeData = (): ResumeData => {
+    return resumeDataSchema.parse(resumeData);
+};

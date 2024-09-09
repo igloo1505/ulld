@@ -57,7 +57,7 @@ const WorkHistoryItem = ({ initialDelay, item, dir }: WorkHistoryItemProps) => {
         {item.desc}
       </motion.p>
       <motion.div
-        className={clsx("w-fit text-sm text-muted-foreground grid grid-cols-[1fr_32px] place-items-center")} 
+        className={clsx("w-fit text-sm text-muted-foreground flex flex-row justify-center items-center gap-2", dir === "right" && "min-[740px]:flex-row-reverse")} 
         initial={{
           x,
           opacity: 0,
@@ -70,8 +70,8 @@ const WorkHistoryItem = ({ initialDelay, item, dir }: WorkHistoryItemProps) => {
           },
         }}
       >
-        <div className={clsx("w-full", textClass)}>{item.location}</div>
         <DynamicIcon name="map-pin" className={"h-4 w-4"} />
+        <div className={clsx("w-full", textClass)}>{item.location}</div>
       </motion.div>
     </div>
     )

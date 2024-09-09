@@ -1,0 +1,1 @@
+sudo pdflatex img.tex && magick convert -density 600x600 img.pdf -quality 90 -resize 800x600 pic.png && cp /Users/bigsexy/Desktop/current/ulld/apps/website/src/tex/integralOfSine/pic.png /Users/bigsexy/Desktop/current/ulld/apps/website/public/assets/blog/sineIntegral.png

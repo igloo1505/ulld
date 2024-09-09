@@ -46,7 +46,7 @@ const ResumeSkillsGroup = ({
       </motion.h3>
       <div
         className={clsx(
-          "w-full",
+          "w-full max-[740px]:mt-4",
           isStringArray
             ? "flex flex-row justify-start items-start flex-wrap gap-x-4"
             : "flex flex-col justify-start items-start @[450px]/skillsGroup:grid @[450px]/skillsGroup:grid-cols-2 gap-x-6",
