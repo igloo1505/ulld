@@ -582,6 +582,11 @@
       "require": "./dist/styleUtilities/generateThemePlotColors.cjs"
     },
     "./themeColorGradients": "./dist/styleUtilities/themeColorGradients.json",
+    "": "./dist/styleUtilities/generatedThemeColorSchemes.json",
+    "./themeColorSchemes": {
+      "import": "./dist/styleUtilities/generatedThemeColorSchemes.js",
+      "require": "./dist/styleUtilities/generatedThemeColorSchemes.cjs"
+    },
     "./streamFile": {
       "types": "./dist/utils/media/streamFile.d.ts",
       "import": "./dist/utils/media/streamFile.js",
@@ -633,8 +638,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && tsup",
-    "buildNode": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && tsup-node",
+    "build": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && tsup-node",
     "dev": "echo 'Add dev script here'",
     "test": "echo 'Add test script here'"
   },

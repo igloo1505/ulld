@@ -34,12 +34,17 @@ ${content}`,
     );
 };
 
-const prependDirectives = async () => {
+const prependDirectives = async (ignore?: RegExp[]) => {
     let files = globSync("**/*.{tsx,ts}", {
         cwd: path.join(__dirname, "src"),
         nodir: true,
         absolute: true,
     });
+    if(ignore){
+        files = files.filter((x) => {
+            return !ignore.some((r) => r.test(x))
+        })
+    }
     files.forEach((f) => {
         let distPaths = {
             cjs: f.replace("/src/", "/dist/").replace(/\.tsx?/, ".cjs"),
@@ -69,7 +74,12 @@ const prependDirectives = async () => {
 
 export default defineConfig((options) => {
     return {
-        entry: ["src/**/*.ts", "src/**/*.tsx"],
+        entry: [
+            "src/**/*.ts",
+            "src/**/*.tsx",
+            "!src/__scripts__/**",
+            "src/styleUtilities/generatedThemeColorSchemes.json"
+        ],
         // platform: "neutral",
         splitting: true,
         sourcemap: true,
@@ -102,6 +112,6 @@ export default defineConfig((options) => {
         //         exclude: /node_modules/,
         //     }),
         // ],
-        onSuccess: prependDirectives,
+        onSuccess: () => prependDirectives([new RegExp("__scripts__/")]),
     };
 });

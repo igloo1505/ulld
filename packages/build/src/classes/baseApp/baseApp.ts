@@ -221,6 +221,7 @@ export default unifiedParserList
             this.build.packageManager,
             this.options.genDatabase,
         );
+        this.cleanUp()
         this.log("Almost done! Running the last phase of the build script.")
         this.execPackageJsonScript(
             this.build.packageManager,
@@ -235,8 +236,21 @@ export default unifiedParserList
             this.paths.projectRoot,
         );
     }
-    cleanUp() {
+    private cleanUp() {
         this.logVerbose("Just cleaning things up a bit...");
         this.buildCleanup.runCleanup();
+    }
+    logSuccessfullBuild(){
+        this.log(`Success! You can now run your application with:
+cd ${this.paths.targetDir} && ${this.build.packageManager} run start
+
+Or create an alias with:
+
+alias myUsefulAlias="cd ${this.paths.targetDir} && ${this.build.packageManager} run start"
+
+And then run your app from anywhere with the command:
+
+myUsefulAlias
+`)
     }
 }

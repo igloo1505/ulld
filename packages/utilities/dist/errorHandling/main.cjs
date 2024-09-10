@@ -1,7 +1,7 @@
 'use strict';
 
-var chunkDP5PBFG3_cjs = require('../chunk-DP5PBFG3.cjs');
 var chunk243XK7G3_cjs = require('../chunk-243XK7G3.cjs');
+var chunkDP5PBFG3_cjs = require('../chunk-DP5PBFG3.cjs');
 require('../chunk-7ARU3YXQ.cjs');
 require('../chunk-4SS7WEWH.cjs');
 

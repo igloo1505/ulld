@@ -16,6 +16,13 @@ body {
   --jp-brand-color1: hsl(var(--primary)) !important;
 }
 
+.truncateWidth {
+  padding: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .jupyterUI {
   --jp-ui-font-size: 13px !important;
   font-size: 13px;

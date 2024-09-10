@@ -345,9 +345,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "pnpm tsup",
+    "build": "pnpm tsup-node",
     "buildLocal": "tsx ./src/__scripts__/updateShikiThemes.ts && tsx ./src/defaults/generateDefaultConfig.ts && tsx src/__scripts__/generateSlotMap.ts",
-    "buildNode": "pnpm tsup-node",
     "dev": "echo 'Add dev script here'",
     "gatherTypes": "tsc --project ./tsconfigTypes.json --emitDeclarationOnly",
     "generateDefaultConfig": "tsx src/__scripts__/generateDefaultConfig.ts",

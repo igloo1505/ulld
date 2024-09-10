@@ -50,7 +50,7 @@ export const runUlldBuild = async (
 
         if (avoidIfInOpts({ opts: [], options })) {
             let baseApp = await generate(build, options);
-            baseApp.cleanUp();
+            baseApp.logSuccessfullBuild()
         }
         notifier.notify({
             title: "Woah",

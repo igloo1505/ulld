@@ -23,35 +23,50 @@ regex = {
     "foreground": r"^\s*--foreground:\s+(?P<H>\d+\.?\d*)\s+(?P<S>\d+\.?\d*)%\s+(?P<L>\d+\.?\d*)%",
 }
 
-p = Path("/Users/bigsexy/Desktop/currentProjects/ulld/packages/tailwindAndShad/src/shad/defaultThemes/")
-target = Path("/Users/bigsexy/Desktop/currentProjects/ulld/packages/tailwindAndShad/src/shad/defaultThemes/colorMaps/")
+p = Path(
+    "/Users/bigsexy/Desktop/current/ulld/packages/tailwindAndShad/src/shad/defaultThemes/"
+)
+target = Path(
+    "/Users/bigsexy/Desktop/current/ulld/packages/tailwindAndShad/src/shad/defaultThemes/colorMaps/"
+)
 
 files = p.rglob("*.scss")
 
+
 data = {}
+
 
 def getNumber(v: float, denominator: float):
     return round(v * denominator, 2)
 
+
 for f in files:
     content = f.read_text()
-    item = {
-        "dark": {},
-        "light": {}
-    }
-    raw = {
-        "dark": {},
-        "light": {}
-    }
-    name = f.name[0:f.name.index(".")]
+    item = {"dark": {}, "light": {}}
+    raw = {"dark": {}, "light": {}}
+    name = f.name[0 : f.name.index(".")]
     for key in regex:
         matches = re.findall(regex[key], content, re.M)
-        rgbLight = c.hls_to_rgb(float(matches[0][0]) / 360, float(matches[0][2]) / 100, float(matches[0][1]) / 100)
-        rgbDark = c.hls_to_rgb(float(matches[1][0]) / 360, float(matches[1][2]) / 100, float(matches[1][1]) / 100)
+        rgbLight = c.hls_to_rgb(
+            float(matches[0][0]) / 360,
+            float(matches[0][2]) / 100,
+            float(matches[0][1]) / 100,
+        )
+        if matches.__len__() >= 2:
+            rgbDark = c.hls_to_rgb(
+                float(matches[1][0]) / 360,
+                float(matches[1][2]) / 100,
+                float(matches[1][1]) / 100,
+            )
+            raw["dark"][key] = rgbDark
         raw["light"][key] = rgbLight
-        raw["dark"][key] = rgbDark 
-        item["light"][key] = f"rgb({getNumber(rgbLight[0], 255)}, {getNumber(rgbLight[1], 255)}, {getNumber(rgbLight[2], 255)})"
-        item["dark"][key] = f"rgb({getNumber(rgbDark[0], 255)}, {getNumber(rgbDark[1], 255)}, {getNumber(rgbDark[2], 255)})"
+        item["light"][
+            key
+        ] = f"rgb({getNumber(rgbLight[0], 255)}, {getNumber(rgbLight[1], 255)}, {getNumber(rgbLight[2], 255)})"
+        if rgbDark:
+            item["dark"][
+                key
+            ] = f"rgb({getNumber(rgbDark[0], 255)}, {getNumber(rgbDark[1], 255)}, {getNumber(rgbDark[2], 255)})"
     t = target / f"{name}.json"
     rawTarget = target / f"{name}-raw.json"
     _json = json.dumps(item)
@@ -61,4 +76,3 @@ for f in files:
     data[name] = item
 
 print(data)
-
