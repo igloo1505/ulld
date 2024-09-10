@@ -73,7 +73,6 @@
       "import": "./dist/zod/main.js",
       "require": "./dist/zod/main.cjs"
     },
-    "./zod/slots": "./src/zod/slots/pluginSlotSchema.ts",
     "./zod/terminalConfig": {
       "types": "./dist/zod/terminalConfig.d.ts",
       "import": "./dist/zod/terminalConfig.js",
@@ -279,7 +278,7 @@
       "import": "./dist/evaluate/types.js",
       "require": "./dist/evaluate/types.cjs"
     },
-    "./defaultConfigBase": "./src/defaults/generatedDefaultConfigs/base.json",
+    "./defaultConfigBase": "./dist/defaults/generatedDefaultConfigs/base.json",
     "./codeThemeSchemas": {
       "types": "./dist/zod/codeThemeSchemas.d.ts",
       "import": "./dist/zod/codeThemeSchemas.js",
@@ -327,7 +326,6 @@
     }
   },
   "files": [
-    "src",
     "dist"
   ],
   "packageManager": "pnpm@9.0.4",
@@ -345,7 +343,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "pnpm tsup-node",
+    "build": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && tsup-node",
     "buildLocal": "tsx ./src/__scripts__/updateShikiThemes.ts && tsx ./src/defaults/generateDefaultConfig.ts && tsx src/__scripts__/generateSlotMap.ts",
     "dev": "echo 'Add dev script here'",
     "gatherTypes": "tsc --project ./tsconfigTypes.json --emitDeclarationOnly",

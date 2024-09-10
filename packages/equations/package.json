@@ -32,7 +32,8 @@
     "./equationsPage": "./src/ulld_app/equations/page.tsx",
     "./parser": "./src/parsers/main.tsx",
     "./onBackup": "./src/events/onBackup/hook.ts",
-    "./onRestore": "./src/events/onRestore/hook.ts"
+    "./onRestore": "./src/events/onRestore/hook.ts",
+    "./embeddableEquation": "./src/components/embeddable/equation/main.tsx"
   },
   "files": [
     "src",
@@ -88,7 +89,20 @@
     "label": "Math",
     "pluginId": "61a78d89-12e3-464a-9608-95b77e659d4e",
     "slot": "math",
-    "components": [],
+    "components": [
+      {
+        "componentName": "EmbeddableEquation",
+        "tags": [],
+        "export": "embeddableEquation",
+        "embeddable": [
+          {
+            "regexToInclude": "<Equation",
+            "label": "Equation"
+          }
+        ],
+        "componentId": "40ecf259-fc08-4008-9d3a-8d579ade16cb"
+      }
+    ],
     "parsers": {
       "mdx": {
         "export": "parser",

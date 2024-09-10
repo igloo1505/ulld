@@ -1,25 +1,8 @@
 import path from "path";
-import { defineConfig, Options, NormalizedOptions } from "tsup";
-// import { preserveDirectivesPlugin } from "esbuild-plugin-preserve-directives";
+import { defineConfig } from "tsup";
 import { globSync } from "glob";
 import fs from "fs";
 import { copyJsonFilesToDist } from "./src/utils/build/copyJsonFilesToDist";
-// import { globSync } from "glob";
-
-// let entries = globSync("./src/**/*.{ts,tsx}", {
-//     cwd: import.meta.dirname,
-//     nodir: true,
-// });
-//
-
-let opts: Options = {
-    clean: false,
-    shims: true,
-    platform: "neutral",
-    // "platform"
-    cjsInterop: true,
-};
-
 const prependUseClient = (p: string) => {
     let content = fs.readFileSync(p, {
         encoding: "utf-8",

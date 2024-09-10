@@ -15,7 +15,7 @@ export default defineConfig((options) => {
         // platform: "neutral",
         splitting: true,
         sourcemap: true,
-        clean: true,
+        clean: false,
         metafile: true,
         cjsInterop: true,
         // dts: true,

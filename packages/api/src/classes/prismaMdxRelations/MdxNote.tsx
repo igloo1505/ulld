@@ -60,7 +60,8 @@ import { serverClient } from "../../trpc/serverClient";
 export interface MdxNoteFlattened { }
 
 export interface ParseMdxStringProps {
-    bareAss?: boolean; // Will not parse quickLinks, citations, equationTags and definitions
+    /** Will not parse quickLinks, citations, equationTags and definitions */
+    bareAss?: boolean;
     parseDefinitions?: boolean;
     id?: number;
     rootRelativePath?: string;

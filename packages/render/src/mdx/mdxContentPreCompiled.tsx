@@ -22,6 +22,7 @@ export interface MdxContentPreCompiledProps {
     applyMathContextMenu?: boolean;
     components?: AdditionalComponents
     options?: ConditionalComponentProps
+    id?: string
 }
 
 export const MdxContentPreCompiled = ({
@@ -30,7 +31,8 @@ export const MdxContentPreCompiled = ({
     raw,
     applyMathContextMenu,
     components,
-    options={}
+    options={},
+    id
 }: MdxContentPreCompiledProps) => {
     const [mdxModule, setMdxModule] = useState<MDXModule | null>(null);
     const ref = useRef<HTMLDivElement>(null!);
@@ -60,7 +62,6 @@ export const MdxContentPreCompiled = ({
 
     const Component =
         mdxModule && "default" in mdxModule ? mdxModule.default : Fragment;
-    /* RESUME: Fix this immediately. Cannot pass components into a client component. Need to find a way to render mdx on the server directly to html. */
     const _components = getComponentMap(raw, options, components);
 
     return (
@@ -75,7 +76,7 @@ export const MdxContentPreCompiled = ({
                         <Component components={_components} />
                     </CopyContextMenu>
                 ) : (
-                    <Component components={_components} />
+                    <Component id={id} components={_components} />
                 )
             ) : (
                 <></>

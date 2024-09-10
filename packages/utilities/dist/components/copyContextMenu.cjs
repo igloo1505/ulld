@@ -3,8 +3,8 @@
 
 var chunkKFC2L45R_cjs = require('../chunk-KFC2L45R.cjs');
 require('../chunk-HRSD2R63.cjs');
-var chunkUXVJKVSI_cjs = require('../chunk-UXVJKVSI.cjs');
 var chunkBNLPLCBV_cjs = require('../chunk-BNLPLCBV.cjs');
+var chunkUXVJKVSI_cjs = require('../chunk-UXVJKVSI.cjs');
 require('../chunk-7ARU3YXQ.cjs');
 var contextMenu = require('@ulld/tailwind/context-menu');
 var e = require('react');

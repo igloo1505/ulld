@@ -4205,6 +4205,21 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
 
+  packages/testUtils:
+    dependencies:
+      '@ulld/typescript-config':
+        specifier: workspace:*
+        version: link:../config-typescript
+      next:
+        specifier: ^14.2.3
+        version: 14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+
   packages/types: {}
 
   packages/ui:
@@ -4966,6 +4981,9 @@ importers:
       '@types/jaro-winkler':
         specifier: ^0.2.3
         version: 0.2.3
+      '@ulld/testUtils':
+        specifier: workspace:*
+        version: link:../testUtils
       chai:
         specifier: ^5.1.0
         version: 5.1.1

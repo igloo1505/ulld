@@ -1,58 +1,71 @@
 {
-    "pluginName": "@ulld/equations",
-    "label": "Math",
-    "pluginId": "61a78d89-12e3-464a-9608-95b77e659d4e",
-    "slot": "math",
-    "components": [],
-    "parsers": {
-        "mdx": {
-            "export": "parser",
-            "conditions": {}
+  "pluginName": "@ulld/equations",
+  "label": "Math",
+  "pluginId": "61a78d89-12e3-464a-9608-95b77e659d4e",
+  "slot": "math",
+  "components": [
+    {
+      "componentName": "EmbeddableEquation",
+      "tags": [],
+      "export": "embeddableEquation",
+      "embeddable": [
+        {
+          "regexToInclude": "<Equation",
+          "label": "Equation"
         }
+      ],
+      "componentId": "40ecf259-fc08-4008-9d3a-8d579ade16cb"
+    }
+  ],
+  "parsers": {
+    "mdx": {
+      "export": "parser",
+      "conditions": {}
+    }
+  },
+  "pages": [
+    {
+      "targetUrl": "@modal/(.)equations/details/[equationId]",
+      "slot": "EquationDetailsModalPage",
+      "export": "equationModal",
+      "exportsPageProps": true
     },
-    "pages": [
-        {
-            "targetUrl": "@modal/(.)equations/details/[equationId]",
-            "slot": "EquationDetailsModalPage",
-            "export": "equationModal",
-            "exportsPageProps": true
-        },
-        {
-            "targetUrl": "equations/add",
-            "slot": "AddEquationPage",
-            "export": "addEquationPage",
-            "exportsPageProps": true
-        },
-        {
-            "targetUrl": "equations/details/[equationId]",
-            "slot": "EquationDetailsPage",
-            "export": "equationDetailsPage",
-            "exportsPageProps": true
-        },
-        {
-            "targetUrl": "equations",
-            "slot": "EquationsPage",
-            "export": "equationsPage",
-            "exportsPageProps": true
-        }
-    ],
-    "events": {
-        "onBackup": "onBackup",
-        "onRestore": "onRestore"
+    {
+      "targetUrl": "equations/add",
+      "slot": "AddEquationPage",
+      "export": "addEquationPage",
+      "exportsPageProps": true
     },
-    "navigationLinks": [
-        {
-            "label": "Equations",
-            "href": "/equations",
-            "category": "general"
-        },
-        {
-            "label": "Add Equation",
-            "href": "/equations/add",
-            "category": "general"
-        }
-    ],
-    "commandPalette": [],
-    "tailwind": {},
-    "styles": {}
+    {
+      "targetUrl": "equations/details/[equationId]",
+      "slot": "EquationDetailsPage",
+      "export": "equationDetailsPage",
+      "exportsPageProps": true
+    },
+    {
+      "targetUrl": "equations",
+      "slot": "EquationsPage",
+      "export": "equationsPage",
+      "exportsPageProps": true
+    }
+  ],
+  "events": {
+    "onBackup": "onBackup",
+    "onRestore": "onRestore"
+  },
+  "navigationLinks": [
+    {
+      "label": "Equations",
+      "href": "/equations",
+      "category": "general"
+    },
+    {
+      "label": "Add Equation",
+      "href": "/equations/add",
+      "category": "general"
+    }
+  ],
+  "commandPalette": [],
+  "tailwind": {},
+  "styles": {}
 }

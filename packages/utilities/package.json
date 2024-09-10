@@ -60,7 +60,8 @@
     "supertest-session": "^5.0.1",
     "tinycolor2": "1.6.0",
     "ts-jest": "^29.1.2",
-    "zod": "^3.22.4"
+    "zod": "^3.22.4",
+    "@ulld/testUtils": "workspace:*"
   },
   "exports": {
     "./types": {
@@ -582,7 +583,6 @@
       "require": "./dist/styleUtilities/generateThemePlotColors.cjs"
     },
     "./themeColorGradients": "./dist/styleUtilities/themeColorGradients.json",
-    "": "./dist/styleUtilities/generatedThemeColorSchemes.json",
     "./themeColorSchemes": {
       "import": "./dist/styleUtilities/generatedThemeColorSchemes.js",
       "require": "./dist/styleUtilities/generatedThemeColorSchemes.cjs"
@@ -616,11 +616,15 @@
       "types": "./dist/components/disableBookmark.d.ts",
       "import": "./dist/components/disableBookmark.js",
       "require": "./dist/components/disableBookmark.cjs"
+    },
+    "./getBaseEmbeddableProps": {
+      "types": "./dist/componentHelpers/getBaseEmbeddableProps.d.ts",
+      "import": "./dist/componentHelpers/getBaseEmbeddableProps.js",
+      "require": "./dist/componentHelpers/getBaseEmbeddableProps.cjs"
     }
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "packageManager": "pnpm@9.0.4",
   "peerDependencies": {

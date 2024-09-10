@@ -8,6 +8,7 @@ import { AppConfigSchemaOutput } from '@ulld/configschema/types';
 
 
 export interface MdxContentSERVERProps {
+    id?: string
     bareAss?: boolean
     content?: string
     inline?: boolean
@@ -39,7 +40,6 @@ const parseProps = (p: MdxContentSERVERProps) => {
 }
 
 export const MdxContentSERVER = async (_props: MdxContentSERVERProps) => {
-    /* let appConfig = _props.appConfig || await readAppConfig() */
     const props = parseProps(_props)
     let compiled = await parseMdxString({
         content: props.content,
