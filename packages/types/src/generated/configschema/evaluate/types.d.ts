@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { AppConfigSchemaOutput } from "../zod/main";
+import { AppConfigSchemaOutput } from "../zod/main.js";
 export type ConfigEvalFixDisplay = "docTypesOverlap";
 export interface ConfigEvaluationError {
     label: ReactNode;

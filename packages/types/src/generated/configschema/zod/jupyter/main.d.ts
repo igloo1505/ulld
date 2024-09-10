@@ -131,6 +131,10 @@ export declare const jupyterConfigSchema: z.ZodObject<{
         nbgrader?: boolean | undefined;
         readOnly?: boolean | undefined;
     }>>;
+    cellInputWrappers: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, {
+        prefix: string;
+        suffix: string;
+    }, string>>>;
 }, "strip", z.ZodTypeAny, {
     execute: boolean;
     environment: string;
@@ -173,6 +177,10 @@ export declare const jupyterConfigSchema: z.ZodObject<{
         height?: string | undefined;
         maxHeight?: string | undefined;
     };
+    cellInputWrappers: Record<string, {
+        prefix: string;
+        suffix: string;
+    }>;
     jupyterToken?: string | undefined;
 }, {
     execute?: boolean | undefined;
@@ -217,6 +225,7 @@ export declare const jupyterConfigSchema: z.ZodObject<{
         nbgrader?: boolean | undefined;
         readOnly?: boolean | undefined;
     } | undefined;
+    cellInputWrappers?: Record<string, string> | undefined;
 }>;
 export declare const jupyterConfigSchemaOutput: z.ZodObject<{
     execute: z.ZodDefault<z.ZodBoolean>;
@@ -322,6 +331,10 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<{
         nbgrader?: boolean | undefined;
         readOnly?: boolean | undefined;
     }>>;
+    cellInputWrappers: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, {
+        prefix: string;
+        suffix: string;
+    }, string>>>;
     jupyterReactProps: z.ZodObject<{
         collaborative: z.ZodDefault<z.ZodBoolean>;
         lite: z.ZodDefault<z.ZodBoolean>;
@@ -392,6 +405,10 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<{
         height?: string | undefined;
         maxHeight?: string | undefined;
     };
+    cellInputWrappers: Record<string, {
+        prefix: string;
+        suffix: string;
+    }>;
     jupyterToken?: string | undefined;
 }, {
     jupyterReactProps: {
@@ -436,5 +453,6 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<{
         nbgrader?: boolean | undefined;
         readOnly?: boolean | undefined;
     } | undefined;
+    cellInputWrappers?: Record<string, string> | undefined;
 }>;
 //# sourceMappingURL=main.d.ts.map

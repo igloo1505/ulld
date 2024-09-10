@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { AppConfigSchemaOutput } from "../main";
+import { AppConfigSchemaOutput } from "../main.js";
 declare const fields: {
     colab: z.ZodBoolean;
     kernel: z.ZodString;

@@ -1,4 +1,4 @@
-import type { AppConfigSchemaOutput } from "../main";
+import type { AppConfigSchemaOutput } from "../main.js";
 import { z } from 'zod';
 export declare const markdownExtensions: z.ZodUnion<[z.ZodLiteral<".mdx">, z.ZodLiteral<".md">]>;
 export declare const defaultParsableFileExtensions: z.ZodUnion<[z.ZodLiteral<".mdx">, z.ZodLiteral<".md">, z.ZodLiteral<".ipynb">]>;

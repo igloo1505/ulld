@@ -1,13 +1,13 @@
 import slots from "@ulld/utilities/slotMap.json";
-import { ComponentConfig } from "./componentConfig";
-import { ParserConfig } from "./parserConfig";
-import { AdditionalImportsConfig } from "./additionalImportsConfig";
-import { TrpcConfig } from "./trpcConfig";
-import { PluginSettingsConfig } from "./pluginSettingsConfig";
-import { PluginPageConfig, PluginPageConfigWithoutGeneric } from "./pageConfig";
-import { PluginEventsConfig } from "./pluginEventsConfig";
-import { PluginSlotKey } from "../slotMapType";
-import { NavigationLinkType } from "../navigationLinkType";
+import { ComponentConfig } from "./componentConfig.js";
+import { ParserConfig } from "./parserConfig.js";
+import { AdditionalImportsConfig } from "./additionalImportsConfig.js";
+import { TrpcConfig } from "./trpcConfig.js";
+import { PluginSettingsConfig } from "./pluginSettingsConfig.js";
+import { PluginPageConfig, PluginPageConfigWithoutGeneric } from "./pageConfig.js";
+import { PluginEventsConfig } from "./pluginEventsConfig.js";
+import { PluginSlotKey } from "../slotMapType.js";
+import { NavigationLinkType } from "../navigationLinkType.js";
 export type InternalDeveloperConfigInput<T extends PluginSlotKey | undefined = undefined> = {
     pluginName: string;
     label?: string;

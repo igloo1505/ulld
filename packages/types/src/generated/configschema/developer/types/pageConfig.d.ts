@@ -1,5 +1,5 @@
-import { SlotMap } from "../slotMapRootType";
-import { PluginSlotKey } from "../slotMapType";
+import { SlotMap } from "../slotMapRootType.js";
+import { PluginSlotKey } from "../slotMapType.js";
 interface PluginPageConfigBase {
     /** The export in your package.json that matches a single component that will act as this page. The component must be the default export, and will be passed all props that the page receives, like params and searchParams. This can include intercepted modal routes with the @modal/(.)... syntax, nested routes and parameter based routes with the [someParam] syntax. */
     export: string;

@@ -29,21 +29,21 @@ export declare const textConfigSchema: z.ZodDefault<z.ZodObject<{
     }>, "many">, z.ZodLiteral<"default">]>>;
 }, "strip", z.ZodTypeAny, {
     blockQuoteItalic: boolean;
-    fontPaths: ({
+    fontPaths: ("default" | {
         weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
         style: "bold" | "italic" | "normal";
         path: string;
-    }[] | "default") & ({
+    }[]) & ("default" | {
         weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
         style: "bold" | "italic" | "normal";
         path: string;
-    }[] | "default" | undefined);
+    }[] | undefined);
 }, {
     blockQuoteItalic?: boolean | undefined;
-    fontPaths?: {
+    fontPaths?: "default" | {
         weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
         style: "bold" | "italic" | "normal";
         path: string;
-    }[] | "default" | undefined;
+    }[] | undefined;
 }>>;
 //# sourceMappingURL=textConfig.d.ts.map

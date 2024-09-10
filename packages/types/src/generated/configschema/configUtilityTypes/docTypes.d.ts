@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { zodDocTypeInput } from "../zod/documentConfigSchema";
-import { internalDocTypes } from "../zod/internalDocumentTypes";
+import { zodDocTypeInput } from "../zod/documentConfigSchema.js";
+import { internalDocTypes } from "../zod/internalDocumentTypes.js";
 export type DocTypes = string | z.output<typeof zodDocTypeInput> | z.output<typeof internalDocTypes>;
 export declare const topicZodObject: z.ZodObject<{
     value: z.ZodString;
