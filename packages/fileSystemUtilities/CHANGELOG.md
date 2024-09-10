@@ -1,5 +1,11 @@
 # @ulld/fileSystemUtils
 
+## 0.0.3
+
+### Patch Changes
+
+- Bump most recent build package and other packages to match.
+
 ## 0.0.2
 
 ### Patch Changes

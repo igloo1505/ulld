@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.103
+
+### Patch Changes
+
+- Bump most recent build package and other packages to match.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.103
+  - @ulld/calendar@0.0.103
+  - @ulld/typescript-config@0.0.97
+  - @ulld/default-image-map@0.0.103
+  - @ulld/diagram@0.0.103
+  - @ulld/editor@0.0.103
+  - @ulld/embeddable-components@0.0.103
+  - @ulld/equations@0.0.103
+  - @ulld/full-form@0.0.103
+  - @ulld/journal@0.0.103
+  - @ulld/navigation@0.0.103
+  - @ulld/notebook@0.0.103
+  - @ulld/pdf@0.0.103
+  - @ulld/plot@0.0.103
+  - @ulld/snippets@0.0.103
+  - @ulld/tailwind@0.0.97
+  - @ulld/task-manager@0.0.103
+  - @ulld/types@0.0.97
+  - @ulld/whiteboard@0.0.103
+
 ## 0.0.102
 
 ### Patch Changes

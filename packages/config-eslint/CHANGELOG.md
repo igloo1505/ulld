@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.99
+
+### Patch Changes
+
+- Bump most recent build package and other packages to match.
+
 ## 0.0.98
 
 ### Patch Changes

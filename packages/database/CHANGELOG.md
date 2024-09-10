@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.100
+
+### Patch Changes
+
+- Bump most recent build package and other packages to match.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.97
+  - @ulld/types@0.0.97
+
 ## 0.0.99
 
 ### Patch Changes

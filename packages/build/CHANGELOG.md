@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.102
+
+### Patch Changes
+
+- Bump most recent build package and other packages to match.
+- Updated dependencies
+  - @ulld/configschema@0.0.103
+  - @ulld/developer-schemas@0.0.97
+  - @ulld/types@0.0.97
+  - @ulld/utilities@0.0.103
+
 ## 0.0.101
 
 ### Patch Changes
