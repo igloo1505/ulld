@@ -109,6 +109,9 @@ mjx-container[jax="CHTML"][display="true"] {
 }
 
 a[data-active="true"] {
+  * {
+    color: hsl(var(--primary)) !important;
+  }
   mjx-container {
     color: hsl(var(--primary));
   }
