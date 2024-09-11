@@ -1,5 +1,3 @@
-import { Topic, Subject } from "@ulld/database/internalDatabaseTypes";
-import { DocTypes } from "@ulld/configschema/configUtilityTypes/docTypes";
 import { prisma } from "@ulld/database/db";
 import type { SerializeMdxConfig } from "@ulld/parsers/mdx/types";
 import type { SearchAllParams } from "@ulld/utilities/types";
@@ -13,12 +11,9 @@ import {
 import { MdxNoteSummaryOutputWithMdxTransforms } from "../prismaMdxRelations/schemas/withMdxTransforms";
 import type { Prisma } from "@ulld/database";
 import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
+import { makeValidId } from "@ulld/utilities/identity";
 
 type SortedResult = MdxNote & { sortRank?: number };
-
-type WithDocType<T> = {
-    [key in keyof T]: key extends "noteType" ? DocTypes : T[key];
-};
 
 export interface IntriguingValueSummary {
     rootRelativePath: string;
@@ -62,6 +57,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
         public params?: SearchAllParams,
         public serializeConfig?: SerializeMdxConfig,
     ) {
+        this.type = makeValidId(this.type) // To match with parsing method applied while generating the appConfig
         if (params) {
             if (
                 params.page !== undefined &&
@@ -81,7 +77,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
                     ? params.citations
                     : [params.citations]
                 : [];
-            this.categories = params.categories;
+            this.categories = params.categories ? ArrayUtilities.beArray(params.categories) : undefined;
             this.tags = ArrayUtilities.beArray(params.tags || []);
             this.query = params.query;
             this.equationId = params.equationId;
@@ -111,9 +107,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
     async formatSummary() {
         let items: MdxNoteSummaryOutputWithMdxTransforms[] = [];
         for await (const k of this.preParseNotes) {
-            console.log("k: ", k)
             let res = await k.zodSummaryParse();
-            console.log("res: ", res);
             items.push(res);
         }
         this.notes = items;
@@ -153,7 +147,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
     }
     getNoteType(config: AppConfigSchemaOutput) {
         return this.type
-            ? config.noteTypes.find((n) => n.docType === this.type)
+            ? config.noteTypes.find((n) => n.id === this.type)
             : null;
     }
     getMatchingTypes(config: AppConfigSchemaOutput) {
@@ -206,6 +200,11 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
                         .map((t) => t.docType)
                         .filter((t) => t !== undefined) as string[],
                 },
+            }),
+            ...(this.categories && this.categories.length && {
+                href: {
+                    startsWith: config
+                }
             }),
             ...(this.citations &&
                 this.citations.length > 0 && {
@@ -409,7 +408,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
                 ...this.paginationInput(),
             } satisfies Prisma.MdxNoteFindManyArgs;
             const notes = await prisma.mdxNote.findMany(queryObject);
-            const totalFound = await this.getCountFromWhereInput(queryObject.where)
+            const totalFound = await this.getCountFromWhereInput(queryObject.where);
             return {
                 notes,
                 totalFound,

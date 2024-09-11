@@ -1,10 +1,10 @@
 import { ParsedAppConfig } from "@ulld/configschema/types"
-import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { AutoSettingWithRegex } from "../../../trpc/types";
+import { readAppConfigSync } from "@ulld/developer/readAppConfig";
 
 
 export const getFlatAutoSettings = (autoSettings: AutoSettingWithRegex[], _config?: ParsedAppConfig) => {
-    const internalConfig = _config || getInternalConfig()
+    const internalConfig = _config || readAppConfigSync()
     let d: {
         autoTags: { glob: string, value: string }[]
         autoTopics: { glob: string, value: string }[]

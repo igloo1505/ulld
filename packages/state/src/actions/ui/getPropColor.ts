@@ -1,5 +1,5 @@
 import { ParsedAppConfig } from "@ulld/configschema/types"
-import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig"
+import { readAppConfigSync } from "@ulld/developer/readAppConfig"
 
 export interface PropColor {
     [k: string]: string
@@ -20,7 +20,7 @@ export interface PropColor {
 export type PropColorAsProp = Record<keyof PropColor, boolean>
 
 export const getPropColor = (d: PropColorAsProp, prefix?: string, _default?: string | undefined, config?: ParsedAppConfig) => {
-    const _config = config || getInternalConfig()
+    const _config = config || readAppConfigSync()
     let c: string | undefined = undefined
     let keys = Object.keys(d)
     Object.values(d).forEach((v, i) => {

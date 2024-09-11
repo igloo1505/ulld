@@ -9,9 +9,9 @@ import "@google/model-viewer/dist/model-viewer.js";
 /* import { ModelViewerElement } from "@google/model-viewer"; */
 import clsx from "clsx";
 import { Button } from "@ulld/tailwind/button";
-import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { ModelViewProps } from "./props";
 import { getAssumedDimensions } from "@ulld/utilities/getAssumedDimensions";
+import { useAppConfig } from "@ulld/hooks/useAppConfig";
 
 declare global {
     namespace JSX {
@@ -39,15 +39,15 @@ export const ModelViewInternal = ({
         className = props.class as string;
     }
     const viewer = useRef<HTMLElement>(null!);
+    const [appConfig] = useAppConfig()
 
     let params = useMemo(() => {
-        if (!file) return;
-        const config = getInternalConfig();
+        if (!file || !appConfig) return;
         let p = new URLSearchParams();
         p.set("file", file);
-        p.set("fsRoot", config.fsRoot);
+        p.set("fsRoot", appConfig.fsRoot);
         return p;
-    }, [file]);
+    }, [file, appConfig]);
 
     const dimensions = useMemo(
         () =>

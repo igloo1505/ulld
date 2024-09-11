@@ -21,7 +21,7 @@ export const parseMathTags: UnifiedMdxParser = async (data) => {
                 new RegExp(`\\[eq:${m.groups.equationId}\\]`, "gm"),
                 _link,
             );
-            results.push(m.groups.value);
+            results.push(m.groups.equationId);
         }
     } while (m);
     return {

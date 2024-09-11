@@ -15,4 +15,18 @@ export declare const filePathGlobPropsSchema: z.ZodObject<{
     ignore?: string | string[] | null | undefined;
     returnAs?: "absolute" | "rootRelative" | undefined;
 }>;
+export type FilePathGlobInput = z.input<typeof filePathGlobPropsSchema>;
+export declare const imageGlobPropsSchema: z.ZodObject<{
+    includeSvg: z.ZodDefault<z.ZodBoolean>;
+    ignore: z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">]>>>;
+    returnAs: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"absolute">, z.ZodLiteral<"rootRelative">]>>;
+}, "strip", z.ZodTypeAny, {
+    returnAs: "absolute" | "rootRelative";
+    includeSvg: boolean;
+    ignore?: string | string[] | null | undefined;
+}, {
+    includeSvg?: boolean | undefined;
+    ignore?: string | string[] | null | undefined;
+    returnAs?: "absolute" | "rootRelative" | undefined;
+}>;
 //# sourceMappingURL=filePathInput.d.ts.map

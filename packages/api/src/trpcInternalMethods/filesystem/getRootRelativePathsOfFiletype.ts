@@ -1,10 +1,10 @@
-import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import { ParsableExtensionsSchema } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions"
 import { walkFsRoot } from "./walkFsRoot"
+import { readAppConfig } from "@ulld/developer/readAppConfig"
 
 
 export const getRootRelativePathsOfFiletype = async (filetype: ParsableExtensionsSchema) => {
-    const config = getInternalConfig()
+    const config = await readAppConfig()
     let acceptedFiles: string[] = []
     for await (const file of walkFsRoot(config.fsRoot, true, config.ignoreFilepaths)) {
         if (file.endsWith(filetype)) {

@@ -2,7 +2,6 @@ import dynamic from "next/dynamic";
 import { ConditionalComponentQuery } from "../types";
 const Admonition = dynamic(() => import("@ulld/embeddable-components/components/client/admonition").then((a) => a.Admonition))
 // // const JupyterConsole = dynamic(() => import("../jupyter/console/index"))
-// const Pdf = dynamic(() => import("../functionality/pdf/MdxPdfView"))
 const TabGroup = dynamic(() => import("@ulld/embeddable-components/components/client/tabGroup").then((a) => a.TabGroup))
 const Tab = dynamic(() => import("@ulld/embeddable-components/components/client/tab").then((a) => a.Tab))
 // const WithSidebar = dynamic(() => import("./emeddedComponents/withSidebar"))

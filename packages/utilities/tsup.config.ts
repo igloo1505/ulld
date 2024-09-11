@@ -3,6 +3,7 @@ import { defineConfig } from "tsup";
 import { globSync } from "glob";
 import fs from "fs";
 import { copyJsonFilesToDist } from "./src/utils/build/copyJsonFilesToDist";
+
 const prependUseClient = (p: string) => {
     let content = fs.readFileSync(p, {
         encoding: "utf-8",

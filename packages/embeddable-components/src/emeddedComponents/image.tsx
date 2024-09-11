@@ -1,12 +1,12 @@
 import React, { useMemo } from "react";
 import clsx from "clsx";
-import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
 import ImageMapImage from "./imageMapImage";
 import { EmbeddedImageProps } from "@ulld/utilities/types/embeddedImageProps";
 import { isFullWidth } from "@ulld/state/formatting/styleUtilities";
 import { getRandomId } from "@ulld/utilities/identity";
 import SelfFigureIndex from "./selfImageIndex";
 import DispatchRenderedImageEvent from "./dispatchRenderedImageEvent";
+import { readAppConfigSync } from "@ulld/developer/readAppConfig";
 
 type ImgProps = EmbeddedImageProps & Omit<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>, "title"> & { noConfig?: boolean }
 
@@ -118,9 +118,9 @@ const C = (props: ImgProps) => {
 
 
 export const EmbeddedImage = (props: ImgProps) => {
-    const config = props.noConfig ? null : getInternalConfig();
+    const config = props.noConfig ? null : readAppConfigSync();
     const { image } = props;
-    if (image && config && image in config.UI.media.imageMap) {
+    if (image && config && image in config?.UI?.media?.imageMap) {
         return <ImageMapImage {...props} image={image} />
     }
     return <C {...props} src={props.src || props.url} />

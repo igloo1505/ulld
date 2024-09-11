@@ -26,7 +26,9 @@ export const ImgComponent = async (
     if (props.title) {
         internalProps.title = props.title;
     }
-    if (!props.src) return;
+    if (!props.src) {
+        return;
+    }
     let remote = isRemote(props.src, config.UI.media.imageRemoteTest);
     let src: string | undefined = undefined;
     if (!remote) {

@@ -159,18 +159,12 @@ export const documentTypeConfigSchema = documentTypeConfigSchemaBase
     .partial({
         url: true,
     })
-    // .superRefine((a) => {
-    //     if (!a.docType) {
-    //         a.docType = makeValidId(a.id || a.label);
-    //     }
-    //     return a;
-    // })
     .transform((a) => {
         const _id = makeValidId(a.id || a.label);
         return {
             ...a,
-            // docType: a.docType ||
-            id: a.id || _id,
+            docType: _id, // For backward compatibility.
+            id: _id,
             url: a.url || `/${_id}`,
         };
     });

@@ -115,7 +115,7 @@ const PaginationGroup = (props: PaginationGroupProps) => {
                 {
                     totalItems: props.totalItems,
                     perPage: props.itemsPerPage,
-                    currentPage: typeof props.currentPage === "number" ? props.currentPage : 1,
+                    currentPage: typeof props.currentPage === "number" ? props.currentPage : typeof props.currentPage === "string" ? parseInt(props.currentPage) : 1,
                     maxButtons: vpWidth < 600 ? 6 : vpWidth < 920 ? 8 : 10,
                 },
                 (n) => parsePaginationTemplateString(props.hrefTemplate, n),

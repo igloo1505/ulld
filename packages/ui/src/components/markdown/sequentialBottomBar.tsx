@@ -16,9 +16,9 @@ interface SequentialNoteBottomBarProps {
 
 export const SequentialNoteBottomBar = async ({ sequentialId, sequentialIndex }: SequentialNoteBottomBarProps) => {
     if (!sequentialId || typeof sequentialIndex !== "number") return null
-    console.log("SequentialNoteBottomBar")
     let noteList = await serverClient.search.getSequentialIdListByKey(sequentialId)
     let params = new URLSearchParams()
+    params.set("sequentialId", sequentialId)
     const thisIndex = noteList.map((n) => n.sequentialIndex).indexOf(sequentialIndex)
 
 

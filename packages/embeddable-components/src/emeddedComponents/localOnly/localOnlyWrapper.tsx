@@ -1,6 +1,6 @@
-import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
 import React from 'react'
 import { isLocal } from '@ulld/utilities/isLocal'
+import { readAppConfigSync } from '@ulld/developer/readAppConfig'
 
 
 
@@ -9,9 +9,8 @@ interface LocalOnlyWrapperProps {
 }
 
 const LocalOnlyWrapper = ({ children }: LocalOnlyWrapperProps) => {
-    const config = getInternalConfig()
+    const config = readAppConfigSync()
     const _isLocal = isLocal(config.fsRoot)
-    console.log("_isLocal: ", _isLocal)
     if (!_isLocal) return null
     return (
         <div className={"note-base-layout"}>{children}</div>
