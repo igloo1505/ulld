@@ -146,19 +146,32 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
         });
     }
     getNoteType(config: AppConfigSchemaOutput) {
-        return this.type
-            ? config.noteTypes.find((n) => n.id === this.type)
+        // Allows type to be provided from searchParams.
+        let searchCategory = this.type ? this.type : this.categories ? this.categories : undefined
+        if(!searchCategory){
+            return undefined
+        }
+        if(Array.isArray(searchCategory)){
+            if(searchCategory.length === 1){
+                searchCategory = searchCategory[0]
+            } else {
+                return config.noteTypes.filter((f) => (searchCategory as string[]).includes(f.id))
+            }
+        }
+        let val = searchCategory
+            ? config.noteTypes.find((n) => n.id === searchCategory)
             : null;
+        if(val){
+            return [val]
+        }
+        return null
     }
     getMatchingTypes(config: AppConfigSchemaOutput) {
-        let type = this.getNoteType(config);
-        if (!type) {
+        let noteTypes = this.getNoteType(config);
+        if (!noteTypes) {
             return null;
         }
-        return config.noteTypes.filter((n) =>
-            Boolean(
-                (type?.fs && n.fs && n.fs.includes(type.fs)) || n.fs === type?.fs,
-            ),
+        return config.noteTypes.filter((n) => noteTypes.some((f) =>  (f?.fs && n.fs && n.fs.includes(f.fs)) || n.fs === f?.fs)
         );
     }
     tagMatch(note: SortedResult) {
@@ -197,14 +210,9 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
                 this.type !== "all" && {
                 noteType: {
                     in: matchingTypes
-                        .map((t) => t.docType)
+                        .map((t) => t.id)
                         .filter((t) => t !== undefined) as string[],
                 },
-            }),
-            ...(this.categories && this.categories.length && {
-                href: {
-                    startsWith: config
-                }
             }),
             ...(this.citations &&
                 this.citations.length > 0 && {

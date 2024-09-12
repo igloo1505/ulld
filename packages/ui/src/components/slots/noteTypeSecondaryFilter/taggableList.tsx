@@ -33,7 +33,7 @@ const TaggableList = ({
     return (
         <div
             className={
-                "w-full flex flex-col justify-center items-center md:items-start"
+                "w-full flex flex-col justify-center items-center md:items-start px-6 md:px-8 my-4"
             }
         >
             <h3 className={"w-full text-lg font-semibold mb-2"}>
@@ -41,7 +41,7 @@ const TaggableList = ({
             </h3>
             <div
                 className={
-                    "w-full h-fit flex flex-row justify-start items-center flex-wrap gap-4 px-6 md:px-8"
+                    "w-full h-fit flex flex-row justify-start items-center flex-wrap gap-4"
                 }
             >
                 {activeItems.map((s, i) => {

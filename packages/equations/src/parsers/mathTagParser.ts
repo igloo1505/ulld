@@ -15,7 +15,6 @@ export const parseMathTags: UnifiedMdxParser = async (data) => {
             m.groups.equationId !== "\n"
         ) {
             let _link = `<EquationTag equationId="${m.groups.equationId}" />`;
-            // c = `${c.slice(0, m.index)}${_link}${c.slice(m.index + m[0].length, c.length)}`
             c = replaceRecursively(
                 c,
                 new RegExp(`\\[eq:${m.groups.equationId}\\]`, "gm"),
