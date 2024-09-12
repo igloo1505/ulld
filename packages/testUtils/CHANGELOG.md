@@ -1,5 +1,13 @@
 # @ulld/testUtils
 
+## 0.0.6
+
+### Patch Changes
+
+- Hopefully fix build cli issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.102
+
 ## 0.0.5
 
 ### Patch Changes

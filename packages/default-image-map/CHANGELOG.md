@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.108
+
+### Patch Changes
+
+- Hopefully fix build cli issue.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.104
+  - @ulld/typescript-config@0.0.102
+  - @ulld/configschema@0.0.108
+  - @ulld/logger@0.0.102
+  - @ulld/tailwind@0.0.102
+  - @ulld/types@0.0.102
+  - @ulld/utilities@0.0.108
+
 ## 0.0.107
 
 ### Patch Changes

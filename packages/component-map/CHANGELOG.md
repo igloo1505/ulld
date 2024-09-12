@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.108
+
+### Patch Changes
+
+- Hopefully fix build cli issue.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.108
+  - @ulld/calendar@0.0.108
+  - @ulld/typescript-config@0.0.102
+  - @ulld/default-image-map@0.0.108
+  - @ulld/diagram@0.0.108
+  - @ulld/editor@0.0.108
+  - @ulld/embeddable-components@0.0.108
+  - @ulld/equations@0.0.108
+  - @ulld/full-form@0.0.108
+  - @ulld/journal@0.0.108
+  - @ulld/navigation@0.0.108
+  - @ulld/notebook@0.0.108
+  - @ulld/pdf@0.0.108
+  - @ulld/plot@0.0.108
+  - @ulld/snippets@0.0.108
+  - @ulld/tailwind@0.0.102
+  - @ulld/task-manager@0.0.108
+  - @ulld/types@0.0.102
+  - @ulld/whiteboard@0.0.108
+
 ## 0.0.107
 
 ### Patch Changes

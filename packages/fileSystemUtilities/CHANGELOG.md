@@ -1,5 +1,11 @@
 # @ulld/fileSystemUtils
 
+## 0.0.6
+
+### Patch Changes
+
+- Hopefully fix build cli issue.
+
 ## 0.0.5
 
 ### Patch Changes

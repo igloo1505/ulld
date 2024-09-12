@@ -1,5 +1,17 @@
 # @ulld/icons
 
+## 0.0.108
+
+### Patch Changes
+
+- Hopefully fix build cli issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.102
+  - @ulld/hooks@0.0.108
+  - @ulld/tailwind@0.0.102
+  - @ulld/types@0.0.102
+  - @ulld/utilities@0.0.108
+
 ## 0.0.107
 
 ### Patch Changes

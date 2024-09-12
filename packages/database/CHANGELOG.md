@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.105
+
+### Patch Changes
+
+- Hopefully fix build cli issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.102
+  - @ulld/types@0.0.102
+
 ## 0.0.104
 
 ### Patch Changes

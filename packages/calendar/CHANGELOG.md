@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.108
+
+### Patch Changes
+
+- Hopefully fix build cli issue.
+- Updated dependencies
+  - @ulld/developer@0.0.108
+  - @ulld/types@0.0.102
+
 ## 0.0.107
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.107
+
+### Patch Changes
+
+- Hopefully fix build cli issue.
+- Updated dependencies
+  - @ulld/configschema@0.0.108
+  - @ulld/developer-schemas@0.0.102
+  - @ulld/types@0.0.102
+  - @ulld/utilities@0.0.108
+
 ## 0.0.106
 
 ### Patch Changes

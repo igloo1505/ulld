@@ -1,5 +1,18 @@
 # @ulld/diagram
 
+## 0.0.108
+
+### Patch Changes
+
+- Hopefully fix build cli issue.
+- Updated dependencies
+  - @ulld/api@0.0.108
+  - @ulld/typescript-config@0.0.102
+  - @ulld/developer@0.0.108
+  - @ulld/state@0.0.108
+  - @ulld/tailwind@0.0.102
+  - @ulld/types@0.0.102
+
 ## 0.0.107
 
 ### Patch Changes

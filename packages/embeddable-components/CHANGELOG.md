@@ -1,5 +1,25 @@
 # @ulld/embeddable-components
 
+## 0.0.108
+
+### Patch Changes
+
+- Hopefully fix build cli issue.
+- Updated dependencies
+  - @ulld/api@0.0.108
+  - @ulld/component-configs@0.0.108
+  - @ulld/typescript-config@0.0.102
+  - @ulld/configschema@0.0.108
+  - @ulld/default-image-map@0.0.108
+  - @ulld/developer@0.0.108
+  - @ulld/hooks@0.0.108
+  - @ulld/icons@0.0.108
+  - @ulld/render@0.0.108
+  - @ulld/state@0.0.108
+  - @ulld/tailwind@0.0.102
+  - @ulld/types@0.0.102
+  - @ulld/utilities@0.0.108
+
 ## 0.0.107
 
 ### Patch Changes

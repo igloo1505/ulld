@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.108
+
+### Patch Changes
+
+- Hopefully fix build cli issue.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.104
+  - @ulld/typescript-config@0.0.102
+  - @ulld/configschema@0.0.108
+  - @ulld/database@0.0.105
+  - @ulld/logger@0.0.102
+  - @ulld/types@0.0.102
+
 ## 0.0.107
 
 ### Patch Changes

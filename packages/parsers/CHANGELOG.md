@@ -1,5 +1,19 @@
 # @ulld/parsers
 
+## 0.0.108
+
+### Patch Changes
+
+- Hopefully fix build cli issue.
+- Updated dependencies
+  - @ulld/component-map@0.0.108
+  - @ulld/typescript-config@0.0.102
+  - @ulld/configschema@0.0.108
+  - @ulld/database@0.0.105
+  - @ulld/developer@0.0.108
+  - @ulld/types@0.0.102
+  - @ulld/utilities@0.0.108
+
 ## 0.0.107
 
 ### Patch Changes

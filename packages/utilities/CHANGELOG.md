@@ -1,5 +1,17 @@
 # @ulld/utilities
 
+## 0.0.108
+
+### Patch Changes
+
+- Hopefully fix build cli issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.102
+  - @ulld/database@0.0.105
+  - @ulld/math@0.0.108
+  - @ulld/tailwind@0.0.102
+  - @ulld/types@0.0.102
+
 ## 0.0.107
 
 ### Patch Changes

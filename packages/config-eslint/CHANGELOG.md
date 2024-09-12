@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.104
+
+### Patch Changes
+
+- Hopefully fix build cli issue.
+
 ## 0.0.103
 
 ### Patch Changes
