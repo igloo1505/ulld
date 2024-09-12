@@ -10,8 +10,8 @@
          "src/__scripts__/**"
     ],
     "include": [
-        "**/*.ts",
-        "**/*.tsx"
+        "src/**/*.ts",
+        "src/**/*.tsx"
     ],
     "compilerOptions": {
         "declarationDir": "../types/src/generated/configschema",

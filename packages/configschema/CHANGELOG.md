@@ -1,5 +1,19 @@
 # @ulld/configschema
 
+## 0.0.105
+
+### Patch Changes
+
+- Update search results UI and hopefully resolved category filter results.
+- Updated dependencies
+  - @ulld/base-configs@0.0.99
+  - @ulld/typescript-config@0.0.99
+  - @ulld/developer-schemas@0.0.99
+  - @ulld/icons@0.0.105
+  - @ulld/tailwind@0.0.99
+  - @ulld/types@0.0.99
+  - @ulld/utilities@0.0.105
+
 ## 0.0.104
 
 ### Patch Changes

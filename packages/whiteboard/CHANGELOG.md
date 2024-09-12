@@ -1,5 +1,22 @@
 # @ulld/whiteboard
 
+## 0.0.105
+
+### Patch Changes
+
+- Update search results UI and hopefully resolved category filter results.
+- Updated dependencies
+  - @ulld/api@0.0.105
+  - @ulld/typescript-config@0.0.99
+  - @ulld/developer@0.0.105
+  - @ulld/hooks@0.0.105
+  - @ulld/jest-presets@0.0.99
+  - @ulld/logger@0.0.99
+  - @ulld/state@0.0.105
+  - @ulld/tailwind@0.0.99
+  - @ulld/types@0.0.99
+  - @ulld/utilities@0.0.105
+
 ## 0.0.104
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ulld/logger
 
+## 0.0.99
+
+### Patch Changes
+
+- Update search results UI and hopefully resolved category filter results.
+- Updated dependencies
+  - @ulld/types@0.0.99
+
 ## 0.0.98
 
 ### Patch Changes

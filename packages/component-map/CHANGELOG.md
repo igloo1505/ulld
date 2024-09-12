@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.105
+
+### Patch Changes
+
+- Update search results UI and hopefully resolved category filter results.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.105
+  - @ulld/calendar@0.0.105
+  - @ulld/typescript-config@0.0.99
+  - @ulld/default-image-map@0.0.105
+  - @ulld/diagram@0.0.105
+  - @ulld/editor@0.0.105
+  - @ulld/embeddable-components@0.0.105
+  - @ulld/equations@0.0.105
+  - @ulld/full-form@0.0.105
+  - @ulld/journal@0.0.105
+  - @ulld/navigation@0.0.105
+  - @ulld/notebook@0.0.105
+  - @ulld/pdf@0.0.105
+  - @ulld/plot@0.0.105
+  - @ulld/snippets@0.0.105
+  - @ulld/tailwind@0.0.99
+  - @ulld/task-manager@0.0.105
+  - @ulld/types@0.0.99
+  - @ulld/whiteboard@0.0.105
+
 ## 0.0.104
 
 ### Patch Changes

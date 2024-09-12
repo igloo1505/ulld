@@ -1,5 +1,20 @@
 # @ulld/hooks
 
+## 0.0.105
+
+### Patch Changes
+
+- Update search results UI and hopefully resolved category filter results.
+- Updated dependencies
+  - @ulld/api@0.0.105
+  - @ulld/component-map@0.0.105
+  - @ulld/typescript-config@0.0.99
+  - @ulld/configschema@0.0.105
+  - @ulld/database@0.0.102
+  - @ulld/parsers@0.0.105
+  - @ulld/types@0.0.99
+  - @ulld/utilities@0.0.105
+
 ## 0.0.104
 
 ### Patch Changes

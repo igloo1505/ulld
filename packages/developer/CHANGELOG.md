@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.105
+
+### Patch Changes
+
+- Update search results UI and hopefully resolved category filter results.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.101
+  - @ulld/typescript-config@0.0.99
+  - @ulld/configschema@0.0.105
+  - @ulld/database@0.0.102
+  - @ulld/logger@0.0.99
+  - @ulld/types@0.0.99
+
 ## 0.0.104
 
 ### Patch Changes

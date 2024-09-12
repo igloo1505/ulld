@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.105
+
+### Patch Changes
+
+- Update search results UI and hopefully resolved category filter results.
+- Updated dependencies
+  - @ulld/developer@0.0.105
+  - @ulld/types@0.0.99
+
 ## 0.0.104
 
 ### Patch Changes
