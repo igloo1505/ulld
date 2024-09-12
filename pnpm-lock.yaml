@@ -41,7 +41,7 @@ importers:
       '@types/tinycolor2':
         specifier: ^1.4.6
         version: 1.4.6
-      '@ulld/fileSystemUtils':
+      '@ulld/file-system-utils':
         specifier: workspace:*
         version: link:packages/fileSystemUtilities
       '@ulld/utilities':
@@ -4981,7 +4981,7 @@ importers:
       '@types/jaro-winkler':
         specifier: ^0.2.3
         version: 0.2.3
-      '@ulld/testUtils':
+      '@ulld/test-utils':
         specifier: workspace:*
         version: link:../testUtils
       chai:
