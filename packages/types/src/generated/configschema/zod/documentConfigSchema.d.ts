@@ -350,6 +350,7 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
     inSidebar?: boolean | undefined;
     inNavbar?: boolean | undefined;
 }>, {
+    docType: string;
     id: string;
     url: string;
     label: string;
@@ -375,7 +376,6 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
     autoSubject: string[];
     inSidebar: boolean;
     inNavbar: boolean;
-    docType?: (string & z.BRAND<"DocTypeName">) | undefined;
     filePathPattern?: string | undefined;
     topicLabel?: string | undefined;
     subjectLabel?: string | undefined;

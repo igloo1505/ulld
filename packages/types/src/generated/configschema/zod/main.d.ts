@@ -182,6 +182,7 @@ export declare const appConfigSchema: z.ZodObject<{
         inSidebar?: boolean | undefined;
         inNavbar?: boolean | undefined;
     }>, {
+        docType: string;
         id: string;
         url: string;
         label: string;
@@ -207,7 +208,6 @@ export declare const appConfigSchema: z.ZodObject<{
         autoSubject: string[];
         inSidebar: boolean;
         inNavbar: boolean;
-        docType?: (string & z.BRAND<"DocTypeName">) | undefined;
         filePathPattern?: string | undefined;
         topicLabel?: string | undefined;
         subjectLabel?: string | undefined;
@@ -242,6 +242,7 @@ export declare const appConfigSchema: z.ZodObject<{
         inSidebar?: boolean | undefined;
         inNavbar?: boolean | undefined;
     }>, "many">>, {
+        docType: string;
         id: string;
         url: string;
         label: string;
@@ -267,7 +268,6 @@ export declare const appConfigSchema: z.ZodObject<{
         autoSubject: string[];
         inSidebar: boolean;
         inNavbar: boolean;
-        docType?: (string & z.BRAND<"DocTypeName">) | undefined;
         filePathPattern?: string | undefined;
         topicLabel?: string | undefined;
         subjectLabel?: string | undefined;
@@ -1518,6 +1518,7 @@ export declare const appConfigSchema: z.ZodObject<{
     }[];
     fileTypePriority: (".mdx" | ".ipynb" | ".md" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5")[];
     noteTypes: {
+        docType: string;
         id: string;
         url: string;
         label: string;
@@ -1543,7 +1544,6 @@ export declare const appConfigSchema: z.ZodObject<{
         autoSubject: string[];
         inSidebar: boolean;
         inNavbar: boolean;
-        docType?: (string & z.BRAND<"DocTypeName">) | undefined;
         filePathPattern?: string | undefined;
         topicLabel?: string | undefined;
         subjectLabel?: string | undefined;
@@ -2088,6 +2088,7 @@ export declare const appConfigSchemaTransform: (data: z.infer<typeof appConfigSc
     }[];
     fileTypePriority: (".mdx" | ".ipynb" | ".md" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5")[];
     noteTypes: {
+        docType: string;
         id: string;
         url: string;
         label: string;
@@ -2113,7 +2114,6 @@ export declare const appConfigSchemaTransform: (data: z.infer<typeof appConfigSc
         autoSubject: string[];
         inSidebar: boolean;
         inNavbar: boolean;
-        docType?: (string & z.BRAND<"DocTypeName">) | undefined;
         filePathPattern?: string | undefined;
         topicLabel?: string | undefined;
         subjectLabel?: string | undefined;
