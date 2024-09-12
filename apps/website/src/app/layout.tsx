@@ -18,7 +18,7 @@ import MainNavigationDrawer from "#/components/layouts/drawer/main";
 import InternalReduxProvider from "#/state/provider";
 import NavbarBreakpointHandler from "#/components/utility/navbarBreakpointHandler";
 import ThemeMenu from "#/components/UIUtils/themeMenu";
-import { BetaBanner } from "#/components/general/betaBanner";
+/* import { BetaBanner } from "#/components/general/betaBanner"; */
 import { RootProvider } from "fumadocs-ui/provider";
 import clsx from "@ulld/utilities/cn";
 import { HandleBodyDisplay } from "#/components/docUtils/handleBodyLayout";
@@ -225,7 +225,6 @@ const RootLayout = async (props: {
                 >
                     <InternalReduxProvider>
                         <HandleBodyDisplay />
-                        <BetaBanner />
                         <Navbar />
                         <MainNavigationDrawer />
                         <NavbarBreakpointHandler />
