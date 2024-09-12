@@ -145,12 +145,12 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
             );
         });
     }
-    getNoteType(config: AppConfigSchemaOutput) {
-        // Allows type to be provided from searchParams.
-        let searchCategory = this.type ? this.type : this.categories ? this.categories : undefined
-        if(!searchCategory){
-            return undefined
+    getNoteType(config: AppConfigSchemaOutput): typeof config.noteTypes | undefined {
+        if(!this.categories && this.type === "all"){
+            return 
         }
+        // Allows type to be provided from searchParams.
+        let searchCategory = this.categories ? this.categories : this.type === "all" ? this.type : [this.type]
         if(Array.isArray(searchCategory)){
             if(searchCategory.length === 1){
                 searchCategory = searchCategory[0]
@@ -164,7 +164,7 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
         if(val){
             return [val]
         }
-        return null
+        return 
     }
     getMatchingTypes(config: AppConfigSchemaOutput) {
         let noteTypes = this.getNoteType(config);
@@ -205,9 +205,8 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
     }
     defaultWhereInput(config: AppConfigSchemaOutput) {
         let matchingTypes = this.getMatchingTypes(config);
-        return {
-            ...(matchingTypes &&
-                this.type !== "all" && {
+        let whereInput = {
+            ...(matchingTypes && {
                 noteType: {
                     in: matchingTypes
                         .map((t) => t.id)
@@ -283,6 +282,8 @@ export class NoteFilter implements Omit<SearchAllParams, "perPage" | "page"> {
                 },
             }),
         } satisfies Prisma.MdxNoteWhereInput;
+        console.log("whereInput: ", whereInput)
+        return whereInput
     }
     async toValueSearchTable(config: AppConfigSchemaOutput) {
         await this.getResultsBeforeParse(config);

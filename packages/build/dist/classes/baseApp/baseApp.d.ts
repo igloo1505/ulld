@@ -30,5 +30,6 @@ export declare class BaseApp extends ShellManager {
     writeGitIgnore(): void;
     onBuild(): void;
     private runOnBuild;
-    cleanUp(): void;
+    private cleanUp;
+    logSuccessfullBuild(): void;
 }

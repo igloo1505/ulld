@@ -20,7 +20,7 @@ export const flattenSlotMap = (slotMap) => {
                 slot: k,
                 subSlot: l,
                 /* @ts-ignore */
-                data: slotMap[k][l]
+                data: slotMap[k][l],
             });
         }
     }

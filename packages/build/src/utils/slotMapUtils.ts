@@ -17,7 +17,7 @@ export const walkSlotMap = <T extends unknown, J extends unknown>(
             }
             /* @ts-ignore */
             s[k as keyof typeof s][l as any] = getData(
-                slotMap[k as keyof typeof slotMap][l as any] as T,
+                slotMap[k as keyof typeof slotMap][l as keyof typeof slotMap[keyof typeof slotMap]] as T,
                 k as PluginSlotKey,
                 l as AnySubSlotKey,
             );
@@ -55,7 +55,7 @@ export const forceFullSlotMap = <T extends unknown, J extends unknown>(
 ): SlotMapOfType<T | J> => {
     /* @ts-ignore */
     return walkSlotMap(fullSlotMap, (val, slot, subSlot) =>
-        slotMap[slot]?.[subSlot] ? slotMap[slot][subSlot] : defaultValue,
+        slotMap[slot as keyof typeof slotMap]?.[subSlot as keyof typeof slotMap[keyof typeof slotMap]] ? slotMap[slot as keyof typeof slotMap][subSlot as keyof typeof slotMap[keyof typeof slotMap]] : defaultValue,
     ) as SlotMapOfType<T | J>;
 };
 
