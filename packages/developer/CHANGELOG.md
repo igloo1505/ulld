@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.106
+
+### Patch Changes
+
+- Fix category based search filter issue.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.102
+  - @ulld/typescript-config@0.0.100
+  - @ulld/configschema@0.0.106
+  - @ulld/database@0.0.103
+  - @ulld/logger@0.0.100
+  - @ulld/types@0.0.100
+
 ## 0.0.105
 
 ### Patch Changes

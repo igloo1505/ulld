@@ -1,5 +1,19 @@
 # @ulld/parsers
 
+## 0.0.106
+
+### Patch Changes
+
+- Fix category based search filter issue.
+- Updated dependencies
+  - @ulld/component-map@0.0.106
+  - @ulld/typescript-config@0.0.100
+  - @ulld/configschema@0.0.106
+  - @ulld/database@0.0.103
+  - @ulld/developer@0.0.106
+  - @ulld/types@0.0.100
+  - @ulld/utilities@0.0.106
+
 ## 0.0.105
 
 ### Patch Changes

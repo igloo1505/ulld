@@ -1,5 +1,17 @@
 # @ulld/utilities
 
+## 0.0.106
+
+### Patch Changes
+
+- Fix category based search filter issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.100
+  - @ulld/database@0.0.103
+  - @ulld/math@0.0.106
+  - @ulld/tailwind@0.0.100
+  - @ulld/types@0.0.100
+
 ## 0.0.105
 
 ### Patch Changes

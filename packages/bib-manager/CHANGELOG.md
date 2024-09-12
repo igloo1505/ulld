@@ -1,5 +1,28 @@
 # @ulld/bib-manager
 
+## 0.0.106
+
+### Patch Changes
+
+- Fix category based search filter issue.
+- Updated dependencies
+  - @ulld/api@0.0.106
+  - @ulld/eslint-config@0.0.102
+  - @ulld/typescript-config@0.0.100
+  - @ulld/configschema@0.0.106
+  - @ulld/database@0.0.103
+  - @ulld/developer@0.0.106
+  - @ulld/editor@0.0.106
+  - @ulld/full-form@0.0.106
+  - @ulld/hooks@0.0.106
+  - @ulld/icons@0.0.106
+  - @ulld/jest-presets@0.0.100
+  - @ulld/state@0.0.106
+  - @ulld/tailwind@0.0.100
+  - @ulld/types@0.0.100
+  - @ulld/ui@0.0.104
+  - @ulld/utilities@0.0.106
+
 ## 0.0.105
 
 ### Patch Changes

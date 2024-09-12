@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.102
+
+### Patch Changes
+
+- Fix category based search filter issue.
+
 ## 0.0.101
 
 ### Patch Changes

@@ -1,5 +1,30 @@
 # @ulld/equations
 
+## 0.0.106
+
+### Patch Changes
+
+- Fix category based search filter issue.
+- Updated dependencies
+  - @ulld/api@0.0.106
+  - @ulld/typescript-config@0.0.100
+  - @ulld/configschema@0.0.106
+  - @ulld/database@0.0.103
+  - @ulld/developer@0.0.106
+  - @ulld/developer-schemas@0.0.100
+  - @ulld/editor@0.0.106
+  - @ulld/embeddable-components@0.0.106
+  - @ulld/full-form@0.0.106
+  - @ulld/hooks@0.0.106
+  - @ulld/jest-presets@0.0.100
+  - @ulld/parsers@0.0.106
+  - @ulld/render@0.0.106
+  - @ulld/state@0.0.106
+  - @ulld/tailwind@0.0.100
+  - @ulld/types@0.0.100
+  - @ulld/ui@0.0.104
+  - @ulld/utilities@0.0.106
+
 ## 0.0.105
 
 ### Patch Changes

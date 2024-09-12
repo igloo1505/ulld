@@ -1,5 +1,13 @@
 # @ulld/internal-dev-cli
 
+## 0.0.100
+
+### Patch Changes
+
+- Fix category based search filter issue.
+- Updated dependencies
+  - @ulld/types@0.0.100
+
 ## 0.0.99
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @ulld/fileSystemUtils
 
+## 0.0.4
+
+### Patch Changes
+
+- Fix category based search filter issue.
+
 ## 0.0.3
 
 ### Patch Changes

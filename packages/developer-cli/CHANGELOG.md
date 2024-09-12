@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.106
+
+### Patch Changes
+
+- Fix category based search filter issue.
+- Updated dependencies
+  - @ulld/developer@0.0.106
+  - @ulld/developer-schemas@0.0.100
+  - @ulld/types@0.0.100
+
 ## 0.0.105
 
 ### Patch Changes

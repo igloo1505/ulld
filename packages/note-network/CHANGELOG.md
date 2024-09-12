@@ -1,5 +1,21 @@
 # @ulld/note-network
 
+## 0.0.106
+
+### Patch Changes
+
+- Fix category based search filter issue.
+- Updated dependencies
+  - @ulld/api@0.0.106
+  - @ulld/typescript-config@0.0.100
+  - @ulld/configschema@0.0.106
+  - @ulld/developer@0.0.106
+  - @ulld/jest-presets@0.0.100
+  - @ulld/logger@0.0.100
+  - @ulld/tailwind@0.0.100
+  - @ulld/types@0.0.100
+  - @ulld/utilities@0.0.106
+
 ## 0.0.105
 
 ### Patch Changes
