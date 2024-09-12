@@ -24,22 +24,22 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
         }>, "many">, z.ZodLiteral<"default">]>>;
     }, "strip", z.ZodTypeAny, {
         blockQuoteItalic: boolean;
-        fontPaths: ("default" | {
+        fontPaths: ({
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
             path: string;
-        }[]) & ("default" | {
+        }[] | "default") & ({
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
             path: string;
-        }[] | undefined);
+        }[] | "default" | undefined);
     }, {
         blockQuoteItalic?: boolean | undefined;
-        fontPaths?: "default" | {
+        fontPaths?: {
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
             path: string;
-        }[] | undefined;
+        }[] | "default" | undefined;
     }>>;
     media: z.ZodDefault<z.ZodObject<{
         imageMap: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>>;
@@ -73,27 +73,27 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
     theme: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"blue">, z.ZodLiteral<"gray">, z.ZodLiteral<"green">, z.ZodLiteral<"neutral">, z.ZodLiteral<"orange">, z.ZodLiteral<"red">, z.ZodLiteral<"rose">, z.ZodLiteral<"slate">, z.ZodLiteral<"stone">, z.ZodLiteral<"violet">, z.ZodLiteral<"yellow">, z.ZodLiteral<"zinc">, z.ZodLiteral<"ulld">]>>;
     autoApplyMdxTitles: z.ZodDefault<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
-    text: {
-        blockQuoteItalic: boolean;
-        fontPaths: ("default" | {
-            weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-            style: "bold" | "italic" | "normal";
-            path: string;
-        }[]) & ("default" | {
-            weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-            style: "bold" | "italic" | "normal";
-            path: string;
-        }[] | undefined);
-    };
     table: {
         maxHeight: string;
+    };
+    text: {
+        blockQuoteItalic: boolean;
+        fontPaths: ({
+            weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+            style: "bold" | "italic" | "normal";
+            path: string;
+        }[] | "default") & ({
+            weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+            style: "bold" | "italic" | "normal";
+            path: string;
+        }[] | "default" | undefined);
     };
     media: {
         imageMap: Record<string, string | undefined>;
         includeDefaultImageMap: boolean;
         imageRemoteTest: RegExp[];
     };
-    theme: "neutral" | "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "violet";
+    theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
     colors: Record<string, {
         dark?: string | undefined;
         light?: string | undefined;
@@ -105,11 +105,11 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
     } | undefined;
     text?: {
         blockQuoteItalic?: boolean | undefined;
-        fontPaths?: "default" | {
+        fontPaths?: {
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
             path: string;
-        }[] | undefined;
+        }[] | "default" | undefined;
     } | undefined;
     media?: {
         imageMap?: Record<string, string | undefined> | undefined;
@@ -120,7 +120,7 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
         dark?: string | undefined;
         light?: string | undefined;
     } | null | undefined> | undefined;
-    theme?: "neutral" | "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "violet" | undefined;
+    theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
     autoApplyMdxTitles?: boolean | undefined;
 }>>;
 //# sourceMappingURL=main.d.ts.map
