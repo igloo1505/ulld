@@ -1,5 +1,21 @@
 # @ulld/note-network
 
+## 0.0.107
+
+### Patch Changes
+
+- Fix broken lock file.
+- Updated dependencies
+  - @ulld/api@0.0.107
+  - @ulld/typescript-config@0.0.101
+  - @ulld/configschema@0.0.107
+  - @ulld/developer@0.0.107
+  - @ulld/jest-presets@0.0.101
+  - @ulld/logger@0.0.101
+  - @ulld/tailwind@0.0.101
+  - @ulld/types@0.0.101
+  - @ulld/utilities@0.0.107
+
 ## 0.0.106
 
 ### Patch Changes

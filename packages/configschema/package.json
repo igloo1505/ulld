@@ -1,358 +1,358 @@
 {
-    "name": "@ulld/configschema",
-    "version": "0.0.106",
-    "dependencies": {
-        "@testing-library/cypress": "^10.0.1",
-        "@testing-library/dom": "^9.3.4",
-        "@testing-library/jest-dom": "^6.4.2",
-        "@testing-library/react": "14.2.2",
-        "@testing-library/user-event": "^14.5.2",
-        "chai": "^5.1.0",
-        "cypress": "^13.7.1",
-        "dayjs": "1.11.11",
-        "eslint-plugin-jest-dom": "^5.2.0",
-        "eslint-plugin-testing-library": "^6.2.0",
-        "glob-to-regexp": "0.4.1",
-        "jest": "^29.7.0",
-        "jest-environment-jsdom": "^29.7.0",
-        "mocha": "^10.3.0",
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "react-test-renderer": "18.2.0",
-        "rtl-simple-queries": "^1.0.1",
-        "shiki": "1.1.7",
-        "supertest": "^6.3.4",
-        "supertest-session": "^5.0.1",
-        "ts-jest": "^29.1.2",
-        "tsx": "^4.7.2",
-        "zod": "^3.22.4",
-        "zod-to-json-schema": "^3.22.4"
+  "name": "@ulld/configschema",
+  "version": "0.0.107",
+  "dependencies": {
+    "@testing-library/cypress": "^10.0.1",
+    "@testing-library/dom": "^9.3.4",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "14.2.2",
+    "@testing-library/user-event": "^14.5.2",
+    "chai": "^5.1.0",
+    "cypress": "^13.7.1",
+    "dayjs": "1.11.11",
+    "eslint-plugin-jest-dom": "^5.2.0",
+    "eslint-plugin-testing-library": "^6.2.0",
+    "glob-to-regexp": "0.4.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "mocha": "^10.3.0",
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-test-renderer": "18.2.0",
+    "rtl-simple-queries": "^1.0.1",
+    "shiki": "1.1.7",
+    "supertest": "^6.3.4",
+    "supertest-session": "^5.0.1",
+    "ts-jest": "^29.1.2",
+    "tsx": "^4.7.2",
+    "zod": "^3.22.4",
+    "zod-to-json-schema": "^3.22.4"
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^10.0.1",
+    "@testing-library/dom": "^9.3.4",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.2",
+    "@testing-library/user-event": "^14.5.2",
+    "chai": "^5.1.0",
+    "cypress": "^13.7.1",
+    "dayjs": "1.11.11",
+    "eslint-plugin-jest-dom": "^5.2.0",
+    "eslint-plugin-testing-library": "^6.2.0",
+    "glob-to-regexp": "0.4.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "mocha": "^10.3.0",
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-test-renderer": "^18.2.0",
+    "rtl-simple-queries": "^1.0.1",
+    "shiki": "1.1.7",
+    "supertest": "^6.3.4",
+    "supertest-session": "^5.0.1",
+    "ts-jest": "^29.1.2",
+    "tsx": "^4.7.2",
+    "zod": "^3.22.4",
+    "zod-to-json-schema": "^3.22.4"
+  },
+  "exports": {
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.js",
+      "require": "./dist/types.cjs"
     },
-    "devDependencies": {
-        "@testing-library/cypress": "^10.0.1",
-        "@testing-library/dom": "^9.3.4",
-        "@testing-library/jest-dom": "^6.4.2",
-        "@testing-library/react": "^14.2.2",
-        "@testing-library/user-event": "^14.5.2",
-        "chai": "^5.1.0",
-        "cypress": "^13.7.1",
-        "dayjs": "1.11.11",
-        "eslint-plugin-jest-dom": "^5.2.0",
-        "eslint-plugin-testing-library": "^6.2.0",
-        "glob-to-regexp": "0.4.1",
-        "jest": "^29.7.0",
-        "jest-environment-jsdom": "^29.7.0",
-        "mocha": "^10.3.0",
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "react-test-renderer": "^18.2.0",
-        "rtl-simple-queries": "^1.0.1",
-        "shiki": "1.1.7",
-        "supertest": "^6.3.4",
-        "supertest-session": "^5.0.1",
-        "ts-jest": "^29.1.2",
-        "tsx": "^4.7.2",
-        "zod": "^3.22.4",
-        "zod-to-json-schema": "^3.22.4"
+    "./zod/main": {
+      "types": "./dist/zod/main.d.ts",
+      "import": "./dist/zod/main.js",
+      "require": "./dist/zod/main.cjs"
     },
-    "exports": {
-        "./types": {
-            "types": "./dist/types.d.ts",
-            "import": "./dist/types.js",
-            "require": "./dist/types.cjs"
-        },
-        "./zod/main": {
-            "types": "./dist/zod/main.d.ts",
-            "import": "./dist/zod/main.js",
-            "require": "./dist/zod/main.cjs"
-        },
-        "./appConfigSchema": {
-            "types": "./dist/zod/main.d.ts",
-            "import": "./dist/zod/main.js",
-            "require": "./dist/zod/main.cjs"
-        },
-        "./zod/terminalConfig": {
-            "types": "./dist/zod/terminalConfig.d.ts",
-            "import": "./dist/zod/terminalConfig.js",
-            "require": "./dist/zod/terminalConfig.cjs"
-        },
-        "./zod/customConfigSchemas": {
-            "types": "./dist/zod/customConfigSchemas.d.ts",
-            "import": "./dist/zod/customConfigSchemas.js",
-            "require": "./dist/zod/customConfigSchemas.cjs"
-        },
-        "./zod/dateParseConfig": {
-            "types": "./dist/zod/dateParseConfig.d.ts",
-            "import": "./dist/zod/dateParseConfig.js",
-            "require": "./dist/zod/dateParseConfig.cjs"
-        },
-        "./zod/performanceConfig": {
-            "types": "./dist/zod/performanceConfig.d.ts",
-            "import": "./dist/zod/performanceConfig.js",
-            "require": "./dist/zod/performanceConfig.cjs"
-        },
-        "./zod/codeConfig": {
-            "types": "./dist/zod/codeConfig.d.ts",
-            "import": "./dist/zod/codeConfig.js",
-            "require": "./dist/zod/codeConfig.cjs"
-        },
-        "./zod/configUtilitySchemas": {
-            "types": "./dist/zod/configUtilitySchemas.d.ts",
-            "import": "./dist/zod/configUtilitySchemas.js",
-            "require": "./dist/zod/configUtilitySchemas.cjs"
-        },
-        "./zod/writeConfigJson": {
-            "types": "./dist/zod/writeConfigJson.d.ts",
-            "import": "./dist/zod/writeConfigJson.js",
-            "require": "./dist/zod/writeConfigJson.cjs"
-        },
-        "./zod/applySearchParamOverride": {
-            "types": "./dist/zod/applySearchParamOverride.d.ts",
-            "import": "./dist/zod/applySearchParamOverride.js",
-            "require": "./dist/zod/applySearchParamOverride.cjs"
-        },
-        "./zod/codeEditorConfig": {
-            "types": "./dist/zod/codeEditorConfig.d.ts",
-            "import": "./dist/zod/codeEditorConfig.js",
-            "require": "./dist/zod/codeEditorConfig.cjs"
-        },
-        "./zod/getInternalConfig": {
-            "types": "./dist/zod/getInternalConfig.d.ts",
-            "import": "./dist/zod/getInternalConfig.js",
-            "require": "./dist/zod/getInternalConfig.cjs"
-        },
-        "./zod/internalDocumentTypes": {
-            "types": "./dist/zod/internalDocumentTypes.d.ts",
-            "import": "./dist/zod/internalDocumentTypes.js",
-            "require": "./dist/zod/internalDocumentTypes.cjs"
-        },
-        "./zod/documentConfigSchema": {
-            "types": "./dist/zod/documentConfigSchema.d.ts",
-            "import": "./dist/zod/documentConfigSchema.js",
-            "require": "./dist/zod/documentConfigSchema.cjs"
-        },
-        "./zod/navigationConfig": {
-            "types": "./dist/zod/navigationConfig.d.ts",
-            "import": "./dist/zod/navigationConfig.js",
-            "require": "./dist/zod/navigationConfig.cjs"
-        },
-        "./zod/ui/textConfig": {
-            "types": "./dist/zod/ui/textConfig.d.ts",
-            "import": "./dist/zod/ui/textConfig.js",
-            "require": "./dist/zod/ui/textConfig.cjs"
-        },
-        "./zod/ui/main": {
-            "types": "./dist/zod/ui/main.d.ts",
-            "import": "./dist/zod/ui/main.js",
-            "require": "./dist/zod/ui/main.cjs"
-        },
-        "./zod/ui/tableConfig": {
-            "types": "./dist/zod/ui/tableConfig.d.ts",
-            "import": "./dist/zod/ui/tableConfig.js",
-            "require": "./dist/zod/ui/tableConfig.cjs"
-        },
-        "./zod/ui/mediaConfig": {
-            "types": "./dist/zod/ui/mediaConfig.d.ts",
-            "import": "./dist/zod/ui/mediaConfig.js",
-            "require": "./dist/zod/ui/mediaConfig.cjs"
-        },
-        "./zod/ui/colorsConfig": {
-            "types": "./dist/zod/ui/colorsConfig.d.ts",
-            "import": "./dist/zod/ui/colorsConfig.js",
-            "require": "./dist/zod/ui/colorsConfig.cjs"
-        },
-        "./zod/database/main": {
-            "types": "./dist/zod/database/main.d.ts",
-            "import": "./dist/zod/database/main.js",
-            "require": "./dist/zod/database/main.cjs"
-        },
-        "./zod/plot/main": {
-            "types": "./dist/zod/plot/main.d.ts",
-            "import": "./dist/zod/plot/main.js",
-            "require": "./dist/zod/plot/main.cjs"
-        },
-        "./zod/searchParamOverrides/main": {
-            "types": "./dist/zod/searchParamOverrides/main.d.ts",
-            "import": "./dist/zod/searchParamOverrides/main.js",
-            "require": "./dist/zod/searchParamOverrides/main.cjs"
-        },
-        "./zod/features/main": {
-            "types": "./dist/zod/features/main.d.ts",
-            "import": "./dist/zod/features/main.js",
-            "require": "./dist/zod/features/main.cjs"
-        },
-        "./zod/math/main": {
-            "types": "./dist/zod/math/main.d.ts",
-            "import": "./dist/zod/math/main.js",
-            "require": "./dist/zod/math/main.cjs"
-        },
-        "./zod/secondaryConfigParse/main": {
-            "types": "./dist/zod/secondaryConfigParse/main.d.ts",
-            "import": "./dist/zod/secondaryConfigParse/main.js",
-            "require": "./dist/zod/secondaryConfigParse/main.cjs"
-        },
-        "./slotMapType": {
-            "types": "./dist/developer/slotMapType.d.ts",
-            "import": "./dist/developer/slotMapType.js",
-            "require": "./dist/developer/slotMapType.cjs"
-        },
-        "./slotMapInternalType": {
-            "types": "./dist/developer/slotMapInternalType.d.ts",
-            "import": "./dist/developer/slotMapInternalType.js",
-            "require": "./dist/developer/slotMapInternalType.cjs"
-        },
-        "./zod/secondaryConfigParse/configSecondaryParse": {
-            "types": "./dist/zod/secondaryConfigParse/configSecondaryParse.d.ts",
-            "import": "./dist/zod/secondaryConfigParse/configSecondaryParse.js",
-            "require": "./dist/zod/secondaryConfigParse/configSecondaryParse.cjs"
-        },
-        "./zod/secondaryConfigParse/getParsableExtensions": {
-            "types": "./dist/zod/secondaryConfigParse/getParsableExtensions.d.ts",
-            "import": "./dist/zod/secondaryConfigParse/getParsableExtensions.js",
-            "require": "./dist/zod/secondaryConfigParse/getParsableExtensions.cjs"
-        },
-        "./zod/defaults/general": {
-            "types": "./dist/zod/defaults/general.d.ts",
-            "import": "./dist/zod/defaults/general.js",
-            "require": "./dist/zod/defaults/general.cjs"
-        },
-        "./pluginEventsConfig": {
-            "types": "./dist/developer/types/pluginEventsConfig.d.ts",
-            "import": "./dist/developer/types/pluginEventsConfig.js",
-            "require": "./dist/developer/types/pluginEventsConfig.cjs"
-        },
-        "./zod/transforms/general": {
-            "types": "./dist/zod/transforms/general.d.ts",
-            "import": "./dist/zod/transforms/general.js",
-            "require": "./dist/zod/transforms/general.cjs"
-        },
-        "./zod/jupyter/jupyterNotebook": {
-            "types": "./dist/zod/jupyter/jupyterNotebook.d.ts",
-            "import": "./dist/zod/jupyter/jupyterNotebook.js",
-            "require": "./dist/zod/jupyter/jupyterNotebook.cjs"
-        },
-        "./zod/jupyter/main": {
-            "types": "./dist/zod/jupyter/main.d.ts",
-            "import": "./dist/zod/jupyter/main.js",
-            "require": "./dist/zod/jupyter/main.cjs"
-        },
-        "./zod/jupyter/jupyterReact": {
-            "types": "./dist/zod/jupyter/jupyterReact.d.ts",
-            "import": "./dist/zod/jupyter/jupyterReact.js",
-            "require": "./dist/zod/jupyter/jupyterReact.cjs"
-        },
-        "./zod/jupyter/nbconvert": {
-            "types": "./dist/zod/jupyter/nbconvert.d.ts",
-            "import": "./dist/zod/jupyter/nbconvert.js",
-            "require": "./dist/zod/jupyter/nbconvert.cjs"
-        },
-        "./zod/credentials/main": {
-            "types": "./dist/zod/credentials/main.d.ts",
-            "import": "./dist/zod/credentials/main.js",
-            "require": "./dist/zod/credentials/main.cjs"
-        },
-        "./staticData/defaultImageMap": {
-            "types": "./dist/staticData/defaultImageMap.d.ts",
-            "import": "./dist/staticData/defaultImageMap.js",
-            "require": "./dist/staticData/defaultImageMap.cjs"
-        },
-        "./configUtilityTypes/general": {
-            "types": "./dist/configUtilityTypes/general.d.ts",
-            "import": "./dist/configUtilityTypes/general.js",
-            "require": "./dist/configUtilityTypes/general.cjs"
-        },
-        "./configUtilityTypes/docTypes": {
-            "types": "./dist/configUtilityTypes/docTypes.d.ts",
-            "import": "./dist/configUtilityTypes/docTypes.js",
-            "require": "./dist/configUtilityTypes/docTypes.cjs"
-        },
-        "./evaluateConfig": {
-            "types": "./dist/evaluate/main.d.ts",
-            "import": "./dist/evaluate/main.js",
-            "require": "./dist/evaluate/main.cjs"
-        },
-        "./evaluateConfigTypes": {
-            "types": "./dist/evaluate/types.d.ts",
-            "import": "./dist/evaluate/types.js",
-            "require": "./dist/evaluate/types.cjs"
-        },
-        "./defaultConfigBase": "./dist/defaults/generatedDefaultConfigs/base.json",
-        "./codeThemeSchemas": {
-            "types": "./dist/zod/codeThemeSchemas.d.ts",
-            "import": "./dist/zod/codeThemeSchemas.js",
-            "require": "./dist/zod/codeThemeSchemas.cjs"
-        },
-        "./defaultColorMap": {
-            "types": "./dist/zod/ui/defaultColorMap.d.ts",
-            "import": "./dist/zod/ui/defaultColorMap.js",
-            "require": "./dist/zod/ui/defaultColorMap.cjs"
-        },
-        "./slotsSchema": {
-            "types": "./dist/developer/slotsSchema.d.ts",
-            "import": "./dist/developer/slotsSchema.js",
-            "require": "./dist/developer/slotsSchema.cjs"
-        },
-        "./slotMapRootType": {
-            "types": "./dist/developer/slotMapRootType.d.ts",
-            "import": "./dist/developer/slotMapRootType.js",
-            "require": "./dist/developer/slotMapRootType.cjs"
-        },
-        "./developerComponentSchema": {
-            "types": "./dist/developer/componentSchema.d.ts",
-            "import": "./dist/developer/componentSchema.js",
-            "require": "./dist/developer/componentSchema.cjs"
-        },
-        "./developer": {
-            "types": "./dist/developer/main.d.ts",
-            "import": "./dist/developer/main.js",
-            "require": "./dist/developer/main.cjs"
-        },
-        "./developerTypes": {
-            "types": "./dist/developer/types/main.d.ts",
-            "import": "./dist/developer/types/main.js",
-            "require": "./dist/developer/types/main.cjs"
-        },
-        "./buildTypes": {
-            "types": "./dist/buildStaticData/types.d.ts",
-            "import": "./dist/buildStaticData/types.js",
-            "require": "./dist/buildStaticData/types.cjs"
-        },
-        "./baseAppSlot": {
-            "types": "./dist/baseApp/slot.d.ts",
-            "import": "./dist/baseApp/slot.js",
-            "require": "./dist/baseApp/slot.cjs"
-        }
+    "./appConfigSchema": {
+      "types": "./dist/zod/main.d.ts",
+      "import": "./dist/zod/main.js",
+      "require": "./dist/zod/main.cjs"
     },
-    "files": [
-        "dist"
-    ],
-    "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {
-        "@ulld/base-configs": "workspace:*",
-        "@ulld/developer-schemas": "workspace:*",
-        "@ulld/icons": "workspace:*",
-        "@ulld/tailwind": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:^",
-        "@ulld/utilities": "workspace:*"
+    "./zod/terminalConfig": {
+      "types": "./dist/zod/terminalConfig.d.ts",
+      "import": "./dist/zod/terminalConfig.js",
+      "require": "./dist/zod/terminalConfig.cjs"
     },
-    "private": false,
-    "publishConfig": {
-        "access": "public"
+    "./zod/customConfigSchemas": {
+      "types": "./dist/zod/customConfigSchemas.d.ts",
+      "import": "./dist/zod/customConfigSchemas.js",
+      "require": "./dist/zod/customConfigSchemas.cjs"
     },
-    "scripts": {
-        "build": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && tsup-node",
-        "buildLocal": "tsx ./src/__scripts__/updateShikiThemes.ts && tsx ./src/defaults/generateDefaultConfig.ts && tsx src/__scripts__/generateSlotMap.ts",
-        "dev": "echo 'Add dev script here'",
-        "gatherTypes": "tsc --project ./tsconfigTypes.json --emitDeclarationOnly",
-        "generateDefaultConfig": "tsx src/__scripts__/generateDefaultConfig.ts",
-        "generateSlotMap": "tsx src/__scripts__/generateSlotMap.ts",
-        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-        "test": "echo 'Add test script here'",
-        "updateJsonSchemas": "tsx src/__scripts__/updateJsonSchema.ts"
+    "./zod/dateParseConfig": {
+      "types": "./dist/zod/dateParseConfig.d.ts",
+      "import": "./dist/zod/dateParseConfig.js",
+      "require": "./dist/zod/dateParseConfig.cjs"
     },
-    "type": "module",
-    "types": "dist"
+    "./zod/performanceConfig": {
+      "types": "./dist/zod/performanceConfig.d.ts",
+      "import": "./dist/zod/performanceConfig.js",
+      "require": "./dist/zod/performanceConfig.cjs"
+    },
+    "./zod/codeConfig": {
+      "types": "./dist/zod/codeConfig.d.ts",
+      "import": "./dist/zod/codeConfig.js",
+      "require": "./dist/zod/codeConfig.cjs"
+    },
+    "./zod/configUtilitySchemas": {
+      "types": "./dist/zod/configUtilitySchemas.d.ts",
+      "import": "./dist/zod/configUtilitySchemas.js",
+      "require": "./dist/zod/configUtilitySchemas.cjs"
+    },
+    "./zod/writeConfigJson": {
+      "types": "./dist/zod/writeConfigJson.d.ts",
+      "import": "./dist/zod/writeConfigJson.js",
+      "require": "./dist/zod/writeConfigJson.cjs"
+    },
+    "./zod/applySearchParamOverride": {
+      "types": "./dist/zod/applySearchParamOverride.d.ts",
+      "import": "./dist/zod/applySearchParamOverride.js",
+      "require": "./dist/zod/applySearchParamOverride.cjs"
+    },
+    "./zod/codeEditorConfig": {
+      "types": "./dist/zod/codeEditorConfig.d.ts",
+      "import": "./dist/zod/codeEditorConfig.js",
+      "require": "./dist/zod/codeEditorConfig.cjs"
+    },
+    "./zod/getInternalConfig": {
+      "types": "./dist/zod/getInternalConfig.d.ts",
+      "import": "./dist/zod/getInternalConfig.js",
+      "require": "./dist/zod/getInternalConfig.cjs"
+    },
+    "./zod/internalDocumentTypes": {
+      "types": "./dist/zod/internalDocumentTypes.d.ts",
+      "import": "./dist/zod/internalDocumentTypes.js",
+      "require": "./dist/zod/internalDocumentTypes.cjs"
+    },
+    "./zod/documentConfigSchema": {
+      "types": "./dist/zod/documentConfigSchema.d.ts",
+      "import": "./dist/zod/documentConfigSchema.js",
+      "require": "./dist/zod/documentConfigSchema.cjs"
+    },
+    "./zod/navigationConfig": {
+      "types": "./dist/zod/navigationConfig.d.ts",
+      "import": "./dist/zod/navigationConfig.js",
+      "require": "./dist/zod/navigationConfig.cjs"
+    },
+    "./zod/ui/textConfig": {
+      "types": "./dist/zod/ui/textConfig.d.ts",
+      "import": "./dist/zod/ui/textConfig.js",
+      "require": "./dist/zod/ui/textConfig.cjs"
+    },
+    "./zod/ui/main": {
+      "types": "./dist/zod/ui/main.d.ts",
+      "import": "./dist/zod/ui/main.js",
+      "require": "./dist/zod/ui/main.cjs"
+    },
+    "./zod/ui/tableConfig": {
+      "types": "./dist/zod/ui/tableConfig.d.ts",
+      "import": "./dist/zod/ui/tableConfig.js",
+      "require": "./dist/zod/ui/tableConfig.cjs"
+    },
+    "./zod/ui/mediaConfig": {
+      "types": "./dist/zod/ui/mediaConfig.d.ts",
+      "import": "./dist/zod/ui/mediaConfig.js",
+      "require": "./dist/zod/ui/mediaConfig.cjs"
+    },
+    "./zod/ui/colorsConfig": {
+      "types": "./dist/zod/ui/colorsConfig.d.ts",
+      "import": "./dist/zod/ui/colorsConfig.js",
+      "require": "./dist/zod/ui/colorsConfig.cjs"
+    },
+    "./zod/database/main": {
+      "types": "./dist/zod/database/main.d.ts",
+      "import": "./dist/zod/database/main.js",
+      "require": "./dist/zod/database/main.cjs"
+    },
+    "./zod/plot/main": {
+      "types": "./dist/zod/plot/main.d.ts",
+      "import": "./dist/zod/plot/main.js",
+      "require": "./dist/zod/plot/main.cjs"
+    },
+    "./zod/searchParamOverrides/main": {
+      "types": "./dist/zod/searchParamOverrides/main.d.ts",
+      "import": "./dist/zod/searchParamOverrides/main.js",
+      "require": "./dist/zod/searchParamOverrides/main.cjs"
+    },
+    "./zod/features/main": {
+      "types": "./dist/zod/features/main.d.ts",
+      "import": "./dist/zod/features/main.js",
+      "require": "./dist/zod/features/main.cjs"
+    },
+    "./zod/math/main": {
+      "types": "./dist/zod/math/main.d.ts",
+      "import": "./dist/zod/math/main.js",
+      "require": "./dist/zod/math/main.cjs"
+    },
+    "./zod/secondaryConfigParse/main": {
+      "types": "./dist/zod/secondaryConfigParse/main.d.ts",
+      "import": "./dist/zod/secondaryConfigParse/main.js",
+      "require": "./dist/zod/secondaryConfigParse/main.cjs"
+    },
+    "./slotMapType": {
+      "types": "./dist/developer/slotMapType.d.ts",
+      "import": "./dist/developer/slotMapType.js",
+      "require": "./dist/developer/slotMapType.cjs"
+    },
+    "./slotMapInternalType": {
+      "types": "./dist/developer/slotMapInternalType.d.ts",
+      "import": "./dist/developer/slotMapInternalType.js",
+      "require": "./dist/developer/slotMapInternalType.cjs"
+    },
+    "./zod/secondaryConfigParse/configSecondaryParse": {
+      "types": "./dist/zod/secondaryConfigParse/configSecondaryParse.d.ts",
+      "import": "./dist/zod/secondaryConfigParse/configSecondaryParse.js",
+      "require": "./dist/zod/secondaryConfigParse/configSecondaryParse.cjs"
+    },
+    "./zod/secondaryConfigParse/getParsableExtensions": {
+      "types": "./dist/zod/secondaryConfigParse/getParsableExtensions.d.ts",
+      "import": "./dist/zod/secondaryConfigParse/getParsableExtensions.js",
+      "require": "./dist/zod/secondaryConfigParse/getParsableExtensions.cjs"
+    },
+    "./zod/defaults/general": {
+      "types": "./dist/zod/defaults/general.d.ts",
+      "import": "./dist/zod/defaults/general.js",
+      "require": "./dist/zod/defaults/general.cjs"
+    },
+    "./pluginEventsConfig": {
+      "types": "./dist/developer/types/pluginEventsConfig.d.ts",
+      "import": "./dist/developer/types/pluginEventsConfig.js",
+      "require": "./dist/developer/types/pluginEventsConfig.cjs"
+    },
+    "./zod/transforms/general": {
+      "types": "./dist/zod/transforms/general.d.ts",
+      "import": "./dist/zod/transforms/general.js",
+      "require": "./dist/zod/transforms/general.cjs"
+    },
+    "./zod/jupyter/jupyterNotebook": {
+      "types": "./dist/zod/jupyter/jupyterNotebook.d.ts",
+      "import": "./dist/zod/jupyter/jupyterNotebook.js",
+      "require": "./dist/zod/jupyter/jupyterNotebook.cjs"
+    },
+    "./zod/jupyter/main": {
+      "types": "./dist/zod/jupyter/main.d.ts",
+      "import": "./dist/zod/jupyter/main.js",
+      "require": "./dist/zod/jupyter/main.cjs"
+    },
+    "./zod/jupyter/jupyterReact": {
+      "types": "./dist/zod/jupyter/jupyterReact.d.ts",
+      "import": "./dist/zod/jupyter/jupyterReact.js",
+      "require": "./dist/zod/jupyter/jupyterReact.cjs"
+    },
+    "./zod/jupyter/nbconvert": {
+      "types": "./dist/zod/jupyter/nbconvert.d.ts",
+      "import": "./dist/zod/jupyter/nbconvert.js",
+      "require": "./dist/zod/jupyter/nbconvert.cjs"
+    },
+    "./zod/credentials/main": {
+      "types": "./dist/zod/credentials/main.d.ts",
+      "import": "./dist/zod/credentials/main.js",
+      "require": "./dist/zod/credentials/main.cjs"
+    },
+    "./staticData/defaultImageMap": {
+      "types": "./dist/staticData/defaultImageMap.d.ts",
+      "import": "./dist/staticData/defaultImageMap.js",
+      "require": "./dist/staticData/defaultImageMap.cjs"
+    },
+    "./configUtilityTypes/general": {
+      "types": "./dist/configUtilityTypes/general.d.ts",
+      "import": "./dist/configUtilityTypes/general.js",
+      "require": "./dist/configUtilityTypes/general.cjs"
+    },
+    "./configUtilityTypes/docTypes": {
+      "types": "./dist/configUtilityTypes/docTypes.d.ts",
+      "import": "./dist/configUtilityTypes/docTypes.js",
+      "require": "./dist/configUtilityTypes/docTypes.cjs"
+    },
+    "./evaluateConfig": {
+      "types": "./dist/evaluate/main.d.ts",
+      "import": "./dist/evaluate/main.js",
+      "require": "./dist/evaluate/main.cjs"
+    },
+    "./evaluateConfigTypes": {
+      "types": "./dist/evaluate/types.d.ts",
+      "import": "./dist/evaluate/types.js",
+      "require": "./dist/evaluate/types.cjs"
+    },
+    "./defaultConfigBase": "./dist/defaults/generatedDefaultConfigs/base.json",
+    "./codeThemeSchemas": {
+      "types": "./dist/zod/codeThemeSchemas.d.ts",
+      "import": "./dist/zod/codeThemeSchemas.js",
+      "require": "./dist/zod/codeThemeSchemas.cjs"
+    },
+    "./defaultColorMap": {
+      "types": "./dist/zod/ui/defaultColorMap.d.ts",
+      "import": "./dist/zod/ui/defaultColorMap.js",
+      "require": "./dist/zod/ui/defaultColorMap.cjs"
+    },
+    "./slotsSchema": {
+      "types": "./dist/developer/slotsSchema.d.ts",
+      "import": "./dist/developer/slotsSchema.js",
+      "require": "./dist/developer/slotsSchema.cjs"
+    },
+    "./slotMapRootType": {
+      "types": "./dist/developer/slotMapRootType.d.ts",
+      "import": "./dist/developer/slotMapRootType.js",
+      "require": "./dist/developer/slotMapRootType.cjs"
+    },
+    "./developerComponentSchema": {
+      "types": "./dist/developer/componentSchema.d.ts",
+      "import": "./dist/developer/componentSchema.js",
+      "require": "./dist/developer/componentSchema.cjs"
+    },
+    "./developer": {
+      "types": "./dist/developer/main.d.ts",
+      "import": "./dist/developer/main.js",
+      "require": "./dist/developer/main.cjs"
+    },
+    "./developerTypes": {
+      "types": "./dist/developer/types/main.d.ts",
+      "import": "./dist/developer/types/main.js",
+      "require": "./dist/developer/types/main.cjs"
+    },
+    "./buildTypes": {
+      "types": "./dist/buildStaticData/types.d.ts",
+      "import": "./dist/buildStaticData/types.js",
+      "require": "./dist/buildStaticData/types.cjs"
+    },
+    "./baseAppSlot": {
+      "types": "./dist/baseApp/slot.d.ts",
+      "import": "./dist/baseApp/slot.js",
+      "require": "./dist/baseApp/slot.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "packageManager": "pnpm@9.0.4",
+  "peerDependencies": {
+    "@ulld/base-configs": "workspace:*",
+    "@ulld/developer-schemas": "workspace:*",
+    "@ulld/icons": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
+    "@ulld/types": "workspace:*",
+    "@ulld/typescript-config": "workspace:^",
+    "@ulld/utilities": "workspace:*"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && tsup-node",
+    "buildLocal": "tsx ./src/__scripts__/updateShikiThemes.ts && tsx ./src/defaults/generateDefaultConfig.ts && tsx src/__scripts__/generateSlotMap.ts",
+    "dev": "echo 'Add dev script here'",
+    "gatherTypes": "tsc --project ./tsconfigTypes.json --emitDeclarationOnly",
+    "generateDefaultConfig": "tsx src/__scripts__/generateDefaultConfig.ts",
+    "generateSlotMap": "tsx src/__scripts__/generateSlotMap.ts",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "echo 'Add test script here'",
+    "updateJsonSchemas": "tsx src/__scripts__/updateJsonSchema.ts"
+  },
+  "type": "module",
+  "types": "dist"
 }

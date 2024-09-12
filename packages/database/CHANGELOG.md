@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.104
+
+### Patch Changes
+
+- Fix broken lock file.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.101
+  - @ulld/types@0.0.101
+
 ## 0.0.103
 
 ### Patch Changes

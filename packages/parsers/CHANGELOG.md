@@ -1,5 +1,19 @@
 # @ulld/parsers
 
+## 0.0.107
+
+### Patch Changes
+
+- Fix broken lock file.
+- Updated dependencies
+  - @ulld/component-map@0.0.107
+  - @ulld/typescript-config@0.0.101
+  - @ulld/configschema@0.0.107
+  - @ulld/database@0.0.104
+  - @ulld/developer@0.0.107
+  - @ulld/types@0.0.101
+  - @ulld/utilities@0.0.107
+
 ## 0.0.106
 
 ### Patch Changes

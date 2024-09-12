@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.106
+
+### Patch Changes
+
+- Fix broken lock file.
+- Updated dependencies
+  - @ulld/configschema@0.0.107
+  - @ulld/developer-schemas@0.0.101
+  - @ulld/types@0.0.101
+  - @ulld/utilities@0.0.107
+
 ## 0.0.105
 
 ### Patch Changes

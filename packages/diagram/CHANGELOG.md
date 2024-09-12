@@ -1,5 +1,18 @@
 # @ulld/diagram
 
+## 0.0.107
+
+### Patch Changes
+
+- Fix broken lock file.
+- Updated dependencies
+  - @ulld/api@0.0.107
+  - @ulld/typescript-config@0.0.101
+  - @ulld/developer@0.0.107
+  - @ulld/state@0.0.107
+  - @ulld/tailwind@0.0.101
+  - @ulld/types@0.0.101
+
 ## 0.0.106
 
 ### Patch Changes

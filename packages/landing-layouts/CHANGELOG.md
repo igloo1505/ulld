@@ -1,5 +1,29 @@
 # @ulld/landing-layouts
 
+## 0.0.107
+
+### Patch Changes
+
+- Fix broken lock file.
+- Updated dependencies
+  - @ulld/api@0.0.107
+  - @ulld/bib-manager@0.0.107
+  - @ulld/calendar@0.0.107
+  - @ulld/eslint-config@0.0.103
+  - @ulld/typescript-config@0.0.101
+  - @ulld/configschema@0.0.107
+  - @ulld/developer@0.0.107
+  - @ulld/hooks@0.0.107
+  - @ulld/icons@0.0.107
+  - @ulld/journal@0.0.107
+  - @ulld/plot@0.0.107
+  - @ulld/state@0.0.107
+  - @ulld/tailwind@0.0.101
+  - @ulld/types@0.0.101
+  - @ulld/ui@0.0.105
+  - @ulld/utilities@0.0.107
+  - @ulld/whiteboard@0.0.107
+
 ## 0.0.106
 
 ### Patch Changes

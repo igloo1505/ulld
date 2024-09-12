@@ -1,5 +1,17 @@
 # @ulld/icons
 
+## 0.0.107
+
+### Patch Changes
+
+- Fix broken lock file.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.101
+  - @ulld/hooks@0.0.107
+  - @ulld/tailwind@0.0.101
+  - @ulld/types@0.0.101
+  - @ulld/utilities@0.0.107
+
 ## 0.0.106
 
 ### Patch Changes

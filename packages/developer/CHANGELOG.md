@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.107
+
+### Patch Changes
+
+- Fix broken lock file.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.103
+  - @ulld/typescript-config@0.0.101
+  - @ulld/configschema@0.0.107
+  - @ulld/database@0.0.104
+  - @ulld/logger@0.0.101
+  - @ulld/types@0.0.101
+
 ## 0.0.106
 
 ### Patch Changes

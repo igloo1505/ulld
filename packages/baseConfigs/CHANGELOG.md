@@ -1,5 +1,13 @@
 # @ulld/baseConfigs
 
+## 0.0.101
+
+### Patch Changes
+
+- Fix broken lock file.
+- Updated dependencies
+  - @ulld/types@0.0.101
+
 ## 0.0.100
 
 ### Patch Changes
