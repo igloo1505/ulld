@@ -1,5 +1,25 @@
 # @ulld/embeddable-components
 
+## 0.0.110
+
+### Patch Changes
+
+- Fix broken internal dependency names.
+- Updated dependencies
+  - @ulld/api@0.0.110
+  - @ulld/component-configs@0.0.110
+  - @ulld/typescript-config@0.0.104
+  - @ulld/configschema@0.0.110
+  - @ulld/default-image-map@0.0.110
+  - @ulld/developer@0.0.110
+  - @ulld/hooks@0.0.110
+  - @ulld/icons@0.0.110
+  - @ulld/render@0.0.110
+  - @ulld/state@0.0.110
+  - @ulld/tailwind@0.0.104
+  - @ulld/types@0.0.104
+  - @ulld/utilities@0.0.110
+
 ## 0.0.109
 
 ### Patch Changes

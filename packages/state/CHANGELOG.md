@@ -1,5 +1,22 @@
 # @ulld/state
 
+## 0.0.110
+
+### Patch Changes
+
+- Fix broken internal dependency names.
+- Updated dependencies
+  - @ulld/base-configs@0.0.104
+  - @ulld/typescript-config@0.0.104
+  - @ulld/configschema@0.0.110
+  - @ulld/database@0.0.107
+  - @ulld/developer@0.0.110
+  - @ulld/hooks@0.0.110
+  - @ulld/parsers@0.0.110
+  - @ulld/tailwind@0.0.104
+  - @ulld/types@0.0.104
+  - @ulld/utilities@0.0.110
+
 ## 0.0.109
 
 ### Patch Changes

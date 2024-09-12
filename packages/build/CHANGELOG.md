@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.109
+
+### Patch Changes
+
+- Fix broken internal dependency names.
+- Updated dependencies
+  - @ulld/configschema@0.0.110
+  - @ulld/developer-schemas@0.0.104
+  - @ulld/types@0.0.104
+  - @ulld/utilities@0.0.110
+
 ## 0.0.108
 
 ### Patch Changes

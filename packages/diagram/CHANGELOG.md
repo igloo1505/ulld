@@ -1,5 +1,18 @@
 # @ulld/diagram
 
+## 0.0.110
+
+### Patch Changes
+
+- Fix broken internal dependency names.
+- Updated dependencies
+  - @ulld/api@0.0.110
+  - @ulld/typescript-config@0.0.104
+  - @ulld/developer@0.0.110
+  - @ulld/state@0.0.110
+  - @ulld/tailwind@0.0.104
+  - @ulld/types@0.0.104
+
 ## 0.0.109
 
 ### Patch Changes

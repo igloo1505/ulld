@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.106
+
+### Patch Changes
+
+- Fix broken internal dependency names.
+
 ## 0.0.105
 
 ### Patch Changes

@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.110
+
+### Patch Changes
+
+- Fix broken internal dependency names.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.110
+  - @ulld/calendar@0.0.110
+  - @ulld/typescript-config@0.0.104
+  - @ulld/default-image-map@0.0.110
+  - @ulld/diagram@0.0.110
+  - @ulld/editor@0.0.110
+  - @ulld/embeddable-components@0.0.110
+  - @ulld/equations@0.0.110
+  - @ulld/full-form@0.0.110
+  - @ulld/journal@0.0.110
+  - @ulld/navigation@0.0.110
+  - @ulld/notebook@0.0.110
+  - @ulld/pdf@0.0.110
+  - @ulld/plot@0.0.110
+  - @ulld/snippets@0.0.110
+  - @ulld/tailwind@0.0.104
+  - @ulld/task-manager@0.0.110
+  - @ulld/types@0.0.104
+  - @ulld/whiteboard@0.0.110
+
 ## 0.0.109
 
 ### Patch Changes

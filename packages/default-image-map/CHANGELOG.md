@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.110
+
+### Patch Changes
+
+- Fix broken internal dependency names.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.106
+  - @ulld/typescript-config@0.0.104
+  - @ulld/configschema@0.0.110
+  - @ulld/logger@0.0.104
+  - @ulld/tailwind@0.0.104
+  - @ulld/types@0.0.104
+  - @ulld/utilities@0.0.110
+
 ## 0.0.109
 
 ### Patch Changes

@@ -1,5 +1,36 @@
 # @ulld/command-palette
 
+## 0.0.110
+
+### Patch Changes
+
+- Fix broken internal dependency names.
+- Updated dependencies
+  - @ulld/api@0.0.110
+  - @ulld/bib-manager@0.0.110
+  - @ulld/calendar@0.0.110
+  - @ulld/eslint-config@0.0.106
+  - @ulld/typescript-config@0.0.104
+  - @ulld/configschema@0.0.110
+  - @ulld/database@0.0.107
+  - @ulld/developer@0.0.110
+  - @ulld/diagram@0.0.110
+  - @ulld/editor@0.0.110
+  - @ulld/equations@0.0.110
+  - @ulld/hooks@0.0.110
+  - @ulld/jest-presets@0.0.104
+  - @ulld/logger@0.0.104
+  - @ulld/parsers@0.0.110
+  - @ulld/render@0.0.110
+  - @ulld/snippets@0.0.110
+  - @ulld/state@0.0.110
+  - @ulld/tailwind@0.0.104
+  - @ulld/task-manager@0.0.110
+  - @ulld/types@0.0.104
+  - @ulld/ui@0.0.108
+  - @ulld/utilities@0.0.110
+  - @ulld/whiteboard@0.0.110
+
 ## 0.0.109
 
 ### Patch Changes

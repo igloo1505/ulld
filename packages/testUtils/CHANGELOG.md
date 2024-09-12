@@ -1,5 +1,13 @@
 # @ulld/testUtils
 
+## 0.0.8
+
+### Patch Changes
+
+- Fix broken internal dependency names.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.104
+
 ## 0.0.7
 
 ### Patch Changes

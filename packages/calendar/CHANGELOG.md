@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.110
+
+### Patch Changes
+
+- Fix broken internal dependency names.
+- Updated dependencies
+  - @ulld/developer@0.0.110
+  - @ulld/types@0.0.104
+
 ## 0.0.109
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ulld/tailwind
 
+## 0.0.104
+
+### Patch Changes
+
+- Fix broken internal dependency names.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.104
+  - @ulld/types@0.0.104
+
 ## 0.0.103
 
 ### Patch Changes
