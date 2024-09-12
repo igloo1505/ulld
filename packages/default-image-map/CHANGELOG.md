@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.109
+
+### Patch Changes
+
+- Nowwww finally fixed lock file.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.105
+  - @ulld/typescript-config@0.0.103
+  - @ulld/configschema@0.0.109
+  - @ulld/logger@0.0.103
+  - @ulld/tailwind@0.0.103
+  - @ulld/types@0.0.103
+  - @ulld/utilities@0.0.109
+
 ## 0.0.108
 
 ### Patch Changes

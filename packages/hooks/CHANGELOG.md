@@ -1,5 +1,20 @@
 # @ulld/hooks
 
+## 0.0.109
+
+### Patch Changes
+
+- Nowwww finally fixed lock file.
+- Updated dependencies
+  - @ulld/api@0.0.109
+  - @ulld/component-map@0.0.109
+  - @ulld/typescript-config@0.0.103
+  - @ulld/configschema@0.0.109
+  - @ulld/database@0.0.106
+  - @ulld/parsers@0.0.109
+  - @ulld/types@0.0.103
+  - @ulld/utilities@0.0.109
+
 ## 0.0.108
 
 ### Patch Changes

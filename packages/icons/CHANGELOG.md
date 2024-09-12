@@ -1,5 +1,17 @@
 # @ulld/icons
 
+## 0.0.109
+
+### Patch Changes
+
+- Nowwww finally fixed lock file.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.103
+  - @ulld/hooks@0.0.109
+  - @ulld/tailwind@0.0.103
+  - @ulld/types@0.0.103
+  - @ulld/utilities@0.0.109
+
 ## 0.0.108
 
 ### Patch Changes

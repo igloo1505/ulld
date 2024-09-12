@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.105
+
+### Patch Changes
+
+- Nowwww finally fixed lock file.
+
 ## 0.0.104
 
 ### Patch Changes

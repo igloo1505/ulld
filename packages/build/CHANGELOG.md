@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.108
+
+### Patch Changes
+
+- Nowwww finally fixed lock file.
+- Updated dependencies
+  - @ulld/configschema@0.0.109
+  - @ulld/developer-schemas@0.0.103
+  - @ulld/types@0.0.103
+  - @ulld/utilities@0.0.109
+
 ## 0.0.107
 
 ### Patch Changes

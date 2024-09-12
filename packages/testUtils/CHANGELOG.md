@@ -1,5 +1,13 @@
 # @ulld/testUtils
 
+## 0.0.7
+
+### Patch Changes
+
+- Nowwww finally fixed lock file.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.103
+
 ## 0.0.6
 
 ### Patch Changes

@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.109
+
+### Patch Changes
+
+- Nowwww finally fixed lock file.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.109
+  - @ulld/calendar@0.0.109
+  - @ulld/typescript-config@0.0.103
+  - @ulld/default-image-map@0.0.109
+  - @ulld/diagram@0.0.109
+  - @ulld/editor@0.0.109
+  - @ulld/embeddable-components@0.0.109
+  - @ulld/equations@0.0.109
+  - @ulld/full-form@0.0.109
+  - @ulld/journal@0.0.109
+  - @ulld/navigation@0.0.109
+  - @ulld/notebook@0.0.109
+  - @ulld/pdf@0.0.109
+  - @ulld/plot@0.0.109
+  - @ulld/snippets@0.0.109
+  - @ulld/tailwind@0.0.103
+  - @ulld/task-manager@0.0.109
+  - @ulld/types@0.0.103
+  - @ulld/whiteboard@0.0.109
+
 ## 0.0.108
 
 ### Patch Changes

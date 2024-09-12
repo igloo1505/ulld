@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.106
+
+### Patch Changes
+
+- Nowwww finally fixed lock file.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.103
+  - @ulld/types@0.0.103
+
 ## 0.0.105
 
 ### Patch Changes
