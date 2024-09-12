@@ -1,4 +1,3 @@
-import { Options } from "tsup";
-declare const _default: Options | Options[] | ((overrideOptions: Options) => Options | Options[] | Promise<Options | Options[]>);
+declare const _default: import("tsup").Options | import("tsup").Options[] | ((overrideOptions: import("tsup").Options) => import("tsup").Options | import("tsup").Options[] | Promise<import("tsup").Options | import("tsup").Options[]>);
 export default _default;
 //# sourceMappingURL=tsup.config.d.ts.map

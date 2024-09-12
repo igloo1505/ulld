@@ -1,5 +1,5 @@
 import path from "path";
-import { defineConfig, Options, NormalizedOptions } from "tsup";
+import { defineConfig } from "tsup";
 import { globSync } from "glob";
 import { copyJsonFilesToDist } from "@ulld/utilities/copyJsonFilesToDist";
 
