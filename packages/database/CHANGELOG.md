@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.101
+
+### Patch Changes
+
+- Update search results UI and hopefully resolved category filter results.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.98
+  - @ulld/types@0.0.98
+
 ## 0.0.100
 
 ### Patch Changes

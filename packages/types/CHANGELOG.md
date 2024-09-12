@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.98
+
+### Patch Changes
+
+- Update search results UI and hopefully resolved category filter results.
+
 ## 0.0.97
 
 ### Patch Changes

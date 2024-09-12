@@ -1,5 +1,17 @@
 # @ulld/icons
 
+## 0.0.104
+
+### Patch Changes
+
+- Update search results UI and hopefully resolved category filter results.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.98
+  - @ulld/hooks@0.0.104
+  - @ulld/tailwind@0.0.98
+  - @ulld/types@0.0.98
+  - @ulld/utilities@0.0.104
+
 ## 0.0.103
 
 ### Patch Changes

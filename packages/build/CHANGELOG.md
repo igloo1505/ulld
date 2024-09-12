@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.103
+
+### Patch Changes
+
+- Update search results UI and hopefully resolved category filter results.
+- Updated dependencies
+  - @ulld/configschema@0.0.104
+  - @ulld/developer-schemas@0.0.98
+  - @ulld/types@0.0.98
+  - @ulld/utilities@0.0.104
+
 ## 0.0.102
 
 ### Patch Changes

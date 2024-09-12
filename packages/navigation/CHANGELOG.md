@@ -1,5 +1,27 @@
 # @ulld/navigation
 
+## 0.0.104
+
+### Patch Changes
+
+- Update search results UI and hopefully resolved category filter results.
+- Updated dependencies
+  - @ulld/api@0.0.104
+  - @ulld/eslint-config@0.0.100
+  - @ulld/typescript-config@0.0.98
+  - @ulld/configschema@0.0.104
+  - @ulld/developer@0.0.104
+  - @ulld/developer-schemas@0.0.98
+  - @ulld/full-form@0.0.104
+  - @ulld/hooks@0.0.104
+  - @ulld/icons@0.0.104
+  - @ulld/jest-presets@0.0.98
+  - @ulld/render@0.0.104
+  - @ulld/state@0.0.104
+  - @ulld/tailwind@0.0.98
+  - @ulld/types@0.0.98
+  - @ulld/utilities@0.0.104
+
 ## 0.0.103
 
 ### Patch Changes
