@@ -100,19 +100,15 @@ export class ShellManager {
         pkgManager: PackageManagers,
         script: string,
         cwd?: string,
-        logger?: ExecLogger,
-        asProduction: boolean = false
+        logger?: ExecLogger
     ) {
-        let c = `${packageManagerExecution[pkgManager]} ${script}`
-        return this.execAsync(asProduction ? `NODE_ENV=production ${c}` : c, cwd, logger);
+        return this.execAsync(`${packageManagerExecution[pkgManager]} ${script}`, cwd, logger);
     }
     execPackageJsonScript(
         pkgManager: PackageManagers,
         script: string,
         cwd?: string,
-        asProduction?: boolean
     ) {
-        let c = `${packageManagerExecution[pkgManager]} ${script}`
-        return this.exec(asProduction ? `NODE_ENV=production ${c}` : c, cwd );
+        return this.exec(`${packageManagerExecution[pkgManager]} ${script}`, cwd);
     }
 }
