@@ -43,7 +43,7 @@ const pluginItemSchema = z.object({
     parserIndex: z.number().min(0).default(50),
 });
 
-export const zodRegexFieldTransform = (b: z.input<typeof zodRegexField>) => {
+export const zodRegexFieldTransform = (b: z.input<typeof zodRegexField> = []) => {
     return b.map((a) => {
         if (typeof a === "string") {
             return {
@@ -77,8 +77,7 @@ export const appConfigSchema = z.object({
             "File paths within the root directory which should be completely ignored by ULLD.",
         )
         .default(defaultIgnoreFilePaths)
-        .transform(zodRegexFieldTransform)
-        .default([]),
+        .transform(zodRegexFieldTransform),
     tempDir: z
         .string()
         .default("__temp__")
@@ -200,15 +199,6 @@ export const appConfigSchema = z.object({
             z.string(),
             z.string().array(),
         ])
-        .transform((a) => {
-            let items = Array.isArray(a) ? a : [a];
-            let names: string[] = [];
-            let newItems = items.map((s) => {
-                names.push(typeof s === "string" ? s : s.name);
-                return typeof s === "string" ? { name: s, version: "latest" } : s;
-            });
-            return newItems;
-        })
         .default([
             {
                 name: "@ulld/api",
@@ -220,7 +210,16 @@ export const appConfigSchema = z.object({
                 parserIndex: 0,
                 version: staticBuildData.currentPackageVersions["@ulld/plot"],
             },
-        ]),
+        ])
+        .transform((a = []) => {
+            let items = Array.isArray(a) ? a : [a]
+            let names: string[] = [];
+            let newItems = items.map((s) => {
+                names.push(typeof s === "string" ? s : s.name);
+                return typeof s === "string" ? { name: s, version: "latest" } : s;
+            });
+            return newItems;
+        })
 });
 
 export const appConfigSchemaTransform = (

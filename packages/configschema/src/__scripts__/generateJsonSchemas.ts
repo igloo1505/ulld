@@ -32,3 +32,9 @@ for (const f of items) {
     fs.writeFileSync(path.join(import.meta.dirname, `../jsonSchemas/${f.file}`), JSON.stringify(f.schema, null, 2))
     fs.writeFileSync(path.join(import.meta.dirname, `../../../build/src/configJsonSchemas/${f.file}`), JSON.stringify(f.schema, null, 2))
 }
+
+console.log(`Successfully wrote json schemas to: 
+
+${items.map((i) => `- ${i.file}`).join("\n")}
+
+`)

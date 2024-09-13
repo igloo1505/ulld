@@ -38,7 +38,15 @@
             ]
           },
           "description": "File paths within the root directory which should be completely ignored by ULLD.",
-          "default": []
+          "default": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
         },
         "tempDir": {
           "type": "string",
@@ -3591,6 +3599,13 @@
                 "bundledIPyWidgets": [],
                 "externalIPyWidgets": []
               }
+            },
+            "cellInputWrappers": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "default": {}
             }
           },
           "additionalProperties": false,
@@ -4038,12 +4053,12 @@
             {
               "name": "@ulld/api",
               "parserIndex": 0,
-              "version": "0.0.100"
+              "version": "0.0.103"
             },
             {
               "name": "@ulld/plot",
               "parserIndex": 0,
-              "version": "0.0.100"
+              "version": "0.0.103"
             }
           ]
         }

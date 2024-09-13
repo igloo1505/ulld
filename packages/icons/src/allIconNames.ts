@@ -1,4 +1,4 @@
-const allIconNames = [
+export const allIconNames = [
   "a-arrow-down",
   "a-arrow-up",
   "a-large-small",
