@@ -3,7 +3,7 @@ title: Relativistic Symmetry
 created: 9-8-24
 id: onRelativisticEquivalence
 description: "Here we examine the symmetries that exist between the specialized and generalized theories of relativity, how they affect our experience on Earth, and how they relate to the model of relativistic spatial dilation."
-images: ["bulletCluster.jpg"]
+images: ["spaceSmallTelescope.jpg"]
 category: Physics
 ---
 
@@ -65,7 +65,7 @@ $$
 \end{align}
 $$
 
-## Interpretation
+### Interpretation
 
 This result can be viewed from several perspectives. First, $\frac{g}{R}$ acts like a scalar of distance as it's applied only to the shift in spatial density. When applied to $c$ however, this might be viewed as a scalar of $c$[^1], as $c$ would be inversely proportional to spatial density and scale proportionally to $R$. This dilation of $c$ is required to maintain the symmetries that have carried existing models of relativity this far, and is foundational to the concept of relativity itself.
 
@@ -73,5 +73,64 @@ The left side of this equation is more physically obvious, but interesting none 
 
 Lastly, this relationship is ***time independent***. While $\frac{d \theta}{dt}$ is obviously time dependent, $\zeta$ represents a time dependent scalar of $R$ in the form of $\frac{dR}{dt}$. This allows the time dependence to offset, making this relationship completely time independent.
 
+## In relation to $\bar{v}$
+
+> This section relates closely to, but extends upon the principles covered in the article available [here](/blog/physics/centerOfMassShift).
+
+Recall that $\bar{v}$ was the variable I assigned to the velocity found through the proposed relationship between $g$ and our velocity to the _cosmic rest reference frame_.[^2] $\bar{v}$ can be found by the following:
+
+$$
+\begin{align}
+\bar{v} & = c \sqrt{1 - \frac{1}{\left( 1 + \frac{g}{R} \right)^{2}}} = c \sqrt{1 - \frac{1}{\left( \frac{1}{R}\int_{0}^{R} \delta dR \right)^{2}}}
+\end{align}
+$$
+
+If we take a closer look at how $\bar{v}$ applies to this relationship, we find that
+
+$$
+\begin{align}
+\frac{\bar{v}}{\sqrt{\delta}} = c \pm 0.04\%
+\end{align}
+$$
+
+While this relationship between $\bar{v}$ and $c$ indicates that there may be something to this relationship between spatial dilation, and the magnitude of velocity, there is clearly a dependency upon the observer's trajectory through space.
+
+If this relationship exists, it must be dependent upon a body's motion in respect to the local spatial dilation. Consider the fact that $\vec{dx}_{0} = d \theta R$ is perpendicular to the direction of spatial dilation, $\vec{ds}_0$. $\vec{dx}_{\prime} = \bar{v}$ on the other hand, is parallel to the direction of spatial dilation, $ds_{\prime}$.[^3]
+
+Relating this symmetry to the relationship between $\vec{ds}_{\sigma} \cdot \vec{dx}_{\sigma}$ gives the following, where $\phi$ is the angle between $\vec{dx}_{\sigma}$ and $\vec{ds}_{\sigma}$.
+
+$$
+\begin{align}
+f_{(dx_{\sigma},\phi,ds)} & = \frac{dx}{ds} + \cos{(\phi)} \frac{dx}{ds} \left( \sqrt{ds} - 1 \right) \\
+& = \frac{dx}{ds} + \frac{\vec{dx}\cdot \vec{ds}}{ds^{2}} \left( \sqrt{ds} - 1 \right)
+\end{align}
+$$
+
+
+$f$ in turn yields 
+
+<Grid
+    cols={{ base: 1, sm: 2 }}
+>
+<GridItem>
+$$
+\begin{align}
+f_{(dx_{\prime}, 0, \delta)} & = c \pm 0.04\% \\
+\end{align}
+$$
+</GridItem>
+<GridItem>
+$$
+\begin{align}
+f_{(dx_{0}, \frac{\pi}{2}, \frac{g}{r})} & = c \pm 0.28\% \\
+\end{align}
+$$
+</GridItem>
+</Grid>
+
+This relationship appears to lend credence to the principle that allows $\dot{x}$ to indicate a pure magnitude in some situations, as described in the [Center of Mass Shift](/blog/physics/centerOfMassShift) post, where instaneous velocities can represent a magnitude relative to other velocities, rather than a change of position with respect to time.
+
 
 [^1]: The principle that $c$ being equivalent _in_ each reference frame is not necessarily the same as $c$ being equivalent _between_ reference frames plays a significant role in the model of relativity being proposed. See [Predictions and the theory of gravitational time](/blog/physics/problemsResolvedByTheory) for more.
+[^2]: If you have yet to read the post that summarizes the model that inspired the creation of <LogoAsText fontSize={13} /> you can find that [here](/myWork).
+[^3]: The spatial dilation would actually radiate from that body, assuming this relationship takes place in a vacuum in empty space. However, the $\perp$ portion of that radiating spatial dilation would likely have no effect on the body in motion.

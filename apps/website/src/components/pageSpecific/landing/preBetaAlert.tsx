@@ -1,6 +1,7 @@
 "use client"
 import { LogoAsText } from "#/components/general/logoAsText";
 import { useLocalStorage } from "@ulld/hooks/useLocalStorage";
+import Link from "next/link"
 import {
     AlertDialog,
     AlertDialogAction,
@@ -47,15 +48,18 @@ const PreBetaAlertDialog = () => {
                     <AlertDialogTitle>This app is in pre-release.</AlertDialogTitle>
                     <AlertDialogDescription>
                         <div>
-                        Under normal circumstances, this website would remain down while it's under active development. Because of some <span className={"italic"}>less common</span> circumstances, I've decided to host this website publicly before it's ready for public use. Feel free to explore, but expect quite a bit of the intended functionality to be non-functional for now. This website should be complete by the beginning of June, and <LogoAsText fontSize={13}/> will be ready for public use by mid-summer.
+                        <LogoAsText fontSize={13}/> is still in the very early stages of the initial release. Wrapping up the missing pieces and creating a simpler installation process would normally be a pretty simple and straight forward task, but my current living situation is complicating things <span className={"font-semibold italic"}>significantly</span>.
                         </div>
                         <div className={"mt-2"}>
-                    You can learn more about the motivation and plans for <LogoAsText fontSize={13} /> <a href={staticContent.links.blog.ulldPreBetaLaunch} className={"text-link"}>here</a>.
+                        You can learn more about the motivation and plans for <LogoAsText fontSize={13} /> <Link href={staticContent.links.blog.ulldPreBetaLaunch} className={"text-link"}>here</Link>, and more about the atypical release of <LogoAsText fontSize={13} /> <a href={staticContent.links.blog.whyILeftWork} className={"text-link"}>here</a>, and if you like what you see, you can support the development of <LogoAsText fontSize={13} /> by clicking <Link 
+                                href={"/sponsor"}
+                                className={"text-link"}
+                            >here</Link>.
                         </div>
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                    <AlertDialogAction>Continue</AlertDialogAction>
+                    <AlertDialogAction>Close</AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
