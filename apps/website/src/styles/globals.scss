@@ -116,3 +116,10 @@ a[data-active="true"] {
     color: hsl(var(--primary));
   }
 }
+
+.no-list-margin {
+  ol,
+  ul {
+    margin: 0;
+  }
+}

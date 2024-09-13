@@ -19,13 +19,13 @@ export const getLatexTocEntries = (
     t.push({
       ...entry,
       title: titleAsComponent ? (
-        <MdxContentSERVER content={newTitle} />
+        <MdxContentSERVER
+                    content={newTitle}
+                    className={"no-list-margin"}
+                />
       ) : (
         newTitle
       ),
-      // Removed this. No longer checking for validity and relying only on index. THe validity check was unreliable previously, but if this causes new issues revisit this.
-      // let s = Array(entry.depth).fill("#").join("");
-      // title: titles[i].startsWith(s) ? parseTitle(newTitle) : entry.title,
     });
   });
   return t;

@@ -23,7 +23,6 @@ import { getLatexTocEntries } from "#/fumaDocs/utils/getLatexTocEntries";
 import Link from "next/link";
 import { buttonVariants } from "@ulld/tailwind/button";
 import Citations from "../academic/citations";
-import { InternalFumaToc } from "./toc/main";
 
 interface DocsPageComponentProps {
     page: PageType;
