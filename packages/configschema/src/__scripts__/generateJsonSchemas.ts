@@ -36,5 +36,4 @@ for (const f of items) {
 console.log(`Successfully wrote json schemas to: 
 
 ${items.map((i) => `- ${i.file}`).join("\n")}
-
 `)

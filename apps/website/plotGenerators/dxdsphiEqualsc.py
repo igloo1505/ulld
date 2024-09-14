@@ -45,11 +45,6 @@ fig.update_layout(
 
 fig.show(renderer="browser")
 
-# htmlString = fig.to_image("webp", width=768, height=768)
+htmlPath = f"{os.environ["ULLD_DEV_ROOT"]}/apps/website/generatedContent/plots/fOfdxdsphiEqualsc.html"
 
-
-# p = Path(
-#     f"{os.environ["ULLD_DEV_ROOT"]}/apps/website/generatedContent/plots/fOfdxdsphiEqualsc.webp"
-# )
-
-# p.write_bytes(htmlString)
+fig.write_html(htmlPath)
