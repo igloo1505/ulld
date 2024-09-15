@@ -5,15 +5,8 @@ import {
     bibEntryTransform,
 } from "@ulld/api/generalPrismaSchemas";
 import { replaceRecursively } from "@ulld/utilities/general";
-
-const formatCitation = (s: string, index: number) => {
-    return `<sup><a href='#bib-${s.toLowerCase()}' className="citation citationAnchor" id="cit-${s}-idx-${index}">${index + 1}</a></sup>`;
-};
-
-interface ExtendedFrontMatter {
-    citations: BibEntry[];
-    citationsListOrder: string[];
-}
+import { ExtendedFrontMatter } from "../../types";
+import { formatCitation } from "./parseCitationsFromContentAndBibFile/formatCitation";
 
 export const parseMdxCitations: UnifiedMdxParser<ExtendedFrontMatter> = async (
     data,

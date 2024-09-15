@@ -43,6 +43,7 @@ export type PageType = {
         blog?: boolean;
         titleCenter?: boolean
         category?: string;
+        parseCitations?: boolean
     };
 } & ReturnType<typeof getPage>;
 

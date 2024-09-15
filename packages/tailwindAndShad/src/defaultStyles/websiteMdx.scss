@@ -6,3 +6,16 @@
     padding-bottom: 0px;
   }
 }
+
+.mdx {
+  mjx-container {
+    mjx-script {
+      mjx-mtext {
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: end;
+      }
+    }
+  }
+}

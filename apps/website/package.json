@@ -187,6 +187,7 @@
     "@ulld/calendar": "workspace:*",
     "@ulld/component-map": "workspace:*",
     "@ulld/configschema": "workspace:*",
+    "@ulld/bib-manager": "workspace:*",
     "@ulld/database": "workspace:*",
     "@ulld/diagram": "workspace:*",
     "@ulld/editor": "workspace:*",

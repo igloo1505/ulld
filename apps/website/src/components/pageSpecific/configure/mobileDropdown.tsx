@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { sidebarNavItems } from "./staticData";
-import { useViewport } from "@ulld/hooks/useViewport";
+import {useMediaQuery} from "react-responsive"
 import Link from "next/link";
 import {
     Select,
@@ -15,9 +15,11 @@ interface ConfigureFormMobileDropdownProps { }
 const ConfigureFormMobileDropdown = (
     props: ConfigureFormMobileDropdownProps,
 ) => {
-    const vp = useViewport();
+    const bp = useMediaQuery({
+        maxWidth: 680
+    })
     const [open, setOpen] = useState(false)
-    if (!vp?.window.width || vp.window.width > 680) {
+    if (!bp) {
         return null;
     }
     return (

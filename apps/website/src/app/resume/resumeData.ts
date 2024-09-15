@@ -36,7 +36,7 @@ const resumeDataSchema = z.object({
     email: z.string().email().default("aiglinski414@gmail.com"),
     homepage: z.string().url().default("https://uhlittlelessdum.com"),
     linkedIn: z.string().url().optional(),
-    dob: z.coerce.date().default(new Date("4/19/1988")),
+    dob: z.string().default("4/19/1988"),
     avatar: z
         .string()
         .describe("Path to avatar relative to public/assets/resume directory")

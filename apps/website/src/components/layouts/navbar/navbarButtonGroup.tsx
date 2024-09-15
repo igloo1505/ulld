@@ -9,6 +9,7 @@ import { useInitialRender } from "@ulld/hooks/useInitialRender";
 import { usePathname } from "next/navigation";
 import { useViewport } from "@ulld/hooks/useViewport";
 import clsx from "clsx";
+import { useMediaQuery } from "react-responsive";
 
 const Link = motion(NextLink);
 
@@ -40,8 +41,10 @@ const NavbarButtonGroup = connector(
     ({ buttons, breakpoint }: NavbarButtonGroupProps) => {
         const isInitial = useInitialRender();
         const pathname = usePathname();
-        const vp = useViewport();
         const [hideDonateLink, setHideDonateLink] = useState(false)
+        const bp = useMediaQuery({
+            maxWidth: breakpoint
+        })
 
         const setTransparent = (beTransparent: boolean) => {
             let em = document.getElementById("main-navbar-container");
@@ -62,7 +65,7 @@ const NavbarButtonGroup = connector(
                 id="navbar-btn-container"
                 className={clsx(
                     "w-full h-full flex flex-row justify-end items-center gap-4 flex-grow pr-8",
-                    (!vp || vp.window.width < breakpoint) && "hidden",
+                    (bp) && "hidden",
                 )}
             >
                 {!hideDonateLink && <Link

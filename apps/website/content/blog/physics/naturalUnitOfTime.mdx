@@ -1,0 +1,185 @@
+---
+title: Natural Unit of Time
+created: 9-14-24
+id: naturalUnitOfTime
+description: "A non-linear time integral is discussed, and two results are presented, both yielding results that fall within 0.5% of direct observation through various CMB dipole surveys."
+images: ["milkyWayCore.jpg"]
+category: Physics
+parseCitations: true
+---
+
+
+<Quote
+author="Isaac Newton"
+small
+align="left"
+>
+Absolute time, in astronomy, is distinguished from relative, by the equation or correction of the apparent time. For the natural days are truly unequal, though they are commonly considered as equal, and used for a measure of time; astronomers correct this inequality that they may measure the celestial motions by a more accurate time.  
+It may be, that there is no such thing as an equable motion, whereby time may be accurately measured. All motions may be accelerated and retarded, but the flowing of absolute time is not liable to any change.
+</Quote>
+
+If we define $\bar{v}$ according to the model of relative spatial dilation as described in [On the gravitational nature of time](/myWork), an interesting question arises. If time in this model _is_ the relative spatial dilation, how do we then describe a velocity?
+
+While this model proposes a nature of time that is velocity dependent, such that
+
+$$
+\begin{align}
+\sum_{i} dx_{i} = 0 \quad \Rightarrow \quad \Delta t = 0
+\end{align}
+$$
+
+there must exist a transformation that satisfies our mathematics as they currently exist.
+
+
+## Application of non-linear time
+
+Let us again consider $\bar{v}$[^1] as follows
+
+$$
+\begin{align}
+\bar{v} = c \sqrt{1 - \frac{1}{\left( 1 + \frac{g}{R_{\oplus}} \right)^{2}}}
+\end{align}
+$$
+
+which is equivalent to 
+
+$$
+\begin{align}
+1 + \frac{g}{R_{\oplus}} = \frac{1}{\sqrt{1 - \frac{\bar{v}^{2}}{c^{2}}}}
+\end{align}
+$$
+
+While current models of space and time indicate that $\bar{v}$ is simply $\frac{dx}{dt}$, we must acknowledge that any measurement of time exists as an integral between two temporal positions.
+
+If $ds$ exists as a spatial scalar, as 
+
+$$
+\begin{align}
+ds = \left|\begin{array}{ccc}
+    \int_0^r 2 G \frac{M}{R^3} dr & 0 & 0 \\
+    0 & \int_0^r 2 G \frac{M}{R^3} dr & 0 \\
+    0 & 0 & \int_0^r 2 G \frac{M}{R^3} dr
+    \end{array}\right|
+\end{align}
+$$
+
+then this dilation of space is clearly non-linear. If time itself _is_ this dilation of space, then time should follow a proportional non-linearity.
+
+
+## Non-linear time applied to $\bar{v}$ & velocity relative to the CMB dipole
+
+In the truest sense, $\bar{v}$ exists in two forms:
+
+- The spatially integrated form as
+
+$$
+\begin{align}
+\bar{v}_1 = c \sqrt{1 - \frac{1}{\left( \frac{1}{R} \int_0^{r} 2 G \frac{M}{R^{3}} dr \right)^{2}}}
+\end{align}
+$$
+
+- the differential form:
+
+$$
+\begin{align}
+\bar{v}_0 = c \sqrt{1 - \frac{1}{\left( 1 + \delta \right)^{2}}}
+\end{align}
+$$
+
+While both give different numerical results, once this non-linear time transformation is applied, both yield a peculiar velocity within 1% of recent calculations deriving such a value from the CMB dipole.<sup><a href='#bib-amendola_2011' class="citation citationAnchor" id="cit-amendola_2011-idx-0">1</a></sup>
+
+Modifying both forms of $\bar{\gamma}$ gives us the appearance of acceleration in free fall, although instead of integrating over time itself, we are modifying the integral of $\delta$ to apply in a manner which is non-linear. That is to say, that for $dt_1, dt_2, \dots dt_\sigma$, $dt_\sigma$ is not necessarily of the same magnitude as $dt_1$ without applying the proper transformation.
+
+
+### Integration of non-linear time
+
+Let us first consider the integrated form of $\bar{v}$, $\bar{v}_1$. As no relativistic corrections were applied to this derivation of $\bar{v}$, we should apply time as part of $\bar{\gamma}$, where 
+
+$$
+\begin{align}
+\bar{\gamma} = \frac{1}{R} \int_0^{R} \delta ~ dR = 1 + \frac{g}{R_{\oplus}}
+\end{align}
+$$
+
+Applying time in this manner inherently applies the proportionality scalar as proportional to $\delta$. This gives
+
+$$
+\begin{align}
+\bar{\gamma}_{1} = \int \int_0^{R} 2 G \frac{M}{R_{\oplus}^{3}} ~ dr ~ dt
+\end{align}
+$$
+
+> Note that $dt$ is scaled proportionally to $\delta$, as $\delta$ is integrated over $R_{\oplus}$.
+
+By modifying $\bar{\gamma}$ in this manner, we also modify $\bar{v}_{1}$ to be 
+
+$$
+\begin{align}
+\bar{v}_{1} = c \sqrt{1 - \frac{1}{\bar{\gamma}_{1}^{2}}} = 371,735.35 ~ \text{m} ~ \text{s}^{-1}
+\end{align}
+$$
+
+This value falls within $0.5\%$ of the value found by Amendola, Catena, Masina, and colleagues, and falls within the error margin of many recent observational surveys.[^2]
+
+<Admonition title="On the application of time" type="info" dropdown open>
+Note here that $t$ itself is applied simply as $1$. There is no actual, physical application of time in this equation. We are simply modifying existing calculations formed from our current understanding of time to fit a model in which the passage of time _is_ the dilation of space.
+</Admonition>
+
+### Differentiated non-linear time
+
+Let us now consider the differentiated form of $\bar{v}$, $\bar{v}_{0}$. If we consider the way velocity and other time dependent quantities are described in modern physics and mathematics, $\bar{v}$ should equate to $\frac{dx}{dt}$ in some form. Let us describe that relationship as
+
+$$
+\begin{align}
+\bar{v}_{0} = \frac{c \sqrt{1 - \frac{1}{\left( 1 + \delta \right)^{2}}}}{dt}
+\end{align}
+$$
+
+As $dt$ is in a differential form here, yet any observation of time integrates between two temporal positions, we must find a proportional manner with which to scale this derivative so that it aligns with observations. We should therefore not describe time in a differential form, and instead describe time in it's integrated form where
+
+$$
+\begin{align}
+dt \quad \Rightarrow \quad \Delta t
+\end{align}
+$$
+
+$$
+\begin{align}
+\frac{c \sqrt{1 - \frac{1}{\left( 1 + \delta \right)^{2}}}}{dt} \quad \Rightarrow \quad \frac{c \sqrt{1 - \frac{1}{\left( 1 + \delta \right)^{2}}}}{\Delta t}
+\end{align}
+$$
+
+The above must be undertaken to compensate for the manner with which we currently integrate over time, where even in a so called curvy-linear system, the passage of time is treated as if it's linearly proportionate.
+
+Since we measure velocity not as $\frac{dx}{dt}$, but rather of some larger approximation $\frac{\Delta x}{\Delta t}$, we should scale this $\Delta t$ according to the average of the proportionality scalar over that integral and it's derivative. As our observations of $\Delta t$ already measure time in the integrated form, we should find the non-linear time derivative as:
+
+$$
+\begin{align}
+ d \tau = \Delta t \frac{\delta}{\frac{1}{R_{\mu}} \int_0^{R_{\mu}} \delta ~ dR}
+\end{align}
+$$
+
+Revisiting $\bar{v}_{0}$, this gives
+
+$$
+\begin{align}
+\bar{v}_{0} = \frac{c \sqrt{1 - \frac{1}{\left( 1 + \delta \right)^{2}}}}{2 d \tau} = 371,582.413 \text{m} ~ \text{s}^{-1}
+\end{align}
+$$
+
+This value again falls within $0.5\%$ of Amendola, Catena, Masina, and their colleagues, and fits probability curves derived from multiple CMB surveys even more closely than the result of the revision to $\bar{v}_{1}$.
+
+
+
+<Quote
+author="Isaac Newton"
+small
+align="left"
+>
+Wherefore relative quantities are not the quantities themselves, whose names they bear, but those sensible measures of them (either accurate or inaccurate), which are commonly used instead of the measured quantities themselves. And if the meaning of words is to be determined by their use, then by the names time, space, place and motion, their measures are properly to be understood; and the expression will be unusual, and purely mathematical, if the measured quantities themselves are meant.
+</Quote>
+
+
+
+[^1]: See [On the gravitational nature of time](/myWork) for more.
+[^2]: As I'm writing this while homeless and without access to the internet for more than 20 or 30 minutes each day, I'm unable to provide more citations. However, research on the matter is readily available and remarkably consistent.

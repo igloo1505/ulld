@@ -3,12 +3,12 @@ import { MdxParserReturnType, UnifiedMdxParser } from "../types";
 
 
 
-export const applyRecursiveMdxParsers = async (
+export const applyRecursiveMdxParsers = async <T extends object = {}>(
     data: UnifiedMdxParserParams,
     parsers: UnifiedMdxParser[],
-): Promise<MdxParserReturnType<any>> => {
+): Promise<MdxParserReturnType<T>> => {
     let content = data.content;
-    let fm = data.data || {};
+    let fm = (data.data || {}) satisfies object
     for await (const parser of parsers) {
         let res = await parser(
             {
@@ -28,6 +28,6 @@ export const applyRecursiveMdxParsers = async (
     }
     return {
         content,
-        data: fm,
+        data: fm as MdxParserReturnType<T>["data"],
     };
 };

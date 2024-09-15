@@ -5,7 +5,7 @@ import { MenuIcon } from "lucide-react";
 import React from "react";
 import {RootState} from '#/state/store';
 import {connect} from 'react-redux';
-import { useViewport } from "@ulld/hooks/useViewport";
+import { useMediaQuery } from "react-responsive";
 
 const connector = connect((state: RootState, props: any) => ({
     breakpoint: state.core.drawer.breakpoint,
@@ -17,8 +17,12 @@ interface NavbarDrawerToggleProps {
 }
 
 const NavbarDrawerToggle = connector(({breakpoint}: NavbarDrawerToggleProps) => {
-    const vp = useViewport()
-    if(!vp || vp.window.width >= breakpoint) return null
+    const bp = useMediaQuery({
+        minWidth: breakpoint
+    })
+    if(bp) {
+        return null
+    }
     return (
         <MenuIcon
             role="button"

@@ -387,6 +387,9 @@ importers:
       '@ulld/base-configs':
         specifier: workspace:*
         version: link:../../packages/baseConfigs
+      '@ulld/bib-manager':
+        specifier: workspace:*
+        version: link:../../packages/bib-manager
       '@ulld/calendar':
         specifier: workspace:*
         version: link:../../packages/calendar
@@ -964,7 +967,7 @@ importers:
         version: 13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       fumadocs-ui:
         specifier: 13.4.1
-        version: 13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4)))
+        version: 13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       next:
         specifier: 14.2.3
         version: 14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
@@ -1319,7 +1322,7 @@ importers:
         version: 13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       fumadocs-ui:
         specifier: 13.4.1
-        version: 13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4)))
+        version: 13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       lucide-react:
         specifier: latest
         version: 0.441.0(react@18.2.0)
@@ -3824,7 +3827,7 @@ importers:
         version: 13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       fumadocs-ui:
         specifier: 13.4.1
-        version: 13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@16.18.11)(typescript@5.5.4)))
+        version: 13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       monaco-editor:
         specifier: 0.49.0
         version: 0.49.0
@@ -40025,6 +40028,33 @@ snapshots:
       fumadocs-core: 13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       lucide-react: 0.428.0(react@18.2.0)
       next: 14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.74.1)
+      next-themes: 0.3.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-medium-image-zoom: 5.2.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      swr: 2.2.5(react@18.2.0)
+      tailwind-merge: 2.5.2
+    transitivePeerDependencies:
+      - '@types/react'
+      - '@types/react-dom'
+      - supports-color
+      - tailwindcss
+
+  fumadocs-ui@13.4.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      '@radix-ui/react-accordion': 1.2.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@radix-ui/react-collapsible': 1.1.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@radix-ui/react-dialog': 1.1.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@radix-ui/react-direction': 1.1.0(@types/react@18.2.79)(react@18.2.0)
+      '@radix-ui/react-popover': 1.1.1(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@radix-ui/react-scroll-area': 1.1.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@radix-ui/react-tabs': 1.1.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.7.3(@swc/helpers@0.5.12))(@types/node@20.14.13)(typescript@5.5.4)))
+      class-variance-authority: 0.7.0
+      cmdk: 1.0.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      fumadocs-core: 13.4.1(@types/react@18.2.79)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      lucide-react: 0.428.0(react@18.2.0)
+      next: 14.2.3(@babel/core@7.24.9)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8)
       next-themes: 0.3.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)

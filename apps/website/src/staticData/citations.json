@@ -2,6 +2,15 @@
   "user-emoji-table": {
     "citations": []
   },
+  "naturalUnitOfTime": {
+    "citations": [
+      {
+        "htmlCitation": "<div class=\"csl-bib-body\">  <div data-csl-entry-id=\"Amendola_2011\" class=\"csl-entry\"> L. Amendola, R. Catena, I. Masina, A. Notari, M. Quartin, and C. Quercellini, \"Measuring our peculiar velocity on the CMB with high-multipole off-diagonal correlations,” Journal of Cosmology and Astroparticle Physics <b>2011</b>(07), 027–027 (2011).</div></div>",
+        "id": "bib-amendola_2011",
+        "pageIndex": 0
+      }
+    ]
+  },
   "onTheGravitationalNatureOfTime": {
     "citations": [
       {

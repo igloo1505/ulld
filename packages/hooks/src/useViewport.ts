@@ -9,7 +9,7 @@ export interface ViewportData {
     };
 }
 
-export const useViewport = (noScroll: boolean = false, once: boolean = false) => {
+export const useViewport = (noScroll: boolean = true, once: boolean = false) => {
     const [viewport, setViewport] = useState<ViewportData | null>(null);
     const handleViewport = () => {
         let d = document.body?.getBoundingClientRect();

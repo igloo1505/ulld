@@ -24,7 +24,8 @@
     "./showBibEntryDetails": "./src/utils/showBibEntryDetails.ts",
     "./bibEntryDetails": "./src/components/slots/bibDetailSheet/main.tsx",
     "./bibliographyPage": "./src/components/slots/bibliographyPage/main.tsx",
-    "./parser": "./src/parsers/mdx/main.tsx"
+    "./parser": "./src/parsers/mdx/main.tsx",
+    "./parseCitationsFromStringContent": "./src/parsers/mdx/parseCitationsFromContentAndBibFile/main.ts"
   },
   "files": [
     "pluginConfig.ulld.json",

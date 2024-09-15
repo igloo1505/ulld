@@ -14,20 +14,20 @@ export type MdxNoteSummary = Awaited<ReturnType<typeof serverClient.universalNot
 
 export type RetrievedSettings = Awaited<ReturnType<typeof serverClient.settings.getSettings>>
 
-export type MdxParserReturnType<T extends unknown = {}> = {
+export type MdxParserReturnType<T extends object = {}> = {
   content: string;
   data?: FrontMatterType & T;
 };
 
-export type UnifiedMdxParser<ExtendedFrontMatterType extends unknown = {}> = (
+export type UnifiedMdxParser<ExtendedFrontMatterType extends object = {}> = (
   parserProps: UnifiedMdxParserParams,
 ) => Promise<MdxParserReturnType<ExtendedFrontMatterType>>;
 
-type UnifiedParserMap<ExtendedFrontMatterType extends unknown = {}> = {
+type UnifiedParserMap<ExtendedFrontMatterType extends object = {}> = {
   mdx: UnifiedMdxParser<ExtendedFrontMatterType>;
 };
 
 export type UnifiedParserOfType<
   T extends ParserKey,
-  ExtendedFrontMatterType extends unknown = {},
+  ExtendedFrontMatterType extends object = {},
 > = UnifiedParserMap<ExtendedFrontMatterType>[T];

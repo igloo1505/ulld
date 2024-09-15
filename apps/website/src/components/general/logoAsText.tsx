@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import clsx from "clsx";
-import { useViewport } from "@ulld/hooks/useViewport";
+import { useMediaQuery } from "react-responsive";
 
 interface LogoAsTextProps {
     fontSize?: number | "h1";
@@ -9,11 +9,13 @@ interface LogoAsTextProps {
     absolute?: boolean
 }
 
+
 export const LogoAsText = ({ fontSize = 16, absolute = false, className }: LogoAsTextProps) => {
-    const vp = useViewport()
+    const bp = useMediaQuery({
+        minWidth: 1024
+    })
     if(fontSize === "h1"){
-        let vw = vp?.window.width
-        fontSize = vw ? vw >= 1024 ? 48 : 36 : 48
+        fontSize = bp ? 48 : 36
     }
     return (
         <span

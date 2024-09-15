@@ -24,4 +24,16 @@ export interface QuoteProps {
     /** An alias for `author`
      * @default undefined*/
     from?: React.ReactNode
+    /** Shrink all text proportionally. Appropriate for longer quotes. */
+    /** @default false */
+    small?: boolean
+    /** Shrink all text proportionally to normal paragraph size instead of being slightly larger. */
+    /** @default false */
+    textBase?: boolean
+    /** Align main text */
+    /** @default "center" */
+    align?: "left" | "right" | "center"
+    /** Align author position */
+    /** @default "right" */
+    authorPos?: "left" | "right" | "center"
 }

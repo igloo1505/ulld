@@ -23,6 +23,7 @@ import { getLatexTocEntries } from "#/fumaDocs/utils/getLatexTocEntries";
 import Link from "next/link";
 import { buttonVariants } from "@ulld/tailwind/button";
 import Citations from "../academic/citations";
+import { parseMdxContent } from "../../lib/parseMdxContent/main";
 
 interface DocsPageComponentProps {
     page: PageType;
@@ -47,14 +48,23 @@ const TocSourceFooterButton = ({ noteId }: { noteId?: string }) => {
     );
 };
 
-const DocsPageInternal = ({
+const DocsPageInternal = async ({
     page,
     noTitle,
     id,
 }: WithRequired<DocsPageComponentProps, "id">) => {
-    const rawContent = "content" in page.data ? page?.data.content : undefined;
+    let rawContent = "content" in page.data ? page?.data.content : undefined;
 
-    /* TODO: Inject citations into note here. Don't bother with this half assed approach anymore just to avoid server time. */
+    if(!rawContent){
+        return null
+    }
+
+    let parsedContent = await parseMdxContent(rawContent, page.data.body)
+    console.log("parsedContent.citations: ", parsedContent.citations)
+    /* rawContent = parsedContent.content */
+    /* let _body = parsedContent.body */
+    /* console.log("_body here: ", _body) */
+
 
     const filteredComponents = getComponentMap(
         rawContent || "",
@@ -81,6 +91,7 @@ const DocsPageInternal = ({
             </CodeBlock>
         ),
     };
+
 
     return (
         <>
