@@ -346,7 +346,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         subject: string;
     }>, "many">>;
     alwaysPreferFs: z.ZodDefault<z.ZodBoolean>;
-    ignoreFilepaths: z.ZodDefault<z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodString, z.ZodObject<{
+    ignoreFilepaths: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodString, z.ZodObject<{
         original: z.ZodString;
         regex: z.ZodType<RegExp, z.ZodTypeDef, RegExp>;
     }, "strip", z.ZodTypeAny, {
@@ -361,7 +361,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
     }[], (string | RegExp | {
         regex: RegExp;
         original: string;
-    })[] | undefined>>;
+    })[] | undefined>;
     tempDir: z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>;
     generatedDir: z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>;
     ignorePreferFsExtensions: z.ZodDefault<z.ZodArray<z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodType<RegExp, z.ZodTypeDef, RegExp>]>, {
@@ -917,7 +917,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         title?: string | undefined;
         desc?: string | undefined;
     }>>;
-    plugins: z.ZodDefault<z.ZodEffects<z.ZodUnion<[z.ZodObject<{
+    plugins: z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodObject<{
         name: z.ZodString;
         version: z.ZodDefault<z.ZodString>;
         parserIndex: z.ZodDefault<z.ZodNumber>;
@@ -941,7 +941,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
-    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>, ({
+    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>>, ({
         name: string;
         version: string;
         parserIndex: number;
@@ -956,7 +956,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<{
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
-    }[]>>;
+    }[] | undefined>;
     jupyter: z.ZodObject<{
         execute: z.ZodDefault<z.ZodBoolean>;
         environment: z.ZodDefault<z.ZodString>;
