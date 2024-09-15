@@ -12,7 +12,6 @@ import os
 pio.templates.default = "plotly_dark"
 
 vb = spc.c * math.sqrt(1 - 1 / (1 + spc.g / Earth.radius_polar) ** 2)
-print(vb)
 
 maxDx = vb
 

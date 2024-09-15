@@ -151,6 +151,16 @@ const config = {
             packages: ["**"],
             pinVersion: "13.4.1"
         },
+        {
+            dependencies: ["plotly.js"],
+            packages: ["**"],
+            pinVersion: "2.30.0"
+        },
+        {
+            dependencies: ["react-plotly.js"],
+            packages: ["**"],
+            pinVersion: "2.6.0"
+        },
     ],
 };
 

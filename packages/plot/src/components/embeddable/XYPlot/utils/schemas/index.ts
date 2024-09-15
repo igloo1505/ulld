@@ -4,6 +4,7 @@ import { NumericList } from "@ulld/math/list";
 import { labelPositionSchema } from "./utilitySchemas";
 import { plotThemes, plotThemeData } from "../../../../../colors";
 import { ExtendedMath } from "@ulld/math/extendedMath";
+import { plotFunction } from "../../../../../lib/schemas/functions/main";
 
 export const xyPlotFunctionArgs = z.instanceof(ExtendedMath);
 
@@ -71,7 +72,7 @@ const barLabelSchema = z.object({
 export const barPropsSchema = z.object({
   label: z.union([z.string(), barLabelSchema]),
   color: z.string().optional(),
-  f: z.function().args(z.number(), xyPlotFunctionArgs).returns(z.number()),
+  f: plotFunction,
   radius: z.number().default(4),
   id: z.string().optional(),
 });
