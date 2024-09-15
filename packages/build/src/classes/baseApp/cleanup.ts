@@ -15,8 +15,10 @@ export class BuildCleanup extends ShellManager {
         super();
     }
     private removeTempBuildDir() {
+        this.logVerbose(`Removing temp directory...`)
         let filePaths = globSync("**", {
             cwd: this.paths.tempBuildFiles,
+            nodir: true
         }).map((p) => path.join(this.paths.tempBuildFiles, p));
         for (const f of filePaths) {
             fs.rmSync(f, {
@@ -27,16 +29,24 @@ export class BuildCleanup extends ShellManager {
         fs.rmdirSync(this.paths.tempBuildFiles);
     }
     private removePreCommitHooks() {
+        this.logVerbose(`Removing commit hooks...`)
         let commitHookRoot = this.paths.joinPath("projectRoot", ".commitHooks");
         let files = globSync("**", {
             cwd: commitHookRoot,
-        }).map((f) => path.join(commitHookRoot, f));
+            absolute: true,
+            nodir: true
+        })
         for (const f of files) {
-            fs.rmSync(f);
+            if(fs.existsSync(f)){
+                fs.rmSync(f)
+            } else {
+                this.logDebug(`Attempted to delete a file that cannot be found: ${f}`)
+            }
         }
         fs.rmdirSync(commitHookRoot);
     }
     private removeCleanupPaths(){
+        this.logVerbose(`Removing build paths...`)
         for (const p of this.cleanupPaths) {
             let _path = this.paths.joinPath("projectRoot", p)
             if(fs.existsSync(_path)){
@@ -51,8 +61,10 @@ export class BuildCleanup extends ShellManager {
     }
 
     private setBuildOutputPath(){
+        this.paths.makeXdgConfigDir()
         let configPath = this.paths.xdgPaths.config()
-        let f = new JsonFile(path.join(configPath, "buildData.json"))
+        configPath = path.join(configPath, "buildData.json")
+        let f = new JsonFile(configPath)
         let data = this.getBuildOutputConfig()
         f.writeContent(data)
         this.log("Set output path successfully. You can now run Ulld from anywhere using the ulldRun command.")
@@ -64,3 +76,5 @@ export class BuildCleanup extends ShellManager {
         this.setBuildOutputPath();
     }
 }
+
+

@@ -3,7 +3,6 @@ import path from "path";
 
 export const xdgOpts: Options = {
     name: "ulld",
-    suffix: "noteTaking",
 };
 
 export const getXdgPaths = () => {

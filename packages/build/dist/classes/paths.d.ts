@@ -47,6 +47,7 @@ export declare class TargetPaths implements Record<typeof pathKeys[number] | Met
     getEventMethodListPath(type: keyof PluginEventsConfig): string;
     fromRootRelativeToAbsolute(rootRelativePath: string): string;
     makeSubPath(absolutePath: string): string;
+    makeXdgConfigDir(): void;
     getNoteTypePathsFromTargetUrl(url: string): {
         page: string;
         individualNotePage: string;

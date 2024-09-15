@@ -136,6 +136,14 @@ export class TargetPaths
     makeSubPath(absolutePath: string) {
         return absolutePath.replace(`${this.projectRoot}/`, "");
     }
+    makeXdgConfigDir(){
+        let p = this.xdgPaths.config()
+        if(p && !fs.existsSync(p)){
+           fs.mkdirSync(p, {
+                recursive: true
+            }) 
+        }
+    }
     getNoteTypePathsFromTargetUrl(url: string) {
         let items = removeLeadingDotSlash(url).split(path.sep);
         let dirPath = this.joinPath("appDir", ...items);
@@ -152,3 +160,9 @@ export class TargetPaths
         return data;
     }
 }
+
+let xdgPaths = (xdgAppPaths as any)(xdgOpts)
+
+let f = xdgPaths.config()
+
+console.log("f: ", f)
