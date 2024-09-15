@@ -1,5 +1,30 @@
 # @ulld/equations
 
+## 0.0.111
+
+### Patch Changes
+
+- Update after working offline.
+- Updated dependencies
+  - @ulld/api@0.0.111
+  - @ulld/typescript-config@0.0.105
+  - @ulld/configschema@0.0.111
+  - @ulld/database@0.0.108
+  - @ulld/developer@0.0.111
+  - @ulld/developer-schemas@0.0.105
+  - @ulld/editor@0.0.111
+  - @ulld/embeddable-components@0.0.111
+  - @ulld/full-form@0.0.111
+  - @ulld/hooks@0.0.111
+  - @ulld/jest-presets@0.0.105
+  - @ulld/parsers@0.0.111
+  - @ulld/render@0.0.111
+  - @ulld/state@0.0.111
+  - @ulld/tailwind@0.0.105
+  - @ulld/types@0.0.105
+  - @ulld/ui@0.0.109
+  - @ulld/utilities@0.0.111
+
 ## 0.0.110
 
 ### Patch Changes

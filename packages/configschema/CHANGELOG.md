@@ -1,5 +1,19 @@
 # @ulld/configschema
 
+## 0.0.111
+
+### Patch Changes
+
+- Update after working offline.
+- Updated dependencies
+  - @ulld/base-configs@0.0.105
+  - @ulld/typescript-config@0.0.105
+  - @ulld/developer-schemas@0.0.105
+  - @ulld/icons@0.0.111
+  - @ulld/tailwind@0.0.105
+  - @ulld/types@0.0.105
+  - @ulld/utilities@0.0.111
+
 ## 0.0.110
 
 ### Patch Changes

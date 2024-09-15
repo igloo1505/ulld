@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.110
+
+### Patch Changes
+
+- Update after working offline.
+- Updated dependencies
+  - @ulld/configschema@0.0.111
+  - @ulld/developer-schemas@0.0.105
+  - @ulld/types@0.0.105
+  - @ulld/utilities@0.0.111
+
 ## 0.0.109
 
 ### Patch Changes

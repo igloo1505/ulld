@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.111
+
+### Patch Changes
+
+- Update after working offline.
+- Updated dependencies
+  - @ulld/developer@0.0.111
+  - @ulld/developer-schemas@0.0.105
+  - @ulld/types@0.0.105
+
 ## 0.0.110
 
 ### Patch Changes
