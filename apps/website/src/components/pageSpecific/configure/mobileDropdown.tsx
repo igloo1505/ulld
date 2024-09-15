@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { sidebarNavItems } from "./staticData";
-import {useMediaQuery} from "react-responsive"
+import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 import {
     Select,
@@ -16,16 +16,14 @@ const ConfigureFormMobileDropdown = (
     props: ConfigureFormMobileDropdownProps,
 ) => {
     const bp = useMediaQuery({
-        maxWidth: 680
-    })
-    const [open, setOpen] = useState(false)
+        maxWidth: 680,
+    });
+    const [open, setOpen] = useState(false);
     if (!bp) {
         return null;
     }
     return (
-        <Select open={open}
-            onOpenChange={setOpen}
-        >
+        <Select open={open} onOpenChange={setOpen}>
             <SelectTrigger>
                 <SelectValue placeholder="Page" />
             </SelectTrigger>
