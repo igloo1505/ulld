@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.112
+
+### Patch Changes
+
+- Fix failed build script to include a config path output that will allow running the app directly from the cli.
+- Updated dependencies
+  - @ulld/developer@0.0.112
+  - @ulld/types@0.0.106
+
 ## 0.0.111
 
 ### Patch Changes

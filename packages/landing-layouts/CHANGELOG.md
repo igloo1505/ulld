@@ -1,5 +1,29 @@
 # @ulld/landing-layouts
 
+## 0.0.112
+
+### Patch Changes
+
+- Fix failed build script to include a config path output that will allow running the app directly from the cli.
+- Updated dependencies
+  - @ulld/api@0.0.112
+  - @ulld/bib-manager@0.0.112
+  - @ulld/calendar@0.0.112
+  - @ulld/eslint-config@0.0.108
+  - @ulld/typescript-config@0.0.106
+  - @ulld/configschema@0.0.112
+  - @ulld/developer@0.0.112
+  - @ulld/hooks@0.0.112
+  - @ulld/icons@0.0.112
+  - @ulld/journal@0.0.112
+  - @ulld/plot@0.0.112
+  - @ulld/state@0.0.112
+  - @ulld/tailwind@0.0.106
+  - @ulld/types@0.0.106
+  - @ulld/ui@0.0.110
+  - @ulld/utilities@0.0.112
+  - @ulld/whiteboard@0.0.112
+
 ## 0.0.111
 
 ### Patch Changes

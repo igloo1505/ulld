@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.106
+
+### Patch Changes
+
+- Fix failed build script to include a config path output that will allow running the app directly from the cli.
+
 ## 0.0.105
 
 ### Patch Changes
