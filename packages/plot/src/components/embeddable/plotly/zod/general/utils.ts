@@ -2,6 +2,13 @@ import { z } from "zod";
 import { numberStringUnionSchema } from "./nonspecificUtilities";
 import { plotlyTitleSchemaObject } from "./title";
 
+export const plotlyAspectMode = z.union([
+    z.literal("auto"),
+    z.literal("cube"),
+    z.literal("data"),
+    z.literal("manual"),
+]);
+
 export const plotlyAxisRef = z.union([
     z.literal("container"),
     z.literal("paper"),
@@ -63,7 +70,7 @@ export const plotlyPadding = z
         return x;
     });
 
-export const plotlyAxisName = z.union([
+export const plotlyXAxisName = z.union([
     z.literal("x"),
     z.literal("x1"),
     z.literal("x2"),
@@ -76,6 +83,9 @@ export const plotlyAxisName = z.union([
     z.literal("x9"),
     z.literal("x10"),
     z.literal("x11"),
+]);
+
+export const plotlyYAxisName = z.union([
     z.literal("y"),
     z.literal("y1"),
     z.literal("y2"),
@@ -89,6 +99,8 @@ export const plotlyAxisName = z.union([
     z.literal("y10"),
     z.literal("y11"),
 ]);
+
+export const plotlyAxisName = plotlyXAxisName.or(plotlyYAxisName);
 
 export const plotlyConstrainType = z.union([
     z.literal("range"),
@@ -352,4 +364,58 @@ export const plotlyLocationMode = z.union([
     z.literal("USA-states"),
     z.literal("country names"),
     z.literal("geojson-id"),
+]);
+
+export const plotlyLayoutHoverMode = z.union([
+    z.literal("closest"),
+    z.literal("x"),
+    z.literal("y"),
+    z.literal("x unified"),
+    z.literal("y unified"),
+    z.literal(false),
+]);
+
+export const plotlySceneDragMode = z.union([
+    z.literal("zoom"),
+    z.literal("pan"),
+    z.literal("orbit"),
+    z.literal("turntable"),
+    z.literal(false),
+]);
+
+export const plotlyDragMode = z
+    .union([z.literal("select"), z.literal("lasso")])
+    .or(plotlySceneDragMode);
+
+export const plotlyPointSchema = z.object({
+    x: z.number(),
+    y: z.number(),
+    z: z.number(),
+});
+
+export const plotlyBarModeSchema = z.union([
+    z.literal("stack"),
+    z.literal("group"),
+    z.literal("overlay"),
+    z.literal("relative"),
+]);
+
+export const plotlyBarNormSchema = z.union([
+    z.literal(""),
+    z.literal("fraction"),
+    z.literal("percent"),
+]);
+
+export const plotlySelectDirectionSchema = z.union([
+    z.literal("h"),
+    z.literal("v"),
+    z.literal("d"),
+    z.literal("any"),
+]);
+
+export const plotlyDoubleClickSchema = z.union([
+    z.literal("reset+autosize"),
+    z.literal("reset"),
+    z.literal("autosize"),
+    z.literal(false),
 ]);

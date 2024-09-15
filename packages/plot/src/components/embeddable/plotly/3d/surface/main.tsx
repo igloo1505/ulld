@@ -1,5 +1,5 @@
 import React from 'react'
-import {PlotParams} from "react-plotly.js"
+import Plot, {PlotParams} from "react-plotly.js"
 
 
 interface SurfacePlotProps {
@@ -8,7 +8,8 @@ interface SurfacePlotProps {
 
 const SurfacePlot = (props: SurfacePlotProps) => {
 return (
-    <div></div>
+    <Plot 
+    />
 )
 }
 

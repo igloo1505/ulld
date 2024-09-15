@@ -12,6 +12,7 @@ import {
     ticksOnSchema,
 } from "../../general/utils";
 import { plotlyAxisSchema } from "./plotlyAxis";
+import { numberStringUnionSchema } from "../nonspecificUtilities";
 
 const _plotlyLayoutAxisPropSchema = z.object({
     fixedrange: z.boolean(),
@@ -36,7 +37,8 @@ const _plotlyLayoutAxisPropSchema = z.object({
     ticklabeloverflow: tickLabelOverflowSchema,
     ticklabelposition: tickLabelPositionSchema,
     ticklabelstep: z.number(),
-    tickson: ticksOnSchema
+    tickson: ticksOnSchema,
+    uirevision: numberStringUnionSchema
 });
 
 
