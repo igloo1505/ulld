@@ -10,7 +10,12 @@ const testPages: LocalDevelopmentItem[] = [
     {
         label: "Line Plot",
         href: "/linePlot"
-    }
+    },
+
+    {
+        label: "Surface Plot",
+        href: "/surfacePlot"
+    },
 ]
 
 const TestPage = async (props: TestPageProps) => {

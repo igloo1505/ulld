@@ -5,7 +5,7 @@ import * as numbers from "numbers";
 // numbers.statistic.correlation(array1, array2);
 
 export class NumericList {
-    constructor(public value: number[]) { }
+    constructor(public value: number[] = []) { }
     static fromLinSpace(a: number, b: number, dataPoints: number): NumericList {
         let dp = Math.abs(a - b) / dataPoints;
         let shouldSubtract = a - b > 0;
@@ -39,6 +39,12 @@ export class NumericList {
         } else {
             this.value = this.value.map((d, i) => operation(d, n.value[i]));
         }
+    }
+    fromLinSpace(a: number, b: number, dataPoints: number): NumericList {
+        return NumericList.fromLinSpace(a, b, dataPoints)
+    }
+    fromRange(a: number, b: number, delta: number = 1) {
+        return NumericList.fromRange(a, b, delta)
     }
     apply(fnc: (n: number) => number) {
         this.value = this.value.map((d) => fnc(d));

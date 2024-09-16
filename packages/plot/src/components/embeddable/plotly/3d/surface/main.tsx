@@ -1,20 +1,17 @@
-import React from 'react'
-import Plot, {PlotParams} from "react-plotly.js"
+import React from "react";
+import Plot, { PlotParams } from "react-plotly.js";
+import {
+  plotlyPlotParamsSchema,
+  PlotyParamsInput,
+} from "../../zod/plotParams/main";
 
+interface SurfacePlotProps extends PlotyParamsInput {}
 
-interface SurfacePlotProps {
+const SurfacePlot = (_props: SurfacePlotProps) => {
+  let props = plotlyPlotParamsSchema.parse(_props);
+  return <Plot {...props} />;
+};
 
-}
-
-const SurfacePlot = (props: SurfacePlotProps) => {
-return (
-    <Plot 
-    />
-)
-}
-
-
-SurfacePlot.displayName = "SurfacePlot"
-
+SurfacePlot.displayName = "SurfacePlot";
 
 export default SurfacePlot;

@@ -1,7 +1,7 @@
 export interface SearchAllParams {
     query?: string;
     tags?: string[];
-    categories?: string[];
+    categories?: string[] | string;
     subjects?: string[];
     topics?: string[];
     citations?: string[];

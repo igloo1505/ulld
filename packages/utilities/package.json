@@ -621,6 +621,11 @@
       "types": "./dist/componentHelpers/getBaseEmbeddableProps.d.ts",
       "import": "./dist/componentHelpers/getBaseEmbeddableProps.js",
       "require": "./dist/componentHelpers/getBaseEmbeddableProps.cjs"
+    },
+    "./getAppConfigClientSide": {
+      "types": "./dist/utils/getAppConfigClientSide.d.ts",
+      "import": "./dist/utils/getAppConfigClientSide.js",
+      "require": "./dist/utils/getAppConfigClientSide.cjs"
     }
   },
   "files": [
