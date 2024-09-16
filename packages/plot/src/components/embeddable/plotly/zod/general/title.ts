@@ -1,5 +1,11 @@
 import { z } from "zod";
-import { plotlyAxisAnchor, plotlyAxisRef, plotlyFontSchema, plotlyPadding, plotlyTitlePosition } from "./utils";
+import { 
+    plotlyAxisAnchor,
+    plotlyAxisRef,
+    plotlyFontSchema,
+    plotlyPadding,
+    plotlyTitlePosition
+} from "./utils";
 
 export const plotlyTitleSchemaObject = z
     .object({
@@ -10,7 +16,7 @@ export const plotlyTitleSchemaObject = z
         y: z.number(),
         xanchor: plotlyAxisAnchor,
         yanchor: plotlyAxisAnchor,
-        pad: plotlyPadding,
+        pad: plotlyPadding.default({}),
         padding: plotlyPadding,
     })
     .partial()
@@ -32,3 +38,5 @@ export const plotlyDataTitleObjectSchema = z.object({
     standoff: z.number(),
     position: plotlyTitlePosition
 })
+
+export const plotlyTitleSchema = z.union([z.string(), plotlyTitleSchemaObject]);

@@ -8,6 +8,7 @@ import {
 interface SurfacePlotProps extends PlotyParamsInput {}
 
 const SurfacePlot = (_props: SurfacePlotProps) => {
+    console.log("_props: ", _props)
   let props = plotlyPlotParamsSchema.parse(_props);
   return <Plot {...props} />;
 };

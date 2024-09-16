@@ -22,6 +22,7 @@ interface UlldAppData {
         githubAccountType: "user" | "organization";
     };
     includeInTypes: InternalAppName[];
+    packagesBuildingToDist: InternalAppName[];
 }
 export declare const appData: UlldAppData;
 export {};

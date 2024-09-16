@@ -498,9 +498,15 @@ ${fullSlotMap.missingItems.map((k, i) => `${i + 1}. ${k.slot} -> ${k.subSlot}`).
     }
     getTailwindSources(): string[] {
         let items = getInternalTailwindSources();
+        const getSrcDiretory = (pkg: string) => {
+            if (appData.packagesBuildingToDist.includes(pkg)) {
+                return "dist";
+            }
+            return "src";
+        };
         let additionalItems = this.plugins
             .filter((f) => f.includeInTailwindSources)
-            .map((p) => `./node_modules/${p.name}/src/**/*.{js,ts,jsx,tsx,mdx}`);
+            .map((p) => `./node_modules/${p.name}/${getSrcDiretory(p.name)}/**/*.{js,ts,jsx,tsx,mdx}`);
         for (const k of additionalItems) {
             if (!items.includes(k)) {
                 items.push(k);

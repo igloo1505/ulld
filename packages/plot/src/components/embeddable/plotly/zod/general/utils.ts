@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { numberStringUnionSchema } from "./nonspecificUtilities";
-import { plotlyTitleSchemaObject } from "./title";
+import { ColorScale } from "plotly.js";
 
 export const plotlyAspectMode = z.union([
     z.literal("auto"),
@@ -30,10 +30,10 @@ export const plotlyColorSchema = z.union([
     z.number().array().array(),
 ]);
 
-export const plotlyColorScaleSchema = z.union([
+export const plotlyColorScaleSchema: z.ZodType<ColorScale> = z.union([
     z.string(),
     z.string().array(),
-    z.union([z.string(), z.number()]).array(),
+    // z.union([z.string(), z.number()]).array(),
 ]);
 
 export const plotlyFontSchema = z.object({
@@ -357,7 +357,6 @@ export const plotlyTypedArraySchema = z.union([
 
 export const currentlySupportedPlotlyPlotTypes = z.literal("surface");
 
-export const plotlyTitleSchema = z.union([z.string(), plotlyTitleSchemaObject]);
 
 export const plotlyLocationMode = z.union([
     z.literal("ISO-3"),

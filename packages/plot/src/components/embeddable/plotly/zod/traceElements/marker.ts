@@ -7,6 +7,8 @@ import {
 import { numberOrNumberArraySchema } from "../general/nonspecificUtilities";
 import { plotlyScatterMarkerLineSchema } from "./scatterMarkerLine";
 import { plotlyPatternSchema } from "./pattern";
+import { PlotMarker } from "plotly.js";
+import { PlotMarkerHack } from "../../types/main";
 
 export const markerSymbolSchema = z.union([
     z.string(),
@@ -14,7 +16,9 @@ export const markerSymbolSchema = z.union([
     z.union([z.number(), z.string()]).array(),
 ]);
 
-export const plotlyMarkerSchema = z.object({
+export const plotlyMarkerSchema: z.ZodType<
+    PlotMarkerHack
+> = z.object({
     symbol: markerSymbolSchema,
     color: z.union([plotlyColorSchema, plotlyColorSchema.array()]).optional(),
     colors: plotlyColorSchema.array().optional(),
@@ -44,8 +48,8 @@ export const plotlyMarkerSchema = z.object({
                 z.literal("none"),
             ]),
             color: plotlyColorSchema,
-            typesrc: z.any(),
-            colorsrc: z.any(),
+            typesrc: z.any().optional(),
+            colorsrc: z.any().optional(),
         })
         .optional(),
     pattern: plotlyPatternSchema.partial(),

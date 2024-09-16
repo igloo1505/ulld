@@ -24,6 +24,10 @@ export const plotlyDataMinMaxRange = z
         }),
     );
 
+export const plotInputAxisFunction = z
+    .function(z.tuple([z.instanceof(NumericList)]))
+    .returns(z.union([z.number().array(), z.instanceof(NumericList)]));
+
 export const plotlyDataAxisRange = z
     .union([
         plotlyDataMinMaxRange,
@@ -34,9 +38,7 @@ export const plotlyDataAxisRange = z
                 max: x,
             }),
         ),
-        z
-            .function(z.tuple([z.instanceof(NumericList)]))
-            .returns(z.union([z.number().array(), z.instanceof(NumericList)])),
+        plotInputAxisFunction,
     ])
     .transform((t): number[] => {
         if (typeof t === "function") {

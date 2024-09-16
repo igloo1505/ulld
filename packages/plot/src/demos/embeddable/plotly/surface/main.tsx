@@ -11,7 +11,10 @@ interface PlotlySurfacePlotEmbeddableDemoProps { }
 const PlotlySurfacePlotEmbeddableDemo = (
     props: PlotlySurfacePlotEmbeddableDemoProps,
 ) => {
-    return <SurfacePlot x={(m) => m.fromLinSpace(-10, 10, 100)} />;
+    return <SurfacePlot
+        setX={(m) => m.fromLinSpace(-10, 10, 100)}
+        f={(n) => n**2}
+    />;
 };
 
 PlotlySurfacePlotEmbeddableDemo.displayName = "PlotlySurfacePlotEmbeddableDemo";
