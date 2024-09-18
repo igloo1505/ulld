@@ -1,5 +1,11 @@
 # @ulld/fileSystemUtils
 
+## 0.0.11
+
+### Patch Changes
+
+- Update after working offline.
+
 ## 0.0.10
 
 ### Patch Changes

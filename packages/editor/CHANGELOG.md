@@ -1,5 +1,22 @@
 # @ulld/editor
 
+## 0.0.113
+
+### Patch Changes
+
+- Update after working offline.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.107
+  - @ulld/configschema@0.0.113
+  - @ulld/developer@0.0.113
+  - @ulld/hooks@0.0.113
+  - @ulld/parsers@0.0.113
+  - @ulld/state@0.0.113
+  - @ulld/tailwind@0.0.107
+  - @ulld/types@0.0.107
+  - @ulld/ui@0.0.111
+  - @ulld/utilities@0.0.113
+
 ## 0.0.112
 
 ### Patch Changes

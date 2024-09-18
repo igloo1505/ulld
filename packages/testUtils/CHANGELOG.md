@@ -1,5 +1,13 @@
 # @ulld/testUtils
 
+## 0.0.11
+
+### Patch Changes
+
+- Update after working offline.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.107
+
 ## 0.0.10
 
 ### Patch Changes

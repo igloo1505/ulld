@@ -1,5 +1,13 @@
 # @ulld/baseConfigs
 
+## 0.0.107
+
+### Patch Changes
+
+- Update after working offline.
+- Updated dependencies
+  - @ulld/types@0.0.107
+
 ## 0.0.106
 
 ### Patch Changes

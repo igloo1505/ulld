@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.113
+
+### Patch Changes
+
+- Update after working offline.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.113
+  - @ulld/calendar@0.0.113
+  - @ulld/typescript-config@0.0.107
+  - @ulld/default-image-map@0.0.113
+  - @ulld/diagram@0.0.113
+  - @ulld/editor@0.0.113
+  - @ulld/embeddable-components@0.0.113
+  - @ulld/equations@0.0.113
+  - @ulld/full-form@0.0.113
+  - @ulld/journal@0.0.113
+  - @ulld/navigation@0.0.113
+  - @ulld/notebook@0.0.113
+  - @ulld/pdf@0.0.113
+  - @ulld/plot@0.0.113
+  - @ulld/snippets@0.0.113
+  - @ulld/tailwind@0.0.107
+  - @ulld/task-manager@0.0.113
+  - @ulld/types@0.0.107
+  - @ulld/whiteboard@0.0.113
+
 ## 0.0.112
 
 ### Patch Changes
