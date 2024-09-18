@@ -6,7 +6,6 @@ import plotly.io as pio
 import math
 from constantsHandler.bodies.earth import Earth
 from pathlib import Path
-import os
 
 pio.templates.default = "plotly_dark"
 

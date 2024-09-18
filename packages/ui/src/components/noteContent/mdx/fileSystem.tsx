@@ -7,6 +7,7 @@ import grayMatter from "gray-matter";
 import { NotePageProps } from "../../../utilityFunctions/formatting/formatNoteProps";
 import { FrontMatterType } from "@ulld/types";
 import { ProvidedNoteDetailSheet } from "../../../types/general";
+import { MdxContentRSC } from "@ulld/render/mdx/rsc";
 
 interface FileSystemMdxProps extends NotePageProps {
     embeddableComponents: AdditionalComponents;
@@ -50,7 +51,7 @@ const FileSystemMdxPage = async ({
                 citations={(parsedData.data as any)?.citations || []}
                 citationOrderList={(parsedData.data as any)?.citationsListOrder || []}
             >
-                <MdxContentSERVER
+                <MdxContentRSC
                     content={parsedData?.content || frontMatter.content}
                     components={props.embeddableComponents}
                     appConfig={props.parsers.mdx.appConfig}

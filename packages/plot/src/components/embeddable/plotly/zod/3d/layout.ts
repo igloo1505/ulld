@@ -27,7 +27,7 @@ export const plotlyLayoutSchema = z.object({
     // yaxis: plotlyLayoutAxisPropSchema.partial().default({}),
     // xaxis: plotlyLayoutAxisPropSchema.partial().default({}),
     // zaxis: plotlyLayoutAxisPropSchema.partial().default({}),
-    colorway: z.string().array().optional(),
+    colorway: z.string().array()jkkkkk:.optional(),
     title: plotlyTitleSchema.default({}),
     titlefont: plotlyFontSchema.default({}),
     autosize: z.boolean().optional(),
