@@ -31,6 +31,7 @@ export type PageType = {
         images?: string[]
         toc?: TocType;
         featuredEquation?: string
+        blogPin?: number;
         full?: boolean;
         body: string;
         content: string;

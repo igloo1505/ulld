@@ -5,6 +5,7 @@ import { transformMDX } from "./src/fumaDocs/transformMdx";
 const utilFields = (z: typeof _zod) => {
     return {
         icon: z.string().optional(),
+        blogPin: z.number().optional(),
         description: z.string().optional(),
         created: z
             .union([z.string(), z.date(), z.undefined(), z.null()])

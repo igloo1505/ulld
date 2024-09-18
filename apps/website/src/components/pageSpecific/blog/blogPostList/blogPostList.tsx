@@ -15,8 +15,16 @@ const getBlogPostListItems = (
     tags: string[] = [],
     page: number = 1,
 ) => {
-    let items = getAllBlogPages();
-    let totalItems = items.length
+    let _items = getAllBlogPages();
+    let pinned: typeof _items = [];
+    let items: typeof _items = [];
+    for (const k of _items) {
+        if (k.data.blogPin) {
+            pinned.push(k);
+        } else {
+            items.push(k);
+        }
+    }
     if (category) {
         items = items.filter(
             (f) => f.data.category && f.data.category === category,
@@ -29,20 +37,27 @@ const getBlogPostListItems = (
             );
         });
     }
-    let startIndex = (page - 1) * itemsPerPage;
-    return {
-        items: items.slice(startIndex, startIndex + itemsPerPage).map((x) => {
-            let itemDate = x.data.updated || x.data.created;
+    items = items
+        .map((x) => {
+            let _itemDate = x.data.updated || x.data.created;
+            let itemDate = _itemDate
+                ? new Date(_itemDate.replaceAll("-", "/"))
+                : new Date("1/1/1970");
             return {
                 ...x,
-                itemDate: itemDate
-                    ? new Date(itemDate.replaceAll("-", "/"))
-                    : new Date("1/1/1970"),
+                itemDate,
             };
-        }),
+        })
+        .sort((a, b) => b.itemDate.valueOf() - a.itemDate.valueOf());
+
+    pinned = pinned.sort((a, b) => a.data.blogPin! - b.data.blogPin!);
+    const startIndex = (page - 1) * itemsPerPage;
+    const allItems = [...pinned, ...items]
+    return {
+        items: allItems.slice(startIndex, startIndex + itemsPerPage),
         currentPage: page,
-        showPagination: items.length > itemsPerPage,
-        totalItems
+        showPagination: allItems.length > itemsPerPage,
+        totalItems: allItems.length,
     };
 };
 
@@ -55,11 +70,8 @@ const BlogPostList = ({ }: BlogPostListProps) => {
     }
     let category = sp.get("category");
     let tags = sp.getAll("tags");
-    const { items, currentPage, showPagination, totalItems } = getBlogPostListItems(
-        category,
-        tags,
-        page || undefined,
-    );
+    const { items, currentPage, showPagination, totalItems } =
+        getBlogPostListItems(category, tags, page || undefined);
     const paginationTemplateString = getPaginationTemplateString((n) => {
         let s = new URLSearchParams();
         if (category) {
@@ -84,20 +96,22 @@ const BlogPostList = ({ }: BlogPostListProps) => {
             }}
         >
             <div
-                className={"flex flex-col justify-start items-center gap-y-16 py-6 flex-grow"}
+                className={
+                    "flex flex-col justify-start items-center gap-y-16 py-6 flex-grow"
+                }
             >
-            {items
-                .sort((a, b) => b.itemDate.valueOf() - a.itemDate.valueOf())
-                .map((p) => {
+                {items.map((p) => {
                     return <BlogPostSummaryCard key={`blog-summary-${p.url}`} item={p} />;
                 })}
             </div>
-            {showPagination && <PaginationGroup
-                totalItems={totalItems}
-                itemsPerPage={itemsPerPage}
-                currentPage={currentPage}
-                hrefTemplate={paginationTemplateString}
-            />}
+            {showPagination && (
+                <PaginationGroup
+                    totalItems={totalItems}
+                    itemsPerPage={itemsPerPage}
+                    currentPage={currentPage}
+                    hrefTemplate={paginationTemplateString}
+                />
+            )}
         </div>
     );
 };
