@@ -14,7 +14,7 @@
   "onTheGravitationalNatureOfTime": {
     "citations": [
       {
-        "htmlCitation": "<div class=\"csl-bib-body\"> <div data-csl-entry-id=\"einstein1905electrodynamics\" class=\"csl-entry\">Einstein, A., &amp; others. (1905). On the electrodynamics of moving bodies. <i>Annalen Der Physik</i>, <i>17</i>(10), 891–921.</div> </div>",
+        "htmlCitation": "<div class=\"csl-bib-body\"> <div data-csl-entry-id=\"einstein1905electrodynamics\" class=\"csl-entry\">Einstein, A. (1905). On the electrodynamics of moving bodies. <i>Annalen Der Physik</i>, <i>17</i>(10), 891–921.</div> </div>",
         "id": "einstein1905electrodynamics",
         "pageIndex": 0
       },
