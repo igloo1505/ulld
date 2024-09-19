@@ -4,7 +4,11 @@ import {
 } from "../client/componentList";
 import { ConditionalComponentQuery } from "../types";
 import dynamic from "next/dynamic";
-const Admonition = dynamic(() => import("@ulld/embeddable-components/components/server/admonition").then((a) => a.Admonition))
+const Admonition = dynamic(() =>
+    import("@ulld/embeddable-components/components/server/admonition").then(
+        (a) => a.Admonition,
+    ),
+);
 // const NotebookCell = dynamic(() => import("../jupyter/notebooks/cell"))
 // // const JupyterConsole = dynamic(() => import("../jupyter/console/index"))
 // const SurfacePlot = dynamic(() => import("./emeddedComponents/plots/surfacePlot"))
@@ -31,20 +35,34 @@ const Admonition = dynamic(() => import("@ulld/embeddable-components/components/
 // const DefinitionTag = dynamic(() => import("./utility/definitionTag"))
 // const Tikz = dynamic(() => import("./emeddedComponents/tikz"))
 
-const clientComponents = conditionalClientComponents
+const clientComponents = conditionalClientComponents;
 const clientOverrides: typeof conditionalClientComponents = [
-        { regex: new RegExp(`<Admonition`), component: Admonition, label: "Admonition" },
-]
+    {
+        regex: new RegExp(`<Admonition`),
+        component: Admonition,
+        label: "Admonition",
+    },
+];
 
-let clientOverrideNames = clientOverrides.map((x) => x.label)
+let clientOverrideNames = clientOverrides.map((x) => x.label);
 
-let filtered = clientComponents.filter((x) => clientOverrideNames.includes(x.label))
+let filtered = clientComponents.filter((x) =>
+    clientOverrideNames.includes(x.label),
+);
 
 for (const k of filtered) {
-   console.log(`Remove the ${k.label} component from the client component list being provided to the server components to avoid uneccessary load weight.`) 
+    if (process.env.ULLD_DEV_RUNTIME) {
+        console.log(
+            `Remove the ${k.label} component from the client component list being provided to the server components to avoid uneccessary load weight.`,
+        );
+    }
 }
 
-let serverComponents = clientComponents.map((x) => clientOverrideNames.includes(x.label) ? clientOverrides.find((j) => j.label === x.label) : x)
+let serverComponents = clientComponents.map((x) =>
+    clientOverrideNames.includes(x.label)
+        ? clientOverrides.find((j) => j.label === x.label)
+        : x,
+);
 
-
-export const conditionalServerComponents: ConditionalComponentQuery<EmbeddableClientComponents>[] = serverComponents as any;
+export const conditionalServerComponents: ConditionalComponentQuery<EmbeddableClientComponents>[] =
+    serverComponents as any;

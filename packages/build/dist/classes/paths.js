@@ -4,6 +4,7 @@ import { pathKeys } from "@ulld/utilities/buildUtils";
 import { removeLeadingDotSlash } from "../utils/removeLeadingDotSlash.js";
 import xdgAppPaths from 'xdg-app-paths';
 import { xdgOpts } from "../utils/getXdgPaths.js";
+
 export class TargetPaths {
     targetDir;
     isLocalDev;
@@ -128,6 +129,3 @@ export class TargetPaths {
         return data;
     }
 }
-let xdgPaths = xdgAppPaths(xdgOpts);
-let f = xdgPaths.config();
-console.log("f: ", f);
