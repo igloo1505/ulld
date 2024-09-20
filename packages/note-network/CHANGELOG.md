@@ -1,5 +1,21 @@
 # @ulld/note-network
 
+## 0.0.114
+
+### Patch Changes
+
+- Bump to fix small errors.
+- Updated dependencies
+  - @ulld/api@0.0.114
+  - @ulld/typescript-config@0.0.108
+  - @ulld/configschema@0.0.114
+  - @ulld/developer@0.0.114
+  - @ulld/jest-presets@0.0.108
+  - @ulld/logger@0.0.108
+  - @ulld/tailwind@0.0.108
+  - @ulld/types@0.0.108
+  - @ulld/utilities@0.0.114
+
 ## 0.0.113
 
 ### Patch Changes

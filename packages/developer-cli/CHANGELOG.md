@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.114
+
+### Patch Changes
+
+- Bump to fix small errors.
+- Updated dependencies
+  - @ulld/developer@0.0.114
+  - @ulld/developer-schemas@0.0.108
+  - @ulld/types@0.0.108
+
 ## 0.0.113
 
 ### Patch Changes

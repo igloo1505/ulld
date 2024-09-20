@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.114
+
+### Patch Changes
+
+- Bump to fix small errors.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.110
+  - @ulld/typescript-config@0.0.108
+  - @ulld/configschema@0.0.114
+  - @ulld/database@0.0.111
+  - @ulld/logger@0.0.108
+  - @ulld/types@0.0.108
+
 ## 0.0.113
 
 ### Patch Changes

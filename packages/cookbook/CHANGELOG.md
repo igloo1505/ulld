@@ -1,5 +1,26 @@
 # @ulld/cookbook
 
+## 0.0.114
+
+### Patch Changes
+
+- Bump to fix small errors.
+- Updated dependencies
+  - @ulld/api@0.0.114
+  - @ulld/calendar@0.0.114
+  - @ulld/eslint-config@0.0.110
+  - @ulld/typescript-config@0.0.108
+  - @ulld/configschema@0.0.114
+  - @ulld/developer@0.0.114
+  - @ulld/full-form@0.0.114
+  - @ulld/hooks@0.0.114
+  - @ulld/logger@0.0.108
+  - @ulld/state@0.0.114
+  - @ulld/tailwind@0.0.108
+  - @ulld/types@0.0.108
+  - @ulld/ui@0.0.112
+  - @ulld/utilities@0.0.114
+
 ## 0.0.113
 
 ### Patch Changes

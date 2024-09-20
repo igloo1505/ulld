@@ -1,5 +1,13 @@
 # @ulld/testUtils
 
+## 0.0.12
+
+### Patch Changes
+
+- Bump to fix small errors.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.108
+
 ## 0.0.11
 
 ### Patch Changes

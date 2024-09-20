@@ -1,5 +1,14 @@
 # @ulld/tailwind
 
+## 0.0.108
+
+### Patch Changes
+
+- Bump to fix small errors.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.108
+  - @ulld/types@0.0.108
+
 ## 0.0.107
 
 ### Patch Changes

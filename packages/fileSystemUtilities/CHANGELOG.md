@@ -1,5 +1,11 @@
 # @ulld/fileSystemUtils
 
+## 0.0.12
+
+### Patch Changes
+
+- Bump to fix small errors.
+
 ## 0.0.11
 
 ### Patch Changes

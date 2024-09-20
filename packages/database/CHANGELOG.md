@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.111
+
+### Patch Changes
+
+- Bump to fix small errors.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.108
+  - @ulld/types@0.0.108
+
 ## 0.0.110
 
 ### Patch Changes

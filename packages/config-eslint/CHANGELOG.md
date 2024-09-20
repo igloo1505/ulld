@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.110
+
+### Patch Changes
+
+- Bump to fix small errors.
+
 ## 0.0.109
 
 ### Patch Changes
