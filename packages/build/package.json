@@ -24,6 +24,8 @@
     "cli-progress": "3.12.0",
     "cli-spinners": "3.0.0",
     "cli-table3": "0.6.4",
+    "cli-welcome": "^3.0.0",
+    "cli-width": "^4.1.0",
     "cliui": "8.0.1",
     "commander": "12.1.0",
     "detect-package-manager": "^3.0.2",

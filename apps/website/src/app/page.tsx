@@ -1,8 +1,8 @@
 import React from "react";
 import LandingPage from "#/components/pageSpecific/landing/standard/main";
 
-interface HomePageProps {
-}
+
+interface HomePageProps { }
 
 const HomePage = ({ }: HomePageProps) => {
     return <LandingPage />;
