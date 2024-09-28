@@ -8,7 +8,10 @@ import SelfFigureIndex from "./selfImageIndex";
 import DispatchRenderedImageEvent from "./dispatchRenderedImageEvent";
 import { readAppConfigSync } from "@ulld/developer/readAppConfig";
 
-type ImgProps = EmbeddedImageProps & Omit<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>, "title"> & { noConfig?: boolean }
+type ImgProps = EmbeddedImageProps & Omit<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>, "title"> & { 
+    noConfig?: boolean
+    publicDir?: boolean
+}
 
 
 const C = (props: ImgProps) => {

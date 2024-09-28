@@ -9,6 +9,8 @@ const Admonition = dynamic(() =>
         (a) => a.Admonition,
     ),
 );
+
+const Image = dynamic(() => import("@ulld/embeddable-components/components/server/image").then((a) => a.ServerEmbeddedImage))
 // const NotebookCell = dynamic(() => import("../jupyter/notebooks/cell"))
 // // const JupyterConsole = dynamic(() => import("../jupyter/console/index"))
 // const SurfacePlot = dynamic(() => import("./emeddedComponents/plots/surfacePlot"))
@@ -41,6 +43,11 @@ const clientOverrides: typeof conditionalClientComponents = [
         regex: new RegExp(`<Admonition`),
         component: Admonition,
         label: "Admonition",
+    },
+    {
+        regex: new RegExp(`<Image`),
+        component: Image,
+        label: "Image",
     },
 ];
 

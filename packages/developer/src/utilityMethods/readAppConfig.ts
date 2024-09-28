@@ -2,12 +2,17 @@ import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 import fs from "fs";
 import path from "path";
 
-export const readAppConfig = async () => {
-    let _path = Boolean(
+
+const getConfigPath = () => { 
+    return Boolean(
         process.env.USE_ULLD_TEST_APP_CONFIG && process.env.ULLD_ADDITIONAL_SOURCES,
     )
         ? path.join(process.env.ULLD_ADDITIONAL_SOURCES!, "appConfig.ulld.json")
         : path.join(process.cwd(), "appConfig.ulld.json");
+    }
+
+export const readAppConfig = async () => {
+    let _path = getConfigPath()
     try {
         let res = await fs.promises.readFile(_path, { encoding: "utf-8" });
         return JSON.parse(res) as AppConfigSchemaOutput;
@@ -19,11 +24,7 @@ export const readAppConfig = async () => {
 
 
 export const readAppConfigSync = () => {
-    let _path = Boolean(
-        process.env.USE_ULLD_TEST_APP_CONFIG && process.env.ULLD_ADDITIONAL_SOURCES,
-    )
-        ? path.join(process.env.ULLD_ADDITIONAL_SOURCES!, "appConfig.ulld.json")
-        : path.join(process.cwd(), "appConfig.ulld.json");
+    let _path = getConfigPath()
     try {
         let res = fs.readFileSync(_path, { encoding: "utf-8" });
         return JSON.parse(res) as AppConfigSchemaOutput;

@@ -79,6 +79,11 @@
       "import": "./dist/utils/build/copyJsonFilesToDist.js",
       "require": "./dist/utils/build/copyJsonFilesToDist.cjs"
     },
+    "./ulldColorVars": {
+      "types": "./dist/styleUtilities/ulldColorVars.d.ts",
+      "import": "./dist/styleUtilities/ulldColorVars.js",
+      "require": "./dist/styleUtilities/ulldColorVars.cjs"
+    },
     "./getGlobServerSide": {
       "types": "./dist/utils/glob/getGlobServerSide.d.ts",
       "import": "./dist/utils/glob/getGlobServerSide.js",

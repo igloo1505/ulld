@@ -1,0 +1,2 @@
+export declare const ulldColorVars: readonly ["info", "error", "note", "tip", "faq", "practice", "abstract", "todo", "success", "warn", "fail", "example", "quote", "cite", "equation", "definition", "important"];
+//# sourceMappingURL=ulldColorVars.d.ts.map

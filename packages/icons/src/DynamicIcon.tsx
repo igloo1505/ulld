@@ -179,7 +179,7 @@ export const completeValidIconNameList = [
     ...Object.keys(dynamicIconImports),
 ] as const;
 
-interface IconProps extends LucideProps {
+export interface IconProps extends LucideProps {
     name: ValidIconName;
     onLoad?: () => void
 }

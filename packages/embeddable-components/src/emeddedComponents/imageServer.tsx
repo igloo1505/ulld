@@ -5,7 +5,7 @@ import { EmbeddedImage } from "./image";
 
 interface ServerEmbeddedImageProps extends EmbeddedImageProps { }
 
-const ServerEmbeddedImage = async (props: ServerEmbeddedImageProps) => {
+export const ServerEmbeddedImage = async (props: ServerEmbeddedImageProps) => {
     /* const config = props.noConfig ? null : getInternalConfig(); */
     const { image, file, url } = props;
     let _src = props.src
@@ -20,5 +20,3 @@ const ServerEmbeddedImage = async (props: ServerEmbeddedImageProps) => {
 };
 
 ServerEmbeddedImage.displayName = "ServerEmbeddedImage";
-
-export default ServerEmbeddedImage;

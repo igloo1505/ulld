@@ -37,7 +37,7 @@ const Lead = dynamic(() => import("@ulld/embeddable-components/components/client
 // const CollapsablePanel = dynamic(() => import("./emeddedComponents/layout/interactive/collapsableSidePanel/collapsableSidePanel"))
 const VSpace = dynamic(() => import("@ulld/embeddable-components/components/client/vspace").then((a) => a.VSpace))
 // const InternalMermaid = dynamic(() => import("./emeddedComponents/diagrams/mermaid"))
-const EmbeddedImage = dynamic(() => import("@ulld/embeddable-components/components/client/image").then((a) => a.EmbeddedImage))
+const EmbeddedImage = dynamic(() => import("@ulld/embeddable-components/components/imageComponent").then((a) => a.EmbeddedImage))
 // const EmbeddedSvg = dynamic(() => import("./emeddedComponents/svg"))
 // const Vectorize = dynamic(() => import("./emeddedComponents/vectorize"))
 const Quote = dynamic(() => import("@ulld/embeddable-components/components/quoteComponent").then((a) => a.Quote))
@@ -54,10 +54,11 @@ const Boxed = dynamic(() => import("@ulld/embeddable-components/components/clien
 const Color = dynamic(() => import("@ulld/embeddable-components/components/client/colorText").then((a) => a.ColorText))
 const ColorChip = dynamic(() => import("@ulld/embeddable-components/components/client/colorChip").then((a) => a.ColorChip))
 const TagBar = dynamic(() => import("@ulld/embeddable-components/components/client/tagBar").then((a) => a.TagBar))
+const IconEmoji = dynamic(() => import("@ulld/embeddable-components/components/iconEmoji").then((a) => a.IconEmoji))
 // TODO: Come back and add a better implementation of the client side whiteboard. This will work for now, just to get the website up, but push it all to the client and handle state that way when you have time.
 // const Whiteboard = dynamic(() => import("@ulld/whiteboard/local").then((a) => a.WhiteboardLocal))
 
-export type EmbeddableClientComponents = typeof Admonition | typeof TabGroup | typeof Tab | typeof Grid | typeof GridItem | typeof Video | typeof ModelView | typeof Card | typeof Highlight | typeof Underline | typeof Small | typeof Large | typeof Centered | typeof Lead | typeof VSpace | typeof EqRef | typeof EquationTag | typeof Color | typeof Boxed | typeof ColorChip | typeof EmbeddedImage | typeof TagBar
+export type EmbeddableClientComponents = typeof Admonition | typeof TabGroup | typeof Tab | typeof Grid | typeof GridItem | typeof Video | typeof ModelView | typeof Card | typeof Highlight | typeof Underline | typeof Small | typeof Large | typeof Centered | typeof Lead | typeof VSpace | typeof EqRef | typeof EquationTag | typeof Color | typeof Boxed | typeof ColorChip | typeof EmbeddedImage | typeof TagBar | typeof IconEmoji
 // export type EmbeddableClientComponents = any
 
 
@@ -107,4 +108,6 @@ export const conditionalClientComponents: ConditionalComponentQuery<EmbeddableCl
         {regex: new RegExp("<ErrorMargin"), component: ErrorMargin, label: "ErrorMargin"},
         {regex: new RegExp("<Abstract"), component: Abstract, label: "Abstract"},
         {regex: new RegExp("<TableFit"), component: TableFit, label: "TableFit"},
+       {regex: new RegExp("<Icon"), component: IconEmoji, label: "Icon"},
+       {regex: new RegExp("<Emoji"), component: IconEmoji, label: "Emoji"},
     ]
