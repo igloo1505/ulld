@@ -98,7 +98,7 @@
               "componentId": {
                 "type": "string",
                 "format": "uuid",
-                "default": "576b6d84-e61f-43a1-8701-784a5cf438e1"
+                "default": "ebdda8ca-f079-4c27-b3d1-122536a16e8d"
               }
             },
             "required": [
