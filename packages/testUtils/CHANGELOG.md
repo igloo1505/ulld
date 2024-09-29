@@ -1,5 +1,13 @@
 # @ulld/testUtils
 
+## 0.0.13
+
+### Patch Changes
+
+- Added emoji component, fixed alignment issue in search page and other small tweaks.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.109
+
 ## 0.0.12
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.115
+
+### Patch Changes
+
+- Added emoji component, fixed alignment issue in search page and other small tweaks.
+- Updated dependencies
+  - @ulld/developer@0.0.115
+  - @ulld/types@0.0.109
+
 ## 0.0.114
 
 ### Patch Changes

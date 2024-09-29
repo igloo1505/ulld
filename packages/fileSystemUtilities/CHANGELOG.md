@@ -1,5 +1,11 @@
 # @ulld/fileSystemUtils
 
+## 0.0.13
+
+### Patch Changes
+
+- Added emoji component, fixed alignment issue in search page and other small tweaks.
+
 ## 0.0.12
 
 ### Patch Changes

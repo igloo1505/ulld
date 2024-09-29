@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.109
+
+### Patch Changes
+
+- Added emoji component, fixed alignment issue in search page and other small tweaks.
+
 ## 0.0.108
 
 ### Patch Changes

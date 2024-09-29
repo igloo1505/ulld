@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.111
+
+### Patch Changes
+
+- Added emoji component, fixed alignment issue in search page and other small tweaks.
+
 ## 0.0.110
 
 ### Patch Changes

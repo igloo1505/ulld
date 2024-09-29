@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.115
+
+### Patch Changes
+
+- Added emoji component, fixed alignment issue in search page and other small tweaks.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.111
+  - @ulld/typescript-config@0.0.109
+  - @ulld/configschema@0.0.115
+  - @ulld/database@0.0.112
+  - @ulld/logger@0.0.109
+  - @ulld/types@0.0.109
+
 ## 0.0.114
 
 ### Patch Changes

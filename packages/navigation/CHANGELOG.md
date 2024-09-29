@@ -1,5 +1,27 @@
 # @ulld/navigation
 
+## 0.0.115
+
+### Patch Changes
+
+- Added emoji component, fixed alignment issue in search page and other small tweaks.
+- Updated dependencies
+  - @ulld/api@0.0.115
+  - @ulld/eslint-config@0.0.111
+  - @ulld/typescript-config@0.0.109
+  - @ulld/configschema@0.0.115
+  - @ulld/developer@0.0.115
+  - @ulld/developer-schemas@0.0.109
+  - @ulld/full-form@0.0.115
+  - @ulld/hooks@0.0.115
+  - @ulld/icons@0.0.115
+  - @ulld/jest-presets@0.0.109
+  - @ulld/render@0.0.115
+  - @ulld/state@0.0.115
+  - @ulld/tailwind@0.0.109
+  - @ulld/types@0.0.109
+  - @ulld/utilities@0.0.115
+
 ## 0.0.114
 
 ### Patch Changes

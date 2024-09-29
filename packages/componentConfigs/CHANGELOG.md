@@ -1,5 +1,22 @@
 # @ulld/component-configs
 
+## 0.0.115
+
+### Patch Changes
+
+- Added emoji component, fixed alignment issue in search page and other small tweaks.
+- Updated dependencies
+  - @ulld/api@0.0.115
+  - @ulld/typescript-config@0.0.109
+  - @ulld/configschema@0.0.115
+  - @ulld/developer@0.0.115
+  - @ulld/hooks@0.0.115
+  - @ulld/state@0.0.115
+  - @ulld/tailwind@0.0.109
+  - @ulld/types@0.0.109
+  - @ulld/ui@0.0.113
+  - @ulld/utilities@0.0.115
+
 ## 0.0.114
 
 ### Patch Changes

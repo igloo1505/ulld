@@ -1,5 +1,14 @@
 # @ulld/database
 
+## 0.0.112
+
+### Patch Changes
+
+- Added emoji component, fixed alignment issue in search page and other small tweaks.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.109
+  - @ulld/types@0.0.109
+
 ## 0.0.111
 
 ### Patch Changes
