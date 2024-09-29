@@ -10,7 +10,7 @@ import type { MDXComponents } from 'mdx/types'
 import { MdxInput } from "@ulld/embeddable-components/components/mdxInput";
 import BlockQuote from "@ulld/embeddable-components/components/blockQuote";
 import { Highlight } from "@ulld/embeddable-components/components/client/hl";
-import { ImgComponent } from "@ulld/embeddable-components/components/img";
+import { ImgComponent } from "@ulld/embeddable-components/components/imgElement";
 import { H1, H2, H3, H4, H5, H6 } from "@ulld/embeddable-components/components/heading";
 import { ConditionalComponentProps, ConditionalComponentQuery } from "../types";
 import { getBaseComponents } from "../utils";
