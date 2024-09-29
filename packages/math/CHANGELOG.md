@@ -1,5 +1,20 @@
 # @ulld/math
 
+## 0.0.116
+
+### Patch Changes
+
+- Fix misaligned image component export.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.110
+  - @ulld/configschema@0.0.116
+  - @ulld/hooks@0.0.116
+  - @ulld/icons@0.0.116
+  - @ulld/jest-presets@0.0.110
+  - @ulld/state@0.0.116
+  - @ulld/types@0.0.110
+  - @ulld/utilities@0.0.116
+
 ## 0.0.115
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ulld/logger
 
+## 0.0.110
+
+### Patch Changes
+
+- Fix misaligned image component export.
+- Updated dependencies
+  - @ulld/types@0.0.110
+
 ## 0.0.109
 
 ### Patch Changes

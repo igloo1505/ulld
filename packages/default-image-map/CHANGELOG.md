@@ -1,5 +1,19 @@
 # @ulld/default-image-map
 
+## 0.0.116
+
+### Patch Changes
+
+- Fix misaligned image component export.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.112
+  - @ulld/typescript-config@0.0.110
+  - @ulld/configschema@0.0.116
+  - @ulld/logger@0.0.110
+  - @ulld/tailwind@0.0.110
+  - @ulld/types@0.0.110
+  - @ulld/utilities@0.0.116
+
 ## 0.0.115
 
 ### Patch Changes

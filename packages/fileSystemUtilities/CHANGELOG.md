@@ -1,5 +1,11 @@
 # @ulld/fileSystemUtils
 
+## 0.0.14
+
+### Patch Changes
+
+- Fix misaligned image component export.
+
 ## 0.0.13
 
 ### Patch Changes

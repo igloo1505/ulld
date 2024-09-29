@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.112
+
+### Patch Changes
+
+- Fix misaligned image component export.
+
 ## 0.0.111
 
 ### Patch Changes

@@ -1,5 +1,37 @@
 # @ulld/website
 
+## 0.0.116
+
+### Patch Changes
+
+- Fix misaligned image component export.
+- Updated dependencies
+  - @ulld/api@0.0.116
+  - @ulld/base-configs@0.0.110
+  - @ulld/bib-manager@0.0.116
+  - @ulld/calendar@0.0.116
+  - @ulld/component-map@0.0.116
+  - @ulld/eslint-config@0.0.112
+  - @ulld/typescript-config@0.0.110
+  - @ulld/configschema@0.0.116
+  - @ulld/database@0.0.113
+  - @ulld/diagram@0.0.116
+  - @ulld/editor@0.0.116
+  - @ulld/embeddable-components@0.0.116
+  - @ulld/full-form@0.0.116
+  - @ulld/hooks@0.0.116
+  - @ulld/icons@0.0.116
+  - @ulld/jest-presets@0.0.110
+  - @ulld/logger@0.0.110
+  - @ulld/parsers@0.0.116
+  - @ulld/render@0.0.116
+  - @ulld/state@0.0.116
+  - @ulld/tailwind@0.0.110
+  - @ulld/types@0.0.110
+  - @ulld/ui@0.0.114
+  - @ulld/utilities@0.0.116
+  - @ulld/whiteboard@0.0.116
+
 ## 0.0.115
 
 ### Patch Changes

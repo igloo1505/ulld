@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.116
+
+### Patch Changes
+
+- Fix misaligned image component export.
+- Updated dependencies
+  - @ulld/developer@0.0.116
+  - @ulld/developer-schemas@0.0.110
+  - @ulld/types@0.0.110
+
 ## 0.0.115
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ulld/utilities
 
+## 0.0.116
+
+### Patch Changes
+
+- Fix misaligned image component export.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.110
+  - @ulld/database@0.0.113
+  - @ulld/math@0.0.116
+  - @ulld/tailwind@0.0.110
+  - @ulld/types@0.0.110
+
 ## 0.0.115
 
 ### Patch Changes

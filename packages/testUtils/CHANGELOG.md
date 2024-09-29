@@ -1,5 +1,13 @@
 # @ulld/testUtils
 
+## 0.0.14
+
+### Patch Changes
+
+- Fix misaligned image component export.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.110
+
 ## 0.0.13
 
 ### Patch Changes
