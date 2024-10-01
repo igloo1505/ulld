@@ -1,5 +1,26 @@
 # @ulld/cookbook
 
+## 0.0.119
+
+### Patch Changes
+
+- Fucking hell... broke the entire app by passing a redux store to a client component when it was already there.
+- Updated dependencies
+  - @ulld/api@0.0.119
+  - @ulld/calendar@0.0.119
+  - @ulld/eslint-config@0.0.115
+  - @ulld/typescript-config@0.0.113
+  - @ulld/configschema@0.0.119
+  - @ulld/developer@0.0.119
+  - @ulld/full-form@0.0.119
+  - @ulld/hooks@0.0.119
+  - @ulld/logger@0.0.113
+  - @ulld/state@0.0.119
+  - @ulld/tailwind@0.0.113
+  - @ulld/types@0.0.113
+  - @ulld/ui@0.0.117
+  - @ulld/utilities@0.0.119
+
 ## 0.0.118
 
 ### Patch Changes

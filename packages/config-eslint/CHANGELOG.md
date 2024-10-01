@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.115
+
+### Patch Changes
+
+- Fucking hell... broke the entire app by passing a redux store to a client component when it was already there.
+
 ## 0.0.114
 
 ### Patch Changes

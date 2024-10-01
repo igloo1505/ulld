@@ -1,158 +1,158 @@
 {
-    "name": "@ulld/equations",
-    "version": "0.0.118",
-    "dependencies": {
-        "@tailwindcss/container-queries": "^0.1.1",
-        "@tailwindcss/forms": "^0.5.7",
-        "monaco-editor": "0.49.0",
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "sass": "^1.74.1",
-        "tailwind-merge": "^1.14.0",
-        "tailwindcss": "^3.4.1",
-        "tailwindcss-animate": "^1.0.7"
-    },
-    "devDependencies": {
-        "@tailwindcss/container-queries": "^0.1.1",
-        "@tailwindcss/forms": "^0.5.7",
-        "monaco-editor": "0.49.0",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "sass": "^1.74.1",
-        "tailwind-merge": "^1.14.0",
-        "tailwindcss": "^3.4.1",
-        "tailwindcss-animate": "^1.0.7"
-    },
-    "exports": {
-        "./equationModal": "./src/ulld_app/equations/@modal/(.)equations/details/[equationId]/page.tsx",
-        "./addEquationPage": "./src/ulld_app/equations/add/page.tsx",
-        "./equationDetailsPage": "./src/ulld_app/equations/details/[equationId]/page.tsx",
-        "./equationsPage": "./src/ulld_app/equations/page.tsx",
-        "./parser": "./src/parsers/main.tsx",
-        "./onBackup": "./src/events/onBackup/hook.ts",
-        "./onRestore": "./src/events/onRestore/hook.ts",
-        "./embeddableEquation": "./src/components/embeddable/equation/main.tsx"
-    },
-    "files": [
-        "src",
-        "pluginConfig.ulld.json"
-    ],
-    "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {
-        "@ulld/api": "workspace:*",
-        "@ulld/configschema": "workspace:*",
-        "@ulld/database": "workspace:*",
-        "@ulld/developer": "workspace:*",
-        "@ulld/developer-schemas": "workspace:*",
-        "@ulld/editor": "workspace:*",
-        "@ulld/embeddable-components": "workspace:*",
-        "@ulld/full-form": "workspace:*",
-        "@ulld/hooks": "workspace:*",
-        "@ulld/jest-presets": "workspace:*",
-        "@ulld/parsers": "workspace:*",
-        "@ulld/render": "workspace:*",
-        "@ulld/state": "workspace:*",
-        "@ulld/tailwind": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "@ulld/ui": "workspace:*",
-        "@ulld/utilities": "workspace:*",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
-    "scripts": {
-        "appendRouter": "ts-node ./node_modules/@ulld/developer-cli/bin/run.js appendRouter /src/lib/equationsRouter.ts equations",
-        "build": "echo 'Add build script here'",
-        "copyApiAndAppend": "pnpm run copyRouter && pnpm run appendRouter",
-        "copyRouter": "rm -rf ./node_modules/@ulld/api && mkdir ./node_modules/@ulld/api && cp -r /Users/bigsexy/Desktop/currentProjects/ulld/packages/api/ ./node_modules/@ulld/api",
-        "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
-        "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
-        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-        "test": "echo 'Add test script here'",
-        "writePluginConfig": "dotenv -e ../../.env.local -- tsx ./pluginConfig.ulld.ts"
-    },
-    "ulld-developer": {
-        "routerPaths": {
-            "equations": "src/lib/equationsRouter.ts"
-        }
-    },
-    "ulld-plugin-id": "6e475731-b787-46d4-9ef1-fee1548eb30e",
-    "ulld-pluginConfig": {
-        "pluginName": "@ulld/equations",
-        "label": "Math",
-        "pluginId": "61a78d89-12e3-464a-9608-95b77e659d4e",
-        "slot": "math",
-        "components": [
-            {
-                "componentName": "EmbeddableEquation",
-                "tags": [],
-                "export": "embeddableEquation",
-                "embeddable": [
-                    {
-                        "regexToInclude": "<Equation",
-                        "label": "Equation"
-                    }
-                ],
-                "componentId": "40ecf259-fc08-4008-9d3a-8d579ade16cb"
-            }
-        ],
-        "parsers": {
-            "mdx": {
-                "export": "parser",
-                "conditions": {}
-            }
-        },
-        "pages": [
-            {
-                "targetUrl": "@modal/(.)equations/details/[equationId]",
-                "slot": "EquationDetailsModalPage",
-                "export": "equationModal",
-                "exportsPageProps": true
-            },
-            {
-                "targetUrl": "equations/add",
-                "slot": "AddEquationPage",
-                "export": "addEquationPage",
-                "exportsPageProps": true
-            },
-            {
-                "targetUrl": "equations/details/[equationId]",
-                "slot": "EquationDetailsPage",
-                "export": "equationDetailsPage",
-                "exportsPageProps": true
-            },
-            {
-                "targetUrl": "equations",
-                "slot": "EquationsPage",
-                "export": "equationsPage",
-                "exportsPageProps": true
-            }
-        ],
-        "events": {
-            "onBackup": "onBackup",
-            "onRestore": "onRestore"
-        },
-        "navigationLinks": [
-            {
-                "label": "Equations",
-                "href": "/equations",
-                "category": "general"
-            },
-            {
-                "label": "Add Equation",
-                "href": "/equations/add",
-                "category": "general"
-            }
-        ],
-        "commandPalette": [],
-        "tailwind": {},
-        "styles": {}
+  "name": "@ulld/equations",
+  "version": "0.0.119",
+  "dependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.7",
+    "monaco-editor": "0.49.0",
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.74.1",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.7",
+    "monaco-editor": "0.49.0",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.74.1",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "exports": {
+    "./equationModal": "./src/ulld_app/equations/@modal/(.)equations/details/[equationId]/page.tsx",
+    "./addEquationPage": "./src/ulld_app/equations/add/page.tsx",
+    "./equationDetailsPage": "./src/ulld_app/equations/details/[equationId]/page.tsx",
+    "./equationsPage": "./src/ulld_app/equations/page.tsx",
+    "./parser": "./src/parsers/main.tsx",
+    "./onBackup": "./src/events/onBackup/hook.ts",
+    "./onRestore": "./src/events/onRestore/hook.ts",
+    "./embeddableEquation": "./src/components/embeddable/equation/main.tsx"
+  },
+  "files": [
+    "src",
+    "pluginConfig.ulld.json"
+  ],
+  "packageManager": "pnpm@9.0.4",
+  "peerDependencies": {
+    "@ulld/api": "workspace:*",
+    "@ulld/configschema": "workspace:*",
+    "@ulld/database": "workspace:*",
+    "@ulld/developer": "workspace:*",
+    "@ulld/developer-schemas": "workspace:*",
+    "@ulld/editor": "workspace:*",
+    "@ulld/embeddable-components": "workspace:*",
+    "@ulld/full-form": "workspace:*",
+    "@ulld/hooks": "workspace:*",
+    "@ulld/jest-presets": "workspace:*",
+    "@ulld/parsers": "workspace:*",
+    "@ulld/render": "workspace:*",
+    "@ulld/state": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
+    "@ulld/types": "workspace:*",
+    "@ulld/typescript-config": "workspace:*",
+    "@ulld/ui": "workspace:*",
+    "@ulld/utilities": "workspace:*",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "appendRouter": "ts-node ./node_modules/@ulld/developer-cli/bin/run.js appendRouter /src/lib/equationsRouter.ts equations",
+    "build": "echo 'Add build script here'",
+    "copyApiAndAppend": "pnpm run copyRouter && pnpm run appendRouter",
+    "copyRouter": "rm -rf ./node_modules/@ulld/api && mkdir ./node_modules/@ulld/api && cp -r /Users/bigsexy/Desktop/currentProjects/ulld/packages/api/ ./node_modules/@ulld/api",
+    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
+    "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "echo 'Add test script here'",
+    "writePluginConfig": "dotenv -e ../../.env.local -- tsx ./pluginConfig.ulld.ts"
+  },
+  "ulld-developer": {
+    "routerPaths": {
+      "equations": "src/lib/equationsRouter.ts"
     }
+  },
+  "ulld-plugin-id": "6e475731-b787-46d4-9ef1-fee1548eb30e",
+  "ulld-pluginConfig": {
+    "pluginName": "@ulld/equations",
+    "label": "Math",
+    "pluginId": "61a78d89-12e3-464a-9608-95b77e659d4e",
+    "slot": "math",
+    "components": [
+      {
+        "componentName": "EmbeddableEquation",
+        "tags": [],
+        "export": "embeddableEquation",
+        "embeddable": [
+          {
+            "regexToInclude": "<Equation",
+            "label": "Equation"
+          }
+        ],
+        "componentId": "40ecf259-fc08-4008-9d3a-8d579ade16cb"
+      }
+    ],
+    "parsers": {
+      "mdx": {
+        "export": "parser",
+        "conditions": {}
+      }
+    },
+    "pages": [
+      {
+        "targetUrl": "@modal/(.)equations/details/[equationId]",
+        "slot": "EquationDetailsModalPage",
+        "export": "equationModal",
+        "exportsPageProps": true
+      },
+      {
+        "targetUrl": "equations/add",
+        "slot": "AddEquationPage",
+        "export": "addEquationPage",
+        "exportsPageProps": true
+      },
+      {
+        "targetUrl": "equations/details/[equationId]",
+        "slot": "EquationDetailsPage",
+        "export": "equationDetailsPage",
+        "exportsPageProps": true
+      },
+      {
+        "targetUrl": "equations",
+        "slot": "EquationsPage",
+        "export": "equationsPage",
+        "exportsPageProps": true
+      }
+    ],
+    "events": {
+      "onBackup": "onBackup",
+      "onRestore": "onRestore"
+    },
+    "navigationLinks": [
+      {
+        "label": "Equations",
+        "href": "/equations",
+        "category": "general"
+      },
+      {
+        "label": "Add Equation",
+        "href": "/equations/add",
+        "category": "general"
+      }
+    ],
+    "commandPalette": [],
+    "tailwind": {},
+    "styles": {}
+  }
 }

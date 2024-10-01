@@ -1,5 +1,13 @@
 # @ulld/testUtils
 
+## 0.0.17
+
+### Patch Changes
+
+- Fucking hell... broke the entire app by passing a redux store to a client component when it was already there.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.113
+
 ## 0.0.16
 
 ### Patch Changes

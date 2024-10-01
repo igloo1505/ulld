@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.119
+
+### Patch Changes
+
+- Fucking hell... broke the entire app by passing a redux store to a client component when it was already there.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.115
+  - @ulld/typescript-config@0.0.113
+  - @ulld/configschema@0.0.119
+  - @ulld/database@0.0.116
+  - @ulld/logger@0.0.113
+  - @ulld/types@0.0.113
+
 ## 0.0.118
 
 ### Patch Changes

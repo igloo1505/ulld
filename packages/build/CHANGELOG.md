@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.118
+
+### Patch Changes
+
+- Fucking hell... broke the entire app by passing a redux store to a client component when it was already there.
+- Updated dependencies
+  - @ulld/configschema@0.0.119
+  - @ulld/developer-schemas@0.0.113
+  - @ulld/types@0.0.113
+  - @ulld/utilities@0.0.119
+
 ## 0.0.117
 
 ### Patch Changes

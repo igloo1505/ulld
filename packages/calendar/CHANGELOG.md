@@ -1,5 +1,14 @@
 # @ulld/calendar
 
+## 0.0.119
+
+### Patch Changes
+
+- Fucking hell... broke the entire app by passing a redux store to a client component when it was already there.
+- Updated dependencies
+  - @ulld/developer@0.0.119
+  - @ulld/types@0.0.113
+
 ## 0.0.118
 
 ### Patch Changes

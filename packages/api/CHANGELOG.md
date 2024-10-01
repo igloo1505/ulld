@@ -1,5 +1,24 @@
 # @ulld/api
 
+## 0.0.119
+
+### Patch Changes
+
+- Fucking hell... broke the entire app by passing a redux store to a client component when it was already there.
+- Updated dependencies
+  - @ulld/base-configs@0.0.113
+  - @ulld/typescript-config@0.0.113
+  - @ulld/configschema@0.0.119
+  - @ulld/database@0.0.116
+  - @ulld/developer@0.0.119
+  - @ulld/jest-presets@0.0.113
+  - @ulld/logger@0.0.113
+  - @ulld/parsers@0.0.119
+  - @ulld/state@0.0.119
+  - @ulld/tailwind@0.0.113
+  - @ulld/types@0.0.113
+  - @ulld/utilities@0.0.119
+
 ## 0.0.118
 
 ### Patch Changes
