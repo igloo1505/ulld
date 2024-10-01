@@ -1,5 +1,29 @@
 # @ulld/developer-template
 
+## 0.0.117
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+- Updated dependencies
+  - @ulld/api@0.0.117
+  - @ulld/base-configs@0.0.111
+  - @ulld/eslint-config@0.0.113
+  - @ulld/typescript-config@0.0.111
+  - @ulld/configschema@0.0.117
+  - @ulld/database@0.0.114
+  - @ulld/developer@0.0.117
+  - @ulld/hooks@0.0.117
+  - @ulld/icons@0.0.117
+  - @ulld/jest-presets@0.0.111
+  - @ulld/logger@0.0.111
+  - @ulld/parsers@0.0.117
+  - @ulld/state@0.0.117
+  - @ulld/tailwind@0.0.111
+  - @ulld/types@0.0.111
+  - @ulld/ui@0.0.115
+  - @ulld/utilities@0.0.117
+
 ## 0.0.116
 
 ### Patch Changes

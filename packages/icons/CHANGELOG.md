@@ -1,5 +1,17 @@
 # @ulld/icons
 
+## 0.0.117
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.111
+  - @ulld/hooks@0.0.117
+  - @ulld/tailwind@0.0.111
+  - @ulld/types@0.0.111
+  - @ulld/utilities@0.0.117
+
 ## 0.0.116
 
 ### Patch Changes

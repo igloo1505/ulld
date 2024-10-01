@@ -1,5 +1,31 @@
 # @ulld/component-map
 
+## 0.0.117
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.117
+  - @ulld/calendar@0.0.117
+  - @ulld/typescript-config@0.0.111
+  - @ulld/default-image-map@0.0.117
+  - @ulld/diagram@0.0.117
+  - @ulld/editor@0.0.117
+  - @ulld/embeddable-components@0.0.117
+  - @ulld/equations@0.0.117
+  - @ulld/full-form@0.0.117
+  - @ulld/journal@0.0.117
+  - @ulld/navigation@0.0.117
+  - @ulld/notebook@0.0.117
+  - @ulld/pdf@0.0.117
+  - @ulld/plot@0.0.117
+  - @ulld/snippets@0.0.117
+  - @ulld/tailwind@0.0.111
+  - @ulld/task-manager@0.0.117
+  - @ulld/types@0.0.111
+  - @ulld/whiteboard@0.0.117
+
 ## 0.0.116
 
 ### Patch Changes

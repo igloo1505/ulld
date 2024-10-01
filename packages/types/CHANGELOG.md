@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.111
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+
 ## 0.0.110
 
 ### Patch Changes

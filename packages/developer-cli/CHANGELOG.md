@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.117
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+- Updated dependencies
+  - @ulld/developer@0.0.117
+  - @ulld/developer-schemas@0.0.111
+  - @ulld/types@0.0.111
+
 ## 0.0.116
 
 ### Patch Changes

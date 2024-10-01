@@ -1,354 +1,354 @@
 {
-    "name": "@ulld/tailwind",
-    "version": "0.0.110",
-    "dependencies": {
-        "@hookform/resolvers": "^3.3.4",
-        "@radix-ui/react-accordion": "1.1.2",
-        "@radix-ui/react-alert-dialog": "1.0.5",
-        "@radix-ui/react-aspect-ratio": "1.0.3",
-        "@radix-ui/react-avatar": "1.0.4",
-        "@radix-ui/react-checkbox": "1.0.4",
-        "@radix-ui/react-collapsible": "1.0.3",
-        "@radix-ui/react-context-menu": "2.1.5",
-        "@radix-ui/react-dialog": "1.0.5",
-        "@radix-ui/react-dropdown-menu": "2.0.6",
-        "@radix-ui/react-hover-card": "1.0.7",
-        "@radix-ui/react-label": "2.0.2",
-        "@radix-ui/react-menubar": "1.0.4",
-        "@radix-ui/react-navigation-menu": "1.1.4",
-        "@radix-ui/react-popover": "1.0.7",
-        "@radix-ui/react-progress": "1.0.3",
-        "@radix-ui/react-radio-group": "1.1.3",
-        "@radix-ui/react-scroll-area": "1.0.5",
-        "@radix-ui/react-select": "2.0.0",
-        "@radix-ui/react-separator": "1.0.3",
-        "@radix-ui/react-slider": "1.1.2",
-        "@radix-ui/react-slot": "1.0.2",
-        "@radix-ui/react-switch": "1.0.3",
-        "@radix-ui/react-tabs": "1.0.4",
-        "@radix-ui/react-toast": "1.1.5",
-        "@radix-ui/react-toggle": "1.0.3",
-        "@radix-ui/react-toggle-group": "1.0.4",
-        "@radix-ui/react-tooltip": "1.0.7",
-        "@tailwindcss/container-queries": "^0.1.1",
-        "autoprefixer": "^10.4.18",
-        "class-variance-authority": "^0.7.0",
-        "clsx": "^2.0.0",
-        "cmdk": "^0.2.0",
-        "date-fns": "^3.3.1",
-        "embla-carousel-react": "8.0.0",
-        "lucide-react": "*",
-        "next": "14.2.3",
-        "next-themes": "0.2.1",
-        "postcss": "^8.4.35",
-        "react": "18.2.0",
-        "react-day-picker": "8.10.0",
-        "react-dom": "18.2.0",
-        "react-hook-form": "7.51.3",
-        "react-resizable-panels": "2.0.12",
-        "sonner": "^1.4.3",
-        "tailwind-merge": "^1.14.0",
-        "tailwindcss": "^3.4.1",
-        "tailwindcss-animate": "^1.0.7",
-        "tailwindcss-debug-screens": "^2.2.1",
-        "vaul": "^0.9.0",
-        "zod": "^3.22.4"
-    },
-    "devDependencies": {
-        "@hookform/resolvers": "^3.3.4",
-        "@radix-ui/react-accordion": "^1.1.2",
-        "@radix-ui/react-alert-dialog": "^1.0.5",
-        "@radix-ui/react-aspect-ratio": "^1.0.3",
-        "@radix-ui/react-avatar": "^1.0.4",
-        "@radix-ui/react-checkbox": "^1.0.4",
-        "@radix-ui/react-collapsible": "^1.0.3",
-        "@radix-ui/react-context-menu": "^2.1.5",
-        "@radix-ui/react-dialog": "^1.0.5",
-        "@radix-ui/react-dropdown-menu": "^2.0.6",
-        "@radix-ui/react-hover-card": "^1.0.7",
-        "@radix-ui/react-label": "^2.0.2",
-        "@radix-ui/react-menubar": "^1.0.4",
-        "@radix-ui/react-navigation-menu": "^1.1.4",
-        "@radix-ui/react-popover": "^1.0.7",
-        "@radix-ui/react-progress": "^1.0.3",
-        "@radix-ui/react-radio-group": "^1.1.3",
-        "@radix-ui/react-scroll-area": "^1.0.5",
-        "@radix-ui/react-select": "^2.0.0",
-        "@radix-ui/react-separator": "^1.0.3",
-        "@radix-ui/react-slider": "^1.1.2",
-        "@radix-ui/react-slot": "^1.0.2",
-        "@radix-ui/react-switch": "^1.0.3",
-        "@radix-ui/react-tabs": "^1.0.4",
-        "@radix-ui/react-toast": "^1.1.5",
-        "@radix-ui/react-toggle": "^1.0.3",
-        "@radix-ui/react-toggle-group": "^1.0.4",
-        "@radix-ui/react-tooltip": "^1.0.7",
-        "@tailwindcss/container-queries": "^0.1.1",
-        "autoprefixer": "^10.4.18",
-        "class-variance-authority": "^0.7.0",
-        "clsx": "^2.0.0",
-        "cmdk": "^0.2.0",
-        "date-fns": "^3.3.1",
-        "embla-carousel-react": "^8.0.0",
-        "lucide-react": "^0.344.0",
-        "next": "^14.2.3",
-        "next-themes": "^0.2.1",
-        "postcss": "^8.4.35",
-        "react": "^18.2.0",
-        "react-day-picker": "^8.8.1",
-        "react-dom": "^18.2.0",
-        "react-hook-form": "^7.51.3",
-        "react-resizable-panels": "^2.0.12",
-        "sonner": "^1.4.3",
-        "tailwind-merge": "^1.14.0",
-        "tailwindcss": "^3.4.1",
-        "tailwindcss-animate": "^1.0.7",
-        "tailwindcss-debug-screens": "^2.2.1",
-        "vaul": "^0.9.0",
-        "zod": "^3.22.4"
-    },
-    "exports": {
-        ".": "./src/tailwind.config.ts",
-        "./themeUtils": "./src/shad/lib/themeUtils.ts",
-        "./defaultThemes": "./src/defaultThemes.ts",
-        "./handleThemeCookies": "./src/shad/lib/handleThemeCookies.ts",
-        "./tailwindConfig": "./src/tailwindConfig.ts",
-        "./defaultFont": "./src/defaultFont/localDefaultFont.ts",
-        "./aspect-ratio": "./src/shad/components/ui/aspect-ratio.tsx",
-        "./alert-dialog": "./src/shad/components/ui/alert-dialog.tsx",
-        "./pagination": "./src/shad/components/ui/pagination.tsx",
-        "./tabs": "./src/shad/components/ui/tabs.tsx",
-        "./card": "./src/shad/components/ui/card.tsx",
-        "./popover": "./src/shad/components/ui/popover.tsx",
-        "./progress": "./src/shad/components/ui/progress.tsx",
-        "./toaster": "./src/shad/components/ui/toaster.tsx",
-        "./hover-card": "./src/shad/components/ui/hover-card.tsx",
-        "./sheet": "./src/shad/components/ui/sheet.tsx",
-        "./scroll-area": "./src/shad/components/ui/scroll-area.tsx",
-        "./resizable": "./src/shad/components/ui/resizable.tsx",
-        "./label": "./src/shad/components/ui/label.tsx",
-        "./navigation-menu": "./src/shad/components/ui/navigation-menu.tsx",
-        "./accordion": "./src/shad/components/ui/accordion.tsx",
-        "./drawer": "./src/shad/components/ui/drawer.tsx",
-        "./tooltip": "./src/shad/components/ui/tooltip.tsx",
-        "./alert": "./src/shad/components/ui/alert.tsx",
-        "./use-toast": "./src/shad/components/ui/use-toast.tsx",
-        "./switch": "./src/shad/components/ui/switch.tsx",
-        "./calendar": "./src/shad/components/ui/calendar.tsx",
-        "./radio-group": "./src/shad/components/ui/radio-group.tsx",
-        "./command": "./src/shad/components/ui/command.tsx",
-        "./toggle-group": "./src/shad/components/ui/toggle-group.tsx",
-        "./avatar": "./src/shad/components/ui/avatar.tsx",
-        "./menubar": "./src/shad/components/ui/menubar.tsx",
-        "./dialog": "./src/shad/components/ui/dialog.tsx",
-        "./badge": "./src/shad/components/ui/badge.tsx",
-        "./table": "./src/shad/components/ui/table.tsx",
-        "./separator": "./src/shad/components/ui/separator.tsx",
-        "./button": "./src/shad/components/ui/button.tsx",
-        "./toggle": "./src/shad/components/ui/toggle.tsx",
-        "./toast": "./src/shad/components/ui/toast.tsx",
-        "./checkbox": "./src/shad/components/ui/checkbox.tsx",
-        "./collapsible": "./src/shad/components/ui/collapsible.tsx",
-        "./dropdown-menu": "./src/shad/components/ui/dropdown-menu.tsx",
-        "./select": "./src/shad/components/ui/select.tsx",
-        "./textarea": "./src/shad/components/ui/textarea.tsx",
-        "./input": "./src/shad/components/ui/input.tsx",
-        "./skeleton": "./src/shad/components/ui/skeleton.tsx",
-        "./context-menu": "./src/shad/components/ui/context-menu.tsx",
-        "./form": "./src/shad/components/ui/form.tsx",
-        "./carousel": "./src/shad/components/ui/carousel.tsx",
-        "./slider": "./src/shad/components/ui/slider.tsx",
-        "./defaultStyles.scss": "./src/defaultStyles/defaultStyles.scss",
-        "./websiteStyles.scss": "./src/defaultStyles/websiteStyles.scss",
-        "./themes/gray.scss": "./src/shad/defaultThemes/gray.scss",
-        "./themes/violet.scss": "./src/shad/defaultThemes/violet.scss",
-        "./themes/slate.scss": "./src/shad/defaultThemes/slate.scss",
-        "./themes/neutral.scss": "./src/shad/defaultThemes/neutral.scss",
-        "./themes/stone.scss": "./src/shad/defaultThemes/stone.scss",
-        "./themes/green.scss": "./src/shad/defaultThemes/green.scss",
-        "./themes/orange.scss": "./src/shad/defaultThemes/orange.scss",
-        "./themes/yellow.scss": "./src/shad/defaultThemes/yellow.scss",
-        "./themes/blue.scss": "./src/shad/defaultThemes/blue.scss",
-        "./themes/zinc.scss": "./src/shad/defaultThemes/zinc.scss",
-        "./themes/rose.scss": "./src/shad/defaultThemes/rose.scss",
-        "./themes/red.scss": "./src/shad/defaultThemes/red.scss",
-        "./colorMap/gray": "./src/shad/defaultThemes/colorMaps/gray.json",
-        "./colorMap/violet": "./src/shad/defaultThemes/colorMaps/violet.json",
-        "./colorMap/slate": "./src/shad/defaultThemes/colorMaps/slate.json",
-        "./colorMap/neutral": "./src/shad/defaultThemes/colorMaps/neutral.json",
-        "./colorMap/stone": "./src/shad/defaultThemes/colorMaps/stone.json",
-        "./colorMap/green": "./src/shad/defaultThemes/colorMaps/green.json",
-        "./colorMap/orange": "./src/shad/defaultThemes/colorMaps/orange.json",
-        "./colorMap/yellow": "./src/shad/defaultThemes/colorMaps/yellow.json",
-        "./colorMap/blue": "./src/shad/defaultThemes/colorMaps/blue.json",
-        "./colorMap/zinc": "./src/shad/defaultThemes/colorMaps/zinc.json",
-        "./colorMap/rose": "./src/shad/defaultThemes/colorMaps/rose.json",
-        "./colorMap/red": "./src/shad/defaultThemes/colorMaps/red.json"
-    },
-    "files": [
-        "dist",
-        "src"
+  "name": "@ulld/tailwind",
+  "version": "0.0.111",
+  "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
+    "@radix-ui/react-accordion": "1.1.2",
+    "@radix-ui/react-alert-dialog": "1.0.5",
+    "@radix-ui/react-aspect-ratio": "1.0.3",
+    "@radix-ui/react-avatar": "1.0.4",
+    "@radix-ui/react-checkbox": "1.0.4",
+    "@radix-ui/react-collapsible": "1.0.3",
+    "@radix-ui/react-context-menu": "2.1.5",
+    "@radix-ui/react-dialog": "1.0.5",
+    "@radix-ui/react-dropdown-menu": "2.0.6",
+    "@radix-ui/react-hover-card": "1.0.7",
+    "@radix-ui/react-label": "2.0.2",
+    "@radix-ui/react-menubar": "1.0.4",
+    "@radix-ui/react-navigation-menu": "1.1.4",
+    "@radix-ui/react-popover": "1.0.7",
+    "@radix-ui/react-progress": "1.0.3",
+    "@radix-ui/react-radio-group": "1.1.3",
+    "@radix-ui/react-scroll-area": "1.0.5",
+    "@radix-ui/react-select": "2.0.0",
+    "@radix-ui/react-separator": "1.0.3",
+    "@radix-ui/react-slider": "1.1.2",
+    "@radix-ui/react-slot": "1.0.2",
+    "@radix-ui/react-switch": "1.0.3",
+    "@radix-ui/react-tabs": "1.0.4",
+    "@radix-ui/react-toast": "1.1.5",
+    "@radix-ui/react-toggle": "1.0.3",
+    "@radix-ui/react-toggle-group": "1.0.4",
+    "@radix-ui/react-tooltip": "1.0.7",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "autoprefixer": "^10.4.18",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "cmdk": "^0.2.0",
+    "date-fns": "^3.3.1",
+    "embla-carousel-react": "8.0.0",
+    "lucide-react": "*",
+    "next": "14.2.3",
+    "next-themes": "0.2.1",
+    "postcss": "^8.4.35",
+    "react": "18.2.0",
+    "react-day-picker": "8.10.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "7.51.3",
+    "react-resizable-panels": "2.0.12",
+    "sonner": "^1.4.3",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-debug-screens": "^2.2.1",
+    "vaul": "^0.9.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@hookform/resolvers": "^3.3.4",
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-alert-dialog": "^1.0.5",
+    "@radix-ui/react-aspect-ratio": "^1.0.3",
+    "@radix-ui/react-avatar": "^1.0.4",
+    "@radix-ui/react-checkbox": "^1.0.4",
+    "@radix-ui/react-collapsible": "^1.0.3",
+    "@radix-ui/react-context-menu": "^2.1.5",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-hover-card": "^1.0.7",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-menubar": "^1.0.4",
+    "@radix-ui/react-navigation-menu": "^1.1.4",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-progress": "^1.0.3",
+    "@radix-ui/react-radio-group": "^1.1.3",
+    "@radix-ui/react-scroll-area": "^1.0.5",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-separator": "^1.0.3",
+    "@radix-ui/react-slider": "^1.1.2",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-switch": "^1.0.3",
+    "@radix-ui/react-tabs": "^1.0.4",
+    "@radix-ui/react-toast": "^1.1.5",
+    "@radix-ui/react-toggle": "^1.0.3",
+    "@radix-ui/react-toggle-group": "^1.0.4",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "autoprefixer": "^10.4.18",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "cmdk": "^0.2.0",
+    "date-fns": "^3.3.1",
+    "embla-carousel-react": "^8.0.0",
+    "lucide-react": "^0.344.0",
+    "next": "^14.2.3",
+    "next-themes": "^0.2.1",
+    "postcss": "^8.4.35",
+    "react": "^18.2.0",
+    "react-day-picker": "^8.8.1",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.3",
+    "react-resizable-panels": "^2.0.12",
+    "sonner": "^1.4.3",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-debug-screens": "^2.2.1",
+    "vaul": "^0.9.0",
+    "zod": "^3.22.4"
+  },
+  "exports": {
+    ".": "./src/tailwind.config.ts",
+    "./themeUtils": "./src/shad/lib/themeUtils.ts",
+    "./defaultThemes": "./src/defaultThemes.ts",
+    "./handleThemeCookies": "./src/shad/lib/handleThemeCookies.ts",
+    "./tailwindConfig": "./src/tailwindConfig.ts",
+    "./defaultFont": "./src/defaultFont/localDefaultFont.ts",
+    "./aspect-ratio": "./src/shad/components/ui/aspect-ratio.tsx",
+    "./alert-dialog": "./src/shad/components/ui/alert-dialog.tsx",
+    "./pagination": "./src/shad/components/ui/pagination.tsx",
+    "./tabs": "./src/shad/components/ui/tabs.tsx",
+    "./card": "./src/shad/components/ui/card.tsx",
+    "./popover": "./src/shad/components/ui/popover.tsx",
+    "./progress": "./src/shad/components/ui/progress.tsx",
+    "./toaster": "./src/shad/components/ui/toaster.tsx",
+    "./hover-card": "./src/shad/components/ui/hover-card.tsx",
+    "./sheet": "./src/shad/components/ui/sheet.tsx",
+    "./scroll-area": "./src/shad/components/ui/scroll-area.tsx",
+    "./resizable": "./src/shad/components/ui/resizable.tsx",
+    "./label": "./src/shad/components/ui/label.tsx",
+    "./navigation-menu": "./src/shad/components/ui/navigation-menu.tsx",
+    "./accordion": "./src/shad/components/ui/accordion.tsx",
+    "./drawer": "./src/shad/components/ui/drawer.tsx",
+    "./tooltip": "./src/shad/components/ui/tooltip.tsx",
+    "./alert": "./src/shad/components/ui/alert.tsx",
+    "./use-toast": "./src/shad/components/ui/use-toast.tsx",
+    "./switch": "./src/shad/components/ui/switch.tsx",
+    "./calendar": "./src/shad/components/ui/calendar.tsx",
+    "./radio-group": "./src/shad/components/ui/radio-group.tsx",
+    "./command": "./src/shad/components/ui/command.tsx",
+    "./toggle-group": "./src/shad/components/ui/toggle-group.tsx",
+    "./avatar": "./src/shad/components/ui/avatar.tsx",
+    "./menubar": "./src/shad/components/ui/menubar.tsx",
+    "./dialog": "./src/shad/components/ui/dialog.tsx",
+    "./badge": "./src/shad/components/ui/badge.tsx",
+    "./table": "./src/shad/components/ui/table.tsx",
+    "./separator": "./src/shad/components/ui/separator.tsx",
+    "./button": "./src/shad/components/ui/button.tsx",
+    "./toggle": "./src/shad/components/ui/toggle.tsx",
+    "./toast": "./src/shad/components/ui/toast.tsx",
+    "./checkbox": "./src/shad/components/ui/checkbox.tsx",
+    "./collapsible": "./src/shad/components/ui/collapsible.tsx",
+    "./dropdown-menu": "./src/shad/components/ui/dropdown-menu.tsx",
+    "./select": "./src/shad/components/ui/select.tsx",
+    "./textarea": "./src/shad/components/ui/textarea.tsx",
+    "./input": "./src/shad/components/ui/input.tsx",
+    "./skeleton": "./src/shad/components/ui/skeleton.tsx",
+    "./context-menu": "./src/shad/components/ui/context-menu.tsx",
+    "./form": "./src/shad/components/ui/form.tsx",
+    "./carousel": "./src/shad/components/ui/carousel.tsx",
+    "./slider": "./src/shad/components/ui/slider.tsx",
+    "./defaultStyles.scss": "./src/defaultStyles/defaultStyles.scss",
+    "./websiteStyles.scss": "./src/defaultStyles/websiteStyles.scss",
+    "./themes/gray.scss": "./src/shad/defaultThemes/gray.scss",
+    "./themes/violet.scss": "./src/shad/defaultThemes/violet.scss",
+    "./themes/slate.scss": "./src/shad/defaultThemes/slate.scss",
+    "./themes/neutral.scss": "./src/shad/defaultThemes/neutral.scss",
+    "./themes/stone.scss": "./src/shad/defaultThemes/stone.scss",
+    "./themes/green.scss": "./src/shad/defaultThemes/green.scss",
+    "./themes/orange.scss": "./src/shad/defaultThemes/orange.scss",
+    "./themes/yellow.scss": "./src/shad/defaultThemes/yellow.scss",
+    "./themes/blue.scss": "./src/shad/defaultThemes/blue.scss",
+    "./themes/zinc.scss": "./src/shad/defaultThemes/zinc.scss",
+    "./themes/rose.scss": "./src/shad/defaultThemes/rose.scss",
+    "./themes/red.scss": "./src/shad/defaultThemes/red.scss",
+    "./colorMap/gray": "./src/shad/defaultThemes/colorMaps/gray.json",
+    "./colorMap/violet": "./src/shad/defaultThemes/colorMaps/violet.json",
+    "./colorMap/slate": "./src/shad/defaultThemes/colorMaps/slate.json",
+    "./colorMap/neutral": "./src/shad/defaultThemes/colorMaps/neutral.json",
+    "./colorMap/stone": "./src/shad/defaultThemes/colorMaps/stone.json",
+    "./colorMap/green": "./src/shad/defaultThemes/colorMaps/green.json",
+    "./colorMap/orange": "./src/shad/defaultThemes/colorMaps/orange.json",
+    "./colorMap/yellow": "./src/shad/defaultThemes/colorMaps/yellow.json",
+    "./colorMap/blue": "./src/shad/defaultThemes/colorMaps/blue.json",
+    "./colorMap/zinc": "./src/shad/defaultThemes/colorMaps/zinc.json",
+    "./colorMap/rose": "./src/shad/defaultThemes/colorMaps/rose.json",
+    "./colorMap/red": "./src/shad/defaultThemes/colorMaps/red.json"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "./src/tailwind.config.ts",
+  "packageManager": "pnpm@9.0.4",
+  "peerDependencies": {
+    "@ulld/types": "workspace:*",
+    "@ulld/typescript-config": "workspace:*",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json"
+  },
+  "typesVersions": {
+    ".": [
+      "./src/tailwind.config.ts"
     ],
-    "main": "./src/tailwind.config.ts",
-    "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
-    "scripts": {
-        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json"
-    },
-    "typesVersions": {
-        ".": [
-            "./src/tailwind.config.ts"
-        ],
-        "tailwindConfig": [
-            "src/tailwindConfig.ts"
-        ],
-        "defaultFont": [
-            "src/defaultFont/localDefaultFont.ts"
-        ],
-        "aspect-ratio": [
-            "src/shad/components/ui/aspect-ratio.tsx"
-        ],
-        "alert-dialog": [
-            "src/shad/components/ui/alert-dialog.tsx"
-        ],
-        "pagination": [
-            "src/shad/components/ui/pagination.tsx"
-        ],
-        "tabs": [
-            "src/shad/components/ui/tabs.tsx"
-        ],
-        "card": [
-            "src/shad/components/ui/card.tsx"
-        ],
-        "popover": [
-            "src/shad/components/ui/popover.tsx"
-        ],
-        "progress": [
-            "src/shad/components/ui/progress.tsx"
-        ],
-        "toaster": [
-            "src/shad/components/ui/toaster.tsx"
-        ],
-        "hover-card": [
-            "src/shad/components/ui/hover-card.tsx"
-        ],
-        "sheet": [
-            "src/shad/components/ui/sheet.tsx"
-        ],
-        "scroll-area": [
-            "src/shad/components/ui/scroll-area.tsx"
-        ],
-        "resizable": [
-            "src/shad/components/ui/resizable.tsx"
-        ],
-        "label": [
-            "src/shad/components/ui/label.tsx"
-        ],
-        "navigation-menu": [
-            "src/shad/components/ui/navigation-menu.tsx"
-        ],
-        "accordion": [
-            "src/shad/components/ui/accordion.tsx"
-        ],
-        "drawer": [
-            "src/shad/components/ui/drawer.tsx"
-        ],
-        "tooltip": [
-            "src/shad/components/ui/tooltip.tsx"
-        ],
-        "alert": [
-            "src/shad/components/ui/alert.tsx"
-        ],
-        "use-toast": [
-            "src/shad/components/ui/use-toast.tsx"
-        ],
-        "switch": [
-            "src/shad/components/ui/switch.tsx"
-        ],
-        "calendar": [
-            "src/shad/components/ui/calendar.tsx"
-        ],
-        "radio-group": [
-            "src/shad/components/ui/radio-group.tsx"
-        ],
-        "command": [
-            "src/shad/components/ui/command.tsx"
-        ],
-        "toggle-group": [
-            "src/shad/components/ui/toggle-group.tsx"
-        ],
-        "avatar": [
-            "src/shad/components/ui/avatar.tsx"
-        ],
-        "menubar": [
-            "src/shad/components/ui/menubar.tsx"
-        ],
-        "dialog": [
-            "src/shad/components/ui/dialog.tsx"
-        ],
-        "badge": [
-            "src/shad/components/ui/badge.tsx"
-        ],
-        "table": [
-            "src/shad/components/ui/table.tsx"
-        ],
-        "separator": [
-            "src/shad/components/ui/separator.tsx"
-        ],
-        "button": [
-            "src/shad/components/ui/button.tsx"
-        ],
-        "toggle": [
-            "src/shad/components/ui/toggle.tsx"
-        ],
-        "toast": [
-            "src/shad/components/ui/toast.tsx"
-        ],
-        "checkbox": [
-            "src/shad/components/ui/checkbox.tsx"
-        ],
-        "collapsible": [
-            "src/shad/components/ui/collapsible.tsx"
-        ],
-        "dropdown-menu": [
-            "src/shad/components/ui/dropdown-menu.tsx"
-        ],
-        "select": [
-            "src/shad/components/ui/select.tsx"
-        ],
-        "textarea": [
-            "src/shad/components/ui/textarea.tsx"
-        ],
-        "input": [
-            "src/shad/components/ui/input.tsx"
-        ],
-        "skeleton": [
-            "src/shad/components/ui/skeleton.tsx"
-        ],
-        "context-menu": [
-            "src/shad/components/ui/context-menu.tsx"
-        ],
-        "form": [
-            "src/shad/components/ui/form.tsx"
-        ],
-        "carousel": [
-            "src/shad/components/ui/carousel.tsx"
-        ],
-        "slider": [
-            "src/shad/components/ui/slider.tsx"
-        ],
-        "defaultStyles.scss": [
-            "src/defaultStyles/defaultStyles.scss"
-        ]
-    }
+    "tailwindConfig": [
+      "src/tailwindConfig.ts"
+    ],
+    "defaultFont": [
+      "src/defaultFont/localDefaultFont.ts"
+    ],
+    "aspect-ratio": [
+      "src/shad/components/ui/aspect-ratio.tsx"
+    ],
+    "alert-dialog": [
+      "src/shad/components/ui/alert-dialog.tsx"
+    ],
+    "pagination": [
+      "src/shad/components/ui/pagination.tsx"
+    ],
+    "tabs": [
+      "src/shad/components/ui/tabs.tsx"
+    ],
+    "card": [
+      "src/shad/components/ui/card.tsx"
+    ],
+    "popover": [
+      "src/shad/components/ui/popover.tsx"
+    ],
+    "progress": [
+      "src/shad/components/ui/progress.tsx"
+    ],
+    "toaster": [
+      "src/shad/components/ui/toaster.tsx"
+    ],
+    "hover-card": [
+      "src/shad/components/ui/hover-card.tsx"
+    ],
+    "sheet": [
+      "src/shad/components/ui/sheet.tsx"
+    ],
+    "scroll-area": [
+      "src/shad/components/ui/scroll-area.tsx"
+    ],
+    "resizable": [
+      "src/shad/components/ui/resizable.tsx"
+    ],
+    "label": [
+      "src/shad/components/ui/label.tsx"
+    ],
+    "navigation-menu": [
+      "src/shad/components/ui/navigation-menu.tsx"
+    ],
+    "accordion": [
+      "src/shad/components/ui/accordion.tsx"
+    ],
+    "drawer": [
+      "src/shad/components/ui/drawer.tsx"
+    ],
+    "tooltip": [
+      "src/shad/components/ui/tooltip.tsx"
+    ],
+    "alert": [
+      "src/shad/components/ui/alert.tsx"
+    ],
+    "use-toast": [
+      "src/shad/components/ui/use-toast.tsx"
+    ],
+    "switch": [
+      "src/shad/components/ui/switch.tsx"
+    ],
+    "calendar": [
+      "src/shad/components/ui/calendar.tsx"
+    ],
+    "radio-group": [
+      "src/shad/components/ui/radio-group.tsx"
+    ],
+    "command": [
+      "src/shad/components/ui/command.tsx"
+    ],
+    "toggle-group": [
+      "src/shad/components/ui/toggle-group.tsx"
+    ],
+    "avatar": [
+      "src/shad/components/ui/avatar.tsx"
+    ],
+    "menubar": [
+      "src/shad/components/ui/menubar.tsx"
+    ],
+    "dialog": [
+      "src/shad/components/ui/dialog.tsx"
+    ],
+    "badge": [
+      "src/shad/components/ui/badge.tsx"
+    ],
+    "table": [
+      "src/shad/components/ui/table.tsx"
+    ],
+    "separator": [
+      "src/shad/components/ui/separator.tsx"
+    ],
+    "button": [
+      "src/shad/components/ui/button.tsx"
+    ],
+    "toggle": [
+      "src/shad/components/ui/toggle.tsx"
+    ],
+    "toast": [
+      "src/shad/components/ui/toast.tsx"
+    ],
+    "checkbox": [
+      "src/shad/components/ui/checkbox.tsx"
+    ],
+    "collapsible": [
+      "src/shad/components/ui/collapsible.tsx"
+    ],
+    "dropdown-menu": [
+      "src/shad/components/ui/dropdown-menu.tsx"
+    ],
+    "select": [
+      "src/shad/components/ui/select.tsx"
+    ],
+    "textarea": [
+      "src/shad/components/ui/textarea.tsx"
+    ],
+    "input": [
+      "src/shad/components/ui/input.tsx"
+    ],
+    "skeleton": [
+      "src/shad/components/ui/skeleton.tsx"
+    ],
+    "context-menu": [
+      "src/shad/components/ui/context-menu.tsx"
+    ],
+    "form": [
+      "src/shad/components/ui/form.tsx"
+    ],
+    "carousel": [
+      "src/shad/components/ui/carousel.tsx"
+    ],
+    "slider": [
+      "src/shad/components/ui/slider.tsx"
+    ],
+    "defaultStyles.scss": [
+      "src/defaultStyles/defaultStyles.scss"
+    ]
+  }
 }

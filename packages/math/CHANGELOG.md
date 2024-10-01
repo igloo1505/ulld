@@ -1,5 +1,20 @@
 # @ulld/math
 
+## 0.0.117
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.111
+  - @ulld/configschema@0.0.117
+  - @ulld/hooks@0.0.117
+  - @ulld/icons@0.0.117
+  - @ulld/jest-presets@0.0.111
+  - @ulld/state@0.0.117
+  - @ulld/types@0.0.111
+  - @ulld/utilities@0.0.117
+
 ## 0.0.116
 
 ### Patch Changes
