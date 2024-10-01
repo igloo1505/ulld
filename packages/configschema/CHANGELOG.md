@@ -1,5 +1,19 @@
 # @ulld/configschema
 
+## 0.0.118
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+- Updated dependencies
+  - @ulld/base-configs@0.0.112
+  - @ulld/typescript-config@0.0.112
+  - @ulld/developer-schemas@0.0.112
+  - @ulld/icons@0.0.118
+  - @ulld/tailwind@0.0.112
+  - @ulld/types@0.0.112
+  - @ulld/utilities@0.0.118
+
 ## 0.0.117
 
 ### Patch Changes

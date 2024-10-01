@@ -1,5 +1,29 @@
 # @ulld/landing-layouts
 
+## 0.0.118
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+- Updated dependencies
+  - @ulld/api@0.0.118
+  - @ulld/bib-manager@0.0.118
+  - @ulld/calendar@0.0.118
+  - @ulld/eslint-config@0.0.114
+  - @ulld/typescript-config@0.0.112
+  - @ulld/configschema@0.0.118
+  - @ulld/developer@0.0.118
+  - @ulld/hooks@0.0.118
+  - @ulld/icons@0.0.118
+  - @ulld/journal@0.0.118
+  - @ulld/plot@0.0.118
+  - @ulld/state@0.0.118
+  - @ulld/tailwind@0.0.112
+  - @ulld/types@0.0.112
+  - @ulld/ui@0.0.116
+  - @ulld/utilities@0.0.118
+  - @ulld/whiteboard@0.0.118
+
 ## 0.0.117
 
 ### Patch Changes

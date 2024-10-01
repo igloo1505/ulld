@@ -1,5 +1,19 @@
 # @ulld/parsers
 
+## 0.0.118
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+- Updated dependencies
+  - @ulld/component-map@0.0.118
+  - @ulld/typescript-config@0.0.112
+  - @ulld/configschema@0.0.118
+  - @ulld/database@0.0.115
+  - @ulld/developer@0.0.118
+  - @ulld/types@0.0.112
+  - @ulld/utilities@0.0.118
+
 ## 0.0.117
 
 ### Patch Changes

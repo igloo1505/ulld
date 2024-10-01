@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.114
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+
 ## 0.0.113
 
 ### Patch Changes

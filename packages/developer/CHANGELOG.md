@@ -1,5 +1,18 @@
 # @ulld/developer
 
+## 0.0.118
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+- Updated dependencies
+  - @ulld/eslint-config@0.0.114
+  - @ulld/typescript-config@0.0.112
+  - @ulld/configschema@0.0.118
+  - @ulld/database@0.0.115
+  - @ulld/logger@0.0.112
+  - @ulld/types@0.0.112
+
 ## 0.0.117
 
 ### Patch Changes

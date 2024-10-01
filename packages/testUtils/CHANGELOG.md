@@ -1,5 +1,13 @@
 # @ulld/testUtils
 
+## 0.0.16
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.112
+
 ## 0.0.15
 
 ### Patch Changes

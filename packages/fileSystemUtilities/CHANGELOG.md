@@ -1,5 +1,11 @@
 # @ulld/fileSystemUtils
 
+## 0.0.16
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+
 ## 0.0.15
 
 ### Patch Changes

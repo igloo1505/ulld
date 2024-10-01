@@ -1,5 +1,16 @@
 # @ulld/build
 
+## 0.0.117
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+- Updated dependencies
+  - @ulld/configschema@0.0.118
+  - @ulld/developer-schemas@0.0.112
+  - @ulld/types@0.0.112
+  - @ulld/utilities@0.0.118
+
 ## 0.0.116
 
 ### Patch Changes

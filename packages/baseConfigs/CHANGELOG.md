@@ -1,5 +1,13 @@
 # @ulld/baseConfigs
 
+## 0.0.112
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+- Updated dependencies
+  - @ulld/types@0.0.112
+
 ## 0.0.111
 
 ### Patch Changes

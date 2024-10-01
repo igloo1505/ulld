@@ -1,5 +1,37 @@
 # @ulld/website
 
+## 0.0.118
+
+### Patch Changes
+
+- Fix search result page alignment issue.
+- Updated dependencies
+  - @ulld/api@0.0.118
+  - @ulld/base-configs@0.0.112
+  - @ulld/bib-manager@0.0.118
+  - @ulld/calendar@0.0.118
+  - @ulld/component-map@0.0.118
+  - @ulld/eslint-config@0.0.114
+  - @ulld/typescript-config@0.0.112
+  - @ulld/configschema@0.0.118
+  - @ulld/database@0.0.115
+  - @ulld/diagram@0.0.118
+  - @ulld/editor@0.0.118
+  - @ulld/embeddable-components@0.0.118
+  - @ulld/full-form@0.0.118
+  - @ulld/hooks@0.0.118
+  - @ulld/icons@0.0.118
+  - @ulld/jest-presets@0.0.112
+  - @ulld/logger@0.0.112
+  - @ulld/parsers@0.0.118
+  - @ulld/render@0.0.118
+  - @ulld/state@0.0.118
+  - @ulld/tailwind@0.0.112
+  - @ulld/types@0.0.112
+  - @ulld/ui@0.0.116
+  - @ulld/utilities@0.0.118
+  - @ulld/whiteboard@0.0.118
+
 ## 0.0.117
 
 ### Patch Changes
