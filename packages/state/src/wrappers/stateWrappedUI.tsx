@@ -15,13 +15,12 @@ import type { ParsedAppConfig } from "@ulld/configschema/types";
 import { getUlldConfig } from "@ulld/developer/utils";
 import type { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
 import { ParsedSettings } from "@ulld/parsers/settings/settingsParser";
-import { makeStore } from "@ulld/state/store";
 
 /* NOTE: Children should only used in development for now. */
 export const StateWrappedUI = async ({
     children,
     ignoreConfig = false,
-    store: _store,
+    store,
     loader,
     observers,
     settings: _settings,
@@ -40,7 +39,6 @@ export const StateWrappedUI = async ({
     ignoreOnlineStatus?: boolean;
 }) => {
     const cookieJar = cookies();
-    const store = _store ? _store : makeStore()
     let settings = _settings;
     if (!settings && !ignoreSettings) {
         settings = await getSettings();

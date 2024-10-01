@@ -1,41 +1,41 @@
 {
-  "name": "@ulld/developer-schemas",
-  "version": "0.0.112",
-  "dependencies": {
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tsx": "^4.15.6",
-    "zod": "3.22.4",
-    "zod-to-json-schema": "^3.22.4"
-  },
-  "devDependencies": {
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tsx": "^4.15.6",
-    "zod": "3.22.4",
-    "zod-to-json-schema": "^3.22.4"
-  },
-  "exports": {
-    "./pluginConfig": "./src/pluginConfigSchema.ts",
-    "./fullPackageJson": "./src/packageJson.ts"
-  },
-  "files": [
-    "src"
-  ],
-  "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {
-    "@ulld/types": "workspace:*"
-  },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "dev": "echo 'Add dev script here'",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'Add test script here'",
-    "updateJsonSchemas": "tsx src/__scripts__/updateSchemas.ts"
-  }
+    "name": "@ulld/developer-schemas",
+    "version": "0.0.112",
+    "dependencies": {
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "tsx": "^4.15.6",
+        "zod": "3.22.4",
+        "zod-to-json-schema": "^3.22.4"
+    },
+    "devDependencies": {
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "tsx": "^4.15.6",
+        "zod": "3.22.4",
+        "zod-to-json-schema": "^3.22.4"
+    },
+    "exports": {
+        "./pluginConfig": "./src/pluginConfigSchema.ts",
+        "./fullPackageJson": "./src/packageJson.ts"
+    },
+    "files": [
+        "src"
+    ],
+    "packageManager": "pnpm@9.0.4",
+    "peerDependencies": {
+        "@ulld/types": "workspace:*"
+    },
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "dev": "echo 'Add dev script here'",
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+        "test": "echo 'Add test script here'",
+        "updateJsonSchemas": "tsx src/__scripts__/updateSchemas.ts"
+    }
 }

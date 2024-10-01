@@ -1,25 +1,25 @@
 {
-  "name": "@ulld/test-utils",
-  "version": "0.0.16",
-  "dependencies": {},
-  "devDependencies": {},
-  "exports": {
-    "./vitestConfig-basic": "./vitestConfigs/base.ts"
-  },
-  "files": [
-    "src"
-  ],
-  "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {
-    "@ulld/typescript-config": "workspace:*",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {},
-  "type": "module"
+    "name": "@ulld/test-utils",
+    "version": "0.0.16",
+    "dependencies": {},
+    "devDependencies": {},
+    "exports": {
+        "./vitestConfig-basic": "./vitestConfigs/base.ts"
+    },
+    "files": [
+        "src"
+    ],
+    "packageManager": "pnpm@9.0.4",
+    "peerDependencies": {
+        "@ulld/typescript-config": "workspace:*",
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {},
+    "type": "module"
 }
