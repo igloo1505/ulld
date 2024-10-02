@@ -73,7 +73,7 @@ export const getParentDirAndFilename = (
 };
 
 export const fileExtension = (path: string) => {
-    return path.split(".").at(-1);
+    return path.split(".").at(-1)?.toLowerCase();
 };
 
 export const replacePrefix = (

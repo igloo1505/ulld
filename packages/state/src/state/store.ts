@@ -64,7 +64,7 @@ export const makeStore = <T extends string>(extraReducers?: ExtraReducers<T>, ex
         // we need it only on client side
         const persistConfig = {
             key: "root",
-            whitelist: ["auth"], // make sure it does not clash with server keys
+            // whitelist: ["auth"], // make sure it does not clash with server keys
             storage: storage("Ulld"),
         };
         const persistedReducer = persistReducer(
@@ -87,6 +87,7 @@ export const makeStore = <T extends string>(extraReducers?: ExtraReducers<T>, ex
                 }),
         });
         store.__persistor = persistStore(store); // Nasty hack
+        window.store = store
         return store;
     }
 };

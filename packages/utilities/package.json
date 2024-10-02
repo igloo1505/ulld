@@ -99,6 +99,11 @@
       "import": "./dist/schemas/filePath/index.js",
       "require": "./dist/schemas/filePath/index.cjs"
     },
+    "./isNoConfig": {
+      "types": "./dist/utils/webAppUtils/isNoConfig.d.ts",
+      "import": "./dist/utils/webAppUtils/isNoConfig.js",
+      "require": "./dist/utils/webAppUtils/isNoConfig.cjs"
+    },
     "./errorNotifications": {
       "types": "./dist/errorHandling/main.d.ts",
       "import": "./dist/errorHandling/main.js",

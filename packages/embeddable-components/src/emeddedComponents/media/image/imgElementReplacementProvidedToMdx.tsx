@@ -3,17 +3,8 @@ import { fileExtension } from "@ulld/utilities/fsUtils";
 import Image from "next/image";
 import { imageToBase64Url } from "@ulld/state/formatting/getLocalImageAsString";
 import { readAppConfig } from "@ulld/developer/readAppConfig";
+import { isRemote } from "./utils";
 
-export const isRemote = (p: string, imageRemoteTest?: RegExp[]) => {
-    let remoteTest: RegExp[] = [
-        /^(http(s?)\:\/\/|www\.)/gm,
-        /\.(com|gov|edu|app|io|dev|net|org|us|ai|gg|education|info|xyz|ly|site|me)/gm,
-    ];
-    if (imageRemoteTest) {
-        remoteTest = remoteTest.concat(imageRemoteTest);
-    }
-    return remoteTest.some((t) => t.test(p));
-};
 
 export const ImgComponent = async (
     props: ImgHTMLAttributes<HTMLImageElement>,
@@ -52,10 +43,10 @@ export const ImgComponent = async (
         } else {
             console.log(`Getting src as base64 string.`);
             let baseString = await imageToBase64Url(props.src, config.fsRoot);
-            if(!baseString){
-                return null
+            if (!baseString) {
+                return null;
             } else {
-                src = baseString
+                src = baseString;
             }
             return (
                 // eslint-disable-next-line
@@ -92,3 +83,5 @@ export const ImgComponent = async (
 };
 
 ImgComponent.displayName = "ImgComponent";
+
+export { isRemote };

@@ -18,9 +18,9 @@ Before moving forward, we should lay out some simple mathematics for deriving me
 
 ### Proportional Derivatives
 
-What is meant by proportional derivatives is that for any infinitesimally small value $dx_c$ there should be another derivative, $dx_v$ that is equivalent to $dx_c \frac{v}{c}$. This allows us to treat velocities as pure vectors when dealing with gravity, the proposed physical expression of time, without including an abstract time dimension. By integrating these vectors simultaneously, especially when working with paths of a finite length, we can produce the same notion of simultaneity and even temporal progression that occurs in classical and relativistic physics which includes an explicit time axis. When integrating these proportional derivatives here, I will use a $\int_P$ notation.
+What is meant by proportional derivatives is that for any infinitesimally small value $dx_c$ there should be another derivative, $dx_v$ that is equivalent to $dx_c \frac{v}{c}$. This allows us to treat velocities as pure vectors when dealing with gravity, the proposed physical expression of time, without including an abstract time dimension. By integrating these vectors simultaneously, especially when working with paths of a finite length, we can produce the same notion of simultaneity and even temporal progression that occurs in classical and relativistic physics without any dependence on an abstract temporal axis. When integrating these proportional derivatives here, I will use a $\int_P$ notation to indicate the proportional, simultaneous nature of their action.
 
-The notion of _proportional simultaneous integration_ simply describes the concept of moving some body $a$ a distance of $dx_a = dx_c \frac{v_{a}}{c}$, at the same pseudo-time as all other bodies in motion according to their own proportional velocity derivatives. It is however important to recognize that the notion of time here is entirely mathematical, and in no manner describes anything inherent to the system. This process is almost entirely analogous to integrating over time apart from the fact that we can now do so without dependence on an actual temporal dimension; a quantity which we have no means to measure directly, and which I propose, does not actually exist in any classical or even relativistic sense. However, when addressing proportional simultaneous integrals in relation to gravitational acceleration this distinction becomes critical, as this apparent acceleration acts as the underlying mechanism of time and must be integrated along with all proportional velocity derivatives. This is to say that for a temporal progression equivalent to a single pseudo-time derivative, every $dx_i$ in a given system should progress according to each proportional derivative as the surrounding space likewise dilates as a function of the sum of these proportional velocity derivatives, where $i$ runs over all bodies within the system.
+The notion of _proportional simultaneous integration_[^5] simply describes the concept of moving some body $a$ a distance of $dx_a = dx_c \frac{v_{a}}{c}$, at the same pseudo-time as all other bodies in motion according to their own proportional velocity derivatives. It is however important to recognize that the notion of time here is entirely mathematical, and in no manner describes anything inherent to the system. This process is almost entirely analogous to integrating over time apart from the fact that we can now do so without dependence on an actual temporal dimension; a quantity which we have no means to measure directly, and which I propose, does not actually exist in any classical or even relativistic sense. However, when addressing proportional simultaneous integrals in relation to gravitational acceleration this distinction becomes critical, as this apparent acceleration acts as the underlying mechanism of time in the model being proposed and must be integrated along with all proportional velocity derivatives. This is to say that for a temporal progression equivalent to a single pseudo-time derivative, every $dx_i$ in a given system should progress according to each proportional velocity derivative as the surrounding space likewise dilates as a function of the sum of these proportional velocity derivatives, where $i$ runs over all bodies within the system.
 
 
 Note that simultaneity can be found for two proportional simultaneous integrals (PSI)[^5] when 
@@ -35,24 +35,24 @@ where $dl_a$ represents a small portion of the path of $a$, and $dx_a$ represent
 
 ### Time Equivalent
 
-As many existing formulas that might be of interest reference this abstract time dimension directly, we should define a _time equivalent_ that follows the model described here, but has no explicit time dependence and is proportional to our existing measures of time. Of course $d/v$ is one such time equivalent quantity, but there exists many others for various types of motion, oscillations, and other time dependent functions.
+As many existing formulas that might be of interest reference this abstract time dimension directly, we should define a _time equivalent_ that follows the model described here, but has no explicit time dependence and is proportional to our existing measures. Of course $d/v$ is one such time equivalent quantity, but there exists many others for various types of motion, oscillations, and other time dependent functions.
 
-It should be noted here that $v$ is not velocity in the traditional sense, but rather the proportional integral $\int_P$ of some $dx$ over $\int dl$, where $\int dl$ in turn is the distance equivalent of one unit of time for that velocity. $d$ on the other hand is the proportional integral of this velocity that continues as pseudo-time progresses. In other words, $\int_P dx = \int dl$ if $t = 1$, but $\int_P dx$ will grow proportionally to the progression of pseudo-time, where as $\int dl$ will remain fixed at $1$ unit of pseudo-time.
+As $v$ itself is time dependent, we should note here that $v$ is not velocity in the traditional sense, but rather the proportional integral $\int_P$ of some $dx$ over $\int dl$, where $\int dl$ in turn is the distance equivalent of one unit of time for that velocity. $d$ on the other hand is the proportional integral of this velocity that continues as pseudo-time progresses. In other words, $\int_P dx = \int dl$ if $t = 1$, but $\int_P dx$ will grow proportionally to the progression of pseudo-time, where as $\int dl$ will remain fixed at $1$ unit of pseudo-time.
 
 $$
 \begin{align}
-\tau_\epsilon = \frac{\int_P dx_a}{\int dl_a} \equiv \frac{d}{v}
+\tau_\epsilon = \frac{\int_P x_{a}}{\int dl_a} \equiv \frac{d}{v}
 \end{align}
 $$
 
 
-It is my proposition that this is the role which time has played for our mathematics to this point. It does not appear that we are removing a quantity that is an inherent part of physics itself, but rather that we are reformulating a useful mathematical tool developed centuries ago to more accurately describe the processes we are attempting to describe.
+It is my proposition that this is the role which time has played for our mathematics to this point. It does not appear that we are removing a quantity that is an inherent part of physics itself, but rather that we are reformulating a useful mathematical tool developed centuries ago to more accurately model the processes we are attempting to describe.
 
 <div style={{height: '0px', width: '0px'}} id="time-derivative-equivalent"/>
 
 #### Time derivative equivalent [#time-derivative-equivalent]
 
-Consider that for $\int dl$ $1$ unit of pseudo-time will pass. Because the passage of pseudo-time is _defined_ by the relationship between proportionate derivatives and distances, we can easily infer the following:
+Consider that for $\int dl$ $1$ unit of pseudo-time will pass[^9]. Because the passage of pseudo-time is _defined_ by the relationship between proportional derivatives and distances, where $t_{p}$ indicates 1 unit of pseudo-time in units applied to the traditional notion of velocity, we can easily infer the following:
 
 $$
 \begin{align}
@@ -60,20 +60,20 @@ $$
 \end{align}
 $$
 
-This gives a proportionate time derivative, $\tau_o$ such that for every unit of pseudo-time that passes, there exists an equivalent number of time and space derivatives across that distance, $\int dl$.
+This gives $\tau_o$ time derivatives per unit of time, but more importantly, a time derivative, $1/\tau_o$ that is proportionate to $dx$ if $dl$ is defined by $dx$.
 
 ## 3-vector simultaneity
 
-Special relativity produces an invariant 4-vector[^2], but what if we could collapse this 4-vector into pure space components, while still accounting for time and the dilation of time inherent to our existing models? The 3-vectors being proposed have an identical magnitude to the space components of special relativity's 4-vector, but the time component is now unnecessary to describe the system in question. This in some sense breaks down the invariant nature of relativity based 4-vectors, but in turn produces a synchronicity that remains consistent between reference frames. While velocity 3-vectors remain invariant in the model being proposed, the integral of $dl$ becomes longer, in turn scaling the time elapsed over this integral by $\gamma$ or a gravitational $\gamma$ equivalent. While vectors and velocities themselves remain invariant between reference frames in their derivative form, this produces a discrepancy between reference frames when a position vector is integrated over some path of motion.
+Special relativity produces an invariant 4-vector[^2], but what if we could collapse this 4-vector into pure space components, while still accounting for time and the dilation of time inherent to our existing models? The 3-vectors being proposed have an identical magnitude to the space components of special relativity's 4-vector, but the time component is now unnecessary to describe the system in question. This in some sense breaks down the invariant nature of relativity based 4-vectors, but in turn produces a synchronicity that remains consistent between reference frames. While 3-vectors remain invariant in the model being proposed, the integral of $dl$ becomes longer, in turn scaling the time elapsed over this integral by $\gamma$ or a gravitational $\gamma$ equivalent. While vectors and velocities themselves remain invariant between reference frames in their derivative form, this produces a discrepancy between reference frames when a position vector is integrated over some path of motion, as the length of any arbitrary path is _not_ invariant.
 
 ### Simultaneity among relativistic 3-vector integrals
 
-Consider two observers, $O$ and $O^{\prime}$. If $O$ were to say to $O^{\prime}$ _"move at precisely this velocity $v$ between this lighthouse and this clock-tower"_, how can it be that $O^{\prime}$ would arrive at this clock-tower in a time other than $d/v$? Existing models dilate both time and velocity in accordance with the Lorentz tensor, but then $O^{\prime}$ is no longer traveling at the agreed upon velocity $v$. $v$ after all is the only variable either $O$ or $O^{\prime}$ have any direct influence over, apart from their ability to pick two arbitrary points in space. While it is sensible to infer that velocities might _appear_ different in different reference frames, it is unreasonable to conclude that $O$ and $O^{\prime}$ can not agree upon a magnitude of velocity when they themselves are determining this magnitude.
+Consider two observers, $O$ and $O^{\prime}$. If $O$ were to say to $O^{\prime}$ _"move at precisely this velocity $v$ between this lighthouse and this clock-tower"_, how can it be that $O^{\prime}$ would arrive at this clock-tower in a time other than $d/v$? Existing models dilate both time and velocity in accordance with the Lorentz tensor, but then $O^{\prime}$ is no longer traveling at the agreed upon velocity $v$. $v$ after all is the only variable either $O$ or $O^{\prime}$ have any direct influence over, apart from their ability to pick two arbitrary points in space; the lighthouse and the clock-tower in this scenario. While it is sensible to infer that velocities might _appear_ different in different reference frames, it is unreasonable to conclude that $O$ and $O^{\prime}$ can not agree upon a magnitude of velocity when they themselves are determining this magnitude.
 
 
 If $O^{\prime}$ does travel at precisely velocity $v$, and $v$ in the reference frame of $O^{\prime}$ is equivalent to $v$ in the reference frame of $O$ yet the experimentally confirmed $\gamma$ factor must be applied to the elapsed period between the lighthouse and the clock-tower, $\gamma$ must be applied to space; not time. Of course the elapsed period also extends by a factor of $\gamma$, but this is only a matter of the lighthouse and clock-tower being further separated in the coordinate system of $O^{\prime}$ than in that of $O$, lengthening the integral of $dl$ by a factor of $\gamma$.
 
-It should be noted that all of the experimental validations of SR[^6] remain intact under this model of spatial dilation, as most or all experimental validations of SR are produced through the comparison of velocities, not time directly. While the model being proposed dictates that relative velocities should exist as part of a PSI[^5] and therefore remain proportionate, SR dictates that both time and velocity should scale proportionally to $\gamma$, making them also invariant between reference frames. However, what is sacrificed in this model of spatial dilation is the length of the integral of $dl$ for a body at relativistic velocities, which contradicts existing models of relativity but aligns more closely with the concept of cosmic inflation.
+It should be noted that all of the experimental validations of SR[^6] remain intact under this model of spatial dilation, as most or all experimental validations of SR are produced through the comparison of velocities, not through the measure of time directly. While the model being proposed dictates that relative velocities should exist as part of a PSI[^5] and therefore remain proportionate, SR dictates that both time and velocity should scale proportionally to $\gamma$, making them also invariant between reference frames. However, what is sacrificed in this model of spatial dilation is the length of the integral of $dl$ for a body at relativistic velocities, which contradicts existing models of relativity but aligns more closely with the principle of cosmic inflation.
 
 
 ## The equivalence principle
@@ -82,7 +82,7 @@ The equivalence principle, in which the force experienced on an accelerating pla
 
 In order to address this potential mechanism, we need to first describe the space which we are working in. The Universe is widely accepted to be expanding; we can measure this by calculating the Doppler shift produced by relative motion from stars and certain cosmic events at various distances. What is on the other side of this expansion is largely insignificant for this portion of the model being proposed, but there must exist _something_ that encompasses this expansion. Even if this external space exists only in the mathematical sense, we can imagine a coordinate system that encompasses our expanding Universe. If the Universe were a blueberry muffin expanding as it bakes, this external space would be the interior of the oven. From here forward, I will refer to this space as $\mathbb{R}^{3}_\tau$ space, and the expanding space of the Universe itself as $\mathbb{R}^{3}$ space.
 
-If we allow that this $\mathbb{R}^{3}_\tau$ space encompasses our expanding Universe, barring any motion of the Universe within this $\mathbb{R}^{3}_\tau$ space, there should exist one point at which a coordinate in $\mathbb{R}^{3}$ space and a coordinate in $\mathbb{R}^{3}_\tau$ space have no relative motion between them. We will calculate all velocities with respect to this point in space which I will now call $p_{1}$, making velocities in some sense absolute, but still maintaining Einstein's dependence upon relative motion by using this shared fixed position as our reference frame. 
+If we allow that this $\mathbb{R}^{3}_\tau$ space encompasses our expanding Universe, barring any motion of the center of mass of the Universe within this $\mathbb{R}^{3}_\tau$ space, there should exist one point at which a coordinate in $\mathbb{R}^{3}$ space and a coordinate in $\mathbb{R}^{3}_\tau$ space have no relative motion between them. We will calculate all velocities with respect to this point in space which I will now call $p_{1}$, making velocities in some sense absolute, but still maintaining Einstein's dependence upon relative motion by using this shared fixed position as our reference frame. 
 
 ### $\gamma$ as the source of the equivalence principle
 
@@ -112,83 +112,81 @@ $$
 \end{align}
 $$
 
-This means that for every infinitely small piece of space, we would need to scale that space by a factor of $\delta$ to produce our surface gravitational acceleration of $g$.
+This means that for every infinitely small piece of space, we would need to scale that space by a factor of $\delta$ each second to produce our surface gravitational acceleration of $g$.
 
 If this model of spatial dilation is valid, these two functions should converge at a single velocity for our local set of gravitational parameters, our velocity relative to $p_{1}$.
 
 
+
 ### $\delta$ in the $\mathbb{R}^{3}_\tau$ frame of the body in motion
 
-Consider the application of $\delta$ in $\mathbb{R}^{3}_\tau$. As $\delta$ is the derivative of a $1/r^{2}$ force, this force should also fall off as $1/x^{2}$ as the body in motion moves away from the emission of that spatial dilation. This is a reciprocal relationship, as a body not in motion cannot produce this spatial dilation, making this relationship consistent for all velocities.
+<Image 
+    src="/assets/diagrams/dsdxSlope.png"
+    xl
+    center
+    id="dxdsSlope"
+    label
+/>
 
-While the perceived force of this spatial dilation should fall of as $1/r^{2}$, and in turn, $1/x^{2}$, the body in motion also produces this dilation at every point along it's path. In a sense, the dilation travels _with_ the body, while also leaving a trail of itself as the body progresses through space.
+Let us now apply $\gamma$ in a manner such that the dilation of space would produce a physical phenomenon equivalent to that which we experience as gravity. If instead of describing this dilation of space as a rate of change with respect to time, we might describe this dilation as a rate of change with respect to the change in displacement for the center of mass of the gravitational source. 
 
-We can resolve this by modifying $\delta$ to accommodate this $1/x^{2}$ relationship and the integral over $x$ as follows, where $\dot{x}$ is the _proportional derivative_ of $v$ along the vector $\vec{x}$, not a derivative with respect to time. $x$ indicates the magnitude of $\vec{x}$ for a body in a given allotment of time, if an approximately straight path is assumed.
-
-$$
-\begin{align}
-\delta_x = 2 G \frac{M}{R^{3} x^{2}} \dot{x}
-\end{align}
-$$
-
-In the integral form, this yields a dilation of space the gives the appearance of acceleration as $\delta$ is applied across the integral of $\dot{x}$ as 
+As demonstrated in figure 1: 
 
 $$
 \begin{align}
-\int_0^{x} \int_0^{R} 2 G \frac{M}{R^{3} x^{2}} \dot{x} ~ dR ~ d\dot{x} = \frac{1}{2} \frac{GM}{R^{2}x^{2}}x^{2}
+\frac{ds}{dx} = \frac{\int_0^{R} \delta ~ dR}{\bar{v}}
 \end{align}
 $$
 
-
-### Finding our peculiar velocity
-
-Notice that our velocity when compared to the CMB[^4] dipole is not derived from the relationship between gravity and velocity. For this reason, we should include $t$ in $\Gamma$ to maintain this symmetry.
-
-Let us contrast this with the Pound Rebka experiment, in which an emitter and a receiver were set $h \approx 22.5 ~ \text{m}$ apart along the Earth's radial axis at that position. The emitter was then moved relative to the receiver, until a velocity was found to perfectly offset the gravitational Doppler shift exerted on the photon. Pound and Rebka found a result of $v_{p} \approx g \frac{h}{c} \approx g \Delta t$. This is equivalent to the following
+We can then describe this gradient, $ds/dx$ as a function of pseudo-time (the progression of $\int_P dx_v$). As the rate of spatial dilation can be referenced using the original spatial density, $R_{0}$, we combine these principles to arrive at:
 
 $$
 \begin{align}
-v_{p} = \int_0^{R_{\oplus}} \delta \frac{h}{c}
+\bar{\gamma} = \frac{R_{1}}{R_{0}} = \frac{R_{0} \left( 1 + \int \int_0^{R_{\oplus}} 2 G \frac{M_{\oplus}}{R^{3}_{\oplus}} \frac{1}{\bar{v}} \tau_\epsilon ~ dR ~ d \tau_\epsilon \right)}{R_{0}}
 \end{align}
 $$
 
-But notice, if we define $v$ and $c$ as the integral of _proportional derivatives_, there is no explicit dependence on time. In this instance, if we integrate over $dx_c$ as it moves between the emitter and receiver across $h$, while simultaneously integrating over $dx_v$ in a proportional manner as $ds$ produces the proposed spatial dilation as a function of the relative magnitude between $dx_v$ and $dx_c$, we find an equivalent equation with no temporal dimension. This follows closely with the model of this temporal density axis as a gradient, which may not be quantum, but rather of a gradient magnitude that is proportional to $dx_v$ and it's relation to $dx_c$. By integrating $dx_v$, $dx_c$ and $ds$ simultaneously and proportionally until $dx_c = h$, we include this theoretical gradient in our calculation and reach the same result while working only with relative 3-vectors.
-
-> It is important to note here, that $\delta$ and $\Gamma$ are functions that _converge_ to give our local velocity relative to $p_{1}$. A function producing a quantized magnitude of $ds$ remains elusive, and may not actually exist. 
-
-
-
-To find the convergence between $\gamma$ and our proposed spatial dilation, let us first find the average of the integral[^3] of $\delta$ which can be applied as a scalar of our entire radius to produce our surface gravitational acceleration, $g$, now with a time dimension included in our calculation to align with the abstract time dimension inherent in the CMB calculations. We can find this by the following.
+Note here that $\delta / \bar{v}$ gives a change in spatial dilation per change in displacement, and $\tau_\epsilon$ progresses this rate of change with pseudo-time; the proportional integral of the displacement vector of the center of mass of the gravitational source as proportionate to a distance-time equivalent[^10] quantity of $\bar{v}$.
 
 $$
 \begin{align}
-\Gamma = \frac{1}{R_{\oplus}} \int_0^{1} \int_0^{R_{\oplus}} 2 G \frac{M_{\oplus}}{R_{\oplus}}t ~ dR ~ dt = 1 + \frac{1}{2}\frac{g}{R_{\oplus}}t^{2}
+\int \int_0^{R_{\oplus}} \underbrace{2 G \frac{M_{\oplus}}{R^{3}_{\oplus}} \frac{1}{\bar{v}}}_{ds/dx} \overbrace{\tau_\epsilon}^{pseudo-time} ~ dR ~ d \tau_\epsilon
 \end{align}
 $$
 
-> On the surface this suggests an acceleration, not a velocity, but recall that we already have the temporal dimension accounted for by finding the necessary spatial scalar to produce our local gravitational acceleration. As the model being proposed has one less rate of change inherent to the system, we should be left with an additional, unaccounted for derivative.
-
-As $\gamma$ in the model proposed would apply as a scalar of a given unit of space, we should then solve $\gamma$ for $v$, and replace $\gamma$ with $\Gamma$, which can act as a scalar of our radius capable of producing our local gravitational acceleration.
-
-Once we solve $\gamma$ for $v$ and replace $\gamma$ with $\Gamma$, we are left with:
+If we now solve $\gamma$ for $v$, and replace $\gamma$ with $\bar{\gamma}$, we find the following:[^8]
 
 $$
 \begin{align}
-v_{0} = c \sqrt{1 - \frac{1}{\Gamma^{2}}} = 526.6 ~ \text{km}/\text{s}
+\bar{v} = c \sqrt{1 - \frac{1}{\left( \frac{R_{1}}{R_{0}} \right)^{2}}} & = c \sqrt{1 - \frac{1}{\left( 1 + \frac{1}{R} \int \int_0^{R_{\oplus}} 2 G \frac{M_{\oplus}}{R^{3}_{\oplus}} \frac{1}{\bar{v}} \tau_\epsilon ~ dR ~ d \tau_\epsilon \right)^{2}}} \\ 
+& = c \sqrt{1 - \frac{1}{\left( 1 + \frac{1}{2} \frac{g}{R_{\oplus}} \frac{\dot{x}^{2}}{\bar{v}\int dl} \right)^{2}}}
 \end{align}
 $$
+
+Note that $\int dl$ is equivalent to $\bar{v}$ if $\Delta t_{p} = 1$[^11]. Likewise, $\dot{x} = \int dl$ if $\Delta t_{p} = 1$, making this equation reducible to the following when applied over a single unit of pseudo-time:
+
+$$
+\begin{align}
+\bar{v} = c \sqrt{1 - \frac{1}{\left( 1 + \frac{1}{2} \frac{g}{R_{\oplus}} \cancel{\frac{\dot{x}^{2}}{\bar{v}^{2}}} \right)^{2}}} & = 372,360.114 ~ \text{m}/\text{s} \\
+& = v_{\text{cmb}} + 0.89\% \pm 0.24\%
+\end{align}
+$$
+
+> The Earth's polar radius was used in the calculation above. Using the Earth's equatorial radius reduces the discrepancy between this result and the derived velocity with respect to the CMB dipole to $0.72\%$.
+
 
 
 ### Orbital velocity without an explicit time dimension
+<Small muted noMargin style={{marginTop: "-0.75rem !important"}}>A verification of CMB dipole symmetry.</Small>
 
 <Image
     src="/assets/diagrams/orbitalRadiusFromModel.png"
     lg
     center
-    noConfig
+    label
 />
 
-Consider this <Emoji name="arrow-big-up" xl important fill/> diagram, in which a body is in motion perpendicular to the normal vector at the surface of the Earth. As $\dot{x} = dx/dt$, we can describe $\dot{x}~ dt$ as just $\dot{x}$. This leaves us with
+Consider the diagram above, in which a body is in motion perpendicular to the normal vector at the surface of the Earth. As $\dot{x} = dx/dt$, we can describe $\dot{x}~ dt$ as just $\dot{x}$. This leaves us with
 
 <EqRef anchor id="orbital-velocity-initial">
 $$
@@ -206,7 +204,7 @@ $$
 \end{align}
 $$
 
-Recall from the section on the [time derivative equivalent](#time-derivative-equivalent), $\tau_o$ is equivalent to the number of time derivatives in 1 unit of time. In turn, $dt$ should be equivalent to $1 / \tau_o$. $ds$ of course can be rewritten as the product of the velocity of the gravitational source and the dilation gradient, $ds = dx_{\bar{v}} \frac{g}{\bar{v}}$.
+Recall from the section on the [time derivative equivalent](#time-derivative-equivalent), $\tau_o$ is equivalent to the number of time derivatives in 1 unit of time, proportional to $dx$ and $\int dl$. In turn, $dt$ should be equivalent to $1 / \tau_o$. $ds$ of course can be rewritten as the product of the velocity of the gravitational source and the gradient of spatial dilation dilation, $ds = dx_{\bar{v}} \frac{g}{\bar{v}}$.
 
 This then gives
 
@@ -236,8 +234,6 @@ dx_{\bar{v}} = \frac{\bar{v}}{g} \sqrt{\frac{GM}{R}} \frac{1}{\sqrt{2 R_{0} \fra
 $$
 
 
-
-
 [^1]: Or describe this in a manner in which $R$ is broke up into a near infinite number of extremely small pieces.
 [^2]: A vector with 3 spatial components and 1 time component.
 [^3]: To add up the small pieces created by the derivative.
@@ -245,3 +241,7 @@ $$
 [^5]: Proportional Simultaneous Integral
 [^6]: Special Relativity
 [^7]: General Relativity
+[^8]: $\dot{x}$ does not indicate a rate of change with respect to time, but rather the proportional derivative of displacement.
+[^9]: In units of time as they appear in the traditional notion velocity.
+[^10]: The integral of the displacement vector of a length equivalent to 1 unit of time for a given velocity. For $n_{a} ~ \text{m}/\text{s}$, the integral of $\int_0^{n} dx_a$ gives a combined length of $n$ meters, indicating the passage of 1 unit of time in traditional models.
+[^11]: $t_{p}$: Pseudo-time equivalent

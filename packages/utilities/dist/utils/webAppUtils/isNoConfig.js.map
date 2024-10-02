@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/utils/webAppUtils/isNoConfig.ts"],"names":["isNoConfig","props"],"mappings":"gCAAO,IAAMA,EAAcC,GAChBA,EAAM,UAAY,QAAQ,IAAI","sourcesContent":["export const isNoConfig = (props: {noConfig?: boolean}) => {\n    return props.noConfig || process.env.ULLD_NO_CONFIG\n}\n"]}

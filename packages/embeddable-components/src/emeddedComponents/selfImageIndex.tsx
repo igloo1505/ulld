@@ -47,7 +47,7 @@ const SelfFigureIndex = connector(
             <div
                 ref={container}
             >
-                {typeof imgIndex === "number" && <span>{`Figure ${imgIndex + 1}:`}</span>}
+                {typeof imgIndex === "number" && <span>{`Figure ${imgIndex + 1}${desc ? ":" : ""}`}</span>}
                 {desc && <span className={clsx(typeof imgIndex === "number" ? "ml-1" : "")}>{desc}</span>}
             </div>
         );

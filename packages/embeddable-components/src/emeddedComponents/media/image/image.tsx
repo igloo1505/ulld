@@ -1,12 +1,14 @@
-import React, { useMemo } from "react";
+import React from "react";
 import clsx from "clsx";
-import ImageMapImage from "./imageMapImage";
+import ImageMapImage from "../../imageMapImage";
 import { EmbeddedImageProps } from "@ulld/utilities/types/embeddedImageProps";
 import { isFullWidth } from "@ulld/state/formatting/styleUtilities";
 import { getRandomId } from "@ulld/utilities/identity";
-import SelfFigureIndex from "./selfImageIndex";
-import DispatchRenderedImageEvent from "./dispatchRenderedImageEvent";
+import SelfFigureIndex from "../../selfImageIndex";
+import DispatchRenderedImageEvent from "../../dispatchRenderedImageEvent";
 import { readAppConfigSync } from "@ulld/developer/readAppConfig";
+import MemoizedEmbeddableClientImageElement from "./embeddableImageClientElement";
+import { formatImageSourceString } from "./serverUtils";
 
 type ImgProps = EmbeddedImageProps & Omit<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>, "title"> & { 
     noConfig?: boolean
@@ -20,39 +22,16 @@ const C = (props: ImgProps) => {
 
     const fullWidth = isFullWidth(props);
 
+    if(!props.src){
+        return null
+    }
+
     let imgProps = {
-        src: props.src,
+        src: props.src!,
         alt: props.alt,
         id: id,
         ...(!props.notFigure && { "data-ulld-figure": true }),
     };
-
-    const imageEm = useMemo(
-        () => (
-            <img
-                {...imgProps}
-                className={clsx(
-                    "!m-0 h-auto not-prose",
-                    Boolean(props.sm || props.small) && "max-w-[120px] max-h-[120px]",
-                    Boolean(props.md || props.medium) && "max-w-[200px] max-h-[200px]",
-                    Boolean(props.lg || props.large) && "max-w-[min(350px,calc(100%-80px))] max-h-[350px]",
-                    props.xl && "max-w-[min(500px,calc(100%-80px))] max-h-[500px]",
-                )}
-            />
-        ),
-        [
-            props.alt,
-            props.src,
-            props.sm,
-            props.md,
-            props.lg,
-            props.medium,
-            props.large,
-            props.small,
-            props.xl,
-            id,
-        ],
-    );
 
     return (
         <div
@@ -98,7 +77,10 @@ const C = (props: ImgProps) => {
                 ...(props.height && { height: props.height }),
             }}
         >
-            {imageEm}
+            <MemoizedEmbeddableClientImageElement
+                {...props}
+                imgProps={imgProps}
+            />
             {(props.desc || props.label) && (
                 <div
                     className={clsx(
