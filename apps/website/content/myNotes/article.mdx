@@ -1,6 +1,8 @@
 ---
 title: On the gravitational nature of time
 created: 9-28-24
+id: onTheGravitationalNatureOfTime
+description: A novel relativistic geometry is presented, and several derivations are provided which yield observationally confirmed results within a 1% margin of error.
 ---
 
 
@@ -104,7 +106,7 @@ g = G \frac{M}{R^{2}}
 $$
 
 
-If we differentiate this with respect to $R$[^1], this becomes 
+If we differentiate this with respect to $R$, this becomes 
 
 $$
 \begin{align}
@@ -116,6 +118,60 @@ This means that for every infinitely small piece of space, we would need to scal
 
 If this model of spatial dilation is valid, these two functions should converge at a single velocity for our local set of gravitational parameters, our velocity relative to $p_{1}$.
 
+<Admonition title="In regards to $\bar{v}$" type="info" dropdown open>
+
+Unless a reference to pseudo-time or a pseudo-time derivative is included in the following equations explicitly, when $\bar{v}$ appears as a constant it is referring to the time independent quantity as:
+$$
+\begin{align}
+    \bar{v} = c \sqrt{ 1 - \frac{1}{\left( 1 + G \frac{M_{\oplus}}{r^{3}} \right)^{2}}} = 525,820.603 ~ \frac{\text{m}}{\text{s}}
+\end{align}
+$$
+
+</Admonition>
+
+#### On the Pound Rebka results
+
+As the famed Pound Rebka<span className="citationAnchor-container no-tooltip"><a href='#bib-pound_rebka' className="citation citationAnchor" id="cit-pound_rebka-idx-0">1</a></span> experiment compared velocities to the apparent acceleration of gravity, let us examine how this time equivalence is contained in their results.
+
+Recall that the velocity they found through the relative motion of the emitter with respect to the receiver along a path normal to the Earth's surface was roughly
+
+$$
+\begin{align}
+v = g \left( \frac{h}{c} \right)
+\end{align}
+$$
+
+If we consider this experiment in the context of the time equivalent quantities inherent to the model being proposed, we should find that
+
+$$
+\begin{align}
+v = \frac{ds}{dt_p} \tau_\epsilon
+\end{align}
+$$
+
+As $ds = dx_{\bar{v}} \frac{g}{\bar{v}}$ and $\tau_o = \frac{1}{dt}$, we should find this equivalence as
+
+$$
+\begin{align}
+ v = ds \tau_\epsilon \tau_o
+\end{align}
+$$
+
+this then gives
+
+$$
+\begin{align}
+ v = \overbrace{dx_{\bar{v}} \left( \frac{g}{\bar{v}} \right)}^{\text{ds}} \underbrace{\left( \frac{\bar{v}}{dx_{\bar{v}}} \right)}_{\tau_\epsilon} \overbrace{\left( \frac{h}{c} \right)}^{\tau_o}
+\end{align}
+$$
+
+Simplified, this then gives the findings by Pound and Rebka as:
+
+$$
+\begin{align}
+v = \cancel{dx_{\bar{v}}} \frac{g}{\cancel{\bar{v}}} \frac{\cancel{\bar{v}}}{\cancel{dx_{\bar{v}}}} \frac{h}{c} = g \frac{h}{c}
+\end{align}
+$$
 
 
 ### $\delta$ in the $\mathbb{R}^{3}_\tau$ frame of the body in motion
@@ -172,7 +228,7 @@ $$
 \end{align}
 $$
 
-> The Earth's polar radius was used in the calculation above. Using the Earth's equatorial radius reduces the discrepancy between this result and the derived velocity with respect to the CMB dipole to $0.72\%$.
+> The Earth's polar radius was used in the calculation above. Using the Earth's equatorial radius reduces the discrepancy between this result and the velocity derived from observational data with respect to the CMB dipole to $0.72\%$, while using a radius derived from the standard acceleration of gravity produces a median error of $0.74\%$.
 
 
 
@@ -181,7 +237,7 @@ $$
 
 <Image
     src="/assets/diagrams/orbitalRadiusFromModel.png"
-    lg
+    xl
     center
     label
 />
@@ -204,37 +260,98 @@ $$
 \end{align}
 $$
 
-Recall from the section on the [time derivative equivalent](#time-derivative-equivalent), $\tau_o$ is equivalent to the number of time derivatives in 1 unit of time, proportional to $dx$ and $\int dl$. In turn, $dt$ should be equivalent to $1 / \tau_o$. $ds$ of course can be rewritten as the product of the velocity of the gravitational source and the gradient of spatial dilation dilation, $ds = dx_{\bar{v}} \frac{g}{\bar{v}}$.
+Recall from the section on the [time derivative equivalent](#time-derivative-equivalent), $\tau_o$ is equivalent to the number of pseudo-time derivatives in 1 unit of time, proportional to $dx$ and $\int dl$. In turn, $dt$ should be equivalent to $1 / \tau_o$. $ds$ of course can be rewritten as the product of the velocity of the gravitational source and the gradient of spatial dilation dilation, $ds = dx_{\bar{v}} \frac{g}{\bar{v}}$.
 
 This then gives
 
 <EqRef anchor id="equation-14">
+
 $$
 \begin{align}
-\dot{x}^{2} = 2 \frac{ds}{\tau_o} R_{0} + \frac{ds^{2}}{\tau_o^{2}} = 2 dx_{\bar{v}} \frac{g}{\bar{v}}  \frac{dx_{\bar{v}}}{\bar{v}} R_{0} + dx_{\bar{v}}^{2} \frac{g^{2}}{\bar{v}^{2}}  \frac{dx_{\bar{v}}^{2}}{\bar{v}^{2}} 
+\dot{x}^{2} = 2 \frac{ds}{\tau_o} R_{0} + \frac{ds^{2}}{\tau_o^{2}} = 2 dx_{\bar{v}} \frac{g}{\bar{v}}  \frac{dx_{\bar{v}}}{\bar{v}} R_{0} + dx_{\bar{v}}^{2} \frac{g^{2}}{\bar{v}^{2}} dt_p^{2}
 \end{align}
 $$
+
 </EqRef>
 
 And then simplifying equation <EqRef id="equation-14"/> and solving for $dx_{\bar{v}}$ gives
 
 $$
 \begin{align}
-dx_{\bar{v}} = \dot{x} \frac{\bar{v}}{g} \frac{1}{\sqrt{2 R_{0} \frac{1}{g} + \frac{1}{\bar{v}^{2}}}}
+dx_{\bar{v}} = \dot{x} \frac{\bar{v}}{g} \frac{1}{\sqrt{2 R_{0} \frac{1}{g} + dt_p^{2}}}
 \end{align}
 $$
 
-If we then substitute our standard orbital velocity formula for $\dot{x}$, we find
+If we then substitute our standard orbital velocity formula for $\dot{x}$ and allow $\lim_{dt_p \to 0}$, we find
 
 $$
 \begin{align}
-dx_{\bar{v}} = \frac{\bar{v}}{g} \sqrt{\frac{GM}{R}} \frac{1}{\sqrt{2 R_{0} \frac{1}{g} + \frac{1}{\bar{v}^{2}}}} & = 373,459.5 ~ \text{m}/\text{s} \\ 
-& = v_{\text{cmb}} + \sim 1.18\%
+dx_{\bar{v}} = \frac{\bar{v}}{g} \sqrt{\frac{GM}{R_{0}}} \frac{1}{\sqrt{2 R_{0} \frac{1}{g} + dt_p^{2}}} & = 372,359.89 ~ \text{m}/\text{s} \\ 
+& = v_{\text{cmb}} + \sim 0.89\%
 \end{align}
 $$
 
 
-[^1]: Or describe this in a manner in which $R$ is broke up into a near infinite number of extremely small pieces.
+## Relativistic center of mass shift
+
+<Image 
+    src="/assets/diagrams/dsPhiRelationship.png"
+    full
+    center
+    label
+    id="dsPhiRelationship"
+/>
+Consider the diagram in figure <FigRef id="dsPhiRelationship" /> above. Recall that in the model being proposed, proportional velocity derivatives should be proportional to some $dx_c$ velocity derivative of the speed of light. This is to say that for some infinitesimally small $dx_c$, $dx_v = dx_c \frac{v}{c}$.
+
+
+We can then define $ds$ as follows:
+
+$$
+\begin{align}
+ dx & = dx^{\prime} - dx^{0} \\
+& = dx_{\bar{v}} \left( 1 + \delta \right) - dx_{\bar{v}} \\
+& = dx_{\bar{v}} \delta
+\end{align}
+$$
+
+We then find for $R_{s} = \sqrt{\frac{GM}{g}}$ where $g$ is the standard gravitational acceleration of $9.80665 ~ \text{m}/\text{s}^{2}$:
+
+$$
+\begin{align}
+\bar{v} \delta = c \sqrt{1 - \frac{1}{\left( 1 + \frac{g}{R_{s}} \right)^{2}}} 2 G \frac{M}{R_{s}^{3}} & = 1.6176046762899292  \\
+& = \Phi \pm 0.026\%
+\end{align}
+$$
+
+Let us then recognize that $dx_{\bar{v}}$ must be proportional to $dx_c$. As $dx_{\bar{v}} = dx_c \frac{\bar{v}}{c}$ we find
+
+$$
+\begin{align}
+dx_{\bar{v}} \delta = \Phi \quad \Rightarrow \quad \bar{v} \left( \frac{dx_c}{c} \right) \delta = \Phi \left( \frac{dx_c}{c} \right)
+\end{align}
+$$
+
+
+What this transcendental quantity implies is not yet well understood, but the occurrence of $\Phi$ in black hole dynamics and the Earth-Moon radius relationship is intriguing to say the least. As $\Phi$ in the purely mathematical context is defined as both a function and an infinite series with several unique properties, there exists an incredible potential for this quantity to tell us more about the nature of gravity and this proposed density axis.
+
+
+## Discussion
+
+While this model is undeniably bold and will certainly be controversial, the proposed model is consistent with every experimental validation of SR and GR. The model so closely mirrors the original work of Einstein, producing numerically equivalent results in the majority of cases, the true test of this model is the ability to distinguish it from existing validations of SR and GR.
+
+While this model will and should be met with a high degree of skepticism, I believe the results speak for themselves. Among other phenomena that fall out of this model, there now exists the concept of a _temporal plane_, a spherical _'surface'_[^12] of an equal spatial density, giving a new equi-potential of sorts. Combining this model with electromagnetism opens the door to a new interpretation of electric charge, and provides an opportunity to more completely unify the electromagnetic field and possibly even bind the electromagnetic field with gravity. When considering the notion of a new equi-potential with the fact that the proposed spatial gradient along an infinitesimally small radius, $\delta / \bar{v}$, gives the symmetry:
+
+$$
+\begin{align}
+\frac{\delta}{\bar{v}} = \bar{v} \mu_0 \epsilon_0 \pm 0.00023\%
+\end{align}
+$$
+
+Further, this model describes the _apparent_ gravitational acceleration as the relative motion of _space_, not the observer in _apparent_ free fall. This model gives $\ddot{x} = 0$ with respect to $\mathbb{R}^{3}_\tau$ space for the observer in apparent free fall as the relative motion is now applied to space itself, making $F_{g} = m \ddot{x} = 0$, which directly addresses the fruitless search for the graviton.
+
+
+
+
 [^2]: A vector with 3 spatial components and 1 time component.
 [^3]: To add up the small pieces created by the derivative.
 [^4]: Cosmic Microwave Background
@@ -245,3 +362,4 @@ $$
 [^9]: In units of time as they appear in the traditional notion velocity.
 [^10]: The integral of the displacement vector of a length equivalent to 1 unit of time for a given velocity. For $n_{a} ~ \text{m}/\text{s}$, the integral of $\int_0^{n} dx_a$ gives a combined length of $n$ meters, indicating the passage of 1 unit of time in traditional models.
 [^11]: $t_{p}$: Pseudo-time equivalent
+[^12]: While the geometry of a temporal plane closely mirrors the geometry of a spherical surface for spherical gravitational sources of a uniform mass density, the _surface_ should not be thought of as 2-dimensional, but rather of a spherical surface with a small, but significant third dimension along the radial axis.

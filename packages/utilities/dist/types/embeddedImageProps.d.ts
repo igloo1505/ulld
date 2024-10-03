@@ -26,6 +26,10 @@ export interface EmbeddedImageProps {
     url?: string;
     /** An alias for url */
     src?: string;
+    /** Avoid automatially determining if the path is absolute or fsRoot relative, and force an absolute path to a file anywhere on your filesystem. */
+    absolutePath?: string;
+    /** Avoid automatially determining if the path is absolute or fsRoot relative, and force a path that is relative to your fsRoot. */
+    fsRootPath?: string;
     /** The name of a file described in your config. This adds support for easily accessing sets of images, but is currently in beta. */
     image?: string;
     /** Float image to the left, and wrap other content around it. */
