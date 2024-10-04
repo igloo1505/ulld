@@ -1,16 +1,15 @@
 import { Route } from "next";
 import React from "react";
-import TaggableBadge from "../../navigationUtilityComponents/badges/taggableBadge";
 import { AppConfigSchemaOutput } from "@ulld/types";
-import RemoveTaggableBadge from "../../navigationUtilityComponents/badges/removeTaggableBadge";
-
+import { TaggableListConditionalDropdown } from "./dropdown/taggableListConditionalDropdown";
+import { WithOptional } from "@ulld/utilities/types";
 
 interface TaggableListProps {
     items: string[];
     type: "tag" | "topic" | "subject";
     label?: string;
     activeItems?: string[];
-    noteType: AppConfigSchemaOutput["noteTypes"][number];
+    noteType: WithOptional<AppConfigSchemaOutput["noteTypes"][number], "docType">;
     searchParams: any;
 }
 
@@ -39,36 +38,24 @@ const TaggableList = ({
             <h3 className={"w-full text-lg font-semibold mb-2"}>
                 {label || defaultLabels[type]}
             </h3>
-            <div
-                className={
-                    "w-full h-fit flex flex-row justify-start items-center flex-wrap gap-4"
-                }
-            >
-                {activeItems.map((s, i) => {
-                    return (
-                        <RemoveTaggableBadge
-                            searchParams={searchParams}
-                            basePath={noteType.url as Route}
-                            key={`${type}-active-${i}`}
-                            value={s}
-                            category={noteType.docType}
-                            type={type}
-                        />
-                    );
-                })}
-                {inactiveItems.map((s, i) => {
-                    return (
-                        <TaggableBadge
-                            searchParams={searchParams}
-                            basePath={noteType.url as Route}
-                            key={`${type}-${i}`}
-                            value={s}
-                            category={noteType.docType}
-                            type={type}
-                        />
-                    );
-                })}
-            </div>
+                <TaggableListConditionalDropdown
+                    activeItems={activeItems.map((s, i) => ({
+                        searchParams: searchParams,
+                        basePath: noteType.url as Route,
+                        key: `${type}-active-${i}`,
+                        value: s,
+                        category: noteType.docType,
+                        type: type,
+                    }))}
+                    inactiveItems={inactiveItems.map((s, i) => ({
+                        searchParams: searchParams,
+                        basePath: noteType.url as Route,
+                        key: `${type}-${i}`,
+                        value: s,
+                        category: noteType.docType,
+                        type: type,
+                    }))}
+                />
         </div>
     );
 };

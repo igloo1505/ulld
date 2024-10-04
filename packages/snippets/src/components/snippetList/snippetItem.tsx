@@ -40,6 +40,7 @@ const SnippetListItem = ({ item }: SnippetListItemPropsInternal) => {
             <CodeHighlightContainer
                 className={"max-h-[max(70vh,600px)] [&_code]:!text-[12px]"}
                 language={item.language as ShikiLanguage}
+                noLoadingIndicator
             >
                 {item.content}
             </CodeHighlightContainer>

@@ -11,6 +11,7 @@ export const applyMathjaxBandaid = (
             : element.current;
     if (!em) return;
     let observer = mathjaxMutationObserver()
+    // WITH_WIFI: Improve this SIGNIFICANTLY. Look up the necessary properties to find just the classname attribute that's applied mistakenly by the parser.
      observer.observe(em, {
         subtree: true,
         childList: true,

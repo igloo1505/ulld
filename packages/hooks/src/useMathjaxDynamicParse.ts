@@ -22,6 +22,7 @@ const checkMath = async () => {
     }
 };
 
+// TODO: Move this to a global state object to avoid calling this function multiple times when a piece of state changes along with it's children. This could cause a massive, unnecessary load when some UI change affects multiple components.
 export const useMathjaxDynamicParse = (state: any) => {
     const handleMath = async () => {
            let res = await checkMath() 

@@ -41,9 +41,9 @@ const FoldingAdmonition = ({
             id={id}
             data-state={open ? "open" : "closed"}
         >
-            {typeof title === "string" ? (
+            {["string", "number"].includes(typeof title) ? (
                 <AdmonitionTitle
-                    title={title || ""}
+                    title={title ? typeof title === "string" ? title : `${title}` : ""}
                     admonitionType={type}
                     dropdown={dropdown}
                     groupId={id}

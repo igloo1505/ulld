@@ -15,17 +15,19 @@ from tikz import Tikz
 tikz = py_tikz.pytikz()
 tikz.dpi = 300
 
+mag1 = 5
+mag2 = 7
 
 p1 = tikz.pto.pto(0, 0, 0)
 
-p2 = tikz.pto.pto(10, 0, 0)
+p2 = tikz.pto.pto(mag1, 0, 0)
 
 line = tikz.shp.line(p1, p2, color="white")
 line.arrow = "->"
 
 
 l1 = tikz.pto.pto(0, -0.5, 0)
-l2 = tikz.pto.pto(12, -0.5, 0)
+l2 = tikz.pto.pto(mag2, -0.5, 0)
 
 line2 = tikz.shp.line(l1, l2, color="white")
 
@@ -41,14 +43,14 @@ tikz.shp.text(
 
 dsLineOffset = -1
 
-ds1 = tikz.pto.pto(10, dsLineOffset, 0)
-ds2 = tikz.pto.pto(12, dsLineOffset, 0)
+ds1 = tikz.pto.pto(mag1, dsLineOffset, 0)
+ds2 = tikz.pto.pto(mag2, dsLineOffset, 0)
 
 dsLine = tikz.shp.line(ds1, ds2, color="white")
 
 dsLine.type = "|-|"
 
-midPoint = tikz.pto.pto(11, dsLineOffset - 0.25, 0)
+midPoint = tikz.pto.pto(mag1 + (mag2 - mag1) / 2, dsLineOffset - 0.25, 0)
 
 dsLabel = tikz.shp.text(
     midPoint, "$ds = dx^\\prime - dx^0$", color="white", position="below"
