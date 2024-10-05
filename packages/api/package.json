@@ -251,7 +251,8 @@
     "./trpcInternalMethods/syncing/mdx/syncMdx": "./src/trpcInternalMethods/syncing/mdx/syncMdx.ts",
     "./trpcInternalMethods/syncing/config/syncConfig": "./src/trpcInternalMethods/syncing/config/syncConfig.ts",
     "./seedIfNotExists": "./src/utils/seedIfNotExists.ts",
-    "./coreParser": "./src/parsers/mdx/main.tsx"
+    "./coreParser": "./src/parsers/mdx/main.tsx",
+    "./getFilteredSearchResults": "./src/search/getFilteredSearchResults.ts"
   },
   "files": [
     "src",

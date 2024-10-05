@@ -23,9 +23,6 @@ const flattenColorPalette = (colors: any): any =>
 
 const tailwindCfg: Config = {
     content: [
-        "./app/**/*.{js,ts,jsx,tsx,mdx}",
-        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-        "./components/**/*.{js,ts,jsx,tsx,mdx}",
         "./node_modules/@ulld/tailwind/src/**/*.{js,ts,jsx,tsx,mdx}",
         "../../node_modules/@ulld/tailwind/src/**/*.{js,ts,jsx,tsx,mdx}",
         "./node_modules/@ulld/embeddable-components/src/**/*.{js,ts,jsx,tsx,mdx}",

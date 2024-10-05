@@ -15,8 +15,6 @@ export interface PropColor {
 }
 
 
-
-
 export type PropColorAsProp = Record<keyof PropColor, boolean>
 
 export const getPropColor = (d: PropColorAsProp, prefix?: string, _default?: string | undefined, config?: ParsedAppConfig) => {

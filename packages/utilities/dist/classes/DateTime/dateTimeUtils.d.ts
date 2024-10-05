@@ -23,17 +23,12 @@ export declare const dateParseConfigSchema: z.ZodDefault<z.ZodObject<{
     defaultTimeZone: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     enableAdvancedFormat: boolean;
-    format: (string | {
+    format: string | {
         short: string;
         long: string;
         withTime: string;
         timeOnly: string;
-    }) & (string | {
-        short: string;
-        long: string;
-        withTime: string;
-        timeOnly: string;
-    } | undefined);
+    };
     defaultTimeDisplayType: "summarized" | "analog" | "descriptive";
     defaultTimeZone?: string | undefined;
 }, {

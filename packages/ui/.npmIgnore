@@ -1,4 +1,6 @@
-
 src/app
 src/styles
 assets/
+.next
+.tsup
+.turbo

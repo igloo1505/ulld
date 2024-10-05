@@ -51,12 +51,12 @@ export declare const ulldCompletePackageJsonSchema: z.ZodObject<{
         url: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         name: string;
-        email?: string | undefined;
         url?: string | undefined;
+        email?: string | undefined;
     }, {
         name: string;
-        email?: string | undefined;
         url?: string | undefined;
+        email?: string | undefined;
     }>, z.ZodObject<{
         author: z.ZodString;
     }, "strip", z.ZodTypeAny, {
@@ -73,6 +73,11 @@ export declare const ulldCompletePackageJsonSchema: z.ZodObject<{
     dependencies: Record<string, string>;
     packageManager: string;
     license: string;
+    main?: string | undefined;
+    type?: string | undefined;
+    cpu?: string[] | undefined;
+    description?: string | undefined;
+    scripts?: Record<string, string> | undefined;
     exports?: Record<string, string | {
         types?: string | undefined;
         import?: string | undefined;
@@ -83,68 +88,63 @@ export declare const ulldCompletePackageJsonSchema: z.ZodObject<{
     peerDependenciesMeta?: any;
     optionalDependencies?: Record<string, string> | undefined;
     bundleDependencies?: Record<string, string> | undefined;
-    type?: string | undefined;
-    scripts?: Record<string, string> | undefined;
     private?: boolean | undefined;
     os?: string[] | undefined;
-    cpu?: string[] | undefined;
     workspaces?: string[] | undefined;
     funding?: {
         type: "patreon" | "individual";
         url: string;
     } | undefined;
-    main?: string | undefined;
     bin?: string | undefined;
     man?: string | string[] | undefined;
     homepage?: string | undefined;
     people?: {
         name: string;
-        email?: string | undefined;
         url?: string | undefined;
+        email?: string | undefined;
     } | {
         author: string;
     } | undefined;
-    description?: string | undefined;
 }, {
     name: string;
     dependencies: Record<string, string>;
+    main?: string | undefined;
+    type?: string | undefined;
     version?: string | undefined;
+    keywords?: string[] | undefined;
+    cpu?: string[] | undefined;
+    files?: string[] | undefined;
+    description?: string | undefined;
+    scripts?: Record<string, string> | undefined;
     exports?: Record<string, string | {
         types?: string | undefined;
         import?: string | undefined;
         require?: string | undefined;
     }> | undefined;
-    files?: string[] | undefined;
     packageManager?: string | undefined;
     devDependencies?: Record<string, string> | undefined;
     peerDependencies?: Record<string, string> | undefined;
     peerDependenciesMeta?: any;
     optionalDependencies?: Record<string, string> | undefined;
     bundleDependencies?: Record<string, string> | undefined;
-    type?: string | undefined;
-    scripts?: Record<string, string> | undefined;
     private?: boolean | undefined;
     os?: string[] | undefined;
-    cpu?: string[] | undefined;
     workspaces?: string[] | undefined;
     funding?: {
         type: "patreon" | "individual";
         url: string;
     } | undefined;
-    main?: string | undefined;
     bin?: string | undefined;
     man?: string | string[] | undefined;
-    keywords?: string[] | undefined;
     homepage?: string | undefined;
     license?: string | undefined;
     people?: {
         name: string;
-        email?: string | undefined;
         url?: string | undefined;
+        email?: string | undefined;
     } | {
         author: string;
     } | undefined;
-    description?: string | undefined;
 }>;
 export type PackageJsonType = z.input<typeof ulldCompletePackageJsonSchema>;
 //# sourceMappingURL=packageJsonType.d.ts.map

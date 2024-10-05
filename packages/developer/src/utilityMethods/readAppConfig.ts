@@ -23,6 +23,16 @@ export const readAppConfig = async () => {
 };
 
 
+export const readDevelopmentAppConfig = () => {
+      if(!process.env.ULLD_ADDITIONAL_SOURCES){
+        throw new Error("Cannot read development config, as the ULLD_ADDITIONAL_SOURCES environment variable is not available.")
+    }
+    let _path = path.join(process.env.ULLD_ADDITIONAL_SOURCES, "appConfig.ulld.json")
+    let res = fs.readFileSync(_path, {encoding: "utf-8"})
+    return JSON.parse(res) as AppConfigSchemaOutput;
+}
+
+
 export const readAppConfigSync = () => {
     let _path = getConfigPath()
     try {

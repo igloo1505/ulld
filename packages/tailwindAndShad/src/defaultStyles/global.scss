@@ -15,6 +15,7 @@ body {
   --jp-ui-font-size: 16px !important;
   --jp-brand-color1: hsl(var(--primary)) !important;
   /* TODO: Apply these variables where applicable, and create an enum that will allow setting these color properties dynamically directly from a component's props. */
+  --ulld-hint: #39f614;
   --ulld-info: #0ea5e9;
   --ulld-error: #ef4444;
   --ulld-note: #3f51b5;

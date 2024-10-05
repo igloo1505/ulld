@@ -1,17 +1,18 @@
+export declare const fakeTaggableString: (maxWords?: number) => string;
 export declare function fakeSubjectComplete(): {
-    value: string;
+    value: (maxWords?: number) => string;
     kanbanId: undefined;
     createdAt: Date;
     lastAccess: Date;
 };
 export declare function fakeTopicComplete(): {
-    value: string;
+    value: (maxWords?: number) => string;
     kanbanId: undefined;
     createdAt: Date;
     lastAccess: Date;
 };
 export declare function fakeTagComplete(): {
-    value: string;
+    value: (maxWords?: number) => string;
     kanbanId: undefined;
     createdAt: Date;
     lastAccess: Date;
@@ -282,23 +283,31 @@ export declare function fakePracticeExamComplete(): {
 export declare function fakeSequentialNoteListComplete(): {
     sequentialKey: string;
 };
-export declare function fakeMdxNote(): {
+export declare function fakeMdxNote(rOpts: {
+    latexTitle?: boolean;
+    formatted?: boolean;
+    summary?: boolean;
+    imageSrc?: boolean;
+    sequentialIndex?: boolean;
+    remoteUrl?: boolean;
+    quickLink?: boolean;
+}): {
     dietSummaryKey: undefined;
     title: string;
-    latexTitle: undefined;
+    latexTitle: string | undefined;
     rootRelativePath: string;
     noteType: string;
     content: string;
-    formatted: undefined;
-    summary: undefined;
+    formatted: string | null;
+    summary: string | null;
     citationsListOrder: string[];
     importantValues: number[];
-    imageSrc: undefined;
+    imageSrc: string | null;
     href: string;
-    sequentialIndex: undefined;
+    sequentialIndex: number | null;
     remoteUrl: undefined;
     outgoingQuickLinks: string[];
-    quickLink: undefined;
+    quickLink: string | null;
     lastSync: Date;
 };
 export declare function fakeMdxNoteComplete(): {
@@ -327,6 +336,24 @@ export declare function fakeMdxNoteComplete(): {
     firstSync: Date;
     lastSync: Date;
     lastAccess: Date;
+    tags: {
+        value: (maxWords?: number) => string;
+        kanbanId: undefined;
+        createdAt: Date;
+        lastAccess: Date;
+    }[];
+    topics: {
+        value: (maxWords?: number) => string;
+        kanbanId: undefined;
+        createdAt: Date;
+        lastAccess: Date;
+    }[];
+    subjects: {
+        value: (maxWords?: number) => string;
+        kanbanId: undefined;
+        createdAt: Date;
+        lastAccess: Date;
+    }[];
 };
 export declare function fakeIpynb(): {
     rootRelativePath: string;

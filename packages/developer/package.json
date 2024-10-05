@@ -33,7 +33,8 @@
     "@ulld/eslint-config": "workspace:*",
     "@ulld/logger": "workspace:*",
     "@ulld/types": "workspace:*",
-    "@ulld/typescript-config": "workspace:*"
+    "@ulld/typescript-config": "workspace:*",
+    "@ulld/utilities": "workspace:*"
   },
   "private": false,
   "publishConfig": {

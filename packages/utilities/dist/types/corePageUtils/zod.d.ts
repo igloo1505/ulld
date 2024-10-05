@@ -16,16 +16,18 @@ export declare const sortDirProps: z.ZodObject<{
 }, {
     sortDir?: "desc" | "asc" | undefined;
 }>;
-export declare const equationSearchParamsSchema: z.ZodObject<{
-    value: z.ZodOptional<z.ZodString>;
-    page: z.ZodDefault<z.ZodNumber>;
-    query: z.ZodOptional<z.ZodString>;
-    orderBy: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"title">, z.ZodLiteral<"createdAt">]>>;
-    take: z.ZodDefault<z.ZodNumber>;
+export declare const equationSearchParamsSchema: z.ZodObject<z.objectUtil.extendShape<z.objectUtil.extendShape<{
     tags: z.ZodDefault<z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">]>, string[], string | string[]>>;
     variables: z.ZodDefault<z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">]>, string[], string | string[]>>;
+    query: z.ZodOptional<z.ZodString>;
+    value: z.ZodOptional<z.ZodString>;
+    orderBy: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"title">, z.ZodLiteral<"createdAt">]>>;
+}, {
+    page: z.ZodDefault<z.ZodNumber>;
+    take: z.ZodDefault<z.ZodNumber>;
+}>, {
     sortDir: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"asc">, z.ZodLiteral<"desc">]>>;
-}, "strip", z.ZodTypeAny, {
+}>, "strip", z.ZodTypeAny, {
     page: number;
     orderBy: "title" | "createdAt";
     take: number;
@@ -41,7 +43,7 @@ export declare const equationSearchParamsSchema: z.ZodObject<{
     orderBy?: "title" | "createdAt" | undefined;
     take?: number | undefined;
     tags?: string | string[] | undefined;
-    variables?: string | string[] | undefined;
     sortDir?: "desc" | "asc" | undefined;
+    variables?: string | string[] | undefined;
 }>;
 //# sourceMappingURL=zod.d.ts.map
