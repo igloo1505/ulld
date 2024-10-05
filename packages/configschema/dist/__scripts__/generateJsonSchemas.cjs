@@ -20,7 +20,7 @@ require('../chunk-UW7M2UHZ.cjs');
 require('../chunk-AVWYTCDL.cjs');
 
 
-var _chunk6QZ5W3RPcjs = require('../chunk-6QZ5W3RP.cjs');
+var _chunkORK3XHM3cjs = require('../chunk-ORK3XHM3.cjs');
 require('../chunk-B4O6LZ64.cjs');
 require('../chunk-M677MBJM.cjs');
 require('../chunk-BMKGPO6Q.cjs');
@@ -51,15 +51,15 @@ require('../chunk-JU76D7R4.cjs');
 require('../chunk-PXSYJX6W.cjs');
 require('../chunk-XV6PA66C.cjs');
 require('../chunk-KO6QBID2.cjs');
-require('../chunk-ONQJX77B.cjs');
+require('../chunk-IB2BTZA2.cjs');
 require('../chunk-5DEJBS5Y.cjs');
-require('../chunk-XYNU2XEW.cjs');
+require('../chunk-ZLIBX2HS.cjs');
 
 // src/__scripts__/generateJsonSchemas.ts
 var _zodtojsonschema = require('zod-to-json-schema');
 var _fs = require('fs'); var _fs2 = _interopRequireDefault(_fs);
 var _path = require('path'); var _path2 = _interopRequireDefault(_path);
-var appConfigJsonSchema = _zodtojsonschema.zodToJsonSchema.call(void 0, _chunk6QZ5W3RPcjs.appConfigSchema, "ulldAppConfig");
+var appConfigJsonSchema = _zodtojsonschema.zodToJsonSchema.call(void 0, _chunkORK3XHM3cjs.appConfigSchema, "ulldAppConfig");
 var pluginConfigJsonSchema = _zodtojsonschema.zodToJsonSchema.call(void 0, _chunkJJFTF7C6cjs.developerConfigSchema, "ulldPluginConfig");
 var buildStaticDataJsonSchema = _zodtojsonschema.zodToJsonSchema.call(void 0, _chunkYTHHMSDPcjs.buildStaticDataSchema, "ulldBuildStaticData");
 var items = [
@@ -80,4 +80,8 @@ for (const f of items) {
   _fs2.default.writeFileSync(_path2.default.join(import.meta.dirname, `../jsonSchemas/${f.file}`), JSON.stringify(f.schema, null, 2));
   _fs2.default.writeFileSync(_path2.default.join(import.meta.dirname, `../../../build/src/configJsonSchemas/${f.file}`), JSON.stringify(f.schema, null, 2));
 }
+console.log(`Successfully wrote json schemas to: 
+
+${items.map((i) => `- ${i.file}`).join("\n")}
+`);
 //# sourceMappingURL=generateJsonSchemas.cjs.map

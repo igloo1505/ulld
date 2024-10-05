@@ -36,6 +36,12 @@ const config = {
             pinVersion: "0.7.14",
         },
         {
+            dependencies: ["@tailwindcss/typography"],
+            packages: ["**"],
+            dependencyTypes: ["dev", "peer", "prod"],
+            pinVersion: "0.5.13",
+        },
+        {
             dependencies: ["citation-js"],
             packages: ["**"],
             dependencyTypes: ["dev", "peer", "prod"],
@@ -79,9 +85,8 @@ const config = {
         {
             dependencies: ["zod"],
             packages: ["**"],
-            pinVersion: "latest"
+            pinVersion: "3.23.8"
         },
-
         {
             dependencies: ["shiki"],
             packages: ["**"],

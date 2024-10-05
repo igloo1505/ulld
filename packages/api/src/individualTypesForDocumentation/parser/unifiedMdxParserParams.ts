@@ -3,6 +3,7 @@ import { serverClient } from "../../trpc/serverClient";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import { MdxDetailsReturnType } from "../../types";
 
+
 export interface UnifiedMdxParserParams {
     content: string;
     docTypeData: AppConfigSchemaOutput["noteTypes"][number] | {};
@@ -11,3 +12,5 @@ export interface UnifiedMdxParserParams {
     serverClient: typeof serverClient // Trpc router
     db: MdxDetailsReturnType
 }
+
+

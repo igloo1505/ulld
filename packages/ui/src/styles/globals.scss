@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: hsl(var(--background));
+  overscroll-behavior-block: none;
+  overflow-x: hidden;
+}
+
+body {
+  overscroll-behavior-y: none;
+  text-rendering: optimizeLegibility;
+  position: relative;
+  overflow: hidden;
+}
+
+header#nd-subnav {
+  background-color: hsl(var(--background));
+}
+
+.centerAbsPos {
+  left: 50%;
+  top: 50%;
+}
+
+.centerAbsTran {
+  transform: translate(-50%, -50%);
+}
+
+.hide-table-col-0 {
+  tr {
+    td:nth-child(1) {
+      display: none;
+    }
+
+    th:nth-child(1) {
+      display: none;
+    }
+  }
+}
+
+.hide-table-col-1 {
+  tr {
+    td:nth-child(2) {
+      display: none;
+    }
+
+    th:nth-child(2) {
+      display: none;
+    }
+  }
+}
+
+.hide-table-col-2 {
+  tr {
+    td:nth-child(3) {
+      display: none;
+    }
+
+    th:nth-child(3) {
+      display: none;
+    }
+  }
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  font-size: 1.15rem;
+  overflow-x: auto;
+  mjx-labels {
+    mjx-itable {
+      font-size: 1rem !important;
+    }
+  }
+}
+
+.prose {
+  mjx-container[jax="CHTML"][display="true"] {
+    font-size: 1.15rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-width: 0px !important;
+    min-height: fit-content;
+    mjx-labels {
+      mjx-itable {
+        font-size: 1rem !important;
+      }
+    }
+  }
+}
+
+.mdx {
+  li {
+    button[type="checkbox"] {
+      transform: translateY(1px);
+      margin-right: 0.25rem;
+    }
+  }
+}

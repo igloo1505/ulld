@@ -3,9 +3,9 @@ import {
   documentTypeConfigSchema,
   documentTypeConfigSchemaBase,
   zodDocTypeInput
-} from "../chunk-GQ44M3IR.js";
+} from "../chunk-JJ7PAUIP.js";
 import "../chunk-PESBV4SX.js";
-import "../chunk-QZPOLBQN.js";
+import "../chunk-DVXEI7YQ.js";
 export {
   docTypeUISchema,
   documentTypeConfigSchema,

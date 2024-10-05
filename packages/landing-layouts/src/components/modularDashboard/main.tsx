@@ -62,6 +62,7 @@ const ModularDashboard = async () => {
                     />
                 </div>
                 <RecentlyAccessNotesList
+                    notes={data.lastAccessNotes}
                     className={
                         "w-full h-[calc(33%-1rem)] extraMedium:h-[calc(33vh-1rem)]"
                     }

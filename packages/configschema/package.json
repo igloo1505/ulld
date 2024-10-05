@@ -26,8 +26,8 @@
     "supertest-session": "^5.0.1",
     "ts-jest": "^29.1.2",
     "tsx": "^4.7.2",
-    "zod": "^3.22.4",
-    "zod-to-json-schema": "^3.22.4"
+    "zod": "3.23.8",
+    "zod-to-json-schema": "3.22.4"
   },
   "devDependencies": {
     "@testing-library/cypress": "^10.0.1",
@@ -54,8 +54,8 @@
     "supertest-session": "^5.0.1",
     "ts-jest": "^29.1.2",
     "tsx": "^4.7.2",
-    "zod": "^3.22.4",
-    "zod-to-json-schema": "^3.22.4"
+    "zod": "3.23.8",
+    "zod-to-json-schema": "3.22.4"
   },
   "exports": {
     "./types": {

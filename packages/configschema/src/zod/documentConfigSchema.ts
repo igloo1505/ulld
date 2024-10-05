@@ -60,7 +60,6 @@ export const docTypeUISchema = z
 export const zodDocTypeInput = z
     .string()
     .transform(makeValidIdOnlyLetters)
-    .brand("DocTypeName");
 
 // NOTE: I'm removing the following keys to minimize the config to where the app currently is, not to where I want it to be. Can add them back in as the app's capabilities grow to make use of them.
 // 1. contentType: documentConfigContentTypeSchema

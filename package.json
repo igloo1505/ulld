@@ -37,8 +37,8 @@
     "turbo": "2.0.6-canary.0",
     "typescript": "5.5.4",
     "typescript-plugin-css-modules": "^5.1.0",
-    "zod": "3.22.4",
-    "zod-to-ts": "^1.2.0"
+    "zod": "3.23.8",
+    "zod-to-ts": "1.2.0"
   },
   "devDependencies": {
     "@edge-runtime/vm": "^4.0.3",

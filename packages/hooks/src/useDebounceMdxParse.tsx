@@ -9,6 +9,7 @@ import { getComponentMap } from "@ulld/component-map/client";
 import { useMathjaxBandaid } from "./useMathjaxBandaid";
 import { parseMdxString } from "@ulld/parsers";
 import { useAppConfig } from "./useAppConfig";
+import { compileMdxStringClient } from "@ulld/parsers/mdx-to-jsx-client"
 
 const Content = ({
     MdxContentComponent,
@@ -28,6 +29,7 @@ const Content = ({
     );
 };
 
+
 export const useDebounceMdxParse = (
     initialValue: string = "",
     debounceTimeout: number = 300,
@@ -39,7 +41,12 @@ export const useDebounceMdxParse = (
     const [appConfig] = useAppConfig();
 
     const handleParse = async (_value: string) => {
-        let compiled = await parseMdxString({ content: _value, appConfig });
+        /* TODO: Add function param and modify this to add the ability to format mdx content with internal parser. */
+        let compiled = await compileMdxStringClient({
+            content: _value,
+            appConfig
+        })
+        /* let compiled = await parseMdxString({ content: _value, appConfig }); */
         const res = await run(compiled, {
             Fragment: Fragment,
             jsx: runtime.jsx as any,

@@ -118,10 +118,23 @@ export const tailwindConfig: Config = {
                 "accordion-up": "accordion-up 0.2s ease-out",
             },
         },
+        typography: ({ theme }: { theme: (val: string) => void }) => ({
+            DEFAULT: {
+                css: {
+                    "--tw-prose-invert-body": theme("colors.gray[200]"),
+                    "--tw-prose-invert-headings": "hsl(var(--foreground))",
+                    pre: {
+                        "&:not([data-language])": {
+                            backgroundColor: "hsl(var(--background))",
+                        },
+                    },
+                },
+            },
+        }),
     },
     plugins: [
+        require("@tailwindcss/typography"),
         require("tailwindcss-animate"),
-        require("tailwindcss-debug-screens"),
         require("@tailwindcss/container-queries"),
     ],
 };

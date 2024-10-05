@@ -6,6 +6,8 @@ import { AdditionalComponents } from "@ulld/component-map/types";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import { readAppConfig } from "@ulld/developer/readAppConfig";
 import { cn } from "@ulld/utilities/cn";
+import { ApplyMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
+import { getRandomId } from "@ulld/utilities/identity";
 
 export interface MdxContentRSCProps {
     id?: string;
@@ -42,10 +44,12 @@ const parseProps = (p: Omit<MdxContentRSCProps, "MdxContentRenderer">) => {
 
 export const MdxContentRSC = async ({
     components = [],
-    id,
+    id: _id,
     ..._props
 }: MdxContentRSCProps) => {
     let appConfig = _props.appConfig || (await readAppConfig());
+
+    const id = _id || getRandomId()
 
     const props = parseProps(_props);
 
@@ -74,6 +78,7 @@ export const MdxContentRSC = async ({
                 </div>
             )}
             {data.content}
+            <ApplyMathjaxBandaid container={id} />
         </div>
     );
 };

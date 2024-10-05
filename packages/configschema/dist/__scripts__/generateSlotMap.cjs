@@ -11,14 +11,14 @@ require('../chunk-YTHHMSDP.cjs');
 require('../chunk-YKNOVF5K.cjs');
 
 
-var _chunkOZKLL6UQcjs = require('../chunk-OZKLL6UQ.cjs');
+var _chunkRO4SJLZ2cjs = require('../chunk-RO4SJLZ2.cjs');
 require('../chunk-F2EQTDOE.cjs');
 require('../chunk-7FRG3H7V.cjs');
 require('../chunk-I7I3Z7IL.cjs');
-require('../chunk-OUH2VSTL.cjs');
-require('../chunk-ONQJX77B.cjs');
+require('../chunk-KI4J7RTU.cjs');
+require('../chunk-IB2BTZA2.cjs');
 require('../chunk-5DEJBS5Y.cjs');
-require('../chunk-XYNU2XEW.cjs');
+require('../chunk-ZLIBX2HS.cjs');
 
 // src/__scripts__/generateSlotMap.ts
 var _glob = require('glob');
@@ -219,7 +219,7 @@ _fs2.default.writeFileSync(zodSlotKeyPath, slotKeyFileContent, {
 });
 var reservedPublicDirs = _chunkBR2NCAJJcjs.gatherReservedPublicPaths.call(void 0, );
 staticBuildData.reservedPublicDirs = reservedPublicDirs;
-staticBuildData.internalDocumentTypes = _chunkOZKLL6UQcjs.getInternalDocumentTypes.call(void 0, );
+staticBuildData.internalDocumentTypes = _chunkRO4SJLZ2cjs.getInternalDocumentTypes.call(void 0, );
 _fs2.default.writeFileSync(
   staticBuildDataPath,
   JSON.stringify(staticBuildData, null, 4),

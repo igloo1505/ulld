@@ -51,7 +51,7 @@
     "supertest-session": "^5.0.1",
     "three": "^0.158.0",
     "trpc-openapi": "1.2.0",
-    "zod": "^3.22.4"
+    "zod": "3.23.8"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",
@@ -104,7 +104,7 @@
     "supertest-session": "^5.0.1",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
-    "zod": "^3.22.4"
+    "zod": "3.23.8"
   },
   "exports": {
     ".": "./src/trpc/trpc.ts",
@@ -273,6 +273,9 @@
     "@ulld/types": "workspace:*",
     "@ulld/typescript-config": "workspace:^",
     "@ulld/utilities": "workspace:*",
+    "@ulld/schemas": "workspace:*",
+    "@ulld/render": "workspace:*",
+    "@ulld/component-map": "workspace:*",
     "gray-matter": "^4.0.3",
     "next": "14.2.3",
     "next-connect": "^1.0.0",

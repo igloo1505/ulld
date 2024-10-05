@@ -43,6 +43,14 @@ export class FileData {
             fs.mkdirSync(this.dirname, { recursive: true });
         }
     }
+    createIfNotExists(){
+        if(this.exists()){
+            return
+        }
+        this.mkdirIfNotExists()
+        let opened = fs.openSync(this.path)
+        fs.closeSync(opened)
+    }
     getContent() {
         if (this.content)
             return this.content;

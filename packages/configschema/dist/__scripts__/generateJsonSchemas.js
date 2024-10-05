@@ -20,7 +20,7 @@ import "../chunk-L4UFB4OO.js";
 import "../chunk-LHSSV5Y2.js";
 import {
   appConfigSchema
-} from "../chunk-G4O4MXJY.js";
+} from "../chunk-DM6EGNPR.js";
 import "../chunk-7XKJIWWQ.js";
 import "../chunk-5HJJIMHO.js";
 import "../chunk-HHE6N47D.js";
@@ -51,9 +51,9 @@ import "../chunk-55HJPQBL.js";
 import "../chunk-5VKVDMSO.js";
 import "../chunk-QY2CWEW7.js";
 import "../chunk-6VCBDKOB.js";
-import "../chunk-GQ44M3IR.js";
+import "../chunk-JJ7PAUIP.js";
 import "../chunk-PESBV4SX.js";
-import "../chunk-QZPOLBQN.js";
+import "../chunk-DVXEI7YQ.js";
 
 // src/__scripts__/generateJsonSchemas.ts
 import { zodToJsonSchema } from "zod-to-json-schema";
@@ -80,4 +80,8 @@ for (const f of items) {
   fs.writeFileSync(path.join(import.meta.dirname, `../jsonSchemas/${f.file}`), JSON.stringify(f.schema, null, 2));
   fs.writeFileSync(path.join(import.meta.dirname, `../../../build/src/configJsonSchemas/${f.file}`), JSON.stringify(f.schema, null, 2));
 }
+console.log(`Successfully wrote json schemas to: 
+
+${items.map((i) => `- ${i.file}`).join("\n")}
+`);
 //# sourceMappingURL=generateJsonSchemas.js.map

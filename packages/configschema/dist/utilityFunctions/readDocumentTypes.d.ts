@@ -1,4 +1,5 @@
 export declare const readDocumentTypes: () => {
+    docType: string;
     id: string;
     url: string;
     label: string;
@@ -24,7 +25,6 @@ export declare const readDocumentTypes: () => {
     autoSubject: string[];
     inSidebar: boolean;
     inNavbar: boolean;
-    docType?: (string & import("zod").BRAND<"DocTypeName">) | undefined;
     filePathPattern?: string | undefined;
     topicLabel?: string | undefined;
     subjectLabel?: string | undefined;

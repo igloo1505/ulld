@@ -1,8 +1,6 @@
 {
   "name": "@ulld/test-utils",
   "version": "0.0.17",
-  "dependencies": {},
-  "devDependencies": {},
   "exports": {
     "./vitestConfig-basic": "./vitestConfigs/base.ts"
   },
@@ -20,6 +18,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {},
   "type": "module"
 }

@@ -3,6 +3,7 @@ import { AppConfigSchemaOutput } from "../zod/main.js";
 import { DocTypes } from "./docTypes.js";
 export declare const getDocumentTypeConfig: (docType: string | DocumentTypeConfig, config?: AppConfigSchemaOutput) => DocumentTypeConfig | undefined;
 export declare const getNoteTypeFromPath: (rootRelativePath?: string | null, config?: AppConfigSchemaOutput) => {
+    docType: string;
     id: string;
     url: string;
     label: string;
@@ -28,7 +29,6 @@ export declare const getNoteTypeFromPath: (rootRelativePath?: string | null, con
     autoSubject: string[];
     inSidebar: boolean;
     inNavbar: boolean;
-    docType?: (string & import("zod").BRAND<"DocTypeName">) | undefined;
     filePathPattern?: string | undefined;
     topicLabel?: string | undefined;
     subjectLabel?: string | undefined;

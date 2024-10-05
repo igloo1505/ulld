@@ -16,7 +16,7 @@
     "rehype-mathjax": "^6.0.0",
     "shiki": "1.12.0",
     "tinycolor2": "1.6.0",
-    "zod": "^3.22.4"
+    "zod": "3.23.8"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",
@@ -61,7 +61,7 @@
     "supertest-session": "^5.0.1",
     "tinycolor2": "1.6.0",
     "ts-jest": "^29.1.2",
-    "zod": "^3.22.4"
+    "zod": "3.23.8"
   },
   "exports": {
     "./types": {
@@ -113,6 +113,11 @@
       "types": "./dist/testDataHelpers/main.d.ts",
       "import": "./dist/testDataHelpers/main.js",
       "require": "./dist/testDataHelpers/main.cjs"
+    },
+    "./databaseTestData": {
+      "types": "./dist/testDataHelpers/databaseTestData.d.ts",
+      "import": "./dist/testDataHelpers/databaseTestData.js",
+      "require": "./dist/testDataHelpers/databaseTestData.cjs"
     },
     "./localDevelopmentMenu": {
       "types": "./dist/components/localDevelopment/localDevelopmentMenu.d.ts",
@@ -663,7 +668,7 @@
   },
   "scripts": {
     "build": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && tsup-node",
-    "dev": "echo 'Add dev script here'",
+    "dev": "next dev",
     "test": "echo 'Add test script here'"
   },
   "type": "module",

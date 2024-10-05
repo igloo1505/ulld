@@ -1,6 +1,6 @@
 import {
   appConfigSchema
-} from "../chunk-G4O4MXJY.js";
+} from "../chunk-DM6EGNPR.js";
 import "../chunk-7XKJIWWQ.js";
 import "../chunk-5HJJIMHO.js";
 import "../chunk-HHE6N47D.js";
@@ -31,13 +31,14 @@ import "../chunk-55HJPQBL.js";
 import "../chunk-5VKVDMSO.js";
 import "../chunk-QY2CWEW7.js";
 import "../chunk-6VCBDKOB.js";
-import "../chunk-GQ44M3IR.js";
+import "../chunk-JJ7PAUIP.js";
 import "../chunk-PESBV4SX.js";
-import "../chunk-QZPOLBQN.js";
+import "../chunk-DVXEI7YQ.js";
 
 // src/__scripts__/generateDefaultConfig.ts
 import fs from "fs";
 import path from "path";
+var __dirname = import.meta.dirname;
 var targetPath = path.join(
   __dirname,
   "../defaults/generatedDefaultConfigs/base.json"

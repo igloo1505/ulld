@@ -14,6 +14,7 @@ import { useIsomorphicLayoutEffect } from "@ulld/hooks/useIsomorphicEffect";
 import { CopyContextMenu } from "@ulld/utilities/components/copyContextMenu"
 import type { MDXModule } from "mdx/types";
 import { AdditionalComponents, ConditionalComponentProps } from "@ulld/component-map/types";
+import { useAppConfig } from "@ulld/hooks/useAppConfig";
 
 export interface MdxContentPreCompiledProps {
     className?: string;
@@ -34,6 +35,7 @@ export const MdxContentPreCompiled = ({
     options={},
     id
 }: MdxContentPreCompiledProps) => {
+    /* const [appConfig] = useAppConfig() */
     const [mdxModule, setMdxModule] = useState<MDXModule | null>(null);
     const ref = useRef<HTMLDivElement>(null!);
 
@@ -60,8 +62,13 @@ export const MdxContentPreCompiled = ({
 
     useMathjaxBandaid(ref);
 
+    /* if(!appConfig){ */
+    /*     return null */
+    /* } */
+
     const Component =
         mdxModule && "default" in mdxModule ? mdxModule.default : Fragment;
+
     const _components = getComponentMap(raw, options, components);
 
     return (

@@ -62,6 +62,7 @@
     "ts-jest": "^29.1.2"
   },
   "exports": {
+    "./usePropColor": "./src/usePropColor.ts",
     "./usePluginSettings": "./src/usePluginSettings.ts",
     "./useCodeHighlighter": "./src/useCodeHighlighter.ts",
     "./useFilePathInputModal": "./src/useFilePathInputModal.ts",

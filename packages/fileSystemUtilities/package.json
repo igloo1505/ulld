@@ -15,7 +15,6 @@
     "shelljs": "^0.8.5",
     "xdg-app-paths": "^8.3.0"
   },
-  "devDependencies": {},
   "exports": {
     "./path": "./src/classes/path/main.ts"
   },
@@ -23,7 +22,6 @@
     "src"
   ],
   "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {},
   "private": false,
   "publishConfig": {
     "access": "public"

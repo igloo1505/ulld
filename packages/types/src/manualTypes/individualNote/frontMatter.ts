@@ -1,3 +1,5 @@
+import {z} from 'zod'
+
 type TableTextStyle = "base" | "lg" | "xl" | "small"
 
 type FrontMatterTableStyles = { 
@@ -26,3 +28,4 @@ export type FrontMatterType<T extends unknown = {}> = {
     sequentialKey?: string
     tableStyles?: FrontMatterTableStyles
 } & T
+

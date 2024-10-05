@@ -69,7 +69,7 @@ export declare const internalDocumentTypeConfigSchema: z.ZodObject<{
         } | undefined;
     }>>>;
     fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-    docType: z.ZodOptional<z.ZodBranded<z.ZodEffects<z.ZodString, string, string>, "DocTypeName">>;
+    docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     filePathPattern: z.ZodOptional<z.ZodString>;
     matchWeight: z.ZodDefault<z.ZodNumber>;
     url: z.ZodEffects<z.ZodString, string, string>;
@@ -108,7 +108,7 @@ export declare const internalDocumentTypeConfigSchema: z.ZodObject<{
     inNavbar: boolean;
     id?: string | undefined;
     fs?: string | undefined;
-    docType?: (string & z.BRAND<"DocTypeName">) | undefined;
+    docType?: string | undefined;
     filePathPattern?: string | undefined;
     topicLabel?: string | undefined;
     subjectLabel?: string | undefined;

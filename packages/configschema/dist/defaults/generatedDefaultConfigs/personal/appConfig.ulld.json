@@ -1,7 +1,36 @@
 {
     "fsRoot": "/Users/bigsexy/Desktop/notes/content",
     "alwaysPreferFs": false,
-    "ignoreFilepaths": [],
+    "ignoreFilepaths": [
+        {
+            "original": "\\.git",
+            "regex": {}
+        },
+        {
+            "original": "\\.next",
+            "regex": {}
+        },
+        {
+            "original": "node_modules",
+            "regex": {}
+        },
+        {
+            "original": "\\.env",
+            "regex": {}
+        },
+        {
+            "original": "\\.vscode",
+            "regex": {}
+        },
+        {
+            "original": "\\.package",
+            "regex": {}
+        },
+        {
+            "original": ".ipynb_checkpoints",
+            "regex": {}
+        }
+    ],
     "tempDir": "/__temp__",
     "generatedDir": "/generated",
     "ignorePreferFsExtensions": [],
@@ -38,6 +67,7 @@
             "icon": "physics",
             "inSidebar": false,
             "inNavbar": false,
+            "docType": "physics",
             "url": "/physics"
         },
         {
@@ -59,6 +89,7 @@
             "icon": "math",
             "inSidebar": false,
             "inNavbar": false,
+            "docType": "math",
             "url": "/math"
         },
         {
@@ -80,6 +111,7 @@
             "icon": "newspaper",
             "inSidebar": false,
             "inNavbar": false,
+            "docType": "cheatsheet",
             "url": "/cheatsheet"
         },
         {
@@ -101,6 +133,7 @@
             "icon": "paperclip",
             "inSidebar": false,
             "inNavbar": false,
+            "docType": "docs",
             "url": "/docs"
         },
         {
@@ -122,6 +155,7 @@
             "icon": "gem",
             "inSidebar": false,
             "inNavbar": false,
+            "docType": "guide",
             "url": "/guide"
         },
         {
@@ -143,6 +177,7 @@
             "icon": "heart",
             "inSidebar": false,
             "inNavbar": false,
+            "docType": "health",
             "url": "/health"
         },
         {
@@ -164,6 +199,7 @@
             "icon": "pen",
             "inSidebar": false,
             "inNavbar": false,
+            "docType": "journal",
             "url": "/journal"
         },
         {
@@ -185,6 +221,7 @@
             "icon": "calendar-plus-2",
             "inSidebar": false,
             "inNavbar": false,
+            "docType": "quickNotes",
             "url": "/quickNotes"
         },
         {
@@ -206,6 +243,7 @@
             "icon": "clock",
             "inSidebar": false,
             "inNavbar": false,
+            "docType": "quickThoughts",
             "url": "/quickThoughts"
         },
         {
@@ -227,6 +265,7 @@
             "icon": "egg",
             "inSidebar": false,
             "inNavbar": false,
+            "docType": "recipes",
             "url": "/recipes"
         },
         {
@@ -248,6 +287,7 @@
             "icon": "glasses",
             "inSidebar": false,
             "inNavbar": false,
+            "docType": "references",
             "url": "/references"
         },
         {
@@ -269,6 +309,7 @@
             "icon": "cpu",
             "inSidebar": false,
             "inNavbar": false,
+            "docType": "tech",
             "url": "/tech"
         },
         {
@@ -290,6 +331,7 @@
             "icon": "ulld",
             "inSidebar": false,
             "inNavbar": false,
+            "docType": "dailyNote",
             "url": "/dailyNote"
         }
     ],
@@ -523,7 +565,8 @@
             "externalIPyWidgets": [],
             "nbgrader": false,
             "readOnly": false
-        }
+        },
+        "cellInputWrappers": {}
     },
     "credentials": {},
     "performance": {
@@ -537,67 +580,67 @@
         "navigation": [
             {
                 "name": "@ulld/navigation",
-                "version": "0.0.101"
+                "version": "0.0.116"
             }
         ],
         "bibliography": [
             {
                 "name": "@ulld/bib-manager",
-                "version": "0.0.101"
+                "version": "0.0.116"
             }
         ],
         "commandPalette": [
             {
                 "name": "@ulld/command-palette",
-                "version": "0.0.101"
+                "version": "0.0.116"
             }
         ],
         "editor": [
             {
                 "name": "@ulld/editor",
-                "version": "0.0.101"
+                "version": "0.0.116"
             }
         ],
         "math": [
             {
                 "name": "@ulld/equations",
-                "version": "0.0.101"
+                "version": "0.0.116"
             }
         ],
         "form": [
             {
                 "name": "@ulld/full-form",
-                "version": "0.0.101"
+                "version": "0.0.116"
             }
         ],
         "dashboard": [
             {
                 "name": "@ulld/landing-layouts",
-                "version": "0.0.101"
+                "version": "0.0.116"
             }
         ],
         "pdf": [
             {
                 "name": "@ulld/pdf",
-                "version": "0.0.101"
+                "version": "0.0.116"
             }
         ],
         "snippets": [
             {
                 "name": "@ulld/snippets",
-                "version": "0.0.101"
+                "version": "0.0.116"
             }
         ],
         "taskManager": [
             {
                 "name": "@ulld/task-manager",
-                "version": "0.0.101"
+                "version": "0.0.116"
             }
         ],
         "UI": [
             {
                 "name": "@ulld/ui",
-                "version": "0.0.99"
+                "version": "0.0.114"
             }
         ]
     },
@@ -618,12 +661,12 @@
     "plugins": [
         {
             "name": "@ulld/api",
-            "version": "0.0.101",
+            "version": "0.0.116",
             "parserIndex": 0
         },
         {
             "name": "@ulld/plot",
-            "version": "0.0.101",
+            "version": "0.0.116",
             "parserIndex": 0
         }
     ]

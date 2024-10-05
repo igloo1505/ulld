@@ -37,7 +37,7 @@ const Lead = dynamic(() => import("@ulld/embeddable-components/components/client
 // const CollapsablePanel = dynamic(() => import("./emeddedComponents/layout/interactive/collapsableSidePanel/collapsableSidePanel"))
 const VSpace = dynamic(() => import("@ulld/embeddable-components/components/client/vspace").then((a) => a.VSpace))
 // const InternalMermaid = dynamic(() => import("./emeddedComponents/diagrams/mermaid"))
-const EmbeddedImage = dynamic(() => import("@ulld/embeddable-components/components/imageComponent").then((a) => a.EmbeddedImage))
+const EmbeddedImage = dynamic(() => import("@ulld/embeddable-components/components/clientImage").then((a) => a.EmbeddedImage))
 // const EmbeddedSvg = dynamic(() => import("./emeddedComponents/svg"))
 // const Vectorize = dynamic(() => import("./emeddedComponents/vectorize"))
 const Quote = dynamic(() => import("@ulld/embeddable-components/components/quoteComponent").then((a) => a.Quote))

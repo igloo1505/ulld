@@ -1,7 +1,7 @@
 import {
   iconNameField,
   navigationConfigSchema
-} from "../chunk-QZPOLBQN.js";
+} from "../chunk-DVXEI7YQ.js";
 export {
   iconNameField,
   navigationConfigSchema

@@ -6,9 +6,9 @@ interface SanboxPageProps {
 }
 
 const SanboxPage = (props: SanboxPageProps) => {
-return (
-            <ModularDashboard />
-)
+    return (
+        <ModularDashboard />
+    )
 }
 
 

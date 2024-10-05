@@ -1,3 +1,4 @@
+// TODO: Move this along with all schemas to the unified schemas package.
 import {
     subjectZodObject,
     tagZodObject,
@@ -387,6 +388,7 @@ export const mdxNoteSummaryPropSchema = mdxNotePropsSchema
         };
     });
 
+// TODO: Remove this. Moved to schemas package.
 export const fromMdxStringOptSchema = z
     .object({
         noteTypeId: z.string().optional(),

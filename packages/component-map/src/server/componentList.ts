@@ -10,7 +10,23 @@ const Admonition = dynamic(() =>
     ),
 );
 
-const Image = dynamic(() => import("@ulld/embeddable-components/components/server/image").then((a) => a.ServerEmbeddedImage))
+const Image = dynamic(() =>
+    import("@ulld/embeddable-components/components/server/image").then(
+        (a) => a.ServerEmbeddedImage,
+    ),
+);
+const Color = dynamic(() =>
+    import("@ulld/embeddable-components/components/server/colorText").then(
+        (a) => a.ColorText,
+    ),
+);
+
+const Boxed = dynamic(() =>
+    import("@ulld/embeddable-components/components/server/boxed").then(
+        (a) => a.Boxed,
+    ),
+);
+
 // const NotebookCell = dynamic(() => import("../jupyter/notebooks/cell"))
 // // const JupyterConsole = dynamic(() => import("../jupyter/console/index"))
 // const SurfacePlot = dynamic(() => import("./emeddedComponents/plots/surfacePlot"))
@@ -48,6 +64,16 @@ const clientOverrides: typeof conditionalClientComponents = [
         regex: new RegExp(`<Image`),
         component: Image,
         label: "Image",
+    },
+    {
+        regex: new RegExp(`<Color`),
+        component: Color,
+        label: "Color",
+    },
+    {
+        regex: new RegExp(`<Boxed`),
+        component: Boxed,
+        label: "Boxed",
     },
 ];
 

@@ -1,6 +1,17 @@
 {
-    "extends": "@ulld/typescript-config/nextjs.json",
-    "compilerOptions": {
-       "types": ["node", "react", "mdx"]
-    }
+  "extends": "@ulld/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "types": [
+      "node",
+      "react",
+      "mdx"
+    ],
+    "incremental": true
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }

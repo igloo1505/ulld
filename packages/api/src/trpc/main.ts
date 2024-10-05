@@ -5,7 +5,7 @@ import { advancedSearchRouter } from "./routers/search";
 // import { healthRouter } from "./routers/health/healthRouter";
 import { notebookRouter } from "./routers/notebook/main.tsx"
 import { settingsRouter } from "./routers/settings";
-import { mdxNoteActionsRouter } from "./routers/mdxNote";
+import { mdxNoteActionsRouter } from "./routers/mdxNote.tsx";
 import { fsUtilRouter } from "./routers/fsUtil";
 import { readingListRouter } from "./routers/readingList";
 import { universalNoteRouter } from "./routers/universalNotes";

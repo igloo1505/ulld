@@ -44,3 +44,5 @@ Run when back online file and clear | zsh /Users/bigsexy/Desktop/current/ulld/bu
 Create local development environment | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/developmentSetup/generateDevEnvironment/main.ts
 Set sandbox dependency paths to local source | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/developmentSetup/setSandboxSourcesToLocal.ts
 Copy database client for local development | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/developmentSetup/copyDatabaseClientForLocalDev.zsh
+Copy database schemas to schemas package | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/syncGlobalData/copyDatabaseSchemas.ts
+

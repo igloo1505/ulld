@@ -120,6 +120,5 @@ const config = withPWA({
     },
 });
 
-console.log("config: ", config);
 
 export default config;

@@ -14,3 +14,9 @@ export const useMathjaxBandaid = (
         };
     }, [element]);
 };
+
+
+export const ApplyMathjaxBandaid = ({container}: {container: string | React.RefObject<HTMLElement>}) => {
+    useMathjaxBandaid(container)
+    return null
+}

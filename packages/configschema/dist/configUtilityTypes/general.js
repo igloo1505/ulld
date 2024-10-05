@@ -8,9 +8,9 @@ import "../chunk-MJBK275F.js";
 import "../chunk-D57TGXVB.js";
 import {
   documentTypeConfigSchema
-} from "../chunk-GQ44M3IR.js";
+} from "../chunk-JJ7PAUIP.js";
 import "../chunk-PESBV4SX.js";
-import "../chunk-QZPOLBQN.js";
+import "../chunk-DVXEI7YQ.js";
 
 // src/configUtilityTypes/general.ts
 var getDocumentTypeConfig = (docType, config) => {

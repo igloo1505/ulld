@@ -3,13 +3,13 @@
 
 
 
-var _chunkONQJX77Bcjs = require('../chunk-ONQJX77B.cjs');
+var _chunkIB2BTZA2cjs = require('../chunk-IB2BTZA2.cjs');
 require('../chunk-5DEJBS5Y.cjs');
-require('../chunk-XYNU2XEW.cjs');
+require('../chunk-ZLIBX2HS.cjs');
 
 
 
 
 
-exports.docTypeUISchema = _chunkONQJX77Bcjs.docTypeUISchema; exports.documentTypeConfigSchema = _chunkONQJX77Bcjs.documentTypeConfigSchema; exports.documentTypeConfigSchemaBase = _chunkONQJX77Bcjs.documentTypeConfigSchemaBase; exports.zodDocTypeInput = _chunkONQJX77Bcjs.zodDocTypeInput;
+exports.docTypeUISchema = _chunkIB2BTZA2cjs.docTypeUISchema; exports.documentTypeConfigSchema = _chunkIB2BTZA2cjs.documentTypeConfigSchema; exports.documentTypeConfigSchemaBase = _chunkIB2BTZA2cjs.documentTypeConfigSchemaBase; exports.zodDocTypeInput = _chunkIB2BTZA2cjs.zodDocTypeInput;
 //# sourceMappingURL=documentConfigSchema.cjs.map

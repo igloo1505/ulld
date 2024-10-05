@@ -32,7 +32,6 @@ import { globDoesMatch } from "../../trpcInternalMethods/settings/autoSettings/g
 import { convertGithubUrlToRawContentUrl } from "@ulld/state/formatting/general";
 import grayMatter from "gray-matter";
 import {
-    FromMdxStringOpts,
     MdxNoteFromStringInput,
     MdxNoteFromStringOutput,
     MdxNoteIntriguingValSummaryInput,
@@ -41,8 +40,6 @@ import {
     MdxNotePropsOutput,
     MdxNoteSummaryInput,
     MdxNoteSummaryOutput,
-    fromMdxStringOptSchema,
-    mdxNoteFromStringPropsSchema,
     mdxNoteIntriguingValSummaryPropsSchema,
     mdxNotePropsSchema,
     mdxNoteSummaryPropSchema,
@@ -52,7 +49,13 @@ import { mdxNoteSummaryWithMdxTransforms } from "./schemas/withMdxTransforms";
 import { UnifiedMdxParser, UnifiedMdxParserParams } from "../../types";
 import { FrontMatterType } from "@ulld/types";
 import { getNoteTypeDataFromPath } from "@ulld/utilities/mdxParserUtils";
-import { serverClient } from "../../trpc/serverClient";
+/* import { serverClient } from "../../trpc/serverClient"; */
+import {
+    parseParamsSchema,
+    fromMdxStringOptSchema,
+    mdxNoteFromStringPropsSchema
+} from "@ulld/schemas/mdx-parsing-params";
+import { z } from "zod";
 
 /* TODO: Create a field saving the components to include for each note based on a regex test ahead of time so this query doesn't need to be ran on each load. Make this optional in the appConfig */
 
@@ -465,11 +468,12 @@ ${m.groups.content}
     }
     static async parseMdxString(
         content: string,
-        opts: ParseMdxStringProps = {},
-        parserParams: MdxNoteParseParams,
+        _opts: z.input<typeof fromMdxStringOptSchema> = {},
+        _parseParams: z.input<typeof parseParamsSchema>,
     ) {
         let parsedNoteProps = mdxNoteFromStringPropsSchema.parse({ raw: content });
         let nt = new MdxNote(parsedNoteProps);
+        const parserParams = parseParamsSchema.parse(_parseParams)
         /* if(opts?.bareAss){ */
         /*    return nt.parseBareAss() */
         /* } */
@@ -569,7 +573,7 @@ ${m.groups.content}
             this.frontMatter = data;
         }
     }
-    async parse(params: MdxNoteParseParams) {
+    async parse(params: z.output<typeof parseParamsSchema>) {
         let c = this.formatted || this.raw;
         if (!c) return "";
         if (!this.haveSetFrontMatter) {
@@ -654,12 +658,13 @@ ${m.groups.content}
 
     /* PERFORMANCE: Come back and handle this with a modified zod class instead of this half assed conditional config. Figure out ***exactly*** what will be passed in and make that shit required. */
     static async fromMdxString(
-        props: MdxNoteFromStringInput,
-        _opts: FromMdxStringOpts = {},
-        parseParams: MdxNoteParseParams,
+        props: z.input<typeof mdxNoteFromStringPropsSchema>,
+        _opts: z.input<typeof fromMdxStringOptSchema> = {},
+        _parseParams: z.input<typeof parseParamsSchema>,
     ): Promise<MdxNote> {
         const parsed = mdxNoteFromStringPropsSchema.parse(props);
         const opts = fromMdxStringOptSchema.parse(_opts);
+        const parseParams = parseParamsSchema.parse(_parseParams);
         let note = new MdxNote(parsed);
         if (Object.keys(parseParams.docTypeData).length) {
             note.docTypeData =

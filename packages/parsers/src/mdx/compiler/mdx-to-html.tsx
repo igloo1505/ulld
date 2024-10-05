@@ -13,19 +13,19 @@ interface MdxToHtmlProps {
     componentOpts?: ConditionalComponentProps;
 }
 
-export const mdxToHtml = async ({
+const getHtmlData = async ({
     rawContent,
     appConfig,
     components = [],
     componentOpts,
 }: MdxToHtmlProps) => {
+        
     let frontMatter = grayMatter(rawContent);
     let parsedContent = await parseMdxString({
         content: frontMatter.content,
         appConfig,
     });
 
-    const _components = getComponentMap(rawContent, componentOpts, components);
 
     const fullScope = Object.assign(
         {
@@ -46,7 +46,25 @@ export const mdxToHtml = async ({
     const Content: React.ElementType = hydrateFn.apply(hydrateFn, values).default;
 
     return {
+        Content,
+        frontMatter
+    }
+    }
+
+export const mdxToHtml = async (props: MdxToHtmlProps) => {
+    let {Content, frontMatter} = await getHtmlData(props)
+    const _components = getComponentMap(props.rawContent, props.componentOpts, props.components);
+    return {
         content: <Content components={_components} />,
+        frontMatter: frontMatter.data,
+    };
+};
+
+
+export const mdxToHtmlWithoutRender = async (props: MdxToHtmlProps) => {
+    let {Content, frontMatter} = await getHtmlData(props)
+    return {
+        content: Content,
         frontMatter: frontMatter.data,
     };
 };

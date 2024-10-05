@@ -1,5 +1,5 @@
 import { compile } from "@mdx-js/mdx";
-import { CompileOptions } from "@mdx-js/mdx";
+import type { CompileOptions } from "@mdx-js/mdx";
 import {
     MermaidConfigType,
     mermaidTheme,
@@ -21,10 +21,8 @@ import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import { highlightTransformerMap } from "../utils/highlightTransformerMap";
+import { ParseMdxStringOptions, ParseMdxStringParams } from "./types";
 
-export interface ParseMdxStringOptions {
-    mathLabels?: typeof mathOptions["tex"]["tags"]
-}
 
 
 export const mermaidConfig: MermaidConfigType = {
@@ -138,11 +136,7 @@ export const parseMdxString = async ({
     content,
     appConfig,
     opts = {}
-}: {
-    content: string
-    appConfig?: AppConfigSchemaOutput
-    opts?: ParseMdxStringOptions
-}) => {
+}: ParseMdxStringParams) => {
     let _rehypePlugins = await rehypePlugins(appConfig, opts)
     let res = await compile(content, {
         outputFormat: "function-body",

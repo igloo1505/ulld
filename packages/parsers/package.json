@@ -42,7 +42,7 @@
     "supertest-session": "^5.0.1",
     "ts-jest": "^29.1.2",
     "unified": "11.0.4",
-    "zod": "3.22.4"
+    "zod": "3.23.8"
   },
   "devDependencies": {
     "@mdx-js/mdx": "3.0.1",
@@ -82,7 +82,7 @@
     "supertest-session": "^5.0.1",
     "ts-jest": "^29.1.2",
     "unified": "11.0.4",
-    "zod": "3.22.4"
+    "zod": "3.23.8"
   },
   "exports": {
     ".": "./src/mdx/compiler/mdx-to-jsx.tsx",
@@ -91,8 +91,10 @@
     "./modules": "./src/modules.d.ts",
     "./mdx": "./src/mdx/compiler/mdx-to-jsx.tsx",
     "./mdx/types": "./src/mdx/types.d.ts",
+    "./mdx/compilerTypes": "./src/mdx/compiler/types.ts",
     "./mdx/schemas": "./src/mdx/schemas.ts",
     "./mdx/compiler/main": "./src/mdx/compiler/main.ts",
+    "./mdx-to-jsx-client": "./src/mdx/compiler/mdx-to-jsx-client.ts",
     "./settings/settingsParser": "./src/settings/settingsParser.ts",
     "./plugins/todos": "./src/plugins/todos/main.ts",
     "./latex/latexToPdf": "./src/latex/latexToPdf.ts",
@@ -108,19 +110,22 @@
     "./mathjaxBandaid": "./src/mdx/compiler/mdxClassnameBandaid.tsx",
     "./applyMathjaxBandaid": "./src/mdx/compiler/applyMathjaxBandaid.ts",
     "./taggables": "./src/general/taggables.ts",
-    "./serverMdxToHtml": "./src/mdx/compiler/mdx-to-html.tsx"
+    "./serverMdxToHtml": "./src/mdx/compiler/mdx-to-html.tsx",
+    "./formatMdxString": "./src/mdx/compiler/internalMdxStringParse.ts"
   },
   "files": [
     "src"
   ],
   "packageManager": "pnpm@9.0.4",
   "peerDependencies": {
+    "@ulld/api": "workspace:*",
     "@ulld/component-map": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/database": "workspace:*",
     "@ulld/developer": "workspace:*",
     "@ulld/types": "workspace:*",
     "@ulld/typescript-config": "workspace:^",
+    "@ulld/schemas": "workspace:^",
     "@ulld/utilities": "workspace:*"
   },
   "private": false,
