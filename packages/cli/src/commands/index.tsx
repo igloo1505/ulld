@@ -13,7 +13,7 @@ type Props = {
 export default function Index({options}: Props) {
 	return (
 		<Text>
-			Hello, <Text color="green">{options.name}</Text>
+			Hello, <Text color="#0ba5e9">{options.name}</Text>
 		</Text>
 	);
 }

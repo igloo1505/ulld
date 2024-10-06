@@ -173,6 +173,7 @@
     "test:watch": "turbo test:watch",
     "typecheck": "turbo typecheck",
     "typedoc": "typedoc",
-    "update-ulldBase": "git subtree push --prefix=apps/base/ ulldBase main"
+    "update-ulldBase": "git subtree push --prefix=apps/base/ ulldBase main",
+    "whenOnWifi": "zsh ./buildUtils/network/runWhenBackOnline.zsh"
   }
 }
