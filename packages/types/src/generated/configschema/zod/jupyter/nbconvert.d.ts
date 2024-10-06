@@ -23,12 +23,12 @@ export declare const nbConvertConfigSchema: z.ZodObject<{
         pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
     } | undefined;
 }, {
+    execute?: boolean | undefined;
     nbconvertPath?: string | undefined;
     conversionTimeout?: number | undefined;
     customConversionFunction?: {
         pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
     } | undefined;
-    execute?: boolean | undefined;
     nbConvertTemplate?: string | undefined;
     notebookOutputDir?: string | undefined;
 }>;

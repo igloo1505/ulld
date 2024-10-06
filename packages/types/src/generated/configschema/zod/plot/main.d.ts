@@ -12,13 +12,10 @@ export declare const plotConfigSchema: z.ZodDefault<z.ZodObject<{
     }>]>>;
     plotColorCycleMethod: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"inOrder">, z.ZodLiteral<"random">]>>;
 }, "strip", z.ZodTypeAny, {
-    plotColorList: (string[] | {
+    plotColorList: string[] | {
         dark: string[];
         light: string[];
-    }) & (string[] | {
-        dark: string[];
-        light: string[];
-    } | undefined);
+    };
     plotColorCycleMethod: "inOrder" | "random";
 }, {
     plotColorList?: string[] | {

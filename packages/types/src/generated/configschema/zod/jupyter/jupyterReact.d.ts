@@ -27,9 +27,20 @@ export declare const jupyterReactConfigSchema: z.ZodDefault<z.ZodObject<{
         wsUrl?: string | undefined;
     } | undefined;
 }>>;
-export declare const jupyterReactConfigSchemaOutput: z.ZodObject<{
+export declare const jupyterReactConfigSchemaOutput: z.ZodObject<z.objectUtil.extendShape<{
     collaborative: z.ZodDefault<z.ZodBoolean>;
     lite: z.ZodDefault<z.ZodBoolean>;
+    serverUrls: z.ZodOptional<z.ZodObject<{
+        baseUrl: z.ZodOptional<z.ZodString>;
+        wsUrl: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        baseUrl?: string | undefined;
+        wsUrl?: string | undefined;
+    }, {
+        baseUrl?: string | undefined;
+        wsUrl?: string | undefined;
+    }>>;
+}, {
     serverUrls: z.ZodObject<{
         baseUrl: z.ZodString;
         wsUrl: z.ZodString;
@@ -40,7 +51,7 @@ export declare const jupyterReactConfigSchemaOutput: z.ZodObject<{
         baseUrl: string;
         wsUrl: string;
     }>;
-}, "strip", z.ZodTypeAny, {
+}>, "strip", z.ZodTypeAny, {
     collaborative: boolean;
     lite: boolean;
     serverUrls: {

@@ -38,21 +38,32 @@ const baseUrl = "/physics";
 
 const SearchResultTestPage = async (props: SearchResultTestPageProps) => {
   const appConfig = readDevelopmentAppConfig();
-  const { docTypeData, sp, filter, secondaryData } =
-    await getFilteredSearchResults({
-      categoryId: "physics",
-      appConfig,
-    });
+
+  const {
+    docTypeData,
+    sp,
+    filter,
+    secondaryData: _secondaryData,
+  } = await getFilteredSearchResults({
+    categoryId: "physics",
+    appConfig,
+    searchParams: props.searchParams,
+  });
+
+  const secondaryData: typeof _secondaryData = {
+    tags: [],
+    topics: [],
+    subjects: [],
+    /* tags: getTestTaggable(20), */
+    /* subjects: getTestTaggable(6), */
+    /* topics: getTestTaggable(4), */
+  };
+
   return (
     <NotePageWrapper {...props} toc={NoteDetailsSheet}>
       <NoteTypeSecondaryFilter
         {...props}
-        data={{
-          ...secondaryData,
-          tags: getTestTaggable(20),
-          subjects: getTestTaggable(6),
-          topics: getTestTaggable(4),
-        }}
+        data={secondaryData}
         noteType={docTypeData}
       />
       <NoteTypeSearchResultList

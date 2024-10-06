@@ -58,12 +58,12 @@ export declare const jupyterConfigSchema: z.ZodObject<{
             pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
         } | undefined;
     }, {
+        execute?: boolean | undefined;
         nbconvertPath?: string | undefined;
         conversionTimeout?: number | undefined;
         customConversionFunction?: {
             pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
         } | undefined;
-        execute?: boolean | undefined;
         nbConvertTemplate?: string | undefined;
         notebookOutputDir?: string | undefined;
     }>>;
@@ -79,11 +79,11 @@ export declare const jupyterConfigSchema: z.ZodObject<{
         }, "strip", z.ZodTypeAny, {
             name: string;
             version: string;
-            module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+            module: string | Record<string, string>;
         }, {
             name: string;
             version: string;
-            module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+            module: string | Record<string, string>;
         }>, "many">>;
         externalIPyWidgets: z.ZodDefault<z.ZodArray<z.ZodObject<Omit<{
             module: z.ZodUnion<[z.ZodString, z.ZodRecord<z.ZodString, z.ZodString>]>;
@@ -104,7 +104,7 @@ export declare const jupyterConfigSchema: z.ZodObject<{
         bundledIPyWidgets: {
             name: string;
             version: string;
-            module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+            module: string | Record<string, string>;
         }[];
         externalIPyWidgets: {
             name: string;
@@ -115,14 +115,14 @@ export declare const jupyterConfigSchema: z.ZodObject<{
         height?: string | undefined;
         maxHeight?: string | undefined;
     }, {
-        cellMetadataPanel?: boolean | undefined;
-        cellSidebarMargin?: number | undefined;
         height?: string | undefined;
         maxHeight?: string | undefined;
+        cellMetadataPanel?: boolean | undefined;
+        cellSidebarMargin?: number | undefined;
         bundledIPyWidgets?: {
             name: string;
             version: string;
-            module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+            module: string | Record<string, string>;
         }[] | undefined;
         externalIPyWidgets?: {
             name: string;
@@ -166,7 +166,7 @@ export declare const jupyterConfigSchema: z.ZodObject<{
         bundledIPyWidgets: {
             name: string;
             version: string;
-            module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+            module: string | Record<string, string>;
         }[];
         externalIPyWidgets: {
             name: string;
@@ -199,24 +199,24 @@ export declare const jupyterConfigSchema: z.ZodObject<{
         } | undefined;
     } | undefined;
     nbConvert?: {
+        execute?: boolean | undefined;
         nbconvertPath?: string | undefined;
         conversionTimeout?: number | undefined;
         customConversionFunction?: {
             pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
         } | undefined;
-        execute?: boolean | undefined;
         nbConvertTemplate?: string | undefined;
         notebookOutputDir?: string | undefined;
     } | undefined;
     jupyterNotebookProps?: {
-        cellMetadataPanel?: boolean | undefined;
-        cellSidebarMargin?: number | undefined;
         height?: string | undefined;
         maxHeight?: string | undefined;
+        cellMetadataPanel?: boolean | undefined;
+        cellSidebarMargin?: number | undefined;
         bundledIPyWidgets?: {
             name: string;
             version: string;
-            module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+            module: string | Record<string, string>;
         }[] | undefined;
         externalIPyWidgets?: {
             name: string;
@@ -227,7 +227,7 @@ export declare const jupyterConfigSchema: z.ZodObject<{
     } | undefined;
     cellInputWrappers?: Record<string, string> | undefined;
 }>;
-export declare const jupyterConfigSchemaOutput: z.ZodObject<{
+export declare const jupyterConfigSchemaOutput: z.ZodObject<z.objectUtil.extendShape<{
     execute: z.ZodDefault<z.ZodBoolean>;
     environment: z.ZodDefault<z.ZodString>;
     syntaxHighlightTheme: z.ZodDefault<z.ZodString>;
@@ -235,6 +235,34 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<{
     jupyterPort: z.ZodDefault<z.ZodNumber>;
     initiallyFoldCells: z.ZodDefault<z.ZodBoolean>;
     kernel: z.ZodDefault<z.ZodString>;
+    jupyterReactProps: z.ZodDefault<z.ZodObject<{
+        collaborative: z.ZodDefault<z.ZodBoolean>;
+        lite: z.ZodDefault<z.ZodBoolean>;
+        serverUrls: z.ZodOptional<z.ZodObject<{
+            baseUrl: z.ZodOptional<z.ZodString>;
+            wsUrl: z.ZodOptional<z.ZodString>;
+        }, "strip", z.ZodTypeAny, {
+            baseUrl?: string | undefined;
+            wsUrl?: string | undefined;
+        }, {
+            baseUrl?: string | undefined;
+            wsUrl?: string | undefined;
+        }>>;
+    }, "strip", z.ZodTypeAny, {
+        collaborative: boolean;
+        lite: boolean;
+        serverUrls?: {
+            baseUrl?: string | undefined;
+            wsUrl?: string | undefined;
+        } | undefined;
+    }, {
+        collaborative?: boolean | undefined;
+        lite?: boolean | undefined;
+        serverUrls?: {
+            baseUrl?: string | undefined;
+            wsUrl?: string | undefined;
+        } | undefined;
+    }>>;
     nbConvert: z.ZodDefault<z.ZodObject<{
         nbconvertPath: z.ZodOptional<z.ZodString>;
         conversionTimeout: z.ZodDefault<z.ZodNumber>;
@@ -258,12 +286,12 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<{
             pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
         } | undefined;
     }, {
+        execute?: boolean | undefined;
         nbconvertPath?: string | undefined;
         conversionTimeout?: number | undefined;
         customConversionFunction?: {
             pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
         } | undefined;
-        execute?: boolean | undefined;
         nbConvertTemplate?: string | undefined;
         notebookOutputDir?: string | undefined;
     }>>;
@@ -279,11 +307,11 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<{
         }, "strip", z.ZodTypeAny, {
             name: string;
             version: string;
-            module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+            module: string | Record<string, string>;
         }, {
             name: string;
             version: string;
-            module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+            module: string | Record<string, string>;
         }>, "many">>;
         externalIPyWidgets: z.ZodDefault<z.ZodArray<z.ZodObject<Omit<{
             module: z.ZodUnion<[z.ZodString, z.ZodRecord<z.ZodString, z.ZodString>]>;
@@ -304,7 +332,7 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<{
         bundledIPyWidgets: {
             name: string;
             version: string;
-            module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+            module: string | Record<string, string>;
         }[];
         externalIPyWidgets: {
             name: string;
@@ -315,14 +343,14 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<{
         height?: string | undefined;
         maxHeight?: string | undefined;
     }, {
-        cellMetadataPanel?: boolean | undefined;
-        cellSidebarMargin?: number | undefined;
         height?: string | undefined;
         maxHeight?: string | undefined;
+        cellMetadataPanel?: boolean | undefined;
+        cellSidebarMargin?: number | undefined;
         bundledIPyWidgets?: {
             name: string;
             version: string;
-            module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+            module: string | Record<string, string>;
         }[] | undefined;
         externalIPyWidgets?: {
             name: string;
@@ -335,9 +363,21 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<{
         prefix: string;
         suffix: string;
     }, string>>>;
-    jupyterReactProps: z.ZodObject<{
+}, {
+    jupyterReactProps: z.ZodObject<z.objectUtil.extendShape<{
         collaborative: z.ZodDefault<z.ZodBoolean>;
         lite: z.ZodDefault<z.ZodBoolean>;
+        serverUrls: z.ZodOptional<z.ZodObject<{
+            baseUrl: z.ZodOptional<z.ZodString>;
+            wsUrl: z.ZodOptional<z.ZodString>;
+        }, "strip", z.ZodTypeAny, {
+            baseUrl?: string | undefined;
+            wsUrl?: string | undefined;
+        }, {
+            baseUrl?: string | undefined;
+            wsUrl?: string | undefined;
+        }>>;
+    }, {
         serverUrls: z.ZodObject<{
             baseUrl: z.ZodString;
             wsUrl: z.ZodString;
@@ -348,7 +388,7 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<{
             baseUrl: string;
             wsUrl: string;
         }>;
-    }, "strip", z.ZodTypeAny, {
+    }>, "strip", z.ZodTypeAny, {
         collaborative: boolean;
         lite: boolean;
         serverUrls: {
@@ -363,7 +403,7 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<{
         collaborative?: boolean | undefined;
         lite?: boolean | undefined;
     }>;
-}, "strip", z.ZodTypeAny, {
+}>, "strip", z.ZodTypeAny, {
     execute: boolean;
     environment: string;
     syntaxHighlightTheme: string;
@@ -394,7 +434,7 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<{
         bundledIPyWidgets: {
             name: string;
             version: string;
-            module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+            module: string | Record<string, string>;
         }[];
         externalIPyWidgets: {
             name: string;
@@ -427,24 +467,24 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<{
     initiallyFoldCells?: boolean | undefined;
     kernel?: string | undefined;
     nbConvert?: {
+        execute?: boolean | undefined;
         nbconvertPath?: string | undefined;
         conversionTimeout?: number | undefined;
         customConversionFunction?: {
             pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
         } | undefined;
-        execute?: boolean | undefined;
         nbConvertTemplate?: string | undefined;
         notebookOutputDir?: string | undefined;
     } | undefined;
     jupyterNotebookProps?: {
-        cellMetadataPanel?: boolean | undefined;
-        cellSidebarMargin?: number | undefined;
         height?: string | undefined;
         maxHeight?: string | undefined;
+        cellMetadataPanel?: boolean | undefined;
+        cellSidebarMargin?: number | undefined;
         bundledIPyWidgets?: {
             name: string;
             version: string;
-            module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+            module: string | Record<string, string>;
         }[] | undefined;
         externalIPyWidgets?: {
             name: string;

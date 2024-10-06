@@ -1,676 +1,676 @@
 {
-  "name": "@ulld/utilities",
-  "version": "0.0.119",
-  "dependencies": {
-    "@tanstack/react-table": "8.13.2",
-    "axios-endpoints": "^1.0.3",
-    "better-react-mathjax": "2.0.3",
-    "color-scheme": "^1.0.1",
-    "coloring-palette": "^1.0.0",
-    "dayjs": "^1.11.10",
-    "fumadocs-core": "13.4.1",
-    "gray-matter": "^4.0.3",
-    "jaro-winkler": "^0.2.8",
-    "monaco-editor": "0.49.0",
-    "nice-color-palettes": "^3.0.0",
-    "rehype-mathjax": "^6.0.0",
-    "shiki": "1.12.0",
-    "tinycolor2": "1.6.0",
-    "zod": "3.23.8"
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^26.0.1",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^11.1.6",
-    "@tanstack/react-table": "^8.13.2",
-    "@testing-library/cypress": "^10.0.1",
-    "@testing-library/dom": "^9.3.4",
-    "@testing-library/jest-dom": "^6.4.2",
-    "@testing-library/react": "^14.2.2",
-    "@testing-library/user-event": "^14.5.2",
-    "@types/jaro-winkler": "^0.2.3",
-    "@ulld/test-utils": "workspace:*",
-    "better-react-mathjax": "^2.0.3",
-    "chai": "^5.1.0",
-    "color-scheme": "^1.0.1",
-    "coloring-palette": "^1.0.0",
-    "cypress": "^13.7.1",
-    "dayjs": "^1.11.10",
-    "eslint-plugin-jest-dom": "^5.2.0",
-    "eslint-plugin-testing-library": "^6.2.0",
-    "fumadocs-core": "13.4.1",
-    "gray-matter": "^4.0.3",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
-    "mocha": "^10.3.0",
-    "monaco-editor": "0.49.0",
-    "next": "^14.2.3",
-    "nice-color-palettes": "^3.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-test-renderer": "^18.2.0",
-    "rehype-mathjax": "^6.0.0",
-    "rollup": "^4.21.2",
-    "rollup-plugin-dts": "^6.1.1",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-visualizer": "^5.12.0",
-    "rtl-simple-queries": "^1.0.1",
-    "shiki": "1.12.0",
-    "supertest": "^6.3.4",
-    "supertest-session": "^5.0.1",
-    "tinycolor2": "1.6.0",
-    "ts-jest": "^29.1.2",
-    "zod": "3.23.8"
-  },
-  "exports": {
-    "./types": {
-      "types": "./dist/types/main.d.ts",
-      "import": "./dist/types/main.d.ts",
-      "require": "./dist/types/main.cjs"
-    },
-    "./buildUtils": {
-      "types": "./dist/staticAppProperties/buildUtils/main.d.ts",
-      "import": "./dist/staticAppProperties/buildUtils/main.js",
-      "require": "./dist/staticAppProperties/buildUtils/main.cjs"
-    },
-    "./copyJsonFilesToDist": {
-      "types": "./dist/utils/build/copyJsonFilesToDist.d.ts",
-      "import": "./dist/utils/build/copyJsonFilesToDist.js",
-      "require": "./dist/utils/build/copyJsonFilesToDist.cjs"
-    },
-    "./ulldColorVars": {
-      "types": "./dist/styleUtilities/ulldColorVars.d.ts",
-      "import": "./dist/styleUtilities/ulldColorVars.js",
-      "require": "./dist/styleUtilities/ulldColorVars.cjs"
-    },
-    "./getGlobServerSide": {
-      "types": "./dist/utils/glob/getGlobServerSide.d.ts",
-      "import": "./dist/utils/glob/getGlobServerSide.js",
-      "require": "./dist/utils/glob/getGlobServerSide.cjs"
-    },
-    "./fetchWrapper": {
-      "types": "./dist/utils/fetchWrapper.d.ts",
-      "import": "./dist/utils/fetchWrapper.js",
-      "require": "./dist/utils/fetchWrapper.cjs"
-    },
-    "./filePathSchemas": {
-      "types": "./dist/schemas/filePath/index.d.ts",
-      "import": "./dist/schemas/filePath/index.js",
-      "require": "./dist/schemas/filePath/index.cjs"
-    },
-    "./isNoConfig": {
-      "types": "./dist/utils/webAppUtils/isNoConfig.d.ts",
-      "import": "./dist/utils/webAppUtils/isNoConfig.js",
-      "require": "./dist/utils/webAppUtils/isNoConfig.cjs"
-    },
-    "./errorNotifications": {
-      "types": "./dist/errorHandling/main.d.ts",
-      "import": "./dist/errorHandling/main.js",
-      "require": "./dist/errorHandling/main.cjs"
-    },
-    "./testDataHelpers": {
-      "types": "./dist/testDataHelpers/main.d.ts",
-      "import": "./dist/testDataHelpers/main.js",
-      "require": "./dist/testDataHelpers/main.cjs"
-    },
-    "./databaseTestData": {
-      "types": "./dist/testDataHelpers/databaseTestData.d.ts",
-      "import": "./dist/testDataHelpers/databaseTestData.js",
-      "require": "./dist/testDataHelpers/databaseTestData.cjs"
-    },
-    "./localDevelopmentMenu": {
-      "types": "./dist/components/localDevelopment/localDevelopmentMenu.d.ts",
-      "import": "./dist/components/localDevelopment/localDevelopmentMenu.js",
-      "require": "./dist/components/localDevelopment/localDevelopmentMenu.cjs"
-    },
-    "./localDevelopmentPageWrapper": {
-      "types": "./dist/components/localDevelopment/localDevelopmentPageWrapper.d.ts",
-      "import": "./dist/components/localDevelopment/localDevelopmentPageWrapper.js",
-      "require": "./dist/components/localDevelopment/localDevelopmentPageWrapper.cjs"
-    },
-    "./utilNavLinks": {
-      "types": "./dist/navigation/utilityNavLinks.d.ts",
-      "import": "./dist/navigation/utilityNavLinks.js",
-      "require": "./dist/navigation/utilityNavLinks.cjs"
-    },
-    "./getPathnameFromHeaders": {
-      "types": "./dist/utils/getPathnameFromHeaders.d.ts",
-      "import": "./dist/utils/getPathnameFromHeaders.js",
-      "require": "./dist/utils/getPathnameFromHeaders.cjs"
-    },
-    "./glob": {
-      "types": "./dist/classes/glob/main.d.ts",
-      "import": "./dist/classes/glob/main.js",
-      "require": "./dist/classes/glob/main.cjs"
-    },
-    "./getMarkdownHeadings": {
-      "types": "./dist/additionalParsers/mdx/getContentHeadings.d.ts",
-      "import": "./dist/additionalParsers/mdx/getContentHeadings.js",
-      "require": "./dist/additionalParsers/mdx/getContentHeadings.cjs"
-    },
-    "./additionalSources": {
-      "types": "./dist/utils/build/additionalSourceFileStructure.d.ts",
-      "import": "./dist/utils/build/additionalSourceFileStructure.js",
-      "require": "./dist/utils/build/additionalSourceFileStructure.cjs"
-    },
-    "./paths": {
-      "types": "./dist/classes/urlManager.d.ts",
-      "import": "./dist/classes/urlManager.js",
-      "require": "./dist/classes/urlManager.cjs"
-    },
-    "./packageJsonType": {
-      "types": "./dist/types/packageJson/packageJsonType.d.ts",
-      "import": "./dist/types/packageJson/packageJsonType.js",
-      "require": "./dist/types/packageJson/packageJsonType.cjs"
-    },
-    "./paginationUtils": {
-      "types": "./dist/utils/paginationUtils.d.ts",
-      "import": "./dist/utils/paginationUtils.js",
-      "require": "./dist/utils/paginationUtils.cjs"
-    },
-    "./objectUtils": {
-      "types": "./dist/utils/objectUtils.d.ts",
-      "import": "./dist/utils/objectUtils.js",
-      "require": "./dist/utils/objectUtils.cjs"
-    },
-    "./filePathUtils": {
-      "types": "./dist/utils/filePathUtils.d.ts",
-      "import": "./dist/utils/filePathUtils.js",
-      "require": "./dist/utils/filePathUtils.cjs"
-    },
-    "./searchUtils": {
-      "types": "./dist/utils/searchUtils.d.ts",
-      "import": "./dist/utils/searchUtils.js",
-      "require": "./dist/utils/searchUtils.cjs"
-    },
-    "./sortUtils": {
-      "types": "./dist/utils/sortUtils.d.ts",
-      "import": "./dist/utils/sortUtils.js",
-      "require": "./dist/utils/sortUtils.cjs"
-    },
-    "./admonition/types": "./dist/types/admonition.d.ts",
-    "./components/copyContextMenu": {
-      "types": "./dist/components/copyContextMenu.d.ts",
-      "import": "./dist/components/copyContextMenu.js",
-      "require": "./dist/components/copyContextMenu.cjs"
-    },
-    "./booleanAndEqualities/arrayTruthy": {
-      "types": "./dist/booleanAndEqualities/arrayTruthy.d.ts",
-      "import": "./dist/booleanAndEqualities/arrayTruthy.js",
-      "require": "./dist/booleanAndEqualities/arrayTruthy.cjs"
-    },
-    "./shadColorMap": {
-      "types": "./dist/utils/shadColorMap.d.ts",
-      "import": "./dist/utils/shadColorMap.js",
-      "require": "./dist/utils/shadColorMap.cjs"
-    },
-    "./types/navigation": {
-      "types": "./dist/types/navigation.d.ts",
-      "import": "./dist/types/navigation.js",
-      "require": "./dist/types/navigation.cjs"
-    },
-    "./types/utilityTypes": {
-      "types": "./dist/types/utilityTypes.d.ts",
-      "import": "./dist/types/utilityTypes.js",
-      "require": "./dist/types/utilityTypes.cjs"
-    },
-    "./types/toastConfig": {
-      "types": "./dist/types/toastConfig.d.ts",
-      "import": "./dist/types/toastConfig.js",
-      "require": "./dist/types/toastConfig.cjs"
-    },
-    "./types/todos": {
-      "types": "./dist/types/todos.d.ts",
-      "import": "./dist/types/todos.js",
-      "require": "./dist/types/todos.cjs"
-    },
-    "./types/embeddedImageProps": {
-      "types": "./dist/types/embeddedImageProps.d.ts",
-      "import": "./dist/types/embeddedImageProps.js",
-      "require": "./dist/types/embeddedImageProps.cjs"
-    },
-    "./staticAppProperties/main": {
-      "types": "./dist/staticAppProperties/main.d.ts",
-      "import": "./dist/staticAppProperties/main.js",
-      "require": "./dist/staticAppProperties/main.cjs"
-    },
-    "./general": {
-      "types": "./dist/utils/general.d.ts",
-      "import": "./dist/utils/general.js",
-      "require": "./dist/utils/general.cjs"
-    },
-    "./identity": {
-      "types": "./dist/utils/identity.d.ts",
-      "import": "./dist/utils/identity.js",
-      "require": "./dist/utils/identity.cjs"
-    },
-    "./dates": {
-      "types": "./dist/utils/dates.d.ts",
-      "import": "./dist/utils/dates.js",
-      "require": "./dist/utils/dates.cjs"
-    },
-    "./cn": {
-      "types": "./dist/utils/cn.d.ts",
-      "import": "./dist/utils/cn.js",
-      "require": "./dist/utils/cn.cjs"
-    },
-    "./cors": {
-      "types": "./dist/utils/cors.d.ts",
-      "import": "./dist/utils/cors.js",
-      "require": "./dist/utils/cors.cjs"
-    },
-    "./arrayUtilities": {
-      "types": "./dist/utils/arrayUtilities.d.ts",
-      "import": "./dist/utils/arrayUtilities.js",
-      "require": "./dist/utils/arrayUtilities.cjs"
-    },
-    "./latexUtils": {
-      "types": "./dist/utils/latexUtils.d.ts",
-      "import": "./dist/utils/latexUtils.js",
-      "require": "./dist/utils/latexUtils.cjs"
-    },
-    "./pathUtilsClientSide": {
-      "types": "./dist/utils/pathUtilsClientSide.d.ts",
-      "import": "./dist/utils/pathUtilsClientSide.js",
-      "require": "./dist/utils/pathUtilsClientSide.cjs"
-    },
-    "./pathUtilsServerSide": {
-      "types": "./dist/utils/pathUtilsServer.d.ts",
-      "import": "./dist/utils/pathUtilsServer.js",
-      "require": "./dist/utils/pathUtilsServer.cjs"
-    },
-    "./fsUtils": {
-      "types": "./dist/utils/fsUtils.d.ts",
-      "import": "./dist/utils/fsUtils.js",
-      "require": "./dist/utils/fsUtils.cjs"
-    },
-    "./utils/general": {
-      "types": "./dist/utils/general.d.ts",
-      "import": "./dist/utils/general.js",
-      "require": "./dist/utils/general.cjs"
-    },
-    "./utils/identity": {
-      "types": "./dist/utils/identity.d.ts",
-      "import": "./dist/utils/identity.js",
-      "require": "./dist/utils/identity.cjs"
-    },
-    "./utils/dates": {
-      "types": "./dist/utils/dates.d.ts",
-      "import": "./dist/utils/dates.js",
-      "require": "./dist/utils/dates.cjs"
-    },
-    "./utils/cn": {
-      "types": "./dist/utils/cn.d.ts",
-      "import": "./dist/utils/cn.js",
-      "require": "./dist/utils/cn.cjs"
-    },
-    "./utils/arrayUtilities": {
-      "types": "./dist/utils/arrayUtilities.d.ts",
-      "import": "./dist/utils/arrayUtilities.js",
-      "require": "./dist/utils/arrayUtilities.cjs"
-    },
-    "./utils/latexUtils": {
-      "types": "./dist/utils/latexUtils.d.ts",
-      "import": "./dist/utils/latexUtils.js",
-      "require": "./dist/utils/latexUtils.cjs"
-    },
-    "./utils/pathUtilsClientSide": {
-      "types": "./dist/utils/pathUtilsClientSide.d.ts",
-      "import": "./dist/utils/pathUtilsClientSide.js",
-      "require": "./dist/utils/pathUtilsClientSide.cjs"
-    },
-    "./utils/fsUtils": {
-      "types": "./dist/utils/fsUtils.d.ts",
-      "import": "./dist/utils/fsUtils.js",
-      "require": "./dist/utils/fsUtils.cjs"
-    },
-    "./utils-dom": {
-      "types": "./dist/utils/domUtils/main.d.ts",
-      "import": "./dist/utils/domUtils/main.js",
-      "require": "./dist/utils/domUtils/main.cjs"
-    },
-    "./getBodyClasses": {
-      "types": "./dist/utils/domUtils/main.d.ts",
-      "import": "./dist/utils/domUtils/main.js",
-      "require": "./dist/utils/domUtils/main.cjs"
-    },
-    "./toDoStatusData": {
-      "types": "./dist/schemas/todoItemStatus.d.ts",
-      "import": "./dist/schemas/todoItemStatus.js",
-      "require": "./dist/schemas/todoItemStatus.cjs"
-    },
-    "./schemas/snippets": {
-      "types": "./dist/schemas/snippets.d.ts",
-      "import": "./dist/schemas/snippets.js",
-      "require": "./dist/schemas/snippets.cjs"
-    },
-    "./schemas/utility": {
-      "types": "./dist/schemas/utility.d.ts",
-      "import": "./dist/schemas/utility.js",
-      "require": "./dist/schemas/utility.cjs"
-    },
-    "./schemas/transforms": {
-      "types": "./dist/schemas/transforms.d.ts",
-      "import": "./dist/schemas/transforms.js",
-      "require": "./dist/schemas/transforms.cjs"
-    },
-    "./schemas/code/technologiesNameMap": {
-      "import": "./dist/schemas/code/technologiesNameMap.js",
-      "require": "./dist/schemas/code/technologiesNameMap.cjs"
-    },
-    "./schemas/mdx/parseMdxStringSchema": {
-      "types": "./dist/schemas/mdx/parseMdxStringSchema.d.ts",
-      "import": "./dist/schemas/mdx/parseMdxStringSchema.js",
-      "require": "./dist/schemas/mdx/parseMdxStringSchema.cjs"
-    },
-    "./schemas/mdx/parseMdxStringProps": {
-      "types": "./dist/schemas/mdx/parseMdxStringProps.d.ts",
-      "import": "./dist/schemas/mdx/parseMdxStringProps.js",
-      "require": "./dist/schemas/mdx/parseMdxStringProps.cjs"
-    },
-    "./defaults/markdownUniversalOptions": {
-      "types": "./dist/defaults/markdownUniversalOptions.d.ts",
-      "import": "./dist/defaults/markdownUniversalOptions.js",
-      "require": "./dist/defaults/markdownUniversalOptions.cjs"
-    },
-    "./defaults/markdown.json": {
-      "import": "./dist/defaults/markdownOptions.json",
-      "require": "./dist/defaults/markdownOptions.json"
-    },
-    "./defaults/defaultMermaidConfig": {
-      "types": "./dist/defaults/defaultMermaidConfig.d.ts",
-      "import": "./dist/defaults/defaultMermaidConfig.js",
-      "require": "./dist/defaults/defaultMermaidConfig.cjs"
-    },
-    "./defaults/forms/healthReport": {
-      "types": "./dist/defaults/forms/healthReport.d.ts",
-      "import": "./dist/defaults/forms/healthReport.js",
-      "require": "./dist/defaults/forms/healthReport.cjs"
-    },
-    "./defaults/prisma/commonZodFields": {
-      "types": "./dist/defaults/prisma/commonZodFields.d.ts",
-      "import": "./dist/defaults/prisma/commonZodFields.js",
-      "require": "./dist/defaults/prisma/commonZodFields.cjs"
-    },
-    "./defaults/prisma/notes": {
-      "types": "./dist/defaults/prisma/notes.d.ts",
-      "import": "./dist/defaults/prisma/notes.js",
-      "require": "./dist/defaults/prisma/notes.cjs"
-    },
-    "./getTocFromContent": {
-      "types": "./dist/navigation/getTocFromContent.d.ts",
-      "import": "./dist/navigation/getTocFromContent.js",
-      "require": "./dist/navigation/getTocFromContent.cjs"
-    },
-    "./actions/copyStringToClipboard": {
-      "types": "./dist/actions/copyStringToClipboard.d.ts",
-      "import": "./dist/actions/copyStringToClipboard.js",
-      "require": "./dist/actions/copyStringToClipboard.cjs"
-    },
-    "./copyStringToClipboard": {
-      "types": "./dist/actions/copyStringToClipboard.d.ts",
-      "import": "./dist/actions/copyStringToClipboard.js",
-      "require": "./dist/actions/copyStringToClipboard.cjs"
-    },
-    "./loaders/requireJS/requirejs": {
-      "types": "./dist/loaders/requireJS/requirejs.d.ts",
-      "import": "./dist/loaders/requireJS/requirejs.js",
-      "require": "./dist/loaders/requireJS/requirejs.cjs"
-    },
-    "./isLocal": {
-      "types": "./dist/utils/isLocal.d.ts",
-      "import": "./dist/utils/isLocal.js",
-      "require": "./dist/utils/isLocal.cjs"
-    },
-    "./initialLoader": {
-      "types": "./dist/loaders/installerComponents/initialLoader.d.ts",
-      "import": "./dist/loaders/installerComponents/initialLoader.js",
-      "require": "./dist/loaders/installerComponents/initialLoader.cjs"
-    },
-    "./tikzLoader": {
-      "types": "./dist/loaders/installerComponents/TikzLoader.d.ts",
-      "import": "./dist/loaders/installerComponents/TikzLoader.js",
-      "require": "./dist/loaders/installerComponents/TikzLoader.cjs"
-    },
-    "./autoWrapMathSchemas": {
-      "types": "./dist/schemas/autoWrapMathSchema.d.ts",
-      "import": "./dist/schemas/autoWrapMathSchema.js",
-      "require": "./dist/schemas/autoWrapMathSchema.cjs"
-    },
-    "./getDarkMode": {
-      "types": "./dist/utils/getDarkMode.d.ts",
-      "import": "./dist/utils/getDarkMode.js",
-      "require": "./dist/utils/getDarkMode.cjs"
-    },
-    "./internalDevTypes": {
-      "types": "./dist/internalDevTypes/main.d.ts",
-      "import": "./dist/internalDevTypes/main.js",
-      "require": "./dist/internalDevTypes/main.cjs"
-    },
-    "./monacoLanguages": {
-      "types": "./dist/monaco/languages.d.ts",
-      "import": "./dist/monaco/languages.js",
-      "require": "./dist/monaco/languages.cjs"
-    },
-    "./shikiLanguages": {
-      "types": "./dist/shiki/languageList.d.ts",
-      "import": "./dist/shiki/languageList.js",
-      "require": "./dist/shiki/languageList.cjs"
-    },
-    "./shikiThemes": {
-      "types": "./dist/shiki/themeList.d.ts",
-      "import": "./dist/shiki/themeList.js",
-      "require": "./dist/shiki/themeList.cjs"
-    },
-    "./getAssumedDimensions": {
-      "types": "./dist/utils/getAssumedDimensions.d.ts",
-      "import": "./dist/utils/getAssumedDimensions.js",
-      "require": "./dist/utils/getAssumedDimensions.cjs"
-    },
-    "./removeEmptyChildren": {
-      "types": "./dist/utils/removeEmptyChildren.d.ts",
-      "import": "./dist/utils/removeEmptyChildren.js",
-      "require": "./dist/utils/removeEmptyChildren.cjs"
-    },
-    "./getAllRegexMatches": {
-      "types": "./dist/utils/getAllRegexMatches.d.ts",
-      "import": "./dist/utils/getAllRegexMatches.js",
-      "require": "./dist/utils/getAllRegexMatches.cjs"
-    },
-    "./replaceContentByMatch": {
-      "types": "./dist/utils/replaceContentByRegexMatch.d.ts",
-      "import": "./dist/utils/replaceContentByRegexMatch.js",
-      "require": "./dist/utils/replaceContentByRegexMatch.cjs"
-    },
-    "./convertColorString": {
-      "types": "./dist/utils/colors/convertColorString.d.ts",
-      "import": "./dist/utils/colors/convertColorString.js",
-      "require": "./dist/utils/colors/convertColorString.cjs"
-    },
-    "./appData": {
-      "types": "./dist/appData.d.ts",
-      "import": "./dist/appData.js",
-      "require": "./dist/appData.cjs"
-    },
-    "./listUtils": {
-      "types": "./dist/utils/listUtils.d.ts",
-      "import": "./dist/utils/listUtils.js",
-      "require": "./dist/utils/listUtils.cjs"
-    },
-    "./stringUtils": {
-      "types": "./dist/utils/stringUtils.d.ts",
-      "import": "./dist/utils/stringUtils.js",
-      "require": "./dist/utils/stringUtils.cjs"
-    },
-    "./numberUtils": {
-      "types": "./dist/utils/numberUtils.d.ts",
-      "import": "./dist/utils/numberUtils.js",
-      "require": "./dist/utils/numberUtils.cjs"
-    },
-    "./regexUtils": {
-      "types": "./dist/utils/regexUtils.d.ts",
-      "import": "./dist/utils/regexUtils.js",
-      "require": "./dist/utils/regexUtils.cjs"
-    },
-    "./slotDataType": {
-      "types": "./dist/types/slotDataType.d.ts",
-      "import": "./dist/types/slotDataType.js",
-      "require": "./dist/types/slotDataType.cjs"
-    },
-    "./slotMap.json": "./dist/utils/slotMap.json",
-    "./corePageProps": {
-      "types": "./dist/types/corePageProps.d.ts",
-      "import": "./dist/types/corePageProps.js",
-      "require": "./dist/types/corePageProps.cjs"
-    },
-    "./buildStaticData": {
-      "import": "./dist/utils/buildStaticData.json",
-      "require": "./dist/utils/buildStaticData.json"
-    },
-    "./buildStaticData.json": {
-      "import": "./dist/utils/buildStaticData.json",
-      "require": "./dist/utils/buildStaticData.json"
-    },
-    "./dateTime": {
-      "types": "./dist/classes/DateTime/main.d.ts",
-      "import": "./dist/classes/DateTime/main.js",
-      "require": "./dist/classes/DateTime/main.cjs"
-    },
-    "./getPluginConfig": {
-      "types": "./dist/utils/baseAppUtils/getPluginConfig.d.ts",
-      "import": "./dist/utils/baseAppUtils/getPluginConfig.js",
-      "require": "./dist/utils/baseAppUtils/getPluginConfig.cjs"
-    },
-    "./componentDocsPathUtils": {
-      "types": "./dist/utils/baseAppUtils/componentDocPathUtils.d.ts",
-      "import": "./dist/utils/baseAppUtils/componentDocPathUtils.js",
-      "require": "./dist/utils/baseAppUtils/componentDocPathUtils.cjs"
-    },
-    "./providers-mathjax": {
-      "types": "./dist/providers/mathjax.d.ts",
-      "import": "./dist/providers/mathjax.js",
-      "require": "./dist/providers/mathjax.cjs"
-    },
-    "./transformExportString": {
-      "types": "./dist/utils/build/transformExportString.d.ts",
-      "import": "./dist/utils/build/transformExportString.js",
-      "require": "./dist/utils/build/transformExportString.cjs"
-    },
-    "./buildTypes": {
-      "types": "./dist/types/buildTypes.d.ts",
-      "import": "./dist/types/buildTypes.js",
-      "require": "./dist/types/buildTypes.cjs"
-    },
-    "./validateDeviceType": {
-      "types": "./dist/utils/deviceDetect.d.ts",
-      "import": "./dist/utils/deviceDetect.js",
-      "require": "./dist/utils/deviceDetect.cjs"
-    },
-    "./downloadFile": {
-      "types": "./dist/utils/downloadFile.d.ts",
-      "import": "./dist/utils/downloadFile.js",
-      "require": "./dist/utils/downloadFile.cjs"
-    },
-    "./jsonFileClass": {
-      "types": "./dist/classes/file/jsonFile.d.ts",
-      "import": "./dist/classes/file/jsonFile.js",
-      "require": "./dist/classes/file/jsonFile.cjs"
-    },
-    "./imageFile": {
-      "types": "./dist/classes/file/media/imageFile.d.ts",
-      "import": "./dist/classes/file/media/imageFile.js",
-      "require": "./dist/classes/file/media/imageFile.cjs"
-    },
-    "./fileClass": {
-      "types": "./dist/classes/file/main.d.ts",
-      "import": "./dist/classes/file/main.js",
-      "require": "./dist/classes/file/main.cjs"
-    },
-    "./mdxFile": {
-      "types": "./dist/classes/file/mdxFile.d.ts",
-      "import": "./dist/classes/file/mdxFile.js",
-      "require": "./dist/classes/file/mdxFile.cjs"
-    },
-    "./defaultColorThemeList": {
-      "types": "./dist/styleUtilities/ulldDefaultColorThemes.d.ts",
-      "import": "./dist/styleUtilities/ulldDefaultColorThemes.js",
-      "require": "./dist/styleUtilities/ulldDefaultColorThemes.cjs"
-    },
-    "./generateThemeBasedPlotColors": {
-      "types": "./dist/styleUtilities/generateThemePlotColors.d.ts",
-      "import": "./dist/styleUtilities/generateThemePlotColors.js",
-      "require": "./dist/styleUtilities/generateThemePlotColors.cjs"
-    },
-    "./themeColorGradients": "./dist/styleUtilities/themeColorGradients.json",
-    "./themeColorSchemes": {
-      "import": "./dist/styleUtilities/generatedThemeColorSchemes.js",
-      "require": "./dist/styleUtilities/generatedThemeColorSchemes.cjs"
-    },
-    "./streamFile": {
-      "types": "./dist/utils/media/streamFile.d.ts",
-      "import": "./dist/utils/media/streamFile.js",
-      "require": "./dist/utils/media/streamFile.cjs"
-    },
-    "./mdxParserUtils": {
-      "types": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.d.ts",
-      "import": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.js",
-      "require": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.cjs"
-    },
-    "./fsRootGlob": {
-      "types": "./dist/utils/fsRootGlob.d.ts",
-      "import": "./dist/utils/fsRootGlob.js",
-      "require": "./dist/utils/fsRootGlob.cjs"
-    },
-    "./settingPageSection": {
-      "types": "./dist/components/settingPageUtils/settingPageSection.d.ts",
-      "import": "./dist/components/settingPageUtils/settingPageSection.js",
-      "require": "./dist/components/settingPageUtils/settingPageSection.cjs"
-    },
-    "./settingPageContainer": {
-      "types": "./dist/components/settingPageUtils/settingPageContainer.d.ts",
-      "import": "./dist/components/settingPageUtils/settingPageContainer.js",
-      "require": "./dist/components/settingPageUtils/settingPageContainer.cjs"
-    },
-    "./disableBookmark": {
-      "types": "./dist/components/disableBookmark.d.ts",
-      "import": "./dist/components/disableBookmark.js",
-      "require": "./dist/components/disableBookmark.cjs"
-    },
-    "./getBaseEmbeddableProps": {
-      "types": "./dist/componentHelpers/getBaseEmbeddableProps.d.ts",
-      "import": "./dist/componentHelpers/getBaseEmbeddableProps.js",
-      "require": "./dist/componentHelpers/getBaseEmbeddableProps.cjs"
-    },
-    "./getAppConfigClientSide": {
-      "types": "./dist/utils/getAppConfigClientSide.d.ts",
-      "import": "./dist/utils/getAppConfigClientSide.js",
-      "require": "./dist/utils/getAppConfigClientSide.cjs"
-    }
-  },
-  "files": [
-    "dist"
-  ],
-  "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {
-    "@ulld/database": "workspace:*",
-    "@ulld/math": "workspace:*",
-    "@ulld/tailwind": "workspace:*",
-    "@ulld/types": "workspace:*",
-    "@ulld/typescript-config": "workspace:*",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && tsup-node",
-    "dev": "next dev",
-    "test": "echo 'Add test script here'"
-  },
-  "type": "module",
-  "types": "./dist/types/main.d.ts"
+    "name": "@ulld/utilities",
+    "version": "0.0.119",
+    "dependencies": {
+        "@tanstack/react-table": "8.13.2",
+        "axios-endpoints": "^1.0.3",
+        "better-react-mathjax": "2.0.3",
+        "color-scheme": "^1.0.1",
+        "coloring-palette": "^1.0.0",
+        "dayjs": "^1.11.10",
+        "fumadocs-core": "13.4.1",
+        "gray-matter": "^4.0.3",
+        "jaro-winkler": "^0.2.8",
+        "monaco-editor": "0.49.0",
+        "nice-color-palettes": "^3.0.0",
+        "rehype-mathjax": "^6.0.0",
+        "shiki": "1.12.0",
+        "tinycolor2": "1.6.0",
+        "zod": "3.23.8"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^26.0.1",
+        "@rollup/plugin-node-resolve": "^15.2.3",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@rollup/plugin-typescript": "^11.1.6",
+        "@tanstack/react-table": "^8.13.2",
+        "@testing-library/cypress": "^10.0.1",
+        "@testing-library/dom": "^9.3.4",
+        "@testing-library/jest-dom": "^6.4.2",
+        "@testing-library/react": "^14.2.2",
+        "@testing-library/user-event": "^14.5.2",
+        "@types/jaro-winkler": "^0.2.3",
+        "@ulld/test-utils": "workspace:*",
+        "better-react-mathjax": "^2.0.3",
+        "chai": "^5.1.0",
+        "color-scheme": "^1.0.1",
+        "coloring-palette": "^1.0.0",
+        "cypress": "^13.7.1",
+        "dayjs": "^1.11.10",
+        "eslint-plugin-jest-dom": "^5.2.0",
+        "eslint-plugin-testing-library": "^6.2.0",
+        "fumadocs-core": "13.4.1",
+        "gray-matter": "^4.0.3",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "mocha": "^10.3.0",
+        "monaco-editor": "0.49.0",
+        "next": "^14.2.3",
+        "nice-color-palettes": "^3.0.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-test-renderer": "^18.2.0",
+        "rehype-mathjax": "^6.0.0",
+        "rollup": "^4.21.2",
+        "rollup-plugin-dts": "^6.1.1",
+        "rollup-plugin-peer-deps-external": "^2.2.4",
+        "rollup-plugin-visualizer": "^5.12.0",
+        "rtl-simple-queries": "^1.0.1",
+        "shiki": "1.12.0",
+        "supertest": "^6.3.4",
+        "supertest-session": "^5.0.1",
+        "tinycolor2": "1.6.0",
+        "ts-jest": "^29.1.2",
+        "zod": "3.23.8"
+    },
+    "exports": {
+        "./types": {
+            "types": "./dist/types/main.d.ts",
+            "import": "./dist/types/main.d.ts",
+            "require": "./dist/types/main.cjs"
+        },
+        "./buildUtils": {
+            "types": "./dist/staticAppProperties/buildUtils/main.d.ts",
+            "import": "./dist/staticAppProperties/buildUtils/main.js",
+            "require": "./dist/staticAppProperties/buildUtils/main.cjs"
+        },
+        "./copyJsonFilesToDist": {
+            "types": "./dist/utils/build/copyJsonFilesToDist.d.ts",
+            "import": "./dist/utils/build/copyJsonFilesToDist.js",
+            "require": "./dist/utils/build/copyJsonFilesToDist.cjs"
+        },
+        "./ulldColorVars": {
+            "types": "./dist/styleUtilities/ulldColorVars.d.ts",
+            "import": "./dist/styleUtilities/ulldColorVars.js",
+            "require": "./dist/styleUtilities/ulldColorVars.cjs"
+        },
+        "./getGlobServerSide": {
+            "types": "./dist/utils/glob/getGlobServerSide.d.ts",
+            "import": "./dist/utils/glob/getGlobServerSide.js",
+            "require": "./dist/utils/glob/getGlobServerSide.cjs"
+        },
+        "./fetchWrapper": {
+            "types": "./dist/utils/fetchWrapper.d.ts",
+            "import": "./dist/utils/fetchWrapper.js",
+            "require": "./dist/utils/fetchWrapper.cjs"
+        },
+        "./filePathSchemas": {
+            "types": "./dist/schemas/filePath/index.d.ts",
+            "import": "./dist/schemas/filePath/index.js",
+            "require": "./dist/schemas/filePath/index.cjs"
+        },
+        "./isNoConfig": {
+            "types": "./dist/utils/webAppUtils/isNoConfig.d.ts",
+            "import": "./dist/utils/webAppUtils/isNoConfig.js",
+            "require": "./dist/utils/webAppUtils/isNoConfig.cjs"
+        },
+        "./errorNotifications": {
+            "types": "./dist/errorHandling/main.d.ts",
+            "import": "./dist/errorHandling/main.js",
+            "require": "./dist/errorHandling/main.cjs"
+        },
+        "./testDataHelpers": {
+            "types": "./dist/testDataHelpers/main.d.ts",
+            "import": "./dist/testDataHelpers/main.js",
+            "require": "./dist/testDataHelpers/main.cjs"
+        },
+        "./databaseTestData": {
+            "types": "./dist/testDataHelpers/databaseTestData.d.ts",
+            "import": "./dist/testDataHelpers/databaseTestData.js",
+            "require": "./dist/testDataHelpers/databaseTestData.cjs"
+        },
+        "./localDevelopmentMenu": {
+            "types": "./dist/components/localDevelopment/localDevelopmentMenu.d.ts",
+            "import": "./dist/components/localDevelopment/localDevelopmentMenu.js",
+            "require": "./dist/components/localDevelopment/localDevelopmentMenu.cjs"
+        },
+        "./localDevelopmentPageWrapper": {
+            "types": "./dist/components/localDevelopment/localDevelopmentPageWrapper.d.ts",
+            "import": "./dist/components/localDevelopment/localDevelopmentPageWrapper.js",
+            "require": "./dist/components/localDevelopment/localDevelopmentPageWrapper.cjs"
+        },
+        "./utilNavLinks": {
+            "types": "./dist/navigation/utilityNavLinks.d.ts",
+            "import": "./dist/navigation/utilityNavLinks.js",
+            "require": "./dist/navigation/utilityNavLinks.cjs"
+        },
+        "./getPathnameFromHeaders": {
+            "types": "./dist/utils/getPathnameFromHeaders.d.ts",
+            "import": "./dist/utils/getPathnameFromHeaders.js",
+            "require": "./dist/utils/getPathnameFromHeaders.cjs"
+        },
+        "./glob": {
+            "types": "./dist/classes/glob/main.d.ts",
+            "import": "./dist/classes/glob/main.js",
+            "require": "./dist/classes/glob/main.cjs"
+        },
+        "./getMarkdownHeadings": {
+            "types": "./dist/additionalParsers/mdx/getContentHeadings.d.ts",
+            "import": "./dist/additionalParsers/mdx/getContentHeadings.js",
+            "require": "./dist/additionalParsers/mdx/getContentHeadings.cjs"
+        },
+        "./additionalSources": {
+            "types": "./dist/utils/build/additionalSourceFileStructure.d.ts",
+            "import": "./dist/utils/build/additionalSourceFileStructure.js",
+            "require": "./dist/utils/build/additionalSourceFileStructure.cjs"
+        },
+        "./paths": {
+            "types": "./dist/classes/urlManager.d.ts",
+            "import": "./dist/classes/urlManager.js",
+            "require": "./dist/classes/urlManager.cjs"
+        },
+        "./packageJsonType": {
+            "types": "./dist/types/packageJson/packageJsonType.d.ts",
+            "import": "./dist/types/packageJson/packageJsonType.js",
+            "require": "./dist/types/packageJson/packageJsonType.cjs"
+        },
+        "./paginationUtils": {
+            "types": "./dist/utils/paginationUtils.d.ts",
+            "import": "./dist/utils/paginationUtils.js",
+            "require": "./dist/utils/paginationUtils.cjs"
+        },
+        "./objectUtils": {
+            "types": "./dist/utils/objectUtils.d.ts",
+            "import": "./dist/utils/objectUtils.js",
+            "require": "./dist/utils/objectUtils.cjs"
+        },
+        "./filePathUtils": {
+            "types": "./dist/utils/filePathUtils.d.ts",
+            "import": "./dist/utils/filePathUtils.js",
+            "require": "./dist/utils/filePathUtils.cjs"
+        },
+        "./searchUtils": {
+            "types": "./dist/utils/searchUtils.d.ts",
+            "import": "./dist/utils/searchUtils.js",
+            "require": "./dist/utils/searchUtils.cjs"
+        },
+        "./sortUtils": {
+            "types": "./dist/utils/sortUtils.d.ts",
+            "import": "./dist/utils/sortUtils.js",
+            "require": "./dist/utils/sortUtils.cjs"
+        },
+        "./admonition/types": "./dist/types/admonition.d.ts",
+        "./components/copyContextMenu": {
+            "types": "./dist/components/copyContextMenu.d.ts",
+            "import": "./dist/components/copyContextMenu.js",
+            "require": "./dist/components/copyContextMenu.cjs"
+        },
+        "./booleanAndEqualities/arrayTruthy": {
+            "types": "./dist/booleanAndEqualities/arrayTruthy.d.ts",
+            "import": "./dist/booleanAndEqualities/arrayTruthy.js",
+            "require": "./dist/booleanAndEqualities/arrayTruthy.cjs"
+        },
+        "./shadColorMap": {
+            "types": "./dist/utils/shadColorMap.d.ts",
+            "import": "./dist/utils/shadColorMap.js",
+            "require": "./dist/utils/shadColorMap.cjs"
+        },
+        "./types/navigation": {
+            "types": "./dist/types/navigation.d.ts",
+            "import": "./dist/types/navigation.js",
+            "require": "./dist/types/navigation.cjs"
+        },
+        "./types/utilityTypes": {
+            "types": "./dist/types/utilityTypes.d.ts",
+            "import": "./dist/types/utilityTypes.js",
+            "require": "./dist/types/utilityTypes.cjs"
+        },
+        "./types/toastConfig": {
+            "types": "./dist/types/toastConfig.d.ts",
+            "import": "./dist/types/toastConfig.js",
+            "require": "./dist/types/toastConfig.cjs"
+        },
+        "./types/todos": {
+            "types": "./dist/types/todos.d.ts",
+            "import": "./dist/types/todos.js",
+            "require": "./dist/types/todos.cjs"
+        },
+        "./types/embeddedImageProps": {
+            "types": "./dist/types/embeddedImageProps.d.ts",
+            "import": "./dist/types/embeddedImageProps.js",
+            "require": "./dist/types/embeddedImageProps.cjs"
+        },
+        "./staticAppProperties/main": {
+            "types": "./dist/staticAppProperties/main.d.ts",
+            "import": "./dist/staticAppProperties/main.js",
+            "require": "./dist/staticAppProperties/main.cjs"
+        },
+        "./general": {
+            "types": "./dist/utils/general.d.ts",
+            "import": "./dist/utils/general.js",
+            "require": "./dist/utils/general.cjs"
+        },
+        "./identity": {
+            "types": "./dist/utils/identity.d.ts",
+            "import": "./dist/utils/identity.js",
+            "require": "./dist/utils/identity.cjs"
+        },
+        "./dates": {
+            "types": "./dist/utils/dates.d.ts",
+            "import": "./dist/utils/dates.js",
+            "require": "./dist/utils/dates.cjs"
+        },
+        "./cn": {
+            "types": "./dist/utils/cn.d.ts",
+            "import": "./dist/utils/cn.js",
+            "require": "./dist/utils/cn.cjs"
+        },
+        "./cors": {
+            "types": "./dist/utils/cors.d.ts",
+            "import": "./dist/utils/cors.js",
+            "require": "./dist/utils/cors.cjs"
+        },
+        "./arrayUtilities": {
+            "types": "./dist/utils/arrayUtilities.d.ts",
+            "import": "./dist/utils/arrayUtilities.js",
+            "require": "./dist/utils/arrayUtilities.cjs"
+        },
+        "./latexUtils": {
+            "types": "./dist/utils/latexUtils.d.ts",
+            "import": "./dist/utils/latexUtils.js",
+            "require": "./dist/utils/latexUtils.cjs"
+        },
+        "./pathUtilsClientSide": {
+            "types": "./dist/utils/pathUtilsClientSide.d.ts",
+            "import": "./dist/utils/pathUtilsClientSide.js",
+            "require": "./dist/utils/pathUtilsClientSide.cjs"
+        },
+        "./pathUtilsServerSide": {
+            "types": "./dist/utils/pathUtilsServer.d.ts",
+            "import": "./dist/utils/pathUtilsServer.js",
+            "require": "./dist/utils/pathUtilsServer.cjs"
+        },
+        "./fsUtils": {
+            "types": "./dist/utils/fsUtils.d.ts",
+            "import": "./dist/utils/fsUtils.js",
+            "require": "./dist/utils/fsUtils.cjs"
+        },
+        "./utils/general": {
+            "types": "./dist/utils/general.d.ts",
+            "import": "./dist/utils/general.js",
+            "require": "./dist/utils/general.cjs"
+        },
+        "./utils/identity": {
+            "types": "./dist/utils/identity.d.ts",
+            "import": "./dist/utils/identity.js",
+            "require": "./dist/utils/identity.cjs"
+        },
+        "./utils/dates": {
+            "types": "./dist/utils/dates.d.ts",
+            "import": "./dist/utils/dates.js",
+            "require": "./dist/utils/dates.cjs"
+        },
+        "./utils/cn": {
+            "types": "./dist/utils/cn.d.ts",
+            "import": "./dist/utils/cn.js",
+            "require": "./dist/utils/cn.cjs"
+        },
+        "./utils/arrayUtilities": {
+            "types": "./dist/utils/arrayUtilities.d.ts",
+            "import": "./dist/utils/arrayUtilities.js",
+            "require": "./dist/utils/arrayUtilities.cjs"
+        },
+        "./utils/latexUtils": {
+            "types": "./dist/utils/latexUtils.d.ts",
+            "import": "./dist/utils/latexUtils.js",
+            "require": "./dist/utils/latexUtils.cjs"
+        },
+        "./utils/pathUtilsClientSide": {
+            "types": "./dist/utils/pathUtilsClientSide.d.ts",
+            "import": "./dist/utils/pathUtilsClientSide.js",
+            "require": "./dist/utils/pathUtilsClientSide.cjs"
+        },
+        "./utils/fsUtils": {
+            "types": "./dist/utils/fsUtils.d.ts",
+            "import": "./dist/utils/fsUtils.js",
+            "require": "./dist/utils/fsUtils.cjs"
+        },
+        "./utils-dom": {
+            "types": "./dist/utils/domUtils/main.d.ts",
+            "import": "./dist/utils/domUtils/main.js",
+            "require": "./dist/utils/domUtils/main.cjs"
+        },
+        "./getBodyClasses": {
+            "types": "./dist/utils/domUtils/main.d.ts",
+            "import": "./dist/utils/domUtils/main.js",
+            "require": "./dist/utils/domUtils/main.cjs"
+        },
+        "./toDoStatusData": {
+            "types": "./dist/schemas/todoItemStatus.d.ts",
+            "import": "./dist/schemas/todoItemStatus.js",
+            "require": "./dist/schemas/todoItemStatus.cjs"
+        },
+        "./schemas/snippets": {
+            "types": "./dist/schemas/snippets.d.ts",
+            "import": "./dist/schemas/snippets.js",
+            "require": "./dist/schemas/snippets.cjs"
+        },
+        "./schemas/utility": {
+            "types": "./dist/schemas/utility.d.ts",
+            "import": "./dist/schemas/utility.js",
+            "require": "./dist/schemas/utility.cjs"
+        },
+        "./schemas/transforms": {
+            "types": "./dist/schemas/transforms.d.ts",
+            "import": "./dist/schemas/transforms.js",
+            "require": "./dist/schemas/transforms.cjs"
+        },
+        "./schemas/code/technologiesNameMap": {
+            "import": "./dist/schemas/code/technologiesNameMap.js",
+            "require": "./dist/schemas/code/technologiesNameMap.cjs"
+        },
+        "./schemas/mdx/parseMdxStringSchema": {
+            "types": "./dist/schemas/mdx/parseMdxStringSchema.d.ts",
+            "import": "./dist/schemas/mdx/parseMdxStringSchema.js",
+            "require": "./dist/schemas/mdx/parseMdxStringSchema.cjs"
+        },
+        "./schemas/mdx/parseMdxStringProps": {
+            "types": "./dist/schemas/mdx/parseMdxStringProps.d.ts",
+            "import": "./dist/schemas/mdx/parseMdxStringProps.js",
+            "require": "./dist/schemas/mdx/parseMdxStringProps.cjs"
+        },
+        "./defaults/markdownUniversalOptions": {
+            "types": "./dist/defaults/markdownUniversalOptions.d.ts",
+            "import": "./dist/defaults/markdownUniversalOptions.js",
+            "require": "./dist/defaults/markdownUniversalOptions.cjs"
+        },
+        "./defaults/markdown.json": {
+            "import": "./dist/defaults/markdownOptions.json",
+            "require": "./dist/defaults/markdownOptions.json"
+        },
+        "./defaults/defaultMermaidConfig": {
+            "types": "./dist/defaults/defaultMermaidConfig.d.ts",
+            "import": "./dist/defaults/defaultMermaidConfig.js",
+            "require": "./dist/defaults/defaultMermaidConfig.cjs"
+        },
+        "./defaults/forms/healthReport": {
+            "types": "./dist/defaults/forms/healthReport.d.ts",
+            "import": "./dist/defaults/forms/healthReport.js",
+            "require": "./dist/defaults/forms/healthReport.cjs"
+        },
+        "./defaults/prisma/commonZodFields": {
+            "types": "./dist/defaults/prisma/commonZodFields.d.ts",
+            "import": "./dist/defaults/prisma/commonZodFields.js",
+            "require": "./dist/defaults/prisma/commonZodFields.cjs"
+        },
+        "./defaults/prisma/notes": {
+            "types": "./dist/defaults/prisma/notes.d.ts",
+            "import": "./dist/defaults/prisma/notes.js",
+            "require": "./dist/defaults/prisma/notes.cjs"
+        },
+        "./getTocFromContent": {
+            "types": "./dist/navigation/getTocFromContent.d.ts",
+            "import": "./dist/navigation/getTocFromContent.js",
+            "require": "./dist/navigation/getTocFromContent.cjs"
+        },
+        "./actions/copyStringToClipboard": {
+            "types": "./dist/actions/copyStringToClipboard.d.ts",
+            "import": "./dist/actions/copyStringToClipboard.js",
+            "require": "./dist/actions/copyStringToClipboard.cjs"
+        },
+        "./copyStringToClipboard": {
+            "types": "./dist/actions/copyStringToClipboard.d.ts",
+            "import": "./dist/actions/copyStringToClipboard.js",
+            "require": "./dist/actions/copyStringToClipboard.cjs"
+        },
+        "./loaders/requireJS/requirejs": {
+            "types": "./dist/loaders/requireJS/requirejs.d.ts",
+            "import": "./dist/loaders/requireJS/requirejs.js",
+            "require": "./dist/loaders/requireJS/requirejs.cjs"
+        },
+        "./isLocal": {
+            "types": "./dist/utils/isLocal.d.ts",
+            "import": "./dist/utils/isLocal.js",
+            "require": "./dist/utils/isLocal.cjs"
+        },
+        "./initialLoader": {
+            "types": "./dist/loaders/installerComponents/initialLoader.d.ts",
+            "import": "./dist/loaders/installerComponents/initialLoader.js",
+            "require": "./dist/loaders/installerComponents/initialLoader.cjs"
+        },
+        "./tikzLoader": {
+            "types": "./dist/loaders/installerComponents/TikzLoader.d.ts",
+            "import": "./dist/loaders/installerComponents/TikzLoader.js",
+            "require": "./dist/loaders/installerComponents/TikzLoader.cjs"
+        },
+        "./autoWrapMathSchemas": {
+            "types": "./dist/schemas/autoWrapMathSchema.d.ts",
+            "import": "./dist/schemas/autoWrapMathSchema.js",
+            "require": "./dist/schemas/autoWrapMathSchema.cjs"
+        },
+        "./getDarkMode": {
+            "types": "./dist/utils/getDarkMode.d.ts",
+            "import": "./dist/utils/getDarkMode.js",
+            "require": "./dist/utils/getDarkMode.cjs"
+        },
+        "./internalDevTypes": {
+            "types": "./dist/internalDevTypes/main.d.ts",
+            "import": "./dist/internalDevTypes/main.js",
+            "require": "./dist/internalDevTypes/main.cjs"
+        },
+        "./monacoLanguages": {
+            "types": "./dist/monaco/languages.d.ts",
+            "import": "./dist/monaco/languages.js",
+            "require": "./dist/monaco/languages.cjs"
+        },
+        "./shikiLanguages": {
+            "types": "./dist/shiki/languageList.d.ts",
+            "import": "./dist/shiki/languageList.js",
+            "require": "./dist/shiki/languageList.cjs"
+        },
+        "./shikiThemes": {
+            "types": "./dist/shiki/themeList.d.ts",
+            "import": "./dist/shiki/themeList.js",
+            "require": "./dist/shiki/themeList.cjs"
+        },
+        "./getAssumedDimensions": {
+            "types": "./dist/utils/getAssumedDimensions.d.ts",
+            "import": "./dist/utils/getAssumedDimensions.js",
+            "require": "./dist/utils/getAssumedDimensions.cjs"
+        },
+        "./removeEmptyChildren": {
+            "types": "./dist/utils/removeEmptyChildren.d.ts",
+            "import": "./dist/utils/removeEmptyChildren.js",
+            "require": "./dist/utils/removeEmptyChildren.cjs"
+        },
+        "./getAllRegexMatches": {
+            "types": "./dist/utils/getAllRegexMatches.d.ts",
+            "import": "./dist/utils/getAllRegexMatches.js",
+            "require": "./dist/utils/getAllRegexMatches.cjs"
+        },
+        "./replaceContentByMatch": {
+            "types": "./dist/utils/replaceContentByRegexMatch.d.ts",
+            "import": "./dist/utils/replaceContentByRegexMatch.js",
+            "require": "./dist/utils/replaceContentByRegexMatch.cjs"
+        },
+        "./convertColorString": {
+            "types": "./dist/utils/colors/convertColorString.d.ts",
+            "import": "./dist/utils/colors/convertColorString.js",
+            "require": "./dist/utils/colors/convertColorString.cjs"
+        },
+        "./appData": {
+            "types": "./dist/appData.d.ts",
+            "import": "./dist/appData.js",
+            "require": "./dist/appData.cjs"
+        },
+        "./listUtils": {
+            "types": "./dist/utils/listUtils.d.ts",
+            "import": "./dist/utils/listUtils.js",
+            "require": "./dist/utils/listUtils.cjs"
+        },
+        "./stringUtils": {
+            "types": "./dist/utils/stringUtils.d.ts",
+            "import": "./dist/utils/stringUtils.js",
+            "require": "./dist/utils/stringUtils.cjs"
+        },
+        "./numberUtils": {
+            "types": "./dist/utils/numberUtils.d.ts",
+            "import": "./dist/utils/numberUtils.js",
+            "require": "./dist/utils/numberUtils.cjs"
+        },
+        "./regexUtils": {
+            "types": "./dist/utils/regexUtils.d.ts",
+            "import": "./dist/utils/regexUtils.js",
+            "require": "./dist/utils/regexUtils.cjs"
+        },
+        "./slotDataType": {
+            "types": "./dist/types/slotDataType.d.ts",
+            "import": "./dist/types/slotDataType.js",
+            "require": "./dist/types/slotDataType.cjs"
+        },
+        "./slotMap.json": "./dist/utils/slotMap.json",
+        "./corePageProps": {
+            "types": "./dist/types/corePageProps.d.ts",
+            "import": "./dist/types/corePageProps.js",
+            "require": "./dist/types/corePageProps.cjs"
+        },
+        "./buildStaticData": {
+            "import": "./dist/utils/buildStaticData.json",
+            "require": "./dist/utils/buildStaticData.json"
+        },
+        "./buildStaticData.json": {
+            "import": "./dist/utils/buildStaticData.json",
+            "require": "./dist/utils/buildStaticData.json"
+        },
+        "./dateTime": {
+            "types": "./dist/classes/DateTime/main.d.ts",
+            "import": "./dist/classes/DateTime/main.js",
+            "require": "./dist/classes/DateTime/main.cjs"
+        },
+        "./getPluginConfig": {
+            "types": "./dist/utils/baseAppUtils/getPluginConfig.d.ts",
+            "import": "./dist/utils/baseAppUtils/getPluginConfig.js",
+            "require": "./dist/utils/baseAppUtils/getPluginConfig.cjs"
+        },
+        "./componentDocsPathUtils": {
+            "types": "./dist/utils/baseAppUtils/componentDocPathUtils.d.ts",
+            "import": "./dist/utils/baseAppUtils/componentDocPathUtils.js",
+            "require": "./dist/utils/baseAppUtils/componentDocPathUtils.cjs"
+        },
+        "./providers-mathjax": {
+            "types": "./dist/providers/mathjax.d.ts",
+            "import": "./dist/providers/mathjax.js",
+            "require": "./dist/providers/mathjax.cjs"
+        },
+        "./transformExportString": {
+            "types": "./dist/utils/build/transformExportString.d.ts",
+            "import": "./dist/utils/build/transformExportString.js",
+            "require": "./dist/utils/build/transformExportString.cjs"
+        },
+        "./buildTypes": {
+            "types": "./dist/types/buildTypes.d.ts",
+            "import": "./dist/types/buildTypes.js",
+            "require": "./dist/types/buildTypes.cjs"
+        },
+        "./validateDeviceType": {
+            "types": "./dist/utils/deviceDetect.d.ts",
+            "import": "./dist/utils/deviceDetect.js",
+            "require": "./dist/utils/deviceDetect.cjs"
+        },
+        "./downloadFile": {
+            "types": "./dist/utils/downloadFile.d.ts",
+            "import": "./dist/utils/downloadFile.js",
+            "require": "./dist/utils/downloadFile.cjs"
+        },
+        "./jsonFileClass": {
+            "types": "./dist/classes/file/jsonFile.d.ts",
+            "import": "./dist/classes/file/jsonFile.js",
+            "require": "./dist/classes/file/jsonFile.cjs"
+        },
+        "./imageFile": {
+            "types": "./dist/classes/file/media/imageFile.d.ts",
+            "import": "./dist/classes/file/media/imageFile.js",
+            "require": "./dist/classes/file/media/imageFile.cjs"
+        },
+        "./fileClass": {
+            "types": "./dist/classes/file/main.d.ts",
+            "import": "./dist/classes/file/main.js",
+            "require": "./dist/classes/file/main.cjs"
+        },
+        "./mdxFile": {
+            "types": "./dist/classes/file/mdxFile.d.ts",
+            "import": "./dist/classes/file/mdxFile.js",
+            "require": "./dist/classes/file/mdxFile.cjs"
+        },
+        "./defaultColorThemeList": {
+            "types": "./dist/styleUtilities/ulldDefaultColorThemes.d.ts",
+            "import": "./dist/styleUtilities/ulldDefaultColorThemes.js",
+            "require": "./dist/styleUtilities/ulldDefaultColorThemes.cjs"
+        },
+        "./generateThemeBasedPlotColors": {
+            "types": "./dist/styleUtilities/generateThemePlotColors.d.ts",
+            "import": "./dist/styleUtilities/generateThemePlotColors.js",
+            "require": "./dist/styleUtilities/generateThemePlotColors.cjs"
+        },
+        "./themeColorGradients": "./dist/styleUtilities/themeColorGradients.json",
+        "./themeColorSchemes": {
+            "import": "./dist/styleUtilities/generatedThemeColorSchemes.js",
+            "require": "./dist/styleUtilities/generatedThemeColorSchemes.cjs"
+        },
+        "./streamFile": {
+            "types": "./dist/utils/media/streamFile.d.ts",
+            "import": "./dist/utils/media/streamFile.js",
+            "require": "./dist/utils/media/streamFile.cjs"
+        },
+        "./mdxParserUtils": {
+            "types": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.d.ts",
+            "import": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.js",
+            "require": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.cjs"
+        },
+        "./fsRootGlob": {
+            "types": "./dist/utils/fsRootGlob.d.ts",
+            "import": "./dist/utils/fsRootGlob.js",
+            "require": "./dist/utils/fsRootGlob.cjs"
+        },
+        "./settingPageSection": {
+            "types": "./dist/components/settingPageUtils/settingPageSection.d.ts",
+            "import": "./dist/components/settingPageUtils/settingPageSection.js",
+            "require": "./dist/components/settingPageUtils/settingPageSection.cjs"
+        },
+        "./settingPageContainer": {
+            "types": "./dist/components/settingPageUtils/settingPageContainer.d.ts",
+            "import": "./dist/components/settingPageUtils/settingPageContainer.js",
+            "require": "./dist/components/settingPageUtils/settingPageContainer.cjs"
+        },
+        "./disableBookmark": {
+            "types": "./dist/components/disableBookmark.d.ts",
+            "import": "./dist/components/disableBookmark.js",
+            "require": "./dist/components/disableBookmark.cjs"
+        },
+        "./getBaseEmbeddableProps": {
+            "types": "./dist/componentHelpers/getBaseEmbeddableProps.d.ts",
+            "import": "./dist/componentHelpers/getBaseEmbeddableProps.js",
+            "require": "./dist/componentHelpers/getBaseEmbeddableProps.cjs"
+        },
+        "./getAppConfigClientSide": {
+            "types": "./dist/utils/getAppConfigClientSide.d.ts",
+            "import": "./dist/utils/getAppConfigClientSide.js",
+            "require": "./dist/utils/getAppConfigClientSide.cjs"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "packageManager": "pnpm@9.0.4",
+    "peerDependencies": {
+        "@ulld/database": "workspace:*",
+        "@ulld/math": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && tsup-node",
+        "dev": "next dev",
+        "test": "echo 'Add test script here'"
+    },
+    "type": "module",
+    "types": "./dist/types/main.d.ts"
 }

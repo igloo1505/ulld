@@ -29,15 +29,11 @@ export declare const textConfigSchema: z.ZodDefault<z.ZodObject<{
     }>, "many">, z.ZodLiteral<"default">]>>;
 }, "strip", z.ZodTypeAny, {
     blockQuoteItalic: boolean;
-    fontPaths: ({
+    fontPaths: {
         weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
         style: "bold" | "italic" | "normal";
         path: string;
-    }[] | "default") & ({
-        weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-        style: "bold" | "italic" | "normal";
-        path: string;
-    }[] | "default" | undefined);
+    }[] | "default";
 }, {
     blockQuoteItalic?: boolean | undefined;
     fontPaths?: {

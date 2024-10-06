@@ -1,44 +1,44 @@
 {
-  "name": "@ulld/health-tracking",
-  "version": "0.0.119",
-  "dependencies": {
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "files": [
-    "src"
-  ],
-  "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {
-    "@ulld/api": "workspace:*",
-    "@ulld/configschema": "workspace:*",
-    "@ulld/developer": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
-    "@ulld/hooks": "workspace:*",
-    "@ulld/jest-presets": "workspace:*",
-    "@ulld/logger": "workspace:*",
-    "@ulld/plot": "workspace:*",
-    "@ulld/state": "workspace:*",
-    "@ulld/tailwind": "workspace:*",
-    "@ulld/types": "workspace:*",
-    "@ulld/typescript-config": "workspace:*",
-    "@ulld/ui": "workspace:*",
-    "@ulld/utilities": "workspace:*"
-  },
-  "private": true,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "echo 'Add build script here'",
-    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'Add test script here'"
-  }
+    "name": "@ulld/health-tracking",
+    "version": "0.0.119",
+    "dependencies": {
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "devDependencies": {
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "files": [
+        "src"
+    ],
+    "packageManager": "pnpm@9.0.4",
+    "peerDependencies": {
+        "@ulld/api": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/developer": "workspace:*",
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/hooks": "workspace:*",
+        "@ulld/jest-presets": "workspace:*",
+        "@ulld/logger": "workspace:*",
+        "@ulld/plot": "workspace:*",
+        "@ulld/state": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/ui": "workspace:*",
+        "@ulld/utilities": "workspace:*"
+    },
+    "private": true,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "echo 'Add build script here'",
+        "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+        "test": "echo 'Add test script here'"
+    }
 }

@@ -62,19 +62,13 @@ export declare const baseAppSlot: z.ZodObject<{
     path: string;
     parentSlot: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette";
     subSlot: string;
-    embeddables: ({
+    embeddables: {
         regexToInclude: string;
         label?: string | undefined;
     } | {
         regexToInclude: string;
         label?: string | undefined;
-    }[]) & ({
-        regexToInclude: string;
-        label?: string | undefined;
-    } | {
-        regexToInclude: string;
-        label?: string | undefined;
-    }[] | undefined);
+    }[];
     clientOnly?: boolean | undefined;
     propsExtends?: string | undefined;
 }>;

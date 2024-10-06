@@ -23,11 +23,11 @@ export declare const featuresConfigSchema: z.ZodOptional<z.ZodObject<{
         taskManager: boolean;
         equations: boolean;
     }, {
-        equations?: boolean | undefined;
-        snippets?: boolean | undefined;
-        calendar?: boolean | undefined;
         bibliography?: boolean | undefined;
+        calendar?: boolean | undefined;
+        snippets?: boolean | undefined;
         taskManager?: boolean | undefined;
+        equations?: boolean | undefined;
     }>;
 }, "strip", z.ZodTypeAny, {
     pages: {
@@ -43,11 +43,11 @@ export declare const featuresConfigSchema: z.ZodOptional<z.ZodObject<{
     };
 }, {
     pages: {
-        equations?: boolean | undefined;
-        snippets?: boolean | undefined;
-        calendar?: boolean | undefined;
         bibliography?: boolean | undefined;
+        calendar?: boolean | undefined;
+        snippets?: boolean | undefined;
         taskManager?: boolean | undefined;
+        equations?: boolean | undefined;
     };
     enabled?: {
         commandPalette?: boolean | undefined;

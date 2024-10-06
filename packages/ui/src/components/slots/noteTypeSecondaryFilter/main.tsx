@@ -8,11 +8,18 @@ const NoteTypeSecondaryFilter = ({
     noteType,
     searchParams: sp,
 }: NoteTypeSecondaryFilterProps) => {
+
+    /* NOTE: Might be able to remove this check for the noteType property. Double check when time allows to make sure that the tags will redirect to the proper page onClick if no noteType is present. */
     if (!noteType || (!data.topics.length && !data.subjects.length && !data.tags.length)) {
         return null;
     }
+
     return (
         <div
+            id="taggableListGroup"
+            data-tagsopen="false"
+            data-topicsopen="false"
+            data-subjectsopen="false"
             className={"h-fit w-full flex flex-col justify-center items-start md:items-start px-6 md:px-8 my-4"}
         >
             <TaggableList

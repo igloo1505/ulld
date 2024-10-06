@@ -49,7 +49,7 @@ export interface AutoSettingsTableProps {
     modal: FC<AutoSettingFormModalProps>;
 }
 
-type PaginationLocationType = "noteSearchResult"
+export type PaginationLocationType = "noteSearchResult"
 
 export interface PaginationProps {
     totalItems: number;
@@ -111,7 +111,7 @@ export interface NotePageWrapperProps extends NoteTypePageProps {
 }
 
 export interface NoteTypeSecondaryFilterProps extends NoteTypePageProps {
-    noteType: AppConfigSchemaOutput["noteTypes"][number];
+    noteType: AppConfigSchemaOutput["noteTypes"][number] | undefined;
     data: SecondarySearchResultData;
 }
 

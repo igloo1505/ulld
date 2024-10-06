@@ -1,90 +1,91 @@
 {
-  "name": "@ulld/schemas",
-  "version": "0.0.1",
-  "dependencies": {
-    "zod": "3.23.8"
-  },
-  "exports": {
-    "./frontMatter": "./src/mdx/frontMatter/main.ts",
-    "./mdx-parsing-params": "./src/mdx/parsing/params/index.ts"
-  },
-  "files": [
-    "pluginConfig.ulld.json",
-    "src"
-  ],
-  "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {
-    "@ulld/api": "workspace:*",
-    "@ulld/configschema": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
-    "@ulld/types": "workspace:*",
-    "@ulld/typescript-config": "workspace:*",
-    "@ulld/utilities": "workspace:*",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "echo 'Add build script here'",
-    "dev": "next dev",
-    "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
-    "lint": "next lint",
-    "test": "echo 'Add test script here'"
-  },
-  "ulld-plugin-id": "6308e2a5-6859-45fa-86bc-ef3efe550061",
-  "ulld-pluginConfig": {
-    "pluginName": "@ulld/snippets",
-    "label": "Snippets",
-    "pluginId": "eb850f52-7dd1-483d-b66b-5c4f65522585",
-    "slot": "snippets",
-    "components": [
-      {
-        "componentName": "SnippetList",
-        "tags": [],
-        "slot": "SnippetList",
-        "export": "snippetList",
-        "componentId": "d27f6678-bb0f-4904-8e37-930ab0b4bafa"
-      },
-      {
-        "componentName": "SnippetFilter",
-        "tags": [],
-        "slot": "SnippetFilter",
-        "export": "snippetFilter",
-        "componentId": "d27f6678-bb0f-4904-8e37-930ab0b4bafa"
-      }
+    "name": "@ulld/schemas",
+    "version": "0.0.1",
+    "dependencies": {
+        "zod": "3.23.8"
+    },
+    "exports": {
+        "./frontMatter": "./src/mdx/frontMatter/main.ts",
+        "./mdx-parsing-params": "./src/mdx/parsing/params/index.ts"
+    },
+    "files": [
+        "pluginConfig.ulld.json",
+        "src"
     ],
-    "parsers": {},
-    "pages": [
-      {
-        "slot": "AddSnippetPage",
-        "export": "addSnippetPage",
-        "exportsPageProps": true
-      },
-      {
-        "slot": "SnippetListPage",
-        "export": "snippetsPage",
-        "exportsPageProps": false
-      }
-    ],
-    "events": {},
-    "navigationLinks": [
-      {
+    "packageManager": "pnpm@9.0.4",
+    "peerDependencies": {
+        "@ulld/api": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/utilities": "workspace:*",
+        "next": "^14.2.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "echo 'Add build script here'",
+        "dev": "next dev",
+        "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
+        "lint": "next lint",
+        "test": "echo 'Add test script here'"
+    },
+    "ulld-plugin-id": "6308e2a5-6859-45fa-86bc-ef3efe550061",
+    "ulld-pluginConfig": {
+        "pluginName": "@ulld/snippets",
         "label": "Snippets",
-        "href": "/snippets",
-        "category": "general"
-      },
-      {
-        "label": "Add Snippet",
-        "href": "/snippets/add",
-        "category": "general"
-      }
-    ],
-    "commandPalette": [],
-    "tailwind": {},
-    "styles": {}
-  }
+        "pluginId": "eb850f52-7dd1-483d-b66b-5c4f65522585",
+        "slot": "snippets",
+        "components": [
+            {
+                "componentName": "SnippetList",
+                "tags": [],
+                "slot": "SnippetList",
+                "export": "snippetList",
+                "componentId": "d27f6678-bb0f-4904-8e37-930ab0b4bafa"
+            },
+            {
+                "componentName": "SnippetFilter",
+                "tags": [],
+                "slot": "SnippetFilter",
+                "export": "snippetFilter",
+                "componentId": "d27f6678-bb0f-4904-8e37-930ab0b4bafa"
+            }
+        ],
+        "parsers": {},
+        "pages": [
+            {
+                "slot": "AddSnippetPage",
+                "export": "addSnippetPage",
+                "exportsPageProps": true
+            },
+            {
+                "slot": "SnippetListPage",
+                "export": "snippetsPage",
+                "exportsPageProps": false
+            }
+        ],
+        "events": {},
+        "navigationLinks": [
+            {
+                "label": "Snippets",
+                "href": "/snippets",
+                "category": "general"
+            },
+            {
+                "label": "Add Snippet",
+                "href": "/snippets/add",
+                "category": "general"
+            }
+        ],
+        "commandPalette": [],
+        "tailwind": {},
+        "styles": {}
+    },
+    "devDependencies": {}
 }
