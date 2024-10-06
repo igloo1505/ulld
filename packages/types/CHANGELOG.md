@@ -1,5 +1,11 @@
 # @ulld/types
 
+## 0.0.114
+
+### Patch Changes
+
+- Push several updates created while working offline.
+
 ## 0.0.113
 
 ### Patch Changes

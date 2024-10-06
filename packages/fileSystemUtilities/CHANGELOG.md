@@ -1,5 +1,11 @@
 # @ulld/fileSystemUtils
 
+## 0.0.18
+
+### Patch Changes
+
+- Push several updates created while working offline.
+
 ## 0.0.17
 
 ### Patch Changes
