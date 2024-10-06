@@ -1,5 +1,18 @@
 # @ulld/diagram
 
+## 0.0.122
+
+### Patch Changes
+
+- Still trying to resolve build issue with failed package version updates despite the npm publish succeeding.
+- Updated dependencies
+  - @ulld/api@0.0.122
+  - @ulld/typescript-config@0.0.116
+  - @ulld/developer@0.0.122
+  - @ulld/state@0.0.122
+  - @ulld/tailwind@0.0.116
+  - @ulld/types@0.0.116
+
 ## 0.0.121
 
 ### Patch Changes

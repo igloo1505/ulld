@@ -1,110 +1,110 @@
 {
-    "name": "@ulld/cli",
-    "version": "0.0.1",
-    "ava": {
-        "extensions": {
-            "ts": "module",
-            "tsx": "module"
-        },
-        "nodeArguments": [
-            "--loader=ts-node/esm"
-        ]
+  "name": "@ulld/cli",
+  "version": "0.0.2",
+  "ava": {
+    "extensions": {
+      "ts": "module",
+      "tsx": "module"
     },
-    "bin": "dist/cli.js",
-    "dependencies": {
-        "@antfu/install-pkg": "^0.4.1",
-        "@inkjs/ui": "^2.0.0",
-        "chalk": "5.3.0",
-        "cli-width": "^4.1.0",
-        "clipboard-cli": "^4.0.0",
-        "clipboardy": "^4.0.0",
-        "contains-path": "^1.0.0",
-        "cross-env": "^7.0.3",
-        "dedent": "^1.5.3",
-        "detect-package-manager": "^3.0.2",
-        "dotenv": "16.4.5",
-        "dum": "^1.0.0",
-        "execa": "^9.4.0",
-        "find-up": "^7.0.0",
-        "ink": "^5.0.1",
-        "ink-aligned": "^1.0.0",
-        "ink-ascii": "^0.0.4",
-        "ink-big-text": "^2.0.0",
-        "ink-confirm-input": "^2.0.0",
-        "ink-divider": "^3.0.0",
-        "ink-gradient": "^3.0.0",
-        "ink-link": "^4.1.0",
-        "ink-markdown": "^1.0.4",
-        "ink-multi-select": "^2.0.0",
-        "ink-progress-bar": "^3.0.0",
-        "ink-quicksearch-input": "^1.0.0",
-        "ink-redux": "^1.0.0",
-        "ink-responsive-select": "^1.3.5",
-        "ink-select-input": "^6.0.0",
-        "ink-spinner": "^5.0.0",
-        "ink-syntax-highlight": "^1.0.1",
-        "ink-tab": "^5.1.0",
-        "ink-table": "^3.1.0",
-        "ink-task-list": "^2.0.0",
-        "ink-text-input": "^6.0.0",
-        "ink-use-stdout-dimensions": "^1.0.5",
-        "log-symbols": "^7.0.0",
-        "mkdirp": "^3.0.1",
-        "node-emoji": "^2.1.3",
-        "node-fs-extra": "^0.8.2",
-        "nypm": "^0.3.11",
-        "pastel": "^3.0.0",
-        "pathe": "^1.1.2",
-        "react": "^18.2.0",
-        "shelljs": "^0.8.5",
-        "simple-git": "3.25.0",
-        "which-pm": "^3.0.0",
-        "word-wrap": "^1.2.5",
-        "xdg-app-paths": "^8.3.0",
-        "zod": "^3.23.8"
-    },
-    "devDependencies": {
-        "@sindresorhus/tsconfig": "^3.0.1",
-        "@types/dedent": "^0.7.2",
-        "@types/fs-extra": "^11.0.4",
-        "@types/ink-testing-library": "^1.0.4",
-        "@types/inquirer": "^9.0.7",
-        "@types/node": "^20.11.24",
-        "@types/node-notifier": "^8.0.5",
-        "@types/prompts": "^2.4.9",
-        "@types/react": "^18.0.32",
-        "@types/shelljs": "^0.8.15",
-        "@vdemedes/prettier-config": "^2.0.1",
-        "ava": "^5.2.0",
-        "eslint-config-xo-react": "^0.27.0",
-        "eslint-plugin-react": "^7.32.2",
-        "eslint-plugin-react-hooks": "^4.6.0",
-        "ink-testing-library": "^3.0.0",
-        "prettier": "^2.8.7",
-        "ts-node": "^10.9.1",
-        "typescript": "^5.0.3",
-        "xo": "^0.54.2"
-    },
-    "engines": {
-        "node": ">=16"
-    },
-    "files": [
-        "dist"
-    ],
-    "license": "MIT",
-    "prettier": "@vdemedes/prettier-config",
-    "scripts": {
-        "build": "tsc",
-        "dev": "tsc --watch",
-        "test": "prettier --check . && xo && ava"
-    },
-    "type": "module",
-    "xo": {
-        "extends": "xo-react",
-        "prettier": true,
-        "rules": {
-            "react/prop-types": "off"
-        }
-    },
-    "peerDependencies": {}
+    "nodeArguments": [
+      "--loader=ts-node/esm"
+    ]
+  },
+  "bin": "dist/cli.js",
+  "dependencies": {
+    "@antfu/install-pkg": "^0.4.1",
+    "@inkjs/ui": "^2.0.0",
+    "chalk": "5.3.0",
+    "cli-width": "^4.1.0",
+    "clipboard-cli": "^4.0.0",
+    "clipboardy": "^4.0.0",
+    "contains-path": "^1.0.0",
+    "cross-env": "^7.0.3",
+    "dedent": "^1.5.3",
+    "detect-package-manager": "^3.0.2",
+    "dotenv": "16.4.5",
+    "dum": "^1.0.0",
+    "execa": "^9.4.0",
+    "find-up": "^7.0.0",
+    "ink": "^5.0.1",
+    "ink-aligned": "^1.0.0",
+    "ink-ascii": "^0.0.4",
+    "ink-big-text": "^2.0.0",
+    "ink-confirm-input": "^2.0.0",
+    "ink-divider": "^3.0.0",
+    "ink-gradient": "^3.0.0",
+    "ink-link": "^4.1.0",
+    "ink-markdown": "^1.0.4",
+    "ink-multi-select": "^2.0.0",
+    "ink-progress-bar": "^3.0.0",
+    "ink-quicksearch-input": "^1.0.0",
+    "ink-redux": "^1.0.0",
+    "ink-responsive-select": "^1.3.5",
+    "ink-select-input": "^6.0.0",
+    "ink-spinner": "^5.0.0",
+    "ink-syntax-highlight": "^1.0.1",
+    "ink-tab": "^5.1.0",
+    "ink-table": "^3.1.0",
+    "ink-task-list": "^2.0.0",
+    "ink-text-input": "^6.0.0",
+    "ink-use-stdout-dimensions": "^1.0.5",
+    "log-symbols": "^7.0.0",
+    "mkdirp": "^3.0.1",
+    "node-emoji": "^2.1.3",
+    "node-fs-extra": "^0.8.2",
+    "nypm": "^0.3.11",
+    "pastel": "^3.0.0",
+    "pathe": "^1.1.2",
+    "react": "^18.2.0",
+    "shelljs": "^0.8.5",
+    "simple-git": "3.25.0",
+    "which-pm": "^3.0.0",
+    "word-wrap": "^1.2.5",
+    "xdg-app-paths": "^8.3.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@sindresorhus/tsconfig": "^3.0.1",
+    "@types/dedent": "^0.7.2",
+    "@types/fs-extra": "^11.0.4",
+    "@types/ink-testing-library": "^1.0.4",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.11.24",
+    "@types/node-notifier": "^8.0.5",
+    "@types/prompts": "^2.4.9",
+    "@types/react": "^18.0.32",
+    "@types/shelljs": "^0.8.15",
+    "@vdemedes/prettier-config": "^2.0.1",
+    "ava": "^5.2.0",
+    "eslint-config-xo-react": "^0.27.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "ink-testing-library": "^3.0.0",
+    "prettier": "^2.8.7",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.3",
+    "xo": "^0.54.2"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "peerDependencies": {},
+  "prettier": "@vdemedes/prettier-config",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "prettier --check . && xo && ava"
+  },
+  "type": "module",
+  "xo": {
+    "extends": "xo-react",
+    "prettier": true,
+    "rules": {
+      "react/prop-types": "off"
+    }
+  }
 }

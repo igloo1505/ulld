@@ -1,5 +1,15 @@
 # @ulld/developer-cli
 
+## 0.0.122
+
+### Patch Changes
+
+- Still trying to resolve build issue with failed package version updates despite the npm publish succeeding.
+- Updated dependencies
+  - @ulld/developer@0.0.122
+  - @ulld/developer-schemas@0.0.116
+  - @ulld/types@0.0.116
+
 ## 0.0.121
 
 ### Patch Changes

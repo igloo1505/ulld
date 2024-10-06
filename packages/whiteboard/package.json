@@ -1,63 +1,63 @@
 {
-    "name": "@ulld/whiteboard",
-    "version": "0.0.121",
-    "dependencies": {
-        "@excalidraw/excalidraw": "0.17.3",
-        "next": "14.2.3",
-        "perfect-freehand": "^1.2.2",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "react-sketch-canvas": "6.2.0",
-        "sass": "1.74.1",
-        "tldraw": "^2.0.2",
-        "y-indexeddb": "^9.0.12",
-        "y-webrtc": "^10.3.0",
-        "y-websocket": "^2.0.2",
-        "yjs": "^13.6.14"
-    },
-    "devDependencies": {
-        "@excalidraw/excalidraw": "0.17.3",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-sketch-canvas": "^6.2.0",
-        "sass": "1.74.1",
-        "tldraw": "^2.0.2",
-        "y-indexeddb": "^9.0.12",
-        "y-webrtc": "^10.3.0",
-        "y-websocket": "^2.0.2",
-        "yjs": "^13.6.14"
-    },
-    "exports": {
-        ".": "./src/components/whiteboard/main.tsx",
-        "./local": "./src/components/whiteboard/local.tsx"
-    },
-    "files": [
-        "src"
-    ],
-    "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {
-        "@ulld/api": "workspace:*",
-        "@ulld/developer": "workspace:*",
-        "@ulld/hooks": "workspace:*",
-        "@ulld/jest-presets": "workspace:*",
-        "@ulld/logger": "workspace:*",
-        "@ulld/state": "workspace:*",
-        "@ulld/tailwind": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "@ulld/utilities": "workspace:*",
-        "next": "^14.2.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
-    "scripts": {
-        "dev": "next dev",
-        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-        "test": "echo 'Add test script here'"
-    }
+  "name": "@ulld/whiteboard",
+  "version": "0.0.122",
+  "dependencies": {
+    "@excalidraw/excalidraw": "0.17.3",
+    "next": "14.2.3",
+    "perfect-freehand": "^1.2.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-sketch-canvas": "6.2.0",
+    "sass": "1.74.1",
+    "tldraw": "^2.0.2",
+    "y-indexeddb": "^9.0.12",
+    "y-webrtc": "^10.3.0",
+    "y-websocket": "^2.0.2",
+    "yjs": "^13.6.14"
+  },
+  "devDependencies": {
+    "@excalidraw/excalidraw": "0.17.3",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-sketch-canvas": "^6.2.0",
+    "sass": "1.74.1",
+    "tldraw": "^2.0.2",
+    "y-indexeddb": "^9.0.12",
+    "y-webrtc": "^10.3.0",
+    "y-websocket": "^2.0.2",
+    "yjs": "^13.6.14"
+  },
+  "exports": {
+    ".": "./src/components/whiteboard/main.tsx",
+    "./local": "./src/components/whiteboard/local.tsx"
+  },
+  "files": [
+    "src"
+  ],
+  "packageManager": "pnpm@9.0.4",
+  "peerDependencies": {
+    "@ulld/api": "workspace:*",
+    "@ulld/developer": "workspace:*",
+    "@ulld/hooks": "workspace:*",
+    "@ulld/jest-presets": "workspace:*",
+    "@ulld/logger": "workspace:*",
+    "@ulld/state": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
+    "@ulld/types": "workspace:*",
+    "@ulld/typescript-config": "workspace:*",
+    "@ulld/utilities": "workspace:*",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "echo 'Add test script here'"
+  }
 }

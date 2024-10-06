@@ -1,5 +1,13 @@
 # @ulld/testUtils
 
+## 0.0.20
+
+### Patch Changes
+
+- Still trying to resolve build issue with failed package version updates despite the npm publish succeeding.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.116
+
 ## 0.0.19
 
 ### Patch Changes

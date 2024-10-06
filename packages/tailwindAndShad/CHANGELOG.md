@@ -1,5 +1,14 @@
 # @ulld/tailwind
 
+## 0.0.116
+
+### Patch Changes
+
+- Still trying to resolve build issue with failed package version updates despite the npm publish succeeding.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.116
+  - @ulld/types@0.0.116
+
 ## 0.0.115
 
 ### Patch Changes

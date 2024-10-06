@@ -1,5 +1,18 @@
 # @ulld/schemas
 
+## 0.0.4
+
+### Patch Changes
+
+- Still trying to resolve build issue with failed package version updates despite the npm publish succeeding.
+- Updated dependencies
+  - @ulld/api@0.0.122
+  - @ulld/eslint-config@0.0.118
+  - @ulld/typescript-config@0.0.116
+  - @ulld/configschema@0.0.122
+  - @ulld/types@0.0.116
+  - @ulld/utilities@0.0.122
+
 ## 0.0.3
 
 ### Patch Changes

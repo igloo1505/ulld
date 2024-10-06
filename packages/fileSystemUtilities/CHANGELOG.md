@@ -1,5 +1,11 @@
 # @ulld/fileSystemUtils
 
+## 0.0.20
+
+### Patch Changes
+
+- Still trying to resolve build issue with failed package version updates despite the npm publish succeeding.
+
 ## 0.0.19
 
 ### Patch Changes

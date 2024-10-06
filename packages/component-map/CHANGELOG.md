@@ -1,5 +1,32 @@
 # @ulld/component-map
 
+## 0.0.122
+
+### Patch Changes
+
+- Still trying to resolve build issue with failed package version updates despite the npm publish succeeding.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.122
+  - @ulld/calendar@0.0.122
+  - @ulld/typescript-config@0.0.116
+  - @ulld/configschema@0.0.122
+  - @ulld/default-image-map@0.0.122
+  - @ulld/diagram@0.0.122
+  - @ulld/editor@0.0.122
+  - @ulld/embeddable-components@0.0.122
+  - @ulld/equations@0.0.122
+  - @ulld/full-form@0.0.122
+  - @ulld/journal@0.0.122
+  - @ulld/navigation@0.0.122
+  - @ulld/notebook@0.0.122
+  - @ulld/pdf@0.0.122
+  - @ulld/plot@0.0.122
+  - @ulld/snippets@0.0.122
+  - @ulld/tailwind@0.0.116
+  - @ulld/task-manager@0.0.122
+  - @ulld/types@0.0.116
+  - @ulld/whiteboard@0.0.122
+
 ## 0.0.121
 
 ### Patch Changes
