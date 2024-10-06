@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useMemo, useState } from "react";
-import { PaginationProps } from "../../../types/general";
+import { PaginationLocationType, PaginationProps } from "../../../types/general";
 import { parsePaginationTemplateString } from "@ulld/utilities/paginationUtils";
 import { buttonVariants } from "@ulld/tailwind/button";
 import Link from "next/link";
@@ -107,6 +107,11 @@ const getPagination = (
     return itemsData;
 };
 
+
+const containerClasses: {[K in PaginationLocationType]?: string} = {
+  noteSearchResult: "mt-8 mb-12"
+}
+
 const PaginationGroup = (props: PaginationGroupProps) => {
     const [vpWidth, setVpWidth] = useState<number>(0);
     const data = useMemo(
@@ -139,7 +144,7 @@ const PaginationGroup = (props: PaginationGroupProps) => {
     return (
         <div
             className={
-                "flex flex-row justify-center items-center gap-4 w-full flex-wrap px-3 py-1 my-6 sm:mt-8 md:mt-12"
+                cn("flex flex-row justify-center items-center gap-4 w-full flex-wrap px-3 py-1", props.implementationType ? containerClasses[props.implementationType] : "mb-6 sm:mt-8 md:mt-12")
             }
         >
             {data.map((d) => (

@@ -8,22 +8,20 @@ import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 import NoteSummaryItem from "#/components/slots/search/items/noteSummary";
 import NotesSearchResultsListComponent from "#/components/slots/search/lists/noteSearchResultsList";
 import PaginationGroup from "#/components/slots/ui/pagination";
-import { paginateTemplateString } from "@ulld/utilities/paginationUtils";
-import { searchAllParamsToSearchParamsClass } from "@ulld/utilities/searchUtils";
 import NoteTypeSecondaryFilterTemplate from "#/components/notePageComponents/secondaryNoteTypeFilter";
 import { notFound } from "next/navigation";
+import { getFilteredSearchResults } from "@ulld/api/getFilteredSearchResults";
 
 const categoryId: string = "<<CATEGORY_ID>>";
 
 const baseUrl: string = "<<BASE_URL>>"
 
-const MathPage = async (props: NoteTypePageProps) => {
-    const docTypeData = appConfig.noteTypes.find((n) => n.id === categoryId);
-    const filter = new NoteFilter(categoryId, props?.searchParams);
-    await filter.defaultCategorySearch(true, appConfig as AppConfigSchemaOutput);
-    let sp = searchAllParamsToSearchParamsClass(props.searchParams)
-    sp.set("page", paginateTemplateString)
-    let secondaryData = await filter.getQuerySecondaryData(appConfig as AppConfigSchemaOutput)
+const NoteTypeGeneratedPage = async (props: NoteTypePageProps) => {
+    const { docTypeData, sp, filter, secondaryData } = await getFilteredSearchResults({
+        categoryId,
+        appConfig,
+        searchParams: props.searchParams
+    });
 
     if(!docTypeData){
         return notFound();
@@ -40,6 +38,7 @@ const MathPage = async (props: NoteTypePageProps) => {
                 noteType={docTypeData as AppConfigSchemaOutput["noteTypes"][number]}
             />
             <NoteTypeSearchResultList
+                secondaryData={secondaryData}
                 notes={
                     <NotesSearchResultsListComponent>
                         {filter.notes.map((item, i) => (
@@ -58,11 +57,12 @@ const MathPage = async (props: NoteTypePageProps) => {
                 totalItems={filter.totalFound}
                 itemsPerPage={filter.perPage}
                 hrefTemplate={`${baseUrl}?${sp.toString()}`}
+                implementationType="noteSearchResult"
             />
         </NotePageWrapperTemplate>
     );
 };
 
-MathPage.displayName = "MathPage";
+NoteTypeGeneratedPage.displayName = `NoteTypeGeneratedPage-${categoryId}`;
 
-export default MathPage;
+export default NoteTypeGeneratedPage;

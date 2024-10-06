@@ -1,6 +1,5 @@
 import React from "react";
 import { NoteTypeSecondaryFilterProps } from "../../../types/general";
-import clsx from "clsx";
 import TaggableList from "./taggableList";
 import { ArrayUtilities } from "@ulld/utilities/arrayUtilities";
 
@@ -9,19 +8,12 @@ const NoteTypeSecondaryFilter = ({
     noteType,
     searchParams: sp,
 }: NoteTypeSecondaryFilterProps) => {
-    if (!noteType) {
+    if (!noteType || (!data.topics.length && !data.subjects.length && !data.tags.length)) {
         return null;
     }
     return (
         <div
-            className={clsx(
-                "w-full h-fit",
-                Boolean(
-                    data.topics.length > 0 ||
-                    data.subjects.length > 0 ||
-                    data.tags.length > 0,
-                ) && "mb-3",
-            )}
+            className={"h-fit w-full flex flex-col justify-center items-start md:items-start px-6 md:px-8 my-4"}
         >
             <TaggableList
                 type="subject"

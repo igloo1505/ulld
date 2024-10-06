@@ -9,10 +9,9 @@ import NotesSearchResultsList from "../../components/slots/noteSearchResultsList
 import NoteSummaryWrapper from "../../components/slots/noteSummarySearchResult/main";
 import { mdxNoteSummaryWithMdxTransforms } from "../../../../api/src/classes/prismaMdxRelations/schemas/withMdxTransforms";
 import appConfig from "../../../appConfig.ulld.json";
-import { paginateTemplateString } from "@ulld/utilities/paginationUtils";
-import { searchAllParamsToSearchParamsClass } from "@ulld/utilities/searchUtils";
 import { getFilteredSearchResults } from "@ulld/api/getFilteredSearchResults";
 import { readDevelopmentAppConfig } from "@ulld/developer/readAppConfig";
+import PaginationGroup from "../../components/slots/pagination/main";
 
 interface SearchResultTestPageProps {
   params: any;
@@ -35,25 +34,29 @@ const getTestTaggable = (n: number) => {
 
 /* const notes = mdxNoteSummaryWithMdxTransforms.array().parse(getFakeNotes(20)); */
 
+const baseUrl = "/physics";
+
 const SearchResultTestPage = async (props: SearchResultTestPageProps) => {
-  const appConfig = await readDevelopmentAppConfig();
-  const { docTypeData, sp, filter, secondaryData } = await getFilteredSearchResults({
-    categoryId: "physics",
-    appConfig,
-  });
+  const appConfig = readDevelopmentAppConfig();
+  const { docTypeData, sp, filter, secondaryData } =
+    await getFilteredSearchResults({
+      categoryId: "physics",
+      appConfig,
+    });
   return (
     <NotePageWrapper {...props} toc={NoteDetailsSheet}>
       <NoteTypeSecondaryFilter
         {...props}
         data={{
           ...secondaryData,
-          /* tags: getTestTaggable(20), */
-          subjects: [],
-          topics: [],
+          tags: getTestTaggable(20),
+          subjects: getTestTaggable(6),
+          topics: getTestTaggable(4),
         }}
         noteType={docTypeData}
       />
       <NoteTypeSearchResultList
+        secondaryData={secondaryData}
         notes={
           <NotesSearchResultsList>
             {filter.notes.map((item, i) => (
@@ -66,6 +69,15 @@ const SearchResultTestPage = async (props: SearchResultTestPageProps) => {
             ))}
           </NotesSearchResultsList>
         }
+      />
+      <PaginationGroup
+        currentPage={
+          props.searchParams?.page ? parseInt(props.searchParams.page) : 1
+        }
+        totalItems={filter.totalFound}
+        itemsPerPage={filter.perPage}
+        hrefTemplate={`${baseUrl}?${sp.toString()}`}
+        implementationType="noteSearchResult"
       />
     </NotePageWrapper>
   );

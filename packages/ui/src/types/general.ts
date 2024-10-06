@@ -12,6 +12,10 @@ import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import { NoteDetailSheetProps } from "@ulld/navigation/types";
 
+type SecondarySearchResultData = Awaited<
+        ReturnType<InstanceType<typeof NoteFilter>["getQuerySecondaryData"]>
+    >
+
 
 export interface ToastConfigType {
     destructive?: boolean;
@@ -45,12 +49,15 @@ export interface AutoSettingsTableProps {
     modal: FC<AutoSettingFormModalProps>;
 }
 
+type PaginationLocationType = "noteSearchResult"
+
 export interface PaginationProps {
     totalItems: number;
     itemsPerPage: number;
     currentPage: number;
     /** Use getPaginationTemplateString exported from @ulld/utilities/paginationUtils to generate a template string, and use parsePaginationTemplateString exported from the same place to parse that string for a given page number. This avoids passing functions to possible client components and the need to pass more strings than needed to the pagination component. */
     hrefTemplate: string;
+    implementationType?: PaginationLocationType
 }
 
 export interface DictionaryItemProps {
@@ -93,7 +100,9 @@ export interface LoadingIndicatorProps {
 export type NoteTypeSearchResultListProps = Pick<
     SearchResultsPageProps,
     "notes"
->;
+> & {
+    secondaryData: SecondarySearchResultData
+};
 
 export interface NotePageWrapperProps extends NoteTypePageProps {
     children: ReactNode;
@@ -103,9 +112,7 @@ export interface NotePageWrapperProps extends NoteTypePageProps {
 
 export interface NoteTypeSecondaryFilterProps extends NoteTypePageProps {
     noteType: AppConfigSchemaOutput["noteTypes"][number];
-    data: Awaited<
-        ReturnType<InstanceType<typeof NoteFilter>["getQuerySecondaryData"]>
-    >;
+    data: SecondarySearchResultData;
 }
 
 
