@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.0.117
+
+### Patch Changes
+
+- Build script didn't update @ulld/api package.json exports field for some reason. Need to investigate when on power.
+
 ## 0.0.116
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ulld/testUtils
 
+## 0.0.19
+
+### Patch Changes
+
+- Build script didn't update @ulld/api package.json exports field for some reason. Need to investigate when on power.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.115
+
 ## 0.0.18
 
 ### Patch Changes

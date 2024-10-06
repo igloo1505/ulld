@@ -1,5 +1,13 @@
 # @repo/jest-presets
 
+## 0.0.115
+
+### Patch Changes
+
+- Build script didn't update @ulld/api package.json exports field for some reason. Need to investigate when on power.
+- Updated dependencies
+  - @ulld/types@0.0.115
+
 ## 0.0.114
 
 ### Patch Changes

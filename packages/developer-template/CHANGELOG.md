@@ -1,5 +1,29 @@
 # @ulld/developer-template
 
+## 0.0.121
+
+### Patch Changes
+
+- Build script didn't update @ulld/api package.json exports field for some reason. Need to investigate when on power.
+- Updated dependencies
+  - @ulld/api@0.0.121
+  - @ulld/base-configs@0.0.115
+  - @ulld/eslint-config@0.0.117
+  - @ulld/typescript-config@0.0.115
+  - @ulld/configschema@0.0.121
+  - @ulld/database@0.0.118
+  - @ulld/developer@0.0.121
+  - @ulld/hooks@0.0.121
+  - @ulld/icons@0.0.121
+  - @ulld/jest-presets@0.0.115
+  - @ulld/logger@0.0.115
+  - @ulld/parsers@0.0.121
+  - @ulld/state@0.0.121
+  - @ulld/tailwind@0.0.115
+  - @ulld/types@0.0.115
+  - @ulld/ui@0.0.119
+  - @ulld/utilities@0.0.121
+
 ## 0.0.120
 
 ### Patch Changes

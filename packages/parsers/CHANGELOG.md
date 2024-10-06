@@ -1,5 +1,21 @@
 # @ulld/parsers
 
+## 0.0.121
+
+### Patch Changes
+
+- Build script didn't update @ulld/api package.json exports field for some reason. Need to investigate when on power.
+- Updated dependencies
+  - @ulld/api@0.0.121
+  - @ulld/component-map@0.0.121
+  - @ulld/typescript-config@0.0.115
+  - @ulld/configschema@0.0.121
+  - @ulld/database@0.0.118
+  - @ulld/developer@0.0.121
+  - @ulld/schemas@0.0.3
+  - @ulld/types@0.0.115
+  - @ulld/utilities@0.0.121
+
 ## 0.0.120
 
 ### Patch Changes

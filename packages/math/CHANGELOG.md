@@ -1,5 +1,20 @@
 # @ulld/math
 
+## 0.0.121
+
+### Patch Changes
+
+- Build script didn't update @ulld/api package.json exports field for some reason. Need to investigate when on power.
+- Updated dependencies
+  - @ulld/typescript-config@0.0.115
+  - @ulld/configschema@0.0.121
+  - @ulld/hooks@0.0.121
+  - @ulld/icons@0.0.121
+  - @ulld/jest-presets@0.0.115
+  - @ulld/state@0.0.121
+  - @ulld/types@0.0.115
+  - @ulld/utilities@0.0.121
+
 ## 0.0.120
 
 ### Patch Changes

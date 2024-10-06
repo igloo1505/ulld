@@ -1,44 +1,44 @@
 {
-    "name": "@ulld/calendar",
-    "version": "0.0.120",
-    "dependencies": {
-        "dayjs": "^1.11.10",
-        "googleapis": "^140.0.1",
-        "ical.js": "2.0.0",
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "use-lilius": "^2.0.5"
-    },
-    "devDependencies": {
-        "dayjs": "^1.11.10",
-        "googleapis": "^140.0.1",
-        "ical.js": "2.0.0",
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "use-lilius": "^2.0.5"
-    },
-    "exports": {
-        "./types": "./src/types.ts"
-    },
-    "files": [
-        "src"
-    ],
-    "packageManager": "pnpm@9.0.4",
-    "peerDependencies": {
-        "@ulld/developer": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "use-lilius": "^2.0.5"
-    },
-    "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
-    "scripts": {
-        "build": "echo 'Add build script here'",
-        "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
-        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-        "test": "echo 'Add test script here'"
-    }
+  "name": "@ulld/calendar",
+  "version": "0.0.121",
+  "dependencies": {
+    "dayjs": "^1.11.10",
+    "googleapis": "^140.0.1",
+    "ical.js": "2.0.0",
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "use-lilius": "^2.0.5"
+  },
+  "devDependencies": {
+    "dayjs": "^1.11.10",
+    "googleapis": "^140.0.1",
+    "ical.js": "2.0.0",
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "use-lilius": "^2.0.5"
+  },
+  "exports": {
+    "./types": "./src/types.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "packageManager": "pnpm@9.0.4",
+  "peerDependencies": {
+    "@ulld/developer": "workspace:*",
+    "@ulld/types": "workspace:*",
+    "use-lilius": "^2.0.5"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "echo 'Add build script here'",
+    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "echo 'Add test script here'"
+  }
 }

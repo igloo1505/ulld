@@ -1,5 +1,20 @@
 # @ulld/kanban
 
+## 0.0.121
+
+### Patch Changes
+
+- Build script didn't update @ulld/api package.json exports field for some reason. Need to investigate when on power.
+- Updated dependencies
+  - @ulld/api@0.0.121
+  - @ulld/typescript-config@0.0.115
+  - @ulld/developer@0.0.121
+  - @ulld/jest-presets@0.0.115
+  - @ulld/logger@0.0.115
+  - @ulld/state@0.0.121
+  - @ulld/tailwind@0.0.115
+  - @ulld/types@0.0.115
+
 ## 0.0.120
 
 ### Patch Changes

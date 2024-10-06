@@ -1,5 +1,32 @@
 # @ulld/component-map
 
+## 0.0.121
+
+### Patch Changes
+
+- Build script didn't update @ulld/api package.json exports field for some reason. Need to investigate when on power.
+- Updated dependencies
+  - @ulld/bib-manager@0.0.121
+  - @ulld/calendar@0.0.121
+  - @ulld/typescript-config@0.0.115
+  - @ulld/configschema@0.0.121
+  - @ulld/default-image-map@0.0.121
+  - @ulld/diagram@0.0.121
+  - @ulld/editor@0.0.121
+  - @ulld/embeddable-components@0.0.121
+  - @ulld/equations@0.0.121
+  - @ulld/full-form@0.0.121
+  - @ulld/journal@0.0.121
+  - @ulld/navigation@0.0.121
+  - @ulld/notebook@0.0.121
+  - @ulld/pdf@0.0.121
+  - @ulld/plot@0.0.121
+  - @ulld/snippets@0.0.121
+  - @ulld/tailwind@0.0.115
+  - @ulld/task-manager@0.0.121
+  - @ulld/types@0.0.115
+  - @ulld/whiteboard@0.0.121
+
 ## 0.0.120
 
 ### Patch Changes
