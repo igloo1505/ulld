@@ -1,6 +1,6 @@
 {
   "name": "@ulld/navigation",
-  "version": "0.0.122",
+  "version": "0.0.124",
   "dependencies": {
     "autoprefixer": "10.4.18",
     "fuse.js": "7.0.0",

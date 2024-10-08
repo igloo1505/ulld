@@ -5,7 +5,6 @@ import { Route } from 'next'
 import { useRouter } from 'next/navigation'
 
 
-
 export interface CommandPaletteItemProps {
     children: React.ReactNode
     onSelect?: ((s?: string) => void) | ({ push: Route })

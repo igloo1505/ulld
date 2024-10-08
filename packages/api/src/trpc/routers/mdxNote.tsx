@@ -12,7 +12,6 @@ import { parseMdxStringParamTRPCSchema } from "@ulld/parsers/mdx/compilerTypes";
 import { formatMdxString } from "@ulld/parsers/formatMdxString";
 import { internalMdxStringParseParamSchemaOptionalAppConfig } from "@ulld/schemas/mdx-parsing-params";
 import {
-    mdxToHtml,
     mdxToHtmlWithoutRender,
 } from "@ulld/parsers/serverMdxToHtml";
 import { getComponentMap } from "@ulld/component-map/server";

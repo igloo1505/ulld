@@ -1,6 +1,6 @@
 {
   "name": "@ulld/developer",
-  "version": "0.0.122",
+  "version": "0.0.124",
   "dependencies": {
     "next": "14.2.3",
     "react": "18.2.0",

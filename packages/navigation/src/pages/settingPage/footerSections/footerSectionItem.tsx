@@ -1,9 +1,8 @@
-import React, { ReactNode } from "react";
+import React, { PointerEvent } from "react";
 import { NavigationFormSettingSchema } from "../form/schema";
-import FooterSectionItemLink from "./footerSectionItemLink";
 import { PlusIcon, XIcon } from "lucide-react";
 import { useFormContext } from "@ulld/full-form/form";
-import { ReorderStringInput } from "@ulld/full-form/reorder";
+import { Reorder, useDragControls } from "framer-motion";
 import {
     ContextMenu,
     ContextMenuTrigger,
@@ -12,15 +11,17 @@ import {
 } from "@ulld/tailwind/context-menu";
 import { useNavigationSettingsDispatch } from "../context";
 import FooterSectionLinkList from "./footerSectionLinkList";
+import { motion } from "framer-motion";
 
 interface FooterSectionProps {
     item: NavigationFormSettingSchema["footerSections"][number];
     idx: number;
+    isRow: boolean;
 }
 
 interface AddItemButtonProps {
     disabled: boolean;
-    sectionIndex: number
+    sectionIndex: number;
 }
 
 interface FooterSectionLabelProps {
@@ -29,7 +30,7 @@ interface FooterSectionLabelProps {
 }
 
 const AddItemButton = ({ disabled, sectionIndex }: AddItemButtonProps) => {
-    const dispatch = useNavigationSettingsDispatch()
+    const dispatch = useNavigationSettingsDispatch();
     return (
         <button
             disabled={disabled}
@@ -39,8 +40,8 @@ const AddItemButton = ({ disabled, sectionIndex }: AddItemButtonProps) => {
             onClick={() => {
                 dispatch({
                     type: "addFooterItemLink",
-                    payload: sectionIndex
-                })
+                    payload: sectionIndex,
+                });
             }}
         >
             <PlusIcon className={"w-4 h-4 inline-block mr-2"} />
@@ -73,13 +74,24 @@ const FooterSectionLabel = ({ label, idx }: FooterSectionLabelProps) => {
     );
 };
 
-const FooterSection = ({ item, idx }: FooterSectionProps) => {
+const FooterSection = ({ item, idx, isRow }: FooterSectionProps) => {
+    const controls = useDragControls();
+    function startDrag(event: PointerEvent<Element> | PointerEvent) {
+        controls.start(event, { snapToCursor: false });
+    }
+
     const form = useFormContext<NavigationFormSettingSchema>();
+
     return (
-        <div
+        <Reorder.Item
             className={
-                "w-full relative flex flex-col justify-start items-center h-fit p-4 bg-card/80 border rounded-lg"
+                "w-full relative flex flex-col justify-start items-center h-fit p-4 bg-card border rounded-lg select-none"
             }
+            drag={isRow ? "x" : "y"}
+            key={item.label}
+            value={item}
+            dragListener={false}
+            dragControls={controls}
         >
             <XIcon
                 className={
@@ -92,21 +104,22 @@ const FooterSection = ({ item, idx }: FooterSectionProps) => {
                     );
                 }}
             />
-            <div className={"w-full"}>
+            <motion.div
+                className={"w-full cursor-grab"}
+                onPointerDown={startDrag}
+                whileDrag={{
+                    cursor: "grabbing",
+                }}
+            >
                 <FooterSectionLabel label={item.label} idx={idx} />
-            </div>
+            </motion.div>
             <div className={"w-full flex flex-col justify-center items-center"}>
-                <>
-                    <FooterSectionLinkList items={item.items} sectionIndex={idx} />
-                    {item.items.length < 5 && (
-                        <AddItemButton
-                                sectionIndex={idx}
-                                disabled={item.items.length >= 5}
-                            />
-                    )}
-                </>
+                <FooterSectionLinkList items={item.items} sectionIndex={idx} />
+                {item.items.length < 5 && (
+                    <AddItemButton sectionIndex={idx} disabled={item.items.length >= 5} />
+                )}
             </div>
-        </div>
+        </Reorder.Item>
     );
 };
 

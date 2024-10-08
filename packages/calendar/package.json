@@ -1,6 +1,6 @@
 {
   "name": "@ulld/calendar",
-  "version": "0.0.122",
+  "version": "0.0.124",
   "dependencies": {
     "dayjs": "^1.11.10",
     "googleapis": "^140.0.1",

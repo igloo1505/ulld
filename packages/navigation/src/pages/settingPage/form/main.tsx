@@ -5,6 +5,7 @@ import FooterSectionForm from "../footerSections/footerSectionFormSection";
 import { Form } from "@ulld/tailwind/form";
 import { useForm, zodResolver } from "@ulld/full-form/form";
 import {
+    developmentDefaultValues,
     navigationFormSettingSchema,
     NavigationFormWithUtilityFields,
 } from "./schema";
@@ -13,13 +14,15 @@ import SidebarLinksFormSection from "../sidebarLinks/formSection";
 
 interface NavigationSettingsFormProps { }
 
+
 const NavigationSettingsForm = (props: NavigationSettingsFormProps) => {
+    const defaultValues: NavigationFormWithUtilityFields = {
+        footerSections: [],
+        footerSectionInput: "",
+    };
     const form = useForm<NavigationFormWithUtilityFields>({
         resolver: zodResolver(navigationFormSettingSchema),
-        defaultValues: {
-            footerSections: [],
-            footerSectionInput: "",
-        },
+        defaultValues: developmentDefaultValues,
     });
 
     return (

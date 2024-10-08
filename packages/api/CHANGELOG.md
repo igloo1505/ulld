@@ -1,5 +1,33 @@
 # @ulld/api
 
+## 0.0.124
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/schemas@0.0.3
+  - @ulld/parsers@0.0.124
+  - @ulld/render@0.0.124
+  - @ulld/state@0.0.124
+  - @ulld/component-map@0.0.124
+  - @ulld/configschema@0.0.124
+  - @ulld/utilities@0.0.124
+  - @ulld/developer@0.0.124
+
+## 0.0.123
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/schemas@0.0.2
+  - @ulld/parsers@0.0.123
+  - @ulld/render@0.0.123
+  - @ulld/state@0.0.123
+  - @ulld/component-map@0.0.123
+  - @ulld/configschema@0.0.123
+  - @ulld/utilities@0.0.123
+  - @ulld/developer@0.0.123
+
 ## 0.0.122
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@ulld/build",
-  "version": "0.0.121",
+  "version": "0.0.123",
   "bin": {
     "ulld": "./bin/run.js"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@ulld/configschema",
-  "version": "0.0.122",
+  "version": "0.0.124",
   "dependencies": {
     "@testing-library/cypress": "^10.0.1",
     "@testing-library/dom": "^9.3.4",

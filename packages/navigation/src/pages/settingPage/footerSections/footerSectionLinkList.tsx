@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { ReactNode, useEffect, useState } from "react";
 import { Reorder } from "framer-motion";
 import {
@@ -14,36 +14,52 @@ interface FooterSectionLinkListProps {
 }
 
 const FooterSectionLinkList = ({
-    items,
+    items: _items,
     sectionIndex,
 }: FooterSectionLinkListProps) => {
     const form = useFormContext<NavigationFormWithUtilityFields>();
+    const [items, setItems] = useState(_items);
+
+    useEffect(() => {
+        setItems(_items);
+    }, [_items]);
+
+    const updateSectionList = (newItems = items) => {
+        form.setValue(
+            "footerSections",
+            form.getValues("footerSections").map((x, i) =>
+                i === sectionIndex
+                    ? {
+                        ...x,
+                        items: newItems,
+                    }
+                    : x,
+            ),
+        );
+    };
 
     return (
         <Reorder.Group
+            className={
+                "not-prose flex flex-col justify-start items-center gap-2 w-full max-w-full"
+            }
             axis="y"
             values={items}
             onReorder={(newItems) => {
-                form.setValue(
-                    "footerSections",
-                    form.getValues("footerSections").map((x, i) =>
-                        i === sectionIndex
-                            ? {
-                                ...x,
-                                items: newItems,
-                            }
-                            : x,
-                    ),
-                );
+                console.count("newItems");
+                /* setItems(newItems) */
+                updateSectionList(newItems);
             }}
-            className={
-                "w-full max-w-full space-y-2"
-            }
         /* as={as} */
         >
-            {items.map((item, i) => {
+            {items?.map((item, i) => {
                 return (
-                    <FooterSectionItemLink item={item} itemIndex={i} sectionIndex={sectionIndex} />
+                    <FooterSectionItemLink
+                        key={`${item.label}-linkItem-comp`}
+                        item={item}
+                        itemIndex={i}
+                        sectionIndex={sectionIndex}
+                    />
                 );
             })}
         </Reorder.Group>

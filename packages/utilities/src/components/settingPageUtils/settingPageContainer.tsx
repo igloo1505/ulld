@@ -5,16 +5,27 @@ export interface SettingPageContainerProps {
     title?: ReactNode;
     children: ReactNode;
     className?: string;
+    titleClassName?: string;
 }
 
 export const SettingPageContainer = ({
     children,
     title,
     className,
+    titleClassName,
 }: SettingPageContainerProps) => {
     return (
         <div className={cn("@container/settings-container space-y-6", className)}>
-            {title && <h1 className={"text-4xl font-bold border-b rounded pb-4 w-fit sm:pr-8"}>{title}</h1>}
+            {title && (
+                <h1
+                    className={cn(
+                        "text-4xl font-bold rounded pb-4 w-fit sm:pr-8",
+                        titleClassName,
+                    )}
+                >
+                    {title}
+                </h1>
+            )}
             {children}
         </div>
     );

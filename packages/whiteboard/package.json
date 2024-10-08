@@ -1,6 +1,6 @@
 {
   "name": "@ulld/whiteboard",
-  "version": "0.0.122",
+  "version": "0.0.124",
   "dependencies": {
     "@excalidraw/excalidraw": "0.17.3",
     "next": "14.2.3",

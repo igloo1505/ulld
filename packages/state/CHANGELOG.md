@@ -1,5 +1,25 @@
 # @ulld/state
 
+## 0.0.124
+
+### Patch Changes
+
+- @ulld/parsers@0.0.124
+- @ulld/hooks@0.0.124
+- @ulld/configschema@0.0.124
+- @ulld/utilities@0.0.124
+- @ulld/developer@0.0.124
+
+## 0.0.123
+
+### Patch Changes
+
+- @ulld/parsers@0.0.123
+- @ulld/hooks@0.0.123
+- @ulld/configschema@0.0.123
+- @ulld/utilities@0.0.123
+- @ulld/developer@0.0.123
+
 ## 0.0.122
 
 ### Patch Changes

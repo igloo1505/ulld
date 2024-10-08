@@ -45,4 +45,3 @@ Create local development environment | tsx /Users/bigsexy/Desktop/current/ulld/b
 Set sandbox dependency paths to local source | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/developmentSetup/setSandboxSourcesToLocal.ts
 Copy database client for local development | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/developmentSetup/copyDatabaseClientForLocalDev.zsh
 Copy database schemas to schemas package | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/syncGlobalData/copyDatabaseSchemas.ts
-

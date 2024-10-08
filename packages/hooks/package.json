@@ -1,6 +1,6 @@
 {
   "name": "@ulld/hooks",
-  "version": "0.0.122",
+  "version": "0.0.124",
   "dependencies": {
     "@mdx-js/mdx": "3.0.1",
     "@mdx-js/react": "3.0.1",

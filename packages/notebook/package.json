@@ -1,6 +1,6 @@
 {
   "name": "@ulld/notebook",
-  "version": "0.0.122",
+  "version": "0.0.124",
   "dependencies": {
     "@datalayer/jupyter-react": "^0.18.3",
     "@jupyterlab/services": "^7.2.4",

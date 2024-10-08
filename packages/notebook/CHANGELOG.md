@@ -1,5 +1,33 @@
 # @ulld/notebook
 
+## 0.0.124
+
+### Patch Changes
+
+- @ulld/api@0.0.124
+- @ulld/hooks@0.0.124
+- @ulld/ui@0.0.122
+- @ulld/editor@0.0.124
+- @ulld/state@0.0.124
+- @ulld/icons@0.0.124
+- @ulld/configschema@0.0.124
+- @ulld/utilities@0.0.124
+- @ulld/developer@0.0.124
+
+## 0.0.123
+
+### Patch Changes
+
+- @ulld/api@0.0.123
+- @ulld/hooks@0.0.123
+- @ulld/ui@0.0.121
+- @ulld/editor@0.0.123
+- @ulld/state@0.0.123
+- @ulld/icons@0.0.123
+- @ulld/configschema@0.0.123
+- @ulld/utilities@0.0.123
+- @ulld/developer@0.0.123
+
 ## 0.0.122
 
 ### Patch Changes

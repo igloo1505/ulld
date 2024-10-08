@@ -1,6 +1,6 @@
 {
   "name": "@ulld/chat",
-  "version": "0.0.122",
+  "version": "0.0.124",
   "dependencies": {
     "@discordjs/next": "0.1.1-dev.1673526225-a580768.0",
     "@discordjs/rest": "2.2.0",
@@ -8,6 +8,7 @@
     "@slack/types": "^2.11.0",
     "bufferutil": "4.0.8",
     "discord.js": "14.14.1",
+    "localtunnel": "^2.0.2",
     "next": "14.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",

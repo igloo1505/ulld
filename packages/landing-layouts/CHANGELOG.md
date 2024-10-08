@@ -1,5 +1,43 @@
 # @ulld/landing-layouts
 
+## 0.0.124
+
+### Patch Changes
+
+- @ulld/api@0.0.124
+- @ulld/bib-manager@0.0.124
+- @ulld/hooks@0.0.124
+- @ulld/journal@0.0.124
+- @ulld/plot@0.0.124
+- @ulld/render@0.0.124
+- @ulld/ui@0.0.122
+- @ulld/whiteboard@0.0.124
+- @ulld/state@0.0.124
+- @ulld/icons@0.0.124
+- @ulld/configschema@0.0.124
+- @ulld/utilities@0.0.124
+- @ulld/developer@0.0.124
+- @ulld/calendar@0.0.124
+
+## 0.0.123
+
+### Patch Changes
+
+- @ulld/api@0.0.123
+- @ulld/bib-manager@0.0.123
+- @ulld/hooks@0.0.123
+- @ulld/journal@0.0.123
+- @ulld/plot@0.0.123
+- @ulld/render@0.0.123
+- @ulld/ui@0.0.121
+- @ulld/whiteboard@0.0.123
+- @ulld/state@0.0.123
+- @ulld/icons@0.0.123
+- @ulld/configschema@0.0.123
+- @ulld/utilities@0.0.123
+- @ulld/developer@0.0.123
+- @ulld/calendar@0.0.123
+
 ## 0.0.122
 
 ### Patch Changes

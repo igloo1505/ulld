@@ -1,5 +1,14 @@
 # @ulld/schemas
 
+## 0.0.5
+
+### Patch Changes
+
+- Update mismatched import.
+  - @ulld/api@0.0.124
+  - @ulld/configschema@0.0.124
+  - @ulld/utilities@0.0.124
+
 ## 0.0.4
 
 ### Patch Changes

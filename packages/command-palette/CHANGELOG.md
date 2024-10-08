@@ -1,5 +1,49 @@
 # @ulld/command-palette
 
+## 0.0.124
+
+### Patch Changes
+
+- @ulld/api@0.0.124
+- @ulld/parsers@0.0.124
+- @ulld/bib-manager@0.0.124
+- @ulld/diagram@0.0.124
+- @ulld/equations@0.0.124
+- @ulld/hooks@0.0.124
+- @ulld/render@0.0.124
+- @ulld/snippets@0.0.124
+- @ulld/task-manager@0.0.124
+- @ulld/ui@0.0.122
+- @ulld/whiteboard@0.0.124
+- @ulld/editor@0.0.124
+- @ulld/state@0.0.124
+- @ulld/configschema@0.0.124
+- @ulld/utilities@0.0.124
+- @ulld/developer@0.0.124
+- @ulld/calendar@0.0.124
+
+## 0.0.123
+
+### Patch Changes
+
+- @ulld/api@0.0.123
+- @ulld/parsers@0.0.123
+- @ulld/bib-manager@0.0.123
+- @ulld/diagram@0.0.123
+- @ulld/equations@0.0.123
+- @ulld/hooks@0.0.123
+- @ulld/render@0.0.123
+- @ulld/snippets@0.0.123
+- @ulld/task-manager@0.0.123
+- @ulld/ui@0.0.121
+- @ulld/whiteboard@0.0.123
+- @ulld/editor@0.0.123
+- @ulld/state@0.0.123
+- @ulld/configschema@0.0.123
+- @ulld/utilities@0.0.123
+- @ulld/developer@0.0.123
+- @ulld/calendar@0.0.123
+
 ## 0.0.122
 
 ### Patch Changes

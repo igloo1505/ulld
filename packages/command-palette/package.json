@@ -1,6 +1,6 @@
 {
   "name": "@ulld/command-palette",
-  "version": "0.0.122",
+  "version": "0.0.124",
   "dependencies": {
     "cmdk": "^0.2.0",
     "fumadocs-core": "13.4.1",

@@ -28,7 +28,7 @@ const FooterSectionForm = (props: FooterSectionFormProps) => {
     let secs = form.watch("footerSections");
 
     return (
-        <div className={"w-full space-y-6"}>
+        <div id="nav-settings-footer-sec" className={"w-full space-y-6"}>
             <div className={"inline"}>
                 <TextInput
                     name="footerSectionInput"

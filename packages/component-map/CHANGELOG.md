@@ -1,5 +1,49 @@
 # @ulld/component-map
 
+## 0.0.124
+
+### Patch Changes
+
+- @ulld/bib-manager@0.0.124
+- @ulld/diagram@0.0.124
+- @ulld/embeddable-components@0.0.124
+- @ulld/equations@0.0.124
+- @ulld/full-form@0.0.124
+- @ulld/journal@0.0.124
+- @ulld/navigation@0.0.124
+- @ulld/notebook@0.0.124
+- @ulld/pdf@0.0.124
+- @ulld/plot@0.0.124
+- @ulld/snippets@0.0.124
+- @ulld/task-manager@0.0.124
+- @ulld/whiteboard@0.0.124
+- @ulld/editor@0.0.124
+- @ulld/configschema@0.0.124
+- @ulld/default-image-map@0.0.124
+- @ulld/calendar@0.0.124
+
+## 0.0.123
+
+### Patch Changes
+
+- @ulld/bib-manager@0.0.123
+- @ulld/diagram@0.0.123
+- @ulld/embeddable-components@0.0.123
+- @ulld/equations@0.0.123
+- @ulld/full-form@0.0.123
+- @ulld/journal@0.0.123
+- @ulld/navigation@0.0.123
+- @ulld/notebook@0.0.123
+- @ulld/pdf@0.0.123
+- @ulld/plot@0.0.123
+- @ulld/snippets@0.0.123
+- @ulld/task-manager@0.0.123
+- @ulld/whiteboard@0.0.123
+- @ulld/editor@0.0.123
+- @ulld/configschema@0.0.123
+- @ulld/default-image-map@0.0.123
+- @ulld/calendar@0.0.123
+
 ## 0.0.122
 
 ### Patch Changes
