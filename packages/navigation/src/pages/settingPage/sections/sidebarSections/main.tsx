@@ -1,15 +1,13 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { useNavSettingsForm } from "../../state/useForm";
 import SidebarLinkListItem from "./sidebarLinkListItem";
 import { Reorder } from "framer-motion";
 import { NavigationFormSettingSchema } from "../../form/schema";
 import AddSidebarLinkForm from "./addSidebarLinkForm/main";
-import AddSidebarLinkFormContext from "./addSidebarLinkForm/form";
+import AddSidebarLinkFormContext from "./addSidebarLinkForm/formContext";
 
-interface NavigationSidebarSettingsSectionProps { }
 
 const NavigationSidebarSettingsSection = (
-    props: NavigationSidebarSettingsSectionProps,
 ) => {
     const formKey = "sidebarLinks";
     const form = useNavSettingsForm();

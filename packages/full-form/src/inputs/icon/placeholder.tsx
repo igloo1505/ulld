@@ -10,6 +10,7 @@ interface PlaceHolderProps {
     placeholder?: string;
     iconClasses?: string
     open?: boolean
+    placeHolderClasses?: string;
 }
 
 const ValuePlaceholder = ({ value, iconClasses }: Pick<PlaceHolderProps, "value" | "iconClasses">) => {
@@ -37,11 +38,12 @@ const PlaceHolder = ({
     value,
     placeholder = "+ Set Icon",
     iconClasses,
+    placeHolderClasses,
     open
 }: PlaceHolderProps) => {
     return <span className={"flex flex-row justify-between items-center gap-6 w-full"}>
     {value ? <ValuePlaceholder iconClasses={iconClasses} value={value} />: <span>{placeholder}</span>}
-        <ChevronDown className={clsx("w-4 h-4", open && "rotate-180")}/>
+        <ChevronDown className={clsx("w-4 h-4 text-muted-foreground/50 placeholder-icon group-hover:text-muted-foreground transition-colors duration-200", placeHolderClasses, open && "rotate-180")}/>
     </span>
 };
 

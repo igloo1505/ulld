@@ -38,6 +38,21 @@ const FooterSectionLinkList = ({
         );
     };
 
+    const removeItem = (idx: number) => {
+        const existingSections = form.getValues("footerSections");
+        form.setValue(
+            "footerSections",
+            existingSections.map((x, i) =>
+                i === sectionIndex
+                    ? {
+                        ...x,
+                        items: x.items.filter((l, li) => li !== idx),
+                    }
+                    : x,
+            ),
+        );
+    };
+
     return (
         <Reorder.Group
             className={
@@ -59,6 +74,7 @@ const FooterSectionLinkList = ({
                         item={item}
                         itemIndex={i}
                         sectionIndex={sectionIndex}
+                        onRemove={() => removeItem(i)}
                     />
                 );
             })}

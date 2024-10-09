@@ -9,12 +9,14 @@ interface FooterSectionItemLinkProps {
     item: NavigationFormSettingSchema["footerSections"][number]["items"][number];
     itemIndex: number;
     sectionIndex: number;
+    onRemove: () => void
 }
 
 const FooterSectionItemLink = ({
     item,
     sectionIndex,
     itemIndex,
+    onRemove
 }: FooterSectionItemLinkProps) => {
     const controls = useDragControls();
     function startDrag(event: PointerEvent<Element> | PointerEvent) {
@@ -39,6 +41,8 @@ const FooterSectionItemLink = ({
                         className={
                             "w-3 h-3 text-red-500 dark:text-red-400 place-self-start"
                         }
+                        role="button"
+                        onClick={onRemove}
                     />
                 </div>
                 <div className={"w-full"}>{item.label}</div>

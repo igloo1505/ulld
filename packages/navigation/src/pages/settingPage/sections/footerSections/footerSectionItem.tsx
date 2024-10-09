@@ -51,29 +51,30 @@ const AddItemButton = ({ disabled, sectionIndex }: AddItemButtonProps) => {
     );
 };
 
-const FooterSectionLabel = ({ label, idx }: FooterSectionLabelProps) => {
-    const dispatch = useNavigationSettingsDispatch();
-    const show = () => {
-        dispatch({
-            type: "editFooterSectionLabel",
-            payload: idx,
-        });
-    };
-    return (
-        <div className={"w-fit"}>
-            <ContextMenu>
-                <ContextMenuTrigger className={"w-fit"}>
-                    <h6 className={"font-semibold mb-4 cursor-default"}>{label}</h6>
-                </ContextMenuTrigger>
-                <ContextMenuContent>
-                    <ContextMenuItem className={"text-foreground"} inset onClick={show}>
-                        Edit
-                    </ContextMenuItem>
-                </ContextMenuContent>
-            </ContextMenu>
-        </div>
-    );
-};
+/* NOTE: Abandoning this for now. Would be a nice feature to easily edit the title, but not worth the time up front. */
+/* const FooterSectionLabel = ({ label, idx }: FooterSectionLabelProps) => { */
+/*     const dispatch = useNavigationSettingsDispatch(); */
+/*     const show = () => { */
+/*         dispatch({ */
+/*             type: "editFooterSectionLabel", */
+/*             payload: idx, */
+/*         }); */
+/*     }; */
+/*     return ( */
+/*         <div className={"w-fit"}> */
+/*             <ContextMenu> */
+/*                 <ContextMenuTrigger className={"w-fit"}> */
+/*                     <h6 className={"font-semibold mb-4"}>{label}</h6> */
+/*                 </ContextMenuTrigger> */
+/*                 <ContextMenuContent> */
+/*                     <ContextMenuItem className={"text-foreground"} inset onClick={show}> */
+/*                         Edit */
+/*                     </ContextMenuItem> */
+/*                 </ContextMenuContent> */
+/*             </ContextMenu> */
+/*         </div> */
+/*     ); */
+/* }; */
 
 const FooterSection = ({ item, idx, isRow }: FooterSectionProps) => {
     const controls = useDragControls();
@@ -112,7 +113,8 @@ const FooterSection = ({ item, idx, isRow }: FooterSectionProps) => {
                     cursor: "grabbing",
                 }}
             >
-                <FooterSectionLabel label={item.label} idx={idx} />
+
+                    <h6 className={"font-semibold mb-4"}>{item.label}</h6>
             </motion.div>
             <div className={"w-full flex flex-col justify-center items-center"}>
                 <FooterSectionLinkList items={item.items} sectionIndex={idx} />

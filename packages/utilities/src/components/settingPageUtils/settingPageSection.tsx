@@ -31,7 +31,7 @@ export const SettingPageSection = ({
                 {title}
             </h2>
             {desc && (
-                <div className={cn("text-muted text-sm mb-4", classes?.desc)}>
+                <div className={cn("text-muted-foreground text-sm mb-4", classes?.desc)}>
                     {desc}
                 </div>
             )}

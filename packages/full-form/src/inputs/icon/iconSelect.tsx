@@ -35,6 +35,7 @@ interface IconInputProps<T extends FieldValues> {
         icon?: string;
         formItem?: string;
         list?: string;
+        placeholder?: string;
     };
     styles?: {
         popoverContent?: CSSProperties;
@@ -71,13 +72,14 @@ export const IconInput = <T extends FieldValues>({
                             <PopoverTrigger asChild>
                                 <Button
                                     variant="outline"
-                                    className={cn("w-[350px] justify-start", classes.button)}
+                                    className={cn("w-[350px] justify-start group", classes.button)}
                                 >
                                     <PlaceHolder
                                         open={open}
                                         iconClasses={classes.icon}
                                         value={iconValue}
                                         placeholder={placeholder}
+                                        placeHolderClasses={classes.placeholder}
                                     />
                                 </Button>
                             </PopoverTrigger>
