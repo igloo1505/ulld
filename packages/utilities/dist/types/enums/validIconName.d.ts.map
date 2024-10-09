@@ -1,1 +1,1 @@
-{"version":3,"file":"validIconName.d.ts","sourceRoot":"","sources":["../../../src/types/enums/validIconName.ts"],"names":[],"mappings":"AACA,eAAO,MAAM,iBAAiB,0itBAkiDpB,CAAC"}
+{"version":3,"file":"validIconName.d.ts","sourceRoot":"","sources":["../../../src/types/enums/validIconName.ts"],"names":[],"mappings":"AACA,eAAO,MAAM,iBAAiB,0itBAkiDpB,CAAC;AAGX,MAAM,MAAM,iCAAiC,GAAG,OAAO,iBAAiB,CAAC,MAAM,CAAC,CAAA"}

@@ -53,6 +53,7 @@ export interface ComboboxInputProps<
         popoverContent?: string;
         commandList?: string;
         option?: string;
+        notFoundText?: string;
     };
     ids?: {
         popoverContent?: string;
@@ -155,7 +156,7 @@ export const ComboboxInput = <
                                         }}
                                     />
                                     <CommandList className={cn("listyList", classes.commandList)}>
-                                        <CommandEmpty>{notFoundText}</CommandEmpty>
+                                        <CommandEmpty className={cn("text-foreground p-2", classes.notFoundText)}>{notFoundText}</CommandEmpty>
                                         <CommandGroup
                                             className={options.length === 0 ? "py-0" : undefined}
                                         >

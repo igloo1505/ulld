@@ -1570,3 +1570,6 @@ export const validIconNameList = [
     "zoom-in",
     "zoom-out",
 ] as const;
+
+
+export type ValidIconNameDynamicallyGenerated = typeof validIconNameList[number]

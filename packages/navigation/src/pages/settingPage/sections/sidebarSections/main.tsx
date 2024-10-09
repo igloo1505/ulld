@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { useNavSettingsForm } from "../../state/useForm";
 import SidebarLinkListItem from "./sidebarLinkListItem";
 import { Reorder } from "framer-motion";
@@ -48,9 +48,9 @@ const NavigationSidebarSettingsSection = (
             >
                 {existingItems.map((item) => (
                     <SidebarLinkListItem
-                        key={`sidebarlink-${item.label}`}
                         item={item}
                         removeItem={() => removeItem(item)}
+                        key={`sidebarlink-${item.label}`}
                     />
                 ))}
             </Reorder.Group>

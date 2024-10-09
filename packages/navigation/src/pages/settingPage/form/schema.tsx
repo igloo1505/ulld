@@ -47,16 +47,16 @@ export const developmentDefaultValues: NavigationFormWithUtilityFields = {
             items: [
                 {
                     label: faker.lorem.words({min: 1, max: 2}),
-                    href: "https://google.com",
+                    href: faker.internet.url(),
                 },
 
                 {
                     label: faker.lorem.words({min: 1, max: 2}),
-                    href: "https://google.com",
+                    href: faker.internet.url(),
                 },
                 {
                     label: faker.lorem.words({min: 1, max: 2}),
-                    href: "https://google.com",
+                    href: faker.internet.url(),
                 },
             ],
         },
@@ -65,16 +65,16 @@ export const developmentDefaultValues: NavigationFormWithUtilityFields = {
             items: [
                 {
                     label: faker.lorem.words({min: 1, max: 2}),
-                    href: "https://google.com",
+                    href: faker.internet.url(),
                 },
 
                 {
                     label: faker.lorem.words({min: 1, max: 2}),
-                    href: "https://google.com",
+                    href: faker.internet.url(),
                 },
                 {
                     label: faker.lorem.words({min: 1, max: 2}),
-                    href: "https://google.com",
+                    href: faker.internet.url(),
                 },
             ],
         },
@@ -83,16 +83,16 @@ export const developmentDefaultValues: NavigationFormWithUtilityFields = {
             items: [
                 {
                     label: faker.lorem.words({min: 1, max: 2}),
-                    href: "https://google.com",
+                    href: faker.internet.url(),
                 },
 
                 {
                     label: faker.lorem.words({min: 1, max: 2}),
-                    href: "https://google.com",
+                    href: faker.internet.url(),
                 },
                 {
                     label: faker.lorem.words({min: 1, max: 2}),
-                    href: "https://google.com",
+                    href: faker.internet.url(),
                 },
             ],
         },

@@ -36,8 +36,14 @@ const SidebarLinkListItem = ({
                 }
                 onClick={removeItem}
             />
-            <DynamicIcon name={item.icon} className={"place-self-center"}/>
-            <div className={"w-full flex flex-col justify-start items-start lg:grid lg:grid-cols-2 lg:grid-rows-1"}>
+            <div className={"w-full h-auto place-self-center flex justify-center items-center"}>
+                <DynamicIcon name={item.icon} className={"text-foreground"} />
+            </div>
+            <div
+                className={
+                    "w-full flex flex-col justify-start items-start lg:grid lg:grid-cols-2 lg:grid-rows-1"
+                }
+            >
                 <div>{item.label}</div>
                 <div className={"text-muted-foreground"}>{item.url}</div>
             </div>

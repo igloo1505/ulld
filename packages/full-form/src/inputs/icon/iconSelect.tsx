@@ -11,7 +11,6 @@ import { useMediaQuery } from "react-responsive";
 import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
 import {
     Popover,
-    PopoverContent,
     PopoverTrigger,
     PopoverContentNoPortal
 } from "@ulld/tailwind/popover";
@@ -67,7 +66,7 @@ export const IconInput = <T extends FieldValues>({
                 name={name}
                 render={({ field }) => (
                     <FormItem className={cn("flex flex-col", classes.formItem)}>
-                        <FormLabel>{label}</FormLabel>
+                        <FormLabel className={"w-full"}>{label}</FormLabel>
                         <Popover open={open} onOpenChange={setOpen}>
                             <PopoverTrigger asChild>
                                 <Button

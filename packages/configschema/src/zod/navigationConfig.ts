@@ -3,7 +3,7 @@ import {
     ValidIconName,
 } from "@ulld/icons/dynamic";
 import { DocumentTypeConfig } from "./documentConfigSchema.js";
-import { allIconNames } from "@ulld/icons/names"
+import { validIconNameList } from "@ulld/utilities/validIconNameList";
 
 // PRIORITY: Parsing the user's app config needs to write the document types to the file first, and then reparse everything else afterwards so they are accessible. It's not ideal, but it can be reworked once the entire build process is in place.
 //
@@ -32,7 +32,7 @@ const defaultResultLengths = {
     searchAll: 12,
 };
 
-export const iconNameField = z.enum(allIconNames)
+export const iconNameField = z.enum(validIconNameList)
 
 let docTypeList: DocumentTypeConfig[] | null = null;
 

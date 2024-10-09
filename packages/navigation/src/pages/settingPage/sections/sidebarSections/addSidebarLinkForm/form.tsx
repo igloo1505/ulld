@@ -2,7 +2,6 @@ import { useForm, zodResolver } from "@ulld/full-form/form";
 import { Form } from "@ulld/tailwind/form";
 import React, { ReactNode } from "react";
 import { SidebarLink, sidebarLinkSchema } from "../../../form/schema";
-import { z } from "zod";
 
 interface AddSidebarLinkFormProps {
     children: ReactNode;
