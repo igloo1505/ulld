@@ -11,6 +11,7 @@ interface IconListProps {
     className?: string;
     iconClasses?: string;
     placeholder?: string;
+    listClasses?: string;
 }
 
 const formattedItems = validIconNameList.map((icon) => ({
@@ -24,6 +25,7 @@ const IconList = ({
     setOpen,
     className,
     iconClasses,
+    listClasses,
     placeholder = "Search Icons...",
 }: IconListProps) => {
     const [icons, setIcons] = useState(formattedItems);
@@ -54,6 +56,7 @@ const IconList = ({
                 itemHeight={48}
                 itemKey={"id"}
                 data-id="icon-list"
+                className={listClasses}
             >
                 {(item, itemIndex, itemProps) => {
                     return (

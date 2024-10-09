@@ -124,7 +124,8 @@
     "./useExistingTaggables": "./src/useExistingTaggables.ts",
     "./useBuildStaticData": "./src/useBuildStaticData.ts",
     "./useConfirmation": "./src/useConfirmation.ts",
-    "./useMultipleBreakpoints": "./src/useMultipleBreakpoints.ts"
+    "./useMultipleBreakpoints": "./src/useMultipleBreakpoints.ts",
+    "./useElementWidthByRef": "./src/useElementWidthByRef.ts"
   },
   "files": [
     "src"

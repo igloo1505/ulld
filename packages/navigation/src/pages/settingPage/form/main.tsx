@@ -14,11 +14,11 @@ import AddFooterSectionLinkModal from "../sections/footerSections/modals/addFoot
 
 interface NavigationSettingsFormProps { }
 
-
 const NavigationSettingsForm = (props: NavigationSettingsFormProps) => {
     const defaultValues: NavigationFormWithUtilityFields = {
         footerSections: [],
         footerSectionInput: "",
+        sidebarLinks: [],
     };
     const form = useForm<NavigationFormWithUtilityFields>({
         resolver: zodResolver(navigationFormSettingSchema),

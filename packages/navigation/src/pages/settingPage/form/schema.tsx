@@ -35,6 +35,8 @@ export type NavigationFormSettingSchema = z.infer<typeof navigationFormSettingSc
 
 export type NavigationFormWithUtilityFields = z.infer<typeof navigationFormSchemaWithUtilities>
 
+export type SidebarLink = z.infer<typeof sidebarLinkSchema>
+
 
 
 export const developmentDefaultValues: NavigationFormWithUtilityFields = {
