@@ -1,5 +1,5 @@
 import React, { PointerEvent } from "react";
-import { NavigationFormSettingSchema } from "../form/schema";
+import { NavigationFormSettingSchema } from "../../form/schema";
 import { motion, Reorder, useDragControls } from "framer-motion";
 import { GripIcon as _GripIcon, Trash2Icon } from "lucide-react";
 

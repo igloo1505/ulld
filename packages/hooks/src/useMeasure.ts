@@ -29,18 +29,18 @@ interface BPObject {
     maxWidth?: number;
 }
 
-interface ElementBreakpointOpts<T extends BPObject> {
+interface ElementBreakpointOpts<T extends BPObject, J extends unknown> {
     /** dom id string of element or a reference to the element itself. */
     em: string | HTMLElement;
     bp: T;
-    defaultValue?: boolean 
+    defaultValue?: J
 }
 
 
-export const useElementBreakpoint = <T extends BPObject>(
-    opts: ElementBreakpointOpts<T>,
+export const useElementBreakpoint = <T extends BPObject, J extends unknown>(
+    opts: ElementBreakpointOpts<T, J>,
 ) => {
-    const [bp, setBp] = useState<boolean>(typeof opts.defaultValue === "boolean" ? opts.defaultValue : false);
+    const [bp, setBp] = useState<boolean | J>(typeof opts.defaultValue !== "undefined" ? opts.defaultValue : false);
 
     const handleRect = (rect: DOMRect | DOMRectReadOnly) => {    
         if(opts.bp.minWidth && rect.width < opts.bp.minWidth){

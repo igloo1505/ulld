@@ -14,13 +14,13 @@ import React from "react";
 import {
     useNavigationSettingsContext,
     useNavigationSettingsDispatch,
-} from "../../context";
+} from "../../../context";
 import { z } from "zod";
 import { useForm, useFormContext, zodResolver } from "@ulld/full-form/form";
 import {
     NavigationFormWithUtilityFields,
     navigationLinkSchema,
-} from "../../form/schema";
+} from "../../../form/schema";
 import { TextInput } from "@ulld/full-form/textInput";
 
 interface AddFooterSectionLinkModalProps { }

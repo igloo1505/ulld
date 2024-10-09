@@ -1,10 +1,10 @@
 "use client";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Reorder } from "framer-motion";
 import {
     NavigationFormSettingSchema,
     NavigationFormWithUtilityFields,
-} from "../form/schema";
+} from "../../form/schema";
 import FooterSectionItemLink from "./footerSectionItemLink";
 import { useFormContext } from "@ulld/full-form/form";
 

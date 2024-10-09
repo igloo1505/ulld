@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { faker } from "@faker-js/faker";
+import { validIconNameList } from "@ulld/utilities/validIconNameList";
 
 
 export const navigationLinkSchema = z.object({
@@ -16,9 +17,16 @@ export const footerSectionSchema = z.object({
     items: navigationLinkSchema.array().max(5).default([]),
 })
 
+export const sidebarLinkSchema = z.object({
+    url: z.string().transform((x) => x.startsWith("/") ? x : `/${x}`),
+    icon: z.enum(validIconNameList),
+    label: z.string()
+})
+
 
 export const navigationFormSettingSchema = z.object({
-     footerSections: footerSectionSchema.array().max(3).default([])
+     footerSections: footerSectionSchema.array().max(3).default([]),
+    sidebarLinks: sidebarLinkSchema.array().default([])
 })
 
 export const navigationFormSchemaWithUtilities = navigationFormSettingSchema.merge(navigationFormUtilityFields)
@@ -30,7 +38,6 @@ export type NavigationFormWithUtilityFields = z.infer<typeof navigationFormSchem
 
 
 export const developmentDefaultValues: NavigationFormWithUtilityFields = {
-
     footerSectionInput: "",
     footerSections: [
         {
@@ -88,4 +95,11 @@ export const developmentDefaultValues: NavigationFormWithUtilityFields = {
             ],
         },
     ],
+    sidebarLinks: Array(2).fill(0).map(() => {
+        return {
+            label: faker.lorem.words({min: 1, max: 2}),
+            url: `/somePath${Math.random().toString().slice(1, 5)}`,
+            icon: faker.helpers.arrayElement(validIconNameList)
+        }
+    })
 }

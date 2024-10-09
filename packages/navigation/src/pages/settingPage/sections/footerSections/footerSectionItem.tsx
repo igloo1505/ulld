@@ -1,5 +1,5 @@
 import React, { PointerEvent } from "react";
-import { NavigationFormSettingSchema } from "../form/schema";
+import { NavigationFormSettingSchema } from "../../form/schema";
 import { PlusIcon, XIcon } from "lucide-react";
 import { useFormContext } from "@ulld/full-form/form";
 import { Reorder, useDragControls } from "framer-motion";
@@ -9,9 +9,10 @@ import {
     ContextMenuContent,
     ContextMenuItem,
 } from "@ulld/tailwind/context-menu";
-import { useNavigationSettingsDispatch } from "../context";
+import { useNavigationSettingsDispatch } from "../../context";
 import FooterSectionLinkList from "./footerSectionLinkList";
 import { motion } from "framer-motion";
+import cn from "@ulld/utilities/cn";
 
 interface FooterSectionProps {
     item: NavigationFormSettingSchema["footerSections"][number];
@@ -85,7 +86,7 @@ const FooterSection = ({ item, idx, isRow }: FooterSectionProps) => {
     return (
         <Reorder.Item
             className={
-                "w-full relative flex flex-col justify-start items-center h-fit p-4 bg-card border rounded-lg select-none"
+                cn("w-full relative flex flex-col justify-start items-center h-fit p-4 bg-card border rounded-lg select-none", isRow && 'h-full')
             }
             drag={isRow ? "x" : "y"}
             key={item.label}

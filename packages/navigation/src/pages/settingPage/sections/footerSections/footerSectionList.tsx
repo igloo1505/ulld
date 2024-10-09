@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { NavigationFormSettingSchema } from "../form/schema";
+import { NavigationFormSettingSchema } from "../../form/schema";
 import FooterSection from "./footerSectionItem";
 import { useFormContext } from "@ulld/full-form/form";
 import { Reorder } from "framer-motion";
@@ -15,6 +15,7 @@ export const FooterSectionList = (props: FooterSectionListProps) => {
 
     const isRow = useElementBreakpoint({
         em: "nav-settings-footer-sec",
+        defaultValue: null,
         bp: {
             minWidth: 768
         }
@@ -35,7 +36,7 @@ export const FooterSectionList = (props: FooterSectionListProps) => {
                 form.setValue("footerSections", newValues);
             }}
         >
-            {sections?.map((x, i) => {
+            {isRow !== null && sections?.map((x, i) => {
                 return <FooterSection key={x.label} isRow={isRow} idx={i} item={x} />;
             })}
         </Reorder.Group>

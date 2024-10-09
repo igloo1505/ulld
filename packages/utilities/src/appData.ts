@@ -1,4 +1,5 @@
 import { InternalAppName } from "@ulld/types";
+import { validIconNameList } from "./types/enums/validIconName";
 
 export interface FundingItem {
     pkgJsonType: string;
@@ -26,6 +27,71 @@ interface UlldAppData {
     includeInTypes: InternalAppName[];
     packagesBuildingToDist: InternalAppName[];
 }
+
+interface InternalAppLocation {
+    label: string;
+    url: string;
+    desc?: string;
+    keywords?: string[];
+    /** ValidIconName enum. Need to generate that enum in the utilities package to make it available without causing a circular dependency issue. **/
+    defaultIcon: typeof validIconNameList[number]
+    isModalRoute?: boolean
+}
+
+export const internalAppLocations: InternalAppLocation[] = [
+    {
+        label: "Bookmarks",
+        url: "/bookmarks",
+        keywords: [],
+        defaultIcon: "bookmarks"
+    }, 
+    {
+        label: "Bibliography",
+        url: "/bibliography",
+        defaultIcon: "library"
+    },
+    {
+        label: "Navigation",
+        url: "/navigation",
+        defaultIcon: "route",
+        isModalRoute: true
+    },
+    {
+        label: "Task Manager",
+        url: "/todo",
+        defaultIcon: "todo",
+    },
+    {
+        label: "Snippets",
+        url: "/snippets",
+        defaultIcon: "code",
+    },
+    {
+        label: "Equations",
+        url: "/equations",
+        defaultIcon: "math",
+    },
+    {
+        label: "Docs",
+        url: "/docs",
+        defaultIcon: "newspaper",
+    },
+    {
+        label: "Component Docs",
+        url: "/componentDocs",
+        defaultIcon: "origami",
+    },
+    {
+        label: "Dictionary",
+        url: "/dictionary",
+        defaultIcon: "definition",
+    },
+    {
+        label: "Settings",
+        url: "/settings",
+        defaultIcon: "settings",
+    },
+]
 
 export const appData: UlldAppData = {
     isLocalDev: true,

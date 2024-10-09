@@ -28,21 +28,21 @@ export declare const equationSearchParamsSchema: z.ZodObject<z.objectUtil.extend
 }>, {
     sortDir: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"asc">, z.ZodLiteral<"desc">]>>;
 }>, "strip", z.ZodTypeAny, {
+    tags: string[];
     page: number;
     orderBy: "title" | "createdAt";
     take: number;
-    tags: string[];
     sortDir: "desc" | "asc";
     variables: string[];
     value?: string | undefined;
     query?: string | undefined;
 }, {
+    tags?: string | string[] | undefined;
     value?: string | undefined;
     page?: number | undefined;
     query?: string | undefined;
     orderBy?: "title" | "createdAt" | undefined;
     take?: number | undefined;
-    tags?: string | string[] | undefined;
     sortDir?: "desc" | "asc" | undefined;
     variables?: string | string[] | undefined;
 }>;

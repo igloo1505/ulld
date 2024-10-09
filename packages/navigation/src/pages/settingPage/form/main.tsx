@@ -1,7 +1,6 @@
 "use client";
 import { SettingPageSection } from "@ulld/utilities/settingPageSection";
 import React from "react";
-import FooterSectionForm from "../footerSections/footerSectionFormSection";
 import { Form } from "@ulld/tailwind/form";
 import { useForm, zodResolver } from "@ulld/full-form/form";
 import {
@@ -9,8 +8,9 @@ import {
     navigationFormSettingSchema,
     NavigationFormWithUtilityFields,
 } from "./schema";
-import AddFooterSectionLinkModal from "../footerSections/modals/addFooterSectionLinkModal";
-import SidebarLinksFormSection from "../sidebarLinks/formSection";
+import FooterSectionForm from "../sections/footerSections/footerSectionFormSection";
+import NavigationSidebarSettingsSection from "../sections/sidebarSections/main";
+import AddFooterSectionLinkModal from "../sections/footerSections/modals/addFooterSectionLinkModal";
 
 interface NavigationSettingsFormProps { }
 
@@ -32,7 +32,7 @@ const NavigationSettingsForm = (props: NavigationSettingsFormProps) => {
                 <FooterSectionForm />
             </SettingPageSection>
             <SettingPageSection title="Sidebar Links">
-                <SidebarLinksFormSection />
+                <NavigationSidebarSettingsSection />
             </SettingPageSection>
         </Form>
     );

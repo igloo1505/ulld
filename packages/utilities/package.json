@@ -646,6 +646,11 @@
       "types": "./dist/utils/getAppConfigClientSide.d.ts",
       "import": "./dist/utils/getAppConfigClientSide.js",
       "require": "./dist/utils/getAppConfigClientSide.cjs"
+    },
+    "./validIconNameList": {
+      "types": "./dist/types/enums/validIconName.d.ts",
+      "import": "./dist/types/enums/validIconName.js",
+      "require": "./dist/types/enums/validIconName.cjs"
     }
   },
   "files": [

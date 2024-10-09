@@ -3,8 +3,8 @@ import { FooterSectionList } from "./footerSectionList";
 import { Button } from "@ulld/tailwind/button";
 import { TextInput } from "@ulld/full-form/textInput";
 import { useFormContext } from "@ulld/full-form/form";
-import { NavigationFormWithUtilityFields } from "../form/schema";
 import { onEnter } from "@ulld/state/listeners/keydown";
+import { NavigationFormWithUtilityFields } from "../../form/schema";
 
 interface FooterSectionFormProps { }
 

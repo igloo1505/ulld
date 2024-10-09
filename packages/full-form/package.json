@@ -126,6 +126,7 @@
     "./triPosSlider": "./src/triPosSlider.tsx",
     "./heading": "./src/fullFormMainHeading.tsx",
     "./combobox": "./src/inputs/combobox/general/main.tsx",
+    "./combobox-internalLocations": "./src/inputs/combobox/internalUrls/main.tsx",
     "./sidePanel": "./src/fullFormSidePanel.tsx",
     "./subheading": "./src/fullFormSubHeading.tsx",
     "./context": "./src/fullFormContext.tsx",

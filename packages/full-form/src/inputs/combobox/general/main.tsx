@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { CSSProperties, ReactNode, useState } from "react";
 import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
 import {
@@ -25,13 +25,17 @@ import {
 import cn from "@ulld/utilities/cn";
 import { ChevronsUpDown, Check } from "lucide-react";
 import { Button } from "@ulld/tailwind/button";
+import { onEnter } from "@ulld/state/listeners/keydown";
 
 export interface Option<J extends string | number> {
     label: string;
     value: J;
 }
 
-export interface ComboboxInputProps<T extends FieldValues, J extends string | number> {
+export interface ComboboxInputProps<
+    T extends FieldValues,
+    J extends string | number,
+> {
     options: Option<J>[];
     name: Path<T>;
     label: ReactNode;
@@ -39,21 +43,24 @@ export interface ComboboxInputProps<T extends FieldValues, J extends string | nu
     placeholder?: ReactNode;
     inputPlaceholder?: string;
     notFoundText?: ReactNode;
-    onOpenChange?: (isOpen: boolean) => void
+    onOpenChange?: (isOpen: boolean) => void;
+    onSelectOverride?: (val: Option<J> | string) => void;
+    getPlaceHolder?: (opt: Option<J>) => string
+    allowOtherInput?: boolean;
     classes?: {
         formItem?: string;
         button?: string;
         popoverContent?: string;
-        commandList?: string
-        option?: string
+        commandList?: string;
+        option?: string;
     };
     ids?: {
-        popoverContent?: string
-    }
+        popoverContent?: string;
+    };
     styles?: {
-        popoverContent?: CSSProperties
-        button?: CSSProperties
-    }
+        popoverContent?: CSSProperties;
+        button?: CSSProperties;
+    };
 }
 
 export const ComboboxInput = <
@@ -70,10 +77,17 @@ export const ComboboxInput = <
     styles,
     options,
     ids,
-    onOpenChange
+    allowOtherInput = true,
+    onOpenChange,
+    onSelectOverride,
+    getPlaceHolder
 }: ComboboxInputProps<T, J>) => {
     const form = useFormContext<T>();
     const [open, setOpen] = useState(false);
+    let curVal = form.watch(name)
+
+    const foundOpt = curVal ? options.find((item) => item.value === curVal.value) : undefined
+
     return (
         <FormField
             control={form.control}
@@ -82,12 +96,15 @@ export const ComboboxInput = <
                 return (
                     <FormItem className={cn("flex flex-col", classes.formItem)}>
                         <FormLabel>{label}</FormLabel>
-                        <Popover open={open} onOpenChange={(newOpen) => {
-                                if(onOpenChange){
-                                    onOpenChange(newOpen)
+                        <Popover
+                            open={open}
+                            onOpenChange={(newOpen) => {
+                                if (onOpenChange) {
+                                    onOpenChange(newOpen);
                                 }
-                                setOpen(newOpen)
-                            }}>
+                                setOpen(newOpen);
+                            }}
+                        >
                             <PopoverTrigger asChild>
                                 <FormControl>
                                     <Button
@@ -101,10 +118,9 @@ export const ComboboxInput = <
                                         style={styles?.button}
                                     >
                                         <div className={"flex-grow text-left"}>
-                                        {field.value
-                                            ? options.find((item) => item.value === field.value)
-                                                ?.label
-                                            : placeholder}
+                                            {field.value
+                                                ? (getPlaceHolder && foundOpt) ? getPlaceHolder(foundOpt) : (foundOpt?.label || placeholder)
+                                                : placeholder}
                                         </div>
                                         <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                     </Button>
@@ -116,17 +132,43 @@ export const ComboboxInput = <
                                 id={ids?.popoverContent}
                             >
                                 <Command>
-                                    <CommandInput placeholder={inputPlaceholder} />
+                                    <CommandInput
+                                        placeholder={inputPlaceholder}
+                                        className={"text-foreground"}
+                                        onKeyDown={(e) => {
+                                            if (allowOtherInput) {
+                                                onEnter(e, (_e) => {
+                                                    if (onSelectOverride) {
+                                                        onSelectOverride((_e.target as HTMLInputElement).value,);
+                                                        return setOpen(false);
+                                                    }
+                                                    form.setValue(
+                                                        name,
+                                                        (_e.target as HTMLInputElement).value as PathValue<
+                                                            T,
+                                                            Path<T>
+                                                        >,
+                                                    );
+                                                    setOpen(false);
+                                                });
+                                            }
+                                        }}
+                                    />
                                     <CommandList className={cn("listyList", classes.commandList)}>
                                         <CommandEmpty>{notFoundText}</CommandEmpty>
-                                        <CommandGroup className={options.length === 0 ? "py-0" : undefined}>
+                                        <CommandGroup
+                                            className={options.length === 0 ? "py-0" : undefined}
+                                        >
                                             {options.map((item) => (
                                                 <CommandItem
                                                     value={item.label}
                                                     key={item.value}
                                                     className={classes.option}
                                                     onSelect={() => {
-
+                                                        if (onSelectOverride) {
+                                                            onSelectOverride(item);
+                                                            return setOpen(false);
+                                                        }
                                                         form.setValue(
                                                             name,
                                                             item.value as PathValue<T, Path<T>>,

@@ -1,3 +1,4 @@
+"use client"
 import {
     FormField,
     FormItem,
@@ -6,6 +7,7 @@ import {
     FormMessage,
 } from "@ulld/tailwind/form";
 import React, { ReactNode, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
 import {
     Popover,
@@ -14,16 +16,11 @@ import {
 } from "@ulld/tailwind/popover";
 import cn from "@ulld/utilities/cn";
 import { Button } from "@ulld/tailwind/button";
-import { useMinWidth } from "@ulld/hooks/useMinWidth";
 import IconList from "./iconList";
 import {
     Drawer,
-    DrawerTitle,
     DrawerTrigger,
-    DrawerFooter,
     DrawerContent,
-    DrawerPortal,
-    DrawerDescription,
 } from "@ulld/tailwind/drawer";
 import PlaceHolder from "./placeholder";
 
@@ -52,7 +49,9 @@ export const IconInput = <T extends FieldValues>({
 }: IconInputProps<T>) => {
     const form = useFormContext<T>();
     const [open, setOpen] = useState(false);
-    const isDesktop = useMinWidth(768);
+    const isDesktop = useMediaQuery({
+        minWidth: 768
+    });
 
     const iconValue = form.watch(name);
 
@@ -83,7 +82,7 @@ export const IconInput = <T extends FieldValues>({
                                 align="start"
                             >
                                 <IconList
-                                    iconClasses={classes.icon}
+                                    iconClasses={cn("text-foreground", classes.icon)}
                                     setValue={(newVal) =>
                                         form.setValue(
                                             name as Path<T>,

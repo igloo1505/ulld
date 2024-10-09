@@ -3,9 +3,10 @@ export interface SettingPageContainerProps {
     title?: ReactNode;
     children: ReactNode;
     className?: string;
+    titleClassName?: string;
 }
 export declare const SettingPageContainer: {
-    ({ children, title, className, }: SettingPageContainerProps): React.JSX.Element;
+    ({ children, title, className, titleClassName, }: SettingPageContainerProps): React.JSX.Element;
     displayName: string;
 };
 //# sourceMappingURL=settingPageContainer.d.ts.map
