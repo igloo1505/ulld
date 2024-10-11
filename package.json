@@ -1,9 +1,56 @@
 {
   "name": "ulld",
+  "homepage": "https://uhlittlelessdum.com",
+  "keywords": [
+    "academic",
+    "markdown",
+    "math",
+    "mdx",
+    "note taking",
+    "research",
+    "STEM"
+  ],
+  "funding": [
+    {
+      "type": "paypal",
+      "url": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/uhlittlelessdum/about"
+    },
+    {
+      "type": "GitHub Sponsors",
+      "url": "https://github.com/igloo1505/ulld"
+    }
+  ],
   "author": "Andrew Mueller <aiglinski414@gmail.com> (https://uhlittlelessdum.com)",
   "contributors": [
     "Andrew Mueller <aiglinski414@gmail.com> (https://uhlittlelessdum.com)"
   ],
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "checkPackages": "manypkg check",
+    "ci:publish": "pnpm publish -r --no-git-checks",
+    "clean": "turbo clean",
+    "dev": "turbo dev",
+    "forcePackgeMatch": "manypkg fix",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo lint",
+    "postinstall": "echo 'manypkg check'",
+    "publish-packages": "changeset version && changeset publish",
+    "publish-packages-full": "turbo run build lint test && changeset version && changeset publish",
+    "test": "turbo test",
+    "test:watch": "turbo test:watch",
+    "typecheck": "turbo typecheck",
+    "typedoc": "typedoc",
+    "update-ulldBase": "git subtree push --prefix=apps/base/ ulldBase main",
+    "whenOnWifi": "zsh ./buildUtils/network/runWhenBackOnline.zsh"
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "@changesets/cli": "2.27.5",
     "@manypkg/cli": "0.21.4",
@@ -103,33 +150,9 @@
     "wireit-package": "^1.1.2",
     "wireit-visualizer": "^1.5.12"
   },
-  "engines": {
-    "node": ">=20"
+  "prisma": {
+    "schema": "packages/database/prisma/schema.prisma"
   },
-  "funding": [
-    {
-      "type": "paypal",
-      "url": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU"
-    },
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/uhlittlelessdum/about"
-    },
-    {
-      "type": "GitHub Sponsors",
-      "url": "https://github.com/igloo1505/ulld"
-    }
-  ],
-  "homepage": "https://uhlittlelessdum.com",
-  "keywords": [
-    "academic",
-    "markdown",
-    "math",
-    "mdx",
-    "note taking",
-    "research",
-    "STEM"
-  ],
   "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74",
   "pnpm": {
     "peerDependencyRules": {
@@ -153,28 +176,5 @@
       "@types/react": "~18.2.79",
       "@types/react-dom": "~18.2.25"
     }
-  },
-  "prisma": {
-    "schema": "packages/database/prisma/schema.prisma"
-  },
-  "private": true,
-  "scripts": {
-    "build": "turbo build",
-    "checkPackages": "manypkg check",
-    "ci:publish": "pnpm publish -r --no-git-checks",
-    "clean": "turbo clean",
-    "dev": "turbo dev",
-    "forcePackgeMatch": "manypkg fix",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "turbo lint",
-    "postinstall": "echo 'manypkg check'",
-    "publish-packages": "changeset version && changeset publish",
-    "publish-packages-full": "turbo run build lint test && changeset version && changeset publish",
-    "test": "turbo test",
-    "test:watch": "turbo test:watch",
-    "typecheck": "turbo typecheck",
-    "typedoc": "typedoc",
-    "update-ulldBase": "git subtree push --prefix=apps/base/ ulldBase main",
-    "whenOnWifi": "zsh ./buildUtils/network/runWhenBackOnline.zsh"
   }
 }

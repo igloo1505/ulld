@@ -4,6 +4,8 @@ cd $ULLD_DEV_ROOT
 pnpm turbo --log-order=stream generateTargetDatabase
 zsh $ULLD_DEV_ROOT/buildUtils/gatherTypes.zsh
 tsx $ULLD_DEV_ROOT/buildUtils/syncGlobalData/copyDatabaseSchemas.ts
+pnpm syncpack format --source "{packages,apps}/*/package.json"
+pnpm syncpack format --source "./package.json"
 git add .
 git commit -m "Pre patch bump commit"
 pnpm changeset
