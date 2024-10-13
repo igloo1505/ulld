@@ -1,16 +1,14 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { KanbanCreateWithoutTagsInputSchema } from './KanbanCreateWithoutTagsInputSchema';
-import { KanbanUncheckedCreateWithoutTagsInputSchema } from './KanbanUncheckedCreateWithoutTagsInputSchema';
-import { KanbanCreateOrConnectWithoutTagsInputSchema } from './KanbanCreateOrConnectWithoutTagsInputSchema';
-import { KanbanUpsertWithoutTagsInputSchema } from './KanbanUpsertWithoutTagsInputSchema';
-import { KanbanWhereInputSchema } from './KanbanWhereInputSchema';
-import { KanbanWhereUniqueInputSchema } from './KanbanWhereUniqueInputSchema';
-import { KanbanUpdateToOneWithWhereWithoutTagsInputSchema } from './KanbanUpdateToOneWithWhereWithoutTagsInputSchema';
-import { KanbanUpdateWithoutTagsInputSchema } from './KanbanUpdateWithoutTagsInputSchema';
-import { KanbanUncheckedUpdateWithoutTagsInputSchema } from './KanbanUncheckedUpdateWithoutTagsInputSchema';
-
+import { KanbanCreateWithoutTagsInputSchema } from '../KanbanCreateWithoutTagsInputSchema.js';
+import { KanbanUncheckedCreateWithoutTagsInputSchema } from '../KanbanUncheckedCreateWithoutTagsInputSchema.js';
+import { KanbanCreateOrConnectWithoutTagsInputSchema } from '../KanbanCreateOrConnectWithoutTagsInputSchema.js';
+import { KanbanUpsertWithoutTagsInputSchema } from '../KanbanUpsertWithoutTagsInputSchema.js';
+import { KanbanWhereInputSchema } from '../KanbanWhereInputSchema.js';
+import { KanbanWhereUniqueInputSchema } from '../KanbanWhereUniqueInputSchema.js';
+import { KanbanUpdateToOneWithWhereWithoutTagsInputSchema } from '../KanbanUpdateToOneWithWhereWithoutTagsInputSchema.js';
+import { KanbanUpdateWithoutTagsInputSchema } from '../KanbanUpdateWithoutTagsInputSchema.js';
+import { KanbanUncheckedUpdateWithoutTagsInputSchema } from '../KanbanUncheckedUpdateWithoutTagsInputSchema.js';
 export const KanbanUpdateOneWithoutTagsNestedInputSchema: z.ZodType<Prisma.KanbanUpdateOneWithoutTagsNestedInput> = z.object({
   create: z.union([ z.lazy(() => KanbanCreateWithoutTagsInputSchema),z.lazy(() => KanbanUncheckedCreateWithoutTagsInputSchema) ]).optional(),
   connectOrCreate: z.lazy(() => KanbanCreateOrConnectWithoutTagsInputSchema).optional(),
@@ -20,5 +18,4 @@ export const KanbanUpdateOneWithoutTagsNestedInputSchema: z.ZodType<Prisma.Kanba
   connect: z.lazy(() => KanbanWhereUniqueInputSchema).optional(),
   update: z.union([ z.lazy(() => KanbanUpdateToOneWithWhereWithoutTagsInputSchema),z.lazy(() => KanbanUpdateWithoutTagsInputSchema),z.lazy(() => KanbanUncheckedUpdateWithoutTagsInputSchema) ]).optional(),
 }).strict();
-
 export default KanbanUpdateOneWithoutTagsNestedInputSchema;

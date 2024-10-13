@@ -131,6 +131,7 @@ const mdxNoteFields = {
 
 
 export const mdxNoteZodObject = z.object(mdxNoteFields)
+export const mdxNoteZodObjectPartial = mdxNoteZodObject.partial()
 
 
 export const mdxNoteWithParsedLatex = mdxNoteZodObject.extend({

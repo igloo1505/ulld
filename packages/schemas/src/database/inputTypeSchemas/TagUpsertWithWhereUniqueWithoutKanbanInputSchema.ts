@@ -1,16 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema';
-import { TagUpdateWithoutKanbanInputSchema } from './TagUpdateWithoutKanbanInputSchema';
-import { TagUncheckedUpdateWithoutKanbanInputSchema } from './TagUncheckedUpdateWithoutKanbanInputSchema';
-import { TagCreateWithoutKanbanInputSchema } from './TagCreateWithoutKanbanInputSchema';
-import { TagUncheckedCreateWithoutKanbanInputSchema } from './TagUncheckedCreateWithoutKanbanInputSchema';
-
+import { TagWhereUniqueInputSchema } from '../TagWhereUniqueInputSchema.js';
+import { TagUpdateWithoutKanbanInputSchema } from '../TagUpdateWithoutKanbanInputSchema.js';
+import { TagUncheckedUpdateWithoutKanbanInputSchema } from '../TagUncheckedUpdateWithoutKanbanInputSchema.js';
+import { TagCreateWithoutKanbanInputSchema } from '../TagCreateWithoutKanbanInputSchema.js';
+import { TagUncheckedCreateWithoutKanbanInputSchema } from '../TagUncheckedCreateWithoutKanbanInputSchema.js';
 export const TagUpsertWithWhereUniqueWithoutKanbanInputSchema: z.ZodType<Prisma.TagUpsertWithWhereUniqueWithoutKanbanInput> = z.object({
   where: z.lazy(() => TagWhereUniqueInputSchema),
   update: z.union([ z.lazy(() => TagUpdateWithoutKanbanInputSchema),z.lazy(() => TagUncheckedUpdateWithoutKanbanInputSchema) ]),
   create: z.union([ z.lazy(() => TagCreateWithoutKanbanInputSchema),z.lazy(() => TagUncheckedCreateWithoutKanbanInputSchema) ]),
 }).strict();
-
 export default TagUpsertWithWhereUniqueWithoutKanbanInputSchema;

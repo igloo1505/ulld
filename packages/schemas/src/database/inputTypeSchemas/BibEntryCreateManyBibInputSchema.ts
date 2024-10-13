@@ -1,7 +1,5 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-
 export const BibEntryCreateManyBibInputSchema: z.ZodType<Prisma.BibEntryCreateManyBibInput> = z.object({
   id: z.string(),
   OwnWork: z.boolean().optional(),
@@ -45,5 +43,4 @@ export const BibEntryCreateManyBibInputSchema: z.ZodType<Prisma.BibEntryCreateMa
   createdAt: z.coerce.date().optional(),
   lastAccess: z.coerce.date().optional()
 }).strict();
-
 export default BibEntryCreateManyBibInputSchema;

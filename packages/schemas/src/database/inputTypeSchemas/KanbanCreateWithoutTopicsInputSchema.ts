@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { KanBanListCreateNestedManyWithoutKanbanInputSchema } from './KanBanListCreateNestedManyWithoutKanbanInputSchema';
-import { TagCreateNestedManyWithoutKanbanInputSchema } from './TagCreateNestedManyWithoutKanbanInputSchema';
-import { SubjectCreateNestedManyWithoutKanbanInputSchema } from './SubjectCreateNestedManyWithoutKanbanInputSchema';
-
+import { KanBanListCreateNestedManyWithoutKanbanInputSchema } from '../KanBanListCreateNestedManyWithoutKanbanInputSchema.js';
+import { TagCreateNestedManyWithoutKanbanInputSchema } from '../TagCreateNestedManyWithoutKanbanInputSchema.js';
+import { SubjectCreateNestedManyWithoutKanbanInputSchema } from '../SubjectCreateNestedManyWithoutKanbanInputSchema.js';
 export const KanbanCreateWithoutTopicsInputSchema: z.ZodType<Prisma.KanbanCreateWithoutTopicsInput> = z.object({
   title: z.string(),
   createdAt: z.coerce.date().optional(),
@@ -13,5 +11,4 @@ export const KanbanCreateWithoutTopicsInputSchema: z.ZodType<Prisma.KanbanCreate
   tags: z.lazy(() => TagCreateNestedManyWithoutKanbanInputSchema).optional(),
   subjects: z.lazy(() => SubjectCreateNestedManyWithoutKanbanInputSchema).optional()
 }).strict();
-
 export default KanbanCreateWithoutTopicsInputSchema;

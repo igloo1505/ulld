@@ -5,11 +5,11 @@ export declare const additionalUserContent: z.ZodDefault<z.ZodObject<{
     logo: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
 }, "strip", z.ZodTypeAny, {
     css?: string | undefined;
-    favicon?: string | undefined;
     logo?: string | undefined;
+    favicon?: string | undefined;
 }, {
     css?: string | undefined;
-    favicon?: string | undefined;
     logo?: string | undefined;
+    favicon?: string | undefined;
 }>>;
 //# sourceMappingURL=additionalUserContent.d.ts.map

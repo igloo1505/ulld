@@ -1,9 +1,8 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { AutoSettingWhereInputSchema } from '../inputTypeSchemas/AutoSettingWhereInputSchema'
-import { AutoSettingOrderByWithRelationInputSchema } from '../inputTypeSchemas/AutoSettingOrderByWithRelationInputSchema'
-import { AutoSettingWhereUniqueInputSchema } from '../inputTypeSchemas/AutoSettingWhereUniqueInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/AutoSettingWhereInputSchema.js.js
+..//inputTypeSchemas/AutoSettingOrderByWithRelationInputSchema.js.js
+..//inputTypeSchemas/AutoSettingWhereUniqueInputSchema.js.js
 export const AutoSettingAggregateArgsSchema: z.ZodType<Prisma.AutoSettingAggregateArgs> = z.object({
   where: AutoSettingWhereInputSchema.optional(),
   orderBy: z.union([ AutoSettingOrderByWithRelationInputSchema.array(),AutoSettingOrderByWithRelationInputSchema ]).optional(),
@@ -11,5 +10,4 @@ export const AutoSettingAggregateArgsSchema: z.ZodType<Prisma.AutoSettingAggrega
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
-
 export default AutoSettingAggregateArgsSchema;

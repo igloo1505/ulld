@@ -1,22 +1,20 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
-import { NullableDateTimeFieldUpdateOperationsInputSchema } from './NullableDateTimeFieldUpdateOperationsInputSchema';
-import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema';
-import { TaskCategorySchema } from './TaskCategorySchema';
-import { NullableEnumTaskCategoryFieldUpdateOperationsInputSchema } from './NullableEnumTaskCategoryFieldUpdateOperationsInputSchema';
-import { BoolFieldUpdateOperationsInputSchema } from './BoolFieldUpdateOperationsInputSchema';
-import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema';
-import { MdxNoteUpdateManyWithoutToDoNestedInputSchema } from './MdxNoteUpdateManyWithoutToDoNestedInputSchema';
-import { TagUpdateManyWithoutToDoNestedInputSchema } from './TagUpdateManyWithoutToDoNestedInputSchema';
-import { TopicUpdateManyWithoutToDoNestedInputSchema } from './TopicUpdateManyWithoutToDoNestedInputSchema';
-import { SubjectUpdateManyWithoutToDoNestedInputSchema } from './SubjectUpdateManyWithoutToDoNestedInputSchema';
-import { ToDoUpdateOneWithoutChildNestedInputSchema } from './ToDoUpdateOneWithoutChildNestedInputSchema';
-import { ToDoUpdateManyWithoutParentNestedInputSchema } from './ToDoUpdateManyWithoutParentNestedInputSchema';
-import { ToDoListUpdateOneWithoutTasksNestedInputSchema } from './ToDoListUpdateOneWithoutTasksNestedInputSchema';
-
+import { DateTimeFieldUpdateOperationsInputSchema } from '../DateTimeFieldUpdateOperationsInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from '../StringFieldUpdateOperationsInputSchema.js';
+import { NullableDateTimeFieldUpdateOperationsInputSchema } from '../NullableDateTimeFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from '../NullableStringFieldUpdateOperationsInputSchema.js';
+import { TaskCategorySchema } from '../TaskCategorySchema.js';
+import { NullableEnumTaskCategoryFieldUpdateOperationsInputSchema } from '../NullableEnumTaskCategoryFieldUpdateOperationsInputSchema.js';
+import { BoolFieldUpdateOperationsInputSchema } from '../BoolFieldUpdateOperationsInputSchema.js';
+import { IntFieldUpdateOperationsInputSchema } from '../IntFieldUpdateOperationsInputSchema.js';
+import { MdxNoteUpdateManyWithoutToDoNestedInputSchema } from '../MdxNoteUpdateManyWithoutToDoNestedInputSchema.js';
+import { TagUpdateManyWithoutToDoNestedInputSchema } from '../TagUpdateManyWithoutToDoNestedInputSchema.js';
+import { TopicUpdateManyWithoutToDoNestedInputSchema } from '../TopicUpdateManyWithoutToDoNestedInputSchema.js';
+import { SubjectUpdateManyWithoutToDoNestedInputSchema } from '../SubjectUpdateManyWithoutToDoNestedInputSchema.js';
+import { ToDoUpdateOneWithoutChildNestedInputSchema } from '../ToDoUpdateOneWithoutChildNestedInputSchema.js';
+import { ToDoUpdateManyWithoutParentNestedInputSchema } from '../ToDoUpdateManyWithoutParentNestedInputSchema.js';
+import { ToDoListUpdateOneWithoutTasksNestedInputSchema } from '../ToDoListUpdateOneWithoutTasksNestedInputSchema.js';
 export const ToDoUpdateInputSchema: z.ZodType<Prisma.ToDoUpdateInput> = z.object({
   createdAt: z.union([ z.coerce.date(),z.lazy(() => DateTimeFieldUpdateOperationsInputSchema) ]).optional(),
   task: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
@@ -35,5 +33,4 @@ export const ToDoUpdateInputSchema: z.ZodType<Prisma.ToDoUpdateInput> = z.object
   child: z.lazy(() => ToDoUpdateManyWithoutParentNestedInputSchema).optional(),
   ToDoList: z.lazy(() => ToDoListUpdateOneWithoutTasksNestedInputSchema).optional()
 }).strict();
-
 export default ToDoUpdateInputSchema;

@@ -1,7 +1,5 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-
 export const PracticeExamCreateManyInputSchema: z.ZodType<Prisma.PracticeExamCreateManyInput> = z.object({
   id: z.number().int().optional(),
   correctCount: z.number().int(),
@@ -10,5 +8,4 @@ export const PracticeExamCreateManyInputSchema: z.ZodType<Prisma.PracticeExamCre
   timeCompletedInSeconds: z.number().int(),
   date: z.coerce.date().optional()
 }).strict();
-
 export default PracticeExamCreateManyInputSchema;

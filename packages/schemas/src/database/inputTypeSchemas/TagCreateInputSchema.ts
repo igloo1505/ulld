@@ -1,16 +1,14 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteCreateNestedManyWithoutTagsInputSchema } from './MdxNoteCreateNestedManyWithoutTagsInputSchema';
-import { BibEntryCreateNestedManyWithoutTagsInputSchema } from './BibEntryCreateNestedManyWithoutTagsInputSchema';
-import { IpynbCreateNestedManyWithoutTagsInputSchema } from './IpynbCreateNestedManyWithoutTagsInputSchema';
-import { QAPairCreateNestedManyWithoutTagsInputSchema } from './QAPairCreateNestedManyWithoutTagsInputSchema';
-import { PracticeExamCreateNestedManyWithoutTagsInputSchema } from './PracticeExamCreateNestedManyWithoutTagsInputSchema';
-import { EquationCreateNestedManyWithoutTagsInputSchema } from './EquationCreateNestedManyWithoutTagsInputSchema';
-import { ToDoCreateNestedManyWithoutTagsInputSchema } from './ToDoCreateNestedManyWithoutTagsInputSchema';
-import { KanbanCreateNestedOneWithoutTagsInputSchema } from './KanbanCreateNestedOneWithoutTagsInputSchema';
-import { ToDoListCreateNestedManyWithoutTagsInputSchema } from './ToDoListCreateNestedManyWithoutTagsInputSchema';
-
+import { MdxNoteCreateNestedManyWithoutTagsInputSchema } from '../MdxNoteCreateNestedManyWithoutTagsInputSchema.js';
+import { BibEntryCreateNestedManyWithoutTagsInputSchema } from '../BibEntryCreateNestedManyWithoutTagsInputSchema.js';
+import { IpynbCreateNestedManyWithoutTagsInputSchema } from '../IpynbCreateNestedManyWithoutTagsInputSchema.js';
+import { QAPairCreateNestedManyWithoutTagsInputSchema } from '../QAPairCreateNestedManyWithoutTagsInputSchema.js';
+import { PracticeExamCreateNestedManyWithoutTagsInputSchema } from '../PracticeExamCreateNestedManyWithoutTagsInputSchema.js';
+import { EquationCreateNestedManyWithoutTagsInputSchema } from '../EquationCreateNestedManyWithoutTagsInputSchema.js';
+import { ToDoCreateNestedManyWithoutTagsInputSchema } from '../ToDoCreateNestedManyWithoutTagsInputSchema.js';
+import { KanbanCreateNestedOneWithoutTagsInputSchema } from '../KanbanCreateNestedOneWithoutTagsInputSchema.js';
+import { ToDoListCreateNestedManyWithoutTagsInputSchema } from '../ToDoListCreateNestedManyWithoutTagsInputSchema.js';
 export const TagCreateInputSchema: z.ZodType<Prisma.TagCreateInput> = z.object({
   value: z.string(),
   createdAt: z.coerce.date().optional(),
@@ -25,5 +23,4 @@ export const TagCreateInputSchema: z.ZodType<Prisma.TagCreateInput> = z.object({
   Kanban: z.lazy(() => KanbanCreateNestedOneWithoutTagsInputSchema).optional(),
   todoList: z.lazy(() => ToDoListCreateNestedManyWithoutTagsInputSchema).optional()
 }).strict();
-
 export default TagCreateInputSchema;

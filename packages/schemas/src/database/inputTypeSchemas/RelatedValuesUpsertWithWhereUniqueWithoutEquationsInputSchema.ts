@@ -1,16 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { RelatedValuesWhereUniqueInputSchema } from './RelatedValuesWhereUniqueInputSchema';
-import { RelatedValuesUpdateWithoutEquationsInputSchema } from './RelatedValuesUpdateWithoutEquationsInputSchema';
-import { RelatedValuesUncheckedUpdateWithoutEquationsInputSchema } from './RelatedValuesUncheckedUpdateWithoutEquationsInputSchema';
-import { RelatedValuesCreateWithoutEquationsInputSchema } from './RelatedValuesCreateWithoutEquationsInputSchema';
-import { RelatedValuesUncheckedCreateWithoutEquationsInputSchema } from './RelatedValuesUncheckedCreateWithoutEquationsInputSchema';
-
+import { RelatedValuesWhereUniqueInputSchema } from '../RelatedValuesWhereUniqueInputSchema.js';
+import { RelatedValuesUpdateWithoutEquationsInputSchema } from '../RelatedValuesUpdateWithoutEquationsInputSchema.js';
+import { RelatedValuesUncheckedUpdateWithoutEquationsInputSchema } from '../RelatedValuesUncheckedUpdateWithoutEquationsInputSchema.js';
+import { RelatedValuesCreateWithoutEquationsInputSchema } from '../RelatedValuesCreateWithoutEquationsInputSchema.js';
+import { RelatedValuesUncheckedCreateWithoutEquationsInputSchema } from '../RelatedValuesUncheckedCreateWithoutEquationsInputSchema.js';
 export const RelatedValuesUpsertWithWhereUniqueWithoutEquationsInputSchema: z.ZodType<Prisma.RelatedValuesUpsertWithWhereUniqueWithoutEquationsInput> = z.object({
   where: z.lazy(() => RelatedValuesWhereUniqueInputSchema),
   update: z.union([ z.lazy(() => RelatedValuesUpdateWithoutEquationsInputSchema),z.lazy(() => RelatedValuesUncheckedUpdateWithoutEquationsInputSchema) ]),
   create: z.union([ z.lazy(() => RelatedValuesCreateWithoutEquationsInputSchema),z.lazy(() => RelatedValuesUncheckedCreateWithoutEquationsInputSchema) ]),
 }).strict();
-
 export default RelatedValuesUpsertWithWhereUniqueWithoutEquationsInputSchema;

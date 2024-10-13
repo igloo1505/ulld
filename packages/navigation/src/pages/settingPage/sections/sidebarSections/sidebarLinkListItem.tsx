@@ -4,6 +4,7 @@ import { NavigationFormSettingSchema } from "../../form/schema";
 import { GripIcon as _GripIcon, XIcon } from "lucide-react";
 import { motion, Reorder, useDragControls } from "framer-motion";
 import { DynamicIcon } from "@ulld/icons";
+import { actionLabelMap } from "../../staticSettingData";
 const GripIcon = motion(_GripIcon);
 
 interface SidebarLinkListItemProps {
@@ -45,7 +46,7 @@ const SidebarLinkListItem = ({
                 }
             >
                 <div>{item.label}</div>
-                <div className={"text-muted-foreground"}>{item.url}</div>
+                <div className={"text-muted-foreground"}>{"url" in item ? item.url : item.action in actionLabelMap ? actionLabelMap[item.action] : item.action}</div>
             </div>
             <GripIcon
                 className={"cursor-grab text-muted-foreground size-4 place-self-center"}

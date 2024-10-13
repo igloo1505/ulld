@@ -1,10 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { MdxNoteIncludeSchema } from '../inputTypeSchemas/MdxNoteIncludeSchema'
-import { MdxNoteWhereInputSchema } from '../inputTypeSchemas/MdxNoteWhereInputSchema'
-import { MdxNoteOrderByWithRelationInputSchema } from '../inputTypeSchemas/MdxNoteOrderByWithRelationInputSchema'
-import { MdxNoteWhereUniqueInputSchema } from '../inputTypeSchemas/MdxNoteWhereUniqueInputSchema'
-import { MdxNoteScalarFieldEnumSchema } from '../inputTypeSchemas/MdxNoteScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/MdxNoteIncludeSchema.js
+..//inputTypeSchemas/MdxNoteWhereInputSchema.js
+..//inputTypeSchemas/MdxNoteOrderByWithRelationInputSchema.js
+..//inputTypeSchemas/MdxNoteWhereUniqueInputSchema.js
+..//inputTypeSchemas/MdxNoteScalarFieldEnumSchema.js
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
@@ -17,7 +17,6 @@ import { ToDoFindManyArgsSchema } from "../outputTypeSchemas/ToDoFindManyArgsSch
 import { MdxNoteCountOutputTypeArgsSchema } from "../outputTypeSchemas/MdxNoteCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const MdxNoteSelectSchema: z.ZodType<Prisma.MdxNoteSelect> = z.object({
   id: z.boolean().optional(),
   isProtected: z.boolean().optional(),
@@ -55,7 +54,6 @@ export const MdxNoteSelectSchema: z.ZodType<Prisma.MdxNoteSelect> = z.object({
   toDo: z.union([z.boolean(),z.lazy(() => ToDoFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => MdxNoteCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const MdxNoteFindFirstArgsSchema: z.ZodType<Prisma.MdxNoteFindFirstArgs> = z.object({
   select: MdxNoteSelectSchema.optional(),
   include: MdxNoteIncludeSchema.optional(),
@@ -66,5 +64,4 @@ export const MdxNoteFindFirstArgsSchema: z.ZodType<Prisma.MdxNoteFindFirstArgs> 
   skip: z.number().optional(),
   distinct: z.union([ MdxNoteScalarFieldEnumSchema,MdxNoteScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default MdxNoteFindFirstArgsSchema;

@@ -1,8 +1,8 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkU7NIGYYLcjs = require('../../chunk-U7NIGYYL.cjs');
-require('../../chunk-5DEJBS5Y.cjs');
+var _chunkH3WYQVXAcjs = require('../../chunk-H3WYQVXA.cjs');
+require('../../chunk-JUH5FQQR.cjs');
 
 
-exports.mathConfigSchema = _chunkU7NIGYYLcjs.mathConfigSchema;
+exports.mathConfigSchema = _chunkH3WYQVXAcjs.mathConfigSchema;
 //# sourceMappingURL=main.cjs.map

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/database/inputTypeSchemas/NoteTypeScalarFieldEnumSchema.ts"],"names":[],"mappings":";AAAA,SAAS,SAAS;AAEX,IAAM,gCAAgC,EAAE,KAAK,CAAC,MAAM,CAAC;AAE5D,IAAO,wCAAQ","sourcesContent":["import { z } from 'zod';\n\nexport const NoteTypeScalarFieldEnumSchema = z.enum(['name']);\n\nexport default NoteTypeScalarFieldEnumSchema;\n"]}

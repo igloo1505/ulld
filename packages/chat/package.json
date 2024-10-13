@@ -1,6 +1,19 @@
 {
   "name": "@ulld/chat",
   "version": "0.0.124",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "echo 'Add build script here'",
+    "dev": "echo 'Add dev script here'",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "echo 'Add test script here'"
+  },
   "dependencies": {
     "@discordjs/next": "0.1.1-dev.1673526225-a580768.0",
     "@discordjs/rest": "2.2.0",
@@ -28,10 +41,6 @@
     "utf-8-validate": "6.0.3",
     "zlib-sync": "0.1.9"
   },
-  "files": [
-    "src"
-  ],
-  "packageManager": "pnpm@9.0.4",
   "peerDependencies": {
     "@ulld/api": "workspace:*",
     "@ulld/calendar": "workspace:*",
@@ -49,14 +58,5 @@
     "@ulld/ui": "workspace:*",
     "@ulld/utilities": "workspace:*"
   },
-  "private": true,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "echo 'Add build script here'",
-    "dev": "echo 'Add dev script here'",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'Add test script here'"
-  }
+  "packageManager": "pnpm@9.0.4"
 }

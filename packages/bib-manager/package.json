@@ -1,6 +1,30 @@
 {
   "name": "@ulld/bib-manager",
   "version": "0.0.124",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "pluginConfig.ulld.json",
+    "src"
+  ],
+  "scripts": {
+    "build": "echo 'Add build script here'",
+    "dev": "next dev",
+    "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "echo 'Add test script here'"
+  },
+  "exports": {
+    "./trpcRouter": "./src/lib/trpc/bibliographyRouter.ts",
+    "./types": "./src/types.ts",
+    "./showBibEntryDetails": "./src/utils/showBibEntryDetails.ts",
+    "./bibEntryDetails": "./src/components/slots/bibDetailSheet/main.tsx",
+    "./bibliographyPage": "./src/components/slots/bibliographyPage/main.tsx",
+    "./parser": "./src/parsers/mdx/main.tsx",
+    "./parseCitationsFromStringContent": "./src/parsers/mdx/parseCitationsFromContentAndBibFile/main.ts"
+  },
   "dependencies": {
     "@citation-js/plugin-bibtex": "0.7.14",
     "@citation-js/plugin-csl": "0.7.14",
@@ -18,20 +42,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "exports": {
-    "./trpcRouter": "./src/lib/trpc/bibliographyRouter.ts",
-    "./types": "./src/types.ts",
-    "./showBibEntryDetails": "./src/utils/showBibEntryDetails.ts",
-    "./bibEntryDetails": "./src/components/slots/bibDetailSheet/main.tsx",
-    "./bibliographyPage": "./src/components/slots/bibliographyPage/main.tsx",
-    "./parser": "./src/parsers/mdx/main.tsx",
-    "./parseCitationsFromStringContent": "./src/parsers/mdx/parseCitationsFromContentAndBibFile/main.ts"
-  },
-  "files": [
-    "pluginConfig.ulld.json",
-    "src"
-  ],
-  "packageManager": "pnpm@9.0.4",
   "peerDependencies": {
     "@ulld/api": "workspace:*",
     "@ulld/configschema": "workspace:*",
@@ -53,18 +63,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "echo 'Add build script here'",
-    "dev": "next dev",
-    "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'Add test script here'"
-  },
-  "ulld-plugin-id": "5c8198c7-027a-4719-80bd-5ea7283be9dd",
+  "packageManager": "pnpm@9.0.4",
   "ulld-pluginConfig": {
     "pluginName": "@ulld/bib-manager",
     "label": "Bibliography",
@@ -104,5 +103,6 @@
     "commandPalette": [],
     "tailwind": {},
     "styles": {}
-  }
+  },
+  "ulld-plugin-id": "5c8198c7-027a-4719-80bd-5ea7283be9dd"
 }

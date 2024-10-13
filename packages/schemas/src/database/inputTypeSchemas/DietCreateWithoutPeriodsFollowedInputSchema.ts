@@ -1,12 +1,10 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema';
-import { DietCreategoalsInputSchema } from './DietCreategoalsInputSchema';
-import { DIETARY_GOALSchema } from './DIETARY_GOALSchema';
-import { DietaryItemCreateNestedManyWithoutDietInputSchema } from './DietaryItemCreateNestedManyWithoutDietInputSchema';
-import { HealthReportCreateNestedManyWithoutCurrentDietInputSchema } from './HealthReportCreateNestedManyWithoutCurrentDietInputSchema';
-
+import { TERTIARY_TOGGLESchema } from '../TERTIARY_TOGGLESchema.js';
+import { DietCreategoalsInputSchema } from '../DietCreategoalsInputSchema.js';
+import { DIETARY_GOALSchema } from '../DIETARY_GOALSchema.js';
+import { DietaryItemCreateNestedManyWithoutDietInputSchema } from '../DietaryItemCreateNestedManyWithoutDietInputSchema.js';
+import { HealthReportCreateNestedManyWithoutCurrentDietInputSchema } from '../HealthReportCreateNestedManyWithoutCurrentDietInputSchema.js';
 export const DietCreateWithoutPeriodsFollowedInputSchema: z.ZodType<Prisma.DietCreateWithoutPeriodsFollowedInput> = z.object({
   name: z.string(),
   summary: z.string().optional().nullable(),
@@ -27,5 +25,4 @@ export const DietCreateWithoutPeriodsFollowedInputSchema: z.ZodType<Prisma.DietC
   items: z.lazy(() => DietaryItemCreateNestedManyWithoutDietInputSchema).optional(),
   HealthReport: z.lazy(() => HealthReportCreateNestedManyWithoutCurrentDietInputSchema).optional()
 }).strict();
-
 export default DietCreateWithoutPeriodsFollowedInputSchema;

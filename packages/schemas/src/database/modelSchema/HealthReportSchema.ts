@@ -1,13 +1,11 @@
 import { z } from 'zod';
-import type { DietWithRelations } from './DietSchema'
-import type { DietPartialWithRelations } from './DietSchema'
-import { DietWithRelationsSchema } from './DietSchema'
-import { DietPartialWithRelationsSchema } from './DietSchema'
-
+import type { DietWithRelations } from '../DietSchema.js'
+import type { DietPartialWithRelations } from '../DietSchema.js'
+import { DietWithRelationsSchema } from '../DietSchema.js'
+import { DietPartialWithRelationsSchema } from '../DietSchema.js'
 /////////////////////////////////////////
 // HEALTH REPORT SCHEMA
 /////////////////////////////////////////
-
 export const HealthReportSchema = z.object({
   id: z.number().int(),
   title: z.string().nullable(),
@@ -43,49 +41,34 @@ export const HealthReportSchema = z.object({
   dietId: z.string().nullable(),
   created: z.coerce.date(),
 })
-
 export type HealthReport = z.infer<typeof HealthReportSchema>
-
 /////////////////////////////////////////
 // HEALTH REPORT PARTIAL SCHEMA
 /////////////////////////////////////////
-
 export const HealthReportPartialSchema = HealthReportSchema.partial()
-
 export type HealthReportPartial = z.infer<typeof HealthReportPartialSchema>
-
 /////////////////////////////////////////
 // HEALTH REPORT RELATION SCHEMA
 /////////////////////////////////////////
-
 export type HealthReportRelations = {
   currentDiet?: DietWithRelations | null;
 };
-
 export type HealthReportWithRelations = z.infer<typeof HealthReportSchema> & HealthReportRelations
-
 export const HealthReportWithRelationsSchema: z.ZodType<HealthReportWithRelations> = HealthReportSchema.merge(z.object({
   currentDiet: z.lazy(() => DietWithRelationsSchema).nullable(),
 }))
-
 /////////////////////////////////////////
 // HEALTH REPORT PARTIAL RELATION SCHEMA
 /////////////////////////////////////////
-
 export type HealthReportPartialRelations = {
   currentDiet?: DietPartialWithRelations | null;
 };
-
 export type HealthReportPartialWithRelations = z.infer<typeof HealthReportPartialSchema> & HealthReportPartialRelations
-
 export const HealthReportPartialWithRelationsSchema: z.ZodType<HealthReportPartialWithRelations> = HealthReportPartialSchema.merge(z.object({
   currentDiet: z.lazy(() => DietPartialWithRelationsSchema).nullable(),
 })).partial()
-
 export type HealthReportWithPartialRelations = z.infer<typeof HealthReportSchema> & HealthReportPartialRelations
-
 export const HealthReportWithPartialRelationsSchema: z.ZodType<HealthReportWithPartialRelations> = HealthReportSchema.merge(z.object({
   currentDiet: z.lazy(() => DietPartialWithRelationsSchema).nullable(),
 }).partial())
-
 export default HealthReportSchema;

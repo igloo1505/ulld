@@ -1,4 +1,20 @@
 import { z } from "zod";
+export declare const jupyterCellWrapperField: z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodObject<{
+    prefix: z.ZodString;
+    suffix: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    prefix: string;
+    suffix: string;
+}, {
+    prefix: string;
+    suffix: string;
+}>]>, {
+    prefix: string;
+    suffix: string;
+}, string | {
+    prefix: string;
+    suffix: string;
+}>;
 export declare const jupyterConfigSchema: z.ZodObject<{
     execute: z.ZodDefault<z.ZodBoolean>;
     environment: z.ZodDefault<z.ZodString>;
@@ -131,10 +147,22 @@ export declare const jupyterConfigSchema: z.ZodObject<{
         nbgrader?: boolean | undefined;
         readOnly?: boolean | undefined;
     }>>;
-    cellInputWrappers: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, {
+    cellInputWrappers: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodObject<{
+        prefix: z.ZodString;
+        suffix: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
         prefix: string;
         suffix: string;
-    }, string>>>;
+    }, {
+        prefix: string;
+        suffix: string;
+    }>]>, {
+        prefix: string;
+        suffix: string;
+    }, string | {
+        prefix: string;
+        suffix: string;
+    }>>>;
 }, "strip", z.ZodTypeAny, {
     execute: boolean;
     environment: string;
@@ -225,7 +253,10 @@ export declare const jupyterConfigSchema: z.ZodObject<{
         nbgrader?: boolean | undefined;
         readOnly?: boolean | undefined;
     } | undefined;
-    cellInputWrappers?: Record<string, string> | undefined;
+    cellInputWrappers?: Record<string, string | {
+        prefix: string;
+        suffix: string;
+    }> | undefined;
 }>;
 export declare const jupyterConfigSchemaOutput: z.ZodObject<z.objectUtil.extendShape<{
     execute: z.ZodDefault<z.ZodBoolean>;
@@ -359,10 +390,22 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<z.objectUtil.extendS
         nbgrader?: boolean | undefined;
         readOnly?: boolean | undefined;
     }>>;
-    cellInputWrappers: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, {
+    cellInputWrappers: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodObject<{
+        prefix: z.ZodString;
+        suffix: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
         prefix: string;
         suffix: string;
-    }, string>>>;
+    }, {
+        prefix: string;
+        suffix: string;
+    }>]>, {
+        prefix: string;
+        suffix: string;
+    }, string | {
+        prefix: string;
+        suffix: string;
+    }>>>;
 }, {
     jupyterReactProps: z.ZodObject<z.objectUtil.extendShape<{
         collaborative: z.ZodDefault<z.ZodBoolean>;
@@ -493,6 +536,9 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<z.objectUtil.extendS
         nbgrader?: boolean | undefined;
         readOnly?: boolean | undefined;
     } | undefined;
-    cellInputWrappers?: Record<string, string> | undefined;
+    cellInputWrappers?: Record<string, string | {
+        prefix: string;
+        suffix: string;
+    }> | undefined;
 }>;
 //# sourceMappingURL=main.d.ts.map

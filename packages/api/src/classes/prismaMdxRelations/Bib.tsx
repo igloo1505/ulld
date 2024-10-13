@@ -1,13 +1,13 @@
 import { type BibFilePresenter, parseBibFile } from "bibtex";
-import { BibEntry, type BibEntryDataTableOutput } from "./BibEntry";
+import type { AppConfigSchemaOutput } from "@ulld/configschema/types";
 import type {
     Prisma,
     Bib as PrismaBib,
 } from "@ulld/database/internalDatabaseTypes";
 import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
-import { AppConfigSchemaOutput } from "@ulld/configschema/types";
+import { BibEntry, type BibEntryDataTableOutput } from "./BibEntry";
 import {
-    BibPropsOutput,
+    type BibPropsOutput,
     bibCoreSchema,
     bibEntryPropsSchema,
     bibEntryTransform,
@@ -17,8 +17,8 @@ interface IsbnQueryParams { }
 
 export class BibCore {
     entries: BibEntry[] = [];
-    id: number = 1;
-    filename: string = "citations.bib";
+    id = 1;
+    filename = "citations.bib";
     lastAccess: Date | undefined | null = undefined;
     firstSync: Date | undefined | null = undefined;
     constructor(props?: BibPropsOutput) {

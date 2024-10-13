@@ -1,8 +1,8 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkO5CTXNDNcjs = require('../../chunk-O5CTXNDN.cjs');
-require('../../chunk-5DEJBS5Y.cjs');
+var _chunkE5CC5O5Vcjs = require('../../chunk-E5CC5O5V.cjs');
+require('../../chunk-JUH5FQQR.cjs');
 
 
-exports.mediaConfigSchema = _chunkO5CTXNDNcjs.mediaConfigSchema;
+exports.mediaConfigSchema = _chunkE5CC5O5Vcjs.mediaConfigSchema;
 //# sourceMappingURL=mediaConfig.cjs.map

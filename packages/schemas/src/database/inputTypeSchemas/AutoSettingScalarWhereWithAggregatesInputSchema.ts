@@ -1,11 +1,9 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema';
-import { EnumautoSettingWithAggregatesFilterSchema } from './EnumautoSettingWithAggregatesFilterSchema';
-import { autoSettingSchema } from './autoSettingSchema';
-import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
-
+import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
+import { EnumautoSettingWithAggregatesFilterSchema } from '../EnumautoSettingWithAggregatesFilterSchema.js';
+import { autoSettingSchema } from '../autoSettingSchema.js';
+import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
 export const AutoSettingScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.AutoSettingScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => AutoSettingScalarWhereWithAggregatesInputSchema),z.lazy(() => AutoSettingScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => AutoSettingScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -15,5 +13,4 @@ export const AutoSettingScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.A
   glob: z.union([ z.lazy(() => StringWithAggregatesFilterSchema),z.string() ]).optional(),
   value: z.union([ z.lazy(() => StringWithAggregatesFilterSchema),z.string() ]).optional(),
 }).strict();
-
 export default AutoSettingScalarWhereWithAggregatesInputSchema;

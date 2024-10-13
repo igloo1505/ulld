@@ -19,3 +19,5 @@ echo "Copying files for documentation"
 tsx $ULLD_DEV_ROOT/buildUtils/copyTypesForDocumentation.ts
 echo "Creating json schemas for various configs"
 tsx $ULLD_DEV_ROOT/packages/configschema/src/__scripts__/generateJsonSchemas.ts
+echo "formatting package.json files"
+pnpm syncpack format

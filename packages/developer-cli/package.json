@@ -1,8 +1,26 @@
 {
   "name": "@ulld/developer-cli",
   "version": "0.0.124",
-  "bin": {
-    "ulld-dev": "./bin/run.js"
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "/bin",
+    "/dist",
+    "/oclif.manifest.json",
+    "src"
+  ],
+  "scripts": {
+    "build": "rm -rf ./dist && tsc -b",
+    "dev": "node ./bin/dev.js",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "jest"
+  },
+  "types": "dist/index.d.ts",
+  "exports": "./lib/index.js",
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "@inquirer/prompts": "5.0.1",
@@ -76,16 +94,15 @@
     "unexpected": "^13.2.1",
     "zocker": "^1.4.1"
   },
-  "engines": {
-    "node": ">=18.0.0"
+  "peerDependencies": {
+    "@ulld/developer": "workspace:*",
+    "@ulld/developer-schemas": "workspace:*",
+    "@ulld/types": "workspace:*"
   },
-  "exports": "./lib/index.js",
-  "files": [
-    "/bin",
-    "/dist",
-    "/oclif.manifest.json",
-    "src"
-  ],
+  "packageManager": "pnpm@9.0.4",
+  "bin": {
+    "ulld-dev": "./bin/run.js"
+  },
   "oclif": {
     "bin": "ulld-dev",
     "dirname": "ulld-dev",
@@ -102,22 +119,5 @@
         "description": "Append trpc router while in development"
       }
     }
-  },
-  "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {
-    "@ulld/developer": "workspace:*",
-    "@ulld/developer-schemas": "workspace:*",
-    "@ulld/types": "workspace:*"
-  },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "rm -rf ./dist && tsc -b",
-    "dev": "node ./bin/dev.js",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "jest"
-  },
-  "types": "dist/index.d.ts"
+  }
 }

@@ -16,8 +16,7 @@ import { getBaseComponents } from "../utils";
 import { getConditionalServerComponents } from './conditionalComponents';
 
 
-// FIX: Handle this typescript error when back on wifi. This works with exactly the same setup in the ui package. Try compiling types in the ui package and exporting them appropriately so types are found.
-export const components: any = {
+export const components: MDXComponents = {
     h1: H1,
     h2: H2,
     h3: H3,
@@ -38,9 +37,9 @@ export const components: any = {
 
 
 export const getComponentMap = <J extends ComponentType<unknown>[]>(content: string, opts?: ConditionalComponentProps, extraComponents: ConditionalComponentQuery<J>[] = []) => {
-    let baseComponents = opts?.noDefaults ? {} : opts?.avoidKeys ? getBaseComponents(components, opts.avoidKeys) : components
+    let baseComponents: MDXComponents = opts?.noDefaults ? {} : opts?.avoidKeys ? getBaseComponents(components, opts.avoidKeys) : components
      if (opts?.requiredOnly) {
-        return baseComponents satisfies MDXComponents
+        return baseComponents
      }
      return {
          ...baseComponents,

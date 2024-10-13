@@ -1,13 +1,11 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { BibCountOrderByAggregateInputSchema } from './BibCountOrderByAggregateInputSchema';
-import { BibAvgOrderByAggregateInputSchema } from './BibAvgOrderByAggregateInputSchema';
-import { BibMaxOrderByAggregateInputSchema } from './BibMaxOrderByAggregateInputSchema';
-import { BibMinOrderByAggregateInputSchema } from './BibMinOrderByAggregateInputSchema';
-import { BibSumOrderByAggregateInputSchema } from './BibSumOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
+import { BibCountOrderByAggregateInputSchema } from '../BibCountOrderByAggregateInputSchema.js';
+import { BibAvgOrderByAggregateInputSchema } from '../BibAvgOrderByAggregateInputSchema.js';
+import { BibMaxOrderByAggregateInputSchema } from '../BibMaxOrderByAggregateInputSchema.js';
+import { BibMinOrderByAggregateInputSchema } from '../BibMinOrderByAggregateInputSchema.js';
+import { BibSumOrderByAggregateInputSchema } from '../BibSumOrderByAggregateInputSchema.js';
 export const BibOrderByWithAggregationInputSchema: z.ZodType<Prisma.BibOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   filename: z.lazy(() => SortOrderSchema).optional(),
@@ -19,5 +17,4 @@ export const BibOrderByWithAggregationInputSchema: z.ZodType<Prisma.BibOrderByWi
   _min: z.lazy(() => BibMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => BibSumOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default BibOrderByWithAggregationInputSchema;

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/database/inputTypeSchemas/KanbanOrderByRelevanceFieldEnumSchema.ts"],"names":[],"mappings":";AAAA,SAAS,SAAS;AAEX,IAAM,wCAAwC,EAAE,KAAK,CAAC,OAAO,CAAC;AAErE,IAAO,gDAAQ","sourcesContent":["import { z } from 'zod';\n\nexport const KanbanOrderByRelevanceFieldEnumSchema = z.enum(['title']);\n\nexport default KanbanOrderByRelevanceFieldEnumSchema;\n"]}

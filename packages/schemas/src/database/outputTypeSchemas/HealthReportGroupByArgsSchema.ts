@@ -1,10 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { HealthReportWhereInputSchema } from '../inputTypeSchemas/HealthReportWhereInputSchema'
-import { HealthReportOrderByWithAggregationInputSchema } from '../inputTypeSchemas/HealthReportOrderByWithAggregationInputSchema'
-import { HealthReportScalarFieldEnumSchema } from '../inputTypeSchemas/HealthReportScalarFieldEnumSchema'
-import { HealthReportScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/HealthReportScalarWhereWithAggregatesInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/HealthReportWhereInputSchema.js
+..//inputTypeSchemas/HealthReportOrderByWithAggregationInputSchema.js
+..//inputTypeSchemas/HealthReportScalarFieldEnumSchema.js
+..//inputTypeSchemas/HealthReportScalarWhereWithAggregatesInputSchema.js
 export const HealthReportGroupByArgsSchema: z.ZodType<Prisma.HealthReportGroupByArgs> = z.object({
   where: HealthReportWhereInputSchema.optional(),
   orderBy: z.union([ HealthReportOrderByWithAggregationInputSchema.array(),HealthReportOrderByWithAggregationInputSchema ]).optional(),
@@ -13,5 +12,4 @@ export const HealthReportGroupByArgsSchema: z.ZodType<Prisma.HealthReportGroupBy
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
-
 export default HealthReportGroupByArgsSchema;

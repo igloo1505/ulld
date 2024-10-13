@@ -8,6 +8,8 @@ import { gatherReservedPublicPaths } from "./gatherReservedPublicPaths";
 import { getInternalDocumentTypes } from "./getInternalDocumentTypes";
 import { writeTestStaticBuildData } from "./getTestStaticBuildData";
 
+const __dirname = import.meta.dirname
+
 const testRoot = process.env.ULLD_TEST_ROOT;
 
 const buildDataPath = path.join(__dirname, "../../../utilities/src/utils/buildStaticData.json")

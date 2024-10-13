@@ -1,10 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { EquationWhereInputSchema } from '../inputTypeSchemas/EquationWhereInputSchema'
-import { EquationOrderByWithAggregationInputSchema } from '../inputTypeSchemas/EquationOrderByWithAggregationInputSchema'
-import { EquationScalarFieldEnumSchema } from '../inputTypeSchemas/EquationScalarFieldEnumSchema'
-import { EquationScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/EquationScalarWhereWithAggregatesInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/EquationWhereInputSchema.js
+..//inputTypeSchemas/EquationOrderByWithAggregationInputSchema.js
+..//inputTypeSchemas/EquationScalarFieldEnumSchema.js
+..//inputTypeSchemas/EquationScalarWhereWithAggregatesInputSchema.js
 export const EquationGroupByArgsSchema: z.ZodType<Prisma.EquationGroupByArgs> = z.object({
   where: EquationWhereInputSchema.optional(),
   orderBy: z.union([ EquationOrderByWithAggregationInputSchema.array(),EquationOrderByWithAggregationInputSchema ]).optional(),
@@ -13,5 +12,4 @@ export const EquationGroupByArgsSchema: z.ZodType<Prisma.EquationGroupByArgs> = 
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
-
 export default EquationGroupByArgsSchema;

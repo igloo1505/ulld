@@ -1,13 +1,10 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema';
-import { TagUpdateWithoutBibEntriesInputSchema } from './TagUpdateWithoutBibEntriesInputSchema';
-import { TagUncheckedUpdateWithoutBibEntriesInputSchema } from './TagUncheckedUpdateWithoutBibEntriesInputSchema';
-
+import { TagWhereUniqueInputSchema } from '../TagWhereUniqueInputSchema.js';
+import { TagUpdateWithoutBibEntriesInputSchema } from '../TagUpdateWithoutBibEntriesInputSchema.js';
+import { TagUncheckedUpdateWithoutBibEntriesInputSchema } from '../TagUncheckedUpdateWithoutBibEntriesInputSchema.js';
 export const TagUpdateWithWhereUniqueWithoutBibEntriesInputSchema: z.ZodType<Prisma.TagUpdateWithWhereUniqueWithoutBibEntriesInput> = z.object({
   where: z.lazy(() => TagWhereUniqueInputSchema),
   data: z.union([ z.lazy(() => TagUpdateWithoutBibEntriesInputSchema),z.lazy(() => TagUncheckedUpdateWithoutBibEntriesInputSchema) ]),
 }).strict();
-
 export default TagUpdateWithWhereUniqueWithoutBibEntriesInputSchema;

@@ -1,13 +1,11 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
-import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
-import { BibEntryUpdateManyWithoutReadingListNestedInputSchema } from './BibEntryUpdateManyWithoutReadingListNestedInputSchema';
-import { MdxNoteUpdateManyWithoutReadingListNestedInputSchema } from './MdxNoteUpdateManyWithoutReadingListNestedInputSchema';
-import { IpynbUpdateManyWithoutReadingListNestedInputSchema } from './IpynbUpdateManyWithoutReadingListNestedInputSchema';
-
+import { StringFieldUpdateOperationsInputSchema } from '../StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from '../NullableStringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from '../DateTimeFieldUpdateOperationsInputSchema.js';
+import { BibEntryUpdateManyWithoutReadingListNestedInputSchema } from '../BibEntryUpdateManyWithoutReadingListNestedInputSchema.js';
+import { MdxNoteUpdateManyWithoutReadingListNestedInputSchema } from '../MdxNoteUpdateManyWithoutReadingListNestedInputSchema.js';
+import { IpynbUpdateManyWithoutReadingListNestedInputSchema } from '../IpynbUpdateManyWithoutReadingListNestedInputSchema.js';
 export const ReadingListUpdateInputSchema: z.ZodType<Prisma.ReadingListUpdateInput> = z.object({
   name: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   description: z.union([ z.string(),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
@@ -17,5 +15,4 @@ export const ReadingListUpdateInputSchema: z.ZodType<Prisma.ReadingListUpdateInp
   mdxNotes: z.lazy(() => MdxNoteUpdateManyWithoutReadingListNestedInputSchema).optional(),
   ipynbNotes: z.lazy(() => IpynbUpdateManyWithoutReadingListNestedInputSchema).optional()
 }).strict();
-
 export default ReadingListUpdateInputSchema;

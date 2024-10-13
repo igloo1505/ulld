@@ -1,33 +1,31 @@
 import { z } from 'zod';
-import type { TagWithRelations } from './TagSchema'
-import type { TagPartialWithRelations } from './TagSchema'
-import type { TopicWithRelations } from './TopicSchema'
-import type { TopicPartialWithRelations } from './TopicSchema'
-import type { SubjectWithRelations } from './SubjectSchema'
-import type { SubjectPartialWithRelations } from './SubjectSchema'
-import type { BibEntryWithRelations } from './BibEntrySchema'
-import type { BibEntryPartialWithRelations } from './BibEntrySchema'
-import type { SequentialNoteListWithRelations } from './SequentialNoteListSchema'
-import type { SequentialNoteListPartialWithRelations } from './SequentialNoteListSchema'
-import type { ReadingListWithRelations } from './ReadingListSchema'
-import type { ReadingListPartialWithRelations } from './ReadingListSchema'
-import { TagWithRelationsSchema } from './TagSchema'
-import { TagPartialWithRelationsSchema } from './TagSchema'
-import { TopicWithRelationsSchema } from './TopicSchema'
-import { TopicPartialWithRelationsSchema } from './TopicSchema'
-import { SubjectWithRelationsSchema } from './SubjectSchema'
-import { SubjectPartialWithRelationsSchema } from './SubjectSchema'
-import { BibEntryWithRelationsSchema } from './BibEntrySchema'
-import { BibEntryPartialWithRelationsSchema } from './BibEntrySchema'
-import { SequentialNoteListWithRelationsSchema } from './SequentialNoteListSchema'
-import { SequentialNoteListPartialWithRelationsSchema } from './SequentialNoteListSchema'
-import { ReadingListWithRelationsSchema } from './ReadingListSchema'
-import { ReadingListPartialWithRelationsSchema } from './ReadingListSchema'
-
+import type { TagWithRelations } from '../TagSchema.js'
+import type { TagPartialWithRelations } from '../TagSchema.js'
+import type { TopicWithRelations } from '../TopicSchema.js'
+import type { TopicPartialWithRelations } from '../TopicSchema.js'
+import type { SubjectWithRelations } from '../SubjectSchema.js'
+import type { SubjectPartialWithRelations } from '../SubjectSchema.js'
+import type { BibEntryWithRelations } from '../BibEntrySchema.js'
+import type { BibEntryPartialWithRelations } from '../BibEntrySchema.js'
+import type { SequentialNoteListWithRelations } from '../SequentialNoteListSchema.js'
+import type { SequentialNoteListPartialWithRelations } from '../SequentialNoteListSchema.js'
+import type { ReadingListWithRelations } from '../ReadingListSchema.js'
+import type { ReadingListPartialWithRelations } from '../ReadingListSchema.js'
+import { TagWithRelationsSchema } from '../TagSchema.js'
+import { TagPartialWithRelationsSchema } from '../TagSchema.js'
+import { TopicWithRelationsSchema } from '../TopicSchema.js'
+import { TopicPartialWithRelationsSchema } from '../TopicSchema.js'
+import { SubjectWithRelationsSchema } from '../SubjectSchema.js'
+import { SubjectPartialWithRelationsSchema } from '../SubjectSchema.js'
+import { BibEntryWithRelationsSchema } from '../BibEntrySchema.js'
+import { BibEntryPartialWithRelationsSchema } from '../BibEntrySchema.js'
+import { SequentialNoteListWithRelationsSchema } from '../SequentialNoteListSchema.js'
+import { SequentialNoteListPartialWithRelationsSchema } from '../SequentialNoteListSchema.js'
+import { ReadingListWithRelationsSchema } from '../ReadingListSchema.js'
+import { ReadingListPartialWithRelationsSchema } from '../ReadingListSchema.js'
 /////////////////////////////////////////
 // IPYNB SCHEMA
 /////////////////////////////////////////
-
 export const IpynbSchema = z.object({
   id: z.number().int(),
   rootRelativePath: z.string(),
@@ -46,21 +44,15 @@ export const IpynbSchema = z.object({
   lastSync: z.coerce.date(),
   lastAccess: z.coerce.date(),
 })
-
 export type Ipynb = z.infer<typeof IpynbSchema>
-
 /////////////////////////////////////////
 // IPYNB PARTIAL SCHEMA
 /////////////////////////////////////////
-
 export const IpynbPartialSchema = IpynbSchema.partial()
-
 export type IpynbPartial = z.infer<typeof IpynbPartialSchema>
-
 /////////////////////////////////////////
 // IPYNB RELATION SCHEMA
 /////////////////////////////////////////
-
 export type IpynbRelations = {
   tags: TagWithRelations[];
   topics: TopicWithRelations[];
@@ -69,9 +61,7 @@ export type IpynbRelations = {
   sequentialList?: SequentialNoteListWithRelations | null;
   readingList: ReadingListWithRelations[];
 };
-
 export type IpynbWithRelations = z.infer<typeof IpynbSchema> & IpynbRelations
-
 export const IpynbWithRelationsSchema: z.ZodType<IpynbWithRelations> = IpynbSchema.merge(z.object({
   tags: z.lazy(() => TagWithRelationsSchema).array(),
   topics: z.lazy(() => TopicWithRelationsSchema).array(),
@@ -80,11 +70,9 @@ export const IpynbWithRelationsSchema: z.ZodType<IpynbWithRelations> = IpynbSche
   sequentialList: z.lazy(() => SequentialNoteListWithRelationsSchema).nullable(),
   readingList: z.lazy(() => ReadingListWithRelationsSchema).array(),
 }))
-
 /////////////////////////////////////////
 // IPYNB PARTIAL RELATION SCHEMA
 /////////////////////////////////////////
-
 export type IpynbPartialRelations = {
   tags?: TagPartialWithRelations[];
   topics?: TopicPartialWithRelations[];
@@ -93,9 +81,7 @@ export type IpynbPartialRelations = {
   sequentialList?: SequentialNoteListPartialWithRelations | null;
   readingList?: ReadingListPartialWithRelations[];
 };
-
 export type IpynbPartialWithRelations = z.infer<typeof IpynbPartialSchema> & IpynbPartialRelations
-
 export const IpynbPartialWithRelationsSchema: z.ZodType<IpynbPartialWithRelations> = IpynbPartialSchema.merge(z.object({
   tags: z.lazy(() => TagPartialWithRelationsSchema).array(),
   topics: z.lazy(() => TopicPartialWithRelationsSchema).array(),
@@ -104,9 +90,7 @@ export const IpynbPartialWithRelationsSchema: z.ZodType<IpynbPartialWithRelation
   sequentialList: z.lazy(() => SequentialNoteListPartialWithRelationsSchema).nullable(),
   readingList: z.lazy(() => ReadingListPartialWithRelationsSchema).array(),
 })).partial()
-
 export type IpynbWithPartialRelations = z.infer<typeof IpynbSchema> & IpynbPartialRelations
-
 export const IpynbWithPartialRelationsSchema: z.ZodType<IpynbWithPartialRelations> = IpynbSchema.merge(z.object({
   tags: z.lazy(() => TagPartialWithRelationsSchema).array(),
   topics: z.lazy(() => TopicPartialWithRelationsSchema).array(),
@@ -115,5 +99,4 @@ export const IpynbWithPartialRelationsSchema: z.ZodType<IpynbWithPartialRelation
   sequentialList: z.lazy(() => SequentialNoteListPartialWithRelationsSchema).nullable(),
   readingList: z.lazy(() => ReadingListPartialWithRelationsSchema).array(),
 }).partial())
-
 export default IpynbSchema;

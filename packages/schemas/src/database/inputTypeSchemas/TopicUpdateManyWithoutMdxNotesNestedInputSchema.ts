@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TopicCreateWithoutMdxNotesInputSchema } from './TopicCreateWithoutMdxNotesInputSchema';
-import { TopicUncheckedCreateWithoutMdxNotesInputSchema } from './TopicUncheckedCreateWithoutMdxNotesInputSchema';
-import { TopicCreateOrConnectWithoutMdxNotesInputSchema } from './TopicCreateOrConnectWithoutMdxNotesInputSchema';
-import { TopicUpsertWithWhereUniqueWithoutMdxNotesInputSchema } from './TopicUpsertWithWhereUniqueWithoutMdxNotesInputSchema';
-import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema';
-import { TopicUpdateWithWhereUniqueWithoutMdxNotesInputSchema } from './TopicUpdateWithWhereUniqueWithoutMdxNotesInputSchema';
-import { TopicUpdateManyWithWhereWithoutMdxNotesInputSchema } from './TopicUpdateManyWithWhereWithoutMdxNotesInputSchema';
-import { TopicScalarWhereInputSchema } from './TopicScalarWhereInputSchema';
-
+import { TopicCreateWithoutMdxNotesInputSchema } from '../TopicCreateWithoutMdxNotesInputSchema.js';
+import { TopicUncheckedCreateWithoutMdxNotesInputSchema } from '../TopicUncheckedCreateWithoutMdxNotesInputSchema.js';
+import { TopicCreateOrConnectWithoutMdxNotesInputSchema } from '../TopicCreateOrConnectWithoutMdxNotesInputSchema.js';
+import { TopicUpsertWithWhereUniqueWithoutMdxNotesInputSchema } from '../TopicUpsertWithWhereUniqueWithoutMdxNotesInputSchema.js';
+import { TopicWhereUniqueInputSchema } from '../TopicWhereUniqueInputSchema.js';
+import { TopicUpdateWithWhereUniqueWithoutMdxNotesInputSchema } from '../TopicUpdateWithWhereUniqueWithoutMdxNotesInputSchema.js';
+import { TopicUpdateManyWithWhereWithoutMdxNotesInputSchema } from '../TopicUpdateManyWithWhereWithoutMdxNotesInputSchema.js';
+import { TopicScalarWhereInputSchema } from '../TopicScalarWhereInputSchema.js';
 export const TopicUpdateManyWithoutMdxNotesNestedInputSchema: z.ZodType<Prisma.TopicUpdateManyWithoutMdxNotesNestedInput> = z.object({
   create: z.union([ z.lazy(() => TopicCreateWithoutMdxNotesInputSchema),z.lazy(() => TopicCreateWithoutMdxNotesInputSchema).array(),z.lazy(() => TopicUncheckedCreateWithoutMdxNotesInputSchema),z.lazy(() => TopicUncheckedCreateWithoutMdxNotesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TopicCreateOrConnectWithoutMdxNotesInputSchema),z.lazy(() => TopicCreateOrConnectWithoutMdxNotesInputSchema).array() ]).optional(),
@@ -22,5 +20,4 @@ export const TopicUpdateManyWithoutMdxNotesNestedInputSchema: z.ZodType<Prisma.T
   updateMany: z.union([ z.lazy(() => TopicUpdateManyWithWhereWithoutMdxNotesInputSchema),z.lazy(() => TopicUpdateManyWithWhereWithoutMdxNotesInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => TopicScalarWhereInputSchema),z.lazy(() => TopicScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default TopicUpdateManyWithoutMdxNotesNestedInputSchema;

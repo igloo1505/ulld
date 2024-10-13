@@ -1,8 +1,6 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
 export const EquationMaxOrderByAggregateInputSchema: z.ZodType<Prisma.EquationMaxOrderByAggregateInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   equationId: z.lazy(() => SortOrderSchema).optional(),
@@ -13,5 +11,4 @@ export const EquationMaxOrderByAggregateInputSchema: z.ZodType<Prisma.EquationMa
   createdAt: z.lazy(() => SortOrderSchema).optional(),
   lastAccess: z.lazy(() => SortOrderSchema).optional()
 }).strict();
-
 export default EquationMaxOrderByAggregateInputSchema;

@@ -25,6 +25,7 @@ import { buildOnlySchema } from "./build/main.js";
 import { appMetaSchema } from "./meta.js";
 import staticBuildData from "@ulld/utilities/buildStaticData.json" with {type: "json"};
 import { defaultNoteTypes } from "./defaults/defaultNoteTypes.js";
+import { WithRequired } from "@ulld/utilities/types";
 
 export const zodRegexField = z
     .union([
@@ -32,7 +33,7 @@ export const zodRegexField = z
         z.string(),
         z.object({
             original: z.string(),
-            regex: z.instanceof(RegExp),
+            regex: z.string().or(z.instanceof(RegExp)).transform((x) => x instanceof RegExp ? x : new RegExp(x))
         }),
     ])
     .array();
@@ -56,6 +57,9 @@ export const zodRegexFieldTransform = (b: z.input<typeof zodRegexField> = []) =>
                 original: a.source,
                 regex: a,
             };
+        }
+        if(typeof a === "object" && "original" in a && "regex" in a){
+            return a
         }
         return a;
     });
@@ -93,7 +97,14 @@ export const appConfigSchema = z.object({
         )
         .transform(slashesTransform(true, false)),
     ignorePreferFsExtensions: z
-        .union([z.string(), z.instanceof(RegExp)])
+        .union([
+        z.string(),
+        z.instanceof(RegExp),
+        z.object({
+            original: z.string(),
+            regex: z.instanceof(RegExp)
+        })
+    ])
         .describe(
             "An array of either glob strings or RegExp's with which to test file paths. Those evaluating to true will always be rendered from the database, regardless of other global settings.",
         )
@@ -234,9 +245,14 @@ export const appConfigSchemaTransform = (
     return data;
 };
 
+export const appConfigDeepPartial = appConfigSchema.deepPartial()
+
 export type AppConfigSchemaInput = z.input<typeof appConfigSchema>;
 export type AppConfigSchemaOutput = z.output<typeof appConfigSchema>;
 export type AppConfigSchemaType = z.infer<typeof appConfigSchema>;
+export type AppConfigSchemaDeepPartial = z.input<typeof appConfigDeepPartial>
+export type AppConfigSchemaDeepPartialOutput = z.output<typeof appConfigDeepPartial>
+export type AppConfigPartialWithRequired<J extends keyof AppConfigSchemaOutput> = WithRequired<AppConfigSchemaDeepPartialOutput, J>
 
 export type SupportedDatabaseType =
     AppConfigSchemaOutput["build"]["database"]["type"];

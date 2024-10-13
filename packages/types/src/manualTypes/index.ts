@@ -7,3 +7,4 @@ export type * from "./individualNote/noteProps.ts";
 export type * from "./individualNote/frontMatter.ts";
 export type * from "./compiledApp/methods/eventMethods/returnTypes.ts";
 export type * from "./compiledApp/methods/eventMethods/params.ts"
+export type * from "./parsing/index.ts"

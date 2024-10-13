@@ -1,14 +1,12 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { HealthReportCountOrderByAggregateInputSchema } from './HealthReportCountOrderByAggregateInputSchema';
-import { HealthReportAvgOrderByAggregateInputSchema } from './HealthReportAvgOrderByAggregateInputSchema';
-import { HealthReportMaxOrderByAggregateInputSchema } from './HealthReportMaxOrderByAggregateInputSchema';
-import { HealthReportMinOrderByAggregateInputSchema } from './HealthReportMinOrderByAggregateInputSchema';
-import { HealthReportSumOrderByAggregateInputSchema } from './HealthReportSumOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
+import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
+import { HealthReportCountOrderByAggregateInputSchema } from '../HealthReportCountOrderByAggregateInputSchema.js';
+import { HealthReportAvgOrderByAggregateInputSchema } from '../HealthReportAvgOrderByAggregateInputSchema.js';
+import { HealthReportMaxOrderByAggregateInputSchema } from '../HealthReportMaxOrderByAggregateInputSchema.js';
+import { HealthReportMinOrderByAggregateInputSchema } from '../HealthReportMinOrderByAggregateInputSchema.js';
+import { HealthReportSumOrderByAggregateInputSchema } from '../HealthReportSumOrderByAggregateInputSchema.js';
 export const HealthReportOrderByWithAggregationInputSchema: z.ZodType<Prisma.HealthReportOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   title: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
@@ -49,5 +47,4 @@ export const HealthReportOrderByWithAggregationInputSchema: z.ZodType<Prisma.Hea
   _min: z.lazy(() => HealthReportMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => HealthReportSumOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default HealthReportOrderByWithAggregationInputSchema;

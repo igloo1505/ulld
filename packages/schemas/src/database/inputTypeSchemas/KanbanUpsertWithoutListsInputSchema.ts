@@ -1,16 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { KanbanUpdateWithoutListsInputSchema } from './KanbanUpdateWithoutListsInputSchema';
-import { KanbanUncheckedUpdateWithoutListsInputSchema } from './KanbanUncheckedUpdateWithoutListsInputSchema';
-import { KanbanCreateWithoutListsInputSchema } from './KanbanCreateWithoutListsInputSchema';
-import { KanbanUncheckedCreateWithoutListsInputSchema } from './KanbanUncheckedCreateWithoutListsInputSchema';
-import { KanbanWhereInputSchema } from './KanbanWhereInputSchema';
-
+import { KanbanUpdateWithoutListsInputSchema } from '../KanbanUpdateWithoutListsInputSchema.js';
+import { KanbanUncheckedUpdateWithoutListsInputSchema } from '../KanbanUncheckedUpdateWithoutListsInputSchema.js';
+import { KanbanCreateWithoutListsInputSchema } from '../KanbanCreateWithoutListsInputSchema.js';
+import { KanbanUncheckedCreateWithoutListsInputSchema } from '../KanbanUncheckedCreateWithoutListsInputSchema.js';
+import { KanbanWhereInputSchema } from '../KanbanWhereInputSchema.js';
 export const KanbanUpsertWithoutListsInputSchema: z.ZodType<Prisma.KanbanUpsertWithoutListsInput> = z.object({
   update: z.union([ z.lazy(() => KanbanUpdateWithoutListsInputSchema),z.lazy(() => KanbanUncheckedUpdateWithoutListsInputSchema) ]),
   create: z.union([ z.lazy(() => KanbanCreateWithoutListsInputSchema),z.lazy(() => KanbanUncheckedCreateWithoutListsInputSchema) ]),
   where: z.lazy(() => KanbanWhereInputSchema).optional()
 }).strict();
-
 export default KanbanUpsertWithoutListsInputSchema;

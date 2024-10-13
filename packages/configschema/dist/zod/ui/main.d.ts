@@ -24,15 +24,11 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
         }>, "many">, z.ZodLiteral<"default">]>>;
     }, "strip", z.ZodTypeAny, {
         blockQuoteItalic: boolean;
-        fontPaths: ({
+        fontPaths: {
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
             path: string;
-        }[] | "default") & ({
-            weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-            style: "bold" | "italic" | "normal";
-            path: string;
-        }[] | "default" | undefined);
+        }[] | "default";
     }, {
         blockQuoteItalic?: boolean | undefined;
         fontPaths?: {
@@ -78,15 +74,11 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
     };
     text: {
         blockQuoteItalic: boolean;
-        fontPaths: ({
+        fontPaths: {
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
             path: string;
-        }[] | "default") & ({
-            weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-            style: "bold" | "italic" | "normal";
-            path: string;
-        }[] | "default" | undefined);
+        }[] | "default";
     };
     media: {
         imageMap: Record<string, string | undefined>;
@@ -116,11 +108,11 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
         includeDefaultImageMap?: boolean | undefined;
         imageRemoteTest?: RegExp[] | undefined;
     } | undefined;
+    theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
     colors?: Record<string, string | {
         dark?: string | undefined;
         light?: string | undefined;
     } | null | undefined> | undefined;
-    theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
     autoApplyMdxTitles?: boolean | undefined;
 }>>;
 //# sourceMappingURL=main.d.ts.map

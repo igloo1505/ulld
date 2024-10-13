@@ -1,11 +1,9 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema';
-import { NestedEnumTERTIARY_TOGGLEWithAggregatesFilterSchema } from './NestedEnumTERTIARY_TOGGLEWithAggregatesFilterSchema';
-import { NestedIntFilterSchema } from './NestedIntFilterSchema';
-import { NestedEnumTERTIARY_TOGGLEFilterSchema } from './NestedEnumTERTIARY_TOGGLEFilterSchema';
-
+import { TERTIARY_TOGGLESchema } from '../TERTIARY_TOGGLESchema.js';
+import { NestedEnumTERTIARY_TOGGLEWithAggregatesFilterSchema } from '../NestedEnumTERTIARY_TOGGLEWithAggregatesFilterSchema.js';
+import { NestedIntFilterSchema } from '../NestedIntFilterSchema.js';
+import { NestedEnumTERTIARY_TOGGLEFilterSchema } from '../NestedEnumTERTIARY_TOGGLEFilterSchema.js';
 export const EnumTERTIARY_TOGGLEWithAggregatesFilterSchema: z.ZodType<Prisma.EnumTERTIARY_TOGGLEWithAggregatesFilter> = z.object({
   equals: z.lazy(() => TERTIARY_TOGGLESchema).optional(),
   in: z.lazy(() => TERTIARY_TOGGLESchema).array().optional(),
@@ -15,5 +13,4 @@ export const EnumTERTIARY_TOGGLEWithAggregatesFilterSchema: z.ZodType<Prisma.Enu
   _min: z.lazy(() => NestedEnumTERTIARY_TOGGLEFilterSchema).optional(),
   _max: z.lazy(() => NestedEnumTERTIARY_TOGGLEFilterSchema).optional()
 }).strict();
-
 export default EnumTERTIARY_TOGGLEWithAggregatesFilterSchema;

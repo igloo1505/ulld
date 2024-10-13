@@ -1,7 +1,10 @@
-import { AppConfigSchemaOutput } from "@ulld/types";
+import {
+    AppConfigSchemaDeepPartialOutputWithNoteTypes,
+    AppConfigSchemaOutput,
+} from "@ulld/types";
 
 export const sortNoteTypeDataForParsing = (
-    appConfig: AppConfigSchemaOutput,
+    appConfig: AppConfigSchemaDeepPartialOutputWithNoteTypes,
 ) => {
     return appConfig.noteTypes
         .sort((a, b) => b.fs.length - a.fs.length)
@@ -13,7 +16,7 @@ export const sortNoteTypeDataForParsing = (
 
 export const getNoteTypeDataFromPath = (
     rootRelativePath: string,
-    appConfig: AppConfigSchemaOutput,
+    appConfig: Parameters<typeof sortNoteTypeDataForParsing>[0],
     preSortedNoteTypes?: ReturnType<typeof sortNoteTypeDataForParsing>,
 ): AppConfigSchemaOutput["noteTypes"][number] | undefined => {
     let sorted = preSortedNoteTypes || sortNoteTypeDataForParsing(appConfig);

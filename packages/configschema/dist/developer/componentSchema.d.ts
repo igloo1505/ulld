@@ -81,6 +81,7 @@ export declare const componentConfigSchema: z.ZodObject<{
     componentName: string;
     export: string;
     tags?: string[] | undefined;
+    componentId?: string | undefined;
     slot?: string | undefined;
     embeddable?: {
         regexToInclude: string;
@@ -92,7 +93,6 @@ export declare const componentConfigSchema: z.ZodObject<{
     exportedPropsName?: string | undefined;
     docsExport?: string | undefined;
     fullDocsExport?: string | undefined;
-    componentId?: string | undefined;
 }>;
 export type EmbeddableConfigSchema = z.infer<typeof embeddableConfigSchema>;
 export type BaseAppEmbeddableConfig = {

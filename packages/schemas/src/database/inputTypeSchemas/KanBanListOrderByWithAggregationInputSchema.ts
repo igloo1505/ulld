@@ -1,14 +1,12 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { KanBanListCountOrderByAggregateInputSchema } from './KanBanListCountOrderByAggregateInputSchema';
-import { KanBanListAvgOrderByAggregateInputSchema } from './KanBanListAvgOrderByAggregateInputSchema';
-import { KanBanListMaxOrderByAggregateInputSchema } from './KanBanListMaxOrderByAggregateInputSchema';
-import { KanBanListMinOrderByAggregateInputSchema } from './KanBanListMinOrderByAggregateInputSchema';
-import { KanBanListSumOrderByAggregateInputSchema } from './KanBanListSumOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
+import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
+import { KanBanListCountOrderByAggregateInputSchema } from '../KanBanListCountOrderByAggregateInputSchema.js';
+import { KanBanListAvgOrderByAggregateInputSchema } from '../KanBanListAvgOrderByAggregateInputSchema.js';
+import { KanBanListMaxOrderByAggregateInputSchema } from '../KanBanListMaxOrderByAggregateInputSchema.js';
+import { KanBanListMinOrderByAggregateInputSchema } from '../KanBanListMinOrderByAggregateInputSchema.js';
+import { KanBanListSumOrderByAggregateInputSchema } from '../KanBanListSumOrderByAggregateInputSchema.js';
 export const KanBanListOrderByWithAggregationInputSchema: z.ZodType<Prisma.KanBanListOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   indexWithinBoard: z.lazy(() => SortOrderSchema).optional(),
@@ -20,5 +18,4 @@ export const KanBanListOrderByWithAggregationInputSchema: z.ZodType<Prisma.KanBa
   _min: z.lazy(() => KanBanListMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => KanBanListSumOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default KanBanListOrderByWithAggregationInputSchema;

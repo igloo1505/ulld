@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFilterSchema } from './StringFilterSchema';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-import { IntFilterSchema } from './IntFilterSchema';
-
+import { StringFilterSchema } from '../StringFilterSchema.js';
+import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
+import { IntFilterSchema } from '../IntFilterSchema.js';
 export const QAPairScalarWhereInputSchema: z.ZodType<Prisma.QAPairScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => QAPairScalarWhereInputSchema),z.lazy(() => QAPairScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => QAPairScalarWhereInputSchema).array().optional(),
@@ -17,5 +15,4 @@ export const QAPairScalarWhereInputSchema: z.ZodType<Prisma.QAPairScalarWhereInp
   correctCount: z.union([ z.lazy(() => IntFilterSchema),z.number() ]).optional(),
   inCorrectCount: z.union([ z.lazy(() => IntFilterSchema),z.number() ]).optional(),
 }).strict();
-
 export default QAPairScalarWhereInputSchema;

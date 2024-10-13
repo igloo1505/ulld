@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema';
-import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
-import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema';
-
+import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
 export const BibScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.BibScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => BibScalarWhereWithAggregatesInputSchema),z.lazy(() => BibScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => BibScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -14,5 +12,4 @@ export const BibScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.BibScalar
   firstSync: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
   lastSync: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
-
 export default BibScalarWhereWithAggregatesInputSchema;

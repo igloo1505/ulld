@@ -1,10 +1,8 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { KanBanListCreateManyInputSchema } from '../inputTypeSchemas/KanBanListCreateManyInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/KanBanListCreateManyInputSchema.js
 export const KanBanListCreateManyAndReturnArgsSchema: z.ZodType<Prisma.KanBanListCreateManyAndReturnArgs> = z.object({
   data: z.union([ KanBanListCreateManyInputSchema,KanBanListCreateManyInputSchema.array() ]),
   skipDuplicates: z.boolean().optional(),
 }).strict() ;
-
 export default KanBanListCreateManyAndReturnArgsSchema;

@@ -1,8 +1,48 @@
 {
   "name": "@ulld/build",
   "version": "0.0.123",
-  "bin": {
-    "ulld": "./bin/run.js"
+  "type": "module",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "/bin",
+    "/dist/**/*.js",
+    "/staticDevelopmentData.json",
+    "/oclif.lock",
+    "/oclif.manifest.json",
+    "/theme.json"
+  ],
+  "scripts": {
+    "build": "pnpm tsc",
+    "dev": "echo 'Add dev script here'",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "jest"
+  },
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "compile",
+        "lint"
+      ]
+    },
+    "compile": {
+      "command": "tsc -p . --pretty --incremental",
+      "files": [
+        "src/**/*.ts",
+        "**/tsconfig.json"
+      ],
+      "output": [
+        "dist/**",
+        "*.tsbuildinfo"
+      ],
+      "clean": "if-file-deleted"
+    }
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./classes/packageJson": "./dist/classes/pkgJson.js"
   },
   "dependencies": {
     "@antfu/install-pkg": "^0.4.1",
@@ -96,18 +136,16 @@
     "tsx": "4.15.6",
     "typescript": "^5.5.2"
   },
-  "exports": {
-    ".": "./dist/index.js",
-    "./classes/packageJson": "./dist/classes/pkgJson.js"
+  "peerDependencies": {
+    "@ulld/configschema": "workspace:*",
+    "@ulld/developer-schemas": "workspace:*",
+    "@ulld/types": "workspace:*",
+    "@ulld/utilities": "workspace:*"
   },
-  "files": [
-    "/bin",
-    "/dist/**/*.js",
-    "/staticDevelopmentData.json",
-    "/oclif.lock",
-    "/oclif.manifest.json",
-    "/theme.json"
-  ],
+  "packageManager": "pnpm@9.0.4",
+  "bin": {
+    "ulld": "./bin/run.js"
+  },
   "oclif": {
     "bin": "ulld",
     "binAliases": [
@@ -142,43 +180,5 @@
       "-h"
     ]
   },
-  "packageManager": "pnpm@9.0.4",
-  "peerDependencies": {
-    "@ulld/configschema": "workspace:*",
-    "@ulld/developer-schemas": "workspace:*",
-    "@ulld/types": "workspace:*",
-    "@ulld/utilities": "workspace:*"
-  },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": "ulld/build",
-  "scripts": {
-    "build": "pnpm tsc",
-    "dev": "echo 'Add dev script here'",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "jest"
-  },
-  "type": "module",
-  "wireit": {
-    "build": {
-      "dependencies": [
-        "compile",
-        "lint"
-      ]
-    },
-    "compile": {
-      "command": "tsc -p . --pretty --incremental",
-      "files": [
-        "src/**/*.ts",
-        "**/tsconfig.json"
-      ],
-      "output": [
-        "dist/**",
-        "*.tsbuildinfo"
-      ],
-      "clean": "if-file-deleted"
-    }
-  }
+  "repository": "ulld/build"
 }

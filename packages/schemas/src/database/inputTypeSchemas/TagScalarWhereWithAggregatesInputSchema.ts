@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
-import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema';
-import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema';
-
+import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
+import { IntNullableWithAggregatesFilterSchema } from '../IntNullableWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
 export const TagScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.TagScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => TagScalarWhereWithAggregatesInputSchema),z.lazy(() => TagScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => TagScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -14,5 +12,4 @@ export const TagScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.TagScalar
   createdAt: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
   lastAccess: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
-
 export default TagScalarWhereWithAggregatesInputSchema;

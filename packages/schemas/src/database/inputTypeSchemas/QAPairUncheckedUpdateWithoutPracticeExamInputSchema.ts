@@ -1,13 +1,11 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
-import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema';
-import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema';
-import { TagUncheckedUpdateManyWithoutQAPairNestedInputSchema } from './TagUncheckedUpdateManyWithoutQAPairNestedInputSchema';
-import { TopicUncheckedUpdateManyWithoutQAPairNestedInputSchema } from './TopicUncheckedUpdateManyWithoutQAPairNestedInputSchema';
-import { SubjectUncheckedUpdateManyWithoutQaPairNestedInputSchema } from './SubjectUncheckedUpdateManyWithoutQaPairNestedInputSchema';
-
+import { StringFieldUpdateOperationsInputSchema } from '../StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from '../NullableStringFieldUpdateOperationsInputSchema.js';
+import { IntFieldUpdateOperationsInputSchema } from '../IntFieldUpdateOperationsInputSchema.js';
+import { TagUncheckedUpdateManyWithoutQAPairNestedInputSchema } from '../TagUncheckedUpdateManyWithoutQAPairNestedInputSchema.js';
+import { TopicUncheckedUpdateManyWithoutQAPairNestedInputSchema } from '../TopicUncheckedUpdateManyWithoutQAPairNestedInputSchema.js';
+import { SubjectUncheckedUpdateManyWithoutQaPairNestedInputSchema } from '../SubjectUncheckedUpdateManyWithoutQaPairNestedInputSchema.js';
 export const QAPairUncheckedUpdateWithoutPracticeExamInputSchema: z.ZodType<Prisma.QAPairUncheckedUpdateWithoutPracticeExamInput> = z.object({
   id: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   question: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
@@ -20,5 +18,4 @@ export const QAPairUncheckedUpdateWithoutPracticeExamInputSchema: z.ZodType<Pris
   topics: z.lazy(() => TopicUncheckedUpdateManyWithoutQAPairNestedInputSchema).optional(),
   subjects: z.lazy(() => SubjectUncheckedUpdateManyWithoutQaPairNestedInputSchema).optional()
 }).strict();
-
 export default QAPairUncheckedUpdateWithoutPracticeExamInputSchema;

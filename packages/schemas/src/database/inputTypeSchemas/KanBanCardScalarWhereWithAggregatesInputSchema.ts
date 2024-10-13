@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema';
-import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema';
-import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema';
-
+import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
+import { IntNullableWithAggregatesFilterSchema } from '../IntNullableWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from '../StringNullableWithAggregatesFilterSchema.js';
 export const KanBanCardScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.KanBanCardScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => KanBanCardScalarWhereWithAggregatesInputSchema),z.lazy(() => KanBanCardScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => KanBanCardScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -15,5 +13,4 @@ export const KanBanCardScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.Ka
   label: z.union([ z.lazy(() => StringNullableWithAggregatesFilterSchema),z.string() ]).optional().nullable(),
   details: z.union([ z.lazy(() => StringNullableWithAggregatesFilterSchema),z.string() ]).optional().nullable(),
 }).strict();
-
 export default KanBanCardScalarWhereWithAggregatesInputSchema;

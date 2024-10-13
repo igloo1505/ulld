@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IpynbCreateWithoutSubjectsInputSchema } from './IpynbCreateWithoutSubjectsInputSchema';
-import { IpynbUncheckedCreateWithoutSubjectsInputSchema } from './IpynbUncheckedCreateWithoutSubjectsInputSchema';
-import { IpynbCreateOrConnectWithoutSubjectsInputSchema } from './IpynbCreateOrConnectWithoutSubjectsInputSchema';
-import { IpynbUpsertWithWhereUniqueWithoutSubjectsInputSchema } from './IpynbUpsertWithWhereUniqueWithoutSubjectsInputSchema';
-import { IpynbWhereUniqueInputSchema } from './IpynbWhereUniqueInputSchema';
-import { IpynbUpdateWithWhereUniqueWithoutSubjectsInputSchema } from './IpynbUpdateWithWhereUniqueWithoutSubjectsInputSchema';
-import { IpynbUpdateManyWithWhereWithoutSubjectsInputSchema } from './IpynbUpdateManyWithWhereWithoutSubjectsInputSchema';
-import { IpynbScalarWhereInputSchema } from './IpynbScalarWhereInputSchema';
-
+import { IpynbCreateWithoutSubjectsInputSchema } from '../IpynbCreateWithoutSubjectsInputSchema.js';
+import { IpynbUncheckedCreateWithoutSubjectsInputSchema } from '../IpynbUncheckedCreateWithoutSubjectsInputSchema.js';
+import { IpynbCreateOrConnectWithoutSubjectsInputSchema } from '../IpynbCreateOrConnectWithoutSubjectsInputSchema.js';
+import { IpynbUpsertWithWhereUniqueWithoutSubjectsInputSchema } from '../IpynbUpsertWithWhereUniqueWithoutSubjectsInputSchema.js';
+import { IpynbWhereUniqueInputSchema } from '../IpynbWhereUniqueInputSchema.js';
+import { IpynbUpdateWithWhereUniqueWithoutSubjectsInputSchema } from '../IpynbUpdateWithWhereUniqueWithoutSubjectsInputSchema.js';
+import { IpynbUpdateManyWithWhereWithoutSubjectsInputSchema } from '../IpynbUpdateManyWithWhereWithoutSubjectsInputSchema.js';
+import { IpynbScalarWhereInputSchema } from '../IpynbScalarWhereInputSchema.js';
 export const IpynbUncheckedUpdateManyWithoutSubjectsNestedInputSchema: z.ZodType<Prisma.IpynbUncheckedUpdateManyWithoutSubjectsNestedInput> = z.object({
   create: z.union([ z.lazy(() => IpynbCreateWithoutSubjectsInputSchema),z.lazy(() => IpynbCreateWithoutSubjectsInputSchema).array(),z.lazy(() => IpynbUncheckedCreateWithoutSubjectsInputSchema),z.lazy(() => IpynbUncheckedCreateWithoutSubjectsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => IpynbCreateOrConnectWithoutSubjectsInputSchema),z.lazy(() => IpynbCreateOrConnectWithoutSubjectsInputSchema).array() ]).optional(),
@@ -22,5 +20,4 @@ export const IpynbUncheckedUpdateManyWithoutSubjectsNestedInputSchema: z.ZodType
   updateMany: z.union([ z.lazy(() => IpynbUpdateManyWithWhereWithoutSubjectsInputSchema),z.lazy(() => IpynbUpdateManyWithWhereWithoutSubjectsInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => IpynbScalarWhereInputSchema),z.lazy(() => IpynbScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default IpynbUncheckedUpdateManyWithoutSubjectsNestedInputSchema;

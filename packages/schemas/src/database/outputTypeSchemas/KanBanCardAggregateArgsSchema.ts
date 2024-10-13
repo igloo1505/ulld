@@ -1,9 +1,8 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { KanBanCardWhereInputSchema } from '../inputTypeSchemas/KanBanCardWhereInputSchema'
-import { KanBanCardOrderByWithRelationInputSchema } from '../inputTypeSchemas/KanBanCardOrderByWithRelationInputSchema'
-import { KanBanCardWhereUniqueInputSchema } from '../inputTypeSchemas/KanBanCardWhereUniqueInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/KanBanCardWhereInputSchema.js
+..//inputTypeSchemas/KanBanCardOrderByWithRelationInputSchema.js
+..//inputTypeSchemas/KanBanCardWhereUniqueInputSchema.js
 export const KanBanCardAggregateArgsSchema: z.ZodType<Prisma.KanBanCardAggregateArgs> = z.object({
   where: KanBanCardWhereInputSchema.optional(),
   orderBy: z.union([ KanBanCardOrderByWithRelationInputSchema.array(),KanBanCardOrderByWithRelationInputSchema ]).optional(),
@@ -11,5 +10,4 @@ export const KanBanCardAggregateArgsSchema: z.ZodType<Prisma.KanBanCardAggregate
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
-
 export default KanBanCardAggregateArgsSchema;

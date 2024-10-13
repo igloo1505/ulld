@@ -7,6 +7,32 @@ import { jupyterNotebookPropsSchema } from "./jupyterNotebook.js";
 import { nbConvertConfigSchema } from "./nbconvert.js";
 import d from "../../defaults/generalDefaults.json" with { type: "json" };
 
+export const jupyterCellWrapperField = z
+    .union([
+        z.string(),
+        z.object({
+            prefix: z.string(),
+            suffix: z.string(),
+        }),
+    ])
+    .transform((s) => {
+        if (typeof s === "object") {
+            return s;
+        }
+        let lines = s.split("\n");
+        let inputIndex = lines.findIndex((x) => x.includes("<<Cell-Input>>"));
+        if (inputIndex < 0) {
+            return {
+                prefix: `${s}\n`,
+                suffix: "",
+            };
+        }
+        return {
+            prefix: `${lines.slice(0, inputIndex).join("\n")}\n`,
+            suffix: `\n${lines.slice(inputIndex + 1)}`,
+        };
+    });
+
 export const jupyterConfigSchema = z.object({
     execute: z
         .boolean()
@@ -53,20 +79,7 @@ export const jupyterConfigSchema = z.object({
     cellInputWrappers: z
         .record(
             z.string(),
-            z.string().transform((s) => {
-                let lines = s.split("\n");
-                let inputIndex = lines.findIndex((x) => x.includes("<<Cell-Input>>"));
-                if (inputIndex < 0) {
-                    return {
-                        prefix: `${s}\n`,
-                        suffix: "",
-                    };
-                }
-                return {
-                    prefix: `${lines.slice(0, inputIndex).join("\n")}\n`,
-                    suffix: `\n${lines.slice(inputIndex + 1)}`,
-                };
-            }),
+            jupyterCellWrapperField,
         )
         .default({}),
 });

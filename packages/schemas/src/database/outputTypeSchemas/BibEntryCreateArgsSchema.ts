@@ -1,8 +1,8 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { BibEntryIncludeSchema } from '../inputTypeSchemas/BibEntryIncludeSchema'
-import { BibEntryCreateInputSchema } from '../inputTypeSchemas/BibEntryCreateInputSchema'
-import { BibEntryUncheckedCreateInputSchema } from '../inputTypeSchemas/BibEntryUncheckedCreateInputSchema'
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/BibEntryIncludeSchema.js
+..//inputTypeSchemas/BibEntryCreateInputSchema.js
+..//inputTypeSchemas/BibEntryUncheckedCreateInputSchema.js
 import { BibArgsSchema } from "../outputTypeSchemas/BibArgsSchema"
 import { CitationsGroupFindManyArgsSchema } from "../outputTypeSchemas/CitationsGroupFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
@@ -14,7 +14,6 @@ import { ReadingListFindManyArgsSchema } from "../outputTypeSchemas/ReadingListF
 import { BibEntryCountOutputTypeArgsSchema } from "../outputTypeSchemas/BibEntryCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const BibEntrySelectSchema: z.ZodType<Prisma.BibEntrySelect> = z.object({
   id: z.boolean().optional(),
   BibId: z.boolean().optional(),
@@ -68,11 +67,9 @@ export const BibEntrySelectSchema: z.ZodType<Prisma.BibEntrySelect> = z.object({
   readingList: z.union([z.boolean(),z.lazy(() => ReadingListFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => BibEntryCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const BibEntryCreateArgsSchema: z.ZodType<Prisma.BibEntryCreateArgs> = z.object({
   select: BibEntrySelectSchema.optional(),
   include: BibEntryIncludeSchema.optional(),
   data: z.union([ BibEntryCreateInputSchema,BibEntryUncheckedCreateInputSchema ]),
 }).strict() ;
-
 export default BibEntryCreateArgsSchema;

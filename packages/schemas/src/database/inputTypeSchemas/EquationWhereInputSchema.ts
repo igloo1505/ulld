@@ -1,18 +1,16 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from './IntFilterSchema';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-import { StringFilterSchema } from './StringFilterSchema';
-import { JsonFilterSchema } from './JsonFilterSchema';
-import { StringNullableListFilterSchema } from './StringNullableListFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-import { RelatedValuesListRelationFilterSchema } from './RelatedValuesListRelationFilterSchema';
-import { TagListRelationFilterSchema } from './TagListRelationFilterSchema';
-import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema';
-import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema';
-import { MdxNoteListRelationFilterSchema } from './MdxNoteListRelationFilterSchema';
-
+import { IntFilterSchema } from '../IntFilterSchema.js';
+import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
+import { StringFilterSchema } from '../StringFilterSchema.js';
+import { JsonFilterSchema } from '../JsonFilterSchema.js';
+import { StringNullableListFilterSchema } from '../StringNullableListFilterSchema.js';
+import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
+import { RelatedValuesListRelationFilterSchema } from '../RelatedValuesListRelationFilterSchema.js';
+import { TagListRelationFilterSchema } from '../TagListRelationFilterSchema.js';
+import { TopicListRelationFilterSchema } from '../TopicListRelationFilterSchema.js';
+import { SubjectListRelationFilterSchema } from '../SubjectListRelationFilterSchema.js';
+import { MdxNoteListRelationFilterSchema } from '../MdxNoteListRelationFilterSchema.js';
 export const EquationWhereInputSchema: z.ZodType<Prisma.EquationWhereInput> = z.object({
   AND: z.union([ z.lazy(() => EquationWhereInputSchema),z.lazy(() => EquationWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => EquationWhereInputSchema).array().optional(),
@@ -34,5 +32,4 @@ export const EquationWhereInputSchema: z.ZodType<Prisma.EquationWhereInput> = z.
   subjects: z.lazy(() => SubjectListRelationFilterSchema).optional(),
   mdxNotes: z.lazy(() => MdxNoteListRelationFilterSchema).optional()
 }).strict();
-
 export default EquationWhereInputSchema;

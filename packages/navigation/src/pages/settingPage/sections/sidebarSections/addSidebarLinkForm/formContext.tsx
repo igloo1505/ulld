@@ -10,6 +10,9 @@ interface AddSidebarLinkFormProps {
 const AddSidebarLinkFormContext = ({ children }: AddSidebarLinkFormProps) => {
     const form = useForm<SidebarLink>({
         resolver: zodResolver(sidebarLinkSchema),
+        /* defaultValues: { */
+        /*     label: "" */
+        /* } */
     });
     return <Form {...form}>{children}</Form>;
 };

@@ -1,20 +1,18 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
-import { NullableDateTimeFieldUpdateOperationsInputSchema } from './NullableDateTimeFieldUpdateOperationsInputSchema';
-import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema';
-import { NullableIntFieldUpdateOperationsInputSchema } from './NullableIntFieldUpdateOperationsInputSchema';
-import { TaskCategorySchema } from './TaskCategorySchema';
-import { NullableEnumTaskCategoryFieldUpdateOperationsInputSchema } from './NullableEnumTaskCategoryFieldUpdateOperationsInputSchema';
-import { BoolFieldUpdateOperationsInputSchema } from './BoolFieldUpdateOperationsInputSchema';
-import { MdxNoteUncheckedUpdateManyWithoutToDoNestedInputSchema } from './MdxNoteUncheckedUpdateManyWithoutToDoNestedInputSchema';
-import { TopicUncheckedUpdateManyWithoutToDoNestedInputSchema } from './TopicUncheckedUpdateManyWithoutToDoNestedInputSchema';
-import { SubjectUncheckedUpdateManyWithoutToDoNestedInputSchema } from './SubjectUncheckedUpdateManyWithoutToDoNestedInputSchema';
-import { ToDoUncheckedUpdateManyWithoutParentNestedInputSchema } from './ToDoUncheckedUpdateManyWithoutParentNestedInputSchema';
-
+import { IntFieldUpdateOperationsInputSchema } from '../IntFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from '../DateTimeFieldUpdateOperationsInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from '../StringFieldUpdateOperationsInputSchema.js';
+import { NullableDateTimeFieldUpdateOperationsInputSchema } from '../NullableDateTimeFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from '../NullableStringFieldUpdateOperationsInputSchema.js';
+import { NullableIntFieldUpdateOperationsInputSchema } from '../NullableIntFieldUpdateOperationsInputSchema.js';
+import { TaskCategorySchema } from '../TaskCategorySchema.js';
+import { NullableEnumTaskCategoryFieldUpdateOperationsInputSchema } from '../NullableEnumTaskCategoryFieldUpdateOperationsInputSchema.js';
+import { BoolFieldUpdateOperationsInputSchema } from '../BoolFieldUpdateOperationsInputSchema.js';
+import { MdxNoteUncheckedUpdateManyWithoutToDoNestedInputSchema } from '../MdxNoteUncheckedUpdateManyWithoutToDoNestedInputSchema.js';
+import { TopicUncheckedUpdateManyWithoutToDoNestedInputSchema } from '../TopicUncheckedUpdateManyWithoutToDoNestedInputSchema.js';
+import { SubjectUncheckedUpdateManyWithoutToDoNestedInputSchema } from '../SubjectUncheckedUpdateManyWithoutToDoNestedInputSchema.js';
+import { ToDoUncheckedUpdateManyWithoutParentNestedInputSchema } from '../ToDoUncheckedUpdateManyWithoutParentNestedInputSchema.js';
 export const ToDoUncheckedUpdateWithoutTagsInputSchema: z.ZodType<Prisma.ToDoUncheckedUpdateWithoutTagsInput> = z.object({
   id: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
   createdAt: z.union([ z.coerce.date(),z.lazy(() => DateTimeFieldUpdateOperationsInputSchema) ]).optional(),
@@ -33,5 +31,4 @@ export const ToDoUncheckedUpdateWithoutTagsInputSchema: z.ZodType<Prisma.ToDoUnc
   subjects: z.lazy(() => SubjectUncheckedUpdateManyWithoutToDoNestedInputSchema).optional(),
   child: z.lazy(() => ToDoUncheckedUpdateManyWithoutParentNestedInputSchema).optional()
 }).strict();
-
 export default ToDoUncheckedUpdateWithoutTagsInputSchema;

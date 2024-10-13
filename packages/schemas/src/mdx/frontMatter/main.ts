@@ -1,38 +1,68 @@
 import { z } from "zod";
+import { zodOptNum, zodOptStr } from "../../utilitySchemas/main.js";
+import { zodFrontMatterTableStylesObject } from "./tableStyles.js";
 
-export const tableTextStyleSchema = z.union([
-    z.literal("base"),
-    z.literal("lg"),
-    z.literal("xl"),
-    z.literal("small"),
+
+// TODO: Move json specific stuff to schemas package.
+const jsonSerializableQuantity = z.union([
+    z.boolean(),
+    z.string(),
+    z.number(),
+    z.null()
 ])
 
-export const frontMatterTableStylesSchema = z.object({
-    fullWidth: z.boolean().optional(),
-    text: tableTextStyleSchema.or(z.null()).default("base"),
-    math: tableTextStyleSchema.or(z.null()).default("base"),
-    tableCenter: z.boolean().nullish(),
-    textCenter: z.boolean().nullish(),
-    headingCenter: z.boolean().nullish(),
-    float: z.union([z.literal("right"), z.literal("left")]).nullish(),
-    noMax: z.boolean().nullish(),
-    expand: z.boolean().nullish(),
-});
+const superJsonSerializableQuantity = jsonSerializableQuantity.or(z.union([
+    z.undefined(),
+    z.date(),
+    z.instanceof(RegExp),
+    z.instanceof(Error),
+    z.instanceof(URL),
+]))
 
-export const frontMatterTypeSchema = z.object({
+
+export const jsonSerializableValue  = z.union([
+    jsonSerializableQuantity,
+    z.record(z.string(), jsonSerializableQuantity),
+    z.record(z.string(), z.record(z.string(), jsonSerializableQuantity)),
+    z.record(z.string(), jsonSerializableQuantity).array(),
+    jsonSerializableQuantity.array(),
+    jsonSerializableQuantity.array().array(),
+])
+
+export const frontMatterSchema = z.object({
     title: z.string().nullish(),
-    created: z.string().nullish(),
-    updated: z.string().nullish(),
-    summary: z.string().nullish(),
-    subjects: z.string().or(z.string().array()).nullish(),
-    topics: z.string().or(z.string().array()).nullish(),
-    tags: z.string().or(z.string().array()).nullish(),
-    importantValues: z.number().array().nullish(),
-    id: z.string().nullish(),
-    sequential: z.number().optional(),
-    sequentialKey: z.string().optional(),
-    tableStyles: frontMatterTableStylesSchema.default({}),
+    created: zodOptStr,
+    updated: zodOptStr,
+    summary: zodOptStr,
+    subjects: z
+        .union([z.string(), z.string().array()])
+        .transform((a) =>
+            Array.isArray(a) ? a.map((l) => String(l)) : [String(a)],
+        )
+        .default([]),
+    topics: z
+        .union([z.string(), z.string().array()])
+        .transform((a) =>
+            Array.isArray(a) ? a.map((l) => String(l)) : [String(a)],
+        )
+        .default([]),
+    tags: z
+        .union([z.string(), z.string().array()])
+        .transform((a) =>
+            Array.isArray(a) ? a.map((l) => String(l)) : [String(a)],
+        )
+        .default([]),
+    importantValues: z.number().array().default([]),
+    id: zodOptStr,
+    sequential: zodOptNum,
+    sequentialKey: zodOptStr,
+    tableStyles: zodFrontMatterTableStylesObject.optional(),
 });
 
 
-export const extendedFrontMatterSchema = frontMatterTypeSchema.and(z.record(z.string(), z.any()))
+export const extendedFrontMatterSchema = frontMatterSchema.and(z.record(z.string(), jsonSerializableValue))
+
+
+export type ZodFrontMatterInput = z.input<typeof frontMatterSchema>;
+export type ZodFrontMatterOutput = z.output<typeof frontMatterSchema>;
+export type FrontMatterType<T extends object = object> = z.input<typeof frontMatterSchema> & T

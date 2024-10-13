@@ -1,14 +1,12 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TaskCategorySchema } from './TaskCategorySchema';
-import { MdxNoteCreateNestedManyWithoutToDoInputSchema } from './MdxNoteCreateNestedManyWithoutToDoInputSchema';
-import { TagCreateNestedManyWithoutToDoInputSchema } from './TagCreateNestedManyWithoutToDoInputSchema';
-import { TopicCreateNestedManyWithoutToDoInputSchema } from './TopicCreateNestedManyWithoutToDoInputSchema';
-import { SubjectCreateNestedManyWithoutToDoInputSchema } from './SubjectCreateNestedManyWithoutToDoInputSchema';
-import { ToDoCreateNestedOneWithoutChildInputSchema } from './ToDoCreateNestedOneWithoutChildInputSchema';
-import { ToDoListCreateNestedOneWithoutTasksInputSchema } from './ToDoListCreateNestedOneWithoutTasksInputSchema';
-
+import { TaskCategorySchema } from '../TaskCategorySchema.js';
+import { MdxNoteCreateNestedManyWithoutToDoInputSchema } from '../MdxNoteCreateNestedManyWithoutToDoInputSchema.js';
+import { TagCreateNestedManyWithoutToDoInputSchema } from '../TagCreateNestedManyWithoutToDoInputSchema.js';
+import { TopicCreateNestedManyWithoutToDoInputSchema } from '../TopicCreateNestedManyWithoutToDoInputSchema.js';
+import { SubjectCreateNestedManyWithoutToDoInputSchema } from '../SubjectCreateNestedManyWithoutToDoInputSchema.js';
+import { ToDoCreateNestedOneWithoutChildInputSchema } from '../ToDoCreateNestedOneWithoutChildInputSchema.js';
+import { ToDoListCreateNestedOneWithoutTasksInputSchema } from '../ToDoListCreateNestedOneWithoutTasksInputSchema.js';
 export const ToDoCreateWithoutChildInputSchema: z.ZodType<Prisma.ToDoCreateWithoutChildInput> = z.object({
   createdAt: z.coerce.date().optional(),
   task: z.string(),
@@ -26,5 +24,4 @@ export const ToDoCreateWithoutChildInputSchema: z.ZodType<Prisma.ToDoCreateWitho
   parent: z.lazy(() => ToDoCreateNestedOneWithoutChildInputSchema).optional(),
   ToDoList: z.lazy(() => ToDoListCreateNestedOneWithoutTasksInputSchema).optional()
 }).strict();
-
 export default ToDoCreateWithoutChildInputSchema;

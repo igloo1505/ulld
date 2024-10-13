@@ -1,12 +1,13 @@
-import { AppConfigSchemaOutput } from "@ulld/configschema/types"
-import { serverLogger } from "@ulld/logger/server"
-import { AutoSettingWithRegex } from "../../../trpc/types"
-import { MdxNote } from "../../../classes/prismaMdxRelations/MdxNote"
 import { prisma } from "@ulld/database/db"
+import { serverLogger } from "@ulld/logger/server"
+import type { AutoSettingWithRegex } from "../../../trpc/types"
+import type { MdxNote } from "../../../classes/prismaMdxRelations/MdxNote"
 
 
+type SaveMdxReturnType = ReturnType<typeof prisma.mdxNote.create>
 
-export const saveMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRegex[] = [], config: AppConfigSchemaOutput) => {
+
+export const saveMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRegex[], config: Parameters<InstanceType<typeof MdxNote>["createArgs"]>[1]): Promise<SaveMdxReturnType | undefined>  => {
     serverLogger.info(`Creating note: ${note.title}`)
     if (!note.title) {
         serverLogger.info(`No Note Title Found: ${JSON.stringify(note, null, 4)}`)
@@ -15,10 +16,10 @@ export const saveMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRe
     const createArgs = note.createArgs(autoSettings, config)
 
     if (!createArgs) return
-    let saved = await prisma.mdxNote.create(createArgs)
-    if (note.definitions?.length > 0) {
+    const saved = await prisma.mdxNote.create(createArgs)
+    if (note.definitions.length > 0) {
         for await (const d of note.definitions) {
-            let alphabetical = await d.getAlphabeticalLabel()
+            const alphabetical = await d.getAlphabeticalLabel()
             await prisma.definition.upsert({
                 where: {
                     id: d.id

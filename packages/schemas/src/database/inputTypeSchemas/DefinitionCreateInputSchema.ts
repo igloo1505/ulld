@@ -1,8 +1,6 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteCreateNestedOneWithoutDefinitionsInputSchema } from './MdxNoteCreateNestedOneWithoutDefinitionsInputSchema';
-
+import { MdxNoteCreateNestedOneWithoutDefinitionsInputSchema } from '../MdxNoteCreateNestedOneWithoutDefinitionsInputSchema.js';
 export const DefinitionCreateInputSchema: z.ZodType<Prisma.DefinitionCreateInput> = z.object({
   id: z.string(),
   label: z.string().optional().nullable(),
@@ -12,5 +10,4 @@ export const DefinitionCreateInputSchema: z.ZodType<Prisma.DefinitionCreateInput
   lastAccess: z.coerce.date().optional(),
   mdxNote: z.lazy(() => MdxNoteCreateNestedOneWithoutDefinitionsInputSchema).optional()
 }).strict();
-
 export default DefinitionCreateInputSchema;

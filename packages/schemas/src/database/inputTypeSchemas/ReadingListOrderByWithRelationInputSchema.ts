@@ -1,13 +1,11 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { BibEntryOrderByRelationAggregateInputSchema } from './BibEntryOrderByRelationAggregateInputSchema';
-import { MdxNoteOrderByRelationAggregateInputSchema } from './MdxNoteOrderByRelationAggregateInputSchema';
-import { IpynbOrderByRelationAggregateInputSchema } from './IpynbOrderByRelationAggregateInputSchema';
-import { ReadingListOrderByRelevanceInputSchema } from './ReadingListOrderByRelevanceInputSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
+import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
+import { BibEntryOrderByRelationAggregateInputSchema } from '../BibEntryOrderByRelationAggregateInputSchema.js';
+import { MdxNoteOrderByRelationAggregateInputSchema } from '../MdxNoteOrderByRelationAggregateInputSchema.js';
+import { IpynbOrderByRelationAggregateInputSchema } from '../IpynbOrderByRelationAggregateInputSchema.js';
+import { ReadingListOrderByRelevanceInputSchema } from '../ReadingListOrderByRelevanceInputSchema.js';
 export const ReadingListOrderByWithRelationInputSchema: z.ZodType<Prisma.ReadingListOrderByWithRelationInput> = z.object({
   name: z.lazy(() => SortOrderSchema).optional(),
   description: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
@@ -18,5 +16,4 @@ export const ReadingListOrderByWithRelationInputSchema: z.ZodType<Prisma.Reading
   ipynbNotes: z.lazy(() => IpynbOrderByRelationAggregateInputSchema).optional(),
   _relevance: z.lazy(() => ReadingListOrderByRelevanceInputSchema).optional()
 }).strict();
-
 export default ReadingListOrderByWithRelationInputSchema;

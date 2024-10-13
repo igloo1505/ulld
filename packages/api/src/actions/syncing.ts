@@ -20,6 +20,8 @@ const fetchWrapper = async (path: string, opts: RequestInit) => {
     return body;
 };
 
+
+// TODO: Delete all references to this. This was moved to utilities/src/actions/sync/syncRootDirectory.ts. Move the rest of these methods to the same directory and clean up references to those as well.
 export const syncRootDirectory = async () => {
     let res = await fetch("/api/events/onSync", {
         method: "POST",

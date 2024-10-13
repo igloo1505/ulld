@@ -1,12 +1,12 @@
 "use client";
-import { useObserveChildren } from "@ulld/hooks/useObserveChildren";
+/* import { useObserveChildren } from "@ulld/hooks/useObserveChildren"; */
 import React, { HTMLProps, ReactNode, useEffect, useRef } from "react";
 import type { BundledLanguage, BundledTheme } from "shiki";
 import { cn } from "@ulld/utilities/cn";
 import { getAllRegexMatches } from "@ulld/utilities/getAllRegexMatches";
 import { replaceContentByMatch } from "@ulld/utilities/replaceContentByMatch";
 import { getStaticDataByString } from "#/utils/getStaticDataByString";
-import { useShikiParse } from "@ulld/hooks/useShikiParse";
+/* import { useShikiParse } from "@ulld/hooks/useShikiParse"; */
 import {
     Pre,
     CodeBlock as CodeBlockEm,

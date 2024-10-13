@@ -1,6 +1,5 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 export const BusinessContactSelectSchema: z.ZodType<Prisma.BusinessContactSelect> = z.object({
   id: z.boolean().optional(),
   companyName: z.boolean().optional(),
@@ -11,5 +10,4 @@ export const BusinessContactSelectSchema: z.ZodType<Prisma.BusinessContactSelect
   message: z.boolean().optional(),
   purpose: z.boolean().optional(),
 }).strict()
-
 export default BusinessContactSelectSchema;

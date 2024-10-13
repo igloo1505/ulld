@@ -11,36 +11,35 @@ const project = resolve(process.cwd(), "tsconfig.json");
  *
  */
 
+// WITH_WIFI: Figure out issue with eslint-config-turbo
 module.exports = {
-  extends: [
-    "@vercel/style-guide/eslint/node",
-    "@vercel/style-guide/eslint/typescript",
-    "@vercel/style-guide/eslint/browser",
-    "@vercel/style-guide/eslint/react",
-    "@vercel/style-guide/eslint/next",
-    "eslint-config-turbo",
-  ].map(require.resolve),
-  parserOptions: {
-    project,
-  },
-  globals: {
-    React: true,
-    JSX: true,
-  },
-  plugins: [
-        "only-warn",
-        "eslint-plugin-tsdoc"
-    ],
-  settings: {
-    "import/resolver": {
-      typescript: {
+    extends: [
+        "@vercel/style-guide/eslint/node",
+        "@vercel/style-guide/eslint/typescript",
+        "@vercel/style-guide/eslint/browser",
+        "@vercel/style-guide/eslint/react",
+        "@vercel/style-guide/eslint/next",
+        // "eslint-config-turbo",
+    ].map(require.resolve),
+    parserOptions: {
         project,
-      },
     },
-  },
-  ignorePatterns: ["node_modules/", "dist/"],
-  // add rules configurations here
-  rules: {
-    "import/no-default-export": "off",
-  },
+    globals: {
+        React: true,
+        JSX: true,
+    },
+    plugins: ["only-warn", "eslint-plugin-tsdoc"],
+    settings: {
+        "import/resolver": {
+            typescript: {
+                project,
+            },
+        },
+    },
+    ignorePatterns: ["node_modules/", "dist/"],
+    // add rules configurations here
+    rules: {
+        "import/no-default-export": "off",
+        "unicorn/prefer-node-protocol": "off",
+    },
 };

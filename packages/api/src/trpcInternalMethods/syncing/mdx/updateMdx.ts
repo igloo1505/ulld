@@ -1,20 +1,20 @@
-import { serverLogger } from "@ulld/logger/server"
-import { MdxNote } from "../../../classes/prismaMdxRelations/MdxNote"
+// import { serverLogger } from "@ulld/logger/server"
 import { prisma } from "@ulld/database/db"
-import { AppConfigSchemaOutput } from "@ulld/configschema/types"
-import { AutoSettingWithRegex } from "../../../trpc/types"
+import type { MdxNote } from "../../../classes/prismaMdxRelations/MdxNote"
+import type { AutoSettingWithRegex } from "../../../trpc/types"
 
 
+type UpdateMdxNoteReturnType = ReturnType<typeof prisma.mdxNote.upsert>
 
 
-export const updateMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRegex[] = [], config: AppConfigSchemaOutput) => {
+export const updateMdxNote = async (note: MdxNote, autoSettings: AutoSettingWithRegex[], config: Parameters<InstanceType<typeof MdxNote>["upsertArgs"]>[1]): Promise<UpdateMdxNoteReturnType | undefined> => {
     // serverLogger.verbose(`Updating ${note.title}`)
-    let upsertArgs = note.upsertArgs(autoSettings, config)
+    const upsertArgs = note.upsertArgs(autoSettings, config)
     if (!upsertArgs) return
-    let updated = await prisma.mdxNote.upsert(upsertArgs)
-    if (note.definitions?.length > 0) {
+    const updated = await prisma.mdxNote.upsert(upsertArgs)
+    if (note.definitions.length > 0) {
         for await (const d of note.definitions) {
-            let alphabetical = await d.getAlphabeticalLabel()
+            const alphabetical = await d.getAlphabeticalLabel()
             await prisma.definition.upsert({
                 where: {
                     id: d.id

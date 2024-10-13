@@ -209,3 +209,150 @@ export const getDefaultCommandList = (
         }),
     ];
 };
+
+
+const vals = [
+        {
+            onSelect: async () => await setPreferFs("toggle"),
+            label: "Toggle Prefer File System",
+            value: "togglepreferfilesystem",
+        },
+        {
+            value: "/flipCard/add",
+            onSelect: { push: "/flipCard/add" },
+            label: "Add flipcard",
+        },
+        {
+            value: "/flipCard",
+            onSelect: { push: "/flipCard" },
+            label: "QA flipcard exam test",
+        },
+        {
+            value: "/practiceExam",
+            onSelect: { push: "/practiceExam" },
+            label: "Practice Exam",
+        },
+        {
+            onSelect: () => toggleToolTips(),
+            label: "Toggle Tooltips",
+            value: "toggletooltips",
+        },
+        {
+            onSelect: async () => syncRootDirectory(),
+            label: "Sync Notes",
+            value: "syncnotes",
+        },
+        {
+            onSelect: () => toggleDarkMode(),
+            label: "Toggle Dark Mode",
+            value: "toggledarkmode",
+        },
+        {
+            onSelect: () => toggleAllJupyterFolds(),
+            label: "Toggle Jupyter Folds",
+            value: "togglejupyterfolds",
+        },
+        {
+            isParent: true,
+            value: pages.searchNotes,
+            label: "Search Notes",
+        },
+        {
+            isParent: true,
+            label: "Search Equations",
+            value: pages.searchEquations,
+        },
+        {
+            isParent: true,
+            label: "Switch Theme",
+            value: pages.switchTheme,
+        },
+        {
+            isParent: true,
+            label: "Search Tags",
+            value: pages.searchTags,
+        },
+        {
+            isParent: true,
+            label: "Search Subjects",
+            value: pages.searchSubjects,
+        },
+        {
+            isParent: true,
+            label: "Search Definitions",
+            value: pages.searchDefinitions,
+        },
+        {
+            isParent: true,
+            isEmptyParent: true,
+            isTextSearch: true,
+            label: "Search By Value",
+            value: textSearchPages.searchByValue,
+        },
+        {
+            isParent: true,
+            isEmptyParent: true,
+            isTextSearch: true,
+            label: "Full Text Search",
+            value: textSearchPages.fullTextSearch,
+            keymap: ["t", "e"],
+        },
+        {
+            keymap: ["t", "i"],
+            onSelect: enterIdSelectMode,
+            label: "ID Select Mode",
+            value: "toggleidselect",
+        },
+        {
+            label: "Show Equation Id's",
+            onSelect: () => toggleEquationSelectMode(),
+            value: "showequationids",
+        },
+        {
+            label: "Show Navigation Menu",
+            onSelect: { push: "/navigation" },
+            value: "shownavmenu",
+        },
+        {
+            label: "Backup Non-Filesystem",
+            onSelect: async () => {
+                await client.sync.backupNonFileSystemDB.mutate();
+                showToast({
+                    title: "Success",
+                    description:
+                        "Data that can not be re-generated from the filesystem has been backed up successfully.",
+                });
+            },
+            value: "backupdbonly",
+        },
+        {
+            label: "Create new To-Do list",
+            onSelect: { push: "/todo/add/list" as Route },
+            value: "createNewToDoList",
+        },
+        {
+            label: "Add new To-Do",
+            onSelect: { push: "/todo/add/task" as Route },
+            value: "createNewToDoTask",
+        },
+        {
+            isParent: true,
+            // isEmptyParent: true,
+            // isTextSearch: true,
+            label: "Search To Do's",
+            value: pages.searchToDoLists,
+            // keymap: ["t", "e"]
+        },
+        ...utilityNavLinks.map((u) => {
+            return {
+                value: u.url,
+                onSelect: { push: u.url as Route },
+                label: u.label,
+            };
+        }),
+].filter((l) => !l.isParent && l.onSelect).map((j) => `"${j.value}": {
+        label: "${j.label}",
+        onSelect: () => {}
+}`).join(",\n")
+
+console.log(vals)

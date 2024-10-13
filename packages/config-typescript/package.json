@@ -1,8 +1,10 @@
 {
   "name": "@ulld/typescript-config",
   "version": "0.0.116",
-  "dependencies": {},
-  "devDependencies": {},
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "src",
     "react-app.json",
@@ -16,12 +18,10 @@
     "vite.json",
     "targetApp.json"
   ],
-  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
   "peerDependencies": {
     "@ulld/types": "workspace:*"
   },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  }
+  "license": "MIT"
 }

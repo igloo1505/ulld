@@ -2,14 +2,16 @@ import {
   docTypeUISchema,
   documentTypeConfigSchema,
   documentTypeConfigSchemaBase,
+  documentTypeConfigSchemaInner,
   zodDocTypeInput
-} from "../chunk-JJ7PAUIP.js";
-import "../chunk-PESBV4SX.js";
-import "../chunk-DVXEI7YQ.js";
+} from "../chunk-SOZ6QDLD.js";
+import "../chunk-6ITAWCMZ.js";
+import "../chunk-CT3QN4ME.js";
 export {
   docTypeUISchema,
   documentTypeConfigSchema,
   documentTypeConfigSchemaBase,
+  documentTypeConfigSchemaInner,
   zodDocTypeInput
 };
 //# sourceMappingURL=documentConfigSchema.js.map

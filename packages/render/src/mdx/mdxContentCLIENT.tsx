@@ -16,6 +16,7 @@ interface MdxContentClientSideProps
 export const MdxContentCLIENT = (props: MdxContentClientSideProps) => {
     let memoizedValue = useMemo(() => props.content, [props.content]);
 
+
     const { value, setValue, Component, isReady } = useDebounceMdxParse(
         memoizedValue,
         props.debounceTimeout || 350,
@@ -23,6 +24,7 @@ export const MdxContentCLIENT = (props: MdxContentClientSideProps) => {
             bareAss: props.bareAss === false ? false : true,
         },
     );
+
 
     const [hasSetReady, setHasSetReady] = useState(false);
 

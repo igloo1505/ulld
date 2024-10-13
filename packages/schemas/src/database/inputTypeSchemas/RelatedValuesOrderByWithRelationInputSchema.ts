@@ -1,9 +1,7 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { EquationOrderByRelationAggregateInputSchema } from './EquationOrderByRelationAggregateInputSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
+import { EquationOrderByRelationAggregateInputSchema } from '../EquationOrderByRelationAggregateInputSchema.js';
 export const RelatedValuesOrderByWithRelationInputSchema: z.ZodType<Prisma.RelatedValuesOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   input: z.lazy(() => SortOrderSchema).optional(),
@@ -11,5 +9,4 @@ export const RelatedValuesOrderByWithRelationInputSchema: z.ZodType<Prisma.Relat
   equationId: z.lazy(() => SortOrderSchema).optional(),
   equations: z.lazy(() => EquationOrderByRelationAggregateInputSchema).optional()
 }).strict();
-
 export default RelatedValuesOrderByWithRelationInputSchema;

@@ -1,9 +1,7 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { GoogleCalendarAuthWhereInputSchema } from './GoogleCalendarAuthWhereInputSchema';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-
+import { GoogleCalendarAuthWhereInputSchema } from '../GoogleCalendarAuthWhereInputSchema.js';
+import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
 export const GoogleCalendarAuthWhereUniqueInputSchema: z.ZodType<Prisma.GoogleCalendarAuthWhereUniqueInput> = z.object({
   id: z.number().int()
 })
@@ -14,5 +12,4 @@ export const GoogleCalendarAuthWhereUniqueInputSchema: z.ZodType<Prisma.GoogleCa
   NOT: z.union([ z.lazy(() => GoogleCalendarAuthWhereInputSchema),z.lazy(() => GoogleCalendarAuthWhereInputSchema).array() ]).optional(),
   auth: z.union([ z.lazy(() => StringNullableFilterSchema),z.string() ]).optional().nullable(),
 }).strict());
-
 export default GoogleCalendarAuthWhereUniqueInputSchema;

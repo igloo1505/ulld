@@ -1,14 +1,12 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { SubjectCountOrderByAggregateInputSchema } from './SubjectCountOrderByAggregateInputSchema';
-import { SubjectAvgOrderByAggregateInputSchema } from './SubjectAvgOrderByAggregateInputSchema';
-import { SubjectMaxOrderByAggregateInputSchema } from './SubjectMaxOrderByAggregateInputSchema';
-import { SubjectMinOrderByAggregateInputSchema } from './SubjectMinOrderByAggregateInputSchema';
-import { SubjectSumOrderByAggregateInputSchema } from './SubjectSumOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
+import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
+import { SubjectCountOrderByAggregateInputSchema } from '../SubjectCountOrderByAggregateInputSchema.js';
+import { SubjectAvgOrderByAggregateInputSchema } from '../SubjectAvgOrderByAggregateInputSchema.js';
+import { SubjectMaxOrderByAggregateInputSchema } from '../SubjectMaxOrderByAggregateInputSchema.js';
+import { SubjectMinOrderByAggregateInputSchema } from '../SubjectMinOrderByAggregateInputSchema.js';
+import { SubjectSumOrderByAggregateInputSchema } from '../SubjectSumOrderByAggregateInputSchema.js';
 export const SubjectOrderByWithAggregationInputSchema: z.ZodType<Prisma.SubjectOrderByWithAggregationInput> = z.object({
   value: z.lazy(() => SortOrderSchema).optional(),
   kanbanId: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
@@ -20,5 +18,4 @@ export const SubjectOrderByWithAggregationInputSchema: z.ZodType<Prisma.SubjectO
   _min: z.lazy(() => SubjectMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => SubjectSumOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default SubjectOrderByWithAggregationInputSchema;

@@ -1,15 +1,14 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { KanBanCardIncludeSchema } from '../inputTypeSchemas/KanBanCardIncludeSchema'
-import { KanBanCardWhereUniqueInputSchema } from '../inputTypeSchemas/KanBanCardWhereUniqueInputSchema'
-import { KanBanCardCreateInputSchema } from '../inputTypeSchemas/KanBanCardCreateInputSchema'
-import { KanBanCardUncheckedCreateInputSchema } from '../inputTypeSchemas/KanBanCardUncheckedCreateInputSchema'
-import { KanBanCardUpdateInputSchema } from '../inputTypeSchemas/KanBanCardUpdateInputSchema'
-import { KanBanCardUncheckedUpdateInputSchema } from '../inputTypeSchemas/KanBanCardUncheckedUpdateInputSchema'
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/KanBanCardIncludeSchema.js
+..//inputTypeSchemas/KanBanCardWhereUniqueInputSchema.js
+..//inputTypeSchemas/KanBanCardCreateInputSchema.js
+..//inputTypeSchemas/KanBanCardUncheckedCreateInputSchema.js
+..//inputTypeSchemas/KanBanCardUpdateInputSchema.js
+..//inputTypeSchemas/KanBanCardUncheckedUpdateInputSchema.js
 import { KanBanListArgsSchema } from "../outputTypeSchemas/KanBanListArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const KanBanCardSelectSchema: z.ZodType<Prisma.KanBanCardSelect> = z.object({
   id: z.boolean().optional(),
   listId: z.boolean().optional(),
@@ -18,7 +17,6 @@ export const KanBanCardSelectSchema: z.ZodType<Prisma.KanBanCardSelect> = z.obje
   details: z.boolean().optional(),
   KanBanList: z.union([z.boolean(),z.lazy(() => KanBanListArgsSchema)]).optional(),
 }).strict()
-
 export const KanBanCardUpsertArgsSchema: z.ZodType<Prisma.KanBanCardUpsertArgs> = z.object({
   select: KanBanCardSelectSchema.optional(),
   include: KanBanCardIncludeSchema.optional(),
@@ -26,5 +24,4 @@ export const KanBanCardUpsertArgsSchema: z.ZodType<Prisma.KanBanCardUpsertArgs> 
   create: z.union([ KanBanCardCreateInputSchema,KanBanCardUncheckedCreateInputSchema ]),
   update: z.union([ KanBanCardUpdateInputSchema,KanBanCardUncheckedUpdateInputSchema ]),
 }).strict() ;
-
 export default KanBanCardUpsertArgsSchema;

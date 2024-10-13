@@ -1,66 +1,76 @@
-import axios from "axios";
-import { Subject } from "./subject";
-import { Topic } from "./topic";
-import type {
-    Prisma,
-    MdxNote as PrismaMdxNote,
-} from "@ulld/database/internalDatabaseTypes";
-import { MdxNoteProtocol } from "./protocols/mdxNote";
-import { Tag } from "./tag";
-import { BibEntry } from "./BibEntry";
 import {
-    DocTypes,
+    type DocTypes,
     subjectZodObject,
     tagZodObject,
     topicZodObject,
 } from "@ulld/configschema/configUtilityTypes/docTypes";
-import { getInternalConfig } from "@ulld/configschema/zod/getInternalConfig";
-import { AppConfigSchemaOutput } from "@ulld/configschema/types";
-import { SequentialList } from "./SequentialList";
-import { Definition } from "./definition";
-import { ensureDate } from "../data/calendarAndDate";
+import type {
+    AppConfigSchemaDeepPartialOutput,
+    AppConfigSchemaOutput,
+    MinimalParsableAppConfigOutput,
+} from "@ulld/configschema/types";
+import type { ActiveParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
+import type {
+    Prisma,
+    MdxNote as PrismaMdxNote,
+} from "@ulld/database/internalDatabaseTypes";
 import {
-    MdxNotePlainObject,
-    mdxNoteZodObject,
+    fromMdxStringOptSchema,
+    mdxNoteFromStringPropsSchema,
+    parseParamsSchema,
+    type UnifiedMdxParserParamsInput,
+} from "@ulld/schemas/mdx-parsing-params";
+import { convertGithubUrlToRawContentUrl } from "@ulld/state/formatting/general";
+import type {
+    AppConfigSchemaDeepPartial,
+} from "@ulld/types";
+import type { FrontMatterType } from "@ulld/schemas/frontMatter";
+import { ArrayUtilities } from "@ulld/utilities/arrayUtilities";
+import { getNoteTypeDataFromPath } from "@ulld/utilities/mdxParserUtils";
+import axios from "axios";
+import grayMatter from "gray-matter";
+import type { z } from "zod";
+import {
+    type MdxNotePlainObject,
     mdxNoteWithParsedLatex,
+    mdxNoteZodObject,
+    mdxNoteZodObjectPartial,
+    type ParsedMdxOutput,
 } from "../../schemas/search/parsing";
 import type { AutoSettingWithRegex } from "../../trpc/types.d";
-import { ValueSearchTableItem } from "../../trpcTypes/valueTableSearch";
-import { ArrayUtilities } from "@ulld/utilities/arrayUtilities";
 import { getFlatAutoSettings } from "../../trpcInternalMethods/settings/autoSettings/getFlattenedAutoSettings";
 import { globDoesMatch } from "../../trpcInternalMethods/settings/autoSettings/globDoesMatch";
-import { convertGithubUrlToRawContentUrl } from "@ulld/state/formatting/general";
-import grayMatter from "gray-matter";
+import type { ValueSearchTableItem } from "../../trpcTypes/valueTableSearch";
+import type { UnifiedMdxParser } from "../../types";
+import { ensureDate } from "../data/calendarAndDate";
+import type { BibEntry } from "./BibEntry";
+import { SequentialList } from "./SequentialList";
+import type { Definition } from "./definition";
+import { type AutoSettingProp, MdxNoteProtocol } from "./protocols/mdxNote";
 import {
-    MdxNoteFromStringInput,
-    MdxNoteFromStringOutput,
-    MdxNoteIntriguingValSummaryInput,
-    MdxNoteIntriguingValSummaryOutput,
-    MdxNotePropsInput,
-    MdxNotePropsOutput,
-    MdxNoteSummaryInput,
-    MdxNoteSummaryOutput,
+    type MdxNoteFromStringOutput,
+    type MdxNoteIntriguingValSummaryInput,
+    type MdxNoteIntriguingValSummaryOutput,
     mdxNoteIntriguingValSummaryPropsSchema,
+    type MdxNotePropsInput,
+    type MdxNotePropsOutput,
     mdxNotePropsSchema,
+    type MdxNoteSummaryInput,
+    type MdxNoteSummaryOutput,
     mdxNoteSummaryPropSchema,
 } from "./schemas/general";
-import { ActiveParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
-import { mdxNoteSummaryWithMdxTransforms } from "./schemas/withMdxTransforms";
-import { UnifiedMdxParser, UnifiedMdxParserParams } from "../../types";
-import { FrontMatterType } from "@ulld/types";
-import { getNoteTypeDataFromPath } from "@ulld/utilities/mdxParserUtils";
-/* import { serverClient } from "../../trpc/serverClient"; */
 import {
-    parseParamsSchema,
-    fromMdxStringOptSchema,
-    mdxNoteFromStringPropsSchema
-} from "@ulld/schemas/mdx-parsing-params";
-import { z } from "zod";
+    type MdxNoteSummaryOutputWithMdxTransforms,
+    mdxNoteSummaryWithMdxTransforms,
+} from "./schemas/withMdxTransforms";
+import { Subject } from "./subject";
+import { Tag } from "./tag";
+import { Topic } from "./topic";
 
 /* TODO: Create a field saving the components to include for each note based on a regex test ahead of time so this query doesn't need to be ran on each load. Make this optional in the appConfig */
 
 // TODO: Implement this to pass class data to client components without functions causing an issue
-export interface MdxNoteFlattened { }
+export type MdxNoteFlattened = object;
 
 export interface ParseMdxStringProps {
     /** Will not parse quickLinks, citations, equationTags and definitions */
@@ -95,14 +105,19 @@ export interface InternalMdxNote extends Omit<PrismaMdxNote, "id"> {
     topics: string[];
 }
 
-export type MdxNoteParseParams = {
-    appConfig: UnifiedMdxParserParams["appConfig"];
-    docTypeData: UnifiedMdxParserParams["docTypeData"] | {};
+export interface MdxNoteParseParams {
+    appConfig: UnifiedMdxParserParamsInput["appConfig"];
+    docTypeData: UnifiedMdxParserParamsInput["docTypeData"] | object;
     parser: UnifiedMdxParser;
-};
+}
 
-const boolOrTrue = (a: boolean | undefined) => {
-    return typeof a === "boolean" ? a : true;
+type MdxNoteClassConstructorProps = (
+    | MdxNotePropsOutput
+    | MdxNoteSummaryOutput
+    | MdxNoteFromStringOutput
+    | MdxNoteIntriguingValSummaryOutput
+) & {
+    appConfig?: AppConfigSchemaDeepPartialOutput | AppConfigSchemaDeepPartial;
 };
 
 /* RESUME: Come back and parse ```mermaid syntax and replace with the appropriate params. */
@@ -112,7 +127,7 @@ export class MdxNote extends MdxNoteProtocol {
     latexTitle?: string | null;
     summary?: string | null;
     raw?: string | null;
-    floatImages: boolean = false;
+    floatImages = false;
     formatted?: string | null;
     citations: BibEntry[] = [];
     topics: Topic[] = [];
@@ -132,30 +147,28 @@ export class MdxNote extends MdxNoteProtocol {
     sequentialIndex?: number | null;
     frontMatter?: FrontMatterType | null;
     remoteUrl?: string | null;
-    trackRemote: boolean = true;
-    noLog: boolean = true;
+    trackRemote = true;
+    noLog = true;
     noteType?: DocTypes;
     imageSrc?: string | undefined | null;
-    bookmarked: boolean = false;
+    bookmarked = false;
     lastSync: Date | undefined | null;
-    haveSetFrontMatter: boolean = false;
+    haveSetFrontMatter = false;
     docTypeData?: AppConfigSchemaOutput["noteTypes"][number];
-    saveFormatted: boolean = boolOrTrue(
-        getInternalConfig()?.database?.storeFormatted,
-    );
+    saveFormatted = true;
     firstSync?: Date | null;
 
-    constructor(
-        props:
-            | MdxNotePropsOutput
-            | MdxNoteSummaryOutput
-            | MdxNoteFromStringOutput
-            | MdxNoteIntriguingValSummaryOutput,
-    ) {
+    constructor(props: MdxNoteClassConstructorProps) {
         super(
             "rootRelativePath" in props ? props.rootRelativePath : undefined,
             ".mdx",
         );
+        if (
+            "appConfig" in props &&
+            typeof props.appConfig?.database?.storeFormatted === "boolean"
+        ) {
+            this.saveFormatted = props.appConfig.database.storeFormatted;
+        }
         "id" in props && (this.id = props.id);
         "title" in props && (this.title = props.title);
         "latexTitle" in props && (this.latexTitle = props.latexTitle);
@@ -165,7 +178,7 @@ export class MdxNote extends MdxNoteProtocol {
         "citations" in props && (this.citations = props.citations);
         "noteType" in props && (this.noteType = props.noteType);
         "topics" in props && (this.topics = props.topics);
-        "subjects" in props && this.subjects && (this.subjects = props.subjects);
+        "subjects" in props && (this.subjects = props.subjects);
         "tags" in props && (this.tags = props.tags);
         "importantValues" in props &&
             (this.importantValues = props.importantValues);
@@ -197,33 +210,37 @@ export class MdxNote extends MdxNoteProtocol {
     }
     toPlainObject(
         partial?: boolean | Partial<Record<keyof MdxNotePlainObject, true>>,
-    ) {
-        return partial
-            ? typeof partial == "boolean"
-                ? mdxNoteZodObject.partial().parse(this)
-                : mdxNoteZodObject.partial(partial).parse(this)
-            : mdxNoteZodObject.parse(this);
+    ):
+        | z.output<typeof mdxNoteZodObject>
+        | z.output<typeof mdxNoteZodObjectPartial> {
+        if (partial) {
+            return typeof partial === "boolean"
+                ? mdxNoteZodObjectPartial.parse(this)
+                : mdxNoteZodObject.partial(partial).parse(this);
+        }
+        return mdxNoteZodObject.parse(this);
     }
-    async zodSummaryParse() {
-        return await mdxNoteSummaryWithMdxTransforms.parseAsync(this);
+    async zodSummaryParse(): Promise<MdxNoteSummaryOutputWithMdxTransforms> {
+        return mdxNoteSummaryWithMdxTransforms.parseAsync(this);
     }
-    async zodParse() {
-        return await mdxNoteWithParsedLatex.parseAsync(this);
+    async zodParse(): Promise<ParsedMdxOutput> {
+        return mdxNoteWithParsedLatex.parseAsync(this);
     }
-    log(val: string | object) {
+    log(val: string | object): void {
         if (this.noLog) {
             return;
         }
+        /* TODO: Move this to the external logger package. */
         console.log(typeof val === "string" ? val : JSON.stringify(val, null, 4));
     }
-    whereUniqueInput() {
-        let d: Prisma.MdxNoteWhereUniqueInput = {
+    whereUniqueInput(): Prisma.MdxNoteWhereUniqueInput {
+        const d: Prisma.MdxNoteWhereUniqueInput = {
             id: this.id || -1,
         };
         return d;
     }
-    whereInput() {
-        let d: Prisma.MdxNoteWhereUniqueInput = {
+    whereInput(): Prisma.MdxNoteWhereUniqueInput {
+        const d: Prisma.MdxNoteWhereUniqueInput = {
             id: this.id || -1,
         };
         return d;
@@ -236,7 +253,7 @@ export class MdxNote extends MdxNoteProtocol {
         };
     }
 
-    canSave() {
+    canSave(): boolean {
         if (!this.title) return false;
         if (!this.rootRelativePath) return false;
         if (!this.raw) return false;
@@ -244,8 +261,8 @@ export class MdxNote extends MdxNoteProtocol {
     }
 
     createInput(
-        autoSettings: AutoSettingWithRegex[] = [],
-        config: AppConfigSchemaOutput,
+        autoSettings: AutoSettingProp,
+        config: MinimalParsableAppConfigOutput,
         noteTypeId?: string,
     ): Prisma.MdxNoteCreateInput | undefined {
         if (!this.noteType) {
@@ -259,28 +276,30 @@ export class MdxNote extends MdxNoteProtocol {
         if (!this.canSave()) {
             return undefined;
         }
-        let docTypeData = this.docTypeData
-            ? this.docTypeData
-            : this.rootRelativePath
-                ? getNoteTypeDataFromPath(this.rootRelativePath, config)
-                : undefined;
+        let docTypeData: undefined | AppConfigSchemaOutput["noteTypes"][number];
+        if (this.docTypeData) {
+            docTypeData = this.docTypeData;
+        } else if (this.rootRelativePath) {
+            docTypeData = getNoteTypeDataFromPath(this.rootRelativePath, config);
+        }
+
         if (!docTypeData) {
             throw new Error(
                 `Can not get href for mdx file. No docType data was found in createInput methodj.`,
             );
         }
-        let href = this.getHref(docTypeData);
+        const href = this.getHref(docTypeData);
         if (!this.noteType) {
             throw new Error(
                 `You tried to save a note with an undefined noteType. Check the processing of ${this.title}`,
             );
         }
-        if (href) {
-            let d: Prisma.MdxNoteCreateInput = {
-                rootRelativePath: this.rootRelativePath as string,
+        if (href && this.title && this.raw && this.rootRelativePath) {
+            const d: Prisma.MdxNoteCreateInput = {
+                rootRelativePath: this.rootRelativePath,
                 noteType: this.noteType,
-                content: this.formatted || (this.raw as string),
-                title: this.title as string,
+                content: this.formatted || this.raw,
+                title: this.title,
                 summary: this.summary,
                 imageSrc: this.imageSrc,
                 importantValues: this.importantValues,
@@ -288,7 +307,7 @@ export class MdxNote extends MdxNoteProtocol {
                 outgoingQuickLinks: this.outgoingQuickLinks,
                 remoteUrl: this.remoteUrl,
                 trackRemote: this.trackRemote,
-                href: href,
+                href,
                 floatImages: this.floatImages,
                 ...(this.latexTitle && { latexTitle: this.latexTitle }),
                 ...(this.isProtected && { isProtected: this.isProtected }),
@@ -338,82 +357,68 @@ export class MdxNote extends MdxNoteProtocol {
                     lastSync: this.lastSync,
                 }),
             };
-            if (this.definitions.length > 0) {
-                // BUG: Come back here and handle the definitions issue. They're being parsed correctly but aren't being saved for some reason. The development server is almost useless at this point with such a big app.
-                // TODO: Also add a page to edit the label property for different definitions directly in the UI so a single word id can be replaced with something grammatically correct.
-                console.log(
-                    "creating with definitions. input: ",
-                    JSON.stringify(d, null, 4),
-                );
-            }
             return d;
-        } else {
-            return;
         }
     }
 
-    importantValueDifferences(n: number, absoluteValue: boolean = true) {
+    importantValueDifferences(n: number, absoluteValue = true): number[] {
         return this.importantValues.map((u) =>
             absoluteValue ? Math.abs(n - u) : n - u,
         );
     }
 
     createArgs(
-        autoSettings: AutoSettingWithRegex[] = [],
-        config: AppConfigSchemaOutput,
+        autoSettings: AutoSettingWithRegex[] | undefined | null,
+        config: Parameters<typeof this.createInput>[1],
         noteTypeId?: string,
-    ) {
-        let ci = this.createInput(autoSettings, config, noteTypeId);
-        console.log("createInput: ", ci);
-        if (ci && ci !== undefined) {
-            let d: Prisma.MdxNoteCreateArgs = {
-                data: ci as Prisma.MdxNoteCreateInput,
+    ): Prisma.MdxNoteCreateArgs | undefined {
+        const ci = this.createInput(autoSettings || [], config, noteTypeId);
+        if (ci && typeof ci !== "undefined") {
+            const d: Prisma.MdxNoteCreateArgs = {
+                data: ci,
             };
             return d;
-        } else {
-            return undefined;
         }
+        return undefined;
     }
 
     connectOrCreateArgs(
-        autoSettings: AutoSettingWithRegex[] = [],
-        config: AppConfigSchemaOutput,
-    ) {
-        let ci = this.createInput(autoSettings, config);
+        autoSettings: AutoSettingWithRegex[] | undefined | null,
+        config: Parameters<typeof this.createInput>[1],
+    ): Prisma.MdxNoteCreateOrConnectWithoutTagsInput | undefined {
+        const ci = this.createInput(autoSettings || [], config);
         if (ci) {
-            let d: Prisma.MdxNoteCreateOrConnectWithoutTagsInput = {
+            const d: Prisma.MdxNoteCreateOrConnectWithoutTagsInput = {
                 where: this.whereUniqueInput(),
-                create: ci as Prisma.MdxNoteCreateInput,
+                create: ci,
             };
             return d;
-        } else {
-            return undefined;
         }
+        return undefined;
     }
 
     upsertArgs(
-        autoSettings: AutoSettingWithRegex[] = [],
-        config: AppConfigSchemaOutput,
-    ) {
+        autoSettings: AutoSettingWithRegex[] | undefined | null,
+        config: Parameters<typeof this.createInput>[1],
+    ): Prisma.MdxNoteUpsertArgs | undefined {
         const ci = this.createInput(autoSettings || [], config);
         if (ci) {
-            let d: Prisma.MdxNoteUpsertArgs = {
+            const d: Prisma.MdxNoteUpsertArgs = {
                 where: this.whereUniqueInput(),
-                create: ci as Prisma.MdxNoteCreateInput,
-                update: ci as Prisma.MdxNoteCreateInput,
+                create: ci,
+                update: ci,
             };
             this.log(d);
             return d;
-        } else {
-            return undefined;
         }
+        return undefined;
     }
     checkAutoProperties(
-        autoSettings: AutoSettingWithRegex[] = [],
-        config: AppConfigSchemaOutput,
-    ) {
+        autoSettings: AutoSettingWithRegex[] | undefined | null,
+        config: Parameters<typeof globDoesMatch>[2],
+    ): void {
         if (!this.rootRelativePath) return;
-        let autoSets = getFlatAutoSettings(autoSettings);
+        const autoSets = getFlatAutoSettings(autoSettings || []);
         for (const t of autoSets.autoTags) {
             if (globDoesMatch(t.glob, this.rootRelativePath, config)) {
                 this.tags.push(new Tag(tagZodObject.parse(t)));
@@ -431,7 +436,7 @@ export class MdxNote extends MdxNoteProtocol {
         }
     }
 
-    formatMermaidComponent(m: RegExpMatchArray) {
+    formatMermaidComponent(m: RegExpMatchArray): string | undefined {
         if (!m.groups?.content) return;
         return `
 <Mermaid 
@@ -441,45 +446,48 @@ ${m.groups.content}
 `;
     }
 
-    parseMermaidElement(content: string) {
-        let regex = /```mermaid\n(?<content>[^`]*)\n```/gm;
+    parseMermaidElement(content: string): string {
+        const regex = /```mermaid\n(?<content>[^`]*)\n```/gm;
         let m;
         let c = content;
         do {
             m = regex.exec(c);
-            if (m && m.groups?.label && m.groups?.videoId && m.groups?.time) {
+            if (m?.groups?.label && m.groups.videoId && m.groups.time) {
                 c = `${c.slice(0, m.index)}${this.formatMermaidComponent(m)}${c.slice(m.index + m[0].length, c.length)}`;
             }
         } while (m);
+        return c;
     }
     async _parseQuickLinks<T extends string | undefined>(
         content?: T,
     ): Promise<T extends string ? string : string | undefined> {
         this.log(`_parseQuickLinks: ${this.title}`);
-        let l = content || this.formatted || this.raw;
+        const l = content || this.formatted || this.raw;
         if (!l)
             return undefined as unknown as Promise<
                 T extends string ? string : string | undefined
             >;
-        let res = await this.parseQuickLinks(l);
+        const res = await this.parseQuickLinks(l);
         this.formatted = res.content;
         this.outgoingQuickLinks = this.outgoingQuickLinks.concat(res.links);
         return res.content || l;
     }
     static async parseMdxString(
         content: string,
-        _opts: z.input<typeof fromMdxStringOptSchema> = {},
+        _opts: z.input<typeof fromMdxStringOptSchema>,
         _parseParams: z.input<typeof parseParamsSchema>,
-    ) {
-        let parsedNoteProps = mdxNoteFromStringPropsSchema.parse({ raw: content });
-        let nt = new MdxNote(parsedNoteProps);
-        const parserParams = parseParamsSchema.parse(_parseParams)
+    ): Promise<ReturnType<InstanceType<typeof MdxNote>["parse"]>> {
+        const parsedNoteProps = mdxNoteFromStringPropsSchema.parse({
+            raw: content,
+        });
+        const nt = new MdxNote(parsedNoteProps);
+        const parserParams = parseParamsSchema.parse(_parseParams);
         /* if(opts?.bareAss){ */
         /*    return nt.parseBareAss() */
         /* } */
-        return await nt.parse(parserParams);
+        return nt.parse(parserParams);
     }
-    async applyStandardFrontMatter(applyIfAlreadySet: boolean = false) {
+    async applyStandardFrontMatter(applyIfAlreadySet = false): Promise<void> {
         if (!this.raw) {
             console.error(
                 `Could not parse front matter in the applyStandardFrontMatter MdxNote method. No content was found.`,
@@ -489,15 +497,20 @@ ${m.groups.content}
         if (this.haveSetFrontMatter && !applyIfAlreadySet) {
             return;
         }
-        let res = grayMatter(this.raw);
-        let data = res.data as Partial<FrontMatterType>;
+        const res = grayMatter(this.raw);
+        const data = res.data as Partial<FrontMatterType>;
         await this.applyParsedFrontMatter(data, true);
     }
     async applyParsedFrontMatter(
-        data: FrontMatterType & Record<string, any>,
-        setFrontMatterProperty: boolean = false,
-    ) {
-        console.log("frontMatter data: ", data);
+        data: FrontMatterType<{
+            citations?: BibEntry[]
+            citationsListOrder?: string[],
+            equationIds?: string[]
+            definitions?: Definition[]
+            outgoingQuickLinks?: string[]
+        }>,
+        setFrontMatterProperty = false,
+    ): Promise<void> {
         if (data.title) {
             this.title = data.title;
         }
@@ -522,9 +535,9 @@ ${m.groups.content}
                     typeof t === "string" ? new Subject({ value: t }) : (t as Subject),
                 ),
             ));
-        let existingCitationIds = this.citations.map((x) => x.id);
-        if (data.citations && data.citations?.length) {
-            for await (const citation of data.citations as BibEntry[]) {
+        const existingCitationIds = this.citations.map((x) => x.id);
+        if (data?.citations?.length) {
+            for await (const citation of data.citations) {
                 if (!existingCitationIds.includes(citation.id)) {
                     this.citations.push(citation);
                 }
@@ -537,31 +550,31 @@ ${m.groups.content}
             this.citationsListOrder = data.citationsListOrder;
         } else {
             this.citationsListOrder = this.citations
-                .sort((a: any, b: any) => a.tempPageIndex - b.tempPageIndex)
+                .sort((a, b) => (a.tempPageIndex || 1) - (b.tempPageIndex || 1))
                 .map((c) => c.id);
         }
-        if (data.equationIds && data.equationIds?.length) {
-            for (const k of data.equationIds as string[]) {
+        if (data?.equationIds?.length) {
+            for (const k of data.equationIds) {
                 if (!this.equationIds.includes(k)) {
                     this.equationIds.push(k);
                 }
             }
         }
-        if (data.definitions && data.definitions.length) {
-            let existingDefinitionLabels = this.definitions.map((x) => x.label);
-            for (const d of data.definitions as Definition[]) {
+        if (data?.definitions?.length) {
+            const existingDefinitionLabels = this.definitions.map((x) => x.label);
+            for (const d of data.definitions) {
                 if (!existingDefinitionLabels.includes(d.label)) {
                     this.definitions.push(d);
                 }
             }
         }
-        if (data.outgoingQuickLinks && data.outgoingQuickLinks.length) {
+        if (data.outgoingQuickLinks?.length) {
             this.outgoingQuickLinks = ArrayUtilities.concatWithOptionalArray(
                 this.outgoingQuickLinks,
-                data.outgoingQuickLinks as string[],
+                data.outgoingQuickLinks,
             );
         }
-        if (data.equationIds && data.equationIds.length) {
+        if (data.equationIds?.length) {
             this.equationIds = this.equationIds.concat(data.equationIds);
         }
         data.sequentialKey && (this.sequentialKey = data.sequentialKey);
@@ -573,20 +586,20 @@ ${m.groups.content}
             this.frontMatter = data;
         }
     }
-    async parse(params: z.output<typeof parseParamsSchema>) {
+    async parse(params: z.output<typeof parseParamsSchema>): Promise<string> {
         let c = this.formatted || this.raw;
         if (!c) return "";
         if (!this.haveSetFrontMatter) {
             await this.applyStandardFrontMatter();
         }
-        let serverClient = await import("../../trpc/serverClient").then(
+        const serverClient = await import("../../trpc/serverClient").then(
             (x) => x.serverClient,
         );
-        let res = await params.parser({
+        const res = await params.parser({
             content: c,
-            serverClient: serverClient,
+            serverClient,
             appConfig: params.appConfig,
-            docTypeData: params.docTypeData!,
+            docTypeData: params.docTypeData,
             data: this.frontMatter
                 ? this.frontMatter
                 : ({} as Partial<FrontMatterType>),
@@ -600,29 +613,31 @@ ${m.groups.content}
                 quickLink: this.quickLinkId || undefined,
             },
         });
-        this.formatted = res.content;
+        if (typeof res.content === "string") {
+            this.formatted = res.content;
+            c = res.content;
+        }
         if (res.data) {
-            console.log(`Applying parsed front matter`);
-            await this.applyParsedFrontMatter(res.data, true);
+            await this.applyParsedFrontMatter(res.data as FrontMatterType, true);
         }
         /* this.formatted = this.parseEquationTags(formatted); // Math package */
         /* this.equationIds = this.getEquationIds(this.formatted || this.raw); */
-        return this.formatted;
+        return c;
     }
 
-    citationIdList() {
+    citationIdList(): string[] {
         return this.citations.map((c) => c.id);
     }
 
     flattenForClient(): MdxNoteFlattened {
-        let d: MdxNoteFlattened = {};
+        const d: MdxNoteFlattened = {};
         return d;
     }
 
-    sortCitationsByPageIndex() {
-        let citations: typeof this.citations = [];
+    sortCitationsByPageIndex(): void {
+        const citations: typeof this.citations = [];
         this.citationsListOrder.forEach((k, i) => {
-            let cit = this.citations.find(
+            const cit = this.citations.find(
                 (c) => c.id.toLowerCase() === k.toLowerCase(),
             );
             if (cit) {
@@ -643,29 +658,30 @@ ${m.groups.content}
             lastSync: ensureDate<null>(this.lastSync, "null"),
         } satisfies ValueSearchTableItem;
     }
-    async populateFromRemote() {
+    async populateFromRemote(): Promise<void> {
         if (!this.remoteUrl) return;
-        let url = this.remoteUrl;
-        let res = await axios.get(
+        const url = this.remoteUrl;
+        const res = await axios.get(
             url.includes("github") ? convertGithubUrlToRawContentUrl(url) : url,
         );
-        this.raw = res.data;
+        if (typeof res.data === "string") {
+            this.raw = res.data;
+        }
     }
 
-    setNoteType(docTypeData: AppConfigSchemaOutput["noteTypes"][number]) {
+    setNoteType(docTypeData: AppConfigSchemaOutput["noteTypes"][number]): void {
         this.noteType = docTypeData.docType;
     }
 
-    /* PERFORMANCE: Come back and handle this with a modified zod class instead of this half assed conditional config. Figure out ***exactly*** what will be passed in and make that shit required. */
     static async fromMdxString(
         props: z.input<typeof mdxNoteFromStringPropsSchema>,
-        _opts: z.input<typeof fromMdxStringOptSchema> = {},
+        _opts: z.input<typeof fromMdxStringOptSchema> | undefined,
         _parseParams: z.input<typeof parseParamsSchema>,
     ): Promise<MdxNote> {
         const parsed = mdxNoteFromStringPropsSchema.parse(props);
-        const opts = fromMdxStringOptSchema.parse(_opts);
+        const opts = fromMdxStringOptSchema.parse(_opts || {});
         const parseParams = parseParamsSchema.parse(_parseParams);
-        let note = new MdxNote(parsed);
+        const note = new MdxNote(parsed);
         if (Object.keys(parseParams.docTypeData).length) {
             note.docTypeData =
                 parseParams.docTypeData as AppConfigSchemaOutput["noteTypes"][number];
@@ -677,9 +693,9 @@ ${m.groups.content}
         return note;
     }
 
-    static fromPrisma(item: Partial<MdxNotePropsInput>) {
+    static fromPrisma(item: Partial<MdxNotePropsInput>): MdxNote {
         const parsed = mdxNotePropsSchema.parse(item);
-        let newNote = new MdxNote(parsed);
+        const newNote = new MdxNote(parsed);
         return newNote;
     }
 
@@ -687,20 +703,22 @@ ${m.groups.content}
         item: MdxNoteIntriguingValSummaryInput,
     ): MdxNote {
         const parsed = mdxNoteIntriguingValSummaryPropsSchema.parse(item);
-        let n = new MdxNote(parsed);
+        const n = new MdxNote(parsed);
         return n;
     }
 
     static asSummary(_item: MdxNoteSummaryInput): MdxNote {
         const item = mdxNoteSummaryPropSchema.parse(_item);
-        let n = new MdxNote(item);
+        const n = new MdxNote(item);
         return n;
     }
 
     static fromList(
         n: (MdxNote | PrismaMdxNote)[] | undefined | null,
     ): MdxNote[] {
-        if (!n || n.length === 0) return [] as MdxNote[];
+        if (!n || n.length === 0) {
+            return [] as MdxNote[];
+        }
         return n.map((b) => (b instanceof MdxNote ? b : MdxNote.fromPrisma(b)));
     }
 }

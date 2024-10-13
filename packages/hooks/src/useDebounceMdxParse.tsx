@@ -46,6 +46,7 @@ export const useDebounceMdxParse = (
             content: _value,
             appConfig
         })
+        console.log("compiled: ", compiled)
         /* let compiled = await parseMdxString({ content: _value, appConfig }); */
         const res = await run(compiled, {
             Fragment: Fragment,

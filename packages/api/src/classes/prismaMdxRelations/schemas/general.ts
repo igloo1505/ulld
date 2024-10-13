@@ -4,24 +4,35 @@ import {
     tagZodObject,
     topicZodObject,
 } from "@ulld/configschema/configUtilityTypes/docTypes";
-import { zodFrontMatterObject } from "@ulld/state/classes/frontMatter/zodFrontMatterObject";
-import { z } from "zod";
-import { Topic } from "../topic";
-import { Subject } from "../subject";
-import { Tag } from "../tag";
-import matter from "gray-matter";
 import {
     documentTypeConfigSchema,
     zodDocTypeInput,
 } from "@ulld/configschema/zod/documentConfigSchema";
-import { BibEntry } from "../BibEntry";
-import { BibCore } from "../Bib";
-import { ReadingList } from "../readingList";
-import { CitationGroup } from "../CitationGroup";
+import { TaskCategory } from "@ulld/database/internalDatabaseTypes";
+import { frontMatterSchema } from "@ulld/schemas/frontMatter";
+import { appData } from "@ulld/utilities/appData";
 import { withForwardSlash } from "@ulld/utilities/fsUtils";
 import { toDoItemStatuses } from "@ulld/utilities/toDoStatusData";
-import { TaskCategory } from "@ulld/database/internalDatabaseTypes";
-import { appData } from "@ulld/utilities/appData";
+import matter from "gray-matter";
+import { z } from "zod";
+import { BibCore } from "../Bib";
+import { BibEntry } from "../BibEntry";
+import { CitationGroup } from "../CitationGroup";
+import { ReadingList } from "../readingList";
+import { Subject } from "../subject";
+import { Tag } from "../tag";
+import { Topic } from "../topic";
+
+// TODO: Export this to schema package along with a bunch of other useful transforms.
+export const dateTimeStringTransform = (a: Date | string | null | undefined): Date => {
+    if (typeof a === "string") {
+        return new Date(a);
+    }
+    if (a instanceof Date) {
+        return a;
+    }
+    return new Date();
+};
 
 export const taggableFields = z.object({
     topics: topicZodObject
@@ -70,15 +81,11 @@ export const readingListZodObject = z.object({
     createdAt: z
         .union([z.string().datetime(), z.date()])
         .nullish()
-        .transform((a) =>
-            typeof a === "string" ? new Date(a) : a instanceof Date ? a : new Date(),
-        ),
+        .transform(dateTimeStringTransform),
     lastUpdate: z
         .union([z.string().datetime(), z.date()])
         .nullish()
-        .transform((a) =>
-            typeof a === "string" ? new Date(a) : a instanceof Date ? a : undefined,
-        ),
+        .transform(dateTimeStringTransform),
 });
 
 export type ReadingListPropsInput = z.input<typeof readingListZodObject>;
@@ -93,14 +100,8 @@ export const citationGroupSchema = z.object({
 export type CitationGroupPropsInput = z.input<typeof citationGroupSchema>;
 export type CitationGroupPropsOutput = z.output<typeof citationGroupSchema>;
 
-export const bibEntryTransform = (x: any) => {
-    return {
-        ...x,
-        BibId: x.BibId === 1 && x.Bib ? x.Bib.id : x.BibId,
-    };
-};
 
-export const bibEntryPropsSchema = z
+const bibEntryPropsSchemaInner = z
     .object({
         Bib: bibCoreSchema.optional().transform((a) => new BibCore(a)),
         BibId: z.number().int().default(1),
@@ -108,7 +109,7 @@ export const bibEntryPropsSchema = z
             .array()
             .default([])
             .transform((a) => {
-                return a.map((a) => new ReadingList(a));
+                return a.map((b) => new ReadingList(b));
             }),
         topics: topicZodObject
             .array()
@@ -166,23 +167,11 @@ export const bibEntryPropsSchema = z
         createdAt: z
             .union([z.string().datetime(), z.date(), z.string()])
             .nullish()
-            .transform((a) =>
-                typeof a === "string"
-                    ? new Date(a)
-                    : a instanceof Date
-                        ? a
-                        : new Date(),
-            ),
+            .transform(dateTimeStringTransform),
         lastAccess: z
             .union([z.string().datetime(), z.date(), z.string()])
             .nullish()
-            .transform((a) =>
-                typeof a === "string"
-                    ? new Date(a)
-                    : a instanceof Date
-                        ? a
-                        : new Date(),
-            ),
+            .transform(dateTimeStringTransform),
         citationGroups: citationGroupSchema
             .array()
             .default([])
@@ -190,16 +179,23 @@ export const bibEntryPropsSchema = z
         added: z
             .union([z.string().datetime(), z.date(), z.string()])
             .nullish()
-            .transform((a) =>
-                typeof a === "string"
-                    ? new Date(a)
-                    : a instanceof Date
-                        ? a
-                        : new Date(),
-            ),
+            .transform(dateTimeStringTransform),
     })
-    .catchall(z.string())
-    .transform(bibEntryTransform);
+    // .catchall(z.string());
+
+export const bibEntryTransform = (
+    x: z.infer<typeof bibEntryPropsSchemaInner>,
+): Omit<z.infer<typeof bibEntryPropsSchemaInner>, "BibId"> & {
+    BibId: number
+} => {
+    return {
+        ...x,
+        BibId: x.BibId === 1 ? x.Bib.id : x.BibId,
+    };
+};
+
+export const bibEntryPropsSchema =
+    bibEntryPropsSchemaInner.catchall(z.string()).transform(bibEntryTransform);
 
 export const sequentialListPropsSchema = z.object({
     sequentialKey: z.string(),
@@ -228,16 +224,12 @@ export const todoTaskZodObject = z.object({
     createdAt: z
         .union([z.string().datetime(), z.date()])
         .nullish()
-        .transform((a) =>
-            typeof a === "string" ? new Date(a) : a instanceof Date ? a : new Date(),
-        ),
+        .transform(dateTimeStringTransform),
     task: z.string(),
     dueAt: z
         .union([z.string().datetime(), z.date()])
         .nullish()
-        .transform((a) =>
-            typeof a === "string" ? new Date(a) : a instanceof Date ? a : new Date(),
-        ),
+        .transform(dateTimeStringTransform),
     details: z.string().nullish(),
     associatedNotes: z.any().array().default([]),
     tags: tagZodObject.array().default([]),
@@ -313,11 +305,11 @@ export const mdxNotePropsSchema = z
     })
     .merge(taggableFields)
     .transform((a) => {
-        const fm = zodFrontMatterObject.parse(matter(a.raw));
+        const fm = frontMatterSchema.parse(matter(a.raw));
         return {
             ...a,
             raw: a.raw || a.content,
-            importantValues: fm.importantValues || [],
+            importantValues: fm.importantValues,
             frontMatter: fm,
             // floatImages: fm.float,
             quickLinkId: fm.id || a.quickLinkId,
@@ -325,26 +317,18 @@ export const mdxNotePropsSchema = z
             sequentialIndex: fm.sequential || a.sequentialIndex,
             // remoteUrl: fm.remote?.url || a.remoteUrl,
             // trackRemote: fm.remote?.track || a.trackRemote,
-            topics: fm.topics
-                ? [
-                    ...a.topics,
-                    ...fm.topics.map((l: string) => new Topic({ value: l })),
-                ]
-                : ([] as Topic[]),
-            subjects: fm.subjects
-                ? [
-                    ...a.subjects,
-                    ...fm.subjects.map((l: string) => new Subject({ value: l })),
-                ]
-                : ([] as Subject[]),
-            tags: fm.tags
-                ? [
-                    ...a.tags,
-                    ...fm.tags.map(
-                        (l: string) => new Tag({ value: l, kanbanId: null }),
-                    ),
-                ]
-                : ([] as Tag[]),
+            topics: [
+                ...a.topics,
+                ...fm.topics.map((l: string) => new Topic({ value: l })),
+            ],
+            subjects: [
+                ...a.subjects,
+                ...fm.subjects.map((l: string) => new Subject({ value: l })),
+            ],
+            tags: [
+                ...a.tags,
+                ...fm.tags.map((l: string) => new Tag({ value: l, kanbanId: null })),
+            ],
             firstSync: fm.created ? new Date(fm.created) : a.firstSync,
         };
     });

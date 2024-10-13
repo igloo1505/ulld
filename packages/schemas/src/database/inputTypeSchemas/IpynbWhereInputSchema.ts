@@ -1,24 +1,22 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from './IntFilterSchema';
-import { StringFilterSchema } from './StringFilterSchema';
-import { BoolNullableFilterSchema } from './BoolNullableFilterSchema';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-import { StringNullableListFilterSchema } from './StringNullableListFilterSchema';
-import { FloatNullableListFilterSchema } from './FloatNullableListFilterSchema';
-import { BytesFilterSchema } from './BytesFilterSchema';
-import { IntNullableFilterSchema } from './IntNullableFilterSchema';
-import { BoolFilterSchema } from './BoolFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-import { TagListRelationFilterSchema } from './TagListRelationFilterSchema';
-import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema';
-import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema';
-import { BibEntryListRelationFilterSchema } from './BibEntryListRelationFilterSchema';
-import { SequentialNoteListNullableRelationFilterSchema } from './SequentialNoteListNullableRelationFilterSchema';
-import { SequentialNoteListWhereInputSchema } from './SequentialNoteListWhereInputSchema';
-import { ReadingListListRelationFilterSchema } from './ReadingListListRelationFilterSchema';
-
+import { IntFilterSchema } from '../IntFilterSchema.js';
+import { StringFilterSchema } from '../StringFilterSchema.js';
+import { BoolNullableFilterSchema } from '../BoolNullableFilterSchema.js';
+import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
+import { StringNullableListFilterSchema } from '../StringNullableListFilterSchema.js';
+import { FloatNullableListFilterSchema } from '../FloatNullableListFilterSchema.js';
+import { BytesFilterSchema } from '../BytesFilterSchema.js';
+import { IntNullableFilterSchema } from '../IntNullableFilterSchema.js';
+import { BoolFilterSchema } from '../BoolFilterSchema.js';
+import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
+import { TagListRelationFilterSchema } from '../TagListRelationFilterSchema.js';
+import { TopicListRelationFilterSchema } from '../TopicListRelationFilterSchema.js';
+import { SubjectListRelationFilterSchema } from '../SubjectListRelationFilterSchema.js';
+import { BibEntryListRelationFilterSchema } from '../BibEntryListRelationFilterSchema.js';
+import { SequentialNoteListNullableRelationFilterSchema } from '../SequentialNoteListNullableRelationFilterSchema.js';
+import { SequentialNoteListWhereInputSchema } from '../SequentialNoteListWhereInputSchema.js';
+import { ReadingListListRelationFilterSchema } from '../ReadingListListRelationFilterSchema.js';
 export const IpynbWhereInputSchema: z.ZodType<Prisma.IpynbWhereInput> = z.object({
   AND: z.union([ z.lazy(() => IpynbWhereInputSchema),z.lazy(() => IpynbWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => IpynbWhereInputSchema).array().optional(),
@@ -46,5 +44,4 @@ export const IpynbWhereInputSchema: z.ZodType<Prisma.IpynbWhereInput> = z.object
   sequentialList: z.union([ z.lazy(() => SequentialNoteListNullableRelationFilterSchema),z.lazy(() => SequentialNoteListWhereInputSchema) ]).optional().nullable(),
   readingList: z.lazy(() => ReadingListListRelationFilterSchema).optional()
 }).strict();
-
 export default IpynbWhereInputSchema;

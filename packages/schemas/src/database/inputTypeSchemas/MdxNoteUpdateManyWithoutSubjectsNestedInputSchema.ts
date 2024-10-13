@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteCreateWithoutSubjectsInputSchema } from './MdxNoteCreateWithoutSubjectsInputSchema';
-import { MdxNoteUncheckedCreateWithoutSubjectsInputSchema } from './MdxNoteUncheckedCreateWithoutSubjectsInputSchema';
-import { MdxNoteCreateOrConnectWithoutSubjectsInputSchema } from './MdxNoteCreateOrConnectWithoutSubjectsInputSchema';
-import { MdxNoteUpsertWithWhereUniqueWithoutSubjectsInputSchema } from './MdxNoteUpsertWithWhereUniqueWithoutSubjectsInputSchema';
-import { MdxNoteWhereUniqueInputSchema } from './MdxNoteWhereUniqueInputSchema';
-import { MdxNoteUpdateWithWhereUniqueWithoutSubjectsInputSchema } from './MdxNoteUpdateWithWhereUniqueWithoutSubjectsInputSchema';
-import { MdxNoteUpdateManyWithWhereWithoutSubjectsInputSchema } from './MdxNoteUpdateManyWithWhereWithoutSubjectsInputSchema';
-import { MdxNoteScalarWhereInputSchema } from './MdxNoteScalarWhereInputSchema';
-
+import { MdxNoteCreateWithoutSubjectsInputSchema } from '../MdxNoteCreateWithoutSubjectsInputSchema.js';
+import { MdxNoteUncheckedCreateWithoutSubjectsInputSchema } from '../MdxNoteUncheckedCreateWithoutSubjectsInputSchema.js';
+import { MdxNoteCreateOrConnectWithoutSubjectsInputSchema } from '../MdxNoteCreateOrConnectWithoutSubjectsInputSchema.js';
+import { MdxNoteUpsertWithWhereUniqueWithoutSubjectsInputSchema } from '../MdxNoteUpsertWithWhereUniqueWithoutSubjectsInputSchema.js';
+import { MdxNoteWhereUniqueInputSchema } from '../MdxNoteWhereUniqueInputSchema.js';
+import { MdxNoteUpdateWithWhereUniqueWithoutSubjectsInputSchema } from '../MdxNoteUpdateWithWhereUniqueWithoutSubjectsInputSchema.js';
+import { MdxNoteUpdateManyWithWhereWithoutSubjectsInputSchema } from '../MdxNoteUpdateManyWithWhereWithoutSubjectsInputSchema.js';
+import { MdxNoteScalarWhereInputSchema } from '../MdxNoteScalarWhereInputSchema.js';
 export const MdxNoteUpdateManyWithoutSubjectsNestedInputSchema: z.ZodType<Prisma.MdxNoteUpdateManyWithoutSubjectsNestedInput> = z.object({
   create: z.union([ z.lazy(() => MdxNoteCreateWithoutSubjectsInputSchema),z.lazy(() => MdxNoteCreateWithoutSubjectsInputSchema).array(),z.lazy(() => MdxNoteUncheckedCreateWithoutSubjectsInputSchema),z.lazy(() => MdxNoteUncheckedCreateWithoutSubjectsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => MdxNoteCreateOrConnectWithoutSubjectsInputSchema),z.lazy(() => MdxNoteCreateOrConnectWithoutSubjectsInputSchema).array() ]).optional(),
@@ -22,5 +20,4 @@ export const MdxNoteUpdateManyWithoutSubjectsNestedInputSchema: z.ZodType<Prisma
   updateMany: z.union([ z.lazy(() => MdxNoteUpdateManyWithWhereWithoutSubjectsInputSchema),z.lazy(() => MdxNoteUpdateManyWithWhereWithoutSubjectsInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => MdxNoteScalarWhereInputSchema),z.lazy(() => MdxNoteScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default MdxNoteUpdateManyWithoutSubjectsNestedInputSchema;

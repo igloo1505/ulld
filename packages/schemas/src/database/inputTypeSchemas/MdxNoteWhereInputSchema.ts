@@ -1,26 +1,24 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from './IntFilterSchema';
-import { BoolNullableFilterSchema } from './BoolNullableFilterSchema';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-import { StringFilterSchema } from './StringFilterSchema';
-import { StringNullableListFilterSchema } from './StringNullableListFilterSchema';
-import { FloatNullableListFilterSchema } from './FloatNullableListFilterSchema';
-import { FloatNullableFilterSchema } from './FloatNullableFilterSchema';
-import { BoolFilterSchema } from './BoolFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema';
-import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema';
-import { TagListRelationFilterSchema } from './TagListRelationFilterSchema';
-import { BibEntryListRelationFilterSchema } from './BibEntryListRelationFilterSchema';
-import { SequentialNoteListNullableRelationFilterSchema } from './SequentialNoteListNullableRelationFilterSchema';
-import { SequentialNoteListWhereInputSchema } from './SequentialNoteListWhereInputSchema';
-import { ReadingListListRelationFilterSchema } from './ReadingListListRelationFilterSchema';
-import { EquationListRelationFilterSchema } from './EquationListRelationFilterSchema';
-import { DefinitionListRelationFilterSchema } from './DefinitionListRelationFilterSchema';
-import { ToDoListRelationFilterSchema } from './ToDoListRelationFilterSchema';
-
+import { IntFilterSchema } from '../IntFilterSchema.js';
+import { BoolNullableFilterSchema } from '../BoolNullableFilterSchema.js';
+import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
+import { StringFilterSchema } from '../StringFilterSchema.js';
+import { StringNullableListFilterSchema } from '../StringNullableListFilterSchema.js';
+import { FloatNullableListFilterSchema } from '../FloatNullableListFilterSchema.js';
+import { FloatNullableFilterSchema } from '../FloatNullableFilterSchema.js';
+import { BoolFilterSchema } from '../BoolFilterSchema.js';
+import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
+import { TopicListRelationFilterSchema } from '../TopicListRelationFilterSchema.js';
+import { SubjectListRelationFilterSchema } from '../SubjectListRelationFilterSchema.js';
+import { TagListRelationFilterSchema } from '../TagListRelationFilterSchema.js';
+import { BibEntryListRelationFilterSchema } from '../BibEntryListRelationFilterSchema.js';
+import { SequentialNoteListNullableRelationFilterSchema } from '../SequentialNoteListNullableRelationFilterSchema.js';
+import { SequentialNoteListWhereInputSchema } from '../SequentialNoteListWhereInputSchema.js';
+import { ReadingListListRelationFilterSchema } from '../ReadingListListRelationFilterSchema.js';
+import { EquationListRelationFilterSchema } from '../EquationListRelationFilterSchema.js';
+import { DefinitionListRelationFilterSchema } from '../DefinitionListRelationFilterSchema.js';
+import { ToDoListRelationFilterSchema } from '../ToDoListRelationFilterSchema.js';
 export const MdxNoteWhereInputSchema: z.ZodType<Prisma.MdxNoteWhereInput> = z.object({
   AND: z.union([ z.lazy(() => MdxNoteWhereInputSchema),z.lazy(() => MdxNoteWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => MdxNoteWhereInputSchema).array().optional(),
@@ -60,5 +58,4 @@ export const MdxNoteWhereInputSchema: z.ZodType<Prisma.MdxNoteWhereInput> = z.ob
   definitions: z.lazy(() => DefinitionListRelationFilterSchema).optional(),
   toDo: z.lazy(() => ToDoListRelationFilterSchema).optional()
 }).strict();
-
 export default MdxNoteWhereInputSchema;

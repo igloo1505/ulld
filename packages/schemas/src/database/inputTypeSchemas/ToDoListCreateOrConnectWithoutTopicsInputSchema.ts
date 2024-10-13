@@ -1,13 +1,10 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ToDoListWhereUniqueInputSchema } from './ToDoListWhereUniqueInputSchema';
-import { ToDoListCreateWithoutTopicsInputSchema } from './ToDoListCreateWithoutTopicsInputSchema';
-import { ToDoListUncheckedCreateWithoutTopicsInputSchema } from './ToDoListUncheckedCreateWithoutTopicsInputSchema';
-
+import { ToDoListWhereUniqueInputSchema } from '../ToDoListWhereUniqueInputSchema.js';
+import { ToDoListCreateWithoutTopicsInputSchema } from '../ToDoListCreateWithoutTopicsInputSchema.js';
+import { ToDoListUncheckedCreateWithoutTopicsInputSchema } from '../ToDoListUncheckedCreateWithoutTopicsInputSchema.js';
 export const ToDoListCreateOrConnectWithoutTopicsInputSchema: z.ZodType<Prisma.ToDoListCreateOrConnectWithoutTopicsInput> = z.object({
   where: z.lazy(() => ToDoListWhereUniqueInputSchema),
   create: z.union([ z.lazy(() => ToDoListCreateWithoutTopicsInputSchema),z.lazy(() => ToDoListUncheckedCreateWithoutTopicsInputSchema) ]),
 }).strict();
-
 export default ToDoListCreateOrConnectWithoutTopicsInputSchema;

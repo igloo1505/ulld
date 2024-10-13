@@ -1,13 +1,11 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
-import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema';
-import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema';
-import { TopicUpdateManyWithoutQAPairNestedInputSchema } from './TopicUpdateManyWithoutQAPairNestedInputSchema';
-import { SubjectUpdateManyWithoutQaPairNestedInputSchema } from './SubjectUpdateManyWithoutQaPairNestedInputSchema';
-import { PracticeExamUpdateManyWithoutQuestionsNestedInputSchema } from './PracticeExamUpdateManyWithoutQuestionsNestedInputSchema';
-
+import { StringFieldUpdateOperationsInputSchema } from '../StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from '../NullableStringFieldUpdateOperationsInputSchema.js';
+import { IntFieldUpdateOperationsInputSchema } from '../IntFieldUpdateOperationsInputSchema.js';
+import { TopicUpdateManyWithoutQAPairNestedInputSchema } from '../TopicUpdateManyWithoutQAPairNestedInputSchema.js';
+import { SubjectUpdateManyWithoutQaPairNestedInputSchema } from '../SubjectUpdateManyWithoutQaPairNestedInputSchema.js';
+import { PracticeExamUpdateManyWithoutQuestionsNestedInputSchema } from '../PracticeExamUpdateManyWithoutQuestionsNestedInputSchema.js';
 export const QAPairUpdateWithoutTagsInputSchema: z.ZodType<Prisma.QAPairUpdateWithoutTagsInput> = z.object({
   id: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   question: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
@@ -20,5 +18,4 @@ export const QAPairUpdateWithoutTagsInputSchema: z.ZodType<Prisma.QAPairUpdateWi
   subjects: z.lazy(() => SubjectUpdateManyWithoutQaPairNestedInputSchema).optional(),
   practiceExam: z.lazy(() => PracticeExamUpdateManyWithoutQuestionsNestedInputSchema).optional()
 }).strict();
-
 export default QAPairUpdateWithoutTagsInputSchema;

@@ -1,5 +1,7 @@
 import { FullScreenNavItem } from "@ulld/types";
 
+// TODO: Remove this. THis was movd to the internalAppLocations object in the utilities package at packages/utilities/src/appData.ts
+
 export const utilityNavLinks: FullScreenNavItem[] = [
     {
         label: "Snippets",

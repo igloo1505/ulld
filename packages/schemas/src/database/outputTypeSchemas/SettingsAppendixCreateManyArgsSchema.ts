@@ -1,10 +1,8 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { SettingsAppendixCreateManyInputSchema } from '../inputTypeSchemas/SettingsAppendixCreateManyInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/SettingsAppendixCreateManyInputSchema.js
 export const SettingsAppendixCreateManyArgsSchema: z.ZodType<Prisma.SettingsAppendixCreateManyArgs> = z.object({
   data: z.union([ SettingsAppendixCreateManyInputSchema,SettingsAppendixCreateManyInputSchema.array() ]),
   skipDuplicates: z.boolean().optional(),
 }).strict() ;
-
 export default SettingsAppendixCreateManyArgsSchema;

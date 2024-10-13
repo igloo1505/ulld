@@ -1,16 +1,18 @@
 {
   "name": "@ulld/cli",
   "version": "0.0.2",
-  "ava": {
-    "extensions": {
-      "ts": "module",
-      "tsx": "module"
-    },
-    "nodeArguments": [
-      "--loader=ts-node/esm"
-    ]
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "prettier --check . && xo && ava"
   },
-  "bin": "dist/cli.js",
+  "engines": {
+    "node": ">=16"
+  },
   "dependencies": {
     "@antfu/install-pkg": "^0.4.1",
     "@inkjs/ui": "^2.0.0",
@@ -104,20 +106,19 @@
     "typescript": "^5.0.3",
     "xo": "^0.54.2"
   },
-  "engines": {
-    "node": ">=16"
+  "peerDependencies": {},
+  "ava": {
+    "extensions": {
+      "ts": "module",
+      "tsx": "module"
+    },
+    "nodeArguments": [
+      "--loader=ts-node/esm"
+    ]
   },
-  "files": [
-    "dist"
-  ],
+  "bin": "dist/cli.js",
   "license": "MIT",
   "prettier": "@vdemedes/prettier-config",
-  "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
-    "test": "prettier --check . && xo && ava"
-  },
-  "type": "module",
   "xo": {
     "extends": "xo-react",
     "prettier": true,

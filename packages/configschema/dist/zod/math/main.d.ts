@@ -4,7 +4,7 @@ export declare const mathConfigSchema: z.ZodDefault<z.ZodObject<{
     latexFontUrl: z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
     constants: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodNumber>>;
 }, "strip", z.ZodTypeAny, {
-    latexPackages: (string[] | "all") & (string[] | "all" | undefined);
+    latexPackages: string[] | "all";
     constants: Record<string, number>;
     latexFontUrl?: string | undefined;
 }, {

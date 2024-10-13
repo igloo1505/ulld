@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
+import type { Prisma } from '@ulld/database/db';
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
@@ -10,7 +10,6 @@ import { EquationFindManyArgsSchema } from "../outputTypeSchemas/EquationFindMan
 import { DefinitionFindManyArgsSchema } from "../outputTypeSchemas/DefinitionFindManyArgsSchema"
 import { ToDoFindManyArgsSchema } from "../outputTypeSchemas/ToDoFindManyArgsSchema"
 import { MdxNoteCountOutputTypeArgsSchema } from "../outputTypeSchemas/MdxNoteCountOutputTypeArgsSchema"
-
 export const MdxNoteIncludeSchema: z.ZodType<Prisma.MdxNoteInclude> = z.object({
   topics: z.union([z.boolean(),z.lazy(() => TopicFindManyArgsSchema)]).optional(),
   subjects: z.union([z.boolean(),z.lazy(() => SubjectFindManyArgsSchema)]).optional(),
@@ -23,5 +22,4 @@ export const MdxNoteIncludeSchema: z.ZodType<Prisma.MdxNoteInclude> = z.object({
   toDo: z.union([z.boolean(),z.lazy(() => ToDoFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => MdxNoteCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export default MdxNoteIncludeSchema;

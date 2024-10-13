@@ -51,7 +51,7 @@ export declare const componentDocumentationSchema: z.ZodObject<{
         full?: string | undefined;
     };
     componentId: string;
-    embeddableSyntax?: string[] | undefined;
     tags?: string[] | undefined;
+    embeddableSyntax?: string[] | undefined;
 }>;
 //# sourceMappingURL=componentDocumentation.d.ts.map

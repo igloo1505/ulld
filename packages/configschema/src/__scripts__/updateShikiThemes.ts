@@ -3,6 +3,7 @@ import path from 'path'
 import themes from "@ulld/utilities/shikiThemes";
 import { bundledThemes, bundledLanguages } from 'shiki';
 
+const __dirname = import.meta.dirname
 
 if(themes.length !== Object.keys(bundledThemes).length){
     throw new Error(`Missing a theme most likely. Current theme list has ${themes.length} items, and the Shiki package exports ${Object.keys(bundledThemes).length} items.`)

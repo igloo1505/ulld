@@ -5,6 +5,7 @@ import {
     maxFooterSectionLinks,
     maxFooterSections,
     maxNavbarLinks,
+    maxSidebarLinks,
 } from "../staticSettingData";
 
 export const navigationLinkSchema = z.object({
@@ -33,6 +34,7 @@ const actionFieldSchema = z.object({
 const sidebarLinkSchemaBase = z.object({
     icon: z.enum(validIconNameList),
     label: z.string(),
+    fieldType: z.literal("url").or(z.literal("action")).default("url")
 });
 
 export const sidebarLinkSchema = z.union([
@@ -84,7 +86,7 @@ export const developmentDefaultValues: NavigationFormWithUtilityFields = {
                     }),
             };
         }),
-    sidebarLinks: Array(2)
+    sidebarLinks: Array(faker.number.int({min: 2, max: maxSidebarLinks}))
         .fill(0)
         .map(() => {
             return {

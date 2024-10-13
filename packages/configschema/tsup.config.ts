@@ -6,6 +6,9 @@ import { copyJsonFilesToDist } from "@ulld/utilities/copyJsonFilesToDist";
 let entries = globSync("./src/**/*.{ts,tsx}", {
     cwd: import.meta.dirname,
     nodir: true,
+    ignore: [
+        "./src/__scripts__/**"
+    ]
 });
 
 

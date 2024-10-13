@@ -1,14 +1,12 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
-import { KanBanListUncheckedUpdateManyWithoutKanbanNestedInputSchema } from './KanBanListUncheckedUpdateManyWithoutKanbanNestedInputSchema';
-import { TagUncheckedUpdateManyWithoutKanbanNestedInputSchema } from './TagUncheckedUpdateManyWithoutKanbanNestedInputSchema';
-import { SubjectUncheckedUpdateManyWithoutKanbanNestedInputSchema } from './SubjectUncheckedUpdateManyWithoutKanbanNestedInputSchema';
-import { TopicUncheckedUpdateManyWithoutKanbanNestedInputSchema } from './TopicUncheckedUpdateManyWithoutKanbanNestedInputSchema';
-
+import { IntFieldUpdateOperationsInputSchema } from '../IntFieldUpdateOperationsInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from '../StringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from '../DateTimeFieldUpdateOperationsInputSchema.js';
+import { KanBanListUncheckedUpdateManyWithoutKanbanNestedInputSchema } from '../KanBanListUncheckedUpdateManyWithoutKanbanNestedInputSchema.js';
+import { TagUncheckedUpdateManyWithoutKanbanNestedInputSchema } from '../TagUncheckedUpdateManyWithoutKanbanNestedInputSchema.js';
+import { SubjectUncheckedUpdateManyWithoutKanbanNestedInputSchema } from '../SubjectUncheckedUpdateManyWithoutKanbanNestedInputSchema.js';
+import { TopicUncheckedUpdateManyWithoutKanbanNestedInputSchema } from '../TopicUncheckedUpdateManyWithoutKanbanNestedInputSchema.js';
 export const KanbanUncheckedUpdateInputSchema: z.ZodType<Prisma.KanbanUncheckedUpdateInput> = z.object({
   id: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
   title: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
@@ -19,5 +17,4 @@ export const KanbanUncheckedUpdateInputSchema: z.ZodType<Prisma.KanbanUncheckedU
   subjects: z.lazy(() => SubjectUncheckedUpdateManyWithoutKanbanNestedInputSchema).optional(),
   topics: z.lazy(() => TopicUncheckedUpdateManyWithoutKanbanNestedInputSchema).optional()
 }).strict();
-
 export default KanbanUncheckedUpdateInputSchema;

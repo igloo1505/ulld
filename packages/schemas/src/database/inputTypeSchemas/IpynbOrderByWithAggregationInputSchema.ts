@@ -1,14 +1,12 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { IpynbCountOrderByAggregateInputSchema } from './IpynbCountOrderByAggregateInputSchema';
-import { IpynbAvgOrderByAggregateInputSchema } from './IpynbAvgOrderByAggregateInputSchema';
-import { IpynbMaxOrderByAggregateInputSchema } from './IpynbMaxOrderByAggregateInputSchema';
-import { IpynbMinOrderByAggregateInputSchema } from './IpynbMinOrderByAggregateInputSchema';
-import { IpynbSumOrderByAggregateInputSchema } from './IpynbSumOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
+import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
+import { IpynbCountOrderByAggregateInputSchema } from '../IpynbCountOrderByAggregateInputSchema.js';
+import { IpynbAvgOrderByAggregateInputSchema } from '../IpynbAvgOrderByAggregateInputSchema.js';
+import { IpynbMaxOrderByAggregateInputSchema } from '../IpynbMaxOrderByAggregateInputSchema.js';
+import { IpynbMinOrderByAggregateInputSchema } from '../IpynbMinOrderByAggregateInputSchema.js';
+import { IpynbSumOrderByAggregateInputSchema } from '../IpynbSumOrderByAggregateInputSchema.js';
 export const IpynbOrderByWithAggregationInputSchema: z.ZodType<Prisma.IpynbOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   rootRelativePath: z.lazy(() => SortOrderSchema).optional(),
@@ -32,5 +30,4 @@ export const IpynbOrderByWithAggregationInputSchema: z.ZodType<Prisma.IpynbOrder
   _min: z.lazy(() => IpynbMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => IpynbSumOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default IpynbOrderByWithAggregationInputSchema;

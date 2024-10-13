@@ -6,7 +6,6 @@ export const replaceContentByMatch = (content: string, match: RegExpMatchArray, 
         return content
     }
     let matchValue = match.groups?.[group]
-    console.log("match: ", match)
     if(!matchValue){
         throw new Error(`An invalid match group was given to replaceContentByMatch. Looked for ${group} and found groups ${Object.keys(match.groups).join(", ")}`)
     }

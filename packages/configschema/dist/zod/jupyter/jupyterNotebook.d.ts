@@ -11,11 +11,11 @@ export declare const jupyterNotebookPropsSchema: z.ZodDefault<z.ZodObject<{
     }, "strip", z.ZodTypeAny, {
         name: string;
         version: string;
-        module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+        module: string | Record<string, string>;
     }, {
         name: string;
         version: string;
-        module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+        module: string | Record<string, string>;
     }>, "many">>;
     externalIPyWidgets: z.ZodDefault<z.ZodArray<z.ZodObject<Omit<{
         module: z.ZodUnion<[z.ZodString, z.ZodRecord<z.ZodString, z.ZodString>]>;
@@ -36,7 +36,7 @@ export declare const jupyterNotebookPropsSchema: z.ZodDefault<z.ZodObject<{
     bundledIPyWidgets: {
         name: string;
         version: string;
-        module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+        module: string | Record<string, string>;
     }[];
     externalIPyWidgets: {
         name: string;
@@ -47,14 +47,14 @@ export declare const jupyterNotebookPropsSchema: z.ZodDefault<z.ZodObject<{
     height?: string | undefined;
     maxHeight?: string | undefined;
 }, {
-    cellMetadataPanel?: boolean | undefined;
-    cellSidebarMargin?: number | undefined;
     height?: string | undefined;
     maxHeight?: string | undefined;
+    cellMetadataPanel?: boolean | undefined;
+    cellSidebarMargin?: number | undefined;
     bundledIPyWidgets?: {
         name: string;
         version: string;
-        module: (string | Record<string, string>) & (string | Record<string, string> | undefined);
+        module: string | Record<string, string>;
     }[] | undefined;
     externalIPyWidgets?: {
         name: string;

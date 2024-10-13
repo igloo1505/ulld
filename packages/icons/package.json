@@ -1,26 +1,21 @@
 {
   "name": "@ulld/icons",
   "version": "0.0.124",
-  "dependencies": {
-    "@tabler/icons-react": "3.5.0",
-    "clsx": "^2.1.0",
-    "framer-motion": "^11.1.7",
-    "lucide-react": "*",
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-icons": "5.0.1"
+  "private": false,
+  "publishConfig": {
+    "access": "public"
   },
-  "devDependencies": {
-    "@tabler/icons-react": "3.5.0",
-    "clsx": "^2.1.0",
-    "framer-motion": "^11.1.7",
-    "lucide-react": "^0.344.0",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "5.0.1"
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "echo 'Add build script here'",
+    "buildLocal": "tsx ./src/scripts/gatherNames.ts",
+    "dev": "echo 'Add dev script here'",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "echo 'Add test script here'"
   },
+  "types": "./src/types.ts",
   "exports": {
     ".": "./src/DynamicIcon.tsx",
     "./dynamic": "./src/DynamicIcon.tsx",
@@ -43,11 +38,26 @@
     "./clientX": "./src/clientSideUtilityComponents/xIcon.tsx",
     "./names": "./src/allIconNames.ts"
   },
-  "files": [
-    "src"
-  ],
-  "main": "./src/DynamicIcon.tsx",
-  "packageManager": "pnpm@9.0.4",
+  "dependencies": {
+    "@tabler/icons-react": "3.5.0",
+    "clsx": "^2.1.0",
+    "framer-motion": "^11.1.7",
+    "lucide-react": "*",
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "5.0.1"
+  },
+  "devDependencies": {
+    "@tabler/icons-react": "3.5.0",
+    "clsx": "^2.1.0",
+    "framer-motion": "^11.1.7",
+    "lucide-react": "^0.344.0",
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "5.0.1"
+  },
   "peerDependencies": {
     "@ulld/hooks": "workspace:*",
     "@ulld/tailwind": "workspace:*",
@@ -59,16 +69,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "echo 'Add build script here'",
-    "buildLocal": "tsx ./src/scripts/gatherNames.ts",
-    "dev": "echo 'Add dev script here'",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'Add test script here'"
-  },
-  "types": "./src/types.ts"
+  "packageManager": "pnpm@9.0.4",
+  "main": "./src/DynamicIcon.tsx"
 }

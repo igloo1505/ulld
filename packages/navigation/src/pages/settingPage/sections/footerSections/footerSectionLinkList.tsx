@@ -60,12 +60,7 @@ const FooterSectionLinkList = ({
             }
             axis="y"
             values={items}
-            onReorder={(newItems) => {
-                console.count("newItems");
-                /* setItems(newItems) */
-                updateSectionList(newItems);
-            }}
-        /* as={as} */
+            onReorder={updateSectionList}
         >
             {items?.map((item, i) => {
                 return (

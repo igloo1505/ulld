@@ -1,11 +1,9 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TopicCreateNestedManyWithoutPracticeExamInputSchema } from './TopicCreateNestedManyWithoutPracticeExamInputSchema';
-import { TagCreateNestedManyWithoutPracticeExamInputSchema } from './TagCreateNestedManyWithoutPracticeExamInputSchema';
-import { SubjectCreateNestedManyWithoutPracticeExamInputSchema } from './SubjectCreateNestedManyWithoutPracticeExamInputSchema';
-import { QAPairCreateNestedManyWithoutPracticeExamInputSchema } from './QAPairCreateNestedManyWithoutPracticeExamInputSchema';
-
+import { TopicCreateNestedManyWithoutPracticeExamInputSchema } from '../TopicCreateNestedManyWithoutPracticeExamInputSchema.js';
+import { TagCreateNestedManyWithoutPracticeExamInputSchema } from '../TagCreateNestedManyWithoutPracticeExamInputSchema.js';
+import { SubjectCreateNestedManyWithoutPracticeExamInputSchema } from '../SubjectCreateNestedManyWithoutPracticeExamInputSchema.js';
+import { QAPairCreateNestedManyWithoutPracticeExamInputSchema } from '../QAPairCreateNestedManyWithoutPracticeExamInputSchema.js';
 export const PracticeExamCreateInputSchema: z.ZodType<Prisma.PracticeExamCreateInput> = z.object({
   correctCount: z.number().int(),
   inCorrectCount: z.number().int(),
@@ -17,5 +15,4 @@ export const PracticeExamCreateInputSchema: z.ZodType<Prisma.PracticeExamCreateI
   subjects: z.lazy(() => SubjectCreateNestedManyWithoutPracticeExamInputSchema).optional(),
   questions: z.lazy(() => QAPairCreateNestedManyWithoutPracticeExamInputSchema).optional()
 }).strict();
-
 export default PracticeExamCreateInputSchema;

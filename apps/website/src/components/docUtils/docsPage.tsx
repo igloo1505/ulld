@@ -2,11 +2,11 @@ import { cn } from "@ulld/utilities/cn";
 import { PageType } from "#/types/general";
 import { MDXContent } from "@content-collections/mdx/react";
 import "fumadocs-ui/twoslash.css";
-import { DocsBody, DocsDescription, DocsPage } from "fumadocs-ui/page";
+import { DocsBody, DocsPage } from "fumadocs-ui/page";
 import React, { ComponentProps } from "react";
 import TypeTable from "./typeTable";
 import ApplyMathjaxBandaid from "../utility/applyMathjaxBandaid";
-import MathjaxProvider from "#/components/utility/providers/mathjax";
+/* import MathjaxProvider from "#/components/utility/providers/mathjax"; */
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { serverComponentMap } from "#/mdx/serverComponentMap";
 import { getComponentMap } from "@ulld/component-map/client";
@@ -60,7 +60,6 @@ const DocsPageInternal = async ({
     }
 
     let parsedContent = await parseMdxContent(rawContent, page.data.body)
-    console.log("parsedContent.citations: ", parsedContent.citations)
     /* rawContent = parsedContent.content */
     /* let _body = parsedContent.body */
     /* console.log("_body here: ", _body) */
@@ -123,11 +122,11 @@ const DocsPageComponent = (props: DocsPageComponentProps) => {
 
     if (props.internal) {
         return (
-            <MathjaxProvider>
                 <div id={id} className={cn("w-full @container/mdx", props.className)}>
                     <DocsPageInternal {...props} id={id} />
                 </div>
-            </MathjaxProvider>
+            /* <MathjaxProvider> */
+            /* </MathjaxProvider> */
         );
     }
 
@@ -138,7 +137,6 @@ const DocsPageComponent = (props: DocsPageComponentProps) => {
     );
 
     return (
-        <MathjaxProvider>
             <DocsPage
                 toc={newEntries}
                 tableOfContent={{
@@ -151,7 +149,8 @@ const DocsPageComponent = (props: DocsPageComponentProps) => {
                     <DocsPageInternal {...props} id={id} />
                 </DocsBody>
             </DocsPage>
-        </MathjaxProvider>
+        /* <MathjaxProvider> */
+        /* </MathjaxProvider> */
     );
 };
 

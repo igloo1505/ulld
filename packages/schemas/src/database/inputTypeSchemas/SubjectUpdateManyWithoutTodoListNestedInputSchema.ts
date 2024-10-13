@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SubjectCreateWithoutTodoListInputSchema } from './SubjectCreateWithoutTodoListInputSchema';
-import { SubjectUncheckedCreateWithoutTodoListInputSchema } from './SubjectUncheckedCreateWithoutTodoListInputSchema';
-import { SubjectCreateOrConnectWithoutTodoListInputSchema } from './SubjectCreateOrConnectWithoutTodoListInputSchema';
-import { SubjectUpsertWithWhereUniqueWithoutTodoListInputSchema } from './SubjectUpsertWithWhereUniqueWithoutTodoListInputSchema';
-import { SubjectWhereUniqueInputSchema } from './SubjectWhereUniqueInputSchema';
-import { SubjectUpdateWithWhereUniqueWithoutTodoListInputSchema } from './SubjectUpdateWithWhereUniqueWithoutTodoListInputSchema';
-import { SubjectUpdateManyWithWhereWithoutTodoListInputSchema } from './SubjectUpdateManyWithWhereWithoutTodoListInputSchema';
-import { SubjectScalarWhereInputSchema } from './SubjectScalarWhereInputSchema';
-
+import { SubjectCreateWithoutTodoListInputSchema } from '../SubjectCreateWithoutTodoListInputSchema.js';
+import { SubjectUncheckedCreateWithoutTodoListInputSchema } from '../SubjectUncheckedCreateWithoutTodoListInputSchema.js';
+import { SubjectCreateOrConnectWithoutTodoListInputSchema } from '../SubjectCreateOrConnectWithoutTodoListInputSchema.js';
+import { SubjectUpsertWithWhereUniqueWithoutTodoListInputSchema } from '../SubjectUpsertWithWhereUniqueWithoutTodoListInputSchema.js';
+import { SubjectWhereUniqueInputSchema } from '../SubjectWhereUniqueInputSchema.js';
+import { SubjectUpdateWithWhereUniqueWithoutTodoListInputSchema } from '../SubjectUpdateWithWhereUniqueWithoutTodoListInputSchema.js';
+import { SubjectUpdateManyWithWhereWithoutTodoListInputSchema } from '../SubjectUpdateManyWithWhereWithoutTodoListInputSchema.js';
+import { SubjectScalarWhereInputSchema } from '../SubjectScalarWhereInputSchema.js';
 export const SubjectUpdateManyWithoutTodoListNestedInputSchema: z.ZodType<Prisma.SubjectUpdateManyWithoutTodoListNestedInput> = z.object({
   create: z.union([ z.lazy(() => SubjectCreateWithoutTodoListInputSchema),z.lazy(() => SubjectCreateWithoutTodoListInputSchema).array(),z.lazy(() => SubjectUncheckedCreateWithoutTodoListInputSchema),z.lazy(() => SubjectUncheckedCreateWithoutTodoListInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => SubjectCreateOrConnectWithoutTodoListInputSchema),z.lazy(() => SubjectCreateOrConnectWithoutTodoListInputSchema).array() ]).optional(),
@@ -22,5 +20,4 @@ export const SubjectUpdateManyWithoutTodoListNestedInputSchema: z.ZodType<Prisma
   updateMany: z.union([ z.lazy(() => SubjectUpdateManyWithWhereWithoutTodoListInputSchema),z.lazy(() => SubjectUpdateManyWithWhereWithoutTodoListInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => SubjectScalarWhereInputSchema),z.lazy(() => SubjectScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default SubjectUpdateManyWithoutTodoListNestedInputSchema;

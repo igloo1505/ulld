@@ -1,7 +1,5 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-
 export const HealthReportCreateWithoutCurrentDietInputSchema: z.ZodType<Prisma.HealthReportCreateWithoutCurrentDietInput> = z.object({
   title: z.string().optional().nullable(),
   summary: z.string().optional().nullable(),
@@ -35,5 +33,4 @@ export const HealthReportCreateWithoutCurrentDietInputSchema: z.ZodType<Prisma.H
   estHoursInExcessFast: z.number().optional().nullable(),
   created: z.coerce.date().optional()
 }).strict();
-
 export default HealthReportCreateWithoutCurrentDietInputSchema;

@@ -1,7 +1,7 @@
 import {
   jupyterReactConfigSchema,
   jupyterReactConfigSchemaOutput
-} from "../../chunk-3NPPOQMS.js";
+} from "../../chunk-YZES3AFS.js";
 export {
   jupyterReactConfigSchema,
   jupyterReactConfigSchemaOutput

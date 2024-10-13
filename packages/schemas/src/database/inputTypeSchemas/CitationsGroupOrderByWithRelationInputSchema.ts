@@ -1,16 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { BibEntryOrderByRelationAggregateInputSchema } from './BibEntryOrderByRelationAggregateInputSchema';
-import { CitationsGroupOrderByRelevanceInputSchema } from './CitationsGroupOrderByRelevanceInputSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
+import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
+import { BibEntryOrderByRelationAggregateInputSchema } from '../BibEntryOrderByRelationAggregateInputSchema.js';
+import { CitationsGroupOrderByRelevanceInputSchema } from '../CitationsGroupOrderByRelevanceInputSchema.js';
 export const CitationsGroupOrderByWithRelationInputSchema: z.ZodType<Prisma.CitationsGroupOrderByWithRelationInput> = z.object({
   name: z.lazy(() => SortOrderSchema).optional(),
   description: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
   entries: z.lazy(() => BibEntryOrderByRelationAggregateInputSchema).optional(),
   _relevance: z.lazy(() => CitationsGroupOrderByRelevanceInputSchema).optional()
 }).strict();
-
 export default CitationsGroupOrderByWithRelationInputSchema;

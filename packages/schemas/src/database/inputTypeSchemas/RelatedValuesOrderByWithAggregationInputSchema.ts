@@ -1,13 +1,11 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { RelatedValuesCountOrderByAggregateInputSchema } from './RelatedValuesCountOrderByAggregateInputSchema';
-import { RelatedValuesAvgOrderByAggregateInputSchema } from './RelatedValuesAvgOrderByAggregateInputSchema';
-import { RelatedValuesMaxOrderByAggregateInputSchema } from './RelatedValuesMaxOrderByAggregateInputSchema';
-import { RelatedValuesMinOrderByAggregateInputSchema } from './RelatedValuesMinOrderByAggregateInputSchema';
-import { RelatedValuesSumOrderByAggregateInputSchema } from './RelatedValuesSumOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
+import { RelatedValuesCountOrderByAggregateInputSchema } from '../RelatedValuesCountOrderByAggregateInputSchema.js';
+import { RelatedValuesAvgOrderByAggregateInputSchema } from '../RelatedValuesAvgOrderByAggregateInputSchema.js';
+import { RelatedValuesMaxOrderByAggregateInputSchema } from '../RelatedValuesMaxOrderByAggregateInputSchema.js';
+import { RelatedValuesMinOrderByAggregateInputSchema } from '../RelatedValuesMinOrderByAggregateInputSchema.js';
+import { RelatedValuesSumOrderByAggregateInputSchema } from '../RelatedValuesSumOrderByAggregateInputSchema.js';
 export const RelatedValuesOrderByWithAggregationInputSchema: z.ZodType<Prisma.RelatedValuesOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   input: z.lazy(() => SortOrderSchema).optional(),
@@ -19,5 +17,4 @@ export const RelatedValuesOrderByWithAggregationInputSchema: z.ZodType<Prisma.Re
   _min: z.lazy(() => RelatedValuesMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => RelatedValuesSumOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default RelatedValuesOrderByWithAggregationInputSchema;

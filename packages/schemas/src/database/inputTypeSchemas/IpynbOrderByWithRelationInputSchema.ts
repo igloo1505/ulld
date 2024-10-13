@@ -1,16 +1,14 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { TagOrderByRelationAggregateInputSchema } from './TagOrderByRelationAggregateInputSchema';
-import { TopicOrderByRelationAggregateInputSchema } from './TopicOrderByRelationAggregateInputSchema';
-import { SubjectOrderByRelationAggregateInputSchema } from './SubjectOrderByRelationAggregateInputSchema';
-import { BibEntryOrderByRelationAggregateInputSchema } from './BibEntryOrderByRelationAggregateInputSchema';
-import { SequentialNoteListOrderByWithRelationInputSchema } from './SequentialNoteListOrderByWithRelationInputSchema';
-import { ReadingListOrderByRelationAggregateInputSchema } from './ReadingListOrderByRelationAggregateInputSchema';
-import { IpynbOrderByRelevanceInputSchema } from './IpynbOrderByRelevanceInputSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
+import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
+import { TagOrderByRelationAggregateInputSchema } from '../TagOrderByRelationAggregateInputSchema.js';
+import { TopicOrderByRelationAggregateInputSchema } from '../TopicOrderByRelationAggregateInputSchema.js';
+import { SubjectOrderByRelationAggregateInputSchema } from '../SubjectOrderByRelationAggregateInputSchema.js';
+import { BibEntryOrderByRelationAggregateInputSchema } from '../BibEntryOrderByRelationAggregateInputSchema.js';
+import { SequentialNoteListOrderByWithRelationInputSchema } from '../SequentialNoteListOrderByWithRelationInputSchema.js';
+import { ReadingListOrderByRelationAggregateInputSchema } from '../ReadingListOrderByRelationAggregateInputSchema.js';
+import { IpynbOrderByRelevanceInputSchema } from '../IpynbOrderByRelevanceInputSchema.js';
 export const IpynbOrderByWithRelationInputSchema: z.ZodType<Prisma.IpynbOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   rootRelativePath: z.lazy(() => SortOrderSchema).optional(),
@@ -36,5 +34,4 @@ export const IpynbOrderByWithRelationInputSchema: z.ZodType<Prisma.IpynbOrderByW
   readingList: z.lazy(() => ReadingListOrderByRelationAggregateInputSchema).optional(),
   _relevance: z.lazy(() => IpynbOrderByRelevanceInputSchema).optional()
 }).strict();
-
 export default IpynbOrderByWithRelationInputSchema;

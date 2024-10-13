@@ -30,12 +30,14 @@ export const contactsRouter = router({
             });
             return true;
         }),
-    submitBusinessRequest: publicProcedure.input(businessInterestFormSchema).mutation(async ({input}) => {
-        return await prisma.businessContact.create({
-            data: input,
-            select: {
-                contactName: true
-            }
-        })
-    })
+    submitBusinessRequest: publicProcedure
+        .input(businessInterestFormSchema)
+        .mutation(async ({ input }) => {
+            return await prisma.businessContact.create({
+                data: input,
+                select: {
+                    contactName: true,
+                },
+            });
+        }),
 });

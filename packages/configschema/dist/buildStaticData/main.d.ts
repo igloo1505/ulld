@@ -105,8 +105,8 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
             full?: string | undefined;
         };
         componentId: string;
-        embeddableSyntax?: string[] | undefined;
         tags?: string[] | undefined;
+        embeddableSyntax?: string[] | undefined;
     }>, "many">>;
     transpilePackages: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
     tailwindSources: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
@@ -173,8 +173,8 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
             full?: string | undefined;
         };
         componentId: string;
-        embeddableSyntax?: string[] | undefined;
         tags?: string[] | undefined;
+        embeddableSyntax?: string[] | undefined;
     }[] | undefined;
     transpilePackages?: string[] | undefined;
     tailwindSources?: string[] | undefined;
@@ -289,8 +289,8 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
             full?: string | undefined;
         };
         componentId: string;
-        embeddableSyntax?: string[] | undefined;
         tags?: string[] | undefined;
+        embeddableSyntax?: string[] | undefined;
     }[] | undefined;
     transpilePackages?: string[] | undefined;
     tailwindSources?: string[] | undefined;

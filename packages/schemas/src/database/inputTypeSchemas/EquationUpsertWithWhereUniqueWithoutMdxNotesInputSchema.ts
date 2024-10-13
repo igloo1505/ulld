@@ -1,16 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { EquationWhereUniqueInputSchema } from './EquationWhereUniqueInputSchema';
-import { EquationUpdateWithoutMdxNotesInputSchema } from './EquationUpdateWithoutMdxNotesInputSchema';
-import { EquationUncheckedUpdateWithoutMdxNotesInputSchema } from './EquationUncheckedUpdateWithoutMdxNotesInputSchema';
-import { EquationCreateWithoutMdxNotesInputSchema } from './EquationCreateWithoutMdxNotesInputSchema';
-import { EquationUncheckedCreateWithoutMdxNotesInputSchema } from './EquationUncheckedCreateWithoutMdxNotesInputSchema';
-
+import { EquationWhereUniqueInputSchema } from '../EquationWhereUniqueInputSchema.js';
+import { EquationUpdateWithoutMdxNotesInputSchema } from '../EquationUpdateWithoutMdxNotesInputSchema.js';
+import { EquationUncheckedUpdateWithoutMdxNotesInputSchema } from '../EquationUncheckedUpdateWithoutMdxNotesInputSchema.js';
+import { EquationCreateWithoutMdxNotesInputSchema } from '../EquationCreateWithoutMdxNotesInputSchema.js';
+import { EquationUncheckedCreateWithoutMdxNotesInputSchema } from '../EquationUncheckedCreateWithoutMdxNotesInputSchema.js';
 export const EquationUpsertWithWhereUniqueWithoutMdxNotesInputSchema: z.ZodType<Prisma.EquationUpsertWithWhereUniqueWithoutMdxNotesInput> = z.object({
   where: z.lazy(() => EquationWhereUniqueInputSchema),
   update: z.union([ z.lazy(() => EquationUpdateWithoutMdxNotesInputSchema),z.lazy(() => EquationUncheckedUpdateWithoutMdxNotesInputSchema) ]),
   create: z.union([ z.lazy(() => EquationCreateWithoutMdxNotesInputSchema),z.lazy(() => EquationUncheckedCreateWithoutMdxNotesInputSchema) ]),
 }).strict();
-
 export default EquationUpsertWithWhereUniqueWithoutMdxNotesInputSchema;

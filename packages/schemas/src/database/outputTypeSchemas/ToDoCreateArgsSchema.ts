@@ -1,8 +1,8 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { ToDoIncludeSchema } from '../inputTypeSchemas/ToDoIncludeSchema'
-import { ToDoCreateInputSchema } from '../inputTypeSchemas/ToDoCreateInputSchema'
-import { ToDoUncheckedCreateInputSchema } from '../inputTypeSchemas/ToDoUncheckedCreateInputSchema'
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/ToDoIncludeSchema.js
+..//inputTypeSchemas/ToDoCreateInputSchema.js
+..//inputTypeSchemas/ToDoUncheckedCreateInputSchema.js
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
@@ -13,7 +13,6 @@ import { ToDoListArgsSchema } from "../outputTypeSchemas/ToDoListArgsSchema"
 import { ToDoCountOutputTypeArgsSchema } from "../outputTypeSchemas/ToDoCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const ToDoSelectSchema: z.ZodType<Prisma.ToDoSelect> = z.object({
   id: z.boolean().optional(),
   createdAt: z.boolean().optional(),
@@ -36,11 +35,9 @@ export const ToDoSelectSchema: z.ZodType<Prisma.ToDoSelect> = z.object({
   ToDoList: z.union([z.boolean(),z.lazy(() => ToDoListArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => ToDoCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const ToDoCreateArgsSchema: z.ZodType<Prisma.ToDoCreateArgs> = z.object({
   select: ToDoSelectSchema.optional(),
   include: ToDoIncludeSchema.optional(),
   data: z.union([ ToDoCreateInputSchema,ToDoUncheckedCreateInputSchema ]),
 }).strict() ;
-
 export default ToDoCreateArgsSchema;

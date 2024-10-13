@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 
+const __dirname = import.meta.dirname
+
 const targetPath = path.join(
     __dirname,
     "../../../utilities/src/utils/buildStaticData.json",

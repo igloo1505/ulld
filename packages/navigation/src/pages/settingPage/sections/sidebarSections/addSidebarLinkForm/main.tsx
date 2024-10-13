@@ -1,55 +1,52 @@
-import { InternalLocationsCombobox } from "@ulld/full-form/combobox-internalLocations";
 import React, { useMemo, useRef } from "react";
 import { IconInput } from "@ulld/full-form/iconSelect";
 import { SidebarLink } from "../../../form/schema";
 import { useFormContext } from "@ulld/full-form/form";
 import { Button } from "@ulld/tailwind/button";
 import { useElementWidthByRef } from "@ulld/hooks/useElementWidthByRef";
-import { useAppConfig } from "@ulld/hooks/useAppConfig";
-import { internalAppLocations } from "@ulld/utilities/appData";
+import { useElementWidthById } from "@ulld/hooks/useElementWidthById";
 import cn from "@ulld/utilities/cn";
 import { TextInput } from "@ulld/full-form/textInput";
+import { maxSidebarLinks } from "../../../staticSettingData";
+import EmbeddedFormCard from "../../../utilComponents/embeddedFormCard";
+import InternalLocationsInputWrapper from "../../../utilComponents/internalLocationsInput";
 
 interface AddSidebarLinkFormProps {
     onAddItem: (val: SidebarLink) => void;
+    totalItems: number;
 }
 
-const superTruthy = (s: string | undefined | null) => Boolean(s && s.length);
 
-const AddSidebarLinkForm = ({ onAddItem }: AddSidebarLinkFormProps) => {
+const AddSidebarLinkForm = ({
+    onAddItem,
+    totalItems,
+}: AddSidebarLinkFormProps) => {
     const form = useFormContext<SidebarLink>();
     const urlInputContainer = useRef<HTMLDivElement>(null!);
     const iconInputContainer = useRef<HTMLDivElement>(null!);
-    const outterContainer = useRef<HTMLFormElement>(null!);
+    const outterContainerId = "addSidebarLinkContainer";
 
     const data = form.watch();
-    const [appConfig] = useAppConfig();
-
-    const appConfigIconMap = useMemo(() => {
-        let obj: Record<string, SidebarLink["icon"]> = {};
-        for (const x of internalAppLocations) {
-            obj[x.url] = x.defaultIcon;
-        }
-        if (!appConfig) {
-            return obj;
-        }
-        for (const k of appConfig.noteTypes) {
-            obj[k.url] = k.icon as SidebarLink["icon"];
-        }
-        return obj;
-    }, [appConfig]);
 
     const disabled = useMemo((): boolean => {
+        let vals = [
+            Boolean(data.fieldType === "url" ? ("url" in data && data.url && data.url.length) :
+            ("action" in data && data.action && data.action.length)),
+            Boolean(data.label && data.label.length),
+            Boolean(data.icon && data.icon.length),
+            totalItems <= maxSidebarLinks + 1,
+        ]
         return [
-            data.url && data.url.length,
-            data.label && data.label.length,
-            data.icon && data.icon.length,
-        ].some((t) => Boolean(!t));
+            Boolean(data.fieldType === "url" ? ("url" in data && data.url && data.url.length) :
+            ("action" in data && data.action && data.action.length)),
+            Boolean(data.label && data.label.length),
+            Boolean(data.icon && data.icon.length),
+            Boolean(totalItems <= (maxSidebarLinks + 1))
+        ].some((t) => !t);
     }, [data]);
 
-    const urlInputWidth = useElementWidthByRef(urlInputContainer);
     const iconInputWidth = useElementWidthByRef(iconInputContainer);
-    const outterContainerWidth = useElementWidthByRef(outterContainer);
+    const outterContainerWidth = useElementWidthById(outterContainerId);
 
     const isWide = outterContainerWidth >= 768;
 
@@ -59,12 +56,10 @@ const AddSidebarLinkForm = ({ onAddItem }: AddSidebarLinkFormProps) => {
     };
 
     return (
-        <form
-            className={
-                "w-full flex flex-col justify-center items-start bg-secondary/20 border rounded p-4"
-            }
-            ref={outterContainer}
-            onSubmit={form.handleSubmit(handleAddItem)}
+        <EmbeddedFormCard
+            onSubmit={handleAddItem}
+            id={outterContainerId}
+            form={form}
         >
             <div className={"w-full flex flex-col justify-center items-center gap-4"}>
                 <div
@@ -94,41 +89,9 @@ const AddSidebarLinkForm = ({ onAddItem }: AddSidebarLinkFormProps) => {
                         className={cn("flex-grow", !isWide && "w-full")}
                         ref={urlInputContainer}
                     >
-                        <InternalLocationsCombobox
-                            name="url"
-                            label="Url"
-                            placeholder={superTruthy(data.url) ? data.url : undefined}
-                            classes={{
-                                formItem: "w-full",
-                                button: "w-full",
-                                commandList: "w-full",
-                                notFoundText: "text-sm",
-                            }}
-                            styles={{
-                                popoverContent: {
-                                    width: `${urlInputWidth}px`,
-                                },
-                            }}
-                            getPlaceHolder={(v) => v.value}
-                            onChange={(val) => {
-                                let _url = typeof val === "string" ? val : val.value;
-                                form.setValue("url", _url);
-                                let existingLabel = data.label;
-                                if (!superTruthy(existingLabel)) {
-                                    form.setValue(
-                                        "label",
-                                        typeof val === "string" ? undefined : (val as any).label,
-                                    );
-                                }
-                                if (
-                                    _url in appConfigIconMap &&
-                                    (!superTruthy(data.icon) ||
-                                        Object.values(appConfigIconMap).includes(data.icon))
-                                ) {
-                                    form.setValue("icon", appConfigIconMap[_url]);
-                                }
-                            }}
-                            notFoundText="Nothing was found internally, but any valid URL will work."
+                        <InternalLocationsInputWrapper
+                            data={data}
+                            inputContainer={urlInputContainer}
                         />
                     </div>
                 </div>
@@ -146,7 +109,7 @@ const AddSidebarLinkForm = ({ onAddItem }: AddSidebarLinkFormProps) => {
                     Add
                 </Button>
             </div>
-        </form>
+        </EmbeddedFormCard>
     );
 };
 

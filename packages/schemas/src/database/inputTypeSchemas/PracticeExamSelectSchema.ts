@@ -1,11 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
+import type { Prisma } from '@ulld/database/db';
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
 import { QAPairFindManyArgsSchema } from "../outputTypeSchemas/QAPairFindManyArgsSchema"
 import { PracticeExamCountOutputTypeArgsSchema } from "../outputTypeSchemas/PracticeExamCountOutputTypeArgsSchema"
-
 export const PracticeExamSelectSchema: z.ZodType<Prisma.PracticeExamSelect> = z.object({
   id: z.boolean().optional(),
   correctCount: z.boolean().optional(),
@@ -19,5 +18,4 @@ export const PracticeExamSelectSchema: z.ZodType<Prisma.PracticeExamSelect> = z.
   questions: z.union([z.boolean(),z.lazy(() => QAPairFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => PracticeExamCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export default PracticeExamSelectSchema;

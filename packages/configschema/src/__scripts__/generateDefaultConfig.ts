@@ -166,3 +166,5 @@ for (const k of configs) {
         console.log(`Wrote default config to ${k.path}`);
     }
 }
+
+console.info("Generated default configs successfully.")

@@ -1,19 +1,17 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { SettingsAppendixWhereInputSchema } from '../inputTypeSchemas/SettingsAppendixWhereInputSchema'
-import { SettingsAppendixOrderByWithRelationInputSchema } from '../inputTypeSchemas/SettingsAppendixOrderByWithRelationInputSchema'
-import { SettingsAppendixWhereUniqueInputSchema } from '../inputTypeSchemas/SettingsAppendixWhereUniqueInputSchema'
-import { SettingsAppendixScalarFieldEnumSchema } from '../inputTypeSchemas/SettingsAppendixScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/SettingsAppendixWhereInputSchema.js
+..//inputTypeSchemas/SettingsAppendixOrderByWithRelationInputSchema.js
+..//inputTypeSchemas/SettingsAppendixWhereUniqueInputSchema.js
+..//inputTypeSchemas/SettingsAppendixScalarFieldEnumSchema.js
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const SettingsAppendixSelectSchema: z.ZodType<Prisma.SettingsAppendixSelect> = z.object({
   id: z.boolean().optional(),
   data: z.boolean().optional(),
   createdAt: z.boolean().optional(),
   updatedAt: z.boolean().optional(),
 }).strict()
-
 export const SettingsAppendixFindManyArgsSchema: z.ZodType<Prisma.SettingsAppendixFindManyArgs> = z.object({
   select: SettingsAppendixSelectSchema.optional(),
   where: SettingsAppendixWhereInputSchema.optional(),
@@ -23,5 +21,4 @@ export const SettingsAppendixFindManyArgsSchema: z.ZodType<Prisma.SettingsAppend
   skip: z.number().optional(),
   distinct: z.union([ SettingsAppendixScalarFieldEnumSchema,SettingsAppendixScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default SettingsAppendixFindManyArgsSchema;

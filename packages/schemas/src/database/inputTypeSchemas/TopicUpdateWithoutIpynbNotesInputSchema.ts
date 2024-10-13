@@ -1,17 +1,15 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
-import { MdxNoteUpdateManyWithoutTopicsNestedInputSchema } from './MdxNoteUpdateManyWithoutTopicsNestedInputSchema';
-import { QAPairUpdateManyWithoutTopicsNestedInputSchema } from './QAPairUpdateManyWithoutTopicsNestedInputSchema';
-import { PracticeExamUpdateManyWithoutTopicsNestedInputSchema } from './PracticeExamUpdateManyWithoutTopicsNestedInputSchema';
-import { ToDoUpdateManyWithoutTopicsNestedInputSchema } from './ToDoUpdateManyWithoutTopicsNestedInputSchema';
-import { KanbanUpdateOneWithoutTopicsNestedInputSchema } from './KanbanUpdateOneWithoutTopicsNestedInputSchema';
-import { ToDoListUpdateManyWithoutTopicsNestedInputSchema } from './ToDoListUpdateManyWithoutTopicsNestedInputSchema';
-import { BibEntryUpdateManyWithoutTopicsNestedInputSchema } from './BibEntryUpdateManyWithoutTopicsNestedInputSchema';
-import { EquationUpdateManyWithoutTopicsNestedInputSchema } from './EquationUpdateManyWithoutTopicsNestedInputSchema';
-
+import { StringFieldUpdateOperationsInputSchema } from '../StringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from '../DateTimeFieldUpdateOperationsInputSchema.js';
+import { MdxNoteUpdateManyWithoutTopicsNestedInputSchema } from '../MdxNoteUpdateManyWithoutTopicsNestedInputSchema.js';
+import { QAPairUpdateManyWithoutTopicsNestedInputSchema } from '../QAPairUpdateManyWithoutTopicsNestedInputSchema.js';
+import { PracticeExamUpdateManyWithoutTopicsNestedInputSchema } from '../PracticeExamUpdateManyWithoutTopicsNestedInputSchema.js';
+import { ToDoUpdateManyWithoutTopicsNestedInputSchema } from '../ToDoUpdateManyWithoutTopicsNestedInputSchema.js';
+import { KanbanUpdateOneWithoutTopicsNestedInputSchema } from '../KanbanUpdateOneWithoutTopicsNestedInputSchema.js';
+import { ToDoListUpdateManyWithoutTopicsNestedInputSchema } from '../ToDoListUpdateManyWithoutTopicsNestedInputSchema.js';
+import { BibEntryUpdateManyWithoutTopicsNestedInputSchema } from '../BibEntryUpdateManyWithoutTopicsNestedInputSchema.js';
+import { EquationUpdateManyWithoutTopicsNestedInputSchema } from '../EquationUpdateManyWithoutTopicsNestedInputSchema.js';
 export const TopicUpdateWithoutIpynbNotesInputSchema: z.ZodType<Prisma.TopicUpdateWithoutIpynbNotesInput> = z.object({
   value: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   createdAt: z.union([ z.coerce.date(),z.lazy(() => DateTimeFieldUpdateOperationsInputSchema) ]).optional(),
@@ -25,5 +23,4 @@ export const TopicUpdateWithoutIpynbNotesInputSchema: z.ZodType<Prisma.TopicUpda
   bibEntries: z.lazy(() => BibEntryUpdateManyWithoutTopicsNestedInputSchema).optional(),
   equations: z.lazy(() => EquationUpdateManyWithoutTopicsNestedInputSchema).optional()
 }).strict();
-
 export default TopicUpdateWithoutIpynbNotesInputSchema;

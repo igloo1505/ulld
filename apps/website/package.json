@@ -1,6 +1,30 @@
 {
   "name": "@ulld/website",
   "version": "0.0.124",
+  "private": true,
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 /vercel/path0/node_modules/canvas/build/Release/ && LD_LIBRARY_PATH=/var/task/node_modules/canvas/build/Release next build",
+    "buildLocal": "LD_LIBRARY_PATH=/var/task/node_modules/canvas/build/Release dotenv -e .env.local -- next build",
+    "db:generate": "dotenv -e .env.local -- prisma generate --schema=./src/prisma/schema.prisma",
+    "db:migrate": "dotenv -e .env.local -- prisma migrate dev --schema=./src/prisma/schema.prisma",
+    "db:migrateRemote": "dotenv -e .env.production -- prisma migrate dev --schema=./src/prisma/schema.prisma",
+    "db:push": "prisma db push --skip-generate",
+    "db:seed": "node ../../node_modules/dotenv-cli/cli.js -e ./website/.env.local -- prisma db seed",
+    "dev": "next dev",
+    "dev:debug": "NODE_OPTIONS='--inspect' next dev",
+    "generateDocs": "tsx --env-file=./.env.local --tsconfig=./tsxConfig.json ./src/buildScripts/generateDocs.ts ",
+    "generateWebTags": "tsx --tsconfig ./tsconfig.json ./scripts/getTagList.ts",
+    "migrate:reset": "node ../../node_modules/dotenv-cli/cli.js -e ./website/.env.local -- prisma migrate reset --schema ./src/prisma/schema.prisma",
+    "migrateRemote": "dotenv -e /Users/bigsexy/Desktop/current/ulld/apps/website/.env.remote -- prisma migrate dev --schema=./src/prisma/schema.prisma",
+    "postinstall": "turbo db:generate --filter @ulld/website",
+    "prepareWeb": "zsh ./scripts/prepareToCommit.zsh",
+    "prisma:studio": "dotenv -e .env.local -- prisma studio --schema=./src/prisma/schema.prisma",
+    "simulateProduction": "OVERRIDE_PRODUCTION=true next dev",
+    "start": "next start"
+  },
   "dependencies": {
     "@content-collections/core": "^0.6.0",
     "@content-collections/mdx": "^0.1.3",
@@ -177,10 +201,6 @@
     "tsx": "^4.10.4",
     "twoslash": "^0.2.6"
   },
-  "files": [
-    "src"
-  ],
-  "packageManager": "pnpm@9.0.4",
   "peerDependencies": {
     "@ulld/api": "workspace:*",
     "@ulld/base-configs": "workspace:*",
@@ -192,6 +212,7 @@
     "@ulld/diagram": "workspace:*",
     "@ulld/editor": "workspace:*",
     "@ulld/embeddable-components": "workspace:*",
+    "@ulld/equations": "workspace:*",
     "@ulld/eslint-config": "workspace:*",
     "@ulld/full-form": "workspace:*",
     "@ulld/hooks": "workspace:*",
@@ -208,25 +229,5 @@
     "@ulld/utilities": "workspace:*",
     "@ulld/whiteboard": "workspace:*"
   },
-  "private": true,
-  "scripts": {
-    "build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 /vercel/path0/node_modules/canvas/build/Release/ && LD_LIBRARY_PATH=/var/task/node_modules/canvas/build/Release next build",
-    "buildLocal": "LD_LIBRARY_PATH=/var/task/node_modules/canvas/build/Release dotenv -e .env.local -- next build",
-    "db:generate": "dotenv -e .env.local -- prisma generate --schema=./src/prisma/schema.prisma",
-    "db:migrate": "dotenv -e .env.local -- prisma migrate dev --schema=./src/prisma/schema.prisma",
-    "db:migrateRemote": "dotenv -e .env.production -- prisma migrate dev --schema=./src/prisma/schema.prisma",
-    "db:push": "prisma db push --skip-generate",
-    "db:seed": "node ../../node_modules/dotenv-cli/cli.js -e ./website/.env.local -- prisma db seed",
-    "dev": "next dev",
-    "dev:debug": "NODE_OPTIONS='--inspect' next dev",
-    "generateDocs": "tsx --env-file=./.env.local --tsconfig=./tsxConfig.json ./src/buildScripts/generateDocs.ts ",
-    "generateWebTags": "tsx --tsconfig ./tsconfig.json ./scripts/getTagList.ts",
-    "migrate:reset": "node ../../node_modules/dotenv-cli/cli.js -e ./website/.env.local -- prisma migrate reset --schema ./src/prisma/schema.prisma",
-    "migrateRemote": "dotenv -e /Users/bigsexy/Desktop/current/ulld/apps/website/.env.remote -- prisma migrate dev --schema=./src/prisma/schema.prisma",
-    "postinstall": "turbo db:generate --filter @ulld/website",
-    "prepareWeb": "zsh ./scripts/prepareToCommit.zsh",
-    "prisma:studio": "dotenv -e .env.local -- prisma studio --schema=./src/prisma/schema.prisma",
-    "simulateProduction": "OVERRIDE_PRODUCTION=true next dev",
-    "start": "next start"
-  }
+  "packageManager": "pnpm@9.0.4"
 }

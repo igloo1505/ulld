@@ -1,6 +1,23 @@
 {
   "name": "@ulld/component-configs",
   "version": "0.0.124",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "tsx ./src/scripts/build/main.ts",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "writeImports": "tsx ./src/scripts/writeImports.ts"
+  },
+  "exports": {
+    "./underline": "./src/components/underline.tsx",
+    "./highlight": "./src/components/highlight.tsx",
+    "./colors": "./src/subConfigs/colors.tsx"
+  },
   "dependencies": {
     "next": "14.2.3",
     "react": "18.2.0",
@@ -11,15 +28,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "exports": {
-    "./underline": "./src/components/underline.tsx",
-    "./highlight": "./src/components/highlight.tsx",
-    "./colors": "./src/subConfigs/colors.tsx"
-  },
-  "files": [
-    "src"
-  ],
-  "packageManager": "pnpm@9.0.4",
   "peerDependencies": {
     "@ulld/api": "workspace:*",
     "@ulld/configschema": "workspace:*",
@@ -35,13 +43,5 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "tsx ./src/scripts/build/main.ts",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "writeImports": "tsx ./src/scripts/writeImports.ts"
-  }
+  "packageManager": "pnpm@9.0.4"
 }

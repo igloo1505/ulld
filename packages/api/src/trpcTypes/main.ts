@@ -19,6 +19,7 @@ export type MdxParserReturnType<T extends object = {}> = {
   data?: FrontMatterType & T;
 };
 
+// TODO: Remove this. It was moved to the schemas package.
 export type UnifiedMdxParser<ExtendedFrontMatterType extends object = {}> = (
   parserProps: UnifiedMdxParserParams,
 ) => Promise<MdxParserReturnType<ExtendedFrontMatterType>>;

@@ -1,12 +1,10 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
-import { TopicUncheckedUpdateManyWithoutPracticeExamNestedInputSchema } from './TopicUncheckedUpdateManyWithoutPracticeExamNestedInputSchema';
-import { SubjectUncheckedUpdateManyWithoutPracticeExamNestedInputSchema } from './SubjectUncheckedUpdateManyWithoutPracticeExamNestedInputSchema';
-import { QAPairUncheckedUpdateManyWithoutPracticeExamNestedInputSchema } from './QAPairUncheckedUpdateManyWithoutPracticeExamNestedInputSchema';
-
+import { IntFieldUpdateOperationsInputSchema } from '../IntFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from '../DateTimeFieldUpdateOperationsInputSchema.js';
+import { TopicUncheckedUpdateManyWithoutPracticeExamNestedInputSchema } from '../TopicUncheckedUpdateManyWithoutPracticeExamNestedInputSchema.js';
+import { SubjectUncheckedUpdateManyWithoutPracticeExamNestedInputSchema } from '../SubjectUncheckedUpdateManyWithoutPracticeExamNestedInputSchema.js';
+import { QAPairUncheckedUpdateManyWithoutPracticeExamNestedInputSchema } from '../QAPairUncheckedUpdateManyWithoutPracticeExamNestedInputSchema.js';
 export const PracticeExamUncheckedUpdateWithoutTagsInputSchema: z.ZodType<Prisma.PracticeExamUncheckedUpdateWithoutTagsInput> = z.object({
   id: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
   correctCount: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
@@ -18,5 +16,4 @@ export const PracticeExamUncheckedUpdateWithoutTagsInputSchema: z.ZodType<Prisma
   subjects: z.lazy(() => SubjectUncheckedUpdateManyWithoutPracticeExamNestedInputSchema).optional(),
   questions: z.lazy(() => QAPairUncheckedUpdateManyWithoutPracticeExamNestedInputSchema).optional()
 }).strict();
-
 export default PracticeExamUncheckedUpdateWithoutTagsInputSchema;

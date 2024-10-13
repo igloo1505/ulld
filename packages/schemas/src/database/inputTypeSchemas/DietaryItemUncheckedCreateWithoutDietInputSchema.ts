@@ -1,8 +1,6 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ServingUncheckedCreateNestedManyWithoutItemInputSchema } from './ServingUncheckedCreateNestedManyWithoutItemInputSchema';
-
+import { ServingUncheckedCreateNestedManyWithoutItemInputSchema } from '../ServingUncheckedCreateNestedManyWithoutItemInputSchema.js';
 export const DietaryItemUncheckedCreateWithoutDietInputSchema: z.ZodType<Prisma.DietaryItemUncheckedCreateWithoutDietInput> = z.object({
   id: z.number().int().optional(),
   name: z.string(),
@@ -16,5 +14,4 @@ export const DietaryItemUncheckedCreateWithoutDietInputSchema: z.ZodType<Prisma.
   impactScore: z.number().optional(),
   Serving: z.lazy(() => ServingUncheckedCreateNestedManyWithoutItemInputSchema).optional()
 }).strict();
-
 export default DietaryItemUncheckedCreateWithoutDietInputSchema;

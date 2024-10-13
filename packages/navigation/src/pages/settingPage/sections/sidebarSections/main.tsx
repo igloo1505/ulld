@@ -5,6 +5,7 @@ import { Reorder } from "framer-motion";
 import { NavigationFormSettingSchema } from "../../form/schema";
 import AddSidebarLinkForm from "./addSidebarLinkForm/main";
 import AddSidebarLinkFormContext from "./addSidebarLinkForm/formContext";
+import { linkItemIsEqual } from "../../form/utils";
 
 
 const NavigationSidebarSettingsSection = (
@@ -20,7 +21,7 @@ const NavigationSidebarSettingsSection = (
         form.setValue(
             formKey,
             existingItems.filter((f) =>
-                Boolean(f.label !== item.label && f.url !== item.url),
+                !linkItemIsEqual(f, item),
             ),
         );
     };
@@ -32,11 +33,12 @@ const NavigationSidebarSettingsSection = (
                     onAddItem={(newItem) => {
                         form.setValue(formKey, [...existingItems, newItem]);
                     }}
+                    totalItems={existingItems.length}
                 />
             </AddSidebarLinkFormContext>
             <Reorder.Group
                 className={
-                    "not-prose w-full flex flex-col justify-center items-start mt-4"
+                    "not-prose w-full flex flex-col justify-center items-start"
                 }
                 axis={"y"}
                 values={existingItems}

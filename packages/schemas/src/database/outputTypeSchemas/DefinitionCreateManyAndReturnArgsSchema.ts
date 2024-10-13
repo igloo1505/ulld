@@ -1,10 +1,8 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { DefinitionCreateManyInputSchema } from '../inputTypeSchemas/DefinitionCreateManyInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/DefinitionCreateManyInputSchema.js
 export const DefinitionCreateManyAndReturnArgsSchema: z.ZodType<Prisma.DefinitionCreateManyAndReturnArgs> = z.object({
   data: z.union([ DefinitionCreateManyInputSchema,DefinitionCreateManyInputSchema.array() ]),
   skipDuplicates: z.boolean().optional(),
 }).strict() ;
-
 export default DefinitionCreateManyAndReturnArgsSchema;

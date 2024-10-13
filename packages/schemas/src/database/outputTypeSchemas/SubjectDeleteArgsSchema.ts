@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { SubjectIncludeSchema } from '../inputTypeSchemas/SubjectIncludeSchema'
-import { SubjectWhereUniqueInputSchema } from '../inputTypeSchemas/SubjectWhereUniqueInputSchema'
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/SubjectIncludeSchema.js
+..//inputTypeSchemas/SubjectWhereUniqueInputSchema.js
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"
 import { QAPairFindManyArgsSchema } from "../outputTypeSchemas/QAPairFindManyArgsSchema"
@@ -14,7 +14,6 @@ import { EquationFindManyArgsSchema } from "../outputTypeSchemas/EquationFindMan
 import { SubjectCountOutputTypeArgsSchema } from "../outputTypeSchemas/SubjectCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const SubjectSelectSchema: z.ZodType<Prisma.SubjectSelect> = z.object({
   value: z.boolean().optional(),
   kanbanId: z.boolean().optional(),
@@ -31,11 +30,9 @@ export const SubjectSelectSchema: z.ZodType<Prisma.SubjectSelect> = z.object({
   equations: z.union([z.boolean(),z.lazy(() => EquationFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => SubjectCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const SubjectDeleteArgsSchema: z.ZodType<Prisma.SubjectDeleteArgs> = z.object({
   select: SubjectSelectSchema.optional(),
   include: SubjectIncludeSchema.optional(),
   where: SubjectWhereUniqueInputSchema,
 }).strict() ;
-
 export default SubjectDeleteArgsSchema;

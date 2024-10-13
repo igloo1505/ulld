@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { InputJsonValueSchema } from './InputJsonValueSchema';
-import { NestedIntFilterSchema } from './NestedIntFilterSchema';
-import { NestedJsonFilterSchema } from './NestedJsonFilterSchema';
-
+import { InputJsonValueSchema } from '../InputJsonValueSchema.js';
+import { NestedIntFilterSchema } from '../NestedIntFilterSchema.js';
+import { NestedJsonFilterSchema } from '../NestedJsonFilterSchema.js';
 export const JsonWithAggregatesFilterSchema: z.ZodType<Prisma.JsonWithAggregatesFilter> = z.object({
   equals: InputJsonValueSchema.optional(),
   path: z.string().array().optional(),
@@ -23,5 +21,4 @@ export const JsonWithAggregatesFilterSchema: z.ZodType<Prisma.JsonWithAggregates
   _min: z.lazy(() => NestedJsonFilterSchema).optional(),
   _max: z.lazy(() => NestedJsonFilterSchema).optional()
 }).strict();
-
 export default JsonWithAggregatesFilterSchema;

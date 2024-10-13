@@ -1,10 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { TimePeriodWhereInputSchema } from '../inputTypeSchemas/TimePeriodWhereInputSchema'
-import { TimePeriodOrderByWithAggregationInputSchema } from '../inputTypeSchemas/TimePeriodOrderByWithAggregationInputSchema'
-import { TimePeriodScalarFieldEnumSchema } from '../inputTypeSchemas/TimePeriodScalarFieldEnumSchema'
-import { TimePeriodScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/TimePeriodScalarWhereWithAggregatesInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/TimePeriodWhereInputSchema.js
+..//inputTypeSchemas/TimePeriodOrderByWithAggregationInputSchema.js
+..//inputTypeSchemas/TimePeriodScalarFieldEnumSchema.js
+..//inputTypeSchemas/TimePeriodScalarWhereWithAggregatesInputSchema.js
 export const TimePeriodGroupByArgsSchema: z.ZodType<Prisma.TimePeriodGroupByArgs> = z.object({
   where: TimePeriodWhereInputSchema.optional(),
   orderBy: z.union([ TimePeriodOrderByWithAggregationInputSchema.array(),TimePeriodOrderByWithAggregationInputSchema ]).optional(),
@@ -13,5 +12,4 @@ export const TimePeriodGroupByArgsSchema: z.ZodType<Prisma.TimePeriodGroupByArgs
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
-
 export default TimePeriodGroupByArgsSchema;

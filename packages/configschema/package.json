@@ -11,9 +11,8 @@
   ],
   "scripts": {
     "build": "wireit",
-    "buildLocal": "tsx ./src/__scripts__/updateShikiThemes.ts && tsx ./src/defaults/generateDefaultConfig.ts && tsx src/__scripts__/generateSlotMap.ts",
     "dev": "echo 'Add dev script here'",
-    "gatherTypes": "tsc --project ./tsconfigTypes.json --emitDeclarationOnly",
+    "gatherTypes": "wireit",
     "generateConfigTunnels": "wireit",
     "generateDefaultConfig": "wireit",
     "generateSlotMap": "wireit",
@@ -25,9 +24,8 @@
     "build": {
       "command": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && tsup-node",
       "dependencies": [
-        "generateDefaultConfig",
         "generateConfigTunnels",
-        "updateJsonSchemas"
+        "updateShikiThemes"
       ],
       "output": [
         "dist"
@@ -39,17 +37,29 @@
     "generateDefaultConfig": {
       "command": "tsx src/__scripts__/generateDefaultConfig.ts",
       "dependencies": [
-        "updateJsonSchemas"
+        "build"
       ]
     },
     "generateSlotMap": {
       "command": "tsx src/__scripts__/generateSlotMap.ts"
     },
     "updateJsonSchemas": {
-      "command": "tsx src/__scripts__/updateJsonSchema.ts"
+      "command": "tsx src/__scripts__/updateJsonSchema.ts",
+      "dependencies": [
+        "build"
+      ]
     },
     "generateConfigTunnels": {
       "command": "tsx src/__scripts__/generateConfigTunnelFiles.ts"
+    },
+    "updateShikiThemes": {
+      "command": "tsx ./src/__scripts__/updateShikiThemes.ts"
+    },
+    "updateSlotMap": {
+      "command": "tsx src/__scripts__/generateSlotMap.ts"
+    },
+    "gatherTypes": {
+      "command": "tsc --project ./tsconfigTypes.json --emitDeclarationOnly"
     }
   },
   "types": "dist",
@@ -248,6 +258,11 @@
       "types": "./dist/zod/credentials/main.d.ts",
       "import": "./dist/zod/credentials/main.js",
       "require": "./dist/zod/credentials/main.cjs"
+    },
+    "./zod-refinedAppConfigs": {
+      "types": "./dist/zod/refinedConfigs/index.d.ts",
+      "import": "./dist/zod/refinedConfigs/index.js",
+      "require": "./dist/zod/refinedConfigs/index.cjs"
     },
     "./staticData/defaultImageMap": {
       "types": "./dist/staticData/defaultImageMap.d.ts",

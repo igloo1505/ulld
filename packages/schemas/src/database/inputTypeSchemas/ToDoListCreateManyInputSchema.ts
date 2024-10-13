@@ -1,7 +1,5 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-
 export const ToDoListCreateManyInputSchema: z.ZodType<Prisma.ToDoListCreateManyInput> = z.object({
   id: z.number().int().optional(),
   label: z.string(),
@@ -9,5 +7,4 @@ export const ToDoListCreateManyInputSchema: z.ZodType<Prisma.ToDoListCreateManyI
   lastUpdate: z.coerce.date().optional(),
   lastAccess: z.coerce.date().optional()
 }).strict();
-
 export default ToDoListCreateManyInputSchema;

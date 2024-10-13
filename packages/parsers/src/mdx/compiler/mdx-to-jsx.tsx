@@ -19,7 +19,7 @@ import emoji from "remark-emoji";
 /* import toc from "@jsdevtools/rehype-toc" */
 import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
-import { AppConfigSchemaOutput } from "@ulld/configschema/types";
+import { AppConfigSchemaDeepPartialOutput, AppConfigSchemaOutput } from "@ulld/configschema/types";
 import { highlightTransformerMap } from "../utils/highlightTransformerMap";
 import { ParseMdxStringOptions, ParseMdxStringParams } from "./types";
 
@@ -34,9 +34,9 @@ export const mermaidConfig: MermaidConfigType = {
     },
 };
 
-const getShikiTransformers = async (config?: AppConfigSchemaOutput) => {
+const getShikiTransformers = async (config?: AppConfigSchemaDeepPartialOutput) => {
     let x: any[] = []
-    let transformerData = config?.code.syntaxHighlighting.transformers
+    let transformerData = config?.code?.syntaxHighlighting?.transformers
     if(!transformerData){
         let wordHighlight = await import("@shikijs/transformers").then((x) => x.transformerMetaWordHighlight)
         let lineHighlight = await import("@shikijs/transformers").then((x) => x.transformerMetaHighlight)
@@ -55,7 +55,7 @@ const getShikiTransformers = async (config?: AppConfigSchemaOutput) => {
 }
 
 const rehypePlugins = async (
-    config?: AppConfigSchemaOutput,
+    config?: AppConfigSchemaDeepPartialOutput,
     opts?: ParseMdxStringOptions
 ): Promise<CompileOptions["rehypePlugins"]> => {
     let shikiTransformers = await getShikiTransformers(config)
@@ -96,8 +96,8 @@ const rehypePlugins = async (
                 },
                 transformers: shikiTransformers,
                 defaultLang: {
-                    block: config?.code.syntaxHighlighting.defaultLanguage.block,
-                    inline: config?.code.syntaxHighlighting.defaultLanguage.inline
+                    block: config?.code?.syntaxHighlighting?.defaultLanguage?.block || "python",
+                    inline: config?.code?.syntaxHighlighting?.defaultLanguage?.inline || "zsh"
                 }
             },
         ],

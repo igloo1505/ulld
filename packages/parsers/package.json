@@ -1,6 +1,48 @@
 {
   "name": "@ulld/parsers",
   "version": "0.0.124",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "echo 'Add build script here'",
+    "dev": "echo 'Add dev script here'",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "echo 'Add test script here'"
+  },
+  "exports": {
+    ".": "./src/mdx/compiler/mdx-to-jsx.tsx",
+    "./serializeMdxContent": "./src/mdx/compiler/mdx-to-jsx.tsx",
+    "./universalStringToMdx": "./src/mdx/compiler/universalStringToMdx.tsx",
+    "./modules": "./src/modules.d.ts",
+    "./mdx": "./src/mdx/compiler/mdx-to-jsx.tsx",
+    "./mdx/types": "./src/mdx/types.d.ts",
+    "./mdx/compilerTypes": "./src/mdx/compiler/types.ts",
+    "./mdx/schemas": "./src/mdx/schemas.ts",
+    "./mdx/compiler/main": "./src/mdx/compiler/main.ts",
+    "./mdx-to-jsx-client": "./src/mdx/compiler/mdx-to-jsx-client.ts",
+    "./settings/settingsParser": "./src/settings/settingsParser.ts",
+    "./plugins/todos": "./src/plugins/todos/main.ts",
+    "./latex/latexToPdf": "./src/latex/latexToPdf.ts",
+    "./latex/zodLatexFieldSchema": "./src/latex/zodLatexFieldSchema.ts",
+    "./math/mathjaxNode": "./src/math/mathjaxNode.ts",
+    "./math/mathStringToLatex": "./src/math/mathStringToLatex.ts",
+    "./math/mathjaxParserOptionsParsing": "./src/math/mathjaxParserOptionsParsing.ts",
+    "./math/zodMathSchemas": "./src/math/zodMathSchemas.ts",
+    "./math/texToChtml": "./src/math/texToChtml.ts",
+    "./math/latex/parseLatex": "./src/math/latex/parseLatex.ts",
+    "./math/latex/genTikzImage": "./src/math/latex/genTikzImage.ts",
+    "./citations/formatCsl": "./src/citations/formatCsl.ts",
+    "./mathjaxBandaid": "./src/mdx/compiler/mdxClassnameBandaid.tsx",
+    "./applyMathjaxBandaid": "./src/mdx/compiler/applyMathjaxBandaid.ts",
+    "./taggables": "./src/general/taggables.ts",
+    "./serverMdxToHtml": "./src/mdx/compiler/mdx-to-html.tsx",
+    "./formatMdxString": "./src/mdx/compiler/internalMdxStringParse.ts"
+  },
   "dependencies": {
     "@citation-js/plugin-bibtex": "0.7.14",
     "@citation-js/plugin-csl": "0.7.14",
@@ -84,39 +126,6 @@
     "unified": "11.0.4",
     "zod": "3.23.8"
   },
-  "exports": {
-    ".": "./src/mdx/compiler/mdx-to-jsx.tsx",
-    "./serializeMdxContent": "./src/mdx/compiler/mdx-to-jsx.tsx",
-    "./universalStringToMdx": "./src/mdx/compiler/universalStringToMdx.tsx",
-    "./modules": "./src/modules.d.ts",
-    "./mdx": "./src/mdx/compiler/mdx-to-jsx.tsx",
-    "./mdx/types": "./src/mdx/types.d.ts",
-    "./mdx/compilerTypes": "./src/mdx/compiler/types.ts",
-    "./mdx/schemas": "./src/mdx/schemas.ts",
-    "./mdx/compiler/main": "./src/mdx/compiler/main.ts",
-    "./mdx-to-jsx-client": "./src/mdx/compiler/mdx-to-jsx-client.ts",
-    "./settings/settingsParser": "./src/settings/settingsParser.ts",
-    "./plugins/todos": "./src/plugins/todos/main.ts",
-    "./latex/latexToPdf": "./src/latex/latexToPdf.ts",
-    "./latex/zodLatexFieldSchema": "./src/latex/zodLatexFieldSchema.ts",
-    "./math/mathjaxNode": "./src/math/mathjaxNode.ts",
-    "./math/mathStringToLatex": "./src/math/mathStringToLatex.ts",
-    "./math/mathjaxParserOptionsParsing": "./src/math/mathjaxParserOptionsParsing.ts",
-    "./math/zodMathSchemas": "./src/math/zodMathSchemas.ts",
-    "./math/texToChtml": "./src/math/texToChtml.ts",
-    "./math/latex/parseLatex": "./src/math/latex/parseLatex.ts",
-    "./math/latex/genTikzImage": "./src/math/latex/genTikzImage.ts",
-    "./citations/formatCsl": "./src/citations/formatCsl.ts",
-    "./mathjaxBandaid": "./src/mdx/compiler/mdxClassnameBandaid.tsx",
-    "./applyMathjaxBandaid": "./src/mdx/compiler/applyMathjaxBandaid.ts",
-    "./taggables": "./src/general/taggables.ts",
-    "./serverMdxToHtml": "./src/mdx/compiler/mdx-to-html.tsx",
-    "./formatMdxString": "./src/mdx/compiler/internalMdxStringParse.ts"
-  },
-  "files": [
-    "src"
-  ],
-  "packageManager": "pnpm@9.0.4",
   "peerDependencies": {
     "@ulld/api": "workspace:*",
     "@ulld/component-map": "workspace:*",
@@ -128,14 +137,5 @@
     "@ulld/typescript-config": "workspace:^",
     "@ulld/utilities": "workspace:*"
   },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "echo 'Add build script here'",
-    "dev": "echo 'Add dev script here'",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'Add test script here'"
-  }
+  "packageManager": "pnpm@9.0.4"
 }

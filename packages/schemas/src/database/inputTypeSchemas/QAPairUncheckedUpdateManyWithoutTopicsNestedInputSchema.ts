@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { QAPairCreateWithoutTopicsInputSchema } from './QAPairCreateWithoutTopicsInputSchema';
-import { QAPairUncheckedCreateWithoutTopicsInputSchema } from './QAPairUncheckedCreateWithoutTopicsInputSchema';
-import { QAPairCreateOrConnectWithoutTopicsInputSchema } from './QAPairCreateOrConnectWithoutTopicsInputSchema';
-import { QAPairUpsertWithWhereUniqueWithoutTopicsInputSchema } from './QAPairUpsertWithWhereUniqueWithoutTopicsInputSchema';
-import { QAPairWhereUniqueInputSchema } from './QAPairWhereUniqueInputSchema';
-import { QAPairUpdateWithWhereUniqueWithoutTopicsInputSchema } from './QAPairUpdateWithWhereUniqueWithoutTopicsInputSchema';
-import { QAPairUpdateManyWithWhereWithoutTopicsInputSchema } from './QAPairUpdateManyWithWhereWithoutTopicsInputSchema';
-import { QAPairScalarWhereInputSchema } from './QAPairScalarWhereInputSchema';
-
+import { QAPairCreateWithoutTopicsInputSchema } from '../QAPairCreateWithoutTopicsInputSchema.js';
+import { QAPairUncheckedCreateWithoutTopicsInputSchema } from '../QAPairUncheckedCreateWithoutTopicsInputSchema.js';
+import { QAPairCreateOrConnectWithoutTopicsInputSchema } from '../QAPairCreateOrConnectWithoutTopicsInputSchema.js';
+import { QAPairUpsertWithWhereUniqueWithoutTopicsInputSchema } from '../QAPairUpsertWithWhereUniqueWithoutTopicsInputSchema.js';
+import { QAPairWhereUniqueInputSchema } from '../QAPairWhereUniqueInputSchema.js';
+import { QAPairUpdateWithWhereUniqueWithoutTopicsInputSchema } from '../QAPairUpdateWithWhereUniqueWithoutTopicsInputSchema.js';
+import { QAPairUpdateManyWithWhereWithoutTopicsInputSchema } from '../QAPairUpdateManyWithWhereWithoutTopicsInputSchema.js';
+import { QAPairScalarWhereInputSchema } from '../QAPairScalarWhereInputSchema.js';
 export const QAPairUncheckedUpdateManyWithoutTopicsNestedInputSchema: z.ZodType<Prisma.QAPairUncheckedUpdateManyWithoutTopicsNestedInput> = z.object({
   create: z.union([ z.lazy(() => QAPairCreateWithoutTopicsInputSchema),z.lazy(() => QAPairCreateWithoutTopicsInputSchema).array(),z.lazy(() => QAPairUncheckedCreateWithoutTopicsInputSchema),z.lazy(() => QAPairUncheckedCreateWithoutTopicsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => QAPairCreateOrConnectWithoutTopicsInputSchema),z.lazy(() => QAPairCreateOrConnectWithoutTopicsInputSchema).array() ]).optional(),
@@ -22,5 +20,4 @@ export const QAPairUncheckedUpdateManyWithoutTopicsNestedInputSchema: z.ZodType<
   updateMany: z.union([ z.lazy(() => QAPairUpdateManyWithWhereWithoutTopicsInputSchema),z.lazy(() => QAPairUpdateManyWithWhereWithoutTopicsInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => QAPairScalarWhereInputSchema),z.lazy(() => QAPairScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default QAPairUncheckedUpdateManyWithoutTopicsNestedInputSchema;

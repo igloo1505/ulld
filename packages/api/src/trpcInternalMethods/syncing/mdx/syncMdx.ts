@@ -1,28 +1,29 @@
 import fs from "fs";
+import type { UnifiedMdxParser } from "@ulld/schemas/types";
+import {
+    parseParamsSchema,
+} from "@ulld/schemas/mdx-parsing-params";
+import type { OnSyncOptions } from "@ulld/types";
+import type { PrismaClient, Prisma } from "@ulld/database";
+import type {
+    AppConfigSchemaOutput,
+    MinimalParsableAppConfigOutput
+} from "@ulld/configschema/types";
+import type { AutoSettingWithRegex } from "../../../trpc/types";
+import { MdxNote } from "../../../classes/prismaMdxRelations/MdxNote";
 import { saveMdxNote } from "./saveMdxNote";
 import { updateMdxNote } from "./updateMdx";
-import {
-    MdxNote,
-    MdxNoteParseParams,
-} from "../../../classes/prismaMdxRelations/MdxNote";
-import { OnSyncOptions } from "@ulld/types";
-import { PrismaClient, Prisma } from "@ulld/database";
-import { AutoSettingWithRegex } from "../../../trpc/types";
-import { AppConfigSchemaOutput } from "@ulld/configschema/types";
-import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
-import { UnifiedMdxParser } from "../../../types";
 
 export interface SyncMdxProps {
     file: string;
     rootRelativePath: string;
-    bookmarked: boolean
+    bookmarked: boolean;
     autoSettings: AutoSettingWithRegex[];
     opts: Partial<OnSyncOptions>;
-    appConfig: AppConfigSchemaOutput;
-    buildData: BuildStaticDataOutput;
+    appConfig: MinimalParsableAppConfigOutput;
     unifiedMdxParser: UnifiedMdxParser;
     prisma: PrismaClient;
-    docTypeData: AppConfigSchemaOutput["noteTypes"][number]
+    docTypeData: AppConfigSchemaOutput["noteTypes"][number];
 }
 
 export const syncMdx = async ({
@@ -30,41 +31,54 @@ export const syncMdx = async ({
     autoSettings,
     opts,
     appConfig,
-    buildData,
     unifiedMdxParser,
     prisma,
     bookmarked,
     rootRelativePath,
-    docTypeData
-}: SyncMdxProps) => {
-    let fileContent = await fs.promises.readFile(file, { encoding: "utf-8" });
-    let mdxNoteParserParams: MdxNoteParseParams = {
+    docTypeData,
+}: SyncMdxProps): Promise<
+    ReturnType<typeof updateMdxNote | typeof saveMdxNote>
+> => {
+    const fileContent = await fs.promises.readFile(file, { encoding: "utf-8" });
+
+    const mdxNoteParserParams = parseParamsSchema.parse({
         appConfig,
         parser: unifiedMdxParser,
-        docTypeData
-    };
-    let note = await MdxNote.fromMdxString(
-        { raw: fileContent, rootRelativePath: rootRelativePath, bookmarked, docTypeData },
-        { },
+        docTypeData,
+    });
+
+    const note = await MdxNote.fromMdxString(
+        {
+            raw: fileContent,
+            rootRelativePath,
+            bookmarked,
+            docTypeData,
+        },
+        {},
         mdxNoteParserParams,
     );
 
-    if (note.remoteUrl && note.trackRemote && opts?.offline !== false) {
+    if (note.remoteUrl && note.trackRemote && opts.offline !== false) {
         // There has to be a better way of doing this without parsing this twice, but the downside of parsing front matter separately every single time for the <1% of notes that are likely to be remote might be much worse.
         await note.populateFromRemote();
         await note.parse(mdxNoteParserParams);
     }
 
-    let checkExistsArgs: Prisma.MdxNoteFindFirstArgs = {
+    const OR: NonNullable<Prisma.MdxNoteFindFirstArgs["where"]>["OR"] = [];
+    if (note.raw) {
+        OR.push({ content: note.raw });
+    }
+    if (note.rootRelativePath) {
+        OR.push({ rootRelativePath: note.rootRelativePath });
+    }
+
+    const checkExistsArgs: Prisma.MdxNoteFindFirstArgs = {
         where: {
-            OR: [
-                { content: note.raw as string },
-                { rootRelativePath: note.rootRelativePath as string },
-            ],
+            OR,
         },
     };
 
-    let exists = await prisma.mdxNote.findFirst(checkExistsArgs);
+    const exists = await prisma.mdxNote.findFirst(checkExistsArgs);
     if (exists && note.rootRelativePath !== exists.rootRelativePath) {
         note.setNoteType(docTypeData);
         note.rootRelativePath = exists.rootRelativePath;
@@ -73,7 +87,7 @@ export const syncMdx = async ({
     if (exists !== null) {
         note.id = exists.id;
         return updateMdxNote(note, autoSettings, appConfig);
-    } else {
-        return saveMdxNote(note, autoSettings, appConfig);
     }
+
+    return saveMdxNote(note, autoSettings, appConfig);
 };

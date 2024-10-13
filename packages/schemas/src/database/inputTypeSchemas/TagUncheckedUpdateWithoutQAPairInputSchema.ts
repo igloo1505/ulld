@@ -1,17 +1,15 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
-import { NullableIntFieldUpdateOperationsInputSchema } from './NullableIntFieldUpdateOperationsInputSchema';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
-import { MdxNoteUncheckedUpdateManyWithoutTagsNestedInputSchema } from './MdxNoteUncheckedUpdateManyWithoutTagsNestedInputSchema';
-import { BibEntryUncheckedUpdateManyWithoutTagsNestedInputSchema } from './BibEntryUncheckedUpdateManyWithoutTagsNestedInputSchema';
-import { IpynbUncheckedUpdateManyWithoutTagsNestedInputSchema } from './IpynbUncheckedUpdateManyWithoutTagsNestedInputSchema';
-import { PracticeExamUncheckedUpdateManyWithoutTagsNestedInputSchema } from './PracticeExamUncheckedUpdateManyWithoutTagsNestedInputSchema';
-import { EquationUncheckedUpdateManyWithoutTagsNestedInputSchema } from './EquationUncheckedUpdateManyWithoutTagsNestedInputSchema';
-import { ToDoUncheckedUpdateManyWithoutTagsNestedInputSchema } from './ToDoUncheckedUpdateManyWithoutTagsNestedInputSchema';
-import { ToDoListUncheckedUpdateManyWithoutTagsNestedInputSchema } from './ToDoListUncheckedUpdateManyWithoutTagsNestedInputSchema';
-
+import { StringFieldUpdateOperationsInputSchema } from '../StringFieldUpdateOperationsInputSchema.js';
+import { NullableIntFieldUpdateOperationsInputSchema } from '../NullableIntFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from '../DateTimeFieldUpdateOperationsInputSchema.js';
+import { MdxNoteUncheckedUpdateManyWithoutTagsNestedInputSchema } from '../MdxNoteUncheckedUpdateManyWithoutTagsNestedInputSchema.js';
+import { BibEntryUncheckedUpdateManyWithoutTagsNestedInputSchema } from '../BibEntryUncheckedUpdateManyWithoutTagsNestedInputSchema.js';
+import { IpynbUncheckedUpdateManyWithoutTagsNestedInputSchema } from '../IpynbUncheckedUpdateManyWithoutTagsNestedInputSchema.js';
+import { PracticeExamUncheckedUpdateManyWithoutTagsNestedInputSchema } from '../PracticeExamUncheckedUpdateManyWithoutTagsNestedInputSchema.js';
+import { EquationUncheckedUpdateManyWithoutTagsNestedInputSchema } from '../EquationUncheckedUpdateManyWithoutTagsNestedInputSchema.js';
+import { ToDoUncheckedUpdateManyWithoutTagsNestedInputSchema } from '../ToDoUncheckedUpdateManyWithoutTagsNestedInputSchema.js';
+import { ToDoListUncheckedUpdateManyWithoutTagsNestedInputSchema } from '../ToDoListUncheckedUpdateManyWithoutTagsNestedInputSchema.js';
 export const TagUncheckedUpdateWithoutQAPairInputSchema: z.ZodType<Prisma.TagUncheckedUpdateWithoutQAPairInput> = z.object({
   value: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   kanbanId: z.union([ z.number().int(),z.lazy(() => NullableIntFieldUpdateOperationsInputSchema) ]).optional().nullable(),
@@ -25,5 +23,4 @@ export const TagUncheckedUpdateWithoutQAPairInputSchema: z.ZodType<Prisma.TagUnc
   toDo: z.lazy(() => ToDoUncheckedUpdateManyWithoutTagsNestedInputSchema).optional(),
   todoList: z.lazy(() => ToDoListUncheckedUpdateManyWithoutTagsNestedInputSchema).optional()
 }).strict();
-
 export default TagUncheckedUpdateWithoutQAPairInputSchema;

@@ -1,8 +1,20 @@
 {
   "name": "@ulld/types",
   "version": "0.0.116",
-  "dependencies": {},
-  "devDependencies": {},
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "echo 'Add lint build here'",
+    "dev": "echo 'Add dev script here'",
+    "lint": "echo 'Add lint script here'",
+    "test": "echo 'Add test script here'"
+  },
+  "types": "src/index.ts",
   "exports": {
     ".": "./src/index.ts",
     "./": "./src/index.ts",
@@ -10,22 +22,10 @@
     "./db": "./src/database.d.ts",
     "./enums": "./src/enums/index.ts"
   },
-  "files": [
-    "src"
-  ],
-  "license": "MIT",
-  "main": "src/index.ts",
-  "packageManager": "pnpm@9.0.4",
+  "dependencies": {},
+  "devDependencies": {},
   "peerDependencies": {},
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "echo 'Add lint build here'",
-    "dev": "echo 'Add dev script here'",
-    "lint": "echo 'Add lint script here'",
-    "test": "echo 'Add test script here'"
-  },
-  "types": "src/index.ts"
+  "packageManager": "pnpm@9.0.4",
+  "license": "MIT",
+  "main": "src/index.ts"
 }

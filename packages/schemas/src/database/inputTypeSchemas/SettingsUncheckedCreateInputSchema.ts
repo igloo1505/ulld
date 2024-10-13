@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ImageAlignmentSchema } from './ImageAlignmentSchema';
-import { JsonNullValueInputSchema } from './JsonNullValueInputSchema';
-import { InputJsonValueSchema } from './InputJsonValueSchema';
-
+import { ImageAlignmentSchema } from '../ImageAlignmentSchema.js';
+import { JsonNullValueInputSchema } from '../JsonNullValueInputSchema.js';
+import { InputJsonValueSchema } from '../InputJsonValueSchema.js';
 export const SettingsUncheckedCreateInputSchema: z.ZodType<Prisma.SettingsUncheckedCreateInput> = z.object({
   id: z.number().int().optional(),
   tooltips: z.boolean().optional(),
@@ -19,5 +17,4 @@ export const SettingsUncheckedCreateInputSchema: z.ZodType<Prisma.SettingsUnchec
   firstSync: z.coerce.date().optional(),
   lastSync: z.coerce.date().optional()
 }).strict();
-
 export default SettingsUncheckedCreateInputSchema;

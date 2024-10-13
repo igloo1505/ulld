@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TagCreateWithoutMdxNotesInputSchema } from './TagCreateWithoutMdxNotesInputSchema';
-import { TagUncheckedCreateWithoutMdxNotesInputSchema } from './TagUncheckedCreateWithoutMdxNotesInputSchema';
-import { TagCreateOrConnectWithoutMdxNotesInputSchema } from './TagCreateOrConnectWithoutMdxNotesInputSchema';
-import { TagUpsertWithWhereUniqueWithoutMdxNotesInputSchema } from './TagUpsertWithWhereUniqueWithoutMdxNotesInputSchema';
-import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema';
-import { TagUpdateWithWhereUniqueWithoutMdxNotesInputSchema } from './TagUpdateWithWhereUniqueWithoutMdxNotesInputSchema';
-import { TagUpdateManyWithWhereWithoutMdxNotesInputSchema } from './TagUpdateManyWithWhereWithoutMdxNotesInputSchema';
-import { TagScalarWhereInputSchema } from './TagScalarWhereInputSchema';
-
+import { TagCreateWithoutMdxNotesInputSchema } from '../TagCreateWithoutMdxNotesInputSchema.js';
+import { TagUncheckedCreateWithoutMdxNotesInputSchema } from '../TagUncheckedCreateWithoutMdxNotesInputSchema.js';
+import { TagCreateOrConnectWithoutMdxNotesInputSchema } from '../TagCreateOrConnectWithoutMdxNotesInputSchema.js';
+import { TagUpsertWithWhereUniqueWithoutMdxNotesInputSchema } from '../TagUpsertWithWhereUniqueWithoutMdxNotesInputSchema.js';
+import { TagWhereUniqueInputSchema } from '../TagWhereUniqueInputSchema.js';
+import { TagUpdateWithWhereUniqueWithoutMdxNotesInputSchema } from '../TagUpdateWithWhereUniqueWithoutMdxNotesInputSchema.js';
+import { TagUpdateManyWithWhereWithoutMdxNotesInputSchema } from '../TagUpdateManyWithWhereWithoutMdxNotesInputSchema.js';
+import { TagScalarWhereInputSchema } from '../TagScalarWhereInputSchema.js';
 export const TagUncheckedUpdateManyWithoutMdxNotesNestedInputSchema: z.ZodType<Prisma.TagUncheckedUpdateManyWithoutMdxNotesNestedInput> = z.object({
   create: z.union([ z.lazy(() => TagCreateWithoutMdxNotesInputSchema),z.lazy(() => TagCreateWithoutMdxNotesInputSchema).array(),z.lazy(() => TagUncheckedCreateWithoutMdxNotesInputSchema),z.lazy(() => TagUncheckedCreateWithoutMdxNotesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TagCreateOrConnectWithoutMdxNotesInputSchema),z.lazy(() => TagCreateOrConnectWithoutMdxNotesInputSchema).array() ]).optional(),
@@ -22,5 +20,4 @@ export const TagUncheckedUpdateManyWithoutMdxNotesNestedInputSchema: z.ZodType<P
   updateMany: z.union([ z.lazy(() => TagUpdateManyWithWhereWithoutMdxNotesInputSchema),z.lazy(() => TagUpdateManyWithWhereWithoutMdxNotesInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => TagScalarWhereInputSchema),z.lazy(() => TagScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default TagUncheckedUpdateManyWithoutMdxNotesNestedInputSchema;

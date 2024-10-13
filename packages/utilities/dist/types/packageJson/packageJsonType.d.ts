@@ -113,8 +113,8 @@ export declare const ulldCompletePackageJsonSchema: z.ZodObject<{
     type?: string | undefined;
     main?: string | undefined;
     version?: string | undefined;
-    keywords?: string[] | undefined;
     description?: string | undefined;
+    keywords?: string[] | undefined;
     scripts?: Record<string, string> | undefined;
     exports?: Record<string, string | {
         types?: string | undefined;

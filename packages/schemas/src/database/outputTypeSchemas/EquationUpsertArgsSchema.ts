@@ -1,11 +1,11 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { EquationIncludeSchema } from '../inputTypeSchemas/EquationIncludeSchema'
-import { EquationWhereUniqueInputSchema } from '../inputTypeSchemas/EquationWhereUniqueInputSchema'
-import { EquationCreateInputSchema } from '../inputTypeSchemas/EquationCreateInputSchema'
-import { EquationUncheckedCreateInputSchema } from '../inputTypeSchemas/EquationUncheckedCreateInputSchema'
-import { EquationUpdateInputSchema } from '../inputTypeSchemas/EquationUpdateInputSchema'
-import { EquationUncheckedUpdateInputSchema } from '../inputTypeSchemas/EquationUncheckedUpdateInputSchema'
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/EquationIncludeSchema.js
+..//inputTypeSchemas/EquationWhereUniqueInputSchema.js
+..//inputTypeSchemas/EquationCreateInputSchema.js
+..//inputTypeSchemas/EquationUncheckedCreateInputSchema.js
+..//inputTypeSchemas/EquationUpdateInputSchema.js
+..//inputTypeSchemas/EquationUncheckedUpdateInputSchema.js
 import { RelatedValuesFindManyArgsSchema } from "../outputTypeSchemas/RelatedValuesFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
@@ -14,7 +14,6 @@ import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyA
 import { EquationCountOutputTypeArgsSchema } from "../outputTypeSchemas/EquationCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const EquationSelectSchema: z.ZodType<Prisma.EquationSelect> = z.object({
   id: z.boolean().optional(),
   equationId: z.boolean().optional(),
@@ -34,7 +33,6 @@ export const EquationSelectSchema: z.ZodType<Prisma.EquationSelect> = z.object({
   mdxNotes: z.union([z.boolean(),z.lazy(() => MdxNoteFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => EquationCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const EquationUpsertArgsSchema: z.ZodType<Prisma.EquationUpsertArgs> = z.object({
   select: EquationSelectSchema.optional(),
   include: EquationIncludeSchema.optional(),
@@ -42,5 +40,4 @@ export const EquationUpsertArgsSchema: z.ZodType<Prisma.EquationUpsertArgs> = z.
   create: z.union([ EquationCreateInputSchema,EquationUncheckedCreateInputSchema ]),
   update: z.union([ EquationUpdateInputSchema,EquationUncheckedUpdateInputSchema ]),
 }).strict() ;
-
 export default EquationUpsertArgsSchema;

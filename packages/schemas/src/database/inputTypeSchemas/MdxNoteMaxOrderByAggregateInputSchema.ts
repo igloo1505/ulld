@@ -1,8 +1,6 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
 export const MdxNoteMaxOrderByAggregateInputSchema: z.ZodType<Prisma.MdxNoteMaxOrderByAggregateInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   isProtected: z.lazy(() => SortOrderSchema).optional(),
@@ -27,5 +25,4 @@ export const MdxNoteMaxOrderByAggregateInputSchema: z.ZodType<Prisma.MdxNoteMaxO
   lastSync: z.lazy(() => SortOrderSchema).optional(),
   lastAccess: z.lazy(() => SortOrderSchema).optional()
 }).strict();
-
 export default MdxNoteMaxOrderByAggregateInputSchema;

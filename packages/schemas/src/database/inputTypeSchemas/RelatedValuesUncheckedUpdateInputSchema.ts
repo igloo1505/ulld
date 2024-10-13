@@ -1,13 +1,11 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema';
-import { JsonNullValueInputSchema } from './JsonNullValueInputSchema';
-import { InputJsonValueSchema } from './InputJsonValueSchema';
-import { FloatFieldUpdateOperationsInputSchema } from './FloatFieldUpdateOperationsInputSchema';
-import { RelatedValuesUpdateequationIdInputSchema } from './RelatedValuesUpdateequationIdInputSchema';
-import { EquationUncheckedUpdateManyWithoutRelatedValuesNestedInputSchema } from './EquationUncheckedUpdateManyWithoutRelatedValuesNestedInputSchema';
-
+import { IntFieldUpdateOperationsInputSchema } from '../IntFieldUpdateOperationsInputSchema.js';
+import { JsonNullValueInputSchema } from '../JsonNullValueInputSchema.js';
+import { InputJsonValueSchema } from '../InputJsonValueSchema.js';
+import { FloatFieldUpdateOperationsInputSchema } from '../FloatFieldUpdateOperationsInputSchema.js';
+import { RelatedValuesUpdateequationIdInputSchema } from '../RelatedValuesUpdateequationIdInputSchema.js';
+import { EquationUncheckedUpdateManyWithoutRelatedValuesNestedInputSchema } from '../EquationUncheckedUpdateManyWithoutRelatedValuesNestedInputSchema.js';
 export const RelatedValuesUncheckedUpdateInputSchema: z.ZodType<Prisma.RelatedValuesUncheckedUpdateInput> = z.object({
   id: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
   input: z.union([ z.lazy(() => JsonNullValueInputSchema),InputJsonValueSchema ]).optional(),
@@ -15,5 +13,4 @@ export const RelatedValuesUncheckedUpdateInputSchema: z.ZodType<Prisma.RelatedVa
   equationId: z.union([ z.lazy(() => RelatedValuesUpdateequationIdInputSchema),z.number().int().array() ]).optional(),
   equations: z.lazy(() => EquationUncheckedUpdateManyWithoutRelatedValuesNestedInputSchema).optional()
 }).strict();
-
 export default RelatedValuesUncheckedUpdateInputSchema;

@@ -1,18 +1,16 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { BibOrderByWithRelationInputSchema } from './BibOrderByWithRelationInputSchema';
-import { CitationsGroupOrderByRelationAggregateInputSchema } from './CitationsGroupOrderByRelationAggregateInputSchema';
-import { TagOrderByRelationAggregateInputSchema } from './TagOrderByRelationAggregateInputSchema';
-import { TopicOrderByRelationAggregateInputSchema } from './TopicOrderByRelationAggregateInputSchema';
-import { SubjectOrderByRelationAggregateInputSchema } from './SubjectOrderByRelationAggregateInputSchema';
-import { MdxNoteOrderByRelationAggregateInputSchema } from './MdxNoteOrderByRelationAggregateInputSchema';
-import { IpynbOrderByRelationAggregateInputSchema } from './IpynbOrderByRelationAggregateInputSchema';
-import { ReadingListOrderByRelationAggregateInputSchema } from './ReadingListOrderByRelationAggregateInputSchema';
-import { BibEntryOrderByRelevanceInputSchema } from './BibEntryOrderByRelevanceInputSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
+import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
+import { BibOrderByWithRelationInputSchema } from '../BibOrderByWithRelationInputSchema.js';
+import { CitationsGroupOrderByRelationAggregateInputSchema } from '../CitationsGroupOrderByRelationAggregateInputSchema.js';
+import { TagOrderByRelationAggregateInputSchema } from '../TagOrderByRelationAggregateInputSchema.js';
+import { TopicOrderByRelationAggregateInputSchema } from '../TopicOrderByRelationAggregateInputSchema.js';
+import { SubjectOrderByRelationAggregateInputSchema } from '../SubjectOrderByRelationAggregateInputSchema.js';
+import { MdxNoteOrderByRelationAggregateInputSchema } from '../MdxNoteOrderByRelationAggregateInputSchema.js';
+import { IpynbOrderByRelationAggregateInputSchema } from '../IpynbOrderByRelationAggregateInputSchema.js';
+import { ReadingListOrderByRelationAggregateInputSchema } from '../ReadingListOrderByRelationAggregateInputSchema.js';
+import { BibEntryOrderByRelevanceInputSchema } from '../BibEntryOrderByRelevanceInputSchema.js';
 export const BibEntryOrderByWithRelationInputSchema: z.ZodType<Prisma.BibEntryOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   BibId: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
@@ -66,5 +64,4 @@ export const BibEntryOrderByWithRelationInputSchema: z.ZodType<Prisma.BibEntryOr
   readingList: z.lazy(() => ReadingListOrderByRelationAggregateInputSchema).optional(),
   _relevance: z.lazy(() => BibEntryOrderByRelevanceInputSchema).optional()
 }).strict();
-
 export default BibEntryOrderByWithRelationInputSchema;

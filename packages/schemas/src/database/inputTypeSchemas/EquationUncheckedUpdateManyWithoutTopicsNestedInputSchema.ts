@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { EquationCreateWithoutTopicsInputSchema } from './EquationCreateWithoutTopicsInputSchema';
-import { EquationUncheckedCreateWithoutTopicsInputSchema } from './EquationUncheckedCreateWithoutTopicsInputSchema';
-import { EquationCreateOrConnectWithoutTopicsInputSchema } from './EquationCreateOrConnectWithoutTopicsInputSchema';
-import { EquationUpsertWithWhereUniqueWithoutTopicsInputSchema } from './EquationUpsertWithWhereUniqueWithoutTopicsInputSchema';
-import { EquationWhereUniqueInputSchema } from './EquationWhereUniqueInputSchema';
-import { EquationUpdateWithWhereUniqueWithoutTopicsInputSchema } from './EquationUpdateWithWhereUniqueWithoutTopicsInputSchema';
-import { EquationUpdateManyWithWhereWithoutTopicsInputSchema } from './EquationUpdateManyWithWhereWithoutTopicsInputSchema';
-import { EquationScalarWhereInputSchema } from './EquationScalarWhereInputSchema';
-
+import { EquationCreateWithoutTopicsInputSchema } from '../EquationCreateWithoutTopicsInputSchema.js';
+import { EquationUncheckedCreateWithoutTopicsInputSchema } from '../EquationUncheckedCreateWithoutTopicsInputSchema.js';
+import { EquationCreateOrConnectWithoutTopicsInputSchema } from '../EquationCreateOrConnectWithoutTopicsInputSchema.js';
+import { EquationUpsertWithWhereUniqueWithoutTopicsInputSchema } from '../EquationUpsertWithWhereUniqueWithoutTopicsInputSchema.js';
+import { EquationWhereUniqueInputSchema } from '../EquationWhereUniqueInputSchema.js';
+import { EquationUpdateWithWhereUniqueWithoutTopicsInputSchema } from '../EquationUpdateWithWhereUniqueWithoutTopicsInputSchema.js';
+import { EquationUpdateManyWithWhereWithoutTopicsInputSchema } from '../EquationUpdateManyWithWhereWithoutTopicsInputSchema.js';
+import { EquationScalarWhereInputSchema } from '../EquationScalarWhereInputSchema.js';
 export const EquationUncheckedUpdateManyWithoutTopicsNestedInputSchema: z.ZodType<Prisma.EquationUncheckedUpdateManyWithoutTopicsNestedInput> = z.object({
   create: z.union([ z.lazy(() => EquationCreateWithoutTopicsInputSchema),z.lazy(() => EquationCreateWithoutTopicsInputSchema).array(),z.lazy(() => EquationUncheckedCreateWithoutTopicsInputSchema),z.lazy(() => EquationUncheckedCreateWithoutTopicsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => EquationCreateOrConnectWithoutTopicsInputSchema),z.lazy(() => EquationCreateOrConnectWithoutTopicsInputSchema).array() ]).optional(),
@@ -22,5 +20,4 @@ export const EquationUncheckedUpdateManyWithoutTopicsNestedInputSchema: z.ZodTyp
   updateMany: z.union([ z.lazy(() => EquationUpdateManyWithWhereWithoutTopicsInputSchema),z.lazy(() => EquationUpdateManyWithWhereWithoutTopicsInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => EquationScalarWhereInputSchema),z.lazy(() => EquationScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default EquationUncheckedUpdateManyWithoutTopicsNestedInputSchema;

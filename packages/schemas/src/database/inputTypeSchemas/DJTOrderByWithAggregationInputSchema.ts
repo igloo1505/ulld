@@ -1,13 +1,11 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { DJTCountOrderByAggregateInputSchema } from './DJTCountOrderByAggregateInputSchema';
-import { DJTAvgOrderByAggregateInputSchema } from './DJTAvgOrderByAggregateInputSchema';
-import { DJTMaxOrderByAggregateInputSchema } from './DJTMaxOrderByAggregateInputSchema';
-import { DJTMinOrderByAggregateInputSchema } from './DJTMinOrderByAggregateInputSchema';
-import { DJTSumOrderByAggregateInputSchema } from './DJTSumOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
+import { DJTCountOrderByAggregateInputSchema } from '../DJTCountOrderByAggregateInputSchema.js';
+import { DJTAvgOrderByAggregateInputSchema } from '../DJTAvgOrderByAggregateInputSchema.js';
+import { DJTMaxOrderByAggregateInputSchema } from '../DJTMaxOrderByAggregateInputSchema.js';
+import { DJTMinOrderByAggregateInputSchema } from '../DJTMinOrderByAggregateInputSchema.js';
+import { DJTSumOrderByAggregateInputSchema } from '../DJTSumOrderByAggregateInputSchema.js';
 export const DJTOrderByWithAggregationInputSchema: z.ZodType<Prisma.DJTOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   type: z.lazy(() => SortOrderSchema).optional(),
@@ -18,5 +16,4 @@ export const DJTOrderByWithAggregationInputSchema: z.ZodType<Prisma.DJTOrderByWi
   _min: z.lazy(() => DJTMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => DJTSumOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default DJTOrderByWithAggregationInputSchema;

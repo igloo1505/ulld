@@ -1,13 +1,10 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { DefinitionScalarWhereInputSchema } from './DefinitionScalarWhereInputSchema';
-import { DefinitionUpdateManyMutationInputSchema } from './DefinitionUpdateManyMutationInputSchema';
-import { DefinitionUncheckedUpdateManyWithoutMdxNoteInputSchema } from './DefinitionUncheckedUpdateManyWithoutMdxNoteInputSchema';
-
+import { DefinitionScalarWhereInputSchema } from '../DefinitionScalarWhereInputSchema.js';
+import { DefinitionUpdateManyMutationInputSchema } from '../DefinitionUpdateManyMutationInputSchema.js';
+import { DefinitionUncheckedUpdateManyWithoutMdxNoteInputSchema } from '../DefinitionUncheckedUpdateManyWithoutMdxNoteInputSchema.js';
 export const DefinitionUpdateManyWithWhereWithoutMdxNoteInputSchema: z.ZodType<Prisma.DefinitionUpdateManyWithWhereWithoutMdxNoteInput> = z.object({
   where: z.lazy(() => DefinitionScalarWhereInputSchema),
   data: z.union([ z.lazy(() => DefinitionUpdateManyMutationInputSchema),z.lazy(() => DefinitionUncheckedUpdateManyWithoutMdxNoteInputSchema) ]),
 }).strict();
-
 export default DefinitionUpdateManyWithWhereWithoutMdxNoteInputSchema;

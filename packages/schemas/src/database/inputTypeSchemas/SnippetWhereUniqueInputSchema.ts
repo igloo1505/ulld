@@ -1,11 +1,9 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SnippetWhereInputSchema } from './SnippetWhereInputSchema';
-import { StringFilterSchema } from './StringFilterSchema';
-import { StringNullableListFilterSchema } from './StringNullableListFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-
+import { SnippetWhereInputSchema } from '../SnippetWhereInputSchema.js';
+import { StringFilterSchema } from '../StringFilterSchema.js';
+import { StringNullableListFilterSchema } from '../StringNullableListFilterSchema.js';
+import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
 export const SnippetWhereUniqueInputSchema: z.ZodType<Prisma.SnippetWhereUniqueInput> = z.object({
   id: z.number().int()
 })
@@ -20,5 +18,4 @@ export const SnippetWhereUniqueInputSchema: z.ZodType<Prisma.SnippetWhereUniqueI
   language: z.union([ z.lazy(() => StringFilterSchema),z.string() ]).optional(),
   createdAt: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
 }).strict());
-
 export default SnippetWhereUniqueInputSchema;

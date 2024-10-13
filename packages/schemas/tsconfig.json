@@ -1,20 +1,28 @@
 {
     "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
     "extends": "@ulld/typescript-config/nextjs.json",
+    "exclude": [
+        "dist",
+        "build",
+        "node_modules",
+        "src/__scripts__",
+        "tsup.config.ts"
+    ],
     "compilerOptions": {
-        "types": ["@testing-library/jest-dom", "jest-environment-jsdom"],
-        "moduleResolution": "bundler",
-        "rootDir": ".",
+        "rootDir": "src",
         "outDir": "dist",
+        "noEmit": false,
+        "moduleResolution": "NodeNext",
+        "module": "NodeNext",
         "jsx": "react-jsx",
-        // "paths": {
-        //     "#/*": [
-        //         "./src/*"
-        //     ]
-        // },
+        "allowImportingTsExtensions": false,
+        "declaration": true,
+        "declarationMap": true,
         "esModuleInterop": true,
         "resolveJsonModule": true,
-        // "declarationMap": true,
-        "noEmit": true
-    }
+        "allowSyntheticDefaultImports": true
+    },
+    "include": [
+        "src"
+    ]
 }

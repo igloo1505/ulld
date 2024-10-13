@@ -1,8 +1,8 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { MdxNoteIncludeSchema } from '../inputTypeSchemas/MdxNoteIncludeSchema'
-import { MdxNoteCreateInputSchema } from '../inputTypeSchemas/MdxNoteCreateInputSchema'
-import { MdxNoteUncheckedCreateInputSchema } from '../inputTypeSchemas/MdxNoteUncheckedCreateInputSchema'
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/MdxNoteIncludeSchema.js
+..//inputTypeSchemas/MdxNoteCreateInputSchema.js
+..//inputTypeSchemas/MdxNoteUncheckedCreateInputSchema.js
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
@@ -15,7 +15,6 @@ import { ToDoFindManyArgsSchema } from "../outputTypeSchemas/ToDoFindManyArgsSch
 import { MdxNoteCountOutputTypeArgsSchema } from "../outputTypeSchemas/MdxNoteCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const MdxNoteSelectSchema: z.ZodType<Prisma.MdxNoteSelect> = z.object({
   id: z.boolean().optional(),
   isProtected: z.boolean().optional(),
@@ -53,11 +52,9 @@ export const MdxNoteSelectSchema: z.ZodType<Prisma.MdxNoteSelect> = z.object({
   toDo: z.union([z.boolean(),z.lazy(() => ToDoFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => MdxNoteCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const MdxNoteCreateArgsSchema: z.ZodType<Prisma.MdxNoteCreateArgs> = z.object({
   select: MdxNoteSelectSchema.optional(),
   include: MdxNoteIncludeSchema.optional(),
   data: z.union([ MdxNoteCreateInputSchema,MdxNoteUncheckedCreateInputSchema ]),
 }).strict() ;
-
 export default MdxNoteCreateArgsSchema;

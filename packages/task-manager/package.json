@@ -1,6 +1,30 @@
 {
   "name": "@ulld/task-manager",
   "version": "0.0.124",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "pluginConfig.ulld.json",
+    "src"
+  ],
+  "scripts": {
+    "build": "echo 'Add build script here'",
+    "dev": "dotenv -e ../../.env.local -- next dev",
+    "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
+    "lint": "next lint",
+    "test": "echo 'Add test script here'"
+  },
+  "exports": {
+    "./types": "./src/types.ts",
+    "./taskDetails": "./src/components/taskDetailModal/main.tsx",
+    "./addTask": "./src/components/addTask/main.tsx",
+    "./taskListSearchResults": "./src/components/taskListSearchResultList/main.tsx",
+    "./addTaskList": "./src/components/addTaskListModal/main.tsx",
+    "./taskManagerPage": "./src/components/taskManagerPage/main.tsx",
+    "./taskListSearchResult": "./src/components/TaskListSearchResults/main.tsx"
+  },
   "dependencies": {
     "@radix-ui/react-icons": "1.3.0",
     "@tanstack/react-table": "8.13.2",
@@ -15,20 +39,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "exports": {
-    "./types": "./src/types.ts",
-    "./taskDetails": "./src/components/taskDetailModal/main.tsx",
-    "./addTask": "./src/components/addTask/main.tsx",
-    "./taskListSearchResults": "./src/components/taskListSearchResultList/main.tsx",
-    "./addTaskList": "./src/components/addTaskListModal/main.tsx",
-    "./taskManagerPage": "./src/components/taskManagerPage/main.tsx",
-    "./taskListSearchResult": "./src/components/TaskListSearchResults/main.tsx"
-  },
-  "files": [
-    "pluginConfig.ulld.json",
-    "src"
-  ],
-  "packageManager": "pnpm@9.0.4",
   "peerDependencies": {
     "@ulld/api": "workspace:*",
     "@ulld/calendar": "workspace:*",
@@ -55,18 +65,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "echo 'Add build script here'",
-    "dev": "dotenv -e ../../.env.local -- next dev",
-    "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
-    "lint": "next lint",
-    "test": "echo 'Add test script here'"
-  },
-  "ulld-plugin-id": "9a2f4468-9240-49ed-be6e-8a105d16bea5",
+  "packageManager": "pnpm@9.0.4",
   "ulld-pluginConfig": {
     "pluginName": "@ulld/task-manager",
     "label": "Task Manager",
@@ -133,5 +132,6 @@
     "commandPalette": [],
     "tailwind": {},
     "styles": {}
-  }
+  },
+  "ulld-plugin-id": "9a2f4468-9240-49ed-be6e-8a105d16bea5"
 }

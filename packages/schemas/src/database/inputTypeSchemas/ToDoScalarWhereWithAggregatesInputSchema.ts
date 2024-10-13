@@ -1,16 +1,14 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema';
-import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema';
-import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
-import { DateTimeNullableWithAggregatesFilterSchema } from './DateTimeNullableWithAggregatesFilterSchema';
-import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema';
-import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema';
-import { EnumTaskCategoryNullableWithAggregatesFilterSchema } from './EnumTaskCategoryNullableWithAggregatesFilterSchema';
-import { TaskCategorySchema } from './TaskCategorySchema';
-import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema';
-
+import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
+import { DateTimeNullableWithAggregatesFilterSchema } from '../DateTimeNullableWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from '../StringNullableWithAggregatesFilterSchema.js';
+import { IntNullableWithAggregatesFilterSchema } from '../IntNullableWithAggregatesFilterSchema.js';
+import { EnumTaskCategoryNullableWithAggregatesFilterSchema } from '../EnumTaskCategoryNullableWithAggregatesFilterSchema.js';
+import { TaskCategorySchema } from '../TaskCategorySchema.js';
+import { BoolWithAggregatesFilterSchema } from '../BoolWithAggregatesFilterSchema.js';
 export const ToDoScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.ToDoScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => ToDoScalarWhereWithAggregatesInputSchema),z.lazy(() => ToDoScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => ToDoScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -28,5 +26,4 @@ export const ToDoScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.ToDoScal
   toDoListId: z.union([ z.lazy(() => IntNullableWithAggregatesFilterSchema),z.number() ]).optional().nullable(),
   completedOn: z.union([ z.lazy(() => DateTimeNullableWithAggregatesFilterSchema),z.coerce.date() ]).optional().nullable(),
 }).strict();
-
 export default ToDoScalarWhereWithAggregatesInputSchema;

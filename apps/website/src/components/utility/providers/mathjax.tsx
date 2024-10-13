@@ -14,6 +14,7 @@ declare global {
     }
 }
 
+
 const MathjaxProvider = ({ children, className }: MathjaxProviderProps) => {
     return (
         <MathJaxContext

@@ -7,12 +7,12 @@ export declare const pluginAdditionalPageSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     export: string;
     exportsPageProps: boolean;
-    targetUrl?: string | undefined;
     slot?: string | undefined;
+    targetUrl?: string | undefined;
 }, {
     export: string;
-    targetUrl?: string | undefined;
     slot?: string | undefined;
+    targetUrl?: string | undefined;
     exportsPageProps?: boolean | undefined;
 }>;
 //# sourceMappingURL=pluginPageSchema.d.ts.map

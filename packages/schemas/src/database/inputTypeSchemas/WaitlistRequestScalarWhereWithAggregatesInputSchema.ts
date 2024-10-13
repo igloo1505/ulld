@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema';
-import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
-import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema';
-
+import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
 export const WaitlistRequestScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.WaitlistRequestScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => WaitlistRequestScalarWhereWithAggregatesInputSchema),z.lazy(() => WaitlistRequestScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => WaitlistRequestScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -14,5 +12,4 @@ export const WaitlistRequestScalarWhereWithAggregatesInputSchema: z.ZodType<Pris
   receivedOn: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
   emailsSent: z.union([ z.lazy(() => IntWithAggregatesFilterSchema),z.number() ]).optional(),
 }).strict();
-
 export default WaitlistRequestScalarWhereWithAggregatesInputSchema;

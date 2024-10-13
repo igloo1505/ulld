@@ -1,4 +1,4 @@
-// TEST: Make sure all of these names render.
+// TEST: Make sure all of these names render. Also copy these to the types package dynamically as part of the build script.
 export const validIconNameList = [
     "a-arrow-down",
     "a-arrow-up",

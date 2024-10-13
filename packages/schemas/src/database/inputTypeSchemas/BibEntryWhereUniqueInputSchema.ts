@@ -1,21 +1,19 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { BibEntryWhereInputSchema } from './BibEntryWhereInputSchema';
-import { IntNullableFilterSchema } from './IntNullableFilterSchema';
-import { BoolFilterSchema } from './BoolFilterSchema';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-import { BibNullableRelationFilterSchema } from './BibNullableRelationFilterSchema';
-import { BibWhereInputSchema } from './BibWhereInputSchema';
-import { CitationsGroupListRelationFilterSchema } from './CitationsGroupListRelationFilterSchema';
-import { TagListRelationFilterSchema } from './TagListRelationFilterSchema';
-import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema';
-import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema';
-import { MdxNoteListRelationFilterSchema } from './MdxNoteListRelationFilterSchema';
-import { IpynbListRelationFilterSchema } from './IpynbListRelationFilterSchema';
-import { ReadingListListRelationFilterSchema } from './ReadingListListRelationFilterSchema';
-
+import { BibEntryWhereInputSchema } from '../BibEntryWhereInputSchema.js';
+import { IntNullableFilterSchema } from '../IntNullableFilterSchema.js';
+import { BoolFilterSchema } from '../BoolFilterSchema.js';
+import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
+import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
+import { BibNullableRelationFilterSchema } from '../BibNullableRelationFilterSchema.js';
+import { BibWhereInputSchema } from '../BibWhereInputSchema.js';
+import { CitationsGroupListRelationFilterSchema } from '../CitationsGroupListRelationFilterSchema.js';
+import { TagListRelationFilterSchema } from '../TagListRelationFilterSchema.js';
+import { TopicListRelationFilterSchema } from '../TopicListRelationFilterSchema.js';
+import { SubjectListRelationFilterSchema } from '../SubjectListRelationFilterSchema.js';
+import { MdxNoteListRelationFilterSchema } from '../MdxNoteListRelationFilterSchema.js';
+import { IpynbListRelationFilterSchema } from '../IpynbListRelationFilterSchema.js';
+import { ReadingListListRelationFilterSchema } from '../ReadingListListRelationFilterSchema.js';
 export const BibEntryWhereUniqueInputSchema: z.ZodType<Prisma.BibEntryWhereUniqueInput> = z.object({
   id: z.string()
 })
@@ -74,5 +72,4 @@ export const BibEntryWhereUniqueInputSchema: z.ZodType<Prisma.BibEntryWhereUniqu
   ipynbNotes: z.lazy(() => IpynbListRelationFilterSchema).optional(),
   readingList: z.lazy(() => ReadingListListRelationFilterSchema).optional()
 }).strict());
-
 export default BibEntryWhereUniqueInputSchema;

@@ -1,16 +1,15 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { KanBanListIncludeSchema } from '../inputTypeSchemas/KanBanListIncludeSchema'
-import { KanBanListWhereInputSchema } from '../inputTypeSchemas/KanBanListWhereInputSchema'
-import { KanBanListOrderByWithRelationInputSchema } from '../inputTypeSchemas/KanBanListOrderByWithRelationInputSchema'
-import { KanBanListWhereUniqueInputSchema } from '../inputTypeSchemas/KanBanListWhereUniqueInputSchema'
-import { KanBanListScalarFieldEnumSchema } from '../inputTypeSchemas/KanBanListScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/KanBanListIncludeSchema.js
+..//inputTypeSchemas/KanBanListWhereInputSchema.js
+..//inputTypeSchemas/KanBanListOrderByWithRelationInputSchema.js
+..//inputTypeSchemas/KanBanListWhereUniqueInputSchema.js
+..//inputTypeSchemas/KanBanListScalarFieldEnumSchema.js
 import { KanBanCardFindManyArgsSchema } from "../outputTypeSchemas/KanBanCardFindManyArgsSchema"
 import { KanbanArgsSchema } from "../outputTypeSchemas/KanbanArgsSchema"
 import { KanBanListCountOutputTypeArgsSchema } from "../outputTypeSchemas/KanBanListCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const KanBanListSelectSchema: z.ZodType<Prisma.KanBanListSelect> = z.object({
   id: z.boolean().optional(),
   indexWithinBoard: z.boolean().optional(),
@@ -20,7 +19,6 @@ export const KanBanListSelectSchema: z.ZodType<Prisma.KanBanListSelect> = z.obje
   Kanban: z.union([z.boolean(),z.lazy(() => KanbanArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => KanBanListCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const KanBanListFindFirstArgsSchema: z.ZodType<Prisma.KanBanListFindFirstArgs> = z.object({
   select: KanBanListSelectSchema.optional(),
   include: KanBanListIncludeSchema.optional(),
@@ -31,5 +29,4 @@ export const KanBanListFindFirstArgsSchema: z.ZodType<Prisma.KanBanListFindFirst
   skip: z.number().optional(),
   distinct: z.union([ KanBanListScalarFieldEnumSchema,KanBanListScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default KanBanListFindFirstArgsSchema;

@@ -1,17 +1,15 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema';
-import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
-import { BoolNullableWithAggregatesFilterSchema } from './BoolNullableWithAggregatesFilterSchema';
-import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema';
-import { StringNullableListFilterSchema } from './StringNullableListFilterSchema';
-import { FloatNullableListFilterSchema } from './FloatNullableListFilterSchema';
-import { BytesWithAggregatesFilterSchema } from './BytesWithAggregatesFilterSchema';
-import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema';
-import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema';
-import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema';
-
+import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
+import { BoolNullableWithAggregatesFilterSchema } from '../BoolNullableWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from '../StringNullableWithAggregatesFilterSchema.js';
+import { StringNullableListFilterSchema } from '../StringNullableListFilterSchema.js';
+import { FloatNullableListFilterSchema } from '../FloatNullableListFilterSchema.js';
+import { BytesWithAggregatesFilterSchema } from '../BytesWithAggregatesFilterSchema.js';
+import { IntNullableWithAggregatesFilterSchema } from '../IntNullableWithAggregatesFilterSchema.js';
+import { BoolWithAggregatesFilterSchema } from '../BoolWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
 export const IpynbScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.IpynbScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => IpynbScalarWhereWithAggregatesInputSchema),z.lazy(() => IpynbScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => IpynbScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -33,5 +31,4 @@ export const IpynbScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.IpynbSc
   lastSync: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
   lastAccess: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
-
 export default IpynbScalarWhereWithAggregatesInputSchema;

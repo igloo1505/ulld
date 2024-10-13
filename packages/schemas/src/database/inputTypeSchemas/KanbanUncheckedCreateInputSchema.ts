@@ -1,11 +1,9 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { KanBanListUncheckedCreateNestedManyWithoutKanbanInputSchema } from './KanBanListUncheckedCreateNestedManyWithoutKanbanInputSchema';
-import { TagUncheckedCreateNestedManyWithoutKanbanInputSchema } from './TagUncheckedCreateNestedManyWithoutKanbanInputSchema';
-import { SubjectUncheckedCreateNestedManyWithoutKanbanInputSchema } from './SubjectUncheckedCreateNestedManyWithoutKanbanInputSchema';
-import { TopicUncheckedCreateNestedManyWithoutKanbanInputSchema } from './TopicUncheckedCreateNestedManyWithoutKanbanInputSchema';
-
+import { KanBanListUncheckedCreateNestedManyWithoutKanbanInputSchema } from '../KanBanListUncheckedCreateNestedManyWithoutKanbanInputSchema.js';
+import { TagUncheckedCreateNestedManyWithoutKanbanInputSchema } from '../TagUncheckedCreateNestedManyWithoutKanbanInputSchema.js';
+import { SubjectUncheckedCreateNestedManyWithoutKanbanInputSchema } from '../SubjectUncheckedCreateNestedManyWithoutKanbanInputSchema.js';
+import { TopicUncheckedCreateNestedManyWithoutKanbanInputSchema } from '../TopicUncheckedCreateNestedManyWithoutKanbanInputSchema.js';
 export const KanbanUncheckedCreateInputSchema: z.ZodType<Prisma.KanbanUncheckedCreateInput> = z.object({
   id: z.number().int().optional(),
   title: z.string(),
@@ -16,5 +14,4 @@ export const KanbanUncheckedCreateInputSchema: z.ZodType<Prisma.KanbanUncheckedC
   subjects: z.lazy(() => SubjectUncheckedCreateNestedManyWithoutKanbanInputSchema).optional(),
   topics: z.lazy(() => TopicUncheckedCreateNestedManyWithoutKanbanInputSchema).optional()
 }).strict();
-
 export default KanbanUncheckedCreateInputSchema;

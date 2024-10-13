@@ -22,3 +22,4 @@ export const jupyterReactConfigSchema = jupyter_rect_config_schema.default({
 export const jupyterReactConfigSchemaOutput = jupyter_rect_config_schema.merge(z.object({
     serverUrls: serverUrlSchema.required()
 }))
+

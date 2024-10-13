@@ -1,7 +1,8 @@
 import { webComponentMap } from "./componentMap";
 import { TypeTableEm } from "#/components/docs/typeTable";
+import { AdditionalComponents } from "@ulld/component-map/types";
 
-export const serverComponentMap = [
+export const serverComponentMap: AdditionalComponents = [
     ...webComponentMap,
     {
         regex: new RegExp("<TypeDoc"),
@@ -9,3 +10,6 @@ export const serverComponentMap = [
         label: "TypeDoc",
     },
 ];
+
+
+

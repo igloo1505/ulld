@@ -1,10 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { SubjectIncludeSchema } from '../inputTypeSchemas/SubjectIncludeSchema'
-import { SubjectWhereInputSchema } from '../inputTypeSchemas/SubjectWhereInputSchema'
-import { SubjectOrderByWithRelationInputSchema } from '../inputTypeSchemas/SubjectOrderByWithRelationInputSchema'
-import { SubjectWhereUniqueInputSchema } from '../inputTypeSchemas/SubjectWhereUniqueInputSchema'
-import { SubjectScalarFieldEnumSchema } from '../inputTypeSchemas/SubjectScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/SubjectIncludeSchema.js
+..//inputTypeSchemas/SubjectWhereInputSchema.js
+..//inputTypeSchemas/SubjectOrderByWithRelationInputSchema.js
+..//inputTypeSchemas/SubjectWhereUniqueInputSchema.js
+..//inputTypeSchemas/SubjectScalarFieldEnumSchema.js
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"
 import { QAPairFindManyArgsSchema } from "../outputTypeSchemas/QAPairFindManyArgsSchema"
@@ -17,7 +17,6 @@ import { EquationFindManyArgsSchema } from "../outputTypeSchemas/EquationFindMan
 import { SubjectCountOutputTypeArgsSchema } from "../outputTypeSchemas/SubjectCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const SubjectSelectSchema: z.ZodType<Prisma.SubjectSelect> = z.object({
   value: z.boolean().optional(),
   kanbanId: z.boolean().optional(),
@@ -34,7 +33,6 @@ export const SubjectSelectSchema: z.ZodType<Prisma.SubjectSelect> = z.object({
   equations: z.union([z.boolean(),z.lazy(() => EquationFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => SubjectCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const SubjectFindFirstOrThrowArgsSchema: z.ZodType<Prisma.SubjectFindFirstOrThrowArgs> = z.object({
   select: SubjectSelectSchema.optional(),
   include: SubjectIncludeSchema.optional(),
@@ -45,5 +43,4 @@ export const SubjectFindFirstOrThrowArgsSchema: z.ZodType<Prisma.SubjectFindFirs
   skip: z.number().optional(),
   distinct: z.union([ SubjectScalarFieldEnumSchema,SubjectScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default SubjectFindFirstOrThrowArgsSchema;

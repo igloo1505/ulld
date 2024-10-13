@@ -4,7 +4,8 @@ import { ParseMdxStringParams } from "./types";
 
 
 export const compileMdxStringClient = async (opts: ParseMdxStringParams) => {
-    return await client.mdx.compileMdxString.query(opts)
+    console.log("opts: ", opts)
+    return await client.mdx.compileMdxString.mutate(opts)
 }
 
 export const parseAndCompileMdxStringClient = async (opts: InternalMdxStringParseParamsInput) => {

@@ -8,6 +8,8 @@ export type PropertiesOfType<T, K> = {
 
 export type WithRequired<T, K extends keyof T> = T & { [P in K]-?: T[P] }
 
+export type WithRequiredOnly<T, K extends keyof T> = WithRequired<Partial<T>, K>
+
 export type WithOptional<T, K extends keyof T> = T & { [P in K]?: T[P] | undefined }
 
 export type MakeNullish<T> = T & { [P in keyof PropertiesOfType<T, null | undefined>]?: T[P] | null }

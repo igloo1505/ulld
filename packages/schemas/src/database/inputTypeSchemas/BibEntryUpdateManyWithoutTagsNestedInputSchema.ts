@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { BibEntryCreateWithoutTagsInputSchema } from './BibEntryCreateWithoutTagsInputSchema';
-import { BibEntryUncheckedCreateWithoutTagsInputSchema } from './BibEntryUncheckedCreateWithoutTagsInputSchema';
-import { BibEntryCreateOrConnectWithoutTagsInputSchema } from './BibEntryCreateOrConnectWithoutTagsInputSchema';
-import { BibEntryUpsertWithWhereUniqueWithoutTagsInputSchema } from './BibEntryUpsertWithWhereUniqueWithoutTagsInputSchema';
-import { BibEntryWhereUniqueInputSchema } from './BibEntryWhereUniqueInputSchema';
-import { BibEntryUpdateWithWhereUniqueWithoutTagsInputSchema } from './BibEntryUpdateWithWhereUniqueWithoutTagsInputSchema';
-import { BibEntryUpdateManyWithWhereWithoutTagsInputSchema } from './BibEntryUpdateManyWithWhereWithoutTagsInputSchema';
-import { BibEntryScalarWhereInputSchema } from './BibEntryScalarWhereInputSchema';
-
+import { BibEntryCreateWithoutTagsInputSchema } from '../BibEntryCreateWithoutTagsInputSchema.js';
+import { BibEntryUncheckedCreateWithoutTagsInputSchema } from '../BibEntryUncheckedCreateWithoutTagsInputSchema.js';
+import { BibEntryCreateOrConnectWithoutTagsInputSchema } from '../BibEntryCreateOrConnectWithoutTagsInputSchema.js';
+import { BibEntryUpsertWithWhereUniqueWithoutTagsInputSchema } from '../BibEntryUpsertWithWhereUniqueWithoutTagsInputSchema.js';
+import { BibEntryWhereUniqueInputSchema } from '../BibEntryWhereUniqueInputSchema.js';
+import { BibEntryUpdateWithWhereUniqueWithoutTagsInputSchema } from '../BibEntryUpdateWithWhereUniqueWithoutTagsInputSchema.js';
+import { BibEntryUpdateManyWithWhereWithoutTagsInputSchema } from '../BibEntryUpdateManyWithWhereWithoutTagsInputSchema.js';
+import { BibEntryScalarWhereInputSchema } from '../BibEntryScalarWhereInputSchema.js';
 export const BibEntryUpdateManyWithoutTagsNestedInputSchema: z.ZodType<Prisma.BibEntryUpdateManyWithoutTagsNestedInput> = z.object({
   create: z.union([ z.lazy(() => BibEntryCreateWithoutTagsInputSchema),z.lazy(() => BibEntryCreateWithoutTagsInputSchema).array(),z.lazy(() => BibEntryUncheckedCreateWithoutTagsInputSchema),z.lazy(() => BibEntryUncheckedCreateWithoutTagsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => BibEntryCreateOrConnectWithoutTagsInputSchema),z.lazy(() => BibEntryCreateOrConnectWithoutTagsInputSchema).array() ]).optional(),
@@ -22,5 +20,4 @@ export const BibEntryUpdateManyWithoutTagsNestedInputSchema: z.ZodType<Prisma.Bi
   updateMany: z.union([ z.lazy(() => BibEntryUpdateManyWithWhereWithoutTagsInputSchema),z.lazy(() => BibEntryUpdateManyWithWhereWithoutTagsInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => BibEntryScalarWhereInputSchema),z.lazy(() => BibEntryScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default BibEntryUpdateManyWithoutTagsNestedInputSchema;

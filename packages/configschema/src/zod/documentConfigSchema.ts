@@ -29,8 +29,6 @@ const docTypeColorGroup = z.object({
         ),
 });
 
-
-
 export const docTypeUISchema = z
     .object({
         styles: z
@@ -44,33 +42,31 @@ export const docTypeUISchema = z
                 //         "Css classes to be applied to elements related to this specific document type.",
                 //     ),
             })
-            .default({})
-            // .transform((a) => {
-            //     return {
-            //         dark: a.dark,
-            //         light: a.light,
-            //         // combined_classes:
-            //         //     a.combined_classes ||
-            //         //     `${a.dark.bg || ""} ${a.dark.fg || ""} ${a.light.bg || ""} ${a.light.fg || ""}`,
-            //     };
-            // }),
+            .default({}),
+        // .transform((a) => {
+        //     return {
+        //         dark: a.dark,
+        //         light: a.light,
+        //         // combined_classes:
+        //         //     a.combined_classes ||
+        //         //     `${a.dark.bg || ""} ${a.dark.fg || ""} ${a.light.bg || ""} ${a.light.fg || ""}`,
+        //     };
+        // }),
     })
     .default({});
 
-export const zodDocTypeInput = z
-    .string()
-    .transform(makeValidIdOnlyLetters)
+export const zodDocTypeInput = z.string().transform(makeValidIdOnlyLetters);
 
-// NOTE: I'm removing the following keys to minimize the config to where the app currently is, not to where I want it to be. Can add them back in as the app's capabilities grow to make use of them.
-// 1. contentType: documentConfigContentTypeSchema
 export const documentTypeConfigSchemaBase = z.object({
     id: z
         .string()
         .optional()
         .describe("A unique key to be used internally to deal with this doctype."),
-    docType: zodDocTypeInput.optional().describe(
-        "A unique key which describes the nature of this document type: 'MathNote', 'Journal', 'References', etc...",
-    ),
+    docType: zodDocTypeInput
+        .optional()
+        .describe(
+            "A unique key which describes the nature of this document type: 'MathNote', 'Journal', 'References', etc...",
+        ),
     filePathPattern: z
         .string()
         .optional()
@@ -154,11 +150,13 @@ export const documentTypeConfigSchemaBase = z.object({
     inNavbar: z.boolean().default(false),
 });
 
-export const documentTypeConfigSchema = documentTypeConfigSchemaBase
-    .partial({
+export const documentTypeConfigSchemaInner = documentTypeConfigSchemaBase.partial({
         url: true,
-    })
-    .transform((a) => {
+    });
+
+
+export const documentTypeConfigSchema = documentTypeConfigSchemaInner.transform(
+    (a) => {
         const _id = makeValidId(a.id || a.label);
         return {
             ...a,
@@ -166,7 +164,8 @@ export const documentTypeConfigSchema = documentTypeConfigSchemaBase
             id: _id,
             url: a.url || `/${_id}`,
         };
-    });
+    },
+);
 
 export type DocumentTypeConfig = z.output<typeof documentTypeConfigSchema>;
 export type DocumentTypeConfigInput = z.input<typeof documentTypeConfigSchema>;

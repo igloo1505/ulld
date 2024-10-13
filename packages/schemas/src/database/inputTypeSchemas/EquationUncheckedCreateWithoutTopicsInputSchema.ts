@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { JsonNullValueInputSchema } from './JsonNullValueInputSchema';
-import { InputJsonValueSchema } from './InputJsonValueSchema';
-import { EquationCreatevariablesInputSchema } from './EquationCreatevariablesInputSchema';
-import { EquationCreatekeywordsInputSchema } from './EquationCreatekeywordsInputSchema';
-import { RelatedValuesUncheckedCreateNestedManyWithoutEquationsInputSchema } from './RelatedValuesUncheckedCreateNestedManyWithoutEquationsInputSchema';
-import { TagUncheckedCreateNestedManyWithoutEquationsInputSchema } from './TagUncheckedCreateNestedManyWithoutEquationsInputSchema';
-import { SubjectUncheckedCreateNestedManyWithoutEquationsInputSchema } from './SubjectUncheckedCreateNestedManyWithoutEquationsInputSchema';
-import { MdxNoteUncheckedCreateNestedManyWithoutEquationsInputSchema } from './MdxNoteUncheckedCreateNestedManyWithoutEquationsInputSchema';
-
+import { JsonNullValueInputSchema } from '../JsonNullValueInputSchema.js';
+import { InputJsonValueSchema } from '../InputJsonValueSchema.js';
+import { EquationCreatevariablesInputSchema } from '../EquationCreatevariablesInputSchema.js';
+import { EquationCreatekeywordsInputSchema } from '../EquationCreatekeywordsInputSchema.js';
+import { RelatedValuesUncheckedCreateNestedManyWithoutEquationsInputSchema } from '../RelatedValuesUncheckedCreateNestedManyWithoutEquationsInputSchema.js';
+import { TagUncheckedCreateNestedManyWithoutEquationsInputSchema } from '../TagUncheckedCreateNestedManyWithoutEquationsInputSchema.js';
+import { SubjectUncheckedCreateNestedManyWithoutEquationsInputSchema } from '../SubjectUncheckedCreateNestedManyWithoutEquationsInputSchema.js';
+import { MdxNoteUncheckedCreateNestedManyWithoutEquationsInputSchema } from '../MdxNoteUncheckedCreateNestedManyWithoutEquationsInputSchema.js';
 export const EquationUncheckedCreateWithoutTopicsInputSchema: z.ZodType<Prisma.EquationUncheckedCreateWithoutTopicsInput> = z.object({
   id: z.number().int().optional(),
   equationId: z.string().optional().nullable(),
@@ -27,5 +25,4 @@ export const EquationUncheckedCreateWithoutTopicsInputSchema: z.ZodType<Prisma.E
   subjects: z.lazy(() => SubjectUncheckedCreateNestedManyWithoutEquationsInputSchema).optional(),
   mdxNotes: z.lazy(() => MdxNoteUncheckedCreateNestedManyWithoutEquationsInputSchema).optional()
 }).strict();
-
 export default EquationUncheckedCreateWithoutTopicsInputSchema;

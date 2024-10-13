@@ -1,16 +1,14 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteCreateWithoutSequentialListInputSchema } from './MdxNoteCreateWithoutSequentialListInputSchema';
-import { MdxNoteUncheckedCreateWithoutSequentialListInputSchema } from './MdxNoteUncheckedCreateWithoutSequentialListInputSchema';
-import { MdxNoteCreateOrConnectWithoutSequentialListInputSchema } from './MdxNoteCreateOrConnectWithoutSequentialListInputSchema';
-import { MdxNoteUpsertWithWhereUniqueWithoutSequentialListInputSchema } from './MdxNoteUpsertWithWhereUniqueWithoutSequentialListInputSchema';
-import { MdxNoteCreateManySequentialListInputEnvelopeSchema } from './MdxNoteCreateManySequentialListInputEnvelopeSchema';
-import { MdxNoteWhereUniqueInputSchema } from './MdxNoteWhereUniqueInputSchema';
-import { MdxNoteUpdateWithWhereUniqueWithoutSequentialListInputSchema } from './MdxNoteUpdateWithWhereUniqueWithoutSequentialListInputSchema';
-import { MdxNoteUpdateManyWithWhereWithoutSequentialListInputSchema } from './MdxNoteUpdateManyWithWhereWithoutSequentialListInputSchema';
-import { MdxNoteScalarWhereInputSchema } from './MdxNoteScalarWhereInputSchema';
-
+import { MdxNoteCreateWithoutSequentialListInputSchema } from '../MdxNoteCreateWithoutSequentialListInputSchema.js';
+import { MdxNoteUncheckedCreateWithoutSequentialListInputSchema } from '../MdxNoteUncheckedCreateWithoutSequentialListInputSchema.js';
+import { MdxNoteCreateOrConnectWithoutSequentialListInputSchema } from '../MdxNoteCreateOrConnectWithoutSequentialListInputSchema.js';
+import { MdxNoteUpsertWithWhereUniqueWithoutSequentialListInputSchema } from '../MdxNoteUpsertWithWhereUniqueWithoutSequentialListInputSchema.js';
+import { MdxNoteCreateManySequentialListInputEnvelopeSchema } from '../MdxNoteCreateManySequentialListInputEnvelopeSchema.js';
+import { MdxNoteWhereUniqueInputSchema } from '../MdxNoteWhereUniqueInputSchema.js';
+import { MdxNoteUpdateWithWhereUniqueWithoutSequentialListInputSchema } from '../MdxNoteUpdateWithWhereUniqueWithoutSequentialListInputSchema.js';
+import { MdxNoteUpdateManyWithWhereWithoutSequentialListInputSchema } from '../MdxNoteUpdateManyWithWhereWithoutSequentialListInputSchema.js';
+import { MdxNoteScalarWhereInputSchema } from '../MdxNoteScalarWhereInputSchema.js';
 export const MdxNoteUncheckedUpdateManyWithoutSequentialListNestedInputSchema: z.ZodType<Prisma.MdxNoteUncheckedUpdateManyWithoutSequentialListNestedInput> = z.object({
   create: z.union([ z.lazy(() => MdxNoteCreateWithoutSequentialListInputSchema),z.lazy(() => MdxNoteCreateWithoutSequentialListInputSchema).array(),z.lazy(() => MdxNoteUncheckedCreateWithoutSequentialListInputSchema),z.lazy(() => MdxNoteUncheckedCreateWithoutSequentialListInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => MdxNoteCreateOrConnectWithoutSequentialListInputSchema),z.lazy(() => MdxNoteCreateOrConnectWithoutSequentialListInputSchema).array() ]).optional(),
@@ -24,5 +22,4 @@ export const MdxNoteUncheckedUpdateManyWithoutSequentialListNestedInputSchema: z
   updateMany: z.union([ z.lazy(() => MdxNoteUpdateManyWithWhereWithoutSequentialListInputSchema),z.lazy(() => MdxNoteUpdateManyWithWhereWithoutSequentialListInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => MdxNoteScalarWhereInputSchema),z.lazy(() => MdxNoteScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default MdxNoteUncheckedUpdateManyWithoutSequentialListNestedInputSchema;

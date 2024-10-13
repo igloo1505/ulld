@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { RelatedValuesOrderByRelationAggregateInputSchema } from './RelatedValuesOrderByRelationAggregateInputSchema';
-import { TagOrderByRelationAggregateInputSchema } from './TagOrderByRelationAggregateInputSchema';
-import { TopicOrderByRelationAggregateInputSchema } from './TopicOrderByRelationAggregateInputSchema';
-import { SubjectOrderByRelationAggregateInputSchema } from './SubjectOrderByRelationAggregateInputSchema';
-import { MdxNoteOrderByRelationAggregateInputSchema } from './MdxNoteOrderByRelationAggregateInputSchema';
-import { EquationOrderByRelevanceInputSchema } from './EquationOrderByRelevanceInputSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
+import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
+import { RelatedValuesOrderByRelationAggregateInputSchema } from '../RelatedValuesOrderByRelationAggregateInputSchema.js';
+import { TagOrderByRelationAggregateInputSchema } from '../TagOrderByRelationAggregateInputSchema.js';
+import { TopicOrderByRelationAggregateInputSchema } from '../TopicOrderByRelationAggregateInputSchema.js';
+import { SubjectOrderByRelationAggregateInputSchema } from '../SubjectOrderByRelationAggregateInputSchema.js';
+import { MdxNoteOrderByRelationAggregateInputSchema } from '../MdxNoteOrderByRelationAggregateInputSchema.js';
+import { EquationOrderByRelevanceInputSchema } from '../EquationOrderByRelevanceInputSchema.js';
 export const EquationOrderByWithRelationInputSchema: z.ZodType<Prisma.EquationOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   equationId: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
@@ -29,5 +27,4 @@ export const EquationOrderByWithRelationInputSchema: z.ZodType<Prisma.EquationOr
   mdxNotes: z.lazy(() => MdxNoteOrderByRelationAggregateInputSchema).optional(),
   _relevance: z.lazy(() => EquationOrderByRelevanceInputSchema).optional()
 }).strict();
-
 export default EquationOrderByWithRelationInputSchema;

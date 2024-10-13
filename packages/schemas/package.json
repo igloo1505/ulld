@@ -1,21 +1,88 @@
 {
   "name": "@ulld/schemas",
   "version": "0.0.5",
+  "private": false,
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "wireit",
+    "genTypes": "wireit",
+    "setDatabaseTunnelExports": "wireit",
+    "dev": "next dev",
+    "lint": "next lint",
+    "test": "echo 'Add test script here'"
+  },
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "transpile",
+        "genTypes"
+      ]
+    },
+    "transpile": {
+      "command": "tsup-node",
+      "output": [
+        "dist"
+      ],
+      "files": [
+        "src/**"
+      ],
+      "dependencies": [
+        "cleanBuild",
+        "setDatabaseTunnelExports"
+      ]
+    },
+    "cleanBuild": {
+      "command": "trash ./dist"
+    },
+    "genTypes": {
+      "command": "pnpm tsc --project ./tsConfigBuildTypes.json",
+      "output": [
+        "dist"
+      ],
+      "files": [
+        "src/**"
+      ],
+      "clean": false
+    },
+    "setDatabaseTunnelExports": {
+      "command": "tsx ./src/__scripts__/ensureFileExtensionExport.ts"
+    }
+  },
+  "exports": {
+    "./types": {
+      "types": "./dist/types/main.d.ts",
+      "import": "./dist/types/main.js",
+      "require": "./dist/types/main.cjs"
+    },
+    "./frontMatter": {
+      "types": "./dist/mdx/frontMatter/main.d.ts",
+      "import": "./dist/mdx/frontMatter/main.js",
+      "require": "./dist/mdx/frontMatter/main.cjs"
+    },
+    "./mdx-parsing-params": {
+      "types": "./dist/mdx/parsing/params/index.d.ts",
+      "import": "./dist/mdx/parsing/params/index.js",
+      "require": "./dist/mdx/parsing/params/index.cjs"
+    },
+    "./classProps-mdxNote": {
+      "types": "./dist/api/prismaMdxRelations/mdxNote/classProps.d.ts",
+      "import": "./dist/api/prismaMdxRelations/mdxNote/classProps.js",
+      "require": "./dist/api/prismaMdxRelations/mdxNote/classProps.cjs"
+    }
+  },
   "dependencies": {
     "zod": "3.23.8"
   },
   "devDependencies": {},
-  "exports": {
-    "./frontMatter": "./src/mdx/frontMatter/main.ts",
-    "./mdx-parsing-params": "./src/mdx/parsing/params/index.ts"
-  },
-  "files": [
-    "pluginConfig.ulld.json",
-    "src"
-  ],
-  "packageManager": "pnpm@9.0.4",
+  "@ulld/api": "workspace:*",
   "peerDependencies": {
-    "@ulld/api": "workspace:*",
+    "@ulld/database": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/eslint-config": "workspace:*",
     "@ulld/types": "workspace:*",
@@ -25,14 +92,5 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "echo 'Add build script here'",
-    "dev": "next dev",
-    "lint": "next lint",
-    "test": "echo 'Add test script here'"
-  }
+  "packageManager": "pnpm@9.0.4"
 }

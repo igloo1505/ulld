@@ -1,6 +1,8 @@
 import { z } from "zod";
 import { zodDocTypeInput } from "../zod/documentConfigSchema.js";
 import { internalDocTypes } from "../zod/internalDocumentTypes.js";
+// TODO: Remove all references to this file. Everything was moved to the schemas package.
+
 
 export type DocTypes =
     | string

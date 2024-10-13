@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/zod/refinedConfigs/justFsRequired.ts"],"sourcesContent":["import { appConfigDeepPartial, appConfigSchema } from \"../main.js\";\n\nexport const appConfigOnlyFSRequired = appConfigDeepPartial.required({\n    fsRoot: true\n})\n"],"mappings":";;;;;AAEO,IAAM,0BAA0B,qBAAqB,SAAS;AAAA,EACjE,QAAQ;AACZ,CAAC;","names":[]}

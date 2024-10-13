@@ -1,8 +1,6 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
 export const PracticeExamMinOrderByAggregateInputSchema: z.ZodType<Prisma.PracticeExamMinOrderByAggregateInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   correctCount: z.lazy(() => SortOrderSchema).optional(),
@@ -11,5 +9,4 @@ export const PracticeExamMinOrderByAggregateInputSchema: z.ZodType<Prisma.Practi
   timeCompletedInSeconds: z.lazy(() => SortOrderSchema).optional(),
   date: z.lazy(() => SortOrderSchema).optional()
 }).strict();
-
 export default PracticeExamMinOrderByAggregateInputSchema;

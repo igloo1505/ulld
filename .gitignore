@@ -21,5 +21,6 @@ buildUtils/baseAppData.json
 *storybook.log
 /apps/storybook/storybook-static
 slotExistsMap.json
+**/.wireit/
 
 WHEN_RETURN_TO_ONLINE.zsh

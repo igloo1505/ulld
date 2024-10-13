@@ -1,16 +1,14 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TopicCreateWithoutKanbanInputSchema } from './TopicCreateWithoutKanbanInputSchema';
-import { TopicUncheckedCreateWithoutKanbanInputSchema } from './TopicUncheckedCreateWithoutKanbanInputSchema';
-import { TopicCreateOrConnectWithoutKanbanInputSchema } from './TopicCreateOrConnectWithoutKanbanInputSchema';
-import { TopicUpsertWithWhereUniqueWithoutKanbanInputSchema } from './TopicUpsertWithWhereUniqueWithoutKanbanInputSchema';
-import { TopicCreateManyKanbanInputEnvelopeSchema } from './TopicCreateManyKanbanInputEnvelopeSchema';
-import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema';
-import { TopicUpdateWithWhereUniqueWithoutKanbanInputSchema } from './TopicUpdateWithWhereUniqueWithoutKanbanInputSchema';
-import { TopicUpdateManyWithWhereWithoutKanbanInputSchema } from './TopicUpdateManyWithWhereWithoutKanbanInputSchema';
-import { TopicScalarWhereInputSchema } from './TopicScalarWhereInputSchema';
-
+import { TopicCreateWithoutKanbanInputSchema } from '../TopicCreateWithoutKanbanInputSchema.js';
+import { TopicUncheckedCreateWithoutKanbanInputSchema } from '../TopicUncheckedCreateWithoutKanbanInputSchema.js';
+import { TopicCreateOrConnectWithoutKanbanInputSchema } from '../TopicCreateOrConnectWithoutKanbanInputSchema.js';
+import { TopicUpsertWithWhereUniqueWithoutKanbanInputSchema } from '../TopicUpsertWithWhereUniqueWithoutKanbanInputSchema.js';
+import { TopicCreateManyKanbanInputEnvelopeSchema } from '../TopicCreateManyKanbanInputEnvelopeSchema.js';
+import { TopicWhereUniqueInputSchema } from '../TopicWhereUniqueInputSchema.js';
+import { TopicUpdateWithWhereUniqueWithoutKanbanInputSchema } from '../TopicUpdateWithWhereUniqueWithoutKanbanInputSchema.js';
+import { TopicUpdateManyWithWhereWithoutKanbanInputSchema } from '../TopicUpdateManyWithWhereWithoutKanbanInputSchema.js';
+import { TopicScalarWhereInputSchema } from '../TopicScalarWhereInputSchema.js';
 export const TopicUpdateManyWithoutKanbanNestedInputSchema: z.ZodType<Prisma.TopicUpdateManyWithoutKanbanNestedInput> = z.object({
   create: z.union([ z.lazy(() => TopicCreateWithoutKanbanInputSchema),z.lazy(() => TopicCreateWithoutKanbanInputSchema).array(),z.lazy(() => TopicUncheckedCreateWithoutKanbanInputSchema),z.lazy(() => TopicUncheckedCreateWithoutKanbanInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TopicCreateOrConnectWithoutKanbanInputSchema),z.lazy(() => TopicCreateOrConnectWithoutKanbanInputSchema).array() ]).optional(),
@@ -24,5 +22,4 @@ export const TopicUpdateManyWithoutKanbanNestedInputSchema: z.ZodType<Prisma.Top
   updateMany: z.union([ z.lazy(() => TopicUpdateManyWithWhereWithoutKanbanInputSchema),z.lazy(() => TopicUpdateManyWithWhereWithoutKanbanInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => TopicScalarWhereInputSchema),z.lazy(() => TopicScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default TopicUpdateManyWithoutKanbanNestedInputSchema;

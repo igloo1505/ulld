@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { HealthReportWhereInputSchema } from './HealthReportWhereInputSchema';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-import { FloatFilterSchema } from './FloatFilterSchema';
-import { FloatNullableFilterSchema } from './FloatNullableFilterSchema';
-import { IntNullableFilterSchema } from './IntNullableFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-import { DietNullableRelationFilterSchema } from './DietNullableRelationFilterSchema';
-import { DietWhereInputSchema } from './DietWhereInputSchema';
-
+import { HealthReportWhereInputSchema } from '../HealthReportWhereInputSchema.js';
+import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
+import { FloatFilterSchema } from '../FloatFilterSchema.js';
+import { FloatNullableFilterSchema } from '../FloatNullableFilterSchema.js';
+import { IntNullableFilterSchema } from '../IntNullableFilterSchema.js';
+import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
+import { DietNullableRelationFilterSchema } from '../DietNullableRelationFilterSchema.js';
+import { DietWhereInputSchema } from '../DietWhereInputSchema.js';
 export const HealthReportWhereUniqueInputSchema: z.ZodType<Prisma.HealthReportWhereUniqueInput> = z.object({
   id: z.number().int()
 })
@@ -52,5 +50,4 @@ export const HealthReportWhereUniqueInputSchema: z.ZodType<Prisma.HealthReportWh
   created: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   currentDiet: z.union([ z.lazy(() => DietNullableRelationFilterSchema),z.lazy(() => DietWhereInputSchema) ]).optional().nullable(),
 }).strict());
-
 export default HealthReportWhereUniqueInputSchema;

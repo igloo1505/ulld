@@ -1,8 +1,8 @@
 import {
   baseAppSlot
-} from "../chunk-JF6UGOEW.js";
+} from "../chunk-RMYO3SSH.js";
 import "../chunk-3H2DQBXI.js";
-import "../chunk-IWQ6HJEI.js";
+import "../chunk-2BSZWRZM.js";
 export {
   baseAppSlot
 };

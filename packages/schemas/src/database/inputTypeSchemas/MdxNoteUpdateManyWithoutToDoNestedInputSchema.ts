@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteCreateWithoutToDoInputSchema } from './MdxNoteCreateWithoutToDoInputSchema';
-import { MdxNoteUncheckedCreateWithoutToDoInputSchema } from './MdxNoteUncheckedCreateWithoutToDoInputSchema';
-import { MdxNoteCreateOrConnectWithoutToDoInputSchema } from './MdxNoteCreateOrConnectWithoutToDoInputSchema';
-import { MdxNoteUpsertWithWhereUniqueWithoutToDoInputSchema } from './MdxNoteUpsertWithWhereUniqueWithoutToDoInputSchema';
-import { MdxNoteWhereUniqueInputSchema } from './MdxNoteWhereUniqueInputSchema';
-import { MdxNoteUpdateWithWhereUniqueWithoutToDoInputSchema } from './MdxNoteUpdateWithWhereUniqueWithoutToDoInputSchema';
-import { MdxNoteUpdateManyWithWhereWithoutToDoInputSchema } from './MdxNoteUpdateManyWithWhereWithoutToDoInputSchema';
-import { MdxNoteScalarWhereInputSchema } from './MdxNoteScalarWhereInputSchema';
-
+import { MdxNoteCreateWithoutToDoInputSchema } from '../MdxNoteCreateWithoutToDoInputSchema.js';
+import { MdxNoteUncheckedCreateWithoutToDoInputSchema } from '../MdxNoteUncheckedCreateWithoutToDoInputSchema.js';
+import { MdxNoteCreateOrConnectWithoutToDoInputSchema } from '../MdxNoteCreateOrConnectWithoutToDoInputSchema.js';
+import { MdxNoteUpsertWithWhereUniqueWithoutToDoInputSchema } from '../MdxNoteUpsertWithWhereUniqueWithoutToDoInputSchema.js';
+import { MdxNoteWhereUniqueInputSchema } from '../MdxNoteWhereUniqueInputSchema.js';
+import { MdxNoteUpdateWithWhereUniqueWithoutToDoInputSchema } from '../MdxNoteUpdateWithWhereUniqueWithoutToDoInputSchema.js';
+import { MdxNoteUpdateManyWithWhereWithoutToDoInputSchema } from '../MdxNoteUpdateManyWithWhereWithoutToDoInputSchema.js';
+import { MdxNoteScalarWhereInputSchema } from '../MdxNoteScalarWhereInputSchema.js';
 export const MdxNoteUpdateManyWithoutToDoNestedInputSchema: z.ZodType<Prisma.MdxNoteUpdateManyWithoutToDoNestedInput> = z.object({
   create: z.union([ z.lazy(() => MdxNoteCreateWithoutToDoInputSchema),z.lazy(() => MdxNoteCreateWithoutToDoInputSchema).array(),z.lazy(() => MdxNoteUncheckedCreateWithoutToDoInputSchema),z.lazy(() => MdxNoteUncheckedCreateWithoutToDoInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => MdxNoteCreateOrConnectWithoutToDoInputSchema),z.lazy(() => MdxNoteCreateOrConnectWithoutToDoInputSchema).array() ]).optional(),
@@ -22,5 +20,4 @@ export const MdxNoteUpdateManyWithoutToDoNestedInputSchema: z.ZodType<Prisma.Mdx
   updateMany: z.union([ z.lazy(() => MdxNoteUpdateManyWithWhereWithoutToDoInputSchema),z.lazy(() => MdxNoteUpdateManyWithWhereWithoutToDoInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => MdxNoteScalarWhereInputSchema),z.lazy(() => MdxNoteScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default MdxNoteUpdateManyWithoutToDoNestedInputSchema;

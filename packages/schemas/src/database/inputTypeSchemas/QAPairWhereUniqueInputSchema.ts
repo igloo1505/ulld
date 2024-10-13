@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { QAPairWhereInputSchema } from './QAPairWhereInputSchema';
-import { StringFilterSchema } from './StringFilterSchema';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-import { IntFilterSchema } from './IntFilterSchema';
-import { TagListRelationFilterSchema } from './TagListRelationFilterSchema';
-import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema';
-import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema';
-import { PracticeExamListRelationFilterSchema } from './PracticeExamListRelationFilterSchema';
-
+import { QAPairWhereInputSchema } from '../QAPairWhereInputSchema.js';
+import { StringFilterSchema } from '../StringFilterSchema.js';
+import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
+import { IntFilterSchema } from '../IntFilterSchema.js';
+import { TagListRelationFilterSchema } from '../TagListRelationFilterSchema.js';
+import { TopicListRelationFilterSchema } from '../TopicListRelationFilterSchema.js';
+import { SubjectListRelationFilterSchema } from '../SubjectListRelationFilterSchema.js';
+import { PracticeExamListRelationFilterSchema } from '../PracticeExamListRelationFilterSchema.js';
 export const QAPairWhereUniqueInputSchema: z.ZodType<Prisma.QAPairWhereUniqueInput> = z.union([
   z.object({
     id: z.string(),
@@ -38,5 +36,4 @@ export const QAPairWhereUniqueInputSchema: z.ZodType<Prisma.QAPairWhereUniqueInp
   subjects: z.lazy(() => SubjectListRelationFilterSchema).optional(),
   practiceExam: z.lazy(() => PracticeExamListRelationFilterSchema).optional()
 }).strict());
-
 export default QAPairWhereUniqueInputSchema;

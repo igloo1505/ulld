@@ -1,10 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { MdxNoteWhereInputSchema } from '../inputTypeSchemas/MdxNoteWhereInputSchema'
-import { MdxNoteOrderByWithAggregationInputSchema } from '../inputTypeSchemas/MdxNoteOrderByWithAggregationInputSchema'
-import { MdxNoteScalarFieldEnumSchema } from '../inputTypeSchemas/MdxNoteScalarFieldEnumSchema'
-import { MdxNoteScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/MdxNoteScalarWhereWithAggregatesInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/MdxNoteWhereInputSchema.js
+..//inputTypeSchemas/MdxNoteOrderByWithAggregationInputSchema.js
+..//inputTypeSchemas/MdxNoteScalarFieldEnumSchema.js
+..//inputTypeSchemas/MdxNoteScalarWhereWithAggregatesInputSchema.js
 export const MdxNoteGroupByArgsSchema: z.ZodType<Prisma.MdxNoteGroupByArgs> = z.object({
   where: MdxNoteWhereInputSchema.optional(),
   orderBy: z.union([ MdxNoteOrderByWithAggregationInputSchema.array(),MdxNoteOrderByWithAggregationInputSchema ]).optional(),
@@ -13,5 +12,4 @@ export const MdxNoteGroupByArgsSchema: z.ZodType<Prisma.MdxNoteGroupByArgs> = z.
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
-
 export default MdxNoteGroupByArgsSchema;

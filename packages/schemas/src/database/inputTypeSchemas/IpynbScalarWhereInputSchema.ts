@@ -1,17 +1,15 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from './IntFilterSchema';
-import { StringFilterSchema } from './StringFilterSchema';
-import { BoolNullableFilterSchema } from './BoolNullableFilterSchema';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-import { StringNullableListFilterSchema } from './StringNullableListFilterSchema';
-import { FloatNullableListFilterSchema } from './FloatNullableListFilterSchema';
-import { BytesFilterSchema } from './BytesFilterSchema';
-import { IntNullableFilterSchema } from './IntNullableFilterSchema';
-import { BoolFilterSchema } from './BoolFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-
+import { IntFilterSchema } from '../IntFilterSchema.js';
+import { StringFilterSchema } from '../StringFilterSchema.js';
+import { BoolNullableFilterSchema } from '../BoolNullableFilterSchema.js';
+import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
+import { StringNullableListFilterSchema } from '../StringNullableListFilterSchema.js';
+import { FloatNullableListFilterSchema } from '../FloatNullableListFilterSchema.js';
+import { BytesFilterSchema } from '../BytesFilterSchema.js';
+import { IntNullableFilterSchema } from '../IntNullableFilterSchema.js';
+import { BoolFilterSchema } from '../BoolFilterSchema.js';
+import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
 export const IpynbScalarWhereInputSchema: z.ZodType<Prisma.IpynbScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => IpynbScalarWhereInputSchema),z.lazy(() => IpynbScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => IpynbScalarWhereInputSchema).array().optional(),
@@ -33,5 +31,4 @@ export const IpynbScalarWhereInputSchema: z.ZodType<Prisma.IpynbScalarWhereInput
   lastSync: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   lastAccess: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
-
 export default IpynbScalarWhereInputSchema;

@@ -1,6 +1,27 @@
 {
   "name": "@ulld/pdf",
   "version": "0.0.124",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src",
+    "pluginConfig.ulld.json"
+  ],
+  "scripts": {
+    "build": "echo 'Add build script here'",
+    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
+    "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
+    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "test": "echo 'Add test script here'"
+  },
+  "types": "./src/types.ts",
+  "exports": {
+    "./types": "./src/types.ts",
+    "./embeddablePdf": "./src/components/embeddablePdf/main.tsx",
+    "./fullPdf": "./src/components/fullPdf/PdfPageWrapper.tsx"
+  },
   "dependencies": {
     "@react-pdf/renderer": "3.3.8",
     "@recogito/recogito-react-pdf": "0.8.8",
@@ -14,16 +35,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "exports": {
-    "./types": "./src/types.ts",
-    "./embeddablePdf": "./src/components/embeddablePdf/main.tsx",
-    "./fullPdf": "./src/components/fullPdf/PdfPageWrapper.tsx"
-  },
-  "files": [
-    "src",
-    "pluginConfig.ulld.json"
-  ],
-  "packageManager": "pnpm@9.0.4",
   "peerDependencies": {
     "@ulld/api": "workspace:*",
     "@ulld/configschema": "workspace:*",
@@ -43,18 +54,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "echo 'Add build script here'",
-    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
-    "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'Add test script here'"
-  },
-  "types": "./src/types.ts",
+  "packageManager": "pnpm@9.0.4",
   "ulld-pluginConfig": {
     "pluginName": "@ulld/pdf",
     "label": "Pdf",

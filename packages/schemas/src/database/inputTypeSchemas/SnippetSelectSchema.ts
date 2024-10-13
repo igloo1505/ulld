@@ -1,6 +1,5 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 export const SnippetSelectSchema: z.ZodType<Prisma.SnippetSelect> = z.object({
   id: z.boolean().optional(),
   content: z.boolean().optional(),
@@ -9,5 +8,4 @@ export const SnippetSelectSchema: z.ZodType<Prisma.SnippetSelect> = z.object({
   language: z.boolean().optional(),
   createdAt: z.boolean().optional(),
 }).strict()
-
 export default SnippetSelectSchema;

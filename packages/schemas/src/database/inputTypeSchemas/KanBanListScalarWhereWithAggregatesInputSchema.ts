@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema';
-import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema';
-import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema';
-
+import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from '../StringNullableWithAggregatesFilterSchema.js';
+import { IntNullableWithAggregatesFilterSchema } from '../IntNullableWithAggregatesFilterSchema.js';
 export const KanBanListScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.KanBanListScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => KanBanListScalarWhereWithAggregatesInputSchema),z.lazy(() => KanBanListScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => KanBanListScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -14,5 +12,4 @@ export const KanBanListScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.Ka
   title: z.union([ z.lazy(() => StringNullableWithAggregatesFilterSchema),z.string() ]).optional().nullable(),
   boardId: z.union([ z.lazy(() => IntNullableWithAggregatesFilterSchema),z.number() ]).optional().nullable(),
 }).strict();
-
 export default KanBanListScalarWhereWithAggregatesInputSchema;

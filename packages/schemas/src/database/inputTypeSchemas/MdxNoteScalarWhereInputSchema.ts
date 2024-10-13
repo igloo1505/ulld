@@ -1,16 +1,14 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from './IntFilterSchema';
-import { BoolNullableFilterSchema } from './BoolNullableFilterSchema';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-import { StringFilterSchema } from './StringFilterSchema';
-import { StringNullableListFilterSchema } from './StringNullableListFilterSchema';
-import { FloatNullableListFilterSchema } from './FloatNullableListFilterSchema';
-import { FloatNullableFilterSchema } from './FloatNullableFilterSchema';
-import { BoolFilterSchema } from './BoolFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-
+import { IntFilterSchema } from '../IntFilterSchema.js';
+import { BoolNullableFilterSchema } from '../BoolNullableFilterSchema.js';
+import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
+import { StringFilterSchema } from '../StringFilterSchema.js';
+import { StringNullableListFilterSchema } from '../StringNullableListFilterSchema.js';
+import { FloatNullableListFilterSchema } from '../FloatNullableListFilterSchema.js';
+import { FloatNullableFilterSchema } from '../FloatNullableFilterSchema.js';
+import { BoolFilterSchema } from '../BoolFilterSchema.js';
+import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
 export const MdxNoteScalarWhereInputSchema: z.ZodType<Prisma.MdxNoteScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => MdxNoteScalarWhereInputSchema),z.lazy(() => MdxNoteScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => MdxNoteScalarWhereInputSchema).array().optional(),
@@ -41,5 +39,4 @@ export const MdxNoteScalarWhereInputSchema: z.ZodType<Prisma.MdxNoteScalarWhereI
   lastSync: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   lastAccess: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
-
 export default MdxNoteScalarWhereInputSchema;

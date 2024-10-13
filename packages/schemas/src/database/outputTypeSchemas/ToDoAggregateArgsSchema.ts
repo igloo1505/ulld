@@ -1,9 +1,8 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { ToDoWhereInputSchema } from '../inputTypeSchemas/ToDoWhereInputSchema'
-import { ToDoOrderByWithRelationInputSchema } from '../inputTypeSchemas/ToDoOrderByWithRelationInputSchema'
-import { ToDoWhereUniqueInputSchema } from '../inputTypeSchemas/ToDoWhereUniqueInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/ToDoWhereInputSchema.js
+..//inputTypeSchemas/ToDoOrderByWithRelationInputSchema.js
+..//inputTypeSchemas/ToDoWhereUniqueInputSchema.js
 export const ToDoAggregateArgsSchema: z.ZodType<Prisma.ToDoAggregateArgs> = z.object({
   where: ToDoWhereInputSchema.optional(),
   orderBy: z.union([ ToDoOrderByWithRelationInputSchema.array(),ToDoOrderByWithRelationInputSchema ]).optional(),
@@ -11,5 +10,4 @@ export const ToDoAggregateArgsSchema: z.ZodType<Prisma.ToDoAggregateArgs> = z.ob
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
-
 export default ToDoAggregateArgsSchema;

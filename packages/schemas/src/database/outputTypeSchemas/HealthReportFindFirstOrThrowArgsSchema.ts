@@ -1,14 +1,13 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { HealthReportIncludeSchema } from '../inputTypeSchemas/HealthReportIncludeSchema'
-import { HealthReportWhereInputSchema } from '../inputTypeSchemas/HealthReportWhereInputSchema'
-import { HealthReportOrderByWithRelationInputSchema } from '../inputTypeSchemas/HealthReportOrderByWithRelationInputSchema'
-import { HealthReportWhereUniqueInputSchema } from '../inputTypeSchemas/HealthReportWhereUniqueInputSchema'
-import { HealthReportScalarFieldEnumSchema } from '../inputTypeSchemas/HealthReportScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/HealthReportIncludeSchema.js
+..//inputTypeSchemas/HealthReportWhereInputSchema.js
+..//inputTypeSchemas/HealthReportOrderByWithRelationInputSchema.js
+..//inputTypeSchemas/HealthReportWhereUniqueInputSchema.js
+..//inputTypeSchemas/HealthReportScalarFieldEnumSchema.js
 import { DietArgsSchema } from "../outputTypeSchemas/DietArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const HealthReportSelectSchema: z.ZodType<Prisma.HealthReportSelect> = z.object({
   id: z.boolean().optional(),
   title: z.boolean().optional(),
@@ -45,7 +44,6 @@ export const HealthReportSelectSchema: z.ZodType<Prisma.HealthReportSelect> = z.
   created: z.boolean().optional(),
   currentDiet: z.union([z.boolean(),z.lazy(() => DietArgsSchema)]).optional(),
 }).strict()
-
 export const HealthReportFindFirstOrThrowArgsSchema: z.ZodType<Prisma.HealthReportFindFirstOrThrowArgs> = z.object({
   select: HealthReportSelectSchema.optional(),
   include: HealthReportIncludeSchema.optional(),
@@ -56,5 +54,4 @@ export const HealthReportFindFirstOrThrowArgsSchema: z.ZodType<Prisma.HealthRepo
   skip: z.number().optional(),
   distinct: z.union([ HealthReportScalarFieldEnumSchema,HealthReportScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default HealthReportFindFirstOrThrowArgsSchema;

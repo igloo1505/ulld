@@ -1,9 +1,7 @@
-import {z} from 'zod'
-
 type TableTextStyle = "base" | "lg" | "xl" | "small"
 
 type FrontMatterTableStyles = { 
-    fullWidth?: boolean
+    fullWidth?: boolean | null
     text?: TableTextStyle | null
     math?: TableTextStyle | null
     tableCenter?: boolean | null
@@ -14,7 +12,9 @@ type FrontMatterTableStyles = {
     expand?: boolean | null
 }
 
-export type FrontMatterType<T extends unknown = {}> = {
+
+// TODO: Remove this from the types package and rely only on a zodFrontMatter object in the schemas package.
+export type FrontMatterType<T extends object = {}> = {
     title?: string | null
     created?: string | null
     updated?: string | null
@@ -24,8 +24,8 @@ export type FrontMatterType<T extends unknown = {}> = {
     tags?: string | string[] | null
     importantValues?: number[] | null
     id?: string | null
-    sequential?: number
-    sequentialKey?: string
-    tableStyles?: FrontMatterTableStyles
+    sequential?: number | null
+    sequentialKey?: string | null
+    tableStyles?: FrontMatterTableStyles | null
 } & T
 

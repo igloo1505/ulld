@@ -35,8 +35,9 @@ export interface Option<J extends string | number> {
 export interface ComboboxInputProps<
     T extends FieldValues,
     J extends string | number,
+    OptionType extends Option<J> = Option<J>
 > {
-    options: Option<J>[];
+    options: OptionType[];
     name: Path<T>;
     label: ReactNode;
     desc?: ReactNode;
@@ -44,8 +45,8 @@ export interface ComboboxInputProps<
     inputPlaceholder?: string;
     notFoundText?: ReactNode;
     onOpenChange?: (isOpen: boolean) => void;
-    onSelectOverride?: (val: Option<J> | string) => void;
-    getPlaceHolder?: (opt: Option<J>) => string
+    onSelectOverride?: (val: OptionType | string) => void;
+    getPlaceHolder?: (opt: OptionType) => string
     allowOtherInput?: boolean;
     classes?: {
         formItem?: string;
@@ -67,6 +68,7 @@ export interface ComboboxInputProps<
 export const ComboboxInput = <
     T extends FieldValues,
     J extends string | number,
+    OptionType extends Option<J> = Option<J>
 >({
     name,
     desc,
@@ -82,12 +84,12 @@ export const ComboboxInput = <
     onOpenChange,
     onSelectOverride,
     getPlaceHolder
-}: ComboboxInputProps<T, J>) => {
+}: ComboboxInputProps<T, J, OptionType>) => {
     const form = useFormContext<T>();
     const [open, setOpen] = useState(false);
     let curVal = form.watch(name)
 
-    const foundOpt = curVal ? options.find((item) => item.value === curVal.value) : undefined
+    const foundOpt = curVal ? options.find((item) => item.value === (typeof curVal === "string" ? curVal : curVal.value)) as OptionType : undefined
 
     return (
         <FormField
@@ -119,7 +121,7 @@ export const ComboboxInput = <
                                         style={styles?.button}
                                     >
                                         <div className={"flex-grow text-left"}>
-                                            {field.value
+                                            {curVal
                                                 ? (getPlaceHolder && foundOpt) ? getPlaceHolder(foundOpt) : (foundOpt?.label || placeholder)
                                                 : placeholder}
                                         </div>
@@ -140,7 +142,7 @@ export const ComboboxInput = <
                                             if (allowOtherInput) {
                                                 onEnter(e, (_e) => {
                                                     if (onSelectOverride) {
-                                                        onSelectOverride((_e.target as HTMLInputElement).value,);
+                                                        onSelectOverride((_e.target as HTMLInputElement).value);
                                                         return setOpen(false);
                                                     }
                                                     form.setValue(
@@ -167,7 +169,7 @@ export const ComboboxInput = <
                                                     className={classes.option}
                                                     onSelect={() => {
                                                         if (onSelectOverride) {
-                                                            onSelectOverride(item);
+                                                            onSelectOverride(item as OptionType);
                                                             return setOpen(false);
                                                         }
                                                         form.setValue(

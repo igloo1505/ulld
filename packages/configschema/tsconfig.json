@@ -17,7 +17,6 @@
         "outDir": "dist",
         "noEmit": false,
         "moduleResolution": "NodeNext",
-        // "declarationDir": "types",
         "module": "NodeNext",
         "jsx": "react-jsx",
         "allowImportingTsExtensions": false,

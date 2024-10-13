@@ -1,14 +1,13 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { TimePeriodIncludeSchema } from '../inputTypeSchemas/TimePeriodIncludeSchema'
-import { TimePeriodWhereInputSchema } from '../inputTypeSchemas/TimePeriodWhereInputSchema'
-import { TimePeriodOrderByWithRelationInputSchema } from '../inputTypeSchemas/TimePeriodOrderByWithRelationInputSchema'
-import { TimePeriodWhereUniqueInputSchema } from '../inputTypeSchemas/TimePeriodWhereUniqueInputSchema'
-import { TimePeriodScalarFieldEnumSchema } from '../inputTypeSchemas/TimePeriodScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/TimePeriodIncludeSchema.js
+..//inputTypeSchemas/TimePeriodWhereInputSchema.js
+..//inputTypeSchemas/TimePeriodOrderByWithRelationInputSchema.js
+..//inputTypeSchemas/TimePeriodWhereUniqueInputSchema.js
+..//inputTypeSchemas/TimePeriodScalarFieldEnumSchema.js
 import { DietArgsSchema } from "../outputTypeSchemas/DietArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const TimePeriodSelectSchema: z.ZodType<Prisma.TimePeriodSelect> = z.object({
   id: z.boolean().optional(),
   start: z.boolean().optional(),
@@ -16,7 +15,6 @@ export const TimePeriodSelectSchema: z.ZodType<Prisma.TimePeriodSelect> = z.obje
   dietId: z.boolean().optional(),
   Diet: z.union([z.boolean(),z.lazy(() => DietArgsSchema)]).optional(),
 }).strict()
-
 export const TimePeriodFindFirstArgsSchema: z.ZodType<Prisma.TimePeriodFindFirstArgs> = z.object({
   select: TimePeriodSelectSchema.optional(),
   include: TimePeriodIncludeSchema.optional(),
@@ -27,5 +25,4 @@ export const TimePeriodFindFirstArgsSchema: z.ZodType<Prisma.TimePeriodFindFirst
   skip: z.number().optional(),
   distinct: z.union([ TimePeriodScalarFieldEnumSchema,TimePeriodScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default TimePeriodFindFirstArgsSchema;

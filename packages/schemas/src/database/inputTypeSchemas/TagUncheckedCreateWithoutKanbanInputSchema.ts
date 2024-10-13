@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteUncheckedCreateNestedManyWithoutTagsInputSchema } from './MdxNoteUncheckedCreateNestedManyWithoutTagsInputSchema';
-import { BibEntryUncheckedCreateNestedManyWithoutTagsInputSchema } from './BibEntryUncheckedCreateNestedManyWithoutTagsInputSchema';
-import { IpynbUncheckedCreateNestedManyWithoutTagsInputSchema } from './IpynbUncheckedCreateNestedManyWithoutTagsInputSchema';
-import { QAPairUncheckedCreateNestedManyWithoutTagsInputSchema } from './QAPairUncheckedCreateNestedManyWithoutTagsInputSchema';
-import { PracticeExamUncheckedCreateNestedManyWithoutTagsInputSchema } from './PracticeExamUncheckedCreateNestedManyWithoutTagsInputSchema';
-import { EquationUncheckedCreateNestedManyWithoutTagsInputSchema } from './EquationUncheckedCreateNestedManyWithoutTagsInputSchema';
-import { ToDoUncheckedCreateNestedManyWithoutTagsInputSchema } from './ToDoUncheckedCreateNestedManyWithoutTagsInputSchema';
-import { ToDoListUncheckedCreateNestedManyWithoutTagsInputSchema } from './ToDoListUncheckedCreateNestedManyWithoutTagsInputSchema';
-
+import { MdxNoteUncheckedCreateNestedManyWithoutTagsInputSchema } from '../MdxNoteUncheckedCreateNestedManyWithoutTagsInputSchema.js';
+import { BibEntryUncheckedCreateNestedManyWithoutTagsInputSchema } from '../BibEntryUncheckedCreateNestedManyWithoutTagsInputSchema.js';
+import { IpynbUncheckedCreateNestedManyWithoutTagsInputSchema } from '../IpynbUncheckedCreateNestedManyWithoutTagsInputSchema.js';
+import { QAPairUncheckedCreateNestedManyWithoutTagsInputSchema } from '../QAPairUncheckedCreateNestedManyWithoutTagsInputSchema.js';
+import { PracticeExamUncheckedCreateNestedManyWithoutTagsInputSchema } from '../PracticeExamUncheckedCreateNestedManyWithoutTagsInputSchema.js';
+import { EquationUncheckedCreateNestedManyWithoutTagsInputSchema } from '../EquationUncheckedCreateNestedManyWithoutTagsInputSchema.js';
+import { ToDoUncheckedCreateNestedManyWithoutTagsInputSchema } from '../ToDoUncheckedCreateNestedManyWithoutTagsInputSchema.js';
+import { ToDoListUncheckedCreateNestedManyWithoutTagsInputSchema } from '../ToDoListUncheckedCreateNestedManyWithoutTagsInputSchema.js';
 export const TagUncheckedCreateWithoutKanbanInputSchema: z.ZodType<Prisma.TagUncheckedCreateWithoutKanbanInput> = z.object({
   value: z.string(),
   createdAt: z.coerce.date().optional(),
@@ -23,5 +21,4 @@ export const TagUncheckedCreateWithoutKanbanInputSchema: z.ZodType<Prisma.TagUnc
   toDo: z.lazy(() => ToDoUncheckedCreateNestedManyWithoutTagsInputSchema).optional(),
   todoList: z.lazy(() => ToDoListUncheckedCreateNestedManyWithoutTagsInputSchema).optional()
 }).strict();
-
 export default TagUncheckedCreateWithoutKanbanInputSchema;

@@ -239,7 +239,7 @@ export const mdxNoteActionsRouter = router({
         }),
     compileMdxString: publicProcedure
         .input(parseMdxStringParamTRPCSchema)
-        .query(async ({ input }) => {
+        .mutation(async ({ input }) => {
             let appConfig = await readAppConfig();
             return await parseMdxString({
                 ...input,

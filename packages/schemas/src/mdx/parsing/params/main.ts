@@ -1,13 +1,18 @@
-import { z } from "zod";
-import { documentTypeConfigSchema } from "@ulld/configschema/zod/documentConfigSchema";
+import { mdxNotePropsSchema } from "@ulld/api/generalPrismaSchemas";
+// import type { UnifiedMdxParser } from "@ulld/api/types";
+import type { AppConfigSchemaDeepPartial } from "@ulld/configschema/types";
+import { minimalParsableAppConfig } from "@ulld/configschema/zod-refinedAppConfigs";
+import {
+    documentTypeConfigSchema,
+    documentTypeConfigSchemaInner,
+} from "@ulld/configschema/zod/documentConfigSchema";
+import { type AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
+import type { WithRequired } from "@ulld/utilities/types";
+import { z, type ZodTypeAny } from "zod";
 import {
     extendedFrontMatterSchema,
-    frontMatterTypeSchema,
-} from "../../frontMatter/main";
-import { mdxNotePropsSchema } from "@ulld/api/generalPrismaSchemas";
-
-
-const appConfigHackSchema = z.record(z.string(), z.any()).describe("Hack to avoid typing issue with the modified AppConfigSchemaOutput type not matching the input schema. Must apply type manually.")
+    frontMatterSchema,
+} from "../../frontMatter/main.js";
 
 export const mdxNoteFromStringPropsSchema = mdxNotePropsSchema
     .innerType()
@@ -46,18 +51,6 @@ export const mdxNoteIntriguingValSummaryPropsSchema = mdxNotePropsSchema
         subjects: true,
     });
 
-
-// export const noteDetailsReturn = MdxNoteSchema.pick({
-//     bookmarked: true,
-//     quickLink: true,
-//     id: true,
-//     sequentialKey: true,
-//     sequentialIndex: true,
-//     firstSync: true,
-//     lastSync: true,
-// });
-
-
 const noteDetailsReturn = z.object({
     id: z.number().int(),
     quickLink: z.string().nullish(),
@@ -66,20 +59,30 @@ const noteDetailsReturn = z.object({
     sequentialIndex: z.number().nullish(),
     firstSync: z.date().or(z.string()),
     lastSync: z.date().or(z.string()),
-})
+});
 
 export const unifiedMdxParserParamSchema = z.object({
     content: z.string(),
-    docTypeData: z.union([documentTypeConfigSchema.innerType().required({
-        docType: true,
-        id: true,
-        url: true
-    }), z.object({})]).default({}),
-    data: frontMatterTypeSchema.partial(),
-    appConfig: appConfigHackSchema,
+    docTypeData: z
+        .union([
+            documentTypeConfigSchemaInner.required({
+                docType: true,
+                id: true,
+                url: true,
+            }),
+            z.object({}),
+        ])
+        .default({}),
+    data: frontMatterSchema.deepPartial(),
+    appConfig: minimalParsableAppConfig,
     serverClient: z.any(),
     db: noteDetailsReturn.optional(),
 });
+
+export const unifiedMdxParserSchema = z
+    .function()
+    .args(unifiedMdxParserParamSchema)
+    .returns(z.promise(extendedFrontMatterSchema));
 
 export const fromMdxStringOptSchema = z
     .object({
@@ -88,13 +91,10 @@ export const fromMdxStringOptSchema = z
     .default({});
 
 export const parseParamsSchema = z.object({
-        appConfig: appConfigHackSchema,
-        docTypeData: z.union([documentTypeConfigSchema, z.object({})]).default({}),
-        parser: z
-            .function()
-            .args(unifiedMdxParserParamSchema)
-            .returns(z.promise(extendedFrontMatterSchema)),
-})
+    appConfig: minimalParsableAppConfig,
+    docTypeData: z.union([documentTypeConfigSchema, z.object({})]).default({}),
+    parser: unifiedMdxParserSchema,
+});
 
 export const internalMdxStringParseParamSchema = z.object({
     _opts: fromMdxStringOptSchema,
@@ -102,14 +102,18 @@ export const internalMdxStringParseParamSchema = z.object({
     parseParams: parseParamsSchema,
 });
 
+export const internalMdxStringParseParamSchemaOptionalAppConfig =
+    internalMdxStringParseParamSchema
+        .omit({
+            parseParams: true,
+        })
+        .extend({
+            parseParams: parseParamsSchema.partial({
+                appConfig: true,
+            }),
+        });
 
-export const internalMdxStringParseParamSchemaOptionalAppConfig = internalMdxStringParseParamSchema.omit({
-    parseParams: true
-}).extend({
-    parseParams: parseParamsSchema.partial({
-        appConfig: true
-    })
-})
+export type UnifiedMdxParser = z.input<typeof unifiedMdxParserSchema>;
 
 export type InternalMdxStringParseParams = z.output<
     typeof internalMdxStringParseParamSchema
@@ -117,4 +121,52 @@ export type InternalMdxStringParseParams = z.output<
 
 export type InternalMdxStringParseParamsInput = z.input<
     typeof internalMdxStringParseParamSchema
+>;
+
+// TODO: Refine this partial app config to actually require the fields that are you know... required.
+type WithModifiedAppConfig<
+    T extends ZodTypeAny,
+    J extends AppConfigSchemaDeepPartial = AppConfigSchemaDeepPartial,
+    RequiredFields extends keyof AppConfigSchemaOutput = "fsRoot",
+> = Omit<z.input<T>, "appConfig"> & {
+    appConfig: WithRequired<J, RequiredFields>;
+};
+
+type WithModifiedAppConfigOutput<
+    T extends ZodTypeAny,
+    J extends AppConfigSchemaDeepPartial = AppConfigSchemaDeepPartial,
+> = Omit<z.output<T>, "appConfig"> & {
+    appConfig: J;
+};
+
+export type UnifiedMdxParserParamsInput = WithModifiedAppConfig<
+    typeof unifiedMdxParserParamSchema
+>;
+
+export type ParseParamsSchemaInput = z.input<typeof parseParamsSchema>;
+// export type ParseParamsSchemaInput = Omit<
+//     WithModifiedAppConfig<
+//         typeof parseParamsSchema,
+//         AppConfigSchemaDeepPartial,
+//         "fsRoot" | "noteTypes"
+//     >,
+//     "parser"
+// > & {
+//     parser: UnifiedMdxParser;
+// };
+
+// TODO: Remove all these unnecessary modifications to the appconfig
+export type ParseParamsSchemaOutput = Omit<
+    WithModifiedAppConfigOutput<typeof parseParamsSchema>,
+    "parser"
+> & {
+    parser: UnifiedMdxParser;
+};
+
+export type ParseParamsSchemaType = z.input<typeof parseParamsSchema>;
+
+// TODO: Moving this to configschema package.
+export type MinimalParsableAppConfig = z.input<typeof minimalParsableAppConfig>;
+export type MinimalParsableAppConfigOutput = z.output<
+    typeof minimalParsableAppConfig
 >;

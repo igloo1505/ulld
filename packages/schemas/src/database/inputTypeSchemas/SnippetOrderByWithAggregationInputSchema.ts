@@ -1,13 +1,11 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SnippetCountOrderByAggregateInputSchema } from './SnippetCountOrderByAggregateInputSchema';
-import { SnippetAvgOrderByAggregateInputSchema } from './SnippetAvgOrderByAggregateInputSchema';
-import { SnippetMaxOrderByAggregateInputSchema } from './SnippetMaxOrderByAggregateInputSchema';
-import { SnippetMinOrderByAggregateInputSchema } from './SnippetMinOrderByAggregateInputSchema';
-import { SnippetSumOrderByAggregateInputSchema } from './SnippetSumOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from '../SortOrderSchema.js';
+import { SnippetCountOrderByAggregateInputSchema } from '../SnippetCountOrderByAggregateInputSchema.js';
+import { SnippetAvgOrderByAggregateInputSchema } from '../SnippetAvgOrderByAggregateInputSchema.js';
+import { SnippetMaxOrderByAggregateInputSchema } from '../SnippetMaxOrderByAggregateInputSchema.js';
+import { SnippetMinOrderByAggregateInputSchema } from '../SnippetMinOrderByAggregateInputSchema.js';
+import { SnippetSumOrderByAggregateInputSchema } from '../SnippetSumOrderByAggregateInputSchema.js';
 export const SnippetOrderByWithAggregationInputSchema: z.ZodType<Prisma.SnippetOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   content: z.lazy(() => SortOrderSchema).optional(),
@@ -21,5 +19,4 @@ export const SnippetOrderByWithAggregationInputSchema: z.ZodType<Prisma.SnippetO
   _min: z.lazy(() => SnippetMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => SnippetSumOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default SnippetOrderByWithAggregationInputSchema;

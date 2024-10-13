@@ -1,10 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { TagIncludeSchema } from '../inputTypeSchemas/TagIncludeSchema'
-import { TagWhereInputSchema } from '../inputTypeSchemas/TagWhereInputSchema'
-import { TagOrderByWithRelationInputSchema } from '../inputTypeSchemas/TagOrderByWithRelationInputSchema'
-import { TagWhereUniqueInputSchema } from '../inputTypeSchemas/TagWhereUniqueInputSchema'
-import { TagScalarFieldEnumSchema } from '../inputTypeSchemas/TagScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+..//inputTypeSchemas/TagIncludeSchema.js
+..//inputTypeSchemas/TagWhereInputSchema.js
+..//inputTypeSchemas/TagOrderByWithRelationInputSchema.js
+..//inputTypeSchemas/TagWhereUniqueInputSchema.js
+..//inputTypeSchemas/TagScalarFieldEnumSchema.js
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { BibEntryFindManyArgsSchema } from "../outputTypeSchemas/BibEntryFindManyArgsSchema"
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"
@@ -17,7 +17,6 @@ import { ToDoListFindManyArgsSchema } from "../outputTypeSchemas/ToDoListFindMan
 import { TagCountOutputTypeArgsSchema } from "../outputTypeSchemas/TagCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const TagSelectSchema: z.ZodType<Prisma.TagSelect> = z.object({
   value: z.boolean().optional(),
   kanbanId: z.boolean().optional(),
@@ -34,7 +33,6 @@ export const TagSelectSchema: z.ZodType<Prisma.TagSelect> = z.object({
   todoList: z.union([z.boolean(),z.lazy(() => ToDoListFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => TagCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const TagFindFirstOrThrowArgsSchema: z.ZodType<Prisma.TagFindFirstOrThrowArgs> = z.object({
   select: TagSelectSchema.optional(),
   include: TagIncludeSchema.optional(),
@@ -45,5 +43,4 @@ export const TagFindFirstOrThrowArgsSchema: z.ZodType<Prisma.TagFindFirstOrThrow
   skip: z.number().optional(),
   distinct: z.union([ TagScalarFieldEnumSchema,TagScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default TagFindFirstOrThrowArgsSchema;
