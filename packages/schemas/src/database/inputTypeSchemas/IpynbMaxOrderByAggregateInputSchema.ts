@@ -1,6 +1,8 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+
 export const IpynbMaxOrderByAggregateInputSchema: z.ZodType<Prisma.IpynbMaxOrderByAggregateInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   rootRelativePath: z.lazy(() => SortOrderSchema).optional(),
@@ -16,4 +18,5 @@ export const IpynbMaxOrderByAggregateInputSchema: z.ZodType<Prisma.IpynbMaxOrder
   lastSync: z.lazy(() => SortOrderSchema).optional(),
   lastAccess: z.lazy(() => SortOrderSchema).optional()
 }).strict();
+
 export default IpynbMaxOrderByAggregateInputSchema;

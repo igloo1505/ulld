@@ -1,8 +1,10 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { DJTWhereInputSchema } from './DJTWhereInputSchema.js';
-import { StringFilterSchema } from './StringFilterSchema.js';
-import { BytesFilterSchema } from './BytesFilterSchema.js';
+import { DJTWhereInputSchema } from './DJTWhereInputSchema';
+import { StringFilterSchema } from './StringFilterSchema';
+import { BytesFilterSchema } from './BytesFilterSchema';
+
 export const DJTWhereUniqueInputSchema: z.ZodType<Prisma.DJTWhereUniqueInput> = z.object({
   id: z.number().int()
 })
@@ -14,4 +16,5 @@ export const DJTWhereUniqueInputSchema: z.ZodType<Prisma.DJTWhereUniqueInput> = 
   type: z.union([ z.lazy(() => StringFilterSchema),z.string() ]).optional(),
   data: z.union([ z.lazy(() => BytesFilterSchema),z.instanceof(Buffer) ]).optional(),
 }).strict());
+
 export default DJTWhereUniqueInputSchema;

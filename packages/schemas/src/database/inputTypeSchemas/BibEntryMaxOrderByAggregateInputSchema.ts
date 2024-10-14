@@ -1,6 +1,8 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+
 export const BibEntryMaxOrderByAggregateInputSchema: z.ZodType<Prisma.BibEntryMaxOrderByAggregateInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   BibId: z.lazy(() => SortOrderSchema).optional(),
@@ -45,4 +47,5 @@ export const BibEntryMaxOrderByAggregateInputSchema: z.ZodType<Prisma.BibEntryMa
   createdAt: z.lazy(() => SortOrderSchema).optional(),
   lastAccess: z.lazy(() => SortOrderSchema).optional()
 }).strict();
+
 export default BibEntryMaxOrderByAggregateInputSchema;

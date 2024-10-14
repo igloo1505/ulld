@@ -1,6 +1,8 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+
 export const ToDoCountOrderByAggregateInputSchema: z.ZodType<Prisma.ToDoCountOrderByAggregateInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   createdAt: z.lazy(() => SortOrderSchema).optional(),
@@ -15,4 +17,5 @@ export const ToDoCountOrderByAggregateInputSchema: z.ZodType<Prisma.ToDoCountOrd
   toDoListId: z.lazy(() => SortOrderSchema).optional(),
   completedOn: z.lazy(() => SortOrderSchema).optional()
 }).strict();
+
 export default ToDoCountOrderByAggregateInputSchema;

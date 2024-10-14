@@ -1,12 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { BibCreateWithoutEntriesInputSchema } from './BibCreateWithoutEntriesInputSchema.js';
-import { BibUncheckedCreateWithoutEntriesInputSchema } from './BibUncheckedCreateWithoutEntriesInputSchema.js';
-import { BibCreateOrConnectWithoutEntriesInputSchema } from './BibCreateOrConnectWithoutEntriesInputSchema.js';
-import { BibWhereUniqueInputSchema } from './BibWhereUniqueInputSchema.js';
+import { BibCreateWithoutEntriesInputSchema } from './BibCreateWithoutEntriesInputSchema';
+import { BibUncheckedCreateWithoutEntriesInputSchema } from './BibUncheckedCreateWithoutEntriesInputSchema';
+import { BibCreateOrConnectWithoutEntriesInputSchema } from './BibCreateOrConnectWithoutEntriesInputSchema';
+import { BibWhereUniqueInputSchema } from './BibWhereUniqueInputSchema';
+
 export const BibCreateNestedOneWithoutEntriesInputSchema: z.ZodType<Prisma.BibCreateNestedOneWithoutEntriesInput> = z.object({
   create: z.union([ z.lazy(() => BibCreateWithoutEntriesInputSchema),z.lazy(() => BibUncheckedCreateWithoutEntriesInputSchema) ]).optional(),
   connectOrCreate: z.lazy(() => BibCreateOrConnectWithoutEntriesInputSchema).optional(),
   connect: z.lazy(() => BibWhereUniqueInputSchema).optional()
 }).strict();
+
 export default BibCreateNestedOneWithoutEntriesInputSchema;

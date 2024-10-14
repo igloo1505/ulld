@@ -1,6 +1,8 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { DietCreateNestedOneWithoutHealthReportInputSchema } from './DietCreateNestedOneWithoutHealthReportInputSchema.js';
+import { DietCreateNestedOneWithoutHealthReportInputSchema } from './DietCreateNestedOneWithoutHealthReportInputSchema';
+
 export const HealthReportCreateInputSchema: z.ZodType<Prisma.HealthReportCreateInput> = z.object({
   title: z.string().optional().nullable(),
   summary: z.string().optional().nullable(),
@@ -35,4 +37,5 @@ export const HealthReportCreateInputSchema: z.ZodType<Prisma.HealthReportCreateI
   created: z.coerce.date().optional(),
   currentDiet: z.lazy(() => DietCreateNestedOneWithoutHealthReportInputSchema).optional()
 }).strict();
+
 export default HealthReportCreateInputSchema;

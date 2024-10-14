@@ -1,5 +1,6 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 export const BibEntryCountOutputTypeSelectSchema: z.ZodType<Prisma.BibEntryCountOutputTypeSelect> = z.object({
   citationGroups: z.boolean().optional(),
   tags: z.boolean().optional(),
@@ -9,4 +10,5 @@ export const BibEntryCountOutputTypeSelectSchema: z.ZodType<Prisma.BibEntryCount
   ipynbNotes: z.boolean().optional(),
   readingList: z.boolean().optional(),
 }).strict();
+
 export default BibEntryCountOutputTypeSelectSchema;

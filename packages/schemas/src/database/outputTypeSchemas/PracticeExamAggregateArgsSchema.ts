@@ -1,8 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { PracticeExamWhereInputSchema } from '../inputTypeSchemas/PracticeExamWhereInputSchema.js'
-import { PracticeExamOrderByWithRelationInputSchema } from '../inputTypeSchemas/PracticeExamOrderByWithRelationInputSchema.js'
-import { PracticeExamWhereUniqueInputSchema } from '../inputTypeSchemas/PracticeExamWhereUniqueInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { PracticeExamWhereInputSchema } from '../inputTypeSchemas/PracticeExamWhereInputSchema'
+import { PracticeExamOrderByWithRelationInputSchema } from '../inputTypeSchemas/PracticeExamOrderByWithRelationInputSchema'
+import { PracticeExamWhereUniqueInputSchema } from '../inputTypeSchemas/PracticeExamWhereUniqueInputSchema'
+
 export const PracticeExamAggregateArgsSchema: z.ZodType<Prisma.PracticeExamAggregateArgs> = z.object({
   where: PracticeExamWhereInputSchema.optional(),
   orderBy: z.union([ PracticeExamOrderByWithRelationInputSchema.array(),PracticeExamOrderByWithRelationInputSchema ]).optional(),
@@ -10,4 +11,5 @@ export const PracticeExamAggregateArgsSchema: z.ZodType<Prisma.PracticeExamAggre
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
+
 export default PracticeExamAggregateArgsSchema;

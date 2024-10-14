@@ -1,9 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { SettingsCreateInputSchema } from '../inputTypeSchemas/SettingsCreateInputSchema.js'
-import { SettingsUncheckedCreateInputSchema } from '../inputTypeSchemas/SettingsUncheckedCreateInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { SettingsCreateInputSchema } from '../inputTypeSchemas/SettingsCreateInputSchema'
+import { SettingsUncheckedCreateInputSchema } from '../inputTypeSchemas/SettingsUncheckedCreateInputSchema'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const SettingsSelectSchema: z.ZodType<Prisma.SettingsSelect> = z.object({
   id: z.boolean().optional(),
   tooltips: z.boolean().optional(),
@@ -18,8 +19,10 @@ export const SettingsSelectSchema: z.ZodType<Prisma.SettingsSelect> = z.object({
   firstSync: z.boolean().optional(),
   lastSync: z.boolean().optional(),
 }).strict()
+
 export const SettingsCreateArgsSchema: z.ZodType<Prisma.SettingsCreateArgs> = z.object({
   select: SettingsSelectSchema.optional(),
   data: z.union([ SettingsCreateInputSchema,SettingsUncheckedCreateInputSchema ]).optional(),
 }).strict() ;
+
 export default SettingsCreateArgsSchema;

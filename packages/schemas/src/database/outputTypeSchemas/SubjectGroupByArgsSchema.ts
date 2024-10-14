@@ -1,9 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { SubjectWhereInputSchema } from '../inputTypeSchemas/SubjectWhereInputSchema.js'
-import { SubjectOrderByWithAggregationInputSchema } from '../inputTypeSchemas/SubjectOrderByWithAggregationInputSchema.js'
-import { SubjectScalarFieldEnumSchema } from '../inputTypeSchemas/SubjectScalarFieldEnumSchema.js'
-import { SubjectScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/SubjectScalarWhereWithAggregatesInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { SubjectWhereInputSchema } from '../inputTypeSchemas/SubjectWhereInputSchema'
+import { SubjectOrderByWithAggregationInputSchema } from '../inputTypeSchemas/SubjectOrderByWithAggregationInputSchema'
+import { SubjectScalarFieldEnumSchema } from '../inputTypeSchemas/SubjectScalarFieldEnumSchema'
+import { SubjectScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/SubjectScalarWhereWithAggregatesInputSchema'
+
 export const SubjectGroupByArgsSchema: z.ZodType<Prisma.SubjectGroupByArgs> = z.object({
   where: SubjectWhereInputSchema.optional(),
   orderBy: z.union([ SubjectOrderByWithAggregationInputSchema.array(),SubjectOrderByWithAggregationInputSchema ]).optional(),
@@ -12,4 +13,5 @@ export const SubjectGroupByArgsSchema: z.ZodType<Prisma.SubjectGroupByArgs> = z.
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
+
 export default SubjectGroupByArgsSchema;

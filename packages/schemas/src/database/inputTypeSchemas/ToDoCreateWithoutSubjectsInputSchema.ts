@@ -1,12 +1,14 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { TaskCategorySchema } from './TaskCategorySchema.js';
-import { MdxNoteCreateNestedManyWithoutToDoInputSchema } from './MdxNoteCreateNestedManyWithoutToDoInputSchema.js';
-import { TagCreateNestedManyWithoutToDoInputSchema } from './TagCreateNestedManyWithoutToDoInputSchema.js';
-import { TopicCreateNestedManyWithoutToDoInputSchema } from './TopicCreateNestedManyWithoutToDoInputSchema.js';
-import { ToDoCreateNestedOneWithoutChildInputSchema } from './ToDoCreateNestedOneWithoutChildInputSchema.js';
-import { ToDoCreateNestedManyWithoutParentInputSchema } from './ToDoCreateNestedManyWithoutParentInputSchema.js';
-import { ToDoListCreateNestedOneWithoutTasksInputSchema } from './ToDoListCreateNestedOneWithoutTasksInputSchema.js';
+import { TaskCategorySchema } from './TaskCategorySchema';
+import { MdxNoteCreateNestedManyWithoutToDoInputSchema } from './MdxNoteCreateNestedManyWithoutToDoInputSchema';
+import { TagCreateNestedManyWithoutToDoInputSchema } from './TagCreateNestedManyWithoutToDoInputSchema';
+import { TopicCreateNestedManyWithoutToDoInputSchema } from './TopicCreateNestedManyWithoutToDoInputSchema';
+import { ToDoCreateNestedOneWithoutChildInputSchema } from './ToDoCreateNestedOneWithoutChildInputSchema';
+import { ToDoCreateNestedManyWithoutParentInputSchema } from './ToDoCreateNestedManyWithoutParentInputSchema';
+import { ToDoListCreateNestedOneWithoutTasksInputSchema } from './ToDoListCreateNestedOneWithoutTasksInputSchema';
+
 export const ToDoCreateWithoutSubjectsInputSchema: z.ZodType<Prisma.ToDoCreateWithoutSubjectsInput> = z.object({
   createdAt: z.coerce.date().optional(),
   task: z.string(),
@@ -24,4 +26,5 @@ export const ToDoCreateWithoutSubjectsInputSchema: z.ZodType<Prisma.ToDoCreateWi
   child: z.lazy(() => ToDoCreateNestedManyWithoutParentInputSchema).optional(),
   ToDoList: z.lazy(() => ToDoListCreateNestedOneWithoutTasksInputSchema).optional()
 }).strict();
+
 export default ToDoCreateWithoutSubjectsInputSchema;

@@ -1,14 +1,16 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SubjectCreateWithoutKanbanInputSchema } from './SubjectCreateWithoutKanbanInputSchema.js';
-import { SubjectUncheckedCreateWithoutKanbanInputSchema } from './SubjectUncheckedCreateWithoutKanbanInputSchema.js';
-import { SubjectCreateOrConnectWithoutKanbanInputSchema } from './SubjectCreateOrConnectWithoutKanbanInputSchema.js';
-import { SubjectUpsertWithWhereUniqueWithoutKanbanInputSchema } from './SubjectUpsertWithWhereUniqueWithoutKanbanInputSchema.js';
-import { SubjectCreateManyKanbanInputEnvelopeSchema } from './SubjectCreateManyKanbanInputEnvelopeSchema.js';
-import { SubjectWhereUniqueInputSchema } from './SubjectWhereUniqueInputSchema.js';
-import { SubjectUpdateWithWhereUniqueWithoutKanbanInputSchema } from './SubjectUpdateWithWhereUniqueWithoutKanbanInputSchema.js';
-import { SubjectUpdateManyWithWhereWithoutKanbanInputSchema } from './SubjectUpdateManyWithWhereWithoutKanbanInputSchema.js';
-import { SubjectScalarWhereInputSchema } from './SubjectScalarWhereInputSchema.js';
+import { SubjectCreateWithoutKanbanInputSchema } from './SubjectCreateWithoutKanbanInputSchema';
+import { SubjectUncheckedCreateWithoutKanbanInputSchema } from './SubjectUncheckedCreateWithoutKanbanInputSchema';
+import { SubjectCreateOrConnectWithoutKanbanInputSchema } from './SubjectCreateOrConnectWithoutKanbanInputSchema';
+import { SubjectUpsertWithWhereUniqueWithoutKanbanInputSchema } from './SubjectUpsertWithWhereUniqueWithoutKanbanInputSchema';
+import { SubjectCreateManyKanbanInputEnvelopeSchema } from './SubjectCreateManyKanbanInputEnvelopeSchema';
+import { SubjectWhereUniqueInputSchema } from './SubjectWhereUniqueInputSchema';
+import { SubjectUpdateWithWhereUniqueWithoutKanbanInputSchema } from './SubjectUpdateWithWhereUniqueWithoutKanbanInputSchema';
+import { SubjectUpdateManyWithWhereWithoutKanbanInputSchema } from './SubjectUpdateManyWithWhereWithoutKanbanInputSchema';
+import { SubjectScalarWhereInputSchema } from './SubjectScalarWhereInputSchema';
+
 export const SubjectUncheckedUpdateManyWithoutKanbanNestedInputSchema: z.ZodType<Prisma.SubjectUncheckedUpdateManyWithoutKanbanNestedInput> = z.object({
   create: z.union([ z.lazy(() => SubjectCreateWithoutKanbanInputSchema),z.lazy(() => SubjectCreateWithoutKanbanInputSchema).array(),z.lazy(() => SubjectUncheckedCreateWithoutKanbanInputSchema),z.lazy(() => SubjectUncheckedCreateWithoutKanbanInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => SubjectCreateOrConnectWithoutKanbanInputSchema),z.lazy(() => SubjectCreateOrConnectWithoutKanbanInputSchema).array() ]).optional(),
@@ -22,4 +24,5 @@ export const SubjectUncheckedUpdateManyWithoutKanbanNestedInputSchema: z.ZodType
   updateMany: z.union([ z.lazy(() => SubjectUpdateManyWithWhereWithoutKanbanInputSchema),z.lazy(() => SubjectUpdateManyWithWhereWithoutKanbanInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => SubjectScalarWhereInputSchema),z.lazy(() => SubjectScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default SubjectUncheckedUpdateManyWithoutKanbanNestedInputSchema;

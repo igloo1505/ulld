@@ -1,6 +1,7 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
 import { MdxNoteArgsSchema } from "../outputTypeSchemas/MdxNoteArgsSchema"
+
 export const DefinitionSelectSchema: z.ZodType<Prisma.DefinitionSelect> = z.object({
   id: z.boolean().optional(),
   label: z.boolean().optional(),
@@ -11,4 +12,5 @@ export const DefinitionSelectSchema: z.ZodType<Prisma.DefinitionSelect> = z.obje
   lastAccess: z.boolean().optional(),
   mdxNote: z.union([z.boolean(),z.lazy(() => MdxNoteArgsSchema)]).optional(),
 }).strict()
+
 export default DefinitionSelectSchema;

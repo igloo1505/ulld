@@ -1,10 +1,13 @@
 {
   "name": "@ulld/developer-cli",
   "version": "0.0.124",
-  "private": false,
   "type": "module",
+  "private": false,
   "publishConfig": {
     "access": "public"
+  },
+  "bin": {
+    "ulld-dev": "dist/cli.js"
   },
   "files": [
     "dist"
@@ -76,12 +79,12 @@
     "terminal-link": "3.0.0",
     "ts-error": "1.0.6",
     "ts-import": "5.0.0-beta.0",
+    "ts-node": "10.9.2",
     "typescript": "5.5.4",
     "unexpected": "13.2.1",
     "update-notifier": "7.3.1",
     "word-wrap": "1.2.5",
     "xdg-app-paths": "8.3.0",
-    "ts-node": "10.9.2",
     "zocker": "1.4.1",
     "zod": "3.23.8"
   },
@@ -140,15 +143,17 @@
   "peerDependencies": {
     "@ulld/developer": "workspace:*",
     "@ulld/developer-schemas": "workspace:*",
-    "@ulld/utilities": "workspace:*",
-    "@ulld/types": "workspace:*"
+    "@ulld/types": "workspace:*",
+    "@ulld/utilities": "workspace:*"
   },
-  "packageManager": "pnpm@9.0.4",
-  "bin": {
-    "ulld-dev": "dist/cli.js"
-  },
-  "license": "MIT",
   "prettier": "@vdemedes/prettier-config",
+  "xo": {
+    "extends": "xo-react",
+    "prettier": true,
+    "rules": {
+      "react/prop-types": "off"
+    }
+  },
   "ava": {
     "extensions": {
       "ts": "module",
@@ -158,11 +163,6 @@
       "--loader=ts-node/esm"
     ]
   },
-  "xo": {
-    "extends": "xo-react",
-    "prettier": true,
-    "rules": {
-      "react/prop-types": "off"
-    }
-  }
+  "packageManager": "pnpm@9.0.4",
+  "license": "MIT"
 }

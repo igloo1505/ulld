@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SubjectCreateWithoutIpynbNotesInputSchema } from './SubjectCreateWithoutIpynbNotesInputSchema.js';
-import { SubjectUncheckedCreateWithoutIpynbNotesInputSchema } from './SubjectUncheckedCreateWithoutIpynbNotesInputSchema.js';
-import { SubjectCreateOrConnectWithoutIpynbNotesInputSchema } from './SubjectCreateOrConnectWithoutIpynbNotesInputSchema.js';
-import { SubjectUpsertWithWhereUniqueWithoutIpynbNotesInputSchema } from './SubjectUpsertWithWhereUniqueWithoutIpynbNotesInputSchema.js';
-import { SubjectWhereUniqueInputSchema } from './SubjectWhereUniqueInputSchema.js';
-import { SubjectUpdateWithWhereUniqueWithoutIpynbNotesInputSchema } from './SubjectUpdateWithWhereUniqueWithoutIpynbNotesInputSchema.js';
-import { SubjectUpdateManyWithWhereWithoutIpynbNotesInputSchema } from './SubjectUpdateManyWithWhereWithoutIpynbNotesInputSchema.js';
-import { SubjectScalarWhereInputSchema } from './SubjectScalarWhereInputSchema.js';
+import { SubjectCreateWithoutIpynbNotesInputSchema } from './SubjectCreateWithoutIpynbNotesInputSchema';
+import { SubjectUncheckedCreateWithoutIpynbNotesInputSchema } from './SubjectUncheckedCreateWithoutIpynbNotesInputSchema';
+import { SubjectCreateOrConnectWithoutIpynbNotesInputSchema } from './SubjectCreateOrConnectWithoutIpynbNotesInputSchema';
+import { SubjectUpsertWithWhereUniqueWithoutIpynbNotesInputSchema } from './SubjectUpsertWithWhereUniqueWithoutIpynbNotesInputSchema';
+import { SubjectWhereUniqueInputSchema } from './SubjectWhereUniqueInputSchema';
+import { SubjectUpdateWithWhereUniqueWithoutIpynbNotesInputSchema } from './SubjectUpdateWithWhereUniqueWithoutIpynbNotesInputSchema';
+import { SubjectUpdateManyWithWhereWithoutIpynbNotesInputSchema } from './SubjectUpdateManyWithWhereWithoutIpynbNotesInputSchema';
+import { SubjectScalarWhereInputSchema } from './SubjectScalarWhereInputSchema';
+
 export const SubjectUpdateManyWithoutIpynbNotesNestedInputSchema: z.ZodType<Prisma.SubjectUpdateManyWithoutIpynbNotesNestedInput> = z.object({
   create: z.union([ z.lazy(() => SubjectCreateWithoutIpynbNotesInputSchema),z.lazy(() => SubjectCreateWithoutIpynbNotesInputSchema).array(),z.lazy(() => SubjectUncheckedCreateWithoutIpynbNotesInputSchema),z.lazy(() => SubjectUncheckedCreateWithoutIpynbNotesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => SubjectCreateOrConnectWithoutIpynbNotesInputSchema),z.lazy(() => SubjectCreateOrConnectWithoutIpynbNotesInputSchema).array() ]).optional(),
@@ -20,4 +22,5 @@ export const SubjectUpdateManyWithoutIpynbNotesNestedInputSchema: z.ZodType<Pris
   updateMany: z.union([ z.lazy(() => SubjectUpdateManyWithWhereWithoutIpynbNotesInputSchema),z.lazy(() => SubjectUpdateManyWithWhereWithoutIpynbNotesInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => SubjectScalarWhereInputSchema),z.lazy(() => SubjectScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default SubjectUpdateManyWithoutIpynbNotesNestedInputSchema;

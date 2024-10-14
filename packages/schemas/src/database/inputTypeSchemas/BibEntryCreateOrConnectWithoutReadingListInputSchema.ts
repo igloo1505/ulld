@@ -1,10 +1,13 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { BibEntryWhereUniqueInputSchema } from './BibEntryWhereUniqueInputSchema.js';
-import { BibEntryCreateWithoutReadingListInputSchema } from './BibEntryCreateWithoutReadingListInputSchema.js';
-import { BibEntryUncheckedCreateWithoutReadingListInputSchema } from './BibEntryUncheckedCreateWithoutReadingListInputSchema.js';
+import { BibEntryWhereUniqueInputSchema } from './BibEntryWhereUniqueInputSchema';
+import { BibEntryCreateWithoutReadingListInputSchema } from './BibEntryCreateWithoutReadingListInputSchema';
+import { BibEntryUncheckedCreateWithoutReadingListInputSchema } from './BibEntryUncheckedCreateWithoutReadingListInputSchema';
+
 export const BibEntryCreateOrConnectWithoutReadingListInputSchema: z.ZodType<Prisma.BibEntryCreateOrConnectWithoutReadingListInput> = z.object({
   where: z.lazy(() => BibEntryWhereUniqueInputSchema),
   create: z.union([ z.lazy(() => BibEntryCreateWithoutReadingListInputSchema),z.lazy(() => BibEntryUncheckedCreateWithoutReadingListInputSchema) ]),
 }).strict();
+
 export default BibEntryCreateOrConnectWithoutReadingListInputSchema;

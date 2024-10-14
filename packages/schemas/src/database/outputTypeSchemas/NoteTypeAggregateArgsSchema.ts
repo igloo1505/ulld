@@ -1,8 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { NoteTypeWhereInputSchema } from '../inputTypeSchemas/NoteTypeWhereInputSchema.js'
-import { NoteTypeOrderByWithRelationInputSchema } from '../inputTypeSchemas/NoteTypeOrderByWithRelationInputSchema.js'
-import { NoteTypeWhereUniqueInputSchema } from '../inputTypeSchemas/NoteTypeWhereUniqueInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { NoteTypeWhereInputSchema } from '../inputTypeSchemas/NoteTypeWhereInputSchema'
+import { NoteTypeOrderByWithRelationInputSchema } from '../inputTypeSchemas/NoteTypeOrderByWithRelationInputSchema'
+import { NoteTypeWhereUniqueInputSchema } from '../inputTypeSchemas/NoteTypeWhereUniqueInputSchema'
+
 export const NoteTypeAggregateArgsSchema: z.ZodType<Prisma.NoteTypeAggregateArgs> = z.object({
   where: NoteTypeWhereInputSchema.optional(),
   orderBy: z.union([ NoteTypeOrderByWithRelationInputSchema.array(),NoteTypeOrderByWithRelationInputSchema ]).optional(),
@@ -10,4 +11,5 @@ export const NoteTypeAggregateArgsSchema: z.ZodType<Prisma.NoteTypeAggregateArgs
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
+
 export default NoteTypeAggregateArgsSchema;

@@ -1,14 +1,16 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
-import { BoolNullableWithAggregatesFilterSchema } from './BoolNullableWithAggregatesFilterSchema.js';
-import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
-import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
-import { StringNullableListFilterSchema } from './StringNullableListFilterSchema.js';
-import { FloatNullableListFilterSchema } from './FloatNullableListFilterSchema.js';
-import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema.js';
-import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema';
+import { BoolNullableWithAggregatesFilterSchema } from './BoolNullableWithAggregatesFilterSchema';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
+import { StringNullableListFilterSchema } from './StringNullableListFilterSchema';
+import { FloatNullableListFilterSchema } from './FloatNullableListFilterSchema';
+import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema';
+import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema';
+
 export const MdxNoteScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.MdxNoteScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => MdxNoteScalarWhereWithAggregatesInputSchema),z.lazy(() => MdxNoteScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => MdxNoteScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -39,4 +41,5 @@ export const MdxNoteScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.MdxNo
   lastSync: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
   lastAccess: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
+
 export default MdxNoteScalarWhereWithAggregatesInputSchema;

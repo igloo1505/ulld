@@ -1,12 +1,13 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { SettingsWhereUniqueInputSchema } from '../inputTypeSchemas/SettingsWhereUniqueInputSchema.js'
-import { SettingsCreateInputSchema } from '../inputTypeSchemas/SettingsCreateInputSchema.js'
-import { SettingsUncheckedCreateInputSchema } from '../inputTypeSchemas/SettingsUncheckedCreateInputSchema.js'
-import { SettingsUpdateInputSchema } from '../inputTypeSchemas/SettingsUpdateInputSchema.js'
-import { SettingsUncheckedUpdateInputSchema } from '../inputTypeSchemas/SettingsUncheckedUpdateInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { SettingsWhereUniqueInputSchema } from '../inputTypeSchemas/SettingsWhereUniqueInputSchema'
+import { SettingsCreateInputSchema } from '../inputTypeSchemas/SettingsCreateInputSchema'
+import { SettingsUncheckedCreateInputSchema } from '../inputTypeSchemas/SettingsUncheckedCreateInputSchema'
+import { SettingsUpdateInputSchema } from '../inputTypeSchemas/SettingsUpdateInputSchema'
+import { SettingsUncheckedUpdateInputSchema } from '../inputTypeSchemas/SettingsUncheckedUpdateInputSchema'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const SettingsSelectSchema: z.ZodType<Prisma.SettingsSelect> = z.object({
   id: z.boolean().optional(),
   tooltips: z.boolean().optional(),
@@ -21,10 +22,12 @@ export const SettingsSelectSchema: z.ZodType<Prisma.SettingsSelect> = z.object({
   firstSync: z.boolean().optional(),
   lastSync: z.boolean().optional(),
 }).strict()
+
 export const SettingsUpsertArgsSchema: z.ZodType<Prisma.SettingsUpsertArgs> = z.object({
   select: SettingsSelectSchema.optional(),
   where: SettingsWhereUniqueInputSchema,
   create: z.union([ SettingsCreateInputSchema,SettingsUncheckedCreateInputSchema ]),
   update: z.union([ SettingsUpdateInputSchema,SettingsUncheckedUpdateInputSchema ]),
 }).strict() ;
+
 export default SettingsUpsertArgsSchema;

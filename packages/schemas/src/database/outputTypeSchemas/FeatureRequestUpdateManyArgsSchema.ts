@@ -1,10 +1,12 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { FeatureRequestUpdateManyMutationInputSchema } from '../inputTypeSchemas/FeatureRequestUpdateManyMutationInputSchema.js'
-import { FeatureRequestUncheckedUpdateManyInputSchema } from '../inputTypeSchemas/FeatureRequestUncheckedUpdateManyInputSchema.js'
-import { FeatureRequestWhereInputSchema } from '../inputTypeSchemas/FeatureRequestWhereInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { FeatureRequestUpdateManyMutationInputSchema } from '../inputTypeSchemas/FeatureRequestUpdateManyMutationInputSchema'
+import { FeatureRequestUncheckedUpdateManyInputSchema } from '../inputTypeSchemas/FeatureRequestUncheckedUpdateManyInputSchema'
+import { FeatureRequestWhereInputSchema } from '../inputTypeSchemas/FeatureRequestWhereInputSchema'
+
 export const FeatureRequestUpdateManyArgsSchema: z.ZodType<Prisma.FeatureRequestUpdateManyArgs> = z.object({
   data: z.union([ FeatureRequestUpdateManyMutationInputSchema,FeatureRequestUncheckedUpdateManyInputSchema ]),
   where: FeatureRequestWhereInputSchema.optional(),
 }).strict() ;
+
 export default FeatureRequestUpdateManyArgsSchema;

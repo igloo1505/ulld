@@ -1,6 +1,8 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+
 export const DietCountOrderByAggregateInputSchema: z.ZodType<Prisma.DietCountOrderByAggregateInput> = z.object({
   name: z.lazy(() => SortOrderSchema).optional(),
   summary: z.lazy(() => SortOrderSchema).optional(),
@@ -19,4 +21,5 @@ export const DietCountOrderByAggregateInputSchema: z.ZodType<Prisma.DietCountOrd
   created: z.lazy(() => SortOrderSchema).optional(),
   lastUpdate: z.lazy(() => SortOrderSchema).optional()
 }).strict();
+
 export default DietCountOrderByAggregateInputSchema;

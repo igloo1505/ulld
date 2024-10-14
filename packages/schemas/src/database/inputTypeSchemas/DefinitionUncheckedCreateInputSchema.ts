@@ -1,5 +1,7 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
+
 export const DefinitionUncheckedCreateInputSchema: z.ZodType<Prisma.DefinitionUncheckedCreateInput> = z.object({
   id: z.string(),
   label: z.string().optional().nullable(),
@@ -9,4 +11,5 @@ export const DefinitionUncheckedCreateInputSchema: z.ZodType<Prisma.DefinitionUn
   createdAt: z.coerce.date().optional(),
   lastAccess: z.coerce.date().optional()
 }).strict();
+
 export default DefinitionUncheckedCreateInputSchema;

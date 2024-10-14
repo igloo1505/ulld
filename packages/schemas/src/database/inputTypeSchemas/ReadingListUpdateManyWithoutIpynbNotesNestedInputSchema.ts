@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { ReadingListCreateWithoutIpynbNotesInputSchema } from './ReadingListCreateWithoutIpynbNotesInputSchema.js';
-import { ReadingListUncheckedCreateWithoutIpynbNotesInputSchema } from './ReadingListUncheckedCreateWithoutIpynbNotesInputSchema.js';
-import { ReadingListCreateOrConnectWithoutIpynbNotesInputSchema } from './ReadingListCreateOrConnectWithoutIpynbNotesInputSchema.js';
-import { ReadingListUpsertWithWhereUniqueWithoutIpynbNotesInputSchema } from './ReadingListUpsertWithWhereUniqueWithoutIpynbNotesInputSchema.js';
-import { ReadingListWhereUniqueInputSchema } from './ReadingListWhereUniqueInputSchema.js';
-import { ReadingListUpdateWithWhereUniqueWithoutIpynbNotesInputSchema } from './ReadingListUpdateWithWhereUniqueWithoutIpynbNotesInputSchema.js';
-import { ReadingListUpdateManyWithWhereWithoutIpynbNotesInputSchema } from './ReadingListUpdateManyWithWhereWithoutIpynbNotesInputSchema.js';
-import { ReadingListScalarWhereInputSchema } from './ReadingListScalarWhereInputSchema.js';
+import { ReadingListCreateWithoutIpynbNotesInputSchema } from './ReadingListCreateWithoutIpynbNotesInputSchema';
+import { ReadingListUncheckedCreateWithoutIpynbNotesInputSchema } from './ReadingListUncheckedCreateWithoutIpynbNotesInputSchema';
+import { ReadingListCreateOrConnectWithoutIpynbNotesInputSchema } from './ReadingListCreateOrConnectWithoutIpynbNotesInputSchema';
+import { ReadingListUpsertWithWhereUniqueWithoutIpynbNotesInputSchema } from './ReadingListUpsertWithWhereUniqueWithoutIpynbNotesInputSchema';
+import { ReadingListWhereUniqueInputSchema } from './ReadingListWhereUniqueInputSchema';
+import { ReadingListUpdateWithWhereUniqueWithoutIpynbNotesInputSchema } from './ReadingListUpdateWithWhereUniqueWithoutIpynbNotesInputSchema';
+import { ReadingListUpdateManyWithWhereWithoutIpynbNotesInputSchema } from './ReadingListUpdateManyWithWhereWithoutIpynbNotesInputSchema';
+import { ReadingListScalarWhereInputSchema } from './ReadingListScalarWhereInputSchema';
+
 export const ReadingListUpdateManyWithoutIpynbNotesNestedInputSchema: z.ZodType<Prisma.ReadingListUpdateManyWithoutIpynbNotesNestedInput> = z.object({
   create: z.union([ z.lazy(() => ReadingListCreateWithoutIpynbNotesInputSchema),z.lazy(() => ReadingListCreateWithoutIpynbNotesInputSchema).array(),z.lazy(() => ReadingListUncheckedCreateWithoutIpynbNotesInputSchema),z.lazy(() => ReadingListUncheckedCreateWithoutIpynbNotesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => ReadingListCreateOrConnectWithoutIpynbNotesInputSchema),z.lazy(() => ReadingListCreateOrConnectWithoutIpynbNotesInputSchema).array() ]).optional(),
@@ -20,4 +22,5 @@ export const ReadingListUpdateManyWithoutIpynbNotesNestedInputSchema: z.ZodType<
   updateMany: z.union([ z.lazy(() => ReadingListUpdateManyWithWhereWithoutIpynbNotesInputSchema),z.lazy(() => ReadingListUpdateManyWithWhereWithoutIpynbNotesInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => ReadingListScalarWhereInputSchema),z.lazy(() => ReadingListScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default ReadingListUpdateManyWithoutIpynbNotesNestedInputSchema;

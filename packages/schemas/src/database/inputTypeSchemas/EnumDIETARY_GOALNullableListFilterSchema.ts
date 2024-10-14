@@ -1,6 +1,8 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { DIETARY_GOALSchema } from './DIETARY_GOALSchema.js';
+import { DIETARY_GOALSchema } from './DIETARY_GOALSchema';
+
 export const EnumDIETARY_GOALNullableListFilterSchema: z.ZodType<Prisma.EnumDIETARY_GOALNullableListFilter> = z.object({
   equals: z.lazy(() => DIETARY_GOALSchema).array().optional().nullable(),
   has: z.lazy(() => DIETARY_GOALSchema).optional().nullable(),
@@ -8,4 +10,5 @@ export const EnumDIETARY_GOALNullableListFilterSchema: z.ZodType<Prisma.EnumDIET
   hasSome: z.lazy(() => DIETARY_GOALSchema).array().optional(),
   isEmpty: z.boolean().optional()
 }).strict();
+
 export default EnumDIETARY_GOALNullableListFilterSchema;

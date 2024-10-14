@@ -1,10 +1,11 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
 import { KanBanListFindManyArgsSchema } from "../outputTypeSchemas/KanBanListFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { KanbanCountOutputTypeArgsSchema } from "../outputTypeSchemas/KanbanCountOutputTypeArgsSchema"
+
 export const KanbanSelectSchema: z.ZodType<Prisma.KanbanSelect> = z.object({
   id: z.boolean().optional(),
   title: z.boolean().optional(),
@@ -16,4 +17,5 @@ export const KanbanSelectSchema: z.ZodType<Prisma.KanbanSelect> = z.object({
   topics: z.union([z.boolean(),z.lazy(() => TopicFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => KanbanCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export default KanbanSelectSchema;

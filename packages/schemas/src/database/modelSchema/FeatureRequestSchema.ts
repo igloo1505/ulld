@@ -1,7 +1,9 @@
 import { z } from 'zod';
+
 /////////////////////////////////////////
 // FEATURE REQUEST SCHEMA
 /////////////////////////////////////////
+
 export const FeatureRequestSchema = z.object({
   id: z.number().int(),
   email: z.string(),
@@ -10,10 +12,15 @@ export const FeatureRequestSchema = z.object({
   userBase: z.string().array(),
   receivedOn: z.coerce.date(),
 })
+
 export type FeatureRequest = z.infer<typeof FeatureRequestSchema>
+
 /////////////////////////////////////////
 // FEATURE REQUEST PARTIAL SCHEMA
 /////////////////////////////////////////
+
 export const FeatureRequestPartialSchema = FeatureRequestSchema.partial()
+
 export type FeatureRequestPartial = z.infer<typeof FeatureRequestPartialSchema>
+
 export default FeatureRequestSchema;

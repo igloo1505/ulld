@@ -1,11 +1,13 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
-import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
-import { FloatWithAggregatesFilterSchema } from './FloatWithAggregatesFilterSchema.js';
-import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema.js';
-import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema';
+import { FloatWithAggregatesFilterSchema } from './FloatWithAggregatesFilterSchema';
+import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema';
+import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema';
+
 export const HealthReportScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.HealthReportScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => HealthReportScalarWhereWithAggregatesInputSchema),z.lazy(() => HealthReportScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => HealthReportScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -44,4 +46,5 @@ export const HealthReportScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.
   dietId: z.union([ z.lazy(() => StringNullableWithAggregatesFilterSchema),z.string() ]).optional().nullable(),
   created: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
+
 export default HealthReportScalarWhereWithAggregatesInputSchema;

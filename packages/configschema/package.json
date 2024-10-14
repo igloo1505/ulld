@@ -12,7 +12,7 @@
   "scripts": {
     "build": "wireit",
     "dev": "echo 'Add dev script here'",
-    "gatherTypes": "wireit",
+    "gatherTypes": "tsc --project ./tsconfigTypes.json --emitDeclarationOnly",
     "generateConfigTunnels": "wireit",
     "generateDefaultConfig": "wireit",
     "generateSlotMap": "wireit",
@@ -370,10 +370,10 @@
     "@ulld/types": "workspace:*",
     "@ulld/typescript-config": "workspace:*",
     "@ulld/utilities": "workspace:*",
-    "shiki": "1.1.7",
     "next": "14.2.3",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "shiki": "1.1.7"
   },
   "packageManager": "pnpm@9.0.4"
 }

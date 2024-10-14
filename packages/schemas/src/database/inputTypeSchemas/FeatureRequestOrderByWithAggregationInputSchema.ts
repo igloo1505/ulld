@@ -1,11 +1,13 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
-import { FeatureRequestCountOrderByAggregateInputSchema } from './FeatureRequestCountOrderByAggregateInputSchema.js';
-import { FeatureRequestAvgOrderByAggregateInputSchema } from './FeatureRequestAvgOrderByAggregateInputSchema.js';
-import { FeatureRequestMaxOrderByAggregateInputSchema } from './FeatureRequestMaxOrderByAggregateInputSchema.js';
-import { FeatureRequestMinOrderByAggregateInputSchema } from './FeatureRequestMinOrderByAggregateInputSchema.js';
-import { FeatureRequestSumOrderByAggregateInputSchema } from './FeatureRequestSumOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+import { FeatureRequestCountOrderByAggregateInputSchema } from './FeatureRequestCountOrderByAggregateInputSchema';
+import { FeatureRequestAvgOrderByAggregateInputSchema } from './FeatureRequestAvgOrderByAggregateInputSchema';
+import { FeatureRequestMaxOrderByAggregateInputSchema } from './FeatureRequestMaxOrderByAggregateInputSchema';
+import { FeatureRequestMinOrderByAggregateInputSchema } from './FeatureRequestMinOrderByAggregateInputSchema';
+import { FeatureRequestSumOrderByAggregateInputSchema } from './FeatureRequestSumOrderByAggregateInputSchema';
+
 export const FeatureRequestOrderByWithAggregationInputSchema: z.ZodType<Prisma.FeatureRequestOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   email: z.lazy(() => SortOrderSchema).optional(),
@@ -19,4 +21,5 @@ export const FeatureRequestOrderByWithAggregationInputSchema: z.ZodType<Prisma.F
   _min: z.lazy(() => FeatureRequestMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => FeatureRequestSumOrderByAggregateInputSchema).optional()
 }).strict();
+
 export default FeatureRequestOrderByWithAggregationInputSchema;

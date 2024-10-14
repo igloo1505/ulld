@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
-import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
-import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema.js';
-import { EnumTERTIARY_TOGGLEWithAggregatesFilterSchema } from './EnumTERTIARY_TOGGLEWithAggregatesFilterSchema.js';
-import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema.js';
-import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema.js';
-import { EnumDIETARY_GOALNullableListFilterSchema } from './EnumDIETARY_GOALNullableListFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema';
+import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema';
+import { EnumTERTIARY_TOGGLEWithAggregatesFilterSchema } from './EnumTERTIARY_TOGGLEWithAggregatesFilterSchema';
+import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema';
+import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema';
+import { EnumDIETARY_GOALNullableListFilterSchema } from './EnumDIETARY_GOALNullableListFilterSchema';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema';
+
 export const DietScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.DietScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => DietScalarWhereWithAggregatesInputSchema),z.lazy(() => DietScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => DietScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -29,4 +31,5 @@ export const DietScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.DietScal
   created: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
   lastUpdate: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
+
 export default DietScalarWhereWithAggregatesInputSchema;

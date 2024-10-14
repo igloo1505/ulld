@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { TagCreateWithoutBibEntriesInputSchema } from './TagCreateWithoutBibEntriesInputSchema.js';
-import { TagUncheckedCreateWithoutBibEntriesInputSchema } from './TagUncheckedCreateWithoutBibEntriesInputSchema.js';
-import { TagCreateOrConnectWithoutBibEntriesInputSchema } from './TagCreateOrConnectWithoutBibEntriesInputSchema.js';
-import { TagUpsertWithWhereUniqueWithoutBibEntriesInputSchema } from './TagUpsertWithWhereUniqueWithoutBibEntriesInputSchema.js';
-import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema.js';
-import { TagUpdateWithWhereUniqueWithoutBibEntriesInputSchema } from './TagUpdateWithWhereUniqueWithoutBibEntriesInputSchema.js';
-import { TagUpdateManyWithWhereWithoutBibEntriesInputSchema } from './TagUpdateManyWithWhereWithoutBibEntriesInputSchema.js';
-import { TagScalarWhereInputSchema } from './TagScalarWhereInputSchema.js';
+import { TagCreateWithoutBibEntriesInputSchema } from './TagCreateWithoutBibEntriesInputSchema';
+import { TagUncheckedCreateWithoutBibEntriesInputSchema } from './TagUncheckedCreateWithoutBibEntriesInputSchema';
+import { TagCreateOrConnectWithoutBibEntriesInputSchema } from './TagCreateOrConnectWithoutBibEntriesInputSchema';
+import { TagUpsertWithWhereUniqueWithoutBibEntriesInputSchema } from './TagUpsertWithWhereUniqueWithoutBibEntriesInputSchema';
+import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema';
+import { TagUpdateWithWhereUniqueWithoutBibEntriesInputSchema } from './TagUpdateWithWhereUniqueWithoutBibEntriesInputSchema';
+import { TagUpdateManyWithWhereWithoutBibEntriesInputSchema } from './TagUpdateManyWithWhereWithoutBibEntriesInputSchema';
+import { TagScalarWhereInputSchema } from './TagScalarWhereInputSchema';
+
 export const TagUncheckedUpdateManyWithoutBibEntriesNestedInputSchema: z.ZodType<Prisma.TagUncheckedUpdateManyWithoutBibEntriesNestedInput> = z.object({
   create: z.union([ z.lazy(() => TagCreateWithoutBibEntriesInputSchema),z.lazy(() => TagCreateWithoutBibEntriesInputSchema).array(),z.lazy(() => TagUncheckedCreateWithoutBibEntriesInputSchema),z.lazy(() => TagUncheckedCreateWithoutBibEntriesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TagCreateOrConnectWithoutBibEntriesInputSchema),z.lazy(() => TagCreateOrConnectWithoutBibEntriesInputSchema).array() ]).optional(),
@@ -20,4 +22,5 @@ export const TagUncheckedUpdateManyWithoutBibEntriesNestedInputSchema: z.ZodType
   updateMany: z.union([ z.lazy(() => TagUpdateManyWithWhereWithoutBibEntriesInputSchema),z.lazy(() => TagUpdateManyWithWhereWithoutBibEntriesInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => TagScalarWhereInputSchema),z.lazy(() => TagScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default TagUncheckedUpdateManyWithoutBibEntriesNestedInputSchema;

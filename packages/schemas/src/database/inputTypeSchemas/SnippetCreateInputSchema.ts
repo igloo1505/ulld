@@ -1,6 +1,8 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SnippetCreatekeywordsInputSchema } from './SnippetCreatekeywordsInputSchema.js';
+import { SnippetCreatekeywordsInputSchema } from './SnippetCreatekeywordsInputSchema';
+
 export const SnippetCreateInputSchema: z.ZodType<Prisma.SnippetCreateInput> = z.object({
   content: z.string(),
   description: z.string(),
@@ -8,4 +10,5 @@ export const SnippetCreateInputSchema: z.ZodType<Prisma.SnippetCreateInput> = z.
   language: z.string(),
   createdAt: z.coerce.date().optional()
 }).strict();
+
 export default SnippetCreateInputSchema;

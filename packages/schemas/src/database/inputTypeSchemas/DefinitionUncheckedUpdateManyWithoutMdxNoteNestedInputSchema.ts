@@ -1,14 +1,16 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { DefinitionCreateWithoutMdxNoteInputSchema } from './DefinitionCreateWithoutMdxNoteInputSchema.js';
-import { DefinitionUncheckedCreateWithoutMdxNoteInputSchema } from './DefinitionUncheckedCreateWithoutMdxNoteInputSchema.js';
-import { DefinitionCreateOrConnectWithoutMdxNoteInputSchema } from './DefinitionCreateOrConnectWithoutMdxNoteInputSchema.js';
-import { DefinitionUpsertWithWhereUniqueWithoutMdxNoteInputSchema } from './DefinitionUpsertWithWhereUniqueWithoutMdxNoteInputSchema.js';
-import { DefinitionCreateManyMdxNoteInputEnvelopeSchema } from './DefinitionCreateManyMdxNoteInputEnvelopeSchema.js';
-import { DefinitionWhereUniqueInputSchema } from './DefinitionWhereUniqueInputSchema.js';
-import { DefinitionUpdateWithWhereUniqueWithoutMdxNoteInputSchema } from './DefinitionUpdateWithWhereUniqueWithoutMdxNoteInputSchema.js';
-import { DefinitionUpdateManyWithWhereWithoutMdxNoteInputSchema } from './DefinitionUpdateManyWithWhereWithoutMdxNoteInputSchema.js';
-import { DefinitionScalarWhereInputSchema } from './DefinitionScalarWhereInputSchema.js';
+import { DefinitionCreateWithoutMdxNoteInputSchema } from './DefinitionCreateWithoutMdxNoteInputSchema';
+import { DefinitionUncheckedCreateWithoutMdxNoteInputSchema } from './DefinitionUncheckedCreateWithoutMdxNoteInputSchema';
+import { DefinitionCreateOrConnectWithoutMdxNoteInputSchema } from './DefinitionCreateOrConnectWithoutMdxNoteInputSchema';
+import { DefinitionUpsertWithWhereUniqueWithoutMdxNoteInputSchema } from './DefinitionUpsertWithWhereUniqueWithoutMdxNoteInputSchema';
+import { DefinitionCreateManyMdxNoteInputEnvelopeSchema } from './DefinitionCreateManyMdxNoteInputEnvelopeSchema';
+import { DefinitionWhereUniqueInputSchema } from './DefinitionWhereUniqueInputSchema';
+import { DefinitionUpdateWithWhereUniqueWithoutMdxNoteInputSchema } from './DefinitionUpdateWithWhereUniqueWithoutMdxNoteInputSchema';
+import { DefinitionUpdateManyWithWhereWithoutMdxNoteInputSchema } from './DefinitionUpdateManyWithWhereWithoutMdxNoteInputSchema';
+import { DefinitionScalarWhereInputSchema } from './DefinitionScalarWhereInputSchema';
+
 export const DefinitionUncheckedUpdateManyWithoutMdxNoteNestedInputSchema: z.ZodType<Prisma.DefinitionUncheckedUpdateManyWithoutMdxNoteNestedInput> = z.object({
   create: z.union([ z.lazy(() => DefinitionCreateWithoutMdxNoteInputSchema),z.lazy(() => DefinitionCreateWithoutMdxNoteInputSchema).array(),z.lazy(() => DefinitionUncheckedCreateWithoutMdxNoteInputSchema),z.lazy(() => DefinitionUncheckedCreateWithoutMdxNoteInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => DefinitionCreateOrConnectWithoutMdxNoteInputSchema),z.lazy(() => DefinitionCreateOrConnectWithoutMdxNoteInputSchema).array() ]).optional(),
@@ -22,4 +24,5 @@ export const DefinitionUncheckedUpdateManyWithoutMdxNoteNestedInputSchema: z.Zod
   updateMany: z.union([ z.lazy(() => DefinitionUpdateManyWithWhereWithoutMdxNoteInputSchema),z.lazy(() => DefinitionUpdateManyWithWhereWithoutMdxNoteInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => DefinitionScalarWhereInputSchema),z.lazy(() => DefinitionScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default DefinitionUncheckedUpdateManyWithoutMdxNoteNestedInputSchema;

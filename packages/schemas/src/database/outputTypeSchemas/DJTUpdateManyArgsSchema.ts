@@ -1,10 +1,12 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { DJTUpdateManyMutationInputSchema } from '../inputTypeSchemas/DJTUpdateManyMutationInputSchema.js'
-import { DJTUncheckedUpdateManyInputSchema } from '../inputTypeSchemas/DJTUncheckedUpdateManyInputSchema.js'
-import { DJTWhereInputSchema } from '../inputTypeSchemas/DJTWhereInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { DJTUpdateManyMutationInputSchema } from '../inputTypeSchemas/DJTUpdateManyMutationInputSchema'
+import { DJTUncheckedUpdateManyInputSchema } from '../inputTypeSchemas/DJTUncheckedUpdateManyInputSchema'
+import { DJTWhereInputSchema } from '../inputTypeSchemas/DJTWhereInputSchema'
+
 export const DJTUpdateManyArgsSchema: z.ZodType<Prisma.DJTUpdateManyArgs> = z.object({
   data: z.union([ DJTUpdateManyMutationInputSchema,DJTUncheckedUpdateManyInputSchema ]),
   where: DJTWhereInputSchema.optional(),
 }).strict() ;
+
 export default DJTUpdateManyArgsSchema;

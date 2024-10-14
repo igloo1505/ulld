@@ -22,6 +22,9 @@
     "./db": "./src/database.d.ts",
     "./enums": "./src/enums/index.ts"
   },
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {},
   "packageManager": "pnpm@9.0.4",
   "license": "MIT",
   "main": "src/index.ts"

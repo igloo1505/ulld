@@ -1,5 +1,6 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 export const MdxNoteCountOutputTypeSelectSchema: z.ZodType<Prisma.MdxNoteCountOutputTypeSelect> = z.object({
   topics: z.boolean().optional(),
   subjects: z.boolean().optional(),
@@ -10,4 +11,5 @@ export const MdxNoteCountOutputTypeSelectSchema: z.ZodType<Prisma.MdxNoteCountOu
   definitions: z.boolean().optional(),
   toDo: z.boolean().optional(),
 }).strict();
+
 export default MdxNoteCountOutputTypeSelectSchema;

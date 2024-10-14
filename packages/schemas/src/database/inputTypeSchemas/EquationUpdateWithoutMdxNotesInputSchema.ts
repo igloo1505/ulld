@@ -1,16 +1,18 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
-import { JsonNullValueInputSchema } from './JsonNullValueInputSchema.js';
-import { InputJsonValueSchema } from './InputJsonValueSchema.js';
-import { EquationUpdatevariablesInputSchema } from './EquationUpdatevariablesInputSchema.js';
-import { EquationUpdatekeywordsInputSchema } from './EquationUpdatekeywordsInputSchema.js';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
-import { RelatedValuesUpdateManyWithoutEquationsNestedInputSchema } from './RelatedValuesUpdateManyWithoutEquationsNestedInputSchema.js';
-import { TagUpdateManyWithoutEquationsNestedInputSchema } from './TagUpdateManyWithoutEquationsNestedInputSchema.js';
-import { TopicUpdateManyWithoutEquationsNestedInputSchema } from './TopicUpdateManyWithoutEquationsNestedInputSchema.js';
-import { SubjectUpdateManyWithoutEquationsNestedInputSchema } from './SubjectUpdateManyWithoutEquationsNestedInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
+import { JsonNullValueInputSchema } from './JsonNullValueInputSchema';
+import { InputJsonValueSchema } from './InputJsonValueSchema';
+import { EquationUpdatevariablesInputSchema } from './EquationUpdatevariablesInputSchema';
+import { EquationUpdatekeywordsInputSchema } from './EquationUpdatekeywordsInputSchema';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
+import { RelatedValuesUpdateManyWithoutEquationsNestedInputSchema } from './RelatedValuesUpdateManyWithoutEquationsNestedInputSchema';
+import { TagUpdateManyWithoutEquationsNestedInputSchema } from './TagUpdateManyWithoutEquationsNestedInputSchema';
+import { TopicUpdateManyWithoutEquationsNestedInputSchema } from './TopicUpdateManyWithoutEquationsNestedInputSchema';
+import { SubjectUpdateManyWithoutEquationsNestedInputSchema } from './SubjectUpdateManyWithoutEquationsNestedInputSchema';
+
 export const EquationUpdateWithoutMdxNotesInputSchema: z.ZodType<Prisma.EquationUpdateWithoutMdxNotesInput> = z.object({
   equationId: z.union([ z.string(),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
   title: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
@@ -27,4 +29,5 @@ export const EquationUpdateWithoutMdxNotesInputSchema: z.ZodType<Prisma.Equation
   topics: z.lazy(() => TopicUpdateManyWithoutEquationsNestedInputSchema).optional(),
   subjects: z.lazy(() => SubjectUpdateManyWithoutEquationsNestedInputSchema).optional()
 }).strict();
+
 export default EquationUpdateWithoutMdxNotesInputSchema;

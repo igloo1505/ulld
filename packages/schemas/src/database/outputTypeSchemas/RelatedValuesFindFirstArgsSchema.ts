@@ -1,14 +1,15 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { RelatedValuesIncludeSchema } from '../inputTypeSchemas/RelatedValuesIncludeSchema.js'
-import { RelatedValuesWhereInputSchema } from '../inputTypeSchemas/RelatedValuesWhereInputSchema.js'
-import { RelatedValuesOrderByWithRelationInputSchema } from '../inputTypeSchemas/RelatedValuesOrderByWithRelationInputSchema.js'
-import { RelatedValuesWhereUniqueInputSchema } from '../inputTypeSchemas/RelatedValuesWhereUniqueInputSchema.js'
-import { RelatedValuesScalarFieldEnumSchema } from '../inputTypeSchemas/RelatedValuesScalarFieldEnumSchema.js'
+import type { Prisma } from '@prisma/client';
+import { RelatedValuesIncludeSchema } from '../inputTypeSchemas/RelatedValuesIncludeSchema'
+import { RelatedValuesWhereInputSchema } from '../inputTypeSchemas/RelatedValuesWhereInputSchema'
+import { RelatedValuesOrderByWithRelationInputSchema } from '../inputTypeSchemas/RelatedValuesOrderByWithRelationInputSchema'
+import { RelatedValuesWhereUniqueInputSchema } from '../inputTypeSchemas/RelatedValuesWhereUniqueInputSchema'
+import { RelatedValuesScalarFieldEnumSchema } from '../inputTypeSchemas/RelatedValuesScalarFieldEnumSchema'
 import { EquationFindManyArgsSchema } from "../outputTypeSchemas/EquationFindManyArgsSchema"
 import { RelatedValuesCountOutputTypeArgsSchema } from "../outputTypeSchemas/RelatedValuesCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const RelatedValuesSelectSchema: z.ZodType<Prisma.RelatedValuesSelect> = z.object({
   id: z.boolean().optional(),
   input: z.boolean().optional(),
@@ -17,6 +18,7 @@ export const RelatedValuesSelectSchema: z.ZodType<Prisma.RelatedValuesSelect> = 
   equations: z.union([z.boolean(),z.lazy(() => EquationFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => RelatedValuesCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export const RelatedValuesFindFirstArgsSchema: z.ZodType<Prisma.RelatedValuesFindFirstArgs> = z.object({
   select: RelatedValuesSelectSchema.optional(),
   include: RelatedValuesIncludeSchema.optional(),
@@ -27,4 +29,5 @@ export const RelatedValuesFindFirstArgsSchema: z.ZodType<Prisma.RelatedValuesFin
   skip: z.number().optional(),
   distinct: z.union([ RelatedValuesScalarFieldEnumSchema,RelatedValuesScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
+
 export default RelatedValuesFindFirstArgsSchema;

@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { BibEntryCreateWithoutIpynbNotesInputSchema } from './BibEntryCreateWithoutIpynbNotesInputSchema.js';
-import { BibEntryUncheckedCreateWithoutIpynbNotesInputSchema } from './BibEntryUncheckedCreateWithoutIpynbNotesInputSchema.js';
-import { BibEntryCreateOrConnectWithoutIpynbNotesInputSchema } from './BibEntryCreateOrConnectWithoutIpynbNotesInputSchema.js';
-import { BibEntryUpsertWithWhereUniqueWithoutIpynbNotesInputSchema } from './BibEntryUpsertWithWhereUniqueWithoutIpynbNotesInputSchema.js';
-import { BibEntryWhereUniqueInputSchema } from './BibEntryWhereUniqueInputSchema.js';
-import { BibEntryUpdateWithWhereUniqueWithoutIpynbNotesInputSchema } from './BibEntryUpdateWithWhereUniqueWithoutIpynbNotesInputSchema.js';
-import { BibEntryUpdateManyWithWhereWithoutIpynbNotesInputSchema } from './BibEntryUpdateManyWithWhereWithoutIpynbNotesInputSchema.js';
-import { BibEntryScalarWhereInputSchema } from './BibEntryScalarWhereInputSchema.js';
+import { BibEntryCreateWithoutIpynbNotesInputSchema } from './BibEntryCreateWithoutIpynbNotesInputSchema';
+import { BibEntryUncheckedCreateWithoutIpynbNotesInputSchema } from './BibEntryUncheckedCreateWithoutIpynbNotesInputSchema';
+import { BibEntryCreateOrConnectWithoutIpynbNotesInputSchema } from './BibEntryCreateOrConnectWithoutIpynbNotesInputSchema';
+import { BibEntryUpsertWithWhereUniqueWithoutIpynbNotesInputSchema } from './BibEntryUpsertWithWhereUniqueWithoutIpynbNotesInputSchema';
+import { BibEntryWhereUniqueInputSchema } from './BibEntryWhereUniqueInputSchema';
+import { BibEntryUpdateWithWhereUniqueWithoutIpynbNotesInputSchema } from './BibEntryUpdateWithWhereUniqueWithoutIpynbNotesInputSchema';
+import { BibEntryUpdateManyWithWhereWithoutIpynbNotesInputSchema } from './BibEntryUpdateManyWithWhereWithoutIpynbNotesInputSchema';
+import { BibEntryScalarWhereInputSchema } from './BibEntryScalarWhereInputSchema';
+
 export const BibEntryUncheckedUpdateManyWithoutIpynbNotesNestedInputSchema: z.ZodType<Prisma.BibEntryUncheckedUpdateManyWithoutIpynbNotesNestedInput> = z.object({
   create: z.union([ z.lazy(() => BibEntryCreateWithoutIpynbNotesInputSchema),z.lazy(() => BibEntryCreateWithoutIpynbNotesInputSchema).array(),z.lazy(() => BibEntryUncheckedCreateWithoutIpynbNotesInputSchema),z.lazy(() => BibEntryUncheckedCreateWithoutIpynbNotesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => BibEntryCreateOrConnectWithoutIpynbNotesInputSchema),z.lazy(() => BibEntryCreateOrConnectWithoutIpynbNotesInputSchema).array() ]).optional(),
@@ -20,4 +22,5 @@ export const BibEntryUncheckedUpdateManyWithoutIpynbNotesNestedInputSchema: z.Zo
   updateMany: z.union([ z.lazy(() => BibEntryUpdateManyWithWhereWithoutIpynbNotesInputSchema),z.lazy(() => BibEntryUpdateManyWithWhereWithoutIpynbNotesInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => BibEntryScalarWhereInputSchema),z.lazy(() => BibEntryScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default BibEntryUncheckedUpdateManyWithoutIpynbNotesNestedInputSchema;

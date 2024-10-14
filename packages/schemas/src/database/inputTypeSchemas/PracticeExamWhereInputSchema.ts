@@ -1,11 +1,13 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IntFilterSchema } from './IntFilterSchema.js';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
-import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema.js';
-import { TagListRelationFilterSchema } from './TagListRelationFilterSchema.js';
-import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema.js';
-import { QAPairListRelationFilterSchema } from './QAPairListRelationFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema';
+import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema';
+import { TagListRelationFilterSchema } from './TagListRelationFilterSchema';
+import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema';
+import { QAPairListRelationFilterSchema } from './QAPairListRelationFilterSchema';
+
 export const PracticeExamWhereInputSchema: z.ZodType<Prisma.PracticeExamWhereInput> = z.object({
   AND: z.union([ z.lazy(() => PracticeExamWhereInputSchema),z.lazy(() => PracticeExamWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => PracticeExamWhereInputSchema).array().optional(),
@@ -21,4 +23,5 @@ export const PracticeExamWhereInputSchema: z.ZodType<Prisma.PracticeExamWhereInp
   subjects: z.lazy(() => SubjectListRelationFilterSchema).optional(),
   questions: z.lazy(() => QAPairListRelationFilterSchema).optional()
 }).strict();
+
 export default PracticeExamWhereInputSchema;

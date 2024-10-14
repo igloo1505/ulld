@@ -1,5 +1,7 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
+
 export const DietaryItemCreateManyInputSchema: z.ZodType<Prisma.DietaryItemCreateManyInput> = z.object({
   id: z.number().int().optional(),
   name: z.string(),
@@ -12,4 +14,5 @@ export const DietaryItemCreateManyInputSchema: z.ZodType<Prisma.DietaryItemCreat
   organic: z.boolean().optional(),
   impactScore: z.number().optional()
 }).strict();
+
 export default DietaryItemCreateManyInputSchema;

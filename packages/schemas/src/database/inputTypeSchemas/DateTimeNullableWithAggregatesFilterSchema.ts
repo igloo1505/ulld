@@ -1,8 +1,10 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { NestedDateTimeNullableWithAggregatesFilterSchema } from './NestedDateTimeNullableWithAggregatesFilterSchema.js';
-import { NestedIntNullableFilterSchema } from './NestedIntNullableFilterSchema.js';
-import { NestedDateTimeNullableFilterSchema } from './NestedDateTimeNullableFilterSchema.js';
+import { NestedDateTimeNullableWithAggregatesFilterSchema } from './NestedDateTimeNullableWithAggregatesFilterSchema';
+import { NestedIntNullableFilterSchema } from './NestedIntNullableFilterSchema';
+import { NestedDateTimeNullableFilterSchema } from './NestedDateTimeNullableFilterSchema';
+
 export const DateTimeNullableWithAggregatesFilterSchema: z.ZodType<Prisma.DateTimeNullableWithAggregatesFilter> = z.object({
   equals: z.coerce.date().optional().nullable(),
   in: z.coerce.date().array().optional().nullable(),
@@ -16,4 +18,5 @@ export const DateTimeNullableWithAggregatesFilterSchema: z.ZodType<Prisma.DateTi
   _min: z.lazy(() => NestedDateTimeNullableFilterSchema).optional(),
   _max: z.lazy(() => NestedDateTimeNullableFilterSchema).optional()
 }).strict();
+
 export default DateTimeNullableWithAggregatesFilterSchema;

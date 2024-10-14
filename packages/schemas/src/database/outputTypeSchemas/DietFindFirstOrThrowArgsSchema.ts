@@ -1,16 +1,17 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { DietIncludeSchema } from '../inputTypeSchemas/DietIncludeSchema.js'
-import { DietWhereInputSchema } from '../inputTypeSchemas/DietWhereInputSchema.js'
-import { DietOrderByWithRelationInputSchema } from '../inputTypeSchemas/DietOrderByWithRelationInputSchema.js'
-import { DietWhereUniqueInputSchema } from '../inputTypeSchemas/DietWhereUniqueInputSchema.js'
-import { DietScalarFieldEnumSchema } from '../inputTypeSchemas/DietScalarFieldEnumSchema.js'
+import type { Prisma } from '@prisma/client';
+import { DietIncludeSchema } from '../inputTypeSchemas/DietIncludeSchema'
+import { DietWhereInputSchema } from '../inputTypeSchemas/DietWhereInputSchema'
+import { DietOrderByWithRelationInputSchema } from '../inputTypeSchemas/DietOrderByWithRelationInputSchema'
+import { DietWhereUniqueInputSchema } from '../inputTypeSchemas/DietWhereUniqueInputSchema'
+import { DietScalarFieldEnumSchema } from '../inputTypeSchemas/DietScalarFieldEnumSchema'
 import { DietaryItemFindManyArgsSchema } from "../outputTypeSchemas/DietaryItemFindManyArgsSchema"
 import { TimePeriodFindManyArgsSchema } from "../outputTypeSchemas/TimePeriodFindManyArgsSchema"
 import { HealthReportFindManyArgsSchema } from "../outputTypeSchemas/HealthReportFindManyArgsSchema"
 import { DietCountOutputTypeArgsSchema } from "../outputTypeSchemas/DietCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const DietSelectSchema: z.ZodType<Prisma.DietSelect> = z.object({
   name: z.boolean().optional(),
   summary: z.boolean().optional(),
@@ -33,6 +34,7 @@ export const DietSelectSchema: z.ZodType<Prisma.DietSelect> = z.object({
   HealthReport: z.union([z.boolean(),z.lazy(() => HealthReportFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => DietCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export const DietFindFirstOrThrowArgsSchema: z.ZodType<Prisma.DietFindFirstOrThrowArgs> = z.object({
   select: DietSelectSchema.optional(),
   include: DietIncludeSchema.optional(),
@@ -43,4 +45,5 @@ export const DietFindFirstOrThrowArgsSchema: z.ZodType<Prisma.DietFindFirstOrThr
   skip: z.number().optional(),
   distinct: z.union([ DietScalarFieldEnumSchema,DietScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
+
 export default DietFindFirstOrThrowArgsSchema;

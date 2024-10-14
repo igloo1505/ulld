@@ -1,11 +1,11 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { TagIncludeSchema } from '../inputTypeSchemas/TagIncludeSchema.js'
-import { TagWhereUniqueInputSchema } from '../inputTypeSchemas/TagWhereUniqueInputSchema.js'
-import { TagCreateInputSchema } from '../inputTypeSchemas/TagCreateInputSchema.js'
-import { TagUncheckedCreateInputSchema } from '../inputTypeSchemas/TagUncheckedCreateInputSchema.js'
-import { TagUpdateInputSchema } from '../inputTypeSchemas/TagUpdateInputSchema.js'
-import { TagUncheckedUpdateInputSchema } from '../inputTypeSchemas/TagUncheckedUpdateInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { TagIncludeSchema } from '../inputTypeSchemas/TagIncludeSchema'
+import { TagWhereUniqueInputSchema } from '../inputTypeSchemas/TagWhereUniqueInputSchema'
+import { TagCreateInputSchema } from '../inputTypeSchemas/TagCreateInputSchema'
+import { TagUncheckedCreateInputSchema } from '../inputTypeSchemas/TagUncheckedCreateInputSchema'
+import { TagUpdateInputSchema } from '../inputTypeSchemas/TagUpdateInputSchema'
+import { TagUncheckedUpdateInputSchema } from '../inputTypeSchemas/TagUncheckedUpdateInputSchema'
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { BibEntryFindManyArgsSchema } from "../outputTypeSchemas/BibEntryFindManyArgsSchema"
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"
@@ -18,6 +18,7 @@ import { ToDoListFindManyArgsSchema } from "../outputTypeSchemas/ToDoListFindMan
 import { TagCountOutputTypeArgsSchema } from "../outputTypeSchemas/TagCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const TagSelectSchema: z.ZodType<Prisma.TagSelect> = z.object({
   value: z.boolean().optional(),
   kanbanId: z.boolean().optional(),
@@ -34,6 +35,7 @@ export const TagSelectSchema: z.ZodType<Prisma.TagSelect> = z.object({
   todoList: z.union([z.boolean(),z.lazy(() => ToDoListFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => TagCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export const TagUpsertArgsSchema: z.ZodType<Prisma.TagUpsertArgs> = z.object({
   select: TagSelectSchema.optional(),
   include: TagIncludeSchema.optional(),
@@ -41,4 +43,5 @@ export const TagUpsertArgsSchema: z.ZodType<Prisma.TagUpsertArgs> = z.object({
   create: z.union([ TagCreateInputSchema,TagUncheckedCreateInputSchema ]),
   update: z.union([ TagUpdateInputSchema,TagUncheckedUpdateInputSchema ]),
 }).strict() ;
+
 export default TagUpsertArgsSchema;

@@ -1,20 +1,22 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
-import { NullableBoolFieldUpdateOperationsInputSchema } from './NullableBoolFieldUpdateOperationsInputSchema.js';
-import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
-import { IpynbUpdatecitationsListOrderInputSchema } from './IpynbUpdatecitationsListOrderInputSchema.js';
-import { IpynbUpdateimportantValuesInputSchema } from './IpynbUpdateimportantValuesInputSchema.js';
-import { IpynbUpdateoutgoingQuickLinksInputSchema } from './IpynbUpdateoutgoingQuickLinksInputSchema.js';
-import { BytesFieldUpdateOperationsInputSchema } from './BytesFieldUpdateOperationsInputSchema.js';
-import { NullableIntFieldUpdateOperationsInputSchema } from './NullableIntFieldUpdateOperationsInputSchema.js';
-import { BoolFieldUpdateOperationsInputSchema } from './BoolFieldUpdateOperationsInputSchema.js';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
-import { TagUpdateManyWithoutIpynbNotesNestedInputSchema } from './TagUpdateManyWithoutIpynbNotesNestedInputSchema.js';
-import { TopicUpdateManyWithoutIpynbNotesNestedInputSchema } from './TopicUpdateManyWithoutIpynbNotesNestedInputSchema.js';
-import { BibEntryUpdateManyWithoutIpynbNotesNestedInputSchema } from './BibEntryUpdateManyWithoutIpynbNotesNestedInputSchema.js';
-import { SequentialNoteListUpdateOneWithoutIpynbNestedInputSchema } from './SequentialNoteListUpdateOneWithoutIpynbNestedInputSchema.js';
-import { ReadingListUpdateManyWithoutIpynbNotesNestedInputSchema } from './ReadingListUpdateManyWithoutIpynbNotesNestedInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
+import { NullableBoolFieldUpdateOperationsInputSchema } from './NullableBoolFieldUpdateOperationsInputSchema';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema';
+import { IpynbUpdatecitationsListOrderInputSchema } from './IpynbUpdatecitationsListOrderInputSchema';
+import { IpynbUpdateimportantValuesInputSchema } from './IpynbUpdateimportantValuesInputSchema';
+import { IpynbUpdateoutgoingQuickLinksInputSchema } from './IpynbUpdateoutgoingQuickLinksInputSchema';
+import { BytesFieldUpdateOperationsInputSchema } from './BytesFieldUpdateOperationsInputSchema';
+import { NullableIntFieldUpdateOperationsInputSchema } from './NullableIntFieldUpdateOperationsInputSchema';
+import { BoolFieldUpdateOperationsInputSchema } from './BoolFieldUpdateOperationsInputSchema';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
+import { TagUpdateManyWithoutIpynbNotesNestedInputSchema } from './TagUpdateManyWithoutIpynbNotesNestedInputSchema';
+import { TopicUpdateManyWithoutIpynbNotesNestedInputSchema } from './TopicUpdateManyWithoutIpynbNotesNestedInputSchema';
+import { BibEntryUpdateManyWithoutIpynbNotesNestedInputSchema } from './BibEntryUpdateManyWithoutIpynbNotesNestedInputSchema';
+import { SequentialNoteListUpdateOneWithoutIpynbNestedInputSchema } from './SequentialNoteListUpdateOneWithoutIpynbNestedInputSchema';
+import { ReadingListUpdateManyWithoutIpynbNotesNestedInputSchema } from './ReadingListUpdateManyWithoutIpynbNotesNestedInputSchema';
+
 export const IpynbUpdateWithoutSubjectsInputSchema: z.ZodType<Prisma.IpynbUpdateWithoutSubjectsInput> = z.object({
   rootRelativePath: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   isProtected: z.union([ z.boolean(),z.lazy(() => NullableBoolFieldUpdateOperationsInputSchema) ]).optional().nullable(),
@@ -36,4 +38,5 @@ export const IpynbUpdateWithoutSubjectsInputSchema: z.ZodType<Prisma.IpynbUpdate
   sequentialList: z.lazy(() => SequentialNoteListUpdateOneWithoutIpynbNestedInputSchema).optional(),
   readingList: z.lazy(() => ReadingListUpdateManyWithoutIpynbNotesNestedInputSchema).optional()
 }).strict();
+
 export default IpynbUpdateWithoutSubjectsInputSchema;

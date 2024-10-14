@@ -1,14 +1,16 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { BibEntryCreateWithoutBibInputSchema } from './BibEntryCreateWithoutBibInputSchema.js';
-import { BibEntryUncheckedCreateWithoutBibInputSchema } from './BibEntryUncheckedCreateWithoutBibInputSchema.js';
-import { BibEntryCreateOrConnectWithoutBibInputSchema } from './BibEntryCreateOrConnectWithoutBibInputSchema.js';
-import { BibEntryUpsertWithWhereUniqueWithoutBibInputSchema } from './BibEntryUpsertWithWhereUniqueWithoutBibInputSchema.js';
-import { BibEntryCreateManyBibInputEnvelopeSchema } from './BibEntryCreateManyBibInputEnvelopeSchema.js';
-import { BibEntryWhereUniqueInputSchema } from './BibEntryWhereUniqueInputSchema.js';
-import { BibEntryUpdateWithWhereUniqueWithoutBibInputSchema } from './BibEntryUpdateWithWhereUniqueWithoutBibInputSchema.js';
-import { BibEntryUpdateManyWithWhereWithoutBibInputSchema } from './BibEntryUpdateManyWithWhereWithoutBibInputSchema.js';
-import { BibEntryScalarWhereInputSchema } from './BibEntryScalarWhereInputSchema.js';
+import { BibEntryCreateWithoutBibInputSchema } from './BibEntryCreateWithoutBibInputSchema';
+import { BibEntryUncheckedCreateWithoutBibInputSchema } from './BibEntryUncheckedCreateWithoutBibInputSchema';
+import { BibEntryCreateOrConnectWithoutBibInputSchema } from './BibEntryCreateOrConnectWithoutBibInputSchema';
+import { BibEntryUpsertWithWhereUniqueWithoutBibInputSchema } from './BibEntryUpsertWithWhereUniqueWithoutBibInputSchema';
+import { BibEntryCreateManyBibInputEnvelopeSchema } from './BibEntryCreateManyBibInputEnvelopeSchema';
+import { BibEntryWhereUniqueInputSchema } from './BibEntryWhereUniqueInputSchema';
+import { BibEntryUpdateWithWhereUniqueWithoutBibInputSchema } from './BibEntryUpdateWithWhereUniqueWithoutBibInputSchema';
+import { BibEntryUpdateManyWithWhereWithoutBibInputSchema } from './BibEntryUpdateManyWithWhereWithoutBibInputSchema';
+import { BibEntryScalarWhereInputSchema } from './BibEntryScalarWhereInputSchema';
+
 export const BibEntryUncheckedUpdateManyWithoutBibNestedInputSchema: z.ZodType<Prisma.BibEntryUncheckedUpdateManyWithoutBibNestedInput> = z.object({
   create: z.union([ z.lazy(() => BibEntryCreateWithoutBibInputSchema),z.lazy(() => BibEntryCreateWithoutBibInputSchema).array(),z.lazy(() => BibEntryUncheckedCreateWithoutBibInputSchema),z.lazy(() => BibEntryUncheckedCreateWithoutBibInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => BibEntryCreateOrConnectWithoutBibInputSchema),z.lazy(() => BibEntryCreateOrConnectWithoutBibInputSchema).array() ]).optional(),
@@ -22,4 +24,5 @@ export const BibEntryUncheckedUpdateManyWithoutBibNestedInputSchema: z.ZodType<P
   updateMany: z.union([ z.lazy(() => BibEntryUpdateManyWithWhereWithoutBibInputSchema),z.lazy(() => BibEntryUpdateManyWithWhereWithoutBibInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => BibEntryScalarWhereInputSchema),z.lazy(() => BibEntryScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default BibEntryUncheckedUpdateManyWithoutBibNestedInputSchema;

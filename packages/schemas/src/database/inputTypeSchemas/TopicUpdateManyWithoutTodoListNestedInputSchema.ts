@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { TopicCreateWithoutTodoListInputSchema } from './TopicCreateWithoutTodoListInputSchema.js';
-import { TopicUncheckedCreateWithoutTodoListInputSchema } from './TopicUncheckedCreateWithoutTodoListInputSchema.js';
-import { TopicCreateOrConnectWithoutTodoListInputSchema } from './TopicCreateOrConnectWithoutTodoListInputSchema.js';
-import { TopicUpsertWithWhereUniqueWithoutTodoListInputSchema } from './TopicUpsertWithWhereUniqueWithoutTodoListInputSchema.js';
-import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema.js';
-import { TopicUpdateWithWhereUniqueWithoutTodoListInputSchema } from './TopicUpdateWithWhereUniqueWithoutTodoListInputSchema.js';
-import { TopicUpdateManyWithWhereWithoutTodoListInputSchema } from './TopicUpdateManyWithWhereWithoutTodoListInputSchema.js';
-import { TopicScalarWhereInputSchema } from './TopicScalarWhereInputSchema.js';
+import { TopicCreateWithoutTodoListInputSchema } from './TopicCreateWithoutTodoListInputSchema';
+import { TopicUncheckedCreateWithoutTodoListInputSchema } from './TopicUncheckedCreateWithoutTodoListInputSchema';
+import { TopicCreateOrConnectWithoutTodoListInputSchema } from './TopicCreateOrConnectWithoutTodoListInputSchema';
+import { TopicUpsertWithWhereUniqueWithoutTodoListInputSchema } from './TopicUpsertWithWhereUniqueWithoutTodoListInputSchema';
+import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema';
+import { TopicUpdateWithWhereUniqueWithoutTodoListInputSchema } from './TopicUpdateWithWhereUniqueWithoutTodoListInputSchema';
+import { TopicUpdateManyWithWhereWithoutTodoListInputSchema } from './TopicUpdateManyWithWhereWithoutTodoListInputSchema';
+import { TopicScalarWhereInputSchema } from './TopicScalarWhereInputSchema';
+
 export const TopicUpdateManyWithoutTodoListNestedInputSchema: z.ZodType<Prisma.TopicUpdateManyWithoutTodoListNestedInput> = z.object({
   create: z.union([ z.lazy(() => TopicCreateWithoutTodoListInputSchema),z.lazy(() => TopicCreateWithoutTodoListInputSchema).array(),z.lazy(() => TopicUncheckedCreateWithoutTodoListInputSchema),z.lazy(() => TopicUncheckedCreateWithoutTodoListInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TopicCreateOrConnectWithoutTodoListInputSchema),z.lazy(() => TopicCreateOrConnectWithoutTodoListInputSchema).array() ]).optional(),
@@ -20,4 +22,5 @@ export const TopicUpdateManyWithoutTodoListNestedInputSchema: z.ZodType<Prisma.T
   updateMany: z.union([ z.lazy(() => TopicUpdateManyWithWhereWithoutTodoListInputSchema),z.lazy(() => TopicUpdateManyWithWhereWithoutTodoListInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => TopicScalarWhereInputSchema),z.lazy(() => TopicScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default TopicUpdateManyWithoutTodoListNestedInputSchema;

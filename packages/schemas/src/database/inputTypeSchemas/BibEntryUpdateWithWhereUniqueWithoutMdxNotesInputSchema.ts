@@ -1,10 +1,13 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { BibEntryWhereUniqueInputSchema } from './BibEntryWhereUniqueInputSchema.js';
-import { BibEntryUpdateWithoutMdxNotesInputSchema } from './BibEntryUpdateWithoutMdxNotesInputSchema.js';
-import { BibEntryUncheckedUpdateWithoutMdxNotesInputSchema } from './BibEntryUncheckedUpdateWithoutMdxNotesInputSchema.js';
+import { BibEntryWhereUniqueInputSchema } from './BibEntryWhereUniqueInputSchema';
+import { BibEntryUpdateWithoutMdxNotesInputSchema } from './BibEntryUpdateWithoutMdxNotesInputSchema';
+import { BibEntryUncheckedUpdateWithoutMdxNotesInputSchema } from './BibEntryUncheckedUpdateWithoutMdxNotesInputSchema';
+
 export const BibEntryUpdateWithWhereUniqueWithoutMdxNotesInputSchema: z.ZodType<Prisma.BibEntryUpdateWithWhereUniqueWithoutMdxNotesInput> = z.object({
   where: z.lazy(() => BibEntryWhereUniqueInputSchema),
   data: z.union([ z.lazy(() => BibEntryUpdateWithoutMdxNotesInputSchema),z.lazy(() => BibEntryUncheckedUpdateWithoutMdxNotesInputSchema) ]),
 }).strict();
+
 export default BibEntryUpdateWithWhereUniqueWithoutMdxNotesInputSchema;

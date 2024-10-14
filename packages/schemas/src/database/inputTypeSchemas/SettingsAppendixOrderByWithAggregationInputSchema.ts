@@ -1,9 +1,11 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
-import { SettingsAppendixCountOrderByAggregateInputSchema } from './SettingsAppendixCountOrderByAggregateInputSchema.js';
-import { SettingsAppendixMaxOrderByAggregateInputSchema } from './SettingsAppendixMaxOrderByAggregateInputSchema.js';
-import { SettingsAppendixMinOrderByAggregateInputSchema } from './SettingsAppendixMinOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+import { SettingsAppendixCountOrderByAggregateInputSchema } from './SettingsAppendixCountOrderByAggregateInputSchema';
+import { SettingsAppendixMaxOrderByAggregateInputSchema } from './SettingsAppendixMaxOrderByAggregateInputSchema';
+import { SettingsAppendixMinOrderByAggregateInputSchema } from './SettingsAppendixMinOrderByAggregateInputSchema';
+
 export const SettingsAppendixOrderByWithAggregationInputSchema: z.ZodType<Prisma.SettingsAppendixOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   data: z.lazy(() => SortOrderSchema).optional(),
@@ -13,4 +15,5 @@ export const SettingsAppendixOrderByWithAggregationInputSchema: z.ZodType<Prisma
   _max: z.lazy(() => SettingsAppendixMaxOrderByAggregateInputSchema).optional(),
   _min: z.lazy(() => SettingsAppendixMinOrderByAggregateInputSchema).optional()
 }).strict();
+
 export default SettingsAppendixOrderByWithAggregationInputSchema;

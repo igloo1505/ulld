@@ -1,9 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { MdxNoteIncludeSchema } from '../inputTypeSchemas/MdxNoteIncludeSchema.js'
-import { MdxNoteUpdateInputSchema } from '../inputTypeSchemas/MdxNoteUpdateInputSchema.js'
-import { MdxNoteUncheckedUpdateInputSchema } from '../inputTypeSchemas/MdxNoteUncheckedUpdateInputSchema.js'
-import { MdxNoteWhereUniqueInputSchema } from '../inputTypeSchemas/MdxNoteWhereUniqueInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { MdxNoteIncludeSchema } from '../inputTypeSchemas/MdxNoteIncludeSchema'
+import { MdxNoteUpdateInputSchema } from '../inputTypeSchemas/MdxNoteUpdateInputSchema'
+import { MdxNoteUncheckedUpdateInputSchema } from '../inputTypeSchemas/MdxNoteUncheckedUpdateInputSchema'
+import { MdxNoteWhereUniqueInputSchema } from '../inputTypeSchemas/MdxNoteWhereUniqueInputSchema'
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
@@ -16,6 +16,7 @@ import { ToDoFindManyArgsSchema } from "../outputTypeSchemas/ToDoFindManyArgsSch
 import { MdxNoteCountOutputTypeArgsSchema } from "../outputTypeSchemas/MdxNoteCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const MdxNoteSelectSchema: z.ZodType<Prisma.MdxNoteSelect> = z.object({
   id: z.boolean().optional(),
   isProtected: z.boolean().optional(),
@@ -53,10 +54,12 @@ export const MdxNoteSelectSchema: z.ZodType<Prisma.MdxNoteSelect> = z.object({
   toDo: z.union([z.boolean(),z.lazy(() => ToDoFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => MdxNoteCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export const MdxNoteUpdateArgsSchema: z.ZodType<Prisma.MdxNoteUpdateArgs> = z.object({
   select: MdxNoteSelectSchema.optional(),
   include: MdxNoteIncludeSchema.optional(),
   data: z.union([ MdxNoteUpdateInputSchema,MdxNoteUncheckedUpdateInputSchema ]),
   where: MdxNoteWhereUniqueInputSchema,
 }).strict() ;
+
 export default MdxNoteUpdateArgsSchema;

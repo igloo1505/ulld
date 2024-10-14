@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { ToDoCreateWithoutTopicsInputSchema } from './ToDoCreateWithoutTopicsInputSchema.js';
-import { ToDoUncheckedCreateWithoutTopicsInputSchema } from './ToDoUncheckedCreateWithoutTopicsInputSchema.js';
-import { ToDoCreateOrConnectWithoutTopicsInputSchema } from './ToDoCreateOrConnectWithoutTopicsInputSchema.js';
-import { ToDoUpsertWithWhereUniqueWithoutTopicsInputSchema } from './ToDoUpsertWithWhereUniqueWithoutTopicsInputSchema.js';
-import { ToDoWhereUniqueInputSchema } from './ToDoWhereUniqueInputSchema.js';
-import { ToDoUpdateWithWhereUniqueWithoutTopicsInputSchema } from './ToDoUpdateWithWhereUniqueWithoutTopicsInputSchema.js';
-import { ToDoUpdateManyWithWhereWithoutTopicsInputSchema } from './ToDoUpdateManyWithWhereWithoutTopicsInputSchema.js';
-import { ToDoScalarWhereInputSchema } from './ToDoScalarWhereInputSchema.js';
+import { ToDoCreateWithoutTopicsInputSchema } from './ToDoCreateWithoutTopicsInputSchema';
+import { ToDoUncheckedCreateWithoutTopicsInputSchema } from './ToDoUncheckedCreateWithoutTopicsInputSchema';
+import { ToDoCreateOrConnectWithoutTopicsInputSchema } from './ToDoCreateOrConnectWithoutTopicsInputSchema';
+import { ToDoUpsertWithWhereUniqueWithoutTopicsInputSchema } from './ToDoUpsertWithWhereUniqueWithoutTopicsInputSchema';
+import { ToDoWhereUniqueInputSchema } from './ToDoWhereUniqueInputSchema';
+import { ToDoUpdateWithWhereUniqueWithoutTopicsInputSchema } from './ToDoUpdateWithWhereUniqueWithoutTopicsInputSchema';
+import { ToDoUpdateManyWithWhereWithoutTopicsInputSchema } from './ToDoUpdateManyWithWhereWithoutTopicsInputSchema';
+import { ToDoScalarWhereInputSchema } from './ToDoScalarWhereInputSchema';
+
 export const ToDoUpdateManyWithoutTopicsNestedInputSchema: z.ZodType<Prisma.ToDoUpdateManyWithoutTopicsNestedInput> = z.object({
   create: z.union([ z.lazy(() => ToDoCreateWithoutTopicsInputSchema),z.lazy(() => ToDoCreateWithoutTopicsInputSchema).array(),z.lazy(() => ToDoUncheckedCreateWithoutTopicsInputSchema),z.lazy(() => ToDoUncheckedCreateWithoutTopicsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => ToDoCreateOrConnectWithoutTopicsInputSchema),z.lazy(() => ToDoCreateOrConnectWithoutTopicsInputSchema).array() ]).optional(),
@@ -20,4 +22,5 @@ export const ToDoUpdateManyWithoutTopicsNestedInputSchema: z.ZodType<Prisma.ToDo
   updateMany: z.union([ z.lazy(() => ToDoUpdateManyWithWhereWithoutTopicsInputSchema),z.lazy(() => ToDoUpdateManyWithWhereWithoutTopicsInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => ToDoScalarWhereInputSchema),z.lazy(() => ToDoScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default ToDoUpdateManyWithoutTopicsNestedInputSchema;

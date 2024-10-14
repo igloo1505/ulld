@@ -1,8 +1,10 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IntFilterSchema } from './IntFilterSchema.js';
-import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema';
+
 export const KanBanCardScalarWhereInputSchema: z.ZodType<Prisma.KanBanCardScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => KanBanCardScalarWhereInputSchema),z.lazy(() => KanBanCardScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => KanBanCardScalarWhereInputSchema).array().optional(),
@@ -13,4 +15,5 @@ export const KanBanCardScalarWhereInputSchema: z.ZodType<Prisma.KanBanCardScalar
   label: z.union([ z.lazy(() => StringNullableFilterSchema),z.string() ]).optional().nullable(),
   details: z.union([ z.lazy(() => StringNullableFilterSchema),z.string() ]).optional().nullable(),
 }).strict();
+
 export default KanBanCardScalarWhereInputSchema;

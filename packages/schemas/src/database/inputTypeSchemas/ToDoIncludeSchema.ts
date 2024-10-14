@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
@@ -8,6 +8,7 @@ import { ToDoArgsSchema } from "../outputTypeSchemas/ToDoArgsSchema"
 import { ToDoFindManyArgsSchema } from "../outputTypeSchemas/ToDoFindManyArgsSchema"
 import { ToDoListArgsSchema } from "../outputTypeSchemas/ToDoListArgsSchema"
 import { ToDoCountOutputTypeArgsSchema } from "../outputTypeSchemas/ToDoCountOutputTypeArgsSchema"
+
 export const ToDoIncludeSchema: z.ZodType<Prisma.ToDoInclude> = z.object({
   associatedNotes: z.union([z.boolean(),z.lazy(() => MdxNoteFindManyArgsSchema)]).optional(),
   tags: z.union([z.boolean(),z.lazy(() => TagFindManyArgsSchema)]).optional(),
@@ -18,4 +19,5 @@ export const ToDoIncludeSchema: z.ZodType<Prisma.ToDoInclude> = z.object({
   ToDoList: z.union([z.boolean(),z.lazy(() => ToDoListArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => ToDoCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export default ToDoIncludeSchema;

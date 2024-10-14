@@ -1,16 +1,18 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
-import { BoolFieldUpdateOperationsInputSchema } from './BoolFieldUpdateOperationsInputSchema.js';
-import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
-import { BibUpdateOneWithoutEntriesNestedInputSchema } from './BibUpdateOneWithoutEntriesNestedInputSchema.js';
-import { CitationsGroupUpdateManyWithoutEntriesNestedInputSchema } from './CitationsGroupUpdateManyWithoutEntriesNestedInputSchema.js';
-import { TagUpdateManyWithoutBibEntriesNestedInputSchema } from './TagUpdateManyWithoutBibEntriesNestedInputSchema.js';
-import { TopicUpdateManyWithoutBibEntriesNestedInputSchema } from './TopicUpdateManyWithoutBibEntriesNestedInputSchema.js';
-import { MdxNoteUpdateManyWithoutCitationsNestedInputSchema } from './MdxNoteUpdateManyWithoutCitationsNestedInputSchema.js';
-import { IpynbUpdateManyWithoutCitationsNestedInputSchema } from './IpynbUpdateManyWithoutCitationsNestedInputSchema.js';
-import { ReadingListUpdateManyWithoutBibEntriesNestedInputSchema } from './ReadingListUpdateManyWithoutBibEntriesNestedInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
+import { BoolFieldUpdateOperationsInputSchema } from './BoolFieldUpdateOperationsInputSchema';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
+import { BibUpdateOneWithoutEntriesNestedInputSchema } from './BibUpdateOneWithoutEntriesNestedInputSchema';
+import { CitationsGroupUpdateManyWithoutEntriesNestedInputSchema } from './CitationsGroupUpdateManyWithoutEntriesNestedInputSchema';
+import { TagUpdateManyWithoutBibEntriesNestedInputSchema } from './TagUpdateManyWithoutBibEntriesNestedInputSchema';
+import { TopicUpdateManyWithoutBibEntriesNestedInputSchema } from './TopicUpdateManyWithoutBibEntriesNestedInputSchema';
+import { MdxNoteUpdateManyWithoutCitationsNestedInputSchema } from './MdxNoteUpdateManyWithoutCitationsNestedInputSchema';
+import { IpynbUpdateManyWithoutCitationsNestedInputSchema } from './IpynbUpdateManyWithoutCitationsNestedInputSchema';
+import { ReadingListUpdateManyWithoutBibEntriesNestedInputSchema } from './ReadingListUpdateManyWithoutBibEntriesNestedInputSchema';
+
 export const BibEntryUpdateWithoutSubjectsInputSchema: z.ZodType<Prisma.BibEntryUpdateWithoutSubjectsInput> = z.object({
   id: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   OwnWork: z.union([ z.boolean(),z.lazy(() => BoolFieldUpdateOperationsInputSchema) ]).optional(),
@@ -61,4 +63,5 @@ export const BibEntryUpdateWithoutSubjectsInputSchema: z.ZodType<Prisma.BibEntry
   ipynbNotes: z.lazy(() => IpynbUpdateManyWithoutCitationsNestedInputSchema).optional(),
   readingList: z.lazy(() => ReadingListUpdateManyWithoutBibEntriesNestedInputSchema).optional()
 }).strict();
+
 export default BibEntryUpdateWithoutSubjectsInputSchema;

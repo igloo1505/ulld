@@ -1,6 +1,8 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { BibEntryUncheckedCreateNestedManyWithoutBibInputSchema } from './BibEntryUncheckedCreateNestedManyWithoutBibInputSchema.js';
+import { BibEntryUncheckedCreateNestedManyWithoutBibInputSchema } from './BibEntryUncheckedCreateNestedManyWithoutBibInputSchema';
+
 export const BibUncheckedCreateInputSchema: z.ZodType<Prisma.BibUncheckedCreateInput> = z.object({
   id: z.number().int().optional(),
   filename: z.string(),
@@ -8,4 +10,5 @@ export const BibUncheckedCreateInputSchema: z.ZodType<Prisma.BibUncheckedCreateI
   lastSync: z.coerce.date().optional(),
   entries: z.lazy(() => BibEntryUncheckedCreateNestedManyWithoutBibInputSchema).optional()
 }).strict();
+
 export default BibUncheckedCreateInputSchema;

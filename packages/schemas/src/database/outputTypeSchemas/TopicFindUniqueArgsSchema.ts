@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { TopicIncludeSchema } from '../inputTypeSchemas/TopicIncludeSchema.js'
-import { TopicWhereUniqueInputSchema } from '../inputTypeSchemas/TopicWhereUniqueInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { TopicIncludeSchema } from '../inputTypeSchemas/TopicIncludeSchema'
+import { TopicWhereUniqueInputSchema } from '../inputTypeSchemas/TopicWhereUniqueInputSchema'
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"
 import { QAPairFindManyArgsSchema } from "../outputTypeSchemas/QAPairFindManyArgsSchema"
@@ -14,6 +14,7 @@ import { EquationFindManyArgsSchema } from "../outputTypeSchemas/EquationFindMan
 import { TopicCountOutputTypeArgsSchema } from "../outputTypeSchemas/TopicCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const TopicSelectSchema: z.ZodType<Prisma.TopicSelect> = z.object({
   value: z.boolean().optional(),
   kanbanId: z.boolean().optional(),
@@ -30,9 +31,11 @@ export const TopicSelectSchema: z.ZodType<Prisma.TopicSelect> = z.object({
   equations: z.union([z.boolean(),z.lazy(() => EquationFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => TopicCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export const TopicFindUniqueArgsSchema: z.ZodType<Prisma.TopicFindUniqueArgs> = z.object({
   select: TopicSelectSchema.optional(),
   include: TopicIncludeSchema.optional(),
   where: TopicWhereUniqueInputSchema,
 }).strict() ;
+
 export default TopicFindUniqueArgsSchema;

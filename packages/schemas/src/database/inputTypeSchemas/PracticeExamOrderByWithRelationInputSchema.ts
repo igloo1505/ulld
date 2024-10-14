@@ -1,10 +1,12 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
-import { TopicOrderByRelationAggregateInputSchema } from './TopicOrderByRelationAggregateInputSchema.js';
-import { TagOrderByRelationAggregateInputSchema } from './TagOrderByRelationAggregateInputSchema.js';
-import { SubjectOrderByRelationAggregateInputSchema } from './SubjectOrderByRelationAggregateInputSchema.js';
-import { QAPairOrderByRelationAggregateInputSchema } from './QAPairOrderByRelationAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+import { TopicOrderByRelationAggregateInputSchema } from './TopicOrderByRelationAggregateInputSchema';
+import { TagOrderByRelationAggregateInputSchema } from './TagOrderByRelationAggregateInputSchema';
+import { SubjectOrderByRelationAggregateInputSchema } from './SubjectOrderByRelationAggregateInputSchema';
+import { QAPairOrderByRelationAggregateInputSchema } from './QAPairOrderByRelationAggregateInputSchema';
+
 export const PracticeExamOrderByWithRelationInputSchema: z.ZodType<Prisma.PracticeExamOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   correctCount: z.lazy(() => SortOrderSchema).optional(),
@@ -17,4 +19,5 @@ export const PracticeExamOrderByWithRelationInputSchema: z.ZodType<Prisma.Practi
   subjects: z.lazy(() => SubjectOrderByRelationAggregateInputSchema).optional(),
   questions: z.lazy(() => QAPairOrderByRelationAggregateInputSchema).optional()
 }).strict();
+
 export default PracticeExamOrderByWithRelationInputSchema;

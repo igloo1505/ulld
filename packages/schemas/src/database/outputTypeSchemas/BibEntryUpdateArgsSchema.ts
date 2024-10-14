@@ -1,9 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { BibEntryIncludeSchema } from '../inputTypeSchemas/BibEntryIncludeSchema.js'
-import { BibEntryUpdateInputSchema } from '../inputTypeSchemas/BibEntryUpdateInputSchema.js'
-import { BibEntryUncheckedUpdateInputSchema } from '../inputTypeSchemas/BibEntryUncheckedUpdateInputSchema.js'
-import { BibEntryWhereUniqueInputSchema } from '../inputTypeSchemas/BibEntryWhereUniqueInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { BibEntryIncludeSchema } from '../inputTypeSchemas/BibEntryIncludeSchema'
+import { BibEntryUpdateInputSchema } from '../inputTypeSchemas/BibEntryUpdateInputSchema'
+import { BibEntryUncheckedUpdateInputSchema } from '../inputTypeSchemas/BibEntryUncheckedUpdateInputSchema'
+import { BibEntryWhereUniqueInputSchema } from '../inputTypeSchemas/BibEntryWhereUniqueInputSchema'
 import { BibArgsSchema } from "../outputTypeSchemas/BibArgsSchema"
 import { CitationsGroupFindManyArgsSchema } from "../outputTypeSchemas/CitationsGroupFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
@@ -15,6 +15,7 @@ import { ReadingListFindManyArgsSchema } from "../outputTypeSchemas/ReadingListF
 import { BibEntryCountOutputTypeArgsSchema } from "../outputTypeSchemas/BibEntryCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const BibEntrySelectSchema: z.ZodType<Prisma.BibEntrySelect> = z.object({
   id: z.boolean().optional(),
   BibId: z.boolean().optional(),
@@ -68,10 +69,12 @@ export const BibEntrySelectSchema: z.ZodType<Prisma.BibEntrySelect> = z.object({
   readingList: z.union([z.boolean(),z.lazy(() => ReadingListFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => BibEntryCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export const BibEntryUpdateArgsSchema: z.ZodType<Prisma.BibEntryUpdateArgs> = z.object({
   select: BibEntrySelectSchema.optional(),
   include: BibEntryIncludeSchema.optional(),
   data: z.union([ BibEntryUpdateInputSchema,BibEntryUncheckedUpdateInputSchema ]),
   where: BibEntryWhereUniqueInputSchema,
 }).strict() ;
+
 export default BibEntryUpdateArgsSchema;

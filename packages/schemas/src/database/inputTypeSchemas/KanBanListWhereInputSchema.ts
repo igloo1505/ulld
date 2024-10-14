@@ -1,11 +1,13 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IntFilterSchema } from './IntFilterSchema.js';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
-import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
-import { KanBanCardListRelationFilterSchema } from './KanBanCardListRelationFilterSchema.js';
-import { KanbanNullableRelationFilterSchema } from './KanbanNullableRelationFilterSchema.js';
-import { KanbanWhereInputSchema } from './KanbanWhereInputSchema.js';
+import { IntFilterSchema } from './IntFilterSchema';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema';
+import { KanBanCardListRelationFilterSchema } from './KanBanCardListRelationFilterSchema';
+import { KanbanNullableRelationFilterSchema } from './KanbanNullableRelationFilterSchema';
+import { KanbanWhereInputSchema } from './KanbanWhereInputSchema';
+
 export const KanBanListWhereInputSchema: z.ZodType<Prisma.KanBanListWhereInput> = z.object({
   AND: z.union([ z.lazy(() => KanBanListWhereInputSchema),z.lazy(() => KanBanListWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => KanBanListWhereInputSchema).array().optional(),
@@ -17,4 +19,5 @@ export const KanBanListWhereInputSchema: z.ZodType<Prisma.KanBanListWhereInput> 
   cards: z.lazy(() => KanBanCardListRelationFilterSchema).optional(),
   Kanban: z.union([ z.lazy(() => KanbanNullableRelationFilterSchema),z.lazy(() => KanbanWhereInputSchema) ]).optional().nullable(),
 }).strict();
+
 export default KanBanListWhereInputSchema;

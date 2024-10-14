@@ -1,10 +1,12 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IntFilterSchema } from './IntFilterSchema.js';
-import { JsonFilterSchema } from './JsonFilterSchema.js';
-import { FloatFilterSchema } from './FloatFilterSchema.js';
-import { IntNullableListFilterSchema } from './IntNullableListFilterSchema.js';
-import { EquationListRelationFilterSchema } from './EquationListRelationFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema';
+import { JsonFilterSchema } from './JsonFilterSchema';
+import { FloatFilterSchema } from './FloatFilterSchema';
+import { IntNullableListFilterSchema } from './IntNullableListFilterSchema';
+import { EquationListRelationFilterSchema } from './EquationListRelationFilterSchema';
+
 export const RelatedValuesWhereInputSchema: z.ZodType<Prisma.RelatedValuesWhereInput> = z.object({
   AND: z.union([ z.lazy(() => RelatedValuesWhereInputSchema),z.lazy(() => RelatedValuesWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => RelatedValuesWhereInputSchema).array().optional(),
@@ -15,4 +17,5 @@ export const RelatedValuesWhereInputSchema: z.ZodType<Prisma.RelatedValuesWhereI
   equationId: z.lazy(() => IntNullableListFilterSchema).optional(),
   equations: z.lazy(() => EquationListRelationFilterSchema).optional()
 }).strict();
+
 export default RelatedValuesWhereInputSchema;

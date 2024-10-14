@@ -1,9 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { NoteTypeWhereInputSchema } from '../inputTypeSchemas/NoteTypeWhereInputSchema.js'
-import { NoteTypeOrderByWithAggregationInputSchema } from '../inputTypeSchemas/NoteTypeOrderByWithAggregationInputSchema.js'
-import { NoteTypeScalarFieldEnumSchema } from '../inputTypeSchemas/NoteTypeScalarFieldEnumSchema.js'
-import { NoteTypeScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/NoteTypeScalarWhereWithAggregatesInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { NoteTypeWhereInputSchema } from '../inputTypeSchemas/NoteTypeWhereInputSchema'
+import { NoteTypeOrderByWithAggregationInputSchema } from '../inputTypeSchemas/NoteTypeOrderByWithAggregationInputSchema'
+import { NoteTypeScalarFieldEnumSchema } from '../inputTypeSchemas/NoteTypeScalarFieldEnumSchema'
+import { NoteTypeScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/NoteTypeScalarWhereWithAggregatesInputSchema'
+
 export const NoteTypeGroupByArgsSchema: z.ZodType<Prisma.NoteTypeGroupByArgs> = z.object({
   where: NoteTypeWhereInputSchema.optional(),
   orderBy: z.union([ NoteTypeOrderByWithAggregationInputSchema.array(),NoteTypeOrderByWithAggregationInputSchema ]).optional(),
@@ -12,4 +13,5 @@ export const NoteTypeGroupByArgsSchema: z.ZodType<Prisma.NoteTypeGroupByArgs> = 
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
+
 export default NoteTypeGroupByArgsSchema;

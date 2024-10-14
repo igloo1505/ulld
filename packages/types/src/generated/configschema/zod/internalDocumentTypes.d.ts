@@ -144,5 +144,6 @@ export declare const internalDocumentTypeConfigSchema: z.ZodObject<{
     inNavbar?: boolean | undefined;
 }>;
 export type InternalDocumentConfigType = z.output<typeof internalDocumentTypeConfigSchema>;
+export type InternalDocumentConfigInput = z.input<typeof internalDocumentTypeConfigSchema>;
 export declare const internalDocumentTypes: z.input<typeof internalDocumentTypeConfigSchema>[];
 //# sourceMappingURL=internalDocumentTypes.d.ts.map

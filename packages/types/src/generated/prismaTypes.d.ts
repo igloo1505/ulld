@@ -1,3 +1,190 @@
+// This file was overwritten by prisma-json-types-generator
+// Report any issues to https://github.com/arthurfiorette/prisma-json-types-generator
+
+declare global {
+  namespace PrismaJson {
+    // This namespace will always be empty. Definitions should be done by
+    // you manually, and merged automatically by typescript. Make sure that
+    // your declaration merging file is included in your tsconfig.json
+    //
+    // Learn more: https://github.com/arthurfiorette/prisma-json-types-generator/issues/143
+    // Declaration Merging: https://www.typescriptlang.org/docs/handbook/declaration-merging.html
+  }
+}
+
+/** A filter to be used against nullable List types. */
+export type NullableListFilter<T> = {
+  equals?: T | T[] | null;
+  has?: T | null;
+  hasEvery?: T[];
+  hasSome?: T[];
+  isEmpty?: boolean;
+};
+
+/** A type to determine how to update a json field */
+export type UpdateInput<T> = T extends object
+  ? { [P in keyof T]?: UpdateInput<T[P]> }
+  : T;
+
+/** A type to determine how to update a json[] field */
+export type UpdateManyInput<T> = T | T[] | { set?: T[]; push?: T | T[] };
+
+/** A type to determine how to create a json[] input */
+export type CreateManyInput<T> = T | T[] | { set?: T[] };
+
+/**
+ * A typed version of NestedStringFilter, allowing narrowing of string types to
+ * discriminated unions.
+ */
+export type TypedNestedStringFilter<S extends string> =
+  //@ts-ignore - When Prisma.StringFilter is not present, this type is not used
+  Prisma.StringFilter & {
+    equals?: S;
+    in?: S[];
+    notIn?: S[];
+    not?: TypedNestedStringFilter<S> | S;
+  };
+
+/**
+ * A typed version of StringFilter, allowing narrowing of string types to discriminated
+ * unions.
+ */
+export type TypedStringFilter<S extends string> =
+  //@ts-ignore - When Prisma.StringFilter is not present, this type is not used
+  Prisma.StringFilter & {
+    equals?: S;
+    in?: S[];
+    notIn?: S[];
+    not?: TypedNestedStringFilter<S> | S;
+  };
+
+/**
+ * A typed version of NestedStringNullableFilter, allowing narrowing of string types to
+ * discriminated unions.
+ */
+export type TypedNestedStringNullableFilter<S extends string> =
+  //@ts-ignore - When Prisma.StringNullableFilter is not present, this type is not used
+  Prisma.StringNullableFilter & {
+    equals?: S | null;
+    in?: S[] | null;
+    notIn?: S[] | null;
+    not?: TypedNestedStringNullableFilter<S> | S | null;
+  };
+
+/**
+ * A typed version of StringNullableFilter, allowing narrowing of string types to
+ * discriminated unions.
+ */
+export type TypedStringNullableFilter<S extends string> =
+  //@ts-ignore - When Prisma.StringNullableFilter is not present, this type is not used
+  Prisma.StringNullableFilter & {
+    equals?: S | null;
+    in?: S[] | null;
+    notIn?: S[] | null;
+    not?: TypedNestedStringNullableFilter<S> | S | null;
+  };
+
+/**
+ * A typed version of NestedStringWithAggregatesFilter, allowing narrowing of string types
+ * to discriminated unions.
+ */
+export type TypedNestedStringWithAggregatesFilter<S extends string> =
+  //@ts-ignore - When Prisma.NestedStringWithAggregatesFilter is not present, this type is not used
+  Prisma.NestedStringWithAggregatesFilter & {
+    equals?: S;
+    in?: S[];
+    notIn?: S[];
+    not?: TypedNestedStringWithAggregatesFilter<S> | S;
+  };
+
+/**
+ * A typed version of StringWithAggregatesFilter, allowing narrowing of string types to
+ * discriminated unions.
+ */
+export type TypedStringWithAggregatesFilter<S extends string> =
+  //@ts-ignore - When Prisma.StringWithAggregatesFilter is not present, this type is not used
+  Prisma.StringWithAggregatesFilter & {
+    equals?: S;
+    in?: S[];
+    notIn?: S[];
+    not?: TypedNestedStringWithAggregatesFilter<S> | S;
+  };
+
+/**
+ * A typed version of NestedStringNullableWithAggregatesFilter, allowing narrowing of
+ * string types to discriminated unions.
+ */
+export type TypedNestedStringNullableWithAggregatesFilter<S extends string> =
+  //@ts-ignore - When Prisma.NestedStringNullableWithAggregatesFilter is not present, this type is not used
+  Prisma.NestedStringNullableWithAggregatesFilter & {
+    equals?: S | null;
+    in?: S[] | null;
+    notIn?: S[] | null;
+    not?: TypedNestedStringNullableWithAggregatesFilter<S> | S | null;
+  };
+
+/**
+ * A typed version of StringNullableWithAggregatesFilter, allowing narrowing of string
+ * types to discriminated unions.
+ */
+export type TypedStringNullableWithAggregatesFilter<S extends string> =
+  //@ts-ignore - When Prisma.StringNullableWithAggregatesFilter is not present, this type is not used
+  Prisma.StringNullableWithAggregatesFilter & {
+    equals?: S | null;
+    in?: S[] | null;
+    notIn?: S[] | null;
+    not?: TypedNestedStringNullableWithAggregatesFilter<S> | S | null;
+  };
+
+/**
+ * A typed version of StringFieldUpdateOperationsInput, allowing narrowing of string types
+ * to discriminated unions.
+ */
+export type TypedStringFieldUpdateOperationsInput<S extends string> =
+  //@ts-ignore - When Prisma.StringFieldUpdateOperationsInput is not present, this type is not used
+  Prisma.StringFieldUpdateOperationsInput & {
+    set?: S;
+  };
+
+/**
+ * A typed version of NullableStringFieldUpdateOperationsInput, allowing narrowing of
+ * string types to discriminated unions.
+ */
+export type TypedNullableStringFieldUpdateOperationsInput<S extends string> =
+  //@ts-ignore - When Prisma.NullableStringFieldUpdateOperationsInput is not present, this type is not used
+  Prisma.NullableStringFieldUpdateOperationsInput & {
+    set?: S | null;
+  };
+
+/**
+ * A typed version of StringNullableListFilter, allowing narrowing of string types to
+ * discriminated unions.
+ */
+export type TypedStringNullableListFilter<S extends string> =
+  //@ts-ignore - When Prisma.StringNullableListFilter is not present, this type is not used
+  Prisma.StringNullableListFilter & {
+    equals?: S[] | null;
+    has?: S | null;
+    hasEvery?: S[];
+    hasSome?: S[];
+  };
+
+/**
+ * A typed version of the input type to update a string[] field, allowing narrowing of
+ * string types to discriminated unions.
+ */
+export type UpdateStringArrayInput<S extends string> = {
+  set?: S[];
+  push?: S | S[];
+};
+
+/**
+ * A typed version of the input type to create a string[] field, allowing narrowing of
+ * string types to discriminated unions.
+ */
+export type CreateStringArrayInput<S extends string> = {
+  set?: S[];
+};
 
 /**
  * Client
@@ -13,21 +200,6 @@ import $Result = runtime.Types.Result
 export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
-/**
- * Model FeatureRequest
- * 
- */
-export type FeatureRequest = $Result.DefaultSelection<Prisma.$FeatureRequestPayload>
-/**
- * Model WaitlistRequest
- * 
- */
-export type WaitlistRequest = $Result.DefaultSelection<Prisma.$WaitlistRequestPayload>
-/**
- * Model BusinessContact
- * 
- */
-export type BusinessContact = $Result.DefaultSelection<Prisma.$BusinessContactPayload>
 /**
  * Model Subject
  * 
@@ -208,6 +380,21 @@ export type Whiteboard = $Result.DefaultSelection<Prisma.$WhiteboardPayload>
  * 
  */
 export type DJT = $Result.DefaultSelection<Prisma.$DJTPayload>
+/**
+ * Model FeatureRequest
+ * 
+ */
+export type FeatureRequest = $Result.DefaultSelection<Prisma.$FeatureRequestPayload>
+/**
+ * Model WaitlistRequest
+ * 
+ */
+export type WaitlistRequest = $Result.DefaultSelection<Prisma.$WaitlistRequestPayload>
+/**
+ * Model BusinessContact
+ * 
+ */
+export type BusinessContact = $Result.DefaultSelection<Prisma.$BusinessContactPayload>
 
 /**
  * Enums
@@ -220,29 +407,6 @@ export namespace $Enums {
 };
 
 export type autoSetting = (typeof autoSetting)[keyof typeof autoSetting]
-
-
-export const Technologies: {
-  python: 'python',
-  javascript: 'javascript',
-  lua: 'lua',
-  typescript: 'typescript',
-  css: 'css',
-  scss: 'scss',
-  react: 'react',
-  prisma: 'prisma',
-  tailwind: 'tailwind',
-  node: 'node',
-  bash: 'bash',
-  zsh: 'zsh',
-  bibtex: 'bibtex',
-  latex: 'latex',
-  json: 'json',
-  applescript: 'applescript',
-  swift: 'swift'
-};
-
-export type Technologies = (typeof Technologies)[keyof typeof Technologies]
 
 
 export const ImageAlignment: {
@@ -272,18 +436,6 @@ export const TaskCategory: {
 };
 
 export type TaskCategory = (typeof TaskCategory)[keyof typeof TaskCategory]
-
-
-export const ToDoListStatus: {
-  ToDo: 'ToDo',
-  In_Progress: 'In_Progress',
-  Backlog: 'Backlog',
-  Cancelled: 'Cancelled',
-  Done: 'Done',
-  Future: 'Future'
-};
-
-export type ToDoListStatus = (typeof ToDoListStatus)[keyof typeof ToDoListStatus]
 
 
 export const TERTIARY_TOGGLE: {
@@ -335,10 +487,6 @@ export type autoSetting = $Enums.autoSetting
 
 export const autoSetting: typeof $Enums.autoSetting
 
-export type Technologies = $Enums.Technologies
-
-export const Technologies: typeof $Enums.Technologies
-
 export type ImageAlignment = $Enums.ImageAlignment
 
 export const ImageAlignment: typeof $Enums.ImageAlignment
@@ -346,10 +494,6 @@ export const ImageAlignment: typeof $Enums.ImageAlignment
 export type TaskCategory = $Enums.TaskCategory
 
 export const TaskCategory: typeof $Enums.TaskCategory
-
-export type ToDoListStatus = $Enums.ToDoListStatus
-
-export const ToDoListStatus: typeof $Enums.ToDoListStatus
 
 export type TERTIARY_TOGGLE = $Enums.TERTIARY_TOGGLE
 
@@ -370,8 +514,8 @@ export const QUANTITY_GUESS: typeof $Enums.QUANTITY_GUESS
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more FeatureRequests
- * const featureRequests = await prisma.featureRequest.findMany()
+ * // Fetch zero or more Subjects
+ * const subjects = await prisma.subject.findMany()
  * ```
  *
  * 
@@ -391,8 +535,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more FeatureRequests
-   * const featureRequests = await prisma.featureRequest.findMany()
+   * // Fetch zero or more Subjects
+   * const subjects = await prisma.subject.findMany()
    * ```
    *
    * 
@@ -486,36 +630,6 @@ export class PrismaClient<
   $extends: $Extensions.ExtendsHook<"extends", Prisma.TypeMapCb, ExtArgs>
 
       /**
-   * `prisma.featureRequest`: Exposes CRUD operations for the **FeatureRequest** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more FeatureRequests
-    * const featureRequests = await prisma.featureRequest.findMany()
-    * ```
-    */
-  get featureRequest(): Prisma.FeatureRequestDelegate<ExtArgs>;
-
-  /**
-   * `prisma.waitlistRequest`: Exposes CRUD operations for the **WaitlistRequest** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more WaitlistRequests
-    * const waitlistRequests = await prisma.waitlistRequest.findMany()
-    * ```
-    */
-  get waitlistRequest(): Prisma.WaitlistRequestDelegate<ExtArgs>;
-
-  /**
-   * `prisma.businessContact`: Exposes CRUD operations for the **BusinessContact** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more BusinessContacts
-    * const businessContacts = await prisma.businessContact.findMany()
-    * ```
-    */
-  get businessContact(): Prisma.BusinessContactDelegate<ExtArgs>;
-
-  /**
    * `prisma.subject`: Exposes CRUD operations for the **Subject** model.
     * Example usage:
     * ```ts
@@ -874,6 +988,36 @@ export class PrismaClient<
     * ```
     */
   get dJT(): Prisma.DJTDelegate<ExtArgs>;
+
+  /**
+   * `prisma.featureRequest`: Exposes CRUD operations for the **FeatureRequest** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FeatureRequests
+    * const featureRequests = await prisma.featureRequest.findMany()
+    * ```
+    */
+  get featureRequest(): Prisma.FeatureRequestDelegate<ExtArgs>;
+
+  /**
+   * `prisma.waitlistRequest`: Exposes CRUD operations for the **WaitlistRequest** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more WaitlistRequests
+    * const waitlistRequests = await prisma.waitlistRequest.findMany()
+    * ```
+    */
+  get waitlistRequest(): Prisma.WaitlistRequestDelegate<ExtArgs>;
+
+  /**
+   * `prisma.businessContact`: Exposes CRUD operations for the **BusinessContact** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more BusinessContacts
+    * const businessContacts = await prisma.businessContact.findMany()
+    * ```
+    */
+  get businessContact(): Prisma.BusinessContactDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -1351,9 +1495,6 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    FeatureRequest: 'FeatureRequest',
-    WaitlistRequest: 'WaitlistRequest',
-    BusinessContact: 'BusinessContact',
     Subject: 'Subject',
     Topic: 'Topic',
     Tag: 'Tag',
@@ -1389,7 +1530,10 @@ export namespace Prisma {
     DietaryItem: 'DietaryItem',
     HealthReport: 'HealthReport',
     Whiteboard: 'Whiteboard',
-    DJT: 'DJT'
+    DJT: 'DJT',
+    FeatureRequest: 'FeatureRequest',
+    WaitlistRequest: 'WaitlistRequest',
+    BusinessContact: 'BusinessContact'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -1405,220 +1549,10 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "featureRequest" | "waitlistRequest" | "businessContact" | "subject" | "topic" | "tag" | "quote" | "dailyFocus" | "autoSetting" | "readingList" | "bibEntry" | "citationsGroup" | "bib" | "googleCalendarAuth" | "snippet" | "relatedValues" | "equation" | "definition" | "settings" | "settingsAppendix" | "randomImage" | "noteType" | "qAPair" | "practiceExam" | "sequentialNoteList" | "mdxNote" | "ipynb" | "toDoList" | "toDo" | "kanBanCard" | "kanBanList" | "kanban" | "timePeriod" | "diet" | "serving" | "dietaryItem" | "healthReport" | "whiteboard" | "dJT"
+      modelProps: "subject" | "topic" | "tag" | "quote" | "dailyFocus" | "autoSetting" | "readingList" | "bibEntry" | "citationsGroup" | "bib" | "googleCalendarAuth" | "snippet" | "relatedValues" | "equation" | "definition" | "settings" | "settingsAppendix" | "randomImage" | "noteType" | "qAPair" | "practiceExam" | "sequentialNoteList" | "mdxNote" | "ipynb" | "toDoList" | "toDo" | "kanBanCard" | "kanBanList" | "kanban" | "timePeriod" | "diet" | "serving" | "dietaryItem" | "healthReport" | "whiteboard" | "dJT" | "featureRequest" | "waitlistRequest" | "businessContact"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      FeatureRequest: {
-        payload: Prisma.$FeatureRequestPayload<ExtArgs>
-        fields: Prisma.FeatureRequestFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.FeatureRequestFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.FeatureRequestFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
-          }
-          findFirst: {
-            args: Prisma.FeatureRequestFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.FeatureRequestFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
-          }
-          findMany: {
-            args: Prisma.FeatureRequestFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>[]
-          }
-          create: {
-            args: Prisma.FeatureRequestCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
-          }
-          createMany: {
-            args: Prisma.FeatureRequestCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.FeatureRequestCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>[]
-          }
-          delete: {
-            args: Prisma.FeatureRequestDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
-          }
-          update: {
-            args: Prisma.FeatureRequestUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
-          }
-          deleteMany: {
-            args: Prisma.FeatureRequestDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.FeatureRequestUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          upsert: {
-            args: Prisma.FeatureRequestUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
-          }
-          aggregate: {
-            args: Prisma.FeatureRequestAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateFeatureRequest>
-          }
-          groupBy: {
-            args: Prisma.FeatureRequestGroupByArgs<ExtArgs>
-            result: $Utils.Optional<FeatureRequestGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.FeatureRequestCountArgs<ExtArgs>
-            result: $Utils.Optional<FeatureRequestCountAggregateOutputType> | number
-          }
-        }
-      }
-      WaitlistRequest: {
-        payload: Prisma.$WaitlistRequestPayload<ExtArgs>
-        fields: Prisma.WaitlistRequestFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.WaitlistRequestFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.WaitlistRequestFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
-          }
-          findFirst: {
-            args: Prisma.WaitlistRequestFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.WaitlistRequestFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
-          }
-          findMany: {
-            args: Prisma.WaitlistRequestFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>[]
-          }
-          create: {
-            args: Prisma.WaitlistRequestCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
-          }
-          createMany: {
-            args: Prisma.WaitlistRequestCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.WaitlistRequestCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>[]
-          }
-          delete: {
-            args: Prisma.WaitlistRequestDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
-          }
-          update: {
-            args: Prisma.WaitlistRequestUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
-          }
-          deleteMany: {
-            args: Prisma.WaitlistRequestDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.WaitlistRequestUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          upsert: {
-            args: Prisma.WaitlistRequestUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
-          }
-          aggregate: {
-            args: Prisma.WaitlistRequestAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateWaitlistRequest>
-          }
-          groupBy: {
-            args: Prisma.WaitlistRequestGroupByArgs<ExtArgs>
-            result: $Utils.Optional<WaitlistRequestGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.WaitlistRequestCountArgs<ExtArgs>
-            result: $Utils.Optional<WaitlistRequestCountAggregateOutputType> | number
-          }
-        }
-      }
-      BusinessContact: {
-        payload: Prisma.$BusinessContactPayload<ExtArgs>
-        fields: Prisma.BusinessContactFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.BusinessContactFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.BusinessContactFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>
-          }
-          findFirst: {
-            args: Prisma.BusinessContactFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.BusinessContactFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>
-          }
-          findMany: {
-            args: Prisma.BusinessContactFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>[]
-          }
-          create: {
-            args: Prisma.BusinessContactCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>
-          }
-          createMany: {
-            args: Prisma.BusinessContactCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.BusinessContactCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>[]
-          }
-          delete: {
-            args: Prisma.BusinessContactDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>
-          }
-          update: {
-            args: Prisma.BusinessContactUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>
-          }
-          deleteMany: {
-            args: Prisma.BusinessContactDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.BusinessContactUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          upsert: {
-            args: Prisma.BusinessContactUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>
-          }
-          aggregate: {
-            args: Prisma.BusinessContactAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateBusinessContact>
-          }
-          groupBy: {
-            args: Prisma.BusinessContactGroupByArgs<ExtArgs>
-            result: $Utils.Optional<BusinessContactGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.BusinessContactCountArgs<ExtArgs>
-            result: $Utils.Optional<BusinessContactCountAggregateOutputType> | number
-          }
-        }
-      }
       Subject: {
         payload: Prisma.$SubjectPayload<ExtArgs>
         fields: Prisma.SubjectFieldRefs
@@ -4139,6 +4073,216 @@ export namespace Prisma {
           }
         }
       }
+      FeatureRequest: {
+        payload: Prisma.$FeatureRequestPayload<ExtArgs>
+        fields: Prisma.FeatureRequestFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FeatureRequestFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FeatureRequestFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
+          }
+          findFirst: {
+            args: Prisma.FeatureRequestFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FeatureRequestFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
+          }
+          findMany: {
+            args: Prisma.FeatureRequestFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>[]
+          }
+          create: {
+            args: Prisma.FeatureRequestCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
+          }
+          createMany: {
+            args: Prisma.FeatureRequestCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FeatureRequestCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>[]
+          }
+          delete: {
+            args: Prisma.FeatureRequestDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
+          }
+          update: {
+            args: Prisma.FeatureRequestUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
+          }
+          deleteMany: {
+            args: Prisma.FeatureRequestDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FeatureRequestUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.FeatureRequestUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeatureRequestPayload>
+          }
+          aggregate: {
+            args: Prisma.FeatureRequestAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFeatureRequest>
+          }
+          groupBy: {
+            args: Prisma.FeatureRequestGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FeatureRequestGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FeatureRequestCountArgs<ExtArgs>
+            result: $Utils.Optional<FeatureRequestCountAggregateOutputType> | number
+          }
+        }
+      }
+      WaitlistRequest: {
+        payload: Prisma.$WaitlistRequestPayload<ExtArgs>
+        fields: Prisma.WaitlistRequestFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.WaitlistRequestFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.WaitlistRequestFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
+          }
+          findFirst: {
+            args: Prisma.WaitlistRequestFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.WaitlistRequestFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
+          }
+          findMany: {
+            args: Prisma.WaitlistRequestFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>[]
+          }
+          create: {
+            args: Prisma.WaitlistRequestCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
+          }
+          createMany: {
+            args: Prisma.WaitlistRequestCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.WaitlistRequestCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>[]
+          }
+          delete: {
+            args: Prisma.WaitlistRequestDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
+          }
+          update: {
+            args: Prisma.WaitlistRequestUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
+          }
+          deleteMany: {
+            args: Prisma.WaitlistRequestDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.WaitlistRequestUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.WaitlistRequestUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WaitlistRequestPayload>
+          }
+          aggregate: {
+            args: Prisma.WaitlistRequestAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateWaitlistRequest>
+          }
+          groupBy: {
+            args: Prisma.WaitlistRequestGroupByArgs<ExtArgs>
+            result: $Utils.Optional<WaitlistRequestGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.WaitlistRequestCountArgs<ExtArgs>
+            result: $Utils.Optional<WaitlistRequestCountAggregateOutputType> | number
+          }
+        }
+      }
+      BusinessContact: {
+        payload: Prisma.$BusinessContactPayload<ExtArgs>
+        fields: Prisma.BusinessContactFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.BusinessContactFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.BusinessContactFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>
+          }
+          findFirst: {
+            args: Prisma.BusinessContactFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.BusinessContactFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>
+          }
+          findMany: {
+            args: Prisma.BusinessContactFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>[]
+          }
+          create: {
+            args: Prisma.BusinessContactCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>
+          }
+          createMany: {
+            args: Prisma.BusinessContactCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.BusinessContactCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>[]
+          }
+          delete: {
+            args: Prisma.BusinessContactDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>
+          }
+          update: {
+            args: Prisma.BusinessContactUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>
+          }
+          deleteMany: {
+            args: Prisma.BusinessContactDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.BusinessContactUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.BusinessContactUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BusinessContactPayload>
+          }
+          aggregate: {
+            args: Prisma.BusinessContactAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateBusinessContact>
+          }
+          groupBy: {
+            args: Prisma.BusinessContactGroupByArgs<ExtArgs>
+            result: $Utils.Optional<BusinessContactGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.BusinessContactCountArgs<ExtArgs>
+            result: $Utils.Optional<BusinessContactCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -5496,2786 +5640,6 @@ export namespace Prisma {
    */
 
   /**
-   * Model FeatureRequest
-   */
-
-  export type AggregateFeatureRequest = {
-    _count: FeatureRequestCountAggregateOutputType | null
-    _avg: FeatureRequestAvgAggregateOutputType | null
-    _sum: FeatureRequestSumAggregateOutputType | null
-    _min: FeatureRequestMinAggregateOutputType | null
-    _max: FeatureRequestMaxAggregateOutputType | null
-  }
-
-  export type FeatureRequestAvgAggregateOutputType = {
-    id: number | null
-  }
-
-  export type FeatureRequestSumAggregateOutputType = {
-    id: number | null
-  }
-
-  export type FeatureRequestMinAggregateOutputType = {
-    id: number | null
-    email: string | null
-    message: string | null
-    receivedOn: Date | null
-  }
-
-  export type FeatureRequestMaxAggregateOutputType = {
-    id: number | null
-    email: string | null
-    message: string | null
-    receivedOn: Date | null
-  }
-
-  export type FeatureRequestCountAggregateOutputType = {
-    id: number
-    email: number
-    message: number
-    category: number
-    userBase: number
-    receivedOn: number
-    _all: number
-  }
-
-
-  export type FeatureRequestAvgAggregateInputType = {
-    id?: true
-  }
-
-  export type FeatureRequestSumAggregateInputType = {
-    id?: true
-  }
-
-  export type FeatureRequestMinAggregateInputType = {
-    id?: true
-    email?: true
-    message?: true
-    receivedOn?: true
-  }
-
-  export type FeatureRequestMaxAggregateInputType = {
-    id?: true
-    email?: true
-    message?: true
-    receivedOn?: true
-  }
-
-  export type FeatureRequestCountAggregateInputType = {
-    id?: true
-    email?: true
-    message?: true
-    category?: true
-    userBase?: true
-    receivedOn?: true
-    _all?: true
-  }
-
-  export type FeatureRequestAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which FeatureRequest to aggregate.
-     */
-    where?: FeatureRequestWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of FeatureRequests to fetch.
-     */
-    orderBy?: FeatureRequestOrderByWithRelationInput | FeatureRequestOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: FeatureRequestWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` FeatureRequests from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` FeatureRequests.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned FeatureRequests
-    **/
-    _count?: true | FeatureRequestCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: FeatureRequestAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: FeatureRequestSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: FeatureRequestMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: FeatureRequestMaxAggregateInputType
-  }
-
-  export type GetFeatureRequestAggregateType<T extends FeatureRequestAggregateArgs> = {
-        [P in keyof T & keyof AggregateFeatureRequest]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateFeatureRequest[P]>
-      : GetScalarType<T[P], AggregateFeatureRequest[P]>
-  }
-
-
-
-
-  export type FeatureRequestGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: FeatureRequestWhereInput
-    orderBy?: FeatureRequestOrderByWithAggregationInput | FeatureRequestOrderByWithAggregationInput[]
-    by: FeatureRequestScalarFieldEnum[] | FeatureRequestScalarFieldEnum
-    having?: FeatureRequestScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: FeatureRequestCountAggregateInputType | true
-    _avg?: FeatureRequestAvgAggregateInputType
-    _sum?: FeatureRequestSumAggregateInputType
-    _min?: FeatureRequestMinAggregateInputType
-    _max?: FeatureRequestMaxAggregateInputType
-  }
-
-  export type FeatureRequestGroupByOutputType = {
-    id: number
-    email: string
-    message: string
-    category: string[]
-    userBase: string[]
-    receivedOn: Date
-    _count: FeatureRequestCountAggregateOutputType | null
-    _avg: FeatureRequestAvgAggregateOutputType | null
-    _sum: FeatureRequestSumAggregateOutputType | null
-    _min: FeatureRequestMinAggregateOutputType | null
-    _max: FeatureRequestMaxAggregateOutputType | null
-  }
-
-  type GetFeatureRequestGroupByPayload<T extends FeatureRequestGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<FeatureRequestGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof FeatureRequestGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], FeatureRequestGroupByOutputType[P]>
-            : GetScalarType<T[P], FeatureRequestGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type FeatureRequestSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    email?: boolean
-    message?: boolean
-    category?: boolean
-    userBase?: boolean
-    receivedOn?: boolean
-  }, ExtArgs["result"]["featureRequest"]>
-
-  export type FeatureRequestSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    email?: boolean
-    message?: boolean
-    category?: boolean
-    userBase?: boolean
-    receivedOn?: boolean
-  }, ExtArgs["result"]["featureRequest"]>
-
-  export type FeatureRequestSelectScalar = {
-    id?: boolean
-    email?: boolean
-    message?: boolean
-    category?: boolean
-    userBase?: boolean
-    receivedOn?: boolean
-  }
-
-
-  export type $FeatureRequestPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "FeatureRequest"
-    objects: {}
-    scalars: $Extensions.GetPayloadResult<{
-      id: number
-      email: string
-      message: string
-      category: string[]
-      userBase: string[]
-      receivedOn: Date
-    }, ExtArgs["result"]["featureRequest"]>
-    composites: {}
-  }
-
-  type FeatureRequestGetPayload<S extends boolean | null | undefined | FeatureRequestDefaultArgs> = $Result.GetResult<Prisma.$FeatureRequestPayload, S>
-
-  type FeatureRequestCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<FeatureRequestFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: FeatureRequestCountAggregateInputType | true
-    }
-
-  export interface FeatureRequestDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FeatureRequest'], meta: { name: 'FeatureRequest' } }
-    /**
-     * Find zero or one FeatureRequest that matches the filter.
-     * @param {FeatureRequestFindUniqueArgs} args - Arguments to find a FeatureRequest
-     * @example
-     * // Get one FeatureRequest
-     * const featureRequest = await prisma.featureRequest.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends FeatureRequestFindUniqueArgs>(args: SelectSubset<T, FeatureRequestFindUniqueArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
-
-    /**
-     * Find one FeatureRequest that matches the filter or throw an error with `error.code='P2025'` 
-     * if no matches were found.
-     * @param {FeatureRequestFindUniqueOrThrowArgs} args - Arguments to find a FeatureRequest
-     * @example
-     * // Get one FeatureRequest
-     * const featureRequest = await prisma.featureRequest.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends FeatureRequestFindUniqueOrThrowArgs>(args: SelectSubset<T, FeatureRequestFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
-
-    /**
-     * Find the first FeatureRequest that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {FeatureRequestFindFirstArgs} args - Arguments to find a FeatureRequest
-     * @example
-     * // Get one FeatureRequest
-     * const featureRequest = await prisma.featureRequest.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends FeatureRequestFindFirstArgs>(args?: SelectSubset<T, FeatureRequestFindFirstArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
-
-    /**
-     * Find the first FeatureRequest that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {FeatureRequestFindFirstOrThrowArgs} args - Arguments to find a FeatureRequest
-     * @example
-     * // Get one FeatureRequest
-     * const featureRequest = await prisma.featureRequest.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends FeatureRequestFindFirstOrThrowArgs>(args?: SelectSubset<T, FeatureRequestFindFirstOrThrowArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
-
-    /**
-     * Find zero or more FeatureRequests that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {FeatureRequestFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all FeatureRequests
-     * const featureRequests = await prisma.featureRequest.findMany()
-     * 
-     * // Get first 10 FeatureRequests
-     * const featureRequests = await prisma.featureRequest.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const featureRequestWithIdOnly = await prisma.featureRequest.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends FeatureRequestFindManyArgs>(args?: SelectSubset<T, FeatureRequestFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "findMany">>
-
-    /**
-     * Create a FeatureRequest.
-     * @param {FeatureRequestCreateArgs} args - Arguments to create a FeatureRequest.
-     * @example
-     * // Create one FeatureRequest
-     * const FeatureRequest = await prisma.featureRequest.create({
-     *   data: {
-     *     // ... data to create a FeatureRequest
-     *   }
-     * })
-     * 
-     */
-    create<T extends FeatureRequestCreateArgs>(args: SelectSubset<T, FeatureRequestCreateArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "create">, never, ExtArgs>
-
-    /**
-     * Create many FeatureRequests.
-     * @param {FeatureRequestCreateManyArgs} args - Arguments to create many FeatureRequests.
-     * @example
-     * // Create many FeatureRequests
-     * const featureRequest = await prisma.featureRequest.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends FeatureRequestCreateManyArgs>(args?: SelectSubset<T, FeatureRequestCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many FeatureRequests and returns the data saved in the database.
-     * @param {FeatureRequestCreateManyAndReturnArgs} args - Arguments to create many FeatureRequests.
-     * @example
-     * // Create many FeatureRequests
-     * const featureRequest = await prisma.featureRequest.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many FeatureRequests and only return the `id`
-     * const featureRequestWithIdOnly = await prisma.featureRequest.createManyAndReturn({ 
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends FeatureRequestCreateManyAndReturnArgs>(args?: SelectSubset<T, FeatureRequestCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "createManyAndReturn">>
-
-    /**
-     * Delete a FeatureRequest.
-     * @param {FeatureRequestDeleteArgs} args - Arguments to delete one FeatureRequest.
-     * @example
-     * // Delete one FeatureRequest
-     * const FeatureRequest = await prisma.featureRequest.delete({
-     *   where: {
-     *     // ... filter to delete one FeatureRequest
-     *   }
-     * })
-     * 
-     */
-    delete<T extends FeatureRequestDeleteArgs>(args: SelectSubset<T, FeatureRequestDeleteArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "delete">, never, ExtArgs>
-
-    /**
-     * Update one FeatureRequest.
-     * @param {FeatureRequestUpdateArgs} args - Arguments to update one FeatureRequest.
-     * @example
-     * // Update one FeatureRequest
-     * const featureRequest = await prisma.featureRequest.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends FeatureRequestUpdateArgs>(args: SelectSubset<T, FeatureRequestUpdateArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "update">, never, ExtArgs>
-
-    /**
-     * Delete zero or more FeatureRequests.
-     * @param {FeatureRequestDeleteManyArgs} args - Arguments to filter FeatureRequests to delete.
-     * @example
-     * // Delete a few FeatureRequests
-     * const { count } = await prisma.featureRequest.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends FeatureRequestDeleteManyArgs>(args?: SelectSubset<T, FeatureRequestDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more FeatureRequests.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {FeatureRequestUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many FeatureRequests
-     * const featureRequest = await prisma.featureRequest.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends FeatureRequestUpdateManyArgs>(args: SelectSubset<T, FeatureRequestUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one FeatureRequest.
-     * @param {FeatureRequestUpsertArgs} args - Arguments to update or create a FeatureRequest.
-     * @example
-     * // Update or create a FeatureRequest
-     * const featureRequest = await prisma.featureRequest.upsert({
-     *   create: {
-     *     // ... data to create a FeatureRequest
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the FeatureRequest we want to update
-     *   }
-     * })
-     */
-    upsert<T extends FeatureRequestUpsertArgs>(args: SelectSubset<T, FeatureRequestUpsertArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
-
-
-    /**
-     * Count the number of FeatureRequests.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {FeatureRequestCountArgs} args - Arguments to filter FeatureRequests to count.
-     * @example
-     * // Count the number of FeatureRequests
-     * const count = await prisma.featureRequest.count({
-     *   where: {
-     *     // ... the filter for the FeatureRequests we want to count
-     *   }
-     * })
-    **/
-    count<T extends FeatureRequestCountArgs>(
-      args?: Subset<T, FeatureRequestCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], FeatureRequestCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a FeatureRequest.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {FeatureRequestAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends FeatureRequestAggregateArgs>(args: Subset<T, FeatureRequestAggregateArgs>): Prisma.PrismaPromise<GetFeatureRequestAggregateType<T>>
-
-    /**
-     * Group by FeatureRequest.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {FeatureRequestGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends FeatureRequestGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: FeatureRequestGroupByArgs['orderBy'] }
-        : { orderBy?: FeatureRequestGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, FeatureRequestGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFeatureRequestGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the FeatureRequest model
-   */
-  readonly fields: FeatureRequestFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for FeatureRequest.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__FeatureRequestClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the FeatureRequest model
-   */ 
-  interface FeatureRequestFieldRefs {
-    readonly id: FieldRef<"FeatureRequest", 'Int'>
-    readonly email: FieldRef<"FeatureRequest", 'String'>
-    readonly message: FieldRef<"FeatureRequest", 'String'>
-    readonly category: FieldRef<"FeatureRequest", 'String[]'>
-    readonly userBase: FieldRef<"FeatureRequest", 'String[]'>
-    readonly receivedOn: FieldRef<"FeatureRequest", 'DateTime'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * FeatureRequest findUnique
-   */
-  export type FeatureRequestFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the FeatureRequest
-     */
-    select?: FeatureRequestSelect<ExtArgs> | null
-    /**
-     * Filter, which FeatureRequest to fetch.
-     */
-    where: FeatureRequestWhereUniqueInput
-  }
-
-  /**
-   * FeatureRequest findUniqueOrThrow
-   */
-  export type FeatureRequestFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the FeatureRequest
-     */
-    select?: FeatureRequestSelect<ExtArgs> | null
-    /**
-     * Filter, which FeatureRequest to fetch.
-     */
-    where: FeatureRequestWhereUniqueInput
-  }
-
-  /**
-   * FeatureRequest findFirst
-   */
-  export type FeatureRequestFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the FeatureRequest
-     */
-    select?: FeatureRequestSelect<ExtArgs> | null
-    /**
-     * Filter, which FeatureRequest to fetch.
-     */
-    where?: FeatureRequestWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of FeatureRequests to fetch.
-     */
-    orderBy?: FeatureRequestOrderByWithRelationInput | FeatureRequestOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for FeatureRequests.
-     */
-    cursor?: FeatureRequestWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` FeatureRequests from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` FeatureRequests.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of FeatureRequests.
-     */
-    distinct?: FeatureRequestScalarFieldEnum | FeatureRequestScalarFieldEnum[]
-  }
-
-  /**
-   * FeatureRequest findFirstOrThrow
-   */
-  export type FeatureRequestFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the FeatureRequest
-     */
-    select?: FeatureRequestSelect<ExtArgs> | null
-    /**
-     * Filter, which FeatureRequest to fetch.
-     */
-    where?: FeatureRequestWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of FeatureRequests to fetch.
-     */
-    orderBy?: FeatureRequestOrderByWithRelationInput | FeatureRequestOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for FeatureRequests.
-     */
-    cursor?: FeatureRequestWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` FeatureRequests from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` FeatureRequests.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of FeatureRequests.
-     */
-    distinct?: FeatureRequestScalarFieldEnum | FeatureRequestScalarFieldEnum[]
-  }
-
-  /**
-   * FeatureRequest findMany
-   */
-  export type FeatureRequestFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the FeatureRequest
-     */
-    select?: FeatureRequestSelect<ExtArgs> | null
-    /**
-     * Filter, which FeatureRequests to fetch.
-     */
-    where?: FeatureRequestWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of FeatureRequests to fetch.
-     */
-    orderBy?: FeatureRequestOrderByWithRelationInput | FeatureRequestOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing FeatureRequests.
-     */
-    cursor?: FeatureRequestWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` FeatureRequests from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` FeatureRequests.
-     */
-    skip?: number
-    distinct?: FeatureRequestScalarFieldEnum | FeatureRequestScalarFieldEnum[]
-  }
-
-  /**
-   * FeatureRequest create
-   */
-  export type FeatureRequestCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the FeatureRequest
-     */
-    select?: FeatureRequestSelect<ExtArgs> | null
-    /**
-     * The data needed to create a FeatureRequest.
-     */
-    data: XOR<FeatureRequestCreateInput, FeatureRequestUncheckedCreateInput>
-  }
-
-  /**
-   * FeatureRequest createMany
-   */
-  export type FeatureRequestCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many FeatureRequests.
-     */
-    data: FeatureRequestCreateManyInput | FeatureRequestCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * FeatureRequest createManyAndReturn
-   */
-  export type FeatureRequestCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the FeatureRequest
-     */
-    select?: FeatureRequestSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * The data used to create many FeatureRequests.
-     */
-    data: FeatureRequestCreateManyInput | FeatureRequestCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * FeatureRequest update
-   */
-  export type FeatureRequestUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the FeatureRequest
-     */
-    select?: FeatureRequestSelect<ExtArgs> | null
-    /**
-     * The data needed to update a FeatureRequest.
-     */
-    data: XOR<FeatureRequestUpdateInput, FeatureRequestUncheckedUpdateInput>
-    /**
-     * Choose, which FeatureRequest to update.
-     */
-    where: FeatureRequestWhereUniqueInput
-  }
-
-  /**
-   * FeatureRequest updateMany
-   */
-  export type FeatureRequestUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update FeatureRequests.
-     */
-    data: XOR<FeatureRequestUpdateManyMutationInput, FeatureRequestUncheckedUpdateManyInput>
-    /**
-     * Filter which FeatureRequests to update
-     */
-    where?: FeatureRequestWhereInput
-  }
-
-  /**
-   * FeatureRequest upsert
-   */
-  export type FeatureRequestUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the FeatureRequest
-     */
-    select?: FeatureRequestSelect<ExtArgs> | null
-    /**
-     * The filter to search for the FeatureRequest to update in case it exists.
-     */
-    where: FeatureRequestWhereUniqueInput
-    /**
-     * In case the FeatureRequest found by the `where` argument doesn't exist, create a new FeatureRequest with this data.
-     */
-    create: XOR<FeatureRequestCreateInput, FeatureRequestUncheckedCreateInput>
-    /**
-     * In case the FeatureRequest was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<FeatureRequestUpdateInput, FeatureRequestUncheckedUpdateInput>
-  }
-
-  /**
-   * FeatureRequest delete
-   */
-  export type FeatureRequestDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the FeatureRequest
-     */
-    select?: FeatureRequestSelect<ExtArgs> | null
-    /**
-     * Filter which FeatureRequest to delete.
-     */
-    where: FeatureRequestWhereUniqueInput
-  }
-
-  /**
-   * FeatureRequest deleteMany
-   */
-  export type FeatureRequestDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which FeatureRequests to delete
-     */
-    where?: FeatureRequestWhereInput
-  }
-
-  /**
-   * FeatureRequest without action
-   */
-  export type FeatureRequestDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the FeatureRequest
-     */
-    select?: FeatureRequestSelect<ExtArgs> | null
-  }
-
-
-  /**
-   * Model WaitlistRequest
-   */
-
-  export type AggregateWaitlistRequest = {
-    _count: WaitlistRequestCountAggregateOutputType | null
-    _avg: WaitlistRequestAvgAggregateOutputType | null
-    _sum: WaitlistRequestSumAggregateOutputType | null
-    _min: WaitlistRequestMinAggregateOutputType | null
-    _max: WaitlistRequestMaxAggregateOutputType | null
-  }
-
-  export type WaitlistRequestAvgAggregateOutputType = {
-    id: number | null
-    emailsSent: number | null
-  }
-
-  export type WaitlistRequestSumAggregateOutputType = {
-    id: number | null
-    emailsSent: number | null
-  }
-
-  export type WaitlistRequestMinAggregateOutputType = {
-    id: number | null
-    email: string | null
-    receivedOn: Date | null
-    emailsSent: number | null
-  }
-
-  export type WaitlistRequestMaxAggregateOutputType = {
-    id: number | null
-    email: string | null
-    receivedOn: Date | null
-    emailsSent: number | null
-  }
-
-  export type WaitlistRequestCountAggregateOutputType = {
-    id: number
-    email: number
-    receivedOn: number
-    emailsSent: number
-    _all: number
-  }
-
-
-  export type WaitlistRequestAvgAggregateInputType = {
-    id?: true
-    emailsSent?: true
-  }
-
-  export type WaitlistRequestSumAggregateInputType = {
-    id?: true
-    emailsSent?: true
-  }
-
-  export type WaitlistRequestMinAggregateInputType = {
-    id?: true
-    email?: true
-    receivedOn?: true
-    emailsSent?: true
-  }
-
-  export type WaitlistRequestMaxAggregateInputType = {
-    id?: true
-    email?: true
-    receivedOn?: true
-    emailsSent?: true
-  }
-
-  export type WaitlistRequestCountAggregateInputType = {
-    id?: true
-    email?: true
-    receivedOn?: true
-    emailsSent?: true
-    _all?: true
-  }
-
-  export type WaitlistRequestAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which WaitlistRequest to aggregate.
-     */
-    where?: WaitlistRequestWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of WaitlistRequests to fetch.
-     */
-    orderBy?: WaitlistRequestOrderByWithRelationInput | WaitlistRequestOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: WaitlistRequestWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` WaitlistRequests from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` WaitlistRequests.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned WaitlistRequests
-    **/
-    _count?: true | WaitlistRequestCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: WaitlistRequestAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: WaitlistRequestSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: WaitlistRequestMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: WaitlistRequestMaxAggregateInputType
-  }
-
-  export type GetWaitlistRequestAggregateType<T extends WaitlistRequestAggregateArgs> = {
-        [P in keyof T & keyof AggregateWaitlistRequest]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateWaitlistRequest[P]>
-      : GetScalarType<T[P], AggregateWaitlistRequest[P]>
-  }
-
-
-
-
-  export type WaitlistRequestGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: WaitlistRequestWhereInput
-    orderBy?: WaitlistRequestOrderByWithAggregationInput | WaitlistRequestOrderByWithAggregationInput[]
-    by: WaitlistRequestScalarFieldEnum[] | WaitlistRequestScalarFieldEnum
-    having?: WaitlistRequestScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: WaitlistRequestCountAggregateInputType | true
-    _avg?: WaitlistRequestAvgAggregateInputType
-    _sum?: WaitlistRequestSumAggregateInputType
-    _min?: WaitlistRequestMinAggregateInputType
-    _max?: WaitlistRequestMaxAggregateInputType
-  }
-
-  export type WaitlistRequestGroupByOutputType = {
-    id: number
-    email: string
-    receivedOn: Date
-    emailsSent: number
-    _count: WaitlistRequestCountAggregateOutputType | null
-    _avg: WaitlistRequestAvgAggregateOutputType | null
-    _sum: WaitlistRequestSumAggregateOutputType | null
-    _min: WaitlistRequestMinAggregateOutputType | null
-    _max: WaitlistRequestMaxAggregateOutputType | null
-  }
-
-  type GetWaitlistRequestGroupByPayload<T extends WaitlistRequestGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<WaitlistRequestGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof WaitlistRequestGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], WaitlistRequestGroupByOutputType[P]>
-            : GetScalarType<T[P], WaitlistRequestGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type WaitlistRequestSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    email?: boolean
-    receivedOn?: boolean
-    emailsSent?: boolean
-  }, ExtArgs["result"]["waitlistRequest"]>
-
-  export type WaitlistRequestSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    email?: boolean
-    receivedOn?: boolean
-    emailsSent?: boolean
-  }, ExtArgs["result"]["waitlistRequest"]>
-
-  export type WaitlistRequestSelectScalar = {
-    id?: boolean
-    email?: boolean
-    receivedOn?: boolean
-    emailsSent?: boolean
-  }
-
-
-  export type $WaitlistRequestPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "WaitlistRequest"
-    objects: {}
-    scalars: $Extensions.GetPayloadResult<{
-      id: number
-      email: string
-      receivedOn: Date
-      emailsSent: number
-    }, ExtArgs["result"]["waitlistRequest"]>
-    composites: {}
-  }
-
-  type WaitlistRequestGetPayload<S extends boolean | null | undefined | WaitlistRequestDefaultArgs> = $Result.GetResult<Prisma.$WaitlistRequestPayload, S>
-
-  type WaitlistRequestCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<WaitlistRequestFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: WaitlistRequestCountAggregateInputType | true
-    }
-
-  export interface WaitlistRequestDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['WaitlistRequest'], meta: { name: 'WaitlistRequest' } }
-    /**
-     * Find zero or one WaitlistRequest that matches the filter.
-     * @param {WaitlistRequestFindUniqueArgs} args - Arguments to find a WaitlistRequest
-     * @example
-     * // Get one WaitlistRequest
-     * const waitlistRequest = await prisma.waitlistRequest.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends WaitlistRequestFindUniqueArgs>(args: SelectSubset<T, WaitlistRequestFindUniqueArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
-
-    /**
-     * Find one WaitlistRequest that matches the filter or throw an error with `error.code='P2025'` 
-     * if no matches were found.
-     * @param {WaitlistRequestFindUniqueOrThrowArgs} args - Arguments to find a WaitlistRequest
-     * @example
-     * // Get one WaitlistRequest
-     * const waitlistRequest = await prisma.waitlistRequest.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends WaitlistRequestFindUniqueOrThrowArgs>(args: SelectSubset<T, WaitlistRequestFindUniqueOrThrowArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
-
-    /**
-     * Find the first WaitlistRequest that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {WaitlistRequestFindFirstArgs} args - Arguments to find a WaitlistRequest
-     * @example
-     * // Get one WaitlistRequest
-     * const waitlistRequest = await prisma.waitlistRequest.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends WaitlistRequestFindFirstArgs>(args?: SelectSubset<T, WaitlistRequestFindFirstArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
-
-    /**
-     * Find the first WaitlistRequest that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {WaitlistRequestFindFirstOrThrowArgs} args - Arguments to find a WaitlistRequest
-     * @example
-     * // Get one WaitlistRequest
-     * const waitlistRequest = await prisma.waitlistRequest.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends WaitlistRequestFindFirstOrThrowArgs>(args?: SelectSubset<T, WaitlistRequestFindFirstOrThrowArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
-
-    /**
-     * Find zero or more WaitlistRequests that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {WaitlistRequestFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all WaitlistRequests
-     * const waitlistRequests = await prisma.waitlistRequest.findMany()
-     * 
-     * // Get first 10 WaitlistRequests
-     * const waitlistRequests = await prisma.waitlistRequest.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const waitlistRequestWithIdOnly = await prisma.waitlistRequest.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends WaitlistRequestFindManyArgs>(args?: SelectSubset<T, WaitlistRequestFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "findMany">>
-
-    /**
-     * Create a WaitlistRequest.
-     * @param {WaitlistRequestCreateArgs} args - Arguments to create a WaitlistRequest.
-     * @example
-     * // Create one WaitlistRequest
-     * const WaitlistRequest = await prisma.waitlistRequest.create({
-     *   data: {
-     *     // ... data to create a WaitlistRequest
-     *   }
-     * })
-     * 
-     */
-    create<T extends WaitlistRequestCreateArgs>(args: SelectSubset<T, WaitlistRequestCreateArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "create">, never, ExtArgs>
-
-    /**
-     * Create many WaitlistRequests.
-     * @param {WaitlistRequestCreateManyArgs} args - Arguments to create many WaitlistRequests.
-     * @example
-     * // Create many WaitlistRequests
-     * const waitlistRequest = await prisma.waitlistRequest.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends WaitlistRequestCreateManyArgs>(args?: SelectSubset<T, WaitlistRequestCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many WaitlistRequests and returns the data saved in the database.
-     * @param {WaitlistRequestCreateManyAndReturnArgs} args - Arguments to create many WaitlistRequests.
-     * @example
-     * // Create many WaitlistRequests
-     * const waitlistRequest = await prisma.waitlistRequest.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many WaitlistRequests and only return the `id`
-     * const waitlistRequestWithIdOnly = await prisma.waitlistRequest.createManyAndReturn({ 
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends WaitlistRequestCreateManyAndReturnArgs>(args?: SelectSubset<T, WaitlistRequestCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "createManyAndReturn">>
-
-    /**
-     * Delete a WaitlistRequest.
-     * @param {WaitlistRequestDeleteArgs} args - Arguments to delete one WaitlistRequest.
-     * @example
-     * // Delete one WaitlistRequest
-     * const WaitlistRequest = await prisma.waitlistRequest.delete({
-     *   where: {
-     *     // ... filter to delete one WaitlistRequest
-     *   }
-     * })
-     * 
-     */
-    delete<T extends WaitlistRequestDeleteArgs>(args: SelectSubset<T, WaitlistRequestDeleteArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "delete">, never, ExtArgs>
-
-    /**
-     * Update one WaitlistRequest.
-     * @param {WaitlistRequestUpdateArgs} args - Arguments to update one WaitlistRequest.
-     * @example
-     * // Update one WaitlistRequest
-     * const waitlistRequest = await prisma.waitlistRequest.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends WaitlistRequestUpdateArgs>(args: SelectSubset<T, WaitlistRequestUpdateArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "update">, never, ExtArgs>
-
-    /**
-     * Delete zero or more WaitlistRequests.
-     * @param {WaitlistRequestDeleteManyArgs} args - Arguments to filter WaitlistRequests to delete.
-     * @example
-     * // Delete a few WaitlistRequests
-     * const { count } = await prisma.waitlistRequest.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends WaitlistRequestDeleteManyArgs>(args?: SelectSubset<T, WaitlistRequestDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more WaitlistRequests.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {WaitlistRequestUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many WaitlistRequests
-     * const waitlistRequest = await prisma.waitlistRequest.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends WaitlistRequestUpdateManyArgs>(args: SelectSubset<T, WaitlistRequestUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one WaitlistRequest.
-     * @param {WaitlistRequestUpsertArgs} args - Arguments to update or create a WaitlistRequest.
-     * @example
-     * // Update or create a WaitlistRequest
-     * const waitlistRequest = await prisma.waitlistRequest.upsert({
-     *   create: {
-     *     // ... data to create a WaitlistRequest
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the WaitlistRequest we want to update
-     *   }
-     * })
-     */
-    upsert<T extends WaitlistRequestUpsertArgs>(args: SelectSubset<T, WaitlistRequestUpsertArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
-
-
-    /**
-     * Count the number of WaitlistRequests.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {WaitlistRequestCountArgs} args - Arguments to filter WaitlistRequests to count.
-     * @example
-     * // Count the number of WaitlistRequests
-     * const count = await prisma.waitlistRequest.count({
-     *   where: {
-     *     // ... the filter for the WaitlistRequests we want to count
-     *   }
-     * })
-    **/
-    count<T extends WaitlistRequestCountArgs>(
-      args?: Subset<T, WaitlistRequestCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], WaitlistRequestCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a WaitlistRequest.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {WaitlistRequestAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends WaitlistRequestAggregateArgs>(args: Subset<T, WaitlistRequestAggregateArgs>): Prisma.PrismaPromise<GetWaitlistRequestAggregateType<T>>
-
-    /**
-     * Group by WaitlistRequest.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {WaitlistRequestGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends WaitlistRequestGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: WaitlistRequestGroupByArgs['orderBy'] }
-        : { orderBy?: WaitlistRequestGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, WaitlistRequestGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWaitlistRequestGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the WaitlistRequest model
-   */
-  readonly fields: WaitlistRequestFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for WaitlistRequest.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__WaitlistRequestClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the WaitlistRequest model
-   */ 
-  interface WaitlistRequestFieldRefs {
-    readonly id: FieldRef<"WaitlistRequest", 'Int'>
-    readonly email: FieldRef<"WaitlistRequest", 'String'>
-    readonly receivedOn: FieldRef<"WaitlistRequest", 'DateTime'>
-    readonly emailsSent: FieldRef<"WaitlistRequest", 'Int'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * WaitlistRequest findUnique
-   */
-  export type WaitlistRequestFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WaitlistRequest
-     */
-    select?: WaitlistRequestSelect<ExtArgs> | null
-    /**
-     * Filter, which WaitlistRequest to fetch.
-     */
-    where: WaitlistRequestWhereUniqueInput
-  }
-
-  /**
-   * WaitlistRequest findUniqueOrThrow
-   */
-  export type WaitlistRequestFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WaitlistRequest
-     */
-    select?: WaitlistRequestSelect<ExtArgs> | null
-    /**
-     * Filter, which WaitlistRequest to fetch.
-     */
-    where: WaitlistRequestWhereUniqueInput
-  }
-
-  /**
-   * WaitlistRequest findFirst
-   */
-  export type WaitlistRequestFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WaitlistRequest
-     */
-    select?: WaitlistRequestSelect<ExtArgs> | null
-    /**
-     * Filter, which WaitlistRequest to fetch.
-     */
-    where?: WaitlistRequestWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of WaitlistRequests to fetch.
-     */
-    orderBy?: WaitlistRequestOrderByWithRelationInput | WaitlistRequestOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for WaitlistRequests.
-     */
-    cursor?: WaitlistRequestWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` WaitlistRequests from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` WaitlistRequests.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of WaitlistRequests.
-     */
-    distinct?: WaitlistRequestScalarFieldEnum | WaitlistRequestScalarFieldEnum[]
-  }
-
-  /**
-   * WaitlistRequest findFirstOrThrow
-   */
-  export type WaitlistRequestFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WaitlistRequest
-     */
-    select?: WaitlistRequestSelect<ExtArgs> | null
-    /**
-     * Filter, which WaitlistRequest to fetch.
-     */
-    where?: WaitlistRequestWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of WaitlistRequests to fetch.
-     */
-    orderBy?: WaitlistRequestOrderByWithRelationInput | WaitlistRequestOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for WaitlistRequests.
-     */
-    cursor?: WaitlistRequestWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` WaitlistRequests from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` WaitlistRequests.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of WaitlistRequests.
-     */
-    distinct?: WaitlistRequestScalarFieldEnum | WaitlistRequestScalarFieldEnum[]
-  }
-
-  /**
-   * WaitlistRequest findMany
-   */
-  export type WaitlistRequestFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WaitlistRequest
-     */
-    select?: WaitlistRequestSelect<ExtArgs> | null
-    /**
-     * Filter, which WaitlistRequests to fetch.
-     */
-    where?: WaitlistRequestWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of WaitlistRequests to fetch.
-     */
-    orderBy?: WaitlistRequestOrderByWithRelationInput | WaitlistRequestOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing WaitlistRequests.
-     */
-    cursor?: WaitlistRequestWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` WaitlistRequests from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` WaitlistRequests.
-     */
-    skip?: number
-    distinct?: WaitlistRequestScalarFieldEnum | WaitlistRequestScalarFieldEnum[]
-  }
-
-  /**
-   * WaitlistRequest create
-   */
-  export type WaitlistRequestCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WaitlistRequest
-     */
-    select?: WaitlistRequestSelect<ExtArgs> | null
-    /**
-     * The data needed to create a WaitlistRequest.
-     */
-    data: XOR<WaitlistRequestCreateInput, WaitlistRequestUncheckedCreateInput>
-  }
-
-  /**
-   * WaitlistRequest createMany
-   */
-  export type WaitlistRequestCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many WaitlistRequests.
-     */
-    data: WaitlistRequestCreateManyInput | WaitlistRequestCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * WaitlistRequest createManyAndReturn
-   */
-  export type WaitlistRequestCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WaitlistRequest
-     */
-    select?: WaitlistRequestSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * The data used to create many WaitlistRequests.
-     */
-    data: WaitlistRequestCreateManyInput | WaitlistRequestCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * WaitlistRequest update
-   */
-  export type WaitlistRequestUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WaitlistRequest
-     */
-    select?: WaitlistRequestSelect<ExtArgs> | null
-    /**
-     * The data needed to update a WaitlistRequest.
-     */
-    data: XOR<WaitlistRequestUpdateInput, WaitlistRequestUncheckedUpdateInput>
-    /**
-     * Choose, which WaitlistRequest to update.
-     */
-    where: WaitlistRequestWhereUniqueInput
-  }
-
-  /**
-   * WaitlistRequest updateMany
-   */
-  export type WaitlistRequestUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update WaitlistRequests.
-     */
-    data: XOR<WaitlistRequestUpdateManyMutationInput, WaitlistRequestUncheckedUpdateManyInput>
-    /**
-     * Filter which WaitlistRequests to update
-     */
-    where?: WaitlistRequestWhereInput
-  }
-
-  /**
-   * WaitlistRequest upsert
-   */
-  export type WaitlistRequestUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WaitlistRequest
-     */
-    select?: WaitlistRequestSelect<ExtArgs> | null
-    /**
-     * The filter to search for the WaitlistRequest to update in case it exists.
-     */
-    where: WaitlistRequestWhereUniqueInput
-    /**
-     * In case the WaitlistRequest found by the `where` argument doesn't exist, create a new WaitlistRequest with this data.
-     */
-    create: XOR<WaitlistRequestCreateInput, WaitlistRequestUncheckedCreateInput>
-    /**
-     * In case the WaitlistRequest was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<WaitlistRequestUpdateInput, WaitlistRequestUncheckedUpdateInput>
-  }
-
-  /**
-   * WaitlistRequest delete
-   */
-  export type WaitlistRequestDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WaitlistRequest
-     */
-    select?: WaitlistRequestSelect<ExtArgs> | null
-    /**
-     * Filter which WaitlistRequest to delete.
-     */
-    where: WaitlistRequestWhereUniqueInput
-  }
-
-  /**
-   * WaitlistRequest deleteMany
-   */
-  export type WaitlistRequestDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which WaitlistRequests to delete
-     */
-    where?: WaitlistRequestWhereInput
-  }
-
-  /**
-   * WaitlistRequest without action
-   */
-  export type WaitlistRequestDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WaitlistRequest
-     */
-    select?: WaitlistRequestSelect<ExtArgs> | null
-  }
-
-
-  /**
-   * Model BusinessContact
-   */
-
-  export type AggregateBusinessContact = {
-    _count: BusinessContactCountAggregateOutputType | null
-    _avg: BusinessContactAvgAggregateOutputType | null
-    _sum: BusinessContactSumAggregateOutputType | null
-    _min: BusinessContactMinAggregateOutputType | null
-    _max: BusinessContactMaxAggregateOutputType | null
-  }
-
-  export type BusinessContactAvgAggregateOutputType = {
-    id: number | null
-  }
-
-  export type BusinessContactSumAggregateOutputType = {
-    id: number | null
-  }
-
-  export type BusinessContactMinAggregateOutputType = {
-    id: number | null
-    companyName: string | null
-    contactName: string | null
-    contactPreference: string | null
-    email: string | null
-    phone: string | null
-    message: string | null
-    purpose: string | null
-    createdAt: Date | null
-  }
-
-  export type BusinessContactMaxAggregateOutputType = {
-    id: number | null
-    companyName: string | null
-    contactName: string | null
-    contactPreference: string | null
-    email: string | null
-    phone: string | null
-    message: string | null
-    purpose: string | null
-    createdAt: Date | null
-  }
-
-  export type BusinessContactCountAggregateOutputType = {
-    id: number
-    companyName: number
-    contactName: number
-    contactPreference: number
-    email: number
-    phone: number
-    message: number
-    purpose: number
-    createdAt: number
-    _all: number
-  }
-
-
-  export type BusinessContactAvgAggregateInputType = {
-    id?: true
-  }
-
-  export type BusinessContactSumAggregateInputType = {
-    id?: true
-  }
-
-  export type BusinessContactMinAggregateInputType = {
-    id?: true
-    companyName?: true
-    contactName?: true
-    contactPreference?: true
-    email?: true
-    phone?: true
-    message?: true
-    purpose?: true
-    createdAt?: true
-  }
-
-  export type BusinessContactMaxAggregateInputType = {
-    id?: true
-    companyName?: true
-    contactName?: true
-    contactPreference?: true
-    email?: true
-    phone?: true
-    message?: true
-    purpose?: true
-    createdAt?: true
-  }
-
-  export type BusinessContactCountAggregateInputType = {
-    id?: true
-    companyName?: true
-    contactName?: true
-    contactPreference?: true
-    email?: true
-    phone?: true
-    message?: true
-    purpose?: true
-    createdAt?: true
-    _all?: true
-  }
-
-  export type BusinessContactAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which BusinessContact to aggregate.
-     */
-    where?: BusinessContactWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of BusinessContacts to fetch.
-     */
-    orderBy?: BusinessContactOrderByWithRelationInput | BusinessContactOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: BusinessContactWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` BusinessContacts from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` BusinessContacts.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned BusinessContacts
-    **/
-    _count?: true | BusinessContactCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: BusinessContactAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: BusinessContactSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: BusinessContactMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: BusinessContactMaxAggregateInputType
-  }
-
-  export type GetBusinessContactAggregateType<T extends BusinessContactAggregateArgs> = {
-        [P in keyof T & keyof AggregateBusinessContact]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateBusinessContact[P]>
-      : GetScalarType<T[P], AggregateBusinessContact[P]>
-  }
-
-
-
-
-  export type BusinessContactGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: BusinessContactWhereInput
-    orderBy?: BusinessContactOrderByWithAggregationInput | BusinessContactOrderByWithAggregationInput[]
-    by: BusinessContactScalarFieldEnum[] | BusinessContactScalarFieldEnum
-    having?: BusinessContactScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: BusinessContactCountAggregateInputType | true
-    _avg?: BusinessContactAvgAggregateInputType
-    _sum?: BusinessContactSumAggregateInputType
-    _min?: BusinessContactMinAggregateInputType
-    _max?: BusinessContactMaxAggregateInputType
-  }
-
-  export type BusinessContactGroupByOutputType = {
-    id: number
-    companyName: string
-    contactName: string
-    contactPreference: string
-    email: string | null
-    phone: string | null
-    message: string
-    purpose: string | null
-    createdAt: Date
-    _count: BusinessContactCountAggregateOutputType | null
-    _avg: BusinessContactAvgAggregateOutputType | null
-    _sum: BusinessContactSumAggregateOutputType | null
-    _min: BusinessContactMinAggregateOutputType | null
-    _max: BusinessContactMaxAggregateOutputType | null
-  }
-
-  type GetBusinessContactGroupByPayload<T extends BusinessContactGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<BusinessContactGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof BusinessContactGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], BusinessContactGroupByOutputType[P]>
-            : GetScalarType<T[P], BusinessContactGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type BusinessContactSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    companyName?: boolean
-    contactName?: boolean
-    contactPreference?: boolean
-    email?: boolean
-    phone?: boolean
-    message?: boolean
-    purpose?: boolean
-    createdAt?: boolean
-  }, ExtArgs["result"]["businessContact"]>
-
-  export type BusinessContactSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    companyName?: boolean
-    contactName?: boolean
-    contactPreference?: boolean
-    email?: boolean
-    phone?: boolean
-    message?: boolean
-    purpose?: boolean
-    createdAt?: boolean
-  }, ExtArgs["result"]["businessContact"]>
-
-  export type BusinessContactSelectScalar = {
-    id?: boolean
-    companyName?: boolean
-    contactName?: boolean
-    contactPreference?: boolean
-    email?: boolean
-    phone?: boolean
-    message?: boolean
-    purpose?: boolean
-    createdAt?: boolean
-  }
-
-
-  export type $BusinessContactPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "BusinessContact"
-    objects: {}
-    scalars: $Extensions.GetPayloadResult<{
-      id: number
-      companyName: string
-      contactName: string
-      contactPreference: string
-      email: string | null
-      phone: string | null
-      message: string
-      purpose: string | null
-      createdAt: Date
-    }, ExtArgs["result"]["businessContact"]>
-    composites: {}
-  }
-
-  type BusinessContactGetPayload<S extends boolean | null | undefined | BusinessContactDefaultArgs> = $Result.GetResult<Prisma.$BusinessContactPayload, S>
-
-  type BusinessContactCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<BusinessContactFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: BusinessContactCountAggregateInputType | true
-    }
-
-  export interface BusinessContactDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['BusinessContact'], meta: { name: 'BusinessContact' } }
-    /**
-     * Find zero or one BusinessContact that matches the filter.
-     * @param {BusinessContactFindUniqueArgs} args - Arguments to find a BusinessContact
-     * @example
-     * // Get one BusinessContact
-     * const businessContact = await prisma.businessContact.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends BusinessContactFindUniqueArgs>(args: SelectSubset<T, BusinessContactFindUniqueArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
-
-    /**
-     * Find one BusinessContact that matches the filter or throw an error with `error.code='P2025'` 
-     * if no matches were found.
-     * @param {BusinessContactFindUniqueOrThrowArgs} args - Arguments to find a BusinessContact
-     * @example
-     * // Get one BusinessContact
-     * const businessContact = await prisma.businessContact.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends BusinessContactFindUniqueOrThrowArgs>(args: SelectSubset<T, BusinessContactFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
-
-    /**
-     * Find the first BusinessContact that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {BusinessContactFindFirstArgs} args - Arguments to find a BusinessContact
-     * @example
-     * // Get one BusinessContact
-     * const businessContact = await prisma.businessContact.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends BusinessContactFindFirstArgs>(args?: SelectSubset<T, BusinessContactFindFirstArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
-
-    /**
-     * Find the first BusinessContact that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {BusinessContactFindFirstOrThrowArgs} args - Arguments to find a BusinessContact
-     * @example
-     * // Get one BusinessContact
-     * const businessContact = await prisma.businessContact.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends BusinessContactFindFirstOrThrowArgs>(args?: SelectSubset<T, BusinessContactFindFirstOrThrowArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
-
-    /**
-     * Find zero or more BusinessContacts that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {BusinessContactFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all BusinessContacts
-     * const businessContacts = await prisma.businessContact.findMany()
-     * 
-     * // Get first 10 BusinessContacts
-     * const businessContacts = await prisma.businessContact.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const businessContactWithIdOnly = await prisma.businessContact.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends BusinessContactFindManyArgs>(args?: SelectSubset<T, BusinessContactFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "findMany">>
-
-    /**
-     * Create a BusinessContact.
-     * @param {BusinessContactCreateArgs} args - Arguments to create a BusinessContact.
-     * @example
-     * // Create one BusinessContact
-     * const BusinessContact = await prisma.businessContact.create({
-     *   data: {
-     *     // ... data to create a BusinessContact
-     *   }
-     * })
-     * 
-     */
-    create<T extends BusinessContactCreateArgs>(args: SelectSubset<T, BusinessContactCreateArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "create">, never, ExtArgs>
-
-    /**
-     * Create many BusinessContacts.
-     * @param {BusinessContactCreateManyArgs} args - Arguments to create many BusinessContacts.
-     * @example
-     * // Create many BusinessContacts
-     * const businessContact = await prisma.businessContact.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends BusinessContactCreateManyArgs>(args?: SelectSubset<T, BusinessContactCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many BusinessContacts and returns the data saved in the database.
-     * @param {BusinessContactCreateManyAndReturnArgs} args - Arguments to create many BusinessContacts.
-     * @example
-     * // Create many BusinessContacts
-     * const businessContact = await prisma.businessContact.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many BusinessContacts and only return the `id`
-     * const businessContactWithIdOnly = await prisma.businessContact.createManyAndReturn({ 
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends BusinessContactCreateManyAndReturnArgs>(args?: SelectSubset<T, BusinessContactCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "createManyAndReturn">>
-
-    /**
-     * Delete a BusinessContact.
-     * @param {BusinessContactDeleteArgs} args - Arguments to delete one BusinessContact.
-     * @example
-     * // Delete one BusinessContact
-     * const BusinessContact = await prisma.businessContact.delete({
-     *   where: {
-     *     // ... filter to delete one BusinessContact
-     *   }
-     * })
-     * 
-     */
-    delete<T extends BusinessContactDeleteArgs>(args: SelectSubset<T, BusinessContactDeleteArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "delete">, never, ExtArgs>
-
-    /**
-     * Update one BusinessContact.
-     * @param {BusinessContactUpdateArgs} args - Arguments to update one BusinessContact.
-     * @example
-     * // Update one BusinessContact
-     * const businessContact = await prisma.businessContact.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends BusinessContactUpdateArgs>(args: SelectSubset<T, BusinessContactUpdateArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "update">, never, ExtArgs>
-
-    /**
-     * Delete zero or more BusinessContacts.
-     * @param {BusinessContactDeleteManyArgs} args - Arguments to filter BusinessContacts to delete.
-     * @example
-     * // Delete a few BusinessContacts
-     * const { count } = await prisma.businessContact.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends BusinessContactDeleteManyArgs>(args?: SelectSubset<T, BusinessContactDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more BusinessContacts.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {BusinessContactUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many BusinessContacts
-     * const businessContact = await prisma.businessContact.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends BusinessContactUpdateManyArgs>(args: SelectSubset<T, BusinessContactUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one BusinessContact.
-     * @param {BusinessContactUpsertArgs} args - Arguments to update or create a BusinessContact.
-     * @example
-     * // Update or create a BusinessContact
-     * const businessContact = await prisma.businessContact.upsert({
-     *   create: {
-     *     // ... data to create a BusinessContact
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the BusinessContact we want to update
-     *   }
-     * })
-     */
-    upsert<T extends BusinessContactUpsertArgs>(args: SelectSubset<T, BusinessContactUpsertArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
-
-
-    /**
-     * Count the number of BusinessContacts.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {BusinessContactCountArgs} args - Arguments to filter BusinessContacts to count.
-     * @example
-     * // Count the number of BusinessContacts
-     * const count = await prisma.businessContact.count({
-     *   where: {
-     *     // ... the filter for the BusinessContacts we want to count
-     *   }
-     * })
-    **/
-    count<T extends BusinessContactCountArgs>(
-      args?: Subset<T, BusinessContactCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], BusinessContactCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a BusinessContact.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {BusinessContactAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends BusinessContactAggregateArgs>(args: Subset<T, BusinessContactAggregateArgs>): Prisma.PrismaPromise<GetBusinessContactAggregateType<T>>
-
-    /**
-     * Group by BusinessContact.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {BusinessContactGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends BusinessContactGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: BusinessContactGroupByArgs['orderBy'] }
-        : { orderBy?: BusinessContactGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, BusinessContactGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBusinessContactGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the BusinessContact model
-   */
-  readonly fields: BusinessContactFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for BusinessContact.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__BusinessContactClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the BusinessContact model
-   */ 
-  interface BusinessContactFieldRefs {
-    readonly id: FieldRef<"BusinessContact", 'Int'>
-    readonly companyName: FieldRef<"BusinessContact", 'String'>
-    readonly contactName: FieldRef<"BusinessContact", 'String'>
-    readonly contactPreference: FieldRef<"BusinessContact", 'String'>
-    readonly email: FieldRef<"BusinessContact", 'String'>
-    readonly phone: FieldRef<"BusinessContact", 'String'>
-    readonly message: FieldRef<"BusinessContact", 'String'>
-    readonly purpose: FieldRef<"BusinessContact", 'String'>
-    readonly createdAt: FieldRef<"BusinessContact", 'DateTime'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * BusinessContact findUnique
-   */
-  export type BusinessContactFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the BusinessContact
-     */
-    select?: BusinessContactSelect<ExtArgs> | null
-    /**
-     * Filter, which BusinessContact to fetch.
-     */
-    where: BusinessContactWhereUniqueInput
-  }
-
-  /**
-   * BusinessContact findUniqueOrThrow
-   */
-  export type BusinessContactFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the BusinessContact
-     */
-    select?: BusinessContactSelect<ExtArgs> | null
-    /**
-     * Filter, which BusinessContact to fetch.
-     */
-    where: BusinessContactWhereUniqueInput
-  }
-
-  /**
-   * BusinessContact findFirst
-   */
-  export type BusinessContactFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the BusinessContact
-     */
-    select?: BusinessContactSelect<ExtArgs> | null
-    /**
-     * Filter, which BusinessContact to fetch.
-     */
-    where?: BusinessContactWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of BusinessContacts to fetch.
-     */
-    orderBy?: BusinessContactOrderByWithRelationInput | BusinessContactOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for BusinessContacts.
-     */
-    cursor?: BusinessContactWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` BusinessContacts from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` BusinessContacts.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of BusinessContacts.
-     */
-    distinct?: BusinessContactScalarFieldEnum | BusinessContactScalarFieldEnum[]
-  }
-
-  /**
-   * BusinessContact findFirstOrThrow
-   */
-  export type BusinessContactFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the BusinessContact
-     */
-    select?: BusinessContactSelect<ExtArgs> | null
-    /**
-     * Filter, which BusinessContact to fetch.
-     */
-    where?: BusinessContactWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of BusinessContacts to fetch.
-     */
-    orderBy?: BusinessContactOrderByWithRelationInput | BusinessContactOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for BusinessContacts.
-     */
-    cursor?: BusinessContactWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` BusinessContacts from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` BusinessContacts.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of BusinessContacts.
-     */
-    distinct?: BusinessContactScalarFieldEnum | BusinessContactScalarFieldEnum[]
-  }
-
-  /**
-   * BusinessContact findMany
-   */
-  export type BusinessContactFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the BusinessContact
-     */
-    select?: BusinessContactSelect<ExtArgs> | null
-    /**
-     * Filter, which BusinessContacts to fetch.
-     */
-    where?: BusinessContactWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of BusinessContacts to fetch.
-     */
-    orderBy?: BusinessContactOrderByWithRelationInput | BusinessContactOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing BusinessContacts.
-     */
-    cursor?: BusinessContactWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` BusinessContacts from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` BusinessContacts.
-     */
-    skip?: number
-    distinct?: BusinessContactScalarFieldEnum | BusinessContactScalarFieldEnum[]
-  }
-
-  /**
-   * BusinessContact create
-   */
-  export type BusinessContactCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the BusinessContact
-     */
-    select?: BusinessContactSelect<ExtArgs> | null
-    /**
-     * The data needed to create a BusinessContact.
-     */
-    data: XOR<BusinessContactCreateInput, BusinessContactUncheckedCreateInput>
-  }
-
-  /**
-   * BusinessContact createMany
-   */
-  export type BusinessContactCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many BusinessContacts.
-     */
-    data: BusinessContactCreateManyInput | BusinessContactCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * BusinessContact createManyAndReturn
-   */
-  export type BusinessContactCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the BusinessContact
-     */
-    select?: BusinessContactSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * The data used to create many BusinessContacts.
-     */
-    data: BusinessContactCreateManyInput | BusinessContactCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * BusinessContact update
-   */
-  export type BusinessContactUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the BusinessContact
-     */
-    select?: BusinessContactSelect<ExtArgs> | null
-    /**
-     * The data needed to update a BusinessContact.
-     */
-    data: XOR<BusinessContactUpdateInput, BusinessContactUncheckedUpdateInput>
-    /**
-     * Choose, which BusinessContact to update.
-     */
-    where: BusinessContactWhereUniqueInput
-  }
-
-  /**
-   * BusinessContact updateMany
-   */
-  export type BusinessContactUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update BusinessContacts.
-     */
-    data: XOR<BusinessContactUpdateManyMutationInput, BusinessContactUncheckedUpdateManyInput>
-    /**
-     * Filter which BusinessContacts to update
-     */
-    where?: BusinessContactWhereInput
-  }
-
-  /**
-   * BusinessContact upsert
-   */
-  export type BusinessContactUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the BusinessContact
-     */
-    select?: BusinessContactSelect<ExtArgs> | null
-    /**
-     * The filter to search for the BusinessContact to update in case it exists.
-     */
-    where: BusinessContactWhereUniqueInput
-    /**
-     * In case the BusinessContact found by the `where` argument doesn't exist, create a new BusinessContact with this data.
-     */
-    create: XOR<BusinessContactCreateInput, BusinessContactUncheckedCreateInput>
-    /**
-     * In case the BusinessContact was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<BusinessContactUpdateInput, BusinessContactUncheckedUpdateInput>
-  }
-
-  /**
-   * BusinessContact delete
-   */
-  export type BusinessContactDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the BusinessContact
-     */
-    select?: BusinessContactSelect<ExtArgs> | null
-    /**
-     * Filter which BusinessContact to delete.
-     */
-    where: BusinessContactWhereUniqueInput
-  }
-
-  /**
-   * BusinessContact deleteMany
-   */
-  export type BusinessContactDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which BusinessContacts to delete
-     */
-    where?: BusinessContactWhereInput
-  }
-
-  /**
-   * BusinessContact without action
-   */
-  export type BusinessContactDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the BusinessContact
-     */
-    select?: BusinessContactSelect<ExtArgs> | null
-  }
-
-
-  /**
    * Model Subject
    */
 
@@ -8298,16 +5662,22 @@ export namespace Prisma {
   export type SubjectMinAggregateOutputType = {
     value: string | null
     kanbanId: number | null
+    createdAt: Date | null
+    lastAccess: Date | null
   }
 
   export type SubjectMaxAggregateOutputType = {
     value: string | null
     kanbanId: number | null
+    createdAt: Date | null
+    lastAccess: Date | null
   }
 
   export type SubjectCountAggregateOutputType = {
     value: number
     kanbanId: number
+    createdAt: number
+    lastAccess: number
     _all: number
   }
 
@@ -8323,16 +5693,22 @@ export namespace Prisma {
   export type SubjectMinAggregateInputType = {
     value?: true
     kanbanId?: true
+    createdAt?: true
+    lastAccess?: true
   }
 
   export type SubjectMaxAggregateInputType = {
     value?: true
     kanbanId?: true
+    createdAt?: true
+    lastAccess?: true
   }
 
   export type SubjectCountAggregateInputType = {
     value?: true
     kanbanId?: true
+    createdAt?: true
+    lastAccess?: true
     _all?: true
   }
 
@@ -8425,6 +5801,8 @@ export namespace Prisma {
   export type SubjectGroupByOutputType = {
     value: string
     kanbanId: number | null
+    createdAt: Date
+    lastAccess: Date
     _count: SubjectCountAggregateOutputType | null
     _avg: SubjectAvgAggregateOutputType | null
     _sum: SubjectSumAggregateOutputType | null
@@ -8449,6 +5827,8 @@ export namespace Prisma {
   export type SubjectSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     value?: boolean
     kanbanId?: boolean
+    createdAt?: boolean
+    lastAccess?: boolean
     MdxNotes?: boolean | Subject$MdxNotesArgs<ExtArgs>
     IpynbNotes?: boolean | Subject$IpynbNotesArgs<ExtArgs>
     QaPair?: boolean | Subject$QaPairArgs<ExtArgs>
@@ -8464,12 +5844,16 @@ export namespace Prisma {
   export type SubjectSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     value?: boolean
     kanbanId?: boolean
+    createdAt?: boolean
+    lastAccess?: boolean
     Kanban?: boolean | Subject$KanbanArgs<ExtArgs>
   }, ExtArgs["result"]["subject"]>
 
   export type SubjectSelectScalar = {
     value?: boolean
     kanbanId?: boolean
+    createdAt?: boolean
+    lastAccess?: boolean
   }
 
   export type SubjectInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -8504,6 +5888,8 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       value: string
       kanbanId: number | null
+      createdAt: Date
+      lastAccess: Date
     }, ExtArgs["result"]["subject"]>
     composites: {}
   }
@@ -8908,6 +6294,8 @@ export namespace Prisma {
   interface SubjectFieldRefs {
     readonly value: FieldRef<"Subject", 'String'>
     readonly kanbanId: FieldRef<"Subject", 'Int'>
+    readonly createdAt: FieldRef<"Subject", 'DateTime'>
+    readonly lastAccess: FieldRef<"Subject", 'DateTime'>
   }
     
 
@@ -9438,16 +6826,22 @@ export namespace Prisma {
   export type TopicMinAggregateOutputType = {
     value: string | null
     kanbanId: number | null
+    createdAt: Date | null
+    lastAccess: Date | null
   }
 
   export type TopicMaxAggregateOutputType = {
     value: string | null
     kanbanId: number | null
+    createdAt: Date | null
+    lastAccess: Date | null
   }
 
   export type TopicCountAggregateOutputType = {
     value: number
     kanbanId: number
+    createdAt: number
+    lastAccess: number
     _all: number
   }
 
@@ -9463,16 +6857,22 @@ export namespace Prisma {
   export type TopicMinAggregateInputType = {
     value?: true
     kanbanId?: true
+    createdAt?: true
+    lastAccess?: true
   }
 
   export type TopicMaxAggregateInputType = {
     value?: true
     kanbanId?: true
+    createdAt?: true
+    lastAccess?: true
   }
 
   export type TopicCountAggregateInputType = {
     value?: true
     kanbanId?: true
+    createdAt?: true
+    lastAccess?: true
     _all?: true
   }
 
@@ -9565,6 +6965,8 @@ export namespace Prisma {
   export type TopicGroupByOutputType = {
     value: string
     kanbanId: number | null
+    createdAt: Date
+    lastAccess: Date
     _count: TopicCountAggregateOutputType | null
     _avg: TopicAvgAggregateOutputType | null
     _sum: TopicSumAggregateOutputType | null
@@ -9589,6 +6991,8 @@ export namespace Prisma {
   export type TopicSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     value?: boolean
     kanbanId?: boolean
+    createdAt?: boolean
+    lastAccess?: boolean
     MdxNotes?: boolean | Topic$MdxNotesArgs<ExtArgs>
     ipynbNotes?: boolean | Topic$ipynbNotesArgs<ExtArgs>
     QAPair?: boolean | Topic$QAPairArgs<ExtArgs>
@@ -9604,12 +7008,16 @@ export namespace Prisma {
   export type TopicSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     value?: boolean
     kanbanId?: boolean
+    createdAt?: boolean
+    lastAccess?: boolean
     Kanban?: boolean | Topic$KanbanArgs<ExtArgs>
   }, ExtArgs["result"]["topic"]>
 
   export type TopicSelectScalar = {
     value?: boolean
     kanbanId?: boolean
+    createdAt?: boolean
+    lastAccess?: boolean
   }
 
   export type TopicInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -9644,6 +7052,8 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       value: string
       kanbanId: number | null
+      createdAt: Date
+      lastAccess: Date
     }, ExtArgs["result"]["topic"]>
     composites: {}
   }
@@ -10048,6 +7458,8 @@ export namespace Prisma {
   interface TopicFieldRefs {
     readonly value: FieldRef<"Topic", 'String'>
     readonly kanbanId: FieldRef<"Topic", 'Int'>
+    readonly createdAt: FieldRef<"Topic", 'DateTime'>
+    readonly lastAccess: FieldRef<"Topic", 'DateTime'>
   }
     
 
@@ -10578,16 +7990,22 @@ export namespace Prisma {
   export type TagMinAggregateOutputType = {
     value: string | null
     kanbanId: number | null
+    createdAt: Date | null
+    lastAccess: Date | null
   }
 
   export type TagMaxAggregateOutputType = {
     value: string | null
     kanbanId: number | null
+    createdAt: Date | null
+    lastAccess: Date | null
   }
 
   export type TagCountAggregateOutputType = {
     value: number
     kanbanId: number
+    createdAt: number
+    lastAccess: number
     _all: number
   }
 
@@ -10603,16 +8021,22 @@ export namespace Prisma {
   export type TagMinAggregateInputType = {
     value?: true
     kanbanId?: true
+    createdAt?: true
+    lastAccess?: true
   }
 
   export type TagMaxAggregateInputType = {
     value?: true
     kanbanId?: true
+    createdAt?: true
+    lastAccess?: true
   }
 
   export type TagCountAggregateInputType = {
     value?: true
     kanbanId?: true
+    createdAt?: true
+    lastAccess?: true
     _all?: true
   }
 
@@ -10705,6 +8129,8 @@ export namespace Prisma {
   export type TagGroupByOutputType = {
     value: string
     kanbanId: number | null
+    createdAt: Date
+    lastAccess: Date
     _count: TagCountAggregateOutputType | null
     _avg: TagAvgAggregateOutputType | null
     _sum: TagSumAggregateOutputType | null
@@ -10729,6 +8155,8 @@ export namespace Prisma {
   export type TagSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     value?: boolean
     kanbanId?: boolean
+    createdAt?: boolean
+    lastAccess?: boolean
     MdxNotes?: boolean | Tag$MdxNotesArgs<ExtArgs>
     bibEntries?: boolean | Tag$bibEntriesArgs<ExtArgs>
     ipynbNotes?: boolean | Tag$ipynbNotesArgs<ExtArgs>
@@ -10744,12 +8172,16 @@ export namespace Prisma {
   export type TagSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     value?: boolean
     kanbanId?: boolean
+    createdAt?: boolean
+    lastAccess?: boolean
     Kanban?: boolean | Tag$KanbanArgs<ExtArgs>
   }, ExtArgs["result"]["tag"]>
 
   export type TagSelectScalar = {
     value?: boolean
     kanbanId?: boolean
+    createdAt?: boolean
+    lastAccess?: boolean
   }
 
   export type TagInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -10784,6 +8216,8 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       value: string
       kanbanId: number | null
+      createdAt: Date
+      lastAccess: Date
     }, ExtArgs["result"]["tag"]>
     composites: {}
   }
@@ -11188,6 +8622,8 @@ export namespace Prisma {
   interface TagFieldRefs {
     readonly value: FieldRef<"Tag", 'String'>
     readonly kanbanId: FieldRef<"Tag", 'Int'>
+    readonly createdAt: FieldRef<"Tag", 'DateTime'>
+    readonly lastAccess: FieldRef<"Tag", 'DateTime'>
   }
     
 
@@ -19677,14 +17113,16 @@ export namespace Prisma {
     id: number | null
     content: string | null
     description: string | null
-    language: $Enums.Technologies | null
+    language: string | null
+    createdAt: Date | null
   }
 
   export type SnippetMaxAggregateOutputType = {
     id: number | null
     content: string | null
     description: string | null
-    language: $Enums.Technologies | null
+    language: string | null
+    createdAt: Date | null
   }
 
   export type SnippetCountAggregateOutputType = {
@@ -19693,6 +17131,7 @@ export namespace Prisma {
     description: number
     keywords: number
     language: number
+    createdAt: number
     _all: number
   }
 
@@ -19710,6 +17149,7 @@ export namespace Prisma {
     content?: true
     description?: true
     language?: true
+    createdAt?: true
   }
 
   export type SnippetMaxAggregateInputType = {
@@ -19717,6 +17157,7 @@ export namespace Prisma {
     content?: true
     description?: true
     language?: true
+    createdAt?: true
   }
 
   export type SnippetCountAggregateInputType = {
@@ -19725,6 +17166,7 @@ export namespace Prisma {
     description?: true
     keywords?: true
     language?: true
+    createdAt?: true
     _all?: true
   }
 
@@ -19819,7 +17261,8 @@ export namespace Prisma {
     content: string
     description: string
     keywords: string[]
-    language: $Enums.Technologies
+    language: string
+    createdAt: Date
     _count: SnippetCountAggregateOutputType | null
     _avg: SnippetAvgAggregateOutputType | null
     _sum: SnippetSumAggregateOutputType | null
@@ -19847,6 +17290,7 @@ export namespace Prisma {
     description?: boolean
     keywords?: boolean
     language?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["snippet"]>
 
   export type SnippetSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -19855,6 +17299,7 @@ export namespace Prisma {
     description?: boolean
     keywords?: boolean
     language?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["snippet"]>
 
   export type SnippetSelectScalar = {
@@ -19863,6 +17308,7 @@ export namespace Prisma {
     description?: boolean
     keywords?: boolean
     language?: boolean
+    createdAt?: boolean
   }
 
 
@@ -19874,7 +17320,8 @@ export namespace Prisma {
       content: string
       description: string
       keywords: string[]
-      language: $Enums.Technologies
+      language: string
+      createdAt: Date
     }, ExtArgs["result"]["snippet"]>
     composites: {}
   }
@@ -20272,7 +17719,8 @@ export namespace Prisma {
     readonly content: FieldRef<"Snippet", 'String'>
     readonly description: FieldRef<"Snippet", 'String'>
     readonly keywords: FieldRef<"Snippet", 'String[]'>
-    readonly language: FieldRef<"Snippet", 'Technologies'>
+    readonly language: FieldRef<"Snippet", 'String'>
+    readonly createdAt: FieldRef<"Snippet", 'DateTime'>
   }
     
 
@@ -20722,7 +18170,7 @@ export namespace Prisma {
 
   export type RelatedValuesGroupByOutputType = {
     id: number
-    input: JsonValue
+    input: unknown
     output: number
     equationId: number[]
     _count: RelatedValuesCountAggregateOutputType | null
@@ -20782,7 +18230,7 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      input: Prisma.JsonValue
+      input: unknown
       output: number
       equationId: number[]
     }, ExtArgs["result"]["relatedValues"]>
@@ -21559,6 +19007,7 @@ export namespace Prisma {
     content: string | null
     asPython: string | null
     createdAt: Date | null
+    lastAccess: Date | null
   }
 
   export type EquationMaxAggregateOutputType = {
@@ -21569,6 +19018,7 @@ export namespace Prisma {
     content: string | null
     asPython: string | null
     createdAt: Date | null
+    lastAccess: Date | null
   }
 
   export type EquationCountAggregateOutputType = {
@@ -21582,6 +19032,7 @@ export namespace Prisma {
     variables: number
     keywords: number
     createdAt: number
+    lastAccess: number
     _all: number
   }
 
@@ -21602,6 +19053,7 @@ export namespace Prisma {
     content?: true
     asPython?: true
     createdAt?: true
+    lastAccess?: true
   }
 
   export type EquationMaxAggregateInputType = {
@@ -21612,6 +19064,7 @@ export namespace Prisma {
     content?: true
     asPython?: true
     createdAt?: true
+    lastAccess?: true
   }
 
   export type EquationCountAggregateInputType = {
@@ -21625,6 +19078,7 @@ export namespace Prisma {
     variables?: true
     keywords?: true
     createdAt?: true
+    lastAccess?: true
     _all?: true
   }
 
@@ -21721,10 +19175,11 @@ export namespace Prisma {
     desc: string | null
     content: string
     asPython: string | null
-    variableLegend: JsonValue | null
+    variableLegend: unknown
     variables: string[]
     keywords: string[]
     createdAt: Date
+    lastAccess: Date
     _count: EquationCountAggregateOutputType | null
     _avg: EquationAvgAggregateOutputType | null
     _sum: EquationSumAggregateOutputType | null
@@ -21757,6 +19212,7 @@ export namespace Prisma {
     variables?: boolean
     keywords?: boolean
     createdAt?: boolean
+    lastAccess?: boolean
     relatedValues?: boolean | Equation$relatedValuesArgs<ExtArgs>
     tags?: boolean | Equation$tagsArgs<ExtArgs>
     topics?: boolean | Equation$topicsArgs<ExtArgs>
@@ -21776,6 +19232,7 @@ export namespace Prisma {
     variables?: boolean
     keywords?: boolean
     createdAt?: boolean
+    lastAccess?: boolean
   }, ExtArgs["result"]["equation"]>
 
   export type EquationSelectScalar = {
@@ -21789,6 +19246,7 @@ export namespace Prisma {
     variables?: boolean
     keywords?: boolean
     createdAt?: boolean
+    lastAccess?: boolean
   }
 
   export type EquationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -21817,10 +19275,11 @@ export namespace Prisma {
       desc: string | null
       content: string
       asPython: string | null
-      variableLegend: Prisma.JsonValue | null
+      variableLegend: unknown
       variables: string[]
       keywords: string[]
       createdAt: Date
+      lastAccess: Date
     }, ExtArgs["result"]["equation"]>
     composites: {}
   }
@@ -22229,6 +19688,7 @@ export namespace Prisma {
     readonly variables: FieldRef<"Equation", 'String[]'>
     readonly keywords: FieldRef<"Equation", 'String[]'>
     readonly createdAt: FieldRef<"Equation", 'DateTime'>
+    readonly lastAccess: FieldRef<"Equation", 'DateTime'>
   }
     
 
@@ -22683,6 +20143,8 @@ export namespace Prisma {
     content: string | null
     alphabeticalLabel: string | null
     mdxNoteId: number | null
+    createdAt: Date | null
+    lastAccess: Date | null
   }
 
   export type DefinitionMaxAggregateOutputType = {
@@ -22691,6 +20153,8 @@ export namespace Prisma {
     content: string | null
     alphabeticalLabel: string | null
     mdxNoteId: number | null
+    createdAt: Date | null
+    lastAccess: Date | null
   }
 
   export type DefinitionCountAggregateOutputType = {
@@ -22699,6 +20163,8 @@ export namespace Prisma {
     content: number
     alphabeticalLabel: number
     mdxNoteId: number
+    createdAt: number
+    lastAccess: number
     _all: number
   }
 
@@ -22717,6 +20183,8 @@ export namespace Prisma {
     content?: true
     alphabeticalLabel?: true
     mdxNoteId?: true
+    createdAt?: true
+    lastAccess?: true
   }
 
   export type DefinitionMaxAggregateInputType = {
@@ -22725,6 +20193,8 @@ export namespace Prisma {
     content?: true
     alphabeticalLabel?: true
     mdxNoteId?: true
+    createdAt?: true
+    lastAccess?: true
   }
 
   export type DefinitionCountAggregateInputType = {
@@ -22733,6 +20203,8 @@ export namespace Prisma {
     content?: true
     alphabeticalLabel?: true
     mdxNoteId?: true
+    createdAt?: true
+    lastAccess?: true
     _all?: true
   }
 
@@ -22828,6 +20300,8 @@ export namespace Prisma {
     content: string | null
     alphabeticalLabel: string | null
     mdxNoteId: number | null
+    createdAt: Date
+    lastAccess: Date
     _count: DefinitionCountAggregateOutputType | null
     _avg: DefinitionAvgAggregateOutputType | null
     _sum: DefinitionSumAggregateOutputType | null
@@ -22855,6 +20329,8 @@ export namespace Prisma {
     content?: boolean
     alphabeticalLabel?: boolean
     mdxNoteId?: boolean
+    createdAt?: boolean
+    lastAccess?: boolean
     mdxNote?: boolean | Definition$mdxNoteArgs<ExtArgs>
   }, ExtArgs["result"]["definition"]>
 
@@ -22864,6 +20340,8 @@ export namespace Prisma {
     content?: boolean
     alphabeticalLabel?: boolean
     mdxNoteId?: boolean
+    createdAt?: boolean
+    lastAccess?: boolean
     mdxNote?: boolean | Definition$mdxNoteArgs<ExtArgs>
   }, ExtArgs["result"]["definition"]>
 
@@ -22873,6 +20351,8 @@ export namespace Prisma {
     content?: boolean
     alphabeticalLabel?: boolean
     mdxNoteId?: boolean
+    createdAt?: boolean
+    lastAccess?: boolean
   }
 
   export type DefinitionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -22893,6 +20373,8 @@ export namespace Prisma {
       content: string | null
       alphabeticalLabel: string | null
       mdxNoteId: number | null
+      createdAt: Date
+      lastAccess: Date
     }, ExtArgs["result"]["definition"]>
     composites: {}
   }
@@ -23292,6 +20774,8 @@ export namespace Prisma {
     readonly content: FieldRef<"Definition", 'String'>
     readonly alphabeticalLabel: FieldRef<"Definition", 'String'>
     readonly mdxNoteId: FieldRef<"Definition", 'Int'>
+    readonly createdAt: FieldRef<"Definition", 'DateTime'>
+    readonly lastAccess: FieldRef<"Definition", 'DateTime'>
   }
     
 
@@ -23668,6 +21152,7 @@ export namespace Prisma {
     landingImageAlign: $Enums.ImageAlignment | null
     lockedLandingImage: string | null
     cleanOnSync: boolean | null
+    plotTheme: string | null
     firstSync: Date | null
     lastSync: Date | null
   }
@@ -23681,6 +21166,7 @@ export namespace Prisma {
     landingImageAlign: $Enums.ImageAlignment | null
     lockedLandingImage: string | null
     cleanOnSync: boolean | null
+    plotTheme: string | null
     firstSync: Date | null
     lastSync: Date | null
   }
@@ -23694,6 +21180,8 @@ export namespace Prisma {
     landingImageAlign: number
     lockedLandingImage: number
     cleanOnSync: number
+    plotTheme: number
+    pluginSettings: number
     firstSync: number
     lastSync: number
     _all: number
@@ -23717,6 +21205,7 @@ export namespace Prisma {
     landingImageAlign?: true
     lockedLandingImage?: true
     cleanOnSync?: true
+    plotTheme?: true
     firstSync?: true
     lastSync?: true
   }
@@ -23730,6 +21219,7 @@ export namespace Prisma {
     landingImageAlign?: true
     lockedLandingImage?: true
     cleanOnSync?: true
+    plotTheme?: true
     firstSync?: true
     lastSync?: true
   }
@@ -23743,6 +21233,8 @@ export namespace Prisma {
     landingImageAlign?: true
     lockedLandingImage?: true
     cleanOnSync?: true
+    plotTheme?: true
+    pluginSettings?: true
     firstSync?: true
     lastSync?: true
     _all?: true
@@ -23843,6 +21335,8 @@ export namespace Prisma {
     landingImageAlign: $Enums.ImageAlignment
     lockedLandingImage: string | null
     cleanOnSync: boolean
+    plotTheme: string | null
+    pluginSettings: PrismaJson.PluginSettingsRecord
     firstSync: Date
     lastSync: Date
     _count: SettingsCountAggregateOutputType | null
@@ -23875,6 +21369,8 @@ export namespace Prisma {
     landingImageAlign?: boolean
     lockedLandingImage?: boolean
     cleanOnSync?: boolean
+    plotTheme?: boolean
+    pluginSettings?: boolean
     firstSync?: boolean
     lastSync?: boolean
   }, ExtArgs["result"]["settings"]>
@@ -23888,6 +21384,8 @@ export namespace Prisma {
     landingImageAlign?: boolean
     lockedLandingImage?: boolean
     cleanOnSync?: boolean
+    plotTheme?: boolean
+    pluginSettings?: boolean
     firstSync?: boolean
     lastSync?: boolean
   }, ExtArgs["result"]["settings"]>
@@ -23901,6 +21399,8 @@ export namespace Prisma {
     landingImageAlign?: boolean
     lockedLandingImage?: boolean
     cleanOnSync?: boolean
+    plotTheme?: boolean
+    pluginSettings?: boolean
     firstSync?: boolean
     lastSync?: boolean
   }
@@ -23918,6 +21418,11 @@ export namespace Prisma {
       landingImageAlign: $Enums.ImageAlignment
       lockedLandingImage: string | null
       cleanOnSync: boolean
+      plotTheme: string | null
+      /**
+       * [PluginSettingsRecord]
+       */
+      pluginSettings: PrismaJson.PluginSettingsRecord
       firstSync: Date
       lastSync: Date
     }, ExtArgs["result"]["settings"]>
@@ -24321,6 +21826,8 @@ export namespace Prisma {
     readonly landingImageAlign: FieldRef<"Settings", 'ImageAlignment'>
     readonly lockedLandingImage: FieldRef<"Settings", 'String'>
     readonly cleanOnSync: FieldRef<"Settings", 'Boolean'>
+    readonly plotTheme: FieldRef<"Settings", 'String'>
+    readonly pluginSettings: FieldRef<"Settings", 'Json'>
     readonly firstSync: FieldRef<"Settings", 'DateTime'>
     readonly lastSync: FieldRef<"Settings", 'DateTime'>
   }
@@ -30283,6 +27790,7 @@ export namespace Prisma {
     bookmarked: boolean | null
     firstSync: Date | null
     lastSync: Date | null
+    lastAccess: Date | null
   }
 
   export type MdxNoteMaxAggregateOutputType = {
@@ -30307,6 +27815,7 @@ export namespace Prisma {
     bookmarked: boolean | null
     firstSync: Date | null
     lastSync: Date | null
+    lastAccess: Date | null
   }
 
   export type MdxNoteCountAggregateOutputType = {
@@ -30334,6 +27843,7 @@ export namespace Prisma {
     bookmarked: number
     firstSync: number
     lastSync: number
+    lastAccess: number
     _all: number
   }
 
@@ -30372,6 +27882,7 @@ export namespace Prisma {
     bookmarked?: true
     firstSync?: true
     lastSync?: true
+    lastAccess?: true
   }
 
   export type MdxNoteMaxAggregateInputType = {
@@ -30396,6 +27907,7 @@ export namespace Prisma {
     bookmarked?: true
     firstSync?: true
     lastSync?: true
+    lastAccess?: true
   }
 
   export type MdxNoteCountAggregateInputType = {
@@ -30423,6 +27935,7 @@ export namespace Prisma {
     bookmarked?: true
     firstSync?: true
     lastSync?: true
+    lastAccess?: true
     _all?: true
   }
 
@@ -30537,6 +28050,7 @@ export namespace Prisma {
     bookmarked: boolean
     firstSync: Date
     lastSync: Date
+    lastAccess: Date
     _count: MdxNoteCountAggregateOutputType | null
     _avg: MdxNoteAvgAggregateOutputType | null
     _sum: MdxNoteSumAggregateOutputType | null
@@ -30583,6 +28097,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: boolean
     lastSync?: boolean
+    lastAccess?: boolean
     topics?: boolean | MdxNote$topicsArgs<ExtArgs>
     subjects?: boolean | MdxNote$subjectsArgs<ExtArgs>
     tags?: boolean | MdxNote$tagsArgs<ExtArgs>
@@ -30620,6 +28135,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: boolean
     lastSync?: boolean
+    lastAccess?: boolean
     sequentialList?: boolean | MdxNote$sequentialListArgs<ExtArgs>
   }, ExtArgs["result"]["mdxNote"]>
 
@@ -30648,6 +28164,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: boolean
     lastSync?: boolean
+    lastAccess?: boolean
   }
 
   export type MdxNoteInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -30704,6 +28221,7 @@ export namespace Prisma {
       bookmarked: boolean
       firstSync: Date
       lastSync: Date
+      lastAccess: Date
     }, ExtArgs["result"]["mdxNote"]>
     composites: {}
   }
@@ -31130,6 +28648,7 @@ export namespace Prisma {
     readonly bookmarked: FieldRef<"MdxNote", 'Boolean'>
     readonly firstSync: FieldRef<"MdxNote", 'DateTime'>
     readonly lastSync: FieldRef<"MdxNote", 'DateTime'>
+    readonly lastAccess: FieldRef<"MdxNote", 'DateTime'>
   }
     
 
@@ -31674,6 +29193,7 @@ export namespace Prisma {
     bookmarked: boolean | null
     firstSync: Date | null
     lastSync: Date | null
+    lastAccess: Date | null
   }
 
   export type IpynbMaxAggregateOutputType = {
@@ -31689,6 +29209,7 @@ export namespace Prisma {
     bookmarked: boolean | null
     firstSync: Date | null
     lastSync: Date | null
+    lastAccess: Date | null
   }
 
   export type IpynbCountAggregateOutputType = {
@@ -31707,6 +29228,7 @@ export namespace Prisma {
     bookmarked: number
     firstSync: number
     lastSync: number
+    lastAccess: number
     _all: number
   }
 
@@ -31736,6 +29258,7 @@ export namespace Prisma {
     bookmarked?: true
     firstSync?: true
     lastSync?: true
+    lastAccess?: true
   }
 
   export type IpynbMaxAggregateInputType = {
@@ -31751,6 +29274,7 @@ export namespace Prisma {
     bookmarked?: true
     firstSync?: true
     lastSync?: true
+    lastAccess?: true
   }
 
   export type IpynbCountAggregateInputType = {
@@ -31769,6 +29293,7 @@ export namespace Prisma {
     bookmarked?: true
     firstSync?: true
     lastSync?: true
+    lastAccess?: true
     _all?: true
   }
 
@@ -31874,6 +29399,7 @@ export namespace Prisma {
     bookmarked: boolean
     firstSync: Date
     lastSync: Date
+    lastAccess: Date
     _count: IpynbCountAggregateOutputType | null
     _avg: IpynbAvgAggregateOutputType | null
     _sum: IpynbSumAggregateOutputType | null
@@ -31911,6 +29437,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: boolean
     lastSync?: boolean
+    lastAccess?: boolean
     tags?: boolean | Ipynb$tagsArgs<ExtArgs>
     topics?: boolean | Ipynb$topicsArgs<ExtArgs>
     subjects?: boolean | Ipynb$subjectsArgs<ExtArgs>
@@ -31936,6 +29463,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: boolean
     lastSync?: boolean
+    lastAccess?: boolean
     sequentialList?: boolean | Ipynb$sequentialListArgs<ExtArgs>
   }, ExtArgs["result"]["ipynb"]>
 
@@ -31955,6 +29483,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: boolean
     lastSync?: boolean
+    lastAccess?: boolean
   }
 
   export type IpynbInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -31996,6 +29525,7 @@ export namespace Prisma {
       bookmarked: boolean
       firstSync: Date
       lastSync: Date
+      lastAccess: Date
     }, ExtArgs["result"]["ipynb"]>
     composites: {}
   }
@@ -32410,6 +29940,7 @@ export namespace Prisma {
     readonly bookmarked: FieldRef<"Ipynb", 'Boolean'>
     readonly firstSync: FieldRef<"Ipynb", 'DateTime'>
     readonly lastSync: FieldRef<"Ipynb", 'DateTime'>
+    readonly lastAccess: FieldRef<"Ipynb", 'DateTime'>
   }
     
 
@@ -32882,6 +30413,7 @@ export namespace Prisma {
     label: string | null
     createdAt: Date | null
     lastUpdate: Date | null
+    lastAccess: Date | null
   }
 
   export type ToDoListMaxAggregateOutputType = {
@@ -32889,6 +30421,7 @@ export namespace Prisma {
     label: string | null
     createdAt: Date | null
     lastUpdate: Date | null
+    lastAccess: Date | null
   }
 
   export type ToDoListCountAggregateOutputType = {
@@ -32896,6 +30429,7 @@ export namespace Prisma {
     label: number
     createdAt: number
     lastUpdate: number
+    lastAccess: number
     _all: number
   }
 
@@ -32913,6 +30447,7 @@ export namespace Prisma {
     label?: true
     createdAt?: true
     lastUpdate?: true
+    lastAccess?: true
   }
 
   export type ToDoListMaxAggregateInputType = {
@@ -32920,6 +30455,7 @@ export namespace Prisma {
     label?: true
     createdAt?: true
     lastUpdate?: true
+    lastAccess?: true
   }
 
   export type ToDoListCountAggregateInputType = {
@@ -32927,6 +30463,7 @@ export namespace Prisma {
     label?: true
     createdAt?: true
     lastUpdate?: true
+    lastAccess?: true
     _all?: true
   }
 
@@ -33021,6 +30558,7 @@ export namespace Prisma {
     label: string
     createdAt: Date
     lastUpdate: Date
+    lastAccess: Date
     _count: ToDoListCountAggregateOutputType | null
     _avg: ToDoListAvgAggregateOutputType | null
     _sum: ToDoListSumAggregateOutputType | null
@@ -33047,6 +30585,7 @@ export namespace Prisma {
     label?: boolean
     createdAt?: boolean
     lastUpdate?: boolean
+    lastAccess?: boolean
     tasks?: boolean | ToDoList$tasksArgs<ExtArgs>
     tags?: boolean | ToDoList$tagsArgs<ExtArgs>
     topics?: boolean | ToDoList$topicsArgs<ExtArgs>
@@ -33059,6 +30598,7 @@ export namespace Prisma {
     label?: boolean
     createdAt?: boolean
     lastUpdate?: boolean
+    lastAccess?: boolean
   }, ExtArgs["result"]["toDoList"]>
 
   export type ToDoListSelectScalar = {
@@ -33066,6 +30606,7 @@ export namespace Prisma {
     label?: boolean
     createdAt?: boolean
     lastUpdate?: boolean
+    lastAccess?: boolean
   }
 
   export type ToDoListInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -33090,6 +30631,7 @@ export namespace Prisma {
       label: string
       createdAt: Date
       lastUpdate: Date
+      lastAccess: Date
     }, ExtArgs["result"]["toDoList"]>
     composites: {}
   }
@@ -33491,6 +31033,7 @@ export namespace Prisma {
     readonly label: FieldRef<"ToDoList", 'String'>
     readonly createdAt: FieldRef<"ToDoList", 'DateTime'>
     readonly lastUpdate: FieldRef<"ToDoList", 'DateTime'>
+    readonly lastAccess: FieldRef<"ToDoList", 'DateTime'>
   }
     
 
@@ -33934,9 +31477,10 @@ export namespace Prisma {
     parentId: number | null
     category: $Enums.TaskCategory | null
     bookmarked: boolean | null
-    status: $Enums.ToDoListStatus | null
+    status: string | null
     priority: number | null
     toDoListId: number | null
+    completedOn: Date | null
   }
 
   export type ToDoMaxAggregateOutputType = {
@@ -33948,9 +31492,10 @@ export namespace Prisma {
     parentId: number | null
     category: $Enums.TaskCategory | null
     bookmarked: boolean | null
-    status: $Enums.ToDoListStatus | null
+    status: string | null
     priority: number | null
     toDoListId: number | null
+    completedOn: Date | null
   }
 
   export type ToDoCountAggregateOutputType = {
@@ -33965,6 +31510,7 @@ export namespace Prisma {
     status: number
     priority: number
     toDoListId: number
+    completedOn: number
     _all: number
   }
 
@@ -33995,6 +31541,7 @@ export namespace Prisma {
     status?: true
     priority?: true
     toDoListId?: true
+    completedOn?: true
   }
 
   export type ToDoMaxAggregateInputType = {
@@ -34009,6 +31556,7 @@ export namespace Prisma {
     status?: true
     priority?: true
     toDoListId?: true
+    completedOn?: true
   }
 
   export type ToDoCountAggregateInputType = {
@@ -34023,6 +31571,7 @@ export namespace Prisma {
     status?: true
     priority?: true
     toDoListId?: true
+    completedOn?: true
     _all?: true
   }
 
@@ -34121,9 +31670,10 @@ export namespace Prisma {
     parentId: number | null
     category: $Enums.TaskCategory | null
     bookmarked: boolean
-    status: $Enums.ToDoListStatus
+    status: string
     priority: number
     toDoListId: number | null
+    completedOn: Date | null
     _count: ToDoCountAggregateOutputType | null
     _avg: ToDoAvgAggregateOutputType | null
     _sum: ToDoSumAggregateOutputType | null
@@ -34157,6 +31707,7 @@ export namespace Prisma {
     status?: boolean
     priority?: boolean
     toDoListId?: boolean
+    completedOn?: boolean
     associatedNotes?: boolean | ToDo$associatedNotesArgs<ExtArgs>
     tags?: boolean | ToDo$tagsArgs<ExtArgs>
     topics?: boolean | ToDo$topicsArgs<ExtArgs>
@@ -34179,6 +31730,7 @@ export namespace Prisma {
     status?: boolean
     priority?: boolean
     toDoListId?: boolean
+    completedOn?: boolean
     parent?: boolean | ToDo$parentArgs<ExtArgs>
     ToDoList?: boolean | ToDo$ToDoListArgs<ExtArgs>
   }, ExtArgs["result"]["toDo"]>
@@ -34195,6 +31747,7 @@ export namespace Prisma {
     status?: boolean
     priority?: boolean
     toDoListId?: boolean
+    completedOn?: boolean
   }
 
   export type ToDoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -34232,9 +31785,10 @@ export namespace Prisma {
       parentId: number | null
       category: $Enums.TaskCategory | null
       bookmarked: boolean
-      status: $Enums.ToDoListStatus
+      status: string
       priority: number
       toDoListId: number | null
+      completedOn: Date | null
     }, ExtArgs["result"]["toDo"]>
     composites: {}
   }
@@ -34643,9 +32197,10 @@ export namespace Prisma {
     readonly parentId: FieldRef<"ToDo", 'Int'>
     readonly category: FieldRef<"ToDo", 'TaskCategory'>
     readonly bookmarked: FieldRef<"ToDo", 'Boolean'>
-    readonly status: FieldRef<"ToDo", 'ToDoListStatus'>
+    readonly status: FieldRef<"ToDo", 'String'>
     readonly priority: FieldRef<"ToDo", 'Int'>
     readonly toDoListId: FieldRef<"ToDo", 'Int'>
+    readonly completedOn: FieldRef<"ToDo", 'DateTime'>
   }
     
 
@@ -45474,6 +43029,2774 @@ export namespace Prisma {
 
 
   /**
+   * Model FeatureRequest
+   */
+
+  export type AggregateFeatureRequest = {
+    _count: FeatureRequestCountAggregateOutputType | null
+    _avg: FeatureRequestAvgAggregateOutputType | null
+    _sum: FeatureRequestSumAggregateOutputType | null
+    _min: FeatureRequestMinAggregateOutputType | null
+    _max: FeatureRequestMaxAggregateOutputType | null
+  }
+
+  export type FeatureRequestAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type FeatureRequestSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type FeatureRequestMinAggregateOutputType = {
+    id: number | null
+    email: string | null
+    message: string | null
+    receivedOn: Date | null
+  }
+
+  export type FeatureRequestMaxAggregateOutputType = {
+    id: number | null
+    email: string | null
+    message: string | null
+    receivedOn: Date | null
+  }
+
+  export type FeatureRequestCountAggregateOutputType = {
+    id: number
+    email: number
+    message: number
+    category: number
+    userBase: number
+    receivedOn: number
+    _all: number
+  }
+
+
+  export type FeatureRequestAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type FeatureRequestSumAggregateInputType = {
+    id?: true
+  }
+
+  export type FeatureRequestMinAggregateInputType = {
+    id?: true
+    email?: true
+    message?: true
+    receivedOn?: true
+  }
+
+  export type FeatureRequestMaxAggregateInputType = {
+    id?: true
+    email?: true
+    message?: true
+    receivedOn?: true
+  }
+
+  export type FeatureRequestCountAggregateInputType = {
+    id?: true
+    email?: true
+    message?: true
+    category?: true
+    userBase?: true
+    receivedOn?: true
+    _all?: true
+  }
+
+  export type FeatureRequestAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FeatureRequest to aggregate.
+     */
+    where?: FeatureRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FeatureRequests to fetch.
+     */
+    orderBy?: FeatureRequestOrderByWithRelationInput | FeatureRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FeatureRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FeatureRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FeatureRequests.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FeatureRequests
+    **/
+    _count?: true | FeatureRequestCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: FeatureRequestAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: FeatureRequestSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FeatureRequestMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FeatureRequestMaxAggregateInputType
+  }
+
+  export type GetFeatureRequestAggregateType<T extends FeatureRequestAggregateArgs> = {
+        [P in keyof T & keyof AggregateFeatureRequest]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFeatureRequest[P]>
+      : GetScalarType<T[P], AggregateFeatureRequest[P]>
+  }
+
+
+
+
+  export type FeatureRequestGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FeatureRequestWhereInput
+    orderBy?: FeatureRequestOrderByWithAggregationInput | FeatureRequestOrderByWithAggregationInput[]
+    by: FeatureRequestScalarFieldEnum[] | FeatureRequestScalarFieldEnum
+    having?: FeatureRequestScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FeatureRequestCountAggregateInputType | true
+    _avg?: FeatureRequestAvgAggregateInputType
+    _sum?: FeatureRequestSumAggregateInputType
+    _min?: FeatureRequestMinAggregateInputType
+    _max?: FeatureRequestMaxAggregateInputType
+  }
+
+  export type FeatureRequestGroupByOutputType = {
+    id: number
+    email: string
+    message: string
+    category: string[]
+    userBase: string[]
+    receivedOn: Date
+    _count: FeatureRequestCountAggregateOutputType | null
+    _avg: FeatureRequestAvgAggregateOutputType | null
+    _sum: FeatureRequestSumAggregateOutputType | null
+    _min: FeatureRequestMinAggregateOutputType | null
+    _max: FeatureRequestMaxAggregateOutputType | null
+  }
+
+  type GetFeatureRequestGroupByPayload<T extends FeatureRequestGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FeatureRequestGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FeatureRequestGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FeatureRequestGroupByOutputType[P]>
+            : GetScalarType<T[P], FeatureRequestGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FeatureRequestSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    email?: boolean
+    message?: boolean
+    category?: boolean
+    userBase?: boolean
+    receivedOn?: boolean
+  }, ExtArgs["result"]["featureRequest"]>
+
+  export type FeatureRequestSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    email?: boolean
+    message?: boolean
+    category?: boolean
+    userBase?: boolean
+    receivedOn?: boolean
+  }, ExtArgs["result"]["featureRequest"]>
+
+  export type FeatureRequestSelectScalar = {
+    id?: boolean
+    email?: boolean
+    message?: boolean
+    category?: boolean
+    userBase?: boolean
+    receivedOn?: boolean
+  }
+
+
+  export type $FeatureRequestPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FeatureRequest"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      email: string
+      message: string
+      category: string[]
+      userBase: string[]
+      receivedOn: Date
+    }, ExtArgs["result"]["featureRequest"]>
+    composites: {}
+  }
+
+  type FeatureRequestGetPayload<S extends boolean | null | undefined | FeatureRequestDefaultArgs> = $Result.GetResult<Prisma.$FeatureRequestPayload, S>
+
+  type FeatureRequestCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<FeatureRequestFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: FeatureRequestCountAggregateInputType | true
+    }
+
+  export interface FeatureRequestDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FeatureRequest'], meta: { name: 'FeatureRequest' } }
+    /**
+     * Find zero or one FeatureRequest that matches the filter.
+     * @param {FeatureRequestFindUniqueArgs} args - Arguments to find a FeatureRequest
+     * @example
+     * // Get one FeatureRequest
+     * const featureRequest = await prisma.featureRequest.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FeatureRequestFindUniqueArgs>(args: SelectSubset<T, FeatureRequestFindUniqueArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one FeatureRequest that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {FeatureRequestFindUniqueOrThrowArgs} args - Arguments to find a FeatureRequest
+     * @example
+     * // Get one FeatureRequest
+     * const featureRequest = await prisma.featureRequest.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FeatureRequestFindUniqueOrThrowArgs>(args: SelectSubset<T, FeatureRequestFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first FeatureRequest that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FeatureRequestFindFirstArgs} args - Arguments to find a FeatureRequest
+     * @example
+     * // Get one FeatureRequest
+     * const featureRequest = await prisma.featureRequest.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FeatureRequestFindFirstArgs>(args?: SelectSubset<T, FeatureRequestFindFirstArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first FeatureRequest that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FeatureRequestFindFirstOrThrowArgs} args - Arguments to find a FeatureRequest
+     * @example
+     * // Get one FeatureRequest
+     * const featureRequest = await prisma.featureRequest.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FeatureRequestFindFirstOrThrowArgs>(args?: SelectSubset<T, FeatureRequestFindFirstOrThrowArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more FeatureRequests that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FeatureRequestFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FeatureRequests
+     * const featureRequests = await prisma.featureRequest.findMany()
+     * 
+     * // Get first 10 FeatureRequests
+     * const featureRequests = await prisma.featureRequest.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const featureRequestWithIdOnly = await prisma.featureRequest.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends FeatureRequestFindManyArgs>(args?: SelectSubset<T, FeatureRequestFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a FeatureRequest.
+     * @param {FeatureRequestCreateArgs} args - Arguments to create a FeatureRequest.
+     * @example
+     * // Create one FeatureRequest
+     * const FeatureRequest = await prisma.featureRequest.create({
+     *   data: {
+     *     // ... data to create a FeatureRequest
+     *   }
+     * })
+     * 
+     */
+    create<T extends FeatureRequestCreateArgs>(args: SelectSubset<T, FeatureRequestCreateArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many FeatureRequests.
+     * @param {FeatureRequestCreateManyArgs} args - Arguments to create many FeatureRequests.
+     * @example
+     * // Create many FeatureRequests
+     * const featureRequest = await prisma.featureRequest.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FeatureRequestCreateManyArgs>(args?: SelectSubset<T, FeatureRequestCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FeatureRequests and returns the data saved in the database.
+     * @param {FeatureRequestCreateManyAndReturnArgs} args - Arguments to create many FeatureRequests.
+     * @example
+     * // Create many FeatureRequests
+     * const featureRequest = await prisma.featureRequest.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FeatureRequests and only return the `id`
+     * const featureRequestWithIdOnly = await prisma.featureRequest.createManyAndReturn({ 
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FeatureRequestCreateManyAndReturnArgs>(args?: SelectSubset<T, FeatureRequestCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "createManyAndReturn">>
+
+    /**
+     * Delete a FeatureRequest.
+     * @param {FeatureRequestDeleteArgs} args - Arguments to delete one FeatureRequest.
+     * @example
+     * // Delete one FeatureRequest
+     * const FeatureRequest = await prisma.featureRequest.delete({
+     *   where: {
+     *     // ... filter to delete one FeatureRequest
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FeatureRequestDeleteArgs>(args: SelectSubset<T, FeatureRequestDeleteArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one FeatureRequest.
+     * @param {FeatureRequestUpdateArgs} args - Arguments to update one FeatureRequest.
+     * @example
+     * // Update one FeatureRequest
+     * const featureRequest = await prisma.featureRequest.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FeatureRequestUpdateArgs>(args: SelectSubset<T, FeatureRequestUpdateArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more FeatureRequests.
+     * @param {FeatureRequestDeleteManyArgs} args - Arguments to filter FeatureRequests to delete.
+     * @example
+     * // Delete a few FeatureRequests
+     * const { count } = await prisma.featureRequest.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FeatureRequestDeleteManyArgs>(args?: SelectSubset<T, FeatureRequestDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FeatureRequests.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FeatureRequestUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FeatureRequests
+     * const featureRequest = await prisma.featureRequest.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FeatureRequestUpdateManyArgs>(args: SelectSubset<T, FeatureRequestUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one FeatureRequest.
+     * @param {FeatureRequestUpsertArgs} args - Arguments to update or create a FeatureRequest.
+     * @example
+     * // Update or create a FeatureRequest
+     * const featureRequest = await prisma.featureRequest.upsert({
+     *   create: {
+     *     // ... data to create a FeatureRequest
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FeatureRequest we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FeatureRequestUpsertArgs>(args: SelectSubset<T, FeatureRequestUpsertArgs<ExtArgs>>): Prisma__FeatureRequestClient<$Result.GetResult<Prisma.$FeatureRequestPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of FeatureRequests.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FeatureRequestCountArgs} args - Arguments to filter FeatureRequests to count.
+     * @example
+     * // Count the number of FeatureRequests
+     * const count = await prisma.featureRequest.count({
+     *   where: {
+     *     // ... the filter for the FeatureRequests we want to count
+     *   }
+     * })
+    **/
+    count<T extends FeatureRequestCountArgs>(
+      args?: Subset<T, FeatureRequestCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FeatureRequestCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FeatureRequest.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FeatureRequestAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FeatureRequestAggregateArgs>(args: Subset<T, FeatureRequestAggregateArgs>): Prisma.PrismaPromise<GetFeatureRequestAggregateType<T>>
+
+    /**
+     * Group by FeatureRequest.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FeatureRequestGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FeatureRequestGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FeatureRequestGroupByArgs['orderBy'] }
+        : { orderBy?: FeatureRequestGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FeatureRequestGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFeatureRequestGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FeatureRequest model
+   */
+  readonly fields: FeatureRequestFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FeatureRequest.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FeatureRequestClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FeatureRequest model
+   */ 
+  interface FeatureRequestFieldRefs {
+    readonly id: FieldRef<"FeatureRequest", 'Int'>
+    readonly email: FieldRef<"FeatureRequest", 'String'>
+    readonly message: FieldRef<"FeatureRequest", 'String'>
+    readonly category: FieldRef<"FeatureRequest", 'String[]'>
+    readonly userBase: FieldRef<"FeatureRequest", 'String[]'>
+    readonly receivedOn: FieldRef<"FeatureRequest", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FeatureRequest findUnique
+   */
+  export type FeatureRequestFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which FeatureRequest to fetch.
+     */
+    where: FeatureRequestWhereUniqueInput
+  }
+
+  /**
+   * FeatureRequest findUniqueOrThrow
+   */
+  export type FeatureRequestFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which FeatureRequest to fetch.
+     */
+    where: FeatureRequestWhereUniqueInput
+  }
+
+  /**
+   * FeatureRequest findFirst
+   */
+  export type FeatureRequestFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which FeatureRequest to fetch.
+     */
+    where?: FeatureRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FeatureRequests to fetch.
+     */
+    orderBy?: FeatureRequestOrderByWithRelationInput | FeatureRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FeatureRequests.
+     */
+    cursor?: FeatureRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FeatureRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FeatureRequests.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FeatureRequests.
+     */
+    distinct?: FeatureRequestScalarFieldEnum | FeatureRequestScalarFieldEnum[]
+  }
+
+  /**
+   * FeatureRequest findFirstOrThrow
+   */
+  export type FeatureRequestFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which FeatureRequest to fetch.
+     */
+    where?: FeatureRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FeatureRequests to fetch.
+     */
+    orderBy?: FeatureRequestOrderByWithRelationInput | FeatureRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FeatureRequests.
+     */
+    cursor?: FeatureRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FeatureRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FeatureRequests.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FeatureRequests.
+     */
+    distinct?: FeatureRequestScalarFieldEnum | FeatureRequestScalarFieldEnum[]
+  }
+
+  /**
+   * FeatureRequest findMany
+   */
+  export type FeatureRequestFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which FeatureRequests to fetch.
+     */
+    where?: FeatureRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FeatureRequests to fetch.
+     */
+    orderBy?: FeatureRequestOrderByWithRelationInput | FeatureRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FeatureRequests.
+     */
+    cursor?: FeatureRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FeatureRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FeatureRequests.
+     */
+    skip?: number
+    distinct?: FeatureRequestScalarFieldEnum | FeatureRequestScalarFieldEnum[]
+  }
+
+  /**
+   * FeatureRequest create
+   */
+  export type FeatureRequestCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * The data needed to create a FeatureRequest.
+     */
+    data: XOR<FeatureRequestCreateInput, FeatureRequestUncheckedCreateInput>
+  }
+
+  /**
+   * FeatureRequest createMany
+   */
+  export type FeatureRequestCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FeatureRequests.
+     */
+    data: FeatureRequestCreateManyInput | FeatureRequestCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FeatureRequest createManyAndReturn
+   */
+  export type FeatureRequestCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * The data used to create many FeatureRequests.
+     */
+    data: FeatureRequestCreateManyInput | FeatureRequestCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FeatureRequest update
+   */
+  export type FeatureRequestUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * The data needed to update a FeatureRequest.
+     */
+    data: XOR<FeatureRequestUpdateInput, FeatureRequestUncheckedUpdateInput>
+    /**
+     * Choose, which FeatureRequest to update.
+     */
+    where: FeatureRequestWhereUniqueInput
+  }
+
+  /**
+   * FeatureRequest updateMany
+   */
+  export type FeatureRequestUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FeatureRequests.
+     */
+    data: XOR<FeatureRequestUpdateManyMutationInput, FeatureRequestUncheckedUpdateManyInput>
+    /**
+     * Filter which FeatureRequests to update
+     */
+    where?: FeatureRequestWhereInput
+  }
+
+  /**
+   * FeatureRequest upsert
+   */
+  export type FeatureRequestUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * The filter to search for the FeatureRequest to update in case it exists.
+     */
+    where: FeatureRequestWhereUniqueInput
+    /**
+     * In case the FeatureRequest found by the `where` argument doesn't exist, create a new FeatureRequest with this data.
+     */
+    create: XOR<FeatureRequestCreateInput, FeatureRequestUncheckedCreateInput>
+    /**
+     * In case the FeatureRequest was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FeatureRequestUpdateInput, FeatureRequestUncheckedUpdateInput>
+  }
+
+  /**
+   * FeatureRequest delete
+   */
+  export type FeatureRequestDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+    /**
+     * Filter which FeatureRequest to delete.
+     */
+    where: FeatureRequestWhereUniqueInput
+  }
+
+  /**
+   * FeatureRequest deleteMany
+   */
+  export type FeatureRequestDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FeatureRequests to delete
+     */
+    where?: FeatureRequestWhereInput
+  }
+
+  /**
+   * FeatureRequest without action
+   */
+  export type FeatureRequestDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FeatureRequest
+     */
+    select?: FeatureRequestSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model WaitlistRequest
+   */
+
+  export type AggregateWaitlistRequest = {
+    _count: WaitlistRequestCountAggregateOutputType | null
+    _avg: WaitlistRequestAvgAggregateOutputType | null
+    _sum: WaitlistRequestSumAggregateOutputType | null
+    _min: WaitlistRequestMinAggregateOutputType | null
+    _max: WaitlistRequestMaxAggregateOutputType | null
+  }
+
+  export type WaitlistRequestAvgAggregateOutputType = {
+    id: number | null
+    emailsSent: number | null
+  }
+
+  export type WaitlistRequestSumAggregateOutputType = {
+    id: number | null
+    emailsSent: number | null
+  }
+
+  export type WaitlistRequestMinAggregateOutputType = {
+    id: number | null
+    email: string | null
+    receivedOn: Date | null
+    emailsSent: number | null
+  }
+
+  export type WaitlistRequestMaxAggregateOutputType = {
+    id: number | null
+    email: string | null
+    receivedOn: Date | null
+    emailsSent: number | null
+  }
+
+  export type WaitlistRequestCountAggregateOutputType = {
+    id: number
+    email: number
+    receivedOn: number
+    emailsSent: number
+    _all: number
+  }
+
+
+  export type WaitlistRequestAvgAggregateInputType = {
+    id?: true
+    emailsSent?: true
+  }
+
+  export type WaitlistRequestSumAggregateInputType = {
+    id?: true
+    emailsSent?: true
+  }
+
+  export type WaitlistRequestMinAggregateInputType = {
+    id?: true
+    email?: true
+    receivedOn?: true
+    emailsSent?: true
+  }
+
+  export type WaitlistRequestMaxAggregateInputType = {
+    id?: true
+    email?: true
+    receivedOn?: true
+    emailsSent?: true
+  }
+
+  export type WaitlistRequestCountAggregateInputType = {
+    id?: true
+    email?: true
+    receivedOn?: true
+    emailsSent?: true
+    _all?: true
+  }
+
+  export type WaitlistRequestAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which WaitlistRequest to aggregate.
+     */
+    where?: WaitlistRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WaitlistRequests to fetch.
+     */
+    orderBy?: WaitlistRequestOrderByWithRelationInput | WaitlistRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: WaitlistRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WaitlistRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WaitlistRequests.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned WaitlistRequests
+    **/
+    _count?: true | WaitlistRequestCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: WaitlistRequestAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: WaitlistRequestSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: WaitlistRequestMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: WaitlistRequestMaxAggregateInputType
+  }
+
+  export type GetWaitlistRequestAggregateType<T extends WaitlistRequestAggregateArgs> = {
+        [P in keyof T & keyof AggregateWaitlistRequest]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateWaitlistRequest[P]>
+      : GetScalarType<T[P], AggregateWaitlistRequest[P]>
+  }
+
+
+
+
+  export type WaitlistRequestGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: WaitlistRequestWhereInput
+    orderBy?: WaitlistRequestOrderByWithAggregationInput | WaitlistRequestOrderByWithAggregationInput[]
+    by: WaitlistRequestScalarFieldEnum[] | WaitlistRequestScalarFieldEnum
+    having?: WaitlistRequestScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: WaitlistRequestCountAggregateInputType | true
+    _avg?: WaitlistRequestAvgAggregateInputType
+    _sum?: WaitlistRequestSumAggregateInputType
+    _min?: WaitlistRequestMinAggregateInputType
+    _max?: WaitlistRequestMaxAggregateInputType
+  }
+
+  export type WaitlistRequestGroupByOutputType = {
+    id: number
+    email: string
+    receivedOn: Date
+    emailsSent: number
+    _count: WaitlistRequestCountAggregateOutputType | null
+    _avg: WaitlistRequestAvgAggregateOutputType | null
+    _sum: WaitlistRequestSumAggregateOutputType | null
+    _min: WaitlistRequestMinAggregateOutputType | null
+    _max: WaitlistRequestMaxAggregateOutputType | null
+  }
+
+  type GetWaitlistRequestGroupByPayload<T extends WaitlistRequestGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<WaitlistRequestGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof WaitlistRequestGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], WaitlistRequestGroupByOutputType[P]>
+            : GetScalarType<T[P], WaitlistRequestGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type WaitlistRequestSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    email?: boolean
+    receivedOn?: boolean
+    emailsSent?: boolean
+  }, ExtArgs["result"]["waitlistRequest"]>
+
+  export type WaitlistRequestSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    email?: boolean
+    receivedOn?: boolean
+    emailsSent?: boolean
+  }, ExtArgs["result"]["waitlistRequest"]>
+
+  export type WaitlistRequestSelectScalar = {
+    id?: boolean
+    email?: boolean
+    receivedOn?: boolean
+    emailsSent?: boolean
+  }
+
+
+  export type $WaitlistRequestPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "WaitlistRequest"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      email: string
+      receivedOn: Date
+      emailsSent: number
+    }, ExtArgs["result"]["waitlistRequest"]>
+    composites: {}
+  }
+
+  type WaitlistRequestGetPayload<S extends boolean | null | undefined | WaitlistRequestDefaultArgs> = $Result.GetResult<Prisma.$WaitlistRequestPayload, S>
+
+  type WaitlistRequestCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<WaitlistRequestFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: WaitlistRequestCountAggregateInputType | true
+    }
+
+  export interface WaitlistRequestDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['WaitlistRequest'], meta: { name: 'WaitlistRequest' } }
+    /**
+     * Find zero or one WaitlistRequest that matches the filter.
+     * @param {WaitlistRequestFindUniqueArgs} args - Arguments to find a WaitlistRequest
+     * @example
+     * // Get one WaitlistRequest
+     * const waitlistRequest = await prisma.waitlistRequest.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends WaitlistRequestFindUniqueArgs>(args: SelectSubset<T, WaitlistRequestFindUniqueArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one WaitlistRequest that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {WaitlistRequestFindUniqueOrThrowArgs} args - Arguments to find a WaitlistRequest
+     * @example
+     * // Get one WaitlistRequest
+     * const waitlistRequest = await prisma.waitlistRequest.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends WaitlistRequestFindUniqueOrThrowArgs>(args: SelectSubset<T, WaitlistRequestFindUniqueOrThrowArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first WaitlistRequest that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WaitlistRequestFindFirstArgs} args - Arguments to find a WaitlistRequest
+     * @example
+     * // Get one WaitlistRequest
+     * const waitlistRequest = await prisma.waitlistRequest.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends WaitlistRequestFindFirstArgs>(args?: SelectSubset<T, WaitlistRequestFindFirstArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first WaitlistRequest that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WaitlistRequestFindFirstOrThrowArgs} args - Arguments to find a WaitlistRequest
+     * @example
+     * // Get one WaitlistRequest
+     * const waitlistRequest = await prisma.waitlistRequest.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends WaitlistRequestFindFirstOrThrowArgs>(args?: SelectSubset<T, WaitlistRequestFindFirstOrThrowArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more WaitlistRequests that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WaitlistRequestFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all WaitlistRequests
+     * const waitlistRequests = await prisma.waitlistRequest.findMany()
+     * 
+     * // Get first 10 WaitlistRequests
+     * const waitlistRequests = await prisma.waitlistRequest.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const waitlistRequestWithIdOnly = await prisma.waitlistRequest.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends WaitlistRequestFindManyArgs>(args?: SelectSubset<T, WaitlistRequestFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a WaitlistRequest.
+     * @param {WaitlistRequestCreateArgs} args - Arguments to create a WaitlistRequest.
+     * @example
+     * // Create one WaitlistRequest
+     * const WaitlistRequest = await prisma.waitlistRequest.create({
+     *   data: {
+     *     // ... data to create a WaitlistRequest
+     *   }
+     * })
+     * 
+     */
+    create<T extends WaitlistRequestCreateArgs>(args: SelectSubset<T, WaitlistRequestCreateArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many WaitlistRequests.
+     * @param {WaitlistRequestCreateManyArgs} args - Arguments to create many WaitlistRequests.
+     * @example
+     * // Create many WaitlistRequests
+     * const waitlistRequest = await prisma.waitlistRequest.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends WaitlistRequestCreateManyArgs>(args?: SelectSubset<T, WaitlistRequestCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many WaitlistRequests and returns the data saved in the database.
+     * @param {WaitlistRequestCreateManyAndReturnArgs} args - Arguments to create many WaitlistRequests.
+     * @example
+     * // Create many WaitlistRequests
+     * const waitlistRequest = await prisma.waitlistRequest.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many WaitlistRequests and only return the `id`
+     * const waitlistRequestWithIdOnly = await prisma.waitlistRequest.createManyAndReturn({ 
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends WaitlistRequestCreateManyAndReturnArgs>(args?: SelectSubset<T, WaitlistRequestCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "createManyAndReturn">>
+
+    /**
+     * Delete a WaitlistRequest.
+     * @param {WaitlistRequestDeleteArgs} args - Arguments to delete one WaitlistRequest.
+     * @example
+     * // Delete one WaitlistRequest
+     * const WaitlistRequest = await prisma.waitlistRequest.delete({
+     *   where: {
+     *     // ... filter to delete one WaitlistRequest
+     *   }
+     * })
+     * 
+     */
+    delete<T extends WaitlistRequestDeleteArgs>(args: SelectSubset<T, WaitlistRequestDeleteArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one WaitlistRequest.
+     * @param {WaitlistRequestUpdateArgs} args - Arguments to update one WaitlistRequest.
+     * @example
+     * // Update one WaitlistRequest
+     * const waitlistRequest = await prisma.waitlistRequest.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends WaitlistRequestUpdateArgs>(args: SelectSubset<T, WaitlistRequestUpdateArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more WaitlistRequests.
+     * @param {WaitlistRequestDeleteManyArgs} args - Arguments to filter WaitlistRequests to delete.
+     * @example
+     * // Delete a few WaitlistRequests
+     * const { count } = await prisma.waitlistRequest.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends WaitlistRequestDeleteManyArgs>(args?: SelectSubset<T, WaitlistRequestDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more WaitlistRequests.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WaitlistRequestUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many WaitlistRequests
+     * const waitlistRequest = await prisma.waitlistRequest.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends WaitlistRequestUpdateManyArgs>(args: SelectSubset<T, WaitlistRequestUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one WaitlistRequest.
+     * @param {WaitlistRequestUpsertArgs} args - Arguments to update or create a WaitlistRequest.
+     * @example
+     * // Update or create a WaitlistRequest
+     * const waitlistRequest = await prisma.waitlistRequest.upsert({
+     *   create: {
+     *     // ... data to create a WaitlistRequest
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the WaitlistRequest we want to update
+     *   }
+     * })
+     */
+    upsert<T extends WaitlistRequestUpsertArgs>(args: SelectSubset<T, WaitlistRequestUpsertArgs<ExtArgs>>): Prisma__WaitlistRequestClient<$Result.GetResult<Prisma.$WaitlistRequestPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of WaitlistRequests.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WaitlistRequestCountArgs} args - Arguments to filter WaitlistRequests to count.
+     * @example
+     * // Count the number of WaitlistRequests
+     * const count = await prisma.waitlistRequest.count({
+     *   where: {
+     *     // ... the filter for the WaitlistRequests we want to count
+     *   }
+     * })
+    **/
+    count<T extends WaitlistRequestCountArgs>(
+      args?: Subset<T, WaitlistRequestCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], WaitlistRequestCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a WaitlistRequest.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WaitlistRequestAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends WaitlistRequestAggregateArgs>(args: Subset<T, WaitlistRequestAggregateArgs>): Prisma.PrismaPromise<GetWaitlistRequestAggregateType<T>>
+
+    /**
+     * Group by WaitlistRequest.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WaitlistRequestGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends WaitlistRequestGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: WaitlistRequestGroupByArgs['orderBy'] }
+        : { orderBy?: WaitlistRequestGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, WaitlistRequestGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWaitlistRequestGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the WaitlistRequest model
+   */
+  readonly fields: WaitlistRequestFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for WaitlistRequest.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__WaitlistRequestClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the WaitlistRequest model
+   */ 
+  interface WaitlistRequestFieldRefs {
+    readonly id: FieldRef<"WaitlistRequest", 'Int'>
+    readonly email: FieldRef<"WaitlistRequest", 'String'>
+    readonly receivedOn: FieldRef<"WaitlistRequest", 'DateTime'>
+    readonly emailsSent: FieldRef<"WaitlistRequest", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * WaitlistRequest findUnique
+   */
+  export type WaitlistRequestFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which WaitlistRequest to fetch.
+     */
+    where: WaitlistRequestWhereUniqueInput
+  }
+
+  /**
+   * WaitlistRequest findUniqueOrThrow
+   */
+  export type WaitlistRequestFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which WaitlistRequest to fetch.
+     */
+    where: WaitlistRequestWhereUniqueInput
+  }
+
+  /**
+   * WaitlistRequest findFirst
+   */
+  export type WaitlistRequestFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which WaitlistRequest to fetch.
+     */
+    where?: WaitlistRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WaitlistRequests to fetch.
+     */
+    orderBy?: WaitlistRequestOrderByWithRelationInput | WaitlistRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for WaitlistRequests.
+     */
+    cursor?: WaitlistRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WaitlistRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WaitlistRequests.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of WaitlistRequests.
+     */
+    distinct?: WaitlistRequestScalarFieldEnum | WaitlistRequestScalarFieldEnum[]
+  }
+
+  /**
+   * WaitlistRequest findFirstOrThrow
+   */
+  export type WaitlistRequestFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which WaitlistRequest to fetch.
+     */
+    where?: WaitlistRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WaitlistRequests to fetch.
+     */
+    orderBy?: WaitlistRequestOrderByWithRelationInput | WaitlistRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for WaitlistRequests.
+     */
+    cursor?: WaitlistRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WaitlistRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WaitlistRequests.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of WaitlistRequests.
+     */
+    distinct?: WaitlistRequestScalarFieldEnum | WaitlistRequestScalarFieldEnum[]
+  }
+
+  /**
+   * WaitlistRequest findMany
+   */
+  export type WaitlistRequestFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * Filter, which WaitlistRequests to fetch.
+     */
+    where?: WaitlistRequestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WaitlistRequests to fetch.
+     */
+    orderBy?: WaitlistRequestOrderByWithRelationInput | WaitlistRequestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing WaitlistRequests.
+     */
+    cursor?: WaitlistRequestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WaitlistRequests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WaitlistRequests.
+     */
+    skip?: number
+    distinct?: WaitlistRequestScalarFieldEnum | WaitlistRequestScalarFieldEnum[]
+  }
+
+  /**
+   * WaitlistRequest create
+   */
+  export type WaitlistRequestCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * The data needed to create a WaitlistRequest.
+     */
+    data: XOR<WaitlistRequestCreateInput, WaitlistRequestUncheckedCreateInput>
+  }
+
+  /**
+   * WaitlistRequest createMany
+   */
+  export type WaitlistRequestCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many WaitlistRequests.
+     */
+    data: WaitlistRequestCreateManyInput | WaitlistRequestCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * WaitlistRequest createManyAndReturn
+   */
+  export type WaitlistRequestCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * The data used to create many WaitlistRequests.
+     */
+    data: WaitlistRequestCreateManyInput | WaitlistRequestCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * WaitlistRequest update
+   */
+  export type WaitlistRequestUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * The data needed to update a WaitlistRequest.
+     */
+    data: XOR<WaitlistRequestUpdateInput, WaitlistRequestUncheckedUpdateInput>
+    /**
+     * Choose, which WaitlistRequest to update.
+     */
+    where: WaitlistRequestWhereUniqueInput
+  }
+
+  /**
+   * WaitlistRequest updateMany
+   */
+  export type WaitlistRequestUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update WaitlistRequests.
+     */
+    data: XOR<WaitlistRequestUpdateManyMutationInput, WaitlistRequestUncheckedUpdateManyInput>
+    /**
+     * Filter which WaitlistRequests to update
+     */
+    where?: WaitlistRequestWhereInput
+  }
+
+  /**
+   * WaitlistRequest upsert
+   */
+  export type WaitlistRequestUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * The filter to search for the WaitlistRequest to update in case it exists.
+     */
+    where: WaitlistRequestWhereUniqueInput
+    /**
+     * In case the WaitlistRequest found by the `where` argument doesn't exist, create a new WaitlistRequest with this data.
+     */
+    create: XOR<WaitlistRequestCreateInput, WaitlistRequestUncheckedCreateInput>
+    /**
+     * In case the WaitlistRequest was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<WaitlistRequestUpdateInput, WaitlistRequestUncheckedUpdateInput>
+  }
+
+  /**
+   * WaitlistRequest delete
+   */
+  export type WaitlistRequestDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+    /**
+     * Filter which WaitlistRequest to delete.
+     */
+    where: WaitlistRequestWhereUniqueInput
+  }
+
+  /**
+   * WaitlistRequest deleteMany
+   */
+  export type WaitlistRequestDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which WaitlistRequests to delete
+     */
+    where?: WaitlistRequestWhereInput
+  }
+
+  /**
+   * WaitlistRequest without action
+   */
+  export type WaitlistRequestDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WaitlistRequest
+     */
+    select?: WaitlistRequestSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model BusinessContact
+   */
+
+  export type AggregateBusinessContact = {
+    _count: BusinessContactCountAggregateOutputType | null
+    _avg: BusinessContactAvgAggregateOutputType | null
+    _sum: BusinessContactSumAggregateOutputType | null
+    _min: BusinessContactMinAggregateOutputType | null
+    _max: BusinessContactMaxAggregateOutputType | null
+  }
+
+  export type BusinessContactAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type BusinessContactSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type BusinessContactMinAggregateOutputType = {
+    id: number | null
+    companyName: string | null
+    contactName: string | null
+    contactPreference: string | null
+    email: string | null
+    phone: string | null
+    message: string | null
+    purpose: string | null
+  }
+
+  export type BusinessContactMaxAggregateOutputType = {
+    id: number | null
+    companyName: string | null
+    contactName: string | null
+    contactPreference: string | null
+    email: string | null
+    phone: string | null
+    message: string | null
+    purpose: string | null
+  }
+
+  export type BusinessContactCountAggregateOutputType = {
+    id: number
+    companyName: number
+    contactName: number
+    contactPreference: number
+    email: number
+    phone: number
+    message: number
+    purpose: number
+    _all: number
+  }
+
+
+  export type BusinessContactAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type BusinessContactSumAggregateInputType = {
+    id?: true
+  }
+
+  export type BusinessContactMinAggregateInputType = {
+    id?: true
+    companyName?: true
+    contactName?: true
+    contactPreference?: true
+    email?: true
+    phone?: true
+    message?: true
+    purpose?: true
+  }
+
+  export type BusinessContactMaxAggregateInputType = {
+    id?: true
+    companyName?: true
+    contactName?: true
+    contactPreference?: true
+    email?: true
+    phone?: true
+    message?: true
+    purpose?: true
+  }
+
+  export type BusinessContactCountAggregateInputType = {
+    id?: true
+    companyName?: true
+    contactName?: true
+    contactPreference?: true
+    email?: true
+    phone?: true
+    message?: true
+    purpose?: true
+    _all?: true
+  }
+
+  export type BusinessContactAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BusinessContact to aggregate.
+     */
+    where?: BusinessContactWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BusinessContacts to fetch.
+     */
+    orderBy?: BusinessContactOrderByWithRelationInput | BusinessContactOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: BusinessContactWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BusinessContacts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BusinessContacts.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned BusinessContacts
+    **/
+    _count?: true | BusinessContactCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: BusinessContactAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: BusinessContactSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: BusinessContactMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: BusinessContactMaxAggregateInputType
+  }
+
+  export type GetBusinessContactAggregateType<T extends BusinessContactAggregateArgs> = {
+        [P in keyof T & keyof AggregateBusinessContact]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBusinessContact[P]>
+      : GetScalarType<T[P], AggregateBusinessContact[P]>
+  }
+
+
+
+
+  export type BusinessContactGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BusinessContactWhereInput
+    orderBy?: BusinessContactOrderByWithAggregationInput | BusinessContactOrderByWithAggregationInput[]
+    by: BusinessContactScalarFieldEnum[] | BusinessContactScalarFieldEnum
+    having?: BusinessContactScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: BusinessContactCountAggregateInputType | true
+    _avg?: BusinessContactAvgAggregateInputType
+    _sum?: BusinessContactSumAggregateInputType
+    _min?: BusinessContactMinAggregateInputType
+    _max?: BusinessContactMaxAggregateInputType
+  }
+
+  export type BusinessContactGroupByOutputType = {
+    id: number
+    companyName: string
+    contactName: string
+    contactPreference: string
+    email: string | null
+    phone: string | null
+    message: string
+    purpose: string | null
+    _count: BusinessContactCountAggregateOutputType | null
+    _avg: BusinessContactAvgAggregateOutputType | null
+    _sum: BusinessContactSumAggregateOutputType | null
+    _min: BusinessContactMinAggregateOutputType | null
+    _max: BusinessContactMaxAggregateOutputType | null
+  }
+
+  type GetBusinessContactGroupByPayload<T extends BusinessContactGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<BusinessContactGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof BusinessContactGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], BusinessContactGroupByOutputType[P]>
+            : GetScalarType<T[P], BusinessContactGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type BusinessContactSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    companyName?: boolean
+    contactName?: boolean
+    contactPreference?: boolean
+    email?: boolean
+    phone?: boolean
+    message?: boolean
+    purpose?: boolean
+  }, ExtArgs["result"]["businessContact"]>
+
+  export type BusinessContactSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    companyName?: boolean
+    contactName?: boolean
+    contactPreference?: boolean
+    email?: boolean
+    phone?: boolean
+    message?: boolean
+    purpose?: boolean
+  }, ExtArgs["result"]["businessContact"]>
+
+  export type BusinessContactSelectScalar = {
+    id?: boolean
+    companyName?: boolean
+    contactName?: boolean
+    contactPreference?: boolean
+    email?: boolean
+    phone?: boolean
+    message?: boolean
+    purpose?: boolean
+  }
+
+
+  export type $BusinessContactPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "BusinessContact"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      companyName: string
+      contactName: string
+      contactPreference: string
+      email: string | null
+      phone: string | null
+      message: string
+      purpose: string | null
+    }, ExtArgs["result"]["businessContact"]>
+    composites: {}
+  }
+
+  type BusinessContactGetPayload<S extends boolean | null | undefined | BusinessContactDefaultArgs> = $Result.GetResult<Prisma.$BusinessContactPayload, S>
+
+  type BusinessContactCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<BusinessContactFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: BusinessContactCountAggregateInputType | true
+    }
+
+  export interface BusinessContactDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['BusinessContact'], meta: { name: 'BusinessContact' } }
+    /**
+     * Find zero or one BusinessContact that matches the filter.
+     * @param {BusinessContactFindUniqueArgs} args - Arguments to find a BusinessContact
+     * @example
+     * // Get one BusinessContact
+     * const businessContact = await prisma.businessContact.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends BusinessContactFindUniqueArgs>(args: SelectSubset<T, BusinessContactFindUniqueArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one BusinessContact that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {BusinessContactFindUniqueOrThrowArgs} args - Arguments to find a BusinessContact
+     * @example
+     * // Get one BusinessContact
+     * const businessContact = await prisma.businessContact.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends BusinessContactFindUniqueOrThrowArgs>(args: SelectSubset<T, BusinessContactFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first BusinessContact that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BusinessContactFindFirstArgs} args - Arguments to find a BusinessContact
+     * @example
+     * // Get one BusinessContact
+     * const businessContact = await prisma.businessContact.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends BusinessContactFindFirstArgs>(args?: SelectSubset<T, BusinessContactFindFirstArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first BusinessContact that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BusinessContactFindFirstOrThrowArgs} args - Arguments to find a BusinessContact
+     * @example
+     * // Get one BusinessContact
+     * const businessContact = await prisma.businessContact.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends BusinessContactFindFirstOrThrowArgs>(args?: SelectSubset<T, BusinessContactFindFirstOrThrowArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more BusinessContacts that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BusinessContactFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all BusinessContacts
+     * const businessContacts = await prisma.businessContact.findMany()
+     * 
+     * // Get first 10 BusinessContacts
+     * const businessContacts = await prisma.businessContact.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const businessContactWithIdOnly = await prisma.businessContact.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends BusinessContactFindManyArgs>(args?: SelectSubset<T, BusinessContactFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a BusinessContact.
+     * @param {BusinessContactCreateArgs} args - Arguments to create a BusinessContact.
+     * @example
+     * // Create one BusinessContact
+     * const BusinessContact = await prisma.businessContact.create({
+     *   data: {
+     *     // ... data to create a BusinessContact
+     *   }
+     * })
+     * 
+     */
+    create<T extends BusinessContactCreateArgs>(args: SelectSubset<T, BusinessContactCreateArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many BusinessContacts.
+     * @param {BusinessContactCreateManyArgs} args - Arguments to create many BusinessContacts.
+     * @example
+     * // Create many BusinessContacts
+     * const businessContact = await prisma.businessContact.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends BusinessContactCreateManyArgs>(args?: SelectSubset<T, BusinessContactCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many BusinessContacts and returns the data saved in the database.
+     * @param {BusinessContactCreateManyAndReturnArgs} args - Arguments to create many BusinessContacts.
+     * @example
+     * // Create many BusinessContacts
+     * const businessContact = await prisma.businessContact.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many BusinessContacts and only return the `id`
+     * const businessContactWithIdOnly = await prisma.businessContact.createManyAndReturn({ 
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends BusinessContactCreateManyAndReturnArgs>(args?: SelectSubset<T, BusinessContactCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "createManyAndReturn">>
+
+    /**
+     * Delete a BusinessContact.
+     * @param {BusinessContactDeleteArgs} args - Arguments to delete one BusinessContact.
+     * @example
+     * // Delete one BusinessContact
+     * const BusinessContact = await prisma.businessContact.delete({
+     *   where: {
+     *     // ... filter to delete one BusinessContact
+     *   }
+     * })
+     * 
+     */
+    delete<T extends BusinessContactDeleteArgs>(args: SelectSubset<T, BusinessContactDeleteArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one BusinessContact.
+     * @param {BusinessContactUpdateArgs} args - Arguments to update one BusinessContact.
+     * @example
+     * // Update one BusinessContact
+     * const businessContact = await prisma.businessContact.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends BusinessContactUpdateArgs>(args: SelectSubset<T, BusinessContactUpdateArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more BusinessContacts.
+     * @param {BusinessContactDeleteManyArgs} args - Arguments to filter BusinessContacts to delete.
+     * @example
+     * // Delete a few BusinessContacts
+     * const { count } = await prisma.businessContact.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends BusinessContactDeleteManyArgs>(args?: SelectSubset<T, BusinessContactDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BusinessContacts.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BusinessContactUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many BusinessContacts
+     * const businessContact = await prisma.businessContact.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends BusinessContactUpdateManyArgs>(args: SelectSubset<T, BusinessContactUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one BusinessContact.
+     * @param {BusinessContactUpsertArgs} args - Arguments to update or create a BusinessContact.
+     * @example
+     * // Update or create a BusinessContact
+     * const businessContact = await prisma.businessContact.upsert({
+     *   create: {
+     *     // ... data to create a BusinessContact
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the BusinessContact we want to update
+     *   }
+     * })
+     */
+    upsert<T extends BusinessContactUpsertArgs>(args: SelectSubset<T, BusinessContactUpsertArgs<ExtArgs>>): Prisma__BusinessContactClient<$Result.GetResult<Prisma.$BusinessContactPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of BusinessContacts.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BusinessContactCountArgs} args - Arguments to filter BusinessContacts to count.
+     * @example
+     * // Count the number of BusinessContacts
+     * const count = await prisma.businessContact.count({
+     *   where: {
+     *     // ... the filter for the BusinessContacts we want to count
+     *   }
+     * })
+    **/
+    count<T extends BusinessContactCountArgs>(
+      args?: Subset<T, BusinessContactCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], BusinessContactCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a BusinessContact.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BusinessContactAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends BusinessContactAggregateArgs>(args: Subset<T, BusinessContactAggregateArgs>): Prisma.PrismaPromise<GetBusinessContactAggregateType<T>>
+
+    /**
+     * Group by BusinessContact.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BusinessContactGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends BusinessContactGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: BusinessContactGroupByArgs['orderBy'] }
+        : { orderBy?: BusinessContactGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, BusinessContactGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBusinessContactGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the BusinessContact model
+   */
+  readonly fields: BusinessContactFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for BusinessContact.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__BusinessContactClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the BusinessContact model
+   */ 
+  interface BusinessContactFieldRefs {
+    readonly id: FieldRef<"BusinessContact", 'Int'>
+    readonly companyName: FieldRef<"BusinessContact", 'String'>
+    readonly contactName: FieldRef<"BusinessContact", 'String'>
+    readonly contactPreference: FieldRef<"BusinessContact", 'String'>
+    readonly email: FieldRef<"BusinessContact", 'String'>
+    readonly phone: FieldRef<"BusinessContact", 'String'>
+    readonly message: FieldRef<"BusinessContact", 'String'>
+    readonly purpose: FieldRef<"BusinessContact", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * BusinessContact findUnique
+   */
+  export type BusinessContactFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BusinessContact
+     */
+    select?: BusinessContactSelect<ExtArgs> | null
+    /**
+     * Filter, which BusinessContact to fetch.
+     */
+    where: BusinessContactWhereUniqueInput
+  }
+
+  /**
+   * BusinessContact findUniqueOrThrow
+   */
+  export type BusinessContactFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BusinessContact
+     */
+    select?: BusinessContactSelect<ExtArgs> | null
+    /**
+     * Filter, which BusinessContact to fetch.
+     */
+    where: BusinessContactWhereUniqueInput
+  }
+
+  /**
+   * BusinessContact findFirst
+   */
+  export type BusinessContactFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BusinessContact
+     */
+    select?: BusinessContactSelect<ExtArgs> | null
+    /**
+     * Filter, which BusinessContact to fetch.
+     */
+    where?: BusinessContactWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BusinessContacts to fetch.
+     */
+    orderBy?: BusinessContactOrderByWithRelationInput | BusinessContactOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BusinessContacts.
+     */
+    cursor?: BusinessContactWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BusinessContacts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BusinessContacts.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BusinessContacts.
+     */
+    distinct?: BusinessContactScalarFieldEnum | BusinessContactScalarFieldEnum[]
+  }
+
+  /**
+   * BusinessContact findFirstOrThrow
+   */
+  export type BusinessContactFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BusinessContact
+     */
+    select?: BusinessContactSelect<ExtArgs> | null
+    /**
+     * Filter, which BusinessContact to fetch.
+     */
+    where?: BusinessContactWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BusinessContacts to fetch.
+     */
+    orderBy?: BusinessContactOrderByWithRelationInput | BusinessContactOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BusinessContacts.
+     */
+    cursor?: BusinessContactWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BusinessContacts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BusinessContacts.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BusinessContacts.
+     */
+    distinct?: BusinessContactScalarFieldEnum | BusinessContactScalarFieldEnum[]
+  }
+
+  /**
+   * BusinessContact findMany
+   */
+  export type BusinessContactFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BusinessContact
+     */
+    select?: BusinessContactSelect<ExtArgs> | null
+    /**
+     * Filter, which BusinessContacts to fetch.
+     */
+    where?: BusinessContactWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BusinessContacts to fetch.
+     */
+    orderBy?: BusinessContactOrderByWithRelationInput | BusinessContactOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing BusinessContacts.
+     */
+    cursor?: BusinessContactWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BusinessContacts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BusinessContacts.
+     */
+    skip?: number
+    distinct?: BusinessContactScalarFieldEnum | BusinessContactScalarFieldEnum[]
+  }
+
+  /**
+   * BusinessContact create
+   */
+  export type BusinessContactCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BusinessContact
+     */
+    select?: BusinessContactSelect<ExtArgs> | null
+    /**
+     * The data needed to create a BusinessContact.
+     */
+    data: XOR<BusinessContactCreateInput, BusinessContactUncheckedCreateInput>
+  }
+
+  /**
+   * BusinessContact createMany
+   */
+  export type BusinessContactCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many BusinessContacts.
+     */
+    data: BusinessContactCreateManyInput | BusinessContactCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * BusinessContact createManyAndReturn
+   */
+  export type BusinessContactCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BusinessContact
+     */
+    select?: BusinessContactSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * The data used to create many BusinessContacts.
+     */
+    data: BusinessContactCreateManyInput | BusinessContactCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * BusinessContact update
+   */
+  export type BusinessContactUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BusinessContact
+     */
+    select?: BusinessContactSelect<ExtArgs> | null
+    /**
+     * The data needed to update a BusinessContact.
+     */
+    data: XOR<BusinessContactUpdateInput, BusinessContactUncheckedUpdateInput>
+    /**
+     * Choose, which BusinessContact to update.
+     */
+    where: BusinessContactWhereUniqueInput
+  }
+
+  /**
+   * BusinessContact updateMany
+   */
+  export type BusinessContactUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update BusinessContacts.
+     */
+    data: XOR<BusinessContactUpdateManyMutationInput, BusinessContactUncheckedUpdateManyInput>
+    /**
+     * Filter which BusinessContacts to update
+     */
+    where?: BusinessContactWhereInput
+  }
+
+  /**
+   * BusinessContact upsert
+   */
+  export type BusinessContactUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BusinessContact
+     */
+    select?: BusinessContactSelect<ExtArgs> | null
+    /**
+     * The filter to search for the BusinessContact to update in case it exists.
+     */
+    where: BusinessContactWhereUniqueInput
+    /**
+     * In case the BusinessContact found by the `where` argument doesn't exist, create a new BusinessContact with this data.
+     */
+    create: XOR<BusinessContactCreateInput, BusinessContactUncheckedCreateInput>
+    /**
+     * In case the BusinessContact was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<BusinessContactUpdateInput, BusinessContactUncheckedUpdateInput>
+  }
+
+  /**
+   * BusinessContact delete
+   */
+  export type BusinessContactDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BusinessContact
+     */
+    select?: BusinessContactSelect<ExtArgs> | null
+    /**
+     * Filter which BusinessContact to delete.
+     */
+    where: BusinessContactWhereUniqueInput
+  }
+
+  /**
+   * BusinessContact deleteMany
+   */
+  export type BusinessContactDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BusinessContacts to delete
+     */
+    where?: BusinessContactWhereInput
+  }
+
+  /**
+   * BusinessContact without action
+   */
+  export type BusinessContactDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BusinessContact
+     */
+    select?: BusinessContactSelect<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -45487,46 +45810,11 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-  export const FeatureRequestScalarFieldEnum: {
-    id: 'id',
-    email: 'email',
-    message: 'message',
-    category: 'category',
-    userBase: 'userBase',
-    receivedOn: 'receivedOn'
-  };
-
-  export type FeatureRequestScalarFieldEnum = (typeof FeatureRequestScalarFieldEnum)[keyof typeof FeatureRequestScalarFieldEnum]
-
-
-  export const WaitlistRequestScalarFieldEnum: {
-    id: 'id',
-    email: 'email',
-    receivedOn: 'receivedOn',
-    emailsSent: 'emailsSent'
-  };
-
-  export type WaitlistRequestScalarFieldEnum = (typeof WaitlistRequestScalarFieldEnum)[keyof typeof WaitlistRequestScalarFieldEnum]
-
-
-  export const BusinessContactScalarFieldEnum: {
-    id: 'id',
-    companyName: 'companyName',
-    contactName: 'contactName',
-    contactPreference: 'contactPreference',
-    email: 'email',
-    phone: 'phone',
-    message: 'message',
-    purpose: 'purpose',
-    createdAt: 'createdAt'
-  };
-
-  export type BusinessContactScalarFieldEnum = (typeof BusinessContactScalarFieldEnum)[keyof typeof BusinessContactScalarFieldEnum]
-
-
   export const SubjectScalarFieldEnum: {
     value: 'value',
-    kanbanId: 'kanbanId'
+    kanbanId: 'kanbanId',
+    createdAt: 'createdAt',
+    lastAccess: 'lastAccess'
   };
 
   export type SubjectScalarFieldEnum = (typeof SubjectScalarFieldEnum)[keyof typeof SubjectScalarFieldEnum]
@@ -45534,7 +45822,9 @@ export namespace Prisma {
 
   export const TopicScalarFieldEnum: {
     value: 'value',
-    kanbanId: 'kanbanId'
+    kanbanId: 'kanbanId',
+    createdAt: 'createdAt',
+    lastAccess: 'lastAccess'
   };
 
   export type TopicScalarFieldEnum = (typeof TopicScalarFieldEnum)[keyof typeof TopicScalarFieldEnum]
@@ -45542,7 +45832,9 @@ export namespace Prisma {
 
   export const TagScalarFieldEnum: {
     value: 'value',
-    kanbanId: 'kanbanId'
+    kanbanId: 'kanbanId',
+    createdAt: 'createdAt',
+    lastAccess: 'lastAccess'
   };
 
   export type TagScalarFieldEnum = (typeof TagScalarFieldEnum)[keyof typeof TagScalarFieldEnum]
@@ -45666,7 +45958,8 @@ export namespace Prisma {
     content: 'content',
     description: 'description',
     keywords: 'keywords',
-    language: 'language'
+    language: 'language',
+    createdAt: 'createdAt'
   };
 
   export type SnippetScalarFieldEnum = (typeof SnippetScalarFieldEnum)[keyof typeof SnippetScalarFieldEnum]
@@ -45692,7 +45985,8 @@ export namespace Prisma {
     variableLegend: 'variableLegend',
     variables: 'variables',
     keywords: 'keywords',
-    createdAt: 'createdAt'
+    createdAt: 'createdAt',
+    lastAccess: 'lastAccess'
   };
 
   export type EquationScalarFieldEnum = (typeof EquationScalarFieldEnum)[keyof typeof EquationScalarFieldEnum]
@@ -45703,7 +45997,9 @@ export namespace Prisma {
     label: 'label',
     content: 'content',
     alphabeticalLabel: 'alphabeticalLabel',
-    mdxNoteId: 'mdxNoteId'
+    mdxNoteId: 'mdxNoteId',
+    createdAt: 'createdAt',
+    lastAccess: 'lastAccess'
   };
 
   export type DefinitionScalarFieldEnum = (typeof DefinitionScalarFieldEnum)[keyof typeof DefinitionScalarFieldEnum]
@@ -45718,6 +46014,8 @@ export namespace Prisma {
     landingImageAlign: 'landingImageAlign',
     lockedLandingImage: 'lockedLandingImage',
     cleanOnSync: 'cleanOnSync',
+    plotTheme: 'plotTheme',
+    pluginSettings: 'pluginSettings',
     firstSync: 'firstSync',
     lastSync: 'lastSync'
   };
@@ -45806,7 +46104,8 @@ export namespace Prisma {
     quickLink: 'quickLink',
     bookmarked: 'bookmarked',
     firstSync: 'firstSync',
-    lastSync: 'lastSync'
+    lastSync: 'lastSync',
+    lastAccess: 'lastAccess'
   };
 
   export type MdxNoteScalarFieldEnum = (typeof MdxNoteScalarFieldEnum)[keyof typeof MdxNoteScalarFieldEnum]
@@ -45827,7 +46126,8 @@ export namespace Prisma {
     sequentialIndex: 'sequentialIndex',
     bookmarked: 'bookmarked',
     firstSync: 'firstSync',
-    lastSync: 'lastSync'
+    lastSync: 'lastSync',
+    lastAccess: 'lastAccess'
   };
 
   export type IpynbScalarFieldEnum = (typeof IpynbScalarFieldEnum)[keyof typeof IpynbScalarFieldEnum]
@@ -45837,7 +46137,8 @@ export namespace Prisma {
     id: 'id',
     label: 'label',
     createdAt: 'createdAt',
-    lastUpdate: 'lastUpdate'
+    lastUpdate: 'lastUpdate',
+    lastAccess: 'lastAccess'
   };
 
   export type ToDoListScalarFieldEnum = (typeof ToDoListScalarFieldEnum)[keyof typeof ToDoListScalarFieldEnum]
@@ -45854,7 +46155,8 @@ export namespace Prisma {
     bookmarked: 'bookmarked',
     status: 'status',
     priority: 'priority',
-    toDoListId: 'toDoListId'
+    toDoListId: 'toDoListId',
+    completedOn: 'completedOn'
   };
 
   export type ToDoScalarFieldEnum = (typeof ToDoScalarFieldEnum)[keyof typeof ToDoScalarFieldEnum]
@@ -46005,6 +46307,42 @@ export namespace Prisma {
   export type DJTScalarFieldEnum = (typeof DJTScalarFieldEnum)[keyof typeof DJTScalarFieldEnum]
 
 
+  export const FeatureRequestScalarFieldEnum: {
+    id: 'id',
+    email: 'email',
+    message: 'message',
+    category: 'category',
+    userBase: 'userBase',
+    receivedOn: 'receivedOn'
+  };
+
+  export type FeatureRequestScalarFieldEnum = (typeof FeatureRequestScalarFieldEnum)[keyof typeof FeatureRequestScalarFieldEnum]
+
+
+  export const WaitlistRequestScalarFieldEnum: {
+    id: 'id',
+    email: 'email',
+    receivedOn: 'receivedOn',
+    emailsSent: 'emailsSent'
+  };
+
+  export type WaitlistRequestScalarFieldEnum = (typeof WaitlistRequestScalarFieldEnum)[keyof typeof WaitlistRequestScalarFieldEnum]
+
+
+  export const BusinessContactScalarFieldEnum: {
+    id: 'id',
+    companyName: 'companyName',
+    contactName: 'contactName',
+    contactPreference: 'contactPreference',
+    email: 'email',
+    phone: 'phone',
+    message: 'message',
+    purpose: 'purpose'
+  };
+
+  export type BusinessContactScalarFieldEnum = (typeof BusinessContactScalarFieldEnum)[keyof typeof BusinessContactScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -46020,14 +46358,6 @@ export namespace Prisma {
   export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
-  export const NullableJsonNullValueInput: {
-    DbNull: typeof DbNull,
-    JsonNull: typeof JsonNull
-  };
-
-  export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
-
-
   export const QueryMode: {
     default: 'default',
     insensitive: 'insensitive'
@@ -46036,42 +46366,12 @@ export namespace Prisma {
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
 
 
-  export const FeatureRequestOrderByRelevanceFieldEnum: {
-    email: 'email',
-    message: 'message',
-    category: 'category',
-    userBase: 'userBase'
-  };
-
-  export type FeatureRequestOrderByRelevanceFieldEnum = (typeof FeatureRequestOrderByRelevanceFieldEnum)[keyof typeof FeatureRequestOrderByRelevanceFieldEnum]
-
-
-  export const WaitlistRequestOrderByRelevanceFieldEnum: {
-    email: 'email'
-  };
-
-  export type WaitlistRequestOrderByRelevanceFieldEnum = (typeof WaitlistRequestOrderByRelevanceFieldEnum)[keyof typeof WaitlistRequestOrderByRelevanceFieldEnum]
-
-
   export const NullsOrder: {
     first: 'first',
     last: 'last'
   };
 
   export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
-
-
-  export const BusinessContactOrderByRelevanceFieldEnum: {
-    companyName: 'companyName',
-    contactName: 'contactName',
-    contactPreference: 'contactPreference',
-    email: 'email',
-    phone: 'phone',
-    message: 'message',
-    purpose: 'purpose'
-  };
-
-  export type BusinessContactOrderByRelevanceFieldEnum = (typeof BusinessContactOrderByRelevanceFieldEnum)[keyof typeof BusinessContactOrderByRelevanceFieldEnum]
 
 
   export const SubjectOrderByRelevanceFieldEnum: {
@@ -46194,7 +46494,8 @@ export namespace Prisma {
   export const SnippetOrderByRelevanceFieldEnum: {
     content: 'content',
     description: 'description',
-    keywords: 'keywords'
+    keywords: 'keywords',
+    language: 'language'
   };
 
   export type SnippetOrderByRelevanceFieldEnum = (typeof SnippetOrderByRelevanceFieldEnum)[keyof typeof SnippetOrderByRelevanceFieldEnum]
@@ -46234,7 +46535,8 @@ export namespace Prisma {
 
   export const SettingsOrderByRelevanceFieldEnum: {
     title: 'title',
-    lockedLandingImage: 'lockedLandingImage'
+    lockedLandingImage: 'lockedLandingImage',
+    plotTheme: 'plotTheme'
   };
 
   export type SettingsOrderByRelevanceFieldEnum = (typeof SettingsOrderByRelevanceFieldEnum)[keyof typeof SettingsOrderByRelevanceFieldEnum]
@@ -46322,7 +46624,8 @@ export namespace Prisma {
 
   export const ToDoOrderByRelevanceFieldEnum: {
     task: 'task',
-    details: 'details'
+    details: 'details',
+    status: 'status'
   };
 
   export type ToDoOrderByRelevanceFieldEnum = (typeof ToDoOrderByRelevanceFieldEnum)[keyof typeof ToDoOrderByRelevanceFieldEnum]
@@ -46398,23 +46701,39 @@ export namespace Prisma {
   export type DJTOrderByRelevanceFieldEnum = (typeof DJTOrderByRelevanceFieldEnum)[keyof typeof DJTOrderByRelevanceFieldEnum]
 
 
+  export const FeatureRequestOrderByRelevanceFieldEnum: {
+    email: 'email',
+    message: 'message',
+    category: 'category',
+    userBase: 'userBase'
+  };
+
+  export type FeatureRequestOrderByRelevanceFieldEnum = (typeof FeatureRequestOrderByRelevanceFieldEnum)[keyof typeof FeatureRequestOrderByRelevanceFieldEnum]
+
+
+  export const WaitlistRequestOrderByRelevanceFieldEnum: {
+    email: 'email'
+  };
+
+  export type WaitlistRequestOrderByRelevanceFieldEnum = (typeof WaitlistRequestOrderByRelevanceFieldEnum)[keyof typeof WaitlistRequestOrderByRelevanceFieldEnum]
+
+
+  export const BusinessContactOrderByRelevanceFieldEnum: {
+    companyName: 'companyName',
+    contactName: 'contactName',
+    contactPreference: 'contactPreference',
+    email: 'email',
+    phone: 'phone',
+    message: 'message',
+    purpose: 'purpose'
+  };
+
+  export type BusinessContactOrderByRelevanceFieldEnum = (typeof BusinessContactOrderByRelevanceFieldEnum)[keyof typeof BusinessContactOrderByRelevanceFieldEnum]
+
+
   /**
    * Field references 
    */
-
-
-  /**
-   * Reference to a field of type 'Int'
-   */
-  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
-    
-
-
-  /**
-   * Reference to a field of type 'Int[]'
-   */
-  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
-    
 
 
   /**
@@ -46428,6 +46747,20 @@ export namespace Prisma {
    * Reference to a field of type 'String[]'
    */
   export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Int'
+   */
+  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+  /**
+   * Reference to a field of type 'Int[]'
+   */
+  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
     
 
 
@@ -46463,20 +46796,6 @@ export namespace Prisma {
    * Reference to a field of type 'autoSetting[]'
    */
   export type ListEnumautoSettingFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'autoSetting[]'>
-    
-
-
-  /**
-   * Reference to a field of type 'Technologies'
-   */
-  export type EnumTechnologiesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Technologies'>
-    
-
-
-  /**
-   * Reference to a field of type 'Technologies[]'
-   */
-  export type ListEnumTechnologiesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Technologies[]'>
     
 
 
@@ -46544,20 +46863,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'ToDoListStatus'
-   */
-  export type EnumToDoListStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ToDoListStatus'>
-    
-
-
-  /**
-   * Reference to a field of type 'ToDoListStatus[]'
-   */
-  export type ListEnumToDoListStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ToDoListStatus[]'>
-    
-
-
-  /**
    * Reference to a field of type 'TERTIARY_TOGGLE'
    */
   export type EnumTERTIARY_TOGGLEFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TERTIARY_TOGGLE'>
@@ -46602,197 +46907,14 @@ export namespace Prisma {
    */
 
 
-  export type FeatureRequestWhereInput = {
-    AND?: FeatureRequestWhereInput | FeatureRequestWhereInput[]
-    OR?: FeatureRequestWhereInput[]
-    NOT?: FeatureRequestWhereInput | FeatureRequestWhereInput[]
-    id?: IntFilter<"FeatureRequest"> | number
-    email?: StringFilter<"FeatureRequest"> | string
-    message?: StringFilter<"FeatureRequest"> | string
-    category?: StringNullableListFilter<"FeatureRequest">
-    userBase?: StringNullableListFilter<"FeatureRequest">
-    receivedOn?: DateTimeFilter<"FeatureRequest"> | Date | string
-  }
-
-  export type FeatureRequestOrderByWithRelationInput = {
-    id?: SortOrder
-    email?: SortOrder
-    message?: SortOrder
-    category?: SortOrder
-    userBase?: SortOrder
-    receivedOn?: SortOrder
-    _relevance?: FeatureRequestOrderByRelevanceInput
-  }
-
-  export type FeatureRequestWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
-    AND?: FeatureRequestWhereInput | FeatureRequestWhereInput[]
-    OR?: FeatureRequestWhereInput[]
-    NOT?: FeatureRequestWhereInput | FeatureRequestWhereInput[]
-    email?: StringFilter<"FeatureRequest"> | string
-    message?: StringFilter<"FeatureRequest"> | string
-    category?: StringNullableListFilter<"FeatureRequest">
-    userBase?: StringNullableListFilter<"FeatureRequest">
-    receivedOn?: DateTimeFilter<"FeatureRequest"> | Date | string
-  }, "id">
-
-  export type FeatureRequestOrderByWithAggregationInput = {
-    id?: SortOrder
-    email?: SortOrder
-    message?: SortOrder
-    category?: SortOrder
-    userBase?: SortOrder
-    receivedOn?: SortOrder
-    _count?: FeatureRequestCountOrderByAggregateInput
-    _avg?: FeatureRequestAvgOrderByAggregateInput
-    _max?: FeatureRequestMaxOrderByAggregateInput
-    _min?: FeatureRequestMinOrderByAggregateInput
-    _sum?: FeatureRequestSumOrderByAggregateInput
-  }
-
-  export type FeatureRequestScalarWhereWithAggregatesInput = {
-    AND?: FeatureRequestScalarWhereWithAggregatesInput | FeatureRequestScalarWhereWithAggregatesInput[]
-    OR?: FeatureRequestScalarWhereWithAggregatesInput[]
-    NOT?: FeatureRequestScalarWhereWithAggregatesInput | FeatureRequestScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"FeatureRequest"> | number
-    email?: StringWithAggregatesFilter<"FeatureRequest"> | string
-    message?: StringWithAggregatesFilter<"FeatureRequest"> | string
-    category?: StringNullableListFilter<"FeatureRequest">
-    userBase?: StringNullableListFilter<"FeatureRequest">
-    receivedOn?: DateTimeWithAggregatesFilter<"FeatureRequest"> | Date | string
-  }
-
-  export type WaitlistRequestWhereInput = {
-    AND?: WaitlistRequestWhereInput | WaitlistRequestWhereInput[]
-    OR?: WaitlistRequestWhereInput[]
-    NOT?: WaitlistRequestWhereInput | WaitlistRequestWhereInput[]
-    id?: IntFilter<"WaitlistRequest"> | number
-    email?: StringFilter<"WaitlistRequest"> | string
-    receivedOn?: DateTimeFilter<"WaitlistRequest"> | Date | string
-    emailsSent?: IntFilter<"WaitlistRequest"> | number
-  }
-
-  export type WaitlistRequestOrderByWithRelationInput = {
-    id?: SortOrder
-    email?: SortOrder
-    receivedOn?: SortOrder
-    emailsSent?: SortOrder
-    _relevance?: WaitlistRequestOrderByRelevanceInput
-  }
-
-  export type WaitlistRequestWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
-    AND?: WaitlistRequestWhereInput | WaitlistRequestWhereInput[]
-    OR?: WaitlistRequestWhereInput[]
-    NOT?: WaitlistRequestWhereInput | WaitlistRequestWhereInput[]
-    email?: StringFilter<"WaitlistRequest"> | string
-    receivedOn?: DateTimeFilter<"WaitlistRequest"> | Date | string
-    emailsSent?: IntFilter<"WaitlistRequest"> | number
-  }, "id">
-
-  export type WaitlistRequestOrderByWithAggregationInput = {
-    id?: SortOrder
-    email?: SortOrder
-    receivedOn?: SortOrder
-    emailsSent?: SortOrder
-    _count?: WaitlistRequestCountOrderByAggregateInput
-    _avg?: WaitlistRequestAvgOrderByAggregateInput
-    _max?: WaitlistRequestMaxOrderByAggregateInput
-    _min?: WaitlistRequestMinOrderByAggregateInput
-    _sum?: WaitlistRequestSumOrderByAggregateInput
-  }
-
-  export type WaitlistRequestScalarWhereWithAggregatesInput = {
-    AND?: WaitlistRequestScalarWhereWithAggregatesInput | WaitlistRequestScalarWhereWithAggregatesInput[]
-    OR?: WaitlistRequestScalarWhereWithAggregatesInput[]
-    NOT?: WaitlistRequestScalarWhereWithAggregatesInput | WaitlistRequestScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"WaitlistRequest"> | number
-    email?: StringWithAggregatesFilter<"WaitlistRequest"> | string
-    receivedOn?: DateTimeWithAggregatesFilter<"WaitlistRequest"> | Date | string
-    emailsSent?: IntWithAggregatesFilter<"WaitlistRequest"> | number
-  }
-
-  export type BusinessContactWhereInput = {
-    AND?: BusinessContactWhereInput | BusinessContactWhereInput[]
-    OR?: BusinessContactWhereInput[]
-    NOT?: BusinessContactWhereInput | BusinessContactWhereInput[]
-    id?: IntFilter<"BusinessContact"> | number
-    companyName?: StringFilter<"BusinessContact"> | string
-    contactName?: StringFilter<"BusinessContact"> | string
-    contactPreference?: StringFilter<"BusinessContact"> | string
-    email?: StringNullableFilter<"BusinessContact"> | string | null
-    phone?: StringNullableFilter<"BusinessContact"> | string | null
-    message?: StringFilter<"BusinessContact"> | string
-    purpose?: StringNullableFilter<"BusinessContact"> | string | null
-    createdAt?: DateTimeFilter<"BusinessContact"> | Date | string
-  }
-
-  export type BusinessContactOrderByWithRelationInput = {
-    id?: SortOrder
-    companyName?: SortOrder
-    contactName?: SortOrder
-    contactPreference?: SortOrder
-    email?: SortOrderInput | SortOrder
-    phone?: SortOrderInput | SortOrder
-    message?: SortOrder
-    purpose?: SortOrderInput | SortOrder
-    createdAt?: SortOrder
-    _relevance?: BusinessContactOrderByRelevanceInput
-  }
-
-  export type BusinessContactWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
-    AND?: BusinessContactWhereInput | BusinessContactWhereInput[]
-    OR?: BusinessContactWhereInput[]
-    NOT?: BusinessContactWhereInput | BusinessContactWhereInput[]
-    companyName?: StringFilter<"BusinessContact"> | string
-    contactName?: StringFilter<"BusinessContact"> | string
-    contactPreference?: StringFilter<"BusinessContact"> | string
-    email?: StringNullableFilter<"BusinessContact"> | string | null
-    phone?: StringNullableFilter<"BusinessContact"> | string | null
-    message?: StringFilter<"BusinessContact"> | string
-    purpose?: StringNullableFilter<"BusinessContact"> | string | null
-    createdAt?: DateTimeFilter<"BusinessContact"> | Date | string
-  }, "id">
-
-  export type BusinessContactOrderByWithAggregationInput = {
-    id?: SortOrder
-    companyName?: SortOrder
-    contactName?: SortOrder
-    contactPreference?: SortOrder
-    email?: SortOrderInput | SortOrder
-    phone?: SortOrderInput | SortOrder
-    message?: SortOrder
-    purpose?: SortOrderInput | SortOrder
-    createdAt?: SortOrder
-    _count?: BusinessContactCountOrderByAggregateInput
-    _avg?: BusinessContactAvgOrderByAggregateInput
-    _max?: BusinessContactMaxOrderByAggregateInput
-    _min?: BusinessContactMinOrderByAggregateInput
-    _sum?: BusinessContactSumOrderByAggregateInput
-  }
-
-  export type BusinessContactScalarWhereWithAggregatesInput = {
-    AND?: BusinessContactScalarWhereWithAggregatesInput | BusinessContactScalarWhereWithAggregatesInput[]
-    OR?: BusinessContactScalarWhereWithAggregatesInput[]
-    NOT?: BusinessContactScalarWhereWithAggregatesInput | BusinessContactScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"BusinessContact"> | number
-    companyName?: StringWithAggregatesFilter<"BusinessContact"> | string
-    contactName?: StringWithAggregatesFilter<"BusinessContact"> | string
-    contactPreference?: StringWithAggregatesFilter<"BusinessContact"> | string
-    email?: StringNullableWithAggregatesFilter<"BusinessContact"> | string | null
-    phone?: StringNullableWithAggregatesFilter<"BusinessContact"> | string | null
-    message?: StringWithAggregatesFilter<"BusinessContact"> | string
-    purpose?: StringNullableWithAggregatesFilter<"BusinessContact"> | string | null
-    createdAt?: DateTimeWithAggregatesFilter<"BusinessContact"> | Date | string
-  }
-
   export type SubjectWhereInput = {
     AND?: SubjectWhereInput | SubjectWhereInput[]
     OR?: SubjectWhereInput[]
     NOT?: SubjectWhereInput | SubjectWhereInput[]
     value?: StringFilter<"Subject"> | string
     kanbanId?: IntNullableFilter<"Subject"> | number | null
+    createdAt?: DateTimeFilter<"Subject"> | Date | string
+    lastAccess?: DateTimeFilter<"Subject"> | Date | string
     MdxNotes?: MdxNoteListRelationFilter
     IpynbNotes?: IpynbListRelationFilter
     QaPair?: QAPairListRelationFilter
@@ -46807,6 +46929,8 @@ export namespace Prisma {
   export type SubjectOrderByWithRelationInput = {
     value?: SortOrder
     kanbanId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
     MdxNotes?: MdxNoteOrderByRelationAggregateInput
     IpynbNotes?: IpynbOrderByRelationAggregateInput
     QaPair?: QAPairOrderByRelationAggregateInput
@@ -46825,6 +46949,8 @@ export namespace Prisma {
     OR?: SubjectWhereInput[]
     NOT?: SubjectWhereInput | SubjectWhereInput[]
     kanbanId?: IntNullableFilter<"Subject"> | number | null
+    createdAt?: DateTimeFilter<"Subject"> | Date | string
+    lastAccess?: DateTimeFilter<"Subject"> | Date | string
     MdxNotes?: MdxNoteListRelationFilter
     IpynbNotes?: IpynbListRelationFilter
     QaPair?: QAPairListRelationFilter
@@ -46839,6 +46965,8 @@ export namespace Prisma {
   export type SubjectOrderByWithAggregationInput = {
     value?: SortOrder
     kanbanId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
     _count?: SubjectCountOrderByAggregateInput
     _avg?: SubjectAvgOrderByAggregateInput
     _max?: SubjectMaxOrderByAggregateInput
@@ -46852,6 +46980,8 @@ export namespace Prisma {
     NOT?: SubjectScalarWhereWithAggregatesInput | SubjectScalarWhereWithAggregatesInput[]
     value?: StringWithAggregatesFilter<"Subject"> | string
     kanbanId?: IntNullableWithAggregatesFilter<"Subject"> | number | null
+    createdAt?: DateTimeWithAggregatesFilter<"Subject"> | Date | string
+    lastAccess?: DateTimeWithAggregatesFilter<"Subject"> | Date | string
   }
 
   export type TopicWhereInput = {
@@ -46860,6 +46990,8 @@ export namespace Prisma {
     NOT?: TopicWhereInput | TopicWhereInput[]
     value?: StringFilter<"Topic"> | string
     kanbanId?: IntNullableFilter<"Topic"> | number | null
+    createdAt?: DateTimeFilter<"Topic"> | Date | string
+    lastAccess?: DateTimeFilter<"Topic"> | Date | string
     MdxNotes?: MdxNoteListRelationFilter
     ipynbNotes?: IpynbListRelationFilter
     QAPair?: QAPairListRelationFilter
@@ -46874,6 +47006,8 @@ export namespace Prisma {
   export type TopicOrderByWithRelationInput = {
     value?: SortOrder
     kanbanId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
     MdxNotes?: MdxNoteOrderByRelationAggregateInput
     ipynbNotes?: IpynbOrderByRelationAggregateInput
     QAPair?: QAPairOrderByRelationAggregateInput
@@ -46892,6 +47026,8 @@ export namespace Prisma {
     OR?: TopicWhereInput[]
     NOT?: TopicWhereInput | TopicWhereInput[]
     kanbanId?: IntNullableFilter<"Topic"> | number | null
+    createdAt?: DateTimeFilter<"Topic"> | Date | string
+    lastAccess?: DateTimeFilter<"Topic"> | Date | string
     MdxNotes?: MdxNoteListRelationFilter
     ipynbNotes?: IpynbListRelationFilter
     QAPair?: QAPairListRelationFilter
@@ -46906,6 +47042,8 @@ export namespace Prisma {
   export type TopicOrderByWithAggregationInput = {
     value?: SortOrder
     kanbanId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
     _count?: TopicCountOrderByAggregateInput
     _avg?: TopicAvgOrderByAggregateInput
     _max?: TopicMaxOrderByAggregateInput
@@ -46919,6 +47057,8 @@ export namespace Prisma {
     NOT?: TopicScalarWhereWithAggregatesInput | TopicScalarWhereWithAggregatesInput[]
     value?: StringWithAggregatesFilter<"Topic"> | string
     kanbanId?: IntNullableWithAggregatesFilter<"Topic"> | number | null
+    createdAt?: DateTimeWithAggregatesFilter<"Topic"> | Date | string
+    lastAccess?: DateTimeWithAggregatesFilter<"Topic"> | Date | string
   }
 
   export type TagWhereInput = {
@@ -46927,6 +47067,8 @@ export namespace Prisma {
     NOT?: TagWhereInput | TagWhereInput[]
     value?: StringFilter<"Tag"> | string
     kanbanId?: IntNullableFilter<"Tag"> | number | null
+    createdAt?: DateTimeFilter<"Tag"> | Date | string
+    lastAccess?: DateTimeFilter<"Tag"> | Date | string
     MdxNotes?: MdxNoteListRelationFilter
     bibEntries?: BibEntryListRelationFilter
     ipynbNotes?: IpynbListRelationFilter
@@ -46941,6 +47083,8 @@ export namespace Prisma {
   export type TagOrderByWithRelationInput = {
     value?: SortOrder
     kanbanId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
     MdxNotes?: MdxNoteOrderByRelationAggregateInput
     bibEntries?: BibEntryOrderByRelationAggregateInput
     ipynbNotes?: IpynbOrderByRelationAggregateInput
@@ -46959,6 +47103,8 @@ export namespace Prisma {
     OR?: TagWhereInput[]
     NOT?: TagWhereInput | TagWhereInput[]
     kanbanId?: IntNullableFilter<"Tag"> | number | null
+    createdAt?: DateTimeFilter<"Tag"> | Date | string
+    lastAccess?: DateTimeFilter<"Tag"> | Date | string
     MdxNotes?: MdxNoteListRelationFilter
     bibEntries?: BibEntryListRelationFilter
     ipynbNotes?: IpynbListRelationFilter
@@ -46973,6 +47119,8 @@ export namespace Prisma {
   export type TagOrderByWithAggregationInput = {
     value?: SortOrder
     kanbanId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
     _count?: TagCountOrderByAggregateInput
     _avg?: TagAvgOrderByAggregateInput
     _max?: TagMaxOrderByAggregateInput
@@ -46986,6 +47134,8 @@ export namespace Prisma {
     NOT?: TagScalarWhereWithAggregatesInput | TagScalarWhereWithAggregatesInput[]
     value?: StringWithAggregatesFilter<"Tag"> | string
     kanbanId?: IntNullableWithAggregatesFilter<"Tag"> | number | null
+    createdAt?: DateTimeWithAggregatesFilter<"Tag"> | Date | string
+    lastAccess?: DateTimeWithAggregatesFilter<"Tag"> | Date | string
   }
 
   export type QuoteWhereInput = {
@@ -47592,7 +47742,8 @@ export namespace Prisma {
     content?: StringFilter<"Snippet"> | string
     description?: StringFilter<"Snippet"> | string
     keywords?: StringNullableListFilter<"Snippet">
-    language?: EnumTechnologiesFilter<"Snippet"> | $Enums.Technologies
+    language?: StringFilter<"Snippet"> | string
+    createdAt?: DateTimeFilter<"Snippet"> | Date | string
   }
 
   export type SnippetOrderByWithRelationInput = {
@@ -47601,6 +47752,7 @@ export namespace Prisma {
     description?: SortOrder
     keywords?: SortOrder
     language?: SortOrder
+    createdAt?: SortOrder
     _relevance?: SnippetOrderByRelevanceInput
   }
 
@@ -47612,7 +47764,8 @@ export namespace Prisma {
     content?: StringFilter<"Snippet"> | string
     description?: StringFilter<"Snippet"> | string
     keywords?: StringNullableListFilter<"Snippet">
-    language?: EnumTechnologiesFilter<"Snippet"> | $Enums.Technologies
+    language?: StringFilter<"Snippet"> | string
+    createdAt?: DateTimeFilter<"Snippet"> | Date | string
   }, "id">
 
   export type SnippetOrderByWithAggregationInput = {
@@ -47621,6 +47774,7 @@ export namespace Prisma {
     description?: SortOrder
     keywords?: SortOrder
     language?: SortOrder
+    createdAt?: SortOrder
     _count?: SnippetCountOrderByAggregateInput
     _avg?: SnippetAvgOrderByAggregateInput
     _max?: SnippetMaxOrderByAggregateInput
@@ -47636,7 +47790,8 @@ export namespace Prisma {
     content?: StringWithAggregatesFilter<"Snippet"> | string
     description?: StringWithAggregatesFilter<"Snippet"> | string
     keywords?: StringNullableListFilter<"Snippet">
-    language?: EnumTechnologiesWithAggregatesFilter<"Snippet"> | $Enums.Technologies
+    language?: StringWithAggregatesFilter<"Snippet"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Snippet"> | Date | string
   }
 
   export type RelatedValuesWhereInput = {
@@ -47701,10 +47856,11 @@ export namespace Prisma {
     desc?: StringNullableFilter<"Equation"> | string | null
     content?: StringFilter<"Equation"> | string
     asPython?: StringNullableFilter<"Equation"> | string | null
-    variableLegend?: JsonNullableFilter<"Equation">
+    variableLegend?: JsonFilter<"Equation">
     variables?: StringNullableListFilter<"Equation">
     keywords?: StringNullableListFilter<"Equation">
     createdAt?: DateTimeFilter<"Equation"> | Date | string
+    lastAccess?: DateTimeFilter<"Equation"> | Date | string
     relatedValues?: RelatedValuesListRelationFilter
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
@@ -47719,10 +47875,11 @@ export namespace Prisma {
     desc?: SortOrderInput | SortOrder
     content?: SortOrder
     asPython?: SortOrderInput | SortOrder
-    variableLegend?: SortOrderInput | SortOrder
+    variableLegend?: SortOrder
     variables?: SortOrder
     keywords?: SortOrder
     createdAt?: SortOrder
+    lastAccess?: SortOrder
     relatedValues?: RelatedValuesOrderByRelationAggregateInput
     tags?: TagOrderByRelationAggregateInput
     topics?: TopicOrderByRelationAggregateInput
@@ -47741,10 +47898,11 @@ export namespace Prisma {
     desc?: StringNullableFilter<"Equation"> | string | null
     content?: StringFilter<"Equation"> | string
     asPython?: StringNullableFilter<"Equation"> | string | null
-    variableLegend?: JsonNullableFilter<"Equation">
+    variableLegend?: JsonFilter<"Equation">
     variables?: StringNullableListFilter<"Equation">
     keywords?: StringNullableListFilter<"Equation">
     createdAt?: DateTimeFilter<"Equation"> | Date | string
+    lastAccess?: DateTimeFilter<"Equation"> | Date | string
     relatedValues?: RelatedValuesListRelationFilter
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
@@ -47759,10 +47917,11 @@ export namespace Prisma {
     desc?: SortOrderInput | SortOrder
     content?: SortOrder
     asPython?: SortOrderInput | SortOrder
-    variableLegend?: SortOrderInput | SortOrder
+    variableLegend?: SortOrder
     variables?: SortOrder
     keywords?: SortOrder
     createdAt?: SortOrder
+    lastAccess?: SortOrder
     _count?: EquationCountOrderByAggregateInput
     _avg?: EquationAvgOrderByAggregateInput
     _max?: EquationMaxOrderByAggregateInput
@@ -47780,10 +47939,11 @@ export namespace Prisma {
     desc?: StringNullableWithAggregatesFilter<"Equation"> | string | null
     content?: StringWithAggregatesFilter<"Equation"> | string
     asPython?: StringNullableWithAggregatesFilter<"Equation"> | string | null
-    variableLegend?: JsonNullableWithAggregatesFilter<"Equation">
+    variableLegend?: JsonWithAggregatesFilter<"Equation">
     variables?: StringNullableListFilter<"Equation">
     keywords?: StringNullableListFilter<"Equation">
     createdAt?: DateTimeWithAggregatesFilter<"Equation"> | Date | string
+    lastAccess?: DateTimeWithAggregatesFilter<"Equation"> | Date | string
   }
 
   export type DefinitionWhereInput = {
@@ -47795,6 +47955,8 @@ export namespace Prisma {
     content?: StringNullableFilter<"Definition"> | string | null
     alphabeticalLabel?: StringNullableFilter<"Definition"> | string | null
     mdxNoteId?: IntNullableFilter<"Definition"> | number | null
+    createdAt?: DateTimeFilter<"Definition"> | Date | string
+    lastAccess?: DateTimeFilter<"Definition"> | Date | string
     mdxNote?: XOR<MdxNoteNullableRelationFilter, MdxNoteWhereInput> | null
   }
 
@@ -47804,6 +47966,8 @@ export namespace Prisma {
     content?: SortOrderInput | SortOrder
     alphabeticalLabel?: SortOrderInput | SortOrder
     mdxNoteId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
     mdxNote?: MdxNoteOrderByWithRelationInput
     _relevance?: DefinitionOrderByRelevanceInput
   }
@@ -47817,6 +47981,8 @@ export namespace Prisma {
     content?: StringNullableFilter<"Definition"> | string | null
     alphabeticalLabel?: StringNullableFilter<"Definition"> | string | null
     mdxNoteId?: IntNullableFilter<"Definition"> | number | null
+    createdAt?: DateTimeFilter<"Definition"> | Date | string
+    lastAccess?: DateTimeFilter<"Definition"> | Date | string
     mdxNote?: XOR<MdxNoteNullableRelationFilter, MdxNoteWhereInput> | null
   }, "id" | "id">
 
@@ -47826,6 +47992,8 @@ export namespace Prisma {
     content?: SortOrderInput | SortOrder
     alphabeticalLabel?: SortOrderInput | SortOrder
     mdxNoteId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
     _count?: DefinitionCountOrderByAggregateInput
     _avg?: DefinitionAvgOrderByAggregateInput
     _max?: DefinitionMaxOrderByAggregateInput
@@ -47842,6 +48010,8 @@ export namespace Prisma {
     content?: StringNullableWithAggregatesFilter<"Definition"> | string | null
     alphabeticalLabel?: StringNullableWithAggregatesFilter<"Definition"> | string | null
     mdxNoteId?: IntNullableWithAggregatesFilter<"Definition"> | number | null
+    createdAt?: DateTimeWithAggregatesFilter<"Definition"> | Date | string
+    lastAccess?: DateTimeWithAggregatesFilter<"Definition"> | Date | string
   }
 
   export type SettingsWhereInput = {
@@ -47856,6 +48026,8 @@ export namespace Prisma {
     landingImageAlign?: EnumImageAlignmentFilter<"Settings"> | $Enums.ImageAlignment
     lockedLandingImage?: StringNullableFilter<"Settings"> | string | null
     cleanOnSync?: BoolFilter<"Settings"> | boolean
+    plotTheme?: StringNullableFilter<"Settings"> | string | null
+    pluginSettings?: JsonFilter<"Settings">
     firstSync?: DateTimeFilter<"Settings"> | Date | string
     lastSync?: DateTimeFilter<"Settings"> | Date | string
   }
@@ -47869,6 +48041,8 @@ export namespace Prisma {
     landingImageAlign?: SortOrder
     lockedLandingImage?: SortOrderInput | SortOrder
     cleanOnSync?: SortOrder
+    plotTheme?: SortOrderInput | SortOrder
+    pluginSettings?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
     _relevance?: SettingsOrderByRelevanceInput
@@ -47886,6 +48060,8 @@ export namespace Prisma {
     landingImageAlign?: EnumImageAlignmentFilter<"Settings"> | $Enums.ImageAlignment
     lockedLandingImage?: StringNullableFilter<"Settings"> | string | null
     cleanOnSync?: BoolFilter<"Settings"> | boolean
+    plotTheme?: StringNullableFilter<"Settings"> | string | null
+    pluginSettings?: JsonFilter<"Settings">
     firstSync?: DateTimeFilter<"Settings"> | Date | string
     lastSync?: DateTimeFilter<"Settings"> | Date | string
   }, "id">
@@ -47899,6 +48075,8 @@ export namespace Prisma {
     landingImageAlign?: SortOrder
     lockedLandingImage?: SortOrderInput | SortOrder
     cleanOnSync?: SortOrder
+    plotTheme?: SortOrderInput | SortOrder
+    pluginSettings?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
     _count?: SettingsCountOrderByAggregateInput
@@ -47920,6 +48098,8 @@ export namespace Prisma {
     landingImageAlign?: EnumImageAlignmentWithAggregatesFilter<"Settings"> | $Enums.ImageAlignment
     lockedLandingImage?: StringNullableWithAggregatesFilter<"Settings"> | string | null
     cleanOnSync?: BoolWithAggregatesFilter<"Settings"> | boolean
+    plotTheme?: StringNullableWithAggregatesFilter<"Settings"> | string | null
+    pluginSettings?: JsonWithAggregatesFilter<"Settings">
     firstSync?: DateTimeWithAggregatesFilter<"Settings"> | Date | string
     lastSync?: DateTimeWithAggregatesFilter<"Settings"> | Date | string
   }
@@ -48258,6 +48438,7 @@ export namespace Prisma {
     bookmarked?: BoolFilter<"MdxNote"> | boolean
     firstSync?: DateTimeFilter<"MdxNote"> | Date | string
     lastSync?: DateTimeFilter<"MdxNote"> | Date | string
+    lastAccess?: DateTimeFilter<"MdxNote"> | Date | string
     topics?: TopicListRelationFilter
     subjects?: SubjectListRelationFilter
     tags?: TagListRelationFilter
@@ -48294,6 +48475,7 @@ export namespace Prisma {
     bookmarked?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
+    lastAccess?: SortOrder
     topics?: TopicOrderByRelationAggregateInput
     subjects?: SubjectOrderByRelationAggregateInput
     tags?: TagOrderByRelationAggregateInput
@@ -48334,6 +48516,7 @@ export namespace Prisma {
     bookmarked?: BoolFilter<"MdxNote"> | boolean
     firstSync?: DateTimeFilter<"MdxNote"> | Date | string
     lastSync?: DateTimeFilter<"MdxNote"> | Date | string
+    lastAccess?: DateTimeFilter<"MdxNote"> | Date | string
     topics?: TopicListRelationFilter
     subjects?: SubjectListRelationFilter
     tags?: TagListRelationFilter
@@ -48370,6 +48553,7 @@ export namespace Prisma {
     bookmarked?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
+    lastAccess?: SortOrder
     _count?: MdxNoteCountOrderByAggregateInput
     _avg?: MdxNoteAvgOrderByAggregateInput
     _max?: MdxNoteMaxOrderByAggregateInput
@@ -48405,6 +48589,7 @@ export namespace Prisma {
     bookmarked?: BoolWithAggregatesFilter<"MdxNote"> | boolean
     firstSync?: DateTimeWithAggregatesFilter<"MdxNote"> | Date | string
     lastSync?: DateTimeWithAggregatesFilter<"MdxNote"> | Date | string
+    lastAccess?: DateTimeWithAggregatesFilter<"MdxNote"> | Date | string
   }
 
   export type IpynbWhereInput = {
@@ -48426,6 +48611,7 @@ export namespace Prisma {
     bookmarked?: BoolFilter<"Ipynb"> | boolean
     firstSync?: DateTimeFilter<"Ipynb"> | Date | string
     lastSync?: DateTimeFilter<"Ipynb"> | Date | string
+    lastAccess?: DateTimeFilter<"Ipynb"> | Date | string
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
     subjects?: SubjectListRelationFilter
@@ -48450,6 +48636,7 @@ export namespace Prisma {
     bookmarked?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
+    lastAccess?: SortOrder
     tags?: TagOrderByRelationAggregateInput
     topics?: TopicOrderByRelationAggregateInput
     subjects?: SubjectOrderByRelationAggregateInput
@@ -48478,6 +48665,7 @@ export namespace Prisma {
     bookmarked?: BoolFilter<"Ipynb"> | boolean
     firstSync?: DateTimeFilter<"Ipynb"> | Date | string
     lastSync?: DateTimeFilter<"Ipynb"> | Date | string
+    lastAccess?: DateTimeFilter<"Ipynb"> | Date | string
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
     subjects?: SubjectListRelationFilter
@@ -48502,6 +48690,7 @@ export namespace Prisma {
     bookmarked?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
+    lastAccess?: SortOrder
     _count?: IpynbCountOrderByAggregateInput
     _avg?: IpynbAvgOrderByAggregateInput
     _max?: IpynbMaxOrderByAggregateInput
@@ -48528,6 +48717,7 @@ export namespace Prisma {
     bookmarked?: BoolWithAggregatesFilter<"Ipynb"> | boolean
     firstSync?: DateTimeWithAggregatesFilter<"Ipynb"> | Date | string
     lastSync?: DateTimeWithAggregatesFilter<"Ipynb"> | Date | string
+    lastAccess?: DateTimeWithAggregatesFilter<"Ipynb"> | Date | string
   }
 
   export type ToDoListWhereInput = {
@@ -48538,6 +48728,7 @@ export namespace Prisma {
     label?: StringFilter<"ToDoList"> | string
     createdAt?: DateTimeFilter<"ToDoList"> | Date | string
     lastUpdate?: DateTimeFilter<"ToDoList"> | Date | string
+    lastAccess?: DateTimeFilter<"ToDoList"> | Date | string
     tasks?: ToDoListRelationFilter
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
@@ -48549,6 +48740,7 @@ export namespace Prisma {
     label?: SortOrder
     createdAt?: SortOrder
     lastUpdate?: SortOrder
+    lastAccess?: SortOrder
     tasks?: ToDoOrderByRelationAggregateInput
     tags?: TagOrderByRelationAggregateInput
     topics?: TopicOrderByRelationAggregateInput
@@ -48564,6 +48756,7 @@ export namespace Prisma {
     label?: StringFilter<"ToDoList"> | string
     createdAt?: DateTimeFilter<"ToDoList"> | Date | string
     lastUpdate?: DateTimeFilter<"ToDoList"> | Date | string
+    lastAccess?: DateTimeFilter<"ToDoList"> | Date | string
     tasks?: ToDoListRelationFilter
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
@@ -48575,6 +48768,7 @@ export namespace Prisma {
     label?: SortOrder
     createdAt?: SortOrder
     lastUpdate?: SortOrder
+    lastAccess?: SortOrder
     _count?: ToDoListCountOrderByAggregateInput
     _avg?: ToDoListAvgOrderByAggregateInput
     _max?: ToDoListMaxOrderByAggregateInput
@@ -48590,6 +48784,7 @@ export namespace Prisma {
     label?: StringWithAggregatesFilter<"ToDoList"> | string
     createdAt?: DateTimeWithAggregatesFilter<"ToDoList"> | Date | string
     lastUpdate?: DateTimeWithAggregatesFilter<"ToDoList"> | Date | string
+    lastAccess?: DateTimeWithAggregatesFilter<"ToDoList"> | Date | string
   }
 
   export type ToDoWhereInput = {
@@ -48604,9 +48799,10 @@ export namespace Prisma {
     parentId?: IntNullableFilter<"ToDo"> | number | null
     category?: EnumTaskCategoryNullableFilter<"ToDo"> | $Enums.TaskCategory | null
     bookmarked?: BoolFilter<"ToDo"> | boolean
-    status?: EnumToDoListStatusFilter<"ToDo"> | $Enums.ToDoListStatus
+    status?: StringFilter<"ToDo"> | string
     priority?: IntFilter<"ToDo"> | number
     toDoListId?: IntNullableFilter<"ToDo"> | number | null
+    completedOn?: DateTimeNullableFilter<"ToDo"> | Date | string | null
     associatedNotes?: MdxNoteListRelationFilter
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
@@ -48628,6 +48824,7 @@ export namespace Prisma {
     status?: SortOrder
     priority?: SortOrder
     toDoListId?: SortOrderInput | SortOrder
+    completedOn?: SortOrderInput | SortOrder
     associatedNotes?: MdxNoteOrderByRelationAggregateInput
     tags?: TagOrderByRelationAggregateInput
     topics?: TopicOrderByRelationAggregateInput
@@ -48650,9 +48847,10 @@ export namespace Prisma {
     parentId?: IntNullableFilter<"ToDo"> | number | null
     category?: EnumTaskCategoryNullableFilter<"ToDo"> | $Enums.TaskCategory | null
     bookmarked?: BoolFilter<"ToDo"> | boolean
-    status?: EnumToDoListStatusFilter<"ToDo"> | $Enums.ToDoListStatus
+    status?: StringFilter<"ToDo"> | string
     priority?: IntFilter<"ToDo"> | number
     toDoListId?: IntNullableFilter<"ToDo"> | number | null
+    completedOn?: DateTimeNullableFilter<"ToDo"> | Date | string | null
     associatedNotes?: MdxNoteListRelationFilter
     tags?: TagListRelationFilter
     topics?: TopicListRelationFilter
@@ -48674,6 +48872,7 @@ export namespace Prisma {
     status?: SortOrder
     priority?: SortOrder
     toDoListId?: SortOrderInput | SortOrder
+    completedOn?: SortOrderInput | SortOrder
     _count?: ToDoCountOrderByAggregateInput
     _avg?: ToDoAvgOrderByAggregateInput
     _max?: ToDoMaxOrderByAggregateInput
@@ -48693,9 +48892,10 @@ export namespace Prisma {
     parentId?: IntNullableWithAggregatesFilter<"ToDo"> | number | null
     category?: EnumTaskCategoryNullableWithAggregatesFilter<"ToDo"> | $Enums.TaskCategory | null
     bookmarked?: BoolWithAggregatesFilter<"ToDo"> | boolean
-    status?: EnumToDoListStatusWithAggregatesFilter<"ToDo"> | $Enums.ToDoListStatus
+    status?: StringWithAggregatesFilter<"ToDo"> | string
     priority?: IntWithAggregatesFilter<"ToDo"> | number
     toDoListId?: IntNullableWithAggregatesFilter<"ToDo"> | number | null
+    completedOn?: DateTimeNullableWithAggregatesFilter<"ToDo"> | Date | string | null
   }
 
   export type KanBanCardWhereInput = {
@@ -49465,195 +49665,190 @@ export namespace Prisma {
     data?: BytesWithAggregatesFilter<"DJT"> | Buffer
   }
 
-  export type FeatureRequestCreateInput = {
-    email: string
-    message: string
-    category?: FeatureRequestCreatecategoryInput | string[]
-    userBase?: FeatureRequestCreateuserBaseInput | string[]
-    receivedOn?: Date | string
+  export type FeatureRequestWhereInput = {
+    AND?: FeatureRequestWhereInput | FeatureRequestWhereInput[]
+    OR?: FeatureRequestWhereInput[]
+    NOT?: FeatureRequestWhereInput | FeatureRequestWhereInput[]
+    id?: IntFilter<"FeatureRequest"> | number
+    email?: StringFilter<"FeatureRequest"> | string
+    message?: StringFilter<"FeatureRequest"> | string
+    category?: StringNullableListFilter<"FeatureRequest">
+    userBase?: StringNullableListFilter<"FeatureRequest">
+    receivedOn?: DateTimeFilter<"FeatureRequest"> | Date | string
   }
 
-  export type FeatureRequestUncheckedCreateInput = {
+  export type FeatureRequestOrderByWithRelationInput = {
+    id?: SortOrder
+    email?: SortOrder
+    message?: SortOrder
+    category?: SortOrder
+    userBase?: SortOrder
+    receivedOn?: SortOrder
+    _relevance?: FeatureRequestOrderByRelevanceInput
+  }
+
+  export type FeatureRequestWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    email: string
-    message: string
-    category?: FeatureRequestCreatecategoryInput | string[]
-    userBase?: FeatureRequestCreateuserBaseInput | string[]
-    receivedOn?: Date | string
+    AND?: FeatureRequestWhereInput | FeatureRequestWhereInput[]
+    OR?: FeatureRequestWhereInput[]
+    NOT?: FeatureRequestWhereInput | FeatureRequestWhereInput[]
+    email?: StringFilter<"FeatureRequest"> | string
+    message?: StringFilter<"FeatureRequest"> | string
+    category?: StringNullableListFilter<"FeatureRequest">
+    userBase?: StringNullableListFilter<"FeatureRequest">
+    receivedOn?: DateTimeFilter<"FeatureRequest"> | Date | string
+  }, "id">
+
+  export type FeatureRequestOrderByWithAggregationInput = {
+    id?: SortOrder
+    email?: SortOrder
+    message?: SortOrder
+    category?: SortOrder
+    userBase?: SortOrder
+    receivedOn?: SortOrder
+    _count?: FeatureRequestCountOrderByAggregateInput
+    _avg?: FeatureRequestAvgOrderByAggregateInput
+    _max?: FeatureRequestMaxOrderByAggregateInput
+    _min?: FeatureRequestMinOrderByAggregateInput
+    _sum?: FeatureRequestSumOrderByAggregateInput
   }
 
-  export type FeatureRequestUpdateInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    message?: StringFieldUpdateOperationsInput | string
-    category?: FeatureRequestUpdatecategoryInput | string[]
-    userBase?: FeatureRequestUpdateuserBaseInput | string[]
-    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type FeatureRequestScalarWhereWithAggregatesInput = {
+    AND?: FeatureRequestScalarWhereWithAggregatesInput | FeatureRequestScalarWhereWithAggregatesInput[]
+    OR?: FeatureRequestScalarWhereWithAggregatesInput[]
+    NOT?: FeatureRequestScalarWhereWithAggregatesInput | FeatureRequestScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"FeatureRequest"> | number
+    email?: StringWithAggregatesFilter<"FeatureRequest"> | string
+    message?: StringWithAggregatesFilter<"FeatureRequest"> | string
+    category?: StringNullableListFilter<"FeatureRequest">
+    userBase?: StringNullableListFilter<"FeatureRequest">
+    receivedOn?: DateTimeWithAggregatesFilter<"FeatureRequest"> | Date | string
   }
 
-  export type FeatureRequestUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    email?: StringFieldUpdateOperationsInput | string
-    message?: StringFieldUpdateOperationsInput | string
-    category?: FeatureRequestUpdatecategoryInput | string[]
-    userBase?: FeatureRequestUpdateuserBaseInput | string[]
-    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type WaitlistRequestWhereInput = {
+    AND?: WaitlistRequestWhereInput | WaitlistRequestWhereInput[]
+    OR?: WaitlistRequestWhereInput[]
+    NOT?: WaitlistRequestWhereInput | WaitlistRequestWhereInput[]
+    id?: IntFilter<"WaitlistRequest"> | number
+    email?: StringFilter<"WaitlistRequest"> | string
+    receivedOn?: DateTimeFilter<"WaitlistRequest"> | Date | string
+    emailsSent?: IntFilter<"WaitlistRequest"> | number
   }
 
-  export type FeatureRequestCreateManyInput = {
+  export type WaitlistRequestOrderByWithRelationInput = {
+    id?: SortOrder
+    email?: SortOrder
+    receivedOn?: SortOrder
+    emailsSent?: SortOrder
+    _relevance?: WaitlistRequestOrderByRelevanceInput
+  }
+
+  export type WaitlistRequestWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    email: string
-    message: string
-    category?: FeatureRequestCreatecategoryInput | string[]
-    userBase?: FeatureRequestCreateuserBaseInput | string[]
-    receivedOn?: Date | string
+    AND?: WaitlistRequestWhereInput | WaitlistRequestWhereInput[]
+    OR?: WaitlistRequestWhereInput[]
+    NOT?: WaitlistRequestWhereInput | WaitlistRequestWhereInput[]
+    email?: StringFilter<"WaitlistRequest"> | string
+    receivedOn?: DateTimeFilter<"WaitlistRequest"> | Date | string
+    emailsSent?: IntFilter<"WaitlistRequest"> | number
+  }, "id">
+
+  export type WaitlistRequestOrderByWithAggregationInput = {
+    id?: SortOrder
+    email?: SortOrder
+    receivedOn?: SortOrder
+    emailsSent?: SortOrder
+    _count?: WaitlistRequestCountOrderByAggregateInput
+    _avg?: WaitlistRequestAvgOrderByAggregateInput
+    _max?: WaitlistRequestMaxOrderByAggregateInput
+    _min?: WaitlistRequestMinOrderByAggregateInput
+    _sum?: WaitlistRequestSumOrderByAggregateInput
   }
 
-  export type FeatureRequestUpdateManyMutationInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    message?: StringFieldUpdateOperationsInput | string
-    category?: FeatureRequestUpdatecategoryInput | string[]
-    userBase?: FeatureRequestUpdateuserBaseInput | string[]
-    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type WaitlistRequestScalarWhereWithAggregatesInput = {
+    AND?: WaitlistRequestScalarWhereWithAggregatesInput | WaitlistRequestScalarWhereWithAggregatesInput[]
+    OR?: WaitlistRequestScalarWhereWithAggregatesInput[]
+    NOT?: WaitlistRequestScalarWhereWithAggregatesInput | WaitlistRequestScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"WaitlistRequest"> | number
+    email?: StringWithAggregatesFilter<"WaitlistRequest"> | string
+    receivedOn?: DateTimeWithAggregatesFilter<"WaitlistRequest"> | Date | string
+    emailsSent?: IntWithAggregatesFilter<"WaitlistRequest"> | number
   }
 
-  export type FeatureRequestUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    email?: StringFieldUpdateOperationsInput | string
-    message?: StringFieldUpdateOperationsInput | string
-    category?: FeatureRequestUpdatecategoryInput | string[]
-    userBase?: FeatureRequestUpdateuserBaseInput | string[]
-    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type BusinessContactWhereInput = {
+    AND?: BusinessContactWhereInput | BusinessContactWhereInput[]
+    OR?: BusinessContactWhereInput[]
+    NOT?: BusinessContactWhereInput | BusinessContactWhereInput[]
+    id?: IntFilter<"BusinessContact"> | number
+    companyName?: StringFilter<"BusinessContact"> | string
+    contactName?: StringFilter<"BusinessContact"> | string
+    contactPreference?: StringFilter<"BusinessContact"> | string
+    email?: StringNullableFilter<"BusinessContact"> | string | null
+    phone?: StringNullableFilter<"BusinessContact"> | string | null
+    message?: StringFilter<"BusinessContact"> | string
+    purpose?: StringNullableFilter<"BusinessContact"> | string | null
   }
 
-  export type WaitlistRequestCreateInput = {
-    email: string
-    receivedOn?: Date | string
-    emailsSent?: number
+  export type BusinessContactOrderByWithRelationInput = {
+    id?: SortOrder
+    companyName?: SortOrder
+    contactName?: SortOrder
+    contactPreference?: SortOrder
+    email?: SortOrderInput | SortOrder
+    phone?: SortOrderInput | SortOrder
+    message?: SortOrder
+    purpose?: SortOrderInput | SortOrder
+    _relevance?: BusinessContactOrderByRelevanceInput
   }
 
-  export type WaitlistRequestUncheckedCreateInput = {
+  export type BusinessContactWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    email: string
-    receivedOn?: Date | string
-    emailsSent?: number
+    AND?: BusinessContactWhereInput | BusinessContactWhereInput[]
+    OR?: BusinessContactWhereInput[]
+    NOT?: BusinessContactWhereInput | BusinessContactWhereInput[]
+    companyName?: StringFilter<"BusinessContact"> | string
+    contactName?: StringFilter<"BusinessContact"> | string
+    contactPreference?: StringFilter<"BusinessContact"> | string
+    email?: StringNullableFilter<"BusinessContact"> | string | null
+    phone?: StringNullableFilter<"BusinessContact"> | string | null
+    message?: StringFilter<"BusinessContact"> | string
+    purpose?: StringNullableFilter<"BusinessContact"> | string | null
+  }, "id">
+
+  export type BusinessContactOrderByWithAggregationInput = {
+    id?: SortOrder
+    companyName?: SortOrder
+    contactName?: SortOrder
+    contactPreference?: SortOrder
+    email?: SortOrderInput | SortOrder
+    phone?: SortOrderInput | SortOrder
+    message?: SortOrder
+    purpose?: SortOrderInput | SortOrder
+    _count?: BusinessContactCountOrderByAggregateInput
+    _avg?: BusinessContactAvgOrderByAggregateInput
+    _max?: BusinessContactMaxOrderByAggregateInput
+    _min?: BusinessContactMinOrderByAggregateInput
+    _sum?: BusinessContactSumOrderByAggregateInput
   }
 
-  export type WaitlistRequestUpdateInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
-    emailsSent?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type WaitlistRequestUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    email?: StringFieldUpdateOperationsInput | string
-    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
-    emailsSent?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type WaitlistRequestCreateManyInput = {
-    id?: number
-    email: string
-    receivedOn?: Date | string
-    emailsSent?: number
-  }
-
-  export type WaitlistRequestUpdateManyMutationInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
-    emailsSent?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type WaitlistRequestUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    email?: StringFieldUpdateOperationsInput | string
-    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
-    emailsSent?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type BusinessContactCreateInput = {
-    companyName: string
-    contactName: string
-    contactPreference: string
-    email?: string | null
-    phone?: string | null
-    message: string
-    purpose?: string | null
-    createdAt?: Date | string
-  }
-
-  export type BusinessContactUncheckedCreateInput = {
-    id?: number
-    companyName: string
-    contactName: string
-    contactPreference: string
-    email?: string | null
-    phone?: string | null
-    message: string
-    purpose?: string | null
-    createdAt?: Date | string
-  }
-
-  export type BusinessContactUpdateInput = {
-    companyName?: StringFieldUpdateOperationsInput | string
-    contactName?: StringFieldUpdateOperationsInput | string
-    contactPreference?: StringFieldUpdateOperationsInput | string
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    message?: StringFieldUpdateOperationsInput | string
-    purpose?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type BusinessContactUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    companyName?: StringFieldUpdateOperationsInput | string
-    contactName?: StringFieldUpdateOperationsInput | string
-    contactPreference?: StringFieldUpdateOperationsInput | string
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    message?: StringFieldUpdateOperationsInput | string
-    purpose?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type BusinessContactCreateManyInput = {
-    id?: number
-    companyName: string
-    contactName: string
-    contactPreference: string
-    email?: string | null
-    phone?: string | null
-    message: string
-    purpose?: string | null
-    createdAt?: Date | string
-  }
-
-  export type BusinessContactUpdateManyMutationInput = {
-    companyName?: StringFieldUpdateOperationsInput | string
-    contactName?: StringFieldUpdateOperationsInput | string
-    contactPreference?: StringFieldUpdateOperationsInput | string
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    message?: StringFieldUpdateOperationsInput | string
-    purpose?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type BusinessContactUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    companyName?: StringFieldUpdateOperationsInput | string
-    contactName?: StringFieldUpdateOperationsInput | string
-    contactPreference?: StringFieldUpdateOperationsInput | string
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    message?: StringFieldUpdateOperationsInput | string
-    purpose?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type BusinessContactScalarWhereWithAggregatesInput = {
+    AND?: BusinessContactScalarWhereWithAggregatesInput | BusinessContactScalarWhereWithAggregatesInput[]
+    OR?: BusinessContactScalarWhereWithAggregatesInput[]
+    NOT?: BusinessContactScalarWhereWithAggregatesInput | BusinessContactScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"BusinessContact"> | number
+    companyName?: StringWithAggregatesFilter<"BusinessContact"> | string
+    contactName?: StringWithAggregatesFilter<"BusinessContact"> | string
+    contactPreference?: StringWithAggregatesFilter<"BusinessContact"> | string
+    email?: StringNullableWithAggregatesFilter<"BusinessContact"> | string | null
+    phone?: StringNullableWithAggregatesFilter<"BusinessContact"> | string | null
+    message?: StringWithAggregatesFilter<"BusinessContact"> | string
+    purpose?: StringNullableWithAggregatesFilter<"BusinessContact"> | string | null
   }
 
   export type SubjectCreateInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
@@ -49668,6 +49863,8 @@ export namespace Prisma {
   export type SubjectUncheckedCreateInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
@@ -49680,6 +49877,8 @@ export namespace Prisma {
 
   export type SubjectUpdateInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
@@ -49694,6 +49893,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -49707,19 +49908,27 @@ export namespace Prisma {
   export type SubjectCreateManyInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
   }
 
   export type SubjectUpdateManyMutationInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUncheckedUpdateManyInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicCreateInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
@@ -49734,6 +49943,8 @@ export namespace Prisma {
   export type TopicUncheckedCreateInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
@@ -49746,6 +49957,8 @@ export namespace Prisma {
 
   export type TopicUpdateInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
@@ -49760,6 +49973,8 @@ export namespace Prisma {
   export type TopicUncheckedUpdateInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
@@ -49773,19 +49988,27 @@ export namespace Prisma {
   export type TopicCreateManyInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
   }
 
   export type TopicUpdateManyMutationInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUncheckedUpdateManyInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TagCreateInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
@@ -49800,6 +50023,8 @@ export namespace Prisma {
   export type TagUncheckedCreateInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
@@ -49812,6 +50037,8 @@ export namespace Prisma {
 
   export type TagUpdateInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
@@ -49826,6 +50053,8 @@ export namespace Prisma {
   export type TagUncheckedUpdateInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
@@ -49839,15 +50068,21 @@ export namespace Prisma {
   export type TagCreateManyInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
   }
 
   export type TagUpdateManyMutationInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TagUncheckedUpdateManyInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type QuoteCreateInput = {
@@ -50521,7 +50756,8 @@ export namespace Prisma {
     content: string
     description: string
     keywords?: SnippetCreatekeywordsInput | string[]
-    language: $Enums.Technologies
+    language: string
+    createdAt?: Date | string
   }
 
   export type SnippetUncheckedCreateInput = {
@@ -50529,14 +50765,16 @@ export namespace Prisma {
     content: string
     description: string
     keywords?: SnippetCreatekeywordsInput | string[]
-    language: $Enums.Technologies
+    language: string
+    createdAt?: Date | string
   }
 
   export type SnippetUpdateInput = {
     content?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     keywords?: SnippetUpdatekeywordsInput | string[]
-    language?: EnumTechnologiesFieldUpdateOperationsInput | $Enums.Technologies
+    language?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SnippetUncheckedUpdateInput = {
@@ -50544,7 +50782,8 @@ export namespace Prisma {
     content?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     keywords?: SnippetUpdatekeywordsInput | string[]
-    language?: EnumTechnologiesFieldUpdateOperationsInput | $Enums.Technologies
+    language?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SnippetCreateManyInput = {
@@ -50552,14 +50791,16 @@ export namespace Prisma {
     content: string
     description: string
     keywords?: SnippetCreatekeywordsInput | string[]
-    language: $Enums.Technologies
+    language: string
+    createdAt?: Date | string
   }
 
   export type SnippetUpdateManyMutationInput = {
     content?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     keywords?: SnippetUpdatekeywordsInput | string[]
-    language?: EnumTechnologiesFieldUpdateOperationsInput | $Enums.Technologies
+    language?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SnippetUncheckedUpdateManyInput = {
@@ -50567,11 +50808,12 @@ export namespace Prisma {
     content?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     keywords?: SnippetUpdatekeywordsInput | string[]
-    language?: EnumTechnologiesFieldUpdateOperationsInput | $Enums.Technologies
+    language?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type RelatedValuesCreateInput = {
-    input: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output: number
     equationId?: RelatedValuesCreateequationIdInput | number[]
     equations?: EquationCreateNestedManyWithoutRelatedValuesInput
@@ -50579,14 +50821,14 @@ export namespace Prisma {
 
   export type RelatedValuesUncheckedCreateInput = {
     id?: number
-    input: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output: number
     equationId?: RelatedValuesCreateequationIdInput | number[]
     equations?: EquationUncheckedCreateNestedManyWithoutRelatedValuesInput
   }
 
   export type RelatedValuesUpdateInput = {
-    input?: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output?: FloatFieldUpdateOperationsInput | number
     equationId?: RelatedValuesUpdateequationIdInput | number[]
     equations?: EquationUpdateManyWithoutRelatedValuesNestedInput
@@ -50594,7 +50836,7 @@ export namespace Prisma {
 
   export type RelatedValuesUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    input?: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output?: FloatFieldUpdateOperationsInput | number
     equationId?: RelatedValuesUpdateequationIdInput | number[]
     equations?: EquationUncheckedUpdateManyWithoutRelatedValuesNestedInput
@@ -50602,20 +50844,20 @@ export namespace Prisma {
 
   export type RelatedValuesCreateManyInput = {
     id?: number
-    input: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output: number
     equationId?: RelatedValuesCreateequationIdInput | number[]
   }
 
   export type RelatedValuesUpdateManyMutationInput = {
-    input?: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output?: FloatFieldUpdateOperationsInput | number
     equationId?: RelatedValuesUpdateequationIdInput | number[]
   }
 
   export type RelatedValuesUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    input?: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output?: FloatFieldUpdateOperationsInput | number
     equationId?: RelatedValuesUpdateequationIdInput | number[]
   }
@@ -50626,10 +50868,11 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesCreateNestedManyWithoutEquationsInput
     tags?: TagCreateNestedManyWithoutEquationsInput
     topics?: TopicCreateNestedManyWithoutEquationsInput
@@ -50644,10 +50887,11 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesUncheckedCreateNestedManyWithoutEquationsInput
     tags?: TagUncheckedCreateNestedManyWithoutEquationsInput
     topics?: TopicUncheckedCreateNestedManyWithoutEquationsInput
@@ -50661,10 +50905,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUpdateManyWithoutEquationsNestedInput
     tags?: TagUpdateManyWithoutEquationsNestedInput
     topics?: TopicUpdateManyWithoutEquationsNestedInput
@@ -50679,10 +50924,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUncheckedUpdateManyWithoutEquationsNestedInput
     tags?: TagUncheckedUpdateManyWithoutEquationsNestedInput
     topics?: TopicUncheckedUpdateManyWithoutEquationsNestedInput
@@ -50697,10 +50943,11 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
+    lastAccess?: Date | string
   }
 
   export type EquationUpdateManyMutationInput = {
@@ -50709,10 +50956,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EquationUncheckedUpdateManyInput = {
@@ -50722,10 +50970,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DefinitionCreateInput = {
@@ -50733,6 +50982,8 @@ export namespace Prisma {
     label?: string | null
     content?: string | null
     alphabeticalLabel?: string | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     mdxNote?: MdxNoteCreateNestedOneWithoutDefinitionsInput
   }
 
@@ -50742,6 +50993,8 @@ export namespace Prisma {
     content?: string | null
     alphabeticalLabel?: string | null
     mdxNoteId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
   }
 
   export type DefinitionUpdateInput = {
@@ -50749,6 +51002,8 @@ export namespace Prisma {
     label?: NullableStringFieldUpdateOperationsInput | string | null
     content?: NullableStringFieldUpdateOperationsInput | string | null
     alphabeticalLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     mdxNote?: MdxNoteUpdateOneWithoutDefinitionsNestedInput
   }
 
@@ -50758,6 +51013,8 @@ export namespace Prisma {
     content?: NullableStringFieldUpdateOperationsInput | string | null
     alphabeticalLabel?: NullableStringFieldUpdateOperationsInput | string | null
     mdxNoteId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DefinitionCreateManyInput = {
@@ -50766,6 +51023,8 @@ export namespace Prisma {
     content?: string | null
     alphabeticalLabel?: string | null
     mdxNoteId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
   }
 
   export type DefinitionUpdateManyMutationInput = {
@@ -50773,6 +51032,8 @@ export namespace Prisma {
     label?: NullableStringFieldUpdateOperationsInput | string | null
     content?: NullableStringFieldUpdateOperationsInput | string | null
     alphabeticalLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DefinitionUncheckedUpdateManyInput = {
@@ -50781,6 +51042,8 @@ export namespace Prisma {
     content?: NullableStringFieldUpdateOperationsInput | string | null
     alphabeticalLabel?: NullableStringFieldUpdateOperationsInput | string | null
     mdxNoteId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SettingsCreateInput = {
@@ -50792,6 +51055,8 @@ export namespace Prisma {
     landingImageAlign?: $Enums.ImageAlignment
     lockedLandingImage?: string | null
     cleanOnSync?: boolean
+    plotTheme?: string | null
+    pluginSettings?: PrismaJson.PluginSettingsRecord
     firstSync?: Date | string
     lastSync?: Date | string
   }
@@ -50805,6 +51070,8 @@ export namespace Prisma {
     landingImageAlign?: $Enums.ImageAlignment
     lockedLandingImage?: string | null
     cleanOnSync?: boolean
+    plotTheme?: string | null
+    pluginSettings?: PrismaJson.PluginSettingsRecord
     firstSync?: Date | string
     lastSync?: Date | string
   }
@@ -50818,6 +51085,8 @@ export namespace Prisma {
     landingImageAlign?: EnumImageAlignmentFieldUpdateOperationsInput | $Enums.ImageAlignment
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
+    plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
+    pluginSettings?: PrismaJson.PluginSettingsRecord
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50831,6 +51100,8 @@ export namespace Prisma {
     landingImageAlign?: EnumImageAlignmentFieldUpdateOperationsInput | $Enums.ImageAlignment
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
+    plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
+    pluginSettings?: PrismaJson.PluginSettingsRecord
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50844,6 +51115,8 @@ export namespace Prisma {
     landingImageAlign?: $Enums.ImageAlignment
     lockedLandingImage?: string | null
     cleanOnSync?: boolean
+    plotTheme?: string | null
+    pluginSettings?: PrismaJson.PluginSettingsRecord
     firstSync?: Date | string
     lastSync?: Date | string
   }
@@ -50857,6 +51130,8 @@ export namespace Prisma {
     landingImageAlign?: EnumImageAlignmentFieldUpdateOperationsInput | $Enums.ImageAlignment
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
+    plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
+    pluginSettings?: PrismaJson.PluginSettingsRecord
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50870,6 +51145,8 @@ export namespace Prisma {
     landingImageAlign?: EnumImageAlignmentFieldUpdateOperationsInput | $Enums.ImageAlignment
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
+    plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
+    pluginSettings?: PrismaJson.PluginSettingsRecord
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51207,6 +51484,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
@@ -51243,6 +51521,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -51276,6 +51555,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
@@ -51312,6 +51592,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -51347,6 +51628,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
   }
 
   export type MdxNoteUpdateManyMutationInput = {
@@ -51372,6 +51654,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MdxNoteUncheckedUpdateManyInput = {
@@ -51399,6 +51682,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IpynbCreateInput = {
@@ -51415,6 +51699,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectCreateNestedManyWithoutIpynbNotesInput
@@ -51439,6 +51724,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicUncheckedCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutIpynbNotesInput
@@ -51460,6 +51746,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUpdateManyWithoutIpynbNotesNestedInput
@@ -51484,6 +51771,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutIpynbNotesNestedInput
@@ -51507,6 +51795,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
   }
 
   export type IpynbUpdateManyMutationInput = {
@@ -51523,6 +51812,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IpynbUncheckedUpdateManyInput = {
@@ -51541,12 +51831,14 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoListCreateInput = {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
+    lastAccess?: Date | string
     tasks?: ToDoCreateNestedManyWithoutToDoListInput
     tags?: TagCreateNestedManyWithoutTodoListInput
     topics?: TopicCreateNestedManyWithoutTodoListInput
@@ -51558,6 +51850,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
+    lastAccess?: Date | string
     tasks?: ToDoUncheckedCreateNestedManyWithoutToDoListInput
     tags?: TagUncheckedCreateNestedManyWithoutTodoListInput
     topics?: TopicUncheckedCreateNestedManyWithoutTodoListInput
@@ -51568,6 +51861,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUpdateManyWithoutToDoListNestedInput
     tags?: TagUpdateManyWithoutTodoListNestedInput
     topics?: TopicUpdateManyWithoutTodoListNestedInput
@@ -51579,6 +51873,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUncheckedUpdateManyWithoutToDoListNestedInput
     tags?: TagUncheckedUpdateManyWithoutTodoListNestedInput
     topics?: TopicUncheckedUpdateManyWithoutTodoListNestedInput
@@ -51590,12 +51885,14 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
+    lastAccess?: Date | string
   }
 
   export type ToDoListUpdateManyMutationInput = {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoListUncheckedUpdateManyInput = {
@@ -51603,6 +51900,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoCreateInput = {
@@ -51612,8 +51910,9 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
     tags?: TagCreateNestedManyWithoutToDoInput
     topics?: TopicCreateNestedManyWithoutToDoInput
@@ -51632,9 +51931,10 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteUncheckedCreateNestedManyWithoutToDoInput
     tags?: TagUncheckedCreateNestedManyWithoutToDoInput
     topics?: TopicUncheckedCreateNestedManyWithoutToDoInput
@@ -51649,8 +51949,9 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
     tags?: TagUpdateManyWithoutToDoNestedInput
     topics?: TopicUpdateManyWithoutToDoNestedInput
@@ -51669,9 +51970,10 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUncheckedUpdateManyWithoutToDoNestedInput
     tags?: TagUncheckedUpdateManyWithoutToDoNestedInput
     topics?: TopicUncheckedUpdateManyWithoutToDoNestedInput
@@ -51688,9 +51990,10 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
   }
 
   export type ToDoUpdateManyMutationInput = {
@@ -51700,8 +52003,9 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ToDoUncheckedUpdateManyInput = {
@@ -51713,9 +52017,10 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type KanBanCardCreateInput = {
@@ -52534,15 +52839,184 @@ export namespace Prisma {
     data?: BytesFieldUpdateOperationsInput | Buffer
   }
 
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
+  export type FeatureRequestCreateInput = {
+    email: string
+    message: string
+    category?: FeatureRequestCreatecategoryInput | string[]
+    userBase?: FeatureRequestCreateuserBaseInput | string[]
+    receivedOn?: Date | string
+  }
+
+  export type FeatureRequestUncheckedCreateInput = {
+    id?: number
+    email: string
+    message: string
+    category?: FeatureRequestCreatecategoryInput | string[]
+    userBase?: FeatureRequestCreateuserBaseInput | string[]
+    receivedOn?: Date | string
+  }
+
+  export type FeatureRequestUpdateInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    category?: FeatureRequestUpdatecategoryInput | string[]
+    userBase?: FeatureRequestUpdateuserBaseInput | string[]
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FeatureRequestUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    category?: FeatureRequestUpdatecategoryInput | string[]
+    userBase?: FeatureRequestUpdateuserBaseInput | string[]
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FeatureRequestCreateManyInput = {
+    id?: number
+    email: string
+    message: string
+    category?: FeatureRequestCreatecategoryInput | string[]
+    userBase?: FeatureRequestCreateuserBaseInput | string[]
+    receivedOn?: Date | string
+  }
+
+  export type FeatureRequestUpdateManyMutationInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    category?: FeatureRequestUpdatecategoryInput | string[]
+    userBase?: FeatureRequestUpdateuserBaseInput | string[]
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FeatureRequestUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    category?: FeatureRequestUpdatecategoryInput | string[]
+    userBase?: FeatureRequestUpdateuserBaseInput | string[]
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type WaitlistRequestCreateInput = {
+    email: string
+    receivedOn?: Date | string
+    emailsSent?: number
+  }
+
+  export type WaitlistRequestUncheckedCreateInput = {
+    id?: number
+    email: string
+    receivedOn?: Date | string
+    emailsSent?: number
+  }
+
+  export type WaitlistRequestUpdateInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+    emailsSent?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type WaitlistRequestUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+    emailsSent?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type WaitlistRequestCreateManyInput = {
+    id?: number
+    email: string
+    receivedOn?: Date | string
+    emailsSent?: number
+  }
+
+  export type WaitlistRequestUpdateManyMutationInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+    emailsSent?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type WaitlistRequestUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    receivedOn?: DateTimeFieldUpdateOperationsInput | Date | string
+    emailsSent?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type BusinessContactCreateInput = {
+    companyName: string
+    contactName: string
+    contactPreference: string
+    email?: string | null
+    phone?: string | null
+    message: string
+    purpose?: string | null
+  }
+
+  export type BusinessContactUncheckedCreateInput = {
+    id?: number
+    companyName: string
+    contactName: string
+    contactPreference: string
+    email?: string | null
+    phone?: string | null
+    message: string
+    purpose?: string | null
+  }
+
+  export type BusinessContactUpdateInput = {
+    companyName?: StringFieldUpdateOperationsInput | string
+    contactName?: StringFieldUpdateOperationsInput | string
+    contactPreference?: StringFieldUpdateOperationsInput | string
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    message?: StringFieldUpdateOperationsInput | string
+    purpose?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type BusinessContactUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    companyName?: StringFieldUpdateOperationsInput | string
+    contactName?: StringFieldUpdateOperationsInput | string
+    contactPreference?: StringFieldUpdateOperationsInput | string
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    message?: StringFieldUpdateOperationsInput | string
+    purpose?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type BusinessContactCreateManyInput = {
+    id?: number
+    companyName: string
+    contactName: string
+    contactPreference: string
+    email?: string | null
+    phone?: string | null
+    message: string
+    purpose?: string | null
+  }
+
+  export type BusinessContactUpdateManyMutationInput = {
+    companyName?: StringFieldUpdateOperationsInput | string
+    contactName?: StringFieldUpdateOperationsInput | string
+    contactPreference?: StringFieldUpdateOperationsInput | string
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    message?: StringFieldUpdateOperationsInput | string
+    purpose?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type BusinessContactUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    companyName?: StringFieldUpdateOperationsInput | string
+    contactName?: StringFieldUpdateOperationsInput | string
+    contactPreference?: StringFieldUpdateOperationsInput | string
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    message?: StringFieldUpdateOperationsInput | string
+    purpose?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -52561,12 +53035,15 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type StringNullableListFilter<$PrismaModel = never> = {
-    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    has?: string | StringFieldRefInput<$PrismaModel> | null
-    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
-    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
-    isEmpty?: boolean
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type DateTimeFilter<$PrismaModel = never> = {
@@ -52578,230 +53055,6 @@ export namespace Prisma {
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
-  export type FeatureRequestOrderByRelevanceInput = {
-    fields: FeatureRequestOrderByRelevanceFieldEnum | FeatureRequestOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
-  }
-
-  export type FeatureRequestCountOrderByAggregateInput = {
-    id?: SortOrder
-    email?: SortOrder
-    message?: SortOrder
-    category?: SortOrder
-    userBase?: SortOrder
-    receivedOn?: SortOrder
-  }
-
-  export type FeatureRequestAvgOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type FeatureRequestMaxOrderByAggregateInput = {
-    id?: SortOrder
-    email?: SortOrder
-    message?: SortOrder
-    receivedOn?: SortOrder
-  }
-
-  export type FeatureRequestMinOrderByAggregateInput = {
-    id?: SortOrder
-    email?: SortOrder
-    message?: SortOrder
-    receivedOn?: SortOrder
-  }
-
-  export type FeatureRequestSumOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
-  export type StringWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
-    mode?: QueryMode
-    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedStringFilter<$PrismaModel>
-    _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
-  export type WaitlistRequestOrderByRelevanceInput = {
-    fields: WaitlistRequestOrderByRelevanceFieldEnum | WaitlistRequestOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
-  }
-
-  export type WaitlistRequestCountOrderByAggregateInput = {
-    id?: SortOrder
-    email?: SortOrder
-    receivedOn?: SortOrder
-    emailsSent?: SortOrder
-  }
-
-  export type WaitlistRequestAvgOrderByAggregateInput = {
-    id?: SortOrder
-    emailsSent?: SortOrder
-  }
-
-  export type WaitlistRequestMaxOrderByAggregateInput = {
-    id?: SortOrder
-    email?: SortOrder
-    receivedOn?: SortOrder
-    emailsSent?: SortOrder
-  }
-
-  export type WaitlistRequestMinOrderByAggregateInput = {
-    id?: SortOrder
-    email?: SortOrder
-    receivedOn?: SortOrder
-    emailsSent?: SortOrder
-  }
-
-  export type WaitlistRequestSumOrderByAggregateInput = {
-    id?: SortOrder
-    emailsSent?: SortOrder
-  }
-
-  export type StringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
-    mode?: QueryMode
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
-  }
-
-  export type SortOrderInput = {
-    sort: SortOrder
-    nulls?: NullsOrder
-  }
-
-  export type BusinessContactOrderByRelevanceInput = {
-    fields: BusinessContactOrderByRelevanceFieldEnum | BusinessContactOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
-  }
-
-  export type BusinessContactCountOrderByAggregateInput = {
-    id?: SortOrder
-    companyName?: SortOrder
-    contactName?: SortOrder
-    contactPreference?: SortOrder
-    email?: SortOrder
-    phone?: SortOrder
-    message?: SortOrder
-    purpose?: SortOrder
-    createdAt?: SortOrder
-  }
-
-  export type BusinessContactAvgOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type BusinessContactMaxOrderByAggregateInput = {
-    id?: SortOrder
-    companyName?: SortOrder
-    contactName?: SortOrder
-    contactPreference?: SortOrder
-    email?: SortOrder
-    phone?: SortOrder
-    message?: SortOrder
-    purpose?: SortOrder
-    createdAt?: SortOrder
-  }
-
-  export type BusinessContactMinOrderByAggregateInput = {
-    id?: SortOrder
-    companyName?: SortOrder
-    contactName?: SortOrder
-    contactPreference?: SortOrder
-    email?: SortOrder
-    phone?: SortOrder
-    message?: SortOrder
-    purpose?: SortOrder
-    createdAt?: SortOrder
-  }
-
-  export type BusinessContactSumOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
-    mode?: QueryMode
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
-  }
-
-  export type IntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type MdxNoteListRelationFilter = {
@@ -52857,6 +53110,11 @@ export namespace Prisma {
     none?: EquationWhereInput
   }
 
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
   export type MdxNoteOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
@@ -52898,6 +53156,8 @@ export namespace Prisma {
   export type SubjectCountOrderByAggregateInput = {
     value?: SortOrder
     kanbanId?: SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type SubjectAvgOrderByAggregateInput = {
@@ -52907,15 +53167,38 @@ export namespace Prisma {
   export type SubjectMaxOrderByAggregateInput = {
     value?: SortOrder
     kanbanId?: SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type SubjectMinOrderByAggregateInput = {
     value?: SortOrder
     kanbanId?: SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type SubjectSumOrderByAggregateInput = {
     kanbanId?: SortOrder
+  }
+
+  export type StringWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
+    mode?: QueryMode
+    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
   }
 
   export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -52934,6 +53217,20 @@ export namespace Prisma {
     _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
   export type TopicOrderByRelevanceInput = {
     fields: TopicOrderByRelevanceFieldEnum | TopicOrderByRelevanceFieldEnum[]
     sort: SortOrder
@@ -52943,6 +53240,8 @@ export namespace Prisma {
   export type TopicCountOrderByAggregateInput = {
     value?: SortOrder
     kanbanId?: SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type TopicAvgOrderByAggregateInput = {
@@ -52952,11 +53251,15 @@ export namespace Prisma {
   export type TopicMaxOrderByAggregateInput = {
     value?: SortOrder
     kanbanId?: SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type TopicMinOrderByAggregateInput = {
     value?: SortOrder
     kanbanId?: SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type TopicSumOrderByAggregateInput = {
@@ -52972,6 +53275,8 @@ export namespace Prisma {
   export type TagCountOrderByAggregateInput = {
     value?: SortOrder
     kanbanId?: SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type TagAvgOrderByAggregateInput = {
@@ -52981,15 +53286,35 @@ export namespace Prisma {
   export type TagMaxOrderByAggregateInput = {
     value?: SortOrder
     kanbanId?: SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type TagMinOrderByAggregateInput = {
     value?: SortOrder
     kanbanId?: SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type TagSumOrderByAggregateInput = {
     kanbanId?: SortOrder
+  }
+
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type BoolFilter<$PrismaModel = never> = {
@@ -53027,6 +53352,25 @@ export namespace Prisma {
     createdAt?: SortOrder
   }
 
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
@@ -53054,6 +53398,17 @@ export namespace Prisma {
   export type DailyFocusMinOrderByAggregateInput = {
     value?: SortOrder
     createdAt?: SortOrder
+  }
+
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type EnumautoSettingFilter<$PrismaModel = never> = {
@@ -53096,6 +53451,22 @@ export namespace Prisma {
 
   export type AutoSettingSumOrderByAggregateInput = {
     id?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type EnumautoSettingWithAggregatesFilter<$PrismaModel = never> = {
@@ -53424,11 +53795,12 @@ export namespace Prisma {
     id?: SortOrder
   }
 
-  export type EnumTechnologiesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Technologies | EnumTechnologiesFieldRefInput<$PrismaModel>
-    in?: $Enums.Technologies[] | ListEnumTechnologiesFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Technologies[] | ListEnumTechnologiesFieldRefInput<$PrismaModel>
-    not?: NestedEnumTechnologiesFilter<$PrismaModel> | $Enums.Technologies
+  export type StringNullableListFilter<$PrismaModel = never> = {
+    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    has?: string | StringFieldRefInput<$PrismaModel> | null
+    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
+    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
+    isEmpty?: boolean
   }
 
   export type SnippetOrderByRelevanceInput = {
@@ -53443,6 +53815,7 @@ export namespace Prisma {
     description?: SortOrder
     keywords?: SortOrder
     language?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type SnippetAvgOrderByAggregateInput = {
@@ -53454,6 +53827,7 @@ export namespace Prisma {
     content?: SortOrder
     description?: SortOrder
     language?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type SnippetMinOrderByAggregateInput = {
@@ -53461,20 +53835,11 @@ export namespace Prisma {
     content?: SortOrder
     description?: SortOrder
     language?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type SnippetSumOrderByAggregateInput = {
     id?: SortOrder
-  }
-
-  export type EnumTechnologiesWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Technologies | EnumTechnologiesFieldRefInput<$PrismaModel>
-    in?: $Enums.Technologies[] | ListEnumTechnologiesFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Technologies[] | ListEnumTechnologiesFieldRefInput<$PrismaModel>
-    not?: NestedEnumTechnologiesWithAggregatesFilter<$PrismaModel> | $Enums.Technologies
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumTechnologiesFilter<$PrismaModel>
-    _max?: NestedEnumTechnologiesFilter<$PrismaModel>
   }
   export type JsonFilter<$PrismaModel = never> = 
     | PatchUndefined<
@@ -53587,28 +53952,6 @@ export namespace Prisma {
     _min?: NestedFloatFilter<$PrismaModel>
     _max?: NestedFloatFilter<$PrismaModel>
   }
-  export type JsonNullableFilter<$PrismaModel = never> = 
-    | PatchUndefined<
-        Either<Required<JsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonNullableFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>
-
-  export type JsonNullableFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string[]
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-  }
 
   export type RelatedValuesListRelationFilter = {
     every?: RelatedValuesWhereInput
@@ -53637,6 +53980,7 @@ export namespace Prisma {
     variables?: SortOrder
     keywords?: SortOrder
     createdAt?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type EquationAvgOrderByAggregateInput = {
@@ -53651,6 +53995,7 @@ export namespace Prisma {
     content?: SortOrder
     asPython?: SortOrder
     createdAt?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type EquationMinOrderByAggregateInput = {
@@ -53661,35 +54006,11 @@ export namespace Prisma {
     content?: SortOrder
     asPython?: SortOrder
     createdAt?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type EquationSumOrderByAggregateInput = {
     id?: SortOrder
-  }
-  export type JsonNullableWithAggregatesFilter<$PrismaModel = never> = 
-    | PatchUndefined<
-        Either<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
-
-  export type JsonNullableWithAggregatesFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string[]
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedJsonNullableFilter<$PrismaModel>
-    _max?: NestedJsonNullableFilter<$PrismaModel>
   }
 
   export type MdxNoteNullableRelationFilter = {
@@ -53709,6 +54030,8 @@ export namespace Prisma {
     content?: SortOrder
     alphabeticalLabel?: SortOrder
     mdxNoteId?: SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type DefinitionAvgOrderByAggregateInput = {
@@ -53721,6 +54044,8 @@ export namespace Prisma {
     content?: SortOrder
     alphabeticalLabel?: SortOrder
     mdxNoteId?: SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type DefinitionMinOrderByAggregateInput = {
@@ -53729,6 +54054,8 @@ export namespace Prisma {
     content?: SortOrder
     alphabeticalLabel?: SortOrder
     mdxNoteId?: SortOrder
+    createdAt?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type DefinitionSumOrderByAggregateInput = {
@@ -53757,6 +54084,8 @@ export namespace Prisma {
     landingImageAlign?: SortOrder
     lockedLandingImage?: SortOrder
     cleanOnSync?: SortOrder
+    plotTheme?: SortOrder
+    pluginSettings?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
   }
@@ -53774,6 +54103,7 @@ export namespace Prisma {
     landingImageAlign?: SortOrder
     lockedLandingImage?: SortOrder
     cleanOnSync?: SortOrder
+    plotTheme?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
   }
@@ -53787,6 +54117,7 @@ export namespace Prisma {
     landingImageAlign?: SortOrder
     lockedLandingImage?: SortOrder
     cleanOnSync?: SortOrder
+    plotTheme?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
   }
@@ -54065,6 +54396,7 @@ export namespace Prisma {
     bookmarked?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type MdxNoteAvgOrderByAggregateInput = {
@@ -54095,6 +54427,7 @@ export namespace Prisma {
     bookmarked?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type MdxNoteMinOrderByAggregateInput = {
@@ -54119,6 +54452,7 @@ export namespace Prisma {
     bookmarked?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type MdxNoteSumOrderByAggregateInput = {
@@ -54173,6 +54507,7 @@ export namespace Prisma {
     bookmarked?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type IpynbAvgOrderByAggregateInput = {
@@ -54194,6 +54529,7 @@ export namespace Prisma {
     bookmarked?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type IpynbMinOrderByAggregateInput = {
@@ -54209,6 +54545,7 @@ export namespace Prisma {
     bookmarked?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type IpynbSumOrderByAggregateInput = {
@@ -54228,6 +54565,7 @@ export namespace Prisma {
     label?: SortOrder
     createdAt?: SortOrder
     lastUpdate?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type ToDoListAvgOrderByAggregateInput = {
@@ -54239,6 +54577,7 @@ export namespace Prisma {
     label?: SortOrder
     createdAt?: SortOrder
     lastUpdate?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type ToDoListMinOrderByAggregateInput = {
@@ -54246,6 +54585,7 @@ export namespace Prisma {
     label?: SortOrder
     createdAt?: SortOrder
     lastUpdate?: SortOrder
+    lastAccess?: SortOrder
   }
 
   export type ToDoListSumOrderByAggregateInput = {
@@ -54268,13 +54608,6 @@ export namespace Prisma {
     in?: $Enums.TaskCategory[] | ListEnumTaskCategoryFieldRefInput<$PrismaModel> | null
     notIn?: $Enums.TaskCategory[] | ListEnumTaskCategoryFieldRefInput<$PrismaModel> | null
     not?: NestedEnumTaskCategoryNullableFilter<$PrismaModel> | $Enums.TaskCategory | null
-  }
-
-  export type EnumToDoListStatusFilter<$PrismaModel = never> = {
-    equals?: $Enums.ToDoListStatus | EnumToDoListStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    notIn?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    not?: NestedEnumToDoListStatusFilter<$PrismaModel> | $Enums.ToDoListStatus
   }
 
   export type ToDoNullableRelationFilter = {
@@ -54305,6 +54638,7 @@ export namespace Prisma {
     status?: SortOrder
     priority?: SortOrder
     toDoListId?: SortOrder
+    completedOn?: SortOrder
   }
 
   export type ToDoAvgOrderByAggregateInput = {
@@ -54326,6 +54660,7 @@ export namespace Prisma {
     status?: SortOrder
     priority?: SortOrder
     toDoListId?: SortOrder
+    completedOn?: SortOrder
   }
 
   export type ToDoMinOrderByAggregateInput = {
@@ -54340,6 +54675,7 @@ export namespace Prisma {
     status?: SortOrder
     priority?: SortOrder
     toDoListId?: SortOrder
+    completedOn?: SortOrder
   }
 
   export type ToDoSumOrderByAggregateInput = {
@@ -54371,16 +54707,6 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedEnumTaskCategoryNullableFilter<$PrismaModel>
     _max?: NestedEnumTaskCategoryNullableFilter<$PrismaModel>
-  }
-
-  export type EnumToDoListStatusWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.ToDoListStatus | EnumToDoListStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    notIn?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    not?: NestedEnumToDoListStatusWithAggregatesFilter<$PrismaModel> | $Enums.ToDoListStatus
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumToDoListStatusFilter<$PrismaModel>
-    _max?: NestedEnumToDoListStatusFilter<$PrismaModel>
   }
 
   export type KanBanListNullableRelationFilter = {
@@ -55053,42 +55379,125 @@ export namespace Prisma {
     id?: SortOrder
   }
 
-  export type FeatureRequestCreatecategoryInput = {
-    set: string[]
+  export type FeatureRequestOrderByRelevanceInput = {
+    fields: FeatureRequestOrderByRelevanceFieldEnum | FeatureRequestOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
   }
 
-  export type FeatureRequestCreateuserBaseInput = {
-    set: string[]
+  export type FeatureRequestCountOrderByAggregateInput = {
+    id?: SortOrder
+    email?: SortOrder
+    message?: SortOrder
+    category?: SortOrder
+    userBase?: SortOrder
+    receivedOn?: SortOrder
   }
 
-  export type StringFieldUpdateOperationsInput = {
-    set?: string
+  export type FeatureRequestAvgOrderByAggregateInput = {
+    id?: SortOrder
   }
 
-  export type FeatureRequestUpdatecategoryInput = {
-    set?: string[]
-    push?: string | string[]
+  export type FeatureRequestMaxOrderByAggregateInput = {
+    id?: SortOrder
+    email?: SortOrder
+    message?: SortOrder
+    receivedOn?: SortOrder
   }
 
-  export type FeatureRequestUpdateuserBaseInput = {
-    set?: string[]
-    push?: string | string[]
+  export type FeatureRequestMinOrderByAggregateInput = {
+    id?: SortOrder
+    email?: SortOrder
+    message?: SortOrder
+    receivedOn?: SortOrder
   }
 
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
+  export type FeatureRequestSumOrderByAggregateInput = {
+    id?: SortOrder
   }
 
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
+  export type WaitlistRequestOrderByRelevanceInput = {
+    fields: WaitlistRequestOrderByRelevanceFieldEnum | WaitlistRequestOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
   }
 
-  export type NullableStringFieldUpdateOperationsInput = {
-    set?: string | null
+  export type WaitlistRequestCountOrderByAggregateInput = {
+    id?: SortOrder
+    email?: SortOrder
+    receivedOn?: SortOrder
+    emailsSent?: SortOrder
+  }
+
+  export type WaitlistRequestAvgOrderByAggregateInput = {
+    id?: SortOrder
+    emailsSent?: SortOrder
+  }
+
+  export type WaitlistRequestMaxOrderByAggregateInput = {
+    id?: SortOrder
+    email?: SortOrder
+    receivedOn?: SortOrder
+    emailsSent?: SortOrder
+  }
+
+  export type WaitlistRequestMinOrderByAggregateInput = {
+    id?: SortOrder
+    email?: SortOrder
+    receivedOn?: SortOrder
+    emailsSent?: SortOrder
+  }
+
+  export type WaitlistRequestSumOrderByAggregateInput = {
+    id?: SortOrder
+    emailsSent?: SortOrder
+  }
+
+  export type BusinessContactOrderByRelevanceInput = {
+    fields: BusinessContactOrderByRelevanceFieldEnum | BusinessContactOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type BusinessContactCountOrderByAggregateInput = {
+    id?: SortOrder
+    companyName?: SortOrder
+    contactName?: SortOrder
+    contactPreference?: SortOrder
+    email?: SortOrder
+    phone?: SortOrder
+    message?: SortOrder
+    purpose?: SortOrder
+  }
+
+  export type BusinessContactAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type BusinessContactMaxOrderByAggregateInput = {
+    id?: SortOrder
+    companyName?: SortOrder
+    contactName?: SortOrder
+    contactPreference?: SortOrder
+    email?: SortOrder
+    phone?: SortOrder
+    message?: SortOrder
+    purpose?: SortOrder
+  }
+
+  export type BusinessContactMinOrderByAggregateInput = {
+    id?: SortOrder
+    companyName?: SortOrder
+    contactName?: SortOrder
+    contactPreference?: SortOrder
+    email?: SortOrder
+    phone?: SortOrder
+    message?: SortOrder
+    purpose?: SortOrder
+  }
+
+  export type BusinessContactSumOrderByAggregateInput = {
+    id?: SortOrder
   }
 
   export type MdxNoteCreateNestedManyWithoutSubjectsInput = {
@@ -55191,6 +55600,14 @@ export namespace Prisma {
     create?: XOR<EquationCreateWithoutSubjectsInput, EquationUncheckedCreateWithoutSubjectsInput> | EquationCreateWithoutSubjectsInput[] | EquationUncheckedCreateWithoutSubjectsInput[]
     connectOrCreate?: EquationCreateOrConnectWithoutSubjectsInput | EquationCreateOrConnectWithoutSubjectsInput[]
     connect?: EquationWhereUniqueInput | EquationWhereUniqueInput[]
+  }
+
+  export type StringFieldUpdateOperationsInput = {
+    set?: string
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
   }
 
   export type MdxNoteUpdateManyWithoutSubjectsNestedInput = {
@@ -56059,12 +56476,24 @@ export namespace Prisma {
     deleteMany?: ToDoListScalarWhereInput | ToDoListScalarWhereInput[]
   }
 
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+  }
+
   export type BoolFieldUpdateOperationsInput = {
     set?: boolean
   }
 
   export type EnumautoSettingFieldUpdateOperationsInput = {
     set?: $Enums.autoSetting
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type BibEntryCreateNestedManyWithoutReadingListInput = {
@@ -56550,10 +56979,6 @@ export namespace Prisma {
   export type SnippetUpdatekeywordsInput = {
     set?: string[]
     push?: string | string[]
-  }
-
-  export type EnumTechnologiesFieldUpdateOperationsInput = {
-    set?: $Enums.Technologies
   }
 
   export type RelatedValuesCreateequationIdInput = {
@@ -58065,10 +58490,6 @@ export namespace Prisma {
     set?: $Enums.TaskCategory | null
   }
 
-  export type EnumToDoListStatusFieldUpdateOperationsInput = {
-    set?: $Enums.ToDoListStatus
-  }
-
   export type MdxNoteUpdateManyWithoutToDoNestedInput = {
     create?: XOR<MdxNoteCreateWithoutToDoInput, MdxNoteUncheckedCreateWithoutToDoInput> | MdxNoteCreateWithoutToDoInput[] | MdxNoteUncheckedCreateWithoutToDoInput[]
     connectOrCreate?: MdxNoteCreateOrConnectWithoutToDoInput | MdxNoteCreateOrConnectWithoutToDoInput[]
@@ -58728,15 +59149,22 @@ export namespace Prisma {
     update?: XOR<XOR<DietUpdateToOneWithWhereWithoutHealthReportInput, DietUpdateWithoutHealthReportInput>, DietUncheckedUpdateWithoutHealthReportInput>
   }
 
-  export type NestedIntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
+  export type FeatureRequestCreatecategoryInput = {
+    set: string[]
+  }
+
+  export type FeatureRequestCreateuserBaseInput = {
+    set: string[]
+  }
+
+  export type FeatureRequestUpdatecategoryInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type FeatureRequestUpdateuserBaseInput = {
+    set?: string[]
+    push?: string | string[]
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -58754,6 +59182,17 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type NestedDateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -58763,33 +59202,6 @@ export namespace Prisma {
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
-  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
-  export type NestedFloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
@@ -58808,6 +59220,44 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type NestedIntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -58839,6 +59289,11 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -58857,49 +59312,6 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
-  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
-  }
-
-  export type NestedFloatNullableFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
-  }
-
-  export type NestedBoolFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
-  }
-
   export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
@@ -58915,6 +59327,33 @@ export namespace Prisma {
     not?: NestedEnumautoSettingFilter<$PrismaModel> | $Enums.autoSetting
   }
 
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
   export type NestedEnumautoSettingWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.autoSetting | EnumautoSettingFieldRefInput<$PrismaModel>
     in?: $Enums.autoSetting[] | ListEnumautoSettingFieldRefInput<$PrismaModel>
@@ -58923,23 +59362,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumautoSettingFilter<$PrismaModel>
     _max?: NestedEnumautoSettingFilter<$PrismaModel>
-  }
-
-  export type NestedEnumTechnologiesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Technologies | EnumTechnologiesFieldRefInput<$PrismaModel>
-    in?: $Enums.Technologies[] | ListEnumTechnologiesFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Technologies[] | ListEnumTechnologiesFieldRefInput<$PrismaModel>
-    not?: NestedEnumTechnologiesFilter<$PrismaModel> | $Enums.Technologies
-  }
-
-  export type NestedEnumTechnologiesWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Technologies | EnumTechnologiesFieldRefInput<$PrismaModel>
-    in?: $Enums.Technologies[] | ListEnumTechnologiesFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Technologies[] | ListEnumTechnologiesFieldRefInput<$PrismaModel>
-    not?: NestedEnumTechnologiesWithAggregatesFilter<$PrismaModel> | $Enums.Technologies
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumTechnologiesFilter<$PrismaModel>
-    _max?: NestedEnumTechnologiesFilter<$PrismaModel>
   }
   export type NestedJsonFilter<$PrismaModel = never> = 
     | PatchUndefined<
@@ -58978,28 +59400,6 @@ export namespace Prisma {
     _sum?: NestedFloatFilter<$PrismaModel>
     _min?: NestedFloatFilter<$PrismaModel>
     _max?: NestedFloatFilter<$PrismaModel>
-  }
-  export type NestedJsonNullableFilter<$PrismaModel = never> = 
-    | PatchUndefined<
-        Either<Required<NestedJsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>,
-        Required<NestedJsonNullableFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>
-
-  export type NestedJsonNullableFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string[]
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
   export type NestedEnumImageAlignmentFilter<$PrismaModel = never> = {
@@ -59083,13 +59483,6 @@ export namespace Prisma {
     not?: NestedEnumTaskCategoryNullableFilter<$PrismaModel> | $Enums.TaskCategory | null
   }
 
-  export type NestedEnumToDoListStatusFilter<$PrismaModel = never> = {
-    equals?: $Enums.ToDoListStatus | EnumToDoListStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    notIn?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    not?: NestedEnumToDoListStatusFilter<$PrismaModel> | $Enums.ToDoListStatus
-  }
-
   export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
@@ -59112,16 +59505,6 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedEnumTaskCategoryNullableFilter<$PrismaModel>
     _max?: NestedEnumTaskCategoryNullableFilter<$PrismaModel>
-  }
-
-  export type NestedEnumToDoListStatusWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.ToDoListStatus | EnumToDoListStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    notIn?: $Enums.ToDoListStatus[] | ListEnumToDoListStatusFieldRefInput<$PrismaModel>
-    not?: NestedEnumToDoListStatusWithAggregatesFilter<$PrismaModel> | $Enums.ToDoListStatus
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumToDoListStatusFilter<$PrismaModel>
-    _max?: NestedEnumToDoListStatusFilter<$PrismaModel>
   }
 
   export type NestedEnumTERTIARY_TOGGLEFilter<$PrismaModel = never> = {
@@ -59181,6 +59564,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
     citations?: BibEntryCreateNestedManyWithoutMdxNotesInput
@@ -59216,6 +59600,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
     citations?: BibEntryUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -59244,6 +59629,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicCreateNestedManyWithoutIpynbNotesInput
     citations?: BibEntryCreateNestedManyWithoutIpynbNotesInput
@@ -59267,6 +59653,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicUncheckedCreateNestedManyWithoutIpynbNotesInput
     citations?: BibEntryUncheckedCreateNestedManyWithoutIpynbNotesInput
@@ -59365,6 +59752,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
+    lastAccess?: Date | string
     tasks?: ToDoCreateNestedManyWithoutToDoListInput
     tags?: TagCreateNestedManyWithoutTodoListInput
     topics?: TopicCreateNestedManyWithoutTodoListInput
@@ -59375,6 +59763,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
+    lastAccess?: Date | string
     tasks?: ToDoUncheckedCreateNestedManyWithoutToDoListInput
     tags?: TagUncheckedCreateNestedManyWithoutTodoListInput
     topics?: TopicUncheckedCreateNestedManyWithoutTodoListInput
@@ -59392,8 +59781,9 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
     tags?: TagCreateNestedManyWithoutToDoInput
     topics?: TopicCreateNestedManyWithoutToDoInput
@@ -59411,9 +59801,10 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteUncheckedCreateNestedManyWithoutToDoInput
     tags?: TagUncheckedCreateNestedManyWithoutToDoInput
     topics?: TopicUncheckedCreateNestedManyWithoutToDoInput
@@ -59538,10 +59929,11 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesCreateNestedManyWithoutEquationsInput
     tags?: TagCreateNestedManyWithoutEquationsInput
     topics?: TopicCreateNestedManyWithoutEquationsInput
@@ -59555,10 +59947,11 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesUncheckedCreateNestedManyWithoutEquationsInput
     tags?: TagUncheckedCreateNestedManyWithoutEquationsInput
     topics?: TopicUncheckedCreateNestedManyWithoutEquationsInput
@@ -59614,6 +60007,7 @@ export namespace Prisma {
     bookmarked?: BoolFilter<"MdxNote"> | boolean
     firstSync?: DateTimeFilter<"MdxNote"> | Date | string
     lastSync?: DateTimeFilter<"MdxNote"> | Date | string
+    lastAccess?: DateTimeFilter<"MdxNote"> | Date | string
   }
 
   export type IpynbUpsertWithWhereUniqueWithoutSubjectsInput = {
@@ -59651,6 +60045,7 @@ export namespace Prisma {
     bookmarked?: BoolFilter<"Ipynb"> | boolean
     firstSync?: DateTimeFilter<"Ipynb"> | Date | string
     lastSync?: DateTimeFilter<"Ipynb"> | Date | string
+    lastAccess?: DateTimeFilter<"Ipynb"> | Date | string
   }
 
   export type QAPairUpsertWithWhereUniqueWithoutSubjectsInput = {
@@ -59764,6 +60159,7 @@ export namespace Prisma {
     label?: StringFilter<"ToDoList"> | string
     createdAt?: DateTimeFilter<"ToDoList"> | Date | string
     lastUpdate?: DateTimeFilter<"ToDoList"> | Date | string
+    lastAccess?: DateTimeFilter<"ToDoList"> | Date | string
   }
 
   export type ToDoUpsertWithWhereUniqueWithoutSubjectsInput = {
@@ -59794,9 +60190,10 @@ export namespace Prisma {
     parentId?: IntNullableFilter<"ToDo"> | number | null
     category?: EnumTaskCategoryNullableFilter<"ToDo"> | $Enums.TaskCategory | null
     bookmarked?: BoolFilter<"ToDo"> | boolean
-    status?: EnumToDoListStatusFilter<"ToDo"> | $Enums.ToDoListStatus
+    status?: StringFilter<"ToDo"> | string
     priority?: IntFilter<"ToDo"> | number
     toDoListId?: IntNullableFilter<"ToDo"> | number | null
+    completedOn?: DateTimeNullableFilter<"ToDo"> | Date | string | null
   }
 
   export type BibEntryUpsertWithWhereUniqueWithoutSubjectsInput = {
@@ -59889,10 +60286,11 @@ export namespace Prisma {
     desc?: StringNullableFilter<"Equation"> | string | null
     content?: StringFilter<"Equation"> | string
     asPython?: StringNullableFilter<"Equation"> | string | null
-    variableLegend?: JsonNullableFilter<"Equation">
+    variableLegend?: JsonFilter<"Equation">
     variables?: StringNullableListFilter<"Equation">
     keywords?: StringNullableListFilter<"Equation">
     createdAt?: DateTimeFilter<"Equation"> | Date | string
+    lastAccess?: DateTimeFilter<"Equation"> | Date | string
   }
 
   export type MdxNoteCreateWithoutTopicsInput = {
@@ -59918,6 +60316,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
     citations?: BibEntryCreateNestedManyWithoutMdxNotesInput
@@ -59953,6 +60352,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
     citations?: BibEntryUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -59981,6 +60381,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectCreateNestedManyWithoutIpynbNotesInput
     citations?: BibEntryCreateNestedManyWithoutIpynbNotesInput
@@ -60004,6 +60405,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutIpynbNotesInput
     citations?: BibEntryUncheckedCreateNestedManyWithoutIpynbNotesInput
@@ -60081,8 +60483,9 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
     tags?: TagCreateNestedManyWithoutToDoInput
     subjects?: SubjectCreateNestedManyWithoutToDoInput
@@ -60100,9 +60503,10 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteUncheckedCreateNestedManyWithoutToDoInput
     tags?: TagUncheckedCreateNestedManyWithoutToDoInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutToDoInput
@@ -60142,6 +60546,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
+    lastAccess?: Date | string
     tasks?: ToDoCreateNestedManyWithoutToDoListInput
     tags?: TagCreateNestedManyWithoutTodoListInput
     subjects?: SubjectCreateNestedManyWithoutTodoListInput
@@ -60152,6 +60557,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
+    lastAccess?: Date | string
     tasks?: ToDoUncheckedCreateNestedManyWithoutToDoListInput
     tags?: TagUncheckedCreateNestedManyWithoutTodoListInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutTodoListInput
@@ -60275,10 +60681,11 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesCreateNestedManyWithoutEquationsInput
     tags?: TagCreateNestedManyWithoutEquationsInput
     subjects?: SubjectCreateNestedManyWithoutEquationsInput
@@ -60292,10 +60699,11 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesUncheckedCreateNestedManyWithoutEquationsInput
     tags?: TagUncheckedCreateNestedManyWithoutEquationsInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutEquationsInput
@@ -60488,6 +60896,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     citations?: BibEntryCreateNestedManyWithoutMdxNotesInput
@@ -60523,6 +60932,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     citations?: BibEntryUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -60658,6 +61068,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectCreateNestedManyWithoutIpynbNotesInput
     citations?: BibEntryCreateNestedManyWithoutIpynbNotesInput
@@ -60681,6 +61092,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutIpynbNotesInput
     citations?: BibEntryUncheckedCreateNestedManyWithoutIpynbNotesInput
@@ -60757,10 +61169,11 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesCreateNestedManyWithoutEquationsInput
     topics?: TopicCreateNestedManyWithoutEquationsInput
     subjects?: SubjectCreateNestedManyWithoutEquationsInput
@@ -60774,10 +61187,11 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesUncheckedCreateNestedManyWithoutEquationsInput
     topics?: TopicUncheckedCreateNestedManyWithoutEquationsInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutEquationsInput
@@ -60796,8 +61210,9 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
     topics?: TopicCreateNestedManyWithoutToDoInput
     subjects?: SubjectCreateNestedManyWithoutToDoInput
@@ -60815,9 +61230,10 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteUncheckedCreateNestedManyWithoutToDoInput
     topics?: TopicUncheckedCreateNestedManyWithoutToDoInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutToDoInput
@@ -60857,6 +61273,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
+    lastAccess?: Date | string
     tasks?: ToDoCreateNestedManyWithoutToDoListInput
     topics?: TopicCreateNestedManyWithoutTodoListInput
     subjects?: SubjectCreateNestedManyWithoutTodoListInput
@@ -60867,6 +61284,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
+    lastAccess?: Date | string
     tasks?: ToDoUncheckedCreateNestedManyWithoutToDoListInput
     topics?: TopicUncheckedCreateNestedManyWithoutTodoListInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutTodoListInput
@@ -61165,6 +61583,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
@@ -61200,6 +61619,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -61228,6 +61648,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectCreateNestedManyWithoutIpynbNotesInput
@@ -61251,6 +61672,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicUncheckedCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutIpynbNotesInput
@@ -61346,6 +61768,8 @@ export namespace Prisma {
 
   export type TagCreateWithoutBibEntriesInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
     QAPair?: QAPairCreateNestedManyWithoutTagsInput
@@ -61359,6 +61783,8 @@ export namespace Prisma {
   export type TagUncheckedCreateWithoutBibEntriesInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTagsInput
@@ -61375,6 +61801,8 @@ export namespace Prisma {
 
   export type TopicCreateWithoutBibEntriesInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
@@ -61388,6 +61816,8 @@ export namespace Prisma {
   export type TopicUncheckedCreateWithoutBibEntriesInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
@@ -61404,6 +61834,8 @@ export namespace Prisma {
 
   export type SubjectCreateWithoutBibEntriesInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
@@ -61417,6 +61849,8 @@ export namespace Prisma {
   export type SubjectUncheckedCreateWithoutBibEntriesInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
@@ -61454,6 +61888,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
@@ -61489,6 +61924,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -61517,6 +61953,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectCreateNestedManyWithoutIpynbNotesInput
@@ -61540,6 +61977,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicUncheckedCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutIpynbNotesInput
@@ -61645,6 +62083,8 @@ export namespace Prisma {
     NOT?: TagScalarWhereInput | TagScalarWhereInput[]
     value?: StringFilter<"Tag"> | string
     kanbanId?: IntNullableFilter<"Tag"> | number | null
+    createdAt?: DateTimeFilter<"Tag"> | Date | string
+    lastAccess?: DateTimeFilter<"Tag"> | Date | string
   }
 
   export type TopicUpsertWithWhereUniqueWithoutBibEntriesInput = {
@@ -61669,6 +62109,8 @@ export namespace Prisma {
     NOT?: TopicScalarWhereInput | TopicScalarWhereInput[]
     value?: StringFilter<"Topic"> | string
     kanbanId?: IntNullableFilter<"Topic"> | number | null
+    createdAt?: DateTimeFilter<"Topic"> | Date | string
+    lastAccess?: DateTimeFilter<"Topic"> | Date | string
   }
 
   export type SubjectUpsertWithWhereUniqueWithoutBibEntriesInput = {
@@ -61693,6 +62135,8 @@ export namespace Prisma {
     NOT?: SubjectScalarWhereInput | SubjectScalarWhereInput[]
     value?: StringFilter<"Subject"> | string
     kanbanId?: IntNullableFilter<"Subject"> | number | null
+    createdAt?: DateTimeFilter<"Subject"> | Date | string
+    lastAccess?: DateTimeFilter<"Subject"> | Date | string
   }
 
   export type MdxNoteUpsertWithWhereUniqueWithoutCitationsInput = {
@@ -62010,10 +62454,11 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutEquationsInput
     topics?: TopicCreateNestedManyWithoutEquationsInput
     subjects?: SubjectCreateNestedManyWithoutEquationsInput
@@ -62027,10 +62472,11 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutEquationsInput
     topics?: TopicUncheckedCreateNestedManyWithoutEquationsInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutEquationsInput
@@ -62059,14 +62505,14 @@ export namespace Prisma {
   }
 
   export type RelatedValuesCreateWithoutEquationsInput = {
-    input: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output: number
     equationId?: RelatedValuesCreateequationIdInput | number[]
   }
 
   export type RelatedValuesUncheckedCreateWithoutEquationsInput = {
     id?: number
-    input: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output: number
     equationId?: RelatedValuesCreateequationIdInput | number[]
   }
@@ -62078,6 +62524,8 @@ export namespace Prisma {
 
   export type TagCreateWithoutEquationsInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
@@ -62091,6 +62539,8 @@ export namespace Prisma {
   export type TagUncheckedCreateWithoutEquationsInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
@@ -62107,6 +62557,8 @@ export namespace Prisma {
 
   export type TopicCreateWithoutEquationsInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
@@ -62120,6 +62572,8 @@ export namespace Prisma {
   export type TopicUncheckedCreateWithoutEquationsInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
@@ -62136,6 +62590,8 @@ export namespace Prisma {
 
   export type SubjectCreateWithoutEquationsInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
@@ -62149,6 +62605,8 @@ export namespace Prisma {
   export type SubjectUncheckedCreateWithoutEquationsInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
@@ -62186,6 +62644,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
@@ -62221,6 +62680,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -62348,6 +62808,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
@@ -62383,6 +62844,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -62431,6 +62893,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
@@ -62466,6 +62929,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -62477,6 +62941,8 @@ export namespace Prisma {
 
   export type TagCreateWithoutQAPairInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
@@ -62490,6 +62956,8 @@ export namespace Prisma {
   export type TagUncheckedCreateWithoutQAPairInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
@@ -62506,6 +62974,8 @@ export namespace Prisma {
 
   export type TopicCreateWithoutQAPairInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     practiceExam?: PracticeExamCreateNestedManyWithoutTopicsInput
@@ -62519,6 +62989,8 @@ export namespace Prisma {
   export type TopicUncheckedCreateWithoutQAPairInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     practiceExam?: PracticeExamUncheckedCreateNestedManyWithoutTopicsInput
@@ -62535,6 +63007,8 @@ export namespace Prisma {
 
   export type SubjectCreateWithoutQaPairInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     practiceExam?: PracticeExamCreateNestedManyWithoutSubjectsInput
@@ -62548,6 +63022,8 @@ export namespace Prisma {
   export type SubjectUncheckedCreateWithoutQaPairInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     practiceExam?: PracticeExamUncheckedCreateNestedManyWithoutSubjectsInput
@@ -62656,6 +63132,8 @@ export namespace Prisma {
 
   export type TopicCreateWithoutPracticeExamInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
@@ -62669,6 +63147,8 @@ export namespace Prisma {
   export type TopicUncheckedCreateWithoutPracticeExamInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
@@ -62685,6 +63165,8 @@ export namespace Prisma {
 
   export type TagCreateWithoutPracticeExamInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
@@ -62698,6 +63180,8 @@ export namespace Prisma {
   export type TagUncheckedCreateWithoutPracticeExamInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
@@ -62714,6 +63198,8 @@ export namespace Prisma {
 
   export type SubjectCreateWithoutPracticeExamInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
@@ -62727,6 +63213,8 @@ export namespace Prisma {
   export type SubjectUncheckedCreateWithoutPracticeExamInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
@@ -62859,6 +63347,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
@@ -62893,6 +63382,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -62927,6 +63417,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectCreateNestedManyWithoutIpynbNotesInput
@@ -62949,6 +63440,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutIpynbNotesInput
     topics?: TopicUncheckedCreateNestedManyWithoutIpynbNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutIpynbNotesInput
@@ -63000,6 +63492,8 @@ export namespace Prisma {
 
   export type TopicCreateWithoutMdxNotesInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
     practiceExam?: PracticeExamCreateNestedManyWithoutTopicsInput
@@ -63013,6 +63507,8 @@ export namespace Prisma {
   export type TopicUncheckedCreateWithoutMdxNotesInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
     practiceExam?: PracticeExamUncheckedCreateNestedManyWithoutTopicsInput
@@ -63029,6 +63525,8 @@ export namespace Prisma {
 
   export type SubjectCreateWithoutMdxNotesInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
     practiceExam?: PracticeExamCreateNestedManyWithoutSubjectsInput
@@ -63042,6 +63540,8 @@ export namespace Prisma {
   export type SubjectUncheckedCreateWithoutMdxNotesInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
     practiceExam?: PracticeExamUncheckedCreateNestedManyWithoutSubjectsInput
@@ -63058,6 +63558,8 @@ export namespace Prisma {
 
   export type TagCreateWithoutMdxNotesInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
     QAPair?: QAPairCreateNestedManyWithoutTagsInput
@@ -63071,6 +63573,8 @@ export namespace Prisma {
   export type TagUncheckedCreateWithoutMdxNotesInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTagsInput
@@ -63236,10 +63740,11 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesCreateNestedManyWithoutEquationsInput
     tags?: TagCreateNestedManyWithoutEquationsInput
     topics?: TopicCreateNestedManyWithoutEquationsInput
@@ -63253,10 +63758,11 @@ export namespace Prisma {
     desc?: string | null
     content: string
     asPython?: string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationCreatevariablesInput | string[]
     keywords?: EquationCreatekeywordsInput | string[]
     createdAt?: Date | string
+    lastAccess?: Date | string
     relatedValues?: RelatedValuesUncheckedCreateNestedManyWithoutEquationsInput
     tags?: TagUncheckedCreateNestedManyWithoutEquationsInput
     topics?: TopicUncheckedCreateNestedManyWithoutEquationsInput
@@ -63273,6 +63779,8 @@ export namespace Prisma {
     label?: string | null
     content?: string | null
     alphabeticalLabel?: string | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
   }
 
   export type DefinitionUncheckedCreateWithoutMdxNoteInput = {
@@ -63280,6 +63788,8 @@ export namespace Prisma {
     label?: string | null
     content?: string | null
     alphabeticalLabel?: string | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
   }
 
   export type DefinitionCreateOrConnectWithoutMdxNoteInput = {
@@ -63299,8 +63809,9 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
+    completedOn?: Date | string | null
     tags?: TagCreateNestedManyWithoutToDoInput
     topics?: TopicCreateNestedManyWithoutToDoInput
     subjects?: SubjectCreateNestedManyWithoutToDoInput
@@ -63318,9 +63829,10 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
     tags?: TagUncheckedCreateNestedManyWithoutToDoInput
     topics?: TopicUncheckedCreateNestedManyWithoutToDoInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutToDoInput
@@ -63474,6 +63986,8 @@ export namespace Prisma {
     content?: StringNullableFilter<"Definition"> | string | null
     alphabeticalLabel?: StringNullableFilter<"Definition"> | string | null
     mdxNoteId?: IntNullableFilter<"Definition"> | number | null
+    createdAt?: DateTimeFilter<"Definition"> | Date | string
+    lastAccess?: DateTimeFilter<"Definition"> | Date | string
   }
 
   export type ToDoUpsertWithWhereUniqueWithoutAssociatedNotesInput = {
@@ -63494,6 +64008,8 @@ export namespace Prisma {
 
   export type TagCreateWithoutIpynbNotesInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     QAPair?: QAPairCreateNestedManyWithoutTagsInput
@@ -63507,6 +64023,8 @@ export namespace Prisma {
   export type TagUncheckedCreateWithoutIpynbNotesInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTagsInput
@@ -63523,6 +64041,8 @@ export namespace Prisma {
 
   export type TopicCreateWithoutIpynbNotesInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
     practiceExam?: PracticeExamCreateNestedManyWithoutTopicsInput
@@ -63536,6 +64056,8 @@ export namespace Prisma {
   export type TopicUncheckedCreateWithoutIpynbNotesInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
     practiceExam?: PracticeExamUncheckedCreateNestedManyWithoutTopicsInput
@@ -63552,6 +64074,8 @@ export namespace Prisma {
 
   export type SubjectCreateWithoutIpynbNotesInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
     practiceExam?: PracticeExamCreateNestedManyWithoutSubjectsInput
@@ -63565,6 +64089,8 @@ export namespace Prisma {
   export type SubjectUncheckedCreateWithoutIpynbNotesInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
     practiceExam?: PracticeExamUncheckedCreateNestedManyWithoutSubjectsInput
@@ -63832,8 +64358,9 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
     tags?: TagCreateNestedManyWithoutToDoInput
     topics?: TopicCreateNestedManyWithoutToDoInput
@@ -63851,8 +64378,9 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteUncheckedCreateNestedManyWithoutToDoInput
     tags?: TagUncheckedCreateNestedManyWithoutToDoInput
     topics?: TopicUncheckedCreateNestedManyWithoutToDoInput
@@ -63872,6 +64400,8 @@ export namespace Prisma {
 
   export type TagCreateWithoutTodoListInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
@@ -63885,6 +64415,8 @@ export namespace Prisma {
   export type TagUncheckedCreateWithoutTodoListInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
@@ -63901,6 +64433,8 @@ export namespace Prisma {
 
   export type TopicCreateWithoutTodoListInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
@@ -63914,6 +64448,8 @@ export namespace Prisma {
   export type TopicUncheckedCreateWithoutTodoListInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
@@ -63930,6 +64466,8 @@ export namespace Prisma {
 
   export type SubjectCreateWithoutTodoListInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
@@ -63943,6 +64481,8 @@ export namespace Prisma {
   export type SubjectUncheckedCreateWithoutTodoListInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
@@ -64044,6 +64584,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectCreateNestedManyWithoutMdxNotesInput
     tags?: TagCreateNestedManyWithoutMdxNotesInput
@@ -64079,6 +64620,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
     topics?: TopicUncheckedCreateNestedManyWithoutMdxNotesInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutMdxNotesInput
     tags?: TagUncheckedCreateNestedManyWithoutMdxNotesInput
@@ -64095,6 +64637,8 @@ export namespace Prisma {
 
   export type TagCreateWithoutToDoInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
@@ -64108,6 +64652,8 @@ export namespace Prisma {
   export type TagUncheckedCreateWithoutToDoInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
@@ -64124,6 +64670,8 @@ export namespace Prisma {
 
   export type TopicCreateWithoutToDoInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
@@ -64137,6 +64685,8 @@ export namespace Prisma {
   export type TopicUncheckedCreateWithoutToDoInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
@@ -64153,6 +64703,8 @@ export namespace Prisma {
 
   export type SubjectCreateWithoutToDoInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
@@ -64166,6 +64718,8 @@ export namespace Prisma {
   export type SubjectUncheckedCreateWithoutToDoInput = {
     value: string
     kanbanId?: number | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
@@ -64187,8 +64741,9 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
     tags?: TagCreateNestedManyWithoutToDoInput
     topics?: TopicCreateNestedManyWithoutToDoInput
@@ -64206,9 +64761,10 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteUncheckedCreateNestedManyWithoutToDoInput
     tags?: TagUncheckedCreateNestedManyWithoutToDoInput
     topics?: TopicUncheckedCreateNestedManyWithoutToDoInput
@@ -64227,8 +64783,9 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteCreateNestedManyWithoutToDoInput
     tags?: TagCreateNestedManyWithoutToDoInput
     topics?: TopicCreateNestedManyWithoutToDoInput
@@ -64245,9 +64802,10 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
     associatedNotes?: MdxNoteUncheckedCreateNestedManyWithoutToDoInput
     tags?: TagUncheckedCreateNestedManyWithoutToDoInput
     topics?: TopicUncheckedCreateNestedManyWithoutToDoInput
@@ -64269,6 +64827,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
+    lastAccess?: Date | string
     tags?: TagCreateNestedManyWithoutTodoListInput
     topics?: TopicCreateNestedManyWithoutTodoListInput
     subjects?: SubjectCreateNestedManyWithoutTodoListInput
@@ -64279,6 +64838,7 @@ export namespace Prisma {
     label: string
     createdAt?: Date | string
     lastUpdate?: Date | string
+    lastAccess?: Date | string
     tags?: TagUncheckedCreateNestedManyWithoutTodoListInput
     topics?: TopicUncheckedCreateNestedManyWithoutTodoListInput
     subjects?: SubjectUncheckedCreateNestedManyWithoutTodoListInput
@@ -64371,8 +64931,9 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
     tags?: TagUpdateManyWithoutToDoNestedInput
     topics?: TopicUpdateManyWithoutToDoNestedInput
@@ -64390,9 +64951,10 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUncheckedUpdateManyWithoutToDoNestedInput
     tags?: TagUncheckedUpdateManyWithoutToDoNestedInput
     topics?: TopicUncheckedUpdateManyWithoutToDoNestedInput
@@ -64430,6 +64992,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutTodoListNestedInput
     topics?: TopicUpdateManyWithoutTodoListNestedInput
     subjects?: SubjectUpdateManyWithoutTodoListNestedInput
@@ -64440,6 +65003,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutTodoListNestedInput
     topics?: TopicUncheckedUpdateManyWithoutTodoListNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutTodoListNestedInput
@@ -64616,6 +65180,8 @@ export namespace Prisma {
 
   export type TagCreateWithoutKanbanInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTagsInput
@@ -64628,6 +65194,8 @@ export namespace Prisma {
 
   export type TagUncheckedCreateWithoutKanbanInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTagsInput
     bibEntries?: BibEntryUncheckedCreateNestedManyWithoutTagsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTagsInput
@@ -64650,6 +65218,8 @@ export namespace Prisma {
 
   export type SubjectCreateWithoutKanbanInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairCreateNestedManyWithoutSubjectsInput
@@ -64662,6 +65232,8 @@ export namespace Prisma {
 
   export type SubjectUncheckedCreateWithoutKanbanInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutSubjectsInput
     IpynbNotes?: IpynbUncheckedCreateNestedManyWithoutSubjectsInput
     QaPair?: QAPairUncheckedCreateNestedManyWithoutSubjectsInput
@@ -64684,6 +65256,8 @@ export namespace Prisma {
 
   export type TopicCreateWithoutKanbanInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairCreateNestedManyWithoutTopicsInput
@@ -64696,6 +65270,8 @@ export namespace Prisma {
 
   export type TopicUncheckedCreateWithoutKanbanInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
     MdxNotes?: MdxNoteUncheckedCreateNestedManyWithoutTopicsInput
     ipynbNotes?: IpynbUncheckedCreateNestedManyWithoutTopicsInput
     QAPair?: QAPairUncheckedCreateNestedManyWithoutTopicsInput
@@ -65460,6 +66036,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
     citations?: BibEntryUpdateManyWithoutMdxNotesNestedInput
@@ -65495,6 +66072,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
     citations?: BibEntryUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -65529,6 +66107,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IpynbUpdateWithoutSubjectsInput = {
@@ -65545,6 +66124,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUpdateManyWithoutIpynbNotesNestedInput
     citations?: BibEntryUpdateManyWithoutIpynbNotesNestedInput
@@ -65568,6 +66148,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutIpynbNotesNestedInput
     citations?: BibEntryUncheckedUpdateManyWithoutIpynbNotesNestedInput
@@ -65590,6 +66171,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type QAPairUpdateWithoutSubjectsInput = {
@@ -65664,6 +66246,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUpdateManyWithoutToDoListNestedInput
     tags?: TagUpdateManyWithoutTodoListNestedInput
     topics?: TopicUpdateManyWithoutTodoListNestedInput
@@ -65674,6 +66257,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUncheckedUpdateManyWithoutToDoListNestedInput
     tags?: TagUncheckedUpdateManyWithoutTodoListNestedInput
     topics?: TopicUncheckedUpdateManyWithoutTodoListNestedInput
@@ -65684,6 +66268,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoUpdateWithoutSubjectsInput = {
@@ -65693,8 +66278,9 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
     tags?: TagUpdateManyWithoutToDoNestedInput
     topics?: TopicUpdateManyWithoutToDoNestedInput
@@ -65712,9 +66298,10 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUncheckedUpdateManyWithoutToDoNestedInput
     tags?: TagUncheckedUpdateManyWithoutToDoNestedInput
     topics?: TopicUncheckedUpdateManyWithoutToDoNestedInput
@@ -65730,9 +66317,10 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type BibEntryUpdateWithoutSubjectsInput = {
@@ -65888,10 +66476,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUpdateManyWithoutEquationsNestedInput
     tags?: TagUpdateManyWithoutEquationsNestedInput
     topics?: TopicUpdateManyWithoutEquationsNestedInput
@@ -65905,10 +66494,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUncheckedUpdateManyWithoutEquationsNestedInput
     tags?: TagUncheckedUpdateManyWithoutEquationsNestedInput
     topics?: TopicUncheckedUpdateManyWithoutEquationsNestedInput
@@ -65922,10 +66512,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: JsonNullValueInput | InputJsonValue
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MdxNoteUpdateWithoutTopicsInput = {
@@ -65951,6 +66542,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
     citations?: BibEntryUpdateManyWithoutMdxNotesNestedInput
@@ -65986,6 +66578,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
     citations?: BibEntryUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -66020,6 +66613,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IpynbUpdateWithoutTopicsInput = {
@@ -66036,6 +66630,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUpdateManyWithoutIpynbNotesNestedInput
     citations?: BibEntryUpdateManyWithoutIpynbNotesNestedInput
@@ -66059,6 +66654,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutIpynbNotesNestedInput
     citations?: BibEntryUncheckedUpdateManyWithoutIpynbNotesNestedInput
@@ -66081,6 +66677,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type QAPairUpdateWithoutTopicsInput = {
@@ -66158,8 +66755,9 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
     tags?: TagUpdateManyWithoutToDoNestedInput
     subjects?: SubjectUpdateManyWithoutToDoNestedInput
@@ -66177,9 +66775,10 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUncheckedUpdateManyWithoutToDoNestedInput
     tags?: TagUncheckedUpdateManyWithoutToDoNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutToDoNestedInput
@@ -66195,15 +66794,17 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ToDoListUpdateWithoutTopicsInput = {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUpdateManyWithoutToDoListNestedInput
     tags?: TagUpdateManyWithoutTodoListNestedInput
     subjects?: SubjectUpdateManyWithoutTodoListNestedInput
@@ -66214,6 +66815,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUncheckedUpdateManyWithoutToDoListNestedInput
     tags?: TagUncheckedUpdateManyWithoutTodoListNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutTodoListNestedInput
@@ -66224,6 +66826,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BibEntryUpdateWithoutTopicsInput = {
@@ -66379,10 +66982,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUpdateManyWithoutEquationsNestedInput
     tags?: TagUpdateManyWithoutEquationsNestedInput
     subjects?: SubjectUpdateManyWithoutEquationsNestedInput
@@ -66396,10 +67000,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUncheckedUpdateManyWithoutEquationsNestedInput
     tags?: TagUncheckedUpdateManyWithoutEquationsNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutEquationsNestedInput
@@ -66413,10 +67018,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: JsonNullValueInput | InputJsonValue
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MdxNoteUpdateWithoutTagsInput = {
@@ -66442,6 +67048,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     citations?: BibEntryUpdateManyWithoutMdxNotesNestedInput
@@ -66477,6 +67084,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     citations?: BibEntryUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -66511,6 +67119,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BibEntryUpdateWithoutTagsInput = {
@@ -66674,6 +67283,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUpdateManyWithoutIpynbNotesNestedInput
     citations?: BibEntryUpdateManyWithoutIpynbNotesNestedInput
@@ -66697,6 +67307,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutIpynbNotesNestedInput
     citations?: BibEntryUncheckedUpdateManyWithoutIpynbNotesNestedInput
@@ -66719,6 +67330,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type QAPairUpdateWithoutTagsInput = {
@@ -66795,10 +67407,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUpdateManyWithoutEquationsNestedInput
     topics?: TopicUpdateManyWithoutEquationsNestedInput
     subjects?: SubjectUpdateManyWithoutEquationsNestedInput
@@ -66812,10 +67425,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUncheckedUpdateManyWithoutEquationsNestedInput
     topics?: TopicUncheckedUpdateManyWithoutEquationsNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutEquationsNestedInput
@@ -66829,10 +67443,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: JsonNullValueInput | InputJsonValue
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoUpdateWithoutTagsInput = {
@@ -66842,8 +67457,9 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
     topics?: TopicUpdateManyWithoutToDoNestedInput
     subjects?: SubjectUpdateManyWithoutToDoNestedInput
@@ -66861,9 +67477,10 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUncheckedUpdateManyWithoutToDoNestedInput
     topics?: TopicUncheckedUpdateManyWithoutToDoNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutToDoNestedInput
@@ -66879,15 +67496,17 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ToDoListUpdateWithoutTagsInput = {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUpdateManyWithoutToDoListNestedInput
     topics?: TopicUpdateManyWithoutTodoListNestedInput
     subjects?: SubjectUpdateManyWithoutTodoListNestedInput
@@ -66898,6 +67517,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: ToDoUncheckedUpdateManyWithoutToDoListNestedInput
     topics?: TopicUncheckedUpdateManyWithoutTodoListNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutTodoListNestedInput
@@ -66908,6 +67528,7 @@ export namespace Prisma {
     label?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastUpdate?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BibEntryUpdateWithoutReadingListInput = {
@@ -67080,6 +67701,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
@@ -67115,6 +67737,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -67149,6 +67772,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IpynbUpdateWithoutReadingListInput = {
@@ -67165,6 +67789,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUpdateManyWithoutIpynbNotesNestedInput
@@ -67188,6 +67813,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutIpynbNotesNestedInput
@@ -67210,6 +67836,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CitationsGroupUpdateWithoutEntriesInput = {
@@ -67229,6 +67856,8 @@ export namespace Prisma {
 
   export type TagUpdateWithoutBibEntriesInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
     QAPair?: QAPairUpdateManyWithoutTagsNestedInput
@@ -67242,6 +67871,8 @@ export namespace Prisma {
   export type TagUncheckedUpdateWithoutBibEntriesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTagsNestedInput
@@ -67254,10 +67885,14 @@ export namespace Prisma {
   export type TagUncheckedUpdateManyWithoutBibEntriesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUpdateWithoutBibEntriesInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
@@ -67271,6 +67906,8 @@ export namespace Prisma {
   export type TopicUncheckedUpdateWithoutBibEntriesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
@@ -67283,10 +67920,14 @@ export namespace Prisma {
   export type TopicUncheckedUpdateManyWithoutBibEntriesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutBibEntriesInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
@@ -67300,6 +67941,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateWithoutBibEntriesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -67312,6 +67955,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateManyWithoutBibEntriesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MdxNoteUpdateWithoutCitationsInput = {
@@ -67337,6 +67982,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
@@ -67372,6 +68018,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -67406,6 +68053,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IpynbUpdateWithoutCitationsInput = {
@@ -67422,6 +68070,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUpdateManyWithoutIpynbNotesNestedInput
@@ -67445,6 +68094,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutIpynbNotesNestedInput
@@ -67467,6 +68117,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ReadingListUpdateWithoutBibEntriesInput = {
@@ -67837,10 +68488,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutEquationsNestedInput
     topics?: TopicUpdateManyWithoutEquationsNestedInput
     subjects?: SubjectUpdateManyWithoutEquationsNestedInput
@@ -67854,10 +68506,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutEquationsNestedInput
     topics?: TopicUncheckedUpdateManyWithoutEquationsNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutEquationsNestedInput
@@ -67871,21 +68524,22 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: JsonNullValueInput | InputJsonValue
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type RelatedValuesUpdateWithoutEquationsInput = {
-    input?: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output?: FloatFieldUpdateOperationsInput | number
     equationId?: RelatedValuesUpdateequationIdInput | number[]
   }
 
   export type RelatedValuesUncheckedUpdateWithoutEquationsInput = {
     id?: IntFieldUpdateOperationsInput | number
-    input?: JsonNullValueInput | InputJsonValue
+    input?: unknown
     output?: FloatFieldUpdateOperationsInput | number
     equationId?: RelatedValuesUpdateequationIdInput | number[]
   }
@@ -67899,6 +68553,8 @@ export namespace Prisma {
 
   export type TagUpdateWithoutEquationsInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
@@ -67912,6 +68568,8 @@ export namespace Prisma {
   export type TagUncheckedUpdateWithoutEquationsInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
@@ -67924,10 +68582,14 @@ export namespace Prisma {
   export type TagUncheckedUpdateManyWithoutEquationsInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUpdateWithoutEquationsInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
@@ -67941,6 +68603,8 @@ export namespace Prisma {
   export type TopicUncheckedUpdateWithoutEquationsInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
@@ -67953,10 +68617,14 @@ export namespace Prisma {
   export type TopicUncheckedUpdateManyWithoutEquationsInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutEquationsInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
@@ -67970,6 +68638,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateWithoutEquationsInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -67982,6 +68652,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateManyWithoutEquationsInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MdxNoteUpdateWithoutEquationsInput = {
@@ -68007,6 +68679,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
@@ -68042,6 +68715,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -68076,10 +68750,13 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TagUpdateWithoutQAPairInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
@@ -68093,6 +68770,8 @@ export namespace Prisma {
   export type TagUncheckedUpdateWithoutQAPairInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
@@ -68105,10 +68784,14 @@ export namespace Prisma {
   export type TagUncheckedUpdateManyWithoutQAPairInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUpdateWithoutQAPairInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     practiceExam?: PracticeExamUpdateManyWithoutTopicsNestedInput
@@ -68122,6 +68805,8 @@ export namespace Prisma {
   export type TopicUncheckedUpdateWithoutQAPairInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     practiceExam?: PracticeExamUncheckedUpdateManyWithoutTopicsNestedInput
@@ -68134,10 +68819,14 @@ export namespace Prisma {
   export type TopicUncheckedUpdateManyWithoutQAPairInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutQaPairInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     practiceExam?: PracticeExamUpdateManyWithoutSubjectsNestedInput
@@ -68151,6 +68840,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateWithoutQaPairInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     practiceExam?: PracticeExamUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -68163,6 +68854,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateManyWithoutQaPairInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type PracticeExamUpdateWithoutQuestionsInput = {
@@ -68199,6 +68892,8 @@ export namespace Prisma {
 
   export type TopicUpdateWithoutPracticeExamInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
@@ -68212,6 +68907,8 @@ export namespace Prisma {
   export type TopicUncheckedUpdateWithoutPracticeExamInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
@@ -68224,10 +68921,14 @@ export namespace Prisma {
   export type TopicUncheckedUpdateManyWithoutPracticeExamInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TagUpdateWithoutPracticeExamInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
@@ -68241,6 +68942,8 @@ export namespace Prisma {
   export type TagUncheckedUpdateWithoutPracticeExamInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
@@ -68253,10 +68956,14 @@ export namespace Prisma {
   export type TagUncheckedUpdateManyWithoutPracticeExamInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutPracticeExamInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
@@ -68270,6 +68977,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateWithoutPracticeExamInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -68282,6 +68991,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateManyWithoutPracticeExamInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type QAPairUpdateWithoutPracticeExamInput = {
@@ -68344,6 +69055,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
   }
 
   export type IpynbCreateManySequentialListInput = {
@@ -68361,6 +69073,7 @@ export namespace Prisma {
     bookmarked?: boolean
     firstSync?: Date | string
     lastSync?: Date | string
+    lastAccess?: Date | string
   }
 
   export type MdxNoteUpdateWithoutSequentialListInput = {
@@ -68386,6 +69099,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
@@ -68420,6 +69134,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -68454,6 +69169,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IpynbUpdateWithoutSequentialListInput = {
@@ -68470,6 +69186,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUpdateManyWithoutIpynbNotesNestedInput
@@ -68492,6 +69209,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     tags?: TagUncheckedUpdateManyWithoutIpynbNotesNestedInput
     topics?: TopicUncheckedUpdateManyWithoutIpynbNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutIpynbNotesNestedInput
@@ -68514,6 +69232,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DefinitionCreateManyMdxNoteInput = {
@@ -68521,10 +69240,14 @@ export namespace Prisma {
     label?: string | null
     content?: string | null
     alphabeticalLabel?: string | null
+    createdAt?: Date | string
+    lastAccess?: Date | string
   }
 
   export type TopicUpdateWithoutMdxNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
     practiceExam?: PracticeExamUpdateManyWithoutTopicsNestedInput
@@ -68538,6 +69261,8 @@ export namespace Prisma {
   export type TopicUncheckedUpdateWithoutMdxNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
     practiceExam?: PracticeExamUncheckedUpdateManyWithoutTopicsNestedInput
@@ -68550,10 +69275,14 @@ export namespace Prisma {
   export type TopicUncheckedUpdateManyWithoutMdxNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutMdxNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
     practiceExam?: PracticeExamUpdateManyWithoutSubjectsNestedInput
@@ -68567,6 +69296,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateWithoutMdxNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
     practiceExam?: PracticeExamUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -68579,10 +69310,14 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateManyWithoutMdxNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TagUpdateWithoutMdxNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
     QAPair?: QAPairUpdateManyWithoutTagsNestedInput
@@ -68596,6 +69331,8 @@ export namespace Prisma {
   export type TagUncheckedUpdateWithoutMdxNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTagsNestedInput
@@ -68608,6 +69345,8 @@ export namespace Prisma {
   export type TagUncheckedUpdateManyWithoutMdxNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BibEntryUpdateWithoutMdxNotesInput = {
@@ -68788,10 +69527,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUpdateManyWithoutEquationsNestedInput
     tags?: TagUpdateManyWithoutEquationsNestedInput
     topics?: TopicUpdateManyWithoutEquationsNestedInput
@@ -68805,10 +69545,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: unknown
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     relatedValues?: RelatedValuesUncheckedUpdateManyWithoutEquationsNestedInput
     tags?: TagUncheckedUpdateManyWithoutEquationsNestedInput
     topics?: TopicUncheckedUpdateManyWithoutEquationsNestedInput
@@ -68822,10 +69563,11 @@ export namespace Prisma {
     desc?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     asPython?: NullableStringFieldUpdateOperationsInput | string | null
-    variableLegend?: NullableJsonNullValueInput | InputJsonValue
+    variableLegend?: JsonNullValueInput | InputJsonValue
     variables?: EquationUpdatevariablesInput | string[]
     keywords?: EquationUpdatekeywordsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DefinitionUpdateWithoutMdxNoteInput = {
@@ -68833,6 +69575,8 @@ export namespace Prisma {
     label?: NullableStringFieldUpdateOperationsInput | string | null
     content?: NullableStringFieldUpdateOperationsInput | string | null
     alphabeticalLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DefinitionUncheckedUpdateWithoutMdxNoteInput = {
@@ -68840,6 +69584,8 @@ export namespace Prisma {
     label?: NullableStringFieldUpdateOperationsInput | string | null
     content?: NullableStringFieldUpdateOperationsInput | string | null
     alphabeticalLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DefinitionUncheckedUpdateManyWithoutMdxNoteInput = {
@@ -68847,6 +69593,8 @@ export namespace Prisma {
     label?: NullableStringFieldUpdateOperationsInput | string | null
     content?: NullableStringFieldUpdateOperationsInput | string | null
     alphabeticalLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoUpdateWithoutAssociatedNotesInput = {
@@ -68856,8 +69604,9 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     tags?: TagUpdateManyWithoutToDoNestedInput
     topics?: TopicUpdateManyWithoutToDoNestedInput
     subjects?: SubjectUpdateManyWithoutToDoNestedInput
@@ -68875,9 +69624,10 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     tags?: TagUncheckedUpdateManyWithoutToDoNestedInput
     topics?: TopicUncheckedUpdateManyWithoutToDoNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutToDoNestedInput
@@ -68893,13 +69643,16 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type TagUpdateWithoutIpynbNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     QAPair?: QAPairUpdateManyWithoutTagsNestedInput
@@ -68913,6 +69666,8 @@ export namespace Prisma {
   export type TagUncheckedUpdateWithoutIpynbNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTagsNestedInput
@@ -68925,10 +69680,14 @@ export namespace Prisma {
   export type TagUncheckedUpdateManyWithoutIpynbNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUpdateWithoutIpynbNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
     practiceExam?: PracticeExamUpdateManyWithoutTopicsNestedInput
@@ -68942,6 +69701,8 @@ export namespace Prisma {
   export type TopicUncheckedUpdateWithoutIpynbNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
     practiceExam?: PracticeExamUncheckedUpdateManyWithoutTopicsNestedInput
@@ -68954,10 +69715,14 @@ export namespace Prisma {
   export type TopicUncheckedUpdateManyWithoutIpynbNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutIpynbNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
     practiceExam?: PracticeExamUpdateManyWithoutSubjectsNestedInput
@@ -68971,6 +69736,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateWithoutIpynbNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
     practiceExam?: PracticeExamUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -68983,6 +69750,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateManyWithoutIpynbNotesInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BibEntryUpdateWithoutIpynbNotesInput = {
@@ -69166,8 +69935,9 @@ export namespace Prisma {
     parentId?: number | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
+    completedOn?: Date | string | null
   }
 
   export type ToDoUpdateWithoutToDoListInput = {
@@ -69177,8 +69947,9 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
     tags?: TagUpdateManyWithoutToDoNestedInput
     topics?: TopicUpdateManyWithoutToDoNestedInput
@@ -69196,8 +69967,9 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUncheckedUpdateManyWithoutToDoNestedInput
     tags?: TagUncheckedUpdateManyWithoutToDoNestedInput
     topics?: TopicUncheckedUpdateManyWithoutToDoNestedInput
@@ -69214,12 +69986,15 @@ export namespace Prisma {
     parentId?: NullableIntFieldUpdateOperationsInput | number | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type TagUpdateWithoutTodoListInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
@@ -69233,6 +70008,8 @@ export namespace Prisma {
   export type TagUncheckedUpdateWithoutTodoListInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
@@ -69245,10 +70022,14 @@ export namespace Prisma {
   export type TagUncheckedUpdateManyWithoutTodoListInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUpdateWithoutTodoListInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
@@ -69262,6 +70043,8 @@ export namespace Prisma {
   export type TopicUncheckedUpdateWithoutTodoListInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
@@ -69274,10 +70057,14 @@ export namespace Prisma {
   export type TopicUncheckedUpdateManyWithoutTodoListInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutTodoListInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
@@ -69291,6 +70078,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateWithoutTodoListInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -69303,6 +70092,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateManyWithoutTodoListInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoCreateManyParentInput = {
@@ -69313,9 +70104,10 @@ export namespace Prisma {
     details?: string | null
     category?: $Enums.TaskCategory | null
     bookmarked?: boolean
-    status?: $Enums.ToDoListStatus
+    status?: string
     priority?: number
     toDoListId?: number | null
+    completedOn?: Date | string | null
   }
 
   export type MdxNoteUpdateWithoutToDoInput = {
@@ -69341,6 +70133,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUpdateManyWithoutMdxNotesNestedInput
@@ -69376,6 +70169,7 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     topics?: TopicUncheckedUpdateManyWithoutMdxNotesNestedInput
     subjects?: SubjectUncheckedUpdateManyWithoutMdxNotesNestedInput
     tags?: TagUncheckedUpdateManyWithoutMdxNotesNestedInput
@@ -69410,10 +70204,13 @@ export namespace Prisma {
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TagUpdateWithoutToDoInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
@@ -69427,6 +70224,8 @@ export namespace Prisma {
   export type TagUncheckedUpdateWithoutToDoInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
@@ -69439,10 +70238,14 @@ export namespace Prisma {
   export type TagUncheckedUpdateManyWithoutToDoInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUpdateWithoutToDoInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
@@ -69456,6 +70259,8 @@ export namespace Prisma {
   export type TopicUncheckedUpdateWithoutToDoInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
@@ -69468,10 +70273,14 @@ export namespace Prisma {
   export type TopicUncheckedUpdateManyWithoutToDoInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutToDoInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
@@ -69485,6 +70294,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateWithoutToDoInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -69497,6 +70308,8 @@ export namespace Prisma {
   export type SubjectUncheckedUpdateManyWithoutToDoInput = {
     value?: StringFieldUpdateOperationsInput | string
     kanbanId?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ToDoUpdateWithoutParentInput = {
@@ -69506,8 +70319,9 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUpdateManyWithoutToDoNestedInput
     tags?: TagUpdateManyWithoutToDoNestedInput
     topics?: TopicUpdateManyWithoutToDoNestedInput
@@ -69524,9 +70338,10 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     associatedNotes?: MdxNoteUncheckedUpdateManyWithoutToDoNestedInput
     tags?: TagUncheckedUpdateManyWithoutToDoNestedInput
     topics?: TopicUncheckedUpdateManyWithoutToDoNestedInput
@@ -69542,9 +70357,10 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableEnumTaskCategoryFieldUpdateOperationsInput | $Enums.TaskCategory | null
     bookmarked?: BoolFieldUpdateOperationsInput | boolean
-    status?: EnumToDoListStatusFieldUpdateOperationsInput | $Enums.ToDoListStatus
+    status?: StringFieldUpdateOperationsInput | string
     priority?: IntFieldUpdateOperationsInput | number
     toDoListId?: NullableIntFieldUpdateOperationsInput | number | null
+    completedOn?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type KanBanCardCreateManyKanBanListInput = {
@@ -69582,14 +70398,20 @@ export namespace Prisma {
 
   export type TagCreateManyKanbanInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
   }
 
   export type SubjectCreateManyKanbanInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
   }
 
   export type TopicCreateManyKanbanInput = {
     value: string
+    createdAt?: Date | string
+    lastAccess?: Date | string
   }
 
   export type KanBanListUpdateWithoutKanbanInput = {
@@ -69613,6 +70435,8 @@ export namespace Prisma {
 
   export type TagUpdateWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTagsNestedInput
@@ -69625,6 +70449,8 @@ export namespace Prisma {
 
   export type TagUncheckedUpdateWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTagsNestedInput
     bibEntries?: BibEntryUncheckedUpdateManyWithoutTagsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTagsNestedInput
@@ -69637,10 +70463,14 @@ export namespace Prisma {
 
   export type TagUncheckedUpdateManyWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubjectUpdateWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUpdateManyWithoutSubjectsNestedInput
@@ -69653,6 +70483,8 @@ export namespace Prisma {
 
   export type SubjectUncheckedUpdateWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutSubjectsNestedInput
     IpynbNotes?: IpynbUncheckedUpdateManyWithoutSubjectsNestedInput
     QaPair?: QAPairUncheckedUpdateManyWithoutSubjectsNestedInput
@@ -69665,10 +70497,14 @@ export namespace Prisma {
 
   export type SubjectUncheckedUpdateManyWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TopicUpdateWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUpdateManyWithoutTopicsNestedInput
@@ -69681,6 +70517,8 @@ export namespace Prisma {
 
   export type TopicUncheckedUpdateWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
     MdxNotes?: MdxNoteUncheckedUpdateManyWithoutTopicsNestedInput
     ipynbNotes?: IpynbUncheckedUpdateManyWithoutTopicsNestedInput
     QAPair?: QAPairUncheckedUpdateManyWithoutTopicsNestedInput
@@ -69693,6 +70531,8 @@ export namespace Prisma {
 
   export type TopicUncheckedUpdateManyWithoutKanbanInput = {
     value?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastAccess?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TimePeriodCreateManyDietInput = {
@@ -70067,18 +70907,6 @@ export namespace Prisma {
      */
     export type DietaryItemCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = DietaryItemCountOutputTypeDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use FeatureRequestDefaultArgs instead
-     */
-    export type FeatureRequestArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = FeatureRequestDefaultArgs<ExtArgs>
-    /**
-     * @deprecated Use WaitlistRequestDefaultArgs instead
-     */
-    export type WaitlistRequestArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = WaitlistRequestDefaultArgs<ExtArgs>
-    /**
-     * @deprecated Use BusinessContactDefaultArgs instead
-     */
-    export type BusinessContactArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = BusinessContactDefaultArgs<ExtArgs>
-    /**
      * @deprecated Use SubjectDefaultArgs instead
      */
     export type SubjectArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = SubjectDefaultArgs<ExtArgs>
@@ -70222,6 +71050,18 @@ export namespace Prisma {
      * @deprecated Use DJTDefaultArgs instead
      */
     export type DJTArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = DJTDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use FeatureRequestDefaultArgs instead
+     */
+    export type FeatureRequestArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = FeatureRequestDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use WaitlistRequestDefaultArgs instead
+     */
+    export type WaitlistRequestArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = WaitlistRequestDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use BusinessContactDefaultArgs instead
+     */
+    export type BusinessContactArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = BusinessContactDefaultArgs<ExtArgs>
 
   /**
    * Batch Payload for updateMany & deleteMany & createMany

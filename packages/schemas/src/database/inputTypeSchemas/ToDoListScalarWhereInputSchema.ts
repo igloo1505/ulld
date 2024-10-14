@@ -1,8 +1,10 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IntFilterSchema } from './IntFilterSchema.js';
-import { StringFilterSchema } from './StringFilterSchema.js';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema';
+import { StringFilterSchema } from './StringFilterSchema';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema';
+
 export const ToDoListScalarWhereInputSchema: z.ZodType<Prisma.ToDoListScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => ToDoListScalarWhereInputSchema),z.lazy(() => ToDoListScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => ToDoListScalarWhereInputSchema).array().optional(),
@@ -13,4 +15,5 @@ export const ToDoListScalarWhereInputSchema: z.ZodType<Prisma.ToDoListScalarWher
   lastUpdate: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   lastAccess: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
+
 export default ToDoListScalarWhereInputSchema;

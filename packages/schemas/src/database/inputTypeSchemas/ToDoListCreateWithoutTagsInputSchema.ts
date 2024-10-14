@@ -1,8 +1,10 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { ToDoCreateNestedManyWithoutToDoListInputSchema } from './ToDoCreateNestedManyWithoutToDoListInputSchema.js';
-import { TopicCreateNestedManyWithoutTodoListInputSchema } from './TopicCreateNestedManyWithoutTodoListInputSchema.js';
-import { SubjectCreateNestedManyWithoutTodoListInputSchema } from './SubjectCreateNestedManyWithoutTodoListInputSchema.js';
+import { ToDoCreateNestedManyWithoutToDoListInputSchema } from './ToDoCreateNestedManyWithoutToDoListInputSchema';
+import { TopicCreateNestedManyWithoutTodoListInputSchema } from './TopicCreateNestedManyWithoutTodoListInputSchema';
+import { SubjectCreateNestedManyWithoutTodoListInputSchema } from './SubjectCreateNestedManyWithoutTodoListInputSchema';
+
 export const ToDoListCreateWithoutTagsInputSchema: z.ZodType<Prisma.ToDoListCreateWithoutTagsInput> = z.object({
   label: z.string(),
   createdAt: z.coerce.date().optional(),
@@ -12,4 +14,5 @@ export const ToDoListCreateWithoutTagsInputSchema: z.ZodType<Prisma.ToDoListCrea
   topics: z.lazy(() => TopicCreateNestedManyWithoutTodoListInputSchema).optional(),
   subjects: z.lazy(() => SubjectCreateNestedManyWithoutTodoListInputSchema).optional()
 }).strict();
+
 export default ToDoListCreateWithoutTagsInputSchema;

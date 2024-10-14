@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IpynbCreateWithoutTagsInputSchema } from './IpynbCreateWithoutTagsInputSchema.js';
-import { IpynbUncheckedCreateWithoutTagsInputSchema } from './IpynbUncheckedCreateWithoutTagsInputSchema.js';
-import { IpynbCreateOrConnectWithoutTagsInputSchema } from './IpynbCreateOrConnectWithoutTagsInputSchema.js';
-import { IpynbUpsertWithWhereUniqueWithoutTagsInputSchema } from './IpynbUpsertWithWhereUniqueWithoutTagsInputSchema.js';
-import { IpynbWhereUniqueInputSchema } from './IpynbWhereUniqueInputSchema.js';
-import { IpynbUpdateWithWhereUniqueWithoutTagsInputSchema } from './IpynbUpdateWithWhereUniqueWithoutTagsInputSchema.js';
-import { IpynbUpdateManyWithWhereWithoutTagsInputSchema } from './IpynbUpdateManyWithWhereWithoutTagsInputSchema.js';
-import { IpynbScalarWhereInputSchema } from './IpynbScalarWhereInputSchema.js';
+import { IpynbCreateWithoutTagsInputSchema } from './IpynbCreateWithoutTagsInputSchema';
+import { IpynbUncheckedCreateWithoutTagsInputSchema } from './IpynbUncheckedCreateWithoutTagsInputSchema';
+import { IpynbCreateOrConnectWithoutTagsInputSchema } from './IpynbCreateOrConnectWithoutTagsInputSchema';
+import { IpynbUpsertWithWhereUniqueWithoutTagsInputSchema } from './IpynbUpsertWithWhereUniqueWithoutTagsInputSchema';
+import { IpynbWhereUniqueInputSchema } from './IpynbWhereUniqueInputSchema';
+import { IpynbUpdateWithWhereUniqueWithoutTagsInputSchema } from './IpynbUpdateWithWhereUniqueWithoutTagsInputSchema';
+import { IpynbUpdateManyWithWhereWithoutTagsInputSchema } from './IpynbUpdateManyWithWhereWithoutTagsInputSchema';
+import { IpynbScalarWhereInputSchema } from './IpynbScalarWhereInputSchema';
+
 export const IpynbUpdateManyWithoutTagsNestedInputSchema: z.ZodType<Prisma.IpynbUpdateManyWithoutTagsNestedInput> = z.object({
   create: z.union([ z.lazy(() => IpynbCreateWithoutTagsInputSchema),z.lazy(() => IpynbCreateWithoutTagsInputSchema).array(),z.lazy(() => IpynbUncheckedCreateWithoutTagsInputSchema),z.lazy(() => IpynbUncheckedCreateWithoutTagsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => IpynbCreateOrConnectWithoutTagsInputSchema),z.lazy(() => IpynbCreateOrConnectWithoutTagsInputSchema).array() ]).optional(),
@@ -20,4 +22,5 @@ export const IpynbUpdateManyWithoutTagsNestedInputSchema: z.ZodType<Prisma.Ipynb
   updateMany: z.union([ z.lazy(() => IpynbUpdateManyWithWhereWithoutTagsInputSchema),z.lazy(() => IpynbUpdateManyWithWhereWithoutTagsInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => IpynbScalarWhereInputSchema),z.lazy(() => IpynbScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default IpynbUpdateManyWithoutTagsNestedInputSchema;

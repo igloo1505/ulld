@@ -1,9 +1,11 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IntFilterSchema } from './IntFilterSchema.js';
-import { EnumautoSettingFilterSchema } from './EnumautoSettingFilterSchema.js';
-import { autoSettingSchema } from './autoSettingSchema.js';
-import { StringFilterSchema } from './StringFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema';
+import { EnumautoSettingFilterSchema } from './EnumautoSettingFilterSchema';
+import { autoSettingSchema } from './autoSettingSchema';
+import { StringFilterSchema } from './StringFilterSchema';
+
 export const AutoSettingWhereInputSchema: z.ZodType<Prisma.AutoSettingWhereInput> = z.object({
   AND: z.union([ z.lazy(() => AutoSettingWhereInputSchema),z.lazy(() => AutoSettingWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => AutoSettingWhereInputSchema).array().optional(),
@@ -13,4 +15,5 @@ export const AutoSettingWhereInputSchema: z.ZodType<Prisma.AutoSettingWhereInput
   glob: z.union([ z.lazy(() => StringFilterSchema),z.string() ]).optional(),
   value: z.union([ z.lazy(() => StringFilterSchema),z.string() ]).optional(),
 }).strict();
+
 export default AutoSettingWhereInputSchema;

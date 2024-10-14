@@ -1,7 +1,9 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
-import { AutoSettingOrderByRelevanceInputSchema } from './AutoSettingOrderByRelevanceInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+import { AutoSettingOrderByRelevanceInputSchema } from './AutoSettingOrderByRelevanceInputSchema';
+
 export const AutoSettingOrderByWithRelationInputSchema: z.ZodType<Prisma.AutoSettingOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   type: z.lazy(() => SortOrderSchema).optional(),
@@ -9,4 +11,5 @@ export const AutoSettingOrderByWithRelationInputSchema: z.ZodType<Prisma.AutoSet
   value: z.lazy(() => SortOrderSchema).optional(),
   _relevance: z.lazy(() => AutoSettingOrderByRelevanceInputSchema).optional()
 }).strict();
+
 export default AutoSettingOrderByWithRelationInputSchema;

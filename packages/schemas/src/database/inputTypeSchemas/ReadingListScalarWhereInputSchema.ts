@@ -1,8 +1,10 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { StringFilterSchema } from './StringFilterSchema.js';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema';
+
 export const ReadingListScalarWhereInputSchema: z.ZodType<Prisma.ReadingListScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => ReadingListScalarWhereInputSchema),z.lazy(() => ReadingListScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => ReadingListScalarWhereInputSchema).array().optional(),
@@ -12,4 +14,5 @@ export const ReadingListScalarWhereInputSchema: z.ZodType<Prisma.ReadingListScal
   createdAt: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   lastUpdate: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
+
 export default ReadingListScalarWhereInputSchema;

@@ -1,9 +1,11 @@
 import { z } from 'zod';
-import { JsonValueSchema } from '../inputTypeSchemas/JsonValueSchema.js'
-import { ImageAlignmentSchema } from '../inputTypeSchemas/ImageAlignmentSchema.js'
+import { JsonValueSchema } from '../inputTypeSchemas/JsonValueSchema'
+import { ImageAlignmentSchema } from '../inputTypeSchemas/ImageAlignmentSchema'
+
 /////////////////////////////////////////
 // SETTINGS SCHEMA
 /////////////////////////////////////////
+
 export const SettingsSchema = z.object({
   landingImageAlign: ImageAlignmentSchema,
   id: z.number().int(),
@@ -21,10 +23,15 @@ export const SettingsSchema = z.object({
   firstSync: z.coerce.date(),
   lastSync: z.coerce.date(),
 })
+
 export type Settings = z.infer<typeof SettingsSchema>
+
 /////////////////////////////////////////
 // SETTINGS PARTIAL SCHEMA
 /////////////////////////////////////////
+
 export const SettingsPartialSchema = SettingsSchema.partial()
+
 export type SettingsPartial = z.infer<typeof SettingsPartialSchema>
+
 export default SettingsSchema;

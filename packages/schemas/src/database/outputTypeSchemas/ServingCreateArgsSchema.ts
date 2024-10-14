@@ -1,11 +1,12 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { ServingIncludeSchema } from '../inputTypeSchemas/ServingIncludeSchema.js'
-import { ServingCreateInputSchema } from '../inputTypeSchemas/ServingCreateInputSchema.js'
-import { ServingUncheckedCreateInputSchema } from '../inputTypeSchemas/ServingUncheckedCreateInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { ServingIncludeSchema } from '../inputTypeSchemas/ServingIncludeSchema'
+import { ServingCreateInputSchema } from '../inputTypeSchemas/ServingCreateInputSchema'
+import { ServingUncheckedCreateInputSchema } from '../inputTypeSchemas/ServingUncheckedCreateInputSchema'
 import { DietaryItemArgsSchema } from "../outputTypeSchemas/DietaryItemArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const ServingSelectSchema: z.ZodType<Prisma.ServingSelect> = z.object({
   id: z.boolean().optional(),
   dietaryItemId: z.boolean().optional(),
@@ -13,9 +14,11 @@ export const ServingSelectSchema: z.ZodType<Prisma.ServingSelect> = z.object({
   quant_guess: z.boolean().optional(),
   item: z.union([z.boolean(),z.lazy(() => DietaryItemArgsSchema)]).optional(),
 }).strict()
+
 export const ServingCreateArgsSchema: z.ZodType<Prisma.ServingCreateArgs> = z.object({
   select: ServingSelectSchema.optional(),
   include: ServingIncludeSchema.optional(),
   data: z.union([ ServingCreateInputSchema,ServingUncheckedCreateInputSchema ]),
 }).strict() ;
+
 export default ServingCreateArgsSchema;

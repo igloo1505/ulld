@@ -1,9 +1,11 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { QueryModeSchema } from './QueryModeSchema.js';
-import { NestedStringNullableWithAggregatesFilterSchema } from './NestedStringNullableWithAggregatesFilterSchema.js';
-import { NestedIntNullableFilterSchema } from './NestedIntNullableFilterSchema.js';
-import { NestedStringNullableFilterSchema } from './NestedStringNullableFilterSchema.js';
+import { QueryModeSchema } from './QueryModeSchema';
+import { NestedStringNullableWithAggregatesFilterSchema } from './NestedStringNullableWithAggregatesFilterSchema';
+import { NestedIntNullableFilterSchema } from './NestedIntNullableFilterSchema';
+import { NestedStringNullableFilterSchema } from './NestedStringNullableFilterSchema';
+
 export const StringNullableWithAggregatesFilterSchema: z.ZodType<Prisma.StringNullableWithAggregatesFilter> = z.object({
   equals: z.string().optional().nullable(),
   in: z.string().array().optional().nullable(),
@@ -22,4 +24,5 @@ export const StringNullableWithAggregatesFilterSchema: z.ZodType<Prisma.StringNu
   _min: z.lazy(() => NestedStringNullableFilterSchema).optional(),
   _max: z.lazy(() => NestedStringNullableFilterSchema).optional()
 }).strict();
+
 export default StringNullableWithAggregatesFilterSchema;

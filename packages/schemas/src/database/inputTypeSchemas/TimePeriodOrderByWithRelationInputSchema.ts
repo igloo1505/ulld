@@ -1,9 +1,11 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
-import { SortOrderInputSchema } from './SortOrderInputSchema.js';
-import { DietOrderByWithRelationInputSchema } from './DietOrderByWithRelationInputSchema.js';
-import { TimePeriodOrderByRelevanceInputSchema } from './TimePeriodOrderByRelevanceInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+import { SortOrderInputSchema } from './SortOrderInputSchema';
+import { DietOrderByWithRelationInputSchema } from './DietOrderByWithRelationInputSchema';
+import { TimePeriodOrderByRelevanceInputSchema } from './TimePeriodOrderByRelevanceInputSchema';
+
 export const TimePeriodOrderByWithRelationInputSchema: z.ZodType<Prisma.TimePeriodOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   start: z.lazy(() => SortOrderSchema).optional(),
@@ -12,4 +14,5 @@ export const TimePeriodOrderByWithRelationInputSchema: z.ZodType<Prisma.TimePeri
   Diet: z.lazy(() => DietOrderByWithRelationInputSchema).optional(),
   _relevance: z.lazy(() => TimePeriodOrderByRelevanceInputSchema).optional()
 }).strict();
+
 export default TimePeriodOrderByWithRelationInputSchema;

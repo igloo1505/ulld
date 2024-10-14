@@ -5,6 +5,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "bin": {
+    "mr": "./bin/run.js"
+  },
   "files": [
     "/bin",
     "/dist",
@@ -97,9 +100,6 @@
     "@ulld/types": "workspace:*"
   },
   "packageManager": "pnpm@9.0.4",
-  "bin": {
-    "mr": "./bin/run.js"
-  },
   "main": "./bin/run.js",
   "oclif": {
     "bin": "mr",

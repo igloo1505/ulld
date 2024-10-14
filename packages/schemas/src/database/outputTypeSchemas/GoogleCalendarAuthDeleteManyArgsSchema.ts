@@ -1,7 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { GoogleCalendarAuthWhereInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthWhereInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { GoogleCalendarAuthWhereInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthWhereInputSchema'
+
 export const GoogleCalendarAuthDeleteManyArgsSchema: z.ZodType<Prisma.GoogleCalendarAuthDeleteManyArgs> = z.object({
   where: GoogleCalendarAuthWhereInputSchema.optional(),
 }).strict() ;
+
 export default GoogleCalendarAuthDeleteManyArgsSchema;

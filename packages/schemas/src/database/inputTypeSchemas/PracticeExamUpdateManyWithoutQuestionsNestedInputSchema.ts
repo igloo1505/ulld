@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { PracticeExamCreateWithoutQuestionsInputSchema } from './PracticeExamCreateWithoutQuestionsInputSchema.js';
-import { PracticeExamUncheckedCreateWithoutQuestionsInputSchema } from './PracticeExamUncheckedCreateWithoutQuestionsInputSchema.js';
-import { PracticeExamCreateOrConnectWithoutQuestionsInputSchema } from './PracticeExamCreateOrConnectWithoutQuestionsInputSchema.js';
-import { PracticeExamUpsertWithWhereUniqueWithoutQuestionsInputSchema } from './PracticeExamUpsertWithWhereUniqueWithoutQuestionsInputSchema.js';
-import { PracticeExamWhereUniqueInputSchema } from './PracticeExamWhereUniqueInputSchema.js';
-import { PracticeExamUpdateWithWhereUniqueWithoutQuestionsInputSchema } from './PracticeExamUpdateWithWhereUniqueWithoutQuestionsInputSchema.js';
-import { PracticeExamUpdateManyWithWhereWithoutQuestionsInputSchema } from './PracticeExamUpdateManyWithWhereWithoutQuestionsInputSchema.js';
-import { PracticeExamScalarWhereInputSchema } from './PracticeExamScalarWhereInputSchema.js';
+import { PracticeExamCreateWithoutQuestionsInputSchema } from './PracticeExamCreateWithoutQuestionsInputSchema';
+import { PracticeExamUncheckedCreateWithoutQuestionsInputSchema } from './PracticeExamUncheckedCreateWithoutQuestionsInputSchema';
+import { PracticeExamCreateOrConnectWithoutQuestionsInputSchema } from './PracticeExamCreateOrConnectWithoutQuestionsInputSchema';
+import { PracticeExamUpsertWithWhereUniqueWithoutQuestionsInputSchema } from './PracticeExamUpsertWithWhereUniqueWithoutQuestionsInputSchema';
+import { PracticeExamWhereUniqueInputSchema } from './PracticeExamWhereUniqueInputSchema';
+import { PracticeExamUpdateWithWhereUniqueWithoutQuestionsInputSchema } from './PracticeExamUpdateWithWhereUniqueWithoutQuestionsInputSchema';
+import { PracticeExamUpdateManyWithWhereWithoutQuestionsInputSchema } from './PracticeExamUpdateManyWithWhereWithoutQuestionsInputSchema';
+import { PracticeExamScalarWhereInputSchema } from './PracticeExamScalarWhereInputSchema';
+
 export const PracticeExamUpdateManyWithoutQuestionsNestedInputSchema: z.ZodType<Prisma.PracticeExamUpdateManyWithoutQuestionsNestedInput> = z.object({
   create: z.union([ z.lazy(() => PracticeExamCreateWithoutQuestionsInputSchema),z.lazy(() => PracticeExamCreateWithoutQuestionsInputSchema).array(),z.lazy(() => PracticeExamUncheckedCreateWithoutQuestionsInputSchema),z.lazy(() => PracticeExamUncheckedCreateWithoutQuestionsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => PracticeExamCreateOrConnectWithoutQuestionsInputSchema),z.lazy(() => PracticeExamCreateOrConnectWithoutQuestionsInputSchema).array() ]).optional(),
@@ -20,4 +22,5 @@ export const PracticeExamUpdateManyWithoutQuestionsNestedInputSchema: z.ZodType<
   updateMany: z.union([ z.lazy(() => PracticeExamUpdateManyWithWhereWithoutQuestionsInputSchema),z.lazy(() => PracticeExamUpdateManyWithWhereWithoutQuestionsInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => PracticeExamScalarWhereInputSchema),z.lazy(() => PracticeExamScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default PracticeExamUpdateManyWithoutQuestionsNestedInputSchema;

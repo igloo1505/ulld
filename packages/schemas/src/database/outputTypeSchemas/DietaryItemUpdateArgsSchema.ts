@@ -1,14 +1,15 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { DietaryItemIncludeSchema } from '../inputTypeSchemas/DietaryItemIncludeSchema.js'
-import { DietaryItemUpdateInputSchema } from '../inputTypeSchemas/DietaryItemUpdateInputSchema.js'
-import { DietaryItemUncheckedUpdateInputSchema } from '../inputTypeSchemas/DietaryItemUncheckedUpdateInputSchema.js'
-import { DietaryItemWhereUniqueInputSchema } from '../inputTypeSchemas/DietaryItemWhereUniqueInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { DietaryItemIncludeSchema } from '../inputTypeSchemas/DietaryItemIncludeSchema'
+import { DietaryItemUpdateInputSchema } from '../inputTypeSchemas/DietaryItemUpdateInputSchema'
+import { DietaryItemUncheckedUpdateInputSchema } from '../inputTypeSchemas/DietaryItemUncheckedUpdateInputSchema'
+import { DietaryItemWhereUniqueInputSchema } from '../inputTypeSchemas/DietaryItemWhereUniqueInputSchema'
 import { DietFindManyArgsSchema } from "../outputTypeSchemas/DietFindManyArgsSchema"
 import { ServingFindManyArgsSchema } from "../outputTypeSchemas/ServingFindManyArgsSchema"
 import { DietaryItemCountOutputTypeArgsSchema } from "../outputTypeSchemas/DietaryItemCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const DietaryItemSelectSchema: z.ZodType<Prisma.DietaryItemSelect> = z.object({
   id: z.boolean().optional(),
   name: z.boolean().optional(),
@@ -24,10 +25,12 @@ export const DietaryItemSelectSchema: z.ZodType<Prisma.DietaryItemSelect> = z.ob
   Serving: z.union([z.boolean(),z.lazy(() => ServingFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => DietaryItemCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export const DietaryItemUpdateArgsSchema: z.ZodType<Prisma.DietaryItemUpdateArgs> = z.object({
   select: DietaryItemSelectSchema.optional(),
   include: DietaryItemIncludeSchema.optional(),
   data: z.union([ DietaryItemUpdateInputSchema,DietaryItemUncheckedUpdateInputSchema ]),
   where: DietaryItemWhereUniqueInputSchema,
 }).strict() ;
+
 export default DietaryItemUpdateArgsSchema;

@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { EquationCreateWithoutSubjectsInputSchema } from './EquationCreateWithoutSubjectsInputSchema.js';
-import { EquationUncheckedCreateWithoutSubjectsInputSchema } from './EquationUncheckedCreateWithoutSubjectsInputSchema.js';
-import { EquationCreateOrConnectWithoutSubjectsInputSchema } from './EquationCreateOrConnectWithoutSubjectsInputSchema.js';
-import { EquationUpsertWithWhereUniqueWithoutSubjectsInputSchema } from './EquationUpsertWithWhereUniqueWithoutSubjectsInputSchema.js';
-import { EquationWhereUniqueInputSchema } from './EquationWhereUniqueInputSchema.js';
-import { EquationUpdateWithWhereUniqueWithoutSubjectsInputSchema } from './EquationUpdateWithWhereUniqueWithoutSubjectsInputSchema.js';
-import { EquationUpdateManyWithWhereWithoutSubjectsInputSchema } from './EquationUpdateManyWithWhereWithoutSubjectsInputSchema.js';
-import { EquationScalarWhereInputSchema } from './EquationScalarWhereInputSchema.js';
+import { EquationCreateWithoutSubjectsInputSchema } from './EquationCreateWithoutSubjectsInputSchema';
+import { EquationUncheckedCreateWithoutSubjectsInputSchema } from './EquationUncheckedCreateWithoutSubjectsInputSchema';
+import { EquationCreateOrConnectWithoutSubjectsInputSchema } from './EquationCreateOrConnectWithoutSubjectsInputSchema';
+import { EquationUpsertWithWhereUniqueWithoutSubjectsInputSchema } from './EquationUpsertWithWhereUniqueWithoutSubjectsInputSchema';
+import { EquationWhereUniqueInputSchema } from './EquationWhereUniqueInputSchema';
+import { EquationUpdateWithWhereUniqueWithoutSubjectsInputSchema } from './EquationUpdateWithWhereUniqueWithoutSubjectsInputSchema';
+import { EquationUpdateManyWithWhereWithoutSubjectsInputSchema } from './EquationUpdateManyWithWhereWithoutSubjectsInputSchema';
+import { EquationScalarWhereInputSchema } from './EquationScalarWhereInputSchema';
+
 export const EquationUncheckedUpdateManyWithoutSubjectsNestedInputSchema: z.ZodType<Prisma.EquationUncheckedUpdateManyWithoutSubjectsNestedInput> = z.object({
   create: z.union([ z.lazy(() => EquationCreateWithoutSubjectsInputSchema),z.lazy(() => EquationCreateWithoutSubjectsInputSchema).array(),z.lazy(() => EquationUncheckedCreateWithoutSubjectsInputSchema),z.lazy(() => EquationUncheckedCreateWithoutSubjectsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => EquationCreateOrConnectWithoutSubjectsInputSchema),z.lazy(() => EquationCreateOrConnectWithoutSubjectsInputSchema).array() ]).optional(),
@@ -20,4 +22,5 @@ export const EquationUncheckedUpdateManyWithoutSubjectsNestedInputSchema: z.ZodT
   updateMany: z.union([ z.lazy(() => EquationUpdateManyWithWhereWithoutSubjectsInputSchema),z.lazy(() => EquationUpdateManyWithWhereWithoutSubjectsInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => EquationScalarWhereInputSchema),z.lazy(() => EquationScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default EquationUncheckedUpdateManyWithoutSubjectsNestedInputSchema;

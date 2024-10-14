@@ -894,9 +894,9 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             customConversionFunction: z.ZodOptional<z.ZodObject<{
                 pdf: z.ZodOptional<z.ZodFunction<z.ZodTuple<[z.ZodString, z.ZodString], z.ZodUnknown>, z.ZodString>>;
             }, "strip", z.ZodTypeAny, {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             }, {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             }>>;
             execute: z.ZodDefault<z.ZodBoolean>;
             nbConvertTemplate: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"lab">, z.ZodLiteral<"classic">, z.ZodLiteral<"reveal">, z.ZodString]>>;
@@ -908,14 +908,14 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             notebookOutputDir: string;
             nbconvertPath?: string | undefined;
             customConversionFunction?: {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
         }, {
             execute?: boolean | undefined;
             nbconvertPath?: string | undefined;
             conversionTimeout?: number | undefined;
             customConversionFunction?: {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
             nbConvertTemplate?: string | undefined;
             notebookOutputDir?: string | undefined;
@@ -1022,7 +1022,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             notebookOutputDir: string;
             nbconvertPath?: string | undefined;
             customConversionFunction?: {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
         };
         jupyterNotebookProps: {
@@ -1068,7 +1068,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             nbconvertPath?: string | undefined;
             conversionTimeout?: number | undefined;
             customConversionFunction?: {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
             nbConvertTemplate?: string | undefined;
             notebookOutputDir?: string | undefined;
@@ -1363,9 +1363,9 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             customConversionFunction: z.ZodOptional<z.ZodObject<{
                 pdf: z.ZodOptional<z.ZodFunction<z.ZodTuple<[z.ZodString, z.ZodString], z.ZodUnknown>, z.ZodString>>;
             }, "strip", z.ZodTypeAny, {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             }, {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             }>>;
             execute: z.ZodDefault<z.ZodBoolean>;
             nbConvertTemplate: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"lab">, z.ZodLiteral<"classic">, z.ZodLiteral<"reveal">, z.ZodString]>>;
@@ -1377,14 +1377,14 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             notebookOutputDir: string;
             nbconvertPath?: string | undefined;
             customConversionFunction?: {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
         }, {
             execute?: boolean | undefined;
             nbconvertPath?: string | undefined;
             conversionTimeout?: number | undefined;
             customConversionFunction?: {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
             nbConvertTemplate?: string | undefined;
             notebookOutputDir?: string | undefined;
@@ -1531,7 +1531,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             notebookOutputDir: string;
             nbconvertPath?: string | undefined;
             customConversionFunction?: {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
         };
         jupyterNotebookProps: {
@@ -1577,7 +1577,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             nbconvertPath?: string | undefined;
             conversionTimeout?: number | undefined;
             customConversionFunction?: {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
             nbConvertTemplate?: string | undefined;
             notebookOutputDir?: string | undefined;
@@ -1782,7 +1782,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             notebookOutputDir: string;
             nbconvertPath?: string | undefined;
             customConversionFunction?: {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
         };
         jupyterNotebookProps: {
@@ -2056,7 +2056,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             nbconvertPath?: string | undefined;
             conversionTimeout?: number | undefined;
             customConversionFunction?: {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
             nbConvertTemplate?: string | undefined;
             notebookOutputDir?: string | undefined;
@@ -2378,7 +2378,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             notebookOutputDir: string;
             nbconvertPath?: string | undefined;
             customConversionFunction?: {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
         };
         jupyterNotebookProps: {
@@ -2652,7 +2652,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             nbconvertPath?: string | undefined;
             conversionTimeout?: number | undefined;
             customConversionFunction?: {
-                pdf?: ((args_0: string, args_1: string, ...args_2: unknown[]) => string) | undefined;
+                pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
             nbConvertTemplate?: string | undefined;
             notebookOutputDir?: string | undefined;

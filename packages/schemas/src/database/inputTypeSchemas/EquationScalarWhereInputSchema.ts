@@ -1,11 +1,13 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IntFilterSchema } from './IntFilterSchema.js';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
-import { StringFilterSchema } from './StringFilterSchema.js';
-import { JsonFilterSchema } from './JsonFilterSchema.js';
-import { StringNullableListFilterSchema } from './StringNullableListFilterSchema.js';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema';
+import { StringFilterSchema } from './StringFilterSchema';
+import { JsonFilterSchema } from './JsonFilterSchema';
+import { StringNullableListFilterSchema } from './StringNullableListFilterSchema';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema';
+
 export const EquationScalarWhereInputSchema: z.ZodType<Prisma.EquationScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => EquationScalarWhereInputSchema),z.lazy(() => EquationScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => EquationScalarWhereInputSchema).array().optional(),
@@ -22,4 +24,5 @@ export const EquationScalarWhereInputSchema: z.ZodType<Prisma.EquationScalarWher
   createdAt: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   lastAccess: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
+
 export default EquationScalarWhereInputSchema;

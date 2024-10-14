@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { TopicCreateWithoutIpynbNotesInputSchema } from './TopicCreateWithoutIpynbNotesInputSchema.js';
-import { TopicUncheckedCreateWithoutIpynbNotesInputSchema } from './TopicUncheckedCreateWithoutIpynbNotesInputSchema.js';
-import { TopicCreateOrConnectWithoutIpynbNotesInputSchema } from './TopicCreateOrConnectWithoutIpynbNotesInputSchema.js';
-import { TopicUpsertWithWhereUniqueWithoutIpynbNotesInputSchema } from './TopicUpsertWithWhereUniqueWithoutIpynbNotesInputSchema.js';
-import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema.js';
-import { TopicUpdateWithWhereUniqueWithoutIpynbNotesInputSchema } from './TopicUpdateWithWhereUniqueWithoutIpynbNotesInputSchema.js';
-import { TopicUpdateManyWithWhereWithoutIpynbNotesInputSchema } from './TopicUpdateManyWithWhereWithoutIpynbNotesInputSchema.js';
-import { TopicScalarWhereInputSchema } from './TopicScalarWhereInputSchema.js';
+import { TopicCreateWithoutIpynbNotesInputSchema } from './TopicCreateWithoutIpynbNotesInputSchema';
+import { TopicUncheckedCreateWithoutIpynbNotesInputSchema } from './TopicUncheckedCreateWithoutIpynbNotesInputSchema';
+import { TopicCreateOrConnectWithoutIpynbNotesInputSchema } from './TopicCreateOrConnectWithoutIpynbNotesInputSchema';
+import { TopicUpsertWithWhereUniqueWithoutIpynbNotesInputSchema } from './TopicUpsertWithWhereUniqueWithoutIpynbNotesInputSchema';
+import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema';
+import { TopicUpdateWithWhereUniqueWithoutIpynbNotesInputSchema } from './TopicUpdateWithWhereUniqueWithoutIpynbNotesInputSchema';
+import { TopicUpdateManyWithWhereWithoutIpynbNotesInputSchema } from './TopicUpdateManyWithWhereWithoutIpynbNotesInputSchema';
+import { TopicScalarWhereInputSchema } from './TopicScalarWhereInputSchema';
+
 export const TopicUpdateManyWithoutIpynbNotesNestedInputSchema: z.ZodType<Prisma.TopicUpdateManyWithoutIpynbNotesNestedInput> = z.object({
   create: z.union([ z.lazy(() => TopicCreateWithoutIpynbNotesInputSchema),z.lazy(() => TopicCreateWithoutIpynbNotesInputSchema).array(),z.lazy(() => TopicUncheckedCreateWithoutIpynbNotesInputSchema),z.lazy(() => TopicUncheckedCreateWithoutIpynbNotesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TopicCreateOrConnectWithoutIpynbNotesInputSchema),z.lazy(() => TopicCreateOrConnectWithoutIpynbNotesInputSchema).array() ]).optional(),
@@ -20,4 +22,5 @@ export const TopicUpdateManyWithoutIpynbNotesNestedInputSchema: z.ZodType<Prisma
   updateMany: z.union([ z.lazy(() => TopicUpdateManyWithWhereWithoutIpynbNotesInputSchema),z.lazy(() => TopicUpdateManyWithWhereWithoutIpynbNotesInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => TopicScalarWhereInputSchema),z.lazy(() => TopicScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default TopicUpdateManyWithoutIpynbNotesNestedInputSchema;

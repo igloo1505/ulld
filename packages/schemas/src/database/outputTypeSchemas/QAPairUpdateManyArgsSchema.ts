@@ -1,10 +1,12 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { QAPairUpdateManyMutationInputSchema } from '../inputTypeSchemas/QAPairUpdateManyMutationInputSchema.js'
-import { QAPairUncheckedUpdateManyInputSchema } from '../inputTypeSchemas/QAPairUncheckedUpdateManyInputSchema.js'
-import { QAPairWhereInputSchema } from '../inputTypeSchemas/QAPairWhereInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { QAPairUpdateManyMutationInputSchema } from '../inputTypeSchemas/QAPairUpdateManyMutationInputSchema'
+import { QAPairUncheckedUpdateManyInputSchema } from '../inputTypeSchemas/QAPairUncheckedUpdateManyInputSchema'
+import { QAPairWhereInputSchema } from '../inputTypeSchemas/QAPairWhereInputSchema'
+
 export const QAPairUpdateManyArgsSchema: z.ZodType<Prisma.QAPairUpdateManyArgs> = z.object({
   data: z.union([ QAPairUpdateManyMutationInputSchema,QAPairUncheckedUpdateManyInputSchema ]),
   where: QAPairWhereInputSchema.optional(),
 }).strict() ;
+
 export default QAPairUpdateManyArgsSchema;

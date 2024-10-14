@@ -1,12 +1,14 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
-import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
-import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
-import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema.js';
-import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema.js';
-import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema.js';
-import { FloatWithAggregatesFilterSchema } from './FloatWithAggregatesFilterSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema';
+import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema';
+import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema';
+import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema';
+import { FloatWithAggregatesFilterSchema } from './FloatWithAggregatesFilterSchema';
+
 export const DietaryItemScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.DietaryItemScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => DietaryItemScalarWhereWithAggregatesInputSchema),z.lazy(() => DietaryItemScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => DietaryItemScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -22,4 +24,5 @@ export const DietaryItemScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.D
   organic: z.union([ z.lazy(() => BoolWithAggregatesFilterSchema),z.boolean() ]).optional(),
   impactScore: z.union([ z.lazy(() => FloatWithAggregatesFilterSchema),z.number() ]).optional(),
 }).strict();
+
 export default DietaryItemScalarWhereWithAggregatesInputSchema;

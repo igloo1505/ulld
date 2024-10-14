@@ -1,6 +1,8 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { TaskCategorySchema } from './TaskCategorySchema.js';
+import { TaskCategorySchema } from './TaskCategorySchema';
+
 export const ToDoCreateManyToDoListInputSchema: z.ZodType<Prisma.ToDoCreateManyToDoListInput> = z.object({
   id: z.number().int().optional(),
   createdAt: z.coerce.date().optional(),
@@ -14,4 +16,5 @@ export const ToDoCreateManyToDoListInputSchema: z.ZodType<Prisma.ToDoCreateManyT
   priority: z.number().int().optional(),
   completedOn: z.coerce.date().optional().nullable()
 }).strict();
+
 export default ToDoCreateManyToDoListInputSchema;

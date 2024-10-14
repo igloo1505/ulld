@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
 import { BibArgsSchema } from "../outputTypeSchemas/BibArgsSchema"
 import { CitationsGroupFindManyArgsSchema } from "../outputTypeSchemas/CitationsGroupFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
@@ -9,6 +9,7 @@ import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyA
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"
 import { ReadingListFindManyArgsSchema } from "../outputTypeSchemas/ReadingListFindManyArgsSchema"
 import { BibEntryCountOutputTypeArgsSchema } from "../outputTypeSchemas/BibEntryCountOutputTypeArgsSchema"
+
 export const BibEntrySelectSchema: z.ZodType<Prisma.BibEntrySelect> = z.object({
   id: z.boolean().optional(),
   BibId: z.boolean().optional(),
@@ -62,4 +63,5 @@ export const BibEntrySelectSchema: z.ZodType<Prisma.BibEntrySelect> = z.object({
   readingList: z.union([z.boolean(),z.lazy(() => ReadingListFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => BibEntryCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export default BibEntrySelectSchema;

@@ -1,13 +1,16 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { ReadingListWhereUniqueInputSchema } from './ReadingListWhereUniqueInputSchema.js';
-import { ReadingListUpdateWithoutBibEntriesInputSchema } from './ReadingListUpdateWithoutBibEntriesInputSchema.js';
-import { ReadingListUncheckedUpdateWithoutBibEntriesInputSchema } from './ReadingListUncheckedUpdateWithoutBibEntriesInputSchema.js';
-import { ReadingListCreateWithoutBibEntriesInputSchema } from './ReadingListCreateWithoutBibEntriesInputSchema.js';
-import { ReadingListUncheckedCreateWithoutBibEntriesInputSchema } from './ReadingListUncheckedCreateWithoutBibEntriesInputSchema.js';
+import { ReadingListWhereUniqueInputSchema } from './ReadingListWhereUniqueInputSchema';
+import { ReadingListUpdateWithoutBibEntriesInputSchema } from './ReadingListUpdateWithoutBibEntriesInputSchema';
+import { ReadingListUncheckedUpdateWithoutBibEntriesInputSchema } from './ReadingListUncheckedUpdateWithoutBibEntriesInputSchema';
+import { ReadingListCreateWithoutBibEntriesInputSchema } from './ReadingListCreateWithoutBibEntriesInputSchema';
+import { ReadingListUncheckedCreateWithoutBibEntriesInputSchema } from './ReadingListUncheckedCreateWithoutBibEntriesInputSchema';
+
 export const ReadingListUpsertWithWhereUniqueWithoutBibEntriesInputSchema: z.ZodType<Prisma.ReadingListUpsertWithWhereUniqueWithoutBibEntriesInput> = z.object({
   where: z.lazy(() => ReadingListWhereUniqueInputSchema),
   update: z.union([ z.lazy(() => ReadingListUpdateWithoutBibEntriesInputSchema),z.lazy(() => ReadingListUncheckedUpdateWithoutBibEntriesInputSchema) ]),
   create: z.union([ z.lazy(() => ReadingListCreateWithoutBibEntriesInputSchema),z.lazy(() => ReadingListUncheckedCreateWithoutBibEntriesInputSchema) ]),
 }).strict();
+
 export default ReadingListUpsertWithWhereUniqueWithoutBibEntriesInputSchema;

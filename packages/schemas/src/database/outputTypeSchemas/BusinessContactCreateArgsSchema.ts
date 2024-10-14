@@ -1,9 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { BusinessContactCreateInputSchema } from '../inputTypeSchemas/BusinessContactCreateInputSchema.js'
-import { BusinessContactUncheckedCreateInputSchema } from '../inputTypeSchemas/BusinessContactUncheckedCreateInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { BusinessContactCreateInputSchema } from '../inputTypeSchemas/BusinessContactCreateInputSchema'
+import { BusinessContactUncheckedCreateInputSchema } from '../inputTypeSchemas/BusinessContactUncheckedCreateInputSchema'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const BusinessContactSelectSchema: z.ZodType<Prisma.BusinessContactSelect> = z.object({
   id: z.boolean().optional(),
   companyName: z.boolean().optional(),
@@ -14,8 +15,10 @@ export const BusinessContactSelectSchema: z.ZodType<Prisma.BusinessContactSelect
   message: z.boolean().optional(),
   purpose: z.boolean().optional(),
 }).strict()
+
 export const BusinessContactCreateArgsSchema: z.ZodType<Prisma.BusinessContactCreateArgs> = z.object({
   select: BusinessContactSelectSchema.optional(),
   data: z.union([ BusinessContactCreateInputSchema,BusinessContactUncheckedCreateInputSchema ]),
 }).strict() ;
+
 export default BusinessContactCreateArgsSchema;

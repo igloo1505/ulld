@@ -1,8 +1,10 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IpynbCreatecitationsListOrderInputSchema } from './IpynbCreatecitationsListOrderInputSchema.js';
-import { IpynbCreateimportantValuesInputSchema } from './IpynbCreateimportantValuesInputSchema.js';
-import { IpynbCreateoutgoingQuickLinksInputSchema } from './IpynbCreateoutgoingQuickLinksInputSchema.js';
+import { IpynbCreatecitationsListOrderInputSchema } from './IpynbCreatecitationsListOrderInputSchema';
+import { IpynbCreateimportantValuesInputSchema } from './IpynbCreateimportantValuesInputSchema';
+import { IpynbCreateoutgoingQuickLinksInputSchema } from './IpynbCreateoutgoingQuickLinksInputSchema';
+
 export const IpynbCreateManyInputSchema: z.ZodType<Prisma.IpynbCreateManyInput> = z.object({
   id: z.number().int().optional(),
   rootRelativePath: z.string(),
@@ -21,4 +23,5 @@ export const IpynbCreateManyInputSchema: z.ZodType<Prisma.IpynbCreateManyInput> 
   lastSync: z.coerce.date().optional(),
   lastAccess: z.coerce.date().optional()
 }).strict();
+
 export default IpynbCreateManyInputSchema;

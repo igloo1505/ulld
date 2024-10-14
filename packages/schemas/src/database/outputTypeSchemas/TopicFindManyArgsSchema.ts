@@ -1,10 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { TopicIncludeSchema } from '../inputTypeSchemas/TopicIncludeSchema.js'
-import { TopicWhereInputSchema } from '../inputTypeSchemas/TopicWhereInputSchema.js'
-import { TopicOrderByWithRelationInputSchema } from '../inputTypeSchemas/TopicOrderByWithRelationInputSchema.js'
-import { TopicWhereUniqueInputSchema } from '../inputTypeSchemas/TopicWhereUniqueInputSchema.js'
-import { TopicScalarFieldEnumSchema } from '../inputTypeSchemas/TopicScalarFieldEnumSchema.js'
+import type { Prisma } from '@prisma/client';
+import { TopicIncludeSchema } from '../inputTypeSchemas/TopicIncludeSchema'
+import { TopicWhereInputSchema } from '../inputTypeSchemas/TopicWhereInputSchema'
+import { TopicOrderByWithRelationInputSchema } from '../inputTypeSchemas/TopicOrderByWithRelationInputSchema'
+import { TopicWhereUniqueInputSchema } from '../inputTypeSchemas/TopicWhereUniqueInputSchema'
+import { TopicScalarFieldEnumSchema } from '../inputTypeSchemas/TopicScalarFieldEnumSchema'
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"
 import { QAPairFindManyArgsSchema } from "../outputTypeSchemas/QAPairFindManyArgsSchema"
@@ -17,6 +17,7 @@ import { EquationFindManyArgsSchema } from "../outputTypeSchemas/EquationFindMan
 import { TopicCountOutputTypeArgsSchema } from "../outputTypeSchemas/TopicCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const TopicSelectSchema: z.ZodType<Prisma.TopicSelect> = z.object({
   value: z.boolean().optional(),
   kanbanId: z.boolean().optional(),
@@ -33,6 +34,7 @@ export const TopicSelectSchema: z.ZodType<Prisma.TopicSelect> = z.object({
   equations: z.union([z.boolean(),z.lazy(() => EquationFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => TopicCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export const TopicFindManyArgsSchema: z.ZodType<Prisma.TopicFindManyArgs> = z.object({
   select: TopicSelectSchema.optional(),
   include: TopicIncludeSchema.optional(),
@@ -43,4 +45,5 @@ export const TopicFindManyArgsSchema: z.ZodType<Prisma.TopicFindManyArgs> = z.ob
   skip: z.number().optional(),
   distinct: z.union([ TopicScalarFieldEnumSchema,TopicScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
+
 export default TopicFindManyArgsSchema;

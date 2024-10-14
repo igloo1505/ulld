@@ -1,8 +1,10 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
-import { SortOrderInputSchema } from './SortOrderInputSchema.js';
-import { DietaryItemOrderByWithRelationInputSchema } from './DietaryItemOrderByWithRelationInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+import { SortOrderInputSchema } from './SortOrderInputSchema';
+import { DietaryItemOrderByWithRelationInputSchema } from './DietaryItemOrderByWithRelationInputSchema';
+
 export const ServingOrderByWithRelationInputSchema: z.ZodType<Prisma.ServingOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   dietaryItemId: z.lazy(() => SortOrderSchema).optional(),
@@ -10,4 +12,5 @@ export const ServingOrderByWithRelationInputSchema: z.ZodType<Prisma.ServingOrde
   quant_guess: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
   item: z.lazy(() => DietaryItemOrderByWithRelationInputSchema).optional()
 }).strict();
+
 export default ServingOrderByWithRelationInputSchema;

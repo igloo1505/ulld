@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { BibEntryCreateWithoutMdxNotesInputSchema } from './BibEntryCreateWithoutMdxNotesInputSchema.js';
-import { BibEntryUncheckedCreateWithoutMdxNotesInputSchema } from './BibEntryUncheckedCreateWithoutMdxNotesInputSchema.js';
-import { BibEntryCreateOrConnectWithoutMdxNotesInputSchema } from './BibEntryCreateOrConnectWithoutMdxNotesInputSchema.js';
-import { BibEntryUpsertWithWhereUniqueWithoutMdxNotesInputSchema } from './BibEntryUpsertWithWhereUniqueWithoutMdxNotesInputSchema.js';
-import { BibEntryWhereUniqueInputSchema } from './BibEntryWhereUniqueInputSchema.js';
-import { BibEntryUpdateWithWhereUniqueWithoutMdxNotesInputSchema } from './BibEntryUpdateWithWhereUniqueWithoutMdxNotesInputSchema.js';
-import { BibEntryUpdateManyWithWhereWithoutMdxNotesInputSchema } from './BibEntryUpdateManyWithWhereWithoutMdxNotesInputSchema.js';
-import { BibEntryScalarWhereInputSchema } from './BibEntryScalarWhereInputSchema.js';
+import { BibEntryCreateWithoutMdxNotesInputSchema } from './BibEntryCreateWithoutMdxNotesInputSchema';
+import { BibEntryUncheckedCreateWithoutMdxNotesInputSchema } from './BibEntryUncheckedCreateWithoutMdxNotesInputSchema';
+import { BibEntryCreateOrConnectWithoutMdxNotesInputSchema } from './BibEntryCreateOrConnectWithoutMdxNotesInputSchema';
+import { BibEntryUpsertWithWhereUniqueWithoutMdxNotesInputSchema } from './BibEntryUpsertWithWhereUniqueWithoutMdxNotesInputSchema';
+import { BibEntryWhereUniqueInputSchema } from './BibEntryWhereUniqueInputSchema';
+import { BibEntryUpdateWithWhereUniqueWithoutMdxNotesInputSchema } from './BibEntryUpdateWithWhereUniqueWithoutMdxNotesInputSchema';
+import { BibEntryUpdateManyWithWhereWithoutMdxNotesInputSchema } from './BibEntryUpdateManyWithWhereWithoutMdxNotesInputSchema';
+import { BibEntryScalarWhereInputSchema } from './BibEntryScalarWhereInputSchema';
+
 export const BibEntryUncheckedUpdateManyWithoutMdxNotesNestedInputSchema: z.ZodType<Prisma.BibEntryUncheckedUpdateManyWithoutMdxNotesNestedInput> = z.object({
   create: z.union([ z.lazy(() => BibEntryCreateWithoutMdxNotesInputSchema),z.lazy(() => BibEntryCreateWithoutMdxNotesInputSchema).array(),z.lazy(() => BibEntryUncheckedCreateWithoutMdxNotesInputSchema),z.lazy(() => BibEntryUncheckedCreateWithoutMdxNotesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => BibEntryCreateOrConnectWithoutMdxNotesInputSchema),z.lazy(() => BibEntryCreateOrConnectWithoutMdxNotesInputSchema).array() ]).optional(),
@@ -20,4 +22,5 @@ export const BibEntryUncheckedUpdateManyWithoutMdxNotesNestedInputSchema: z.ZodT
   updateMany: z.union([ z.lazy(() => BibEntryUpdateManyWithWhereWithoutMdxNotesInputSchema),z.lazy(() => BibEntryUpdateManyWithWhereWithoutMdxNotesInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => BibEntryScalarWhereInputSchema),z.lazy(() => BibEntryScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default BibEntryUncheckedUpdateManyWithoutMdxNotesNestedInputSchema;

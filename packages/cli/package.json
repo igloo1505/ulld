@@ -2,6 +2,7 @@
   "name": "@ulld/cli",
   "version": "0.0.2",
   "type": "module",
+  "bin": "dist/cli.js",
   "files": [
     "dist"
   ],
@@ -106,6 +107,15 @@
     "typescript": "5.5.4",
     "xo": "0.54.2"
   },
+  "peerDependencies": {},
+  "prettier": "@vdemedes/prettier-config",
+  "xo": {
+    "extends": "xo-react",
+    "prettier": true,
+    "rules": {
+      "react/prop-types": "off"
+    }
+  },
   "ava": {
     "extensions": {
       "ts": "module",
@@ -115,14 +125,5 @@
       "--loader=ts-node/esm"
     ]
   },
-  "bin": "dist/cli.js",
-  "license": "MIT",
-  "prettier": "@vdemedes/prettier-config",
-  "xo": {
-    "extends": "xo-react",
-    "prettier": true,
-    "rules": {
-      "react/prop-types": "off"
-    }
-  }
+  "license": "MIT"
 }

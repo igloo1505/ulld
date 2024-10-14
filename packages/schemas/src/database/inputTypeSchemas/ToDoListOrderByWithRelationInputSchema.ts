@@ -1,11 +1,13 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
-import { ToDoOrderByRelationAggregateInputSchema } from './ToDoOrderByRelationAggregateInputSchema.js';
-import { TagOrderByRelationAggregateInputSchema } from './TagOrderByRelationAggregateInputSchema.js';
-import { TopicOrderByRelationAggregateInputSchema } from './TopicOrderByRelationAggregateInputSchema.js';
-import { SubjectOrderByRelationAggregateInputSchema } from './SubjectOrderByRelationAggregateInputSchema.js';
-import { ToDoListOrderByRelevanceInputSchema } from './ToDoListOrderByRelevanceInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+import { ToDoOrderByRelationAggregateInputSchema } from './ToDoOrderByRelationAggregateInputSchema';
+import { TagOrderByRelationAggregateInputSchema } from './TagOrderByRelationAggregateInputSchema';
+import { TopicOrderByRelationAggregateInputSchema } from './TopicOrderByRelationAggregateInputSchema';
+import { SubjectOrderByRelationAggregateInputSchema } from './SubjectOrderByRelationAggregateInputSchema';
+import { ToDoListOrderByRelevanceInputSchema } from './ToDoListOrderByRelevanceInputSchema';
+
 export const ToDoListOrderByWithRelationInputSchema: z.ZodType<Prisma.ToDoListOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   label: z.lazy(() => SortOrderSchema).optional(),
@@ -18,4 +20,5 @@ export const ToDoListOrderByWithRelationInputSchema: z.ZodType<Prisma.ToDoListOr
   subjects: z.lazy(() => SubjectOrderByRelationAggregateInputSchema).optional(),
   _relevance: z.lazy(() => ToDoListOrderByRelevanceInputSchema).optional()
 }).strict();
+
 export default ToDoListOrderByWithRelationInputSchema;

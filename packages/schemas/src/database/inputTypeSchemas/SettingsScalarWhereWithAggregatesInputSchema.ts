@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
-import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema.js';
-import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
-import { EnumImageAlignmentWithAggregatesFilterSchema } from './EnumImageAlignmentWithAggregatesFilterSchema.js';
-import { ImageAlignmentSchema } from './ImageAlignmentSchema.js';
-import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
-import { JsonWithAggregatesFilterSchema } from './JsonWithAggregatesFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema';
+import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
+import { EnumImageAlignmentWithAggregatesFilterSchema } from './EnumImageAlignmentWithAggregatesFilterSchema';
+import { ImageAlignmentSchema } from './ImageAlignmentSchema';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema';
+import { JsonWithAggregatesFilterSchema } from './JsonWithAggregatesFilterSchema';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema';
+
 export const SettingsScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.SettingsScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => SettingsScalarWhereWithAggregatesInputSchema),z.lazy(() => SettingsScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => SettingsScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -25,4 +27,5 @@ export const SettingsScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.Sett
   firstSync: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
   lastSync: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
+
 export default SettingsScalarWhereWithAggregatesInputSchema;

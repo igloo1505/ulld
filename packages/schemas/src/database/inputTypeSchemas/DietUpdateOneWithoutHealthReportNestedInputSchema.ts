@@ -1,14 +1,16 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { DietCreateWithoutHealthReportInputSchema } from './DietCreateWithoutHealthReportInputSchema.js';
-import { DietUncheckedCreateWithoutHealthReportInputSchema } from './DietUncheckedCreateWithoutHealthReportInputSchema.js';
-import { DietCreateOrConnectWithoutHealthReportInputSchema } from './DietCreateOrConnectWithoutHealthReportInputSchema.js';
-import { DietUpsertWithoutHealthReportInputSchema } from './DietUpsertWithoutHealthReportInputSchema.js';
-import { DietWhereInputSchema } from './DietWhereInputSchema.js';
-import { DietWhereUniqueInputSchema } from './DietWhereUniqueInputSchema.js';
-import { DietUpdateToOneWithWhereWithoutHealthReportInputSchema } from './DietUpdateToOneWithWhereWithoutHealthReportInputSchema.js';
-import { DietUpdateWithoutHealthReportInputSchema } from './DietUpdateWithoutHealthReportInputSchema.js';
-import { DietUncheckedUpdateWithoutHealthReportInputSchema } from './DietUncheckedUpdateWithoutHealthReportInputSchema.js';
+import { DietCreateWithoutHealthReportInputSchema } from './DietCreateWithoutHealthReportInputSchema';
+import { DietUncheckedCreateWithoutHealthReportInputSchema } from './DietUncheckedCreateWithoutHealthReportInputSchema';
+import { DietCreateOrConnectWithoutHealthReportInputSchema } from './DietCreateOrConnectWithoutHealthReportInputSchema';
+import { DietUpsertWithoutHealthReportInputSchema } from './DietUpsertWithoutHealthReportInputSchema';
+import { DietWhereInputSchema } from './DietWhereInputSchema';
+import { DietWhereUniqueInputSchema } from './DietWhereUniqueInputSchema';
+import { DietUpdateToOneWithWhereWithoutHealthReportInputSchema } from './DietUpdateToOneWithWhereWithoutHealthReportInputSchema';
+import { DietUpdateWithoutHealthReportInputSchema } from './DietUpdateWithoutHealthReportInputSchema';
+import { DietUncheckedUpdateWithoutHealthReportInputSchema } from './DietUncheckedUpdateWithoutHealthReportInputSchema';
+
 export const DietUpdateOneWithoutHealthReportNestedInputSchema: z.ZodType<Prisma.DietUpdateOneWithoutHealthReportNestedInput> = z.object({
   create: z.union([ z.lazy(() => DietCreateWithoutHealthReportInputSchema),z.lazy(() => DietUncheckedCreateWithoutHealthReportInputSchema) ]).optional(),
   connectOrCreate: z.lazy(() => DietCreateOrConnectWithoutHealthReportInputSchema).optional(),
@@ -18,4 +20,5 @@ export const DietUpdateOneWithoutHealthReportNestedInputSchema: z.ZodType<Prisma
   connect: z.lazy(() => DietWhereUniqueInputSchema).optional(),
   update: z.union([ z.lazy(() => DietUpdateToOneWithWhereWithoutHealthReportInputSchema),z.lazy(() => DietUpdateWithoutHealthReportInputSchema),z.lazy(() => DietUncheckedUpdateWithoutHealthReportInputSchema) ]).optional(),
 }).strict();
+
 export default DietUpdateOneWithoutHealthReportNestedInputSchema;

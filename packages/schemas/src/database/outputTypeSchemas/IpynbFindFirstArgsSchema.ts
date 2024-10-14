@@ -1,10 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { IpynbIncludeSchema } from '../inputTypeSchemas/IpynbIncludeSchema.js'
-import { IpynbWhereInputSchema } from '../inputTypeSchemas/IpynbWhereInputSchema.js'
-import { IpynbOrderByWithRelationInputSchema } from '../inputTypeSchemas/IpynbOrderByWithRelationInputSchema.js'
-import { IpynbWhereUniqueInputSchema } from '../inputTypeSchemas/IpynbWhereUniqueInputSchema.js'
-import { IpynbScalarFieldEnumSchema } from '../inputTypeSchemas/IpynbScalarFieldEnumSchema.js'
+import type { Prisma } from '@prisma/client';
+import { IpynbIncludeSchema } from '../inputTypeSchemas/IpynbIncludeSchema'
+import { IpynbWhereInputSchema } from '../inputTypeSchemas/IpynbWhereInputSchema'
+import { IpynbOrderByWithRelationInputSchema } from '../inputTypeSchemas/IpynbOrderByWithRelationInputSchema'
+import { IpynbWhereUniqueInputSchema } from '../inputTypeSchemas/IpynbWhereUniqueInputSchema'
+import { IpynbScalarFieldEnumSchema } from '../inputTypeSchemas/IpynbScalarFieldEnumSchema'
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
@@ -14,6 +14,7 @@ import { ReadingListFindManyArgsSchema } from "../outputTypeSchemas/ReadingListF
 import { IpynbCountOutputTypeArgsSchema } from "../outputTypeSchemas/IpynbCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const IpynbSelectSchema: z.ZodType<Prisma.IpynbSelect> = z.object({
   id: z.boolean().optional(),
   rootRelativePath: z.boolean().optional(),
@@ -39,6 +40,7 @@ export const IpynbSelectSchema: z.ZodType<Prisma.IpynbSelect> = z.object({
   readingList: z.union([z.boolean(),z.lazy(() => ReadingListFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => IpynbCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export const IpynbFindFirstArgsSchema: z.ZodType<Prisma.IpynbFindFirstArgs> = z.object({
   select: IpynbSelectSchema.optional(),
   include: IpynbIncludeSchema.optional(),
@@ -49,4 +51,5 @@ export const IpynbFindFirstArgsSchema: z.ZodType<Prisma.IpynbFindFirstArgs> = z.
   skip: z.number().optional(),
   distinct: z.union([ IpynbScalarFieldEnumSchema,IpynbScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
+
 export default IpynbFindFirstArgsSchema;

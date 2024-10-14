@@ -1,8 +1,10 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { CitationsGroupWhereInputSchema } from './CitationsGroupWhereInputSchema.js';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
-import { BibEntryListRelationFilterSchema } from './BibEntryListRelationFilterSchema.js';
+import { CitationsGroupWhereInputSchema } from './CitationsGroupWhereInputSchema';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema';
+import { BibEntryListRelationFilterSchema } from './BibEntryListRelationFilterSchema';
+
 export const CitationsGroupWhereUniqueInputSchema: z.ZodType<Prisma.CitationsGroupWhereUniqueInput> = z.object({
   name: z.string()
 })
@@ -14,4 +16,5 @@ export const CitationsGroupWhereUniqueInputSchema: z.ZodType<Prisma.CitationsGro
   description: z.union([ z.lazy(() => StringNullableFilterSchema),z.string() ]).optional().nullable(),
   entries: z.lazy(() => BibEntryListRelationFilterSchema).optional()
 }).strict());
+
 export default CitationsGroupWhereUniqueInputSchema;

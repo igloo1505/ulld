@@ -1,12 +1,14 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
-import { SortOrderInputSchema } from './SortOrderInputSchema.js';
-import { TagCountOrderByAggregateInputSchema } from './TagCountOrderByAggregateInputSchema.js';
-import { TagAvgOrderByAggregateInputSchema } from './TagAvgOrderByAggregateInputSchema.js';
-import { TagMaxOrderByAggregateInputSchema } from './TagMaxOrderByAggregateInputSchema.js';
-import { TagMinOrderByAggregateInputSchema } from './TagMinOrderByAggregateInputSchema.js';
-import { TagSumOrderByAggregateInputSchema } from './TagSumOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+import { SortOrderInputSchema } from './SortOrderInputSchema';
+import { TagCountOrderByAggregateInputSchema } from './TagCountOrderByAggregateInputSchema';
+import { TagAvgOrderByAggregateInputSchema } from './TagAvgOrderByAggregateInputSchema';
+import { TagMaxOrderByAggregateInputSchema } from './TagMaxOrderByAggregateInputSchema';
+import { TagMinOrderByAggregateInputSchema } from './TagMinOrderByAggregateInputSchema';
+import { TagSumOrderByAggregateInputSchema } from './TagSumOrderByAggregateInputSchema';
+
 export const TagOrderByWithAggregationInputSchema: z.ZodType<Prisma.TagOrderByWithAggregationInput> = z.object({
   value: z.lazy(() => SortOrderSchema).optional(),
   kanbanId: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
@@ -18,4 +20,5 @@ export const TagOrderByWithAggregationInputSchema: z.ZodType<Prisma.TagOrderByWi
   _min: z.lazy(() => TagMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => TagSumOrderByAggregateInputSchema).optional()
 }).strict();
+
 export default TagOrderByWithAggregationInputSchema;

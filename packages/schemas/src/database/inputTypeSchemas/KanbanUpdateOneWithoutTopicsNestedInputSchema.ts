@@ -1,14 +1,16 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { KanbanCreateWithoutTopicsInputSchema } from './KanbanCreateWithoutTopicsInputSchema.js';
-import { KanbanUncheckedCreateWithoutTopicsInputSchema } from './KanbanUncheckedCreateWithoutTopicsInputSchema.js';
-import { KanbanCreateOrConnectWithoutTopicsInputSchema } from './KanbanCreateOrConnectWithoutTopicsInputSchema.js';
-import { KanbanUpsertWithoutTopicsInputSchema } from './KanbanUpsertWithoutTopicsInputSchema.js';
-import { KanbanWhereInputSchema } from './KanbanWhereInputSchema.js';
-import { KanbanWhereUniqueInputSchema } from './KanbanWhereUniqueInputSchema.js';
-import { KanbanUpdateToOneWithWhereWithoutTopicsInputSchema } from './KanbanUpdateToOneWithWhereWithoutTopicsInputSchema.js';
-import { KanbanUpdateWithoutTopicsInputSchema } from './KanbanUpdateWithoutTopicsInputSchema.js';
-import { KanbanUncheckedUpdateWithoutTopicsInputSchema } from './KanbanUncheckedUpdateWithoutTopicsInputSchema.js';
+import { KanbanCreateWithoutTopicsInputSchema } from './KanbanCreateWithoutTopicsInputSchema';
+import { KanbanUncheckedCreateWithoutTopicsInputSchema } from './KanbanUncheckedCreateWithoutTopicsInputSchema';
+import { KanbanCreateOrConnectWithoutTopicsInputSchema } from './KanbanCreateOrConnectWithoutTopicsInputSchema';
+import { KanbanUpsertWithoutTopicsInputSchema } from './KanbanUpsertWithoutTopicsInputSchema';
+import { KanbanWhereInputSchema } from './KanbanWhereInputSchema';
+import { KanbanWhereUniqueInputSchema } from './KanbanWhereUniqueInputSchema';
+import { KanbanUpdateToOneWithWhereWithoutTopicsInputSchema } from './KanbanUpdateToOneWithWhereWithoutTopicsInputSchema';
+import { KanbanUpdateWithoutTopicsInputSchema } from './KanbanUpdateWithoutTopicsInputSchema';
+import { KanbanUncheckedUpdateWithoutTopicsInputSchema } from './KanbanUncheckedUpdateWithoutTopicsInputSchema';
+
 export const KanbanUpdateOneWithoutTopicsNestedInputSchema: z.ZodType<Prisma.KanbanUpdateOneWithoutTopicsNestedInput> = z.object({
   create: z.union([ z.lazy(() => KanbanCreateWithoutTopicsInputSchema),z.lazy(() => KanbanUncheckedCreateWithoutTopicsInputSchema) ]).optional(),
   connectOrCreate: z.lazy(() => KanbanCreateOrConnectWithoutTopicsInputSchema).optional(),
@@ -18,4 +20,5 @@ export const KanbanUpdateOneWithoutTopicsNestedInputSchema: z.ZodType<Prisma.Kan
   connect: z.lazy(() => KanbanWhereUniqueInputSchema).optional(),
   update: z.union([ z.lazy(() => KanbanUpdateToOneWithWhereWithoutTopicsInputSchema),z.lazy(() => KanbanUpdateWithoutTopicsInputSchema),z.lazy(() => KanbanUncheckedUpdateWithoutTopicsInputSchema) ]).optional(),
 }).strict();
+
 export default KanbanUpdateOneWithoutTopicsNestedInputSchema;

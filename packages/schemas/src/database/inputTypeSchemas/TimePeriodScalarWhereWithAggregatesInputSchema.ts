@@ -1,9 +1,11 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
-import { DateTimeNullableWithAggregatesFilterSchema } from './DateTimeNullableWithAggregatesFilterSchema.js';
-import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema';
+import { DateTimeNullableWithAggregatesFilterSchema } from './DateTimeNullableWithAggregatesFilterSchema';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema';
+
 export const TimePeriodScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.TimePeriodScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => TimePeriodScalarWhereWithAggregatesInputSchema),z.lazy(() => TimePeriodScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => TimePeriodScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -13,4 +15,5 @@ export const TimePeriodScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.Ti
   end: z.union([ z.lazy(() => DateTimeNullableWithAggregatesFilterSchema),z.coerce.date() ]).optional().nullable(),
   dietId: z.union([ z.lazy(() => StringNullableWithAggregatesFilterSchema),z.string() ]).optional().nullable(),
 }).strict();
+
 export default TimePeriodScalarWhereWithAggregatesInputSchema;

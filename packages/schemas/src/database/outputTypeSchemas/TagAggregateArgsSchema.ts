@@ -1,8 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { TagWhereInputSchema } from '../inputTypeSchemas/TagWhereInputSchema.js'
-import { TagOrderByWithRelationInputSchema } from '../inputTypeSchemas/TagOrderByWithRelationInputSchema.js'
-import { TagWhereUniqueInputSchema } from '../inputTypeSchemas/TagWhereUniqueInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { TagWhereInputSchema } from '../inputTypeSchemas/TagWhereInputSchema'
+import { TagOrderByWithRelationInputSchema } from '../inputTypeSchemas/TagOrderByWithRelationInputSchema'
+import { TagWhereUniqueInputSchema } from '../inputTypeSchemas/TagWhereUniqueInputSchema'
+
 export const TagAggregateArgsSchema: z.ZodType<Prisma.TagAggregateArgs> = z.object({
   where: TagWhereInputSchema.optional(),
   orderBy: z.union([ TagOrderByWithRelationInputSchema.array(),TagOrderByWithRelationInputSchema ]).optional(),
@@ -10,4 +11,5 @@ export const TagAggregateArgsSchema: z.ZodType<Prisma.TagAggregateArgs> = z.obje
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
+
 export default TagAggregateArgsSchema;

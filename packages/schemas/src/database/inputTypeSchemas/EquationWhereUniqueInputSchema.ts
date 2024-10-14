@@ -1,16 +1,18 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { EquationWhereInputSchema } from './EquationWhereInputSchema.js';
-import { StringFilterSchema } from './StringFilterSchema.js';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
-import { JsonFilterSchema } from './JsonFilterSchema.js';
-import { StringNullableListFilterSchema } from './StringNullableListFilterSchema.js';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
-import { RelatedValuesListRelationFilterSchema } from './RelatedValuesListRelationFilterSchema.js';
-import { TagListRelationFilterSchema } from './TagListRelationFilterSchema.js';
-import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema.js';
-import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema.js';
-import { MdxNoteListRelationFilterSchema } from './MdxNoteListRelationFilterSchema.js';
+import { EquationWhereInputSchema } from './EquationWhereInputSchema';
+import { StringFilterSchema } from './StringFilterSchema';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema';
+import { JsonFilterSchema } from './JsonFilterSchema';
+import { StringNullableListFilterSchema } from './StringNullableListFilterSchema';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema';
+import { RelatedValuesListRelationFilterSchema } from './RelatedValuesListRelationFilterSchema';
+import { TagListRelationFilterSchema } from './TagListRelationFilterSchema';
+import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema';
+import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema';
+import { MdxNoteListRelationFilterSchema } from './MdxNoteListRelationFilterSchema';
+
 export const EquationWhereUniqueInputSchema: z.ZodType<Prisma.EquationWhereUniqueInput> = z.union([
   z.object({
     id: z.number().int(),
@@ -44,4 +46,5 @@ export const EquationWhereUniqueInputSchema: z.ZodType<Prisma.EquationWhereUniqu
   subjects: z.lazy(() => SubjectListRelationFilterSchema).optional(),
   mdxNotes: z.lazy(() => MdxNoteListRelationFilterSchema).optional()
 }).strict());
+
 export default EquationWhereUniqueInputSchema;

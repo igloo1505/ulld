@@ -1,12 +1,13 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { HealthReportIncludeSchema } from '../inputTypeSchemas/HealthReportIncludeSchema.js'
-import { HealthReportUpdateInputSchema } from '../inputTypeSchemas/HealthReportUpdateInputSchema.js'
-import { HealthReportUncheckedUpdateInputSchema } from '../inputTypeSchemas/HealthReportUncheckedUpdateInputSchema.js'
-import { HealthReportWhereUniqueInputSchema } from '../inputTypeSchemas/HealthReportWhereUniqueInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { HealthReportIncludeSchema } from '../inputTypeSchemas/HealthReportIncludeSchema'
+import { HealthReportUpdateInputSchema } from '../inputTypeSchemas/HealthReportUpdateInputSchema'
+import { HealthReportUncheckedUpdateInputSchema } from '../inputTypeSchemas/HealthReportUncheckedUpdateInputSchema'
+import { HealthReportWhereUniqueInputSchema } from '../inputTypeSchemas/HealthReportWhereUniqueInputSchema'
 import { DietArgsSchema } from "../outputTypeSchemas/DietArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const HealthReportSelectSchema: z.ZodType<Prisma.HealthReportSelect> = z.object({
   id: z.boolean().optional(),
   title: z.boolean().optional(),
@@ -43,10 +44,12 @@ export const HealthReportSelectSchema: z.ZodType<Prisma.HealthReportSelect> = z.
   created: z.boolean().optional(),
   currentDiet: z.union([z.boolean(),z.lazy(() => DietArgsSchema)]).optional(),
 }).strict()
+
 export const HealthReportUpdateArgsSchema: z.ZodType<Prisma.HealthReportUpdateArgs> = z.object({
   select: HealthReportSelectSchema.optional(),
   include: HealthReportIncludeSchema.optional(),
   data: z.union([ HealthReportUpdateInputSchema,HealthReportUncheckedUpdateInputSchema ]),
   where: HealthReportWhereUniqueInputSchema,
 }).strict() ;
+
 export default HealthReportUpdateArgsSchema;

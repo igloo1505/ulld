@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
@@ -7,6 +7,7 @@ import { BibEntryFindManyArgsSchema } from "../outputTypeSchemas/BibEntryFindMan
 import { SequentialNoteListArgsSchema } from "../outputTypeSchemas/SequentialNoteListArgsSchema"
 import { ReadingListFindManyArgsSchema } from "../outputTypeSchemas/ReadingListFindManyArgsSchema"
 import { IpynbCountOutputTypeArgsSchema } from "../outputTypeSchemas/IpynbCountOutputTypeArgsSchema"
+
 export const IpynbSelectSchema: z.ZodType<Prisma.IpynbSelect> = z.object({
   id: z.boolean().optional(),
   rootRelativePath: z.boolean().optional(),
@@ -32,4 +33,5 @@ export const IpynbSelectSchema: z.ZodType<Prisma.IpynbSelect> = z.object({
   readingList: z.union([z.boolean(),z.lazy(() => ReadingListFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => IpynbCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export default IpynbSelectSchema;

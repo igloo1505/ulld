@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { TopicCreateWithoutToDoInputSchema } from './TopicCreateWithoutToDoInputSchema.js';
-import { TopicUncheckedCreateWithoutToDoInputSchema } from './TopicUncheckedCreateWithoutToDoInputSchema.js';
-import { TopicCreateOrConnectWithoutToDoInputSchema } from './TopicCreateOrConnectWithoutToDoInputSchema.js';
-import { TopicUpsertWithWhereUniqueWithoutToDoInputSchema } from './TopicUpsertWithWhereUniqueWithoutToDoInputSchema.js';
-import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema.js';
-import { TopicUpdateWithWhereUniqueWithoutToDoInputSchema } from './TopicUpdateWithWhereUniqueWithoutToDoInputSchema.js';
-import { TopicUpdateManyWithWhereWithoutToDoInputSchema } from './TopicUpdateManyWithWhereWithoutToDoInputSchema.js';
-import { TopicScalarWhereInputSchema } from './TopicScalarWhereInputSchema.js';
+import { TopicCreateWithoutToDoInputSchema } from './TopicCreateWithoutToDoInputSchema';
+import { TopicUncheckedCreateWithoutToDoInputSchema } from './TopicUncheckedCreateWithoutToDoInputSchema';
+import { TopicCreateOrConnectWithoutToDoInputSchema } from './TopicCreateOrConnectWithoutToDoInputSchema';
+import { TopicUpsertWithWhereUniqueWithoutToDoInputSchema } from './TopicUpsertWithWhereUniqueWithoutToDoInputSchema';
+import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema';
+import { TopicUpdateWithWhereUniqueWithoutToDoInputSchema } from './TopicUpdateWithWhereUniqueWithoutToDoInputSchema';
+import { TopicUpdateManyWithWhereWithoutToDoInputSchema } from './TopicUpdateManyWithWhereWithoutToDoInputSchema';
+import { TopicScalarWhereInputSchema } from './TopicScalarWhereInputSchema';
+
 export const TopicUncheckedUpdateManyWithoutToDoNestedInputSchema: z.ZodType<Prisma.TopicUncheckedUpdateManyWithoutToDoNestedInput> = z.object({
   create: z.union([ z.lazy(() => TopicCreateWithoutToDoInputSchema),z.lazy(() => TopicCreateWithoutToDoInputSchema).array(),z.lazy(() => TopicUncheckedCreateWithoutToDoInputSchema),z.lazy(() => TopicUncheckedCreateWithoutToDoInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TopicCreateOrConnectWithoutToDoInputSchema),z.lazy(() => TopicCreateOrConnectWithoutToDoInputSchema).array() ]).optional(),
@@ -20,4 +22,5 @@ export const TopicUncheckedUpdateManyWithoutToDoNestedInputSchema: z.ZodType<Pri
   updateMany: z.union([ z.lazy(() => TopicUpdateManyWithWhereWithoutToDoInputSchema),z.lazy(() => TopicUpdateManyWithWhereWithoutToDoInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => TopicScalarWhereInputSchema),z.lazy(() => TopicScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default TopicUncheckedUpdateManyWithoutToDoNestedInputSchema;

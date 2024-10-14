@@ -1,5 +1,6 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 export const TagCountOutputTypeSelectSchema: z.ZodType<Prisma.TagCountOutputTypeSelect> = z.object({
   MdxNotes: z.boolean().optional(),
   bibEntries: z.boolean().optional(),
@@ -10,4 +11,5 @@ export const TagCountOutputTypeSelectSchema: z.ZodType<Prisma.TagCountOutputType
   toDo: z.boolean().optional(),
   todoList: z.boolean().optional(),
 }).strict();
+
 export default TagCountOutputTypeSelectSchema;

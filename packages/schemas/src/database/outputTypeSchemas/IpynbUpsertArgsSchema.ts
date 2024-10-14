@@ -1,11 +1,11 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { IpynbIncludeSchema } from '../inputTypeSchemas/IpynbIncludeSchema.js'
-import { IpynbWhereUniqueInputSchema } from '../inputTypeSchemas/IpynbWhereUniqueInputSchema.js'
-import { IpynbCreateInputSchema } from '../inputTypeSchemas/IpynbCreateInputSchema.js'
-import { IpynbUncheckedCreateInputSchema } from '../inputTypeSchemas/IpynbUncheckedCreateInputSchema.js'
-import { IpynbUpdateInputSchema } from '../inputTypeSchemas/IpynbUpdateInputSchema.js'
-import { IpynbUncheckedUpdateInputSchema } from '../inputTypeSchemas/IpynbUncheckedUpdateInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { IpynbIncludeSchema } from '../inputTypeSchemas/IpynbIncludeSchema'
+import { IpynbWhereUniqueInputSchema } from '../inputTypeSchemas/IpynbWhereUniqueInputSchema'
+import { IpynbCreateInputSchema } from '../inputTypeSchemas/IpynbCreateInputSchema'
+import { IpynbUncheckedCreateInputSchema } from '../inputTypeSchemas/IpynbUncheckedCreateInputSchema'
+import { IpynbUpdateInputSchema } from '../inputTypeSchemas/IpynbUpdateInputSchema'
+import { IpynbUncheckedUpdateInputSchema } from '../inputTypeSchemas/IpynbUncheckedUpdateInputSchema'
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
@@ -15,6 +15,7 @@ import { ReadingListFindManyArgsSchema } from "../outputTypeSchemas/ReadingListF
 import { IpynbCountOutputTypeArgsSchema } from "../outputTypeSchemas/IpynbCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const IpynbSelectSchema: z.ZodType<Prisma.IpynbSelect> = z.object({
   id: z.boolean().optional(),
   rootRelativePath: z.boolean().optional(),
@@ -40,6 +41,7 @@ export const IpynbSelectSchema: z.ZodType<Prisma.IpynbSelect> = z.object({
   readingList: z.union([z.boolean(),z.lazy(() => ReadingListFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => IpynbCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export const IpynbUpsertArgsSchema: z.ZodType<Prisma.IpynbUpsertArgs> = z.object({
   select: IpynbSelectSchema.optional(),
   include: IpynbIncludeSchema.optional(),
@@ -47,4 +49,5 @@ export const IpynbUpsertArgsSchema: z.ZodType<Prisma.IpynbUpsertArgs> = z.object
   create: z.union([ IpynbCreateInputSchema,IpynbUncheckedCreateInputSchema ]),
   update: z.union([ IpynbUpdateInputSchema,IpynbUncheckedUpdateInputSchema ]),
 }).strict() ;
+
 export default IpynbUpsertArgsSchema;

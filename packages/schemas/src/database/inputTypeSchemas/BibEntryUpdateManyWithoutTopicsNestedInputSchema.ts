@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { BibEntryCreateWithoutTopicsInputSchema } from './BibEntryCreateWithoutTopicsInputSchema.js';
-import { BibEntryUncheckedCreateWithoutTopicsInputSchema } from './BibEntryUncheckedCreateWithoutTopicsInputSchema.js';
-import { BibEntryCreateOrConnectWithoutTopicsInputSchema } from './BibEntryCreateOrConnectWithoutTopicsInputSchema.js';
-import { BibEntryUpsertWithWhereUniqueWithoutTopicsInputSchema } from './BibEntryUpsertWithWhereUniqueWithoutTopicsInputSchema.js';
-import { BibEntryWhereUniqueInputSchema } from './BibEntryWhereUniqueInputSchema.js';
-import { BibEntryUpdateWithWhereUniqueWithoutTopicsInputSchema } from './BibEntryUpdateWithWhereUniqueWithoutTopicsInputSchema.js';
-import { BibEntryUpdateManyWithWhereWithoutTopicsInputSchema } from './BibEntryUpdateManyWithWhereWithoutTopicsInputSchema.js';
-import { BibEntryScalarWhereInputSchema } from './BibEntryScalarWhereInputSchema.js';
+import { BibEntryCreateWithoutTopicsInputSchema } from './BibEntryCreateWithoutTopicsInputSchema';
+import { BibEntryUncheckedCreateWithoutTopicsInputSchema } from './BibEntryUncheckedCreateWithoutTopicsInputSchema';
+import { BibEntryCreateOrConnectWithoutTopicsInputSchema } from './BibEntryCreateOrConnectWithoutTopicsInputSchema';
+import { BibEntryUpsertWithWhereUniqueWithoutTopicsInputSchema } from './BibEntryUpsertWithWhereUniqueWithoutTopicsInputSchema';
+import { BibEntryWhereUniqueInputSchema } from './BibEntryWhereUniqueInputSchema';
+import { BibEntryUpdateWithWhereUniqueWithoutTopicsInputSchema } from './BibEntryUpdateWithWhereUniqueWithoutTopicsInputSchema';
+import { BibEntryUpdateManyWithWhereWithoutTopicsInputSchema } from './BibEntryUpdateManyWithWhereWithoutTopicsInputSchema';
+import { BibEntryScalarWhereInputSchema } from './BibEntryScalarWhereInputSchema';
+
 export const BibEntryUpdateManyWithoutTopicsNestedInputSchema: z.ZodType<Prisma.BibEntryUpdateManyWithoutTopicsNestedInput> = z.object({
   create: z.union([ z.lazy(() => BibEntryCreateWithoutTopicsInputSchema),z.lazy(() => BibEntryCreateWithoutTopicsInputSchema).array(),z.lazy(() => BibEntryUncheckedCreateWithoutTopicsInputSchema),z.lazy(() => BibEntryUncheckedCreateWithoutTopicsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => BibEntryCreateOrConnectWithoutTopicsInputSchema),z.lazy(() => BibEntryCreateOrConnectWithoutTopicsInputSchema).array() ]).optional(),
@@ -20,4 +22,5 @@ export const BibEntryUpdateManyWithoutTopicsNestedInputSchema: z.ZodType<Prisma.
   updateMany: z.union([ z.lazy(() => BibEntryUpdateManyWithWhereWithoutTopicsInputSchema),z.lazy(() => BibEntryUpdateManyWithWhereWithoutTopicsInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => BibEntryScalarWhereInputSchema),z.lazy(() => BibEntryScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default BibEntryUpdateManyWithoutTopicsNestedInputSchema;

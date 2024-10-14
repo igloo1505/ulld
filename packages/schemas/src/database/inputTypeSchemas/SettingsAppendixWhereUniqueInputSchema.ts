@@ -1,8 +1,10 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SettingsAppendixWhereInputSchema } from './SettingsAppendixWhereInputSchema.js';
-import { BytesFilterSchema } from './BytesFilterSchema.js';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { SettingsAppendixWhereInputSchema } from './SettingsAppendixWhereInputSchema';
+import { BytesFilterSchema } from './BytesFilterSchema';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema';
+
 export const SettingsAppendixWhereUniqueInputSchema: z.ZodType<Prisma.SettingsAppendixWhereUniqueInput> = z.object({
   id: z.string()
 })
@@ -15,4 +17,5 @@ export const SettingsAppendixWhereUniqueInputSchema: z.ZodType<Prisma.SettingsAp
   createdAt: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   updatedAt: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
 }).strict());
+
 export default SettingsAppendixWhereUniqueInputSchema;

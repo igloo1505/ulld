@@ -1,5 +1,7 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
+
 export const BusinessContactUncheckedCreateInputSchema: z.ZodType<Prisma.BusinessContactUncheckedCreateInput> = z.object({
   id: z.number().int().optional(),
   companyName: z.string(),
@@ -10,4 +12,5 @@ export const BusinessContactUncheckedCreateInputSchema: z.ZodType<Prisma.Busines
   message: z.string(),
   purpose: z.string().optional().nullable()
 }).strict();
+
 export default BusinessContactUncheckedCreateInputSchema;

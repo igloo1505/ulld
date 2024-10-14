@@ -1,11 +1,13 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
-import { PracticeExamCountOrderByAggregateInputSchema } from './PracticeExamCountOrderByAggregateInputSchema.js';
-import { PracticeExamAvgOrderByAggregateInputSchema } from './PracticeExamAvgOrderByAggregateInputSchema.js';
-import { PracticeExamMaxOrderByAggregateInputSchema } from './PracticeExamMaxOrderByAggregateInputSchema.js';
-import { PracticeExamMinOrderByAggregateInputSchema } from './PracticeExamMinOrderByAggregateInputSchema.js';
-import { PracticeExamSumOrderByAggregateInputSchema } from './PracticeExamSumOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+import { PracticeExamCountOrderByAggregateInputSchema } from './PracticeExamCountOrderByAggregateInputSchema';
+import { PracticeExamAvgOrderByAggregateInputSchema } from './PracticeExamAvgOrderByAggregateInputSchema';
+import { PracticeExamMaxOrderByAggregateInputSchema } from './PracticeExamMaxOrderByAggregateInputSchema';
+import { PracticeExamMinOrderByAggregateInputSchema } from './PracticeExamMinOrderByAggregateInputSchema';
+import { PracticeExamSumOrderByAggregateInputSchema } from './PracticeExamSumOrderByAggregateInputSchema';
+
 export const PracticeExamOrderByWithAggregationInputSchema: z.ZodType<Prisma.PracticeExamOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   correctCount: z.lazy(() => SortOrderSchema).optional(),
@@ -19,4 +21,5 @@ export const PracticeExamOrderByWithAggregationInputSchema: z.ZodType<Prisma.Pra
   _min: z.lazy(() => PracticeExamMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => PracticeExamSumOrderByAggregateInputSchema).optional()
 }).strict();
+
 export default PracticeExamOrderByWithAggregationInputSchema;

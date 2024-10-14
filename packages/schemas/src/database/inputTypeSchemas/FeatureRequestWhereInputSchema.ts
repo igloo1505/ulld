@@ -1,9 +1,11 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IntFilterSchema } from './IntFilterSchema.js';
-import { StringFilterSchema } from './StringFilterSchema.js';
-import { StringNullableListFilterSchema } from './StringNullableListFilterSchema.js';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema';
+import { StringFilterSchema } from './StringFilterSchema';
+import { StringNullableListFilterSchema } from './StringNullableListFilterSchema';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema';
+
 export const FeatureRequestWhereInputSchema: z.ZodType<Prisma.FeatureRequestWhereInput> = z.object({
   AND: z.union([ z.lazy(() => FeatureRequestWhereInputSchema),z.lazy(() => FeatureRequestWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => FeatureRequestWhereInputSchema).array().optional(),
@@ -15,4 +17,5 @@ export const FeatureRequestWhereInputSchema: z.ZodType<Prisma.FeatureRequestWher
   userBase: z.lazy(() => StringNullableListFilterSchema).optional(),
   receivedOn: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
+
 export default FeatureRequestWhereInputSchema;

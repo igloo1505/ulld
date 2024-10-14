@@ -1,8 +1,10 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema.js';
-import { DietCreategoalsInputSchema } from './DietCreategoalsInputSchema.js';
-import { DIETARY_GOALSchema } from './DIETARY_GOALSchema.js';
+import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema';
+import { DietCreategoalsInputSchema } from './DietCreategoalsInputSchema';
+import { DIETARY_GOALSchema } from './DIETARY_GOALSchema';
+
 export const DietCreateManyInputSchema: z.ZodType<Prisma.DietCreateManyInput> = z.object({
   name: z.string(),
   summary: z.string().optional().nullable(),
@@ -21,4 +23,5 @@ export const DietCreateManyInputSchema: z.ZodType<Prisma.DietCreateManyInput> = 
   created: z.coerce.date().optional(),
   lastUpdate: z.coerce.date().optional()
 }).strict();
+
 export default DietCreateManyInputSchema;

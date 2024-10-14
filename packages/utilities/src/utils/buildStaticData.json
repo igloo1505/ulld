@@ -251,8 +251,17 @@
       }
     }
   ],
-  "reservedPublicDirs": ["utils", "scripts", "mathjax", "highlighting", "font"],
-  "parsableFileExtensions": [".mdx", ".ipynb"],
+  "reservedPublicDirs": [
+    "utils",
+    "scripts",
+    "mathjax",
+    "highlighting",
+    "font"
+  ],
+  "parsableFileExtensions": [
+    ".mdx",
+    ".ipynb"
+  ],
   "developerConfigKeysWithExportField": [
     {
       "key": "components",
@@ -274,7 +283,9 @@
       "matchWeight": 50,
       "url": "/bookmarks",
       "urlQuery": {},
-      "keywords": ["bookmarks"],
+      "keywords": [
+        "bookmarks"
+      ],
       "label": "Bookmarks",
       "autoTag": [],
       "autoTopic": [],
@@ -295,7 +306,9 @@
       "matchWeight": 50,
       "url": "/settings",
       "urlQuery": {},
-      "keywords": ["settings"],
+      "keywords": [
+        "settings"
+      ],
       "label": "Settings",
       "autoTag": [],
       "autoTopic": [],
@@ -317,7 +330,11 @@
       "fs": "/resources/pdf",
       "url": "/pdf",
       "urlQuery": {},
-      "keywords": ["pdf", "papers", "research"],
+      "keywords": [
+        "pdf",
+        "papers",
+        "research"
+      ],
       "label": "Pdfs",
       "autoTag": [],
       "autoTopic": [],
@@ -338,7 +355,11 @@
       "matchWeight": 50,
       "url": "/bibliography",
       "urlQuery": {},
-      "keywords": ["bib", "references", "citations"],
+      "keywords": [
+        "bib",
+        "references",
+        "citations"
+      ],
       "label": "Bibliography",
       "autoTag": [],
       "autoTopic": [],

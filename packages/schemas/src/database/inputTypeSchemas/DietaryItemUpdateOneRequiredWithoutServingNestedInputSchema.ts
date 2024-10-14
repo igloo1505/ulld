@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { DietaryItemCreateWithoutServingInputSchema } from './DietaryItemCreateWithoutServingInputSchema.js';
-import { DietaryItemUncheckedCreateWithoutServingInputSchema } from './DietaryItemUncheckedCreateWithoutServingInputSchema.js';
-import { DietaryItemCreateOrConnectWithoutServingInputSchema } from './DietaryItemCreateOrConnectWithoutServingInputSchema.js';
-import { DietaryItemUpsertWithoutServingInputSchema } from './DietaryItemUpsertWithoutServingInputSchema.js';
-import { DietaryItemWhereUniqueInputSchema } from './DietaryItemWhereUniqueInputSchema.js';
-import { DietaryItemUpdateToOneWithWhereWithoutServingInputSchema } from './DietaryItemUpdateToOneWithWhereWithoutServingInputSchema.js';
-import { DietaryItemUpdateWithoutServingInputSchema } from './DietaryItemUpdateWithoutServingInputSchema.js';
-import { DietaryItemUncheckedUpdateWithoutServingInputSchema } from './DietaryItemUncheckedUpdateWithoutServingInputSchema.js';
+import { DietaryItemCreateWithoutServingInputSchema } from './DietaryItemCreateWithoutServingInputSchema';
+import { DietaryItemUncheckedCreateWithoutServingInputSchema } from './DietaryItemUncheckedCreateWithoutServingInputSchema';
+import { DietaryItemCreateOrConnectWithoutServingInputSchema } from './DietaryItemCreateOrConnectWithoutServingInputSchema';
+import { DietaryItemUpsertWithoutServingInputSchema } from './DietaryItemUpsertWithoutServingInputSchema';
+import { DietaryItemWhereUniqueInputSchema } from './DietaryItemWhereUniqueInputSchema';
+import { DietaryItemUpdateToOneWithWhereWithoutServingInputSchema } from './DietaryItemUpdateToOneWithWhereWithoutServingInputSchema';
+import { DietaryItemUpdateWithoutServingInputSchema } from './DietaryItemUpdateWithoutServingInputSchema';
+import { DietaryItemUncheckedUpdateWithoutServingInputSchema } from './DietaryItemUncheckedUpdateWithoutServingInputSchema';
+
 export const DietaryItemUpdateOneRequiredWithoutServingNestedInputSchema: z.ZodType<Prisma.DietaryItemUpdateOneRequiredWithoutServingNestedInput> = z.object({
   create: z.union([ z.lazy(() => DietaryItemCreateWithoutServingInputSchema),z.lazy(() => DietaryItemUncheckedCreateWithoutServingInputSchema) ]).optional(),
   connectOrCreate: z.lazy(() => DietaryItemCreateOrConnectWithoutServingInputSchema).optional(),
@@ -15,4 +17,5 @@ export const DietaryItemUpdateOneRequiredWithoutServingNestedInputSchema: z.ZodT
   connect: z.lazy(() => DietaryItemWhereUniqueInputSchema).optional(),
   update: z.union([ z.lazy(() => DietaryItemUpdateToOneWithWhereWithoutServingInputSchema),z.lazy(() => DietaryItemUpdateWithoutServingInputSchema),z.lazy(() => DietaryItemUncheckedUpdateWithoutServingInputSchema) ]).optional(),
 }).strict();
+
 export default DietaryItemUpdateOneRequiredWithoutServingNestedInputSchema;

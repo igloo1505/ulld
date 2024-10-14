@@ -1,12 +1,14 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
-import { SortOrderInputSchema } from './SortOrderInputSchema.js';
-import { ToDoCountOrderByAggregateInputSchema } from './ToDoCountOrderByAggregateInputSchema.js';
-import { ToDoAvgOrderByAggregateInputSchema } from './ToDoAvgOrderByAggregateInputSchema.js';
-import { ToDoMaxOrderByAggregateInputSchema } from './ToDoMaxOrderByAggregateInputSchema.js';
-import { ToDoMinOrderByAggregateInputSchema } from './ToDoMinOrderByAggregateInputSchema.js';
-import { ToDoSumOrderByAggregateInputSchema } from './ToDoSumOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+import { SortOrderInputSchema } from './SortOrderInputSchema';
+import { ToDoCountOrderByAggregateInputSchema } from './ToDoCountOrderByAggregateInputSchema';
+import { ToDoAvgOrderByAggregateInputSchema } from './ToDoAvgOrderByAggregateInputSchema';
+import { ToDoMaxOrderByAggregateInputSchema } from './ToDoMaxOrderByAggregateInputSchema';
+import { ToDoMinOrderByAggregateInputSchema } from './ToDoMinOrderByAggregateInputSchema';
+import { ToDoSumOrderByAggregateInputSchema } from './ToDoSumOrderByAggregateInputSchema';
+
 export const ToDoOrderByWithAggregationInputSchema: z.ZodType<Prisma.ToDoOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   createdAt: z.lazy(() => SortOrderSchema).optional(),
@@ -26,4 +28,5 @@ export const ToDoOrderByWithAggregationInputSchema: z.ZodType<Prisma.ToDoOrderBy
   _min: z.lazy(() => ToDoMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => ToDoSumOrderByAggregateInputSchema).optional()
 }).strict();
+
 export default ToDoOrderByWithAggregationInputSchema;

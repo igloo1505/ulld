@@ -1,11 +1,13 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IntFilterSchema } from './IntFilterSchema.js';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
-import { DateTimeNullableFilterSchema } from './DateTimeNullableFilterSchema.js';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
-import { DietNullableRelationFilterSchema } from './DietNullableRelationFilterSchema.js';
-import { DietWhereInputSchema } from './DietWhereInputSchema.js';
+import { IntFilterSchema } from './IntFilterSchema';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema';
+import { DateTimeNullableFilterSchema } from './DateTimeNullableFilterSchema';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema';
+import { DietNullableRelationFilterSchema } from './DietNullableRelationFilterSchema';
+import { DietWhereInputSchema } from './DietWhereInputSchema';
+
 export const TimePeriodWhereInputSchema: z.ZodType<Prisma.TimePeriodWhereInput> = z.object({
   AND: z.union([ z.lazy(() => TimePeriodWhereInputSchema),z.lazy(() => TimePeriodWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => TimePeriodWhereInputSchema).array().optional(),
@@ -16,4 +18,5 @@ export const TimePeriodWhereInputSchema: z.ZodType<Prisma.TimePeriodWhereInput> 
   dietId: z.union([ z.lazy(() => StringNullableFilterSchema),z.string() ]).optional().nullable(),
   Diet: z.union([ z.lazy(() => DietNullableRelationFilterSchema),z.lazy(() => DietWhereInputSchema) ]).optional().nullable(),
 }).strict();
+
 export default TimePeriodWhereInputSchema;

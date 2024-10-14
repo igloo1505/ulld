@@ -1,9 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { SettingsAppendixWhereInputSchema } from '../inputTypeSchemas/SettingsAppendixWhereInputSchema.js'
-import { SettingsAppendixOrderByWithAggregationInputSchema } from '../inputTypeSchemas/SettingsAppendixOrderByWithAggregationInputSchema.js'
-import { SettingsAppendixScalarFieldEnumSchema } from '../inputTypeSchemas/SettingsAppendixScalarFieldEnumSchema.js'
-import { SettingsAppendixScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/SettingsAppendixScalarWhereWithAggregatesInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { SettingsAppendixWhereInputSchema } from '../inputTypeSchemas/SettingsAppendixWhereInputSchema'
+import { SettingsAppendixOrderByWithAggregationInputSchema } from '../inputTypeSchemas/SettingsAppendixOrderByWithAggregationInputSchema'
+import { SettingsAppendixScalarFieldEnumSchema } from '../inputTypeSchemas/SettingsAppendixScalarFieldEnumSchema'
+import { SettingsAppendixScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/SettingsAppendixScalarWhereWithAggregatesInputSchema'
+
 export const SettingsAppendixGroupByArgsSchema: z.ZodType<Prisma.SettingsAppendixGroupByArgs> = z.object({
   where: SettingsAppendixWhereInputSchema.optional(),
   orderBy: z.union([ SettingsAppendixOrderByWithAggregationInputSchema.array(),SettingsAppendixOrderByWithAggregationInputSchema ]).optional(),
@@ -12,4 +13,5 @@ export const SettingsAppendixGroupByArgsSchema: z.ZodType<Prisma.SettingsAppendi
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
+
 export default SettingsAppendixGroupByArgsSchema;

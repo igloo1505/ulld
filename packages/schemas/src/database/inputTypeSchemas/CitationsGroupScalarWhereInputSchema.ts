@@ -1,7 +1,9 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { StringFilterSchema } from './StringFilterSchema.js';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema';
+
 export const CitationsGroupScalarWhereInputSchema: z.ZodType<Prisma.CitationsGroupScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => CitationsGroupScalarWhereInputSchema),z.lazy(() => CitationsGroupScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => CitationsGroupScalarWhereInputSchema).array().optional(),
@@ -9,4 +11,5 @@ export const CitationsGroupScalarWhereInputSchema: z.ZodType<Prisma.CitationsGro
   name: z.union([ z.lazy(() => StringFilterSchema),z.string() ]).optional(),
   description: z.union([ z.lazy(() => StringNullableFilterSchema),z.string() ]).optional().nullable(),
 }).strict();
+
 export default CitationsGroupScalarWhereInputSchema;

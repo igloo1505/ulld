@@ -1,7 +1,9 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { MdxNoteUncheckedCreateNestedManyWithoutReadingListInputSchema } from './MdxNoteUncheckedCreateNestedManyWithoutReadingListInputSchema.js';
-import { IpynbUncheckedCreateNestedManyWithoutReadingListInputSchema } from './IpynbUncheckedCreateNestedManyWithoutReadingListInputSchema.js';
+import { MdxNoteUncheckedCreateNestedManyWithoutReadingListInputSchema } from './MdxNoteUncheckedCreateNestedManyWithoutReadingListInputSchema';
+import { IpynbUncheckedCreateNestedManyWithoutReadingListInputSchema } from './IpynbUncheckedCreateNestedManyWithoutReadingListInputSchema';
+
 export const ReadingListUncheckedCreateWithoutBibEntriesInputSchema: z.ZodType<Prisma.ReadingListUncheckedCreateWithoutBibEntriesInput> = z.object({
   name: z.string(),
   description: z.string().optional().nullable(),
@@ -10,4 +12,5 @@ export const ReadingListUncheckedCreateWithoutBibEntriesInputSchema: z.ZodType<P
   mdxNotes: z.lazy(() => MdxNoteUncheckedCreateNestedManyWithoutReadingListInputSchema).optional(),
   ipynbNotes: z.lazy(() => IpynbUncheckedCreateNestedManyWithoutReadingListInputSchema).optional()
 }).strict();
+
 export default ReadingListUncheckedCreateWithoutBibEntriesInputSchema;

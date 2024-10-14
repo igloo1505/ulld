@@ -1,10 +1,12 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
-import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema.js';
-import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema.js';
-import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
+import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema';
+import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema';
+
 export const BibEntryScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.BibEntryScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => BibEntryScalarWhereWithAggregatesInputSchema),z.lazy(() => BibEntryScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => BibEntryScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -52,4 +54,5 @@ export const BibEntryScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.BibE
   createdAt: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
   lastAccess: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
+
 export default BibEntryScalarWhereWithAggregatesInputSchema;

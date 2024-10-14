@@ -1,9 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { KanBanListWhereInputSchema } from '../inputTypeSchemas/KanBanListWhereInputSchema.js'
-import { KanBanListOrderByWithAggregationInputSchema } from '../inputTypeSchemas/KanBanListOrderByWithAggregationInputSchema.js'
-import { KanBanListScalarFieldEnumSchema } from '../inputTypeSchemas/KanBanListScalarFieldEnumSchema.js'
-import { KanBanListScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/KanBanListScalarWhereWithAggregatesInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { KanBanListWhereInputSchema } from '../inputTypeSchemas/KanBanListWhereInputSchema'
+import { KanBanListOrderByWithAggregationInputSchema } from '../inputTypeSchemas/KanBanListOrderByWithAggregationInputSchema'
+import { KanBanListScalarFieldEnumSchema } from '../inputTypeSchemas/KanBanListScalarFieldEnumSchema'
+import { KanBanListScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/KanBanListScalarWhereWithAggregatesInputSchema'
+
 export const KanBanListGroupByArgsSchema: z.ZodType<Prisma.KanBanListGroupByArgs> = z.object({
   where: KanBanListWhereInputSchema.optional(),
   orderBy: z.union([ KanBanListOrderByWithAggregationInputSchema.array(),KanBanListOrderByWithAggregationInputSchema ]).optional(),
@@ -12,4 +13,5 @@ export const KanBanListGroupByArgsSchema: z.ZodType<Prisma.KanBanListGroupByArgs
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
+
 export default KanBanListGroupByArgsSchema;

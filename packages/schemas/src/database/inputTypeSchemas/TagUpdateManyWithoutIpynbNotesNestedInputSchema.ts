@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { TagCreateWithoutIpynbNotesInputSchema } from './TagCreateWithoutIpynbNotesInputSchema.js';
-import { TagUncheckedCreateWithoutIpynbNotesInputSchema } from './TagUncheckedCreateWithoutIpynbNotesInputSchema.js';
-import { TagCreateOrConnectWithoutIpynbNotesInputSchema } from './TagCreateOrConnectWithoutIpynbNotesInputSchema.js';
-import { TagUpsertWithWhereUniqueWithoutIpynbNotesInputSchema } from './TagUpsertWithWhereUniqueWithoutIpynbNotesInputSchema.js';
-import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema.js';
-import { TagUpdateWithWhereUniqueWithoutIpynbNotesInputSchema } from './TagUpdateWithWhereUniqueWithoutIpynbNotesInputSchema.js';
-import { TagUpdateManyWithWhereWithoutIpynbNotesInputSchema } from './TagUpdateManyWithWhereWithoutIpynbNotesInputSchema.js';
-import { TagScalarWhereInputSchema } from './TagScalarWhereInputSchema.js';
+import { TagCreateWithoutIpynbNotesInputSchema } from './TagCreateWithoutIpynbNotesInputSchema';
+import { TagUncheckedCreateWithoutIpynbNotesInputSchema } from './TagUncheckedCreateWithoutIpynbNotesInputSchema';
+import { TagCreateOrConnectWithoutIpynbNotesInputSchema } from './TagCreateOrConnectWithoutIpynbNotesInputSchema';
+import { TagUpsertWithWhereUniqueWithoutIpynbNotesInputSchema } from './TagUpsertWithWhereUniqueWithoutIpynbNotesInputSchema';
+import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema';
+import { TagUpdateWithWhereUniqueWithoutIpynbNotesInputSchema } from './TagUpdateWithWhereUniqueWithoutIpynbNotesInputSchema';
+import { TagUpdateManyWithWhereWithoutIpynbNotesInputSchema } from './TagUpdateManyWithWhereWithoutIpynbNotesInputSchema';
+import { TagScalarWhereInputSchema } from './TagScalarWhereInputSchema';
+
 export const TagUpdateManyWithoutIpynbNotesNestedInputSchema: z.ZodType<Prisma.TagUpdateManyWithoutIpynbNotesNestedInput> = z.object({
   create: z.union([ z.lazy(() => TagCreateWithoutIpynbNotesInputSchema),z.lazy(() => TagCreateWithoutIpynbNotesInputSchema).array(),z.lazy(() => TagUncheckedCreateWithoutIpynbNotesInputSchema),z.lazy(() => TagUncheckedCreateWithoutIpynbNotesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TagCreateOrConnectWithoutIpynbNotesInputSchema),z.lazy(() => TagCreateOrConnectWithoutIpynbNotesInputSchema).array() ]).optional(),
@@ -20,4 +22,5 @@ export const TagUpdateManyWithoutIpynbNotesNestedInputSchema: z.ZodType<Prisma.T
   updateMany: z.union([ z.lazy(() => TagUpdateManyWithWhereWithoutIpynbNotesInputSchema),z.lazy(() => TagUpdateManyWithWhereWithoutIpynbNotesInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => TagScalarWhereInputSchema),z.lazy(() => TagScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default TagUpdateManyWithoutIpynbNotesNestedInputSchema;

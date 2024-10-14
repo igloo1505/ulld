@@ -1,8 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { WhiteboardWhereInputSchema } from '../inputTypeSchemas/WhiteboardWhereInputSchema.js'
-import { WhiteboardOrderByWithRelationInputSchema } from '../inputTypeSchemas/WhiteboardOrderByWithRelationInputSchema.js'
-import { WhiteboardWhereUniqueInputSchema } from '../inputTypeSchemas/WhiteboardWhereUniqueInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { WhiteboardWhereInputSchema } from '../inputTypeSchemas/WhiteboardWhereInputSchema'
+import { WhiteboardOrderByWithRelationInputSchema } from '../inputTypeSchemas/WhiteboardOrderByWithRelationInputSchema'
+import { WhiteboardWhereUniqueInputSchema } from '../inputTypeSchemas/WhiteboardWhereUniqueInputSchema'
+
 export const WhiteboardAggregateArgsSchema: z.ZodType<Prisma.WhiteboardAggregateArgs> = z.object({
   where: WhiteboardWhereInputSchema.optional(),
   orderBy: z.union([ WhiteboardOrderByWithRelationInputSchema.array(),WhiteboardOrderByWithRelationInputSchema ]).optional(),
@@ -10,4 +11,5 @@ export const WhiteboardAggregateArgsSchema: z.ZodType<Prisma.WhiteboardAggregate
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
+
 export default WhiteboardAggregateArgsSchema;

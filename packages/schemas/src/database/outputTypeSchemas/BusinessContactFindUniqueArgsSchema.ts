@@ -1,8 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { BusinessContactWhereUniqueInputSchema } from '../inputTypeSchemas/BusinessContactWhereUniqueInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { BusinessContactWhereUniqueInputSchema } from '../inputTypeSchemas/BusinessContactWhereUniqueInputSchema'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const BusinessContactSelectSchema: z.ZodType<Prisma.BusinessContactSelect> = z.object({
   id: z.boolean().optional(),
   companyName: z.boolean().optional(),
@@ -13,8 +14,10 @@ export const BusinessContactSelectSchema: z.ZodType<Prisma.BusinessContactSelect
   message: z.boolean().optional(),
   purpose: z.boolean().optional(),
 }).strict()
+
 export const BusinessContactFindUniqueArgsSchema: z.ZodType<Prisma.BusinessContactFindUniqueArgs> = z.object({
   select: BusinessContactSelectSchema.optional(),
   where: BusinessContactWhereUniqueInputSchema,
 }).strict() ;
+
 export default BusinessContactFindUniqueArgsSchema;

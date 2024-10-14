@@ -192,7 +192,7 @@ const config = {
         {
             dependencies: ["lucide-react"],
             packages: ["**"],
-            pinVersion: "0.344.0",
+            pinVersion: "0.428.0",
             label: "Pin lucide-react"
         },
         {

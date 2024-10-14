@@ -1,5 +1,7 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
+
 export const DefinitionCreateManyMdxNoteInputSchema: z.ZodType<Prisma.DefinitionCreateManyMdxNoteInput> = z.object({
   id: z.string(),
   label: z.string().optional().nullable(),
@@ -8,4 +10,5 @@ export const DefinitionCreateManyMdxNoteInputSchema: z.ZodType<Prisma.Definition
   createdAt: z.coerce.date().optional(),
   lastAccess: z.coerce.date().optional()
 }).strict();
+
 export default DefinitionCreateManyMdxNoteInputSchema;

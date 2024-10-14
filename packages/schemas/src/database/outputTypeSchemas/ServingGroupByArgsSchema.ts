@@ -1,9 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { ServingWhereInputSchema } from '../inputTypeSchemas/ServingWhereInputSchema.js'
-import { ServingOrderByWithAggregationInputSchema } from '../inputTypeSchemas/ServingOrderByWithAggregationInputSchema.js'
-import { ServingScalarFieldEnumSchema } from '../inputTypeSchemas/ServingScalarFieldEnumSchema.js'
-import { ServingScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/ServingScalarWhereWithAggregatesInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { ServingWhereInputSchema } from '../inputTypeSchemas/ServingWhereInputSchema'
+import { ServingOrderByWithAggregationInputSchema } from '../inputTypeSchemas/ServingOrderByWithAggregationInputSchema'
+import { ServingScalarFieldEnumSchema } from '../inputTypeSchemas/ServingScalarFieldEnumSchema'
+import { ServingScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/ServingScalarWhereWithAggregatesInputSchema'
+
 export const ServingGroupByArgsSchema: z.ZodType<Prisma.ServingGroupByArgs> = z.object({
   where: ServingWhereInputSchema.optional(),
   orderBy: z.union([ ServingOrderByWithAggregationInputSchema.array(),ServingOrderByWithAggregationInputSchema ]).optional(),
@@ -12,4 +13,5 @@ export const ServingGroupByArgsSchema: z.ZodType<Prisma.ServingGroupByArgs> = z.
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
+
 export default ServingGroupByArgsSchema;

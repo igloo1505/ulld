@@ -1,5 +1,7 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
+
 export const QuoteCreateInputSchema: z.ZodType<Prisma.QuoteCreateInput> = z.object({
   body: z.string(),
   author: z.string(),
@@ -7,4 +9,5 @@ export const QuoteCreateInputSchema: z.ZodType<Prisma.QuoteCreateInput> = z.obje
   pinned: z.boolean().optional(),
   createdAt: z.coerce.date().optional()
 }).strict();
+
 export default QuoteCreateInputSchema;

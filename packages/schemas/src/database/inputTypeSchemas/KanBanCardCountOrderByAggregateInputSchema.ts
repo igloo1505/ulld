@@ -1,6 +1,8 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+
 export const KanBanCardCountOrderByAggregateInputSchema: z.ZodType<Prisma.KanBanCardCountOrderByAggregateInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   listId: z.lazy(() => SortOrderSchema).optional(),
@@ -8,4 +10,5 @@ export const KanBanCardCountOrderByAggregateInputSchema: z.ZodType<Prisma.KanBan
   label: z.lazy(() => SortOrderSchema).optional(),
   details: z.lazy(() => SortOrderSchema).optional()
 }).strict();
+
 export default KanBanCardCountOrderByAggregateInputSchema;

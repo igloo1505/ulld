@@ -1,13 +1,15 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { TagCreateWithoutToDoInputSchema } from './TagCreateWithoutToDoInputSchema.js';
-import { TagUncheckedCreateWithoutToDoInputSchema } from './TagUncheckedCreateWithoutToDoInputSchema.js';
-import { TagCreateOrConnectWithoutToDoInputSchema } from './TagCreateOrConnectWithoutToDoInputSchema.js';
-import { TagUpsertWithWhereUniqueWithoutToDoInputSchema } from './TagUpsertWithWhereUniqueWithoutToDoInputSchema.js';
-import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema.js';
-import { TagUpdateWithWhereUniqueWithoutToDoInputSchema } from './TagUpdateWithWhereUniqueWithoutToDoInputSchema.js';
-import { TagUpdateManyWithWhereWithoutToDoInputSchema } from './TagUpdateManyWithWhereWithoutToDoInputSchema.js';
-import { TagScalarWhereInputSchema } from './TagScalarWhereInputSchema.js';
+import { TagCreateWithoutToDoInputSchema } from './TagCreateWithoutToDoInputSchema';
+import { TagUncheckedCreateWithoutToDoInputSchema } from './TagUncheckedCreateWithoutToDoInputSchema';
+import { TagCreateOrConnectWithoutToDoInputSchema } from './TagCreateOrConnectWithoutToDoInputSchema';
+import { TagUpsertWithWhereUniqueWithoutToDoInputSchema } from './TagUpsertWithWhereUniqueWithoutToDoInputSchema';
+import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema';
+import { TagUpdateWithWhereUniqueWithoutToDoInputSchema } from './TagUpdateWithWhereUniqueWithoutToDoInputSchema';
+import { TagUpdateManyWithWhereWithoutToDoInputSchema } from './TagUpdateManyWithWhereWithoutToDoInputSchema';
+import { TagScalarWhereInputSchema } from './TagScalarWhereInputSchema';
+
 export const TagUncheckedUpdateManyWithoutToDoNestedInputSchema: z.ZodType<Prisma.TagUncheckedUpdateManyWithoutToDoNestedInput> = z.object({
   create: z.union([ z.lazy(() => TagCreateWithoutToDoInputSchema),z.lazy(() => TagCreateWithoutToDoInputSchema).array(),z.lazy(() => TagUncheckedCreateWithoutToDoInputSchema),z.lazy(() => TagUncheckedCreateWithoutToDoInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TagCreateOrConnectWithoutToDoInputSchema),z.lazy(() => TagCreateOrConnectWithoutToDoInputSchema).array() ]).optional(),
@@ -20,4 +22,5 @@ export const TagUncheckedUpdateManyWithoutToDoNestedInputSchema: z.ZodType<Prism
   updateMany: z.union([ z.lazy(() => TagUpdateManyWithWhereWithoutToDoInputSchema),z.lazy(() => TagUpdateManyWithWhereWithoutToDoInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => TagScalarWhereInputSchema),z.lazy(() => TagScalarWhereInputSchema).array() ]).optional(),
 }).strict();
+
 export default TagUncheckedUpdateManyWithoutToDoNestedInputSchema;

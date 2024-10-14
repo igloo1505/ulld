@@ -1,22 +1,24 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
-import { NullableBoolFieldUpdateOperationsInputSchema } from './NullableBoolFieldUpdateOperationsInputSchema.js';
-import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
-import { MdxNoteUpdatecitationsListOrderInputSchema } from './MdxNoteUpdatecitationsListOrderInputSchema.js';
-import { MdxNoteUpdateimportantValuesInputSchema } from './MdxNoteUpdateimportantValuesInputSchema.js';
-import { NullableFloatFieldUpdateOperationsInputSchema } from './NullableFloatFieldUpdateOperationsInputSchema.js';
-import { BoolFieldUpdateOperationsInputSchema } from './BoolFieldUpdateOperationsInputSchema.js';
-import { MdxNoteUpdateoutgoingQuickLinksInputSchema } from './MdxNoteUpdateoutgoingQuickLinksInputSchema.js';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
-import { TopicUncheckedUpdateManyWithoutMdxNotesNestedInputSchema } from './TopicUncheckedUpdateManyWithoutMdxNotesNestedInputSchema.js';
-import { SubjectUncheckedUpdateManyWithoutMdxNotesNestedInputSchema } from './SubjectUncheckedUpdateManyWithoutMdxNotesNestedInputSchema.js';
-import { TagUncheckedUpdateManyWithoutMdxNotesNestedInputSchema } from './TagUncheckedUpdateManyWithoutMdxNotesNestedInputSchema.js';
-import { BibEntryUncheckedUpdateManyWithoutMdxNotesNestedInputSchema } from './BibEntryUncheckedUpdateManyWithoutMdxNotesNestedInputSchema.js';
-import { ReadingListUncheckedUpdateManyWithoutMdxNotesNestedInputSchema } from './ReadingListUncheckedUpdateManyWithoutMdxNotesNestedInputSchema.js';
-import { DefinitionUncheckedUpdateManyWithoutMdxNoteNestedInputSchema } from './DefinitionUncheckedUpdateManyWithoutMdxNoteNestedInputSchema.js';
-import { ToDoUncheckedUpdateManyWithoutAssociatedNotesNestedInputSchema } from './ToDoUncheckedUpdateManyWithoutAssociatedNotesNestedInputSchema.js';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema';
+import { NullableBoolFieldUpdateOperationsInputSchema } from './NullableBoolFieldUpdateOperationsInputSchema';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
+import { MdxNoteUpdatecitationsListOrderInputSchema } from './MdxNoteUpdatecitationsListOrderInputSchema';
+import { MdxNoteUpdateimportantValuesInputSchema } from './MdxNoteUpdateimportantValuesInputSchema';
+import { NullableFloatFieldUpdateOperationsInputSchema } from './NullableFloatFieldUpdateOperationsInputSchema';
+import { BoolFieldUpdateOperationsInputSchema } from './BoolFieldUpdateOperationsInputSchema';
+import { MdxNoteUpdateoutgoingQuickLinksInputSchema } from './MdxNoteUpdateoutgoingQuickLinksInputSchema';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
+import { TopicUncheckedUpdateManyWithoutMdxNotesNestedInputSchema } from './TopicUncheckedUpdateManyWithoutMdxNotesNestedInputSchema';
+import { SubjectUncheckedUpdateManyWithoutMdxNotesNestedInputSchema } from './SubjectUncheckedUpdateManyWithoutMdxNotesNestedInputSchema';
+import { TagUncheckedUpdateManyWithoutMdxNotesNestedInputSchema } from './TagUncheckedUpdateManyWithoutMdxNotesNestedInputSchema';
+import { BibEntryUncheckedUpdateManyWithoutMdxNotesNestedInputSchema } from './BibEntryUncheckedUpdateManyWithoutMdxNotesNestedInputSchema';
+import { ReadingListUncheckedUpdateManyWithoutMdxNotesNestedInputSchema } from './ReadingListUncheckedUpdateManyWithoutMdxNotesNestedInputSchema';
+import { DefinitionUncheckedUpdateManyWithoutMdxNoteNestedInputSchema } from './DefinitionUncheckedUpdateManyWithoutMdxNoteNestedInputSchema';
+import { ToDoUncheckedUpdateManyWithoutAssociatedNotesNestedInputSchema } from './ToDoUncheckedUpdateManyWithoutAssociatedNotesNestedInputSchema';
+
 export const MdxNoteUncheckedUpdateWithoutEquationsInputSchema: z.ZodType<Prisma.MdxNoteUncheckedUpdateWithoutEquationsInput> = z.object({
   id: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
   isProtected: z.union([ z.boolean(),z.lazy(() => NullableBoolFieldUpdateOperationsInputSchema) ]).optional().nullable(),
@@ -51,4 +53,5 @@ export const MdxNoteUncheckedUpdateWithoutEquationsInputSchema: z.ZodType<Prisma
   definitions: z.lazy(() => DefinitionUncheckedUpdateManyWithoutMdxNoteNestedInputSchema).optional(),
   toDo: z.lazy(() => ToDoUncheckedUpdateManyWithoutAssociatedNotesNestedInputSchema).optional()
 }).strict();
+
 export default MdxNoteUncheckedUpdateWithoutEquationsInputSchema;

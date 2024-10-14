@@ -1,8 +1,8 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { SubjectIncludeSchema } from '../inputTypeSchemas/SubjectIncludeSchema.js'
-import { SubjectCreateInputSchema } from '../inputTypeSchemas/SubjectCreateInputSchema.js'
-import { SubjectUncheckedCreateInputSchema } from '../inputTypeSchemas/SubjectUncheckedCreateInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { SubjectIncludeSchema } from '../inputTypeSchemas/SubjectIncludeSchema'
+import { SubjectCreateInputSchema } from '../inputTypeSchemas/SubjectCreateInputSchema'
+import { SubjectUncheckedCreateInputSchema } from '../inputTypeSchemas/SubjectUncheckedCreateInputSchema'
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"
 import { QAPairFindManyArgsSchema } from "../outputTypeSchemas/QAPairFindManyArgsSchema"
@@ -15,6 +15,7 @@ import { EquationFindManyArgsSchema } from "../outputTypeSchemas/EquationFindMan
 import { SubjectCountOutputTypeArgsSchema } from "../outputTypeSchemas/SubjectCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const SubjectSelectSchema: z.ZodType<Prisma.SubjectSelect> = z.object({
   value: z.boolean().optional(),
   kanbanId: z.boolean().optional(),
@@ -31,9 +32,11 @@ export const SubjectSelectSchema: z.ZodType<Prisma.SubjectSelect> = z.object({
   equations: z.union([z.boolean(),z.lazy(() => EquationFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => SubjectCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export const SubjectCreateArgsSchema: z.ZodType<Prisma.SubjectCreateArgs> = z.object({
   select: SubjectSelectSchema.optional(),
   include: SubjectIncludeSchema.optional(),
   data: z.union([ SubjectCreateInputSchema,SubjectUncheckedCreateInputSchema ]),
 }).strict() ;
+
 export default SubjectCreateArgsSchema;

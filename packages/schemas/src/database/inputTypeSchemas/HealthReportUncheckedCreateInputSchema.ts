@@ -1,5 +1,7 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
+
 export const HealthReportUncheckedCreateInputSchema: z.ZodType<Prisma.HealthReportUncheckedCreateInput> = z.object({
   id: z.number().int().optional(),
   title: z.string().optional().nullable(),
@@ -35,4 +37,5 @@ export const HealthReportUncheckedCreateInputSchema: z.ZodType<Prisma.HealthRepo
   dietId: z.string().optional().nullable(),
   created: z.coerce.date().optional()
 }).strict();
+
 export default HealthReportUncheckedCreateInputSchema;

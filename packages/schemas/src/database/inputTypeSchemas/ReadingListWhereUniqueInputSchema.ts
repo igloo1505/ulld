@@ -1,11 +1,13 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { ReadingListWhereInputSchema } from './ReadingListWhereInputSchema.js';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
-import { BibEntryListRelationFilterSchema } from './BibEntryListRelationFilterSchema.js';
-import { MdxNoteListRelationFilterSchema } from './MdxNoteListRelationFilterSchema.js';
-import { IpynbListRelationFilterSchema } from './IpynbListRelationFilterSchema.js';
+import { ReadingListWhereInputSchema } from './ReadingListWhereInputSchema';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema';
+import { BibEntryListRelationFilterSchema } from './BibEntryListRelationFilterSchema';
+import { MdxNoteListRelationFilterSchema } from './MdxNoteListRelationFilterSchema';
+import { IpynbListRelationFilterSchema } from './IpynbListRelationFilterSchema';
+
 export const ReadingListWhereUniqueInputSchema: z.ZodType<Prisma.ReadingListWhereUniqueInput> = z.object({
   name: z.string()
 })
@@ -21,4 +23,5 @@ export const ReadingListWhereUniqueInputSchema: z.ZodType<Prisma.ReadingListWher
   mdxNotes: z.lazy(() => MdxNoteListRelationFilterSchema).optional(),
   ipynbNotes: z.lazy(() => IpynbListRelationFilterSchema).optional()
 }).strict());
+
 export default ReadingListWhereUniqueInputSchema;

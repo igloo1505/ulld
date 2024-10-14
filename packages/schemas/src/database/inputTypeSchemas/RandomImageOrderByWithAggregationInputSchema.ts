@@ -1,9 +1,11 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
-import { RandomImageCountOrderByAggregateInputSchema } from './RandomImageCountOrderByAggregateInputSchema.js';
-import { RandomImageMaxOrderByAggregateInputSchema } from './RandomImageMaxOrderByAggregateInputSchema.js';
-import { RandomImageMinOrderByAggregateInputSchema } from './RandomImageMinOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+import { RandomImageCountOrderByAggregateInputSchema } from './RandomImageCountOrderByAggregateInputSchema';
+import { RandomImageMaxOrderByAggregateInputSchema } from './RandomImageMaxOrderByAggregateInputSchema';
+import { RandomImageMinOrderByAggregateInputSchema } from './RandomImageMinOrderByAggregateInputSchema';
+
 export const RandomImageOrderByWithAggregationInputSchema: z.ZodType<Prisma.RandomImageOrderByWithAggregationInput> = z.object({
   path: z.lazy(() => SortOrderSchema).optional(),
   createdAt: z.lazy(() => SortOrderSchema).optional(),
@@ -11,4 +13,5 @@ export const RandomImageOrderByWithAggregationInputSchema: z.ZodType<Prisma.Rand
   _max: z.lazy(() => RandomImageMaxOrderByAggregateInputSchema).optional(),
   _min: z.lazy(() => RandomImageMinOrderByAggregateInputSchema).optional()
 }).strict();
+
 export default RandomImageOrderByWithAggregationInputSchema;

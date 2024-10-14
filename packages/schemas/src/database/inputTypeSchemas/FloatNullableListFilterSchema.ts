@@ -1,5 +1,7 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
+
 export const FloatNullableListFilterSchema: z.ZodType<Prisma.FloatNullableListFilter> = z.object({
   equals: z.number().array().optional().nullable(),
   has: z.number().optional().nullable(),
@@ -7,4 +9,5 @@ export const FloatNullableListFilterSchema: z.ZodType<Prisma.FloatNullableListFi
   hasSome: z.number().array().optional(),
   isEmpty: z.boolean().optional()
 }).strict();
+
 export default FloatNullableListFilterSchema;

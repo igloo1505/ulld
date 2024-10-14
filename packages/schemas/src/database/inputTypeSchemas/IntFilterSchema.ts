@@ -1,6 +1,8 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { NestedIntFilterSchema } from './NestedIntFilterSchema.js';
+import { NestedIntFilterSchema } from './NestedIntFilterSchema';
+
 export const IntFilterSchema: z.ZodType<Prisma.IntFilter> = z.object({
   equals: z.number().optional(),
   in: z.number().array().optional(),
@@ -11,4 +13,5 @@ export const IntFilterSchema: z.ZodType<Prisma.IntFilter> = z.object({
   gte: z.number().optional(),
   not: z.union([ z.number(),z.lazy(() => NestedIntFilterSchema) ]).optional(),
 }).strict();
+
 export default IntFilterSchema;

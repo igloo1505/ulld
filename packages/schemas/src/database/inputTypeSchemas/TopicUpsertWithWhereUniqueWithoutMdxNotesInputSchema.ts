@@ -1,13 +1,16 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema.js';
-import { TopicUpdateWithoutMdxNotesInputSchema } from './TopicUpdateWithoutMdxNotesInputSchema.js';
-import { TopicUncheckedUpdateWithoutMdxNotesInputSchema } from './TopicUncheckedUpdateWithoutMdxNotesInputSchema.js';
-import { TopicCreateWithoutMdxNotesInputSchema } from './TopicCreateWithoutMdxNotesInputSchema.js';
-import { TopicUncheckedCreateWithoutMdxNotesInputSchema } from './TopicUncheckedCreateWithoutMdxNotesInputSchema.js';
+import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema';
+import { TopicUpdateWithoutMdxNotesInputSchema } from './TopicUpdateWithoutMdxNotesInputSchema';
+import { TopicUncheckedUpdateWithoutMdxNotesInputSchema } from './TopicUncheckedUpdateWithoutMdxNotesInputSchema';
+import { TopicCreateWithoutMdxNotesInputSchema } from './TopicCreateWithoutMdxNotesInputSchema';
+import { TopicUncheckedCreateWithoutMdxNotesInputSchema } from './TopicUncheckedCreateWithoutMdxNotesInputSchema';
+
 export const TopicUpsertWithWhereUniqueWithoutMdxNotesInputSchema: z.ZodType<Prisma.TopicUpsertWithWhereUniqueWithoutMdxNotesInput> = z.object({
   where: z.lazy(() => TopicWhereUniqueInputSchema),
   update: z.union([ z.lazy(() => TopicUpdateWithoutMdxNotesInputSchema),z.lazy(() => TopicUncheckedUpdateWithoutMdxNotesInputSchema) ]),
   create: z.union([ z.lazy(() => TopicCreateWithoutMdxNotesInputSchema),z.lazy(() => TopicUncheckedCreateWithoutMdxNotesInputSchema) ]),
 }).strict();
+
 export default TopicUpsertWithWhereUniqueWithoutMdxNotesInputSchema;

@@ -1,11 +1,11 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { TopicIncludeSchema } from '../inputTypeSchemas/TopicIncludeSchema.js'
-import { TopicWhereUniqueInputSchema } from '../inputTypeSchemas/TopicWhereUniqueInputSchema.js'
-import { TopicCreateInputSchema } from '../inputTypeSchemas/TopicCreateInputSchema.js'
-import { TopicUncheckedCreateInputSchema } from '../inputTypeSchemas/TopicUncheckedCreateInputSchema.js'
-import { TopicUpdateInputSchema } from '../inputTypeSchemas/TopicUpdateInputSchema.js'
-import { TopicUncheckedUpdateInputSchema } from '../inputTypeSchemas/TopicUncheckedUpdateInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { TopicIncludeSchema } from '../inputTypeSchemas/TopicIncludeSchema'
+import { TopicWhereUniqueInputSchema } from '../inputTypeSchemas/TopicWhereUniqueInputSchema'
+import { TopicCreateInputSchema } from '../inputTypeSchemas/TopicCreateInputSchema'
+import { TopicUncheckedCreateInputSchema } from '../inputTypeSchemas/TopicUncheckedCreateInputSchema'
+import { TopicUpdateInputSchema } from '../inputTypeSchemas/TopicUpdateInputSchema'
+import { TopicUncheckedUpdateInputSchema } from '../inputTypeSchemas/TopicUncheckedUpdateInputSchema'
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"
 import { QAPairFindManyArgsSchema } from "../outputTypeSchemas/QAPairFindManyArgsSchema"
@@ -18,6 +18,7 @@ import { EquationFindManyArgsSchema } from "../outputTypeSchemas/EquationFindMan
 import { TopicCountOutputTypeArgsSchema } from "../outputTypeSchemas/TopicCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const TopicSelectSchema: z.ZodType<Prisma.TopicSelect> = z.object({
   value: z.boolean().optional(),
   kanbanId: z.boolean().optional(),
@@ -34,6 +35,7 @@ export const TopicSelectSchema: z.ZodType<Prisma.TopicSelect> = z.object({
   equations: z.union([z.boolean(),z.lazy(() => EquationFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => TopicCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export const TopicUpsertArgsSchema: z.ZodType<Prisma.TopicUpsertArgs> = z.object({
   select: TopicSelectSchema.optional(),
   include: TopicIncludeSchema.optional(),
@@ -41,4 +43,5 @@ export const TopicUpsertArgsSchema: z.ZodType<Prisma.TopicUpsertArgs> = z.object
   create: z.union([ TopicCreateInputSchema,TopicUncheckedCreateInputSchema ]),
   update: z.union([ TopicUpdateInputSchema,TopicUncheckedUpdateInputSchema ]),
 }).strict() ;
+
 export default TopicUpsertArgsSchema;

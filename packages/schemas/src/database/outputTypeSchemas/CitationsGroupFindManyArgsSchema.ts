@@ -1,20 +1,22 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { CitationsGroupIncludeSchema } from '../inputTypeSchemas/CitationsGroupIncludeSchema.js'
-import { CitationsGroupWhereInputSchema } from '../inputTypeSchemas/CitationsGroupWhereInputSchema.js'
-import { CitationsGroupOrderByWithRelationInputSchema } from '../inputTypeSchemas/CitationsGroupOrderByWithRelationInputSchema.js'
-import { CitationsGroupWhereUniqueInputSchema } from '../inputTypeSchemas/CitationsGroupWhereUniqueInputSchema.js'
-import { CitationsGroupScalarFieldEnumSchema } from '../inputTypeSchemas/CitationsGroupScalarFieldEnumSchema.js'
+import type { Prisma } from '@prisma/client';
+import { CitationsGroupIncludeSchema } from '../inputTypeSchemas/CitationsGroupIncludeSchema'
+import { CitationsGroupWhereInputSchema } from '../inputTypeSchemas/CitationsGroupWhereInputSchema'
+import { CitationsGroupOrderByWithRelationInputSchema } from '../inputTypeSchemas/CitationsGroupOrderByWithRelationInputSchema'
+import { CitationsGroupWhereUniqueInputSchema } from '../inputTypeSchemas/CitationsGroupWhereUniqueInputSchema'
+import { CitationsGroupScalarFieldEnumSchema } from '../inputTypeSchemas/CitationsGroupScalarFieldEnumSchema'
 import { BibEntryFindManyArgsSchema } from "../outputTypeSchemas/BibEntryFindManyArgsSchema"
 import { CitationsGroupCountOutputTypeArgsSchema } from "../outputTypeSchemas/CitationsGroupCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const CitationsGroupSelectSchema: z.ZodType<Prisma.CitationsGroupSelect> = z.object({
   name: z.boolean().optional(),
   description: z.boolean().optional(),
   entries: z.union([z.boolean(),z.lazy(() => BibEntryFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => CitationsGroupCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export const CitationsGroupFindManyArgsSchema: z.ZodType<Prisma.CitationsGroupFindManyArgs> = z.object({
   select: CitationsGroupSelectSchema.optional(),
   include: CitationsGroupIncludeSchema.optional(),
@@ -25,4 +27,5 @@ export const CitationsGroupFindManyArgsSchema: z.ZodType<Prisma.CitationsGroupFi
   skip: z.number().optional(),
   distinct: z.union([ CitationsGroupScalarFieldEnumSchema,CitationsGroupScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
+
 export default CitationsGroupFindManyArgsSchema;

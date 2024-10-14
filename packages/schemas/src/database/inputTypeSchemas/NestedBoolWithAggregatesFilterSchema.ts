@@ -1,7 +1,9 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { NestedIntFilterSchema } from './NestedIntFilterSchema.js';
-import { NestedBoolFilterSchema } from './NestedBoolFilterSchema.js';
+import { NestedIntFilterSchema } from './NestedIntFilterSchema';
+import { NestedBoolFilterSchema } from './NestedBoolFilterSchema';
+
 export const NestedBoolWithAggregatesFilterSchema: z.ZodType<Prisma.NestedBoolWithAggregatesFilter> = z.object({
   equals: z.boolean().optional(),
   not: z.union([ z.boolean(),z.lazy(() => NestedBoolWithAggregatesFilterSchema) ]).optional(),
@@ -9,4 +11,5 @@ export const NestedBoolWithAggregatesFilterSchema: z.ZodType<Prisma.NestedBoolWi
   _min: z.lazy(() => NestedBoolFilterSchema).optional(),
   _max: z.lazy(() => NestedBoolFilterSchema).optional()
 }).strict();
+
 export default NestedBoolWithAggregatesFilterSchema;

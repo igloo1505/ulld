@@ -1,10 +1,12 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema.js';
-import { SortOrderInputSchema } from './SortOrderInputSchema.js';
-import { QuoteCountOrderByAggregateInputSchema } from './QuoteCountOrderByAggregateInputSchema.js';
-import { QuoteMaxOrderByAggregateInputSchema } from './QuoteMaxOrderByAggregateInputSchema.js';
-import { QuoteMinOrderByAggregateInputSchema } from './QuoteMinOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema';
+import { SortOrderInputSchema } from './SortOrderInputSchema';
+import { QuoteCountOrderByAggregateInputSchema } from './QuoteCountOrderByAggregateInputSchema';
+import { QuoteMaxOrderByAggregateInputSchema } from './QuoteMaxOrderByAggregateInputSchema';
+import { QuoteMinOrderByAggregateInputSchema } from './QuoteMinOrderByAggregateInputSchema';
+
 export const QuoteOrderByWithAggregationInputSchema: z.ZodType<Prisma.QuoteOrderByWithAggregationInput> = z.object({
   body: z.lazy(() => SortOrderSchema).optional(),
   author: z.lazy(() => SortOrderSchema).optional(),
@@ -15,4 +17,5 @@ export const QuoteOrderByWithAggregationInputSchema: z.ZodType<Prisma.QuoteOrder
   _max: z.lazy(() => QuoteMaxOrderByAggregateInputSchema).optional(),
   _min: z.lazy(() => QuoteMinOrderByAggregateInputSchema).optional()
 }).strict();
+
 export default QuoteOrderByWithAggregationInputSchema;

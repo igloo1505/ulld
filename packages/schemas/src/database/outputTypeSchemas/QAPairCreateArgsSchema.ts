@@ -1,8 +1,8 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { QAPairIncludeSchema } from '../inputTypeSchemas/QAPairIncludeSchema.js'
-import { QAPairCreateInputSchema } from '../inputTypeSchemas/QAPairCreateInputSchema.js'
-import { QAPairUncheckedCreateInputSchema } from '../inputTypeSchemas/QAPairUncheckedCreateInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { QAPairIncludeSchema } from '../inputTypeSchemas/QAPairIncludeSchema'
+import { QAPairCreateInputSchema } from '../inputTypeSchemas/QAPairCreateInputSchema'
+import { QAPairUncheckedCreateInputSchema } from '../inputTypeSchemas/QAPairUncheckedCreateInputSchema'
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
@@ -10,6 +10,7 @@ import { PracticeExamFindManyArgsSchema } from "../outputTypeSchemas/PracticeExa
 import { QAPairCountOutputTypeArgsSchema } from "../outputTypeSchemas/QAPairCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
+
 export const QAPairSelectSchema: z.ZodType<Prisma.QAPairSelect> = z.object({
   id: z.boolean().optional(),
   question: z.boolean().optional(),
@@ -24,9 +25,11 @@ export const QAPairSelectSchema: z.ZodType<Prisma.QAPairSelect> = z.object({
   practiceExam: z.union([z.boolean(),z.lazy(() => PracticeExamFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => QAPairCountOutputTypeArgsSchema)]).optional(),
 }).strict()
+
 export const QAPairCreateArgsSchema: z.ZodType<Prisma.QAPairCreateArgs> = z.object({
   select: QAPairSelectSchema.optional(),
   include: QAPairIncludeSchema.optional(),
   data: z.union([ QAPairCreateInputSchema,QAPairUncheckedCreateInputSchema ]),
 }).strict() ;
+
 export default QAPairCreateArgsSchema;

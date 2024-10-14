@@ -1,9 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@ulld/database/db';
-import { WhiteboardWhereInputSchema } from '../inputTypeSchemas/WhiteboardWhereInputSchema.js'
-import { WhiteboardOrderByWithAggregationInputSchema } from '../inputTypeSchemas/WhiteboardOrderByWithAggregationInputSchema.js'
-import { WhiteboardScalarFieldEnumSchema } from '../inputTypeSchemas/WhiteboardScalarFieldEnumSchema.js'
-import { WhiteboardScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/WhiteboardScalarWhereWithAggregatesInputSchema.js'
+import type { Prisma } from '@prisma/client';
+import { WhiteboardWhereInputSchema } from '../inputTypeSchemas/WhiteboardWhereInputSchema'
+import { WhiteboardOrderByWithAggregationInputSchema } from '../inputTypeSchemas/WhiteboardOrderByWithAggregationInputSchema'
+import { WhiteboardScalarFieldEnumSchema } from '../inputTypeSchemas/WhiteboardScalarFieldEnumSchema'
+import { WhiteboardScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/WhiteboardScalarWhereWithAggregatesInputSchema'
+
 export const WhiteboardGroupByArgsSchema: z.ZodType<Prisma.WhiteboardGroupByArgs> = z.object({
   where: WhiteboardWhereInputSchema.optional(),
   orderBy: z.union([ WhiteboardOrderByWithAggregationInputSchema.array(),WhiteboardOrderByWithAggregationInputSchema ]).optional(),
@@ -12,4 +13,5 @@ export const WhiteboardGroupByArgsSchema: z.ZodType<Prisma.WhiteboardGroupByArgs
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
+
 export default WhiteboardGroupByArgsSchema;

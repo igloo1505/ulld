@@ -18,6 +18,8 @@
     "vite.json",
     "targetApp.json"
   ],
+  "dependencies": {},
+  "devDependencies": {},
   "peerDependencies": {
     "@ulld/types": "workspace:*"
   },

@@ -1,7 +1,9 @@
-import type { Prisma } from '@ulld/database/db';
+import type { Prisma } from '@prisma/client';
+
 import { z } from 'zod';
-import { NestedIntFilterSchema } from './NestedIntFilterSchema.js';
-import { NestedFloatFilterSchema } from './NestedFloatFilterSchema.js';
+import { NestedIntFilterSchema } from './NestedIntFilterSchema';
+import { NestedFloatFilterSchema } from './NestedFloatFilterSchema';
+
 export const NestedFloatWithAggregatesFilterSchema: z.ZodType<Prisma.NestedFloatWithAggregatesFilter> = z.object({
   equals: z.number().optional(),
   in: z.number().array().optional(),
@@ -17,4 +19,5 @@ export const NestedFloatWithAggregatesFilterSchema: z.ZodType<Prisma.NestedFloat
   _min: z.lazy(() => NestedFloatFilterSchema).optional(),
   _max: z.lazy(() => NestedFloatFilterSchema).optional()
 }).strict();
+
 export default NestedFloatWithAggregatesFilterSchema;
