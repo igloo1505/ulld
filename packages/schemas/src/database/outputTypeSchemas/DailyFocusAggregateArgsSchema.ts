@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/DailyFocusWhereInputSchema.js
-..//inputTypeSchemas/DailyFocusOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/DailyFocusWhereUniqueInputSchema.js
+import { DailyFocusWhereInputSchema } from '../inputTypeSchemas/DailyFocusWhereInputSchema.js'
+import { DailyFocusOrderByWithRelationInputSchema } from '../inputTypeSchemas/DailyFocusOrderByWithRelationInputSchema.js'
+import { DailyFocusWhereUniqueInputSchema } from '../inputTypeSchemas/DailyFocusWhereUniqueInputSchema.js'
 export const DailyFocusAggregateArgsSchema: z.ZodType<Prisma.DailyFocusAggregateArgs> = z.object({
   where: DailyFocusWhereInputSchema.optional(),
   orderBy: z.union([ DailyFocusOrderByWithRelationInputSchema.array(),DailyFocusOrderByWithRelationInputSchema ]).optional(),

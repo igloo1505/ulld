@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/TagCreateManyInputSchema.js
+import { TagCreateManyInputSchema } from '../inputTypeSchemas/TagCreateManyInputSchema.js'
 export const TagCreateManyAndReturnArgsSchema: z.ZodType<Prisma.TagCreateManyAndReturnArgs> = z.object({
   data: z.union([ TagCreateManyInputSchema,TagCreateManyInputSchema.array() ]),
   skipDuplicates: z.boolean().optional(),

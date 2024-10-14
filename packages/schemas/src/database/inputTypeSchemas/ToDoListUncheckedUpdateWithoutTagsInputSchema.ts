@@ -1,11 +1,11 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFieldUpdateOperationsInputSchema } from '../IntFieldUpdateOperationsInputSchema.js';
-import { StringFieldUpdateOperationsInputSchema } from '../StringFieldUpdateOperationsInputSchema.js';
-import { DateTimeFieldUpdateOperationsInputSchema } from '../DateTimeFieldUpdateOperationsInputSchema.js';
-import { ToDoUncheckedUpdateManyWithoutToDoListNestedInputSchema } from '../ToDoUncheckedUpdateManyWithoutToDoListNestedInputSchema.js';
-import { TopicUncheckedUpdateManyWithoutTodoListNestedInputSchema } from '../TopicUncheckedUpdateManyWithoutTodoListNestedInputSchema.js';
-import { SubjectUncheckedUpdateManyWithoutTodoListNestedInputSchema } from '../SubjectUncheckedUpdateManyWithoutTodoListNestedInputSchema.js';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+import { ToDoUncheckedUpdateManyWithoutToDoListNestedInputSchema } from './ToDoUncheckedUpdateManyWithoutToDoListNestedInputSchema.js';
+import { TopicUncheckedUpdateManyWithoutTodoListNestedInputSchema } from './TopicUncheckedUpdateManyWithoutTodoListNestedInputSchema.js';
+import { SubjectUncheckedUpdateManyWithoutTodoListNestedInputSchema } from './SubjectUncheckedUpdateManyWithoutTodoListNestedInputSchema.js';
 export const ToDoListUncheckedUpdateWithoutTagsInputSchema: z.ZodType<Prisma.ToDoListUncheckedUpdateWithoutTagsInput> = z.object({
   id: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
   label: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),

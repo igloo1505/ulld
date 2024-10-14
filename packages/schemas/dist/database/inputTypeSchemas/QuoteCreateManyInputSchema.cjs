@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkFRK4R4PMcjs = require('../../chunk-FRK4R4PM.cjs');
+var _chunk4MGFOONOcjs = require('../../chunk-4MGFOONO.cjs');
 
 
 
-exports.QuoteCreateManyInputSchema = _chunkFRK4R4PMcjs.QuoteCreateManyInputSchema; exports.default = _chunkFRK4R4PMcjs.QuoteCreateManyInputSchema_default;
+exports.QuoteCreateManyInputSchema = _chunk4MGFOONOcjs.QuoteCreateManyInputSchema; exports.default = _chunk4MGFOONOcjs.QuoteCreateManyInputSchema_default;
 //# sourceMappingURL=QuoteCreateManyInputSchema.cjs.map

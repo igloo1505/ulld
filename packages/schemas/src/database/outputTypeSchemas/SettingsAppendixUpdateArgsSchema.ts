@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/SettingsAppendixUpdateInputSchema.js
-..//inputTypeSchemas/SettingsAppendixUncheckedUpdateInputSchema.js
-..//inputTypeSchemas/SettingsAppendixWhereUniqueInputSchema.js
+import { SettingsAppendixUpdateInputSchema } from '../inputTypeSchemas/SettingsAppendixUpdateInputSchema.js'
+import { SettingsAppendixUncheckedUpdateInputSchema } from '../inputTypeSchemas/SettingsAppendixUncheckedUpdateInputSchema.js'
+import { SettingsAppendixWhereUniqueInputSchema } from '../inputTypeSchemas/SettingsAppendixWhereUniqueInputSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const SettingsAppendixSelectSchema: z.ZodType<Prisma.SettingsAppendixSelect> = z.object({

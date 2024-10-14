@@ -1,11 +1,11 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/IpynbIncludeSchema.js
-..//inputTypeSchemas/IpynbWhereUniqueInputSchema.js
-..//inputTypeSchemas/IpynbCreateInputSchema.js
-..//inputTypeSchemas/IpynbUncheckedCreateInputSchema.js
-..//inputTypeSchemas/IpynbUpdateInputSchema.js
-..//inputTypeSchemas/IpynbUncheckedUpdateInputSchema.js
+import { IpynbIncludeSchema } from '../inputTypeSchemas/IpynbIncludeSchema.js'
+import { IpynbWhereUniqueInputSchema } from '../inputTypeSchemas/IpynbWhereUniqueInputSchema.js'
+import { IpynbCreateInputSchema } from '../inputTypeSchemas/IpynbCreateInputSchema.js'
+import { IpynbUncheckedCreateInputSchema } from '../inputTypeSchemas/IpynbUncheckedCreateInputSchema.js'
+import { IpynbUpdateInputSchema } from '../inputTypeSchemas/IpynbUpdateInputSchema.js'
+import { IpynbUncheckedUpdateInputSchema } from '../inputTypeSchemas/IpynbUncheckedUpdateInputSchema.js'
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"

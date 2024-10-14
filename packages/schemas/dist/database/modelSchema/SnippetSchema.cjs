@@ -2,10 +2,10 @@
 
 
 
-var _chunkKERIXZ3Bcjs = require('../../chunk-KERIXZ3B.cjs');
+var _chunkGOL3B5QFcjs = require('../../chunk-GOL3B5QF.cjs');
 
 
 
 
-exports.SnippetPartialSchema = _chunkKERIXZ3Bcjs.SnippetPartialSchema; exports.SnippetSchema = _chunkKERIXZ3Bcjs.SnippetSchema; exports.default = _chunkKERIXZ3Bcjs.SnippetSchema_default;
+exports.SnippetPartialSchema = _chunkGOL3B5QFcjs.SnippetPartialSchema; exports.SnippetSchema = _chunkGOL3B5QFcjs.SnippetSchema; exports.default = _chunkGOL3B5QFcjs.SnippetSchema_default;
 //# sourceMappingURL=SnippetSchema.cjs.map

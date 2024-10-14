@@ -1,6 +1,6 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _chunkENBKTJRWcjs = require('../chunk-ENBKTJRW.cjs');
+var _chunkZ3HOBR6Gcjs = require('../chunk-Z3HOBR6G.cjs');
 require('../chunk-BMKGPO6Q.cjs');
 require('../chunk-3VEE7NEQ.cjs');
 require('../chunk-46A3VLRE.cjs');
@@ -40,8 +40,8 @@ var _fs = require('fs'); var _fs2 = _interopRequireDefault(_fs);
 var _path = require('path'); var _path2 = _interopRequireDefault(_path);
 var _zodtojsonschema = require('zod-to-json-schema');
 var writeConfigJson = async (config, targetDirectory) => {
-  let parsed = _chunkENBKTJRWcjs.appConfigSchema.parse(config);
-  const jsonSchema = _zodtojsonschema.zodToJsonSchema.call(void 0, _chunkENBKTJRWcjs.appConfigSchema, {
+  let parsed = _chunkZ3HOBR6Gcjs.appConfigSchema.parse(config);
+  const jsonSchema = _zodtojsonschema.zodToJsonSchema.call(void 0, _chunkZ3HOBR6Gcjs.appConfigSchema, {
     name: "UlldAppConfig",
     "$refStrategy": "relative",
     "basePath": [targetDirectory]

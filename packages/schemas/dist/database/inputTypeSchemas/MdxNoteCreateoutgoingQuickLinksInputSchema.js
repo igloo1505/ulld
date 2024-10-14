@@ -1,7 +1,7 @@
 import {
   MdxNoteCreateoutgoingQuickLinksInputSchema,
   MdxNoteCreateoutgoingQuickLinksInputSchema_default
-} from "../../chunk-MJPS6G3W.js";
+} from "../../chunk-HAVVN653.js";
 export {
   MdxNoteCreateoutgoingQuickLinksInputSchema,
   MdxNoteCreateoutgoingQuickLinksInputSchema_default as default

@@ -1,7 +1,7 @@
 import {
   ImageAlignmentSchema,
   ImageAlignmentSchema_default
-} from "../../chunk-RNDSF24S.js";
+} from "../../chunk-XOBHDDTF.js";
 export {
   ImageAlignmentSchema,
   ImageAlignmentSchema_default as default

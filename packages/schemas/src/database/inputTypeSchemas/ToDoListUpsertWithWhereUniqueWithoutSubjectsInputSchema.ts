@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ToDoListWhereUniqueInputSchema } from '../ToDoListWhereUniqueInputSchema.js';
-import { ToDoListUpdateWithoutSubjectsInputSchema } from '../ToDoListUpdateWithoutSubjectsInputSchema.js';
-import { ToDoListUncheckedUpdateWithoutSubjectsInputSchema } from '../ToDoListUncheckedUpdateWithoutSubjectsInputSchema.js';
-import { ToDoListCreateWithoutSubjectsInputSchema } from '../ToDoListCreateWithoutSubjectsInputSchema.js';
-import { ToDoListUncheckedCreateWithoutSubjectsInputSchema } from '../ToDoListUncheckedCreateWithoutSubjectsInputSchema.js';
+import { ToDoListWhereUniqueInputSchema } from './ToDoListWhereUniqueInputSchema.js';
+import { ToDoListUpdateWithoutSubjectsInputSchema } from './ToDoListUpdateWithoutSubjectsInputSchema.js';
+import { ToDoListUncheckedUpdateWithoutSubjectsInputSchema } from './ToDoListUncheckedUpdateWithoutSubjectsInputSchema.js';
+import { ToDoListCreateWithoutSubjectsInputSchema } from './ToDoListCreateWithoutSubjectsInputSchema.js';
+import { ToDoListUncheckedCreateWithoutSubjectsInputSchema } from './ToDoListUncheckedCreateWithoutSubjectsInputSchema.js';
 export const ToDoListUpsertWithWhereUniqueWithoutSubjectsInputSchema: z.ZodType<Prisma.ToDoListUpsertWithWhereUniqueWithoutSubjectsInput> = z.object({
   where: z.lazy(() => ToDoListWhereUniqueInputSchema),
   update: z.union([ z.lazy(() => ToDoListUpdateWithoutSubjectsInputSchema),z.lazy(() => ToDoListUncheckedUpdateWithoutSubjectsInputSchema) ]),

@@ -1,11 +1,11 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from '../IntFilterSchema.js';
-import { FloatNullableFilterSchema } from '../FloatNullableFilterSchema.js';
-import { EnumQUANTITY_GUESSNullableFilterSchema } from '../EnumQUANTITY_GUESSNullableFilterSchema.js';
-import { QUANTITY_GUESSSchema } from '../QUANTITY_GUESSSchema.js';
-import { DietaryItemRelationFilterSchema } from '../DietaryItemRelationFilterSchema.js';
-import { DietaryItemWhereInputSchema } from '../DietaryItemWhereInputSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { FloatNullableFilterSchema } from './FloatNullableFilterSchema.js';
+import { EnumQUANTITY_GUESSNullableFilterSchema } from './EnumQUANTITY_GUESSNullableFilterSchema.js';
+import { QUANTITY_GUESSSchema } from './QUANTITY_GUESSSchema.js';
+import { DietaryItemRelationFilterSchema } from './DietaryItemRelationFilterSchema.js';
+import { DietaryItemWhereInputSchema } from './DietaryItemWhereInputSchema.js';
 export const ServingWhereInputSchema: z.ZodType<Prisma.ServingWhereInput> = z.object({
   AND: z.union([ z.lazy(() => ServingWhereInputSchema),z.lazy(() => ServingWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => ServingWhereInputSchema).array().optional(),

@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkSOVPXMFAcjs = require('../../chunk-SOVPXMFA.cjs');
+var _chunkQKVEKAZ5cjs = require('../../chunk-QKVEKAZ5.cjs');
 
 
 
-exports.PracticeExamCreateManyInputSchema = _chunkSOVPXMFAcjs.PracticeExamCreateManyInputSchema; exports.default = _chunkSOVPXMFAcjs.PracticeExamCreateManyInputSchema_default;
+exports.PracticeExamCreateManyInputSchema = _chunkQKVEKAZ5cjs.PracticeExamCreateManyInputSchema; exports.default = _chunkQKVEKAZ5cjs.PracticeExamCreateManyInputSchema_default;
 //# sourceMappingURL=PracticeExamCreateManyInputSchema.cjs.map

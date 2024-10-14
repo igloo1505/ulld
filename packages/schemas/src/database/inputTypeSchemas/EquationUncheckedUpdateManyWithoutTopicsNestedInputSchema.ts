@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { EquationCreateWithoutTopicsInputSchema } from '../EquationCreateWithoutTopicsInputSchema.js';
-import { EquationUncheckedCreateWithoutTopicsInputSchema } from '../EquationUncheckedCreateWithoutTopicsInputSchema.js';
-import { EquationCreateOrConnectWithoutTopicsInputSchema } from '../EquationCreateOrConnectWithoutTopicsInputSchema.js';
-import { EquationUpsertWithWhereUniqueWithoutTopicsInputSchema } from '../EquationUpsertWithWhereUniqueWithoutTopicsInputSchema.js';
-import { EquationWhereUniqueInputSchema } from '../EquationWhereUniqueInputSchema.js';
-import { EquationUpdateWithWhereUniqueWithoutTopicsInputSchema } from '../EquationUpdateWithWhereUniqueWithoutTopicsInputSchema.js';
-import { EquationUpdateManyWithWhereWithoutTopicsInputSchema } from '../EquationUpdateManyWithWhereWithoutTopicsInputSchema.js';
-import { EquationScalarWhereInputSchema } from '../EquationScalarWhereInputSchema.js';
+import { EquationCreateWithoutTopicsInputSchema } from './EquationCreateWithoutTopicsInputSchema.js';
+import { EquationUncheckedCreateWithoutTopicsInputSchema } from './EquationUncheckedCreateWithoutTopicsInputSchema.js';
+import { EquationCreateOrConnectWithoutTopicsInputSchema } from './EquationCreateOrConnectWithoutTopicsInputSchema.js';
+import { EquationUpsertWithWhereUniqueWithoutTopicsInputSchema } from './EquationUpsertWithWhereUniqueWithoutTopicsInputSchema.js';
+import { EquationWhereUniqueInputSchema } from './EquationWhereUniqueInputSchema.js';
+import { EquationUpdateWithWhereUniqueWithoutTopicsInputSchema } from './EquationUpdateWithWhereUniqueWithoutTopicsInputSchema.js';
+import { EquationUpdateManyWithWhereWithoutTopicsInputSchema } from './EquationUpdateManyWithWhereWithoutTopicsInputSchema.js';
+import { EquationScalarWhereInputSchema } from './EquationScalarWhereInputSchema.js';
 export const EquationUncheckedUpdateManyWithoutTopicsNestedInputSchema: z.ZodType<Prisma.EquationUncheckedUpdateManyWithoutTopicsNestedInput> = z.object({
   create: z.union([ z.lazy(() => EquationCreateWithoutTopicsInputSchema),z.lazy(() => EquationCreateWithoutTopicsInputSchema).array(),z.lazy(() => EquationUncheckedCreateWithoutTopicsInputSchema),z.lazy(() => EquationUncheckedCreateWithoutTopicsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => EquationCreateOrConnectWithoutTopicsInputSchema),z.lazy(() => EquationCreateOrConnectWithoutTopicsInputSchema).array() ]).optional(),

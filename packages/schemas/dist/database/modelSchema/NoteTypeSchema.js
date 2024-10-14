@@ -2,7 +2,7 @@ import {
   NoteTypePartialSchema,
   NoteTypeSchema,
   NoteTypeSchema_default
-} from "../../chunk-VPCVQKMN.js";
+} from "../../chunk-2MVGGONP.js";
 export {
   NoteTypePartialSchema,
   NoteTypeSchema,

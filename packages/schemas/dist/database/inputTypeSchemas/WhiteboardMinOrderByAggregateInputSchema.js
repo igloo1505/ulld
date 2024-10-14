@@ -1,8 +1,8 @@
 import {
   WhiteboardMinOrderByAggregateInputSchema,
   WhiteboardMinOrderByAggregateInputSchema_default
-} from "../../chunk-PHGW6LM2.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-J25RR3UG.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   WhiteboardMinOrderByAggregateInputSchema,
   WhiteboardMinOrderByAggregateInputSchema_default as default

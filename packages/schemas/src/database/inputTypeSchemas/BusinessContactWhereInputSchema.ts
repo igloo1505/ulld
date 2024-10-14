@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from '../IntFilterSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
 export const BusinessContactWhereInputSchema: z.ZodType<Prisma.BusinessContactWhereInput> = z.object({
   AND: z.union([ z.lazy(() => BusinessContactWhereInputSchema),z.lazy(() => BusinessContactWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => BusinessContactWhereInputSchema).array().optional(),

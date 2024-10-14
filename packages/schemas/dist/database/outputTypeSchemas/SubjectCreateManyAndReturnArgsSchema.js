@@ -1,8 +1,8 @@
 import {
   SubjectCreateManyAndReturnArgsSchema,
   SubjectCreateManyAndReturnArgsSchema_default
-} from "../../chunk-2UEEA4SD.js";
-import "../../chunk-22IXI3KP.js";
+} from "../../chunk-MDIM34HZ.js";
+import "../../chunk-FPHHMBJ6.js";
 export {
   SubjectCreateManyAndReturnArgsSchema,
   SubjectCreateManyAndReturnArgsSchema_default as default

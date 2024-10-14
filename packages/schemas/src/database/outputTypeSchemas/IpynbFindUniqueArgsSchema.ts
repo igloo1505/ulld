@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/IpynbIncludeSchema.js
-..//inputTypeSchemas/IpynbWhereUniqueInputSchema.js
+import { IpynbIncludeSchema } from '../inputTypeSchemas/IpynbIncludeSchema.js'
+import { IpynbWhereUniqueInputSchema } from '../inputTypeSchemas/IpynbWhereUniqueInputSchema.js'
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"

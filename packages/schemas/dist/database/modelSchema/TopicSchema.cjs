@@ -5,9 +5,9 @@
 
 
 
-var _chunkLFQDZDFTcjs = require('../../chunk-LFQDZDFT.cjs');
-require('../../chunk-QF2T6FCZ.cjs');
-require('../../chunk-BRDOGD33.cjs');
+var _chunkO7GASESQcjs = require('../../chunk-O7GASESQ.cjs');
+require('../../chunk-ATQO6OGE.cjs');
+require('../../chunk-PALRL6S5.cjs');
 
 
 
@@ -15,5 +15,5 @@ require('../../chunk-BRDOGD33.cjs');
 
 
 
-exports.TopicPartialSchema = _chunkLFQDZDFTcjs.TopicPartialSchema; exports.TopicPartialWithRelationsSchema = _chunkLFQDZDFTcjs.TopicPartialWithRelationsSchema; exports.TopicSchema = _chunkLFQDZDFTcjs.TopicSchema; exports.TopicWithPartialRelationsSchema = _chunkLFQDZDFTcjs.TopicWithPartialRelationsSchema; exports.TopicWithRelationsSchema = _chunkLFQDZDFTcjs.TopicWithRelationsSchema; exports.default = _chunkLFQDZDFTcjs.TopicSchema_default;
+exports.TopicPartialSchema = _chunkO7GASESQcjs.TopicPartialSchema; exports.TopicPartialWithRelationsSchema = _chunkO7GASESQcjs.TopicPartialWithRelationsSchema; exports.TopicSchema = _chunkO7GASESQcjs.TopicSchema; exports.TopicWithPartialRelationsSchema = _chunkO7GASESQcjs.TopicWithPartialRelationsSchema; exports.TopicWithRelationsSchema = _chunkO7GASESQcjs.TopicWithRelationsSchema; exports.default = _chunkO7GASESQcjs.TopicSchema_default;
 //# sourceMappingURL=TopicSchema.cjs.map

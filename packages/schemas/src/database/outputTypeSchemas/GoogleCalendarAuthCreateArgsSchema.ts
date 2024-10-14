@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/GoogleCalendarAuthCreateInputSchema.js
-..//inputTypeSchemas/GoogleCalendarAuthUncheckedCreateInputSchema.js
+import { GoogleCalendarAuthCreateInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthCreateInputSchema.js'
+import { GoogleCalendarAuthUncheckedCreateInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthUncheckedCreateInputSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const GoogleCalendarAuthSelectSchema: z.ZodType<Prisma.GoogleCalendarAuthSelect> = z.object({

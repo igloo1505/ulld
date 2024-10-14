@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkNHT2VH4Mcjs = require('../../chunk-NHT2VH4M.cjs');
+var _chunkS3AMXT2Zcjs = require('../../chunk-S3AMXT2Z.cjs');
 
 
 
-exports.MdxNoteUpdateimportantValuesInputSchema = _chunkNHT2VH4Mcjs.MdxNoteUpdateimportantValuesInputSchema; exports.default = _chunkNHT2VH4Mcjs.MdxNoteUpdateimportantValuesInputSchema_default;
+exports.MdxNoteUpdateimportantValuesInputSchema = _chunkS3AMXT2Zcjs.MdxNoteUpdateimportantValuesInputSchema; exports.default = _chunkS3AMXT2Zcjs.MdxNoteUpdateimportantValuesInputSchema_default;
 //# sourceMappingURL=MdxNoteUpdateimportantValuesInputSchema.cjs.map

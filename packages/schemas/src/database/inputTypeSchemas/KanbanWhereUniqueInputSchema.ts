@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { KanbanWhereInputSchema } from '../KanbanWhereInputSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
-import { KanBanListListRelationFilterSchema } from '../KanBanListListRelationFilterSchema.js';
-import { TagListRelationFilterSchema } from '../TagListRelationFilterSchema.js';
-import { SubjectListRelationFilterSchema } from '../SubjectListRelationFilterSchema.js';
-import { TopicListRelationFilterSchema } from '../TopicListRelationFilterSchema.js';
+import { KanbanWhereInputSchema } from './KanbanWhereInputSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { KanBanListListRelationFilterSchema } from './KanBanListListRelationFilterSchema.js';
+import { TagListRelationFilterSchema } from './TagListRelationFilterSchema.js';
+import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema.js';
+import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema.js';
 export const KanbanWhereUniqueInputSchema: z.ZodType<Prisma.KanbanWhereUniqueInput> = z.object({
   id: z.number().int()
 })

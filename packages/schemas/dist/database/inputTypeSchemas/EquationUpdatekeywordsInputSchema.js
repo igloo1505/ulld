@@ -1,7 +1,7 @@
 import {
   EquationUpdatekeywordsInputSchema,
   EquationUpdatekeywordsInputSchema_default
-} from "../../chunk-IFON35Z7.js";
+} from "../../chunk-C4BQGMUK.js";
 export {
   EquationUpdatekeywordsInputSchema,
   EquationUpdatekeywordsInputSchema_default as default

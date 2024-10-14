@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { DJTWhereInputSchema } from '../DJTWhereInputSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { BytesFilterSchema } from '../BytesFilterSchema.js';
+import { DJTWhereInputSchema } from './DJTWhereInputSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { BytesFilterSchema } from './BytesFilterSchema.js';
 export const DJTWhereUniqueInputSchema: z.ZodType<Prisma.DJTWhereUniqueInput> = z.object({
   id: z.number().int()
 })

@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SubjectWhereUniqueInputSchema } from '../SubjectWhereUniqueInputSchema.js';
-import { SubjectUpdateWithoutKanbanInputSchema } from '../SubjectUpdateWithoutKanbanInputSchema.js';
-import { SubjectUncheckedUpdateWithoutKanbanInputSchema } from '../SubjectUncheckedUpdateWithoutKanbanInputSchema.js';
-import { SubjectCreateWithoutKanbanInputSchema } from '../SubjectCreateWithoutKanbanInputSchema.js';
-import { SubjectUncheckedCreateWithoutKanbanInputSchema } from '../SubjectUncheckedCreateWithoutKanbanInputSchema.js';
+import { SubjectWhereUniqueInputSchema } from './SubjectWhereUniqueInputSchema.js';
+import { SubjectUpdateWithoutKanbanInputSchema } from './SubjectUpdateWithoutKanbanInputSchema.js';
+import { SubjectUncheckedUpdateWithoutKanbanInputSchema } from './SubjectUncheckedUpdateWithoutKanbanInputSchema.js';
+import { SubjectCreateWithoutKanbanInputSchema } from './SubjectCreateWithoutKanbanInputSchema.js';
+import { SubjectUncheckedCreateWithoutKanbanInputSchema } from './SubjectUncheckedCreateWithoutKanbanInputSchema.js';
 export const SubjectUpsertWithWhereUniqueWithoutKanbanInputSchema: z.ZodType<Prisma.SubjectUpsertWithWhereUniqueWithoutKanbanInput> = z.object({
   where: z.lazy(() => SubjectWhereUniqueInputSchema),
   update: z.union([ z.lazy(() => SubjectUpdateWithoutKanbanInputSchema),z.lazy(() => SubjectUncheckedUpdateWithoutKanbanInputSchema) ]),

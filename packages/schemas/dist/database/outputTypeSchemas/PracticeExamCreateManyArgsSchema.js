@@ -1,8 +1,8 @@
 import {
   PracticeExamCreateManyArgsSchema,
   PracticeExamCreateManyArgsSchema_default
-} from "../../chunk-AIDTVZOR.js";
-import "../../chunk-GNQYQ5GM.js";
+} from "../../chunk-PM2YKJXS.js";
+import "../../chunk-22RCHFUT.js";
 export {
   PracticeExamCreateManyArgsSchema,
   PracticeExamCreateManyArgsSchema_default as default

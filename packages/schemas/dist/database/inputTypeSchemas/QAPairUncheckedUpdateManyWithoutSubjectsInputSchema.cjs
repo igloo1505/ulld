@@ -1,12 +1,12 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkZQG2YPX5cjs = require('../../chunk-ZQG2YPX5.cjs');
-require('../../chunk-VBWN4YJJ.cjs');
-require('../../chunk-X2HWIL4A.cjs');
-require('../../chunk-HGFNG2SE.cjs');
+var _chunkK7Z2KDSLcjs = require('../../chunk-K7Z2KDSL.cjs');
+require('../../chunk-HHR6Z4QK.cjs');
+require('../../chunk-YGCZ3T7T.cjs');
+require('../../chunk-I5XF7I5V.cjs');
 
 
 
-exports.QAPairUncheckedUpdateManyWithoutSubjectsInputSchema = _chunkZQG2YPX5cjs.QAPairUncheckedUpdateManyWithoutSubjectsInputSchema; exports.default = _chunkZQG2YPX5cjs.QAPairUncheckedUpdateManyWithoutSubjectsInputSchema_default;
+exports.QAPairUncheckedUpdateManyWithoutSubjectsInputSchema = _chunkK7Z2KDSLcjs.QAPairUncheckedUpdateManyWithoutSubjectsInputSchema; exports.default = _chunkK7Z2KDSLcjs.QAPairUncheckedUpdateManyWithoutSubjectsInputSchema_default;
 //# sourceMappingURL=QAPairUncheckedUpdateManyWithoutSubjectsInputSchema.cjs.map

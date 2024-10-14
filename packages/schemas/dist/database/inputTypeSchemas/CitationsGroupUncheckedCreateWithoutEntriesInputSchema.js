@@ -1,7 +1,7 @@
 import {
   CitationsGroupUncheckedCreateWithoutEntriesInputSchema,
   CitationsGroupUncheckedCreateWithoutEntriesInputSchema_default
-} from "../../chunk-KRVE65LP.js";
+} from "../../chunk-MSTTSJCA.js";
 export {
   CitationsGroupUncheckedCreateWithoutEntriesInputSchema,
   CitationsGroupUncheckedCreateWithoutEntriesInputSchema_default as default

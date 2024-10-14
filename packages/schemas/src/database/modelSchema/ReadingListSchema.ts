@@ -1,16 +1,16 @@
 import { z } from 'zod';
-import type { BibEntryWithRelations } from '../BibEntrySchema.js'
-import type { BibEntryPartialWithRelations } from '../BibEntrySchema.js'
-import type { MdxNoteWithRelations } from '../MdxNoteSchema.js'
-import type { MdxNotePartialWithRelations } from '../MdxNoteSchema.js'
-import type { IpynbWithRelations } from '../IpynbSchema.js'
-import type { IpynbPartialWithRelations } from '../IpynbSchema.js'
-import { BibEntryWithRelationsSchema } from '../BibEntrySchema.js'
-import { BibEntryPartialWithRelationsSchema } from '../BibEntrySchema.js'
-import { MdxNoteWithRelationsSchema } from '../MdxNoteSchema.js'
-import { MdxNotePartialWithRelationsSchema } from '../MdxNoteSchema.js'
-import { IpynbWithRelationsSchema } from '../IpynbSchema.js'
-import { IpynbPartialWithRelationsSchema } from '../IpynbSchema.js'
+import type { BibEntryWithRelations } from './BibEntrySchema.js'
+import type { BibEntryPartialWithRelations } from './BibEntrySchema.js'
+import type { MdxNoteWithRelations } from './MdxNoteSchema.js'
+import type { MdxNotePartialWithRelations } from './MdxNoteSchema.js'
+import type { IpynbWithRelations } from './IpynbSchema.js'
+import type { IpynbPartialWithRelations } from './IpynbSchema.js'
+import { BibEntryWithRelationsSchema } from './BibEntrySchema.js'
+import { BibEntryPartialWithRelationsSchema } from './BibEntrySchema.js'
+import { MdxNoteWithRelationsSchema } from './MdxNoteSchema.js'
+import { MdxNotePartialWithRelationsSchema } from './MdxNoteSchema.js'
+import { IpynbWithRelationsSchema } from './IpynbSchema.js'
+import { IpynbPartialWithRelationsSchema } from './IpynbSchema.js'
 /////////////////////////////////////////
 // READING LIST SCHEMA
 /////////////////////////////////////////

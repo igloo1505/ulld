@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ImageAlignmentSchema } from '../ImageAlignmentSchema.js';
-import { NestedEnumImageAlignmentWithAggregatesFilterSchema } from '../NestedEnumImageAlignmentWithAggregatesFilterSchema.js';
-import { NestedIntFilterSchema } from '../NestedIntFilterSchema.js';
-import { NestedEnumImageAlignmentFilterSchema } from '../NestedEnumImageAlignmentFilterSchema.js';
+import { ImageAlignmentSchema } from './ImageAlignmentSchema.js';
+import { NestedEnumImageAlignmentWithAggregatesFilterSchema } from './NestedEnumImageAlignmentWithAggregatesFilterSchema.js';
+import { NestedIntFilterSchema } from './NestedIntFilterSchema.js';
+import { NestedEnumImageAlignmentFilterSchema } from './NestedEnumImageAlignmentFilterSchema.js';
 export const EnumImageAlignmentWithAggregatesFilterSchema: z.ZodType<Prisma.EnumImageAlignmentWithAggregatesFilter> = z.object({
   equals: z.lazy(() => ImageAlignmentSchema).optional(),
   in: z.lazy(() => ImageAlignmentSchema).array().optional(),

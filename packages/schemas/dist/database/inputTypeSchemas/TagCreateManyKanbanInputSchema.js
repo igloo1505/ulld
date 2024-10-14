@@ -1,7 +1,7 @@
 import {
   TagCreateManyKanbanInputSchema,
   TagCreateManyKanbanInputSchema_default
-} from "../../chunk-64JGL4EB.js";
+} from "../../chunk-722JK5OC.js";
 export {
   TagCreateManyKanbanInputSchema,
   TagCreateManyKanbanInputSchema_default as default

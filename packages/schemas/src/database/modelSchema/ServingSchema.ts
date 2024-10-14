@@ -1,9 +1,9 @@
 import { z } from 'zod';
-..//inputTypeSchemas/QUANTITY_GUESSSchema.js
-import type { DietaryItemWithRelations } from '../DietaryItemSchema.js'
-import type { DietaryItemPartialWithRelations } from '../DietaryItemSchema.js'
-import { DietaryItemWithRelationsSchema } from '../DietaryItemSchema.js'
-import { DietaryItemPartialWithRelationsSchema } from '../DietaryItemSchema.js'
+import { QUANTITY_GUESSSchema } from '../inputTypeSchemas/QUANTITY_GUESSSchema.js'
+import type { DietaryItemWithRelations } from './DietaryItemSchema.js'
+import type { DietaryItemPartialWithRelations } from './DietaryItemSchema.js'
+import { DietaryItemWithRelationsSchema } from './DietaryItemSchema.js'
+import { DietaryItemPartialWithRelationsSchema } from './DietaryItemSchema.js'
 /////////////////////////////////////////
 // SERVING SCHEMA
 /////////////////////////////////////////

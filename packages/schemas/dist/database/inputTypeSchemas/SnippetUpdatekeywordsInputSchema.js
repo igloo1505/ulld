@@ -1,7 +1,7 @@
 import {
   SnippetUpdatekeywordsInputSchema,
   SnippetUpdatekeywordsInputSchema_default
-} from "../../chunk-5GUUMNPT.js";
+} from "../../chunk-XUR3XQ7P.js";
 export {
   SnippetUpdatekeywordsInputSchema,
   SnippetUpdatekeywordsInputSchema_default as default

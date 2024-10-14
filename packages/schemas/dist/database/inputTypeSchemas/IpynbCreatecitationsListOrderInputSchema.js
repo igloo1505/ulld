@@ -1,7 +1,7 @@
 import {
   IpynbCreatecitationsListOrderInputSchema,
   IpynbCreatecitationsListOrderInputSchema_default
-} from "../../chunk-VNCKNFYR.js";
+} from "../../chunk-UVQGJQS6.js";
 export {
   IpynbCreatecitationsListOrderInputSchema,
   IpynbCreatecitationsListOrderInputSchema_default as default

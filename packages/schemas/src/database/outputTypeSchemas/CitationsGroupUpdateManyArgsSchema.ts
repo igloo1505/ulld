@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/CitationsGroupUpdateManyMutationInputSchema.js
-..//inputTypeSchemas/CitationsGroupUncheckedUpdateManyInputSchema.js
-..//inputTypeSchemas/CitationsGroupWhereInputSchema.js
+import { CitationsGroupUpdateManyMutationInputSchema } from '../inputTypeSchemas/CitationsGroupUpdateManyMutationInputSchema.js'
+import { CitationsGroupUncheckedUpdateManyInputSchema } from '../inputTypeSchemas/CitationsGroupUncheckedUpdateManyInputSchema.js'
+import { CitationsGroupWhereInputSchema } from '../inputTypeSchemas/CitationsGroupWhereInputSchema.js'
 export const CitationsGroupUpdateManyArgsSchema: z.ZodType<Prisma.CitationsGroupUpdateManyArgs> = z.object({
   data: z.union([ CitationsGroupUpdateManyMutationInputSchema,CitationsGroupUncheckedUpdateManyInputSchema ]),
   where: CitationsGroupWhereInputSchema.optional(),

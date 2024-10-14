@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/SequentialNoteListWhereInputSchema.js
-..//inputTypeSchemas/SequentialNoteListOrderByWithAggregationInputSchema.js
-..//inputTypeSchemas/SequentialNoteListScalarFieldEnumSchema.js
-..//inputTypeSchemas/SequentialNoteListScalarWhereWithAggregatesInputSchema.js
+import { SequentialNoteListWhereInputSchema } from '../inputTypeSchemas/SequentialNoteListWhereInputSchema.js'
+import { SequentialNoteListOrderByWithAggregationInputSchema } from '../inputTypeSchemas/SequentialNoteListOrderByWithAggregationInputSchema.js'
+import { SequentialNoteListScalarFieldEnumSchema } from '../inputTypeSchemas/SequentialNoteListScalarFieldEnumSchema.js'
+import { SequentialNoteListScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/SequentialNoteListScalarWhereWithAggregatesInputSchema.js'
 export const SequentialNoteListGroupByArgsSchema: z.ZodType<Prisma.SequentialNoteListGroupByArgs> = z.object({
   where: SequentialNoteListWhereInputSchema.optional(),
   orderBy: z.union([ SequentialNoteListOrderByWithAggregationInputSchema.array(),SequentialNoteListOrderByWithAggregationInputSchema ]).optional(),

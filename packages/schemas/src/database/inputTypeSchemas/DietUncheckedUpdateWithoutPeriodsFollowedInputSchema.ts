@@ -1,16 +1,16 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFieldUpdateOperationsInputSchema } from '../StringFieldUpdateOperationsInputSchema.js';
-import { NullableStringFieldUpdateOperationsInputSchema } from '../NullableStringFieldUpdateOperationsInputSchema.js';
-import { BoolFieldUpdateOperationsInputSchema } from '../BoolFieldUpdateOperationsInputSchema.js';
-import { TERTIARY_TOGGLESchema } from '../TERTIARY_TOGGLESchema.js';
-import { EnumTERTIARY_TOGGLEFieldUpdateOperationsInputSchema } from '../EnumTERTIARY_TOGGLEFieldUpdateOperationsInputSchema.js';
-import { NullableFloatFieldUpdateOperationsInputSchema } from '../NullableFloatFieldUpdateOperationsInputSchema.js';
-import { DietUpdategoalsInputSchema } from '../DietUpdategoalsInputSchema.js';
-import { DIETARY_GOALSchema } from '../DIETARY_GOALSchema.js';
-import { DateTimeFieldUpdateOperationsInputSchema } from '../DateTimeFieldUpdateOperationsInputSchema.js';
-import { DietaryItemUncheckedUpdateManyWithoutDietNestedInputSchema } from '../DietaryItemUncheckedUpdateManyWithoutDietNestedInputSchema.js';
-import { HealthReportUncheckedUpdateManyWithoutCurrentDietNestedInputSchema } from '../HealthReportUncheckedUpdateManyWithoutCurrentDietNestedInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+import { BoolFieldUpdateOperationsInputSchema } from './BoolFieldUpdateOperationsInputSchema.js';
+import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema.js';
+import { EnumTERTIARY_TOGGLEFieldUpdateOperationsInputSchema } from './EnumTERTIARY_TOGGLEFieldUpdateOperationsInputSchema.js';
+import { NullableFloatFieldUpdateOperationsInputSchema } from './NullableFloatFieldUpdateOperationsInputSchema.js';
+import { DietUpdategoalsInputSchema } from './DietUpdategoalsInputSchema.js';
+import { DIETARY_GOALSchema } from './DIETARY_GOALSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+import { DietaryItemUncheckedUpdateManyWithoutDietNestedInputSchema } from './DietaryItemUncheckedUpdateManyWithoutDietNestedInputSchema.js';
+import { HealthReportUncheckedUpdateManyWithoutCurrentDietNestedInputSchema } from './HealthReportUncheckedUpdateManyWithoutCurrentDietNestedInputSchema.js';
 export const DietUncheckedUpdateWithoutPeriodsFollowedInputSchema: z.ZodType<Prisma.DietUncheckedUpdateWithoutPeriodsFollowedInput> = z.object({
   name: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   summary: z.union([ z.string(),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),

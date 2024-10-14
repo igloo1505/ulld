@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/database/inputTypeSchemas/WhiteboardScalarFieldEnumSchema.ts"],"names":[],"mappings":";AAAA,SAAS,SAAS;AAEX,IAAM,kCAAkC,EAAE,KAAK,CAAC,MAAK,MAAM,CAAC;AAEnE,IAAO,0CAAQ","sourcesContent":["import { z } from 'zod';\n\nexport const WhiteboardScalarFieldEnumSchema = z.enum(['id','data']);\n\nexport default WhiteboardScalarFieldEnumSchema;\n"]}

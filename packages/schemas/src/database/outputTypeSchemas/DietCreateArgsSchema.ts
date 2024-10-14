@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/DietIncludeSchema.js
-..//inputTypeSchemas/DietCreateInputSchema.js
-..//inputTypeSchemas/DietUncheckedCreateInputSchema.js
+import { DietIncludeSchema } from '../inputTypeSchemas/DietIncludeSchema.js'
+import { DietCreateInputSchema } from '../inputTypeSchemas/DietCreateInputSchema.js'
+import { DietUncheckedCreateInputSchema } from '../inputTypeSchemas/DietUncheckedCreateInputSchema.js'
 import { DietaryItemFindManyArgsSchema } from "../outputTypeSchemas/DietaryItemFindManyArgsSchema"
 import { TimePeriodFindManyArgsSchema } from "../outputTypeSchemas/TimePeriodFindManyArgsSchema"
 import { HealthReportFindManyArgsSchema } from "../outputTypeSchemas/HealthReportFindManyArgsSchema"

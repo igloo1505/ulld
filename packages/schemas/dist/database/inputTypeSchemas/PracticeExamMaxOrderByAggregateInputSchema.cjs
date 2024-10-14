@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkPB3EXP6Hcjs = require('../../chunk-PB3EXP6H.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunk6FYGRFZOcjs = require('../../chunk-6FYGRFZO.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.PracticeExamMaxOrderByAggregateInputSchema = _chunkPB3EXP6Hcjs.PracticeExamMaxOrderByAggregateInputSchema; exports.default = _chunkPB3EXP6Hcjs.PracticeExamMaxOrderByAggregateInputSchema_default;
+exports.PracticeExamMaxOrderByAggregateInputSchema = _chunk6FYGRFZOcjs.PracticeExamMaxOrderByAggregateInputSchema; exports.default = _chunk6FYGRFZOcjs.PracticeExamMaxOrderByAggregateInputSchema_default;
 //# sourceMappingURL=PracticeExamMaxOrderByAggregateInputSchema.cjs.map

@@ -2,7 +2,7 @@ import path from "path";
 import { defineConfig } from "tsup";
 import { globSync } from "glob";
 import fs from "fs";
-import { copyJsonFilesToDist } from "./src/utils/build/copyJsonFilesToDist";
+import { copyJsonFilesToDist } from "./src/utils/build/copyJsonFilesToDist.js";
 
 const prependUseClient = (p: string) => {
     let content = fs.readFileSync(p, {
@@ -61,6 +61,7 @@ export default defineConfig((options) => {
         entry: [
             "src/**/*.ts",
             "src/**/*.tsx",
+            "src/**/*.json",
             "!src/__scripts__/**",
             "src/styleUtilities/generatedThemeColorSchemes.json"
         ],
@@ -85,6 +86,9 @@ export default defineConfig((options) => {
             return {
                 js: `.${format === "esm" ? "js" : "cjs"}`,
             };
+        },
+        loader: {
+            ".json": "json"
         },
         esbuildOptions(options, context) {
             options.ignoreAnnotations = false;

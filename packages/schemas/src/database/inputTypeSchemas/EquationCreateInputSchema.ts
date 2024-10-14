@@ -1,14 +1,14 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { JsonNullValueInputSchema } from '../JsonNullValueInputSchema.js';
-import { InputJsonValueSchema } from '../InputJsonValueSchema.js';
-import { EquationCreatevariablesInputSchema } from '../EquationCreatevariablesInputSchema.js';
-import { EquationCreatekeywordsInputSchema } from '../EquationCreatekeywordsInputSchema.js';
-import { RelatedValuesCreateNestedManyWithoutEquationsInputSchema } from '../RelatedValuesCreateNestedManyWithoutEquationsInputSchema.js';
-import { TagCreateNestedManyWithoutEquationsInputSchema } from '../TagCreateNestedManyWithoutEquationsInputSchema.js';
-import { TopicCreateNestedManyWithoutEquationsInputSchema } from '../TopicCreateNestedManyWithoutEquationsInputSchema.js';
-import { SubjectCreateNestedManyWithoutEquationsInputSchema } from '../SubjectCreateNestedManyWithoutEquationsInputSchema.js';
-import { MdxNoteCreateNestedManyWithoutEquationsInputSchema } from '../MdxNoteCreateNestedManyWithoutEquationsInputSchema.js';
+import { JsonNullValueInputSchema } from './JsonNullValueInputSchema.js';
+import { InputJsonValueSchema } from './InputJsonValueSchema.js';
+import { EquationCreatevariablesInputSchema } from './EquationCreatevariablesInputSchema.js';
+import { EquationCreatekeywordsInputSchema } from './EquationCreatekeywordsInputSchema.js';
+import { RelatedValuesCreateNestedManyWithoutEquationsInputSchema } from './RelatedValuesCreateNestedManyWithoutEquationsInputSchema.js';
+import { TagCreateNestedManyWithoutEquationsInputSchema } from './TagCreateNestedManyWithoutEquationsInputSchema.js';
+import { TopicCreateNestedManyWithoutEquationsInputSchema } from './TopicCreateNestedManyWithoutEquationsInputSchema.js';
+import { SubjectCreateNestedManyWithoutEquationsInputSchema } from './SubjectCreateNestedManyWithoutEquationsInputSchema.js';
+import { MdxNoteCreateNestedManyWithoutEquationsInputSchema } from './MdxNoteCreateNestedManyWithoutEquationsInputSchema.js';
 export const EquationCreateInputSchema: z.ZodType<Prisma.EquationCreateInput> = z.object({
   equationId: z.string().optional().nullable(),
   title: z.string(),

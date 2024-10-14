@@ -1,7 +1,7 @@
 import {
   TimePeriodCreateManyDietInputSchema,
   TimePeriodCreateManyDietInputSchema_default
-} from "../../chunk-53EZGVZV.js";
+} from "../../chunk-4W4TUDSE.js";
 export {
   TimePeriodCreateManyDietInputSchema,
   TimePeriodCreateManyDietInputSchema_default as default

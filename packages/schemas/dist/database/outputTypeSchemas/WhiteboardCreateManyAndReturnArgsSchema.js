@@ -1,8 +1,8 @@
 import {
   WhiteboardCreateManyAndReturnArgsSchema,
   WhiteboardCreateManyAndReturnArgsSchema_default
-} from "../../chunk-NNU6GZCB.js";
-import "../../chunk-EAGDW2NG.js";
+} from "../../chunk-H35AGEVQ.js";
+import "../../chunk-CL5B5JNI.js";
 export {
   WhiteboardCreateManyAndReturnArgsSchema,
   WhiteboardCreateManyAndReturnArgsSchema_default as default

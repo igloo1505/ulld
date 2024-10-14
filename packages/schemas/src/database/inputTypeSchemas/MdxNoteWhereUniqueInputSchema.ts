@@ -1,24 +1,24 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteWhereInputSchema } from '../MdxNoteWhereInputSchema.js';
-import { BoolNullableFilterSchema } from '../BoolNullableFilterSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { StringNullableListFilterSchema } from '../StringNullableListFilterSchema.js';
-import { FloatNullableListFilterSchema } from '../FloatNullableListFilterSchema.js';
-import { FloatNullableFilterSchema } from '../FloatNullableFilterSchema.js';
-import { BoolFilterSchema } from '../BoolFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
-import { TopicListRelationFilterSchema } from '../TopicListRelationFilterSchema.js';
-import { SubjectListRelationFilterSchema } from '../SubjectListRelationFilterSchema.js';
-import { TagListRelationFilterSchema } from '../TagListRelationFilterSchema.js';
-import { BibEntryListRelationFilterSchema } from '../BibEntryListRelationFilterSchema.js';
-import { SequentialNoteListNullableRelationFilterSchema } from '../SequentialNoteListNullableRelationFilterSchema.js';
-import { SequentialNoteListWhereInputSchema } from '../SequentialNoteListWhereInputSchema.js';
-import { ReadingListListRelationFilterSchema } from '../ReadingListListRelationFilterSchema.js';
-import { EquationListRelationFilterSchema } from '../EquationListRelationFilterSchema.js';
-import { DefinitionListRelationFilterSchema } from '../DefinitionListRelationFilterSchema.js';
-import { ToDoListRelationFilterSchema } from '../ToDoListRelationFilterSchema.js';
+import { MdxNoteWhereInputSchema } from './MdxNoteWhereInputSchema.js';
+import { BoolNullableFilterSchema } from './BoolNullableFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableListFilterSchema } from './StringNullableListFilterSchema.js';
+import { FloatNullableListFilterSchema } from './FloatNullableListFilterSchema.js';
+import { FloatNullableFilterSchema } from './FloatNullableFilterSchema.js';
+import { BoolFilterSchema } from './BoolFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema.js';
+import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema.js';
+import { TagListRelationFilterSchema } from './TagListRelationFilterSchema.js';
+import { BibEntryListRelationFilterSchema } from './BibEntryListRelationFilterSchema.js';
+import { SequentialNoteListNullableRelationFilterSchema } from './SequentialNoteListNullableRelationFilterSchema.js';
+import { SequentialNoteListWhereInputSchema } from './SequentialNoteListWhereInputSchema.js';
+import { ReadingListListRelationFilterSchema } from './ReadingListListRelationFilterSchema.js';
+import { EquationListRelationFilterSchema } from './EquationListRelationFilterSchema.js';
+import { DefinitionListRelationFilterSchema } from './DefinitionListRelationFilterSchema.js';
+import { ToDoListRelationFilterSchema } from './ToDoListRelationFilterSchema.js';
 export const MdxNoteWhereUniqueInputSchema: z.ZodType<Prisma.MdxNoteWhereUniqueInput> = z.union([
   z.object({
     id: z.number().int(),

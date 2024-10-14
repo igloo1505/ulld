@@ -1,11 +1,11 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/HealthReportIncludeSchema.js
-..//inputTypeSchemas/HealthReportWhereUniqueInputSchema.js
-..//inputTypeSchemas/HealthReportCreateInputSchema.js
-..//inputTypeSchemas/HealthReportUncheckedCreateInputSchema.js
-..//inputTypeSchemas/HealthReportUpdateInputSchema.js
-..//inputTypeSchemas/HealthReportUncheckedUpdateInputSchema.js
+import { HealthReportIncludeSchema } from '../inputTypeSchemas/HealthReportIncludeSchema.js'
+import { HealthReportWhereUniqueInputSchema } from '../inputTypeSchemas/HealthReportWhereUniqueInputSchema.js'
+import { HealthReportCreateInputSchema } from '../inputTypeSchemas/HealthReportCreateInputSchema.js'
+import { HealthReportUncheckedCreateInputSchema } from '../inputTypeSchemas/HealthReportUncheckedCreateInputSchema.js'
+import { HealthReportUpdateInputSchema } from '../inputTypeSchemas/HealthReportUpdateInputSchema.js'
+import { HealthReportUncheckedUpdateInputSchema } from '../inputTypeSchemas/HealthReportUncheckedUpdateInputSchema.js'
 import { DietArgsSchema } from "../outputTypeSchemas/DietArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------

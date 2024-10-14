@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TopicCreateWithoutKanbanInputSchema } from '../TopicCreateWithoutKanbanInputSchema.js';
-import { TopicUncheckedCreateWithoutKanbanInputSchema } from '../TopicUncheckedCreateWithoutKanbanInputSchema.js';
-import { TopicCreateOrConnectWithoutKanbanInputSchema } from '../TopicCreateOrConnectWithoutKanbanInputSchema.js';
-import { TopicCreateManyKanbanInputEnvelopeSchema } from '../TopicCreateManyKanbanInputEnvelopeSchema.js';
-import { TopicWhereUniqueInputSchema } from '../TopicWhereUniqueInputSchema.js';
+import { TopicCreateWithoutKanbanInputSchema } from './TopicCreateWithoutKanbanInputSchema.js';
+import { TopicUncheckedCreateWithoutKanbanInputSchema } from './TopicUncheckedCreateWithoutKanbanInputSchema.js';
+import { TopicCreateOrConnectWithoutKanbanInputSchema } from './TopicCreateOrConnectWithoutKanbanInputSchema.js';
+import { TopicCreateManyKanbanInputEnvelopeSchema } from './TopicCreateManyKanbanInputEnvelopeSchema.js';
+import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema.js';
 export const TopicCreateNestedManyWithoutKanbanInputSchema: z.ZodType<Prisma.TopicCreateNestedManyWithoutKanbanInput> = z.object({
   create: z.union([ z.lazy(() => TopicCreateWithoutKanbanInputSchema),z.lazy(() => TopicCreateWithoutKanbanInputSchema).array(),z.lazy(() => TopicUncheckedCreateWithoutKanbanInputSchema),z.lazy(() => TopicUncheckedCreateWithoutKanbanInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TopicCreateOrConnectWithoutKanbanInputSchema),z.lazy(() => TopicCreateOrConnectWithoutKanbanInputSchema).array() ]).optional(),

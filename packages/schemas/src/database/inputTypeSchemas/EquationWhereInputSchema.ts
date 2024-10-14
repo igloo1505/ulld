@@ -1,16 +1,16 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from '../IntFilterSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { JsonFilterSchema } from '../JsonFilterSchema.js';
-import { StringNullableListFilterSchema } from '../StringNullableListFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
-import { RelatedValuesListRelationFilterSchema } from '../RelatedValuesListRelationFilterSchema.js';
-import { TagListRelationFilterSchema } from '../TagListRelationFilterSchema.js';
-import { TopicListRelationFilterSchema } from '../TopicListRelationFilterSchema.js';
-import { SubjectListRelationFilterSchema } from '../SubjectListRelationFilterSchema.js';
-import { MdxNoteListRelationFilterSchema } from '../MdxNoteListRelationFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { JsonFilterSchema } from './JsonFilterSchema.js';
+import { StringNullableListFilterSchema } from './StringNullableListFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { RelatedValuesListRelationFilterSchema } from './RelatedValuesListRelationFilterSchema.js';
+import { TagListRelationFilterSchema } from './TagListRelationFilterSchema.js';
+import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema.js';
+import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema.js';
+import { MdxNoteListRelationFilterSchema } from './MdxNoteListRelationFilterSchema.js';
 export const EquationWhereInputSchema: z.ZodType<Prisma.EquationWhereInput> = z.object({
   AND: z.union([ z.lazy(() => EquationWhereInputSchema),z.lazy(() => EquationWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => EquationWhereInputSchema).array().optional(),

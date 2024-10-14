@@ -1,14 +1,14 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TimePeriodCreateWithoutDietInputSchema } from '../TimePeriodCreateWithoutDietInputSchema.js';
-import { TimePeriodUncheckedCreateWithoutDietInputSchema } from '../TimePeriodUncheckedCreateWithoutDietInputSchema.js';
-import { TimePeriodCreateOrConnectWithoutDietInputSchema } from '../TimePeriodCreateOrConnectWithoutDietInputSchema.js';
-import { TimePeriodUpsertWithWhereUniqueWithoutDietInputSchema } from '../TimePeriodUpsertWithWhereUniqueWithoutDietInputSchema.js';
-import { TimePeriodCreateManyDietInputEnvelopeSchema } from '../TimePeriodCreateManyDietInputEnvelopeSchema.js';
-import { TimePeriodWhereUniqueInputSchema } from '../TimePeriodWhereUniqueInputSchema.js';
-import { TimePeriodUpdateWithWhereUniqueWithoutDietInputSchema } from '../TimePeriodUpdateWithWhereUniqueWithoutDietInputSchema.js';
-import { TimePeriodUpdateManyWithWhereWithoutDietInputSchema } from '../TimePeriodUpdateManyWithWhereWithoutDietInputSchema.js';
-import { TimePeriodScalarWhereInputSchema } from '../TimePeriodScalarWhereInputSchema.js';
+import { TimePeriodCreateWithoutDietInputSchema } from './TimePeriodCreateWithoutDietInputSchema.js';
+import { TimePeriodUncheckedCreateWithoutDietInputSchema } from './TimePeriodUncheckedCreateWithoutDietInputSchema.js';
+import { TimePeriodCreateOrConnectWithoutDietInputSchema } from './TimePeriodCreateOrConnectWithoutDietInputSchema.js';
+import { TimePeriodUpsertWithWhereUniqueWithoutDietInputSchema } from './TimePeriodUpsertWithWhereUniqueWithoutDietInputSchema.js';
+import { TimePeriodCreateManyDietInputEnvelopeSchema } from './TimePeriodCreateManyDietInputEnvelopeSchema.js';
+import { TimePeriodWhereUniqueInputSchema } from './TimePeriodWhereUniqueInputSchema.js';
+import { TimePeriodUpdateWithWhereUniqueWithoutDietInputSchema } from './TimePeriodUpdateWithWhereUniqueWithoutDietInputSchema.js';
+import { TimePeriodUpdateManyWithWhereWithoutDietInputSchema } from './TimePeriodUpdateManyWithWhereWithoutDietInputSchema.js';
+import { TimePeriodScalarWhereInputSchema } from './TimePeriodScalarWhereInputSchema.js';
 export const TimePeriodUncheckedUpdateManyWithoutDietNestedInputSchema: z.ZodType<Prisma.TimePeriodUncheckedUpdateManyWithoutDietNestedInput> = z.object({
   create: z.union([ z.lazy(() => TimePeriodCreateWithoutDietInputSchema),z.lazy(() => TimePeriodCreateWithoutDietInputSchema).array(),z.lazy(() => TimePeriodUncheckedCreateWithoutDietInputSchema),z.lazy(() => TimePeriodUncheckedCreateWithoutDietInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TimePeriodCreateOrConnectWithoutDietInputSchema),z.lazy(() => TimePeriodCreateOrConnectWithoutDietInputSchema).array() ]).optional(),

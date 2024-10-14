@@ -1,22 +1,22 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from '../IntFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { DateTimeNullableFilterSchema } from '../DateTimeNullableFilterSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
-import { IntNullableFilterSchema } from '../IntNullableFilterSchema.js';
-import { EnumTaskCategoryNullableFilterSchema } from '../EnumTaskCategoryNullableFilterSchema.js';
-import { TaskCategorySchema } from '../TaskCategorySchema.js';
-import { BoolFilterSchema } from '../BoolFilterSchema.js';
-import { MdxNoteListRelationFilterSchema } from '../MdxNoteListRelationFilterSchema.js';
-import { TagListRelationFilterSchema } from '../TagListRelationFilterSchema.js';
-import { TopicListRelationFilterSchema } from '../TopicListRelationFilterSchema.js';
-import { SubjectListRelationFilterSchema } from '../SubjectListRelationFilterSchema.js';
-import { ToDoNullableRelationFilterSchema } from '../ToDoNullableRelationFilterSchema.js';
-import { ToDoListRelationFilterSchema } from '../ToDoListRelationFilterSchema.js';
-import { ToDoListNullableRelationFilterSchema } from '../ToDoListNullableRelationFilterSchema.js';
-import { ToDoListWhereInputSchema } from '../ToDoListWhereInputSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { DateTimeNullableFilterSchema } from './DateTimeNullableFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { EnumTaskCategoryNullableFilterSchema } from './EnumTaskCategoryNullableFilterSchema.js';
+import { TaskCategorySchema } from './TaskCategorySchema.js';
+import { BoolFilterSchema } from './BoolFilterSchema.js';
+import { MdxNoteListRelationFilterSchema } from './MdxNoteListRelationFilterSchema.js';
+import { TagListRelationFilterSchema } from './TagListRelationFilterSchema.js';
+import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema.js';
+import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema.js';
+import { ToDoNullableRelationFilterSchema } from './ToDoNullableRelationFilterSchema.js';
+import { ToDoListRelationFilterSchema } from './ToDoListRelationFilterSchema.js';
+import { ToDoListNullableRelationFilterSchema } from './ToDoListNullableRelationFilterSchema.js';
+import { ToDoListWhereInputSchema } from './ToDoListWhereInputSchema.js';
 export const ToDoWhereInputSchema: z.ZodType<Prisma.ToDoWhereInput> = z.object({
   AND: z.union([ z.lazy(() => ToDoWhereInputSchema),z.lazy(() => ToDoWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => ToDoWhereInputSchema).array().optional(),

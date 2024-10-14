@@ -2,8 +2,8 @@ import {
   appConfigDeepPartialWithFsRoot,
   appConfigDeepPartialWithNotetypes,
   minimalParsableAppConfig
-} from "../../chunk-TRA7BHE7.js";
-import "../../chunk-GV63OONA.js";
+} from "../../chunk-2P4FFZHG.js";
+import "../../chunk-WPDFOKEN.js";
 import "../../chunk-HHE6N47D.js";
 import "../../chunk-5LBDPOU3.js";
 import "../../chunk-XVHSMXND.js";

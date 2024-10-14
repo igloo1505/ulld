@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/DefinitionWhereInputSchema.js
-..//inputTypeSchemas/DefinitionOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/DefinitionWhereUniqueInputSchema.js
+import { DefinitionWhereInputSchema } from '../inputTypeSchemas/DefinitionWhereInputSchema.js'
+import { DefinitionOrderByWithRelationInputSchema } from '../inputTypeSchemas/DefinitionOrderByWithRelationInputSchema.js'
+import { DefinitionWhereUniqueInputSchema } from '../inputTypeSchemas/DefinitionWhereUniqueInputSchema.js'
 export const DefinitionAggregateArgsSchema: z.ZodType<Prisma.DefinitionAggregateArgs> = z.object({
   where: DefinitionWhereInputSchema.optional(),
   orderBy: z.union([ DefinitionOrderByWithRelationInputSchema.array(),DefinitionOrderByWithRelationInputSchema ]).optional(),

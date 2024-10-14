@@ -1,14 +1,14 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteCreateNestedManyWithoutSubjectsInputSchema } from '../MdxNoteCreateNestedManyWithoutSubjectsInputSchema.js';
-import { IpynbCreateNestedManyWithoutSubjectsInputSchema } from '../IpynbCreateNestedManyWithoutSubjectsInputSchema.js';
-import { QAPairCreateNestedManyWithoutSubjectsInputSchema } from '../QAPairCreateNestedManyWithoutSubjectsInputSchema.js';
-import { PracticeExamCreateNestedManyWithoutSubjectsInputSchema } from '../PracticeExamCreateNestedManyWithoutSubjectsInputSchema.js';
-import { KanbanCreateNestedOneWithoutSubjectsInputSchema } from '../KanbanCreateNestedOneWithoutSubjectsInputSchema.js';
-import { ToDoListCreateNestedManyWithoutSubjectsInputSchema } from '../ToDoListCreateNestedManyWithoutSubjectsInputSchema.js';
-import { ToDoCreateNestedManyWithoutSubjectsInputSchema } from '../ToDoCreateNestedManyWithoutSubjectsInputSchema.js';
-import { BibEntryCreateNestedManyWithoutSubjectsInputSchema } from '../BibEntryCreateNestedManyWithoutSubjectsInputSchema.js';
-import { EquationCreateNestedManyWithoutSubjectsInputSchema } from '../EquationCreateNestedManyWithoutSubjectsInputSchema.js';
+import { MdxNoteCreateNestedManyWithoutSubjectsInputSchema } from './MdxNoteCreateNestedManyWithoutSubjectsInputSchema.js';
+import { IpynbCreateNestedManyWithoutSubjectsInputSchema } from './IpynbCreateNestedManyWithoutSubjectsInputSchema.js';
+import { QAPairCreateNestedManyWithoutSubjectsInputSchema } from './QAPairCreateNestedManyWithoutSubjectsInputSchema.js';
+import { PracticeExamCreateNestedManyWithoutSubjectsInputSchema } from './PracticeExamCreateNestedManyWithoutSubjectsInputSchema.js';
+import { KanbanCreateNestedOneWithoutSubjectsInputSchema } from './KanbanCreateNestedOneWithoutSubjectsInputSchema.js';
+import { ToDoListCreateNestedManyWithoutSubjectsInputSchema } from './ToDoListCreateNestedManyWithoutSubjectsInputSchema.js';
+import { ToDoCreateNestedManyWithoutSubjectsInputSchema } from './ToDoCreateNestedManyWithoutSubjectsInputSchema.js';
+import { BibEntryCreateNestedManyWithoutSubjectsInputSchema } from './BibEntryCreateNestedManyWithoutSubjectsInputSchema.js';
+import { EquationCreateNestedManyWithoutSubjectsInputSchema } from './EquationCreateNestedManyWithoutSubjectsInputSchema.js';
 export const SubjectCreateInputSchema: z.ZodType<Prisma.SubjectCreateInput> = z.object({
   value: z.string(),
   createdAt: z.coerce.date().optional(),

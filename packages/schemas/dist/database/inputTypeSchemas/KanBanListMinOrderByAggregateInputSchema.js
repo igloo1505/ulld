@@ -1,8 +1,8 @@
 import {
   KanBanListMinOrderByAggregateInputSchema,
   KanBanListMinOrderByAggregateInputSchema_default
-} from "../../chunk-CLOHMQXI.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-KOELC2C3.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   KanBanListMinOrderByAggregateInputSchema,
   KanBanListMinOrderByAggregateInputSchema_default as default

@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TopicCreateWithoutTodoListInputSchema } from '../TopicCreateWithoutTodoListInputSchema.js';
-import { TopicUncheckedCreateWithoutTodoListInputSchema } from '../TopicUncheckedCreateWithoutTodoListInputSchema.js';
-import { TopicCreateOrConnectWithoutTodoListInputSchema } from '../TopicCreateOrConnectWithoutTodoListInputSchema.js';
-import { TopicUpsertWithWhereUniqueWithoutTodoListInputSchema } from '../TopicUpsertWithWhereUniqueWithoutTodoListInputSchema.js';
-import { TopicWhereUniqueInputSchema } from '../TopicWhereUniqueInputSchema.js';
-import { TopicUpdateWithWhereUniqueWithoutTodoListInputSchema } from '../TopicUpdateWithWhereUniqueWithoutTodoListInputSchema.js';
-import { TopicUpdateManyWithWhereWithoutTodoListInputSchema } from '../TopicUpdateManyWithWhereWithoutTodoListInputSchema.js';
-import { TopicScalarWhereInputSchema } from '../TopicScalarWhereInputSchema.js';
+import { TopicCreateWithoutTodoListInputSchema } from './TopicCreateWithoutTodoListInputSchema.js';
+import { TopicUncheckedCreateWithoutTodoListInputSchema } from './TopicUncheckedCreateWithoutTodoListInputSchema.js';
+import { TopicCreateOrConnectWithoutTodoListInputSchema } from './TopicCreateOrConnectWithoutTodoListInputSchema.js';
+import { TopicUpsertWithWhereUniqueWithoutTodoListInputSchema } from './TopicUpsertWithWhereUniqueWithoutTodoListInputSchema.js';
+import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema.js';
+import { TopicUpdateWithWhereUniqueWithoutTodoListInputSchema } from './TopicUpdateWithWhereUniqueWithoutTodoListInputSchema.js';
+import { TopicUpdateManyWithWhereWithoutTodoListInputSchema } from './TopicUpdateManyWithWhereWithoutTodoListInputSchema.js';
+import { TopicScalarWhereInputSchema } from './TopicScalarWhereInputSchema.js';
 export const TopicUncheckedUpdateManyWithoutTodoListNestedInputSchema: z.ZodType<Prisma.TopicUncheckedUpdateManyWithoutTodoListNestedInput> = z.object({
   create: z.union([ z.lazy(() => TopicCreateWithoutTodoListInputSchema),z.lazy(() => TopicCreateWithoutTodoListInputSchema).array(),z.lazy(() => TopicUncheckedCreateWithoutTodoListInputSchema),z.lazy(() => TopicUncheckedCreateWithoutTodoListInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TopicCreateOrConnectWithoutTodoListInputSchema),z.lazy(() => TopicCreateOrConnectWithoutTodoListInputSchema).array() ]).optional(),

@@ -2,7 +2,7 @@ import {
   FeatureRequestPartialSchema,
   FeatureRequestSchema,
   FeatureRequestSchema_default
-} from "../../chunk-MGPRITDL.js";
+} from "../../chunk-LRVQLAAK.js";
 export {
   FeatureRequestPartialSchema,
   FeatureRequestSchema,

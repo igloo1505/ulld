@@ -1,7 +1,7 @@
 import {
   JsonValueSchema,
   JsonValueSchema_default
-} from "../../chunk-MUF2HC5X.js";
+} from "../../chunk-WWHEEPM6.js";
 export {
   JsonValueSchema,
   JsonValueSchema_default as default

@@ -1,7 +1,7 @@
 import {
   BibEntryCreateManyInputSchema,
   BibEntryCreateManyInputSchema_default
-} from "../../chunk-YHC67LUV.js";
+} from "../../chunk-IFO6IHMV.js";
 export {
   BibEntryCreateManyInputSchema,
   BibEntryCreateManyInputSchema_default as default

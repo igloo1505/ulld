@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { QAPairCreateWithoutTagsInputSchema } from '../QAPairCreateWithoutTagsInputSchema.js';
-import { QAPairUncheckedCreateWithoutTagsInputSchema } from '../QAPairUncheckedCreateWithoutTagsInputSchema.js';
-import { QAPairCreateOrConnectWithoutTagsInputSchema } from '../QAPairCreateOrConnectWithoutTagsInputSchema.js';
-import { QAPairUpsertWithWhereUniqueWithoutTagsInputSchema } from '../QAPairUpsertWithWhereUniqueWithoutTagsInputSchema.js';
-import { QAPairWhereUniqueInputSchema } from '../QAPairWhereUniqueInputSchema.js';
-import { QAPairUpdateWithWhereUniqueWithoutTagsInputSchema } from '../QAPairUpdateWithWhereUniqueWithoutTagsInputSchema.js';
-import { QAPairUpdateManyWithWhereWithoutTagsInputSchema } from '../QAPairUpdateManyWithWhereWithoutTagsInputSchema.js';
-import { QAPairScalarWhereInputSchema } from '../QAPairScalarWhereInputSchema.js';
+import { QAPairCreateWithoutTagsInputSchema } from './QAPairCreateWithoutTagsInputSchema.js';
+import { QAPairUncheckedCreateWithoutTagsInputSchema } from './QAPairUncheckedCreateWithoutTagsInputSchema.js';
+import { QAPairCreateOrConnectWithoutTagsInputSchema } from './QAPairCreateOrConnectWithoutTagsInputSchema.js';
+import { QAPairUpsertWithWhereUniqueWithoutTagsInputSchema } from './QAPairUpsertWithWhereUniqueWithoutTagsInputSchema.js';
+import { QAPairWhereUniqueInputSchema } from './QAPairWhereUniqueInputSchema.js';
+import { QAPairUpdateWithWhereUniqueWithoutTagsInputSchema } from './QAPairUpdateWithWhereUniqueWithoutTagsInputSchema.js';
+import { QAPairUpdateManyWithWhereWithoutTagsInputSchema } from './QAPairUpdateManyWithWhereWithoutTagsInputSchema.js';
+import { QAPairScalarWhereInputSchema } from './QAPairScalarWhereInputSchema.js';
 export const QAPairUpdateManyWithoutTagsNestedInputSchema: z.ZodType<Prisma.QAPairUpdateManyWithoutTagsNestedInput> = z.object({
   create: z.union([ z.lazy(() => QAPairCreateWithoutTagsInputSchema),z.lazy(() => QAPairCreateWithoutTagsInputSchema).array(),z.lazy(() => QAPairUncheckedCreateWithoutTagsInputSchema),z.lazy(() => QAPairUncheckedCreateWithoutTagsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => QAPairCreateOrConnectWithoutTagsInputSchema),z.lazy(() => QAPairCreateOrConnectWithoutTagsInputSchema).array() ]).optional(),

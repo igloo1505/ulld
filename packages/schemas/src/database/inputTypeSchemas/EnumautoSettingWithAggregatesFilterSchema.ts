@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { autoSettingSchema } from '../autoSettingSchema.js';
-import { NestedEnumautoSettingWithAggregatesFilterSchema } from '../NestedEnumautoSettingWithAggregatesFilterSchema.js';
-import { NestedIntFilterSchema } from '../NestedIntFilterSchema.js';
-import { NestedEnumautoSettingFilterSchema } from '../NestedEnumautoSettingFilterSchema.js';
+import { autoSettingSchema } from './autoSettingSchema.js';
+import { NestedEnumautoSettingWithAggregatesFilterSchema } from './NestedEnumautoSettingWithAggregatesFilterSchema.js';
+import { NestedIntFilterSchema } from './NestedIntFilterSchema.js';
+import { NestedEnumautoSettingFilterSchema } from './NestedEnumautoSettingFilterSchema.js';
 export const EnumautoSettingWithAggregatesFilterSchema: z.ZodType<Prisma.EnumautoSettingWithAggregatesFilter> = z.object({
   equals: z.lazy(() => autoSettingSchema).optional(),
   in: z.lazy(() => autoSettingSchema).array().optional(),

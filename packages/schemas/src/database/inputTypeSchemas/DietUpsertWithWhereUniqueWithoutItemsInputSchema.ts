@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { DietWhereUniqueInputSchema } from '../DietWhereUniqueInputSchema.js';
-import { DietUpdateWithoutItemsInputSchema } from '../DietUpdateWithoutItemsInputSchema.js';
-import { DietUncheckedUpdateWithoutItemsInputSchema } from '../DietUncheckedUpdateWithoutItemsInputSchema.js';
-import { DietCreateWithoutItemsInputSchema } from '../DietCreateWithoutItemsInputSchema.js';
-import { DietUncheckedCreateWithoutItemsInputSchema } from '../DietUncheckedCreateWithoutItemsInputSchema.js';
+import { DietWhereUniqueInputSchema } from './DietWhereUniqueInputSchema.js';
+import { DietUpdateWithoutItemsInputSchema } from './DietUpdateWithoutItemsInputSchema.js';
+import { DietUncheckedUpdateWithoutItemsInputSchema } from './DietUncheckedUpdateWithoutItemsInputSchema.js';
+import { DietCreateWithoutItemsInputSchema } from './DietCreateWithoutItemsInputSchema.js';
+import { DietUncheckedCreateWithoutItemsInputSchema } from './DietUncheckedCreateWithoutItemsInputSchema.js';
 export const DietUpsertWithWhereUniqueWithoutItemsInputSchema: z.ZodType<Prisma.DietUpsertWithWhereUniqueWithoutItemsInput> = z.object({
   where: z.lazy(() => DietWhereUniqueInputSchema),
   update: z.union([ z.lazy(() => DietUpdateWithoutItemsInputSchema),z.lazy(() => DietUncheckedUpdateWithoutItemsInputSchema) ]),

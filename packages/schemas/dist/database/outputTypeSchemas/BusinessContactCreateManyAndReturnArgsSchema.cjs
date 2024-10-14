@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkQFFXF6SMcjs = require('../../chunk-QFFXF6SM.cjs');
-require('../../chunk-POADIYVI.cjs');
+var _chunk566545PJcjs = require('../../chunk-566545PJ.cjs');
+require('../../chunk-HQOIV23M.cjs');
 
 
 
-exports.BusinessContactCreateManyAndReturnArgsSchema = _chunkQFFXF6SMcjs.BusinessContactCreateManyAndReturnArgsSchema; exports.default = _chunkQFFXF6SMcjs.BusinessContactCreateManyAndReturnArgsSchema_default;
+exports.BusinessContactCreateManyAndReturnArgsSchema = _chunk566545PJcjs.BusinessContactCreateManyAndReturnArgsSchema; exports.default = _chunk566545PJcjs.BusinessContactCreateManyAndReturnArgsSchema_default;
 //# sourceMappingURL=BusinessContactCreateManyAndReturnArgsSchema.cjs.map

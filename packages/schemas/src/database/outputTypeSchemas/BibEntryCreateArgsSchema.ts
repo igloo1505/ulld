@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/BibEntryIncludeSchema.js
-..//inputTypeSchemas/BibEntryCreateInputSchema.js
-..//inputTypeSchemas/BibEntryUncheckedCreateInputSchema.js
+import { BibEntryIncludeSchema } from '../inputTypeSchemas/BibEntryIncludeSchema.js'
+import { BibEntryCreateInputSchema } from '../inputTypeSchemas/BibEntryCreateInputSchema.js'
+import { BibEntryUncheckedCreateInputSchema } from '../inputTypeSchemas/BibEntryUncheckedCreateInputSchema.js'
 import { BibArgsSchema } from "../outputTypeSchemas/BibArgsSchema"
 import { CitationsGroupFindManyArgsSchema } from "../outputTypeSchemas/CitationsGroupFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"

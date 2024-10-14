@@ -1,7 +1,7 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { QUANTITY_GUESSSchema } from '../QUANTITY_GUESSSchema.js';
-import { NestedEnumQUANTITY_GUESSNullableFilterSchema } from '../NestedEnumQUANTITY_GUESSNullableFilterSchema.js';
+import { QUANTITY_GUESSSchema } from './QUANTITY_GUESSSchema.js';
+import { NestedEnumQUANTITY_GUESSNullableFilterSchema } from './NestedEnumQUANTITY_GUESSNullableFilterSchema.js';
 export const EnumQUANTITY_GUESSNullableFilterSchema: z.ZodType<Prisma.EnumQUANTITY_GUESSNullableFilter> = z.object({
   equals: z.lazy(() => QUANTITY_GUESSSchema).optional().nullable(),
   in: z.lazy(() => QUANTITY_GUESSSchema).array().optional().nullable(),

@@ -1,12 +1,12 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkW4SKYDZXcjs = require('../../chunk-W4SKYDZX.cjs');
-require('../../chunk-XH6WTYJN.cjs');
-require('../../chunk-4FUALD4T.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkUBZQMVTYcjs = require('../../chunk-UBZQMVTY.cjs');
+require('../../chunk-FGRI2E3C.cjs');
+require('../../chunk-Y7URZVWM.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.WhiteboardOrderByWithRelationInputSchema = _chunkW4SKYDZXcjs.WhiteboardOrderByWithRelationInputSchema; exports.default = _chunkW4SKYDZXcjs.WhiteboardOrderByWithRelationInputSchema_default;
+exports.WhiteboardOrderByWithRelationInputSchema = _chunkUBZQMVTYcjs.WhiteboardOrderByWithRelationInputSchema; exports.default = _chunkUBZQMVTYcjs.WhiteboardOrderByWithRelationInputSchema_default;
 //# sourceMappingURL=WhiteboardOrderByWithRelationInputSchema.cjs.map

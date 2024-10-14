@@ -23,9 +23,9 @@ import {
 } from "@ulld/utilities/fsUtils";
 import { buildOnlySchema } from "./build/main.js";
 import { appMetaSchema } from "./meta.js";
-import staticBuildData from "@ulld/utilities/buildStaticData.json" with {type: "json"};
 import { defaultNoteTypes } from "./defaults/defaultNoteTypes.js";
 import { WithRequired } from "@ulld/utilities/types";
+import { getCurrentPackageVersions } from "@ulld/utilities/internalDataHelpers";
 
 export const zodRegexField = z
     .union([
@@ -64,6 +64,22 @@ export const zodRegexFieldTransform = (b: z.input<typeof zodRegexField> = []) =>
         return a;
     });
 };
+
+const getDefaultPlugins = (): z.input<typeof pluginItemSchema>[]  => {
+    const currentPackageVersions = getCurrentPackageVersions()
+       return [
+            {
+                name: "@ulld/api",
+                parserIndex: 0,
+                version: currentPackageVersions["@ulld/api"],
+            },
+            {
+                name: "@ulld/plot",
+                parserIndex: 0,
+                version: currentPackageVersions["@ulld/plot"],
+            },
+        ]
+    }
 
 export const appConfigSchema = z.object({
     fsRoot: z
@@ -210,18 +226,7 @@ export const appConfigSchema = z.object({
             z.string(),
             z.string().array(),
         ])
-        .default([
-            {
-                name: "@ulld/api",
-                parserIndex: 0,
-                version: staticBuildData.currentPackageVersions["@ulld/api"],
-            },
-            {
-                name: "@ulld/plot",
-                parserIndex: 0,
-                version: staticBuildData.currentPackageVersions["@ulld/plot"],
-            },
-        ])
+        .default(getDefaultPlugins())
         .transform((a = []) => {
             let items = Array.isArray(a) ? a : [a]
             let names: string[] = [];

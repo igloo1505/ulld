@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SnippetWhereInputSchema } from '../SnippetWhereInputSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { StringNullableListFilterSchema } from '../StringNullableListFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
+import { SnippetWhereInputSchema } from './SnippetWhereInputSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableListFilterSchema } from './StringNullableListFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
 export const SnippetWhereUniqueInputSchema: z.ZodType<Prisma.SnippetWhereUniqueInput> = z.object({
   id: z.number().int()
 })

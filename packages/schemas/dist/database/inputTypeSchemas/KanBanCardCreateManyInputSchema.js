@@ -1,7 +1,7 @@
 import {
   KanBanCardCreateManyInputSchema,
   KanBanCardCreateManyInputSchema_default
-} from "../../chunk-GHS7LW5H.js";
+} from "../../chunk-TTRD7SFX.js";
 export {
   KanBanCardCreateManyInputSchema,
   KanBanCardCreateManyInputSchema_default as default

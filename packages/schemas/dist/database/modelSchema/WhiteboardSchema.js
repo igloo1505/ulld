@@ -2,7 +2,7 @@ import {
   WhiteboardPartialSchema,
   WhiteboardSchema,
   WhiteboardSchema_default
-} from "../../chunk-RZNVWWZM.js";
+} from "../../chunk-WMY6GCTU.js";
 export {
   WhiteboardPartialSchema,
   WhiteboardSchema,

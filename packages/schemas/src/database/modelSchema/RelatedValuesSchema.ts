@@ -1,9 +1,9 @@
 import { z } from 'zod';
-..//inputTypeSchemas/JsonValueSchema.js
-import type { EquationWithRelations } from '../EquationSchema.js'
-import type { EquationPartialWithRelations } from '../EquationSchema.js'
-import { EquationWithRelationsSchema } from '../EquationSchema.js'
-import { EquationPartialWithRelationsSchema } from '../EquationSchema.js'
+import { JsonValueSchema } from '../inputTypeSchemas/JsonValueSchema.js'
+import type { EquationWithRelations } from './EquationSchema.js'
+import type { EquationPartialWithRelations } from './EquationSchema.js'
+import { EquationWithRelationsSchema } from './EquationSchema.js'
+import { EquationPartialWithRelationsSchema } from './EquationSchema.js'
 /////////////////////////////////////////
 // RELATED VALUES SCHEMA
 /////////////////////////////////////////

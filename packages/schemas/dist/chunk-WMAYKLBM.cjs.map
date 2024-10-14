@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/database/inputTypeSchemas/TopicOrderByRelevanceFieldEnumSchema.ts"],"names":[],"mappings":";AAAA,SAAS,SAAS;AAEX,IAAM,uCAAuC,EAAE,KAAK,CAAC,OAAO,CAAC;AAEpE,IAAO,+CAAQ","sourcesContent":["import { z } from 'zod';\n\nexport const TopicOrderByRelevanceFieldEnumSchema = z.enum(['value']);\n\nexport default TopicOrderByRelevanceFieldEnumSchema;\n"]}

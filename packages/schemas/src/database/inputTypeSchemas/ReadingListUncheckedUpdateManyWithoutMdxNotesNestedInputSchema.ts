@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ReadingListCreateWithoutMdxNotesInputSchema } from '../ReadingListCreateWithoutMdxNotesInputSchema.js';
-import { ReadingListUncheckedCreateWithoutMdxNotesInputSchema } from '../ReadingListUncheckedCreateWithoutMdxNotesInputSchema.js';
-import { ReadingListCreateOrConnectWithoutMdxNotesInputSchema } from '../ReadingListCreateOrConnectWithoutMdxNotesInputSchema.js';
-import { ReadingListUpsertWithWhereUniqueWithoutMdxNotesInputSchema } from '../ReadingListUpsertWithWhereUniqueWithoutMdxNotesInputSchema.js';
-import { ReadingListWhereUniqueInputSchema } from '../ReadingListWhereUniqueInputSchema.js';
-import { ReadingListUpdateWithWhereUniqueWithoutMdxNotesInputSchema } from '../ReadingListUpdateWithWhereUniqueWithoutMdxNotesInputSchema.js';
-import { ReadingListUpdateManyWithWhereWithoutMdxNotesInputSchema } from '../ReadingListUpdateManyWithWhereWithoutMdxNotesInputSchema.js';
-import { ReadingListScalarWhereInputSchema } from '../ReadingListScalarWhereInputSchema.js';
+import { ReadingListCreateWithoutMdxNotesInputSchema } from './ReadingListCreateWithoutMdxNotesInputSchema.js';
+import { ReadingListUncheckedCreateWithoutMdxNotesInputSchema } from './ReadingListUncheckedCreateWithoutMdxNotesInputSchema.js';
+import { ReadingListCreateOrConnectWithoutMdxNotesInputSchema } from './ReadingListCreateOrConnectWithoutMdxNotesInputSchema.js';
+import { ReadingListUpsertWithWhereUniqueWithoutMdxNotesInputSchema } from './ReadingListUpsertWithWhereUniqueWithoutMdxNotesInputSchema.js';
+import { ReadingListWhereUniqueInputSchema } from './ReadingListWhereUniqueInputSchema.js';
+import { ReadingListUpdateWithWhereUniqueWithoutMdxNotesInputSchema } from './ReadingListUpdateWithWhereUniqueWithoutMdxNotesInputSchema.js';
+import { ReadingListUpdateManyWithWhereWithoutMdxNotesInputSchema } from './ReadingListUpdateManyWithWhereWithoutMdxNotesInputSchema.js';
+import { ReadingListScalarWhereInputSchema } from './ReadingListScalarWhereInputSchema.js';
 export const ReadingListUncheckedUpdateManyWithoutMdxNotesNestedInputSchema: z.ZodType<Prisma.ReadingListUncheckedUpdateManyWithoutMdxNotesNestedInput> = z.object({
   create: z.union([ z.lazy(() => ReadingListCreateWithoutMdxNotesInputSchema),z.lazy(() => ReadingListCreateWithoutMdxNotesInputSchema).array(),z.lazy(() => ReadingListUncheckedCreateWithoutMdxNotesInputSchema),z.lazy(() => ReadingListUncheckedCreateWithoutMdxNotesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => ReadingListCreateOrConnectWithoutMdxNotesInputSchema),z.lazy(() => ReadingListCreateOrConnectWithoutMdxNotesInputSchema).array() ]).optional(),

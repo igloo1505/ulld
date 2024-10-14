@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ToDoCreateWithoutSubjectsInputSchema } from '../ToDoCreateWithoutSubjectsInputSchema.js';
-import { ToDoUncheckedCreateWithoutSubjectsInputSchema } from '../ToDoUncheckedCreateWithoutSubjectsInputSchema.js';
-import { ToDoCreateOrConnectWithoutSubjectsInputSchema } from '../ToDoCreateOrConnectWithoutSubjectsInputSchema.js';
-import { ToDoUpsertWithWhereUniqueWithoutSubjectsInputSchema } from '../ToDoUpsertWithWhereUniqueWithoutSubjectsInputSchema.js';
-import { ToDoWhereUniqueInputSchema } from '../ToDoWhereUniqueInputSchema.js';
-import { ToDoUpdateWithWhereUniqueWithoutSubjectsInputSchema } from '../ToDoUpdateWithWhereUniqueWithoutSubjectsInputSchema.js';
-import { ToDoUpdateManyWithWhereWithoutSubjectsInputSchema } from '../ToDoUpdateManyWithWhereWithoutSubjectsInputSchema.js';
-import { ToDoScalarWhereInputSchema } from '../ToDoScalarWhereInputSchema.js';
+import { ToDoCreateWithoutSubjectsInputSchema } from './ToDoCreateWithoutSubjectsInputSchema.js';
+import { ToDoUncheckedCreateWithoutSubjectsInputSchema } from './ToDoUncheckedCreateWithoutSubjectsInputSchema.js';
+import { ToDoCreateOrConnectWithoutSubjectsInputSchema } from './ToDoCreateOrConnectWithoutSubjectsInputSchema.js';
+import { ToDoUpsertWithWhereUniqueWithoutSubjectsInputSchema } from './ToDoUpsertWithWhereUniqueWithoutSubjectsInputSchema.js';
+import { ToDoWhereUniqueInputSchema } from './ToDoWhereUniqueInputSchema.js';
+import { ToDoUpdateWithWhereUniqueWithoutSubjectsInputSchema } from './ToDoUpdateWithWhereUniqueWithoutSubjectsInputSchema.js';
+import { ToDoUpdateManyWithWhereWithoutSubjectsInputSchema } from './ToDoUpdateManyWithWhereWithoutSubjectsInputSchema.js';
+import { ToDoScalarWhereInputSchema } from './ToDoScalarWhereInputSchema.js';
 export const ToDoUncheckedUpdateManyWithoutSubjectsNestedInputSchema: z.ZodType<Prisma.ToDoUncheckedUpdateManyWithoutSubjectsNestedInput> = z.object({
   create: z.union([ z.lazy(() => ToDoCreateWithoutSubjectsInputSchema),z.lazy(() => ToDoCreateWithoutSubjectsInputSchema).array(),z.lazy(() => ToDoUncheckedCreateWithoutSubjectsInputSchema),z.lazy(() => ToDoUncheckedCreateWithoutSubjectsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => ToDoCreateOrConnectWithoutSubjectsInputSchema),z.lazy(() => ToDoCreateOrConnectWithoutSubjectsInputSchema).array() ]).optional(),

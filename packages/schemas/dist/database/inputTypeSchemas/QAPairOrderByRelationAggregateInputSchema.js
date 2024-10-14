@@ -1,8 +1,8 @@
 import {
   QAPairOrderByRelationAggregateInputSchema,
   QAPairOrderByRelationAggregateInputSchema_default
-} from "../../chunk-GI3YIS3C.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-WZDZZT4M.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   QAPairOrderByRelationAggregateInputSchema,
   QAPairOrderByRelationAggregateInputSchema_default as default

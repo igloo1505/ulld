@@ -1,11 +1,11 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
-import { AutoSettingCountOrderByAggregateInputSchema } from '../AutoSettingCountOrderByAggregateInputSchema.js';
-import { AutoSettingAvgOrderByAggregateInputSchema } from '../AutoSettingAvgOrderByAggregateInputSchema.js';
-import { AutoSettingMaxOrderByAggregateInputSchema } from '../AutoSettingMaxOrderByAggregateInputSchema.js';
-import { AutoSettingMinOrderByAggregateInputSchema } from '../AutoSettingMinOrderByAggregateInputSchema.js';
-import { AutoSettingSumOrderByAggregateInputSchema } from '../AutoSettingSumOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { AutoSettingCountOrderByAggregateInputSchema } from './AutoSettingCountOrderByAggregateInputSchema.js';
+import { AutoSettingAvgOrderByAggregateInputSchema } from './AutoSettingAvgOrderByAggregateInputSchema.js';
+import { AutoSettingMaxOrderByAggregateInputSchema } from './AutoSettingMaxOrderByAggregateInputSchema.js';
+import { AutoSettingMinOrderByAggregateInputSchema } from './AutoSettingMinOrderByAggregateInputSchema.js';
+import { AutoSettingSumOrderByAggregateInputSchema } from './AutoSettingSumOrderByAggregateInputSchema.js';
 export const AutoSettingOrderByWithAggregationInputSchema: z.ZodType<Prisma.AutoSettingOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   type: z.lazy(() => SortOrderSchema).optional(),

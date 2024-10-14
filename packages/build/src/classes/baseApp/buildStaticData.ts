@@ -3,7 +3,7 @@ import { ArrayUtilities } from "@ulld/utilities/arrayUtilities";
 import { FileManager } from "../baseClasses/fileManager.js";
 import { UlldBuildProcess } from "../build.js";
 import { TargetPaths } from "../paths.js";
-import buildData from "@ulld/utilities/buildStaticData.json"  with {type: "json"};
+import {getInternalPackageNames} from "@ulld/utilities/internalDataHelpers"
 
 type HasSetKey = "settingsData"
 
@@ -11,7 +11,7 @@ type HasSetBuildStaticData = Record<HasSetKey, boolean>
 
 export class BuildStaticData {
     settingPageData: BuildStaticDataOutput["settingPages"] = []
-    transpilePackages: string[] = buildData.internalPackageNames
+    transpilePackages: string[] = getInternalPackageNames()
     hasSet: HasSetBuildStaticData = {
         settingsData: false
     } 

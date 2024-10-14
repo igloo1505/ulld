@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteCreateNestedManyWithoutTagsInputSchema } from '../MdxNoteCreateNestedManyWithoutTagsInputSchema.js';
-import { BibEntryCreateNestedManyWithoutTagsInputSchema } from '../BibEntryCreateNestedManyWithoutTagsInputSchema.js';
-import { IpynbCreateNestedManyWithoutTagsInputSchema } from '../IpynbCreateNestedManyWithoutTagsInputSchema.js';
-import { PracticeExamCreateNestedManyWithoutTagsInputSchema } from '../PracticeExamCreateNestedManyWithoutTagsInputSchema.js';
-import { EquationCreateNestedManyWithoutTagsInputSchema } from '../EquationCreateNestedManyWithoutTagsInputSchema.js';
-import { ToDoCreateNestedManyWithoutTagsInputSchema } from '../ToDoCreateNestedManyWithoutTagsInputSchema.js';
-import { KanbanCreateNestedOneWithoutTagsInputSchema } from '../KanbanCreateNestedOneWithoutTagsInputSchema.js';
-import { ToDoListCreateNestedManyWithoutTagsInputSchema } from '../ToDoListCreateNestedManyWithoutTagsInputSchema.js';
+import { MdxNoteCreateNestedManyWithoutTagsInputSchema } from './MdxNoteCreateNestedManyWithoutTagsInputSchema.js';
+import { BibEntryCreateNestedManyWithoutTagsInputSchema } from './BibEntryCreateNestedManyWithoutTagsInputSchema.js';
+import { IpynbCreateNestedManyWithoutTagsInputSchema } from './IpynbCreateNestedManyWithoutTagsInputSchema.js';
+import { PracticeExamCreateNestedManyWithoutTagsInputSchema } from './PracticeExamCreateNestedManyWithoutTagsInputSchema.js';
+import { EquationCreateNestedManyWithoutTagsInputSchema } from './EquationCreateNestedManyWithoutTagsInputSchema.js';
+import { ToDoCreateNestedManyWithoutTagsInputSchema } from './ToDoCreateNestedManyWithoutTagsInputSchema.js';
+import { KanbanCreateNestedOneWithoutTagsInputSchema } from './KanbanCreateNestedOneWithoutTagsInputSchema.js';
+import { ToDoListCreateNestedManyWithoutTagsInputSchema } from './ToDoListCreateNestedManyWithoutTagsInputSchema.js';
 export const TagCreateWithoutQAPairInputSchema: z.ZodType<Prisma.TagCreateWithoutQAPairInput> = z.object({
   value: z.string(),
   createdAt: z.coerce.date().optional(),

@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/SettingsAppendixWhereInputSchema.js
-..//inputTypeSchemas/SettingsAppendixOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/SettingsAppendixWhereUniqueInputSchema.js
+import { SettingsAppendixWhereInputSchema } from '../inputTypeSchemas/SettingsAppendixWhereInputSchema.js'
+import { SettingsAppendixOrderByWithRelationInputSchema } from '../inputTypeSchemas/SettingsAppendixOrderByWithRelationInputSchema.js'
+import { SettingsAppendixWhereUniqueInputSchema } from '../inputTypeSchemas/SettingsAppendixWhereUniqueInputSchema.js'
 export const SettingsAppendixAggregateArgsSchema: z.ZodType<Prisma.SettingsAppendixAggregateArgs> = z.object({
   where: SettingsAppendixWhereInputSchema.optional(),
   orderBy: z.union([ SettingsAppendixOrderByWithRelationInputSchema.array(),SettingsAppendixOrderByWithRelationInputSchema ]).optional(),

@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
 export const MdxNoteCountOrderByAggregateInputSchema: z.ZodType<Prisma.MdxNoteCountOrderByAggregateInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   isProtected: z.lazy(() => SortOrderSchema).optional(),

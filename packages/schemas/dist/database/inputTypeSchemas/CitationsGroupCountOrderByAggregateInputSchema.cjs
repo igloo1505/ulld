@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk7GSZROXQcjs = require('../../chunk-7GSZROXQ.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkJ2C5QKTOcjs = require('../../chunk-J2C5QKTO.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.CitationsGroupCountOrderByAggregateInputSchema = _chunk7GSZROXQcjs.CitationsGroupCountOrderByAggregateInputSchema; exports.default = _chunk7GSZROXQcjs.CitationsGroupCountOrderByAggregateInputSchema_default;
+exports.CitationsGroupCountOrderByAggregateInputSchema = _chunkJ2C5QKTOcjs.CitationsGroupCountOrderByAggregateInputSchema; exports.default = _chunkJ2C5QKTOcjs.CitationsGroupCountOrderByAggregateInputSchema_default;
 //# sourceMappingURL=CitationsGroupCountOrderByAggregateInputSchema.cjs.map

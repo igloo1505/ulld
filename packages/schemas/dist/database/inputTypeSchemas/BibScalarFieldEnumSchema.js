@@ -1,7 +1,7 @@
 import {
   BibScalarFieldEnumSchema,
   BibScalarFieldEnumSchema_default
-} from "../../chunk-G5LILCUI.js";
+} from "../../chunk-GAGYE6VK.js";
 export {
   BibScalarFieldEnumSchema,
   BibScalarFieldEnumSchema_default as default

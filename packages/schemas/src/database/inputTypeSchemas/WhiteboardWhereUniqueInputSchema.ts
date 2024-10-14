@@ -1,7 +1,7 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { WhiteboardWhereInputSchema } from '../WhiteboardWhereInputSchema.js';
-import { BytesFilterSchema } from '../BytesFilterSchema.js';
+import { WhiteboardWhereInputSchema } from './WhiteboardWhereInputSchema.js';
+import { BytesFilterSchema } from './BytesFilterSchema.js';
 export const WhiteboardWhereUniqueInputSchema: z.ZodType<Prisma.WhiteboardWhereUniqueInput> = z.object({
   id: z.string()
 })

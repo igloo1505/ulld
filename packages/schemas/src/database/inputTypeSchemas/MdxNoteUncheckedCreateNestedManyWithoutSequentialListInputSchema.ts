@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteCreateWithoutSequentialListInputSchema } from '../MdxNoteCreateWithoutSequentialListInputSchema.js';
-import { MdxNoteUncheckedCreateWithoutSequentialListInputSchema } from '../MdxNoteUncheckedCreateWithoutSequentialListInputSchema.js';
-import { MdxNoteCreateOrConnectWithoutSequentialListInputSchema } from '../MdxNoteCreateOrConnectWithoutSequentialListInputSchema.js';
-import { MdxNoteCreateManySequentialListInputEnvelopeSchema } from '../MdxNoteCreateManySequentialListInputEnvelopeSchema.js';
-import { MdxNoteWhereUniqueInputSchema } from '../MdxNoteWhereUniqueInputSchema.js';
+import { MdxNoteCreateWithoutSequentialListInputSchema } from './MdxNoteCreateWithoutSequentialListInputSchema.js';
+import { MdxNoteUncheckedCreateWithoutSequentialListInputSchema } from './MdxNoteUncheckedCreateWithoutSequentialListInputSchema.js';
+import { MdxNoteCreateOrConnectWithoutSequentialListInputSchema } from './MdxNoteCreateOrConnectWithoutSequentialListInputSchema.js';
+import { MdxNoteCreateManySequentialListInputEnvelopeSchema } from './MdxNoteCreateManySequentialListInputEnvelopeSchema.js';
+import { MdxNoteWhereUniqueInputSchema } from './MdxNoteWhereUniqueInputSchema.js';
 export const MdxNoteUncheckedCreateNestedManyWithoutSequentialListInputSchema: z.ZodType<Prisma.MdxNoteUncheckedCreateNestedManyWithoutSequentialListInput> = z.object({
   create: z.union([ z.lazy(() => MdxNoteCreateWithoutSequentialListInputSchema),z.lazy(() => MdxNoteCreateWithoutSequentialListInputSchema).array(),z.lazy(() => MdxNoteUncheckedCreateWithoutSequentialListInputSchema),z.lazy(() => MdxNoteUncheckedCreateWithoutSequentialListInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => MdxNoteCreateOrConnectWithoutSequentialListInputSchema),z.lazy(() => MdxNoteCreateOrConnectWithoutSequentialListInputSchema).array() ]).optional(),

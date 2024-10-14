@@ -2,12 +2,12 @@
 
 
 
-var _chunkMQSFW552cjs = require('../../chunk-MQSFW552.cjs');
-require('../../chunk-CQEGG3PW.cjs');
-require('../../chunk-VJWDJ55V.cjs');
+var _chunkRJ44B42Pcjs = require('../../chunk-RJ44B42P.cjs');
+require('../../chunk-2OQNILCZ.cjs');
+require('../../chunk-SB5HZH7N.cjs');
 
 
 
 
-exports.WhiteboardCreateArgsSchema = _chunkMQSFW552cjs.WhiteboardCreateArgsSchema; exports.WhiteboardSelectSchema = _chunkMQSFW552cjs.WhiteboardSelectSchema; exports.default = _chunkMQSFW552cjs.WhiteboardCreateArgsSchema_default;
+exports.WhiteboardCreateArgsSchema = _chunkRJ44B42Pcjs.WhiteboardCreateArgsSchema; exports.WhiteboardSelectSchema = _chunkRJ44B42Pcjs.WhiteboardSelectSchema; exports.default = _chunkRJ44B42Pcjs.WhiteboardCreateArgsSchema_default;
 //# sourceMappingURL=WhiteboardCreateArgsSchema.cjs.map

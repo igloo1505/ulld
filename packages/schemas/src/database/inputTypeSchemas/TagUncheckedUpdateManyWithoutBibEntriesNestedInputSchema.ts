@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TagCreateWithoutBibEntriesInputSchema } from '../TagCreateWithoutBibEntriesInputSchema.js';
-import { TagUncheckedCreateWithoutBibEntriesInputSchema } from '../TagUncheckedCreateWithoutBibEntriesInputSchema.js';
-import { TagCreateOrConnectWithoutBibEntriesInputSchema } from '../TagCreateOrConnectWithoutBibEntriesInputSchema.js';
-import { TagUpsertWithWhereUniqueWithoutBibEntriesInputSchema } from '../TagUpsertWithWhereUniqueWithoutBibEntriesInputSchema.js';
-import { TagWhereUniqueInputSchema } from '../TagWhereUniqueInputSchema.js';
-import { TagUpdateWithWhereUniqueWithoutBibEntriesInputSchema } from '../TagUpdateWithWhereUniqueWithoutBibEntriesInputSchema.js';
-import { TagUpdateManyWithWhereWithoutBibEntriesInputSchema } from '../TagUpdateManyWithWhereWithoutBibEntriesInputSchema.js';
-import { TagScalarWhereInputSchema } from '../TagScalarWhereInputSchema.js';
+import { TagCreateWithoutBibEntriesInputSchema } from './TagCreateWithoutBibEntriesInputSchema.js';
+import { TagUncheckedCreateWithoutBibEntriesInputSchema } from './TagUncheckedCreateWithoutBibEntriesInputSchema.js';
+import { TagCreateOrConnectWithoutBibEntriesInputSchema } from './TagCreateOrConnectWithoutBibEntriesInputSchema.js';
+import { TagUpsertWithWhereUniqueWithoutBibEntriesInputSchema } from './TagUpsertWithWhereUniqueWithoutBibEntriesInputSchema.js';
+import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema.js';
+import { TagUpdateWithWhereUniqueWithoutBibEntriesInputSchema } from './TagUpdateWithWhereUniqueWithoutBibEntriesInputSchema.js';
+import { TagUpdateManyWithWhereWithoutBibEntriesInputSchema } from './TagUpdateManyWithWhereWithoutBibEntriesInputSchema.js';
+import { TagScalarWhereInputSchema } from './TagScalarWhereInputSchema.js';
 export const TagUncheckedUpdateManyWithoutBibEntriesNestedInputSchema: z.ZodType<Prisma.TagUncheckedUpdateManyWithoutBibEntriesNestedInput> = z.object({
   create: z.union([ z.lazy(() => TagCreateWithoutBibEntriesInputSchema),z.lazy(() => TagCreateWithoutBibEntriesInputSchema).array(),z.lazy(() => TagUncheckedCreateWithoutBibEntriesInputSchema),z.lazy(() => TagUncheckedCreateWithoutBibEntriesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TagCreateOrConnectWithoutBibEntriesInputSchema),z.lazy(() => TagCreateOrConnectWithoutBibEntriesInputSchema).array() ]).optional(),

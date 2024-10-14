@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/SettingsWhereInputSchema.js
-..//inputTypeSchemas/SettingsOrderByWithAggregationInputSchema.js
-..//inputTypeSchemas/SettingsScalarFieldEnumSchema.js
-..//inputTypeSchemas/SettingsScalarWhereWithAggregatesInputSchema.js
+import { SettingsWhereInputSchema } from '../inputTypeSchemas/SettingsWhereInputSchema.js'
+import { SettingsOrderByWithAggregationInputSchema } from '../inputTypeSchemas/SettingsOrderByWithAggregationInputSchema.js'
+import { SettingsScalarFieldEnumSchema } from '../inputTypeSchemas/SettingsScalarFieldEnumSchema.js'
+import { SettingsScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/SettingsScalarWhereWithAggregatesInputSchema.js'
 export const SettingsGroupByArgsSchema: z.ZodType<Prisma.SettingsGroupByArgs> = z.object({
   where: SettingsWhereInputSchema.optional(),
   orderBy: z.union([ SettingsOrderByWithAggregationInputSchema.array(),SettingsOrderByWithAggregationInputSchema ]).optional(),

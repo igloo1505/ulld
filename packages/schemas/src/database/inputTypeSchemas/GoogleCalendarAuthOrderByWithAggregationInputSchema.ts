@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
-import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
-import { GoogleCalendarAuthCountOrderByAggregateInputSchema } from '../GoogleCalendarAuthCountOrderByAggregateInputSchema.js';
-import { GoogleCalendarAuthAvgOrderByAggregateInputSchema } from '../GoogleCalendarAuthAvgOrderByAggregateInputSchema.js';
-import { GoogleCalendarAuthMaxOrderByAggregateInputSchema } from '../GoogleCalendarAuthMaxOrderByAggregateInputSchema.js';
-import { GoogleCalendarAuthMinOrderByAggregateInputSchema } from '../GoogleCalendarAuthMinOrderByAggregateInputSchema.js';
-import { GoogleCalendarAuthSumOrderByAggregateInputSchema } from '../GoogleCalendarAuthSumOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { GoogleCalendarAuthCountOrderByAggregateInputSchema } from './GoogleCalendarAuthCountOrderByAggregateInputSchema.js';
+import { GoogleCalendarAuthAvgOrderByAggregateInputSchema } from './GoogleCalendarAuthAvgOrderByAggregateInputSchema.js';
+import { GoogleCalendarAuthMaxOrderByAggregateInputSchema } from './GoogleCalendarAuthMaxOrderByAggregateInputSchema.js';
+import { GoogleCalendarAuthMinOrderByAggregateInputSchema } from './GoogleCalendarAuthMinOrderByAggregateInputSchema.js';
+import { GoogleCalendarAuthSumOrderByAggregateInputSchema } from './GoogleCalendarAuthSumOrderByAggregateInputSchema.js';
 export const GoogleCalendarAuthOrderByWithAggregationInputSchema: z.ZodType<Prisma.GoogleCalendarAuthOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   auth: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),

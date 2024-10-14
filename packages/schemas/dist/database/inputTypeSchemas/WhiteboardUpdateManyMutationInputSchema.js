@@ -1,9 +1,9 @@
 import {
   WhiteboardUpdateManyMutationInputSchema,
   WhiteboardUpdateManyMutationInputSchema_default
-} from "../../chunk-2WH3FGA6.js";
-import "../../chunk-BGJU64IY.js";
-import "../../chunk-3GDEEYNJ.js";
+} from "../../chunk-POLQRRKV.js";
+import "../../chunk-WKMKAR2K.js";
+import "../../chunk-BQIXGZB5.js";
 export {
   WhiteboardUpdateManyMutationInputSchema,
   WhiteboardUpdateManyMutationInputSchema_default as default

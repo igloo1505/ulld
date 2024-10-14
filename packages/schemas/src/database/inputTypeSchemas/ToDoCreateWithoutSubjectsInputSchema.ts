@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TaskCategorySchema } from '../TaskCategorySchema.js';
-import { MdxNoteCreateNestedManyWithoutToDoInputSchema } from '../MdxNoteCreateNestedManyWithoutToDoInputSchema.js';
-import { TagCreateNestedManyWithoutToDoInputSchema } from '../TagCreateNestedManyWithoutToDoInputSchema.js';
-import { TopicCreateNestedManyWithoutToDoInputSchema } from '../TopicCreateNestedManyWithoutToDoInputSchema.js';
-import { ToDoCreateNestedOneWithoutChildInputSchema } from '../ToDoCreateNestedOneWithoutChildInputSchema.js';
-import { ToDoCreateNestedManyWithoutParentInputSchema } from '../ToDoCreateNestedManyWithoutParentInputSchema.js';
-import { ToDoListCreateNestedOneWithoutTasksInputSchema } from '../ToDoListCreateNestedOneWithoutTasksInputSchema.js';
+import { TaskCategorySchema } from './TaskCategorySchema.js';
+import { MdxNoteCreateNestedManyWithoutToDoInputSchema } from './MdxNoteCreateNestedManyWithoutToDoInputSchema.js';
+import { TagCreateNestedManyWithoutToDoInputSchema } from './TagCreateNestedManyWithoutToDoInputSchema.js';
+import { TopicCreateNestedManyWithoutToDoInputSchema } from './TopicCreateNestedManyWithoutToDoInputSchema.js';
+import { ToDoCreateNestedOneWithoutChildInputSchema } from './ToDoCreateNestedOneWithoutChildInputSchema.js';
+import { ToDoCreateNestedManyWithoutParentInputSchema } from './ToDoCreateNestedManyWithoutParentInputSchema.js';
+import { ToDoListCreateNestedOneWithoutTasksInputSchema } from './ToDoListCreateNestedOneWithoutTasksInputSchema.js';
 export const ToDoCreateWithoutSubjectsInputSchema: z.ZodType<Prisma.ToDoCreateWithoutSubjectsInput> = z.object({
   createdAt: z.coerce.date().optional(),
   task: z.string(),

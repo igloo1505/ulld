@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk2UEMVSTCcjs = require('../../chunk-2UEMVSTC.cjs');
+var _chunkVZ3TWEZXcjs = require('../../chunk-VZ3TWEZX.cjs');
 
 
 
-exports.KanbanCreateManyInputSchema = _chunk2UEMVSTCcjs.KanbanCreateManyInputSchema; exports.default = _chunk2UEMVSTCcjs.KanbanCreateManyInputSchema_default;
+exports.KanbanCreateManyInputSchema = _chunkVZ3TWEZXcjs.KanbanCreateManyInputSchema; exports.default = _chunkVZ3TWEZXcjs.KanbanCreateManyInputSchema_default;
 //# sourceMappingURL=KanbanCreateManyInputSchema.cjs.map

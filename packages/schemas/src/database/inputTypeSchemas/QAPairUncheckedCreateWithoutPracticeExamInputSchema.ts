@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TagUncheckedCreateNestedManyWithoutQAPairInputSchema } from '../TagUncheckedCreateNestedManyWithoutQAPairInputSchema.js';
-import { TopicUncheckedCreateNestedManyWithoutQAPairInputSchema } from '../TopicUncheckedCreateNestedManyWithoutQAPairInputSchema.js';
-import { SubjectUncheckedCreateNestedManyWithoutQaPairInputSchema } from '../SubjectUncheckedCreateNestedManyWithoutQaPairInputSchema.js';
+import { TagUncheckedCreateNestedManyWithoutQAPairInputSchema } from './TagUncheckedCreateNestedManyWithoutQAPairInputSchema.js';
+import { TopicUncheckedCreateNestedManyWithoutQAPairInputSchema } from './TopicUncheckedCreateNestedManyWithoutQAPairInputSchema.js';
+import { SubjectUncheckedCreateNestedManyWithoutQaPairInputSchema } from './SubjectUncheckedCreateNestedManyWithoutQaPairInputSchema.js';
 export const QAPairUncheckedCreateWithoutPracticeExamInputSchema: z.ZodType<Prisma.QAPairUncheckedCreateWithoutPracticeExamInput> = z.object({
   id: z.string(),
   question: z.string(),

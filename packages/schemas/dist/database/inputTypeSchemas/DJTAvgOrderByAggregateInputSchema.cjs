@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkIAEWGJIXcjs = require('../../chunk-IAEWGJIX.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunk3V6R37YRcjs = require('../../chunk-3V6R37YR.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.DJTAvgOrderByAggregateInputSchema = _chunkIAEWGJIXcjs.DJTAvgOrderByAggregateInputSchema; exports.default = _chunkIAEWGJIXcjs.DJTAvgOrderByAggregateInputSchema_default;
+exports.DJTAvgOrderByAggregateInputSchema = _chunk3V6R37YRcjs.DJTAvgOrderByAggregateInputSchema; exports.default = _chunk3V6R37YRcjs.DJTAvgOrderByAggregateInputSchema_default;
 //# sourceMappingURL=DJTAvgOrderByAggregateInputSchema.cjs.map

@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/DJTWhereUniqueInputSchema.js
-..//inputTypeSchemas/DJTCreateInputSchema.js
-..//inputTypeSchemas/DJTUncheckedCreateInputSchema.js
-..//inputTypeSchemas/DJTUpdateInputSchema.js
-..//inputTypeSchemas/DJTUncheckedUpdateInputSchema.js
+import { DJTWhereUniqueInputSchema } from '../inputTypeSchemas/DJTWhereUniqueInputSchema.js'
+import { DJTCreateInputSchema } from '../inputTypeSchemas/DJTCreateInputSchema.js'
+import { DJTUncheckedCreateInputSchema } from '../inputTypeSchemas/DJTUncheckedCreateInputSchema.js'
+import { DJTUpdateInputSchema } from '../inputTypeSchemas/DJTUpdateInputSchema.js'
+import { DJTUncheckedUpdateInputSchema } from '../inputTypeSchemas/DJTUncheckedUpdateInputSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const DJTSelectSchema: z.ZodType<Prisma.DJTSelect> = z.object({

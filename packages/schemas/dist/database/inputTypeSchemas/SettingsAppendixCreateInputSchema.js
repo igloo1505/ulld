@@ -1,7 +1,7 @@
 import {
   SettingsAppendixCreateInputSchema,
   SettingsAppendixCreateInputSchema_default
-} from "../../chunk-GUWG5TC5.js";
+} from "../../chunk-A4ZNYCRG.js";
 export {
   SettingsAppendixCreateInputSchema,
   SettingsAppendixCreateInputSchema_default as default

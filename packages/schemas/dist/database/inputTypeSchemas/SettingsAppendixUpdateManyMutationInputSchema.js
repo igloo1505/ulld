@@ -1,10 +1,10 @@
 import {
   SettingsAppendixUpdateManyMutationInputSchema,
   SettingsAppendixUpdateManyMutationInputSchema_default
-} from "../../chunk-M33GZ43Z.js";
-import "../../chunk-EL2ERAXL.js";
-import "../../chunk-BGJU64IY.js";
-import "../../chunk-3GDEEYNJ.js";
+} from "../../chunk-SPAU3ZER.js";
+import "../../chunk-VTROTMKZ.js";
+import "../../chunk-WKMKAR2K.js";
+import "../../chunk-BQIXGZB5.js";
 export {
   SettingsAppendixUpdateManyMutationInputSchema,
   SettingsAppendixUpdateManyMutationInputSchema_default as default

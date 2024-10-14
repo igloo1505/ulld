@@ -5,9 +5,9 @@
 
 
 
-var _chunkLFQDZDFTcjs = require('../../chunk-LFQDZDFT.cjs');
-require('../../chunk-QF2T6FCZ.cjs');
-require('../../chunk-BRDOGD33.cjs');
+var _chunkO7GASESQcjs = require('../../chunk-O7GASESQ.cjs');
+require('../../chunk-ATQO6OGE.cjs');
+require('../../chunk-PALRL6S5.cjs');
 
 
 
@@ -15,5 +15,5 @@ require('../../chunk-BRDOGD33.cjs');
 
 
 
-exports.ReadingListPartialSchema = _chunkLFQDZDFTcjs.ReadingListPartialSchema; exports.ReadingListPartialWithRelationsSchema = _chunkLFQDZDFTcjs.ReadingListPartialWithRelationsSchema; exports.ReadingListSchema = _chunkLFQDZDFTcjs.ReadingListSchema; exports.ReadingListWithPartialRelationsSchema = _chunkLFQDZDFTcjs.ReadingListWithPartialRelationsSchema; exports.ReadingListWithRelationsSchema = _chunkLFQDZDFTcjs.ReadingListWithRelationsSchema; exports.default = _chunkLFQDZDFTcjs.ReadingListSchema_default;
+exports.ReadingListPartialSchema = _chunkO7GASESQcjs.ReadingListPartialSchema; exports.ReadingListPartialWithRelationsSchema = _chunkO7GASESQcjs.ReadingListPartialWithRelationsSchema; exports.ReadingListSchema = _chunkO7GASESQcjs.ReadingListSchema; exports.ReadingListWithPartialRelationsSchema = _chunkO7GASESQcjs.ReadingListWithPartialRelationsSchema; exports.ReadingListWithRelationsSchema = _chunkO7GASESQcjs.ReadingListWithRelationsSchema; exports.default = _chunkO7GASESQcjs.ReadingListSchema_default;
 //# sourceMappingURL=ReadingListSchema.cjs.map

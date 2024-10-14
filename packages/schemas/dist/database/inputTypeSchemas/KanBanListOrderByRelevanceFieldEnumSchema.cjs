@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkBXUO2OFCcjs = require('../../chunk-BXUO2OFC.cjs');
+var _chunk3NRB3KYCcjs = require('../../chunk-3NRB3KYC.cjs');
 
 
 
-exports.KanBanListOrderByRelevanceFieldEnumSchema = _chunkBXUO2OFCcjs.KanBanListOrderByRelevanceFieldEnumSchema; exports.default = _chunkBXUO2OFCcjs.KanBanListOrderByRelevanceFieldEnumSchema_default;
+exports.KanBanListOrderByRelevanceFieldEnumSchema = _chunk3NRB3KYCcjs.KanBanListOrderByRelevanceFieldEnumSchema; exports.default = _chunk3NRB3KYCcjs.KanBanListOrderByRelevanceFieldEnumSchema_default;
 //# sourceMappingURL=KanBanListOrderByRelevanceFieldEnumSchema.cjs.map

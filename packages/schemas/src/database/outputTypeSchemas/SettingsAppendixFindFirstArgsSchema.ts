@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/SettingsAppendixWhereInputSchema.js
-..//inputTypeSchemas/SettingsAppendixOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/SettingsAppendixWhereUniqueInputSchema.js
-..//inputTypeSchemas/SettingsAppendixScalarFieldEnumSchema.js
+import { SettingsAppendixWhereInputSchema } from '../inputTypeSchemas/SettingsAppendixWhereInputSchema.js'
+import { SettingsAppendixOrderByWithRelationInputSchema } from '../inputTypeSchemas/SettingsAppendixOrderByWithRelationInputSchema.js'
+import { SettingsAppendixWhereUniqueInputSchema } from '../inputTypeSchemas/SettingsAppendixWhereUniqueInputSchema.js'
+import { SettingsAppendixScalarFieldEnumSchema } from '../inputTypeSchemas/SettingsAppendixScalarFieldEnumSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const SettingsAppendixSelectSchema: z.ZodType<Prisma.SettingsAppendixSelect> = z.object({

@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/KanBanCardIncludeSchema.js
-..//inputTypeSchemas/KanBanCardWhereUniqueInputSchema.js
+import { KanBanCardIncludeSchema } from '../inputTypeSchemas/KanBanCardIncludeSchema.js'
+import { KanBanCardWhereUniqueInputSchema } from '../inputTypeSchemas/KanBanCardWhereUniqueInputSchema.js'
 import { KanBanListArgsSchema } from "../outputTypeSchemas/KanBanListArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------

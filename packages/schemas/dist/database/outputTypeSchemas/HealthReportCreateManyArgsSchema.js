@@ -1,8 +1,8 @@
 import {
   HealthReportCreateManyArgsSchema,
   HealthReportCreateManyArgsSchema_default
-} from "../../chunk-SLNS4Y76.js";
-import "../../chunk-5ZMCTBXD.js";
+} from "../../chunk-YAWZUADF.js";
+import "../../chunk-32NZMHWH.js";
 export {
   HealthReportCreateManyArgsSchema,
   HealthReportCreateManyArgsSchema_default as default

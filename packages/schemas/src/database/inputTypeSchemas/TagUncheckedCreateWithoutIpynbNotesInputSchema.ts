@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteUncheckedCreateNestedManyWithoutTagsInputSchema } from '../MdxNoteUncheckedCreateNestedManyWithoutTagsInputSchema.js';
-import { BibEntryUncheckedCreateNestedManyWithoutTagsInputSchema } from '../BibEntryUncheckedCreateNestedManyWithoutTagsInputSchema.js';
-import { QAPairUncheckedCreateNestedManyWithoutTagsInputSchema } from '../QAPairUncheckedCreateNestedManyWithoutTagsInputSchema.js';
-import { PracticeExamUncheckedCreateNestedManyWithoutTagsInputSchema } from '../PracticeExamUncheckedCreateNestedManyWithoutTagsInputSchema.js';
-import { EquationUncheckedCreateNestedManyWithoutTagsInputSchema } from '../EquationUncheckedCreateNestedManyWithoutTagsInputSchema.js';
-import { ToDoUncheckedCreateNestedManyWithoutTagsInputSchema } from '../ToDoUncheckedCreateNestedManyWithoutTagsInputSchema.js';
-import { ToDoListUncheckedCreateNestedManyWithoutTagsInputSchema } from '../ToDoListUncheckedCreateNestedManyWithoutTagsInputSchema.js';
+import { MdxNoteUncheckedCreateNestedManyWithoutTagsInputSchema } from './MdxNoteUncheckedCreateNestedManyWithoutTagsInputSchema.js';
+import { BibEntryUncheckedCreateNestedManyWithoutTagsInputSchema } from './BibEntryUncheckedCreateNestedManyWithoutTagsInputSchema.js';
+import { QAPairUncheckedCreateNestedManyWithoutTagsInputSchema } from './QAPairUncheckedCreateNestedManyWithoutTagsInputSchema.js';
+import { PracticeExamUncheckedCreateNestedManyWithoutTagsInputSchema } from './PracticeExamUncheckedCreateNestedManyWithoutTagsInputSchema.js';
+import { EquationUncheckedCreateNestedManyWithoutTagsInputSchema } from './EquationUncheckedCreateNestedManyWithoutTagsInputSchema.js';
+import { ToDoUncheckedCreateNestedManyWithoutTagsInputSchema } from './ToDoUncheckedCreateNestedManyWithoutTagsInputSchema.js';
+import { ToDoListUncheckedCreateNestedManyWithoutTagsInputSchema } from './ToDoListUncheckedCreateNestedManyWithoutTagsInputSchema.js';
 export const TagUncheckedCreateWithoutIpynbNotesInputSchema: z.ZodType<Prisma.TagUncheckedCreateWithoutIpynbNotesInput> = z.object({
   value: z.string(),
   kanbanId: z.number().int().optional().nullable(),

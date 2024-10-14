@@ -1,11 +1,11 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
-import { StringNullableWithAggregatesFilterSchema } from '../StringNullableWithAggregatesFilterSchema.js';
-import { FloatWithAggregatesFilterSchema } from '../FloatWithAggregatesFilterSchema.js';
-import { FloatNullableWithAggregatesFilterSchema } from '../FloatNullableWithAggregatesFilterSchema.js';
-import { IntNullableWithAggregatesFilterSchema } from '../IntNullableWithAggregatesFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { FloatWithAggregatesFilterSchema } from './FloatWithAggregatesFilterSchema.js';
+import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema.js';
+import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
 export const HealthReportScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.HealthReportScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => HealthReportScalarWhereWithAggregatesInputSchema),z.lazy(() => HealthReportScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => HealthReportScalarWhereWithAggregatesInputSchema).array().optional(),

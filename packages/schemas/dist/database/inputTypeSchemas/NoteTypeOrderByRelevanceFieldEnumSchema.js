@@ -1,7 +1,7 @@
 import {
   NoteTypeOrderByRelevanceFieldEnumSchema,
   NoteTypeOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-BMKO4JMC.js";
+} from "../../chunk-CCAV3APO.js";
 export {
   NoteTypeOrderByRelevanceFieldEnumSchema,
   NoteTypeOrderByRelevanceFieldEnumSchema_default as default

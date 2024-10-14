@@ -1,7 +1,7 @@
 import {
   DietOrderByRelevanceFieldEnumSchema,
   DietOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-SK6C2SH4.js";
+} from "../../chunk-ZUIIQRAW.js";
 export {
   DietOrderByRelevanceFieldEnumSchema,
   DietOrderByRelevanceFieldEnumSchema_default as default

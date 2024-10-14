@@ -22,7 +22,7 @@ const replaceLineWithPrismaImport = (l: string): string => {
   } else {
     const importRegex = /from\s\'\.(?<importPath>[\w|\d|\.|\/|!\']+)'/;
     let importPath = importRegex.exec(newLine);
-    if (importPath && importPath.groups.importPath) {
+    if (importPath && importPath.groups.importPath && !importPath.groups.importPath.endsWith(".js")) {
       newLine = newLine.replace(
         importPath.groups.importPath,
         `${importPath.groups.importPath}.js`,
@@ -33,25 +33,25 @@ const replaceLineWithPrismaImport = (l: string): string => {
 };
 
 
-const replaceThreeDots = (l: string) => {    
-    let newLine = l
-    const importRegex = /from\s\'\.\.\.(?<importPath>[\w|\d|\.|\/|!\']+)'/;
-    let importPath = importRegex.exec(newLine);
-    if (importPath && importPath.groups.importPath) {
-        console.log("importPath.groups.importPath: ", importPath.groups.importPath)
-        newLine = `../${importPath.groups.importPath}`
-      // newLine = newLine.replace(
-      //   importPath.groups.importPath,
-      //   `${importPath.groups.importPath}.js`,
-      // );
-    }
-    return newLine
-}
+// const replaceThreeDots = (l: string) => {    
+//     let newLine = l
+//     const importRegex = /from\s\'\.\.\.(?<importPath>[\w|\d|\.|\/|!\']+)'/;
+//     let importPath = importRegex.exec(newLine);
+//     if (importPath && importPath.groups.importPath) {
+//         console.log("importPath.groups.importPath: ", importPath.groups.importPath)
+//         newLine = `../${importPath.groups.importPath}`
+//       // newLine = newLine.replace(
+//       //   importPath.groups.importPath,
+//       //   `${importPath.groups.importPath}.js`,
+//       // );
+//     }
+//     return newLine
+// }
 
 files.forEach((f) => {
     mapLinesAndReplace({
         path: f,
-        cb: replaceThreeDots,
+        cb: replaceLineWithPrismaImport,
         // cb: replaceLineWithPrismaImport
     })
 });

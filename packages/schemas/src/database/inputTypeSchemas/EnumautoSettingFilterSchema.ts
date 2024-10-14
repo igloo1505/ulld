@@ -1,7 +1,7 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { autoSettingSchema } from '../autoSettingSchema.js';
-import { NestedEnumautoSettingFilterSchema } from '../NestedEnumautoSettingFilterSchema.js';
+import { autoSettingSchema } from './autoSettingSchema.js';
+import { NestedEnumautoSettingFilterSchema } from './NestedEnumautoSettingFilterSchema.js';
 export const EnumautoSettingFilterSchema: z.ZodType<Prisma.EnumautoSettingFilter> = z.object({
   equals: z.lazy(() => autoSettingSchema).optional(),
   in: z.lazy(() => autoSettingSchema).array().optional(),

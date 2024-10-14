@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ImageAlignmentSchema } from '../ImageAlignmentSchema.js';
-import { JsonNullValueInputSchema } from '../JsonNullValueInputSchema.js';
-import { InputJsonValueSchema } from '../InputJsonValueSchema.js';
+import { ImageAlignmentSchema } from './ImageAlignmentSchema.js';
+import { JsonNullValueInputSchema } from './JsonNullValueInputSchema.js';
+import { InputJsonValueSchema } from './InputJsonValueSchema.js';
 export const SettingsCreateManyInputSchema: z.ZodType<Prisma.SettingsCreateManyInput> = z.object({
   id: z.number().int().optional(),
   tooltips: z.boolean().optional(),

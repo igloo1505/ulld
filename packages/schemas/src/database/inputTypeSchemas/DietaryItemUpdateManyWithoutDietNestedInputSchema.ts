@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { DietaryItemCreateWithoutDietInputSchema } from '../DietaryItemCreateWithoutDietInputSchema.js';
-import { DietaryItemUncheckedCreateWithoutDietInputSchema } from '../DietaryItemUncheckedCreateWithoutDietInputSchema.js';
-import { DietaryItemCreateOrConnectWithoutDietInputSchema } from '../DietaryItemCreateOrConnectWithoutDietInputSchema.js';
-import { DietaryItemUpsertWithWhereUniqueWithoutDietInputSchema } from '../DietaryItemUpsertWithWhereUniqueWithoutDietInputSchema.js';
-import { DietaryItemWhereUniqueInputSchema } from '../DietaryItemWhereUniqueInputSchema.js';
-import { DietaryItemUpdateWithWhereUniqueWithoutDietInputSchema } from '../DietaryItemUpdateWithWhereUniqueWithoutDietInputSchema.js';
-import { DietaryItemUpdateManyWithWhereWithoutDietInputSchema } from '../DietaryItemUpdateManyWithWhereWithoutDietInputSchema.js';
-import { DietaryItemScalarWhereInputSchema } from '../DietaryItemScalarWhereInputSchema.js';
+import { DietaryItemCreateWithoutDietInputSchema } from './DietaryItemCreateWithoutDietInputSchema.js';
+import { DietaryItemUncheckedCreateWithoutDietInputSchema } from './DietaryItemUncheckedCreateWithoutDietInputSchema.js';
+import { DietaryItemCreateOrConnectWithoutDietInputSchema } from './DietaryItemCreateOrConnectWithoutDietInputSchema.js';
+import { DietaryItemUpsertWithWhereUniqueWithoutDietInputSchema } from './DietaryItemUpsertWithWhereUniqueWithoutDietInputSchema.js';
+import { DietaryItemWhereUniqueInputSchema } from './DietaryItemWhereUniqueInputSchema.js';
+import { DietaryItemUpdateWithWhereUniqueWithoutDietInputSchema } from './DietaryItemUpdateWithWhereUniqueWithoutDietInputSchema.js';
+import { DietaryItemUpdateManyWithWhereWithoutDietInputSchema } from './DietaryItemUpdateManyWithWhereWithoutDietInputSchema.js';
+import { DietaryItemScalarWhereInputSchema } from './DietaryItemScalarWhereInputSchema.js';
 export const DietaryItemUpdateManyWithoutDietNestedInputSchema: z.ZodType<Prisma.DietaryItemUpdateManyWithoutDietNestedInput> = z.object({
   create: z.union([ z.lazy(() => DietaryItemCreateWithoutDietInputSchema),z.lazy(() => DietaryItemCreateWithoutDietInputSchema).array(),z.lazy(() => DietaryItemUncheckedCreateWithoutDietInputSchema),z.lazy(() => DietaryItemUncheckedCreateWithoutDietInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => DietaryItemCreateOrConnectWithoutDietInputSchema),z.lazy(() => DietaryItemCreateOrConnectWithoutDietInputSchema).array() ]).optional(),

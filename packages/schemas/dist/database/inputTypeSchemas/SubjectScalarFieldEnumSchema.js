@@ -1,7 +1,7 @@
 import {
   SubjectScalarFieldEnumSchema,
   SubjectScalarFieldEnumSchema_default
-} from "../../chunk-AXYL3OOT.js";
+} from "../../chunk-N54A6FQI.js";
 export {
   SubjectScalarFieldEnumSchema,
   SubjectScalarFieldEnumSchema_default as default

@@ -1,7 +1,7 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { FeatureRequestCreatecategoryInputSchema } from '../FeatureRequestCreatecategoryInputSchema.js';
-import { FeatureRequestCreateuserBaseInputSchema } from '../FeatureRequestCreateuserBaseInputSchema.js';
+import { FeatureRequestCreatecategoryInputSchema } from './FeatureRequestCreatecategoryInputSchema.js';
+import { FeatureRequestCreateuserBaseInputSchema } from './FeatureRequestCreateuserBaseInputSchema.js';
 export const FeatureRequestCreateInputSchema: z.ZodType<Prisma.FeatureRequestCreateInput> = z.object({
   email: z.string(),
   message: z.string(),

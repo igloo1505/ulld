@@ -1,8 +1,8 @@
 import {
   HealthReportCountOrderByAggregateInputSchema,
   HealthReportCountOrderByAggregateInputSchema_default
-} from "../../chunk-H355A4EV.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-7KITCQU7.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   HealthReportCountOrderByAggregateInputSchema,
   HealthReportCountOrderByAggregateInputSchema_default as default

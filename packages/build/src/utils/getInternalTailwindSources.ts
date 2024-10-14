@@ -1,9 +1,10 @@
-import staticData from "../../staticDevelopmentData.json"  with {type: "json"};
-import buildUtilityData from "@ulld/utilities/buildStaticData.json"  with {type: "json"};
+import { getInternalPackageNames } from "@ulld/utilities/internalDataHelpers";
+import staticData from "../../staticDevelopmentData.json" with {type: "json"};
 
 export const getInternalTailwindSources = () => {
     let items = staticData.alwaysIncludedTailwindSources as string[];
-    for (const k of buildUtilityData.internalPackageNames) {
+    const internalPackageNames = getInternalPackageNames()
+    for (const k of internalPackageNames) {
         if (
             !(staticData.excludeFromInternalTailwindSources as string[]).includes(k)
         ) {

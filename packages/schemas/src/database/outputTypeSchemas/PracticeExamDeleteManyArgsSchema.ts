@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/PracticeExamWhereInputSchema.js
+import { PracticeExamWhereInputSchema } from '../inputTypeSchemas/PracticeExamWhereInputSchema.js'
 export const PracticeExamDeleteManyArgsSchema: z.ZodType<Prisma.PracticeExamDeleteManyArgs> = z.object({
   where: PracticeExamWhereInputSchema.optional(),
 }).strict() ;

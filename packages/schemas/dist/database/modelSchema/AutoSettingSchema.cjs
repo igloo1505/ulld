@@ -2,11 +2,11 @@
 
 
 
-var _chunkVLMM4FGKcjs = require('../../chunk-VLMM4FGK.cjs');
-require('../../chunk-7GJ7K5K6.cjs');
+var _chunkV7LHVBFAcjs = require('../../chunk-V7LHVBFA.cjs');
+require('../../chunk-DX2TZXTH.cjs');
 
 
 
 
-exports.AutoSettingPartialSchema = _chunkVLMM4FGKcjs.AutoSettingPartialSchema; exports.AutoSettingSchema = _chunkVLMM4FGKcjs.AutoSettingSchema; exports.default = _chunkVLMM4FGKcjs.AutoSettingSchema_default;
+exports.AutoSettingPartialSchema = _chunkV7LHVBFAcjs.AutoSettingPartialSchema; exports.AutoSettingSchema = _chunkV7LHVBFAcjs.AutoSettingSchema; exports.default = _chunkV7LHVBFAcjs.AutoSettingSchema_default;
 //# sourceMappingURL=AutoSettingSchema.cjs.map

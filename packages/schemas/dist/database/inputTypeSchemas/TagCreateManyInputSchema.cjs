@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk2X62PCXRcjs = require('../../chunk-2X62PCXR.cjs');
+var _chunkFZ6FVAFEcjs = require('../../chunk-FZ6FVAFE.cjs');
 
 
 
-exports.TagCreateManyInputSchema = _chunk2X62PCXRcjs.TagCreateManyInputSchema; exports.default = _chunk2X62PCXRcjs.TagCreateManyInputSchema_default;
+exports.TagCreateManyInputSchema = _chunkFZ6FVAFEcjs.TagCreateManyInputSchema; exports.default = _chunkFZ6FVAFEcjs.TagCreateManyInputSchema_default;
 //# sourceMappingURL=TagCreateManyInputSchema.cjs.map

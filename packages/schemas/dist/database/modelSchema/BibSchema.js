@@ -5,9 +5,9 @@ import {
   BibSchema_default,
   BibWithPartialRelationsSchema,
   BibWithRelationsSchema
-} from "../../chunk-SM3FIGHE.js";
-import "../../chunk-MUF2HC5X.js";
-import "../../chunk-P4QLHEK4.js";
+} from "../../chunk-VPR5VB7J.js";
+import "../../chunk-WWHEEPM6.js";
+import "../../chunk-T4CHWTHS.js";
 export {
   BibPartialSchema,
   BibPartialWithRelationsSchema,

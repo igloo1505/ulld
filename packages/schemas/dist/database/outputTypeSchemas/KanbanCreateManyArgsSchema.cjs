@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkAVGR3YQYcjs = require('../../chunk-AVGR3YQY.cjs');
-require('../../chunk-2UEMVSTC.cjs');
+var _chunkMYFNEHPJcjs = require('../../chunk-MYFNEHPJ.cjs');
+require('../../chunk-VZ3TWEZX.cjs');
 
 
 
-exports.KanbanCreateManyArgsSchema = _chunkAVGR3YQYcjs.KanbanCreateManyArgsSchema; exports.default = _chunkAVGR3YQYcjs.KanbanCreateManyArgsSchema_default;
+exports.KanbanCreateManyArgsSchema = _chunkMYFNEHPJcjs.KanbanCreateManyArgsSchema; exports.default = _chunkMYFNEHPJcjs.KanbanCreateManyArgsSchema_default;
 //# sourceMappingURL=KanbanCreateManyArgsSchema.cjs.map

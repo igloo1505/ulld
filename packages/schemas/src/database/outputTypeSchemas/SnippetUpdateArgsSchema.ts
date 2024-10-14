@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/SnippetUpdateInputSchema.js
-..//inputTypeSchemas/SnippetUncheckedUpdateInputSchema.js
-..//inputTypeSchemas/SnippetWhereUniqueInputSchema.js
+import { SnippetUpdateInputSchema } from '../inputTypeSchemas/SnippetUpdateInputSchema.js'
+import { SnippetUncheckedUpdateInputSchema } from '../inputTypeSchemas/SnippetUncheckedUpdateInputSchema.js'
+import { SnippetWhereUniqueInputSchema } from '../inputTypeSchemas/SnippetWhereUniqueInputSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const SnippetSelectSchema: z.ZodType<Prisma.SnippetSelect> = z.object({

@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/RelatedValuesIncludeSchema.js
-..//inputTypeSchemas/RelatedValuesUpdateInputSchema.js
-..//inputTypeSchemas/RelatedValuesUncheckedUpdateInputSchema.js
-..//inputTypeSchemas/RelatedValuesWhereUniqueInputSchema.js
+import { RelatedValuesIncludeSchema } from '../inputTypeSchemas/RelatedValuesIncludeSchema.js'
+import { RelatedValuesUpdateInputSchema } from '../inputTypeSchemas/RelatedValuesUpdateInputSchema.js'
+import { RelatedValuesUncheckedUpdateInputSchema } from '../inputTypeSchemas/RelatedValuesUncheckedUpdateInputSchema.js'
+import { RelatedValuesWhereUniqueInputSchema } from '../inputTypeSchemas/RelatedValuesWhereUniqueInputSchema.js'
 import { EquationFindManyArgsSchema } from "../outputTypeSchemas/EquationFindManyArgsSchema"
 import { RelatedValuesCountOutputTypeArgsSchema } from "../outputTypeSchemas/RelatedValuesCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports

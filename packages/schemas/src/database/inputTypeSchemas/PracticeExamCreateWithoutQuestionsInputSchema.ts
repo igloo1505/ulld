@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TopicCreateNestedManyWithoutPracticeExamInputSchema } from '../TopicCreateNestedManyWithoutPracticeExamInputSchema.js';
-import { TagCreateNestedManyWithoutPracticeExamInputSchema } from '../TagCreateNestedManyWithoutPracticeExamInputSchema.js';
-import { SubjectCreateNestedManyWithoutPracticeExamInputSchema } from '../SubjectCreateNestedManyWithoutPracticeExamInputSchema.js';
+import { TopicCreateNestedManyWithoutPracticeExamInputSchema } from './TopicCreateNestedManyWithoutPracticeExamInputSchema.js';
+import { TagCreateNestedManyWithoutPracticeExamInputSchema } from './TagCreateNestedManyWithoutPracticeExamInputSchema.js';
+import { SubjectCreateNestedManyWithoutPracticeExamInputSchema } from './SubjectCreateNestedManyWithoutPracticeExamInputSchema.js';
 export const PracticeExamCreateWithoutQuestionsInputSchema: z.ZodType<Prisma.PracticeExamCreateWithoutQuestionsInput> = z.object({
   correctCount: z.number().int(),
   inCorrectCount: z.number().int(),

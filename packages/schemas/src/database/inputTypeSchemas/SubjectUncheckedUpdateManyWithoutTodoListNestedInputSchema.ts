@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SubjectCreateWithoutTodoListInputSchema } from '../SubjectCreateWithoutTodoListInputSchema.js';
-import { SubjectUncheckedCreateWithoutTodoListInputSchema } from '../SubjectUncheckedCreateWithoutTodoListInputSchema.js';
-import { SubjectCreateOrConnectWithoutTodoListInputSchema } from '../SubjectCreateOrConnectWithoutTodoListInputSchema.js';
-import { SubjectUpsertWithWhereUniqueWithoutTodoListInputSchema } from '../SubjectUpsertWithWhereUniqueWithoutTodoListInputSchema.js';
-import { SubjectWhereUniqueInputSchema } from '../SubjectWhereUniqueInputSchema.js';
-import { SubjectUpdateWithWhereUniqueWithoutTodoListInputSchema } from '../SubjectUpdateWithWhereUniqueWithoutTodoListInputSchema.js';
-import { SubjectUpdateManyWithWhereWithoutTodoListInputSchema } from '../SubjectUpdateManyWithWhereWithoutTodoListInputSchema.js';
-import { SubjectScalarWhereInputSchema } from '../SubjectScalarWhereInputSchema.js';
+import { SubjectCreateWithoutTodoListInputSchema } from './SubjectCreateWithoutTodoListInputSchema.js';
+import { SubjectUncheckedCreateWithoutTodoListInputSchema } from './SubjectUncheckedCreateWithoutTodoListInputSchema.js';
+import { SubjectCreateOrConnectWithoutTodoListInputSchema } from './SubjectCreateOrConnectWithoutTodoListInputSchema.js';
+import { SubjectUpsertWithWhereUniqueWithoutTodoListInputSchema } from './SubjectUpsertWithWhereUniqueWithoutTodoListInputSchema.js';
+import { SubjectWhereUniqueInputSchema } from './SubjectWhereUniqueInputSchema.js';
+import { SubjectUpdateWithWhereUniqueWithoutTodoListInputSchema } from './SubjectUpdateWithWhereUniqueWithoutTodoListInputSchema.js';
+import { SubjectUpdateManyWithWhereWithoutTodoListInputSchema } from './SubjectUpdateManyWithWhereWithoutTodoListInputSchema.js';
+import { SubjectScalarWhereInputSchema } from './SubjectScalarWhereInputSchema.js';
 export const SubjectUncheckedUpdateManyWithoutTodoListNestedInputSchema: z.ZodType<Prisma.SubjectUncheckedUpdateManyWithoutTodoListNestedInput> = z.object({
   create: z.union([ z.lazy(() => SubjectCreateWithoutTodoListInputSchema),z.lazy(() => SubjectCreateWithoutTodoListInputSchema).array(),z.lazy(() => SubjectUncheckedCreateWithoutTodoListInputSchema),z.lazy(() => SubjectUncheckedCreateWithoutTodoListInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => SubjectCreateOrConnectWithoutTodoListInputSchema),z.lazy(() => SubjectCreateOrConnectWithoutTodoListInputSchema).array() ]).optional(),

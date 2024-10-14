@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkSBIZWGTOcjs = require('../../chunk-SBIZWGTO.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkGIWEFWHOcjs = require('../../chunk-GIWEFWHO.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.BusinessContactSumOrderByAggregateInputSchema = _chunkSBIZWGTOcjs.BusinessContactSumOrderByAggregateInputSchema; exports.default = _chunkSBIZWGTOcjs.BusinessContactSumOrderByAggregateInputSchema_default;
+exports.BusinessContactSumOrderByAggregateInputSchema = _chunkGIWEFWHOcjs.BusinessContactSumOrderByAggregateInputSchema; exports.default = _chunkGIWEFWHOcjs.BusinessContactSumOrderByAggregateInputSchema_default;
 //# sourceMappingURL=BusinessContactSumOrderByAggregateInputSchema.cjs.map

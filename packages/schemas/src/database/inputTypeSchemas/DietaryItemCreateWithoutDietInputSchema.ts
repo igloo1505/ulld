@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ServingCreateNestedManyWithoutItemInputSchema } from '../ServingCreateNestedManyWithoutItemInputSchema.js';
+import { ServingCreateNestedManyWithoutItemInputSchema } from './ServingCreateNestedManyWithoutItemInputSchema.js';
 export const DietaryItemCreateWithoutDietInputSchema: z.ZodType<Prisma.DietaryItemCreateWithoutDietInput> = z.object({
   name: z.string(),
   barcode: z.string().optional().nullable(),

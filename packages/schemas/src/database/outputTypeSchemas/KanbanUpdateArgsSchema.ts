@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/KanbanIncludeSchema.js
-..//inputTypeSchemas/KanbanUpdateInputSchema.js
-..//inputTypeSchemas/KanbanUncheckedUpdateInputSchema.js
-..//inputTypeSchemas/KanbanWhereUniqueInputSchema.js
+import { KanbanIncludeSchema } from '../inputTypeSchemas/KanbanIncludeSchema.js'
+import { KanbanUpdateInputSchema } from '../inputTypeSchemas/KanbanUpdateInputSchema.js'
+import { KanbanUncheckedUpdateInputSchema } from '../inputTypeSchemas/KanbanUncheckedUpdateInputSchema.js'
+import { KanbanWhereUniqueInputSchema } from '../inputTypeSchemas/KanbanWhereUniqueInputSchema.js'
 import { KanBanListFindManyArgsSchema } from "../outputTypeSchemas/KanBanListFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"

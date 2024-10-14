@@ -2,10 +2,10 @@
 
 
 
-var _chunkDNH2MIAAcjs = require('../../chunk-DNH2MIAA.cjs');
+var _chunk5J3QE63Ncjs = require('../../chunk-5J3QE63N.cjs');
 
 
 
 
-exports.WhiteboardPartialSchema = _chunkDNH2MIAAcjs.WhiteboardPartialSchema; exports.WhiteboardSchema = _chunkDNH2MIAAcjs.WhiteboardSchema; exports.default = _chunkDNH2MIAAcjs.WhiteboardSchema_default;
+exports.WhiteboardPartialSchema = _chunk5J3QE63Ncjs.WhiteboardPartialSchema; exports.WhiteboardSchema = _chunk5J3QE63Ncjs.WhiteboardSchema; exports.default = _chunk5J3QE63Ncjs.WhiteboardSchema_default;
 //# sourceMappingURL=WhiteboardSchema.cjs.map

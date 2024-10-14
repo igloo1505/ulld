@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TopicCreateWithoutMdxNotesInputSchema } from '../TopicCreateWithoutMdxNotesInputSchema.js';
-import { TopicUncheckedCreateWithoutMdxNotesInputSchema } from '../TopicUncheckedCreateWithoutMdxNotesInputSchema.js';
-import { TopicCreateOrConnectWithoutMdxNotesInputSchema } from '../TopicCreateOrConnectWithoutMdxNotesInputSchema.js';
-import { TopicWhereUniqueInputSchema } from '../TopicWhereUniqueInputSchema.js';
+import { TopicCreateWithoutMdxNotesInputSchema } from './TopicCreateWithoutMdxNotesInputSchema.js';
+import { TopicUncheckedCreateWithoutMdxNotesInputSchema } from './TopicUncheckedCreateWithoutMdxNotesInputSchema.js';
+import { TopicCreateOrConnectWithoutMdxNotesInputSchema } from './TopicCreateOrConnectWithoutMdxNotesInputSchema.js';
+import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema.js';
 export const TopicUncheckedCreateNestedManyWithoutMdxNotesInputSchema: z.ZodType<Prisma.TopicUncheckedCreateNestedManyWithoutMdxNotesInput> = z.object({
   create: z.union([ z.lazy(() => TopicCreateWithoutMdxNotesInputSchema),z.lazy(() => TopicCreateWithoutMdxNotesInputSchema).array(),z.lazy(() => TopicUncheckedCreateWithoutMdxNotesInputSchema),z.lazy(() => TopicUncheckedCreateWithoutMdxNotesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TopicCreateOrConnectWithoutMdxNotesInputSchema),z.lazy(() => TopicCreateOrConnectWithoutMdxNotesInputSchema).array() ]).optional(),

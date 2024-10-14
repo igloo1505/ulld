@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/database/inputTypeSchemas/DJTScalarFieldEnumSchema.ts"],"sourcesContent":["import { z } from 'zod';\nexport const DJTScalarFieldEnumSchema = z.enum(['id','type','data']);\nexport default DJTScalarFieldEnumSchema;"],"mappings":";AAAA,SAAS,SAAS;AACX,IAAM,2BAA2B,EAAE,KAAK,CAAC,MAAK,QAAO,MAAM,CAAC;AACnE,IAAO,mCAAQ;","names":[]}

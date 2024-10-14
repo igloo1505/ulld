@@ -1,7 +1,7 @@
 import {
   NoteTypeCreateInputSchema,
   NoteTypeCreateInputSchema_default
-} from "../../chunk-KIES4ILG.js";
+} from "../../chunk-NWGUO223.js";
 export {
   NoteTypeCreateInputSchema,
   NoteTypeCreateInputSchema_default as default

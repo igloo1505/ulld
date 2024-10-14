@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/RelatedValuesIncludeSchema.js
-..//inputTypeSchemas/RelatedValuesWhereInputSchema.js
-..//inputTypeSchemas/RelatedValuesOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/RelatedValuesWhereUniqueInputSchema.js
-..//inputTypeSchemas/RelatedValuesScalarFieldEnumSchema.js
+import { RelatedValuesIncludeSchema } from '../inputTypeSchemas/RelatedValuesIncludeSchema.js'
+import { RelatedValuesWhereInputSchema } from '../inputTypeSchemas/RelatedValuesWhereInputSchema.js'
+import { RelatedValuesOrderByWithRelationInputSchema } from '../inputTypeSchemas/RelatedValuesOrderByWithRelationInputSchema.js'
+import { RelatedValuesWhereUniqueInputSchema } from '../inputTypeSchemas/RelatedValuesWhereUniqueInputSchema.js'
+import { RelatedValuesScalarFieldEnumSchema } from '../inputTypeSchemas/RelatedValuesScalarFieldEnumSchema.js'
 import { EquationFindManyArgsSchema } from "../outputTypeSchemas/EquationFindManyArgsSchema"
 import { RelatedValuesCountOutputTypeArgsSchema } from "../outputTypeSchemas/RelatedValuesCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports

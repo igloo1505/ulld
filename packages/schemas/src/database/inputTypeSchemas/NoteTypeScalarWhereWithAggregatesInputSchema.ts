@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
 export const NoteTypeScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.NoteTypeScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => NoteTypeScalarWhereWithAggregatesInputSchema),z.lazy(() => NoteTypeScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => NoteTypeScalarWhereWithAggregatesInputSchema).array().optional(),

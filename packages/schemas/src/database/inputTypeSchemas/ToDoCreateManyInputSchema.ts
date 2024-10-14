@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TaskCategorySchema } from '../TaskCategorySchema.js';
+import { TaskCategorySchema } from './TaskCategorySchema.js';
 export const ToDoCreateManyInputSchema: z.ZodType<Prisma.ToDoCreateManyInput> = z.object({
   id: z.number().int().optional(),
   createdAt: z.coerce.date().optional(),

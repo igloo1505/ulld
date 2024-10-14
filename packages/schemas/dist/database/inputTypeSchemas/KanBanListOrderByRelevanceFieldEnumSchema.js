@@ -1,7 +1,7 @@
 import {
   KanBanListOrderByRelevanceFieldEnumSchema,
   KanBanListOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-BEN6FRZL.js";
+} from "../../chunk-3VQACKJX.js";
 export {
   KanBanListOrderByRelevanceFieldEnumSchema,
   KanBanListOrderByRelevanceFieldEnumSchema_default as default

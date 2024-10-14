@@ -1,14 +1,14 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TagCreateWithoutKanbanInputSchema } from '../TagCreateWithoutKanbanInputSchema.js';
-import { TagUncheckedCreateWithoutKanbanInputSchema } from '../TagUncheckedCreateWithoutKanbanInputSchema.js';
-import { TagCreateOrConnectWithoutKanbanInputSchema } from '../TagCreateOrConnectWithoutKanbanInputSchema.js';
-import { TagUpsertWithWhereUniqueWithoutKanbanInputSchema } from '../TagUpsertWithWhereUniqueWithoutKanbanInputSchema.js';
-import { TagCreateManyKanbanInputEnvelopeSchema } from '../TagCreateManyKanbanInputEnvelopeSchema.js';
-import { TagWhereUniqueInputSchema } from '../TagWhereUniqueInputSchema.js';
-import { TagUpdateWithWhereUniqueWithoutKanbanInputSchema } from '../TagUpdateWithWhereUniqueWithoutKanbanInputSchema.js';
-import { TagUpdateManyWithWhereWithoutKanbanInputSchema } from '../TagUpdateManyWithWhereWithoutKanbanInputSchema.js';
-import { TagScalarWhereInputSchema } from '../TagScalarWhereInputSchema.js';
+import { TagCreateWithoutKanbanInputSchema } from './TagCreateWithoutKanbanInputSchema.js';
+import { TagUncheckedCreateWithoutKanbanInputSchema } from './TagUncheckedCreateWithoutKanbanInputSchema.js';
+import { TagCreateOrConnectWithoutKanbanInputSchema } from './TagCreateOrConnectWithoutKanbanInputSchema.js';
+import { TagUpsertWithWhereUniqueWithoutKanbanInputSchema } from './TagUpsertWithWhereUniqueWithoutKanbanInputSchema.js';
+import { TagCreateManyKanbanInputEnvelopeSchema } from './TagCreateManyKanbanInputEnvelopeSchema.js';
+import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema.js';
+import { TagUpdateWithWhereUniqueWithoutKanbanInputSchema } from './TagUpdateWithWhereUniqueWithoutKanbanInputSchema.js';
+import { TagUpdateManyWithWhereWithoutKanbanInputSchema } from './TagUpdateManyWithWhereWithoutKanbanInputSchema.js';
+import { TagScalarWhereInputSchema } from './TagScalarWhereInputSchema.js';
 export const TagUncheckedUpdateManyWithoutKanbanNestedInputSchema: z.ZodType<Prisma.TagUncheckedUpdateManyWithoutKanbanNestedInput> = z.object({
   create: z.union([ z.lazy(() => TagCreateWithoutKanbanInputSchema),z.lazy(() => TagCreateWithoutKanbanInputSchema).array(),z.lazy(() => TagUncheckedCreateWithoutKanbanInputSchema),z.lazy(() => TagUncheckedCreateWithoutKanbanInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TagCreateOrConnectWithoutKanbanInputSchema),z.lazy(() => TagCreateOrConnectWithoutKanbanInputSchema).array() ]).optional(),

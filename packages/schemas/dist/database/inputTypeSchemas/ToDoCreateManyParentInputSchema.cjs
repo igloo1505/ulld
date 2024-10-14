@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkX56T5H5Xcjs = require('../../chunk-X56T5H5X.cjs');
-require('../../chunk-BRDOGD33.cjs');
+var _chunkGS5SIMMRcjs = require('../../chunk-GS5SIMMR.cjs');
+require('../../chunk-PALRL6S5.cjs');
 
 
 
-exports.ToDoCreateManyParentInputSchema = _chunkX56T5H5Xcjs.ToDoCreateManyParentInputSchema; exports.default = _chunkX56T5H5Xcjs.ToDoCreateManyParentInputSchema_default;
+exports.ToDoCreateManyParentInputSchema = _chunkGS5SIMMRcjs.ToDoCreateManyParentInputSchema; exports.default = _chunkGS5SIMMRcjs.ToDoCreateManyParentInputSchema_default;
 //# sourceMappingURL=ToDoCreateManyParentInputSchema.cjs.map

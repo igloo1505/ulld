@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/BusinessContactWhereInputSchema.js
-..//inputTypeSchemas/BusinessContactOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/BusinessContactWhereUniqueInputSchema.js
-..//inputTypeSchemas/BusinessContactScalarFieldEnumSchema.js
+import { BusinessContactWhereInputSchema } from '../inputTypeSchemas/BusinessContactWhereInputSchema.js'
+import { BusinessContactOrderByWithRelationInputSchema } from '../inputTypeSchemas/BusinessContactOrderByWithRelationInputSchema.js'
+import { BusinessContactWhereUniqueInputSchema } from '../inputTypeSchemas/BusinessContactWhereUniqueInputSchema.js'
+import { BusinessContactScalarFieldEnumSchema } from '../inputTypeSchemas/BusinessContactScalarFieldEnumSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const BusinessContactSelectSchema: z.ZodType<Prisma.BusinessContactSelect> = z.object({

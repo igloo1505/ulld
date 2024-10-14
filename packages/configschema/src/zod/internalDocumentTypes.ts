@@ -15,6 +15,7 @@ export const internalDocumentTypeConfigSchema = documentTypeConfigSchemaBase.par
 })
 
 export type InternalDocumentConfigType = z.output<typeof internalDocumentTypeConfigSchema>
+export type InternalDocumentConfigInput = z.input<typeof internalDocumentTypeConfigSchema>
 
 export const internalDocumentTypes: z.input<typeof internalDocumentTypeConfigSchema>[] = [
     {

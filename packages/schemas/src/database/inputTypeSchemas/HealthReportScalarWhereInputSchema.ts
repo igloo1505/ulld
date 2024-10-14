@@ -1,11 +1,11 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from '../IntFilterSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
-import { FloatFilterSchema } from '../FloatFilterSchema.js';
-import { FloatNullableFilterSchema } from '../FloatNullableFilterSchema.js';
-import { IntNullableFilterSchema } from '../IntNullableFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { FloatFilterSchema } from './FloatFilterSchema.js';
+import { FloatNullableFilterSchema } from './FloatNullableFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
 export const HealthReportScalarWhereInputSchema: z.ZodType<Prisma.HealthReportScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => HealthReportScalarWhereInputSchema),z.lazy(() => HealthReportScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => HealthReportScalarWhereInputSchema).array().optional(),

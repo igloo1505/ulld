@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkQM67IRFJcjs = require('../../chunk-QM67IRFJ.cjs');
-require('../../chunk-ZNYZBKFD.cjs');
+var _chunkUUDJGGD5cjs = require('../../chunk-UUDJGGD5.cjs');
+require('../../chunk-AL5TLVHF.cjs');
 
 
 
-exports.KanBanListCreateManyArgsSchema = _chunkQM67IRFJcjs.KanBanListCreateManyArgsSchema; exports.default = _chunkQM67IRFJcjs.KanBanListCreateManyArgsSchema_default;
+exports.KanBanListCreateManyArgsSchema = _chunkUUDJGGD5cjs.KanBanListCreateManyArgsSchema; exports.default = _chunkUUDJGGD5cjs.KanBanListCreateManyArgsSchema_default;
 //# sourceMappingURL=KanBanListCreateManyArgsSchema.cjs.map

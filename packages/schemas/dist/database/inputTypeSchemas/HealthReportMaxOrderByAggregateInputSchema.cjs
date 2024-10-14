@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkHS5IITA6cjs = require('../../chunk-HS5IITA6.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkSIKRB52Xcjs = require('../../chunk-SIKRB52X.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.HealthReportMaxOrderByAggregateInputSchema = _chunkHS5IITA6cjs.HealthReportMaxOrderByAggregateInputSchema; exports.default = _chunkHS5IITA6cjs.HealthReportMaxOrderByAggregateInputSchema_default;
+exports.HealthReportMaxOrderByAggregateInputSchema = _chunkSIKRB52Xcjs.HealthReportMaxOrderByAggregateInputSchema; exports.default = _chunkSIKRB52Xcjs.HealthReportMaxOrderByAggregateInputSchema_default;
 //# sourceMappingURL=HealthReportMaxOrderByAggregateInputSchema.cjs.map

@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/KanBanListIncludeSchema.js
-..//inputTypeSchemas/KanBanListWhereUniqueInputSchema.js
+import { KanBanListIncludeSchema } from '../inputTypeSchemas/KanBanListIncludeSchema.js'
+import { KanBanListWhereUniqueInputSchema } from '../inputTypeSchemas/KanBanListWhereUniqueInputSchema.js'
 import { KanBanCardFindManyArgsSchema } from "../outputTypeSchemas/KanBanCardFindManyArgsSchema"
 import { KanbanArgsSchema } from "../outputTypeSchemas/KanbanArgsSchema"
 import { KanBanListCountOutputTypeArgsSchema } from "../outputTypeSchemas/KanBanListCountOutputTypeArgsSchema"

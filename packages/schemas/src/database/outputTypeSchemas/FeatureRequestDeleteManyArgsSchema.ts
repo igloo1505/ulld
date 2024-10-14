@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/FeatureRequestWhereInputSchema.js
+import { FeatureRequestWhereInputSchema } from '../inputTypeSchemas/FeatureRequestWhereInputSchema.js'
 export const FeatureRequestDeleteManyArgsSchema: z.ZodType<Prisma.FeatureRequestDeleteManyArgs> = z.object({
   where: FeatureRequestWhereInputSchema.optional(),
 }).strict() ;

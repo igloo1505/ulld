@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFieldUpdateOperationsInputSchema } from '../StringFieldUpdateOperationsInputSchema.js';
-import { DateTimeFieldUpdateOperationsInputSchema } from '../DateTimeFieldUpdateOperationsInputSchema.js';
-import { TagUpdateManyWithoutTodoListNestedInputSchema } from '../TagUpdateManyWithoutTodoListNestedInputSchema.js';
-import { TopicUpdateManyWithoutTodoListNestedInputSchema } from '../TopicUpdateManyWithoutTodoListNestedInputSchema.js';
-import { SubjectUpdateManyWithoutTodoListNestedInputSchema } from '../SubjectUpdateManyWithoutTodoListNestedInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+import { TagUpdateManyWithoutTodoListNestedInputSchema } from './TagUpdateManyWithoutTodoListNestedInputSchema.js';
+import { TopicUpdateManyWithoutTodoListNestedInputSchema } from './TopicUpdateManyWithoutTodoListNestedInputSchema.js';
+import { SubjectUpdateManyWithoutTodoListNestedInputSchema } from './SubjectUpdateManyWithoutTodoListNestedInputSchema.js';
 export const ToDoListUpdateWithoutTasksInputSchema: z.ZodType<Prisma.ToDoListUpdateWithoutTasksInput> = z.object({
   label: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   createdAt: z.union([ z.coerce.date(),z.lazy(() => DateTimeFieldUpdateOperationsInputSchema) ]).optional(),

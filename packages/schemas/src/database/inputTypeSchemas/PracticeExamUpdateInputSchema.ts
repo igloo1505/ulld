@@ -1,11 +1,11 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFieldUpdateOperationsInputSchema } from '../IntFieldUpdateOperationsInputSchema.js';
-import { DateTimeFieldUpdateOperationsInputSchema } from '../DateTimeFieldUpdateOperationsInputSchema.js';
-import { TopicUpdateManyWithoutPracticeExamNestedInputSchema } from '../TopicUpdateManyWithoutPracticeExamNestedInputSchema.js';
-import { TagUpdateManyWithoutPracticeExamNestedInputSchema } from '../TagUpdateManyWithoutPracticeExamNestedInputSchema.js';
-import { SubjectUpdateManyWithoutPracticeExamNestedInputSchema } from '../SubjectUpdateManyWithoutPracticeExamNestedInputSchema.js';
-import { QAPairUpdateManyWithoutPracticeExamNestedInputSchema } from '../QAPairUpdateManyWithoutPracticeExamNestedInputSchema.js';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+import { TopicUpdateManyWithoutPracticeExamNestedInputSchema } from './TopicUpdateManyWithoutPracticeExamNestedInputSchema.js';
+import { TagUpdateManyWithoutPracticeExamNestedInputSchema } from './TagUpdateManyWithoutPracticeExamNestedInputSchema.js';
+import { SubjectUpdateManyWithoutPracticeExamNestedInputSchema } from './SubjectUpdateManyWithoutPracticeExamNestedInputSchema.js';
+import { QAPairUpdateManyWithoutPracticeExamNestedInputSchema } from './QAPairUpdateManyWithoutPracticeExamNestedInputSchema.js';
 export const PracticeExamUpdateInputSchema: z.ZodType<Prisma.PracticeExamUpdateInput> = z.object({
   correctCount: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
   inCorrectCount: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),

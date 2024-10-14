@@ -2,10 +2,10 @@
 
 
 
-var _chunkDGNINLLWcjs = require('../../chunk-DGNINLLW.cjs');
+var _chunk6VKOZL3Ecjs = require('../../chunk-6VKOZL3E.cjs');
 
 
 
 
-exports.QuotePartialSchema = _chunkDGNINLLWcjs.QuotePartialSchema; exports.QuoteSchema = _chunkDGNINLLWcjs.QuoteSchema; exports.default = _chunkDGNINLLWcjs.QuoteSchema_default;
+exports.QuotePartialSchema = _chunk6VKOZL3Ecjs.QuotePartialSchema; exports.QuoteSchema = _chunk6VKOZL3Ecjs.QuoteSchema; exports.default = _chunk6VKOZL3Ecjs.QuoteSchema_default;
 //# sourceMappingURL=QuoteSchema.cjs.map

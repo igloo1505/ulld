@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkBTQLGQ7Scjs = require('../../chunk-BTQLGQ7S.cjs');
-require('../../chunk-SHACSG3V.cjs');
+var _chunkNNVB5SU3cjs = require('../../chunk-NNVB5SU3.cjs');
+require('../../chunk-VI3ITOUA.cjs');
 
 
 
-exports.DJTCreateManyAndReturnArgsSchema = _chunkBTQLGQ7Scjs.DJTCreateManyAndReturnArgsSchema; exports.default = _chunkBTQLGQ7Scjs.DJTCreateManyAndReturnArgsSchema_default;
+exports.DJTCreateManyAndReturnArgsSchema = _chunkNNVB5SU3cjs.DJTCreateManyAndReturnArgsSchema; exports.default = _chunkNNVB5SU3cjs.DJTCreateManyAndReturnArgsSchema_default;
 //# sourceMappingURL=DJTCreateManyAndReturnArgsSchema.cjs.map

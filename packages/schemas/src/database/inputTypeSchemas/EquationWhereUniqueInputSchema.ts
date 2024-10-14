@@ -1,16 +1,16 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { EquationWhereInputSchema } from '../EquationWhereInputSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
-import { JsonFilterSchema } from '../JsonFilterSchema.js';
-import { StringNullableListFilterSchema } from '../StringNullableListFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
-import { RelatedValuesListRelationFilterSchema } from '../RelatedValuesListRelationFilterSchema.js';
-import { TagListRelationFilterSchema } from '../TagListRelationFilterSchema.js';
-import { TopicListRelationFilterSchema } from '../TopicListRelationFilterSchema.js';
-import { SubjectListRelationFilterSchema } from '../SubjectListRelationFilterSchema.js';
-import { MdxNoteListRelationFilterSchema } from '../MdxNoteListRelationFilterSchema.js';
+import { EquationWhereInputSchema } from './EquationWhereInputSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { JsonFilterSchema } from './JsonFilterSchema.js';
+import { StringNullableListFilterSchema } from './StringNullableListFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { RelatedValuesListRelationFilterSchema } from './RelatedValuesListRelationFilterSchema.js';
+import { TagListRelationFilterSchema } from './TagListRelationFilterSchema.js';
+import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema.js';
+import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema.js';
+import { MdxNoteListRelationFilterSchema } from './MdxNoteListRelationFilterSchema.js';
 export const EquationWhereUniqueInputSchema: z.ZodType<Prisma.EquationWhereUniqueInput> = z.union([
   z.object({
     id: z.number().int(),

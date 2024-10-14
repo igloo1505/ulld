@@ -1,7 +1,7 @@
 import {
   BibUncheckedCreateWithoutEntriesInputSchema,
   BibUncheckedCreateWithoutEntriesInputSchema_default
-} from "../../chunk-WCNBQO4V.js";
+} from "../../chunk-MNNJTQLC.js";
 export {
   BibUncheckedCreateWithoutEntriesInputSchema,
   BibUncheckedCreateWithoutEntriesInputSchema_default as default

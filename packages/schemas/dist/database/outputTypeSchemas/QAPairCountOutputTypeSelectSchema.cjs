@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkB6IKX5SXcjs = require('../../chunk-B6IKX5SX.cjs');
+var _chunk3NAKX7BFcjs = require('../../chunk-3NAKX7BF.cjs');
 
 
 
-exports.QAPairCountOutputTypeSelectSchema = _chunkB6IKX5SXcjs.QAPairCountOutputTypeSelectSchema; exports.default = _chunkB6IKX5SXcjs.QAPairCountOutputTypeSelectSchema_default;
+exports.QAPairCountOutputTypeSelectSchema = _chunk3NAKX7BFcjs.QAPairCountOutputTypeSelectSchema; exports.default = _chunk3NAKX7BFcjs.QAPairCountOutputTypeSelectSchema_default;
 //# sourceMappingURL=QAPairCountOutputTypeSelectSchema.cjs.map

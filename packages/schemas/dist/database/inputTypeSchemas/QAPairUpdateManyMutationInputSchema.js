@@ -1,10 +1,10 @@
 import {
   QAPairUpdateManyMutationInputSchema,
   QAPairUpdateManyMutationInputSchema_default
-} from "../../chunk-XGJ4L2DJ.js";
-import "../../chunk-SOLYHFAT.js";
-import "../../chunk-PNLBXL4W.js";
-import "../../chunk-3GDEEYNJ.js";
+} from "../../chunk-LK437WDT.js";
+import "../../chunk-EGW2GABF.js";
+import "../../chunk-TKIJII67.js";
+import "../../chunk-BQIXGZB5.js";
 export {
   QAPairUpdateManyMutationInputSchema,
   QAPairUpdateManyMutationInputSchema_default as default

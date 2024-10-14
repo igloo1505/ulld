@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { NestedDateTimeWithAggregatesFilterSchema } from '../NestedDateTimeWithAggregatesFilterSchema.js';
-import { NestedIntFilterSchema } from '../NestedIntFilterSchema.js';
-import { NestedDateTimeFilterSchema } from '../NestedDateTimeFilterSchema.js';
+import { NestedDateTimeWithAggregatesFilterSchema } from './NestedDateTimeWithAggregatesFilterSchema.js';
+import { NestedIntFilterSchema } from './NestedIntFilterSchema.js';
+import { NestedDateTimeFilterSchema } from './NestedDateTimeFilterSchema.js';
 export const DateTimeWithAggregatesFilterSchema: z.ZodType<Prisma.DateTimeWithAggregatesFilter> = z.object({
   equals: z.coerce.date().optional(),
   in: z.coerce.date().array().optional(),

@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkJSDNGWVHcjs = require('../../chunk-JSDNGWVH.cjs');
-require('../../chunk-TGS2ITNA.cjs');
+var _chunkIF56XGTZcjs = require('../../chunk-IF56XGTZ.cjs');
+require('../../chunk-NCGFRGWC.cjs');
 
 
 
-exports.HealthReportCreateManyArgsSchema = _chunkJSDNGWVHcjs.HealthReportCreateManyArgsSchema; exports.default = _chunkJSDNGWVHcjs.HealthReportCreateManyArgsSchema_default;
+exports.HealthReportCreateManyArgsSchema = _chunkIF56XGTZcjs.HealthReportCreateManyArgsSchema; exports.default = _chunkIF56XGTZcjs.HealthReportCreateManyArgsSchema_default;
 //# sourceMappingURL=HealthReportCreateManyArgsSchema.cjs.map

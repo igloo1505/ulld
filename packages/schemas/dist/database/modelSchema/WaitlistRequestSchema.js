@@ -2,7 +2,7 @@ import {
   WaitlistRequestPartialSchema,
   WaitlistRequestSchema,
   WaitlistRequestSchema_default
-} from "../../chunk-C5RG6ANK.js";
+} from "../../chunk-BIYSDWDS.js";
 export {
   WaitlistRequestPartialSchema,
   WaitlistRequestSchema,

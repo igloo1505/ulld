@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/CitationsGroupIncludeSchema.js
-..//inputTypeSchemas/CitationsGroupWhereInputSchema.js
-..//inputTypeSchemas/CitationsGroupOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/CitationsGroupWhereUniqueInputSchema.js
-..//inputTypeSchemas/CitationsGroupScalarFieldEnumSchema.js
+import { CitationsGroupIncludeSchema } from '../inputTypeSchemas/CitationsGroupIncludeSchema.js'
+import { CitationsGroupWhereInputSchema } from '../inputTypeSchemas/CitationsGroupWhereInputSchema.js'
+import { CitationsGroupOrderByWithRelationInputSchema } from '../inputTypeSchemas/CitationsGroupOrderByWithRelationInputSchema.js'
+import { CitationsGroupWhereUniqueInputSchema } from '../inputTypeSchemas/CitationsGroupWhereUniqueInputSchema.js'
+import { CitationsGroupScalarFieldEnumSchema } from '../inputTypeSchemas/CitationsGroupScalarFieldEnumSchema.js'
 import { BibEntryFindManyArgsSchema } from "../outputTypeSchemas/BibEntryFindManyArgsSchema"
 import { CitationsGroupCountOutputTypeArgsSchema } from "../outputTypeSchemas/CitationsGroupCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports

@@ -1,16 +1,16 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteCreatecitationsListOrderInputSchema } from '../MdxNoteCreatecitationsListOrderInputSchema.js';
-import { MdxNoteCreateimportantValuesInputSchema } from '../MdxNoteCreateimportantValuesInputSchema.js';
-import { MdxNoteCreateoutgoingQuickLinksInputSchema } from '../MdxNoteCreateoutgoingQuickLinksInputSchema.js';
-import { TopicCreateNestedManyWithoutMdxNotesInputSchema } from '../TopicCreateNestedManyWithoutMdxNotesInputSchema.js';
-import { SubjectCreateNestedManyWithoutMdxNotesInputSchema } from '../SubjectCreateNestedManyWithoutMdxNotesInputSchema.js';
-import { TagCreateNestedManyWithoutMdxNotesInputSchema } from '../TagCreateNestedManyWithoutMdxNotesInputSchema.js';
-import { BibEntryCreateNestedManyWithoutMdxNotesInputSchema } from '../BibEntryCreateNestedManyWithoutMdxNotesInputSchema.js';
-import { SequentialNoteListCreateNestedOneWithoutMdxNoteInputSchema } from '../SequentialNoteListCreateNestedOneWithoutMdxNoteInputSchema.js';
-import { ReadingListCreateNestedManyWithoutMdxNotesInputSchema } from '../ReadingListCreateNestedManyWithoutMdxNotesInputSchema.js';
-import { DefinitionCreateNestedManyWithoutMdxNoteInputSchema } from '../DefinitionCreateNestedManyWithoutMdxNoteInputSchema.js';
-import { ToDoCreateNestedManyWithoutAssociatedNotesInputSchema } from '../ToDoCreateNestedManyWithoutAssociatedNotesInputSchema.js';
+import { MdxNoteCreatecitationsListOrderInputSchema } from './MdxNoteCreatecitationsListOrderInputSchema.js';
+import { MdxNoteCreateimportantValuesInputSchema } from './MdxNoteCreateimportantValuesInputSchema.js';
+import { MdxNoteCreateoutgoingQuickLinksInputSchema } from './MdxNoteCreateoutgoingQuickLinksInputSchema.js';
+import { TopicCreateNestedManyWithoutMdxNotesInputSchema } from './TopicCreateNestedManyWithoutMdxNotesInputSchema.js';
+import { SubjectCreateNestedManyWithoutMdxNotesInputSchema } from './SubjectCreateNestedManyWithoutMdxNotesInputSchema.js';
+import { TagCreateNestedManyWithoutMdxNotesInputSchema } from './TagCreateNestedManyWithoutMdxNotesInputSchema.js';
+import { BibEntryCreateNestedManyWithoutMdxNotesInputSchema } from './BibEntryCreateNestedManyWithoutMdxNotesInputSchema.js';
+import { SequentialNoteListCreateNestedOneWithoutMdxNoteInputSchema } from './SequentialNoteListCreateNestedOneWithoutMdxNoteInputSchema.js';
+import { ReadingListCreateNestedManyWithoutMdxNotesInputSchema } from './ReadingListCreateNestedManyWithoutMdxNotesInputSchema.js';
+import { DefinitionCreateNestedManyWithoutMdxNoteInputSchema } from './DefinitionCreateNestedManyWithoutMdxNoteInputSchema.js';
+import { ToDoCreateNestedManyWithoutAssociatedNotesInputSchema } from './ToDoCreateNestedManyWithoutAssociatedNotesInputSchema.js';
 export const MdxNoteCreateWithoutEquationsInputSchema: z.ZodType<Prisma.MdxNoteCreateWithoutEquationsInput> = z.object({
   isProtected: z.boolean().optional().nullable(),
   dietSummaryKey: z.string().optional().nullable(),

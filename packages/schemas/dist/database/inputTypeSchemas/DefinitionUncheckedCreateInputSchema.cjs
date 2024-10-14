@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkTFTJUM67cjs = require('../../chunk-TFTJUM67.cjs');
+var _chunkDOTDUDP6cjs = require('../../chunk-DOTDUDP6.cjs');
 
 
 
-exports.DefinitionUncheckedCreateInputSchema = _chunkTFTJUM67cjs.DefinitionUncheckedCreateInputSchema; exports.default = _chunkTFTJUM67cjs.DefinitionUncheckedCreateInputSchema_default;
+exports.DefinitionUncheckedCreateInputSchema = _chunkDOTDUDP6cjs.DefinitionUncheckedCreateInputSchema; exports.default = _chunkDOTDUDP6cjs.DefinitionUncheckedCreateInputSchema_default;
 //# sourceMappingURL=DefinitionUncheckedCreateInputSchema.cjs.map

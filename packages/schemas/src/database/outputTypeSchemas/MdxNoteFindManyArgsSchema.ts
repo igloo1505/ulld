@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/MdxNoteIncludeSchema.js
-..//inputTypeSchemas/MdxNoteWhereInputSchema.js
-..//inputTypeSchemas/MdxNoteOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/MdxNoteWhereUniqueInputSchema.js
-..//inputTypeSchemas/MdxNoteScalarFieldEnumSchema.js
+import { MdxNoteIncludeSchema } from '../inputTypeSchemas/MdxNoteIncludeSchema.js'
+import { MdxNoteWhereInputSchema } from '../inputTypeSchemas/MdxNoteWhereInputSchema.js'
+import { MdxNoteOrderByWithRelationInputSchema } from '../inputTypeSchemas/MdxNoteOrderByWithRelationInputSchema.js'
+import { MdxNoteWhereUniqueInputSchema } from '../inputTypeSchemas/MdxNoteWhereUniqueInputSchema.js'
+import { MdxNoteScalarFieldEnumSchema } from '../inputTypeSchemas/MdxNoteScalarFieldEnumSchema.js'
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"

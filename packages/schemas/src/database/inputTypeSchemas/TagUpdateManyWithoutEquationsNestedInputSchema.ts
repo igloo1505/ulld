@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TagCreateWithoutEquationsInputSchema } from '../TagCreateWithoutEquationsInputSchema.js';
-import { TagUncheckedCreateWithoutEquationsInputSchema } from '../TagUncheckedCreateWithoutEquationsInputSchema.js';
-import { TagCreateOrConnectWithoutEquationsInputSchema } from '../TagCreateOrConnectWithoutEquationsInputSchema.js';
-import { TagUpsertWithWhereUniqueWithoutEquationsInputSchema } from '../TagUpsertWithWhereUniqueWithoutEquationsInputSchema.js';
-import { TagWhereUniqueInputSchema } from '../TagWhereUniqueInputSchema.js';
-import { TagUpdateWithWhereUniqueWithoutEquationsInputSchema } from '../TagUpdateWithWhereUniqueWithoutEquationsInputSchema.js';
-import { TagUpdateManyWithWhereWithoutEquationsInputSchema } from '../TagUpdateManyWithWhereWithoutEquationsInputSchema.js';
-import { TagScalarWhereInputSchema } from '../TagScalarWhereInputSchema.js';
+import { TagCreateWithoutEquationsInputSchema } from './TagCreateWithoutEquationsInputSchema.js';
+import { TagUncheckedCreateWithoutEquationsInputSchema } from './TagUncheckedCreateWithoutEquationsInputSchema.js';
+import { TagCreateOrConnectWithoutEquationsInputSchema } from './TagCreateOrConnectWithoutEquationsInputSchema.js';
+import { TagUpsertWithWhereUniqueWithoutEquationsInputSchema } from './TagUpsertWithWhereUniqueWithoutEquationsInputSchema.js';
+import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema.js';
+import { TagUpdateWithWhereUniqueWithoutEquationsInputSchema } from './TagUpdateWithWhereUniqueWithoutEquationsInputSchema.js';
+import { TagUpdateManyWithWhereWithoutEquationsInputSchema } from './TagUpdateManyWithWhereWithoutEquationsInputSchema.js';
+import { TagScalarWhereInputSchema } from './TagScalarWhereInputSchema.js';
 export const TagUpdateManyWithoutEquationsNestedInputSchema: z.ZodType<Prisma.TagUpdateManyWithoutEquationsNestedInput> = z.object({
   create: z.union([ z.lazy(() => TagCreateWithoutEquationsInputSchema),z.lazy(() => TagCreateWithoutEquationsInputSchema).array(),z.lazy(() => TagUncheckedCreateWithoutEquationsInputSchema),z.lazy(() => TagUncheckedCreateWithoutEquationsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TagCreateOrConnectWithoutEquationsInputSchema),z.lazy(() => TagCreateOrConnectWithoutEquationsInputSchema).array() ]).optional(),

@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { HealthReportCreateWithoutCurrentDietInputSchema } from '../HealthReportCreateWithoutCurrentDietInputSchema.js';
-import { HealthReportUncheckedCreateWithoutCurrentDietInputSchema } from '../HealthReportUncheckedCreateWithoutCurrentDietInputSchema.js';
-import { HealthReportCreateOrConnectWithoutCurrentDietInputSchema } from '../HealthReportCreateOrConnectWithoutCurrentDietInputSchema.js';
-import { HealthReportCreateManyCurrentDietInputEnvelopeSchema } from '../HealthReportCreateManyCurrentDietInputEnvelopeSchema.js';
-import { HealthReportWhereUniqueInputSchema } from '../HealthReportWhereUniqueInputSchema.js';
+import { HealthReportCreateWithoutCurrentDietInputSchema } from './HealthReportCreateWithoutCurrentDietInputSchema.js';
+import { HealthReportUncheckedCreateWithoutCurrentDietInputSchema } from './HealthReportUncheckedCreateWithoutCurrentDietInputSchema.js';
+import { HealthReportCreateOrConnectWithoutCurrentDietInputSchema } from './HealthReportCreateOrConnectWithoutCurrentDietInputSchema.js';
+import { HealthReportCreateManyCurrentDietInputEnvelopeSchema } from './HealthReportCreateManyCurrentDietInputEnvelopeSchema.js';
+import { HealthReportWhereUniqueInputSchema } from './HealthReportWhereUniqueInputSchema.js';
 export const HealthReportCreateNestedManyWithoutCurrentDietInputSchema: z.ZodType<Prisma.HealthReportCreateNestedManyWithoutCurrentDietInput> = z.object({
   create: z.union([ z.lazy(() => HealthReportCreateWithoutCurrentDietInputSchema),z.lazy(() => HealthReportCreateWithoutCurrentDietInputSchema).array(),z.lazy(() => HealthReportUncheckedCreateWithoutCurrentDietInputSchema),z.lazy(() => HealthReportUncheckedCreateWithoutCurrentDietInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => HealthReportCreateOrConnectWithoutCurrentDietInputSchema),z.lazy(() => HealthReportCreateOrConnectWithoutCurrentDietInputSchema).array() ]).optional(),

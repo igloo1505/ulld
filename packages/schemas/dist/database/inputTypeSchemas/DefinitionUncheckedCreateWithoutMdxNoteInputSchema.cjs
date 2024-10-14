@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk2XENYBJRcjs = require('../../chunk-2XENYBJR.cjs');
+var _chunkFRPCP2GVcjs = require('../../chunk-FRPCP2GV.cjs');
 
 
 
-exports.DefinitionUncheckedCreateWithoutMdxNoteInputSchema = _chunk2XENYBJRcjs.DefinitionUncheckedCreateWithoutMdxNoteInputSchema; exports.default = _chunk2XENYBJRcjs.DefinitionUncheckedCreateWithoutMdxNoteInputSchema_default;
+exports.DefinitionUncheckedCreateWithoutMdxNoteInputSchema = _chunkFRPCP2GVcjs.DefinitionUncheckedCreateWithoutMdxNoteInputSchema; exports.default = _chunkFRPCP2GVcjs.DefinitionUncheckedCreateWithoutMdxNoteInputSchema_default;
 //# sourceMappingURL=DefinitionUncheckedCreateWithoutMdxNoteInputSchema.cjs.map

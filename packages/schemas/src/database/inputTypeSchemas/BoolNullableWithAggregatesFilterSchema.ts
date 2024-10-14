@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { NestedBoolNullableWithAggregatesFilterSchema } from '../NestedBoolNullableWithAggregatesFilterSchema.js';
-import { NestedIntNullableFilterSchema } from '../NestedIntNullableFilterSchema.js';
-import { NestedBoolNullableFilterSchema } from '../NestedBoolNullableFilterSchema.js';
+import { NestedBoolNullableWithAggregatesFilterSchema } from './NestedBoolNullableWithAggregatesFilterSchema.js';
+import { NestedIntNullableFilterSchema } from './NestedIntNullableFilterSchema.js';
+import { NestedBoolNullableFilterSchema } from './NestedBoolNullableFilterSchema.js';
 export const BoolNullableWithAggregatesFilterSchema: z.ZodType<Prisma.BoolNullableWithAggregatesFilter> = z.object({
   equals: z.boolean().optional().nullable(),
   not: z.union([ z.boolean(),z.lazy(() => NestedBoolNullableWithAggregatesFilterSchema) ]).optional().nullable(),

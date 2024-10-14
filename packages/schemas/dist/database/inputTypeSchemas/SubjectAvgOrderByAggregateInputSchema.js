@@ -1,8 +1,8 @@
 import {
   SubjectAvgOrderByAggregateInputSchema,
   SubjectAvgOrderByAggregateInputSchema_default
-} from "../../chunk-STZUZT44.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-ENLC5QLT.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   SubjectAvgOrderByAggregateInputSchema,
   SubjectAvgOrderByAggregateInputSchema_default as default

@@ -1,7 +1,7 @@
 import {
   SettingsAppendixOrderByRelevanceFieldEnumSchema,
   SettingsAppendixOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-NN3W5SZD.js";
+} from "../../chunk-NBZELKCK.js";
 export {
   SettingsAppendixOrderByRelevanceFieldEnumSchema,
   SettingsAppendixOrderByRelevanceFieldEnumSchema_default as default

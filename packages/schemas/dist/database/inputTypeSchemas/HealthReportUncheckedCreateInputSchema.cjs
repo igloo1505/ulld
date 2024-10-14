@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkOENNX65Ycjs = require('../../chunk-OENNX65Y.cjs');
+var _chunkMXOZSIRRcjs = require('../../chunk-MXOZSIRR.cjs');
 
 
 
-exports.HealthReportUncheckedCreateInputSchema = _chunkOENNX65Ycjs.HealthReportUncheckedCreateInputSchema; exports.default = _chunkOENNX65Ycjs.HealthReportUncheckedCreateInputSchema_default;
+exports.HealthReportUncheckedCreateInputSchema = _chunkMXOZSIRRcjs.HealthReportUncheckedCreateInputSchema; exports.default = _chunkMXOZSIRRcjs.HealthReportUncheckedCreateInputSchema_default;
 //# sourceMappingURL=HealthReportUncheckedCreateInputSchema.cjs.map

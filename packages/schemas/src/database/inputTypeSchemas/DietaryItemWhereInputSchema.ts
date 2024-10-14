@@ -1,14 +1,14 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from '../IntFilterSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
-import { IntNullableFilterSchema } from '../IntNullableFilterSchema.js';
-import { FloatNullableFilterSchema } from '../FloatNullableFilterSchema.js';
-import { BoolFilterSchema } from '../BoolFilterSchema.js';
-import { FloatFilterSchema } from '../FloatFilterSchema.js';
-import { DietListRelationFilterSchema } from '../DietListRelationFilterSchema.js';
-import { ServingListRelationFilterSchema } from '../ServingListRelationFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { FloatNullableFilterSchema } from './FloatNullableFilterSchema.js';
+import { BoolFilterSchema } from './BoolFilterSchema.js';
+import { FloatFilterSchema } from './FloatFilterSchema.js';
+import { DietListRelationFilterSchema } from './DietListRelationFilterSchema.js';
+import { ServingListRelationFilterSchema } from './ServingListRelationFilterSchema.js';
 export const DietaryItemWhereInputSchema: z.ZodType<Prisma.DietaryItemWhereInput> = z.object({
   AND: z.union([ z.lazy(() => DietaryItemWhereInputSchema),z.lazy(() => DietaryItemWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => DietaryItemWhereInputSchema).array().optional(),

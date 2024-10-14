@@ -1,7 +1,7 @@
 import {
   IpynbScalarFieldEnumSchema,
   IpynbScalarFieldEnumSchema_default
-} from "../../chunk-OA4CNC6Z.js";
+} from "../../chunk-WKKJ2TT7.js";
 export {
   IpynbScalarFieldEnumSchema,
   IpynbScalarFieldEnumSchema_default as default

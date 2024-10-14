@@ -1,7 +1,7 @@
 import {
   DIETARY_GOALSchema,
   DIETARY_GOALSchema_default
-} from "../../chunk-FV4V5SCW.js";
+} from "../../chunk-LRTPFMPI.js";
 export {
   DIETARY_GOALSchema,
   DIETARY_GOALSchema_default as default

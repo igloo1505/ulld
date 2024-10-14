@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/KanbanWhereInputSchema.js
-..//inputTypeSchemas/KanbanOrderByWithAggregationInputSchema.js
-..//inputTypeSchemas/KanbanScalarFieldEnumSchema.js
-..//inputTypeSchemas/KanbanScalarWhereWithAggregatesInputSchema.js
+import { KanbanWhereInputSchema } from '../inputTypeSchemas/KanbanWhereInputSchema.js'
+import { KanbanOrderByWithAggregationInputSchema } from '../inputTypeSchemas/KanbanOrderByWithAggregationInputSchema.js'
+import { KanbanScalarFieldEnumSchema } from '../inputTypeSchemas/KanbanScalarFieldEnumSchema.js'
+import { KanbanScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/KanbanScalarWhereWithAggregatesInputSchema.js'
 export const KanbanGroupByArgsSchema: z.ZodType<Prisma.KanbanGroupByArgs> = z.object({
   where: KanbanWhereInputSchema.optional(),
   orderBy: z.union([ KanbanOrderByWithAggregationInputSchema.array(),KanbanOrderByWithAggregationInputSchema ]).optional(),

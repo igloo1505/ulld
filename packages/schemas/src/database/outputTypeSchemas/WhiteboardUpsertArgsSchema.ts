@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/WhiteboardWhereUniqueInputSchema.js
-..//inputTypeSchemas/WhiteboardCreateInputSchema.js
-..//inputTypeSchemas/WhiteboardUncheckedCreateInputSchema.js
-..//inputTypeSchemas/WhiteboardUpdateInputSchema.js
-..//inputTypeSchemas/WhiteboardUncheckedUpdateInputSchema.js
+import { WhiteboardWhereUniqueInputSchema } from '../inputTypeSchemas/WhiteboardWhereUniqueInputSchema.js'
+import { WhiteboardCreateInputSchema } from '../inputTypeSchemas/WhiteboardCreateInputSchema.js'
+import { WhiteboardUncheckedCreateInputSchema } from '../inputTypeSchemas/WhiteboardUncheckedCreateInputSchema.js'
+import { WhiteboardUpdateInputSchema } from '../inputTypeSchemas/WhiteboardUpdateInputSchema.js'
+import { WhiteboardUncheckedUpdateInputSchema } from '../inputTypeSchemas/WhiteboardUncheckedUpdateInputSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const WhiteboardSelectSchema: z.ZodType<Prisma.WhiteboardSelect> = z.object({

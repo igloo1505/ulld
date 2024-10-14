@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk3NTT6R66cjs = require('../../chunk-3NTT6R66.cjs');
+var _chunkCARRIJSVcjs = require('../../chunk-CARRIJSV.cjs');
 
 
 
-exports.MdxNoteCreatecitationsListOrderInputSchema = _chunk3NTT6R66cjs.MdxNoteCreatecitationsListOrderInputSchema; exports.default = _chunk3NTT6R66cjs.MdxNoteCreatecitationsListOrderInputSchema_default;
+exports.MdxNoteCreatecitationsListOrderInputSchema = _chunkCARRIJSVcjs.MdxNoteCreatecitationsListOrderInputSchema; exports.default = _chunkCARRIJSVcjs.MdxNoteCreatecitationsListOrderInputSchema_default;
 //# sourceMappingURL=MdxNoteCreatecitationsListOrderInputSchema.cjs.map

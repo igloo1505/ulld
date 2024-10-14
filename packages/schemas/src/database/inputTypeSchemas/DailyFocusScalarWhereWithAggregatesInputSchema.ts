@@ -1,7 +1,7 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
 export const DailyFocusScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.DailyFocusScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => DailyFocusScalarWhereWithAggregatesInputSchema),z.lazy(() => DailyFocusScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => DailyFocusScalarWhereWithAggregatesInputSchema).array().optional(),

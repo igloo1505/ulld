@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/ToDoListIncludeSchema.js
-..//inputTypeSchemas/ToDoListWhereInputSchema.js
-..//inputTypeSchemas/ToDoListOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/ToDoListWhereUniqueInputSchema.js
-..//inputTypeSchemas/ToDoListScalarFieldEnumSchema.js
+import { ToDoListIncludeSchema } from '../inputTypeSchemas/ToDoListIncludeSchema.js'
+import { ToDoListWhereInputSchema } from '../inputTypeSchemas/ToDoListWhereInputSchema.js'
+import { ToDoListOrderByWithRelationInputSchema } from '../inputTypeSchemas/ToDoListOrderByWithRelationInputSchema.js'
+import { ToDoListWhereUniqueInputSchema } from '../inputTypeSchemas/ToDoListWhereUniqueInputSchema.js'
+import { ToDoListScalarFieldEnumSchema } from '../inputTypeSchemas/ToDoListScalarFieldEnumSchema.js'
 import { ToDoFindManyArgsSchema } from "../outputTypeSchemas/ToDoFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"

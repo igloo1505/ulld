@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
-import { BytesWithAggregatesFilterSchema } from '../BytesWithAggregatesFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { BytesWithAggregatesFilterSchema } from './BytesWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
 export const SettingsAppendixScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.SettingsAppendixScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => SettingsAppendixScalarWhereWithAggregatesInputSchema),z.lazy(() => SettingsAppendixScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => SettingsAppendixScalarWhereWithAggregatesInputSchema).array().optional(),

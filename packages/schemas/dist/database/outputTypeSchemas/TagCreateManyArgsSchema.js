@@ -1,8 +1,8 @@
 import {
   TagCreateManyArgsSchema,
   TagCreateManyArgsSchema_default
-} from "../../chunk-RGKES63R.js";
-import "../../chunk-ZXF2RNGB.js";
+} from "../../chunk-WUKYEA6K.js";
+import "../../chunk-KKCL5IYN.js";
 export {
   TagCreateManyArgsSchema,
   TagCreateManyArgsSchema_default as default

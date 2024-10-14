@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk2DLLDJ5Lcjs = require('../../chunk-2DLLDJ5L.cjs');
-require('../../chunk-RAZBO3YF.cjs');
+var _chunkIGPMGAEPcjs = require('../../chunk-IGPMGAEP.cjs');
+require('../../chunk-QPD47KL5.cjs');
 
 
 
-exports.TagCreateManyKanbanInputEnvelopeSchema = _chunk2DLLDJ5Lcjs.TagCreateManyKanbanInputEnvelopeSchema; exports.default = _chunk2DLLDJ5Lcjs.TagCreateManyKanbanInputEnvelopeSchema_default;
+exports.TagCreateManyKanbanInputEnvelopeSchema = _chunkIGPMGAEPcjs.TagCreateManyKanbanInputEnvelopeSchema; exports.default = _chunkIGPMGAEPcjs.TagCreateManyKanbanInputEnvelopeSchema_default;
 //# sourceMappingURL=TagCreateManyKanbanInputEnvelopeSchema.cjs.map

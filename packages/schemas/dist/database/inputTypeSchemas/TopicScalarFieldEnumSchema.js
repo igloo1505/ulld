@@ -1,7 +1,7 @@
 import {
   TopicScalarFieldEnumSchema,
   TopicScalarFieldEnumSchema_default
-} from "../../chunk-6H2TNO3F.js";
+} from "../../chunk-WJMNUN3N.js";
 export {
   TopicScalarFieldEnumSchema,
   TopicScalarFieldEnumSchema_default as default

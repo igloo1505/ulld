@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { PracticeExamCreateWithoutTopicsInputSchema } from '../PracticeExamCreateWithoutTopicsInputSchema.js';
-import { PracticeExamUncheckedCreateWithoutTopicsInputSchema } from '../PracticeExamUncheckedCreateWithoutTopicsInputSchema.js';
-import { PracticeExamCreateOrConnectWithoutTopicsInputSchema } from '../PracticeExamCreateOrConnectWithoutTopicsInputSchema.js';
-import { PracticeExamUpsertWithWhereUniqueWithoutTopicsInputSchema } from '../PracticeExamUpsertWithWhereUniqueWithoutTopicsInputSchema.js';
-import { PracticeExamWhereUniqueInputSchema } from '../PracticeExamWhereUniqueInputSchema.js';
-import { PracticeExamUpdateWithWhereUniqueWithoutTopicsInputSchema } from '../PracticeExamUpdateWithWhereUniqueWithoutTopicsInputSchema.js';
-import { PracticeExamUpdateManyWithWhereWithoutTopicsInputSchema } from '../PracticeExamUpdateManyWithWhereWithoutTopicsInputSchema.js';
-import { PracticeExamScalarWhereInputSchema } from '../PracticeExamScalarWhereInputSchema.js';
+import { PracticeExamCreateWithoutTopicsInputSchema } from './PracticeExamCreateWithoutTopicsInputSchema.js';
+import { PracticeExamUncheckedCreateWithoutTopicsInputSchema } from './PracticeExamUncheckedCreateWithoutTopicsInputSchema.js';
+import { PracticeExamCreateOrConnectWithoutTopicsInputSchema } from './PracticeExamCreateOrConnectWithoutTopicsInputSchema.js';
+import { PracticeExamUpsertWithWhereUniqueWithoutTopicsInputSchema } from './PracticeExamUpsertWithWhereUniqueWithoutTopicsInputSchema.js';
+import { PracticeExamWhereUniqueInputSchema } from './PracticeExamWhereUniqueInputSchema.js';
+import { PracticeExamUpdateWithWhereUniqueWithoutTopicsInputSchema } from './PracticeExamUpdateWithWhereUniqueWithoutTopicsInputSchema.js';
+import { PracticeExamUpdateManyWithWhereWithoutTopicsInputSchema } from './PracticeExamUpdateManyWithWhereWithoutTopicsInputSchema.js';
+import { PracticeExamScalarWhereInputSchema } from './PracticeExamScalarWhereInputSchema.js';
 export const PracticeExamUpdateManyWithoutTopicsNestedInputSchema: z.ZodType<Prisma.PracticeExamUpdateManyWithoutTopicsNestedInput> = z.object({
   create: z.union([ z.lazy(() => PracticeExamCreateWithoutTopicsInputSchema),z.lazy(() => PracticeExamCreateWithoutTopicsInputSchema).array(),z.lazy(() => PracticeExamUncheckedCreateWithoutTopicsInputSchema),z.lazy(() => PracticeExamUncheckedCreateWithoutTopicsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => PracticeExamCreateOrConnectWithoutTopicsInputSchema),z.lazy(() => PracticeExamCreateOrConnectWithoutTopicsInputSchema).array() ]).optional(),

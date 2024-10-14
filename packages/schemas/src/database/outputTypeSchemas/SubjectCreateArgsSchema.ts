@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/SubjectIncludeSchema.js
-..//inputTypeSchemas/SubjectCreateInputSchema.js
-..//inputTypeSchemas/SubjectUncheckedCreateInputSchema.js
+import { SubjectIncludeSchema } from '../inputTypeSchemas/SubjectIncludeSchema.js'
+import { SubjectCreateInputSchema } from '../inputTypeSchemas/SubjectCreateInputSchema.js'
+import { SubjectUncheckedCreateInputSchema } from '../inputTypeSchemas/SubjectUncheckedCreateInputSchema.js'
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"
 import { QAPairFindManyArgsSchema } from "../outputTypeSchemas/QAPairFindManyArgsSchema"

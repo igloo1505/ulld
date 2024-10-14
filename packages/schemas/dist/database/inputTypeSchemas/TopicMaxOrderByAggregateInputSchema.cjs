@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkB2SJARJScjs = require('../../chunk-B2SJARJS.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkMZQZTLAOcjs = require('../../chunk-MZQZTLAO.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.TopicMaxOrderByAggregateInputSchema = _chunkB2SJARJScjs.TopicMaxOrderByAggregateInputSchema; exports.default = _chunkB2SJARJScjs.TopicMaxOrderByAggregateInputSchema_default;
+exports.TopicMaxOrderByAggregateInputSchema = _chunkMZQZTLAOcjs.TopicMaxOrderByAggregateInputSchema; exports.default = _chunkMZQZTLAOcjs.TopicMaxOrderByAggregateInputSchema_default;
 //# sourceMappingURL=TopicMaxOrderByAggregateInputSchema.cjs.map

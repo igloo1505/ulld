@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkWBZUJVT6cjs = require('../../chunk-WBZUJVT6.cjs');
+var _chunkFB5X5LVLcjs = require('../../chunk-FB5X5LVL.cjs');
 
 
 
-exports.SnippetUpdatekeywordsInputSchema = _chunkWBZUJVT6cjs.SnippetUpdatekeywordsInputSchema; exports.default = _chunkWBZUJVT6cjs.SnippetUpdatekeywordsInputSchema_default;
+exports.SnippetUpdatekeywordsInputSchema = _chunkFB5X5LVLcjs.SnippetUpdatekeywordsInputSchema; exports.default = _chunkFB5X5LVLcjs.SnippetUpdatekeywordsInputSchema_default;
 //# sourceMappingURL=SnippetUpdatekeywordsInputSchema.cjs.map

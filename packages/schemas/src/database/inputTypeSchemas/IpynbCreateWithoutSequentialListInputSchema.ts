@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IpynbCreatecitationsListOrderInputSchema } from '../IpynbCreatecitationsListOrderInputSchema.js';
-import { IpynbCreateimportantValuesInputSchema } from '../IpynbCreateimportantValuesInputSchema.js';
-import { IpynbCreateoutgoingQuickLinksInputSchema } from '../IpynbCreateoutgoingQuickLinksInputSchema.js';
-import { TagCreateNestedManyWithoutIpynbNotesInputSchema } from '../TagCreateNestedManyWithoutIpynbNotesInputSchema.js';
-import { TopicCreateNestedManyWithoutIpynbNotesInputSchema } from '../TopicCreateNestedManyWithoutIpynbNotesInputSchema.js';
-import { SubjectCreateNestedManyWithoutIpynbNotesInputSchema } from '../SubjectCreateNestedManyWithoutIpynbNotesInputSchema.js';
-import { BibEntryCreateNestedManyWithoutIpynbNotesInputSchema } from '../BibEntryCreateNestedManyWithoutIpynbNotesInputSchema.js';
-import { ReadingListCreateNestedManyWithoutIpynbNotesInputSchema } from '../ReadingListCreateNestedManyWithoutIpynbNotesInputSchema.js';
+import { IpynbCreatecitationsListOrderInputSchema } from './IpynbCreatecitationsListOrderInputSchema.js';
+import { IpynbCreateimportantValuesInputSchema } from './IpynbCreateimportantValuesInputSchema.js';
+import { IpynbCreateoutgoingQuickLinksInputSchema } from './IpynbCreateoutgoingQuickLinksInputSchema.js';
+import { TagCreateNestedManyWithoutIpynbNotesInputSchema } from './TagCreateNestedManyWithoutIpynbNotesInputSchema.js';
+import { TopicCreateNestedManyWithoutIpynbNotesInputSchema } from './TopicCreateNestedManyWithoutIpynbNotesInputSchema.js';
+import { SubjectCreateNestedManyWithoutIpynbNotesInputSchema } from './SubjectCreateNestedManyWithoutIpynbNotesInputSchema.js';
+import { BibEntryCreateNestedManyWithoutIpynbNotesInputSchema } from './BibEntryCreateNestedManyWithoutIpynbNotesInputSchema.js';
+import { ReadingListCreateNestedManyWithoutIpynbNotesInputSchema } from './ReadingListCreateNestedManyWithoutIpynbNotesInputSchema.js';
 export const IpynbCreateWithoutSequentialListInputSchema: z.ZodType<Prisma.IpynbCreateWithoutSequentialListInput> = z.object({
   rootRelativePath: z.string(),
   isProtected: z.boolean().optional().nullable(),

@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/GoogleCalendarAuthWhereInputSchema.js
-..//inputTypeSchemas/GoogleCalendarAuthOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/GoogleCalendarAuthWhereUniqueInputSchema.js
-..//inputTypeSchemas/GoogleCalendarAuthScalarFieldEnumSchema.js
+import { GoogleCalendarAuthWhereInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthWhereInputSchema.js'
+import { GoogleCalendarAuthOrderByWithRelationInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthOrderByWithRelationInputSchema.js'
+import { GoogleCalendarAuthWhereUniqueInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthWhereUniqueInputSchema.js'
+import { GoogleCalendarAuthScalarFieldEnumSchema } from '../inputTypeSchemas/GoogleCalendarAuthScalarFieldEnumSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const GoogleCalendarAuthSelectSchema: z.ZodType<Prisma.GoogleCalendarAuthSelect> = z.object({

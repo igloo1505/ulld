@@ -1,7 +1,7 @@
 import {
   KanBanListScalarFieldEnumSchema,
   KanBanListScalarFieldEnumSchema_default
-} from "../../chunk-DNNETPDA.js";
+} from "../../chunk-BENEIZWA.js";
 export {
   KanBanListScalarFieldEnumSchema,
   KanBanListScalarFieldEnumSchema_default as default

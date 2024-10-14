@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TaskCategorySchema } from '../TaskCategorySchema.js';
-import { MdxNoteUncheckedCreateNestedManyWithoutToDoInputSchema } from '../MdxNoteUncheckedCreateNestedManyWithoutToDoInputSchema.js';
-import { TagUncheckedCreateNestedManyWithoutToDoInputSchema } from '../TagUncheckedCreateNestedManyWithoutToDoInputSchema.js';
-import { TopicUncheckedCreateNestedManyWithoutToDoInputSchema } from '../TopicUncheckedCreateNestedManyWithoutToDoInputSchema.js';
-import { SubjectUncheckedCreateNestedManyWithoutToDoInputSchema } from '../SubjectUncheckedCreateNestedManyWithoutToDoInputSchema.js';
+import { TaskCategorySchema } from './TaskCategorySchema.js';
+import { MdxNoteUncheckedCreateNestedManyWithoutToDoInputSchema } from './MdxNoteUncheckedCreateNestedManyWithoutToDoInputSchema.js';
+import { TagUncheckedCreateNestedManyWithoutToDoInputSchema } from './TagUncheckedCreateNestedManyWithoutToDoInputSchema.js';
+import { TopicUncheckedCreateNestedManyWithoutToDoInputSchema } from './TopicUncheckedCreateNestedManyWithoutToDoInputSchema.js';
+import { SubjectUncheckedCreateNestedManyWithoutToDoInputSchema } from './SubjectUncheckedCreateNestedManyWithoutToDoInputSchema.js';
 export const ToDoUncheckedCreateWithoutChildInputSchema: z.ZodType<Prisma.ToDoUncheckedCreateWithoutChildInput> = z.object({
   id: z.number().int().optional(),
   createdAt: z.coerce.date().optional(),

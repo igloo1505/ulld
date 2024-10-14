@@ -1,11 +1,11 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkHBOE5I7Tcjs = require('../../chunk-HBOE5I7T.cjs');
-require('../../chunk-VBWN4YJJ.cjs');
-require('../../chunk-X2HWIL4A.cjs');
+var _chunkAQ6FV2MCcjs = require('../../chunk-AQ6FV2MC.cjs');
+require('../../chunk-HHR6Z4QK.cjs');
+require('../../chunk-YGCZ3T7T.cjs');
 
 
 
-exports.KanBanListUncheckedUpdateManyWithoutKanbanInputSchema = _chunkHBOE5I7Tcjs.KanBanListUncheckedUpdateManyWithoutKanbanInputSchema; exports.default = _chunkHBOE5I7Tcjs.KanBanListUncheckedUpdateManyWithoutKanbanInputSchema_default;
+exports.KanBanListUncheckedUpdateManyWithoutKanbanInputSchema = _chunkAQ6FV2MCcjs.KanBanListUncheckedUpdateManyWithoutKanbanInputSchema; exports.default = _chunkAQ6FV2MCcjs.KanBanListUncheckedUpdateManyWithoutKanbanInputSchema_default;
 //# sourceMappingURL=KanBanListUncheckedUpdateManyWithoutKanbanInputSchema.cjs.map

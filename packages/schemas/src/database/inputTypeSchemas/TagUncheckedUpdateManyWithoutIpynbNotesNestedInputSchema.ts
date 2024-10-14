@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TagCreateWithoutIpynbNotesInputSchema } from '../TagCreateWithoutIpynbNotesInputSchema.js';
-import { TagUncheckedCreateWithoutIpynbNotesInputSchema } from '../TagUncheckedCreateWithoutIpynbNotesInputSchema.js';
-import { TagCreateOrConnectWithoutIpynbNotesInputSchema } from '../TagCreateOrConnectWithoutIpynbNotesInputSchema.js';
-import { TagUpsertWithWhereUniqueWithoutIpynbNotesInputSchema } from '../TagUpsertWithWhereUniqueWithoutIpynbNotesInputSchema.js';
-import { TagWhereUniqueInputSchema } from '../TagWhereUniqueInputSchema.js';
-import { TagUpdateWithWhereUniqueWithoutIpynbNotesInputSchema } from '../TagUpdateWithWhereUniqueWithoutIpynbNotesInputSchema.js';
-import { TagUpdateManyWithWhereWithoutIpynbNotesInputSchema } from '../TagUpdateManyWithWhereWithoutIpynbNotesInputSchema.js';
-import { TagScalarWhereInputSchema } from '../TagScalarWhereInputSchema.js';
+import { TagCreateWithoutIpynbNotesInputSchema } from './TagCreateWithoutIpynbNotesInputSchema.js';
+import { TagUncheckedCreateWithoutIpynbNotesInputSchema } from './TagUncheckedCreateWithoutIpynbNotesInputSchema.js';
+import { TagCreateOrConnectWithoutIpynbNotesInputSchema } from './TagCreateOrConnectWithoutIpynbNotesInputSchema.js';
+import { TagUpsertWithWhereUniqueWithoutIpynbNotesInputSchema } from './TagUpsertWithWhereUniqueWithoutIpynbNotesInputSchema.js';
+import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema.js';
+import { TagUpdateWithWhereUniqueWithoutIpynbNotesInputSchema } from './TagUpdateWithWhereUniqueWithoutIpynbNotesInputSchema.js';
+import { TagUpdateManyWithWhereWithoutIpynbNotesInputSchema } from './TagUpdateManyWithWhereWithoutIpynbNotesInputSchema.js';
+import { TagScalarWhereInputSchema } from './TagScalarWhereInputSchema.js';
 export const TagUncheckedUpdateManyWithoutIpynbNotesNestedInputSchema: z.ZodType<Prisma.TagUncheckedUpdateManyWithoutIpynbNotesNestedInput> = z.object({
   create: z.union([ z.lazy(() => TagCreateWithoutIpynbNotesInputSchema),z.lazy(() => TagCreateWithoutIpynbNotesInputSchema).array(),z.lazy(() => TagUncheckedCreateWithoutIpynbNotesInputSchema),z.lazy(() => TagUncheckedCreateWithoutIpynbNotesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TagCreateOrConnectWithoutIpynbNotesInputSchema),z.lazy(() => TagCreateOrConnectWithoutIpynbNotesInputSchema).array() ]).optional(),

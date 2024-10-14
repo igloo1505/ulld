@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk45XDWHE4cjs = require('../../chunk-45XDWHE4.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkLN4IZVXHcjs = require('../../chunk-LN4IZVXH.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.HealthReportCountOrderByAggregateInputSchema = _chunk45XDWHE4cjs.HealthReportCountOrderByAggregateInputSchema; exports.default = _chunk45XDWHE4cjs.HealthReportCountOrderByAggregateInputSchema_default;
+exports.HealthReportCountOrderByAggregateInputSchema = _chunkLN4IZVXHcjs.HealthReportCountOrderByAggregateInputSchema; exports.default = _chunkLN4IZVXHcjs.HealthReportCountOrderByAggregateInputSchema_default;
 //# sourceMappingURL=HealthReportCountOrderByAggregateInputSchema.cjs.map

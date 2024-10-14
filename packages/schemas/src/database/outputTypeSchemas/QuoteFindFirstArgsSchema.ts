@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/QuoteWhereInputSchema.js
-..//inputTypeSchemas/QuoteOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/QuoteWhereUniqueInputSchema.js
-..//inputTypeSchemas/QuoteScalarFieldEnumSchema.js
+import { QuoteWhereInputSchema } from '../inputTypeSchemas/QuoteWhereInputSchema.js'
+import { QuoteOrderByWithRelationInputSchema } from '../inputTypeSchemas/QuoteOrderByWithRelationInputSchema.js'
+import { QuoteWhereUniqueInputSchema } from '../inputTypeSchemas/QuoteWhereUniqueInputSchema.js'
+import { QuoteScalarFieldEnumSchema } from '../inputTypeSchemas/QuoteScalarFieldEnumSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const QuoteSelectSchema: z.ZodType<Prisma.QuoteSelect> = z.object({

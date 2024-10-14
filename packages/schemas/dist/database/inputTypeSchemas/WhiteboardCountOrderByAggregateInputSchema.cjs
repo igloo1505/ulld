@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkFXM76FCOcjs = require('../../chunk-FXM76FCO.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkLXN4JXZTcjs = require('../../chunk-LXN4JXZT.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.WhiteboardCountOrderByAggregateInputSchema = _chunkFXM76FCOcjs.WhiteboardCountOrderByAggregateInputSchema; exports.default = _chunkFXM76FCOcjs.WhiteboardCountOrderByAggregateInputSchema_default;
+exports.WhiteboardCountOrderByAggregateInputSchema = _chunkLXN4JXZTcjs.WhiteboardCountOrderByAggregateInputSchema; exports.default = _chunkLXN4JXZTcjs.WhiteboardCountOrderByAggregateInputSchema_default;
 //# sourceMappingURL=WhiteboardCountOrderByAggregateInputSchema.cjs.map

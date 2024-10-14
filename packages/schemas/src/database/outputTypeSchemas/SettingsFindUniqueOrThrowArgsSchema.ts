@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/SettingsWhereUniqueInputSchema.js
+import { SettingsWhereUniqueInputSchema } from '../inputTypeSchemas/SettingsWhereUniqueInputSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const SettingsSelectSchema: z.ZodType<Prisma.SettingsSelect> = z.object({

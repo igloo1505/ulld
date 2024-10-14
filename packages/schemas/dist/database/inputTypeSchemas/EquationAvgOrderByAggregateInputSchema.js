@@ -1,8 +1,8 @@
 import {
   EquationAvgOrderByAggregateInputSchema,
   EquationAvgOrderByAggregateInputSchema_default
-} from "../../chunk-XY3ACCLM.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-CUECTXWX.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   EquationAvgOrderByAggregateInputSchema,
   EquationAvgOrderByAggregateInputSchema_default as default

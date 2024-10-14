@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
-import { StringNullableWithAggregatesFilterSchema } from '../StringNullableWithAggregatesFilterSchema.js';
-import { BoolWithAggregatesFilterSchema } from '../BoolWithAggregatesFilterSchema.js';
-import { EnumTERTIARY_TOGGLEWithAggregatesFilterSchema } from '../EnumTERTIARY_TOGGLEWithAggregatesFilterSchema.js';
-import { TERTIARY_TOGGLESchema } from '../TERTIARY_TOGGLESchema.js';
-import { FloatNullableWithAggregatesFilterSchema } from '../FloatNullableWithAggregatesFilterSchema.js';
-import { EnumDIETARY_GOALNullableListFilterSchema } from '../EnumDIETARY_GOALNullableListFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema.js';
+import { EnumTERTIARY_TOGGLEWithAggregatesFilterSchema } from './EnumTERTIARY_TOGGLEWithAggregatesFilterSchema.js';
+import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema.js';
+import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema.js';
+import { EnumDIETARY_GOALNullableListFilterSchema } from './EnumDIETARY_GOALNullableListFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
 export const DietScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.DietScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => DietScalarWhereWithAggregatesInputSchema),z.lazy(() => DietScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => DietScalarWhereWithAggregatesInputSchema).array().optional(),

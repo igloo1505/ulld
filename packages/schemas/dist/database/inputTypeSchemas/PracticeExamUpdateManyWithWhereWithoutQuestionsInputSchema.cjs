@@ -1,18 +1,18 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkYP3WIRZ5cjs = require('../../chunk-YP3WIRZ5.cjs');
-require('../../chunk-P2KDMTUK.cjs');
-require('../../chunk-TMKIIRID.cjs');
-require('../../chunk-JTAZDJIF.cjs');
-require('../../chunk-X2HWIL4A.cjs');
-require('../../chunk-6JWX7MA3.cjs');
-require('../../chunk-DMG3BD7E.cjs');
-require('../../chunk-FR5PAJGJ.cjs');
-require('../../chunk-346JIEOE.cjs');
-require('../../chunk-I44PW4RN.cjs');
+var _chunkCZ47XDS3cjs = require('../../chunk-CZ47XDS3.cjs');
+require('../../chunk-EBLHCTYO.cjs');
+require('../../chunk-3ZXTHZM5.cjs');
+require('../../chunk-VD3LYJVP.cjs');
+require('../../chunk-YGCZ3T7T.cjs');
+require('../../chunk-4HCQC4XG.cjs');
+require('../../chunk-E7BN4QPA.cjs');
+require('../../chunk-2L755XMW.cjs');
+require('../../chunk-2BVC2JVG.cjs');
+require('../../chunk-QQPRJ6EW.cjs');
 
 
 
-exports.PracticeExamUpdateManyWithWhereWithoutQuestionsInputSchema = _chunkYP3WIRZ5cjs.PracticeExamUpdateManyWithWhereWithoutQuestionsInputSchema; exports.default = _chunkYP3WIRZ5cjs.PracticeExamUpdateManyWithWhereWithoutQuestionsInputSchema_default;
+exports.PracticeExamUpdateManyWithWhereWithoutQuestionsInputSchema = _chunkCZ47XDS3cjs.PracticeExamUpdateManyWithWhereWithoutQuestionsInputSchema; exports.default = _chunkCZ47XDS3cjs.PracticeExamUpdateManyWithWhereWithoutQuestionsInputSchema_default;
 //# sourceMappingURL=PracticeExamUpdateManyWithWhereWithoutQuestionsInputSchema.cjs.map

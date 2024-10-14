@@ -1,7 +1,7 @@
 import {
   BibEntryScalarFieldEnumSchema,
   BibEntryScalarFieldEnumSchema_default
-} from "../../chunk-PRFRUNA7.js";
+} from "../../chunk-RYBL3VGK.js";
 export {
   BibEntryScalarFieldEnumSchema,
   BibEntryScalarFieldEnumSchema_default as default

@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFilterSchema } from '../StringFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
 export const NoteTypeWhereInputSchema: z.ZodType<Prisma.NoteTypeWhereInput> = z.object({
   AND: z.union([ z.lazy(() => NoteTypeWhereInputSchema),z.lazy(() => NoteTypeWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => NoteTypeWhereInputSchema).array().optional(),

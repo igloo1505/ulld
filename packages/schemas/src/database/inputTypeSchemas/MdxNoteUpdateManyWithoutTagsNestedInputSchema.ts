@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteCreateWithoutTagsInputSchema } from '../MdxNoteCreateWithoutTagsInputSchema.js';
-import { MdxNoteUncheckedCreateWithoutTagsInputSchema } from '../MdxNoteUncheckedCreateWithoutTagsInputSchema.js';
-import { MdxNoteCreateOrConnectWithoutTagsInputSchema } from '../MdxNoteCreateOrConnectWithoutTagsInputSchema.js';
-import { MdxNoteUpsertWithWhereUniqueWithoutTagsInputSchema } from '../MdxNoteUpsertWithWhereUniqueWithoutTagsInputSchema.js';
-import { MdxNoteWhereUniqueInputSchema } from '../MdxNoteWhereUniqueInputSchema.js';
-import { MdxNoteUpdateWithWhereUniqueWithoutTagsInputSchema } from '../MdxNoteUpdateWithWhereUniqueWithoutTagsInputSchema.js';
-import { MdxNoteUpdateManyWithWhereWithoutTagsInputSchema } from '../MdxNoteUpdateManyWithWhereWithoutTagsInputSchema.js';
-import { MdxNoteScalarWhereInputSchema } from '../MdxNoteScalarWhereInputSchema.js';
+import { MdxNoteCreateWithoutTagsInputSchema } from './MdxNoteCreateWithoutTagsInputSchema.js';
+import { MdxNoteUncheckedCreateWithoutTagsInputSchema } from './MdxNoteUncheckedCreateWithoutTagsInputSchema.js';
+import { MdxNoteCreateOrConnectWithoutTagsInputSchema } from './MdxNoteCreateOrConnectWithoutTagsInputSchema.js';
+import { MdxNoteUpsertWithWhereUniqueWithoutTagsInputSchema } from './MdxNoteUpsertWithWhereUniqueWithoutTagsInputSchema.js';
+import { MdxNoteWhereUniqueInputSchema } from './MdxNoteWhereUniqueInputSchema.js';
+import { MdxNoteUpdateWithWhereUniqueWithoutTagsInputSchema } from './MdxNoteUpdateWithWhereUniqueWithoutTagsInputSchema.js';
+import { MdxNoteUpdateManyWithWhereWithoutTagsInputSchema } from './MdxNoteUpdateManyWithWhereWithoutTagsInputSchema.js';
+import { MdxNoteScalarWhereInputSchema } from './MdxNoteScalarWhereInputSchema.js';
 export const MdxNoteUpdateManyWithoutTagsNestedInputSchema: z.ZodType<Prisma.MdxNoteUpdateManyWithoutTagsNestedInput> = z.object({
   create: z.union([ z.lazy(() => MdxNoteCreateWithoutTagsInputSchema),z.lazy(() => MdxNoteCreateWithoutTagsInputSchema).array(),z.lazy(() => MdxNoteUncheckedCreateWithoutTagsInputSchema),z.lazy(() => MdxNoteUncheckedCreateWithoutTagsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => MdxNoteCreateOrConnectWithoutTagsInputSchema),z.lazy(() => MdxNoteCreateOrConnectWithoutTagsInputSchema).array() ]).optional(),

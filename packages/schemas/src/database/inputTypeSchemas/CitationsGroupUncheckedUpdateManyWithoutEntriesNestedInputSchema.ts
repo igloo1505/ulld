@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { CitationsGroupCreateWithoutEntriesInputSchema } from '../CitationsGroupCreateWithoutEntriesInputSchema.js';
-import { CitationsGroupUncheckedCreateWithoutEntriesInputSchema } from '../CitationsGroupUncheckedCreateWithoutEntriesInputSchema.js';
-import { CitationsGroupCreateOrConnectWithoutEntriesInputSchema } from '../CitationsGroupCreateOrConnectWithoutEntriesInputSchema.js';
-import { CitationsGroupUpsertWithWhereUniqueWithoutEntriesInputSchema } from '../CitationsGroupUpsertWithWhereUniqueWithoutEntriesInputSchema.js';
-import { CitationsGroupWhereUniqueInputSchema } from '../CitationsGroupWhereUniqueInputSchema.js';
-import { CitationsGroupUpdateWithWhereUniqueWithoutEntriesInputSchema } from '../CitationsGroupUpdateWithWhereUniqueWithoutEntriesInputSchema.js';
-import { CitationsGroupUpdateManyWithWhereWithoutEntriesInputSchema } from '../CitationsGroupUpdateManyWithWhereWithoutEntriesInputSchema.js';
-import { CitationsGroupScalarWhereInputSchema } from '../CitationsGroupScalarWhereInputSchema.js';
+import { CitationsGroupCreateWithoutEntriesInputSchema } from './CitationsGroupCreateWithoutEntriesInputSchema.js';
+import { CitationsGroupUncheckedCreateWithoutEntriesInputSchema } from './CitationsGroupUncheckedCreateWithoutEntriesInputSchema.js';
+import { CitationsGroupCreateOrConnectWithoutEntriesInputSchema } from './CitationsGroupCreateOrConnectWithoutEntriesInputSchema.js';
+import { CitationsGroupUpsertWithWhereUniqueWithoutEntriesInputSchema } from './CitationsGroupUpsertWithWhereUniqueWithoutEntriesInputSchema.js';
+import { CitationsGroupWhereUniqueInputSchema } from './CitationsGroupWhereUniqueInputSchema.js';
+import { CitationsGroupUpdateWithWhereUniqueWithoutEntriesInputSchema } from './CitationsGroupUpdateWithWhereUniqueWithoutEntriesInputSchema.js';
+import { CitationsGroupUpdateManyWithWhereWithoutEntriesInputSchema } from './CitationsGroupUpdateManyWithWhereWithoutEntriesInputSchema.js';
+import { CitationsGroupScalarWhereInputSchema } from './CitationsGroupScalarWhereInputSchema.js';
 export const CitationsGroupUncheckedUpdateManyWithoutEntriesNestedInputSchema: z.ZodType<Prisma.CitationsGroupUncheckedUpdateManyWithoutEntriesNestedInput> = z.object({
   create: z.union([ z.lazy(() => CitationsGroupCreateWithoutEntriesInputSchema),z.lazy(() => CitationsGroupCreateWithoutEntriesInputSchema).array(),z.lazy(() => CitationsGroupUncheckedCreateWithoutEntriesInputSchema),z.lazy(() => CitationsGroupUncheckedCreateWithoutEntriesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => CitationsGroupCreateOrConnectWithoutEntriesInputSchema),z.lazy(() => CitationsGroupCreateOrConnectWithoutEntriesInputSchema).array() ]).optional(),

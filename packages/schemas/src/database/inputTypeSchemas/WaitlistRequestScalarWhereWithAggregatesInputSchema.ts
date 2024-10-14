@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
-import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
 export const WaitlistRequestScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.WaitlistRequestScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => WaitlistRequestScalarWhereWithAggregatesInputSchema),z.lazy(() => WaitlistRequestScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => WaitlistRequestScalarWhereWithAggregatesInputSchema).array().optional(),

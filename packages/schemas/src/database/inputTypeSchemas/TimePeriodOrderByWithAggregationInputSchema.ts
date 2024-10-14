@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
-import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
-import { TimePeriodCountOrderByAggregateInputSchema } from '../TimePeriodCountOrderByAggregateInputSchema.js';
-import { TimePeriodAvgOrderByAggregateInputSchema } from '../TimePeriodAvgOrderByAggregateInputSchema.js';
-import { TimePeriodMaxOrderByAggregateInputSchema } from '../TimePeriodMaxOrderByAggregateInputSchema.js';
-import { TimePeriodMinOrderByAggregateInputSchema } from '../TimePeriodMinOrderByAggregateInputSchema.js';
-import { TimePeriodSumOrderByAggregateInputSchema } from '../TimePeriodSumOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { TimePeriodCountOrderByAggregateInputSchema } from './TimePeriodCountOrderByAggregateInputSchema.js';
+import { TimePeriodAvgOrderByAggregateInputSchema } from './TimePeriodAvgOrderByAggregateInputSchema.js';
+import { TimePeriodMaxOrderByAggregateInputSchema } from './TimePeriodMaxOrderByAggregateInputSchema.js';
+import { TimePeriodMinOrderByAggregateInputSchema } from './TimePeriodMinOrderByAggregateInputSchema.js';
+import { TimePeriodSumOrderByAggregateInputSchema } from './TimePeriodSumOrderByAggregateInputSchema.js';
 export const TimePeriodOrderByWithAggregationInputSchema: z.ZodType<Prisma.TimePeriodOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   start: z.lazy(() => SortOrderSchema).optional(),

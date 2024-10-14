@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/SettingsAppendixWhereUniqueInputSchema.js
-..//inputTypeSchemas/SettingsAppendixCreateInputSchema.js
-..//inputTypeSchemas/SettingsAppendixUncheckedCreateInputSchema.js
-..//inputTypeSchemas/SettingsAppendixUpdateInputSchema.js
-..//inputTypeSchemas/SettingsAppendixUncheckedUpdateInputSchema.js
+import { SettingsAppendixWhereUniqueInputSchema } from '../inputTypeSchemas/SettingsAppendixWhereUniqueInputSchema.js'
+import { SettingsAppendixCreateInputSchema } from '../inputTypeSchemas/SettingsAppendixCreateInputSchema.js'
+import { SettingsAppendixUncheckedCreateInputSchema } from '../inputTypeSchemas/SettingsAppendixUncheckedCreateInputSchema.js'
+import { SettingsAppendixUpdateInputSchema } from '../inputTypeSchemas/SettingsAppendixUpdateInputSchema.js'
+import { SettingsAppendixUncheckedUpdateInputSchema } from '../inputTypeSchemas/SettingsAppendixUncheckedUpdateInputSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const SettingsAppendixSelectSchema: z.ZodType<Prisma.SettingsAppendixSelect> = z.object({

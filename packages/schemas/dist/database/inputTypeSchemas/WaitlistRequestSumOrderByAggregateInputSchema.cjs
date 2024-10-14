@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkV5FCPSOHcjs = require('../../chunk-V5FCPSOH.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkYBESGE6Scjs = require('../../chunk-YBESGE6S.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.WaitlistRequestSumOrderByAggregateInputSchema = _chunkV5FCPSOHcjs.WaitlistRequestSumOrderByAggregateInputSchema; exports.default = _chunkV5FCPSOHcjs.WaitlistRequestSumOrderByAggregateInputSchema_default;
+exports.WaitlistRequestSumOrderByAggregateInputSchema = _chunkYBESGE6Scjs.WaitlistRequestSumOrderByAggregateInputSchema; exports.default = _chunkYBESGE6Scjs.WaitlistRequestSumOrderByAggregateInputSchema_default;
 //# sourceMappingURL=WaitlistRequestSumOrderByAggregateInputSchema.cjs.map

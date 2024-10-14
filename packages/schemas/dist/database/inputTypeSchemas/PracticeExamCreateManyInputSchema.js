@@ -1,7 +1,7 @@
 import {
   PracticeExamCreateManyInputSchema,
   PracticeExamCreateManyInputSchema_default
-} from "../../chunk-GNQYQ5GM.js";
+} from "../../chunk-22RCHFUT.js";
 export {
   PracticeExamCreateManyInputSchema,
   PracticeExamCreateManyInputSchema_default as default

@@ -1,7 +1,7 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
 export const RandomImageWhereInputSchema: z.ZodType<Prisma.RandomImageWhereInput> = z.object({
   AND: z.union([ z.lazy(() => RandomImageWhereInputSchema),z.lazy(() => RandomImageWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => RandomImageWhereInputSchema).array().optional(),

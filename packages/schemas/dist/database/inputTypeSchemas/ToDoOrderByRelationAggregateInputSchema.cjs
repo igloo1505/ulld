@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkPFR3DM6Ocjs = require('../../chunk-PFR3DM6O.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkGNGCDLLMcjs = require('../../chunk-GNGCDLLM.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.ToDoOrderByRelationAggregateInputSchema = _chunkPFR3DM6Ocjs.ToDoOrderByRelationAggregateInputSchema; exports.default = _chunkPFR3DM6Ocjs.ToDoOrderByRelationAggregateInputSchema_default;
+exports.ToDoOrderByRelationAggregateInputSchema = _chunkGNGCDLLMcjs.ToDoOrderByRelationAggregateInputSchema; exports.default = _chunkGNGCDLLMcjs.ToDoOrderByRelationAggregateInputSchema_default;
 //# sourceMappingURL=ToDoOrderByRelationAggregateInputSchema.cjs.map

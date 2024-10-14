@@ -2,10 +2,10 @@
 
 
 
-var _chunkBTO463EKcjs = require('../../chunk-BTO463EK.cjs');
+var _chunkBGKA5QZEcjs = require('../../chunk-BGKA5QZE.cjs');
 
 
 
 
-exports.SettingsAppendixPartialSchema = _chunkBTO463EKcjs.SettingsAppendixPartialSchema; exports.SettingsAppendixSchema = _chunkBTO463EKcjs.SettingsAppendixSchema; exports.default = _chunkBTO463EKcjs.SettingsAppendixSchema_default;
+exports.SettingsAppendixPartialSchema = _chunkBGKA5QZEcjs.SettingsAppendixPartialSchema; exports.SettingsAppendixSchema = _chunkBGKA5QZEcjs.SettingsAppendixSchema; exports.default = _chunkBGKA5QZEcjs.SettingsAppendixSchema_default;
 //# sourceMappingURL=SettingsAppendixSchema.cjs.map

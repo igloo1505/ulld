@@ -2,10 +2,10 @@
 
 
 
-var _chunkIRTRB5XYcjs = require('../../chunk-IRTRB5XY.cjs');
+var _chunkYCMB36DGcjs = require('../../chunk-YCMB36DG.cjs');
 
 
 
 
-exports.NoteTypePartialSchema = _chunkIRTRB5XYcjs.NoteTypePartialSchema; exports.NoteTypeSchema = _chunkIRTRB5XYcjs.NoteTypeSchema; exports.default = _chunkIRTRB5XYcjs.NoteTypeSchema_default;
+exports.NoteTypePartialSchema = _chunkYCMB36DGcjs.NoteTypePartialSchema; exports.NoteTypeSchema = _chunkYCMB36DGcjs.NoteTypeSchema; exports.default = _chunkYCMB36DGcjs.NoteTypeSchema_default;
 //# sourceMappingURL=NoteTypeSchema.cjs.map

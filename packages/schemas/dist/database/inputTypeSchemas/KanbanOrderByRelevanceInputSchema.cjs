@@ -1,11 +1,11 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk3ZHBM4SPcjs = require('../../chunk-3ZHBM4SP.cjs');
-require('../../chunk-B25LD2WB.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunk2RNJ2OOJcjs = require('../../chunk-2RNJ2OOJ.cjs');
+require('../../chunk-F6KUTXIQ.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.KanbanOrderByRelevanceInputSchema = _chunk3ZHBM4SPcjs.KanbanOrderByRelevanceInputSchema; exports.default = _chunk3ZHBM4SPcjs.KanbanOrderByRelevanceInputSchema_default;
+exports.KanbanOrderByRelevanceInputSchema = _chunk2RNJ2OOJcjs.KanbanOrderByRelevanceInputSchema; exports.default = _chunk2RNJ2OOJcjs.KanbanOrderByRelevanceInputSchema_default;
 //# sourceMappingURL=KanbanOrderByRelevanceInputSchema.cjs.map

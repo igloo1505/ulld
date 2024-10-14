@@ -1,12 +1,12 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkH655EHKFcjs = require('../../chunk-H655EHKF.cjs');
-require('../../chunk-LDZNGXK5.cjs');
-require('../../chunk-6JWX7MA3.cjs');
-require('../../chunk-HGFNG2SE.cjs');
+var _chunk5N7JQYY4cjs = require('../../chunk-5N7JQYY4.cjs');
+require('../../chunk-46TJSZ52.cjs');
+require('../../chunk-4HCQC4XG.cjs');
+require('../../chunk-I5XF7I5V.cjs');
 
 
 
-exports.SubjectUncheckedUpdateManyWithoutIpynbNotesInputSchema = _chunkH655EHKFcjs.SubjectUncheckedUpdateManyWithoutIpynbNotesInputSchema; exports.default = _chunkH655EHKFcjs.SubjectUncheckedUpdateManyWithoutIpynbNotesInputSchema_default;
+exports.SubjectUncheckedUpdateManyWithoutIpynbNotesInputSchema = _chunk5N7JQYY4cjs.SubjectUncheckedUpdateManyWithoutIpynbNotesInputSchema; exports.default = _chunk5N7JQYY4cjs.SubjectUncheckedUpdateManyWithoutIpynbNotesInputSchema_default;
 //# sourceMappingURL=SubjectUncheckedUpdateManyWithoutIpynbNotesInputSchema.cjs.map

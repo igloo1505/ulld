@@ -1,13 +1,13 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkQE43DOJMcjs = require('../../chunk-QE43DOJM.cjs');
-require('../../chunk-FXM76FCO.cjs');
-require('../../chunk-IWBGR5YM.cjs');
-require('../../chunk-MWZWE4BM.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkXO73GVZMcjs = require('../../chunk-XO73GVZM.cjs');
+require('../../chunk-LXN4JXZT.cjs');
+require('../../chunk-O4XN2DMA.cjs');
+require('../../chunk-IOZH23HS.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.WhiteboardOrderByWithAggregationInputSchema = _chunkQE43DOJMcjs.WhiteboardOrderByWithAggregationInputSchema; exports.default = _chunkQE43DOJMcjs.WhiteboardOrderByWithAggregationInputSchema_default;
+exports.WhiteboardOrderByWithAggregationInputSchema = _chunkXO73GVZMcjs.WhiteboardOrderByWithAggregationInputSchema; exports.default = _chunkXO73GVZMcjs.WhiteboardOrderByWithAggregationInputSchema_default;
 //# sourceMappingURL=WhiteboardOrderByWithAggregationInputSchema.cjs.map

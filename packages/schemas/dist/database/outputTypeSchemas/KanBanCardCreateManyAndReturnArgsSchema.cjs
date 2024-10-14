@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkQZOJHFB7cjs = require('../../chunk-QZOJHFB7.cjs');
-require('../../chunk-S7EIXWTQ.cjs');
+var _chunkOEV2ZJU5cjs = require('../../chunk-OEV2ZJU5.cjs');
+require('../../chunk-OHZRU3WO.cjs');
 
 
 
-exports.KanBanCardCreateManyAndReturnArgsSchema = _chunkQZOJHFB7cjs.KanBanCardCreateManyAndReturnArgsSchema; exports.default = _chunkQZOJHFB7cjs.KanBanCardCreateManyAndReturnArgsSchema_default;
+exports.KanBanCardCreateManyAndReturnArgsSchema = _chunkOEV2ZJU5cjs.KanBanCardCreateManyAndReturnArgsSchema; exports.default = _chunkOEV2ZJU5cjs.KanBanCardCreateManyAndReturnArgsSchema_default;
 //# sourceMappingURL=KanBanCardCreateManyAndReturnArgsSchema.cjs.map

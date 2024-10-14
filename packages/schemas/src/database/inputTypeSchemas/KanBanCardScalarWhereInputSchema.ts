@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from '../IntFilterSchema.js';
-import { IntNullableFilterSchema } from '../IntNullableFilterSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
 export const KanBanCardScalarWhereInputSchema: z.ZodType<Prisma.KanBanCardScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => KanBanCardScalarWhereInputSchema),z.lazy(() => KanBanCardScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => KanBanCardScalarWhereInputSchema).array().optional(),

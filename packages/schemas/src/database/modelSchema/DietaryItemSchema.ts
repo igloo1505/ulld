@@ -1,12 +1,12 @@
 import { z } from 'zod';
-import type { DietWithRelations } from '../DietSchema.js'
-import type { DietPartialWithRelations } from '../DietSchema.js'
-import type { ServingWithRelations } from '../ServingSchema.js'
-import type { ServingPartialWithRelations } from '../ServingSchema.js'
-import { DietWithRelationsSchema } from '../DietSchema.js'
-import { DietPartialWithRelationsSchema } from '../DietSchema.js'
-import { ServingWithRelationsSchema } from '../ServingSchema.js'
-import { ServingPartialWithRelationsSchema } from '../ServingSchema.js'
+import type { DietWithRelations } from './DietSchema.js'
+import type { DietPartialWithRelations } from './DietSchema.js'
+import type { ServingWithRelations } from './ServingSchema.js'
+import type { ServingPartialWithRelations } from './ServingSchema.js'
+import { DietWithRelationsSchema } from './DietSchema.js'
+import { DietPartialWithRelationsSchema } from './DietSchema.js'
+import { ServingWithRelationsSchema } from './ServingSchema.js'
+import { ServingPartialWithRelationsSchema } from './ServingSchema.js'
 /////////////////////////////////////////
 // DIETARY ITEM SCHEMA
 /////////////////////////////////////////

@@ -1,7 +1,7 @@
 import {
   HealthReportCreateWithoutCurrentDietInputSchema,
   HealthReportCreateWithoutCurrentDietInputSchema_default
-} from "../../chunk-VC2H7SCP.js";
+} from "../../chunk-KYVFT7YD.js";
 export {
   HealthReportCreateWithoutCurrentDietInputSchema,
   HealthReportCreateWithoutCurrentDietInputSchema_default as default

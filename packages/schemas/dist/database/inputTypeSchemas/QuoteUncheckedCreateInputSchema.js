@@ -1,7 +1,7 @@
 import {
   QuoteUncheckedCreateInputSchema,
   QuoteUncheckedCreateInputSchema_default
-} from "../../chunk-N7CMDG77.js";
+} from "../../chunk-G4FY7B4N.js";
 export {
   QuoteUncheckedCreateInputSchema,
   QuoteUncheckedCreateInputSchema_default as default

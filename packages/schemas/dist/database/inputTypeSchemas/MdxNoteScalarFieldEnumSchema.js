@@ -1,7 +1,7 @@
 import {
   MdxNoteScalarFieldEnumSchema,
   MdxNoteScalarFieldEnumSchema_default
-} from "../../chunk-Z47AH73G.js";
+} from "../../chunk-C2DKK6P5.js";
 export {
   MdxNoteScalarFieldEnumSchema,
   MdxNoteScalarFieldEnumSchema_default as default

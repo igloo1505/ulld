@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/database/inputTypeSchemas/DJTOrderByRelevanceFieldEnumSchema.ts"],"names":[],"mappings":";AAAA,SAAS,SAAS;AACX,IAAM,qCAAqC,EAAE,KAAK,CAAC,MAAM,CAAC;AACjE,IAAO,6CAAQ","sourcesContent":["import { z } from 'zod';\nexport const DJTOrderByRelevanceFieldEnumSchema = z.enum(['type']);\nexport default DJTOrderByRelevanceFieldEnumSchema;"]}

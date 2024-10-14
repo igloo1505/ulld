@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/KanbanIncludeSchema.js
-..//inputTypeSchemas/KanbanCreateInputSchema.js
-..//inputTypeSchemas/KanbanUncheckedCreateInputSchema.js
+import { KanbanIncludeSchema } from '../inputTypeSchemas/KanbanIncludeSchema.js'
+import { KanbanCreateInputSchema } from '../inputTypeSchemas/KanbanCreateInputSchema.js'
+import { KanbanUncheckedCreateInputSchema } from '../inputTypeSchemas/KanbanUncheckedCreateInputSchema.js'
 import { KanBanListFindManyArgsSchema } from "../outputTypeSchemas/KanBanListFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"

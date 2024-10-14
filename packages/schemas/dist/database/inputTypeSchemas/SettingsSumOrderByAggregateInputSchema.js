@@ -1,8 +1,8 @@
 import {
   SettingsSumOrderByAggregateInputSchema,
   SettingsSumOrderByAggregateInputSchema_default
-} from "../../chunk-6RQ4FMXS.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-XOJ3LHNM.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   SettingsSumOrderByAggregateInputSchema,
   SettingsSumOrderByAggregateInputSchema_default as default

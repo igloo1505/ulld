@@ -1,9 +1,9 @@
 import {
   WhiteboardUncheckedUpdateInputSchema,
   WhiteboardUncheckedUpdateInputSchema_default
-} from "../../chunk-QNY6V6XW.js";
-import "../../chunk-BGJU64IY.js";
-import "../../chunk-3GDEEYNJ.js";
+} from "../../chunk-EKF6DLRY.js";
+import "../../chunk-WKMKAR2K.js";
+import "../../chunk-BQIXGZB5.js";
 export {
   WhiteboardUncheckedUpdateInputSchema,
   WhiteboardUncheckedUpdateInputSchema_default as default

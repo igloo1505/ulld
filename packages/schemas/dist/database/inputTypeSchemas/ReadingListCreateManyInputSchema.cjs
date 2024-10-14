@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkNXJ5MDHBcjs = require('../../chunk-NXJ5MDHB.cjs');
+var _chunkZCH32CBScjs = require('../../chunk-ZCH32CBS.cjs');
 
 
 
-exports.ReadingListCreateManyInputSchema = _chunkNXJ5MDHBcjs.ReadingListCreateManyInputSchema; exports.default = _chunkNXJ5MDHBcjs.ReadingListCreateManyInputSchema_default;
+exports.ReadingListCreateManyInputSchema = _chunkZCH32CBScjs.ReadingListCreateManyInputSchema; exports.default = _chunkZCH32CBScjs.ReadingListCreateManyInputSchema_default;
 //# sourceMappingURL=ReadingListCreateManyInputSchema.cjs.map

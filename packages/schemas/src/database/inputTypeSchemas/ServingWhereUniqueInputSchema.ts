@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ServingWhereInputSchema } from '../ServingWhereInputSchema.js';
-import { IntFilterSchema } from '../IntFilterSchema.js';
-import { FloatNullableFilterSchema } from '../FloatNullableFilterSchema.js';
-import { EnumQUANTITY_GUESSNullableFilterSchema } from '../EnumQUANTITY_GUESSNullableFilterSchema.js';
-import { QUANTITY_GUESSSchema } from '../QUANTITY_GUESSSchema.js';
-import { DietaryItemRelationFilterSchema } from '../DietaryItemRelationFilterSchema.js';
-import { DietaryItemWhereInputSchema } from '../DietaryItemWhereInputSchema.js';
+import { ServingWhereInputSchema } from './ServingWhereInputSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { FloatNullableFilterSchema } from './FloatNullableFilterSchema.js';
+import { EnumQUANTITY_GUESSNullableFilterSchema } from './EnumQUANTITY_GUESSNullableFilterSchema.js';
+import { QUANTITY_GUESSSchema } from './QUANTITY_GUESSSchema.js';
+import { DietaryItemRelationFilterSchema } from './DietaryItemRelationFilterSchema.js';
+import { DietaryItemWhereInputSchema } from './DietaryItemWhereInputSchema.js';
 export const ServingWhereUniqueInputSchema: z.ZodType<Prisma.ServingWhereUniqueInput> = z.object({
   id: z.number().int()
 })

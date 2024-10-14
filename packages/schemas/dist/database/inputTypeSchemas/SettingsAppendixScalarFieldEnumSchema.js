@@ -1,7 +1,7 @@
 import {
   SettingsAppendixScalarFieldEnumSchema,
   SettingsAppendixScalarFieldEnumSchema_default
-} from "../../chunk-ESW63JLV.js";
+} from "../../chunk-Q4LGGI3V.js";
 export {
   SettingsAppendixScalarFieldEnumSchema,
   SettingsAppendixScalarFieldEnumSchema_default as default

@@ -1,8 +1,8 @@
 import {
   SubjectCreateManyArgsSchema,
   SubjectCreateManyArgsSchema_default
-} from "../../chunk-YZNEDHFB.js";
-import "../../chunk-22IXI3KP.js";
+} from "../../chunk-5NVQSFHP.js";
+import "../../chunk-FPHHMBJ6.js";
 export {
   SubjectCreateManyArgsSchema,
   SubjectCreateManyArgsSchema_default as default

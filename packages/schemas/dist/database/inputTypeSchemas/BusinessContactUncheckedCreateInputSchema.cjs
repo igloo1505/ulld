@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkDINFU7A7cjs = require('../../chunk-DINFU7A7.cjs');
+var _chunkROHNOAPScjs = require('../../chunk-ROHNOAPS.cjs');
 
 
 
-exports.BusinessContactUncheckedCreateInputSchema = _chunkDINFU7A7cjs.BusinessContactUncheckedCreateInputSchema; exports.default = _chunkDINFU7A7cjs.BusinessContactUncheckedCreateInputSchema_default;
+exports.BusinessContactUncheckedCreateInputSchema = _chunkROHNOAPScjs.BusinessContactUncheckedCreateInputSchema; exports.default = _chunkROHNOAPScjs.BusinessContactUncheckedCreateInputSchema_default;
 //# sourceMappingURL=BusinessContactUncheckedCreateInputSchema.cjs.map

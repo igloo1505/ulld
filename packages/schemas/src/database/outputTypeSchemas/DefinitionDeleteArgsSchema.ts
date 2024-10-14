@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/DefinitionIncludeSchema.js
-..//inputTypeSchemas/DefinitionWhereUniqueInputSchema.js
+import { DefinitionIncludeSchema } from '../inputTypeSchemas/DefinitionIncludeSchema.js'
+import { DefinitionWhereUniqueInputSchema } from '../inputTypeSchemas/DefinitionWhereUniqueInputSchema.js'
 import { MdxNoteArgsSchema } from "../outputTypeSchemas/MdxNoteArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------

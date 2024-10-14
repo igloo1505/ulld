@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
 export const PracticeExamMaxOrderByAggregateInputSchema: z.ZodType<Prisma.PracticeExamMaxOrderByAggregateInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   correctCount: z.lazy(() => SortOrderSchema).optional(),

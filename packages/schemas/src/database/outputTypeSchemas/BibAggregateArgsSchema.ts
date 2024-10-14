@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/BibWhereInputSchema.js
-..//inputTypeSchemas/BibOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/BibWhereUniqueInputSchema.js
+import { BibWhereInputSchema } from '../inputTypeSchemas/BibWhereInputSchema.js'
+import { BibOrderByWithRelationInputSchema } from '../inputTypeSchemas/BibOrderByWithRelationInputSchema.js'
+import { BibWhereUniqueInputSchema } from '../inputTypeSchemas/BibWhereUniqueInputSchema.js'
 export const BibAggregateArgsSchema: z.ZodType<Prisma.BibAggregateArgs> = z.object({
   where: BibWhereInputSchema.optional(),
   orderBy: z.union([ BibOrderByWithRelationInputSchema.array(),BibOrderByWithRelationInputSchema ]).optional(),

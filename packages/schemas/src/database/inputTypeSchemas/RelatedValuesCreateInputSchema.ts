@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { JsonNullValueInputSchema } from '../JsonNullValueInputSchema.js';
-import { InputJsonValueSchema } from '../InputJsonValueSchema.js';
-import { RelatedValuesCreateequationIdInputSchema } from '../RelatedValuesCreateequationIdInputSchema.js';
-import { EquationCreateNestedManyWithoutRelatedValuesInputSchema } from '../EquationCreateNestedManyWithoutRelatedValuesInputSchema.js';
+import { JsonNullValueInputSchema } from './JsonNullValueInputSchema.js';
+import { InputJsonValueSchema } from './InputJsonValueSchema.js';
+import { RelatedValuesCreateequationIdInputSchema } from './RelatedValuesCreateequationIdInputSchema.js';
+import { EquationCreateNestedManyWithoutRelatedValuesInputSchema } from './EquationCreateNestedManyWithoutRelatedValuesInputSchema.js';
 export const RelatedValuesCreateInputSchema: z.ZodType<Prisma.RelatedValuesCreateInput> = z.object({
   input: z.union([ z.lazy(() => JsonNullValueInputSchema),InputJsonValueSchema ]).optional(),
   output: z.number(),

@@ -1,7 +1,7 @@
 import {
   SubjectCreateManyKanbanInputSchema,
   SubjectCreateManyKanbanInputSchema_default
-} from "../../chunk-SMN6J6ST.js";
+} from "../../chunk-JWBKN6ZD.js";
 export {
   SubjectCreateManyKanbanInputSchema,
   SubjectCreateManyKanbanInputSchema_default as default

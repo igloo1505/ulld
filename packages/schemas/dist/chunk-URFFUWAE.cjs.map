@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/database/inputTypeSchemas/TagOrderByRelevanceFieldEnumSchema.ts"],"names":[],"mappings":";AAAA,SAAS,SAAS;AAEX,IAAM,qCAAqC,EAAE,KAAK,CAAC,OAAO,CAAC;AAElE,IAAO,6CAAQ","sourcesContent":["import { z } from 'zod';\n\nexport const TagOrderByRelevanceFieldEnumSchema = z.enum(['value']);\n\nexport default TagOrderByRelevanceFieldEnumSchema;\n"]}

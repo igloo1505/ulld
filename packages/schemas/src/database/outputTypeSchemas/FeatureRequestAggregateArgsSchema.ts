@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/FeatureRequestWhereInputSchema.js
-..//inputTypeSchemas/FeatureRequestOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/FeatureRequestWhereUniqueInputSchema.js
+import { FeatureRequestWhereInputSchema } from '../inputTypeSchemas/FeatureRequestWhereInputSchema.js'
+import { FeatureRequestOrderByWithRelationInputSchema } from '../inputTypeSchemas/FeatureRequestOrderByWithRelationInputSchema.js'
+import { FeatureRequestWhereUniqueInputSchema } from '../inputTypeSchemas/FeatureRequestWhereUniqueInputSchema.js'
 export const FeatureRequestAggregateArgsSchema: z.ZodType<Prisma.FeatureRequestAggregateArgs> = z.object({
   where: FeatureRequestWhereInputSchema.optional(),
   orderBy: z.union([ FeatureRequestOrderByWithRelationInputSchema.array(),FeatureRequestOrderByWithRelationInputSchema ]).optional(),

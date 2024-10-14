@@ -1,11 +1,11 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
-import { IntNullableFilterSchema } from '../IntNullableFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
-import { MdxNoteNullableRelationFilterSchema } from '../MdxNoteNullableRelationFilterSchema.js';
-import { MdxNoteWhereInputSchema } from '../MdxNoteWhereInputSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { MdxNoteNullableRelationFilterSchema } from './MdxNoteNullableRelationFilterSchema.js';
+import { MdxNoteWhereInputSchema } from './MdxNoteWhereInputSchema.js';
 export const DefinitionWhereInputSchema: z.ZodType<Prisma.DefinitionWhereInput> = z.object({
   AND: z.union([ z.lazy(() => DefinitionWhereInputSchema),z.lazy(() => DefinitionWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => DefinitionWhereInputSchema).array().optional(),

@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { EquationCreateWithoutMdxNotesInputSchema } from '../EquationCreateWithoutMdxNotesInputSchema.js';
-import { EquationUncheckedCreateWithoutMdxNotesInputSchema } from '../EquationUncheckedCreateWithoutMdxNotesInputSchema.js';
-import { EquationCreateOrConnectWithoutMdxNotesInputSchema } from '../EquationCreateOrConnectWithoutMdxNotesInputSchema.js';
-import { EquationUpsertWithWhereUniqueWithoutMdxNotesInputSchema } from '../EquationUpsertWithWhereUniqueWithoutMdxNotesInputSchema.js';
-import { EquationWhereUniqueInputSchema } from '../EquationWhereUniqueInputSchema.js';
-import { EquationUpdateWithWhereUniqueWithoutMdxNotesInputSchema } from '../EquationUpdateWithWhereUniqueWithoutMdxNotesInputSchema.js';
-import { EquationUpdateManyWithWhereWithoutMdxNotesInputSchema } from '../EquationUpdateManyWithWhereWithoutMdxNotesInputSchema.js';
-import { EquationScalarWhereInputSchema } from '../EquationScalarWhereInputSchema.js';
+import { EquationCreateWithoutMdxNotesInputSchema } from './EquationCreateWithoutMdxNotesInputSchema.js';
+import { EquationUncheckedCreateWithoutMdxNotesInputSchema } from './EquationUncheckedCreateWithoutMdxNotesInputSchema.js';
+import { EquationCreateOrConnectWithoutMdxNotesInputSchema } from './EquationCreateOrConnectWithoutMdxNotesInputSchema.js';
+import { EquationUpsertWithWhereUniqueWithoutMdxNotesInputSchema } from './EquationUpsertWithWhereUniqueWithoutMdxNotesInputSchema.js';
+import { EquationWhereUniqueInputSchema } from './EquationWhereUniqueInputSchema.js';
+import { EquationUpdateWithWhereUniqueWithoutMdxNotesInputSchema } from './EquationUpdateWithWhereUniqueWithoutMdxNotesInputSchema.js';
+import { EquationUpdateManyWithWhereWithoutMdxNotesInputSchema } from './EquationUpdateManyWithWhereWithoutMdxNotesInputSchema.js';
+import { EquationScalarWhereInputSchema } from './EquationScalarWhereInputSchema.js';
 export const EquationUncheckedUpdateManyWithoutMdxNotesNestedInputSchema: z.ZodType<Prisma.EquationUncheckedUpdateManyWithoutMdxNotesNestedInput> = z.object({
   create: z.union([ z.lazy(() => EquationCreateWithoutMdxNotesInputSchema),z.lazy(() => EquationCreateWithoutMdxNotesInputSchema).array(),z.lazy(() => EquationUncheckedCreateWithoutMdxNotesInputSchema),z.lazy(() => EquationUncheckedCreateWithoutMdxNotesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => EquationCreateOrConnectWithoutMdxNotesInputSchema),z.lazy(() => EquationCreateOrConnectWithoutMdxNotesInputSchema).array() ]).optional(),

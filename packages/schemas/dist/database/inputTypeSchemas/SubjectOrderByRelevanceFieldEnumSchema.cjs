@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkBLUNE7JXcjs = require('../../chunk-BLUNE7JX.cjs');
+var _chunkAVSJP3O5cjs = require('../../chunk-AVSJP3O5.cjs');
 
 
 
-exports.SubjectOrderByRelevanceFieldEnumSchema = _chunkBLUNE7JXcjs.SubjectOrderByRelevanceFieldEnumSchema; exports.default = _chunkBLUNE7JXcjs.SubjectOrderByRelevanceFieldEnumSchema_default;
+exports.SubjectOrderByRelevanceFieldEnumSchema = _chunkAVSJP3O5cjs.SubjectOrderByRelevanceFieldEnumSchema; exports.default = _chunkAVSJP3O5cjs.SubjectOrderByRelevanceFieldEnumSchema_default;
 //# sourceMappingURL=SubjectOrderByRelevanceFieldEnumSchema.cjs.map

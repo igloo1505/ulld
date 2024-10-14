@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/SequentialNoteListIncludeSchema.js
-..//inputTypeSchemas/SequentialNoteListCreateInputSchema.js
-..//inputTypeSchemas/SequentialNoteListUncheckedCreateInputSchema.js
+import { SequentialNoteListIncludeSchema } from '../inputTypeSchemas/SequentialNoteListIncludeSchema.js'
+import { SequentialNoteListCreateInputSchema } from '../inputTypeSchemas/SequentialNoteListCreateInputSchema.js'
+import { SequentialNoteListUncheckedCreateInputSchema } from '../inputTypeSchemas/SequentialNoteListUncheckedCreateInputSchema.js'
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"
 import { SequentialNoteListCountOutputTypeArgsSchema } from "../outputTypeSchemas/SequentialNoteListCountOutputTypeArgsSchema"

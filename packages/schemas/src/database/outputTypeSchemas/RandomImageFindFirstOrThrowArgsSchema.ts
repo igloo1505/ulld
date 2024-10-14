@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/RandomImageWhereInputSchema.js
-..//inputTypeSchemas/RandomImageOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/RandomImageWhereUniqueInputSchema.js
-..//inputTypeSchemas/RandomImageScalarFieldEnumSchema.js
+import { RandomImageWhereInputSchema } from '../inputTypeSchemas/RandomImageWhereInputSchema.js'
+import { RandomImageOrderByWithRelationInputSchema } from '../inputTypeSchemas/RandomImageOrderByWithRelationInputSchema.js'
+import { RandomImageWhereUniqueInputSchema } from '../inputTypeSchemas/RandomImageWhereUniqueInputSchema.js'
+import { RandomImageScalarFieldEnumSchema } from '../inputTypeSchemas/RandomImageScalarFieldEnumSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const RandomImageSelectSchema: z.ZodType<Prisma.RandomImageSelect> = z.object({

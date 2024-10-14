@@ -1,8 +1,8 @@
 import {
   FeatureRequestAvgOrderByAggregateInputSchema,
   FeatureRequestAvgOrderByAggregateInputSchema_default
-} from "../../chunk-KVAM5AU2.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-IRHK37J3.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   FeatureRequestAvgOrderByAggregateInputSchema,
   FeatureRequestAvgOrderByAggregateInputSchema_default as default

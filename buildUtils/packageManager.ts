@@ -3,8 +3,8 @@ import fs from "fs";
 import path from "path";
 import rl from "readline";
 import npmFetch from "npm-registry-fetch";
-import { PackageJsonType } from "@ulld/utilities/packageJsonType";
-import { JsonFile } from "@ulld/utilities/jsonFileClass";
+import {PackageJsonType} from "../packages/utilities/src/types/packageJson/packageJsonType"
+import {JsonFile} from "../packages/utilities/src/classes/file/jsonFile"
 import { InternalAppName } from "../packages/types/src/internalAppNames";
 
 interface Dependency {
@@ -25,9 +25,9 @@ interface ClonedBaseAppInternalDep {
     version: string;
 }
 
-interface PackageSource {
+export interface PackageSource {
     name: string;
-    content: PackageJsonType;
+    content: packageJsonType;
     type: "package" | "app" | "unknown";
     path: string;
     deps: Dependency[];

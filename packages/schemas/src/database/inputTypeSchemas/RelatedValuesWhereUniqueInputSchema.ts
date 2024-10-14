@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { RelatedValuesWhereInputSchema } from '../RelatedValuesWhereInputSchema.js';
-import { JsonFilterSchema } from '../JsonFilterSchema.js';
-import { FloatFilterSchema } from '../FloatFilterSchema.js';
-import { EquationListRelationFilterSchema } from '../EquationListRelationFilterSchema.js';
+import { RelatedValuesWhereInputSchema } from './RelatedValuesWhereInputSchema.js';
+import { JsonFilterSchema } from './JsonFilterSchema.js';
+import { FloatFilterSchema } from './FloatFilterSchema.js';
+import { EquationListRelationFilterSchema } from './EquationListRelationFilterSchema.js';
 export const RelatedValuesWhereUniqueInputSchema: z.ZodType<Prisma.RelatedValuesWhereUniqueInput> = z.union([
   z.object({
     id: z.number().int(),

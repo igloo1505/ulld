@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/database/inputTypeSchemas/NullsOrderSchema.ts"],"names":[],"mappings":";AAAA,SAAS,SAAS;AAEX,IAAM,mBAAmB,EAAE,KAAK,CAAC,SAAQ,MAAM,CAAC;AAEvD,IAAO,2BAAQ","sourcesContent":["import { z } from 'zod';\n\nexport const NullsOrderSchema = z.enum(['first','last']);\n\nexport default NullsOrderSchema;\n"]}

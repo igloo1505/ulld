@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { PracticeExamWhereUniqueInputSchema } from '../PracticeExamWhereUniqueInputSchema.js';
-import { PracticeExamUpdateWithoutSubjectsInputSchema } from '../PracticeExamUpdateWithoutSubjectsInputSchema.js';
-import { PracticeExamUncheckedUpdateWithoutSubjectsInputSchema } from '../PracticeExamUncheckedUpdateWithoutSubjectsInputSchema.js';
-import { PracticeExamCreateWithoutSubjectsInputSchema } from '../PracticeExamCreateWithoutSubjectsInputSchema.js';
-import { PracticeExamUncheckedCreateWithoutSubjectsInputSchema } from '../PracticeExamUncheckedCreateWithoutSubjectsInputSchema.js';
+import { PracticeExamWhereUniqueInputSchema } from './PracticeExamWhereUniqueInputSchema.js';
+import { PracticeExamUpdateWithoutSubjectsInputSchema } from './PracticeExamUpdateWithoutSubjectsInputSchema.js';
+import { PracticeExamUncheckedUpdateWithoutSubjectsInputSchema } from './PracticeExamUncheckedUpdateWithoutSubjectsInputSchema.js';
+import { PracticeExamCreateWithoutSubjectsInputSchema } from './PracticeExamCreateWithoutSubjectsInputSchema.js';
+import { PracticeExamUncheckedCreateWithoutSubjectsInputSchema } from './PracticeExamUncheckedCreateWithoutSubjectsInputSchema.js';
 export const PracticeExamUpsertWithWhereUniqueWithoutSubjectsInputSchema: z.ZodType<Prisma.PracticeExamUpsertWithWhereUniqueWithoutSubjectsInput> = z.object({
   where: z.lazy(() => PracticeExamWhereUniqueInputSchema),
   update: z.union([ z.lazy(() => PracticeExamUpdateWithoutSubjectsInputSchema),z.lazy(() => PracticeExamUncheckedUpdateWithoutSubjectsInputSchema) ]),

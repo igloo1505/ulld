@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk3T6CK22Ccjs = require('../../chunk-3T6CK22C.cjs');
+var _chunkRDIU6AYAcjs = require('../../chunk-RDIU6AYA.cjs');
 
 
 
-exports.DefinitionCreateWithoutMdxNoteInputSchema = _chunk3T6CK22Ccjs.DefinitionCreateWithoutMdxNoteInputSchema; exports.default = _chunk3T6CK22Ccjs.DefinitionCreateWithoutMdxNoteInputSchema_default;
+exports.DefinitionCreateWithoutMdxNoteInputSchema = _chunkRDIU6AYAcjs.DefinitionCreateWithoutMdxNoteInputSchema; exports.default = _chunkRDIU6AYAcjs.DefinitionCreateWithoutMdxNoteInputSchema_default;
 //# sourceMappingURL=DefinitionCreateWithoutMdxNoteInputSchema.cjs.map

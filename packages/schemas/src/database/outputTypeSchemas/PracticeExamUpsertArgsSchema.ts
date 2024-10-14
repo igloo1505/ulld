@@ -1,11 +1,11 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/PracticeExamIncludeSchema.js
-..//inputTypeSchemas/PracticeExamWhereUniqueInputSchema.js
-..//inputTypeSchemas/PracticeExamCreateInputSchema.js
-..//inputTypeSchemas/PracticeExamUncheckedCreateInputSchema.js
-..//inputTypeSchemas/PracticeExamUpdateInputSchema.js
-..//inputTypeSchemas/PracticeExamUncheckedUpdateInputSchema.js
+import { PracticeExamIncludeSchema } from '../inputTypeSchemas/PracticeExamIncludeSchema.js'
+import { PracticeExamWhereUniqueInputSchema } from '../inputTypeSchemas/PracticeExamWhereUniqueInputSchema.js'
+import { PracticeExamCreateInputSchema } from '../inputTypeSchemas/PracticeExamCreateInputSchema.js'
+import { PracticeExamUncheckedCreateInputSchema } from '../inputTypeSchemas/PracticeExamUncheckedCreateInputSchema.js'
+import { PracticeExamUpdateInputSchema } from '../inputTypeSchemas/PracticeExamUpdateInputSchema.js'
+import { PracticeExamUncheckedUpdateInputSchema } from '../inputTypeSchemas/PracticeExamUncheckedUpdateInputSchema.js'
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"

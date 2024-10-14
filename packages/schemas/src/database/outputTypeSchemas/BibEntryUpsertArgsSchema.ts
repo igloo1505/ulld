@@ -1,11 +1,11 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/BibEntryIncludeSchema.js
-..//inputTypeSchemas/BibEntryWhereUniqueInputSchema.js
-..//inputTypeSchemas/BibEntryCreateInputSchema.js
-..//inputTypeSchemas/BibEntryUncheckedCreateInputSchema.js
-..//inputTypeSchemas/BibEntryUpdateInputSchema.js
-..//inputTypeSchemas/BibEntryUncheckedUpdateInputSchema.js
+import { BibEntryIncludeSchema } from '../inputTypeSchemas/BibEntryIncludeSchema.js'
+import { BibEntryWhereUniqueInputSchema } from '../inputTypeSchemas/BibEntryWhereUniqueInputSchema.js'
+import { BibEntryCreateInputSchema } from '../inputTypeSchemas/BibEntryCreateInputSchema.js'
+import { BibEntryUncheckedCreateInputSchema } from '../inputTypeSchemas/BibEntryUncheckedCreateInputSchema.js'
+import { BibEntryUpdateInputSchema } from '../inputTypeSchemas/BibEntryUpdateInputSchema.js'
+import { BibEntryUncheckedUpdateInputSchema } from '../inputTypeSchemas/BibEntryUncheckedUpdateInputSchema.js'
 import { BibArgsSchema } from "../outputTypeSchemas/BibArgsSchema"
 import { CitationsGroupFindManyArgsSchema } from "../outputTypeSchemas/CitationsGroupFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"

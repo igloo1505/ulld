@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk7LKYBLUVcjs = require('../../chunk-7LKYBLUV.cjs');
+var _chunk7FJE2QGBcjs = require('../../chunk-7FJE2QGB.cjs');
 
 
 
-exports.SettingsAppendixUncheckedCreateInputSchema = _chunk7LKYBLUVcjs.SettingsAppendixUncheckedCreateInputSchema; exports.default = _chunk7LKYBLUVcjs.SettingsAppendixUncheckedCreateInputSchema_default;
+exports.SettingsAppendixUncheckedCreateInputSchema = _chunk7FJE2QGBcjs.SettingsAppendixUncheckedCreateInputSchema; exports.default = _chunk7FJE2QGBcjs.SettingsAppendixUncheckedCreateInputSchema_default;
 //# sourceMappingURL=SettingsAppendixUncheckedCreateInputSchema.cjs.map

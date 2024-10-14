@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkK3MBDI3Pcjs = require('../../chunk-K3MBDI3P.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunk5FOEPHJRcjs = require('../../chunk-5FOEPHJR.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.ServingSumOrderByAggregateInputSchema = _chunkK3MBDI3Pcjs.ServingSumOrderByAggregateInputSchema; exports.default = _chunkK3MBDI3Pcjs.ServingSumOrderByAggregateInputSchema_default;
+exports.ServingSumOrderByAggregateInputSchema = _chunk5FOEPHJRcjs.ServingSumOrderByAggregateInputSchema; exports.default = _chunk5FOEPHJRcjs.ServingSumOrderByAggregateInputSchema_default;
 //# sourceMappingURL=ServingSumOrderByAggregateInputSchema.cjs.map

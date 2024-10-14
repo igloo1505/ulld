@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk7SNXTVFRcjs = require('../../chunk-7SNXTVFR.cjs');
+var _chunkQV56XSUYcjs = require('../../chunk-QV56XSUY.cjs');
 
 
 
-exports.BibCreateWithoutEntriesInputSchema = _chunk7SNXTVFRcjs.BibCreateWithoutEntriesInputSchema; exports.default = _chunk7SNXTVFRcjs.BibCreateWithoutEntriesInputSchema_default;
+exports.BibCreateWithoutEntriesInputSchema = _chunkQV56XSUYcjs.BibCreateWithoutEntriesInputSchema; exports.default = _chunkQV56XSUYcjs.BibCreateWithoutEntriesInputSchema_default;
 //# sourceMappingURL=BibCreateWithoutEntriesInputSchema.cjs.map

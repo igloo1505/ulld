@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from '../IntFilterSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
 export const WaitlistRequestWhereInputSchema: z.ZodType<Prisma.WaitlistRequestWhereInput> = z.object({
   AND: z.union([ z.lazy(() => WaitlistRequestWhereInputSchema),z.lazy(() => WaitlistRequestWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => WaitlistRequestWhereInputSchema).array().optional(),

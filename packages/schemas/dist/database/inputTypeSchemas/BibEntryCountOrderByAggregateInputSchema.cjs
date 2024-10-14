@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkH53JU2UMcjs = require('../../chunk-H53JU2UM.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkHGF33FNQcjs = require('../../chunk-HGF33FNQ.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.BibEntryCountOrderByAggregateInputSchema = _chunkH53JU2UMcjs.BibEntryCountOrderByAggregateInputSchema; exports.default = _chunkH53JU2UMcjs.BibEntryCountOrderByAggregateInputSchema_default;
+exports.BibEntryCountOrderByAggregateInputSchema = _chunkHGF33FNQcjs.BibEntryCountOrderByAggregateInputSchema; exports.default = _chunkHGF33FNQcjs.BibEntryCountOrderByAggregateInputSchema_default;
 //# sourceMappingURL=BibEntryCountOrderByAggregateInputSchema.cjs.map

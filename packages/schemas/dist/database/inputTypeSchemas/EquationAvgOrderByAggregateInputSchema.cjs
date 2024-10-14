@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkYT57VXF2cjs = require('../../chunk-YT57VXF2.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkVG5IHVRDcjs = require('../../chunk-VG5IHVRD.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.EquationAvgOrderByAggregateInputSchema = _chunkYT57VXF2cjs.EquationAvgOrderByAggregateInputSchema; exports.default = _chunkYT57VXF2cjs.EquationAvgOrderByAggregateInputSchema_default;
+exports.EquationAvgOrderByAggregateInputSchema = _chunkVG5IHVRDcjs.EquationAvgOrderByAggregateInputSchema; exports.default = _chunkVG5IHVRDcjs.EquationAvgOrderByAggregateInputSchema_default;
 //# sourceMappingURL=EquationAvgOrderByAggregateInputSchema.cjs.map

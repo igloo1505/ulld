@@ -1,14 +1,14 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ServingCreateWithoutItemInputSchema } from '../ServingCreateWithoutItemInputSchema.js';
-import { ServingUncheckedCreateWithoutItemInputSchema } from '../ServingUncheckedCreateWithoutItemInputSchema.js';
-import { ServingCreateOrConnectWithoutItemInputSchema } from '../ServingCreateOrConnectWithoutItemInputSchema.js';
-import { ServingUpsertWithWhereUniqueWithoutItemInputSchema } from '../ServingUpsertWithWhereUniqueWithoutItemInputSchema.js';
-import { ServingCreateManyItemInputEnvelopeSchema } from '../ServingCreateManyItemInputEnvelopeSchema.js';
-import { ServingWhereUniqueInputSchema } from '../ServingWhereUniqueInputSchema.js';
-import { ServingUpdateWithWhereUniqueWithoutItemInputSchema } from '../ServingUpdateWithWhereUniqueWithoutItemInputSchema.js';
-import { ServingUpdateManyWithWhereWithoutItemInputSchema } from '../ServingUpdateManyWithWhereWithoutItemInputSchema.js';
-import { ServingScalarWhereInputSchema } from '../ServingScalarWhereInputSchema.js';
+import { ServingCreateWithoutItemInputSchema } from './ServingCreateWithoutItemInputSchema.js';
+import { ServingUncheckedCreateWithoutItemInputSchema } from './ServingUncheckedCreateWithoutItemInputSchema.js';
+import { ServingCreateOrConnectWithoutItemInputSchema } from './ServingCreateOrConnectWithoutItemInputSchema.js';
+import { ServingUpsertWithWhereUniqueWithoutItemInputSchema } from './ServingUpsertWithWhereUniqueWithoutItemInputSchema.js';
+import { ServingCreateManyItemInputEnvelopeSchema } from './ServingCreateManyItemInputEnvelopeSchema.js';
+import { ServingWhereUniqueInputSchema } from './ServingWhereUniqueInputSchema.js';
+import { ServingUpdateWithWhereUniqueWithoutItemInputSchema } from './ServingUpdateWithWhereUniqueWithoutItemInputSchema.js';
+import { ServingUpdateManyWithWhereWithoutItemInputSchema } from './ServingUpdateManyWithWhereWithoutItemInputSchema.js';
+import { ServingScalarWhereInputSchema } from './ServingScalarWhereInputSchema.js';
 export const ServingUncheckedUpdateManyWithoutItemNestedInputSchema: z.ZodType<Prisma.ServingUncheckedUpdateManyWithoutItemNestedInput> = z.object({
   create: z.union([ z.lazy(() => ServingCreateWithoutItemInputSchema),z.lazy(() => ServingCreateWithoutItemInputSchema).array(),z.lazy(() => ServingUncheckedCreateWithoutItemInputSchema),z.lazy(() => ServingUncheckedCreateWithoutItemInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => ServingCreateOrConnectWithoutItemInputSchema),z.lazy(() => ServingCreateOrConnectWithoutItemInputSchema).array() ]).optional(),

@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/GoogleCalendarAuthWhereInputSchema.js
-..//inputTypeSchemas/GoogleCalendarAuthOrderByWithAggregationInputSchema.js
-..//inputTypeSchemas/GoogleCalendarAuthScalarFieldEnumSchema.js
-..//inputTypeSchemas/GoogleCalendarAuthScalarWhereWithAggregatesInputSchema.js
+import { GoogleCalendarAuthWhereInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthWhereInputSchema.js'
+import { GoogleCalendarAuthOrderByWithAggregationInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthOrderByWithAggregationInputSchema.js'
+import { GoogleCalendarAuthScalarFieldEnumSchema } from '../inputTypeSchemas/GoogleCalendarAuthScalarFieldEnumSchema.js'
+import { GoogleCalendarAuthScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthScalarWhereWithAggregatesInputSchema.js'
 export const GoogleCalendarAuthGroupByArgsSchema: z.ZodType<Prisma.GoogleCalendarAuthGroupByArgs> = z.object({
   where: GoogleCalendarAuthWhereInputSchema.optional(),
   orderBy: z.union([ GoogleCalendarAuthOrderByWithAggregationInputSchema.array(),GoogleCalendarAuthOrderByWithAggregationInputSchema ]).optional(),

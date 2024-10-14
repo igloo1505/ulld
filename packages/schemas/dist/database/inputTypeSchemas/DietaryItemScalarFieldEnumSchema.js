@@ -1,7 +1,7 @@
 import {
   DietaryItemScalarFieldEnumSchema,
   DietaryItemScalarFieldEnumSchema_default
-} from "../../chunk-C62SPGOO.js";
+} from "../../chunk-ZA3KL7IQ.js";
 export {
   DietaryItemScalarFieldEnumSchema,
   DietaryItemScalarFieldEnumSchema_default as default

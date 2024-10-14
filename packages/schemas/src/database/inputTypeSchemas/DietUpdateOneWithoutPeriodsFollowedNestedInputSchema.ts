@@ -1,14 +1,14 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { DietCreateWithoutPeriodsFollowedInputSchema } from '../DietCreateWithoutPeriodsFollowedInputSchema.js';
-import { DietUncheckedCreateWithoutPeriodsFollowedInputSchema } from '../DietUncheckedCreateWithoutPeriodsFollowedInputSchema.js';
-import { DietCreateOrConnectWithoutPeriodsFollowedInputSchema } from '../DietCreateOrConnectWithoutPeriodsFollowedInputSchema.js';
-import { DietUpsertWithoutPeriodsFollowedInputSchema } from '../DietUpsertWithoutPeriodsFollowedInputSchema.js';
-import { DietWhereInputSchema } from '../DietWhereInputSchema.js';
-import { DietWhereUniqueInputSchema } from '../DietWhereUniqueInputSchema.js';
-import { DietUpdateToOneWithWhereWithoutPeriodsFollowedInputSchema } from '../DietUpdateToOneWithWhereWithoutPeriodsFollowedInputSchema.js';
-import { DietUpdateWithoutPeriodsFollowedInputSchema } from '../DietUpdateWithoutPeriodsFollowedInputSchema.js';
-import { DietUncheckedUpdateWithoutPeriodsFollowedInputSchema } from '../DietUncheckedUpdateWithoutPeriodsFollowedInputSchema.js';
+import { DietCreateWithoutPeriodsFollowedInputSchema } from './DietCreateWithoutPeriodsFollowedInputSchema.js';
+import { DietUncheckedCreateWithoutPeriodsFollowedInputSchema } from './DietUncheckedCreateWithoutPeriodsFollowedInputSchema.js';
+import { DietCreateOrConnectWithoutPeriodsFollowedInputSchema } from './DietCreateOrConnectWithoutPeriodsFollowedInputSchema.js';
+import { DietUpsertWithoutPeriodsFollowedInputSchema } from './DietUpsertWithoutPeriodsFollowedInputSchema.js';
+import { DietWhereInputSchema } from './DietWhereInputSchema.js';
+import { DietWhereUniqueInputSchema } from './DietWhereUniqueInputSchema.js';
+import { DietUpdateToOneWithWhereWithoutPeriodsFollowedInputSchema } from './DietUpdateToOneWithWhereWithoutPeriodsFollowedInputSchema.js';
+import { DietUpdateWithoutPeriodsFollowedInputSchema } from './DietUpdateWithoutPeriodsFollowedInputSchema.js';
+import { DietUncheckedUpdateWithoutPeriodsFollowedInputSchema } from './DietUncheckedUpdateWithoutPeriodsFollowedInputSchema.js';
 export const DietUpdateOneWithoutPeriodsFollowedNestedInputSchema: z.ZodType<Prisma.DietUpdateOneWithoutPeriodsFollowedNestedInput> = z.object({
   create: z.union([ z.lazy(() => DietCreateWithoutPeriodsFollowedInputSchema),z.lazy(() => DietUncheckedCreateWithoutPeriodsFollowedInputSchema) ]).optional(),
   connectOrCreate: z.lazy(() => DietCreateOrConnectWithoutPeriodsFollowedInputSchema).optional(),

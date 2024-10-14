@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ToDoCreateWithoutChildInputSchema } from '../ToDoCreateWithoutChildInputSchema.js';
-import { ToDoUncheckedCreateWithoutChildInputSchema } from '../ToDoUncheckedCreateWithoutChildInputSchema.js';
-import { ToDoCreateOrConnectWithoutChildInputSchema } from '../ToDoCreateOrConnectWithoutChildInputSchema.js';
-import { ToDoWhereUniqueInputSchema } from '../ToDoWhereUniqueInputSchema.js';
+import { ToDoCreateWithoutChildInputSchema } from './ToDoCreateWithoutChildInputSchema.js';
+import { ToDoUncheckedCreateWithoutChildInputSchema } from './ToDoUncheckedCreateWithoutChildInputSchema.js';
+import { ToDoCreateOrConnectWithoutChildInputSchema } from './ToDoCreateOrConnectWithoutChildInputSchema.js';
+import { ToDoWhereUniqueInputSchema } from './ToDoWhereUniqueInputSchema.js';
 export const ToDoCreateNestedOneWithoutChildInputSchema: z.ZodType<Prisma.ToDoCreateNestedOneWithoutChildInput> = z.object({
   create: z.union([ z.lazy(() => ToDoCreateWithoutChildInputSchema),z.lazy(() => ToDoUncheckedCreateWithoutChildInputSchema) ]).optional(),
   connectOrCreate: z.lazy(() => ToDoCreateOrConnectWithoutChildInputSchema).optional(),

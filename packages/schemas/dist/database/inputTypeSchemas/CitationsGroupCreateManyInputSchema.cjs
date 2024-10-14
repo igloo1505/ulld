@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkLQZDTTRCcjs = require('../../chunk-LQZDTTRC.cjs');
+var _chunkRNVROOM6cjs = require('../../chunk-RNVROOM6.cjs');
 
 
 
-exports.CitationsGroupCreateManyInputSchema = _chunkLQZDTTRCcjs.CitationsGroupCreateManyInputSchema; exports.default = _chunkLQZDTTRCcjs.CitationsGroupCreateManyInputSchema_default;
+exports.CitationsGroupCreateManyInputSchema = _chunkRNVROOM6cjs.CitationsGroupCreateManyInputSchema; exports.default = _chunkRNVROOM6cjs.CitationsGroupCreateManyInputSchema_default;
 //# sourceMappingURL=CitationsGroupCreateManyInputSchema.cjs.map

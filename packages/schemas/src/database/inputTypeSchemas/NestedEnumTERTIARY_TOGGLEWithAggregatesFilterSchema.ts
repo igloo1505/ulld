@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TERTIARY_TOGGLESchema } from '../TERTIARY_TOGGLESchema.js';
-import { NestedIntFilterSchema } from '../NestedIntFilterSchema.js';
-import { NestedEnumTERTIARY_TOGGLEFilterSchema } from '../NestedEnumTERTIARY_TOGGLEFilterSchema.js';
+import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema.js';
+import { NestedIntFilterSchema } from './NestedIntFilterSchema.js';
+import { NestedEnumTERTIARY_TOGGLEFilterSchema } from './NestedEnumTERTIARY_TOGGLEFilterSchema.js';
 export const NestedEnumTERTIARY_TOGGLEWithAggregatesFilterSchema: z.ZodType<Prisma.NestedEnumTERTIARY_TOGGLEWithAggregatesFilter> = z.object({
   equals: z.lazy(() => TERTIARY_TOGGLESchema).optional(),
   in: z.lazy(() => TERTIARY_TOGGLESchema).array().optional(),

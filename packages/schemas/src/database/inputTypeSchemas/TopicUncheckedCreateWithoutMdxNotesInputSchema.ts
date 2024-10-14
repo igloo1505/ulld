@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IpynbUncheckedCreateNestedManyWithoutTopicsInputSchema } from '../IpynbUncheckedCreateNestedManyWithoutTopicsInputSchema.js';
-import { QAPairUncheckedCreateNestedManyWithoutTopicsInputSchema } from '../QAPairUncheckedCreateNestedManyWithoutTopicsInputSchema.js';
-import { PracticeExamUncheckedCreateNestedManyWithoutTopicsInputSchema } from '../PracticeExamUncheckedCreateNestedManyWithoutTopicsInputSchema.js';
-import { ToDoUncheckedCreateNestedManyWithoutTopicsInputSchema } from '../ToDoUncheckedCreateNestedManyWithoutTopicsInputSchema.js';
-import { ToDoListUncheckedCreateNestedManyWithoutTopicsInputSchema } from '../ToDoListUncheckedCreateNestedManyWithoutTopicsInputSchema.js';
-import { BibEntryUncheckedCreateNestedManyWithoutTopicsInputSchema } from '../BibEntryUncheckedCreateNestedManyWithoutTopicsInputSchema.js';
-import { EquationUncheckedCreateNestedManyWithoutTopicsInputSchema } from '../EquationUncheckedCreateNestedManyWithoutTopicsInputSchema.js';
+import { IpynbUncheckedCreateNestedManyWithoutTopicsInputSchema } from './IpynbUncheckedCreateNestedManyWithoutTopicsInputSchema.js';
+import { QAPairUncheckedCreateNestedManyWithoutTopicsInputSchema } from './QAPairUncheckedCreateNestedManyWithoutTopicsInputSchema.js';
+import { PracticeExamUncheckedCreateNestedManyWithoutTopicsInputSchema } from './PracticeExamUncheckedCreateNestedManyWithoutTopicsInputSchema.js';
+import { ToDoUncheckedCreateNestedManyWithoutTopicsInputSchema } from './ToDoUncheckedCreateNestedManyWithoutTopicsInputSchema.js';
+import { ToDoListUncheckedCreateNestedManyWithoutTopicsInputSchema } from './ToDoListUncheckedCreateNestedManyWithoutTopicsInputSchema.js';
+import { BibEntryUncheckedCreateNestedManyWithoutTopicsInputSchema } from './BibEntryUncheckedCreateNestedManyWithoutTopicsInputSchema.js';
+import { EquationUncheckedCreateNestedManyWithoutTopicsInputSchema } from './EquationUncheckedCreateNestedManyWithoutTopicsInputSchema.js';
 export const TopicUncheckedCreateWithoutMdxNotesInputSchema: z.ZodType<Prisma.TopicUncheckedCreateWithoutMdxNotesInput> = z.object({
   value: z.string(),
   kanbanId: z.number().int().optional().nullable(),

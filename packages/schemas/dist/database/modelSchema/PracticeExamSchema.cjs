@@ -5,9 +5,9 @@
 
 
 
-var _chunkLFQDZDFTcjs = require('../../chunk-LFQDZDFT.cjs');
-require('../../chunk-QF2T6FCZ.cjs');
-require('../../chunk-BRDOGD33.cjs');
+var _chunkO7GASESQcjs = require('../../chunk-O7GASESQ.cjs');
+require('../../chunk-ATQO6OGE.cjs');
+require('../../chunk-PALRL6S5.cjs');
 
 
 
@@ -15,5 +15,5 @@ require('../../chunk-BRDOGD33.cjs');
 
 
 
-exports.PracticeExamPartialSchema = _chunkLFQDZDFTcjs.PracticeExamPartialSchema; exports.PracticeExamPartialWithRelationsSchema = _chunkLFQDZDFTcjs.PracticeExamPartialWithRelationsSchema; exports.PracticeExamSchema = _chunkLFQDZDFTcjs.PracticeExamSchema; exports.PracticeExamWithPartialRelationsSchema = _chunkLFQDZDFTcjs.PracticeExamWithPartialRelationsSchema; exports.PracticeExamWithRelationsSchema = _chunkLFQDZDFTcjs.PracticeExamWithRelationsSchema; exports.default = _chunkLFQDZDFTcjs.PracticeExamSchema_default;
+exports.PracticeExamPartialSchema = _chunkO7GASESQcjs.PracticeExamPartialSchema; exports.PracticeExamPartialWithRelationsSchema = _chunkO7GASESQcjs.PracticeExamPartialWithRelationsSchema; exports.PracticeExamSchema = _chunkO7GASESQcjs.PracticeExamSchema; exports.PracticeExamWithPartialRelationsSchema = _chunkO7GASESQcjs.PracticeExamWithPartialRelationsSchema; exports.PracticeExamWithRelationsSchema = _chunkO7GASESQcjs.PracticeExamWithRelationsSchema; exports.default = _chunkO7GASESQcjs.PracticeExamSchema_default;
 //# sourceMappingURL=PracticeExamSchema.cjs.map

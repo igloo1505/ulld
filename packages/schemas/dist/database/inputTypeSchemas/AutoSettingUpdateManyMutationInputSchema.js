@@ -1,10 +1,10 @@
 import {
   AutoSettingUpdateManyMutationInputSchema,
   AutoSettingUpdateManyMutationInputSchema_default
-} from "../../chunk-7YQAQA4V.js";
-import "../../chunk-MRN325O7.js";
-import "../../chunk-EK76L66X.js";
-import "../../chunk-3GDEEYNJ.js";
+} from "../../chunk-C6M2NUMU.js";
+import "../../chunk-GFG2PSHJ.js";
+import "../../chunk-76RQYGNI.js";
+import "../../chunk-BQIXGZB5.js";
 export {
   AutoSettingUpdateManyMutationInputSchema,
   AutoSettingUpdateManyMutationInputSchema_default as default

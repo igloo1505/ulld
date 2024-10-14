@@ -1,11 +1,11 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
-import { ToDoListCountOrderByAggregateInputSchema } from '../ToDoListCountOrderByAggregateInputSchema.js';
-import { ToDoListAvgOrderByAggregateInputSchema } from '../ToDoListAvgOrderByAggregateInputSchema.js';
-import { ToDoListMaxOrderByAggregateInputSchema } from '../ToDoListMaxOrderByAggregateInputSchema.js';
-import { ToDoListMinOrderByAggregateInputSchema } from '../ToDoListMinOrderByAggregateInputSchema.js';
-import { ToDoListSumOrderByAggregateInputSchema } from '../ToDoListSumOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { ToDoListCountOrderByAggregateInputSchema } from './ToDoListCountOrderByAggregateInputSchema.js';
+import { ToDoListAvgOrderByAggregateInputSchema } from './ToDoListAvgOrderByAggregateInputSchema.js';
+import { ToDoListMaxOrderByAggregateInputSchema } from './ToDoListMaxOrderByAggregateInputSchema.js';
+import { ToDoListMinOrderByAggregateInputSchema } from './ToDoListMinOrderByAggregateInputSchema.js';
+import { ToDoListSumOrderByAggregateInputSchema } from './ToDoListSumOrderByAggregateInputSchema.js';
 export const ToDoListOrderByWithAggregationInputSchema: z.ZodType<Prisma.ToDoListOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   label: z.lazy(() => SortOrderSchema).optional(),

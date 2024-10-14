@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/QAPairWhereInputSchema.js
-..//inputTypeSchemas/QAPairOrderByWithAggregationInputSchema.js
-..//inputTypeSchemas/QAPairScalarFieldEnumSchema.js
-..//inputTypeSchemas/QAPairScalarWhereWithAggregatesInputSchema.js
+import { QAPairWhereInputSchema } from '../inputTypeSchemas/QAPairWhereInputSchema.js'
+import { QAPairOrderByWithAggregationInputSchema } from '../inputTypeSchemas/QAPairOrderByWithAggregationInputSchema.js'
+import { QAPairScalarFieldEnumSchema } from '../inputTypeSchemas/QAPairScalarFieldEnumSchema.js'
+import { QAPairScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/QAPairScalarWhereWithAggregatesInputSchema.js'
 export const QAPairGroupByArgsSchema: z.ZodType<Prisma.QAPairGroupByArgs> = z.object({
   where: QAPairWhereInputSchema.optional(),
   orderBy: z.union([ QAPairOrderByWithAggregationInputSchema.array(),QAPairOrderByWithAggregationInputSchema ]).optional(),

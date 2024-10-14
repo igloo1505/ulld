@@ -1,11 +1,11 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/KanbanIncludeSchema.js
-..//inputTypeSchemas/KanbanWhereUniqueInputSchema.js
-..//inputTypeSchemas/KanbanCreateInputSchema.js
-..//inputTypeSchemas/KanbanUncheckedCreateInputSchema.js
-..//inputTypeSchemas/KanbanUpdateInputSchema.js
-..//inputTypeSchemas/KanbanUncheckedUpdateInputSchema.js
+import { KanbanIncludeSchema } from '../inputTypeSchemas/KanbanIncludeSchema.js'
+import { KanbanWhereUniqueInputSchema } from '../inputTypeSchemas/KanbanWhereUniqueInputSchema.js'
+import { KanbanCreateInputSchema } from '../inputTypeSchemas/KanbanCreateInputSchema.js'
+import { KanbanUncheckedCreateInputSchema } from '../inputTypeSchemas/KanbanUncheckedCreateInputSchema.js'
+import { KanbanUpdateInputSchema } from '../inputTypeSchemas/KanbanUpdateInputSchema.js'
+import { KanbanUncheckedUpdateInputSchema } from '../inputTypeSchemas/KanbanUncheckedUpdateInputSchema.js'
 import { KanBanListFindManyArgsSchema } from "../outputTypeSchemas/KanBanListFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"

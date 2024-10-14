@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkBHV3PY3Ccjs = require('../../chunk-BHV3PY3C.cjs');
+var _chunkUM2C5HXNcjs = require('../../chunk-UM2C5HXN.cjs');
 
 
 
-exports.WaitlistRequestCreateInputSchema = _chunkBHV3PY3Ccjs.WaitlistRequestCreateInputSchema; exports.default = _chunkBHV3PY3Ccjs.WaitlistRequestCreateInputSchema_default;
+exports.WaitlistRequestCreateInputSchema = _chunkUM2C5HXNcjs.WaitlistRequestCreateInputSchema; exports.default = _chunkUM2C5HXNcjs.WaitlistRequestCreateInputSchema_default;
 //# sourceMappingURL=WaitlistRequestCreateInputSchema.cjs.map

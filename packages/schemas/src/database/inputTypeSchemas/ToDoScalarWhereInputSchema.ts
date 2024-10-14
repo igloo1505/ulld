@@ -1,14 +1,14 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from '../IntFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { DateTimeNullableFilterSchema } from '../DateTimeNullableFilterSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
-import { IntNullableFilterSchema } from '../IntNullableFilterSchema.js';
-import { EnumTaskCategoryNullableFilterSchema } from '../EnumTaskCategoryNullableFilterSchema.js';
-import { TaskCategorySchema } from '../TaskCategorySchema.js';
-import { BoolFilterSchema } from '../BoolFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { DateTimeNullableFilterSchema } from './DateTimeNullableFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { EnumTaskCategoryNullableFilterSchema } from './EnumTaskCategoryNullableFilterSchema.js';
+import { TaskCategorySchema } from './TaskCategorySchema.js';
+import { BoolFilterSchema } from './BoolFilterSchema.js';
 export const ToDoScalarWhereInputSchema: z.ZodType<Prisma.ToDoScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => ToDoScalarWhereInputSchema),z.lazy(() => ToDoScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => ToDoScalarWhereInputSchema).array().optional(),

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/DailyFocusCreateManyInputSchema.js
+import { DailyFocusCreateManyInputSchema } from '../inputTypeSchemas/DailyFocusCreateManyInputSchema.js'
 export const DailyFocusCreateManyArgsSchema: z.ZodType<Prisma.DailyFocusCreateManyArgs> = z.object({
   data: z.union([ DailyFocusCreateManyInputSchema,DailyFocusCreateManyInputSchema.array() ]),
   skipDuplicates: z.boolean().optional(),

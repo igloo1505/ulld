@@ -2,7 +2,7 @@ import {
   QuotePartialSchema,
   QuoteSchema,
   QuoteSchema_default
-} from "../../chunk-QJ2DHY4A.js";
+} from "../../chunk-JYWGE6LA.js";
 export {
   QuotePartialSchema,
   QuoteSchema,

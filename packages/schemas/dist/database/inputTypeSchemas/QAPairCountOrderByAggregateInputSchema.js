@@ -1,8 +1,8 @@
 import {
   QAPairCountOrderByAggregateInputSchema,
   QAPairCountOrderByAggregateInputSchema_default
-} from "../../chunk-566XLGR5.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-2F74OL3D.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   QAPairCountOrderByAggregateInputSchema,
   QAPairCountOrderByAggregateInputSchema_default as default

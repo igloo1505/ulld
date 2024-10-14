@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/TimePeriodWhereInputSchema.js
-..//inputTypeSchemas/TimePeriodOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/TimePeriodWhereUniqueInputSchema.js
+import { TimePeriodWhereInputSchema } from '../inputTypeSchemas/TimePeriodWhereInputSchema.js'
+import { TimePeriodOrderByWithRelationInputSchema } from '../inputTypeSchemas/TimePeriodOrderByWithRelationInputSchema.js'
+import { TimePeriodWhereUniqueInputSchema } from '../inputTypeSchemas/TimePeriodWhereUniqueInputSchema.js'
 export const TimePeriodAggregateArgsSchema: z.ZodType<Prisma.TimePeriodAggregateArgs> = z.object({
   where: TimePeriodWhereInputSchema.optional(),
   orderBy: z.union([ TimePeriodOrderByWithRelationInputSchema.array(),TimePeriodOrderByWithRelationInputSchema ]).optional(),

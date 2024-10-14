@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
 export const GoogleCalendarAuthCountOrderByAggregateInputSchema: z.ZodType<Prisma.GoogleCalendarAuthCountOrderByAggregateInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   auth: z.lazy(() => SortOrderSchema).optional()

@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk4IR5UABMcjs = require('../../chunk-4IR5UABM.cjs');
-require('../../chunk-ZXOPIDIJ.cjs');
+var _chunkJQEP6JXHcjs = require('../../chunk-JQEP6JXH.cjs');
+require('../../chunk-SF47WOE2.cjs');
 
 
 
-exports.WaitlistRequestCreateManyArgsSchema = _chunk4IR5UABMcjs.WaitlistRequestCreateManyArgsSchema; exports.default = _chunk4IR5UABMcjs.WaitlistRequestCreateManyArgsSchema_default;
+exports.WaitlistRequestCreateManyArgsSchema = _chunkJQEP6JXHcjs.WaitlistRequestCreateManyArgsSchema; exports.default = _chunkJQEP6JXHcjs.WaitlistRequestCreateManyArgsSchema_default;
 //# sourceMappingURL=WaitlistRequestCreateManyArgsSchema.cjs.map

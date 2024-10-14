@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { BibEntryCreateWithoutTagsInputSchema } from '../BibEntryCreateWithoutTagsInputSchema.js';
-import { BibEntryUncheckedCreateWithoutTagsInputSchema } from '../BibEntryUncheckedCreateWithoutTagsInputSchema.js';
-import { BibEntryCreateOrConnectWithoutTagsInputSchema } from '../BibEntryCreateOrConnectWithoutTagsInputSchema.js';
-import { BibEntryUpsertWithWhereUniqueWithoutTagsInputSchema } from '../BibEntryUpsertWithWhereUniqueWithoutTagsInputSchema.js';
-import { BibEntryWhereUniqueInputSchema } from '../BibEntryWhereUniqueInputSchema.js';
-import { BibEntryUpdateWithWhereUniqueWithoutTagsInputSchema } from '../BibEntryUpdateWithWhereUniqueWithoutTagsInputSchema.js';
-import { BibEntryUpdateManyWithWhereWithoutTagsInputSchema } from '../BibEntryUpdateManyWithWhereWithoutTagsInputSchema.js';
-import { BibEntryScalarWhereInputSchema } from '../BibEntryScalarWhereInputSchema.js';
+import { BibEntryCreateWithoutTagsInputSchema } from './BibEntryCreateWithoutTagsInputSchema.js';
+import { BibEntryUncheckedCreateWithoutTagsInputSchema } from './BibEntryUncheckedCreateWithoutTagsInputSchema.js';
+import { BibEntryCreateOrConnectWithoutTagsInputSchema } from './BibEntryCreateOrConnectWithoutTagsInputSchema.js';
+import { BibEntryUpsertWithWhereUniqueWithoutTagsInputSchema } from './BibEntryUpsertWithWhereUniqueWithoutTagsInputSchema.js';
+import { BibEntryWhereUniqueInputSchema } from './BibEntryWhereUniqueInputSchema.js';
+import { BibEntryUpdateWithWhereUniqueWithoutTagsInputSchema } from './BibEntryUpdateWithWhereUniqueWithoutTagsInputSchema.js';
+import { BibEntryUpdateManyWithWhereWithoutTagsInputSchema } from './BibEntryUpdateManyWithWhereWithoutTagsInputSchema.js';
+import { BibEntryScalarWhereInputSchema } from './BibEntryScalarWhereInputSchema.js';
 export const BibEntryUncheckedUpdateManyWithoutTagsNestedInputSchema: z.ZodType<Prisma.BibEntryUncheckedUpdateManyWithoutTagsNestedInput> = z.object({
   create: z.union([ z.lazy(() => BibEntryCreateWithoutTagsInputSchema),z.lazy(() => BibEntryCreateWithoutTagsInputSchema).array(),z.lazy(() => BibEntryUncheckedCreateWithoutTagsInputSchema),z.lazy(() => BibEntryUncheckedCreateWithoutTagsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => BibEntryCreateOrConnectWithoutTagsInputSchema),z.lazy(() => BibEntryCreateOrConnectWithoutTagsInputSchema).array() ]).optional(),

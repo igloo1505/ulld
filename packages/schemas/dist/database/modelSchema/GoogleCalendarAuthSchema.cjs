@@ -2,10 +2,10 @@
 
 
 
-var _chunk2VPGNQAKcjs = require('../../chunk-2VPGNQAK.cjs');
+var _chunk3DH32B4Xcjs = require('../../chunk-3DH32B4X.cjs');
 
 
 
 
-exports.GoogleCalendarAuthPartialSchema = _chunk2VPGNQAKcjs.GoogleCalendarAuthPartialSchema; exports.GoogleCalendarAuthSchema = _chunk2VPGNQAKcjs.GoogleCalendarAuthSchema; exports.default = _chunk2VPGNQAKcjs.GoogleCalendarAuthSchema_default;
+exports.GoogleCalendarAuthPartialSchema = _chunk3DH32B4Xcjs.GoogleCalendarAuthPartialSchema; exports.GoogleCalendarAuthSchema = _chunk3DH32B4Xcjs.GoogleCalendarAuthSchema; exports.default = _chunk3DH32B4Xcjs.GoogleCalendarAuthSchema_default;
 //# sourceMappingURL=GoogleCalendarAuthSchema.cjs.map

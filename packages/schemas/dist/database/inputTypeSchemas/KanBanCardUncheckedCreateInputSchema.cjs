@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkN65HZY3Icjs = require('../../chunk-N65HZY3I.cjs');
+var _chunkABAO632Kcjs = require('../../chunk-ABAO632K.cjs');
 
 
 
-exports.KanBanCardUncheckedCreateInputSchema = _chunkN65HZY3Icjs.KanBanCardUncheckedCreateInputSchema; exports.default = _chunkN65HZY3Icjs.KanBanCardUncheckedCreateInputSchema_default;
+exports.KanBanCardUncheckedCreateInputSchema = _chunkABAO632Kcjs.KanBanCardUncheckedCreateInputSchema; exports.default = _chunkABAO632Kcjs.KanBanCardUncheckedCreateInputSchema_default;
 //# sourceMappingURL=KanBanCardUncheckedCreateInputSchema.cjs.map

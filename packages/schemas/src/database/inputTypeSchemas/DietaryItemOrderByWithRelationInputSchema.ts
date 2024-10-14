@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
-import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
-import { DietOrderByRelationAggregateInputSchema } from '../DietOrderByRelationAggregateInputSchema.js';
-import { ServingOrderByRelationAggregateInputSchema } from '../ServingOrderByRelationAggregateInputSchema.js';
-import { DietaryItemOrderByRelevanceInputSchema } from '../DietaryItemOrderByRelevanceInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { DietOrderByRelationAggregateInputSchema } from './DietOrderByRelationAggregateInputSchema.js';
+import { ServingOrderByRelationAggregateInputSchema } from './ServingOrderByRelationAggregateInputSchema.js';
+import { DietaryItemOrderByRelevanceInputSchema } from './DietaryItemOrderByRelevanceInputSchema.js';
 export const DietaryItemOrderByWithRelationInputSchema: z.ZodType<Prisma.DietaryItemOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   name: z.lazy(() => SortOrderSchema).optional(),

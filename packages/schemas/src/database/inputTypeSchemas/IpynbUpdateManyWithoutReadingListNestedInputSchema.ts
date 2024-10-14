@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IpynbCreateWithoutReadingListInputSchema } from '../IpynbCreateWithoutReadingListInputSchema.js';
-import { IpynbUncheckedCreateWithoutReadingListInputSchema } from '../IpynbUncheckedCreateWithoutReadingListInputSchema.js';
-import { IpynbCreateOrConnectWithoutReadingListInputSchema } from '../IpynbCreateOrConnectWithoutReadingListInputSchema.js';
-import { IpynbUpsertWithWhereUniqueWithoutReadingListInputSchema } from '../IpynbUpsertWithWhereUniqueWithoutReadingListInputSchema.js';
-import { IpynbWhereUniqueInputSchema } from '../IpynbWhereUniqueInputSchema.js';
-import { IpynbUpdateWithWhereUniqueWithoutReadingListInputSchema } from '../IpynbUpdateWithWhereUniqueWithoutReadingListInputSchema.js';
-import { IpynbUpdateManyWithWhereWithoutReadingListInputSchema } from '../IpynbUpdateManyWithWhereWithoutReadingListInputSchema.js';
-import { IpynbScalarWhereInputSchema } from '../IpynbScalarWhereInputSchema.js';
+import { IpynbCreateWithoutReadingListInputSchema } from './IpynbCreateWithoutReadingListInputSchema.js';
+import { IpynbUncheckedCreateWithoutReadingListInputSchema } from './IpynbUncheckedCreateWithoutReadingListInputSchema.js';
+import { IpynbCreateOrConnectWithoutReadingListInputSchema } from './IpynbCreateOrConnectWithoutReadingListInputSchema.js';
+import { IpynbUpsertWithWhereUniqueWithoutReadingListInputSchema } from './IpynbUpsertWithWhereUniqueWithoutReadingListInputSchema.js';
+import { IpynbWhereUniqueInputSchema } from './IpynbWhereUniqueInputSchema.js';
+import { IpynbUpdateWithWhereUniqueWithoutReadingListInputSchema } from './IpynbUpdateWithWhereUniqueWithoutReadingListInputSchema.js';
+import { IpynbUpdateManyWithWhereWithoutReadingListInputSchema } from './IpynbUpdateManyWithWhereWithoutReadingListInputSchema.js';
+import { IpynbScalarWhereInputSchema } from './IpynbScalarWhereInputSchema.js';
 export const IpynbUpdateManyWithoutReadingListNestedInputSchema: z.ZodType<Prisma.IpynbUpdateManyWithoutReadingListNestedInput> = z.object({
   create: z.union([ z.lazy(() => IpynbCreateWithoutReadingListInputSchema),z.lazy(() => IpynbCreateWithoutReadingListInputSchema).array(),z.lazy(() => IpynbUncheckedCreateWithoutReadingListInputSchema),z.lazy(() => IpynbUncheckedCreateWithoutReadingListInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => IpynbCreateOrConnectWithoutReadingListInputSchema),z.lazy(() => IpynbCreateOrConnectWithoutReadingListInputSchema).array() ]).optional(),

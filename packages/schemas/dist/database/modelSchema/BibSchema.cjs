@@ -5,9 +5,9 @@
 
 
 
-var _chunkLFQDZDFTcjs = require('../../chunk-LFQDZDFT.cjs');
-require('../../chunk-QF2T6FCZ.cjs');
-require('../../chunk-BRDOGD33.cjs');
+var _chunkO7GASESQcjs = require('../../chunk-O7GASESQ.cjs');
+require('../../chunk-ATQO6OGE.cjs');
+require('../../chunk-PALRL6S5.cjs');
 
 
 
@@ -15,5 +15,5 @@ require('../../chunk-BRDOGD33.cjs');
 
 
 
-exports.BibPartialSchema = _chunkLFQDZDFTcjs.BibPartialSchema; exports.BibPartialWithRelationsSchema = _chunkLFQDZDFTcjs.BibPartialWithRelationsSchema; exports.BibSchema = _chunkLFQDZDFTcjs.BibSchema; exports.BibWithPartialRelationsSchema = _chunkLFQDZDFTcjs.BibWithPartialRelationsSchema; exports.BibWithRelationsSchema = _chunkLFQDZDFTcjs.BibWithRelationsSchema; exports.default = _chunkLFQDZDFTcjs.BibSchema_default;
+exports.BibPartialSchema = _chunkO7GASESQcjs.BibPartialSchema; exports.BibPartialWithRelationsSchema = _chunkO7GASESQcjs.BibPartialWithRelationsSchema; exports.BibSchema = _chunkO7GASESQcjs.BibSchema; exports.BibWithPartialRelationsSchema = _chunkO7GASESQcjs.BibWithPartialRelationsSchema; exports.BibWithRelationsSchema = _chunkO7GASESQcjs.BibWithRelationsSchema; exports.default = _chunkO7GASESQcjs.BibSchema_default;
 //# sourceMappingURL=BibSchema.cjs.map

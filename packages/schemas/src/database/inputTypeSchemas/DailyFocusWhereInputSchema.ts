@@ -1,7 +1,7 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
 export const DailyFocusWhereInputSchema: z.ZodType<Prisma.DailyFocusWhereInput> = z.object({
   AND: z.union([ z.lazy(() => DailyFocusWhereInputSchema),z.lazy(() => DailyFocusWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => DailyFocusWhereInputSchema).array().optional(),

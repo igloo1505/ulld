@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
-import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
-import { DietaryItemCountOrderByAggregateInputSchema } from '../DietaryItemCountOrderByAggregateInputSchema.js';
-import { DietaryItemAvgOrderByAggregateInputSchema } from '../DietaryItemAvgOrderByAggregateInputSchema.js';
-import { DietaryItemMaxOrderByAggregateInputSchema } from '../DietaryItemMaxOrderByAggregateInputSchema.js';
-import { DietaryItemMinOrderByAggregateInputSchema } from '../DietaryItemMinOrderByAggregateInputSchema.js';
-import { DietaryItemSumOrderByAggregateInputSchema } from '../DietaryItemSumOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { DietaryItemCountOrderByAggregateInputSchema } from './DietaryItemCountOrderByAggregateInputSchema.js';
+import { DietaryItemAvgOrderByAggregateInputSchema } from './DietaryItemAvgOrderByAggregateInputSchema.js';
+import { DietaryItemMaxOrderByAggregateInputSchema } from './DietaryItemMaxOrderByAggregateInputSchema.js';
+import { DietaryItemMinOrderByAggregateInputSchema } from './DietaryItemMinOrderByAggregateInputSchema.js';
+import { DietaryItemSumOrderByAggregateInputSchema } from './DietaryItemSumOrderByAggregateInputSchema.js';
 export const DietaryItemOrderByWithAggregationInputSchema: z.ZodType<Prisma.DietaryItemOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   name: z.lazy(() => SortOrderSchema).optional(),

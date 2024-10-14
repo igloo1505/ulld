@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ToDoCreateWithoutAssociatedNotesInputSchema } from '../ToDoCreateWithoutAssociatedNotesInputSchema.js';
-import { ToDoUncheckedCreateWithoutAssociatedNotesInputSchema } from '../ToDoUncheckedCreateWithoutAssociatedNotesInputSchema.js';
-import { ToDoCreateOrConnectWithoutAssociatedNotesInputSchema } from '../ToDoCreateOrConnectWithoutAssociatedNotesInputSchema.js';
-import { ToDoUpsertWithWhereUniqueWithoutAssociatedNotesInputSchema } from '../ToDoUpsertWithWhereUniqueWithoutAssociatedNotesInputSchema.js';
-import { ToDoWhereUniqueInputSchema } from '../ToDoWhereUniqueInputSchema.js';
-import { ToDoUpdateWithWhereUniqueWithoutAssociatedNotesInputSchema } from '../ToDoUpdateWithWhereUniqueWithoutAssociatedNotesInputSchema.js';
-import { ToDoUpdateManyWithWhereWithoutAssociatedNotesInputSchema } from '../ToDoUpdateManyWithWhereWithoutAssociatedNotesInputSchema.js';
-import { ToDoScalarWhereInputSchema } from '../ToDoScalarWhereInputSchema.js';
+import { ToDoCreateWithoutAssociatedNotesInputSchema } from './ToDoCreateWithoutAssociatedNotesInputSchema.js';
+import { ToDoUncheckedCreateWithoutAssociatedNotesInputSchema } from './ToDoUncheckedCreateWithoutAssociatedNotesInputSchema.js';
+import { ToDoCreateOrConnectWithoutAssociatedNotesInputSchema } from './ToDoCreateOrConnectWithoutAssociatedNotesInputSchema.js';
+import { ToDoUpsertWithWhereUniqueWithoutAssociatedNotesInputSchema } from './ToDoUpsertWithWhereUniqueWithoutAssociatedNotesInputSchema.js';
+import { ToDoWhereUniqueInputSchema } from './ToDoWhereUniqueInputSchema.js';
+import { ToDoUpdateWithWhereUniqueWithoutAssociatedNotesInputSchema } from './ToDoUpdateWithWhereUniqueWithoutAssociatedNotesInputSchema.js';
+import { ToDoUpdateManyWithWhereWithoutAssociatedNotesInputSchema } from './ToDoUpdateManyWithWhereWithoutAssociatedNotesInputSchema.js';
+import { ToDoScalarWhereInputSchema } from './ToDoScalarWhereInputSchema.js';
 export const ToDoUncheckedUpdateManyWithoutAssociatedNotesNestedInputSchema: z.ZodType<Prisma.ToDoUncheckedUpdateManyWithoutAssociatedNotesNestedInput> = z.object({
   create: z.union([ z.lazy(() => ToDoCreateWithoutAssociatedNotesInputSchema),z.lazy(() => ToDoCreateWithoutAssociatedNotesInputSchema).array(),z.lazy(() => ToDoUncheckedCreateWithoutAssociatedNotesInputSchema),z.lazy(() => ToDoUncheckedCreateWithoutAssociatedNotesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => ToDoCreateOrConnectWithoutAssociatedNotesInputSchema),z.lazy(() => ToDoCreateOrConnectWithoutAssociatedNotesInputSchema).array() ]).optional(),

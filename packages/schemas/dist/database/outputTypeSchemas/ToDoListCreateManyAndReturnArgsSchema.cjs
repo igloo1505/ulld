@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkGTLOJPLZcjs = require('../../chunk-GTLOJPLZ.cjs');
-require('../../chunk-RXPI6HLC.cjs');
+var _chunk6FBELN35cjs = require('../../chunk-6FBELN35.cjs');
+require('../../chunk-DXLATYAX.cjs');
 
 
 
-exports.ToDoListCreateManyAndReturnArgsSchema = _chunkGTLOJPLZcjs.ToDoListCreateManyAndReturnArgsSchema; exports.default = _chunkGTLOJPLZcjs.ToDoListCreateManyAndReturnArgsSchema_default;
+exports.ToDoListCreateManyAndReturnArgsSchema = _chunk6FBELN35cjs.ToDoListCreateManyAndReturnArgsSchema; exports.default = _chunk6FBELN35cjs.ToDoListCreateManyAndReturnArgsSchema_default;
 //# sourceMappingURL=ToDoListCreateManyAndReturnArgsSchema.cjs.map

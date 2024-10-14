@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
 export const DietaryItemAvgOrderByAggregateInputSchema: z.ZodType<Prisma.DietaryItemAvgOrderByAggregateInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   gi: z.lazy(() => SortOrderSchema).optional(),

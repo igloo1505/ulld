@@ -1,6 +1,6 @@
 import { z } from 'zod';
-..//inputTypeSchemas/JsonValueSchema.js
-..//inputTypeSchemas/ImageAlignmentSchema.js
+import { JsonValueSchema } from '../inputTypeSchemas/JsonValueSchema.js'
+import { ImageAlignmentSchema } from '../inputTypeSchemas/ImageAlignmentSchema.js'
 /////////////////////////////////////////
 // SETTINGS SCHEMA
 /////////////////////////////////////////

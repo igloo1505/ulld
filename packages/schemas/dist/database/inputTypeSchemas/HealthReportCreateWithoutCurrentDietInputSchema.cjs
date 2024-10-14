@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkTHYSG6MBcjs = require('../../chunk-THYSG6MB.cjs');
+var _chunkDQJQRZSBcjs = require('../../chunk-DQJQRZSB.cjs');
 
 
 
-exports.HealthReportCreateWithoutCurrentDietInputSchema = _chunkTHYSG6MBcjs.HealthReportCreateWithoutCurrentDietInputSchema; exports.default = _chunkTHYSG6MBcjs.HealthReportCreateWithoutCurrentDietInputSchema_default;
+exports.HealthReportCreateWithoutCurrentDietInputSchema = _chunkDQJQRZSBcjs.HealthReportCreateWithoutCurrentDietInputSchema; exports.default = _chunkDQJQRZSBcjs.HealthReportCreateWithoutCurrentDietInputSchema_default;
 //# sourceMappingURL=HealthReportCreateWithoutCurrentDietInputSchema.cjs.map

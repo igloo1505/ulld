@@ -1,7 +1,7 @@
 import {
   NoteTypeCreateManyInputSchema,
   NoteTypeCreateManyInputSchema_default
-} from "../../chunk-ACWN6DH7.js";
+} from "../../chunk-MU5C7PFG.js";
 export {
   NoteTypeCreateManyInputSchema,
   NoteTypeCreateManyInputSchema_default as default

@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/database/inputTypeSchemas/DailyFocusScalarFieldEnumSchema.ts"],"sourcesContent":["import { z } from 'zod';\n\nexport const DailyFocusScalarFieldEnumSchema = z.enum(['value','createdAt']);\n\nexport default DailyFocusScalarFieldEnumSchema;\n"],"mappings":";AAAA,SAAS,SAAS;AAEX,IAAM,kCAAkC,EAAE,KAAK,CAAC,SAAQ,WAAW,CAAC;AAE3E,IAAO,0CAAQ;","names":[]}

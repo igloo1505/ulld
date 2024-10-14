@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkXRNGTKMLcjs = require('../../chunk-XRNGTKML.cjs');
+var _chunk3JZW2F3Ycjs = require('../../chunk-3JZW2F3Y.cjs');
 
 
 
-exports.DietScalarFieldEnumSchema = _chunkXRNGTKMLcjs.DietScalarFieldEnumSchema; exports.default = _chunkXRNGTKMLcjs.DietScalarFieldEnumSchema_default;
+exports.DietScalarFieldEnumSchema = _chunk3JZW2F3Ycjs.DietScalarFieldEnumSchema; exports.default = _chunk3JZW2F3Ycjs.DietScalarFieldEnumSchema_default;
 //# sourceMappingURL=DietScalarFieldEnumSchema.cjs.map

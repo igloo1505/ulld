@@ -1,8 +1,8 @@
 import {
   RelatedValuesAvgOrderByAggregateInputSchema,
   RelatedValuesAvgOrderByAggregateInputSchema_default
-} from "../../chunk-P34I2H53.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-OFHZBKIP.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   RelatedValuesAvgOrderByAggregateInputSchema,
   RelatedValuesAvgOrderByAggregateInputSchema_default as default

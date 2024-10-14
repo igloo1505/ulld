@@ -1,8 +1,8 @@
 import { z } from 'zod';
-import type { BibEntryWithRelations } from '../BibEntrySchema.js'
-import type { BibEntryPartialWithRelations } from '../BibEntrySchema.js'
-import { BibEntryWithRelationsSchema } from '../BibEntrySchema.js'
-import { BibEntryPartialWithRelationsSchema } from '../BibEntrySchema.js'
+import type { BibEntryWithRelations } from './BibEntrySchema.js'
+import type { BibEntryPartialWithRelations } from './BibEntrySchema.js'
+import { BibEntryWithRelationsSchema } from './BibEntrySchema.js'
+import { BibEntryPartialWithRelationsSchema } from './BibEntrySchema.js'
 /////////////////////////////////////////
 // CITATIONS GROUP SCHEMA
 /////////////////////////////////////////

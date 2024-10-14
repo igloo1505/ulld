@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
-import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
-import { SettingsCountOrderByAggregateInputSchema } from '../SettingsCountOrderByAggregateInputSchema.js';
-import { SettingsAvgOrderByAggregateInputSchema } from '../SettingsAvgOrderByAggregateInputSchema.js';
-import { SettingsMaxOrderByAggregateInputSchema } from '../SettingsMaxOrderByAggregateInputSchema.js';
-import { SettingsMinOrderByAggregateInputSchema } from '../SettingsMinOrderByAggregateInputSchema.js';
-import { SettingsSumOrderByAggregateInputSchema } from '../SettingsSumOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { SettingsCountOrderByAggregateInputSchema } from './SettingsCountOrderByAggregateInputSchema.js';
+import { SettingsAvgOrderByAggregateInputSchema } from './SettingsAvgOrderByAggregateInputSchema.js';
+import { SettingsMaxOrderByAggregateInputSchema } from './SettingsMaxOrderByAggregateInputSchema.js';
+import { SettingsMinOrderByAggregateInputSchema } from './SettingsMinOrderByAggregateInputSchema.js';
+import { SettingsSumOrderByAggregateInputSchema } from './SettingsSumOrderByAggregateInputSchema.js';
 export const SettingsOrderByWithAggregationInputSchema: z.ZodType<Prisma.SettingsOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   tooltips: z.lazy(() => SortOrderSchema).optional(),

@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from '../IntFilterSchema.js';
-import { BoolFilterSchema } from '../BoolFilterSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { EnumImageAlignmentFilterSchema } from '../EnumImageAlignmentFilterSchema.js';
-import { ImageAlignmentSchema } from '../ImageAlignmentSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
-import { JsonFilterSchema } from '../JsonFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { BoolFilterSchema } from './BoolFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { EnumImageAlignmentFilterSchema } from './EnumImageAlignmentFilterSchema.js';
+import { ImageAlignmentSchema } from './ImageAlignmentSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { JsonFilterSchema } from './JsonFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
 export const SettingsWhereInputSchema: z.ZodType<Prisma.SettingsWhereInput> = z.object({
   AND: z.union([ z.lazy(() => SettingsWhereInputSchema),z.lazy(() => SettingsWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => SettingsWhereInputSchema).array().optional(),

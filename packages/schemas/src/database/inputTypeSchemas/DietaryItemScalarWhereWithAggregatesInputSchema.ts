@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
-import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
-import { StringNullableWithAggregatesFilterSchema } from '../StringNullableWithAggregatesFilterSchema.js';
-import { IntNullableWithAggregatesFilterSchema } from '../IntNullableWithAggregatesFilterSchema.js';
-import { FloatNullableWithAggregatesFilterSchema } from '../FloatNullableWithAggregatesFilterSchema.js';
-import { BoolWithAggregatesFilterSchema } from '../BoolWithAggregatesFilterSchema.js';
-import { FloatWithAggregatesFilterSchema } from '../FloatWithAggregatesFilterSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema.js';
+import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema.js';
+import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema.js';
+import { FloatWithAggregatesFilterSchema } from './FloatWithAggregatesFilterSchema.js';
 export const DietaryItemScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.DietaryItemScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => DietaryItemScalarWhereWithAggregatesInputSchema),z.lazy(() => DietaryItemScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => DietaryItemScalarWhereWithAggregatesInputSchema).array().optional(),

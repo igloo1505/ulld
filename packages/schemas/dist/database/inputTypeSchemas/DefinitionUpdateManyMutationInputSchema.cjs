@@ -1,12 +1,12 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkMKD2LA6Tcjs = require('../../chunk-MKD2LA6T.cjs');
-require('../../chunk-VBWN4YJJ.cjs');
-require('../../chunk-6JWX7MA3.cjs');
-require('../../chunk-HGFNG2SE.cjs');
+var _chunkEIHZIXO2cjs = require('../../chunk-EIHZIXO2.cjs');
+require('../../chunk-HHR6Z4QK.cjs');
+require('../../chunk-4HCQC4XG.cjs');
+require('../../chunk-I5XF7I5V.cjs');
 
 
 
-exports.DefinitionUpdateManyMutationInputSchema = _chunkMKD2LA6Tcjs.DefinitionUpdateManyMutationInputSchema; exports.default = _chunkMKD2LA6Tcjs.DefinitionUpdateManyMutationInputSchema_default;
+exports.DefinitionUpdateManyMutationInputSchema = _chunkEIHZIXO2cjs.DefinitionUpdateManyMutationInputSchema; exports.default = _chunkEIHZIXO2cjs.DefinitionUpdateManyMutationInputSchema_default;
 //# sourceMappingURL=DefinitionUpdateManyMutationInputSchema.cjs.map

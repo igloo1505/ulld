@@ -22,30 +22,28 @@
     "./types": "./src/types.ts"
   },
   "dependencies": {
-    "@tailwindcss/forms": "^0.5.7",
-    "@tailwindcss/typography": "^0.5.13",
-    "@types/eslint": "^9.6.0",
+    "@tailwindcss/forms": "0.5.7",
+    "@tailwindcss/typography": "0.5.13",
     "better-react-mathjax": "2.0.3",
-    "eslint": "^9.0.0",
-    "lucide-react": "*",
+    "lucide-react": "0.344.0",
     "next": "14.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.77.8",
-    "tailwindcss": "^3.4.1"
+    "sass": "1.77.8",
+    "tailwindcss": "3.4.1"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.7",
-    "@tailwindcss/typography": "^0.5.13",
-    "@types/eslint": "^9.6.0",
-    "better-react-mathjax": "^2.0.3",
-    "eslint": "^9.0.0",
-    "lucide-react": "^0.344.0",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sass": "^1.77.8",
-    "tailwindcss": "^3.4.1"
+    "@tailwindcss/forms": "0.5.7",
+    "@tailwindcss/typography": "0.5.13",
+    "@types/eslint": "9.6.0",
+    "better-react-mathjax": "2.0.3",
+    "eslint": "9.0.0",
+    "lucide-react": "0.344.0",
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "1.77.8",
+    "tailwindcss": "3.4.1"
   },
   "peerDependencies": {
     "@ulld/api": "workspace:*",
@@ -66,9 +64,9 @@
     "@ulld/ui": "workspace:*",
     "@ulld/utilities": "workspace:*",
     "@ulld/whiteboard": "workspace:*",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "packageManager": "pnpm@9.0.4",
   "ulld-pluginConfig": {

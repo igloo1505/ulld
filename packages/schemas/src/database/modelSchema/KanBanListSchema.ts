@@ -1,12 +1,12 @@
 import { z } from 'zod';
-import type { KanBanCardWithRelations } from '../KanBanCardSchema.js'
-import type { KanBanCardPartialWithRelations } from '../KanBanCardSchema.js'
-import type { KanbanWithRelations } from '../KanbanSchema.js'
-import type { KanbanPartialWithRelations } from '../KanbanSchema.js'
-import { KanBanCardWithRelationsSchema } from '../KanBanCardSchema.js'
-import { KanBanCardPartialWithRelationsSchema } from '../KanBanCardSchema.js'
-import { KanbanWithRelationsSchema } from '../KanbanSchema.js'
-import { KanbanPartialWithRelationsSchema } from '../KanbanSchema.js'
+import type { KanBanCardWithRelations } from './KanBanCardSchema.js'
+import type { KanBanCardPartialWithRelations } from './KanBanCardSchema.js'
+import type { KanbanWithRelations } from './KanbanSchema.js'
+import type { KanbanPartialWithRelations } from './KanbanSchema.js'
+import { KanBanCardWithRelationsSchema } from './KanBanCardSchema.js'
+import { KanBanCardPartialWithRelationsSchema } from './KanBanCardSchema.js'
+import { KanbanWithRelationsSchema } from './KanbanSchema.js'
+import { KanbanPartialWithRelationsSchema } from './KanbanSchema.js'
 /////////////////////////////////////////
 // KAN BAN LIST SCHEMA
 /////////////////////////////////////////

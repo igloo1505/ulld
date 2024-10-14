@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/BusinessContactCreateInputSchema.js
-..//inputTypeSchemas/BusinessContactUncheckedCreateInputSchema.js
+import { BusinessContactCreateInputSchema } from '../inputTypeSchemas/BusinessContactCreateInputSchema.js'
+import { BusinessContactUncheckedCreateInputSchema } from '../inputTypeSchemas/BusinessContactUncheckedCreateInputSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const BusinessContactSelectSchema: z.ZodType<Prisma.BusinessContactSelect> = z.object({

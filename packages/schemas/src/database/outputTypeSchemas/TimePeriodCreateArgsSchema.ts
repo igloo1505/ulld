@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/TimePeriodIncludeSchema.js
-..//inputTypeSchemas/TimePeriodCreateInputSchema.js
-..//inputTypeSchemas/TimePeriodUncheckedCreateInputSchema.js
+import { TimePeriodIncludeSchema } from '../inputTypeSchemas/TimePeriodIncludeSchema.js'
+import { TimePeriodCreateInputSchema } from '../inputTypeSchemas/TimePeriodCreateInputSchema.js'
+import { TimePeriodUncheckedCreateInputSchema } from '../inputTypeSchemas/TimePeriodUncheckedCreateInputSchema.js'
 import { DietArgsSchema } from "../outputTypeSchemas/DietArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------

@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/DJTWhereInputSchema.js
-..//inputTypeSchemas/DJTOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/DJTWhereUniqueInputSchema.js
-..//inputTypeSchemas/DJTScalarFieldEnumSchema.js
+import { DJTWhereInputSchema } from '../inputTypeSchemas/DJTWhereInputSchema.js'
+import { DJTOrderByWithRelationInputSchema } from '../inputTypeSchemas/DJTOrderByWithRelationInputSchema.js'
+import { DJTWhereUniqueInputSchema } from '../inputTypeSchemas/DJTWhereUniqueInputSchema.js'
+import { DJTScalarFieldEnumSchema } from '../inputTypeSchemas/DJTScalarFieldEnumSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const DJTSelectSchema: z.ZodType<Prisma.DJTSelect> = z.object({

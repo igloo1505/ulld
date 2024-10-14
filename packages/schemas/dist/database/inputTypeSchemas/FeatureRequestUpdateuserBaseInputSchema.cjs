@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkPWIKFJ5Zcjs = require('../../chunk-PWIKFJ5Z.cjs');
+var _chunkRYYFOCC5cjs = require('../../chunk-RYYFOCC5.cjs');
 
 
 
-exports.FeatureRequestUpdateuserBaseInputSchema = _chunkPWIKFJ5Zcjs.FeatureRequestUpdateuserBaseInputSchema; exports.default = _chunkPWIKFJ5Zcjs.FeatureRequestUpdateuserBaseInputSchema_default;
+exports.FeatureRequestUpdateuserBaseInputSchema = _chunkRYYFOCC5cjs.FeatureRequestUpdateuserBaseInputSchema; exports.default = _chunkRYYFOCC5cjs.FeatureRequestUpdateuserBaseInputSchema_default;
 //# sourceMappingURL=FeatureRequestUpdateuserBaseInputSchema.cjs.map

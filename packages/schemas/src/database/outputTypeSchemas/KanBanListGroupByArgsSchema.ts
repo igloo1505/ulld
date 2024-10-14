@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/KanBanListWhereInputSchema.js
-..//inputTypeSchemas/KanBanListOrderByWithAggregationInputSchema.js
-..//inputTypeSchemas/KanBanListScalarFieldEnumSchema.js
-..//inputTypeSchemas/KanBanListScalarWhereWithAggregatesInputSchema.js
+import { KanBanListWhereInputSchema } from '../inputTypeSchemas/KanBanListWhereInputSchema.js'
+import { KanBanListOrderByWithAggregationInputSchema } from '../inputTypeSchemas/KanBanListOrderByWithAggregationInputSchema.js'
+import { KanBanListScalarFieldEnumSchema } from '../inputTypeSchemas/KanBanListScalarFieldEnumSchema.js'
+import { KanBanListScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/KanBanListScalarWhereWithAggregatesInputSchema.js'
 export const KanBanListGroupByArgsSchema: z.ZodType<Prisma.KanBanListGroupByArgs> = z.object({
   where: KanBanListWhereInputSchema.optional(),
   orderBy: z.union([ KanBanListOrderByWithAggregationInputSchema.array(),KanBanListOrderByWithAggregationInputSchema ]).optional(),

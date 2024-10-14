@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteWhereUniqueInputSchema } from '../MdxNoteWhereUniqueInputSchema.js';
-import { MdxNoteUpdateWithoutTagsInputSchema } from '../MdxNoteUpdateWithoutTagsInputSchema.js';
-import { MdxNoteUncheckedUpdateWithoutTagsInputSchema } from '../MdxNoteUncheckedUpdateWithoutTagsInputSchema.js';
-import { MdxNoteCreateWithoutTagsInputSchema } from '../MdxNoteCreateWithoutTagsInputSchema.js';
-import { MdxNoteUncheckedCreateWithoutTagsInputSchema } from '../MdxNoteUncheckedCreateWithoutTagsInputSchema.js';
+import { MdxNoteWhereUniqueInputSchema } from './MdxNoteWhereUniqueInputSchema.js';
+import { MdxNoteUpdateWithoutTagsInputSchema } from './MdxNoteUpdateWithoutTagsInputSchema.js';
+import { MdxNoteUncheckedUpdateWithoutTagsInputSchema } from './MdxNoteUncheckedUpdateWithoutTagsInputSchema.js';
+import { MdxNoteCreateWithoutTagsInputSchema } from './MdxNoteCreateWithoutTagsInputSchema.js';
+import { MdxNoteUncheckedCreateWithoutTagsInputSchema } from './MdxNoteUncheckedCreateWithoutTagsInputSchema.js';
 export const MdxNoteUpsertWithWhereUniqueWithoutTagsInputSchema: z.ZodType<Prisma.MdxNoteUpsertWithWhereUniqueWithoutTagsInput> = z.object({
   where: z.lazy(() => MdxNoteWhereUniqueInputSchema),
   update: z.union([ z.lazy(() => MdxNoteUpdateWithoutTagsInputSchema),z.lazy(() => MdxNoteUncheckedUpdateWithoutTagsInputSchema) ]),

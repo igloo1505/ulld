@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from '../IntFilterSchema.js';
-import { JsonFilterSchema } from '../JsonFilterSchema.js';
-import { FloatFilterSchema } from '../FloatFilterSchema.js';
-import { IntNullableListFilterSchema } from '../IntNullableListFilterSchema.js';
-import { EquationListRelationFilterSchema } from '../EquationListRelationFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { JsonFilterSchema } from './JsonFilterSchema.js';
+import { FloatFilterSchema } from './FloatFilterSchema.js';
+import { IntNullableListFilterSchema } from './IntNullableListFilterSchema.js';
+import { EquationListRelationFilterSchema } from './EquationListRelationFilterSchema.js';
 export const RelatedValuesWhereInputSchema: z.ZodType<Prisma.RelatedValuesWhereInput> = z.object({
   AND: z.union([ z.lazy(() => RelatedValuesWhereInputSchema),z.lazy(() => RelatedValuesWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => RelatedValuesWhereInputSchema).array().optional(),

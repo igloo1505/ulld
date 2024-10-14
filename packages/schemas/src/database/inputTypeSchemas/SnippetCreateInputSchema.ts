@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SnippetCreatekeywordsInputSchema } from '../SnippetCreatekeywordsInputSchema.js';
+import { SnippetCreatekeywordsInputSchema } from './SnippetCreatekeywordsInputSchema.js';
 export const SnippetCreateInputSchema: z.ZodType<Prisma.SnippetCreateInput> = z.object({
   content: z.string(),
   description: z.string(),

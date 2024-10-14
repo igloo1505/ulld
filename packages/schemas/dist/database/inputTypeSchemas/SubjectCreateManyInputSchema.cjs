@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkUCNHQRTGcjs = require('../../chunk-UCNHQRTG.cjs');
+var _chunkIUZVTRHKcjs = require('../../chunk-IUZVTRHK.cjs');
 
 
 
-exports.SubjectCreateManyInputSchema = _chunkUCNHQRTGcjs.SubjectCreateManyInputSchema; exports.default = _chunkUCNHQRTGcjs.SubjectCreateManyInputSchema_default;
+exports.SubjectCreateManyInputSchema = _chunkIUZVTRHKcjs.SubjectCreateManyInputSchema; exports.default = _chunkIUZVTRHKcjs.SubjectCreateManyInputSchema_default;
 //# sourceMappingURL=SubjectCreateManyInputSchema.cjs.map

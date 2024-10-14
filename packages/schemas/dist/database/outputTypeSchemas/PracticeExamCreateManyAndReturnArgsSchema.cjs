@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkAZSLGULEcjs = require('../../chunk-AZSLGULE.cjs');
-require('../../chunk-SOVPXMFA.cjs');
+var _chunk5V36EVDPcjs = require('../../chunk-5V36EVDP.cjs');
+require('../../chunk-QKVEKAZ5.cjs');
 
 
 
-exports.PracticeExamCreateManyAndReturnArgsSchema = _chunkAZSLGULEcjs.PracticeExamCreateManyAndReturnArgsSchema; exports.default = _chunkAZSLGULEcjs.PracticeExamCreateManyAndReturnArgsSchema_default;
+exports.PracticeExamCreateManyAndReturnArgsSchema = _chunk5V36EVDPcjs.PracticeExamCreateManyAndReturnArgsSchema; exports.default = _chunk5V36EVDPcjs.PracticeExamCreateManyAndReturnArgsSchema_default;
 //# sourceMappingURL=PracticeExamCreateManyAndReturnArgsSchema.cjs.map

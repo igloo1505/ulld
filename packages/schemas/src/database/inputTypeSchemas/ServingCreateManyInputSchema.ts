@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { QUANTITY_GUESSSchema } from '../QUANTITY_GUESSSchema.js';
+import { QUANTITY_GUESSSchema } from './QUANTITY_GUESSSchema.js';
 export const ServingCreateManyInputSchema: z.ZodType<Prisma.ServingCreateManyInput> = z.object({
   id: z.number().int().optional(),
   dietaryItemId: z.number().int(),

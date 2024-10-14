@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { NestedBytesFilterSchema } from '../NestedBytesFilterSchema.js';
+import { NestedBytesFilterSchema } from './NestedBytesFilterSchema.js';
 export const BytesFilterSchema: z.ZodType<Prisma.BytesFilter> = z.object({
   equals: z.instanceof(Buffer).optional(),
   in: z.instanceof(Buffer).array().optional(),

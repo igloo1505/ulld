@@ -1,10 +1,10 @@
 import {
   SubjectUncheckedUpdateManyWithoutMdxNotesInputSchema,
   SubjectUncheckedUpdateManyWithoutMdxNotesInputSchema_default
-} from "../../chunk-HNJIA3GM.js";
-import "../../chunk-SG2ZRBF2.js";
-import "../../chunk-EL2ERAXL.js";
-import "../../chunk-3GDEEYNJ.js";
+} from "../../chunk-ZV5MNX67.js";
+import "../../chunk-7KFMTKWN.js";
+import "../../chunk-VTROTMKZ.js";
+import "../../chunk-BQIXGZB5.js";
 export {
   SubjectUncheckedUpdateManyWithoutMdxNotesInputSchema,
   SubjectUncheckedUpdateManyWithoutMdxNotesInputSchema_default as default

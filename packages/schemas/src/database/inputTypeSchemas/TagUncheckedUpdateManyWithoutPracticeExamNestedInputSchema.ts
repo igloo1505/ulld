@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TagCreateWithoutPracticeExamInputSchema } from '../TagCreateWithoutPracticeExamInputSchema.js';
-import { TagUncheckedCreateWithoutPracticeExamInputSchema } from '../TagUncheckedCreateWithoutPracticeExamInputSchema.js';
-import { TagCreateOrConnectWithoutPracticeExamInputSchema } from '../TagCreateOrConnectWithoutPracticeExamInputSchema.js';
-import { TagUpsertWithWhereUniqueWithoutPracticeExamInputSchema } from '../TagUpsertWithWhereUniqueWithoutPracticeExamInputSchema.js';
-import { TagWhereUniqueInputSchema } from '../TagWhereUniqueInputSchema.js';
-import { TagUpdateWithWhereUniqueWithoutPracticeExamInputSchema } from '../TagUpdateWithWhereUniqueWithoutPracticeExamInputSchema.js';
-import { TagUpdateManyWithWhereWithoutPracticeExamInputSchema } from '../TagUpdateManyWithWhereWithoutPracticeExamInputSchema.js';
-import { TagScalarWhereInputSchema } from '../TagScalarWhereInputSchema.js';
+import { TagCreateWithoutPracticeExamInputSchema } from './TagCreateWithoutPracticeExamInputSchema.js';
+import { TagUncheckedCreateWithoutPracticeExamInputSchema } from './TagUncheckedCreateWithoutPracticeExamInputSchema.js';
+import { TagCreateOrConnectWithoutPracticeExamInputSchema } from './TagCreateOrConnectWithoutPracticeExamInputSchema.js';
+import { TagUpsertWithWhereUniqueWithoutPracticeExamInputSchema } from './TagUpsertWithWhereUniqueWithoutPracticeExamInputSchema.js';
+import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema.js';
+import { TagUpdateWithWhereUniqueWithoutPracticeExamInputSchema } from './TagUpdateWithWhereUniqueWithoutPracticeExamInputSchema.js';
+import { TagUpdateManyWithWhereWithoutPracticeExamInputSchema } from './TagUpdateManyWithWhereWithoutPracticeExamInputSchema.js';
+import { TagScalarWhereInputSchema } from './TagScalarWhereInputSchema.js';
 export const TagUncheckedUpdateManyWithoutPracticeExamNestedInputSchema: z.ZodType<Prisma.TagUncheckedUpdateManyWithoutPracticeExamNestedInput> = z.object({
   create: z.union([ z.lazy(() => TagCreateWithoutPracticeExamInputSchema),z.lazy(() => TagCreateWithoutPracticeExamInputSchema).array(),z.lazy(() => TagUncheckedCreateWithoutPracticeExamInputSchema),z.lazy(() => TagUncheckedCreateWithoutPracticeExamInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TagCreateOrConnectWithoutPracticeExamInputSchema),z.lazy(() => TagCreateOrConnectWithoutPracticeExamInputSchema).array() ]).optional(),

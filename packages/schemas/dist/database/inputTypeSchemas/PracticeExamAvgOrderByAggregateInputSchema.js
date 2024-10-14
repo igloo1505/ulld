@@ -1,8 +1,8 @@
 import {
   PracticeExamAvgOrderByAggregateInputSchema,
   PracticeExamAvgOrderByAggregateInputSchema_default
-} from "../../chunk-NEG6F7WO.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-IHH7OPGD.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   PracticeExamAvgOrderByAggregateInputSchema,
   PracticeExamAvgOrderByAggregateInputSchema_default as default

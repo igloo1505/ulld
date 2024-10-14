@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { QAPairCreateWithoutPracticeExamInputSchema } from '../QAPairCreateWithoutPracticeExamInputSchema.js';
-import { QAPairUncheckedCreateWithoutPracticeExamInputSchema } from '../QAPairUncheckedCreateWithoutPracticeExamInputSchema.js';
-import { QAPairCreateOrConnectWithoutPracticeExamInputSchema } from '../QAPairCreateOrConnectWithoutPracticeExamInputSchema.js';
-import { QAPairUpsertWithWhereUniqueWithoutPracticeExamInputSchema } from '../QAPairUpsertWithWhereUniqueWithoutPracticeExamInputSchema.js';
-import { QAPairWhereUniqueInputSchema } from '../QAPairWhereUniqueInputSchema.js';
-import { QAPairUpdateWithWhereUniqueWithoutPracticeExamInputSchema } from '../QAPairUpdateWithWhereUniqueWithoutPracticeExamInputSchema.js';
-import { QAPairUpdateManyWithWhereWithoutPracticeExamInputSchema } from '../QAPairUpdateManyWithWhereWithoutPracticeExamInputSchema.js';
-import { QAPairScalarWhereInputSchema } from '../QAPairScalarWhereInputSchema.js';
+import { QAPairCreateWithoutPracticeExamInputSchema } from './QAPairCreateWithoutPracticeExamInputSchema.js';
+import { QAPairUncheckedCreateWithoutPracticeExamInputSchema } from './QAPairUncheckedCreateWithoutPracticeExamInputSchema.js';
+import { QAPairCreateOrConnectWithoutPracticeExamInputSchema } from './QAPairCreateOrConnectWithoutPracticeExamInputSchema.js';
+import { QAPairUpsertWithWhereUniqueWithoutPracticeExamInputSchema } from './QAPairUpsertWithWhereUniqueWithoutPracticeExamInputSchema.js';
+import { QAPairWhereUniqueInputSchema } from './QAPairWhereUniqueInputSchema.js';
+import { QAPairUpdateWithWhereUniqueWithoutPracticeExamInputSchema } from './QAPairUpdateWithWhereUniqueWithoutPracticeExamInputSchema.js';
+import { QAPairUpdateManyWithWhereWithoutPracticeExamInputSchema } from './QAPairUpdateManyWithWhereWithoutPracticeExamInputSchema.js';
+import { QAPairScalarWhereInputSchema } from './QAPairScalarWhereInputSchema.js';
 export const QAPairUpdateManyWithoutPracticeExamNestedInputSchema: z.ZodType<Prisma.QAPairUpdateManyWithoutPracticeExamNestedInput> = z.object({
   create: z.union([ z.lazy(() => QAPairCreateWithoutPracticeExamInputSchema),z.lazy(() => QAPairCreateWithoutPracticeExamInputSchema).array(),z.lazy(() => QAPairUncheckedCreateWithoutPracticeExamInputSchema),z.lazy(() => QAPairUncheckedCreateWithoutPracticeExamInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => QAPairCreateOrConnectWithoutPracticeExamInputSchema),z.lazy(() => QAPairCreateOrConnectWithoutPracticeExamInputSchema).array() ]).optional(),

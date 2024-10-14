@@ -1,7 +1,7 @@
 import {
   QuoteCreateManyInputSchema,
   QuoteCreateManyInputSchema_default
-} from "../../chunk-NBDT4RMU.js";
+} from "../../chunk-ZT354ONR.js";
 export {
   QuoteCreateManyInputSchema,
   QuoteCreateManyInputSchema_default as default

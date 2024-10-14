@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/TagIncludeSchema.js
-..//inputTypeSchemas/TagWhereUniqueInputSchema.js
+import { TagIncludeSchema } from '../inputTypeSchemas/TagIncludeSchema.js'
+import { TagWhereUniqueInputSchema } from '../inputTypeSchemas/TagWhereUniqueInputSchema.js'
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { BibEntryFindManyArgsSchema } from "../outputTypeSchemas/BibEntryFindManyArgsSchema"
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"

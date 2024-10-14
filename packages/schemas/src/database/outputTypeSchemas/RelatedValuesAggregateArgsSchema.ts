@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/RelatedValuesWhereInputSchema.js
-..//inputTypeSchemas/RelatedValuesOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/RelatedValuesWhereUniqueInputSchema.js
+import { RelatedValuesWhereInputSchema } from '../inputTypeSchemas/RelatedValuesWhereInputSchema.js'
+import { RelatedValuesOrderByWithRelationInputSchema } from '../inputTypeSchemas/RelatedValuesOrderByWithRelationInputSchema.js'
+import { RelatedValuesWhereUniqueInputSchema } from '../inputTypeSchemas/RelatedValuesWhereUniqueInputSchema.js'
 export const RelatedValuesAggregateArgsSchema: z.ZodType<Prisma.RelatedValuesAggregateArgs> = z.object({
   where: RelatedValuesWhereInputSchema.optional(),
   orderBy: z.union([ RelatedValuesOrderByWithRelationInputSchema.array(),RelatedValuesOrderByWithRelationInputSchema ]).optional(),

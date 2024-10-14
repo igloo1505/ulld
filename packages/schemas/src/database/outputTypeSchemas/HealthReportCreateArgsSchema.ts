@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/HealthReportIncludeSchema.js
-..//inputTypeSchemas/HealthReportCreateInputSchema.js
-..//inputTypeSchemas/HealthReportUncheckedCreateInputSchema.js
+import { HealthReportIncludeSchema } from '../inputTypeSchemas/HealthReportIncludeSchema.js'
+import { HealthReportCreateInputSchema } from '../inputTypeSchemas/HealthReportCreateInputSchema.js'
+import { HealthReportUncheckedCreateInputSchema } from '../inputTypeSchemas/HealthReportUncheckedCreateInputSchema.js'
 import { DietArgsSchema } from "../outputTypeSchemas/DietArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------

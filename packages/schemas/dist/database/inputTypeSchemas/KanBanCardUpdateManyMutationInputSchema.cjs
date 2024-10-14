@@ -1,11 +1,11 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkOGM23X7Hcjs = require('../../chunk-OGM23X7H.cjs');
-require('../../chunk-VBWN4YJJ.cjs');
-require('../../chunk-X2HWIL4A.cjs');
+var _chunkVTZFISLTcjs = require('../../chunk-VTZFISLT.cjs');
+require('../../chunk-HHR6Z4QK.cjs');
+require('../../chunk-YGCZ3T7T.cjs');
 
 
 
-exports.KanBanCardUpdateManyMutationInputSchema = _chunkOGM23X7Hcjs.KanBanCardUpdateManyMutationInputSchema; exports.default = _chunkOGM23X7Hcjs.KanBanCardUpdateManyMutationInputSchema_default;
+exports.KanBanCardUpdateManyMutationInputSchema = _chunkVTZFISLTcjs.KanBanCardUpdateManyMutationInputSchema; exports.default = _chunkVTZFISLTcjs.KanBanCardUpdateManyMutationInputSchema_default;
 //# sourceMappingURL=KanBanCardUpdateManyMutationInputSchema.cjs.map

@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkK336RN4Qcjs = require('../../chunk-K336RN4Q.cjs');
+var _chunkOIOTPB57cjs = require('../../chunk-OIOTPB57.cjs');
 
 
 
-exports.TimePeriodOrderByRelevanceFieldEnumSchema = _chunkK336RN4Qcjs.TimePeriodOrderByRelevanceFieldEnumSchema; exports.default = _chunkK336RN4Qcjs.TimePeriodOrderByRelevanceFieldEnumSchema_default;
+exports.TimePeriodOrderByRelevanceFieldEnumSchema = _chunkOIOTPB57cjs.TimePeriodOrderByRelevanceFieldEnumSchema; exports.default = _chunkOIOTPB57cjs.TimePeriodOrderByRelevanceFieldEnumSchema_default;
 //# sourceMappingURL=TimePeriodOrderByRelevanceFieldEnumSchema.cjs.map

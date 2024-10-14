@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/database/inputTypeSchemas/QueryModeSchema.ts"],"sourcesContent":["import { z } from 'zod';\n\nexport const QueryModeSchema = z.enum(['default','insensitive']);\n\nexport default QueryModeSchema;\n"],"mappings":";AAAA,SAAS,SAAS;AAEX,IAAM,kBAAkB,EAAE,KAAK,CAAC,WAAU,aAAa,CAAC;AAE/D,IAAO,0BAAQ;","names":[]}

@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/KanbanWhereInputSchema.js
-..//inputTypeSchemas/KanbanOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/KanbanWhereUniqueInputSchema.js
+import { KanbanWhereInputSchema } from '../inputTypeSchemas/KanbanWhereInputSchema.js'
+import { KanbanOrderByWithRelationInputSchema } from '../inputTypeSchemas/KanbanOrderByWithRelationInputSchema.js'
+import { KanbanWhereUniqueInputSchema } from '../inputTypeSchemas/KanbanWhereUniqueInputSchema.js'
 export const KanbanAggregateArgsSchema: z.ZodType<Prisma.KanbanAggregateArgs> = z.object({
   where: KanbanWhereInputSchema.optional(),
   orderBy: z.union([ KanbanOrderByWithRelationInputSchema.array(),KanbanOrderByWithRelationInputSchema ]).optional(),

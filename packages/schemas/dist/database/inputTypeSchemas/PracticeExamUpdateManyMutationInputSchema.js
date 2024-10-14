@@ -1,9 +1,9 @@
 import {
   PracticeExamUpdateManyMutationInputSchema,
   PracticeExamUpdateManyMutationInputSchema_default
-} from "../../chunk-IO6UUH36.js";
-import "../../chunk-PNLBXL4W.js";
-import "../../chunk-EL2ERAXL.js";
+} from "../../chunk-ATBEKMFT.js";
+import "../../chunk-TKIJII67.js";
+import "../../chunk-VTROTMKZ.js";
 export {
   PracticeExamUpdateManyMutationInputSchema,
   PracticeExamUpdateManyMutationInputSchema_default as default

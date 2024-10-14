@@ -1,7 +1,7 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
-import { StringNullableWithAggregatesFilterSchema } from '../StringNullableWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
 export const CitationsGroupScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.CitationsGroupScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => CitationsGroupScalarWhereWithAggregatesInputSchema),z.lazy(() => CitationsGroupScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => CitationsGroupScalarWhereWithAggregatesInputSchema).array().optional(),

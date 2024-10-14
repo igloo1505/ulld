@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkU4MTKNEXcjs = require('../../chunk-U4MTKNEX.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkUYWIJZZUcjs = require('../../chunk-UYWIJZZU.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.ReadingListMinOrderByAggregateInputSchema = _chunkU4MTKNEXcjs.ReadingListMinOrderByAggregateInputSchema; exports.default = _chunkU4MTKNEXcjs.ReadingListMinOrderByAggregateInputSchema_default;
+exports.ReadingListMinOrderByAggregateInputSchema = _chunkUYWIJZZUcjs.ReadingListMinOrderByAggregateInputSchema; exports.default = _chunkUYWIJZZUcjs.ReadingListMinOrderByAggregateInputSchema_default;
 //# sourceMappingURL=ReadingListMinOrderByAggregateInputSchema.cjs.map

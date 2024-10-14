@@ -1,8 +1,8 @@
 import {
   KanBanListSumOrderByAggregateInputSchema,
   KanBanListSumOrderByAggregateInputSchema_default
-} from "../../chunk-MXRBBCAU.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-TGZU7C2W.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   KanBanListSumOrderByAggregateInputSchema,
   KanBanListSumOrderByAggregateInputSchema_default as default

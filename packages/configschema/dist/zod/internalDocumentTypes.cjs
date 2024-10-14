@@ -2,7 +2,7 @@
 
 
 
-var _chunkYRKEHSSOcjs = require('../chunk-YRKEHSSO.cjs');
+var _chunkF26HMTKScjs = require('../chunk-F26HMTKS.cjs');
 require('../chunk-DN3GUCEK.cjs');
 require('../chunk-JUH5FQQR.cjs');
 require('../chunk-JD2KBTXX.cjs');
@@ -10,5 +10,5 @@ require('../chunk-JD2KBTXX.cjs');
 
 
 
-exports.internalDocTypes = _chunkYRKEHSSOcjs.internalDocTypes; exports.internalDocumentTypeConfigSchema = _chunkYRKEHSSOcjs.internalDocumentTypeConfigSchema; exports.internalDocumentTypes = _chunkYRKEHSSOcjs.internalDocumentTypes;
+exports.internalDocTypes = _chunkF26HMTKScjs.internalDocTypes; exports.internalDocumentTypeConfigSchema = _chunkF26HMTKScjs.internalDocumentTypeConfigSchema; exports.internalDocumentTypes = _chunkF26HMTKScjs.internalDocumentTypes;
 //# sourceMappingURL=internalDocumentTypes.cjs.map

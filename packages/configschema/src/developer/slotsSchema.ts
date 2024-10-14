@@ -1,19 +1,23 @@
 import { z, ZodTypeAny } from "zod";
 import { SlotMap } from "./slotMapRootType.js";
-import buildStaticData from "@ulld/utilities/buildStaticData.json" with {type: "json"};
+import { getCurrentPackageVersions } from "@ulld/utilities/internalDataHelpers";
+import { InternalAppName } from "@ulld/types";
 
 export const configPluginSchema = z
     .object({
         name: z.string(),
         version: z.string().default("latest"),
     })
-    .transform((x) => ({
-        name: x.name,
-        version:
-            x.name in buildStaticData.currentPackageVersions
-                ? buildStaticData.currentPackageVersions[x.name as keyof typeof buildStaticData.currentPackageVersions]
-              : "latest",
-    }));
+    .transform((x) => {
+        const currentPackageVersions = getCurrentPackageVersions();
+        return {
+            name: x.name,
+            version:
+                x.name in currentPackageVersions
+                    ? currentPackageVersions[x.name as InternalAppName]
+                    : "latest",
+        };
+    });
 
 const pluginConfigTransform = (
     val:
@@ -23,15 +27,14 @@ const pluginConfigTransform = (
         | z.input<typeof configPluginSchema>[],
 ): z.output<typeof configPluginSchema>[] => {
     let vals = Array.isArray(val) ? val : [val];
+    const currentPackageVersions = getCurrentPackageVersions();
     return vals.map((v) =>
         typeof v === "string"
             ? {
                 name: v,
                 version:
-                    v in buildStaticData.currentPackageVersions
-                        ? buildStaticData.currentPackageVersions[
-                        v as keyof typeof buildStaticData.currentPackageVersions
-                        ]
+                    v in currentPackageVersions
+                        ? currentPackageVersions[v as InternalAppName]
                         : "latest",
             }
             : configPluginSchema.parse(v),

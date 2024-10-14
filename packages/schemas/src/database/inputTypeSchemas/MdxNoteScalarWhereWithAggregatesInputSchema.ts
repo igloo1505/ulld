@@ -1,14 +1,14 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
-import { BoolNullableWithAggregatesFilterSchema } from '../BoolNullableWithAggregatesFilterSchema.js';
-import { StringNullableWithAggregatesFilterSchema } from '../StringNullableWithAggregatesFilterSchema.js';
-import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
-import { StringNullableListFilterSchema } from '../StringNullableListFilterSchema.js';
-import { FloatNullableListFilterSchema } from '../FloatNullableListFilterSchema.js';
-import { FloatNullableWithAggregatesFilterSchema } from '../FloatNullableWithAggregatesFilterSchema.js';
-import { BoolWithAggregatesFilterSchema } from '../BoolWithAggregatesFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { BoolNullableWithAggregatesFilterSchema } from './BoolNullableWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { StringNullableListFilterSchema } from './StringNullableListFilterSchema.js';
+import { FloatNullableListFilterSchema } from './FloatNullableListFilterSchema.js';
+import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema.js';
+import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
 export const MdxNoteScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.MdxNoteScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => MdxNoteScalarWhereWithAggregatesInputSchema),z.lazy(() => MdxNoteScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => MdxNoteScalarWhereWithAggregatesInputSchema).array().optional(),

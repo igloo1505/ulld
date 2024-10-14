@@ -1,8 +1,8 @@
 import {
   DefinitionAvgOrderByAggregateInputSchema,
   DefinitionAvgOrderByAggregateInputSchema_default
-} from "../../chunk-5X24WC4T.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-NNGLDKI3.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   DefinitionAvgOrderByAggregateInputSchema,
   DefinitionAvgOrderByAggregateInputSchema_default as default

@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
-import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
-import { StringNullableListFilterSchema } from '../StringNullableListFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { StringNullableListFilterSchema } from './StringNullableListFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
 export const FeatureRequestScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.FeatureRequestScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => FeatureRequestScalarWhereWithAggregatesInputSchema),z.lazy(() => FeatureRequestScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => FeatureRequestScalarWhereWithAggregatesInputSchema).array().optional(),

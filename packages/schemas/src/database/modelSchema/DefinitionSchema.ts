@@ -1,8 +1,8 @@
 import { z } from 'zod';
-import type { MdxNoteWithRelations } from '../MdxNoteSchema.js'
-import type { MdxNotePartialWithRelations } from '../MdxNoteSchema.js'
-import { MdxNoteWithRelationsSchema } from '../MdxNoteSchema.js'
-import { MdxNotePartialWithRelationsSchema } from '../MdxNoteSchema.js'
+import type { MdxNoteWithRelations } from './MdxNoteSchema.js'
+import type { MdxNotePartialWithRelations } from './MdxNoteSchema.js'
+import { MdxNoteWithRelationsSchema } from './MdxNoteSchema.js'
+import { MdxNotePartialWithRelationsSchema } from './MdxNoteSchema.js'
 /////////////////////////////////////////
 // DEFINITION SCHEMA
 /////////////////////////////////////////

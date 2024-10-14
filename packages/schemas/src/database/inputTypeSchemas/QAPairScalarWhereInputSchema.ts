@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
-import { IntFilterSchema } from '../IntFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
 export const QAPairScalarWhereInputSchema: z.ZodType<Prisma.QAPairScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => QAPairScalarWhereInputSchema),z.lazy(() => QAPairScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => QAPairScalarWhereInputSchema).array().optional(),

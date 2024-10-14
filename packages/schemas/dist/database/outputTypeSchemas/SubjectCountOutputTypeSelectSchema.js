@@ -1,7 +1,7 @@
 import {
   SubjectCountOutputTypeSelectSchema,
   SubjectCountOutputTypeSelectSchema_default
-} from "../../chunk-57N76VWD.js";
+} from "../../chunk-FX6IAE5C.js";
 export {
   SubjectCountOutputTypeSelectSchema,
   SubjectCountOutputTypeSelectSchema_default as default

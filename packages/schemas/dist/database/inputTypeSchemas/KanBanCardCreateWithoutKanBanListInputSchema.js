@@ -1,7 +1,7 @@
 import {
   KanBanCardCreateWithoutKanBanListInputSchema,
   KanBanCardCreateWithoutKanBanListInputSchema_default
-} from "../../chunk-ROU7NOMX.js";
+} from "../../chunk-5Z5OUN6K.js";
 export {
   KanBanCardCreateWithoutKanBanListInputSchema,
   KanBanCardCreateWithoutKanBanListInputSchema_default as default

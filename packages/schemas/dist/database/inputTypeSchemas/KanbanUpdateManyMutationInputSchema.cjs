@@ -1,11 +1,11 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkB2IKYOMUcjs = require('../../chunk-B2IKYOMU.cjs');
-require('../../chunk-6JWX7MA3.cjs');
-require('../../chunk-HGFNG2SE.cjs');
+var _chunkNOHWQLUIcjs = require('../../chunk-NOHWQLUI.cjs');
+require('../../chunk-4HCQC4XG.cjs');
+require('../../chunk-I5XF7I5V.cjs');
 
 
 
-exports.KanbanUpdateManyMutationInputSchema = _chunkB2IKYOMUcjs.KanbanUpdateManyMutationInputSchema; exports.default = _chunkB2IKYOMUcjs.KanbanUpdateManyMutationInputSchema_default;
+exports.KanbanUpdateManyMutationInputSchema = _chunkNOHWQLUIcjs.KanbanUpdateManyMutationInputSchema; exports.default = _chunkNOHWQLUIcjs.KanbanUpdateManyMutationInputSchema_default;
 //# sourceMappingURL=KanbanUpdateManyMutationInputSchema.cjs.map

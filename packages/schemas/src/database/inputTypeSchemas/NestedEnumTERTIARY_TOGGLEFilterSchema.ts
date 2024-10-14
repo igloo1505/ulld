@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TERTIARY_TOGGLESchema } from '../TERTIARY_TOGGLESchema.js';
+import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema.js';
 export const NestedEnumTERTIARY_TOGGLEFilterSchema: z.ZodType<Prisma.NestedEnumTERTIARY_TOGGLEFilter> = z.object({
   equals: z.lazy(() => TERTIARY_TOGGLESchema).optional(),
   in: z.lazy(() => TERTIARY_TOGGLESchema).array().optional(),

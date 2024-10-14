@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkE2T7TWCPcjs = require('../../chunk-E2T7TWCP.cjs');
-require('../../chunk-FBONB66K.cjs');
+var _chunkSTQGH23Mcjs = require('../../chunk-STQGH23M.cjs');
+require('../../chunk-5T2E7QWB.cjs');
 
 
 
-exports.DietaryItemCreateManyAndReturnArgsSchema = _chunkE2T7TWCPcjs.DietaryItemCreateManyAndReturnArgsSchema; exports.default = _chunkE2T7TWCPcjs.DietaryItemCreateManyAndReturnArgsSchema_default;
+exports.DietaryItemCreateManyAndReturnArgsSchema = _chunkSTQGH23Mcjs.DietaryItemCreateManyAndReturnArgsSchema; exports.default = _chunkSTQGH23Mcjs.DietaryItemCreateManyAndReturnArgsSchema_default;
 //# sourceMappingURL=DietaryItemCreateManyAndReturnArgsSchema.cjs.map

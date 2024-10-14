@@ -1,8 +1,8 @@
 import {
   DietaryItemAvgOrderByAggregateInputSchema,
   DietaryItemAvgOrderByAggregateInputSchema_default
-} from "../../chunk-JWTC4VW3.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-HPSQ4MD2.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   DietaryItemAvgOrderByAggregateInputSchema,
   DietaryItemAvgOrderByAggregateInputSchema_default as default

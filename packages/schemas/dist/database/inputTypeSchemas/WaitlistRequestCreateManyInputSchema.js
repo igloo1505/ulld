@@ -1,7 +1,7 @@
 import {
   WaitlistRequestCreateManyInputSchema,
   WaitlistRequestCreateManyInputSchema_default
-} from "../../chunk-V5ZCEMOP.js";
+} from "../../chunk-RZLACC2A.js";
 export {
   WaitlistRequestCreateManyInputSchema,
   WaitlistRequestCreateManyInputSchema_default as default

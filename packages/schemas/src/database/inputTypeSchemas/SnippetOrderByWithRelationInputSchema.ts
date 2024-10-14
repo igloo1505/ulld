@@ -1,7 +1,7 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
-import { SnippetOrderByRelevanceInputSchema } from '../SnippetOrderByRelevanceInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SnippetOrderByRelevanceInputSchema } from './SnippetOrderByRelevanceInputSchema.js';
 export const SnippetOrderByWithRelationInputSchema: z.ZodType<Prisma.SnippetOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   content: z.lazy(() => SortOrderSchema).optional(),

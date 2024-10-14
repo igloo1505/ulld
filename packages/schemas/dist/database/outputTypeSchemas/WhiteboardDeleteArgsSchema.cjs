@@ -2,17 +2,17 @@
 
 
 
-var _chunk6IJPREU7cjs = require('../../chunk-6IJPREU7.cjs');
-require('../../chunk-SIF2Q2FM.cjs');
-require('../../chunk-KUZ7YP2Q.cjs');
-require('../../chunk-LUPCRKLS.cjs');
-require('../../chunk-Y2LT7T2O.cjs');
-require('../../chunk-7NJCCFRT.cjs');
-require('../../chunk-EWPH3EBU.cjs');
-require('../../chunk-UYFIWA5B.cjs');
+var _chunkYUWNUWOGcjs = require('../../chunk-YUWNUWOG.cjs');
+require('../../chunk-ETRZB726.cjs');
+require('../../chunk-RT3WXQAZ.cjs');
+require('../../chunk-QR4642W7.cjs');
+require('../../chunk-WM65OPNI.cjs');
+require('../../chunk-XUF4Q3ZJ.cjs');
+require('../../chunk-4R6ZXXTA.cjs');
+require('../../chunk-X5MAVCUY.cjs');
 
 
 
 
-exports.WhiteboardDeleteArgsSchema = _chunk6IJPREU7cjs.WhiteboardDeleteArgsSchema; exports.WhiteboardSelectSchema = _chunk6IJPREU7cjs.WhiteboardSelectSchema; exports.default = _chunk6IJPREU7cjs.WhiteboardDeleteArgsSchema_default;
+exports.WhiteboardDeleteArgsSchema = _chunkYUWNUWOGcjs.WhiteboardDeleteArgsSchema; exports.WhiteboardSelectSchema = _chunkYUWNUWOGcjs.WhiteboardSelectSchema; exports.default = _chunkYUWNUWOGcjs.WhiteboardDeleteArgsSchema_default;
 //# sourceMappingURL=WhiteboardDeleteArgsSchema.cjs.map

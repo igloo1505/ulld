@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteCreatecitationsListOrderInputSchema } from '../MdxNoteCreatecitationsListOrderInputSchema.js';
-import { MdxNoteCreateimportantValuesInputSchema } from '../MdxNoteCreateimportantValuesInputSchema.js';
-import { MdxNoteCreateoutgoingQuickLinksInputSchema } from '../MdxNoteCreateoutgoingQuickLinksInputSchema.js';
+import { MdxNoteCreatecitationsListOrderInputSchema } from './MdxNoteCreatecitationsListOrderInputSchema.js';
+import { MdxNoteCreateimportantValuesInputSchema } from './MdxNoteCreateimportantValuesInputSchema.js';
+import { MdxNoteCreateoutgoingQuickLinksInputSchema } from './MdxNoteCreateoutgoingQuickLinksInputSchema.js';
 export const MdxNoteCreateManyInputSchema: z.ZodType<Prisma.MdxNoteCreateManyInput> = z.object({
   id: z.number().int().optional(),
   isProtected: z.boolean().optional().nullable(),

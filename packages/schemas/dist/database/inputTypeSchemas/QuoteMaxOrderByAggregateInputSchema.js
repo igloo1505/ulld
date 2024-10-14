@@ -1,8 +1,8 @@
 import {
   QuoteMaxOrderByAggregateInputSchema,
   QuoteMaxOrderByAggregateInputSchema_default
-} from "../../chunk-LER4W5HO.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-BQSCWBE5.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   QuoteMaxOrderByAggregateInputSchema,
   QuoteMaxOrderByAggregateInputSchema_default as default

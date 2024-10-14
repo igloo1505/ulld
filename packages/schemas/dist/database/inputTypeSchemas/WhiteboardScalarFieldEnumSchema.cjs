@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkBV45MF35cjs = require('../../chunk-BV45MF35.cjs');
+var _chunk36DIEZ4Ncjs = require('../../chunk-36DIEZ4N.cjs');
 
 
 
-exports.WhiteboardScalarFieldEnumSchema = _chunkBV45MF35cjs.WhiteboardScalarFieldEnumSchema; exports.default = _chunkBV45MF35cjs.WhiteboardScalarFieldEnumSchema_default;
+exports.WhiteboardScalarFieldEnumSchema = _chunk36DIEZ4Ncjs.WhiteboardScalarFieldEnumSchema; exports.default = _chunk36DIEZ4Ncjs.WhiteboardScalarFieldEnumSchema_default;
 //# sourceMappingURL=WhiteboardScalarFieldEnumSchema.cjs.map

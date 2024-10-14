@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IpynbCreatecitationsListOrderInputSchema } from '../IpynbCreatecitationsListOrderInputSchema.js';
-import { IpynbCreateimportantValuesInputSchema } from '../IpynbCreateimportantValuesInputSchema.js';
-import { IpynbCreateoutgoingQuickLinksInputSchema } from '../IpynbCreateoutgoingQuickLinksInputSchema.js';
-import { TagUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from '../TagUncheckedCreateNestedManyWithoutIpynbNotesInputSchema.js';
-import { TopicUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from '../TopicUncheckedCreateNestedManyWithoutIpynbNotesInputSchema.js';
-import { SubjectUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from '../SubjectUncheckedCreateNestedManyWithoutIpynbNotesInputSchema.js';
-import { BibEntryUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from '../BibEntryUncheckedCreateNestedManyWithoutIpynbNotesInputSchema.js';
+import { IpynbCreatecitationsListOrderInputSchema } from './IpynbCreatecitationsListOrderInputSchema.js';
+import { IpynbCreateimportantValuesInputSchema } from './IpynbCreateimportantValuesInputSchema.js';
+import { IpynbCreateoutgoingQuickLinksInputSchema } from './IpynbCreateoutgoingQuickLinksInputSchema.js';
+import { TagUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from './TagUncheckedCreateNestedManyWithoutIpynbNotesInputSchema.js';
+import { TopicUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from './TopicUncheckedCreateNestedManyWithoutIpynbNotesInputSchema.js';
+import { SubjectUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from './SubjectUncheckedCreateNestedManyWithoutIpynbNotesInputSchema.js';
+import { BibEntryUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from './BibEntryUncheckedCreateNestedManyWithoutIpynbNotesInputSchema.js';
 export const IpynbUncheckedCreateWithoutReadingListInputSchema: z.ZodType<Prisma.IpynbUncheckedCreateWithoutReadingListInput> = z.object({
   id: z.number().int().optional(),
   rootRelativePath: z.string(),

@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { NestedFloatNullableFilterSchema } from '../NestedFloatNullableFilterSchema.js';
+import { NestedFloatNullableFilterSchema } from './NestedFloatNullableFilterSchema.js';
 export const FloatNullableFilterSchema: z.ZodType<Prisma.FloatNullableFilter> = z.object({
   equals: z.number().optional().nullable(),
   in: z.number().array().optional().nullable(),

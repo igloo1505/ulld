@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkBRDOGD33cjs = require('../../chunk-BRDOGD33.cjs');
+var _chunkPALRL6S5cjs = require('../../chunk-PALRL6S5.cjs');
 
 
 
-exports.TaskCategorySchema = _chunkBRDOGD33cjs.TaskCategorySchema; exports.default = _chunkBRDOGD33cjs.TaskCategorySchema_default;
+exports.TaskCategorySchema = _chunkPALRL6S5cjs.TaskCategorySchema; exports.default = _chunkPALRL6S5cjs.TaskCategorySchema_default;
 //# sourceMappingURL=TaskCategorySchema.cjs.map

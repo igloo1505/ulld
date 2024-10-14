@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ReadingListCreateWithoutBibEntriesInputSchema } from '../ReadingListCreateWithoutBibEntriesInputSchema.js';
-import { ReadingListUncheckedCreateWithoutBibEntriesInputSchema } from '../ReadingListUncheckedCreateWithoutBibEntriesInputSchema.js';
-import { ReadingListCreateOrConnectWithoutBibEntriesInputSchema } from '../ReadingListCreateOrConnectWithoutBibEntriesInputSchema.js';
-import { ReadingListUpsertWithWhereUniqueWithoutBibEntriesInputSchema } from '../ReadingListUpsertWithWhereUniqueWithoutBibEntriesInputSchema.js';
-import { ReadingListWhereUniqueInputSchema } from '../ReadingListWhereUniqueInputSchema.js';
-import { ReadingListUpdateWithWhereUniqueWithoutBibEntriesInputSchema } from '../ReadingListUpdateWithWhereUniqueWithoutBibEntriesInputSchema.js';
-import { ReadingListUpdateManyWithWhereWithoutBibEntriesInputSchema } from '../ReadingListUpdateManyWithWhereWithoutBibEntriesInputSchema.js';
-import { ReadingListScalarWhereInputSchema } from '../ReadingListScalarWhereInputSchema.js';
+import { ReadingListCreateWithoutBibEntriesInputSchema } from './ReadingListCreateWithoutBibEntriesInputSchema.js';
+import { ReadingListUncheckedCreateWithoutBibEntriesInputSchema } from './ReadingListUncheckedCreateWithoutBibEntriesInputSchema.js';
+import { ReadingListCreateOrConnectWithoutBibEntriesInputSchema } from './ReadingListCreateOrConnectWithoutBibEntriesInputSchema.js';
+import { ReadingListUpsertWithWhereUniqueWithoutBibEntriesInputSchema } from './ReadingListUpsertWithWhereUniqueWithoutBibEntriesInputSchema.js';
+import { ReadingListWhereUniqueInputSchema } from './ReadingListWhereUniqueInputSchema.js';
+import { ReadingListUpdateWithWhereUniqueWithoutBibEntriesInputSchema } from './ReadingListUpdateWithWhereUniqueWithoutBibEntriesInputSchema.js';
+import { ReadingListUpdateManyWithWhereWithoutBibEntriesInputSchema } from './ReadingListUpdateManyWithWhereWithoutBibEntriesInputSchema.js';
+import { ReadingListScalarWhereInputSchema } from './ReadingListScalarWhereInputSchema.js';
 export const ReadingListUpdateManyWithoutBibEntriesNestedInputSchema: z.ZodType<Prisma.ReadingListUpdateManyWithoutBibEntriesNestedInput> = z.object({
   create: z.union([ z.lazy(() => ReadingListCreateWithoutBibEntriesInputSchema),z.lazy(() => ReadingListCreateWithoutBibEntriesInputSchema).array(),z.lazy(() => ReadingListUncheckedCreateWithoutBibEntriesInputSchema),z.lazy(() => ReadingListUncheckedCreateWithoutBibEntriesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => ReadingListCreateOrConnectWithoutBibEntriesInputSchema),z.lazy(() => ReadingListCreateOrConnectWithoutBibEntriesInputSchema).array() ]).optional(),

@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
-import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
 export const KanbanScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.KanbanScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => KanbanScalarWhereWithAggregatesInputSchema),z.lazy(() => KanbanScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => KanbanScalarWhereWithAggregatesInputSchema).array().optional(),

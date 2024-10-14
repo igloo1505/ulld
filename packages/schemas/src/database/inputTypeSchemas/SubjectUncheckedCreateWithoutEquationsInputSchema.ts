@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteUncheckedCreateNestedManyWithoutSubjectsInputSchema } from '../MdxNoteUncheckedCreateNestedManyWithoutSubjectsInputSchema.js';
-import { IpynbUncheckedCreateNestedManyWithoutSubjectsInputSchema } from '../IpynbUncheckedCreateNestedManyWithoutSubjectsInputSchema.js';
-import { QAPairUncheckedCreateNestedManyWithoutSubjectsInputSchema } from '../QAPairUncheckedCreateNestedManyWithoutSubjectsInputSchema.js';
-import { PracticeExamUncheckedCreateNestedManyWithoutSubjectsInputSchema } from '../PracticeExamUncheckedCreateNestedManyWithoutSubjectsInputSchema.js';
-import { ToDoListUncheckedCreateNestedManyWithoutSubjectsInputSchema } from '../ToDoListUncheckedCreateNestedManyWithoutSubjectsInputSchema.js';
-import { ToDoUncheckedCreateNestedManyWithoutSubjectsInputSchema } from '../ToDoUncheckedCreateNestedManyWithoutSubjectsInputSchema.js';
-import { BibEntryUncheckedCreateNestedManyWithoutSubjectsInputSchema } from '../BibEntryUncheckedCreateNestedManyWithoutSubjectsInputSchema.js';
+import { MdxNoteUncheckedCreateNestedManyWithoutSubjectsInputSchema } from './MdxNoteUncheckedCreateNestedManyWithoutSubjectsInputSchema.js';
+import { IpynbUncheckedCreateNestedManyWithoutSubjectsInputSchema } from './IpynbUncheckedCreateNestedManyWithoutSubjectsInputSchema.js';
+import { QAPairUncheckedCreateNestedManyWithoutSubjectsInputSchema } from './QAPairUncheckedCreateNestedManyWithoutSubjectsInputSchema.js';
+import { PracticeExamUncheckedCreateNestedManyWithoutSubjectsInputSchema } from './PracticeExamUncheckedCreateNestedManyWithoutSubjectsInputSchema.js';
+import { ToDoListUncheckedCreateNestedManyWithoutSubjectsInputSchema } from './ToDoListUncheckedCreateNestedManyWithoutSubjectsInputSchema.js';
+import { ToDoUncheckedCreateNestedManyWithoutSubjectsInputSchema } from './ToDoUncheckedCreateNestedManyWithoutSubjectsInputSchema.js';
+import { BibEntryUncheckedCreateNestedManyWithoutSubjectsInputSchema } from './BibEntryUncheckedCreateNestedManyWithoutSubjectsInputSchema.js';
 export const SubjectUncheckedCreateWithoutEquationsInputSchema: z.ZodType<Prisma.SubjectUncheckedCreateWithoutEquationsInput> = z.object({
   value: z.string(),
   kanbanId: z.number().int().optional().nullable(),

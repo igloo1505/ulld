@@ -1,16 +1,16 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkDDVRCUHAcjs = require('../../../chunk-DDVRCUHA.cjs');
+var _chunkO3XXJGKHcjs = require('../../../chunk-O3XXJGKH.cjs');
 require('../../../chunk-EVVC275F.cjs');
 
 
-var _chunkB3DHHFFOcjs = require('../../../chunk-B3DHHFFO.cjs');
-require('../../../chunk-XS5FAGTH.cjs');
-require('../../../chunk-4U2KQM45.cjs');
+var _chunkULOPMKTGcjs = require('../../../chunk-ULOPMKTG.cjs');
+require('../../../chunk-RYYQDYYZ.cjs');
 
 
 var _chunkZVLC4XKLcjs = require('../../../chunk-ZVLC4XKL.cjs');
 require('../../../chunk-5WBGMMOX.cjs');
+require('../../../chunk-4U2KQM45.cjs');
 
 
 var _chunkHFGI5CVIcjs = require('../../../chunk-HFGI5CVI.cjs');
@@ -30,7 +30,7 @@ var mdxNotePropsSchema = _zod.z.object({
   raw: _zod.z.string(),
   floatImages: _zod.z.boolean().default(false),
   formatted: _zod.z.string().nullish(),
-  citations: _chunkDDVRCUHAcjs.bibEntryPropsSchema.array().default([]),
+  citations: _chunkO3XXJGKHcjs.bibEntryPropsSchema.array().default([]),
   importantValues: _zod.z.number().array().default([]),
   bookmarked: _zod.z.boolean().default(false),
   quickLinkId: _zod.z.string().nullish(),
@@ -48,7 +48,7 @@ var mdxNotePropsSchema = _zod.z.object({
   saveFormatted: _zod.z.boolean().default(true),
   noteType: _zod.z.string().transform(_identity.makeValidIdOnlyLetters),
   trackRemote: _zod.z.boolean().default(false),
-  toDo: _chunkB3DHHFFOcjs.todoTaskZodObject.array().default([]),
+  toDo: _chunkULOPMKTGcjs.todoTaskZodObject.array().default([]),
   summary: _zod.z.string().nullish(),
   firstSync: _zod.z.union([
     _zod.z.string().datetime().transform((a) => new Date(a)),

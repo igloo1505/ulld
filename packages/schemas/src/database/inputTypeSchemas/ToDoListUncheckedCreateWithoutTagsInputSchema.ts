@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ToDoUncheckedCreateNestedManyWithoutToDoListInputSchema } from '../ToDoUncheckedCreateNestedManyWithoutToDoListInputSchema.js';
-import { TopicUncheckedCreateNestedManyWithoutTodoListInputSchema } from '../TopicUncheckedCreateNestedManyWithoutTodoListInputSchema.js';
-import { SubjectUncheckedCreateNestedManyWithoutTodoListInputSchema } from '../SubjectUncheckedCreateNestedManyWithoutTodoListInputSchema.js';
+import { ToDoUncheckedCreateNestedManyWithoutToDoListInputSchema } from './ToDoUncheckedCreateNestedManyWithoutToDoListInputSchema.js';
+import { TopicUncheckedCreateNestedManyWithoutTodoListInputSchema } from './TopicUncheckedCreateNestedManyWithoutTodoListInputSchema.js';
+import { SubjectUncheckedCreateNestedManyWithoutTodoListInputSchema } from './SubjectUncheckedCreateNestedManyWithoutTodoListInputSchema.js';
 export const ToDoListUncheckedCreateWithoutTagsInputSchema: z.ZodType<Prisma.ToDoListUncheckedCreateWithoutTagsInput> = z.object({
   id: z.number().int().optional(),
   label: z.string(),

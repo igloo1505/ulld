@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkG34K3UIYcjs = require('../../chunk-G34K3UIY.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkXA4BM3BFcjs = require('../../chunk-XA4BM3BF.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.KanBanCardAvgOrderByAggregateInputSchema = _chunkG34K3UIYcjs.KanBanCardAvgOrderByAggregateInputSchema; exports.default = _chunkG34K3UIYcjs.KanBanCardAvgOrderByAggregateInputSchema_default;
+exports.KanBanCardAvgOrderByAggregateInputSchema = _chunkXA4BM3BFcjs.KanBanCardAvgOrderByAggregateInputSchema; exports.default = _chunkXA4BM3BFcjs.KanBanCardAvgOrderByAggregateInputSchema_default;
 //# sourceMappingURL=KanBanCardAvgOrderByAggregateInputSchema.cjs.map

@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TERTIARY_TOGGLESchema } from '../TERTIARY_TOGGLESchema.js';
-import { DietCreategoalsInputSchema } from '../DietCreategoalsInputSchema.js';
-import { DIETARY_GOALSchema } from '../DIETARY_GOALSchema.js';
-import { DietaryItemCreateNestedManyWithoutDietInputSchema } from '../DietaryItemCreateNestedManyWithoutDietInputSchema.js';
-import { HealthReportCreateNestedManyWithoutCurrentDietInputSchema } from '../HealthReportCreateNestedManyWithoutCurrentDietInputSchema.js';
+import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema.js';
+import { DietCreategoalsInputSchema } from './DietCreategoalsInputSchema.js';
+import { DIETARY_GOALSchema } from './DIETARY_GOALSchema.js';
+import { DietaryItemCreateNestedManyWithoutDietInputSchema } from './DietaryItemCreateNestedManyWithoutDietInputSchema.js';
+import { HealthReportCreateNestedManyWithoutCurrentDietInputSchema } from './HealthReportCreateNestedManyWithoutCurrentDietInputSchema.js';
 export const DietCreateWithoutPeriodsFollowedInputSchema: z.ZodType<Prisma.DietCreateWithoutPeriodsFollowedInput> = z.object({
   name: z.string(),
   summary: z.string().optional().nullable(),

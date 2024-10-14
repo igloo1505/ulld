@@ -1,7 +1,7 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { WhiteboardOrderByRelevanceFieldEnumSchema } from '../WhiteboardOrderByRelevanceFieldEnumSchema.js';
-import { SortOrderSchema } from '../SortOrderSchema.js';
+import { WhiteboardOrderByRelevanceFieldEnumSchema } from './WhiteboardOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
 export const WhiteboardOrderByRelevanceInputSchema: z.ZodType<Prisma.WhiteboardOrderByRelevanceInput> = z.object({
   fields: z.union([ z.lazy(() => WhiteboardOrderByRelevanceFieldEnumSchema),z.lazy(() => WhiteboardOrderByRelevanceFieldEnumSchema).array() ]),
   sort: z.lazy(() => SortOrderSchema),

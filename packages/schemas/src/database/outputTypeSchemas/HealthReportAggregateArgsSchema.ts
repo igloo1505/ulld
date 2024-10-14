@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/HealthReportWhereInputSchema.js
-..//inputTypeSchemas/HealthReportOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/HealthReportWhereUniqueInputSchema.js
+import { HealthReportWhereInputSchema } from '../inputTypeSchemas/HealthReportWhereInputSchema.js'
+import { HealthReportOrderByWithRelationInputSchema } from '../inputTypeSchemas/HealthReportOrderByWithRelationInputSchema.js'
+import { HealthReportWhereUniqueInputSchema } from '../inputTypeSchemas/HealthReportWhereUniqueInputSchema.js'
 export const HealthReportAggregateArgsSchema: z.ZodType<Prisma.HealthReportAggregateArgs> = z.object({
   where: HealthReportWhereInputSchema.optional(),
   orderBy: z.union([ HealthReportOrderByWithRelationInputSchema.array(),HealthReportOrderByWithRelationInputSchema ]).optional(),

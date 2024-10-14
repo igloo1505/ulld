@@ -1,11 +1,11 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { KanBanCardWhereInputSchema } from '../KanBanCardWhereInputSchema.js';
-import { IntNullableFilterSchema } from '../IntNullableFilterSchema.js';
-import { IntFilterSchema } from '../IntFilterSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
-import { KanBanListNullableRelationFilterSchema } from '../KanBanListNullableRelationFilterSchema.js';
-import { KanBanListWhereInputSchema } from '../KanBanListWhereInputSchema.js';
+import { KanBanCardWhereInputSchema } from './KanBanCardWhereInputSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { KanBanListNullableRelationFilterSchema } from './KanBanListNullableRelationFilterSchema.js';
+import { KanBanListWhereInputSchema } from './KanBanListWhereInputSchema.js';
 export const KanBanCardWhereUniqueInputSchema: z.ZodType<Prisma.KanBanCardWhereUniqueInput> = z.object({
   id: z.number().int()
 })

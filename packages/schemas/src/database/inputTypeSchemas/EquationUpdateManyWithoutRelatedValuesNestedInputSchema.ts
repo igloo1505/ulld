@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { EquationCreateWithoutRelatedValuesInputSchema } from '../EquationCreateWithoutRelatedValuesInputSchema.js';
-import { EquationUncheckedCreateWithoutRelatedValuesInputSchema } from '../EquationUncheckedCreateWithoutRelatedValuesInputSchema.js';
-import { EquationCreateOrConnectWithoutRelatedValuesInputSchema } from '../EquationCreateOrConnectWithoutRelatedValuesInputSchema.js';
-import { EquationUpsertWithWhereUniqueWithoutRelatedValuesInputSchema } from '../EquationUpsertWithWhereUniqueWithoutRelatedValuesInputSchema.js';
-import { EquationWhereUniqueInputSchema } from '../EquationWhereUniqueInputSchema.js';
-import { EquationUpdateWithWhereUniqueWithoutRelatedValuesInputSchema } from '../EquationUpdateWithWhereUniqueWithoutRelatedValuesInputSchema.js';
-import { EquationUpdateManyWithWhereWithoutRelatedValuesInputSchema } from '../EquationUpdateManyWithWhereWithoutRelatedValuesInputSchema.js';
-import { EquationScalarWhereInputSchema } from '../EquationScalarWhereInputSchema.js';
+import { EquationCreateWithoutRelatedValuesInputSchema } from './EquationCreateWithoutRelatedValuesInputSchema.js';
+import { EquationUncheckedCreateWithoutRelatedValuesInputSchema } from './EquationUncheckedCreateWithoutRelatedValuesInputSchema.js';
+import { EquationCreateOrConnectWithoutRelatedValuesInputSchema } from './EquationCreateOrConnectWithoutRelatedValuesInputSchema.js';
+import { EquationUpsertWithWhereUniqueWithoutRelatedValuesInputSchema } from './EquationUpsertWithWhereUniqueWithoutRelatedValuesInputSchema.js';
+import { EquationWhereUniqueInputSchema } from './EquationWhereUniqueInputSchema.js';
+import { EquationUpdateWithWhereUniqueWithoutRelatedValuesInputSchema } from './EquationUpdateWithWhereUniqueWithoutRelatedValuesInputSchema.js';
+import { EquationUpdateManyWithWhereWithoutRelatedValuesInputSchema } from './EquationUpdateManyWithWhereWithoutRelatedValuesInputSchema.js';
+import { EquationScalarWhereInputSchema } from './EquationScalarWhereInputSchema.js';
 export const EquationUpdateManyWithoutRelatedValuesNestedInputSchema: z.ZodType<Prisma.EquationUpdateManyWithoutRelatedValuesNestedInput> = z.object({
   create: z.union([ z.lazy(() => EquationCreateWithoutRelatedValuesInputSchema),z.lazy(() => EquationCreateWithoutRelatedValuesInputSchema).array(),z.lazy(() => EquationUncheckedCreateWithoutRelatedValuesInputSchema),z.lazy(() => EquationUncheckedCreateWithoutRelatedValuesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => EquationCreateOrConnectWithoutRelatedValuesInputSchema),z.lazy(() => EquationCreateOrConnectWithoutRelatedValuesInputSchema).array() ]).optional(),

@@ -1,7 +1,7 @@
 import {
   EquationCreatekeywordsInputSchema,
   EquationCreatekeywordsInputSchema_default
-} from "../../chunk-NUMZANMA.js";
+} from "../../chunk-L5R5LLYC.js";
 export {
   EquationCreatekeywordsInputSchema,
   EquationCreatekeywordsInputSchema_default as default

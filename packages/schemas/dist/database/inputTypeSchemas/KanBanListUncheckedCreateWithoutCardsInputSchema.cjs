@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkEHIPTTX4cjs = require('../../chunk-EHIPTTX4.cjs');
+var _chunkBAZQIFUNcjs = require('../../chunk-BAZQIFUN.cjs');
 
 
 
-exports.KanBanListUncheckedCreateWithoutCardsInputSchema = _chunkEHIPTTX4cjs.KanBanListUncheckedCreateWithoutCardsInputSchema; exports.default = _chunkEHIPTTX4cjs.KanBanListUncheckedCreateWithoutCardsInputSchema_default;
+exports.KanBanListUncheckedCreateWithoutCardsInputSchema = _chunkBAZQIFUNcjs.KanBanListUncheckedCreateWithoutCardsInputSchema; exports.default = _chunkBAZQIFUNcjs.KanBanListUncheckedCreateWithoutCardsInputSchema_default;
 //# sourceMappingURL=KanBanListUncheckedCreateWithoutCardsInputSchema.cjs.map

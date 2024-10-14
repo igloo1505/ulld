@@ -1,7 +1,7 @@
 import {
   DietScalarFieldEnumSchema,
   DietScalarFieldEnumSchema_default
-} from "../../chunk-N2FLSVTN.js";
+} from "../../chunk-VPDMFHNI.js";
 export {
   DietScalarFieldEnumSchema,
   DietScalarFieldEnumSchema_default as default

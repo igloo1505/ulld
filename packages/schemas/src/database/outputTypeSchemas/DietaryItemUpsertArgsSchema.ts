@@ -1,11 +1,11 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/DietaryItemIncludeSchema.js
-..//inputTypeSchemas/DietaryItemWhereUniqueInputSchema.js
-..//inputTypeSchemas/DietaryItemCreateInputSchema.js
-..//inputTypeSchemas/DietaryItemUncheckedCreateInputSchema.js
-..//inputTypeSchemas/DietaryItemUpdateInputSchema.js
-..//inputTypeSchemas/DietaryItemUncheckedUpdateInputSchema.js
+import { DietaryItemIncludeSchema } from '../inputTypeSchemas/DietaryItemIncludeSchema.js'
+import { DietaryItemWhereUniqueInputSchema } from '../inputTypeSchemas/DietaryItemWhereUniqueInputSchema.js'
+import { DietaryItemCreateInputSchema } from '../inputTypeSchemas/DietaryItemCreateInputSchema.js'
+import { DietaryItemUncheckedCreateInputSchema } from '../inputTypeSchemas/DietaryItemUncheckedCreateInputSchema.js'
+import { DietaryItemUpdateInputSchema } from '../inputTypeSchemas/DietaryItemUpdateInputSchema.js'
+import { DietaryItemUncheckedUpdateInputSchema } from '../inputTypeSchemas/DietaryItemUncheckedUpdateInputSchema.js'
 import { DietFindManyArgsSchema } from "../outputTypeSchemas/DietFindManyArgsSchema"
 import { ServingFindManyArgsSchema } from "../outputTypeSchemas/ServingFindManyArgsSchema"
 import { DietaryItemCountOutputTypeArgsSchema } from "../outputTypeSchemas/DietaryItemCountOutputTypeArgsSchema"

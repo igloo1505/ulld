@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { BibWhereInputSchema } from '../BibWhereInputSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
-import { BibEntryListRelationFilterSchema } from '../BibEntryListRelationFilterSchema.js';
+import { BibWhereInputSchema } from './BibWhereInputSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { BibEntryListRelationFilterSchema } from './BibEntryListRelationFilterSchema.js';
 export const BibWhereUniqueInputSchema: z.ZodType<Prisma.BibWhereUniqueInput> = z.object({
   id: z.number().int()
 })

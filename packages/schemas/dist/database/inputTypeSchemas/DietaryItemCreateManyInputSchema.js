@@ -1,7 +1,7 @@
 import {
   DietaryItemCreateManyInputSchema,
   DietaryItemCreateManyInputSchema_default
-} from "../../chunk-5Y3BCMZS.js";
+} from "../../chunk-6GLNGD4W.js";
 export {
   DietaryItemCreateManyInputSchema,
   DietaryItemCreateManyInputSchema_default as default

@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkVJWDJ55Vcjs = require('../../chunk-VJWDJ55V.cjs');
+var _chunkSB5HZH7Ncjs = require('../../chunk-SB5HZH7N.cjs');
 
 
 
-exports.WhiteboardUncheckedCreateInputSchema = _chunkVJWDJ55Vcjs.WhiteboardUncheckedCreateInputSchema; exports.default = _chunkVJWDJ55Vcjs.WhiteboardUncheckedCreateInputSchema_default;
+exports.WhiteboardUncheckedCreateInputSchema = _chunkSB5HZH7Ncjs.WhiteboardUncheckedCreateInputSchema; exports.default = _chunkSB5HZH7Ncjs.WhiteboardUncheckedCreateInputSchema_default;
 //# sourceMappingURL=WhiteboardUncheckedCreateInputSchema.cjs.map

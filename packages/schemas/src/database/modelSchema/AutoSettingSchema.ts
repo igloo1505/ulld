@@ -1,5 +1,5 @@
 import { z } from 'zod';
-..//inputTypeSchemas/autoSettingSchema.js
+import { autoSettingSchema } from '../inputTypeSchemas/autoSettingSchema.js'
 /////////////////////////////////////////
 // AUTO SETTING SCHEMA
 /////////////////////////////////////////

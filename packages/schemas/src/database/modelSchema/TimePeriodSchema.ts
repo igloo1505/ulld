@@ -1,8 +1,8 @@
 import { z } from 'zod';
-import type { DietWithRelations } from '../DietSchema.js'
-import type { DietPartialWithRelations } from '../DietSchema.js'
-import { DietWithRelationsSchema } from '../DietSchema.js'
-import { DietPartialWithRelationsSchema } from '../DietSchema.js'
+import type { DietWithRelations } from './DietSchema.js'
+import type { DietPartialWithRelations } from './DietSchema.js'
+import { DietWithRelationsSchema } from './DietSchema.js'
+import { DietPartialWithRelationsSchema } from './DietSchema.js'
 /////////////////////////////////////////
 // TIME PERIOD SCHEMA
 /////////////////////////////////////////

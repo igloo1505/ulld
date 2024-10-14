@@ -1,14 +1,14 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
-import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
-import { DateTimeNullableWithAggregatesFilterSchema } from '../DateTimeNullableWithAggregatesFilterSchema.js';
-import { StringNullableWithAggregatesFilterSchema } from '../StringNullableWithAggregatesFilterSchema.js';
-import { IntNullableWithAggregatesFilterSchema } from '../IntNullableWithAggregatesFilterSchema.js';
-import { EnumTaskCategoryNullableWithAggregatesFilterSchema } from '../EnumTaskCategoryNullableWithAggregatesFilterSchema.js';
-import { TaskCategorySchema } from '../TaskCategorySchema.js';
-import { BoolWithAggregatesFilterSchema } from '../BoolWithAggregatesFilterSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { DateTimeNullableWithAggregatesFilterSchema } from './DateTimeNullableWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema.js';
+import { EnumTaskCategoryNullableWithAggregatesFilterSchema } from './EnumTaskCategoryNullableWithAggregatesFilterSchema.js';
+import { TaskCategorySchema } from './TaskCategorySchema.js';
+import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema.js';
 export const ToDoScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.ToDoScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => ToDoScalarWhereWithAggregatesInputSchema),z.lazy(() => ToDoScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => ToDoScalarWhereWithAggregatesInputSchema).array().optional(),

@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { KanBanListWhereInputSchema } from '../KanBanListWhereInputSchema.js';
-import { IntFilterSchema } from '../IntFilterSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
-import { IntNullableFilterSchema } from '../IntNullableFilterSchema.js';
-import { KanBanCardListRelationFilterSchema } from '../KanBanCardListRelationFilterSchema.js';
-import { KanbanNullableRelationFilterSchema } from '../KanbanNullableRelationFilterSchema.js';
-import { KanbanWhereInputSchema } from '../KanbanWhereInputSchema.js';
+import { KanBanListWhereInputSchema } from './KanBanListWhereInputSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { KanBanCardListRelationFilterSchema } from './KanBanCardListRelationFilterSchema.js';
+import { KanbanNullableRelationFilterSchema } from './KanbanNullableRelationFilterSchema.js';
+import { KanbanWhereInputSchema } from './KanbanWhereInputSchema.js';
 export const KanBanListWhereUniqueInputSchema: z.ZodType<Prisma.KanBanListWhereUniqueInput> = z.object({
   id: z.number().int()
 })

@@ -1,7 +1,7 @@
 import {
   RandomImageCreateInputSchema,
   RandomImageCreateInputSchema_default
-} from "../../chunk-C2SFCEKF.js";
+} from "../../chunk-TSFSCV2I.js";
 export {
   RandomImageCreateInputSchema,
   RandomImageCreateInputSchema_default as default

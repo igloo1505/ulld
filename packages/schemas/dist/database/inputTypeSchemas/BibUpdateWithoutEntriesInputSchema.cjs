@@ -1,12 +1,12 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkDOTAABR4cjs = require('../../chunk-DOTAABR4.cjs');
-require('../../chunk-X2HWIL4A.cjs');
-require('../../chunk-6JWX7MA3.cjs');
-require('../../chunk-HGFNG2SE.cjs');
+var _chunkREZCYSUTcjs = require('../../chunk-REZCYSUT.cjs');
+require('../../chunk-YGCZ3T7T.cjs');
+require('../../chunk-4HCQC4XG.cjs');
+require('../../chunk-I5XF7I5V.cjs');
 
 
 
-exports.BibUpdateWithoutEntriesInputSchema = _chunkDOTAABR4cjs.BibUpdateWithoutEntriesInputSchema; exports.default = _chunkDOTAABR4cjs.BibUpdateWithoutEntriesInputSchema_default;
+exports.BibUpdateWithoutEntriesInputSchema = _chunkREZCYSUTcjs.BibUpdateWithoutEntriesInputSchema; exports.default = _chunkREZCYSUTcjs.BibUpdateWithoutEntriesInputSchema_default;
 //# sourceMappingURL=BibUpdateWithoutEntriesInputSchema.cjs.map

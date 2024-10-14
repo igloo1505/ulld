@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
-import { BoolWithAggregatesFilterSchema } from '../BoolWithAggregatesFilterSchema.js';
-import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
-import { EnumImageAlignmentWithAggregatesFilterSchema } from '../EnumImageAlignmentWithAggregatesFilterSchema.js';
-import { ImageAlignmentSchema } from '../ImageAlignmentSchema.js';
-import { StringNullableWithAggregatesFilterSchema } from '../StringNullableWithAggregatesFilterSchema.js';
-import { JsonWithAggregatesFilterSchema } from '../JsonWithAggregatesFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { EnumImageAlignmentWithAggregatesFilterSchema } from './EnumImageAlignmentWithAggregatesFilterSchema.js';
+import { ImageAlignmentSchema } from './ImageAlignmentSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { JsonWithAggregatesFilterSchema } from './JsonWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
 export const SettingsScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.SettingsScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => SettingsScalarWhereWithAggregatesInputSchema),z.lazy(() => SettingsScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => SettingsScalarWhereWithAggregatesInputSchema).array().optional(),

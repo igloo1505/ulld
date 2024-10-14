@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/RandomImageWhereInputSchema.js
-..//inputTypeSchemas/RandomImageOrderByWithAggregationInputSchema.js
-..//inputTypeSchemas/RandomImageScalarFieldEnumSchema.js
-..//inputTypeSchemas/RandomImageScalarWhereWithAggregatesInputSchema.js
+import { RandomImageWhereInputSchema } from '../inputTypeSchemas/RandomImageWhereInputSchema.js'
+import { RandomImageOrderByWithAggregationInputSchema } from '../inputTypeSchemas/RandomImageOrderByWithAggregationInputSchema.js'
+import { RandomImageScalarFieldEnumSchema } from '../inputTypeSchemas/RandomImageScalarFieldEnumSchema.js'
+import { RandomImageScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/RandomImageScalarWhereWithAggregatesInputSchema.js'
 export const RandomImageGroupByArgsSchema: z.ZodType<Prisma.RandomImageGroupByArgs> = z.object({
   where: RandomImageWhereInputSchema.optional(),
   orderBy: z.union([ RandomImageOrderByWithAggregationInputSchema.array(),RandomImageOrderByWithAggregationInputSchema ]).optional(),

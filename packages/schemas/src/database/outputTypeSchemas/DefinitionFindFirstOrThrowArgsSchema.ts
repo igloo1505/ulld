@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/DefinitionIncludeSchema.js
-..//inputTypeSchemas/DefinitionWhereInputSchema.js
-..//inputTypeSchemas/DefinitionOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/DefinitionWhereUniqueInputSchema.js
-..//inputTypeSchemas/DefinitionScalarFieldEnumSchema.js
+import { DefinitionIncludeSchema } from '../inputTypeSchemas/DefinitionIncludeSchema.js'
+import { DefinitionWhereInputSchema } from '../inputTypeSchemas/DefinitionWhereInputSchema.js'
+import { DefinitionOrderByWithRelationInputSchema } from '../inputTypeSchemas/DefinitionOrderByWithRelationInputSchema.js'
+import { DefinitionWhereUniqueInputSchema } from '../inputTypeSchemas/DefinitionWhereUniqueInputSchema.js'
+import { DefinitionScalarFieldEnumSchema } from '../inputTypeSchemas/DefinitionScalarFieldEnumSchema.js'
 import { MdxNoteArgsSchema } from "../outputTypeSchemas/MdxNoteArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------

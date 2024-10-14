@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkGQKEHJIAcjs = require('../../chunk-GQKEHJIA.cjs');
-require('../../chunk-Y7J3UVFB.cjs');
+var _chunk2A5DDLAAcjs = require('../../chunk-2A5DDLAA.cjs');
+require('../../chunk-C73H7DWV.cjs');
 
 
 
-exports.SnippetCreateManyInputSchema = _chunkGQKEHJIAcjs.SnippetCreateManyInputSchema; exports.default = _chunkGQKEHJIAcjs.SnippetCreateManyInputSchema_default;
+exports.SnippetCreateManyInputSchema = _chunk2A5DDLAAcjs.SnippetCreateManyInputSchema; exports.default = _chunk2A5DDLAAcjs.SnippetCreateManyInputSchema_default;
 //# sourceMappingURL=SnippetCreateManyInputSchema.cjs.map

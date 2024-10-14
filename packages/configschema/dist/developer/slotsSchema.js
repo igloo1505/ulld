@@ -1,19 +1,23 @@
 // src/developer/slotsSchema.ts
 import { z } from "zod";
-import buildStaticData from "@ulld/utilities/buildStaticData.json";
+import { getCurrentPackageVersions } from "@ulld/utilities/internalDataHelpers";
 var configPluginSchema = z.object({
   name: z.string(),
   version: z.string().default("latest")
-}).transform((x) => ({
-  name: x.name,
-  version: x.name in buildStaticData.currentPackageVersions ? buildStaticData.currentPackageVersions[x.name] : "latest"
-}));
+}).transform((x) => {
+  const currentPackageVersions = getCurrentPackageVersions();
+  return {
+    name: x.name,
+    version: x.name in currentPackageVersions ? currentPackageVersions[x.name] : "latest"
+  };
+});
 var pluginConfigTransform = (val) => {
   let vals = Array.isArray(val) ? val : [val];
+  const currentPackageVersions = getCurrentPackageVersions();
   return vals.map(
     (v) => typeof v === "string" ? {
       name: v,
-      version: v in buildStaticData.currentPackageVersions ? buildStaticData.currentPackageVersions[v] : "latest"
+      version: v in currentPackageVersions ? currentPackageVersions[v] : "latest"
     } : configPluginSchema.parse(v)
   );
 };

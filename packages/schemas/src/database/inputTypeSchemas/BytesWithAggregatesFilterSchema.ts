@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { NestedBytesWithAggregatesFilterSchema } from '../NestedBytesWithAggregatesFilterSchema.js';
-import { NestedIntFilterSchema } from '../NestedIntFilterSchema.js';
-import { NestedBytesFilterSchema } from '../NestedBytesFilterSchema.js';
+import { NestedBytesWithAggregatesFilterSchema } from './NestedBytesWithAggregatesFilterSchema.js';
+import { NestedIntFilterSchema } from './NestedIntFilterSchema.js';
+import { NestedBytesFilterSchema } from './NestedBytesFilterSchema.js';
 export const BytesWithAggregatesFilterSchema: z.ZodType<Prisma.BytesWithAggregatesFilter> = z.object({
   equals: z.instanceof(Buffer).optional(),
   in: z.instanceof(Buffer).array().optional(),

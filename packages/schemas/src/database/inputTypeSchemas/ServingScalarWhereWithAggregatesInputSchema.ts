@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
-import { FloatNullableWithAggregatesFilterSchema } from '../FloatNullableWithAggregatesFilterSchema.js';
-import { EnumQUANTITY_GUESSNullableWithAggregatesFilterSchema } from '../EnumQUANTITY_GUESSNullableWithAggregatesFilterSchema.js';
-import { QUANTITY_GUESSSchema } from '../QUANTITY_GUESSSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema.js';
+import { EnumQUANTITY_GUESSNullableWithAggregatesFilterSchema } from './EnumQUANTITY_GUESSNullableWithAggregatesFilterSchema.js';
+import { QUANTITY_GUESSSchema } from './QUANTITY_GUESSSchema.js';
 export const ServingScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.ServingScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => ServingScalarWhereWithAggregatesInputSchema),z.lazy(() => ServingScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => ServingScalarWhereWithAggregatesInputSchema).array().optional(),

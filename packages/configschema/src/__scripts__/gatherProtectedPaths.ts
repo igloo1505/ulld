@@ -1,17 +1,18 @@
 import fs from "fs";
 import path from "path";
+import { ProtectedPath } from "@ulld/utilities/internalDevTypes";
 
-const __dirname = import.meta.dirname
+const __dirname = import.meta.dirname;
 
 const targetPath = path.join(
     __dirname,
     "../../../utilities/src/utils/buildStaticData.json",
 );
 
-type ProtectedPath = {
-    filePath: string;
-    route: string;
-};
+// type ProtectedPath = {
+//     filePath: string;
+//     route: string;
+// };
 
 const testRoot = process.env.ULLD_TEST_ROOT;
 
@@ -30,10 +31,13 @@ const getCalculatedRoute = (p: string): string => {
         );
     }
     split = split.slice(1).map((w) => getSplitValue(w));
-    return split.join("/")
+    return split.join("/");
 };
 
-export const gatherProtectedPaths = (files: string[], propsExtendsMap: object) => {
+export const gatherProtectedPaths = (
+    files: string[],
+    propsExtendsMap: object,
+) => {
     const protectedPaths: ProtectedPath[] = [];
     // let targetData = JSON.parse(
     //     fs.readFileSync(targetPath, { encoding: "utf-8" }),
@@ -41,25 +45,25 @@ export const gatherProtectedPaths = (files: string[], propsExtendsMap: object) =
     for (const k of files) {
         const data = fs.readFileSync(k, { encoding: "utf-8" });
         let re = /ULLD\:\s*protected-path/gm;
-        const pageForRe = /pageFor:(?<slot>[\w]*)\/(?<subSlot>[\w]*)/gm
+        const pageForRe = /pageFor:(?<slot>[\w]*)\/(?<subSlot>[\w]*)/gm;
         if (re.test(data)) {
             const shortenedPath = k.replace(testRoot, "");
-            let pageFor = pageForRe.exec(data)
+            let pageFor = pageForRe.exec(data);
             let d: any = {
                 filePath: shortenedPath,
                 route: getCalculatedRoute(shortenedPath),
-            }
-            if((pageFor?.groups?.slot && pageFor?.groups?.subSlot)){
+            };
+            if (pageFor?.groups?.slot && pageFor?.groups?.subSlot) {
                 d.pageFor = {
                     slot: pageFor.groups.slot,
-                    subSlot: pageFor.groups.subSlot
-                }
+                    subSlot: pageFor.groups.subSlot,
+                };
             }
             protectedPaths.push(d);
         }
     }
     (propsExtendsMap as any).protectedPaths = protectedPaths;
-    return propsExtendsMap
+    return propsExtendsMap;
     // fs.writeFileSync(targetPath, JSON.stringify(targetData, null, 4), {
     //     encoding: "utf-8",
     // });

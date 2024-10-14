@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TopicCreateWithoutEquationsInputSchema } from '../TopicCreateWithoutEquationsInputSchema.js';
-import { TopicUncheckedCreateWithoutEquationsInputSchema } from '../TopicUncheckedCreateWithoutEquationsInputSchema.js';
-import { TopicCreateOrConnectWithoutEquationsInputSchema } from '../TopicCreateOrConnectWithoutEquationsInputSchema.js';
-import { TopicUpsertWithWhereUniqueWithoutEquationsInputSchema } from '../TopicUpsertWithWhereUniqueWithoutEquationsInputSchema.js';
-import { TopicWhereUniqueInputSchema } from '../TopicWhereUniqueInputSchema.js';
-import { TopicUpdateWithWhereUniqueWithoutEquationsInputSchema } from '../TopicUpdateWithWhereUniqueWithoutEquationsInputSchema.js';
-import { TopicUpdateManyWithWhereWithoutEquationsInputSchema } from '../TopicUpdateManyWithWhereWithoutEquationsInputSchema.js';
-import { TopicScalarWhereInputSchema } from '../TopicScalarWhereInputSchema.js';
+import { TopicCreateWithoutEquationsInputSchema } from './TopicCreateWithoutEquationsInputSchema.js';
+import { TopicUncheckedCreateWithoutEquationsInputSchema } from './TopicUncheckedCreateWithoutEquationsInputSchema.js';
+import { TopicCreateOrConnectWithoutEquationsInputSchema } from './TopicCreateOrConnectWithoutEquationsInputSchema.js';
+import { TopicUpsertWithWhereUniqueWithoutEquationsInputSchema } from './TopicUpsertWithWhereUniqueWithoutEquationsInputSchema.js';
+import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema.js';
+import { TopicUpdateWithWhereUniqueWithoutEquationsInputSchema } from './TopicUpdateWithWhereUniqueWithoutEquationsInputSchema.js';
+import { TopicUpdateManyWithWhereWithoutEquationsInputSchema } from './TopicUpdateManyWithWhereWithoutEquationsInputSchema.js';
+import { TopicScalarWhereInputSchema } from './TopicScalarWhereInputSchema.js';
 export const TopicUncheckedUpdateManyWithoutEquationsNestedInputSchema: z.ZodType<Prisma.TopicUncheckedUpdateManyWithoutEquationsNestedInput> = z.object({
   create: z.union([ z.lazy(() => TopicCreateWithoutEquationsInputSchema),z.lazy(() => TopicCreateWithoutEquationsInputSchema).array(),z.lazy(() => TopicUncheckedCreateWithoutEquationsInputSchema),z.lazy(() => TopicUncheckedCreateWithoutEquationsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TopicCreateOrConnectWithoutEquationsInputSchema),z.lazy(() => TopicCreateOrConnectWithoutEquationsInputSchema).array() ]).optional(),

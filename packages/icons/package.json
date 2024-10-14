@@ -40,22 +40,23 @@
   },
   "dependencies": {
     "@tabler/icons-react": "3.5.0",
-    "clsx": "^2.1.0",
-    "framer-motion": "^11.1.7",
-    "lucide-react": "*",
+    "clsx": "2.1.1",
+    "framer-motion": "11.5.4",
+    "lucide-react": "0.344.0",
     "next": "14.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "5.0.1"
+    "react-icons": "5.0.1",
+    "zod": "3.23.8"
   },
   "devDependencies": {
     "@tabler/icons-react": "3.5.0",
-    "clsx": "^2.1.0",
-    "framer-motion": "^11.1.7",
-    "lucide-react": "^0.344.0",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "clsx": "2.1.1",
+    "framer-motion": "11.5.4",
+    "lucide-react": "0.344.0",
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-icons": "5.0.1"
   },
   "peerDependencies": {
@@ -64,10 +65,10 @@
     "@ulld/types": "workspace:*",
     "@ulld/typescript-config": "workspace:*",
     "@ulld/utilities": "workspace:*",
-    "framer-motion": "^11.1.7",
-    "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "framer-motion": "11.5.4",
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "packageManager": "pnpm@9.0.4",
   "main": "./src/DynamicIcon.tsx"

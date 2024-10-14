@@ -1,7 +1,7 @@
 import {
   QAPairOrderByRelevanceFieldEnumSchema,
   QAPairOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-CGNB77YJ.js";
+} from "../../chunk-Q54L2SCG.js";
 export {
   QAPairOrderByRelevanceFieldEnumSchema,
   QAPairOrderByRelevanceFieldEnumSchema_default as default

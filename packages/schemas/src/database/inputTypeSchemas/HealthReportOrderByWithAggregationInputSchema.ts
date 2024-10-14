@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
-import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
-import { HealthReportCountOrderByAggregateInputSchema } from '../HealthReportCountOrderByAggregateInputSchema.js';
-import { HealthReportAvgOrderByAggregateInputSchema } from '../HealthReportAvgOrderByAggregateInputSchema.js';
-import { HealthReportMaxOrderByAggregateInputSchema } from '../HealthReportMaxOrderByAggregateInputSchema.js';
-import { HealthReportMinOrderByAggregateInputSchema } from '../HealthReportMinOrderByAggregateInputSchema.js';
-import { HealthReportSumOrderByAggregateInputSchema } from '../HealthReportSumOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { HealthReportCountOrderByAggregateInputSchema } from './HealthReportCountOrderByAggregateInputSchema.js';
+import { HealthReportAvgOrderByAggregateInputSchema } from './HealthReportAvgOrderByAggregateInputSchema.js';
+import { HealthReportMaxOrderByAggregateInputSchema } from './HealthReportMaxOrderByAggregateInputSchema.js';
+import { HealthReportMinOrderByAggregateInputSchema } from './HealthReportMinOrderByAggregateInputSchema.js';
+import { HealthReportSumOrderByAggregateInputSchema } from './HealthReportSumOrderByAggregateInputSchema.js';
 export const HealthReportOrderByWithAggregationInputSchema: z.ZodType<Prisma.HealthReportOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   title: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),

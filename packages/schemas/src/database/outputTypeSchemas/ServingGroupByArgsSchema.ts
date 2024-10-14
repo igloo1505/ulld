@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/ServingWhereInputSchema.js
-..//inputTypeSchemas/ServingOrderByWithAggregationInputSchema.js
-..//inputTypeSchemas/ServingScalarFieldEnumSchema.js
-..//inputTypeSchemas/ServingScalarWhereWithAggregatesInputSchema.js
+import { ServingWhereInputSchema } from '../inputTypeSchemas/ServingWhereInputSchema.js'
+import { ServingOrderByWithAggregationInputSchema } from '../inputTypeSchemas/ServingOrderByWithAggregationInputSchema.js'
+import { ServingScalarFieldEnumSchema } from '../inputTypeSchemas/ServingScalarFieldEnumSchema.js'
+import { ServingScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/ServingScalarWhereWithAggregatesInputSchema.js'
 export const ServingGroupByArgsSchema: z.ZodType<Prisma.ServingGroupByArgs> = z.object({
   where: ServingWhereInputSchema.optional(),
   orderBy: z.union([ ServingOrderByWithAggregationInputSchema.array(),ServingOrderByWithAggregationInputSchema ]).optional(),

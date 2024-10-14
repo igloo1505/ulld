@@ -2,10 +2,10 @@
 
 
 
-var _chunkUXOIANOYcjs = require('../../chunk-UXOIANOY.cjs');
+var _chunkZDAFREXYcjs = require('../../chunk-ZDAFREXY.cjs');
 
 
 
 
-exports.DJTPartialSchema = _chunkUXOIANOYcjs.DJTPartialSchema; exports.DJTSchema = _chunkUXOIANOYcjs.DJTSchema; exports.default = _chunkUXOIANOYcjs.DJTSchema_default;
+exports.DJTPartialSchema = _chunkZDAFREXYcjs.DJTPartialSchema; exports.DJTSchema = _chunkZDAFREXYcjs.DJTSchema; exports.default = _chunkZDAFREXYcjs.DJTSchema_default;
 //# sourceMappingURL=DJTSchema.cjs.map

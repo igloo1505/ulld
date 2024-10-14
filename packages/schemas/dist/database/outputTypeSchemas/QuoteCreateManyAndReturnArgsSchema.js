@@ -1,8 +1,8 @@
 import {
   QuoteCreateManyAndReturnArgsSchema,
   QuoteCreateManyAndReturnArgsSchema_default
-} from "../../chunk-3D4DUWOL.js";
-import "../../chunk-NBDT4RMU.js";
+} from "../../chunk-GHTB6AI4.js";
+import "../../chunk-ZT354ONR.js";
 export {
   QuoteCreateManyAndReturnArgsSchema,
   QuoteCreateManyAndReturnArgsSchema_default as default

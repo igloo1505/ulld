@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TagWhereUniqueInputSchema } from '../TagWhereUniqueInputSchema.js';
-import { TagUpdateWithoutToDoInputSchema } from '../TagUpdateWithoutToDoInputSchema.js';
-import { TagUncheckedUpdateWithoutToDoInputSchema } from '../TagUncheckedUpdateWithoutToDoInputSchema.js';
-import { TagCreateWithoutToDoInputSchema } from '../TagCreateWithoutToDoInputSchema.js';
-import { TagUncheckedCreateWithoutToDoInputSchema } from '../TagUncheckedCreateWithoutToDoInputSchema.js';
+import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema.js';
+import { TagUpdateWithoutToDoInputSchema } from './TagUpdateWithoutToDoInputSchema.js';
+import { TagUncheckedUpdateWithoutToDoInputSchema } from './TagUncheckedUpdateWithoutToDoInputSchema.js';
+import { TagCreateWithoutToDoInputSchema } from './TagCreateWithoutToDoInputSchema.js';
+import { TagUncheckedCreateWithoutToDoInputSchema } from './TagUncheckedCreateWithoutToDoInputSchema.js';
 export const TagUpsertWithWhereUniqueWithoutToDoInputSchema: z.ZodType<Prisma.TagUpsertWithWhereUniqueWithoutToDoInput> = z.object({
   where: z.lazy(() => TagWhereUniqueInputSchema),
   update: z.union([ z.lazy(() => TagUpdateWithoutToDoInputSchema),z.lazy(() => TagUncheckedUpdateWithoutToDoInputSchema) ]),

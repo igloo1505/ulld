@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/BibEntryIncludeSchema.js
-..//inputTypeSchemas/BibEntryWhereInputSchema.js
-..//inputTypeSchemas/BibEntryOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/BibEntryWhereUniqueInputSchema.js
-..//inputTypeSchemas/BibEntryScalarFieldEnumSchema.js
+import { BibEntryIncludeSchema } from '../inputTypeSchemas/BibEntryIncludeSchema.js'
+import { BibEntryWhereInputSchema } from '../inputTypeSchemas/BibEntryWhereInputSchema.js'
+import { BibEntryOrderByWithRelationInputSchema } from '../inputTypeSchemas/BibEntryOrderByWithRelationInputSchema.js'
+import { BibEntryWhereUniqueInputSchema } from '../inputTypeSchemas/BibEntryWhereUniqueInputSchema.js'
+import { BibEntryScalarFieldEnumSchema } from '../inputTypeSchemas/BibEntryScalarFieldEnumSchema.js'
 import { BibArgsSchema } from "../outputTypeSchemas/BibArgsSchema"
 import { CitationsGroupFindManyArgsSchema } from "../outputTypeSchemas/CitationsGroupFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"

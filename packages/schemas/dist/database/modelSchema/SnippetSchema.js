@@ -2,7 +2,7 @@ import {
   SnippetPartialSchema,
   SnippetSchema,
   SnippetSchema_default
-} from "../../chunk-EGPNV6Z6.js";
+} from "../../chunk-QBARSLFZ.js";
 export {
   SnippetPartialSchema,
   SnippetSchema,

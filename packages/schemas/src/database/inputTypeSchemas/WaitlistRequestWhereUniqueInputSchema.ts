@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { WaitlistRequestWhereInputSchema } from '../WaitlistRequestWhereInputSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
-import { IntFilterSchema } from '../IntFilterSchema.js';
+import { WaitlistRequestWhereInputSchema } from './WaitlistRequestWhereInputSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
 export const WaitlistRequestWhereUniqueInputSchema: z.ZodType<Prisma.WaitlistRequestWhereUniqueInput> = z.object({
   id: z.number().int()
 })

@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SettingsWhereInputSchema } from '../SettingsWhereInputSchema.js';
-import { BoolFilterSchema } from '../BoolFilterSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { EnumImageAlignmentFilterSchema } from '../EnumImageAlignmentFilterSchema.js';
-import { ImageAlignmentSchema } from '../ImageAlignmentSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
-import { JsonFilterSchema } from '../JsonFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
+import { SettingsWhereInputSchema } from './SettingsWhereInputSchema.js';
+import { BoolFilterSchema } from './BoolFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { EnumImageAlignmentFilterSchema } from './EnumImageAlignmentFilterSchema.js';
+import { ImageAlignmentSchema } from './ImageAlignmentSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { JsonFilterSchema } from './JsonFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
 export const SettingsWhereUniqueInputSchema: z.ZodType<Prisma.SettingsWhereUniqueInput> = z.object({
   id: z.number().int()
 })

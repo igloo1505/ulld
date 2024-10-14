@@ -15,12 +15,12 @@
     "./browser": "./jest/browser/jest-preset.js"
   },
   "dependencies": {
-    "jest-environment-jsdom": "^29.7.0",
-    "ts-jest": "29.1.1"
+    "jest-environment-jsdom": "29.7.0",
+    "ts-jest": "29.2.5"
   },
   "devDependencies": {
-    "jest-environment-jsdom": "^29.7.0",
-    "ts-jest": "29.1.1"
+    "jest-environment-jsdom": "29.7.0",
+    "ts-jest": "29.2.5"
   },
   "peerDependencies": {
     "@ulld/types": "workspace:*"

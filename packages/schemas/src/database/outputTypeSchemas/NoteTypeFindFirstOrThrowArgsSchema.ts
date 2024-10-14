@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/NoteTypeWhereInputSchema.js
-..//inputTypeSchemas/NoteTypeOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/NoteTypeWhereUniqueInputSchema.js
-..//inputTypeSchemas/NoteTypeScalarFieldEnumSchema.js
+import { NoteTypeWhereInputSchema } from '../inputTypeSchemas/NoteTypeWhereInputSchema.js'
+import { NoteTypeOrderByWithRelationInputSchema } from '../inputTypeSchemas/NoteTypeOrderByWithRelationInputSchema.js'
+import { NoteTypeWhereUniqueInputSchema } from '../inputTypeSchemas/NoteTypeWhereUniqueInputSchema.js'
+import { NoteTypeScalarFieldEnumSchema } from '../inputTypeSchemas/NoteTypeScalarFieldEnumSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const NoteTypeSelectSchema: z.ZodType<Prisma.NoteTypeSelect> = z.object({

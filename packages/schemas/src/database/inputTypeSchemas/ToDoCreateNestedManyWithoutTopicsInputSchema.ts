@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ToDoCreateWithoutTopicsInputSchema } from '../ToDoCreateWithoutTopicsInputSchema.js';
-import { ToDoUncheckedCreateWithoutTopicsInputSchema } from '../ToDoUncheckedCreateWithoutTopicsInputSchema.js';
-import { ToDoCreateOrConnectWithoutTopicsInputSchema } from '../ToDoCreateOrConnectWithoutTopicsInputSchema.js';
-import { ToDoWhereUniqueInputSchema } from '../ToDoWhereUniqueInputSchema.js';
+import { ToDoCreateWithoutTopicsInputSchema } from './ToDoCreateWithoutTopicsInputSchema.js';
+import { ToDoUncheckedCreateWithoutTopicsInputSchema } from './ToDoUncheckedCreateWithoutTopicsInputSchema.js';
+import { ToDoCreateOrConnectWithoutTopicsInputSchema } from './ToDoCreateOrConnectWithoutTopicsInputSchema.js';
+import { ToDoWhereUniqueInputSchema } from './ToDoWhereUniqueInputSchema.js';
 export const ToDoCreateNestedManyWithoutTopicsInputSchema: z.ZodType<Prisma.ToDoCreateNestedManyWithoutTopicsInput> = z.object({
   create: z.union([ z.lazy(() => ToDoCreateWithoutTopicsInputSchema),z.lazy(() => ToDoCreateWithoutTopicsInputSchema).array(),z.lazy(() => ToDoUncheckedCreateWithoutTopicsInputSchema),z.lazy(() => ToDoUncheckedCreateWithoutTopicsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => ToDoCreateOrConnectWithoutTopicsInputSchema),z.lazy(() => ToDoCreateOrConnectWithoutTopicsInputSchema).array() ]).optional(),

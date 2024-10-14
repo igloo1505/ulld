@@ -1,7 +1,7 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { BibEntryCreateNestedManyWithoutReadingListInputSchema } from '../BibEntryCreateNestedManyWithoutReadingListInputSchema.js';
-import { MdxNoteCreateNestedManyWithoutReadingListInputSchema } from '../MdxNoteCreateNestedManyWithoutReadingListInputSchema.js';
+import { BibEntryCreateNestedManyWithoutReadingListInputSchema } from './BibEntryCreateNestedManyWithoutReadingListInputSchema.js';
+import { MdxNoteCreateNestedManyWithoutReadingListInputSchema } from './MdxNoteCreateNestedManyWithoutReadingListInputSchema.js';
 export const ReadingListCreateWithoutIpynbNotesInputSchema: z.ZodType<Prisma.ReadingListCreateWithoutIpynbNotesInput> = z.object({
   name: z.string(),
   description: z.string().optional().nullable(),

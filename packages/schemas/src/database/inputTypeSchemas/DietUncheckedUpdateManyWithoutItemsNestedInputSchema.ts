@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { DietCreateWithoutItemsInputSchema } from '../DietCreateWithoutItemsInputSchema.js';
-import { DietUncheckedCreateWithoutItemsInputSchema } from '../DietUncheckedCreateWithoutItemsInputSchema.js';
-import { DietCreateOrConnectWithoutItemsInputSchema } from '../DietCreateOrConnectWithoutItemsInputSchema.js';
-import { DietUpsertWithWhereUniqueWithoutItemsInputSchema } from '../DietUpsertWithWhereUniqueWithoutItemsInputSchema.js';
-import { DietWhereUniqueInputSchema } from '../DietWhereUniqueInputSchema.js';
-import { DietUpdateWithWhereUniqueWithoutItemsInputSchema } from '../DietUpdateWithWhereUniqueWithoutItemsInputSchema.js';
-import { DietUpdateManyWithWhereWithoutItemsInputSchema } from '../DietUpdateManyWithWhereWithoutItemsInputSchema.js';
-import { DietScalarWhereInputSchema } from '../DietScalarWhereInputSchema.js';
+import { DietCreateWithoutItemsInputSchema } from './DietCreateWithoutItemsInputSchema.js';
+import { DietUncheckedCreateWithoutItemsInputSchema } from './DietUncheckedCreateWithoutItemsInputSchema.js';
+import { DietCreateOrConnectWithoutItemsInputSchema } from './DietCreateOrConnectWithoutItemsInputSchema.js';
+import { DietUpsertWithWhereUniqueWithoutItemsInputSchema } from './DietUpsertWithWhereUniqueWithoutItemsInputSchema.js';
+import { DietWhereUniqueInputSchema } from './DietWhereUniqueInputSchema.js';
+import { DietUpdateWithWhereUniqueWithoutItemsInputSchema } from './DietUpdateWithWhereUniqueWithoutItemsInputSchema.js';
+import { DietUpdateManyWithWhereWithoutItemsInputSchema } from './DietUpdateManyWithWhereWithoutItemsInputSchema.js';
+import { DietScalarWhereInputSchema } from './DietScalarWhereInputSchema.js';
 export const DietUncheckedUpdateManyWithoutItemsNestedInputSchema: z.ZodType<Prisma.DietUncheckedUpdateManyWithoutItemsNestedInput> = z.object({
   create: z.union([ z.lazy(() => DietCreateWithoutItemsInputSchema),z.lazy(() => DietCreateWithoutItemsInputSchema).array(),z.lazy(() => DietUncheckedCreateWithoutItemsInputSchema),z.lazy(() => DietUncheckedCreateWithoutItemsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => DietCreateOrConnectWithoutItemsInputSchema),z.lazy(() => DietCreateOrConnectWithoutItemsInputSchema).array() ]).optional(),

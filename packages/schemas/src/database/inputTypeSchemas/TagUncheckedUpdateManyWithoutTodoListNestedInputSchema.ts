@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TagCreateWithoutTodoListInputSchema } from '../TagCreateWithoutTodoListInputSchema.js';
-import { TagUncheckedCreateWithoutTodoListInputSchema } from '../TagUncheckedCreateWithoutTodoListInputSchema.js';
-import { TagCreateOrConnectWithoutTodoListInputSchema } from '../TagCreateOrConnectWithoutTodoListInputSchema.js';
-import { TagUpsertWithWhereUniqueWithoutTodoListInputSchema } from '../TagUpsertWithWhereUniqueWithoutTodoListInputSchema.js';
-import { TagWhereUniqueInputSchema } from '../TagWhereUniqueInputSchema.js';
-import { TagUpdateWithWhereUniqueWithoutTodoListInputSchema } from '../TagUpdateWithWhereUniqueWithoutTodoListInputSchema.js';
-import { TagUpdateManyWithWhereWithoutTodoListInputSchema } from '../TagUpdateManyWithWhereWithoutTodoListInputSchema.js';
-import { TagScalarWhereInputSchema } from '../TagScalarWhereInputSchema.js';
+import { TagCreateWithoutTodoListInputSchema } from './TagCreateWithoutTodoListInputSchema.js';
+import { TagUncheckedCreateWithoutTodoListInputSchema } from './TagUncheckedCreateWithoutTodoListInputSchema.js';
+import { TagCreateOrConnectWithoutTodoListInputSchema } from './TagCreateOrConnectWithoutTodoListInputSchema.js';
+import { TagUpsertWithWhereUniqueWithoutTodoListInputSchema } from './TagUpsertWithWhereUniqueWithoutTodoListInputSchema.js';
+import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema.js';
+import { TagUpdateWithWhereUniqueWithoutTodoListInputSchema } from './TagUpdateWithWhereUniqueWithoutTodoListInputSchema.js';
+import { TagUpdateManyWithWhereWithoutTodoListInputSchema } from './TagUpdateManyWithWhereWithoutTodoListInputSchema.js';
+import { TagScalarWhereInputSchema } from './TagScalarWhereInputSchema.js';
 export const TagUncheckedUpdateManyWithoutTodoListNestedInputSchema: z.ZodType<Prisma.TagUncheckedUpdateManyWithoutTodoListNestedInput> = z.object({
   create: z.union([ z.lazy(() => TagCreateWithoutTodoListInputSchema),z.lazy(() => TagCreateWithoutTodoListInputSchema).array(),z.lazy(() => TagUncheckedCreateWithoutTodoListInputSchema),z.lazy(() => TagUncheckedCreateWithoutTodoListInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TagCreateOrConnectWithoutTodoListInputSchema),z.lazy(() => TagCreateOrConnectWithoutTodoListInputSchema).array() ]).optional(),

@@ -2,10 +2,10 @@
 
 
 
-var _chunkG3TR7EUMcjs = require('../../chunk-G3TR7EUM.cjs');
+var _chunkOB35HZXYcjs = require('../../chunk-OB35HZXY.cjs');
 
 
 
 
-exports.WaitlistRequestPartialSchema = _chunkG3TR7EUMcjs.WaitlistRequestPartialSchema; exports.WaitlistRequestSchema = _chunkG3TR7EUMcjs.WaitlistRequestSchema; exports.default = _chunkG3TR7EUMcjs.WaitlistRequestSchema_default;
+exports.WaitlistRequestPartialSchema = _chunkOB35HZXYcjs.WaitlistRequestPartialSchema; exports.WaitlistRequestSchema = _chunkOB35HZXYcjs.WaitlistRequestSchema; exports.default = _chunkOB35HZXYcjs.WaitlistRequestSchema_default;
 //# sourceMappingURL=WaitlistRequestSchema.cjs.map

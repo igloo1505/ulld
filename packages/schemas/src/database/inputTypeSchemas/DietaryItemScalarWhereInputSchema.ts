@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from '../IntFilterSchema.js';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
-import { IntNullableFilterSchema } from '../IntNullableFilterSchema.js';
-import { FloatNullableFilterSchema } from '../FloatNullableFilterSchema.js';
-import { BoolFilterSchema } from '../BoolFilterSchema.js';
-import { FloatFilterSchema } from '../FloatFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { FloatNullableFilterSchema } from './FloatNullableFilterSchema.js';
+import { BoolFilterSchema } from './BoolFilterSchema.js';
+import { FloatFilterSchema } from './FloatFilterSchema.js';
 export const DietaryItemScalarWhereInputSchema: z.ZodType<Prisma.DietaryItemScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => DietaryItemScalarWhereInputSchema),z.lazy(() => DietaryItemScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => DietaryItemScalarWhereInputSchema).array().optional(),

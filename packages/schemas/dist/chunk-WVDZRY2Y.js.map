@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/database/inputTypeSchemas/SortOrderSchema.ts"],"sourcesContent":["import { z } from 'zod';\nexport const SortOrderSchema = z.enum(['asc','desc']);\nexport default SortOrderSchema;"],"mappings":";AAAA,SAAS,SAAS;AACX,IAAM,kBAAkB,EAAE,KAAK,CAAC,OAAM,MAAM,CAAC;AACpD,IAAO,0BAAQ;","names":[]}

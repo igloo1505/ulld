@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteCreateNestedManyWithoutTopicsInputSchema } from '../MdxNoteCreateNestedManyWithoutTopicsInputSchema.js';
-import { IpynbCreateNestedManyWithoutTopicsInputSchema } from '../IpynbCreateNestedManyWithoutTopicsInputSchema.js';
-import { QAPairCreateNestedManyWithoutTopicsInputSchema } from '../QAPairCreateNestedManyWithoutTopicsInputSchema.js';
-import { PracticeExamCreateNestedManyWithoutTopicsInputSchema } from '../PracticeExamCreateNestedManyWithoutTopicsInputSchema.js';
-import { ToDoCreateNestedManyWithoutTopicsInputSchema } from '../ToDoCreateNestedManyWithoutTopicsInputSchema.js';
-import { KanbanCreateNestedOneWithoutTopicsInputSchema } from '../KanbanCreateNestedOneWithoutTopicsInputSchema.js';
-import { ToDoListCreateNestedManyWithoutTopicsInputSchema } from '../ToDoListCreateNestedManyWithoutTopicsInputSchema.js';
-import { EquationCreateNestedManyWithoutTopicsInputSchema } from '../EquationCreateNestedManyWithoutTopicsInputSchema.js';
+import { MdxNoteCreateNestedManyWithoutTopicsInputSchema } from './MdxNoteCreateNestedManyWithoutTopicsInputSchema.js';
+import { IpynbCreateNestedManyWithoutTopicsInputSchema } from './IpynbCreateNestedManyWithoutTopicsInputSchema.js';
+import { QAPairCreateNestedManyWithoutTopicsInputSchema } from './QAPairCreateNestedManyWithoutTopicsInputSchema.js';
+import { PracticeExamCreateNestedManyWithoutTopicsInputSchema } from './PracticeExamCreateNestedManyWithoutTopicsInputSchema.js';
+import { ToDoCreateNestedManyWithoutTopicsInputSchema } from './ToDoCreateNestedManyWithoutTopicsInputSchema.js';
+import { KanbanCreateNestedOneWithoutTopicsInputSchema } from './KanbanCreateNestedOneWithoutTopicsInputSchema.js';
+import { ToDoListCreateNestedManyWithoutTopicsInputSchema } from './ToDoListCreateNestedManyWithoutTopicsInputSchema.js';
+import { EquationCreateNestedManyWithoutTopicsInputSchema } from './EquationCreateNestedManyWithoutTopicsInputSchema.js';
 export const TopicCreateWithoutBibEntriesInputSchema: z.ZodType<Prisma.TopicCreateWithoutBibEntriesInput> = z.object({
   value: z.string(),
   createdAt: z.coerce.date().optional(),

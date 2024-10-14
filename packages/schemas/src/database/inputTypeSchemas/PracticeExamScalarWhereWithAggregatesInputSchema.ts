@@ -1,7 +1,7 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
-import { DateTimeWithAggregatesFilterSchema } from '../DateTimeWithAggregatesFilterSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
 export const PracticeExamScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.PracticeExamScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => PracticeExamScalarWhereWithAggregatesInputSchema),z.lazy(() => PracticeExamScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => PracticeExamScalarWhereWithAggregatesInputSchema).array().optional(),

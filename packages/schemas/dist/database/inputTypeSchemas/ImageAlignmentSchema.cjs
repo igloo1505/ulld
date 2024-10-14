@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk3PFPPHFLcjs = require('../../chunk-3PFPPHFL.cjs');
+var _chunkE34DZ3CIcjs = require('../../chunk-E34DZ3CI.cjs');
 
 
 
-exports.ImageAlignmentSchema = _chunk3PFPPHFLcjs.ImageAlignmentSchema; exports.default = _chunk3PFPPHFLcjs.ImageAlignmentSchema_default;
+exports.ImageAlignmentSchema = _chunkE34DZ3CIcjs.ImageAlignmentSchema; exports.default = _chunkE34DZ3CIcjs.ImageAlignmentSchema_default;
 //# sourceMappingURL=ImageAlignmentSchema.cjs.map

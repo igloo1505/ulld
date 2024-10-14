@@ -2,9 +2,9 @@ import {
   WhiteboardCreateArgsSchema,
   WhiteboardCreateArgsSchema_default,
   WhiteboardSelectSchema
-} from "../../chunk-BEPW47JF.js";
-import "../../chunk-RWWG4FXU.js";
-import "../../chunk-2PF5ZIIA.js";
+} from "../../chunk-ZNHBB3CM.js";
+import "../../chunk-PJPJGWO5.js";
+import "../../chunk-AZ2NTCOQ.js";
 export {
   WhiteboardCreateArgsSchema,
   WhiteboardSelectSchema,

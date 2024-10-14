@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/MdxNoteIncludeSchema.js
-..//inputTypeSchemas/MdxNoteUpdateInputSchema.js
-..//inputTypeSchemas/MdxNoteUncheckedUpdateInputSchema.js
-..//inputTypeSchemas/MdxNoteWhereUniqueInputSchema.js
+import { MdxNoteIncludeSchema } from '../inputTypeSchemas/MdxNoteIncludeSchema.js'
+import { MdxNoteUpdateInputSchema } from '../inputTypeSchemas/MdxNoteUpdateInputSchema.js'
+import { MdxNoteUncheckedUpdateInputSchema } from '../inputTypeSchemas/MdxNoteUncheckedUpdateInputSchema.js'
+import { MdxNoteWhereUniqueInputSchema } from '../inputTypeSchemas/MdxNoteWhereUniqueInputSchema.js'
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"

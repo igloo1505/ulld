@@ -2,7 +2,7 @@ import {
   SettingsAppendixPartialSchema,
   SettingsAppendixSchema,
   SettingsAppendixSchema_default
-} from "../../chunk-CUY6K2H3.js";
+} from "../../chunk-MX623FZQ.js";
 export {
   SettingsAppendixPartialSchema,
   SettingsAppendixSchema,

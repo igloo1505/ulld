@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteCreateWithoutCitationsInputSchema } from '../MdxNoteCreateWithoutCitationsInputSchema.js';
-import { MdxNoteUncheckedCreateWithoutCitationsInputSchema } from '../MdxNoteUncheckedCreateWithoutCitationsInputSchema.js';
-import { MdxNoteCreateOrConnectWithoutCitationsInputSchema } from '../MdxNoteCreateOrConnectWithoutCitationsInputSchema.js';
-import { MdxNoteUpsertWithWhereUniqueWithoutCitationsInputSchema } from '../MdxNoteUpsertWithWhereUniqueWithoutCitationsInputSchema.js';
-import { MdxNoteWhereUniqueInputSchema } from '../MdxNoteWhereUniqueInputSchema.js';
-import { MdxNoteUpdateWithWhereUniqueWithoutCitationsInputSchema } from '../MdxNoteUpdateWithWhereUniqueWithoutCitationsInputSchema.js';
-import { MdxNoteUpdateManyWithWhereWithoutCitationsInputSchema } from '../MdxNoteUpdateManyWithWhereWithoutCitationsInputSchema.js';
-import { MdxNoteScalarWhereInputSchema } from '../MdxNoteScalarWhereInputSchema.js';
+import { MdxNoteCreateWithoutCitationsInputSchema } from './MdxNoteCreateWithoutCitationsInputSchema.js';
+import { MdxNoteUncheckedCreateWithoutCitationsInputSchema } from './MdxNoteUncheckedCreateWithoutCitationsInputSchema.js';
+import { MdxNoteCreateOrConnectWithoutCitationsInputSchema } from './MdxNoteCreateOrConnectWithoutCitationsInputSchema.js';
+import { MdxNoteUpsertWithWhereUniqueWithoutCitationsInputSchema } from './MdxNoteUpsertWithWhereUniqueWithoutCitationsInputSchema.js';
+import { MdxNoteWhereUniqueInputSchema } from './MdxNoteWhereUniqueInputSchema.js';
+import { MdxNoteUpdateWithWhereUniqueWithoutCitationsInputSchema } from './MdxNoteUpdateWithWhereUniqueWithoutCitationsInputSchema.js';
+import { MdxNoteUpdateManyWithWhereWithoutCitationsInputSchema } from './MdxNoteUpdateManyWithWhereWithoutCitationsInputSchema.js';
+import { MdxNoteScalarWhereInputSchema } from './MdxNoteScalarWhereInputSchema.js';
 export const MdxNoteUpdateManyWithoutCitationsNestedInputSchema: z.ZodType<Prisma.MdxNoteUpdateManyWithoutCitationsNestedInput> = z.object({
   create: z.union([ z.lazy(() => MdxNoteCreateWithoutCitationsInputSchema),z.lazy(() => MdxNoteCreateWithoutCitationsInputSchema).array(),z.lazy(() => MdxNoteUncheckedCreateWithoutCitationsInputSchema),z.lazy(() => MdxNoteUncheckedCreateWithoutCitationsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => MdxNoteCreateOrConnectWithoutCitationsInputSchema),z.lazy(() => MdxNoteCreateOrConnectWithoutCitationsInputSchema).array() ]).optional(),

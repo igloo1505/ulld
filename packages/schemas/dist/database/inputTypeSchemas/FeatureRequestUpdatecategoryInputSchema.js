@@ -1,7 +1,7 @@
 import {
   FeatureRequestUpdatecategoryInputSchema,
   FeatureRequestUpdatecategoryInputSchema_default
-} from "../../chunk-4F6ERW5I.js";
+} from "../../chunk-E73MKCYZ.js";
 export {
   FeatureRequestUpdatecategoryInputSchema,
   FeatureRequestUpdatecategoryInputSchema_default as default

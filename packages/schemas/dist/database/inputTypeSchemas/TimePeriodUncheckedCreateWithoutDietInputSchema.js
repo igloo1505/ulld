@@ -1,7 +1,7 @@
 import {
   TimePeriodUncheckedCreateWithoutDietInputSchema,
   TimePeriodUncheckedCreateWithoutDietInputSchema_default
-} from "../../chunk-UQHMJYHV.js";
+} from "../../chunk-CYJOV7OZ.js";
 export {
   TimePeriodUncheckedCreateWithoutDietInputSchema,
   TimePeriodUncheckedCreateWithoutDietInputSchema_default as default

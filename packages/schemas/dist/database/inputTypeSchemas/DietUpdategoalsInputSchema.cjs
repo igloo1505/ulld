@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkMZXKHCSHcjs = require('../../chunk-MZXKHCSH.cjs');
-require('../../chunk-R2GMKW2W.cjs');
+var _chunkMT2G3375cjs = require('../../chunk-MT2G3375.cjs');
+require('../../chunk-U2D6LPEO.cjs');
 
 
 
-exports.DietUpdategoalsInputSchema = _chunkMZXKHCSHcjs.DietUpdategoalsInputSchema; exports.default = _chunkMZXKHCSHcjs.DietUpdategoalsInputSchema_default;
+exports.DietUpdategoalsInputSchema = _chunkMT2G3375cjs.DietUpdategoalsInputSchema; exports.default = _chunkMT2G3375cjs.DietUpdategoalsInputSchema_default;
 //# sourceMappingURL=DietUpdategoalsInputSchema.cjs.map

@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { DietCreateNestedOneWithoutHealthReportInputSchema } from '../DietCreateNestedOneWithoutHealthReportInputSchema.js';
+import { DietCreateNestedOneWithoutHealthReportInputSchema } from './DietCreateNestedOneWithoutHealthReportInputSchema.js';
 export const HealthReportCreateInputSchema: z.ZodType<Prisma.HealthReportCreateInput> = z.object({
   title: z.string().optional().nullable(),
   summary: z.string().optional().nullable(),

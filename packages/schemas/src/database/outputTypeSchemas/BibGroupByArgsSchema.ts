@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/BibWhereInputSchema.js
-..//inputTypeSchemas/BibOrderByWithAggregationInputSchema.js
-..//inputTypeSchemas/BibScalarFieldEnumSchema.js
-..//inputTypeSchemas/BibScalarWhereWithAggregatesInputSchema.js
+import { BibWhereInputSchema } from '../inputTypeSchemas/BibWhereInputSchema.js'
+import { BibOrderByWithAggregationInputSchema } from '../inputTypeSchemas/BibOrderByWithAggregationInputSchema.js'
+import { BibScalarFieldEnumSchema } from '../inputTypeSchemas/BibScalarFieldEnumSchema.js'
+import { BibScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/BibScalarWhereWithAggregatesInputSchema.js'
 export const BibGroupByArgsSchema: z.ZodType<Prisma.BibGroupByArgs> = z.object({
   where: BibWhereInputSchema.optional(),
   orderBy: z.union([ BibOrderByWithAggregationInputSchema.array(),BibOrderByWithAggregationInputSchema ]).optional(),

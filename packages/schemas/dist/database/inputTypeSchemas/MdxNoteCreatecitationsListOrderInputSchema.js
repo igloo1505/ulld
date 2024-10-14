@@ -1,7 +1,7 @@
 import {
   MdxNoteCreatecitationsListOrderInputSchema,
   MdxNoteCreatecitationsListOrderInputSchema_default
-} from "../../chunk-LFQBZOFV.js";
+} from "../../chunk-D6LM45E3.js";
 export {
   MdxNoteCreatecitationsListOrderInputSchema,
   MdxNoteCreatecitationsListOrderInputSchema_default as default

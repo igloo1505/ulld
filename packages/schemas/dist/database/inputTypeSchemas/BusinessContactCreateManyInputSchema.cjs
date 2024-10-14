@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkPOADIYVIcjs = require('../../chunk-POADIYVI.cjs');
+var _chunkHQOIV23Mcjs = require('../../chunk-HQOIV23M.cjs');
 
 
 
-exports.BusinessContactCreateManyInputSchema = _chunkPOADIYVIcjs.BusinessContactCreateManyInputSchema; exports.default = _chunkPOADIYVIcjs.BusinessContactCreateManyInputSchema_default;
+exports.BusinessContactCreateManyInputSchema = _chunkHQOIV23Mcjs.BusinessContactCreateManyInputSchema; exports.default = _chunkHQOIV23Mcjs.BusinessContactCreateManyInputSchema_default;
 //# sourceMappingURL=BusinessContactCreateManyInputSchema.cjs.map

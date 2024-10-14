@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
-import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
-import { MdxNoteCountOrderByAggregateInputSchema } from '../MdxNoteCountOrderByAggregateInputSchema.js';
-import { MdxNoteAvgOrderByAggregateInputSchema } from '../MdxNoteAvgOrderByAggregateInputSchema.js';
-import { MdxNoteMaxOrderByAggregateInputSchema } from '../MdxNoteMaxOrderByAggregateInputSchema.js';
-import { MdxNoteMinOrderByAggregateInputSchema } from '../MdxNoteMinOrderByAggregateInputSchema.js';
-import { MdxNoteSumOrderByAggregateInputSchema } from '../MdxNoteSumOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { MdxNoteCountOrderByAggregateInputSchema } from './MdxNoteCountOrderByAggregateInputSchema.js';
+import { MdxNoteAvgOrderByAggregateInputSchema } from './MdxNoteAvgOrderByAggregateInputSchema.js';
+import { MdxNoteMaxOrderByAggregateInputSchema } from './MdxNoteMaxOrderByAggregateInputSchema.js';
+import { MdxNoteMinOrderByAggregateInputSchema } from './MdxNoteMinOrderByAggregateInputSchema.js';
+import { MdxNoteSumOrderByAggregateInputSchema } from './MdxNoteSumOrderByAggregateInputSchema.js';
 export const MdxNoteOrderByWithAggregationInputSchema: z.ZodType<Prisma.MdxNoteOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   isProtected: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),

@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/KanBanListIncludeSchema.js
-..//inputTypeSchemas/KanBanListWhereInputSchema.js
-..//inputTypeSchemas/KanBanListOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/KanBanListWhereUniqueInputSchema.js
-..//inputTypeSchemas/KanBanListScalarFieldEnumSchema.js
+import { KanBanListIncludeSchema } from '../inputTypeSchemas/KanBanListIncludeSchema.js'
+import { KanBanListWhereInputSchema } from '../inputTypeSchemas/KanBanListWhereInputSchema.js'
+import { KanBanListOrderByWithRelationInputSchema } from '../inputTypeSchemas/KanBanListOrderByWithRelationInputSchema.js'
+import { KanBanListWhereUniqueInputSchema } from '../inputTypeSchemas/KanBanListWhereUniqueInputSchema.js'
+import { KanBanListScalarFieldEnumSchema } from '../inputTypeSchemas/KanBanListScalarFieldEnumSchema.js'
 import { KanBanCardFindManyArgsSchema } from "../outputTypeSchemas/KanBanCardFindManyArgsSchema"
 import { KanbanArgsSchema } from "../outputTypeSchemas/KanbanArgsSchema"
 import { KanBanListCountOutputTypeArgsSchema } from "../outputTypeSchemas/KanBanListCountOutputTypeArgsSchema"

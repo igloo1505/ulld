@@ -1,10 +1,10 @@
 import {
   SubjectUncheckedUpdateManyWithoutQaPairInputSchema,
   SubjectUncheckedUpdateManyWithoutQaPairInputSchema_default
-} from "../../chunk-NSRDGUI2.js";
-import "../../chunk-SG2ZRBF2.js";
-import "../../chunk-EL2ERAXL.js";
-import "../../chunk-3GDEEYNJ.js";
+} from "../../chunk-4JKR7U4P.js";
+import "../../chunk-7KFMTKWN.js";
+import "../../chunk-VTROTMKZ.js";
+import "../../chunk-BQIXGZB5.js";
 export {
   SubjectUncheckedUpdateManyWithoutQaPairInputSchema,
   SubjectUncheckedUpdateManyWithoutQaPairInputSchema_default as default

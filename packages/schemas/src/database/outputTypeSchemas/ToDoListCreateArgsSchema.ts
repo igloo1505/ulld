@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/ToDoListIncludeSchema.js
-..//inputTypeSchemas/ToDoListCreateInputSchema.js
-..//inputTypeSchemas/ToDoListUncheckedCreateInputSchema.js
+import { ToDoListIncludeSchema } from '../inputTypeSchemas/ToDoListIncludeSchema.js'
+import { ToDoListCreateInputSchema } from '../inputTypeSchemas/ToDoListCreateInputSchema.js'
+import { ToDoListUncheckedCreateInputSchema } from '../inputTypeSchemas/ToDoListUncheckedCreateInputSchema.js'
 import { ToDoFindManyArgsSchema } from "../outputTypeSchemas/ToDoFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"

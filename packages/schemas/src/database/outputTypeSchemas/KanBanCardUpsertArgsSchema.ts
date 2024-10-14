@@ -1,11 +1,11 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/KanBanCardIncludeSchema.js
-..//inputTypeSchemas/KanBanCardWhereUniqueInputSchema.js
-..//inputTypeSchemas/KanBanCardCreateInputSchema.js
-..//inputTypeSchemas/KanBanCardUncheckedCreateInputSchema.js
-..//inputTypeSchemas/KanBanCardUpdateInputSchema.js
-..//inputTypeSchemas/KanBanCardUncheckedUpdateInputSchema.js
+import { KanBanCardIncludeSchema } from '../inputTypeSchemas/KanBanCardIncludeSchema.js'
+import { KanBanCardWhereUniqueInputSchema } from '../inputTypeSchemas/KanBanCardWhereUniqueInputSchema.js'
+import { KanBanCardCreateInputSchema } from '../inputTypeSchemas/KanBanCardCreateInputSchema.js'
+import { KanBanCardUncheckedCreateInputSchema } from '../inputTypeSchemas/KanBanCardUncheckedCreateInputSchema.js'
+import { KanBanCardUpdateInputSchema } from '../inputTypeSchemas/KanBanCardUpdateInputSchema.js'
+import { KanBanCardUncheckedUpdateInputSchema } from '../inputTypeSchemas/KanBanCardUncheckedUpdateInputSchema.js'
 import { KanBanListArgsSchema } from "../outputTypeSchemas/KanBanListArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------

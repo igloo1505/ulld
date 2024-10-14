@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { InputJsonValueSchema } from '../InputJsonValueSchema.js';
+import { InputJsonValueSchema } from './InputJsonValueSchema.js';
 export const NestedJsonFilterSchema: z.ZodType<Prisma.NestedJsonFilter> = z.object({
   equals: InputJsonValueSchema.optional(),
   path: z.string().array().optional(),

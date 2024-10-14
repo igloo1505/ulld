@@ -1,7 +1,7 @@
 import {
   ReadingListCreateManyInputSchema,
   ReadingListCreateManyInputSchema_default
-} from "../../chunk-PHSTJOWE.js";
+} from "../../chunk-DTV766SZ.js";
 export {
   ReadingListCreateManyInputSchema,
   ReadingListCreateManyInputSchema_default as default

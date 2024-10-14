@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/QuoteWhereInputSchema.js
-..//inputTypeSchemas/QuoteOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/QuoteWhereUniqueInputSchema.js
+import { QuoteWhereInputSchema } from '../inputTypeSchemas/QuoteWhereInputSchema.js'
+import { QuoteOrderByWithRelationInputSchema } from '../inputTypeSchemas/QuoteOrderByWithRelationInputSchema.js'
+import { QuoteWhereUniqueInputSchema } from '../inputTypeSchemas/QuoteWhereUniqueInputSchema.js'
 export const QuoteAggregateArgsSchema: z.ZodType<Prisma.QuoteAggregateArgs> = z.object({
   where: QuoteWhereInputSchema.optional(),
   orderBy: z.union([ QuoteOrderByWithRelationInputSchema.array(),QuoteOrderByWithRelationInputSchema ]).optional(),

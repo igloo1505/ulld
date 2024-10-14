@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/BibEntryUpdateManyMutationInputSchema.js
-..//inputTypeSchemas/BibEntryUncheckedUpdateManyInputSchema.js
-..//inputTypeSchemas/BibEntryWhereInputSchema.js
+import { BibEntryUpdateManyMutationInputSchema } from '../inputTypeSchemas/BibEntryUpdateManyMutationInputSchema.js'
+import { BibEntryUncheckedUpdateManyInputSchema } from '../inputTypeSchemas/BibEntryUncheckedUpdateManyInputSchema.js'
+import { BibEntryWhereInputSchema } from '../inputTypeSchemas/BibEntryWhereInputSchema.js'
 export const BibEntryUpdateManyArgsSchema: z.ZodType<Prisma.BibEntryUpdateManyArgs> = z.object({
   data: z.union([ BibEntryUpdateManyMutationInputSchema,BibEntryUncheckedUpdateManyInputSchema ]),
   where: BibEntryWhereInputSchema.optional(),

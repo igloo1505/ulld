@@ -1,16 +1,16 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteCreatecitationsListOrderInputSchema } from '../MdxNoteCreatecitationsListOrderInputSchema.js';
-import { MdxNoteCreateimportantValuesInputSchema } from '../MdxNoteCreateimportantValuesInputSchema.js';
-import { MdxNoteCreateoutgoingQuickLinksInputSchema } from '../MdxNoteCreateoutgoingQuickLinksInputSchema.js';
-import { TopicUncheckedCreateNestedManyWithoutMdxNotesInputSchema } from '../TopicUncheckedCreateNestedManyWithoutMdxNotesInputSchema.js';
-import { SubjectUncheckedCreateNestedManyWithoutMdxNotesInputSchema } from '../SubjectUncheckedCreateNestedManyWithoutMdxNotesInputSchema.js';
-import { TagUncheckedCreateNestedManyWithoutMdxNotesInputSchema } from '../TagUncheckedCreateNestedManyWithoutMdxNotesInputSchema.js';
-import { BibEntryUncheckedCreateNestedManyWithoutMdxNotesInputSchema } from '../BibEntryUncheckedCreateNestedManyWithoutMdxNotesInputSchema.js';
-import { ReadingListUncheckedCreateNestedManyWithoutMdxNotesInputSchema } from '../ReadingListUncheckedCreateNestedManyWithoutMdxNotesInputSchema.js';
-import { EquationUncheckedCreateNestedManyWithoutMdxNotesInputSchema } from '../EquationUncheckedCreateNestedManyWithoutMdxNotesInputSchema.js';
-import { DefinitionUncheckedCreateNestedManyWithoutMdxNoteInputSchema } from '../DefinitionUncheckedCreateNestedManyWithoutMdxNoteInputSchema.js';
-import { ToDoUncheckedCreateNestedManyWithoutAssociatedNotesInputSchema } from '../ToDoUncheckedCreateNestedManyWithoutAssociatedNotesInputSchema.js';
+import { MdxNoteCreatecitationsListOrderInputSchema } from './MdxNoteCreatecitationsListOrderInputSchema.js';
+import { MdxNoteCreateimportantValuesInputSchema } from './MdxNoteCreateimportantValuesInputSchema.js';
+import { MdxNoteCreateoutgoingQuickLinksInputSchema } from './MdxNoteCreateoutgoingQuickLinksInputSchema.js';
+import { TopicUncheckedCreateNestedManyWithoutMdxNotesInputSchema } from './TopicUncheckedCreateNestedManyWithoutMdxNotesInputSchema.js';
+import { SubjectUncheckedCreateNestedManyWithoutMdxNotesInputSchema } from './SubjectUncheckedCreateNestedManyWithoutMdxNotesInputSchema.js';
+import { TagUncheckedCreateNestedManyWithoutMdxNotesInputSchema } from './TagUncheckedCreateNestedManyWithoutMdxNotesInputSchema.js';
+import { BibEntryUncheckedCreateNestedManyWithoutMdxNotesInputSchema } from './BibEntryUncheckedCreateNestedManyWithoutMdxNotesInputSchema.js';
+import { ReadingListUncheckedCreateNestedManyWithoutMdxNotesInputSchema } from './ReadingListUncheckedCreateNestedManyWithoutMdxNotesInputSchema.js';
+import { EquationUncheckedCreateNestedManyWithoutMdxNotesInputSchema } from './EquationUncheckedCreateNestedManyWithoutMdxNotesInputSchema.js';
+import { DefinitionUncheckedCreateNestedManyWithoutMdxNoteInputSchema } from './DefinitionUncheckedCreateNestedManyWithoutMdxNoteInputSchema.js';
+import { ToDoUncheckedCreateNestedManyWithoutAssociatedNotesInputSchema } from './ToDoUncheckedCreateNestedManyWithoutAssociatedNotesInputSchema.js';
 export const MdxNoteUncheckedCreateInputSchema: z.ZodType<Prisma.MdxNoteUncheckedCreateInput> = z.object({
   id: z.number().int().optional(),
   isProtected: z.boolean().optional().nullable(),

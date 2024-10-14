@@ -1,11 +1,11 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/QAPairIncludeSchema.js
-..//inputTypeSchemas/QAPairWhereUniqueInputSchema.js
-..//inputTypeSchemas/QAPairCreateInputSchema.js
-..//inputTypeSchemas/QAPairUncheckedCreateInputSchema.js
-..//inputTypeSchemas/QAPairUpdateInputSchema.js
-..//inputTypeSchemas/QAPairUncheckedUpdateInputSchema.js
+import { QAPairIncludeSchema } from '../inputTypeSchemas/QAPairIncludeSchema.js'
+import { QAPairWhereUniqueInputSchema } from '../inputTypeSchemas/QAPairWhereUniqueInputSchema.js'
+import { QAPairCreateInputSchema } from '../inputTypeSchemas/QAPairCreateInputSchema.js'
+import { QAPairUncheckedCreateInputSchema } from '../inputTypeSchemas/QAPairUncheckedCreateInputSchema.js'
+import { QAPairUpdateInputSchema } from '../inputTypeSchemas/QAPairUpdateInputSchema.js'
+import { QAPairUncheckedUpdateInputSchema } from '../inputTypeSchemas/QAPairUncheckedUpdateInputSchema.js'
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"

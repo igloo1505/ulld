@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFilterSchema } from '../StringFilterSchema.js';
-import { StringNullableFilterSchema } from '../StringNullableFilterSchema.js';
-import { IntNullableFilterSchema } from '../IntNullableFilterSchema.js';
-import { DateTimeFilterSchema } from '../DateTimeFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
 export const DefinitionScalarWhereInputSchema: z.ZodType<Prisma.DefinitionScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => DefinitionScalarWhereInputSchema),z.lazy(() => DefinitionScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => DefinitionScalarWhereInputSchema).array().optional(),

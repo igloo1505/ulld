@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IpynbCreateWithoutCitationsInputSchema } from '../IpynbCreateWithoutCitationsInputSchema.js';
-import { IpynbUncheckedCreateWithoutCitationsInputSchema } from '../IpynbUncheckedCreateWithoutCitationsInputSchema.js';
-import { IpynbCreateOrConnectWithoutCitationsInputSchema } from '../IpynbCreateOrConnectWithoutCitationsInputSchema.js';
-import { IpynbWhereUniqueInputSchema } from '../IpynbWhereUniqueInputSchema.js';
+import { IpynbCreateWithoutCitationsInputSchema } from './IpynbCreateWithoutCitationsInputSchema.js';
+import { IpynbUncheckedCreateWithoutCitationsInputSchema } from './IpynbUncheckedCreateWithoutCitationsInputSchema.js';
+import { IpynbCreateOrConnectWithoutCitationsInputSchema } from './IpynbCreateOrConnectWithoutCitationsInputSchema.js';
+import { IpynbWhereUniqueInputSchema } from './IpynbWhereUniqueInputSchema.js';
 export const IpynbUncheckedCreateNestedManyWithoutCitationsInputSchema: z.ZodType<Prisma.IpynbUncheckedCreateNestedManyWithoutCitationsInput> = z.object({
   create: z.union([ z.lazy(() => IpynbCreateWithoutCitationsInputSchema),z.lazy(() => IpynbCreateWithoutCitationsInputSchema).array(),z.lazy(() => IpynbUncheckedCreateWithoutCitationsInputSchema),z.lazy(() => IpynbUncheckedCreateWithoutCitationsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => IpynbCreateOrConnectWithoutCitationsInputSchema),z.lazy(() => IpynbCreateOrConnectWithoutCitationsInputSchema).array() ]).optional(),

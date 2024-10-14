@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/DietWhereInputSchema.js
-..//inputTypeSchemas/DietOrderByWithAggregationInputSchema.js
-..//inputTypeSchemas/DietScalarFieldEnumSchema.js
-..//inputTypeSchemas/DietScalarWhereWithAggregatesInputSchema.js
+import { DietWhereInputSchema } from '../inputTypeSchemas/DietWhereInputSchema.js'
+import { DietOrderByWithAggregationInputSchema } from '../inputTypeSchemas/DietOrderByWithAggregationInputSchema.js'
+import { DietScalarFieldEnumSchema } from '../inputTypeSchemas/DietScalarFieldEnumSchema.js'
+import { DietScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/DietScalarWhereWithAggregatesInputSchema.js'
 export const DietGroupByArgsSchema: z.ZodType<Prisma.DietGroupByArgs> = z.object({
   where: DietWhereInputSchema.optional(),
   orderBy: z.union([ DietOrderByWithAggregationInputSchema.array(),DietOrderByWithAggregationInputSchema ]).optional(),

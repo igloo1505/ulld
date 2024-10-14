@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/EquationUpdateManyMutationInputSchema.js
-..//inputTypeSchemas/EquationUncheckedUpdateManyInputSchema.js
-..//inputTypeSchemas/EquationWhereInputSchema.js
+import { EquationUpdateManyMutationInputSchema } from '../inputTypeSchemas/EquationUpdateManyMutationInputSchema.js'
+import { EquationUncheckedUpdateManyInputSchema } from '../inputTypeSchemas/EquationUncheckedUpdateManyInputSchema.js'
+import { EquationWhereInputSchema } from '../inputTypeSchemas/EquationWhereInputSchema.js'
 export const EquationUpdateManyArgsSchema: z.ZodType<Prisma.EquationUpdateManyArgs> = z.object({
   data: z.union([ EquationUpdateManyMutationInputSchema,EquationUncheckedUpdateManyInputSchema ]),
   where: EquationWhereInputSchema.optional(),

@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/BibEntryIncludeSchema.js
-..//inputTypeSchemas/BibEntryUpdateInputSchema.js
-..//inputTypeSchemas/BibEntryUncheckedUpdateInputSchema.js
-..//inputTypeSchemas/BibEntryWhereUniqueInputSchema.js
+import { BibEntryIncludeSchema } from '../inputTypeSchemas/BibEntryIncludeSchema.js'
+import { BibEntryUpdateInputSchema } from '../inputTypeSchemas/BibEntryUpdateInputSchema.js'
+import { BibEntryUncheckedUpdateInputSchema } from '../inputTypeSchemas/BibEntryUncheckedUpdateInputSchema.js'
+import { BibEntryWhereUniqueInputSchema } from '../inputTypeSchemas/BibEntryWhereUniqueInputSchema.js'
 import { BibArgsSchema } from "../outputTypeSchemas/BibArgsSchema"
 import { CitationsGroupFindManyArgsSchema } from "../outputTypeSchemas/CitationsGroupFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"

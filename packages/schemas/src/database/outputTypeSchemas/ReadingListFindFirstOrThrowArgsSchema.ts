@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/ReadingListIncludeSchema.js
-..//inputTypeSchemas/ReadingListWhereInputSchema.js
-..//inputTypeSchemas/ReadingListOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/ReadingListWhereUniqueInputSchema.js
-..//inputTypeSchemas/ReadingListScalarFieldEnumSchema.js
+import { ReadingListIncludeSchema } from '../inputTypeSchemas/ReadingListIncludeSchema.js'
+import { ReadingListWhereInputSchema } from '../inputTypeSchemas/ReadingListWhereInputSchema.js'
+import { ReadingListOrderByWithRelationInputSchema } from '../inputTypeSchemas/ReadingListOrderByWithRelationInputSchema.js'
+import { ReadingListWhereUniqueInputSchema } from '../inputTypeSchemas/ReadingListWhereUniqueInputSchema.js'
+import { ReadingListScalarFieldEnumSchema } from '../inputTypeSchemas/ReadingListScalarFieldEnumSchema.js'
 import { BibEntryFindManyArgsSchema } from "../outputTypeSchemas/BibEntryFindManyArgsSchema"
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"

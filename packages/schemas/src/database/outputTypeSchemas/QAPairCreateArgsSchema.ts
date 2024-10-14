@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/QAPairIncludeSchema.js
-..//inputTypeSchemas/QAPairCreateInputSchema.js
-..//inputTypeSchemas/QAPairUncheckedCreateInputSchema.js
+import { QAPairIncludeSchema } from '../inputTypeSchemas/QAPairIncludeSchema.js'
+import { QAPairCreateInputSchema } from '../inputTypeSchemas/QAPairCreateInputSchema.js'
+import { QAPairUncheckedCreateInputSchema } from '../inputTypeSchemas/QAPairUncheckedCreateInputSchema.js'
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"

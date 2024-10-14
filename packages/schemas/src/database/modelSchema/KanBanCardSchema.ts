@@ -1,8 +1,8 @@
 import { z } from 'zod';
-import type { KanBanListWithRelations } from '../KanBanListSchema.js'
-import type { KanBanListPartialWithRelations } from '../KanBanListSchema.js'
-import { KanBanListWithRelationsSchema } from '../KanBanListSchema.js'
-import { KanBanListPartialWithRelationsSchema } from '../KanBanListSchema.js'
+import type { KanBanListWithRelations } from './KanBanListSchema.js'
+import type { KanBanListPartialWithRelations } from './KanBanListSchema.js'
+import { KanBanListWithRelationsSchema } from './KanBanListSchema.js'
+import { KanBanListPartialWithRelationsSchema } from './KanBanListSchema.js'
 /////////////////////////////////////////
 // KAN BAN CARD SCHEMA
 /////////////////////////////////////////

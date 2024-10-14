@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkXHY77EXRcjs = require('../../chunk-XHY77EXR.cjs');
-require('../../chunk-3VHUO2HE.cjs');
+var _chunkMZSXSRMGcjs = require('../../chunk-MZSXSRMG.cjs');
+require('../../chunk-DDYGEHLV.cjs');
 
 
 
-exports.KanBanListCountOutputTypeArgsSchema = _chunkXHY77EXRcjs.KanBanListCountOutputTypeArgsSchema; exports.default = _chunkXHY77EXRcjs.KanBanListCountOutputTypeArgsSchema_default;
+exports.KanBanListCountOutputTypeArgsSchema = _chunkMZSXSRMGcjs.KanBanListCountOutputTypeArgsSchema; exports.default = _chunkMZSXSRMGcjs.KanBanListCountOutputTypeArgsSchema_default;
 //# sourceMappingURL=KanBanListCountOutputTypeArgsSchema.cjs.map

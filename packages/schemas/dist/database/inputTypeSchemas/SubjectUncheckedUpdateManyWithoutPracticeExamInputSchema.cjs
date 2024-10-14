@@ -1,12 +1,12 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk5ALUGBZ5cjs = require('../../chunk-5ALUGBZ5.cjs');
-require('../../chunk-LDZNGXK5.cjs');
-require('../../chunk-6JWX7MA3.cjs');
-require('../../chunk-HGFNG2SE.cjs');
+var _chunkABZ44MJBcjs = require('../../chunk-ABZ44MJB.cjs');
+require('../../chunk-46TJSZ52.cjs');
+require('../../chunk-4HCQC4XG.cjs');
+require('../../chunk-I5XF7I5V.cjs');
 
 
 
-exports.SubjectUncheckedUpdateManyWithoutPracticeExamInputSchema = _chunk5ALUGBZ5cjs.SubjectUncheckedUpdateManyWithoutPracticeExamInputSchema; exports.default = _chunk5ALUGBZ5cjs.SubjectUncheckedUpdateManyWithoutPracticeExamInputSchema_default;
+exports.SubjectUncheckedUpdateManyWithoutPracticeExamInputSchema = _chunkABZ44MJBcjs.SubjectUncheckedUpdateManyWithoutPracticeExamInputSchema; exports.default = _chunkABZ44MJBcjs.SubjectUncheckedUpdateManyWithoutPracticeExamInputSchema_default;
 //# sourceMappingURL=SubjectUncheckedUpdateManyWithoutPracticeExamInputSchema.cjs.map

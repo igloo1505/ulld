@@ -1,11 +1,11 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
-import { WaitlistRequestCountOrderByAggregateInputSchema } from '../WaitlistRequestCountOrderByAggregateInputSchema.js';
-import { WaitlistRequestAvgOrderByAggregateInputSchema } from '../WaitlistRequestAvgOrderByAggregateInputSchema.js';
-import { WaitlistRequestMaxOrderByAggregateInputSchema } from '../WaitlistRequestMaxOrderByAggregateInputSchema.js';
-import { WaitlistRequestMinOrderByAggregateInputSchema } from '../WaitlistRequestMinOrderByAggregateInputSchema.js';
-import { WaitlistRequestSumOrderByAggregateInputSchema } from '../WaitlistRequestSumOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { WaitlistRequestCountOrderByAggregateInputSchema } from './WaitlistRequestCountOrderByAggregateInputSchema.js';
+import { WaitlistRequestAvgOrderByAggregateInputSchema } from './WaitlistRequestAvgOrderByAggregateInputSchema.js';
+import { WaitlistRequestMaxOrderByAggregateInputSchema } from './WaitlistRequestMaxOrderByAggregateInputSchema.js';
+import { WaitlistRequestMinOrderByAggregateInputSchema } from './WaitlistRequestMinOrderByAggregateInputSchema.js';
+import { WaitlistRequestSumOrderByAggregateInputSchema } from './WaitlistRequestSumOrderByAggregateInputSchema.js';
 export const WaitlistRequestOrderByWithAggregationInputSchema: z.ZodType<Prisma.WaitlistRequestOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   email: z.lazy(() => SortOrderSchema).optional(),

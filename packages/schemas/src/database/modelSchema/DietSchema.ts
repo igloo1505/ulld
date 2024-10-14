@@ -1,18 +1,18 @@
 import { z } from 'zod';
-..//inputTypeSchemas/TERTIARY_TOGGLESchema.js
-..//inputTypeSchemas/DIETARY_GOALSchema.js
-import type { DietaryItemWithRelations } from '../DietaryItemSchema.js'
-import type { DietaryItemPartialWithRelations } from '../DietaryItemSchema.js'
-import type { TimePeriodWithRelations } from '../TimePeriodSchema.js'
-import type { TimePeriodPartialWithRelations } from '../TimePeriodSchema.js'
-import type { HealthReportWithRelations } from '../HealthReportSchema.js'
-import type { HealthReportPartialWithRelations } from '../HealthReportSchema.js'
-import { DietaryItemWithRelationsSchema } from '../DietaryItemSchema.js'
-import { DietaryItemPartialWithRelationsSchema } from '../DietaryItemSchema.js'
-import { TimePeriodWithRelationsSchema } from '../TimePeriodSchema.js'
-import { TimePeriodPartialWithRelationsSchema } from '../TimePeriodSchema.js'
-import { HealthReportWithRelationsSchema } from '../HealthReportSchema.js'
-import { HealthReportPartialWithRelationsSchema } from '../HealthReportSchema.js'
+import { TERTIARY_TOGGLESchema } from '../inputTypeSchemas/TERTIARY_TOGGLESchema.js'
+import { DIETARY_GOALSchema } from '../inputTypeSchemas/DIETARY_GOALSchema.js'
+import type { DietaryItemWithRelations } from './DietaryItemSchema.js'
+import type { DietaryItemPartialWithRelations } from './DietaryItemSchema.js'
+import type { TimePeriodWithRelations } from './TimePeriodSchema.js'
+import type { TimePeriodPartialWithRelations } from './TimePeriodSchema.js'
+import type { HealthReportWithRelations } from './HealthReportSchema.js'
+import type { HealthReportPartialWithRelations } from './HealthReportSchema.js'
+import { DietaryItemWithRelationsSchema } from './DietaryItemSchema.js'
+import { DietaryItemPartialWithRelationsSchema } from './DietaryItemSchema.js'
+import { TimePeriodWithRelationsSchema } from './TimePeriodSchema.js'
+import { TimePeriodPartialWithRelationsSchema } from './TimePeriodSchema.js'
+import { HealthReportWithRelationsSchema } from './HealthReportSchema.js'
+import { HealthReportPartialWithRelationsSchema } from './HealthReportSchema.js'
 /////////////////////////////////////////
 // DIET SCHEMA
 /////////////////////////////////////////

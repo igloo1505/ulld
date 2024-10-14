@@ -1,8 +1,8 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from '../IntWithAggregatesFilterSchema.js';
-import { StringWithAggregatesFilterSchema } from '../StringWithAggregatesFilterSchema.js';
-import { StringNullableWithAggregatesFilterSchema } from '../StringNullableWithAggregatesFilterSchema.js';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
 export const BusinessContactScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.BusinessContactScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => BusinessContactScalarWhereWithAggregatesInputSchema),z.lazy(() => BusinessContactScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => BusinessContactScalarWhereWithAggregatesInputSchema).array().optional(),

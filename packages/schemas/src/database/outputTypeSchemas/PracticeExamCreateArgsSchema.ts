@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/PracticeExamIncludeSchema.js
-..//inputTypeSchemas/PracticeExamCreateInputSchema.js
-..//inputTypeSchemas/PracticeExamUncheckedCreateInputSchema.js
+import { PracticeExamIncludeSchema } from '../inputTypeSchemas/PracticeExamIncludeSchema.js'
+import { PracticeExamCreateInputSchema } from '../inputTypeSchemas/PracticeExamCreateInputSchema.js'
+import { PracticeExamUncheckedCreateInputSchema } from '../inputTypeSchemas/PracticeExamUncheckedCreateInputSchema.js'
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"

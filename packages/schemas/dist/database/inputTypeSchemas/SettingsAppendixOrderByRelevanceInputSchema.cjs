@@ -1,11 +1,11 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkSH5B3GDHcjs = require('../../chunk-SH5B3GDH.cjs');
-require('../../chunk-KSEIAFQ5.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkGULLFZ6Jcjs = require('../../chunk-GULLFZ6J.cjs');
+require('../../chunk-2TUVYDDH.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.SettingsAppendixOrderByRelevanceInputSchema = _chunkSH5B3GDHcjs.SettingsAppendixOrderByRelevanceInputSchema; exports.default = _chunkSH5B3GDHcjs.SettingsAppendixOrderByRelevanceInputSchema_default;
+exports.SettingsAppendixOrderByRelevanceInputSchema = _chunkGULLFZ6Jcjs.SettingsAppendixOrderByRelevanceInputSchema; exports.default = _chunkGULLFZ6Jcjs.SettingsAppendixOrderByRelevanceInputSchema_default;
 //# sourceMappingURL=SettingsAppendixOrderByRelevanceInputSchema.cjs.map

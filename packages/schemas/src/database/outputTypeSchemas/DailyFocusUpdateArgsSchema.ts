@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/DailyFocusUpdateInputSchema.js
-..//inputTypeSchemas/DailyFocusUncheckedUpdateInputSchema.js
-..//inputTypeSchemas/DailyFocusWhereUniqueInputSchema.js
+import { DailyFocusUpdateInputSchema } from '../inputTypeSchemas/DailyFocusUpdateInputSchema.js'
+import { DailyFocusUncheckedUpdateInputSchema } from '../inputTypeSchemas/DailyFocusUncheckedUpdateInputSchema.js'
+import { DailyFocusWhereUniqueInputSchema } from '../inputTypeSchemas/DailyFocusWhereUniqueInputSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const DailyFocusSelectSchema: z.ZodType<Prisma.DailyFocusSelect> = z.object({

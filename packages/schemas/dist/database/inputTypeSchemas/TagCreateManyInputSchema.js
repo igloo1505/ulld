@@ -1,7 +1,7 @@
 import {
   TagCreateManyInputSchema,
   TagCreateManyInputSchema_default
-} from "../../chunk-ZXF2RNGB.js";
+} from "../../chunk-KKCL5IYN.js";
 export {
   TagCreateManyInputSchema,
   TagCreateManyInputSchema_default as default

@@ -2,10 +2,10 @@
 
 
 
-var _chunkQKZW4A2Ycjs = require('../../chunk-QKZW4A2Y.cjs');
+var _chunkQMHVNQ64cjs = require('../../chunk-QMHVNQ64.cjs');
 
 
 
 
-exports.BusinessContactPartialSchema = _chunkQKZW4A2Ycjs.BusinessContactPartialSchema; exports.BusinessContactSchema = _chunkQKZW4A2Ycjs.BusinessContactSchema; exports.default = _chunkQKZW4A2Ycjs.BusinessContactSchema_default;
+exports.BusinessContactPartialSchema = _chunkQMHVNQ64cjs.BusinessContactPartialSchema; exports.BusinessContactSchema = _chunkQMHVNQ64cjs.BusinessContactSchema; exports.default = _chunkQMHVNQ64cjs.BusinessContactSchema_default;
 //# sourceMappingURL=BusinessContactSchema.cjs.map

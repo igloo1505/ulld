@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SubjectCreateWithoutQaPairInputSchema } from '../SubjectCreateWithoutQaPairInputSchema.js';
-import { SubjectUncheckedCreateWithoutQaPairInputSchema } from '../SubjectUncheckedCreateWithoutQaPairInputSchema.js';
-import { SubjectCreateOrConnectWithoutQaPairInputSchema } from '../SubjectCreateOrConnectWithoutQaPairInputSchema.js';
-import { SubjectWhereUniqueInputSchema } from '../SubjectWhereUniqueInputSchema.js';
+import { SubjectCreateWithoutQaPairInputSchema } from './SubjectCreateWithoutQaPairInputSchema.js';
+import { SubjectUncheckedCreateWithoutQaPairInputSchema } from './SubjectUncheckedCreateWithoutQaPairInputSchema.js';
+import { SubjectCreateOrConnectWithoutQaPairInputSchema } from './SubjectCreateOrConnectWithoutQaPairInputSchema.js';
+import { SubjectWhereUniqueInputSchema } from './SubjectWhereUniqueInputSchema.js';
 export const SubjectCreateNestedManyWithoutQaPairInputSchema: z.ZodType<Prisma.SubjectCreateNestedManyWithoutQaPairInput> = z.object({
   create: z.union([ z.lazy(() => SubjectCreateWithoutQaPairInputSchema),z.lazy(() => SubjectCreateWithoutQaPairInputSchema).array(),z.lazy(() => SubjectUncheckedCreateWithoutQaPairInputSchema),z.lazy(() => SubjectUncheckedCreateWithoutQaPairInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => SubjectCreateOrConnectWithoutQaPairInputSchema),z.lazy(() => SubjectCreateOrConnectWithoutQaPairInputSchema).array() ]).optional(),

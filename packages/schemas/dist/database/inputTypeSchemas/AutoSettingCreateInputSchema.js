@@ -1,8 +1,8 @@
 import {
   AutoSettingCreateInputSchema,
   AutoSettingCreateInputSchema_default
-} from "../../chunk-MHEQ6QIN.js";
-import "../../chunk-EK76L66X.js";
+} from "../../chunk-5QGKR5FV.js";
+import "../../chunk-76RQYGNI.js";
 export {
   AutoSettingCreateInputSchema,
   AutoSettingCreateInputSchema_default as default

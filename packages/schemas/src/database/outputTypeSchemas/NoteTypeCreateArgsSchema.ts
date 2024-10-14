@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/NoteTypeCreateInputSchema.js
-..//inputTypeSchemas/NoteTypeUncheckedCreateInputSchema.js
+import { NoteTypeCreateInputSchema } from '../inputTypeSchemas/NoteTypeCreateInputSchema.js'
+import { NoteTypeUncheckedCreateInputSchema } from '../inputTypeSchemas/NoteTypeUncheckedCreateInputSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const NoteTypeSelectSchema: z.ZodType<Prisma.NoteTypeSelect> = z.object({

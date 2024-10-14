@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { JsonNullValueInputSchema } from '../JsonNullValueInputSchema.js';
-import { InputJsonValueSchema } from '../InputJsonValueSchema.js';
-import { EquationCreatevariablesInputSchema } from '../EquationCreatevariablesInputSchema.js';
-import { EquationCreatekeywordsInputSchema } from '../EquationCreatekeywordsInputSchema.js';
+import { JsonNullValueInputSchema } from './JsonNullValueInputSchema.js';
+import { InputJsonValueSchema } from './InputJsonValueSchema.js';
+import { EquationCreatevariablesInputSchema } from './EquationCreatevariablesInputSchema.js';
+import { EquationCreatekeywordsInputSchema } from './EquationCreatekeywordsInputSchema.js';
 export const EquationCreateManyInputSchema: z.ZodType<Prisma.EquationCreateManyInput> = z.object({
   id: z.number().int().optional(),
   equationId: z.string().optional().nullable(),

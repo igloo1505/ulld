@@ -1,14 +1,14 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ToDoListCreateWithoutTasksInputSchema } from '../ToDoListCreateWithoutTasksInputSchema.js';
-import { ToDoListUncheckedCreateWithoutTasksInputSchema } from '../ToDoListUncheckedCreateWithoutTasksInputSchema.js';
-import { ToDoListCreateOrConnectWithoutTasksInputSchema } from '../ToDoListCreateOrConnectWithoutTasksInputSchema.js';
-import { ToDoListUpsertWithoutTasksInputSchema } from '../ToDoListUpsertWithoutTasksInputSchema.js';
-import { ToDoListWhereInputSchema } from '../ToDoListWhereInputSchema.js';
-import { ToDoListWhereUniqueInputSchema } from '../ToDoListWhereUniqueInputSchema.js';
-import { ToDoListUpdateToOneWithWhereWithoutTasksInputSchema } from '../ToDoListUpdateToOneWithWhereWithoutTasksInputSchema.js';
-import { ToDoListUpdateWithoutTasksInputSchema } from '../ToDoListUpdateWithoutTasksInputSchema.js';
-import { ToDoListUncheckedUpdateWithoutTasksInputSchema } from '../ToDoListUncheckedUpdateWithoutTasksInputSchema.js';
+import { ToDoListCreateWithoutTasksInputSchema } from './ToDoListCreateWithoutTasksInputSchema.js';
+import { ToDoListUncheckedCreateWithoutTasksInputSchema } from './ToDoListUncheckedCreateWithoutTasksInputSchema.js';
+import { ToDoListCreateOrConnectWithoutTasksInputSchema } from './ToDoListCreateOrConnectWithoutTasksInputSchema.js';
+import { ToDoListUpsertWithoutTasksInputSchema } from './ToDoListUpsertWithoutTasksInputSchema.js';
+import { ToDoListWhereInputSchema } from './ToDoListWhereInputSchema.js';
+import { ToDoListWhereUniqueInputSchema } from './ToDoListWhereUniqueInputSchema.js';
+import { ToDoListUpdateToOneWithWhereWithoutTasksInputSchema } from './ToDoListUpdateToOneWithWhereWithoutTasksInputSchema.js';
+import { ToDoListUpdateWithoutTasksInputSchema } from './ToDoListUpdateWithoutTasksInputSchema.js';
+import { ToDoListUncheckedUpdateWithoutTasksInputSchema } from './ToDoListUncheckedUpdateWithoutTasksInputSchema.js';
 export const ToDoListUpdateOneWithoutTasksNestedInputSchema: z.ZodType<Prisma.ToDoListUpdateOneWithoutTasksNestedInput> = z.object({
   create: z.union([ z.lazy(() => ToDoListCreateWithoutTasksInputSchema),z.lazy(() => ToDoListUncheckedCreateWithoutTasksInputSchema) ]).optional(),
   connectOrCreate: z.lazy(() => ToDoListCreateOrConnectWithoutTasksInputSchema).optional(),

@@ -2,10 +2,10 @@ import {
   bibEntryPropsSchema,
   bibEntryTransform,
   citationGroupSchema
-} from "../../../../chunk-CJ3RTU6R.js";
+} from "../../../../chunk-KVTGM2DO.js";
 import "../../../../chunk-3WNGPE7M.js";
-import "../../../../chunk-I6ZKXDT5.js";
 import "../../../../chunk-M5VWJQBY.js";
+import "../../../../chunk-I6ZKXDT5.js";
 import "../../../../chunk-YVRRK3PZ.js";
 export {
   bibEntryPropsSchema,

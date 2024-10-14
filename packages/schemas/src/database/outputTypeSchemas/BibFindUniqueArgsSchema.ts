@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/BibIncludeSchema.js
-..//inputTypeSchemas/BibWhereUniqueInputSchema.js
+import { BibIncludeSchema } from '../inputTypeSchemas/BibIncludeSchema.js'
+import { BibWhereUniqueInputSchema } from '../inputTypeSchemas/BibWhereUniqueInputSchema.js'
 import { BibEntryFindManyArgsSchema } from "../outputTypeSchemas/BibEntryFindManyArgsSchema"
 import { BibCountOutputTypeArgsSchema } from "../outputTypeSchemas/BibCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports

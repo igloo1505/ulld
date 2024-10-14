@@ -5,9 +5,9 @@
 
 
 
-var _chunkLFQDZDFTcjs = require('../../chunk-LFQDZDFT.cjs');
-require('../../chunk-QF2T6FCZ.cjs');
-require('../../chunk-BRDOGD33.cjs');
+var _chunkO7GASESQcjs = require('../../chunk-O7GASESQ.cjs');
+require('../../chunk-ATQO6OGE.cjs');
+require('../../chunk-PALRL6S5.cjs');
 
 
 
@@ -15,5 +15,5 @@ require('../../chunk-BRDOGD33.cjs');
 
 
 
-exports.CitationsGroupPartialSchema = _chunkLFQDZDFTcjs.CitationsGroupPartialSchema; exports.CitationsGroupPartialWithRelationsSchema = _chunkLFQDZDFTcjs.CitationsGroupPartialWithRelationsSchema; exports.CitationsGroupSchema = _chunkLFQDZDFTcjs.CitationsGroupSchema; exports.CitationsGroupWithPartialRelationsSchema = _chunkLFQDZDFTcjs.CitationsGroupWithPartialRelationsSchema; exports.CitationsGroupWithRelationsSchema = _chunkLFQDZDFTcjs.CitationsGroupWithRelationsSchema; exports.default = _chunkLFQDZDFTcjs.CitationsGroupSchema_default;
+exports.CitationsGroupPartialSchema = _chunkO7GASESQcjs.CitationsGroupPartialSchema; exports.CitationsGroupPartialWithRelationsSchema = _chunkO7GASESQcjs.CitationsGroupPartialWithRelationsSchema; exports.CitationsGroupSchema = _chunkO7GASESQcjs.CitationsGroupSchema; exports.CitationsGroupWithPartialRelationsSchema = _chunkO7GASESQcjs.CitationsGroupWithPartialRelationsSchema; exports.CitationsGroupWithRelationsSchema = _chunkO7GASESQcjs.CitationsGroupWithRelationsSchema; exports.default = _chunkO7GASESQcjs.CitationsGroupSchema_default;
 //# sourceMappingURL=CitationsGroupSchema.cjs.map

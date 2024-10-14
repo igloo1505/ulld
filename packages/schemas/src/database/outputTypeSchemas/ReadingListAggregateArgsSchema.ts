@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/ReadingListWhereInputSchema.js
-..//inputTypeSchemas/ReadingListOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/ReadingListWhereUniqueInputSchema.js
+import { ReadingListWhereInputSchema } from '../inputTypeSchemas/ReadingListWhereInputSchema.js'
+import { ReadingListOrderByWithRelationInputSchema } from '../inputTypeSchemas/ReadingListOrderByWithRelationInputSchema.js'
+import { ReadingListWhereUniqueInputSchema } from '../inputTypeSchemas/ReadingListWhereUniqueInputSchema.js'
 export const ReadingListAggregateArgsSchema: z.ZodType<Prisma.ReadingListAggregateArgs> = z.object({
   where: ReadingListWhereInputSchema.optional(),
   orderBy: z.union([ ReadingListOrderByWithRelationInputSchema.array(),ReadingListOrderByWithRelationInputSchema ]).optional(),

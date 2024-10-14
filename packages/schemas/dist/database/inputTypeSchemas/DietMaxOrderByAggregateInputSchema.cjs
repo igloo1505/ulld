@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkLVE7FLDPcjs = require('../../chunk-LVE7FLDP.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkZLRGXR5Xcjs = require('../../chunk-ZLRGXR5X.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.DietMaxOrderByAggregateInputSchema = _chunkLVE7FLDPcjs.DietMaxOrderByAggregateInputSchema; exports.default = _chunkLVE7FLDPcjs.DietMaxOrderByAggregateInputSchema_default;
+exports.DietMaxOrderByAggregateInputSchema = _chunkZLRGXR5Xcjs.DietMaxOrderByAggregateInputSchema; exports.default = _chunkZLRGXR5Xcjs.DietMaxOrderByAggregateInputSchema_default;
 //# sourceMappingURL=DietMaxOrderByAggregateInputSchema.cjs.map

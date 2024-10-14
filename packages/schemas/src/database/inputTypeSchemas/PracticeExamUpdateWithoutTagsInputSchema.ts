@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFieldUpdateOperationsInputSchema } from '../IntFieldUpdateOperationsInputSchema.js';
-import { DateTimeFieldUpdateOperationsInputSchema } from '../DateTimeFieldUpdateOperationsInputSchema.js';
-import { TopicUpdateManyWithoutPracticeExamNestedInputSchema } from '../TopicUpdateManyWithoutPracticeExamNestedInputSchema.js';
-import { SubjectUpdateManyWithoutPracticeExamNestedInputSchema } from '../SubjectUpdateManyWithoutPracticeExamNestedInputSchema.js';
-import { QAPairUpdateManyWithoutPracticeExamNestedInputSchema } from '../QAPairUpdateManyWithoutPracticeExamNestedInputSchema.js';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+import { TopicUpdateManyWithoutPracticeExamNestedInputSchema } from './TopicUpdateManyWithoutPracticeExamNestedInputSchema.js';
+import { SubjectUpdateManyWithoutPracticeExamNestedInputSchema } from './SubjectUpdateManyWithoutPracticeExamNestedInputSchema.js';
+import { QAPairUpdateManyWithoutPracticeExamNestedInputSchema } from './QAPairUpdateManyWithoutPracticeExamNestedInputSchema.js';
 export const PracticeExamUpdateWithoutTagsInputSchema: z.ZodType<Prisma.PracticeExamUpdateWithoutTagsInput> = z.object({
   correctCount: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
   inCorrectCount: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),

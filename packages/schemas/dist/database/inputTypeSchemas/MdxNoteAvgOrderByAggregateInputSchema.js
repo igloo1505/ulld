@@ -1,8 +1,8 @@
 import {
   MdxNoteAvgOrderByAggregateInputSchema,
   MdxNoteAvgOrderByAggregateInputSchema_default
-} from "../../chunk-L2EA5TKZ.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-NSPZ3NUO.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   MdxNoteAvgOrderByAggregateInputSchema,
   MdxNoteAvgOrderByAggregateInputSchema_default as default

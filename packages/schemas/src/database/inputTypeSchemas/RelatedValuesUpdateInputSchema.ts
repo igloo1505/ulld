@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { JsonNullValueInputSchema } from '../JsonNullValueInputSchema.js';
-import { InputJsonValueSchema } from '../InputJsonValueSchema.js';
-import { FloatFieldUpdateOperationsInputSchema } from '../FloatFieldUpdateOperationsInputSchema.js';
-import { RelatedValuesUpdateequationIdInputSchema } from '../RelatedValuesUpdateequationIdInputSchema.js';
-import { EquationUpdateManyWithoutRelatedValuesNestedInputSchema } from '../EquationUpdateManyWithoutRelatedValuesNestedInputSchema.js';
+import { JsonNullValueInputSchema } from './JsonNullValueInputSchema.js';
+import { InputJsonValueSchema } from './InputJsonValueSchema.js';
+import { FloatFieldUpdateOperationsInputSchema } from './FloatFieldUpdateOperationsInputSchema.js';
+import { RelatedValuesUpdateequationIdInputSchema } from './RelatedValuesUpdateequationIdInputSchema.js';
+import { EquationUpdateManyWithoutRelatedValuesNestedInputSchema } from './EquationUpdateManyWithoutRelatedValuesNestedInputSchema.js';
 export const RelatedValuesUpdateInputSchema: z.ZodType<Prisma.RelatedValuesUpdateInput> = z.object({
   input: z.union([ z.lazy(() => JsonNullValueInputSchema),InputJsonValueSchema ]).optional(),
   output: z.union([ z.number(),z.lazy(() => FloatFieldUpdateOperationsInputSchema) ]).optional(),

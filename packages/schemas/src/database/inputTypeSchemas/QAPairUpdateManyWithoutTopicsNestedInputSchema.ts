@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { QAPairCreateWithoutTopicsInputSchema } from '../QAPairCreateWithoutTopicsInputSchema.js';
-import { QAPairUncheckedCreateWithoutTopicsInputSchema } from '../QAPairUncheckedCreateWithoutTopicsInputSchema.js';
-import { QAPairCreateOrConnectWithoutTopicsInputSchema } from '../QAPairCreateOrConnectWithoutTopicsInputSchema.js';
-import { QAPairUpsertWithWhereUniqueWithoutTopicsInputSchema } from '../QAPairUpsertWithWhereUniqueWithoutTopicsInputSchema.js';
-import { QAPairWhereUniqueInputSchema } from '../QAPairWhereUniqueInputSchema.js';
-import { QAPairUpdateWithWhereUniqueWithoutTopicsInputSchema } from '../QAPairUpdateWithWhereUniqueWithoutTopicsInputSchema.js';
-import { QAPairUpdateManyWithWhereWithoutTopicsInputSchema } from '../QAPairUpdateManyWithWhereWithoutTopicsInputSchema.js';
-import { QAPairScalarWhereInputSchema } from '../QAPairScalarWhereInputSchema.js';
+import { QAPairCreateWithoutTopicsInputSchema } from './QAPairCreateWithoutTopicsInputSchema.js';
+import { QAPairUncheckedCreateWithoutTopicsInputSchema } from './QAPairUncheckedCreateWithoutTopicsInputSchema.js';
+import { QAPairCreateOrConnectWithoutTopicsInputSchema } from './QAPairCreateOrConnectWithoutTopicsInputSchema.js';
+import { QAPairUpsertWithWhereUniqueWithoutTopicsInputSchema } from './QAPairUpsertWithWhereUniqueWithoutTopicsInputSchema.js';
+import { QAPairWhereUniqueInputSchema } from './QAPairWhereUniqueInputSchema.js';
+import { QAPairUpdateWithWhereUniqueWithoutTopicsInputSchema } from './QAPairUpdateWithWhereUniqueWithoutTopicsInputSchema.js';
+import { QAPairUpdateManyWithWhereWithoutTopicsInputSchema } from './QAPairUpdateManyWithWhereWithoutTopicsInputSchema.js';
+import { QAPairScalarWhereInputSchema } from './QAPairScalarWhereInputSchema.js';
 export const QAPairUpdateManyWithoutTopicsNestedInputSchema: z.ZodType<Prisma.QAPairUpdateManyWithoutTopicsNestedInput> = z.object({
   create: z.union([ z.lazy(() => QAPairCreateWithoutTopicsInputSchema),z.lazy(() => QAPairCreateWithoutTopicsInputSchema).array(),z.lazy(() => QAPairUncheckedCreateWithoutTopicsInputSchema),z.lazy(() => QAPairUncheckedCreateWithoutTopicsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => QAPairCreateOrConnectWithoutTopicsInputSchema),z.lazy(() => QAPairCreateOrConnectWithoutTopicsInputSchema).array() ]).optional(),

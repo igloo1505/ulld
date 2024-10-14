@@ -1,7 +1,7 @@
 import {
   BibEntryOrderByRelevanceFieldEnumSchema,
   BibEntryOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-EZHB2WPP.js";
+} from "../../chunk-UIKGYNXB.js";
 export {
   BibEntryOrderByRelevanceFieldEnumSchema,
   BibEntryOrderByRelevanceFieldEnumSchema_default as default

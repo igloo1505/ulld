@@ -1,11 +1,11 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/RelatedValuesIncludeSchema.js
-..//inputTypeSchemas/RelatedValuesWhereUniqueInputSchema.js
-..//inputTypeSchemas/RelatedValuesCreateInputSchema.js
-..//inputTypeSchemas/RelatedValuesUncheckedCreateInputSchema.js
-..//inputTypeSchemas/RelatedValuesUpdateInputSchema.js
-..//inputTypeSchemas/RelatedValuesUncheckedUpdateInputSchema.js
+import { RelatedValuesIncludeSchema } from '../inputTypeSchemas/RelatedValuesIncludeSchema.js'
+import { RelatedValuesWhereUniqueInputSchema } from '../inputTypeSchemas/RelatedValuesWhereUniqueInputSchema.js'
+import { RelatedValuesCreateInputSchema } from '../inputTypeSchemas/RelatedValuesCreateInputSchema.js'
+import { RelatedValuesUncheckedCreateInputSchema } from '../inputTypeSchemas/RelatedValuesUncheckedCreateInputSchema.js'
+import { RelatedValuesUpdateInputSchema } from '../inputTypeSchemas/RelatedValuesUpdateInputSchema.js'
+import { RelatedValuesUncheckedUpdateInputSchema } from '../inputTypeSchemas/RelatedValuesUncheckedUpdateInputSchema.js'
 import { EquationFindManyArgsSchema } from "../outputTypeSchemas/EquationFindManyArgsSchema"
 import { RelatedValuesCountOutputTypeArgsSchema } from "../outputTypeSchemas/RelatedValuesCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports

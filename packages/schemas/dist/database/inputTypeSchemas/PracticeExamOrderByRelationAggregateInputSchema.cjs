@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkPCM3GZDJcjs = require('../../chunk-PCM3GZDJ.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunk3QA5HH7Zcjs = require('../../chunk-3QA5HH7Z.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.PracticeExamOrderByRelationAggregateInputSchema = _chunkPCM3GZDJcjs.PracticeExamOrderByRelationAggregateInputSchema; exports.default = _chunkPCM3GZDJcjs.PracticeExamOrderByRelationAggregateInputSchema_default;
+exports.PracticeExamOrderByRelationAggregateInputSchema = _chunk3QA5HH7Zcjs.PracticeExamOrderByRelationAggregateInputSchema; exports.default = _chunk3QA5HH7Zcjs.PracticeExamOrderByRelationAggregateInputSchema_default;
 //# sourceMappingURL=PracticeExamOrderByRelationAggregateInputSchema.cjs.map

@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkRXPI6HLCcjs = require('../../chunk-RXPI6HLC.cjs');
+var _chunkDXLATYAXcjs = require('../../chunk-DXLATYAX.cjs');
 
 
 
-exports.ToDoListCreateManyInputSchema = _chunkRXPI6HLCcjs.ToDoListCreateManyInputSchema; exports.default = _chunkRXPI6HLCcjs.ToDoListCreateManyInputSchema_default;
+exports.ToDoListCreateManyInputSchema = _chunkDXLATYAXcjs.ToDoListCreateManyInputSchema; exports.default = _chunkDXLATYAXcjs.ToDoListCreateManyInputSchema_default;
 //# sourceMappingURL=ToDoListCreateManyInputSchema.cjs.map

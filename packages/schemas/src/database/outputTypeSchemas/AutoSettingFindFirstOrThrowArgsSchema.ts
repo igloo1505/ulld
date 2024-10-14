@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/AutoSettingWhereInputSchema.js
-..//inputTypeSchemas/AutoSettingOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/AutoSettingWhereUniqueInputSchema.js
-..//inputTypeSchemas/AutoSettingScalarFieldEnumSchema.js
+import { AutoSettingWhereInputSchema } from '../inputTypeSchemas/AutoSettingWhereInputSchema.js'
+import { AutoSettingOrderByWithRelationInputSchema } from '../inputTypeSchemas/AutoSettingOrderByWithRelationInputSchema.js'
+import { AutoSettingWhereUniqueInputSchema } from '../inputTypeSchemas/AutoSettingWhereUniqueInputSchema.js'
+import { AutoSettingScalarFieldEnumSchema } from '../inputTypeSchemas/AutoSettingScalarFieldEnumSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const AutoSettingSelectSchema: z.ZodType<Prisma.AutoSettingSelect> = z.object({

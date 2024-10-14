@@ -1,10 +1,10 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteWhereUniqueInputSchema } from '../MdxNoteWhereUniqueInputSchema.js';
-import { MdxNoteUpdateWithoutToDoInputSchema } from '../MdxNoteUpdateWithoutToDoInputSchema.js';
-import { MdxNoteUncheckedUpdateWithoutToDoInputSchema } from '../MdxNoteUncheckedUpdateWithoutToDoInputSchema.js';
-import { MdxNoteCreateWithoutToDoInputSchema } from '../MdxNoteCreateWithoutToDoInputSchema.js';
-import { MdxNoteUncheckedCreateWithoutToDoInputSchema } from '../MdxNoteUncheckedCreateWithoutToDoInputSchema.js';
+import { MdxNoteWhereUniqueInputSchema } from './MdxNoteWhereUniqueInputSchema.js';
+import { MdxNoteUpdateWithoutToDoInputSchema } from './MdxNoteUpdateWithoutToDoInputSchema.js';
+import { MdxNoteUncheckedUpdateWithoutToDoInputSchema } from './MdxNoteUncheckedUpdateWithoutToDoInputSchema.js';
+import { MdxNoteCreateWithoutToDoInputSchema } from './MdxNoteCreateWithoutToDoInputSchema.js';
+import { MdxNoteUncheckedCreateWithoutToDoInputSchema } from './MdxNoteUncheckedCreateWithoutToDoInputSchema.js';
 export const MdxNoteUpsertWithWhereUniqueWithoutToDoInputSchema: z.ZodType<Prisma.MdxNoteUpsertWithWhereUniqueWithoutToDoInput> = z.object({
   where: z.lazy(() => MdxNoteWhereUniqueInputSchema),
   update: z.union([ z.lazy(() => MdxNoteUpdateWithoutToDoInputSchema),z.lazy(() => MdxNoteUncheckedUpdateWithoutToDoInputSchema) ]),

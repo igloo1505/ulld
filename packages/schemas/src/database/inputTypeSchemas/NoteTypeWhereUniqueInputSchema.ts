@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { NoteTypeWhereInputSchema } from '../NoteTypeWhereInputSchema.js';
+import { NoteTypeWhereInputSchema } from './NoteTypeWhereInputSchema.js';
 export const NoteTypeWhereUniqueInputSchema: z.ZodType<Prisma.NoteTypeWhereUniqueInput> = z.object({
   name: z.string()
 })

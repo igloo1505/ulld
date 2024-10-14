@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteWhereInputSchema } from '../MdxNoteWhereInputSchema.js';
+import { MdxNoteWhereInputSchema } from './MdxNoteWhereInputSchema.js';
 export const MdxNoteListRelationFilterSchema: z.ZodType<Prisma.MdxNoteListRelationFilter> = z.object({
   every: z.lazy(() => MdxNoteWhereInputSchema).optional(),
   some: z.lazy(() => MdxNoteWhereInputSchema).optional(),

@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
-import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
-import { KanBanCardCountOrderByAggregateInputSchema } from '../KanBanCardCountOrderByAggregateInputSchema.js';
-import { KanBanCardAvgOrderByAggregateInputSchema } from '../KanBanCardAvgOrderByAggregateInputSchema.js';
-import { KanBanCardMaxOrderByAggregateInputSchema } from '../KanBanCardMaxOrderByAggregateInputSchema.js';
-import { KanBanCardMinOrderByAggregateInputSchema } from '../KanBanCardMinOrderByAggregateInputSchema.js';
-import { KanBanCardSumOrderByAggregateInputSchema } from '../KanBanCardSumOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { KanBanCardCountOrderByAggregateInputSchema } from './KanBanCardCountOrderByAggregateInputSchema.js';
+import { KanBanCardAvgOrderByAggregateInputSchema } from './KanBanCardAvgOrderByAggregateInputSchema.js';
+import { KanBanCardMaxOrderByAggregateInputSchema } from './KanBanCardMaxOrderByAggregateInputSchema.js';
+import { KanBanCardMinOrderByAggregateInputSchema } from './KanBanCardMinOrderByAggregateInputSchema.js';
+import { KanBanCardSumOrderByAggregateInputSchema } from './KanBanCardSumOrderByAggregateInputSchema.js';
 export const KanBanCardOrderByWithAggregationInputSchema: z.ZodType<Prisma.KanBanCardOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   listId: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),

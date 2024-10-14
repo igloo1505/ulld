@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/DJTCreateInputSchema.js
-..//inputTypeSchemas/DJTUncheckedCreateInputSchema.js
+import { DJTCreateInputSchema } from '../inputTypeSchemas/DJTCreateInputSchema.js'
+import { DJTUncheckedCreateInputSchema } from '../inputTypeSchemas/DJTUncheckedCreateInputSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 export const DJTSelectSchema: z.ZodType<Prisma.DJTSelect> = z.object({

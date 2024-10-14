@@ -21,8 +21,8 @@
   },
   "dependencies": {
     "@mathigon/fermat": "1.1.18",
-    "@tailwindcss/container-queries": "^0.1.1",
-    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/container-queries": "0.1.1",
+    "@tailwindcss/forms": "0.5.7",
     "complex.js": "2.1.1",
     "fraction.js": "4.3.7",
     "mathjs": "12.4.0",
@@ -30,12 +30,12 @@
     "numbers": "0.7.0",
     "numeric": "1.2.6",
     "quaternion": "1.5.1",
-    "typescript": "^5.4.5"
+    "typescript": "5.5.4"
   },
   "devDependencies": {
     "@mathigon/fermat": "1.1.18",
-    "@tailwindcss/container-queries": "^0.1.1",
-    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/container-queries": "0.1.1",
+    "@tailwindcss/forms": "0.5.7",
     "complex.js": "2.1.1",
     "fraction.js": "4.3.7",
     "mathjs": "12.4.0",
@@ -43,7 +43,7 @@
     "numbers": "0.7.0",
     "numeric": "1.2.6",
     "quaternion": "1.5.1",
-    "typescript": "^5.4.5"
+    "typescript": "5.5.4"
   },
   "peerDependencies": {
     "@ulld/configschema": "workspace:*",

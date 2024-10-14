@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
-import { SortOrderInputSchema } from '../SortOrderInputSchema.js';
-import { BusinessContactCountOrderByAggregateInputSchema } from '../BusinessContactCountOrderByAggregateInputSchema.js';
-import { BusinessContactAvgOrderByAggregateInputSchema } from '../BusinessContactAvgOrderByAggregateInputSchema.js';
-import { BusinessContactMaxOrderByAggregateInputSchema } from '../BusinessContactMaxOrderByAggregateInputSchema.js';
-import { BusinessContactMinOrderByAggregateInputSchema } from '../BusinessContactMinOrderByAggregateInputSchema.js';
-import { BusinessContactSumOrderByAggregateInputSchema } from '../BusinessContactSumOrderByAggregateInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { BusinessContactCountOrderByAggregateInputSchema } from './BusinessContactCountOrderByAggregateInputSchema.js';
+import { BusinessContactAvgOrderByAggregateInputSchema } from './BusinessContactAvgOrderByAggregateInputSchema.js';
+import { BusinessContactMaxOrderByAggregateInputSchema } from './BusinessContactMaxOrderByAggregateInputSchema.js';
+import { BusinessContactMinOrderByAggregateInputSchema } from './BusinessContactMinOrderByAggregateInputSchema.js';
+import { BusinessContactSumOrderByAggregateInputSchema } from './BusinessContactSumOrderByAggregateInputSchema.js';
 export const BusinessContactOrderByWithAggregationInputSchema: z.ZodType<Prisma.BusinessContactOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   companyName: z.lazy(() => SortOrderSchema).optional(),

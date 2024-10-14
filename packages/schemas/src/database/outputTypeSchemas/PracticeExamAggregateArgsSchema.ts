@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/PracticeExamWhereInputSchema.js
-..//inputTypeSchemas/PracticeExamOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/PracticeExamWhereUniqueInputSchema.js
+import { PracticeExamWhereInputSchema } from '../inputTypeSchemas/PracticeExamWhereInputSchema.js'
+import { PracticeExamOrderByWithRelationInputSchema } from '../inputTypeSchemas/PracticeExamOrderByWithRelationInputSchema.js'
+import { PracticeExamWhereUniqueInputSchema } from '../inputTypeSchemas/PracticeExamWhereUniqueInputSchema.js'
 export const PracticeExamAggregateArgsSchema: z.ZodType<Prisma.PracticeExamAggregateArgs> = z.object({
   where: PracticeExamWhereInputSchema.optional(),
   orderBy: z.union([ PracticeExamOrderByWithRelationInputSchema.array(),PracticeExamOrderByWithRelationInputSchema ]).optional(),

@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/CitationsGroupWhereInputSchema.js
-..//inputTypeSchemas/CitationsGroupOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/CitationsGroupWhereUniqueInputSchema.js
+import { CitationsGroupWhereInputSchema } from '../inputTypeSchemas/CitationsGroupWhereInputSchema.js'
+import { CitationsGroupOrderByWithRelationInputSchema } from '../inputTypeSchemas/CitationsGroupOrderByWithRelationInputSchema.js'
+import { CitationsGroupWhereUniqueInputSchema } from '../inputTypeSchemas/CitationsGroupWhereUniqueInputSchema.js'
 export const CitationsGroupAggregateArgsSchema: z.ZodType<Prisma.CitationsGroupAggregateArgs> = z.object({
   where: CitationsGroupWhereInputSchema.optional(),
   orderBy: z.union([ CitationsGroupOrderByWithRelationInputSchema.array(),CitationsGroupOrderByWithRelationInputSchema ]).optional(),

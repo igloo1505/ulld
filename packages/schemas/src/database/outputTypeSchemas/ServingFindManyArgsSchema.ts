@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/ServingIncludeSchema.js
-..//inputTypeSchemas/ServingWhereInputSchema.js
-..//inputTypeSchemas/ServingOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/ServingWhereUniqueInputSchema.js
-..//inputTypeSchemas/ServingScalarFieldEnumSchema.js
+import { ServingIncludeSchema } from '../inputTypeSchemas/ServingIncludeSchema.js'
+import { ServingWhereInputSchema } from '../inputTypeSchemas/ServingWhereInputSchema.js'
+import { ServingOrderByWithRelationInputSchema } from '../inputTypeSchemas/ServingOrderByWithRelationInputSchema.js'
+import { ServingWhereUniqueInputSchema } from '../inputTypeSchemas/ServingWhereUniqueInputSchema.js'
+import { ServingScalarFieldEnumSchema } from '../inputTypeSchemas/ServingScalarFieldEnumSchema.js'
 import { DietaryItemArgsSchema } from "../outputTypeSchemas/DietaryItemArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------

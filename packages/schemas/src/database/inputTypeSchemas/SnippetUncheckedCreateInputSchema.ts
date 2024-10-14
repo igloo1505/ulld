@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SnippetCreatekeywordsInputSchema } from '../SnippetCreatekeywordsInputSchema.js';
+import { SnippetCreatekeywordsInputSchema } from './SnippetCreatekeywordsInputSchema.js';
 export const SnippetUncheckedCreateInputSchema: z.ZodType<Prisma.SnippetUncheckedCreateInput> = z.object({
   id: z.number().int().optional(),
   content: z.string(),

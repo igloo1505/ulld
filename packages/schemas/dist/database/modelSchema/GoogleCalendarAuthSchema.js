@@ -2,7 +2,7 @@ import {
   GoogleCalendarAuthPartialSchema,
   GoogleCalendarAuthSchema,
   GoogleCalendarAuthSchema_default
-} from "../../chunk-SDUQB5HX.js";
+} from "../../chunk-TELYPIT5.js";
 export {
   GoogleCalendarAuthPartialSchema,
   GoogleCalendarAuthSchema,

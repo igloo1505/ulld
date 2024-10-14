@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkOTEDZX57cjs = require('../../chunk-OTEDZX57.cjs');
+var _chunkJRYBOYMNcjs = require('../../chunk-JRYBOYMN.cjs');
 
 
 
-exports.EquationCreatekeywordsInputSchema = _chunkOTEDZX57cjs.EquationCreatekeywordsInputSchema; exports.default = _chunkOTEDZX57cjs.EquationCreatekeywordsInputSchema_default;
+exports.EquationCreatekeywordsInputSchema = _chunkJRYBOYMNcjs.EquationCreatekeywordsInputSchema; exports.default = _chunkJRYBOYMNcjs.EquationCreatekeywordsInputSchema_default;
 //# sourceMappingURL=EquationCreatekeywordsInputSchema.cjs.map

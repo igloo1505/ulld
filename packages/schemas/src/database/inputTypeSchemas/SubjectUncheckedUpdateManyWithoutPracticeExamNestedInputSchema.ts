@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SubjectCreateWithoutPracticeExamInputSchema } from '../SubjectCreateWithoutPracticeExamInputSchema.js';
-import { SubjectUncheckedCreateWithoutPracticeExamInputSchema } from '../SubjectUncheckedCreateWithoutPracticeExamInputSchema.js';
-import { SubjectCreateOrConnectWithoutPracticeExamInputSchema } from '../SubjectCreateOrConnectWithoutPracticeExamInputSchema.js';
-import { SubjectUpsertWithWhereUniqueWithoutPracticeExamInputSchema } from '../SubjectUpsertWithWhereUniqueWithoutPracticeExamInputSchema.js';
-import { SubjectWhereUniqueInputSchema } from '../SubjectWhereUniqueInputSchema.js';
-import { SubjectUpdateWithWhereUniqueWithoutPracticeExamInputSchema } from '../SubjectUpdateWithWhereUniqueWithoutPracticeExamInputSchema.js';
-import { SubjectUpdateManyWithWhereWithoutPracticeExamInputSchema } from '../SubjectUpdateManyWithWhereWithoutPracticeExamInputSchema.js';
-import { SubjectScalarWhereInputSchema } from '../SubjectScalarWhereInputSchema.js';
+import { SubjectCreateWithoutPracticeExamInputSchema } from './SubjectCreateWithoutPracticeExamInputSchema.js';
+import { SubjectUncheckedCreateWithoutPracticeExamInputSchema } from './SubjectUncheckedCreateWithoutPracticeExamInputSchema.js';
+import { SubjectCreateOrConnectWithoutPracticeExamInputSchema } from './SubjectCreateOrConnectWithoutPracticeExamInputSchema.js';
+import { SubjectUpsertWithWhereUniqueWithoutPracticeExamInputSchema } from './SubjectUpsertWithWhereUniqueWithoutPracticeExamInputSchema.js';
+import { SubjectWhereUniqueInputSchema } from './SubjectWhereUniqueInputSchema.js';
+import { SubjectUpdateWithWhereUniqueWithoutPracticeExamInputSchema } from './SubjectUpdateWithWhereUniqueWithoutPracticeExamInputSchema.js';
+import { SubjectUpdateManyWithWhereWithoutPracticeExamInputSchema } from './SubjectUpdateManyWithWhereWithoutPracticeExamInputSchema.js';
+import { SubjectScalarWhereInputSchema } from './SubjectScalarWhereInputSchema.js';
 export const SubjectUncheckedUpdateManyWithoutPracticeExamNestedInputSchema: z.ZodType<Prisma.SubjectUncheckedUpdateManyWithoutPracticeExamNestedInput> = z.object({
   create: z.union([ z.lazy(() => SubjectCreateWithoutPracticeExamInputSchema),z.lazy(() => SubjectCreateWithoutPracticeExamInputSchema).array(),z.lazy(() => SubjectUncheckedCreateWithoutPracticeExamInputSchema),z.lazy(() => SubjectUncheckedCreateWithoutPracticeExamInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => SubjectCreateOrConnectWithoutPracticeExamInputSchema),z.lazy(() => SubjectCreateOrConnectWithoutPracticeExamInputSchema).array() ]).optional(),

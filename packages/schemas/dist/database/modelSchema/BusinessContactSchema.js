@@ -2,7 +2,7 @@ import {
   BusinessContactPartialSchema,
   BusinessContactSchema,
   BusinessContactSchema_default
-} from "../../chunk-5CS5AAWO.js";
+} from "../../chunk-WSFJB6XX.js";
 export {
   BusinessContactPartialSchema,
   BusinessContactSchema,

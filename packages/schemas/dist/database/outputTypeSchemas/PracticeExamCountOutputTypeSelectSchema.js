@@ -1,7 +1,7 @@
 import {
   PracticeExamCountOutputTypeSelectSchema,
   PracticeExamCountOutputTypeSelectSchema_default
-} from "../../chunk-V6ZPAXAT.js";
+} from "../../chunk-FR2KMCZK.js";
 export {
   PracticeExamCountOutputTypeSelectSchema,
   PracticeExamCountOutputTypeSelectSchema_default as default

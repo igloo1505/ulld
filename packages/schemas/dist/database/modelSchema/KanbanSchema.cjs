@@ -5,9 +5,9 @@
 
 
 
-var _chunkLFQDZDFTcjs = require('../../chunk-LFQDZDFT.cjs');
-require('../../chunk-QF2T6FCZ.cjs');
-require('../../chunk-BRDOGD33.cjs');
+var _chunkO7GASESQcjs = require('../../chunk-O7GASESQ.cjs');
+require('../../chunk-ATQO6OGE.cjs');
+require('../../chunk-PALRL6S5.cjs');
 
 
 
@@ -15,5 +15,5 @@ require('../../chunk-BRDOGD33.cjs');
 
 
 
-exports.KanbanPartialSchema = _chunkLFQDZDFTcjs.KanbanPartialSchema; exports.KanbanPartialWithRelationsSchema = _chunkLFQDZDFTcjs.KanbanPartialWithRelationsSchema; exports.KanbanSchema = _chunkLFQDZDFTcjs.KanbanSchema; exports.KanbanWithPartialRelationsSchema = _chunkLFQDZDFTcjs.KanbanWithPartialRelationsSchema; exports.KanbanWithRelationsSchema = _chunkLFQDZDFTcjs.KanbanWithRelationsSchema; exports.default = _chunkLFQDZDFTcjs.KanbanSchema_default;
+exports.KanbanPartialSchema = _chunkO7GASESQcjs.KanbanPartialSchema; exports.KanbanPartialWithRelationsSchema = _chunkO7GASESQcjs.KanbanPartialWithRelationsSchema; exports.KanbanSchema = _chunkO7GASESQcjs.KanbanSchema; exports.KanbanWithPartialRelationsSchema = _chunkO7GASESQcjs.KanbanWithPartialRelationsSchema; exports.KanbanWithRelationsSchema = _chunkO7GASESQcjs.KanbanWithRelationsSchema; exports.default = _chunkO7GASESQcjs.KanbanSchema_default;
 //# sourceMappingURL=KanbanSchema.cjs.map

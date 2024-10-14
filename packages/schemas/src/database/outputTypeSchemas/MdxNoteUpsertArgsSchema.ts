@@ -1,11 +1,11 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/MdxNoteIncludeSchema.js
-..//inputTypeSchemas/MdxNoteWhereUniqueInputSchema.js
-..//inputTypeSchemas/MdxNoteCreateInputSchema.js
-..//inputTypeSchemas/MdxNoteUncheckedCreateInputSchema.js
-..//inputTypeSchemas/MdxNoteUpdateInputSchema.js
-..//inputTypeSchemas/MdxNoteUncheckedUpdateInputSchema.js
+import { MdxNoteIncludeSchema } from '../inputTypeSchemas/MdxNoteIncludeSchema.js'
+import { MdxNoteWhereUniqueInputSchema } from '../inputTypeSchemas/MdxNoteWhereUniqueInputSchema.js'
+import { MdxNoteCreateInputSchema } from '../inputTypeSchemas/MdxNoteCreateInputSchema.js'
+import { MdxNoteUncheckedCreateInputSchema } from '../inputTypeSchemas/MdxNoteUncheckedCreateInputSchema.js'
+import { MdxNoteUpdateInputSchema } from '../inputTypeSchemas/MdxNoteUpdateInputSchema.js'
+import { MdxNoteUncheckedUpdateInputSchema } from '../inputTypeSchemas/MdxNoteUncheckedUpdateInputSchema.js'
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"

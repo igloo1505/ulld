@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkTGS2ITNAcjs = require('../../chunk-TGS2ITNA.cjs');
+var _chunkNCGFRGWCcjs = require('../../chunk-NCGFRGWC.cjs');
 
 
 
-exports.HealthReportCreateManyInputSchema = _chunkTGS2ITNAcjs.HealthReportCreateManyInputSchema; exports.default = _chunkTGS2ITNAcjs.HealthReportCreateManyInputSchema_default;
+exports.HealthReportCreateManyInputSchema = _chunkNCGFRGWCcjs.HealthReportCreateManyInputSchema; exports.default = _chunkNCGFRGWCcjs.HealthReportCreateManyInputSchema_default;
 //# sourceMappingURL=HealthReportCreateManyInputSchema.cjs.map

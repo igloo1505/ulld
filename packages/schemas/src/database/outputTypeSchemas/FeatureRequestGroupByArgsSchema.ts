@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/FeatureRequestWhereInputSchema.js
-..//inputTypeSchemas/FeatureRequestOrderByWithAggregationInputSchema.js
-..//inputTypeSchemas/FeatureRequestScalarFieldEnumSchema.js
-..//inputTypeSchemas/FeatureRequestScalarWhereWithAggregatesInputSchema.js
+import { FeatureRequestWhereInputSchema } from '../inputTypeSchemas/FeatureRequestWhereInputSchema.js'
+import { FeatureRequestOrderByWithAggregationInputSchema } from '../inputTypeSchemas/FeatureRequestOrderByWithAggregationInputSchema.js'
+import { FeatureRequestScalarFieldEnumSchema } from '../inputTypeSchemas/FeatureRequestScalarFieldEnumSchema.js'
+import { FeatureRequestScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/FeatureRequestScalarWhereWithAggregatesInputSchema.js'
 export const FeatureRequestGroupByArgsSchema: z.ZodType<Prisma.FeatureRequestGroupByArgs> = z.object({
   where: FeatureRequestWhereInputSchema.optional(),
   orderBy: z.union([ FeatureRequestOrderByWithAggregationInputSchema.array(),FeatureRequestOrderByWithAggregationInputSchema ]).optional(),

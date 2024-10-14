@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TopicCreateWithoutPracticeExamInputSchema } from '../TopicCreateWithoutPracticeExamInputSchema.js';
-import { TopicUncheckedCreateWithoutPracticeExamInputSchema } from '../TopicUncheckedCreateWithoutPracticeExamInputSchema.js';
-import { TopicCreateOrConnectWithoutPracticeExamInputSchema } from '../TopicCreateOrConnectWithoutPracticeExamInputSchema.js';
-import { TopicUpsertWithWhereUniqueWithoutPracticeExamInputSchema } from '../TopicUpsertWithWhereUniqueWithoutPracticeExamInputSchema.js';
-import { TopicWhereUniqueInputSchema } from '../TopicWhereUniqueInputSchema.js';
-import { TopicUpdateWithWhereUniqueWithoutPracticeExamInputSchema } from '../TopicUpdateWithWhereUniqueWithoutPracticeExamInputSchema.js';
-import { TopicUpdateManyWithWhereWithoutPracticeExamInputSchema } from '../TopicUpdateManyWithWhereWithoutPracticeExamInputSchema.js';
-import { TopicScalarWhereInputSchema } from '../TopicScalarWhereInputSchema.js';
+import { TopicCreateWithoutPracticeExamInputSchema } from './TopicCreateWithoutPracticeExamInputSchema.js';
+import { TopicUncheckedCreateWithoutPracticeExamInputSchema } from './TopicUncheckedCreateWithoutPracticeExamInputSchema.js';
+import { TopicCreateOrConnectWithoutPracticeExamInputSchema } from './TopicCreateOrConnectWithoutPracticeExamInputSchema.js';
+import { TopicUpsertWithWhereUniqueWithoutPracticeExamInputSchema } from './TopicUpsertWithWhereUniqueWithoutPracticeExamInputSchema.js';
+import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema.js';
+import { TopicUpdateWithWhereUniqueWithoutPracticeExamInputSchema } from './TopicUpdateWithWhereUniqueWithoutPracticeExamInputSchema.js';
+import { TopicUpdateManyWithWhereWithoutPracticeExamInputSchema } from './TopicUpdateManyWithWhereWithoutPracticeExamInputSchema.js';
+import { TopicScalarWhereInputSchema } from './TopicScalarWhereInputSchema.js';
 export const TopicUncheckedUpdateManyWithoutPracticeExamNestedInputSchema: z.ZodType<Prisma.TopicUncheckedUpdateManyWithoutPracticeExamNestedInput> = z.object({
   create: z.union([ z.lazy(() => TopicCreateWithoutPracticeExamInputSchema),z.lazy(() => TopicCreateWithoutPracticeExamInputSchema).array(),z.lazy(() => TopicUncheckedCreateWithoutPracticeExamInputSchema),z.lazy(() => TopicUncheckedCreateWithoutPracticeExamInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TopicCreateOrConnectWithoutPracticeExamInputSchema),z.lazy(() => TopicCreateOrConnectWithoutPracticeExamInputSchema).array() ]).optional(),

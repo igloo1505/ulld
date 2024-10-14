@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { KanbanCreateWithoutTopicsInputSchema } from '../KanbanCreateWithoutTopicsInputSchema.js';
-import { KanbanUncheckedCreateWithoutTopicsInputSchema } from '../KanbanUncheckedCreateWithoutTopicsInputSchema.js';
-import { KanbanCreateOrConnectWithoutTopicsInputSchema } from '../KanbanCreateOrConnectWithoutTopicsInputSchema.js';
-import { KanbanWhereUniqueInputSchema } from '../KanbanWhereUniqueInputSchema.js';
+import { KanbanCreateWithoutTopicsInputSchema } from './KanbanCreateWithoutTopicsInputSchema.js';
+import { KanbanUncheckedCreateWithoutTopicsInputSchema } from './KanbanUncheckedCreateWithoutTopicsInputSchema.js';
+import { KanbanCreateOrConnectWithoutTopicsInputSchema } from './KanbanCreateOrConnectWithoutTopicsInputSchema.js';
+import { KanbanWhereUniqueInputSchema } from './KanbanWhereUniqueInputSchema.js';
 export const KanbanCreateNestedOneWithoutTopicsInputSchema: z.ZodType<Prisma.KanbanCreateNestedOneWithoutTopicsInput> = z.object({
   create: z.union([ z.lazy(() => KanbanCreateWithoutTopicsInputSchema),z.lazy(() => KanbanUncheckedCreateWithoutTopicsInputSchema) ]).optional(),
   connectOrCreate: z.lazy(() => KanbanCreateOrConnectWithoutTopicsInputSchema).optional(),

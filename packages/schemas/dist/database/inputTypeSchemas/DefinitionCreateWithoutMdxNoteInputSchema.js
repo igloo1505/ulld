@@ -1,7 +1,7 @@
 import {
   DefinitionCreateWithoutMdxNoteInputSchema,
   DefinitionCreateWithoutMdxNoteInputSchema_default
-} from "../../chunk-YRASMMTA.js";
+} from "../../chunk-D6VBWLLC.js";
 export {
   DefinitionCreateWithoutMdxNoteInputSchema,
   DefinitionCreateWithoutMdxNoteInputSchema_default as default

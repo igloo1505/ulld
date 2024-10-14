@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkR76GTALBcjs = require('../../chunk-R76GTALB.cjs');
-require('../../chunk-NXJ5MDHB.cjs');
+var _chunkAH5ODAYTcjs = require('../../chunk-AH5ODAYT.cjs');
+require('../../chunk-ZCH32CBS.cjs');
 
 
 
-exports.ReadingListCreateManyAndReturnArgsSchema = _chunkR76GTALBcjs.ReadingListCreateManyAndReturnArgsSchema; exports.default = _chunkR76GTALBcjs.ReadingListCreateManyAndReturnArgsSchema_default;
+exports.ReadingListCreateManyAndReturnArgsSchema = _chunkAH5ODAYTcjs.ReadingListCreateManyAndReturnArgsSchema; exports.default = _chunkAH5ODAYTcjs.ReadingListCreateManyAndReturnArgsSchema_default;
 //# sourceMappingURL=ReadingListCreateManyAndReturnArgsSchema.cjs.map

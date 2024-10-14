@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkMC446V7Vcjs = require('../../chunk-MC446V7V.cjs');
-require('../../chunk-EF27D6HK.cjs');
+var _chunkL4HKFGBBcjs = require('../../chunk-L4HKFGBB.cjs');
+require('../../chunk-75IWYFYU.cjs');
 
 
 
-exports.KanBanListMinOrderByAggregateInputSchema = _chunkMC446V7Vcjs.KanBanListMinOrderByAggregateInputSchema; exports.default = _chunkMC446V7Vcjs.KanBanListMinOrderByAggregateInputSchema_default;
+exports.KanBanListMinOrderByAggregateInputSchema = _chunkL4HKFGBBcjs.KanBanListMinOrderByAggregateInputSchema; exports.default = _chunkL4HKFGBBcjs.KanBanListMinOrderByAggregateInputSchema_default;
 //# sourceMappingURL=KanBanListMinOrderByAggregateInputSchema.cjs.map

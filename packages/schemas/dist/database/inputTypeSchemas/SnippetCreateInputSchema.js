@@ -1,8 +1,8 @@
 import {
   SnippetCreateInputSchema,
   SnippetCreateInputSchema_default
-} from "../../chunk-LKCYWSV4.js";
-import "../../chunk-BZQES4HP.js";
+} from "../../chunk-YUAX54YT.js";
+import "../../chunk-JVQMU3BL.js";
 export {
   SnippetCreateInputSchema,
   SnippetCreateInputSchema_default as default

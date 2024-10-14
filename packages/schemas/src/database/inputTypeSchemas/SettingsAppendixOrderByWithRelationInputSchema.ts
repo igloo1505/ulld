@@ -1,7 +1,7 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from '../SortOrderSchema.js';
-import { SettingsAppendixOrderByRelevanceInputSchema } from '../SettingsAppendixOrderByRelevanceInputSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SettingsAppendixOrderByRelevanceInputSchema } from './SettingsAppendixOrderByRelevanceInputSchema.js';
 export const SettingsAppendixOrderByWithRelationInputSchema: z.ZodType<Prisma.SettingsAppendixOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   data: z.lazy(() => SortOrderSchema).optional(),

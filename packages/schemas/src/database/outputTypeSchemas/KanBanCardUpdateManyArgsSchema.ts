@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/KanBanCardUpdateManyMutationInputSchema.js
-..//inputTypeSchemas/KanBanCardUncheckedUpdateManyInputSchema.js
-..//inputTypeSchemas/KanBanCardWhereInputSchema.js
+import { KanBanCardUpdateManyMutationInputSchema } from '../inputTypeSchemas/KanBanCardUpdateManyMutationInputSchema.js'
+import { KanBanCardUncheckedUpdateManyInputSchema } from '../inputTypeSchemas/KanBanCardUncheckedUpdateManyInputSchema.js'
+import { KanBanCardWhereInputSchema } from '../inputTypeSchemas/KanBanCardWhereInputSchema.js'
 export const KanBanCardUpdateManyArgsSchema: z.ZodType<Prisma.KanBanCardUpdateManyArgs> = z.object({
   data: z.union([ KanBanCardUpdateManyMutationInputSchema,KanBanCardUncheckedUpdateManyInputSchema ]),
   where: KanBanCardWhereInputSchema.optional(),

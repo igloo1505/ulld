@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/ServingIncludeSchema.js
-..//inputTypeSchemas/ServingWhereUniqueInputSchema.js
+import { ServingIncludeSchema } from '../inputTypeSchemas/ServingIncludeSchema.js'
+import { ServingWhereUniqueInputSchema } from '../inputTypeSchemas/ServingWhereUniqueInputSchema.js'
 import { DietaryItemArgsSchema } from "../outputTypeSchemas/DietaryItemArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------

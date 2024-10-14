@@ -5,9 +5,9 @@
 
 
 
-var _chunkLFQDZDFTcjs = require('../../chunk-LFQDZDFT.cjs');
-require('../../chunk-QF2T6FCZ.cjs');
-require('../../chunk-BRDOGD33.cjs');
+var _chunkO7GASESQcjs = require('../../chunk-O7GASESQ.cjs');
+require('../../chunk-ATQO6OGE.cjs');
+require('../../chunk-PALRL6S5.cjs');
 
 
 
@@ -15,5 +15,5 @@ require('../../chunk-BRDOGD33.cjs');
 
 
 
-exports.KanBanListPartialSchema = _chunkLFQDZDFTcjs.KanBanListPartialSchema; exports.KanBanListPartialWithRelationsSchema = _chunkLFQDZDFTcjs.KanBanListPartialWithRelationsSchema; exports.KanBanListSchema = _chunkLFQDZDFTcjs.KanBanListSchema; exports.KanBanListWithPartialRelationsSchema = _chunkLFQDZDFTcjs.KanBanListWithPartialRelationsSchema; exports.KanBanListWithRelationsSchema = _chunkLFQDZDFTcjs.KanBanListWithRelationsSchema; exports.default = _chunkLFQDZDFTcjs.KanBanListSchema_default;
+exports.KanBanListPartialSchema = _chunkO7GASESQcjs.KanBanListPartialSchema; exports.KanBanListPartialWithRelationsSchema = _chunkO7GASESQcjs.KanBanListPartialWithRelationsSchema; exports.KanBanListSchema = _chunkO7GASESQcjs.KanBanListSchema; exports.KanBanListWithPartialRelationsSchema = _chunkO7GASESQcjs.KanBanListWithPartialRelationsSchema; exports.KanBanListWithRelationsSchema = _chunkO7GASESQcjs.KanBanListWithRelationsSchema; exports.default = _chunkO7GASESQcjs.KanBanListSchema_default;
 //# sourceMappingURL=KanBanListSchema.cjs.map

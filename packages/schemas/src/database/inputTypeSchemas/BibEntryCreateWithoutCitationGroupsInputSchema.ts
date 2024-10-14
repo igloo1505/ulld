@@ -1,12 +1,12 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { BibCreateNestedOneWithoutEntriesInputSchema } from '../BibCreateNestedOneWithoutEntriesInputSchema.js';
-import { TagCreateNestedManyWithoutBibEntriesInputSchema } from '../TagCreateNestedManyWithoutBibEntriesInputSchema.js';
-import { TopicCreateNestedManyWithoutBibEntriesInputSchema } from '../TopicCreateNestedManyWithoutBibEntriesInputSchema.js';
-import { SubjectCreateNestedManyWithoutBibEntriesInputSchema } from '../SubjectCreateNestedManyWithoutBibEntriesInputSchema.js';
-import { MdxNoteCreateNestedManyWithoutCitationsInputSchema } from '../MdxNoteCreateNestedManyWithoutCitationsInputSchema.js';
-import { IpynbCreateNestedManyWithoutCitationsInputSchema } from '../IpynbCreateNestedManyWithoutCitationsInputSchema.js';
-import { ReadingListCreateNestedManyWithoutBibEntriesInputSchema } from '../ReadingListCreateNestedManyWithoutBibEntriesInputSchema.js';
+import { BibCreateNestedOneWithoutEntriesInputSchema } from './BibCreateNestedOneWithoutEntriesInputSchema.js';
+import { TagCreateNestedManyWithoutBibEntriesInputSchema } from './TagCreateNestedManyWithoutBibEntriesInputSchema.js';
+import { TopicCreateNestedManyWithoutBibEntriesInputSchema } from './TopicCreateNestedManyWithoutBibEntriesInputSchema.js';
+import { SubjectCreateNestedManyWithoutBibEntriesInputSchema } from './SubjectCreateNestedManyWithoutBibEntriesInputSchema.js';
+import { MdxNoteCreateNestedManyWithoutCitationsInputSchema } from './MdxNoteCreateNestedManyWithoutCitationsInputSchema.js';
+import { IpynbCreateNestedManyWithoutCitationsInputSchema } from './IpynbCreateNestedManyWithoutCitationsInputSchema.js';
+import { ReadingListCreateNestedManyWithoutBibEntriesInputSchema } from './ReadingListCreateNestedManyWithoutBibEntriesInputSchema.js';
 export const BibEntryCreateWithoutCitationGroupsInputSchema: z.ZodType<Prisma.BibEntryCreateWithoutCitationGroupsInput> = z.object({
   id: z.string(),
   OwnWork: z.boolean().optional(),

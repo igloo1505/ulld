@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk22SLDZFMcjs = require('../../chunk-22SLDZFM.cjs');
-require('../../chunk-R2GMKW2W.cjs');
+var _chunkTNXNJYCAcjs = require('../../chunk-TNXNJYCA.cjs');
+require('../../chunk-U2D6LPEO.cjs');
 
 
 
-exports.DietCreategoalsInputSchema = _chunk22SLDZFMcjs.DietCreategoalsInputSchema; exports.default = _chunk22SLDZFMcjs.DietCreategoalsInputSchema_default;
+exports.DietCreategoalsInputSchema = _chunkTNXNJYCAcjs.DietCreategoalsInputSchema; exports.default = _chunkTNXNJYCAcjs.DietCreategoalsInputSchema_default;
 //# sourceMappingURL=DietCreategoalsInputSchema.cjs.map

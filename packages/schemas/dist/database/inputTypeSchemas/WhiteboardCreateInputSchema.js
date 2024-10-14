@@ -1,7 +1,7 @@
 import {
   WhiteboardCreateInputSchema,
   WhiteboardCreateInputSchema_default
-} from "../../chunk-RWWG4FXU.js";
+} from "../../chunk-PJPJGWO5.js";
 export {
   WhiteboardCreateInputSchema,
   WhiteboardCreateInputSchema_default as default

@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ReadingListCreateWithoutBibEntriesInputSchema } from '../ReadingListCreateWithoutBibEntriesInputSchema.js';
-import { ReadingListUncheckedCreateWithoutBibEntriesInputSchema } from '../ReadingListUncheckedCreateWithoutBibEntriesInputSchema.js';
-import { ReadingListCreateOrConnectWithoutBibEntriesInputSchema } from '../ReadingListCreateOrConnectWithoutBibEntriesInputSchema.js';
-import { ReadingListWhereUniqueInputSchema } from '../ReadingListWhereUniqueInputSchema.js';
+import { ReadingListCreateWithoutBibEntriesInputSchema } from './ReadingListCreateWithoutBibEntriesInputSchema.js';
+import { ReadingListUncheckedCreateWithoutBibEntriesInputSchema } from './ReadingListUncheckedCreateWithoutBibEntriesInputSchema.js';
+import { ReadingListCreateOrConnectWithoutBibEntriesInputSchema } from './ReadingListCreateOrConnectWithoutBibEntriesInputSchema.js';
+import { ReadingListWhereUniqueInputSchema } from './ReadingListWhereUniqueInputSchema.js';
 export const ReadingListCreateNestedManyWithoutBibEntriesInputSchema: z.ZodType<Prisma.ReadingListCreateNestedManyWithoutBibEntriesInput> = z.object({
   create: z.union([ z.lazy(() => ReadingListCreateWithoutBibEntriesInputSchema),z.lazy(() => ReadingListCreateWithoutBibEntriesInputSchema).array(),z.lazy(() => ReadingListUncheckedCreateWithoutBibEntriesInputSchema),z.lazy(() => ReadingListUncheckedCreateWithoutBibEntriesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => ReadingListCreateOrConnectWithoutBibEntriesInputSchema),z.lazy(() => ReadingListCreateOrConnectWithoutBibEntriesInputSchema).array() ]).optional(),

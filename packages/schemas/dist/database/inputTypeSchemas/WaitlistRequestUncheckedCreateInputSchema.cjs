@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkZ633WBBEcjs = require('../../chunk-Z633WBBE.cjs');
+var _chunkIGVH2WA7cjs = require('../../chunk-IGVH2WA7.cjs');
 
 
 
-exports.WaitlistRequestUncheckedCreateInputSchema = _chunkZ633WBBEcjs.WaitlistRequestUncheckedCreateInputSchema; exports.default = _chunkZ633WBBEcjs.WaitlistRequestUncheckedCreateInputSchema_default;
+exports.WaitlistRequestUncheckedCreateInputSchema = _chunkIGVH2WA7cjs.WaitlistRequestUncheckedCreateInputSchema; exports.default = _chunkIGVH2WA7cjs.WaitlistRequestUncheckedCreateInputSchema_default;
 //# sourceMappingURL=WaitlistRequestUncheckedCreateInputSchema.cjs.map

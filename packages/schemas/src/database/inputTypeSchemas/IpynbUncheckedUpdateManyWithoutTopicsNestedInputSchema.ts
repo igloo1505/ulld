@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IpynbCreateWithoutTopicsInputSchema } from '../IpynbCreateWithoutTopicsInputSchema.js';
-import { IpynbUncheckedCreateWithoutTopicsInputSchema } from '../IpynbUncheckedCreateWithoutTopicsInputSchema.js';
-import { IpynbCreateOrConnectWithoutTopicsInputSchema } from '../IpynbCreateOrConnectWithoutTopicsInputSchema.js';
-import { IpynbUpsertWithWhereUniqueWithoutTopicsInputSchema } from '../IpynbUpsertWithWhereUniqueWithoutTopicsInputSchema.js';
-import { IpynbWhereUniqueInputSchema } from '../IpynbWhereUniqueInputSchema.js';
-import { IpynbUpdateWithWhereUniqueWithoutTopicsInputSchema } from '../IpynbUpdateWithWhereUniqueWithoutTopicsInputSchema.js';
-import { IpynbUpdateManyWithWhereWithoutTopicsInputSchema } from '../IpynbUpdateManyWithWhereWithoutTopicsInputSchema.js';
-import { IpynbScalarWhereInputSchema } from '../IpynbScalarWhereInputSchema.js';
+import { IpynbCreateWithoutTopicsInputSchema } from './IpynbCreateWithoutTopicsInputSchema.js';
+import { IpynbUncheckedCreateWithoutTopicsInputSchema } from './IpynbUncheckedCreateWithoutTopicsInputSchema.js';
+import { IpynbCreateOrConnectWithoutTopicsInputSchema } from './IpynbCreateOrConnectWithoutTopicsInputSchema.js';
+import { IpynbUpsertWithWhereUniqueWithoutTopicsInputSchema } from './IpynbUpsertWithWhereUniqueWithoutTopicsInputSchema.js';
+import { IpynbWhereUniqueInputSchema } from './IpynbWhereUniqueInputSchema.js';
+import { IpynbUpdateWithWhereUniqueWithoutTopicsInputSchema } from './IpynbUpdateWithWhereUniqueWithoutTopicsInputSchema.js';
+import { IpynbUpdateManyWithWhereWithoutTopicsInputSchema } from './IpynbUpdateManyWithWhereWithoutTopicsInputSchema.js';
+import { IpynbScalarWhereInputSchema } from './IpynbScalarWhereInputSchema.js';
 export const IpynbUncheckedUpdateManyWithoutTopicsNestedInputSchema: z.ZodType<Prisma.IpynbUncheckedUpdateManyWithoutTopicsNestedInput> = z.object({
   create: z.union([ z.lazy(() => IpynbCreateWithoutTopicsInputSchema),z.lazy(() => IpynbCreateWithoutTopicsInputSchema).array(),z.lazy(() => IpynbUncheckedCreateWithoutTopicsInputSchema),z.lazy(() => IpynbUncheckedCreateWithoutTopicsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => IpynbCreateOrConnectWithoutTopicsInputSchema),z.lazy(() => IpynbCreateOrConnectWithoutTopicsInputSchema).array() ]).optional(),

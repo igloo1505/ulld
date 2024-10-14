@@ -1,11 +1,11 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/SequentialNoteListIncludeSchema.js
-..//inputTypeSchemas/SequentialNoteListWhereUniqueInputSchema.js
-..//inputTypeSchemas/SequentialNoteListCreateInputSchema.js
-..//inputTypeSchemas/SequentialNoteListUncheckedCreateInputSchema.js
-..//inputTypeSchemas/SequentialNoteListUpdateInputSchema.js
-..//inputTypeSchemas/SequentialNoteListUncheckedUpdateInputSchema.js
+import { SequentialNoteListIncludeSchema } from '../inputTypeSchemas/SequentialNoteListIncludeSchema.js'
+import { SequentialNoteListWhereUniqueInputSchema } from '../inputTypeSchemas/SequentialNoteListWhereUniqueInputSchema.js'
+import { SequentialNoteListCreateInputSchema } from '../inputTypeSchemas/SequentialNoteListCreateInputSchema.js'
+import { SequentialNoteListUncheckedCreateInputSchema } from '../inputTypeSchemas/SequentialNoteListUncheckedCreateInputSchema.js'
+import { SequentialNoteListUpdateInputSchema } from '../inputTypeSchemas/SequentialNoteListUpdateInputSchema.js'
+import { SequentialNoteListUncheckedUpdateInputSchema } from '../inputTypeSchemas/SequentialNoteListUncheckedUpdateInputSchema.js'
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"
 import { SequentialNoteListCountOutputTypeArgsSchema } from "../outputTypeSchemas/SequentialNoteListCountOutputTypeArgsSchema"

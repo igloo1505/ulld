@@ -1,7 +1,7 @@
 import {
   FeatureRequestUpdateuserBaseInputSchema,
   FeatureRequestUpdateuserBaseInputSchema_default
-} from "../../chunk-K3OP3BW3.js";
+} from "../../chunk-O2N5IA22.js";
 export {
   FeatureRequestUpdateuserBaseInputSchema,
   FeatureRequestUpdateuserBaseInputSchema_default as default

@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkF4MJIM6Gcjs = require('../../chunk-F4MJIM6G.cjs');
-require('../../chunk-LQZDTTRC.cjs');
+var _chunkGWDQAJM7cjs = require('../../chunk-GWDQAJM7.cjs');
+require('../../chunk-RNVROOM6.cjs');
 
 
 
-exports.CitationsGroupCreateManyArgsSchema = _chunkF4MJIM6Gcjs.CitationsGroupCreateManyArgsSchema; exports.default = _chunkF4MJIM6Gcjs.CitationsGroupCreateManyArgsSchema_default;
+exports.CitationsGroupCreateManyArgsSchema = _chunkGWDQAJM7cjs.CitationsGroupCreateManyArgsSchema; exports.default = _chunkGWDQAJM7cjs.CitationsGroupCreateManyArgsSchema_default;
 //# sourceMappingURL=CitationsGroupCreateManyArgsSchema.cjs.map

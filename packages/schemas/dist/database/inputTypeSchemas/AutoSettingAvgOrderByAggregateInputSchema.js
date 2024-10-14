@@ -1,8 +1,8 @@
 import {
   AutoSettingAvgOrderByAggregateInputSchema,
   AutoSettingAvgOrderByAggregateInputSchema_default
-} from "../../chunk-CXYWNBBS.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-YLXEIML2.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   AutoSettingAvgOrderByAggregateInputSchema,
   AutoSettingAvgOrderByAggregateInputSchema_default as default

@@ -1,8 +1,8 @@
 import {
   ToDoAvgOrderByAggregateInputSchema,
   ToDoAvgOrderByAggregateInputSchema_default
-} from "../../chunk-TNYU5YDV.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-NXDMIYOF.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   ToDoAvgOrderByAggregateInputSchema,
   ToDoAvgOrderByAggregateInputSchema_default as default

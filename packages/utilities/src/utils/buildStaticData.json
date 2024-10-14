@@ -1,534 +1,779 @@
 {
-    "propsExtendsMap": {
-        "MonacoPageParams": "@ulld/editor/editorTypes",
-        "EquationDetailModalPageProps": "@ulld/utilities/corePageProps",
-        "EquationsPageProps": "@ulld/utilities/corePageProps",
-        "AddEquationsPageProps": "@ulld/utilities/corePageProps",
-        "EditorPageContentProps": "@ulld/utilities/corePageProps",
-        "BibliographyPageProps": "@ulld/bib-manager/types",
-        "SearchResultsPageProps": "@ulld/ui/types",
-        "BookmarksResultsPageProps": "@ulld/ui/types",
-        "FullScreenNavProps": "@ulld/navigation/types",
-        "TaskDetailsProps": "@ulld/task-manager/types",
-        "AddTaskProps": "@ulld/task-manager/types",
-        "AddTaskListProps": "@ulld/task-manager/types",
-        "AddSnippetPageProps": "@ulld/snippets/types",
-        "SnippetFilterProps": "@ulld/snippets/types",
-        "SnippetListInternalProps": "@ulld/snippets/types",
-        "MultipageSidebarProps": "@ulld/navigation/types",
-        "NavbarComponentProps": "@ulld/navigation/types",
-        "AutoSettingsTableProps": "@ulld/ui/types",
-        "FullPdfProps": "@ulld/pdf/types",
-        "PaginationProps": "@ulld/ui/types",
-        "DictionaryLetterList": "@ulld/ui/types",
-        "DictionaryItemProps": "@ulld/ui/types",
-        "NoteSummaryProps": "@ulld/ui/types",
-        "TaskListSearchResultProps": "@ulld/task-manager/types",
-        "NotesSearchResultsListProps": "@ulld/ui/types",
-        "TaskListSearchResultsListProps": "@ulld/task-manager/types",
-        "HTMLProps<HTMLElement>": "react",
-        "HTMLProps<HTMLOrSVGElement>": "react",
-        "SecondaryNavigationProps": "@ulld/navigation/types",
-        "CommandPalettePopoverProps": "@ulld/command-palette/types",
-        "LandingPageProps": "@ulld/landing-layouts/types",
-        "ConfirmationModalProps": "@ulld/ui/types",
-        "AutoSettingFormModalProps": "@ulld/ui/types",
-        "TaskManagerPageProps": "@ulld/task-manager/types",
-        "LoadingIndicatorProps": "@ulld/ui/types",
-        "BibEntryDetailsProps": "@ulld/bib-manager/types",
-        "EmbeddablePdfProps": "@ulld/pdf/types",
-        "FooterProps": "@ulld/navigation/types",
-        "SnippetsPageProps": "@ulld/snippets/types",
-        "SnippetListProps": "@ulld/snippets/types",
-        "NoteTypeSearchResultListProps": "@ulld/ui/types",
-        "NotePageWrapperProps": "@ulld/ui/types",
-        "NoteTypeSecondaryFilterProps": "@ulld/ui/types",
-        "SettingsPageContainerProps": "@ulld/full-form/types",
-        "ComponentDocsListPageProps": "@ulld/ui/types",
-        "ComponentDocWrapperProps": "@ulld/ui/types",
-        "DictionaryLetterListProps": "@ulld/ui/types",
-        "NoteDetailSheetProps": "@ulld/navigation/types"
+  "propsExtendsMap": {
+    "MonacoPageParams": "@ulld/editor/editorTypes",
+    "EquationDetailModalPageProps": "@ulld/utilities/corePageProps",
+    "EquationsPageProps": "@ulld/utilities/corePageProps",
+    "AddEquationsPageProps": "@ulld/utilities/corePageProps",
+    "EditorPageContentProps": "@ulld/utilities/corePageProps",
+    "BibliographyPageProps": "@ulld/bib-manager/types",
+    "SearchResultsPageProps": "@ulld/ui/types",
+    "BookmarksResultsPageProps": "@ulld/ui/types",
+    "FullScreenNavProps": "@ulld/navigation/types",
+    "TaskDetailsProps": "@ulld/task-manager/types",
+    "AddTaskProps": "@ulld/task-manager/types",
+    "AddTaskListProps": "@ulld/task-manager/types",
+    "AddSnippetPageProps": "@ulld/snippets/types",
+    "SnippetFilterProps": "@ulld/snippets/types",
+    "SnippetListInternalProps": "@ulld/snippets/types",
+    "MultipageSidebarProps": "@ulld/navigation/types",
+    "NavbarComponentProps": "@ulld/navigation/types",
+    "AutoSettingsTableProps": "@ulld/ui/types",
+    "FullPdfProps": "@ulld/pdf/types",
+    "PaginationProps": "@ulld/ui/types",
+    "DictionaryLetterList": "@ulld/ui/types",
+    "DictionaryItemProps": "@ulld/ui/types",
+    "NoteSummaryProps": "@ulld/ui/types",
+    "TaskListSearchResultProps": "@ulld/task-manager/types",
+    "NotesSearchResultsListProps": "@ulld/ui/types",
+    "TaskListSearchResultsListProps": "@ulld/task-manager/types",
+    "HTMLProps<HTMLElement>": "react",
+    "HTMLProps<HTMLOrSVGElement>": "react",
+    "SecondaryNavigationProps": "@ulld/navigation/types",
+    "CommandPalettePopoverProps": "@ulld/command-palette/types",
+    "LandingPageProps": "@ulld/landing-layouts/types",
+    "ConfirmationModalProps": "@ulld/ui/types",
+    "AutoSettingFormModalProps": "@ulld/ui/types",
+    "TaskManagerPageProps": "@ulld/task-manager/types",
+    "LoadingIndicatorProps": "@ulld/ui/types",
+    "BibEntryDetailsProps": "@ulld/bib-manager/types",
+    "EmbeddablePdfProps": "@ulld/pdf/types",
+    "FooterProps": "@ulld/navigation/types",
+    "SnippetsPageProps": "@ulld/snippets/types",
+    "SnippetListProps": "@ulld/snippets/types",
+    "NoteTypeSearchResultListProps": "@ulld/ui/types",
+    "NotePageWrapperProps": "@ulld/ui/types",
+    "NoteTypeSecondaryFilterProps": "@ulld/ui/types",
+    "SettingsPageContainerProps": "@ulld/full-form/types",
+    "ComponentDocsListPageProps": "@ulld/ui/types",
+    "ComponentDocWrapperProps": "@ulld/ui/types",
+    "DictionaryLetterListProps": "@ulld/ui/types",
+    "NoteDetailSheetProps": "@ulld/navigation/types"
+  },
+  "protectedPaths": [
+    {
+      "filePath": "/src/app/page.tsx",
+      "route": "",
+      "pageFor": {
+        "slot": "dashboard",
+        "subSlot": "LandingPage"
+      }
     },
-    "protectedPaths": [
-        {
-            "filePath": "/src/app/page.tsx",
-            "route": "",
-            "pageFor": {
-                "slot": "dashboard",
-                "subSlot": "LandingPage"
-            }
-        },
-        {
-            "filePath": "/src/app/todo/page.tsx",
-            "route": "todo",
-            "pageFor": {
-                "slot": "taskManager",
-                "subSlot": "TaskManagerPage"
-            }
-        },
-        {
-            "filePath": "/src/app/todo/details/[taskId]/page.tsx",
-            "route": "todo/details/*",
-            "pageFor": {
-                "slot": "taskManager",
-                "subSlot": "TaskDetails"
-            }
-        },
-        {
-            "filePath": "/src/app/todo/add/task/page.tsx",
-            "route": "todo/add/task",
-            "pageFor": {
-                "slot": "taskManager",
-                "subSlot": "AddTask"
-            }
-        },
-        {
-            "filePath": "/src/app/todo/add/list/page.tsx",
-            "route": "todo/add/list",
-            "pageFor": {
-                "slot": "taskManager",
-                "subSlot": "AddTaskList"
-            }
-        },
-        {
-            "filePath": "/src/app/snippets/page.tsx",
-            "route": "snippets",
-            "pageFor": {
-                "slot": "snippets",
-                "subSlot": "SnippetListPage"
-            }
-        },
-        {
-            "filePath": "/src/app/snippets/add/page.tsx",
-            "route": "snippets/add",
-            "pageFor": {
-                "slot": "snippets",
-                "subSlot": "AddSnippetPage"
-            }
-        },
-        {
-            "filePath": "/src/app/settings/autoSettings/page.tsx",
-            "route": "settings/autoSettings",
-            "pageFor": {
-                "slot": "UI",
-                "subSlot": "AutoSettingsTable"
-            }
-        },
-        {
-            "filePath": "/src/app/searchAll/page.tsx",
-            "route": "searchAll",
-            "pageFor": {
-                "slot": "UI",
-                "subSlot": "SearchResultsPage"
-            }
-        },
-        {
-            "filePath": "/src/app/pdf/page.tsx",
-            "route": "pdf",
-            "pageFor": {
-                "slot": "pdf",
-                "subSlot": "FullPdf"
-            }
-        },
-        {
-            "filePath": "/src/app/navigation/page.tsx",
-            "route": "navigation",
-            "pageFor": {
-                "slot": "navigation",
-                "subSlot": "FullScreenNavigationMenu"
-            }
-        },
-        {
-            "filePath": "/src/app/mdxEditor/[uniqueContentId]/page.tsx",
-            "route": "mdxEditor/*",
-            "pageFor": {
-                "slot": "editor",
-                "subSlot": "MdxEditorPage"
-            }
-        },
-        {
-            "filePath": "/src/app/latexEditor/[uniqueContentId]/page.tsx",
-            "route": "latexEditor/*",
-            "pageFor": {
-                "slot": "editor",
-                "subSlot": "LatexEditorPage"
-            }
-        },
-        {
-            "filePath": "/src/app/equations/page.tsx",
-            "route": "equations",
-            "pageFor": {
-                "slot": "math",
-                "subSlot": "EquationsPage"
-            }
-        },
-        {
-            "filePath": "/src/app/equations/details/[equationId]/page.tsx",
-            "route": "equations/details/*",
-            "pageFor": {
-                "slot": "math",
-                "subSlot": "EquationDetailsPage"
-            }
-        },
-        {
-            "filePath": "/src/app/equations/add/page.tsx",
-            "route": "equations/add",
-            "pageFor": {
-                "slot": "math",
-                "subSlot": "AddEquationPage"
-            }
-        },
-        {
-            "filePath": "/src/app/editor/[uniqueContentId]/page.tsx",
-            "route": "editor/*",
-            "pageFor": {
-                "slot": "editor",
-                "subSlot": "EditorPage"
-            }
-        },
-        {
-            "filePath": "/src/app/bookmarks/page.tsx",
-            "route": "bookmarks",
-            "pageFor": {
-                "slot": "UI",
-                "subSlot": "BookmarksPage"
-            }
-        },
-        {
-            "filePath": "/src/app/bibliography/page.tsx",
-            "route": "bibliography",
-            "pageFor": {
-                "slot": "bibliography",
-                "subSlot": "BibliographyPage"
-            }
-        },
-        {
-            "filePath": "/src/app/@modal/(.)todo/details/[taskId]/page.tsx",
-            "route": "@modal/(.)todo/details/*",
-            "pageFor": {
-                "slot": "taskManager",
-                "subSlot": "TaskDetails"
-            }
-        },
-        {
-            "filePath": "/src/app/@modal/(.)todo/add/task/page.tsx",
-            "route": "@modal/(.)todo/add/task",
-            "pageFor": {
-                "slot": "taskManager",
-                "subSlot": "AddTask"
-            }
-        },
-        {
-            "filePath": "/src/app/@modal/(.)todo/add/list/page.tsx",
-            "route": "@modal/(.)todo/add/list",
-            "pageFor": {
-                "slot": "taskManager",
-                "subSlot": "AddTaskList"
-            }
-        },
-        {
-            "filePath": "/src/app/@modal/(.)navigation/page.tsx",
-            "route": "@modal/(.)navigation",
-            "pageFor": {
-                "slot": "navigation",
-                "subSlot": "FullScreenNavigationMenu"
-            }
-        },
-        {
-            "filePath": "/src/app/@modal/(.)equations/details/[equationId]/page.tsx",
-            "route": "@modal/(.)equations/details/*",
-            "pageFor": {
-                "slot": "math",
-                "subSlot": "EquationDetailsModalPage"
-            }
-        },
-        {
-            "filePath": "/src/app/@modal/(.)editor/[uniqueContentId]/page.tsx",
-            "route": "@modal/(.)editor/*",
-            "pageFor": {
-                "slot": "editor",
-                "subSlot": "EditorModalPage"
-            }
-        }
-    ],
-    "reservedPublicDirs": [
-        "utils",
-        "scripts",
-        "mathjax",
-        "highlighting",
-        "font"
-    ],
-    "parsableFileExtensions": [
-        ".mdx",
-        ".ipynb"
-    ],
-    "developerConfigKeysWithExportField": [
-        {
-            "key": "components",
-            "isArray": true
-        },
-        {
-            "key": "pages",
-            "isArray": true
-        },
-        {
-            "key": "slots",
-            "isArray": true
-        }
-    ],
-    "internalDocumentTypes": [
-        {
-            "id": "bookmarks",
-            "docType": "bookmarks",
-            "matchWeight": 50,
-            "url": "/bookmarks",
-            "urlQuery": {},
-            "keywords": [
-                "bookmarks"
-            ],
-            "label": "Bookmarks",
-            "autoTag": [],
-            "autoTopic": [],
-            "autoSubject": [],
-            "UI": {
-                "styles": {
-                    "dark": {},
-                    "light": {}
-                }
-            },
-            "icon": "ulld",
-            "inSidebar": false,
-            "inNavbar": false
-        },
-        {
-            "id": "settings",
-            "docType": "none",
-            "matchWeight": 50,
-            "url": "/settings",
-            "urlQuery": {},
-            "keywords": [
-                "settings"
-            ],
-            "label": "Settings",
-            "autoTag": [],
-            "autoTopic": [],
-            "autoSubject": [],
-            "UI": {
-                "styles": {
-                    "dark": {},
-                    "light": {}
-                }
-            },
-            "icon": "ulld",
-            "inSidebar": false,
-            "inNavbar": false
-        },
-        {
-            "id": "pdfs",
-            "docType": "pdfcollection",
-            "matchWeight": 50,
-            "fs": "/resources/pdf",
-            "url": "/pdf",
-            "urlQuery": {},
-            "keywords": [
-                "pdf",
-                "papers",
-                "research"
-            ],
-            "label": "Pdfs",
-            "autoTag": [],
-            "autoTopic": [],
-            "autoSubject": [],
-            "UI": {
-                "styles": {
-                    "dark": {},
-                    "light": {}
-                }
-            },
-            "icon": "ulld",
-            "inSidebar": false,
-            "inNavbar": false
-        },
-        {
-            "id": "bibliography",
-            "docType": "bibliography",
-            "matchWeight": 50,
-            "url": "/bibliography",
-            "urlQuery": {},
-            "keywords": [
-                "bib",
-                "references",
-                "citations"
-            ],
-            "label": "Bibliography",
-            "autoTag": [],
-            "autoTopic": [],
-            "autoSubject": [],
-            "UI": {
-                "styles": {
-                    "dark": {},
-                    "light": {}
-                }
-            },
-            "icon": "ulld",
-            "inSidebar": false,
-            "inNavbar": false
-        },
-        {
-            "id": "addSnippets",
-            "docType": "none",
-            "matchWeight": 50,
-            "url": "/snippets/add",
-            "urlQuery": {},
-            "keywords": [],
-            "label": "Add Snippets",
-            "autoTag": [],
-            "autoTopic": [],
-            "autoSubject": [],
-            "UI": {
-                "styles": {
-                    "dark": {},
-                    "light": {}
-                }
-            },
-            "icon": "ulld",
-            "inSidebar": false,
-            "inNavbar": false
-        },
-        {
-            "id": "snippets",
-            "docType": "snippet",
-            "matchWeight": 50,
-            "url": "/snippets",
-            "urlQuery": {},
-            "keywords": [],
-            "label": "Snippets",
-            "autoTag": [],
-            "autoTopic": [],
-            "autoSubject": [],
-            "UI": {
-                "styles": {
-                    "dark": {},
-                    "light": {}
-                }
-            },
-            "icon": "ulld",
-            "inSidebar": false,
-            "inNavbar": false
-        }
-    ],
-    "currentPackageVersions": {
-        "@ulld/whiteboard": "0.0.124",
-        "@ulld/utilities": "0.0.124",
-        "@ulld/ui": "0.0.122",
-        "@ulld/types": "0.0.116",
-        "@ulld/test-utils": "0.0.20",
-        "@ulld/task-manager": "0.0.124",
-        "@ulld/tailwind": "0.0.116",
-        "@ulld/state": "0.0.124",
-        "@ulld/snippets": "0.0.124",
-        "@ulld/schemas": "0.0.5",
-        "@ulld/render": "0.0.124",
-        "@ulld/plot": "0.0.124",
-        "@ulld/pdf": "0.0.124",
-        "@ulld/parsers": "0.0.124",
-        "@ulld/notebook": "0.0.124",
-        "@ulld/note-network": "0.0.124",
-        "@ulld/navigation": "0.0.124",
-        "@ulld/math": "0.0.124",
-        "@ulld/logger": "0.0.116",
-        "@ulld/landing-layouts": "0.0.124",
-        "@ulld/kanban": "0.0.124",
-        "@ulld/journal": "0.0.124",
-        "@ulld/jest-presets": "0.0.116",
-        "@ulld/internal-dev-cli": "0.0.116",
-        "@ulld/icons": "0.0.124",
-        "@ulld/hooks": "0.0.124",
-        "@ulld/health-tracking": "0.0.124",
-        "@ulld/full-form": "0.0.124",
-        "@ulld/file-system-utils": "0.0.20",
-        "@ulld/equations": "0.0.124",
-        "@ulld/embeddable-components": "0.0.124",
-        "@ulld/editor": "0.0.124",
-        "@ulld/diagram": "0.0.124",
-        "@ulld/developer-template": "0.0.124",
-        "@ulld/developer-schemas": "0.0.116",
-        "@ulld/developer-cli": "0.0.124",
-        "@ulld/developer": "0.0.124",
-        "@ulld/default-image-map": "0.0.124",
-        "@ulld/database": "0.0.119",
-        "@ulld/cookbook": "0.0.124",
-        "@ulld/configschema": "0.0.124",
-        "@ulld/typescript-config": "0.0.116",
-        "@ulld/eslint-config": "0.0.118",
-        "@ulld/component-configs": "0.0.124",
-        "@ulld/component-map": "0.0.124",
-        "@ulld/command-palette": "0.0.124",
-        "@ulld/cli": "0.0.2",
-        "@ulld/chat": "0.0.124",
-        "@ulld/calendar": "0.0.124",
-        "@ulld/build": "0.0.123",
-        "@ulld/bib-manager": "0.0.124",
-        "@ulld/base-configs": "0.0.116",
-        "@ulld/api": "0.0.124",
-        "@ulld/website": "0.0.124"
+    {
+      "filePath": "/src/app/todo/page.tsx",
+      "route": "todo",
+      "pageFor": {
+        "slot": "taskManager",
+        "subSlot": "TaskManagerPage"
+      }
     },
-    "internalAppNames": [
-        "@ulld/website"
-    ],
-    "internalPackageNames": [
-        "@ulld/whiteboard",
-        "@ulld/utilities",
-        "@ulld/ui",
-        "@ulld/types",
-        "@ulld/test-utils",
-        "@ulld/task-manager",
-        "@ulld/tailwind",
-        "@ulld/state",
-        "@ulld/snippets",
-        "@ulld/schemas",
-        "@ulld/render",
-        "@ulld/plot",
-        "@ulld/pdf",
-        "@ulld/parsers",
-        "@ulld/notebook",
-        "@ulld/note-network",
-        "@ulld/navigation",
-        "@ulld/math",
-        "@ulld/logger",
-        "@ulld/landing-layouts",
-        "@ulld/kanban",
-        "@ulld/journal",
-        "@ulld/jest-presets",
-        "@ulld/internal-dev-cli",
-        "@ulld/icons",
-        "@ulld/hooks",
-        "@ulld/health-tracking",
-        "@ulld/full-form",
-        "@ulld/file-system-utils",
-        "@ulld/equations",
-        "@ulld/embeddable-components",
-        "@ulld/editor",
-        "@ulld/diagram",
-        "@ulld/developer-template",
-        "@ulld/developer-schemas",
-        "@ulld/developer-cli",
-        "@ulld/developer",
-        "@ulld/default-image-map",
-        "@ulld/database",
-        "@ulld/cookbook",
-        "@ulld/configschema",
-        "@ulld/typescript-config",
-        "@ulld/eslint-config",
-        "@ulld/component-configs",
-        "@ulld/component-map",
-        "@ulld/command-palette",
-        "@ulld/cli",
-        "@ulld/chat",
-        "@ulld/calendar",
-        "@ulld/build",
-        "@ulld/bib-manager",
-        "@ulld/base-configs",
-        "@ulld/api"
-    ]
+    {
+      "filePath": "/src/app/todo/details/[taskId]/page.tsx",
+      "route": "todo/details/*",
+      "pageFor": {
+        "slot": "taskManager",
+        "subSlot": "TaskDetails"
+      }
+    },
+    {
+      "filePath": "/src/app/todo/add/task/page.tsx",
+      "route": "todo/add/task",
+      "pageFor": {
+        "slot": "taskManager",
+        "subSlot": "AddTask"
+      }
+    },
+    {
+      "filePath": "/src/app/todo/add/list/page.tsx",
+      "route": "todo/add/list",
+      "pageFor": {
+        "slot": "taskManager",
+        "subSlot": "AddTaskList"
+      }
+    },
+    {
+      "filePath": "/src/app/snippets/page.tsx",
+      "route": "snippets",
+      "pageFor": {
+        "slot": "snippets",
+        "subSlot": "SnippetListPage"
+      }
+    },
+    {
+      "filePath": "/src/app/snippets/add/page.tsx",
+      "route": "snippets/add",
+      "pageFor": {
+        "slot": "snippets",
+        "subSlot": "AddSnippetPage"
+      }
+    },
+    {
+      "filePath": "/src/app/settings/autoSettings/page.tsx",
+      "route": "settings/autoSettings",
+      "pageFor": {
+        "slot": "UI",
+        "subSlot": "AutoSettingsTable"
+      }
+    },
+    {
+      "filePath": "/src/app/searchAll/page.tsx",
+      "route": "searchAll",
+      "pageFor": {
+        "slot": "UI",
+        "subSlot": "SearchResultsPage"
+      }
+    },
+    {
+      "filePath": "/src/app/pdf/page.tsx",
+      "route": "pdf",
+      "pageFor": {
+        "slot": "pdf",
+        "subSlot": "FullPdf"
+      }
+    },
+    {
+      "filePath": "/src/app/navigation/page.tsx",
+      "route": "navigation",
+      "pageFor": {
+        "slot": "navigation",
+        "subSlot": "FullScreenNavigationMenu"
+      }
+    },
+    {
+      "filePath": "/src/app/mdxEditor/[uniqueContentId]/page.tsx",
+      "route": "mdxEditor/*",
+      "pageFor": {
+        "slot": "editor",
+        "subSlot": "MdxEditorPage"
+      }
+    },
+    {
+      "filePath": "/src/app/latexEditor/[uniqueContentId]/page.tsx",
+      "route": "latexEditor/*",
+      "pageFor": {
+        "slot": "editor",
+        "subSlot": "LatexEditorPage"
+      }
+    },
+    {
+      "filePath": "/src/app/equations/page.tsx",
+      "route": "equations",
+      "pageFor": {
+        "slot": "math",
+        "subSlot": "EquationsPage"
+      }
+    },
+    {
+      "filePath": "/src/app/equations/details/[equationId]/page.tsx",
+      "route": "equations/details/*",
+      "pageFor": {
+        "slot": "math",
+        "subSlot": "EquationDetailsPage"
+      }
+    },
+    {
+      "filePath": "/src/app/equations/add/page.tsx",
+      "route": "equations/add",
+      "pageFor": {
+        "slot": "math",
+        "subSlot": "AddEquationPage"
+      }
+    },
+    {
+      "filePath": "/src/app/editor/[uniqueContentId]/page.tsx",
+      "route": "editor/*",
+      "pageFor": {
+        "slot": "editor",
+        "subSlot": "EditorPage"
+      }
+    },
+    {
+      "filePath": "/src/app/bookmarks/page.tsx",
+      "route": "bookmarks",
+      "pageFor": {
+        "slot": "UI",
+        "subSlot": "BookmarksPage"
+      }
+    },
+    {
+      "filePath": "/src/app/bibliography/page.tsx",
+      "route": "bibliography",
+      "pageFor": {
+        "slot": "bibliography",
+        "subSlot": "BibliographyPage"
+      }
+    },
+    {
+      "filePath": "/src/app/@modal/(.)todo/details/[taskId]/page.tsx",
+      "route": "@modal/(.)todo/details/*",
+      "pageFor": {
+        "slot": "taskManager",
+        "subSlot": "TaskDetails"
+      }
+    },
+    {
+      "filePath": "/src/app/@modal/(.)todo/add/task/page.tsx",
+      "route": "@modal/(.)todo/add/task",
+      "pageFor": {
+        "slot": "taskManager",
+        "subSlot": "AddTask"
+      }
+    },
+    {
+      "filePath": "/src/app/@modal/(.)todo/add/list/page.tsx",
+      "route": "@modal/(.)todo/add/list",
+      "pageFor": {
+        "slot": "taskManager",
+        "subSlot": "AddTaskList"
+      }
+    },
+    {
+      "filePath": "/src/app/@modal/(.)navigation/page.tsx",
+      "route": "@modal/(.)navigation",
+      "pageFor": {
+        "slot": "navigation",
+        "subSlot": "FullScreenNavigationMenu"
+      }
+    },
+    {
+      "filePath": "/src/app/@modal/(.)equations/details/[equationId]/page.tsx",
+      "route": "@modal/(.)equations/details/*",
+      "pageFor": {
+        "slot": "math",
+        "subSlot": "EquationDetailsModalPage"
+      }
+    },
+    {
+      "filePath": "/src/app/@modal/(.)editor/[uniqueContentId]/page.tsx",
+      "route": "@modal/(.)editor/*",
+      "pageFor": {
+        "slot": "editor",
+        "subSlot": "EditorModalPage"
+      }
+    }
+  ],
+  "reservedPublicDirs": ["utils", "scripts", "mathjax", "highlighting", "font"],
+  "parsableFileExtensions": [".mdx", ".ipynb"],
+  "developerConfigKeysWithExportField": [
+    {
+      "key": "components",
+      "isArray": true
+    },
+    {
+      "key": "pages",
+      "isArray": true
+    },
+    {
+      "key": "slots",
+      "isArray": true
+    }
+  ],
+  "internalDocumentTypes": [
+    {
+      "id": "bookmarks",
+      "docType": "bookmarks",
+      "matchWeight": 50,
+      "url": "/bookmarks",
+      "urlQuery": {},
+      "keywords": ["bookmarks"],
+      "label": "Bookmarks",
+      "autoTag": [],
+      "autoTopic": [],
+      "autoSubject": [],
+      "UI": {
+        "styles": {
+          "dark": {},
+          "light": {}
+        }
+      },
+      "icon": "ulld",
+      "inSidebar": false,
+      "inNavbar": false
+    },
+    {
+      "id": "settings",
+      "docType": "none",
+      "matchWeight": 50,
+      "url": "/settings",
+      "urlQuery": {},
+      "keywords": ["settings"],
+      "label": "Settings",
+      "autoTag": [],
+      "autoTopic": [],
+      "autoSubject": [],
+      "UI": {
+        "styles": {
+          "dark": {},
+          "light": {}
+        }
+      },
+      "icon": "ulld",
+      "inSidebar": false,
+      "inNavbar": false
+    },
+    {
+      "id": "pdfs",
+      "docType": "pdfcollection",
+      "matchWeight": 50,
+      "fs": "/resources/pdf",
+      "url": "/pdf",
+      "urlQuery": {},
+      "keywords": ["pdf", "papers", "research"],
+      "label": "Pdfs",
+      "autoTag": [],
+      "autoTopic": [],
+      "autoSubject": [],
+      "UI": {
+        "styles": {
+          "dark": {},
+          "light": {}
+        }
+      },
+      "icon": "ulld",
+      "inSidebar": false,
+      "inNavbar": false
+    },
+    {
+      "id": "bibliography",
+      "docType": "bibliography",
+      "matchWeight": 50,
+      "url": "/bibliography",
+      "urlQuery": {},
+      "keywords": ["bib", "references", "citations"],
+      "label": "Bibliography",
+      "autoTag": [],
+      "autoTopic": [],
+      "autoSubject": [],
+      "UI": {
+        "styles": {
+          "dark": {},
+          "light": {}
+        }
+      },
+      "icon": "ulld",
+      "inSidebar": false,
+      "inNavbar": false
+    },
+    {
+      "id": "addSnippets",
+      "docType": "none",
+      "matchWeight": 50,
+      "url": "/snippets/add",
+      "urlQuery": {},
+      "keywords": [],
+      "label": "Add Snippets",
+      "autoTag": [],
+      "autoTopic": [],
+      "autoSubject": [],
+      "UI": {
+        "styles": {
+          "dark": {},
+          "light": {}
+        }
+      },
+      "icon": "ulld",
+      "inSidebar": false,
+      "inNavbar": false
+    },
+    {
+      "id": "snippets",
+      "docType": "snippet",
+      "matchWeight": 50,
+      "url": "/snippets",
+      "urlQuery": {},
+      "keywords": [],
+      "label": "Snippets",
+      "autoTag": [],
+      "autoTopic": [],
+      "autoSubject": [],
+      "UI": {
+        "styles": {
+          "dark": {},
+          "light": {}
+        }
+      },
+      "icon": "ulld",
+      "inSidebar": false,
+      "inNavbar": false
+    }
+  ],
+  "internalPackageData": [
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/whiteboard",
+      "name": "@ulld/whiteboard",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/utilities",
+      "name": "@ulld/utilities",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.122",
+      "relativeDirPath": "packages/ui",
+      "name": "@ulld/ui",
+      "type": "package",
+      "hasPluginConfig": true
+    },
+    {
+      "currentVersion": "0.0.116",
+      "relativeDirPath": "packages/types",
+      "name": "@ulld/types",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.20",
+      "relativeDirPath": "packages/testUtils",
+      "name": "@ulld/test-utils",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/task-manager",
+      "name": "@ulld/task-manager",
+      "type": "package",
+      "hasPluginConfig": true
+    },
+    {
+      "currentVersion": "0.0.116",
+      "relativeDirPath": "packages/tailwindAndShad",
+      "name": "@ulld/tailwind",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/state",
+      "name": "@ulld/state",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/snippets",
+      "name": "@ulld/snippets",
+      "type": "package",
+      "hasPluginConfig": true
+    },
+    {
+      "currentVersion": "0.0.5",
+      "relativeDirPath": "packages/schemas",
+      "name": "@ulld/schemas",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/render",
+      "name": "@ulld/render",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/plot",
+      "name": "@ulld/plot",
+      "type": "package",
+      "hasPluginConfig": true
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/pdf",
+      "name": "@ulld/pdf",
+      "type": "package",
+      "hasPluginConfig": true
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/parsers",
+      "name": "@ulld/parsers",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/notebook",
+      "name": "@ulld/notebook",
+      "type": "package",
+      "hasPluginConfig": true
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/note-network",
+      "name": "@ulld/note-network",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/navigation",
+      "name": "@ulld/navigation",
+      "type": "package",
+      "hasPluginConfig": true
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/math",
+      "name": "@ulld/math",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.116",
+      "relativeDirPath": "packages/logger",
+      "name": "@ulld/logger",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/landing-layouts",
+      "name": "@ulld/landing-layouts",
+      "type": "package",
+      "hasPluginConfig": true
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/kanban",
+      "name": "@ulld/kanban",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/journal",
+      "name": "@ulld/journal",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.116",
+      "relativeDirPath": "packages/jest-presets",
+      "name": "@ulld/jest-presets",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.116",
+      "relativeDirPath": "packages/internalDevCli",
+      "name": "@ulld/internal-dev-cli",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/icons",
+      "name": "@ulld/icons",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/hooks",
+      "name": "@ulld/hooks",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/health-tracking",
+      "name": "@ulld/health-tracking",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/full-form",
+      "name": "@ulld/full-form",
+      "type": "package",
+      "hasPluginConfig": true
+    },
+    {
+      "currentVersion": "0.0.20",
+      "relativeDirPath": "packages/fileSystemUtilities",
+      "name": "@ulld/file-system-utils",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/equations",
+      "name": "@ulld/equations",
+      "type": "package",
+      "hasPluginConfig": true
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/embeddable-components",
+      "name": "@ulld/embeddable-components",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/editor",
+      "name": "@ulld/editor",
+      "type": "package",
+      "hasPluginConfig": true
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/diagram",
+      "name": "@ulld/diagram",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/developer-template",
+      "name": "@ulld/developer-template",
+      "type": "package",
+      "hasPluginConfig": true
+    },
+    {
+      "currentVersion": "0.0.116",
+      "relativeDirPath": "packages/developer-schemas",
+      "name": "@ulld/developer-schemas",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/developer-cli",
+      "name": "@ulld/developer-cli",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/developer",
+      "name": "@ulld/developer",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/default-image-map",
+      "name": "@ulld/default-image-map",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.119",
+      "relativeDirPath": "packages/database",
+      "name": "@ulld/database",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/cookbook",
+      "name": "@ulld/cookbook",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/configschema",
+      "name": "@ulld/configschema",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.116",
+      "relativeDirPath": "packages/config-typescript",
+      "name": "@ulld/typescript-config",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.118",
+      "relativeDirPath": "packages/config-eslint",
+      "name": "@ulld/eslint-config",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/componentConfigs",
+      "name": "@ulld/component-configs",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/component-map",
+      "name": "@ulld/component-map",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/command-palette",
+      "name": "@ulld/command-palette",
+      "type": "package",
+      "hasPluginConfig": true
+    },
+    {
+      "currentVersion": "0.0.2",
+      "relativeDirPath": "packages/cli",
+      "name": "@ulld/cli",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/chat",
+      "name": "@ulld/chat",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/calendar",
+      "name": "@ulld/calendar",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.123",
+      "relativeDirPath": "packages/build",
+      "name": "@ulld/build",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/bib-manager",
+      "name": "@ulld/bib-manager",
+      "type": "package",
+      "hasPluginConfig": true
+    },
+    {
+      "currentVersion": "0.0.116",
+      "relativeDirPath": "packages/baseConfigs",
+      "name": "@ulld/base-configs",
+      "type": "package",
+      "hasPluginConfig": false
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "packages/api",
+      "name": "@ulld/api",
+      "type": "package",
+      "hasPluginConfig": true
+    },
+    {
+      "currentVersion": "0.0.124",
+      "relativeDirPath": "apps/website",
+      "name": "@ulld/website",
+      "type": "app",
+      "hasPluginConfig": false
+    }
+  ]
 }

@@ -1,12 +1,12 @@
 import { z } from 'zod';
-import type { MdxNoteWithRelations } from '../MdxNoteSchema.js'
-import type { MdxNotePartialWithRelations } from '../MdxNoteSchema.js'
-import type { IpynbWithRelations } from '../IpynbSchema.js'
-import type { IpynbPartialWithRelations } from '../IpynbSchema.js'
-import { MdxNoteWithRelationsSchema } from '../MdxNoteSchema.js'
-import { MdxNotePartialWithRelationsSchema } from '../MdxNoteSchema.js'
-import { IpynbWithRelationsSchema } from '../IpynbSchema.js'
-import { IpynbPartialWithRelationsSchema } from '../IpynbSchema.js'
+import type { MdxNoteWithRelations } from './MdxNoteSchema.js'
+import type { MdxNotePartialWithRelations } from './MdxNoteSchema.js'
+import type { IpynbWithRelations } from './IpynbSchema.js'
+import type { IpynbPartialWithRelations } from './IpynbSchema.js'
+import { MdxNoteWithRelationsSchema } from './MdxNoteSchema.js'
+import { MdxNotePartialWithRelationsSchema } from './MdxNoteSchema.js'
+import { IpynbWithRelationsSchema } from './IpynbSchema.js'
+import { IpynbPartialWithRelationsSchema } from './IpynbSchema.js'
 /////////////////////////////////////////
 // SEQUENTIAL NOTE LIST SCHEMA
 /////////////////////////////////////////

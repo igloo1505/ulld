@@ -1,7 +1,7 @@
 import {
   TagOrderByRelevanceFieldEnumSchema,
   TagOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-4JV5SFTY.js";
+} from "../../chunk-5TYBK7BO.js";
 export {
   TagOrderByRelevanceFieldEnumSchema,
   TagOrderByRelevanceFieldEnumSchema_default as default

@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/DietIncludeSchema.js
-..//inputTypeSchemas/DietWhereInputSchema.js
-..//inputTypeSchemas/DietOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/DietWhereUniqueInputSchema.js
-..//inputTypeSchemas/DietScalarFieldEnumSchema.js
+import { DietIncludeSchema } from '../inputTypeSchemas/DietIncludeSchema.js'
+import { DietWhereInputSchema } from '../inputTypeSchemas/DietWhereInputSchema.js'
+import { DietOrderByWithRelationInputSchema } from '../inputTypeSchemas/DietOrderByWithRelationInputSchema.js'
+import { DietWhereUniqueInputSchema } from '../inputTypeSchemas/DietWhereUniqueInputSchema.js'
+import { DietScalarFieldEnumSchema } from '../inputTypeSchemas/DietScalarFieldEnumSchema.js'
 import { DietaryItemFindManyArgsSchema } from "../outputTypeSchemas/DietaryItemFindManyArgsSchema"
 import { TimePeriodFindManyArgsSchema } from "../outputTypeSchemas/TimePeriodFindManyArgsSchema"
 import { HealthReportFindManyArgsSchema } from "../outputTypeSchemas/HealthReportFindManyArgsSchema"

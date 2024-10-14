@@ -1,13 +1,13 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { BibEntryCreateWithoutCitationGroupsInputSchema } from '../BibEntryCreateWithoutCitationGroupsInputSchema.js';
-import { BibEntryUncheckedCreateWithoutCitationGroupsInputSchema } from '../BibEntryUncheckedCreateWithoutCitationGroupsInputSchema.js';
-import { BibEntryCreateOrConnectWithoutCitationGroupsInputSchema } from '../BibEntryCreateOrConnectWithoutCitationGroupsInputSchema.js';
-import { BibEntryUpsertWithWhereUniqueWithoutCitationGroupsInputSchema } from '../BibEntryUpsertWithWhereUniqueWithoutCitationGroupsInputSchema.js';
-import { BibEntryWhereUniqueInputSchema } from '../BibEntryWhereUniqueInputSchema.js';
-import { BibEntryUpdateWithWhereUniqueWithoutCitationGroupsInputSchema } from '../BibEntryUpdateWithWhereUniqueWithoutCitationGroupsInputSchema.js';
-import { BibEntryUpdateManyWithWhereWithoutCitationGroupsInputSchema } from '../BibEntryUpdateManyWithWhereWithoutCitationGroupsInputSchema.js';
-import { BibEntryScalarWhereInputSchema } from '../BibEntryScalarWhereInputSchema.js';
+import { BibEntryCreateWithoutCitationGroupsInputSchema } from './BibEntryCreateWithoutCitationGroupsInputSchema.js';
+import { BibEntryUncheckedCreateWithoutCitationGroupsInputSchema } from './BibEntryUncheckedCreateWithoutCitationGroupsInputSchema.js';
+import { BibEntryCreateOrConnectWithoutCitationGroupsInputSchema } from './BibEntryCreateOrConnectWithoutCitationGroupsInputSchema.js';
+import { BibEntryUpsertWithWhereUniqueWithoutCitationGroupsInputSchema } from './BibEntryUpsertWithWhereUniqueWithoutCitationGroupsInputSchema.js';
+import { BibEntryWhereUniqueInputSchema } from './BibEntryWhereUniqueInputSchema.js';
+import { BibEntryUpdateWithWhereUniqueWithoutCitationGroupsInputSchema } from './BibEntryUpdateWithWhereUniqueWithoutCitationGroupsInputSchema.js';
+import { BibEntryUpdateManyWithWhereWithoutCitationGroupsInputSchema } from './BibEntryUpdateManyWithWhereWithoutCitationGroupsInputSchema.js';
+import { BibEntryScalarWhereInputSchema } from './BibEntryScalarWhereInputSchema.js';
 export const BibEntryUpdateManyWithoutCitationGroupsNestedInputSchema: z.ZodType<Prisma.BibEntryUpdateManyWithoutCitationGroupsNestedInput> = z.object({
   create: z.union([ z.lazy(() => BibEntryCreateWithoutCitationGroupsInputSchema),z.lazy(() => BibEntryCreateWithoutCitationGroupsInputSchema).array(),z.lazy(() => BibEntryUncheckedCreateWithoutCitationGroupsInputSchema),z.lazy(() => BibEntryUncheckedCreateWithoutCitationGroupsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => BibEntryCreateOrConnectWithoutCitationGroupsInputSchema),z.lazy(() => BibEntryCreateOrConnectWithoutCitationGroupsInputSchema).array() ]).optional(),

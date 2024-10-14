@@ -1,6 +1,6 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { KanBanCardUncheckedCreateNestedManyWithoutKanBanListInputSchema } from '../KanBanCardUncheckedCreateNestedManyWithoutKanBanListInputSchema.js';
+import { KanBanCardUncheckedCreateNestedManyWithoutKanBanListInputSchema } from './KanBanCardUncheckedCreateNestedManyWithoutKanBanListInputSchema.js';
 export const KanBanListUncheckedCreateWithoutKanbanInputSchema: z.ZodType<Prisma.KanBanListUncheckedCreateWithoutKanbanInput> = z.object({
   id: z.number().int().optional(),
   indexWithinBoard: z.number().int(),

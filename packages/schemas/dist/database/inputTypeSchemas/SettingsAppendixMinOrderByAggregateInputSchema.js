@@ -1,8 +1,8 @@
 import {
   SettingsAppendixMinOrderByAggregateInputSchema,
   SettingsAppendixMinOrderByAggregateInputSchema_default
-} from "../../chunk-YCRZZXJB.js";
-import "../../chunk-2NPOXGXF.js";
+} from "../../chunk-QOF5WKKZ.js";
+import "../../chunk-WVDZRY2Y.js";
 export {
   SettingsAppendixMinOrderByAggregateInputSchema,
   SettingsAppendixMinOrderByAggregateInputSchema_default as default

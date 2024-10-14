@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkWRAIJPWAcjs = require('../../chunk-WRAIJPWA.cjs');
+var _chunkCJEWO34Pcjs = require('../../chunk-CJEWO34P.cjs');
 
 
 
-exports.FeatureRequestCreatecategoryInputSchema = _chunkWRAIJPWAcjs.FeatureRequestCreatecategoryInputSchema; exports.default = _chunkWRAIJPWAcjs.FeatureRequestCreatecategoryInputSchema_default;
+exports.FeatureRequestCreatecategoryInputSchema = _chunkCJEWO34Pcjs.FeatureRequestCreatecategoryInputSchema; exports.default = _chunkCJEWO34Pcjs.FeatureRequestCreatecategoryInputSchema_default;
 //# sourceMappingURL=FeatureRequestCreatecategoryInputSchema.cjs.map

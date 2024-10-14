@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkNG2S6FNVcjs = require('../../chunk-NG2S6FNV.cjs');
+var _chunk7Y6KONUScjs = require('../../chunk-7Y6KONUS.cjs');
 
 
 
-exports.IpynbUpdateoutgoingQuickLinksInputSchema = _chunkNG2S6FNVcjs.IpynbUpdateoutgoingQuickLinksInputSchema; exports.default = _chunkNG2S6FNVcjs.IpynbUpdateoutgoingQuickLinksInputSchema_default;
+exports.IpynbUpdateoutgoingQuickLinksInputSchema = _chunk7Y6KONUScjs.IpynbUpdateoutgoingQuickLinksInputSchema; exports.default = _chunk7Y6KONUScjs.IpynbUpdateoutgoingQuickLinksInputSchema_default;
 //# sourceMappingURL=IpynbUpdateoutgoingQuickLinksInputSchema.cjs.map

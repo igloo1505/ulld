@@ -19,20 +19,20 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "reactflow": "11.10.4",
-    "y-indexeddb": "^9.0.12",
-    "y-webrtc": "^10.3.0",
-    "y-websocket": "^2.0.2",
-    "yjs": "^13.6.14"
+    "y-indexeddb": "9.0.12",
+    "y-webrtc": "10.3.0",
+    "y-websocket": "2.0.2",
+    "yjs": "13.6.14"
   },
   "devDependencies": {
     "next": "14.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "reactflow": "^11.10.4",
-    "y-indexeddb": "^9.0.12",
-    "y-webrtc": "^10.3.0",
-    "y-websocket": "^2.0.2",
-    "yjs": "^13.6.14"
+    "reactflow": "11.10.4",
+    "y-indexeddb": "9.0.12",
+    "y-webrtc": "10.3.0",
+    "y-websocket": "2.0.2",
+    "yjs": "13.6.14"
   },
   "peerDependencies": {
     "@ulld/api": "workspace:*",

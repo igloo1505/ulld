@@ -2,8 +2,8 @@ import {
   AutoSettingPartialSchema,
   AutoSettingSchema,
   AutoSettingSchema_default
-} from "../../chunk-RSDBLMI2.js";
-import "../../chunk-EK76L66X.js";
+} from "../../chunk-BJJQQB2M.js";
+import "../../chunk-76RQYGNI.js";
 export {
   AutoSettingPartialSchema,
   AutoSettingSchema,

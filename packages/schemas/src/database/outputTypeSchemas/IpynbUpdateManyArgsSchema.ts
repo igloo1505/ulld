@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/IpynbUpdateManyMutationInputSchema.js
-..//inputTypeSchemas/IpynbUncheckedUpdateManyInputSchema.js
-..//inputTypeSchemas/IpynbWhereInputSchema.js
+import { IpynbUpdateManyMutationInputSchema } from '../inputTypeSchemas/IpynbUpdateManyMutationInputSchema.js'
+import { IpynbUncheckedUpdateManyInputSchema } from '../inputTypeSchemas/IpynbUncheckedUpdateManyInputSchema.js'
+import { IpynbWhereInputSchema } from '../inputTypeSchemas/IpynbWhereInputSchema.js'
 export const IpynbUpdateManyArgsSchema: z.ZodType<Prisma.IpynbUpdateManyArgs> = z.object({
   data: z.union([ IpynbUpdateManyMutationInputSchema,IpynbUncheckedUpdateManyInputSchema ]),
   where: IpynbWhereInputSchema.optional(),

@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/SubjectWhereInputSchema.js
-..//inputTypeSchemas/SubjectOrderByWithRelationInputSchema.js
-..//inputTypeSchemas/SubjectWhereUniqueInputSchema.js
+import { SubjectWhereInputSchema } from '../inputTypeSchemas/SubjectWhereInputSchema.js'
+import { SubjectOrderByWithRelationInputSchema } from '../inputTypeSchemas/SubjectOrderByWithRelationInputSchema.js'
+import { SubjectWhereUniqueInputSchema } from '../inputTypeSchemas/SubjectWhereUniqueInputSchema.js'
 export const SubjectAggregateArgsSchema: z.ZodType<Prisma.SubjectAggregateArgs> = z.object({
   where: SubjectWhereInputSchema.optional(),
   orderBy: z.union([ SubjectOrderByWithRelationInputSchema.array(),SubjectOrderByWithRelationInputSchema ]).optional(),

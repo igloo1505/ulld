@@ -1,9 +1,9 @@
 import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IpynbCreateWithoutTopicsInputSchema } from '../IpynbCreateWithoutTopicsInputSchema.js';
-import { IpynbUncheckedCreateWithoutTopicsInputSchema } from '../IpynbUncheckedCreateWithoutTopicsInputSchema.js';
-import { IpynbCreateOrConnectWithoutTopicsInputSchema } from '../IpynbCreateOrConnectWithoutTopicsInputSchema.js';
-import { IpynbWhereUniqueInputSchema } from '../IpynbWhereUniqueInputSchema.js';
+import { IpynbCreateWithoutTopicsInputSchema } from './IpynbCreateWithoutTopicsInputSchema.js';
+import { IpynbUncheckedCreateWithoutTopicsInputSchema } from './IpynbUncheckedCreateWithoutTopicsInputSchema.js';
+import { IpynbCreateOrConnectWithoutTopicsInputSchema } from './IpynbCreateOrConnectWithoutTopicsInputSchema.js';
+import { IpynbWhereUniqueInputSchema } from './IpynbWhereUniqueInputSchema.js';
 export const IpynbUncheckedCreateNestedManyWithoutTopicsInputSchema: z.ZodType<Prisma.IpynbUncheckedCreateNestedManyWithoutTopicsInput> = z.object({
   create: z.union([ z.lazy(() => IpynbCreateWithoutTopicsInputSchema),z.lazy(() => IpynbCreateWithoutTopicsInputSchema).array(),z.lazy(() => IpynbUncheckedCreateWithoutTopicsInputSchema),z.lazy(() => IpynbUncheckedCreateWithoutTopicsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => IpynbCreateOrConnectWithoutTopicsInputSchema),z.lazy(() => IpynbCreateOrConnectWithoutTopicsInputSchema).array() ]).optional(),

@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import type { Prisma } from '@ulld/database/db';
-..//inputTypeSchemas/ReadingListWhereInputSchema.js
-..//inputTypeSchemas/ReadingListOrderByWithAggregationInputSchema.js
-..//inputTypeSchemas/ReadingListScalarFieldEnumSchema.js
-..//inputTypeSchemas/ReadingListScalarWhereWithAggregatesInputSchema.js
+import { ReadingListWhereInputSchema } from '../inputTypeSchemas/ReadingListWhereInputSchema.js'
+import { ReadingListOrderByWithAggregationInputSchema } from '../inputTypeSchemas/ReadingListOrderByWithAggregationInputSchema.js'
+import { ReadingListScalarFieldEnumSchema } from '../inputTypeSchemas/ReadingListScalarFieldEnumSchema.js'
+import { ReadingListScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/ReadingListScalarWhereWithAggregatesInputSchema.js'
 export const ReadingListGroupByArgsSchema: z.ZodType<Prisma.ReadingListGroupByArgs> = z.object({
   where: ReadingListWhereInputSchema.optional(),
   orderBy: z.union([ ReadingListOrderByWithAggregationInputSchema.array(),ReadingListOrderByWithAggregationInputSchema ]).optional(),

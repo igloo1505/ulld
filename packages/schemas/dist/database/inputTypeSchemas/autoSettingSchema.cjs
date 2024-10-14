@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk7GJ7K5K6cjs = require('../../chunk-7GJ7K5K6.cjs');
+var _chunkDX2TZXTHcjs = require('../../chunk-DX2TZXTH.cjs');
 
 
 
-exports.autoSettingSchema = _chunk7GJ7K5K6cjs.autoSettingSchema; exports.default = _chunk7GJ7K5K6cjs.autoSettingSchema_default;
+exports.autoSettingSchema = _chunkDX2TZXTHcjs.autoSettingSchema; exports.default = _chunkDX2TZXTHcjs.autoSettingSchema_default;
 //# sourceMappingURL=autoSettingSchema.cjs.map

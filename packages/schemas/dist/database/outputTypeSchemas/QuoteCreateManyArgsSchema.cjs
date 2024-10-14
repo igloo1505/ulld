@@ -1,10 +1,10 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkBAKUOHPQcjs = require('../../chunk-BAKUOHPQ.cjs');
-require('../../chunk-FRK4R4PM.cjs');
+var _chunkZTKY57XNcjs = require('../../chunk-ZTKY57XN.cjs');
+require('../../chunk-4MGFOONO.cjs');
 
 
 
-exports.QuoteCreateManyArgsSchema = _chunkBAKUOHPQcjs.QuoteCreateManyArgsSchema; exports.default = _chunkBAKUOHPQcjs.QuoteCreateManyArgsSchema_default;
+exports.QuoteCreateManyArgsSchema = _chunkZTKY57XNcjs.QuoteCreateManyArgsSchema; exports.default = _chunkZTKY57XNcjs.QuoteCreateManyArgsSchema_default;
 //# sourceMappingURL=QuoteCreateManyArgsSchema.cjs.map
