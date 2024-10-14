@@ -364,6 +364,7 @@
   },
   "peerDependencies": {
     "@ulld/base-configs": "workspace:*",
+    "@ulld/database": "workspace:*",
     "@ulld/developer-schemas": "workspace:*",
     "@ulld/icons": "workspace:*",
     "@ulld/tailwind": "workspace:*",
