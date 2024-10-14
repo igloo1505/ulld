@@ -226,13 +226,13 @@
     "@ulld/logger": "workspace:*",
     "@ulld/parsers": "workspace:*",
     "@ulld/render": "workspace:*",
+    "@ulld/schemas": "workspace:*",
     "@ulld/state": "workspace:*",
     "@ulld/tailwind": "workspace:*",
     "@ulld/types": "workspace:*",
     "@ulld/typescript-config": "workspace:*",
     "@ulld/ui": "workspace:*",
     "@ulld/utilities": "workspace:*",
-    "@ulld/schemas": "workspace:*",
     "@ulld/whiteboard": "workspace:*"
   },
   "packageManager": "pnpm@9.0.4"

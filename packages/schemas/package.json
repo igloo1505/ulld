@@ -60,10 +60,26 @@
     }
   },
   "exports": {
-    "./types": "./dist/types/main.ts",
-    "./frontMatter": "./dist/mdx/frontMatter/main.ts",
-    "./mdx-parsing-params": "./dist/mdx/parsing/params/index.ts",
-    "./classProps-mdxNote": "./dist/api/prismaMdxRelations/mdxNote/classProps.ts"
+    "./types": {
+      "types": "./dist/types/main.d.ts",
+      "import": "./dist/types/main.js",
+      "require": "./dist/types/main.cjs"
+    },
+    "./frontMatter": {
+      "types": "./dist/mdx/frontMatter/main.d.ts",
+      "import": "./dist/mdx/frontMatter/main.js",
+      "require": "./dist/mdx/frontMatter/main.cjs"
+    },
+    "./mdx-parsing-params": {
+      "types": "./dist/mdx/parsing/params/index.d.ts",
+      "import": "./dist/mdx/parsing/params/index.js",
+      "require": "./dist/mdx/parsing/params/index.cjs"
+    },
+    "./classProps-mdxNote": {
+      "types": "./dist/api/prismaMdxRelations/mdxNote/classProps.d.ts",
+      "import": "./dist/api/prismaMdxRelations/mdxNote/classProps.js",
+      "require": "./dist/api/prismaMdxRelations/mdxNote/classProps.cjs"
+    }
   },
   "dependencies": {
     "glob": "10.3.15",
