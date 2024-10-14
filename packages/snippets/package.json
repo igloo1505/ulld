@@ -24,22 +24,8 @@
     "./addSnippetPage": "./src/ulldPages/addSnippet.tsx",
     "./snippetsPage": "./src/ulldPages/snippetsPage/main.tsx"
   },
-  "dependencies": {
-    "fumadocs-core": "13.4.1",
-    "fumadocs-ui": "13.4.1",
-    "monaco-editor": "0.49.0",
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "fumadocs-core": "13.4.1",
-    "fumadocs-ui": "13.4.1",
-    "monaco-editor": "0.49.0",
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
+  "dependencies": {},
+  "devDependencies": {},
   "peerDependencies": {
     "@ulld/api": "workspace:*",
     "@ulld/configschema": "workspace:*",

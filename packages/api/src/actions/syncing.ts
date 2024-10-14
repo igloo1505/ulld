@@ -1,5 +1,5 @@
 import { showToast as _showToast } from "@ulld/state/state/slices/ui";
-import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
+import type { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
 import { OnBackupReturnData, OnRestoreReturnData } from "@ulld/types";
 import { downloadFile } from "@ulld/utilities/downloadFile";
 import { ToastConfigType } from "@ulld/utilities/types";

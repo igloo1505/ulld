@@ -30,10 +30,7 @@
     "@tanstack/react-table": "8.13.2"
   },
   "devDependencies": {
-    "eslint-config-next": "14.2.5",
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "eslint-config-next": "14.2.5"
   },
   "peerDependencies": {
     "@ulld/api": "workspace:*",

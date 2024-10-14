@@ -57,6 +57,7 @@ const config = {
             label: "Internal packages should only be under peerDependencies",
         },
         {
+            // TODO: Check tailwind and all tailwind related packages like sass, autoprefixer to see if they can be installed only in development.
             dependencies: [
                 "eslint**",
                 "ts-jest",
@@ -71,6 +72,9 @@ const config = {
                 "**testing-library",
                 "**prettier**",
                 "**test-renderer**",
+                "**rollup**",
+                "**tsup**",
+                "**esbuild**",
                 "nyc",
                 "xo",
                 "knip"

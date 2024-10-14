@@ -1,4 +1,4 @@
-import { CommandItem } from 'cmdk';
+import { CommandItem } from '@ulld/tailwind/command';
 import { Route } from 'next';
 import { useRouter } from 'next/navigation';
 import React from 'react'

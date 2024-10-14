@@ -1,14 +1,14 @@
 import nextPwa from "@ducanh2912/next-pwa";
-import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
+// import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
-const monacoRules = [
-    {
-        test: /\.ttf$/,
-        type: "asset/resource",
-    },
-];
+// const monacoRules = [
+//     {
+//         test: /\.ttf$/,
+//         type: "asset/resource",
+//     },
+// ];
 
 const withPWA = nextPwa({
     dest: "public",
@@ -33,7 +33,7 @@ const config = withPWA({
         "react-three-fiber",
         "drei",
         "glsify",
-        "monaco-editor",
+        // "monaco-editor",
         "@ulld/editor",
         "@ulld/tailwind",
         "@ulld/full-form",
@@ -54,22 +54,22 @@ const config = withPWA({
         config.cache = false;
         if (!ctx.isServer) {
             // run only for client side
-            config.plugins.push(
-                new MonacoEditorWebpackPlugin({
-                    // available options are documented at https://github.com/microsoft/monaco-editor/blob/main/webpack-plugin/README.md#options
-                    // languages: [
-                    //     'json',
-                    //     'typescript',
-                    //     'html',
-                    //     'css',
-                    //     'python',
-                    //     'markdown',
-                    //     'yaml'
-                    // ],
-                    filename: "static/[name].worker.js",
-                }),
-            );
-            config.module.rules.push(...monacoRules);
+            // config.plugins.push(
+            //     new MonacoEditorWebpackPlugin({
+            //         // available options are documented at https://github.com/microsoft/monaco-editor/blob/main/webpack-plugin/README.md#options
+            //         // languages: [
+            //         //     'json',
+            //         //     'typescript',
+            //         //     'html',
+            //         //     'css',
+            //         //     'python',
+            //         //     'markdown',
+            //         //     'yaml'
+            //         // ],
+            //         filename: "static/[name].worker.js",
+            //     }),
+            // );
+            // config.module.rules.push(...monacoRules);
         }
         config.externals.push({
             "utf-8-validate": "commonjs utf-8-validate",

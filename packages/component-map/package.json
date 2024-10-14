@@ -21,23 +21,10 @@
     "./client": "./src/client/componentMap.ts",
     "./types": "./src/types.ts"
   },
-  "dependencies": {
-    "@mdx-js/mdx": "3.0.1",
-    "@mdx-js/react": "3.0.1",
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.5.4"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@mdx-js/mdx": "3.0.1",
-    "@mdx-js/react": "3.0.1",
     "@types/mdx": "2.0.13",
-    "@types/node": "20.14.13",
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.5.4"
+    "@types/node": "20.14.13"
   },
   "peerDependencies": {
     "@ulld/bib-manager": "workspace:*",

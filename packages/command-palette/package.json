@@ -22,24 +22,12 @@
   },
   "dependencies": {
     "cmdk": "0.2.0",
-    "fumadocs-core": "13.4.1",
-    "fumadocs-ui": "13.4.1",
     "lucide-react": "0.344.0",
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
     "tinykeys": "2.1.0",
     "zod": "3.23.8"
   },
   "devDependencies": {
     "cmdk": "0.2.0",
-    "fumadocs-core": "13.4.1",
-    "fumadocs-ui": "13.4.1",
-    "lucide-react": "0.344.0",
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tinykeys": "2.1.0",
     "zod": "3.23.8"
   },
   "peerDependencies": {
@@ -67,8 +55,6 @@
     "@ulld/ui": "workspace:*",
     "@ulld/utilities": "workspace:*",
     "@ulld/whiteboard": "workspace:*",
-    "fumadocs-core": "13.4.1",
-    "fumadocs-ui": "13.4.1",
     "next": "14.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
