@@ -47,6 +47,294 @@
         ".db",
         ".html"
     ],
+    "noteTypes": [
+        {
+            "id": "physics",
+            "matchWeight": 50,
+            "fs": "/physics",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Physics",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "physics",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "physics",
+            "url": "/physics"
+        },
+        {
+            "id": "math",
+            "matchWeight": 50,
+            "fs": "/math",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Math",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "math",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "math",
+            "url": "/math"
+        },
+        {
+            "id": "cheatsheet",
+            "matchWeight": 50,
+            "fs": "/cheatsheets",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Cheatsheets",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "newspaper",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "cheatsheet",
+            "url": "/cheatsheet"
+        },
+        {
+            "id": "docs",
+            "matchWeight": 50,
+            "fs": "/docs",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Docs",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "paperclip",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "docs",
+            "url": "/docs"
+        },
+        {
+            "id": "guide",
+            "matchWeight": 50,
+            "fs": "/guides",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Guides",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "gem",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "guide",
+            "url": "/guide"
+        },
+        {
+            "id": "health",
+            "matchWeight": 50,
+            "fs": "/health",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Health",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "heart",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "health",
+            "url": "/health"
+        },
+        {
+            "id": "journal",
+            "matchWeight": 50,
+            "fs": "/journal",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Journal",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "pen",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "journal",
+            "url": "/journal"
+        },
+        {
+            "id": "quickNotes",
+            "matchWeight": 50,
+            "fs": "/quickNotes",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Quick Notes",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "calendar-plus-2",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "quickNotes",
+            "url": "/quickNotes"
+        },
+        {
+            "id": "quickThoughts",
+            "matchWeight": 50,
+            "fs": "/quickThoughts",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Quick Thought",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "clock",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "quickThoughts",
+            "url": "/quickThoughts"
+        },
+        {
+            "id": "recipes",
+            "matchWeight": 50,
+            "fs": "/recipes",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Recipes",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "egg",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "recipes",
+            "url": "/recipes"
+        },
+        {
+            "id": "references",
+            "matchWeight": 50,
+            "fs": "/references",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "References",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "glasses",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "references",
+            "url": "/references"
+        },
+        {
+            "id": "tech",
+            "matchWeight": 50,
+            "fs": "/tech",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Tech",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "cpu",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "tech",
+            "url": "/tech"
+        },
+        {
+            "id": "dailyNote",
+            "matchWeight": 50,
+            "fs": "/dailyNotes",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Daily Notes",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "ulld",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "dailyNote",
+            "url": "/dailyNote"
+        }
+    ],
     "bibPath": "/citations.bib",
     "dateHandling": {
         "enableAdvancedFormat": true,

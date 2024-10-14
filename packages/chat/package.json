@@ -1,6 +1,6 @@
 {
   "name": "@ulld/chat",
-  "version": "0.0.124",
+  "version": "0.0.125",
   "private": true,
   "publishConfig": {
     "access": "public"

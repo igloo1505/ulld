@@ -1,5 +1,17 @@
 # @ulld/parsers
 
+## 0.0.125
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/schemas@0.0.6
+  - @ulld/api@0.0.125
+  - @ulld/component-map@0.0.125
+  - @ulld/configschema@0.0.125
+  - @ulld/utilities@0.0.125
+  - @ulld/developer@0.0.125
+
 ## 0.0.124
 
 ### Patch Changes

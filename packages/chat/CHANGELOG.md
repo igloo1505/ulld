@@ -1,5 +1,19 @@
 # @ulld/chat
 
+## 0.0.125
+
+### Patch Changes
+
+- @ulld/api@0.0.125
+- @ulld/full-form@0.0.125
+- @ulld/hooks@0.0.125
+- @ulld/ui@0.0.123
+- @ulld/state@0.0.125
+- @ulld/icons@0.0.125
+- @ulld/configschema@0.0.125
+- @ulld/utilities@0.0.125
+- @ulld/calendar@0.0.125
+
 ## 0.0.124
 
 ### Patch Changes

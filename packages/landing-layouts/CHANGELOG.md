@@ -1,5 +1,24 @@
 # @ulld/landing-layouts
 
+## 0.0.125
+
+### Patch Changes
+
+- @ulld/api@0.0.125
+- @ulld/bib-manager@0.0.125
+- @ulld/hooks@0.0.125
+- @ulld/journal@0.0.125
+- @ulld/plot@0.0.125
+- @ulld/render@0.0.125
+- @ulld/ui@0.0.123
+- @ulld/whiteboard@0.0.125
+- @ulld/state@0.0.125
+- @ulld/icons@0.0.125
+- @ulld/configschema@0.0.125
+- @ulld/utilities@0.0.125
+- @ulld/developer@0.0.125
+- @ulld/calendar@0.0.125
+
 ## 0.0.124
 
 ### Patch Changes

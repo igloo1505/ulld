@@ -1,5 +1,15 @@
 # @ulld/hooks
 
+## 0.0.125
+
+### Patch Changes
+
+- @ulld/api@0.0.125
+- @ulld/parsers@0.0.125
+- @ulld/component-map@0.0.125
+- @ulld/configschema@0.0.125
+- @ulld/utilities@0.0.125
+
 ## 0.0.124
 
 ### Patch Changes

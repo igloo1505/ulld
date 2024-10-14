@@ -1,5 +1,13 @@
 # @ulld/schemas
 
+## 0.0.6
+
+### Patch Changes
+
+- Update after building things locally.
+  - @ulld/configschema@0.0.125
+  - @ulld/utilities@0.0.125
+
 ## 0.0.5
 
 ### Patch Changes

@@ -1,5 +1,27 @@
 # @ulld/command-palette
 
+## 0.0.125
+
+### Patch Changes
+
+- @ulld/api@0.0.125
+- @ulld/parsers@0.0.125
+- @ulld/bib-manager@0.0.125
+- @ulld/diagram@0.0.125
+- @ulld/equations@0.0.125
+- @ulld/hooks@0.0.125
+- @ulld/render@0.0.125
+- @ulld/snippets@0.0.125
+- @ulld/task-manager@0.0.125
+- @ulld/ui@0.0.123
+- @ulld/whiteboard@0.0.125
+- @ulld/editor@0.0.125
+- @ulld/state@0.0.125
+- @ulld/configschema@0.0.125
+- @ulld/utilities@0.0.125
+- @ulld/developer@0.0.125
+- @ulld/calendar@0.0.125
+
 ## 0.0.124
 
 ### Patch Changes

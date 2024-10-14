@@ -1,6 +1,6 @@
 {
   "name": "@ulld/bib-manager",
-  "version": "0.0.124",
+  "version": "0.0.125",
   "private": false,
   "publishConfig": {
     "access": "public"

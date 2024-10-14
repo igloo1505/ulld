@@ -1,5 +1,14 @@
 # @ulld/note-network
 
+## 0.0.125
+
+### Patch Changes
+
+- @ulld/api@0.0.125
+- @ulld/configschema@0.0.125
+- @ulld/utilities@0.0.125
+- @ulld/developer@0.0.125
+
 ## 0.0.124
 
 ### Patch Changes

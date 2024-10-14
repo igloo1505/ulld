@@ -1,5 +1,24 @@
 # @ulld/ui
 
+## 0.0.123
+
+### Patch Changes
+
+- @ulld/api@0.0.125
+- @ulld/parsers@0.0.125
+- @ulld/embeddable-components@0.0.125
+- @ulld/full-form@0.0.125
+- @ulld/hooks@0.0.125
+- @ulld/navigation@0.0.125
+- @ulld/render@0.0.125
+- @ulld/editor@0.0.125
+- @ulld/state@0.0.125
+- @ulld/component-map@0.0.125
+- @ulld/icons@0.0.125
+- @ulld/configschema@0.0.125
+- @ulld/utilities@0.0.125
+- @ulld/developer@0.0.125
+
 ## 0.0.122
 
 ### Patch Changes
