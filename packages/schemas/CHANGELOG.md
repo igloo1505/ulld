@@ -1,5 +1,13 @@
 # @ulld/schemas
 
+## 0.0.7
+
+### Patch Changes
+
+- Update @ulld/schemas package to fix broken exports field.
+  - @ulld/configschema@0.0.126
+  - @ulld/utilities@0.0.126
+
 ## 0.0.6
 
 ### Patch Changes

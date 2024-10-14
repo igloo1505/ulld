@@ -1,5 +1,11 @@
 # @ulld/utilities
 
+## 0.0.126
+
+### Patch Changes
+
+- @ulld/math@0.0.126
+
 ## 0.0.125
 
 ### Patch Changes

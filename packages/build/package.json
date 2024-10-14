@@ -1,6 +1,6 @@
 {
   "name": "@ulld/build",
-  "version": "0.0.124",
+  "version": "0.0.125",
   "type": "module",
   "private": false,
   "publishConfig": {

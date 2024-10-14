@@ -1,5 +1,19 @@
 # @ulld/navigation
 
+## 0.0.126
+
+### Patch Changes
+
+- @ulld/api@0.0.126
+- @ulld/full-form@0.0.126
+- @ulld/hooks@0.0.126
+- @ulld/render@0.0.126
+- @ulld/state@0.0.126
+- @ulld/icons@0.0.126
+- @ulld/configschema@0.0.126
+- @ulld/utilities@0.0.126
+- @ulld/developer@0.0.126
+
 ## 0.0.125
 
 ### Patch Changes

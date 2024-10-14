@@ -1,5 +1,12 @@
 # @ulld/developer-cli
 
+## 0.0.126
+
+### Patch Changes
+
+- @ulld/utilities@0.0.126
+- @ulld/developer@0.0.126
+
 ## 0.0.125
 
 ### Patch Changes

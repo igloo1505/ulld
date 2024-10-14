@@ -1,5 +1,19 @@
 # @ulld/api
 
+## 0.0.126
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/schemas@0.0.7
+  - @ulld/parsers@0.0.126
+  - @ulld/render@0.0.126
+  - @ulld/state@0.0.126
+  - @ulld/component-map@0.0.126
+  - @ulld/configschema@0.0.126
+  - @ulld/utilities@0.0.126
+  - @ulld/developer@0.0.126
+
 ## 0.0.125
 
 ### Patch Changes

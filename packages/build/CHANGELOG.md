@@ -1,5 +1,12 @@
 # @ulld/build
 
+## 0.0.125
+
+### Patch Changes
+
+- @ulld/configschema@0.0.126
+- @ulld/utilities@0.0.126
+
 ## 0.0.124
 
 ### Patch Changes

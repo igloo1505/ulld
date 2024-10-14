@@ -1,5 +1,11 @@
 # @ulld/calendar
 
+## 0.0.126
+
+### Patch Changes
+
+- @ulld/developer@0.0.126
+
 ## 0.0.125
 
 ### Patch Changes

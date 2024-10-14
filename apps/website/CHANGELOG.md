@@ -1,5 +1,30 @@
 # @ulld/website
 
+## 0.0.126
+
+### Patch Changes
+
+- Updated dependencies
+  - @ulld/schemas@0.0.7
+  - @ulld/api@0.0.126
+  - @ulld/parsers@0.0.126
+  - @ulld/bib-manager@0.0.126
+  - @ulld/diagram@0.0.126
+  - @ulld/embeddable-components@0.0.126
+  - @ulld/equations@0.0.126
+  - @ulld/full-form@0.0.126
+  - @ulld/hooks@0.0.126
+  - @ulld/render@0.0.126
+  - @ulld/ui@0.0.124
+  - @ulld/whiteboard@0.0.126
+  - @ulld/editor@0.0.126
+  - @ulld/state@0.0.126
+  - @ulld/component-map@0.0.126
+  - @ulld/icons@0.0.126
+  - @ulld/configschema@0.0.126
+  - @ulld/utilities@0.0.126
+  - @ulld/calendar@0.0.126
+
 ## 0.0.125
 
 ### Patch Changes
