@@ -1,12 +1,10 @@
 import { showToast as _showToast } from "@ulld/state/state/slices/ui";
-import type { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
-import { OnBackupReturnData, OnRestoreReturnData } from "@ulld/types";
 import { downloadFile } from "@ulld/utilities/downloadFile";
-import { ToastConfigType } from "@ulld/utilities/types";
+import type { ToastConfigType } from "@ulld/utilities/types";
 import { toast } from "@ulld/tailwind/use-toast";
 import { errorToastRecord } from "@ulld/utilities/errorNotifications";
 
-const showToast = (config: ToastConfigType, store?: ToolkitStore) => {
+const showToast = (config: ToastConfigType): void => {
     // let s = store ? store : ((window as any).ulldStore as ToolkitStore);
     // console.log("s: ", s);
     // if (!s) return;
@@ -23,7 +21,7 @@ const fetchWrapper = async (path: string, opts: RequestInit) => {
 
 // TODO: Delete all references to this. This was moved to utilities/src/actions/sync/syncRootDirectory.ts. Move the rest of these methods to the same directory and clean up references to those as well.
 export const syncRootDirectory = async () => {
-    let res = await fetch("/api/events/onSync", {
+    const res = await fetch("/api/events/onSync", {
         method: "POST",
         body: JSON.stringify({
             offline: !navigator.onLine,
@@ -32,7 +30,7 @@ export const syncRootDirectory = async () => {
             cleanBeforeSync: false,
         }),
     });
-    let resBody = await res.json();
+    const resBody = await res.json();
     // let res = await axios.post(getDevPath("/api/events/onSync"), {
     //     offline: !navigator.onLine,
     //     // TODO: Actually enable these options through something like a 'hard' sync or the like.
