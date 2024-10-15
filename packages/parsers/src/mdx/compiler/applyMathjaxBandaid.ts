@@ -1,5 +1,5 @@
 "use client"
-import React, { ForwardedRef } from "react";
+import React from "react";
 import { mathjaxMutationObserver } from "./mdxClassnameBandaid";
 
 export const applyMathjaxBandaid = (
@@ -12,9 +12,11 @@ export const applyMathjaxBandaid = (
     if (!em) return;
     let observer = mathjaxMutationObserver()
     // WITH_WIFI: Improve this SIGNIFICANTLY. Look up the necessary properties to find just the classname attribute that's applied mistakenly by the parser.
+    // TODO: Keep attributes field but make others dependent on a prop.
      observer.observe(em, {
-        subtree: true,
-        childList: true,
+        subtree: true, // Modifications to child nodes. Only has an effect if childList is true.
+        childList: true, // Addition and removal of child nodes.
+        attributes: true, // Just added (10-15-24). Make sure this doesn't cause any issues. attributeFilter was already present, but shouldn't have any effect unless attributes is also true.
         attributeFilter: [
             "classname"
         ]
